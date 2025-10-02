@@ -1,0 +1,237 @@
+{
+    "src/app/components/DateCursorButtons.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/calendar/DayGrid.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 5
+        }
+    },
+    "src/app/components/calendar/Popover.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/calendar/TimeGrid.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 13
+        }
+    },
+    "src/app/components/calendar/useDayGridEventLayout.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/eventModal/CreateEventModal.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/eventModal/CreateEventPopover.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 3
+        }
+    },
+    "src/app/components/eventModal/inputs/FrequencyInput.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 3
+        }
+    },
+    "src/app/components/eventModal/rows/ParticipantRows.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/eventModal/rows/RepeatOnRow.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/events/EventPopover.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/events/PartDayRegularEvent.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/events/RsvpSection.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 2
+        }
+    },
+    "src/app/components/events/useReadEvent.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/containers/EncryptedSearchLibraryProvider.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 4
+        }
+    },
+    "src/app/containers/alarms/AlarmWatcher.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/containers/alarms/useCalendarAlarmsEventListener.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 2
+        }
+    },
+    "src/app/containers/alarms/useCalendarsAlarms.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 2
+        }
+    },
+    "src/app/containers/calendar/CalendarContainer.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 16
+        }
+    },
+    "src/app/containers/calendar/CalendarContainerView.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 2
+        }
+    },
+    "src/app/containers/calendar/CalendarShortcutsAndCommander.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/containers/calendar/EventActionContainer.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/containers/calendar/InteractiveCalendarView.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 11
+        }
+    },
+    "src/app/containers/calendar/ShareCalendarInvitationModal.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/containers/calendar/ShareInvitationContainer.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/containers/calendar/eventStore/prefetching/useEventsPrefetch.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/containers/calendar/eventStore/useCalendarsEvents.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 5
+        }
+    },
+    "src/app/containers/calendar/eventStore/useCalendarsEventsEventListener.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 2
+        }
+    },
+    "src/app/containers/calendar/eventStore/useCalendarsEventsFetcher.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/containers/calendar/eventStore/useCalendarsEventsReader.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/containers/calendar/eventStore/useCalendarsEventsRetry.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/containers/calendar/search/CalendarSearch.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 4
+        }
+    },
+    "src/app/containers/calendar/search/CalendarSearchActivation.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/containers/calendar/search/CalendarSearchProvider.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/containers/calendar/search/CalendarSearchView.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 4
+        }
+    },
+    "src/app/containers/calendar/search/SearchOverlay.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/containers/calendar/search/useCalendarSearchPagination.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/containers/calendar/useCalendarActionsOnLoad.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/containers/setup/CalendarSetupContainer.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/containers/setup/UnlockCalendarsModal.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/hooks/useBusySlots.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 5
+        }
+    },
+    "src/app/hooks/useCalendarHotkeys.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/hooks/useCalendarSearchHotkeys.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/hooks/useOpenCalendarEvents.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 3
+        }
+    },
+    "src/app/hooks/useOpenEventsFromMail.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/hooks/usePauseCalendarEventLoop.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/hooks/useUrlifyString.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    }
+}

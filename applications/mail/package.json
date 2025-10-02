@@ -15,6 +15,7 @@
         "i18n:validate": "proton-i18n validate lint-functions",
         "i18n:validate:context:web": "proton-i18n validate",
         "lint": "eslint --quiet",
+        "lint:prune-suppressions": "eslint --prune-suppressions",
         "pretty:fix": "prettier --write  ./src/app",
         "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --webpackOnCaffeine --appMode=standalone --logical",
         "test": "jest --logHeapUsage --forceExit",

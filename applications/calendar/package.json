@@ -13,6 +13,7 @@
         "i18n:validate": "proton-i18n validate lint-functions",
         "i18n:validate:context:web": "proton-i18n validate",
         "lint": "eslint --quiet",
+        "lint:prune-suppressions": "eslint --prune-suppressions",
         "lint:warning": "eslint",
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --webpackOnCaffeine --appMode=standalone --logical",
