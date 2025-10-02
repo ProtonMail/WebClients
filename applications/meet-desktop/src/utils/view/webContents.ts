@@ -6,6 +6,7 @@ import {
     isAccountLogin,
     isAccountSwitch,
     isAccoutLite,
+    isCalendar,
     isGoogleOAuthAuthorizationURL,
     isHome,
     isHostAllowed,
@@ -141,6 +142,14 @@ export function handleWebContents(contents: WebContents) {
     contents.on("will-navigate", (details) => {
         logger().info("will-navigate", details.url);
 
+        // Open calendar URLs in external browser
+        // This catches navigation from allowed about:blank windows (e.g., from window.open())
+        if (isCalendar(details.url)) {
+            logger().info("opening calendar URL in external browser", details.url);
+            shell.openExternal(details.url);
+            return details.preventDefault();
+        }
+
         if (!isHostAllowed(details.url) && !global.oauthProcess && !global.subscriptionProcess) {
             logger().info("opening external URL", details.url);
             shell.openExternal(details.url);
@@ -168,6 +177,20 @@ export function handleWebContents(contents: WebContents) {
         const { url } = details;
         const logWindowOpen = (status: "allowed" | "denied", description: string, level: "debug" | "error" = "debug") =>
             logger()[level](`Window open (${status}) ${description}`);
+
+        // Handle about:blank - this is created by window.open() before navigation
+        // We allow it, then the subsequent navigation will be caught by will-navigate
+        if (url === "about:blank" || url === "") {
+            logWindowOpen("allowed", `blank window - will handle navigation ${url}`);
+            return { action: "allow" };
+        }
+
+        // Open calendar URLs in external browser
+        if (isCalendar(url)) {
+            logWindowOpen("denied", `calendar link in external browser ${url}`);
+            shell.openExternal(url);
+            return { action: "deny" };
+        }
 
         if (isMeet(url)) {
             logWindowOpen("denied", `meet link in meet view ${url}`);

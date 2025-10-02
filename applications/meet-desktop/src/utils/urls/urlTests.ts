@@ -66,6 +66,16 @@ export const isAccount = (urlString: string) => {
     }
 };
 
+export const isCalendar = (urlString: string) => {
+    try {
+        const url = new URL(urlString);
+        // Check for both calendar.proton.me and calendar.proton.dev
+        return url.hostname === "calendar.proton.me" || url.hostname === "calendar.proton.dev";
+    } catch (error) {
+        return false;
+    }
+};
+
 export const isGoogleOAuthAuthorizationURL = (urlString: string) => {
     try {
         const url = new URL(urlString);
