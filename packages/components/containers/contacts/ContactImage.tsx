@@ -55,7 +55,7 @@ const ContactImage = ({
     variant = 'default',
 }: Props) => {
     const [mailSettings] = useMailSettings();
-    const canLoad = !!displaySenderImage && !!email && mailSettings?.HideSenderImages === HIDE_SENDER_IMAGES.SHOW;
+    const canLoad = !!displaySenderImage && !!email && mailSettings.HideSenderImages === HIDE_SENDER_IMAGES.SHOW;
     const url = useSenderImage({ emailAddress: canLoad ? email : '', bimiSelector, overrideSize });
     const [tryToLoad, setTryToLoad] = useState(false);
 

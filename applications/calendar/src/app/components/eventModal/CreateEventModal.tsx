@@ -100,7 +100,7 @@ const CreateEventModal = ({
         isOrganizer,
         numberOfAttendees: attendees.length,
         canEditSharedEventData,
-        maxAttendees: mailSettings?.RecipientLimit,
+        maxAttendees: mailSettings.RecipientLimit,
     });
 
     // new events have no uid yet

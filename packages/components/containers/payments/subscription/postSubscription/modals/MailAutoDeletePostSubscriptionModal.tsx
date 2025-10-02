@@ -25,7 +25,7 @@ const MailAutoDeletePostSubscriptionModal = (props: PostSubscriptionModalCompone
     const [displayLoadingModal, setDisplayLoadingModal] = useState(true);
     const api = useApi();
     const [mailSettings] = useMailSettings();
-    const isPremiumFeatureEnabled = mailSettings?.AutoDeleteSpamAndTrashDays === AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE;
+    const isPremiumFeatureEnabled = mailSettings.AutoDeleteSpamAndTrashDays === AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE;
 
     const isSetupActionDoneRef = useRef(false);
 

@@ -36,7 +36,7 @@ const ToggleEnableFolderColor = ({ id, className }: Props) => {
     return (
         <Toggle
             id={id}
-            checked={!!mailSettings?.EnableFolderColor}
+            checked={!!mailSettings.EnableFolderColor}
             className={className}
             onChange={(e) => withLoading(handleChange(e))}
             loading={loading}

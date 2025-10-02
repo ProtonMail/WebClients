@@ -12,7 +12,6 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import ShortcutsSectionView from '@proton/components/components/shortcuts/ShortcutsSectionView';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 import { getKeyboardShortcutsWithAppName } from '@proton/shared/lib/shortcuts/i18n';
 import { getShortcuts } from '@proton/shared/lib/shortcuts/mail';
 import clsx from '@proton/utils/clsx';
@@ -23,7 +22,7 @@ import './MailShortcutsModal.scss';
 
 const MailShortCutsModal = (props: ModalProps) => {
     const title = getKeyboardShortcutsWithAppName(MAIL_APP_NAME);
-    const [{ Shortcuts } = DEFAULT_MAILSETTINGS] = useMailSettings();
+    const [mailSettings] = useMailSettings();
     const mailShortcuts = getShortcuts();
     const alwaysOnSections = mailShortcuts.filter((section) => section.alwaysActive);
     const shortcutEnabledSections = mailShortcuts.filter((section) => !section.alwaysActive);
@@ -51,7 +50,7 @@ const MailShortCutsModal = (props: ModalProps) => {
                         <ShortcutsToggle id="toggle-shortcuts" />
                     </Field>
                 </Row>
-                <div className={clsx('columns-1 md:columns-2 gap-8', !Shortcuts && 'opacity-50')}>
+                <div className={clsx('columns-1 md:columns-2 gap-8', !mailSettings.Shortcuts && 'opacity-50')}>
                     {shortcutEnabledSections.map((section) => {
                         return <ShortcutsSectionView key={section.name} {...section} />;
                     })}

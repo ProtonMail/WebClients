@@ -173,7 +173,7 @@ export enum NEXT_MESSAGE_ON_MOVE {
     ENABLED = 2, // enabled by the user
 }
 
-export const DEFAULT_MAILSETTINGS: MailSettings = {
+export const DEFAULT_MAIL_SETTINGS: MailSettings = {
     DisplayName: '',
     Signature: '',
     Theme: '',

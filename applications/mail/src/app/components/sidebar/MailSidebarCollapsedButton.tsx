@@ -26,7 +26,7 @@ export const MailSidebarCollapsedButton = ({ type, onClick, title }: Props) => {
 
     // We use the mail setting here as we want to know if any custom folder or label contain unread messages.
     // The logic is not tied to any labelID but rather on the state of the list of labels or folders.
-    const isConversationMode = mailSettings?.ViewMode === VIEW_MODE.GROUP;
+    const isConversationMode = mailSettings.ViewMode === VIEW_MODE.GROUP;
 
     const unread = useMemo(() => {
         const mailboxCount = isConversationMode ? conversationCounts : messageCounts;

@@ -87,7 +87,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
     if (model?.isPGPInternal) {
         isMimeTypeFixed = false;
     } else {
-        isMimeTypeFixed = model?.sign !== undefined ? model.sign : !!mailSettings?.Sign;
+        isMimeTypeFixed = model?.sign !== undefined ? model.sign : !!mailSettings.Sign;
     }
 
     const hasPGPInline = model && mailSettings ? extractScheme(model, mailSettings) === PGP_INLINE : false;

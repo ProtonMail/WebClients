@@ -7,7 +7,7 @@ import type {
     MessageState,
 } from '@proton/mail/store/messages/messagesTypes';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
-import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
+import { DEFAULT_MAIL_SETTINGS } from '@proton/shared/lib/mail/mailSettings';
 import { transformLinkify } from '@proton/shared/lib/mail/transformLinkify';
 import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 
@@ -81,7 +81,7 @@ export const prepareHtml = async (
 export const preparePlainText = async (
     body: string,
     isDraft: boolean,
-    mailSettings: MailSettings = DEFAULT_MAILSETTINGS,
+    mailSettings: MailSettings = DEFAULT_MAIL_SETTINGS,
     onCleanUTMTrackers?: (utmTrackers: MessageUTMTracker[]) => void
 ): Promise<Preparation> => {
     const plainText = isDraft

@@ -12,15 +12,15 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { updateHideRemoteImages } from '@proton/shared/lib/api/mailSettings';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
-import { DEFAULT_MAILSETTINGS, SHOW_IMAGES } from '@proton/shared/lib/mail/mailSettings';
+import { SHOW_IMAGES } from '@proton/shared/lib/mail/mailSettings';
 
 interface Props {
     id: string;
 }
 
 const RemoteToggle = ({ id, ...rest }: Props) => {
-    const [{ HideRemoteImages } = DEFAULT_MAILSETTINGS] = useMailSettings();
-    const [hideRemoteImages, setHideRemoteImages] = useState(HideRemoteImages);
+    const [mailSettings] = useMailSettings();
+    const [hideRemoteImages, setHideRemoteImages] = useState(mailSettings.HideRemoteImages);
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
     const api = useApi();

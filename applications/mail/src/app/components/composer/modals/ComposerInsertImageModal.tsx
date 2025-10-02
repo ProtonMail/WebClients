@@ -13,12 +13,12 @@ interface Props {
     files: File[];
     onSelect: (action: ATTACHMENT_DISPOSITION, removeImageMetadata?: boolean) => void;
     onClose: () => void;
-    mailSettings?: MailSettings;
+    mailSettings: MailSettings;
     canShowMetadataToggle?: boolean;
 }
 
 const ComposerInsertImageModal = ({ files, onSelect, onClose, mailSettings, canShowMetadataToggle }: Props) => {
-    const [removeImageMetadata, setRemoveImageMetadata] = useState(!!mailSettings?.RemoveImageMetadata);
+    const [removeImageMetadata, setRemoveImageMetadata] = useState(!!mailSettings.RemoveImageMetadata);
     const actions = (
         <>
             {canShowMetadataToggle && mailSettings ? (

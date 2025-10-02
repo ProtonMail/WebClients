@@ -1,10 +1,10 @@
 import * as useMailSettingsModule from '@proton/mail/store/mailSettings/hooks';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
-import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
+import { DEFAULT_MAIL_SETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
 const defaultMailSettings: MailSettings = {
-    ...DEFAULT_MAILSETTINGS,
+    ...DEFAULT_MAIL_SETTINGS,
     FontSize: null,
     FontFace: null,
     ViewLayout: 0,

@@ -13,7 +13,6 @@ import ShortcutsSectionView from '@proton/components/components/shortcuts/Shortc
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { metaKey } from '@proton/shared/lib/helpers/browser';
-import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 import { getShortcuts } from '@proton/shared/lib/shortcuts/calendar';
 import { getKeyboardShortcutsWithAppName } from '@proton/shared/lib/shortcuts/i18n';
 import clsx from '@proton/utils/clsx';
@@ -24,7 +23,7 @@ import './CalendarShortcutsModal.scss';
 
 const CalendarShortcutsModal = (props: ModalProps) => {
     const title = getKeyboardShortcutsWithAppName(CALENDAR_APP_NAME);
-    const [{ Shortcuts } = DEFAULT_MAILSETTINGS] = useMailSettings();
+    const [mailSettings] = useMailSettings();
     const calendarShortcuts = getShortcuts();
     const { onClose } = props;
 
@@ -42,7 +41,7 @@ const CalendarShortcutsModal = (props: ModalProps) => {
                         <ShortcutsToggle id="toggle-shortcuts" />
                     </Field>
                 </Row>
-                <div className={clsx('columns-1 md:columns-2 gap-8', !Shortcuts && 'opacity-50')}>
+                <div className={clsx('columns-1 md:columns-2 gap-8', !mailSettings.Shortcuts && 'opacity-50')}>
                     {calendarShortcuts.map((section) => {
                         return <ShortcutsSectionView key={section.name} {...section} />;
                     })}
