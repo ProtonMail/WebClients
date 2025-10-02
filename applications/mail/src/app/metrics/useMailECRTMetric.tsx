@@ -16,7 +16,7 @@ interface ECRTMetric {
 const metricsMap = new Map<string, ECRTMetric>();
 
 export const useMailECRTMetric = () => {
-    const [settings] = useMailSettings();
+    const [mailSettings] = useMailSettings();
     const store = useMailStore();
 
     const mailMetricsEnabled = useFlag('MailMetrics');
@@ -56,7 +56,7 @@ export const useMailECRTMetric = () => {
             Value: (end - metric.startRenderTime) / 1000,
             Labels: {
                 location: getLabelID(metric.labelID),
-                pageSize: getPageSizeString(settings),
+                pageSize: getPageSizeString(mailSettings),
                 cached: metric.cached ? 'true' : 'false',
             },
         });

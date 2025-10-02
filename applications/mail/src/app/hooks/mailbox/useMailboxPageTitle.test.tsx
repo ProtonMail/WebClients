@@ -5,7 +5,7 @@ import { renderHook } from '@testing-library/react';
 
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { DEFAULT_MAILSETTINGS, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
+import { DEFAULT_MAIL_SETTINGS, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 import { useMailboxPageTitle } from './useMailboxPageTitle';
 
@@ -44,7 +44,7 @@ describe('useMailboxPageTitle', () => {
     it('Should display the unread count when the favicon is disabled in conversation mode', () => {
         mockUseMailSettings.mockReturnValue([
             {
-                ...DEFAULT_MAILSETTINGS,
+                ...DEFAULT_MAIL_SETTINGS,
                 UnreadFavicon: 0,
             },
         ]);
@@ -56,7 +56,7 @@ describe('useMailboxPageTitle', () => {
     it('Should not display the unread count when the favicon is enabled in conversation mode', () => {
         mockUseMailSettings.mockReturnValue([
             {
-                ...DEFAULT_MAILSETTINGS,
+                ...DEFAULT_MAIL_SETTINGS,
                 UnreadFavicon: 1,
             },
         ]);
@@ -68,7 +68,7 @@ describe('useMailboxPageTitle', () => {
     it('Should display the unread count when the favicon is disabled in message mode', () => {
         mockUseMailSettings.mockReturnValue([
             {
-                ...DEFAULT_MAILSETTINGS,
+                ...DEFAULT_MAIL_SETTINGS,
                 UnreadFavicon: 0,
                 ViewMode: VIEW_MODE.SINGLE,
             },
@@ -81,7 +81,7 @@ describe('useMailboxPageTitle', () => {
     it('Should not display the unread count when the favicon is enabled in message mode', () => {
         mockUseMailSettings.mockReturnValue([
             {
-                ...DEFAULT_MAILSETTINGS,
+                ...DEFAULT_MAIL_SETTINGS,
                 UnreadFavicon: 1,
                 ViewMode: VIEW_MODE.SINGLE,
             },

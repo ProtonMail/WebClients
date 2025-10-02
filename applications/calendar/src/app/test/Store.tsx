@@ -6,7 +6,7 @@ import { getModelState } from '@proton/account/test';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import type { CachedOrganizationKey, DecryptedKey, UserModel, UserSettings } from '@proton/shared/lib/interfaces';
 import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
-import { DEFAULT_MAILSETTINGS, DELAY_IN_SECONDS, PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
+import { DEFAULT_MAIL_SETTINGS, DELAY_IN_SECONDS, PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 import { apiMock } from '@proton/testing/lib/api';
 import { getOrganizationState, getSubscriptionState } from '@proton/testing/lib/initialReduxState';
 
@@ -27,7 +27,7 @@ export const getStoreWrapper = ({
             userKeys: getModelState([{ publicKey: {}, privateKey: {} } as DecryptedKey]),
             userSettings: getModelState({ Flags: {}, Email: {}, Phone: {}, '2FA': {} } as UserSettings),
             mailSettings: getModelState({
-                ...DEFAULT_MAILSETTINGS,
+                ...DEFAULT_MAIL_SETTINGS,
                 PMSignature: PM_SIGNATURE.ENABLED,
                 DelaySendSeconds: DELAY_IN_SECONDS.NONE,
             }),

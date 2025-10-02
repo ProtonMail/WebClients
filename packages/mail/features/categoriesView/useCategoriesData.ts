@@ -26,7 +26,7 @@ export const useCategoriesData = () => {
 
     const activeCategoriesTabs = categoriesTabs.filter((category) => category.display);
 
-    const settingAccess = organization?.Settings?.MailCategoryViewEnabled ? !!mailSettings?.MailCategoryView : false;
+    const settingAccess = organization?.Settings?.MailCategoryViewEnabled ? !!mailSettings.MailCategoryView : false;
     const categoryViewAccess = categoryViewFlag && settingAccess;
 
     return {

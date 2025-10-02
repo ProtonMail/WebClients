@@ -1,6 +1,6 @@
 import { HttpResponse, http } from 'msw';
 
-import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
+import { DEFAULT_MAIL_SETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
 import { addressBuilder, calendarBuilder, calendarEventBuilder, userBuilder } from './builders';
 
@@ -120,7 +120,7 @@ export const getHandlers = () => [
     }),
     http.get(`/mail/v4/settings`, () => {
         return HttpResponse.json({
-            MailSettings: DEFAULT_MAILSETTINGS,
+            MailSettings: DEFAULT_MAIL_SETTINGS,
         });
     }),
 ];

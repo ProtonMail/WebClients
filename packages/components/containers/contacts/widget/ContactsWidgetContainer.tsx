@@ -16,7 +16,6 @@ import { extractMergeable } from '@proton/shared/lib/contacts/helpers/merge';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { ATTACHMENT_MAX_COUNT } from '@proton/shared/lib/mail/constants';
-import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 import clsx from '@proton/utils/clsx';
 
 import type { ContactEditProps } from '../edit/ContactEditModal';
@@ -112,7 +111,7 @@ const ContactsWidgetContainer = ({
     };
 
     const handleCompose = () => {
-        const maxContacts = mailSettings?.RecipientLimit || DEFAULT_MAILSETTINGS.RecipientLimit;
+        const maxContacts = mailSettings.RecipientLimit;
 
         if (selectedIDs.length > maxContacts) {
             createNotification({

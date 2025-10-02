@@ -15,7 +15,6 @@ import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { updateRemoveImageMetadata } from '@proton/shared/lib/api/mailSettings';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
-import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
 import { useAccountDispatch } from '../../app/store/hooks';
 import MobileSection from '../components/MobileSection';
@@ -35,7 +34,7 @@ const PrivacySecuritySettings = ({
     const dispatch = useAccountDispatch();
     const [loadingRemoveImageMetadata, withLoadingRemoveImageMetadata] = useLoading();
     const { createNotification } = useNotifications();
-    const [mailSettings = DEFAULT_MAILSETTINGS, loadingMailSettings] = useMailSettings();
+    const [mailSettings, loadingMailSettings] = useMailSettings();
     const { ImageProxy, ConfirmLink, RemoveImageMetadata } = mailSettings;
     const loading = loadingMailSettings;
     const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });

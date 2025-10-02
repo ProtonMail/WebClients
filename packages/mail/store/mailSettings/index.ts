@@ -6,6 +6,7 @@ import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@prot
 import { getMailSettings } from '@proton/shared/lib/api/mailSettings';
 import updateObject from '@proton/shared/lib/helpers/updateObject';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
+import { DEFAULT_MAIL_SETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
 const name = 'mailSettings' as const;
 
@@ -27,7 +28,7 @@ const modelThunk = createAsyncModelThunk<Model, MailSettingState, ProtonThunkArg
     previous: previousSelector(selectMailSettings),
 });
 
-const initialState = getInitialModelState<Model>();
+const initialState = getInitialModelState<Model>(DEFAULT_MAIL_SETTINGS);
 const slice = createSlice({
     name,
     initialState,

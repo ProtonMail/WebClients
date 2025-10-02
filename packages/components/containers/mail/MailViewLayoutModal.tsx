@@ -15,7 +15,6 @@ import { useDispatch } from '@proton/redux-shared-store';
 import { updateViewLayout } from '@proton/shared/lib/api/mailSettings';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
-import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
 import ViewLayoutCards from '../layouts/ViewLayoutCards';
 
@@ -24,7 +23,7 @@ import './ModalSettingsLayoutCards.scss';
 const MailViewLayoutModal = (props: ModalProps) => {
     const api = useApi();
     const dispatch = useDispatch();
-    const [{ ViewLayout } = DEFAULT_MAILSETTINGS] = useMailSettings();
+    const [mailSettings] = useMailSettings();
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
     const title = c('Title').t`Mailbox layout`;
@@ -49,7 +48,7 @@ const MailViewLayoutModal = (props: ModalProps) => {
                     </span>
                     <ViewLayoutCards
                         describedByID="layoutMode_desc"
-                        viewLayout={ViewLayout}
+                        viewLayout={mailSettings.ViewLayout}
                         onChange={(value) => withLoading(handleChangeViewLayout(value))}
                         loading={loading}
                         liClassName="w-full"

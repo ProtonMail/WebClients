@@ -166,8 +166,15 @@ export const createHooks = <State, Extra, Returned, ThunkArg = void>(
         return useSelector(hookSelector);
     };
 
+    const useValueWithDefault = (): [Returned, boolean] => {
+        queueRef.queue = useContext(ModelQueueContext);
+        const [value, loading] = useSelector(hookSelector);
+        return [value!, loading];
+    };
+
     return {
         useGet,
         useValue,
+        useValueWithDefault,
     };
 };

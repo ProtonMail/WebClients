@@ -81,7 +81,7 @@ const ModalUnsubscribe = ({ subscription, ...props }: PropsWithNewsletterSubscri
             });
         } else {
             if (unsubscribeMethod === UnsubscribeMethod.HttpClient) {
-                const askForLinkConfirmation = mailSettings?.ConfirmLink ?? CONFIRM_LINK.CONFIRM;
+                const askForLinkConfirmation = mailSettings.ConfirmLink ?? CONFIRM_LINK.CONFIRM;
 
                 if (askForLinkConfirmation || isPhisingOrSuspicious) {
                     linkConfirmationModal.openModal(true);

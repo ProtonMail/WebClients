@@ -86,7 +86,7 @@ const ParticipantsInput = ({
     const error = getParticipantsError({
         isOwnedCalendar,
         numberOfAttendees,
-        maxAttendees: mailSettings?.RecipientLimit,
+        maxAttendees: mailSettings.RecipientLimit,
     });
 
     const handleAddRecipients = (recipients: Recipient[]) => {

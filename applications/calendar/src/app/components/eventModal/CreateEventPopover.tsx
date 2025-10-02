@@ -74,7 +74,7 @@ const CreateEventPopover = ({
         isOwnedCalendar: model.calendar.isOwned,
         isOrganizer: model.isOrganizer,
         numberOfAttendees: model.attendees.length,
-        maxAttendees: mailSettings?.RecipientLimit,
+        maxAttendees: mailSettings.RecipientLimit,
     });
     const formRef = useRef<HTMLFormElement>(null);
     const { isSubmitted, loadingAction, lastAction, handleSubmit } = useForm({

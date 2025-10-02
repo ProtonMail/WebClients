@@ -26,11 +26,11 @@ export const useGetElementParams = ({ params, navigation }: Props) => {
         conversationMode: params.conversationMode,
         labelID: convertCustomViewLabelsToAlmostAllMail(params.labelID),
         page: pageFromUrl(location),
-        pageSize: mailSettings?.PageSize || MAIL_PAGE_SIZE.FIFTY,
+        pageSize: mailSettings.PageSize || MAIL_PAGE_SIZE.FIFTY,
         sort: params.sort,
         filter: params.filter,
         search: searchParameters,
         onPage: navigation.handlePage,
-        mailSettings: mailSettings!,
+        mailSettings: mailSettings,
     };
 };

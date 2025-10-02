@@ -5,7 +5,6 @@ import { useUser } from '@proton/account/user/hooks';
 import { useConversationCounts, useFolders, useLabels, useMessageCounts } from '@proton/mail';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
 import { getCountersByLabelId } from '../../helpers/counter';
 import { getLabelName } from '../../helpers/labels';
@@ -14,7 +13,7 @@ import { isConversationMode } from '../../helpers/mailSettings';
 export const useMailboxPageTitle = (labelID: string) => {
     const location = useLocation();
 
-    const [mailSettings = DEFAULT_MAILSETTINGS] = useMailSettings();
+    const [mailSettings] = useMailSettings();
     const [labels] = useLabels();
     const [folders] = useFolders();
     const [user] = useUser();

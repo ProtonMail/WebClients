@@ -8,7 +8,7 @@ const useHasScheduledMessages = () => {
     const [conversationCounts, loadingConversationCounts] = useConversationCounts();
     const [messageCounts, loadingMessageCounts] = useMessageCounts();
     const loading = loadingMailSettings || loadingConversationCounts || loadingMessageCounts;
-    const counts = mailSettings?.ViewMode === VIEW_MODE.GROUP ? conversationCounts : messageCounts;
+    const counts = mailSettings.ViewMode === VIEW_MODE.GROUP ? conversationCounts : messageCounts;
 
     return [!!counts?.find(({ LabelID }) => LabelID === MAILBOX_LABEL_IDS.SCHEDULED)?.Total, loading];
 };

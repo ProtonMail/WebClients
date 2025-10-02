@@ -26,16 +26,16 @@ interface Props {
 
 const DefaultFontModal = ({ onChange, onClose, ...rest }: Props) => {
     const api = useApi();
-    const [settings] = useMailSettings();
+    const [mailSettings] = useMailSettings();
     const getMailSettings = useGetMailSettings();
 
-    const [fontFace, setFontFace] = useState(getFontFaceValueFromId(settings?.FontFace) || DEFAULT_FONT_FACE);
-    const [fontSize, setFontSize] = useState(settings?.FontSize || DEFAULT_FONT_SIZE);
+    const [fontFace, setFontFace] = useState(getFontFaceValueFromId(mailSettings?.FontFace) || DEFAULT_FONT_FACE);
+    const [fontSize, setFontSize] = useState(mailSettings?.FontSize || DEFAULT_FONT_SIZE);
     const [loading, setLoading] = useState(false);
     const { createNotification } = useNotifications();
 
-    const changedFontFace = fontFace !== settings?.FontFace;
-    const changedFontSize = fontSize !== settings?.FontSize;
+    const changedFontFace = fontFace !== mailSettings?.FontFace;
+    const changedFontSize = fontSize !== mailSettings?.FontSize;
     const somethingChanged = changedFontFace || changedFontSize;
 
     const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });

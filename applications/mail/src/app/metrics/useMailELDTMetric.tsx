@@ -9,7 +9,7 @@ import type { LabelType } from './mailMetricsHelper';
 import { getPageSizeString } from './mailMetricsHelper';
 
 export const useMailELDTMetric = () => {
-    const [settings] = useMailSettings();
+    const [mailSettings] = useMailSettings();
     const mailMetricsEnabled = useFlag('MailMetrics');
 
     const alreadyReportedELDT = useRef<boolean>(false);
@@ -26,7 +26,7 @@ export const useMailELDTMetric = () => {
         metrics.mail_performance_email_list_display_time_histogram.observe({
             Value: end / 1000,
             Labels: {
-                pageSize: getPageSizeString(settings),
+                pageSize: getPageSizeString(mailSettings),
                 loaded: getLabelNameAnonymised(labelID) as LabelType | 'custom',
             },
         });
