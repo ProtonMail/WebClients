@@ -1,0 +1,782 @@
+{
+    "src/app/components/actions/MoveToFolderDropdown.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/actions/MoveToLabelDropdown.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 3
+        }
+    },
+    "src/app/components/assistant/ComposerAssistant.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 2
+        }
+    },
+    "src/app/components/assistant/toolbar/ComposerAssistantStatusText.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 2
+        }
+    },
+    "src/app/components/assistant/toolbar/ComposerAssistantToolbar.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/categoryView/categoryBadge/useCategoryPing.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/categoryView/useMailCategoriesRedirection.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/composer/Composer.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 4
+        }
+    },
+    "src/app/components/composer/ComposerFrame.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 3
+        }
+    },
+    "src/app/components/composer/ComposerShortDomainSpotlight.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/composer/actions/ComposerMoreActions.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/composer/actions/MoreActionsExtension.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/composer/actions/scheduleSend/ScheduleSendActions.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/composer/addresses/AddressInput.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/composer/addresses/Addresses.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/composer/addresses/AddressesInput.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 3
+        }
+    },
+    "src/app/components/composer/addresses/AddressesRecipientItem.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/composer/editor/EditorWrapper.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 7
+        }
+    },
+    "src/app/components/composer/modals/ComposerExpirationModal.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/composer/modals/ComposerScheduleSendModal.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/conversation/ConversationHeader.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/conversation/ConversationView.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 5
+        }
+    },
+    "src/app/components/drawer/MailQuickSettings.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/dropdown/CustomFilterDropdown.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 2
+        }
+    },
+    "src/app/components/eo/EORedirect.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 2
+        }
+    },
+    "src/app/components/eo/message/EOMessageBody.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/header/MailHeader.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/header/search/AdvancedSearch.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/header/search/AdvancedSearchFields/LocationFieldDropdown.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/header/search/MailSearch.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 3
+        }
+    },
+    "src/app/components/header/search/SearchOverlay.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/layout/PrivateLayout.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/list/Item.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/list/ItemDate.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/list/ItemSenders.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/list/MailboxListItems.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/list/ResizableWrapper.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 2
+        }
+    },
+    "src/app/components/list/banners/es-slow/EsSlowBanner.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/list/banners/mail-upsell/MailUpsellBanner.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 2
+        }
+    },
+    "src/app/components/list/banners/mail-upsell/useMailUpsellOption.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/list/snooze/components/SnoozeCustomTime.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/list/snooze/containers/SnoozeDropdown.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/list/snooze/containers/SnoozeToolbarDropdownStepWrapper.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/list/spy-tracker/PrivacyDropdown.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/list/tip/PassAliasTipCTA.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/list/tip/TipBox.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/list/tip/useGetRandomTip.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/list/tip/useTips.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/list/useEncryptedSearchList.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 2
+        }
+    },
+    "src/app/components/list/useItemContextMenu.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/list/useScrollToTop.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 2
+        }
+    },
+    "src/app/components/message/MessageBody.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 4
+        }
+    },
+    "src/app/components/message/MessageOnlyView.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 3
+        }
+    },
+    "src/app/components/message/MessageView.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 7
+        }
+    },
+    "src/app/components/message/extrasFooter/attachment/AttachmentItem.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/message/extrasFooter/attachment/AttachmentList.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/message/extrasFooter/attachment/AttachmentsButton.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/message/extrasHeader/HeaderDropdown.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/message/extrasHeader/components/ExtraDarkStyle.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/message/extrasHeader/components/ExtraDecryptedSubject.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/message/extrasHeader/components/ExtraEvents.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/message/extrasHeader/components/ExtraSnoozedMessage.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/message/extrasHeader/components/ExtraUnsubscribe.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 2
+        }
+    },
+    "src/app/components/message/extrasHeader/components/calendar/EmailReminderWidget.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 2
+        }
+    },
+    "src/app/components/message/extrasHeader/components/calendar/ExtraEvent.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 2
+        }
+    },
+    "src/app/components/message/extrasHeader/components/calendar/ExtraEventAttendeeButtons.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/message/extrasHeader/components/calendar/ExtraEventErrorBanner.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/message/extrasHeader/components/calendar/ExtraEventImportButton.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 2
+        }
+    },
+    "src/app/components/message/extrasHeader/components/calendar/useCalendarWidgetDrawerEvents.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/message/modals/ContactResignModal.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/message/modals/CustomExpirationModal.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/message/modals/SimplePublicKeyTable.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/message/recipients/RecipientItemLayout.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 2
+        }
+    },
+    "src/app/components/notifications/LoadingNotificationContent.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/notifications/SendingMessageNotification.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/onboarding/checklist/modals/AccountsLoginModal.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/onboarding/checklist/useOnboardingChecklist.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/onboarding/modal/MailB2COnboardingModal.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/sidebar/EditLabelContext.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 2
+        }
+    },
+    "src/app/components/sidebar/MailSidebarCollapsedButton.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/sidebar/MailSidebarList.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 2
+        }
+    },
+    "src/app/components/sidebar/MailSidebarSystemFolders.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/sidebar/SidebarItem.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/components/toolbar/ToolbarDropdown.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 2
+        }
+    },
+    "src/app/components/view/NewsletterSubscription/NewsletterSubscriptionView.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 2
+        }
+    },
+    "src/app/components/view/NewsletterSubscription/SubscriptionsList/NewsletterSubscriptionCard.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/containers/EncryptedSearchProvider.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 3
+        }
+    },
+    "src/app/containers/eo/EOPageContainer.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/containers/globalModals/GlobalScheduleModal.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/containers/globalModals/GlobalSnoozeModal.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/containers/globalModals/GlobalUnsubscribeModal.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/containers/mailbox/MailboxContainerProvider.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/containers/onboardingChecklist/hooks/useChecklist.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/hooks/actions/delete/usePermanentDeleteSelection.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/hooks/actions/label/useApplyLabels.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/hooks/actions/label/useApplyLabelsToAll.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/hooks/actions/markAs/useMarkAllAs.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/hooks/actions/markAs/useMarkAs.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/hooks/actions/move/useMoveAllToFolder.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 2
+        }
+    },
+    "src/app/hooks/actions/move/useMoveToFolder.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/hooks/actions/useCreateFilters.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/hooks/actions/useEmptyLabel.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 2
+        }
+    },
+    "src/app/hooks/assistant/useComposerAssistantSelectedText.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/hooks/attachments/useAttachment.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/hooks/attachments/useDownload.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 5
+        }
+    },
+    "src/app/hooks/commander/useMailCommander.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/hooks/composer/useCompose.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/hooks/composer/useComposerContent.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 7
+        }
+    },
+    "src/app/hooks/composer/useComposerDrag.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 4
+        }
+    },
+    "src/app/hooks/composer/useComposerInnerModals.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/hooks/composer/useReduxRefac.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/hooks/composer/useSendMessage.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/hooks/composer/useSendModifications.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/hooks/composer/useSendVerifications.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 2
+        }
+    },
+    "src/app/hooks/contact/useContactsListener.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 2
+        }
+    },
+    "src/app/hooks/conversation/useClickOutsideFocusedMessage.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/hooks/conversation/useConversation.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 5
+        }
+    },
+    "src/app/hooks/conversation/useConversationFocus.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 3
+        }
+    },
+    "src/app/hooks/drawer/useAutoOpenContactsDrawer.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/hooks/eo/useInitializeEOMessage.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/hooks/eo/useLoadEOImages.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 2
+        }
+    },
+    "src/app/hooks/eo/useLoadEOMessage.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 6
+        }
+    },
+    "src/app/hooks/incomingDefaults/useIncomingDefaultsEvents.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/hooks/mailbox/useApplyEncryptedSearch.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/hooks/mailbox/useElements.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 9
+        }
+    },
+    "src/app/hooks/mailbox/useMailboxFocus.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 3
+        }
+    },
+    "src/app/hooks/mailbox/useMailboxPageTitle.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/hooks/mailbox/usePreLoadElements.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 2
+        }
+    },
+    "src/app/hooks/mailbox/useWelcomeFlag.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 2
+        }
+    },
+    "src/app/hooks/message/useFutureTimeDate.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 2
+        }
+    },
+    "src/app/hooks/message/useInitializeMessage.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/hooks/message/useLoadImages.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 2
+        }
+    },
+    "src/app/hooks/message/useLoadMessage.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 2
+        }
+    },
+    "src/app/hooks/message/useMessage.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 4
+        }
+    },
+    "src/app/hooks/message/useResignContact.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/hooks/message/useSaveDraft.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 4
+        }
+    },
+    "src/app/hooks/message/useVerifyMessage.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/hooks/useAddressesInputDrag.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/hooks/useClickMailContent.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 2
+        }
+    },
+    "src/app/hooks/useDeepMemo.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 2
+        }
+    },
+    "src/app/hooks/useDraft.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 3
+        }
+    },
+    "src/app/hooks/useExpiration.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/hooks/useExpiringElement.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/hooks/useHasScroll.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 2
+        }
+    },
+    "src/app/hooks/useInboxDesktopElementId.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/hooks/useInviteButtons.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 5
+        }
+    },
+    "src/app/hooks/useMailtoHash.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/hooks/usePaging.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/hooks/useResizableUtils.ts": {
+        "react-hooks/exhaustive-deps": {
+            "count": 3
+        }
+    },
+    "src/app/hooks/useSelectAll.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/hooks/useSendInfo.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 3
+        }
+    },
+    "src/app/hooks/useUnreadNotifications.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/router/RouterLabelContainer.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 1
+        }
+    },
+    "src/app/router/RouterMailboxContainer.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 2
+        }
+    },
+    "src/app/router/hooks/useElementActions.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 3
+        }
+    },
+    "src/app/router/hooks/useRouterNavigation.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 5
+        }
+    }
+}
