@@ -33,3 +33,8 @@ export const getProtonMailSignature = (
 // This converter is necessary since TS requires explicit casting between enums.
 export const getMailVerificationStatus = (verificationStatus: VERIFICATION_STATUS): MAIL_VERIFICATION_STATUS =>
     verificationStatus.valueOf();
+
+const EMPTY_SIGNATURE_PATTERNS = [/^(<div><br><\/div>)+$/, /^(<div>\s*<\/div>)+$/];
+
+export const formatSignature = (value: string) =>
+    EMPTY_SIGNATURE_PATTERNS.some((regex) => regex.test(value)) ? '' : value;
