@@ -4,6 +4,7 @@ import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { useConversationCounts, useMessageCounts } from '@proton/mail/index';
+import { PLANS } from '@proton/payments';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 import { mockUseOrganization } from '@proton/testing/index';
@@ -12,7 +13,7 @@ import { mockUseUser } from '@proton/testing/lib/mockUseUser';
 
 import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 
-import { AudienceType } from './onboardingInterface';
+import { AudienceType, FeatureValueDefault } from './onboardingInterface';
 import { useCategoriesOnboarding } from './useCategoriesOnboarding';
 
 jest.mock('@proton/mail');
@@ -56,14 +57,139 @@ const getFeatureValues = (
 };
 
 describe('useCategoriesOnboarding', () => {
+    beforeAll(() => {
+        mockUseOrganization([{ PlanName: PLANS.MAIL_PRO }]);
+        mockUseMailSettings();
+        mockUseWelcomeFlags.mockReturnValue({ welcomeFlags: { isWelcomeFlow: false } });
+    });
+
     describe('b2b users', () => {
-        describe('existing users', () => {});
-        describe('new users', () => {});
+        describe('existing users', () => {
+            it("users who didn't saw the onboarding are eligible", () => {
+                mockUseUser([{ CreateTime: janFirst }]);
+                mockUseMessageCounts.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.ALL_MAIL, Total: 10 }], false]);
+                mockUseConversationCounts.mockReturnValue([
+                    [{ LabelID: MAILBOX_LABEL_IDS.ALL_MAIL, Total: 10 }],
+                    false,
+                ]);
+                mockUseGetStartedChecklist.mockReturnValue({ displayState: CHECKLIST_DISPLAY_TYPE.REDUCED });
+                mockUseFeature.mockImplementation((code) => {
+                    return getFeatureValues(code, {
+                        b2cOnboardingFlag: 0,
+                        b2bOnboardingFlag: false,
+                        accountDateThreshold: febFirstMS,
+                    });
+                });
+
+                const { result } = renderHook(() => useCategoriesOnboarding());
+                expect(result.current).toStrictEqual({
+                    isUserEligible: true,
+                    audienceType: AudienceType.B2B,
+                    flagValue: FeatureValueDefault,
+                });
+            });
+
+            it('users who saw the onboarding are not eligible', () => {
+                mockUseUser([{ CreateTime: janFirst }]);
+                mockUseMessageCounts.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.ALL_MAIL, Total: 10 }], false]);
+                mockUseConversationCounts.mockReturnValue([
+                    [{ LabelID: MAILBOX_LABEL_IDS.ALL_MAIL, Total: 10 }],
+                    false,
+                ]);
+                mockUseGetStartedChecklist.mockReturnValue({ displayState: CHECKLIST_DISPLAY_TYPE.REDUCED });
+                mockUseFeature.mockImplementation((code) => {
+                    return getFeatureValues(code, {
+                        b2cOnboardingFlag: 0,
+                        b2bOnboardingFlag: true,
+                        accountDateThreshold: febFirstMS,
+                    });
+                });
+
+                const { result } = renderHook(() => useCategoriesOnboarding());
+                expect(result.current).toStrictEqual({
+                    isUserEligible: false,
+                    audienceType: AudienceType.B2B,
+                    flagValue: FeatureValueDefault,
+                });
+            });
+        });
+        describe('new users', () => {
+            it("users with more than 20 mails and who didn't saw the onboarding are eligible", () => {
+                mockUseUser([{ CreateTime: marchFirst }]);
+                mockUseMessageCounts.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.ALL_MAIL, Total: 20 }], false]);
+                mockUseConversationCounts.mockReturnValue([
+                    [{ LabelID: MAILBOX_LABEL_IDS.ALL_MAIL, Total: 20 }],
+                    false,
+                ]);
+                mockUseGetStartedChecklist.mockReturnValue({ displayState: CHECKLIST_DISPLAY_TYPE.REDUCED });
+                mockUseFeature.mockImplementation((code) => {
+                    return getFeatureValues(code, {
+                        b2cOnboardingFlag: 0,
+                        b2bOnboardingFlag: false,
+                        accountDateThreshold: febFirstMS,
+                    });
+                });
+
+                const { result } = renderHook(() => useCategoriesOnboarding());
+                expect(result.current).toStrictEqual({
+                    isUserEligible: true,
+                    audienceType: AudienceType.B2B,
+                    flagValue: FeatureValueDefault,
+                });
+            });
+
+            it('users with more than 20 mails with seen onboarding are not eligible', () => {
+                mockUseUser([{ CreateTime: marchFirst }]);
+                mockUseMessageCounts.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.ALL_MAIL, Total: 20 }], false]);
+                mockUseConversationCounts.mockReturnValue([
+                    [{ LabelID: MAILBOX_LABEL_IDS.ALL_MAIL, Total: 20 }],
+                    false,
+                ]);
+                mockUseGetStartedChecklist.mockReturnValue({ displayState: CHECKLIST_DISPLAY_TYPE.REDUCED });
+                mockUseFeature.mockImplementation((code) => {
+                    return getFeatureValues(code, {
+                        b2cOnboardingFlag: 0,
+                        b2bOnboardingFlag: true,
+                        accountDateThreshold: febFirstMS,
+                    });
+                });
+
+                const { result } = renderHook(() => useCategoriesOnboarding());
+                expect(result.current).toStrictEqual({
+                    isUserEligible: false,
+                    audienceType: AudienceType.B2B,
+                    flagValue: FeatureValueDefault,
+                });
+            });
+
+            it('users with more let than 20 mails are not eligible', () => {
+                mockUseUser([{ CreateTime: marchFirst }]);
+                mockUseMessageCounts.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.ALL_MAIL, Total: 10 }], false]);
+                mockUseConversationCounts.mockReturnValue([
+                    [{ LabelID: MAILBOX_LABEL_IDS.ALL_MAIL, Total: 10 }],
+                    false,
+                ]);
+                mockUseGetStartedChecklist.mockReturnValue({ displayState: CHECKLIST_DISPLAY_TYPE.REDUCED });
+                mockUseFeature.mockImplementation((code) => {
+                    return getFeatureValues(code, {
+                        b2cOnboardingFlag: 0,
+                        b2bOnboardingFlag: false,
+                        accountDateThreshold: febFirstMS,
+                    });
+                });
+
+                const { result } = renderHook(() => useCategoriesOnboarding());
+                expect(result.current).toStrictEqual({
+                    isUserEligible: false,
+                    audienceType: AudienceType.B2B,
+                    flagValue: FeatureValueDefault,
+                });
+            });
+        });
     });
 
     describe('b2c users', () => {
         beforeAll(() => {
-            mockUseUser();
             mockUseOrganization();
             mockUseMailSettings();
             mockUseWelcomeFlags.mockReturnValue({ welcomeFlags: { isWelcomeFlow: false } });

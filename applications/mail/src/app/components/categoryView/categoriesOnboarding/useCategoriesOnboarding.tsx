@@ -61,12 +61,12 @@ export const useCategoriesOnboarding = (): OnboardingInfo => {
 
     // B2B users conditions
     if (isUserB2B) {
+        const flagValue = !!b2bOnboardingFlag.feature?.Value;
+
         if (isExistingUser) {
             // Existing users see the spotlight right away
-            const hasUserSeenOnboarding = b2bOnboardingFlag.feature?.Value || false;
-
             return {
-                isUserEligible: hasUserSeenOnboarding && !isUserInWelcomeFlow,
+                isUserEligible: !flagValue && !isUserInWelcomeFlow,
                 audienceType: AudienceType.B2B,
                 flagValue: FeatureValueDefault,
             };
@@ -80,7 +80,8 @@ export const useCategoriesOnboarding = (): OnboardingInfo => {
             );
 
             return {
-                isUserEligible: allMailsElementsCount >= B2B_REQUIRED_NUMBER_OF_MAILS && !isUserInWelcomeFlow,
+                isUserEligible:
+                    !flagValue && allMailsElementsCount >= B2B_REQUIRED_NUMBER_OF_MAILS && !isUserInWelcomeFlow,
                 audienceType: AudienceType.B2B,
                 flagValue: FeatureValueDefault,
             };
