@@ -1241,6 +1241,65 @@
         "Você está prestes a visitar um site externo:"
       ]
     },
+    "collider_2025: Invite": {
+      "Email address is not valid": [
+        "O endereço de e-mail não é válido."
+      ],
+      "Email address is required": [
+        "O endereço de e-mail é obrigatório"
+      ]
+    },
+    "collider_2025: Invite Button": {
+      "Close": [
+        "Fechar"
+      ],
+      "Invite friends": [
+        "Convidar amigos"
+      ],
+      "Maybe later": [
+        "Talvez mais tarde"
+      ],
+      "Send invitation": [
+        "Enviar convite"
+      ]
+    },
+    "collider_2025: Invite Email Placeholder": {
+      "Your friend's email": [
+        "O e-mail do seu amigo"
+      ]
+    },
+    "collider_2025: Invite Info": {
+      "Know someone who'd benefit from a privacy-first AI? Invite them to join the ${ LUMO_SHORT_APP_NAME } waitlist. You have ${ remainingInvitesText } invitations remaining.": [
+        "Conhece alguém que se beneficiaria de uma IA que prioriza a privacidade? Convide-o(a) para entrar na lista de espera do ${ LUMO_SHORT_APP_NAME }. Você tem ${ remainingInvitesText } convites restantes."
+      ],
+      "You have ${ remainingInvitesText } invitations remaining.": [
+        "Você tem ${ remainingInvitesText } convites restantes."
+      ]
+    },
+    "collider_2025: Invite Sent": {
+      "Invitation sent": [
+        "Convite enviado"
+      ]
+    },
+    "collider_2025: Invite Success": {
+      "Invite sent!": [
+        "Convite enviado!"
+      ],
+      "No invites left  ": [
+        "Nenhum convite restante  "
+      ],
+      "Thanks for helping others discover ${ LUMO_SHORT_APP_NAME }! If more invites become available, we’ll let you know.": [
+        "Obrigado por ajudar outros a conhecer o ${ LUMO_SHORT_APP_NAME }! Se mais convites ficarem disponíveis, avisaremos você."
+      ],
+      "We've invited ${ emailText }. They'll get instructions on how to join the waitlist.": [
+        "Convidamos ${ emailText }. Ele(a) receberá instruções sobre como entrar na lista de espera."
+      ]
+    },
+    "collider_2025: Invite Title": {
+      "Invite friends to experience ${ LUMO_APP_NAME }": [
+        "Convide amigos para experimentar o ${ LUMO_APP_NAME }"
+      ]
+    },
     "collider_2025: Label": {
       "Did not follow instructions": [
         "Não seguiu as instruções"
@@ -4941,6 +5000,9 @@
       ],
       "This number will be shown on all future invoices": [
         "Este número será mostrado em todas as faturas futuras"
+      ],
+      "This offer is not available with your current plan.": [
+        "Essa oferta não está disponível com seu plano atual."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Este se tornará seu novo método de pagamento padrão para todas as futuras renovações."
