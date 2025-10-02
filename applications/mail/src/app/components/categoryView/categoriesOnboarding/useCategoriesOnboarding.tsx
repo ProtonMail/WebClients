@@ -5,26 +5,47 @@ import { useUser } from '@proton/account/user/hooks';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
+import { useConversationCounts, useMessageCounts } from '@proton/mail';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { getIsB2BAudienceFromPlan } from '@proton/payments';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 
 import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
+import { getLocationElementsCount } from 'proton-mail/helpers/elements';
+import { isConversationMode } from 'proton-mail/helpers/mailSettings';
 
+import { hasSeenAllOnboarding } from './categoriesOnboarding.helpers';
 import { AudienceType, FeatureValueDefault, type OnboardingInfo } from './onboardingInterface';
+
+const B2B_REQUIRED_NUMBER_OF_MAILS = 20;
+const B2C_REQUIRED_NUMBER_OF_MAILS = 5;
 
 export const useCategoriesOnboarding = (): OnboardingInfo => {
     const [user, loadingUser] = useUser();
     const [organization, loadingOrganization] = useOrganization();
+    const [mailSettings, loadingMailSettings] = useMailSettings();
+    const [messageCounts = [], messageCountsLoading] = useMessageCounts();
+    const [conversationCounts = [], conversationCountsLoading] = useConversationCounts();
 
     const mailChecklist = useGetStartedChecklist();
     const welcomeFlags = useWelcomeFlags();
 
-    const b2cOnboardingFlag = useFeature(FeatureCode.CategoryViewB2COnboardingViewFlags);
-    const b2cAccountDateThreshold = useFeature(FeatureCode.CategoryViewB2CAccountDateThreshold);
+    const b2cOnboardingFlag = useFeature<number>(FeatureCode.CategoryViewB2COnboardingViewFlags);
+    const b2bOnboardingFlag = useFeature<boolean>(FeatureCode.CategoryViewB2BOnboardingView);
+    const accountDateThreshold = useFeature<number>(FeatureCode.CategoryViewOnboardingAccountDateThreshold);
 
-    const loading = loadingOrganization || loadingUser || b2cOnboardingFlag.loading || b2cAccountDateThreshold.loading;
+    const loading =
+        loadingOrganization ||
+        loadingUser ||
+        loadingMailSettings ||
+        messageCountsLoading ||
+        conversationCountsLoading ||
+        b2cOnboardingFlag.loading ||
+        b2bOnboardingFlag.loading ||
+        accountDateThreshold.loading;
 
-    if (loading) {
+    if (loading || !accountDateThreshold.feature?.Value) {
         return {
             isUserEligible: false,
             audienceType: undefined,
@@ -33,34 +54,57 @@ export const useCategoriesOnboarding = (): OnboardingInfo => {
     }
 
     const isUserB2B = getIsB2BAudienceFromPlan(organization?.PlanName);
-
-    // B2B related
-    if (isUserB2B) {
-        return {
-            isUserEligible: false,
-            audienceType: AudienceType.B2B,
-            flagValue: FeatureValueDefault,
-        };
-    }
-
-    // B2C logic
-    if (!b2cAccountDateThreshold.feature?.Value) {
-        return {
-            isUserEligible: false,
-            audienceType: AudienceType.B2C,
-            flagValue: FeatureValueDefault,
-        };
-    }
-
-    // Existing users, created before the release of the category view see the onboarding
-    const isExistingUser = isBefore(fromUnixTime(user.CreateTime), new Date(b2cAccountDateThreshold.feature.Value));
-    // We don't want to show the category view onboarding if the checklist is full
-    const isChecklistFull = mailChecklist.displayState === CHECKLIST_DISPLAY_TYPE.FULL;
-    // Or if the user hasn't completed the welcome flow
     const isUserInWelcomeFlow = welcomeFlags.welcomeFlags.isWelcomeFlow;
 
+    // Existing users, created before the release of the category view see the onboarding
+    const isExistingUser = isBefore(fromUnixTime(user.CreateTime), new Date(accountDateThreshold.feature.Value));
+
+    // B2B users conditions
+    if (isUserB2B) {
+        const flagValue = !!b2bOnboardingFlag.feature?.Value;
+
+        if (isExistingUser) {
+            // Existing users see the spotlight right away
+            return {
+                isUserEligible: !flagValue && !isUserInWelcomeFlow,
+                audienceType: AudienceType.B2B,
+                flagValue: FeatureValueDefault,
+            };
+        } else {
+            // New B2B users see the spotlight once they have a given amount of email
+            const allMailsElementsCount = getLocationElementsCount(
+                MAILBOX_LABEL_IDS.ALL_MAIL,
+                conversationCounts,
+                messageCounts,
+                isConversationMode(MAILBOX_LABEL_IDS.ALL_MAIL, mailSettings)
+            );
+
+            return {
+                isUserEligible:
+                    !flagValue && allMailsElementsCount >= B2B_REQUIRED_NUMBER_OF_MAILS && !isUserInWelcomeFlow,
+                audienceType: AudienceType.B2B,
+                flagValue: FeatureValueDefault,
+            };
+        }
+    }
+
+    // B2C users conditions
+    const isChecklistFull = mailChecklist.displayState === CHECKLIST_DISPLAY_TYPE.FULL;
+    const allOnboardingSeen = hasSeenAllOnboarding(b2cOnboardingFlag.feature?.Value ?? 0);
+    const allMailsElementsCount = getLocationElementsCount(
+        MAILBOX_LABEL_IDS.ALL_MAIL,
+        conversationCounts,
+        messageCounts,
+        isConversationMode(MAILBOX_LABEL_IDS.ALL_MAIL, mailSettings)
+    );
+
+    // Existing B2C users see the card if they have a given number of emails and the checklist is no longer present on the list of email
     return {
-        isUserEligible: isExistingUser && !isChecklistFull && !isUserInWelcomeFlow,
+        isUserEligible:
+            isExistingUser &&
+            !allOnboardingSeen &&
+            allMailsElementsCount > B2C_REQUIRED_NUMBER_OF_MAILS &&
+            !isChecklistFull,
         audienceType: AudienceType.B2C,
         flagValue: b2cOnboardingFlag.feature?.Value ?? 0,
     };
