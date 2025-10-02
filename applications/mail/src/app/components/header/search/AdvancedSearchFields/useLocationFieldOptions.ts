@@ -11,6 +11,7 @@ import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 
 import { getLabelFromCategoryId } from 'proton-mail/components/categoryView/categoriesStringHelpers';
+import { categoryColorClassName } from 'proton-mail/components/categoryView/categoriesTabs/tabsInterface';
 import { useCategoriesView } from 'proton-mail/components/categoryView/useCategoriesView';
 
 import { getStandardFolders } from '../../../../helpers/labels';
@@ -73,7 +74,7 @@ export function useLocationFieldOptions(): UseLocationFieldOptionsReturn {
                   text: getLabelFromCategoryId(category.id),
                   url: `/${LABEL_IDS_TO_HUMAN[category.id]}`,
                   icon: category.icon,
-                  className: 'mail-category-color',
+                  className: categoryColorClassName,
                   color: category.colorShade,
               };
           })
