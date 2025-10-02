@@ -1,4 +1,4 @@
-import { useFolders, useLabels } from '@proton/mail/index';
+import { useFolders, useLabels } from '@proton/mail';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
