@@ -6,7 +6,7 @@ import Info from '@proton/components/components/link/Info';
 import { FeatureCode, useFeatures } from '@proton/features';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { DEFAULT_MAILSETTINGS, IMAGE_PROXY_FLAGS } from '@proton/shared/lib/mail/mailSettings';
+import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/mail/mailSettings';
 
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
@@ -16,7 +16,7 @@ import ProtectionModeSelect from './ProtectionModeSelect';
 import RemoteToggle from './RemoteToggle';
 
 const EmailPrivacySection = () => {
-    const [{ ImageProxy } = DEFAULT_MAILSETTINGS] = useMailSettings();
+    const [{ ImageProxy }] = useMailSettings();
     const [, setImageProxy] = useState(ImageProxy);
     const { getFeature } = useFeatures([FeatureCode.SpyTrackerProtectionIncorporator]);
 

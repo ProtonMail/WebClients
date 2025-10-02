@@ -12,7 +12,7 @@ const useInboxDesktopBadgeCount = () => {
     const [mailSettings] = useMailSettings();
     const [conversationCounts] = useConversationCounts();
     const [messageCounts] = useMessageCounts();
-    const counts = mailSettings?.ViewMode === VIEW_MODE.GROUP ? conversationCounts : messageCounts;
+    const counts = mailSettings.ViewMode === VIEW_MODE.GROUP ? conversationCounts : messageCounts;
 
     // Updates the notification badge on the desktop app icon depending on the unread count
     useEffect(() => {

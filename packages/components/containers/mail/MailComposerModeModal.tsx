@@ -15,7 +15,6 @@ import { useDispatch } from '@proton/redux-shared-store';
 import { updateComposerMode } from '@proton/shared/lib/api/mailSettings';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { COMPOSER_MODE } from '@proton/shared/lib/mail/mailSettings';
-import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
 import ComposerModeCards from '../layouts/ComposerModeCards';
 
@@ -24,7 +23,7 @@ import './ModalSettingsLayoutCards.scss';
 const MailComposerModeModal = (props: ModalProps) => {
     const api = useApi();
     const dispatch = useDispatch();
-    const [{ ComposerMode } = DEFAULT_MAILSETTINGS] = useMailSettings();
+    const [mailSettings] = useMailSettings();
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
     const title = c('Title').t`Composer mode`;
@@ -49,7 +48,7 @@ const MailComposerModeModal = (props: ModalProps) => {
                     </span>
                     <ComposerModeCards
                         describedByID="composerMode_desc"
-                        composerMode={ComposerMode}
+                        composerMode={mailSettings.ComposerMode}
                         onChange={(value) => withLoading(handleChangeComposerMode(value))}
                         loading={loading}
                         liClassName="w-full"

@@ -93,19 +93,19 @@ const useLoadContactImage = ({ photo, onToggleLoadDirectBanner, needsResize = fa
                 apiUrl: API_URL,
                 url: photo,
                 uid,
-                useProxy: !!mailSettings?.ImageProxy,
+                useProxy: !!mailSettings.ImageProxy,
                 origin: window.location.origin,
             });
 
             const { src, width, height } = await toImage(imageURL);
 
             if (needsResize) {
-                await handleResizeImage(src, width, height, !!mailSettings?.ImageProxy);
+                await handleResizeImage(src, width, height, !!mailSettings.ImageProxy);
             } else {
                 setImage({ src });
             }
         } catch (e) {
-            if (!!mailSettings?.ImageProxy) {
+            if (!!mailSettings.ImageProxy) {
                 onToggleLoadDirectBanner?.(true);
                 setNeedsLoadDirect(true);
             }
@@ -150,7 +150,7 @@ const useLoadContactImage = ({ photo, onToggleLoadDirectBanner, needsResize = fa
             return;
         }
 
-        if (mailSettings?.ImageProxy || isBase64) {
+        if (mailSettings.ImageProxy || isBase64) {
             // if resize fails (e.g. toImage will throw if the requested resource hasn't specified a CORS policy),
             // fallback to the original src
             void withLoadingResize(loadImage().catch(noop));

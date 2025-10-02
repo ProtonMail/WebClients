@@ -19,7 +19,7 @@ interface Props {
 const SenderImagesToggle = ({ id, className }: Props) => {
     const [mailSettings] = useMailSettings();
     const dispatch = useDispatch();
-    const { state, toggle } = useToggle(!mailSettings?.HideSenderImages);
+    const { state, toggle } = useToggle(!mailSettings.HideSenderImages);
     const { createNotification } = useNotifications();
     const api = useApi();
     const [loading, withLoading] = useLoading();

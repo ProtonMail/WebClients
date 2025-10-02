@@ -55,7 +55,7 @@ const ReferralSignatureToggle = () => {
 
     if (
         !mailSettings ||
-        !mailSettings?.PMSignature ||
+        !mailSettings.PMSignature ||
         !userSettings.Referral?.Link ||
         !availableApps.includes(APPS.PROTONMAIL)
     ) {
@@ -83,7 +83,7 @@ const ReferralSignatureToggle = () => {
             <br />
             <div
                 dangerouslySetInnerHTML={{
-                    __html: getProtonMailSignature(true, userSettings.Referral?.Link, mailSettings?.PMSignatureContent),
+                    __html: getProtonMailSignature(true, userSettings.Referral?.Link, mailSettings.PMSignatureContent),
                 }}
             />
             <br />

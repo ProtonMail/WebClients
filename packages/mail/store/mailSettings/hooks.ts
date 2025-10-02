@@ -4,5 +4,5 @@ import { mailSettingsThunk, selectMailSettings } from './index';
 
 const hooks = createHooks(mailSettingsThunk, selectMailSettings);
 
-export const useMailSettings = hooks.useValue;
+export const useMailSettings = hooks.useValueWithDefault;
 export const useGetMailSettings = hooks.useGet;

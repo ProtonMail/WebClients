@@ -37,7 +37,7 @@ const ToggleInheritParentFolderColor = ({ id, className }: Props) => {
     return (
         <Toggle
             id={id}
-            checked={!!mailSettings?.InheritParentFolderColor}
+            checked={!!mailSettings.InheritParentFolderColor}
             className={className}
             onChange={(e) => withLoading(handleChange(e))}
             loading={loading}

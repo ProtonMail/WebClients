@@ -13,7 +13,6 @@ import { orderContactGroups } from '@proton/shared/lib/helpers/contactGroups';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
-import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
 import useItemsSelection from '../../items/useItemsSelection';
 import type { ContactGroupDeleteProps } from '../group/ContactGroupDeleteModal';
@@ -103,7 +102,7 @@ const ContactsWidgetGroupsContainer = ({
     };
 
     const handleCompose = () => {
-        const maxContacts = mailSettings?.RecipientLimit || DEFAULT_MAILSETTINGS.RecipientLimit;
+        const maxContacts = mailSettings.RecipientLimit;
 
         if (recipients.length > maxContacts) {
             createNotification({

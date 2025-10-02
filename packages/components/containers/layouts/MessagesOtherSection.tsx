@@ -19,7 +19,6 @@ import {
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
-import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
 import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE } from '../../components/editor/constants';
 import SettingsLayout from '../account/SettingsLayout';
@@ -35,16 +34,8 @@ import TextDirectionSelect from './TextDirectionSelect';
 const MessagesOtherSection = () => {
     const api = useApi();
     const dispatch = useDispatch();
-    const [
-        {
-            DraftMIMEType,
-            RightToLeft,
-            FontFace,
-            FontSize,
-            DelaySendSeconds,
-            RemoveImageMetadata,
-        } = DEFAULT_MAILSETTINGS,
-    ] = useMailSettings();
+    const [{ DraftMIMEType, RightToLeft, FontFace, FontSize, DelaySendSeconds, RemoveImageMetadata }] =
+        useMailSettings();
     const fontFaceValue = getFontFaceValueFromId(FontFace) || DEFAULT_FONT_FACE;
     const { createNotification } = useNotifications();
 

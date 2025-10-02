@@ -77,7 +77,7 @@ export const useMailCommander = () => {
                 value: 'drafts',
                 action: () =>
                     navigateTo(
-                        hasBit(mailSettings?.ShowMoved, SHOW_MOVED.DRAFTS)
+                        hasBit(mailSettings.ShowMoved, SHOW_MOVED.DRAFTS)
                             ? MAILBOX_LABEL_IDS.ALL_DRAFTS
                             : MAILBOX_LABEL_IDS.DRAFTS
                     ),
@@ -89,7 +89,7 @@ export const useMailCommander = () => {
                 value: 'sent',
                 action: () =>
                     navigateTo(
-                        hasBit(mailSettings?.ShowMoved, SHOW_MOVED.SENT)
+                        hasBit(mailSettings.ShowMoved, SHOW_MOVED.SENT)
                             ? MAILBOX_LABEL_IDS.ALL_SENT
                             : MAILBOX_LABEL_IDS.SENT
                     ),

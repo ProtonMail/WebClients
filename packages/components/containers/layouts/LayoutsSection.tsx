@@ -17,14 +17,13 @@ import type { DENSITY } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import type { COMPOSER_MODE, VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
-import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
 import ComposerModeCards from './ComposerModeCards';
 import DensityRadiosCards from './DensityRadiosCards';
 import ViewLayoutCards from './ViewLayoutCards';
 
 const LayoutsSection = () => {
-    const [{ ComposerMode, ViewLayout } = DEFAULT_MAILSETTINGS, loadingMailSettings] = useMailSettings();
+    const [{ ComposerMode, ViewLayout }, loadingMailSettings] = useMailSettings();
     const [{ Density }, loadingUserSettings] = useUserSettings();
     const { createNotification } = useNotifications();
     const api = useApi();

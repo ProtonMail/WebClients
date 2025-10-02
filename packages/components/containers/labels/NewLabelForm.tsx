@@ -77,9 +77,9 @@ function NewLabelForm({
                         disableOptions={[folder.ID]}
                     />
                 </div>
-                {mailSettings?.EnableFolderColor ? (
+                {mailSettings.EnableFolderColor ? (
                     <div>
-                        {mailSettings?.InheritParentFolderColor && folder.ParentID ? (
+                        {mailSettings.InheritParentFolderColor && folder.ParentID ? (
                             <div className="mb-4">
                                 <strong className="text-semibold">{c('New Label form').t`Color`} </strong>
                                 <div className="mt-2">{c('Info').t`Inherited from parent folder`}</div>
