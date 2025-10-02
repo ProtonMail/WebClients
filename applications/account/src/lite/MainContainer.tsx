@@ -8,6 +8,7 @@ import DeleteAccount from './actions/DeleteAccount';
 import EmailSettings from './actions/EmailSettings';
 import LabelsSettings from './actions/LabelsSettings';
 import PrivacySecuritySettings from './actions/PrivacySecuritySettings';
+import SignatureSettings from './actions/SignatureSettings';
 import SpamFiltersSettings from './actions/SpamFiltersSettings';
 import SubscribeAccount from './actions/SubscribeAccount';
 import VPNLite from './actions/VPNLite';
@@ -32,6 +33,7 @@ const MainContainer = ({ action, redirect, app, searchParams, loader, layout }: 
         <>
             {action === SupportedActions.WalletSettings && <WalletSettings loader={loader} layout={layout} />}
             {action === SupportedActions.AccountSettings && <AccountSettings layout={layout} loader={loader} />}
+            {action === SupportedActions.EmailSignatures && <SignatureSettings layout={layout} loader={loader} />}
             {action === SupportedActions.EmailSettings && <EmailSettings layout={layout} loader={loader} />}
             {action === SupportedActions.LabelsSettings && <LabelsSettings layout={layout} />}
             {action === SupportedActions.SpamFiltersSettings && <SpamFiltersSettings layout={layout} />}
