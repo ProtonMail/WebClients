@@ -1,10 +1,10 @@
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { isReceived, isScheduled, isSnoozed } from '@proton/shared/lib/mail/messages';
 
 import ExtraPassNudge from 'proton-mail/components/message/extrasHeader/components/ExtraPassNudge';
 
 import { getMessageHasData } from '../../../helpers/message/messages';
-import useMailModel from '../../../hooks/useMailModel';
 import useScheduleSendFeature from '../../composer/actions/scheduleSend/useScheduleSendFeature';
 import ExtraAskResign from './components/ExtraAskResign';
 import ExtraAutoReply from './components/ExtraAutoReply';
@@ -40,7 +40,7 @@ const HeaderExtra = ({
     onLoadRemoteImages,
     onLoadEmbeddedImages,
 }: Props) => {
-    const mailSettings = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
     const received = isReceived(message.data);
 
     const { canScheduleSend } = useScheduleSendFeature();

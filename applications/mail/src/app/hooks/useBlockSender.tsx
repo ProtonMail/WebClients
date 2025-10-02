@@ -6,10 +6,10 @@ import { c } from 'ttag';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useApi, useNotifications } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { updateBlockSenderConfirmation } from '@proton/shared/lib/api/mailSettings';
 import { BLOCK_SENDER_CONFIRMATION } from '@proton/shared/lib/mail/constants';
 
-import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import BlockSenderModal from '../components/message/modals/BlockSenderModal';
@@ -27,7 +27,7 @@ const useBlockSender = ({ elements, onCloseDropdown }: Props) => {
     const api = useApi();
     const dispatch = useMailDispatch();
     const [addresses] = useAddresses();
-    const mailSettings = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
     const { createNotification } = useNotifications();
 
     const incomingDefaultsAddresses = useIncomingDefaultsAddresses();

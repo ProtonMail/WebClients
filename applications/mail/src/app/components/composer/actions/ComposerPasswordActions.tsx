@@ -2,10 +2,9 @@ import { c } from 'ttag';
 
 import { Button, Kbd, Tooltip } from '@proton/atoms';
 import { DropdownMenuButton, Icon } from '@proton/components';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
-
-import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import ComposerMoreOptionsDropdown from './ComposerMoreOptionsDropdown';
 
@@ -16,9 +15,9 @@ interface Props {
 }
 
 const ComposerPasswordActions = ({ isPassword, onRemoveOutsideEncryption, onPassword }: Props) => {
-    const { Shortcuts } = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
 
-    const titleEncryption = Shortcuts ? (
+    const titleEncryption = mailSettings.Shortcuts ? (
         <>
             {c('Title').t`External encryption`}
             <br />

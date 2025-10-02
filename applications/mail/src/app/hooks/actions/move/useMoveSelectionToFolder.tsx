@@ -7,6 +7,7 @@ import { useApi, useEventManager, useModalTwo, useNotifications } from '@proton/
 import { FeatureCode, useFeature } from '@proton/features';
 import { useGetFolders, useGetLabels } from '@proton/mail';
 import { isCustomLabel } from '@proton/mail/helpers/location';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { labelConversations } from '@proton/shared/lib/api/conversations';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
 import { labelMessages } from '@proton/shared/lib/api/messages';
@@ -30,7 +31,6 @@ import type { MoveParams } from 'proton-mail/hooks/actions/move/useMoveToFolder'
 import { useCreateFilters } from 'proton-mail/hooks/actions/useCreateFilters';
 import { useOptimisticApplyLabels } from 'proton-mail/hooks/optimistic/useOptimisticApplyLabels';
 import useIsEncryptedSearch from 'proton-mail/hooks/useIsEncryptedSearch';
-import useMailModel from 'proton-mail/hooks/useMailModel';
 import type { Element } from 'proton-mail/models/element';
 import { backendActionFinished, backendActionStarted } from 'proton-mail/store/elements/elementsActions';
 import { useMailDispatch } from 'proton-mail/store/hooks';
@@ -53,7 +53,7 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
     const getLabels = useGetLabels();
     const getFolders = useGetFolders();
     const optimisticApplyLabels = useOptimisticApplyLabels();
-    const mailSettings = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
     const dispatch = useMailDispatch();
     const { getFilterActions } = useCreateFilters();
     const mailActionsChunkSize = useFeature(FeatureCode.MailActionsChunkSize).feature?.Value;

@@ -7,6 +7,7 @@ import { FeatureCode, useFeature } from '@proton/features';
 import type { Preparation } from '@proton/mail-renderer/helpers/transforms/transforms';
 import { prepareHtml, preparePlainText } from '@proton/mail-renderer/helpers/transforms/transforms';
 import { useBase64Cache } from '@proton/mail/hooks/useBase64Cache';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type {
     LoadEmbeddedParams,
     LoadEmbeddedResults,
@@ -27,7 +28,6 @@ import uniqueBy from '@proton/utils/uniqueBy';
 import { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 import { transformEmbedded } from 'proton-mail/helpers/transforms/transformEmbedded';
 import { transformRemote } from 'proton-mail/helpers/transforms/transformRemote';
-import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
@@ -64,7 +64,7 @@ export const useInitializeMessage = () => {
     const getMessageKeys = useGetMessageKeys();
     const getAttachment = useGetAttachment();
     const base64Cache = useBase64Cache();
-    const mailSettings = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
     const { verifyKeys } = useKeyVerification();
     const authentication = useAuthentication();
 

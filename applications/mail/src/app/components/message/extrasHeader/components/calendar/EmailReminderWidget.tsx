@@ -20,6 +20,7 @@ import {
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageErrors } from '@proton/mail/store/messages/messagesTypes';
 import { getEvent } from '@proton/shared/lib/api/calendars';
 import { getPaginatedEventsByUID } from '@proton/shared/lib/calendar/api';
@@ -43,7 +44,6 @@ import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getParsedHeadersFirstValue } from '@proton/shared/lib/mail/messages';
 
 import { useContactsMap } from 'proton-mail/hooks/contact/useContacts';
-import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { getEventLocalStartEndDates } from '../../../../../helpers/calendar/emailReminder';
 import { getParticipantsList } from '../../../../../helpers/calendar/invite';
@@ -64,7 +64,7 @@ interface EmailReminderWidgetProps {
 }
 
 const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
-    const mailSettings = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
     const eventReminderRef = useRef<HTMLDivElement>(null);
 
     const calendarIdHeader = getParsedHeadersFirstValue(message, 'X-Pm-Calendar-Calendarid');

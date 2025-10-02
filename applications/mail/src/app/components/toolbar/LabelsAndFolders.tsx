@@ -4,9 +4,9 @@ import { c, msgid } from 'ttag';
 
 import { Kbd, Vr } from '@proton/atoms';
 import { DropdownSizeUnit, Icon } from '@proton/components';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 
 import { isConversationMode } from 'proton-mail/helpers/mailSettings';
-import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
 import { MoveToFolderDropdown, moveDropdownContentProps } from '../actions/MoveToFolderDropdown';
@@ -28,7 +28,7 @@ const LabelsAndFolders = ({
     moveDropdownToggleRef,
     onCheckAll,
 }: Props) => {
-    const mailSettings = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
     const { selectAll } = useSelectAll({ labelID });
 
     if (!selectedIDs.length) {

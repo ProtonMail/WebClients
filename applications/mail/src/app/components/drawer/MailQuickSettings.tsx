@@ -37,6 +37,7 @@ import useKeyTransparencyNotification from '@proton/components/hooks/useKeyTrans
 import { useLoading } from '@proton/hooks';
 import { useAssistant } from '@proton/llm/lib';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { updateComposerMode, updateViewLayout } from '@proton/shared/lib/api/mailSettings';
 import { updateDensity } from '@proton/shared/lib/api/settings';
@@ -59,7 +60,6 @@ import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useCanReplayOnboarding } from 'proton-mail/hooks/useCanReplayOnboarding';
-import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { QuickSettingsRemoveCategoriesBadge } from '../categoryView/categoryBadge/QuickSettingsRemoveCategoriesBadge';
 import ClearBrowserDataModal from '../header/ClearBrowserDataModal';
@@ -77,7 +77,7 @@ const MailQuickSettings = () => {
     const { createNotification } = useNotifications();
 
     const [{ Density, AIAssistantFlags }] = useUserSettings();
-    const { ComposerMode, ViewLayout } = useMailModel('MailSettings');
+    const [{ ComposerMode, ViewLayout }] = useMailSettings();
     const {
         openedAssistants,
         resetAssistantState,

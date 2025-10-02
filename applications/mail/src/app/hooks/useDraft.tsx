@@ -6,7 +6,7 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useCache } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
-import { useGetMailSettings } from '@proton/mail/store/mailSettings/hooks';
+import { useGetMailSettings, useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type {
     MessageState,
     MessageStateWithData,
@@ -15,7 +15,6 @@ import type {
 import { isPaid } from '@proton/shared/lib/user/helpers';
 import generateUID from '@proton/utils/generateUID';
 
-import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import SendingFromDefaultAddressModal from '../components/composer/modals/SendingFromDefaultAddressModal';
@@ -59,7 +58,7 @@ export const useDraft = () => {
     const dispatch = useMailDispatch();
     const { handleDraftVerifications: draftVerifications, sendingFromDefaultAddressModal } = useDraftVerifications();
     const [addresses] = useAddresses();
-    const mailSettings = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
     const [userSettings] = useUserSettings();
     const getAttachment = useGetAttachment();
 

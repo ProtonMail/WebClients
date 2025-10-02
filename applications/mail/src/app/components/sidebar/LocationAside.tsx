@@ -1,7 +1,6 @@
 import { ReloadSpinner } from '@proton/components';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import clsx from '@proton/utils/clsx';
-
-import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { getUnreadCount, getUnreadTitle } from './locationAsideHelpers';
 
@@ -32,7 +31,7 @@ const LocationAside = ({
     labelID,
     hideSpinner = false,
 }: Props) => {
-    const mailSettings = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
 
     const unreadCountCopy = getUnreadCount(labelID, unreadCount);
     const unreadTitleCopy = getUnreadTitle(shouldDisplayTotal, unreadCount, mailSettings, labelID);

@@ -8,6 +8,7 @@ import {
     selectMessageCounts,
 } from '@proton/mail';
 import { isSystemLocation } from '@proton/mail/helpers/location';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import type { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
@@ -32,7 +33,6 @@ import {
 } from '../../store/messages/optimistic/messagesOptimisticActions';
 import { useGetConversation } from '../conversation/useConversation';
 import { useGetElementByID } from '../mailbox/useElements';
-import useMailModel from '../useMailModel';
 
 export type MarkAsChanges = { status: MARK_AS_STATUS; displaySnoozedReminder?: boolean };
 
@@ -113,7 +113,7 @@ export const useOptimisticMarkAs = () => {
     const mailStore = useMailStore();
     const dispatch = useMailDispatch();
     const getElementByID = useGetElementByID();
-    const mailSettings = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
     const history = useHistory();
     const getConversation = useGetConversation();
 

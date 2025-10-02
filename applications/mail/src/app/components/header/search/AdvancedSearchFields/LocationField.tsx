@@ -2,9 +2,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-
-import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import LocationFieldDropdown from './LocationFieldDropdown';
 import { useLocationFieldOptions } from './useLocationFieldOptions';
@@ -25,7 +24,7 @@ const LOCATION_FIELD_MAIN_OPTIONS: string[] = [
 ];
 
 const LocationField = ({ value, onChange }: Props) => {
-    const { AlmostAllMail } = useMailModel('MailSettings');
+    const [{ AlmostAllMail }] = useMailSettings();
     const { all: options, findItemByValue } = useLocationFieldOptions();
 
     const mainOptions = options.filter(({ value }) => LOCATION_FIELD_MAIN_OPTIONS.includes(value));

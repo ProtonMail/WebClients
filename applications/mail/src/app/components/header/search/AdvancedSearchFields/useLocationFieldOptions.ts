@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import type { IconName } from '@proton/components';
 import { useFolders, useLabels } from '@proton/mail';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { buildTreeview } from '@proton/shared/lib/helpers/folder';
@@ -12,7 +13,6 @@ import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 import { getLabelFromCategoryId } from 'proton-mail/components/categoryView/categoriesStringHelpers';
 import { useCategoriesView } from 'proton-mail/components/categoryView/useCategoriesView';
 import { useEncryptedSearchContext } from 'proton-mail/containers/EncryptedSearchProvider';
-import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { getStandardFolders } from '../../../../helpers/labels';
 import useScheduleSendFeature from '../../../composer/actions/scheduleSend/useScheduleSendFeature';
@@ -58,7 +58,7 @@ interface UseLocationFieldOptionsReturn {
 }
 
 export function useLocationFieldOptions(): UseLocationFieldOptionsReturn {
-    const mailSettings = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
     const [labels = []] = useLabels();
     const [folders] = useFolders();
     const treeview = buildTreeview(folders);

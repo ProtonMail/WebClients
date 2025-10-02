@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { useApi, useEventManager, useNotifications } from '@proton/components';
 import { isCustomFolder, isSystemFolder } from '@proton/mail/helpers/location';
 import { useFolders, useLabels } from '@proton/mail/index';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import type { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
@@ -25,7 +26,6 @@ import { useMoveBackAction } from 'proton-mail/hooks/actions/moveBackAction/useM
 import { useCreateFilters } from 'proton-mail/hooks/actions/useCreateFilters';
 import { useGetConversation } from 'proton-mail/hooks/conversation/useConversation';
 import { useGetElementByID } from 'proton-mail/hooks/mailbox/useElements';
-import useMailModel from 'proton-mail/hooks/useMailModel';
 import type { Conversation } from 'proton-mail/models/conversation';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 import {
@@ -47,7 +47,7 @@ import {
 } from './interface';
 
 export const useApplyLocation = () => {
-    const mailSettings = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
     const flagState = useFlag('ApplyLabelsOptimisticRefactoring');
     const dispatch = useMailDispatch();
     const [labels = []] = useLabels();

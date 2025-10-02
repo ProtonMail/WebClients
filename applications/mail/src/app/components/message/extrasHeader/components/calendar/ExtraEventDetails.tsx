@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { VideoConferencingWidgetConfig, getVideoConferencingData } from '@proton/calendar';
 import { IconRow } from '@proton/components';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { getFrequencyString } from '@proton/shared/lib/calendar/recurrence/getFrequencyString';
 import { escapeInvalidHtmlTags, restrictedCalendarSanitize } from '@proton/shared/lib/calendar/sanitize';
@@ -13,8 +14,6 @@ import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import type { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import useFlag from '@proton/unleash/useFlag';
-
-import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import type { InvitationModel } from '../../../../../helpers/calendar/invite';
 import { getParticipantsList } from '../../../../../helpers/calendar/invite';
@@ -26,7 +25,7 @@ interface Props {
 }
 
 const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
-    const mailSettings = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
     const eventDetailsRef = useRef<HTMLDivElement>(null);
 
     const {

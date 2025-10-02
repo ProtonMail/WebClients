@@ -4,6 +4,7 @@ import { c, msgid } from 'ttag';
 
 import { useSubscribeEventManager } from '@proton/components';
 import { useFolders } from '@proton/mail';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { EVENT_ACTIONS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { isWindows } from '@proton/shared/lib/helpers/browser';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -11,7 +12,6 @@ import { isImported } from '@proton/shared/lib/mail/messages';
 
 import { isElementReminded } from '../../../helpers/snooze';
 import type { ConversationEvent, Event, MessageEvent } from '../../../models/event';
-import useMailModel from '../../useMailModel';
 import { displayGrouppedNotification, displayNotification } from './notificationHelpers';
 
 const MAX_WINDOWS_NOTIFICATIONS = 3;
@@ -37,7 +37,7 @@ const isConversationUnsnoozed = (event: ConversationEvent): boolean => {
 
 const useNewEmailNotification = (onOpenElement: () => void) => {
     const history = useHistory();
-    const mailSettings = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
     const [folders = []] = useFolders();
 
     const notifier = [

@@ -7,6 +7,7 @@ import type { HotkeyTuple } from '@proton/components';
 import { useHotkeys } from '@proton/components';
 import { useFolders } from '@proton/mail';
 import { labelIncludes } from '@proton/mail/helpers/location';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
@@ -15,7 +16,6 @@ import type { Filter } from '@proton/shared/lib/mail/search';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
-import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
 import { isStarred } from '../../helpers/elements';
@@ -94,7 +94,7 @@ export const useMailboxHotkeys = (
         showCommander,
     }: MailboxHotkeysHandlers
 ) => {
-    const mailSettings = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
     const { Shortcuts, ViewLayout } = mailSettings;
     const { selectAll } = useSelectAll({ labelID });
     const getElementsFromIDs = useGetElementsFromIDs();
