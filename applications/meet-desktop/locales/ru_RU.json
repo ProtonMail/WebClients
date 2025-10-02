@@ -1,0 +1,209 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);",
+    "language": "ru_RU"
+  },
+  "contexts": {
+    "App menu": {
+      "About ${ MAIL_APP_NAME }": [
+        "О ${ MAIL_APP_NAME }"
+      ],
+      "Actual Size": [
+        "Исходный размер"
+      ],
+      "Check spelling while typing": [
+        "Проверять правописание при наборе текста"
+      ],
+      "Clear application data": [
+        "Удаление данных приложения"
+      ],
+      "Close Window": [
+        "Закрыть окно"
+      ],
+      "Copy": [
+        "Копировать"
+      ],
+      "Cut": [
+        "Вырезать"
+      ],
+      "Delete": [
+        "Удалить"
+      ],
+      "Force Reload": [
+        "Принудительная перезагрузка"
+      ],
+      "Hide ${ MAIL_APP_NAME }": [
+        "Скрыть ${ MAIL_APP_NAME }"
+      ],
+      "Hide Others": [
+        "Скрыть другие"
+      ],
+      "Minimize": [
+        "Свернуть"
+      ],
+      "Paste": [
+        "Вставить"
+      ],
+      "Paste and Match Style": [
+        "Вставить и подобрать стиль"
+      ],
+      "Quit": [
+        "Выйти"
+      ],
+      "Quit ${ MAIL_APP_NAME }": [
+        "Выйти из ${ MAIL_APP_NAME }"
+      ],
+      "Redo": [
+        "Повторить"
+      ],
+      "Reload": [
+        "Перезагрузить"
+      ],
+      "Select All": [
+        "Выбрать всё"
+      ],
+      "Show All": [
+        "Показать все"
+      ],
+      "Show logs": [
+        "Показать журналы"
+      ],
+      "Speech": [
+        "Речь"
+      ],
+      "Start ${ MAIL_APP_NAME } at login": [
+        "Запуск ${ MAIL_APP_NAME } при входе"
+      ],
+      "Start Speaking": [
+        "Начать говорить"
+      ],
+      "Stop Speaking": [
+        "Закончить говорить"
+      ],
+      "Toggle Full Screen": [
+        "Переключить в полноэкранный режим"
+      ],
+      "Undo": [
+        "Отменить"
+      ],
+      "Uninstall ${ MAIL_APP_NAME }": [
+        "Удалить ${ MAIL_APP_NAME }"
+      ],
+      "Zoom": [
+        "Приблизить"
+      ],
+      "Zoom In": [
+        "Увеличить масштаб"
+      ],
+      "Zoom Out": [
+        "Уменьшить масштаб"
+      ]
+    },
+    "App Menu": {
+      "Services": [
+        "Службы"
+      ]
+    },
+    "Context menu": {
+      "Add to dictionary": [
+        "Добавить в словарь"
+      ],
+      "Copy link": [
+        "Копировать ссылку"
+      ],
+      "Emoji and Symbols": [
+        "Эмодзи и символы"
+      ],
+      "Save image as…": [
+        "Сохранить изображение как ..."
+      ],
+      "Speech": [
+        "Речь"
+      ],
+      "Start Speaking": [
+        "Начать говорить"
+      ],
+      "Stop Speaking": [
+        "Закончить говорить"
+      ]
+    },
+    "Context Menu": {
+      "Copy": [
+        "Копировать"
+      ],
+      "Cut": [
+        "Вырезать"
+      ],
+      "Look Up “${ text }”": [
+        "Искать “${ text }”"
+      ],
+      "Paste": [
+        "Вставить"
+      ],
+      "Paste and Match Style": [
+        "Вставить и подобрать стиль"
+      ],
+      "Redo": [
+        "Повторить"
+      ],
+      "Select All": [
+        "Выбрать все"
+      ],
+      "Undo": [
+        "Отменить"
+      ]
+    },
+    "Error dialog": {
+      "Due to an error, the app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
+        "Из-за ошибки приложение будет закрыто. Попробуйте запустить его снова, и если проблема не будет устранена, свяжитесь с нами. Информацию об ошибке можно найти в журнале приложения."
+      ],
+      "Unexpected error": [
+        "Непредвиденная ошибка"
+      ]
+    },
+    "error screen": {
+      "Cannot establish connection": [
+        "Не удалось установить соединение"
+      ],
+      "Check your internet connection or network settings. If the issue persists, please contact customer support.": [
+        "Проверьте подключение к Интернету или настройки сети. Если проблема не будет устранена, обратитесь в службу поддержки."
+      ],
+      "Try again": [
+        "Попробовать снова"
+      ]
+    },
+    "loading screen": {
+      "Loading ${ title }…": [
+        "Загрузка ${ title }"
+      ]
+    },
+    "Menu": {
+      "Edit": [
+        "Изменить"
+      ],
+      "File": [
+        "Файл"
+      ],
+      "View": [
+        "Посмотреть"
+      ],
+      "Window": [
+        "Окно"
+      ]
+    },
+    "Unload warning": {
+      "Changes you made may not be saved.": [
+        "Внесенные изменения могут не сохраниться."
+      ],
+      "Leave": [
+        "Оставить"
+      ],
+      "Leave page?": [
+        "Покинуть страницу?"
+      ],
+      "Stay": [
+        "Остаться"
+      ]
+    }
+  }
+}

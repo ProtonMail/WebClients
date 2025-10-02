@@ -1,0 +1,209 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=2; plural=(n != 1);",
+    "language": "hu_HU"
+  },
+  "contexts": {
+    "App menu": {
+      "About ${ MAIL_APP_NAME }": [
+        "A ${ MAIL_APP_NAME } névjegye"
+      ],
+      "Actual Size": [
+        "Tényleges méret"
+      ],
+      "Check spelling while typing": [
+        "Helyesírás ellenőrzése gépelés közben"
+      ],
+      "Clear application data": [
+        "Alkalmazás adatainak törlése"
+      ],
+      "Close Window": [
+        "Ablak bezárása"
+      ],
+      "Copy": [
+        "Másolás"
+      ],
+      "Cut": [
+        "Kivágás"
+      ],
+      "Delete": [
+        "Törlés"
+      ],
+      "Force Reload": [
+        "Kényszerített újratöltés"
+      ],
+      "Hide ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } elrejtése"
+      ],
+      "Hide Others": [
+        "Többi elrejtése"
+      ],
+      "Minimize": [
+        "Kis méret"
+      ],
+      "Paste": [
+        "Beillesztés"
+      ],
+      "Paste and Match Style": [
+        "Beillesztés és stílusillesztés"
+      ],
+      "Quit": [
+        "Kilépés"
+      ],
+      "Quit ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } bezárása"
+      ],
+      "Redo": [
+        "Újra"
+      ],
+      "Reload": [
+        "Újratöltés"
+      ],
+      "Select All": [
+        "Összes kijelölése"
+      ],
+      "Show All": [
+        "Összes megjelenítése"
+      ],
+      "Show logs": [
+        "Naplók megjelenítése"
+      ],
+      "Speech": [
+        "Beszéd"
+      ],
+      "Start ${ MAIL_APP_NAME } at login": [
+        "A(z) ${ MAIL_APP_NAME } indítása bejelentkezéskor"
+      ],
+      "Start Speaking": [
+        "Kezdjen beszélni"
+      ],
+      "Stop Speaking": [
+        "Beszéd vége"
+      ],
+      "Toggle Full Screen": [
+        "Teljes képernyő be-/kikapcsolása"
+      ],
+      "Undo": [
+        "Visszavonás"
+      ],
+      "Uninstall ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } alkalmazás eltávolítása"
+      ],
+      "Zoom": [
+        "Nagyítás"
+      ],
+      "Zoom In": [
+        "Közelítés"
+      ],
+      "Zoom Out": [
+        "Távolítás"
+      ]
+    },
+    "App Menu": {
+      "Services": [
+        "Szolgáltatások"
+      ]
+    },
+    "Context menu": {
+      "Add to dictionary": [
+        "Hozzáadás a szótárhoz"
+      ],
+      "Copy link": [
+        "Hivatkozás másolása"
+      ],
+      "Emoji and Symbols": [
+        "Emoji és szimbólumok"
+      ],
+      "Save image as…": [
+        "Kép mentése másként…"
+      ],
+      "Speech": [
+        "Beszéd"
+      ],
+      "Start Speaking": [
+        "Kezdjen beszélni"
+      ],
+      "Stop Speaking": [
+        "Beszéd vége"
+      ]
+    },
+    "Context Menu": {
+      "Copy": [
+        "Másolás"
+      ],
+      "Cut": [
+        "Kivágás"
+      ],
+      "Look Up “${ text }”": [
+        "„${ text }” keresése"
+      ],
+      "Paste": [
+        "Beillesztés"
+      ],
+      "Paste and Match Style": [
+        "Beillesztés és stílusillesztés"
+      ],
+      "Redo": [
+        "Újra"
+      ],
+      "Select All": [
+        "Összes kijelölése"
+      ],
+      "Undo": [
+        "Visszavonás"
+      ]
+    },
+    "Error dialog": {
+      "Due to an error, the app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
+        "Hiba miatt az alkalmazás bezárul. Próbálja meg újra futtatni, és ha a probléma továbbra is fennáll, lépjen kapcsolatba velünk. A hibára vonatkozó információk az alkalmazás naplójában találhatók."
+      ],
+      "Unexpected error": [
+        "Váratlan hiba"
+      ]
+    },
+    "error screen": {
+      "Cannot establish connection": [
+        "Nem tud kapcsolatot létesíteni"
+      ],
+      "Check your internet connection or network settings. If the issue persists, please contact customer support.": [
+        "Ellenőrizze az internetkapcsolatot vagy a hálózati beállításokat. Ha a probléma továbbra is fennáll, kérjük, forduljon az ügyfélszolgálathoz."
+      ],
+      "Try again": [
+        "Próbálja újra"
+      ]
+    },
+    "loading screen": {
+      "Loading ${ title }…": [
+        "${ title } betöltése…"
+      ]
+    },
+    "Menu": {
+      "Edit": [
+        "Szerkesztés"
+      ],
+      "File": [
+        "Fájl"
+      ],
+      "View": [
+        "Megtekintés"
+      ],
+      "Window": [
+        "Ablak"
+      ]
+    },
+    "Unload warning": {
+      "Changes you made may not be saved.": [
+        "Előfordulhat, hogy a módosítások nem kerülnek mentésre."
+      ],
+      "Leave": [
+        "Elhagyás"
+      ],
+      "Leave page?": [
+        "Oldal elhagyása?"
+      ],
+      "Stay": [
+        "Marad"
+      ]
+    }
+  }
+}
