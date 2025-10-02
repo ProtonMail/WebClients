@@ -15,6 +15,7 @@ import { useGetStartedChecklist } from 'proton-mail/containers/onboardingCheckli
 import { getLocationElementsCount } from 'proton-mail/helpers/elements';
 import { isConversationMode } from 'proton-mail/helpers/mailSettings';
 
+import { hasSeenAllOnboarding } from './categoriesOnboarding.helpers';
 import { AudienceType, FeatureValueDefault, type OnboardingInfo } from './onboardingInterface';
 
 const B2B_REQUIRED_NUMBER_OF_MAILS = 20;
@@ -41,6 +42,7 @@ export const useCategoriesOnboarding = (): OnboardingInfo => {
         messageCountsLoading ||
         conversationCountsLoading ||
         b2cOnboardingFlag.loading ||
+        b2bOnboardingFlag.loading ||
         accountDateThreshold.loading;
 
     if (loading || !accountDateThreshold.feature?.Value) {
@@ -87,6 +89,7 @@ export const useCategoriesOnboarding = (): OnboardingInfo => {
 
     // B2C users conditions
     const isChecklistFull = mailChecklist.displayState === CHECKLIST_DISPLAY_TYPE.FULL;
+    const allOnboardingSeen = hasSeenAllOnboarding(b2cOnboardingFlag.feature?.Value ?? 0);
     const allMailsElementsCount = getLocationElementsCount(
         MAILBOX_LABEL_IDS.ALL_MAIL,
         conversationCounts,
@@ -96,7 +99,11 @@ export const useCategoriesOnboarding = (): OnboardingInfo => {
 
     // Existing B2C users see the card if they have a given number of emails and the checklist is no longer present on the list of email
     return {
-        isUserEligible: isExistingUser && allMailsElementsCount > B2C_REQUIRED_NUMBER_OF_MAILS && !isChecklistFull,
+        isUserEligible:
+            isExistingUser &&
+            !allOnboardingSeen &&
+            allMailsElementsCount > B2C_REQUIRED_NUMBER_OF_MAILS &&
+            !isChecklistFull,
         audienceType: AudienceType.B2C,
         flagValue: b2cOnboardingFlag.feature?.Value ?? 0,
     };
