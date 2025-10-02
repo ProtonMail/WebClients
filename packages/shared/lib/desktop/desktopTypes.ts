@@ -9,7 +9,7 @@ import { type DailyStatsStored, zDailyStatsReport } from './DailyStats';
 import { type DefaultProtocol, zDefaultProtocol } from './DefaultProtocol';
 import type { AppVersion, DesktopVersion } from './DesktopVersion';
 
-export type CHANGE_VIEW_TARGET = 'meet' | 'account';
+export type CHANGE_VIEW_TARGET = 'meet' | 'mail' | 'calendar' | 'account';
 export type ElectronNotification = {
     title: string;
     body: string;
