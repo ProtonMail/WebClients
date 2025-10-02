@@ -2112,6 +2112,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Efter provperioden slutar den ${ formattedDate } kommer den bli en betald prenumeration som förnyas automatiskt var ${ renewCycle }:e månad. Du kommer inte att debiteras om du avbryter före ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Efter provperioden slutar den ${ formattedDate } kommer den bli en betald prenumeration som förnyas automatiskt månadsvis. Du kommer inte att debiteras om du avbryter före ${ formattedDate }."
+      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Genom att klicka på “Prova“ godkänner du våra ${ termsAndConditions }."
       ],
@@ -2381,6 +2387,10 @@
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Säkra inloggningar på alla dina enheter. Inkluderar obegränsat antal hide-my-email-alias, delning, integrerad 2FA, ${ DARK_WEB_MONITORING_NAME } och mer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadress, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsat antal hide-my-email-alias och mer.",
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadresser, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsat antal hide-my-email-alias och mer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadress, stöd för anpassade e-postdomäner, obegränsat antal hide-my-email-alias och mer.",
@@ -10368,6 +10378,12 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Prenumeration slutar: Återaktivera senast ${ byDate } för att behålla dina ${ planName }-förmåner. ${ reactivateLink }"
       ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Prenumeration slutar: För att behålla dina ${ planName }-förmåner, starta om din prenumeration i Apple App Store senast ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Prenumeration slutar: För att behålla dina ${ planName }-förmåner, starta om din prenumeration i Google Play Butik senast ${ byDate }. ${ reactivateLink }"
+      ],
       "Summary": [
         "Sammanfattning"
       ],
@@ -12459,6 +12475,9 @@
       ],
       "Emails (last month)": [
         "E-post (senaste månaden)"
+      ],
+      "Enable ${ DARK_WEB_MONITORING_NAME } for ${ domain.DomainName }": [
+        "Aktivera ${ DARK_WEB_MONITORING_NAME } för ${ domain.DomainName }"
       ],
       "Enabled": [
         "Aktiverat"
@@ -16721,6 +16740,9 @@
       "Offer unavailable": [
         "Erbjudande otillgängligt"
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Betalningsmetod krävs för att prenumerationen ska aktiveras efter provperioden är slut."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Återaktivera först din prenumeration för att minska antalet utökningar."
       ],
@@ -17379,6 +17401,9 @@
       ],
       "Invite friends. Get credits.": [
         "Bjud in vänner. Få krediter."
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Sista chansen att utforska alla kraftfulla funktioner som **${ planTitle }** har att erbjuda."
       ],
       "Refer friends": [
         "Hänvisa vänner"
