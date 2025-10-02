@@ -1,26 +1,12 @@
-import { isWindows } from "../helpers";
-import { registerMailtoApp, unregisterMailtoApp } from "./setup_mailto_windows";
-
+// Placeholder for future protocol handlers
 export async function installProtocols() {
-    if (!isWindows) {
-        return;
-    }
-
-    registerMailtoApp();
+    // No protocols to install for Meet currently
 }
 
 export async function updateProtocols() {
-    if (!isWindows) {
-        return;
-    }
-
-    registerMailtoApp();
+    // No protocols to update for Meet currently
 }
 
 export async function uninstallProtocols() {
-    if (!isWindows) {
-        return;
-    }
-
-    unregisterMailtoApp();
+    // No protocols to uninstall for Meet currently
 }

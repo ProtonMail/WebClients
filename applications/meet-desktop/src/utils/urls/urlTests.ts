@@ -30,7 +30,7 @@ export const trimLocalID = (urlString: string) => {
     return url.toString();
 };
 
-export const isCalendar = (urlString: string) => {
+export const isMeet = (urlString: string) => {
     try {
         const url = new URL(urlString);
         return getAppURL().meet === url.origin;
@@ -39,16 +39,7 @@ export const isCalendar = (urlString: string) => {
     }
 };
 
-export const isMail = (urlString: string) => {
-    try {
-        const url = new URL(urlString);
-        return getAppURL().meet === url.origin;
-    } catch (error) {
-        return false;
-    }
-};
-
-const isCalendarHome = (urlString: string) => {
+const isMeetHome = (urlString: string) => {
     try {
         const url = new URL(urlString);
 
@@ -56,31 +47,14 @@ const isCalendarHome = (urlString: string) => {
             return false;
         }
 
-        return /^\/u\/(\d+)\/?$/.test(url.pathname); // /u/0;
-    } catch (error) {
-        return false;
-    }
-};
-
-const isMailHome = (urlString: string) => {
-    try {
-        const url = new URL(urlString);
-
-        if (getAppURL().meet !== url.origin) {
-            return false;
-        }
-
-        return (
-            /^\/u\/(\d+)\/?$/.test(url.pathname) || // /u/0
-            /^\/u\/(\d+)\/inbox\/?$/.test(url.pathname) // /u/0/inbox
-        );
+        return /^\/u\/(\d+)\/?$/.test(url.pathname); // /u/0
     } catch (error) {
         return false;
     }
 };
 
 export const isHome = (urlString: string) => {
-    return isMailHome(urlString) || isCalendarHome(urlString);
+    return isMeetHome(urlString);
 };
 
 export const isAccount = (urlString: string) => {
@@ -202,13 +176,7 @@ export const isHostAllowed = (host: string) => {
 };
 
 export const isHomePage = (url: string) => {
-    if (isMailHome(url)) {
-        return true;
-    }
-
-    if (isCalendarHome(url)) {
-        return true;
-    }
+    return isHome(url);
 };
 
 export const isSameURL = (urlA: string, urlB: string) => {
