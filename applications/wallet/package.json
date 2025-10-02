@@ -16,7 +16,7 @@
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone",
         "test": "TZ=UTC vitest",
-        "test:ci": "yarn test --coverage",
+        "test:ci": "yarn test --coverage --run",
         "test:ui": "yarn test --ui",
         "test:watch": "yarn test --watch"
     },
