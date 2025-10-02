@@ -3,9 +3,9 @@ import { useEffect } from 'react';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 
-import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import type { MessageChange } from '../../components/composer/Composer';
@@ -23,7 +23,7 @@ interface Props {
 }
 
 const useReduxRefac = ({ composerID, modelMessage, handleChange, handleChangeContent }: Props) => {
-    const mailSettings = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
     const [userSettings] = useUserSettings();
     const [addresses = []] = useAddresses();
     const composer = useMailSelector((state) => selectComposer(state, composerID || ''));

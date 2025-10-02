@@ -11,11 +11,11 @@ import {
     useModalStateObject,
     useNotifications,
 } from '@proton/components';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { CONFIRM_LINK } from '@proton/shared/lib/mail/mailSettings';
 import truncate from '@proton/utils/truncate';
 
-import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 import {
     filterSubscriptionList,
@@ -37,7 +37,7 @@ import { ModalUnsubscribeMailToContent } from './ModalUnsubscribeMailToContent';
 import { useSendUnsubscribeEmail } from './useSendUnsubscribeEmail';
 
 const ModalUnsubscribe = ({ subscription, ...props }: PropsWithNewsletterSubscription & ModalProps) => {
-    const mailSettings = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
 
     const dispatch = useMailDispatch();
     const subscriptionIndex = useMailSelector(getFilteredSubscriptionIndex(subscription.ID));

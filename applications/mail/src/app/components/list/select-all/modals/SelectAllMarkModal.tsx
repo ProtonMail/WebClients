@@ -4,11 +4,11 @@ import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
 import { Prompt } from '@proton/components';
 import { useConversationCounts, useMessageCounts } from '@proton/mail';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
 import { getLocationElementsCount } from 'proton-mail/helpers/elements';
 import { isConversationMode } from 'proton-mail/helpers/mailSettings';
-import useMailModel from 'proton-mail/hooks/useMailModel';
 
 interface Props extends ModalProps {
     onResolve: () => void;
@@ -18,7 +18,7 @@ interface Props extends ModalProps {
     labelID: string;
 }
 const SelectAllMarkModal = ({ onResolve, onReject, isMessage, markAction, labelID, ...rest }: Props) => {
-    const mailSettings = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
     const [conversationCounts] = useConversationCounts();
     const [messageCounts] = useMessageCounts();
     const isConversation = isConversationMode(labelID, mailSettings);

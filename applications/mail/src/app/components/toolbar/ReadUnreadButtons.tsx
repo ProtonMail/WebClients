@@ -4,9 +4,9 @@ import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms';
 import { Icon, ToolbarButton } from '@proton/components';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
-import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { elementsAreUnread as elementsAreUnreadSelector } from '../../store/elements/elementsSelectors';
@@ -18,7 +18,7 @@ interface Props {
 }
 
 const ReadUnreadButtons = ({ selectedIDs, onMarkAs }: Props) => {
-    const { Shortcuts } = useMailModel('MailSettings');
+    const [{ Shortcuts }] = useMailSettings();
 
     const elementsAreUnread = useMailSelector(elementsAreUnreadSelector);
 

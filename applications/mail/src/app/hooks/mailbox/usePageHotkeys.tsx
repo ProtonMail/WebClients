@@ -3,10 +3,9 @@ import { useRef } from 'react';
 import type { HotkeyTuple } from '@proton/components';
 import { useHotkeys } from '@proton/components';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 import { isBusy } from '@proton/shared/lib/shortcuts/helpers';
-
-import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { ComposeTypes } from '../composer/useCompose';
@@ -16,7 +15,7 @@ export interface PageHotkeysHandlers {
 }
 
 export const usePageHotkeys = ({ onOpenShortcutsModal }: PageHotkeysHandlers) => {
-    const { Shortcuts } = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
     const onCompose = useOnCompose();
 
     const documentRef = useRef(window.document);
@@ -48,7 +47,7 @@ export const usePageHotkeys = ({ onOpenShortcutsModal }: PageHotkeysHandlers) =>
         [
             KeyboardKey.Slash,
             (e) => {
-                if (Shortcuts && !isBusy(e)) {
+                if (mailSettings.Shortcuts && !isBusy(e)) {
                     e.preventDefault();
                     const button = document.querySelector('[data-shorcut-target="searchbox-button"]') as HTMLElement;
                     button?.dispatchEvent(
@@ -64,7 +63,7 @@ export const usePageHotkeys = ({ onOpenShortcutsModal }: PageHotkeysHandlers) =>
         [
             'N',
             (e) => {
-                if (Shortcuts && !isBusy(e)) {
+                if (mailSettings.Shortcuts && !isBusy(e)) {
                     e.preventDefault();
                     void onCompose({ type: ComposeTypes.newMessage, action: MESSAGE_ACTIONS.NEW });
                 }

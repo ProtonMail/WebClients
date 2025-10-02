@@ -9,6 +9,7 @@ import { DropdownMenuButton, Icon, useModalState, usePopperAnchor } from '@proto
 import type { PublicKeyReference } from '@proton/crypto';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { getHumanLabelID } from '@proton/mail/helpers/location';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties';
@@ -16,8 +17,6 @@ import { changeSearchParams } from '@proton/shared/lib/helpers/url';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import type { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
 import { ALMOST_ALL_MAIL } from '@proton/shared/lib/mail/mailSettings';
-
-import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { useOnCompose } from '../../../containers/ComposeProvider';
 import { getContactEmail } from '../../../helpers/message/messageRecipients';
@@ -70,7 +69,7 @@ const MailRecipientItemSingle = ({
 
     const contactsMap = useContactsMap();
     const { getRecipientLabel } = useRecipientLabel();
-    const mailSettings = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
     const onCompose = useOnCompose();
 
     const [trustPublicKeyModalProps, setTrustPublicKeyModalOpen, renderTrustPublicKeyModal] = useModalState();

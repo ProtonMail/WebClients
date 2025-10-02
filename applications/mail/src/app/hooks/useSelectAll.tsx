@@ -2,6 +2,7 @@ import { useCallback, useMemo } from 'react';
 
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { useConversationCounts, useFolders, useLabels, useMessageCounts } from '@proton/mail';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useFlag } from '@proton/unleash';
 
 import { getLocationElementsCount } from 'proton-mail/helpers/elements';
@@ -11,7 +12,6 @@ import {
     getSelectAllBannerTextWithLocation,
     getSelectAllButtonText,
 } from 'proton-mail/helpers/selectAll';
-import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 import { layoutActions } from 'proton-mail/store/layout/layoutSlice';
 import { selectSelectAll } from 'proton-mail/store/layout/layoutSliceSelectors';
@@ -21,7 +21,7 @@ interface Props {
 }
 
 export const useSelectAll = ({ labelID }: Props) => {
-    const mailSettings = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
     const mailPageSize = mailSettings.PageSize;
     const [conversationCounts] = useConversationCounts();
     const [messageCounts] = useMessageCounts();

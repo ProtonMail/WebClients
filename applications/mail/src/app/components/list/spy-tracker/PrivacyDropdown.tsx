@@ -6,13 +6,13 @@ import { Href } from '@proton/atoms';
 import { Dropdown, Icon, useApi, useModalState, usePopperAnchor, useSpotlightOnFeature } from '@proton/components';
 import PreventTrackingToggle from '@proton/components/containers/emailPrivacy/PreventTrackingToggle';
 import { FeatureCode } from '@proton/features';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { TelemetryMailEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import noTrackersImage from '@proton/styles/assets/img/illustrations/no-trackers-found.svg';
 import trackersImage from '@proton/styles/assets/img/illustrations/trackers-found.svg';
 
-import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import { emailTrackerProtectionURL } from '../../../constants';
@@ -57,7 +57,7 @@ interface Props {
 const PrivacyDropdown = ({ message }: Props) => {
     const api = useApi();
     const dispatch = useMailDispatch();
-    const mailSettings = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
     const [spyTrackerModalProps, setSpyTrackerModalOpen, renderSpyTrackerModal] = useModalState();
     const [utmTrackerModalProps, setUTMTrackerModalOpen, renderUTMTrackerModal] = useModalState();
 

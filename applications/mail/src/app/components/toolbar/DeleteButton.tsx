@@ -3,9 +3,8 @@ import { c } from 'ttag';
 import { Kbd } from '@proton/atoms';
 import { Icon, ToolbarButton } from '@proton/components';
 import { useLoading } from '@proton/hooks';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { metaKey } from '@proton/shared/lib/helpers/browser';
-
-import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
 
@@ -16,7 +15,7 @@ interface Props {
 
 const DeleteButton = ({ onDelete, selectedIDs = [] }: Props) => {
     const [loading, withLoading] = useLoading();
-    const { Shortcuts } = useMailModel('MailSettings');
+    const [{ Shortcuts }] = useMailSettings();
 
     const titleDelete = Shortcuts ? (
         <>

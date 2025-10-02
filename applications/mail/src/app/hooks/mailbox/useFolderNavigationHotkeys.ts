@@ -1,6 +1,7 @@
 import { useHistory } from 'react-router-dom';
 
 import type { HotkeyTuple } from '@proton/components';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
@@ -9,11 +10,10 @@ import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 import { isBusy } from '@proton/shared/lib/shortcuts/helpers';
 
 import { useCategoriesShortcuts } from 'proton-mail/components/categoryView/useCategoriesShortcuts';
-import useMailModel from 'proton-mail/hooks/useMailModel';
 
 export const useFolderNavigationHotkeys = (): HotkeyTuple[] => {
     const history = useHistory<any>();
-    const { Shortcuts, ShowMoved, AlmostAllMail } = useMailModel('MailSettings');
+    const [{ Shortcuts, ShowMoved, AlmostAllMail }] = useMailSettings();
 
     const { categoriesAndInboxShortcuts } = useCategoriesShortcuts();
 
