@@ -43,10 +43,10 @@ export async function initializeSentry() {
     }
 
     const appID = await getAppID();
-    const mailURL = new URL(getAppURL().mail);
-    const environment = mailURL.hostname.replace(/^mail./i, "");
+    const meetURL = new URL(getAppURL().meet);
+    const environment = meetURL.hostname.replace(/^meet./i, "");
     const release = `${pkg.name}@${pkg.version}+${app.isPackaged ? "packaged" : "unpackaged"}`;
-    const dsn = process.env.DESKTOP_SENTRY_DSN.replace("sentry", `${mailURL.host}/api/core/v4/reports/sentry`);
+    const dsn = process.env.DESKTOP_SENTRY_DSN.replace("sentry", `${meetURL.host}/api/core/v4/reports/sentry`);
 
     const debug = !isProdEnv();
 
