@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/components';
 import { MemberRole, useDrive } from '@proton/drive';
 
-import useDriveNavigation from '../../hooks/drive/useNavigate';
 import { useDriveDocsFeatureFlag, useIsSheetsEnabled } from '../../store/_documents';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
@@ -20,7 +19,6 @@ export function useFolder() {
     const { handleError } = useSdkErrorHandler();
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
     const isSheetsEnabled = useIsSheetsEnabled();
-    const { navigateToRoot } = useDriveNavigation();
     const { createNotification } = useNotifications();
 
     const handleFolderError = useCallback(
@@ -41,9 +39,9 @@ export function useFolder() {
 
             handleError(error);
             setError(enrichedError);
-            navigateToRoot();
+            //TODO: Implement better way of handling error (Retry capability for ex)
         },
-        [handleError, navigateToRoot]
+        [handleError]
     );
 
     const load = useCallback(
@@ -54,9 +52,7 @@ export function useFolder() {
             setIsLoading(true);
 
             try {
-                const { node, errors } = getNodeEntity(await drive.getNode(folderNodeUid));
-                const error = Array.from(errors.values()).at(0);
-                handleFolderError(error as Error);
+                const { node } = getNodeEntity(await drive.getNode(folderNodeUid));
                 const legacyNode = await mapNodeToLegacyItem(node, folderShareId, drive);
                 const isDeviceRoot = !node.parentUid && !!getByRootFolderUid(folderNodeUid);
                 const isDeviceFolder = isDeviceRoot || (legacyNode.rootUid && !!getByRootFolderUid(legacyNode.rootUid));
@@ -88,10 +84,6 @@ export function useFolder() {
                     try {
                         const legacyItem = await mapNodeToLegacyItem(maybeNode, folderShareId, drive);
                         setItem(legacyItem);
-                        if (!maybeNode.ok) {
-                            // error on loading a single node inside the folder should not show notification
-                            handleError(maybeNode.error, { showNotification: false });
-                        }
                     } catch (e) {
                         handleError(e, {
                             showNotification: false,
@@ -106,7 +98,9 @@ export function useFolder() {
                     });
                 }
             } catch (e) {
-                handleFolderError(e as Error);
+                const error =
+                    e instanceof Error ? e : new Error(c('Error').t`Something went wrong during folder listing`);
+                handleFolderError(error);
             } finally {
                 setIsLoading(false);
             }
