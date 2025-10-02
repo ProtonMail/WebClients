@@ -24,6 +24,7 @@ import { useFlag } from '@proton/unleash';
 import debounce from '@proton/utils/debounce';
 
 import { calendarUrlQueryParams } from '../../constants';
+import { hasValidVideoConferenceInData } from '../videoConferencing/hasValidVideoConferenceInData';
 import {
     VideoConferenceProtonMeetIntegration,
     useVideoConfTelemetry,
@@ -250,12 +251,14 @@ export const useProtonMeetIntegration = ({
 
     useEffect(() => {
         const newlyAddedAttendees = validAttendeeCount > 0 && prevValidAttendeeCount.current === 0;
+        const hasValidVideoConference = hasValidVideoConferenceInData(model);
 
         if (
             isMeetVideoConferenceEnabled &&
             isAutoAddMeetingLinkEnabled &&
             isProtonMeetSettingEnabled &&
             (!model.conferenceUrl || model.isConferenceTmpDeleted) &&
+            !hasValidVideoConference &&
             newlyAddedAttendees
         ) {
             void createVideoConferenceMeeting();
