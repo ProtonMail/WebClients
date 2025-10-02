@@ -13,7 +13,7 @@
     "lint:warning": "eslint",
     "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone",
     "test": "jest",
-    "test:ci": "jest --runInBand --ci",
+    "test:ci": "jest --runInBand --ci --coverage",
     "test:watch": "jest --watch --coverage=false"
   },
   "dependencies": {
