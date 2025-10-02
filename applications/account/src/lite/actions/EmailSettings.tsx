@@ -24,7 +24,7 @@ import {
     updateViewMode,
 } from '@proton/shared/lib/api/mailSettings';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
-import { DEFAULT_MAILSETTINGS, STICKY_LABELS, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
+import { STICKY_LABELS, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import type {
     AUTO_DELETE_SPAM_AND_TRASH_DAYS,
     NEXT_MESSAGE_ON_MOVE,
@@ -55,7 +55,7 @@ const EmailSettings = ({
     const [loadingViewMode, withLoadingViewMode] = useLoading();
 
     const [user, loadingUser] = useUser();
-    const [mailSettings = DEFAULT_MAILSETTINGS, loadingMailSettings] = useMailSettings();
+    const [mailSettings, loadingMailSettings] = useMailSettings();
     const {
         AutoDeleteSpamAndTrashDays,
         AlmostAllMail,

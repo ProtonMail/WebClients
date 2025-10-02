@@ -52,7 +52,7 @@ export const Tab = ({ category, count, tabState }: Props) => {
             {category.notify && count > 0 && tabState === TabState.ACTIVE ? (
                 <span
                     aria-label={
-                        mailSettings?.ViewMode === VIEW_MODE.GROUP
+                        mailSettings.ViewMode === VIEW_MODE.GROUP
                             ? c('Label').ngettext(
                                   msgid`${count} unread conversation`,
                                   `${count} unread conversations`,

@@ -36,12 +36,12 @@ const ReferralSignatureToggle = () => {
     }, []);
 
     useEffect(() => {
-        if (loadingMailSettings === false && mailSettings?.PMSignatureReferralLink !== undefined) {
-            setShowShareLinkFooter(mailSettings?.PMSignatureReferralLink);
+        if (loadingMailSettings === false && mailSettings.PMSignatureReferralLink !== undefined) {
+            setShowShareLinkFooter(mailSettings.PMSignatureReferralLink);
         }
     }, [loadingMailSettings]);
 
-    if (loadingMailSettings || !mailSettings?.PMSignature || loadingUserSettings || !userSettings.Referral?.Link) {
+    if (loadingMailSettings || !mailSettings.PMSignature || loadingUserSettings || !userSettings.Referral?.Link) {
         return null;
     }
 
@@ -51,7 +51,7 @@ const ReferralSignatureToggle = () => {
             <br />
             <div
                 dangerouslySetInnerHTML={{
-                    __html: getProtonMailSignature(true, userSettings.Referral?.Link, mailSettings?.PMSignatureContent),
+                    __html: getProtonMailSignature(true, userSettings.Referral?.Link, mailSettings.PMSignatureContent),
                 }}
             />
             <br />

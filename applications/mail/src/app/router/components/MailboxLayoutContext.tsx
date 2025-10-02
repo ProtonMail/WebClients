@@ -50,7 +50,7 @@ export const MailboxLayoutProvider = ({ children }: PropsWithChildren) => {
 
     // Force message view on Deleted folder because we don't have ConversationID for soft-deleted messages
     const isInDeletedFolder = currentLabelID === MAILBOX_LABEL_IDS.SOFT_DELETED;
-    const isConversationGroupingEnabled = isInDeletedFolder ? false : mailSettings?.ViewMode === VIEW_MODE.GROUP;
+    const isConversationGroupingEnabled = isInDeletedFolder ? false : mailSettings.ViewMode === VIEW_MODE.GROUP;
 
     return (
         <MailboxLayoutContext.Provider

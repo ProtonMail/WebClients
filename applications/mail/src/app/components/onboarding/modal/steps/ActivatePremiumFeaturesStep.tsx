@@ -170,7 +170,7 @@ const ActivatePremiumFeaturesStep = ({ onNext }: OnboardingStepRenderCallback) =
 
     const activeFeatures: Record<FeatureID, boolean> = {
         aliases: addresses ? hasShortDomain(addresses) : false,
-        autoDelete: Boolean(mailSettings?.AutoDeleteSpamAndTrashDays),
+        autoDelete: Boolean(mailSettings.AutoDeleteSpamAndTrashDays),
         monitoring: userSettings.BreachAlerts.Value === DARK_WEB_MONITORING_STATE.ENABLED,
     };
 

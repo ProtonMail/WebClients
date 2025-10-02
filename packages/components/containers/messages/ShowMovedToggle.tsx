@@ -10,7 +10,7 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateShowMoved } from '@proton/shared/lib/api/mailSettings';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
-import { DEFAULT_MAILSETTINGS, SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
+import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 
 const { DRAFTS_AND_SENT, NONE } = SHOW_MOVED;
 
@@ -23,8 +23,8 @@ const ShowMovedToggle = ({ id }: Props) => {
     const { createNotification } = useNotifications();
     const api = useApi();
     const dispatch = useDispatch();
-    const [{ ShowMoved } = DEFAULT_MAILSETTINGS] = useMailSettings();
-    const { state, toggle } = useToggle(!!ShowMoved);
+    const [mailSettings] = useMailSettings();
+    const { state, toggle } = useToggle(!!mailSettings.ShowMoved);
 
     const handleChange = async (checked: boolean) => {
         const { MailSettings } = await api<{ MailSettings: MailSettings }>(

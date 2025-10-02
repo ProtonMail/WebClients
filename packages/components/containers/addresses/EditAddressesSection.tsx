@@ -17,7 +17,6 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Address } from '@proton/shared/lib/interfaces';
-import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
 import { useHotkeys } from '../../hooks/useHotkeys';
 import SettingsLayout from '../account/SettingsLayout';
@@ -33,7 +32,7 @@ interface Props {
 }
 
 const EditAddressesSection = ({ address }: Props) => {
-    const [mailSettings = DEFAULT_MAILSETTINGS] = useMailSettings();
+    const [mailSettings] = useMailSettings();
     const dispatch = useDispatch();
     const handleError = useErrorHandler();
     const [loading, withLoading] = useLoading();

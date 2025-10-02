@@ -20,7 +20,7 @@ export const UnreadFaviconCounterToggle = ({ id, className }: Props) => {
     const [mailSettings] = useMailSettings();
     const api = useApi();
     const dispatch = useDispatch();
-    const { state, toggle } = useToggle(!!mailSettings?.UnreadFavicon);
+    const { state, toggle } = useToggle(!!mailSettings.UnreadFavicon);
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
 

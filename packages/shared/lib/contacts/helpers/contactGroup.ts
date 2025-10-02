@@ -2,17 +2,16 @@ import type { ContactGroupLimitReachedProps } from '@proton/components/container
 
 import type { MailSettings } from '../../interfaces';
 import type { ContactEmail } from '../../interfaces/contacts';
-import { DEFAULT_MAILSETTINGS } from '../../mail/mailSettings';
 
 /**
  * Check that the user can add other contacts to a contact group.
  */
 export const hasReachedContactGroupMembersLimit = (
     numbersOfContacts: number,
-    mailSettings?: MailSettings,
+    mailSettings: MailSettings,
     strict = true
 ) => {
-    const { RecipientLimit } = mailSettings || DEFAULT_MAILSETTINGS;
+    const { RecipientLimit } = mailSettings;
 
     return strict ? numbersOfContacts < RecipientLimit : numbersOfContacts <= RecipientLimit;
 };
@@ -35,7 +34,7 @@ export const getContactGroupsDelayedSaveChanges = ({
     model: { [groupID: string]: number };
     initialModel: { [groupID: string]: number };
     onLimitReached?: (props: ContactGroupLimitReachedProps) => void;
-    mailSettings?: MailSettings;
+    mailSettings: MailSettings;
 }) => {
     // Get number of contacts in saved contact groups
     const groupIDs = Object.keys(changes);

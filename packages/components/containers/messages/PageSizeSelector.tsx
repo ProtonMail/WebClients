@@ -9,7 +9,6 @@ import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { updatePageSize } from '@proton/shared/lib/api/mailSettings';
-import { DEFAULT_MAIL_PAGE_SIZE } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 
@@ -50,7 +49,7 @@ export const PageSizeSelector = ({ id, size, loading }: Props) => {
                 id={id}
                 disabled={loading}
                 data-testid="page-size-selector"
-                value={mailSettings?.PageSize ?? DEFAULT_MAIL_PAGE_SIZE}
+                value={mailSettings.PageSize}
                 onValue={handleChange}
                 size={size}
                 aria-describedby={`label-${id}`}
