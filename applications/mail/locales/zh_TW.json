@@ -5486,7 +5486,7 @@
         "${ remainingDaysCount }天"
       ],
       "${ remainingDaysCount } day left": [
-        "剩下${ remainingDaysCount }天"
+        "${ remainingDaysCount } 剩餘天數"
       ],
       "account logins": [
         "帳號登錄"
@@ -5751,7 +5751,7 @@
     },
     "ICS widget label for event details": {
       "${ totalAttendees } participant": [
-        "${ totalAttendees } 個參與者"
+        "${ totalAttendees } 位參與者"
       ],
       "Organizer:": [
         "召集人："
@@ -6079,7 +6079,7 @@
         "${ contactsLength } 位聯絡人"
       ],
       "${ currentProgress } out of ${ totalProgress }": [
-        "${ totalProgress } 中的 ${ currentProgress }"
+        "${ totalProgress } 總數其中的 ${ currentProgress }"
       ],
       "${ elementsCount } conversation will be labelled as:": [
         "${ elementsCount }對話內容將被標記為:"
@@ -6097,7 +6097,7 @@
         "${ elementsCount }對話內容將被取消標記:"
       ],
       "${ elementsCount } message will be labelled as:": [
-        "${ elementsCount }訊息將被標記為:"
+        "${ elementsCount } 則訊息將標記為："
       ],
       "${ elementsCount } message will be marked as read.": [
         "${ elementsCount } 封郵件將被標記為已讀。"
@@ -6130,7 +6130,7 @@
         "${ MAIL_APP_NAME } 亦可防護您的企業商號。"
       ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
-        "${ messagesNotAuthorizedToMove } 封郵件無法進行移動。"
+        "${ messagesNotAuthorizedToMove } 封郵件無法將其移動。"
       ],
       "${ n } unread conversation": [
         "${ n } 篇未讀往來對話"
@@ -6604,7 +6604,7 @@
         "Discover ProtectBuy 商標"
       ],
       "Do you want to download this attachment anyway?": [
-        "無論如何，您仍要下載附件嗎？"
+        "無論如何，您仍打算要下載這些附件嗎？"
       ],
       "Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?": [
         "您要重新簽署此聯絡人詳細資料，並同時信任下列指紋的金鑰嗎？"
@@ -7405,7 +7405,7 @@
         "目前您已完成最新進度"
       ],
       "Select all ${ elementsCount } in ${ location }": [
-        "選取於${ location }全部的${ elementsCount }"
+        "選取全部 ${ elementsCount } 位置在 ${ location }"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "請選擇用於傳送至該電郵位址時使用的預設電郵格式。"
@@ -7597,7 +7597,7 @@
         "寄件人要求發送讀取回條。"
       ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
-        "無法驗證 ${ contactNames } ：聯絡人名片並未正確地簽署。\n這很可能是因為重設密碼所導致。\n您必須重新簽署聯絡人名片後，才能發送郵件給 ${ contactAddresses }，或是編輯聯絡人名片。"
+        "此位 ${ contactNames } 的驗證失敗：並未正確地將聯絡人名片\n進行簽署。\n這很可能是重設密碼後導致的結果。\n您必須重新簽署聯絡人名片，以便傳送訊息給 ${ contactAddresses } 或是進行編輯等動作。"
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "驗證過程將開新瀏覽器索引標籤。請停用任何使用中的彈出視窗攔截程式。"
@@ -7636,7 +7636,7 @@
         "這對話內容含有拉圾訊息。"
       ],
       "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "往來對話會標記為垃圾信件。請問您也想退訂日後相關的電郵嗎？"
+        "這些往來對話將標記為垃圾信件。請問您也想退訂日後相關的電郵嗎？"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "此電郵未能通過其網域的認證需求。可能是因為遭人假冒或不當轉寄。"
@@ -8080,7 +8080,7 @@
         "您有 **${ count } 則訊息** 儲存於此資料夾"
       ],
       "You have **${ count } message** tagged with this label": [
-        "您選取了有此標籤的 **${ count } 則訊息**"
+        "您有 **${ count } 則訊息** 以此標籤標注"
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "您有一個試用期 ${ planTitle } 訂購授權。如果您希望在試用期完結後繼續您的訂購授權，請增加一個繳款方式。"
@@ -8116,16 +8116,16 @@
         "您選取了有此標籤的 **${ count } 則訊息**"
       ],
       "You selected **${ elementsCount } conversation** in ${ location }": [
-        "您選擇**${ elementsCount }則於${ location }的對話內容**。"
+        "您選取了 **${ elementsCount } 則對話內容** 位置在 ${ location }"
       ],
       "You selected **${ elementsCount } conversation**.": [
-        "您選擇**${ elementsCount }則對話內容**。"
+        "您選取了 **${ elementsCount } 則對話內容**。"
       ],
       "You selected **${ elementsCount } message** in ${ location }": [
-        "您選擇**${ elementsCount }則於${ location }的訊息**。"
+        "您選取了 **${ elementsCount } 則訊息** 位置在 ${ location }"
       ],
       "You selected **${ elementsCount } message**.": [
-        "您選擇**${ elementsCount }則訊息**。"
+        "您選取了 **${ elementsCount } 則訊息**。"
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "您將於此日失去存取${ planTitle }功能"
@@ -8197,7 +8197,7 @@
         "匯入完成後不會保存您的登入資訊。"
       ],
       "Your message will expire in ${ numberOfDays } day.": [
-        "您的郵件到期日還有 ${ numberOfDays } 天。"
+        "您的郵件訊息過期倒數 ${ numberOfDays } 天。"
       ],
       "Your message will expire today.": [
         "您的郵件將在今日到期。"
@@ -8310,7 +8310,7 @@
         "您要信任下列指紋的主要公開金鑰嗎？"
       ],
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
-        "你已經在此電子信箱啟用了「以信任的金鑰驗證位址」的功能，\n但您還未將任何有效的加密金鑰設為信任。\n你必須要信任一把有效的金鑰才能寄送郵件到此電子信箱。"
+        "您已將這些電郵位址啟用透過信任金鑰進行位址驗證，\n惟仍未將使用中的加密金鑰授予信任。\n你必須備有信任的金鑰，在傳送訊息至這些電郵位址時不可或缺。"
       ]
     },
     "Key validation warning": {
@@ -11808,7 +11808,7 @@
         "無論如何，您仍要傳送此電郵嗎？"
       ],
       "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
-        "偵測到錯誤。您的郵件無法傳送到該電子信箱，原因如下："
+        "偵測到錯誤。您的電郵無法傳送到任一輸入的電郵位址，相關成因如下所示："
       ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
         "偵測到一些錯誤。您的電郵無法傳送到一或多個所輸入的電郵位址，原因如下："
@@ -11822,7 +11822,7 @@
         "下列電子信箱無效：${ invalidAddresses }"
       ],
       "We have detected some warnings. The following email address may not receive emails:": [
-        "偵測到一些警告。下列電子信箱有可能無法接收郵件："
+        "我們偵測些許警示。下列電郵位址可能將無法接收郵件："
       ]
     },
     "Sender verification details": {
@@ -12911,19 +12911,19 @@
         "${ elementsCount } 往來對話已移至 ${ labelName }."
       ],
       "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
-        "${ elementsCount } 篇對話已被移至垃圾郵件，寄件者已被列入您的垃圾郵件清單。"
+        "${ elementsCount } 則對話已被移至垃圾郵件，寄件者已被列入您的垃圾郵件清單。"
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } 則往來對話已移除 ${ labelName } 標籤。"
       ],
       "${ elementsCount } conversation removed from Starred.": [
-        "${ elementsCount } 則往來對話已移除已加星號標籤。"
+        "${ elementsCount } 則往來對話已移除星號標籤。"
       ],
       "${ elementsCount } conversation snoozed": [
-        "${ elementsCount } 個會話已緩辦"
+        "${ elementsCount } 則對話內容已延遲"
       ],
       "${ elementsCount } conversation unsnoozed": [
-        "${ elementsCount } 個會話已取消緩辦"
+        "${ elementsCount } 則對話取消延後"
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } 封郵件已加上 ${ labelName } 標籤。"
@@ -12947,7 +12947,7 @@
         "${ elementsCount } 則訊息已被移至垃圾郵件，寄件者已被列入垃圾郵件清單。"
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
-        "${ elementsCount } 封郵件已移除 ${ labelName } 標籤。"
+        "${ elementsCount } 則訊息已不再歸屬 ${ labelName }。"
       ],
       "Address copied to clipboard": [
         "位址已複製到剪貼簿"
@@ -13578,7 +13578,7 @@
         "刪除 ${ count } 則往來對話"
       ],
       "Delete ${ count } draft": [
-        "刪除 ${ count } 個草稿"
+        "刪除 ${ count } 件草稿"
       ],
       "Delete ${ count } message": [
         "刪除 ${ count } 封電郵"
