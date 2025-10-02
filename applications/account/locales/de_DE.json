@@ -12571,6 +12571,9 @@
       "Emails (last month)": [
         "E-Mails (letzter Monat)"
       ],
+      "Enable ${ DARK_WEB_MONITORING_NAME } for ${ domain.DomainName }": [
+        "${ DARK_WEB_MONITORING_NAME } für ${ domain.DomainName } aktivieren"
+      ],
       "Enabled": [
         "Aktiviert"
       ],
@@ -15515,6 +15518,12 @@
       "Link copied to clipboard": [
         "Link in die Zwischenablage kopiert"
       ],
+      "Monitoring disabled": [
+        "Überwachung deaktiviert"
+      ],
+      "Monitoring enabled": [
+        "Überwachung aktiviert"
+      ],
       "Number of records exceeds the download limit of 10000": [
         "Die Anzahl der Datensätze überschreitet die Grenze der maximalen Downloads von 10000"
       ],
@@ -17617,6 +17626,9 @@
       ],
       "Invite friends. Get credits.": [
         "Lade Freunde ein. Erhalte Guthaben."
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Letzte Chance, alle leistungsstarken Funktionen zu erkunden, die **${ planTitle }** zu bieten hat."
       ],
       "Refer friends": [
         "Freunde werben"
