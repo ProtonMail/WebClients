@@ -1,0 +1,209 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=1; plural=0;",
+    "language": "ka_GE"
+  },
+  "contexts": {
+    "App menu": {
+      "About ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME }-ის შესახებ"
+      ],
+      "Actual Size": [
+        "რეალური ზომა"
+      ],
+      "Check spelling while typing": [
+        "მართლწერის შემოწმება კრეფისას"
+      ],
+      "Clear application data": [
+        "აპლიკაციის მონაცემების გასუფთავება"
+      ],
+      "Close Window": [
+        "ფანჯრის დახურვა"
+      ],
+      "Copy": [
+        "კოპირება"
+      ],
+      "Cut": [
+        "ამოჭრა"
+      ],
+      "Delete": [
+        "წაშლა"
+      ],
+      "Force Reload": [
+        "ნაძალადევი გადატვირთვა"
+      ],
+      "Hide ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME }-ის დამალვა"
+      ],
+      "Hide Others": [
+        "სხვების დამალვა"
+      ],
+      "Minimize": [
+        "ჩაკეცვა"
+      ],
+      "Paste": [
+        "ჩასმა"
+      ],
+      "Paste and Match Style": [
+        "კოპირებისა და ჩასმის სტილი"
+      ],
+      "Quit": [
+        "გასვლა"
+      ],
+      "Quit ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME }-დან გასვლა"
+      ],
+      "Redo": [
+        "გამეორება"
+      ],
+      "Reload": [
+        "თავიდან ჩატვირთვა"
+      ],
+      "Select All": [
+        "ყველას მონიშვნა"
+      ],
+      "Show All": [
+        "ყველას ჩვენება"
+      ],
+      "Show logs": [
+        "ჟურნალის ჩვენება"
+      ],
+      "Speech": [
+        "საუბარი"
+      ],
+      "Start ${ MAIL_APP_NAME } at login": [
+        "${ MAIL_APP_NAME }-ის გაშვება სისტემაში შესვლისას"
+      ],
+      "Start Speaking": [
+        "ლაპარაკის დაწყება"
+      ],
+      "Stop Speaking": [
+        "ლაპარაკის დასრულება"
+      ],
+      "Toggle Full Screen": [
+        "სრულ ეკრანზე გადართვა"
+      ],
+      "Undo": [
+        "დაბრუნება"
+      ],
+      "Uninstall ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME }-ის წაშლა"
+      ],
+      "Zoom": [
+        "გადიდება"
+      ],
+      "Zoom In": [
+        "გადიდება"
+      ],
+      "Zoom Out": [
+        "დაპატარავება"
+      ]
+    },
+    "App Menu": {
+      "Services": [
+        "სერვისები"
+      ]
+    },
+    "Context menu": {
+      "Add to dictionary": [
+        "ლექსიკონში დამატება"
+      ],
+      "Copy link": [
+        "ბმულის კოპირება"
+      ],
+      "Emoji and Symbols": [
+        "ემოჯიები და სიმბოლოები"
+      ],
+      "Save image as…": [
+        "სურათად შენახვა როგორც…"
+      ],
+      "Speech": [
+        "საუბარი"
+      ],
+      "Start Speaking": [
+        "ლაპარაკის დაწყება"
+      ],
+      "Stop Speaking": [
+        "ლაპარაკის დასრულება"
+      ]
+    },
+    "Context Menu": {
+      "Copy": [
+        "კოპირება"
+      ],
+      "Cut": [
+        "ამოჭრა"
+      ],
+      "Look Up “${ text }”": [
+        "\"${ text }\"-ის მოძებნა"
+      ],
+      "Paste": [
+        "ჩასმა"
+      ],
+      "Paste and Match Style": [
+        "კოპირებისა და ჩასმის სტილი"
+      ],
+      "Redo": [
+        "გამეორება"
+      ],
+      "Select All": [
+        "ყველას მონიშვნა"
+      ],
+      "Undo": [
+        "დაბრუნება"
+      ]
+    },
+    "Error dialog": {
+      "Due to an error, the app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
+        "შეცდომის გამო აპი ახლა დაიხურება. სცადეთ, ის თავიდან გაუშვათ და თუ პრობლემა არ გაქრება, დაგვიკავშირდით. ინფორმაცია შეცდომის შესახებ აპლიკაციის ჟურნალში შეგიძლიათ, იპოვოთ."
+      ],
+      "Unexpected error": [
+        "გაუთვალისწინებელი შეცდომა"
+      ]
+    },
+    "error screen": {
+      "Cannot establish connection": [
+        "დაკავშირების შეცდომა"
+      ],
+      "Check your internet connection or network settings. If the issue persists, please contact customer support.": [
+        "შეამოწმეთ თქვენი ინტერნეტკავშირი ან ქსელის პარამეტრები. თუ პრობლემა არ გაქრება. დაუკავშირდით მხარდაჭერის გუნდს."
+      ],
+      "Try again": [
+        "კიდევ ცდა"
+      ]
+    },
+    "loading screen": {
+      "Loading ${ title }…": [
+        "${ title }-ის ჩატვირთვა..."
+      ]
+    },
+    "Menu": {
+      "Edit": [
+        "ჩასწორება"
+      ],
+      "File": [
+        "ფაილი"
+      ],
+      "View": [
+        "ხედი"
+      ],
+      "Window": [
+        "ფანჯარა"
+      ]
+    },
+    "Unload warning": {
+      "Changes you made may not be saved.": [
+        "ცვლილებები, რომლებიც შეიტანეთ, შეიძლება, არ იყოს შენახული."
+      ],
+      "Leave": [
+        "გასვლა"
+      ],
+      "Leave page?": [
+        "გავიდე გვერდიდან?"
+      ],
+      "Stay": [
+        "დარჩენა"
+      ]
+    }
+  }
+}

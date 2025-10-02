@@ -1,0 +1,209 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;",
+    "language": "sk_SK"
+  },
+  "contexts": {
+    "App menu": {
+      "About ${ MAIL_APP_NAME }": [
+        "O aplikácii ${ MAIL_APP_NAME }"
+      ],
+      "Actual Size": [
+        "Skutočná veľkosť"
+      ],
+      "Check spelling while typing": [
+        "Kontrola pravopisu počas písania"
+      ],
+      "Clear application data": [
+        "Vymazať dáta aplikácie"
+      ],
+      "Close Window": [
+        "Zavrieť okno"
+      ],
+      "Copy": [
+        "Kopírovať"
+      ],
+      "Cut": [
+        "Vystrihnúť"
+      ],
+      "Delete": [
+        "Vymazať"
+      ],
+      "Force Reload": [
+        "Vynútené obnovenie"
+      ],
+      "Hide ${ MAIL_APP_NAME }": [
+        "Skryť ${ MAIL_APP_NAME }"
+      ],
+      "Hide Others": [
+        "Skryť ostatné"
+      ],
+      "Minimize": [
+        "Minimalizovať"
+      ],
+      "Paste": [
+        "Prilepiť"
+      ],
+      "Paste and Match Style": [
+        "Prilepiť a prispôsobiť štýl"
+      ],
+      "Quit": [
+        "Ukončiť"
+      ],
+      "Quit ${ MAIL_APP_NAME }": [
+        "Ukončiť ${ MAIL_APP_NAME }"
+      ],
+      "Redo": [
+        "Znovu"
+      ],
+      "Reload": [
+        "Obnoviť"
+      ],
+      "Select All": [
+        "Vybrať všetko"
+      ],
+      "Show All": [
+        "Zobraziť všetko"
+      ],
+      "Show logs": [
+        "Zobraziť záznamy"
+      ],
+      "Speech": [
+        "Reč"
+      ],
+      "Start ${ MAIL_APP_NAME } at login": [
+        "Spustiť ${ MAIL_APP_NAME } pri prihlásení"
+      ],
+      "Start Speaking": [
+        "Začať hovoriť"
+      ],
+      "Stop Speaking": [
+        "Prestať hovoriť"
+      ],
+      "Toggle Full Screen": [
+        "Prepnúť na celú obrazovku"
+      ],
+      "Undo": [
+        "Vrátiť späť"
+      ],
+      "Uninstall ${ MAIL_APP_NAME }": [
+        "Odinštalovať ${ MAIL_APP_NAME }"
+      ],
+      "Zoom": [
+        "Priblížiť"
+      ],
+      "Zoom In": [
+        "Priblížiť"
+      ],
+      "Zoom Out": [
+        "Oddialiť"
+      ]
+    },
+    "App Menu": {
+      "Services": [
+        "Služby"
+      ]
+    },
+    "Context menu": {
+      "Add to dictionary": [
+        "Pridať do slovníka"
+      ],
+      "Copy link": [
+        "Kopírovať odkaz"
+      ],
+      "Emoji and Symbols": [
+        "Emoji a symboly"
+      ],
+      "Save image as…": [
+        "Uložiť obrázok ako…"
+      ],
+      "Speech": [
+        "Hovorené slovo"
+      ],
+      "Start Speaking": [
+        "Začať hovoriť"
+      ],
+      "Stop Speaking": [
+        "Prestať hovoriť"
+      ]
+    },
+    "Context Menu": {
+      "Copy": [
+        "Kopírovať"
+      ],
+      "Cut": [
+        "Vystrihnúť"
+      ],
+      "Look Up “${ text }”": [
+        "Vyhľadať výraz „${ text }“"
+      ],
+      "Paste": [
+        "Prilepiť"
+      ],
+      "Paste and Match Style": [
+        "Prilepiť a prispôsobiť štýl"
+      ],
+      "Redo": [
+        "Znovu"
+      ],
+      "Select All": [
+        "Vybrať všetko"
+      ],
+      "Undo": [
+        "Vrátiť späť"
+      ]
+    },
+    "Error dialog": {
+      "Due to an error, the app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
+        "Kvôli chybe sa aplikácia zatvorí. Skúste ju spustiť znova a ak problém pretrváva, kontaktujte nás. Informácie o chybe nájdete v logu aplikácie."
+      ],
+      "Unexpected error": [
+        "Neočakávaná chyba"
+      ]
+    },
+    "error screen": {
+      "Cannot establish connection": [
+        "Nie je možné nadviazať spojenie"
+      ],
+      "Check your internet connection or network settings. If the issue persists, please contact customer support.": [
+        "Skontrolujte internetové pripojenie alebo nastavenia siete. Ak problém pretrváva, kontaktujte zákaznícku podporu, prosím."
+      ],
+      "Try again": [
+        "Skúste znova"
+      ]
+    },
+    "loading screen": {
+      "Loading ${ title }…": [
+        "Načítavanie ${ title }…"
+      ]
+    },
+    "Menu": {
+      "Edit": [
+        "Upraviť"
+      ],
+      "File": [
+        "Súbor"
+      ],
+      "View": [
+        "Zobraziť"
+      ],
+      "Window": [
+        "Okno"
+      ]
+    },
+    "Unload warning": {
+      "Changes you made may not be saved.": [
+        "Vykonané zmeny sa nemusia uložiť."
+      ],
+      "Leave": [
+        "Opustiť"
+      ],
+      "Leave page?": [
+        "Opustiť stránku?"
+      ],
+      "Stay": [
+        "Zostať"
+      ]
+    }
+  }
+}

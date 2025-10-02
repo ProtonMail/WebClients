@@ -1,0 +1,209 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=2; plural=(n != 1);",
+    "language": "hi_IN"
+  },
+  "contexts": {
+    "App menu": {
+      "About ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } के बारे में"
+      ],
+      "Actual Size": [
+        "वास्तविक साइज़"
+      ],
+      "Check spelling while typing": [
+        "टाइप करते समय वर्तनी जांचें"
+      ],
+      "Clear application data": [
+        "एप्लिकेशन डेटा साफ़ करें"
+      ],
+      "Close Window": [
+        "विंडो बंद करें"
+      ],
+      "Copy": [
+        "कॉपी करें"
+      ],
+      "Cut": [
+        "कट करें"
+      ],
+      "Delete": [
+        "मिटा दें"
+      ],
+      "Force Reload": [
+        "जबर्दस्ती पुनः लोड करें"
+      ],
+      "Hide ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } छिपायें"
+      ],
+      "Hide Others": [
+        "बाकियों को छुपाएं"
+      ],
+      "Minimize": [
+        "छोटा करें"
+      ],
+      "Paste": [
+        "पेस्ट करें"
+      ],
+      "Paste and Match Style": [
+        "पेस्ट करें और स्टाइल मैच करें"
+      ],
+      "Quit": [
+        "बंद करें"
+      ],
+      "Quit ${ MAIL_APP_NAME }": [
+        "बाहर निकलें ${ MAIL_APP_NAME }"
+      ],
+      "Redo": [
+        "फिर से"
+      ],
+      "Reload": [
+        "रिलोड"
+      ],
+      "Select All": [
+        "सब चुनें"
+      ],
+      "Show All": [
+        "सब दिखाएं"
+      ],
+      "Show logs": [
+        "संलेख दिखाए"
+      ],
+      "Speech": [
+        "भाषण"
+      ],
+      "Start ${ MAIL_APP_NAME } at login": [
+        "लॉगिन पर ${ MAIL_APP_NAME } शुरू करें"
+      ],
+      "Start Speaking": [
+        "कृपया बोलना शुरू करें"
+      ],
+      "Stop Speaking": [
+        "कृपया बोलना बंद करे"
+      ],
+      "Toggle Full Screen": [
+        "पूरी स्क्रीन स्विच करें"
+      ],
+      "Undo": [
+        "पूर्ववत् करें"
+      ],
+      "Uninstall ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } अनइंस्टाल करें"
+      ],
+      "Zoom": [
+        "बड़ा करें"
+      ],
+      "Zoom In": [
+        "ज़ूम करें"
+      ],
+      "Zoom Out": [
+        "ज़ूम कम करें"
+      ]
+    },
+    "App Menu": {
+      "Services": [
+        "सेवाएं"
+      ]
+    },
+    "Context menu": {
+      "Add to dictionary": [
+        "शब्दकोश में जोड़ें"
+      ],
+      "Copy link": [
+        "लिंक कॉपी करें"
+      ],
+      "Emoji and Symbols": [
+        "इमोजी और सिंबल"
+      ],
+      "Save image as…": [
+        "इमेज को ऐसे … सेव करें"
+      ],
+      "Speech": [
+        "भाषण"
+      ],
+      "Start Speaking": [
+        "कृपया बोलना शुरू करें"
+      ],
+      "Stop Speaking": [
+        "कृपया बोलना बंद करे"
+      ]
+    },
+    "Context Menu": {
+      "Copy": [
+        "कॉपी करें"
+      ],
+      "Cut": [
+        "काटें"
+      ],
+      "Look Up “${ text }”": [
+        "देखें “${ text }”"
+      ],
+      "Paste": [
+        "पेस्ट करें"
+      ],
+      "Paste and Match Style": [
+        "पेस्ट करें और स्टाइल मैच करें"
+      ],
+      "Redo": [
+        "पहले जैसा करें"
+      ],
+      "Select All": [
+        "सब चुनें"
+      ],
+      "Undo": [
+        "पूर्ववत् करें"
+      ]
+    },
+    "Error dialog": {
+      "Due to an error, the app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
+        "एरर के कारण, ऐप बंद हो जाएगा। इसे फिर से चलाने की कोशिश करें और यदि समस्या बनी रहती है, तो हमसे संपर्क करें। एप्लीकेशन लॉग में एरर की जानकारी पाई जा सकती है।"
+      ],
+      "Unexpected error": [
+        "अनअपेक्षित त्रुटि"
+      ]
+    },
+    "error screen": {
+      "Cannot establish connection": [
+        "कनेक्शन स्थापित नहीं हो पा रहा"
+      ],
+      "Check your internet connection or network settings. If the issue persists, please contact customer support.": [
+        "अपना इंटरनेट कनेक्शन या नेटवर्क सेटिंग की जांच करें। यदि समस्या बनी रहती है, तो कृपया ग्राहक सहायता से संपर्क करें।"
+      ],
+      "Try again": [
+        "वापस कोशिश करें"
+      ]
+    },
+    "loading screen": {
+      "Loading ${ title }…": [
+        "${ title } लोड हो रहा है…"
+      ]
+    },
+    "Menu": {
+      "Edit": [
+        "बदलाव करें"
+      ],
+      "File": [
+        "फाइल"
+      ],
+      "View": [
+        "देखें"
+      ],
+      "Window": [
+        "विंडो"
+      ]
+    },
+    "Unload warning": {
+      "Changes you made may not be saved.": [
+        "आपके द्वारा किए गए परिवर्तन सहेजे नहीं जा सकते।"
+      ],
+      "Leave": [
+        "निकलें"
+      ],
+      "Leave page?": [
+        "पृष्ठ छोड़ें?"
+      ],
+      "Stay": [
+        "रुकें"
+      ]
+    }
+  }
+}
