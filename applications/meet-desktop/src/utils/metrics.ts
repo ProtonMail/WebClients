@@ -1,7 +1,5 @@
 import type { Transport, LogMessage } from "electron-log";
-import type { HttpsProtonMeDesktopInboxHeartbeatTotalV1SchemaJson } from "@proton/metrics/types/desktop_inbox_heartbeat_total_v1.schema";
-import { getMailView } from "./view/viewManagement";
-import { getSettings } from "../store/settingsStore";
+
 import { mainLogger } from "./log";
 
 const HEARTBEAT_INTERVAL = 5 * 60 * 1000; // minimum is 5 min
@@ -67,11 +65,7 @@ class MetricsService {
         }
 
         mainLogger.debug("Trigger heartbeat");
-
-        getMailView().webContents.send("hostUpdate", {
-            type: "sentHeartbeatMetrics",
-            payload: this.readAndClearHeartbeatData(),
-        });
+        // Placeholder for heartbeat metrics
     }
 
     destroy() {
@@ -86,19 +80,6 @@ class MetricsService {
     private hadUpdateError: BooleanRecord = new BooleanRecord();
 
     recordFailToLoadView = this.hadFailToLoadView.record;
-
-    private readAndClearHeartbeatData(): HttpsProtonMeDesktopInboxHeartbeatTotalV1SchemaJson {
-        return {
-            Labels: {
-                releaseCategory: getSettings().releaseCategory ?? "Stable",
-                hadFailToLoadView: this.hadFailToLoadView.readAndReset(),
-                hadNetworkError: this.hadNetworkError.readAndReset(),
-                hadMainError: this.hadMainError.readAndReset(),
-                hadUpdateError: this.hadUpdateError.readAndReset(),
-            },
-            Value: 1,
-        };
-    }
 
     private isListenerReady: boolean = false;
     listenerReady() {

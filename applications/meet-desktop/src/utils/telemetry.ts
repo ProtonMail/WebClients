@@ -8,11 +8,9 @@ import {
     DailyStatsDimensions,
 } from "@proton/shared/lib/desktop/DailyStats";
 import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
-import { IsDefaultProtocolReport, IsDefaultProtocolChangedReport } from "@proton/shared/lib/desktop/DefaultProtocol";
 
 import { getSettings } from "../store/settingsStore";
 import { mainLogger } from "../utils/log";
-import { checkDefaultMailto, getDefaultMailto } from "../utils/protocol/default";
 
 type TelemetryStored = {
     dailyStats: DailyStatsStored;
@@ -44,29 +42,9 @@ class TelemetryService {
     // Reporting stats
 
     checkDailyStats() {
-        checkDefaultMailto();
-        const defaultMailto = getDefaultMailto();
-
-        this.updateDailyStats((lastStats): DailyStatsUpdate => {
-            let isDefaultMailto: IsDefaultProtocolReport = "unknown";
-            let isDefaultMailtoChanged: IsDefaultProtocolChangedReport = "no_change";
-
-            if (defaultMailto.wasChecked) {
-                isDefaultMailto = defaultMailto.isDefault ? "true" : "false";
-
-                if (lastStats.isDefaultMailto === "true" && isDefaultMailto === "false") {
-                    isDefaultMailtoChanged = "yes_to_no";
-                }
-
-                if (lastStats.isDefaultMailto === "false" && isDefaultMailto === "true") {
-                    isDefaultMailtoChanged = "no_to_yes";
-                }
-            }
-
+        this.updateDailyStats((): DailyStatsUpdate => {
             return {
                 releaseCategory: getSettings().releaseCategory,
-                isDefaultMailto,
-                isDefaultMailtoChanged,
             };
         });
     }
@@ -109,47 +87,8 @@ class TelemetryService {
         });
     }
 
-    mailtoClicked() {
-        this.updateDailyStats((dailyStats): DailyStatsUpdate => {
-            return { mailtoClicks: dailyStats.mailtoClicks + 1 };
-        });
-    }
-
-    private lastView: CHANGE_VIEW_TARGET | null = null;
-
-    showView(viewID: CHANGE_VIEW_TARGET) {
-        // Only count calendar and mail changes, we are not interested in account.
-        if (viewID !== "mail" && viewID !== "calendar") {
-            return;
-        }
-
-        // Initial show view
-        if (this.lastView === null) {
-            this.lastView = viewID;
-            return;
-        }
-
-        // Mail to Calendar
-        if (this.lastView === "mail" && viewID === "calendar") {
-            this.updateDailyStats((dailyStats): DailyStatsUpdate => {
-                return { switchViewMailToCalendar: dailyStats.switchViewMailToCalendar + 1 };
-            });
-
-            this.lastView = "calendar";
-
-            return;
-        }
-
-        // Calendar to Mail
-        if (this.lastView === "calendar" && viewID === "mail") {
-            this.updateDailyStats((dailyStats): DailyStatsUpdate => {
-                return { switchViewCalendarToMail: dailyStats.switchViewCalendarToMail + 1 };
-            });
-
-            this.lastView = "mail";
-
-            return;
-        }
+    showView(_viewID: CHANGE_VIEW_TARGET) {
+        // Placeholder for future view tracking
     }
 
     // Store

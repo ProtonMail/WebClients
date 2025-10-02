@@ -5,8 +5,6 @@ import { getSettings, updateSettings } from "../../store/settingsStore";
 import { updateDownloaded } from "../../update";
 import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
 import { isLinux, isMac, isWindows } from "../helpers";
-import { urlHasMailto, readAndClearMailtoArgs } from "../protocol/mailto";
-import { urlHasOpenMailParams, readAndClearOpenMailArgs, readAndClearOpenCalendarArgs } from "../protocol/deep_links";
 import { checkKeys } from "../keyPinning";
 import { mainLogger, viewLogger } from "../log";
 import { setApplicationMenu } from "../menus/menuApplication";
@@ -124,33 +122,6 @@ export const viewCreationAppStartup = async () => {
     // We add the delay to avoid blank windows on startup, only mac supports openAtLogin for now
     const delay = isMac && app.getLoginItemSettings().openAtLogin ? 100 : 0;
     await new Promise((resolve) => setTimeout(resolve, delay));
-
-    const mailto = readAndClearMailtoArgs();
-    if (mailto) {
-        loadURL("meet", getAppURL().meet).then(() => {
-            showView("meet");
-            mainWindow!.show();
-        });
-        return;
-    }
-
-    const openMail = readAndClearOpenMailArgs();
-    if (openMail) {
-        loadURL("meet", getAppURL().meet).then(() => {
-            showView("meet");
-            mainWindow!.show();
-        });
-        return;
-    }
-
-    const openCalendar = readAndClearOpenCalendarArgs();
-    if (openCalendar) {
-        loadURL("meet", getAppURL().meet).then(() => {
-            showView("meet");
-            mainWindow!.show();
-        });
-        return;
-    }
 
     loadURL("meet", getAppURL().meet).then(() => {
         showView("meet");
@@ -324,17 +295,7 @@ export async function showView(viewID: CHANGE_VIEW_TARGET, url: string = "") {
 
     telemetry.showView(viewID);
 
-    if (url && urlHasMailto(url)) {
-        viewLogger(viewID).debug(`showView loading mailto ${url} from`, getViewURL(viewID));
-        await showLoadingPage(viewTitleMap[viewID]);
-        await loadURL(viewID, url);
-        mainWindow!.setContentView(view);
-    } else if (url && urlHasOpenMailParams(url)) {
-        viewLogger(viewID).debug(`showView loading open mail ${url} from`, getViewURL(viewID));
-        await showLoadingPage(viewTitleMap[viewID]);
-        await loadURL(viewID, url);
-        mainWindow!.setContentView(view);
-    } else if (url && !isSameURL(url, getViewURL(viewID))) {
+    if (url && !isSameURL(url, getViewURL(viewID))) {
         viewLogger(viewID).debug("showView current url is different", getViewURL(viewID));
         viewLogger(viewID).info("showView loading", url);
         await showLoadingPage(viewTitleMap[viewID]);
@@ -345,40 +306,6 @@ export async function showView(viewID: CHANGE_VIEW_TARGET, url: string = "") {
         mainWindow!.setContentView(view);
     }
 }
-
-export const openMail = () => {
-    if (!mainWindow || mainWindow.isDestroyed()) {
-        viewLogger("meet").warn("Ignoring openMail action, mainWindow is not available");
-        return;
-    }
-
-    const url = getAppURL().meet;
-
-    showView("meet", url);
-
-    if (mainWindow.isMinimized()) {
-        viewLogger("meet").info("Restoring main window");
-        mainWindow.restore();
-    }
-
-    mainWindow.focus();
-};
-
-export const openCalendar = () => {
-    if (!mainWindow || mainWindow.isDestroyed()) {
-        viewLogger("meet").warn("Ignoring openCalendar action, mainWindow is not available");
-        return;
-    }
-
-    showView("meet");
-
-    if (mainWindow.isMinimized()) {
-        viewLogger("meet").info("Restoring main window");
-        mainWindow.restore();
-    }
-
-    mainWindow.focus();
-};
 
 export async function loadURL(viewID: ViewID, url: string, { force } = { force: false }) {
     if (!url) {
@@ -394,18 +321,7 @@ export async function loadURL(viewID: ViewID, url: string, { force } = { force: 
 
     const isAccountSwitching = isHomePage(url) && currentLocalID !== targetLocalID;
 
-    // NOTE isSameURL will ignore `#mailto` arguments, but we want to load even if it's
-    // same. In some cases this might cause a view reload.
-    if (urlHasMailto(url) || urlHasOpenMailParams(url)) {
-        if (viewURL == url) {
-            const defURL = url.replace(/#.*$/, "#mailto=default");
-            viewLogger(viewID).info(
-                `loadURL asked to navigate to the same anchor ${url}, first navigating to ${defURL}`,
-            );
-            viewURLMap[viewID] = defURL;
-            await view.webContents.loadURL(defURL);
-        }
-    } else if (!isAccountSwitching && isSameURL(viewURL, url) && !force) {
+    if (!isAccountSwitching && isSameURL(viewURL, url) && !force) {
         viewLogger(viewID).info("loadURL already in given url", url);
         return;
     }
@@ -595,14 +511,6 @@ export function getSpellCheckStatus() {
 export function toggleSpellCheck(enabled: boolean) {
     updateSettings({ spellChecker: enabled });
     mainWindow?.webContents?.session?.setSpellCheckerEnabled(enabled);
-}
-
-export function getMailView() {
-    return viewMap.meet!;
-}
-
-export function getCalendarView() {
-    return viewMap.meet!;
 }
 
 export function getAccountView() {

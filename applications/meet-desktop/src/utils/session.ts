@@ -3,7 +3,6 @@ import { app, session } from "electron";
 import { isHostAllowed } from "./urls/urlTests";
 import { ALLOWED_PERMISSIONS } from "../constants";
 import { mainLogger } from "./log";
-import { getMailView } from "./view/viewManagement";
 import { getSettings } from "../store/settingsStore";
 
 export const appSession = () => {
@@ -38,7 +37,7 @@ export const setRequestPermission = () => {
 let isAppVersionExtensionDisabled = false;
 export const FEATURE_FLAG_APPVERSION_EXTENSION_DISABLED = "InboxDesktopAppVersionExtensionDisabled";
 
-// startFeatureCheck periodically retrives stored unleash data in mail view.
+// startFeatureCheck periodically retrives stored unleash data from Meet.
 // Currently we are only interested in
 // FEATURE_FLAG_APPVERSION_EXTENSION_DISABLED,
 // this can be reused and extended by more general case in future.
@@ -46,21 +45,7 @@ export const FEATURE_FLAG_APPVERSION_EXTENSION_DISABLED = "InboxDesktopAppVersio
 // Period one minute was decided to reflect quckly the default refresh 10 min
 // interval used to retrieve unleash flags from API.
 export const startFeatureCheck = () => {
-    checkFeatureFlag();
-    setInterval(checkFeatureFlag, 60 * 1000);
-};
-
-const checkFeatureFlag = () => {
-    const view = getMailView();
-    if (!view || !view.webContents) {
-        return;
-    }
-
-    view.webContents
-        .executeJavaScript('localStorage.getItem("unleash:repository:repo");', true)
-        .then((result: unknown) => {
-            updateFlags(result);
-        });
+    // Placeholder for future feature flag checking
 };
 
 const updateFlags = (flags: unknown) => {

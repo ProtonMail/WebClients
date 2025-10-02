@@ -33,13 +33,11 @@ export const getExtraResource = () => {
 
     switch (type()) {
         case "Darwin":
-            return [...commonResources, "./src/macos/Proton Mail Uninstaller.app", "./src/macos/uninstall.sh"];
+            return [...commonResources];
         case "Windows_NT":
             return [
                 ...commonResources,
                 "./src/windows/uninstall.bat",
-                "./src/utils/protocol/protonmail-mailto-register.reg",
-                "./src/utils/protocol/protonmail-mailto-delete.reg",
                 "./assets/icons/icon.ico",
             ];
         default:

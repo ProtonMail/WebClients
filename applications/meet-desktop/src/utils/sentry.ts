@@ -20,7 +20,7 @@ import Logger, { LogMessage, Transport } from "electron-log";
 import { getAppURL } from "../store/urlStore";
 import { getSettings } from "../store/settingsStore";
 import { getWindowBounds } from "../store/boundsStore";
-import { getAccountView, getCalendarView, getCurrentViewID, getMailView, getMainWindow } from "./view/viewManagement";
+import { getAccountView, getCurrentViewID, getMainWindow } from "./view/viewManagement";
 import { NET_LOGGER_VIEW_PREFIX, sentryLogger } from "./log";
 import { isProdEnv } from "./isProdEnv";
 import { getOSInfo } from "./log/getOSInfo";
@@ -131,8 +131,6 @@ export async function initializeSentry() {
                     mainWindow: {
                         isMinimized: getMainWindow().isMinimized(),
                         currentView: getCurrentViewID(),
-                        mailViewURL: getMailView()?.webContents.getURL(),
-                        calendarViewURL: getCalendarView()?.webContents.getURL(),
                         accountViewURL: getAccountView()?.webContents.getURL(),
                     },
                     osInfo: getOSInfo(),

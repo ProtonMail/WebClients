@@ -1,17 +1,11 @@
 import { Notification, app, Event, nativeImage, WebContentsView } from "electron";
-import {
-    bringWindowToFront,
-    openMail,
-    openCalendar,
-    getMainWindow,
-    getCurrentLocalID,
-} from "../utils/view/viewManagement";
+import { bringWindowToFront, getMainWindow } from "../utils/view/viewManagement";
 import { ipcLogger, notificationLogger } from "../utils/log";
 import { ElectronNotification } from "@proton/shared/lib/desktop/desktopTypes";
 import { isWindows, isMac } from "../utils/helpers";
 import { parseURLParams } from "../utils/urls/urlHelpers";
 import { join } from "node:path";
-import { DEEPLINK_PROTOCOL, DeepLinkActions } from "../utils/protocol/deep_links";
+import { DEEPLINK_PROTOCOL } from "../utils/protocol/deep_links";
 
 const notifications: Map<string, Notification> = new Map();
 
@@ -141,32 +135,13 @@ export const resetBadge = () => {
     setBadgeCount(0);
 };
 
-const windowsToastNotification = (
-    payload: ElectronNotification,
-    uuid: string,
-    localID: string | null,
-): { toastXml: string } => {
-    const { title, body, app, labelID, elementID, messageID } = payload;
+const windowsToastNotification = (payload: ElectronNotification, uuid: string): { toastXml: string } => {
+    const { title, body } = payload;
 
-    const action = app === "calendar" ? DeepLinkActions.OpenCalendar : DeepLinkActions.OpenMail;
-    const hasValidMailParams = app === "mail" && labelID && labelID !== "" && elementID && elementID !== "";
-
-    let params = `?${NOTIFICATION_ID_KEY}=${uuid}`;
-
-    if (hasValidMailParams) {
-        const urlParams = new URLSearchParams();
-        urlParams.set("labelID", labelID);
-        urlParams.set("elementID", elementID);
-        if (messageID) urlParams.set("messageID", messageID);
-        urlParams.set(NOTIFICATION_ID_KEY, uuid);
-        urlParams.set("localID", localID ?? "null");
-
-        // Replace & with &amp; for XML compatibility
-        params = `?${urlParams.toString().replace(/&/g, "&amp;")}`;
-    }
+    const params = `?${NOTIFICATION_ID_KEY}=${uuid}`;
 
     return {
-        toastXml: `<toast launch="${DEEPLINK_PROTOCOL}:${action}${params}" activationType="protocol">
+        toastXml: `<toast launch="${DEEPLINK_PROTOCOL}:${params}" activationType="protocol">
                 <visual>
                 <binding template="ToastText02">
                 <text id="1">${title}</text>
@@ -177,42 +152,17 @@ const windowsToastNotification = (
     };
 };
 
-const filterSenisitve = (payload: ElectronNotification): string =>
-    `app="${payload.app}", labelID="${payload.labelID}", elementID="${payload.elementID}"`;
-
 export const showNotification = (payload: ElectronNotification) => {
     const uuid: string = crypto.randomUUID();
-    const localID = getCurrentLocalID();
-    notificationLogger.debug(`Notification request received ${uuid}, ${localID}:`, filterSenisitve(payload));
+    notificationLogger.debug(`Notification request received ${uuid}`);
 
-    const { title, body, app, labelID, elementID, messageID } = payload;
+    const { title, body } = payload;
 
-    const notification = new Notification(
-        isWindows ? windowsToastNotification(payload, uuid, localID) : { title, body },
-    );
+    const notification = new Notification(isWindows ? windowsToastNotification(payload, uuid) : { title, body });
 
     notification.on("click", () => {
-        const clickLocalID = getCurrentLocalID();
-        notificationLogger.info("Notification clicked", uuid, clickLocalID);
-        if (!isWindows) bringWindowToFront();
-
-        switch (app) {
-            case "mail":
-                if (localID !== clickLocalID) {
-                    notificationLogger.warn(`Wrong localID: ${app}, ${uuid}`);
-                    // INDA-440: switch account
-                } else {
-                    openMail(labelID, elementID, messageID);
-                }
-                break;
-            case "calendar":
-                openCalendar();
-                break;
-            default:
-                notificationLogger.error(`Wrong notification app: ${app}, ${uuid}`);
-                return;
-        }
-
+        notificationLogger.info("Notification clicked", uuid);
+        bringWindowToFront();
         notifications.delete(uuid);
     });
 

@@ -1,7 +1,6 @@
-import { app, dialog, WebContentsView } from "electron";
-import { getCalendarView, getMailView } from "./view/viewManagement";
+import { app, dialog } from "electron";
 import { clearLogs, mainLogger } from "./log";
-import { DESKTOP_PLATFORMS, MAIL_APP_NAME } from "@proton/shared/lib/constants";
+import { DESKTOP_PLATFORMS } from "@proton/shared/lib/constants";
 import { c } from "ttag";
 
 export const isMac = process.platform === "darwin";
@@ -20,20 +19,13 @@ export const getPlatform = (): DESKTOP_PLATFORMS => {
     throw new Error(`Platform "${process.platform}" not supported.`);
 };
 
-const clear = (view: WebContentsView) => {
-    view.webContents.session.flushStorageData();
-    view.webContents.session.clearStorageData();
-    view.webContents.session.clearAuthCache();
-    view.webContents.session.clearCache();
-};
-
 export const clearStorage = async () => {
     const { t } = c("Clear application data prompt");
     const { response } = await dialog.showMessageBox({
         buttons: [t`Clear application data`, t`Cancel`],
-        title: MAIL_APP_NAME,
+        title: "Proton Meet",
         message: t`Clear application data`,
-        detail: t`This removes all data associated with this app, including downloaded messages. The app will close and you will need to sign in again to use the app.`,
+        detail: t`This removes all data associated with this app. The app will close and you will need to sign in again to use the app.`,
     });
 
     if (response !== 0) {
@@ -42,15 +34,6 @@ export const clearStorage = async () => {
     }
 
     mainLogger.info("Clear application data.");
-    const mailView = getMailView();
-    const calendaView = getCalendarView();
-
-    if (mailView) {
-        clear(mailView);
-    }
-    if (calendaView) {
-        clear(calendaView);
-    }
 
     clearLogs();
 
