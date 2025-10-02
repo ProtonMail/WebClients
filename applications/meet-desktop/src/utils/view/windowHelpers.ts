@@ -55,6 +55,8 @@ export const getWindowConfig = (): BrowserWindowConstructorOptions => {
             contextIsolation: true,
             disableBlinkFeatures: "Auxclick",
             sandbox: true,
+            // Enable screen capture
+            enablePreferredSizeMode: false,
             ...(getOSSpecificConfig().webPreferences || {}),
         },
     };
