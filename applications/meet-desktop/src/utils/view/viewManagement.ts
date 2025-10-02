@@ -20,7 +20,6 @@ import {
     isSameURL,
     trimLocalID,
 } from "../urls/urlTests";
-import { addHashToCurrentURL } from "../urls/urlHelpers";
 import { getWindowConfig } from "../view/windowHelpers";
 import { handleBeforeHandle } from "./dialogs";
 import { macOSExitEvent, windowsAndLinuxExitEvent } from "./windowClose";
@@ -30,7 +29,7 @@ import metrics from "../metrics";
 import { join } from "node:path";
 import { c } from "ttag";
 import { isElectronOnMac } from "@proton/shared/lib/helpers/desktop";
-import { APPS, APPS_CONFIGURATION, CALENDAR_APP_NAME, MAIL_APP_NAME } from "@proton/shared/lib/constants";
+import { APPS, APPS_CONFIGURATION } from "@proton/shared/lib/constants";
 import { MenuBarMonitor } from "./MenuBarMonitor";
 import telemetry from "./../telemetry";
 import { PROTON_THEMES_MAP } from "@proton/shared/lib/themes/themes";
@@ -42,14 +41,12 @@ type ViewID = keyof URLConfig;
 let currentViewID: ViewID;
 
 const viewMap: Record<ViewID, WebContentsView | undefined> = {
-    mail: undefined,
-    calendar: undefined,
+    meet: undefined,
     account: undefined,
 };
 
 const loadingViewMap: Record<ViewID, Promise<void> | undefined> = {
-    mail: undefined,
-    calendar: undefined,
+    meet: undefined,
     account: undefined,
 };
 
@@ -64,18 +61,16 @@ const loadingViewMap: Record<ViewID, Promise<void> | undefined> = {
 // It is important to keep this updated in all loadURL and loadFile calls, and also monitor the did-navigate
 // and did-navigate-in-page events.
 const viewURLMap: Record<ViewID, string | undefined> = {
-    mail: undefined,
-    calendar: undefined,
+    meet: undefined,
     account: undefined,
 };
 
 const viewTitleMap: Record<ViewID, string> = {
-    mail: MAIL_APP_NAME,
-    calendar: CALENDAR_APP_NAME,
+    meet: "Proton Meet",
     account: APPS_CONFIGURATION[APPS.PROTONACCOUNT].name,
 };
 
-const PRELOADED_VIEWS: ViewID[] = ["mail", "calendar"];
+const PRELOADED_VIEWS: ViewID[] = ["meet"];
 let mainWindow: undefined | BrowserWindow = undefined;
 let loadingView: undefined | WebContentsView = undefined;
 
@@ -132,8 +127,8 @@ export const viewCreationAppStartup = async () => {
 
     const mailto = readAndClearMailtoArgs();
     if (mailto) {
-        loadURL("mail", getAppURL().mail + `/inbox#mailto=${mailto}`).then(() => {
-            showView("mail");
+        loadURL("meet", getAppURL().meet).then(() => {
+            showView("meet");
             mainWindow!.show();
         });
         return;
@@ -141,8 +136,8 @@ export const viewCreationAppStartup = async () => {
 
     const openMail = readAndClearOpenMailArgs();
     if (openMail) {
-        loadURL("mail", getAppURL().mail + `/inbox#${openMail}`).then(() => {
-            showView("mail");
+        loadURL("meet", getAppURL().meet).then(() => {
+            showView("meet");
             mainWindow!.show();
         });
         return;
@@ -150,15 +145,15 @@ export const viewCreationAppStartup = async () => {
 
     const openCalendar = readAndClearOpenCalendarArgs();
     if (openCalendar) {
-        loadURL("calendar", getAppURL().calendar).then(() => {
-            showView("calendar");
+        loadURL("meet", getAppURL().meet).then(() => {
+            showView("meet");
             mainWindow!.show();
         });
         return;
     }
 
-    loadURL("mail", getAppURL().mail).then(() => {
-        showView("mail");
+    loadURL("meet", getAppURL().meet).then(() => {
+        showView("meet");
         mainWindow!.show();
     });
 };
@@ -191,16 +186,14 @@ const createView = (viewID: ViewID) => {
 
 const createViews = () => {
     mainLogger.info("Creating views");
-    viewMap.mail = createView("mail");
-    viewMap.calendar = createView("calendar");
+    viewMap.meet = createView("meet");
     viewMap.account = createView("account");
 
     if (isWindows) {
         mainWindow!.setMenuBarVisibility(false);
     }
 
-    viewMap.mail.webContents.on("before-input-event", handleBeforeInput);
-    viewMap.calendar.webContents.on("before-input-event", handleBeforeInput);
+    viewMap.meet.webContents.on("before-input-event", handleBeforeInput);
     viewMap.account.webContents.on("before-input-event", handleBeforeInput);
 
     mainWindow!.on("resize", () => {
@@ -209,8 +202,7 @@ const createViews = () => {
         }
 
         const bounds = mainWindow.getBounds();
-        viewMap.mail?.setBounds({ x: 0, y: 0, width: bounds.width, height: bounds.height });
-        viewMap.calendar?.setBounds({ x: 0, y: 0, width: bounds.width, height: bounds.height });
+        viewMap.meet?.setBounds({ x: 0, y: 0, width: bounds.width, height: bounds.height });
         viewMap.account?.setBounds({ x: 0, y: 0, width: bounds.width, height: bounds.height });
         loadingView?.setBounds({ x: 0, y: 0, width: bounds.width, height: bounds.height });
     });
@@ -354,29 +346,18 @@ export async function showView(viewID: CHANGE_VIEW_TARGET, url: string = "") {
     }
 }
 
-export const openMail = (labelID?: string, elementID?: string, messageID?: string) => {
+export const openMail = () => {
     if (!mainWindow || mainWindow.isDestroyed()) {
-        viewLogger("mail").warn("Ignoring openMail action, mainWindow is not available");
+        viewLogger("meet").warn("Ignoring openMail action, mainWindow is not available");
         return;
     }
 
-    const currentUrl = viewMap.mail!.webContents.getURL();
-    const hasValidLabelAndElement = labelID && elementID;
-    const url = hasValidLabelAndElement
-        ? addHashToCurrentURL(
-              currentUrl,
-              `#${new URLSearchParams({
-                  labelID,
-                  elementID,
-                  ...(messageID ? { messageID } : {}),
-              }).toString()}`,
-          )
-        : getAppURL().mail + "/u/0/all-mail"; // localID will be fixed by showView
+    const url = getAppURL().meet;
 
-    showView("mail", url);
+    showView("meet", url);
 
     if (mainWindow.isMinimized()) {
-        viewLogger("mail").info("Restoring main window");
+        viewLogger("meet").info("Restoring main window");
         mainWindow.restore();
     }
 
@@ -385,14 +366,14 @@ export const openMail = (labelID?: string, elementID?: string, messageID?: strin
 
 export const openCalendar = () => {
     if (!mainWindow || mainWindow.isDestroyed()) {
-        viewLogger("calendar").warn("Ignoring openCalendar action, mainWindow is not available");
+        viewLogger("meet").warn("Ignoring openCalendar action, mainWindow is not available");
         return;
     }
 
-    showView("calendar");
+    showView("meet");
 
     if (mainWindow.isMinimized()) {
-        viewLogger("calendar").info("Restoring main window");
+        viewLogger("meet").info("Restoring main window");
         mainWindow.restore();
     }
 
@@ -617,11 +598,11 @@ export function toggleSpellCheck(enabled: boolean) {
 }
 
 export function getMailView() {
-    return viewMap.mail!;
+    return viewMap.meet!;
 }
 
 export function getCalendarView() {
-    return viewMap.calendar!;
+    return viewMap.meet!;
 }
 
 export function getAccountView() {
@@ -715,5 +696,5 @@ export const bringWindowToFront = () => {
 };
 
 export const getCurrentLocalID = (): string | null => {
-    return getLocalID(viewMap["mail"]!.webContents.getURL());
+    return getLocalID(viewMap["meet"]!.webContents.getURL());
 };
