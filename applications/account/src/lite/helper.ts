@@ -8,6 +8,7 @@ export enum SupportedActions {
     SubscribeAccountLink = 'subscribe-account-link',
     AccountSettings = 'account-settings', // ET
     EmailSettings = 'email-settings', // ET
+    EmailSignatures = 'email-signatures', // ET
     LabelsSettings = 'labels-settings', // ET
     SpamFiltersSettings = 'spam-filters-settings', // ET
     PrivacySecuritySettings = 'privacy-security-settings', // ET

@@ -1,3 +1,5 @@
+import { useLocation } from 'react-router-dom';
+
 import { c } from 'ttag';
 
 import { orderAddresses } from '@proton/account/addresses/actions';
@@ -11,6 +13,7 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import type { Address } from '@proton/shared/lib/interfaces';
 import { getIsNonDefault, sortAddresses } from '@proton/shared/lib/mail/addresses';
+import { isMailVersionOlderThan } from '@proton/shared/lib/mobile/isMailVersionOlderThan';
 import clsx from '@proton/utils/clsx';
 import move from '@proton/utils/move';
 
@@ -27,6 +30,15 @@ const MobileAddressSection = () => {
 
     const list = sortAddresses(addresses);
     const [firstAddress] = list;
+
+    // We want to show the edit signature field on older apps
+    // - iOS older than 7.0.5
+    // - android older than 7.0.12
+    const location = useLocation();
+    const searchParams = new URLSearchParams(location.search);
+    const appVersion = searchParams.get('app-version');
+    const isOldMailApp =
+        isMailVersionOlderThan(appVersion, 'ios', '7.0.5') || isMailVersionOlderThan(appVersion, 'android', '7.0.12');
 
     const [profileModalProps, setProfileModal, renderProfileModal] = useModalState();
 
@@ -62,8 +74,7 @@ const MobileAddressSection = () => {
     return (
         <>
             <MobileSectionRow stackContent>
-                <MobileSectionLabel small htmlFor="addressSelector">{c('Label')
-                    .t`Default email address`}</MobileSectionLabel>
+                <MobileSectionLabel htmlFor="addressSelector">{c('Label').t`Default email address`}</MobileSectionLabel>
                 <SelectTwo<Address>
                     id="addressSelector"
                     onValue={(address) => withLoading(handleSetDefaultAddress(address.ID))}
@@ -77,17 +88,25 @@ const MobileAddressSection = () => {
                     ))}
                 </SelectTwo>
             </MobileSectionRow>
-            <MobileSectionAction onClick={handleClickIdentityDetails}>
-                <MobileSectionLabel small htmlFor="displayName">{c('Label').t`Display name`}</MobileSectionLabel>
-                <div className={clsx('text-lg mt-0.5', !firstAddress.DisplayName && 'color-weak')}>
-                    {firstAddress.DisplayName || c('Placeholder').t`Choose display name`}
-                </div>
-            </MobileSectionAction>
-            <MobileSectionAction onClick={handleClickIdentityDetails}>
-                <MobileSectionLabel small htmlFor="signature">{c('Label').t`Signature`}</MobileSectionLabel>
-                <div className="mt-0.5" id="signature" dangerouslySetInnerHTML={{ __html: firstAddress.Signature }} />
-            </MobileSectionAction>
-
+            {isOldMailApp && (
+                <>
+                    <MobileSectionAction onClick={handleClickIdentityDetails}>
+                        <MobileSectionLabel small htmlFor="displayName">{c('Label')
+                            .t`Display name`}</MobileSectionLabel>
+                        <div className={clsx('text-lg mt-0.5', !firstAddress.DisplayName && 'color-weak')}>
+                            {firstAddress.DisplayName || c('Placeholder').t`Choose display name`}
+                        </div>
+                    </MobileSectionAction>
+                    <MobileSectionAction onClick={handleClickIdentityDetails}>
+                        <MobileSectionLabel small htmlFor="signature">{c('Label').t`Signature`}</MobileSectionLabel>
+                        <div
+                            className="mt-0.5"
+                            id="signature"
+                            dangerouslySetInnerHTML={{ __html: firstAddress.Signature }}
+                        />
+                    </MobileSectionAction>
+                </>
+            )}
             {renderProfileModal && <EditProfileModal address={firstAddress} {...profileModalProps} />}
         </>
     );
