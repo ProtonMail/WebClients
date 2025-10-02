@@ -19,7 +19,6 @@ import pkg from "../package.json";
 import { getTheme, updateNativeTheme } from "./utils/themes";
 import { handleWebContents } from "./utils/view/webContents";
 import { connectNetLogger, initializeLog, mainLogger } from "./utils/log";
-import { handleStartupMailto, handleAppReadyMailto } from "./utils/protocol/mailto";
 import { handleDeepLink, handleStartupDeepLink } from "./utils/protocol/deep_links";
 import { checkDefaultProtocols } from "./utils/protocol/default";
 import { initializeSentry } from "./utils/sentry";
@@ -34,7 +33,6 @@ import { measureRequestTime } from "./utils/log/measureRequestTime";
     captureUncaughtErrors();
     await initializeSentry();
     logInitialAppInfo();
-    handleStartupMailto();
     handleStartupDeepLink();
 
     // Handle squirrel events at the very top of the application
@@ -107,7 +105,6 @@ import { measureRequestTime } from "./utils/log/measureRequestTime";
     initializeUpdateChecks();
     new Notification();
     handleIPCCalls();
-    handleAppReadyMailto();
     handleDeepLink();
     handleWinNotification();
 

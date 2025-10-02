@@ -6,19 +6,16 @@ import {
     isAccountLogin,
     isAccountSwitch,
     isAccoutLite,
-    isCalendar,
     isGoogleOAuthAuthorizationURL,
     isHome,
     isHostAllowed,
-    isMail,
+    isMeet,
     isUpgradeURL,
     isUpsellURL,
 } from "../urls/urlTests";
 import {
     getAccountView,
-    getCalendarView,
     getCurrentView,
-    getMailView,
     getWebContentsViewName,
     resetHiddenViews,
     getZoom,
@@ -83,15 +80,11 @@ export function handleWebContents(contents: WebContents) {
 
         // If we switch accounts from settings, we need to ensure that all hidden views are
         // reset to the home page using the corresponding local ID.
-        // We might need to do this syncronization when changing local ID in mail or calendar views
-        // too, but since it looks like the current flow works ok, we are not adding unneeded checks
-        // here.
         if (getCurrentViewID() === "account") {
             const accountLocalID = getLocalID(url);
-            const mailLocalId = getLocalID(getViewURL("mail"));
-            const calendarLocalId = getLocalID(getViewURL("calendar"));
+            const meetLocalId = getLocalID(getViewURL("meet"));
 
-            if (accountLocalID !== mailLocalId || accountLocalID !== calendarLocalId) {
+            if (accountLocalID !== meetLocalId) {
                 resetHiddenViews({ toHomepage: true });
             }
         }
@@ -162,13 +155,8 @@ export function handleWebContents(contents: WebContents) {
                 return details.preventDefault();
             }
 
-            if (isCalendar(details.url) && getCurrentView() !== getCalendarView()) {
-                showView("calendar", details.url);
-                return details.preventDefault();
-            }
-
-            if (isMail(details.url) && getCurrentView() !== getMailView()) {
-                showView("mail", details.url);
+            if (isMeet(details.url)) {
+                showView("meet", details.url);
                 return details.preventDefault();
             }
         }
@@ -181,15 +169,9 @@ export function handleWebContents(contents: WebContents) {
         const logWindowOpen = (status: "allowed" | "denied", description: string, level: "debug" | "error" = "debug") =>
             logger()[level](`Window open (${status}) ${description}`);
 
-        if (isCalendar(url)) {
-            logWindowOpen("denied", `calendar link in calendar view ${url}`);
-            showView("calendar", url);
-            return { action: "deny" };
-        }
-
-        if (isMail(url)) {
-            logWindowOpen("denied", `mail link in mail view ${url}`);
-            showView("mail", url);
+        if (isMeet(url)) {
+            logWindowOpen("denied", `meet link in meet view ${url}`);
+            showView("meet", url);
             return { action: "deny" };
         }
 

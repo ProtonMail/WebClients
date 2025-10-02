@@ -12,7 +12,7 @@ export const DESKTOP_FEATURES = {
     LatestVersionCheck: true,
     InstallSource: true,
     MailtoTelemetry: false,
-    MailtoUpdate: true,
+    MailtoUpdate: false,
     ESUserChoice: true,
     FullTheme: true,
     StoreVersion: true,

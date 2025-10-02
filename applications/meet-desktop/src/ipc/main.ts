@@ -9,26 +9,11 @@ import type {
 import { clearStorage } from "../utils/helpers";
 import { ipcLogger } from "../utils/log";
 import { getColorScheme, getTheme, isEqualTheme, setTheme } from "../utils/themes";
-import {
-    reloadHiddenViews,
-    resetHiddenViews,
-    showEndOfTrial,
-    showView,
-    getMailView,
-} from "../utils/view/viewManagement";
+import { reloadHiddenViews, resetHiddenViews, showEndOfTrial, showView } from "../utils/view/viewManagement";
 import { DESKTOP_FEATURES } from "./ipcConstants";
 import { handleIPCBadge, resetBadge, showNotification } from "./notification";
 import { setInstallSourceReported, getInstallSource } from "../store/installInfoStore";
 import { getESUserChoice, setESUserChoice } from "../store/userSettingsStore";
-import {
-    checkDefaultMailto,
-    getDefaultMailto,
-    setDefaultMailtoApp,
-    setDefaultMailtoTelemetryReported,
-    setShouldCheckDefaultMailtoApp,
-    setDefaultMailtoBannerDismissed,
-    getDefaultMailtoBannerDismissed,
-} from "../utils/protocol/default";
 import { getAllAppVersions, storeAppVersion } from "../utils/appVersions";
 import metrics from "../utils/metrics";
 import telemetry from "../utils/telemetry";
@@ -68,10 +53,6 @@ export const handleIPCCalls = () => {
                 setInstallSourceReported();
                 break;
             }
-            case "defaultMailto": {
-                event.returnValue = getDefaultMailto();
-                break;
-            }
             case "dailyStats": {
                 event.returnValue = telemetry.getDailyStats();
                 break;
@@ -81,9 +62,6 @@ export const handleIPCCalls = () => {
                 break;
             case "getAllAppVersions":
                 event.returnValue = getAllAppVersions();
-                break;
-            case "defaultMailtoBannerDismissed":
-                event.returnValue = getDefaultMailtoBannerDismissed();
                 break;
             default:
                 ipcLogger.error(`Invalid getInfo message: ${message}`);
@@ -157,30 +135,8 @@ export const handleIPCCalls = () => {
                 setReleaseCategory(payload);
                 break;
             }
-            case "checkDefaultMailtoAndSignal": {
-                checkDefaultMailto();
-                break;
-            }
-            case "setDefaultMailto": {
-                setDefaultMailtoApp();
-                break;
-            }
-            case "setShouldCheckDefaultMailto": {
-                setShouldCheckDefaultMailtoApp(payload);
-                break;
-            }
-            case "defaultMailtoTelemetryReported": {
-                setDefaultMailtoTelemetryReported(payload);
-                break;
-            }
             case "checkDailyStatsAndSignal": {
                 telemetry.checkDailyStats();
-                const dailyStatsReport = telemetry.getDailyStatsReport();
-
-                getMailView()?.webContents?.send("hostUpdate", {
-                    type: "dailyStatsChecked",
-                    payload: dailyStatsReport,
-                });
                 break;
             }
             case "dailyStatsReported": {
@@ -206,9 +162,6 @@ export const handleIPCCalls = () => {
                 if (payload === "removed") {
                     metrics.listenerRemoved();
                 }
-                break;
-            case "setDefaultMailtoBannerDismissed":
-                setDefaultMailtoBannerDismissed(payload);
                 break;
             case "toggleAppCache":
                 toggleAppCache({ enabled: payload });
