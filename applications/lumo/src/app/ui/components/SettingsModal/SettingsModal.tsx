@@ -8,6 +8,8 @@ import { Avatar, Button, ButtonLike } from '@proton/atoms';
 import type { IconName, ModalOwnProps } from '@proton/components';
 import { Icon, ModalTwo, ModalTwoContent, SettingsLink, useConfig } from '@proton/components';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { format } from '@proton/shared/lib/date-fns-utc';
+import { dateLocale } from '@proton/shared/lib/i18n';
 import lumoAvatarNeutral from '@proton/styles/assets/img/lumo/lumo-avatar-neutral.svg';
 import useFlag from '@proton/unleash/useFlag';
 
@@ -139,6 +141,8 @@ const GeneralSettingsPanel = ({ isGuest, onClose }: { isGuest: boolean; onClose?
     const { DATE_VERSION } = useConfig();
     const { isDarkLumoTheme } = useLumoTheme();
     const isLumoDarkModeEnabled = useFlag('LumoDarkMode');
+
+    const formattedDate = DATE_VERSION ? `${format(new Date(DATE_VERSION), 'PPpp', { locale: dateLocale })} UTC` : '';
     return (
         <div>
             {isLumoDarkModeEnabled && (
@@ -160,7 +164,7 @@ const GeneralSettingsPanel = ({ isGuest, onClose }: { isGuest: boolean; onClose?
             <SettingsSectionItem
                 icon="info-circle"
                 text={c('collider_2025: Title').t`About ${LUMO_SHORT_APP_NAME}`}
-                subtext={c('collider_2025: Description').jt`Last updated on ${DATE_VERSION}`}
+                subtext={c('collider_2025: Description').jt`Last updated on ${formattedDate}`}
             />
         </div>
     );
