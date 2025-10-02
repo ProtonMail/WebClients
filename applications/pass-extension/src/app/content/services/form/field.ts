@@ -11,6 +11,7 @@ import type { AutofillOptions } from 'proton-pass-extension/app/content/utils/au
 import { createAutofill } from 'proton-pass-extension/app/content/utils/autofill';
 import { getFrameParentVisibility } from 'proton-pass-extension/app/content/utils/frame';
 import { isActiveElement } from 'proton-pass-extension/app/content/utils/nodes';
+import type { FrameField } from 'proton-pass-extension/types/frames';
 
 import { isVisible } from '@proton/pass/fathom';
 import type { FieldType, FormType, IdentityFieldType } from '@proton/pass/fathom/labels';
@@ -69,6 +70,7 @@ export interface FieldHandle {
     getBoxElement: (options?: { reflow: boolean }) => HTMLElement;
     getFormHandle: () => FormHandle;
     getVisibility: () => Promise<boolean>;
+    matches: (field?: FrameField) => boolean;
     setAction: (action: MaybeNull<FieldAction>) => void;
     setValue: (value: string) => void;
     sync: () => void;
@@ -216,6 +218,12 @@ export const createFieldHandles = ({
             field.tracker?.detach();
             field.tracker = null;
             field.detachIcon();
+        },
+
+        matches: (frameField) => {
+            if (!frameField) return false;
+            const { fieldId, formId } = frameField;
+            return field.fieldId === fieldId && field.getFormHandle().formId === formId;
         },
 
         sync: () => {
