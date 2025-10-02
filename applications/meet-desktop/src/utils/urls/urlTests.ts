@@ -33,7 +33,7 @@ export const trimLocalID = (urlString: string) => {
 export const isCalendar = (urlString: string) => {
     try {
         const url = new URL(urlString);
-        return getAppURL().calendar === url.origin;
+        return getAppURL().meet === url.origin;
     } catch (error) {
         return false;
     }
@@ -42,7 +42,7 @@ export const isCalendar = (urlString: string) => {
 export const isMail = (urlString: string) => {
     try {
         const url = new URL(urlString);
-        return getAppURL().mail === url.origin;
+        return getAppURL().meet === url.origin;
     } catch (error) {
         return false;
     }
@@ -52,7 +52,7 @@ const isCalendarHome = (urlString: string) => {
     try {
         const url = new URL(urlString);
 
-        if (getAppURL().calendar !== url.origin) {
+        if (getAppURL().meet !== url.origin) {
             return false;
         }
 
@@ -66,7 +66,7 @@ const isMailHome = (urlString: string) => {
     try {
         const url = new URL(urlString);
 
-        if (getAppURL().mail !== url.origin) {
+        if (getAppURL().meet !== url.origin) {
             return false;
         }
 
