@@ -6,6 +6,7 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { Button, Kbd, Tooltip } from '@proton/atoms';
 import { ButtonGroup, Icon, useActiveBreakpoint, useContactModals, useToggle } from '@proton/components';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { shiftKey } from '@proton/shared/lib/helpers/browser';
@@ -26,7 +27,6 @@ import clsx from '@proton/utils/clsx';
 import { useCategoryViewExperiment } from 'proton-mail/components/categoryView/categoryBadge/useCategoryViewExperiment';
 import { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 import { hasLabel } from 'proton-mail/helpers/elements';
-import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { useOnCompose, useOnMailTo } from '../../../containers/ComposeProvider';
 import { isSelfAddress } from '../../../helpers/addresses';
@@ -106,7 +106,7 @@ const HeaderExpanded = ({
     const isMessageExpiringByRetentionRule = dataRetentionPolicyEnabled && isExpiringByRetentionRule(message.data);
     const expirationDate = getMessageExpirationDate(message);
 
-    const { Shortcuts } = useMailModel('MailSettings');
+    const [{ Shortcuts }] = useMailSettings();
 
     const onCompose = useOnCompose();
 

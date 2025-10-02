@@ -5,10 +5,9 @@ import { c } from 'ttag';
 
 import { Kbd, Tooltip } from '@proton/atoms';
 import { Icon } from '@proton/components';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { isSafari as checkIsSafari, metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
-
-import useMailModel from 'proton-mail/hooks/useMailModel';
 
 interface ButtonProps {
     onClick: MouseEventHandler<HTMLButtonElement>;
@@ -71,7 +70,7 @@ const ComposerTitleBar = ({
 }: Props) => {
     const isSafari = checkIsSafari();
 
-    const { Shortcuts } = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
 
     const handleDoubleClick = () => {
         if (minimized) {
@@ -82,7 +81,7 @@ const ComposerTitleBar = ({
     };
 
     const titleMinimize =
-        Shortcuts && !isSafari ? (
+        mailSettings.Shortcuts && !isSafari ? (
             <>
                 {minimized ? c('Action').t`Maximize composer` : c('Action').t`Minimize composer`}
                 <br />
@@ -95,7 +94,7 @@ const ComposerTitleBar = ({
         );
 
     const titleMaximize =
-        Shortcuts && !isSafari ? (
+        mailSettings.Shortcuts && !isSafari ? (
             <>
                 {maximized ? c('Action').t`Contract composer` : c('Action').t`Expand composer`}
                 <br />
@@ -107,7 +106,7 @@ const ComposerTitleBar = ({
             c('Action').t`Expand composer`
         );
 
-    const titleClose = Shortcuts ? (
+    const titleClose = mailSettings.Shortcuts ? (
         <>
             {c('Action').t`Close composer`}
             <br />

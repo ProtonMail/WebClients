@@ -3,10 +3,10 @@ import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms';
 import { EllipsisLoader } from '@proton/components';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { altKey, metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
 
 import { formatSimpleDate } from 'proton-mail/helpers/date';
-import useMailModel from 'proton-mail/hooks/useMailModel';
 
 interface Props {
     opening: boolean;
@@ -15,7 +15,7 @@ interface Props {
 }
 
 const useComposerSendActionsText = ({ opening, syncInProgress, date }: Props) => {
-    const { Shortcuts } = useMailModel('MailSettings');
+    const [{ Shortcuts }] = useMailSettings();
 
     let dateMessage: string | string[];
     if (opening) {

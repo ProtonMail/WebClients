@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import range from '@proton/utils/range';
 
 import type { Element } from '../models/element';
-import useMailModel from './useMailModel';
 
 export const PLACEHOLDER_ID_PREFIX = 'placeholder';
 
@@ -27,7 +27,7 @@ export const usePlaceholders = ({
     expectedLength,
     unsafeLength = false,
 }: UsePlaceholdersProps): Element[] => {
-    const mailSettings = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
 
     const elements: ElementOrPlaceholder[] = useMemo(() => {
         if (loading) {
