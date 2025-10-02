@@ -34,11 +34,12 @@ const createCalendarEventManagerById = (api: Api, calendarID: string) => {
 };
 
 const getOrSetRecord = (calendarID: string, eventManagers: SimpleMap<EventManagerCacheRecord>, api: Api) => {
-    const cachedValue = eventManagers[calendarID];
-    if (!cachedValue) {
-        eventManagers[calendarID] = createCalendarEventManagerById(api, calendarID);
+    let value = eventManagers[calendarID];
+    if (!value) {
+        value = createCalendarEventManagerById(api, calendarID);
+        eventManagers[calendarID] = value;
     }
-    return cachedValue;
+    return value;
 };
 
 type EventManagerCacheRecord = EventManager<any>;
@@ -91,9 +92,6 @@ export const createCalendarModelEventManager = ({ api }: { api: Api }): Calendar
 
         const unsubscribes = calendarIDs.reduce<(() => void)[]>((acc, calendarID) => {
             const eventManager = getOrSetRecord(calendarID, eventManagers, api);
-            if (!eventManager) {
-                return acc;
-            }
             acc.push(eventManager.subscribe(notify));
             return acc;
         }, []);
