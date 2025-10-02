@@ -3,7 +3,7 @@ import { renderHook } from '@testing-library/react';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
-import { useConversationCounts, useMessageCounts } from '@proton/mail/index';
+import { useConversationCounts, useMessageCounts } from '@proton/mail';
 import { PLANS } from '@proton/payments';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
