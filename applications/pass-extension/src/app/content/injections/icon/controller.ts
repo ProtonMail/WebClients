@@ -9,12 +9,15 @@ import {
     cleanupInjectionStyles,
     createIcon,
 } from 'proton-pass-extension/app/content/injections/icon/utils';
+import type { FieldAnchor } from 'proton-pass-extension/app/content/services/form/field.anchor';
 
 import { clientDisabled, clientLocked } from '@proton/pass/lib/client';
 import type { AppStatus } from '@proton/pass/types';
 import { animatePositionChange } from '@proton/pass/utils/dom/position';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
+import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
+import noop from '@proton/utils/noop';
 
 type IconControllerOptions = {
     input: HTMLInputElement;
@@ -25,7 +28,7 @@ type IconControllerOptions = {
     /** z-index for the control element */
     zIndex: number;
 
-    getAnchor: (options: { reflow: boolean }) => HTMLElement;
+    getAnchor: (options: { reflow: boolean }) => FieldAnchor;
     onClick: () => void;
 };
 
@@ -41,7 +44,9 @@ export const createIconController = (options: IconControllerOptions): IconContro
     const { input, form, zIndex, tag } = options;
 
     const anchor = options.getAnchor({ reflow: false });
-    const { icon, control } = createIcon({ anchor, zIndex, tag });
+    const { icon, control } = createIcon({ anchor: anchor.element, zIndex, tag });
+
+    let ready = false;
 
     const listeners = createListenerStore();
     const repositioning = { request: -1, animate: -1 };
@@ -72,15 +77,24 @@ export const createIconController = (options: IconControllerOptions): IconContro
 
     const reposition = (reflow: boolean = false) => {
         cancelReposition();
+
         const anchor = options.getAnchor({ reflow });
 
-        repositioning.request = requestAnimationFrame(() => {
+        repositioning.request = requestAnimationFrame(async () => {
+            /* Wait for anchor animations to complete before repositioning */
+            await waitUntil(() => !anchor.animating, 100, 1_000).catch(() => noop);
+
+            if (!ready) {
+                ready = true;
+                icon.classList.add('visible');
+            }
+
             animatePositionChange({
                 onAnimate: (request) => (repositioning.animate = request),
                 get: () => options.input.getBoundingClientRect(),
                 set: () => {
                     cleanupInjectionStyles({ input, control });
-                    applyInjectionStyles({ icon, control, input, anchor, form });
+                    applyInjectionStyles({ icon, control, input, anchor: anchor.element, form });
                 },
             });
         });
@@ -101,6 +115,7 @@ export const createIconController = (options: IconControllerOptions): IconContro
     };
 
     const detach = safeCall(() => {
+        ready = false;
         listeners.removeAll();
         cancelReposition();
         cleanupInjectionStyles({ input, control });
@@ -112,7 +127,7 @@ export const createIconController = (options: IconControllerOptions): IconContro
      * · on window resize
      * · on form resize (handled in `FormHandles`)
      * · on new elements added to the field box (ie: icons) */
-    const target = anchor === input ? input.parentElement! : anchor;
+    const target = anchor.element === input ? input.parentElement! : anchor.element;
 
     /** Pointer capturing events are preferred to handle cases where icon
      * repositioning during interaction could generate unintended clicks */
