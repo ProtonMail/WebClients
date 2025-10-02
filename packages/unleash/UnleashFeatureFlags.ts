@@ -5,7 +5,6 @@
 enum CommonFeatureFlag {
     ColorPerEventWeb = 'ColorPerEventWeb',
     CollectLogs = 'CollectLogs',
-    CoreV6EventLoop = 'CoreV6EventLoop',
     AutoReloadPage = 'AutoReloadPage',
     DisableElectronMail = 'DisableElectronMail',
     // Whether to show Docs in the app switcher. NOT whether the docs homepage is enabled (that's `DocsHomepageEnabled` instead).

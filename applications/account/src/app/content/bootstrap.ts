@@ -141,10 +141,11 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         let calendarEventV6Manager: ReturnType<typeof bootstrap.calendarEventManagerV6> | undefined;
         let eventManager: ReturnType<typeof bootstrap.eventManager> | undefined;
 
-        const hasEventLoopV6Enabled =
-            unleashClient.isEnabled('CoreV6EventLoop') &&
-            config.APP_NAME === 'proton-account' &&
-            pathname.includes(APPS_CONFIGURATION[APPS.PROTONMAIL].settingsSlug);
+        // Calendar isn't supported due to it needing custom handling in supporting v6 events properly
+        const eventLoopV6ExcludedApps = [APPS.PROTONCALENDAR];
+        const hasEventLoopV6Enabled = !eventLoopV6ExcludedApps.some((app) =>
+            pathname.includes(APPS_CONFIGURATION[app].settingsSlug)
+        );
 
         let unsubscribe: () => void | undefined;
         let reset: () => void | undefined;
