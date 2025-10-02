@@ -4,8 +4,7 @@ import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms';
 import { Icon, ToolbarButton } from '@proton/components';
-
-import useMailModel from 'proton-mail/hooks/useMailModel';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 
 import { isConversationMode } from '../../helpers/mailSettings';
 
@@ -29,7 +28,7 @@ const NavigationControls = ({
     labelID,
 }: Props) => {
     const location = useLocation();
-    const mailSettings = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
     const { Shortcuts } = mailSettings;
 
     const ID = !isConversationMode(labelID, mailSettings, location) && messageID ? messageID : elementID;

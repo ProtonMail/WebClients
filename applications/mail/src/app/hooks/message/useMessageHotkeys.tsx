@@ -21,7 +21,6 @@ import {
     MESSAGE_FOLDER_DROPDOWN_ID,
     MESSAGE_LABEL_DROPDOWN_ID,
 } from 'proton-mail/components/message/extrasHeader/constants';
-import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { hasLabel, isStarred } from '../../helpers/elements';
@@ -85,7 +84,6 @@ export const useMessageHotkeys = (
     }: MessageHotkeysHandlers
 ) => {
     const location = useLocation();
-    const { Shortcuts } = useMailModel('MailSettings');
     const [folders] = useFolders();
     const { call } = useEventManager();
     const labelDropdownToggleRef = useRef<() => void>(noop);
@@ -102,7 +100,7 @@ export const useMessageHotkeys = (
 
     const isMessageReady = messageLoaded && bodyLoaded;
     const hotkeysEnabledAndMessageReady =
-        Shortcuts && isMessageReady && expanded && message.messageDocument?.initialized;
+        mailSettings.Shortcuts && isMessageReady && expanded && message.messageDocument?.initialized;
 
     const isScheduledMessage = message.data?.LabelIDs?.includes(MAILBOX_LABEL_IDS.SCHEDULED);
 
@@ -215,7 +213,7 @@ export const useMessageHotkeys = (
         [
             'O',
             () => {
-                if (Shortcuts && isMessageReady && expanded) {
+                if (mailSettings.Shortcuts && isMessageReady && expanded) {
                     toggleOriginalMessage();
                 }
             },

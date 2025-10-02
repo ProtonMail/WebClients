@@ -2,9 +2,8 @@ import { c } from 'ttag';
 
 import { Kbd, Vr } from '@proton/atoms';
 import { Icon, ToolbarButton } from '@proton/components';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-
-import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { useLabelActions } from '../../hooks/useLabelActions';
 import { SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
@@ -20,7 +19,7 @@ interface Props {
 }
 
 const MoveButtons = ({ labelID = '', isExtraTiny, viewportIsNarrow, selectedIDs = [], onMove, onDelete }: Props) => {
-    const { Shortcuts } = useMailModel('MailSettings');
+    const [{ Shortcuts }] = useMailSettings();
 
     let [actions] = useLabelActions(labelID);
     if (isExtraTiny) {

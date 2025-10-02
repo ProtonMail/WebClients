@@ -5,10 +5,9 @@ import { Icon, ToolbarButton, useActiveBreakpoint } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { useLabels } from '@proton/mail';
 import { isCustomLabel, labelIncludes } from '@proton/mail/helpers/location';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
-
-import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { useEmptyLabel } from '../../hooks/actions/useEmptyLabel';
 
@@ -22,7 +21,7 @@ const EmptyButton = ({ labelID = '', elementIDs }: Props) => {
     const [loading, withLoading] = useLoading();
     const [labels = []] = useLabels();
     const { emptyLabel, modal: deleteAllModal } = useEmptyLabel();
-    const { Shortcuts } = useMailModel('MailSettings');
+    const [{ Shortcuts }] = useMailSettings();
 
     const displayEmpty =
         !breakpoints.viewportWidth['<=small'] &&

@@ -5,9 +5,9 @@ import { useLocation } from 'react-router-dom';
 import { FloatingButton, Icon, PrivateHeader, UserDropdown, useActiveBreakpoint } from '@proton/components';
 import { useFolders, useLabels } from '@proton/mail';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { APPS } from '@proton/shared/lib/constants';
 
-import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 
 import { useOnCompose } from '../../containers/ComposeProvider';
@@ -30,7 +30,7 @@ const MailHeader = ({ labelID, elementID, selectedIDs = [], toolbar, settingsBut
     const location = useLocation();
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
-    const mailSettings = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
     const dispatch = useMailDispatch();
     const expanded = useMailSelector(selectLayoutIsExpanded);
     const onToggleExpand = useCallback(() => dispatch(layoutActions.toggleSidebarExpand()), []);

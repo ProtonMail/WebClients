@@ -1,16 +1,12 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import useMailModel from './useMailModel';
-import { usePlaceholders } from './usePlaceholders';
+import { mockUseMailSettings } from '@proton/testing/lib/mockUseMailSettings';
 
-jest.mock('./useMailModel');
-const mockedUseMailModel = useMailModel as jest.Mock;
+import { usePlaceholders } from './usePlaceholders';
 
 describe('usePlaceholders', () => {
     beforeEach(() => {
-        mockedUseMailModel.mockReturnValue({
-            PageSize: 50,
-        });
+        mockUseMailSettings([{ PageSize: 50 }]);
     });
 
     it('should return the correct number of placeholders', () => {
@@ -63,9 +59,7 @@ describe('usePlaceholders', () => {
     });
 
     it('should return the correct number of placeholders if the page size is 100', () => {
-        mockedUseMailModel.mockReturnValue({
-            PageSize: 100,
-        });
+        mockUseMailSettings([{ PageSize: 100 }]);
 
         const { result } = renderHook(() =>
             usePlaceholders({
