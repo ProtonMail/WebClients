@@ -30,11 +30,8 @@ jest.mock('@proton/account/welcomeFlags');
 const mockUseWelcomeFlags = useWelcomeFlags as jest.Mock;
 
 const janFirst = 1735693200;
-// const janFirstMS = 1735693200000;
-// const febFirst = 1738371600;
 const febFirstMS = 1738371600000;
 const marchFirst = 1740790800;
-// const marchFirstMS = 1740790800000;
 
 const getFeatureValues = (
     code: FeatureCode,
