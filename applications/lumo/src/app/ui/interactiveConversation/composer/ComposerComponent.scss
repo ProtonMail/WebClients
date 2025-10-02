@@ -15,11 +15,11 @@
 		border-block-end: none !important;
 
 		// Mobile background override
-		background-color: var(--background-composer-mobile), var(--background-norm) !important;
+		background-color: var(--background-composer-mobile), var(--background-norm);
 
 		.lumo-input {
 			border: none !important;
-			background-color: var(--background-composer-mobile), var(--background-norm) !important;
+			background-color: var(--background-composer-mobile), var(--background-norm);
 		}
 	}
 
