@@ -8,7 +8,7 @@
         "check-types": "tsc",
         "lint": "eslint --quiet",
         "test": "TZ=UTC vitest",
-        "test:ci": "yarn test --coverage",
+        "test:ci": "yarn test --coverage --run",
         "test:ui": "yarn test --ui",
         "test:watch": "yarn test --watch"
     },
