@@ -1,4 +1,4 @@
-export const ALLOWED_PERMISSIONS = ["clipboard-sanitized-write", "persistent-storage"];
+export const ALLOWED_PERMISSIONS = ["clipboard-sanitized-write", "persistent-storage", "media"];
 
 export const CERT_PROTON_ME = [
     "CT56BhOTmj5ZIPgb/xD5mH8rY3BLo/MlhP7oPyJUEDo=", // Current
