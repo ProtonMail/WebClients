@@ -12,7 +12,7 @@ import { updateSpamAction, updateStickyLabels, updateViewMode } from '@proton/sh
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
-import { DEFAULT_MAILSETTINGS, STICKY_LABELS, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
+import { STICKY_LABELS, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
@@ -28,16 +28,8 @@ import ShowMovedToggle from './ShowMovedToggle';
 import SpamActionSelect from './SpamActionSelect';
 
 const MessagesSection = () => {
-    const [
-        {
-            ViewMode,
-            StickyLabels,
-            ConfirmLink,
-            SpamAction,
-            AutoDeleteSpamAndTrashDays,
-            AlmostAllMail,
-        } = DEFAULT_MAILSETTINGS,
-    ] = useMailSettings();
+    const [{ ViewMode, StickyLabels, ConfirmLink, SpamAction, AutoDeleteSpamAndTrashDays, AlmostAllMail }] =
+        useMailSettings();
     const { createNotification } = useNotifications();
     const isAlmostAllMailEnabled = !!useFeature(FeatureCode.AlmostAllMail).feature?.Value;
     const dispatch = useDispatch();

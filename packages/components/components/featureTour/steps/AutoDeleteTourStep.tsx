@@ -27,7 +27,7 @@ const AutoDeleteTourStep = (props: FeatureTourStepProps) => {
     const dispatch = useDispatch();
     const [mailSettings] = useMailSettings();
     const { state: isToggleChecked, toggle } = useToggle(true);
-    const isFeatureEnabled = mailSettings?.AutoDeleteSpamAndTrashDays === AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE;
+    const isFeatureEnabled = mailSettings.AutoDeleteSpamAndTrashDays === AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE;
 
     const handleEnableFeature = async () => {
         if (isToggleChecked && !isFeatureEnabled) {

@@ -37,13 +37,12 @@ const useCalendarHotkeys = ({
 }: Props) => {
     const isCalendarHotkeysEnabled = useFlag('CalendarHotkeys');
     const [mailSettings] = useMailSettings();
-    const { Shortcuts } = mailSettings || {};
     const shortcutHandlers: HotkeyTuple[] = useMemo(
         () => [
             [
                 [KeyboardKey.N],
                 (e) => {
-                    if (isCalendarHotkeysEnabled && Shortcuts && !isBusy(e) && !isDrawerApp) {
+                    if (isCalendarHotkeysEnabled && mailSettings.Shortcuts && !isBusy(e) && !isDrawerApp) {
                         e.preventDefault();
                         createEvent();
                     }
@@ -52,7 +51,7 @@ const useCalendarHotkeys = ({
             [
                 [KeyboardKey.T],
                 (e) => {
-                    if (isCalendarHotkeysEnabled && Shortcuts && !isBusy(e) && !isDrawerApp) {
+                    if (isCalendarHotkeysEnabled && mailSettings.Shortcuts && !isBusy(e) && !isDrawerApp) {
                         e.preventDefault();
                         goToToday();
                     }
@@ -61,7 +60,7 @@ const useCalendarHotkeys = ({
             [
                 [KeyboardKey.One],
                 (e) => {
-                    if (isCalendarHotkeysEnabled && Shortcuts && !isBusy(e) && !isDrawerApp) {
+                    if (isCalendarHotkeysEnabled && mailSettings.Shortcuts && !isBusy(e) && !isDrawerApp) {
                         e.preventDefault();
                         showDayView();
                     }
@@ -70,7 +69,7 @@ const useCalendarHotkeys = ({
             [
                 [KeyboardKey.Two],
                 (e) => {
-                    if (isCalendarHotkeysEnabled && Shortcuts && !isBusy(e) && !isDrawerApp) {
+                    if (isCalendarHotkeysEnabled && mailSettings.Shortcuts && !isBusy(e) && !isDrawerApp) {
                         e.preventDefault();
                         showWeekView();
                     }
@@ -79,7 +78,7 @@ const useCalendarHotkeys = ({
             [
                 [KeyboardKey.Three],
                 (e) => {
-                    if (isCalendarHotkeysEnabled && Shortcuts && !isBusy(e) && !isDrawerApp) {
+                    if (isCalendarHotkeysEnabled && mailSettings.Shortcuts && !isBusy(e) && !isDrawerApp) {
                         e.preventDefault();
                         showMonthView();
                     }
@@ -88,7 +87,7 @@ const useCalendarHotkeys = ({
             [
                 [KeyboardKey.ArrowRight],
                 (e) => {
-                    if (isCalendarHotkeysEnabled && Shortcuts && !isBusy(e) && !isDrawerApp) {
+                    if (isCalendarHotkeysEnabled && mailSettings.Shortcuts && !isBusy(e) && !isDrawerApp) {
                         e.preventDefault();
                         goToNextView();
                     }
@@ -97,7 +96,7 @@ const useCalendarHotkeys = ({
             [
                 [KeyboardKey.ArrowLeft],
                 (e) => {
-                    if (isCalendarHotkeysEnabled && Shortcuts && !isBusy(e) && !isDrawerApp) {
+                    if (isCalendarHotkeysEnabled && mailSettings.Shortcuts && !isBusy(e) && !isDrawerApp) {
                         e.preventDefault();
                         goToPreviousView();
                     }
@@ -115,7 +114,7 @@ const useCalendarHotkeys = ({
             [
                 [KeyboardKey.Slash],
                 (e) => {
-                    if (isCalendarHotkeysEnabled && Shortcuts && !isBusy(e) && !isDrawerApp) {
+                    if (isCalendarHotkeysEnabled && mailSettings.Shortcuts && !isBusy(e) && !isDrawerApp) {
                         e.preventDefault();
                         focusSearchBar();
                     }
@@ -140,7 +139,7 @@ const useCalendarHotkeys = ({
             showDayView,
             showWeekView,
             showMonthView,
-            Shortcuts,
+            mailSettings.Shortcuts,
         ]
     );
 

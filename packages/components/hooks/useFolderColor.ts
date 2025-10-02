@@ -7,11 +7,11 @@ const useFolderColor = (folder: Folder) => {
     const [folders] = useFolders();
     const [mailSettings] = useMailSettings();
 
-    if (!mailSettings?.EnableFolderColor) {
+    if (!mailSettings.EnableFolderColor) {
         return undefined;
     }
 
-    if (!mailSettings?.InheritParentFolderColor) {
+    if (!mailSettings.InheritParentFolderColor) {
         return folder.Color;
     }
 

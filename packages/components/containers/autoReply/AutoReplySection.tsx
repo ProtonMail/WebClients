@@ -31,7 +31,6 @@ import {
 } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
-import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 import { removeImagesFromContent } from '@proton/shared/lib/sanitize/purify';
 
 import { useHotkeys } from '../../hooks/useHotkeys';
@@ -50,8 +49,7 @@ export const AutoReplySection = () => {
     const errorHandler = useErrorHandler();
     const [{ hasPaidMail }] = useUser();
     const [mailSettings] = useMailSettings();
-    const { Shortcuts } = mailSettings || DEFAULT_MAILSETTINGS;
-    const AutoResponder = mailSettings?.AutoResponder || getDefaultAutoResponder();
+    const AutoResponder = mailSettings.AutoResponder || getDefaultAutoResponder();
     const api = useApi();
     const dispatch = useDispatch();
     const [enablingLoading, withEnablingLoading] = useLoading();
@@ -77,7 +75,7 @@ export const AutoReplySection = () => {
         setIsEnabled(enable);
 
         const isDisablingExistingAutoResponder =
-            !enable && mailSettings?.AutoResponder && mailSettings?.AutoResponder.IsEnabled;
+            !enable && mailSettings.AutoResponder && mailSettings.AutoResponder.IsEnabled;
 
         if (enable || !isDisablingExistingAutoResponder) {
             return;
@@ -142,7 +140,7 @@ export const AutoReplySection = () => {
         [
             ['Meta', 'Enter'],
             async () => {
-                if (Shortcuts) {
+                if (mailSettings.Shortcuts) {
                     await withUpdatingLoading(handleSubmit());
                 }
             },

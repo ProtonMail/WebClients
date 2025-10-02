@@ -13,7 +13,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
-import { DEFAULT_MAILSETTINGS, VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
+import { DEFAULT_MAIL_SETTINGS, VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
 import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 import range from '@proton/utils/range';
@@ -68,7 +68,7 @@ export const props = {
 const defaultSort = { sort: 'Time', desc: true } as Sort;
 const defaultFilter = {};
 const defaultSearch = {};
-const defaultMailSettings = { ...DEFAULT_MAILSETTINGS, ViewLayout: VIEW_LAYOUT.COLUMN } as MailSettings;
+const defaultMailSettings = { ...DEFAULT_MAIL_SETTINGS, ViewLayout: VIEW_LAYOUT.COLUMN } as MailSettings;
 
 export const labels: Label[] = [
     { ID: 'labelID', Type: LABEL_TYPE.MESSAGE_LABEL, Name: 'label' },

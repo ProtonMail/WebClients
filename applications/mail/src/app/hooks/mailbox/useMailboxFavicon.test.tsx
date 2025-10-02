@@ -7,7 +7,7 @@ import { useDynamicFavicon } from '@proton/components';
 import { useConversationCounts, useMessageCounts } from '@proton/mail';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { DEFAULT_MAILSETTINGS, UNREAD_FAVICON, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
+import { DEFAULT_MAIL_SETTINGS, UNREAD_FAVICON, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 import { useMailboxFavicon } from './useMailboxFavicon';
 
@@ -60,7 +60,7 @@ describe('useMailboxFavicon', () => {
         mockUseConversationCounts.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 0 }]]);
         mockUseMessageCounts.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 0 }]]);
         mockUseMailSettings.mockReturnValue([
-            { ...DEFAULT_MAILSETTINGS, ViewMode: VIEW_MODE.GROUP, UnreadFavicon: UNREAD_FAVICON.ENABLED },
+            { ...DEFAULT_MAIL_SETTINGS, ViewMode: VIEW_MODE.GROUP, UnreadFavicon: UNREAD_FAVICON.ENABLED },
         ]);
 
         renderHook(() => useMailboxFavicon(MAILBOX_LABEL_IDS.INBOX), { wrapper });
@@ -72,7 +72,7 @@ describe('useMailboxFavicon', () => {
         mockUseConversationCounts.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 10 }]]);
         mockUseMessageCounts.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 0 }]]);
         mockUseMailSettings.mockReturnValue([
-            { ...DEFAULT_MAILSETTINGS, ViewMode: VIEW_MODE.GROUP, UnreadFavicon: UNREAD_FAVICON.ENABLED },
+            { ...DEFAULT_MAIL_SETTINGS, ViewMode: VIEW_MODE.GROUP, UnreadFavicon: UNREAD_FAVICON.ENABLED },
         ]);
 
         renderHook(() => useMailboxFavicon(MAILBOX_LABEL_IDS.INBOX), { wrapper });
@@ -84,7 +84,7 @@ describe('useMailboxFavicon', () => {
         mockUseConversationCounts.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 0 }]]);
         mockUseMessageCounts.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 10 }]]);
         mockUseMailSettings.mockReturnValue([
-            { ...DEFAULT_MAILSETTINGS, ViewMode: VIEW_MODE.SINGLE, UnreadFavicon: UNREAD_FAVICON.ENABLED },
+            { ...DEFAULT_MAIL_SETTINGS, ViewMode: VIEW_MODE.SINGLE, UnreadFavicon: UNREAD_FAVICON.ENABLED },
         ]);
 
         renderHook(() => useMailboxFavicon(MAILBOX_LABEL_IDS.INBOX), { wrapper });
@@ -96,7 +96,7 @@ describe('useMailboxFavicon', () => {
         mockUseConversationCounts.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 200 }]]);
         mockUseMessageCounts.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 0 }]]);
         mockUseMailSettings.mockReturnValue([
-            { ...DEFAULT_MAILSETTINGS, ViewMode: VIEW_MODE.GROUP, UnreadFavicon: UNREAD_FAVICON.ENABLED },
+            { ...DEFAULT_MAIL_SETTINGS, ViewMode: VIEW_MODE.GROUP, UnreadFavicon: UNREAD_FAVICON.ENABLED },
         ]);
 
         renderHook(() => useMailboxFavicon(MAILBOX_LABEL_IDS.INBOX), { wrapper });
@@ -108,7 +108,7 @@ describe('useMailboxFavicon', () => {
         mockUseConversationCounts.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 0 }]]);
         mockUseMessageCounts.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 200 }]]);
         mockUseMailSettings.mockReturnValue([
-            { ...DEFAULT_MAILSETTINGS, ViewMode: VIEW_MODE.SINGLE, UnreadFavicon: UNREAD_FAVICON.ENABLED },
+            { ...DEFAULT_MAIL_SETTINGS, ViewMode: VIEW_MODE.SINGLE, UnreadFavicon: UNREAD_FAVICON.ENABLED },
         ]);
 
         renderHook(() => useMailboxFavicon(MAILBOX_LABEL_IDS.INBOX), { wrapper });
@@ -120,7 +120,7 @@ describe('useMailboxFavicon', () => {
         mockUseConversationCounts.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 10 }]]);
         mockUseMessageCounts.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 0 }]]);
         mockUseMailSettings.mockReturnValue([
-            { ...DEFAULT_MAILSETTINGS, ViewMode: VIEW_MODE.GROUP, UnreadFavicon: UNREAD_FAVICON.DISABLED },
+            { ...DEFAULT_MAIL_SETTINGS, ViewMode: VIEW_MODE.GROUP, UnreadFavicon: UNREAD_FAVICON.DISABLED },
         ]);
 
         renderHook(() => useMailboxFavicon(MAILBOX_LABEL_IDS.INBOX), { wrapper });
@@ -132,7 +132,7 @@ describe('useMailboxFavicon', () => {
         mockUseConversationCounts.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 0 }]]);
         mockUseMessageCounts.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 10 }]]);
         mockUseMailSettings.mockReturnValue([
-            { ...DEFAULT_MAILSETTINGS, ViewMode: VIEW_MODE.SINGLE, UnreadFavicon: UNREAD_FAVICON.DISABLED },
+            { ...DEFAULT_MAIL_SETTINGS, ViewMode: VIEW_MODE.SINGLE, UnreadFavicon: UNREAD_FAVICON.DISABLED },
         ]);
 
         renderHook(() => useMailboxFavicon(MAILBOX_LABEL_IDS.INBOX), { wrapper });

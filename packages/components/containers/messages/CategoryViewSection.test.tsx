@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
+import { DEFAULT_MAIL_SETTINGS } from '@proton/shared/lib/mail/mailSettings';
 import useFlag from '@proton/unleash/useFlag';
 
 import { CategoryViewSection } from './CategoryViewSection';
@@ -29,7 +29,7 @@ jest.mock('@proton/redux-shared-store/sharedProvider', () => ({
 describe('CategoryViewSection', () => {
     describe('setting is visible', () => {
         it('should have visible switch and checked if the setting is on', () => {
-            mockUseMailSettings.mockReturnValue([{ ...DEFAULT_MAILSETTINGS, MailCategoryView: true }]);
+            mockUseMailSettings.mockReturnValue([{ ...DEFAULT_MAIL_SETTINGS, MailCategoryView: true }]);
             mockUseOrganization.mockReturnValue([{ Settings: { MailCategoryViewEnabled: true } }]);
 
             render(<CategoryViewSection />);
@@ -43,7 +43,7 @@ describe('CategoryViewSection', () => {
         });
 
         it('should have visible switch and unchecked if the setting is off', () => {
-            mockUseMailSettings.mockReturnValue([{ ...DEFAULT_MAILSETTINGS, MailCategoryView: false }]);
+            mockUseMailSettings.mockReturnValue([{ ...DEFAULT_MAIL_SETTINGS, MailCategoryView: false }]);
             mockUseOrganization.mockReturnValue([{ Settings: { MailCategoryViewEnabled: true } }]);
 
             render(<CategoryViewSection />);
@@ -59,7 +59,7 @@ describe('CategoryViewSection', () => {
 
     describe('setting is not visible', () => {
         it('should not render the toggle if the organization disabled the feature', () => {
-            mockUseMailSettings.mockReturnValue([{ ...DEFAULT_MAILSETTINGS, MailCategoryView: true }]);
+            mockUseMailSettings.mockReturnValue([{ ...DEFAULT_MAIL_SETTINGS, MailCategoryView: true }]);
             mockUseOrganization.mockReturnValue([{ Settings: { MailCategoryViewEnabled: false } }]);
 
             render(<CategoryViewSection />);
@@ -72,7 +72,7 @@ describe('CategoryViewSection', () => {
         });
 
         it('should not render the toggle if the mail settings are loading', () => {
-            mockUseMailSettings.mockReturnValue([{ ...DEFAULT_MAILSETTINGS, MailCategoryView: true }, true]);
+            mockUseMailSettings.mockReturnValue([{ ...DEFAULT_MAIL_SETTINGS, MailCategoryView: true }, true]);
             mockUseOrganization.mockReturnValue([{ Settings: { MailCategoryViewEnabled: true } }, false]);
 
             render(<CategoryViewSection />);
@@ -85,7 +85,7 @@ describe('CategoryViewSection', () => {
         });
 
         it('should not render the toggle if the organization settings are loading', () => {
-            mockUseMailSettings.mockReturnValue([{ ...DEFAULT_MAILSETTINGS, MailCategoryView: true }, false]);
+            mockUseMailSettings.mockReturnValue([{ ...DEFAULT_MAIL_SETTINGS, MailCategoryView: true }, false]);
             mockUseOrganization.mockReturnValue([{ Settings: { MailCategoryViewEnabled: true } }, true]);
 
             render(<CategoryViewSection />);
