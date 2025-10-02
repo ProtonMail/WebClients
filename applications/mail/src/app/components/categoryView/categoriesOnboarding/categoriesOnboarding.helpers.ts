@@ -54,3 +54,13 @@ export const getB2CCardCopy = (labelID: string) => {
             return c('Info').t`Includes bills, receipts, orders, and bookings.`;
     }
 };
+
+export const hasSeenAllOnboarding = (flagValue: number): boolean => {
+    return (
+        hasSeeFullDisplay(flagValue) &&
+        hasSeeSocial(flagValue) &&
+        hasSeePromotion(flagValue) &&
+        hasSeeNewsletter(flagValue) &&
+        hasSeeTransaction(flagValue)
+    );
+};
