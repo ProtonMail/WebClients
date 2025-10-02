@@ -295,6 +295,10 @@ export default defineConfig(
                             group: ['@proton/unleash/index'],
                             message: 'You should import from `@proton/unleash` instead.',
                         },
+                        {
+                            group: ['@proton/mail/index'],
+                            message: 'You should import from `@proton/mail` instead.',
+                        },
                     ],
                 },
             ],
