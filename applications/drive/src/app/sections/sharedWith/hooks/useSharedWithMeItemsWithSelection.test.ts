@@ -149,7 +149,7 @@ describe('useSharedWithMeItemsWithSelection', () => {
         const { result } = renderHook(() => useSharedWithMeItemsWithSelection());
 
         act(() => {
-            result.current.handleRenderItem('volume-123~node-456');
+            result.current.handleRenderItem({ id: 'volume-123~node-456' });
         });
 
         expect(mockSharedWithMeStore.getSharedWithMeItem).toHaveBeenCalledWith('volume-123~node-456');

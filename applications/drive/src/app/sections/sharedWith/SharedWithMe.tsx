@@ -96,7 +96,7 @@ const SharedWithMe = () => {
                 contextMenuAnchorRef={contextMenuAnchorRef}
                 onItemContextMenu={browserItemContextMenu.handleContextMenu}
                 onItemOpen={handleOpenItem}
-                onItemRender={(item) => handleRenderItem(item.id)}
+                onItemRender={handleRenderItem}
                 onSort={handleSorting}
                 onScroll={browserItemContextMenu.close}
             />
