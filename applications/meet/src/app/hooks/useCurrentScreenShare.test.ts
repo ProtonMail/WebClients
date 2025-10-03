@@ -10,6 +10,7 @@ import { useCurrentScreenShare } from './useCurrentScreenShare';
 
 const mockLocalParticipant = {
     identity: 'local-participant',
+    setScreenShareEnabled: vi.fn(),
 };
 
 const mockTracks = [
@@ -100,12 +101,12 @@ describe('useCurrentScreenShare', () => {
     });
 
     it('should allow for stopping the screen share', () => {
-        const unpublishTrack = vi.fn();
+        const setScreenShareEnabled = vi.fn();
 
         const newLocalParticipant = {
             ...mockLocalParticipant,
             trackPublications: new Map([['video', mockTracks[0]]]),
-            unpublishTrack,
+            setScreenShareEnabled,
         };
 
         useLocalParticipantMock.mockReturnValue({
@@ -116,14 +117,14 @@ describe('useCurrentScreenShare', () => {
         (useRoomContext as Mock).mockReturnValue({
             localParticipant: {
                 getTrackPublication: vi.fn().mockReturnValue(mockTracks[0]),
-                unpublishTrack,
+                setScreenShareEnabled,
             },
         });
 
         const { result } = renderHook(() => useCurrentScreenShare());
         result.current.stopScreenShare();
 
-        expect(unpublishTrack).toHaveBeenCalledWith(newLocalParticipant.trackPublications.get('video')?.track);
+        expect(setScreenShareEnabled).toHaveBeenCalledWith(false);
     });
 
     it('should show a notification if the screen share is not supported on mobile browsers', async () => {

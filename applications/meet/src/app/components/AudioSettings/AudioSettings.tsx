@@ -20,6 +20,7 @@ export const AudioSettings = ({ anchorRef, onClose, anchorPosition }: AudioSetti
         microphones,
         speakers,
         switchActiveDevice,
+        isAudioEnabled,
     } = useMediaManagementContext();
 
     const handleInputDeviceChange = async (value: string | null) => {
@@ -28,7 +29,7 @@ export const AudioSettings = ({ anchorRef, onClose, anchorPosition }: AudioSetti
             return;
         }
 
-        await toggleAudio({ audioDeviceId: value });
+        await toggleAudio({ audioDeviceId: value, isEnabled: isAudioEnabled });
     };
 
     const handleOutputDeviceChange = async (value: string | null) => {
