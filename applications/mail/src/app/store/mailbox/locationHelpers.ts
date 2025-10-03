@@ -566,7 +566,7 @@ export const applyLabelToConversationMessage = (
     const isMessageStarred = hasLabel(message, MAILBOX_LABEL_IDS.STARRED);
     const messageCustomLabels = message.LabelIDs.filter((labelID) => isCustomLabel(labelID, labels));
     const isMessageUnread = message.Unread;
-    const messageNumAttachments = message.Attachments?.length || 0;
+    const messageNumAttachments = message.NumAttachments;
 
     if (destinationLabelID === MAILBOX_LABEL_IDS.TRASH || destinationLabelID === MAILBOX_LABEL_IDS.SPAM) {
         // Remove message from ALMOST_ALL_MAIL
@@ -681,7 +681,7 @@ export const applyLabelToConversationMessage = (
             ID: destinationLabelID,
             ContextNumMessages: 1,
             ContextNumUnread: isMessageUnread && destinationLabelID !== MAILBOX_LABEL_IDS.TRASH ? 1 : 0,
-            ContextNumAttachments: message.Attachments.length,
+            ContextNumAttachments: messageNumAttachments,
         });
     }
 
