@@ -2,7 +2,7 @@ import { formatRelative, fromUnixTime } from 'date-fns';
 import type { Location } from 'history';
 
 import { isCustomLabel } from '@proton/mail/helpers/location';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { CATEGORY_LABEL_IDS_SET, type CategoryLabelID, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import { omit, toMap } from '@proton/shared/lib/helpers/object';
 import type { Address } from '@proton/shared/lib/interfaces';
@@ -326,18 +326,26 @@ export const filterElementsInState = ({
         // We only want to compute the disabled category if we're in the default label, this prevents unnecessary computation
         const isDefaultCategory = labelID === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT;
         let elementContainsDisabledCategoryLabel = false;
-        if (isDefaultCategory && disabledCategoriesIDs?.length) {
-            const labelIDs = isElementMessage(element)
-                ? element.LabelIDs
-                : (element as Conversation)?.Labels?.map((label) => label.ID);
+        const labelIDs = isElementMessage(element)
+            ? element.LabelIDs
+            : (element as Conversation)?.Labels?.map((label) => label.ID);
 
+        if (isDefaultCategory && disabledCategoriesIDs?.length) {
             elementContainsDisabledCategoryLabel = !!labelIDs?.some((id) => disabledCategoriesIDs.includes(id));
         }
 
+        // We don't want to show elements that are in a category but not in the inbox when present in a category
+        const isCurrentLabelCategory = CATEGORY_LABEL_IDS_SET.has(labelID as CategoryLabelID);
+        let isElementInCategoryButNotInbox = false;
+        if (isCurrentLabelCategory) {
+            isElementInCategoryButNotInbox = !labelIDs?.includes(MAILBOX_LABEL_IDS.INBOX);
+        }
+
         if (
-            !hasLabel(element, labelID) &&
-            !elementContainsDisabledCategoryLabel &&
-            labelID !== CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS
+            (!hasLabel(element, labelID) &&
+                !elementContainsDisabledCategoryLabel &&
+                labelID !== CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS) ||
+            isElementInCategoryButNotInbox
         ) {
             return false;
         }
