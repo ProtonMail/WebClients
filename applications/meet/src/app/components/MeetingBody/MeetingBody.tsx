@@ -74,7 +74,7 @@ export const MeetingBody = ({
                 screenShareTrack.publication.track.detach(screenShareVideoRef.current);
             }
         };
-    }, [isScreenShare]);
+    }, [isScreenShare, screenShareTrack?.publication?.track?.sid]);
 
     const defaultScreenShareFlexGrow = isSideBarOpen ? 6 : 8;
     // Using 0 instead of removing the video element to avoid reinitializing the screenshare video

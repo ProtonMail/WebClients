@@ -9,7 +9,6 @@ import { PreJoinDetails } from '../../components/PreJoinDetails/PreJoinDetails';
 import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
 import { defaultDisplayNameHooks } from '../../hooks/useDefaultDisplayName';
 import { LoadingState } from '../../types';
-import { saveAudioDevice, saveAudioOutputDevice, saveVideoDevice } from '../../utils/deviceStorage';
 
 import './PrejoinContainer.scss';
 
@@ -77,17 +76,14 @@ export const PrejoinContainer = ({
 
     const handleCameraChange = (camera: MediaDeviceInfo) => {
         void switchActiveDevice('videoinput', camera.deviceId);
-        saveVideoDevice(camera.deviceId);
     };
 
     const handleMicrophoneChange = (microphone: MediaDeviceInfo) => {
         void switchActiveDevice('audioinput', microphone.deviceId);
-        saveAudioDevice(microphone.deviceId);
     };
 
     const handleAudioOutputDeviceChange = (speaker: MediaDeviceInfo) => {
         void switchActiveDevice('audiooutput', speaker.deviceId);
-        saveAudioOutputDevice(speaker.deviceId);
     };
 
     return (
