@@ -62,3 +62,18 @@
 		border-radius: initial;
 	}
 }
+
+.pre-join-details-container {
+	justify-content: initial;
+	align-items: initial;
+
+	@include media('>medium') {
+		justify-content: center;
+		align-items: center;
+	}
+
+	@include media('>small') {
+		justify-content: initial;
+		align-items: initial;
+	}
+}

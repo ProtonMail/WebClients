@@ -3,6 +3,7 @@ import React from 'react';
 
 import { c } from 'ttag';
 
+import { useActiveBreakpoint } from '@proton/components';
 import type { PopperPosition } from '@proton/components/components/popper/interface';
 import { IcCheckmark } from '@proton/icons';
 
@@ -28,8 +29,15 @@ const VideoSettingsDropdownComponent = ({
 }: VideoSettingsDropdownProps) => {
     const noCameraDetected = cameras.length === 0;
 
+    const { activeBreakpoint } = useActiveBreakpoint();
+
     return (
-        <DeviceSettingsDropdown anchorPosition={anchorPosition} anchorRef={anchorRef} onClose={onClose}>
+        <DeviceSettingsDropdown
+            anchorPosition={anchorPosition}
+            anchorRef={anchorRef}
+            onClose={onClose}
+            originalPlacement={activeBreakpoint === 'small' ? 'top-end' : 'top-start'}
+        >
             <div className="flex flex-column gap-2 p-2 meet-scrollbar overflow-x-hidden overflow-y-auto">
                 <div className="flex flex-column gap-2">
                     <div className="color-weak meet-font-weight">
