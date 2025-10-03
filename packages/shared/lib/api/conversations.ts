@@ -1,5 +1,6 @@
 import type { SPAM_ACTION } from '../mail/mailSettings';
 import { getAppropriateSort } from './helpers/snoozeSort';
+import type { CountParams } from './interface';
 import type { MailboxItemsQueryParams } from './mailbox';
 
 export const queryConversations = ({
@@ -62,10 +63,10 @@ export const getConversation = (conversationID: string, MessageID?: string) => (
     params: { MessageID },
 });
 
-export const queryConversationCount = (AddressID?: string) => ({
+export const queryConversationCount = ({ AddressID, OnlyInInboxForCategories }: CountParams) => ({
     method: 'get',
     url: 'mail/v4/conversations/count',
-    params: { AddressID },
+    params: { AddressID, OnlyInInboxForCategories },
 });
 
 export const markConversationsAsRead = (IDs: string[]) => ({
