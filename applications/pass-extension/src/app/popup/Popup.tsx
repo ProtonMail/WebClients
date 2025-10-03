@@ -5,6 +5,7 @@ import { ExtensionClient } from 'proton-pass-extension/lib/components/Extension/
 import { ExtensionError } from 'proton-pass-extension/lib/components/Extension/ExtensionError';
 import { ExtensionStore } from 'proton-pass-extension/lib/components/Extension/ExtensionStore';
 import { useExtensionNotificationEnhancer } from 'proton-pass-extension/lib/hooks/useExtensionNotificationEnhancer';
+import { hasClipboardPermissions } from 'proton-pass-extension/lib/utils/permissions';
 import { WorkerMessageType, type WorkerMessageWithSender } from 'proton-pass-extension/types/messages';
 
 import { ErrorBoundary, NotificationsContext, useNotifications } from '@proton/components';
@@ -39,7 +40,7 @@ export const Popup = () => {
                             <NavigationProvider>
                                 <PopupProvider ready={ready}>
                                     <Localized>
-                                        <ClipboardProvider>
+                                        <ClipboardProvider checkPermissions={hasClipboardPermissions}>
                                             <AppGuard />
                                         </ClipboardProvider>
                                     </Localized>

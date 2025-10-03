@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import { type FC, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -8,13 +8,25 @@ import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { getDefaultClipboardTTLOption } from '@proton/pass/components/Settings/Clipboard/ClipboardSettings';
 import { ClipboardTTL, DEFAULT_CLIPBOARD_TTL } from '@proton/pass/lib/clipboard/types';
 
-type Props = { onSubmit: (ttl?: ClipboardTTL) => void };
+type Props = {
+    checkPermissions: () => Promise<boolean>;
+    onSubmit: (hasPermissions: boolean, ttl?: ClipboardTTL) => void;
+};
 
-export const ClipboardSettingsModal: FC<Props> = ({ onSubmit }) => {
+export const ClipboardSettingsModal: FC<Props> = ({ checkPermissions, onSubmit }) => {
+    const [hasPermissions, setHasPermissions] = useState<boolean>(false);
+
+    /** Fetching permissions status async to have the result ready when the user submits.
+     * On FF, permission requests need to be strictly synchronous after a user event so
+     * permission check has to be performed before (see `ExtensionCore.tsx`) */
+    useEffect(() => {
+        void (async () => setHasPermissions(await checkPermissions()))();
+    }, []);
+
     const timeoutDurationHumanReadable = getDefaultClipboardTTLOption();
 
     return (
-        <PassModal onClose={onSubmit} size="small" open>
+        <PassModal onClose={() => onSubmit(hasPermissions)} size="small" open>
             <ModalTwoHeader title={c('Title').t`Clear clipboard`} />
             <ModalTwoContent>
                 <p>{
@@ -27,10 +39,10 @@ export const ClipboardSettingsModal: FC<Props> = ({ onSubmit }) => {
                 )}
             </ModalTwoContent>
             <ModalTwoFooter className="justify-between">
-                <Button color="weak" onClick={() => onSubmit(ClipboardTTL.TTL_NEVER)}>
+                <Button color="weak" onClick={() => onSubmit(hasPermissions, ClipboardTTL.TTL_NEVER)}>
                     {c('Action').t`No`}
                 </Button>
-                <Button color="norm" onClick={() => onSubmit(DEFAULT_CLIPBOARD_TTL)}>
+                <Button color="norm" onClick={() => onSubmit(hasPermissions, DEFAULT_CLIPBOARD_TTL)}>
                     {c('Action').t`Yes`}
                 </Button>
             </ModalTwoFooter>

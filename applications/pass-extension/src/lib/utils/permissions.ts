@@ -48,10 +48,12 @@ export const hasPermissions = async (permissions: Permission[]): Promise<boolean
     }
 };
 
+export const hasClipboardPermissions = () => hasPermissions(CLIPBOARD_PERMISSIONS);
+
 export const requestPermissions = async (permissions: Permission[]): Promise<boolean> => {
     try {
         return await browser.permissions.request({ permissions });
-    } catch {
+    } catch (error) {
         return false;
     }
 };
