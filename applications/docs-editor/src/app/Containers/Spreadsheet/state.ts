@@ -218,7 +218,29 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
 
   const baseState = { ...localState, ...spreadsheetState, ...computedValues }
 
-  const { scrollToCell } = useSpreadsheet()
+  const { scrollToCell, getCellOffsetFromCoords: _getCellOffsetFromCoords, getGridRef } = useSpreadsheet()
+  /**
+   * Requires this wrapper function, otherwise the `ProtonSheetsUIStoreSetters` type
+   * complains about `getCellOffsetFromCoords` being undefined
+   */
+  const getCellOffsetFromCoords = useCallback(
+    (cell: CellInterface) => {
+      return _getCellOffsetFromCoords?.(cell)
+    },
+    [_getCellOffsetFromCoords],
+  )
+  const getGridContainerElement = useCallback(() => {
+    return getGridRef?.()?.container || null
+  }, [getGridRef])
+  const getGridScrollPosition = useCallback(() => {
+    return getGridRef?.()?.getScrollPosition()
+  }, [getGridRef])
+  const getHyperlink = useCallback(
+    (sheetId: number, rowIndex: number, columnIndex: number) => {
+      return spreadsheetState.getCellData(sheetId, rowIndex, columnIndex)?.hyperlink
+    },
+    [spreadsheetState],
+  )
   const onSelectRange = useEvent((range: SheetRange) => {
     const activeCell: CellInterface | null = {
       rowIndex: range.startRowIndex,
@@ -324,6 +346,10 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
     onSelectTable,
     onMoveSheet,
     onCreateNewSheet,
+    getCellOffsetFromCoords,
+    getGridContainerElement,
+    getGridScrollPosition,
+    getHyperlink,
   }
 }
 export type ProtonSheetsState = ReturnType<typeof useProtonSheetsState>
