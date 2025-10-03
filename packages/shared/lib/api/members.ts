@@ -232,6 +232,16 @@ export const deleteMember = (memberId: string) => ({
     method: 'delete',
 });
 
+export const disableMember = (memberID: string) => ({
+    url: `core/v4/members/${memberID}/disable`,
+    method: 'put',
+});
+
+export const enableMember = (memberID: string) => ({
+    url: `core/v4/members/${memberID}/enable`,
+    method: 'put',
+});
+
 export const removeSSOSamlMember = (memberID: string) => ({
     url: `core/v4/members/${memberID}/saml`,
     method: 'delete',
