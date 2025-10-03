@@ -146,12 +146,14 @@ const GeneralSettingsPanel = ({ isGuest, onClose }: { isGuest: boolean; onClose?
     return (
         <div>
             {isLumoDarkModeEnabled && (
-                <SettingsSectionItem
-                    icon={isDarkLumoTheme ? 'moon' : 'sun'}
-                    text={c('collider_2025: Title').t`Theme`}
-                    subtext={c('collider_2025: Description').t`Switch between light and dark mode`}
-                    button={<LumoThemeButton />}
-                />
+                <div className="flex flex-column flex-nowrap gap-4 mb-4">
+                    <SettingsSectionItem
+                        icon={isDarkLumoTheme ? 'moon' : 'sun'}
+                        text={c('collider_2025: Title').t`Theme`}
+                        subtext={c('collider_2025: Description').t`Switch between light and dark mode`}
+                    />
+                    <LumoThemeButton />
+                </div>
             )}
             {!isGuest && (
                 <SettingsSectionItem
