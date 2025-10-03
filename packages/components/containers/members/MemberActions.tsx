@@ -15,9 +15,10 @@ import type {
     PartialMemberAddress,
     UserModel,
 } from '@proton/shared/lib/interfaces';
-import { MemberUnprivatizationState } from '@proton/shared/lib/interfaces';
-import { getIsMemberEnabled, getIsMemberSetup } from '@proton/shared/lib/keys/memberHelper';
+import { MEMBER_STATE, MemberUnprivatizationState } from '@proton/shared/lib/interfaces';
+import { getIsMemberDisabled, getIsMemberEnabled, getIsMemberSetup } from '@proton/shared/lib/keys/memberHelper';
 import { getCanGenerateMemberKeysPermissions, getShouldSetupMemberKeys } from '@proton/shared/lib/keys/memberKeys';
+import useFlag from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
 export const MagicLinkMemberActions = ({
@@ -85,6 +86,8 @@ export const getMemberPermissions = ({
     const canDelete = !member.Self;
     const canEdit = hasSetupOrganization || hasSetupOrganizationWithKeys;
     const canRevokeSessions = !member.Self && member.Type === MEMBER_TYPE.MANAGED;
+    // TODO: define more specific permission for managing member state
+    const canUpdateMemberState = !member.Self && member.Type === MEMBER_TYPE.MANAGED;
 
     const hasUnprivatization = Boolean(member.Unprivatization);
 
@@ -147,6 +150,7 @@ export const getMemberPermissions = ({
         canDelete,
         canEdit,
         canRevokeSessions,
+        canUpdateMemberState,
         canSetupMember,
         canLogin,
         canChangePassword,
@@ -159,6 +163,7 @@ export const getMemberPermissions = ({
 interface Props {
     member: EnhancedMember;
     onLogin: (member: EnhancedMember) => Promise<void>;
+    onUpdateMemberState: (member: EnhancedMember, status: MEMBER_STATE) => Promise<void>;
     onAddAddress: (member: EnhancedMember) => void;
     onChangePassword: (member: EnhancedMember) => void;
     onEdit: (member: EnhancedMember) => void;
@@ -173,6 +178,7 @@ interface Props {
 
 const MemberActions = ({
     member,
+    onUpdateMemberState,
     onAddAddress,
     onEdit,
     onDelete,
@@ -185,6 +191,7 @@ const MemberActions = ({
     disableEdit,
     permissions: {
         canEdit,
+        canUpdateMemberState,
         canAddAddress,
         canLogin,
         canRevokeSessions,
@@ -197,6 +204,8 @@ const MemberActions = ({
     },
 }: Props) => {
     const [loading, withLoading] = useLoading();
+    const isAccountSettingsUserDisableEnabled = useFlag('AccountSettingsUserDisableFE');
+    const isUserDisabled = getIsMemberDisabled(member);
 
     const list = [
         canEdit && {
@@ -220,6 +229,19 @@ const MemberActions = ({
                 onAddAddress(member);
             },
         },
+        isAccountSettingsUserDisableEnabled &&
+            canUpdateMemberState && {
+                text: isUserDisabled ? c('Member action').t`Enable user` : c('Member action').t`Disable user`,
+                disabled: isOrganizationDelinquent,
+                onClick: () => {
+                    void withLoading(
+                        onUpdateMemberState(
+                            member,
+                            isUserDisabled ? MEMBER_STATE.STATUS_ENABLED : MEMBER_STATE.STATUS_DISABLED
+                        )
+                    );
+                },
+            },
         canSetupMember && {
             text: c('Member action').t`Activate user`,
             disabled: isOrganizationDelinquent,

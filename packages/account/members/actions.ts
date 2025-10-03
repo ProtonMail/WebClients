@@ -13,7 +13,9 @@ import {
     createMember as createMemberConfig,
     deleteMember as deleteMemberConfig,
     deleteUnprivatizationRequest,
+    disableMember as disableMemberConfig,
     editMemberInvitation,
+    enableMember as enableMemberConfig,
     inviteMember,
     privatizeMember as privatizeMemberConfig,
     removeSSOSamlMember,
@@ -765,6 +767,32 @@ export const deleteMember = ({
         }
         await api(deleteMemberConfig(member.ID));
         dispatch(upsertMember({ member, type: 'delete' }));
+    };
+};
+
+export const disableMember = ({
+    api,
+    member,
+}: {
+    member: Member;
+    api: Api;
+}): ThunkAction<Promise<void>, MembersState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch) => {
+        await api(disableMemberConfig(member.ID));
+        dispatch(upsertMember({ member: await getMember(api, member.ID) }));
+    };
+};
+
+export const enableMember = ({
+    api,
+    member,
+}: {
+    member: Member;
+    api: Api;
+}): ThunkAction<Promise<void>, MembersState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch) => {
+        await api(enableMemberConfig(member.ID));
+        dispatch(upsertMember({ member: await getMember(api, member.ID) }));
     };
 };
 

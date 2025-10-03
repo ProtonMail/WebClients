@@ -7,6 +7,8 @@ import {
     attachMemberSSO,
     deleteMember,
     detachMemberSSO,
+    disableMember,
+    enableMember,
     getDomainAddressError,
     useMemberAddresses,
 } from '@proton/account';
@@ -377,6 +379,16 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
         setTmpMemberID(member.ID);
         await dispatch(accessMemberThunk({ member }));
         setLoginMemberModalOpen(true);
+    });
+
+    const handleUpdateMemberState = wrapError(async (member: EnhancedMember, status: MEMBER_STATE) => {
+        const action = status === MEMBER_STATE.STATUS_DISABLED ? disableMember : enableMember;
+        await dispatch(action({ api, member }));
+        const text =
+            status === MEMBER_STATE.STATUS_DISABLED
+                ? c('Success message').t`User disabled`
+                : c('Success message').t`User enabled`;
+        createNotification({ text });
     });
 
     const handleChangeMemberPassword = async (member: EnhancedMember) => {
@@ -831,6 +843,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                                 permissions={memberPermissions}
                                                 onAddAddress={handleAddAddress}
                                                 onEdit={handleEditUser}
+                                                onUpdateMemberState={handleUpdateMemberState}
                                                 onDelete={handleDeleteUser}
                                                 onSetup={handleSetupUser}
                                                 onRevoke={handleRevokeUserSessions}
