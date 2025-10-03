@@ -1,6 +1,4 @@
 import { Notification, Event, app } from "electron";
-import { handleIPCCalls } from "./ipc/main";
-import { handleWinNotification } from "./ipc/notification";
 import { moveUninstaller } from "./macos/uninstall";
 import { saveAppID } from "./store/idStore";
 import { getSettings } from "./store/settingsStore";
@@ -104,9 +102,7 @@ import { measureRequestTime } from "./utils/log/measureRequestTime";
     measureRequestTime();
     initializeUpdateChecks();
     new Notification();
-    handleIPCCalls();
     handleDeepLink();
-    handleWinNotification();
 
     // After this point the main window and views have been created
     viewCreationAppStartup();

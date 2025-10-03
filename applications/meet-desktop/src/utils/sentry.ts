@@ -14,7 +14,7 @@ import { appSession, updateSession } from "./session";
 import pkg from "../../package.json";
 import { app } from "electron";
 import { getAppID } from "../store/idStore";
-import { DESKTOP_FEATURES } from "../ipc/ipcConstants";
+import { DESKTOP_FEATURES } from "../constants/desktopFeatures";
 import { isLinux, isMac, isWindows } from "./helpers";
 import Logger, { LogMessage, Transport } from "electron-log";
 import { getAppURL } from "../store/urlStore";

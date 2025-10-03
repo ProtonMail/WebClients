@@ -497,13 +497,6 @@ export async function resetHiddenViews({ toHomepage } = { toHomepage: false }) {
     await Promise.all(loadPromises);
 }
 
-export async function showEndOfTrial() {
-    const trialEndURL = `${getAppURL().account}/trial-ended`;
-    await loadURL("account", trialEndURL);
-    showView("account");
-    resetHiddenViews();
-}
-
 export function getSpellCheckStatus() {
     return mainWindow?.webContents?.session?.spellCheckerEnabled ?? getSettings().spellChecker;
 }
