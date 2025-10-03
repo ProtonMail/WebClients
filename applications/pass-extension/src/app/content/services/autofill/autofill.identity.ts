@@ -13,7 +13,7 @@ export interface IdentityFieldConfig {
 }
 
 export const sanitizeName = (value?: string) => value?.trim().replace(/\s+/g, ' ');
-export const splitFullName = (fullName: string) => fullName.split(' ').filter(truthy);
+export const splitFullName = (fullName?: string) => fullName?.split(' ').filter(truthy) ?? [];
 
 /** Use `fullName` if available, otherwise derive from components */
 export const getFullName = pipe((data: ItemContent<'identity'>): Maybe<string> => {
