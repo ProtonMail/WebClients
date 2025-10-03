@@ -1,6 +1,12 @@
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-import { type ModelState, getInitialModelState, serverEvent } from '@proton/account';
+import {
+    type ModelState,
+    type OrganizationState,
+    getInitialModelState,
+    organizationThunk,
+    serverEvent,
+} from '@proton/account';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, createHooks, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { queryMessageCount } from '@proton/shared/lib/api/messages';
@@ -8,6 +14,8 @@ import type { LabelCount } from '@proton/shared/lib/interfaces';
 
 import type { Element } from 'proton-mail/models/element';
 
+import { type MailSettingState, mailSettingsThunk } from '../mailSettings';
+import { getCountQueryParams } from './countHelpers';
 import {
     labelConversationsPending,
     labelMessages,
@@ -19,7 +27,7 @@ import {
 
 const name = 'messageCounts' as const;
 
-interface State {
+interface State extends MailSettingState, OrganizationState {
     [name]: ModelState<LabelCount[]>;
 }
 
@@ -29,8 +37,14 @@ type Model = NonNullable<SliceState['value']>;
 export const selectMessageCounts = (state: State) => state[name];
 
 const modelThunk = createAsyncModelThunk<Model, State, ProtonThunkArguments>(`${name}/fetch`, {
-    miss: async ({ extraArgument }) => {
-        return extraArgument.api(queryMessageCount()).then(({ Counts }) => Counts);
+    miss: async ({ dispatch, extraArgument }) => {
+        const [mailSettings, organization] = await Promise.all([
+            dispatch(mailSettingsThunk()),
+            dispatch(organizationThunk()),
+        ]);
+        const options = getCountQueryParams(organization, mailSettings);
+
+        return extraArgument.api(queryMessageCount(options)).then(({ Counts }) => Counts);
     },
     previous: previousSelector(selectMessageCounts),
 });

@@ -1,6 +1,12 @@
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-import { type ModelState, getInitialModelState, serverEvent } from '@proton/account';
+import {
+    type ModelState,
+    type OrganizationState,
+    getInitialModelState,
+    organizationThunk,
+    serverEvent,
+} from '@proton/account';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, createHooks, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { queryConversationCount } from '@proton/shared/lib/api/conversations';
@@ -10,6 +16,7 @@ import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message
 import type { Conversation } from 'proton-mail/models/conversation';
 import type { Element } from 'proton-mail/models/element';
 
+import { type MailSettingState, mailSettingsThunk } from '../mailSettings';
 import {
     labelConversationsPending,
     labelMessagesPending,
@@ -20,10 +27,11 @@ import {
     unlabelConversationsPending,
     unlabelMessagesPending,
 } from './conversationCountsReducers';
+import { getCountQueryParams } from './countHelpers';
 
 const name = 'conversationCounts' as const;
 
-interface State {
+interface State extends MailSettingState, OrganizationState {
     [name]: ModelState<LabelCount[]>;
 }
 
@@ -33,8 +41,14 @@ type Model = NonNullable<SliceState['value']>;
 export const selectConversationCounts = (state: State) => state[name];
 
 const modelThunk = createAsyncModelThunk<Model, State, ProtonThunkArguments>(`${name}/fetch`, {
-    miss: async ({ extraArgument }) => {
-        return extraArgument.api(queryConversationCount()).then(({ Counts }) => Counts);
+    miss: async ({ extraArgument, dispatch }) => {
+        const [mailSettings, organization] = await Promise.all([
+            dispatch(mailSettingsThunk()),
+            dispatch(organizationThunk()),
+        ]);
+        const options = getCountQueryParams(organization, mailSettings);
+
+        return extraArgument.api(queryConversationCount(options)).then(({ Counts }) => Counts);
     },
     previous: previousSelector(selectConversationCounts),
 });
