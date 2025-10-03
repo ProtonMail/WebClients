@@ -2,7 +2,6 @@ import Store from "electron-store";
 import { settingsLogger } from "../utils/log";
 import { RELEASE_CATEGORIES } from "@proton/shared/lib/constants";
 import { Environment } from "@proton/shared/lib/interfaces/Environment";
-import { ThemeSetting } from "@proton/shared/lib/themes/themes";
 
 const store = new Store<{ settings: SettingsStore }>({
     configFileMode: 0o600,
@@ -11,7 +10,6 @@ const store = new Store<{ settings: SettingsStore }>({
 export interface SettingsStore {
     spellChecker: boolean;
     overrideError: boolean;
-    theme?: Partial<ThemeSetting>;
     releaseCategory?: RELEASE_CATEGORIES;
     rolloutProportion?: number;
     appCacheEnabled?: boolean;
