@@ -2,6 +2,7 @@ import type { ChangeEvent, ClipboardEvent, ReactNode } from 'react';
 import { useEffect, useRef } from 'react';
 
 import useIsMounted from '@proton/hooks/useIsMounted';
+import { isFirefox } from '@proton/shared/lib/helpers/browser';
 
 import type { EditorActions } from '../interface';
 
@@ -51,7 +52,11 @@ const PlainTextEditor = ({
                     textareaRef.current.value = value;
                     // setTimeout is needed for Firefox
                     // I guess setting the value is async and we have to release the thread before touching to the selection
-                    setTimeout(() => textareaRef.current?.setSelectionRange(0, 0));
+                    if (isFirefox()) {
+                        setTimeout(() => textareaRef.current?.setSelectionRange(0, 0), 50);
+                    } else {
+                        textareaRef.current?.setSelectionRange(0, 0);
+                    }
                 }
             },
             isDisposed: () => isMountedCallback() === false || !textareaRef.current,
