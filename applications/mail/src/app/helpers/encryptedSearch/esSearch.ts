@@ -1,6 +1,7 @@
 import { normalizeKeyword } from '@proton/encrypted-search';
 import type { NormalizedSearchParams } from '@proton/encrypted-search/lib/models/mail';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import type { CategoryLabelID } from '@proton/shared/lib/constants';
+import { CATEGORY_LABEL_IDS_SET, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
 
@@ -64,7 +65,18 @@ export const testMetadata = (
     const { address, from, to, begin, end } = search || {};
     const { AddressID, Time, LabelIDs, NumAttachments, Unread } = messageToSearch;
 
+    // This prevents from showing messages that are not in the inbox anymore but still have a category label
+    let isMessageInCategoryButNotInbox = false;
+    const searchingACategory = labelIDs.some((id) => CATEGORY_LABEL_IDS_SET.has(id as CategoryLabelID));
+    if (searchingACategory) {
+        const messageToSearchHasCategory = LabelIDs.some((id) => labelIDs.includes(id));
+        const hasInbox = LabelIDs.includes(MAILBOX_LABEL_IDS.INBOX);
+
+        isMessageInCategoryButNotInbox = messageToSearchHasCategory && !hasInbox;
+    }
+
     if (
+        isMessageInCategoryButNotInbox ||
         !LabelIDs.some((id) => labelIDs.includes(id)) ||
         (address && AddressID !== address) ||
         isExpired(messageToSearch) ||
