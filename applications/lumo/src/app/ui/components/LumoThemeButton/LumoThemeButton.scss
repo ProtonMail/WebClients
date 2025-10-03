@@ -1,0 +1,28 @@
+@import '~@proton/styles/scss/lib';
+
+.lumo-theme-card-button {
+	padding: 0 !important;
+	border-width: 2px !important;
+	border-color: transparent;
+	block-size: auto !important;
+	overflow: hidden;
+
+	&.is-active {
+		border-color: var(--interaction-norm);
+	}
+
+	&:hover {
+		background-color: transparent !important;
+
+		img {
+			border-radius: calc(var(--border-radius-md) - 2px);
+		}
+	}
+
+	img {
+		display: block;
+		inline-size: 100%;
+		block-size: 100%;
+		border-radius: calc(var(--border-radius-md) - 2px);
+	}
+}
