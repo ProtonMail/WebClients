@@ -94,7 +94,11 @@ export const PrejoinContainer = ({
         <>
             {isLoading && <div className="w-full h-full absolute top-0 left-0 z-up" />}
             <div className="absolute w-full meet-container-padding-x">
-                <PageHeader isScheduleInAdvanceEnabled={isScheduleInAdvanceEnabled} guestMode={guestMode} />
+                <PageHeader
+                    isScheduleInAdvanceEnabled={isScheduleInAdvanceEnabled}
+                    guestMode={guestMode}
+                    showAppSwitcher={false}
+                />
             </div>
             <div className="prejoin-container flex flex-column md:flex-row flex-nowrap w-full md:items-center md:justify-center">
                 <div

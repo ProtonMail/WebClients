@@ -43,7 +43,8 @@
 }
 
 .circle-button-transparent {
-	--circle-button-bg: transparent;
+	--circle-button-bg: var(--circle-button-transparent);
+	--border-color: var(--circle-button-transparent);
 
 	&:hover,
 	&:focus {
