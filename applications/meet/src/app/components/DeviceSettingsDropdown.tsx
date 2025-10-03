@@ -2,13 +2,14 @@ import type { ReactNode, RefObject } from 'react';
 
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import type { PopperPosition } from '@proton/components/components/popper/interface';
+import type { PopperPlacement, PopperPosition } from '@proton/components/components/popper/interface';
 
 interface DeviceSettingsDropdownProps {
     anchorRef: RefObject<HTMLElement>;
     children: ReactNode;
     onClose: () => void;
     anchorPosition?: PopperPosition;
+    originalPlacement?: PopperPlacement;
 }
 
 export const DeviceSettingsDropdown = ({
@@ -16,6 +17,7 @@ export const DeviceSettingsDropdown = ({
     anchorRef,
     onClose,
     anchorPosition,
+    originalPlacement = 'top-start',
 }: DeviceSettingsDropdownProps) => {
     return (
         <Dropdown
@@ -24,8 +26,8 @@ export const DeviceSettingsDropdown = ({
             anchorRef={anchorRef}
             onClose={onClose}
             noCaret
-            originalPlacement="top-start"
-            availablePlacements={['top-start']}
+            originalPlacement={originalPlacement}
+            availablePlacements={[originalPlacement]}
             disableDefaultArrowNavigation
             size={{ width: DropdownSizeUnit.Dynamic, maxWidth: undefined }}
             autoClose={false}

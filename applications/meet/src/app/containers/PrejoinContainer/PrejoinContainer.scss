@@ -2,7 +2,8 @@
 @import '~@proton/styles/scss/meet/meet-breakpoints';
 
 .action-button {
-	background-color: var(--interaction-weak-minor-1) !important;
+	background-color: var(--background-card);
+	border-color: var(--border-card);
 }
 
 .prejoin-container {

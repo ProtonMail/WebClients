@@ -15,15 +15,17 @@ import { isUrlPasswordValid } from '@proton/meet/utils/isUrlPasswordValid';
 import { ForkType, requestFork } from '@proton/shared/lib/authentication/fork';
 import { APPS } from '@proton/shared/lib/constants';
 import logo from '@proton/styles/assets/img/meet/logo-with-name.png';
+import clsx from '@proton/utils/clsx';
 
 import './PageHeader.scss';
 
 interface PageHeaderProps {
     isScheduleInAdvanceEnabled: boolean;
     guestMode: boolean;
+    showAppSwitcher?: boolean;
 }
 
-export const PageHeader = ({ isScheduleInAdvanceEnabled, guestMode }: PageHeaderProps) => {
+export const PageHeader = ({ isScheduleInAdvanceEnabled, guestMode, showAppSwitcher = true }: PageHeaderProps) => {
     const history = useHistory();
     const [bugReportModal, setBugReportModal, renderBugReportModal] = useModalState();
 
@@ -48,7 +50,15 @@ export const PageHeader = ({ isScheduleInAdvanceEnabled, guestMode }: PageHeader
 
     const buttons = (
         <div className="flex flex-nowrap gap-2 items-center w-custom" style={{ '--w-custom': 'fit-content' }}>
-            {guestMode ? <UnAuthenticatedAppsDropdown app={APPS.PROTONMEET} /> : <AppsDropdown app={APPS.PROTONMEET} />}
+            {showAppSwitcher && (
+                <>
+                    {guestMode ? (
+                        <UnAuthenticatedAppsDropdown app={APPS.PROTONMEET} />
+                    ) : (
+                        <AppsDropdown app={APPS.PROTONMEET} />
+                    )}
+                </>
+            )}
 
             <DropdownButton
                 as="button"
@@ -70,7 +80,7 @@ export const PageHeader = ({ isScheduleInAdvanceEnabled, guestMode }: PageHeader
             className="meet-page-header w-full py-4 flex items-center justify-space-between shrink-0 h-custom"
             style={{ '--h-custom': '5.625rem' }}
         >
-            <div className="flex gap-4 items-center">
+            <div className={clsx('flex items-center', showAppSwitcher ? 'gap-4' : 'gap-2')}>
                 <button
                     className="interactive rounded-full hidden md:block p-2"
                     onClick={() => history.push('/dashboard')}
@@ -92,7 +102,7 @@ export const PageHeader = ({ isScheduleInAdvanceEnabled, guestMode }: PageHeader
             <div className="flex flex-nowrap gap-2 items-center">
                 {isScheduleInAdvanceEnabled && (
                     <Button
-                        className="action-button rounded-full border-none hidden md:block"
+                        className="action-button rounded-full hidden md:block"
                         onClick={() => (guestMode ? handleSignIn('admin/create') : history.replace('/admin/create'))}
                         size="large"
                     >
@@ -103,7 +113,7 @@ export const PageHeader = ({ isScheduleInAdvanceEnabled, guestMode }: PageHeader
                     {buttons}
                 </div>
                 {guestMode ? (
-                    <Button className="action-button rounded-full border-none" onClick={handleSignInClick} size="large">
+                    <Button className="action-button rounded-full" onClick={handleSignInClick} size="large">
                         {c('Action').t`Sign in`}
                     </Button>
                 ) : (
