@@ -2,7 +2,7 @@ import { useApi } from '@proton/components';
 import type { PrivateKeyReference } from '@proton/crypto';
 import { createMeetingCall } from '@proton/shared/lib/api/meet';
 import { CustomPasswordState, MeetingType, ProtonCalendarState } from '@proton/shared/lib/interfaces/Meet';
-import type { CreateMeetingResponse, RecurringType } from '@proton/shared/lib/interfaces/Meet';
+import type { CreateMeetingResponse } from '@proton/shared/lib/interfaces/Meet';
 
 import type { CreateMeetingParams } from '../types/types';
 import { prepareMeetingCryptoData } from '../utils/cryptoUtils';
@@ -54,7 +54,7 @@ export const useSaveMeeting = () => {
                     AddressID: addressId,
                     StartTime: startTime ?? null,
                     EndTime: endTime ?? null,
-                    RRule: (recurrence as RecurringType) ?? null,
+                    RRule: recurrence ?? null,
                     Timezone: timeZone ?? null,
                     CustomPassword: !!customPassword
                         ? CustomPasswordState.PASSWORD_SET

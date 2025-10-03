@@ -19,6 +19,7 @@ import { NoUpcomingMeetings } from '../components/NoUpcomingMeetings/NoUpcomingM
 import { PageHeader } from '../components/PageHeader/PageHeader';
 import { PersonalMeetingModal } from '../components/PersonalMeetingModal/PersonalMeetingModal';
 import { useDependencySetup } from '../hooks/useDependencySetup';
+import { getNextOccurrence } from '../utils/getNextOccurrence';
 
 export const DashboardContainer = () => {
     const [isPersonalMeetingModalOpen, setIsPersonalMeetingModalOpen] = useState(false);
@@ -59,8 +60,12 @@ export const DashboardContainer = () => {
                         meeting.StartTime
                     );
                 })
+                .map((meeting) => ({
+                    ...meeting,
+                    adjustedStartTime: getNextOccurrence(meeting),
+                }))
                 .sort((a, b) => {
-                    return new Date(a.StartTime as string).getTime() - new Date(b.StartTime as string).getTime();
+                    return a.adjustedStartTime - b.adjustedStartTime;
                 }),
         [meetings]
     );
