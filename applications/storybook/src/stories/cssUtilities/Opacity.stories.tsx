@@ -9,7 +9,7 @@ export default {
     },
 };
 
-const values = ['0', '30', '40', '50', '65', '70', '100'];
+const values = ['0', '30', '40', '50', '65', '70', '80', '100'];
 
 const demoItemClasses = 'user-select flex items-center justify-center bg-primary rounded-sm text-center';
 
