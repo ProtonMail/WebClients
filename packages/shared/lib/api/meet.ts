@@ -105,3 +105,11 @@ export const unlockMeetingCall = (meetingLinkName: string, data: { AccessToken: 
         data,
     };
 };
+
+export const rotatePersonalMeetingLink = (data: MeetingPayload) => {
+    return {
+        method: 'post',
+        url: `meet/v1/meetings/personal/rotate`,
+        data,
+    };
+};
