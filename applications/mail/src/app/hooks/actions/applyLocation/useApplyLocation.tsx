@@ -5,7 +5,7 @@ import { useFolders, useLabels } from '@proton/mail';
 import { isCustomFolder, isSystemFolder } from '@proton/mail/helpers/location';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
-import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import type { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 import useFlag from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
@@ -77,7 +77,7 @@ export const useApplyLocation = () => {
         createFilters,
     }: ApplyLocationParams): Promise<any> => {
         // Get all conversations in element state linked to messages that are moving
-        const conversationIDs = unique((elements as Message[]).map((message) => message.ConversationID));
+        const conversationIDs = unique((elements as MessageMetadata[]).map((message) => message.ConversationID));
         const conversationsFromMessages: Conversation[] = conversationIDs
             .map((id: string) => {
                 return getElementByID(id);
@@ -93,7 +93,7 @@ export const useApplyLocation = () => {
         if (removeLabel) {
             return dispatch(
                 unlabelMessages({
-                    elements: elements as Message[],
+                    elements: elements as MessageMetadata[],
                     conversations: conversationsFromMessages,
                     destinationLabelID,
                     sourceLabelID,
@@ -110,7 +110,7 @@ export const useApplyLocation = () => {
         } else {
             return dispatch(
                 labelMessages({
-                    elements: elements as Message[],
+                    elements: elements as MessageMetadata[],
                     conversations: conversationsFromMessages,
                     destinationLabelID,
                     sourceLabelID,
@@ -232,7 +232,7 @@ export const useApplyLocation = () => {
                         isMessage,
                         onConfirm: () => {
                             return dispatchConversation({
-                                elements: result.allowedElements as Message[],
+                                elements: result.allowedElements as MessageMetadata[],
                                 destinationLabelID,
                                 removeLabel,
                                 showSuccessNotification,
@@ -248,7 +248,7 @@ export const useApplyLocation = () => {
                     value: {
                         onConfirm: () => {
                             return dispatchConversation({
-                                elements: result.allowedElements as Message[],
+                                elements: result.allowedElements as MessageMetadata[],
                                 destinationLabelID,
                                 removeLabel,
                                 showSuccessNotification,
@@ -266,7 +266,7 @@ export const useApplyLocation = () => {
                         elementLength: elements.length,
                         onConfirm: (spamAction: SPAM_ACTION) => {
                             return dispatchConversation({
-                                elements: result.allowedElements as Message[],
+                                elements: result.allowedElements as MessageMetadata[],
                                 destinationLabelID,
                                 removeLabel,
                                 showSuccessNotification,
@@ -280,7 +280,7 @@ export const useApplyLocation = () => {
             }
 
             const { payload } = await dispatchConversation({
-                elements: result.allowedElements as Message[],
+                elements: result.allowedElements as MessageMetadata[],
                 destinationLabelID,
                 removeLabel,
                 showSuccessNotification,
@@ -288,7 +288,11 @@ export const useApplyLocation = () => {
             });
             return payload;
         } else if (isMessage) {
-            const result = messageMoveEngine.validateMove(destinationLabelID, elements as Message[], removeLabel);
+            const result = messageMoveEngine.validateMove(
+                destinationLabelID,
+                elements as MessageMetadata[],
+                removeLabel
+            );
 
             if (result.deniedElements.length > 0 && result.allowedElements.length === 0) {
                 createNotification({
@@ -309,7 +313,7 @@ export const useApplyLocation = () => {
             }
 
             const shouldOpenModal = shouldOpenConfirmationModalForMessages({
-                elements: result.allowedElements as Message[],
+                elements: result.allowedElements as MessageMetadata[],
                 destinationLabelID,
                 mailSettings,
             });
@@ -321,7 +325,7 @@ export const useApplyLocation = () => {
                         isMessage,
                         onConfirm: () => {
                             return dispatchMessage({
-                                elements: result.allowedElements as Message[],
+                                elements: result.allowedElements as MessageMetadata[],
                                 destinationLabelID,
                                 removeLabel,
                                 showSuccessNotification,
@@ -339,7 +343,7 @@ export const useApplyLocation = () => {
                         elementLength: elements.length,
                         onConfirm: (spamAction: SPAM_ACTION) => {
                             return dispatchMessage({
-                                elements: result.allowedElements as Message[],
+                                elements: result.allowedElements as MessageMetadata[],
                                 destinationLabelID,
                                 removeLabel,
                                 showSuccessNotification,
@@ -353,7 +357,7 @@ export const useApplyLocation = () => {
             }
 
             const { payload } = await dispatchMessage({
-                elements: result.allowedElements as Message[],
+                elements: result.allowedElements as MessageMetadata[],
                 destinationLabelID,
                 removeLabel,
                 showSuccessNotification,

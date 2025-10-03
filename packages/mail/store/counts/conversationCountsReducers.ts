@@ -4,7 +4,7 @@ import type { ModelState } from '@proton/account';
 import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder, Label, LabelCount } from '@proton/shared/lib/interfaces';
-import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
 import type { Conversation } from 'proton-mail/models/conversation';
 import type { Element } from 'proton-mail/models/element';
@@ -125,7 +125,7 @@ export const markMessagesAsRead = (
 export const labelMessagesPending = (
     state: Draft<ModelState<LabelCount[]>>,
     action: PayloadAction<{
-        elements: Message[];
+        elements: MessageMetadata[];
         destinationLabelID: string;
         conversations: Conversation[];
         labels: Label[];
@@ -141,10 +141,10 @@ export const labelMessagesPending = (
 
     conversations.forEach((conversation) => {
         const messagesFromConversation = elements.filter(
-            (element) => (element as Message).ConversationID === conversation.ID
+            (element) => (element as MessageMetadata).ConversationID === conversation.ID
         );
         const unreadMessagesFromConversation = messagesFromConversation.filter(
-            (element) => (element as Message).Unread
+            (element) => (element as MessageMetadata).Unread
         );
 
         // Decrease
@@ -157,10 +157,10 @@ export const labelMessagesPending = (
             }
 
             const messagesFromConversationInLabel = messagesFromConversation.filter((element) =>
-                (element as Message).LabelIDs.includes(label.ID)
+                (element as MessageMetadata).LabelIDs.includes(label.ID)
             );
             const unreadMessagesFromConversationInLabel = unreadMessagesFromConversation.filter((element) =>
-                (element as Message).LabelIDs.includes(label.ID)
+                (element as MessageMetadata).LabelIDs.includes(label.ID)
             );
 
             // Do not decrease counters if moving to a custom label, STARRED, or a category
@@ -562,7 +562,7 @@ export const unlabelConversationsPending = (
 export const unlabelMessagesPending = (
     state: Draft<ModelState<LabelCount[]>>,
     action: PayloadAction<{
-        elements: Message[];
+        elements: MessageMetadata[];
         conversations: Conversation[];
         destinationLabelID: string;
         labels: Label[];
@@ -583,16 +583,16 @@ export const unlabelMessagesPending = (
 
     conversations.forEach((conversation) => {
         const messagesFromConversation = elements.filter(
-            (element) => (element as Message).ConversationID === conversation.ID
+            (element) => (element as MessageMetadata).ConversationID === conversation.ID
         );
         const unreadMessagesFromConversation = messagesFromConversation.filter(
-            (element) => (element as Message).Unread
+            (element) => (element as MessageMetadata).Unread
         );
         const messagesFromConversationInLabel = messagesFromConversation.filter((element) =>
-            (element as Message).LabelIDs.includes(destinationLabelID)
+            (element as MessageMetadata).LabelIDs.includes(destinationLabelID)
         );
         const unreadMessagesFromConversationInLabel = unreadMessagesFromConversation.filter((element) =>
-            (element as Message).LabelIDs.includes(destinationLabelID)
+            (element as MessageMetadata).LabelIDs.includes(destinationLabelID)
         );
         const conversationLabel = conversation.Labels?.find((label) => label.ID === destinationLabelID);
 

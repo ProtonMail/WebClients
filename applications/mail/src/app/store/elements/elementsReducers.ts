@@ -5,7 +5,7 @@ import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
-import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import diff from '@proton/utils/diff';
 import isTruthy from '@proton/utils/isTruthy';
@@ -893,7 +893,7 @@ export const labelMessagesPending = (
         string,
         {
             arg: {
-                elements: Message[];
+                elements: MessageMetadata[];
                 sourceLabelID: string;
                 destinationLabelID: string;
                 labels: Label[];
@@ -936,7 +936,7 @@ export const unlabelMessagesPending = (
     action: PayloadAction<
         undefined,
         string,
-        { arg: { elements: Message[]; destinationLabelID: string; labels: Label[]; folders: Folder[] } }
+        { arg: { elements: MessageMetadata[]; destinationLabelID: string; labels: Label[]; folders: Folder[] } }
     >
 ) => {
     const { elements, destinationLabelID, labels } = action.meta.arg;
@@ -948,7 +948,7 @@ export const unlabelMessagesPending = (
             removeLabelToConversationMessage(element, { ...conversationElementState }, destinationLabelID, labels);
         }
 
-        const elementState = state.elements[element.ID] as Message;
+        const elementState = state.elements[element.ID] as MessageMetadata;
 
         if (!elementState) {
             return;
@@ -965,13 +965,13 @@ export const labelMessagesRejected = (
     action: PayloadAction<
         unknown,
         string,
-        { arg: { elements: Message[]; destinationLabelID: string; labels: Label[]; folders: Folder[] } }
+        { arg: { elements: MessageMetadata[]; destinationLabelID: string; labels: Label[]; folders: Folder[] } }
     >
 ) => {
     const { elements } = action.meta.arg;
 
     elements.forEach((element) => {
-        const elementState = state.elements[element.ID] as Message;
+        const elementState = state.elements[element.ID] as MessageMetadata;
 
         if (!elementState) {
             return;

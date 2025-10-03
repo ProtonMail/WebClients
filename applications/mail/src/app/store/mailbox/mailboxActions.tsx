@@ -17,7 +17,7 @@ import {
 } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
-import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import type { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 
@@ -265,7 +265,7 @@ export const markConversationsAsUnread = createAsyncThunk<
 export const labelMessages = createAsyncThunk<
     PromiseSettledResult<string | undefined>[],
     {
-        elements: Message[];
+        elements: MessageMetadata[];
         conversations: Conversation[];
         sourceLabelID: string;
         destinationLabelID: string;
@@ -337,7 +337,7 @@ export const labelMessages = createAsyncThunk<
 export const unlabelMessages = createAsyncThunk<
     PromiseSettledResult<string | undefined>[],
     {
-        elements: Message[];
+        elements: MessageMetadata[];
         conversations: Conversation[];
         sourceLabelID: string;
         destinationLabelID: string;
