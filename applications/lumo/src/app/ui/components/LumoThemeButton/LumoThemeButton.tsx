@@ -1,16 +1,40 @@
 import { c } from 'ttag';
 
-import { Option, SelectTwo } from '@proton/components';
 import { ThemeTypes } from '@proton/shared/lib/themes/constants';
+import darkThemeImg from '@proton/styles/assets/img/lumo/lumo-theme-dark.svg';
+import lightThemeImg from '@proton/styles/assets/img/lumo/lumo-theme-light.svg';
+import systemThemeImg from '@proton/styles/assets/img/lumo/lumo-theme-system.svg';
 
 import { useLumoTheme } from '../../../providers/LumoThemeProvider';
+import type { LumoThemeCardProps } from './LumoThemeCard';
+import LumoThemeCard from './LumoThemeCard';
+
+import './LumoThemeButton.scss';
 
 const LUMO_AUTO_THEME = 'auto' as const;
+
+const getThemeCards = (): LumoThemeCardProps[] => [
+    {
+        value: ThemeTypes.LumoLight,
+        label: c('collider_2025: Action').t`Light`,
+        src: lightThemeImg,
+    },
+    {
+        value: LUMO_AUTO_THEME,
+        label: c('collider_2025: Action').t`System`,
+        src: systemThemeImg,
+    },
+    {
+        value: ThemeTypes.LumoDark,
+        label: c('collider_2025: Action').t`Dark`,
+        src: darkThemeImg,
+    },
+];
 
 const LumoThemeButton = () => {
     const { theme, setTheme, setAutoTheme, isAutoMode } = useLumoTheme();
 
-    const handleValueChange = (value: string | ThemeTypes) => {
+    const handleValueChange = (value: string | number) => {
         if (value === LUMO_AUTO_THEME) {
             setAutoTheme(true);
         } else {
@@ -21,11 +45,16 @@ const LumoThemeButton = () => {
     const currentValue = isAutoMode ? LUMO_AUTO_THEME : theme;
 
     return (
-        <SelectTwo value={currentValue} onValue={handleValueChange} className="theme-dropdown">
-            <Option value={LUMO_AUTO_THEME} title={c('collider_2025: Action').t`System`} />
-            <Option value={ThemeTypes.LumoLight} title={c('collider_2025: Action').t`Light`} />
-            <Option value={ThemeTypes.LumoDark} title={c('collider_2025: Action').t`Dark`} />
-        </SelectTwo>
+        <div className="flex flex-row flex-nowrap gap-4">
+            {getThemeCards().map((cardProps) => (
+                <LumoThemeCard
+                    key={cardProps.value}
+                    selected={currentValue === cardProps.value}
+                    onChange={handleValueChange}
+                    {...cardProps}
+                />
+            ))}
+        </div>
     );
 };
 
