@@ -5,6 +5,7 @@ import type { Message } from '../interfaces/mail/Message';
 import type { PackageDirect } from '../interfaces/mail/crypto';
 import type { CREATE_DRAFT_MESSAGE_ACTION, SEND_MESSAGE_DIRECT_ACTION } from '../interfaces/message';
 import { getAppropriateSort } from './helpers/snoozeSort';
+import type { CountParams } from './interface';
 import type { MailboxItemsQueryParams } from './mailbox';
 
 type BaseMessage = Pick<
@@ -72,10 +73,10 @@ export const queryMessageMetadata = ({
     },
 });
 
-export const queryMessageCount = (AddressID?: string) => ({
+export const queryMessageCount = ({ AddressID, OnlyInInboxForCategories }: CountParams) => ({
     method: 'get',
     url: 'mail/v4/messages/count',
-    params: { AddressID },
+    params: { AddressID, OnlyInInboxForCategories },
 });
 
 export const getMessage = (messageID: string) => ({
