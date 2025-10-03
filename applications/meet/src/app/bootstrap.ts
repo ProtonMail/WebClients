@@ -30,6 +30,7 @@ import locales from './locales';
 import type { MeetDispatch, MeetStore } from './store';
 import { setupStore } from './store';
 import { clearStoredDevices } from './utils/deviceStorage';
+import { clearDisabledRotatePersonalMeeting } from './utils/disableRotatePersonalMeeting';
 
 const initializeWasmApp = async (authentication: ProtonThunkArguments['authentication']): Promise<App> => {
     await init();
@@ -171,6 +172,7 @@ const completeAppBootstrap = async ({
     // Register callback to clear settings entries on logout
     registerSessionRemovalListener(async () => {
         clearStoredDevices();
+        clearDisabledRotatePersonalMeeting();
     });
 
     return { userData, wasmApp };

@@ -88,3 +88,8 @@ export type UpdateMeetingPasswordData = {
     SRPModulusID: string;
     CustomPassword: CustomPasswordState;
 };
+
+export interface RotatePersonalMeetingResponse {
+    Meeting: Meeting;
+    Code: 1000;
+}
