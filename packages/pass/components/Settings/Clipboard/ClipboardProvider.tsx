@@ -41,6 +41,7 @@ export const ClipboardProvider: FC<PropsWithChildren<Props>> = ({ children, chec
 
     const [cachedCopy, setCachedCopy] = useState<MaybeNull<string>>(null);
     const [modal, setModal] = useState<MaybeNull<ClipboardAction>>(null);
+    const [hasPermissions, setHasPermissions] = useState<boolean>(false);
 
     const onCopyToClipboard = useCallback(
         async (value: string, ttl?: ClipboardTTL, promptForPermissions = false): Promise<boolean> => {
@@ -73,9 +74,11 @@ export const ClipboardProvider: FC<PropsWithChildren<Props>> = ({ children, chec
     const ctx = useMemo<ClipboardContextValue>(
         () => ({
             copyToClipboard: async (value) => {
+                const hasPermissions = await checkPermissions();
                 const ttl = selectClipboardTTL(store.getState());
-                if (BUILD_TARGET !== 'web' && ttl === undefined) {
+                if (BUILD_TARGET !== 'web' && (!hasPermissions || ttl === undefined)) {
                     setCachedCopy(value);
+                    setHasPermissions(hasPermissions);
                     setModal('settings');
                 } else await onCopyToClipboard(value, ttl);
             },
@@ -91,8 +94,7 @@ export const ClipboardProvider: FC<PropsWithChildren<Props>> = ({ children, chec
             {children}
             {modal === 'settings' && (
                 <ClipboardSettingsModal
-                    checkPermissions={checkPermissions}
-                    onSubmit={async (hasPermissions, ttl) => {
+                    onSubmit={async (ttl) => {
                         setModal(null);
                         if (cachedCopy !== null) {
                             setCachedCopy(null);
