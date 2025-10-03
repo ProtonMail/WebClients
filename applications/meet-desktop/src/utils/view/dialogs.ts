@@ -1,7 +1,9 @@
 import { app, dialog, WebContentsView } from "electron";
 import { c } from "ttag";
 import { mainLogger, viewLogger } from "../log";
-import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
+import { URLConfig } from "../../store/urlStore";
+
+type ViewID = keyof URLConfig;
 
 const beforeUnloadChoice = () => {
     return dialog.showMessageBoxSync({
@@ -15,7 +17,7 @@ const beforeUnloadChoice = () => {
     });
 };
 
-export const handleBeforeHandle = (viewID: CHANGE_VIEW_TARGET, view: WebContentsView) => {
+export const handleBeforeHandle = (viewID: ViewID, view: WebContentsView) => {
     view.webContents.on("will-prevent-unload", (ev) => {
         viewLogger(viewID).info("will-prevent-unload");
         const choice = beforeUnloadChoice();
