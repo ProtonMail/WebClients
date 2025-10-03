@@ -71,9 +71,9 @@ export const useSharedWithMeItemsWithSelection = () => {
 
     // Do not add logic here, it will be removed later
     const handleRenderItem = useCallback(
-        (uid: string) => {
+        ({ id }: { id: string }) => {
             incrementItemRenderedCounter();
-            const renderedItem = getSharedWithMeStoreItem(uid);
+            const renderedItem = getSharedWithMeStoreItem(id);
             if (renderedItem?.thumbnailId && renderedItem.itemType !== ItemType.BOOKMARK) {
                 loadThumbnail({
                     uid: renderedItem.nodeUid,
@@ -154,6 +154,7 @@ export const useSharedWithMeItemsWithSelection = () => {
                         isFile: storeItem.type === NodeType.File,
                         name: storeItem.name,
                         size: storeItem.size || 0,
+                        thumbnailId: storeItem.thumbnailId,
                         isInvitation: storeItem.itemType === ItemType.INVITATION,
                         isAlbum: storeItem.type === NodeType.Album,
                     });
