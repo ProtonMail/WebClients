@@ -28,6 +28,7 @@ import {
 import type { ProtonSheetsState } from './state'
 import { useEvent } from './components/utils'
 import { useMemo, useState } from 'react'
+import type { CellInterface } from '@rowsncolumns/grid'
 import { isCellWithinBounds, selectionFromActiveCell } from '@rowsncolumns/grid'
 
 type PatternSpec = {
@@ -83,6 +84,8 @@ export function useProtonSheetsUIState(state: ProtonSheetsState, isReadonly: boo
   // view
   const [showFormulaBar, setShowFormulaBar] = useState(true)
   const [showGridlines, setShowGridlines] = useState(true)
+  const [showInsertLinkDialog, setShowInsertLinkDialog] = useState(false)
+  const [insertLinkCell, setInsertLinkCell] = useState<CellInterface>(() => state.activeCell)
   const view = {
     formulaBar: {
       enabled: showFormulaBar,
@@ -98,6 +101,15 @@ export function useProtonSheetsUIState(state: ProtonSheetsState, isReadonly: boo
       state.onFreezeColumn(state.activeSheetId, beforeColumnIndex),
     ),
     unfreezeColumns: useEvent(() => state.onFreezeColumn(state.activeSheetId, 0)),
+    insertLinkDialog: {
+      isOpen: showInsertLinkDialog,
+      cell: insertLinkCell,
+      open: useEvent((cell?: CellInterface) => {
+        setShowInsertLinkDialog(true)
+        setInsertLinkCell(cell ?? state.activeCell)
+      }),
+      close: useEvent(() => setShowInsertLinkDialog(false)),
+    },
   }
 
   // history
@@ -263,7 +275,8 @@ export function useProtonSheetsUIState(state: ProtonSheetsState, isReadonly: boo
     columnRight: useEvent(() => state.onInsertColumn(state.activeSheetId, state.activeCell.columnIndex + 1, 1)),
     sheet: useEvent(() => state.onCreateNewSheet()),
     chart: useEvent(() => state.chartsState.onCreateChart(state.activeSheetId, state.activeCell, state.selections)),
-    link: useEvent(() => state.onRequestInsertLink(state.activeSheetId, state.activeCell, state.selections)),
+    // link: useEvent(() => state.onRequestInsertLink(state.activeSheetId, state.activeCell, state.selections)),
+    link: useEvent(() => view.insertLinkDialog.open()),
     // TODO: probably want to customize (or, at least, localize) the default options
     dropdown: useEvent(() => {
       const finalSelections = getUserSelections(state.activeCell, state.selections)
@@ -351,6 +364,13 @@ export function useProtonSheetsUIState(state: ProtonSheetsState, isReadonly: boo
     tables: state.tables,
     onSelectTable: state.onSelectTable,
     theme: state.theme,
+    onInsertLink: state.onInsertLink,
+    onRemoveLink: state.onRemoveLink,
+    getCellOffsetFromCoords: state.getCellOffsetFromCoords,
+    getGridContainerElement: state.getGridContainerElement,
+    getGridScrollPosition: state.getGridScrollPosition,
+    getHyperlink: state.getHyperlink,
+    getEffectiveValue: state.getEffectiveValue,
   }
 
   return { focusGrid, withFocusGrid, info, operation, view, history, zoom, search, format, insert, data, legacy }
