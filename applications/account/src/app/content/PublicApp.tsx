@@ -134,14 +134,14 @@ export const getProductParamsFromLocation = (location: H.Location, searchParams:
     return { product, productParam };
 };
 
-let cryptoWorkerPromise: Promise<void> | undefined;
-
+let cryptoWorkerInitialized = false;
 const handlePreload = () => {
-    if (!cryptoWorkerPromise) {
-        cryptoWorkerPromise = loadCrypto({
+    if (!cryptoWorkerInitialized) {
+        loadCrypto({
             appName: APPS.PROTONACCOUNT,
             unleashClient: undefined,
         });
+        cryptoWorkerInitialized = true;
     }
 };
 
@@ -170,8 +170,6 @@ const UnleashFlagStarter = ({ location }: { location: H.Location }) => {
 
 const handlePreSubmit = async () => {
     handlePreload();
-    // The crypto worked must be loaded when signup/login/reset are performed
-    await cryptoWorkerPromise;
 };
 
 const handleStartAuth = () => {

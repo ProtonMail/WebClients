@@ -124,12 +124,9 @@ export async function bootstrapApp({ config, signal }: { config: ProtonConfig; s
     const userPromise = loadUser()
     const preloadPromise = loadPreload()
 
-    const [MainContainer, userData] = await Promise.all([
-      appContainerPromise,
-      userPromise,
-      bootstrap.loadCrypto({ appName, unleashClient }),
-      unleashPromise,
-    ])
+    bootstrap.loadCrypto({ appName, unleashClient })
+
+    const [MainContainer, userData] = await Promise.all([appContainerPromise, userPromise, unleashPromise])
     // postLoad needs everything to be loaded.
     await bootstrap.postLoad({ appName, authentication, ...userData, history })
     // Preloaded models are not needed until the app starts, and also important do it postLoad as these requests might fail due to missing scopes.
