@@ -15,18 +15,18 @@ import {
 import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
-import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft, isReceived, isSent } from '@proton/shared/lib/mail/messages';
 
 import { hasLabel } from 'proton-mail/helpers/elements';
 import type { Conversation } from 'proton-mail/models/conversation';
 
 export const applyLabelToMessage = (
-    message: Message,
+    message: MessageMetadata,
     destinationLabelID: string,
     folders: Folder[],
     labels: Label[]
-): Message => {
+): MessageMetadata => {
     let labelIDsCopy = [...message.LabelIDs];
     const isTargetAFolder = isSystemFolder(destinationLabelID) || isCustomFolder(destinationLabelID, folders);
     const isTargetACategory = isCategoryLabel(destinationLabelID);
@@ -79,7 +79,11 @@ export const applyLabelToMessage = (
     return message;
 };
 
-export const removeLabelFromMessage = (message: Message, destinationLabelID: string, labels: Label[]): Message => {
+export const removeLabelFromMessage = (
+    message: MessageMetadata,
+    destinationLabelID: string,
+    labels: Label[]
+): MessageMetadata => {
     const isTargetALabel = isSystemLabel(destinationLabelID) || isCustomLabel(destinationLabelID, labels);
 
     if (!isTargetALabel) {
@@ -547,7 +551,7 @@ export const applyLabelToConversation = (
 };
 
 export const applyLabelToConversationMessage = (
-    message: Message,
+    message: MessageMetadata,
     conversation: Conversation,
     sourceLabelID: string,
     destinationLabelID: string,
@@ -566,7 +570,7 @@ export const applyLabelToConversationMessage = (
     const isMessageStarred = hasLabel(message, MAILBOX_LABEL_IDS.STARRED);
     const messageCustomLabels = message.LabelIDs.filter((labelID) => isCustomLabel(labelID, labels));
     const isMessageUnread = message.Unread;
-    const messageNumAttachments = message.Attachments?.length || 0;
+    const messageNumAttachments = message.NumAttachments;
 
     if (destinationLabelID === MAILBOX_LABEL_IDS.TRASH || destinationLabelID === MAILBOX_LABEL_IDS.SPAM) {
         // Remove message from ALMOST_ALL_MAIL
@@ -681,7 +685,7 @@ export const applyLabelToConversationMessage = (
             ID: destinationLabelID,
             ContextNumMessages: 1,
             ContextNumUnread: isMessageUnread && destinationLabelID !== MAILBOX_LABEL_IDS.TRASH ? 1 : 0,
-            ContextNumAttachments: message.Attachments.length,
+            ContextNumAttachments: messageNumAttachments,
         });
     }
 
@@ -694,7 +698,7 @@ export const applyLabelToConversationMessage = (
 };
 
 export const removeLabelToConversationMessage = (
-    message: Message,
+    message: MessageMetadata,
     conversation: Conversation,
     destinationLabelID: string,
     labels: Label[]
@@ -710,7 +714,7 @@ export const removeLabelToConversationMessage = (
     const destinationLabel = conversation.Labels.find((label) => label.ID === destinationLabelID);
 
     const isMessageUnread = message.Unread;
-    const messageNumAttachments = message.Attachments?.length || 0;
+    const messageNumAttachments = message.NumAttachments;
 
     if (destinationLabel) {
         destinationLabel.ContextNumMessages = safeDecreaseCount(destinationLabel?.ContextNumMessages, 1);

@@ -5,7 +5,7 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, createHooks, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { queryConversationCount } from '@proton/shared/lib/api/conversations';
 import type { Folder, Label, LabelCount } from '@proton/shared/lib/interfaces';
-import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
 import type { Conversation } from 'proton-mail/models/conversation';
 import type { Element } from 'proton-mail/models/element';
@@ -86,7 +86,7 @@ const slice = createSlice({
         labelMessagesPending: (
             state,
             action: PayloadAction<{
-                elements: Message[];
+                elements: MessageMetadata[];
                 destinationLabelID: string;
                 conversations: Conversation[];
                 labels: Label[];
@@ -98,7 +98,7 @@ const slice = createSlice({
         unlabelMessagesPending: (
             state,
             action: PayloadAction<{
-                elements: Message[];
+                elements: MessageMetadata[];
                 conversations: Conversation[];
                 destinationLabelID: string;
                 labels: Label[];
