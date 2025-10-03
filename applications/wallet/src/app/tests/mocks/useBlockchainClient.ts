@@ -13,6 +13,7 @@ export const mockUseBlockchainClient = (
         getRecommendedFees: vi.fn(),
         broadcastPsbt: vi.fn(),
         free: vi.fn(),
+        [Symbol.dispose]: vi.fn(),
         ...mockedValue,
     });
 
