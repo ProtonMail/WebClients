@@ -5,13 +5,13 @@ import { useMediaManagementContext } from '../contexts/MediaManagementContext';
 export const useRequestPermission = () => {
     const { devicePermissions } = useMediaManagementContext();
 
-    const requestDevicePermission = async (deviceType: 'camera' | 'microphone') => {
+    const requestDevicePermission = async (deviceType: 'camera' | 'microphone', deviceId?: string) => {
         const deviceState = devicePermissions[deviceType];
 
         if (deviceState !== 'granted' || isFirefox()) {
             try {
                 const videoStream = await navigator.mediaDevices.getUserMedia({
-                    [deviceType === 'camera' ? 'video' : 'audio']: true,
+                    [deviceType === 'camera' ? 'video' : 'audio']: deviceId ? { deviceId } : true,
                 });
                 videoStream.getTracks().forEach((track) => track.stop());
 

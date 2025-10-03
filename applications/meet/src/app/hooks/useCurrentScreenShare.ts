@@ -1,5 +1,5 @@
 import { useLocalParticipant, useRoomContext, useTracks } from '@livekit/components-react';
-import { LocalVideoTrack, Track } from '@proton-meet/livekit-client';
+import { Track } from '@proton-meet/livekit-client';
 import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
@@ -21,10 +21,7 @@ export function useCurrentScreenShare() {
     const room = useRoomContext();
 
     const stopScreenShare = () => {
-        const screenShareTrack = room.localParticipant.getTrackPublication(Track.Source.ScreenShare);
-        if (screenShareTrack?.track) {
-            void room.localParticipant.unpublishTrack(screenShareTrack.track);
-        }
+        void room.localParticipant.setScreenShareEnabled(false);
     };
 
     const startScreenShare = async () => {
@@ -40,29 +37,17 @@ export function useCurrentScreenShare() {
                 return;
             }
 
-            const stream = await navigator.mediaDevices.getDisplayMedia({
-                video: {
-                    width: { max: screenShareQuality.resolution.width },
-                    height: { max: screenShareQuality.resolution.height },
-                    frameRate: screenShareQuality.encoding.maxFramerate,
+            await room.localParticipant.setScreenShareEnabled(
+                true,
+                {
+                    resolution: {
+                        width: screenShareQuality.resolution.width,
+                        height: screenShareQuality.resolution.height,
+                        frameRate: screenShareQuality.encoding.maxFramerate,
+                    },
                 },
-            });
-
-            const [mediaStreamTrack] = stream.getVideoTracks();
-
-            const localTrack = new LocalVideoTrack(mediaStreamTrack);
-
-            await localParticipant.publishTrack(localTrack, {
-                source: Track.Source.ScreenShare,
-                videoEncoding: {
-                    maxBitrate: screenShareQuality.encoding.maxBitrate,
-                    maxFramerate: screenShareQuality.encoding.maxFramerate,
-                },
-            });
-
-            mediaStreamTrack.onended = () => {
-                stopScreenShare();
-            };
+                { simulcast: false }
+            );
         } catch (err: any) {
             if (err.message === 'Permission denied by user') {
                 return;
