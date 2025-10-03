@@ -36,11 +36,6 @@ export enum MeetingType {
     RECURRING = 3,
 }
 
-export enum RecurringType {
-    RECURRING = 'recurring',
-    SCHEDULED = 'scheduled',
-}
-
 export interface MeetingPayload {
     AddressID: string | null;
     Name?: string;
@@ -52,7 +47,7 @@ export interface MeetingPayload {
     SRPVerifier: string;
     StartTime: string | null;
     EndTime: string | null;
-    RRule: RecurringType | null;
+    RRule: string | null;
     Timezone: string | null;
     State?: MeetingState;
     Type: MeetingType;

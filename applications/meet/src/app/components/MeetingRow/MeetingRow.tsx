@@ -14,10 +14,12 @@ import { APPS } from '@proton/shared/lib/constants';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 import clsx from '@proton/utils/clsx';
 
+import { getNextOccurrence } from '../../utils/getNextOccurrence';
+
 import './MeetingRow.scss';
 
 interface MeetingRowProps {
-    meeting: Meeting;
+    meeting: Meeting & { adjustedStartTime?: number };
     index: number;
 }
 
@@ -31,7 +33,9 @@ export const MeetingRow = ({ meeting, index }: MeetingRowProps) => {
     const colorIndex = (index % 6) + 1;
 
     const { month, day, startTime, endTime } = useMemo(() => {
-        const startDate = new Date(1000 * Number(meeting.StartTime));
+        // Use the pre-calculated adjusted time if available, otherwise calculate it
+        const nextOccurrenceTime = meeting.adjustedStartTime ?? getNextOccurrence(meeting);
+        const startDate = new Date(1000 * nextOccurrenceTime);
         const endDate = meeting.EndTime ? new Date(1000 * Number(meeting.EndTime)) : null;
 
         const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -63,7 +67,7 @@ export const MeetingRow = ({ meeting, index }: MeetingRowProps) => {
         });
 
         return { month, day, startTime, endTime };
-    }, []);
+    }, [meeting.adjustedStartTime, meeting.EndTime]);
 
     const meetingLink = getMeetingLink(meeting.MeetingLinkName, meeting.Password?.split(PASSWORD_SEPARATOR)[0] ?? '');
 
