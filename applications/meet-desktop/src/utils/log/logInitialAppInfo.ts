@@ -1,6 +1,6 @@
 import { app } from "electron";
 import { mainLogger } from ".";
-import { DESKTOP_FEATURES } from "../../ipc/ipcConstants";
+import { DESKTOP_FEATURES } from "../../constants/desktopFeatures";
 import { isLinux, isMac, isWindows } from "../helpers";
 import pkg from "../../../package.json";
 

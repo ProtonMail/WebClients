@@ -27,7 +27,6 @@ import {
     getViewURL,
     updateViewURL,
 } from "./viewManagement";
-import { resetBadge } from "../../ipc/notification";
 import { mainLogger, viewLogger } from "../log";
 
 export function handleWebContents(contents: WebContents) {
@@ -59,10 +58,6 @@ export function handleWebContents(contents: WebContents) {
 
         if (!isCurrentContent()) {
             return;
-        }
-
-        if (isAccountLogin(url) || isAccountSwitch(url)) {
-            resetBadge();
         }
 
         // There is a big issue with view.webContents.getURL(): if a view is displaying x and you
@@ -105,10 +100,6 @@ export function handleWebContents(contents: WebContents) {
 
         if (!isHostAllowed(url)) {
             return ev.preventDefault();
-        }
-
-        if (isAccountLogin(url) || isAccountSwitch(url)) {
-            resetBadge();
         }
 
         if (isHome(url)) {
