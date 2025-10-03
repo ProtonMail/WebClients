@@ -69,9 +69,10 @@ export const createInlineService = () => {
         frames: Frames
     ): Promise<MaybeNull<CurrentFrame>> => {
         try {
-            if (!(frames[frameId] && frameAttributes)) return null;
+            const start = frames.get(frameId);
+            if (!(start && frameAttributes)) return null;
 
-            const current: CurrentFrame = { frame: frames[frameId]!, frameAttributes, coords };
+            const current: CurrentFrame = { frame: start, frameAttributes, coords };
 
             while (true) {
                 const parentFrameId = current.frame.parent ?? 0;
@@ -87,7 +88,7 @@ export const createInlineService = () => {
                 /** Stop when parent is main frame - don't process main frame itself */
                 if (parentFrameId === 0) break;
 
-                const next = frames[parentFrameId];
+                const next = frames.get(parentFrameId);
                 if (!next) return null; /** Parent frame missing from hierarchy */
 
                 /** Move up to parent frame and continue */

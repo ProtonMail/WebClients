@@ -8,7 +8,10 @@ export type AutofillItem = WithAutofillOrigin<SelectedItem>;
  * when supporting cross-frame support for all forms. */
 export type AutofillRequest = {
     type: 'creditCard';
-    data: CCItemData;
+    /** Credit card autofill request payload. The data field is partial to support
+     * cross-origin autofill scenarios where sensitive fields (number, CVV) must be
+     * stripped when autofilling across origin boundaries. */
+    data: Partial<CCItemData>;
 };
 
 export type AutofillResult = {

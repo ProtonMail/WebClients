@@ -1,10 +1,13 @@
 import { MAX_ITEM_NAME_LENGTH } from '@proton/pass/constants';
+import { CCFieldType } from '@proton/pass/fathom/labels';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import { createTestItem } from '@proton/pass/lib/items/item.test.utils';
 import type { Draft } from '@proton/pass/store/reducers/drafts';
-import type { IndexedByShareIdAndItemId, ItemRevision, LoginItem, SelectedItem } from '@proton/pass/types';
+import type { CCItemData, IndexedByShareIdAndItemId, ItemRevision, LoginItem, SelectedItem } from '@proton/pass/types';
+import { CardType } from '@proton/pass/types/protobuf/item-v1.static';
 import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
+import { omit } from '@proton/shared/lib/helpers/object';
 
 import {
     cloneItemName,
@@ -17,6 +20,7 @@ import {
     getItemRevisionKey,
     getSanitizedUserIdentifiers,
     interpolateRecentItems,
+    intoAutofillableCCItem,
     intoIdentityItemPreview,
     intoLoginItemPreview,
     intoSelectedItem,
@@ -519,6 +523,37 @@ describe('Item utils', () => {
             expect(cloneItemName('Test item (copy 2)')).toEqual('Test item (copy 2) (copy)');
             expect(cloneItemName('Test item (copy 2874)')).toEqual('Test item (copy 2874) (copy)');
             expect(cloneItemName('test(copy)')).toEqual('test(copy) (copy)');
+        });
+    });
+
+    describe('`intoAutofillableCCItem`', () => {
+        const ccItem: CCItemData = {
+            cardholderName: 'John Doe',
+            number: '4111111111111111',
+            verificationNumber: '123',
+            expirationDate: '12/25',
+            cardType: CardType.Unspecified,
+            pin: '3445',
+        };
+
+        test('should always remove pin field and return all other fields for same-origin', () => {
+            const result = intoAutofillableCCItem(ccItem, new Set(), false);
+            expect(result.pin).toBeUndefined();
+            expect(result).toEqual(omit(ccItem, ['pin']));
+        });
+
+        test('should strip sensitive fields for cross-origin requests', () => {
+            const result = intoAutofillableCCItem(ccItem, new Set(), true);
+            expect(result.number).toBeUndefined();
+            expect(result.verificationNumber).toBeUndefined();
+            expect(result.pin).toBeUndefined();
+        });
+
+        test('should remove fields that are already autofilled', () => {
+            const autofilled = new Set([CCFieldType.NUMBER, CCFieldType.CSC]);
+            const result = intoAutofillableCCItem(ccItem, autofilled, false);
+            expect(result.number).toBeUndefined();
+            expect(result.verificationNumber).toBeUndefined();
         });
     });
 });
