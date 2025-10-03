@@ -364,21 +364,23 @@ const getAutoDeleteSpamAndTrash = (included: boolean): PlanCardFeatureDefinition
     };
 };
 
-const getScheduleAndSnooze = (included: boolean): PlanCardFeatureDefinition => {
+export const getScheduleAndSnooze = (included: boolean): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Schedule and snooze emails for any time`,
         tooltip: c('new_plans: tooltip')
             .t`Choose custom times to be reminded about an email or for your message to arrive`,
         included,
+        icon: 'clock',
     };
 };
 
-const getDesktopApp = (included: boolean): PlanCardFeatureDefinition => {
+export const getDesktopApp = (included: boolean): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Desktop app`,
         tooltip: c('new_plans: tooltip')
             .t`Access ${MAIL_APP_NAME} and ${CALENDAR_APP_NAME} from the convenience of your desktop`,
         included,
+        icon: 'desktop',
     };
 };
 
@@ -403,6 +405,14 @@ const getEasySwitch = (): PlanCardFeatureDefinition => {
         text: c('new_plans: feature').t`Easy Switch import assistant`,
         tooltip: c('new_plans: tooltip').t`Quickly transfer your emails, calendars or contacts from any provider`,
         included: true,
+    };
+};
+
+export const getShortDomain = (included: boolean): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').t`Short domain (@pm.me)`,
+        icon: 'at',
+        included,
     };
 };
 
@@ -1039,6 +1049,60 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getEasySwitch(),
                 [PLANS.VISIONARY]: getEasySwitch(),
+            },
+        },
+        {
+            name: 'short-domain',
+            plans: {
+                [PLANS.FREE]: getShortDomain(false),
+                [PLANS.BUNDLE]: getShortDomain(true),
+                [PLANS.MAIL]: getShortDomain(true),
+                [PLANS.VPN2024]: null,
+                [PLANS.DRIVE]: null,
+                [PLANS.DRIVE_1TB]: null,
+                [PLANS.DRIVE_BUSINESS]: null,
+                [PLANS.PASS]: null,
+                [PLANS.PASS_LIFETIME]: null,
+                [PLANS.PASS_FAMILY]: null,
+                [PLANS.FAMILY]: getShortDomain(true),
+                [PLANS.DUO]: getShortDomain(true),
+                [PLANS.MAIL_PRO]: getShortDomain(true),
+                [PLANS.MAIL_BUSINESS]: getShortDomain(true),
+                [PLANS.BUNDLE_PRO]: getShortDomain(true),
+                [PLANS.BUNDLE_PRO_2024]: getShortDomain(true),
+                [PLANS.PASS_PRO]: null,
+                [PLANS.PASS_BUSINESS]: null,
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
+                [PLANS.LUMO]: null,
+                [PLANS.VISIONARY]: getShortDomain(true),
+            },
+        },
+        {
+            name: 'folders-and-labels',
+            plans: {
+                [PLANS.FREE]: getFoldersAndLabelsFeature(3),
+                [PLANS.BUNDLE]: getFoldersAndLabelsFeature('unlimited'),
+                [PLANS.MAIL]: getFoldersAndLabelsFeature('unlimited'),
+                [PLANS.VPN2024]: null,
+                [PLANS.DRIVE]: null,
+                [PLANS.DRIVE_1TB]: null,
+                [PLANS.DRIVE_BUSINESS]: null,
+                [PLANS.PASS]: null,
+                [PLANS.PASS_LIFETIME]: null,
+                [PLANS.PASS_FAMILY]: null,
+                [PLANS.FAMILY]: getFoldersAndLabelsFeature('unlimited'),
+                [PLANS.DUO]: getFoldersAndLabelsFeature('unlimited'),
+                [PLANS.MAIL_PRO]: getFoldersAndLabelsFeature('unlimited'),
+                [PLANS.MAIL_BUSINESS]: getFoldersAndLabelsFeature('unlimited'),
+                [PLANS.BUNDLE_PRO]: getFoldersAndLabelsFeature('unlimited'),
+                [PLANS.BUNDLE_PRO_2024]: getFoldersAndLabelsFeature('unlimited'),
+                [PLANS.PASS_PRO]: null,
+                [PLANS.PASS_BUSINESS]: null,
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
+                [PLANS.LUMO]: null,
+                [PLANS.VISIONARY]: getFoldersAndLabelsFeature('unlimited'),
             },
         },
     ];
