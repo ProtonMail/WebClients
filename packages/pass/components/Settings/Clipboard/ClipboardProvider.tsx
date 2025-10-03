@@ -29,7 +29,11 @@ export const useClipboardContext = createUseContext(ClipboardContext);
 export const useCopyToClipboard = () => useClipboardContext().copyToClipboard;
 export const useSetClipboardTTL = () => useClipboardContext().setClipboardTTL;
 
-export const ClipboardProvider: FC<PropsWithChildren> = ({ children }) => {
+type Props = {
+    checkPermissions?: () => Promise<boolean>;
+};
+
+export const ClipboardProvider: FC<PropsWithChildren<Props>> = ({ children, checkPermissions = async () => true }) => {
     const { writeToClipboard } = usePassCore();
     const { createNotification } = useNotifications();
     const dispatch = useDispatch();
@@ -39,11 +43,11 @@ export const ClipboardProvider: FC<PropsWithChildren> = ({ children }) => {
     const [modal, setModal] = useState<MaybeNull<ClipboardAction>>(null);
 
     const onCopyToClipboard = useCallback(
-        async (value: string, ttl?: ClipboardTTL, promptForPermissions: boolean = false): Promise<boolean> => {
+        async (value: string, ttl?: ClipboardTTL, promptForPermissions = false): Promise<boolean> => {
             try {
                 const options = getClipboardTTLOptions();
-                const copied = await writeToClipboard(value, ttl, promptForPermissions);
-                const blocked = promptForPermissions && !copied;
+                const permissionsGranted = await writeToClipboard(value, ttl, promptForPermissions);
+                const blocked = promptForPermissions && !permissionsGranted;
 
                 createNotification({
                     showCloseButton: false,
@@ -56,7 +60,7 @@ export const ClipboardProvider: FC<PropsWithChildren> = ({ children }) => {
                     })(),
                 });
 
-                return copied;
+                return permissionsGranted;
             } catch (err) {
                 createNotification({ type: 'error', text: c('Info').t`Unable to copy to clipboard` });
                 logger.error(`[ClipboardProvider] unable to copy to clipboard`);
@@ -87,13 +91,14 @@ export const ClipboardProvider: FC<PropsWithChildren> = ({ children }) => {
             {children}
             {modal === 'settings' && (
                 <ClipboardSettingsModal
-                    onSubmit={async (ttl) => {
+                    checkPermissions={checkPermissions}
+                    onSubmit={async (hasPermissions, ttl) => {
                         setModal(null);
                         if (cachedCopy !== null) {
                             setCachedCopy(null);
 
                             if (ttl !== undefined) {
-                                const promptForPermission = ttl > 0;
+                                const promptForPermission = !hasPermissions && ttl > 0;
                                 const copied = await onCopyToClipboard(cachedCopy, ttl, promptForPermission);
                                 /** NOTE: when prompting for permission in the context of the extension
                                  * popup this function might not finish as the permission prompt will
