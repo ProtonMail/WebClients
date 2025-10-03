@@ -126,7 +126,7 @@ export const SharedByMe = ({ shareId }: SharedByMeProps) => {
                 contextMenuAnchorRef={contextMenuAnchorRef}
                 onItemContextMenu={browserItemContextMenu.handleContextMenu}
                 onItemOpen={handleOpenItem}
-                onItemRender={(item) => handleRenderItem(item.id)}
+                onItemRender={handleRenderItem}
                 onSort={handleSorting}
                 onScroll={browserItemContextMenu.close}
             />
