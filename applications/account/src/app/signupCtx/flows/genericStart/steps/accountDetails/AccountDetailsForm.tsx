@@ -59,7 +59,7 @@ const SwitchSignupType = () => {
                 ? // translator: "Use your email, or get a secure Proton Mail address."
                   c('Signup').jt`Use your email, or ${externalButton}`
                 : // translator: "Get a secure Proton Mail address, or use your own email."
-                  c('Signup').jt`Get a secure one from us, or ${internalButton}`}
+                  c('Signup').jt`Get a secure ${MAIL_APP_NAME} address, or ${internalButton}`}
         </p>
     );
 };
