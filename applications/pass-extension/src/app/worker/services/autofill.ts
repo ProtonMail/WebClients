@@ -1,19 +1,21 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { onContextReady, withContext } from 'proton-pass-extension/app/worker/context/inject';
 import { createBasicAuthController } from 'proton-pass-extension/app/worker/listeners/auth-required';
-import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
+import { backgroundMessage, sendTabMessage } from 'proton-pass-extension/lib/message/send-message';
 import { getAutofillableFrameIDs } from 'proton-pass-extension/lib/utils/frames';
 import { setPopupIconBadge } from 'proton-pass-extension/lib/utils/popup';
 import { isContentScriptPort } from 'proton-pass-extension/lib/utils/port';
 import type { AutofillCheckFormMessage, WorkerMessageResponse } from 'proton-pass-extension/types/messages';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
+import type { CCFieldType } from '@proton/pass/fathom/labels';
 import { clientReady } from '@proton/pass/lib/client';
 import { compileRules, matchRules, parseRules } from '@proton/pass/lib/extension/rules/rules';
 import type { CompiledRules } from '@proton/pass/lib/extension/rules/types';
 import browser from '@proton/pass/lib/globals/browser';
 import { deobfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import {
+    intoAutofillableCCItem,
     intoCCItemPreview,
     intoIdentityItemPreview,
     intoLoginItemPreview,
@@ -264,22 +266,30 @@ export const createAutoFillService = () => {
         WorkerMessageType.AUTOFILL_CC,
         onContextReady(async (_, { payload }, sender) => {
             const tabId = sender.tab?.id;
-            const data = getCreditCard(payload);
-            if (!(data && tabId)) throw new Error('Could not get credit card for autofill request');
+            const item = getCreditCard(payload);
+            if (!(item && tabId)) throw new Error('Could not get credit card for autofill request');
 
             const frameIds = await getAutofillableFrameIDs(tabId, payload.origin, payload.frameId);
 
-            for (const frameId of frameIds) {
-                await browser.tabs
-                    .sendMessage(
-                        tabId,
-                        backgroundMessage({
-                            type: WorkerMessageType.AUTOFILL_REQUEST,
-                            payload: { type: 'creditCard', data, origin: payload.origin },
-                        }),
-                        { frameId }
-                    )
-                    .catch(noop);
+            /** Collect autofilled field types across frames to avoid duplicate autofill attempts */
+            const autofilledFields = new Set<CCFieldType>();
+
+            /** Process each frame sequentially, building up the set of autofilled fields.
+             * Generates frame-specific autofill data that respects cross-origin restrictions
+             * and previously filled fields, then tracks which fields were successfully filled
+             * for use in subsequent frames. */
+            for (const { frameId, crossOrigin } of frameIds) {
+                const data = intoAutofillableCCItem(item, autofilledFields, crossOrigin);
+                const res = await sendTabMessage(
+                    backgroundMessage({
+                        type: WorkerMessageType.AUTOFILL_REQUEST,
+                        payload: { type: 'creditCard', data },
+                    }),
+                    { tabId, frameId }
+                ).catch(noop);
+
+                if (!res || res.type !== 'creditCard') continue;
+                res.autofilled.forEach((type) => autofilledFields.add(type));
             }
             return true;
         })

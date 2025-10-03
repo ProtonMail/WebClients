@@ -18,7 +18,9 @@ describe('inline service', () => {
         test('should query parent frame correctly', async () => {
             const response = { ok: true, coords: { top: 25, left: 50 }, frameAttributes };
             tabsSendMessage.mockResolvedValue(response);
-            expect(await service.queryFrame(tabId, { frameId: 2, parent: 1 }, frameAttributes)).toBe(response);
+            expect(await service.queryFrame(tabId, { frameId: 2, parent: 1, origin: null }, frameAttributes)).toBe(
+                response
+            );
 
             expect(tabsSendMessage).toHaveBeenCalledWith(
                 tabId,
@@ -45,7 +47,7 @@ describe('inline service', () => {
         });
 
         test('should handle main frame (frameId 0)', async () => {
-            const frames = { 0: { parent: null, frameId: 0 } };
+            const frames = new Map([[0, { parent: null, frameId: 0, origin: null }]]);
             const result = await service.getFrameCoords(
                 tabId,
                 0,
@@ -57,18 +59,25 @@ describe('inline service', () => {
             );
 
             expect(result).toEqual({
-                frame: { parent: null, frameId: 0 },
+                frame: { parent: null, frameId: 0, origin: null },
                 frameAttributes,
                 coords: { top: 110, left: 220 },
             });
         });
 
         test('should handle nested frames with coordinate accumulation', async () => {
-            const frames = {
-                0: { parent: null, frameId: 0 },
-                1: { parent: 0, frameId: 1 },
-                2: { parent: 1, frameId: 2 },
-            };
+            /*
+            <frame origin="example.com">       <!-- frame0 -->
+                <frame origin="example.com">   <!-- frame1 -->
+                    <frame origin="example.com" /> <!-- frame2 -->
+                </frame>
+            </frame>
+            */
+            const frames = new Map([
+                [0, { parent: null, frameId: 0, origin: null }],
+                [1, { parent: 0, frameId: 1, origin: null }],
+                [2, { parent: 1, frameId: 2, origin: null }],
+            ]);
 
             tabsSendMessage
                 /** Frame 2 -> Frame 1 offset */
@@ -98,27 +107,37 @@ describe('inline service', () => {
             /** Coordinate accumulation: 5+15+30=50, 10+25+35=70
              * Stops at Frame 1 (parent is Frame 0, the main frame) */
             expect(result).toEqual({
-                frame: { parent: 0, frameId: 1 },
+                frame: { parent: 0, frameId: 1, origin: null },
                 frameAttributes,
                 coords: { top: 50, left: 70 },
             });
         });
 
         test('should return `null` when frame not found in hierarchy', async () => {
-            const frames = {
-                0: { parent: null, frameId: 0 },
-                1: { parent: 0, frameId: 1 },
-            };
+            /*
+            <frame origin="example.com">       <!-- frame0 -->
+                <frame origin="example.com" />   <!-- frame1 -->
+            </frame>
+            */
+            const frames = new Map([
+                [0, { parent: null, frameId: 0, origin: null }],
+                [1, { parent: 0, frameId: 1, origin: null }],
+            ]);
 
             const query = { coords: { top: 50, left: 75 }, frameAttributes };
             expect(await service.getFrameCoords(tabId, 999, query, frames)).toBeNull();
         });
 
         test('should return `null` when frame query fails', async () => {
-            const frames = {
-                0: { parent: null, frameId: 0 },
-                1: { parent: 0, frameId: 1 },
-            };
+            /*
+            <frame origin="example.com">       <!-- frame0 -->
+                <frame origin="example.com" />   <!-- frame1 -->
+            </frame>
+            */
+            const frames = new Map([
+                [0, { parent: null, frameId: 0, origin: null }],
+                [1, { parent: 0, frameId: 1, origin: null }],
+            ]);
 
             const query = { coords: { top: 50, left: 75 }, frameAttributes };
             tabsSendMessage.mockResolvedValue({ ok: false });
@@ -126,7 +145,7 @@ describe('inline service', () => {
         });
 
         test('should return null when frames parameter is empty', async () => {
-            const frames = {};
+            const frames = new Map();
             const query = { coords: { top: 50, left: 75 }, frameAttributes };
             expect(await service.getFrameCoords(tabId, 1, query, frames)).toBeNull();
         });
