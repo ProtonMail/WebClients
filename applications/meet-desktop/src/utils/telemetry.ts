@@ -7,10 +7,12 @@ import {
     DailyStatsValues,
     DailyStatsDimensions,
 } from "@proton/shared/lib/desktop/DailyStats";
-import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
 
 import { getSettings } from "../store/settingsStore";
 import { mainLogger } from "../utils/log";
+import { URLConfig } from "../store/urlStore";
+
+type ViewID = keyof URLConfig;
 
 type TelemetryStored = {
     dailyStats: DailyStatsStored;
@@ -87,7 +89,7 @@ class TelemetryService {
         });
     }
 
-    showView(_viewID: CHANGE_VIEW_TARGET) {
+    showView(_viewID: ViewID) {
         // Placeholder for future view tracking
     }
 
