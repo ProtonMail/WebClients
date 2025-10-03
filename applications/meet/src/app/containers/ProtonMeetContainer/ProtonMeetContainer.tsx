@@ -49,6 +49,8 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
 
     useDependencySetup(guestMode);
 
+    const { initializeDevices } = useMediaManagementContext();
+
     const { createNotification } = useNotifications();
 
     const reportMeetError = useMeetErrorReporting();
@@ -105,8 +107,6 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
     const accessTokenRef = useRef<string | null>(null);
 
     const notifications = useNotifications();
-
-    const { initializeAudioAndVideo } = useMediaManagementContext();
 
     const getGroupKeyInfo = async () => {
         try {
@@ -334,9 +334,14 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
 
             await handleKeyUpdate(keyProvider);
 
-            await room.connect(websocketUrl, accessToken);
+            // Turning auto subscribe off so we have better control over the quality of the tracks
+            await room.connect(websocketUrl, accessToken, {
+                autoSubscribe: false,
+            });
 
-            await initializeAudioAndVideo();
+            await room.setE2EEEnabled(true);
+
+            await initializeDevices();
 
             await getParticipants(meetingToken);
 

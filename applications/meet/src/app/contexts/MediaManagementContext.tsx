@@ -45,7 +45,7 @@ export interface MediaManagementContextType {
     setInitialCameraState: (initialCameraState: boolean) => void;
     setInitialAudioState: (initialAudioState: boolean) => void;
     switchActiveDevice: SwitchActiveDevice;
-    initializeAudioAndVideo: () => Promise<void>;
+    initializeDevices: () => Promise<void>;
 }
 
 const defaultValues: MediaManagementContextType = {
@@ -77,7 +77,7 @@ const defaultValues: MediaManagementContextType = {
     setInitialCameraState: () => {},
     setInitialAudioState: () => {},
     switchActiveDevice: () => {},
-    initializeAudioAndVideo: () => Promise.resolve(),
+    initializeDevices: () => Promise.resolve(),
 };
 
 export const MediaManagementContext = createContext<MediaManagementContextType>(defaultValues);

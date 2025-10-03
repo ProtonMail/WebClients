@@ -1,7 +1,7 @@
 import { useCallback, useEffect } from 'react';
 
 import { useRoomContext } from '@livekit/components-react';
-import { ConnectionState, Room, RoomEvent } from '@proton-meet/livekit-client';
+import { ConnectionState, type LocalTrack, Room, RoomEvent, Track } from '@proton-meet/livekit-client';
 
 import { DEFAULT_DEVICE_ID } from '../constants';
 import type { SwitchActiveDevice } from '../types';
@@ -62,11 +62,19 @@ export const useDynamicDeviceHandling = ({
     );
 
     const handleDeviceChange = useCallback(async () => {
+        const getLocalDevicesWithErrorHandling = async (deviceType: 'audioinput' | 'videoinput' | 'audiooutput') => {
+            try {
+                return await Room.getLocalDevices(deviceType);
+            } catch (error) {
+                return [];
+            }
+        };
+
         // Getting the devices using the static method on Room
         const [microphones, cameras, speakers] = await Promise.all([
-            Room.getLocalDevices('audioinput'),
-            Room.getLocalDevices('videoinput'),
-            Room.getLocalDevices('audiooutput'),
+            getLocalDevicesWithErrorHandling('audioinput'),
+            getLocalDevicesWithErrorHandling('videoinput'),
+            getLocalDevicesWithErrorHandling('audiooutput'),
         ]);
 
         const microphonesAfterDeviceChange = filterDevices(microphones);
@@ -87,8 +95,15 @@ export const useDynamicDeviceHandling = ({
         dynamicDeviceUpdate({
             deviceList: camerasAfterDeviceChange,
             deviceId: activeCameraDeviceId,
-            updateFunction: (newDeviceId: string) => {
+            updateFunction: async (newDeviceId: string) => {
                 if (room.state === ConnectionState.Connected) {
+                    const cameraTrack = room.localParticipant.getTrackPublication(Track.Source.Camera)?.track;
+
+                    // In case of unplugging a device, we need this extra cleanup if there was a background blur processor
+                    if (cameraTrack?.getProcessor()) {
+                        await room.localParticipant.unpublishTrack(cameraTrack as LocalTrack);
+                    }
+
                     void toggleVideo({ videoDeviceId: newDeviceId, forceUpdate: true });
                 } else {
                     void switchActiveDevice('videoinput', newDeviceId);

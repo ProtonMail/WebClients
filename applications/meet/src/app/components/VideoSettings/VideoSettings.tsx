@@ -12,14 +12,14 @@ interface VideoSettingsProps {
 }
 
 export function VideoSettings({ anchorRef, onClose, anchorPosition }: VideoSettingsProps) {
-    const { selectedCameraId: videoDeviceId, toggleVideo, cameras } = useMediaManagementContext();
+    const { selectedCameraId: videoDeviceId, toggleVideo, cameras, isVideoEnabled } = useMediaManagementContext();
 
     const handleCameraChange = async (deviceId: string) => {
         if (deviceId === videoDeviceId) {
             return;
         }
 
-        void toggleVideo({ videoDeviceId: deviceId });
+        void toggleVideo({ videoDeviceId: deviceId, isEnabled: isVideoEnabled });
     };
 
     return (
