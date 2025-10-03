@@ -109,10 +109,19 @@ $profile-colors:
 }
 
 .device-selector-dropdown {
-	max-inline-size: 50vw !important;
+	max-inline-size: 50vw;
+
+	@include media('<=small') {
+		inline-size: calc(100vw - 3rem);
+		max-inline-size: calc(100vw - 3rem) !important;
+	}
 
 	.dropdown-content {
-		max-inline-size: 50vw !important;
+		max-inline-size: 50vw;
+
+		@include media('<=small') {
+			max-inline-size: calc(100vw - 3rem) !important;
+		}
 	}
 }
 
