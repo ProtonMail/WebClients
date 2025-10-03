@@ -6,8 +6,6 @@ import {
   DataValidationEditor,
   DataValidationEditorDialog,
   DeleteSheetConfirmation,
-  InsertLinkDialog,
-  InsertLinkEditor,
   NamedRangeEditor,
   TableEditor,
 } from '@rowsncolumns/spreadsheet-state'
@@ -15,6 +13,7 @@ import type { ProtonSheetsState } from '../../state'
 import { onlyImplementedFunctionDescriptions as functionDescriptions } from '../../constants'
 import { ChartEditor, ChartEditorDialog } from '@rowsncolumns/charts'
 import { SheetSearch } from './SheetSearch'
+import { InsertLinkDialog } from './InsertLink'
 
 export type DialogsProps = {
   state: ProtonSheetsState
@@ -86,14 +85,7 @@ export function Dialogs({ state }: DialogsProps) {
           onChangeBorder={state.onChangeBorder}
         />
       </CellFormatEditorDialog>
-      <InsertLinkDialog>
-        <InsertLinkEditor
-          sheetId={state.activeSheetId}
-          activeCell={state.activeCell}
-          selections={state.selections}
-          onInsertLink={state.onInsertLink}
-        />
-      </InsertLinkDialog>
+      <InsertLinkDialog />
     </>
   )
 }
