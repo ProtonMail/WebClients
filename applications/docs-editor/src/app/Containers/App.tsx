@@ -49,7 +49,6 @@ import { useEditorState } from './EditorStateProvider'
 import { IS_CHROME } from '../Shared/environment'
 import { useStateRef } from '../Hooks/useStateRef'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
-// eslint-disable-next-line monorepo-cop/no-relative-import-outside-package
 import { SpreadsheetProvider } from '@rowsncolumns/spreadsheet'
 import type { SpreadsheetRef } from './Spreadsheet/Spreadsheet'
 import { Spreadsheet } from './Spreadsheet/Spreadsheet'
@@ -58,6 +57,8 @@ import { getEditorStateFromSerializedNodes } from '../Conversion/get-editor-stat
 import { utf8ArrayToString } from '@proton/crypto/lib/utils'
 import { copyTextToClipboard } from '../Utils/copy-to-clipboard'
 import { ErrorBoundary, useNotifications } from '@proton/components'
+import type { OpenLinkEventData } from './Spreadsheet/constants'
+import { OPEN_LINK_EVENT } from './Spreadsheet/constants'
 
 type AppProps = {
   documentType: DocumentType
@@ -477,6 +478,15 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
     editorState,
     createNotification,
   ])
+
+  useEffect(() => {
+    if (!bridge) {
+      return
+    }
+    return application.eventBus.addEventCallback((data: OpenLinkEventData) => {
+      bridge.getClientInvoker().openLink(data.link).catch(console.error)
+    }, OPEN_LINK_EVENT)
+  }, [application.eventBus, bridge])
 
   const onUserModeChange = useCallback(
     (mode: EditorUserMode) => {

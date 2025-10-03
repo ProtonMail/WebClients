@@ -118,3 +118,8 @@ const implementedFunctionNames = FormulaParser.getImplementedFunctionNames()
 export const onlyImplementedFunctionDescriptions = functionDescriptions.filter((fn) => {
   return implementedFunctionNames.has(fn.title)
 })
+
+export const OPEN_LINK_EVENT = 'open-link' as const
+export type OpenLinkEventData = {
+  link: string
+}

@@ -6,6 +6,7 @@ import { ChartComponent } from '@rowsncolumns/charts'
 import { isDevOrBlack } from '@proton/utils/env'
 import { useEffect, useRef } from 'react'
 import { useUI } from '../../ui-store'
+import { CellTooltip } from '../misc/CellTooltip'
 
 export type LegacyGridProps = {
   state: ProtonSheetsState
@@ -178,6 +179,7 @@ export function LegacyGrid({ state, isReadonly, users, userName }: LegacyGridPro
       )}
       readonly={isReadonly}
       getEffectiveFormat={state.getEffectiveFormat}
+      CellTooltip={CellTooltip}
     />
   )
 }
