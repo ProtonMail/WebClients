@@ -3,7 +3,6 @@ import { debounce } from "lodash";
 import { getWindowBounds, saveWindowBounds } from "../../store/boundsStore";
 import { getSettings, updateSettings } from "../../store/settingsStore";
 import { updateDownloaded } from "../../update";
-import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
 import { isLinux, isMac, isWindows } from "../helpers";
 import { checkKeys } from "../keyPinning";
 import { mainLogger, viewLogger } from "../log";
@@ -270,7 +269,7 @@ async function updateLocalID(urlString: string) {
     return url.toString();
 }
 
-export async function showView(viewID: CHANGE_VIEW_TARGET, url: string = "") {
+export async function showView(viewID: ViewID, url: string = "") {
     if (!mainWindow || mainWindow.isDestroyed()) {
         return;
     }
