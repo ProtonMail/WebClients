@@ -3,10 +3,9 @@ import { useRef, useState } from 'react';
 import { useLocalParticipant } from '@livekit/components-react';
 import { BackgroundBlur, type BackgroundProcessorOptions } from '@livekit/track-processors';
 import type { LocalParticipant } from '@proton-meet/livekit-client';
-import { type LocalTrack, Track } from '@proton-meet/livekit-client';
+import { Track } from '@proton-meet/livekit-client';
 
 import type { SwitchActiveDevice } from '../types';
-import { useParticipantResolution } from './useParticipantResolution';
 
 const backgroundProcessorOptions: BackgroundProcessorOptions = {
     assetPaths: {
@@ -15,7 +14,7 @@ const backgroundProcessorOptions: BackgroundProcessorOptions = {
     },
 };
 
-const blur = BackgroundBlur(40, undefined, undefined, backgroundProcessorOptions);
+const backgroundBlurProcessor = BackgroundBlur(40, undefined, undefined, backgroundProcessorOptions);
 
 const getVideoTrackPublications = (localParticipant: LocalParticipant) => {
     return [...localParticipant.trackPublications.values()].filter(
@@ -23,33 +22,37 @@ const getVideoTrackPublications = (localParticipant: LocalParticipant) => {
     );
 };
 
-export const useVideoToggle = (activeCameraDeviceId: string, switchActiveDevice: SwitchActiveDevice) => {
+export const useVideoToggle = (
+    activeCameraDeviceId: string,
+    switchActiveDevice: SwitchActiveDevice,
+    initialCameraState: boolean
+) => {
     const { isCameraEnabled, localParticipant } = useLocalParticipant();
 
     const [facingMode, setFacingMode] = useState<'environment' | 'user'>('user');
     const [backgroundBlur, setBackgroundBlur] = useState(false);
 
-    const participantResolution = useParticipantResolution();
-
     const toggleInProgress = useRef(false);
 
-    const prevEnabled = useRef(false);
+    const prevEnabled = useRef<boolean | null>(null);
+
+    const getCurrentVideoTrack = () => {
+        return getVideoTrackPublications(localParticipant).filter(
+            (publication) => publication.source === Track.Source.Camera
+        )[0]?.track;
+    };
 
     const toggleVideo = async (
         params: {
             isEnabled?: boolean;
             videoDeviceId?: string;
-            forceUpdate?: boolean;
             facingMode?: 'environment' | 'user';
-            enableBlur?: boolean;
         } = {}
     ) => {
         const {
-            isEnabled = prevEnabled.current,
+            isEnabled = prevEnabled.current ?? initialCameraState,
             videoDeviceId = activeCameraDeviceId,
-            forceUpdate = false,
             facingMode: customFacingMode,
-            enableBlur = backgroundBlur,
         } = params;
 
         if (toggleInProgress.current) {
@@ -63,48 +66,28 @@ export const useVideoToggle = (activeCameraDeviceId: string, switchActiveDevice:
 
         const facingModeDependentOptions = customFacingMode
             ? {
-                  resolution: participantResolution.resolution,
                   facingMode: customFacingMode ?? facingMode,
               }
             : {
                   deviceId: { exact: videoDeviceId },
-                  resolution: participantResolution.resolution,
               };
 
-        // we don't use deviceId when we use facingMode, we just constrain the facingMode and the resolution
-        const videoInfo = facingModeDependentOptions;
-        const videoPublishInfo = {
-            videoEncoding: participantResolution.encoding,
-        };
+        const currentVideoTrack = getCurrentVideoTrack();
 
-        const currentVideoTrackPublications = getVideoTrackPublications(localParticipant);
-
-        if (forceUpdate || enableBlur) {
-            currentVideoTrackPublications.forEach(async (track) => {
-                track.track?.stop();
-                await localParticipant.unpublishTrack(track.track as LocalTrack);
-            });
+        // If we have a background blur processor, we need to stop it
+        if (backgroundBlur) {
+            await currentVideoTrack?.stopProcessor();
         }
 
-        await localParticipant.setCameraEnabled(isEnabled, facingModeDependentOptions, videoPublishInfo);
         await switchActiveDevice('videoinput', videoDeviceId as string);
+        await localParticipant.setCameraEnabled(isEnabled, facingModeDependentOptions);
 
-        const newVideoTrack = getVideoTrackPublications(localParticipant)[0]?.track;
+        const newVideoTrack = getCurrentVideoTrack();
 
-        if ((forceUpdate || enableBlur) && isEnabled && videoInfo) {
-            if (enableBlur) {
-                await newVideoTrack?.setProcessor(blur);
-            }
-
-            await localParticipant.publishTrack(newVideoTrack as LocalTrack, {
-                source: Track.Source.Camera,
-                ...videoPublishInfo,
-            });
-        } else {
-            await newVideoTrack?.stopProcessor();
+        // Adding background blur processor after applying updates
+        if (backgroundBlur) {
+            await newVideoTrack?.setProcessor(backgroundBlurProcessor);
         }
-
-        setBackgroundBlur(enableBlur);
 
         toggleInProgress.current = false;
     };
@@ -120,18 +103,21 @@ export const useVideoToggle = (activeCameraDeviceId: string, switchActiveDevice:
         if (videoTrack) {
             await toggleVideo({
                 isEnabled: true,
-                forceUpdate: true,
                 facingMode: newFacingMode,
             });
         }
     };
 
     const toggleBackgroundBlur = async () => {
-        if (isCameraEnabled) {
-            await toggleVideo({ isEnabled: isCameraEnabled, enableBlur: !backgroundBlur });
+        const currentVideoTrack = getCurrentVideoTrack();
+
+        if (backgroundBlur) {
+            await currentVideoTrack?.stopProcessor();
         } else {
-            setBackgroundBlur((prev) => !prev);
+            await currentVideoTrack?.setProcessor(backgroundBlurProcessor);
         }
+
+        setBackgroundBlur((prevEnableBlur) => !prevEnableBlur);
     };
 
     return { toggleVideo, handleRotateCamera, backgroundBlur, toggleBackgroundBlur, isVideoEnabled: isCameraEnabled };

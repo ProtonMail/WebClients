@@ -5428,12 +5428,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@livekit/protocol@npm:1.39.3":
-  version: 1.39.3
-  resolution: "@livekit/protocol@npm:1.39.3"
+"@livekit/protocol@npm:1.41.0":
+  version: 1.41.0
+  resolution: "@livekit/protocol@npm:1.41.0"
   dependencies:
     "@bufbuild/protobuf": "npm:^1.10.0"
-  checksum: 10c0/192ce7283db4505232aa487e71d08670783a1045a8935926f95ff4b9d3d310db706c2ad4af2ebdb0bd735c2e9042c1ee3b1f62e44a9d01bd41fd58cf8dc272b9
+  checksum: 10c0/583cc5de73cd93f5139e037648d8c60ee3161b195e4956df36e7513fc01f338f7c564e89af1bc60ccdf546e83484ed9721578f34ee64e0e87fe8150107629067
   languageName: node
   linkType: hard
 
@@ -7837,12 +7837,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@proton-meet/livekit-client@npm:2.15.9, livekit-client@npm:@proton-meet/livekit-client@2.15.9":
-  version: 2.15.9
-  resolution: "@proton-meet/livekit-client@npm:2.15.9"
+"@proton-meet/livekit-client@npm:2.15.10, livekit-client@npm:@proton-meet/livekit-client@2.15.10":
+  version: 2.15.10
+  resolution: "@proton-meet/livekit-client@npm:2.15.10"
   dependencies:
     "@livekit/mutex": "npm:1.1.1"
-    "@livekit/protocol": "npm:1.39.3"
+    "@livekit/protocol": "npm:1.41.0"
     events: "npm:^3.3.0"
     loglevel: "npm:^1.9.2"
     sdp-transform: "npm:^2.15.0"
@@ -7852,7 +7852,7 @@ __metadata:
     webrtc-adapter: "npm:^9.0.1"
   peerDependencies:
     "@types/dom-mediacapture-record": ^1
-  checksum: 10c0/b45594c41dcc7edfe043ae7a97eb33e494735fb65908105b65df1120783a3dbfb5f1b14f2bc72f2ad7e1594cc198d2a876911b9706185b4fb593303d058e2581
+  checksum: 10c0/3fd1e2c8efc2b4033ffc68439a6309f2ff6a553d7e93ccfd07072c83dd8a515642688d4ef30d19e15db845408ece5fcd89ca84c4677563cad6b5e66b270ecc93
   languageName: node
   linkType: hard
 
@@ -37023,7 +37023,7 @@ __metadata:
     "@livekit/components-react": "npm:^2.9.14"
     "@livekit/krisp-noise-filter": "npm:^0.3.4"
     "@livekit/track-processors": "npm:^0.6.1"
-    "@proton-meet/livekit-client": "npm:2.15.9"
+    "@proton-meet/livekit-client": "npm:2.15.10"
     "@proton-meet/proton-meet-core": "npm:0.3.3-2"
     "@proton/components": "workspace:packages/components"
     "@proton/cross-storage": "workspace:packages/cross-storage"
@@ -37048,7 +37048,7 @@ __metadata:
     cross-env: "npm:^10.0.0"
     eslint: "npm:^9.36.0"
     happy-dom: "npm:^18.0.1"
-    livekit-client: "npm:@proton-meet/livekit-client@2.15.9"
+    livekit-client: "npm:@proton-meet/livekit-client@2.15.10"
     prettier: "npm:^3.6.2"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
