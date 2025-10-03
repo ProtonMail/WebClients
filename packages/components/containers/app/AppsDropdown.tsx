@@ -98,6 +98,8 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
     }
 );
 
+AppsDropdown.displayName = 'AppsDropdown';
+
 export const UnAuthenticatedAppsDropdown = AppsDropdown;
 
 const AuthenticatedAppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
@@ -115,5 +117,7 @@ const AuthenticatedAppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProp
         return <AppsDropdown ref={ref} {...props} user={user} organization={organization} />;
     }
 );
+
+AuthenticatedAppsDropdown.displayName = 'AuthenticatedAppsDropdown';
 
 export default AuthenticatedAppsDropdown;
