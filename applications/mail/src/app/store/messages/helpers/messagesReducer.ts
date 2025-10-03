@@ -3,7 +3,7 @@ import type { Draft } from 'immer';
 
 import type { MessagesState } from '@proton/mail/store/messages/messagesTypes';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
-import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 
 import type { Conversation } from 'proton-mail/models/conversation';
@@ -196,7 +196,7 @@ export const labelMessagesPending = (
     action: PayloadAction<
         undefined,
         string,
-        { arg: { elements: Message[]; destinationLabelID: string; labels: Label[]; folders: Folder[] } }
+        { arg: { elements: MessageMetadata[]; destinationLabelID: string; labels: Label[]; folders: Folder[] } }
     >
 ) => {
     const { elements, destinationLabelID, labels, folders } = action.meta.arg;
@@ -208,7 +208,7 @@ export const labelMessagesPending = (
             return;
         }
 
-        applyLabelToMessage(messageState.data as Message, destinationLabelID, folders, labels);
+        applyLabelToMessage(messageState.data as MessageMetadata, destinationLabelID, folders, labels);
     });
 };
 
@@ -217,7 +217,7 @@ export const unlabelMessagesPending = (
     action: PayloadAction<
         undefined,
         string,
-        { arg: { elements: Message[]; destinationLabelID: string; labels: Label[] } }
+        { arg: { elements: MessageMetadata[]; destinationLabelID: string; labels: Label[] } }
     >
 ) => {
     const { elements, destinationLabelID, labels } = action.meta.arg;
@@ -229,7 +229,7 @@ export const unlabelMessagesPending = (
             return;
         }
 
-        removeLabelFromMessage(messageState.data as Message, destinationLabelID, labels);
+        removeLabelFromMessage(messageState.data as MessageMetadata, destinationLabelID, labels);
     });
 };
 
