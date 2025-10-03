@@ -5,7 +5,7 @@ import { electronAppTheme, getDarkThemes, ThemeSetting } from "@proton/shared/li
 import { setShouldCheckDefaultMailtoApp } from "../utils/protocol/default";
 import { loadDefaultProtocol } from "../utils/protocol/store";
 import { mainLogger } from "../utils/log";
-import { DESKTOP_FEATURES } from "../ipc/ipcConstants";
+import { DESKTOP_FEATURES } from "../constants/desktopFeatures";
 import { ThemeModeSetting, ThemeTypes } from "@proton/shared/lib/themes/constants";
 
 const store = new Store();
