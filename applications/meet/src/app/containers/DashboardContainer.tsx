@@ -27,7 +27,8 @@ export const DashboardContainer = () => {
     const notifications = useNotifications();
     const history = useHistory();
 
-    const { meetings, personalMeeting } = useDependencySetup(false);
+    const { meetings, personalMeeting, setupNewPersonalMeeting, loadingRotatePersonalMeeting } =
+        useDependencySetup(false);
 
     const goToApp = useAppLink();
 
@@ -94,7 +95,9 @@ export const DashboardContainer = () => {
                     onJoin={() => {
                         history.push(personalMeetingLinkPath);
                     }}
+                    onRotate={setupNewPersonalMeeting}
                     link={personalMeetingLink}
+                    loadingRotatePersonalMeeting={loadingRotatePersonalMeeting}
                 />
             )}
             <PageHeader isScheduleInAdvanceEnabled={false} guestMode={false} />

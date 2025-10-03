@@ -6,7 +6,7 @@ import { useGetMeetUserSettings } from '../store';
 import { useMeetingList } from './useMeetingList';
 
 const useAuthenticatedDependencySetup = () => {
-    const [meetings, personalMeeting] = useMeetingList();
+    const [meetings, personalMeeting, setupNewPersonalMeeting, loadingRotatePersonalMeeting] = useMeetingList();
     const getUserSettings = useGetMeetUserSettings();
 
     useEffect(() => {
@@ -15,11 +15,16 @@ const useAuthenticatedDependencySetup = () => {
         }
     }, [personalMeeting]);
 
-    return { meetings, personalMeeting };
+    return { meetings, personalMeeting, setupNewPersonalMeeting, loadingRotatePersonalMeeting };
 };
 
 const useUnauthenticatedDependencySetup = () => {
-    return { meetings: null, personalMeeting: null };
+    return {
+        meetings: null,
+        personalMeeting: null,
+        setupNewPersonalMeeting: () => null,
+        loadingRotatePersonalMeeting: false,
+    };
 };
 
 export const useDependencySetup = (isGuest: boolean) => {
