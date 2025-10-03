@@ -2,8 +2,7 @@ import type { SyntheticEvent } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, CircleLoader, ProtonLoader } from '@proton/atoms';
-import { Tooltip } from '@proton/atoms';
+import { Button, CircleLoader, ProtonLoader, Tooltip } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import TextLoader from '@proton/components/components/loader/TextLoader';
 import useConfig from '@proton/components/hooks/useConfig';
