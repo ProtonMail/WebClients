@@ -65,6 +65,7 @@ export const useSharedByMeItemsWithSelection = () => {
                 isFile: item.type === 'file',
                 name: item.name,
                 size: item.size || 0,
+                thumbnailId: item.thumbnailId,
                 metaDataModifyTime: item.creationTime ? item.creationTime.getTime() : 0,
                 fileModifyTime: item.creationTime ? item.creationTime.getTime() : 0,
                 shareUrl: item.publicLink
@@ -91,7 +92,7 @@ export const useSharedByMeItemsWithSelection = () => {
 
     const handleOpenItem = useCallback(
         (uid: BrowserItemId) => {
-            const storeItem = sharedByMeItems.find((item) => item.nodeUid === uid);
+            const storeItem = getSharedByMeItem(uid);
             if (!storeItem) {
                 return;
             }
@@ -122,12 +123,12 @@ export const useSharedByMeItemsWithSelection = () => {
 
             navigateToLink(storeItem.rootShareId, nodeId, storeItem.type === 'file');
         },
-        [sharedByMeItems, openDocument, navigateToAlbum, navigateToLink]
+        [getSharedByMeItem, openDocument, navigateToAlbum, navigateToLink]
     );
 
     const handleRenderItem = useCallback(
-        (uid: string) => {
-            const storeItem = sharedByMeItems.find((item) => item.nodeUid === uid);
+        ({ id }: { id: string }) => {
+            const storeItem = getSharedByMeItem(id);
             if (!storeItem) {
                 return;
             }
@@ -147,7 +148,7 @@ export const useSharedByMeItemsWithSelection = () => {
                 // Similar to what's done in the original useSharedByMeNodes
             }
         },
-        [sharedByMeItems, incrementItemRenderedCounter, loadThumbnail, skipSharingInfoLoading]
+        [getSharedByMeItem, incrementItemRenderedCounter, loadThumbnail, skipSharingInfoLoading]
     );
 
     const handleSorting = useCallback(
