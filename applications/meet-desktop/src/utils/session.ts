@@ -106,17 +106,6 @@ export const setRequestPermission = () => {
 let isAppVersionExtensionDisabled = false;
 export const FEATURE_FLAG_APPVERSION_EXTENSION_DISABLED = "InboxDesktopAppVersionExtensionDisabled";
 
-// startFeatureCheck periodically retrives stored unleash data from Meet.
-// Currently we are only interested in
-// FEATURE_FLAG_APPVERSION_EXTENSION_DISABLED,
-// this can be reused and extended by more general case in future.
-//
-// Period one minute was decided to reflect quckly the default refresh 10 min
-// interval used to retrieve unleash flags from API.
-export const startFeatureCheck = () => {
-    // Placeholder for future feature flag checking
-};
-
 const updateFlags = (flags: unknown) => {
     if (!flags || flags === null) {
         return;

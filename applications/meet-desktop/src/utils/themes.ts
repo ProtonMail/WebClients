@@ -1,7 +1,7 @@
 import { nativeTheme } from "electron";
 import { PROTON_THEMES_MAP } from "@proton/shared/lib/themes/themes";
 import { getMainWindow } from "./view/viewManagement";
-import { ColorScheme, ThemeTypes } from "@proton/shared/lib/themes/constants";
+import { ThemeTypes } from "@proton/shared/lib/themes/constants";
 
 // Meet uses a hard-coded dark theme
 export function initializeDarkTheme() {
@@ -14,9 +14,4 @@ export function initializeDarkTheme() {
         const themeColors = PROTON_THEMES_MAP[ThemeTypes.Carbon];
         mainWindow.setBackgroundColor(themeColors.themeColorMeta);
     }
-}
-
-export function getColorScheme() {
-    // Always return dark for Meet
-    return ColorScheme.Dark;
 }
