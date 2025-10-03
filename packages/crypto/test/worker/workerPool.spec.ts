@@ -311,9 +311,7 @@ fzUCGwwAIQkQXHnmw8RpeUoWIQT490w0irDiMLKqqe5ceebDxGl5Sl9wAQC+
             expect(await CryptoWorkerPool.exportPublicKey({ key: privateKeyRef })).length.above(0);
             await CryptoWorkerPool.clearKey({ key: privateKeyRef });
 
-            await expect(CryptoWorkerPool.exportPublicKey({ key: privateKeyRef })).to.be.rejectedWith(
-                /Key not found/
-            );
+            await expect(CryptoWorkerPool.exportPublicKey({ key: privateKeyRef })).to.be.rejectedWith(/Key not found/);
         });
 
         it('clearKeyStore - cannot reference any key after clearing the store', async () => {
@@ -328,12 +326,8 @@ fzUCGwwAIQkQXHnmw8RpeUoWIQT490w0irDiMLKqqe5ceebDxGl5Sl9wAQC+
             expect(await CryptoWorkerPool.exportPublicKey({ key: privateKeyRef2 })).length.above(0);
             await CryptoWorkerPool.clearKeyStore();
 
-            await expect(CryptoWorkerPool.exportPublicKey({ key: privateKeyRef1 })).to.be.rejectedWith(
-                /Key not found/
-            );
-            await expect(CryptoWorkerPool.exportPublicKey({ key: privateKeyRef2 })).to.be.rejectedWith(
-                /Key not found/
-            );
+            await expect(CryptoWorkerPool.exportPublicKey({ key: privateKeyRef1 })).to.be.rejectedWith(/Key not found/);
+            await expect(CryptoWorkerPool.exportPublicKey({ key: privateKeyRef2 })).to.be.rejectedWith(/Key not found/);
         });
     });
 });

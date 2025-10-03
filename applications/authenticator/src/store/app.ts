@@ -13,6 +13,7 @@ import { updateSettings } from 'proton-authenticator/store/settings';
 import { c, msgid } from 'ttag';
 
 import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
+import noop from '@proton/utils/noop';
 
 import { checkForUpdates } from './update';
 import { createAppAsyncThunk } from './utils';
@@ -112,7 +113,9 @@ export const init = createAppAsyncThunk('app/init', async (_, { getState, dispat
         const { appLock } = getState().settings;
         void dispatch(checkForUpdates());
 
-        await Promise.all([loadCryptoWorker(), loadWasm(), setupDB()]);
+        loadCryptoWorker().catch(noop);
+
+        await Promise.all([loadWasm(), setupDB()]);
 
         logger.info('[app::init] completed');
 

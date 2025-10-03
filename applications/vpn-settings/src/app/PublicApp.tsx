@@ -84,21 +84,20 @@ interface InnerPublicAppProps {
     location: ReturnType<typeof useLocationWithoutLocale>;
 }
 
-let cryptoWorkerPromise: Promise<void> | undefined;
+let cryptoWorkerInitialized = false;
 
 const handlePreload = () => {
-    if (!cryptoWorkerPromise) {
-        cryptoWorkerPromise = loadCrypto({
-            appName: APPS.PROTONACCOUNT,
+    if (!cryptoWorkerInitialized) {
+        loadCrypto({
+            appName: APPS.PROTONVPN_SETTINGS,
             unleashClient: undefined,
         });
+        cryptoWorkerInitialized = true;
     }
 };
 
 const handlePreSubmit = async () => {
     handlePreload();
-    // The crypto worked must be loaded when signup/login/reset are performed
-    await cryptoWorkerPromise;
 };
 
 const InnerPublicApp = ({ api, onLogin, loader, location }: InnerPublicAppProps) => {
