@@ -2,16 +2,16 @@
 // These flags control which desktop-specific features are enabled
 export const DESKTOP_FEATURES = {
     InAppPayments: true,
-    ThemeSelection: true,
     EarlyAccess: true,
     LatestVersionCheck: true,
     InstallSource: true,
-    FullTheme: true,
     HeartbeatMetrics: true,
     StatsTelemetry: true,
-    RestrictedThemeSelection: true,
     ClearAppModal: true,
-    // Disabled mail/calendar-specific features
+    // Disabled features (not used by Meet)
+    ThemeSelection: false,
+    FullTheme: false,
+    RestrictedThemeSelection: false,
     MultiAccount: false,
     MailtoTelemetry: false,
     MailtoUpdate: false,

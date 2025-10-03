@@ -14,7 +14,7 @@ import {
 } from "./utils/view/viewManagement";
 import { handleSquirrelEvents } from "./windows/squirrel";
 import pkg from "../package.json";
-import { getTheme, updateNativeTheme } from "./utils/themes";
+import { initializeDarkTheme } from "./utils/themes";
 import { handleWebContents } from "./utils/view/webContents";
 import { connectNetLogger, initializeLog, mainLogger } from "./utils/log";
 import { handleDeepLink, handleStartupDeepLink } from "./utils/protocol/deep_links";
@@ -114,9 +114,8 @@ import { measureRequestTime } from "./utils/log/measureRequestTime";
         urlOverrideError();
     }
 
-    if (settings.theme) {
-        updateNativeTheme(getTheme());
-    }
+    // Initialize Meet's dark theme
+    initializeDarkTheme();
 
     app.on("activate", () => {
         if (isMac) {

@@ -17,8 +17,7 @@ export interface WindowBounds {
 export const DEFAULT_WIDTH = 1200;
 export const DEFAULT_HEIGHT = 900;
 
-// This minimum width avoids triggering mobile design in calendar view,
-// which is around 870 pixels
+// This minimum width provides a good user experience and avoids triggering mobile design
 export const MINIMUM_WIDTH = 900;
 export const MINIMUM_HEIGHT = 300;
 
