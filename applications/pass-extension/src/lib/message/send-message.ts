@@ -3,13 +3,15 @@ import type {
     MessageSuccess,
     PortFrameForwardingMessage,
     WorkerMessage,
+    WorkerMessageResponse,
     WorkerMessageWithSender,
     WorkerResponse,
 } from 'proton-pass-extension/types/messages';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
+import type { Tabs } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
-import type { ClientEndpoint } from '@proton/pass/types';
+import type { ClientEndpoint, TabId } from '@proton/pass/types';
 
 export class MessageVersionMismatchError extends Error {
     name = 'MessageVersionMismatchError';
@@ -55,6 +57,14 @@ export const sendMessage = async <T extends WorkerMessageWithSender>(
             critical: error instanceof CriticalMessageResponseError,
         };
     }
+};
+
+export const sendTabMessage = async <T extends WorkerMessageWithSender>(
+    message: T,
+    { tabId, ...options }: { tabId: TabId } & Partial<Tabs.SendMessageOptionsType>
+): Promise<WorkerMessageResponse<T['type']>> => {
+    const res = await browser.tabs.sendMessage<T, WorkerMessageResponse<T['type']>>(tabId, message, options);
+    return res;
 };
 
 /** Allows mapping over the response type via an `onReponse` callback instead of
