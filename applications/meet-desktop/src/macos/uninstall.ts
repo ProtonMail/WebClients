@@ -9,7 +9,3 @@ export const uninstallProton = () => {
 
     exec(`sh "${file}"`);
 };
-
-export const moveUninstaller = () => {
-    // Placeholder for Meet uninstaller - not needed for now
-};

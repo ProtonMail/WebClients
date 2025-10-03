@@ -1,5 +1,4 @@
 import { Notification, Event, app } from "electron";
-import { moveUninstaller } from "./macos/uninstall";
 import { saveAppID } from "./store/idStore";
 import { getSettings } from "./store/settingsStore";
 import { performStoreMigrations } from "./store/storeMigrations";
@@ -17,10 +16,9 @@ import pkg from "../package.json";
 import { initializeDarkTheme } from "./utils/themes";
 import { handleWebContents } from "./utils/view/webContents";
 import { connectNetLogger, initializeLog, mainLogger } from "./utils/log";
-import { handleDeepLink, handleStartupDeepLink } from "./utils/protocol/deep_links";
-import { checkDefaultProtocols } from "./utils/protocol/default";
+import { checkDeepLinks } from "./utils/protocol/deep_links";
 import { initializeSentry } from "./utils/sentry";
-import { startFeatureCheck, setRequestPermission, extendAppVersionHeader } from "./utils/session";
+import { setRequestPermission, extendAppVersionHeader } from "./utils/session";
 import { captureTopLevelRejection, captureUncaughtErrors } from "./utils/log/captureUncaughtErrors";
 import { logInitialAppInfo } from "./utils/log/logInitialAppInfo";
 import metrics from "./utils/metrics";
@@ -31,7 +29,6 @@ import { measureRequestTime } from "./utils/log/measureRequestTime";
     captureUncaughtErrors();
     await initializeSentry();
     logInitialAppInfo();
-    handleStartupDeepLink();
 
     // Handle squirrel events at the very top of the application
     // WARN: We need to wait for this promise because we do not want any code to be executed
@@ -47,9 +44,6 @@ import { measureRequestTime } from "./utils/log/measureRequestTime";
     // We do not want to show certificates errors to users.
     // Also, this can happen during development when running the server locally.
     app.commandLine.appendSwitch("ignore-certificate-errors");
-
-    // Move uninstaller on macOS
-    moveUninstaller();
 
     // Store migrations
     performStoreMigrations();
@@ -97,12 +91,11 @@ import { measureRequestTime } from "./utils/log/measureRequestTime";
     // After this point we should be able to use all electron APIs safely.
     await app.whenReady();
 
-    checkDefaultProtocols();
+    checkDeepLinks();
     connectNetLogger(getWebContentsViewName);
     measureRequestTime();
     initializeUpdateChecks();
     new Notification();
-    handleDeepLink();
 
     // After this point the main window and views have been created
     viewCreationAppStartup();
@@ -135,7 +128,6 @@ import { measureRequestTime } from "./utils/log/measureRequestTime";
         bringWindowToFront();
     });
 
-    startFeatureCheck();
     setRequestPermission();
     extendAppVersionHeader();
 })().catch(captureTopLevelRejection);
