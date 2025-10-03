@@ -3,8 +3,7 @@ import { useContext, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, ButtonLike, NotificationDot } from '@proton/atoms';
-import { Tooltip } from '@proton/atoms';
+import { Button, ButtonLike, NotificationDot, Tooltip } from '@proton/atoms';
 import { ThemeColor } from '@proton/colors/types';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
@@ -19,8 +18,7 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useConfig from '@proton/components/hooks/useConfig';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { ForkType } from '@proton/shared/lib/authentication/fork';
-import { APPS_CONFIGURATION } from '@proton/shared/lib/constants';
-import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
+import { APPS, APPS_CONFIGURATION, BRAND_NAME } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { getShopURL } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
@@ -215,7 +213,7 @@ const SwitchAccountButton = () => {
     );
 };
 
-export const UserDropdownContent = () => {
+const UserDropdownContent = () => {
     const { APP_NAME } = useConfig();
     const [uid] = useState(generateUID('dropdown'));
     const { viewportWidth } = useActiveBreakpoint();
