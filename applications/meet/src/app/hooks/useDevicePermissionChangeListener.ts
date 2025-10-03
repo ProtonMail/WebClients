@@ -1,49 +1,29 @@
 import { useEffect } from 'react';
 
-import { isFirefox, isSafari } from '@proton/shared/lib/helpers/browser';
+import { isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { useRequestPermission } from './useRequestPermission';
 
-const checkPermission = async (name: PermissionName) => {
-    if (navigator.permissions) {
-        try {
-            const status = await navigator.permissions.query({ name });
-            return status.state;
-        } catch {
-            return 'prompt';
-        }
-    }
-    return 'prompt';
-};
-
 export const useDevicePermissionChangeListener = (
-    setDevicePermissions: ({ camera, microphone }: { camera?: PermissionState; microphone?: PermissionState }) => void
+    setDevicePermissions: ({ camera, microphone }: { camera?: PermissionState; microphone?: PermissionState }) => void,
+    cameraId?: string
 ) => {
     const requestDevicePermission = useRequestPermission();
 
     const getPermissions = async () => {
         const [cameraStatus, micStatus] = await Promise.all([
-            requestDevicePermission('camera'),
+            requestDevicePermission('camera', isSafari() ? cameraId : undefined),
             requestDevicePermission('microphone'),
         ]);
 
         setDevicePermissions({ camera: cameraStatus, microphone: micStatus });
     };
-
     const setup = async () => {
         let cameraStatus: PermissionStatus | null = null;
         let micStatus: PermissionStatus | null = null;
 
-        const [currentCameraStatus, currentMicStatus] = await Promise.all([
-            checkPermission('camera' as PermissionName),
-            checkPermission('microphone' as PermissionName),
-        ]);
-
-        if (currentCameraStatus === 'prompt' || currentMicStatus === 'prompt' || isFirefox()) {
-            await getPermissions();
-        }
-
         if (isSafari()) {
+            await getPermissions();
             return;
         }
 
@@ -58,9 +38,15 @@ export const useDevicePermissionChangeListener = (
 
                 cameraStatus.onchange = () => {
                     setDevicePermissions({ camera: cameraStatus!.state });
+                    if (cameraStatus!.state === 'granted') {
+                        navigator.mediaDevices?.dispatchEvent?.(new Event('devicechange'));
+                    }
                 };
                 micStatus.onchange = () => {
                     setDevicePermissions({ microphone: micStatus!.state });
+                    if (micStatus!.state === 'granted') {
+                        navigator.mediaDevices?.dispatchEvent?.(new Event('devicechange'));
+                    }
                 };
             }
         }

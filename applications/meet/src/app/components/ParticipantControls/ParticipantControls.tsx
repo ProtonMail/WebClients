@@ -201,7 +201,6 @@ export const ParticipantControls = () => {
                                         void toggleVideo({
                                             isEnabled: !isCameraEnabled,
                                             videoDeviceId,
-                                            forceUpdate: true,
                                         });
                                     }
                                 }}

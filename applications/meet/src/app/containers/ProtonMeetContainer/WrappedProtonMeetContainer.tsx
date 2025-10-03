@@ -6,11 +6,9 @@ import { ExternalE2EEKeyProvider, LogLevel, Room, setLogExtension } from '@proto
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 
 import { MediaManagementProvider } from '../../contexts/MediaManagementProvider';
-import { qualityConstants } from '../../qualityConstants';
+import { audioQuality, qualityConstants, screenShareQuality } from '../../qualityConstants';
 import { QualityScenarios } from '../../types';
 import { ProtonMeetContainer } from './ProtonMeetContainer';
-
-const defaultResolution = qualityConstants[QualityScenarios.SmallView];
 
 const keyProvider = new ExternalE2EEKeyProvider();
 
@@ -51,10 +49,20 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
                 worker,
             },
             videoCaptureDefaults: {
-                resolution: defaultResolution.resolution,
+                resolution: qualityConstants[QualityScenarios.PortraitView].resolution,
             },
+            dynacast: true,
             publishDefaults: {
-                videoEncoding: defaultResolution.encoding,
+                simulcast: true,
+                backupCodec: false,
+                videoEncoding: qualityConstants[QualityScenarios.PortraitView].encoding,
+                videoSimulcastLayers: [
+                    qualityConstants[QualityScenarios.SmallView],
+                    qualityConstants[QualityScenarios.MediumView],
+                ],
+                audioPreset: { maxBitrate: audioQuality },
+                screenShareEncoding: screenShareQuality.encoding,
+                screenShareSimulcastLayers: [],
             },
         });
     }

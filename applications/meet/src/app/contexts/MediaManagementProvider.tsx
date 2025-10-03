@@ -8,6 +8,7 @@ import { useDevices } from '../hooks/useDevices';
 import { useDynamicDeviceHandling } from '../hooks/useDynamicDeviceHandling';
 import { useVideoToggle } from '../hooks/useVideoToggle';
 import type { SwitchActiveDevice } from '../types';
+import { saveAudioDevice, saveAudioOutputDevice, saveVideoDevice } from '../utils/deviceStorage';
 import { MediaManagementContext } from './MediaManagementContext';
 
 export const MediaManagementProvider = ({ children }: { children: React.ReactNode }) => {
@@ -38,31 +39,42 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
     const switchActiveDevice: SwitchActiveDevice = useCallback(
         (deviceType, deviceId) => {
             void room.switchActiveDevice(deviceType, deviceId);
+
+            if (deviceType === 'videoinput') {
+                saveVideoDevice(deviceId);
+            } else if (deviceType === 'audioinput') {
+                saveAudioDevice(deviceId);
+            } else if (deviceType === 'audiooutput') {
+                saveAudioOutputDevice(deviceId);
+            }
         },
         [room]
     );
 
     const { toggleVideo, handleRotateCamera, backgroundBlur, toggleBackgroundBlur, isVideoEnabled } = useVideoToggle(
         activeCameraDeviceId,
-        switchActiveDevice
+        switchActiveDevice,
+        initialCameraState
     );
+
     const { toggleAudio, noiseFilter, toggleNoiseFilter, isAudioEnabled } = useAudioToggle(
         activeMicrophoneDeviceId,
-        switchActiveDevice
+        switchActiveDevice,
+        initialAudioState
     );
 
     const handleDevicePermissionChange = (permissions: { camera?: PermissionState; microphone?: PermissionState }) => {
         setDevicePermissions((prevPermissions) => ({ ...prevPermissions, ...permissions }));
     };
 
-    const initializeAudioAndVideo = async () => {
+    const initializeDevices = async () => {
         await Promise.all([
-            toggleVideo({ isEnabled: initialCameraState, videoDeviceId: activeCameraDeviceId }),
-            toggleAudio({ isEnabled: initialAudioState, audioDeviceId: activeMicrophoneDeviceId }),
+            room.localParticipant.setCameraEnabled(initialCameraState),
+            room.localParticipant.setMicrophoneEnabled(initialAudioState),
         ]);
     };
 
-    useDevicePermissionChangeListener(handleDevicePermissionChange);
+    useDevicePermissionChangeListener(handleDevicePermissionChange, activeCameraDeviceId);
 
     useDynamicDeviceHandling({
         toggleAudio,
@@ -124,7 +136,7 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
                 setInitialCameraState,
                 setInitialAudioState,
                 switchActiveDevice,
-                initializeAudioAndVideo,
+                initializeDevices,
             }}
         >
             {children}

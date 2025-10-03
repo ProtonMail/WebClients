@@ -8,7 +8,11 @@ import { Track } from '@proton-meet/livekit-client';
 import { audioQuality } from '../qualityConstants';
 import type { SwitchActiveDevice } from '../types';
 
-export const useAudioToggle = (activeMicrophoneDeviceId: string, switchActiveDevice: SwitchActiveDevice) => {
+export const useAudioToggle = (
+    activeMicrophoneDeviceId: string,
+    switchActiveDevice: SwitchActiveDevice,
+    initialAudioState: boolean
+) => {
     const [noiseFilter, setNoiseFilter] = useState(true);
     const { isMicrophoneEnabled, localParticipant } = useLocalParticipant();
 
@@ -18,7 +22,7 @@ export const useAudioToggle = (activeMicrophoneDeviceId: string, switchActiveDev
 
     const toggleInProgress = useRef(false);
 
-    const prevEnabled = useRef(false);
+    const prevEnabled = useRef<boolean | null>(null);
 
     const toggleAudio = async (
         params: {
@@ -28,7 +32,7 @@ export const useAudioToggle = (activeMicrophoneDeviceId: string, switchActiveDev
         } = {}
     ) => {
         const {
-            isEnabled = prevEnabled.current,
+            isEnabled = prevEnabled.current ?? initialAudioState,
             audioDeviceId = activeMicrophoneDeviceId,
             enableNoiseFilter = noiseFilter,
         } = params;
