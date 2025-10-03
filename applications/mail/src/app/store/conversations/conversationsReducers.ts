@@ -4,7 +4,7 @@ import type { Draft } from 'immer';
 import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities';
 import { isNotExistError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
-import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -564,7 +564,7 @@ export const labelMessagesPending = (
         string,
         {
             arg: {
-                elements: Message[];
+                elements: MessageMetadata[];
                 sourceLabelID: string;
                 destinationLabelID: string;
                 labels: Label[];
@@ -602,7 +602,7 @@ export const unlabelMessagesPending = (
     action: PayloadAction<
         undefined,
         string,
-        { arg: { elements: Message[]; destinationLabelID: string; labels: Label[]; folders: Folder[] } }
+        { arg: { elements: MessageMetadata[]; destinationLabelID: string; labels: Label[]; folders: Folder[] } }
     >
 ) => {
     const { elements, destinationLabelID, labels } = action.meta.arg;
