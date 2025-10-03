@@ -1,6 +1,8 @@
 import type { Author, MaybeNode, NodeEntity, Revision } from '@proton/drive';
 import { MemberRole, NodeType, RevisionState } from '@proton/drive';
+import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
+import { ShareState, ShareType, type ShareWithKey } from '../../store';
 import { getNodeEntity } from './getNodeEntity';
 import { mapNodeToLegacyItem } from './mapNodeToLegacyItem';
 
@@ -17,12 +19,12 @@ const volumeId = 'nodeVolumeId';
 const revId = 'nodeRevId';
 const parentId = 'parentId';
 const shareId = 'shareId';
-const mockShareId = 'share-id-1';
 
 const nodeUid = `${volumeId}~${linkId}`;
 const revUid = `${volumeId}~${linkId}~${revId}`;
 const parentUid = `${volumeId}~${parentId}`;
 
+const shareCreateTime = 11000;
 const fileCreateTime = 12000;
 const modifyTime = 13000;
 const revisionTime = 14000;
@@ -65,7 +67,26 @@ describe('mapNodeToLegacyItem', () => {
         totalStorageSize: 1024,
         activeRevision: mockRevision,
         folder: undefined,
-        treeEventScopeId: '',
+        treeEventScopeId: 'treeEventScopeId',
+    };
+
+    const mockShare: ShareWithKey = {
+        shareId: 'share-id-1',
+        volumeId: 'vol-uid-1',
+        rootLinkId: 'root-link-id-1',
+        creator: 'creator@proton.me',
+        addressId: 'address-id-1',
+        key: 'key-1',
+        passphrase: 'passphrase-1',
+        passphraseSignature: 'signature-1',
+        createTime: shareCreateTime,
+        state: ShareState.active,
+        memberships: [],
+        type: ShareType.standard,
+        possibleKeyPackets: [],
+        isLocked: false,
+        isDefault: true,
+        linkType: LinkType.FILE,
     };
 
     beforeEach(() => {
@@ -87,7 +108,7 @@ describe('mapNodeToLegacyItem', () => {
             value: mockNodeEntity,
         };
 
-        const result = await mapNodeToLegacyItem(maybeNode, mockShareId, mockDrive);
+        const result = await mapNodeToLegacyItem(maybeNode, mockShare.shareId, mockDrive);
 
         expect(result).toEqual({
             uid: nodeUid,
@@ -113,7 +134,7 @@ describe('mapNodeToLegacyItem', () => {
             isAnonymous: false,
             thumbnailId: 'nodeRevId',
             rootUid: 'root-uid',
-            treeEventScopeId: '',
+            treeEventScopeId: 'treeEventScopeId',
             activeRevision: {
                 id: revId,
                 createTime: revisionTime / 1000,
@@ -141,7 +162,7 @@ describe('mapNodeToLegacyItem', () => {
             value: folderNode,
         };
 
-        const result = await mapNodeToLegacyItem(maybeNode, mockShareId, mockDrive);
+        const result = await mapNodeToLegacyItem(maybeNode, mockShare.shareId, mockDrive);
 
         expect(result.isFile).toBe(false);
         expect(result.activeRevision).toBeUndefined();
@@ -158,7 +179,7 @@ describe('mapNodeToLegacyItem', () => {
             value: nodeWithoutRevision,
         };
 
-        const result = await mapNodeToLegacyItem(maybeNode, mockShareId, mockDrive);
+        const result = await mapNodeToLegacyItem(maybeNode, mockShare.shareId, mockDrive);
 
         expect(result.activeRevision).toBeUndefined();
         expect(result.size).toBe(1024); // Should use totalStorageSize
@@ -175,7 +196,7 @@ describe('mapNodeToLegacyItem', () => {
             value: nodeWithoutMediaType,
         };
 
-        const result = await mapNodeToLegacyItem(maybeNode, mockShareId, mockDrive);
+        const result = await mapNodeToLegacyItem(maybeNode, mockShare.shareId, mockDrive);
 
         expect(result.mimeType).toBe('');
     });
@@ -191,7 +212,7 @@ describe('mapNodeToLegacyItem', () => {
             value: trashedNode,
         };
 
-        const result = await mapNodeToLegacyItem(maybeNode, mockShareId, mockDrive);
+        const result = await mapNodeToLegacyItem(maybeNode, mockShare.shareId, mockDrive);
 
         expect(result.trashed).toBe(trashedTime / 1000);
     });
@@ -212,7 +233,7 @@ describe('mapNodeToLegacyItem', () => {
             value: nodeWithInactiveRevision,
         };
 
-        const result = await mapNodeToLegacyItem(maybeNode, mockShareId, mockDrive);
+        const result = await mapNodeToLegacyItem(maybeNode, mockShare.shareId, mockDrive);
 
         expect(result.activeRevision?.state).toBe(0);
     });
@@ -235,7 +256,7 @@ describe('mapNodeToLegacyItem', () => {
             value: nodeWithDifferentSizes,
         };
 
-        const result = await mapNodeToLegacyItem(maybeNode, mockShareId, mockDrive);
+        const result = await mapNodeToLegacyItem(maybeNode, mockShare.shareId, mockDrive);
 
         expect(result.size).toBe(2048);
         expect(result.activeRevision?.size).toBe(2048);
@@ -259,7 +280,7 @@ describe('mapNodeToLegacyItem', () => {
             value: nodeWithOnlyStorageSize,
         };
 
-        const result = await mapNodeToLegacyItem(maybeNode, mockShareId, mockDrive);
+        const result = await mapNodeToLegacyItem(maybeNode, mockShare.shareId, mockDrive);
 
         expect(result.size).toBe(2048);
     });
@@ -276,7 +297,7 @@ describe('mapNodeToLegacyItem', () => {
             value: nodeWithOnlyTotalStorageSize,
         };
 
-        const result = await mapNodeToLegacyItem(maybeNode, mockShareId, mockDrive);
+        const result = await mapNodeToLegacyItem(maybeNode, mockShare.shareId, mockDrive);
 
         expect(result.size).toBe(3000);
     });
@@ -293,7 +314,7 @@ describe('mapNodeToLegacyItem', () => {
             value: nodeWithZeroSizes,
         };
 
-        const result = await mapNodeToLegacyItem(maybeNode, mockShareId, mockDrive);
+        const result = await mapNodeToLegacyItem(maybeNode, mockShare.shareId, mockDrive);
 
         expect(result.size).toBe(0);
     });
@@ -309,7 +330,7 @@ describe('mapNodeToLegacyItem', () => {
             value: nodeWithoutDeprecatedShareId,
         };
 
-        const result = await mapNodeToLegacyItem(maybeNode, mockShareId, mockDrive);
+        const result = await mapNodeToLegacyItem(maybeNode, mockShare.shareId, mockDrive);
 
         expect(result.shareId).toBe('share-id-1');
     });
@@ -330,7 +351,7 @@ describe('mapNodeToLegacyItem', () => {
             value: folderNode,
         };
 
-        const result = await mapNodeToLegacyItem(maybeNode, mockShareId, mockDrive);
+        const result = await mapNodeToLegacyItem(maybeNode, mockShare.shareId, mockDrive);
 
         expect(result.isFile).toBe(false);
         expect(result.mimeType).toBe('');
@@ -354,7 +375,7 @@ describe('mapNodeToLegacyItem', () => {
             value: anonymousFileNode,
         };
 
-        const result = await mapNodeToLegacyItem(maybeNode, mockShareId, mockDrive);
+        const result = await mapNodeToLegacyItem(maybeNode, mockShare.shareId, mockDrive);
 
         expect(result.isAnonymous).toBe(true);
     });
@@ -378,7 +399,7 @@ describe('mapNodeToLegacyItem', () => {
             value: anonymousFolderNode,
         };
 
-        const result = await mapNodeToLegacyItem(maybeNode, mockShareId, mockDrive);
+        const result = await mapNodeToLegacyItem(maybeNode, mockShare.shareId, mockDrive);
 
         expect(result.isAnonymous).toBe(true);
         expect(result.isFile).toBe(false);
@@ -410,7 +431,7 @@ describe('mapNodeToLegacyItem', () => {
             errors: new Map([['name', { name: 'fallback name', error: 'Node retrieval failed' }]]),
         });
 
-        const result = await mapNodeToLegacyItem(failedNode, mockShareId, mockDrive);
+        const result = await mapNodeToLegacyItem(failedNode, mockShare.shareId, mockDrive);
         expect(result.name).toBe('fallback name');
     });
 
@@ -431,7 +452,7 @@ describe('mapNodeToLegacyItem', () => {
             value: nodeWithAuthorError,
         };
 
-        const result = await mapNodeToLegacyItem(maybeNode, mockShareId, mockDrive);
+        const result = await mapNodeToLegacyItem(maybeNode, mockShare.shareId, mockDrive);
 
         expect(result.isAnonymous).toBe(false);
     });
@@ -452,7 +473,7 @@ describe('mapNodeToLegacyItem', () => {
             value: nodeWithDraftRevision,
         };
 
-        const result = await mapNodeToLegacyItem(maybeNode, mockShareId, mockDrive);
+        const result = await mapNodeToLegacyItem(maybeNode, mockShare.shareId, mockDrive);
 
         expect(result.activeRevision?.state).toBe(0);
     });
