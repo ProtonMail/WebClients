@@ -45,4 +45,39 @@
 			color: var(--text-norm) !important;
 		}
 	}
+
+	.refresh-button {
+		background-color: var(--interaction-norm-minor-3);
+		transition: background-color 0.2s ease;
+
+		&:hover,
+		&:focus {
+			background-color: var(--interaction-weak-major-1);
+		}
+
+		&:disabled {
+			background-color: var(--interaction-norm-minor-3);
+			opacity: 0.5;
+			cursor: not-allowed;
+
+			&:hover,
+			&:focus {
+				background-color: var(--interaction-norm-minor-3);
+			}
+		}
+	}
+
+	.rotating {
+		animation: rotate 1s linear infinite;
+	}
+}
+
+@keyframes rotate {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
 }
