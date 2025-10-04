@@ -2,7 +2,6 @@ import { IFRAME_APP_READY_EVENT } from 'proton-pass-extension/app/content/consta
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type {
     IFrameCloseOptions,
-    IFrameEndpoint,
     IFrameInitPayload,
     IFrameMessage,
     IFrameMessageType,
@@ -34,26 +33,41 @@ import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object/merge';
+import type { Subscriber } from '@proton/pass/utils/pubsub/factory';
+import { createPubSub } from '@proton/pass/utils/pubsub/factory';
 
 type CreateIFrameAppOptions<A> = {
+    /** Entering animation on visibility toggles */
     animation: 'slidein' | 'fadein';
-    backdropClose: boolean;
+    /** Backdrop auto-closing configuration */
+    backdrop?: { exclude: () => Element[]; enabled: boolean };
+    /** Extra classNames to apply to iframe element */
     classNames?: string[];
-    id: IFrameEndpoint;
+    /** IFrame app identifier */
+    id: string;
+    /** Popover API controller */
     popover: PopoverController;
+    /** Source URL of iframe */
     src: string;
-    backdropExclude?: () => Element[];
-    onDestroy?: () => void;
-    onError?: (error: unknown) => void;
-    onOpen?: (state: IFrameState<A>) => void;
-    onClose?: (state: IFrameState<A>, options: IFrameCloseOptions) => void;
-    position: (iframeRoot: HTMLElement) => Partial<Rect>;
+    /** Computed dimensions of iframe */
     dimensions: (state: IFrameState<A>) => Dimensions;
+    /** Computed position of iframe */
+    position: (iframeRoot: HTMLElement) => Partial<Rect>;
 };
 
-type IFrameMessageHandlerOptions = { userAction: boolean };
+type IFrameMessageHandlerOptions = {
+    /** Indicates wether a message handler is initiated
+     * from a user action for further validation */
+    userAction: boolean;
+};
 
-export interface IFrameApp<A = any> {
+export type IFrameEvent<A> =
+    | { type: 'open'; state: IFrameState<A> }
+    | { type: 'close'; state: IFrameState<A>; options: IFrameCloseOptions }
+    | { type: 'destroy' }
+    | { type: 'error'; error: unknown };
+
+export interface IFrameApp<A> {
     element: HTMLIFrameElement;
     state: IFrameState<A>;
     close: (options?: IFrameCloseOptions) => void;
@@ -69,12 +83,13 @@ export interface IFrameApp<A = any> {
         options?: IFrameMessageHandlerOptions
     ) => void;
     sendPortMessage: (message: IFrameMessage) => void;
-    updatePosition: () => void;
     setPosition: (coords: Coords) => void;
+    subscribe: (subscribe: Subscriber<IFrameEvent<A>>) => () => void;
+    updatePosition: () => void;
 }
 
-export type IFrameState<A> = {
-    action: MaybeNull<A>;
+export type IFrameState<Action> = {
+    action: MaybeNull<Action>;
     framePort: MaybeNull<string>;
     loaded: boolean;
     port: MaybeNull<Runtime.Port>;
@@ -84,31 +99,30 @@ export type IFrameState<A> = {
     visible: boolean;
 };
 
-export interface IFrameAppService<T extends { action: any }> {
-    close: () => IFrameAppService<T>;
+export interface IFrameAppService<Options extends { action: any }, Action = Options['action']> {
+    close: () => IFrameAppService<Options>;
     destroy: () => void;
-    getState: () => IFrameState<T['action']>;
-    init: (port: Runtime.Port, getPayload: () => IFrameInitPayload) => IFrameAppService<T>;
-    open: (options: T) => IFrameAppService<T>;
-    sendMessage: (message: IFrameMessage) => void;
+    getState: () => IFrameState<Action>;
+    init: (port: Runtime.Port, getPayload: () => IFrameInitPayload) => IFrameAppService<Options>;
+    open: (options: Options) => IFrameAppService<Options>;
+    sendMessage: IFrameApp<Action>['sendPortMessage'];
+    subscribe: IFrameApp<Action>['subscribe'];
 }
 
 export const createIFrameApp = <A>({
     animation,
-    backdropClose,
-    classNames = [],
+    backdrop,
+    classNames,
     id,
     popover,
     src,
-    backdropExclude,
-    onClose,
-    onDestroy,
-    onError,
-    onOpen,
     position,
     dimensions,
 }: CreateIFrameAppOptions<A>): IFrameApp<A> => {
     const portMessageHandlers: Map<IFrameMessageType, IFramePortMessageHandler> = new Map();
+    const pubsub = createPubSub<IFrameEvent<A>>();
+    const listeners = createListenerStore();
+    const activeListeners = createListenerStore();
 
     const state: IFrameState<A> = {
         action: null,
@@ -121,13 +135,6 @@ export const createIFrameApp = <A>({
         visible: false,
     };
 
-    const checkStale = withContext<() => boolean>((ctx) => Boolean(ctx?.getState().stale));
-    const ensureLoaded = () => waitUntil({ check: () => state.loaded, cancel: checkStale }, 50);
-    const ensureReady = () => waitUntil({ check: () => state.ready, cancel: checkStale }, 50);
-
-    const listeners = createListenerStore();
-    const activeListeners = createListenerStore();
-
     const iframe = createElement<HTMLIFrameElement>({
         type: 'iframe',
         classNames,
@@ -136,6 +143,10 @@ export const createIFrameApp = <A>({
     });
 
     iframe.style.setProperty(`--frame-animation`, animation);
+
+    const checkStale = withContext<() => boolean>((ctx) => Boolean(ctx?.getState().stale));
+    const ensureLoaded = () => waitUntil({ check: () => state.loaded, cancel: checkStale }, 50);
+    const ensureReady = () => waitUntil({ check: () => state.ready, cancel: checkStale }, 50);
 
     const unlisten = listeners.addListener(window, 'message', (event) => {
         if (event.data.type === IFRAME_APP_READY_EVENT && event.data.endpoint === id) {
@@ -155,7 +166,7 @@ export const createIFrameApp = <A>({
                     const secureMessage: IFrameMessageWithSender = { ...message, key, sender: 'contentscript' };
                     iframe.contentWindow?.postMessage(secureMessage, src);
                 })
-                .catch((e) => onError?.(e))
+                .catch((error) => pubsub.publish({ type: 'error', error }))
         );
     /* In order to communicate with the iframe, we're leveraging
      * the worker's MessageBroker port-forwarding capabilities.
@@ -166,23 +177,21 @@ export const createIFrameApp = <A>({
         const message: IFrameMessageWithSender = { ...rawMessage, sender: 'contentscript' };
         return ensureReady()
             .then(() => state.port?.postMessage(portForwardingMessage(state.framePort!, message)))
-            .catch((e) => onError?.(e));
+            .catch((error) => pubsub.publish({ type: 'error', error }));
     };
 
     /* As we are now using a single port for the whole content-script,
      * make sure to filter messages not only by type but by sender id */
-    const registerMessageHandler = <M extends IFrameMessageType>(
-        type: M,
-        handler: (message: IFrameMessageWithSender<M>) => void,
-        options?: IFrameMessageHandlerOptions
-    ) => {
+    const registerMessageHandler: IFrameApp<A>['registerMessageHandler'] = (type, handler, options) => {
+        type BoundMessageType = Parameters<typeof handler>[0];
+
         const safeHandler = (message: Maybe<IFrameMessageWithSender>) => {
             if (message?.type === type && message.sender === id) {
                 /** If the message handler is a result of an iframe user-action,
                  * validate the action against potential click-jacking attacks */
-                if (!options?.userAction || TopLayerManager.ensureTopLevel(popover.root.customElement)) {
-                    handler(message as IFrameMessageWithSender<M>);
-                } else logger.warn(`[IFrame::${id}] Untrusted user action`);
+                const trusted = !options?.userAction || TopLayerManager.ensureTopLevel(popover.root.customElement);
+                if (trusted) handler(message as BoundMessageType);
+                else logger.warn(`[IFrame::${id}] Untrusted user action`);
             }
         };
 
@@ -217,8 +226,7 @@ export const createIFrameApp = <A>({
             activeListeners.removeAll();
 
             popover.close();
-            /* ⚠️ call before resetting state */
-            onClose?.(state, options);
+            pubsub.publish({ type: 'close', state, options }); /* ⚠️ call before resetting state */
 
             iframe.classList.remove('visible');
             state.visible = false;
@@ -240,10 +248,10 @@ export const createIFrameApp = <A>({
                 activeListeners.addListener(anchor, 'scroll', updatePosition);
             }
 
-            if (backdropClose) {
+            if (backdrop?.enabled) {
                 const onMouseDown = (event: Event) => {
                     const target = event.target as MaybeNull<HTMLElement>;
-                    if (!target || !backdropExclude?.().includes(target)) {
+                    if (!target || !backdrop.exclude?.().includes(target)) {
                         close({ discard: true, refocus: false });
                     }
                 };
@@ -255,7 +263,7 @@ export const createIFrameApp = <A>({
 
             iframe.classList.add('visible');
             setIframeDimensions(dimensions(state));
-            onOpen?.(state);
+            pubsub.publish({ type: 'open', state });
         }
     };
 
@@ -283,13 +291,16 @@ export const createIFrameApp = <A>({
     };
 
     const destroy = () => {
-        onDestroy?.();
         close({ discard: false, refocus: false });
-        listeners.removeAll();
-        activeListeners.removeAll();
+        pubsub.publish({ type: 'destroy' });
+
         state.port?.onMessage.removeListener(onMessageHandler);
         safeCall(() => popover.root.shadowRoot.removeChild(iframe))();
         state.port = null;
+
+        pubsub.unsubscribe();
+        listeners.removeAll();
+        activeListeners.removeAll();
     };
 
     registerMessageHandler(IFramePortMessageType.IFRAME_CONNECTED, ({ payload: { framePort } }) => {
@@ -310,7 +321,6 @@ export const createIFrameApp = <A>({
     return {
         element: iframe,
         state,
-
         close,
         destroy,
         ensureLoaded,
@@ -322,5 +332,6 @@ export const createIFrameApp = <A>({
         sendPortMessage,
         setPosition: setIframePosition,
         updatePosition,
+        subscribe: pubsub.subscribe,
     };
 };

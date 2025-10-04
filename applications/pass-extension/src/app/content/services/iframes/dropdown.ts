@@ -1,6 +1,7 @@
 import { DROPDOWN_IFRAME_SRC, DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { DROPDOWN_MIN_HEIGHT, DROPDOWN_WIDTH } from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
+import type { IFrameCloseOptions } from 'proton-pass-extension/app/content/services/iframes/messages';
 import { IFramePortMessageType } from 'proton-pass-extension/app/content/services/iframes/messages';
 import type { PopoverController } from 'proton-pass-extension/app/content/services/iframes/popover';
 import type {
@@ -18,7 +19,6 @@ import type { PasswordAutosuggestOptions } from '@proton/pass/lib/password/types
 import type { Coords, Maybe, MaybeNull } from '@proton/pass/types';
 import { createStyleParser, getComputedHeight } from '@proton/pass/utils/dom/computed-styles';
 import { animatePositionChange } from '@proton/pass/utils/dom/position';
-import { isHTMLElement } from '@proton/pass/utils/dom/predicates';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
@@ -31,8 +31,7 @@ import type { IFrameAppService } from './factory';
 import { createIFrameApp } from './factory';
 
 export type DropdownAnchor = InlineFieldTarget | InlineFrameTarget;
-type DropdownAnchorRef = { current: MaybeNull<DropdownAnchor> };
-type DropdownOptions = { popover: PopoverController; onDestroy: () => void };
+export type DropdownAnchorRef = { current: MaybeNull<DropdownAnchor> };
 
 export type DropdownActions = WithAutofillOrigin<
     | { action: DropdownAction.AUTOFILL_CC }
@@ -49,80 +48,28 @@ export type DropdownRequest = {
 } & (InlineFieldTarget | InlineFrameTarget<{ coords: Coords; origin: string }>);
 
 export interface InjectedDropdown extends IFrameAppService<DropdownRequest> {
-    getCurrentAnchor: () => MaybeNull<DropdownAnchor>;
+    anchor: MaybeNull<DropdownAnchor>;
 }
 
-export const createDropdown = ({ popover, onDestroy }: DropdownOptions): InjectedDropdown => {
+export const createDropdown = (popover: PopoverController): InjectedDropdown => {
     const anchor: DropdownAnchorRef = { current: null };
     const listeners = createListenerStore();
 
     const iframe = createIFrameApp<DropdownAction>({
-        animation: 'fadein',
-        backdropClose: true,
         id: 'dropdown',
-        popover,
+        animation: 'fadein',
         src: DROPDOWN_IFRAME_SRC,
-        onDestroy: () => {
-            anchor.current = null;
-            listeners.removeAll();
-            onDestroy();
+        popover,
+        backdrop: {
+            enabled: true,
+            exclude: () => {
+                if (!anchor?.current || anchor.current?.type !== 'field') return [];
+                const rootNode = anchor.current.field.element.getRootNode();
+                const host = isShadowRoot(rootNode) ? rootNode.host : null;
+                return [anchor.current.field.icon?.element, anchor.current.field.element, host].filter(truthy);
+            },
         },
-        onError: () => iframe.destroy(),
-
-        onOpen: () => {
-            const target = anchor.current;
-            if (target?.type === 'frame') {
-                const { formId, fieldId, fieldFrameId } = target;
-                void sendMessage(
-                    contentScriptMessage({
-                        type: WorkerMessageType.INLINE_DROPDOWN_OPENED,
-                        payload: { fieldFrameId, formId, fieldId },
-                    })
-                );
-            }
-        },
-
-        onClose: (_, options) => {
-            const target = anchor.current;
-
-            switch (target?.type) {
-                case 'field': {
-                    if (options.refocus) target.field.focus();
-                    else if (!isActiveElement(target.field.element)) target.field.detachIcon();
-                    break;
-                }
-
-                case 'frame': {
-                    const { formId, fieldId, fieldFrameId } = target;
-
-                    void sendMessage(
-                        contentScriptMessage({
-                            type: WorkerMessageType.INLINE_DROPDOWN_CLOSED,
-                            payload: {
-                                refocus: options.refocus ?? false,
-                                fieldFrameId,
-                                formId,
-                                fieldId,
-                            },
-                        })
-                    );
-
-                    break;
-                }
-            }
-
-            anchor.current = null;
-        },
-
-        backdropExclude: () => {
-            if (!anchor?.current || anchor.current?.type !== 'field') return [];
-
-            const rootNode = anchor.current.field.element.getRootNode();
-            const host = isShadowRoot(rootNode) ? rootNode.host : null;
-
-            return [anchor.current.field.icon?.element, anchor.current.field.element, host].filter(truthy);
-        },
-
+        dimensions: () => ({ width: DROPDOWN_WIDTH, height: DROPDOWN_MIN_HEIGHT }),
         position: (root: HTMLElement) => {
             const target = anchor.current;
 
@@ -143,8 +90,58 @@ export const createDropdown = ({ popover, onDestroy }: DropdownOptions): Injecte
                 left: boxLeft + width - DROPDOWN_WIDTH,
             };
         },
-        dimensions: () => ({ width: DROPDOWN_WIDTH, height: DROPDOWN_MIN_HEIGHT }),
     });
+
+    const onOpen = () => {
+        const target = anchor.current;
+
+        if (target?.type === 'frame') {
+            const { formId, fieldId, fieldFrameId } = target;
+            void sendMessage(
+                contentScriptMessage({
+                    type: WorkerMessageType.INLINE_DROPDOWN_OPENED,
+                    payload: { fieldFrameId, formId, fieldId },
+                })
+            );
+        }
+    };
+
+    const onClose = (options: IFrameCloseOptions) => {
+        const target = anchor.current;
+
+        switch (target?.type) {
+            case 'field': {
+                if (options.refocus) target.field.focus();
+                else if (!isActiveElement(target.field.element)) target.field.detachIcon();
+                break;
+            }
+
+            case 'frame': {
+                const { formId, fieldId, fieldFrameId } = target;
+
+                void sendMessage(
+                    contentScriptMessage({
+                        type: WorkerMessageType.INLINE_DROPDOWN_CLOSED,
+                        payload: {
+                            refocus: options.refocus ?? false,
+                            fieldFrameId,
+                            formId,
+                            fieldId,
+                        },
+                    })
+                );
+
+                break;
+            }
+        }
+
+        anchor.current = null;
+    };
+
+    const onDestroy = () => {
+        anchor.current = null;
+        listeners.removeAll();
+    };
 
     /* if the dropdown is opened while the field is being animated
      * we must update its position until the position stabilizes */
@@ -231,7 +228,7 @@ export const createDropdown = ({ popover, onDestroy }: DropdownOptions): Injecte
      * page load with a positive detection : ensure the iframe is
      * in a ready state in order to send out the dropdown action */
     const open = async (request: DropdownRequest): Promise<void> => {
-        return iframe
+        await iframe
             .ensureReady()
             .then(async () => {
                 anchor.current =
@@ -247,11 +244,7 @@ export const createDropdown = ({ popover, onDestroy }: DropdownOptions): Injecte
                           };
 
                 const payload = await processDropdownRequest(request);
-
-                if (!payload) {
-                    anchor.current = null;
-                    return;
-                }
+                if (!payload) return (anchor.current = null);
 
                 iframe.sendPortMessage({
                     type: IFramePortMessageType.DROPDOWN_ACTION,
@@ -275,28 +268,16 @@ export const createDropdown = ({ popover, onDestroy }: DropdownOptions): Injecte
             .catch(noop);
     };
 
-    /** Only used when dropdown UI has input elements that may lose focus
-     * due to page code. This can happen if blur/focus management is too
-     * strict (eg: ticketmaster.com) where the dropdown can never get a
-     * full focus. In this case, blur the anchor field and force the active
-     * element to blur to ensure we're in an "unfocused state". */
-    iframe.registerMessageHandler(IFramePortMessageType.DROPDOWN_FOCUS_CHECK, () => {
-        const refocus = () => {
-            const { activeElement } = document;
-            if (activeElement && isHTMLElement(activeElement)) activeElement.blur();
-            iframe.sendPortMessage({ type: IFramePortMessageType.DROPDOWN_FOCUS });
-        };
-
-        if (document.activeElement !== popover.root.customElement) {
-            switch (anchor.current?.type) {
-                case 'field':
-                    anchor.current.field.element.blur();
-                    setTimeout(refocus, 50);
-                    break;
-                case 'frame':
-                    refocus();
-                    break;
-            }
+    iframe.subscribe((evt) => {
+        switch (evt.type) {
+            case 'open':
+                return onOpen();
+            case 'close':
+                return onClose(evt.options);
+            case 'error':
+                return iframe.destroy();
+            case 'destroy':
+                return onDestroy();
         }
     });
 
@@ -375,13 +356,16 @@ export const createDropdown = ({ popover, onDestroy }: DropdownOptions): Injecte
     listeners.addListener(window, 'beforeunload', () => iframe.close({ discard: false }));
 
     const dropdown: InjectedDropdown = {
+        get anchor() {
+            return anchor.current;
+        },
         close: pipe(iframe.close, () => dropdown),
         destroy: iframe.destroy,
-        getCurrentAnchor: () => anchor.current,
         getState: () => iframe.state,
         init: pipe(iframe.init, () => dropdown),
         open: pipe(open, () => dropdown),
         sendMessage: iframe.sendPortMessage,
+        subscribe: iframe.subscribe,
     };
 
     return dropdown;

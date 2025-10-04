@@ -45,7 +45,7 @@ export const createInlineService = ({
     const dropdown: AbstractInlineService['dropdown'] = {
         attach: (layer) => iframes.attachDropdown(layer),
         open: (payload) => {
-            const attachedAnchor = iframes.dropdown?.getCurrentAnchor();
+            const attachedAnchor = iframes.dropdown?.anchor;
             const visible = iframes.dropdown?.getState().visible;
             const { autofocused } = payload;
 
@@ -68,7 +68,7 @@ export const createInlineService = ({
         close: (target) => {
             activeListeners.removeAll();
             const dropdown = iframes.dropdown;
-            const anchor = dropdown?.getCurrentAnchor();
+            const anchor = dropdown?.anchor;
             const activeAnchor = (() => {
                 switch (target?.type) {
                     case 'field':
@@ -95,7 +95,7 @@ export const createInlineService = ({
         getState: async () => {
             const dropdown = iframes.dropdown;
             const visible = dropdown?.getState().visible ?? false;
-            const anchor = dropdown?.getCurrentAnchor();
+            const anchor = dropdown?.anchor;
 
             return {
                 visible,
@@ -187,7 +187,7 @@ export const createInlineService = ({
 
     const onInlineDropdownState: FrameMessageHandler<WorkerMessageType.INLINE_DROPDOWN_STATE> = (
         _message,
-        _,
+        _sender,
         sendResponse
     ) => {
         Promise.resolve(dropdown.getState()).then(sendResponse).catch(noop);

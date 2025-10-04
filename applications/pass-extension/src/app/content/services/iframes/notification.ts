@@ -9,12 +9,12 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { flagAsIgnored, removeClassifierFlags } from '@proton/pass/fathom';
 import { FieldType } from '@proton/pass/fathom/labels';
 import type { SelectedPasskey } from '@proton/pass/lib/passkeys/types';
-import type { AutosaveFormEntry, AutosavePayload, Item, LoginItemPreview } from '@proton/pass/types';
+import type { AutosavePayload, LoginItemPreview } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { asyncQueue } from '@proton/pass/utils/fp/promises';
 import noop from '@proton/utils/noop';
 
-import type { IFrameAppService } from './factory';
+import type { IFrameAppService, IFrameEvent } from './factory';
 import { createIFrameApp } from './factory';
 
 export type NotificationRequest =
@@ -34,57 +34,61 @@ export type NotificationRequest =
           token: string;
       };
 
-export type AutosaveRequest = { item: Item<'login'>; submission: AutosaveFormEntry };
 export interface InjectedNotification extends IFrameAppService<NotificationRequest> {}
-export type NotificationOptions = { popover: PopoverController; onDestroy: () => void };
 
-export const createNotification = ({ popover, onDestroy }: NotificationOptions): InjectedNotification => {
+type NotificationEvent<T extends IFrameEvent<any>['type']> = Extract<IFrameEvent<NotificationAction>, { type: T }>;
+
+export const createNotification = (popover: PopoverController): InjectedNotification => {
     const iframe = createIFrameApp<NotificationAction>({
-        animation: 'slidein',
-        backdropClose: false,
-        classNames: ['fixed'],
         id: 'notification',
-        popover,
         src: NOTIFICATION_IFRAME_SRC,
-        onDestroy,
-        onError: () => iframe.destroy(),
-        onClose: withContext((ctx, { action }, options) => {
-            switch (action) {
-                /* stash the form submission if the user discarded
-                 * the autosave prompt */
-                case NotificationAction.AUTOSAVE:
-                    return (
-                        options?.discard &&
-                        sendMessage(
-                            contentScriptMessage({
-                                type: WorkerMessageType.FORM_ENTRY_STASH,
-                                payload: { reason: 'AUTOSAVE_DISMISSED' },
-                            })
-                        )
-                    );
-                /* flag all MFA forms as ignorable on user discards the
-                 * OTP autofill prompt */
-                case NotificationAction.OTP:
-                    if (options?.discard) {
-                        ctx?.service.formManager
-                            .getTrackedForms()
-                            .filter(({ getFieldsFor }) => getFieldsFor(FieldType.OTP).length > 0)
-                            .forEach(({ element, getFieldsFor }) => {
-                                removeClassifierFlags(element, { preserveIgnored: true });
-                                flagAsIgnored(element);
-                                getFieldsFor(FieldType.OTP).forEach((field) => flagAsIgnored(field.element));
-                            });
-                    }
-
-                    /* handle OTP -> AutoSave sequence */
-                    return ctx?.service.autosave.reconciliate();
-            }
-        }),
+        animation: 'slidein',
+        classNames: ['fixed'],
+        popover,
         position: () => ({ top: 15, right: 15 }),
-        dimensions: () => ({
-            width: NOTIFICATION_WIDTH,
-            height: NOTIFICATION_MIN_HEIGHT,
-        }),
+        dimensions: () => ({ width: NOTIFICATION_WIDTH, height: NOTIFICATION_MIN_HEIGHT }),
+    });
+
+    const onClose = withContext<(evt: NotificationEvent<'close'>) => void>((ctx, { state, options }) => {
+        switch (state.action) {
+            /* stash the form submission if the user discarded
+             * the autosave prompt */
+            case NotificationAction.AUTOSAVE:
+                return (
+                    options?.discard &&
+                    sendMessage(
+                        contentScriptMessage({
+                            type: WorkerMessageType.FORM_ENTRY_STASH,
+                            payload: { reason: 'AUTOSAVE_DISMISSED' },
+                        })
+                    )
+                );
+            /* flag all MFA forms as ignorable on user discards the
+             * OTP autofill prompt */
+            case NotificationAction.OTP:
+                if (options?.discard) {
+                    ctx?.service.formManager
+                        .getTrackedForms()
+                        .filter(({ getFieldsFor }) => getFieldsFor(FieldType.OTP).length > 0)
+                        .forEach(({ element, getFieldsFor }) => {
+                            removeClassifierFlags(element, { preserveIgnored: true });
+                            flagAsIgnored(element);
+                            getFieldsFor(FieldType.OTP).forEach((field) => flagAsIgnored(field.element));
+                        });
+                }
+
+                /* handle OTP -> AutoSave sequence */
+                return ctx?.service.autosave.reconciliate();
+        }
+    });
+
+    iframe.subscribe((evt) => {
+        switch (evt.type) {
+            case 'close':
+                return onClose(evt);
+            case 'error':
+                return iframe.destroy();
+        }
     });
 
     const open = asyncQueue((payload: NotificationRequest) =>
@@ -129,6 +133,7 @@ export const createNotification = ({ popover, onDestroy }: NotificationOptions):
         init: pipe(iframe.init, () => notification),
         open: pipe(open, () => notification),
         sendMessage: iframe.sendPortMessage,
+        subscribe: iframe.subscribe,
     };
 
     return notification;
