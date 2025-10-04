@@ -76,7 +76,9 @@ export const ClipboardProvider: FC<PropsWithChildren<Props>> = ({ children, chec
             copyToClipboard: async (value) => {
                 const hasPermissions = await checkPermissions();
                 const ttl = selectClipboardTTL(store.getState());
-                if (BUILD_TARGET !== 'web' && (!hasPermissions || ttl === undefined)) {
+                const askBecauseSettingsUnset = ttl === undefined;
+                const askBecausePermissionProblem = (ttl?.valueOf() ?? -1) > 0 && !hasPermissions;
+                if (BUILD_TARGET !== 'web' && (askBecauseSettingsUnset || askBecausePermissionProblem)) {
                     setCachedCopy(value);
                     setHasPermissions(hasPermissions);
                     setModal('settings');
