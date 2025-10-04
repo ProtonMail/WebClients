@@ -1,6 +1,7 @@
 import type { MaybePromise } from '@proton/pass/types';
+import { safeCall } from '@proton/pass/utils/fp/safe-call';
 
-export type Subscriber<E> = (event: E) => MaybePromise<void>;
+export type Subscriber<E> = (event: E) => MaybePromise<any>;
 
 export interface PubSub<E> {
     subscribe: (subscriber: Subscriber<E>) => () => void;
@@ -31,7 +32,7 @@ export const createPubSub = <E extends any>(): PubSub<E> => {
     const unsubscribe = () => (ctx.subscribers = {});
 
     const publish = (event: E) => {
-        Object.values(ctx.subscribers).forEach((subscriber) => subscriber(event));
+        Object.values(ctx.subscribers).forEach((subscriber) => safeCall(subscriber)(event));
     };
 
     const publishAsync = async (event: E) => {
