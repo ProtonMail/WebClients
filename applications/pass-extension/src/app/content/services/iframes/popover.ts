@@ -2,7 +2,7 @@ import type { ProtonPassRoot } from 'proton-pass-extension/app/content/injection
 import type { IFrameService } from 'proton-pass-extension/app/content/services/iframes/service';
 
 import type { CustomElementRef } from '@proton/pass/utils/dom/create-element';
-import { hidePopover, showPopover } from '@proton/pass/utils/dom/popover';
+import { POPOVER_SUPPORTED, hidePopover, showPopover } from '@proton/pass/utils/dom/popover';
 
 export interface PopoverController {
     root: CustomElementRef<ProtonPassRoot>;
@@ -10,20 +10,20 @@ export interface PopoverController {
     close: () => void;
 }
 
-export const createPopoverController = (service: IFrameService, enabled: boolean): PopoverController => {
+export const createPopoverController = (service: IFrameService): PopoverController => {
     /** Bind the controller to the current root element */
     const root = service.root;
 
     return {
         root,
         open: () => {
-            if (enabled) {
+            if (POPOVER_SUPPORTED) {
                 root.customElement.setAttribute('popover', 'manual');
                 showPopover(root.customElement);
             } else root.customElement.removeAttribute('popover');
         },
         close: () => {
-            if (enabled) {
+            if (POPOVER_SUPPORTED) {
                 const { dropdown, notification } = service;
                 /** Prevents closing the root popover when both dropdown and
                  * notification are active. Since both apps share the same

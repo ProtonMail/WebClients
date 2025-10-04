@@ -2,8 +2,8 @@ import { PASS_ROOT_REMOVED_EVENT } from 'proton-pass-extension/app/content/const
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { PASS_ELEMENT_THEME } from 'proton-pass-extension/app/content/injections/custom-elements/ProtonPassElement';
 import type { ProtonPassRoot } from 'proton-pass-extension/app/content/injections/custom-elements/ProtonPassRoot';
-import type { IFrameAppService } from 'proton-pass-extension/app/content/services/iframes/factory';
 import { IFramePortMessageType } from 'proton-pass-extension/app/content/services/iframes/messages';
+import type { PopoverController } from 'proton-pass-extension/app/content/services/iframes/popover';
 import { createPopoverController } from 'proton-pass-extension/app/content/services/iframes/popover';
 import { createIframeRoot } from 'proton-pass-extension/app/content/services/iframes/utils';
 
@@ -23,32 +23,31 @@ import { createDropdown } from './dropdown';
 import type { InjectedNotification } from './notification';
 import { createNotification } from './notification';
 
-type IFrameServiceState = {
+type IFrameRegistry = {
     apps: { dropdown: MaybeNull<InjectedDropdown>; notification: MaybeNull<InjectedNotification> };
+    popover: MaybeNull<PopoverController>;
     root: MaybeNull<CustomElementRef<ProtonPassRoot>>;
 };
 
 export interface IFrameService {
+    popover: PopoverController;
     dropdown: MaybeNull<InjectedDropdown>;
     notification: MaybeNull<InjectedNotification>;
     root: CustomElementRef<ProtonPassRoot>;
     attachDropdown: (layer?: HTMLElement) => MaybeNull<InjectedDropdown>;
     attachNotification: () => MaybeNull<InjectedNotification>;
     destroy: () => void;
-    ensureInteractive: (anchor: MaybeNull<HTMLElement>, killswitch: boolean) => void;
+    ensureInteractive: (anchor: MaybeNull<HTMLElement>) => void;
     init: (rootAnchor?: HTMLElement) => CustomElementRef<ProtonPassRoot>;
     setTheme: (theme?: PassThemeOption) => void;
 }
 
-const shouldUsePopover = withContext<() => boolean>((ctx) => {
-    return POPOVER_SUPPORTED && !(ctx?.getFeatureFlags().PassContentScriptPopoverKillSwitch ?? false);
-});
-
 export const createIFrameService = (elements: PassElementsConfig) => {
     const listeners = createListenerStore();
 
-    const state: IFrameServiceState = {
+    const registry: IFrameRegistry = {
         apps: { dropdown: null, notification: null },
+        popover: null,
         root: null,
     };
 
@@ -56,34 +55,43 @@ export const createIFrameService = (elements: PassElementsConfig) => {
         theme === PassThemeOption.OS ? PassThemeOption[matchDarkTheme().matches ? 'PassDark' : 'PassLight'] : theme;
 
     /* only re-init the iframe sub-apps if the extension context port has changed */
-    const onAttached: <T extends IFrameAppService<any>>(app: T) => void = withContext((ctx, app) => {
+    const onAttached: (id: keyof IFrameRegistry['apps']) => void = withContext((ctx, id) => {
+        const service = registry.apps[id];
+        if (!service) return;
+
         const port = ctx?.getExtensionContext()?.port;
         const url = ctx?.getExtensionContext()?.url;
 
-        if (url && port && app.getState().port !== port) {
+        if (url && port && service.getState().port !== port) {
             const settings = ctx.getSettings();
 
-            app.init(port, () => ({
+            service.init(port, () => ({
                 appState: ctx.getState(),
                 domain: resolveSubdomain(url) ?? '',
                 features: ctx.getFeatureFlags(),
                 settings: ctx.getSettings(),
                 theme: getIFrameTheme(settings.theme),
             }));
+
+            service.subscribe((e) => e.type === 'destroy' && (registry.apps[id] = null));
         }
     });
 
     const service: IFrameService = {
+        get popover() {
+            return registry.popover ?? (registry.popover = createPopoverController(service));
+        },
+
         get dropdown() {
-            return state.apps.dropdown;
+            return registry.apps.dropdown;
         },
 
         get notification() {
-            return state.apps.notification;
+            return registry.apps.notification;
         },
 
         get root() {
-            return state.root ?? service.init();
+            return registry.root ?? service.init();
         },
 
         /** Modal dialogs block interaction with elements outside their DOM tree.
@@ -91,9 +99,9 @@ export const createIFrameService = (elements: PassElementsConfig) => {
          * into the appropriate DOM subtree. When given an anchor, finds the modal
          * containing that element. Without an anchor, targets the topmost active modal.
          * Falls back to `document.body` when no modal context exists.  */
-        ensureInteractive: (anchor, usePopover) => {
-            if (usePopover) {
-                const activeRoot = state.root;
+        ensureInteractive: (anchor) => {
+            if (POPOVER_SUPPORTED) {
+                const activeRoot = registry.root;
                 const nextParent = (anchor ? getClosestModal(anchor) : getActiveModal()) ?? document.body;
                 const parent = activeRoot?.customElement.parentElement;
 
@@ -106,18 +114,22 @@ export const createIFrameService = (elements: PassElementsConfig) => {
         },
 
         init: (target) => {
-            if (state.root) return state.root;
+            if (registry.root) return registry.root;
 
-            state.root = createIframeRoot(elements.root, target);
-            if (state.apps.dropdown) onAttached(state.apps.dropdown);
-            if (state.apps.notification) onAttached(state.apps.notification);
+            listeners.removeAll();
+            registry.root = createIframeRoot(elements.root, target);
+            registry.popover = createPopoverController(service);
+
+            if (registry.apps.dropdown) onAttached('dropdown');
+            if (registry.apps.notification) onAttached('notification');
 
             const handleRootRemoval = withContext((ctx) => {
-                state.root = null;
-                state.apps.dropdown?.destroy();
-                state.apps.notification?.destroy();
-                state.apps.dropdown = null;
-                state.apps.notification = null;
+                registry.root = null;
+                registry.popover = null;
+                registry.apps.dropdown?.destroy();
+                registry.apps.notification?.destroy();
+                registry.apps.dropdown = null;
+                registry.apps.notification = null;
 
                 if (!ctx?.getState().stale) service.init();
                 else service.destroy();
@@ -128,62 +140,50 @@ export const createIFrameService = (elements: PassElementsConfig) => {
                 if (settings?.theme === PassThemeOption.OS) service.setTheme(settings.theme);
             });
 
-            const customEl = state.root.customElement;
+            const customEl = registry.root.customElement;
 
             listeners.addListener(customEl, PASS_ROOT_REMOVED_EVENT as any, handleRootRemoval, { once: true });
             listeners.addListener(matchDarkTheme(), 'change', handleColorSchemeChange);
 
-            return state.root;
+            return registry.root;
         },
 
         destroy: () => {
             listeners.removeAll();
-            state.apps.dropdown?.destroy();
-            state.apps.notification?.destroy();
-            state.root = null; /* reset in-case we recycle the content-script */
+            registry.apps.dropdown?.destroy();
+            registry.apps.notification?.destroy();
+            registry.root = null; /* reset in-case we recycle the content-script */
+            registry.popover = null;
         },
 
         attachDropdown: withContext((ctx, layer) => {
             if (!ctx) return null;
+            if (layer) service.ensureInteractive(layer);
 
-            const usePopover = shouldUsePopover();
-            if (layer) service.ensureInteractive(layer, usePopover);
-
-            if (state.apps.dropdown === null) {
+            if (registry.apps.dropdown === null) {
                 logger.debug(`[ContentScript::${ctx.scriptId}] attaching dropdown iframe`);
-                state.apps.dropdown = createDropdown({
-                    popover: createPopoverController(service, usePopover),
-                    onDestroy: () => (state.apps.dropdown = null),
-                });
-
-                onAttached(state.apps.dropdown);
+                registry.apps.dropdown = createDropdown(service.popover);
+                onAttached('dropdown');
             }
 
-            return state.apps.dropdown;
+            return registry.apps.dropdown;
         }),
 
         attachNotification: withContext((ctx) => {
             if (!ctx) return null;
+            service.ensureInteractive(null);
 
-            const usePopover = shouldUsePopover();
-            service.ensureInteractive(null, usePopover);
-
-            if (state.apps.notification === null) {
+            if (registry.apps.notification === null) {
                 logger.debug(`[ContentScript::${ctx.scriptId}] attaching notification iframe`);
-
-                state.apps.notification = createNotification({
-                    popover: createPopoverController(service, usePopover),
-                    onDestroy: () => (state.apps.notification = null),
-                });
-
-                onAttached(state.apps.notification);
+                registry.apps.notification = createNotification(service.popover);
+                onAttached('notification');
             }
 
-            return state.apps.notification;
+            return registry.apps.notification;
         }),
 
         setTheme: (theme = PASS_DEFAULT_THEME) => {
-            state.root?.customElement.setAttribute(
+            registry.root?.customElement.setAttribute(
                 PASS_ELEMENT_THEME,
                 ((): string => {
                     switch (theme) {
@@ -204,8 +204,8 @@ export const createIFrameService = (elements: PassElementsConfig) => {
                 return theme;
             })();
 
-            state.apps.dropdown?.sendMessage({ type: IFramePortMessageType.IFRAME_THEME, payload });
-            state.apps.notification?.sendMessage({ type: IFramePortMessageType.IFRAME_THEME, payload });
+            registry.apps.dropdown?.sendMessage({ type: IFramePortMessageType.IFRAME_THEME, payload });
+            registry.apps.notification?.sendMessage({ type: IFramePortMessageType.IFRAME_THEME, payload });
         },
     };
 
