@@ -7,7 +7,6 @@ import { createIFrameService } from 'proton-pass-extension/app/content/services/
 import type { AbstractInlineService } from 'proton-pass-extension/app/content/services/inline/inline.abstract';
 import { getFrameElement } from 'proton-pass-extension/app/content/utils/frame';
 import type { FrameMessageHandler } from 'proton-pass-extension/app/content/utils/frame.message-broker';
-import { isActiveElement } from 'proton-pass-extension/app/content/utils/nodes';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { clientNeedsSession, clientSessionLocked } from '@proton/pass/lib/client';
@@ -201,10 +200,11 @@ export const createInlineService = ({
     /** When sub-frame loses focus but top-level UI gains focus, don't close dropdown
      * as this indicates legitimate user interaction with our UI elements */
     const onInlineFrameBlur: FrameMessageHandler<WorkerMessageType.INLINE_FRAME_BLUR> = ({ payload }) => {
-        if (iframes.dropdown?.getState().visible && !isActiveElement(iframes.root.customElement)) {
-            const { formId, fieldId } = payload;
-            dropdown.close({ type: 'frame', formId, fieldId });
-        }
+        const { formId, fieldId } = payload;
+        const visible = iframes.dropdown?.getState().visible;
+        const focused = iframes.dropdown?.focused;
+
+        if (visible && !focused) dropdown.close({ type: 'frame', formId, fieldId });
     };
 
     return {
