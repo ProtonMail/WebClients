@@ -30,7 +30,8 @@ export enum IFramePortMessageType {
     AUTOFILL_OTP = 'AUTOFILL_OTP',
     DROPDOWN_ACTION = 'DROPDOWN_ACTION',
     DROPDOWN_FOCUS = 'DROPDOWN_FOCUS',
-    DROPDOWN_FOCUS_CHECK = 'DROPDOWN_FOCUS_CHECK',
+    DROPDOWN_FOCUSED = 'DROPDOWN_FOCUSED',
+    DROPDOWN_FOCUS_REQUEST = 'DROPDOWN_FOCUS_REQUEST',
     IFRAME_CLOSE = 'IFRAME_CLOSE',
     IFRAME_CONNECTED = 'IFRAME_CONNECTED',
     IFRAME_DIMENSIONS = 'IFRAME_DIMENSIONS',
@@ -80,8 +81,9 @@ export type IFrameMessage<T extends IFrameMessageType = IFrameMessageType> = Ext
     | { type: IFramePortMessageType.AUTOFILL_LOGIN; payload: FormCredentials }
     | { type: IFramePortMessageType.AUTOFILL_OTP; payload: { code: string } }
     | { type: IFramePortMessageType.DROPDOWN_ACTION; payload: DropdownActions }
+    | { type: IFramePortMessageType.DROPDOWN_FOCUSED }
     | { type: IFramePortMessageType.DROPDOWN_FOCUS }
-    | { type: IFramePortMessageType.DROPDOWN_FOCUS_CHECK }
+    | { type: IFramePortMessageType.DROPDOWN_FOCUS_REQUEST }
     | { type: IFramePortMessageType.IFRAME_CLOSE; payload: IFrameCloseOptions }
     | { type: IFramePortMessageType.IFRAME_CONNECTED; payload: { framePort: string; id: IFrameEndpoint } }
     | { type: IFramePortMessageType.IFRAME_DIMENSIONS; payload: { height: number; width?: number } }

@@ -16,6 +16,7 @@ import { useRerender } from '@proton/pass/hooks/useRerender';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { clientSessionLocked } from '@proton/pass/lib/client';
 import type { MaybeNull } from '@proton/pass/types';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 
 type Props = { header?: ReactNode; onUnlock?: () => void };
 
@@ -55,9 +56,12 @@ export const PinUnlock: FC<Props> = ({ header, onUnlock }) => {
             /** Force blur the parent field if dropdown becomes visible
              * This helps when the dropdown has trouble gaining focus due
              * to strict focus management in certain websites */
-            const unregister = ctrl.registerHandler(IFramePortMessageType.DROPDOWN_FOCUS, rerender);
-            const ensureFocused = () => ctrl.forwardMessage({ type: IFramePortMessageType.DROPDOWN_FOCUS_CHECK });
+            const ensureFocused = () => ctrl.forwardMessage({ type: IFramePortMessageType.DROPDOWN_FOCUS_REQUEST });
+            const onFocused = () => ctrl.forwardMessage({ type: IFramePortMessageType.DROPDOWN_FOCUSED });
+            const onFocus = pipe(rerender, onFocused);
+
             const timer = setTimeout(ensureFocused, 150);
+            const unregister = ctrl.registerHandler(IFramePortMessageType.DROPDOWN_FOCUS, onFocus);
 
             return () => {
                 unregister();

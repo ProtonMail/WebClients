@@ -15,6 +15,7 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { isShadowRoot } from '@proton/pass/fathom';
 import { deriveAliasPrefix } from '@proton/pass/lib/alias/alias.utils';
+import { clientSessionLocked } from '@proton/pass/lib/client';
 import type { PasswordAutosuggestOptions } from '@proton/pass/lib/password/types';
 import type { Coords, Maybe, MaybeNull } from '@proton/pass/types';
 import { createStyleParser, getComputedHeight } from '@proton/pass/utils/dom/computed-styles';
@@ -27,6 +28,7 @@ import { resolveDomain, resolveSubdomain } from '@proton/pass/utils/url/utils';
 import { getScrollParent } from '@proton/shared/lib/helpers/dom';
 import noop from '@proton/utils/noop';
 
+import { createDropdownFocusController } from './dropdown.focus';
 import type { IFrameAppService } from './factory';
 import { createIFrameApp } from './factory';
 
@@ -49,6 +51,7 @@ export type DropdownRequest = {
 
 export interface InjectedDropdown extends IFrameAppService<DropdownRequest> {
     anchor: MaybeNull<DropdownAnchor>;
+    focused: boolean;
 }
 
 export const createDropdown = (popover: PopoverController): InjectedDropdown => {
@@ -92,7 +95,15 @@ export const createDropdown = (popover: PopoverController): InjectedDropdown => 
         },
     });
 
-    const onOpen = () => {
+    const focus = createDropdownFocusController({ iframe, popover, anchor });
+
+    const onOpen = withContext((ctx) => {
+        /** If session is locked - the dropdown will try to gain focus.
+         * In order to avoid detecting this as a FRAME_BLURRED event, we
+         * need to temporarily flag the re-focus state. (see `PinUnlock.tsx`) */
+        const status = ctx?.getState()?.status;
+        if (status && clientSessionLocked(status)) focus.onWillFocus();
+
         const target = anchor.current;
 
         if (target?.type === 'frame') {
@@ -104,7 +115,7 @@ export const createDropdown = (popover: PopoverController): InjectedDropdown => 
                 })
             );
         }
-    };
+    });
 
     const onClose = (options: IFrameCloseOptions) => {
         const target = anchor.current;
@@ -141,6 +152,7 @@ export const createDropdown = (popover: PopoverController): InjectedDropdown => 
     const onDestroy = () => {
         anchor.current = null;
         listeners.removeAll();
+        focus.disconnect();
     };
 
     /* if the dropdown is opened while the field is being animated
@@ -359,6 +371,10 @@ export const createDropdown = (popover: PopoverController): InjectedDropdown => 
         get anchor() {
             return anchor.current;
         },
+        get focused() {
+            return focus.focused || focus.willFocus;
+        },
+
         close: pipe(iframe.close, () => dropdown),
         destroy: iframe.destroy,
         getState: () => iframe.state,
