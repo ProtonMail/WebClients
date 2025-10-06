@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import { c } from 'ttag';
 
 import Toggle from '@proton/components/components/toggle/Toggle';
@@ -20,19 +18,17 @@ interface Props {
 
 const EmbeddedToggle = ({ id }: Props) => {
     const [mailSettings] = useMailSettings();
-    const [hideEmbeddedImages, setHideEmbeddedImages] = useState(mailSettings.HideEmbeddedImages);
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const api = useApi();
     const dispatch = useDispatch();
-    const { state, toggle } = useToggle(hideEmbeddedImages === SHOW_IMAGES.SHOW);
+    const { state, toggle } = useToggle(mailSettings.HideEmbeddedImages === SHOW_IMAGES.SHOW);
 
     const handleChange = async (checked: boolean) => {
         const bit = checked ? SHOW_IMAGES.SHOW : SHOW_IMAGES.HIDE;
         const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateHideEmbeddedImages(bit));
         dispatch(mailSettingsActions.updateMailSettings(MailSettings));
         toggle();
-        setHideEmbeddedImages(bit);
         createNotification({ text: c('Success').t`Preference saved` });
     };
     return (
