@@ -7,6 +7,7 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { IcArrowsRotate } from '@proton/icons';
+import { useFlag } from '@proton/unleash';
 
 import { getRotatePersonalMeetingDisabledUntil } from '../../utils/disableRotatePersonalMeeting';
 
@@ -29,6 +30,8 @@ export const PersonalMeetingModal = ({
     link,
     loadingRotatePersonalMeeting,
 }: PersonalMeetingModalProps) => {
+    const isPersonalMeetingRotationEnabled = useFlag('PersonalMeetingRotation');
+
     const [isRotateButtonDisabled, setIsRotateButtonDisabled] = useState(() => {
         const disabledUntil = getRotatePersonalMeetingDisabledUntil();
         if (!disabledUntil) {
@@ -74,20 +77,22 @@ export const PersonalMeetingModal = ({
                             {link}
                         </Href>
                     </div>
-                    <div className="flex flex-column justify-center">
-                        <button
-                            className="refresh-button rounded-50 p-2 ml-2 flex flex-column justify-center items-center border border-norm"
-                            title={c('Action').t`Refresh link`}
-                            onClick={handleRotate}
-                            disabled={loadingRotatePersonalMeeting || isRotateButtonDisabled}
-                        >
-                            <IcArrowsRotate
-                                size={5}
-                                className={`shrink-0 no-print ${loadingRotatePersonalMeeting ? 'rotating' : ''}`}
-                                alt={c('Alt').t`Rotate personal meeting link`}
-                            />
-                        </button>
-                    </div>
+                    {isPersonalMeetingRotationEnabled && (
+                        <div className="flex flex-column justify-center">
+                            <button
+                                className="refresh-button rounded-50 p-2 ml-2 flex flex-column justify-center items-center border border-norm"
+                                title={c('Action').t`Refresh link`}
+                                onClick={handleRotate}
+                                disabled={loadingRotatePersonalMeeting || isRotateButtonDisabled}
+                            >
+                                <IcArrowsRotate
+                                    size={5}
+                                    className={`shrink-0 no-print ${loadingRotatePersonalMeeting ? 'rotating' : ''}`}
+                                    alt={c('Alt').t`Rotate personal meeting link`}
+                                />
+                            </button>
+                        </div>
+                    )}
                 </div>
                 <div className="w-full flex flex-column justify-end gap-2">
                     <Button
