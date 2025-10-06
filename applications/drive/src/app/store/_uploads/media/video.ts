@@ -1,4 +1,4 @@
-import { SupportedMimeTypes, VIDEO_THUMBNAIL_MAX_TIME_LOCATION } from '@proton/shared/lib/drive/constants';
+import { type SupportedMimeTypes, VIDEO_THUMBNAIL_MAX_TIME_LOCATION } from '@proton/shared/lib/drive/constants';
 
 import { logError } from '../../../utils/errorHandling';
 import { canvasToThumbnail } from './canvasUtil';
@@ -19,7 +19,7 @@ interface Props extends Media {
 // Another risk factor is memory leakage. Video elements should be cleared carefully after using them.
 // The video should not be added to the DOM - the last thing we want here is displaying them.
 // thumbnailType is not actually use for video, we always use preview
-export const getVideoInfo = async (file: Blob) => {
+export const getVideoInfo = async (file: Blob, mimeType: SupportedMimeTypes.webp | SupportedMimeTypes.jpg) => {
     const promiseInit = (resolve: (value: Props | undefined) => void, reject: (reason?: string) => void) => {
         const video: HTMLVideoElement = document.createElement('video') as HTMLVideoElement;
         const objectUrl = URL.createObjectURL(file);
@@ -66,6 +66,26 @@ export const getVideoInfo = async (file: Blob) => {
                         return;
                     }
 
+                    try {
+                        await video.play();
+
+                        // Wait for a frame to actually render using timeupdate or a small delay
+                        await new Promise((resolve) => {
+                            const onFrame = () => {
+                                video.removeEventListener('timeupdate', onFrame);
+                                resolve(undefined);
+                            };
+                            video.addEventListener('timeupdate', onFrame);
+                            setTimeout(() => {
+                                video.removeEventListener('timeupdate', onFrame);
+                                resolve(undefined);
+                            }, 200);
+                        });
+
+                        video.pause();
+                    } catch (e) {
+                        logError(e);
+                    }
                     const canvas: HTMLCanvasElement = document.createElement('canvas');
                     const [width, height] = calculateThumbnailSize({
                         width: video.videoWidth,
@@ -92,11 +112,7 @@ export const getVideoInfo = async (file: Blob) => {
                                 thumbnails: [
                                     {
                                         thumbnailData: new Uint8Array(
-                                            await canvasToThumbnail(
-                                                canvas,
-                                                ThumbnailType.PREVIEW,
-                                                SupportedMimeTypes.webp
-                                            )
+                                            await canvasToThumbnail(canvas, ThumbnailType.PREVIEW, mimeType)
                                         ),
                                         thumbnailType: ThumbnailType.PREVIEW,
                                     },
