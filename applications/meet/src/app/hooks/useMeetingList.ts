@@ -9,12 +9,16 @@ import { useCreateMeeting, useGetMeetingDependencies } from '@proton/meet';
 import { decryptMeetingName, decryptMeetingPassword } from '@proton/meet/utils/cryptoUtils';
 import { CacheType } from '@proton/redux-utilities';
 import { HOUR } from '@proton/shared/lib/constants';
+import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 import { MeetingType } from '@proton/shared/lib/interfaces/Meet';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { useGetMeetings, useMeetings } from '../store';
 import { saveRotatePersonalMeetingDisable } from '../utils/disableRotatePersonalMeeting';
 import { useRotatePersonalMeetingLink } from './useRotatePersonalMeetingLink';
+
+const DECRYPTION_BATCH_SIZE = 5;
 
 export const useMeetingList = (): [Meeting[] | null, Meeting | null, () => void, boolean] => {
     const [user] = useUser();
@@ -43,11 +47,11 @@ export const useMeetingList = (): [Meeting[] | null, Meeting | null, () => void,
     const getDecryptedMeeting = async (meeting: Meeting) => {
         const { userKeys } = await getMeetingDependencies();
 
-        const password = await decryptMeetingPassword(meeting.Password as string, userKeys);
-
-        let meetingName = c('Title').t`Secure meeting`;
-
         try {
+            const password = await decryptMeetingPassword(meeting.Password as string, userKeys);
+
+            let meetingName = c('Title').t`Secure meeting`;
+
             if (meeting.MeetingName) {
                 meetingName = await decryptMeetingName({
                     encryptedMeetingName: meeting.MeetingName,
@@ -56,15 +60,16 @@ export const useMeetingList = (): [Meeting[] | null, Meeting | null, () => void,
                     salt: meeting.Salt,
                 });
             }
+
+            return {
+                ...meeting,
+                Password: password,
+                MeetingName: meetingName,
+            };
         } catch (err) {
             console.error(err);
+            return null;
         }
-
-        return {
-            ...meeting,
-            Password: password,
-            MeetingName: meetingName,
-        };
     };
 
     const handleFetch = async () => {
@@ -77,18 +82,18 @@ export const useMeetingList = (): [Meeting[] | null, Meeting | null, () => void,
                 [MeetingType.PERSONAL, MeetingType.RECURRING, MeetingType.SCHEDULED].includes(meeting.Type)
             );
 
-            const meetingsWithDecryptedPassword = await Promise.all(
-                filteredMeetings.map(async (meeting) => {
-                    return getDecryptedMeeting(meeting);
-                })
-            );
+            const decryptionTasks = filteredMeetings.map((meeting) => () => getDecryptedMeeting(meeting));
+            const decryptedMeetings = await runInQueue(decryptionTasks, DECRYPTION_BATCH_SIZE);
 
-            setMeetings(meetingsWithDecryptedPassword ?? []);
+            const validDecryptedMeetings = decryptedMeetings.filter(isTruthy);
 
-            const personalMeeting =
-                (meetingsWithDecryptedPassword ?? []).find((m) => m.Type === MeetingType.PERSONAL) || null;
+            setMeetings(validDecryptedMeetings);
+
+            const personalMeeting = validDecryptedMeetings.find((m) => m.Type === MeetingType.PERSONAL) || null;
             setPersonalMeeting(personalMeeting);
         } catch (error) {
+            setPersonalMeeting(null);
+            setMeetings([]);
             console.error(error);
         }
     };
@@ -100,6 +105,10 @@ export const useMeetingList = (): [Meeting[] | null, Meeting | null, () => void,
 
     const persistPersonalMeetingIntoStore = async (meeting: Meeting) => {
         const decryptedPersonalMeeting = await getDecryptedMeeting(meeting);
+
+        if (!decryptedPersonalMeeting) {
+            return;
+        }
 
         setPersonalMeeting(decryptedPersonalMeeting);
 
