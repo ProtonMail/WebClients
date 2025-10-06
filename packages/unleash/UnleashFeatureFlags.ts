@@ -223,6 +223,7 @@ enum MeetFeatureFlag {
     MeetEarlyAccessPublic = 'MeetEarlyAccessPublic',
     MeetErrorReporting = 'MeetErrorReporting',
     MeetPassphraseEnabled = 'MeetPassphraseEnabled',
+    PersonalMeetingRotation = 'PersonalMeetingRotation',
 }
 
 enum LumoFeatureFlag {
