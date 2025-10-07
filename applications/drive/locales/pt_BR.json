@@ -3398,7 +3398,7 @@
         "Erro ao carregar a pré-visualização STL"
       ],
       "Failed to open to contact": [
-        "Não foi possível abrir o contato."
+        "Não foi possível abrir o contato"
       ],
       "Failed to resend invitation": [
         "Erro ao reenviar o convite"
@@ -3644,6 +3644,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Alguns dos seus nomes de marcadores excederam o limite máximo de caracteres do ${ MAIL_APP_NAME }. Personalize a importação para editar esses nomes."
+      ],
+      "Something went wrong during folder listing": [
+        "Ocorreu um erro ao listar a pasta"
       ],
       "Something went wrong. Please try again.": [
         "Ocorreu um erro. Tente novamente."
@@ -4114,7 +4117,7 @@
         "suporte ao cliente"
       ],
       "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
-        "Os planos familiares não suportam contas externas no momento. Crie um endereço para ${ BRAND_NAME } antes de participar.${ link }"
+        "Os planos familiares não suportam contas externas no momento. Crie um endereço para ${ BRAND_NAME } antes de participar. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Se aceitar o convite, seu plano atual será alterado e você receberá um crédito em sua conta com o saldo restante, se houver."
@@ -7588,7 +7591,7 @@
         "Solicitar um convite"
       ],
       "Resume now": [
-        "Continuar agora"
+        "Retomar agora"
       ],
       "settings": [
         "configurações"
@@ -8382,6 +8385,9 @@
       ],
       "Share files with no size limit": [
         "Compartilhe arquivos sem limite de tamanho"
+      ],
+      "Short domain (@pm.me)": [
+        "Domínio curto (@pm.me)"
       ],
       "Sign in as user": [
         "Início de sessão como usuário"
@@ -9408,6 +9414,9 @@
       ],
       "Upload folder": [
         "Enviar pasta"
+      ],
+      "Upload more files": [
+        "Enviar mais arquivos"
       ]
     },
     "Onboarding Info": {
@@ -9438,11 +9447,20 @@
       "Edit documents online": [
         "Editar documentos on-line"
       ],
+      "Encryption happens automatically": [
+        "A criptografia ocorre automaticamente"
+      ],
       "End-to-end encrypted storage for your files": [
         "Armazenamento criptografado de ponta a ponta para seus arquivos"
       ],
       "Faster uploads for large or multiple files": [
         "Envie mais rápidos para arquivos grandes ou múltiplos arquivos"
+      ],
+      "Files uploaded during this time won’t count towards your storage limit.": [
+        "Os arquivos enviados durante esse tempo não contarão para o seu limite de armazenamento."
+      ],
+      "Files uploaded now will not count towards your storage limit": [
+        "Os arquivos enviados agora não contarão para o seu limite de armazenamento."
       ],
       "Final approval in progress": [
         "Aprovação final em progresso"
@@ -9477,6 +9495,9 @@
       "Invite team members": [
         "Convidar membros da equipe"
       ],
+      "Keep the momentum going by uploading more files using the storage included with your plan.": [
+        "Continue aproveitando: envie mais arquivos usando o armazenamento incluído no seu plano."
+      ],
       "Manage access": [
         "Gerencie o acesso"
       ],
@@ -9504,6 +9525,9 @@
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "O proprietário precisa confirmar o acesso de compartilhamento. Você receberá um e-mail quando isso for feito."
       ],
+      "Upload files, folders, photos": [
+        "Enviar arquivos, pastas, fotos"
+      ],
       "Upload your first file": [
         "Faça upload de seu primeiro arquivo"
       ],
@@ -9512,6 +9536,12 @@
       ],
       "Work together": [
         "Trabalhe em conjunto"
+      ],
+      "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
+        "Você acabou de obter dados gratuitos e protegeu seus arquivos com criptografia de ponta a ponta － em tempo recorde!"
+      ],
+      "Your storage limit won’t be affected": [
+        "Seu limite de armazenamento não será afetado"
       ]
     },
     "Onboarding Trial": {
@@ -9746,7 +9776,7 @@
         "Estou comprando como empresa"
       ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Incluindo ${ taxRate }${ taxName }${ taxAmount }"
+        "Incluindo ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
       "Including ${ taxRate }% taxes: ${ taxAmount }": [
         "Incluindo ${ taxRate }% de impostos: ${ taxAmount }"
@@ -9756,6 +9786,9 @@
       ],
       "More plans are available in other currencies": [
         "Mais planos estão disponíveis em outras moedas"
+      ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Forneça um método de pagamento para ativar a assinatura após o término da avaliação."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reative sua assinatura primeiro para diminuir o número de complementos."
@@ -9811,6 +9844,12 @@
       ],
       "VAT number": [
         "Número de IVA"
+      ],
+      "You already have a subscription to this plan.": [
+        "Você já assina este plano."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Você já assina este plano. Você pode mudar sua assinatura na ${ subscriptionPlatform }."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Sua moeda foi alterada para euros (€) porque transferências bancárias SEPA apenas suportam pagamentos em euros."
@@ -12080,6 +12119,9 @@
       "Get more from your VPN": [
         "Obter mais da sua VPN"
       ],
+      "Get started with 10 minutes of free uploads, on the house.": [
+        "Comece com 10 minutos de envios gratuitos, por nossa conta."
+      ],
       "Get the apps": [
         "Obtenha os aplicativos"
       ],
@@ -12329,6 +12371,9 @@
       ],
       "Re-signing contacts": [
         "Assinando os contatos novamente"
+      ],
+      "Ready, set, upload.": [
+        "Preparar, apontar, enviar."
       ],
       "Recommended": [
         "Recomendado"
@@ -12601,6 +12646,9 @@
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "Não pudemos verificar que um usuário anônimo enviou essa pasta."
       ],
+      "Welcome offer": [
+        "Oferta de boas-vindas"
+      ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Boas-vindas ao ${ BRAND_NAME } for Business"
       ],
@@ -12627,6 +12675,9 @@
       ],
       "You have no folders yet": [
         "Você ainda não tem pastas"
+      ],
+      "Your ${ freeUploadLength } has started.": [
+        "Seu ${ freeUploadLength } começou."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Sua avaliação gratuita do ${ planName } termina em ${ textDate }"
@@ -12657,6 +12708,9 @@
       ],
       "Your welcome actions": [
         "Suas ações de boas-vindas"
+      ],
+      "You’re off to a great start!": [
+        "Você começou muito bem!"
       ],
       "You’ve got 5 GB of storage": [
         "Você tem 5 GB de armazenamento"

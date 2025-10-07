@@ -3645,6 +3645,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Noen av dine etikettnavn overskrider ${ MAIL_APP_NAME }s maksimale tegngrense.Tilpass importen for å redigere disse navnene."
       ],
+      "Something went wrong during folder listing": [
+        "Noe gikk galt under mappeopplisting"
+      ],
       "Something went wrong. Please try again.": [
         "Noe gikk galt. Forsøk igjen."
       ],
@@ -9406,9 +9409,15 @@
       ],
       "Upload folder": [
         "Last opp mappe"
+      ],
+      "Upload more files": [
+        "Last opp flere filer"
       ]
     },
     "Onboarding Info": {
+      "10 minutes": [
+        "10 minutter"
+      ],
       "Access your files on the go": [
         "Få tilgang til filene dine på farten"
       ],
@@ -9433,11 +9442,20 @@
       "Edit documents online": [
         "Rediger dokumenter på nettet"
       ],
+      "Encryption happens automatically": [
+        "Kryptering skjer automatisk"
+      ],
       "End-to-end encrypted storage for your files": [
         "Ende-til-ende-kryptert lagring for filene dine"
       ],
       "Faster uploads for large or multiple files": [
         "Raskere opplastinger for store eller flere filer"
+      ],
+      "Files uploaded during this time won’t count towards your storage limit.": [
+        "Filer som lastes opp i denne perioden vil ikke telle med i lagringsgrensen din."
+      ],
+      "Files uploaded now will not count towards your storage limit": [
+        "Filer som lastes opp nå teller ikke med i lagringsgrensen din"
       ],
       "Final approval in progress": [
         "Endelig godkjenning pågår"
@@ -9472,6 +9490,9 @@
       "Invite team members": [
         "Inviter medlemmer av teamet"
       ],
+      "Keep the momentum going by uploading more files using the storage included with your plan.": [
+        "Hold fremdriften oppe ved å laste opp flere filer ved å bruke lagringsplassen som er inkludert i abonnementet ditt."
+      ],
       "Manage access": [
         "Administrer tilgang"
       ],
@@ -9499,6 +9520,9 @@
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "Eieren må bekrefte delingstilgang. Du får en e-post når det er gjort."
       ],
+      "Upload files, folders, photos": [
+        "Last opp filer, mapper, bilder"
+      ],
       "Upload your first file": [
         "Last opp din første fil"
       ],
@@ -9507,6 +9531,12 @@
       ],
       "Work together": [
         "Arbeid sammen"
+      ],
+      "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
+        "Du har nettopp sikret deg litt gratis data og sikret filene dine med ende-til-ende-kryptering – på rekordtid!"
+      ],
+      "Your storage limit won’t be affected": [
+        "Lagringsgrensen din vil ikke bli påvirket"
       ]
     },
     "Onboarding Trial": {
@@ -9746,6 +9776,9 @@
       "More plans are available in other currencies": [
         "Flere planer er tilgjengelige i andre valutaer"
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Betalingsmåte kreves for at abonnementet skal aktiveres etter at prøveperioden er over."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Aktiver abonnementet på nytt først for å redusere antall tillegg."
       ],
@@ -9786,6 +9819,9 @@
       "This number will be shown on all future invoices": [
         "Dette nummeret vil bli vist på alle fremtidige fakturaer"
       ],
+      "This offer is not available with your current plan.": [
+        "Dette tilbudet er ikke tilgjengelig med din nåværende plan."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Denne betalingsmåten vil bli din nye standard for alle fremtidige fornyelser."
       ],
@@ -9797,6 +9833,12 @@
       ],
       "VAT number": [
         "MVA-nummer"
+      ],
+      "You already have a subscription to this plan.": [
+        "Du har allerede et abonnement på denne planen."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Du har allerede et abonnement på denne planen. Du kan endre abonnementet ditt på ${ subscriptionPlatform }."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Din valuta har blitt endret til euro (€) fordi SEPA-bankoverføringer bare støtter betalinger i euro."
@@ -11968,6 +12010,9 @@
       "Get more from your VPN": [
         "Får mer ut av ditt VPN"
       ],
+      "Get started with 10 minutes of free uploads, on the house.": [
+        "Kom i gang med 10 minutter med gratis opplastinger, på husets bekostning."
+      ],
       "Get the apps": [
         "Skaff deg appene"
       ],
@@ -12217,6 +12262,9 @@
       ],
       "Re-signing contacts": [
         "Signerer kontakter på nytt"
+      ],
+      "Ready, set, upload.": [
+        "Klar, ferdig, last opp."
       ],
       "Recommended": [
         "Anbefalt"
@@ -12489,6 +12537,9 @@
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "Vi kunne ikke bekrefte at en anonym bruker lastet opp denne mappen."
       ],
+      "Welcome offer": [
+        "Velkomsttilbud"
+      ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Velkommen til ${ BRAND_NAME } for Business"
       ],
@@ -12515,6 +12566,9 @@
       ],
       "You have no folders yet": [
         "Du har ingen mapper enda"
+      ],
+      "Your ${ freeUploadLength } has started.": [
+        "Din ${ freeUploadLength } har startet."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Din gratis prøveperiode av ${ planName } slutter på ${ textDate }."
@@ -12545,6 +12599,9 @@
       ],
       "Your welcome actions": [
         "Dine velkomne handlinger"
+      ],
+      "You’re off to a great start!": [
+        "Du er godt i gang!"
       ],
       "You’ve got 5 GB of storage": [
         "Du har fått 5 GB lagringsplass"
