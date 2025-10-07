@@ -2284,7 +2284,7 @@
         "Procés anul·lat"
       ],
       "Request timed out": [
-        "S'ha esgotat el temps d'espera"
+        "La sol·licitud ha caducat"
       ],
       "Signature verification failed": [
         "No s'ha pogut verificar la signatura."
@@ -2410,7 +2410,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Quelcom va anar malament autenticant-se amb la vostra clau de seguretat. Torneu-ho a provar."
+        "Alguna cosa ha anat malament en autenticar-se amb la vostra clau de seguretat. Torneu-ho a provar."
       ]
     },
     "fido2: Info": {
@@ -2723,7 +2723,7 @@
         "Introduïu el codi de verificació. Dígit ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
-        "Introduïu la vostra contrasenya (com a administrador d'organització)."
+        "Introduïu la vostra contrasenya (com a administrador de l'organització)."
       ],
       "Enter your own password (as trusted contact).": [
         "Introduïu la vostra contrasenya (com a contacte de confiança)."
@@ -2952,7 +2952,7 @@
         "Setmana"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quan configureu l’autenticació de dos factors, proporcionem codis de recuperació que podeu utilitzar per iniciar la sessió si perdeu l’accés a l’aplicació d'autenticació."
+        "Quan configureu l’autenticació de doble factor, proporcionem codis de recuperació que podeu utilitzar per iniciar la sessió si perdeu l’accés a l’aplicació d'autenticació."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Voleu rebre un codi de verificació nou o utilitzar un mètode de verificació alternatiu?"
@@ -3773,6 +3773,9 @@
       ],
       "Share files with no size limit": [
         "Compartiu fitxers sense límit de mida"
+      ],
+      "Short domain (@pm.me)": [
+        "Domini curt (@pm.me)"
       ],
       "Sign in as user": [
         "Inicia la sessió com a usuari"
@@ -5816,7 +5819,7 @@
         "Elimina la cartera ara"
       ],
       "Display name (optional)": [
-        "Nom a mostrar (opcional)"
+        "Nom per a mostrar (opcional)"
       ],
       "Email": [
         "Corrreu electrònic"
