@@ -63,6 +63,11 @@
         "Tietojasi on löytynyt ainakin yhdestä tietovuodosta. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
       ]
     },
+    "Accounts": {
+      "Accounts": [
+        "Tilit"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-kauppa"
@@ -147,6 +152,9 @@
       ],
       "Add public holidays": [
         "Lisää yleiset vapaapäivät"
+      ],
+      "Add referral link to ${ MAIL_APP_NAME } signature": [
+        "Lisää suosittelulinkki ${ MAIL_APP_NAME } -allekirjoitukseen"
       ],
       "Add sieve filter": [
         "Lisää Sieve-suodatin"
@@ -736,6 +744,9 @@
       "Get more servers": [
         "Hanki lisää palvelimia"
       ],
+      "Get Pass Family": [
+        "Hanki Pass Family"
+      ],
       "Get Pass Plus": [
         "Hanki Pass Plus"
       ],
@@ -984,6 +995,9 @@
       ],
       "Open navigation": [
         "Avaa navigaatio"
+      ],
+      "Opt out": [
+        "Kieltäydy"
       ],
       "Or": [
         "Tai"
@@ -1381,6 +1395,9 @@
       "Start live chat": [
         "Aloita live-keskustelu"
       ],
+      "Start subscription": [
+        "Aloita tilaus"
+      ],
       "Stay": [
         "Pysy"
       ],
@@ -1521,6 +1538,9 @@
       ],
       "User": [
         "Käyttäjä"
+      ],
+      "Users and addresses": [
+        "Käyttäjät ja osoitteet"
       ],
       "Verify": [
         "Vahvista"
@@ -2702,6 +2722,25 @@
         "Laajenna"
       ]
     },
+    "collider_2025: app-switcher": {
+      "Chat with a private AI assistant": [
+        "Keskustele yksityisen tekoälyavustajan kanssa"
+      ]
+    },
+    "collider_2025: feature": {
+      "Basic chat history": [
+        "Rajoitettu keskusteluhistoria"
+      ],
+      "Full chat history with search": [
+        "Täysi keskusteluhistoria haulla"
+      ],
+      "Limited daily chats": [
+        "Rajoitetusti päivittäisiä keskusteluja"
+      ],
+      "Unlimited daily chats": [
+        "Rajattomasti päivittäisiä keskusteluja"
+      ]
+    },
     "collider_2025: Info": {
       "Access to advanced AI models": [
         "Pääsy kehittyneisiin tekoälymalleihin"
@@ -2710,13 +2749,22 @@
         "Tekoälyavustaja, joka kunnioittaa yksityisyyttäsi"
       ],
       "Basic chat history": [
-        "Perus keskusteluhistoria"
+        "Rajoitettu keskusteluhistoria"
+      ],
+      "Full chat history with search": [
+        "Täysi keskusteluhistoria haulla"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Nopeita keskusteluja ja edistyneitä tekoälyominaisuuksia."
       ],
       "Limited daily chats": [
-        "Rajoitetut päivittäiset keskustelut"
+        "Rajoitetusti päivittäisiä keskusteluja"
       ],
       "Open source": [
         "Avoin lähdekoodi"
+      ],
+      "Unlimited daily chats": [
+        "Rajattomasti päivittäisiä keskusteluja"
       ],
       "Web search access": [
         "Verkkohakuun pääsy"
@@ -4150,7 +4198,7 @@
         "Saat ilmoituksen, jos salasanasi tai muita tietojasi on vuotanut muista palveluista."
       ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
-        "Ansaitse jopa ${ credits } krediittiä kutsumalla kavereita ${ BRAND_NAME }iin."
+        "Ansaitse jopa ${ credits } krediitteinä kutsumalla kavereita ${ BRAND_NAME }iin."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Yhteystiedot, joita olet tuomassa, näyttävät sisältävän ryhmiä. Määritä miten ryhmät tuodaan."
@@ -4192,10 +4240,10 @@
         "Aloita antamalla organisaatiollesi nimi."
       ],
       "Track the status and activity of your referrals": [
-        "Seuraa suositustesi tilaa ja tapahtumia"
+        "Seuraa suosittelujesi tilaa ja toimintaa"
       ],
       "Track the status and activity of your referrals.": [
-        "Seuraa suositustesi tilaa ja tapahtumia."
+        "Seuraa suosittelujesi tilaa ja toimintaa."
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Päivitä tilauksesi saadaksesi ${ activatePmUser }, toisen lyhyemmän ja helpommin muistettavan sähköpostiosoitten nykyisen lisäksi."
@@ -5088,6 +5136,9 @@
       "Added on ${ formattedDate }": [
         "Lisätty ${ formattedDate }"
       ],
+      "Cancel request?": [
+        "Peruuta pyyntö?"
+      ],
       "Change wait time": [
         "Muuta odotusaikaa"
       ],
@@ -5145,6 +5196,9 @@
       ],
       "Trusted contact": [
         "Luotettu yhteyshenkilö"
+      ],
+      "Upgrade": [
+        "Päivitä"
       ],
       "Upgrade to ${ planName }": [
         "Päivitä tilaukseen ${ planName }"
@@ -7029,11 +7083,17 @@
       "Servers": [
         "Palvelimet"
       ],
+      "Sort folders": [
+        "Lajittele kansiot"
+      ],
       "Status": [
         "Tila"
       ],
       "User": [
         "Käyttäjä"
+      ],
+      "Username": [
+        "Käyttäjätunnus"
       ]
     },
     "Header for addresses table": {
@@ -7791,6 +7851,18 @@
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Hanki ${ BRAND_NAME }-osoite** käyttääksesi kaikkia ${ BRAND_NAME_TWO }-palveluita, kuten ${ MAIL_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }."
       ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Kutsu kaverisi** ${ BRAND_NAME }:iin suosittelulinkilläsi."
+      ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Vaihe 1:** Kutsu kaverisi ${ BRAND_NAME }:iin suosittelulinkilläsi."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Vaihe 2:** Kaverisi saavat kahden viikon ilmaisen tilauksen."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Vaihe 3:** Ansaitse ${ referrerRewardAmount } krediitteinä jokaista tilauksen hankkivaa kaveria kohden."
+      ],
       "**Sync codes** to all your devices": [
         "**Synkronoi koodit** kaikkiin laitteisiisi"
       ],
@@ -7861,6 +7933,9 @@
       ],
       "Account successfully updated": [
         "Tili on päivitetty"
+      ],
+      "Accounts": [
+        "Tilit"
       ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktivoi tiedoillesi ainakin palautustapa, jolla varmistat pääsysi ${ BRAND_NAME }-tilisi sisältöön, jos kadotat salasanasi."
@@ -8233,7 +8308,7 @@
         "Kopioi ehdotettu salasana leikepöydälle"
       ],
       "Copy your referral link": [
-        "Kopioi suosituslinkkisi"
+        "Kopioi suosittelulinkkisi"
       ],
       "Country code": [
         "Maakoodi"
@@ -8660,6 +8735,9 @@
       "Get ${ upsellPlanName }": [
         "Hanki ${ upsellPlanName }"
       ],
+      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
+        "Ansaitse **${ referrerRewardAmount } krediittiä** jokaista tilauksen hankkivaa kaveria kohden."
+      ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Saat pääsyn luomalla ${ BRAND_NAME } -tilin ja hyväksymällä kutsun."
       ],
@@ -8672,11 +8750,14 @@
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Vastaanota ilmoituksia, jos salasanasi tai muita henkilökohtaisia tietojasi on vuotanut. ${ learnMoreLinkNoBreach }"
       ],
+      "Get started with the referral link above.": [
+        "Aloita yllä olevalla suosittelulinkillä."
+      ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Anna tunnisteelle kuvaava nimi, kuten sen kanssa käyttämäsi palvelun nimi ja valitse jokin aktiivisista omaa verkkotunnustasi käyttävistä osoitteista. Vain tästä osoitteesta voidaan lähettää viestejä tällä tunnisteella."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
-        "Anna julkinen avaimesi ystävillesi tai julkaise se verkossa, jotta kuka tahansa voi lähettää sinulle päästä päähän -salattuja sähköposteja!"
+        "Anna julkinen avaimesi kavereillesi tai julkaise se verkossa, jotta kuka tahansa voi lähettää sinulle päästä päähän -salattuja sähköposteja!"
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Nouda ${ appName }:n SAML-metatiedot identiteetintarjoajastasi ja tuo ne tähän."
@@ -8960,7 +9041,7 @@
         "Vahvista vain valintasi niin me teemme loput."
       ],
       "Just send them your personal referral link.": [
-        "Lähetä heille vain henkilökohtainen suosituslinkkisi."
+        "Lähetä heille henkilökohtainen suosittelulinkkisi."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Suojaa tietosi paremmin ja vahvista niiden yksityisyyttä näillä oppailla ja vinkeillä."
@@ -9466,7 +9547,7 @@
         "Palautuslauseketta ei ole liitetty vanhentuneisiin avaimiin."
       ],
       "Referral link copied to your clipboard": [
-        "Suosituslinkki kopioitiin leikepöydälle"
+        "Suosittelulinkki kopioitiin leikepöydälle"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sivun päivitys tai ${ link } korjaa useimmat ongelmat automaattisesti."
@@ -9630,6 +9711,9 @@
       ],
       "Show original message": [
         "Näytä alkuperäinen viesti"
+      ],
+      "Sign in only": [
+        "Vain sisäänkirjautuminen"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Aktivoi osoitteesi kirjautumalla ${ MAIL_APP_NAME }iin"
@@ -10826,6 +10910,9 @@
       "Donation": [
         "Lahjoitus"
       ],
+      "Manual": [
+        "Manuaalinen"
+      ],
       "Modification": [
         "Muutos"
       ],
@@ -11657,6 +11744,9 @@
       "Email address": [
         "Sähköpostiosoite"
       ],
+      "Email categories": [
+        "Sähköpostikategoriat"
+      ],
       "Email or username": [
         "Sähköpostiosoite tai käyttäjätunnus"
       ],
@@ -12385,7 +12475,7 @@
         "Salasanasi (ylläpitäjä)"
       ],
       "Your referral link": [
-        "Suosituslinkkisi"
+        "Suosittelulinkkisi"
       ],
       "ZIP code": [
         "Postinumero"
@@ -13012,8 +13102,14 @@
       "Detach from SSO": [
         "Erota SSO:sta"
       ],
+      "Disable user": [
+        "Poista käyttäjä käytöstä"
+      ],
       "Edit": [
         "Muokkaa"
+      ],
+      "Enable user": [
+        "Ota käyttäjä käyttöön"
       ],
       "Remove": [
         "Poista"
@@ -14076,6 +14172,9 @@
       "Downgrade account?": [
         "Alennetaanko tili?"
       ],
+      "Review subscription": [
+        "Tarkastele tilausta"
+      ],
       "Review subscription and pay": [
         "Tarkista tilaus ja maksa"
       ],
@@ -14700,6 +14799,9 @@
       "Custom email domain": [
         "Oma sähköpostiverkkotunnus"
       ],
+      "Edit docs online": [
+        "Muokkaa dokumentteja verkossa"
+      ],
       "Email addresses": [
         "Sähköpostiosoitteet"
       ],
@@ -15034,6 +15136,11 @@
         "Lataa sisältö välityspalvelimen kautta ja säilytä liitteinä"
       ]
     },
+    "Organization": {
+      "Organization": [
+        "Organisaatio"
+      ]
+    },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
         "Lisää käyttäjiä ${ upgradeLink } tai poista joitakin käyttäjätilejä vapauttaaksesi tilaa."
@@ -15151,6 +15258,12 @@
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Aloita ${ PASS_APP_NAME } -sovelluksen käyttö"
+      ]
+    },
+    "Pass signup: info": {
+      "${ n } month": [
+        "${ n } kuukausi",
+        "${ n } kuukautta"
       ]
     },
     "pass_lifetime_signup: Info": {
@@ -15775,6 +15888,9 @@
       "Add ABN": [
         "Lisää ABN"
       ],
+      "Add Business Number": [
+        "Lisää yritystunnus"
+      ],
       "Add EIN": [
         "Lisää EIN"
       ],
@@ -15784,8 +15900,14 @@
       "Business Number": [
         "Yritystunnus"
       ],
+      "Edit ABN": [
+        "Muokkaa ABT-tunnusta"
+      ],
       "Edit Business Number": [
         "Muokkaa yritystunnusta"
+      ],
+      "Edit EIN": [
+        "Muokkaa EIN-tunnusta"
       ],
       "Edit VAT number": [
         "Muokkaa ALV-numeroa"
@@ -16215,6 +16337,12 @@
       ]
     },
     "RecoveryPhrase: Info": {
+      "Download PDF": [
+        "Lataa PDF"
+      ],
+      "download PDF": [
+        "lataa PDF"
+      ],
       "I understand that if I lose my recovery phrase, I may permanently lose access to my account.": [
         "Ymmärrän, että jos kadotan palautuslauseeni, voin menettää pääsyn tililleni pysyvästi."
       ]
@@ -16225,6 +16353,29 @@
       ],
       "Save your recovery phrase": [
         "Tallenna palautuslauseesi"
+      ]
+    },
+    "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } suosittelua kohden"
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Jos et peruuta,** täysi tilauksesi alkaa ja saat **${ referrerRewardAmount }** krediitteinä."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Jos tilaat ennen tätä päivämäärää,** ansaitset **${ referrerRewardAmount }** krediitteinä."
+      ],
+      "Invite friends. Get credits.": [
+        "Kutsu kavereita. Hanki krediittejä."
+      ],
+      "Refer friends": [
+        "Kerro kavereille"
+      ],
+      "Start earning credits": [
+        "Aloita krediittien ansaitseminen"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Voit ansaita jopa **${ maxRewardAmount }** krediitteinä."
       ]
     },
     "Remark about a key type option": {
@@ -16375,6 +16526,9 @@
       "Group": [
         "Ryhmä"
       ],
+      "Purge all messages": [
+        "Poista kaikki viestit"
+      ],
       "Purge deleted messages only": [
         "Tyhjennä vain poistetut viestit"
       ],
@@ -16399,6 +16553,11 @@
     "retention_policy_2025_TableHeader": {
       "Action": [
         "Toiminto"
+      ]
+    },
+    "retention_policy_2025_Title": {
+      "Edit retention rule": [
+        "Muokkaa säilytyssääntöä"
       ]
     },
     "Role": {
@@ -16428,6 +16587,9 @@
       "Account safety review": [
         "Tilisi turvallisuuskatsaus"
       ],
+      "Add a phone number": [
+        "Lisää puhelinnumero"
+      ],
       "Add a recovery email": [
         "Lisää palautusosoite"
       ],
@@ -16436,6 +16598,9 @@
       ],
       "Add a recovery phone number": [
         "Lisää palautusnumero"
+      ],
+      "Add an email": [
+        "Lisää sähköpostiosoite"
       ],
       "Back to Safety Review": [
         "Takaisin turvallisuuskatsaukseen"
@@ -17342,6 +17507,9 @@
         "${ PASS_PLUS_VAULTS } holvi salasanoillesi",
         "${ PASS_PLUS_VAULTS } holvia salasanoillesi"
       ],
+      "${ referrerName } is inviting you to try ${ BRAND_NAME }.": [
+        "${ referrerName } kutsuu sinut kokeilemaan ${ BRAND_NAME }."
+      ],
       "${ value } of secure storage": [
         "${ value } turvallista tallennustilaa"
       ],
@@ -17378,6 +17546,9 @@
       "30 custom email addresses": [
         "30 mukautettua sähköpostiosoitetta"
       ],
+      "4.8+ rating": [
+        "4,8+ arvosana"
+      ],
       "Advanced account protection": [
         "Edistynyt tilin suojaus"
       ],
@@ -17392,6 +17563,9 @@
       ],
       "Block ads, trackers, and malware": [
         "Estä mainoksia, seurantoja ja haittaohjelmia"
+      ],
+      "Bundle": [
+        "Kokoelma"
       ],
       "Compare plans": [
         "Vertaile tilauksia"
@@ -17420,8 +17594,11 @@
       "Free": [
         "Ilmainen"
       ],
-      "Get a secure one from us, or ${ internalButton }": [
-        "Hanki meiltä turvallinen, tai ${ internalButton }"
+      "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
+        "Ansaitset ${ referralInfo.uiData.refereeRewardAmount } krediitteinä"
+      ],
+      "Gifted by **${ referrerName }**": [
+        "Lahjoittanut **${ referrerName }**"
       ],
       "Highest VPN speed": [
         "Korkein VPN-nopeus"
@@ -17489,6 +17666,9 @@
       ],
       "Stream your favorite TV shows and movies": [
         "Suoratoista suosikki TV-ohjelmiasi ja elokuviasi"
+      ],
+      "Swiss-based": [
+        "Sveitsiläinen"
       ],
       "The organization name will be visible to your users while they are signed in.": [
         "Yrityksen nimi näkyy käyttäjillesi, kun he ovat kirjautuneena."
@@ -17771,6 +17951,9 @@
       "Increase your storage": [
         "Lisää tallennustilaasi"
       ],
+      "Keep passwords safe": [
+        "Pidä salasanat turvassa"
+      ],
       "Upgrade": [
         "Päivitä tilaus"
       ],
@@ -17879,8 +18062,11 @@
       ]
     },
     "Spotlight": {
+      "Earn up to ${ maxRewardAmount } in credit": [
+        "Ansaitse jopa ${ maxRewardAmount } krediitteinä"
+      ],
       "Get up to ${ credits } in credits.": [
-        "Ansaitse jopa ${ credits } krediittiä."
+        "Ansaitse jopa ${ credits } krediitteinä."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Kutsu kavereita ${ BRAND_NAME }iin"
@@ -18811,6 +18997,9 @@
       ]
     },
     "Subtitle": {
+      "Free forever": [
+        "Pysyvästi ilmainen"
+      ],
       "View VPN session details for your organization.": [
         "Tarkastele organisaatiosi VPN-istunnon tietoja."
       ]
@@ -19759,6 +19948,9 @@
       "Desktop": [
         "Työpöytä"
       ],
+      "Details": [
+        "Lisätiedot"
+      ],
       "Device": [
         "Laite"
       ],
@@ -19867,6 +20059,9 @@
       "Email breaches": [
         "Sähköpostimurrot"
       ],
+      "Email categories": [
+        "Sähköpostikategoriat"
+      ],
       "Email composer": [
         "Sähköpostin kirjoitusikkuna"
       ],
@@ -19964,6 +20159,9 @@
       "Forward emails": [
         "Ohjaa viestit"
       ],
+      "Free": [
+        "Free"
+      ],
       "Gateway": [
         "Yhdyskäytävä"
       ],
@@ -20011,6 +20209,9 @@
       ],
       "Gift code": [
         "Lahjakoodi"
+      ],
+      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
+        "Anna ${ refereeRewardAmount } ja kaksi viikkoa ilmaiseksi. Ansaitset ${ referrerRewardAmount } krediittiä."
       ],
       "Group": [
         "Ryhmä"
@@ -20095,7 +20296,7 @@
         "Kutsut"
       ],
       "Invite friends. Get credits.": [
-        "Kutsu ystäviä. Hanki krediittejä."
+        "Kutsu kavereita. Hanki krediittejä."
       ],
       "Invoices": [
         "Laskut"
@@ -20724,6 +20925,9 @@
       ],
       "Your recovery status": [
         "Palautustilasi"
+      ],
+      "Your referrals": [
+        "Suosittelusi"
       ],
       "Your shorter address is now ready": [
         "Lyhyempi osoittesi on nyt valmis"
@@ -21494,6 +21698,9 @@
       "Private": [
         "Yksityinen"
       ],
+      "Security key": [
+        "Suojausavain"
+      ],
       "SSO": [
         "Kertakirjautuminen"
       ],
@@ -21548,6 +21755,11 @@
       ],
       "Set secure passwords without the hassle.": [
         "Aseta turvallisia salasanoja vaivatta."
+      ]
+    },
+    "VPN Gateways": {
+      "VPN Gateways": [
+        "VPN-yhdyskäytävät"
       ]
     },
     "VPN info": {

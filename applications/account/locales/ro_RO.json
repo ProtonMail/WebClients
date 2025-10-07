@@ -14132,8 +14132,14 @@
       "Detach from SSO": [
         "Detașare de la autentificare unică (SSO)"
       ],
+      "Disable user": [
+        "Dezactivare utilizator"
+      ],
       "Edit": [
         "Editare"
+      ],
+      "Enable user": [
+        "Activare utilizator"
       ],
       "Remove": [
         "Eliminare"
@@ -17314,7 +17320,7 @@
         "Număr de telefon"
       ],
       "Please describe the problem and include any error messages": [
-        "Descrieți problema incluzând și mesajele de eroare ce apar"
+        "Descrieți problema incluzând și mesajele de eroare care apar."
       ],
       "Please insert link first": [
         "Introduceți mai întâi legătura"
@@ -17750,6 +17756,9 @@
       ],
       "Invite friends. Get credits.": [
         "Invitați persoane. Obțineți credite."
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Ultima șansă de a explora toate funcțiile puternice pe care le oferă **${ planTitle }**."
       ],
       "Refer friends": [
         "Recomandați persoane"
@@ -19210,9 +19219,6 @@
       "get a secure ${ MAIL_APP_NAME } address.": [
         "obțineți o adresă ${ MAIL_APP_NAME } securizată."
       ],
-      "Get a secure one from us, or ${ internalButton }": [
-        "Obțineți unul securizat de la noi sau ${ internalButton }"
-      ],
       "Gifted by **${ referrerName }**": [
         "Oferit de **${ referrerName }**"
       ],
@@ -19486,7 +19492,7 @@
         "Sincronizare dispozitiv"
       ],
       "Email aliases": [
-        "Aliasuri e-mail"
+        "Aliasuri de e-mail"
       ],
       "Email, calendar, password manager, and VPN included": [
         "E-mail, calendar, manager de parole și VPN incluse"
@@ -21008,6 +21014,12 @@
       ],
       "User deleted": [
         "Utilizator șters"
+      ],
+      "User disabled": [
+        "Utilizatorul a fost dezactivat."
+      ],
+      "User enabled": [
+        "Utilizatorul a fost activat."
       ]
     },
     "Success message after sorting folders": {
