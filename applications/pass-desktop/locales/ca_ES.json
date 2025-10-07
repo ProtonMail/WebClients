@@ -1163,7 +1163,7 @@
         "Els codis PIN no coincideixen"
       ],
       "Request timed out": [
-        "S'ha esgotat el temps d'espera"
+        "La sol·licitud ha caducat"
       ],
       "Requesting alias options failed": [
         "No s'han pogut sol·licitar les opcions d'àlies."
@@ -1636,7 +1636,7 @@
         "S'estan desxifrant les dades"
       ],
       "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
-        "És el nom de visualització per defecte per als àlies creats amb ${ domainDisplay } tret que el sobreescriu el nom a mostrar de l'àlies."
+        "És el nom per a mostrar predeterminat per als àlies creats amb ${ domainDisplay }, tret que el sobreescrigui el nom per a mostrar de l'àlies."
       ],
       "Deleted items will be moved here first": [
         "Els elements eliminats es mouran aquí primer"
@@ -1926,6 +1926,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "S'estan movent tots els elements de «${ payload.content.name }»"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
+        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -2286,7 +2290,7 @@
         "El registre de canvis es pot trobar ${ changelogLink }."
       ],
       "The display name when sending an email from this alias.": [
-        "Aquest és el nom a mostrar quan s'envia un missatge des d'aquest àlies."
+        "Aquest és el nom per a mostrar quan s'envia un missatge des d'aquest àlies."
       ],
       "The export will only contain vaults that you own.": [
         "L'exportació només contindrà les caixes fortes de la vostra propietat."
@@ -2510,7 +2514,7 @@
         "Necessiteu una caixa forta amb permís d'edició abans de poder importar elements."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
-        "Podreu personalitzar la configuració del vostre domini (àlies de correu electrònic catch-all, nom a mostrar per defecte per als àlies, etc.) després de verificar el vostre domini."
+        "Podreu personalitzar la configuració del vostre domini (àlies de correu electrònic d'arreplega, nom per a mostrar predeterminat per als àlies, etc.) després de verificar-lo."
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Se us tancarà la sessió i haureu de tornar a iniciar-la en tots els altres dispositius."
@@ -2888,7 +2892,7 @@
         "Mostra"
       ],
       "Display name": [
-        "Nom a mostrar"
+        "Nom per a mostrar"
       ],
       "DNS": [
         "DNS"
@@ -4022,7 +4026,7 @@
         "Afegiu text"
       ],
       "Alias Display Name": [
-        "Nom a mostrar de l'àlies"
+        "Nom per a mostrar de l'àlies"
       ],
       "Coupon": [
         "Cupó"
@@ -4213,7 +4217,7 @@
         "S'ha actualitzat la bústia de correu per defecte."
       ],
       "Display name successfully updated": [
-        "S'ha actualitzat el nom a mostrar."
+        "S'ha actualitzat el nom per a mostrar."
       ],
       "Domain ownership verified. You can now set up MX record.": [
         "S'ha verificat la propietat del domini. Podeu configurar el registre MX."
@@ -4369,7 +4373,7 @@
         "Per defecte"
       ],
       "Default Display Name": [
-        "Nom a mostrar per defecte"
+        "Nom per a mostrar predeterminat"
       ],
       "Delete ${ deletedItemsCount } item?": [
         "Voleu eliminar ${ deletedItemsCount } element?",
