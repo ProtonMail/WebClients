@@ -318,6 +318,9 @@
       "Continue with Outlook": [
         "Працягнуць з Outlook"
       ],
+      "Continue without categories": [
+        "Працягнуць без катэгорый"
+      ],
       "Contract composer": [
         "Сціснуць рэдактар"
       ],
@@ -486,9 +489,6 @@
       "Download logs": [
         "Спампаваць журналы"
       ],
-      "Download now": [
-        "Спампаваць"
-      ],
       "Download the desktop app": [
         "Спампаваць праграму для камп'ютара"
       ],
@@ -607,10 +607,10 @@
         "Пераслаць як далучэнне"
       ],
       "Generate password": [
-        "Згенераваць пароль"
+        "Згенерыраваць пароль"
       ],
       "Generate text": [
-        "Згенераваць тэкст"
+        "Згенерыраваць тэкст"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Атрымаць ${ planName } за ${ priceCoupon }"
@@ -740,9 +740,6 @@
       ],
       "Import from Outlook": [
         "Імпартаваць з Outlook"
-      ],
-      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
-        "Даступны важныя абнаўленні. Для працягу выкарыстання праграмы, вам неабходна абнавіць яе да апошняй версіі. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Раніцай"
@@ -1435,7 +1432,7 @@
         "Не пазначаць як прачытанае"
       ],
       "Stop moving to Archive": [
-        "Спыніць перамяшчэнне ў Архіў"
+        "Спыніць перамяшчэнне ў архіў"
       ],
       "Stop moving to Trash": [
         "Спыніць перамяшчэнне ў сметніцу"
@@ -1506,6 +1503,9 @@
       "Try another method": [
         "Паспрабуйце іншы спосаб"
       ],
+      "Try categories": [
+        "Паспрабуйце катэгорыі"
+      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Паспрабуйце захаваць яшчэ раз пазней. Не ўдалося выканаць аперацыю з прычыны: ${ saveError }"
       ],
@@ -1565,9 +1565,6 @@
       ],
       "Upgrade for 200GB": [
         "Палепшыць да 200 ГБ"
-      ],
-      "Upgrade Now": [
-        "Палепшыць"
       ],
       "Upgrade now": [
         "Палепшыць зараз"
@@ -1667,15 +1664,6 @@
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам",
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам",
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам"
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "Ваш бясплатны пробны перыяд праграмы для камп'ютара завершыцца праз 2 дні. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "Ваш бясплатны пробны перыяд праграмы для камп'ютара завершыцца праз 5 дзён. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "Ваш бясплатны пробны перыяд праграмы для камп'ютара завершыцца ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Ваш памочнік у напісанні электронных лістоў"
@@ -2769,7 +2757,7 @@
         "Дадайце праграму ${ LUMO_APP_NAME }"
       ],
       "High-speed chats and advanced AI features.": [
-        "Высокахуткасныя чаты і перадавыя функцыі ШІ."
+        "Высакахуткасныя чаты і перадавыя функцыі ШІ."
       ]
     },
     "color": {
@@ -2979,7 +2967,7 @@
         "Зашыфравана скразным метадам"
       ],
       "End-to-end encrypted to verified recipient": [
-        "Зашыфравана скразным метадам для праверанага атрымальніка"
+        "Зашыфравана скразным метадам для спраўджанага атрымальніка"
       ],
       "End-to-end encrypted. ${ warningsText }": [
         "Зашыфравана скразным метадам. ${ warningsText }"
@@ -2988,7 +2976,7 @@
         "Зашыфравана з дапамогай PGP"
       ],
       "PGP-encrypted to verified recipient": [
-        "Зашыфравана з дапамогай PGP для праверанага атрымальніка"
+        "Зашыфравана з дапамогай PGP для спраўджанага атрымальніка"
       ],
       "PGP-encrypted. ${ warningsText }": [
         "Зашыфравана з дапамогай PGP. ${ warningsText }"
@@ -5357,7 +5345,7 @@
         "Кіраванне псеўданімамі можа быць завершана толькі ў ${ PASS_APP_NAME }, калі дадатковы пароль уключаны."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
-        "У вас пакуль няма кантактаў. Пачніце са стварэння новага кантакта"
+        "У вас пакуль няма кантактаў. Пачніце са стварэння новага кантакту"
       ]
     },
     "Error notification": {
@@ -5973,7 +5961,7 @@
         "Абнавіце вашы запісы ўваходу"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
-        "Выкарыстоўваючы мабільны тэлефон, адсканіруйце гэты QR-код або наведайце краму iOS або Android."
+        "Выкарыстоўваючы мабільную прыладу, адсканіруйце гэты QR-код або наведайце краму iOS або Android."
       ],
       "We stop advertisers and data collectors from profiling you.": [
         "Мы не дазваляем рэкламадаўцам і зборшчыкам даных фарміраваць ваш профіль."
@@ -6338,7 +6326,7 @@
     },
     "Import instructions": {
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
-        "У залежнасці ад вашага пастаўшчыка паслуг электроннай пошты, спачатку вам можа спатрэбіцца згенераваць ${ knowledgeBaseLink } перад імпартаваннем у ${ BRAND_NAME }."
+        "У залежнасці ад вашага пастаўшчыка паслуг электроннай пошты, спачатку вам можа спатрэбіцца згенерыраваць ${ knowledgeBaseLink } перад імпартаваннем у ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Разгарніце выпадное меню, націснуўшы на 3 кропкі (...)."
@@ -6863,7 +6851,7 @@
         "Бяспечнае падключэнне неабходна пры аддаленай працы. VPN абараняе даныя кампаніі ад кіберпагроз і захоўвае прыватнасць вашай працы."
       ],
       "A user is an account associated with a single username, mailbox, and person": [
-        "Карыстальнік - гэта ўліковы запіс, звязаны з асобным імем карыстальніка, паштовай скрыняй і асобай"
+        "Карыстальнік - гэта ўліковы запіс, які звязаны з асобным імем карыстальніка, паштовай скрыняй і асобай"
       ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
         "VPN шыфруе ваша падключэнне і хавае ваш IP-адрас. Гэта вельмі ўскладняе адсочванне або назеранне прагляду вэб-старонак для любых зацікаўленых структур."
@@ -7114,8 +7102,11 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Не можаце ўспомніць свой пароль? Мы можам дапамагчы ачысціць даныя ўсіх кантактаў, якія былі зашыфраваны гэтым ключом і такім чынам адхіліць гэту абвестку."
       ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Катэгорыі працуюць як фільтры спаму. ${ MAIL_APP_NAME } ніколі не чытае вашы лісты і не абагульвае ніякія даныя."
+      ],
       "Categories work like spam filters. We only look for patterns in unencrypted header and technical data. We do not read email content, share your data, or infringe on your privacy.": [
-        "Катэгорыі працуюць як фільтры спаму. Шаблоны шукаюцца толькі ў незашыфраваных загалоўках і тэхнічных даных. Змесціва ліста не чытаецца, вашы даныя не абагульваюцца і не парушаецца ваша прыватнасць."
+        "Катэгорыі працуюць як фільтры спаму. Шаблоны шукаюцца толькі ў незашыфраваных загалоўках і тэхнічных даных. Змесціва ліста не чытаецца, ніякія даныя не абагульваюцца і не парушаецца ваша прыватнасць."
       ],
       "Center": [
         "Па цэнтры"
@@ -7505,7 +7496,7 @@
         "Ад"
       ],
       "Generate text": [
-        "Згенераваць тэкст"
+        "Згенерыраваць тэкст"
       ],
       "Geoblocking": [
         "Геаблакіроўка"
@@ -7616,7 +7607,7 @@
         "Уключаць запыт і адказ, каб дапамагчы палепшыць дакладнасць."
       ],
       "Included for free with your plan": [
-        "Уваходзіць бясплатна ў ваш тарыфны план"
+        "Уваходзіць у ваш тарыфны план бясплатна"
       ],
       "Includes bills, receipts, orders, and bookings.": [
         "Уключае рахункі, квітанцыі, заказы і браніраванні."
@@ -7664,7 +7655,7 @@
         "Лепш за ўсё, каб у вас было:"
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
-        "Лепш за ўсё выкарыстоўваць VPN пастаянна, але воль калі пагрозы кібербяспекі могуць быць самымі высокімі:"
+        "Лепш за ўсё выкарыстоўваць VPN пастаянна, але тут прыведзены выпадкі калі пагрозы кібербяспекі могуць быць самымі высокімі:"
       ],
       "JCB logo": [
         "Лагатып JCB"
@@ -7679,7 +7670,7 @@
         "Захоўвайце запісы ўваходу і падрабязнасці крэдытных картак у бяспечным месцы, але заўсёды дасяжнымі для вас. Перанясіце паролі і іншыя асабістыя звесткі ў ${ PASS_APP_NAME }. Гэта абсалютна бясплатна і ўключана ў ваш уліковы запіс ${ BRAND_NAME }."
       ],
       "Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.": [
-        "Аўтаматычна выдаляйце са сметніцы спам і непатрэбныя электронныя лісты, якія знаходзяцца ў ёй больш за 30 дзён. Гэта функцыя дазволіць падтрымлівайце парадак у вашай паштовай скрыні."
+        "Аўтаматычна выдаляйце са сметніцы спам і непатрэбныя лісты, якія знаходзяцца ў ёй больш за 30 дзён. Гэта функцыя дазволіць падтрымліваць парадак у вашай паштовай скрыні."
       ],
       "Key fingerprint": [
         "Адбітак ключа"
@@ -7734,9 +7725,6 @@
       ],
       "Low Priority": [
         "Нізкі прыярытэт"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Зрабіць ${ MAIL_APP_NAME } вашай прадвызначанай праграмай электроннай пошты."
       ],
       "Manage your folders": [
         "Кіруйце сваімі папкамі"
@@ -8144,7 +8132,7 @@
         "Панэль Scribe"
       ],
       "Search option that lets you securely search for keywords in the body of email messages.": [
-        "Параметры пошуку, якія дазваляюць вам бяспечна шукаць па ключавых словах у целе паведамленняў электронных лістоў."
+        "Параметры пошуку, якія дазваляюць вам бяспечна шукаць па ключавых словах у целе лістоў."
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Пошук займае занадта шмат часу? ${ dropdownButton } або ${ toggleOffButton } з гэтага пошукавага сеанса."
@@ -8222,7 +8210,7 @@
         "Наладжванне вашага новага адраса…"
       ],
       "Shorten selection": [
-        "Скараціць выбар"
+        "Скараціць выбранае"
       ],
       "Shorten text": [
         "Скараціць тэкст"
@@ -8558,7 +8546,7 @@
         "Для таго, каб выкарыстоўваць праверку адраса вы павінны давяраць аднаму або некалькім з даступных публічных ключоў, уключаючы той, які вы хочаце выкарыстоўваць для адпраўкі. Гэта прадухіляе падробку ключоў шыфравання."
       ],
       "Tomorrow, ${ formattedTime }": [
-        "Заўтра у ${ formattedTime }"
+        "Заўтра ў ${ formattedTime }"
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Занадта шмат паведамленняў чакаюць адпраўкі. Пачакайце, пакуль адправіцца іншае паведамленне, каб запланаваць гэта."
@@ -8759,13 +8747,13 @@
         "Тыдзень"
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
-        "Калі вы хочаце, каб ваша паведамленне аўтаматычна выдалялася з паштовай скрыні атрымальніка і папкі з адпраўленымі лістамі ў вашай паштовай скрыні?"
+        "Калі вы хочаце, каб ваша паведамленне аўтаматычна выдалялася з паштовай скрыні атрымальніка і вашай папкі з адпраўленымі лістамі?"
       ],
       "When do you want your message to self-destruct?": [
         "Калі вы хочаце, каб ваша паведамленне было самазнішчана?"
       ],
       "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
-        "Пры перадачы сваёй электроннай пошты, выкарыстоўвайце ўнікальны аднаразовы псеўданім функцыі Hide-my-email, замест вашага рэальнага адраса электроннай пошты."
+        "Пры перадачы сваёй электроннай пошты, выкарыстоўвайце ўнікальны аднаразовы псеўданім функцыі Hide-my-email, замест свайго рэальнага адраса электроннай пошты."
       ],
       "When working remotely": [
         "Пры аддаленай працы"
@@ -8784,6 +8772,9 @@
       ],
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "Падключайцеся да ${ VPN_APP_NAME }, каб прадухіліць адсочванне вашай актыўнасці ў інтэрнэце або крадзеж вашых даных падчас падарожжаў або выкарыстання публічных сетак Wi-Fi. Гэта абсалютна бясплатна."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "З новымі катэгорыямі электроннай пошты толькі важныя паведамленні трапляюць у асноўную паштовую скрыню. Усё астатняе размяркоўваецца па катэгорыях."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Ці хочаце вы атрымаць новы праверачны код або скарыстацца альтэрнатыўным спосабам праверкі?"
@@ -8837,7 +8828,7 @@
         "Вы можаце абнавіць ваш пошукавы запыт або ${ button }"
       ],
       "You can either update your search query or clear it": [
-        "Вы можаце змяніць ваш пошукавы запыт або ачысціць яго"
+        "Вы можаце абнавіць свой пошукавы запыт або ачысціць яго"
       ],
       "You can import one data type at a time.": [
         "Вы можаце імпартаваць адзін тып даных за раз."
@@ -9450,7 +9441,7 @@
         "Дадаць URL-адрас відарыса"
       ],
       "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
-        "Дадавайце або выдаляйце катэгорыі. Наладжвайце або выключайце апавяшчэнні. Наладжвайце меню ${ menuIcon } у любы час."
+        "Дадавайце або выдаляйце катэгорыі. Задавайце або адключайце апавяшчэнні. Наладжвайце меню ${ menuIcon } у любы час."
       ],
       "Add to group": [
         "Дадаць у групу"
@@ -9726,10 +9717,10 @@
         "Ад: ${ fromEmail }"
       ],
       "Go to Forums": [
-        "Перайсці ў Форумы"
+        "Перайсці на форум"
       ],
       "Go to Newsletters": [
-        "Перайсці ў Рассылкі"
+        "Перайсці ў рассылкі"
       ],
       "Go to Primary": [
         "Перайсці ў Асноўныя"
@@ -9855,7 +9846,7 @@
         "Перамешчана ў ${ labelName }"
       ],
       "Moved to Archive": [
-        "Перамешчана ў Архіў"
+        "Перамешчана ў архіў"
       ],
       "Moved to Trash": [
         "Перамешчана ў сметніцу"
@@ -9882,7 +9873,7 @@
         "Метка не знойдзена"
       ],
       "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
-        "Цяпер вы больш не прапусціце важныя паведамленні! Яны цяпер адлюстроўваюцца ў раздзеле ${ primaryCopy }. Усё астатняе адсартавана па катэгорыях, таму іх лёгка знайсці і яны не захламляюць вашу паштовую скрыню."
+        "Цяпер вы больш не прапусціце важныя паведамленні! Цяпер яны адлюстроўваюцца ў раздзеле ${ primaryCopy }. Усё астатняе адсартавана па катэгорыях, таму іх лёгка знайсці і яны не захламляюць вашу паштовую скрыню."
       ],
       "No results found": [
         "Нічога не знойдзена"
@@ -10248,13 +10239,13 @@
     },
     "Labels": {
       "Newsletters or mailing lists you unsubscribe from will show up here.": [
-        "Скасаваныя вамі рассылкі або спісы з рассылкамі з'явяцца тут."
+        "Скасаваныя вамі падпіскі на рассылкі або на спісы рассылак з'явяцца тут."
       ],
       "You don't have any active newsletters or mailing list subscriptions.": [
         "У вас адсутнічаюць актыўныя рассылкі або падпіскі на спісы рассылкі."
       ],
       "You don't have any newsletters or mailing list subscriptions.": [
-        "У вас адсутнічаюць рассылкі або падпіскі на спісы рассылкі."
+        "У вас адсутнічаюць рассылкі або падпіскі на спісы рассылак."
       ]
     },
     "Landmarks": {
@@ -10325,10 +10316,10 @@
         "Уключыце адрас электроннай пошты, які звязаны з адключаным календаром для змянення вашага адказу."
       ],
       "Enable your address again to modify your answer.": [
-        "Уключыце ваш адрас яшчэ раз, каб змяніць свой адказ."
+        "Уключыце адрас яшчэ раз, каб змяніць свой адказ."
       ],
       "Enable your address to answer this invitation.": [
-        "Уключыце ваш адрас, каб адказаць на гэта запрашэнне."
+        "Уключыце свой адрас, каб адказаць на гэта запрашэнне."
       ],
       "Enforcing 2FA for organizations": [
         "Прымусовае ўключэнне 2ФА для арганізацый"
@@ -10451,7 +10442,7 @@
         "Зарэгіструйцеся бясплатна"
       ],
       "Snooze": [
-        "Адкладанне"
+        "Адкласці"
       ],
       "Snoozed": [
         "Адкладзена"
@@ -11279,6 +11270,9 @@
       "Share files with no size limit": [
         "Абагульванне файлаў без абмежавання памеру"
       ],
+      "Short domain (@pm.me)": [
+        "Кароткі дамен (@pm.me)"
+      ],
       "Sign in as user": [
         "Уваход у якасці карыстальніка"
       ],
@@ -11678,7 +11672,7 @@
         "Абараніце сваю сям'ю ад шкодных вэб-сайтаў і атрымайце доступ да нашых высакахуткасных сервераў VPN для прагляду абранага змесціва"
       ],
       "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
-        "Абараніце свой сапраўдны адрас электроннай пошты ад раскрыцця або ўцечкі з дапамогай псеўданімаў (адвольна згенераваных адрасоў электроннай пошты, якія перасылаюць лісты ў вашу асноўную паштовую скрыню)."
+        "Абараніце свой сапраўдны адрас электроннай пошты ад раскрыцця або ўцечкі з дапамогай псеўданімаў (адвольна згенерыраваных адрасоў электроннай пошты, якія перасылаюць лісты ў вашу асноўную паштовую скрыню)."
       ],
       "Provides the highest level of account security protection and specialist support": [
         "Забяспечвае найвышэйшы ўзровень бяспекі, а таксама адмысловую падтрымку"
@@ -12949,13 +12943,13 @@
         "Паведамленне зашыфравана з дапамогай PGP"
       ],
       "PGP-encrypted message from verified sender": [
-        "Паведамленне зашыфравана з дапамогай PGP ад праверанага адпраўніка"
+        "Паведамленне зашыфравана з дапамогай PGP ад спраўджанага адпраўніка"
       ],
       "PGP-signed message": [
         "Паведамленне падпісана з дапамогай PGP"
       ],
       "PGP-signed message from verified sender": [
-        "Паведамленне падпісана з дапамогай PGP ад праверанага адпраўніка"
+        "Паведамленне падпісана з дапамогай PGP ад спраўджанага адпраўніка"
       ],
       "PGP-signed message. Sender verification failed": [
         "Паведамленне падпісана з дапамогай PGP. Не ўдалося праверыць адпраўніка"
@@ -13206,7 +13200,7 @@
         "Зашыфравана ${ MAIL_APP_NAME } для праверанага атрымальніка PGP"
       ],
       "Encrypted by ${ MAIL_APP_NAME } to verified recipient": [
-        "Зашыфравана ${ MAIL_APP_NAME } для праверанага атрымальніка"
+        "Зашыфравана ${ MAIL_APP_NAME } для спраўджанага атрымальніка"
       ],
       "End-to-end encrypted": [
         "Зашыфравана скразным метадам"
@@ -13215,7 +13209,7 @@
         "Зашыфравана скразным метадам для атрымальніка PGP"
       ],
       "End-to-end encrypted to verified PGP recipient": [
-        "Зашыфравана скразным метадам для праверанага атрымальніка PGP"
+        "Зашыфравана скразным метадам для спраўджанага атрымальніка PGP"
       ],
       "End-to-end encrypted to verified recipient": [
         "Зашыфравана скразным метадам для спраўджанага атрымальніка"
@@ -13258,7 +13252,7 @@
         "Аднаўленне ўліковага запісу недаступна для састарэлых адрасных ключоў"
       ],
       "Please generate keys before you try to change your password": [
-        "Згенерыруйце ключы перад спробай змянення пароля"
+        "Згенерыруйце ключы перад спробай змяніць пароль"
       ]
     },
     "session_recovery:available:info": {
@@ -14540,7 +14534,7 @@
         "Адрас скапіяваны ў буфер абмену"
       ],
       "Address verification disabled": [
-        "Праверка адраса адключана"
+        "Спраўджанне адраса адключана"
       ],
       "Alias copied to clipboard": [
         "Псеўданім скапіяваны ў буфер абмену"
@@ -15389,6 +15383,9 @@
       "External encryption": [
         "Знешняе шыфраванне"
       ],
+      "Fewer distractions, more focus": [
+        "Менш фактараў, якія адцягваюць увагу і больш канцэнтрацыі"
+      ],
       "Filter for more focus": [
         "Фільтр для большай канцэнтрацыі"
       ],
@@ -15876,7 +15873,7 @@
         "Адкладанне"
       ],
       "Snooze message": [
-        "Адкладанне паведамлення"
+        "Адкласці паведамленне"
       ],
       "Snooze:": [
         "Адкладанне:"

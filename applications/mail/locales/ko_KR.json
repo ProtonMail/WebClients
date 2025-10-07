@@ -471,9 +471,6 @@
       "Download logs": [
         "다운로드 로그"
       ],
-      "Download now": [
-        "지금 다운로드"
-      ],
       "Download the desktop app": [
         "데스크톱 앱 다운로드"
       ],
@@ -725,9 +722,6 @@
       ],
       "Import from Outlook": [
         "Outlook에서 가져오기"
-      ],
-      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
-        "중요한 업데이트 사용이 가능합니다. 앱을 계속 사용하려면, 최신 버전으로 업데이트 하세요. ${ downloadUpdate }"
       ],
       "In the morning": [
         "아침"
@@ -1533,9 +1527,6 @@
       "Upgrade for 200GB": [
         "200GB로 업그레이드"
       ],
-      "Upgrade Now": [
-        "지금 업그레이드"
-      ],
       "Upgrade now": [
         "지금 업그레이드"
       ],
@@ -1631,15 +1622,6 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "vCard 파일을 ${ maxAttachments }개 이상 연락처로 보낼 수 없습니다"
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "회원님의 데스크톱 앱 무료 체험이 2일 내에 종료됩니다. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "회원님의 데스크톱 앱 무료 체험이 5일 내에 종료됩니다. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "회원님의 데스크톱 앱 무료 체험 기간이 ${ formattedEndDate }에 종료됩니다. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "나의 이메일 작성 도우미"
@@ -6107,10 +6089,10 @@
         "2단계 인증이 사용자의 외부 계정에 활성화되어 있습니다."
       ],
       "2-step verification is enabled in your external email account.": [
-        "2단계 인증이 사용자의 외부 이메일 계정에 활성화 되어있습니다."
+        "2단계 인증이 사용자의 외부 이메일 계정에 활성화 된 상태의 경우"
       ],
       "IMAP access is enabled in your external account.": [
-        "사용자의 외부 계정의 IMAP 접근이 활성화되었습니다."
+        "사용자 외부 계정의 IMAP 접근이 활성화되어 있는지 여부"
       ],
       "IMAP access is enabled in your Yahoo account.": [
         "IMAP 접근이 Yahoo 계정에 활성화 되어 있는지 확인하세요."
@@ -6128,16 +6110,16 @@
         "앱 비밀번호가 일치합니다. 일반적인 비밀번호를 사용하지 마십시오."
       ],
       "Your email account requires an app password to export your data.": [
-        "사용자의 이메일 계정이 데이터를 내보내기 위해 앱 패스워드가 필요합니다."
+        "사용자의 이메일 계정이 데이터를 내보내기 위해 앱 비밀번호가 필요한 경우"
       ],
       "Your email account requires one to export your data.": [
         "데이터를 내보내려면 이메일 계정이 필요합니다."
       ],
       "Your email address and app password are correct. Do not use your regular password.": [
-        "이메일 주소 및 앱 비밀번호가 일치하는지 확인하세요. 일반적인 비밀번호를 사용하지 마세요."
+        "이메일 주소 및 앱 비밀번호가 일치하는지 확인하세요. 평상시 로그인할 때 사용하는 비밀번호를 입력하지 마세요."
       ],
       "Your email address and password are correct.": [
-        "이메일 주소 및 비밀번호가 올바릅니다."
+        "이메일 주소 및 비밀번호가 올바른지 여부"
       ],
       "Your password is correct.": [
         "사용자의 비밀번호가 알맞습니다."
@@ -7026,7 +7008,7 @@
         "데스크톱 앱으로 더 빠르고 집중된 이메일 경험을 즐겨보세요."
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
-        "완전히 개인적이고 암호화된 통신을 보장합니다. 지금 귀하의 무료 ${ BRAND_NAME } 이메일 주소를 확보하세요."
+        "완전히 개인적이고 암호화된 통신을 보장합니다. 지금 무료 ${ BRAND_NAME } 이메일 주소를 받아보세요."
       ],
       "Enter the code from your authenticator app": [
         "인증 앱에서 코드를 입력하세요."
@@ -7321,9 +7303,6 @@
       ],
       "Low Priority": [
         "중요도 낮음"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME }을 기본 이메일 어플리케이션으로 설정하세요."
       ],
       "Manage your folders": [
         "폴더 관리"
@@ -8559,7 +8538,7 @@
         "무료 체험이 월간 구독으로 성공적으로 전환되었습니다. 회원님의 구독 갱신일은 ${ nextBillingDate }입니다."
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
-        "귀하의 하드웨어는 로컬에서 글쓰기 도우미를 실행하는 것을 지원하지 않습니다. 서버에서 실행해 보세요."
+        "사용자의 하드웨어가 로컬에서 글쓰기 도우미를 실행하는 것을 지원하지 않습니다. 서버에서 실행해 보세요."
       ],
       "Your information was found on ${ displayedDate }": [
         "${ displayedDate }에 사용자의 정보가 발견되었습니다."
