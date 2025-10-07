@@ -447,9 +447,6 @@
       "Download logs": [
         "Naplók letöltése"
       ],
-      "Download now": [
-        "Letöltés most"
-      ],
       "Download the desktop app": [
         "Asztali alkalmazás letöltése"
       ],
@@ -695,9 +692,6 @@
       ],
       "Import from Outlook": [
         "Importálás az Outlookból"
-      ],
-      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
-        "Fontos frissítés érhető el. Az alkalmazás használatának folytatásához, kérjük frissítsen a legfrissebb verzióra. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Reggel"
@@ -1480,9 +1474,6 @@
       "Upgrade": [
         "Csomagváltás"
       ],
-      "Upgrade Now": [
-        "Váltás nagyobb csomagra"
-      ],
       "Upgrade now": [
         "Váltás nagyobb csomagra"
       ],
@@ -1579,15 +1570,6 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Egyszerre nem küldhet el több mint ${ maxAttachments } vCard névjegyfájlt",
         "Egyszerre nem küldhet el több mint ${ maxAttachments } vCard névjegyfájlt"
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "Az asztali alkalmazás ingyenes kipróbálásának 2 nap múlva vége. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "Az asztali alkalmazás ingyenes kipróbálásának 5 nap múlva vége. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "Az asztali alkalmazás ingyenes kipróbálásának vége: ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Az Ön e-mail író segédje"
@@ -7165,9 +7147,6 @@
       ],
       "Low Priority": [
         "Alacsony prioritású"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Tegye a ${ MAIL_APP_NAME }-t az alapértelmezett levelező programjává."
       ],
       "Manage your folders": [
         "Mappák kezelése"

@@ -316,6 +316,9 @@
       "Continue with Outlook": [
         "Outlook ile ilerle"
       ],
+      "Continue without categories": [
+        "Kategoriler olmadan ilerle"
+      ],
       "Contract composer": [
         "Oluşturucuyu küçült"
       ],
@@ -479,9 +482,6 @@
       ],
       "Download logs": [
         "Günlüğü indir"
-      ],
-      "Download now": [
-        "Şimdi indir"
       ],
       "Download the desktop app": [
         "Bilgisayar uygulamasını indirin"
@@ -734,9 +734,6 @@
       ],
       "Import from Outlook": [
         "Outlook üzerinden içe aktar"
-      ],
-      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
-        "Önemli bir güncelleme yayınlanmış. Uygulamayı kullanmayı sürdürmek için son sürüme güncelleyin. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Sabah"
@@ -1498,6 +1495,9 @@
       "Try another method": [
         "Başka bir yöntem deneyin"
       ],
+      "Try categories": [
+        "Kategorileri deneyin"
+      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Yeniden kaydetmeyi deneyin. Şu sorun nedeniyle kaydedilemedi: ${ saveError }"
       ],
@@ -1557,9 +1557,6 @@
       ],
       "Upgrade for 200GB": [
         "200GB boyutuna artırın"
-      ],
-      "Upgrade Now": [
-        "Şimdi yükselt"
       ],
       "Upgrade now": [
         "Şimdi yükselt"
@@ -1657,15 +1654,6 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "En fazla ${ maxAttachments } kişinin vCard dosyasını gönderebilirsiniz",
         "En fazla ${ maxAttachments } kişinin vCard dosyasını gönderebilirsiniz"
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "Bilgisayar uygulamasını ücretsiz deneme süreniz 2 gün sonra sona erecek. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "Bilgisayar uygulamasını ücretsiz deneme süreniz 5 gün sonra sona erecek. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "Bilgisayar uygulamasını ücretsiz deneme süreniz ${ formattedEndDate } tarihinde sona erecek. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "E-posta yazma yardımcınız"
@@ -6904,6 +6892,9 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Parolanızı hatırlayamıyor musunuz? Uyarıyı kaldırmak için bu anahtarla şifrelenmiş tüm kişilerin şifrelenmiş verilerini silmenize yardımcı olabiliriz."
       ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Kategoriler istenmeyen ileti süzgeçleri gibi çalışır. ${ MAIL_APP_NAME } e-postalarınızı asla okumaz veya verilerinizi paylaşmaz."
+      ],
       "Categories work like spam filters. We only look for patterns in unencrypted header and technical data. We do not read email content, share your data, or infringe on your privacy.": [
         "Kategoriler, istenmeyen süzgeçleri gibi çalışır. Yalnızca şifrelenmemiş üst bilgi ve teknik verilerdeki modellere bakarız. E-posta içeriğinizi okumayız, verilerinizi paylaşmayız ve gizliliğinize aykırı davranmayız."
       ],
@@ -7500,9 +7491,6 @@
       ],
       "Low Priority": [
         "Düşük Öncelik"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME } varsayılan e-posta uygulamanız olsun."
       ],
       "Manage your folders": [
         "Klasörlerinizi yönetin"
@@ -8538,6 +8526,9 @@
       ],
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "Seyahat ederken veya herkese açık Wi-Fi ağlarını kullanırken, çevrim içi etkinliğinizin izlenmesini veya verilerinizin çalınmasını önlemek için bağlantınızı ${ VPN_APP_NAME } ile kurun. Ücretsizdir."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "Yeni e-posta kategorileri ile, yalnızca önemli iletiler birincil gelen kutunuza düşer. Diğer her şey kategoriler halinde düzenlenir."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Yeni bir doğrulama kodu almak ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
@@ -14927,6 +14918,9 @@
       ],
       "External encryption": [
         "Dış şifreleme"
+      ],
+      "Fewer distractions, more focus": [
+        "Daha az dikkat dağınıklığı, daha iyi odaklanma"
       ],
       "Filter for more focus": [
         "Daha iyi odaklanmak için süzün"

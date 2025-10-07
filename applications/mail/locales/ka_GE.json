@@ -307,11 +307,17 @@
       "Continue import": [
         "შემოტანის გაგრძელება"
       ],
+      "Continue with categories": [
+        "კატეგორიებზე გაგრძელება"
+      ],
       "Continue with Google": [
         "Google-ით გაგრძელება"
       ],
       "Continue with Outlook": [
         "Outlook-ით გაგრძელება"
+      ],
+      "Continue without categories": [
+        "კაკრძელება კატეგორიების გარეშე"
       ],
       "Contract composer": [
         "რედაქტორის ფანჯრის შეკუმშვა"
@@ -378,6 +384,9 @@
       ],
       "Customize": [
         "მორგება"
+      ],
+      "Customize categories": [
+        "კატეგორიების მორგება"
       ],
       "Customize import": [
         "შემოტანის მორგება"
@@ -473,9 +482,6 @@
       ],
       "Download logs": [
         "ჟურნალის გადმოწერა"
-      ],
-      "Download now": [
-        "ახლა გადმოწერა"
       ],
       "Download the desktop app": [
         "გადმოწერეთ კომპიუტერის აპები"
@@ -729,9 +735,6 @@
       "Import from Outlook": [
         "Outlook-დან შემოტანა"
       ],
-      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
-        "ხელმისაწვდომია მნიშვნელოვანი განახლება. ამ აპის გამოყენების გასაგრძელებლად განახლდით უკანასკნელ ვერსიამდე. ${ downloadUpdate }"
-      ],
       "In the morning": [
         "დილით"
       ],
@@ -763,6 +766,9 @@
       "Invite members": [
         "წევრების მოწვევა"
       ],
+      "Is this private?": [
+        "ეს კონფიდენციალურია?"
+      ],
       "Italic": [
         "კურსივი"
       ],
@@ -771,6 +777,9 @@
       ],
       "Keep categories": [
         "კატეგორიების შენარჩუნება"
+      ],
+      "Keep inbox as before": [
+        "საფოსტო ყუთის დატოვება, როგორც იყო"
       ],
       "Keep my subscription": [
         "ჩემი გამოწერის შენარჩუნება"
@@ -1483,6 +1492,9 @@
       "Try another method": [
         "სხვა მეთოდის ცდა"
       ],
+      "Try categories": [
+        "კატეგორიების ცდა"
+      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "შენახვა კიდევ ერთხელ სცადეთ. შენახვის შეცდომის მიზეზი: ${ saveError }"
       ],
@@ -1542,9 +1554,6 @@
       ],
       "Upgrade for 200GB": [
         "აწევა 200გბ-მდე"
-      ],
-      "Upgrade Now": [
-        "ახლა გაუმჯობესება"
       ],
       "Upgrade now": [
         "ტარიფის განახლება"
@@ -1642,15 +1651,6 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "${ maxAttachments }-ზე მეტი კონტაქტის vCard-ის გაგზავნა შეუძლებელია",
         "${ maxAttachments }-ზე მეტი კონტაქტის vCard-ის გაგზავნა შეუძლებელია"
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "თქვენი კომპიუტერის აპის უფასო სატესტო ვერსია 2 დღეში დასრულდება. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "თქვენი კომპიუტერის აპის უფასო სატესტო ვერსია 5 დღეში დასრულდება. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "თქვენი კომპიუტერის აპის უფასო სატესტო ვერსიის დასრულების დროა ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "თქვენი ელფოსტის წერის დამხმარე"
@@ -1989,6 +1989,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "გამოსაცდელი პერიოდისას შეგიძლიათ ${ TRIAL_MAX_USERS } მომხმარებლის შექმნა."
+      ],
       "You cannot add custom domains during the trial period.": [
         "გამოსაცდელი პერიოდის მიმდინარეობისას თქვენს დომენებს ვერ დაამატებთ."
       ],
@@ -5024,6 +5027,11 @@
         "საფოსტო კოდი აუცილებელია"
       ]
     },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "შედით იგივე Gmail-ის მისამართით, რომლითაც პირველად"
+      ]
+    },
     "Error adding participants to a calendar event": {
       "At most ${ maxAttendees } participant is allowed per invitation": [
         "მოსაწვევში, მაქსიმუმ, ${ maxAttendees } მონაწილე შეიძლება იყოს",
@@ -7247,6 +7255,18 @@
       "Included for free with your plan": [
         "თქვენი სატარიფო გეგმა მას უფასოდ შეიცავს"
       ],
+      "Includes bills, receipts, orders, and bookings.": [
+        "შეიცავს გადახდებს, ინვოისებს, შეკვეთებს და ჯავშნებს."
+      ],
+      "Includes marketing emails like offers and product announcements.": [
+        "შეიცავს მარკეტინგის ელფოსტებს, როგორიცაა შეთავაზებები და ახალი პროდუქტის შეტყობინებები."
+      ],
+      "Includes news recaps and other non-promotional content. ": [
+        "შეიცავს სიახლეებს და სხვა არსარეკლამო შემცველობას. "
+      ],
+      "Includes updates from social networks and media-sharing sites.": [
+        "შეიცავს ატვირთვებს სოციალური ქსელებიდან და მედიის გაზიარების საიტებიდან."
+      ],
       "Inherited from parent folder": [
         "მემკვიდრეობით მშობელი საქაღალდისგან"
       ],
@@ -7349,9 +7369,6 @@
       ],
       "Low Priority": [
         "დაბალი პრიორიტეტი"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "დააყენეთ ${ MAIL_APP_NAME } თქვენს ნაგულისხმევ ელფოსტის აპლიკაციად."
       ],
       "Manage your folders": [
         "თქვენი საქაღალდეების მართვა"
@@ -8917,6 +8934,14 @@
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-ის მომხმარებელი"
+      ],
+      "${ count } unread conversation": [
+        "${ count } წაუკითხავი საუბარი",
+        "${ count } წაუკითხავი საუბარი"
+      ],
+      "${ count } unread message": [
+        "${ count } წაუკითხავი შეტყობინება",
+        "${ count } წაუკითხავი შეტყობინება"
       ],
       "${ n } month": [
         "${ n } თვე",
@@ -11403,6 +11428,9 @@
       "Finance": [
         "ფინანსები"
       ],
+      "Maybe later": [
+        "შესაძლოა მოგვიანებით"
+      ],
       "Privacy for all your online accounts": [
         "კონფიდენციალობა ყველა თქვენი ინტერნეტ-ანგარიშებისთვის"
       ],
@@ -11579,6 +11607,9 @@
       ],
       "Continue": [
         "გაგრძელება"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "ისიამოვნეთ უფასო ბიზნესის უსაფრთხოების ფუნქციებით თარიღამდე ${ trialEndsOnFormatted }."
       ],
       "help center": [
         "დახმარების ცენტრი"
@@ -11786,6 +11817,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "გამოსაცდელი ვადის (${ formattedDate }) გადასახდელი თანხა"
+      ],
       "Billing Country": [
         "გადახდის ქვეყანა"
       ],
@@ -11834,6 +11868,9 @@
       "Taxes": [
         "გადასახადები"
       ],
+      "terms and conditions": [
+        "პირობები და წესები"
+      ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "კუპონი გამოსადეგია ${ couponRedemptions }-ის განახლებისთვის.",
         "კუპონი გამოსადეგია ${ couponRedemptions }-ის განახლებისთვის."
@@ -11852,6 +11889,9 @@
       "This number will be shown on all future invoices": [
         "ეს რიცხვი ყველა მომავალ ინვოისზე გამოჩნდება"
       ],
+      "This offer is not available with your current plan.": [
+        "ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
+      ],
       "Timeout exceeded": [
         "მოლოდინის ვადა ამოიწურა"
       ],
@@ -11860,6 +11900,9 @@
       ],
       "VAT number": [
         "დღგ ნომერი"
+      ],
+      "You already have a subscription to this plan.": [
+        "თქვენ უკვე გაქვთ ეს სატარიფო გეგმა."
       ],
       "Your payment is still being processed": [
         "თქვენი გადახდა ჯერ კიდევ მუშავდება"
@@ -14279,6 +14322,9 @@
       "Block sender": [
         "გამომგზავნის დაბლოკვა"
       ],
+      "Built for privacy": [
+        "აგებულია კონფიდენციალობისთვის"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME } გამოწერის გაუქმება"
       ],
@@ -14371,6 +14417,9 @@
       ],
       "Customize categories": [
         "კატეგორიების მორგება"
+      ],
+      "Customize categories to fit your needs": [
+        "მოირგეთ კატეგორიები საჭიროებისამებრ"
       ],
       "Customize your mail import": [
         "თქვენი ელფოსტის შემოტანის მორგება"
@@ -14512,6 +14561,9 @@
       "External encryption": [
         "გარე შიფრაცია"
       ],
+      "Fewer distractions, more focus": [
+        "ნაკლები ყურადღების გადატანა, მეტი ფოკუსი"
+      ],
       "Filter for more focus": [
         "ფილტრი მეტი კონცენტრაციისთვის"
       ],
@@ -14602,6 +14654,9 @@
       ],
       "Insert contacts": [
         "კონტაქტების ჩასმა"
+      ],
+      "Introducing email categories": [
+        "წარმოგიდგენთ ელფოსტის კატეგორიებს"
       ],
       "Invalid verification code": [
         "შემოწმების არასწორი კოდი"
