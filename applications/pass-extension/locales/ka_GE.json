@@ -1069,6 +1069,12 @@
       "Passphrase is incorrect": [
         "საკვანძო ფრაზა არასწორია"
       ],
+      "Permission denied for ${ domainsJSX } website access.": [
+        "${ domainsJSX } ვებგვერდთან წვდომა აკრძალულია."
+      ],
+      "Permission denied for website access.": [
+        "ვებგვერდთან წვდომა აკრძალულია."
+      ],
       "PIN codes do not match": [
         "Pin-კოდები არ ემთხვევა"
       ],
@@ -1356,6 +1362,9 @@
       ],
       "Access successfully confirmed": [
         "წვდომა წარმატებით დადასტურდა"
+      ],
+      "access to ${ domains }.": [
+        "წვდომა დომენთან ${ domains }."
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "${ PASS_APP_NAME }-სთან წვდომას ყოველთვის დასჭირდება ${ BRAND_NAME }-ის პაროლი."
@@ -2344,6 +2353,9 @@
       ],
       "You may close this tab.": [
         "ახლა ეს ჩანართი შეგიძლიათ, დახუროთ."
+      ],
+      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+        "შეიძლება გჭირდებათ, მიანიჭოთ წვდომა ${ PASS_APP_NAME }-ს."
       ],
       "You need a vault with edit permission before you can import items.": [
         "ელემენტების შემოტანამდე გჭირდებათ საცავი, რომელზეც ჩასწორების წვდომა გაგაჩნიათ."
