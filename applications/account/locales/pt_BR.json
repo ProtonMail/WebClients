@@ -265,7 +265,7 @@
         "Escolher sua senha"
       ],
       "Claim ${ BRAND_NAME } address": [
-        "Confirmar endereço de ${ BRAND_NAME }"
+        "Reivindicar endereço da ${ BRAND_NAME }"
       ],
       "Claim it": [
         "Revindicar"
@@ -6748,7 +6748,7 @@
         "suporte ao cliente"
       ],
       "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
-        "Os planos familiares não suportam contas externas no momento. Crie um endereço para ${ BRAND_NAME } antes de participar.${ link }"
+        "Os planos familiares não suportam contas externas no momento. Crie um endereço para ${ BRAND_NAME } antes de participar. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Se aceitar o convite, seu plano atual será alterado e você receberá um crédito em sua conta com o saldo restante, se houver."
@@ -9945,6 +9945,9 @@
       "Open the guide for recommended actions and helpful links.": [
         "Abra o guia para ver as ações recomendadas e os links úteis."
       ],
+      "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
+        "Abra suas configurações do Safari para a extensão e verifique se as permissões do site estão ativadas para os domínios ${ BRAND_NAME }"
+      ],
       "or ${ selectFileButton }": [
         "ou ${ selectFileButton }"
       ],
@@ -10320,7 +10323,7 @@
         "Sessão expirada"
       ],
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "Define o ${ MAIL_APP_NAME } como seu aplicativo de e-mails padrão. O ${ MAIL_APP_NAME } será aberto automaticamente quando você clicar em um link de e-mail."
+        "Definir ${ MAIL_APP_NAME } como seu aplicativo de e-mails padrão. O ${ MAIL_APP_NAME } será aberto automaticamente quando você clicar em um link de e-mail."
       ],
       "Set password": [
         "Defina uma senha"
@@ -11125,6 +11128,9 @@
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Com um endereço criptografado da ${ BRAND_NAME }, você pode usar todos os serviços da ${ BRAND_NAME }."
+      ],
+      "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
+        "Com as categorias de e-mail, mensagens importantes chegam em uma caixa de entrada principal. Todo o resto é organizado em categorias."
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Com grupos, você pode rapidamente e facilmente enviar e-mails para todas as pessoas em um grupo específico."
@@ -13674,7 +13680,7 @@
         "Solicitar um convite"
       ],
       "Resume now": [
-        "Continuar agora"
+        "Retomar agora"
       ],
       "Set email address": [
         "Definir endereço de e-mail"
@@ -13989,8 +13995,14 @@
       "Detach from SSO": [
         "Remover do SSO"
       ],
+      "Disable user": [
+        "Desabilitar usuário"
+      ],
       "Edit": [
         "Editar"
+      ],
+      "Enable user": [
+        "Ativar usuário"
       ],
       "Remove": [
         "Remover"
@@ -14759,6 +14771,9 @@
       ],
       "Share files with no size limit": [
         "Compartilhe arquivos sem limite de tamanho"
+      ],
+      "Short domain (@pm.me)": [
+        "Domínio curto (@pm.me)"
       ],
       "Sign in as user": [
         "Início de sessão como usuário"
@@ -16826,7 +16841,7 @@
         "Estou comprando como empresa"
       ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Incluindo ${ taxRate }${ taxName }${ taxAmount }"
+        "Incluindo ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
       "Including ${ taxRate }% taxes: ${ taxAmount }": [
         "Incluindo ${ taxRate }% de impostos: ${ taxAmount }"
@@ -16839,6 +16854,9 @@
       ],
       "Offer unavailable": [
         "Oferta indisponível"
+      ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Forneça um método de pagamento para ativar a assinatura após o término da avaliação."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reative sua assinatura primeiro para diminuir o número de complementos."
@@ -16903,6 +16921,12 @@
       ],
       "VAT number": [
         "Número de IVA"
+      ],
+      "You already have a subscription to this plan.": [
+        "Você já assina este plano."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Você já assina este plano. Você pode mudar sua assinatura na ${ subscriptionPlatform }."
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Você será cobrado em ${ amountToCharge } no método de pagamento selecionado."
@@ -19078,9 +19102,6 @@
       "get a secure ${ MAIL_APP_NAME } address.": [
         "crie um endereço seguro do ${ MAIL_APP_NAME }."
       ],
-      "Get a secure one from us, or ${ internalButton }": [
-        "Obtenha um seguro conosco ou ${ internalButton }."
-      ],
       "Gifted by **${ referrerName }**": [
         "Oferecido por **${ referrerName }**"
       ],
@@ -20838,6 +20859,12 @@
       ],
       "User deleted": [
         "Usuário excluído"
+      ],
+      "User disabled": [
+        "Usuário desativado"
+      ],
+      "User enabled": [
+        "Usuário ativado"
       ]
     },
     "Success message after sorting folders": {
@@ -22778,6 +22805,9 @@
       ]
     },
     "Tooltip": {
+      "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
+        "Uma mudança no Gmail está impedindo o(a) ${ BRAND_NAME } de se conectar. Conceda permissão para restabelecer a funcionalidade do e-mail."
+      ],
       "Account is disconnected": [
         "A conta está desconectada"
       ],

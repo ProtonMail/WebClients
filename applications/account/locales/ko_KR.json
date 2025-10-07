@@ -7773,10 +7773,10 @@
         "2단계 인증이 사용자의 외부 계정에 활성화되어 있습니다."
       ],
       "2-step verification is enabled in your external email account.": [
-        "2단계 인증이 사용자의 외부 이메일 계정에 활성화 되어있습니다."
+        "2단계 인증이 사용자의 외부 이메일 계정에 활성화 된 상태의 경우"
       ],
       "IMAP access is enabled in your external account.": [
-        "사용자의 외부 계정의 IMAP 접근이 활성화되었습니다."
+        "사용자 외부 계정의 IMAP 접근이 활성화되어 있는지 여부"
       ],
       "IMAP access is enabled in your Yahoo account.": [
         "IMAP 접근이 Yahoo 계정에 활성화 되어 있는지 확인하세요."
@@ -7794,16 +7794,16 @@
         "앱 비밀번호가 일치합니다. 일반적인 비밀번호를 사용하지 마십시오."
       ],
       "Your email account requires an app password to export your data.": [
-        "사용자의 이메일 계정이 데이터를 내보내기 위해 앱 패스워드가 필요합니다."
+        "사용자의 이메일 계정이 데이터를 내보내기 위해 앱 비밀번호가 필요한 경우"
       ],
       "Your email account requires one to export your data.": [
         "데이터를 내보내려면 이메일 계정이 필요합니다."
       ],
       "Your email address and app password are correct. Do not use your regular password.": [
-        "이메일 주소 및 앱 비밀번호가 일치하는지 확인하세요. 일반적인 비밀번호를 사용하지 마세요."
+        "이메일 주소 및 앱 비밀번호가 일치하는지 확인하세요. 평상시 로그인할 때 사용하는 비밀번호를 입력하지 마세요."
       ],
       "Your email address and password are correct.": [
-        "이메일 주소 및 비밀번호가 올바릅니다."
+        "이메일 주소 및 비밀번호가 올바른지 여부"
       ],
       "Your password is correct.": [
         "사용자의 비밀번호가 알맞습니다."
@@ -9032,7 +9032,7 @@
         "데스크톱 앱으로 더 빠르고 집중된 이메일 경험을 즐겨보세요."
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
-        "완전히 개인적이고 암호화된 통신을 보장합니다. 지금 귀하의 무료 ${ BRAND_NAME } 이메일 주소를 확보하세요."
+        "완전히 개인적이고 암호화된 통신을 보장합니다. 지금 무료 ${ BRAND_NAME } 이메일 주소를 받아보세요."
       ],
       "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
         "비밀번호를 입력하여 ${ BRAND_NAME } 계정을 완료하고 모든 기기에서 ${ VPN_APP_NAME } 사용을 시작해 보세요!"
@@ -10502,7 +10502,7 @@
         "이 사용자와 관련된 데이터와 모든 이메일 주소가 영구적으로 삭제됩니다."
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
-        "사용자의 계정 및 계정에 연결된 모든 정보가 영구 삭제되며, 이 계정의 복구가 불가능합니다."
+        "사용자의 계정 및 계정과 연결된 모든 정보가 영구 삭제되며, 이 계정을 다시 활성화할 수 없게 됩니다."
       ],
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "이 작업은 **${ date }**에 사용자의 ${ BRAND_NAME } 계정에 로그인 시도한 기기 **${ name }**을(를) 거부합니다."
@@ -17505,7 +17505,7 @@
         "비밀번호를 재설정했기 때문에 현재 복구 키트는 비밀번호 재설정 전에 생성된 데이터만 복구하는 데 사용할 수 있습니다."
       ],
       "Can be used to regain access to your account and data": [
-        "계정 및 데이터에 다시 액세스하는 데 사용할 수 있습니다."
+        "계정 및 데이터에 다시 접근하는 데 사용할 수 있습니다."
       ],
       "Check account security": [
         "계정 보안 확인"
@@ -17628,7 +17628,7 @@
         "전화번호가 본인 것인지 확인하려면 ${ boldPhoneNumber }로 전송된 인증 코드를 입력합니다."
       ],
       "to prevent attackers from taking over your account": [
-        "타인에 의한 계정 탈취 방지를 위해"
+        "타인에 의한 계정 탈취 방지를 위해 권장되는 조치입니다."
       ],
       "to recover your account and data if you're ever locked out": [
         "짐금 상태에서도 내 계정 및 데이터를 복구할 수 있습니다."
@@ -18561,9 +18561,6 @@
       ],
       "get a secure ${ MAIL_APP_NAME } address.": [
         "안전한 ${ MAIL_APP_NAME } 주소 받기"
-      ],
-      "Get a secure one from us, or ${ internalButton }": [
-        "저희로부터 안전한 주소를 받으시거나 ${ internalButton }"
       ],
       "Gifted by **${ referrerName }**": [
         "**${ referrerName }**님으로 부터 받은 선물"
@@ -20701,7 +20698,7 @@
         "결제 주기"
       ],
       "Block trackers and malware": [
-        "트래커와 멀웨어를 차단합니다"
+        "트래커와 멀웨어를 차단하기"
       ],
       "Bridge for ${ platform }": [
         "${ platform }용 Bridge"
@@ -21814,7 +21811,7 @@
         "사용자의 계정에 이벤트가 없습니다."
       ],
       "There are no events yet for your organization.": [
-        "귀하의 조직에는 아직 일정이 없습니다."
+        "조직에 아직 일정이 없습니다."
       ],
       "There are no groups": [
         "그룹이 존재하지 않습니다."
