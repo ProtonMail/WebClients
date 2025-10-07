@@ -81,7 +81,7 @@
         "Afegeix una adreça externa"
       ],
       "add more seats": [
-        "Afegiu-hi més llicències"
+        "afegeix més llicències"
       ],
       "Add PayPal": [
         "Afegir PayPal"
@@ -411,7 +411,7 @@
         "Explora altres ${ BRAND_NAME } plans"
       ],
       "Explore other plans": [
-        "Exploreu altres plans"
+        "Explora altres plans"
       ],
       "Export": [
         "Exporta"
@@ -897,7 +897,7 @@
         "Inicia el xat en directe"
       ],
       "Start subscription": [
-        "Iniciar la subscripció"
+        "Inicia la subscripció"
       ],
       "Stay": [
         "Mantenir"
@@ -963,7 +963,7 @@
         "Millora a Business"
       ],
       "Upgrade to Professional": [
-        "Milloreu al pla Professional"
+        "Millora al pla Professional"
       ],
       "Upgrade your plan": [
         "Milloreu el vostre pla"
@@ -1147,16 +1147,16 @@
         "Genera les claus que falten per a l'adreça «${ emailAddress }»"
       ],
       "Grant permission": [
-        "Doneu-li permís"
+        "Dona permís"
       ],
       "Grant permission to “${ emailAddress }”": [
-        "Doneu permís a “${ emailAddress }“"
+        "Dona permís a “${ emailAddress }“"
       ],
       "Reconnect": [
-        "Torneu a connectar-vos"
+        "Torna a connectar"
       ],
       "Reconnect address “${ emailAddress }”": [
-        "Reconnecteu l'adreça «${ emailAddress }»"
+        "Reconnecta l'adreça «${ emailAddress }»"
       ],
       "Saving": [
         "S'està desant"
@@ -1406,7 +1406,7 @@
         "En fer clic a \"Prova\", accepteu els nostres ${ termsAndConditions }."
       ],
       "During the trial period, you can have up to 10 users.": [
-        "Durant el període de prova podreu tenir fins a 10 usuaris."
+        "Durant el període de prova, podreu tenir fins a 10 usuaris."
       ],
       "free for ${ TRIAL_DURATION_DAYS } days": [
         "gratuït durant ${ TRIAL_DURATION_DAYS } dies"
@@ -1447,7 +1447,7 @@
         "Import a pagar després de la prova"
       ],
       "Amount due now": [
-        "Import a pagar ara"
+        "Import pendent de pagament"
       ]
     },
     "b2b_trials_Action": {
@@ -1741,7 +1741,7 @@
         "Protegiu tota la vostra casa amb 1 dispositiu"
       ],
       "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN2024] }.": [
-        "Gaudiu de transmissió en continu des de les principals plataformes amb ${ PLAN_NAMES[PLANS.VPN2024] }."
+        "Feu estríming de les principals plataformes amb ${ PLAN_NAMES[PLANS.VPN2024] }."
       ],
       "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
         "Aquest article s'ha actualitzat per incloure els protocols VPN WireGuard i Stealth."
@@ -3947,7 +3947,7 @@
         "Procés anul·lat"
       ],
       "Request timed out": [
-        "S'ha esgotat el temps d'espera"
+        "La sol·licitud ha caducat"
       ],
       "Signature verification failed": [
         "No s'ha pogut verificar la signatura."
@@ -4681,7 +4681,7 @@
     },
     "Features: Tooltip": {
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere": [
-        "Accediu al contingut dels serveis de reproducció en continu com ara Netflix, Disney+, Prime Video i altres, des de qualsevol lloc"
+        "Accediu al contingut dels serveis d'estríming, com ara Netflix, Disney+, Prime Video i altres, des de qualsevol lloc"
       ],
       "Protects you from ads, trackers, and malware on websites and apps": [
         "Us protegeix d'anuncis, rastrejadors i programari maliciós en llocs web i aplicacions"
@@ -5788,10 +5788,10 @@
         "Es requereix la vostra atenció"
       ],
       "Authenticator app 2FA disabled": [
-        "Aplicació d'autenticació 2FA desactivada"
+        "S'ha desactivat l'aplicació d'autenticació 2FA"
       ],
       "Authenticator app 2FA enabled": [
-        "S'ha habilitat l'aplicació autenticadora 2FA"
+        "S'ha habilitat l'aplicació d'autenticació 2FA"
       ],
       "Awaiting transaction": [
         "S'està esperant la transacció"
@@ -6045,7 +6045,7 @@
         "Descarregueu la nostra plantilla CSV, empleneu els detalls dels usuaris i després carregueu el fitxer CSV complet per a crear comptes per a aquests usuaris."
       ],
       "Download the app and import existing codes.": [
-        "Descarregueu l'aplicació i importeu-ne els codis."
+        "Descarregueu l'aplicació i importeu els codis existents."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Descarregueu la vostra aplicació favorita avui i porteu la privadesa amb vosaltres allà on aneu."
@@ -6162,7 +6162,7 @@
         "Introduïu la vostra adreça de correu electrònic o usuari del compte de ${ BRAND_NAME }."
       ],
       "Enter your own password (as organization admin).": [
-        "Introduïu la vostra contrasenya (com a administrador d'organització)."
+        "Introduïu la vostra contrasenya (com a administrador de l'organització)."
       ],
       "Enter your own password (as trusted contact).": [
         "Introduïu la vostra contrasenya (com a contacte de confiança)."
@@ -6216,7 +6216,7 @@
         "Passarel·les"
       ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
-        "Obtingueu ${ AUTHENTICATOR_APP_NAME } per a tots els vostres dispositius."
+        "Obteniu ${ AUTHENTICATOR_APP_NAME } per a tots els vostres dispositius."
       ],
       "Get ${ upsellPlanName }": [
         "Obteniu ${ upsellPlanName }"
@@ -6758,7 +6758,7 @@
         "El preu inclou tots els descomptes basats en cicles aplicables i els cupons no caducats desats al vostre compte."
       ],
       "Private AI assistant": [
-        "Assistent d'IA personal"
+        "Assistent d'IA privat"
       ],
       "Protected by Swiss privacy laws": [
         "Protegit per les lleis de privacitat suïsses"
@@ -6897,7 +6897,7 @@
         "S'ha actualitzat la caixa forta compartida"
       ],
       "Sign in only": [
-        "Només heu d'iniciar sessió"
+        "Només inicia la sessió"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Inicieu la sessió a ${ MAIL_APP_NAME } per activar la vostra adreça"
@@ -7010,7 +7010,7 @@
         "La funció de grups no és compatible amb la vostra subscripció actual. Els grups creats anteriorment estan desactivats i només es poden suprimir."
       ],
       "The most secure and private two-factor authentication app, that's free and open-source.": [
-        "L'aplicació d'autenticació de dos factors més segura i privada, gratuïta i de codi obert."
+        "L'aplicació d'autenticació de doble factor més segura i privada que és gratuïta i de codi obert."
       ],
       "The name will be visible to your users while they are signed in.": [
         "El nom serà visible per als vostres usuaris quan estiguin connectats."
@@ -7388,7 +7388,7 @@
         "Per què?"
       ],
       "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
-        "Amb ${ AUTHENTICATOR_APP_NAME }, podreu:"
+        "Amb ${ AUTHENTICATOR_APP_NAME }, podeu:"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Amb un pla Business o Enterprise, podeu comprar ${ boldDedicatedServers } per a la vostra organització i configurar ${ boldGateways } per a controlar quins usuaris poden accedir-hi."
@@ -7406,7 +7406,7 @@
         "Sense activació no podreu crear nous usuaris, afegir adreces a usuaris existents o accedir a comptes d'usuaris no privats."
       ],
       "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
-        "Sense una aplicació d'autenticació, no podreu iniciar sessió a les aplicacions de ${ BRAND_NAME } que encara no admeten claus de seguretat."
+        "Sense una aplicació d'autenticació, no podreu iniciar la sessió a les aplicacions de ${ BRAND_NAME } que encara no admeten claus de seguretat."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Voleu rebre un codi de verificació nou o utilitzar un mètode de verificació alternatiu?"
@@ -7464,7 +7464,7 @@
         "Podeu aplicar les regles de contrasenya que els membres de la vostra organització utilitzaran quan creïn o restableixin la contrasenya del seu compte de ${ BRAND_NAME }."
       ],
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
-        "Podreu obtenir els nostres serveis de privadesa prèmium en un sol paquet—i només costa **${ priceString }/mes**."
+        "Podeu obtenir els nostres serveis de privadesa prèmium en un sol paquet, i només per **${ priceString }/mes**."
       ],
       "You can import one data type at a time.": [
         "Podeu importar un tipus de dades alhora."
@@ -7566,7 +7566,7 @@
         "Heu habilitat el reenviament en ${ MAX_SYNC_PAID_USER } adreces del Gmail. Per afegir-ne una altra, primer desactiveu-ne una."
       ],
       "You've reached the limit of 50 users for this filter. Remove one to add another.": [
-        "Heu arribat al límit de 50 usuaris per a aquest filtre. Esborreu-ne un per afegir-ne un altre."
+        "Heu assolit el límit de 50 usuaris per a aquest filtre. Esborreu-ne un per afegir-ne un altre."
       ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "S'ha aplicat el vostre ${ boldDiscountPercent } a ${ boldPlanTitle }."
@@ -7834,8 +7834,8 @@
         "${ nbDay } dies"
       ],
       "${ usedAddresses } of ${ maxAddresses } email address": [
-        "${ usedAddresses } de ${ maxAddresses } adreça de correu electrònic",
-        "${ usedAddresses } de ${ maxAddresses } adreces de correu electrònic"
+        "${ usedAddresses } adreça de correu electrònic de ${ maxAddresses }",
+        "${ usedAddresses } adreces de correu electrònic de ${ maxAddresses }"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalment. Comproveu-ho de nou més tard.)"
@@ -8546,8 +8546,8 @@
     },
     "Label BYOE": {
       "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
-        "${ usedBYOEAddresses } de ${ maxBYOEAddresses } adreça de correu electrònic",
-        "${ usedBYOEAddresses } de ${ maxBYOEAddresses } adreces de correu electrònic"
+        "${ usedBYOEAddresses } adreça de correu electrònic de ${ maxBYOEAddresses }",
+        "${ usedBYOEAddresses } adreces de correu electrònic de ${ maxBYOEAddresses }"
       ]
     },
     "Label for adding a new custom domain": {
@@ -8865,13 +8865,13 @@
         "Canvi de contrasenya de compte"
       ],
       "Authentication failure (second factor failed)": [
-        "Autenticació incorrecta (error amb el segon factor)"
+        "Hi ha hagut un error d'autenticació (el segon factor ha fallat)"
       ],
       "Authentication failure (wrong password)": [
-        "Error d'autenticació (contrasenya incorrecta)"
+        "S'ha produït un error d'autenticació (la contrasenya és incorrecta)."
       ],
       "Authentication success": [
-        "Autenticació correcta"
+        "L'autenticació ha estat correcta"
       ],
       "Mailbox password change": [
         "Canvi de contrasenya de la bústia de correu"
@@ -8895,10 +8895,10 @@
         "S'ha bloquejat l'inici de sessió (a causa d'un abús)."
       ],
       "Sign in failure (mnemonic failed)": [
-        "Error d'inici de sessió (ha fallat la frase de recuperació)"
+        "Hi ha hagut un error d'inici de sessió (ha fallat la frase de recuperació)"
       ],
       "Sign in failure (second factor failed)": [
-        "Error d'inici de sessió (error amb el doble factor)"
+        "Hi ha hagut un error en iniciar la sessió (el segon factor ha fallat)"
       ],
       "Sign in failure (wrong password)": [
         "Error d'inici de sessió (contrasenya incorrecta)"
@@ -8910,16 +8910,16 @@
         "S'ha iniciat la sessió."
       ],
       "Sign in success (awaiting mnemonic)": [
-        "Inici de sessió correcte (esperant la frase de recuperació)"
+        "S'ha iniciat la sessió (a l'espera de la frase de recuperació)"
       ],
       "Sign in success (awaiting second factor)": [
-        "Inici de sessió correcte (a l'espera del segon factor)"
+        "S'ha iniciat la sessió (a l'espera del segon factor)"
       ],
       "Sign in success (awaiting verification)": [
-        "S'ha Iniciat la sessió correctament (a l'espera de la verificació)."
+        "S'ha Iniciat la sessió (a l'espera de la verificació)."
       ],
       "Sign out": [
-        "Tanqueu la sessió"
+        "Tanca la sessió"
       ],
       "Two password mode disabled": [
         "S'ha desactivat el mode de dues contrasenyes."
@@ -8928,7 +8928,7 @@
         "S'ha activat el mode de dues contrasenyes."
       ],
       "Unknown": [
-        "Desconeguda"
+        "Desconegut"
       ]
     },
     "Log preference": {
@@ -8993,8 +8993,14 @@
       "Detach from SSO": [
         "Desconnecta de l'SSO"
       ],
+      "Disable user": [
+        "Desactiva l'usuari"
+      ],
       "Edit": [
         "Edita"
+      ],
+      "Enable user": [
+        "Habilita l'usuari"
       ],
       "Remove": [
         "Esborra"
@@ -9014,7 +9020,7 @@
         "Connecteu el vostre domini personalitzat a ${ BRAND_NAME } per a configurar adreces de correu electrònic personalitzades (p. ex., vos@lavostraempresa.com). El nostre assistent us guiarà a través del procés."
       ],
       "View ${ PASS_APP_NAME } activity across your organization.": [
-        "Visualitzeu l'activitat de ${ PASS_APP_NAME } a través de la vostra organització."
+        "Visualitzeu l'activitat de ${ PASS_APP_NAME } en la vostra organització."
       ],
       "View changes to your organization and other administrator activities.": [
         "Visualitzeu els canvis a la vostra organització i altres activitats de l'administració."
@@ -9504,6 +9510,9 @@
       ],
       "Share files with no size limit": [
         "Compartiu fitxers sense límit de mida"
+      ],
+      "Short domain (@pm.me)": [
+        "Domini curt (@pm.me)"
       ],
       "Sign in as user": [
         "Inicia la sessió com a usuari"
@@ -10172,7 +10181,7 @@
         "El codi no és vàlid."
       ],
       "Invalid input. Search an email or detail.": [
-        "Entrada incorrecta. Cerqueu un correu o un detall."
+        "L'entrada no és vàlida. Cerqueu un correu o un detall."
       ],
       "Invalid input. Search an email or IP address.": [
         "Entrada incorrecta. Cerqueu un correu electrònic o una adreça IP."
@@ -10211,7 +10220,7 @@
         "L'autenticació de doble factor ja no és necessària"
       ],
       "Zoom video conferencing settings have been updated": [
-        "La configuració de les videoconferències de Zoom s'ha actualitzat"
+        "S'ha actualitzat la configuració de les videoconferències de Zoom"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10920,7 +10929,7 @@
         "Es renovarà per ${ renewPriceStr } i ho podreu cancel·lar en qualsevol moment."
       ],
       "Sorry, this offer is not available with your current plan.": [
-        "Ens sap greu, aquesta oferta no està disponible amb el pla actual."
+        "Aquesta oferta no està disponible amb el pla actual."
       ],
       "Taxes": [
         "Impostos"
@@ -11418,7 +11427,7 @@
         "${ referrerRewardAmount } com a referència"
       ],
       "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
-        "**Si cancel·leu abans d'aquesta data,** se us **baixarà de categoria** a ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } quan la prova finalitzi."
+        "**Si cancel·leu abans d'aquesta data,** **passareu al pla inferior** ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } quan la prova finalitzi."
       ],
       "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
         "**Si no us subscriviu,** se us **baixarà de categoria** a ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
@@ -11486,19 +11495,19 @@
         "Cancel·la"
       ],
       "Confirm": [
-        "Confirmeu-ho"
+        "Confirma"
       ],
       "Create retention rule": [
         "Creeu una instrucció de conservació"
       ],
       "Create rule": [
-        "Creeu una regla"
+        "Crea una regla"
       ],
       "Delete": [
         "Elimina"
       ],
       "Delete rule": [
-        "Eliminar aquesta regla"
+        "Elimina la regla"
       ],
       "Delete this scope": [
         "Elimina aquest àmbit"
@@ -11507,13 +11516,13 @@
         "Edita"
       ],
       "Purge all": [
-        "Elimineu-ho tot"
+        "Elimina-ho tot"
       ],
       "Purge deleted": [
         "Purga els elements eliminats"
       ],
       "Save changes": [
-        "Deseu els canvis"
+        "Desa els canvis"
       ]
     },
     "retention_policy_2025_Confirmation": {
@@ -11531,7 +11540,7 @@
         "La durada ha de ser superior a ${ MIN_LIFETIME } dies"
       ],
       "Lifetime must not be set for \"Retain All\" action": [
-        "No s'ha de definir un termini per l'acció \"Conservar-ho tot\""
+        "No s'ha de definir un termini per a l'acció \"Conserva-ho tot\""
       ],
       "Scope value is not valid": [
         "El valor de l'àmbit no és vàlid"
@@ -11594,7 +11603,7 @@
         "Període de conservació"
       ],
       "Rule title": [
-        "Títol de la norma"
+        "Títol de la regla"
       ],
       "Select product": [
         "Seleccioneu un producte"
@@ -11611,10 +11620,10 @@
         "Grup"
       ],
       "Purge all messages": [
-        "Elimineu tots els missatges"
+        "Purga tots els missatges"
       ],
       "Purge deleted messages only": [
-        "Elimineu només els missatges esborrats"
+        "Purga només els missatges eliminats"
       ],
       "Specific users or groups": [
         "Usuaris o grups específics"
@@ -11625,7 +11634,7 @@
     },
     "retention_policy_2025_Placeholder": {
       "E.g. Cleanup unused mailboxes": [
-        "P. ex. Netejar les bústies de correu no utilitzades"
+        "P. ex., netejar les bústies de correu no utilitzades"
       ],
       "Enter duration": [
         "Introduïu la durada"
@@ -11661,13 +11670,13 @@
     },
     "retention_policy_2025_Title": {
       "Confirm retention rule?": [
-        "Confirmeu aquesta instrucció de conservació?"
+        "Voleu confirmar la regla de conservació?"
       ],
       "Create retention rule": [
-        "Creeu una instrucció de conservació"
+        "Crea una regla de conservació"
       ],
       "Edit retention rule": [
-        "Editeu aquesta instrucció de conservació"
+        "Edita la regla de conservació"
       ]
     },
     "Role": {
@@ -13398,7 +13407,7 @@
         "S'ha canviat la política. Només tindrà efecte després de publicar els canvis."
       ],
       "Policy deleted. It will take effect only after you publish the changes.": [
-        "S'ha eliminat la política. Només tindrà efecte després de publicar els canvis."
+        "S'ha eliminat la política. Això només tindrà efecte després que publiqueu els canvis."
       ],
       "Preference saved": [
         "S'ha desat la preferència."
@@ -13452,6 +13461,12 @@
       ],
       "User deleted": [
         "Usuari eliminat"
+      ],
+      "User disabled": [
+        "S'ha desactivat l'usuari"
+      ],
+      "User enabled": [
+        "L'usuari s'ha activat"
       ]
     },
     "Success notification": {
@@ -14100,7 +14115,7 @@
         "No s'han pogut crear ${ failedUsers.length } comptes d'usuari."
       ],
       "Feature access": [
-        "Accés a característiques"
+        "Accés a les característiques"
       ],
       "Find email or username": [
         "Cerca correu electrònic o nom d’usuari"
@@ -14453,7 +14468,7 @@
         "Text"
       ],
       "There are no events yet for your organization.": [
-        "Encara no hi ha esdeveniments per la vostra organització."
+        "Encara no hi ha esdeveniments per a la vostra organització."
       ],
       "There are no groups": [
         "No hi ha grups."
@@ -14740,13 +14755,13 @@
         "Això pot ser causat per un restabliment de la contrasenya o perquè l'usuari encara no ha iniciat la sessió."
       ],
       "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
-        "Aquesta adreça de correu només es pot utilitzar per iniciar la sessió al vostre compte de ${ BRAND_NAME }."
+        "Aquesta adreça de correu electrònic només es pot utilitzar per a iniciar la sessió al vostre compte de ${ BRAND_NAME }."
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Aquesta adreça de correu electrònic es mostrarà a tots els membres de l'organització quan realitzin operacions de gestió del compte."
       ],
       "User's approximate location (based on their IP address)": [
-        "Ubicació aproximada d'usuari (basada en la vostra adreça IP)"
+        "Ubicació aproximada de l'usuari (basada en la seva adreça IP)"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Els usuaris veuran el vostre logo en comptes de la icona de ${ BRAND_NAME } quan iniciïn la sessió a les nostres aplicacions web."
@@ -14953,7 +14968,7 @@
         "**Estalvieu fins a ${ priceString }** amb una subscripció més llarga. Mateixes funcionalitats prèmium per un preu més baix."
       ],
       "Advanced security for your company?": [
-        "Voleu seguretat avançada per la vostra empresa?"
+        "Voleu seguretat avançada per a la vostra empresa?"
       ],
       "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
         "Tots els serveis prèmium de ${ BRAND_NAME }. Des de només ${ fallBackString } al mes."
