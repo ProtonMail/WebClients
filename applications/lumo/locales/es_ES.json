@@ -296,6 +296,9 @@
       "Upload and share files": [
         "Cargar y compartir archivos"
       ],
+      "Use ${ label } theme": [
+        "Utilizar tema ${ label }"
+      ],
       "Use ${ PASS_APP_NAME } for Business": [
         "Usar ${ PASS_APP_NAME } for Business"
       ],
@@ -802,8 +805,8 @@
       "Elevate your private AI experience and unlock advanced models and premium features with ${ LUMO_SHORT_APP_NAME } Plus.": [
         "Eleva tu experiencia de IA privada y desbloquea modelos avanzados y funciones prémium con ${ LUMO_SHORT_APP_NAME } Plus."
       ],
-      "Last updated on ${ DATE_VERSION }": [
-        "Última actualización: ${ DATE_VERSION }"
+      "Last updated on ${ formattedDate }": [
+        "Última actualización el ${ formattedDate }"
       ],
       "Permanently delete your chats. This is irreversible.": [
         "Elimina permanentemente tus chats. Esto es irreversible."
@@ -4268,6 +4271,9 @@
       ],
       "Share files with no size limit": [
         "Comparte archivos sin límites de tamaño."
+      ],
+      "Short domain (@pm.me)": [
+        "Dominio corto (@pm.me)"
       ],
       "Sign in as user": [
         "Iniciar sesión como usuario"
