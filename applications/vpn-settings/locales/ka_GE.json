@@ -53,6 +53,9 @@
       "Add": [
         "დამატება"
       ],
+      "Add ${ BRAND_NAME } address": [
+        "${ BRAND_NAME }-ის მისამართის დამატება"
+      ],
       "Add account": [
         "ანგარიშის დამატება"
       ],
@@ -1113,6 +1116,12 @@
       "Disallow unsigned mail": [
         "ხელმოუწერელი ელფოსტის აკრძალვა"
       ],
+      "Disconnect": [
+        "გათიშვა"
+      ],
+      "Disconnect address “${ emailAddress }”": [
+        "\"${ emailAddress }\" მისამართის გათიშვა"
+      ],
       "Edit": [
         "ჩასწორება"
       ],
@@ -1136,6 +1145,12 @@
       ],
       "Generate missing keys for address “${ emailAddress }”": [
         "ნაკლული გასაღებების გენერაცია მისამართისთვის \"${ emailAddress }\""
+      ],
+      "Grant permission": [
+        "ნებართვის მინიჭება"
+      ],
+      "Grant permission to “${ emailAddress }”": [
+        "\"${ emailAddress }\"-სთვის უფლების მინიჭება"
       ],
       "Reconnect": [
         "თავიდან დაკავშირება"
@@ -1180,6 +1195,9 @@
       ],
       "Orphan": [
         "ობოლი"
+      ],
+      "Permission revoked": [
+        "წვდომა ჩამორთმებულია"
       ]
     },
     "Admin": {
@@ -1389,6 +1407,9 @@
       ],
       "Try it free for ${ TRIAL_DURATION_DAYS } days": [
         "სცადეთ უფასოდ ${ TRIAL_DURATION_DAYS } დღით"
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "გამოსაცდელი პერიოდისას შეგიძლიათ ${ TRIAL_MAX_USERS } მომხმარებლის შექმნა."
       ],
       "You cannot add custom domains during the trial period.": [
         "გამოსაცდელი პერიოდის მიმდინარეობისას თქვენს დომენებს ვერ დაამატებთ."
@@ -4000,6 +4021,11 @@
       ],
       "ZIP code is required": [
         "საფოსტო კოდი აუცილებელია"
+      ]
+    },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "შედით იგივე Gmail-ის მისამართით, რომლითაც პირველად"
       ]
     },
     "Error importing calendar": {
@@ -7636,6 +7662,10 @@
         "${ nbDay } დღე",
         "${ nbDay } დღე"
       ],
+      "${ usedAddresses } of ${ maxAddresses } email address": [
+        "${ usedAddresses }/${ maxAddresses } ელფოსტის მისამართი",
+        "${ usedAddresses }/${ maxAddresses } ელფოსტის მისამართი"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(დრობით მიუწვდომელია. მოგვიანებით სცადეთ)"
       ],
@@ -7893,6 +7923,9 @@
       ],
       "Emails (last month)": [
         "ელფოსტა (გასული თვე)"
+      ],
+      "Enable ${ DARK_WEB_MONITORING_NAME } for ${ domain.DomainName }": [
+        "${ DARK_WEB_MONITORING_NAME }-ის ჩართვა ${ domain.DomainName }-ისთვის"
       ],
       "Enabled": [
         "ჩართულია"
@@ -8337,6 +8370,12 @@
         "ვის"
       ]
     },
+    "Label BYOE": {
+      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
+        "${ usedBYOEAddresses }/${ maxBYOEAddresses } ელფოსტის მისამართი",
+        "${ usedBYOEAddresses }/${ maxBYOEAddresses } ელფოსტის მისამართი"
+      ]
+    },
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "${ MAIL_APP_NAME }-ის ანგარიშისთვის თქვენი დომენის მიბმა."
@@ -8774,8 +8813,14 @@
       "Detach from SSO": [
         "SSO-დან მოხსნა"
       ],
+      "Disable user": [
+        "მომხმარებლის გათიშვა"
+      ],
       "Edit": [
         "ჩასწორება"
+      ],
+      "Enable user": [
+        "მომხმარებლის ჩართვა"
       ],
       "Remove": [
         "წაშლა"
@@ -8796,6 +8841,9 @@
       ],
       "View ${ PASS_APP_NAME } activity across your organization.": [
         "ნახეთ ${ PASS_APP_NAME }-ის აქტივოვა თქვენს ორგანიზაციაში."
+      ],
+      "View changes to your organization and other administrator activities.": [
+        "ნახეთ თქვენი ორგანიზაციის ცვლილებები და სხვა ადმინისტრატორის აქტივობები."
       ],
       "View user sign-in, recovery and security events.": [
         "ნახეთ მომხმარებლის შესვლები, აღდგენის და უსაფრთხოების მოვლენები."
@@ -9940,6 +9988,12 @@
       "Key copied to the clipboard": [
         "გასაღები დაკოპირდა ბუფერში"
       ],
+      "Monitoring disabled": [
+        "მონიტორინგი გათიშულია"
+      ],
+      "Monitoring enabled": [
+        "მონიტორინგი ჩართულია"
+      ],
       "Number of records exceeds the download limit of 10000": [
         "ჩანაწერების რაოდენობა გადმოწერის ლიმიტს (1000) სცდება"
       ],
@@ -10119,6 +10173,9 @@
       ],
       "Continue": [
         "გაგრძელება"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "ისიამოვნეთ უფასო ბიზნესის უსაფრთხოების ფუნქციებით თარიღამდე ${ trialEndsOnFormatted }."
       ],
       "help center": [
         "დახმარების ცენტრი"
@@ -10598,6 +10655,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "გამოსაცდელი ვადის (${ formattedDate }) გადასახდელი თანხა"
+      ],
       "Billing Country": [
         "გადახდის ქვეყანა"
       ],
@@ -10655,6 +10715,9 @@
       "Taxes": [
         "გადასახადები"
       ],
+      "terms and conditions": [
+        "პირობები და წესები"
+      ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "კუპონი გამოსადეგია ${ couponRedemptions }-ის განახლებისთვის.",
         "კუპონი გამოსადეგია ${ couponRedemptions }-ის განახლებისთვის."
@@ -10676,6 +10739,9 @@
       "This number will be shown on all future invoices": [
         "ეს რიცხვი ყველა მომავალ ინვოისზე გამოჩნდება"
       ],
+      "This offer is not available with your current plan.": [
+        "ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
+      ],
       "Timeout exceeded": [
         "მოლოდინის ვადა ამოიწურა"
       ],
@@ -10684,6 +10750,9 @@
       ],
       "VAT number": [
         "დღგ ნომერი"
+      ],
+      "You already have a subscription to this plan.": [
+        "თქვენ უკვე გაქვთ ეს სატარიფო გეგმა."
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "გადაიხდით ${ amountToCharge }-ს თქვენი არჩეული გადახდის მეთოდით."
@@ -13103,6 +13172,12 @@
       ],
       "User deleted": [
         "მომხმარებელი წაშლილია"
+      ],
+      "User disabled": [
+        "მომხმარებელი გათიშულია"
+      ],
+      "User enabled": [
+        "მომხმარებელი ჩართულია"
       ]
     },
     "Success notification": {
@@ -13715,6 +13790,9 @@
       ],
       "Email": [
         "ელ-ფოსტა"
+      ],
+      "Email categories": [
+        "ელფოსტის კატეგორიები"
       ],
       "Email subscriptions": [
         "ელფოსტის გამოწერები"
