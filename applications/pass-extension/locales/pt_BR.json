@@ -1053,6 +1053,9 @@
       "Importing items failed": [
         "Erro ao importar itens"
       ],
+      "In order to continue, ${ PASS_APP_NAME } requires these extension permissions: ${ permissionsJSX }": [
+        "Para continuar, ${ PASS_APP_NAME } requer estas permissões de extensão: ${ permissionsJSX }"
+      ],
       "Inactive secure links could not be removed.": [
         "Não foi possível remover os links seguros inativos."
       ],
@@ -1091,6 +1094,12 @@
       ],
       "Passphrase is incorrect": [
         "A frase secreta está incorreta"
+      ],
+      "Permission denied for ${ domainsJSX } website access.": [
+        "Permissão negada para acessar o site de ${ domainsJSX }."
+      ],
+      "Permission denied for website access.": [
+        "Permissão negada para acesso ao site."
       ],
       "PIN codes do not match": [
         "Os códigos PIN não correspondem"
@@ -1379,6 +1388,9 @@
       ],
       "Access successfully confirmed": [
         "O acesso foi confirmado."
+      ],
+      "access to ${ domains }.": [
+        "acesso a ${ domains }."
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "O acesso do ${ PASS_APP_NAME } sempre exigirá sua senha da ${ BRAND_NAME }"
@@ -1843,6 +1855,9 @@
       "Moving items to trash": [
         "Movendo itens para a lixeira"
       ],
+      "Navigate to your browser's extension settings and enable site permissions for ${ PASS_SHORT_APP_NAME }.": [
+        "Vá para as configurações da extensão do seu navegador e ative as permissões de site para ${ PASS_SHORT_APP_NAME }."
+      ],
       "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
         "Precisa enviar um e-mail para alguém, mas não quer que essa pessoa veja seu endereço de e-mail? Configure um alias de contato."
       ],
@@ -1875,6 +1890,9 @@
       ],
       "Open the Extensions menu": [
         "Abrir o menu de extensões"
+      ],
+      "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
+        "Abra as configurações do Safari, encontre ${ PASS_APP_NAME }, vá para \"Permissões\" e ative as permissões do site."
       ],
       "Owner": [
         "Proprietário"
@@ -2080,6 +2098,12 @@
       ],
       "Restoring trashed items...": [
         "Restaurando os itens da lixeira..."
+      ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Permissions & data\" and enable site permissions.": [
+        "Clique com o botão direito no ícone da extensão e selecione \"Gerenciar extensão\". Vá para \"Permissões e dados\" e ative as permissões do site."
+      ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Site access\" and enable site permissions.": [
+        "Clique com o botão direito no ícone da extensão e selecione \"Gerenciar extensão\". Navegue até \"Acesso ao site\" e ative as permissões do site."
       ],
       "Save login": [
         "Salvar início de sessão"
