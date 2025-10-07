@@ -1401,6 +1401,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate } にトライアルが終了すると、${ renewCycle } か月ごとに自動更新される有料サブスクリプションに移行します。${ formattedDate } までにキャンセルされれば、課金されることはありません。"
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate } にトライアルが終了すると、毎月自動更新される有料サブスクリプションに移行します。${ formattedDate } までにキャンセルされれば、課金されることはありません。"
+      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "トライアル期間中、最大${ TRIAL_MAX_DEDICATED_IPS }の専用サーバーをご利用いただけます。"
       ],
@@ -3271,6 +3277,9 @@
       "Calendar limit reached": [
         "カレンダーの制限に達しました"
       ],
+      "Can't find any secure link": [
+        "セキュアリンクを検出できません。"
+      ],
       "Cannot export this contact": [
         "この連絡先はエクスポートできません"
       ],
@@ -3613,6 +3622,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "ラベル名の中に ${ MAIL_APP_NAME } の最大文字数の上限を超えるものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
       ],
+      "Something went wrong during folder listing": [
+        "フォルダの一覧表示中にエラーが発生しました。"
+      ],
       "Something went wrong. Please try again.": [
         "何か問題が発生しました。もう一度お試しください。"
       ],
@@ -3739,6 +3751,9 @@
       "We were not able to load some invitations": [
         "招待の一部を読み込めませんでした"
       ],
+      "We were not able to load some items": [
+        "一部のアイテムを読み込めませんでした"
+      ],
       "We were not able to load some items shared with you": [
         "共有アイテムの一部を読み込むことができませんでした"
       ],
@@ -3783,6 +3798,11 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ 復号できない名前"
+      ]
+    },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "最初に接続した同じGmailアドレスでサインインしてください"
       ]
     },
     "Error importing calendar": {
@@ -4820,6 +4840,21 @@
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**緊急停止装置**: VPNに予期せぬ問題が起きた際には、インターネット接続を切ることによりデータ漏洩を防ぎます。"
+      ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "ステップ1：招待リンクで${ BRAND_NAME }に**友達を招待してください**"
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
+        "**ステップ2：** あなたの友達は、選択した${ BRAND_NAME }プランを2週間無料で利用できます。"
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**ステップ2：** あなたの友達は、プランを2週間無料でご利用いただけます。"
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**ステップ3：**友達がプランに登録するたびに、${ referrerRewardAmount } クレジットを獲得できます。"
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**ステップ3：**プランに登録する人ごとに、${ referrerRewardAmount } クレジットを獲得できます。"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ボーナスストレージ"
@@ -8961,6 +8996,9 @@
       "The spreadsheet failed to be created": [
         "スプレッドシートの作成に失敗しました"
       ],
+      "This secure link expired, please change expire date in sharing settings": [
+        "このセキュアリンクは有効期限切れです。共有設定で有効期限を変更してください。"
+      ],
       "Trash failed to be emptied": [
         "ごみ箱を空にできませんでした"
       ],
@@ -9161,9 +9199,15 @@
       ],
       "Upload folder": [
         "フォルダをアップロード"
+      ],
+      "Upload more files": [
+        "より多くのファイルをアップロード"
       ]
     },
     "Onboarding Info": {
+      "10 minutes": [
+        "10 分"
+      ],
       "Access your files on the go": [
         "外出先でファイルにアクセス"
       ],
@@ -9188,11 +9232,20 @@
       "Edit documents online": [
         "オンラインでドキュメントを編集"
       ],
+      "Encryption happens automatically": [
+        "暗号化は自動的に行われます。"
+      ],
       "End-to-end encrypted storage for your files": [
         "ファイルのエンドツーエンド暗号化ストレージ"
       ],
       "Faster uploads for large or multiple files": [
         "大容量または複数のファイルの高速アップロード"
+      ],
+      "Files uploaded during this time won’t count towards your storage limit.": [
+        "この期間中にアップロードされたファイルは、お客様のストレージ制限にはカウントされません。"
+      ],
+      "Files uploaded now will not count towards your storage limit": [
+        "現在アップロードされたファイルは、お客様のストレージ制限にはカウントされません。"
       ],
       "Final approval in progress": [
         "最終承認が進行中"
@@ -9227,6 +9280,9 @@
       "Invite team members": [
         "チームメンバーを招待"
       ],
+      "Keep the momentum going by uploading more files using the storage included with your plan.": [
+        "お客様のプランに含まれるストレージをご利用いただき、より多くのファイルをアップロードすることで、勢いを維持いただけます。"
+      ],
       "Manage access": [
         "アクセス管理"
       ],
@@ -9254,6 +9310,9 @@
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "オーナーが共有アクセスを確認する必要があります。完了したらメールが届きます。"
       ],
+      "Upload files, folders, photos": [
+        "ファイル、フォルダ、写真をアップロード"
+      ],
       "Upload your first file": [
         "最初のファイルをアップロード"
       ],
@@ -9262,6 +9321,12 @@
       ],
       "Work together": [
         "一緒に作業"
+      ],
+      "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
+        "無料のデータを獲得し、お客様のファイルはエンドツーエンド暗号化で記録的な速さで保護されました。"
+      ],
+      "Your storage limit won’t be affected": [
+        "お客様のストレージ制限には影響がありません"
       ]
     },
     "Onboarding Trial": {
@@ -9458,6 +9523,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "${ formattedDate } のトライアル後のお支払い額"
+      ],
       "Billing Country": [
         "請求先の国"
       ],
@@ -9497,6 +9565,9 @@
       "More plans are available in other currencies": [
         "他の通貨でも利用できるプランが増えています"
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "トライアル終了後、サブスクリプションを有効化するためには支払い方法が必要です。"
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "アドオンを減らすには、まずサブスクリプションを再有効化してください。"
       ],
@@ -9508,6 +9579,9 @@
       ],
       "Taxes": [
         "税金"
+      ],
+      "terms and conditions": [
+        "利用規約"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "クーポンは ${ couponRedemptions } の更新で有効です。"
@@ -9524,8 +9598,14 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "その後、${ renewPriceStr }で${ renewalLength }ヶ月間自動的に更新されます。いつでもキャンセルできます。"
       ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "この操作により、既存のサブスクリプションが拡張されます。新しいアドオンと、現在の支払間隔の残りの期間に対してのみ課金されます。お客様のサブスクリプションの更新日は変更されません。"
+      ],
       "This number will be shown on all future invoices": [
         "この番号は、今後すべての請求書に表示されます"
+      ],
+      "This offer is not available with your current plan.": [
+        "この特典は現在のプランではご利用いただけません。"
       ],
       "This payment method will become your new default for all future renewals.": [
         "この支払い方法は、今後のすべての更新について、お客様の新しいデフォルトになります。"
@@ -9538,6 +9618,12 @@
       ],
       "VAT number": [
         "VAT番号"
+      ],
+      "You already have a subscription to this plan.": [
+        "すでにこのプランのサブスクリプションに加入済みです。"
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "お客様は既にこのプランのサブスクリプションを契約済みです。${ subscriptionPlatform }でサブスクリプションを変更できます。"
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "お客様の通貨はユーロ (€) に変更されました。これは、SEPA銀行振込がユーロ建ての支払いのみをサポートしているためです。"
@@ -9564,6 +9650,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "あなたのカードは拒否されました。 別のカードを試すか、銀行に問い合わせて請求を承認してください。"
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "以前のサブスクリプションプランの未使用分のクレジット"
+      ],
+      "Credits will be added to your balance": [
+        "クレジットがお客様の残高に追加されます。"
       ]
     },
     "Payments.plan_name": {
@@ -9872,6 +9966,38 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "${ BRAND_NAME } からの公式メール"
+      ]
+    },
+    "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } 紹介ごとに"
+      ],
+      "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "最大${ maxRewardAmount }のクレジットを獲得できます。お客様が招待された方が${ BRAND_NAME }のプランに登録されますと、お客様は${ referrerRewardAmount }を受け取ることができます。"
+      ],
+      "Friend joined": [
+        "友達が参加しました"
+      ],
+      "Friend subscribed": [
+        "友達が登録済み"
+      ],
+      "Invite friends. Get credits.": [
+        "友達を招待。クレジットを獲得。"
+      ],
+      "Invited friends": [
+        "招待済みの友達"
+      ],
+      "More sharing options": [
+        "その他の共有オプション"
+      ],
+      "Refer friends": [
+        "友達を招待"
+      ],
+      "Start earning credits": [
+        "クレジット獲得を開始する"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "最大**${ maxRewardAmount }**分のクレジットを獲得できます。"
       ]
     },
     "Safety review": {
@@ -11611,6 +11737,9 @@
       "Get more from your VPN": [
         "VPNからさらに入手する"
       ],
+      "Get started with 10 minutes of free uploads, on the house.": [
+        "まずは、10分間の無料アップロードをご利用ください。"
+      ],
       "Get the apps": [
         "アプリを入手"
       ],
@@ -11860,6 +11989,9 @@
       "Re-signing contacts": [
         "連絡先を再署名する"
       ],
+      "Ready, set, upload.": [
+        "準備完了、設定、アップロード。"
+      ],
       "Recommended": [
         "おすすめ"
       ],
@@ -11946,6 +12078,9 @@
       ],
       "Share your calendar with your team": [
         "カレンダーをチームと共有"
+      ],
+      "Share your link": [
+        "リンクを共有"
       ],
       "Shared": [
         "共有中"
@@ -12127,6 +12262,9 @@
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "匿名ユーザーがこのフォルダーをアップロードしたことを検証できませんでした。"
       ],
+      "Welcome offer": [
+        "ウェルカム特典"
+      ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "${ BRAND_NAME } for Businessへようこそ"
       ],
@@ -12153,6 +12291,9 @@
       ],
       "You have no folders yet": [
         "まだフォルダがありません"
+      ],
+      "Your ${ freeUploadLength } has started.": [
+        "お客様の ${ freeUploadLength } が開始されました。"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "${ planName }の無料トライアルは${ textDate }に終了します"
@@ -12183,6 +12324,9 @@
       ],
       "Your welcome actions": [
         "ウェルカムアクション"
+      ],
+      "You’re off to a great start!": [
+        "素晴らしいスタートです！"
       ],
       "You’ve got 5 GB of storage": [
         "5 GB のストレージを手に入れました"

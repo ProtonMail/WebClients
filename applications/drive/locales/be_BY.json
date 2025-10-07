@@ -478,7 +478,7 @@
         "Поўныя даныя"
       ],
       "Generate password": [
-        "Згенераваць пароль"
+        "Згенерыраваць пароль"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Атрымаць ${ planName } за ${ priceCoupon }"
@@ -1902,7 +1902,7 @@
         "Дадайце праграму ${ LUMO_APP_NAME }"
       ],
       "High-speed chats and advanced AI features.": [
-        "Высокахуткасныя чаты і перадавыя функцыі ШІ."
+        "Высакахуткасныя чаты і перадавыя функцыі ШІ."
       ]
     },
     "color": {
@@ -3691,6 +3691,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Назвы некаторых вашых метак перавышаюць абмежаванні колькасці сімвалаў ${ MAIL_APP_NAME }. Наладзьце імпартаванне, каб змяніць гэтыя назвы."
       ],
+      "Something went wrong during folder listing": [
+        "Нешта пайшло не так падчас пераліку папак."
+      ],
       "Something went wrong. Please try again.": [
         "Нешта пайшло не так. Паспрабуйце яшчэ раз."
       ],
@@ -4671,7 +4674,7 @@
     },
     "Import instructions": {
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
-        "У залежнасці ад вашага пастаўшчыка паслуг электроннай пошты, спачатку вам можа спатрэбіцца згенераваць ${ knowledgeBaseLink } перад імпартаваннем у ${ BRAND_NAME }."
+        "У залежнасці ад вашага пастаўшчыка паслуг электроннай пошты, спачатку вам можа спатрэбіцца згенерыраваць ${ knowledgeBaseLink } перад імпартаваннем у ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Разгарніце выпадное меню, націснуўшы на 3 кропкі (...)."
@@ -5097,7 +5100,7 @@
         "Бяспечнае падключэнне неабходна пры аддаленай працы. VPN абараняе даныя кампаніі ад кіберпагроз і захоўвае прыватнасць вашай працы."
       ],
       "A user is an account associated with a single username, mailbox, and person": [
-        "Карыстальнік - гэта ўліковы запіс, звязаны з асобным імем карыстальніка, паштовай скрыняй і асобай"
+        "Карыстальнік - гэта ўліковы запіс, які звязаны з асобным імем карыстальніка, паштовай скрыняй і асобай"
       ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
         "VPN шыфруе ваша падключэнне і хавае ваш IP-адрас. Гэта вельмі ўскладняе адсочванне або назеранне прагляду вэб-старонак для любых зацікаўленых структур."
@@ -5541,10 +5544,10 @@
         "Збой"
       ],
       "Failed to generate a secure link. The reason is: ${ error }": [
-        "Не ўдалося згенераваць бяспечную спасылку. Прычына: ${ error }"
+        "Не ўдалося згенерыраваць бяспечную спасылку. Прычына: ${ error }"
       ],
       "Failed to generate a secure link. Try again later": [
-        "Не ўдалося згенераваць бяспечную спасылку. Паспрабуйце яшчэ раз пазней"
+        "Не ўдалося згенерыраваць бяспечную спасылку. Паспрабуйце яшчэ раз пазней"
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Не ўдалося адкрыць бяспечную спасылку. Прычына: ${ error }"
@@ -5724,7 +5727,7 @@
         "Элементы перамешчаны ў сметніцу будуць заставацца там да выдалення"
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
-        "Лепш за ўсё выкарыстоўваць VPN пастаянна, але воль калі пагрозы кібербяспекі могуць быць самымі высокімі:"
+        "Лепш за ўсё выкарыстоўваць VPN пастаянна, але тут прыведзены выпадкі калі пагрозы кібербяспекі могуць быць самымі высокімі:"
       ],
       "It’s easy and secure": [
         "Гэта лёгка і бяспечна"
@@ -8624,6 +8627,9 @@
       "Share files with no size limit": [
         "Абагульванне файлаў без абмежавання памеру"
       ],
+      "Short domain (@pm.me)": [
+        "Кароткі дамен (@pm.me)"
+      ],
       "Sign in as user": [
         "Уваход у якасці карыстальніка"
       ],
@@ -9023,7 +9029,7 @@
         "Абараніце сваю сям'ю ад шкодных вэб-сайтаў і атрымайце доступ да нашых высакахуткасных сервераў VPN для прагляду абранага змесціва"
       ],
       "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
-        "Абараніце свой сапраўдны адрас электроннай пошты ад раскрыцця або ўцечкі з дапамогай псеўданімаў (адвольна згенераваных адрасоў электроннай пошты, якія перасылаюць лісты ў вашу асноўную паштовую скрыню)."
+        "Абараніце свой сапраўдны адрас электроннай пошты ад раскрыцця або ўцечкі з дапамогай псеўданімаў (адвольна згенерыраваных адрасоў электроннай пошты, якія перасылаюць лісты ў вашу асноўную паштовую скрыню)."
       ],
       "Provides the highest level of account security protection and specialist support": [
         "Забяспечвае найвышэйшы ўзровень бяспекі, а таксама адмысловую падтрымку"
@@ -10646,7 +10652,7 @@
         "Аднаўленне ўліковага запісу недаступна для састарэлых адрасных ключоў"
       ],
       "Please generate keys before you try to change your password": [
-        "Згенерыруйце ключы перад спробай змянення пароля"
+        "Згенерыруйце ключы перад спробай змяніць пароль"
       ]
     },
     "session_recovery:available:info": {
@@ -12293,28 +12299,28 @@
         "Дыягностыка"
       ],
       "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Лічбавы подпіс часткова правераны. Гэты файл быў створаны з выкарыстаннем агульнадаступнай абагуленай спасылкі карыстальнікам без уліковага запісу ${ BRAND_NAME }, таму немагчыма праверыць яго ідэнтычнасць."
+        "Лічбавы подпіс часткова спраўджаны. Гэты файл быў створаны з выкарыстаннем агульнадаступнай абагуленай спасылкі карыстальнікам без уліковага запісу ${ BRAND_NAME }, таму немагчыма спраўдзіць яго ідэнтычнасць."
       ],
       "Digital signature partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Лічбавы подпіс часткова правераны. Гэты файл быў запампаваны з выкарыстаннем агульнадаступнай абагуленай спасылкі карыстальнікам без уліковага запісу ${ BRAND_NAME }, таму немагчыма праверыць яго ідэнтычнасць."
+        "Лічбавы подпіс часткова спраўджаны. Гэты файл быў запампаваны з выкарыстаннем агульнадаступнай абагуленай спасылкі карыстальнікам без уліковага запісу ${ BRAND_NAME }, таму немагчыма спраўдзіць яго ідэнтычнасць."
       ],
       "Digital signature partially verified. This folder was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Лічбавы подпіс часткова правераны. Гэта папка была створана з выкарыстаннем агульнадаступнай абагуленай спасылкі карыстальнікам без уліковага запісу ${ BRAND_NAME }, таму немагчыма праверыць яго ідэнтычнасць."
+        "Лічбавы подпіс часткова спраўджаны. Гэта папка была створана з выкарыстаннем агульнадаступнай абагуленай спасылкі карыстальнікам без уліковага запісу ${ BRAND_NAME }, таму немагчыма спраўдзіць яго ідэнтычнасць."
       ],
       "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Лічбавы подпіс часткова правераны. Гэта папка была запампавана з выкарыстаннем агульнадаступнай абагуленай спасылкі карыстальнікам без уліковага запісу ${ BRAND_NAME }, таму немагчыма праверыць яго ідэнтычнасць."
+        "Лічбавы подпіс часткова спраўджаны. Гэта папка была запампавана з выкарыстаннем агульнадаступнай абагуленай спасылкі карыстальнікам без уліковага запісу ${ BRAND_NAME }, таму немагчыма спраўдзіць яго ідэнтычнасць."
       ],
       "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
-        "Лічбавы подпіс правераны. Гэты файл быў бяспечна створаны <strong>${ emailAddress }</strong>."
+        "Лічбавы подпіс спраўджаны. Гэты файл быў бяспечна створаны <strong>${ emailAddress }</strong>."
       ],
       "Digital signature verified. This file was securely uploaded by <strong>${ emailAddress }</strong>.": [
-        "Лічбавы подпіс правераны. Гэты файл быў бяспечна запампаваны <strong>${ emailAddress }</strong>."
+        "Лічбавы подпіс спраўджаны. Гэты файл быў бяспечна запампаваны <strong>${ emailAddress }</strong>."
       ],
       "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
-        "Лічбавы подпіс правераны. Гэта папка была бяспечна створана <strong>${ emailAddress }</strong>."
+        "Лічбавы подпіс спраўджаны. Гэта папка была бяспечна створана <strong>${ emailAddress }</strong>."
       ],
       "Digital signature verified. This folder was securely uploaded by <strong>${ emailAddress }</strong>.": [
-        "Лічбавы подпіс правераны. Гэта папка была бяспечна запампавана <strong>${ emailAddress }</strong>."
+        "Лічбавы подпіс спраўджаны. Гэта папка была бяспечна запампавана <strong>${ emailAddress }</strong>."
       ],
       "Discard": [
         "Адхіліць"
@@ -12434,7 +12440,7 @@
         "Атрымайце больш ад свайго VPN"
       ],
       "Get started with 10 minutes of free uploads, on the house.": [
-        "Пачніце з 10 бясплатных хвілін бясплатнага запампоўвання за наш кошт."
+        "Пачніце з 10 хвілін бясплатнага запампоўвання за наш кошт."
       ],
       "Get the apps": [
         "Атрымаць праграмы"
