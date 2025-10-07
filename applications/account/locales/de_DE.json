@@ -13986,8 +13986,14 @@
       "Detach from SSO": [
         "Von SSO trennen"
       ],
+      "Disable user": [
+        "Benutzer deaktivieren"
+      ],
       "Edit": [
         "Ändern"
+      ],
+      "Enable user": [
+        "Benutzer aktivieren"
       ],
       "Remove": [
         "Entfernen"
@@ -14753,6 +14759,9 @@
       ],
       "Share files with no size limit": [
         "Teile Dateien ohne Größenbeschränkung"
+      ],
+      "Short domain (@pm.me)": [
+        "Kurzdomain (@pm.me)"
       ],
       "Sign in as user": [
         "Als Benutzer anmelden"
@@ -19063,9 +19072,6 @@
       "get a secure ${ MAIL_APP_NAME } address.": [
         "Eine sichere ${ MAIL_APP_NAME }-Adresse erhalten."
       ],
-      "Get a secure one from us, or ${ internalButton }": [
-        "Hol dir Sicherheit von uns, oder ${ internalButton }"
-      ],
       "Gifted by **${ referrerName }**": [
         "Geschenkt von **${ referrerName }**"
       ],
@@ -20823,6 +20829,12 @@
       ],
       "User deleted": [
         "Benutzer gelöscht"
+      ],
+      "User disabled": [
+        "Benutzer deaktiviert"
+      ],
+      "User enabled": [
+        "Benutzer aktiviert"
       ]
     },
     "Success message after sorting folders": {

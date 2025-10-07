@@ -99,6 +99,9 @@
       "Add ${ BRAND_NAME } Account": [
         "${ BRAND_NAME }-ის ანგარიშის დამატება"
       ],
+      "Add ${ BRAND_NAME } address": [
+        "${ BRAND_NAME }-ის მისამართის დამატება"
+      ],
       "Add account": [
         "ანგარიშის დამატება"
       ],
@@ -1761,6 +1764,12 @@
       "Disallow unsigned mail": [
         "ხელმოუწერელი ელფოსტის აკრძალვა"
       ],
+      "Disconnect": [
+        "გათიშვა"
+      ],
+      "Disconnect address “${ emailAddress }”": [
+        "\"${ emailAddress }\" მისამართის გათიშვა"
+      ],
       "Edit": [
         "ჩასწორება"
       ],
@@ -1784,6 +1793,12 @@
       ],
       "Generate missing keys for address “${ emailAddress }”": [
         "ნაკლული გასაღებების გენერაცია მისამართისთვის \"${ emailAddress }\""
+      ],
+      "Grant permission": [
+        "ნებართვის მინიჭება"
+      ],
+      "Grant permission to “${ emailAddress }”": [
+        "\"${ emailAddress }\"-სთვის უფლების მინიჭება"
       ],
       "Reconnect": [
         "თავიდან დაკავშირება"
@@ -1828,6 +1843,9 @@
       ],
       "Orphan": [
         "ობოლი"
+      ],
+      "Permission revoked": [
+        "წვდომა ჩამორთმებულია"
       ]
     },
     "Admin": {
@@ -2114,6 +2132,9 @@
       ],
       "Try it free for ${ TRIAL_DURATION_DAYS } days": [
         "სცადეთ უფასოდ ${ TRIAL_DURATION_DAYS } დღით"
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "გამოსაცდელი პერიოდისას შეგიძლიათ ${ TRIAL_MAX_USERS } მომხმარებლის შექმნა."
       ],
       "You cannot add custom domains during the trial period.": [
         "გამოსაცდელი პერიოდის მიმდინარეობისას თქვენს დომენებს ვერ დაამატებთ."
@@ -5537,6 +5558,10 @@
       "You have not been designated as an emergency contact for anyone yet.": [
         "თქვენ ჯერ არავის მოუნიშნიხართ, როგორც სასწრაფო კონტაქტი."
       ],
+      "You reached the maximum of ${ controller.meta.count } trusted contact.": [
+        "მიაღწიეთ მაქსიმალურ ${ controller.meta.count } სანდო კონტაქტს.",
+        "მიაღწიეთ მაქსიმალურ ${ controller.meta.count } სანდო კონტაქტს."
+      ],
       "You will be notified when someone requests emergency access.": [
         "გაგაფრთხილებთ, როცა ვინმე სასწრაფო წვდომას მოითხოვს."
       ],
@@ -6169,6 +6194,11 @@
       ],
       "ZIP code is required": [
         "საფოსტო კოდი აუცილებელია"
+      ]
+    },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "შედით იგივე Gmail-ის მისამართით, რომლითაც პირველად"
       ]
     },
     "Error importing calendar": {
@@ -9617,6 +9647,9 @@
       "No countries enabled": [
         "ჩართული ქვეყნების გარეშე"
       ],
+      "No credit card required": [
+        "საკრედიტო ბარათი საჭირო არაა"
+      ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "მონაცემების აღდგენის მეთოდი დაყენებული არაა. რისკავთ დაკარგოთ წვდომა თქვენს მონაცემებთან"
       ],
@@ -11744,6 +11777,10 @@
         "${ nbYear } წელი",
         "${ nbYear } წელი"
       ],
+      "${ usedAddresses } of ${ maxAddresses } email address": [
+        "${ usedAddresses }/${ maxAddresses } ელფოსტის მისამართი",
+        "${ usedAddresses }/${ maxAddresses } ელფოსტის მისამართი"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(დრობით მიუწვდომელია. მოგვიანებით სცადეთ)"
       ],
@@ -12227,6 +12264,9 @@
       "Email address": [
         "ელფოსტის მისამართი"
       ],
+      "Email categories": [
+        "ელფოსტის კატეგორიები"
+      ],
       "Email or username": [
         "ელფოსტა ან მომხმარებლის სახელი"
       ],
@@ -12244,6 +12284,9 @@
       ],
       "Emails (last month)": [
         "ელფოსტა (გასული თვე)"
+      ],
+      "Enable ${ DARK_WEB_MONITORING_NAME } for ${ domain.DomainName }": [
+        "${ DARK_WEB_MONITORING_NAME }-ის ჩართვა ${ domain.DomainName }-ისთვის"
       ],
       "Enabled": [
         "ჩართულია"
@@ -13033,6 +13076,12 @@
         "ვის"
       ]
     },
+    "Label BYOE": {
+      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
+        "${ usedBYOEAddresses }/${ maxBYOEAddresses } ელფოსტის მისამართი",
+        "${ usedBYOEAddresses }/${ maxBYOEAddresses } ელფოსტის მისამართი"
+      ]
+    },
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "${ MAIL_APP_NAME }-ის ანგარიშისთვის თქვენი დომენის მიბმა."
@@ -13642,8 +13691,14 @@
       "Detach from SSO": [
         "SSO-დან მოხსნა"
       ],
+      "Disable user": [
+        "მომხმარებლის გათიშვა"
+      ],
       "Edit": [
         "ჩასწორება"
+      ],
+      "Enable user": [
+        "მომხმარებლის ჩართვა"
       ],
       "Remove": [
         "წაშლა"
@@ -13667,6 +13722,9 @@
       ],
       "View ${ PASS_APP_NAME } activity across your organization.": [
         "ნახეთ ${ PASS_APP_NAME }-ის აქტივოვა თქვენს ორგანიზაციაში."
+      ],
+      "View changes to your organization and other administrator activities.": [
+        "ნახეთ თქვენი ორგანიზაციის ცვლილებები და სხვა ადმინისტრატორის აქტივობები."
       ],
       "View user sign-in, recovery and security events.": [
         "ნახეთ მომხმარებლის შესვლები, აღდგენის და უსაფრთხოების მოვლენები."
@@ -15162,6 +15220,12 @@
       "Link copied to clipboard": [
         "ბმული კოპირებულია ბუფერში"
       ],
+      "Monitoring disabled": [
+        "მონიტორინგი გათიშულია"
+      ],
+      "Monitoring enabled": [
+        "მონიტორინგი ჩართულია"
+      ],
       "Number of records exceeds the download limit of 10000": [
         "ჩანაწერების რაოდენობა გადმოწერის ლიმიტს (1000) სცდება"
       ],
@@ -15431,6 +15495,9 @@
       ],
       "Continue": [
         "გაგრძელება"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "ისიამოვნეთ უფასო ბიზნესის უსაფრთხოების ფუნქციებით თარიღამდე ${ trialEndsOnFormatted }."
       ],
       "help center": [
         "დახმარების ცენტრი"
@@ -16389,6 +16456,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "გამოსაცდელი ვადის (${ formattedDate }) გადასახდელი თანხა"
+      ],
       "Billing Country": [
         "გადახდის ქვეყანა"
       ],
@@ -16449,6 +16519,9 @@
       "Taxes": [
         "გადასახადები"
       ],
+      "terms and conditions": [
+        "პირობები და წესები"
+      ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "კუპონი გამოსადეგია ${ couponRedemptions }-ის განახლებისთვის.",
         "კუპონი გამოსადეგია ${ couponRedemptions }-ის განახლებისთვის."
@@ -16470,6 +16543,9 @@
       "This number will be shown on all future invoices": [
         "ეს რიცხვი ყველა მომავალ ინვოისზე გამოჩნდება"
       ],
+      "This offer is not available with your current plan.": [
+        "ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
+      ],
       "Timeout exceeded": [
         "მოლოდინის ვადა ამოიწურა"
       ],
@@ -16478,6 +16554,9 @@
       ],
       "VAT number": [
         "დღგ ნომერი"
+      ],
+      "You already have a subscription to this plan.": [
+        "თქვენ უკვე გაქვთ ეს სატარიფო გეგმა."
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "გადაიხდით ${ amountToCharge }-ს თქვენი არჩეული გადახდის მეთოდით."
@@ -17588,6 +17667,9 @@
       "You have recommended actions.": [
         "გაქვთ რეკომენდებული ქმედებები."
       ],
+      "You will no longer be able to use this address to reset your account.": [
+        "ამ მისამართს თქვენი ანგარიშის ჩამოსაყრელად ვეღარ გამოიყენებთ."
+      ],
       "Your account and data can be recovered": [
         "თქვენი ანგარიშის და მონაცემების აღდგენა შესაძლებელია"
       ],
@@ -18382,6 +18464,9 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "ყველა ${ BRAND_NAME }-ის სერვისი (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Amount due now": [
+        "ახლა გადასახდელი თანხა"
+      ],
       "Billing Cycle": [
         "ბილინგის ციკლი"
       ],
@@ -18456,9 +18541,6 @@
       ],
       "get a secure ${ MAIL_APP_NAME } address.": [
         "მიიღეთ დაცული ${ MAIL_APP_NAME }-ის მისამართი."
-      ],
-      "Get a secure one from us, or ${ internalButton }": [
-        "მიიღეთ დაცული ჩვენგან, ან ${ internalButton }"
       ],
       "Gifted by **${ referrerName }**": [
         "გაჩუქათ მომხმარებელმა **${ referrerName }**"
@@ -18571,6 +18653,9 @@
       ],
       "Then ${ priceWithDiscountPerMonth } per month, if you subscribe.": [
         "მაშინ ${ priceWithDiscountPerMonth } თვეში, თუ გამოიწერთ"
+      ],
+      "Then ${ priceWithDiscountPerMonth } per month. Cancel anytime.": [
+        "მაშინ ${ priceWithDiscountPerMonth } თვეში. გააუქმეთ, როცა გნებავთ."
       ],
       "To redeem on your next paid subscription.": [
         "თქვენი შემდეგი ფასიანი გამოწერის დასაფარად."
@@ -20190,6 +20275,12 @@
       ],
       "User deleted": [
         "მომხმარებელი წაშლილია"
+      ],
+      "User disabled": [
+        "მომხმარებელი გათიშულია"
+      ],
+      "User enabled": [
+        "მომხმარებელი ჩართულია"
       ]
     },
     "Success message after sorting folders": {
@@ -21052,6 +21143,9 @@
       ],
       "Email breaches": [
         "ელფოსტის გაჟონვები"
+      ],
+      "Email categories": [
+        "ელფოსტის კატეგორიები"
       ],
       "Email composer": [
         "ელფოსტის შემქმნელი"
