@@ -436,6 +436,9 @@
       "Open navigation": [
         "Avaa navigaatio"
       ],
+      "Organize vaults": [
+        "Järjestä holvit"
+      ],
       "Pass for Android": [
         "Pass Androidille"
       ],
@@ -1317,6 +1320,9 @@
     "Header": {
       "Domain": [
         "Verkkotunnus"
+      ],
+      "Username": [
+        "Käyttäjätunnus"
       ]
     },
     "Info": {
@@ -1615,7 +1621,7 @@
         "Lähetä sähköpostia tähän osoitteeseen, ja se näyttää tulevan esimerkiksi osoitteesta ${ exampleEmail }."
       ],
       "Emails sent to your aliases are forwarded to your mailboxes. An alias can have more than one mailbox: useful to share an alias between you and your friends.": [
-        "Aliaksillesi lähetetyt sähköpostit välitetään postilaatikkoihisi. Aliaksella voi olla useampi kuin yksi postilaatikko: tämä on hyödyllistä, jos haluat jakaa aliaksen ystäviesi kanssa."
+        "Aliaksillesi lähetetyt sähköpostit välitetään postilaatikkoihisi. Aliaksella voi olla useampi kuin yksi postilaatikko: tämä on hyödyllistä, jos haluat jakaa aliaksen kavereidesi kanssa."
       ],
       "Emptying trash...": [
         "Tyhjennetään roskakoria..."
@@ -1845,6 +1851,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
+        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
       ],
       "Moving items": [
         "Siirretään kohteita"
@@ -2417,6 +2427,20 @@
         "Organisaatiosi vaatii, että suojaat pääsysi ${ PASS_APP_NAME }:iin"
       ]
     },
+    "Keyboard key": {
+      "ENTER": [
+        "ENTER"
+      ],
+      "SHIFT": [
+        "VAIHTO"
+      ],
+      "TAB": [
+        "TAB"
+      ],
+      "V": [
+        "V"
+      ]
+    },
     "Label": {
       "${ aliasCount } alias": [
         "${ aliasCount } alias",
@@ -2609,6 +2633,9 @@
       "Browse faster, smarter": [
         "Selaa nopeammin ja älykkäämmin"
       ],
+      "Built-in 2FA": [
+        "Sisäänrakennettu 2FA"
+      ],
       "Capital letters (A-Z)": [
         "Isot kirjaimet (A-Z)"
       ],
@@ -2761,6 +2788,9 @@
       ],
       "Email": [
         "Sähköposti"
+      ],
+      "EMAIL": [
+        "EMAIL"
       ],
       "Email (alias)": [
         "Sähköpostiosoite (alias)"
@@ -2972,6 +3002,9 @@
       "Key type": [
         "Avaimen tyyppi"
       ],
+      "Keyboard shortcut:": [
+        "Pikanäppäin:"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Pikanäppäin: ${ shortcut }"
       ],
@@ -3172,6 +3205,9 @@
       ],
       "Password": [
         "Salasana"
+      ],
+      "PASSWORD": [
+        "PASSWORD"
       ],
       "Password history": [
         "Salasanahistoria"
@@ -3509,6 +3545,9 @@
       "Useful for permanent sharing": [
         "Hyödyllinen pysyvään jakamiseen"
       ],
+      "USERNAME": [
+        "USERNAME"
+      ],
       "Username": [
         "Käyttäjätunnus"
       ],
@@ -3547,6 +3586,9 @@
       ],
       "Websites": [
         "Verkkosivustot"
+      ],
+      "What's included": [
+        "Sisältää"
       ],
       "WiFi network": [
         "Wi-Fi-verkko"
@@ -4103,6 +4145,9 @@
       "Change your lock method": [
         "Vaihda lukitustapaasi"
       ],
+      "Clear clipboard": [
+        "Tyhjennä leikepöytä"
+      ],
       "Confirm extra password": [
         "Vahvista lisäsalasana"
       ],
@@ -4324,6 +4369,9 @@
       ],
       "Open pagination": [
         "Avaa sivunavigaatio"
+      ],
+      "Organize vaults": [
+        "Järjestä holvit"
       ],
       "Our welcome gift to you": [
         "Tervetuliaislahjamme sinulle"

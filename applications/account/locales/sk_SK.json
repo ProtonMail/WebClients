@@ -1468,7 +1468,7 @@
         "Ukončiť používanie jednotného prihlásenia"
       ],
       "Strikethrough": [
-        "Prečiarknúť"
+        "Preškrtnuté"
       ],
       "Submit": [
         "Potvrdiť"
@@ -1513,7 +1513,7 @@
         "Zapnúť ${ DARK_WEB_MONITORING_NAME }"
       ],
       "Underline": [
-        "Podčiarknuté"
+        "Podčiarknuť"
       ],
       "Undo import": [
         "Zrušiť import"
@@ -3090,7 +3090,7 @@
         "blanšírované mandle"
       ],
       "blue-gray": [
-        "modrošedá"
+        "modro-sivá"
       ],
       "caramel": [
         "karamel"
@@ -3138,7 +3138,7 @@
         "les"
       ],
       "gainsboro": [
-        "veľmi svetlo šedá"
+        "veľmi svetlosivá"
       ],
       "japanese laurel": [
         "japonský vavrín"
@@ -3183,7 +3183,7 @@
         "bledo blankytná"
       ],
       "pastel gray": [
-        "pastelovo šedá"
+        "pastelovo sivá"
       ],
       "persian plum": [
         "perzská slivka"
@@ -3192,7 +3192,7 @@
         "perzská červená"
       ],
       "philippine gray": [
-        "filipínska šedá"
+        "filipínska sivá"
       ],
       "philippine silver": [
         "filipínska strieborná"
@@ -4573,7 +4573,7 @@
         "Sledujte stav a aktivitu svojich odporúčaní."
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
-        "Upgradovaním získate ${ activatePmUser } kratšiu, ľahko zapamätateľnú emailovú adresu k vašej súčasnej adrese."
+        "Zvýšením úrovne získate ${ activatePmUser } - kratšiu, ľahko zapamätateľnú emailovú adresu k vašej súčasnej adrese."
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Použite tohto sprievodcu, aby vaša organizácia mohla okamžite využívať výhody špičkového ekosystému šifrovania a ochrany osobných údajov od spoločnosti ${ BRAND_NAME }."
@@ -5506,8 +5506,8 @@
       ],
       "${ n } day": [
         "${ n } deň",
-        "${ n } dní",
         "${ n } dni",
+        "${ n } dní",
         "${ n } dní"
       ],
       "${ user } is requesting emergency access to your account": [
@@ -5619,7 +5619,7 @@
         "Zostáva menej ako minúta"
       ],
       "None": [
-        "Neobmedzená"
+        "Žiadny"
       ],
       "Only ": [
         "Iba "
@@ -5715,7 +5715,7 @@
         "Upozorníme **${ user }**, že ste požiadali o núdzový prístup."
       ],
       "You are signed in to the account ${ account }.": [
-        "Ste prihlásení do účtu ${ account }."
+        "Prihlásili ste sa do účtu ${ account }."
       ],
       "You can now access and manage their account.": [
         "Teraz môžete pristupovať k ich účtu a spravovať ho."
@@ -6379,7 +6379,7 @@
         "Na vytvorenie SMTP tokenu na odosielanie správ musíte mať aktívnu adresu vlastnej domény."
       ],
       "You've reached the maximum character number. Please shorten your message.": [
-        "Dosiahli ste maximálny počet znakov. Skráťte svoju správu."
+        "Dosiahli ste maximálny počet znakov. Skráťte svoju správu, prosím."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Vo vašom účte alebo organizácii sú vedené faktúry po splatnosti. Zaplaťte prosím všetky neuhradené faktúry."
@@ -7314,7 +7314,7 @@
         "Vyberte priečinok"
       ],
       "Spam": [
-        "Nevyžiadaná pošta"
+        "Spam"
       ],
       "Trash": [
         "Presunúť do koša"
@@ -8833,7 +8833,7 @@
         "Naozaj chcete vymazať tento filter?"
       ],
       "Are you sure you want to delete this folder?": [
-        "Naozaj chcete odstrániť tento priečinok?"
+        "Naozaj chcete vymazať tento priečinok?"
       ],
       "Are you sure you want to delete this label?": [
         "Naozaj chcete vymazať tento štítok?"
@@ -9310,7 +9310,7 @@
         "email"
       ],
       "Email address": [
-        "E-mailová adresa"
+        "Emailová adresa"
       ],
       "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
         "Email a kalendár integrovaný s ${ CONTACTS_APP_NAME }"
@@ -9490,7 +9490,7 @@
         "Vyplňte podrobnosti o používateľovi"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "Filtre fungujú pre všetky emaily, vrátane prichádzajúcich aj odoslaných emailov. Každý filter musí obsahovať aspoň meno, podmienku a akciu."
+        "Filtre fungujú pre všetky emaily, vrátane prichádzajúcich aj odoslaných emailov. Každý filter musí obsahovať aspoň názov, podmienku a akciu."
       ],
       "finance": [
         "financie"
@@ -9898,7 +9898,7 @@
         "Zistite, čo robiť ${ dataLeakedLink }"
       ],
       "Left to Right": [
-        "Zľava Doprava"
+        "Zľava doprava"
       ],
       "Let your contacts know you care about their privacy.": [
         "Dajte vedieť svojim kontaktom, že vám záleží na ich súkromí."
@@ -10297,7 +10297,7 @@
         "Vyplňte všetky povinné polia, prosím."
       ],
       "Please fill out this field.": [
-        "Prosíme vyplňte toto pole."
+        "Vyplňte toto pole, prosím."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Uložte si ho na bezpečnom mieste. V prípade obnovenia hesla ho budete potrebovať pre prístup k vášmu účtu a k dešifrovaniu vašich údajov."
@@ -10441,7 +10441,7 @@
         "Zrušiť certifikát ${ name }"
       ],
       "Right to Left": [
-        "Sprava Doľava"
+        "Sprava doľava"
       ],
       "SAML configuration saved": [
         "Konfigurácia SAML bola uložená"
@@ -10885,7 +10885,7 @@
         "Toto zmaže všetky predchádzajúce verzie vašich súborov."
       ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
-        "Týmto bude prístup k **${ email }** zamietnutý. Ste si istí, že chcete pokračovať?"
+        "Týmto bude prístup k **${ email }** zamietnutý. Skutočne chcete pokračovať?"
       ],
       "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
         "Tým dôjde k deaktivácii dvojfázového overovania, vrátane aplikácie pre autentizáciu a metód bezpečnostného kľúča."
@@ -10909,7 +10909,7 @@
         "Týmto sa natrvalo vymaže váš účet a všetky jeho údaje. Tento účet už nebude možné znovu reaktivovať."
       ],
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
-        "Tým zamietnete zariadenie **${ name }**, ktoré sa **${ date }** pokúsilo prihlásiť k vášmu účtu ${ BRAND_NAME }."
+        "Tým zamietnete zariadenie **${ name }**, ktoré sa **${ date }** pokúsilo prihlásiť k vášmu ${ BRAND_NAME } účtu."
       ],
       "This will remove any enabled 2FA methods.": [
         "Týmto odstránite všetky povolené metódy 2FA."
@@ -12091,7 +12091,7 @@
         "Prejsť na poslednú"
       ],
       "Label as...": [
-        "Označenie ako..."
+        "Označiť ako…"
       ],
       "Load embedded images": [
         "Načítať vložené obrázky"
@@ -12136,7 +12136,7 @@
         "Presunúť do..."
       ],
       "Move up": [
-        "Posunúť sa nahor"
+        "Posunúť nahor"
       ],
       "New message": [
         "Nová správa"
@@ -12216,7 +12216,7 @@
         "Základná navigácia"
       ],
       "Composer shortcuts": [
-        "Vytvorenie skratiek"
+        "Editor skratiek"
       ],
       "Folder shortcuts": [
         "Skratky priečinkov"
@@ -12891,7 +12891,7 @@
         "Súborové prílohy (až do 10 GB)"
       ],
       "Filter Name": [
-        "Názov filtru"
+        "Názov filtra"
       ],
       "First name": [
         "Krstné meno"
@@ -14196,7 +14196,7 @@
         "Nastavte si účet s doménou Porkbun."
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
-        "Boli ste pozvaní vyskúšať ${ MAIL_APP_NAME }"
+        "Dostali ste pozvánku na otestovanie aplikácie ${ MAIL_APP_NAME }."
       ]
     },
     "mail_signup_2024: title": {
@@ -14266,8 +14266,14 @@
       "Detach from SSO": [
         "Odpojiť od SSO"
       ],
+      "Disable user": [
+        "Deaktivovať používateľa"
+      ],
       "Edit": [
         "Upraviť"
+      ],
+      "Enable user": [
+        "Povoliť používateľa"
       ],
       "Remove": [
         "Odstrániť"
@@ -15078,6 +15084,9 @@
       "Share files with no size limit": [
         "Zdieľanie súborov bez obmedzenia veľkosti"
       ],
+      "Short domain (@pm.me)": [
+        "Skrátený tvar domény (@pm.me)"
+      ],
       "Sign in as user": [
         "Prihlásiť sa ako používateľ"
       ],
@@ -15568,7 +15577,7 @@
         "Prispôsobte si svoj emailový podpis pomocou log, obrázkov, ikon sociálnych médií, odkazov na vaše kontaktné údaje a ďalších"
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "Telefonická podpora je k dispozícii od tímu zákazníckej podpory ${ BRAND_NAME } počas európskych pracovných hodín, pre zákazníkov s 20 a viac používateľmi"
+        "Telefonická podpora od tímu zákazníckej podpory ${ BRAND_NAME } je k dispozícii počas európskych pracovných hodín pre zákazníkov s viac než 20 používateľmi"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Zabraňuje prístupu ${ BRAND_NAME } alebo tretím stranám k správam. Jediní ľudia, ktorí môžu čítať správy, sú odosielateľ a zamýšľaný príjemca."
@@ -17475,7 +17484,7 @@
         "Opíšte prosím problém a uveďte akékoľvek chybové správy"
       ],
       "Please insert link first": [
-        "Najskôr prosím vložte odkaz"
+        "Najskôr vložte odkaz, prosím"
       ],
       "Please select a country": [
         "Vyberte krajinu, prosím"
@@ -17517,7 +17526,7 @@
         "Vyberte krajinu"
       ],
       "Select state": [
-        "Vybrať stav"
+        "Vyberte stav"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Dajte nám vedieť, čo by podľa vás mohlo vylepšiť ${ BRAND_NAME }"
@@ -18013,7 +18022,7 @@
         "Vytvoriť pravidlo"
       ],
       "Delete": [
-        "Odstrániť"
+        "Vymazať"
       ],
       "Delete rule": [
         "Vymazať pravidlo"
@@ -18068,8 +18077,8 @@
     "retention_policy_2025_Info": {
       "${ n } day": [
         "${ n } deň",
-        "${ n } dní",
         "${ n } dni",
+        "${ n } dní",
         "${ n } dní"
       ],
       "${ remainingCount } more": [
@@ -18106,8 +18115,8 @@
       ],
       "day": [
         "deň",
-        "dní",
         "dni",
+        "dní",
         "dní"
       ],
       "Keep items forever": [
@@ -18171,13 +18180,13 @@
         "Akcia"
       ],
       "Applies to": [
-        "Aplikované pre"
+        "Platí pre"
       ],
       "Retention period": [
         "Doba uchovávania"
       ],
       "Retention Rule": [
-        "Pravidlo uschovania"
+        "Pravidlo uchovávania"
       ]
     },
     "retention_policy_2025_TableRow": {
@@ -18314,7 +18323,7 @@
         "Beriem na vedomie, že pomocou tejto sady na obnovu nebudem môcť obnoviť aktuálne zablokované údaje."
       ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
-        "Ak zabudnete svoje heslo ${ BRAND_NAME } a bude ho nutné resetovať, môžete sa prihlásiť k účtu pomocou tohto zariadenia a nového hesla a obnoviť tým plný prístup k svojmu účtu ${ BRAND_NAME }."
+        "Ak zabudnete svoje ${ BRAND_NAME } heslo a bude ho nutné resetovať, môžete sa prihlásiť k účtu pomocou tohto zariadenia a nového hesla a obnoviť tým plný prístup k svojmu ${ BRAND_NAME } účtu."
       ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Ak zabudnete svoje heslo ${ BRAND_NAME } a bude ho nutné resetovať, môžete sa prihlásiť k účtu pomocou tohto zariadenia a nového hesla a obnoviť tým plný prístup k svojmu účtu ${ BRAND_NAME }."
@@ -18350,7 +18359,7 @@
         "Zabezpečte svoj účet"
       ],
       "Safeguard your account further": [
-        "Zvýšte zabezpečenie svojho účtu ešte viac"
+        "Dodatočná ochrana vášho účtu"
       ],
       "Safety review": [
         "Kontrola bezpečnosti"
@@ -19404,9 +19413,6 @@
       "get a secure ${ MAIL_APP_NAME } address.": [
         "získajte bezpečnú ${ MAIL_APP_NAME } adresu."
       ],
-      "Get a secure one from us, or ${ internalButton }": [
-        "Získajte si od nás bezpečnú, alebo ${ internalButton }"
-      ],
       "Gifted by **${ referrerName }**": [
         "Daroval/a **${ referrerName }**"
       ],
@@ -20033,7 +20039,7 @@
         "${ n } používateľov vás žiada o pomoc s prihlásením do svojho účtu ${ BRAND_NAME }. Účet s jednotným prihlásením."
       ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
-        "**SSO užívatelia (poskytovaní poskytovateľom identít) budú zmazaní** a budete ich musieť vytvoriť ručne, aby ste ich mohli pridať späť do organizácie."
+        "**SSO používatelia (poskytovaní poskytovateľom identít) budú zmazaní** a budete ich musieť vytvoriť ručne, aby ste ich mohli pridať späť do organizácie."
       ],
       "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
         "**SSO používatelia budú odpojení od vášho poskytovateľa identity** a prevedení na používateľov bez SSO."
@@ -20162,7 +20168,7 @@
         "Nie, nejde o moju žiadosť"
       ],
       "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization.": [
-        "Používatelia, ktorí nie sú súčasťou systému jednotného prihlásenia SSO (tj sú vytvorení ručne a nie cez poskytovateľa identity) sa do vašej organizácie môžu naďalej prihlásiť."
+        "Používatelia, ktorí nie sú súčasťou systému jednotného prihlásenia SSO (tj. sú vytvorení ručne a nie cez poskytovateľa identity) sa do vašej organizácie môžu naďalej prihlásiť."
       ],
       "Once single sign-on is disabled for your organization:": [
         "V momente, keď dôjde k zrušeniu jednotného prihlásenia pre vašu organizáciu:"
@@ -20300,7 +20306,7 @@
         "Názov"
       ],
       "Preview": [
-        "Ukážka"
+        "Náhľad"
       ]
     },
     "Storage": {
@@ -20853,7 +20859,7 @@
         "Nahrávať nové súbory"
       ],
       "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
-        "Jediným zdrojom príjmov spoločnosti ${ BRAND_NAME } je užívateľské predplatné. Vaša podpora nám umožňuje zostať nezávislými, pokračovať v našom poslaní chrániť online súkromie a pomáhať aktivistom a organizáciám bojujúcim za slobodu."
+        "Jediným zdrojom príjmov spoločnosti ${ BRAND_NAME } je predplatné používateľov. Vaša podpora nám pomáha zachovať nezávislosť, napomáha našej misii v oblasti online súkromia a pomáha aktivistom a organizáciám bojujúcim za slobodu."
       ],
       "Users won’t be able to manage their calendars": [
         "Používatelia nebudú môcť spravovať svoje kalendáre"
@@ -20930,7 +20936,7 @@
         "Zvýšiť úroveň"
       ],
       "Upgrade your productivity": [
-        "Zlepšite svoju produktivitu"
+        "Zvýšte svoju produktivitu"
       ],
       "We don't sell your data": [
         "Nepredávame vaše údaje"
@@ -21222,10 +21228,10 @@
         "Predplatné bolo úspešne zrušené"
       ],
       "You will receive your username via email within a minute if you entered a valid recovery email address.": [
-        "Ak ste zadali platnú emailovú adresu pre obnovenie, dostanete svoje užívateľské meno do jednej minúty emailom."
+        "Ak ste zadali platnú emailovú adresu pre obnovenie, dostanete svoje používateľské meno do jednej minúty emailom."
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
-        "Ak ste zadali platné telefónne číslo na obnovenie, dostanete do minúty svoje užívateľské meno prostredníctvom SMS."
+        "Ak ste zadali platné telefónne číslo na obnovenie, dostanete do minúty svoje používateľské meno prostredníctvom SMS."
       ]
     },
     "Success message": {
@@ -21240,6 +21246,12 @@
       ],
       "User deleted": [
         "Používateľ odstránený"
+      ],
+      "User disabled": [
+        "Používateľ deaktivovaný"
+      ],
+      "User enabled": [
+        "Používateľ povolený"
       ]
     },
     "Success message after sorting folders": {
@@ -21325,7 +21337,7 @@
         "Vytvorte si bezpečné prihlasovacie údaje na všetkých svojich zariadeniach. Zahŕňa neobmedzené aliasy, 20 trezorov, integrované 2FA, automatické dopĺňanie platobných kariet a ďalšie."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Zahŕňa 2950+ serverov vo viac ako 65 krajinách, pripojenie až 10 zariadení, prístup k celosvetovým streamovacím službám, blokovaniu malvéru a reklám a ďalšie."
+        "Zahŕňa 2950+ serverov vo viac ako 65 krajinách, pripojenie až 10 zariadení, prístup k celosvetovým streamovacím službám, blokovanie malvéru a reklám a ďalšie."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Zahŕňa podporu pre 1 vlastnú emailovú doménu, 10 emailových adries, 10 hide-my-email aliasov, zdieľanie kalendára a ďalšie."
@@ -21978,7 +21990,7 @@
         "Odstrániť filter?"
       ],
       "Delete folder?": [
-        "Odstrániť priečinok?"
+        "Vymazať priečinok?"
       ],
       "Delete group?": [
         "Vymazať skupinu?"
@@ -21987,7 +21999,7 @@
         "Odstrániť kľúč natrvalo?"
       ],
       "Delete label?": [
-        "Odstrániť štítok?"
+        "Vymazať štítok?"
       ],
       "Delete organization logo?": [
         "Vymazať logo organizácie?"
@@ -23385,7 +23397,7 @@
         "Táto funkcia oneskoruje odosielanie emailov a dáva vám možnosť zrušiť odoslanie počas zvoleného časového rámca."
       ],
       "This feature is only available for paid users": [
-        "Táto funkcia je k dispozícii iba užívateľom s prémiovým účtom"
+        "Táto funkcia je k dispozícii iba pre používateľov s prémiovým účtom"
       ],
       "This feature is only available on Beta": [
         "Táto funkcia je dostupná len v Beta verzii"
@@ -23515,7 +23527,7 @@
         "stabilná verzia"
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Táto verzia prehliadača Tor nie je podporovaná. Prosím aktualizujte na najnovší ${ stableRelease }"
+        "Táto verzia Tor browsera nie je podporovaná. Aktualizujte na najnovšiu verziu ${ stableRelease }, prosím."
       ]
     },
     "Transaction state display as badge": {
@@ -23705,7 +23717,7 @@
     },
     "Update font modal": {
       "Today is a good day to write an email": [
-        "Dnes je dobrý deň napísať email"
+        "Dnes je ten správny deň na napísanie emailu."
       ],
       "Update default font and size": [
         "Upraviť predvolené písmo a veľkosť"
@@ -24148,7 +24160,7 @@
         "Bezpečne vymieňajte Bitcoin prostredníctvom emailu namiesto zložitých, 26-znakových bitcoinových adries, ktoré sú náchylné na chybu"
       ],
       "Securely hold and transact Bitcoin for free.": [
-        "Bezpečne uchovávajte a vykonávajte transakcie s Bitcoin zadarmo."
+        "Bezpečne uchovávajte a vykonávajte transakcie s Bitcoinami zadarmo."
       ],
       "Self-custodial wallet": [
         "Vlastná peňaženka"

@@ -313,6 +313,9 @@
       "Continue with Outlook": [
         "Continuar con Outlook"
       ],
+      "Continue without categories": [
+        "Continuar sin categorías"
+      ],
       "Contract composer": [
         "Reducir el editor"
       ],
@@ -473,9 +476,6 @@
       ],
       "Download logs": [
         "Descargar los registros"
-      ],
-      "Download now": [
-        "Descargar ahora"
       ],
       "Download the desktop app": [
         "Descarga la aplicación de escritorio"
@@ -728,9 +728,6 @@
       ],
       "Import from Outlook": [
         "Importar desde Outlook"
-      ],
-      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
-        "Actualización importante disponible. Para continuar usando la aplicación, actualiza a la última versión. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Por la mañana"
@@ -1483,6 +1480,9 @@
       "Try another method": [
         "Intenta con otro método"
       ],
+      "Try categories": [
+        "Prueba las categorías"
+      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Error al guardar debido a: ${ saveError }. Intenta guardar de nuevo."
       ],
@@ -1542,9 +1542,6 @@
       ],
       "Upgrade for 200GB": [
         "Mejora por 200GB"
-      ],
-      "Upgrade Now": [
-        "Mejorar ahora"
       ],
       "Upgrade now": [
         "Cambiar de plan"
@@ -1642,15 +1639,6 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "No puedes enviar archivos vCard de más de ${ maxAttachments } contacto.",
         "No puedes enviar archivos vCard de más de ${ maxAttachments } contacto."
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "Tu prueba gratuita de la aplicación de escritorio finaliza en 2 días. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "Tu prueba gratuita de la aplicación de escritorio finaliza en 5 días. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "Tu prueba gratuita de la aplicación de escritorio finaliza en ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Tu asistente de escritura de correo"
@@ -6889,6 +6877,9 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "¿No puedes recordar tu contraseña? Podemos ayudarte a eliminar los datos cifrados de todos los contactos cifrados con esta clave y desactivar la alerta al mismo tiempo."
       ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Las categorías funcionan igual que los filtros de spam. ${ MAIL_APP_NAME } nunca lee tus correos electrónicos ni comparte tus datos."
+      ],
       "Center": [
         "Centrar"
       ],
@@ -7470,9 +7461,6 @@
       ],
       "Low Priority": [
         "Prioridad baja"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Establece ${ MAIL_APP_NAME } como tu aplicación de correo electrónico por defecto."
       ],
       "Manage your folders": [
         "Administra tus carpetas"
@@ -8508,6 +8496,9 @@
       ],
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "Cuando viajes o uses un WiFi público, conéctate a ${ VPN_APP_NAME } para que nadie rastree tu actividad en línea o robe tus datos. Es gratuito."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "Con las nuevas categorías de correo electrónico, solo los mensajes importantes llegan a tu bandeja de entrada principal. Todo lo demás se organiza en categorías."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "¿Te gustaría recibir un nuevo código de verificación o utilizar un método de verificación alternativo?"
@@ -10886,6 +10877,9 @@
       ],
       "Share files with no size limit": [
         "Comparte archivos sin límites de tamaño."
+      ],
+      "Short domain (@pm.me)": [
+        "Dominio corto (@pm.me)"
       ],
       "Sign in as user": [
         "Iniciar sesión como usuario"
@@ -14865,6 +14859,9 @@
       ],
       "External encryption": [
         "Cifrado externo"
+      ],
+      "Fewer distractions, more focus": [
+        "Menos distracciones, más concentración"
       ],
       "Filter for more focus": [
         "Filtra tus mensajes para una mejor concentración"

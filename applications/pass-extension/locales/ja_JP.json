@@ -1048,6 +1048,9 @@
       "Importing items failed": [
         "アイテムのインポートに失敗しました"
       ],
+      "In order to continue, ${ PASS_APP_NAME } requires these extension permissions: ${ permissionsJSX }": [
+        "続行するには、${ PASS_APP_NAME } は、以下の拡張機能のアクセス許可が必要です: ${ permissionsJSX }"
+      ],
       "Inactive secure links could not be removed.": [
         "アクティブでないセキュアリンクを削除できませんでした。"
       ],
@@ -1086,6 +1089,12 @@
       ],
       "Passphrase is incorrect": [
         "パスフレーズが間違っています"
+      ],
+      "Permission denied for ${ domainsJSX } website access.": [
+        "${ domainsJSX } ウェブサイトへのアクセスが拒否されました。"
+      ],
+      "Permission denied for website access.": [
+        "ウェブサイトへのアクセスが拒否されました。"
       ],
       "PIN codes do not match": [
         "PINコードが一致しません"
@@ -1358,6 +1367,9 @@
       ],
       "Access successfully confirmed": [
         "アクセスが正常に確認されました"
+      ],
+      "access to ${ domains }.": [
+        "${ domains }へのアクセス。"
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "${ PASS_APP_NAME } へのアクセスには常にあなたの ${ BRAND_NAME } パスワードが必要です。"
@@ -1815,6 +1827,9 @@
       "Moving items to trash": [
         "アイテムをごみ箱に移動中"
       ],
+      "Navigate to your browser's extension settings and enable site permissions for ${ PASS_SHORT_APP_NAME }.": [
+        "お客様のブラウザの拡張機能の設定に移動し、${ PASS_SHORT_APP_NAME }のサイトのアクセス許可を有効にしてください。"
+      ],
       "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
         "メールアドレスを見られたくないけれど、誰かにメールを送りたいですか？連絡先のエイリアスを設定しましょう。"
       ],
@@ -1847,6 +1862,9 @@
       ],
       "Open the Extensions menu": [
         "拡張機能メニューを開く"
+      ],
+      "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
+        "Safari の設定を開き、${ PASS_APP_NAME } を見つけ、「権限」に進み、サイトの権限を有効にしてください。"
       ],
       "Owner": [
         "所有者"
@@ -2051,6 +2069,12 @@
       ],
       "Restoring trashed items...": [
         "ごみ箱の項目を復元しています..."
+      ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Permissions & data\" and enable site permissions.": [
+        "拡張機能アイコンを右クリックし、「拡張機能を管理」を選択します。「権限とデータ」に移動し、サイトの権限を有効にします。"
+      ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Site access\" and enable site permissions.": [
+        "拡張機能アイコンを右クリックし、「拡張機能を管理」を選択します。「サイトアクセス」に移動し、サイトの権限を有効にします。"
       ],
       "Save login": [
         "ログインを保存"

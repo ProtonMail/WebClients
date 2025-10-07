@@ -296,6 +296,9 @@
       "Upload and share files": [
         "Dosyaları yükleyin ve paylaşın"
       ],
+      "Use ${ label } theme": [
+        "${ label } teması kullanılsın"
+      ],
       "Use ${ PASS_APP_NAME } for Business": [
         "${ PASS_APP_NAME } for Business kullanın"
       ],
@@ -802,8 +805,8 @@
       "Elevate your private AI experience and unlock advanced models and premium features with ${ LUMO_SHORT_APP_NAME } Plus.": [
         "Güvenli yapay zeka deneyiminizi geliştirin ve ${ LUMO_SHORT_APP_NAME } Plus tarifesi ile gelişmiş modellere ve ücretli özelliklere erişin."
       ],
-      "Last updated on ${ DATE_VERSION }": [
-        "Son güncelleme ${ DATE_VERSION } tarihinde"
+      "Last updated on ${ formattedDate }": [
+        "Son güncelleme: ${ formattedDate }"
       ],
       "Permanently delete your chats. This is irreversible.": [
         "Sohbetlerinizi kalıcı olarak silin. Bu işlem geri alınamaz."
