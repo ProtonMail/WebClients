@@ -296,6 +296,9 @@
       "Upload and share files": [
         "Nahrát a sdílet soubory"
       ],
+      "Use ${ label } theme": [
+        "Použít ${ label } motiv"
+      ],
       "Use ${ PASS_APP_NAME } for Business": [
         "Použit ${ PASS_APP_NAME } for Business"
       ],
@@ -816,8 +819,8 @@
       "Elevate your private AI experience and unlock advanced models and premium features with ${ LUMO_SHORT_APP_NAME } Plus.": [
         "Vylepšete si soukromý zážitek s umělou inteligencí a odemkněte si pokročilé modely a prémiové funkce s aplikací ${ LUMO_SHORT_APP_NAME } Plus."
       ],
-      "Last updated on ${ DATE_VERSION }": [
-        "Poslední aktualizace: ${ DATE_VERSION }"
+      "Last updated on ${ formattedDate }": [
+        "Poslední aktualizace: ${ formattedDate }"
       ],
       "Permanently delete your chats. This is irreversible.": [
         "Trvale smazat vaše konverzace. Toto je nevratné."
@@ -4348,6 +4351,9 @@
       ],
       "Share files with no size limit": [
         "Sdílení souborů bez omezení velikosti"
+      ],
+      "Short domain (@pm.me)": [
+        "Zkrácený tvar domény (@pm.me)"
       ],
       "Sign in as user": [
         "Přihlasit se jako uživatel"
