@@ -24,8 +24,7 @@ describe("urlTests", () => {
         beforeAll(() => {
             jest.spyOn(urlStore, "getAppURL").mockReturnValue({
                 account: "https://account.proton.me",
-                mail: "https://mail.proton.me",
-                calendar: "https://calendar.proton.me",
+                meet: "https://meet.proton.me",
             });
         });
 

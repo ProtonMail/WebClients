@@ -1,13 +1,11 @@
 import { BrowserWindow, Event, Rectangle, WebContents, WebContentsView, app, nativeTheme } from "electron";
 import { debounce } from "lodash";
 import { getWindowBounds, saveWindowBounds } from "../../store/boundsStore";
-import { getSettings, updateSettings } from "../../store/settingsStore";
 import { updateDownloaded } from "../../update";
 import { isLinux, isMac, isWindows } from "../helpers";
 import { checkKeys } from "../keyPinning";
 import { mainLogger, viewLogger } from "../log";
 import { setApplicationMenu } from "../menus/menuApplication";
-import { createContextMenu } from "../menus/menuContext";
 import {
     getLocalID,
     isAccountLogin,
@@ -134,17 +132,6 @@ const createView = (viewID: ViewID) => {
     if (viewID) {
         handleBeforeHandle(viewID, view);
     }
-
-    view.webContents.on("context-menu", (_e, props) => {
-        const contextMenu = createContextMenu(props, view);
-
-        if (contextMenu) {
-            mainLogger.info("Opening context menu");
-            contextMenu.popup();
-        } else {
-            mainLogger.info("Cannot create context menu");
-        }
-    });
 
     view.webContents.session.setCertificateVerifyProc((request, callback) => {
         const callbackValue = checkKeys(request);
@@ -494,15 +481,6 @@ export async function resetHiddenViews({ toHomepage } = { toHomepage: false }) {
         }
     }
     await Promise.all(loadPromises);
-}
-
-export function getSpellCheckStatus() {
-    return mainWindow?.webContents?.session?.spellCheckerEnabled ?? getSettings().spellChecker;
-}
-
-export function toggleSpellCheck(enabled: boolean) {
-    updateSettings({ spellChecker: enabled });
-    mainWindow?.webContents?.session?.setSpellCheckerEnabled(enabled);
 }
 
 export function getAccountView() {

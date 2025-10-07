@@ -26,7 +26,8 @@
         "make:beta": "cross-env RELEASE=beta electron-forge make",
         "negativity": "electronegativity -i ./src",
         "package": "electron-forge package",
-        "start": "electron-forge start"
+        "start": "electron-forge start",
+        "test": "jest --runInBand"
     },
     "config": {
         "appBundleId": "ch.protonmail.desktop",
@@ -65,6 +66,7 @@
         "@electron/fuses": "^1.7.0",
         "@proton/i18n": "workspace:^",
         "@sentry/electron": "^5.12.0",
+        "@types/jest": "^30.0.0",
         "@types/lodash": "^4.17.20",
         "@types/node": "^22.18.6",
         "@vercel/webpack-asset-relocator-loader": "1.7.3",
@@ -75,10 +77,12 @@
         "eslint": "^9.36.0",
         "eslint-plugin-import": "^2.32.0",
         "fork-ts-checker-webpack-plugin": "^9.1.0",
+        "jest": "^30.2.0",
         "mac-appify": "^2019.4.13",
         "node-loader": "^2.1.0",
         "prettier": "3.6.2",
         "style-loader": "^4.0.0",
+        "ts-jest": "^29.4.4",
         "ts-loader": "^9.5.4",
         "ts-node": "^10.9.2",
         "typescript": "^5.9.2",
