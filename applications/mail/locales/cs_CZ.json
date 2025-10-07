@@ -318,6 +318,9 @@
       "Continue with Outlook": [
         "Pokračovat skrze Outlook"
       ],
+      "Continue without categories": [
+        "Pokračovat bez kategorií"
+      ],
       "Contract composer": [
         "Ukončit režim celé obrazovky"
       ],
@@ -485,9 +488,6 @@
       ],
       "Download logs": [
         "Stáhnout logy"
-      ],
-      "Download now": [
-        "Stáhnout nyní"
       ],
       "Download the desktop app": [
         "Stáhněte si desktopovou aplikaci"
@@ -740,9 +740,6 @@
       ],
       "Import from Outlook": [
         "Importovat z Outlooku"
-      ],
-      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
-        "K dispozici je důležitá aktualizace. Chcete-li aplikaci nadále používat, aktualizujte ji na nejnovější verzi. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Ráno"
@@ -1506,6 +1503,9 @@
       "Try another method": [
         "Zkuste jinou metodu"
       ],
+      "Try categories": [
+        "Vyzkoušejte kategorie"
+      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Pokuste se znovu uložit. Uložení se nezdařilo z důvodu: ${ saveError }"
       ],
@@ -1565,9 +1565,6 @@
       ],
       "Upgrade for 200GB": [
         "Navýšit na 200 GB"
-      ],
-      "Upgrade Now": [
-        "Navýšit nyní"
       ],
       "Upgrade now": [
         "Navýšit nyní"
@@ -1667,15 +1664,6 @@
         "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktům",
         "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktům",
         "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktům"
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "Bezplatná zkušební verze desktopové aplikace končí za 2 dny. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "Bezplatná zkušební verze desktopové aplikace končí za 5 dní. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "Bezplatná zkušební verze desktopové aplikace končí dne ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Váš asistent psaní e-mailů"
@@ -7114,6 +7102,9 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nemůžete si vzpomenout na heslo? Můžeme vám pomoci smazat šifrovaná data všech kontaktů, která jsou šifrována tímto klíčem a zbavit se upozornění."
       ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Kategorie fungují stejně jako spam filtry. ${ MAIL_APP_NAME } nikdy nečte vaše e-maily ani nesdílí vaše data."
+      ],
       "Categories work like spam filters. We only look for patterns in unencrypted header and technical data. We do not read email content, share your data, or infringe on your privacy.": [
         "Kategorie fungují jako filtry spamu. Hledáme pouze vzorce v nešifrovaných hlavičkách a technických datech. Nečteme obsah e-mailů, nesdílíme vaše data ani neporušujeme vaše soukromí."
       ],
@@ -7734,9 +7725,6 @@
       ],
       "Low Priority": [
         "Nízká priorita"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Nastavte ${ MAIL_APP_NAME } jako výchozí e-mailovou aplikaci."
       ],
       "Manage your folders": [
         "Spravovat složky"
@@ -8784,6 +8772,9 @@
       ],
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "Když cestujete nebo používáte veřejnou Wi-Fi, připojte se k ${ VPN_APP_NAME }, abyste zabránili komukoli sledovat vaše online aktivity nebo krást vaše data. Je to zdarma."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "Díky novým kategoriím e-mailů se pouze důležité zprávy dostanou do vaší primární doručené pošty. Všechno ostatní je uspořádáno do kategorií."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Chcete získat nový ověřovací kód nebo použít alternativní metodu ověřování?"
@@ -11278,6 +11269,9 @@
       ],
       "Share files with no size limit": [
         "Sdílení souborů bez omezení velikosti"
+      ],
+      "Short domain (@pm.me)": [
+        "Zkrácený tvar domény (@pm.me)"
       ],
       "Sign in as user": [
         "Přihlasit se jako uživatel"
@@ -15388,6 +15382,9 @@
       ],
       "External encryption": [
         "Externí šifrování"
+      ],
+      "Fewer distractions, more focus": [
+        "Méně rozptylování, více soustředění"
       ],
       "Filter for more focus": [
         "Filtrace pošty pro větší zaměření"

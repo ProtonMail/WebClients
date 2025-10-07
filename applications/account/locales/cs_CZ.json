@@ -14272,8 +14272,14 @@
       "Detach from SSO": [
         "Odpojit od SSO"
       ],
+      "Disable user": [
+        "Deaktivovat uživatele"
+      ],
       "Edit": [
         "Upravit"
+      ],
+      "Enable user": [
+        "Povolit uživatele"
       ],
       "Remove": [
         "Odebrat"
@@ -15083,6 +15089,9 @@
       ],
       "Share files with no size limit": [
         "Sdílení souborů bez omezení velikosti"
+      ],
+      "Short domain (@pm.me)": [
+        "Zkrácený tvar domény (@pm.me)"
       ],
       "Sign in as user": [
         "Přihlasit se jako uživatel"
@@ -19431,9 +19440,6 @@
       "get a secure ${ MAIL_APP_NAME } address.": [
         "získejte bezpečnou ${ MAIL_APP_NAME } adresu."
       ],
-      "Get a secure one from us, or ${ internalButton }": [
-        "Získejte od nás bezpečnou adresu, nebo ${ internalButton }"
-      ],
       "Gifted by **${ referrerName }**": [
         "Daroval(a) **${ referrerName }**"
       ],
@@ -21267,6 +21273,12 @@
       ],
       "User deleted": [
         "Uživatel odstraněn"
+      ],
+      "User disabled": [
+        "Uživatel deaktivován"
+      ],
+      "User enabled": [
+        "Uživatel povolen"
       ]
     },
     "Success message after sorting folders": {

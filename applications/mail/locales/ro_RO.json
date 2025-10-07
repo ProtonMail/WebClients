@@ -317,6 +317,9 @@
       "Continue with Outlook": [
         "Continuare cu Outlook"
       ],
+      "Continue without categories": [
+        "Continuare fără categorii"
+      ],
       "Contract composer": [
         "Restrângere editor de mesaje"
       ],
@@ -482,9 +485,6 @@
       ],
       "Download logs": [
         "Jurnal descărcare"
-      ],
-      "Download now": [
-        "Descărcare"
       ],
       "Download the desktop app": [
         "Descărcați aplicația pentru desktop"
@@ -737,9 +737,6 @@
       ],
       "Import from Outlook": [
         "Importare din Outlook"
-      ],
-      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
-        "Actualizare importantă disponibilă. Pentru a continua să utilizați aplicația trebuie s-o actualizați. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Dimineața"
@@ -1499,6 +1496,9 @@
       "Try another method": [
         "Încercaţi o altă metodă"
       ],
+      "Try categories": [
+        "Încercați categoriile"
+      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Reîncercați salvarea. Aceasta a eșuat deoarece: ${ saveError }"
       ],
@@ -1558,9 +1558,6 @@
       ],
       "Upgrade for 200GB": [
         "Treceți la 200 GiB"
-      ],
-      "Upgrade Now": [
-        "Modificare"
       ],
       "Upgrade now": [
         "Modificare"
@@ -1659,15 +1656,6 @@
         "Număr maxim de contacte la care puteți trimite fișiere vCard: ${ maxAttachments }",
         "Număr maxim de contacte la care puteți trimite fișiere vCard: ${ maxAttachments }",
         "Număr maxim de contacte la care puteți trimite fișiere vCard: ${ maxAttachments }"
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "Perioada de încercare a versiunii pentru desktop se încheie peste 2 zile. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "Perioada de încercare a versiunii pentru desktop se încheie peste 5 zile. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "Perioada de încercare a versiunii pentru desktop se încheie ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Asistentul personal de scriere"
@@ -7006,6 +6994,9 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nu vă puteți aminti parola? Vă putem ajuta să ștergeți datele criptate ale tuturor contactelor criptate cu această cheie și pe parcursul procesului să eliminați alerta."
       ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Categoriile funcționează la fel ca filtrele de mesaje nedorite. ${ MAIL_APP_NAME } nu vă citește niciodată mesajele și nu vă partajează datele."
+      ],
       "Categories work like spam filters. We only look for patterns in unencrypted header and technical data. We do not read email content, share your data, or infringe on your privacy.": [
         "Categoriile funcționează ca filtrele de mesaje nedorite. Căutăm tipare doar în anteturile necriptate și în datele tehnice. Nu citim conținutul mesajelor, nu vă partajăm datele și nu vă încălcăm confidențialitatea."
       ],
@@ -7614,9 +7605,6 @@
       ],
       "Low Priority": [
         "Prioritate scăzută"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Setați ${ MAIL_APP_NAME } ca aplicație implicită de e-mail."
       ],
       "Manage your folders": [
         "Gestionare foldere"
@@ -8658,6 +8646,9 @@
       ],
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "Când călătoriți sau folosiți Wi-Fi public, conectați-vă la ${ VPN_APP_NAME } pentru a împiedica pe oricine să vă urmărească activitatea online sau să vă fure datele. Este gratis."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "Cu noile categorii de mesaje, doar mesajele importante ajung în folderul principal de mesaje primite. Restul sunt organizate pe categorii."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Doriți să primiți un cod nou de verificare sau să folosiți o metodă alternativă de verificare?"
@@ -12542,7 +12533,7 @@
         "Număr de telefon"
       ],
       "Please describe the problem and include any error messages": [
-        "Descrieți problema incluzând și mesajele de eroare ce apar"
+        "Descrieți problema incluzând și mesajele de eroare care apar."
       ],
       "Please insert link first": [
         "Introduceți mai întâi legătura"
@@ -15107,6 +15098,9 @@
       ],
       "External encryption": [
         "Criptare externă"
+      ],
+      "Fewer distractions, more focus": [
+        "Mai puține distrageri, mai multă concentrare"
       ],
       "Filter for more focus": [
         "Filtru pentru concentrare mai bună"

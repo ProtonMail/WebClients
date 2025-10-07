@@ -158,7 +158,7 @@
         "Autentica"
       ],
       "Auto-delete spam and trash": [
-        "Autoneteja de brossa i paperera"
+        "Neteja automàticament el correu brossa i la paperera"
       ],
       "Back": [
         "Torna"
@@ -315,6 +315,9 @@
       ],
       "Continue with Outlook": [
         "Continua amb Outlook"
+      ],
+      "Continue without categories": [
+        "Continueu sense categories"
       ],
       "Contract composer": [
         "Contraure l'editor"
@@ -479,9 +482,6 @@
       ],
       "Download logs": [
         "Descarrega els registres"
-      ],
-      "Download now": [
-        "Descarrega"
       ],
       "Download the desktop app": [
         "Descarregueu l'aplicació d'escriptori"
@@ -735,9 +735,6 @@
       "Import from Outlook": [
         "Importa des de l'Outlook"
       ],
-      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
-        "Hi ha disponible una actualització important. Per a continuar utilitzant l'aplicació, actualitzeu a la versió més recent. ${ downloadUpdate }"
-      ],
       "In the morning": [
         "Al matí"
       ],
@@ -794,7 +791,7 @@
         "Etiqueteu com a…"
       ],
       "label emails as": [
-        "etiquetar correus electrònics com"
+        "etiqueta els correus electrònics com a"
       ],
       "Later": [
         "Més tard"
@@ -863,7 +860,7 @@
         "Marca com a no llegit"
       ],
       "mark emails as": [
-        "marcar correus electrònics com"
+        "marca els correus electrònics com a"
       ],
       "Mark for deletion": [
         "Marca per a l'eliminació"
@@ -944,7 +941,7 @@
         "Moveu-ho tot a la paperera"
       ],
       "move emails to": [
-        "moure correus electrònics a"
+        "mou els correus electrònics a"
       ],
       "Move to": [
         "Mou a"
@@ -1283,7 +1280,7 @@
         "Envia de totes maneres"
       ],
       "send auto-reply email": [
-        "enviar correu d’auto-resposta"
+        "envia un correu de resposta automàtica"
       ],
       "Send read receipt": [
         "Enviar confirmació de lectura"
@@ -1301,7 +1298,7 @@
         "Estableix com a portada de l'àlbum"
       ],
       "Set as default": [
-        "Estableix per defecte"
+        "Estableix com a predeterminat"
       ],
       "Set encryption": [
         "Definiu el xifrat"
@@ -1498,6 +1495,9 @@
       "Try another method": [
         "Proveu amb un altre mètode"
       ],
+      "Try categories": [
+        "Proveu les categories"
+      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Intenteu tornar a desar. No s'ha pogut desar a causa de: ${ saveError }"
       ],
@@ -1557,9 +1557,6 @@
       ],
       "Upgrade for 200GB": [
         "Milloreu el pla per a 200 GB"
-      ],
-      "Upgrade Now": [
-        "Millora ara"
       ],
       "Upgrade now": [
         "Millora ara"
@@ -1657,15 +1654,6 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "No podeu enviar fitxers vCard de més d'${ maxAttachments } contacte.",
         "No podeu enviar fitxers vCard de més d'${ maxAttachments } contacte."
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "La prova gratuïta de l'aplicació d'escriptori finalitza d'aquí a 2 dies. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "La prova gratuïta de l'aplicació d'escriptori finalitza d'aquí a 5 dies. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "La prova gratuïta de l'aplicació d'escriptori finalitza el ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "El vostre assistent d'escriptura de correus electrònics"
@@ -1955,7 +1943,7 @@
         "Les dades romandran al dispositiu per protegir la vostra privacitat. Això requereix una descàrrega i un maquinari compatible."
       ],
       "Data stay on your device but requires a one-time download and compatible hardware": [
-        "Les dades es mantenen al dispositiu però requereixen una descàrrega única i un maquinari compatible"
+        "Les dades es mantenen al dispositiu, però això requereix una única descàrrega i maquinari compatible."
       ],
       "Fast and secure. No logs are kept.": [
         "Ràpid i segur. No es guarden registres."
@@ -1964,7 +1952,7 @@
         "Per a un processament més ràpid, no es guardarà cap registre de protecció de la vostra privacitat."
       ],
       "Run on ${ BRAND_NAME } servers": [
-        "Executeu-ho als servidors de ${ BRAND_NAME }"
+        "Executa-ho als servidors de ${ BRAND_NAME }"
       ],
       "Run on device": [
         "Executa al dispositiu"
@@ -2328,7 +2316,7 @@
         "Descobriu i configureu les característiques"
       ],
       "Got it": [
-        "Fet"
+        "Entesos"
       ],
       "Maybe later": [
         "Potser més tard"
@@ -2747,13 +2735,13 @@
         "poma"
       ],
       "azureish white": [
-        "blanc blavós"
+        "blanc blavenc"
       ],
       "black": [
         "negre"
       ],
       "blanched almond": [
-        "ametlla blanca"
+        "ametlla blanquejada"
       ],
       "blue-gray": [
         "gris blavós"
@@ -2768,7 +2756,7 @@
         "vermell cirera"
       ],
       "cinnabar": [
-        "vermelló"
+        "cinabri"
       ],
       "cobalt": [
         "cobalt"
@@ -2777,19 +2765,19 @@
         "coure"
       ],
       "cyan-blue azure": [
-        "blau cel"
+        "blau cian"
       ],
       "dandelion": [
         "dent de lleó"
       ],
       "dark cerulean": [
-        "vermelló fosc"
+        "blau ceruli fosc"
       ],
       "dark midnight blue": [
-        "blau fosc mitjanit"
+        "blau mitjanit fosc"
       ],
       "dim gray": [
-        "gris suau"
+        "gris fosc"
       ],
       "enzian": [
         "genciana"
@@ -2798,13 +2786,13 @@
         "verd falguera"
       ],
       "field drab": [
-        "camp mongol"
+        "caqui fosc"
       ],
       "forest": [
         "verd bosc"
       ],
       "gainsboro": [
-        "gris boira"
+        "gris Gainsboro"
       ],
       "japanese laurel": [
         "llorer japonès"
@@ -2846,10 +2834,10 @@
         "blau palatinat"
       ],
       "pale cerulean": [
-        "ceruli pàl·lid"
+        "blau cel"
       ],
       "pastel gray": [
-        "gris pastís"
+        "gris pastel"
       ],
       "persian plum": [
         "pruna persa"
@@ -2891,7 +2879,7 @@
         "sahara"
       ],
       "satin sheen gold": [
-        "daurat setinat"
+        "daurat brillant setinat"
       ],
       "slateblue": [
         "blau pissarra"
@@ -2903,7 +2891,7 @@
         "maduixa"
       ],
       "vivid auburn": [
-        "castany viu"
+        "caoba intens"
       ],
       "white": [
         "blanc"
@@ -4554,7 +4542,7 @@
         "Escolliu una data dintre dels propers ${ n } dies."
       ],
       "Condition incomplete": [
-        "Condició incompleta"
+        "La condició està incompleta"
       ],
       "Contact could not be saved": [
         "El contacte no pot ser desat"
@@ -4628,7 +4616,7 @@
         "Error al connectar a l'API de Bitcoin."
       ],
       "Error in one of the conditions": [
-        "Error en una de les condicions"
+        "Hi ha un error en una de les condicions"
       ],
       "Error while saving draft. Please try again.": [
         "S'ha produït un error en desar l'esborrany. Torneu-ho a provar."
@@ -4891,7 +4879,7 @@
         "S'han eliminat aquests destinataris duplicats: ${ recipents }"
       ],
       "Request timed out": [
-        "S'ha esgotat el temps d'espera"
+        "La sol·licitud ha caducat"
       ],
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "L'enviament d'adjunts està restringit fins que compliu els límits del vostre pla o el milloreu."
@@ -5517,7 +5505,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Quelcom va anar malament autenticant-se amb la vostra clau de seguretat. Torneu-ho a provar."
+        "Alguna cosa ha anat malament en autenticar-se amb la vostra clau de seguretat. Torneu-ho a provar."
       ]
     },
     "fido2: Info": {
@@ -5580,7 +5568,7 @@
     },
     "Filter Actions": {
       "Archive": [
-        "Arxivar"
+        "Arxiva"
       ],
       "Do not move": [
         "No ho moguis"
@@ -5592,7 +5580,7 @@
         "Safata d'entrada - Per defecte"
       ],
       "Select a folder": [
-        "Selecció de carpeta"
+        "Selecciona una carpeta"
       ],
       "Spam": [
         "Correu brossa"
@@ -5606,7 +5594,7 @@
         "Cal complir totes les condicions (I)"
       ],
       "One condition must be fulfilled (OR)": [
-        "Cal complir totes les condicions (O)"
+        "Cal complir una condició (O)"
       ]
     },
     "Filter modal type": {
@@ -5623,7 +5611,7 @@
         "Si l'assumpte"
       ],
       "Select…": [
-        "Seleccionar…"
+        "Selecciona…"
       ],
       "The attachment": [
         "L’adjunt"
@@ -6612,10 +6600,10 @@
         "(${ serverPrice }/mes)"
       ],
       "(Filter if ALL of the following conditions are met)": [
-        "(Filtre si es compleixen totes les condicions següents)"
+        "(Filtra si es compleixen totes les condicions següents)"
       ],
       "(Filter if ANY of the following conditions are met)": [
-        "(Filtre si es compleixen ALGUNES de les condicions següents)"
+        "(Filtra si es compleixen ALGUNES de les condicions següents)"
       ],
       "(No Recipient)": [
         "(Cap destinatari)"
@@ -6797,10 +6785,10 @@
         "Segur que voleu eliminar tots els missatges amb aquesta etiqueta?"
       ],
       "Are you sure you want to delete this folder?": [
-        "Esteu segur que voleu eliminar aquesta carpeta?"
+        "Segur que voleu eliminar aquesta carpeta?"
       ],
       "Are you sure you want to delete this label?": [
-        "Esteu segur que voleu eliminar aquesta etiqueta?"
+        "Segur que voleu eliminar aquesta etiqueta?"
       ],
       "Are you sure you want to discard your changes?": [
         "N'estás segur que desitges descartar els teus canvis?"
@@ -6863,7 +6851,7 @@
         "Saldo de la vostra subscripció anterior"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "La navegació bàsica i les accions es mantenen disponibles independentment de que a la configuració les dreceres de teclat estiguin actives o no."
+        "La navegació i les accions bàsiques es mantenen disponibles independentment que les dreceres de teclat estiguin actives o no a les preferències."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Abans de sol·licitar un nou codi de verificació, reviseu la carpeta de correu brossa i si ${ strong } és l'adreça correcta."
@@ -6904,11 +6892,14 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "No podeu recordar la vostra contrasenya? Us podem ajudar a netejar les dades xifrades de tots els contactes xifrats amb aquesta clau i en el procés desactivar l'alerta."
       ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Les categories funcionen igual que els filtres de correu brossa. ${ MAIL_APP_NAME } mai llegeix els vostres correus ni comparteix les vostres dades."
+      ],
       "Categories work like spam filters. We only look for patterns in unencrypted header and technical data. We do not read email content, share your data, or infringe on your privacy.": [
         "Les categories funcionen com filtres de correu brossa. Només cerquem patrons en les dades tècniques i de capçalera sense xifrar. No llegim el contingut del correu electrònic, no compartim les vostres dades ni infringim la vostra privacitat."
       ],
       "Center": [
-        "Centre"
+        "Centra"
       ],
       "Change your password": [
         "Canvieu la vostra contrasenya"
@@ -7142,7 +7133,7 @@
         "Editeu l'hora de caducitat"
       ],
       "Edit link": [
-        "Editar l'enllaç"
+        "Edita l'enllaç"
       ],
       "email": [
         "corrreu electrònic"
@@ -7200,7 +7191,7 @@
         "Introduïu el codi de verificació. Dígit ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
-        "Introduïu la vostra contrasenya (com a administrador d'organització)."
+        "Introduïu la vostra contrasenya (com a administrador de l'organització)."
       ],
       "Enter your own password (as trusted contact).": [
         "Introduïu la vostra contrasenya (com a contacte de confiança)."
@@ -7246,7 +7237,7 @@
         "fitxers adjunts"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "Els filtres funcionen en tots els correus electrònics, inclosos els que es reben i els enviats. Cada filtre ha de contenir almenys un nom, una condició i una acció."
+        "Els filtres funcionen amb tots els correus electrònics, tant els rebuts com els enviats. Cada filtre ha de contenir almenys un nom, una condició i una acció."
       ],
       "finance": [
         "finances"
@@ -7350,7 +7341,7 @@
         "URL de la imatge"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        "Les imatges s'han esborrat perquè no estan permeses a les respostes automàtiques."
+        "S'han suprimit les imatges perquè no estan permeses a les respostes automàtiques."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importa ${ calendarCount } calendari de ${ totalCalendarsCount }",
@@ -7472,7 +7463,7 @@
         "Més informació sobre què fer ${ dataLeakedLink }"
       ],
       "Left to Right": [
-        "Esquerra a dreta"
+        "D'esquerra a dreta"
       ],
       "Link type": [
         "Tipus d'enllaç"
@@ -7500,9 +7491,6 @@
       ],
       "Low Priority": [
         "Prioritat baixa"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Establiu ${ MAIL_APP_NAME } com aplicació de correu per defecte."
       ],
       "Manage your folders": [
         "Gestioneu les vostres carpetes"
@@ -7875,7 +7863,7 @@
         "Restaura"
       ],
       "Right to Left": [
-        "Dreta a esquerra"
+        "De dreta a esquerra"
       ],
       "Right-click for options": [
         "Feu clic amb el botó dret per veure les opcions"
@@ -8023,7 +8011,7 @@
         "Comenceu a compartir-la amb els contactes i utilitzeu-la per als serveis en línia."
       ],
       "Start using the shorter, catchier version of your email address.": [
-        "Comenceu a usar la versió més curta de la vostra adreça."
+        "Comenceu a usar la versió més curta i fàcil de recordar de la vostra adreça."
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Mantingueu-vos connectat fàcilment activant la configuració següent de la VPN:"
@@ -8081,7 +8069,7 @@
         "Color del text"
       ],
       "Text to display": [
-        "Text per mostrar"
+        "Text per a mostrar"
       ],
       "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
         "Gràcies per triar ${ BRAND_NAME } per protegir la vostra organització."
@@ -8531,13 +8519,16 @@
         "Quan vau activar les claus de confiança per ${ senderName }, les claus públiques es van afegir a les dades del contacte."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quan configureu l’autenticació de dos factors, proporcionem codis de recuperació que podeu utilitzar per iniciar la sessió si perdeu l’accés a l’aplicació d'autenticació."
+        "Quan configureu l’autenticació de doble factor, proporcionem codis de recuperació que podeu utilitzar per iniciar la sessió si perdeu l’accés a l’aplicació d'autenticació."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Quan us subscrigueu a un butlletí, utilitzeu un àlies en lloc de la vostra adreça de correu electrònic. La vostra identitat quedarà amagada i podreu desactivar l'àlies en qualsevol moment."
       ],
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "Quan viatgeu o utilitzeu una WiFi pública, connecteu-vos a ${ VPN_APP_NAME } per a evitar que ningú faci el seguiment de la vostra activitat en línia o robi les vostres dades. És gratuït."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "Amb les noves categories de correu, només els missatges importants arriben a la safata d'entrada principal. Tota la resta s'organitza en categories."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Voleu rebre un codi de verificació nou o utilitzar un mètode de verificació alternatiu?"
@@ -8955,13 +8946,13 @@
         "Reenvia"
       ],
       "Go to All Mail": [
-        "Vés a Tot el Correu"
+        "Ves a Tot el Correu"
       ],
       "Go to Archive": [
-        "Aneu a l'Arxiu"
+        "Ves a l'Arxiu"
       ],
       "Go to Drafts": [
-        "Ves als esborranys"
+        "Ves als Esborranys"
       ],
       "Go to Inbox": [
         "Ves a la safata d'entrada"
@@ -8982,16 +8973,16 @@
         "Insereix un enllaç"
       ],
       "Jump to first": [
-        "Mou a la primera posició"
+        "Ves al primer"
       ],
       "Jump to last": [
         "Mou a l'última posició"
       ],
       "Label as...": [
-        "Etiqueteu com a…"
+        "Etiqueta com a…"
       ],
       "Load embedded images": [
-        "Carrega les imatges incloses"
+        "Carrega les imatges incrustades"
       ],
       "Load remote content": [
         "Carrega el contingut remot"
@@ -9012,7 +9003,7 @@
         "Mou a l'esquerra / redueix"
       ],
       "Move right / expand": [
-        "Cap a la dreta / expandir"
+        "Mou a la dreta / expandeix"
       ],
       "Move to Archive": [
         "Mou a l'arxiu"
@@ -9048,7 +9039,7 @@
         "Obre aquesta finestra"
       ],
       "Reply": [
-        "Respondre"
+        "Respon"
       ],
       "Reply all": [
         "Respon a tothom"
@@ -9060,10 +9051,10 @@
         "Cerca"
       ],
       "Select / unselect": [
-        "Selecciona / Anul·la selecció"
+        "Selecciona / desselecciona"
       ],
       "Select / unselect all": [
-        "Selecciona-ho tot / No seleccionis res"
+        "Selecciona-ho / desselecciona-ho tot"
       ],
       "Send email": [
         "Envieu un correu electrònic"
@@ -9078,7 +9069,7 @@
         "Mostra els correus electrònics sense llegir"
       ],
       "Star": [
-        "Destacat"
+        "Destaca"
       ]
     },
     "Keyboard shortcut section name": {
@@ -9098,7 +9089,7 @@
         "Dreceres de carpeta"
       ],
       "List shortcuts": [
-        "Dreceres de llistat"
+        "Dreceres de llista"
       ],
       "Message shortcuts": [
         "Dreceres de missatge"
@@ -9547,7 +9538,7 @@
         "Mou ${ sidebarElementName }"
       ],
       "Move to": [
-        "Moure a"
+        "Mou a"
       ],
       "Move to Archive": [
         "Mou a l'arxiu"
@@ -9715,7 +9706,7 @@
         "Seleccioneu les categories a incloure, i habiliteu-ne les notificacions per rebre alertes sobre correus electrònics nous en cada una."
       ],
       "Send auto-reply": [
-        "Enviar resposta automàtica"
+        "Envia una resposta automàtica"
       ],
       "Sender": [
         "Remitent"
@@ -10931,6 +10922,9 @@
       "Share files with no size limit": [
         "Compartiu fitxers sense límit de mida"
       ],
+      "Short domain (@pm.me)": [
+        "Domini curt (@pm.me)"
+      ],
       "Sign in as user": [
         "Inicia la sessió com a usuari"
       ],
@@ -11919,7 +11913,7 @@
         "Carpetes personalitzades"
       ],
       "Default folders": [
-        "Carpetes per defecte"
+        "Carpetes predeterminades"
       ],
       "Move to...": [
         "Mou a..."
@@ -13068,7 +13062,7 @@
     },
     "Signup label": {
       "Display name": [
-        "Nom a mostrar"
+        "Nom per a mostrar"
       ]
     },
     "Slack": {
@@ -14833,6 +14827,9 @@
       "External encryption": [
         "Xifrat extern"
       ],
+      "Fewer distractions, more focus": [
+        "Menys distraccions, més concentració"
+      ],
       "Filter for more focus": [
         "Filtreu els vostres missatges per a una millor concentració"
       ],
@@ -15215,7 +15212,7 @@
         "Demana un codi nou"
       ],
       "Same inbox, shorter email address": [
-        "La mateixa safata d'entrada, amb una adreça de correu electrònic més curta"
+        "La mateixa safata d'entrada amb una adreça de correu electrònic més curta"
       ],
       "Schedule now, send later": [
         "Programeu-lo ara i envieu-lo més tard"

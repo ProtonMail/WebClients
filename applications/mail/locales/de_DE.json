@@ -316,6 +316,9 @@
       "Continue with Outlook": [
         "Mit Outlook fortfahren"
       ],
+      "Continue without categories": [
+        "Ohne Kategorien fortfahren"
+      ],
       "Contract composer": [
         "Verfassen-Fenster verkleinern"
       ],
@@ -479,9 +482,6 @@
       ],
       "Download logs": [
         "Protokolle herunterladen"
-      ],
-      "Download now": [
-        "Jetzt herunterladen"
       ],
       "Download the desktop app": [
         "Desktop-App herunterladen"
@@ -734,9 +734,6 @@
       ],
       "Import from Outlook": [
         "Von Outlook importieren"
-      ],
-      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
-        "Ein wichtiges Update ist verfügbar. Um die App weiterhin zu nutzen, aktualisiere sie bitte auf die neuste Version. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Morgens"
@@ -1495,6 +1492,9 @@
       "Try another method": [
         "Eine andere Methode ausprobieren"
       ],
+      "Try categories": [
+        "Kategorien ausprobieren"
+      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Versuche erneut zu speichern. Das Speichern ist fehlgeschlagen aufgrund von: ${ saveError }"
       ],
@@ -1554,9 +1554,6 @@
       ],
       "Upgrade for 200GB": [
         "Upgrade auf 200 GB"
-      ],
-      "Upgrade Now": [
-        "Jetzt upgraden"
       ],
       "Upgrade now": [
         "Jetzt upgraden"
@@ -1654,15 +1651,6 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kannst nur vCard-Dateien versenden, die höchstens ${ maxAttachments } Kontakte enthalten.",
         "Du kannst nur vCard-Dateien versenden, die höchstens ${ maxAttachments } Kontakte enthalten."
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "Deine kostenlose Testversion der Desktop-App endet in 2 Tagen. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "Deine kostenlose Testversion der Desktop-App endet in 5 Tagen. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "Deine kostenlose Testversion der Desktop-App endet am ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Dein E-Mail-Schreibassistent"
@@ -6901,6 +6889,9 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Du kannst dich nicht mehr an dein Passwort erinnern? Wir können die verschlüsselten Daten aller Kontakte, die mit diesem Schlüssel verschlüsselt wurden, löschen und den Hinweis deaktivieren."
       ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Kategorien funktionieren genau wie Spamfilter. ${ MAIL_APP_NAME } liest niemals deine E-Mails oder teilt deine Daten."
+      ],
       "Categories work like spam filters. We only look for patterns in unencrypted header and technical data. We do not read email content, share your data, or infringe on your privacy.": [
         "Kategorien funktionieren wie Spamfilter. Wir suchen nur nach Mustern in unverschlüsselten Kopfzeilen und technischen Daten. Wir lesen keine E-Mail-Inhalte, teilen deine Daten nicht und verletzen deine Privatsphäre nicht."
       ],
@@ -7497,9 +7488,6 @@
       ],
       "Low Priority": [
         "Niedrige Priorität"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME } als Standard-E-Mail-Anwendung festlegen."
       ],
       "Manage your folders": [
         "Ordner verwalten"
@@ -8535,6 +8523,9 @@
       ],
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "Wenn du auf Reisen bist oder ein öffentliches WLAN nutzt, verbinde dich mit ${ VPN_APP_NAME }, um zu verhindern, dass jemand deine Online-Aktivitäten verfolgt oder deine Daten stiehlt. Es ist kostenlos."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "Mit neuen E-Mail-Kategorien landen nur wichtige Nachrichten in deinem Haupt-Posteingang. Alles andere wird in Kategorien organisiert."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Möchtest du einen neuen Verifizierungscode anfordern oder eine alternative Verifizierungsmethode verwenden?"
@@ -10927,6 +10918,9 @@
       ],
       "Share files with no size limit": [
         "Teile Dateien ohne Größenbeschränkung"
+      ],
+      "Short domain (@pm.me)": [
+        "Kurzdomain (@pm.me)"
       ],
       "Sign in as user": [
         "Als Benutzer anmelden"
@@ -14924,6 +14918,9 @@
       ],
       "External encryption": [
         "Externe Verschlüsselung"
+      ],
+      "Fewer distractions, more focus": [
+        "Weniger Ablenkungen, mehr Fokus"
       ],
       "Filter for more focus": [
         "Filter für mehr Fokus"

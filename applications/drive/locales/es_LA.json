@@ -3645,6 +3645,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Algunos nombres de etiquetas exceden el límite máximo de caracteres de ${ MAIL_APP_NAME }. Personalice la importación y edite estos nombres."
       ],
+      "Something went wrong during folder listing": [
+        "Algo salió mal durante el listado de carpetas"
+      ],
       "Something went wrong. Please try again.": [
         "Hubo un problema. Intente de nuevo."
       ],
@@ -3819,6 +3822,11 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nombre indescifrable"
+      ]
+    },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Inicie sesión con la misma dirección de Gmail que conectó originalmente"
       ]
     },
     "Error importing calendar": {
@@ -9404,9 +9412,15 @@
       ],
       "Upload folder": [
         "Cargar una carpeta"
+      ],
+      "Upload more files": [
+        "Cargar más archivos"
       ]
     },
     "Onboarding Info": {
+      "10 minutes": [
+        "10 minutos"
+      ],
       "Access your files on the go": [
         "Acceda a sus archivos sobre la marcha"
       ],
@@ -9431,11 +9445,20 @@
       "Edit documents online": [
         "Edite documentos en línea"
       ],
+      "Encryption happens automatically": [
+        "El cifrado ocurre automáticamente"
+      ],
       "End-to-end encrypted storage for your files": [
         "Almacenamiento cifrado de extremo a extremo para sus archivos"
       ],
       "Faster uploads for large or multiple files": [
         "Cargas más rápidas para varios archivos o grandes"
+      ],
+      "Files uploaded during this time won’t count towards your storage limit.": [
+        "Los archivos cargados durante este tiempo no contarán en su límite de almacenamiento."
+      ],
+      "Files uploaded now will not count towards your storage limit": [
+        "Los archivos cargados ahora no contarán para su límite de almacenamiento"
       ],
       "Final approval in progress": [
         "Aprobación final en progreso"
@@ -9470,6 +9493,9 @@
       "Invite team members": [
         "Invite a miembros del equipo"
       ],
+      "Keep the momentum going by uploading more files using the storage included with your plan.": [
+        "Mantenga el impulso cargando más archivos usando el almacenamiento incluido en su plan."
+      ],
       "Manage access": [
         "Gestione el acceso"
       ],
@@ -9497,6 +9523,9 @@
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "El propietario necesita confirmar el acceso a compartir. Recibirá un correo en cuanto lo haga."
       ],
+      "Upload files, folders, photos": [
+        "Cargar archivos, carpetas y fotos"
+      ],
       "Upload your first file": [
         "Cargue su primer archivo"
       ],
@@ -9505,6 +9534,12 @@
       ],
       "Work together": [
         "Trabaje en equipo"
+      ],
+      "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
+        "¡Acaba de obtener algunos datos gratuitos y proteger sus archivos con cifrado de extremo a extremo... en un tiempo récord!"
+      ],
+      "Your storage limit won’t be affected": [
+        "Su límite de almacenamiento no se verá afectado"
       ]
     },
     "Onboarding Trial": {
@@ -9744,6 +9779,9 @@
       "More plans are available in other currencies": [
         "Más planes disponibles en otras divisas"
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Se requiere un método de pago para activar la suscripción después de que finalice el periodo de prueba."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactive primero la suscripción para disminuir la cantidad de complementos."
       ],
@@ -9784,6 +9822,9 @@
       "This number will be shown on all future invoices": [
         "Este número se mostrará en todas las facturas futuras"
       ],
+      "This offer is not available with your current plan.": [
+        "Esta oferta no está disponible con el plan actual."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Este se convertirá en su nuevo método de pago por defecto para todas las futuras renovaciones."
       ],
@@ -9795,6 +9836,12 @@
       ],
       "VAT number": [
         "Número de IVA"
+      ],
+      "You already have a subscription to this plan.": [
+        "Ya tiene una suscripción a este plan."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Ya tiene una suscripción a este plan. Puede cambiar la suscripción en ${ subscriptionPlatform }."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Su moneda ha sido cambiada a euros (€) porque las transferencias bancarias SEPA solo admiten pagos en euros."
@@ -12064,6 +12111,9 @@
       "Get more from your VPN": [
         "Obtenga más de su VPN"
       ],
+      "Get started with 10 minutes of free uploads, on the house.": [
+        "Comience con 10 minutos de cargas gratuitas, por nuestra cuenta."
+      ],
       "Get the apps": [
         "Obtener las aplicaciones"
       ],
@@ -12313,6 +12363,9 @@
       ],
       "Re-signing contacts": [
         "Volviendo a firmar los contactos"
+      ],
+      "Ready, set, upload.": [
+        "Preparado, listo, a cargar."
       ],
       "Recommended": [
         "Recomendado"
@@ -12585,6 +12638,9 @@
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "No pudimos verificar que un usuario anónimo subió esta carpeta."
       ],
+      "Welcome offer": [
+        "Bienvenida la oferta"
+      ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Le damos la bienvenida a ${ BRAND_NAME } for Business"
       ],
@@ -12611,6 +12667,9 @@
       ],
       "You have no folders yet": [
         "Aún no tiene carpetas"
+      ],
+      "Your ${ freeUploadLength } has started.": [
+        "Su ${ freeUploadLength } ha comenzado."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "La prueba gratuita de ${ planName } termina el ${ textDate }."
@@ -12641,6 +12700,9 @@
       ],
       "Your welcome actions": [
         "Sus acciones de bienvenida"
+      ],
+      "You’re off to a great start!": [
+        "¡Ha tenido un buen comienzo!"
       ],
       "You’ve got 5 GB of storage": [
         "Ha obtenido 5 GB de almacenamiento"

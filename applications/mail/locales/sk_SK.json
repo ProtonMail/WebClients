@@ -318,6 +318,9 @@
       "Continue with Outlook": [
         "Pokračovať s Outlookom"
       ],
+      "Continue without categories": [
+        "Pokračovať bez kategórií"
+      ],
       "Contract composer": [
         "Editor adresáta"
       ],
@@ -485,9 +488,6 @@
       ],
       "Download logs": [
         "Záznamy sťahovania"
-      ],
-      "Download now": [
-        "Stiahnuť teraz"
       ],
       "Download the desktop app": [
         "Stiahnite si desktopovú aplikáciu"
@@ -740,9 +740,6 @@
       ],
       "Import from Outlook": [
         "Importovať z Outlooku"
-      ],
-      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
-        "K dispozícii je dôležitá aktualizácia. Ak chcete aplikáciu naďalej používať, aktualizujte ju na najnovšiu verziu. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Ráno"
@@ -1441,7 +1438,7 @@
         "Zastaviť presúvanie do koša"
       ],
       "Strikethrough": [
-        "Prečiarknúť"
+        "Preškrtnuté"
       ],
       "Submit": [
         "Potvrdiť"
@@ -1506,6 +1503,9 @@
       "Try another method": [
         "Skúsiť inú metódu"
       ],
+      "Try categories": [
+        "Vyskúšajte kategórie"
+      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Pokúste sa znova uložiť. Uloženie zlyhalo z dôvodu: ${ saveError }"
       ],
@@ -1516,7 +1516,7 @@
         "Odblokovať"
       ],
       "Underline": [
-        "Podčiarknuté"
+        "Podčiarknuť"
       ],
       "Undo": [
         "Vrátiť späť"
@@ -1565,9 +1565,6 @@
       ],
       "Upgrade for 200GB": [
         "Navýšte na 200GB"
-      ],
-      "Upgrade Now": [
-        "Inovovať teraz"
       ],
       "Upgrade now": [
         "Aktualizovať teraz"
@@ -1667,15 +1664,6 @@
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov",
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov",
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov"
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "Bezplatná skúšobná verzia desktopovej aplikácie končí za 2 dni. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "Bezplatná skúšobná verzia desktopovej aplikácie končí za 5 dní. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "Bezplatná skúšobná verzia desktopovej aplikácie končí dňa ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Váš asistent písania emailov"
@@ -2786,7 +2774,7 @@
         "blanšírované mandle"
       ],
       "blue-gray": [
-        "modrošedá"
+        "modro-sivá"
       ],
       "caramel": [
         "karamel"
@@ -2834,7 +2822,7 @@
         "les"
       ],
       "gainsboro": [
-        "veľmi svetlo šedá"
+        "veľmi svetlosivá"
       ],
       "japanese laurel": [
         "japonský vavrín"
@@ -2879,7 +2867,7 @@
         "bledo blankytná"
       ],
       "pastel gray": [
-        "pastelovo šedá"
+        "pastelovo sivá"
       ],
       "persian plum": [
         "perzská slivka"
@@ -2888,7 +2876,7 @@
         "perzská červená"
       ],
       "philippine gray": [
-        "filipínska šedá"
+        "filipínska sivá"
       ],
       "philippine silver": [
         "filipínska strieborná"
@@ -4227,7 +4215,7 @@
         "Zapnite ochranu sledovania emailov, aby ste zabránili inzerentom a ostatným v sledovaní vašej polohy a online aktivity."
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
-        "Upgradovaním získate ${ activatePmUser } kratšiu, ľahko zapamätateľnú emailovú adresu k vašej súčasnej adrese."
+        "Zvýšením úrovne získate ${ activatePmUser } - kratšiu, ľahko zapamätateľnú emailovú adresu k vašej súčasnej adrese."
       ],
       "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
         "Na prihlasovanie do online služieb používajte ${ MAIL_APP_NAME }, pretože na rozdiel od iných poskytovateľov emailových služieb nikdy nesledujeme vaše údaje a nezdieľame ich s tretími stranami."
@@ -5140,7 +5128,7 @@
         "Musíte nastaviť meno"
       ],
       "You've reached the maximum character number. Please shorten your message.": [
-        "Dosiahli ste maximálny počet znakov. Skráťte svoju správu."
+        "Dosiahli ste maximálny počet znakov. Skráťte svoju správu, prosím."
       ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Vaše emaily nemožno dešifrovať kvôli nedávnemu obnoveniu hesla. Ak si pamätáte svoje predchádzajúce heslo, môžete ${ reActivateKeyLink } získať prístup k svojim správam. ${ learnMoreLink }"
@@ -5677,7 +5665,7 @@
         "Vyberte priečinok"
       ],
       "Spam": [
-        "Nevyžiadaná pošta"
+        "Spam"
       ],
       "Trash": [
         "Presunúť do koša"
@@ -7001,7 +6989,7 @@
         "Naozaj chcete vymazať všetky správy s týmto štítkom?"
       ],
       "Are you sure you want to delete this folder?": [
-        "Naozaj chcete odstrániť tento priečinok?"
+        "Naozaj chcete vymazať tento priečinok?"
       ],
       "Are you sure you want to delete this label?": [
         "Naozaj chcete vymazať tento štítok?"
@@ -7113,6 +7101,9 @@
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nepamätáte si heslo? Môžeme vám pomôcť vymazať zašifrované údaje všetkých kontaktov zašifrovaných týmto kľúčom a počas toho zrušiť upozornenie."
+      ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Kategórie fungujú rovnako ako filtre nevyžiadanej pošty. ${ MAIL_APP_NAME } nikdy nečíta vaše emaily ani nezdieľa vaše údaje."
       ],
       "Categories work like spam filters. We only look for patterns in unencrypted header and technical data. We do not read email content, share your data, or infringe on your privacy.": [
         "Kategórie fungujú podobne ako filtre spamov. Hľadáme iba vzory v nezašifrovaných hlavičkách a technických údajoch. Nečítame obsah emailov, nezdieľame vaše údaje ani nezasahujeme do vášho súkromia."
@@ -7364,7 +7355,7 @@
         "email"
       ],
       "Email address": [
-        "E-mailová adresa"
+        "Emailová adresa"
       ],
       "Email copied to clipboard": [
         "Email skopírovaný do schránky"
@@ -7472,7 +7463,7 @@
         "pripojených súborov"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "Filtre fungujú pre všetky emaily, vrátane prichádzajúcich aj odoslaných emailov. Každý filter musí obsahovať aspoň meno, podmienku a akciu."
+        "Filtre fungujú pre všetky emaily, vrátane prichádzajúcich aj odoslaných emailov. Každý filter musí obsahovať aspoň názov, podmienku a akciu."
       ],
       "finance": [
         "financie"
@@ -7706,7 +7697,7 @@
         "Zistite, čo robiť ${ dataLeakedLink }"
       ],
       "Left to Right": [
-        "Zľava Doprava"
+        "Zľava doprava"
       ],
       "Link type": [
         "Typ odkazu"
@@ -7734,9 +7725,6 @@
       ],
       "Low Priority": [
         "Nízka priorita"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Nastavte ${ MAIL_APP_NAME } ako predvolenú emailovú aplikáciu."
       ],
       "Manage your folders": [
         "Spravovať priečinky"
@@ -7976,7 +7964,7 @@
         "Vyplňte všetky povinné polia, prosím."
       ],
       "Please fill out this field.": [
-        "Prosíme vyplňte toto pole."
+        "Vyplňte toto pole, prosím."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Prosím, vezmite na vedomie, že adresy priradené k týmto skupinám NEBUDÚ vymazané."
@@ -8111,7 +8099,7 @@
         "Obnoviť"
       ],
       "Right to Left": [
-        "Sprava Doľava"
+        "Sprava doľava"
       ],
       "Right-click for options": [
         "Kliknite pravým tlačidlom myši pre možnosti"
@@ -8785,6 +8773,9 @@
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "Keď cestujete alebo používate verejné Wi-Fi, pripojte sa k ${ VPN_APP_NAME }, aby ste zabránili sledovaniu vašej online aktivity alebo krádeži vašich údajov. Je to zadarmo."
       ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "Vďaka novým kategóriám emailov sa do vašej hlavnej doručenej pošty dostanú len dôležité správy. Všetko ostatné je usporiadané do kategórií."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Chcete získať nový overovací kód alebo použiť alternatívnu metódu overovania?"
       ],
@@ -9278,7 +9269,7 @@
         "Prejsť na poslednú"
       ],
       "Label as...": [
-        "Označenie ako..."
+        "Označiť ako…"
       ],
       "Load embedded images": [
         "Načítať vložené obrázky"
@@ -9320,7 +9311,7 @@
         "Presunúť do..."
       ],
       "Move up": [
-        "Posunúť sa nahor"
+        "Posunúť nahor"
       ],
       "New message": [
         "Nová správa"
@@ -9382,7 +9373,7 @@
         "Základná navigácia"
       ],
       "Composer shortcuts": [
-        "Vytvorenie skratiek"
+        "Editor skratiek"
       ],
       "Folder shortcuts": [
         "Skratky priečinkov"
@@ -9699,7 +9690,7 @@
         "Nepodarilo sa vytvoriť priečinok ${ newFolderName }"
       ],
       "Filter Name": [
-        "Názov filtru"
+        "Názov filtra"
       ],
       "First name": [
         "Krstné meno"
@@ -11279,6 +11270,9 @@
       "Share files with no size limit": [
         "Zdieľanie súborov bez obmedzenia veľkosti"
       ],
+      "Short domain (@pm.me)": [
+        "Skrátený tvar domény (@pm.me)"
+      ],
       "Sign in as user": [
         "Prihlásiť sa ako používateľ"
       ],
@@ -11666,7 +11660,7 @@
         "Prispôsobte si svoj emailový podpis pomocou log, obrázkov, ikon sociálnych médií, odkazov na vaše kontaktné údaje a ďalších"
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "Telefonická podpora je k dispozícii od tímu zákazníckej podpory ${ BRAND_NAME } počas európskych pracovných hodín, pre zákazníkov s 20 a viac používateľmi"
+        "Telefonická podpora od tímu zákazníckej podpory ${ BRAND_NAME } je k dispozícii počas európskych pracovných hodín pre zákazníkov s viac než 20 používateľmi"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Zabraňuje prístupu ${ BRAND_NAME } alebo tretím stranám k správam. Jediní ľudia, ktorí môžu čítať správy, sú odosielateľ a zamýšľaný príjemca."
@@ -12736,7 +12730,7 @@
         "Opíšte prosím problém a uveďte akékoľvek chybové správy"
       ],
       "Please insert link first": [
-        "Najskôr prosím vložte odkaz"
+        "Najskôr vložte odkaz, prosím"
       ],
       "Please share what you expected": [
         "Zdieľajte vaše očakávania, prosím"
@@ -12772,7 +12766,7 @@
         "Vyberte krajinu"
       ],
       "Select state": [
-        "Vybrať stav"
+        "Vyberte stav"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Dajte nám vedieť, čo by podľa vás mohlo vylepšiť ${ BRAND_NAME }"
@@ -13853,7 +13847,7 @@
         "Názov"
       ],
       "Preview": [
-        "Ukážka"
+        "Náhľad"
       ]
     },
     "Storage": {
@@ -14277,7 +14271,7 @@
         "Nahrávať nové súbory"
       ],
       "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
-        "Jediným zdrojom príjmov spoločnosti ${ BRAND_NAME } je užívateľské predplatné. Vaša podpora nám umožňuje zostať nezávislými, pokračovať v našom poslaní chrániť online súkromie a pomáhať aktivistom a organizáciám bojujúcim za slobodu."
+        "Jediným zdrojom príjmov spoločnosti ${ BRAND_NAME } je predplatné používateľov. Vaša podpora nám pomáha zachovať nezávislosť, napomáha našej misii v oblasti online súkromia a pomáha aktivistom a organizáciám bojujúcim za slobodu."
       ],
       "Users won’t be able to manage their calendars": [
         "Používatelia nebudú môcť spravovať svoje kalendáre"
@@ -14351,7 +14345,7 @@
         "Zvýšiť úroveň"
       ],
       "Upgrade your productivity": [
-        "Zlepšite svoju produktivitu"
+        "Zvýšte svoju produktivitu"
       ],
       "We don't sell your data": [
         "Nepredávame vaše údaje"
@@ -14821,7 +14815,7 @@
         "Vytvorte si bezpečné prihlasovacie údaje na všetkých svojich zariadeniach. Zahŕňa neobmedzené aliasy, 20 trezorov, integrované 2FA, automatické dopĺňanie platobných kariet a ďalšie."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Zahŕňa 2950+ serverov vo viac ako 65 krajinách, pripojenie až 10 zariadení, prístup k celosvetovým streamovacím službám, blokovaniu malvéru a reklám a ďalšie."
+        "Zahŕňa 2950+ serverov vo viac ako 65 krajinách, pripojenie až 10 zariadení, prístup k celosvetovým streamovacím službám, blokovanie malvéru a reklám a ďalšie."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Zahŕňa podporu pre 1 vlastnú emailovú doménu, 10 emailových adries, 10 hide-my-email aliasov, zdieľanie kalendára a ďalšie."
@@ -15294,10 +15288,10 @@
         "Zmazať koncept"
       ],
       "Delete folder?": [
-        "Odstrániť priečinok?"
+        "Vymazať priečinok?"
       ],
       "Delete label?": [
-        "Odstrániť štítok?"
+        "Vymazať štítok?"
       ],
       "Delete message": [
         "Odstrániť správu"
@@ -15388,6 +15382,9 @@
       ],
       "External encryption": [
         "Externé šifrovanie"
+      ],
+      "Fewer distractions, more focus": [
+        "Menej rozptýlenia, viac sústredenia"
       ],
       "Filter for more focus": [
         "Filtre pre lepšie sústredenie"
@@ -16135,7 +16132,7 @@
         "Týmto sa zabezpečí, že nikto neuvidí údaje o polohe, zariadení a ďalšie informácie, ktoré by sa dali použiť na vašu identifikáciu alebo sledovanie."
       ],
       "This feature is only available for paid users": [
-        "Táto funkcia je k dispozícii iba užívateľom s prémiovým účtom"
+        "Táto funkcia je k dispozícii iba pre používateľov s prémiovým účtom"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Pokiaľ nie sú dešifrované, zašifrované heslá zostávajú v bezpečí, aj keď sú odhalené."
@@ -16154,7 +16151,7 @@
         "stabilná verzia"
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Táto verzia prehliadača Tor nie je podporovaná. Prosím aktualizujte na najnovší ${ stableRelease }"
+        "Táto verzia Tor browsera nie je podporovaná. Aktualizujte na najnovšiu verziu ${ stableRelease }, prosím."
       ]
     },
     "Unlimited offer": {
@@ -16172,7 +16169,7 @@
     },
     "Update font modal": {
       "Today is a good day to write an email": [
-        "Dnes je dobrý deň napísať email"
+        "Dnes je ten správny deň na napísanie emailu."
       ],
       "Update default font and size": [
         "Upraviť predvolené písmo a veľkosť"

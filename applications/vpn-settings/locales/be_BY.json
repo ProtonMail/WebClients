@@ -429,7 +429,7 @@
         "Забылі спосаб аднаўлення?"
       ],
       "Generate password": [
-        "Згенераваць пароль"
+        "Згенерыраваць пароль"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Атрымаць ${ planName } за ${ priceCoupon }"
@@ -1154,7 +1154,7 @@
         "Згенерыраваць ключы, якія адсутнічаюць"
       ],
       "Generate missing keys for address “${ emailAddress }”": [
-        "Згенераваць прапушчаныя ключы для адраса “${ emailAddress }”"
+        "Згенерыраваць прапушчаныя ключы для адраса “${ emailAddress }”"
       ],
       "Grant permission": [
         "Даць дазвол"
@@ -2025,7 +2025,7 @@
         "Дадайце праграму ${ LUMO_APP_NAME }"
       ],
       "High-speed chats and advanced AI features.": [
-        "Высокахуткасныя чаты і перадавыя функцыі ШІ."
+        "Высакахуткасныя чаты і перадавыя функцыі ШІ."
       ]
     },
     "color": {
@@ -5378,7 +5378,7 @@
     },
     "Import instructions": {
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
-        "У залежнасці ад вашага пастаўшчыка паслуг электроннай пошты, спачатку вам можа спатрэбіцца згенераваць ${ knowledgeBaseLink } перад імпартаваннем у ${ BRAND_NAME }."
+        "У залежнасці ад вашага пастаўшчыка паслуг электроннай пошты, спачатку вам можа спатрэбіцца згенерыраваць ${ knowledgeBaseLink } перад імпартаваннем у ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Разгарніце выпадное меню, націснуўшы на 3 кропкі (...)."
@@ -9221,8 +9221,14 @@
       "Detach from SSO": [
         "Адлучыць ад SSO"
       ],
+      "Disable user": [
+        "Адключыць карыстальніка"
+      ],
       "Edit": [
         "Рэдагаваць"
+      ],
+      "Enable user": [
+        "Уключыць карыстальніка"
       ],
       "Remove": [
         "Выдаліць"
@@ -9759,6 +9765,9 @@
       "Share files with no size limit": [
         "Абагульванне файлаў без абмежавання памеру"
       ],
+      "Short domain (@pm.me)": [
+        "Кароткі дамен (@pm.me)"
+      ],
       "Sign in as user": [
         "Уваход у якасці карыстальніка"
       ],
@@ -10193,7 +10202,7 @@
         "Абараніце сваю сям'ю ад шкодных вэб-сайтаў і атрымайце доступ да нашых высакахуткасных сервераў VPN для прагляду абранага змесціва"
       ],
       "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
-        "Абараніце свой сапраўдны адрас электроннай пошты ад раскрыцця або ўцечкі з дапамогай псеўданімаў (адвольна згенераваных адрасоў электроннай пошты, якія перасылаюць лісты ў вашу асноўную паштовую скрыню)."
+        "Абараніце свой сапраўдны адрас электроннай пошты ад раскрыцця або ўцечкі з дапамогай псеўданімаў (адвольна згенерыраваных адрасоў электроннай пошты, якія перасылаюць лісты ў вашу асноўную паштовую скрыню)."
       ],
       "Provides the highest level of account security protection and specialist support": [
         "Забяспечвае найвышэйшы ўзровень бяспекі, а таксама адмысловую падтрымку"
@@ -10462,7 +10471,7 @@
         "Колькасць запісаў перавышае абмежаванне спампоўвання ў 10 000"
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
-        "Уліковыя даныя OpenVPN / IKEv2 паўторна згенерыраваныя"
+        "Уліковыя даныя OpenVPN / IKEv2 паўторна згенерыраваны"
       ],
       "Reminder has been sent": [
         "Напамін адпраўлены"
@@ -12206,7 +12215,7 @@
         "Аднаўленне ўліковага запісу недаступна для састарэлых адрасных ключоў"
       ],
       "Please generate keys before you try to change your password": [
-        "Згенерыруйце ключы перад спробай змянення пароля"
+        "Згенерыруйце ключы перад спробай змяніць пароль"
       ]
     },
     "session_recovery:available:info": {
@@ -13845,6 +13854,12 @@
       ],
       "User deleted": [
         "Карыстальнік выдалены"
+      ],
+      "User disabled": [
+        "Карыстальнік адключаны"
+      ],
+      "User enabled": [
+        "Карыстальнік уключаны"
       ]
     },
     "Success notification": {
