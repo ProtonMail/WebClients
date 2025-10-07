@@ -296,6 +296,9 @@
       "Upload and share files": [
         "Importer et partager des fichiers"
       ],
+      "Use ${ label } theme": [
+        "Utiliser le thème ${ label }"
+      ],
       "Use ${ PASS_APP_NAME } for Business": [
         "Utiliser ${ PASS_APP_NAME } for Business"
       ],
@@ -802,8 +805,8 @@
       "Elevate your private AI experience and unlock advanced models and premium features with ${ LUMO_SHORT_APP_NAME } Plus.": [
         "Améliorez votre expérience d'IA privée et débloquez des modèles avancés et des fonctionnalités premium avec ${ LUMO_SHORT_APP_NAME } Plus."
       ],
-      "Last updated on ${ DATE_VERSION }": [
-        "Dernière mise à jour le ${ DATE_VERSION }"
+      "Last updated on ${ formattedDate }": [
+        "Dernière mise à jour le ${ formattedDate }"
       ],
       "Permanently delete your chats. This is irreversible.": [
         "Supprimez définitivement vos chats. Cette action est irréversible."
@@ -4268,6 +4271,9 @@
       ],
       "Share files with no size limit": [
         "Partagez des fichiers sans limite de taille."
+      ],
+      "Short domain (@pm.me)": [
+        "Domaine court (@pm.me)"
       ],
       "Sign in as user": [
         "Se connecter en tant qu'utilisateur"

@@ -53,6 +53,9 @@
       "Add": [
         "Agregar"
       ],
+      "Add ${ BRAND_NAME } address": [
+        "Añadir dirección de ${ BRAND_NAME }"
+      ],
       "Add account": [
         "Agregar una cuenta"
       ],
@@ -1113,6 +1116,12 @@
       "Disallow unsigned mail": [
         "No permitir correos sin firma"
       ],
+      "Disconnect": [
+        "Desconectar"
+      ],
+      "Disconnect address “${ emailAddress }”": [
+        "Desconectar la dirección «${ emailAddress }»"
+      ],
       "Edit": [
         "Editar"
       ],
@@ -1136,6 +1145,12 @@
       ],
       "Generate missing keys for address “${ emailAddress }”": [
         "Generar claves faltantes para la dirección “${ emailAddress }”"
+      ],
+      "Grant permission": [
+        "Conceder permiso"
+      ],
+      "Grant permission to “${ emailAddress }”": [
+        "Conceder permiso a «${ emailAddress }»"
       ],
       "Reconnect": [
         "Reconectar"
@@ -1180,6 +1195,9 @@
       ],
       "Orphan": [
         "Huérfana"
+      ],
+      "Permission revoked": [
+        "Permiso revocado"
       ]
     },
     "Admin": {
@@ -4074,6 +4092,11 @@
       ],
       "ZIP code is required": [
         "Se requiere el código postal."
+      ]
+    },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Inicie sesión con la misma dirección de Gmail que conectó originalmente"
       ]
     },
     "Error importing calendar": {
@@ -7373,6 +7396,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Con una dirección cifrada de ${ BRAND_NAME }, puede usar todos los servicios de ${ BRAND_NAME }"
       ],
+      "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
+        "Con las categorías de correo electrónico, los mensajes importantes llegan a su bandeja de entrada principal. Todo lo demás se organiza en categorías."
+      ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Con los grupos podrá enviar correos a todos los miembros de un grupo específico de manera rápida y sencilla."
       ],
@@ -7807,6 +7833,10 @@
         "${ nbDay } día",
         "${ nbDay } días"
       ],
+      "${ usedAddresses } of ${ maxAddresses } email address": [
+        "${ usedAddresses } de ${ maxAddresses } dirección de correo",
+        "${ usedAddresses } de ${ maxAddresses } direcciones de correo"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalmente. Compruebe más tarde.)"
       ],
@@ -8064,6 +8094,9 @@
       ],
       "Emails (last month)": [
         "Correos (último mes)"
+      ],
+      "Enable ${ DARK_WEB_MONITORING_NAME } for ${ domain.DomainName }": [
+        "Activar ${ DARK_WEB_MONITORING_NAME } para ${ domain.DomainName }"
       ],
       "Enabled": [
         "Activada"
@@ -8511,6 +8544,12 @@
         "Para"
       ]
     },
+    "Label BYOE": {
+      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
+        "${ usedBYOEAddresses } de ${ maxBYOEAddresses } dirección de correo",
+        "${ usedBYOEAddresses } de ${ maxBYOEAddresses } direcciones de correo"
+      ]
+    },
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "Agregue un dominio que posea a la cuenta de ${ MAIL_APP_NAME }."
@@ -8954,8 +8993,14 @@
       "Detach from SSO": [
         "Desconectar del SSO"
       ],
+      "Disable user": [
+        "Desactivar usuario"
+      ],
       "Edit": [
         "Editar"
+      ],
+      "Enable user": [
+        "Activar usuario"
       ],
       "Remove": [
         "Eliminar"
@@ -10144,6 +10189,12 @@
       "Key copied to the clipboard": [
         "Clave copiada al portapapeles"
       ],
+      "Monitoring disabled": [
+        "Monitoreo desactivado"
+      ],
+      "Monitoring enabled": [
+        "Monitoreo activado"
+      ],
       "Number of records exceeds the download limit of 10000": [
         "El número de registros excede el límite de 10 000 descargas."
       ],
@@ -10859,6 +10910,9 @@
       "More plans are available in other currencies": [
         "Más planes disponibles en otras divisas"
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Se requiere un método de pago para activar la suscripción después de que finalice el periodo de prueba."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactive primero la suscripción para disminuir la cantidad de complementos."
       ],
@@ -10908,6 +10962,9 @@
       "This number will be shown on all future invoices": [
         "Este número se mostrará en todas las facturas futuras"
       ],
+      "This offer is not available with your current plan.": [
+        "Esta oferta no está disponible con el plan actual."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Este se convertirá en su nuevo método de pago por defecto para todas las futuras renovaciones."
       ],
@@ -10919,6 +10976,12 @@
       ],
       "VAT number": [
         "Número de IVA"
+      ],
+      "You already have a subscription to this plan.": [
+        "Ya tiene una suscripción a este plan."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Ya tiene una suscripción a este plan. Puede cambiar la suscripción en ${ subscriptionPlatform }."
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Se le cobrará ${ amountToCharge } de su método de pago seleccionado."
@@ -11467,6 +11530,9 @@
       ],
       "Invite friends. Get credits.": [
         "Invite a sus amistades. Obtenga créditos."
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Última oportunidad para explorar todas las grandes funciones que **${ planTitle }** tiene para ofrecerle."
       ],
       "Refer friends": [
         "Referir una amistad"
@@ -13487,6 +13553,12 @@
       ],
       "User deleted": [
         "Usuario eliminado"
+      ],
+      "User disabled": [
+        "Usuario desactivado"
+      ],
+      "User enabled": [
+        "Usuario activado"
       ]
     },
     "Success notification": {
@@ -14100,6 +14172,9 @@
       "Email": [
         "Correo"
       ],
+      "Email categories": [
+        "Categorías de correo electrónico"
+      ],
       "Email subscriptions": [
         "Suscripciones de correo"
       ],
@@ -14678,6 +14753,9 @@
       ]
     },
     "Tooltip": {
+      "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
+        "Un cambio en el lado de Gmail está impidiendo que ${ BRAND_NAME } se conecte. Conceda permiso para restablecer la funcionalidad del correo electrónico."
+      ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Los administradores pueden administrar cuentas de usuario y otorgar privilegios de administrador a otros usuarios. Solo el administrador principal puede editar el plan de la organización."
       ],

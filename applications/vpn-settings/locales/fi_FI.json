@@ -32,6 +32,11 @@
         "Tietojasi on löytynyt ainakin yhdestä tietovuodosta. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
       ]
     },
+    "Accounts": {
+      "Accounts": [
+        "Tilit"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-kauppa"
@@ -867,6 +872,9 @@
       "Start live chat": [
         "Aloita live-keskustelu"
       ],
+      "Start subscription": [
+        "Aloita tilaus"
+      ],
       "Stay": [
         "Pysy"
       ],
@@ -968,6 +976,9 @@
       ],
       "User": [
         "Käyttäjä"
+      ],
+      "Users and addresses": [
+        "Käyttäjät ja osoitteet"
       ],
       "Verify": [
         "Vahvista"
@@ -1762,6 +1773,25 @@
       ],
       "Expand": [
         "Laajenna"
+      ]
+    },
+    "collider_2025: feature": {
+      "Basic chat history": [
+        "Rajoitettu keskusteluhistoria"
+      ],
+      "Full chat history with search": [
+        "Täysi keskusteluhistoria haulla"
+      ],
+      "Limited daily chats": [
+        "Rajoitetusti päivittäisiä keskusteluja"
+      ],
+      "Unlimited daily chats": [
+        "Rajattomasti päivittäisiä keskusteluja"
+      ]
+    },
+    "collider_2025: Info": {
+      "High-speed chats and advanced AI features.": [
+        "Nopeita keskusteluja ja edistyneitä tekoälyominaisuuksia."
       ]
     },
     "color": {
@@ -5282,6 +5312,15 @@
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Hanki ${ BRAND_NAME }-osoite** käyttääksesi kaikkia ${ BRAND_NAME_TWO }-palveluita, kuten ${ MAIL_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }."
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Vaihe 1:** Kutsu kaverisi ${ BRAND_NAME }:iin suosittelulinkilläsi."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Vaihe 2:** Kaverisi saavat kahden viikon ilmaisen tilauksen."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Vaihe 3:** Ansaitse ${ referrerRewardAmount } krediitteinä jokaista tilauksen hankkivaa kaveria kohden."
+      ],
       "**Sync codes** to all your devices": [
         "**Synkronoi koodit** kaikkiin laitteisiisi"
       ],
@@ -5325,6 +5364,9 @@
       ],
       "Account successfully updated": [
         "Tili on päivitetty"
+      ],
+      "Accounts": [
+        "Tilit"
       ],
       "active": [
         "käytössä"
@@ -6487,6 +6529,9 @@
       "Shared vault updated": [
         "Jaettua holvia muokattiin"
       ],
+      "Sign in only": [
+        "Vain sisäänkirjautuminen"
+      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Aktivoi osoitteesi kirjautumalla ${ MAIL_APP_NAME }iin"
       ],
@@ -7307,6 +7352,9 @@
       ],
       "Donation": [
         "Lahjoitus"
+      ],
+      "Manual": [
+        "Manuaalinen"
       ],
       "Modification": [
         "Muutos"
@@ -8475,8 +8523,14 @@
       "Detach from SSO": [
         "Erota SSO:sta"
       ],
+      "Disable user": [
+        "Poista käyttäjä käytöstä"
+      ],
       "Edit": [
         "Muokkaa"
+      ],
+      "Enable user": [
+        "Ota käyttäjä käyttöön"
       ],
       "Remove": [
         "Poista"
@@ -9225,6 +9279,9 @@
       "Downgrade account?": [
         "Alennetaanko tili?"
       ],
+      "Review subscription": [
+        "Tarkastele tilausta"
+      ],
       "Review subscription and pay": [
         "Tarkista tilaus ja maksa"
       ],
@@ -9743,6 +9800,9 @@
       "Custom email domain": [
         "Oma sähköpostiverkkotunnus"
       ],
+      "Edit docs online": [
+        "Muokkaa dokumentteja verkossa"
+      ],
       "Email addresses": [
         "Sähköpostiosoitteet"
       ],
@@ -9869,6 +9929,11 @@
       ],
       "Merge with calendar": [
         "Yhdistä kalenteriin"
+      ]
+    },
+    "Organization": {
+      "Organization": [
+        "Organisaatio"
       ]
     },
     "Organization capacity error": {
@@ -10331,6 +10396,9 @@
       "Add ABN": [
         "Lisää ABN"
       ],
+      "Add Business Number": [
+        "Lisää yritystunnus"
+      ],
       "Add EIN": [
         "Lisää EIN"
       ],
@@ -10340,8 +10408,14 @@
       "Business Number": [
         "Yritystunnus"
       ],
+      "Edit ABN": [
+        "Muokkaa ABT-tunnusta"
+      ],
       "Edit Business Number": [
         "Muokkaa yritystunnusta"
+      ],
+      "Edit EIN": [
+        "Muokkaa EIN-tunnusta"
       ],
       "Edit VAT number": [
         "Muokkaa ALV-numeroa"
@@ -10672,6 +10746,29 @@
         "Puhelinnumeron vahvistus parantaa tilisi suojausta ja mahdollistaa lisää palautusvaihtoehtoja."
       ]
     },
+    "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } suosittelua kohden"
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Jos et peruuta,** täysi tilauksesi alkaa ja saat **${ referrerRewardAmount }** krediitteinä."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Jos tilaat ennen tätä päivämäärää,** ansaitset **${ referrerRewardAmount }** krediitteinä."
+      ],
+      "Invite friends. Get credits.": [
+        "Kutsu kavereita. Hanki krediittejä."
+      ],
+      "Refer friends": [
+        "Kerro kavereille"
+      ],
+      "Start earning credits": [
+        "Aloita krediittien ansaitseminen"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Voit ansaita jopa **${ maxRewardAmount }** krediitteinä."
+      ]
+    },
     "Remove organization logo": {
       "Users will no longer see your custom logo or organization name.": [
         "Käyttäjät eivät enää näe omaa logoasi tai organisaation nimeä."
@@ -10785,6 +10882,9 @@
       "Group": [
         "Ryhmä"
       ],
+      "Purge all messages": [
+        "Poista kaikki viestit"
+      ],
       "Purge deleted messages only": [
         "Tyhjennä vain poistetut viestit"
       ],
@@ -10809,6 +10909,11 @@
     "retention_policy_2025_TableHeader": {
       "Action": [
         "Toiminto"
+      ]
+    },
+    "retention_policy_2025_Title": {
+      "Edit retention rule": [
+        "Muokkaa säilytyssääntöä"
       ]
     },
     "Role": {
@@ -11441,6 +11546,9 @@
       "Increase your storage": [
         "Lisää tallennustilaasi"
       ],
+      "Keep passwords safe": [
+        "Pidä salasanat turvassa"
+      ],
       "Upgrade": [
         "Päivitä tilaus"
       ],
@@ -11550,7 +11658,7 @@
     },
     "Spotlight": {
       "Get up to ${ credits } in credits.": [
-        "Ansaitse jopa ${ credits } krediittiä."
+        "Ansaitse jopa ${ credits } krediitteinä."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Kutsu kavereita ${ BRAND_NAME }iin"
@@ -13052,6 +13160,9 @@
       "Description": [
         "Kuvaus"
       ],
+      "Details": [
+        "Lisätiedot"
+      ],
       "Device": [
         "Laite"
       ],
@@ -13132,6 +13243,9 @@
       ],
       "Email": [
         "Sähköposti"
+      ],
+      "Email categories": [
+        "Sähköpostikategoriat"
       ],
       "Email subscriptions": [
         "Sähköpostitilaukset"
@@ -14094,6 +14208,9 @@
       "Private": [
         "Yksityinen"
       ],
+      "Security key": [
+        "Suojausavain"
+      ],
       "SSO": [
         "Kertakirjautuminen"
       ],
@@ -14148,6 +14265,11 @@
       ],
       "Set secure passwords without the hassle.": [
         "Aseta turvallisia salasanoja vaivatta."
+      ]
+    },
+    "VPN Gateways": {
+      "VPN Gateways": [
+        "VPN-yhdyskäytävät"
       ]
     },
     "VPN info": {

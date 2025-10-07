@@ -316,6 +316,9 @@
       "Continue with Outlook": [
         "Συνεχίστε με Outlook"
       ],
+      "Continue without categories": [
+        "Συνεχίστε χωρίς κατηγορίες"
+      ],
       "Contract composer": [
         "Σύμπτυξη συντάκτη"
       ],
@@ -479,9 +482,6 @@
       ],
       "Download logs": [
         "Λήψη αρχείων καταγραφής"
-      ],
-      "Download now": [
-        "Λήψη τώρα"
       ],
       "Download the desktop app": [
         "Κατεβάστε την εφαρμογή για υπολογιστές"
@@ -734,9 +734,6 @@
       ],
       "Import from Outlook": [
         "Εισαγωγή από Outlook"
-      ],
-      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
-        "Μια σημαντική ενημέρωση είναι διαθέσιμη. Για να συνεχίσετε να χρησιμοποιείτε την εφαρμογή, παρακαλούμε ενημερώστε στην πιο πρόσφατη έκδοση. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Το πρωί"
@@ -1498,6 +1495,9 @@
       "Try another method": [
         "Δοκιμάστε μια άλλη μέθοδο"
       ],
+      "Try categories": [
+        "Δοκιμάστε τις κατηγορίες"
+      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Παρακαλώ προσπαθήστε να αποθηκεύσετε ξανά. Η αποθήκευση απέτυχε λόγω: ${ saveError }"
       ],
@@ -1557,9 +1557,6 @@
       ],
       "Upgrade for 200GB": [
         "Αναβάθμιση για 200GB"
-      ],
-      "Upgrade Now": [
-        "Αναβαθμίστε Τώρα"
       ],
       "Upgrade now": [
         "Αναβάθμιση τώρα"
@@ -1657,15 +1654,6 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφή",
         "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφές"
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "Η δωρεάν δοκιμή της εφαρμογής για υπολογιστές λήγει σε 2 ημέρες. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "Η δωρεάν δοκιμή της εφαρμογής για υπολογιστές λήγει σε 5 ημέρες. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "Η δωρεάν δοκιμή της εφαρμογής για υπολογιστές λήγει στις ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Ο βοηθός σύνταξης ηλ. ταχυδρομείου σας"
@@ -6904,6 +6892,9 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Δεν μπορείτε να θυμηθείτε τον κωδικό σας; Μπορούμε να σας βοηθήσουμε να διαγράψετε τα κρυπτογραφημένα δεδομένα όλων των επαφών που κρυπτογραφούνται με αυτό το κλειδί και κατά τη διάρκεια της διαδικασίας να απορρίψετε την ειδοποίηση."
       ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Οι κατηγορίες λειτουργούν ακριβώς όπως τα φίλτρα ανεπιθύμητων. Το ${ MAIL_APP_NAME } δε διαβάζει ποτέ τα ηλεκτρονικά μυνήματά σας και δε μοιράζεται τα δεδομένα σας."
+      ],
       "Categories work like spam filters. We only look for patterns in unencrypted header and technical data. We do not read email content, share your data, or infringe on your privacy.": [
         "Οι κατηγορίες λειτουργούν όπως τα φίλτρα ανεπιθύμητων. Αναζητούμε μόνο μοτίβα σε μη κρυπτογραφημένες κεφαλίδες και τεχνικά δεδομένα. Δε διαβάζουμε το περιεχόμενο των ηλεκτρονικών μηνυμάτων σας, δε μοιραζόμαστε τα δεδομένα σας και δεν παραβιάζουμε την ιδιωτικότητά σας."
       ],
@@ -7500,9 +7491,6 @@
       ],
       "Low Priority": [
         "Χαμηλή προτεραιότητα"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Κάντε το ${ MAIL_APP_NAME } την προεπιλεγμένη εφαρμογή ηλεκτρονικού ταχυδρομείου σας."
       ],
       "Manage your folders": [
         "Διαχειριστείτε τους φακέλους σας"
@@ -8538,6 +8526,9 @@
       ],
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "Όταν ταξιδεύετε ή χρησιμοποιείτε δημόσιο WiFi, συνδεθείτε στο ${ VPN_APP_NAME } για να αποτρέψετε οποιονδήποτε από το να παρακολουθεί τη δραστηριότητά σας στο διαδίκτυο ή να κλέβει τα δεδομένα σας. Είναι δωρεάν."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "Με τις νέες κατηγορίες ηλεκτρονικών μηνυμάτων, μόνο τα σημαντικά μηνύματα καταλήγουν στον κύριο φάκελο εισερχομένων σας. Όλα τα άλλα οργανώνονται σε κατηγορίες."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Θέλετε να λάβετε έναν νέο κωδικό επαλήθευσης ή να χρησιμοποιήσετε μια εναλλακτική μέθοδο επαλήθευσης;"
@@ -10930,6 +10921,9 @@
       ],
       "Share files with no size limit": [
         "Κοινή χρήση αρχείων χωρίς όριο μεγέθους"
+      ],
+      "Short domain (@pm.me)": [
+        "Σύντομος τομέας (@pm.me)"
       ],
       "Sign in as user": [
         "Είσοδος ως χρήστης"
@@ -14832,6 +14826,9 @@
       ],
       "External encryption": [
         "Εξωτερική κρυπτογράφηση"
+      ],
+      "Fewer distractions, more focus": [
+        "Λιγότερες περισπασμοί, περισσότερη συγκέντρωση"
       ],
       "Filter for more focus": [
         "Φιλτράρισμα για περισσότερη εστίαση"

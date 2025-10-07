@@ -96,6 +96,9 @@
       "Add phone number": [
         "Lisää puhelinnumero"
       ],
+      "Add secret passphrase": [
+        "Lisää salalause"
+      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Lisää ${ CALENDAR_APP_NAME }iin"
       ],
@@ -459,9 +462,6 @@
       "Download logs": [
         "Lataa lokitiedot"
       ],
-      "Download now": [
-        "Lataa nyt"
-      ],
       "Download the desktop app": [
         "Lataa työpöytäsovellus"
       ],
@@ -708,9 +708,6 @@
       "Import from Outlook": [
         "Tuo Outlookista"
       ],
-      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
-        "Tärkeä päivitys on saatavilla. Jatka sovelluksen käyttöä päivittämällä se uusimpaan versioon. ${ downloadUpdate }"
-      ],
       "In the morning": [
         "Aamulla"
       ],
@@ -741,6 +738,9 @@
       ],
       "Invite members": [
         "Kutsu jäseniä"
+      ],
+      "Is this private?": [
+        "Onko tämä yksityinen?"
       ],
       "Italic": [
         "Kursivointi"
@@ -1441,6 +1441,9 @@
       "Try another method": [
         "Kokeile toista tapaa"
       ],
+      "Try categories": [
+        "Kokeile kategorioita"
+      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Yritä tallennusta uudelleen. Tallennus epäonnistui: ${ saveError }"
       ],
@@ -1492,11 +1495,11 @@
       "Update recovery phrase": [
         "Vaihda palautuslause"
       ],
+      "Update secret passphrase": [
+        "Päivitä salalause"
+      ],
       "Upgrade": [
         "Päivitä tilaus"
-      ],
-      "Upgrade Now": [
-        "Päivitä tilaus nyt"
       ],
       "Upgrade now": [
         "Päivitä tilaus nyt"
@@ -1594,15 +1597,6 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedoston",
         "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedoston"
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "Ilmainen työpöytäsovelluksen kokeilujaksosi päättyy 2 päivän kuluttua. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "Ilmainen työpöytäsovelluksen kokeilujaksosi päättyy 5 päivän kuluttua. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "Ilmainen työpöytäsovelluksen kokeilujaksosi päättyy ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Sähköpostin kirjoitusavustajasi"
@@ -2538,6 +2532,25 @@
       ],
       "Expand": [
         "Laajenna"
+      ]
+    },
+    "collider_2025: feature": {
+      "Basic chat history": [
+        "Rajoitettu keskusteluhistoria"
+      ],
+      "Full chat history with search": [
+        "Täysi keskusteluhistoria haulla"
+      ],
+      "Limited daily chats": [
+        "Rajoitetusti päivittäisiä keskusteluja"
+      ],
+      "Unlimited daily chats": [
+        "Rajattomasti päivittäisiä keskusteluja"
+      ]
+    },
+    "collider_2025: Info": {
+      "High-speed chats and advanced AI features.": [
+        "Nopeita keskusteluja ja edistyneitä tekoälyominaisuuksia."
       ]
     },
     "color": {
@@ -5712,6 +5725,9 @@
       "Domain": [
         "Verkkotunnus"
       ],
+      "Drawer": [
+        "Valikko"
+      ],
       "Hardware not compatible": [
         "Laitteisto ei ole yhteensopiva"
       ],
@@ -5732,6 +5748,9 @@
       ],
       "Tell us more": [
         "Kerro meille lisää"
+      ],
+      "Username": [
+        "Käyttäjätunnus"
       ]
     },
     "Hint": {
@@ -6367,6 +6386,21 @@
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Tappokytkin**: Estää tietovuodot katkaisemalla Internet-yhteytesi, jos VPN-yhteys katkeaa yllättäen."
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Vaihe 1:** Kutsu kaverisi ${ BRAND_NAME }:iin suosittelulinkilläsi."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
+        "**Vaihe 2:** Kaverisi saavat valitsemansa ${ BRAND_NAME }-tilauksen ilmaiseksi kahdeksi viikoksi."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Vaihe 2:** Kaverisi saavat kahden viikon ilmaisen tilauksen."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**Vaihe 3:** Ansaitse ${ referrerRewardAmount } krediittiä jokaista tilauksen hankkivaa kaveria kohden."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Vaihe 3:** Ansaitse ${ referrerRewardAmount } krediitteinä jokaista tilauksen hankkivaa kaveria kohden."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } lisätallennustilaa"
       ],
@@ -6678,7 +6712,7 @@
         "Kopioi linkki leikepöydälle"
       ],
       "Copy your referral link": [
-        "Kopioi suosituslinkkisi"
+        "Kopioi suosittelulinkkisi"
       ],
       "Country code": [
         "Maakoodi"
@@ -7184,9 +7218,6 @@
       "Low Priority": [
         "Alhainen tärkeys"
       ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Aseta ${ MAIL_APP_NAME } oletussähköpostisovelluksesi."
-      ],
       "Manage your folders": [
         "Hallitse kansioitasi"
       ],
@@ -7531,7 +7562,7 @@
         "Palautustiedot säilyvät tällä laitteella, kunnes poistat ne."
       ],
       "Referral link copied to your clipboard": [
-        "Suosituslinkki kopioitiin leikepöydälle"
+        "Suosittelulinkki kopioitiin leikepöydälle"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sivun päivitys tai ${ link } korjaa useimmat ongelmat automaattisesti."
@@ -8770,6 +8801,14 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-käyttäjätunnus"
       ],
+      "${ count } unread conversation": [
+        "${ count } lukematon keskustelu",
+        "${ count } lukematonta keskustelua"
+      ],
+      "${ count } unread message": [
+        "${ count } lukematon viesti",
+        "${ count } lukematonta viestiä"
+      ],
       "${ n } month": [
         "${ n } kuukausi",
         "${ n } kuukautta"
@@ -9053,8 +9092,14 @@
       "From: ${ fromEmail }": [
         "Lähettäjä: ${ fromEmail }"
       ],
+      "Go to Forums": [
+        "Siirry foorumeille"
+      ],
       "Go to Newsletters": [
         "Siirry uutiskirjeisiin"
+      ],
+      "Go to Updates": [
+        "Siirry päivityksiin"
       ],
       "Hide password": [
         "Piilota salasana"
@@ -9181,6 +9226,9 @@
       ],
       "No label found": [
         "Tunnistetta ei löytynyt"
+      ],
+      "No results found": [
+        "Ei tuloksia"
       ],
       "Not factually correct": [
         "Ei pidä paikkaansa"
@@ -9389,6 +9437,9 @@
       "Verification code": [
         "Vahvistuskoodi"
       ],
+      "Video conference": [
+        "Videoneuvottelu"
+      ],
       "Vulnerable": [
         "Haavoittuvainen"
       ],
@@ -9573,6 +9624,9 @@
       ],
       "Create a new calendar to manage your invitations": [
         "Hallitse kutsujasi luomalla uusi kalenteri"
+      ],
+      "Deleted": [
+        "Poistetut"
       ],
       "Drafts": [
         "Luonnokset"
@@ -10705,6 +10759,9 @@
       "Downgrade account?": [
         "Alennetaanko tili?"
       ],
+      "Review subscription": [
+        "Tarkastele tilausta"
+      ],
       "Review subscription and pay": [
         "Tarkista tilaus ja maksa"
       ],
@@ -11020,6 +11077,9 @@
       "Passcode copied to clipboard": [
         "Tunnuskoodi kopioitiin leikepöydälle"
       ],
+      "Passphrase copied to clipboard": [
+        "Salalause kopioitiin leikepöydälle"
+      ],
       "Password has been set successfully": [
         "Salasanan asetus onnistui"
       ],
@@ -11130,6 +11190,9 @@
       "Custom email domain": [
         "Oma sähköpostiverkkotunnus"
       ],
+      "Edit docs online": [
+        "Muokkaa dokumentteja verkossa"
+      ],
       "Email addresses": [
         "Sähköpostiosoitteet"
       ],
@@ -11146,6 +11209,9 @@
     "Onboarding List Placeholder": {
       "Finance": [
         "Talous"
+      ],
+      "Maybe later": [
+        "Ehkä myöhemmin"
       ],
       "Privacy for all your online accounts": [
         "Yksityisyyttä kaikille verkkotileillesi"
@@ -11608,6 +11674,9 @@
       "Add ABN": [
         "Lisää ABN"
       ],
+      "Add Business Number": [
+        "Lisää yritystunnus"
+      ],
       "Add EIN": [
         "Lisää EIN"
       ],
@@ -11617,8 +11686,14 @@
       "Business Number": [
         "Yritystunnus"
       ],
+      "Edit ABN": [
+        "Muokkaa ABT-tunnusta"
+      ],
       "Edit Business Number": [
         "Muokkaa yritystunnusta"
+      ],
+      "Edit EIN": [
+        "Muokkaa EIN-tunnusta"
       ],
       "Edit VAT number": [
         "Muokkaa ALV-numeroa"
@@ -11684,6 +11759,9 @@
       ],
       "End date": [
         "Lopetuspäivä"
+      ],
+      "Enter passphrase": [
+        "Syötä salalause"
       ],
       "Filter folders": [
         "Suodata kansioita"
@@ -11949,6 +12027,29 @@
       ],
       "Stored with zero-access encryption": [
         "Tallennettu Zero Access -salauksella"
+      ]
+    },
+    "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } suosittelua kohden"
+      ],
+      "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Ansaitse jopa ${ maxRewardAmount } krediitteinä. Saat ${ referrerRewardAmount }, kun kutsumasi henkilö hankkii ${ BRAND_NAME } -tilauksen."
+      ],
+      "Invite friends. Get credits.": [
+        "Kutsu kavereita. Hanki krediittejä."
+      ],
+      "Invited friends": [
+        "Kutsu kavereita"
+      ],
+      "Refer friends": [
+        "Kerro kavereille"
+      ],
+      "Start earning credits": [
+        "Aloita krediittien ansaitseminen"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Voit ansaita jopa **${ maxRewardAmount }** krediitteinä."
       ]
     },
     "Remaining days before the message expire": {
@@ -12537,6 +12638,9 @@
       "Increase your storage": [
         "Lisää tallennustilaasi"
       ],
+      "Keep passwords safe": [
+        "Pidä salasanat turvassa"
+      ],
       "Upgrade": [
         "Päivitä tilaus"
       ],
@@ -12655,7 +12759,7 @@
         "Sähköpostin seurantasuojaus"
       ],
       "Get up to ${ credits } in credits.": [
-        "Ansaitse jopa ${ credits } krediittiä."
+        "Ansaitse jopa ${ credits } krediitteinä."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Kutsu kavereita ${ BRAND_NAME }iin"
@@ -13394,6 +13498,10 @@
       "Conversation removed from Starred.": [
         "Keskustelu poistettiin tähdellisistä."
       ],
+      "Conversation updated": [
+        "Keskustelu päivitettiin",
+        "Keskustelut päivitettiin"
+      ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Keskustelut lähettäjiltä ${ sendersList } merkitään tunnisteilla ${ labelsList }"
       ],
@@ -13516,6 +13624,9 @@
       ],
       "Read receipt sent": [
         "Lukukuittaus lähetettiin"
+      ],
+      "Secret passphrase updated": [
+        "Salalause päivitettiin"
       ],
       "Self-destruction removed": [
         "Tuhoutuminen on peruttu"
@@ -14195,6 +14306,10 @@
       "Label as": [
         "Lisää tunniste"
       ],
+      "Label message as": [
+        "Merkitse viesti tunnisteella",
+        "Merkitse viestit tunnisteella"
+      ],
       "Label options": [
         "Tunnisteen valinnat"
       ],
@@ -14451,6 +14566,9 @@
       "Recover data": [
         "Palauta tiedot"
       ],
+      "Referral": [
+        "Suosittelu"
+      ],
       "Remove from list?": [
         "Poistetaanko listalta?"
       ],
@@ -14546,6 +14664,9 @@
       ],
       "Share your calendar with your team": [
         "Jaa kalenterisi tiimillesi"
+      ],
+      "Share your link": [
+        "Jaa linkkisi"
       ],
       "Sign in and grant access": [
         "Kirjaudu ja myönnä käyttöoikeus"

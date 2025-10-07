@@ -798,6 +798,9 @@
       "Take out of trash": [
         "ნაგვის ყუთიდან გამოტანა"
       ],
+      "Toggle debug mode": [
+        "გამართვის რეჟიმის გადართვა"
+      ],
       "Trashing...": [
         "ნაგვის ყუთში გადატანა..."
       ],
@@ -1128,6 +1131,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "გამოსაცდელი პერიოდისას შეგიძლიათ ${ TRIAL_MAX_USERS } მომხმარებლის შექმნა."
+      ],
       "You cannot add custom domains during the trial period.": [
         "გამოსაცდელი პერიოდის მიმდინარეობისას თქვენს დომენებს ვერ დაამატებთ."
       ],
@@ -3373,6 +3379,11 @@
       ],
       "ZIP code is required": [
         "საფოსტო კოდი აუცილებელია"
+      ]
+    },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "შედით იგივე Gmail-ის მისამართით, რომლითაც პირველად"
       ]
     },
     "Error importing calendar": {
@@ -8002,6 +8013,9 @@
       "Continue": [
         "გაგრძელება"
       ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "ისიამოვნეთ უფასო ბიზნესის უსაფრთხოების ფუნქციებით თარიღამდე ${ trialEndsOnFormatted }."
+      ],
       "help center": [
         "დახმარების ცენტრი"
       ],
@@ -8174,6 +8188,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "გამოსაცდელი ვადის (${ formattedDate }) გადასახდელი თანხა"
+      ],
       "Billing Country": [
         "გადახდის ქვეყანა"
       ],
@@ -8222,6 +8239,9 @@
       "Taxes": [
         "გადასახადები"
       ],
+      "terms and conditions": [
+        "პირობები და წესები"
+      ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "კუპონი გამოსადეგია ${ couponRedemptions }-ის განახლებისთვის.",
         "კუპონი გამოსადეგია ${ couponRedemptions }-ის განახლებისთვის."
@@ -8240,6 +8260,9 @@
       "This number will be shown on all future invoices": [
         "ეს რიცხვი ყველა მომავალ ინვოისზე გამოჩნდება"
       ],
+      "This offer is not available with your current plan.": [
+        "ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
+      ],
       "Timeout exceeded": [
         "მოლოდინის ვადა ამოიწურა"
       ],
@@ -8248,6 +8271,9 @@
       ],
       "VAT number": [
         "დღგ ნომერი"
+      ],
+      "You already have a subscription to this plan.": [
+        "თქვენ უკვე გაქვთ ეს სატარიფო გეგმა."
       ],
       "Your payment is still being processed": [
         "თქვენი გადახდა ჯერ კიდევ მუშავდება"

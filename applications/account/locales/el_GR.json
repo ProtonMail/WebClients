@@ -13986,8 +13986,14 @@
       "Detach from SSO": [
         "Αποσύνδεση από SSO"
       ],
+      "Disable user": [
+        "Απενεργοποίηση χρήστη"
+      ],
       "Edit": [
         "Επεξεργασία"
+      ],
+      "Enable user": [
+        "Ενεργοποίηση χρήστη"
       ],
       "Remove": [
         "Αφαίρεση"
@@ -14753,6 +14759,9 @@
       ],
       "Share files with no size limit": [
         "Κοινή χρήση αρχείων χωρίς όριο μεγέθους"
+      ],
+      "Short domain (@pm.me)": [
+        "Σύντομος τομέας (@pm.me)"
       ],
       "Sign in as user": [
         "Είσοδος ως χρήστης"
@@ -18968,9 +18977,6 @@
       "get a secure ${ MAIL_APP_NAME } address.": [
         "αποκτήστε μια ασφαλή διεύθυνση ${ MAIL_APP_NAME }."
       ],
-      "Get a secure one from us, or ${ internalButton }": [
-        "Λάβετε έναν ασφαλή από εμάς, ή ${ internalButton }"
-      ],
       "Gifted by **${ referrerName }**": [
         "Δωρίστηκε από **${ referrerName }**"
       ],
@@ -20728,6 +20734,12 @@
       ],
       "User deleted": [
         "Ο χρήστης διαγράφηκε"
+      ],
+      "User disabled": [
+        "Ο Χρήστης απενεργοποιήθηκε"
+      ],
+      "User enabled": [
+        "Ο Χρήστης ενεργοποιήθηκε"
       ]
     },
     "Success message after sorting folders": {

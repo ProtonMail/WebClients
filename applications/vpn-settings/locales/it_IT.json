@@ -53,6 +53,9 @@
       "Add": [
         "Aggiungi"
       ],
+      "Add ${ BRAND_NAME } address": [
+        "Aggiungi indirizzo ${ BRAND_NAME }"
+      ],
       "Add account": [
         "Aggiungi un account"
       ],
@@ -7396,6 +7399,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Con un indirizzo ${ BRAND_NAME } crittografato, puoi utilizzare tutti i servizi di ${ BRAND_NAME }"
       ],
+      "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
+        "Con le categorie email, i messaggi importanti arrivano nella posta in arrivo principale. Tutto il resto è organizzato in categorie."
+      ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Con i gruppi puoi inviare email in modo rapido e semplice a tutte le persone di un gruppo specifico."
       ],
@@ -7830,6 +7836,10 @@
         "${ nbDay } giorno",
         "${ nbDay } giorni"
       ],
+      "${ usedAddresses } of ${ maxAddresses } email address": [
+        "${ usedAddresses } di ${ maxAddresses } indirizzo email",
+        "${ usedAddresses } di ${ maxAddresses } indirizzi email"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporaneamente non disponibile. Sei pregato di ricontrollare in seguito.)"
       ],
@@ -8087,6 +8097,9 @@
       ],
       "Emails (last month)": [
         "Email (ultimo mese)"
+      ],
+      "Enable ${ DARK_WEB_MONITORING_NAME } for ${ domain.DomainName }": [
+        "Attiva ${ DARK_WEB_MONITORING_NAME } per ${ domain.DomainName }"
       ],
       "Enabled": [
         "Abilitato"
@@ -8537,6 +8550,12 @@
         "A"
       ]
     },
+    "Label BYOE": {
+      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
+        "${ usedBYOEAddresses } di ${ maxBYOEAddresses } indirizzo email",
+        "${ usedBYOEAddresses } di ${ maxBYOEAddresses } indirizzi email"
+      ]
+    },
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "Aggiungi un dominio che possiedi al tuo account ${ MAIL_APP_NAME }."
@@ -8980,8 +8999,14 @@
       "Detach from SSO": [
         "Scollega da SSO"
       ],
+      "Disable user": [
+        "Disabilita utente"
+      ],
       "Edit": [
         "Modifica"
+      ],
+      "Enable user": [
+        "Abilita utente"
       ],
       "Remove": [
         "Rimuovi"
@@ -9491,6 +9516,9 @@
       ],
       "Share files with no size limit": [
         "Condividi file senza limiti di dimensione"
+      ],
+      "Short domain (@pm.me)": [
+        "Dominio breve (@pm.me)"
       ],
       "Sign in as user": [
         "Accedi come utente"
@@ -10169,6 +10197,12 @@
       ],
       "Key copied to the clipboard": [
         "Chiave copiata negli appunti"
+      ],
+      "Monitoring disabled": [
+        "Monitoraggio disabilitato"
+      ],
+      "Monitoring enabled": [
+        "Monitoraggio abilitato"
       ],
       "Number of records exceeds the download limit of 10000": [
         "Il numero di record supera il limite di download di 10000"
@@ -10906,6 +10940,9 @@
       "More plans are available in other currencies": [
         "Sono disponibili altri piani in altre valute"
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Serve un metodo di pagamento per attivare l'abbonamento una volta terminata la prova."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Riattiva prima l'abbonamento per ridurre il numero di componenti aggiuntivi."
       ],
@@ -10955,6 +10992,9 @@
       "This number will be shown on all future invoices": [
         "Questo numero sarà mostrato su tutte le fatture future"
       ],
+      "This offer is not available with your current plan.": [
+        "Questa offerta non è disponibile con il tuo piano attuale."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Questo diventerà il tuo nuovo metodo di pagamento predefinito per tutti i rinnovi futuri."
       ],
@@ -10966,6 +11006,12 @@
       ],
       "VAT number": [
         "Numero partita IVA"
+      ],
+      "You already have a subscription to this plan.": [
+        "Hai già un abbonamento a questo piano."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Hai già un abbonamento a questo piano. Puoi cambiare il tuo abbonamento su ${ subscriptionPlatform }."
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Ti verranno addebitati ${ amountToCharge } dal metodo di pagamento selezionato."
@@ -11514,6 +11560,9 @@
       ],
       "Invite friends. Get credits.": [
         "Invita amici. Ottieni crediti."
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Ultima possibilità per esplorare tutte le potenti funzionalità che **${ planTitle }** ha da offrire."
       ],
       "Refer friends": [
         "Segnala amici"
@@ -13534,6 +13583,12 @@
       ],
       "User deleted": [
         "Utente rimosso"
+      ],
+      "User disabled": [
+        "Utente disabilitato"
+      ],
+      "User enabled": [
+        "Utente abilitato"
       ]
     },
     "Success notification": {
@@ -14146,6 +14201,9 @@
       ],
       "Email": [
         "Email"
+      ],
+      "Email categories": [
+        "Categorie email"
       ],
       "Email subscriptions": [
         "Newsletter"

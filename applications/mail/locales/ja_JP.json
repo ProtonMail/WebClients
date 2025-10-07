@@ -306,11 +306,17 @@
       "Continue import": [
         "インポートを続行"
       ],
+      "Continue with categories": [
+        "カテゴリを続ける"
+      ],
       "Continue with Google": [
         "Google で続行"
       ],
       "Continue with Outlook": [
         "Outlookで続ける"
+      ],
+      "Continue without categories": [
+        "カテゴリを指定せずに続行"
       ],
       "Contract composer": [
         "元に戻す"
@@ -377,6 +383,9 @@
       ],
       "Customize": [
         "カスタマイズ"
+      ],
+      "Customize categories": [
+        "カテゴリのカスタマイズ"
       ],
       "Customize import": [
         "インポートをカスタマイズ"
@@ -470,9 +479,6 @@
       ],
       "Download logs": [
         "ログをダウンロードする"
-      ],
-      "Download now": [
-        "今すぐダウンロード"
       ],
       "Download the desktop app": [
         "デスクトップアプリをダウンロード"
@@ -726,9 +732,6 @@
       "Import from Outlook": [
         "Outlook からインポート"
       ],
-      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
-        "重要なアップデートがあります。アプリの使用を続けるためには最新バージョンにアップデートしてください。${ downloadUpdate }"
-      ],
       "In the morning": [
         "午前中"
       ],
@@ -759,6 +762,9 @@
       "Invite members": [
         "メンバーを招待"
       ],
+      "Is this private?": [
+        "これはプライベートですか？"
+      ],
       "Italic": [
         "イタリック体"
       ],
@@ -767,6 +773,9 @@
       ],
       "Keep categories": [
         "カテゴリーを保持"
+      ],
+      "Keep inbox as before": [
+        "受信トレイを以前のままに保つ"
       ],
       "Keep my subscription": [
         "サブスクリプションを継続する"
@@ -1449,6 +1458,9 @@
       "Toggle notifications": [
         "通知の切り替え"
       ],
+      "Toggle referral": [
+        "紹介の切り替え"
+      ],
       "Toggle security center app": [
         "セキュリティセンターアプリを切り替える"
       ],
@@ -1475,6 +1487,9 @@
       ],
       "Try another method": [
         "別の方法を試してください"
+      ],
+      "Try categories": [
+        "カテゴリを試す"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "もう一度保存してみてください。保存に失敗しました: ${ saveError }"
@@ -1535,9 +1550,6 @@
       ],
       "Upgrade for 200GB": [
         "200GBへアップグレード"
-      ],
-      "Upgrade Now": [
-        "今すぐアップグレード"
       ],
       "Upgrade now": [
         "今すぐアップグレード"
@@ -1634,15 +1646,6 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "${ maxAttachments }件を超える連絡先のvCardファイルを送信できません。"
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "デスクトップアプリの無料トライアルはあと2日で終了します。${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "デスクトップアプリの無料トライアルはあと5日で終了します。${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "デスクトップアプリの無料トライアルは ${ formattedEndDate } で終了します。${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "メール執筆アシスタント"
@@ -1981,6 +1984,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate } にトライアルが終了すると、${ renewCycle } か月ごとに自動更新される有料サブスクリプションに移行します。${ formattedDate } までにキャンセルされれば、課金されることはありません。"
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate } にトライアルが終了すると、毎月自動更新される有料サブスクリプションに移行します。${ formattedDate } までにキャンセルされれば、課金されることはありません。"
+      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "トライアル期間中、最大${ TRIAL_MAX_DEDICATED_IPS }の専用サーバーをご利用いただけます。"
       ],
@@ -5035,6 +5044,11 @@
         "郵便番号は必須です"
       ]
     },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "最初に接続した同じGmailアドレスでサインインしてください"
+      ]
+    },
     "Error adding participants to a calendar event": {
       "At most ${ maxAttendees } participant is allowed per invitation": [
         "1つの招待ごとに最大で${ maxAttendees }人の参加者が許可されています。"
@@ -6503,6 +6517,21 @@
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**緊急停止装置**: VPNに予期せぬ問題が起きた際には、インターネット接続を切ることによりデータ漏洩を防ぎます。"
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "ステップ1：招待リンクで${ BRAND_NAME }に**友達を招待してください**"
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
+        "**ステップ2：** あなたの友達は、選択した${ BRAND_NAME }プランを2週間無料で利用できます。"
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**ステップ2：** あなたの友達は、プランを2週間無料でご利用いただけます。"
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**ステップ3：**友達がプランに登録するたびに、${ referrerRewardAmount } クレジットを獲得できます。"
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**ステップ3：**プランに登録する人ごとに、${ referrerRewardAmount } クレジットを獲得できます。"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ボーナスストレージ"
       ],
@@ -6754,6 +6783,12 @@
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "パスワードが思い出せませんか? この鍵で暗号化されたすべての連絡先の暗号化されたデータを消去し、アラートを消去する手助けをします。"
+      ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "カテゴリは迷惑メールフィルターと同様に機能します。${ MAIL_APP_NAME } はお客様のメールを既読することはありませんし、お客様のデータを共有することはありません。"
+      ],
+      "Categories work like spam filters. We only look for patterns in unencrypted header and technical data. We do not read email content, share your data, or infringe on your privacy.": [
+        "カテゴリは迷惑メールフィルターのように機能します。当社は暗号化なしのヘッダーおよび技術データのみのパターンを検索します。当社はメールコンテンツを閲覧したり、お客様のデータを共有したり、お客様のプライバシーを侵害することはありません。"
       ],
       "Center": [
         "中央揃え"
@@ -7223,6 +7258,18 @@
       "Included for free with your plan": [
         "プランに無料で含まれています"
       ],
+      "Includes bills, receipts, orders, and bookings.": [
+        "請求書、領収書、注文、予約が含まれます。"
+      ],
+      "Includes marketing emails like offers and product announcements.": [
+        "オファーや製品発表などのマーケティングメールが含まれます。"
+      ],
+      "Includes news recaps and other non-promotional content. ": [
+        "ニュースの要約とプロモーション以外のコンテンツが含まれています。 "
+      ],
+      "Includes updates from social networks and media-sharing sites.": [
+        "ソーシャルネットワークおよびメディア共有サイトからの更新が含まれます。"
+      ],
       "Inherited from parent folder": [
         "親フォルダーから継承"
       ],
@@ -7324,9 +7371,6 @@
       ],
       "Low Priority": [
         "優先度：低"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME }をデフォルトのメールアプリとして設定。"
       ],
       "Manage your folders": [
         "フォルダを管理"
@@ -8357,6 +8401,9 @@
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "旅行中や公共WiFiを使用する際は、${ VPN_APP_NAME } に接続することで、オンライン活動の追跡やデータの盗難を防ぐことができます。無料でご利用いただけます。"
       ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "新しいメールカテゴリにより、重要なメッセージのみがお客様のプライマリー受信トレイに届きます。それ以外のすべてはカテゴリに整理されます。"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "新しい認証コードを受け取るか、他の検証方法を使用しますか？"
       ],
@@ -8916,6 +8963,12 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } ユーザー名"
       ],
+      "${ count } unread conversation": [
+        "${ count } 件の未読の会話"
+      ],
+      "${ count } unread message": [
+        "${ count } 件の未読メッセージ"
+      ],
       "${ n } month": [
         "${ n } か月"
       ],
@@ -8939,6 +8992,9 @@
       ],
       "Add image URL": [
         "画像 URL を追加"
+      ],
+      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
+        "カテゴリを追加または削除します。通知を設定またはオフにします。${ menuIcon } メニューでいつでも調整できます。"
       ],
       "Add to group": [
         "グループに追加"
@@ -9368,6 +9424,9 @@
       ],
       "No label found": [
         "ラベルが見つかりませんでした"
+      ],
+      "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
+        "重要なメッセージを見逃す心配はもうありません！ これらは${ primaryCopy }の下に表示されます。その他の項目はすべてカテゴリ別に整理されているため、簡単に見つけることができ、お客様の受信トレイを煩雑にすることもありません。"
       ],
       "No results found": [
         "結果が見つかりません"
@@ -11389,8 +11448,14 @@
       ]
     },
     "Onboarding List Placeholder": {
+      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
+        "追跡やプロファイリングを回避するため、人気のあるサービスで今すぐお客様のメールアドレスを変更してください。${ learnMoreLink }"
+      ],
       "Finance": [
         "ファイナンス"
+      ],
+      "Maybe later": [
+        "たぶんあとで"
       ],
       "Privacy for all your online accounts": [
         "すべてのオンラインのアカウントのためのプライバシー"
@@ -11783,6 +11848,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "${ formattedDate } のトライアル後のお支払い額"
+      ],
       "Billing Country": [
         "請求先の国"
       ],
@@ -11822,6 +11890,9 @@
       "More plans are available in other currencies": [
         "他の通貨でも利用できるプランが増えています"
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "トライアル終了後、サブスクリプションを有効化するためには支払い方法が必要です。"
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "アドオンを減らすには、まずサブスクリプションを再有効化してください。"
       ],
@@ -11833,6 +11904,9 @@
       ],
       "Taxes": [
         "税金"
+      ],
+      "terms and conditions": [
+        "利用規約"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "クーポンは ${ couponRedemptions } の更新で有効です。"
@@ -11849,8 +11923,14 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "その後、${ renewPriceStr }で${ renewalLength }ヶ月間自動的に更新されます。いつでもキャンセルできます。"
       ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "この操作により、既存のサブスクリプションが拡張されます。新しいアドオンと、現在の支払間隔の残りの期間に対してのみ課金されます。お客様のサブスクリプションの更新日は変更されません。"
+      ],
       "This number will be shown on all future invoices": [
         "この番号は、今後すべての請求書に表示されます"
+      ],
+      "This offer is not available with your current plan.": [
+        "この特典は現在のプランではご利用いただけません。"
       ],
       "This payment method will become your new default for all future renewals.": [
         "この支払い方法は、今後のすべての更新について、お客様の新しいデフォルトになります。"
@@ -11863,6 +11943,12 @@
       ],
       "VAT number": [
         "VAT番号"
+      ],
+      "You already have a subscription to this plan.": [
+        "すでにこのプランのサブスクリプションに加入済みです。"
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "お客様は既にこのプランのサブスクリプションを契約済みです。${ subscriptionPlatform }でサブスクリプションを変更できます。"
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "お客様の通貨はユーロ (€) に変更されました。これは、SEPA銀行振込がユーロ建ての支払いのみをサポートしているためです。"
@@ -11889,6 +11975,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "あなたのカードは拒否されました。 別のカードを試すか、銀行に問い合わせて請求を承認してください。"
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "以前のサブスクリプションプランの未使用分のクレジット"
+      ],
+      "Credits will be added to your balance": [
+        "クレジットがお客様の残高に追加されます。"
       ]
     },
     "Payments.plan_name": {
@@ -12286,6 +12380,38 @@
       ],
       "Stored with zero-access encryption": [
         "ゼロアクセス暗号化で保存されています"
+      ]
+    },
+    "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } 紹介ごとに"
+      ],
+      "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "最大${ maxRewardAmount }のクレジットを獲得できます。お客様が招待された方が${ BRAND_NAME }のプランに登録されますと、お客様は${ referrerRewardAmount }を受け取ることができます。"
+      ],
+      "Friend joined": [
+        "友達が参加しました"
+      ],
+      "Friend subscribed": [
+        "友達が登録済み"
+      ],
+      "Invite friends. Get credits.": [
+        "友達を招待。クレジットを獲得。"
+      ],
+      "Invited friends": [
+        "招待済みの友達"
+      ],
+      "More sharing options": [
+        "その他の共有オプション"
+      ],
+      "Refer friends": [
+        "友達を招待"
+      ],
+      "Start earning credits": [
+        "クレジット獲得を開始する"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "最大**${ maxRewardAmount }**分のクレジットを獲得できます。"
       ]
     },
     "Remaining days before the message expire": {
@@ -14183,6 +14309,9 @@
       "Block sender": [
         "差出人をブロック"
       ],
+      "Built for privacy": [
+        "プライバシーのために構築"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME } サブスクリプションをキャンセル"
       ],
@@ -14275,6 +14404,9 @@
       ],
       "Customize categories": [
         "カテゴリのカスタマイズ"
+      ],
+      "Customize categories to fit your needs": [
+        "お客様のニーズに合わせてカテゴリをカスタマイズ"
       ],
       "Customize your mail import": [
         "メールのインポートをカスタマイズ"
@@ -14411,6 +14543,9 @@
       "External encryption": [
         "外部への暗号化"
       ],
+      "Fewer distractions, more focus": [
+        "気を散らすものを減らし、集中力を高める"
+      ],
       "Filter for more focus": [
         "より集中するためのフィルター"
       ],
@@ -14500,6 +14635,9 @@
       ],
       "Insert contacts": [
         "連絡先を挿入"
+      ],
+      "Introducing email categories": [
+        "メールカテゴリのご紹介"
       ],
       "Invalid verification code": [
         "無効な検証コードです"
@@ -14768,6 +14906,9 @@
       "Recover data": [
         "データを復元する"
       ],
+      "Referral": [
+        "紹介"
+      ],
       "Remove from list?": [
         "リストから削除しますか？"
       ],
@@ -14863,6 +15004,9 @@
       ],
       "Share your calendar with your team": [
         "カレンダーをチームと共有"
+      ],
+      "Share your link": [
+        "リンクを共有"
       ],
       "Sign in and grant access": [
         "サインインして権限を付与"

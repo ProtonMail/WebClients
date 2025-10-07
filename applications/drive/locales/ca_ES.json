@@ -3610,7 +3610,7 @@
         "No s'ha pogut enviar la vostra denúncia"
       ],
       "Request timed out": [
-        "S'ha esgotat el temps d'espera"
+        "La sol·licitud ha caducat"
       ],
       "Search failed": [
         "Hi ha hagut un error en la cerca"
@@ -3644,6 +3644,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Els noms d'algunes de les etiquetes superen el límit de caràcters màxim de ${ MAIL_APP_NAME }. Modifiqueu la importació per tal d'editar-ne els noms."
+      ],
+      "Something went wrong during folder listing": [
+        "Hi ha hagut un error durant el llistat de carpetes"
       ],
       "Something went wrong. Please try again.": [
         "Alguna cosa ha anat malament. Torneu a provar-ho."
@@ -4210,7 +4213,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Quelcom va anar malament autenticant-se amb la vostra clau de seguretat. Torneu-ho a provar."
+        "Alguna cosa ha anat malament en autenticar-se amb la vostra clau de seguretat. Torneu-ho a provar."
       ]
     },
     "fido2: Info": {
@@ -5351,7 +5354,7 @@
         "Introduïu el codi de verificació. Dígit ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
-        "Introduïu la vostra contrasenya (com a administrador d'organització)."
+        "Introduïu la vostra contrasenya (com a administrador de l'organització)."
       ],
       "Enter your own password (as trusted contact).": [
         "Introduïu la vostra contrasenya (com a contacte de confiança)."
@@ -6470,7 +6473,7 @@
         "Quan elimineu ${ deviceName } com a dispositiu sincronitzat, totes les carpetes afegides a Els Meus Ordinadors des d'aquest dispositiu s'eliminaran permanentment de ${ DRIVE_APP_NAME }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quan configureu l’autenticació de dos factors, proporcionem codis de recuperació que podeu utilitzar per iniciar la sessió si perdeu l’accés a l’aplicació d'autenticació."
+        "Quan configureu l’autenticació de doble factor, proporcionem codis de recuperació que podeu utilitzar per iniciar la sessió si perdeu l’accés a l’aplicació d'autenticació."
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "es restaurarà a la versió de ${ formattedRevisionDate }. Les altres versions seguiran desades."
@@ -8388,6 +8391,9 @@
       ],
       "Share files with no size limit": [
         "Compartiu fitxers sense límit de mida"
+      ],
+      "Short domain (@pm.me)": [
+        "Domini curt (@pm.me)"
       ],
       "Sign in as user": [
         "Inicia la sessió com a usuari"

@@ -2955,6 +2955,9 @@
       ],
       "Unlimited favorites for quick access": [
         "Obegränsade favoriter för snabb åtkomst"
+      ],
+      "Web search access": [
+        "Webbsökningsåtkomst"
       ]
     },
     "collider_2025: Feature": {
@@ -3001,6 +3004,9 @@
       ],
       "Unlimited favorites for quick access": [
         "Obegränsade favoriter för snabb åtkomst"
+      ],
+      "Web search access": [
+        "Webbsökningsåtkomst"
       ]
     },
     "collider_2025: Navigation": {
@@ -13885,8 +13891,14 @@
       "Detach from SSO": [
         "Koppla bort från SSO"
       ],
+      "Disable user": [
+        "Inaktivera användare"
+      ],
       "Edit": [
         "Redigera"
+      ],
+      "Enable user": [
+        "Aktivera användare"
       ],
       "Remove": [
         "Ta bort"
@@ -14655,6 +14667,9 @@
       ],
       "Share files with no size limit": [
         "Dela filer utan storleksbegränsning"
+      ],
+      "Short domain (@pm.me)": [
+        "Kort domän (@pm.me)"
       ],
       "Sign in as user": [
         "Logga in som användare"
@@ -16870,11 +16885,20 @@
       "Add ABN": [
         "Lägg till ABN"
       ],
+      "Add Business Number": [
+        "Lägg till företagsnummer"
+      ],
       "Add EIN": [
         "Lägg till EIN"
       ],
+      "Business Number": [
+        "Företagsnummer"
+      ],
       "Edit ABN": [
         "Redigera ABN"
+      ],
+      "Edit Business Number": [
+        "Redigera företagsnummer"
       ],
       "Edit EIN": [
         "Redigera EIN"
@@ -18784,9 +18808,6 @@
       "get a secure ${ MAIL_APP_NAME } address.": [
         "skaffa en säker ${ MAIL_APP_NAME }-adress."
       ],
-      "Get a secure one from us, or ${ internalButton }": [
-        "Skaffa en säker från oss, eller ${ internalButton }"
-      ],
       "Gifted by **${ referrerName }**": [
         "Gåva från **${ referrerName }**"
       ],
@@ -20544,6 +20565,12 @@
       ],
       "User deleted": [
         "Användare borttagen"
+      ],
+      "User disabled": [
+        "Användare inaktiverad"
+      ],
+      "User enabled": [
+        "Användare aktiverad"
       ]
     },
     "Success message after sorting folders": {
@@ -20796,6 +20823,10 @@
       "${ friendsInvited } Friend invited": [
         "${ friendsInvited } vän inbjuden",
         "${ friendsInvited } vänner inbjudna"
+      ],
+      "${ friendsSubscribed } Friend subscribed": [
+        "${ friendsSubscribed } vän prenumererar",
+        "${ friendsSubscribed } vänner prenumererar"
       ],
       "${ MAIL_APP_NAME } Bridge": [
         "${ MAIL_APP_NAME } Bridge"
@@ -23002,6 +23033,9 @@
       ],
       "Did you know?": [
         "Visste du att?"
+      ],
+      "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
+        "Skydda din organisation från dataintrång med ${ VPN_APP_NAME } för företag."
       ],
       "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
         "Obegränsad integritet för dig och en närstående. Från endast ${ priceString }/månad."

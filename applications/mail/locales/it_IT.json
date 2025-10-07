@@ -307,11 +307,17 @@
       "Continue import": [
         "Continua l'importazione"
       ],
+      "Continue with categories": [
+        "Continua senza categorie"
+      ],
       "Continue with Google": [
         "Continua con Google"
       ],
       "Continue with Outlook": [
         "Continua con Outlook"
+      ],
+      "Continue without categories": [
+        "Continua senza categorie"
       ],
       "Contract composer": [
         "Riduci il compositore"
@@ -378,6 +384,9 @@
       ],
       "Customize": [
         "Personalizza"
+      ],
+      "Customize categories": [
+        "Personalizza le categorie"
       ],
       "Customize import": [
         "Personalizza importazione"
@@ -473,9 +482,6 @@
       ],
       "Download logs": [
         "Scarica i log"
-      ],
-      "Download now": [
-        "Scarica ora"
       ],
       "Download the desktop app": [
         "Scarica l’app per desktop"
@@ -729,9 +735,6 @@
       "Import from Outlook": [
         "Importa da Outlook"
       ],
-      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
-        "È disponibile un aggiornamento importante. Per continuare a utilizzare l'app, aggiornala alla versione più recente. ${ downloadUpdate }"
-      ],
       "In the morning": [
         "La mattina"
       ],
@@ -763,6 +766,9 @@
       "Invite members": [
         "Invita membri"
       ],
+      "Is this private?": [
+        "È privato?"
+      ],
       "Italic": [
         "Corsivo"
       ],
@@ -771,6 +777,9 @@
       ],
       "Keep categories": [
         "Mantieni le categorie"
+      ],
+      "Keep inbox as before": [
+        "Mantieni la posta in arrivo come prima"
       ],
       "Keep my subscription": [
         "Mantieni il mio abbonamento"
@@ -1483,6 +1492,9 @@
       "Try another method": [
         "Prova un altro metodo"
       ],
+      "Try categories": [
+        "Prova le categorie"
+      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Salvataggio non riuscito a causa di: ${ saveError }. Prova a salvare di nuovo. "
       ],
@@ -1542,9 +1554,6 @@
       ],
       "Upgrade for 200GB": [
         "Effettua l'upgrade per 200GB"
-      ],
-      "Upgrade Now": [
-        "Effettua l'upgrade ora"
       ],
       "Upgrade now": [
         "Effettua l'upgrade ora"
@@ -1642,15 +1651,6 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Non puoi inviare file vCard contenenti più di ${ maxAttachments } contatti",
         "Non puoi inviare file vCard contenenti più di ${ maxAttachments } contatti"
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "La tua prova gratuita dell'applicazione desktop termina tra 2 giorni. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "La tua prova gratuita dell'applicazione desktop termina tra 5 giorni. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "La tua prova gratuita dell'applicazione desktop termina ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Il tuo assistente per la scrittura di email"
@@ -6889,6 +6889,12 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Non ricordi la tua password? Possiamo aiutarti a cancellare i dati crittografati di tutti i contatti crittografati con questa chiave e nel processo ignorare l'avviso."
       ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Le categorie funzionano proprio come i filtri spam. ${ MAIL_APP_NAME } non legge mai le tue email o condivide i tuoi dati."
+      ],
+      "Categories work like spam filters. We only look for patterns in unencrypted header and technical data. We do not read email content, share your data, or infringe on your privacy.": [
+        "Le categorie funzionano come filtri spam. Cerchiamo solo schemi nelle intestazioni non crittografate e nei dati tecnici. Non leggiamo il contenuto delle email, non condividiamo i tuoi dati e non violiamo la tua privacy."
+      ],
       "Center": [
         "Centra"
       ],
@@ -7368,6 +7374,18 @@
       "Included for free with your plan": [
         "Incluso gratuitamente nel tuo piano"
       ],
+      "Includes bills, receipts, orders, and bookings.": [
+        "Include fatture, ricevute, ordini e prenotazioni."
+      ],
+      "Includes marketing emails like offers and product announcements.": [
+        "Include email di marketing come offerte e annunci di prodotti."
+      ],
+      "Includes news recaps and other non-promotional content. ": [
+        "Include riepiloghi di notizie e altri contenuti non promozionali. "
+      ],
+      "Includes updates from social networks and media-sharing sites.": [
+        "Include aggiornamenti dalle reti sociali e dai siti di condivisione multimediale."
+      ],
       "Inherited from parent folder": [
         "Preso dalla cartella principale"
       ],
@@ -7470,9 +7488,6 @@
       ],
       "Low Priority": [
         "Priorità bassa"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Imposta ${ MAIL_APP_NAME } come la tua applicazione email predefinita."
       ],
       "Manage your folders": [
         "Gestisci le tue cartelle"
@@ -8509,6 +8524,9 @@
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "Quando viaggi o usi un WiFi pubblico, connettiti a ${ VPN_APP_NAME } per evitare che qualcuno tracci la tua attività online o rubi i tuoi dati. È gratis."
       ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "Con le nuove categorie email, solo i messaggi importanti arrivano nella tua posta in arrivo principale. Tutto il resto è organizzato in categorie."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vuoi ricevere un nuovo codice di verifica o utilizzare un metodo alternativo?"
       ],
@@ -9123,6 +9141,9 @@
       "Add image URL": [
         "Aggiungi URL immagine"
       ],
+      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
+        "Aggiungi o rimuovi categorie. Imposta o disattiva le notifiche. Modifica in qualsiasi momento nel menu ${ menuIcon }."
+      ],
       "Add to group": [
         "Aggiungi a un gruppo"
       ],
@@ -9551,6 +9572,9 @@
       ],
       "No label found": [
         "Nessuna etichetta trovata"
+      ],
+      "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
+        "Niente più messaggi importanti persi! Questi ora appaiono sotto ${ primaryCopy }. Tutto il resto è ordinato per categoria così sono facili da trovare e non ingombrano la tua posta in arrivo."
       ],
       "No results found": [
         "Nessun risultato trovato"
@@ -10895,6 +10919,9 @@
       "Share files with no size limit": [
         "Condividi file senza limiti di dimensione"
       ],
+      "Short domain (@pm.me)": [
+        "Dominio breve (@pm.me)"
+      ],
       "Sign in as user": [
         "Accedi come utente"
       ],
@@ -12055,6 +12082,9 @@
       "More plans are available in other currencies": [
         "Sono disponibili altri piani in altre valute"
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Serve un metodo di pagamento per attivare l'abbonamento una volta terminata la prova."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Riattiva prima l'abbonamento per ridurre il numero di componenti aggiuntivi."
       ],
@@ -12095,6 +12125,9 @@
       "This number will be shown on all future invoices": [
         "Questo numero sarà mostrato su tutte le fatture future"
       ],
+      "This offer is not available with your current plan.": [
+        "Questa offerta non è disponibile con il tuo piano attuale."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Questo diventerà il tuo nuovo metodo di pagamento predefinito per tutti i rinnovi futuri."
       ],
@@ -12106,6 +12139,12 @@
       ],
       "VAT number": [
         "Numero partita IVA"
+      ],
+      "You already have a subscription to this plan.": [
+        "Hai già un abbonamento a questo piano."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Hai già un abbonamento a questo piano. Puoi cambiare il tuo abbonamento su ${ subscriptionPlatform }."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "La tua valuta è stata cambiata in euro (€) perché i bonifici bancari SEPA supportano solo pagamenti in euro."
@@ -14646,6 +14685,9 @@
       "Block sender": [
         "Blocca mittente"
       ],
+      "Built for privacy": [
+        "Costruito per la privacy"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Annulla l'abbonamento a ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -14738,6 +14780,9 @@
       ],
       "Customize categories": [
         "Personalizza le categorie"
+      ],
+      "Customize categories to fit your needs": [
+        "Personalizza le categorie per adattarle alle tue esigenze"
       ],
       "Customize your mail import": [
         "Personalizza l'importazione della tua mail"
@@ -14879,6 +14924,9 @@
       "External encryption": [
         "Crittografia esterna"
       ],
+      "Fewer distractions, more focus": [
+        "Meno distrazioni, più concentrazione"
+      ],
       "Filter for more focus": [
         "Filtra per maggiore precisione"
       ],
@@ -14969,6 +15017,9 @@
       ],
       "Insert contacts": [
         "Inserisci dei contatti"
+      ],
+      "Introducing email categories": [
+        "Presentiamo le categorie email"
       ],
       "Invalid verification code": [
         "Codice di verifica non valido"

@@ -462,9 +462,6 @@
       "Download logs": [
         "下載日誌"
       ],
-      "Download now": [
-        "现在下载"
-      ],
       "Download the desktop app": [
         "下載桌面應用程式"
       ],
@@ -713,9 +710,6 @@
       ],
       "Import from Outlook": [
         "從 Outlook 匯入"
-      ],
-      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
-        "重大更新可供下載。如要繼續使用應用程式，請更新至最新版本。 ${ downloadUpdate }"
       ],
       "In the morning": [
         "早上"
@@ -1488,9 +1482,6 @@
       "Upgrade for 200GB": [
         "升級至200GB"
       ],
-      "Upgrade Now": [
-        "請升級"
-      ],
       "Upgrade now": [
         "立即升級"
       ],
@@ -1583,15 +1574,6 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "您不能傳送有超過 ${ maxAttachments } 個聯絡人的 vCard 檔案"
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "您的桌面應用程式將於兩天內結束試用。 ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "您的桌面應用程式將於五日內結束試用。 ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "桌面應用程式免費試用期將會在${ formattedEndDate }.${ upgradeButton }完結"
       ],
       "Your email writing assistant": [
         "您電子郵件的撰寫幫手"
@@ -3897,7 +3879,7 @@
         "正在合併聯絡人... 該過程或需時數分鐘。完成後您即可以關閉此往來對話方塊。"
       ],
       "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
-        "從 ${ senderEmailAddress } 及 ${ otherSendersCount } 其他的新電子郵件無法遞送而且將會被永久刪除。"
+        "從 ${ senderEmailAddress } 傳送過來的新電郵以及其它共計 ${ otherSendersCount } 等訊息，無法完成遞送，將會永遠刪除。"
       ],
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "從 ${ senderEmailAddress } 來的新電子郵件無法遞送而且將會被永久刪除。"
@@ -4286,7 +4268,7 @@
         "選擇一個未來的日期。"
       ],
       "Choose a date within the next ${ n } day.": [
-        "在接下來的${ n }天內選擇一個日期。"
+        "請在接下來的 ${ n } 天數裡選擇一個您要的日期。"
       ],
       "Condition incomplete": [
         "條件不完整"
@@ -4772,7 +4754,7 @@
         "您無法將郵件傳送給超過 ${ maxContacts } 位收件人"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
-        "您無法在同一時間開啟超過 ${ maxActiveComposer } 個撰寫新郵件視窗"
+        "您無法同時開啟 ${ maxActiveComposer } 個撰寫新郵件視窗"
       ],
       "You did not provide a file.": [
         "您沒有提供檔案。"
@@ -6091,19 +6073,19 @@
         "${ elementsCount } 則往來對話將被標記為未讀。"
       ],
       "${ elementsCount } conversation will be moved": [
-        "${ elementsCount }則對話內容將被移動"
+        "${ elementsCount } 則對話內容將被移動"
       ],
       "${ elementsCount } conversation will be unlabelled from:": [
-        "${ elementsCount }對話內容將被取消標記:"
+        "${ elementsCount } 則對話內容將取消標記："
       ],
       "${ elementsCount } message will be labelled as:": [
         "${ elementsCount } 則訊息將標記為："
       ],
       "${ elementsCount } message will be marked as read.": [
-        "${ elementsCount } 封郵件將被標記為已讀。"
+        "${ elementsCount } 封郵件將標記為已讀。"
       ],
       "${ elementsCount } message will be marked as unread.": [
-        "${ elementsCount } 封郵件將被標記為未讀。"
+        "${ elementsCount } 封郵件將被標記成未讀。"
       ],
       "${ elementsCount } message will be moved": [
         "${ elementsCount }則訊息將被移動"
@@ -6133,7 +6115,7 @@
         "${ messagesNotAuthorizedToMove } 封郵件無法將其移動。"
       ],
       "${ n } unread conversation": [
-        "${ n } 篇未讀往來對話"
+        "${ n } 則未讀的往來對話"
       ],
       "${ numberOfUTMTrackers } link cleaned": [
         "${ numberOfUTMTrackers } 個連結已清理"
@@ -6715,7 +6697,7 @@
         "帶有此標籤${ nameDeleted }的電子郵件不會被刪除，仍可在對應的資料夾中找到。"
       ],
       "embedded image": [
-        "嵌入圖像"
+        "內崁圖像"
       ],
       "Enabling auto-deletion…": [
         "啟用自動刪除…"
@@ -6769,13 +6751,13 @@
         "將於${ formattedDate }過期"
       ],
       "Expires in ${ minutesDiff } minute": [
-        "將於${ minutesDiff }分鐘後過期"
+        "過期前還剩 ${ minutesDiff } 分鐘"
       ],
       "Expires in less than ${ hoursDiff } hour": [
-        "將於少於${ hoursDiff }小時後過期"
+        "到過期前還剩下 ${ hoursDiff } 小時"
       ],
       "file attached": [
-        "檔案已附加"
+        "已附加檔案"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "篩選器適用於所有電郵，包括內送及外寄電郵。每一個篩選器起碼必須包含一個名稱、一個條件及一個動作。"
@@ -6799,7 +6781,7 @@
         "若要更多結果，請於通訊錄中搜尋您的電子郵件訊息的關鍵字。"
       ],
       "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
-        "免費試用${ ASSISTANT_TRIAL_TIME_DAYS }天"
+        "嚐鮮體驗版還有 ${ ASSISTANT_TRIAL_TIME_DAYS } 天"
       ],
       "From": [
         "寄件者"
@@ -7007,9 +6989,6 @@
       ],
       "Low Priority": [
         "較低優先順序"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "設定${ MAIL_APP_NAME }為預設電子郵件應用程式."
       ],
       "Manage your folders": [
         "管理您的資料夾"
@@ -8074,7 +8053,7 @@
         "您有 **${ count } 則往來對話** 儲存於此資料夾"
       ],
       "You have **${ count } conversation** tagged with this label": [
-        "您選取了有此標籤的 **${ count } 個交談**"
+        "您有 **${ count } 則往來對話** 已標上此標籤"
       ],
       "You have **${ count } message** stored in this folder": [
         "您有 **${ count } 則訊息** 儲存於此資料夾"
@@ -8107,10 +8086,10 @@
         "您從此資料夾選取了 **${ count } 則往來對話**"
       ],
       "You selected **${ count } conversation** with this label": [
-        "您選取有此標籤的 **${ count } 則往來對話**"
+        "您選取了 **${ count } 則往來對話** 皆有此標籤"
       ],
       "You selected **${ count } message** from this folder": [
-        "您已在此資料夾選取 **${ count } 則訊息**"
+        "您已選取了 **${ count } 則訊息** 位置在此資料夾"
       ],
       "You selected **${ count } message** with this label": [
         "您選取了有此標籤的 **${ count } 則訊息**"
@@ -8927,7 +8906,7 @@
         "找不到標籤"
       ],
       "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
-        "不再遺漏重要訊息！這些現在會顯示在 ${ primaryCopy } 下方。其他所有內容都依類別排序，方便您尋找，也不會讓您的收件匣雜亂無章。"
+        "不再遺漏重要訊息！即刻起，這些會顯示在 ${ primaryCopy } 下方。而其它全部的訊息將以類別排序，方便您更容易找出郵件，同時讓收件匣井然有序。"
       ],
       "No results found": [
         "找不到相符的結果"
@@ -11819,7 +11798,7 @@
         "無論如何，您仍要傳送此電郵嗎？"
       ],
       "The following address is not valid: ${ invalidAddresses }": [
-        "下列電子信箱無效：${ invalidAddresses }"
+        "以下電郵位址是無效的：${ invalidAddresses }"
       ],
       "We have detected some warnings. The following email address may not receive emails:": [
         "我們偵測些許警示。下列電郵位址可能將無法接收郵件："
@@ -11862,7 +11841,7 @@
         "由 ${ MAIL_APP_NAME } 採用零存取加密傳送"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
-        "由 ${ MAIL_APP_NAME } 採用零存取加密傳送給驗證收件人"
+        "郵件遞送採用 ${ MAIL_APP_NAME } 搭配零存取加密技術得以把訊息送到驗證過的收件者"
       ],
       "Sent by you with end-to-end encryption": [
         "由您寄出的端到端加密訊息"
@@ -12884,7 +12863,7 @@
         "${ count } 則往來對話已刪除"
       ],
       "${ count } draft deleted": [
-        "${ count } 個草稿已刪除"
+        "${ count } 則草稿已刪除"
       ],
       "${ count } message deleted": [
         "${ count } 封郵件已刪除"
@@ -12896,7 +12875,7 @@
         "${ elementsCount } 則往來對話已加上 ${ labelName } 標籤。"
       ],
       "${ elementsCount } conversation marked as read.": [
-        "${ elementsCount } 則往來對話已標記為已讀。"
+        "${ elementsCount } 則往來對話標記為已讀。"
       ],
       "${ elementsCount } conversation marked as Starred.": [
         "${ elementsCount } 則往來對話已加星號。"
@@ -14514,7 +14493,7 @@
         "部分需合併的聯絡人顯示錯誤。請逐一查看"
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
-        "附件簽章驗證失敗。\n您仍可下載附件，惟附件可能已遭篡改。"
+        "附件的簽章驗證失敗。\n您仍可下載附件，惟附件可能已遭篡改。"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "此聯絡人資料已毀損，無法顯示。"

@@ -431,6 +431,9 @@
       "Open web app": [
         "Avaa verkkosovellus"
       ],
+      "Organize vaults": [
+        "Järjestä holvit"
+      ],
       "Pass for Android": [
         "Pass Androidille"
       ],
@@ -1546,7 +1549,7 @@
         "Lähetä sähköpostia tähän osoitteeseen, ja se näyttää tulevan esimerkiksi osoitteesta ${ exampleEmail }."
       ],
       "Emails sent to your aliases are forwarded to your mailboxes. An alias can have more than one mailbox: useful to share an alias between you and your friends.": [
-        "Aliaksillesi lähetetyt sähköpostit välitetään postilaatikkoihisi. Aliaksella voi olla useampi kuin yksi postilaatikko: tämä on hyödyllistä, jos haluat jakaa aliaksen ystäviesi kanssa."
+        "Aliaksillesi lähetetyt sähköpostit välitetään postilaatikkoihisi. Aliaksella voi olla useampi kuin yksi postilaatikko: tämä on hyödyllistä, jos haluat jakaa aliaksen kavereidesi kanssa."
       ],
       "Emptying trash...": [
         "Tyhjennetään roskakoria..."
@@ -2319,6 +2322,14 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organisaatiosi vaatii, että suojaat pääsysi ${ PASS_APP_NAME }:iin"
+      ]
+    },
+    "Keyboard key": {
+      "SHIFT": [
+        "VAIHTO"
+      ],
+      "V": [
+        "V"
       ]
     },
     "Label": {
@@ -3853,6 +3864,9 @@
       "Change your lock method": [
         "Vaihda lukitustapaasi"
       ],
+      "Clear clipboard": [
+        "Tyhjennä leikepöytä"
+      ],
       "Confirm extra password": [
         "Vahvista lisäsalasana"
       ],
@@ -4047,6 +4061,9 @@
       ],
       "No shared secure links": [
         "Jaettuja suojattuja linkkejä ei ole"
+      ],
+      "Organize vaults": [
+        "Järjestä holvit"
       ],
       "Our welcome gift to you": [
         "Tervetuliaislahjamme sinulle"
