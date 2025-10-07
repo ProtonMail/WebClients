@@ -430,6 +430,9 @@
       "Open navigation": [
         "Avaa navigaatio"
       ],
+      "Organize vaults": [
+        "Järjestä holvit"
+      ],
       "Pass for Android": [
         "Pass Androidille"
       ],
@@ -1260,6 +1263,9 @@
     "Header": {
       "Domain": [
         "Verkkotunnus"
+      ],
+      "Username": [
+        "Käyttäjätunnus"
       ]
     },
     "Info": {
@@ -1558,7 +1564,7 @@
         "Lähetä sähköpostia tähän osoitteeseen, ja se näyttää tulevan esimerkiksi osoitteesta ${ exampleEmail }."
       ],
       "Emails sent to your aliases are forwarded to your mailboxes. An alias can have more than one mailbox: useful to share an alias between you and your friends.": [
-        "Aliaksillesi lähetetyt sähköpostit välitetään postilaatikkoihisi. Aliaksella voi olla useampi kuin yksi postilaatikko: tämä on hyödyllistä, jos haluat jakaa aliaksen ystäviesi kanssa."
+        "Aliaksillesi lähetetyt sähköpostit välitetään postilaatikkoihisi. Aliaksella voi olla useampi kuin yksi postilaatikko: tämä on hyödyllistä, jos haluat jakaa aliaksen kavereidesi kanssa."
       ],
       "Emptying trash...": [
         "Tyhjennetään roskakoria..."
@@ -2357,6 +2363,14 @@
         "Organisaatiosi vaatii, että suojaat pääsysi ${ PASS_APP_NAME }:iin"
       ]
     },
+    "Keyboard key": {
+      "SHIFT": [
+        "VAIHTO"
+      ],
+      "V": [
+        "V"
+      ]
+    },
     "Label": {
       "${ aliasCount } alias": [
         "${ aliasCount } alias",
@@ -2545,6 +2559,9 @@
       ],
       "Browse faster, smarter": [
         "Selaa nopeammin ja älykkäämmin"
+      ],
+      "Built-in 2FA": [
+        "Sisäänrakennettu 2FA"
       ],
       "Capital letters (A-Z)": [
         "Isot kirjaimet (A-Z)"
@@ -3449,6 +3466,9 @@
       "Websites": [
         "Verkkosivustot"
       ],
+      "What's included": [
+        "Sisältää"
+      ],
       "WiFi network": [
         "Wi-Fi-verkko"
       ],
@@ -3990,6 +4010,9 @@
       "Change your lock method": [
         "Vaihda lukitustapaasi"
       ],
+      "Clear clipboard": [
+        "Tyhjennä leikepöytä"
+      ],
       "Confirm extra password": [
         "Vahvista lisäsalasana"
       ],
@@ -4211,6 +4234,9 @@
       ],
       "Open pagination": [
         "Avaa sivunavigaatio"
+      ],
+      "Organize vaults": [
+        "Järjestä holvit"
       ],
       "Our welcome gift to you": [
         "Tervetuliaislahjamme sinulle"
