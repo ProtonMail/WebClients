@@ -1,7 +1,6 @@
 import { BrowserWindowConstructorOptions, app } from "electron";
 import { join } from "path";
 import { MINIMUM_HEIGHT, MINIMUM_WIDTH, getWindowBounds } from "../../store/boundsStore";
-import { getSettings } from "../../store/settingsStore";
 import { isLinux, isMac, isWindows } from "../helpers";
 import { appSession } from "../session";
 import { MEET_APP_NAME } from "@proton/shared/lib/constants";
@@ -31,7 +30,6 @@ const getOSSpecificConfig = (): BrowserWindowConstructorOptions => {
 
 export const getWindowConfig = (): BrowserWindowConstructorOptions => {
     const { x, y, width, height } = getWindowBounds();
-    const settings = getSettings();
 
     return {
         title: isProdEnv() ? MEET_APP_NAME : `${MEET_APP_NAME} Dev`,
@@ -48,7 +46,6 @@ export const getWindowConfig = (): BrowserWindowConstructorOptions => {
         webPreferences: {
             devTools: true,
             preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
-            spellcheck: settings.spellChecker,
             // Security additions
             session: appSession(),
             nodeIntegration: false,

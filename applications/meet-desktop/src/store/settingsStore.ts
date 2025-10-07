@@ -8,7 +8,6 @@ const store = new Store<{ settings: SettingsStore }>({
 });
 
 export interface SettingsStore {
-    spellChecker: boolean;
     overrideError: boolean;
     releaseCategory?: RELEASE_CATEGORIES;
     rolloutProportion?: number;
@@ -16,7 +15,6 @@ export interface SettingsStore {
 }
 
 const defaultSettings = {
-    spellChecker: true,
     overrideError: false,
     releaseCategory: RELEASE_CATEGORIES.STABLE,
     rolloutProportion: 1 - Math.random(),

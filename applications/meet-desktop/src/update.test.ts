@@ -3,11 +3,6 @@ import { describe } from "@jest/globals";
 import { RELEASE_CATEGORIES } from "@proton/shared/lib/constants";
 import { VersionFile } from "@proton/shared/lib/desktop/DesktopVersion";
 
-jest.mock("./utils/view/viewManagement", () => ({
-    getCalendarView: () => {},
-    getMailView: () => {},
-}));
-
 jest.mock("electron", () => ({
     app: { isPackaged: true },
     autoUpdater: {
@@ -24,13 +19,13 @@ const availableVersions: VersionFile = {
             File: [
                 {
                     Identifier: ".deb (Ubuntu/Debian)",
-                    Url: "https://proton.me/download/mail/linux/ProtonMail-desktop-beta.deb",
+                    Url: "https://proton.me/download/meet/linux/ProtonMeet-desktop-beta.deb",
                     Sha512CheckSum:
                         "cc772a801ba6086ace8b313215c46352a88aea6627287b5219ae2963fde1d5d434f8d6ac9fd469a971693ec0d0813b387de8c94af021f41bad993d145937f293",
                 },
                 {
                     Identifier: ".rpm (Fedora/RHEL)",
-                    Url: "https://proton.me/download/mail/linux/ProtonMail-desktop-beta.rpm",
+                    Url: "https://proton.me/download/meet/linux/ProtonMeet-desktop-beta.rpm",
                     Sha512CheckSum:
                         "de38e6f11b91ab3ff5e987fe6b14d430a8911ec45b94ed7f95b758cb3d542b73cc0551142e4f94950209fa445bc8fdfd9ac3d13d50aafc183be829a0c01298e2",
                 },
@@ -46,13 +41,13 @@ const availableVersions: VersionFile = {
             File: [
                 {
                     Identifier: ".deb (Ubuntu/Debian)",
-                    Url: "https://proton.me/download/mail/linux/ProtonMail-desktop-beta.deb",
+                    Url: "https://proton.me/download/meet/linux/ProtonMeet-desktop-beta.deb",
                     Sha512CheckSum:
                         "8d23105dc8aa0d3320b113937ad94f057b040a603cc6353a266b3e563a6cefa1a9368e8dec53c377417d6f79fd325375d338dd8dd8506a2b0526658f6981668b",
                 },
                 {
                     Identifier: ".rpm (Fedora/RHEL)",
-                    Url: "https://proton.me/download/mail/linux/ProtonMail-desktop-beta.rpm",
+                    Url: "https://proton.me/download/meet/linux/ProtonMeet-desktop-beta.rpm",
                     Sha512CheckSum:
                         "c6b8a68545d8a7814953f6e343b362512faaa789cd46b95c4ffecf0f83444ba5b79104e33242a10d3836f6c6fe7d338e9e8e8f6113c0bcbe2a6027da58ea857c",
                 },
@@ -68,13 +63,13 @@ const availableVersions: VersionFile = {
             File: [
                 {
                     Identifier: ".deb (Ubuntu/Debian)",
-                    Url: "https://proton.me/download/mail/linux/ProtonMail-desktop-beta.deb",
+                    Url: "https://proton.me/download/meet/linux/ProtonMeet-desktop-beta.deb",
                     Sha512CheckSum:
                         "8d23105dc8aa0d3320b113937ad94f057b040a603cc6353a266b3e563a6cefa1a9368e8dec53c377417d6f79fd325375d338dd8dd8506a2b0526658f6981668b",
                 },
                 {
                     Identifier: ".rpm (Fedora/RHEL)",
-                    Url: "https://proton.me/download/mail/linux/ProtonMail-desktop-beta.rpm",
+                    Url: "https://proton.me/download/meet/linux/ProtonMeet-desktop-beta.rpm",
                     Sha512CheckSum:
                         "c6b8a68545d8a7814953f6e343b362512faaa789cd46b95c4ffecf0f83444ba5b79104e33242a10d3836f6c6fe7d338e9e8e8f6113c0bcbe2a6027da58ea857c",
                 },
@@ -90,13 +85,13 @@ const availableVersions: VersionFile = {
             File: [
                 {
                     Identifier: ".deb (Ubuntu/Debian)",
-                    Url: "https://proton.me/download/mail/linux/ProtonMail-desktop-beta.deb",
+                    Url: "https://proton.me/download/meet/linux/ProtonMeet-desktop-beta.deb",
                     Sha512CheckSum:
                         "eaf1fcd37619da321d1aeab509df3ffa238ca9a22bddfb540358315e3c1f01a45d7a9f03194e732b25b9aabbdfb95f342142d440612157c00f285c8cd5db46e9",
                 },
                 {
                     Identifier: ".rpm (Fedora/RHEL)",
-                    Url: "https://proton.me/download/mail/linux/ProtonMail-desktop-beta.rpm",
+                    Url: "https://proton.me/download/meet/linux/ProtonMeet-desktop-beta.rpm",
                     Sha512CheckSum:
                         "5fcd824913ead17e9040a9212c84df5badca1600ae38d8e3245ccdafe062bc68d7be703b2339a0ff5eda33f355b578808ac2e881918433bfa9323556ab00d558",
                 },
@@ -112,13 +107,13 @@ const availableVersions: VersionFile = {
             File: [
                 {
                     Identifier: ".deb (Ubuntu/Debian)",
-                    Url: "https://proton.me/download/mail/linux/ProtonMail-desktop-beta.deb",
+                    Url: "https://proton.me/download/meet/linux/ProtonMeet-desktop-beta.deb",
                     Sha512CheckSum:
                         "cc772a801ba6086ace8b313215c46352a88aea6627287b5219ae2963fde1d5d434f8d6ac9fd469a971693ec0d0813b387de8c94af021f41bad993d145937f293",
                 },
                 {
                     Identifier: ".rpm (Fedora/RHEL)",
-                    Url: "https://proton.me/download/mail/linux/ProtonMail-desktop-beta.rpm",
+                    Url: "https://proton.me/download/meet/linux/ProtonMeet-desktop-beta.rpm",
                     Sha512CheckSum:
                         "de38e6f11b91ab3ff5e987fe6b14d430a8911ec45b94ed7f95b758cb3d542b73cc0551142e4f94950209fa445bc8fdfd9ac3d13d50aafc183be829a0c01298e2",
                 },

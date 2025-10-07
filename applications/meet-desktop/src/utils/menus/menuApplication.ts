@@ -2,9 +2,9 @@ import { app, Menu, shell, WebContentsView, type MenuItemConstructorOptions } fr
 import { c } from "ttag";
 import { uninstallProton } from "../../macos/uninstall";
 import { clearStorage, isMac } from "../helpers";
-import { getMainWindow, getSpellCheckStatus, resetZoom, toggleSpellCheck, updateZoom } from "../view/viewManagement";
+import { getMainWindow, resetZoom, updateZoom } from "../view/viewManagement";
 import { isProdEnv } from "../isProdEnv";
-import { MAIL_APP_NAME } from "@proton/shared/lib/constants";
+import { MEET_APP_NAME } from "@proton/shared/lib/constants";
 
 type MenuKey = "app" | "file" | "edit" | "view" | "window";
 interface MenuProps extends MenuItemConstructorOptions {
@@ -49,15 +49,6 @@ export const setApplicationMenu = () => {
                 },
                 { role: "delete", label: c("App menu").t`Delete` },
                 { role: "selectAll", label: c("App menu").t`Select All` },
-                { type: "separator" },
-                {
-                    label: c("App menu").t`Check spelling while typing`,
-                    type: "checkbox",
-                    checked: getSpellCheckStatus(),
-                    click: (item) => {
-                        toggleSpellCheck(item.checked);
-                    },
-                },
             ],
         },
         {
@@ -133,14 +124,14 @@ export const setApplicationMenu = () => {
             label: app.name,
             key: "app",
             submenu: [
-                { role: "about", label: c("App menu").t`About ${MAIL_APP_NAME}` },
+                { role: "about", label: c("App menu").t`About ${MEET_APP_NAME}` },
                 { type: "separator" },
-                { role: "hide", label: c("App menu").t`Hide ${MAIL_APP_NAME}` },
+                { role: "hide", label: c("App menu").t`Hide ${MEET_APP_NAME}` },
                 { role: "hideOthers", label: c("App menu").t`Hide Others` },
                 { role: "unhide", label: c("App menu").t`Show All` },
                 { type: "separator" },
                 {
-                    label: c("App menu").t`Start ${MAIL_APP_NAME} at login`,
+                    label: c("App menu").t`Start ${MEET_APP_NAME} at login`,
                     type: "checkbox",
                     checked: app.getLoginItemSettings().openAtLogin,
                     click: () => {
@@ -150,12 +141,12 @@ export const setApplicationMenu = () => {
                     },
                 },
                 {
-                    label: c("App menu").t`Uninstall ${MAIL_APP_NAME}`,
+                    label: c("App menu").t`Uninstall ${MEET_APP_NAME}`,
                     type: "normal",
                     click: () => uninstallProton(),
                 },
                 { type: "separator" },
-                { role: "quit", label: c("App menu").t`Quit ${MAIL_APP_NAME}` },
+                { role: "quit", label: c("App menu").t`Quit ${MEET_APP_NAME}` },
             ],
         });
 
