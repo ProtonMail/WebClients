@@ -3560,7 +3560,7 @@
         "Falha ao carregar o modal OAuth."
       ],
       "Failed to open to contact": [
-        "Não foi possível abrir o contato."
+        "Não foi possível abrir o contato"
       ],
       "Failed to update secret passphrase": [
         "Falha ao atualizar a passphrase secreta"
@@ -3695,7 +3695,7 @@
         "A chave de organização não está descriptografada"
       ],
       "Passphrase unavailable": [
-        "Passphrase indisponível"
+        "Frase secreta indisponível"
       ],
       "Password is required": [
         "A senha é obrigatória"
@@ -4269,7 +4269,7 @@
         "suporte ao cliente"
       ],
       "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
-        "Os planos familiares não suportam contas externas no momento. Crie um endereço para ${ BRAND_NAME } antes de participar.${ link }"
+        "Os planos familiares não suportam contas externas no momento. Crie um endereço para ${ BRAND_NAME } antes de participar. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Se aceitar o convite, seu plano atual será alterado e você receberá um crédito em sua conta com o saldo restante, se houver."
@@ -7074,7 +7074,7 @@
         "Solicitar um convite"
       ],
       "Resume now": [
-        "Continuar agora"
+        "Retomar agora"
       ],
       "settings": [
         "configurações"
@@ -7814,6 +7814,9 @@
       ],
       "Share files with no size limit": [
         "Compartilhe arquivos sem limite de tamanho"
+      ],
+      "Short domain (@pm.me)": [
+        "Domínio curto (@pm.me)"
       ],
       "Sign in as user": [
         "Início de sessão como usuário"
@@ -8975,7 +8978,7 @@
         "Estou comprando como empresa"
       ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Incluindo ${ taxRate }${ taxName }${ taxAmount }"
+        "Incluindo ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
       "Including ${ taxRate }% taxes: ${ taxAmount }": [
         "Incluindo ${ taxRate }% de impostos: ${ taxAmount }"
@@ -8985,6 +8988,9 @@
       ],
       "More plans are available in other currencies": [
         "Mais planos estão disponíveis em outras moedas"
+      ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Forneça um método de pagamento para ativar a assinatura após o término da avaliação."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reative sua assinatura primeiro para diminuir o número de complementos."
@@ -9040,6 +9046,12 @@
       ],
       "VAT number": [
         "Número de IVA"
+      ],
+      "You already have a subscription to this plan.": [
+        "Você já assina este plano."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Você já assina este plano. Você pode mudar sua assinatura na ${ subscriptionPlatform }."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Sua moeda foi alterada para euros (€) porque transferências bancárias SEPA apenas suportam pagamentos em euros."
