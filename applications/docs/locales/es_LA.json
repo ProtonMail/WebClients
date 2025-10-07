@@ -801,6 +801,9 @@
       "Take out of trash": [
         "Restaurar de la papelera"
       ],
+      "Toggle debug mode": [
+        "Alternar modo de depuración"
+      ],
       "Trashing...": [
         "Enviando a la Papelera..."
       ],
@@ -3432,6 +3435,11 @@
       ],
       "ZIP code is required": [
         "Se requiere el código postal."
+      ]
+    },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Inicie sesión con la misma dirección de Gmail que conectó originalmente"
       ]
     },
     "Error importing calendar": {
@@ -8461,6 +8469,9 @@
       "More plans are available in other currencies": [
         "Más planes disponibles en otras divisas"
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Se requiere un método de pago para activar la suscripción después de que finalice el periodo de prueba."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactive primero la suscripción para disminuir la cantidad de complementos."
       ],
@@ -8501,6 +8512,9 @@
       "This number will be shown on all future invoices": [
         "Este número se mostrará en todas las facturas futuras"
       ],
+      "This offer is not available with your current plan.": [
+        "Esta oferta no está disponible con el plan actual."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Este se convertirá en su nuevo método de pago por defecto para todas las futuras renovaciones."
       ],
@@ -8512,6 +8526,12 @@
       ],
       "VAT number": [
         "Número de IVA"
+      ],
+      "You already have a subscription to this plan.": [
+        "Ya tiene una suscripción a este plan."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Ya tiene una suscripción a este plan. Puede cambiar la suscripción en ${ subscriptionPlatform }."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Su moneda ha sido cambiada a euros (€) porque las transferencias bancarias SEPA solo admiten pagos en euros."

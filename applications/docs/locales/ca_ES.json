@@ -3262,7 +3262,7 @@
         "S'han esborrat els convidats duplicats: ${ joinedInvitee }"
       ],
       "Request timed out": [
-        "S'ha esgotat el temps d'espera"
+        "La sol·licitud ha caducat"
       ],
       "Search failed": [
         "Hi ha hagut un error en la cerca"
@@ -3805,7 +3805,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Quelcom va anar malament autenticant-se amb la vostra clau de seguretat. Torneu-ho a provar."
+        "Alguna cosa ha anat malament en autenticar-se amb la vostra clau de seguretat. Torneu-ho a provar."
       ]
     },
     "fido2: Info": {
@@ -5592,7 +5592,7 @@
         "Quan us connecteu a la VPN, aquesta utilitza tecnologia de xifratge per ocultar la vostra adreça IP (un codi únic assignat al vostre dispositiu)."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quan configureu l’autenticació de dos factors, proporcionem codis de recuperació que podeu utilitzar per iniciar la sessió si perdeu l’accés a l’aplicació d'autenticació."
+        "Quan configureu l’autenticació de doble factor, proporcionem codis de recuperació que podeu utilitzar per iniciar la sessió si perdeu l’accés a l’aplicació d'autenticació."
       ],
       "words": [
         "paraules"
@@ -7328,6 +7328,9 @@
       ],
       "Share files with no size limit": [
         "Compartiu fitxers sense límit de mida"
+      ],
+      "Short domain (@pm.me)": [
+        "Domini curt (@pm.me)"
       ],
       "Sign in as user": [
         "Inicia la sessió com a usuari"
