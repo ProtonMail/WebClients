@@ -218,7 +218,7 @@
         "Escolha um arquivo ou arraste-o aqui"
       ],
       "Claim ${ BRAND_NAME } address": [
-        "Confirmar endereço de ${ BRAND_NAME }"
+        "Reivindicar endereço da ${ BRAND_NAME }"
       ],
       "Claim this address": [
         "Confirmar este endereço"
@@ -315,6 +315,9 @@
       ],
       "Continue with Outlook": [
         "Continuar com Outlook"
+      ],
+      "Continue without categories": [
+        "Continuar sem categorias"
       ],
       "Contract composer": [
         "Restaurar tamanho"
@@ -479,9 +482,6 @@
       ],
       "Download logs": [
         "Registros de downloads"
-      ],
-      "Download now": [
-        "Baixar agora"
       ],
       "Download the desktop app": [
         "Baixe o aplicativo para computador"
@@ -735,9 +735,6 @@
       "Import from Outlook": [
         "Importar do Outlook"
       ],
-      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
-        "Atualização importante disponível. Para continuar a usar o aplicativo, atualize para a versão mais recente. ${ downloadUpdate }"
-      ],
       "In the morning": [
         "Pela manhã"
       ],
@@ -788,7 +785,7 @@
         "Manter minha assinatura"
       ],
       "Label as": [
-        "Rotular como"
+        "Marcar como"
       ],
       "Label as...": [
         "Rotular como..."
@@ -1498,6 +1495,9 @@
       "Try another method": [
         "Tentar outro método"
       ],
+      "Try categories": [
+        "Experimente as categorias"
+      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Tente salvar novamente. Erro ao salvar devido a: ${ saveError }"
       ],
@@ -1557,9 +1557,6 @@
       ],
       "Upgrade for 200GB": [
         "Faça upgrade para 200GB"
-      ],
-      "Upgrade Now": [
-        "Fazer upgrade agora"
       ],
       "Upgrade now": [
         "Atualizar agora"
@@ -1657,15 +1654,6 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Você não pode enviar arquivos vCards de mais de ${ maxAttachments } contatos",
         "Você não pode enviar arquivos vCards de mais de ${ maxAttachments } contatos"
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "Sua avaliação gratuita do aplicativo de computador termina em 2 dias. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "Sua avaliação gratuita do aplicativo de computador termina em 5 dias. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "Sua avaliação gratuita do aplicativo de computador termina em ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Seu assistente de escrita de e-mail"
@@ -2361,7 +2349,7 @@
         "${ participantName } aceitou um convite e propôs um novo horário para uma ocorrência deste evento."
       ],
       "${ participantName } accepted an invitation and proposed a new time for this event.": [
-        "${ participantName } aceitou um convite e propôs um novo horário para este evento."
+        "${ participantName } aceitou o convite e propôs um novo horário para este evento."
       ],
       "${ participantName } accepted an invitation to one occurrence of the event.": [
         "${ participantName } aceitou um convite para uma ocorrência do evento."
@@ -2391,7 +2379,7 @@
         "${ participantName } solicitou as últimas atualizações de um evento que não existe mais no seu calendário."
       ],
       "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "${ participantName } perguntou sobre as últimas atualizações de um evento que não corresponde aos detalhes do seu convite. Verifique os detalhes do convite no seu calendário."
+        "${ participantName } solicitou as últimas atualizações de um evento que não corresponde aos detalhes do seu convite. Verifique os detalhes do convite no seu calendário."
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } recusou um convite e propôs um novo horário para uma ocorrência deste evento."
@@ -2400,7 +2388,7 @@
         "${ participantName } recusou um convite e propôs um novo horário para este evento."
       ],
       "${ participantName } declined an invitation to one occurrence of the event.": [
-        "${ participantName } recusou um convite para uma ocorrência do evento."
+        "${ participantName } recusou um convite para uma das ocorrências do evento."
       ],
       "${ participantName } declined an invitation to this event.": [
         "${ participantName } recusou um convite para este evento."
@@ -2424,10 +2412,10 @@
         "${ participantName } havia aceito um convite e proposto um novo horário para este evento. A resposta e a proposta estão desatualizadas."
       ],
       "${ participantName } had accepted an invitation to one occurrence of the event.": [
-        "${ participantName } havia aceito um convite para uma ocorrência do evento."
+        "${ participantName } aceitou um convite para uma das ocorrências do evento."
       ],
       "${ participantName } had accepted an invitation to this event.": [
-        "${ participantName } havia aceito um convite para este evento."
+        "${ participantName } aceitou um convite para este evento."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } havia aceitado seu convite e proposto um novo horário para uma ocorrência deste evento. A resposta e a proposta estão desatualizadas."
@@ -2442,13 +2430,13 @@
         "${ participantName } havia recusado um convite e proposto um novo horário para este evento. A resposta e a proposta estão desatualizadas."
       ],
       "${ participantName } had declined an invitation to one occurrence of the event.": [
-        "${ participantName } havia recusado um convite para uma ocorrência do evento."
+        "${ participantName } recusou um convite para uma das ocorrências do evento."
       ],
       "${ participantName } had declined an invitation to this event.": [
         "${ participantName } havia recusado um convite para este evento."
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName } havia recusado seu convite e proposto um novo horário para uma ocorrência deste evento. A resposta e a proposta estão desatualizadas."
+        "${ participantName } recusou seu convite e propôs um novo horário para uma das ocorrências deste evento. A resposta e a proposta estão desatualizadas."
       ],
       "${ participantName } had declined your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } havia recusado seu convite e proposto um novo horário para este evento. A resposta e a proposta estão desatualizadas."
@@ -2493,7 +2481,7 @@
         "${ participantName } havia aceito provisoriamente um convite e proposto um novo horário para uma ocorrências deste evento. A resposta e a proposta estão desatualizadas."
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName } havia aceito provisoriamente um convite e proposto um novo horário para este evento. A resposta e a proposta estão desatualizadas."
+        "${ participantName } aceitou provisoriamente o convite e propôs um novo horário para o evento. A resposta e a proposta estão desatualizadas."
       ],
       "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
         "${ participantName } havia aceito provisoriamente um convite para uma ocorrência do evento."
@@ -2535,7 +2523,7 @@
         "${ participantName } aceitou seu convite provisoriamente e propôs um novo horário para este evento."
       ],
       "${ participantName } tentatively accepted your invitation to one occurrence of the event.": [
-        "${ participantName } aceitou provisoriamente seu convite para uma ocorrência do evento."
+        "${ participantName } aceitou seu convite e propôs um novo horário para este evento. A resposta e a proposta estão desatualizadas."
       ],
       "${ participantName } tentatively accepted your invitation.": [
         "${ participantName } aceitou provisoriamente o seu convite."
@@ -4646,7 +4634,7 @@
         "Erro ao carregar a pré-visualização STL"
       ],
       "Failed to open to contact": [
-        "Não foi possível abrir o contato."
+        "Não foi possível abrir o contato"
       ],
       "Failed to update secret passphrase": [
         "Falha ao atualizar a passphrase secreta"
@@ -4781,7 +4769,7 @@
         "A chave de organização não está descriptografada"
       ],
       "Passphrase unavailable": [
-        "Passphrase indisponível"
+        "Frase secreta indisponível"
       ],
       "Password is required": [
         "A senha é obrigatória"
@@ -5407,7 +5395,7 @@
         "suporte ao cliente"
       ],
       "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
-        "Os planos familiares não suportam contas externas no momento. Crie um endereço para ${ BRAND_NAME } antes de participar.${ link }"
+        "Os planos familiares não suportam contas externas no momento. Crie um endereço para ${ BRAND_NAME } antes de participar. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Se aceitar o convite, seu plano atual será alterado e você receberá um crédito em sua conta com o saldo restante, se houver."
@@ -6904,6 +6892,12 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Não consegue lembrar sua senha? Nós podemos ajudar a limpar os dados criptografados de todos os contatos criptografados com esta chave e, no processo, descartar o alerta."
       ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Categorias funcionam como filtros de spam. ${ MAIL_APP_NAME } nunca lê seus e-mails ou compartilha seus dados."
+      ],
+      "Categories work like spam filters. We only look for patterns in unencrypted header and technical data. We do not read email content, share your data, or infringe on your privacy.": [
+        "As categorias funcionam como filtros de spam. Nós só procuramos padrões em cabeçalhos não criptografados e em dados técnicos. Não lemos o conteúdo do e-mail, não compartilhamos seus dados, nem infringimos sua privacidade."
+      ],
       "Center": [
         "Centralizar"
       ],
@@ -6923,7 +6917,7 @@
         "Limpar seleção"
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
-        "Limpar os dados do navegador também desativar a busca no conteúdo das mensagens neste dispositivo. Todas as mensagens precisarão ser baixadas novamente para que se possa pesquisá-las."
+        "Limpar os dados do navegador também desativa a busca por conteúdo de mensagens neste dispositivo. Será necessário baixar todas as mensagens novamente para poder pesquisá-las."
       ],
       "Clears browser data (including downloaded messages, …)": [
         "Limpa todos os dados do navegador (incluindo mensagens baixadas, …)"
@@ -7058,7 +7052,7 @@
         "Você deseja baixar esses anexos mesmo assim?"
       ],
       "Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?": [
-        "Você deseja assinar novamente os detalhes do contato e, no processo, confiar as chaves com as seguintes impressões digitais?"
+        "Você deseja assinar novamente os detalhes de contato e, no processo, confiar as chaves às seguintes impressões digitais?"
       ],
       "Do you want to re-sign the contact details?": [
         "Você deseja assinar novamente os detalhes do contato?"
@@ -7498,9 +7492,6 @@
       "Low Priority": [
         "Baixa prioridade"
       ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Defina ${ MAIL_APP_NAME } como seu aplicativo de e-mail padrão."
-      ],
       "Manage your folders": [
         "Gerenciar suas pastas"
       ],
@@ -7917,8 +7908,8 @@
         "Parece que você está a par de tudo agora"
       ],
       "Select all ${ elementsCount } in ${ location }": [
-        "Selecione todos os ${ elementsCount } em ${ location }",
-        "Selecione todos os ${ elementsCount } em ${ location }"
+        "Selecione ${ elementsCount } item em ${ location }",
+        "Selecione ${ elementsCount } itens em ${ location }"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecione o formato de e-mail que você deseja que seja usado por padrão ao enviar um e-mail para este endereço."
@@ -7945,7 +7936,7 @@
         "Enviando"
       ],
       "Sending message...": [
-        "Enviando a mensagem..."
+        "Enviando mensagem..."
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "O envio de mensagens de um endereço @pm.me é um recurso pago. A sua mensagem será enviada do seu endereço padrão ${ email }"
@@ -7966,7 +7957,7 @@
         "Define o ${ MAIL_APP_NAME } como seu aplicativo de e-mails padrão para este navegador. O ${ MAIL_APP_NAME } será aberto automaticamente quando você clicar em um link de e-mail."
       ],
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "Define o ${ MAIL_APP_NAME } como seu aplicativo de e-mails padrão. O ${ MAIL_APP_NAME } será aberto automaticamente quando você clicar em um link de e-mail."
+        "Definir ${ MAIL_APP_NAME } como seu aplicativo de e-mails padrão. O ${ MAIL_APP_NAME } será aberto automaticamente quando você clicar em um link de e-mail."
       ],
       "Set up your organization": [
         "Configure a sua organização"
@@ -8333,7 +8324,7 @@
         "Rastreamento"
       ],
       "Trash existing messages": [
-        "Mensagens na Lixeira"
+        "Enviar mensagens para Lixeira"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Experimente os novos recursos, atualizações e produtos da ${ BRAND_NAME } antes de serem lançados ao público. Isso recarregará o aplicativo"
@@ -8536,6 +8527,9 @@
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "Quando estiver viajando ou usando uma rede Wi-Fi pública, conecte-se a ${ VPN_APP_NAME } para evitar que alguém rastreie sua atividade on-line ou roube seus dados. É grátis."
       ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "Com as novas categorias de e-mail, apenas mensagens importantes chegam à sua caixa de entrada principal. Todo o resto é organizado em categorias."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Você gostaria de receber um novo código de verificação ou usar um método de verificação diferente?"
       ],
@@ -8645,7 +8639,7 @@
         "Você tem uma assinatura de avaliação do ${ planTitle }. Nenhum pagamento é necessário no momento. Sua assinatura será renovada automaticamente ao final do período de avaliação."
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
-        "Você não forneceu nenhum assunto ao seu e-mail. Você deseja enviar a mensagem mesmo assim?"
+        "Você não informou o assunto do seu e-mail. Deseja enviar a mensagem mesmo assim?"
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
         "Você atingiu 100% da sua capacidade de armazenamento. Considere liberar algum espaço ou fazer o upgrade de conta com espaço de armazenamento adicional para compor novas mensagens."
@@ -9150,6 +9144,9 @@
       "Add image URL": [
         "Adicionar a URL da imagem"
       ],
+      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
+        "Adicione ou remova categorias. Ative ou desative as notificações. Ajuste a qualquer momento no menu ${ menuIcon }."
+      ],
       "Add to group": [
         "Adicionar ao grupo"
       ],
@@ -9578,6 +9575,9 @@
       ],
       "No label found": [
         "Nenhum marcador encontrado"
+      ],
+      "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
+        "Chega de perder mensagens importantes! Elas agora aparecem em ${ primaryCopy }. Todo o resto é classificado por categoria para que sejam fáceis de encontrar e não atrapalhe sua caixa de entrada."
       ],
       "No results found": [
         "Nenhum resultado encontrado"
@@ -10014,7 +10014,7 @@
         "Ative um endereço de e-mail vinculado a um de seus calendários."
       ],
       "Enable the email address linked to the disabled calendar to cancel the event.": [
-        "Ative o endereço de e-mail vinculado ao calendário desativado para cancelar o evento."
+        "Habilite o endereço de e-mail vinculado ao calendário desativado para cancelar o evento."
       ],
       "Enable the email address linked to the disabled calendar to modify your answer.": [
         "Ative o endereço de e-mail vinculado ao calendário desativado para modificar sua resposta."
@@ -10131,7 +10131,7 @@
         "Solicitar um convite"
       ],
       "Resume now": [
-        "Continuar agora"
+        "Retomar agora"
       ],
       "Scheduled": [
         "Agendado"
@@ -10164,7 +10164,7 @@
         "termos de serviço"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
-        "Este arquivo ICS contém mais de um evento. Baixe-o e importe os eventos em ${ CALENDAR_APP_NAME }."
+        "Este arquivo ICS contém mais de um evento. Baixe-o e importe os eventos em ${ CALENDAR_APP_NAME }"
       ],
       "Trash": [
         "Lixeira"
@@ -10188,7 +10188,7 @@
         "Você precisa ativar suas chaves de agenda para gerenciar este convite"
       ],
       "You need to activate your calendar keys to see the updated event": [
-        "Você precisa ativar suas chaves de calendário para ver o evento atualizado."
+        "Você precisa ativar suas chaves de calendário para ver o evento atualizado"
       ],
       "You need to activate your calendar keys to see the updated invitation": [
         "Você precisa ativar as chaves de calendário para ver o convite atualizado"
@@ -10922,6 +10922,9 @@
       "Share files with no size limit": [
         "Compartilhe arquivos sem limite de tamanho"
       ],
+      "Short domain (@pm.me)": [
+        "Domínio curto (@pm.me)"
+      ],
       "Sign in as user": [
         "Início de sessão como usuário"
       ],
@@ -11486,7 +11489,7 @@
         "Passphrase copiada para a área de transferência"
       ],
       "Password has been set successfully": [
-        "A senha foi definida"
+        "A senha foi definida com sucesso"
       ],
       "Sender ${ firstSenderAddress } blocked": [
         "Remetente ${ firstSenderAddress } bloqueado"
@@ -11639,6 +11642,9 @@
       ]
     },
     "Onboarding List Placeholder": {
+      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
+        "Para evitar rastreamentos, mude seu e-mail para serviços populares agora mesmo. ${ learnMoreLink }"
+      ],
       "Finance": [
         "Finanças"
       ],
@@ -11699,7 +11705,7 @@
         "navegador"
       ],
       "Clear out deleted and spam emails after 30 days.": [
-        "Limpar os e-mails excluídos e de spam após 30 dias."
+        "Limpe e-mails excluídos e spam após 30 dias."
       ],
       "Continue": [
         "Continuar"
@@ -12074,7 +12080,7 @@
         "Estou comprando como empresa"
       ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Incluindo ${ taxRate }${ taxName }${ taxAmount }"
+        "Incluindo ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
       "Including ${ taxRate }% taxes: ${ taxAmount }": [
         "Incluindo ${ taxRate }% de impostos: ${ taxAmount }"
@@ -12084,6 +12090,9 @@
       ],
       "More plans are available in other currencies": [
         "Mais planos estão disponíveis em outras moedas"
+      ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Forneça um método de pagamento para ativar a assinatura após o término da avaliação."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reative sua assinatura primeiro para diminuir o número de complementos."
@@ -12139,6 +12148,12 @@
       ],
       "VAT number": [
         "Número de IVA"
+      ],
+      "You already have a subscription to this plan.": [
+        "Você já assina este plano."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Você já assina este plano. Você pode mudar sua assinatura na ${ subscriptionPlatform }."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Sua moeda foi alterada para euros (€) porque transferências bancárias SEPA apenas suportam pagamentos em euros."
@@ -12404,7 +12419,7 @@
         "Diga ao assistente de escrita o que deve ser escrito. Exemplo: “Anuncie os próximos eventos em um boletim informativo”"
       ],
       "Tell the writing assistant what to write. Example: “Cancel my gym membership”": [
-        "Diga ao assistente de escrita o que deve ser escrito. Exemplo: “Cancele minha inscrição na academia”"
+        "Diga ao assistente de escrita o que escrever. Exemplo: \"Cancelar minha inscrição na academia\"."
       ],
       "Tell the writing assistant what to write. Example: “Invite Jane to my party”": [
         "Diga ao assistente de escrita o que deve ser escrito. Exemplo: \"Convidar a Joana para minha festa\""
@@ -12632,16 +12647,16 @@
     },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
-        "Mensagem criptografada de ponta a ponta e assinada"
+        "Mensagem assinada e criptografada de ponta a ponta"
       ],
       "End-to-end encrypted message": [
         "Mensagem criptografada de ponta a ponta"
       ],
       "End-to-end encrypted message from verified sender": [
-        "Mensagem criptografada de ponta a ponta do remetente verificado"
+        "Mensagem criptografada de ponta a ponta de remetente verificado"
       ],
       "PGP-encrypted and signed message": [
-        "Mensagem criptografada de ponta a ponta e assinada"
+        "Mensagem criptografada e assinada por PGP"
       ],
       "PGP-encrypted message": [
         "Mensagem criptografada com PGP"
@@ -12725,7 +12740,7 @@
         "Não é possível enviar para o endereço do organizador: ${ errorMessage }"
       ],
       "Re-encrypting invitation failed. Please try again.": [
-        "Erro ao criptografar o convite. Tente novamente."
+        "Falha ao criptografar novamente o convite. Tente novamente."
       ]
     },
     "Safety review": {
@@ -13441,7 +13456,7 @@
         "Convide amigos para ${ BRAND_NAME }"
       ],
       "Schedule send": [
-        "Envio agendado"
+        "Agendar envio"
       ],
       "This is now your default address. Open the dropdown to send from a different address. ": [
         "Este é agora o seu endereço padrão. Abra o menu suspenso para enviar de um endereço diferente. "
@@ -14156,7 +14171,7 @@
         "Conteúdo copiado para a área de transferência"
       ],
       "Conversation added to ${ labelName }.": [
-        "Conversa adiciona a ${ labelName }."
+        "Conversa adicionada a ${ labelName }."
       ],
       "Conversation deleted": [
         "Conversa excluída"
@@ -14313,8 +14328,8 @@
         "Confirmação de leitura enviada"
       ],
       "Recategorized ${ elementsCount } message.": [
-        "Mensagem ${ elementsCount } recategorizada.",
-        "Mensagens ${ elementsCount } recategorizadas."
+        "${ elementsCount } mensagem recategorizada.",
+        "${ elementsCount } mensagens recategorizadas."
       ],
       "Secret passphrase updated": [
         "Passphrase secreta atualizada"
@@ -14918,6 +14933,9 @@
       "External encryption": [
         "Criptografia externa"
       ],
+      "Fewer distractions, more focus": [
+        "Menos distrações, mais foco"
+      ],
       "Filter for more focus": [
         "Filtrar para mais foco"
       ],
@@ -15023,7 +15041,7 @@
         "Marcar mensagens como"
       ],
       "Label options": [
-        "Opções do marcador"
+        "Opções de marcador"
       ],
       "Link confirmation": [
         "Confirmar redirecionamento"
@@ -15336,7 +15354,7 @@
         "Enviar com preferências alteradas?"
       ],
       "Send with encryption disabled?": [
-        "Enviar com criptografia desativado?"
+        "Enviar com criptografia desabilitada?"
       ],
       "Send without expiration?": [
         "Enviar sem expiração?"

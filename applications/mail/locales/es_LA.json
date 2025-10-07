@@ -307,11 +307,17 @@
       "Continue import": [
         "Continuar importación"
       ],
+      "Continue with categories": [
+        "Continuar con categorías"
+      ],
       "Continue with Google": [
         "Continuar con Google"
       ],
       "Continue with Outlook": [
         "Continuar con Outlook"
+      ],
+      "Continue without categories": [
+        "Continuar sin categorías"
       ],
       "Contract composer": [
         "Reducir el editor"
@@ -378,6 +384,9 @@
       ],
       "Customize": [
         "Personalizar"
+      ],
+      "Customize categories": [
+        "Personalizar categorías"
       ],
       "Customize import": [
         "Personalizar importación"
@@ -473,9 +482,6 @@
       ],
       "Download logs": [
         "Descargar los registros"
-      ],
-      "Download now": [
-        "Descargar ahora"
       ],
       "Download the desktop app": [
         "Descargue la aplicación de escritorio"
@@ -729,9 +735,6 @@
       "Import from Outlook": [
         "Importar desde Outlook"
       ],
-      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
-        "Actualización importante disponible. Para continuar usando la aplicación, actualice a la última versión. ${ downloadUpdate }"
-      ],
       "In the morning": [
         "En la mañana"
       ],
@@ -763,6 +766,9 @@
       "Invite members": [
         "Invite a miembros"
       ],
+      "Is this private?": [
+        "¿Esto es privado?"
+      ],
       "Italic": [
         "Cursiva"
       ],
@@ -771,6 +777,9 @@
       ],
       "Keep categories": [
         "Mantener las categorías"
+      ],
+      "Keep inbox as before": [
+        "Mantener la bandeja de entrada como antes"
       ],
       "Keep my subscription": [
         "Mantener mi suscripción"
@@ -1486,6 +1495,9 @@
       "Try another method": [
         "Intente otro método"
       ],
+      "Try categories": [
+        "Pruebe las categorías"
+      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Error al guardar debido a: ${ saveError }. Intente guardar de nuevo."
       ],
@@ -1545,9 +1557,6 @@
       ],
       "Upgrade for 200GB": [
         "Actualizar por 200GB"
-      ],
-      "Upgrade Now": [
-        "Mejorar ahora"
       ],
       "Upgrade now": [
         "Actualizar ahora"
@@ -1645,15 +1654,6 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "No puede enviar archivos vCard de más de ${ maxAttachments } contacto.",
         "No puede enviar archivos vCard de más de ${ maxAttachments } contacto."
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "La prueba gratuita de la aplicación de escritorio finaliza en 2 días. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "La prueba gratuita de la aplicación de escritorio finaliza en 5 días. ${ upgradeButton }"
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "La prueba gratuita de la aplicación de escritorio finaliza en ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Su asistente de escritura de correo"
@@ -5080,6 +5080,11 @@
         "Se requiere el código postal."
       ]
     },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Inicie sesión con la misma dirección de Gmail que conectó originalmente"
+      ]
+    },
     "Error adding participants to a calendar event": {
       "At most ${ maxAttendees } participant is allowed per invitation": [
         "Se permite hasta ${ maxAttendees } participante por invitación.",
@@ -6887,6 +6892,12 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "¿No recuerda la contraseña? Podemos ayudarle a limpiar los datos cifrados de todos los contactos cifrados con esta clave y en el proceso descartar la alerta."
       ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Las categorías funcionan igual que los filtros de spam. ${ MAIL_APP_NAME } nunca lee sus correos electrónicos ni comparte sus datos."
+      ],
+      "Categories work like spam filters. We only look for patterns in unencrypted header and technical data. We do not read email content, share your data, or infringe on your privacy.": [
+        "Las categorías funcionan como filtros de spam. Solo buscamos patrones en los encabezados sin cifrar y datos técnicos. No leemos el contenido del correo, sus datos ni infringimos su privacidad."
+      ],
       "Center": [
         "Centrar"
       ],
@@ -7366,6 +7377,18 @@
       "Included for free with your plan": [
         "Incluido gratis con su plan"
       ],
+      "Includes bills, receipts, orders, and bookings.": [
+        "Incluye facturas, recibos, órdenes y reservaciones."
+      ],
+      "Includes marketing emails like offers and product announcements.": [
+        "Incluye correos de mercadeo como ofertas y anuncios de productos."
+      ],
+      "Includes news recaps and other non-promotional content. ": [
+        "Incluye recapitulaciones de noticias y otros contenidos no promocionales. "
+      ],
+      "Includes updates from social networks and media-sharing sites.": [
+        "Incluye actualizaciones de redes sociales y sitios de medios"
+      ],
       "Inherited from parent folder": [
         "Heredada de la carpeta padre"
       ],
@@ -7468,9 +7491,6 @@
       ],
       "Low Priority": [
         "Prioridad baja"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Establezca ${ MAIL_APP_NAME } como su aplicación de correo electrónico por defecto."
       ],
       "Manage your folders": [
         "Administre las carpetas"
@@ -8507,6 +8527,9 @@
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "Cuando viaje o use Wi-Fi público, conéctese a ${ VPN_APP_NAME } para que nadie rastree su actividad en línea o robe sus datos. Es gratuita."
       ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "Con las nuevas categorías de correo electrónico, solo los mensajes importantes llegan a su bandeja de entrada principal. Todo lo demás se organiza en categorías."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "¿Quiere recibir un código de verificación nuevo o usar un método de verificación alternativo?"
       ],
@@ -9088,6 +9111,14 @@
       "${ BRAND_NAME } username": [
         "Nombre de usuario de ${ BRAND_NAME }"
       ],
+      "${ count } unread conversation": [
+        "${ count } conversación sin leer",
+        "${ count } conversaciones sin leer"
+      ],
+      "${ count } unread message": [
+        "${ count } mensaje sin leer",
+        "${ count } mensajes sin leer"
+      ],
       "${ n } month": [
         "${ n } mes",
         "${ n } meses"
@@ -9112,6 +9143,9 @@
       ],
       "Add image URL": [
         "Agregar URL de imagen"
+      ],
+      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
+        "Añada o elimine categorías. Configue o apague notificaciones. Ajústelo en cualquier momento en el menú ${ menuIcon }."
       ],
       "Add to group": [
         "Agregar al grupo"
@@ -9541,6 +9575,9 @@
       ],
       "No label found": [
         "Ninguna etiqueta encontrada"
+      ],
+      "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
+        "¡No más mensajes importantes perdidos! Ahora se muestran en ${ primaryCopy }. Todo lo demás está ordenado por categoría para que sea fácil encontrarlo y no sature la bandeja de entrada."
       ],
       "No results found": [
         "No se encontraron resultados"
@@ -11597,8 +11634,14 @@
       ]
     },
     "Onboarding List Placeholder": {
+      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
+        "Cambie su dirección de correo para servicios populares ahora para evitar que le rastreen y perfilen. ${ learnMoreLink }"
+      ],
       "Finance": [
         "Finanzas"
+      ],
+      "Maybe later": [
+        "Quizás más tarde"
       ],
       "Privacy for all your online accounts": [
         "Privacidad para todas sus cuentas en línea"
@@ -12034,6 +12077,9 @@
       "More plans are available in other currencies": [
         "Más planes disponibles en otras divisas"
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Se requiere un método de pago para activar la suscripción después de que finalice el periodo de prueba."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactive primero la suscripción para disminuir la cantidad de complementos."
       ],
@@ -12074,6 +12120,9 @@
       "This number will be shown on all future invoices": [
         "Este número se mostrará en todas las facturas futuras"
       ],
+      "This offer is not available with your current plan.": [
+        "Esta oferta no está disponible con el plan actual."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Este se convertirá en su nuevo método de pago por defecto para todas las futuras renovaciones."
       ],
@@ -12085,6 +12134,12 @@
       ],
       "VAT number": [
         "Número de IVA"
+      ],
+      "You already have a subscription to this plan.": [
+        "Ya tiene una suscripción a este plan."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Ya tiene una suscripción a este plan. Puede cambiar la suscripción en ${ subscriptionPlatform }."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Su moneda ha sido cambiada a euros (€) porque las transferencias bancarias SEPA solo admiten pagos en euros."
@@ -14625,6 +14680,9 @@
       "Block sender": [
         "Bloquear remitente"
       ],
+      "Built for privacy": [
+        "Hechas para la privacidad"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Cancelar la subscripción a ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -14717,6 +14775,9 @@
       ],
       "Customize categories": [
         "Personalizar categorías"
+      ],
+      "Customize categories to fit your needs": [
+        "Personalice las categorías según sus necesidades"
       ],
       "Customize your mail import": [
         "Personalice la importación del correo"
@@ -14858,6 +14919,9 @@
       "External encryption": [
         "Cifrado externo"
       ],
+      "Fewer distractions, more focus": [
+        "Menos distracciones, más concentración"
+      ],
       "Filter for more focus": [
         "Filtre sus mensajes para una mejor concentración"
       ],
@@ -14948,6 +15012,9 @@
       ],
       "Insert contacts": [
         "Insertar contactos"
+      ],
+      "Introducing email categories": [
+        "Presentamos las categorías de correos"
       ],
       "Invalid verification code": [
         "Código de verificación inválido"

@@ -307,11 +307,17 @@
       "Continue import": [
         "Fortsett importen"
       ],
+      "Continue with categories": [
+        "Fortsett med kategorier"
+      ],
       "Continue with Google": [
         "Fortsett med Google"
       ],
       "Continue with Outlook": [
         "Fortsett med Outlook"
+      ],
+      "Continue without categories": [
+        "Fortsett uten kategorier"
       ],
       "Contract composer": [
         "Krymp skrivevinduet"
@@ -476,9 +482,6 @@
       ],
       "Download logs": [
         "Last ned logger"
-      ],
-      "Download now": [
-        "Last ned nå"
       ],
       "Download the desktop app": [
         "Last ned skrivebordsappen"
@@ -732,9 +735,6 @@
       "Import from Outlook": [
         "Importer fra Outlook"
       ],
-      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
-        "Viktig oppdatering tilgjengelig. For å fortsette å bruke appen, oppdater til den nyeste versjonen ${ downloadUpdate }."
-      ],
       "In the morning": [
         "Om morgenen"
       ],
@@ -766,6 +766,9 @@
       "Invite members": [
         "Inviter medlemmer"
       ],
+      "Is this private?": [
+        "Er dette privat?"
+      ],
       "Italic": [
         "Kursiv"
       ],
@@ -774,6 +777,9 @@
       ],
       "Keep categories": [
         "Behold kategorier"
+      ],
+      "Keep inbox as before": [
+        "Behold innboksen som før"
       ],
       "Keep my subscription": [
         "Behold mitt abonnement"
@@ -1486,6 +1492,9 @@
       "Try another method": [
         "Prøv annen metode"
       ],
+      "Try categories": [
+        "Prøv kategorier"
+      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Prøv å lagre igjen. Lagring mislyktes på grunn av: ${ saveError }"
       ],
@@ -1545,9 +1554,6 @@
       ],
       "Upgrade for 200GB": [
         "Oppgrader for 200 GB"
-      ],
-      "Upgrade Now": [
-        "Oppgrader nå"
       ],
       "Upgrade now": [
         "Oppgrader nå"
@@ -1645,15 +1651,6 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakt.",
         "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakter."
-      ],
-      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "Den gratis prøveperioden for skrivebordsappen avsluttes om 2 dager ${ upgradeButton }."
-      ],
-      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "Den gratis prøveperioden for skrivebordsappen avsluttes om 5 dager ${ upgradeButton }."
-      ],
-      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "Den gratis prøveperioden for skrivebordsappen avsluttes ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Din e-postskrivingsassistent"
@@ -6892,6 +6889,12 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Husker du ikke passordet ditt? Vi kan hjelpe deg slette den krypterte informasjonen til alle kontakter kryptert med denne nøkkelen, og i prosessen avvise advarselen."
       ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Kategorier fungerer akkurat som søppelpostfiltre. ${ MAIL_APP_NAME } leser aldri e-postene eller deler dataene dine."
+      ],
+      "Categories work like spam filters. We only look for patterns in unencrypted header and technical data. We do not read email content, share your data, or infringe on your privacy.": [
+        "Kategorier fungerer som søppelpostfiltre. Vi ser bare etter mønstre i ukrypterte topptekster og tekniske data. Vi leser ikke e-postinnhold, deler dataene dine eller krenker personvernet ditt."
+      ],
       "Center": [
         "Midtstill"
       ],
@@ -7371,6 +7374,18 @@
       "Included for free with your plan": [
         "Inkludert gratis i planen din"
       ],
+      "Includes bills, receipts, orders, and bookings.": [
+        "Inkluderer regninger, kvitteringer, bestillinger og reservasjoner."
+      ],
+      "Includes marketing emails like offers and product announcements.": [
+        "Inkluderer markedsførings-e-poster som tilbud og produktannonseringer."
+      ],
+      "Includes news recaps and other non-promotional content. ": [
+        "Inkluderer nyhetssammendrag og annet ikke-salgsfremmende innhold. "
+      ],
+      "Includes updates from social networks and media-sharing sites.": [
+        "Inkluderer oppdateringer fra sosiale nettverk og nettsteder for mediedeling."
+      ],
       "Inherited from parent folder": [
         "Arvet fra overordnet mappe"
       ],
@@ -7473,9 +7488,6 @@
       ],
       "Low Priority": [
         "Lav prioritet"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Gjør ${ MAIL_APP_NAME } til standard e-postapplikasjon."
       ],
       "Manage your folders": [
         "Administrer mappene dine"
@@ -8511,6 +8523,9 @@
       ],
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "Når du er på reise eller bruker offentlig Wi-Fi, kan du koble til ${ VPN_APP_NAME } for å forhindre at noen sporer nettaktiviteten eller stjeler dataene dine. Det er gratis."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "Med nye e-postkategorier havner bare viktige meldinger i den primær innboksen. Alt annet organiseres i kategorier."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Ønsker du å motta en ny verifiseringskode eller å bruke en alternativ verifiseringsmetode?"
@@ -9557,6 +9572,9 @@
       ],
       "No label found": [
         "Ingen etikett funnet"
+      ],
+      "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
+        "Slutt på å gå glipp av viktige meldinger! Disse vises nå under ${ primaryCopy }. Alt annet er sortert etter kategori, slik at de er enkle å finne og ikke roter til innboksen din."
       ],
       "No results found": [
         "Ingen resultater funnet"
@@ -12056,6 +12074,9 @@
       "More plans are available in other currencies": [
         "Flere planer er tilgjengelige i andre valutaer"
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Betalingsmåte kreves for at abonnementet skal aktiveres etter at prøveperioden er over."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Aktiver abonnementet på nytt først for å redusere antall tillegg."
       ],
@@ -12096,6 +12117,9 @@
       "This number will be shown on all future invoices": [
         "Dette nummeret vil bli vist på alle fremtidige fakturaer"
       ],
+      "This offer is not available with your current plan.": [
+        "Dette tilbudet er ikke tilgjengelig med din nåværende plan."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Denne betalingsmåten vil bli din nye standard for alle fremtidige fornyelser."
       ],
@@ -12107,6 +12131,12 @@
       ],
       "VAT number": [
         "MVA-nummer"
+      ],
+      "You already have a subscription to this plan.": [
+        "Du har allerede et abonnement på denne planen."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Du har allerede et abonnement på denne planen. Du kan endre abonnementet ditt på ${ subscriptionPlatform }."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Din valuta har blitt endret til euro (€) fordi SEPA-bankoverføringer bare støtter betalinger i euro."
@@ -14552,6 +14582,9 @@
       "Block sender": [
         "Blokkér avsender"
       ],
+      "Built for privacy": [
+        "Bygget for personvern"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Avbryt ${ MAIL_SHORT_APP_NAME }-abonnement"
       ],
@@ -14788,6 +14821,9 @@
       "External encryption": [
         "Ekstern kryptering"
       ],
+      "Fewer distractions, more focus": [
+        "Færre forstyrrelser, mer fokus"
+      ],
       "Filter for more focus": [
         "Filtrer for mer fokus"
       ],
@@ -14878,6 +14914,9 @@
       ],
       "Insert contacts": [
         "Sett inn kontakter"
+      ],
+      "Introducing email categories": [
+        "Introduksjon av e-postkategorier"
       ],
       "Invalid verification code": [
         "Ugyldig verifiseringskode"
