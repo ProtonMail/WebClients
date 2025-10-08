@@ -17,14 +17,14 @@ const ArrowImage = ({ alt = '' }: Props) => {
                     <path
                         d="M16.4142 15.4142C15.1543 14.1543 16.0466 12 17.8284 12H36.1716C36.702 12 37.2107 12.2107 37.5858 12.5858L67.5858 42.5858C68.3668 43.3668 68.3668 44.6332 67.5858 45.4142L37.5858 75.4142C37.2107 75.7893 36.702 76 36.1716 76H17.8284C16.0466 76 15.1543 73.8457 16.4142 72.5858L43.5858 45.4142C44.3668 44.6332 44.3668 43.3668 43.5858 42.5858L16.4142 15.4142Z"
                         className="background-norm"
-                        shape-rendering="crispEdges"
+                        shapeRendering="crispEdges"
                     />
                     <path
                         d="M17.8284 11.5C15.6012 11.5 14.4857 14.1928 16.0607 15.7678L43.2322 42.9393C43.818 43.5251 43.818 44.4749 43.2322 45.0607L16.0607 72.2322C14.4857 73.8071 15.6012 76.5 17.8284 76.5H36.1716C36.8346 76.5 37.4705 76.2366 37.9393 75.7678L67.9393 45.7678C68.9157 44.7915 68.9157 43.2085 67.9393 42.2322L37.9393 12.2322C37.4705 11.7634 36.8346 11.5 36.1716 11.5H17.8284Z"
                         className="background-norm"
                         stroke="white"
-                        stroke-opacity="0.5"
-                        shape-rendering="crispEdges"
+                        strokeOpacity="0.5"
+                        shapeRendering="crispEdges"
                     />
                 </g>
                 <defs>
@@ -35,9 +35,9 @@ const ArrowImage = ({ alt = '' }: Props) => {
                         width="83.3496"
                         height="90"
                         filterUnits="userSpaceOnUse"
-                        color-interpolation-filters="sRGB"
+                        colorInterpolationFilters="sRGB"
                     >
-                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                        <feFlood floodOpacity="0" result="BackgroundImageFix" />
                         <feColorMatrix
                             in="SourceAlpha"
                             type="matrix"

@@ -32,6 +32,8 @@ export default defineConfig(
             'react/jsx-uses-react': 'off',
             'react/react-in-jsx-scope': 'off',
 
+            'react/no-unknown-property': 'error',
+
             'react/forbid-component-props': [
                 'warn',
                 {
