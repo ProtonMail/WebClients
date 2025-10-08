@@ -2,7 +2,7 @@
     "extends": "../../tsconfig.base.json",
     "compilerOptions": {
         "lib": ["WebWorker", "DOM", "DOM.Iterable", "ESNext", "DOM.AsyncIterable"],
-        "types": ["webpack-env", "jest", "chrome", "./globals.d.ts"]
+        "types": ["@proton/types", "webpack-env", "jest", "chrome", "./globals.d.ts"]
     },
     "ts-node": {
         "compilerOptions": {

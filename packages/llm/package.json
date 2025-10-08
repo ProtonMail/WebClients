@@ -18,6 +18,7 @@
         "@babel/preset-env": "^7.28.3",
         "@jest/globals": "^30.2.0",
         "@mlc-ai/web-llm": "patch:@mlc-ai/web-llm@npm%3A0.2.32#~/.yarn/patches/@mlc-ai-web-llm-npm-0.2.32-df249f5180.patch",
+        "@proton/types": "workspace:^",
         "@testing-library/jest-dom": "^6.8.0",
         "@testing-library/react": "^15.0.7",
         "@types/jest": "^30.0.0",
