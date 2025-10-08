@@ -23,7 +23,6 @@
             "@proton/account/*": ["./packages/account/*"],
             "@proton/activation/*": ["./packages/activation/*"],
             "@proton/andromeda": ["./packages/wasm/andromeda/*"],
-            "@proton/atoms/*": ["./packages/atoms/*", "./packages/atoms/src/*"],
             "@proton/calendar": ["./packages/calendar/*"],
             "@proton/chargebee": ["./packages/chargebee/*"],
             "@proton/colors/*": ["./packages/colors/*"],
