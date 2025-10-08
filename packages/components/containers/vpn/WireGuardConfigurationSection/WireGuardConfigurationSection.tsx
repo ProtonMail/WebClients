@@ -10,7 +10,6 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Href } from '@proton/atoms/Href/Href';
-import Alert from '@proton/components/components/alert/Alert';
 import Details from '@proton/components/components/container/Details';
 import Row from '@proton/components/components/container/Row';
 import Summary from '@proton/components/components/container/Summary';
@@ -18,8 +17,7 @@ import Icon from '@proton/components/components/icon/Icon';
 import Radio from '@proton/components/components/input/Radio';
 import TextArea from '@proton/components/components/input/TextArea';
 import Info from '@proton/components/components/link/Info';
-import ConfirmModal from '@proton/components/components/modal/Confirm';
-import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
+import { useModalTwoPromise, useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import Toggle from '@proton/components/components/toggle/Toggle';
@@ -28,7 +26,6 @@ import SettingsParagraph from '@proton/components/containers/account/SettingsPar
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { getObjectKeys } from '@proton/components/helpers/getObjectKeys';
 import useApi from '@proton/components/hooks/useApi';
-import useModals from '@proton/components/hooks/useModals';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useUserVPN from '@proton/components/hooks/useUserVPN';
 import useVPNLogicals from '@proton/components/hooks/useVPNLogicals';
@@ -38,6 +35,8 @@ import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shar
 import { readableTime } from '@proton/shared/lib/helpers/time';
 import type { Logical } from '@proton/shared/lib/vpn/Logical';
 
+import Prompt from '../../../components/prompt/Prompt';
+import getBoldFormattedText from '../../../helpers/getBoldFormattedText';
 import useApiResult from '../../../hooks/useApiResult';
 import type { Certificate } from '../Certificate';
 import { CATEGORY } from '../OpenVPNConfigurationSection/ConfigsTable';
@@ -218,6 +217,7 @@ const WireGuardConfigurationSection = () => {
     const certificateCache = certificateCacheRef.current;
     const [logical, setLogical] = useState<Logical | undefined>();
     const [creationModal, handleShowCreationModal] = useModalTwoStatic(WireGuardCreationModal);
+    const [confirmModal, showConfirmModal] = useModalTwoPromise<{ name: string }>();
     const [creating, setCreating] = useState<boolean>(false);
     const [removing, setRemoving] = useState<Record<string, boolean>>({});
     const [removedCertificates, setRemovedCertificates] = useState<string[]>([]);
@@ -228,7 +228,6 @@ const WireGuardConfigurationSection = () => {
     const { result, loading: vpnLoading, fetch: fetchUserVPN } = useUserVPN();
     const userVPN = result?.VPN;
     const nameInputRef = useRef<HTMLInputElement>(null);
-    const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const { result: clientConfig = { FeatureFlags: {} as FeatureFlagsConfig } } = useApiResult<
         { FeatureFlags: FeatureFlagsConfig },
@@ -528,30 +527,6 @@ const WireGuardConfigurationSection = () => {
         });
     };
 
-    const confirmRevocation = async (name: string) => {
-        return new Promise<void>((resolve, reject) => {
-            createModal(
-                <ConfirmModal
-                    small={false}
-                    title={c('Title').t`Revoke certificate`}
-                    onConfirm={resolve}
-                    confirm={<Button color="danger" type="submit">{c('Action').t`Delete`}</Button>}
-                    onClose={reject}
-                >
-                    <Alert className="mb-4" type="info">
-                        {
-                            // translator: name is arbitrary name given by the user or a random key if not set
-                            c('Info').t`Revoke certificate ${name}`
-                        }
-                    </Alert>
-                    <Alert className="mb-4" type="error">
-                        {c('Alter').t`This will disconnect all the routers and clients using this certificate.`}
-                    </Alert>
-                </ConfirmModal>
-            );
-        });
-    };
-
     const getDeleteFilter = (certificate: Certificate): CertificateDeletionParams => {
         if (certificate.serialNumber) {
             return { SerialNumber: certificate.serialNumber };
@@ -581,7 +556,7 @@ const WireGuardConfigurationSection = () => {
 
         try {
             const name = certificate.name || certificate.publicKeyFingerprint || certificate.publicKey || '';
-            await confirmRevocation(name);
+            await showConfirmModal({ name });
             const { Count } = await api(deleteCertificates(getDeleteFilter(certificate)));
 
             if (!Count) {
@@ -657,6 +632,36 @@ const WireGuardConfigurationSection = () => {
                 {c('Info').t`These configurations are provided to work with WireGuard routers and official clients.`}
             </SettingsParagraph>
             {creationModal}
+            {confirmModal(({ onResolve, onReject, name, ...rest }) => (
+                <Prompt
+                    {...rest}
+                    title={c('Title').t`Revoke certificate?`}
+                    buttons={[
+                        <Button
+                            color="danger"
+                            onClick={() => {
+                                onResolve();
+                            }}
+                        >{c('Action').t`Revoke`}</Button>,
+                        <Button
+                            onClick={() => {
+                                onReject();
+                            }}
+                        >{c('Action').t`Cancel`}</Button>,
+                    ]}
+                    onClose={() => {
+                        onReject();
+                    }}
+                >
+                    <p className="text-break">
+                        {
+                            // translator: name is arbitrary name given by the user or a random key if not set
+                            getBoldFormattedText(c('Info').t`Are you sure you want to revoke certificate **${name}**`)
+                        }
+                    </p>
+                    <p>{c('Alter').t`This will disconnect all the routers and clients using this certificate.`}</p>
+                </Prompt>
+            ))}
             {logicalInfoLoading || certificatesLoading ? (
                 <div aria-busy="true" className="text-center mb-4">
                     <CircleLoader />
