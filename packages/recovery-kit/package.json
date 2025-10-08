@@ -15,6 +15,7 @@
         "@proton/utils": "workspace:^"
     },
     "devDependencies": {
+        "@pdf-lib/standard-fonts": "^1.0.0",
         "@proton/eslint-config-proton": "workspace:^",
         "eslint": "^9.36.0",
         "jest": "^30.2.0",

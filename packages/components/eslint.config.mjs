@@ -16,6 +16,8 @@ export default defineConfig([
                 },
             ],
             'import/no-cycle': ['error', { maxDepth: 1, ignoreExternal: true, disableScc: true }],
+            // TODO: Add the missing explicit deps and remove this rule
+            'import/no-extraneous-dependencies': 'off',
         },
     },
     globalIgnores(['**/iwad/**']),

@@ -12,5 +12,7 @@ export default defineConfig(defaultConfig, {
         'chai-friendly/no-unused-expressions': ['error', { allowShortCircuit: true }],
         'no-restricted-imports': 'off', // currently only used to guard against `pmcrypto` imports
         'jasmine/no-focused-tests': 'error',
+        // TODO: Add the missing explicit deps and remove this rule
+        'import/no-extraneous-dependencies': 'off',
     },
 });

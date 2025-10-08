@@ -41,6 +41,7 @@ module.exports = ({
     let WebpackCollectMetricsPlugin;
 
     if (CI) {
+        // eslint-disable-next-line import/no-extraneous-dependencies
         WebpackCollectMetricsPlugin = require('@proton/collect-metrics').WebpackCollectMetricsPlugin;
     }
 

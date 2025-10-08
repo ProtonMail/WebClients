@@ -1,7 +1,10 @@
-import { mkdir, readFile, rm, writeFile } from 'fs/promises';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { JSDOM } from 'jsdom';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import mustache from 'mustache';
-import path from 'path';
+import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
+import path from 'node:path';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import * as prettier from 'prettier';
 
 function capitalize(string: string) {
