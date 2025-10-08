@@ -1,7 +1,6 @@
 import { cloneElement } from 'react';
 
 import BackdropContainer from '../../components/modalTwo/BackdropContainer';
-import ModalErrorBoundary from '../app/ModalErrorBoundary';
 import type { Modal } from './interface';
 
 export interface ModalPropsInjection {
@@ -44,7 +43,7 @@ const ModalsContainer = ({ modals, removeModal, hideModal }: Props) => (
                 key: id,
             };
 
-            return <ModalErrorBoundary {...props}>{cloneElement(content, props)}</ModalErrorBoundary>;
+            return cloneElement(content, props);
         })}
     </>
 );
