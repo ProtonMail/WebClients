@@ -125,12 +125,54 @@ $profile-colors:
 	}
 }
 
-.notification--info {
-	background-color: var(--interaction-norm-minor-3);
-	color: var(--text-norm);
+%notification-base {
+	color: var(--text-invert);
 	white-space: nowrap;
-	max-inline-size: 30rem !important;
-	box-shadow: none !important;
+	max-inline-size: 30rem;
+	box-shadow: none;
+	min-block-size: 3.5rem;
+	border-radius: 1rem;
+
+	.notification__close-button {
+		border-radius: 1.5rem;
+		padding: 0.625rem;
+		margin-inline-end: 0.313rem;
+		transition: background-color 0.2s ease;
+	}
+
+	.notification__icon {
+		display: none;
+	}
+}
+
+@mixin notification-variant($bg-color, $hover-color) {
+	@extend %notification-base;
+
+	background-color: $bg-color;
+
+	.notification__close-button {
+		background-color: $bg-color;
+
+		&:hover {
+			background-color: $hover-color;
+		}
+	}
+}
+
+.notification--info {
+	@include notification-variant(var(--interaction-norm-contrast), var(--interaction-weak-major-2));
+}
+
+.notification--success {
+	@include notification-variant(var(--interaction-norm), var(--interaction-norm-major-3));
+}
+
+.notification--warning {
+	@include notification-variant(var(--signal-warning), var(--signal-warning-major-3));
+}
+
+.notification--error {
+	@include notification-variant(var(--signal-danger), var(--signal-danger-major-2));
 }
 
 .modal-two-dialog {
