@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react';
 
-import type { IconSize } from '@proton/components';
 import { DriveLogo, Logo, MailLogo, PassLogo, VpnLogo } from '@proton/components';
 import { getCalendarAppFeature } from '@proton/components/containers/payments/features/calendar';
 import { getDriveAppFeature, getStorageFeature } from '@proton/components/containers/payments/features/drive';
@@ -37,6 +36,7 @@ import {
     getVPNAppFeature,
 } from '@proton/components/containers/payments/features/vpn';
 import { getWalletAppFeature } from '@proton/components/containers/payments/features/wallet';
+import type { IconSize } from '@proton/icons/types';
 import { type FreePlanDefault, PLANS, type Plan } from '@proton/payments';
 import { APPS, DUO_MAX_USERS, FAMILY_MAX_USERS } from '@proton/shared/lib/constants';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';

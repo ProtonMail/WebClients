@@ -1,4 +1,4 @@
-import type { IconName } from '@proton/components/components/icon/Icon';
+import type { IconName } from '@proton/icons/types';
 import type { Plan } from '@proton/payments';
 
 export interface UpsellFeature {

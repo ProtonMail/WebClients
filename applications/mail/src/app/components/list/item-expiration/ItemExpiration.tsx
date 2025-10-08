@@ -1,6 +1,6 @@
 import { Tooltip } from '@proton/atoms';
-import type { IconName } from '@proton/components';
 import { Icon } from '@proton/components';
+import type { IconName } from '@proton/icons/types';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { isExpiringByRetentionRule, isFrozenExpiration } from '@proton/shared/lib/mail/messages';
 import { useFlag } from '@proton/unleash';

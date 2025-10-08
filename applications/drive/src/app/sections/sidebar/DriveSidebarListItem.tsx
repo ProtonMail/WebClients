@@ -1,9 +1,9 @@
-import * as React from 'react';
 import type { MouseEventHandler } from 'react';
+import * as React from 'react';
 
-import type { IconName } from '@proton/components';
 import { SidebarListItem, SidebarListItemContent, SidebarListItemContentIcon } from '@proton/components';
 import { useLoading } from '@proton/hooks';
+import type { IconName } from '@proton/icons/types';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import clsx from '@proton/utils/clsx';
 

@@ -1,4 +1,4 @@
-import type { IconName } from '@proton/components/components/icon/Icon';
+import type { IconName } from '@proton/icons/types';
 import { fetchDesktopVersion } from '@proton/shared/lib/apps/desktopVersions';
 import { DESKTOP_APP_NAMES, DESKTOP_PLATFORMS, RELEASE_CATEGORIES } from '@proton/shared/lib/constants';
 import { isArm, isMac, isWindows } from '@proton/shared/lib/helpers/browser';

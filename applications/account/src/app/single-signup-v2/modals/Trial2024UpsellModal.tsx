@@ -3,11 +3,11 @@ import { c } from 'ttag';
 import { Button, Tooltip } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
 import { Icon, ModalTwo, ModalTwoContent } from '@proton/components';
-import type { IconName } from '@proton/components/components/icon/Icon';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/components/containers/payments/RenewalNotice';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { useLoading } from '@proton/hooks';
+import type { IconName } from '@proton/icons/types';
 import {
     COUPON_CODES,
     CYCLE,

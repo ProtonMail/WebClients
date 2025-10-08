@@ -1,5 +1,5 @@
-import type { IconName } from '@proton/components';
 import { Icon } from '@proton/components';
+import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
 type IconColor = 'danger' | 'warning' | 'info' | 'success';

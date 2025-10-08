@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-import type { IconName } from '@proton/components';
 import { Checkbox, Option, SelectTwo, type Tab, Tabs } from '@proton/components';
+import type { IconName } from '@proton/icons/types';
 
 import bulbasaur from '../../assets/bulbasaur.png';
 import charmander from '../../assets/charmander.png';

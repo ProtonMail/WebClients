@@ -7,8 +7,9 @@ import { Button } from '@proton/atoms';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import type { Props as DropdownMenuButtonProps } from '@proton/components/components/dropdown/DropdownMenuButton';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import Icon, { type IconName } from '@proton/components/components/icon/Icon';
+import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
+import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
 import DropdownMenu from './DropdownMenu';

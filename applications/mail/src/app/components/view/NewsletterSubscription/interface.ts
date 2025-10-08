@@ -1,4 +1,4 @@
-import type { IconName } from '@proton/components/components/icon/Icon';
+import type { IconName } from '@proton/icons/types';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
 export type ModalFilterType = 'MarkAsRead' | 'MoveToArchive' | 'MoveToTrash' | 'RemoveFromList';

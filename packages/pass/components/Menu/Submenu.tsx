@@ -6,8 +6,8 @@ import CollapsibleContent from '@proton/components/components/collapsible/Collap
 import CollapsibleContext from '@proton/components/components/collapsible/CollapsibleContext';
 import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
 import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
-import type { IconName } from '@proton/components/components/icon/Icon';
 import Icon from '@proton/components/components/icon/Icon';
+import type { IconName } from '@proton/icons/types';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import {
     DropdownMenuButton,

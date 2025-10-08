@@ -5,11 +5,12 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike } from '@proton/atoms';
-import Icon, { type IconName } from '@proton/components/components/icon/Icon';
+import Icon from '@proton/components/components/icon/Icon';
 import Select from '@proton/components/components/select/Select';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import UpgradeBanner from '@proton/components/containers/account/UpgradeBanner';
+import type { IconName } from '@proton/icons/types';
 import metrics from '@proton/metrics';
 import { semver } from '@proton/pass/utils/string/semver';
 import { PLANS, PLAN_NAMES } from '@proton/payments';

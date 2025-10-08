@@ -1,4 +1,4 @@
-import type { IconName } from '@proton/components/components/icon/Icon';
+import type { IconName } from '@proton/icons/types';
 
 export enum PassIconStatus {
     ACTIVE = 'protonpass-icon-active',

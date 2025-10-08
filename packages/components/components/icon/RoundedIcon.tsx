@@ -1,9 +1,9 @@
 import type { Ref } from 'react';
 import { forwardRef } from 'react';
 
+import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
-import type { IconName } from './Icon';
 import Icon from './Icon';
 
 const TYPES = {

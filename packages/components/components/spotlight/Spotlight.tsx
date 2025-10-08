@@ -12,13 +12,14 @@ import { Children, cloneElement, useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import Icon, { type IconName } from '@proton/components/components/icon/Icon';
+import Icon from '@proton/components/components/icon/Icon';
 import type { PopperPlacement } from '@proton/components/components/popper/interface';
 import usePopper from '@proton/components/components/popper/usePopper';
 import usePopperState from '@proton/components/components/popper/usePopperState';
 import { shouldShowSideRadius } from '@proton/components/components/popper/utils';
 import useIsClosing from '@proton/components/hooks/useIsClosing';
 import { useCombinedRefs } from '@proton/hooks';
+import type { IconName } from '@proton/icons/types';
 import discoverIllustration from '@proton/styles/assets/img/illustrations/spotlight-binoculars.svg';
 import newIllustration from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 import clsx from '@proton/utils/clsx';
