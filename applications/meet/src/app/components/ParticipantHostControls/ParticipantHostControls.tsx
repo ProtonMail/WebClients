@@ -58,7 +58,8 @@ export const ParticipantHostControls = ({
             >
                 <DropdownMenu className="w-full h-full flex flex-column items-start py-2 px-4 flex-nowrap gap-2">
                     <DropdownMenuButton
-                        className="text-left flex items-center gap-2 color-weak border-none w-full shrink-0"
+                        className="text-left rounded flex flex-nowrap items-center gap-2 color-weak border-none w-full shrink-0"
+                        liClassName="w-full"
                         onClick={() =>
                             isVideoEnabled &&
                             mls.updateParticipantTrackSettings(
@@ -68,10 +69,13 @@ export const ParticipantHostControls = ({
                             )
                         }
                     >
-                        <IcMeetCameraOff size={5} /> {c('Action').t`Disable video`}
+                        <IcMeetCameraOff size={5} className="shrink-0" />
+                        <span className="flex-1 text-ellipsis" title={c('Action').t`Disable video`}>{c('Action')
+                            .t`Disable video`}</span>
                     </DropdownMenuButton>
                     <DropdownMenuButton
-                        className="text-left flex items-center gap-2 color-weak border-none w-full shrink-0"
+                        className="rounded text-left flex flex-nowrap items-center gap-2 color-weak border-none w-full shrink-0"
+                        liClassName="w-full"
                         onClick={() =>
                             isAudioEnabled &&
                             mls?.updateParticipantTrackSettings(
@@ -81,14 +85,18 @@ export const ParticipantHostControls = ({
                             )
                         }
                     >
-                        <IcMeetMicrophoneOff size={5} />
-                        {c('Action').t`Mute participant`}
+                        <IcMeetMicrophoneOff size={5} className="shrink-0" />
+                        <span className="flex-1 text-ellipsis" title={c('Action').t`Mute participant`}>{c('Action')
+                            .t`Mute participant`}</span>
                     </DropdownMenuButton>
                     <DropdownMenuButton
-                        className="text-left participant-host-controls-kick-button flex items-center gap-2 border-none w-full shrink-0"
+                        className="rounded text-left participant-host-controls-kick-button flex flex-nowrap items-center gap-2 border-none w-full shrink-0"
+                        liClassName="w-full"
                         onClick={() => mls?.removeParticipant(participant.identity)}
                     >
-                        <IcCrossCircle size={5} /> {c('Action').t`Kick out`}
+                        <IcCrossCircle size={5} className="shrink-0" />
+                        <span className="flex-1 text-ellipsis" title={c('Action').t`Kick out`}>{c('Action')
+                            .t`Kick out`}</span>
                     </DropdownMenuButton>
                 </DropdownMenu>
             </Dropdown>
