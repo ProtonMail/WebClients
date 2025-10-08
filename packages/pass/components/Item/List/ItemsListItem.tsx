@@ -2,8 +2,9 @@ import type { DragEvent, DragEventHandler } from 'react';
 import { memo } from 'react';
 import { useSelector } from 'react-redux';
 
-import { ButtonLike } from '@proton/atoms';
-import { Icon, Marks } from '@proton/components';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import Icon from '@proton/components/components/icon/Icon';
+import Marks from '@proton/components/components/text/Marks';
 import { IconBox } from '@proton/pass/components/Layout/Icon/IconBox';
 import { ItemIcon, ItemIconIndicators, SafeItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';

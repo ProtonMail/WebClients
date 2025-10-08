@@ -2,8 +2,8 @@ import type { FC, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms';
-import { Alert } from '@proton/components';
+import { Href } from '@proton/atoms/Href/Href';
+import Alert from '@proton/components/components/alert/Alert';
 import proxyScreenshot from '@proton/pass/assets/alias/proxy-screenshot.png';
 import { ClickToCopy } from '@proton/pass/components/Form/Field/Control/ClickToCopy';
 import { Card } from '@proton/pass/components/Layout/Card/Card';

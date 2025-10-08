@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import type { IconName } from '@proton/icons';
+import type { IconName } from '@proton/icons/types';
 import { itemTypeToIconName } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { compoundItemFilters } from '@proton/pass/lib/items/item.utils';

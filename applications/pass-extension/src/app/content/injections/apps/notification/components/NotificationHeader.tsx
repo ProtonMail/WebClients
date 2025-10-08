@@ -3,8 +3,8 @@ import { type ForwardRefRenderFunction, type ReactElement, type ReactNode, forwa
 import { useIFrameAppController } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import Icon from '@proton/components/components/icon/Icon';
 import { PassIcon } from '@proton/pass/components/Layout/Icon/PassIcon';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
 

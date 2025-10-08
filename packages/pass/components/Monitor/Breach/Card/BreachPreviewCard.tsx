@@ -2,8 +2,8 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Time } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import Time from '@proton/components/components/time/Time';
 import { getBreachIcon } from '@proton/components/containers/credentialLeak/helpers';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';

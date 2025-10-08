@@ -8,8 +8,8 @@ import { IFrameAppAutoSizer } from 'proton-pass-extension/app/content/injections
 import type { NotificationActions } from 'proton-pass-extension/app/content/types';
 import { IFramePortMessageType, NotificationAction } from 'proton-pass-extension/app/content/types';
 
-import { CircleLoader } from '@proton/atoms';
-import { NotificationsChildren } from '@proton/components';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import NotificationsChildren from '@proton/components/containers/notifications/Children';
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { Localized } from '@proton/pass/components/Core/Localized';
 import { clientBusy } from '@proton/pass/lib/client';

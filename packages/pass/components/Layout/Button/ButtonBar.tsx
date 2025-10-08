@@ -1,7 +1,7 @@
 import type { FC, PropsWithChildren } from 'react';
 
-import type { ButtonLikeSize } from '@proton/atoms';
-import { ButtonGroup } from '@proton/components';
+import type { ButtonLikeSize } from '@proton/atoms/Button/ButtonLike';
+import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import clsx from '@proton/utils/clsx';
 
 import './ButtonBar.scss';

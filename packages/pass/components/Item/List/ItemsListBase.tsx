@@ -2,7 +2,7 @@ import { type FC, type ReactElement, useEffect, useMemo, useRef } from 'react';
 import { useStore } from 'react-redux';
 import type { List } from 'react-virtualized';
 
-import { Scroll } from '@proton/atoms';
+import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import { useBulkEnabled, useBulkSelection } from '@proton/pass/components/Bulk/BulkSelectionState';
 import { ItemsListItem } from '@proton/pass/components/Item/List/ItemsListItem';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';

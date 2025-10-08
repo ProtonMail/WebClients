@@ -2,8 +2,8 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import Icon from '@proton/components/components/icon/Icon';
 import { FileAttachmentsContentView } from '@proton/pass/components/FileAttachments/FileAttachmentsView';
 import { ItemHistoryStats } from '@proton/pass/components/Item/History/ItemHistoryStats';
 import { NoteContent } from '@proton/pass/components/Item/Note/Note.content';

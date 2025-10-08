@@ -3,8 +3,9 @@ import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms';
-import { Icon, type IconName } from '@proton/components';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import Icon from '@proton/components/components/icon/Icon';
+import type { IconName } from '@proton/components/components/icon/Icon';
 import { useInviteActions } from '@proton/pass/components/Invite/InviteProvider';
 import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';

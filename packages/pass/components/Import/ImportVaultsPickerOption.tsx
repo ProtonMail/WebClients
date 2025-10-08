@@ -3,7 +3,10 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Checkbox, Icon, Option, SelectTwo } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
 import type { ImportVault } from '@proton/pass/lib/import/types';
 import { formatItemsCount } from '@proton/pass/lib/items/item.utils';

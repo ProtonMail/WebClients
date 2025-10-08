@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { useSelector } from 'react-redux';
 
-import { Icon } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
 import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
 import { UpsellRef } from '@proton/pass/constants';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';

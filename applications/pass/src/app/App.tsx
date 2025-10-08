@@ -14,17 +14,15 @@ import { spotlightProxy as spotlight } from 'proton-pass-web/lib/spotlight';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
 import { getTheme } from 'proton-pass-web/lib/theme';
 
-import {
-    CompatibilityCheck,
-    ErrorBoundary,
-    ModalsChildren,
-    ModalsProvider,
-    NotificationsChildren,
-    NotificationsProvider,
-} from '@proton/components';
 import { Portal } from '@proton/components/components/portal';
+import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import { StandardErrorPageDisplay } from '@proton/components/containers/app/StandardErrorPage';
+import CompatibilityCheck from '@proton/components/containers/compatibilityCheck/CompatibilityCheck';
 import { GenericErrorDisplay } from '@proton/components/containers/error/GenericError';
+import ModalsChildren from '@proton/components/containers/modals/Children';
+import ModalsProvider from '@proton/components/containers/modals/Provider';
+import NotificationsChildren from '@proton/components/containers/notifications/Children';
+import NotificationsProvider from '@proton/components/containers/notifications/Provider';
 import Icons from '@proton/icons/Icons';
 import { AuthStoreProvider } from '@proton/pass/components/Core/AuthStoreProvider';
 import { ConnectivityProvider } from '@proton/pass/components/Core/ConnectivityProvider';

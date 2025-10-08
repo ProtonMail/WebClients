@@ -2,7 +2,10 @@ import { Children, type FC, type ReactElement, type ReactNode, cloneElement } fr
 
 import type { FieldProps } from 'formik';
 
-import { Icon, type IconName, InputButton, InputFieldTwo } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
+import type { IconName } from '@proton/components/components/icon/Icon';
+import InputButton from '@proton/components/components/input/InputButton';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import type { InputFieldProps } from '@proton/components/components/v2/field/InputField';
 import type { MaybeArray } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';

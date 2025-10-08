@@ -1,8 +1,9 @@
 import { type FC, useContext } from 'react';
 
-import { Button, type ButtonProps } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import type { ButtonProps } from '@proton/atoms/Button/Button';
 import CollapsibleContext from '@proton/components/components/collapsible/CollapsibleContext';
+import Icon from '@proton/components/components/icon/Icon';
 
 const CollapsibleHeaderToggleButton: FC<ButtonProps> = ({ children, disabled, onClick, ...rest }) => {
     /* Must be used inside a <Collapsible> component */

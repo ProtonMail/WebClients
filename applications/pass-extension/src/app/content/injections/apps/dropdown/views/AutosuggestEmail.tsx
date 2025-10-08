@@ -13,7 +13,7 @@ import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/mes
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { AliasPreview } from '@proton/pass/components/Alias/legacy/Alias.preview';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';

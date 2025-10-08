@@ -2,8 +2,9 @@ import { type FC, useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, CircleLoader } from '@proton/atoms';
-import { Progress } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import Progress from '@proton/components/components/progress/Progress';
 import { useInviteActions } from '@proton/pass/components/Invite/InviteProvider';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { inviteAccept, inviteReject } from '@proton/pass/store/actions';

@@ -10,8 +10,9 @@ import type { FC } from 'react';
 import type { FieldProps } from 'formik';
 import type { PolymorphicPropsWithoutRef } from 'packages/react-polymorphic-types';
 
-import { InputFieldTwo, PasswordInputTwo } from '@proton/components';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import type { InputFieldOwnProps } from '@proton/components/components/v2/field/InputField';
+import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import { useFieldControl } from '@proton/pass/hooks/useFieldControl';
 
 type PasswordFieldProps = FieldProps & PolymorphicPropsWithoutRef<InputFieldOwnProps, typeof PasswordInputTwo>;

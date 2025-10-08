@@ -3,8 +3,9 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { DropdownSizeUnit, Icon } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import Icon from '@proton/components/components/icon/Icon';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { DropdownMenuLabel } from '@proton/pass/components/Layout/Dropdown/DropdownMenuLabel';

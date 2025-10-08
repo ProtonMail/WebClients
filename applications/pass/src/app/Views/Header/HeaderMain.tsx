@@ -3,7 +3,8 @@ import { memo, useEffect } from 'react';
 import type { HeaderProps } from 'proton-pass-web/app/Views/Header/types';
 import { spotlight as spotlightService } from 'proton-pass-web/lib/spotlight';
 
-import { Header as CoreHeader, Hamburger } from '@proton/components';
+import CoreHeader from '@proton/components/components/header/Header';
+import Hamburger from '@proton/components/components/sidebar/Hamburger';
 import { PinnedItemsBar } from '@proton/pass/components/Item/Pinned/PinnedItemsBar';
 import { SearchBar } from '@proton/pass/components/Item/Search/SearchBar';
 import { ItemQuickActions } from '@proton/pass/components/Menu/Item/ItemQuickActions';

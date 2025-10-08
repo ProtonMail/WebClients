@@ -1,6 +1,8 @@
 import type { FC } from 'react';
 
-import { SkeletonLoader, TableCell, TableRow } from '@proton/components';
+import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
+import TableCell from '@proton/components/components/table/TableCell';
+import TableRow from '@proton/components/components/table/TableRow';
 
 type Props = { rows: number; cells: number };
 

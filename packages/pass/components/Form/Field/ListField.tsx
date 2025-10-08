@@ -4,9 +4,10 @@ import { useCallback, useEffect, useMemo, useRef, useTransition } from 'react';
 import type { ArrayHelpers, FieldProps, FormikErrors } from 'formik';
 import { FieldArray } from 'formik';
 
-import type { Input } from '@proton/atoms';
-import { Icon, InputFieldTwo } from '@proton/components';
-import type { IconName } from '@proton/components/';
+import type { Input } from '@proton/atoms/Input/Input';
+import Icon from '@proton/components/components/icon/Icon';
+import type { IconName } from '@proton/components/components/icon/Icon';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import type { InputFieldProps } from '@proton/components/components/v2/field/InputField';
 import useCombinedRefs from '@proton/hooks/useCombinedRefs';
 import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';

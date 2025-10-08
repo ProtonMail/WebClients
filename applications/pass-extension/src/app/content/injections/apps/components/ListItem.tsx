@@ -1,6 +1,6 @@
 import type { FC, ReactNode } from 'react';
 
-import { DropdownMenuButton } from '@proton/components';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 import clsx from '@proton/utils/clsx';
 

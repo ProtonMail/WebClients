@@ -2,7 +2,7 @@ import { type FC, useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { Alert } from '@proton/components';
+import Alert from '@proton/components/components/alert/Alert';
 import {
     ConfirmationPrompt,
     type ConfirmationPromptHandles,

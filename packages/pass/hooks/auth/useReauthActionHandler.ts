@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import type { Store } from 'redux';
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/components';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { useCurrentPort, useCurrentTabID } from '@proton/pass/components/Core/PassCoreProvider';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';

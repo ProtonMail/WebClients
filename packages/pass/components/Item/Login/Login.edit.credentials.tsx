@@ -3,7 +3,8 @@ import type { FC, ReactElement } from 'react';
 import type { FormikContextType } from 'formik';
 import { c } from 'ttag';
 
-import { Button, ButtonLike } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import Icon from '@proton/components/components/icon/Icon';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { PasswordField } from '@proton/pass/components/Form/Field/PasswordField';

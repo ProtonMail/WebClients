@@ -2,8 +2,8 @@ import type { FC, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Info } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import Info from '@proton/components/components/link/Info';
 import { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';

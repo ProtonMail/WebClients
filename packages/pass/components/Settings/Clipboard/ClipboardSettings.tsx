@@ -3,7 +3,8 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { Option, SelectTwo } from '@proton/components';
+import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { useSetClipboardTTL } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
 import { ClipboardTTL, DEFAULT_CLIPBOARD_TTL } from '@proton/pass/lib/clipboard/types';
 import { selectClipboardTTL } from '@proton/pass/store/selectors';

@@ -3,8 +3,9 @@ import type { ChangeEvent, FC } from 'react';
 import type { FieldInputProps, FormikErrors } from 'formik';
 import { c } from 'ttag';
 
-import { Button, type ButtonProps } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import type { ButtonProps } from '@proton/atoms/Button/Button';
+import Icon from '@proton/components/components/icon/Icon';
 import { DateField } from '@proton/pass/components/Form/Field/DateField';
 import type { FieldBoxProps } from '@proton/pass/components/Form/Field/Layout/FieldBox';
 import { FieldBox } from '@proton/pass/components/Form/Field/Layout/FieldBox';

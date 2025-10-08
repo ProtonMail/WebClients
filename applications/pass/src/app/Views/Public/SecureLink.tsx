@@ -3,7 +3,7 @@ import { Suspense, lazy } from 'react';
 
 import { c } from 'ttag';
 
-import { Loader } from '@proton/components';
+import Loader from '@proton/components/components/loader/Loader';
 import { UpsellFloatingModal } from '@proton/pass/components/Upsell/UpsellFloatingModal';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 

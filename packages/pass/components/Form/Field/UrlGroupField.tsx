@@ -4,8 +4,9 @@ import { type KeyboardEvent, useRef } from 'react';
 import { FieldArray, type FormikContextType, type FormikErrors } from 'formik';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Icon, InputFieldTwo } from '@proton/components/';
+import { Button } from '@proton/atoms/Button/Button';
+import Icon from '@proton/components/components/icon/Icon';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { maybeErrorMessage } from '@proton/pass/hooks/useFieldControl';
 import type { UrlGroupValues, UrlItem } from '@proton/pass/types';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';

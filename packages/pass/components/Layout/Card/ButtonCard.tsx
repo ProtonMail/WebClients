@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
-import { Button } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import Icon from '@proton/components/components/icon/Icon';
 import { CardContent, type CardContentProps } from '@proton/pass/components/Layout/Card/CardContent';
 import clsx from '@proton/utils/clsx';
 

@@ -1,7 +1,9 @@
 import type { FC } from 'react';
 
-import { Button, Card } from '@proton/atoms';
-import { Icon, type IconName } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import { Card } from '@proton/atoms/Card/Card';
+import Icon from '@proton/components/components/icon/Icon';
+import type { IconName } from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
 
 export type LearnMoreProps = {
