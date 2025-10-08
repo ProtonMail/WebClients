@@ -20,11 +20,13 @@ interface EditLinkModalProps extends Omit<BasicModalProps, 'children' | 'footer'
 }
 
 const EditLinkModal = ({ decryptedPurpose, onClose, onSubmit, ...rest }: EditLinkModalProps) => {
-    const [purpose, setPurpose] = useState(decryptedPurpose || '');
+    const [untrimmedPurpose, setUntrimmedPurpose] = useState(decryptedPurpose || '');
     const [isLoading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
 
     const handleSubmit = async () => {
+        const purpose = untrimmedPurpose.trim();
+
         const text = (() => {
             if (!decryptedPurpose && purpose) {
                 return c('Calendar link purpose update success message').t`Label added`;
@@ -76,9 +78,8 @@ const EditLinkModal = ({ decryptedPurpose, onClose, onSubmit, ...rest }: EditLin
                 id="your-calendar-url-label"
                 maxLength={MAX_CHARS_CLEARTEXT.PURPOSE}
                 autoFocus
-                value={purpose}
-                // @ts-ignore
-                onValue={(value) => setPurpose(value)}
+                value={untrimmedPurpose}
+                onValue={(value) => setUntrimmedPurpose(value)}
             />
         </BasicModal>
     );
