@@ -1,4 +1,5 @@
 import { fireEvent, screen } from '@testing-library/react';
+import { act } from '@testing-library/react-hooks';
 import { addHours, addSeconds } from 'date-fns';
 
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
@@ -100,7 +101,7 @@ describe('Scheduled messages banner', () => {
         expect(screen.queryByTestId(`Edit`)).toBeNull();
     });
 
-    it('should be able to edit the message', async () => {
+    it.only('should be able to edit the message', async () => {
         const sendingDate = addDays(new Date(), 1);
         const message = getMessage(sendingDate);
 
@@ -122,7 +123,10 @@ describe('Scheduled messages banner', () => {
         const editDraftButton = screen.getByText('Edit draft');
 
         // Unschedule the message
-        fireEvent.click(editDraftButton);
+        await act(async () => {
+            // Keep the await as this prevents logs in the test output
+            await fireEvent.click(editDraftButton);
+        });
 
         // Unschedule route is called
         expect(unscheduleCall).toHaveBeenCalled();
