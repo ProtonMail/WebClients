@@ -2,8 +2,8 @@ import type { ReactElement } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import type { IconName } from '@proton/components/components/icon/Icon';
 import { getDesktopAppText, getOwnDomainText } from '@proton/components/containers/payments/features/mail';
+import type { IconName } from '@proton/icons/types';
 import { CYCLE, PLANS, PLAN_NAMES, type PlanIDs, getRenewCycle } from '@proton/payments';
 import {
     BRAND_NAME,

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
-import type { IconName } from '@proton/components';
 import { useApi } from '@proton/components';
+import type { IconName } from '@proton/icons/types';
 import { useSystemFolders } from '@proton/mail';
 import { orderSystemFolders, updateSystemFolders } from '@proton/shared/lib/api/labels';
 import type { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

@@ -1,4 +1,4 @@
-import type { IconName } from '@proton/components';
+import type { IconName } from '@proton/icons/types';
 
 export const phraseIcon: IconName = 'text-align-left';
 export const emailIcon: IconName = 'envelope';

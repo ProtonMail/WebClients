@@ -4,8 +4,8 @@ import { c } from 'ttag';
 
 import { getKTUserContext } from '@proton/account/kt/actions';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
-import type { IconName } from '@proton/components/components/icon/Icon';
 import useApi from '@proton/components/hooks/useApi';
+import type { IconName } from '@proton/icons/types';
 import { useDispatch } from '@proton/redux-shared-store';
 import type { Unwrap } from '@proton/shared/lib/interfaces';
 import { OrganizationSignatureState, validateOrganizationSignatureHelper } from '@proton/shared/lib/keys';

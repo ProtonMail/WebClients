@@ -6,9 +6,9 @@ import type { DropdownProps } from '@proton/components/components/dropdown/Dropd
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
-import type { IconName } from '@proton/components/components/icon/Icon';
 import Icon from '@proton/components/components/icon/Icon';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
+import type { IconName } from '@proton/icons/types';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import type { ItemSortFilter } from '@proton/pass/types';
 

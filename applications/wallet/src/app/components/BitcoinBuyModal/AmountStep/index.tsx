@@ -12,11 +12,11 @@ import type {
     WasmPaymentMethod,
     WasmQuote,
 } from '@proton/andromeda';
-import type { IconName } from '@proton/components';
 import { DropdownSizeUnit, Icon, useModalState, useNotifications, useSubscriptionModal } from '@proton/components';
 import CountrySelect from '@proton/components/components/country/CountrySelect';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import useLoading from '@proton/hooks/useLoading';
+import type { IconName } from '@proton/icons/types';
 import { PLANS } from '@proton/payments';
 import aztecoLogo from '@proton/styles/assets/img/brand/azteco.svg';
 import banxaLogo from '@proton/styles/assets/img/brand/banxa.svg';

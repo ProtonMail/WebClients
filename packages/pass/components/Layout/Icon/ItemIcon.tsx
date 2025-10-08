@@ -3,9 +3,8 @@ import { type FC, useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import type { IconName } from '@proton/components/components/icon/Icon';
-import type { IconSize } from '@proton/components/components/icon/Icon';
 import Icon from '@proton/components/components/icon/Icon';
+import type { IconName, IconSize } from '@proton/icons/types';
 import { isDisabledAliasItem } from '@proton/pass/lib/items/item.predicates';
 import { selectCanLoadDomainImages } from '@proton/pass/store/selectors';
 import type { ItemMap, ItemRevision, MaybeNull } from '@proton/pass/types';

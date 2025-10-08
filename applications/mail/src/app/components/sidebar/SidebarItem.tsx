@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import { memo, useCallback, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import type { HotkeyTuple, IconName, IconSize } from '@proton/components';
+import type { HotkeyTuple } from '@proton/components';
 import {
     SidebarListItem,
     SidebarListItemContent,
@@ -13,6 +13,7 @@ import {
     useItemsDroppable,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
+import type { IconName, IconSize } from '@proton/icons/types';
 import { useFolders, useLabels } from '@proton/mail';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

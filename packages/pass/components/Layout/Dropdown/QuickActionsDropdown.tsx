@@ -3,18 +3,16 @@ import type { CSSProperties, FC, ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { ButtonLikeShape } from '@proton/atoms/Button/ButtonLike';
-import type { ButtonLikeSize } from '@proton/atoms/Button/ButtonLike';
+import type { ButtonLikeShape, ButtonLikeSize } from '@proton/atoms/Button/ButtonLike';
 import { NotificationDot } from '@proton/atoms/NotificationDot/NotificationDot';
 import Badge from '@proton/components/components/badge/Badge';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import type { DropdownSize } from '@proton/components/components/dropdown/utils';
 import Icon from '@proton/components/components/icon/Icon';
-import type { IconName } from '@proton/components/components/icon/Icon';
-import type { IconSize } from '@proton/components/components/icon/Icon';
 import type { PopperPlacement } from '@proton/components/components/popper/interface';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
+import type { IconName, IconSize } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
 import './QuickActionsDropdown.scss';

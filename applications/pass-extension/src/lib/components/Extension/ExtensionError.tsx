@@ -5,8 +5,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import type { IconName } from '@proton/components/components/icon/Icon';
 import Icon from '@proton/components/components/icon/Icon';
+import type { IconName } from '@proton/icons/types';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { LobbyLayout } from '@proton/pass/components/Layout/Lobby/LobbyLayout';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';

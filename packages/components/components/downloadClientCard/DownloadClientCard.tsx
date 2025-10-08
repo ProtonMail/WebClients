@@ -6,7 +6,8 @@ import { Button, ButtonLike, Href } from '@proton/atoms';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
-import Icon, { type IconName } from '@proton/components/components/icon/Icon';
+import Icon from '@proton/components/components/icon/Icon';
+import type { IconName } from '@proton/icons/types';
 
 interface Props {
     title: string;

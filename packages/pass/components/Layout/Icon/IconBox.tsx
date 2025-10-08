@@ -1,6 +1,6 @@
 import type { FC, ReactNode } from 'react';
 
-import type { IconSize } from '@proton/components/components/icon/Icon';
+import type { IconSize } from '@proton/icons/types';
 import { CSS_BASE_UNIT_SIZE } from '@proton/styles';
 import clsx from '@proton/utils/clsx';
 

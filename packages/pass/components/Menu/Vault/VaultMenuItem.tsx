@@ -5,7 +5,7 @@ import { c, msgid } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import Icon from '@proton/components/components/icon/Icon';
-import type { IconName } from '@proton/components/components/icon/Icon';
+import type { IconName } from '@proton/icons/types';
 import { useInviteActions } from '@proton/pass/components/Invite/InviteProvider';
 import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';

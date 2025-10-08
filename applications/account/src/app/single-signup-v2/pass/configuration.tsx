@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import type { IconName } from '@proton/components';
 import { AppsLogos, PassLogo } from '@proton/components';
 import { getPassKeys, getPassMonitor } from '@proton/components/containers/payments/features/highlights';
 import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
@@ -35,6 +34,7 @@ import {
     getVPNSpeed,
 } from '@proton/components/containers/payments/features/vpn';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
+import type { IconName } from '@proton/icons/types';
 import { CYCLE, PLANS, PLAN_NAMES, type Plan, type PlansMap } from '@proton/payments';
 import {
     APPS,

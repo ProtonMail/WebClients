@@ -1,7 +1,7 @@
 import type { ButtonHTMLAttributes } from 'react';
 
-import type { IconName } from '@proton/components/components/icon/Icon';
 import Icon from '@proton/components/components/icon/Icon';
+import type { IconName } from '@proton/icons/types';
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
     icon: IconName;

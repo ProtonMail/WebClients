@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { ButtonLike } from '@proton/atoms';
 import { Icon, SettingsLink, useConfig } from '@proton/components';
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
-import type { IconName } from '@proton/components/components/icon/Icon';
+import type { IconName } from '@proton/icons/types';
 import { LUMO_SHORT_APP_NAME, LUMO_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 

@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react';
 
 import { CircleLoader } from '@proton/atoms';
-import type { IconName } from '@proton/components';
 import { Icon } from '@proton/components';
+import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
 import type { SecurityCheckupCardInnerProps } from './SecurityCheckupCardInner';

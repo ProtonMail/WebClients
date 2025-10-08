@@ -1,9 +1,9 @@
 import { useMemo, useState } from 'react';
 
 import { Button, Input } from '@proton/atoms';
-import type { IconName } from '@proton/components';
 import { ButtonGroup, Icon, Mark } from '@proton/components';
 import iconSvg from '@proton/icons/assets/sprite-icons.svg';
+import type { IconName } from '@proton/icons/types';
 
 import mdx from './Icons.mdx';
 

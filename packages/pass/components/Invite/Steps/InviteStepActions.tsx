@@ -1,6 +1,6 @@
 import { Button } from '@proton/atoms/Button/Button';
 import Icon from '@proton/components/components/icon/Icon';
-import type { IconName } from '@proton/components/components/icon/Icon';
+import type { IconName } from '@proton/icons/types';
 import type { Callback } from '@proton/pass/types';
 
 export type InviteStepAttributes = {

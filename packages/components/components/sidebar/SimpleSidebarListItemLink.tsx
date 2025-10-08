@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 
-import type { IconName, IconSize } from '../icon/Icon';
+import type { IconName, IconSize } from '@proton/icons/types';
+
 import SidebarListItem from './SidebarListItem';
 import SidebarListItemContent from './SidebarListItemContent';
 import SidebarListItemContentIcon from './SidebarListItemContentIcon';

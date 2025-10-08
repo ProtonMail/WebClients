@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import type { IconName } from '@proton/components/components/icon/Icon';
+import type { IconName } from '@proton/icons/types';
 import { PLANS, type Plan } from '@proton/payments';
 import {
     BRAND_NAME,

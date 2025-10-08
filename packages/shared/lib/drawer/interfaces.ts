@@ -1,5 +1,5 @@
 import type { ThemeColor } from '@proton/colors/types';
-import type { IconName } from '@proton/components/components/icon/Icon';
+import type { IconName } from '@proton/icons/types';
 import type { PersistedSession } from '@proton/shared/lib/authentication/SessionInterface';
 import type { OfflineKey } from '@proton/shared/lib/authentication/offlineKey';
 import type { APPS } from '@proton/shared/lib/constants';

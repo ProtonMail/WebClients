@@ -6,8 +6,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import type { ButtonLikeShape } from '@proton/atoms/Button/ButtonLike';
-import type { IconName } from '@proton/components/components/icon/Icon';
 import Icon from '@proton/components/components/icon/Icon';
+import type { IconName } from '@proton/icons/types';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { itemTypeToIconName } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';

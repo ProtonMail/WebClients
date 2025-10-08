@@ -3,7 +3,7 @@ import { cloneElement, isValidElement, useState } from 'react';
 
 import { c } from 'ttag';
 
-import Icon, { type IconSize } from '@proton/components/components/icon/Icon';
+import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
 import CalendarLogo from '@proton/components/components/logo/CalendarLogo';
 import DriveLogo from '@proton/components/components/logo/DriveLogo';
@@ -14,6 +14,7 @@ import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import WalletLogo from '@proton/components/components/logo/WalletLogo';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+import type { IconSize } from '@proton/icons/types';
 import { PLANS } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS } from '@proton/shared/lib/constants';

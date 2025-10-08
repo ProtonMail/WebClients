@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { IconName } from '@proton/components';
+import type { IconName } from '@proton/icons/types';
 import { useFolders, useLabels } from '@proton/mail';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

@@ -1,6 +1,5 @@
 import { useRef, useState } from 'react';
 
-import type { IconName } from '@proton/components';
 import {
     Autocomplete,
     AutocompleteList,
@@ -12,6 +11,7 @@ import {
     useAutocomplete,
     useAutocompleteFilter,
 } from '@proton/components';
+import type { IconName } from '@proton/icons/types';
 
 import mdx from './Autocomplete.mdx';
 

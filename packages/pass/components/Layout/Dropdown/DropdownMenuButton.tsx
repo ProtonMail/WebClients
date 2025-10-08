@@ -17,10 +17,10 @@ import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import type { Props as DropdownMenuButtonCoreProps } from '@proton/components/components/dropdown/DropdownMenuButton';
 import { default as DropdownMenuButtonCore } from '@proton/components/components/dropdown/DropdownMenuButton';
-import type { IconName } from '@proton/components/components/icon/Icon';
 import Icon from '@proton/components/components/icon/Icon';
 import type { PopperPlacement } from '@proton/components/components/popper/interface';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
+import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
 type QuickActionChildProp = { onClick: (evt: MouseEvent) => void };

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import type { IconName } from '@proton/components';
 import { Icon, useSecurityCheckup } from '@proton/components';
+import type { IconName } from '@proton/icons/types';
 import { SecurityCheckupCohort } from '@proton/shared/lib/interfaces/securityCheckup/SecurityCheckupCohort';
 import clsx from '@proton/utils/clsx';
 

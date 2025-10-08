@@ -1,6 +1,6 @@
 import { Button } from '@proton/atoms';
-import type { IconName } from '@proton/components/components/icon/Icon';
 import Icon from '@proton/components/components/icon/Icon';
+import type { IconName } from '@proton/icons/types';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
