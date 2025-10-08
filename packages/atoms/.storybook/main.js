@@ -55,33 +55,12 @@ const config = {
             experiments: {
                 asyncWebAssembly: true,
             },
-            resolve: {
-                ...config.resolve,
-                fallback: {
-                    ...config.resolve.fallback,
-                    // For some reason storybook brings in openpgp as a dependency and we need to
-                    // explicitly disable these in the webpack config
-                    stream: false,
-                    crypto: false,
-                },
-            },
             module: {
                 ...config.module,
                 rules: [
-                    // Filter out JS/CSS loaders that are not related to MDX to prevent Webpack from blowing up due to conflicting rules
                     ...config.module.rules.filter((rule) => {
-                        return rule && rule.test && rule.test.toString().includes('mdx');
+                        return Boolean(!rule.use?.[0]?.includes?.('style-loader'));
                     }),
-                    {
-                        test: /\.stories\.(tsx|mdx)?$/,
-                        use: [
-                            {
-                                loader: require.resolve('@storybook/source-loader'),
-                                options: { parser: 'typescript' },
-                            },
-                        ],
-                        enforce: 'pre',
-                    },
                     ...getJsLoaders(options),
                     ...getCssLoaders(options),
                     ...getAssetsLoaders(options),
@@ -94,11 +73,6 @@ const config = {
                     chunkFilename: isProduction ? '[id].[contenthash:8].css' : '[id].css',
                 }),
             ],
-            node: {
-                ...config.node,
-                __dirname: true,
-                __filename: true,
-            },
         };
     },
 };

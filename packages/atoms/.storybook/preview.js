@@ -1,7 +1,7 @@
 import { ModalsChildren, ModalsProvider, NotificationsProvider } from '@proton/components';
 import InlineIcons from '@proton/icons/InlineIcons';
 
-import theme from './theme';
+import theme from './theme.js';
 
 import './index.scss';
 
