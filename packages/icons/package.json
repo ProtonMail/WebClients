@@ -2,6 +2,14 @@
     "name": "@proton/icons",
     "version": "0.0.2",
     "sideEffects": false,
+    "type": "module",
+    "exports": {
+        ".": "./index.ts",
+        "./types": "./types.ts",
+        "./Icons": "./Icons.tsx",
+        "./InlineIcons": "./InlineIcons.tsx",
+        "./icons/*": "./icons/*.tsx"
+    },
     "files": [
         "lib",
         "assets",
@@ -17,6 +25,9 @@
     },
     "dependencies": {
         "@proton/utils": "workspace:^",
+        "jsdom": "^27.0.0",
+        "mustache": "^4.2.0",
+        "prettier": "^3.6.2",
         "react": "^18.3.1",
         "react-dom": "^18.3.1"
     },
@@ -24,9 +35,6 @@
         "@types/mustache": "^4.2.6",
         "@types/react": "^18.3.24",
         "eslint": "^9.36.0",
-        "jsdom": "^27.0.0",
-        "mustache": "^4.2.0",
-        "prettier": "^3.6.2",
         "tsx": "^4.20.6",
         "typescript": "^5.9.2"
     }
