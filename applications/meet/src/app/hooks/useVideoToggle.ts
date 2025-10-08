@@ -5,6 +5,8 @@ import { BackgroundBlur, type BackgroundProcessorOptions } from '@livekit/track-
 import type { LocalParticipant } from '@proton-meet/livekit-client';
 import { Track } from '@proton-meet/livekit-client';
 
+import debounce from '@proton/utils/debounce';
+
 import type { SwitchActiveDevice } from '../types';
 
 const backgroundProcessorOptions: BackgroundProcessorOptions = {
@@ -120,5 +122,14 @@ export const useVideoToggle = (
         setBackgroundBlur((prevEnableBlur) => !prevEnableBlur);
     };
 
-    return { toggleVideo, handleRotateCamera, backgroundBlur, toggleBackgroundBlur, isVideoEnabled: isCameraEnabled };
+    // Too frequent toggling can freeze the page completely
+    const debouncedToggleBackgroundBlur = debounce(toggleBackgroundBlur, 500, { leading: true });
+
+    return {
+        toggleVideo,
+        handleRotateCamera,
+        backgroundBlur,
+        toggleBackgroundBlur: debouncedToggleBackgroundBlur,
+        isVideoEnabled: isCameraEnabled,
+    };
 };
