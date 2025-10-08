@@ -2,7 +2,8 @@ import { type FC, useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Option, SelectTwo } from '@proton/components';
+import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { InlineFieldBox } from '@proton/pass/components/Form/Field/Layout/InlineFieldBox';
 import { UNIX_DAY, UNIX_HOUR, UNIX_WEEK } from '@proton/pass/utils/time/constants';
 

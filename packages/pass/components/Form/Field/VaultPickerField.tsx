@@ -3,7 +3,8 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { Icon, Option } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
+import Option from '@proton/components/components/option/Option';
 import type { VaultIconName } from '@proton/pass/components/Vault/VaultIcon';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import type { ShareItem } from '@proton/pass/store/reducers';

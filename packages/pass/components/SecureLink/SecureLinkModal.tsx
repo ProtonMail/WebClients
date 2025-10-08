@@ -2,7 +2,8 @@ import { type FC, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { type ModalProps, ModalTwoHeader } from '@proton/components';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { presentListItem } from '@proton/pass/components/Item/List/utils';
 import { SafeItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';

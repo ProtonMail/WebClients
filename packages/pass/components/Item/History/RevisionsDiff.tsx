@@ -4,8 +4,9 @@ import { Redirect, useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Alert, Icon } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import Alert from '@proton/components/components/alert/Alert';
+import Icon from '@proton/components/components/icon/Icon';
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
 import { FileAttachment } from '@proton/pass/components/FileAttachments/FileAttachment';
 import { FileAttachmentsView } from '@proton/pass/components/FileAttachments/FileAttachmentsView';

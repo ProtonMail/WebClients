@@ -2,7 +2,7 @@ import { type FC, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import type { IconName } from '@proton/components';
+import type { IconName } from '@proton/components/components/icon/Icon';
 import { OTPDonut } from '@proton/pass/components/Otp/OTPDonut';
 import { OTPValue } from '@proton/pass/components/Otp/OTPValue';
 import type { IOtpRenderer } from '@proton/pass/components/Otp/types';

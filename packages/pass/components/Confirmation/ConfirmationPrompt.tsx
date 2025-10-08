@@ -2,8 +2,8 @@ import type { FC, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Prompt } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import Prompt from '@proton/components/components/prompt/Prompt';
 
 import './ConfirmationPrompt.scss';
 

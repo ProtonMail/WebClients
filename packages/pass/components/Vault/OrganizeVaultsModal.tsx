@@ -4,8 +4,13 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { Banner, Button } from '@proton/atoms';
-import { Checkbox, Icon, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
+import { Banner } from '@proton/atoms/Banner/Banner';
+import { Button } from '@proton/atoms/Button/Button';
+import Icon from '@proton/components/components/icon/Icon';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { isShareVisible } from '@proton/pass/lib/shares/share.predicates';

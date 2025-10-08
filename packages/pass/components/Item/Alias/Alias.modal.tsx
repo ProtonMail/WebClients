@@ -4,8 +4,9 @@ import { useSelector } from 'react-redux';
 import { type FormikContextType, FormikProvider } from 'formik';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Icon, type ModalProps } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import Icon from '@proton/components/components/icon/Icon';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import { AliasPreview } from '@proton/pass/components/Alias/Alias.preview';
 import { AliasForm } from '@proton/pass/components/Item/Alias/Alias.form';
 import { Card } from '@proton/pass/components/Layout/Card/Card';

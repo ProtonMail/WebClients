@@ -1,15 +1,13 @@
 import type { FC } from 'react';
 import { memo, useContext, useEffect, useRef } from 'react';
 
-import type { IconName } from '@proton/components';
-import {
-    Collapsible,
-    CollapsibleContent,
-    CollapsibleHeader,
-    CollapsibleHeaderIconButton,
-    Icon,
-} from '@proton/components';
+import Collapsible from '@proton/components/components/collapsible/Collapsible';
+import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
 import CollapsibleContext from '@proton/components/components/collapsible/CollapsibleContext';
+import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
+import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
+import type { IconName } from '@proton/components/components/icon/Icon';
+import Icon from '@proton/components/components/icon/Icon';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import {
     DropdownMenuButton,

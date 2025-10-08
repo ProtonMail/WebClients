@@ -3,7 +3,8 @@ import type { RouteChildrenProps } from 'react-router-dom';
 
 import type { HeaderProps } from 'proton-pass-web/app/Views/Header/types';
 
-import { Header as CoreHeader, Hamburger } from '@proton/components';
+import CoreHeader from '@proton/components/components/header/Header';
+import Hamburger from '@proton/components/components/sidebar/Hamburger';
 import { MonitorHeader } from '@proton/pass/components/Monitor/MonitorHeader';
 
 export const HeaderMonitor: FC<HeaderProps & RouteChildrenProps> = ({

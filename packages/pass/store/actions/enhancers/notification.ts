@@ -1,6 +1,7 @@
 import type { Action } from 'redux';
 
-import type { CreateNotificationOptions, NotificationType } from '@proton/components';
+import type { CreateNotificationOptions } from '@proton/components/containers/notifications/interfaces';
+import type { NotificationType } from '@proton/components/containers/notifications/interfaces';
 import type { ClientEndpoint } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 
@@ -20,8 +21,7 @@ export type Notification = CreateNotificationOptions & {
 };
 
 export type NotificationMeta = { notification: Notification };
-export type NotificationOptions = Notification &
-    ({ type: 'error'; error: unknown } | { type: Exclude<NotificationType, 'error'> });
+export type NotificationOptions = Notification & ({ type: 'error'; error: unknown } | { type: Exclude<NotificationType, 'error'> });
 
 export type WithNotification<A = Action> = WithMeta<NotificationMeta, A>;
 
@@ -33,9 +33,7 @@ const parseNotification = (notification: NotificationOptions): Notification => {
             return notification;
         case 'error': {
             const errorMessage =
-                notification.error instanceof Error
-                    ? getErrorMessage(notification.error, notification.error.message)
-                    : undefined;
+                notification.error instanceof Error ? getErrorMessage(notification.error, notification.error.message) : undefined;
 
             const serializedNotification: Notification = {
                 ...notification,

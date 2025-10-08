@@ -2,8 +2,11 @@ import type { FC, MouseEvent } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, type ButtonLikeShape, type ButtonProps, Tooltip } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import type { ButtonProps } from '@proton/atoms/Button/Button';
+import type { ButtonLikeShape } from '@proton/atoms/Button/ButtonLike';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import Icon from '@proton/components/components/icon/Icon';
 import { useCopyToClipboard } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
 
 type Props = ButtonProps & {

@@ -8,7 +8,7 @@ import { OrganizationActions } from 'proton-pass-web/app/Views/Sidebar/Organizat
 import { c } from 'ttag';
 
 import { Button, Scroll } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
 import { UserStorage } from '@proton/pass/components/Account/UserStorage';
 import { MonitorButton } from '@proton/pass/components/Menu/Monitor/MonitorButton';
 import { SharedMenu } from '@proton/pass/components/Menu/Shared/SharedMenu';

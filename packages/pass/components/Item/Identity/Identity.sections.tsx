@@ -5,7 +5,7 @@ import type { FieldArrayRenderProps } from 'formik';
 import { FieldArray, type FormikContextType } from 'formik';
 import { c } from 'ttag';
 
-import { Icon } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
 import { DeleteButton, ExtraFieldComponent } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraField';
 import {
     createExtraField,

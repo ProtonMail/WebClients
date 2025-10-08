@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import type { IconSize } from '@proton/components';
+import type { IconSize } from '@proton/components/components/icon/Icon';
 import { usePassTheme } from '@proton/pass/components/Layout/Theme/ThemeProvider';
 import { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';

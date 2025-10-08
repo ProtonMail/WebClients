@@ -3,7 +3,9 @@ import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
-import { ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { useInviteActions } from '@proton/pass/components/Invite/InviteProvider';
 import { InviteStepResponse } from '@proton/pass/components/Invite/Steps/InviteStepResponse';
 import { Card } from '@proton/pass/components/Layout/Card/Card';

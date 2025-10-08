@@ -1,7 +1,10 @@
 import type { FC, PropsWithChildren } from 'react';
 
-import type { IconName } from '@proton/components';
-import { Dropdown, DropdownButton, DropdownMenu, usePopperAnchor } from '@proton/components';
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import type { IconName } from '@proton/components/components/icon/Icon';
+import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import clsx from '@proton/utils/clsx';
 
 import { DropdownMenuButton } from './DropdownMenuButton';

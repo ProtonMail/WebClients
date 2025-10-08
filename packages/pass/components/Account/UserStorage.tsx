@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 
-import { Progress } from '@proton/components';
+import Progress from '@proton/components/components/progress/Progress';
 import { WithPaidUser } from '@proton/pass/components/Core/WithPaidUser';
 import { selectUserStorageAllowed, selectUserStorageQuota, selectUserStorageUsed } from '@proton/pass/store/selectors';
 import humanSize from '@proton/shared/lib/helpers/humanSize';

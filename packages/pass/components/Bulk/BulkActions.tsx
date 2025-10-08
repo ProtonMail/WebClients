@@ -2,8 +2,8 @@ import { memo } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import Icon from '@proton/components/components/icon/Icon';
 import { useBulkSelection } from '@proton/pass/components/Bulk/BulkSelectionState';
 import { bulkSelectionDTO } from '@proton/pass/components/Bulk/utils';
 import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';

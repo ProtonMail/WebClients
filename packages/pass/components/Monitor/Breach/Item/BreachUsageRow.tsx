@@ -1,8 +1,9 @@
 import type { FC, MouseEvent } from 'react';
 
-import { Button } from '@proton/atoms';
-import { TableCell, TableRow } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
 import Icon from '@proton/components/components/icon/Icon';
+import TableCell from '@proton/components/components/table/TableCell';
+import TableRow from '@proton/components/components/table/TableRow';
 import { SafeItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { useSelectItem } from '@proton/pass/components/Navigation/NavigationActions';
 import { isTrashed } from '@proton/pass/lib/items/item.predicates';

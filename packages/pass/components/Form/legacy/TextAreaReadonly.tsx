@@ -3,7 +3,7 @@ import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { repaint } from '@proton/pass/utils/dom/repaint';
 import clsx from '@proton/utils/clsx';
 import debounce from '@proton/utils/debounce';

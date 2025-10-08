@@ -3,8 +3,13 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { Href, InlineLinkButton } from '@proton/atoms';
-import { AttachedFile, Bordered, Dropzone, FileInput, Icon } from '@proton/components';
+import { Href } from '@proton/atoms/Href/Href';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+import AttachedFile from '@proton/components/components/attachedFile/AttachedFile';
+import Bordered from '@proton/components/components/container/Bordered';
+import Dropzone from '@proton/components/components/dropzone/Dropzone';
+import Icon from '@proton/components/components/icon/Icon';
+import FileInput from '@proton/components/components/input/FileInput';
 import { ImportIcon } from '@proton/pass/components/Import/ImportIcon';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';

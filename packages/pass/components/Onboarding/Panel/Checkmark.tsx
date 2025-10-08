@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import { Icon } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
 
 export const Checkmark: FC<{ on: boolean }> = ({ on = false }) => {
     return (

@@ -2,7 +2,7 @@ import type { FC, MouseEvent } from 'react';
 
 import { c } from 'ttag';
 
-import { InlineLinkButton } from '@proton/atoms';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { FileAttachmentsContentView } from '@proton/pass/components/FileAttachments/FileAttachmentsView';
 import { AliasContent } from '@proton/pass/components/Item/Alias/Alias.content';
 import { ItemHistoryStats } from '@proton/pass/components/Item/History/ItemHistoryStats';
