@@ -6,10 +6,10 @@ import { FieldArray } from 'formik';
 
 import type { Input } from '@proton/atoms/Input/Input';
 import Icon from '@proton/components/components/icon/Icon';
-import type { IconName } from '@proton/components/components/icon/Icon';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import type { InputFieldProps } from '@proton/components/components/v2/field/InputField';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useCombinedRefs from '@proton/hooks/useCombinedRefs';
+import type { IconName } from '@proton/icons/types';
 import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
 import type { Unpack } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';

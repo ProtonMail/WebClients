@@ -5,7 +5,6 @@ import { Link, useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button, Href, InlineLinkButton, Vr } from '@proton/atoms';
-import type { IconName } from '@proton/components';
 import {
     CurrencySelector,
     CycleSelector,
@@ -24,6 +23,7 @@ import { useCurrencies } from '@proton/components/payments/client-extensions/use
 import { InvalidZipCodeError } from '@proton/components/payments/react-extensions/errors';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
+import type { IconName } from '@proton/icons/types';
 import metrics from '@proton/metrics';
 import {
     type BillingAddress,

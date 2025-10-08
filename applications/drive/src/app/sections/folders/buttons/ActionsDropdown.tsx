@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import type { IconName } from '@proton/components';
 import { Dropdown, DropdownMenu, DropdownMenuButton, Icon, ToolbarButton, usePopperAnchor } from '@proton/components';
 import { MemberRole } from '@proton/drive/index';
+import type { IconName } from '@proton/icons/types';
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 import generateUID from '@proton/utils/generateUID';
 

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { ImportType } from '@proton/activation/src/interface';
-import type { IconName } from '@proton/components/components/icon/Icon';
+import type { IconName } from '@proton/icons/types';
 
 export const getImportProductName = (type: ImportType) => {
     switch (type) {

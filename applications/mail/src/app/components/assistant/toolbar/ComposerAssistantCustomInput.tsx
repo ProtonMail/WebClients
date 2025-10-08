@@ -4,9 +4,9 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Tooltip } from '@proton/atoms';
-import type { IconName } from '@proton/components';
 import { Icon, InputFieldTwo, useActiveBreakpoint } from '@proton/components';
 import TextArea from '@proton/components/components/v2/input/TextArea';
+import type { IconName } from '@proton/icons/types';
 import { ASSISTANT_PROMPT_SIZE_LIMIT } from '@proton/llm/lib';
 
 import type { ComposerAssistantSelection } from 'proton-mail/hooks/assistant/useComposerAssistantSelectedText';

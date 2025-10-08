@@ -6,8 +6,8 @@ import { c } from 'ttag';
 
 import type { ButtonLikeProps } from '@proton/atoms';
 import { Button, Tooltip } from '@proton/atoms';
-import type { IconSize } from '@proton/components';
 import { Icon, type PopperPlacement } from '@proton/components';
+import type { IconSize } from '@proton/icons/types';
 
 import { useGuestChatHandler } from '../../hooks/useGuestChatHandler';
 import { useGhostChat } from '../../providers/GhostChatProvider';

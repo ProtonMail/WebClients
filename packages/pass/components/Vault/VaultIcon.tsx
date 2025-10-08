@@ -1,8 +1,7 @@
 import type { FC } from 'react';
 
-import type { IconName } from '@proton/components/components/icon/Icon';
-import type { IconSize } from '@proton/components/components/icon/Icon';
 import Icon from '@proton/components/components/icon/Icon';
+import type { IconName, IconSize } from '@proton/icons/types';
 import { getIconSizePx } from '@proton/pass/components/Layout/Icon/IconBox';
 import { VAULT_COLOR_MAP, VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
 import type { VaultIcon as VaultIconEnum } from '@proton/pass/types/protobuf/vault-v1.static';

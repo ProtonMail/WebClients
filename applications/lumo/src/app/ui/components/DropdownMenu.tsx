@@ -4,8 +4,8 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import type { IconName } from '@proton/components';
 import { DropdownMenuButton, Icon, SimpleDropdown } from '@proton/components';
+import type { IconName } from '@proton/icons/types';
 
 import { useSidebar } from '../../providers/SidebarProvider';
 

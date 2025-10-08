@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import type { IconName } from '@proton/components/components/icon/Icon';
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
+import type { IconName } from '@proton/icons/types';
 import type { AvailablePaymentMethod, PaymentMethodFlow, SavedPaymentMethod, SepaDetails } from '@proton/payments';
 import { PAYMENT_METHOD_TYPES, isSignupFlow } from '@proton/payments';
 

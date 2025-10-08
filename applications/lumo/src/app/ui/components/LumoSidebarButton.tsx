@@ -1,8 +1,8 @@
 import { clsx } from 'clsx';
 
 import { Button, Tooltip } from '@proton/atoms';
-import type { IconName } from '@proton/components';
 import { Icon } from '@proton/components';
+import type { IconName } from '@proton/icons/types';
 
 interface LumoSidebarButtonProps {
     iconName: IconName;

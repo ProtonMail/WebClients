@@ -3,7 +3,7 @@ import { forwardRef } from 'react';
 
 import { CircleLoader } from '@proton/atoms';
 import DropdownCaret from '@proton/components/components/dropdown/DropdownCaret';
-import type { IconName } from '@proton/components/components/icon/Icon';
+import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
 import type { NodeOrBoolean } from '../v2/field/InputField';

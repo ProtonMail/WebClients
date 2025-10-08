@@ -1,10 +1,10 @@
 import type { Ref } from 'react';
 import { forwardRef } from 'react';
 
-import type { IconName } from '@proton/components/components/icon/Icon';
 import Icon from '@proton/components/components/icon/Icon';
 import type { AppLinkProps } from '@proton/components/components/link/AppLink';
 import AppLink from '@proton/components/components/link/AppLink';
+import type { IconName } from '@proton/icons/types';
 
 interface Props extends AppLinkProps {
     icon: IconName;

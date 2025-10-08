@@ -8,12 +8,12 @@ import DropdownButton from '@proton/components/components/dropdown/DropdownButto
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuLink from '@proton/components/components/dropdown/DropdownMenuLink';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import type { IconName } from '@proton/components/components/icon/Icon';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import type { Tab } from '@proton/components/components/tabs/Tabs';
 import Tabs from '@proton/components/components/tabs/Tabs';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
+import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
 import appleAppStoreImage from './images/apple-app-store.svg';
