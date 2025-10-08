@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { getCanMakePaymentsWithActiveCard } from '@proton/chargebee/lib';
 import Loader from '@proton/components/components/loader/Loader';
-import FormModal from '@proton/components/components/modal/FormModal';
 import useModals from '@proton/components/hooks/useModals';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import {
@@ -22,6 +22,10 @@ import type { ApplePayModalHandles, ChargebeeIframeHandles } from '@proton/payme
 import { getChargebeeErrorMessage } from '@proton/payments/ui';
 import type { Api } from '@proton/shared/lib/interfaces';
 
+import ModalTwo from '../../../components/modalTwo/Modal';
+import ModalTwoContent from '../../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
 import { defaultTranslations, ensureTokenChargeable } from '../ensureTokenChargeable';
 import PaymentVerificationModal from './PaymentVerificationModal';
 
@@ -157,21 +161,19 @@ export const useChargebeeCardVerifyPayment = (api: Api): PaymentVerificatorV5 =>
     return verifyChargebee;
 };
 
-export const ChargebeePaypalValidationModal = (props: any) => {
-    const [hasClose, setHasClose] = useState(false);
-    useEffect(() => {
-        const timeout = setTimeout(() => {
-            setHasClose(true);
-        }, 10000);
-        return () => clearTimeout(timeout);
-    }, []);
-
+export const ChargebeePaypalValidationModal = (props: { onClose: () => void }) => {
     return (
-        <FormModal footer={null} hasClose={hasClose} {...props}>
-            <p className="text-center">{c('Info').t`You will soon be redirected to PayPal to verify your payment.`}</p>
-            <Loader />
-            <p className="text-center mb-4">{c('Info').t`Don’t see anything? Remember to turn off pop-up blockers.`}</p>
-        </FormModal>
+        <ModalTwo {...props}>
+            <ModalTwoHeader title={c('Title').t`Verifying your payment...`} />
+            <ModalTwoContent>
+                <p>{c('Info').t`You will soon be redirected to PayPal to verify your payment.`}</p>
+                <Loader />
+                <p>{c('Info').t`Don’t see anything? Remember to turn off pop-up blockers.`}</p>
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                <Button onClick={props.onClose}>{c('Action').t`Cancel`}</Button>
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 
