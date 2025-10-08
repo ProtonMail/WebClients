@@ -201,13 +201,12 @@ const CalendarShareUrlSection = ({ calendar, user, canShare, noTitle }: Props) =
             {!!editLinkModalProps && (
                 <EditLinkModal
                     isOpen={editLinkModal.isOpen}
-                    onSubmit={async (untrimmedPurpose) => {
+                    onSubmit={async (purpose) => {
                         const { calendarID, urlID } = editLinkModalProps;
 
                         return tryLoadingAction(urlID, async () => {
                             const { calendarKeys } = await getCalendarInfo(calendarID);
                             const { publicKey } = getPrimaryCalendarKey(calendarKeys);
-                            const purpose = untrimmedPurpose.trim();
                             const encryptedPurpose = purpose
                                 ? await generateEncryptedPurpose({ purpose, publicKey })
                                 : null;
@@ -216,7 +215,7 @@ const CalendarShareUrlSection = ({ calendar, user, canShare, noTitle }: Props) =
                             setLinks((prevState) =>
                                 prevState.map((item) => {
                                     if (item.CalendarUrlID === urlID) {
-                                        item.purpose = untrimmedPurpose;
+                                        item.purpose = purpose;
                                         item.EncryptedPurpose = encryptedPurpose;
                                     }
 
