@@ -17,7 +17,9 @@
     "type": "module",
     "exports": {
         "./all": "./all.js",
+        "./barrel": "./barrel.js",
         "./base": "./base.js",
+        "./glob": "./glob.js",
         "./react": "./react.js"
     },
     "dependencies": {
