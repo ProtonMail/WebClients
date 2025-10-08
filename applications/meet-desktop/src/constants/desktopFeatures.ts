@@ -1,8 +1,8 @@
 // Desktop features configuration for Meet
 // These flags control which desktop-specific features are enabled
 export const DESKTOP_FEATURES = {
-    InAppPayments: true,
-    EarlyAccess: true,
+    InAppPayments: false,
+    EarlyAccess: false,
     LatestVersionCheck: true,
     InstallSource: true,
     HeartbeatMetrics: true,
