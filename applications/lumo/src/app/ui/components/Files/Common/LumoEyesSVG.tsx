@@ -205,14 +205,14 @@ export const LumoEyesSVG = () => {
                 <path
                     d="M51.5947 29.0002C52.4405 29.0002 53.1232 29.6855 53.1232 30.5287"
                     stroke="white"
-                    stroke-width="0.636847"
+                    strokeWidth="0.636847"
                     strokeMiterlimit="10"
                     strokeLinecap="round"
                 />
                 <path
                     d="M54.6515 29.0002C53.8057 29.0002 53.123 29.6855 53.123 30.5287"
                     stroke="white"
-                    stroke-width="0.636847"
+                    strokeWidth="0.636847"
                     strokeMiterlimit="10"
                     strokeLinecap="round"
                 />
@@ -312,14 +312,14 @@ export const LumoEyesSVG = () => {
                 <path
                     d="M51.5947 29.0002C52.4405 29.0002 53.1232 29.6855 53.1232 30.5287"
                     stroke="white"
-                    stroke-width="0.636847"
+                    strokeWidth="0.636847"
                     strokeMiterlimit="10"
                     strokeLinecap="round"
                 />
                 <path
                     d="M54.6515 29.0002C53.8057 29.0002 53.123 29.6855 53.123 30.5287"
                     stroke="white"
-                    stroke-width="0.636847"
+                    strokeWidth="0.636847"
                     strokeMiterlimit="10"
                     strokeLinecap="round"
                 />
@@ -359,7 +359,7 @@ export const LumoEyesSVG = () => {
                 <path
                     d="M53.123 46.9628V44.5352"
                     stroke="#372580"
-                    stroke-width="1.44182"
+                    strokeWidth="1.44182"
                     strokeMiterlimit="10"
                     strokeLinecap="round"
                 />
@@ -370,7 +370,7 @@ export const LumoEyesSVG = () => {
                 <path
                     d="M42.1362 77.1465C42.9233 80.2186 43.5755 83.8588 43.7181 87.7997C43.7181 87.7997 43.7334 88.3677 43.6825 88.4008C41.7872 89.6949 42.0114 91.124 42.3527 91.9086C43.3844 94.2675 50.9272 94.9374 52.7486 92.0411C53.0976 91.4857 53.1231 91.1877 53.1231 89.9013V77.0879"
                     stroke="white"
-                    stroke-width="0.891586"
+                    strokeWidth="0.891586"
                     strokeMiterlimit="10"
                 />
                 <path
@@ -384,7 +384,7 @@ export const LumoEyesSVG = () => {
                 <path
                     d="M64.1099 77.1465C63.3228 80.2186 62.6707 83.8588 62.528 87.7997C62.528 87.7997 62.5127 88.3677 62.5637 88.4008C64.4589 89.6949 64.2348 91.124 63.8934 91.9086C62.8617 94.2675 55.3189 94.9374 53.4975 92.0411C53.1485 91.4857 53.123 91.1877 53.123 89.9013C53.123 89.0428 53.123 83.5557 53.123 77.0879"
                     stroke="white"
-                    stroke-width="0.891586"
+                    strokeWidth="0.891586"
                     strokeMiterlimit="10"
                 />
                 <path

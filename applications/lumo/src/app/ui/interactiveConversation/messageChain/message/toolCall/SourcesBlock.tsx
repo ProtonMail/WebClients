@@ -68,10 +68,10 @@ export const ColoredDisk = ({ domain }: { domain: string }) => {
             <text
                 x="50%"
                 y="57%"
-                font-size="60"
-                font-family="'Arial', sans-serif"
-                alignment-baseline="middle"
-                text-anchor="middle"
+                fontSize="60"
+                fontFamily="'Arial', sans-serif"
+                alignmentBaseline="middle"
+                textAnchor="middle"
                 fill="#ffffff"
             >
                 {letter}

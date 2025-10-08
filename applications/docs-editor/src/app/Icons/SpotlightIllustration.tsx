@@ -23,12 +23,12 @@ export function SpotlightIllustration({ className }: { className?: string }) {
       />
       <defs>
         <linearGradient id="paint0_linear_7741_94935" x1="8" y1="13" x2="8" y2="23" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#FFE76C" />
-          <stop offset="1" stop-color="#FFB94F" />
+          <stop stopColor="#FFE76C" />
+          <stop offset="1" stopColor="#FFB94F" />
         </linearGradient>
         <linearGradient id="paint1_linear_7741_94935" x1="36" y1="31" x2="36" y2="43" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#FFE76C" />
-          <stop offset="1" stop-color="#FFB94F" />
+          <stop stopColor="#FFE76C" />
+          <stop offset="1" stopColor="#FFB94F" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_7741_94935"
@@ -38,8 +38,8 @@ export function SpotlightIllustration({ className }: { className?: string }) {
           y2="23"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.56205" stop-color="#1EA885" />
-          <stop offset="1" stop-color="white" />
+          <stop offset="0.56205" stopColor="#1EA885" />
+          <stop offset="1" stopColor="white" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_7741_94935"
@@ -49,8 +49,8 @@ export function SpotlightIllustration({ className }: { className?: string }) {
           y2="10.8351"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#ADADAD" />
-          <stop offset="1" stop-color="#F8F8FC" />
+          <stop stopColor="#ADADAD" />
+          <stop offset="1" stopColor="#F8F8FC" />
         </linearGradient>
       </defs>
     </svg>
