@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';

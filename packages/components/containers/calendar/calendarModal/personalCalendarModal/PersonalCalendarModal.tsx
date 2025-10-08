@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Form from '@proton/components/components/form/Form';
 import ColorPicker from '@proton/components/components/input/ColorPicker';
 import TextArea from '@proton/components/components/input/TextArea';

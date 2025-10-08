@@ -6,7 +6,7 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { ButtonLike } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import useUpsellConfig from '@proton/components/components/upsell/config/useUpsellConfig';
 import { freeTrialUpgradeClick } from '@proton/components/containers/desktop/openExternalLink';

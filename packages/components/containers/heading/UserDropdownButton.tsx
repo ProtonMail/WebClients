@@ -3,7 +3,7 @@ import { forwardRef } from 'react';
 
 import { c } from 'ttag';
 
-import { NotificationDot } from '@proton/atoms';
+import { NotificationDot } from '@proton/atoms/NotificationDot/NotificationDot';
 import type { ThemeColor } from '@proton/colors';
 import DropdownCaret from '@proton/components/components/dropdown/DropdownCaret';
 import type { IconName } from '@proton/icons/types';

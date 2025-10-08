@@ -4,7 +4,8 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { ButtonLike, Card } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Card } from '@proton/atoms/Card/Card';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { useBundleProPlan } from '@proton/components/hooks/useHasPlan';
 import { PLANS } from '@proton/payments';

@@ -2,7 +2,7 @@ import { format } from 'date-fns';
 import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Price from '@proton/components/components/price/Price';
 import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
 import { dateLocale } from '@proton/shared/lib/i18n';

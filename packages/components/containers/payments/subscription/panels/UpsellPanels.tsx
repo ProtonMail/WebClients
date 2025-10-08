@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { ButtonLikeShape } from '@proton/atoms';
+import type { ButtonLikeShape } from '@proton/atoms/Button/ButtonLike';
 import Time from '@proton/components/components/time/Time';
 import { PLANS, PLAN_NAMES, type Subscription, hasBundle } from '@proton/payments';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';

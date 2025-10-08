@@ -2,7 +2,7 @@ import { useHistory } from 'react-router';
 
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import CollapsingBreadcrumbs from '@proton/components/components/collapsingBreadcrumbs/CollapsingBreadcrumbs';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';

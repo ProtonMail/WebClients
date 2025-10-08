@@ -3,7 +3,7 @@ import { Suspense, lazy } from 'react';
 
 import { c } from 'ttag';
 
-import { Vr } from '@proton/atoms';
+import { Vr } from '@proton/atoms/Vr/Vr';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import Icon from '@proton/components/components/icon/Icon';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';

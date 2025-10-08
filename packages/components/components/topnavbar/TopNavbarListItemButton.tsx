@@ -3,8 +3,9 @@ import { cloneElement, forwardRef } from 'react';
 
 import { c } from 'ttag';
 
-import type { ButtonLikeProps } from '@proton/atoms';
-import { ButtonLike, NotificationDot } from '@proton/atoms';
+import type { ButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { NotificationDot } from '@proton/atoms/NotificationDot/NotificationDot';
 import type { ThemeColor } from '@proton/colors/types';
 import type { PolymorphicForwardRefExoticComponent, PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';

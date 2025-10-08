@@ -1,4 +1,4 @@
-import { Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
 import type { B2BOnboardingFeature } from '@proton/components/components/onboarding/b2b/interface';
 
 import Icon from '../../icon/Icon';

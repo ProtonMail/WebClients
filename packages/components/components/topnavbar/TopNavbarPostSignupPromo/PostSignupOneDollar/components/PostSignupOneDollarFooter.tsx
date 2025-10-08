@@ -1,4 +1,4 @@
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { getNormalizedPlanTitleToPlus } from '@proton/components/containers/payments/subscription/plusToPlusHelper';
 import { PLANS } from '@proton/payments';
 import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';

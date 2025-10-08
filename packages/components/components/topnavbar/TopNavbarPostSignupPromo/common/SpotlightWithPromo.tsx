@@ -1,6 +1,6 @@
 import { type ReactNode, useRef } from 'react';
 
-import { ButtonLike } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
 import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import type { IconName } from '@proton/icons/types';

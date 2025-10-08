@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account';
 import { getKTUserContext } from '@proton/account/kt/actions';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Alert from '@proton/components/components/alert/Alert';
 import Collapsible from '@proton/components/components/collapsible/Collapsible';
 import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';

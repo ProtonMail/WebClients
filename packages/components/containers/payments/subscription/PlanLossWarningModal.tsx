@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Button, Href } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import type { PromptProps } from '@proton/components/components/prompt/Prompt';
 import { BRAND_NAME } from '@proton/shared/lib/constants';

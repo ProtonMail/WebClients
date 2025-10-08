@@ -5,7 +5,8 @@ import { c } from 'ttag';
 
 import { useMembers } from '@proton/account/members/hooks';
 import { organizationActions } from '@proton/account/organization';
-import { Banner, Button } from '@proton/atoms';
+import { Banner } from '@proton/atoms/Banner/Banner';
+import { Button } from '@proton/atoms/Button/Button';
 import AddressesInput, { AddressesInputItem } from '@proton/components/components/addressesInput/AddressesInput';
 import Icon from '@proton/components/components/icon/Icon';
 import DateInput from '@proton/components/components/input/DateInput';

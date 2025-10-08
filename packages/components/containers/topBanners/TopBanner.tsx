@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Icon from '@proton/components/components/icon/Icon';
 import { isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
 import clsx from '@proton/utils/clsx';

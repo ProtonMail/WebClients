@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
 import { usePostSubscriptionTourTelemetry } from '@proton/components/hooks/mail/usePostSubscriptionTourTelemetry';
 import { TelemetryPostSubscriptionTourEvents } from '@proton/shared/lib/api/telemetry';

@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { userSettingsThunk } from '@proton/account';
-import { ButtonLike, Href } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Href } from '@proton/atoms/Href/Href';
 import AppLink from '@proton/components/components/link/AppLink';
 import { APPS, DOCS_APP_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { DRIVE_ANDROID_URL, DRIVE_DOWNLOAD_URL, DRIVE_IOS_URL } from '@proton/shared/lib/drive/constants';

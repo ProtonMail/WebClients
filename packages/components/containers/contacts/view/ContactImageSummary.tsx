@@ -3,8 +3,8 @@ import { useImperativeHandle } from 'react';
 
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms';
-import { Tooltip } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
 import { getInitials } from '@proton/shared/lib/helpers/string';

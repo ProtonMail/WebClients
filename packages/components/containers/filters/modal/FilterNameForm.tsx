@@ -2,7 +2,7 @@ import type { KeyboardEvent } from 'react';
 
 import { c } from 'ttag';
 
-import { Input } from '@proton/atoms';
+import { Input } from '@proton/atoms/Input/Input';
 import Field from '@proton/components/components/container/Field';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import clsx from '@proton/utils/clsx';

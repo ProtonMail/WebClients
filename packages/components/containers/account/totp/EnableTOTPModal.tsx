@@ -5,7 +5,8 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { userSettingsActions } from '@proton/account/userSettings';
-import { Button, InlineLinkButton } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import Copy from '@proton/components/components/button/Copy';
 import Form from '@proton/components/components/form/Form';
 import QRCode from '@proton/components/components/image/QRCode';

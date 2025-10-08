@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Card } from '@proton/atoms';
+import { Card } from '@proton/atoms/Card/Card';
 import Copy from '@proton/components/components/button/Copy';
 import Info from '@proton/components/components/link/Info';
 import useNotifications from '@proton/components/hooks/useNotifications';

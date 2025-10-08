@@ -1,4 +1,4 @@
-import { CircleLoader } from '@proton/atoms';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 
 const OfferLoader = () => (
     <div className="text-center">

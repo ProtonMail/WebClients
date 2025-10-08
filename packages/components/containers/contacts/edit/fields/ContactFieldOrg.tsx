@@ -1,8 +1,8 @@
 import type { ChangeEvent, Ref } from 'react';
 import { forwardRef } from 'react';
 
-import type { InputProps } from '@proton/atoms';
-import { Input } from '@proton/atoms';
+import type { InputProps } from '@proton/atoms/Input/Input';
+import { Input } from '@proton/atoms/Input/Input';
 import { getAllFieldLabels } from '@proton/shared/lib/helpers/contacts';
 import type { VCardOrg, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import isTruthy from '@proton/utils/isTruthy';

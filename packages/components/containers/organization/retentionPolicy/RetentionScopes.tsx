@@ -4,7 +4,7 @@ import type { SetStateAction } from 'react';
 import type { FormikErrors } from 'formik';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import RadioGroup from '@proton/components/components/input/RadioGroup';
 import type { RetentionRuleScopeType } from '@proton/shared/lib/interfaces/RetentionRule';
 

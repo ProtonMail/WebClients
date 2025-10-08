@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import { CYCLE, type Cycle, DEFAULT_CYCLE } from '@proton/payments';
 import { omit } from '@proton/shared/lib/helpers/object';

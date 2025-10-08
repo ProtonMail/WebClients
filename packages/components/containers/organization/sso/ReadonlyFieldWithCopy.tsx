@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { Input } from '@proton/atoms';
+import type { Input } from '@proton/atoms/Input/Input';
 import Copy from '@proton/components/components/button/Copy';
 import type { InputFieldProps } from '@proton/components/components/v2/field/InputField';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';

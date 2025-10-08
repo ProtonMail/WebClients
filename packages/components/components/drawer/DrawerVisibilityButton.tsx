@@ -2,8 +2,8 @@ import type { MutableRefObject } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Icon from '@proton/components/components/icon/Icon';
 import useApi from '@proton/components/hooks/useApi';
 import { updateHideDrawer } from '@proton/shared/lib/api/settings';

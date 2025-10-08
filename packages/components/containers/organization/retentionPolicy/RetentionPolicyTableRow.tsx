@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import Logo from '@proton/components/components/logo/Logo';
 import TableRow from '@proton/components/components/table/TableRow';

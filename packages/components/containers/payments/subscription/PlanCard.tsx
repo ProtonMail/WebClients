@@ -2,7 +2,7 @@ import type { ReactElement, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Icon from '@proton/components/components/icon/Icon';
 import Price, { type Props as PriceProps } from '@proton/components/components/price/Price';
 import { PLANS } from '@proton/payments';

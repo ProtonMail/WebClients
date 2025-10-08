@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { getUnixTime, parseISO } from 'date-fns';
 import { c } from 'ttag';
 
-import { Avatar } from '@proton/atoms';
+import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { SortingTableHeader } from '@proton/components/components/table/SortingTableHeader';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';

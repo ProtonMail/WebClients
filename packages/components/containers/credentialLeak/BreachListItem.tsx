@@ -1,4 +1,4 @@
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import type { FetchedBreaches } from '@proton/components/containers/credentialLeak/models';
 import clsx from '@proton/utils/clsx';
 

@@ -4,8 +4,8 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Href } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
 import Icon from '@proton/components/components/icon/Icon';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import useApi from '@proton/components/hooks/useApi';

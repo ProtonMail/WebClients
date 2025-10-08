@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Form from '@proton/components/components/form/Form';
 import type { BasicModalProps } from '@proton/components/components/modalTwo/BasicModal';
 import BasicModal from '@proton/components/components/modalTwo/BasicModal';

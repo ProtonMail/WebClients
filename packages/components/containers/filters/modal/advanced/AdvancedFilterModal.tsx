@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
 import Form from '@proton/components/components/form/Form';
 import useDebounceInput from '@proton/components/components/input/useDebounceInput';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';

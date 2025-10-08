@@ -4,7 +4,9 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { Button, ButtonLike, Href } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Href } from '@proton/atoms/Href/Href';
 import Form from '@proton/components/components/form/Form';
 import useDebounceInput from '@proton/components/components/input/useDebounceInput';
 import Loader from '@proton/components/components/loader/Loader';

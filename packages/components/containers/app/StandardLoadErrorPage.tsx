@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Icon from '@proton/components/components/icon/Icon';
 import useDocumentTitle from '@proton/components/hooks/useDocumentTitle';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';

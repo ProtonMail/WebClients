@@ -2,7 +2,9 @@ import type { PropsWithChildren } from 'react';
 
 import { c } from 'ttag';
 
-import { Banner, BannerVariants, Button } from '@proton/atoms';
+import { Banner } from '@proton/atoms/Banner/Banner';
+import { BannerVariants } from '@proton/atoms/Banner/Banner';
+import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import useConfig from '@proton/components/hooks/useConfig';

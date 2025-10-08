@@ -1,6 +1,6 @@
 import { type SyntheticEvent, useCallback, useRef } from 'react';
 
-import { CircleLoader } from '@proton/atoms';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 
 import { useVideoAutoPlay } from '../../hooks/useVideoAutoPlay';
 

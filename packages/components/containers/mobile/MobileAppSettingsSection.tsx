@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
 import QRCode from '@proton/components/components/image/QRCode';
 import Logo from '@proton/components/components/logo/Logo';
 import { CALENDAR_MOBILE_APP_LINKS } from '@proton/shared/lib/calendar/constants';

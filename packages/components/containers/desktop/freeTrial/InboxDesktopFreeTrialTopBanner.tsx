@@ -1,7 +1,7 @@
 import { differenceInDays, format, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import {
     FIRST_REMINDER_DAYS,
     SECOND_REMINDER_DAYS,

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { userSettingsThunk } from '@proton/account';
-import { Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
 import { appendUrlSearchParams } from '@proton/shared/lib/helpers/url';
 import { isMailMobileAppUser } from '@proton/shared/lib/helpers/usedClientsFlags';
 import { MAIL_MOBILE_APP_LINKS } from '@proton/shared/lib/mail/constants';

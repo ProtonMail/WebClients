@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
-import { ButtonLike, Href } from '@proton/atoms';
-import { Tooltip } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Href } from '@proton/atoms/Href/Href';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Alert from '@proton/components/components/alert/Alert';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import Icon from '@proton/components/components/icon/Icon';

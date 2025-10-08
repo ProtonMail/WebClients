@@ -4,7 +4,7 @@ import { arrayMove } from 'react-sortable-hoc';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import useDebounceInput from '@proton/components/components/input/useDebounceInput';
 import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';

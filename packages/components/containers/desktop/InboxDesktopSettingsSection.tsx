@@ -3,7 +3,9 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, ButtonLike, Pill } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Pill } from '@proton/atoms/Pill/Pill';
 import Icon from '@proton/components/components/icon/Icon';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
