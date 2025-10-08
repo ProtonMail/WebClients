@@ -1,14 +1,12 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Alert from '@proton/components/components/alert/Alert';
 import type { DropdownActionProps } from '@proton/components/components/dropdown/DropdownActions';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
-import ConfirmModal from '@proton/components/components/modal/Confirm';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import useModals from '@proton/components/hooks/useModals';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import useLoading from '@proton/hooks/useLoading';
 import {
     type CardModel,
     PAYMENT_METHOD_TYPES,
@@ -19,6 +17,10 @@ import {
     markPaymentMethodAsDefault,
 } from '@proton/payments';
 import { EditCardModal } from '@proton/payments/ui';
+import noop from '@proton/utils/noop';
+
+import useModalState, { useModalStateWithData } from '../../../components/modalTwo/useModalState';
+import Prompt from '../../../components/prompt/Prompt';
 
 const toCardModel = ({ Details }: PaymentMethodCardDetails): CardModel => {
     return {
@@ -38,7 +40,12 @@ export interface Props {
 
 const PaymentMethodActions = ({ method, methods }: Props) => {
     const { createNotification } = useNotifications();
-    const { createModal } = useModals();
+    const [loadingDelete, withLoadingDelete] = useLoading();
+    const [confirmDeleteProps, setConfirmDeleteModal, renderConfirmDeleteModal] = useModalState();
+    const [{ data: editModalPropsData, ...editModalProps }, setEditModal, renderEditModal] = useModalStateWithData<{
+        card: CardModel;
+        method: PaymentMethodCardDetails;
+    }>();
     const api = useApi();
     const { call } = useEventManager();
 
@@ -61,8 +68,7 @@ const PaymentMethodActions = ({ method, methods }: Props) => {
 
         dropdownActions.push({
             text: c('Action').t`Edit`,
-            onClick: () =>
-                createModal(<EditCardModal card={card} renewState={method.Autopay} paymentMethod={method} />),
+            onClick: () => setEditModal({ card, method }),
             'data-testid': 'Edit',
         });
     }
@@ -79,23 +85,52 @@ const PaymentMethodActions = ({ method, methods }: Props) => {
         actionType: 'delete',
         'data-testid': 'Delete',
         onClick: () => {
-            createModal(
-                <ConfirmModal
-                    onConfirm={deleteMethod}
-                    title={c('Confirmation title').t`Delete payment method`}
-                    confirm={<Button color="danger" type="submit">{c('Action').t`Delete`}</Button>}
-                >
-                    <Alert className="mb-4" data-testid="valid-payment-alert">{c('Info when deleting payment method')
-                        .t`To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.`}</Alert>
-                    <Alert className="mb-4" type="error" data-testid="confirmation-alert">{c(
-                        'Confirmation message to delete payment method'
-                    ).t`Are you sure you want to delete this payment method?`}</Alert>
-                </ConfirmModal>
-            );
+            setConfirmDeleteModal(true);
         },
     });
 
-    return <DropdownActions size="small" list={dropdownActions} />;
+    return (
+        <>
+            {renderEditModal && editModalPropsData && (
+                <EditCardModal
+                    {...editModalProps}
+                    card={editModalPropsData.card}
+                    renewState={editModalPropsData.method.Autopay}
+                    paymentMethod={editModalPropsData.method}
+                />
+            )}
+            {renderConfirmDeleteModal && (
+                <Prompt
+                    {...confirmDeleteProps}
+                    title={c('Confirmation title').t`Delete payment method`}
+                    buttons={[
+                        <Button
+                            data-testid="confirm-deletion"
+                            loading={loadingDelete}
+                            color="danger"
+                            onClick={() => {
+                                withLoadingDelete(deleteMethod())
+                                    .then(() => {
+                                        confirmDeleteProps.onClose();
+                                    })
+                                    .catch(noop);
+                            }}
+                        >{c('Action').t`Delete`}</Button>,
+                        <Button onClick={confirmDeleteProps.onClose}>{c('Action').t`Cancel`}</Button>,
+                    ]}
+                >
+                    <p className="mb-4" data-testid="valid-payment-alert">
+                        {c('Info when deleting payment method')
+                            .t`To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.`}
+                    </p>
+                    <p className="mb-4" data-testid="confirmation-alert">{c(
+                        'Confirmation message to delete payment method'
+                    ).t`Are you sure you want to delete this payment method?`}</p>
+                </Prompt>
+            )}
+            <DropdownActions size="small" list={dropdownActions} />
+        </>
+    );
 };
 
 export default PaymentMethodActions;
