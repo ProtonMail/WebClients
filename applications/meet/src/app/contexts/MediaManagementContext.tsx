@@ -1,5 +1,7 @@
 import { createContext, useContext } from 'react';
 
+import debounce from '@proton/utils/debounce';
+
 import type { SwitchActiveDevice } from '../types';
 
 export interface MediaManagementContextType {
@@ -36,7 +38,7 @@ export interface MediaManagementContextType {
         audioDeviceId?: string | null;
     }) => Promise<void>;
     backgroundBlur: boolean;
-    toggleBackgroundBlur: () => Promise<void>;
+    toggleBackgroundBlur: ReturnType<typeof debounce>;
     noiseFilter: boolean;
     toggleNoiseFilter: () => Promise<void>;
     handleRotateCamera: () => void;
@@ -68,7 +70,7 @@ const defaultValues: MediaManagementContextType = {
     toggleVideo: () => Promise.resolve(),
     toggleAudio: () => Promise.resolve(),
     backgroundBlur: false,
-    toggleBackgroundBlur: () => Promise.resolve(),
+    toggleBackgroundBlur: debounce(() => Promise.resolve(), 500),
     noiseFilter: false,
     toggleNoiseFilter: () => Promise.resolve(),
     handleRotateCamera: () => {},
