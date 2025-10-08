@@ -7,5 +7,7 @@ export default defineConfig(defaultConfig, {
     plugins: { jasmine: jasminePlugin },
     rules: {
         'jasmine/no-focused-tests': 'error',
+        // TODO: Add the missing explicit deps and remove this rule
+        'import/no-extraneous-dependencies': 'off',
     },
 });

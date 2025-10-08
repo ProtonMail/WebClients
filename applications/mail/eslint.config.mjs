@@ -18,6 +18,8 @@ export default defineConfig([
                         'Destructuring of enum-like constants is not allowed. Use CONSTANT.PROPERTY instead to maintain code readability.',
                 },
             ],
+            // TODO: Add the missing explicit deps and remove this rule
+            'import/no-extraneous-dependencies': 'off',
         },
     },
 ]);

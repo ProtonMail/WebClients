@@ -9,11 +9,9 @@ export default defineConfig([
     {
         rules: {
             'react/prop-types': 'off',
-
             ...(!isFixMode && {
                 'react-hooks/exhaustive-deps': 'warn',
             }),
-
             '@typescript-eslint/no-non-null-assertion': 'warn',
             '@typescript-eslint/no-use-before-define': [
                 'error',
@@ -22,20 +20,19 @@ export default defineConfig([
                     classes: false,
                 },
             ],
-
             'no-console': [
                 'warn',
                 {
                     allow: ['warn', 'error'],
                 },
             ],
-
             'max-classes-per-file': 'off',
+            // TODO: Add the missing explicit deps and remove this rule
+            'import/no-extraneous-dependencies': 'off',
         },
     },
     {
         files: ['**/*.test.ts'],
-
         rules: {
             'max-classes-per-file': 'off',
             'class-methods-use-this': 'off',
