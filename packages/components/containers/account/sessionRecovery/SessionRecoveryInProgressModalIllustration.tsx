@@ -1,7 +1,7 @@
 const SessionRecoveryInProgressModalIllustration = ({ hoursRemaining }: { hoursRemaining: number }) => {
     return (
         <svg width="276" height="156" viewBox="0 0 276 156" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#clip0_33_17820)">
+            <g clipPath="url(#clip0_33_17820)">
                 <path
                     d="M216 135H60V42.8255C60 37.9715 63.8331 34 68.5179 34H207.482C212.167 34 216 37.9715 216 42.8255V135Z"
                     fill="#372580"
@@ -22,7 +22,7 @@ const SessionRecoveryInProgressModalIllustration = ({ hoursRemaining }: { hoursR
                     d="M79.7 86C79.7 81.9683 82.9683 78.7 87 78.7H189C193.032 78.7 196.3 81.9683 196.3 86V96C196.3 100.032 193.032 103.3 189 103.3H87C82.9683 103.3 79.7 100.032 79.7 96V86Z"
                     fill="white"
                     stroke="#F0ECE6"
-                    stroke-width="1.4"
+                    strokeWidth="1.4"
                 />
                 <path
                     d="M94.476 90.6552H92.262L93.8256 89.0869C93.9094 88.9865 93.9526 88.8583 93.9467 88.7277C93.9408 88.597 93.8862 88.4733 93.7937 88.3808C93.7013 88.2884 93.5775 88.2338 93.4469 88.2279C93.3162 88.222 93.1881 88.2652 93.0876 88.3489L91.5194 89.9172V87.7032C91.5194 87.5642 91.4642 87.4309 91.3659 87.3327C91.2676 87.2344 91.1344 87.1792 90.9954 87.1792C90.8564 87.1792 90.7231 87.2344 90.6249 87.3327C90.5266 87.4309 90.4714 87.5642 90.4714 87.7032V89.9172L88.9077 88.3489C88.8616 88.2915 88.8038 88.2445 88.7382 88.2108C88.6726 88.1772 88.6007 88.1578 88.5271 88.1538C88.4535 88.1498 88.3799 88.1614 88.311 88.1877C88.2422 88.2141 88.1797 88.2547 88.1276 88.3068C88.0755 88.3589 88.0349 88.4214 88.0085 88.4902C87.9822 88.559 87.9706 88.6327 87.9746 88.7063C87.9786 88.7799 87.998 88.8518 88.0316 88.9174C88.0653 88.983 88.1123 89.0407 88.1697 89.0869L89.738 90.6552H87.524C87.385 90.6552 87.2517 90.7104 87.1535 90.8087C87.0552 90.9069 87 91.0402 87 91.1792C87 91.3182 87.0552 91.4514 87.1535 91.5497C87.2517 91.648 87.385 91.7032 87.524 91.7032H89.738L88.1697 93.2715C88.1138 93.3181 88.0683 93.3758 88.0359 93.441C88.0036 93.5063 87.9852 93.5775 87.9819 93.6502C87.9786 93.7229 87.9905 93.7955 88.0168 93.8634C88.0432 93.9313 88.0833 93.9929 88.1348 94.0444C88.1863 94.0958 88.2479 94.136 88.3158 94.1624C88.3837 94.1887 88.4563 94.2006 88.529 94.1973C88.6017 94.194 88.6729 94.1756 88.7382 94.1433C88.8034 94.1109 88.8611 94.0654 88.9077 94.0095L90.4714 92.4412V94.6552C90.4714 94.7942 90.5266 94.9275 90.6249 95.0257C90.7231 95.124 90.8564 95.1792 90.9954 95.1792C91.1344 95.1792 91.2676 95.124 91.3659 95.0257C91.4642 94.9275 91.5194 94.7942 91.5194 94.6552V92.4412L93.0876 94.0095C93.1343 94.0654 93.192 94.1109 93.2572 94.1433C93.3224 94.1756 93.3937 94.194 93.4664 94.1973C93.5391 94.2006 93.6117 94.1887 93.6796 94.1624C93.7475 94.136 93.8091 94.0958 93.8606 94.0444C93.912 93.9929 93.9522 93.9313 93.9786 93.8634C94.0049 93.7955 94.0168 93.7229 94.0135 93.6502C94.0102 93.5775 93.9918 93.5063 93.9595 93.441C93.9271 93.3758 93.8816 93.3181 93.8256 93.2715L92.262 91.7032H94.476C94.615 91.7032 94.7483 91.648 94.8465 91.5497C94.9448 91.4514 95 91.3182 95 91.1792C95 91.0402 94.9448 90.9069 94.8465 90.8087C94.7483 90.7104 94.615 90.6552 94.476 90.6552Z"
@@ -57,8 +57,8 @@ const SessionRecoveryInProgressModalIllustration = ({ hoursRemaining }: { hoursR
                     fill="url(#paint0_linear_33_17820)"
                 />
                 <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M37.9455 63.2756V65.1182H39.8177C40.4581 65.1182 41 65.6142 41 66.252V75.8661C41 76.4803 40.4828 77 39.8177 77H27.1823C26.5419 77 26 76.5039 26 75.8661V66.252C26 65.6379 26.5172 65.1182 27.1823 65.1182H29.0293V63.2756C29.0293 60.9134 31.0244 59 33.4874 59C35.9505 59 37.9455 60.9134 37.9455 63.2756ZM36.0683 63.2756V65.1182H30.9558V63.2756C30.9558 61.5748 32.3101 60.824 33.512 60.824C34.714 60.824 36.0683 61.5748 36.0683 63.2756ZM33.5 68C34.3333 68 35 68.6696 35 69.5065C35 70.0804 34.6905 70.5826 34.2143 70.8217L34.8333 73.5H32.1667L32.7857 70.8217C32.3095 70.5587 32 70.0804 32 69.5065C32 68.6696 32.6667 68 33.5 68Z"
                     fill="white"
                 />
@@ -75,12 +75,12 @@ const SessionRecoveryInProgressModalIllustration = ({ hoursRemaining }: { hoursR
                 <path
                     d="M138.455 75V87.1129L133 93.5455"
                     stroke="white"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                 />
                 <rect x="142" y="96" width="26" height="21" rx="5.83333" fill="url(#paint3_linear_33_17820)" />
-                <text x="147" y="111" fontWeight={800} font-size="13" fill="white">
+                <text x="147" y="111" fontWeight={800} fontSize="13" fill="white">
                     {hoursRemaining}
                 </text>
             </g>
@@ -92,9 +92,9 @@ const SessionRecoveryInProgressModalIllustration = ({ hoursRemaining }: { hoursR
                     width="57.4"
                     height="55.4"
                     filterUnits="userSpaceOnUse"
-                    color-interpolation-filters="sRGB"
+                    colorInterpolationFilters="sRGB"
                 >
-                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
                     <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
                     <feGaussianBlur stdDeviation="4.85" result="effect1_foregroundBlur_33_17820" />
                 </filter>
@@ -105,9 +105,9 @@ const SessionRecoveryInProgressModalIllustration = ({ hoursRemaining }: { hoursR
                     width="40"
                     height="40.3333"
                     filterUnits="userSpaceOnUse"
-                    color-interpolation-filters="sRGB"
+                    colorInterpolationFilters="sRGB"
                 >
-                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
                     <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
                     <feColorMatrix
                         in="SourceAlpha"
@@ -129,8 +129,8 @@ const SessionRecoveryInProgressModalIllustration = ({ hoursRemaining }: { hoursR
                     y2="93.4808"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#FFD66C" />
-                    <stop offset="1" stop-color="#FF8E4F" />
+                    <stop stopColor="#FFD66C" />
+                    <stop offset="1" stopColor="#FF8E4F" />
                 </linearGradient>
                 <linearGradient
                     id="paint1_linear_33_17820"
@@ -140,9 +140,9 @@ const SessionRecoveryInProgressModalIllustration = ({ hoursRemaining }: { hoursR
                     y2="124.5"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.217324" stop-color="white" />
-                    <stop offset="0.621556" stop-color="#ECEAE6" />
-                    <stop offset="0.936658" stop-color="#BEBBB9" />
+                    <stop offset="0.217324" stopColor="white" />
+                    <stop offset="0.621556" stopColor="#ECEAE6" />
+                    <stop offset="0.936658" stopColor="#BEBBB9" />
                 </linearGradient>
                 <linearGradient
                     id="paint2_linear_33_17820"
@@ -152,7 +152,7 @@ const SessionRecoveryInProgressModalIllustration = ({ hoursRemaining }: { hoursR
                     y2="107"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#8F8F8F" />
+                    <stop stopColor="#8F8F8F" />
                     <stop offset="1" />
                 </linearGradient>
                 <linearGradient
@@ -163,8 +163,8 @@ const SessionRecoveryInProgressModalIllustration = ({ hoursRemaining }: { hoursR
                     y2="117.955"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#FFA693" />
-                    <stop offset="1" stop-color="#F43D5E" />
+                    <stop stopColor="#FFA693" />
+                    <stop offset="1" stopColor="#F43D5E" />
                 </linearGradient>
                 <clipPath id="clip0_33_17820">
                     <rect width="276" height="156" fill="white" />
