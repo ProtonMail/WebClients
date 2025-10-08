@@ -1,4 +1,5 @@
-import { fireEvent, render, waitFor } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import useApi from '@proton/components/hooks/useApi';
@@ -40,13 +41,6 @@ jest.mock('@proton/payments/ui', () => ({
     __esModule: true,
     EditCardModal: jest.fn().mockImplementation(() => <span>Edit Card Modal</span>),
 }));
-jest.mock('../../../components/modal/Confirm', () =>
-    jest.fn().mockImplementation(({ onConfirm }) => (
-        <button onClick={onConfirm} data-testid="confirm-deletion">
-            ConfirmModal
-        </button>
-    ))
-);
 
 beforeEach(() => {
     mockUseUser();
@@ -170,14 +164,12 @@ describe('PaymentMethodActions', () => {
                 },
                 Autopay: Autopay.ENABLE,
             };
-            const { createModal } = useModals();
-            (createModal as jest.Mock).mockReset();
 
-            const { findByTestId } = render(<PaymentMethodActions method={method} methods={[method]} />);
+            const { findByTestId, findByText } = render(<PaymentMethodActions method={method} methods={[method]} />);
 
-            fireEvent.click(await findByTestId('actionIndex-0'));
+            await userEvent.click(await findByTestId('actionIndex-0'));
 
-            expect(createModal).toHaveBeenCalled();
+            expect(await findByText('Edit Card Modal')).toBeInTheDocument();
         });
 
         it('should make an API call on Mark as Default', async () => {
@@ -226,7 +218,7 @@ describe('PaymentMethodActions', () => {
 
             const { findByTestId } = render(<PaymentMethodActions method={method1} methods={[method0, method1]} />);
 
-            fireEvent.click(await findByTestId('actionIndex-1'));
+            await userEvent.click(await findByTestId('actionIndex-1'));
 
             await waitFor(async () => {
                 expect(api).toHaveBeenCalledWith(orderPaymentMethods(['id-123', 'id-000'], 'v5')); // a request to change the order of the payment methods
@@ -269,12 +261,9 @@ describe('PaymentMethodActions', () => {
 
             const { findByTestId } = render(<PaymentMethodActions method={method} methods={[method]} />);
 
-            fireEvent.click(await findByTestId('actionIndex-1'));
+            await userEvent.click(await findByTestId('actionIndex-1'));
+            await userEvent.click(await findByTestId('confirm-deletion'));
 
-            expect(createModal).toHaveBeenCalled();
-
-            const onDelete = (createModal as jest.Mock).mock.lastCall[0].props.onConfirm;
-            await onDelete();
             await waitFor(async () => {
                 expect(api).toHaveBeenCalledWith(deletePaymentMethod('id-123', 'v5'));
             });
