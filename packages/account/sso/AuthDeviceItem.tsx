@@ -1,6 +1,8 @@
 import type { ReactNode } from 'react';
 
-import { Icon, type IconName, Time } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
+import type { IconName } from '@proton/components/components/icon/Icon';
+import Time from '@proton/components/components/time/Time';
 import type { AuthDeviceOutput } from '@proton/shared/lib/keys/device';
 import clsx from '@proton/utils/clsx';
 

@@ -1,7 +1,12 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ButtonGroup, Icon, Table, TableBody, TableHeader, TableRow } from '@proton/components';
+import ButtonGroup from '@proton/components/components/button/ButtonGroup';
+import Icon from '@proton/components/components/icon/Icon';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableRow from '@proton/components/components/table/TableRow';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 
 import AuthDeviceItem from './AuthDeviceItem';
