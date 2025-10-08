@@ -3,7 +3,7 @@ import { type FC, type PropsWithChildren, useEffect } from 'react';
 import type { FormikContextType } from 'formik';
 import { c } from 'ttag';
 
-import { Option } from '@proton/components';
+import Option from '@proton/components/components/option/Option';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';

@@ -2,7 +2,8 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Icon, useModalState } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { AliasContactsProvider } from '@proton/pass/components/Item/Alias/Contact/AliasContactsProvider';

@@ -2,8 +2,9 @@
 import type { KeyboardEventHandler } from 'react';
 import { memo, useRef, useState } from 'react';
 
-import { ButtonLike, CircleLoader } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import Icon from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
 
 import type { ListFieldValue } from './ListField';

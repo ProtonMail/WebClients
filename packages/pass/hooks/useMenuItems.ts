@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import { c } from 'ttag';
 
-import type { IconName } from '@proton/components';
+import type { IconName } from '@proton/components/components/icon/Icon';
 import { syncIntent } from '@proton/pass//store/actions';
 import { usePasswordHistoryActions } from '@proton/pass/components/Password/PasswordHistoryActions';
 import { PASS_ANDROID_URL, PASS_IOS_URL } from '@proton/pass/constants';

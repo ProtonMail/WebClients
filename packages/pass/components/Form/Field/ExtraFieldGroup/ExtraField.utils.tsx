@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { IconName } from '@proton/components';
+import type { IconName } from '@proton/components/components/icon/Icon';
 import type { DeobfuscatedItemExtraField, ExtraFieldType } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 

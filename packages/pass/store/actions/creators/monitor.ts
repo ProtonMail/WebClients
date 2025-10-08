@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { FetchedBreaches } from '@proton/components';
+import type { FetchedBreaches } from '@proton/components/containers/credentialLeak/models';
 import { isMonitored } from '@proton/pass/lib/items/item.predicates';
 import { getAddressId } from '@proton/pass/lib/monitor/monitor.utils';
 import type {
@@ -74,9 +74,7 @@ export const getBreaches = requestActionsFactory<void, BreachesGetResponse>('mon
     success: { config: { maxAge: UNIX_MINUTE } },
 });
 
-export const getProtonBreach = requestActionsFactory<ProtonAddressID, FetchedBreaches[]>(
-    'monitor::breaches::proton::get'
-)({
+export const getProtonBreach = requestActionsFactory<ProtonAddressID, FetchedBreaches[]>('monitor::breaches::proton::get')({
     key: identity,
     failure: {
         prepare: (error) =>
@@ -88,9 +86,7 @@ export const getProtonBreach = requestActionsFactory<ProtonAddressID, FetchedBre
     },
 });
 
-export const getCustomBreach = requestActionsFactory<CustomAddressID, FetchedBreaches[]>(
-    'monitor::breaches::custom::get'
-)({
+export const getCustomBreach = requestActionsFactory<CustomAddressID, FetchedBreaches[]>('monitor::breaches::custom::get')({
     key: identity,
     failure: {
         prepare: (error) =>
@@ -114,9 +110,7 @@ export const getAliasBreach = requestActionsFactory<SelectedItem, FetchedBreache
     },
 });
 
-export const addCustomAddress = requestActionsFactory<string, BreachCustomEmailGetResponse>(
-    'monitor::breaches::custom::add'
-)({
+export const addCustomAddress = requestActionsFactory<string, BreachCustomEmailGetResponse>('monitor::breaches::custom::add')({
     key: identity,
     failure: {
         prepare: (error) =>
@@ -128,9 +122,7 @@ export const addCustomAddress = requestActionsFactory<string, BreachCustomEmailG
     },
 });
 
-export const deleteCustomAddress = requestActionsFactory<CustomAddressID, CustomAddressID>(
-    'monitor::breaches::custom::delete'
-)({
+export const deleteCustomAddress = requestActionsFactory<CustomAddressID, CustomAddressID>('monitor::breaches::custom::delete')({
     key: identity,
     success: {
         prepare: (addressId) =>
@@ -163,9 +155,7 @@ export const verifyCustomAddress = requestActionsFactory<MonitorVerifyDTO, Monit
     },
 });
 
-export const toggleAddressMonitor = requestActionsFactory<MonitorToggleDTO, MonitorAddress>(
-    'monitor::breaches::address::toggle'
-)({
+export const toggleAddressMonitor = requestActionsFactory<MonitorToggleDTO, MonitorAddress>('monitor::breaches::address::toggle')({
     key: getAddressId,
     success: {
         prepare: (payload) =>
@@ -186,9 +176,7 @@ export const toggleAddressMonitor = requestActionsFactory<MonitorToggleDTO, Moni
     },
 });
 
-export const resolveAddressMonitor = requestActionsFactory<AddressBreachDTO, AddressBreachDTO>(
-    'monitor::breaches::address::resolve'
-)({
+export const resolveAddressMonitor = requestActionsFactory<AddressBreachDTO, AddressBreachDTO>('monitor::breaches::address::resolve')({
     key: getAddressId,
     success: {
         prepare: (payload) =>
@@ -207,10 +195,9 @@ export const resolveAddressMonitor = requestActionsFactory<AddressBreachDTO, Add
     },
 });
 
-export const setItemFlags = requestActionsFactory<
-    SelectedItem & { SkipHealthCheck: boolean },
-    SelectedItem & { item: ItemRevision }
->('monitor::toggle::item')({
+export const setItemFlags = requestActionsFactory<SelectedItem & { SkipHealthCheck: boolean }, SelectedItem & { item: ItemRevision }>(
+    'monitor::toggle::item'
+)({
     key: selectedItemKey,
     success: {
         prepare: ({ shareId, itemId, item }) =>
@@ -231,9 +218,7 @@ export const setItemFlags = requestActionsFactory<
     },
 });
 
-export const resendVerificationCode = requestActionsFactory<CustomAddressID, boolean>(
-    'monitor::breaches::custom::resend::verification'
-)({
+export const resendVerificationCode = requestActionsFactory<CustomAddressID, boolean>('monitor::breaches::custom::resend::verification')({
     key: identity,
     failure: {
         prepare: (error) =>

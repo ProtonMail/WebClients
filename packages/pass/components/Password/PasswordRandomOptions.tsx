@@ -2,7 +2,8 @@ import type { FC } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Slider, SliderSizeEnum } from '@proton/atoms';
+import { Slider } from '@proton/atoms/Slider/Slider';
+import { SliderSizeEnum } from '@proton/atoms/Slider/Slider';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { OrganizationPolicyTooltip } from '@proton/pass/components/Organization/OrganizationPolicyTooltip';
 import type { PasswordGeneratorResult } from '@proton/pass/hooks/usePasswordGenerator';

@@ -2,7 +2,7 @@ import { type FC, useEffect } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Alert } from '@proton/components';
+import Alert from '@proton/components/components/alert/Alert';
 import { useBulkSelectionAliasCount } from '@proton/pass/components/Bulk/BulkSelectionState';
 import {
     ConfirmationPrompt,

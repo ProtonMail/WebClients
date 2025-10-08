@@ -4,7 +4,8 @@ import { useSelector } from 'react-redux';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
-import { Icon, Option } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
+import Option from '@proton/components/components/option/Option';
 import { FeatureFlag } from '@proton/pass/components/Core/WithFeatureFlag';
 import { FileAttachmentsFieldEdit } from '@proton/pass/components/FileAttachments/FileAttachmentsFieldEdit';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';

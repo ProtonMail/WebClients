@@ -3,8 +3,12 @@ import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Card } from '@proton/atoms';
-import { Table, TableBody, TableHeader, TableHeaderCell, TableRow } from '@proton/components';
+import { Card } from '@proton/atoms/Card/Card';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
+import TableRow from '@proton/components/components/table/TableRow';
 import { TableRowLoading } from '@proton/pass/components/Layout/Table/TableRowLoading';
 import type { MonitorTableRow } from '@proton/pass/hooks/monitor/useBreachesTable';
 

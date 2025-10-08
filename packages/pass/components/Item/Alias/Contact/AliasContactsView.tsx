@@ -3,8 +3,9 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Icon, type ModalStateProps } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import Icon from '@proton/components/components/icon/Icon';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import stamp from '@proton/pass/assets/alias/alias-contact-stamp.svg';
 import { AliasContactCard } from '@proton/pass/components/Item/Alias/Contact/AliasContactCard';
 import { AliasContactCreate } from '@proton/pass/components/Item/Alias/Contact/AliasContactCreate';

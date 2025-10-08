@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import type { IconName } from '@proton/components';
+import type { IconName } from '@proton/components/components/icon/Icon';
 import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
 import type { UpsellRef } from '@proton/pass/constants';
 

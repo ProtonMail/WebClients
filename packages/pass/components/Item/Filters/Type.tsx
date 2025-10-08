@@ -2,8 +2,12 @@ import { memo, useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import type { DropdownProps } from '@proton/components';
-import { Dropdown, DropdownButton, DropdownMenu, Icon, usePopperAnchor } from '@proton/components';
+import type { DropdownProps } from '@proton/components/components/dropdown/Dropdown';
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import Icon from '@proton/components/components/icon/Icon';
+import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { CountLabel } from '@proton/pass/components/Layout/Dropdown/CountLabel';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { useItemFilters } from '@proton/pass/hooks/items/useItemFilters';

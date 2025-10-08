@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { MiddleEllipsis } from '@proton/components';
+import MiddleEllipsis from '@proton/components/components/ellipsis/MiddleEllipsis';
 import clsx from '@proton/utils/clsx';
 
 export const AliasPreview: FC<{

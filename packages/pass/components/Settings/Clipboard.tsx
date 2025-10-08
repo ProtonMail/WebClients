@@ -2,7 +2,8 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Banner, InlineLinkButton } from '@proton/atoms';
+import { Banner } from '@proton/atoms/Banner/Banner';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import Icon from '@proton/components/components/icon/Icon';
 import { ClipboardSettings } from '@proton/pass/components/Settings/Clipboard/ClipboardSettings';
 

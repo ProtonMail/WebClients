@@ -2,8 +2,9 @@ import type { FC, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Icon, type ModalStateProps } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import Icon from '@proton/components/components/icon/Icon';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import createContactImg from '@proton/pass/assets/alias/alias-contact-create.svg';
 import fromToImg from '@proton/pass/assets/alias/alias-contact-from-to.png';
 import stampedLetter from '@proton/pass/assets/alias/alias-contact-stamped-letter.svg';

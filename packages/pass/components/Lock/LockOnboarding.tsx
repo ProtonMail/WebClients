@@ -2,8 +2,8 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import Icon from '@proton/components/components/icon/Icon';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { LobbyLayout } from '@proton/pass/components/Layout/Lobby/LobbyLayout';
 import { LockSetup } from '@proton/pass/components/Settings/LockSetup';

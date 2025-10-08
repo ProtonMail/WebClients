@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/components';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useInsecurePasswords, useMissing2FAs } from '@proton/pass/hooks/monitor/useAsyncMonitorState';
 import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { useRequest } from '@proton/pass/hooks/useRequest';

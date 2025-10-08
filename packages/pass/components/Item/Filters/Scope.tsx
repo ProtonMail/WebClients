@@ -1,7 +1,8 @@
 import { memo } from 'react';
 
-import type { IconName } from '@proton/components';
-import { DropdownButton, Icon } from '@proton/components';
+import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
+import type { IconName } from '@proton/components/components/icon/Icon';
+import Icon from '@proton/components/components/icon/Icon';
 
 type Props = {
     icon: IconName;
