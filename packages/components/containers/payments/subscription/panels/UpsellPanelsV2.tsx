@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { ButtonLikeShape } from '@proton/atoms';
+import type { ButtonLikeShape } from '@proton/atoms/Button/ButtonLike';
 import type { ThemeColorUnion } from '@proton/colors/types';
 import Time from '@proton/components/components/time/Time';
 import { type FreeSubscription, PLANS, PLAN_NAMES, type Subscription, hasBundle } from '@proton/payments';

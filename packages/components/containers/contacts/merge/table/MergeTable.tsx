@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import OrderableTable from '@proton/components/components/orderableTable/OrderableTable';
 import TableCell from '@proton/components/components/table/TableCell';
 import type { ContactFormatted } from '@proton/shared/lib/interfaces/contacts';

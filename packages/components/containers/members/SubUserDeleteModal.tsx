@@ -3,7 +3,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Card } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Card } from '@proton/atoms/Card/Card';
 import Alert from '@proton/components/components/alert/Alert';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';

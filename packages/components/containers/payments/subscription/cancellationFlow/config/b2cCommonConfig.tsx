@@ -1,7 +1,7 @@
 import { differenceInDays, format, fromUnixTime } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import { Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
 import type { Subscription } from '@proton/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

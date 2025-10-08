@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Scroll } from '@proton/atoms';
+import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import Loader from '@proton/components/components/loader/Loader';
 import type { Group, GroupMember } from '@proton/shared/lib/interfaces';
 

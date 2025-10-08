@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Form from '@proton/components/components/form/Form';
 import Loader from '@proton/components/components/loader/Loader';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';

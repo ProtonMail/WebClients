@@ -2,7 +2,10 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, ButtonLike, Card, Href } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Card } from '@proton/atoms/Card/Card';
+import { Href } from '@proton/atoms/Href/Href';
 import Alert from '@proton/components/components/alert/Alert';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useModalState from '@proton/components/components/modalTwo/useModalState';

@@ -1,4 +1,4 @@
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Badge from '@proton/components/components/badge/Badge';
 import type { CalendarStatusBadge } from '@proton/shared/lib/calendar/badges';
 

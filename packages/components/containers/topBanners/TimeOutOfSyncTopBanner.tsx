@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
 import useApi from '@proton/components/hooks/useApi';
 import { ping } from '@proton/shared/lib/api/tests';
 import { HOUR, SECOND } from '@proton/shared/lib/constants';

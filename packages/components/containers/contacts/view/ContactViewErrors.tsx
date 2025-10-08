@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Button, Href } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
 import Icon from '@proton/components/components/icon/Icon';
 import { CRYPTO_PROCESSING_TYPES } from '@proton/shared/lib/contacts/constants';
 import type { CryptoProcessingError } from '@proton/shared/lib/contacts/decrypt';

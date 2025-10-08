@@ -4,7 +4,10 @@ import { Link, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { DashboardCard, DashboardCardContent, DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms';
+import { DashboardCard } from '@proton/atoms/DashboardCard/DashboardCard';
+import { DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
+import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
+import { DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import Icon from '@proton/components/components/icon/Icon';
 import ProtonBadge from '@proton/components/components/protonBadge/ProtonBadge';
 import SettingsSectionTitle from '@proton/components/containers/account/SettingsSectionTitle';

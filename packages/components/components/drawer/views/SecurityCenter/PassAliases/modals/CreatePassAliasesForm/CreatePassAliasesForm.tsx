@@ -2,8 +2,10 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import type { Input } from '@proton/atoms';
-import { Button, CircleLoader, Href } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { Href } from '@proton/atoms/Href/Href';
+import type { Input } from '@proton/atoms/Input/Input';
 import Form from '@proton/components/components/form/Form';
 import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';

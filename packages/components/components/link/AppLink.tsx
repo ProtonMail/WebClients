@@ -2,7 +2,7 @@ import type { AnchorHTMLAttributes, Ref } from 'react';
 import { forwardRef } from 'react';
 import { Link as ReactRouterLink } from 'react-router-dom';
 
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useConfig from '@proton/components/hooks/useConfig';
 import { getAppHref, getAppHrefBundle } from '@proton/shared/lib/apps/helper';

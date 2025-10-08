@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 
 interface FeatureTourStepCTAProps {
     type: 'primary' | 'secondary';

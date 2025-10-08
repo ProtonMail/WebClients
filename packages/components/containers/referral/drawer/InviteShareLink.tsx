@@ -4,7 +4,8 @@ import { c } from 'ttag';
 
 import { useReferrals } from '@proton/account/referrals/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { Button, ButtonLike } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import DrawerAppHeadline from '@proton/components/components/drawer/views/shared/DrawerAppHeadline';
 import DrawerAppSection from '@proton/components/components/drawer/views/shared/DrawerAppSection';
 import Icon from '@proton/components/components/icon/Icon';

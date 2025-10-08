@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Loader from '@proton/components/components/loader/Loader';
 import useApi from '@proton/components/hooks/useApi';
 import useLoading from '@proton/hooks/useLoading';

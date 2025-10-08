@@ -3,7 +3,8 @@ import type { ChangeEvent, Dispatch, FormEvent, SetStateAction } from 'react';
 import { c } from 'ttag';
 
 import { EASY_SWITCH_SEARCH_SOURCES } from '@proton/activation/src/interface';
-import { Button, Href } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
 import Alert from '@proton/components/components/alert/Alert';
 import AttachedFile from '@proton/components/components/attachedFile/AttachedFile';
 import Dropzone from '@proton/components/components/dropzone/Dropzone';

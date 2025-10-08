@@ -4,7 +4,7 @@ import { arrayMove } from 'react-sortable-hoc';
 
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
 import Loader from '@proton/components/components/loader/Loader';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';

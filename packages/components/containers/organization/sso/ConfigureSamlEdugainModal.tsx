@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { useGetSamlSSO } from '@proton/account/samlSSO/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Form from '@proton/components/components/form/Form';
 import Loader from '@proton/components/components/loader/Loader';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';

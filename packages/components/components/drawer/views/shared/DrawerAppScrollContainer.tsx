@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { Scroll } from '@proton/atoms';
+import { Scroll } from '@proton/atoms/Scroll/Scroll';
 
 interface Props {
     children: ReactNode;

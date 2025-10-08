@@ -5,7 +5,8 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { Button, Href } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
 import Tabs from '@proton/components/components/tabs/Tabs';

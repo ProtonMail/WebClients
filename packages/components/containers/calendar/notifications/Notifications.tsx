@@ -1,4 +1,6 @@
-import { Button, ButtonLike, Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Icon from '@proton/components/components/icon/Icon';
 import getNotificationsTexts from '@proton/components/containers/calendar/notifications/getNotificationsTexts';
 import NotificationInput from '@proton/components/containers/calendar/notifications/inputs/NotificationInput';

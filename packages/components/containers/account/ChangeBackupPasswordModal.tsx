@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { usePasswordPolicies } from '@proton/account/passwordPolicies/hooks';
 import { changeSSOUserBackupPassword } from '@proton/account/sso/passwordActions';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Form from '@proton/components/components/form/Form';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';

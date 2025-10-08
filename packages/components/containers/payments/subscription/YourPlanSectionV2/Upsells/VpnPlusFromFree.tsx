@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
-import { Button, DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
+import { DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import Info from '@proton/components/components/link/Info';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';

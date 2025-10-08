@@ -3,7 +3,8 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { Button, CircleLoader } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import Form from '@proton/components/components/form/Form';
 import Icon from '@proton/components/components/icon/Icon';

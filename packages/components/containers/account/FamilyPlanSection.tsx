@@ -4,7 +4,7 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { useMember } from '@proton/account/member/hook';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';

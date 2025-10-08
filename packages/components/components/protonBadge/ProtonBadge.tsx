@@ -1,4 +1,4 @@
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import clsx from '@proton/utils/clsx';
 
 import './ProtonBadge.scss';

@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Tabs from '@proton/components/components/tabs/Tabs';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { isMac, isWindows } from '@proton/shared/lib/helpers/browser';

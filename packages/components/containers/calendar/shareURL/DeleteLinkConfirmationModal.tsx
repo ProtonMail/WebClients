@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Prompt from '@proton/components/components/prompt/Prompt';
 
 interface DeleteLinkConfirmationModalProps {

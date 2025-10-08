@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { useWelcomeFlags } from '@proton/account';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 
 export const DrawerReplayOnboarding = () => {
     const { startReplay } = useWelcomeFlags();

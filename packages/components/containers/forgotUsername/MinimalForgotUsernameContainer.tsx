@@ -3,7 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Alert from '@proton/components/components/alert/Alert';
 import EmailInput from '@proton/components/components/input/EmailInput';
 import useApi from '@proton/components/hooks/useApi';

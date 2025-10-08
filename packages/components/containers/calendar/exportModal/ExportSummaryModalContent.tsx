@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
 import Alert from '@proton/components/components/alert/Alert';
 import Bordered from '@proton/components/components/container/Bordered';
 import Details from '@proton/components/components/container/Details';

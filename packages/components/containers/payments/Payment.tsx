@@ -2,7 +2,8 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { Banner, BannerVariants } from '@proton/atoms';
+import { Banner } from '@proton/atoms/Banner/Banner';
+import { BannerVariants } from '@proton/atoms/Banner/Banner';
 import Alert from '@proton/components/components/alert/Alert';
 import Loader from '@proton/components/components/loader/Loader';
 import Price from '@proton/components/components/price/Price';

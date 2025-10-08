@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { PLANS, type Subscription } from '@proton/payments';
 import { getPlan } from '@proton/payments';

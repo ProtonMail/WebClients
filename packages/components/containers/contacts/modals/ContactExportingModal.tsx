@@ -4,7 +4,7 @@ import { format } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Alert from '@proton/components/components/alert/Alert';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';

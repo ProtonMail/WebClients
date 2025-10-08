@@ -1,4 +1,4 @@
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Icon from '@proton/components/components/icon/Icon';
 import type { IconName } from '@proton/icons/types';
 import { splitExtension } from '@proton/shared/lib/helpers/file';

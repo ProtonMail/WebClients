@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { Button, ButtonLike } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import Icon from '@proton/components/components/icon/Icon';
 import { FeatureCode, useFeature } from '@proton/features';
 import { getIsB2BAudienceFromPlan } from '@proton/payments';

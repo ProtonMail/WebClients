@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import { useGetScheduleCall } from '@proton/account/scheduleCall/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { Button, Href } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import useLoading from '@proton/hooks/useLoading';
 import { openCalendlyLink } from '@proton/shared/lib/helpers/support';

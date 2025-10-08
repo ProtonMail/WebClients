@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
-import { DashboardGrid, DashboardGridSection, DashboardGridSectionHeader } from '@proton/atoms';
+import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
+import { DashboardGridSection } from '@proton/atoms/DashboardGrid/DashboardGrid';
+import { DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 
 import changeIpAddress from './illustrations/change-ip-address.jpg';

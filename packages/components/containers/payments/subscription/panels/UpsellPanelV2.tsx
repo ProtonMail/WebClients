@@ -3,7 +3,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, InlineLinkButton } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import Icon from '@proton/components/components/icon/Icon';
 import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';

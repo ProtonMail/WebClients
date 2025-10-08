@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';

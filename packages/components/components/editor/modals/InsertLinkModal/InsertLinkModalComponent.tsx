@@ -3,7 +3,9 @@ import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Href, Input } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
+import { Input } from '@proton/atoms/Input/Input';
 import Field from '@proton/components/components/container/Field';
 import Row from '@proton/components/components/container/Row';
 import Form from '@proton/components/components/form/Form';

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { useGetOrganization } from '@proton/account/organization/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';

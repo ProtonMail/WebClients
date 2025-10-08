@@ -1,8 +1,9 @@
 import type { ElementType, ForwardedRef } from 'react';
 import { forwardRef, useContext } from 'react';
 
-import type { ButtonLikeOwnProps, ButtonLikeProps } from '@proton/atoms';
-import { ButtonLike } from '@proton/atoms';
+import type { ButtonLikeOwnProps } from '@proton/atoms/Button/ButtonLike';
+import type { ButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import Icon from '@proton/components/components/icon/Icon';
 import NotificationContext from '@proton/components/containers/notifications/notificationContext';
 import type { PolymorphicForwardRefExoticComponent, PolymorphicPropsWithoutRef } from '@proton/react-polymorphic-types';

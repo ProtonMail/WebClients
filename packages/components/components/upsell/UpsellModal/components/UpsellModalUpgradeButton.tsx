@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 
-import { Button, ButtonLike } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 
 interface Props {

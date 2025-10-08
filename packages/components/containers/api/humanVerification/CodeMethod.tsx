@@ -3,7 +3,9 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Card, Href } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Card } from '@proton/atoms/Card/Card';
+import { Href } from '@proton/atoms/Href/Href';
 import Icon from '@proton/components/components/icon/Icon';
 import { useLoading } from '@proton/hooks';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
