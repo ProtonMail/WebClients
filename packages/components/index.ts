@@ -1,6 +1,3 @@
-import './typings/css.d';
-import './typings/index.d';
-
 export { default as ActionCard } from './components/actionCard/ActionCard';
 export { default as AddressesAutocomplete } from './components/addressesAutocomplete/AddressesAutocomplete';
 export * from './components/addressesAutocomplete/helper';
