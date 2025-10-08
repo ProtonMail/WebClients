@@ -1,4 +1,4 @@
-import { fireEvent, screen } from '@testing-library/react';
+import { act, fireEvent, screen } from '@testing-library/react';
 
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { EO_REPLY_NUM_ATTACHMENTS_LIMIT } from '@proton/shared/lib/mail/eo/constants';
@@ -33,7 +33,9 @@ describe('EO Reply attachments', () => {
 
         const inputAttachment = screen.getByTestId('composer-attachments-button') as HTMLInputElement;
         fireEvent.change(inputAttachment, { target: { files: [file] } });
-        await wait(100);
+        await act(async () => {
+            await wait(100);
+        });
 
         const toggleList = await screen.findByTestId('attachment-list:toggle');
         fireEvent.click(toggleList);
@@ -61,7 +63,9 @@ describe('EO Reply attachments', () => {
         fireEvent.change(inputAttachment, {
             target: { files: [file, file, file, file, file, file, file, file, file, file, file] },
         });
-        await wait(100);
+        await act(async () => {
+            await wait(100);
+        });
 
         await waitForNotification(`Maximum number of attachments (${EO_REPLY_NUM_ATTACHMENTS_LIMIT}) exceeded`);
     });
