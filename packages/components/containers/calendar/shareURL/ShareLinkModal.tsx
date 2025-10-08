@@ -50,7 +50,7 @@ const ShareLinkModal = ({ calendarID, calendarName, onSubmit, onClose, isOpen, .
 
     const [isLoading, setIsLoading] = useState(false);
     const [accessLevel, setAccessLevel] = useState<ACCESS_LEVEL>(defaultAccessLevel);
-    const [purpose, setPurpose] = useState('');
+    const [untrimmedPurpose, setUntrimmedPurpose] = useState('');
 
     const handleError = ({ message }: Error) => createNotification({ type: 'error', text: message });
 
@@ -61,6 +61,7 @@ const ShareLinkModal = ({ calendarID, calendarName, onSubmit, onClose, isOpen, .
             const { publicKey } = getPrimaryCalendarKey(calendarKeys);
             const { publicKeys } = splitKeys(calendarKeys);
 
+            const purpose = untrimmedPurpose.trim();
             const encryptedPurpose = purpose ? await generateEncryptedPurpose({ purpose, publicKey }) : null;
 
             const { payload, passphraseKey, cacheKey } = await getCreatePublicLinkPayload({
@@ -101,7 +102,7 @@ const ShareLinkModal = ({ calendarID, calendarName, onSubmit, onClose, isOpen, .
 
     useEffect(() => {
         if (!isOpen) {
-            setPurpose('');
+            setUntrimmedPurpose('');
             setAccessLevel(defaultAccessLevel);
         }
     }, [isOpen]);
@@ -138,8 +139,8 @@ const ShareLinkModal = ({ calendarID, calendarName, onSubmit, onClose, isOpen, .
                 <Option value={1} title={c('Access level').t`Full view (see all event details)`} />
             </InputFieldTwo>
             <InputFieldTwo
-                value={purpose}
-                onValue={setPurpose}
+                value={untrimmedPurpose}
+                onValue={setUntrimmedPurpose}
                 maxLength={MAX_CHARS_CLEARTEXT.PURPOSE}
                 label={c('Input label').t`Link label (optional)`}
                 assistiveText={c('Calendar link sharing label input assistive text').t`Only you can see the label`}
