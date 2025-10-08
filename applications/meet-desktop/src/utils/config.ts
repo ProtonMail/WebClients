@@ -61,7 +61,6 @@ export const getAppTransportSecuity = () => {
                 "proton.me": { ...transportSecuirityException },
                 "meet.proton.me": { ...transportSecuirityException },
                 "account.proton.me": { ...transportSecuirityException },
-                "calendar.proton.me": { ...transportSecuirityException },
             },
         },
         NSCameraUsageDescription: "Proton Meet needs access to your camera for video calls.",
