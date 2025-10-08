@@ -1,6 +1,6 @@
 //
-// SharedToolingContainer.swift
-// Proton Pass - Created on 21/05/2024.
+// GetEnvironment.swift
+// Proton Pass - Created on 20/05/2024.
 // Copyright (c) 2024 Proton Technologies AG
 //
 // This file is part of Proton Pass.
@@ -20,25 +20,30 @@
 //
 
 import Client
-import Factory
 import Foundation
-import SimpleKeychain
+import Models
 
-final class SharedToolingContainer: SharedContainer, AutoRegistering {
-    static let shared = SharedToolingContainer()
-    let manager = ContainerManager()
+public protocol GetEnvironmentUseCase: Sendable {
+    func execute() async throws -> PassEnvironment
+}
 
-    func autoRegister() {
-        manager.defaultScope = .singleton
+public extension GetEnvironmentUseCase {
+    func callAsFunction() async throws -> PassEnvironment {
+        try await execute()
     }
 }
 
-extension SharedToolingContainer {
-    var keychain: Factory<any KeychainProvider> {
-        self { SimpleKeychain(service: Constants.appGroup, accessGroup: Constants.keychainAccessGroup) }
+public final class GetEnvironment: Sendable, GetEnvironmentUseCase {
+    private let keychain: any KeychainProvider
+
+    public init(keychain: any KeychainProvider) {
+        self.keychain = keychain
     }
 
-    var appVersion: Factory<String> {
-        self { "macos-pass-safari@\(Bundle.main.versionNumber)" }
+    public func execute() async throws -> PassEnvironment {
+        guard let data = try await keychain.getData(for: Constants.environmentKey) else {
+            return .prod
+        }
+        return try JSONDecoder().decode(PassEnvironment.self, from: data)
     }
 }

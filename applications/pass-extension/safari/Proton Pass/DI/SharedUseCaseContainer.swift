@@ -19,9 +19,10 @@
 // along with Proton Pass. If not, see https://www.gnu.org/licenses/.
 //
 
+import Client
 import Factory
 import Foundation
-import Shared
+import UseCases
 
 final class SharedUseCaseContainer: SharedContainer, AutoRegistering {
     static let shared = SharedUseCaseContainer()
@@ -51,17 +52,8 @@ extension SharedUseCaseContainer {
         self { SetEnvironment(keychain: self.keychain) }
     }
 
-    var getCredentials: Factory<any GetCredentialsUseCase> {
-        self { GetCredentials(keychain: self.keychain) }
-    }
-
-    var setCredentials: Factory<any SetCredentialsUseCase> {
-        self { SetCredentials(keychain: self.keychain) }
-    }
-
     var updateCredentials: Factory<any UpdateCredentialsUseCase> {
-        self { UpdateCredentials(getCredentials: self.getCredentials(),
-                                 setCredentials: self.setCredentials()) }
+        self { UpdateCredentials(credentialProvider: self.credentialProvider()) }
     }
 
     var readFromClipboard: Factory<any ReadFromClipboardUseCase> {
@@ -74,7 +66,7 @@ extension SharedUseCaseContainer {
 
     var resetDataIfFirstRun: Factory<any ResetDataIfFirstRunUseCase> {
         self { ResetDataIfFirstRun(setEnvironment: self.setEnvironment(),
-                                   setCredentials: self.setCredentials()) }
+                                   credentialProvider: self.credentialProvider()) }
     }
 
     var createLogger: Factory<any CreateLoggerUseCase> {
@@ -86,14 +78,12 @@ extension SharedUseCaseContainer {
     }
 
     var credentialProvider: Factory<any CredentialProvider> {
-        self { CredentialProviderImpl(getCredentials: self.getCredentials(),
-                                      setCredentials: self.setCredentials()) }
+        self { CredentialProviderImpl(keychain: self.keychain) }
     }
 
     var createApiManager: Factory<any CreateApiManagerUseCase> {
         self { CreateApiManager(appVersion: SharedToolingContainer.shared.appVersion(),
-                                credentialProvider: self.credentialProvider(),
-                                setCredentials: self.setCredentials()) }
+                                credentialProvider: self.credentialProvider()) }
     }
 
     var getAccess: Factory<any GetAccessUseCase> {
