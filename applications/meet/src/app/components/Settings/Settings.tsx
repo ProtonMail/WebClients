@@ -25,6 +25,7 @@ export const Settings = () => {
     const isLocalParticipantHost = useIsLocalParticipantHost();
 
     const [loadingLock, withLoadingLock] = useLoading();
+    const [loadingBackgroundBlur, withLoadingBackgroundBlur] = useLoading();
 
     if (!sideBarState[MeetingSideBars.Settings]) {
         return null;
@@ -83,9 +84,13 @@ export const Settings = () => {
                             <Toggle
                                 id="blur-background"
                                 checked={backgroundBlur}
-                                onChange={() => toggleBackgroundBlur()}
+                                onChange={() => {
+                                    void withLoadingBackgroundBlur(toggleBackgroundBlur());
+                                }}
                                 className={clsx('settings-toggle', backgroundBlur ? '' : 'settings-toggle-inactive')}
                                 aria-label={c('Alt').t`Blur background`}
+                                loading={loadingBackgroundBlur}
+                                disabled={loadingBackgroundBlur}
                             />
                         </div>
                         <div className="flex items-center justify-space-between gap-2 setting-container w-full flex-nowrap">
