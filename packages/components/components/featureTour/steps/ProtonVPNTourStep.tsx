@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { organizationThunk } from '@proton/account/organization';
-import { ButtonLike, Href } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Href } from '@proton/atoms/Href/Href';
 import { PLANS } from '@proton/payments';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { isIos, isLinux, isMac, isMobile } from '@proton/shared/lib/helpers/browser';

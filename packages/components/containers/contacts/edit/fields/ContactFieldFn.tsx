@@ -3,8 +3,8 @@ import { forwardRef } from 'react';
 
 import { c } from 'ttag';
 
-import type { InputProps } from '@proton/atoms';
-import { Input } from '@proton/atoms';
+import type { InputProps } from '@proton/atoms/Input/Input';
+import { Input } from '@proton/atoms/Input/Input';
 import ErrorZone from '@proton/components/components/text/ErrorZone';
 import { isContactNameValid } from '@proton/shared/lib/contacts/property';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';

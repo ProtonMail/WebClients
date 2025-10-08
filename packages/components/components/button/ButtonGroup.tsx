@@ -1,7 +1,10 @@
 import type { ComponentPropsWithoutRef, ReactElement, ReactNode } from 'react';
 import { Children, Fragment, cloneElement, forwardRef, isValidElement } from 'react';
 
-import { type ButtonLikeShape, type ButtonLikeSize, type ButtonProps, Vr } from '@proton/atoms';
+import type { ButtonProps } from '@proton/atoms/Button/Button';
+import type { ButtonLikeShape } from '@proton/atoms/Button/ButtonLike';
+import type { ButtonLikeSize } from '@proton/atoms/Button/ButtonLike';
+import { Vr } from '@proton/atoms/Vr/Vr';
 import type { ThemeColor } from '@proton/colors';
 import clsx from '@proton/utils/clsx';
 
@@ -52,7 +55,6 @@ const ButtonGroup = forwardRef<HTMLDivElement, Props>(
                     return clonedChild;
                 }
                 return (
-                    // eslint-disable-next-line react/no-array-index-key
                     <Fragment key={clonedChild.key || index}>
                         {clonedChild}
                         {separators && !pill && <Vr aria-hidden="true" />}

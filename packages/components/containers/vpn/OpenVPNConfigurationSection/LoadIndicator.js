@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import CircularProgress from '@proton/components/components/progress/CircularProgress';
 
 const LoadIndicator = ({ server: { Load = 0 } }) => {

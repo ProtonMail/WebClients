@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useGetUserInvitations } from '@proton/account/userInvitations/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useUid from '@proton/components/hooks/useUid';
 import { CacheType } from '@proton/redux-utilities';

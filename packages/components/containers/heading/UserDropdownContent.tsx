@@ -3,7 +3,10 @@ import { useContext, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, ButtonLike, NotificationDot, Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { NotificationDot } from '@proton/atoms/NotificationDot/NotificationDot';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { ThemeColor } from '@proton/colors/types';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';

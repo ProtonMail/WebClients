@@ -1,6 +1,6 @@
 import type { ElementType, ReactNode } from 'react';
 
-import { DashboardCard } from '@proton/atoms';
+import { DashboardCard } from '@proton/atoms/DashboardCard/DashboardCard';
 import type { PolymorphicPropsWithoutRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
 

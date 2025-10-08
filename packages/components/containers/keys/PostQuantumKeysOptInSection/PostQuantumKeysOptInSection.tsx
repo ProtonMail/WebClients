@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';

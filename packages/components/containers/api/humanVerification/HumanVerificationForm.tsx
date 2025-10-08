@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
 import Alert from '@proton/components/components/alert/Alert';
 import Tabs from '@proton/components/components/tabs/Tabs';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';

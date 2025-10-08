@@ -1,4 +1,4 @@
-import { Kbd } from '@proton/atoms';
+import { Kbd } from '@proton/atoms/Kbd/Kbd';
 import clsx from '@proton/utils/clsx';
 
 interface Shortcut {

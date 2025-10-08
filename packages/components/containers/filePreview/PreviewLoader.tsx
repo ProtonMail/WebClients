@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import TextLoader from '@proton/components/components/loader/TextLoader';
 
 const PreviewLoader = () => {

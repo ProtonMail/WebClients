@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
-import { Button, ButtonLike, Pill } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Pill } from '@proton/atoms/Pill/Pill';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import useModalState from '@proton/components/components/modalTwo/useModalState';

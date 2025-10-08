@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Button, Href } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
 import Icon from '@proton/components/components/icon/Icon';
 import SettingsSectionTitle from '@proton/components/containers/account/SettingsSectionTitle';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

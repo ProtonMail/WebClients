@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { createPremiumAddress } from '@proton/account/addresses/actions';
 import { useProtonDomains } from '@proton/account/protonDomains/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 import AuthModal from '@proton/components/containers/password/AuthModal';
 import type { AuthModalResult } from '@proton/components/containers/password/interface';

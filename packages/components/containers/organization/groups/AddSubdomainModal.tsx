@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 import { c } from 'ttag';
 
 import { addSubdomain } from '@proton/account/groups/actions';
-import { Button, Href } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
 import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';

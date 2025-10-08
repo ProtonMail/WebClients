@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { NotificationDot } from '@proton/atoms';
+import { NotificationDot } from '@proton/atoms/NotificationDot/NotificationDot';
 import { ThemeColor } from '@proton/colors/types';
 import SidebarListItemContent from '@proton/components/components/sidebar/SidebarListItemContent';
 import SidebarListItemContentIcon from '@proton/components/components/sidebar/SidebarListItemContentIcon';

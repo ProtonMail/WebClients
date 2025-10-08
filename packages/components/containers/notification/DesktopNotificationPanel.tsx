@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Badge from '@proton/components/components/badge/Badge';
 import Field from '@proton/components/components/container/Field';
 import { Status, create, getStatus, request } from '@proton/shared/lib/helpers/desktopNotification';

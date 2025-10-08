@@ -1,6 +1,6 @@
 import type { ReactElement, ReactNode } from 'react';
 
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Icon from '@proton/components/components/icon/Icon';
 import Label from '@proton/components/components/label/Label';
 import type { IconName } from '@proton/icons/types';

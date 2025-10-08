@@ -2,7 +2,7 @@ import { c, msgid } from 'ttag';
 
 import { useMemberAddresses } from '@proton/account';
 import { useMembers } from '@proton/account/members/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Info from '@proton/components/components/link/Info';
 import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';

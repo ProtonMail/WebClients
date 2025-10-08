@@ -2,7 +2,7 @@ import type { ReactElement } from 'react';
 
 import { c } from 'ttag';
 
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Time from '@proton/components/components/time/Time';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcClockCircleFilled } from '@proton/icons/icons/IcClockCircleFilled';

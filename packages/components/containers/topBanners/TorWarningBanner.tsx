@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
 import { isMaybeTorLessThan11 } from '@proton/shared/lib/helpers/browser';
 
 import TopBanner from './TopBanner';

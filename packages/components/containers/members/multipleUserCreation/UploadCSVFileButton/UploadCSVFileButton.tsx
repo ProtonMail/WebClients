@@ -3,8 +3,8 @@ import { useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import type { ButtonProps } from '@proton/atoms';
-import { InlineLinkButton } from '@proton/atoms';
+import type { ButtonProps } from '@proton/atoms/Button/Button';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import FileInput from '@proton/components/components/input/FileInput';
 import useModals from '@proton/components/hooks/useModals';
 import useNotifications from '@proton/components/hooks/useNotifications';

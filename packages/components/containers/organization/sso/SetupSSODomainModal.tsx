@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { createDomain, syncDomain } from '@proton/account/domains/actions';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Form from '@proton/components/components/form/Form';
 import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';

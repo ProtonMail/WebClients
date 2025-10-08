@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { ButtonLike } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import Icon from '@proton/components/components/icon/Icon';
 import Select from '@proton/components/components/select/Select';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
