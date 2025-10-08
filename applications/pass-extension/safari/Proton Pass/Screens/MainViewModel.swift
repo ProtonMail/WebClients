@@ -21,7 +21,7 @@
 
 import Factory
 import Foundation
-import Shared
+import Models
 
 enum MainViewModelState {
     case loading
@@ -35,7 +35,7 @@ final class MainViewModel: ObservableObject {
     @Published private(set) var state: MainViewModelState = .loading
 
     private let getEnvironment = resolve(\SharedUseCaseContainer.getEnvironment)
-    private let getCredentials = resolve(\SharedUseCaseContainer.getCredentials)
+    private let credentialProvider = resolve(\SharedUseCaseContainer.credentialProvider)
     private let resetDataIfFirstRun = resolve(\SharedUseCaseContainer.resetDataIfFirstRun)
 
     init() {}
@@ -49,7 +49,7 @@ extension MainViewModel {
             }
             try await resetDataIfFirstRun()
             let environment = try await getEnvironment()
-            if let credentials = try await getCredentials() {
+            if let credentials = credentialProvider.getCredentials() {
                 state = .loggedIn(environment, credentials)
             } else {
                 state = .loggedOut

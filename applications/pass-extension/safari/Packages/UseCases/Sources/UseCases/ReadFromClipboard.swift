@@ -1,6 +1,6 @@
 //
-// SharedToolingContainer.swift
-// Proton Pass - Created on 21/05/2024.
+// ReadFromClipboard.swift
+// Proton Pass - Created on 23/05/2024.
 // Copyright (c) 2024 Proton Technologies AG
 //
 // This file is part of Proton Pass.
@@ -19,26 +19,23 @@
 // along with Proton Pass. If not, see https://www.gnu.org/licenses/.
 //
 
-import Client
-import Factory
 import Foundation
-import SimpleKeychain
+import SafariServices
 
-final class SharedToolingContainer: SharedContainer, AutoRegistering {
-    static let shared = SharedToolingContainer()
-    let manager = ContainerManager()
+public protocol ReadFromClipboardUseCase: Sendable {
+    func execute() async throws -> String?
+}
 
-    func autoRegister() {
-        manager.defaultScope = .singleton
+public extension ReadFromClipboardUseCase {
+    func callAsFunction() async throws -> String? {
+        try await execute()
     }
 }
 
-extension SharedToolingContainer {
-    var keychain: Factory<any KeychainProvider> {
-        self { SimpleKeychain(service: Constants.appGroup, accessGroup: Constants.keychainAccessGroup) }
-    }
+public final class ReadFromClipboard: Sendable, ReadFromClipboardUseCase {
+    public init() {}
 
-    var appVersion: Factory<String> {
-        self { "macos-pass-safari@\(Bundle.main.versionNumber)" }
+    public func execute() async throws -> String? {
+        UIPasteboard.general.string
     }
 }
