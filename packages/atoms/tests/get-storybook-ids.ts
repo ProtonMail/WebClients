@@ -1,5 +1,6 @@
 import { existsSync, readFileSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 export enum StorybookEntryType {
     STORY = 'story',
@@ -25,7 +26,8 @@ export type StorybookIndex = {
 };
 
 export function getStorybooIds() {
-    const storybookStaticFolder = resolve(__dirname, '../storybook-static');
+    const dir = dirname(fileURLToPath(import.meta.url));
+    const storybookStaticFolder = resolve(dir, '../storybook-static');
 
     if (!existsSync(storybookStaticFolder)) {
         throw new Error('storybook-static folder does not exist, try to run "yarn storybook:build" first.');
