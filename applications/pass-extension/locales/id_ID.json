@@ -2338,6 +2338,9 @@
       "You may close this tab.": [
         "Anda dapat menutup tab ini."
       ],
+      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
+        "Tergantung dari sistem yang Anda gunakan, Anda mungkin akan perlu untuk menerima permintaan izin dan menyalakan ulang aplikasi."
+      ],
       "You need a vault with edit permission before you can import items.": [
         "Anda butuh brankas dengan izin penyuntingan sebelum Anda dapat mengimpor item."
       ],
@@ -2373,6 +2376,11 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organisasi Anda memerlukan Anda mengamankan akses ke ${ PASS_APP_NAME }"
+      ]
+    },
+    "Keyboard key": {
+      "SHIFT": [
+        "SHIFT"
       ]
     },
     "Label": {
@@ -4134,6 +4142,9 @@
       ],
       "Pending access to the shared data": [
         "Menunggu akses ke data yang dibagikan"
+      ],
+      "Perform autotype?": [
+        "Tulis otomatis?"
       ],
       "Permanently remove all items?": [
         "Hapus semua item secara permanen?"
