@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { Button } from '@proton/atoms';
-import { Icon, useSpotlightOnFeature, useSpotlightShow } from '@proton/components';
+import { useSpotlightOnFeature, useSpotlightShow } from '@proton/components';
+import { IcSliders2 } from '@proton/icons';
 import { FeatureCode } from '@proton/features/interface';
 import { useConversationCounts, useMessageCounts } from '@proton/mail';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
@@ -58,7 +59,7 @@ export const useSpotlightCategoriesCustomization = ({ showEditModal }: Props) =>
         showEditModal();
     };
 
-    const menuIcon = <Icon key="menuIcon" name="sliders-2" alt={c('Action').t`Edit categories`} />;
+    const menuIcon = <IcSliders2 key="menuIcon"  alt={c('Action').t`Edit categories`} />;
     const spotlightContent = (
         <div>
             <h2 className="text-semibold text-rg mb-2">{c('Title').t`Customize categories to fit your needs`}</h2>

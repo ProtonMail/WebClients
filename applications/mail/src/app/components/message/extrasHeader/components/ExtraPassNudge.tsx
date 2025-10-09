@@ -6,7 +6,8 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button, ButtonLike, Tooltip } from '@proton/atoms';
-import { AppLink, Checkbox, Icon, Logo, useActiveBreakpoint, useModalState } from '@proton/components';
+import { AppLink, Checkbox, Logo, useActiveBreakpoint, useModalState } from '@proton/components';
+import { IcCross, IcQuestionCircle } from '@proton/icons';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useLocalState from '@proton/components/hooks/useLocalState';
 import { FeatureCode, useFeature } from '@proton/features';
@@ -187,7 +188,7 @@ const ExtraPassNudge = ({ messageSubject = '' }: Props) => {
                                     )}
                                     onClick={handleCloseBanner}
                                 >
-                                    <Icon name="cross" size={4} className="flex m-auto" alt={c('Action').t`Dismiss`} />
+                                    <IcCross size={4} className="flex m-auto" alt={c('Action').t`Dismiss`} />
                                 </Button>
                             </Tooltip>
                             <Tooltip title={c('Info').t`More info`}>
@@ -198,7 +199,7 @@ const ExtraPassNudge = ({ messageSubject = '' }: Props) => {
                                     className="mb-1 mt-auto"
                                     onClick={handleClickMoreInfo}
                                 >
-                                    <Icon name="question-circle" className="color-weak" alt={c('Info').t`More info`} />
+                                    <IcQuestionCircle className="color-weak" alt={c('Info').t`More info`} />
                                 </Button>
                             </Tooltip>
                         </div>

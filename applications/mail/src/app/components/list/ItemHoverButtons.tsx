@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button, Tooltip } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import { useLoading } from '@proton/hooks';
+import { IcArchiveBox, IcCrossCircle, IcTrash } from '@proton/icons';
 import { useFolders, useLabels } from '@proton/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
@@ -202,7 +203,7 @@ const ItemHoverButtons = ({
                                 size={size}
                                 className="color-inherit"
                             >
-                                <Icon name="cross-circle" alt={c('Action').t`Delete permanently`} />
+                                <IcCrossCircle alt={c('Action').t`Delete permanently`} />
                             </Button>
                         </Tooltip>
                         {deleteSelectionModal}
@@ -217,7 +218,7 @@ const ItemHoverButtons = ({
                             onClick={handleTrash}
                             disabled={labelID === MAILBOX_LABEL_IDS.TRASH}
                         >
-                            <Icon name="trash" alt={c('Action').t`Move to trash`} />
+                            <IcTrash alt={c('Action').t`Move to trash`} />
                         </Button>
                     </Tooltip>
                 )}
@@ -230,7 +231,7 @@ const ItemHoverButtons = ({
                         onClick={handleArchive}
                         disabled={labelID === MAILBOX_LABEL_IDS.ARCHIVE}
                     >
-                        <Icon name="archive-box" alt={c('Action').t`Move to archive`} />
+                        <IcArchiveBox alt={c('Action').t`Move to archive`} />
                     </Button>
                 </Tooltip>
 

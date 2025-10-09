@@ -3,7 +3,8 @@ import type { Ref } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Kbd, Vr } from '@proton/atoms';
-import { DropdownSizeUnit, Icon } from '@proton/components';
+import { DropdownSizeUnit } from '@proton/components';
+import { IcFolderArrowIn, IcTag } from '@proton/icons';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 
 import { isConversationMode } from 'proton-mail/helpers/mailSettings';
@@ -70,7 +71,7 @@ const LabelsAndFolders = ({
                     maxWidth: '19rem',
                 }}
                 disabled={!selectedIDs || !selectedIDs.length}
-                content={<Icon className="toolbar-icon" name="folder-arrow-in" />}
+                content={<IcFolderArrowIn className="toolbar-icon"  />}
                 dropDownClassName="move-dropdown"
                 className="move-dropdown-button"
                 title={titleMove}
@@ -101,7 +102,7 @@ const LabelsAndFolders = ({
                     maxWidth: '19rem',
                 }}
                 disabled={!selectedIDs || !selectedIDs.length}
-                content={<Icon className="toolbar-icon" name="tag" />}
+                content={<IcTag className="toolbar-icon"  />}
                 dropDownClassName="label-dropdown"
                 className="label-dropdown-button"
                 title={titleLabel}

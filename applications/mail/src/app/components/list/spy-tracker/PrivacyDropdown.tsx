@@ -3,9 +3,10 @@ import { useEffect } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Href } from '@proton/atoms';
-import { Dropdown, Icon, useApi, useModalState, usePopperAnchor, useSpotlightOnFeature } from '@proton/components';
+import { Dropdown, useApi, useModalState, usePopperAnchor, useSpotlightOnFeature } from '@proton/components';
 import PreventTrackingToggle from '@proton/components/containers/emailPrivacy/PreventTrackingToggle';
 import { FeatureCode } from '@proton/features';
+import { IcCheckmarkCircleFilled, IcChevronRight } from '@proton/icons';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { TelemetryMailEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
@@ -102,12 +103,12 @@ const PrivacyDropdown = ({ message }: Props) => {
     const imageTrackerRow = (
         <span className="flex flex-nowrap items-center text-left px-2 py-2" data-testid="privacy:image-row">
             <span className="flex mr-2 shrink-0 color-success">
-                <Icon name={'checkmark-circle-filled'} className="my-auto" />
+                <IcCheckmarkCircleFilled className="my-auto" />
             </span>
             <span className="flex-1">{imageTrackerText}</span>
             {hasImageTrackers && (
                 <span className="flex rtl:mirror ml-4">
-                    <Icon name="chevron-right" />
+                    <IcChevronRight />
                 </span>
             )}
         </span>
@@ -116,12 +117,12 @@ const PrivacyDropdown = ({ message }: Props) => {
     const utmTrackerRow = (
         <span className="flex flex-nowrap items-center text-left px-2 py-2" data-testid="privacy:utm-row">
             <span className="flex mr-2 shrink-0 color-success">
-                <Icon name={'checkmark-circle-filled'} />
+                <IcCheckmarkCircleFilled />
             </span>
             <span className="flex-1">{utmTrackerText}</span>
             {hasUTMTrackers && (
                 <span className="flex rtl:mirror ml-4">
-                    <Icon name="chevron-right" />
+                    <IcChevronRight />
                 </span>
             )}
         </span>

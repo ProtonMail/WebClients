@@ -3,16 +3,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import {
-    Dropdown,
-    DropdownMenu,
-    DropdownMenuButton,
-    DropdownSizeUnit,
-    Icon,
-    useModals,
-    useNotifications,
-    usePopperAnchor,
-} from '@proton/components';
+import { Dropdown, DropdownMenu, DropdownMenuButton, DropdownSizeUnit, useModals, useNotifications, usePopperAnchor } from '@proton/components';
+import { IcPenSquare, IcSquares, IcUser, IcUsers } from '@proton/icons';
 import RecipientDropdownItem from '@proton/components/containers/contacts/view/RecipientDropdownItem';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
@@ -61,7 +53,7 @@ const RecipientItemGroup = ({
 
     const label = (
         <div className="text-left flex flex-nowrap items-center">
-            <Icon name="users" className="mr-1" />
+            <IcUsers className="mr-1" />
             <span>{labelText}</span>
         </div>
     );
@@ -133,7 +125,7 @@ const RecipientItemGroup = ({
                             onClick={handleCompose}
                             data-testid="recipient:new-message-to-group"
                         >
-                            <Icon name="pen-square" className="mr-2" />
+                            <IcPenSquare className="mr-2" />
                             <span className="flex-1 my-auto">{c('Action').t`New message`}</span>
                         </DropdownMenuButton>
                         <DropdownMenuButton
@@ -141,7 +133,7 @@ const RecipientItemGroup = ({
                             onClick={handleCopy}
                             data-testid="recipient:copy-group-emails"
                         >
-                            <Icon name="squares" className="mr-2" />
+                            <IcSquares className="mr-2" />
                             <span className="flex-1 my-auto">{c('Action').t`Copy addresses`}</span>
                         </DropdownMenuButton>
                         <DropdownMenuButton
@@ -149,7 +141,7 @@ const RecipientItemGroup = ({
                             onClick={handleRecipients}
                             data-testid="recipient:view-group-recipients"
                         >
-                            <Icon name="user" className="mr-2" />
+                            <IcUser className="mr-2" />
                             <span className="flex-1 my-auto">{c('Action').t`View recipients`}</span>
                         </DropdownMenuButton>
                     </DropdownMenu>

@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, Spotlight, useModalState } from '@proton/components';
+import { Spotlight, useModalState } from '@proton/components';
+import { IcSliders2 } from '@proton/icons';
 
 import { useSpotlightCategoriesCustomization } from '../categoriesOnboarding/useSpotlightCategoriesCustomization';
 import { ModalEditCategories } from '../editCategories/ModalEditCategories';
@@ -38,7 +39,7 @@ export const ButtonEditCategories = () => {
                     onClick={handleClick}
                     data-testid="edit-categories-button"
                 >
-                    <Icon name="sliders-2" alt={c('Action').t`Edit categories`} />
+                    <IcSliders2 alt={c('Action').t`Edit categories`} />
                 </Button>
             </Spotlight>
 

@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown } from '@proton/components';
+import { DropdownMenu, DropdownMenuButton, SimpleDropdown } from '@proton/components';
+import { IcListArrowDown, IcListArrowUp, IcSizeArrowDown, IcSizeArrowUp } from '@proton/icons';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Sort } from '@proton/shared/lib/mail/search';
 import clsx from '@proton/utils/clsx';
@@ -30,23 +31,23 @@ const SortDropdown = ({ labelID, conversationMode, hasCaret, sort: { sort, desc 
 
     const getIcon = () => {
         if (sort === SIZE && !desc) {
-            return <Icon className="toolbar-icon" name="size-arrow-up" title={SORT_OPTIONS.SMALL_TO_LARGE} />;
+            return <IcSizeArrowUp className="toolbar-icon" title={SORT_OPTIONS.SMALL_TO_LARGE} />;
         }
         if (sort === SIZE && desc) {
-            return <Icon className="toolbar-icon" name="size-arrow-down" title={SORT_OPTIONS.LARGE_TO_SMALL} />;
+            return <IcSizeArrowDown className="toolbar-icon" title={SORT_OPTIONS.LARGE_TO_SMALL} />;
         }
         if (sort === TIME && !desc) {
             // If we are on the scheduled label, we reverse the default sort to have the next to be sent on top (but still displayed as newest)
             return !isScheduledLabel ? (
-                <Icon className="toolbar-icon" name="list-arrow-up" title={SORT_OPTIONS.OLD_TO_NEW} />
+                <IcListArrowUp className="toolbar-icon" title={SORT_OPTIONS.OLD_TO_NEW} />
             ) : (
-                <Icon className="toolbar-icon" name="list-arrow-down" title={SORT_OPTIONS.NEW_TO_OLD} />
+                <IcListArrowDown className="toolbar-icon" title={SORT_OPTIONS.NEW_TO_OLD} />
             );
         }
         return !isScheduledLabel ? (
-            <Icon className="toolbar-icon" name="list-arrow-down" title={SORT_OPTIONS.NEW_TO_OLD} />
+            <IcListArrowDown className="toolbar-icon" title={SORT_OPTIONS.NEW_TO_OLD} />
         ) : (
-            <Icon className="toolbar-icon" name="list-arrow-up" title={SORT_OPTIONS.OLD_TO_NEW} />
+            <IcListArrowUp className="toolbar-icon" title={SORT_OPTIONS.OLD_TO_NEW} />
         );
     };
 
@@ -72,7 +73,7 @@ const SortDropdown = ({ labelID, conversationMode, hasCaret, sort: { sort, desc 
                     className="text-left flex gap-2"
                     onClick={() => onSort({ sort: TIME, desc: true })}
                 >
-                    <Icon className="toolbar-icon" name="list-arrow-down" />
+                    <IcListArrowDown className="toolbar-icon" />
                     <span>{SORT_OPTIONS.NEW_TO_OLD}</span>
                 </DropdownMenuButton>
                 <DropdownMenuButton
@@ -81,7 +82,7 @@ const SortDropdown = ({ labelID, conversationMode, hasCaret, sort: { sort, desc 
                     className="text-left flex gap-2"
                     onClick={() => onSort({ sort: TIME, desc: false })}
                 >
-                    <Icon className="toolbar-icon" name="list-arrow-up" />
+                    <IcListArrowUp className="toolbar-icon" />
                     <span>{SORT_OPTIONS.OLD_TO_NEW}</span>
                 </DropdownMenuButton>
                 <DropdownMenuButton
@@ -90,7 +91,7 @@ const SortDropdown = ({ labelID, conversationMode, hasCaret, sort: { sort, desc 
                     className="text-left flex gap-2"
                     onClick={() => onSort({ sort: SIZE, desc: true })}
                 >
-                    <Icon className="toolbar-icon" name="size-arrow-down" />
+                    <IcSizeArrowDown className="toolbar-icon" />
                     <span>{SORT_OPTIONS.LARGE_TO_SMALL}</span>
                 </DropdownMenuButton>
                 <DropdownMenuButton
@@ -99,7 +100,7 @@ const SortDropdown = ({ labelID, conversationMode, hasCaret, sort: { sort, desc 
                     className="text-left flex gap-2"
                     onClick={() => onSort({ sort: SIZE, desc: false })}
                 >
-                    <Icon className="toolbar-icon" name="size-arrow-up" />
+                    <IcSizeArrowUp className="toolbar-icon" />
                     <span>{SORT_OPTIONS.SMALL_TO_LARGE}</span>
                 </DropdownMenuButton>
             </DropdownMenu>

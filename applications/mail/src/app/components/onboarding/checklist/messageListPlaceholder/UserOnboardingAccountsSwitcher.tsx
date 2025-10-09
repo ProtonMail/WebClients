@@ -4,7 +4,8 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { Button, ButtonLike, type ButtonLikeSize, Tooltip } from '@proton/atoms';
-import { Icon, useActiveBreakpoint, useModalStateObject, useMyCountry, useNotifications } from '@proton/components';
+import { useActiveBreakpoint, useModalStateObject, useMyCountry, useNotifications } from '@proton/components';
+import { IcArrowWithinSquare, IcSquares } from '@proton/icons';
 import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
@@ -89,7 +90,7 @@ const TabContent = memo(({ selectedCategory }: { selectedCategory: Category }) =
                             pill={viewportWidth.xsmall}
                         >
                             {viewportWidth.xsmall ? (
-                                <Icon name="arrow-within-square" alt={c('Action').t`Change email`} />
+                                <IcArrowWithinSquare alt={c('Action').t`Change email`} />
                             ) : (
                                 c('Action').t`Change email`
                             )}
@@ -169,7 +170,7 @@ const UserOnboardingAccountsSwitcher = ({ className }: { className?: string }) =
                                 }}
                             >
                                 {defaultEmailAddress}
-                                <Icon className="ml-4" name="squares" />
+                                <IcSquares className="ml-4"  />
                             </Button>
                         </Tooltip>
                     )}

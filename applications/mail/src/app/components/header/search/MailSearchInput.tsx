@@ -4,7 +4,7 @@ import { forwardRef, useRef } from 'react';
 import { c } from 'ttag';
 
 import { Button, Input } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { IcMagnifier } from '@proton/icons';
 import clsx from '@proton/utils/clsx';
 
 interface Props {
@@ -53,7 +53,7 @@ const MailSearchInput = ({ value, onOpen, onClearSearch, loading, adaptWidth }: 
                             onClick={onOpen}
                             data-shorcut-target="searchbox-button"
                         >
-                            <Icon name="magnifier" alt={c('Action').t`Search`} />
+                            <IcMagnifier alt={c('Action').t`Search`} />
                         </Button>
                     }
                     suffix={

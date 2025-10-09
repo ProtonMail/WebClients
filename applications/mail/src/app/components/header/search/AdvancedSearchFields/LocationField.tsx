@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { IcCrossSmall } from '@proton/icons';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
@@ -71,7 +71,7 @@ const LocationField = ({ value, onChange }: Props) => {
                         title={c('Action').t`Remove`}
                     >
                         <span className="text-ellipsis">{customValueText}</span>
-                        <Icon name="cross-small" className="ml-2 shrink-0" />
+                        <IcCrossSmall className="ml-2 shrink-0" />
                     </Button>
                 ) : null}
             </div>

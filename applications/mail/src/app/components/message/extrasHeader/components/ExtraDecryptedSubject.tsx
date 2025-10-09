@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { Banner, Tooltip } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { IcLock } from '@proton/icons';
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 
 import { useEncryptedSearchContext } from '../../../../containers/EncryptedSearchProvider';
@@ -36,7 +36,7 @@ const ExtraDecryptedSubject = ({ message }: Props) => {
             variant="norm-outline"
             icon={
                 <Tooltip title={c('Info').t`Subject is end-to-end encrypted`}>
-                    <Icon name="lock" alt={c('Info').t`Subject is end-to-end encrypted`} />
+                    <IcLock alt={c('Info').t`Subject is end-to-end encrypted`} />
                 </Tooltip>
             }
         >

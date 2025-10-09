@@ -7,10 +7,11 @@ import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button, Tooltip, Vr } from '@proton/atoms';
 import type { EditorMetadata } from '@proton/components';
-import { Icon, useActiveBreakpoint, useModalStateObject, useSpotlightOnFeature } from '@proton/components';
+import { useActiveBreakpoint, useModalStateObject, useSpotlightOnFeature } from '@proton/components';
 import ComposerAssistantUpsellModal from '@proton/components/components/upsell/modals/ComposerAssistantUpsellModal';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import { FeatureCode, useFeature } from '@proton/features';
+import { IcPaperPlane, IcPenSparks, IcTextStyle, IcTrash } from '@proton/icons';
 import { getIsAssistantOpened, useAssistant } from '@proton/llm/lib';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -210,7 +211,7 @@ const ComposerActions = ({
                                     className="composer-send-button"
                                     data-testid="composer:send-button"
                                 >
-                                    <Icon name="paper-plane" className="md:hidden flex" />
+                                    <IcPaperPlane className="md:hidden flex" />
                                     <span className="px-4 hidden md:inline">{c('Action').t`Send`}</span>
                                 </Button>
                             </Tooltip>
@@ -245,7 +246,7 @@ const ComposerActions = ({
                                         shape="ghost"
                                         data-testid="composer:delete-draft-button"
                                     >
-                                        <Icon name="trash" alt={c('Action').t`Delete draft`} />
+                                        <IcTrash alt={c('Action').t`Delete draft`} />
                                     </Button>
                                 </Tooltip>
                                 <ComposerPasswordActions
@@ -280,11 +281,8 @@ const ComposerActions = ({
                                                 aria-pressed={isAssistantOpened}
                                                 className="flex"
                                             >
-                                                <Icon
-                                                    name="pen-sparks"
-                                                    alt={c('Action').t`Your email writing assistant`}
-                                                    style={{ color: '#D132EA' }}
-                                                />
+                                                <IcPenSparks alt={c('Action').t`Your email writing assistant`}
+                                                    style={{ color: '#D132EA' }} />
                                             </Button>
                                         </ComposerAssistantSpotlight>
                                     </div>
@@ -302,7 +300,7 @@ const ComposerActions = ({
                                 aria-pressed={displayToolbar}
                                 className="flex"
                             >
-                                <Icon name="text-style" alt={c('Action').t`Show toolbar`} />
+                                <IcTextStyle alt={c('Action').t`Show toolbar`} />
                             </Button>
                         </Tooltip>
                         {showAssistantButton && <Vr className="border-weak" aria-hidden="true" />}

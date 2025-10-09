@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { IcArrowLeft } from '@proton/icons';
 import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
@@ -48,7 +48,7 @@ const ConversationHeader = ({ className, loading, element, showBackButton = fals
                 {showBackButton && (
                     <div className="flex items-center mr-2">
                         <Button icon shape="ghost" onClick={onBack} data-testid="toolbar:back-button">
-                            <Icon name="arrow-left" alt={c('Action').t`Back`} />
+                            <IcArrowLeft alt={c('Action').t`Back`} />
                         </Button>
                     </div>
                 )}

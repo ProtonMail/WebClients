@@ -4,7 +4,8 @@ import { forwardRef } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, InputFieldTwo } from '@proton/components';
+import { InputFieldTwo } from '@proton/components';
+import { IcMagnifier } from '@proton/icons';
 
 interface Props {
     onSubmit: MouseEventHandler<HTMLButtonElement>;
@@ -28,7 +29,7 @@ const SearchField = (
             prefix={
                 showSearchIcon && (
                     <Button onClick={onSubmit} shape="ghost" color="weak" size="small" icon>
-                        <Icon name="magnifier" alt={c('action').t`Search messages`} />
+                        <IcMagnifier alt={c('action').t`Search messages`} />
                     </Button>
                 )
             }

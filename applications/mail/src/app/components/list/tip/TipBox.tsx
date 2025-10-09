@@ -7,6 +7,7 @@ import { Tooltip } from '@proton/atoms';
 import type { CustomNotificationProps } from '@proton/components';
 import { Icon, NotificationButton, useNotifications } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
+import { IcCross } from '@proton/icons';
 
 import useGetRandomTip from 'proton-mail/components/list/tip/useGetRandomTip';
 import type { TipData } from 'proton-mail/models/tip';
@@ -89,7 +90,7 @@ const TipBox = ({ tips, isDismissed, setIsDismissed }: Props) => {
                         className="close-button absolute top-0 right-0 bg-norm z-up border border-weak shadow-norm rounded-full flex items-center justify-center group-hover:opacity-100 interactive"
                         onClick={onCancel}
                     >
-                        <Icon className="color-hint" name="cross" size={4} alt={c('Action').t`Close`} />
+                        <IcCross className="color-hint"  size={4} alt={c('Action').t`Close`} />
                     </button>
                 </Tooltip>
             )}
