@@ -5,9 +5,10 @@ import logger from 'proton-authenticator/lib/logger';
 import { useAppSelector } from 'proton-authenticator/store/utils';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Prompt, useNotifications } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { GenericErrorDisplay } from '@proton/components/containers/error/GenericError';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
 import { prop } from '@proton/pass/utils/fp/lens';
 

@@ -8,8 +8,9 @@ import {
 import { useAppSelector } from 'proton-authenticator/store/utils';
 import { c } from 'ttag';
 
-import { Button, InlineLinkButton } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+import Icon from '@proton/components/components/icon/Icon';
 import { AUTHENTICATOR_APP_NAME } from '@proton/shared/lib/constants';
 import { isMac, isWindows } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';

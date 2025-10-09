@@ -1,4 +1,9 @@
-import { CalendarLogo, DriveLogo, MailLogo, PassLogo, VpnLogo, WalletLogo } from '@proton/components';
+import CalendarLogo from '@proton/components/components/logo/CalendarLogo';
+import DriveLogo from '@proton/components/components/logo/DriveLogo';
+import MailLogo from '@proton/components/components/logo/MailLogo';
+import PassLogo from '@proton/components/components/logo/PassLogo';
+import VpnLogo from '@proton/components/components/logo/VpnLogo';
+import WalletLogo from '@proton/components/components/logo/WalletLogo';
 import {
     CALENDAR_APP_NAME,
     DRIVE_APP_NAME,

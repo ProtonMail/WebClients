@@ -9120,7 +9120,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/types@workspace:packages/types":
+"@proton/types@workspace:^, @proton/types@workspace:packages/types":
   version: 0.0.0-use.local
   resolution: "@proton/types@workspace:packages/types"
   dependencies:
@@ -36438,6 +36438,7 @@ __metadata:
     "@proton/pack": "workspace:^"
     "@proton/pass": "workspace:^"
     "@proton/styles": "workspace:^"
+    "@proton/types": "workspace:^"
     "@protontech/authenticator-rust-core": "npm:^0.25.13"
     "@reduxjs/toolkit": "npm:^2.9.0"
     "@tanstack/react-virtual": "npm:^3.13.12"

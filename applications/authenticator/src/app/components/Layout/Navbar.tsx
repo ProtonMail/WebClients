@@ -4,8 +4,10 @@ import cogIcon from 'proton-authenticator/assets/cog.svg';
 import { useAppSelector } from 'proton-authenticator/store/utils';
 import { c } from 'ttag';
 
-import { Button, CircleLoader, Input } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { Input } from '@proton/atoms/Input/Input';
+import Icon from '@proton/components/components/icon/Icon';
 
 type NavbarProps = {
     search: string;
