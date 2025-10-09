@@ -1820,6 +1820,9 @@
       "Item successfully unpinned": [
         "Sematan item berhasil dilepas"
       ],
+      "Keyboard shortcut can only be used while inside ${ PASS_APP_NAME } desktop app and viewing a login item": [
+        "Pintasan keyboard hanya dapat digunakan pada saat berada di dalam ${ PASS_APP_NAME } dan saat melihat entri masuk"
+      ],
       "Latest breach on ${ formattedDate }": [
         "Kebocoran terkini pada ${ formattedDate }"
       ],
@@ -1870,9 +1873,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Memindahkan semua item dari \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Memindahkan item ke brankas lain akan menghapus tautan amannya."
       ],
       "Moving items": [
         "Memindahkan item"
@@ -2429,6 +2429,9 @@
       "You may close this tab.": [
         "Anda dapat menutup tab ini."
       ],
+      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
+        "Tergantung dari sistem yang Anda gunakan, Anda mungkin akan perlu untuk menerima permintaan izin dan menyalakan ulang aplikasi."
+      ],
       "You need a vault with edit permission before you can import items.": [
         "Anda butuh brankas dengan izin penyuntingan sebelum Anda dapat mengimpor item."
       ],
@@ -2473,6 +2476,17 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organisasi Anda memerlukan Anda mengamankan akses ke ${ PASS_APP_NAME }"
+      ]
+    },
+    "Keyboard key": {
+      "ENTER": [
+        "ENTER"
+      ],
+      "SHIFT": [
+        "SHIFT"
+      ],
+      "TAB": [
+        "TAB"
       ]
     },
     "Label": {
@@ -2634,6 +2648,9 @@
       ],
       "Auto-lock after": [
         "Kunci Pass secara otomatis setelah"
+      ],
+      "Auto-type in previous window": [
+        "Tulis otomatis di jendela sebelumnya"
       ],
       "Backup password": [
         "Kata sandi cadangan"
@@ -3314,7 +3331,7 @@
         "Beri kami nilai"
       ],
       "Receive immediate alerts if your personal information is leaked in a third-party data breach. You can monitor multiple email addresses or your own domain name.": [
-        "Dapatkan notifikasi dengan segera apabila informasi pribadi Anda terpapar dalam insiden kebocoran data pihak ketiga. Anda dapat memonitor berbagai alamat email atau nama domain milik Anda sendiri."
+        "Dapatkan notifikasi dengan segera apabila informasi pribadi Anda terpapar dalam insiden kebocoran data pihak ketiga. Anda dapat memonitor banyak alamat email sekaligus atau nama domain milik Anda sendiri."
       ],
       "Recent": [
         "Baru digunakan"
@@ -3582,6 +3599,9 @@
       ],
       "Useful for permanent sharing": [
         "Untuk pembagian yang bersifat permanen"
+      ],
+      "USERNAME": [
+        "NAMA PENGGUNA"
       ],
       "Username": [
         "Nama pengguna"
@@ -4436,6 +4456,9 @@
       "Pending access to the shared data": [
         "Menunggu akses ke data yang dibagikan"
       ],
+      "Perform autotype?": [
+        "Tulis otomatis?"
+      ],
       "Permanently remove all items?": [
         "Hapus semua item secara permanen?"
       ],
@@ -4741,6 +4764,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "Kata sandi tambahan harus mengandung setidaknya 8 karakter"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Penulisan otomatis gagal. Silakan pastikan ${ PASS_APP_NAME } telah memiliki izin yang dibutuhkan dan coba lagi (${ error })."
       ],
       "Failed to load breaches.": [
         "Daftar kebocoran gagal dimuat."
