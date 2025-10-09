@@ -1897,7 +1897,7 @@
         "Carregant ${ PASS_APP_NAME }"
       ],
       "Logging you out...": [
-        "Desconnectant-vos..."
+        "S'està tancant la sessió..."
       ],
       "Low Priority": [
         "Prioritat baixa"
@@ -1926,10 +1926,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "S'estan movent tots els elements de «${ payload.content.name }»"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -2167,7 +2163,7 @@
         "Torna a connectar"
       ],
       "Reconnecting": [
-        "Reconnectant"
+        "S'està reconnectant"
       ],
       "Record: CNAME": [
         "Registre: CNAME"
