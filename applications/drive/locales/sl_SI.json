@@ -409,7 +409,7 @@
         "Izprazni smetnjak"
       ],
       "enable desktop notifications": [
-        "omogoči obvestila na namizju"
+        "prikazovanje obvestil na namizju"
       ],
       "Enable drive search": [
         "Omogoči iskanje po disku"
@@ -3994,11 +3994,17 @@
       "Drawer": [
         "Obrobni stolpec"
       ],
+      "Password ends with": [
+        "Geslo se konča z"
+      ],
       "Rename album": [
         "Preimenuj album"
       ],
       "Security Center": [
         "Center za varnost"
+      ],
+      "Username": [
+        "Uporabniško ime"
       ]
     },
     "Heading": {
@@ -6103,6 +6109,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Odprli boste svoj privzeti brskalnik in obiskali:"
+      ],
+      "You are currently signed in as ${ username }.": [
+        "Trenutno ste prijavljeni kot ${ username }."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Uporabljate več prostora za shranjevanje, kot je vključenega v paketu ${ downgradedPlanName }. Za spremembo paketa izbrišite ali odstranite podatke."
@@ -9302,6 +9311,9 @@
       "Select a reason": [
         "Izberite razlog"
       ],
+      "Select country": [
+        "Izberite državo"
+      ],
       "Select state": [
         "Izberite stanje"
       ],
@@ -9414,6 +9426,11 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Uradno sporočilo ${ BRAND_NAME }"
+      ]
+    },
+    "Referral": {
+      "More sharing options": [
+        "Več možnosti skupne rabe"
       ]
     },
     "Safety review": {
