@@ -9,8 +9,8 @@ export default function MailCalendarIcon({ size }: { size: number }) {
             className={`icon-size-${size}`}
         >
             <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M18.9701 13.5693L18.9713 13.5703L12.8571 20.3571L5 11.7087V7.97815C5 7.54976 5.4993 7.31538 5.82886 7.58907L14.546 14.8283C15.389 15.5283 16.6111 15.5283 17.454 14.8283L18.9701 13.5693Z"
                 fill="url(#paint0_linear_3814_12743)"
             />
@@ -19,8 +19,8 @@ export default function MailCalendarIcon({ size }: { size: number }) {
                 fill="url(#paint1_radial_3814_12743)"
             />
             <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M22.2858 10.8186V19H27V7.97816C27 7.54977 26.5007 7.31536 26.1712 7.5891L22.2858 10.8186Z"
                 fill="url(#paint2_linear_3814_12743)"
             />
@@ -53,8 +53,8 @@ export default function MailCalendarIcon({ size }: { size: number }) {
                     y2="-5.15459"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#E3D9FF" />
-                    <stop offset="1" stop-color="#7341FF" />
+                    <stop stopColor="#E3D9FF" />
+                    <stop offset="1" stopColor="#7341FF" />
                 </linearGradient>
                 <radialGradient
                     id="paint1_radial_3814_12743"
@@ -64,8 +64,8 @@ export default function MailCalendarIcon({ size }: { size: number }) {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(22.2104 12.5521) scale(20.1581 20.624)"
                 >
-                    <stop offset="0.5561" stop-color="#6D4AFF" />
-                    <stop offset="0.9944" stop-color="#AA8EFF" />
+                    <stop offset="0.5561" stopColor="#6D4AFF" />
+                    <stop offset="0.9944" stopColor="#AA8EFF" />
                 </radialGradient>
                 <linearGradient
                     id="paint2_linear_3814_12743"
@@ -75,8 +75,8 @@ export default function MailCalendarIcon({ size }: { size: number }) {
                     y2="-0.201747"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.271" stop-color="#E3D9FF" />
-                    <stop offset="1" stop-color="#7341FF" />
+                    <stop offset="0.271" stopColor="#E3D9FF" />
+                    <stop offset="1" stopColor="#7341FF" />
                 </linearGradient>
                 <linearGradient
                     id="paint3_linear_3814_12743"
@@ -86,7 +86,7 @@ export default function MailCalendarIcon({ size }: { size: number }) {
                     y2="29.4203"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.988738" stop-color="#6D4AFF" />
+                    <stop offset="0.988738" stopColor="#6D4AFF" />
                 </linearGradient>
                 <radialGradient
                     id="paint4_radial_3814_12743"
@@ -96,8 +96,8 @@ export default function MailCalendarIcon({ size }: { size: number }) {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(27.5345 13.7474) rotate(109.399) scale(21.0142 26.8299)"
                 >
-                    <stop offset="0.556057" stop-color="#54B7FF" stop-opacity="0" />
-                    <stop offset="0.994421" stop-color="#54B7FF" />
+                    <stop offset="0.556057" stopColor="#54B7FF" stopOpacity="0" />
+                    <stop offset="0.994421" stopColor="#54B7FF" />
                 </radialGradient>
                 <linearGradient
                     id="paint5_linear_3814_12743"
@@ -107,9 +107,9 @@ export default function MailCalendarIcon({ size }: { size: number }) {
                     y2="10.0659"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#C8E8FF" />
-                    <stop offset="0.410661" stop-color="#BDAEFF" />
-                    <stop offset="0.774813" stop-color="#6D4AFF" />
+                    <stop stopColor="#C8E8FF" />
+                    <stop offset="0.410661" stopColor="#BDAEFF" />
+                    <stop offset="0.774813" stopColor="#6D4AFF" />
                 </linearGradient>
             </defs>
         </svg>

@@ -14,6 +14,7 @@ import {
     generateKeys,
     getCompleteAddress,
     parseDOMStringToBodyElement,
+    tick,
     waitForSpyCall,
 } from '../../../helpers/test/helper';
 import { AddressID, ID, fromAddress, renderComposer, toAddress } from './Composer.test.helpers';
@@ -99,61 +100,97 @@ describe('Composer autosave', () => {
         await act(async () => {
             triggerRoosterInput(container);
         });
-        jest.advanceTimersByTime(1500);
+
+        await act(async () => {
+            jest.advanceTimersByTime(1500);
+            await tick();
+        });
+
         expect(createSpy).not.toHaveBeenCalled();
-        jest.advanceTimersByTime(1500);
+        await act(async () => {
+            jest.advanceTimersByTime(1500);
+            await tick();
+        });
         await waitForSpyCall({ spy: createSpy, disableFakeTimers: true });
     });
 
     it('should wait 2s after the last change before saving a change', async () => {
         const { createSpy, container } = await setup();
 
+        triggerRoosterInput(container);
         await act(async () => {
-            triggerRoosterInput(container);
             jest.advanceTimersByTime(1500);
-            triggerRoosterInput(container);
-            jest.advanceTimersByTime(1500);
-            expect(createSpy).not.toHaveBeenCalled();
-            jest.advanceTimersByTime(1500);
-            await waitForSpyCall({ spy: createSpy, disableFakeTimers: true });
+            await tick();
         });
+        triggerRoosterInput(container);
+        await act(async () => {
+            jest.advanceTimersByTime(1500);
+            await tick();
+        });
+        expect(createSpy).not.toHaveBeenCalled();
+        await act(async () => {
+            jest.advanceTimersByTime(1500);
+            await tick();
+        });
+
+        await waitForSpyCall({ spy: createSpy, disableFakeTimers: true });
     });
 
     it('should wait 2s after previous save resolved before saving a change', async () => {
         const { createSpy, createResolve, updateSpy, container } = await setup(false);
 
+        triggerRoosterInput(container);
         await act(async () => {
-            triggerRoosterInput(container);
             jest.advanceTimersByTime(1500);
-            expect(createSpy).not.toHaveBeenCalled();
-            jest.advanceTimersByTime(1500);
-            await waitForSpyCall({ spy: createSpy, disableFakeTimers: true });
-            triggerRoosterInput(container);
-            jest.advanceTimersByTime(1500);
-            expect(updateSpy).not.toHaveBeenCalled();
-            jest.advanceTimersByTime(1500);
-            expect(updateSpy).not.toHaveBeenCalled();
-            createResolve({ Message: { ID } });
-            jest.advanceTimersByTime(1500);
-            expect(updateSpy).not.toHaveBeenCalled();
-            jest.advanceTimersByTime(1500);
-            await waitForSpyCall({ spy: updateSpy, disableFakeTimers: true });
+            await tick();
         });
+        expect(createSpy).not.toHaveBeenCalled();
+        await act(async () => {
+            jest.advanceTimersByTime(1500);
+            await tick();
+        });
+        await waitForSpyCall({ spy: createSpy, disableFakeTimers: true });
+        triggerRoosterInput(container);
+        await act(async () => {
+            jest.advanceTimersByTime(1500);
+            await tick();
+        });
+        expect(updateSpy).not.toHaveBeenCalled();
+        await act(async () => {
+            jest.advanceTimersByTime(1500);
+            await tick();
+        });
+        expect(updateSpy).not.toHaveBeenCalled();
+        createResolve({ Message: { ID } });
+        await act(async () => {
+            jest.advanceTimersByTime(1500);
+            await tick();
+        });
+        expect(updateSpy).not.toHaveBeenCalled();
+        await act(async () => {
+            jest.advanceTimersByTime(1500);
+            await tick();
+        });
+        await waitForSpyCall({ spy: updateSpy, disableFakeTimers: true });
     });
 
     it('should wait previous save before sending', async () => {
         const { createSpy, createResolve, sendSpy, container, ...renderResult } = await setup(false);
 
+        triggerRoosterInput(container);
         await act(async () => {
-            triggerRoosterInput(container);
             jest.advanceTimersByTime(1500);
-            const sendButton = await renderResult.findByTestId('composer:send-button');
-            fireEvent.click(sendButton);
-            jest.advanceTimersByTime(1500);
-            await waitForSpyCall({ spy: createSpy, disableFakeTimers: true });
-            expect(sendSpy).not.toHaveBeenCalled();
-            createResolve({ Message: { ID, AddressID, Attachments: [] } });
-            await waitForSpyCall({ spy: sendSpy, disableFakeTimers: true });
+            await tick();
         });
+        const sendButton = await renderResult.findByTestId('composer:send-button');
+        fireEvent.click(sendButton);
+        await act(async () => {
+            jest.advanceTimersByTime(1500);
+            await tick();
+        });
+        await waitForSpyCall({ spy: createSpy, disableFakeTimers: true });
+        expect(sendSpy).not.toHaveBeenCalled();
+        createResolve({ Message: { ID, AddressID, Attachments: [] } });
+        await waitForSpyCall({ spy: sendSpy, disableFakeTimers: true });
     });
 });

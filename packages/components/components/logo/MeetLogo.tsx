@@ -59,9 +59,9 @@ const MeetLogo = ({ variant = 'with-wordmark', hasTitle = true, ...rest }: LogoP
                             y2="16.6121"
                             gradientUnits="userSpaceOnUse"
                         >
-                            <stop stop-color="#6652F5" />
-                            <stop offset="0.33754" stop-color="#9A9CF9" />
-                            <stop offset="0.868809" stop-color="#D9DAFC" />
+                            <stop stopColor="#6652F5" />
+                            <stop offset="0.33754" stopColor="#9A9CF9" />
+                            <stop offset="0.868809" stopColor="#D9DAFC" />
                         </linearGradient>
                         <radialGradient
                             id="paint1_radial_4758_2858"
@@ -71,9 +71,9 @@ const MeetLogo = ({ variant = 'with-wordmark', hasTitle = true, ...rest }: LogoP
                             gradientUnits="userSpaceOnUse"
                             gradientTransform="translate(9.105 28.9683) rotate(-59.4937) scale(19.1301 25.7295)"
                         >
-                            <stop stop-color="#B8C6E5" />
-                            <stop offset="0.418768" stop-color="#9388F2" />
-                            <stop offset="0.716275" stop-color="#6D4AFF" />
+                            <stop stopColor="#B8C6E5" />
+                            <stop offset="0.418768" stopColor="#9388F2" />
+                            <stop offset="0.716275" stopColor="#6D4AFF" />
                         </radialGradient>
                         <linearGradient
                             id="paint2_linear_4758_2858"
@@ -83,9 +83,9 @@ const MeetLogo = ({ variant = 'with-wordmark', hasTitle = true, ...rest }: LogoP
                             y2="9.35166"
                             gradientUnits="userSpaceOnUse"
                         >
-                            <stop stop-color="#6652F5" />
-                            <stop offset="0.33754" stop-color="#9A9CF9" />
-                            <stop offset="0.868809" stop-color="#D9DAFC" />
+                            <stop stopColor="#6652F5" />
+                            <stop offset="0.33754" stopColor="#9A9CF9" />
+                            <stop offset="0.868809" stopColor="#D9DAFC" />
                         </linearGradient>
                     </defs>
                 </>
@@ -109,7 +109,7 @@ const MeetLogo = ({ variant = 'with-wordmark', hasTitle = true, ...rest }: LogoP
                         d="M32.0122 9.6635V26.3366C32.0122 26.4245 32.0065 26.5095 32.0009 26.5946C31.8272 28.6865 29.4018 29.7892 27.6284 28.6582L26.6406 28.0317C26.6406 28.0317 26.6349 28.026 26.6292 28.0232C26.4271 27.8928 26.2221 27.7653 26.02 27.6349V13.6489C26.02 13.5611 26.0143 13.476 26.0086 13.391C25.9346 12.4953 25.4506 11.7838 24.7788 11.3473C23.8821 10.7633 22.6524 10.6811 21.6361 11.3274C21.4141 11.4691 21.1949 11.6052 20.9785 11.7441L26.6292 7.97691L26.6406 7.97125L26.7146 7.92306C26.8 7.8692 26.8854 7.81534 26.9708 7.76148C27.1871 7.62259 27.4063 7.48369 27.6284 7.34196C29.4018 6.21379 31.8272 7.31362 32.0009 9.40555C32.0065 9.49059 32.0122 9.57563 32.0122 9.6635Z"
                         fill="url(#paint2_linear_4758_2851)"
                     />
-                    <g clip-path="url(#clip0_4758_2851)">
+                    <g clipPath="url(#clip0_4758_2851)">
                         <path
                             d="M42.0122 21.3048V24.9682H44.57V21.4649C44.57 21.1245 44.7038 20.7961 44.945 20.5559C45.1841 20.3158 45.5104 20.179 45.8489 20.179H48.4726C49.6947 20.179 50.8682 19.6905 51.7326 18.819C52.597 17.9505 53.0825 16.7699 53.0825 15.5407C53.0825 14.3114 52.596 13.1319 51.7326 12.2603C50.8692 11.3909 49.6947 10.9024 48.4695 10.9024H42.0122V15.4809H44.57V13.3234H48.2993C48.8789 13.3234 49.4332 13.5544 49.8427 13.9659C50.2521 14.3773 50.4821 14.9347 50.4821 15.5174C50.4821 16.1001 50.2521 16.6574 49.8427 17.0689C49.4332 17.4803 48.8789 17.7114 48.2993 17.7114H45.5905C45.1213 17.7114 44.6551 17.8026 44.2234 17.986C43.7887 18.1664 43.3965 18.4319 43.0641 18.7663C42.7317 19.1007 42.4703 19.498 42.2878 19.9327C42.1054 20.3644 42.0122 20.8326 42.0122 21.3048Z"
                             fill="#1B1340"
@@ -160,9 +160,9 @@ const MeetLogo = ({ variant = 'with-wordmark', hasTitle = true, ...rest }: LogoP
                             y2="16.5224"
                             gradientUnits="userSpaceOnUse"
                         >
-                            <stop stop-color="#6652F5" />
-                            <stop offset="0.33754" stop-color="#9A9CF9" />
-                            <stop offset="0.868809" stop-color="#D9DAFC" />
+                            <stop stopColor="#6652F5" />
+                            <stop offset="0.33754" stopColor="#9A9CF9" />
+                            <stop offset="0.868809" stopColor="#D9DAFC" />
                         </linearGradient>
                         <radialGradient
                             id="paint1_radial_4758_2851"
@@ -172,9 +172,9 @@ const MeetLogo = ({ variant = 'with-wordmark', hasTitle = true, ...rest }: LogoP
                             gradientUnits="userSpaceOnUse"
                             gradientTransform="translate(8.01914 28.9683) rotate(-60.0223) scale(19.0275 25.3255)"
                         >
-                            <stop stop-color="#B8C6E5" />
-                            <stop offset="0.418768" stop-color="#9388F2" />
-                            <stop offset="0.716275" stop-color="#6D4AFF" />
+                            <stop stopColor="#B8C6E5" />
+                            <stop offset="0.418768" stopColor="#9388F2" />
+                            <stop offset="0.716275" stopColor="#6D4AFF" />
                         </radialGradient>
                         <linearGradient
                             id="paint2_linear_4758_2851"
@@ -184,9 +184,9 @@ const MeetLogo = ({ variant = 'with-wordmark', hasTitle = true, ...rest }: LogoP
                             y2="9.19187"
                             gradientUnits="userSpaceOnUse"
                         >
-                            <stop stop-color="#6652F5" />
-                            <stop offset="0.33754" stop-color="#9A9CF9" />
-                            <stop offset="0.868809" stop-color="#D9DAFC" />
+                            <stop stopColor="#6652F5" />
+                            <stop offset="0.33754" stopColor="#9A9CF9" />
+                            <stop offset="0.868809" stopColor="#D9DAFC" />
                         </linearGradient>
                         <clipPath id="clip0_4758_2851">
                             <rect
@@ -202,7 +202,7 @@ const MeetLogo = ({ variant = 'with-wordmark', hasTitle = true, ...rest }: LogoP
 
             {variant === 'wordmark-only' && (
                 <>
-                    <g clip-path="url(#clip0_4758_2870)">
+                    <g clipPath="url(#clip0_4758_2870)">
                         <path
                             d="M0.012207 21.3048V24.9682H2.57V21.4649C2.57 21.1245 2.70377 20.7961 2.94495 20.5559C3.18411 20.3158 3.51042 20.179 3.84889 20.179H6.47256C7.6947 20.179 8.86821 19.6905 9.73263 18.819C10.597 17.9505 11.0825 16.7699 11.0825 15.5407C11.0825 14.3114 10.596 13.1319 9.73263 12.2603C8.86922 11.3909 7.6947 10.9024 6.46952 10.9024H0.012207V15.4809H2.57V13.3234H6.29927C6.87892 13.3234 7.43325 13.5544 7.84266 13.9659C8.25207 14.3773 8.48211 14.9347 8.48211 15.5174C8.48211 16.1001 8.25207 16.6574 7.84266 17.0689C7.43325 17.4803 6.87892 17.7114 6.29927 17.7114H3.59048C3.12128 17.7114 2.65512 17.8026 2.22342 17.986C1.78868 18.1664 1.3965 18.4319 1.0641 18.7663C0.731713 19.1007 0.470258 19.498 0.287849 19.9327C0.105439 20.3644 0.012207 20.8326 0.012207 21.3048Z"
                             fill="white"
