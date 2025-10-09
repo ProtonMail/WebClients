@@ -423,6 +423,9 @@
       "Disable alias": [
         "Onemogoči vzdevek"
       ],
+      "Disable categories": [
+        "Onemogoči kategorije"
+      ],
       "Disabling alias": [
         "Onemogočanje vzdevka"
       ],
@@ -458,6 +461,9 @@
       ],
       "Download logs": [
         "Prenesite dnevnike"
+      ],
+      "Download now": [
+        "Prenesi zdaj"
       ],
       "Download the desktop app": [
         "Prenesi namizno aplikacijo"
@@ -508,7 +514,7 @@
         "Omogoči ${ darkWebMonitoring }"
       ],
       "enable desktop notifications": [
-        "omogoči obvestila na namizju"
+        "prikazovanje obvestil na namizju"
       ],
       "Encryption": [
         "Šifrirano"
@@ -705,6 +711,9 @@
       "Import from Outlook": [
         "Uvoz iz Outlooka"
       ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Na voljo je pomembna posodobitev. Pred nadaljnjo uporabo aplikacije jo posodobite na najnovejšo različico. ${ downloadUpdate }"
+      ],
       "In the morning": [
         "Zjutraj"
       ],
@@ -740,6 +749,9 @@
       ],
       "Italic": [
         "Ležeče"
+      ],
+      "Keep categories": [
+        "Obdrži kategorije"
       ],
       "Keep my subscription": [
         "Ohrani mojo naročnino"
@@ -881,6 +893,9 @@
       ],
       "More search options": [
         "Več možnosti iskanja"
+      ],
+      "Most frequent": [
+        "Najpogostejše"
       ],
       "Most read": [
         "Najbolj brano"
@@ -1434,6 +1449,9 @@
       "Try another method": [
         "Poskusi z drugim načinom"
       ],
+      "Try categories": [
+        "Preizkusite kategorije"
+      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Poskusite znova. Shranjevanje ni uspelo iz naslednjega razloga: ${ saveError }"
       ],
@@ -1487,6 +1505,9 @@
       ],
       "Upgrade": [
         "Nadgradi"
+      ],
+      "Upgrade Now": [
+        "Nadgradi zdaj"
       ],
       "Upgrade now": [
         "Nadgradi zdaj"
@@ -1586,6 +1607,15 @@
         "Pošiljanje datotek vCard z več kot ${ maxAttachments } stikoma ni mogoče.",
         "Pošiljanje datotek vCard z več kot ${ maxAttachments } stiki ni mogoče.",
         "Pošiljanje datotek vCard z več kot ${ maxAttachments } stiki ni mogoče."
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Brezplačni preizkus namizne aplikacije poteče čez 2 dni. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Brezplačni preizkus namizne aplikacije poteče čez pet dni. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Brezplačno preskušanje namizne aplikacije poteče dne ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Vaš pomočnik pri pisanju e-pošte"
@@ -5698,6 +5728,9 @@
       "Hardware not compatible": [
         "Strojna oprema ni združljiva"
       ],
+      "Password ends with": [
+        "Geslo se konča z"
+      ],
       "Report an issue": [
         "Prijava napake"
       ],
@@ -5715,6 +5748,9 @@
       ],
       "Tell us more": [
         "Povejte nam več"
+      ],
+      "Username": [
+        "Uporabniško ime"
       ]
     },
     "Hint": {
@@ -6354,6 +6390,12 @@
       ],
       "${ storage } storage": [
         "${ storage } shrambe"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } neprebran",
+        "${ subscription.UnreadMessageCount } neprebrani",
+        "${ subscription.UnreadMessageCount } neprebrana",
+        "${ subscription.UnreadMessageCount } neprebranih"
       ],
       "${ total } conversation": [
         "${ total } pogovor",
@@ -7159,6 +7201,9 @@
       "Included for free with your plan": [
         "Vključeno brezplačno v vaš paket"
       ],
+      "Includes marketing emails like offers and product announcements.": [
+        "Vključuje promocijska sporočila, kot so ponudbe in najave novih izdelkov."
+      ],
       "Inherited from parent folder": [
         "Podedovano od nadrejene mape"
       ],
@@ -7680,6 +7725,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Izberite, katere koledarje želite uvoziti. Za vsak uvoženi koledar bo ustvarjen nov koledar, odvisno od števila koledarjev, na voljo v vašem naročniškem paketu."
+      ],
+      "Selection pane": [
+        "Podokno izbora"
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Pošljite šifrirano, z geslom zaščiteno sporočilo na naslov ${ boldText } elektronske pošte."
@@ -8296,6 +8344,9 @@
       "You are about to open your default browser and visit:": [
         "Odprli boste svoj privzeti brskalnik in obiskali:"
       ],
+      "You are currently signed in as ${ username }.": [
+        "Trenutno ste prijavljeni kot ${ username }."
+      ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Uporabljate več prostora za shranjevanje, kot je vključenega v paketu ${ downgradedPlanName }. Za spremembo paketa izbrišite ali odstranite podatke."
       ],
@@ -8861,6 +8912,18 @@
       "${ BRAND_NAME } username": [
         "Uporabniško ime za ${ BRAND_NAME }"
       ],
+      "${ count } unread conversation": [
+        "${ count } neprebran pogovor",
+        "${ count } neprebrana pogovora",
+        "${ count } neprebrani pogovori",
+        "${ count } neprebranih pogovorov"
+      ],
+      "${ count } unread message": [
+        "${ count } neprebrano sporočilo",
+        "${ count } neprebrani sporočili",
+        "${ count } neprebrana sporočila",
+        "${ count } neprebranih sporočil"
+      ],
       "${ n } month": [
         "${ n } mesec",
         "${ n } meseca",
@@ -9143,6 +9206,9 @@
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
       ],
+      "Go to Forums": [
+        "Obišči forume"
+      ],
       "Hide password": [
         "Skrij geslo"
       ],
@@ -9262,6 +9328,9 @@
       ],
       "No label found": [
         "Ni najdenih oznak"
+      ],
+      "No results found": [
+        "Ni zadetkov"
       ],
       "Not factually correct": [
         "Ni dejansko pravilno"
@@ -9545,7 +9614,7 @@
         "Od"
       ],
       "To": [
-        "Do"
+        "Za"
       ]
     },
     "Label, credit card": {
@@ -9642,6 +9711,9 @@
       ],
       "Create a new calendar to manage your invitations": [
         "Za upravljanje svojih povabil ustvarite nov koledar"
+      ],
+      "Deleted": [
+        "Izbrisano"
       ],
       "Drafts": [
         "Osnutki"
@@ -11280,6 +11352,9 @@
       "Finance": [
         "Finance"
       ],
+      "Maybe later": [
+        "Morda pozneje"
+      ],
       "Privacy for all your online accounts": [
         "Zasebnost za vse vaše spletne račune"
       ],
@@ -11891,6 +11966,9 @@
       "Select a reason": [
         "Izberite razlog"
       ],
+      "Select country": [
+        "Izberite državo"
+      ],
       "Select state": [
         "Izberite stanje"
       ],
@@ -11931,7 +12009,7 @@
         "Janez"
       ],
       "To": [
-        "Do"
+        "Za"
       ],
       "Type text or keyword": [
         "Vpišite besedilo ali ključno besedo"
@@ -12068,6 +12146,11 @@
       ],
       "Stored with zero-access encryption": [
         "Shranjeno s šifriranjem brez dostopa"
+      ]
+    },
+    "Referral": {
+      "More sharing options": [
+        "Več možnosti skupne rabe"
       ]
     },
     "Remaining days before the message expire": {
@@ -14413,6 +14496,12 @@
       "Label as": [
         "Označi kot"
       ],
+      "Label message as": [
+        "Dodaj sporočilu oznako",
+        "Dodaj sporočiloma oznako",
+        "Dodaj sporočilom oznako",
+        "Dodaj sporočilom oznako"
+      ],
       "Label options": [
         "Možnosti oznake"
       ],
@@ -14496,6 +14585,15 @@
       ],
       "Move all messages to trash": [
         "Premakni vsa sporočila v smetnjak"
+      ],
+      "Move message to": [
+        "Premakni sporočilo v",
+        "Premakni sporočili v",
+        "Premakni sporočila v",
+        "Premakni sporočila v"
+      ],
+      "Move messages to": [
+        "Premakni sporočila v"
       ],
       "Move to": [
         "Premakni v"
@@ -14810,7 +14908,7 @@
         "To polje ne sme biti izpolnjeno le s presledki"
       ],
       "To": [
-        "Do"
+        "Za"
       ],
       "Trash": [
         "Smetnjak"

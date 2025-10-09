@@ -471,6 +471,9 @@
       "Download logs": [
         "Logboeken downloaden"
       ],
+      "Download now": [
+        "Nu downloaden"
+      ],
       "Download the desktop app": [
         "Download de desktop-app"
       ],
@@ -722,6 +725,9 @@
       ],
       "Import from Outlook": [
         "Importeer uit Outlook"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Belangrijke update beschikbaar. Update naar de nieuwste versie om het programma te blijven gebruiken. ${ downloadUpdate }"
       ],
       "In the morning": [
         "'s Ochtends"
@@ -1531,6 +1537,9 @@
       "Upgrade for 200GB": [
         "Upgraden voor 200GB"
       ],
+      "Upgrade Now": [
+        "Upgrade Nu"
+      ],
       "Upgrade now": [
         "Nu upgraden"
       ],
@@ -1627,6 +1636,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "U kunt geen vCard-bestand met meer dan ${ maxAttachments } contacten verzenden",
         "U kunt geen vCard-bestand met meer dan ${ maxAttachments } contacten verzenden"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "De gratis proefperiode van uw desktop programma loopt over 2 dagen af. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "De gratis proefperiode van uw desktop programma loopt over 5 dagen af. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "De gratis proefperiode van uw desktop programma loopt af op ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Uw e-mailschrijfassistent"

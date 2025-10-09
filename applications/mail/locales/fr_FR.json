@@ -480,6 +480,9 @@
       "Download logs": [
         "Télécharger les journaux"
       ],
+      "Download now": [
+        "Télécharger"
+      ],
       "Download the desktop app": [
         "Téléchargez l'application de bureau"
       ],
@@ -731,6 +734,9 @@
       ],
       "Import from Outlook": [
         "Importer depuis Outlook"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Une mise à jour importante est disponible. Pour continuer à utiliser l'application, veuillez installer la dernière version. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Dans la matinée"
@@ -1555,6 +1561,9 @@
       "Upgrade for 200GB": [
         "Mise à niveau pour 200 Go"
       ],
+      "Upgrade Now": [
+        "Passer à l'abonnement supérieur"
+      ],
       "Upgrade now": [
         "Changer d'abonnement"
       ],
@@ -1651,6 +1660,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Vous ne pouvez pas envoyer de fichiers vCard contenant plus de ${ maxAttachments } contacts.",
         "Vous ne pouvez pas envoyer de fichiers vCard contenant plus de ${ maxAttachments } contacts."
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Votre essai gratuit de l'application de bureau se termine dans 2 jours. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Votre essai gratuit de l'application de bureau se termine dans 5 jours. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Votre essai gratuit de l'application de bureau se termine le ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Votre assistant d'écriture de messages"
@@ -7488,6 +7506,9 @@
       ],
       "Low Priority": [
         "Priorité basse"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Définissez ${ MAIL_APP_NAME } comme application de messagerie par défaut."
       ],
       "Manage your folders": [
         "Gérer vos dossiers"
