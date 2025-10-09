@@ -6,15 +6,8 @@ import { c } from 'ttag';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms';
 import type { ModalStateProps } from '@proton/components';
-import {
-    Icon,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    useApi,
-    useNotifications,
-} from '@proton/components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useApi, useNotifications } from '@proton/components';
+import { IcInfoCircle } from '@proton/icons';
 import TextArea from '@proton/components/components/v2/input/TextArea';
 import useLoading from '@proton/hooks/useLoading';
 import { useAssistant } from '@proton/llm/lib';
@@ -79,7 +72,7 @@ const AssistantUnsafeErrorFeedbackModal = ({ result, prompt, ...rest }: Props) =
                     placeholder={c('Info').t`Please share what the issue is`}
                 />
                 <div className="flex color-hint flex-nowrap">
-                    <Icon name="info-circle" className="mr-1 shrink-0" />
+                    <IcInfoCircle className="mr-1 shrink-0" />
                     <span className="text-sm">{c('Assistant feedback')
                         .t`By submitting this feedback, the prompt and your comments will be visible to ${BRAND_NAME}'s moderation team.`}</span>
                 </div>

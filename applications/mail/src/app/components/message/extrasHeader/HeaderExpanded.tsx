@@ -4,7 +4,8 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { Button, Kbd, Tooltip } from '@proton/atoms';
-import { ButtonGroup, Icon, useActiveBreakpoint, useContactModals, useToggle } from '@proton/components';
+import { ButtonGroup, useActiveBreakpoint, useContactModals, useToggle } from '@proton/components';
+import { IcArrowUpAndLeftBig, IcArrowUpAndRightBig, IcArrowsUpAndLeftBig, IcTrashClock } from '@proton/icons';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
@@ -312,7 +313,7 @@ const HeaderExpanded = ({
             {showDetails && isMessageExpiringByRetentionRule && expirationDate && (
                 <div className="mb-2 flex flex-nowrap color-weak">
                     <span className="self-center mr-2 text-ellipsis">
-                        <Icon name="trash-clock" className="mr-2" />
+                        <IcTrashClock className="mr-2" />
                         {getExpiresOnMessage(expirationDate)}
                     </span>
                 </div>
@@ -371,11 +372,8 @@ const HeaderExpanded = ({
                                     onClick={handleCompose(MESSAGE_ACTIONS.REPLY)}
                                     data-testid="message-view:reply"
                                 >
-                                    <Icon
-                                        name="arrow-up-and-left-big"
-                                        className="rtl:mirror"
-                                        alt={c('Title').t`Reply`}
-                                    />
+                                    <IcArrowUpAndLeftBig className="rtl:mirror"
+                                        alt={c('Title').t`Reply`} />
                                 </Button>
                             </Tooltip>
                             <Tooltip title={titleReplyAll}>
@@ -385,11 +383,8 @@ const HeaderExpanded = ({
                                     onClick={handleCompose(MESSAGE_ACTIONS.REPLY_ALL)}
                                     data-testid="message-view:reply-all"
                                 >
-                                    <Icon
-                                        name="arrows-up-and-left-big"
-                                        className="rtl:mirror"
-                                        alt={c('Title').t`Reply all`}
-                                    />
+                                    <IcArrowsUpAndLeftBig className="rtl:mirror"
+                                        alt={c('Title').t`Reply all`} />
                                 </Button>
                             </Tooltip>
                             <Tooltip title={titleForward}>
@@ -399,11 +394,8 @@ const HeaderExpanded = ({
                                     onClick={handleCompose(MESSAGE_ACTIONS.FORWARD)}
                                     data-testid="message-view:forward"
                                 >
-                                    <Icon
-                                        name="arrow-up-and-right-big"
-                                        className="rtl:mirror"
-                                        alt={c('Title').t`Forward`}
-                                    />
+                                    <IcArrowUpAndRightBig className="rtl:mirror"
+                                        alt={c('Title').t`Forward`} />
                                 </Button>
                             </Tooltip>
                         </ButtonGroup>

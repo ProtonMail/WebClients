@@ -4,7 +4,8 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import type { EditorMetadata } from '@proton/components';
-import { DropdownMenuButton, Icon, useActiveBreakpoint } from '@proton/components';
+import { DropdownMenuButton, useActiveBreakpoint } from '@proton/components';
+import { IcHourglass, IcLock, IcThreeDotsHorizontal, IcTrash } from '@proton/icons';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import clsx from '@proton/utils/clsx';
 
@@ -76,11 +77,8 @@ const ComposerMoreActions = ({
             titleTooltip={titleMoreOptions}
             className="button button-medium button-ghost-weak button-for-icon composer-more-dropdown"
             content={
-                <Icon
-                    name="three-dots-horizontal"
-                    alt={titleMoreOptions}
-                    className={clsx([dotsInColor && 'color-primary'])}
-                />
+                <IcThreeDotsHorizontal alt={titleMoreOptions}
+                    className={clsx([dotsInColor && 'color-primary'])} />
             }
         >
             {toolbarExtension}
@@ -92,7 +90,7 @@ const ComposerMoreActions = ({
                 disabled={lock}
                 data-testid="composer:expiration-button"
             >
-                <Icon name="hourglass" />
+                <IcHourglass />
                 <span className="ml-2 my-auto flex-1">
                     {isExpiration ? c('Action').t`Set expiration time` : c('Action').t`Expiration time`}
                 </span>
@@ -106,7 +104,7 @@ const ComposerMoreActions = ({
                     disabled={lock}
                     data-testid="composer:remove-expiration-button"
                 >
-                    <Icon name="trash" />
+                    <IcTrash />
                     <span className="ml-2 my-auto flex-1">{c('Action').t`Remove expiration time`}</span>
                 </DropdownMenuButton>
             )}
@@ -121,7 +119,7 @@ const ComposerMoreActions = ({
                         aria-pressed={isPassword}
                         data-testid="composer:encryption-button"
                     >
-                        <Icon name="lock" />
+                        <IcLock />
                         <span className="ml-2 my-auto flex-1">
                             {isPassword ? c('Action').t`Edit encryption` : c('Action').t`External encryption`}
                         </span>
@@ -134,7 +132,7 @@ const ComposerMoreActions = ({
                             aria-pressed={isPassword}
                             data-testid="composer:remove-encryption-button"
                         >
-                            <Icon name="trash" />
+                            <IcTrash />
                             <span className="ml-2 my-auto flex-1">{c('Action').t`Remove encryption`}</span>
                         </DropdownMenuButton>
                     )}
@@ -146,7 +144,7 @@ const ComposerMoreActions = ({
                         onClick={onDelete}
                         data-testid="composer:delete-draft-button"
                     >
-                        <Icon name="trash" />
+                        <IcTrash />
                         <span className="ml-2 my-auto flex-1">{c('Action').t`Delete draft`}</span>
                     </DropdownMenuButton>
                 </>

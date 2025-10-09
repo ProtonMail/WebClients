@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Vr } from '@proton/atoms';
-import { Icon, useApi, useModalState } from '@proton/components';
+import { useApi, useModalState } from '@proton/components';
+import { IcClock } from '@proton/icons';
 import { TelemetryMailEvents } from '@proton/shared/lib/api/telemetry';
 
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
@@ -43,7 +44,7 @@ const SnoozeToolbarDropdown = ({ selectedIDs, labelID }: Props) => {
                     });
                 }}
                 disabled={!selectedIDs || !selectedIDs.length || selectAll}
-                content={<Icon className="toolbar-icon flex" name="clock" alt={c('Title').t`Snooze`} />}
+                content={<IcClock className="toolbar-icon flex"  alt={c('Title').t`Snooze`} />}
                 title={c('Title').t`Snooze`}
                 data-testid="toolbar:snooze"
                 hasCaret={false}

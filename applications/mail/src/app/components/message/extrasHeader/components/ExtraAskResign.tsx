@@ -3,7 +3,8 @@ import { useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Banner, Button, Href } from '@proton/atoms';
-import { Icon, useModalState } from '@proton/components';
+import { useModalState } from '@proton/components';
+import { IcExclamationTriangleFilled } from '@proton/icons';
 import type { MessageVerification, MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
@@ -49,7 +50,7 @@ const ExtraAskResign = ({ message, messageVerification, onResignContact }: Props
         <Banner
             data-testid="extra-ask-resign:banner"
             variant="norm-outline"
-            icon={<Icon name="exclamation-triangle-filled" className="color-danger" />}
+            icon={<IcExclamationTriangleFilled className="color-danger" />}
             link={
                 <Href className="inline-block" href={getKnowledgeBaseUrl('/address-verification')}>
                     {c('Info').t`Learn more`}

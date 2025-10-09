@@ -2,7 +2,8 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { DropdownMenu, DropdownMenuButton, Icon } from '@proton/components';
+import { DropdownMenu, DropdownMenuButton } from '@proton/components';
+import { IcCircleSlash, IcThreeDotsHorizontal } from '@proton/icons';
 import { FeatureCode, useFeature } from '@proton/features';
 import noop from '@proton/utils/noop';
 
@@ -36,7 +37,7 @@ const MoreActions = ({ selectedIDs }: Props) => {
             data-testid="toolbar:block-sender"
             disabled={!canShowBlockSender}
         >
-            <Icon name="circle-slash" className="mr-2" />
+            <IcCircleSlash className="mr-2" />
             {c('Action').t`Block senders`}
         </DropdownMenuButton>
     );
@@ -55,7 +56,7 @@ const MoreActions = ({ selectedIDs }: Props) => {
         <>
             <ToolbarDropdown
                 disabled={isToolbarButtonDisabled}
-                content={<Icon className="toolbar-icon" name="three-dots-horizontal" />}
+                content={<IcThreeDotsHorizontal className="toolbar-icon"  />}
                 dropDownClassName="move-dropdown"
                 className="move-dropdown-button"
                 title={c('Title').t`More actions`}

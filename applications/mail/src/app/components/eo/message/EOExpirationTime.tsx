@@ -10,7 +10,8 @@ import {
 import { c, msgid } from 'ttag';
 
 import { Button, ButtonLike, Href, Tooltip } from '@proton/atoms';
-import { Icon, Prompt, useModalState } from '@proton/components';
+import { Prompt, useModalState } from '@proton/components';
+import { IcHourglass } from '@proton/icons';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
@@ -71,7 +72,7 @@ const EOExpirationTime = ({ message }: Props) => {
                     className="inline-flex items-center w-full md:w-auto justify-center md:justify-start mb-3 px-2"
                     onClick={() => setExpirationModalOpen(true)}
                 >
-                    <Icon name="hourglass" className="shrink-0 ml-1" />
+                    <IcHourglass className="shrink-0 ml-1" />
                     <span className="ml-2">{buttonMessage}</span>
                 </ButtonLike>
             </Tooltip>

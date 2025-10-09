@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button, Kbd, Tooltip } from '@proton/atoms';
-import { DropdownMenuButton, Icon } from '@proton/components';
+import { DropdownMenuButton } from '@proton/components';
+import { IcLock, IcTrash } from '@proton/icons';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
@@ -35,11 +36,8 @@ const ComposerPasswordActions = ({ isPassword, onRemoveOutsideEncryption, onPass
                 className="button button-for-icon composer-more-dropdown"
                 data-testid="composer:encryption-options-button"
                 content={
-                    <Icon
-                        name="lock"
-                        className={clsx([isPassword && 'color-primary'])}
-                        alt={c('Action').t`External encryption`}
-                    />
+                    <IcLock className={clsx([isPassword && 'color-primary'])}
+                        alt={c('Action').t`External encryption`} />
                 }
             >
                 <DropdownMenuButton
@@ -47,7 +45,7 @@ const ComposerPasswordActions = ({ isPassword, onRemoveOutsideEncryption, onPass
                     onClick={onPassword}
                     data-testid="composer:edit-outside-encryption"
                 >
-                    <Icon name="lock" />
+                    <IcLock />
                     <span className="ml-2 my-auto flex-1">{c('Action').t`Edit encryption`}</span>
                 </DropdownMenuButton>
                 <DropdownMenuButton
@@ -55,7 +53,7 @@ const ComposerPasswordActions = ({ isPassword, onRemoveOutsideEncryption, onPass
                     onClick={onRemoveOutsideEncryption}
                     data-testid="composer:remove-outside-encryption"
                 >
-                    <Icon name="trash" />
+                    <IcTrash />
                     <span className="ml-2 my-auto flex-1">{c('Action').t`Remove encryption`}</span>
                 </DropdownMenuButton>
             </ComposerMoreOptionsDropdown>
@@ -72,7 +70,7 @@ const ComposerPasswordActions = ({ isPassword, onRemoveOutsideEncryption, onPass
                 onClick={onPassword}
                 aria-pressed={isPassword}
             >
-                <Icon name="lock" alt={c('Action').t`Encryption`} />
+                <IcLock alt={c('Action').t`Encryption`} />
             </Button>
         </Tooltip>
     );

@@ -3,19 +3,8 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import {
-    Dropdown,
-    DropdownButton,
-    DropdownMenu,
-    DropdownMenuButton,
-    FiltersUpsellModal,
-    Icon,
-    useApi,
-    useEventManager,
-    useModalState,
-    useNotifications,
-    usePopperAnchor,
-} from '@proton/components';
+import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton, FiltersUpsellModal, Icon, useApi, useEventManager, useModalState, useNotifications, usePopperAnchor } from '@proton/components';
+import { IcCrossCircle, IcThreeDotsVertical } from '@proton/icons';
 import { useFilters } from '@proton/mail/store/filters/hooks';
 import { toggleEnable } from '@proton/shared/lib/api/filters';
 import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
@@ -97,7 +86,7 @@ export const NewsletterSubscriptionCardFilterDropdown = ({ subscription, handleS
                     size="small"
                     icon
                 >
-                    <Icon name="three-dots-vertical" />
+                    <IcThreeDotsVertical />
                 </DropdownButton>
             </div>
             <Dropdown isOpen={popover.isOpen} anchorRef={popover.anchorRef} onClose={popover.close}>
@@ -118,7 +107,7 @@ export const NewsletterSubscriptionCardFilterDropdown = ({ subscription, handleS
                         onClick={() => handleSubscriptionFilter('RemoveFromList')}
                         className="text-left flex flex-nowrap pl-6"
                     >
-                        <Icon name="cross-circle" className="mr-2 mt-0.5 shrink-0" />
+                        <IcCrossCircle className="mr-2 mt-0.5 shrink-0" />
                         {c('Action').t`Remove from list`}
                     </DropdownMenuButton>
                 </DropdownMenu>

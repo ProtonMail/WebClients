@@ -4,7 +4,8 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import { Button, Href, Scroll, Tooltip } from '@proton/atoms';
-import { Icon, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/components';
+import { IcArrowDown, IcCrossBig } from '@proton/icons';
 import Copy from '@proton/components/components/button/Copy';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import { ASSISTANT_SERVER_THROTTLE_TIMEOUT, useAssistant } from '@proton/llm/lib';
@@ -105,7 +106,7 @@ const ComposerAssistantExpanded = ({
                                 icon
                                 className="shadow-raised absolute bottom-0 right-0 mr-1 mb-2"
                             >
-                                <Icon name="arrow-down" alt={c('Action').t`Scroll to bottom`} />
+                                <IcArrowDown alt={c('Action').t`Scroll to bottom`} />
                             </Button>
                         </Tooltip>
                     )}
@@ -155,7 +156,7 @@ const ComposerAssistantExpanded = ({
                 icon
                 aria-label={c('Action').t`Cancel`}
             >
-                <Icon name="cross-big" />
+                <IcCrossBig />
             </Button>
 
             <div className="shrink-0 mt-auto">

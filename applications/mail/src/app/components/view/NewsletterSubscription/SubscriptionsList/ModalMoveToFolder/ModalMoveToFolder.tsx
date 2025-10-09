@@ -4,16 +4,8 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
-import {
-    Checkbox,
-    Icon,
-    type ModalProps,
-    Prompt,
-    useApi,
-    useDebounceInput,
-    useEventManager,
-    useNotifications,
-} from '@proton/components';
+import { Checkbox, type ModalProps, Prompt, useApi, useDebounceInput, useEventManager, useNotifications } from '@proton/components';
+import { IcPlus } from '@proton/icons';
 import useLoading from '@proton/hooks/useLoading';
 import { useFolders } from '@proton/mail';
 import { create } from '@proton/shared/lib/api/labels';
@@ -190,7 +182,7 @@ export const ModalMoveToFolder = ({ subscription, handleUpsellModalDisplay, ...p
                                     className="text-left flex items-start"
                                     data-testid="create-folder-button"
                                 >
-                                    <Icon name="plus" className="mr-2 mt-0.5" />
+                                    <IcPlus className="mr-2 mt-0.5" />
                                     <span className="flex-1">{c('Action').jt`Create folder ${boldFolderName}`}</span>
                                 </Button>
                             </div>

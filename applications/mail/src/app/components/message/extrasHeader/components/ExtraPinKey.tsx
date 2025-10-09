@@ -4,7 +4,8 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { Banner, Button, Href, InlineLinkButton } from '@proton/atoms';
-import { Icon, useApi, useModalState, useNotifications } from '@proton/components';
+import { useApi, useModalState, useNotifications } from '@proton/components';
+import { IcExclamationTriangleFilled } from '@proton/icons';
 import type { PublicKeyReference } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
@@ -190,7 +191,7 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
     return (
         <Banner
             variant="norm-outline"
-            icon={<Icon name="exclamation-triangle-filled" className="color-danger" />}
+            icon={<IcExclamationTriangleFilled className="color-danger" />}
             link={
                 promptKeyPinningType === PROMPT_KEY_PINNING_TYPE.AUTOPROMPT ? (
                     <InlineLinkButton

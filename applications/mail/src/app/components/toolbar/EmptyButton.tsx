@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Kbd, Vr } from '@proton/atoms';
-import { Icon, ToolbarButton, useActiveBreakpoint } from '@proton/components';
+import { ToolbarButton, useActiveBreakpoint } from '@proton/components';
+import { IcBroom } from '@proton/icons';
 import { useLoading } from '@proton/hooks';
 import { useLabels } from '@proton/mail';
 import { isCustomLabel, labelIncludes } from '@proton/mail/helpers/location';
@@ -74,7 +75,7 @@ const EmptyButton = ({ labelID = '', elementIDs }: Props) => {
                 title={titleEmpty}
                 onClick={handleClick}
                 data-testid="toolbar:empty-folder"
-                icon={<Icon name="broom" alt={title} />}
+                icon={<IcBroom alt={title} />}
             />
             {deleteAllModal}
         </>

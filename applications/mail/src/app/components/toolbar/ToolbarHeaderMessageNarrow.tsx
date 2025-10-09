@@ -2,7 +2,8 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton, useActiveBreakpoint, useElementBreakpoints } from '@proton/components';
+import { ToolbarButton, useActiveBreakpoint, useElementBreakpoints } from '@proton/components';
+import { IcArrowLeft } from '@proton/icons';
 import clsx from '@proton/utils/clsx';
 
 import { getToolbarResponsiveSizes } from '../../helpers/toolbar/getToolbarResponsiveSizes';
@@ -70,7 +71,7 @@ const ToolbarHeaderMessageNarrow = ({
             >
                 <div className="flex items-center toolbar-inner gap-2">
                     <ToolbarButton
-                        icon={<Icon name="arrow-left" alt={c('Action').t`Back`} />}
+                        icon={<IcArrowLeft alt={c('Action').t`Back`} />}
                         onClick={onBack}
                         data-testid="toolbar:back-button"
                     />

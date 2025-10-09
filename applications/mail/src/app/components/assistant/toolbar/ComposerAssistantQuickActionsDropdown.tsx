@@ -1,14 +1,8 @@
 import { c } from 'ttag';
 
 import { Button, Tooltip } from '@proton/atoms';
-import {
-    Dropdown,
-    DropdownButton,
-    DropdownMenuButton,
-    Icon,
-    useActiveBreakpoint,
-    usePopperAnchor,
-} from '@proton/components';
+import { Dropdown, DropdownButton, DropdownMenuButton, useActiveBreakpoint, usePopperAnchor } from '@proton/components';
+import { IcThreeDotsHorizontal } from '@proton/icons';
 import type { ActionType } from '@proton/llm/lib/types';
 
 interface Props {
@@ -35,7 +29,7 @@ const ComposerAssistantQuickActionsDropdown = ({ onClickRefineAction, disableAct
                     shape="ghost"
                     icon
                 >
-                    <Icon name="three-dots-horizontal" alt={c('Action').t`More refine actions`} />
+                    <IcThreeDotsHorizontal alt={c('Action').t`More refine actions`} />
                 </DropdownButton>
             </Tooltip>
             <Dropdown autoClose autoCloseOutside isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
