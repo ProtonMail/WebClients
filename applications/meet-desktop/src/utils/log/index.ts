@@ -1,6 +1,5 @@
 import { app, WebContents } from "electron";
 import Logger, { Hook, LogMessage, Transport } from "electron-log";
-import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
 import { appSession } from "../session";
 import { isAbsolute } from "node:path";
 import { createHash } from "node:crypto";
@@ -13,15 +12,17 @@ if (process.env.NODE_ENV === "test") {
 
 export const NET_LOGGER_VIEW_PREFIX = "net/";
 
+type ViewID = "meet" | "account";
+
 export const mainLogger = Logger.scope("main");
 export const ipcLogger = Logger.scope("ipc");
-export const netLogger = (viewID: CHANGE_VIEW_TARGET | null) =>
+export const netLogger = (viewID: ViewID | null) =>
     viewID ? Logger.scope(`${NET_LOGGER_VIEW_PREFIX}${viewID}`) : Logger.scope("net");
 export const settingsLogger = Logger.scope("settings");
 export const updateLogger = Logger.scope("update");
 export const protocolLogger = Logger.scope("protocol");
 export const utilsLogger = Logger.scope("utils");
-export const viewLogger = (viewID: CHANGE_VIEW_TARGET | null) => (viewID ? Logger.scope(viewID) : Logger.scope("view"));
+export const viewLogger = (viewID: ViewID | null) => (viewID ? Logger.scope(viewID) : Logger.scope("view"));
 export const sentryLogger = Logger.scope("sentry");
 export const notificationLogger = Logger.scope("notification");
 
@@ -194,9 +195,7 @@ export function initializeLog() {
     Logger.transports.metrics = metrics.logTransporter;
 }
 
-export async function connectNetLogger(
-    getWebContentsViewName: (webContents: WebContents) => CHANGE_VIEW_TARGET | null,
-) {
+export async function connectNetLogger(getWebContentsViewName: (webContents: WebContents) => ViewID | null) {
     appSession().webRequest.onCompleted((details) => {
         const viewName = details.webContents ? getWebContentsViewName(details.webContents) : null;
 
