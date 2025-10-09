@@ -298,11 +298,17 @@
       "Continue import": [
         "Jatka tuontia"
       ],
+      "Continue with categories": [
+        "Jatka luokilla"
+      ],
       "Continue with Google": [
         "Jatka Googlella"
       ],
       "Continue with Outlook": [
         "Jatka Outlookilla"
+      ],
+      "Continue without categories": [
+        "Jatka ilman luokkia"
       ],
       "Contract composer": [
         "Supista viestin kirjoitus"
@@ -370,6 +376,9 @@
       "Customize": [
         "Mukauta"
       ],
+      "Customize categories": [
+        "Mukauta luokkia"
+      ],
       "Customize import": [
         "Mukauta tuontia"
       ],
@@ -426,6 +435,9 @@
       "Disable alias": [
         "Poista alias käytöstä"
       ],
+      "Disable categories": [
+        "Poista luokat käytöstä"
+      ],
       "Disabling alias": [
         "Aliasta poistetaan käytöstä"
       ],
@@ -462,6 +474,9 @@
       "Download logs": [
         "Lataa lokitiedot"
       ],
+      "Download now": [
+        "Lataa nyt"
+      ],
       "Download the desktop app": [
         "Lataa työpöytäsovellus"
       ],
@@ -475,7 +490,7 @@
         "Muokkaa osoitetta"
       ],
       "Edit categories": [
-        "Muokkaa kategorioita"
+        "Muokkaa luokkia"
       ],
       "Edit draft": [
         "Muokkaa luonnosta"
@@ -708,6 +723,9 @@
       "Import from Outlook": [
         "Tuo Outlookista"
       ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Tärkeä päivitys on saatavilla. Jatka sovelluksen käyttöä päivittämällä se uusimpaan versioon. ${ downloadUpdate }"
+      ],
       "In the morning": [
         "Aamulla"
       ],
@@ -744,6 +762,9 @@
       ],
       "Italic": [
         "Kursivointi"
+      ],
+      "Keep categories": [
+        "Säilytä luokat"
       ],
       "Keep my subscription": [
         "Pidä tilaukseni"
@@ -1442,7 +1463,7 @@
         "Kokeile toista tapaa"
       ],
       "Try categories": [
-        "Kokeile kategorioita"
+        "Kokeile luokkia"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Yritä tallennusta uudelleen. Tallennus epäonnistui: ${ saveError }"
@@ -1500,6 +1521,9 @@
       ],
       "Upgrade": [
         "Päivitä tilaus"
+      ],
+      "Upgrade Now": [
+        "Päivitä tilaus nyt"
       ],
       "Upgrade now": [
         "Päivitä tilaus nyt"
@@ -1597,6 +1621,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedoston",
         "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedoston"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Ilmainen työpöytäsovelluksen kokeilujaksosi päättyy 2 päivän kuluttua. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Ilmainen työpöytäsovelluksen kokeilujaksosi päättyy 5 päivän kuluttua. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Ilmainen työpöytäsovelluksen kokeilujaksosi päättyy ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Sähköpostin kirjoitusavustajasi"
@@ -4606,7 +4639,7 @@
         "Syötä joko etu-, suku- tai näyttönimi"
       ],
       "Please select a category and what went wrong with the generated text": [
-        "Valitse kategoria ja mikä meni pieleen luodussa tekstissä"
+        "Valitse luokka ja mikä luodussa tekstissä meni pieleen"
       ],
       "Please select a country": [
         "Valitse maa"
@@ -5023,6 +5056,9 @@
     "Error message": {
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "Aliaksia ei voida käyttää, kun lisäsalasana on käytössä ${ PASS_APP_NAME }issa."
+      ],
+      "An error occurred with the categories": [
+        "Virhe luokissa"
       ],
       "App currently unavailable": [
         "Sovellus ei ole tällä hetkellä käytettävissä"
@@ -8834,6 +8870,9 @@
       "Add image URL": [
         "Lisää kuvan URL"
       ],
+      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
+        "Lisää tai poista luokkia. Ota tai poista ilmoitukset käytöstä. Säädä milloin tahansa ${ menuIcon }-valikosta."
+      ],
       "Add to group": [
         "Lisää ryhmään"
       ],
@@ -8926,6 +8965,9 @@
       ],
       "Cash": [
         "Käteinen"
+      ],
+      "Categories badge": [
+        "Luokat-merkki"
       ],
       "Category": [
         "Aihe"
@@ -9101,6 +9143,12 @@
       "Go to Updates": [
         "Siirry päivityksiin"
       ],
+      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
+        "Auta meitä parantamaan luokkia valitsemalla se, joka sopii parhaiten tälle sähköpostille. Kiitos avustasi!"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Auttakaa meitä parantamaan tulevaa sähköpostien luokittelua"
+      ],
       "Hide password": [
         "Piilota salasana"
       ],
@@ -9226,6 +9274,9 @@
       ],
       "No label found": [
         "Tunnistetta ei löytynyt"
+      ],
+      "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
+        "Tärkeät viestit eivät enää katoa! Ne näkyvät nyt kohdassa ${ primaryCopy }. Kaikki muu luokitellaan, jotta ne on helppo löytää eivätkä ne täytä saapuneitasi."
       ],
       "No results found": [
         "Ei tuloksia"
@@ -9457,6 +9508,9 @@
       ],
       "What is your main reason for canceling or downgrading?": [
         "Mikä on suurin syy tilauksen lopetukseen tai alennukseen?"
+      ],
+      "Which category should this be recategorized under?": [
+        "Mihin luokkaan tämä tulisi lajitella?"
       ],
       "Why am I seeing this?": [
         "Miksi näen tämän?"
@@ -12042,6 +12096,9 @@
       "Invited friends": [
         "Kutsu kavereita"
       ],
+      "More sharing options": [
+        "Lisää jakamisvaihtoehtoja"
+      ],
       "Refer friends": [
         "Kerro kavereille"
       ],
@@ -13390,6 +13447,10 @@
         "${ elementsCount } keskustelulta poistettiin tunniste ${ labelName }.",
         "${ elementsCount } keskustelulta poistettiin tunniste ${ labelName }."
       ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } keskustelu poistettiin tähdellisistä.",
+        "${ elementsCount } keskustelua poistettiin tähdellisistä."
+      ],
       "${ elementsCount } conversation snoozed": [
         "${ elementsCount } keskustelu torkutettiin",
         "${ elementsCount } keskustelua torkutettiin"
@@ -13429,6 +13490,10 @@
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } viestiltä poistettiin tunniste ${ labelName }.",
         "${ elementsCount } viestiltä poistettiin tunniste ${ labelName }."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } viesti poistettiin tähdellisistä.",
+        "${ elementsCount } viestiä poistettiin tähdellisistä."
       ],
       "Address copied to clipboard": [
         "Osoite kopioitiin leikepöydälle"
@@ -13624,6 +13689,10 @@
       ],
       "Read receipt sent": [
         "Lukukuittaus lähetettiin"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "${ elementsCount } viesti uudelleenluokiteltiin.",
+        "${ elementsCount } viestiä uudelleenluokiteltiin."
       ],
       "Secret passphrase updated": [
         "Salalause päivitettiin"
@@ -14073,7 +14142,10 @@
         "Mukauta kalenterin tuontia"
       ],
       "Customize categories": [
-        "Mukauta kategorioita"
+        "Mukauta luokkia"
+      ],
+      "Customize categories to fit your needs": [
+        "Mukauta luokkia tarpeisiisi sopiviksi"
       ],
       "Customize your mail import": [
         "Mukauta viestien tuontia"
@@ -14133,6 +14205,9 @@
       ],
       "Desktop": [
         "Työpöytä"
+      ],
+      "Disable categories?": [
+        "Poistetaanko luokat käytöstä?"
       ],
       "Discover your subscription benefits": [
         "Tutustu tilauksesi etuihin"
@@ -14299,6 +14374,9 @@
       ],
       "Insert contacts": [
         "Lisää yhteystietoja"
+      ],
+      "Introducing email categories": [
+        "Esittelyssä sähköpostiluokat"
       ],
       "Invalid verification code": [
         "Virheellinen vahvistuskoodi"
@@ -14842,7 +14920,7 @@
         "Tilauksesi yhdessä paikassa"
       ],
       "✨ Categories are coming!": [
-        "✨ Kategoriat ovat tulossa!"
+        "✨ Luokat ovat tulossa!"
       ]
     },
     "Today icon tooltip in mini calendar": {

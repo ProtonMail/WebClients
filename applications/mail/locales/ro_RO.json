@@ -486,6 +486,9 @@
       "Download logs": [
         "Jurnal descărcare"
       ],
+      "Download now": [
+        "Descărcare"
+      ],
       "Download the desktop app": [
         "Descărcați aplicația pentru desktop"
       ],
@@ -737,6 +740,9 @@
       ],
       "Import from Outlook": [
         "Importare din Outlook"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Actualizare importantă disponibilă. Pentru a continua să utilizați aplicația trebuie s-o actualizați. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Dimineața"
@@ -1559,6 +1565,9 @@
       "Upgrade for 200GB": [
         "Treceți la 200 GiB"
       ],
+      "Upgrade Now": [
+        "Modificare"
+      ],
       "Upgrade now": [
         "Modificare"
       ],
@@ -1656,6 +1665,15 @@
         "Număr maxim de contacte la care puteți trimite fișiere vCard: ${ maxAttachments }",
         "Număr maxim de contacte la care puteți trimite fișiere vCard: ${ maxAttachments }",
         "Număr maxim de contacte la care puteți trimite fișiere vCard: ${ maxAttachments }"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Perioada de încercare a versiunii pentru desktop se încheie peste 2 zile. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Perioada de încercare a versiunii pentru desktop se încheie peste 5 zile. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Perioada de încercare a versiunii pentru desktop se încheie ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Asistentul personal de scriere"
@@ -7606,6 +7624,9 @@
       "Low Priority": [
         "Prioritate scăzută"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Setați ${ MAIL_APP_NAME } ca aplicație implicită de e-mail."
+      ],
       "Manage your folders": [
         "Gestionare foldere"
       ],
@@ -11092,6 +11113,9 @@
       ],
       "Share files with no size limit": [
         "Partajați fișiere fără limită de dimensiune"
+      ],
+      "Short domain (@pm.me)": [
+        "Domeniu scurt (@pm.me)"
       ],
       "Sign in as user": [
         "Conectați-vă ca utilizator"
