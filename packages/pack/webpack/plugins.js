@@ -16,6 +16,7 @@ const WriteWebpackPlugin = require('./write-webpack-plugin').default;
 const HtmlEditWebpackPlugin = require('./html-edit-webpack-plugin').default;
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const SriWebpackPlugin = require('./sri-webpack-plugin').default;
+const WebpackInvalidationPlugin = require('./benchmark-apps-build/WebpackInvalidation').WebpackInvalidation;
 
 const defaultFaviconConfig = require('./favicon.config');
 const faviconConfig = require(path.resolve('./favicon.config.js'));
@@ -37,6 +38,7 @@ module.exports = ({
     cssName,
     analyze,
     defineWebpackConfig,
+    benchmarkBuild,
 }) => {
     let WebpackCollectMetricsPlugin;
 
@@ -243,5 +245,6 @@ module.exports = ({
             }),
 
         CI && new WebpackCollectMetricsPlugin(buildData),
+        benchmarkBuild && new WebpackInvalidationPlugin(),
     ].filter(Boolean);
 };

@@ -33,6 +33,7 @@ const addGlobalOptions = (program) => {
         .option('--webpackOnCaffeine', '', false)
         .option('--handleSupportAndErrors', '', false)
         .option('--logical', '', false)
+        .option('--benchmarkBuild', '', false)
         .option(
             '--publicPath <publicPath>',
             '',
