@@ -103,54 +103,9 @@ export const setRequestPermission = () => {
     });
 };
 
-let isAppVersionExtensionDisabled = false;
-export const FEATURE_FLAG_APPVERSION_EXTENSION_DISABLED = "InboxDesktopAppVersionExtensionDisabled";
-
-const updateFlags = (flags: unknown) => {
-    if (!flags || flags === null) {
-        return;
-    }
-
-    try {
-        if (typeof flags === "string") {
-            flags = JSON.parse(flags);
-        }
-    } catch (_) {
-        return;
-    }
-
-    if (!Array.isArray(flags)) {
-        return;
-    }
-
-    let flagFound = false;
-    let hasStructure = false;
-
-    flags.find((x, _) => {
-        if (typeof x !== "object" || !("name" in x) || !("enabled" in x)) {
-            return false;
-        }
-
-        hasStructure = true;
-
-        if (x["name"] !== FEATURE_FLAG_APPVERSION_EXTENSION_DISABLED) {
-            return false;
-        }
-
-        flagFound = true;
-        isAppVersionExtensionDisabled = x["enabled"] === true;
-
-        return true;
-    });
-
-    if (hasStructure && !flagFound) {
-        isAppVersionExtensionDisabled = false;
-    }
-};
-
 export const extendAppVersionHeader = () => {
     appSession().webRequest.onBeforeSendHeaders((details, change) => {
-        if (isAppVersionExtensionDisabled || !details.requestHeaders["x-pm-appversion"]) {
+        if (!details.requestHeaders["x-pm-appversion"]) {
             change({});
             return;
         }
@@ -159,6 +114,3 @@ export const extendAppVersionHeader = () => {
         change({ requestHeaders: details.requestHeaders });
     });
 };
-
-export const updateFlagsTestOnly = updateFlags;
-export const isAppVersionExtensionDisabledTestOnly = (): boolean => isAppVersionExtensionDisabled;
