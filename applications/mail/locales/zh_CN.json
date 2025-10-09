@@ -462,6 +462,9 @@
       "Download logs": [
         "下载日志"
       ],
+      "Download now": [
+        "立即下载"
+      ],
       "Download the desktop app": [
         "下载桌面应用程序"
       ],
@@ -710,6 +713,9 @@
       ],
       "Import from Outlook": [
         "从 Outlook 导入"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "重要更新可供下载。要继续使用应用，请更新到最新版本。 ${ downloadUpdate }"
       ],
       "In the morning": [
         "早晨"
@@ -1506,6 +1512,9 @@
       "Upgrade": [
         "升级账户"
       ],
+      "Upgrade Now": [
+        "立即升级账户"
+      ],
       "Upgrade now": [
         "立即升级账户"
       ],
@@ -1601,6 +1610,15 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "您不能发送超过 ${ maxAttachments } 个联系人的 vCard 文件"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "您的桌面应用免费试用将在 2 天内结束。 ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "您的桌面应用免费试用将在 5 天内结束。 ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "您的桌面应用免费试用将在 ${ formattedEndDate }结束。 ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "你的邮件写作助手"
