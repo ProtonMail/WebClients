@@ -17,6 +17,8 @@
     "devDependencies": {
         "@mlc-ai/web-llm": "patch:@mlc-ai/web-llm@npm%3A0.2.32#~/.yarn/patches/@mlc-ai-web-llm-npm-0.2.32-df249f5180.patch",
         "@proton/jest-env": "workspace:^",
+        "@testing-library/jest-dom": "^6.8.0",
+        "babel-jest": "^30.2.0",
         "eslint": "^9.36.0",
         "jest": "^30.2.0",
         "typescript": "^5.9.2",

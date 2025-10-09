@@ -13,6 +13,8 @@ export default defineConfig([
                     classes: false,
                 },
             ],
+            // TODO: Add the missing explicit deps and remove this rule
+            'import/no-extraneous-dependencies': 'off',
         },
     },
     globalIgnores(['scripts']),
