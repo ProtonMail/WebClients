@@ -70,6 +70,9 @@
       "Accept": [
         "Elfogadás"
       ],
+      "Access account": [
+        "Fiók elérése"
+      ],
       "activate": [
         "aktiválás"
       ],
@@ -1087,6 +1090,9 @@
       "Request a feature": [
         "Funkció ajánlása"
       ],
+      "Request access": [
+        "Hozzáférés kérése"
+      ],
       "Request new code": [
         "Új kód kérése"
       ],
@@ -1965,6 +1971,11 @@
         "Nem vagyok az irodában, ezért korlátozott a hozzáférésem az e-mailjeimhez."
       ]
     },
+    "b2b_trials_2025_Info": {
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Ha lemondja, az ingyenes próbaidőszaka nem alakul át fizetős előfizetéssé, de a próbaidőszak végéig még használhatja a csomagban elérhető lehetőségeket. Ennek befejeződésekor a ${ BRAND_NAME } Free plan csomagra kerül át."
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Előfizetés lemondása"
@@ -2675,6 +2686,11 @@
       ],
       "Expand": [
         "Kibontás"
+      ]
+    },
+    "collider_2025: Info": {
+      "Basic chat history": [
+        "Alap csevegési előzmények"
       ]
     },
     "color": {
@@ -4443,7 +4459,7 @@
         "Fejlett védelem, amely túlmutat az iparági szabványokon"
       ],
       "Join the 50,000+ organizations already benefiting from ${ BRAND_NAME }'s security": [
-        "Csatlakozz a több mint 50,000+ szervezethez akik már a ${ BRAND_NAME } biztonságát használják"
+        "Csatlakozzon ahhoz a több mint 50.000 szervezethez, melyek már kihasználják a ${ BRAND_NAME } biztonságának előnyeit"
       ],
       "Protect sensitive business information and collaborate securely": [
         "Védje az érzékeny üzleti információkat és biztonságosan működjön együtt"
@@ -5054,11 +5070,20 @@
       "Disabled": [
         "Letiltva"
       ],
+      "Emergency access for ${ user } removed": [
+        "A(z) ${ user } vészhelyzeti hozzáférése eltávolítva."
+      ],
+      "Give immediate access?": [
+        "Azonnali hozzáférést biztosít?"
+      ],
       "None": [
         "Nincs"
       ],
       "Only ": [
         "Csak "
+      ],
+      "Request access?": [
+        "Hozzáférés kérése?"
       ],
       "Upgrade to ${ planName }": [
         "Váltás ${ planName } csomagra"
@@ -7498,6 +7523,9 @@
         "${ n } cím",
         "${ n } cím"
       ],
+      "${ name } for Web": [
+        "${ name } webes"
+      ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: ne helyezzék karanténba és ne utasítsák el az e-maileket. Ezt a beállítást általában csak tesztelésre vagy hibakeresésre használják."
       ],
@@ -7811,6 +7839,9 @@
       ],
       "Allocated": [
         "Lefoglalva"
+      ],
+      "Allow logging of location and connection details": [
+        "A hely és a kapcsolat részleteinek naplózásának engedélyezése"
       ],
       "Allow recovery by email": [
         "Helyreállítás engedélyezése e-mail címmel"
@@ -10333,6 +10364,9 @@
       "You do not have permission to perform this action": [
         "Nincs jogosultsága a műveletet végrehajtásához"
       ],
+      "You don't have any referrals.": [
+        "Még nincsenek ajánlásai."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Értesítést fog kapni, ha jelszava vagy más adata kiszivárgott harmadik fél szolgáltatása miatt."
       ],
@@ -11091,6 +11125,9 @@
       ],
       "Account storage": [
         "Fiók tárhely"
+      ],
+      "Action": [
+        "Művelet"
       ],
       "Actions": [
         "Műveletek"
@@ -12007,6 +12044,9 @@
       "Sequences": [
         "Sorozatok"
       ],
+      "Share your referral link": [
+        "Ajánló hivatkozás megosztása"
+      ],
       "Show ${ n } administrator": [
         "${ n } rendszergazda mutatása",
         "${ n } rendszergazda mutatása"
@@ -12240,6 +12280,9 @@
     "label": {
       "Device-based recovery": [
         "Eszköz alapú helyreállítás"
+      ],
+      "Notification phone number": [
+        "Értesítési telefonszám"
       ],
       "Recovery phone number": [
         "Helyreállítási telefonszám"
@@ -15108,6 +15151,11 @@
         "Váltás nagyobb csomagra"
       ]
     },
+    "pass_signup_2023: Action - open web app": {
+      "Continue to ${ appName }": [
+        "Folytatás itt ${ appName }"
+      ]
+    },
     "pass_signup_2023: Feature": {
       "End-to-end encrypted": [
         "Végpontok közt titkosított"
@@ -15291,7 +15339,7 @@
         "Svájc adatvédelmi törvényei által védve"
       ],
       "Save your recovery kit to continue": [
-        "Mentse le a biztonsági visszaállitási adatokat a tovább lépéshez."
+        "Mentse le a helyreállítási csomagot a továbblépéshez"
       ],
       "Secure vault sharing": [
         "Biztonságos tároló-megosztás"
@@ -15460,7 +15508,7 @@
         "A szervezeti kulcs nem létezik."
       ],
       "Organization key must be activated to give admin privileges": [
-        "A szervezeti kulcsot aktiválni kell, az adminisztrátorok hozzáadásához."
+        "A szervezeti kulcsot aktiválni kell, adminisztrátor jogosultságok adása előtt"
       ],
       "Organization key restored": [
         "Szervezeti kulcs helyreállítva"
@@ -16076,6 +16124,11 @@
         "Megjelenítés"
       ]
     },
+    "RecoveryPhrase: Title": {
+      "Save your Recovery Kit": [
+        "Mentse el a helyreállító csomagját"
+      ]
+    },
     "Remove calendar section description": {
       "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
         "A leiratkozás után nem fog hozzáférni ehhez a naptárhoz. A naptárban található minden esemény törlődik a fiókjából, de elérhetők maradnak az eredeti nyilvános hivatkozáson."
@@ -16135,6 +16188,9 @@
       ],
       "Confirm": [
         "Jóváhagyás"
+      ],
+      "Create retention rule": [
+        "Megőrzési szabály létrehozása"
       ],
       "Delete": [
         "Törlés"
@@ -16210,6 +16266,9 @@
       "Add a recovery phone number": [
         "Helyreállítási telefonszám hozzáadása"
       ],
+      "Add an alternative email address": [
+        "Alternatív e-mail cím hozzáadása"
+      ],
       "Back to Safety Review": [
         "Vissza a Biztonsági áttekintésre"
       ],
@@ -16230,6 +16289,9 @@
       ],
       "Device-based recovery enabled": [
         "Eszköz alapú helyreállítás bekapcsolva"
+      ],
+      "Disable recovery by phone ": [
+        "Telefonnal történő helyreállítás letiltása "
       ],
       "Download ${ size }": [
         "Letöltés ${ size }"
@@ -17246,6 +17308,9 @@
       ],
       "Total": [
         "Összesen"
+      ],
+      "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
+        "Próbálja ki a ${ BRAND_NAME } szolgáltatást ${ TRIAL_DURATION_DAYS } napig ingyen."
       ],
       "Ultra fast and private VPN": [
         "Ultra gyors és privát VPN"
@@ -18566,6 +18631,9 @@
       ]
     },
     "Subtitle": {
+      "Pay once, access forever.": [
+        "Fizessen egyszer, használja örökre."
+      ],
       "View VPN session details for your organization.": [
         "A szervezet VPN-munkamenet részleteinek megtekintése."
       ]
@@ -20624,6 +20692,9 @@
       ]
     },
     "Tooltip": {
+      "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
+        "Egy változás a Gmail oldalán megakadályozza a ${ BRAND_NAME } kapcsolódását. Adjon engedélyt az e-mail funkcionalitás visszaállításához."
+      ],
       "Account is disconnected": [
         "A fiók lecsatlakoztatva"
       ],
@@ -21242,6 +21313,9 @@
     "Users table: badge": {
       "Administrators can't access the data of private users": [
         "A rendszergazdák nem férhetnek hozzá a privát felhasználók adataihoz"
+      ],
+      "Authenticator app": [
+        "Hitelesítő alkalmazás"
       ],
       "Inactive": [
         "Inaktív"
