@@ -15,14 +15,14 @@ import { VideoConferenceSource, useVideoConfTelemetry } from './useVideoConfTele
 import { getZoomDataFromLocation, getZoomFromDescription } from './zoom/zoomHelpers';
 
 interface Props {
-    model: EventModelReadView | VcalVeventComponent;
+    model?: EventModelReadView | VcalVeventComponent;
     description?: string;
     widgetLocation: VideoConferenceLocation;
 }
 
 const separatorRegex = new RegExp(SEPARATOR_GOOGLE_EVENTS);
 
-export const VideoConferencingWidgetConfig = ({ model, widgetLocation }: Props) => {
+export const useVideoConferencingWidget = ({ model, widgetLocation }: Props) => {
     const hasReported = useRef(false);
 
     const { sendEventVideoConfSource } = useVideoConfTelemetry();
@@ -36,7 +36,7 @@ export const VideoConferencingWidgetConfig = ({ model, widgetLocation }: Props) 
         }
     };
 
-    if (!videoConferenceWidget) {
+    if (!videoConferenceWidget || !model) {
         return null;
     }
 
@@ -53,7 +53,7 @@ export const VideoConferencingWidgetConfig = ({ model, widgetLocation }: Props) 
                 location={widgetLocation}
                 data={{
                     ...data,
-                    service: VIDEO_CONF_SERVICES.ZOOM, // The only supported provider is Zoom for the moment
+                    service: VIDEO_CONF_SERVICES.ZOOM,
                 }}
             />
         );
