@@ -64,7 +64,7 @@ export function handleWebContents(contents: WebContents) {
         // tell it to load y, if you ask which is the current URL, it will return x until y is
         // fully loaded. That's why there is a weird getViewURL function in viewManagement.ts.
         //
-        // That is causing the race condition, because during the login process the mail view
+        // That is causing the race condition, because during the login process the meet view
         // says that it is displaying the home page (that was showing before the logout event)
         // but it is actually loading the loading page in background.
         //
