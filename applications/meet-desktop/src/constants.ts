@@ -1,4 +1,10 @@
-export const ALLOWED_PERMISSIONS = ["clipboard-sanitized-write", "persistent-storage", "media"];
+export const ALLOWED_PERMISSIONS = [
+    "clipboard-sanitized-write",
+    "persistent-storage",
+    "media",
+    "window-management", // For Picture-in-Picture
+    "document-picture-in-picture", // For Document Picture-in-Picture API
+];
 
 export const CERT_PROTON_ME = [
     "CT56BhOTmj5ZIPgb/xD5mH8rY3BLo/MlhP7oPyJUEDo=", // Current

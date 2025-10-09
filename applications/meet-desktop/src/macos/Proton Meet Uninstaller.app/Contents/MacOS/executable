@@ -1,7 +1,7 @@
 #!/bin/sh
 
 CHOICE=`osascript <<EOF
-button returned of (display dialog "This action will uninstall Proton Maeet and remove associated data. Are you sure you want to continue?" buttons {"Cancel", "Uninstall"} default button 2 with icon caution with title "Proton Meet Uninstall")
+button returned of (display dialog "This action will uninstall Proton Meet and remove associated data. Are you sure you want to continue?" buttons {"Cancel", "Uninstall"} default button 2 with icon caution with title "Proton Meet Uninstall")
 EOF`
 
 if [[ "$CHOICE" == "Uninstall" ]]
