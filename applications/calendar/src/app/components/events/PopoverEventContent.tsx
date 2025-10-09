@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { VideoConferencingWidgetConfig } from '@proton/calendar';
+import { useVideoConferencingWidget } from '@proton/calendar';
 import {
     Collapsible,
     CollapsibleContent,
@@ -67,6 +67,7 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap,
     const { Name: calendarName } = calendar;
     const { contactEmailsMap } = useContactEmailsCache();
     const { modals: contactModals, onDetails, onEdit } = useContactModals();
+    const videoConferencingWidget = useVideoConferencingWidget({ model, widgetLocation: 'event-details' });
 
     const handleContactAdd = (email: string, name: string) => () => {
         const payload = {
@@ -273,7 +274,7 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap,
                     <span className="text-break" dangerouslySetInnerHTML={{ __html: sanitizedLocation }} />
                 </IconRow>
             ) : null}
-            <VideoConferencingWidgetConfig model={model} widgetLocation="event-details" />
+            {videoConferencingWidget}
             {!!numberOfParticipants && organizer && (
                 <IconRow labelClassName={labelClassName} icon="user" title={c('Label').t`Participants`}>
                     <div className="w-full">
