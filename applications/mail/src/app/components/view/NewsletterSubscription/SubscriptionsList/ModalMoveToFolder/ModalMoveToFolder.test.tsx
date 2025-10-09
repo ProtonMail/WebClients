@@ -76,8 +76,6 @@ describe('ModalBlockSender', () => {
         const inboxFolder = screen.getByTestId(`move-to-button-Inbox`);
         expect(inboxFolder).toBeInTheDocument();
 
-        screen.debug();
-
         const spamFolder = screen.queryByTestId(`move-to-button-Spam`);
         expect(spamFolder).not.toBeInTheDocument();
     });

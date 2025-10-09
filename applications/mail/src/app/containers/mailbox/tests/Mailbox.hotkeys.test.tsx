@@ -83,7 +83,6 @@ describe('Mailbox hotkeys', () => {
         const { left, right, getItems } = await setup({ Component: TestComponent as any });
 
         const sidebar = document.querySelector('[data-shortcut-target="navigation-link"]');
-        // const message = document.querySelector('[data-shortcut-target="message-container"]');
         const items = getItems();
         left();
         assertFocus(sidebar);
@@ -92,14 +91,23 @@ describe('Mailbox hotkeys', () => {
     });
 
     it('should enter a message and leave', async () => {
+        const conversation = conversations[3];
+        const message = { ID: 'MessageID', Subject: 'test', Body: 'test', Flags: 0 } as Message;
+        addApiMock(`mail/v4/conversations/${conversation.ID}`, () => ({
+            Conversation: conversation,
+            Messages: [message],
+        }));
+
         const { down, enter, escape, history } = await setup();
 
         down();
         enter();
+        await tick();
 
         expect(history.location.pathname).toBe(`/${props.labelID}/${conversations[3].ID}`);
 
         escape();
+        await tick();
 
         expect(history.location.pathname).toBe(`/${props.labelID}`);
     });
@@ -216,6 +224,7 @@ describe('Mailbox hotkeys', () => {
         expectLabelCall(MAILBOX_LABEL_IDS.TRASH);
 
         ctrlBackspace();
+        await tick();
         const button = getByTestId('permanent-delete-modal:submit');
         fireEvent.click(button as HTMLButtonElement);
         await tick();

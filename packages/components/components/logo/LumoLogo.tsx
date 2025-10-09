@@ -45,9 +45,9 @@ const LumoLogo = ({ variant = 'with-wordmark', hasTitle = true, ...rest }: LogoP
                 />
                 <path
                     stroke="#372580"
-                    stroke-linecap="round"
-                    stroke-miterlimit="10"
-                    stroke-width=".96"
+                    strokeLinecap="round"
+                    strokeMiterlimit="10"
+                    strokeWidth=".96"
                     d="M17.344 32.52v-1.48"
                 />
                 <path
@@ -68,16 +68,16 @@ const LumoLogo = ({ variant = 'with-wordmark', hasTitle = true, ...rest }: LogoP
                 />
                 <path
                     stroke="#fff"
-                    stroke-linecap="round"
-                    stroke-miterlimit="10"
-                    stroke-width=".424"
+                    strokeLinecap="round"
+                    strokeMiterlimit="10"
+                    strokeWidth=".424"
                     d="M15.354 21.67c.512 0 .925.419.925.933"
                 />
                 <path
                     stroke="#fff"
-                    stroke-linecap="round"
-                    stroke-miterlimit="10"
-                    stroke-width=".424"
+                    strokeLinecap="round"
+                    strokeMiterlimit="10"
+                    strokeWidth=".424"
                     d="M17.201 21.67a.928.928 0 0 0-.925.933"
                 />
                 <path
