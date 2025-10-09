@@ -45,9 +45,13 @@ const Prompt = ({
 }: PromptProps) => {
     const buttonArray = Array.isArray(buttons) ? buttons : [buttons];
 
-    const [firstButton, secondButton, thirdButton] = buttonArray.map((child) =>
-        cloneElement(child as ReactElement, { fullWidth: true })
-    );
+    const [firstButton, secondButton, thirdButton] = buttonArray.map((child) => {
+        // Only add fullWidth to non-div elements (e.g., Button components)
+        if ((child as ReactElement).type === 'div') {
+            return child as ReactElement;
+        }
+        return cloneElement(child as ReactElement, { fullWidth: true });
+    });
 
     const actionsContent = (() => {
         if (actions === undefined) {
