@@ -6,7 +6,7 @@ import { searchItems } from '@proton/pass/lib/search/match-items';
 import { ItemUrlMatch, getItemPriorityForUrl } from '@proton/pass/lib/search/match-url';
 import type { SelectItemsByDomainOptions, SelectItemsOptions } from '@proton/pass/lib/search/types';
 import { itemsFromSelection, selectAllItems, selectItems, selectVisibleItems } from '@proton/pass/store/selectors/items';
-import { selectVisibleSecureLinks } from '@proton/pass/store/selectors/secure-links';
+import { selectVisibleSecureLinkedItems, selectVisibleSecureLinksCount } from '@proton/pass/store/selectors/secure-links';
 import { selectSharedByMe, selectSharedWithMe } from '@proton/pass/store/selectors/shared';
 import { NOOP_LIST_SELECTOR, createUncachedSelector, selectState } from '@proton/pass/store/selectors/utils';
 import type { State } from '@proton/pass/store/types';
@@ -62,11 +62,14 @@ export const createMatchSharedWithMeSelector = () =>
     });
 
 export const createMatchSecureLinksSelector = () => {
-    const selectSortedSecureLinkItems = createSelector([selectItems, selectVisibleSecureLinks], (items, secureLinks) => {
-        const secureLinkItems = itemsFromSelection(secureLinks)(items);
-        const sorted = sortItems('recent')(secureLinkItems);
-        return { sorted, totalCount: secureLinks.length };
-    });
+    const selectSortedSecureLinkItems = createSelector(
+        [selectItems, selectVisibleSecureLinkedItems, selectVisibleSecureLinksCount],
+        (items, secureLinks, secureLinksCount) => {
+            const secureLinkItems = itemsFromSelection(secureLinks)(items);
+            const sorted = sortItems('recent')(secureLinkItems);
+            return { sorted, totalCount: secureLinksCount };
+        }
+    );
 
     return createSelector([selectSortedSecureLinkItems, selectSearchFilter], ({ sorted, totalCount }, search): ItemsSearchResults => {
         const searched = searchItems(sorted, search);
