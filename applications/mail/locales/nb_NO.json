@@ -483,6 +483,9 @@
       "Download logs": [
         "Last ned logger"
       ],
+      "Download now": [
+        "Last ned nå"
+      ],
       "Download the desktop app": [
         "Last ned skrivebordsappen"
       ],
@@ -734,6 +737,9 @@
       ],
       "Import from Outlook": [
         "Importer fra Outlook"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Viktig oppdatering tilgjengelig. For å fortsette å bruke appen, oppdater til den nyeste versjonen ${ downloadUpdate }."
       ],
       "In the morning": [
         "Om morgenen"
@@ -1555,6 +1561,9 @@
       "Upgrade for 200GB": [
         "Oppgrader for 200 GB"
       ],
+      "Upgrade Now": [
+        "Oppgrader nå"
+      ],
       "Upgrade now": [
         "Oppgrader nå"
       ],
@@ -1651,6 +1660,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakt.",
         "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakter."
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Den gratis prøveperioden for skrivebordsappen avsluttes om 2 dager ${ upgradeButton }."
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Den gratis prøveperioden for skrivebordsappen avsluttes om 5 dager ${ upgradeButton }."
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Den gratis prøveperioden for skrivebordsappen avsluttes ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Din e-postskrivingsassistent"
@@ -7489,6 +7507,9 @@
       "Low Priority": [
         "Lav prioritet"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Gjør ${ MAIL_APP_NAME } til standard e-postapplikasjon."
+      ],
       "Manage your folders": [
         "Administrer mappene dine"
       ],
@@ -10918,6 +10939,9 @@
       ],
       "Share files with no size limit": [
         "Del filer uten størrelsesbegrensning"
+      ],
+      "Short domain (@pm.me)": [
+        "Kort domene (@pm.me)"
       ],
       "Sign in as user": [
         "Logg på som bruker"

@@ -447,6 +447,9 @@
       "Download logs": [
         "Naplók letöltése"
       ],
+      "Download now": [
+        "Letöltés most"
+      ],
       "Download the desktop app": [
         "Asztali alkalmazás letöltése"
       ],
@@ -692,6 +695,9 @@
       ],
       "Import from Outlook": [
         "Importálás az Outlookból"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Fontos frissítés érhető el. Az alkalmazás használatának folytatásához, kérjük frissítsen a legfrissebb verzióra. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Reggel"
@@ -1474,6 +1480,9 @@
       "Upgrade": [
         "Csomagváltás"
       ],
+      "Upgrade Now": [
+        "Váltás nagyobb csomagra"
+      ],
       "Upgrade now": [
         "Váltás nagyobb csomagra"
       ],
@@ -1570,6 +1579,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Egyszerre nem küldhet el több mint ${ maxAttachments } vCard névjegyfájlt",
         "Egyszerre nem küldhet el több mint ${ maxAttachments } vCard névjegyfájlt"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Az asztali alkalmazás ingyenes kipróbálásának 2 nap múlva vége. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Az asztali alkalmazás ingyenes kipróbálásának 5 nap múlva vége. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Az asztali alkalmazás ingyenes kipróbálásának vége: ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Az Ön e-mail író segédje"
@@ -6151,12 +6169,12 @@
         "${ elementsCount } üzenetet címkéz mint:"
       ],
       "${ elementsCount } message will be marked as read.": [
-        "${ elementsCount } üzenet jelöl meg olvasottnak.",
-        "${ elementsCount } üzenet jelöl meg olvasottnak."
+        "${ elementsCount } üzenetet jelöl meg olvasottnak.",
+        "${ elementsCount } üzenetet jelöl meg olvasottnak."
       ],
       "${ elementsCount } message will be marked as unread.": [
-        "${ elementsCount } üzenet jelöl meg olvasatlannak.",
-        "${ elementsCount } üzenet jelöl meg olvasatlannak."
+        "${ elementsCount } üzenetet jelöl meg olvasatlannak.",
+        "${ elementsCount } üzenetet jelöl meg olvasatlannak."
       ],
       "${ elementsCount } message will be moved": [
         "${ elementsCount } üzenetet helyez át",
@@ -6184,8 +6202,8 @@
         "A ${ MAIL_APP_NAME } képes megvédeni üzletét is."
       ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
-        "${ messagesNotAuthorizedToMove } üzenet nem helyezhető át.",
-        "${ messagesNotAuthorizedToMove } üzenet nem helyezhető át."
+        "${ messagesNotAuthorizedToMove } üzenet áthelyezése nem sikerült.",
+        "${ messagesNotAuthorizedToMove } üzenet áthelyezése nem sikerült."
       ],
       "${ n } unread conversation": [
         "${ n } olvasatlan beszélgetés",
@@ -6503,8 +6521,8 @@
         "Biztos, hogy véglegesen töröl ${ count } piszkozatot?"
       ],
       "Are you sure you want to permanently delete ${ count } message?": [
-        "Biztos, hogy véglegesen töröl ${ count } kijelölt üzenetet?",
-        "Biztos, hogy véglegesen töröl ${ count } kijelölt üzenetet?"
+        "Biztos, hogy véglegesen töröl ${ count } üzenetet?",
+        "Biztos, hogy véglegesen töröl ${ count } üzenetet?"
       ],
       "Are you sure you want to permanently delete this conversation?": [
         "Biztos, hogy végleg törölni szeretné ezt a beszélgetést?"
@@ -6731,8 +6749,8 @@
         "Discover ProtectBuy logo"
       ],
       "Do you want to download this attachment anyway?": [
-        "Ettől függetlenül letölti a csatolt fájlt?",
-        "Ettől függetlenül letölti a csatolt fájlokat?"
+        "Ettől függetlenül letölti a mellékletet?",
+        "Ettől függetlenül letölti a mellékleteket?"
       ],
       "Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?": [
         "Aláírja újra a névjegyet és megbízhatóként jelöli meg az alábbi ujjlenyomatú kulcsokat?"
@@ -6841,7 +6859,7 @@
       ],
       "embedded image": [
         "beágyazott kép",
-        "beágyazott képek"
+        "beágyazott kép"
       ],
       "Enabling auto-deletion…": [
         "Automatikus törlés engedélyezése..."
@@ -6905,7 +6923,7 @@
       ],
       "file attached": [
         "fájl csatolva",
-        "fájlok csatolva"
+        "fájl csatolva"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "A szűrők minden levélre vonatkoznak, a bejövő és az elküldött üzenetekre is. Minden szűrőnek szükséges legalább egy név, egy feltétel és egy művelet."
@@ -7555,8 +7573,8 @@
         "Úgy tűnik minden el van intézve"
       ],
       "Select all ${ elementsCount } in ${ location }": [
-        "Mind a ${ elementsCount } üzenet kiválasztása, itt: ${ location }",
-        "Mind a ${ elementsCount } üzenet kiválasztása, itt: ${ location }"
+        "Minden (${ elementsCount }) üzenet kiválasztása, itt: ${ location }",
+        "Mind a(z) ${ elementsCount } üzenet kiválasztása, itt: ${ location }"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Válassza ki az e-mail alapértelmezett formátumát, erre a címre való küldéshez."
@@ -7795,8 +7813,8 @@
         "Ez a beszélgetés törölt üzeneteket is tartalmaz."
       ],
       "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Ez az beszélgetés levélszemétként lesz megjelölve. Le szeretne iratkozni a jövőbeli e-mailekről?",
-        "Ezek az beszélgetések levélszemétként lesznek megjelölve. Le szeretne iratkozni a jövőbeli e-mailekről?"
+        "Ezt a beszélgetést levélszemétként jelöli meg. Le szeretne iratkozni a további e-mailekről?",
+        "Ezeket a beszélgetéseket levélszemétként jelöli meg. Le szeretne iratkozni a további e-mailekről?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "Az e-mail nem felelt meg a domain név ellenőrzési követelményeinek. Lehet becsapós üzenet vagy hibásan továbbított."
@@ -7850,8 +7868,8 @@
         "Ez az üzenet automatikusan törlésre kerül, ekkor: ${ value }"
       ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Ez az üzenet levélszemétként lesz megjelölve. Le szeretne iratkozni a jövőbeli e-mailekről?",
-        "Ezek az üzenetek levélszemétként lesznek megjelölve. Le szeretne iratkozni a jövőbeli e-mailekről?"
+        "Ezt az üzenetet levélszemétként jelöli meg. Le szeretne iratkozni a további e-mailekről?",
+        "Ezeket az üzeneteket levélszemétként jelöli meg. Le szeretne iratkozni a további e-mailekről?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Ez az üzenet átkerül a Vázlatokba, hogy szerkeszthesse. Újra meg kell majd adnia az elküldés időpontját."
@@ -11418,7 +11436,7 @@
         "A szervezeti kulcs nem létezik."
       ],
       "Organization key must be activated to give admin privileges": [
-        "A szervezeti kulcsot aktiválni kell, az adminisztrátorok hozzáadásához."
+        "A szervezeti kulcsot aktiválni kell, adminisztrátor jogosultságok adása előtt"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Hozzáférés megtagadva, adminisztrátori jogok korlátozásra kerültek."
@@ -13210,12 +13228,12 @@
         "${ elementsCount } beszélgetés olvasottnak megjelölve."
       ],
       "${ elementsCount } conversation marked as Starred.": [
-        "${ elementsCount } beszélgetés csillaggal megjelölve.",
-        "${ elementsCount } beszélgetés csillaggal megjelölve."
+        "${ elementsCount } beszélgetés csillaggal jelölve.",
+        "${ elementsCount } beszélgetés csillaggal jelölve."
       ],
       "${ elementsCount } conversation marked as unread.": [
-        "${ elementsCount } beszélgetés olvasatlannak megjelölve.",
-        "${ elementsCount } beszélgetés olvasatlannak megjelölve."
+        "${ elementsCount } beszélgetés olvasatlannak jelölve.",
+        "${ elementsCount } beszélgetés olvasatlannak jelölve."
       ],
       "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
         "${ elementsCount } beszélgetés átkerült a ${ labelName } mappába, a feladó pedig bekerült a nem levélszemét listába.",
@@ -13234,12 +13252,12 @@
         "${ labelName } címke eltávolítva ${ elementsCount } beszélgetésről."
       ],
       "${ elementsCount } conversation snoozed": [
-        "${ elementsCount } beszélgetés szüneteltetve",
-        "${ elementsCount } beszélgetés szüneteltetve"
+        "${ elementsCount } beszélgetés némítva",
+        "${ elementsCount } beszélgetés némítva"
       ],
       "${ elementsCount } conversation unsnoozed": [
-        "${ elementsCount } beszélgetésnél visszavonva a szüneteltetés",
-        "${ elementsCount } beszélgetésnél visszavonva a szüneteltetés"
+        "${ elementsCount } beszélgetésnél visszavonva a némítás",
+        "${ elementsCount } beszélgetésnél visszavonva a némítás"
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } üzenet megjelölve ${ labelName } címkével.",
@@ -14529,8 +14547,8 @@
         "Összes üzenet lomtárazása?"
       ],
       "Trust new key?": [
-        "Megbízható kulcs?",
-        "Megbízható kulcsok?"
+        "Megjelöli az új kulcsot megbízhatóként?",
+        "Megjelöli az új kulcsokat megbízhatóként?"
       ],
       "Trust pinned keys?": [
         "Megbízik a kitűzött kulcsokban?"

@@ -480,6 +480,9 @@
       "Download logs": [
         "ログをダウンロードする"
       ],
+      "Download now": [
+        "今すぐダウンロード"
+      ],
       "Download the desktop app": [
         "デスクトップアプリをダウンロード"
       ],
@@ -731,6 +734,9 @@
       ],
       "Import from Outlook": [
         "Outlook からインポート"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "重要なアップデートがあります。アプリの使用を続けるためには最新バージョンにアップデートしてください。${ downloadUpdate }"
       ],
       "In the morning": [
         "午前中"
@@ -1551,6 +1557,9 @@
       "Upgrade for 200GB": [
         "200GBへアップグレード"
       ],
+      "Upgrade Now": [
+        "今すぐアップグレード"
+      ],
       "Upgrade now": [
         "今すぐアップグレード"
       ],
@@ -1646,6 +1655,15 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "${ maxAttachments }件を超える連絡先のvCardファイルを送信できません。"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "デスクトップアプリの無料トライアルはあと2日で終了します。${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "デスクトップアプリの無料トライアルはあと5日で終了します。${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "デスクトップアプリの無料トライアルは ${ formattedEndDate } で終了します。${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "メール執筆アシスタント"
@@ -7372,6 +7390,9 @@
       "Low Priority": [
         "優先度：低"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "${ MAIL_APP_NAME }をデフォルトのメールアプリに設定。"
+      ],
       "Manage your folders": [
         "フォルダを管理"
       ],
@@ -10744,6 +10765,9 @@
       ],
       "Share files with no size limit": [
         "サイズ制限のないファイル共有"
+      ],
+      "Short domain (@pm.me)": [
+        "短縮ドメイン (@pm.me)"
       ],
       "Sign in as user": [
         "ユーザーとしてサインイン"
