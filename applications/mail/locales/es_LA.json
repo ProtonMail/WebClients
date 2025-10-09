@@ -483,6 +483,9 @@
       "Download logs": [
         "Descargar los registros"
       ],
+      "Download now": [
+        "Descargar ahora"
+      ],
       "Download the desktop app": [
         "Descargue la aplicación de escritorio"
       ],
@@ -734,6 +737,9 @@
       ],
       "Import from Outlook": [
         "Importar desde Outlook"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Actualización importante disponible. Para continuar usando la aplicación, actualice a la última versión. ${ downloadUpdate }"
       ],
       "In the morning": [
         "En la mañana"
@@ -1558,6 +1564,9 @@
       "Upgrade for 200GB": [
         "Actualizar por 200GB"
       ],
+      "Upgrade Now": [
+        "Mejorar ahora"
+      ],
       "Upgrade now": [
         "Actualizar ahora"
       ],
@@ -1654,6 +1663,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "No puede enviar archivos vCard de más de ${ maxAttachments } contacto.",
         "No puede enviar archivos vCard de más de ${ maxAttachments } contacto."
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "La prueba gratuita de la aplicación de escritorio finaliza en 2 días. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "La prueba gratuita de la aplicación de escritorio finaliza en 5 días. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "La prueba gratuita de la aplicación de escritorio finaliza en ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Su asistente de escritura de correo"

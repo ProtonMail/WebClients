@@ -367,7 +367,7 @@
         "Uredi uporabnika"
       ],
       "enable desktop notifications": [
-        "omogoči obvestila na namizju"
+        "prikazovanje obvestil na namizju"
       ],
       "Enable multi-user support": [
         "Vklopite večuporabniški način"
@@ -6525,6 +6525,9 @@
       "You already have a free account": [
         "Brezplačen račun že imate"
       ],
+      "You are currently signed in as ${ username }.": [
+        "Trenutno ste prijavljeni kot ${ username }."
+      ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "Trenutno uporabljate ${ ipCount } od vašega ${ ipAddresses } razpoložljivega namenskega strežnika.",
         "Trenutno uporabljate ${ ipCount } od vaših ${ ipAddresses } razpoložljivih namenskih strežnikov.",
@@ -9931,6 +9934,9 @@
       ],
       "Select a reason": [
         "Izberite razlog"
+      ],
+      "Select country": [
+        "Izberite državo"
       ],
       "Select state": [
         "Izberite stanje"

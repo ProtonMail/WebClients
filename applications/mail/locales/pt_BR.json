@@ -483,6 +483,9 @@
       "Download logs": [
         "Registros de downloads"
       ],
+      "Download now": [
+        "Baixar agora"
+      ],
       "Download the desktop app": [
         "Baixe o aplicativo para computador"
       ],
@@ -734,6 +737,9 @@
       ],
       "Import from Outlook": [
         "Importar do Outlook"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Atualização importante disponível. Para continuar a usar o aplicativo, atualize para a versão mais recente. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Pela manhã"
@@ -1558,6 +1564,9 @@
       "Upgrade for 200GB": [
         "Faça upgrade para 200GB"
       ],
+      "Upgrade Now": [
+        "Fazer upgrade agora"
+      ],
       "Upgrade now": [
         "Atualizar agora"
       ],
@@ -1654,6 +1663,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Você não pode enviar arquivos vCards de mais de ${ maxAttachments } contatos",
         "Você não pode enviar arquivos vCards de mais de ${ maxAttachments } contatos"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Sua avaliação gratuita do aplicativo de computador termina em 2 dias. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Sua avaliação gratuita do aplicativo de computador termina em 5 dias. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Sua avaliação gratuita do aplicativo de computador termina em ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Seu assistente de escrita de e-mail"
@@ -7491,6 +7509,9 @@
       ],
       "Low Priority": [
         "Baixa prioridade"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Defina ${ MAIL_APP_NAME } como seu aplicativo de e-mail padrão."
       ],
       "Manage your folders": [
         "Gerenciar suas pastas"

@@ -483,6 +483,9 @@
       "Download logs": [
         "Λήψη αρχείων καταγραφής"
       ],
+      "Download now": [
+        "Λήψη τώρα"
+      ],
       "Download the desktop app": [
         "Κατεβάστε την εφαρμογή για υπολογιστές"
       ],
@@ -734,6 +737,9 @@
       ],
       "Import from Outlook": [
         "Εισαγωγή από Outlook"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Μια σημαντική ενημέρωση είναι διαθέσιμη. Για να συνεχίσετε να χρησιμοποιείτε την εφαρμογή, παρακαλούμε ενημερώστε στην πιο πρόσφατη έκδοση. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Το πρωί"
@@ -1558,6 +1564,9 @@
       "Upgrade for 200GB": [
         "Αναβάθμιση για 200GB"
       ],
+      "Upgrade Now": [
+        "Αναβαθμίστε Τώρα"
+      ],
       "Upgrade now": [
         "Αναβάθμιση τώρα"
       ],
@@ -1654,6 +1663,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφή",
         "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφές"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Η δωρεάν δοκιμή της εφαρμογής για υπολογιστές λήγει σε 2 ημέρες. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Η δωρεάν δοκιμή της εφαρμογής για υπολογιστές λήγει σε 5 ημέρες. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Η δωρεάν δοκιμή της εφαρμογής για υπολογιστές λήγει στις ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Ο βοηθός σύνταξης ηλ. ταχυδρομείου σας"
@@ -7491,6 +7509,9 @@
       ],
       "Low Priority": [
         "Χαμηλή προτεραιότητα"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Κάντε το ${ MAIL_APP_NAME } την προεπιλεγμένη εφαρμογή ηλεκτρονικού ταχυδρομείου σας."
       ],
       "Manage your folders": [
         "Διαχειριστείτε τους φακέλους σας"

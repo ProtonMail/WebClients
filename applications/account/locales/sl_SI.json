@@ -575,7 +575,7 @@
         "Omogoči ${ darkWebMonitoring }"
       ],
       "enable desktop notifications": [
-        "omogoči obvestila na namizju"
+        "prikazovanje obvestil na namizju"
       ],
       "Enable device-based recovery": [
         "Omogoči obnovitev na podlagi naprave"
@@ -6473,6 +6473,9 @@
       "Organization key fingerprint": [
         "Prstni odtis organizacijskega ključa"
       ],
+      "Password ends with": [
+        "Geslo se konča z"
+      ],
       "Payment details": [
         "Podrobnosti plačila"
       ],
@@ -6505,6 +6508,9 @@
       ],
       "User": [
         "Uporabnik"
+      ],
+      "Username": [
+        "Uporabniško ime"
       ]
     },
     "Header for addresses table": {
@@ -9479,6 +9485,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Odprli boste svoj privzeti brskalnik in obiskali:"
+      ],
+      "You are currently signed in as ${ username }.": [
+        "Trenutno ste prijavljeni kot ${ username }."
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "Trenutno uporabljate ${ ipCount } od vašega ${ ipAddresses } razpoložljivega namenskega strežnika.",
@@ -14860,6 +14869,9 @@
       ],
       "Select a reason": [
         "Izberite razlog"
+      ],
+      "Select country": [
+        "Izberite državo"
       ],
       "Select state": [
         "Izberite stanje"

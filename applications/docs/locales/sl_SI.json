@@ -346,7 +346,7 @@
         "Izprazni smetnjak"
       ],
       "enable desktop notifications": [
-        "omogoči obvestila na namizju"
+        "prikazovanje obvestil na namizju"
       ],
       "Expand": [
         "Razširi"
@@ -3686,6 +3686,12 @@
     "Header": {
       "Drawer": [
         "Obrobni stolpec"
+      ],
+      "Password ends with": [
+        "Geslo se konča z"
+      ],
+      "Username": [
+        "Uporabniško ime"
       ]
     },
     "Hint": {
@@ -5353,6 +5359,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Odprli boste svoj privzeti brskalnik in obiskali:"
+      ],
+      "You are currently signed in as ${ username }.": [
+        "Trenutno ste prijavljeni kot ${ username }."
       ],
       "You are currently viewing this document in view-only mode. Reach out to the owner to request access to edit and comment.": [
         "Trenutno gledate dokument v načinu samo za ogled. Obrnite se na lastnika dokumenta za ureditev dostopa za urejanje in komentiranje dokumenta."
@@ -8264,6 +8273,9 @@
       "Select a reason": [
         "Izberite razlog"
       ],
+      "Select country": [
+        "Izberite državo"
+      ],
       "Select state": [
         "Izberite stanje"
       ],
@@ -8405,6 +8417,11 @@
       ],
       "Yesterday": [
         "Včeraj"
+      ]
+    },
+    "Referral": {
+      "More sharing options": [
+        "Več možnosti skupne rabe"
       ]
     },
     "Safety review": {

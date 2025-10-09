@@ -489,6 +489,9 @@
       "Download logs": [
         "Záznamy sťahovania"
       ],
+      "Download now": [
+        "Stiahnuť teraz"
+      ],
       "Download the desktop app": [
         "Stiahnite si desktopovú aplikáciu"
       ],
@@ -740,6 +743,9 @@
       ],
       "Import from Outlook": [
         "Importovať z Outlooku"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "K dispozícii je dôležitá aktualizácia. Ak chcete aplikáciu naďalej používať, aktualizujte ju na najnovšiu verziu. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Ráno"
@@ -1566,6 +1572,9 @@
       "Upgrade for 200GB": [
         "Navýšte na 200GB"
       ],
+      "Upgrade Now": [
+        "Inovovať teraz"
+      ],
       "Upgrade now": [
         "Aktualizovať teraz"
       ],
@@ -1664,6 +1673,15 @@
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov",
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov",
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Bezplatná skúšobná verzia desktopovej aplikácie končí za 2 dni. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Bezplatná skúšobná verzia desktopovej aplikácie končí za 5 dní. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Bezplatná skúšobná verzia desktopovej aplikácie končí dňa ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Váš asistent písania emailov"
@@ -7725,6 +7743,9 @@
       ],
       "Low Priority": [
         "Nízka priorita"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Nastavte ${ MAIL_APP_NAME } ako predvolenú emailovú aplikáciu."
       ],
       "Manage your folders": [
         "Spravovať priečinky"

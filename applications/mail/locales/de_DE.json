@@ -483,6 +483,9 @@
       "Download logs": [
         "Protokolle herunterladen"
       ],
+      "Download now": [
+        "Jetzt herunterladen"
+      ],
       "Download the desktop app": [
         "Desktop-App herunterladen"
       ],
@@ -734,6 +737,9 @@
       ],
       "Import from Outlook": [
         "Von Outlook importieren"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Ein wichtiges Update ist verfügbar. Um die App weiterhin zu nutzen, aktualisiere sie bitte auf die neuste Version. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Morgens"
@@ -1555,6 +1561,9 @@
       "Upgrade for 200GB": [
         "Upgrade auf 200 GB"
       ],
+      "Upgrade Now": [
+        "Jetzt upgraden"
+      ],
       "Upgrade now": [
         "Jetzt upgraden"
       ],
@@ -1651,6 +1660,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kannst nur vCard-Dateien versenden, die höchstens ${ maxAttachments } Kontakte enthalten.",
         "Du kannst nur vCard-Dateien versenden, die höchstens ${ maxAttachments } Kontakte enthalten."
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Deine kostenlose Testversion der Desktop-App endet in 2 Tagen. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Deine kostenlose Testversion der Desktop-App endet in 5 Tagen. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Deine kostenlose Testversion der Desktop-App endet am ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Dein E-Mail-Schreibassistent"
@@ -7488,6 +7506,9 @@
       ],
       "Low Priority": [
         "Niedrige Priorität"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "${ MAIL_APP_NAME } als Standard-E-Mail-Anwendung festlegen."
       ],
       "Manage your folders": [
         "Ordner verwalten"

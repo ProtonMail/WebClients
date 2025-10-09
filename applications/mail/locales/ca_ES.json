@@ -76,7 +76,7 @@
         "Afegeix un contacte"
       ],
       "Add credit / debit card": [
-        "Afegir targeta de crèdit/dèbit"
+        "Afegeix una targeta de crèdit/dèbit"
       ],
       "Add email": [
         "Afegeix correu electrònic"
@@ -221,7 +221,7 @@
         "Aconseguiu l'adreça de ${ BRAND_NAME }"
       ],
       "Claim this address": [
-        "Aconseguiu aquesta adreça"
+        "Reclama aquesta adreça"
       ],
       "Claim your free ${ BRAND_NAME } address": [
         "Aconseguiu la vostra adreça gratuïta de ${ BRAND_NAME }"
@@ -242,7 +242,7 @@
         "Neteja les dades"
       ],
       "clear it": [
-        "netegeu-lo"
+        "neteja-ho"
       ],
       "Clear query": [
         "Netejar la consulta"
@@ -308,7 +308,7 @@
         "Continuar importació"
       ],
       "Continue with categories": [
-        "Continueu amb categories"
+        "Continua amb les categories"
       ],
       "Continue with Google": [
         "Continua amb Google"
@@ -482,6 +482,9 @@
       ],
       "Download logs": [
         "Descarrega els registres"
+      ],
+      "Download now": [
+        "Descarrega"
       ],
       "Download the desktop app": [
         "Descarregueu l'aplicació d'escriptori"
@@ -679,7 +682,7 @@
         "Amagar els detalls de l'adjunt"
       ],
       "Hide details": [
-        "Amagar els detalls"
+        "Amaga els detalls"
       ],
       "Hide messages": [
         "Amagar missatges"
@@ -735,6 +738,9 @@
       "Import from Outlook": [
         "Importa des de l'Outlook"
       ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Hi ha disponible una actualització important. Per a continuar utilitzant l'aplicació, actualitzeu a la versió més recent. ${ downloadUpdate }"
+      ],
       "In the morning": [
         "Al matí"
       ],
@@ -748,11 +754,11 @@
         "Insereix"
       ],
       "Insert ${ totalChecked } contact": [
-        "Afegiu ${ totalChecked } contacte",
-        "Afegiu ${ totalChecked } contactes"
+        "Inseriu ${ totalChecked } contacte",
+        "Inseriu ${ totalChecked } contactes"
       ],
       "Insert contact": [
-        "Introduïu el contacte"
+        "Introdueix el contacte"
       ],
       "Insert contacts": [
         "Introduïu els contactes"
@@ -779,7 +785,7 @@
         "Conserveu les categories"
       ],
       "Keep inbox as before": [
-        "Mantingueu la bústia d'entrada com abans"
+        "Manteniu la bústia d'entrada com abans"
       ],
       "Keep my subscription": [
         "Mantén la subscripció"
@@ -812,7 +818,7 @@
         "Carrega"
       ],
       "Load embedded images": [
-        "Carrega les imatges incloses"
+        "Carrega les imatges incrustades"
       ],
       "Load image": [
         "Carrega la imatge"
@@ -824,7 +830,7 @@
         "S'està carregant ${ ellipsis }"
       ],
       "Make ${ MAIL_APP_NAME } your default email application": [
-        "Establiu ${ MAIL_APP_NAME } com aplicació de correu electrònic per defecte"
+        "Feu de ${ MAIL_APP_NAME } l'aplicació de correu electrònic predeterminada"
       ],
       "Make it friendly": [
         "Més amigable"
@@ -896,7 +902,7 @@
         "Modifica"
       ],
       "Modify selection": [
-        "Modifiqueu la selecció"
+        "Modifica la selecció"
       ],
       "Monday": [
         "Dilluns"
@@ -935,7 +941,7 @@
         "Mou"
       ],
       "Move all to archive": [
-        "Moveu-ho tot a l'arxiu"
+        "Mou-ho tot a l'arxiu"
       ],
       "Move all to trash": [
         "Moveu-ho tot a la paperera"
@@ -1109,7 +1115,7 @@
         "Recomana a un amic"
       ],
       "Refine it": [
-        "Afina-ho"
+        "Afina-la"
       ],
       "Refresh the page": [
         "Refresca la pàgina"
@@ -1157,7 +1163,7 @@
         "Reemplaça el text seleccionat al missatge"
       ],
       "Reply securely": [
-        "Responeu-hi de manera segura"
+        "Respon de manera segura"
       ],
       "Report a problem": [
         "Notifica un problema"
@@ -1184,13 +1190,13 @@
         "Restableix"
       ],
       "Reset search form": [
-        "Restablir el formulari de cerca"
+        "Restableix el formulari de cerca"
       ],
       "Reset to default": [
         "Restableix els valors per defecte"
       ],
       "Resize panel": [
-        "Redimensioneu el panell"
+        "Redimensiona el panell"
       ],
       "Restore": [
         "Restaura"
@@ -1217,7 +1223,7 @@
         "S'està desant ${ ellipsis }"
       ],
       "Schedule message": [
-        "Programar missatge"
+        "Programa el missatge"
       ],
       "Scroll to bottom": [
         "Desplaceu-vos cap avall"
@@ -1247,7 +1253,7 @@
         "Seleccioneu ${ planOrAppName }"
       ],
       "Select All": [
-        "Seleccionar-ho tot"
+        "Selecciona-ho tot"
       ],
       "Select all": [
         "Seleccionar-ho tot"
@@ -1262,7 +1268,7 @@
         "Seleccioneu el país"
       ],
       "Select date and time": [
-        "Seleccioneu la data i l'hora"
+        "Selecciona la data i l'hora"
       ],
       "Self-destruct in 7 days": [
         "S'eliminarà automàticament en 7 dies"
@@ -1301,7 +1307,7 @@
         "Estableix com a predeterminat"
       ],
       "Set encryption": [
-        "Definiu el xifrat"
+        "Defineix el xifrat"
       ],
       "Set expiration time": [
         "Establiu el temps de caducitat"
@@ -1484,7 +1490,7 @@
         "De confiança"
       ],
       "Trust key": [
-        "Clau de confiança"
+        "Marca com a clau de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -1557,6 +1563,9 @@
       ],
       "Upgrade for 200GB": [
         "Milloreu el pla per a 200 GB"
+      ],
+      "Upgrade Now": [
+        "Millora ara"
       ],
       "Upgrade now": [
         "Millora ara"
@@ -1654,6 +1663,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "No podeu enviar fitxers vCard de més d'${ maxAttachments } contacte.",
         "No podeu enviar fitxers vCard de més d'${ maxAttachments } contacte."
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "La prova gratuïta de l'aplicació d'escriptori finalitza d'aquí a 2 dies. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "La prova gratuïta de l'aplicació d'escriptori finalitza d'aquí a 5 dies. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "La prova gratuïta de l'aplicació d'escriptori finalitza el ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "El vostre assistent d'escriptura de correus electrònics"
@@ -2020,7 +2038,7 @@
         "No podeu afegir dominis personalitzats durant el període de prova."
       ],
       "You have reached the trial limit.": [
-        "Heu arribat al límit de la prova."
+        "Heu arribat al límit de la versió de prova."
       ]
     },
     "b2b_trials_Action": {
@@ -2388,7 +2406,7 @@
         "${ participantName } ha rebutjat una invitació i ha proposat una nova hora per aquest esdeveniment."
       ],
       "${ participantName } declined an invitation to one occurrence of the event.": [
-        "${ participantName } ha rebutjat una invitació a una ocurrència d'aquest esdeveniment."
+        "${ participantName } ha rebutjat una invitació a una ocurrència de l'esdeveniment."
       ],
       "${ participantName } declined an invitation to this event.": [
         "${ participantName } ha rebutjat una invitació a aquest esdeveniment."
@@ -2704,7 +2722,7 @@
         "Nombre de preferits limitat"
       ],
       "Unlimited daily chats": [
-        "Xats diaris sense límits"
+        "Xats diaris il·limitats"
       ],
       "Unlimited favorites for quick access": [
         "Preferits il·limitats per a un accés ràpid"
@@ -2914,7 +2932,7 @@
         "Ves a la safata d'entrada"
       ],
       "Go to Sent": [
-        "Aneu a Enviats"
+        "Ves a Enviats"
       ],
       "Go to Spam": [
         "Aneu a Correu brossa"
@@ -4127,7 +4145,7 @@
       ],
       "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
         "Els nous correus de ${ senderEmailAddress } i ${ otherSendersCount } altre no s'entregaran i seran eliminats permanentment.",
-        "Els nous correus de ${ senderEmailAddress } i ${ otherSendersCount } d'altres no s'entregaran i seran eliminats permanentment."
+        "Els nous correus de ${ senderEmailAddress } i ${ otherSendersCount } altres no s'entregaran i seran eliminats permanentment."
       ],
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Els correus nous de ${ senderEmailAddress } no s'entregaran i seran eliminats permanentment."
@@ -4309,7 +4327,7 @@
         "Descarrega per al macOS"
       ],
       "Download for Windows": [
-        "Descarregueu-lo per Windows"
+        "Descarrega per a Windows"
       ]
     },
     "driveplus2024: Deal details": {
@@ -4557,7 +4575,7 @@
         "Signatura del contacte no verificada"
       ],
       "Contact your organization’s administrator to resolve this": [
-        "Contacteu amb l'administrador de la vostra organització per solucionar això"
+        "Contacteu amb l'administrador de la vostra organització per solucionar-ho"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "La cerca de continguts no es pot activar en aquest navegador. Tanqueu el mode de navegació privada o utilitzeu un altre navegador."
@@ -4854,7 +4872,7 @@
         "La clau principal obtinguda per a l'usuari de ${ BRAND_NAME } no és vàlida per a l'enviament"
       ],
       "Problem downloading the writing assistant. If you're using private mode, try using normal browsing mode or run the writing assistant on servers.": [
-        "S'ha produït un error en baixar l'assistent d'escriptura. Si esteu utilitzant el mode privat, proveu el mode de navegació normal o executeu l'assistent d'escriptura de servidors."
+        "Hi ha hagut un problema en baixar l'assistent d'escriptura. Si utilitzeu el mode privat, proveu el mode de navegació normal o executeu l'assistent d'escriptura als servidors."
       ],
       "Problem downloading the writing assistant. Please try again.": [
         "Hi ha hagut un problema en descarregar l'assistent d'escriptura. Torneu-ho a provar."
@@ -4872,7 +4890,7 @@
         "La clau pública no s'ha pogut verificar"
       ],
       "re-activate the previous key": [
-        "torneu a activar la clau anterior"
+        "tornar a activar la clau anterior"
       ],
       "Removed duplicate recipient: ${ recipents }": [
         "S'ha eliminat aquest destinatari duplicat: ${ recipents }",
@@ -4939,8 +4957,8 @@
         "L'import que cal pagar ha canviat. Torneu-ho a provar."
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
-        "No s'ha pogut desxifrar el fitxer adjunt.Si teniu la clau privada corresponent, encara podreu desxifrar el fitxer amb un programa com GnuPG.",
-        "No s'han pogut desxifrar els fitxers adjunts.Si teniu la clau privada corresponent, encara podreu desxifrar-los amb un programa com GnuPG."
+        "No s'ha pogut desxifrar l'adjunt. \nSi teniu la clau privada corresponent, encara podreu desxifrar \nel fitxer amb un programa com GnuPG.",
+        "No s'han pogut desxifrar alguns dels adjunts. \nSi teniu la clau privada corresponent, encara podreu desxifrar \nels fitxers amb un programa com GnuPG."
       ],
       "The email addresses do not match": [
         "Les adreces de correu electrònic no coincideixen."
@@ -4973,13 +4991,13 @@
         "El sistema està ocupat en aquests moments. Torneu-ho a provar d'aquí a uns minuts."
       ],
       "The writing assistant cannot proceed with your request. Please try a different prompt.": [
-        "L'assistent d'escriptura no pot continuar amb la vostra sol·licitud. Proveu una petició diferent."
+        "L'assistent d'escriptura no pot processar la vostra sol·licitud. Proveu una altra indicació."
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Hi ha massa carpetes al vostre compte extern. Personalitzeu la importació per eliminar algunes carpetes."
       ],
       "There has been an issue with content search. Default search has been used instead.": [
-        "Hi ha hagut un problema amb la cerca de continguts. Alternativament s'ha utilitzat la cerca per defecte."
+        "Hi ha hagut un problema amb la cerca de continguts. S'ha utilitzat la cerca per defecte."
       ],
       "There was an error when exporting the contacts vCards": [
         "Hi ha hagut un error exportant les vcards dels contactes"
@@ -5395,7 +5413,7 @@
         "atenció al client"
       ],
       "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
-        "Els plans familiars actualment no suporten comptes externs. Creeu una adreça ${ BRAND_NAME } abans d'unir-vos-hi. ${ link }"
+        "Els plans familiars actualment no admeten comptes externs. Creeu una adreça ${ BRAND_NAME } abans d'unir-vos-hi. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Si accepteu la invitació, us canviarem del vostre pla actual i abonarem el saldo restant al vostre compte."
@@ -5642,7 +5660,7 @@
         "Amaga el missatge mogut"
       ],
       "Read": [
-        "Llegeix"
+        "Llegits"
       ],
       "Show moved message": [
         "Mostra el missatge mogut"
@@ -5751,7 +5769,7 @@
         "No cal targeta de crèdit."
       ],
       "Start free trial": [
-        "Inicieu el període de prova gratuït"
+        "Inicia el període de prova gratuït"
       ],
       "Try the new desktop app": [
         "Proveu la nova aplicació d'escriptori"
@@ -6430,8 +6448,8 @@
         "Es mouran ${ elementsCount } converses."
       ],
       "${ elementsCount } conversation will be unlabelled from:": [
-        "${ elementsCount } conversa no s'etiquetarà com a:",
-        "${ elementsCount } converses no s'etiquetaran com a:"
+        "Es retirarà l'etiqueta d'${ elementsCount } conversa de:",
+        "Es retirarà l'etiqueta de ${ elementsCount } converses de:"
       ],
       "${ elementsCount } message will be labelled as:": [
         "${ elementsCount } missatge s'etiquetarà com a:",
@@ -6450,12 +6468,12 @@
         "Es mouran ${ elementsCount } missatges"
       ],
       "${ elementsCount } message will be unlabelled from:": [
-        "${ elementsCount } missatge no tindrà aquesta etiqueta:",
-        "${ elementsCount } missatges no tindran aquesta etiqueta:"
+        "Es retirarà l'etiqueta d'${ elementsCount } missatge de:",
+        "Es retirarà l'etiqueta de ${ elementsCount } missatges de:"
       ],
       "${ embeddedAttachmentsCount } embedded image": [
-        "${ embeddedAttachmentsCount } imatge encastada",
-        "${ embeddedAttachmentsCount } imatges encastades"
+        "${ embeddedAttachmentsCount } imatge incrustada",
+        "${ embeddedAttachmentsCount } imatges incrustades"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: imatge a mida completa"
@@ -6531,8 +6549,8 @@
         "${ providerFoldersNumLocalized } etiquetes trobades a Gmail"
       ],
       "${ pureAttachmentsCount } file attached": [
-        "${ pureAttachmentsCount } arxiu adjunt",
-        "${ pureAttachmentsCount } arxius adjunts"
+        "${ pureAttachmentsCount } fitxer adjunt",
+        "${ pureAttachmentsCount } fitxers adjunts"
       ],
       "${ receivedMessagesCount } email last month": [
         "${ receivedMessagesCount } correu el mes passat",
@@ -6559,7 +6577,7 @@
       ],
       "${ subscription.UnreadMessageCount } unread": [
         "Hi ha ${ subscription.UnreadMessageCount } sense llegir",
-        "Teniu ${ subscription.UnreadMessageCount } sense llegir"
+        "Hi ha ${ subscription.UnreadMessageCount } sense llegir"
       ],
       "${ total } conversation": [
         "${ total } conversa",
@@ -6715,7 +6733,7 @@
         "Tots els missatges d'aquesta llista de correu es marcaran com a llegits."
       ],
       "All messages from this mailing list will be moved to Archive.": [
-        "Tots els missatges d\"aquesta llista de correu es mouran a l\"Arxiu."
+        "Tots els missatges d'aquesta llista de correu es mouran a l\"Arxiu."
       ],
       "All messages from this mailing list will be moved to Trash.": [
         "Tots els missatges d'aquesta llista de correu es mouran a la Paperera."
@@ -6752,7 +6770,7 @@
         "S'ha detectat una clau pública desconeguda per aquest receptor."
       ],
       "An unsubscribe email will be sent on your behalf.": [
-        "S\"enviarà un correu electrònic en nom vostre per anul·lar la subscripció."
+        "S'enviarà un correu electrònic en nom vostre per anul·lar la subscripció."
       ],
       "and": [
         "i"
@@ -6807,12 +6825,12 @@
         "Segur que voleu eliminar permanentment aquestes ${ count } converses?"
       ],
       "Are you sure you want to permanently delete ${ count } draft?": [
-        "Esteu segur de voler eliminar ${ count } esborrany definitivament?",
-        "Esteu segur de voler eliminar ${ count } esborranys definitivament?"
+        "Segur que voleu eliminar ${ count } esborrany de manera permanent?",
+        "Segur que voleu eliminar ${ count } esborranys de manera permanent?"
       ],
       "Are you sure you want to permanently delete ${ count } message?": [
-        "Esteu segur de voler eliminar ${ count } missatge permanentment?",
-        "Esteu segur de voler eliminar ${ count } missatges permanentment?"
+        "Segur que voleu eliminar ${ count } missatge permanentment?",
+        "Segur que voleu eliminar ${ count } missatges permanentment?"
       ],
       "Are you sure you want to permanently delete this conversation?": [
         "Segur que voleu eliminar permanentment aquesta conversa?"
@@ -7163,8 +7181,8 @@
         "Els correus amb l'etiqueta ${ nameDeleted } no s'eliminaran i encara es poden trobar a la carpeta respectiva."
       ],
       "embedded image": [
-        "imatge integrada",
-        "imatges integrades"
+        "imatge incrustada",
+        "imatges incrustades"
       ],
       "Enabling auto-deletion…": [
         "S'està activant la supressió automàtica…"
@@ -7176,7 +7194,7 @@
         "Gaudiu d'una experiència de correu electrònic més ràpida i centrada amb l'aplicació d'escriptori."
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
-        "Assegureu-vos una comunicació totalment privada i xifrada. Aconseguiu ara la vostra adreça gratuïta de correu de ${ BRAND_NAME }."
+        "Assegureu-vos una comunicació totalment privada i xifrada. Aconseguiu ara la vostra adreça gratuïta de correu electrònic de ${ BRAND_NAME }."
       ],
       "Enter the code from your authenticator app": [
         "Introduïu el codi de la vostra aplicació d'autenticació."
@@ -7252,7 +7270,7 @@
         "Per accedir en qualsevol moment al correu electrònic i a una experiència mòbil optimitzada, descarregueu la nostra aplicació ${ androidAppLink } o ${ iosAppLink }."
       ],
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
-        "Per més seguretat, podeu establir una frase de contrasenya. No s'inclourà a la invitació del calendari, recordeu compartir-la amb els vostres convidats per separat."
+        "Per a més seguretat, podeu establir una frase de contrasenya. No s'inclourà a la invitació del calendari; recordeu de compartir-la amb els vostres convidats per separat."
       ],
       "For messages newer than ${ oldestDate }": [
         "Per missatges posteriors al ${ oldestDate }"
@@ -7491,6 +7509,9 @@
       ],
       "Low Priority": [
         "Prioritat baixa"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Establiu ${ MAIL_APP_NAME } com aplicació de correu electrònic per defecte."
       ],
       "Manage your folders": [
         "Gestioneu les vostres carpetes"
@@ -8157,8 +8178,8 @@
         "Aquesta conversa conté missatges esborrats."
       ],
       "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Aquesta conversa es marcarà com a correu brossa. Voldríeu també cancel·lar la subscripció per futurs correus?",
-        "Aquestes converses es marcaran com a correu brossa. Us agradaria també anul·lar la subscripció per futurs correus?"
+        "Aquesta conversa es marcarà com a correu brossa. Voleu també anul·lar la subscripció per a futurs correus?",
+        "Aquestes converses es marcaran com a correu brossa. Voleu també anul·lar la subscripció per a futurs correus?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "Aquest correu no ha superat els requeriments d'autentificació del domini. Pot ser que estigui falsejat o reenviat indegudament."
@@ -8200,7 +8221,7 @@
         "Aquest missatge és d'una llista de correu."
       ],
       "This message is signed by a key that has not been trusted yet.": [
-        "Aquest missatge està signat per una clau que encara no s'ha confiat."
+        "Aquest missatge està signat per una clau que encara no s'ha marcat com a fiable."
       ],
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Aquest missatge s'ha signat per la clau adjunta que encara no és de confiança."
@@ -8212,7 +8233,7 @@
         "Aquest missatge s'eliminarà automàticament el ${ value }."
       ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Aquest missatge es marcarà com a correu brossa. Voldríeu cancel·lar al mateix temps la subscripció per a futurs correus?",
+        "Aquest missatge es marcarà com a correu brossa. Voldríeu anul·lar també la subscripció per a futurs correus electrònics?",
         "Aquests missatges es marcaran com a correu brossa. Voldríeu anul·lar també la subscripció per a futurs correus electrònics?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
@@ -8291,7 +8312,7 @@
         "Per a eliminar restriccions, podeu millorar a un pla de pagament."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
-        "Per cancel·lar la subscripció a aquesta llista de correu, se n'enviarà un des de ${ boldFrom } amb els següents detalls definits pel remitent del butlletí:"
+        "Per a anul·lar la subscripció a aquesta llista de correu, s'enviarà un correu electrònic des de ${ boldFrom } amb els detalls següents definits pel remitent del butlletí:"
       ],
       "To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:": [
         "Per cancel·lar la subscripció a aquesta llista de correu se us dirigirà al següent URL, on el remitent del butlletí us proporcionarà instruccions:"
@@ -8399,7 +8420,7 @@
         "Milloreu el vostre pla per a desbloquejar característiques prèmium."
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with Apple Mail, Outlook or Thunderbird.": [
-        "Milloreu per utilitzar ${ MAIL_APP_NAME } amb Apple Mail, Outlook o Thunderbird."
+        "Milloreu el pla per utilitzar ${ MAIL_APP_NAME } amb Apple Mail, Outlook o Thunderbird."
       ],
       "Upgrade to use auto-reply when you're away.": [
         "Actualitzeu el vostre pla per utilitzar la resposta automàtica quan esteu fora."
@@ -8417,7 +8438,7 @@
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
       "Use different email addresses for different purposes so you can easily separate your emails by work, personal, or other areas.": [
-        "Utilitzeu adreces diferents de correu electrònic per a diferents propòsits perquè pugueu separar fàcilment els correus per àrees laborals, personals o d'altres."
+        "Utilitzeu adreces de correu electrònic diferents per a diferents propòsits perquè pugueu separar fàcilment els correus per àrea laboral, personal o d'altres."
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Utilitzeu dreceres de teclat per gestionar el vostre correu electrònic més ràpidament."
@@ -8642,7 +8663,7 @@
         "No heu posat cap assumpte al vostre correu electrònic. Voleu enviar el missatge de totes maneres?"
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
-        "Heu assolit el 100% de la vostra capacitat d’emmagatzematge. Considereu alliberar espai o actualitzar el vostre compte amb espai d'emmagatzematge addicional per redactar missatges nous."
+        "Heu assolit el 100% de la vostra capacitat d’emmagatzematge. Considereu alliberar espai o millorar el vostre compte amb espai d'emmagatzematge addicional per redactar missatges nous."
       ],
       "You have reached the maximum number of 5 replies.": [
         "Heu assolit el nombre màxim de 5 respostes."
@@ -8768,8 +8789,8 @@
         "La vostra informació d'inici de sessió no es desarà quan s'hagi completat la importació."
       ],
       "Your message will expire in ${ numberOfDays } day.": [
-        "Aquest missatge caducarà d'aquí ${ numberOfDays } dia.",
-        "Aquest missatge caducarà d'aquí ${ numberOfDays } dies."
+        "Aquest missatge caducarà d'aquí a ${ numberOfDays } dia.",
+        "Aquest missatge caducarà d'aquí a ${ numberOfDays } dies."
       ],
       "Your message will expire today.": [
         "Aquest missatge caducarà avui."
@@ -8902,8 +8923,8 @@
         "Voleu confiar en les claus públiques principals amb les següents empremtes digitals?"
       ],
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
-        "Heu activat la verificació d’adreces amb claus de confiança per aquestes adreces de correu electrònic, però no s'ha confiat en cap clau de xifratge activa.\nHeu de tenir claus de confiança vàlides per a l'enviament per tal de poder enviar un missatge a aquesta adreça de correu electrònic.",
-        "Heu activat la verificació d’adreces amb claus de confiança per aquestes adreces de correu electrònic, però no s'ha confiat en cap clau de xifratge activa.\nHeu de tenir claus de confiança vàlides per a l'enviament per tal de poder enviar un missatge a aquestes adreces de correu electrònic."
+        "Heu activat la verificació d'adreça amb claus de confiança per a aquesta adreça de correu electrònic, però no s'ha marcat cap clau de xifratge activa com a fiable.\nPer a poder enviar un missatge a aquesta adreça, heu de marcar com a fiable una clau que sigui vàlida per a l'enviament.",
+        "Heu activat la verificació d'adreça amb claus de confiança per a aquestes adreces de correu electrònic, però no s'han marcat claus de xifratge actives com a fiables.\nPer a poder enviar un missatge a aquestes adreces, heu de marcar com a fiables claus que siguin vàlides per a l'enviament."
       ]
     },
     "Key validation warning": {
@@ -9163,7 +9184,7 @@
         "Tots els contactes"
       ],
       "Also archive": [
-        "Voleu arxivar també"
+        "Arxiva també"
       ],
       "AND": [
         "I"
@@ -9379,7 +9400,7 @@
         "Activa les notificacions d'escriptori"
       ],
       "Enable filter": [
-        "Habiliteu el filtre"
+        "Habilita el filtre"
       ],
       "Encrypt emails": [
         "Xifrar correus electrònics"
@@ -9430,7 +9451,7 @@
         "Aneu al primari"
       ],
       "Go to Promotions": [
-        "Aneu a les promocions"
+        "Ves a les promocions"
       ],
       "Go to Social": [
         "Aneu al canal de continguts"
@@ -9439,7 +9460,7 @@
         "Aneu a les transaccions"
       ],
       "Go to Updates": [
-        "Aneu a les actualitzacions"
+        "Ves a les actualitzacions"
       ],
       "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
         "Ajudeu-nos a millorar les categories escollint la que millor s'ajusti a aquest correu electrònic. Gràcies per la vostra col·laboració!"
@@ -9978,13 +9999,13 @@
     },
     "Link": {
       "Add a gift code": [
-        "Afegir un codi regal"
+        "Afegeix un codi de regal"
       ],
       "All mail": [
         "Tot el correu"
       ],
       "Archive": [
-        "Arxiva"
+        "Arxiu"
       ],
       "clearing your browser cache": [
         "buidar la memòria cau del navegador"
@@ -10092,7 +10113,7 @@
         "Menys"
       ],
       "Manage blocked email addresses": [
-        "Gestioneu les adreces de correu electrònic bloquejades"
+        "Gestiona les adreces de correu electrònic bloquejades"
       ],
       "Manage your folders": [
         "Gestioneu les vostres carpetes"
@@ -10131,7 +10152,7 @@
         "Demana una invitació"
       ],
       "Resume now": [
-        "Repreneu-ho ara"
+        "Reprèn ara"
       ],
       "Scheduled": [
         "Programats"
@@ -10188,7 +10209,7 @@
         "Haureu d'activar les claus del calendari per gestionar aquesta invitació"
       ],
       "You need to activate your calendar keys to see the updated event": [
-        "Heu d'activar les claus del calendari per veure l\"esdeveniment actualitzat"
+        "Heu d'activar les claus del calendari per veure l'esdeveniment actualitzat"
       ],
       "You need to activate your calendar keys to see the updated invitation": [
         "Heu d'activar les claus del calendari per veure la invitació actualitzada"
@@ -10222,7 +10243,7 @@
         "Quantitat de calendaris creats: ${ createdCalendarCount } d'un total de ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
-        "Connectant al vostre prveïdor de correu electrònic"
+        "S'està connectant al vostre proveïdor de correu electrònic"
       ],
       "Creating new calendars": [
         "Creant els calendaris nous"
@@ -10305,7 +10326,7 @@
     },
     "Mailbox": {
       "Archive": [
-        "Arxiva"
+        "Arxiu"
       ],
       "Inbox": [
         "Safata d'entrada"
@@ -10352,7 +10373,7 @@
         "S'ha cancel·lat la programació. El missatge s'ha mogut a Esborranys."
       ],
       "Sending undone": [
-        "S'ha desfet l'enviament"
+        "S'ha cancel·lat l'enviament"
       ],
       "Undoing send...": [
         "S'està desfent l'enviament..."
@@ -11661,7 +11682,7 @@
         "${ addFreePromiseTitle }: vol dir que mai veureu anuncis patrocinats a les nostres aplicacions."
       ],
       "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
-        "${ advancedEncryptionTitle } garanteix que només vosaltres i els destinataris previstos podreu accedir als vostres correus."
+        "${ advancedEncryptionTitle } garanteix que només vós i els destinataris previstos pugueu accedir als vostres correus electrònics."
       ],
       "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
         "${ industryLeadingSpamProtectionTitle } evita que els correus electrònics fraudulents arribin a la vostra safata d'entrada."
@@ -11700,7 +11721,7 @@
         "navegador"
       ],
       "Clear out deleted and spam emails after 30 days.": [
-        "Elimina els correus esborrats i el correu brossa al cap de 30 dies."
+        "Esborra els correus eliminats i el correu brossa després de 30 dies."
       ],
       "Continue": [
         "Continueu"
@@ -11885,7 +11906,7 @@
         "Viatge"
       ],
       "Utilities": [
-        "Serveis"
+        "Utilitats"
       ]
     },
     "Option": {
@@ -12060,7 +12081,7 @@
         "Exclòs el ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
       "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Exclòs el ${ taxRate }% d'impostos: ${ taxAmount }"
+        "Excloent el ${ taxRate }% d'impostos: ${ taxAmount }"
       ],
       "Got it": [
         "Fet"
@@ -12303,7 +12324,7 @@
         "Filtra grups"
       ],
       "Filter labels": [
-        "Filtra etiquetes"
+        "Filtra les etiquetes"
       ],
       "Filter quick actions": [
         "Filtra les accions ràpides"
@@ -12363,7 +12384,7 @@
         "Codi postal"
       ],
       "Search date, name, email address, or subject line": [
-        "Cerca data, nom, adreça de correu o línia de l'assumpte"
+        "Cerca data, nom, adreça de correu electrònic o línia de l'assumpte"
       ],
       "Search for group name": [
         "Buscar per nom de grup"
@@ -12587,8 +12608,8 @@
         "Guanyeu fins a ${ maxRewardAmount } en crèdits. Rebreu ${ referrerRewardAmount } quan la persona que convideu se subscrigui a un pla de ${ BRAND_NAME }."
       ],
       "Friend joined": [
-        "Una amistat s'hi ha afegit",
-        "Unes amistats s'hi han afegit"
+        "Una amistat s'ha unit",
+        "Unes amistats s'han unit"
       ],
       "Friend subscribed": [
         "Una amistat s'ha subscrit",
@@ -12604,7 +12625,7 @@
         "Més opcions de compartició"
       ],
       "Refer friends": [
-        "Recomaneu amistats"
+        "Recomana amistats"
       ],
       "Start earning credits": [
         "Comenceu a guanyar crèdits"
@@ -12771,7 +12792,7 @@
       ],
       "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
         "S'han detectat errors. No es pot enviar aquest correu electrònic a l'adreça introduïda pel següent motiu:",
-        "S'han detectat errors. No es pot enviar aquest correu electrònic a cap de les adreces introduïdes pel següent motiu:"
+        "S'han detectat errors. No es pot enviar aquest correu electrònic a cap de les adreces introduïdes pels següents motius:"
       ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
         "S'han detectat alguns errors. El vostre correu electrònic no es pot enviar a una o més de les adreces introduïdes a causa dels següents motius:"
@@ -12835,7 +12856,7 @@
       ],
       "Sent by you with end-to-end encryption to verified recipient": [
         "Ho heu enviat amb xifratge d'extrem a extrem a un destinatari verificat",
-        "Ho heu enviat amb xifrat d\"extrem a extrem a destinataris verificats"
+        "Ho heu enviat amb xifratge d\"extrem a extrem a destinataris verificats"
       ],
       "Stored with zero-access encryption": [
         "S'ha emmagatzemat amb xifratge d'accés zero"
@@ -13341,7 +13362,7 @@
         "Descobriu els avantatges de la vostra subscripció"
       ],
       "Email tracking protection": [
-        "Protecció de seguiment de correus electrònics"
+        "Protecció de seguiment de correu electrònic"
       ],
       "Get up to ${ credits } in credits.": [
         "Obteniu fins a ${ credits } en crèdits."
@@ -13350,7 +13371,7 @@
         "Convida amistats a ${ BRAND_NAME }"
       ],
       "Schedule send": [
-        "Programeu l'enviament"
+        "Programa l'enviament"
       ],
       "This is now your default address. Open the dropdown to send from a different address. ": [
         "Aquesta és ara la vostra adreça per defecte. Obriu el menú desplegable per enviar missatges des d'una adreça diferent. "
@@ -13939,15 +13960,15 @@
         "S'han eliminat ${ count } esborranys"
       ],
       "${ count } message deleted": [
-        "S'ha esborrat ${ count } missatge",
-        "S'han esborrat ${ count } missatges"
+        "S'ha eliminat ${ count } missatge",
+        "S'han eliminat ${ count } missatges"
       ],
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } contacte sembla idèntic.",
         "${ countMergeableContacts } contactes semblen idèntics."
       ],
       "${ elementsCount } conversation added to ${ labelName }.": [
-        "S'han afegit ${ elementsCount } conversa a ${ labelName }.",
+        "S'ha afegit ${ elementsCount } conversa a ${ labelName }.",
         "S'han afegit ${ elementsCount } converses a ${ labelName }."
       ],
       "${ elementsCount } conversation marked as read.": [
@@ -13979,8 +14000,8 @@
         "S'han eliminat ${ elementsCount } converses de ${ labelName }."
       ],
       "${ elementsCount } conversation removed from Starred.": [
-        "S'ha eliminat ${ elementsCount } conversa de Destacats.",
-        "S'han eliminat ${ elementsCount } converses de Destacats."
+        "S'ha esborrat ${ elementsCount } conversa de Destacats.",
+        "S'han esborrat ${ elementsCount } converses de Destacats."
       ],
       "${ elementsCount } conversation snoozed": [
         "S'ha ajornat ${ elementsCount } conversa",
@@ -14188,8 +14209,8 @@
         "Mou ${ selectionCount } converses"
       ],
       "Move ${ selectionCount } message": [
-        "Moveu ${ selectionCount } missatge",
-        "Moveu ${ selectionCount } missatges"
+        "Mou ${ selectionCount } missatge",
+        "Mou ${ selectionCount } missatges"
       ],
       "Password copied to clipboard": [
         "La contrasenya s'ha copiat al porta-retalls."
@@ -14463,7 +14484,7 @@
         "Obre "
       ],
       "Show me how": [
-        "Ensenyeu-me com"
+        "Mostra'm com"
       ]
     },
     "Title": {
@@ -14519,7 +14540,7 @@
         "Afegeix el nom del grup de contactes"
       ],
       "Add credit/debit card": [
-        "Afegir targeta de crèdit/dèbit"
+        "Afegeix una targeta de crèdit/dèbit"
       ],
       "Add filter": [
         "Afegeix un filtre"
@@ -14708,16 +14729,16 @@
         "Eliminar ${ count } grups de contactes"
       ],
       "Delete ${ count } conversation": [
-        "Elimineu ${ count } conversa",
-        "Elimineu ${ count } converses"
+        "Elimina ${ count } conversa",
+        "Elimina ${ count } converses"
       ],
       "Delete ${ count } draft": [
-        "Elimineu ${ count } esborrany",
-        "Elimineu ${ count } esborranys"
+        "Elimina ${ count } esborrany",
+        "Elimina ${ count } esborranys"
       ],
       "Delete ${ count } message": [
-        "Eliminar ${ count } missatge",
-        "Eliminar ${ count } missatges"
+        "Elimina ${ count } missatge",
+        "Elimina ${ count } missatges"
       ],
       "Delete ${ value }": [
         "Elimina ${ value }"
@@ -14931,17 +14952,17 @@
         "Etiqueta com a"
       ],
       "Label message as": [
-        "Etiqueteu el missatge com",
-        "Etiqueta els missatges com"
+        "Etiqueta el missatge com a",
+        "Etiqueta els missatges com a"
       ],
       "Label options": [
-        "Opcions d\"etiqueta"
+        "Opcions d'etiqueta"
       ],
       "Link confirmation": [
         "Confirmació d'enllaç"
       ],
       "Load embedded images": [
-        "Carrega les imatges incloses"
+        "Carrega les imatges incrustades"
       ],
       "Load remote content": [
         "Carrega el contingut remot"
@@ -15218,7 +15239,7 @@
         "Programeu-lo ara i envieu-lo més tard"
       ],
       "Schedule send": [
-        "Programeu l'enviament"
+        "Programa l'enviament"
       ],
       "Schedule send:": [
         "Programa l'enviament:"
@@ -15356,8 +15377,8 @@
         "Voleu enviar tots els missatges a la paperera?"
       ],
       "Trust new key?": [
-        "Confiar en la nova clau?",
-        "Confiar en les noves claus?"
+        "Voleu confiar en la clau nova?",
+        "Voleu confiar en les claus noves?"
       ],
       "Trust pinned keys?": [
         "Confieu en les claus fixades?"

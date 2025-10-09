@@ -483,6 +483,9 @@
       "Download logs": [
         "Scarica i log"
       ],
+      "Download now": [
+        "Scarica ora"
+      ],
       "Download the desktop app": [
         "Scarica l’app per desktop"
       ],
@@ -734,6 +737,9 @@
       ],
       "Import from Outlook": [
         "Importa da Outlook"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "È disponibile un aggiornamento importante. Per continuare a utilizzare l'app, aggiornala alla versione più recente. ${ downloadUpdate }"
       ],
       "In the morning": [
         "La mattina"
@@ -1555,6 +1561,9 @@
       "Upgrade for 200GB": [
         "Effettua l'upgrade per 200GB"
       ],
+      "Upgrade Now": [
+        "Effettua l'upgrade ora"
+      ],
       "Upgrade now": [
         "Effettua l'upgrade ora"
       ],
@@ -1651,6 +1660,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Non puoi inviare file vCard contenenti più di ${ maxAttachments } contatti",
         "Non puoi inviare file vCard contenenti più di ${ maxAttachments } contatti"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "La tua prova gratuita dell'applicazione desktop termina tra 2 giorni. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "La tua prova gratuita dell'applicazione desktop termina tra 5 giorni. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "La tua prova gratuita dell'applicazione desktop termina ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Il tuo assistente per la scrittura di email"
@@ -7488,6 +7506,9 @@
       ],
       "Low Priority": [
         "Priorità bassa"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Imposta ${ MAIL_APP_NAME } come la tua applicazione email predefinita."
       ],
       "Manage your folders": [
         "Gestisci le tue cartelle"

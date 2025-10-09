@@ -306,11 +306,17 @@
       "Continue import": [
         "Lanjutkan impor"
       ],
+      "Continue with categories": [
+        "Lanjut dengan kategori"
+      ],
       "Continue with Google": [
         "Lanjut dengan Google"
       ],
       "Continue with Outlook": [
         "Lanjut dengan Outlook"
+      ],
+      "Continue without categories": [
+        "Lanjut tanpa kategori"
       ],
       "Contract composer": [
         "Ciutkan komposer"
@@ -432,6 +438,9 @@
       "Disable alias": [
         "Nonaktifkan alias"
       ],
+      "Disable categories": [
+        "Nonaktifkan kategori"
+      ],
       "Disabling alias": [
         "Menonaktifkan alias"
       ],
@@ -467,6 +476,9 @@
       ],
       "Download logs": [
         "Unduh log"
+      ],
+      "Download now": [
+        "Unduh sekarang"
       ],
       "Download the desktop app": [
         "Unduh aplikasi desktop"
@@ -720,6 +732,9 @@
       "Import from Outlook": [
         "Impor dari Outlook"
       ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Pembaruan penting tersedia. Untuk dapat lanjut menggunakan aplikasi, silakan perbarui aplikasi ke versi terbaru. ${ downloadUpdate }"
+      ],
       "In the morning": [
         "Di pagi hari"
       ],
@@ -750,8 +765,14 @@
       "Invite members": [
         "Undang anggota"
       ],
+      "Is this private?": [
+        "Apakah kategori ini privat?"
+      ],
       "Italic": [
         "Cetak miring"
+      ],
+      "Keep inbox as before": [
+        "Pertahankan kotak masuk seperti sedia kala"
       ],
       "Keep my subscription": [
         "Pertahankan langganan saya"
@@ -1425,6 +1446,9 @@
       "Toggle Contacts app": [
         "Tampilkan/sembunyikan aplikasi Kontak"
       ],
+      "Toggle notifications": [
+        "Tampilkan notifikasi"
+      ],
       "Toggle security center app": [
         "Tampilkan aplikasi pusat keamanan"
       ],
@@ -1511,6 +1535,9 @@
       ],
       "Upgrade for 200GB": [
         "Tingkatkan untuk 200GB"
+      ],
+      "Upgrade Now": [
+        "Tingkatkan Sekarang"
       ],
       "Upgrade now": [
         "Tingkatkan sekarang"
@@ -1607,6 +1634,15 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Anda tidak dapat mengirim berkas vCard ke lebih dari ${ maxAttachments } kontak"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Masa uji coba aplikasi desktop Anda akan berakhir dalam 2 hari. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Masa uji coba aplikasi desktop Anda akan berakhir dalam 5 hari. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Masa uji coba aplikasi desktop Anda akan berakhir pada ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Asisten penulisan email Anda"
@@ -1945,8 +1981,14 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Setelah masa uji coba ini berakhir pada ${ formattedDate }, paket Anda akan menjadi langganan berbayar yang diperbarui secara otomatis secara bulanan. Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ formattedDate }."
+      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Anda dapat memiliki hingga ${ TRIAL_MAX_SCRIBE_SEATS } kuota Scribe selama masa uji coba."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Anda dapat memiliki hingga ${ TRIAL_MAX_USERS } pengguna selama masa uji coba."
       ]
     },
     "b2b_trials_Action": {
@@ -2609,6 +2651,18 @@
     "collider_2025: feature": {
       "Access to advanced AI models": [
         "Akses ke berbagai model AI lanjutan"
+      ],
+      "Basic chat history": [
+        "Riwayat percakapan dasar"
+      ],
+      "Limited favorites": [
+        "Favorit dalam jumlah yang terbatas"
+      ],
+      "Unlimited daily chats": [
+        "Tanpa batasan jumlah percakapan harian"
+      ],
+      "Upload and query small files": [
+        "Unggah dan kuerikan berkas kecil"
       ]
     },
     "collider_2025: Info": {
@@ -6157,13 +6211,13 @@
         "Impor dari Google"
       ],
       "Import from other": [
-        "Impor dari yang lain"
+        "Impor dari layanan lain"
       ],
       "Import from Outlook": [
         "Impor dari Outlook"
       ],
       "Import from Yahoo": [
-        "Masukan dari Yahoo"
+        "Impor dari Yahoo"
       ]
     },
     "Import warning": {
@@ -6412,6 +6466,9 @@
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill switch**: Menghentikan kebocoran data dengan memblokir internet Anda apabila koneski VPN terputus secara tiba-tiba."
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Langkah 1:** Undang teman Anda ke ${ BRAND_NAME } dengan tautan rujukan Anda."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ruang penyimpanan tambahan"
       ],
@@ -6501,6 +6558,9 @@
       ],
       "All messages stored with this label will be permanently deleted.": [
         "Seluruh pesan yang ditandai dengan label ini akan dihapus secara permanen."
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Seluruh pesan akan ditampilkan di Kotak masuk, serta tab kategori dan tag tidak akan lagi terlihat. "
       ],
       "All your calendars are disabled.": [
         "Seluruh kalender Anda sedang dinonaktifkan."
@@ -7129,6 +7189,12 @@
       "Included for free with your plan": [
         "Terliput secara gratis dengan paket Anda"
       ],
+      "Includes news recaps and other non-promotional content. ": [
+        "Meliputi rekap berita dan konten non-promosional lainnya. "
+      ],
+      "Includes updates from social networks and media-sharing sites.": [
+        "Meliputi pembaruan dari media sosial dan situs berbagi media."
+      ],
       "Inherited from parent folder": [
         "Diwariskan dari folder induk"
       ],
@@ -7230,6 +7296,9 @@
       ],
       "Low Priority": [
         "Prioritas Rendah"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Jadikan ${ MAIL_APP_NAME } aplikasi email bawaan Anda."
       ],
       "Manage your folders": [
         "Kelola folder Anda"
@@ -7400,7 +7469,7 @@
         "Satu atau lebih kunci terpercaya Anda telah ditandai sebagai \"bocor\" oleh pemiliknya. Kami menyarankan Anda untuk tidak lagi \"memercayai\" kunci tersebut."
       ],
       "One time import": [
-        "Satu kali impor"
+        "Impor sekali jadi"
       ],
       "Open shortcut cheat sheet": [
         "Buka lembar contekan pintasan"
@@ -8260,6 +8329,9 @@
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "Pada saat Anda sedang bepergian atau menggunakan WiFi publik, hubungkan diri Anda ke ${ VPN_APP_NAME } untuk mencegah siapa pun melacak aktivitas online atau mencuri data Anda. Gratis."
       ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "Dengan fitur kategori email baru ini, kotak masuk utama Anda hanya diisi oleh pesan penting. Seluruh pesan lainnya akan dikelompokkan ke dalam berbagai kategori."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Apakah Anda ingin menerima kode verifikasi baru atau menggunakan metode verifikasi alternatif?"
       ],
@@ -8283,6 +8355,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Anda akan membuka browser bawaan Anda dan mengunjungi:"
+      ],
+      "You are currently signed in as ${ username }.": [
+        "Anda sedang masuk sebagai ${ username }"
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Anda menggunakan ruang penyimpanan lebih dari yang terliput pada paket ${ downgradedPlanName }. Silakan hapus sebagian data untuk dapat menurunkan paket."
@@ -8816,6 +8891,12 @@
       "${ BRAND_NAME } username": [
         "Nama pengguna ${ BRAND_NAME }"
       ],
+      "${ count } unread conversation": [
+        "${ count } percakapan yang belum dibaca"
+      ],
+      "${ count } unread message": [
+        "${ count } pesan yang belum dibaca"
+      ],
       "${ n } month": [
         "${ n } bulan"
       ],
@@ -8839,6 +8920,9 @@
       ],
       "Add image URL": [
         "Tambah URL gambar"
+      ],
+      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
+        "Tambah atau hapus kategori. Pasang atau matikan notifikasi. Atur kapan saja pada menu ${ menuIcon }."
       ],
       "Add to group": [
         "Tambah ke grup"
@@ -9113,11 +9197,20 @@
       "From: ${ fromEmail }": [
         "Dari: ${ fromEmail }"
       ],
+      "Go to Forums": [
+        "Ke Forum"
+      ],
+      "Go to Newsletters": [
+        "Ke Buletin"
+      ],
       "Go to Promotions": [
         "Ke Penawaran"
       ],
       "Go to Transactions": [
         "Ke Transaksi"
+      ],
+      "Go to Updates": [
+        "Ke Pembaruan"
       ],
       "Help us improve the upcoming mail categorization": [
         "Bantu kami menyempurnakan fitur kategorisasi email yang akan datang"
@@ -9250,6 +9343,12 @@
       ],
       "No label found": [
         "Tidak ada label yang ditemukan"
+      ],
+      "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
+        "Jangan lagi sampai ada pesan penting yang terlewatkan! Pesan penting Anda kini akan muncul pada ${ primaryCopy }. Pesan lainnya akan diurutkan berdasarkan kategori, sehingga Anda akan dapat dengan mudah menemukan pesan ini tanpa memenuh-menuhi kotak masuk Anda."
+      ],
+      "No results found": [
+        "Tidak ada hasil yang ditemukan"
       ],
       "Non-promotional content and news": [
         "Konten dan berita non-promosional"
@@ -10559,6 +10658,9 @@
       "Share files with no size limit": [
         "Bagikan berkas tanpa batasan ukuran"
       ],
+      "Short domain (@pm.me)": [
+        "Domain pendek (@pm.me)"
+      ],
       "Sign in as user": [
         "Masuk sebagai pengguna tertentu"
       ],
@@ -10763,7 +10865,7 @@
         "Akun gratis yang dirancang untuk menyediakan privasi sebagai hal yang baku bagi semua."
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
-        "Privasi tanpa batas dan ruang penyimpanan yang lebih untuk hingga 2 orang pengguna."
+        "Privasi tanpa batas dan ruang penyimpanan yang lebih lowong untuk hingga 2 orang pengguna."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menghapus akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon apabila Anda membuat akun baru."
@@ -11656,6 +11758,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Jumlah tagihan setelah masa uji coba pada ${ formattedDate }"
+      ],
       "Billing Country": [
         "Negara Penagihan"
       ],
@@ -11737,6 +11842,9 @@
       "VAT number": [
         "Nomor PPN"
       ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Anda telah memiliki langganan untuk paket ini. Anda dapat mengubah langganan Anda pada ${ subscriptionPlatform }."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Mata uang Anda telah diubah menjadi euro (€) karena transfer bank SEPA hanya mendukung pembayaran dalam euro."
       ],
@@ -11762,6 +11870,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Kartu Anda ditolak. Silakan coba kartu lainnya atau kontak bank Anda untuk mengautorisir pembayaran."
+      ]
+    },
+    "Payments.info": {
+      "Credits will be added to your balance": [
+        "Saldo akan ditambahkan ke tabungan Anda"
       ]
     },
     "Payments.plan_name": {
@@ -12164,6 +12277,12 @@
       ],
       "Friend subscribed": [
         "Teman yang berlangganan"
+      ],
+      "Invited friends": [
+        "Teman yang diundang"
+      ],
+      "More sharing options": [
+        "Opsi pembagian lainnya"
       ]
     },
     "Remaining days before the message expire": {
@@ -14061,6 +14180,9 @@
       "Block sender": [
         "Blokir pengirim"
       ],
+      "Built for privacy": [
+        "Dirancang untuk privasi"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Batalkan langganan ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -14153,6 +14275,9 @@
       ],
       "Customize categories": [
         "Sesuaikan kategori"
+      ],
+      "Customize categories to fit your needs": [
+        "Atur kategori sesuai kebutuhan Anda"
       ],
       "Customize your mail import": [
         "Sesuaikan impor email Anda"
