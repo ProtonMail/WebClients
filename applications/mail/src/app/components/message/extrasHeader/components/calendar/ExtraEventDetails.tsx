@@ -2,7 +2,7 @@ import { useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { VideoConferencingWidgetConfig, getVideoConferencingData } from '@proton/calendar';
+import { useVideoConferencingWidget } from '@proton/calendar';
 import { IconRow } from '@proton/components';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
@@ -13,7 +13,6 @@ import urlify from '@proton/shared/lib/calendar/urlify';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import type { RequireSome } from '@proton/shared/lib/interfaces/utils';
-import useFlag from '@proton/unleash/useFlag';
 
 import type { InvitationModel } from '../../../../../helpers/calendar/invite';
 import { getParticipantsList } from '../../../../../helpers/calendar/invite';
@@ -56,12 +55,10 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
         : undefined;
     const calendar = calendarData?.calendar;
     const participantsList = getParticipantsList(participants, organizer);
-    const videoConferencingData = getVideoConferencingData(vevent);
-    const videoConferenceWidget = useFlag('VideoConferenceWidget');
-    const hasVideoConferencing = videoConferenceWidget && !!videoConferencingData.meetingUrl;
+    const videoConferencingWidget = useVideoConferencingWidget({ model: vevent, widgetLocation: 'event-details' });
 
     const hasDetails =
-        !!frequencyString || !!calendar || !!trimmedLocation || !!participantsList.length || hasVideoConferencing;
+        !!frequencyString || !!calendar || !!trimmedLocation || !!participantsList.length || videoConferencingWidget;
 
     if ((isImport && hasMultipleVevents) || !hasDetails) {
         return null;
@@ -87,11 +84,7 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
                         <span dangerouslySetInnerHTML={{ __html: sanitizedAndUrlifiedLocation }} />
                     </IconRow>
                 )}
-                {hasVideoConferencing && (
-                    <div className="mb-4">
-                        <VideoConferencingWidgetConfig model={vevent} widgetLocation="event-details" />
-                    </div>
-                )}
+                {videoConferencingWidget && <div className="mb-4">{videoConferencingWidget}</div>}
                 {!!participantsList.length && (
                     <IconRow title={c('Label').t`Participants`} icon="users" labelClassName="inline-flex pt-0.5">
                         <ExtraEventParticipants list={participantsList} />
