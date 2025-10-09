@@ -3,7 +3,7 @@ import type { PropsWithChildren } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { IcPlus } from '@proton/icons';
 
 interface MoveToPlaceholdersProps {
     emptyListCopy: string;
@@ -94,7 +94,7 @@ export const ButtonCreateNewItem = ({ copy, onClick, testid }: CreateNewButtonPr
             data-testid={testid}
             data-prevent-arrow-navigation
         >
-            <Icon name="plus" className="mr-2 mt-0.5" />
+            <IcPlus className="mr-2 mt-0.5" />
             <span className="flex-1">{copy}</span>
         </Button>
     );

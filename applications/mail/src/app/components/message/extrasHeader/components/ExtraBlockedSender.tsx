@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Banner, Button } from '@proton/atoms';
-import { Icon, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/components';
+import { IcExclamationTriangleFilled } from '@proton/icons';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { getBlockedIncomingDefaultByAddress } from '@proton/shared/lib/helpers/incomingDefaults';
 import { getSender } from '@proton/shared/lib/mail/messages';
@@ -47,7 +48,7 @@ const ExtraBlockedSender = ({ message }: Props) => {
     return incomingDefaultsStatus === 'loaded' && blockedIncomingDefault ? (
         <Banner
             variant="norm-outline"
-            icon={<Icon name="exclamation-triangle-filled" className="color-danger" />}
+            icon={<IcExclamationTriangleFilled className="color-danger" />}
             action={
                 <Button data-testid="block-sender:unblock" onClick={handleUnblock}>
                     {c('Action').t`Unblock`}

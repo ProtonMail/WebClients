@@ -3,7 +3,8 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import { Vr } from '@proton/atoms';
-import { Icon, ToolbarButton, useElementBreakpoints } from '@proton/components';
+import { ToolbarButton, useElementBreakpoints } from '@proton/components';
+import { IcArrowLeft } from '@proton/icons';
 import clsx from '@proton/utils/clsx';
 
 import { getToolbarResponsiveSizes } from '../../helpers/toolbar/getToolbarResponsiveSizes';
@@ -72,7 +73,7 @@ const ToolbarHeaderMessageWide = ({
             >
                 <div className="flex items-center toolbar-inner flex-nowrap gap-2">
                     <ToolbarButton
-                        icon={<Icon name="arrow-left" alt={c('Action').t`Back`} />}
+                        icon={<IcArrowLeft alt={c('Action').t`Back`} />}
                         onClick={onBack}
                         data-testid="toolbar:back-button"
                     />

@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { format, isToday, isTomorrow } from 'date-fns';
 import { c } from 'ttag';
 
-import { Icon } from '@proton/components';
+import { IcBell } from '@proton/icons';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
@@ -60,7 +60,7 @@ const RemindedConversation = ({ className, snoozeDate }: { className?: string; s
 
     return (
         <span className={clsx(className, 'item-date-snoozed flex items-center')} data-testid="item-date-reminded">
-            <Icon name="bell" className="mr-1" />
+            <IcBell className="mr-1" />
             <span>{snoozeTime}</span>
         </span>
     );

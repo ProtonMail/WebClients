@@ -4,7 +4,7 @@ import { isToday, isTomorrow } from 'date-fns';
 import { c } from 'ttag';
 
 import { Banner, Button } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { IcClock } from '@proton/icons';
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { isSnoozed } from '@proton/shared/lib/mail/messages';
 
@@ -83,7 +83,7 @@ const ExtraSnoozedMessage = ({ message }: Props) => {
         <Banner
             data-testid="message:snooze-banner"
             variant="info-outline"
-            icon={<Icon name="clock" />}
+            icon={<IcClock />}
             action={
                 canUnsnooze && !isUnsnoozeShortly ? (
                     <Button onClick={handleUnsnoozeMessage} data-testid="snooze-banner-edit-button">{c('Action')

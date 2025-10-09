@@ -8,15 +8,8 @@ import { useAddresses, useGetAddresses } from '@proton/account/addresses/hooks';
 import { Banner, ButtonLike, Href } from '@proton/atoms';
 import { useVideoConferencingWidget } from '@proton/calendar';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
-import {
-    AppLink,
-    CalendarEventDateHeader,
-    Icon,
-    IconRow,
-    useApi,
-    useGetCalendarEventRaw,
-    useNotifications,
-} from '@proton/components';
+import { AppLink, CalendarEventDateHeader, IconRow, useApi, useGetCalendarEventRaw, useNotifications } from '@proton/components';
+import { IcArrowWithinSquare, IcKey } from '@proton/icons';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
@@ -256,12 +249,12 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                             <Banner
                                 className="mb-3"
                                 variant="info-outline"
-                                icon={<Icon name="key" />}
+                                icon={<IcKey />}
                                 action={
                                     <ButtonLike as={AppLink} toApp={APPS.PROTONCALENDAR} to="/">
                                         <div className="flex items-center">
                                             <span className="mr-3">{c('Action').t`Open ${CALENDAR_APP_NAME}`}</span>
-                                            <Icon name="arrow-within-square" />
+                                            <IcArrowWithinSquare />
                                         </div>
                                     </ButtonLike>
                                 }

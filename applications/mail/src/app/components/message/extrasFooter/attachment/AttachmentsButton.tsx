@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import type { ButtonLikeProps } from '@proton/atoms';
 import { ButtonLike } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { IcPaperClip } from '@proton/icons';
 import clsx from '@proton/utils/clsx';
 
 interface Props extends ButtonLikeProps<'label'> {
@@ -51,7 +51,7 @@ const AttachmentsButton = (
                 {...rest}
                 data-testid="composer:attachment-button"
             >
-                <Icon name="paper-clip" alt={c('Title').t`Attachments`} />
+                <IcPaperClip alt={c('Title').t`Attachments`} />
                 <input
                     ref={inputRef}
                     type="file"

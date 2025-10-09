@@ -3,7 +3,7 @@ import { memo, useMemo } from 'react';
 import { c } from 'ttag';
 
 import { Button, Tooltip } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { IcChevronLeft, IcChevronRight } from '@proton/icons';
 import { TelemetryMailPagingControlsEvents } from '@proton/shared/lib/api/telemetry';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
@@ -99,7 +99,7 @@ const MailboxListPagination = ({
                         onClick={handleClickPrevious}
                         data-testid="pagination-row:go-to-previous-page"
                     >
-                        <Icon name="chevron-left" className="block" alt={c('Action').t`Go to previous page`} />
+                        <IcChevronLeft className="block" alt={c('Action').t`Go to previous page`} />
                     </Button>
                 </Tooltip>
                 {pageNumbersToDisplay.reduce((acc: React.JSX.Element[], pageNumber: number, index: number) => {
@@ -136,7 +136,7 @@ const MailboxListPagination = ({
                         onClick={handleClickNext}
                         data-testid="pagination-row:go-to-next-page"
                     >
-                        <Icon name="chevron-right" className="block" alt={c('Action').t`Go to next page`} />
+                        <IcChevronRight className="block" alt={c('Action').t`Go to next page`} />
                     </Button>
                 </Tooltip>
             </div>

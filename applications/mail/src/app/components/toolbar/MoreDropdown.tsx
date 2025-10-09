@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { DropdownMenu, DropdownMenuButton, DropdownSizeUnit, Icon, useModalState } from '@proton/components';
+import { DropdownMenu, DropdownMenuButton, DropdownSizeUnit, useModalState } from '@proton/components';
+import { IcArchiveBox, IcBell, IcCrossCircle, IcFire, IcFireSlash, IcFolderArrowIn, IcInbox, IcTag, IcThreeDotsHorizontal, IcTrash } from '@proton/icons';
 import { labelIncludes } from '@proton/mail/helpers/location';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
@@ -135,7 +136,7 @@ const MoreDropdown = ({
             onClick={() => onMove(MAILBOX_LABEL_IDS.INBOX, SOURCE_ACTION.TOOLBAR)}
             data-testid="toolbar:more-dropdown--movetoinbox"
         >
-            <Icon name="inbox" className="mr-2" />
+            <IcInbox className="mr-2" />
             {c('Action').t`Move to inbox`}
         </DropdownMenuButton>
     );
@@ -147,7 +148,7 @@ const MoreDropdown = ({
             onClick={() => onMove(MAILBOX_LABEL_IDS.INBOX, SOURCE_ACTION.TOOLBAR)}
             data-testid="toolbar:more-dropdown--movetonospam"
         >
-            <Icon name="fire-slash" className="mr-2" />
+            <IcFireSlash className="mr-2" />
             {c('Action').t`Move to inbox (not spam)`}
         </DropdownMenuButton>
     );
@@ -159,7 +160,7 @@ const MoreDropdown = ({
             onClick={() => onMove(MAILBOX_LABEL_IDS.ARCHIVE, SOURCE_ACTION.TOOLBAR)}
             data-testid="toolbar:more-dropdown--movetonoarchive"
         >
-            <Icon name="archive-box" className="mr-2" />
+            <IcArchiveBox className="mr-2" />
             {c('Action').t`Move to archive`}
         </DropdownMenuButton>
     );
@@ -171,7 +172,7 @@ const MoreDropdown = ({
             onClick={() => onMove(MAILBOX_LABEL_IDS.TRASH, SOURCE_ACTION.TOOLBAR)}
             data-testid="toolbar:more-dropdown--movetotrash"
         >
-            <Icon name="trash" className="mr-2" />
+            <IcTrash className="mr-2" />
             {c('Action').t`Move to trash`}
         </DropdownMenuButton>
     );
@@ -183,7 +184,7 @@ const MoreDropdown = ({
             onClick={() => onMove(MAILBOX_LABEL_IDS.SPAM, SOURCE_ACTION.TOOLBAR)}
             data-testid="toolbar:more-dropdown--movetospam"
         >
-            <Icon name="fire" className="mr-2" />
+            <IcFire className="mr-2" />
             {c('Action').t`Move to spam`}
         </DropdownMenuButton>
     );
@@ -195,7 +196,7 @@ const MoreDropdown = ({
             onClick={() => onDelete(SOURCE_ACTION.TOOLBAR)}
             data-testid="toolbar:more-dropdown--delete"
         >
-            <Icon name="cross-circle" className="mr-2" />
+            <IcCrossCircle className="mr-2" />
             {c('Action').t`Delete`}
         </DropdownMenuButton>
     );
@@ -263,7 +264,7 @@ const MoreDropdown = ({
         <>
             <ToolbarDropdown
                 title={c('Action').t`More`}
-                content={<Icon className="toolbar-icon" name="three-dots-horizontal" alt={c('Action').t`More`} />}
+                content={<IcThreeDotsHorizontal className="toolbar-icon"  alt={c('Action').t`More`} />}
                 data-testid="toolbar:more-dropdown"
                 hasCaret={false}
                 additionalDropdowns={additionalDropdowns}
@@ -282,7 +283,7 @@ const MoreDropdown = ({
                                         onClick={() => onOpenAdditional(0)}
                                         data-testid="toolbar:more-dropdown--moveto"
                                     >
-                                        <Icon name="folder-arrow-in" className="mr-2 shrink-0 mt-0.5" />
+                                        <IcFolderArrowIn className="mr-2 shrink-0 mt-0.5" />
                                         <span className="flex-1">{c('Title').t`Move to`}</span>
                                     </DropdownMenuButton>
                                     <DropdownMenuButton
@@ -290,7 +291,7 @@ const MoreDropdown = ({
                                         onClick={() => onOpenAdditional(1)}
                                         data-testid="toolbar:more-dropdown--labelas"
                                     >
-                                        <Icon name="tag" className="mr-2 shrink-0 mt-0.5" />
+                                        <IcTag className="mr-2 shrink-0 mt-0.5" />
                                         <span className="flex-1">{c('Title').t`Label as`}</span>
                                     </DropdownMenuButton>
                                     {(canSnooze || canUnsnooze) && (
@@ -299,7 +300,7 @@ const MoreDropdown = ({
                                             onClick={() => onOpenAdditional(2)}
                                             data-testid="toolbar:more-dropdown--snooze"
                                         >
-                                            <Icon name="bell" className="mr-2 shrink-0 mt-0.5" />
+                                            <IcBell className="mr-2 shrink-0 mt-0.5" />
                                             <span className="flex-1">{c('Title').t`Snooze message`}</span>
                                         </DropdownMenuButton>
                                     )}
@@ -311,7 +312,7 @@ const MoreDropdown = ({
                                     onClick={handleMoveAllToTrash}
                                     data-testid="toolbar:moveAllToTrash"
                                 >
-                                    <Icon name="trash" className="mr-2 shrink-0 mt-0.5" />
+                                    <IcTrash className="mr-2 shrink-0 mt-0.5" />
                                     <span className="flex-1">
                                         {
                                             // translator: This action will move all messages from the location to trash
@@ -328,7 +329,7 @@ const MoreDropdown = ({
                                     onClick={handleMoveAllToArchive}
                                     data-testid="toolbar:moveAllToArchive"
                                 >
-                                    <Icon name="archive-box" className="mr-2 shrink-0 mt-0.5" />
+                                    <IcArchiveBox className="mr-2 shrink-0 mt-0.5" />
                                     <span className="flex-1">{c('Action').t`Move all to archive`}</span>
                                 </DropdownMenuButton>
                             ) : null}
@@ -338,7 +339,7 @@ const MoreDropdown = ({
                                     onClick={handleEmptyLabel}
                                     data-testid="toolbar:more-empty"
                                 >
-                                    <Icon name="cross-circle" className="mr-2 shrink-0 mt-0.5" />
+                                    <IcCrossCircle className="mr-2 shrink-0 mt-0.5" />
                                     <span className="flex-1">{
                                         // translator: This action will delete permanently all messages from the location
                                         // Beware when translating this one because we might also have a button on top,

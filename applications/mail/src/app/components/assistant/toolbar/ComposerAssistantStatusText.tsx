@@ -4,7 +4,8 @@ import { useEffect, useMemo, useRef } from 'react';
 import { c } from 'ttag';
 
 import { Button, Href, InlineLinkButton, Tooltip } from '@proton/atoms';
-import { ErrorZone, Icon, useModalStateObject } from '@proton/components';
+import { ErrorZone, useModalStateObject } from '@proton/components';
+import { IcPauseFilled } from '@proton/icons';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import { useAssistant } from '@proton/llm/lib';
 import { ERROR_TYPE } from '@proton/shared/lib/assistant';
@@ -148,7 +149,7 @@ const ComposerAssistantStatusText = ({ assistantID, prompt, composerAssistantIni
                                             className="ml-1 inline-flex items-center"
                                             onClick={handlePauseDownload}
                                         >
-                                            <Icon name="pause-filled" alt={c('Action').t`Stop downloading assistant`} />
+                                            <IcPauseFilled alt={c('Action').t`Stop downloading assistant`} />
                                         </Button>
                                     </Tooltip>
                                 </>

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { IcChevronDown } from '@proton/icons';
 import type { ContactEditProps } from '@proton/components';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import clsx from '@proton/utils/clsx';
@@ -73,11 +73,8 @@ const MailRecipients = ({
                         size="small"
                         aria-controls="message-recipients" // hack to get proper styles AND proper vocalization
                     >
-                        <Icon
-                            name="chevron-down"
-                            className={clsx(['navigation-icon--expand', expanded && 'rotateX-180'])}
-                            alt={titleAction}
-                        />
+                        <IcChevronDown className={clsx(['navigation-icon--expand', expanded && 'rotateX-180'])}
+                            alt={titleAction} />
                     </Button>
                 </div>
             )}
