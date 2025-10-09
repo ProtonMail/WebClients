@@ -1,12 +1,6 @@
 import Store from "electron-store";
 
 import { RELEASE_CATEGORIES } from "@proton/shared/lib/constants";
-import {
-    DailyStatsStored,
-    DailyStatsReport,
-    DailyStatsValues,
-    DailyStatsDimensions,
-} from "@proton/shared/lib/desktop/DailyStats";
 
 import { getSettings } from "../store/settingsStore";
 import { mainLogger } from "../utils/log";
@@ -14,16 +8,33 @@ import { URLConfig } from "../store/urlStore";
 
 type ViewID = keyof URLConfig;
 
-type TelemetryStored = {
-    dailyStats: DailyStatsStored;
+// Meet-specific telemetry types
+type MeetDailyStatsValues = {
+    userLogin: number;
+    userLogout: number;
 };
 
-type DailyStatsUpdate = Partial<DailyStatsStored>;
+type MeetDailyStatsDimensions = {
+    releaseCategory: (typeof RELEASE_CATEGORIES)[keyof typeof RELEASE_CATEGORIES];
+};
 
-const NULL_DAILY_COUNTERS: DailyStatsValues = {
-    mailtoClicks: 0,
-    switchViewMailToCalendar: 0,
-    switchViewCalendarToMail: 0,
+type MeetDailyStatsStored = MeetDailyStatsDimensions &
+    MeetDailyStatsValues & {
+        lastReport: number;
+    };
+
+type MeetDailyStatsReport = {
+    dimensions: MeetDailyStatsDimensions;
+    values: MeetDailyStatsValues;
+};
+
+type TelemetryStored = {
+    dailyStats: MeetDailyStatsStored;
+};
+
+type DailyStatsUpdate = Partial<MeetDailyStatsStored>;
+
+const NULL_DAILY_COUNTERS: MeetDailyStatsValues = {
     userLogin: 0,
     userLogout: 0,
 };
@@ -31,8 +42,6 @@ const NULL_DAILY_COUNTERS: DailyStatsValues = {
 const DEFAULT_TELEMETRY: TelemetryStored = {
     dailyStats: {
         releaseCategory: RELEASE_CATEGORIES.STABLE,
-        isDefaultMailto: "unknown",
-        isDefaultMailtoChanged: "no_change",
         ...NULL_DAILY_COUNTERS,
         lastReport: 0,
     },
@@ -51,14 +60,14 @@ class TelemetryService {
         });
     }
 
-    getDailyStats(): DailyStatsStored {
+    getDailyStats(): MeetDailyStatsStored {
         return this.loadTelemetry().dailyStats;
     }
 
-    getDailyStatsReport(): DailyStatsReport {
+    getDailyStatsReport(): MeetDailyStatsReport {
         const stats = this.getDailyStats();
-        const dimensions: DailyStatsDimensions = stats;
-        const values: DailyStatsValues = stats;
+        const dimensions: MeetDailyStatsDimensions = stats;
+        const values: MeetDailyStatsValues = stats;
 
         return {
             dimensions,
@@ -111,7 +120,7 @@ class TelemetryService {
         }
     }
 
-    private updateDailyStats(change: (stats: DailyStatsStored) => DailyStatsUpdate) {
+    private updateDailyStats(change: (stats: MeetDailyStatsStored) => DailyStatsUpdate) {
         this.updateStats("dailyStats", change);
     }
 
