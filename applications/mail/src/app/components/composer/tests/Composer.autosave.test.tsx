@@ -174,7 +174,7 @@ describe('Composer autosave', () => {
         await waitForSpyCall({ spy: updateSpy, disableFakeTimers: true });
     });
 
-    it.only('should wait previous save before sending', async () => {
+    it('should wait previous save before sending', async () => {
         const { createSpy, createResolve, sendSpy, container, ...renderResult } = await setup(false);
 
         triggerRoosterInput(container);
