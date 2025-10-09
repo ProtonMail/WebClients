@@ -454,17 +454,6 @@ export function updateViewURL(webContents: WebContents, url: string) {
     }
 }
 
-export async function reloadHiddenViews() {
-    const loadPromises = [];
-    for (const [viewID, view] of Object.entries(viewMap)) {
-        if (viewID !== currentViewID && view) {
-            viewLogger(viewID as ViewID).info("Reloading hidden view");
-            loadPromises.push(loadURL(viewID as ViewID, getViewURL(viewID as ViewID), { force: true }));
-        }
-    }
-    await Promise.all(loadPromises);
-}
-
 export async function resetHiddenViews({ toHomepage } = { toHomepage: false }) {
     const appURL = getAppURL();
     const loadPromises = [];
@@ -571,8 +560,4 @@ export const bringWindowToFront = () => {
     }
 
     mainWindow.focus();
-};
-
-export const getCurrentLocalID = (): string | null => {
-    return getLocalID(viewMap["meet"]!.webContents.getURL());
 };
