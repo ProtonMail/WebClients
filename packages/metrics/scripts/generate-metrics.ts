@@ -1,5 +1,5 @@
-import fs from 'fs/promises';
-import path from 'path';
+import fs from 'node:fs/promises';
+import path from 'node:path';
 import * as prettier from 'prettier';
 import readline from 'readline';
 import ts from 'typescript';
