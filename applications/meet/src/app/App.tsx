@@ -2,9 +2,11 @@ import { useEffect } from 'react';
 import { Route, useHistory, useLocation } from 'react-router-dom';
 
 import ProtonApp from '@proton/components/containers/app/ProtonApp';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { isWasmSupported } from '@proton/shared/lib/helpers/isWasmSupported';
 import { isWebRtcSupported } from '@proton/shared/lib/helpers/isWebRtcSupported';
 import useFlag from '@proton/unleash/useFlag';
+import clsx from '@proton/utils/clsx';
 
 import { ComingSoon } from './components/ComingSoon/ComingSoon';
 import { WasmUnsupportedError } from './components/WasmUnsupportedError';
@@ -84,26 +86,27 @@ export const App = () => {
     return (
         <ProtonApp config={config}>
             <style id="meet-dark-theme">{meetTheme.toString()}</style>
-
-            {isGuest ? (
-                <GuestContainer>
-                    <RedirectWrapper>
-                        <ComingSoonWrapper>
-                            <Route path="/join" render={() => <WrappedProtonMeetContainer guestMode={true} />} />
-                        </ComingSoonWrapper>
-                    </RedirectWrapper>
-                </GuestContainer>
-            ) : (
-                <ProviderContainer>
-                    <RedirectWrapper>
-                        <ComingSoonWrapper>
-                            <Route path="/join" render={() => <WrappedProtonMeetContainer />} />
-                            <Route path="/admin" component={AdminContainer} />
-                            <Route path="/dashboard" component={DashboardContainer} />
-                        </ComingSoonWrapper>
-                    </RedirectWrapper>
-                </ProviderContainer>
-            )}
+            <div className={clsx('w-full h-full', isElectronApp ? 'pt-4' : '')}>
+                {isGuest ? (
+                    <GuestContainer>
+                        <RedirectWrapper>
+                            <ComingSoonWrapper>
+                                <Route path="/join" render={() => <WrappedProtonMeetContainer guestMode={true} />} />
+                            </ComingSoonWrapper>
+                        </RedirectWrapper>
+                    </GuestContainer>
+                ) : (
+                    <ProviderContainer>
+                        <RedirectWrapper>
+                            <ComingSoonWrapper>
+                                <Route path="/join" render={() => <WrappedProtonMeetContainer />} />
+                                <Route path="/admin" component={AdminContainer} />
+                                <Route path="/dashboard" component={DashboardContainer} />
+                            </ComingSoonWrapper>
+                        </RedirectWrapper>
+                    </ProviderContainer>
+                )}
+            </div>
         </ProtonApp>
     );
 };

@@ -45,6 +45,17 @@ import { measureRequestTime } from "./utils/log/measureRequestTime";
     // Also, this can happen during development when running the server locally.
     app.commandLine.appendSwitch("ignore-certificate-errors");
 
+    // Enable Picture-in-Picture and Auto PiP features in Chromium
+    app.commandLine.appendSwitch(
+        "enable-features",
+        [
+            // Allow automatic PiP transitions initiated by sites
+            "AutoPictureInPicture",
+            // Ensure Document Picture-in-Picture API is available
+            "DocumentPictureInPictureAPI",
+        ].join(","),
+    );
+
     // Store migrations
     performStoreMigrations();
 
