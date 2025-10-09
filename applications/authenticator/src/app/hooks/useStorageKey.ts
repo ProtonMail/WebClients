@@ -4,7 +4,7 @@ import { StorageKey } from 'proton-authenticator/lib/db/db';
 import type { StorageKeySource } from 'proton-authenticator/lib/storage-key/types';
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/components';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import type { Maybe } from '@proton/pass/types';
 
 export const useStorageKeySource = () => {

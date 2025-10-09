@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
 
-import type { CreateNotificationOptions } from '@proton/components';
+import type { CreateNotificationOptions } from '@proton/components/containers/notifications/interfaces';
 import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 
 import app from './app';

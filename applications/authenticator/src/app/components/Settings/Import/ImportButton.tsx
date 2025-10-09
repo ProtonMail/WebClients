@@ -2,8 +2,9 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Dropdown, usePopperAnchor } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 
 import { ImportDropdown } from './ImportDropdown';
 

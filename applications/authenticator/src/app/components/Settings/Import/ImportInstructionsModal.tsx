@@ -5,8 +5,11 @@ import { CONTACT_URL } from 'proton-authenticator/lib/constants';
 import { ImportProvider, UnsupportedImportProviders } from 'proton-authenticator/lib/importers/types';
 import { c } from 'ttag';
 
-import { Button, Href } from '@proton/atoms';
-import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 
 type Props = {
     provider: ImportProvider;
