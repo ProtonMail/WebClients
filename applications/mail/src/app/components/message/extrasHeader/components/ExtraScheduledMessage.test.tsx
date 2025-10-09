@@ -101,7 +101,7 @@ describe('Scheduled messages banner', () => {
         expect(screen.queryByTestId(`Edit`)).toBeNull();
     });
 
-    it.only('should be able to edit the message', async () => {
+    it('should be able to edit the message', async () => {
         const sendingDate = addDays(new Date(), 1);
         const message = getMessage(sendingDate);
 
