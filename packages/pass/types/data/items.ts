@@ -119,7 +119,7 @@ export type ItemFilters = {
     type: ItemTypeFilter;
 };
 
-export type IndexedByShareIdAndItemId<T> = { [shareId: string]: { [itemId: string]: T } };
+export type IndexedByShareIdAndItemId<T> = Record<string, Record<string, T>>;
 export type BatchItemRevisionIDs = { shareId: string; batch: ItemRevisionID[] };
 export type BatchItemRevisions = { shareId: string; batch: ItemRevision[] };
 
