@@ -9,6 +9,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcCalendarToday, IcPhone, IcUser } from '@proton/icons';
 import { getMeetingLink } from '@proton/meet';
 import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { MeetingType } from '@proton/shared/lib/interfaces/Meet';
 import useFlag from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
@@ -100,7 +101,7 @@ export const DashboardContainer = () => {
                     loadingRotatePersonalMeeting={loadingRotatePersonalMeeting}
                 />
             )}
-            <PageHeader isScheduleInAdvanceEnabled={false} guestMode={false} />
+            <PageHeader isScheduleInAdvanceEnabled={false} guestMode={false} showAppSwitcher={!isElectronApp} />
             <div className="flex gap-4 py-4 flex-nowrap w-full shrink-0">
                 <div className="flex flex-column md:flex-row flex-nowrap gap-1 md:gap-3 xl:gap-4 w-full">
                     <CardButton
