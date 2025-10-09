@@ -26,10 +26,11 @@ export const isElectronOnInboxApps = (app: APP_NAMES) => {
  * `version` properties of the app's package.json in the user-agent. */
 export const isElectronMail = isElectronApp && /ProtonMail/i.test(ua.ua);
 export const isElectronPass = isElectronApp && /ProtonPass/i.test(ua.ua);
+export const isElectronMeet = isElectronApp && /ProtonMeet/i.test(ua.ua);
 
 /*
  * The version of the application is injected in the user-agent by Electron Forge.
  * This method works if the version uses the following format: `x.y.z`.
  */
-export const electronAppVersion = ua.ua.match(/((ProtonMail|ProtonPass)\/)(?<version>([0-9][.]).{3})/i)?.groups
-    ?.version;
+export const electronAppVersion = ua.ua.match(/((ProtonMail|ProtonPass|ProtonMeet)\/)(?<version>([0-9][.]).{3})/i)
+    ?.groups?.version;
