@@ -21,6 +21,7 @@ export interface ProtonPackOptions {
     analyze: boolean;
     optimizeAssets: boolean;
     handleSupportAndErrors: boolean;
+    benchmarkBuild: boolean;
 }
 
 interface Locales {
@@ -69,6 +70,7 @@ export interface WebpackOptions {
     appData: AppData;
     buildData: BuildData;
     defineWebpackConfig: ProtonConfig;
+    benchmarkBuild: boolean;
 }
 
 export interface AppConfig {
