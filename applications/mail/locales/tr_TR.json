@@ -483,6 +483,9 @@
       "Download logs": [
         "Günlüğü indir"
       ],
+      "Download now": [
+        "Şimdi indir"
+      ],
       "Download the desktop app": [
         "Bilgisayar uygulamasını indirin"
       ],
@@ -734,6 +737,9 @@
       ],
       "Import from Outlook": [
         "Outlook üzerinden içe aktar"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Önemli bir güncelleme yayınlanmış. Uygulamayı kullanmayı sürdürmek için son sürüme güncelleyin. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Sabah"
@@ -1558,6 +1564,9 @@
       "Upgrade for 200GB": [
         "200GB boyutuna artırın"
       ],
+      "Upgrade Now": [
+        "Şimdi yükselt"
+      ],
       "Upgrade now": [
         "Şimdi yükselt"
       ],
@@ -1654,6 +1663,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "En fazla ${ maxAttachments } kişinin vCard dosyasını gönderebilirsiniz",
         "En fazla ${ maxAttachments } kişinin vCard dosyasını gönderebilirsiniz"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Bilgisayar uygulamasını ücretsiz deneme süreniz 2 gün sonra sona erecek. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Bilgisayar uygulamasını ücretsiz deneme süreniz 5 gün sonra sona erecek. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Bilgisayar uygulamasını ücretsiz deneme süreniz ${ formattedEndDate } tarihinde sona erecek. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "E-posta yazma yardımcınız"

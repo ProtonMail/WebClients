@@ -483,6 +483,9 @@
       "Download logs": [
         "ჟურნალის გადმოწერა"
       ],
+      "Download now": [
+        "ახლა გადმოწერა"
+      ],
       "Download the desktop app": [
         "გადმოწერეთ კომპიუტერის აპები"
       ],
@@ -734,6 +737,9 @@
       ],
       "Import from Outlook": [
         "Outlook-დან შემოტანა"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "ხელმისაწვდომია მნიშვნელოვანი განახლება. ამ აპის გამოყენების გასაგრძელებლად განახლდით უკანასკნელ ვერსიამდე. ${ downloadUpdate }"
       ],
       "In the morning": [
         "დილით"
@@ -1555,6 +1561,9 @@
       "Upgrade for 200GB": [
         "აწევა 200გბ-მდე"
       ],
+      "Upgrade Now": [
+        "ახლა გაუმჯობესება"
+      ],
       "Upgrade now": [
         "ტარიფის განახლება"
       ],
@@ -1651,6 +1660,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "${ maxAttachments }-ზე მეტი კონტაქტის vCard-ის გაგზავნა შეუძლებელია",
         "${ maxAttachments }-ზე მეტი კონტაქტის vCard-ის გაგზავნა შეუძლებელია"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "თქვენი კომპიუტერის აპის უფასო სატესტო ვერსია 2 დღეში დასრულდება. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "თქვენი კომპიუტერის აპის უფასო სატესტო ვერსია 5 დღეში დასრულდება. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "თქვენი კომპიუტერის აპის უფასო სატესტო ვერსიის დასრულების დროა ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "თქვენი ელფოსტის წერის დამხმარე"
@@ -7370,6 +7388,9 @@
       "Low Priority": [
         "დაბალი პრიორიტეტი"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "დააყენეთ ${ MAIL_APP_NAME } თქვენს ნაგულისხმევ ელფოსტის აპლიკაციად."
+      ],
       "Manage your folders": [
         "თქვენი საქაღალდეების მართვა"
       ],
@@ -10724,6 +10745,9 @@
       ],
       "Share files with no size limit": [
         "გააზიარეთ ფაილები ზომის შეზღუდვის გარეშე"
+      ],
+      "Short domain (@pm.me)": [
+        "მოკლე დომენი (@pm.me)"
       ],
       "Sign in as user": [
         "მომხმარებლით შესვლა"

@@ -1320,6 +1320,11 @@
         "Nem támogatott esemény"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Ha lemondja, az ingyenes próbaidőszaka nem alakul át fizetős előfizetéssé, de a próbaidőszak végéig még használhatja a csomagban elérhető lehetőségeket. Ennek befejeződésekor a ${ BRAND_NAME } Free plan csomagra kerül át."
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Előfizetés lemondása"
@@ -5404,6 +5409,9 @@
       ],
       "Allocated": [
         "Lefoglalva"
+      ],
+      "Allow logging of location and connection details": [
+        "A hely és a kapcsolat részleteinek naplózásának engedélyezése"
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Lehetővé teszi a felhasználók számára, hogy a ${ VPN_APP_NAME } alkalmazás **országok** bármely részéből biztonságos megosztott szerverekhez csatlakozzanak."
@@ -10764,6 +10772,9 @@
       "Confirm": [
         "Jóváhagyás"
       ],
+      "Create retention rule": [
+        "Megőrzési szabály létrehozása"
+      ],
       "Delete": [
         "Törlés"
       ],
@@ -13699,6 +13710,9 @@
       ]
     },
     "Tooltip": {
+      "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
+        "Egy változás a Gmail oldalán megakadályozza a ${ BRAND_NAME } kapcsolódását. Adjon engedélyt az e-mail funkcionalitás visszaállításához."
+      ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Az adminisztrátorok kezelhetik a felhasználói fiókokat, és adminisztrátori jogosultságokat adhatnak más felhasználóknak. Csak az elsődleges adminisztrátor szerkesztheti a szervezet előfizetését."
       ],
@@ -14102,6 +14116,9 @@
     "Users table: badge": {
       "Administrators can't access the data of private users": [
         "A rendszergazdák nem férhetnek hozzá a privát felhasználók adataihoz"
+      ],
+      "Authenticator app": [
+        "Hitelesítő alkalmazás"
       ],
       "Inactive": [
         "Inaktív"

@@ -1390,6 +1390,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Setelah masa uji coba ini berakhir pada ${ formattedDate }, paket Anda akan menjadi langganan berbayar yang diperbarui secara otomatis secara bulanan. Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ formattedDate }."
+      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Dengan mengeklik \"Coba\", Anda menyatakan diri setuju dengan ${ termsAndConditions } kami."
       ],
@@ -1413,6 +1416,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Anda dapat memiliki hingga ${ TRIAL_MAX_SCRIBE_SEATS } kuota Scribe selama masa uji coba."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Anda dapat memiliki hingga ${ TRIAL_MAX_USERS } pengguna selama masa uji coba."
       ]
     },
     "b2b_trials_2025_Label": {
@@ -1928,6 +1934,18 @@
     "collider_2025: feature": {
       "Access to advanced AI models": [
         "Akses ke berbagai model AI lanjutan"
+      ],
+      "Basic chat history": [
+        "Riwayat percakapan dasar"
+      ],
+      "Limited favorites": [
+        "Favorit dalam jumlah yang terbatas"
+      ],
+      "Unlimited daily chats": [
+        "Tanpa batasan jumlah percakapan harian"
+      ],
+      "Upload and query small files": [
+        "Unggah dan kuerikan berkas kecil"
       ]
     },
     "collider_2025: Info": {
@@ -5465,6 +5483,9 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Impor kode yang telah Anda miliki** dari aplikasi 2FA lainnya, seperti Google Authenticator"
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Langkah 1:** Undang teman Anda ke ${ BRAND_NAME } dengan tautan rujukan Anda."
+      ],
       "**Sync codes** to all your devices": [
         "**Sinkronkan kode** ke seluruh perangkat Anda"
       ],
@@ -7261,6 +7282,9 @@
       ],
       "You already have a free account": [
         "Anda telah memiliki akun gratis"
+      ],
+      "You are currently signed in as ${ username }.": [
+        "Anda sedang masuk sebagai ${ username }"
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "Anda sedang menggunakan ${ ipCount } dari ${ ipAddresses } server khusus yang Anda miliki."
@@ -9294,6 +9318,9 @@
       "Share files with no size limit": [
         "Bagikan berkas tanpa batasan ukuran"
       ],
+      "Short domain (@pm.me)": [
+        "Domain pendek (@pm.me)"
+      ],
       "Sign in as user": [
         "Masuk sebagai pengguna tertentu"
       ],
@@ -9496,7 +9523,7 @@
         "Akun gratis pemula yang dirancang untuk menghadirkan privasi sebagai bawaan untuk semua orang."
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
-        "Privasi tanpa batas dan ruang penyimpanan yang lebih untuk hingga 2 orang pengguna."
+        "Privasi tanpa batas dan ruang penyimpanan yang lebih lowong untuk hingga 2 orang pengguna."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menghapus akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon apabila Anda membuat akun baru."
@@ -10629,6 +10656,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Jumlah tagihan setelah masa uji coba pada ${ formattedDate }"
+      ],
       "Billing Country": [
         "Negara Penagihan"
       ],
@@ -10722,6 +10752,9 @@
       "VAT number": [
         "Nomor PPN"
       ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Anda telah memiliki langganan untuk paket ini. Anda dapat mengubah langganan Anda pada ${ subscriptionPlatform }."
+      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Anda akan ditagihkan ${ amountToCharge } dari metode pembayaran yang Anda pilih."
       ],
@@ -10750,6 +10783,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Kartu Anda ditolak. Silakan coba kartu lainnya atau kontak bank Anda untuk mengautorisir pembayaran."
+      ]
+    },
+    "Payments.info": {
+      "Credits will be added to your balance": [
+        "Saldo akan ditambahkan ke tabungan Anda"
       ]
     },
     "Payments.plan_name": {

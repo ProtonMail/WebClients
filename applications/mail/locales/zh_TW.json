@@ -462,6 +462,9 @@
       "Download logs": [
         "下載日誌"
       ],
+      "Download now": [
+        "现在下载"
+      ],
       "Download the desktop app": [
         "下載桌面應用程式"
       ],
@@ -710,6 +713,9 @@
       ],
       "Import from Outlook": [
         "從 Outlook 匯入"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "重大更新可供下載。如要繼續使用應用程式，請更新至最新版本。 ${ downloadUpdate }"
       ],
       "In the morning": [
         "早上"
@@ -1482,6 +1488,9 @@
       "Upgrade for 200GB": [
         "升級至200GB"
       ],
+      "Upgrade Now": [
+        "請升級"
+      ],
       "Upgrade now": [
         "立即升級"
       ],
@@ -1574,6 +1583,15 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "您不能傳送有超過 ${ maxAttachments } 個聯絡人的 vCard 檔案"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "您的桌面應用程式將於兩天內結束試用。 ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "您的桌面應用程式將於五日內結束試用。 ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "桌面應用程式免費試用期將會在${ formattedEndDate }.${ upgradeButton }完結"
       ],
       "Your email writing assistant": [
         "您電子郵件的撰寫幫手"

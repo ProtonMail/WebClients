@@ -489,6 +489,9 @@
       "Download logs": [
         "Stáhnout logy"
       ],
+      "Download now": [
+        "Stáhnout nyní"
+      ],
       "Download the desktop app": [
         "Stáhněte si desktopovou aplikaci"
       ],
@@ -740,6 +743,9 @@
       ],
       "Import from Outlook": [
         "Importovat z Outlooku"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "K dispozici je důležitá aktualizace. Chcete-li aplikaci nadále používat, aktualizujte ji na nejnovější verzi. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Ráno"
@@ -1566,6 +1572,9 @@
       "Upgrade for 200GB": [
         "Navýšit na 200 GB"
       ],
+      "Upgrade Now": [
+        "Navýšit nyní"
+      ],
       "Upgrade now": [
         "Navýšit nyní"
       ],
@@ -1664,6 +1673,15 @@
         "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktům",
         "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktům",
         "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktům"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Bezplatná zkušební verze desktopové aplikace končí za 2 dny. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Bezplatná zkušební verze desktopové aplikace končí za 5 dní. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Bezplatná zkušební verze desktopové aplikace končí dne ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Váš asistent psaní e-mailů"
@@ -7726,6 +7744,9 @@
       "Low Priority": [
         "Nízká priorita"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Nastavte ${ MAIL_APP_NAME } jako výchozí e-mailovou aplikaci."
+      ],
       "Manage your folders": [
         "Spravovat složky"
       ],
@@ -11271,7 +11292,7 @@
         "Sdílení souborů bez omezení velikosti"
       ],
       "Short domain (@pm.me)": [
-        "Zkrácený tvar domény (@pm.me)"
+        "Krátká doména (@pm.me)"
       ],
       "Sign in as user": [
         "Přihlasit se jako uživatel"
