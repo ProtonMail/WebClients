@@ -6,14 +6,17 @@ import type { SecureLink } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { not } from '@proton/pass/utils/fp/predicates';
 import { sortOn } from '@proton/pass/utils/fp/sort';
+import { objectEntries } from '@proton/pass/utils/object/generic';
 
 export const selectSecureLinksState = (state: State) => state.items.secureLinks;
 
-export const selectAllSecureLinks = createSelector(selectSecureLinksState, (byShareId): SecureLink[] =>
-    Object.values(byShareId).flatMap((byItemId) => Object.values(byItemId).flat())
+const selectSecureLinkedItems = createSelector(selectSecureLinksState, (state) =>
+    objectEntries(state).flatMap(([shareId, byItemId]) => objectEntries(byItemId).map(([itemId, links]) => ({ shareId, itemId, links })))
 );
 
+export const selectAllSecureLinks = createSelector(selectSecureLinkedItems, (entries) => entries.flatMap(({ links }) => links));
 export const selectVisibleSecureLinks = createVisibilityFilterSelector(selectAllSecureLinks);
+export const selectVisibleSecureLinkedItems = createVisibilityFilterSelector(selectSecureLinkedItems);
 export const selectVisibleSecureLinksCount = createSelector([selectVisibleSecureLinks], prop('length'));
 export const selectInactiveSecureLinksCount = createSelector(selectAllSecureLinks, (links) => links.filter(not(prop('active'))).length);
 
