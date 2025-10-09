@@ -11,6 +11,8 @@ export default defineConfig([
                 rules: {
                     'no-console': ['error', { allow: ['warn', 'error', 'info'] }],
                     curly: ['error', 'multi-line'],
+                    // TODO: Add the missing explicit deps and remove this rule
+                    'import/no-extraneous-dependencies': 'off',
                 },
             },
         ],

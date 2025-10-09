@@ -14,6 +14,8 @@ export default defineConfig([
                     forbid: ['@proton/atoms', '@proton/atoms'],
                 },
             ],
+            // TODO: Add the missing explicit deps and remove this rule
+            'import/no-extraneous-dependencies': 'off',
         },
     },
     globalIgnores(['.storybook']),

@@ -217,6 +217,36 @@ export default defineConfig(
             'lodash/import-scope': [2, 'method'],
 
             '@protontech/enforce-uint8array-arraybuffer/enforce-uint8array-arraybuffer': 'error',
+            'import/no-extraneous-dependencies': [
+                'error',
+                {
+                    devDependencies: [
+                        // Types
+                        '**/global.d.ts',
+                        // Build
+                        '**/build.mjs',
+                        '**/postcss.config.{js,ts}',
+                        '**/webpack.config.{js,ts}',
+                        // Jest
+                        '**/__tests__/**',
+                        '**/jest.config.{js,ts}',
+                        '**/jest.setup.{js,ts}',
+                        '**/jest.transform.{js,ts}',
+                        // Vite
+                        '**/vite.config.{js,ts}',
+                        '**/vitest.config.{js,ts}',
+                        '**/vitest.setup.{js,ts}',
+                        '**/*.test.{js,ts,tsx,jsx}',
+                        '**/*.spec.{js,ts,tsx,jsx}',
+                        // Others
+                        '**/cypress.config.{js,ts}',
+                        '**/eslint.config.{js,mjs}',
+                        '**/karma.conf.{js,ts}',
+                    ],
+                    optionalDependencies: false,
+                    peerDependencies: false,
+                },
+            ],
         },
     },
     {
