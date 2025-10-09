@@ -2115,6 +2115,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Setelah masa uji coba ini berakhir pada ${ formattedDate }, paket Anda akan menjadi langganan berbayar yang diperbarui secara otomatis secara bulanan. Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ formattedDate }."
+      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Dengan mengeklik \"Coba\", Anda menyatakan diri setuju dengan ${ termsAndConditions } kami."
       ],
@@ -2138,6 +2141,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Anda dapat memiliki hingga ${ TRIAL_MAX_SCRIBE_SEATS } kuota Scribe selama masa uji coba."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Anda dapat memiliki hingga ${ TRIAL_MAX_USERS } pengguna selama masa uji coba."
       ]
     },
     "b2b_trials_2025_Label": {
@@ -2918,6 +2924,18 @@
     "collider_2025: feature": {
       "Access to advanced AI models": [
         "Akses ke berbagai model AI lanjutan"
+      ],
+      "Basic chat history": [
+        "Riwayat percakapan dasar"
+      ],
+      "Limited favorites": [
+        "Favorit dalam jumlah yang terbatas"
+      ],
+      "Unlimited daily chats": [
+        "Tanpa batasan jumlah percakapan harian"
+      ],
+      "Upload and query small files": [
+        "Unggah dan kuerikan berkas kecil"
       ]
     },
     "collider_2025: Feature": {
@@ -4375,10 +4393,10 @@
         "Aktifkan ${ PROTON_SENTINEL_NAME } untuk mengakses berbagai fitur berikut"
       ],
       "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Aktifkan acara mendetail dan ${ PROTON_SENTINEL_NAME } untuk mengakses fitur-fitur ini"
+        "Aktifkan rekaman peristiwa terperinci dan ${ PROTON_SENTINEL_NAME } untuk mengakses rangkaian fitur ini"
       ],
       "Enable detailed events to access these features": [
-        "Aktifkan acara mendetail untuk mengakses fitur-fitur ini"
+        "Aktifkan rekaman peristiwa terperinci untuk mengakses rangkaian fitur ini"
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Anjurkan penggunaan autentikasi dua faktor di dalam organisasi Anda untuk keamanan yang lebih."
@@ -5493,7 +5511,7 @@
         "Mohon untuk hanya meminta akses darurat ketika benar-benar terdapat **situasi yang mendesak**, yang mengharuskan Anda untuk mengelola akun pengguna lain."
       ],
       "People I trust": [
-        "Orang--orang yang saya percayai"
+        "Orang-orang yang saya percayai"
       ],
       "People who trust me": [
         "Orang-orang yang memercayai saya"
@@ -5535,7 +5553,7 @@
         "Mereka telah menambahkan saya sebagai kontak terpercaya. Saya akan dapat mengakses akun mereka apabila terdapat kejadian darurat."
       ],
       "They may ask to access my account in case of an emergency.": [
-        "Mereka dapat meminta akses ke akun saya apabila terdapat kejadian darurat."
+        "Kontak di bawah ini akan dapat meminta akses ke akun saya apabila terjadi situasi darurat."
       ],
       "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
         "Mereka akan menerima akses secara otomatis dalam **${ days } hari**, pada pukul **${ formattedAccessibleAt }**. Anda dapat menolak permintaan mereka atau memberikan mereka akses dengan segera kapan saja."
@@ -7900,13 +7918,13 @@
         "Impor dari Google"
       ],
       "Import from other": [
-        "Impor dari yang lain"
+        "Impor dari layanan lain"
       ],
       "Import from Outlook": [
         "Impor dari Outlook"
       ],
       "Import from Yahoo": [
-        "Masukan dari Yahoo"
+        "Impor dari Yahoo"
       ]
     },
     "Import rollback status": {
@@ -8234,6 +8252,9 @@
       ],
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
         "**Undang teman Anda** ke ${ BRAND_NAME } dengan tautan rujukan Anda."
+      ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Langkah 1:** Undang teman Anda ke ${ BRAND_NAME } dengan tautan rujukan Anda."
       ],
       "**Sync codes** to all your devices": [
         "**Sinkronkan kode** ke seluruh perangkat Anda"
@@ -9754,7 +9775,7 @@
         "Satu akun. Seluruh layanan ${ BRAND_NAME }."
       ],
       "One time import": [
-        "Satu kali impor"
+        "Impor sekali jadi"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Kami menyarankan Anda untuk mengubah pengaturan ini hanya apabila Anda menggunakan PGP untuk saling bertukar pesan dengan pengguna non-${ BRAND_NAME }."
@@ -10552,7 +10573,7 @@
         "Untuk melanjutkan ke ${ product }"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
-        "Agar layanan kami dapat terus berkembang, kami mengumpulkan berbagai data yang digunakan untuk memonitor kinerja aplikasi kami dari waktu ke waktu. Informasi ini tidak akan dibagikan kepada layanan pihak ketiga mana pun."
+        "Agar layanan kami terus berkembang, kami mengumpulkan berbagai data yang digunakan untuk memantau kinerja aplikasi kami dari waktu ke waktu. Informasi ini tidak akan dibagikan kepada layanan pihak ketiga mana pun."
       ],
       "To create your first user group, go to": [
         "Untuk membuat grup pengguna pertama Anda, tuju"
@@ -10970,6 +10991,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Anda akan membuka browser bawaan Anda dan mengunjungi:"
+      ],
+      "You are currently signed in as ${ username }.": [
+        "Anda sedang masuk sebagai ${ username }"
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "Anda sedang menggunakan ${ ipCount } dari ${ ipAddresses } server khusus yang Anda miliki."
@@ -14508,6 +14532,9 @@
       "Share files with no size limit": [
         "Bagikan berkas tanpa batasan ukuran"
       ],
+      "Short domain (@pm.me)": [
+        "Domain pendek (@pm.me)"
+      ],
       "Sign in as user": [
         "Masuk sebagai pengguna tertentu"
       ],
@@ -14748,7 +14775,7 @@
         "Akun gratis yang dirancang untuk menyediakan privasi sebagai hal yang baku bagi semua."
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
-        "Privasi tanpa batas dan ruang penyimpanan yang lebih untuk hingga 2 orang pengguna."
+        "Privasi tanpa batas dan ruang penyimpanan yang lebih lowong untuk hingga 2 orang pengguna."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menghapus akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon apabila Anda membuat akun baru."
@@ -16497,6 +16524,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Jumlah tagihan setelah masa uji coba pada ${ formattedDate }"
+      ],
       "Billing Country": [
         "Negara Penagihan"
       ],
@@ -16593,6 +16623,9 @@
       "VAT number": [
         "Nomor PPN"
       ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Anda telah memiliki langganan untuk paket ini. Anda dapat mengubah langganan Anda pada ${ subscriptionPlatform }."
+      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Anda akan ditagihkan ${ amountToCharge } dari metode pembayaran yang Anda pilih."
       ],
@@ -16621,6 +16654,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Kartu Anda ditolak. Silakan coba kartu lainnya atau kontak bank Anda untuk mengautorisir pembayaran."
+      ]
+    },
+    "Payments.info": {
+      "Credits will be added to your balance": [
+        "Saldo akan ditambahkan ke tabungan Anda"
       ]
     },
     "Payments.plan_name": {
@@ -18051,7 +18089,7 @@
     },
     "Service provider": {
       "Allows you to add a Zoom video conference to any of your calendar events": [
-        "Memungkinkan Anda utnuk menambahkan konferensi video Zoom ke acara kalender mana pun yang Anda miliki"
+        "Memungkinkan Anda untuk menambahkan konferensi video Zoom ke acara kalender mana pun milik Anda"
       ]
     },
     "session_recovery:available:action": {
