@@ -7,3 +7,5 @@ export const rootReducer = combineReducers({
     ...sharedReducers,
     ...breachesCountReducer,
 });
+
+export type DriveState = ReturnType<typeof rootReducer>;
