@@ -26,12 +26,13 @@ export enum Features {
     globalBootstrapAppUrls = 'globalBootstrapAppUrls',
     globalBootstrapAppUserSettings = 'globalBootstrapAppUserSettings',
     globalBootstrapAppUserInit = 'globalBootstrapAppUserInit',
+    globalBootstrapAppCache = 'globalBootstrapAppCache',
     globalBootstrapAppLoadUser = 'globalBootstrapAppLoadUser',
     globalBootstrapAppUnleash = 'globalBootstrapAppUnleash',
     globalBootstrapAppCrypto = 'globalBootstrapAppCrypto',
     globalBootstrapAppUserData = 'globalBootstrapAppUserData',
     globalBootstrapAppPostLoad = 'globalBootstrapAppPostLoad',
-    globalBootstrapAppUserSettingsAddress = 'globalBootstrapAppUserSettingsAddress',
+    globalBootstrapAppDriveUserSettings = 'globalBootstrapAppDriveUserSettings',
     globalBootstrapAppLoadSession = 'globalBootstrapAppLoadSession',
 
     // session specific features

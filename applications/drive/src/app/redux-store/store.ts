@@ -3,16 +3,23 @@ import { configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
 
 import { ignoredActions, ignoredPaths } from '@proton/redux-shared-store/sharedSerializable';
 
-import { start } from './listener';
-import { rootReducer } from './rootReducer';
+import { type StartListeningFeatures, start } from './listener';
+import { type DriveState, rootReducer } from './rootReducer';
 import { type DriveThunkArguments, extraThunkArguments } from './thunk';
 
-export type DriveState = ReturnType<typeof rootReducer>;
+export type { DriveState };
 
-export const setupStore = () => {
+export const setupStore = ({
+    preloadedState,
+    features,
+}: {
+    preloadedState?: Partial<DriveState>;
+    features?: StartListeningFeatures;
+}) => {
     const listenerMiddleware = createListenerMiddleware({ extra: extraThunkArguments });
 
     const store = configureStore({
+        preloadedState,
         reducer: rootReducer,
         devTools: process.env.NODE_ENV !== 'production',
         middleware: (getDefaultMiddleware) =>
@@ -26,13 +33,13 @@ export const setupStore = () => {
     });
 
     const startListening = listenerMiddleware.startListening as AppStartListening;
-    start(startListening);
+    start({ startListening, features });
 
     if (process.env.NODE_ENV !== 'production' && module.hot) {
         module.hot.accept('./rootReducer', () => store.replaceReducer(rootReducer));
         module.hot.accept('./listener', () => {
             listenerMiddleware.clearListeners();
-            start(startListening);
+            start({ startListening, features });
         });
     }
 
