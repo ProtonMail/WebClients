@@ -35,8 +35,7 @@ class MetricsService {
                     this.hadMainError.record();
                     break;
                 case "net":
-                case "net/mail":
-                case "net/calendar":
+                case "net/meet":
                 case "net/account":
                     this.hadNetworkError.record();
                     break;
