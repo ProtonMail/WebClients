@@ -67,9 +67,8 @@ const OrganizationSection = ({ app, organization }: Props) => {
     const [editOrganizationIdentityProps, setEditOrganizationIdentityModal, renderEditOrganizationIdentityModal] =
         useModalState();
     const [editOrganizationNameProps, setEditOrganizationNameModal, renderEditOrganizationNameModal] = useModalState();
-    const [setupOrganizationNameProps, setSetupOrganizationNameModal, renderSetupOrganizationNameModal] =
+    const [setupOrganizationNameProps, /* setSetupOrganizationNameModal */, renderSetupOrganizationNameModal] = // TODO enable where needed
         useModalState();
-    (window as any).setSetupOrganizationNameModal = setSetupOrganizationNameModal; // For testing - setSetupOrganizationNameModal(true)
     const [newDomainModalProps, setNewDomainModalOpen, renderNewDomain] = useModalState();
     const [setupOrganizationModalProps, setSetupOrganizationModal, renderSetupOrganizationModal] = useModalState();
     const errorHandler = useErrorHandler();

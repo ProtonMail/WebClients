@@ -1,3 +1,5 @@
+import { useCallback } from 'react';
+
 import { c } from 'ttag';
 
 import { Button, InlineLinkButton } from '@proton/atoms';
@@ -15,18 +17,16 @@ interface Props extends ModalProps<'form'> {}
 
 /*
     TODO: This is just a component design, it will need to be hooked up to actual functionality later.
-    See for example DownloadPhraseContainer among others with similar functionality.
-
-
-    TODO: Remove this before merge
-    For testing, open http://localhost:8080/account-password
-    then use window.setRecoveryModal(true) or false to open/close the modal
+    See for example DownloadPhraseContainer among others with similar functionality to download PDF file.
 */
 
 const SecureYourAccountModal = (props: Props) => {
-    /* TODO: This is just a component design */
     const loading = false; // For testing
-    const size = '78KB'; // For testing
+    const size = '78KB'; // For testing - don't forget to add translations, see also humanSize function.
+
+    const handleDownload = useCallback(() => {
+        // TODO: Implement download functionality
+    }, []);
 
     return (
         <Modal size="medium" {...props}>
@@ -50,13 +50,7 @@ const SecureYourAccountModal = (props: Props) => {
                             .t`It’s the only way to fully restore your account, so make sure you keep it somewhere safe.`}
                     </div>
                 </div>
-                <InlineLinkButton
-                    key="download-pdf-button"
-                    onClick={() => {
-                        /* TODO */
-                    }}
-                    className="p-4 my-2"
-                >
+                <InlineLinkButton key="download-pdf-button" onClick={handleDownload} className="p-4 my-2">
                     <Icon name="arrow-down-line" alt={c('Action').t`Download PDF`} />
                     {c('Secure Your Account').t`Download PDF (${size})`}
                 </InlineLinkButton>
