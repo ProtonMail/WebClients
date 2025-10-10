@@ -13,7 +13,7 @@ import PassLogo from '@proton/components/components/logo/PassLogo';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import WalletLogo from '@proton/components/components/logo/WalletLogo';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import { IcChevronRight } from '@proton/icons';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { PLANS } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS } from '@proton/shared/lib/constants';

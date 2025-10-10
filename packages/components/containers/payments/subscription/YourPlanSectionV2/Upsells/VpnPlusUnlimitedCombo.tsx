@@ -19,7 +19,7 @@ import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import usePopper from '@proton/components/components/popper/usePopper';
 import Price from '@proton/components/components/price/Price';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
-import { IcChevronRight } from '@proton/icons';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import type { Currency, FullPlansMap } from '@proton/payments';
 import {
     CYCLE,

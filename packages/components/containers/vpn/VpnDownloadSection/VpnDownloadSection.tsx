@@ -12,7 +12,8 @@ import type { IconName } from '@proton/components/components/icon/Icon';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import type { Tab } from '@proton/components/components/tabs/Tabs';
 import Tabs from '@proton/components/components/tabs/Tabs';
-import { IcArrowDownLine, IcArrowOutSquare } from '@proton/icons';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
+import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 import clsx from '@proton/utils/clsx';
 
 import appleAppStoreImage from './images/apple-app-store.svg';

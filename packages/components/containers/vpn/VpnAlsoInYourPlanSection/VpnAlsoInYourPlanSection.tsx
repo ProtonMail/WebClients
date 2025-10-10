@@ -24,7 +24,7 @@ import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedTex
 import useConfig from '@proton/components/hooks/useConfig';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import useLoad from '@proton/components/hooks/useLoad';
-import { IcArrowRight } from '@proton/icons';
+import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import {
     CYCLE,
     FREE_PLAN,

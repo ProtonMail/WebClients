@@ -20,7 +20,7 @@ import Price from '@proton/components/components/price/Price';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
-import { IcChevronRight } from '@proton/icons';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import {
     CYCLE,
     type FreePlanDefault,

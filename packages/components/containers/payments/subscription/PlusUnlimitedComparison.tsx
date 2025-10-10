@@ -6,7 +6,7 @@ import DriveLogo from '@proton/components/components/logo/DriveLogo';
 import MailLogo from '@proton/components/components/logo/MailLogo';
 import PassLogo from '@proton/components/components/logo/PassLogo';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
-import type { IconSize } from '@proton/icons';
+import type { IconSize } from '@proton/icons/types';
 import { PLANS, PLAN_SERVICES, type Plan, type PlansMap, type SubscriptionPlan, getFreeTitle } from '@proton/payments';
 import {
     APPS,

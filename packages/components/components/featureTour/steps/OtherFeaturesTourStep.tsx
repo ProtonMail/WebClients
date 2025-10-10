@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { organizationThunk } from '@proton/account/organization';
 import Icon from '@proton/components/components/icon/Icon';
-import type { IconName } from '@proton/icons';
+import type { IconName } from '@proton/icons/types';
 import { PLANS } from '@proton/payments';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';

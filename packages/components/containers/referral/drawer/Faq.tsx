@@ -4,7 +4,9 @@ import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import Details from '@proton/components/components/container/Details';
 import Summary from '@proton/components/components/container/Summary';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { IcGift, IcMoneyBills, IcUsers } from '@proton/icons';
+import { IcGift } from '@proton/icons/icons/IcGift';
+import { IcMoneyBills } from '@proton/icons/icons/IcMoneyBills';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 const FAQ = () => {

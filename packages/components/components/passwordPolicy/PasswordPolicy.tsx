@@ -2,7 +2,7 @@ import type { ComponentProps, MutableRefObject, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { IcCheckmark } from '@proton/icons';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import clsx from '@proton/utils/clsx';
 
 import PasswordStrengthIndicator from '../passwordStrengthIndicator/PasswordStrengthIndicator';
