@@ -1,5 +1,5 @@
-import { SidebarDialog } from './Sidebar'
 import { useEditNamedRangeDialogState } from '@rowsncolumns/spreadsheet-state'
+import { SidebarDialog } from './SidebarDialog'
 
 export function NamedRangeEditorDialog() {
   const [open, setOpen] = useEditNamedRangeDialogState()
