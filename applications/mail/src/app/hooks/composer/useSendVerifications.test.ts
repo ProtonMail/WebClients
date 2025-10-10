@@ -182,6 +182,11 @@ const ResizeObserverMock = jest.fn(() => ({
     unobserve: jest.fn(),
 }));
 
+const mockHandleNoAttachments = jest.fn();
+const mockHandleNoReplyEmail = jest.fn();
+const mockHandleNoSubjects = jest.fn();
+const mockHandleNoRecipients = jest.fn();
+
 beforeAll(() => {
     window.ResizeObserver = ResizeObserverMock;
 });
@@ -196,7 +201,42 @@ describe('useSendVerifications', () => {
         return view.result.current.extendedVerifications as any;
     };
 
+    const setupPreliminaryVerificationsWithHandlers = async () => {
+        const view = await renderHook({
+            useCallback: () =>
+                useSendVerifications(
+                    mockHandleNoRecipients,
+                    mockHandleNoSubjects,
+                    mockHandleNoAttachments,
+                    mockHandleNoReplyEmail
+                ),
+        });
+        return view.result.current.preliminaryVerifications as any;
+    };
+
     afterEach(clearAll);
+
+    describe('preliminary verifications', () => {
+        it('should call handleNoAttachments when message has attachment keyword in subject but no attachments', async () => {
+            const preliminaryVerifications = await setupPreliminaryVerificationsWithHandlers();
+
+            const message = {
+                localID: '1',
+                data: {
+                    Subject: 'see attached file',
+                    Sender: { Name: '', Address: 'test@test.com' },
+                    AddressID: 'test@test.com',
+                    ToList: [{ Address: 'recipient@test.com', Name: '' }],
+                    CCList: [],
+                    BCCList: [],
+                    Attachments: [],
+                },
+            };
+
+            await preliminaryVerifications(message, {});
+            expect(mockHandleNoAttachments).toHaveBeenCalledWith('see attached');
+        });
+    });
 
     describe('extended verifications of last-minute preferences', () => {
         // eslint-disable-next-line no-only-tests/no-only-tests
