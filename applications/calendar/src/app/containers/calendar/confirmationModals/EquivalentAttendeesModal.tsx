@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Banner, BannerVariants, Button } from '@proton/atoms';
+import { Button } from '@proton/atoms';
 import { Prompt } from '@proton/components';
 
 interface Props {
@@ -19,15 +19,19 @@ const EquivalentAttendeesModal = ({ onClose, equivalentAttendees, isOpen }: Prop
             onClose={onClose}
         >
             <p>{c('Info').t`Please remove the duplicates and try again.`}</p>
-            {equivalentAttendees.map((group) => (
-                <Banner className="mb-4" variant={BannerVariants.WARNING_OUTLINE} key={group.join('')}>
-                    {group.map((email) => (
-                        <p className="text-ellipsis m-0" key={email} title={email}>
-                            {email}
-                        </p>
-                    ))}
-                </Banner>
-            ))}
+            <ul className="unstyled">
+                {equivalentAttendees.map((group) => (
+                    <li className="mb-4 p-2 border border-weak rounded" key={group.join('')}>
+                        <ul className="unstyled">
+                            {group.map((email) => (
+                                <li className="text-ellipsis" key={email} title={email}>
+                                    {email}
+                                </li>
+                            ))}
+                        </ul>
+                    </li>
+                ))}
+            </ul>
         </Prompt>
     );
 };
