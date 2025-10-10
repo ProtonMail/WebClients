@@ -148,6 +148,7 @@ const slice = createSlice({
 const promiseStore = createPromiseStore<Model>();
 const previous = previousSelector(selectOrganization);
 
+/** Re-fetches the organization data and refreshes the state and UI. */
 const modelThunk = (options?: {
     cache?: CacheType;
     type?: 'extended' | 'organization' | 'settings';
