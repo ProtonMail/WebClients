@@ -28,11 +28,7 @@ interface Props extends ModalProps {
 }
 
 /*
-    TODO: Remove this before merge
-
-
-    For testing, open http://localhost:8080/multi-user-support
-    then use window.setSetupOrganizationNameModal(true) or false to open/close the modal
+    TODO: The design is ready, but it is not yet attached to any UI action.
 */
 
 const SetupOrganizationNameModal = ({ onClose, organization, ...rest }: Props) => {
