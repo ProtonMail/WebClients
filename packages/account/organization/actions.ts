@@ -6,7 +6,7 @@ import { CacheType } from '@proton/redux-utilities';
 import { updateQuota } from '@proton/shared/lib/api/members';
 import {
     leaveOrganisation as leaveOrganisationConfig,
-    updateOrganizationName,
+    updateOrganizationName as updateOrganizationNameConfig,
 } from '@proton/shared/lib/api/organization';
 import clamp from '@proton/utils/clamp';
 
@@ -60,13 +60,14 @@ export const setKeys = (): ThunkAction<
     };
 };
 
-export const setName = ({
+/** Calls the API and updates the local state. */
+export const updateOrganizationName = ({
     name,
 }: {
     name: string;
 }): ThunkAction<Promise<void>, OrganizationState & MemberState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, _, extra) => {
-        const { Organization } = await extra.api(updateOrganizationName(name));
+        const { Organization } = await extra.api(updateOrganizationNameConfig(name));
         await dispatch(organizationActions.update({ Organization }));
     };
 };
@@ -82,7 +83,7 @@ export const initOrganization = ({
     UnknownAction
 > => {
     return async (dispatch) => {
-        await dispatch(setName({ name }));
+        await dispatch(updateOrganizationName({ name }));
         await dispatch(setKeys());
         await dispatch(setDefaultStorage());
     };
