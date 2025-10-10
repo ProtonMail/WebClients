@@ -148,7 +148,13 @@ const slice = createSlice({
 const promiseStore = createPromiseStore<Model>();
 const previous = previousSelector(selectOrganization);
 
-/** Re-fetches the organization data and refreshes the state and UI. */
+/**
+ * Re-fetches the organization data and refreshes the state and UI.
+ *
+ * If you are changing the organization data by another api request,
+ * consider using the {@link organizationActions.update} instead that stores
+ * the request's response in the state, without unnecessary re-fetching.
+ */
 const modelThunk = (options?: {
     cache?: CacheType;
     type?: 'extended' | 'organization' | 'settings';

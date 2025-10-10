@@ -25,7 +25,7 @@ async function getDidUserMakeAnyAction() {
     });
 }
 
-const TopNavbarGetStartedButton = () => {
+export const TopNavbarGetStartedButton = () => {
     const [user] = useUser();
     const [organization] = useOrganization();
 
@@ -133,5 +133,3 @@ const TopNavbarGetStartedButton = () => {
         )
     );
 };
-
-export default TopNavbarGetStartedButton;

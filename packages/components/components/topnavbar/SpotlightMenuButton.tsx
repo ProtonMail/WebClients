@@ -1,4 +1,4 @@
-import { useCallback, useMemo } from 'react';
+import { useMemo } from 'react';
 
 import { Button, ButtonLike } from '@proton/atoms';
 import Icon, { type IconName } from '@proton/components/components/icon/Icon';
@@ -87,7 +87,9 @@ interface SpotlightMenuButtonProps {
     items: DisplayItem[];
     header?: React.ReactNode;
     footer?: React.ReactNode;
-    onClick?: () => void;
+    /** Toggles the Spotlight popover. */
+    onToggle?: () => void;
+    /** Called when clicking on the [x] companion button. */
     onDismiss?: () => void;
     /** The hover text for the dismiss button. */
     dismissTitle?: string;
@@ -100,7 +102,7 @@ export const SpotlightMenuButton = ({
     buttonIcon,
     header,
     footer,
-    onClick: onClick_,
+    onToggle: onToggle,
     onDismiss: onDismiss_,
     dismissTitle = 'Dismiss',
 }: SpotlightMenuButtonProps) => {
@@ -108,25 +110,21 @@ export const SpotlightMenuButton = ({
 
     const initiallyOpen = useMemo(() => initiallyOpen_, []);
 
-    const {
-        state: renderSpotlight,
-        toggle: toggleSpotlight,
-        set: setSpotlight,
-    } = useToggle(initiallyOpen);
+    const { state: renderSpotlight, toggle: toggleSpotlight, set: setSpotlight } = useToggle(initiallyOpen);
 
-    const closeSpotlight = useCallback(() => {
+    const closeSpotlight = () => {
         setSpotlight(false);
-    }, []);
+    };
 
-    const onClick = useCallback(() => {
-        onClick_?.();
+    const onToggleSpotlight = () => {
+        onToggle?.();
         toggleSpotlight();
-    }, [onClick_, toggleSpotlight]);
+    };
 
-    const onDismiss = useCallback(() => {
+    const onDismiss = () => {
         onDismiss_?.();
         closeSpotlight();
-    }, [onDismiss_, closeSpotlight]);
+    };
 
     return (
         <Spotlight
@@ -182,7 +180,7 @@ export const SpotlightMenuButton = ({
                     type="button"
                     title={buttonText}
                     className={clsx('topnav-org-setup', viewportWidth['<=medium'] && 'button-for-icon')}
-                    onClick={onClick}
+                    onClick={onToggleSpotlight}
                     icon={buttonIcon}
                     text={buttonText}
                 />

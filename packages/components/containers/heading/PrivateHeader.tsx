@@ -11,7 +11,6 @@ import Header from '../../components/header/Header';
 import Hamburger from '../../components/sidebar/Hamburger';
 import TopNavbar from '../../components/topnavbar/TopNavbar';
 import TopNavbarB2BOnboardingButton from '../../components/topnavbar/TopNavbarB2BOnboardingButton';
-import TopNavbarGetStartedButton from '../../components/topnavbar/TopNavbarGetStartedButton';
 import TopNavbarList from '../../components/topnavbar/TopNavbarList';
 import TopNavbarListItem from '../../components/topnavbar/TopNavbarListItem';
 import TopNavbarUpsell from '../../components/topnavbar/TopNavbarUpsell';
@@ -20,6 +19,7 @@ import useConfig from '../../hooks/useConfig';
 import useIsPaidUserCookie from '../../hooks/useIsPaidUserCookie';
 
 interface Props extends HeaderProps {
+    onBoardingButton?: ReactNode;
     settingsButton?: ReactNode;
     hideSettingsButton?: boolean;
     userDropdown?: ReactNode;
@@ -37,6 +37,7 @@ interface Props extends HeaderProps {
 
 const PrivateHeader = ({
     isSmallViewport,
+    onBoardingButton,
     upsellButton,
     userDropdown,
     settingsButton,
@@ -69,7 +70,7 @@ const PrivateHeader = ({
             <TopNavbar>
                 <TopNavbarList>
                     {!isSmallViewport && <TopNavbarB2BOnboardingButton />}
-                    {!isSmallViewport && <TopNavbarGetStartedButton />}
+                    {!isSmallViewport && onBoardingButton}
                     {upsellButton !== undefined ? upsellButton : !hideUpsellButton && <TopNavbarUpsell app={app} />}
                     {feedbackButton ? <TopNavbarListItem noShrink>{feedbackButton}</TopNavbarListItem> : null}
                     {settingsButton && !hideSettingsButton ? (

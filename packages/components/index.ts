@@ -306,6 +306,7 @@ export {
     type DropdownDisplayItem,
     type LinkDisplayItem,
 } from './components/topnavbar/SpotlightMenuButton';
+export { TopNavbarGetStartedButton } from './components/topnavbar/TopNavbarGetStartedButton';
 export { default as TopNavbarList } from './components/topnavbar/TopNavbarList';
 export { default as TopNavbarListItem } from './components/topnavbar/TopNavbarListItem';
 export { default as TopNavbarListItemButton } from './components/topnavbar/TopNavbarListItemButton';

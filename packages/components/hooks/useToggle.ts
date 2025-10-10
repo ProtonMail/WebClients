@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react';
  */
 const useToggle = (forcedState = false) => {
     const [state, setState] = useState(forcedState);
+    /** TODO: This function should be wrapped in useCallback to avoid unnecessary re-renders. See VPNBE-1602 */
     const toggle = () => setState(!state);
 
     useEffect(() => {
