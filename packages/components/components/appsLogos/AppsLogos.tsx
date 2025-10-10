@@ -8,7 +8,7 @@ import MailLogo from '@proton/components/components/logo/MailLogo';
 import PassLogo from '@proton/components/components/logo/PassLogo';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import WalletLogo from '@proton/components/components/logo/WalletLogo';
-import type { IconSize } from '@proton/icons';
+import type { IconSize } from '@proton/icons/types';
 import {
     APPS,
     CALENDAR_APP_NAME,

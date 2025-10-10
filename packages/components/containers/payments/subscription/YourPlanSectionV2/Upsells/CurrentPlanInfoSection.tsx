@@ -17,7 +17,7 @@ import PassLogo from '@proton/components/components/logo/PassLogo';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import usePopper from '@proton/components/components/popper/usePopper';
 import SubscriptionEndsBannerV2 from '@proton/components/containers/topBanners/SubscriptionEndsBannerV2';
-import { IcChevronRight } from '@proton/icons';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import type { Currency, Cycle, FreePlanDefault, FullPlansMap, PlansMap } from '@proton/payments';
 import { CYCLE, PLANS, PLAN_NAMES, type Subscription, getSubscriptionPlanTitle } from '@proton/payments';
 import { getPlanToCheck, usePaymentsPreloaded } from '@proton/payments/ui';
