@@ -1,6 +1,7 @@
 import { forwardRef } from 'react';
 
-import type { IconName, IconSize } from '@proton/icons';
+import type { IconName } from '@proton/icons/types';
+import type { IconSize } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
 /**
