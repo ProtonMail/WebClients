@@ -1,16 +1,11 @@
 import {
   CellFormatEditor,
   CellFormatEditorDialog,
-  ConditionalFormatDialog,
-  ConditionalFormatEditor,
-  DataValidationEditor,
-  DataValidationEditorDialog,
   DeleteSheetConfirmation,
   NamedRangeEditor,
   TableEditor,
 } from '@rowsncolumns/spreadsheet-state'
 import type { ProtonSheetsState } from '../../state'
-import { onlyImplementedFunctionDescriptions as functionDescriptions } from '../../constants'
 import { ChartEditor, ChartEditorDialog } from '@rowsncolumns/charts'
 import { SheetSearch } from './SheetSearch'
 import { InsertLinkDialog } from './InsertLink'
@@ -30,18 +25,6 @@ export function Dialogs({ state }: DialogsProps) {
           onSubmit={state.chartsState.onUpdateChart}
         />
       </ChartEditorDialog>
-      <ConditionalFormatDialog>
-        <ConditionalFormatEditor
-          sheetId={state.activeSheetId}
-          theme={state.theme}
-          conditionalFormats={state.conditionalFormats}
-          functionDescriptions={functionDescriptions}
-          onCreateRule={state.onCreateConditionalFormattingRule}
-          onDeleteRule={state.onDeleteConditionalFormattingRule}
-          onUpdateRule={state.onUpdateConditionalFormattingRule}
-          onPreviewRule={state.onPreviewConditionalFormattingRule}
-        />
-      </ConditionalFormatDialog>
       <TableEditor sheetId={state.activeSheetId} onSubmit={state.onUpdateTable} theme={state.theme} />
       <DeleteSheetConfirmation sheetId={state.activeSheetId} onDeleteSheet={state.onDeleteSheet} />
       <NamedRangeEditor
@@ -61,17 +44,6 @@ export function Dialogs({ state }: DialogsProps) {
         totalResults={state.searchState.totalResults}
         searchQuery={state.searchState.searchQuery}
       />
-      <DataValidationEditorDialog>
-        <DataValidationEditor
-          dataValidations={state.dataValidations}
-          sheetId={state.activeSheetId}
-          functionDescriptions={functionDescriptions}
-          onDeleteRules={state.onDeleteDataValidationRules}
-          onDeleteRule={state.onDeleteDataValidationRule}
-          onCreateRule={state.onCreateDataValidationRule}
-          onUpdateRule={state.onUpdateDataValidationRule}
-        />
-      </DataValidationEditorDialog>
       <CellFormatEditorDialog>
         <CellFormatEditor
           sheetId={state.activeSheetId}

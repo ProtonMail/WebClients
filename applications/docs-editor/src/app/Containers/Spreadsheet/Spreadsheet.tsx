@@ -218,7 +218,7 @@ function UI({ hidden, state, isReadonly, isRevisionMode }: UIProps) {
           <Dialogs state={state} />
         </div>
 
-        <Sidebar />
+        <Sidebar state={state} />
       </div>
     </ProtonSheetsUIStoreProvider>
   )
