@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Loader from '@proton/components/components/loader/Loader';
 import FormModal from '@proton/components/components/modal/FormModal';
 import PaymentVerificationImage from '@proton/components/containers/payments/PaymentVerificationImage';

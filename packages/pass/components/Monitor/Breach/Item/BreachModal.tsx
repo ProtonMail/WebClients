@@ -1,11 +1,13 @@
-import type { FetchedBreaches } from '@proton/components';
-import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import BreachInfo from '@proton/components/containers/credentialLeak/BreachInfo';
 import BreachInfoNote from '@proton/components/containers/credentialLeak/BreachInfoNote';
 import BreachRecommendations from '@proton/components/containers/credentialLeak/BreachRecommendations';
 import BreachTitle from '@proton/components/containers/credentialLeak/BreachTitle';
 import UserBreachInfo from '@proton/components/containers/credentialLeak/UserBreachInfo';
 import { getStyle } from '@proton/components/containers/credentialLeak/helpers';
+import type { FetchedBreaches } from '@proton/components/containers/credentialLeak/models';
 
 type Props = { breach: FetchedBreaches; onClose: () => void };
 

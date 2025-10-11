@@ -1,7 +1,7 @@
 import type { ChangeEvent } from 'react';
 
-import type { InputProps } from '@proton/atoms';
-import { Input } from '@proton/atoms';
+import type { InputProps } from '@proton/atoms/Input/Input';
+import { Input } from '@proton/atoms/Input/Input';
 import { getAllFieldLabels } from '@proton/shared/lib/helpers/contacts';
 import type { VCardGenderValue, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 

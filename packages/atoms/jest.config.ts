@@ -1,5 +1,5 @@
-module.exports = {
-    setupFilesAfterEnv: ['./jest.setup.js'],
+export default {
+    setupFilesAfterEnv: ['./jest.setup.ts'],
     moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
     testEnvironment: '@proton/jest-env',
     transformIgnorePatterns: [

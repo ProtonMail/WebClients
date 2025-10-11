@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useFormik } from 'formik';
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/components';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { useCurrentPort, useCurrentTabID } from '@proton/pass/components/Core/PassCoreProvider';
 import { ExportForm } from '@proton/pass/components/Export/ExportForm';

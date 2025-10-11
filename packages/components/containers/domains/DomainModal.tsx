@@ -5,8 +5,8 @@ import { c } from 'ttag';
 
 import { createDomain, syncDomain } from '@proton/account/domains/actions';
 import { useCustomDomains } from '@proton/account/domains/hooks';
-import { Button } from '@proton/atoms';
-import { Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import Form from '@proton/components/components/form/Form';
 import Icon from '@proton/components/components/icon/Icon';

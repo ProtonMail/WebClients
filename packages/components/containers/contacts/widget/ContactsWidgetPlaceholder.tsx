@@ -2,7 +2,7 @@ import type { MouseEvent, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { InlineLinkButton } from '@proton/atoms';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { getPlaceholderSrc } from '@proton/mail';
 import noContactsImgDark from '@proton/styles/assets/img/placeholders/contacts-empty-cool-dark.svg';

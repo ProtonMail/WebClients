@@ -3,7 +3,7 @@ import type { FC } from 'react';
 import { ImportButton } from 'proton-authenticator/app/components/Settings/Import/ImportButton';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import clsx from '@proton/utils/clsx';
 
 import { EmptyPlaceholderImage } from './EmptyPlaceholderImage';

@@ -1,6 +1,6 @@
 import type { Key, ReactNode } from 'react';
 
-import type { IconName } from '@proton/components/components/icon/Icon';
+import type { IconName } from '@proton/icons/types';
 
 export type NotificationType = 'error' | 'warning' | 'info' | 'success';
 

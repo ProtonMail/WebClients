@@ -2,7 +2,8 @@ import React, { useCallback, useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { CircleLoader, Input } from '@proton/atoms';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { Input } from '@proton/atoms/Input/Input';
 import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Table from '@proton/components/components/table/Table';

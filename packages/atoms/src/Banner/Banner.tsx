@@ -4,7 +4,9 @@ import React from 'react';
 import { c } from 'ttag';
 
 import type { ThemeColorUnion } from '@proton/colors/types';
-import { IcCross, IcExclamationTriangleFilled, IcInfoCircle } from '@proton/icons';
+import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import clsx from '@proton/utils/clsx';
 
 import { Button } from '../Button/Button';

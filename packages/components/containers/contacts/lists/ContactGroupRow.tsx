@@ -4,8 +4,8 @@ import { useState } from 'react';
 import tinycolor from 'tinycolor2';
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import genAccentShades from '@proton/colors/gen-accent-shades';
 import Icon from '@proton/components/components/icon/Icon';
 import type { Recipient } from '@proton/shared/lib/interfaces';

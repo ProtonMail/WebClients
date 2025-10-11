@@ -2,7 +2,7 @@ import type { MouseEvent } from 'react';
 
 import { c } from 'ttag';
 
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import clsx from '@proton/utils/clsx';
 
 import LabelStackItem from './LabelStackItem';

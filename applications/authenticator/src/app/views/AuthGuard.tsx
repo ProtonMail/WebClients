@@ -6,7 +6,7 @@ import { apiEvents } from 'proton-authenticator/lib/api';
 import { abortLogin, executeLogin, logout } from 'proton-authenticator/store/auth';
 import { useAppDispatch, useAppSelector } from 'proton-authenticator/store/utils';
 
-import { CircleLoader } from '@proton/atoms';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { getConsumeForkParameters } from '@proton/shared/lib/authentication/fork';

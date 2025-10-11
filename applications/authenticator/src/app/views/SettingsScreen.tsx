@@ -17,18 +17,19 @@ import { changeBackupDirectory, toggleBackup, updateSettings } from 'proton-auth
 import { useAppDispatch, useAppSelector } from 'proton-authenticator/store/utils';
 import { c } from 'ttag';
 
-import { Banner, BannerVariants, Button, InlineLinkButton } from '@proton/atoms';
-import {
-    Icon,
-    MiddleEllipsis,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoHeader,
-    Option,
-    SelectTwo,
-    SimpleDropdown,
-    Toggle,
-} from '@proton/components';
+import { Banner } from '@proton/atoms/Banner/Banner';
+import { BannerVariants } from '@proton/atoms/Banner/Banner';
+import { Button } from '@proton/atoms/Button/Button';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
+import MiddleEllipsis from '@proton/components/components/ellipsis/MiddleEllipsis';
+import Icon from '@proton/components/components/icon/Icon';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import { InlineFieldBox } from '@proton/pass/components/Form/Field/Layout/InlineFieldBox';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { epochToRelativeDaysAgo } from '@proton/pass/utils/time/format';

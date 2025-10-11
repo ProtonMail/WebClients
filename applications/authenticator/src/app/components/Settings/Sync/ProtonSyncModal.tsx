@@ -6,8 +6,10 @@ import { requestFork } from 'proton-authenticator/store/auth';
 import { useAppDispatch } from 'proton-authenticator/store/utils';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';

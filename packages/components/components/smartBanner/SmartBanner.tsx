@@ -1,7 +1,9 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Button, ButtonLike, Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Logo from '@proton/components/components/logo/Logo';
 import useLocalState from '@proton/components/hooks/useLocalState';
 

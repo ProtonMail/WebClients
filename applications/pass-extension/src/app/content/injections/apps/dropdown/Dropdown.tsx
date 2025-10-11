@@ -16,7 +16,7 @@ import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/mes
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { Localized } from '@proton/pass/components/Core/Localized';
 import { clientBusy, clientErrored, clientMissingScope, clientSessionLocked } from '@proton/pass/lib/client';

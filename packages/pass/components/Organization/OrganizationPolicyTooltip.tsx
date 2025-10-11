@@ -2,8 +2,8 @@ import type { FC, ReactElement, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Tooltip } from '@proton/atoms';
-import type { PopperPlacement } from '@proton/components';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import type { PopperPlacement } from '@proton/components/components/popper/interface';
 
 type MaybeOrganizationTooltipProps = {
     children: ReactElement;

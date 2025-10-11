@@ -1,7 +1,8 @@
 import type { ReactNode } from 'react';
 
-import { Banner, Button } from '@proton/atoms';
-import { Tooltip } from '@proton/atoms';
+import { Banner } from '@proton/atoms/Banner/Banner';
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Icon from '@proton/components/components/icon/Icon';
 
 interface Props {

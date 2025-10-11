@@ -12,7 +12,7 @@ import { telemetry } from 'proton-pass-web/lib/telemetry';
 import { getThemeForLocalID } from 'proton-pass-web/lib/theme';
 import { c } from 'ttag';
 
-import type { CreateNotificationOptions } from '@proton/components';
+import type { CreateNotificationOptions } from '@proton/components/containers/notifications/interfaces';
 import type { AppStateService } from '@proton/pass/components/Core/AppStateManager';
 import type { PassCoreContextValue } from '@proton/pass/components/Core/PassCoreProvider';
 import {

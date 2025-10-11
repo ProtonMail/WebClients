@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { ButtonLike, Href } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Href } from '@proton/atoms/Href/Href';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';

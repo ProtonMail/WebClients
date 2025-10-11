@@ -3,8 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useModalState } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';

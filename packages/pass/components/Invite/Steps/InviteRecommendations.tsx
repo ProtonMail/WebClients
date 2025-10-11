@@ -5,8 +5,9 @@ import type { List } from 'react-virtualized';
 
 import { c } from 'ttag';
 
-import { Button, CircleLoader } from '@proton/atoms';
-import { Checkbox } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import Checkbox from '@proton/components/components/input/Checkbox';
 import { ShareMemberAvatar } from '@proton/pass/components/Invite/Member/ShareMemberAvatar';
 import { ButtonBar } from '@proton/pass/components/Layout/Button/ButtonBar';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';

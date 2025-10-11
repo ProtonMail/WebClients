@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Kbd } from '@proton/atoms';
+import { Kbd } from '@proton/atoms/Kbd/Kbd';
 import { metaKey } from '@proton/shared/lib/helpers/browser';
 
 export const AutotypeKeyboardShortcut: FC = () => {

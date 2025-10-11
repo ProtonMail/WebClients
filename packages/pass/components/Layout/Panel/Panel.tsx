@@ -1,6 +1,7 @@
 import type { FC, ReactNode } from 'react';
 
-import { CircleLoader, Scroll } from '@proton/atoms';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import clsx from '@proton/utils/clsx';
 
 import './Panel.scss';

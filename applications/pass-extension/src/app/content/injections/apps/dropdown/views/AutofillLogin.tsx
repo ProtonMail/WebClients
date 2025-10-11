@@ -15,8 +15,8 @@ import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/mes
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms';
-import { Marks } from '@proton/components';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import Marks from '@proton/components/components/text/Marks';
 import { UpsellRef } from '@proton/pass/constants';
 import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';

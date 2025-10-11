@@ -4,8 +4,8 @@ import config from 'proton-pass-extension/app/config';
 import { getMinimalHostPermissions } from 'proton-pass-extension/lib/utils/permissions';
 import { c } from 'ttag';
 
-import { InlineLinkButton } from '@proton/atoms';
-import { useNotifications } from '@proton/components';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import type { RequestForkData, RequestForkOptions } from '@proton/pass/lib/auth/fork';
 import { getStateKey, requestFork } from '@proton/pass/lib/auth/fork';

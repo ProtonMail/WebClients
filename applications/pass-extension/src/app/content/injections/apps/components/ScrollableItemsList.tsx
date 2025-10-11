@@ -5,8 +5,8 @@ import {
     LIST_MAX_VISIBLE_ITEMS,
 } from 'proton-pass-extension/app/content/injections/apps/components/ListItem';
 
-import { Scroll } from '@proton/atoms';
-import { DropdownMenu } from '@proton/components';
+import { Scroll } from '@proton/atoms/Scroll/Scroll';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import clsx from '@proton/utils/clsx';
 
 import './ScrollableItemsList.scss';

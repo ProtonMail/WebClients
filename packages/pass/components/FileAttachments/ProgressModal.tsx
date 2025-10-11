@@ -2,8 +2,11 @@ import type { FC, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Progress } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import Progress from '@proton/components/components/progress/Progress';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 
 type Props = {

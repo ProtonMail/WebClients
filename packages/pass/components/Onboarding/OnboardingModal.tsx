@@ -2,9 +2,14 @@ import { type FC, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Step, Stepper } from '@proton/atoms';
-import { type ModalProps, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import { Step } from '@proton/atoms/Stepper/Step';
+import { Stepper } from '@proton/atoms/Stepper/Stepper';
 import Icon from '@proton/components/components/icon/Icon';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { PassIconLogo } from '@proton/pass/components/Layout/Logo/PassIconLogo';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { wait } from '@proton/shared/lib/helpers/promise';

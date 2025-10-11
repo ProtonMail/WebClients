@@ -4,21 +4,19 @@ import type { Action, ThunkDispatch } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import {
-    Badge,
-    ButtonGroup,
-    Icon,
-    Prompt,
-    SettingsSectionWide,
-    Table,
-    TableBody,
-    TableHeader,
-    TableRow,
-    Time,
-    useErrorHandler,
-    useModalState,
-    useNotifications,
-} from '@proton/components';
+import Badge from '@proton/components/components/badge/Badge';
+import ButtonGroup from '@proton/components/components/button/ButtonGroup';
+import Icon from '@proton/components/components/icon/Icon';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import Prompt from '@proton/components/components/prompt/Prompt';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableRow from '@proton/components/components/table/TableRow';
+import Time from '@proton/components/components/time/Time';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading, { useLoadingByKey } from '@proton/hooks/useLoading';
 import { baseUseDispatch } from '@proton/react-redux-store';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';

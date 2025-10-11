@@ -2,8 +2,9 @@ import type { FC, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Tooltip } from '@proton/atoms';
-import { Info } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import Info from '@proton/components/components/link/Info';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { useActionRequest } from '@proton/pass/hooks/useRequest';

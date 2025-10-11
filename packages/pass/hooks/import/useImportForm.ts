@@ -5,8 +5,9 @@ import type { FormikContextType, FormikErrors, FormikHelpers } from 'formik';
 import { useFormik } from 'formik';
 import { c } from 'ttag';
 
-import type { Dropzone, FileInput } from '@proton/components';
-import { useNotifications } from '@proton/components';
+import type Dropzone from '@proton/components/components/dropzone/Dropzone';
+import type FileInput from '@proton/components/components/input/FileInput';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useCurrentTabID } from '@proton/pass/components/Core/PassCoreProvider';
 import { useFileImporter } from '@proton/pass/hooks/import/useFileImporter';
 import { useDebouncedValue } from '@proton/pass/hooks/useDebouncedValue';

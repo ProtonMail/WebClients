@@ -4,7 +4,8 @@ import { addDays, fromUnixTime, isBefore } from 'date-fns';
 import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
-import { Button, ButtonLike } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import useModalState from '@proton/components/components/modalTwo/useModalState';

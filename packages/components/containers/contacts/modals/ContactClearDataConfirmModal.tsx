@@ -2,7 +2,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Input } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Input } from '@proton/atoms/Input/Input';
 import Alert from '@proton/components/components/alert/Alert';
 import Row from '@proton/components/components/container/Row';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';

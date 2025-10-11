@@ -2,8 +2,11 @@ import { type FC, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { type IconName, ModalTwoContent, ModalTwoFooter, useNotifications } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import useNotifications from '@proton/components/hooks/useNotifications';
+import type { IconName } from '@proton/icons/types';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';
 import { useCopyToClipboard } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';

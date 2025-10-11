@@ -1,12 +1,10 @@
 import type { FC, PropsWithChildren, ReactNode } from 'react';
 
-import {
-    Collapsible,
-    CollapsibleContent,
-    CollapsibleHeader,
-    CollapsibleHeaderIconButton,
-    Icon,
-} from '@proton/components';
+import Collapsible from '@proton/components/components/collapsible/Collapsible';
+import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
+import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
+import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
+import Icon from '@proton/components/components/icon/Icon';
 
 type CollapsibleSectionProps = PropsWithChildren & {
     label: ReactNode;

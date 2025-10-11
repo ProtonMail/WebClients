@@ -2,8 +2,12 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, type ButtonLikeOwnProps } from '@proton/atoms';
-import { Dropdown, DropdownMenu, Icon, usePopperAnchor } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import type { ButtonLikeOwnProps } from '@proton/atoms/Button/ButtonLike';
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import Icon from '@proton/components/components/icon/Icon';
+import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { getExtraFieldOptions } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraField.utils';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import type { ExtraFieldType } from '@proton/pass/types';

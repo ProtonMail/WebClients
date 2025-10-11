@@ -2,7 +2,8 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Banner, CircleLoader } from '@proton/atoms';
+import { Banner } from '@proton/atoms/Banner/Banner';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import Icon from '@proton/components/components/icon/Icon';
 import physicalKey from '@proton/styles/assets/img/illustrations/physical-key.svg';
 

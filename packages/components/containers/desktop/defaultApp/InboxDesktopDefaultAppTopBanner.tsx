@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { InlineLinkButton } from '@proton/atoms';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getInboxDesktopInfo, invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 

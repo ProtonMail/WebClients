@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
 import FiltersUpsellModal from '@proton/components/components/upsell/modals/FiltersUpsellModal';

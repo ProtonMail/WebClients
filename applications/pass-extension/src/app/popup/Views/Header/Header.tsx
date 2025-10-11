@@ -4,7 +4,7 @@ import { usePopupContext } from 'proton-pass-extension/app/popup/PopupProvider';
 import { useExtensionContext } from 'proton-pass-extension/lib/components/Extension/ExtensionSetup';
 import { useSpotlightListener } from 'proton-pass-extension/lib/hooks/useSpotlightListener';
 
-import { Header as CoreHeader } from '@proton/components';
+import CoreHeader from '@proton/components/components/header/Header';
 import { AuthDeviceTopBanner } from '@proton/pass/components/Auth/AuthDeviceTopBanner';
 import { PinnedItemsBar } from '@proton/pass/components/Item/Pinned/PinnedItemsBar';
 import { SearchBar } from '@proton/pass/components/Item/Search/SearchBar';

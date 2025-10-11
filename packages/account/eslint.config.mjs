@@ -1,9 +1,11 @@
 import { defineConfig } from 'eslint/config';
 
-import config from '@proton/eslint-config-proton/all';
+import defaultConfig from '@proton/eslint-config-proton/all';
+import barrelConfig from '@proton/eslint-config-proton/barrel';
 
 export default defineConfig([
-    config,
+    defaultConfig,
+    barrelConfig,
     {
         rules: {
             // TODO: Add the missing explicit deps and remove this rule

@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { createMissingKeys } from '@proton/account/addresses/actions';
 import { usePasswordPolicies } from '@proton/account/passwordPolicies/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';

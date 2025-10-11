@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
-import { Alert } from '@proton/components';
+import Alert from '@proton/components/components/alert/Alert';
 import {
     ConfirmationPrompt,
     type ConfirmationPromptHandles,

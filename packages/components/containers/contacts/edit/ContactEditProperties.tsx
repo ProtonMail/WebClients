@@ -3,10 +3,11 @@ import { forwardRef, useCallback, useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import Icon, { type IconName } from '@proton/components/components/icon/Icon';
+import { Button } from '@proton/atoms/Button/Button';
+import Icon from '@proton/components/components/icon/Icon';
 import OrderableContainer from '@proton/components/components/orderable/OrderableContainer';
 import OrderableElement from '@proton/components/components/orderable/OrderableElement';
+import type { IconName } from '@proton/icons/types';
 import { OTHER_INFORMATION_FIELDS } from '@proton/shared/lib/contacts/constants';
 import {
     compareVCardPropertyByPref,

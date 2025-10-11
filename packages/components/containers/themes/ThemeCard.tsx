@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Button, type ButtonLikeShape } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import type { ButtonLikeShape } from '@proton/atoms/Button/ButtonLike';
 import clsx from '@proton/utils/clsx';
 
 import type { ThemeSvgColors, ThemeSvgSize } from './ThemeSvg';

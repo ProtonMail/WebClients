@@ -4,7 +4,7 @@ import { useContext, useEffect } from 'react';
 import { differenceInMilliseconds } from 'date-fns';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Icon from '@proton/components/components/icon/Icon';
 import { HOUR } from '@proton/shared/lib/constants';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';

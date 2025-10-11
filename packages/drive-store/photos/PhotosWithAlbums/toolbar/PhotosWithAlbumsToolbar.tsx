@@ -3,7 +3,6 @@ import type { FC, ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button, InlineLinkButton, Vr } from '@proton/atoms';
-import type { IconName } from '@proton/components';
 import {
     Dropdown,
     DropdownButton,
@@ -16,6 +15,7 @@ import {
     useActiveBreakpoint,
     usePopperAnchor,
 } from '@proton/components';
+import type { IconName } from '@proton/icons/types';
 import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 

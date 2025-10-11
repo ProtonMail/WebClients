@@ -2,7 +2,8 @@ import type { ChangeEvent, Dispatch, FormEvent, SetStateAction } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Button, Input } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Input } from '@proton/atoms/Input/Input';
 import Alert from '@proton/components/components/alert/Alert';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';

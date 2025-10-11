@@ -8,7 +8,8 @@ import { pageMessage, sendMessage } from 'proton-pass-extension/lib/message/send
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
-import { ButtonLike, Href } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Href } from '@proton/atoms/Href/Href';
 import accountSetupImg from '@proton/pass/assets/protonpass-account.svg';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 import { PASS_ANDROID_URL, PASS_IOS_URL, PASS_VIDEO_URL } from '@proton/pass/constants';

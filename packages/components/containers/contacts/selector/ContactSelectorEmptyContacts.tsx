@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import noContactsImg from '@proton/styles/assets/img/illustrations/no-contacts.svg';
 import noop from '@proton/utils/noop';
 

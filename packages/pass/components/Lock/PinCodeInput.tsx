@@ -1,6 +1,6 @@
 import { type FC, useEffect, useRef } from 'react';
 
-import { TotpInput } from '@proton/components';
+import TotpInput from '@proton/components/components/v2/input/TotpInput';
 import clsx from '@proton/utils/clsx';
 
 import './PinCodeInput.scss';

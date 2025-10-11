@@ -4,7 +4,8 @@ import { c } from 'ttag';
 
 import { useGetOrganization } from '@proton/account/organization/hooks';
 import { useGetOrganizationKey } from '@proton/account/organizationKey/hooks';
-import { Button, Href } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
 import Alert from '@proton/components/components/alert/Alert';
 import Form from '@proton/components/components/form/Form';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';

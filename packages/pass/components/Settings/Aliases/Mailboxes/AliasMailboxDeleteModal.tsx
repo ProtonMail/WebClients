@@ -2,7 +2,10 @@ import { type FC, useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Alert, DropdownSizeUnit, Option, SelectTwo } from '@proton/components';
+import Alert from '@proton/components/components/alert/Alert';
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
 import { InlineFieldBox } from '@proton/pass/components/Form/Field/Layout/InlineFieldBox';

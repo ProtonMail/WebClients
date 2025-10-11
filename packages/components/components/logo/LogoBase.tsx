@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from 'react';
 
-import type { IconSize } from '@proton/icons';
+import type { IconSize } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
 import { getLogoWidthStyles } from './helpers';

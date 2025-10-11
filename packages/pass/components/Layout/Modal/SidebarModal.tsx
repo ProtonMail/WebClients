@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { type ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 
-import type { ModalProps } from '@proton/components';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 
 import { PassModal } from './PassModal';
 

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { renameExternalAddressThunk } from '@proton/account/addresses/renameExternalAddress';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';

@@ -2,7 +2,8 @@ import type { FormEvent } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Input } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Input } from '@proton/atoms/Input/Input';
 import Icon from '@proton/components/components/icon/Icon';
 import DateInput from '@proton/components/components/input/DateInput';
 import Label from '@proton/components/components/label/Label';

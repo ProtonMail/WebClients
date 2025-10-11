@@ -4,7 +4,8 @@ import type { Action, ThunkDispatch } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms';
-import { TopBanner, useModalState } from '@proton/components';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import TopBanner from '@proton/components/containers/topBanners/TopBanner';
 import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import type { AuthDeviceOutput } from '@proton/shared/lib/keys/device';

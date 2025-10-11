@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { CircleLoader } from '@proton/atoms';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import SearchInput from '@proton/components/components/input/SearchInput';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useContactGroups } from '@proton/mail';

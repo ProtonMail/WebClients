@@ -5,8 +5,8 @@ import type { FormikContextType, FormikErrors } from 'formik';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { TextAreaTwo } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import { getReportInfo } from '@proton/components/helpers/report';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useActionRequest } from '@proton/pass/hooks/useRequest';

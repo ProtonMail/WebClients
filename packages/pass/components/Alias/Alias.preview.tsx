@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { MiddleEllipsis } from '@proton/components';
+import MiddleEllipsis from '@proton/components/components/ellipsis/MiddleEllipsis';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 import clsx from '@proton/utils/clsx';
 

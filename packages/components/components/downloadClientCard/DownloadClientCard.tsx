@@ -2,11 +2,14 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, ButtonLike, Href } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Href } from '@proton/atoms/Href/Href';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
-import Icon, { type IconName } from '@proton/components/components/icon/Icon';
+import Icon from '@proton/components/components/icon/Icon';
+import type { IconName } from '@proton/icons/types';
 
 interface Props {
     title: string;
