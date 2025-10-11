@@ -8673,7 +8673,7 @@ __metadata:
     "@vitest/ui": "npm:3.2.4"
     cross-env: "npm:^10.0.0"
     eslint: "npm:^9.36.0"
-    happy-dom: "npm:^18.0.1"
+    happy-dom: "npm:^20.0.0"
     prettier: "npm:^3.6.2"
     react: "npm:^18.3.1"
     ttag: "npm:^1.8.12"
@@ -26491,14 +26491,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"happy-dom@npm:^18.0.1":
-  version: 18.0.1
-  resolution: "happy-dom@npm:18.0.1"
+"happy-dom@npm:^20.0.0":
+  version: 20.0.0
+  resolution: "happy-dom@npm:20.0.0"
   dependencies:
     "@types/node": "npm:^20.0.0"
     "@types/whatwg-mimetype": "npm:^3.0.2"
     whatwg-mimetype: "npm:^3.0.0"
-  checksum: 10c0/10f2115f5001fdaf1aedcbda89c15248a1c2e43a25d7e774cb641a35bf6763cef9097b438ef3c2248ab59a0ef33b3e88cb94da096f2bb0fc109ba3f43f7c66d4
+  checksum: 10c0/a205da48f3c98ae2b2bcb73c8f673fea66296cd2fc081065fcd5fa42b4411546c1b8f7c26ef2ca5adf0bdd1ced9aff4f429a3a4f5e6bce7724eec2747bef1a49
   languageName: node
   linkType: hard
 
@@ -37068,7 +37068,7 @@ __metadata:
     "@vitest/ui": "npm:3.2.4"
     cross-env: "npm:^10.0.0"
     eslint: "npm:^9.36.0"
-    happy-dom: "npm:^18.0.1"
+    happy-dom: "npm:^20.0.0"
     livekit-client: "npm:@proton-meet/livekit-client@2.15.10"
     prettier: "npm:^3.6.2"
     react: "npm:^18.3.1"
@@ -37330,7 +37330,7 @@ __metadata:
     chart.js: "npm:^4.5.0"
     cross-env: "npm:^10.0.0"
     eslint: "npm:^9.36.0"
-    happy-dom: "npm:^18.0.1"
+    happy-dom: "npm:^20.0.0"
     jsqr: "npm:^1.4.0"
     lodash: "npm:^4.17.21"
     path-browserify: "npm:^1.0.1"
