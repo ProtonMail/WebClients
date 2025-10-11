@@ -4,13 +4,13 @@ This package contains [icon set](https://design-system.protontech.ch/?path=/docs
 
 There are 2 ways of consuming this package:
 
--   Using the auto-generated React components (recommended)
--   Using the sprite file
+- Using the auto-generated React components (recommended)
+- Using the sprite file
 
 ## Consuming the Icon React components
 
 ```js
-import { IcGlobe } from '@proton/icons';
+import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 
 const MyComponent = () => <IcGlobe size={6} />;
 ```
@@ -27,5 +27,5 @@ Then you can use the [Icon component](https://design-system.protontech.ch/?path=
 
 In case some icons need to be changed/added, the process is:
 
--   edit the `assets/sprite-icons.svg` file (making the relevant changes there)
--   run `yarn workspace @proton/icons build` to generate the React components
+- edit the `assets/sprite-icons.svg` file (making the relevant changes there)
+- run `yarn workspace @proton/icons build` to generate the React components

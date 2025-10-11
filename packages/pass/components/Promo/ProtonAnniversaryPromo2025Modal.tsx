@@ -3,8 +3,8 @@ import { type FC, useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { ModalTwoContent } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import Anniversary2025FeatureList from '@proton/components/containers/offers/components/anniversary2025/Anniversary2025FeatureList';
 import Anniversary2025Header from '@proton/components/containers/offers/components/anniversary2025/Anniversary2025Header';
 import OfferCloseButton from '@proton/components/containers/offers/components/shared/OfferCloseButton';

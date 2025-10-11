@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { RadioGroup } from '@proton/components';
+import RadioGroup from '@proton/components/components/input/RadioGroup';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { LockTTLField } from '@proton/pass/components/Lock/LockTTLField';
 import { usePasswordTypeSwitch } from '@proton/pass/components/Lock/PasswordUnlockProvider';

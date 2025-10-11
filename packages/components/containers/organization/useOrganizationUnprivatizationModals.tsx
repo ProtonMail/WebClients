@@ -8,7 +8,7 @@ import {
     unprivatizeMembersManual,
 } from '@proton/account/members/unprivatizeMembers';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt, { type PromptProps } from '@proton/components/components/prompt/Prompt';
 import useNotifications from '@proton/components/hooks/useNotifications';

@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
-import type { IconName } from '@proton/components';
 import { Icon } from '@proton/components';
+import type { IconName } from '@proton/icons/types';
 
 import type { RetryStrategy } from '../../types-api';
 

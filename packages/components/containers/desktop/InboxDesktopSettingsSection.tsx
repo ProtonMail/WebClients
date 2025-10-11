@@ -3,12 +3,15 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, ButtonLike, Pill } from '@proton/atoms';
-import Icon, { type IconName } from '@proton/components/components/icon/Icon';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Pill } from '@proton/atoms/Pill/Pill';
+import Icon from '@proton/components/components/icon/Icon';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import type { IconName } from '@proton/icons/types';
 import { DESKTOP_PLATFORMS } from '@proton/shared/lib/constants';
 import type { DesktopVersion } from '@proton/shared/lib/desktop/DesktopVersion';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';

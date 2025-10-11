@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { memberAcceptUnprivatization, memberRejectUnprivatization } from '@proton/account/member/actions';
-import { Button, InlineLinkButton } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';

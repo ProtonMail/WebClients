@@ -4,7 +4,8 @@ import { c } from 'ttag';
 
 import { type MemberKeyPayload, getMemberKeyPayloads, setAdminRoles } from '@proton/account';
 import { getKTUserContext } from '@proton/account/kt/actions';
-import { Button, CircleLoader } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';

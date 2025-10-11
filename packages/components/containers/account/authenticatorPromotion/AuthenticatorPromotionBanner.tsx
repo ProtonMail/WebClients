@@ -2,19 +2,15 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { AUTHENTICATOR_APP_NAME } from '@proton/shared/lib/constants';
 
 import { PromotionBanner } from '../../banner/PromotionBanner';
 import AuthenticatorPromotionModal from './AuthenticatorPromotionModal';
 import authenticatorLogo from './assets/authenticator-logo.svg';
-import type {
-    AuthenticatorPromoFlowId} from './authenticatorTelemetry';
-import {
-    sendAuthenticatorPromoBannerClick,
-    sendAuthenticatorPromoLoad,
-} from './authenticatorTelemetry';
+import type { AuthenticatorPromoFlowId } from './authenticatorTelemetry';
+import { sendAuthenticatorPromoBannerClick, sendAuthenticatorPromoLoad } from './authenticatorTelemetry';
 
 const AuthenticatorPromotionBanner = ({
     flowId,

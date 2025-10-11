@@ -4,7 +4,9 @@ import type { HeaderProps } from 'proton-pass-web/app/Views/Header/types';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Header as CoreHeader, Hamburger, Icon } from '@proton/components';
+import CoreHeader from '@proton/components/components/header/Header';
+import Icon from '@proton/components/components/icon/Icon';
+import Hamburger from '@proton/components/components/sidebar/Hamburger';
 import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 

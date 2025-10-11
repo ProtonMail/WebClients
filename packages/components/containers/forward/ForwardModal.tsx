@@ -3,7 +3,8 @@ import { type ReactNode, useMemo, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { Button, Href } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
 import Form from '@proton/components/components/form/Form';
 import Icon from '@proton/components/components/icon/Icon';
 import LoadingTextStepper from '@proton/components/components/loader/LoadingTextStepper';

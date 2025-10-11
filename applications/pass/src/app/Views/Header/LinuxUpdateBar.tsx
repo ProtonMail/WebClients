@@ -3,7 +3,7 @@ import { type FC, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { TopBar } from '@proton/pass/components/Layout/Bar/TopBar';
 import { PASS_DESKTOP_CHANGELOG_URL, PASS_LINUX_DOWNLOAD_URL, PASS_LINUX_VERSION_URL } from '@proton/pass/constants';

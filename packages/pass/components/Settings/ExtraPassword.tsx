@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { Checkbox } from '@proton/components';
+import Checkbox from '@proton/components/components/input/Checkbox';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import type { PasswordModalState } from '@proton/pass/components/Lock/PasswordModal';
 import { PasswordModal } from '@proton/pass/components/Lock/PasswordModal';

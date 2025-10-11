@@ -4,7 +4,8 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { updateAddressThunk } from '@proton/account/addresses/updateAddress';
-import { Button, Input } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Input } from '@proton/atoms/Input/Input';
 import Editor from '@proton/components/components/editor/Editor';
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
 import type { EditorActions } from '@proton/components/components/editor/interface';

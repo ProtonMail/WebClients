@@ -2,11 +2,11 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { NotificationDot } from '@proton/atoms';
+import { NotificationDot } from '@proton/atoms/NotificationDot/NotificationDot';
 import { ThemeColor } from '@proton/colors/types';
-import type { IconName } from '@proton/components/components/icon/Icon';
 import SidebarListItemContent from '@proton/components/components/sidebar/SidebarListItemContent';
 import SidebarListItemContentIcon from '@proton/components/components/sidebar/SidebarListItemContentIcon';
+import type { IconName } from '@proton/icons/types';
 import { baseUseSelector } from '@proton/react-redux-store';
 import type { OpenDrawerArgs } from '@proton/shared/lib/drawer/interfaces';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';

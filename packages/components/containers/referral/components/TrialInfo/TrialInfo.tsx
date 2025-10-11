@@ -3,7 +3,8 @@ import { c, msgid } from 'ttag';
 
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
-import { Button, ButtonLike } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import Loader from '@proton/components/components/loader/Loader';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
@@ -17,7 +18,7 @@ import { subscriptionExpires } from '@proton/components/containers/payments/subs
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useConfig from '@proton/components/hooks/useConfig';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
-import { IcArrowOutSquare } from '@proton/icons';
+import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 import { PLANS, PLAN_NAMES, getPlanTitle, isAutoRenewTrial } from '@proton/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getDifferenceInDays } from '@proton/shared/lib/date/date';

@@ -4,9 +4,9 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Input } from '@proton/atoms';
-import type { IconName } from '@proton/components';
 import { AutocompleteList, Icon, Marks, Option, useAutocomplete, useAutocompleteFilter } from '@proton/components';
 import { getIsSectionAvailable, getIsSubsectionAvailable } from '@proton/components/containers/layout/helper';
+import type { IconName } from '@proton/icons/types';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';

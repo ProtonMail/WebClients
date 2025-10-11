@@ -2,8 +2,11 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Kbd, Tooltip } from '@proton/atoms';
-import { Icon, type IconName } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import { Kbd } from '@proton/atoms/Kbd/Kbd';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import Icon from '@proton/components/components/icon/Icon';
+import type { IconName } from '@proton/icons/types';
 import { ItemFeatureDiscovery } from '@proton/pass/components/Layout/Panel/ItemFeatureDiscovery/ItemFeatureDiscovery';
 import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
 import { useSaveShortcut } from '@proton/pass/hooks/useSaveShortcut';

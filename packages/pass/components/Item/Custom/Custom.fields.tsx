@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Option } from '@proton/components';
+import Option from '@proton/components/components/option/Option';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { SelectField } from '@proton/pass/components/Form/Field/SelectField';

@@ -3,8 +3,8 @@ import { forwardRef, useState } from 'react';
 
 import type { FieldProps } from 'formik';
 
-import type { Input } from '@proton/atoms';
-import { InputFieldTwo } from '@proton/components';
+import type { Input } from '@proton/atoms/Input/Input';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import type { InputFieldProps } from '@proton/components/components/v2/field/InputField';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';

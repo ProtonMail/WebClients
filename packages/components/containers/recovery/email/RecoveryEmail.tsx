@@ -4,8 +4,8 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { userSettingsActions, userSettingsThunk } from '@proton/account/userSettings';
-import type { Input } from '@proton/atoms';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import type { Input } from '@proton/atoms/Input/Input';
 import Icon from '@proton/components/components/icon/Icon';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';

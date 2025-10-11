@@ -2,7 +2,9 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Input, Scroll } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Input } from '@proton/atoms/Input/Input';
+import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import Icon from '@proton/components/components/icon/Icon';
 import type { Group } from '@proton/shared/lib/interfaces';
 

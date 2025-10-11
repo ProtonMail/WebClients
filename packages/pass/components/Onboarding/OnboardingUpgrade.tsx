@@ -3,23 +3,21 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import {
-    Icon,
-    RadioGroup,
-    Table,
-    TableBody,
-    TableCell,
-    TableHeader,
-    TableHeaderCell,
-    TableRow,
-} from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import Icon from '@proton/components/components/icon/Icon';
+import RadioGroup from '@proton/components/components/input/RadioGroup';
 import CalendarLogo from '@proton/components/components/logo/CalendarLogo';
 import DriveLogo from '@proton/components/components/logo/DriveLogo';
 import MailLogo from '@proton/components/components/logo/MailLogo';
 import PassLogo from '@proton/components/components/logo/PassLogo';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableCell from '@proton/components/components/table/TableCell';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
+import TableRow from '@proton/components/components/table/TableRow';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { useOnboarding } from '@proton/pass/components/Onboarding/OnboardingProvider';
 import { PASS_PLUS_LIFETIME_PRICE, PASS_PLUS_PRICE, PROTON_UNLIMITED_PRICE, UpsellRef } from '@proton/pass/constants';

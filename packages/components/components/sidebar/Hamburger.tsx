@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
-import type { ButtonProps } from '@proton/atoms';
-import { Button } from '@proton/atoms';
+import type { ButtonProps } from '@proton/atoms/Button/Button';
+import { Button } from '@proton/atoms/Button/Button';
 import Icon from '@proton/components/components/icon/Icon';
-import type { IconSize } from '@proton/icons';
+import type { IconSize } from '@proton/icons/types';
 
 interface Props extends ButtonProps {
     onToggle?: () => void;

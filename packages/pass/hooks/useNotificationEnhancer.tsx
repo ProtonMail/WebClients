@@ -2,8 +2,10 @@ import { type FC, useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import { CircleLoader, InlineLinkButton } from '@proton/atoms';
-import { Icon, NotificationButton } from '@proton/components';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+import Icon from '@proton/components/components/icon/Icon';
+import NotificationButton from '@proton/components/containers/notifications/NotificationButton';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { AccountPath } from '@proton/pass/constants';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';

@@ -4,7 +4,7 @@ import { useMemo, useRef, useState } from 'react';
 import { getISOWeek } from 'date-fns';
 import { c } from 'ttag';
 
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import clsx from '@proton/utils/clsx';
 
 /*

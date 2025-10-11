@@ -4,7 +4,8 @@ import { c } from 'ttag';
 
 import { userSettingsThunk } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { Button, Href } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';

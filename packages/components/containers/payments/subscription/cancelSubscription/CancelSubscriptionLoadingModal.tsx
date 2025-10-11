@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';

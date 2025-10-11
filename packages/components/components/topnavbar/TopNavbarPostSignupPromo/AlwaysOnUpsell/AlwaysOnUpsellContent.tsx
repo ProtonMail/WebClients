@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 
 import { PostSignupOneDollarTable } from '../PostSignupOneDollar/components/PostSignupOneDollarTable';

@@ -5,7 +5,7 @@ import { c, msgid } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import BasicModal from '@proton/components/components/modalTwo/BasicModal';
 import { useCalendarModelEventManager } from '@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider';

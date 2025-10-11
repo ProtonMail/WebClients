@@ -2,8 +2,8 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import type { IconName } from '@proton/components';
 import { Dropdown, DropdownMenu, DropdownMenuButton, Icon, ToolbarButton, usePopperAnchor } from '@proton/components';
+import type { IconName } from '@proton/icons/types';
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';

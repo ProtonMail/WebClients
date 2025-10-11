@@ -1,5 +1,5 @@
-import { ButtonLike } from '@proton/atoms';
-import { Tooltip } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Icon from '@proton/components/components/icon/Icon';
 import IntegerInput from '@proton/components/components/input/IntegerInput';
 import TimeInput from '@proton/components/components/input/TimeInput';

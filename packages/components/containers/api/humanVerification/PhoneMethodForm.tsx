@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PhoneInput from '@proton/components/components/v2/phone/LazyPhoneInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';

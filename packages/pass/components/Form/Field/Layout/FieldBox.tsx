@@ -10,7 +10,8 @@ import {
     isValidElement,
 } from 'react';
 
-import { Icon, type IconName } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
+import type { IconName } from '@proton/icons/types';
 import type { MaybeArray } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 

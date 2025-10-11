@@ -1,6 +1,6 @@
 import type { HTMLAttributes, ReactNode } from 'react';
 
-import type { IconName } from '@proton/components/components/icon/Icon';
+import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
 interface SidebarListItemContentProps extends HTMLAttributes<HTMLSpanElement> {

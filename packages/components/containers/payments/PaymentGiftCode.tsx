@@ -3,7 +3,8 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Input } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Input } from '@proton/atoms/Input/Input';
 import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
 import useToggle from '@proton/components/hooks/useToggle';

@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { userSettingsThunk } from '@proton/account/userSettings';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Form from '@proton/components/components/form/Form';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Info from '@proton/components/components/link/Info';

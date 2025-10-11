@@ -3,7 +3,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Href } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
 import Form from '@proton/components/components/form/Form';
 import Loader from '@proton/components/components/loader/Loader';
 import BasicModal from '@proton/components/components/modalTwo/BasicModal';

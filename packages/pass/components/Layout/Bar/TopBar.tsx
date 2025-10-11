@@ -1,7 +1,7 @@
 import type { FC, ReactNode } from 'react';
 
-import { Button } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import Icon from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
 
 import './TopBar.scss';

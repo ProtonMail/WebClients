@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useGetScheduleCall } from '@proton/account/scheduleCall/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { CircleLoader } from '@proton/atoms';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { canScheduleOrganizationPhoneCalls, openCalendlyLink } from '@proton/shared/lib/helpers/support';
 

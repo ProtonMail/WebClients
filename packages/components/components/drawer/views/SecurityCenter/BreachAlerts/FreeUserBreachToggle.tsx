@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { getUpsellText } from '@proton/components/containers/credentialLeak/helpers';
 import type { SampleBreach } from '@proton/components/containers/credentialLeak/models';

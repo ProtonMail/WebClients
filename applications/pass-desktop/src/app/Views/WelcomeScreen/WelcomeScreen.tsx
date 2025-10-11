@@ -4,7 +4,7 @@ import { dismissFirstLaunch } from 'proton-pass-desktop/app/firstLaunch';
 import { useAuthService } from 'proton-pass-web/app/Auth/AuthServiceProvider';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import onboarding1 from '@proton/pass/assets/desktop-onboarding/onboarding-1.png';
 import onboarding2 from '@proton/pass/assets/desktop-onboarding/onboarding-2.png';
 import onboarding3 from '@proton/pass/assets/desktop-onboarding/onboarding-3.png';

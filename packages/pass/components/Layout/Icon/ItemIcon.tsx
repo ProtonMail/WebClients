@@ -2,9 +2,9 @@ import type { ReactNode } from 'react';
 import { type FC, useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import { CircleLoader } from '@proton/atoms';
-import type { IconName, IconSize } from '@proton/components';
-import { Icon } from '@proton/components';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import Icon from '@proton/components/components/icon/Icon';
+import type { IconName, IconSize } from '@proton/icons/types';
 import { isDisabledAliasItem } from '@proton/pass/lib/items/item.predicates';
 import { selectCanLoadDomainImages } from '@proton/pass/store/selectors';
 import type { ItemMap, ItemRevision, MaybeNull } from '@proton/pass/types';

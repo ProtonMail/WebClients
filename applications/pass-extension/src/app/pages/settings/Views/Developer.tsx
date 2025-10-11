@@ -6,7 +6,7 @@ import { WebsiteRulesDebug } from 'proton-pass-extension/lib/components/Settings
 import { pageMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Icon from '@proton/components/components/icon/Icon';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { CACHE_KEY } from '@proton/pass/lib/api/cache';

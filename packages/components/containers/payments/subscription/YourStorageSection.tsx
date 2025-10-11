@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { ButtonLike } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import Icon from '@proton/components/components/icon/Icon';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import CalendarLogo from '@proton/components/components/logo/CalendarLogo';

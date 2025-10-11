@@ -1,6 +1,6 @@
 import type { ElementType } from 'react';
 
-import { Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
 import type { PolymorphicPropsWithoutRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
 

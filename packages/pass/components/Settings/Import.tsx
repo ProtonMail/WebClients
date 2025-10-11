@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux';
 import { Form, FormikProvider } from 'formik';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import Icon from '@proton/components/components/icon/Icon';
 import { ProgressModal } from '@proton/pass/components/FileAttachments/ProgressModal';
 import { ImportForm } from '@proton/pass/components/Import/ImportForm';
 import { ImportVaultsPickerModal } from '@proton/pass/components/Import/ImportVaultsPickerModal';

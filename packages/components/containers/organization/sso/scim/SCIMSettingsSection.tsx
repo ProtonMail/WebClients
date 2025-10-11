@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import type { SamlState } from '@proton/account';
 import { disableSCIMAction, setupSCIMAction } from '@proton/account/samlSSO/actions';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
 import useModalState from '@proton/components/components/modalTwo/useModalState';

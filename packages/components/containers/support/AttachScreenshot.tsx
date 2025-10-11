@@ -2,7 +2,7 @@ import type { ChangeEvent, Dispatch, SetStateAction } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Icon from '@proton/components/components/icon/Icon';
 import FileInput from '@proton/components/components/input/FileInput';
 import Info from '@proton/components/components/link/Info';

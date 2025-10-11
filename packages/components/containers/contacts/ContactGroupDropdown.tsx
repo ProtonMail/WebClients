@@ -4,9 +4,9 @@ import { useEffect, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import type { ButtonProps } from '@proton/atoms';
-import { Button } from '@proton/atoms';
-import { Tooltip } from '@proton/atoms';
+import type { ButtonProps } from '@proton/atoms/Button/Button';
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';

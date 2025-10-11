@@ -1,7 +1,8 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
 import type { FC, PropsWithChildren } from 'react';
 
-import { Logo, PassForBusinessLogo } from '@proton/components';
+import Logo from '@proton/components/components/logo/Logo';
+import PassForBusinessLogo from '@proton/components/components/logo/PassForBusinessLogo';
 import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';

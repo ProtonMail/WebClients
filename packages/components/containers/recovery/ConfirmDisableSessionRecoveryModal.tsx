@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { userSettingsThunk } from '@proton/account/userSettings';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useApi from '@proton/components/hooks/useApi';
 import useLoading from '@proton/hooks/useLoading';

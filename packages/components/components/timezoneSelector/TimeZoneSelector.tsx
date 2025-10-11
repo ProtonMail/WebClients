@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { Unit } from '@proton/components/components/dropdown/utils';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Option from '@proton/components/components/option/Option';

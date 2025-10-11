@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { getOpenInDocsString } from '@proton/shared/lib/drive/translations';
 import unsupportedPreviewSvg from '@proton/styles/assets/img/errors/preview-unavailable.svg';

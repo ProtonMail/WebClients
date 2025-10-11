@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { memberThunk } from '@proton/account/member';
 import { getPendingUnprivatizationRequest } from '@proton/account/member/actions';
-import { InlineLinkButton } from '@proton/atoms';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { useDispatch } from '@proton/redux-shared-store';
 import type { Member } from '@proton/shared/lib/interfaces';
 import type { ParsedUnprivatizationData } from '@proton/shared/lib/keys';

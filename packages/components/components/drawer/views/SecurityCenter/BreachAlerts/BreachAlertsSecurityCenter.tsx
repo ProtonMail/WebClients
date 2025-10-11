@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
 import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';

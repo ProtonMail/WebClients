@@ -5,9 +5,13 @@ import { useSelector } from 'react-redux';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
-import { Button, Card } from '@proton/atoms';
-import type { ModalProps } from '@proton/components';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import { Card } from '@proton/atoms/Card/Card';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { UpsellRef } from '@proton/pass/constants';
 import type { ImportPayload, ImportVault } from '@proton/pass/lib/import/types';
 import {

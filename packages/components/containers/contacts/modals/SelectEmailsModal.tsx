@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Alert from '@proton/components/components/alert/Alert';
 import Field from '@proton/components/components/container/Field';
 import Row from '@proton/components/components/container/Row';

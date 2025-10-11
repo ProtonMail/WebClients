@@ -3,8 +3,10 @@ import { Route, Switch } from 'react-router-dom';
 
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Dropdown, DropdownMenu, usePopperAnchor } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { ItemTag } from '@proton/pass/components/Item/List/ItemTag';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';

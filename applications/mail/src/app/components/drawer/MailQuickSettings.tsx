@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Tooltip } from '@proton/atoms';
-import type { IconName } from '@proton/components';
 import {
     DefaultQuickSettings,
     DrawerAllSettingsView,
@@ -35,6 +34,7 @@ import { KeyTransparencyDetailsModal } from '@proton/components/components/keyTr
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import useKeyTransparencyNotification from '@proton/components/hooks/useKeyTransparencyNotification';
 import { useLoading } from '@proton/hooks';
+import type { IconName } from '@proton/icons/types';
 import { useAssistant } from '@proton/llm/lib';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';

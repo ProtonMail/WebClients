@@ -1,9 +1,8 @@
 import type { ComponentPropsWithRef } from 'react';
 import { forwardRef } from 'react';
 
+import type { IconSize } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
-
-import type { IconSize } from './Icon';
 
 export type MimeName =
     | 'album'

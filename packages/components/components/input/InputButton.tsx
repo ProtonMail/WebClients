@@ -1,7 +1,7 @@
 import type { ComponentPropsWithoutRef } from 'react';
 
-import type { ButtonLikeProps as TButtonLikeProps } from '@proton/atoms';
-import { ButtonLike } from '@proton/atoms';
+import type { ButtonLikeProps as TButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import clsx from '@proton/utils/clsx';
 
 export interface InputButtonProps extends ComponentPropsWithoutRef<'input'> {

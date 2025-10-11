@@ -1,6 +1,6 @@
 import * as Ariakit from '@ariakit/react'
-import type { IconName } from '@proton/components'
 import { Icon as LegacyIcon } from '@proton/components'
+import type { IconName } from '@proton/icons/types'
 import type { ReactElement } from 'react'
 import { type ComponentPropsWithoutRef, forwardRef, isValidElement } from 'react'
 import * as Atoms from './atoms'

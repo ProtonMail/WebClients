@@ -3,7 +3,7 @@ import { forwardRef, useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import type { ButtonLikeShape } from '@proton/atoms';
+import type { ButtonLikeShape } from '@proton/atoms/Button/ButtonLike';
 import type { ThemeColorUnion } from '@proton/colors';
 import FileInput from '@proton/components/components/input/FileInput';
 import { useCombinedRefs } from '@proton/hooks';

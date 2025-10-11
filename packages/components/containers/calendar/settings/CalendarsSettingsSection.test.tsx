@@ -3,7 +3,7 @@ import { Router } from 'react-router';
 import { render, screen, within } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 
-import type { IconName } from '@proton/components/components/icon/Icon';
+import type { IconName } from '@proton/icons/types';
 import type { Subscription } from '@proton/payments';
 import { MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import {

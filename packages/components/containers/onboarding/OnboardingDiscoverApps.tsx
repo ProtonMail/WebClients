@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import {
     BRAND_NAME,
     CALENDAR_SHORT_APP_NAME,

@@ -2,6 +2,6 @@
     "extends": "../../tsconfig.base.json",
     "exclude": ["**/node_modules", "**/dist", "**/public", "**/.*/"],
     "compilerOptions": {
-        "types": ["webpack-env", "@webgpu/types", "@types/jest"]
+        "types": ["@proton/types", "webpack-env", "@webgpu/types", "@types/jest"]
     }
 }

@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 
-import { ButtonLike, type ButtonLikeProps } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import type { ButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
 import clsx from '@proton/utils/clsx';
 
 import './PromotionButtonLight.scss';

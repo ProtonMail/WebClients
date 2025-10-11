@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';

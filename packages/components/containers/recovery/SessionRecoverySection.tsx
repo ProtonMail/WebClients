@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { userSettingsThunk } from '@proton/account/userSettings';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import useApi from '@proton/components/hooks/useApi';

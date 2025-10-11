@@ -3,14 +3,12 @@ import { type ReactNode, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { usePlans } from '@proton/account/plans/hooks';
-import {
-    Button,
-    DashboardCard,
-    DashboardCardContent,
-    DashboardCardImage,
-    DashboardGrid,
-    DashboardGridSectionHeader,
-} from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { DashboardCard } from '@proton/atoms/DashboardCard/DashboardCard';
+import { DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
+import { DashboardCardImage } from '@proton/atoms/DashboardCard/DashboardCard';
+import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
+import { DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import Info from '@proton/components/components/link/Info';
 import DriveLogo from '@proton/components/components/logo/DriveLogo';
 import MailLogo from '@proton/components/components/logo/MailLogo';
@@ -19,7 +17,7 @@ import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import usePopper from '@proton/components/components/popper/usePopper';
 import Price from '@proton/components/components/price/Price';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
-import { IcChevronRight } from '@proton/icons';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import type { Currency, FullPlansMap } from '@proton/payments';
 import {
     CYCLE,

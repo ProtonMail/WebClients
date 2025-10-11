@@ -1,7 +1,7 @@
 import type { CSSProperties } from 'react';
 
-import type { IconSize } from '@proton/components/components/icon/Icon';
 import Icon from '@proton/components/components/icon/Icon';
+import type { IconSize } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
 import './CheckListItem.scss';

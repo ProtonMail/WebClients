@@ -1,6 +1,6 @@
 import { fireEvent, render } from '@testing-library/react';
 
-import { IcEye } from '@proton/icons';
+import { IcEye } from '@proton/icons/icons/IcEye';
 
 import { Button } from '../Button/Button';
 import { Href } from '../Href/Href';

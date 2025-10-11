@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Avatar } from '@proton/atoms';
+import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import Alert from '@proton/components/components/alert/Alert';
 import Info from '@proton/components/components/link/Info';
 import Table from '@proton/components/components/table/Table';

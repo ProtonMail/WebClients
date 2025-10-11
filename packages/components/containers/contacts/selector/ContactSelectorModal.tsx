@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Form from '@proton/components/components/form/Form';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import SearchInput from '@proton/components/components/input/SearchInput';

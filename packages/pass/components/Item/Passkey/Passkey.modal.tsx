@@ -2,7 +2,9 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { type ModalProps, ModalTwoContent, ModalTwoHeader } from '@proton/components';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import type { SanitizedPasskey } from '@proton/pass/lib/passkeys/types';
 

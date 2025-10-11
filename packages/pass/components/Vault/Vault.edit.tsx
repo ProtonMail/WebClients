@@ -3,8 +3,9 @@ import type { FC } from 'react';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Icon, type ModalProps } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import Icon from '@proton/components/components/icon/Icon';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';

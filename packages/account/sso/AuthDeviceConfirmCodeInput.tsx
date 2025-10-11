@@ -1,4 +1,4 @@
-import { TotpInput } from '@proton/components';
+import TotpInput from '@proton/components/components/v2/input/TotpInput';
 
 interface Props {
     value: string;

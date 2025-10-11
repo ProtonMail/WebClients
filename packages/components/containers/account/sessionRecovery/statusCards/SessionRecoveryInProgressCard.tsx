@@ -2,7 +2,7 @@ import { format } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';

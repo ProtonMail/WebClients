@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Alert from '@proton/components/components/alert/Alert';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';

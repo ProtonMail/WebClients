@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { getVaultOptionInfo } from '@proton/pass/components/Menu/Vault/utils';
 import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';

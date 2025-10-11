@@ -1,7 +1,7 @@
 import type { ComponentPropsWithRef } from 'react';
 import { forwardRef } from 'react';
 
-import { CircleLoader } from '@proton/atoms';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import clsx from '@proton/utils/clsx';
 
 export interface Props extends Omit<ComponentPropsWithRef<'button'>, 'color'> {

@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import DOMPurify from 'dompurify';
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { useDragToScroll } from '@proton/components/hooks/useDragToScroll';
 import useElementRect from '@proton/components/hooks/useElementRect';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';

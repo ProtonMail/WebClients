@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { useGetAddresses } from '@proton/account/addresses/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Copy from '@proton/components/components/button/Copy';
 import Icon from '@proton/components/components/icon/Icon';
 import SettingsLink from '@proton/components/components/link/SettingsLink';

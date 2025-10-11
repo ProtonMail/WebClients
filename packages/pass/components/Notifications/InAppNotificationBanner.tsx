@@ -2,8 +2,8 @@ import { createPortal } from 'react-dom';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import Icon from '@proton/components/components/icon/Icon';
 import { InAppNotificationState } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 

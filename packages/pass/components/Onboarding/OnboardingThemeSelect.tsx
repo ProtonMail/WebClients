@@ -3,7 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { Icon, Info, RadioGroup } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
+import RadioGroup from '@proton/components/components/input/RadioGroup';
+import Info from '@proton/components/components/link/Info';
 import automaticThemeImg from '@proton/pass/assets/settings/theme-automatic.svg';
 import darkThemeImg from '@proton/pass/assets/settings/theme-dark.svg';
 import lightThemeImg from '@proton/pass/assets/settings/theme-light.svg';

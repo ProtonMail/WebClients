@@ -1,6 +1,9 @@
 import { c } from 'ttag';
 
-import { Button, Card, DualPaneContent, DualPaneSidebar } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Card } from '@proton/atoms/Card/Card';
+import { DualPaneContent } from '@proton/atoms/DualPane/DualPaneContent';
+import { DualPaneSidebar } from '@proton/atoms/DualPane/DualPaneSidebar';
 import Icon from '@proton/components/components/icon/Icon';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Loader from '@proton/components/components/loader/Loader';

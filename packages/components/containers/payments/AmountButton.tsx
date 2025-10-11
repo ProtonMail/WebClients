@@ -1,5 +1,5 @@
-import type { ButtonProps } from '@proton/atoms';
-import { Button } from '@proton/atoms';
+import type { ButtonProps } from '@proton/atoms/Button/Button';
+import { Button } from '@proton/atoms/Button/Button';
 import Price from '@proton/components/components/price/Price';
 import type { Currency } from '@proton/payments';
 import clsx from '@proton/utils/clsx';

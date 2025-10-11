@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Logo from '@proton/components/components/logo/Logo';
 import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
 import { CYCLE, type Currency } from '@proton/payments';

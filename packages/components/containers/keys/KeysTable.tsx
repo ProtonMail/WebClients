@@ -1,7 +1,7 @@
 import { format } from 'date-fns';
 import { c } from 'ttag';
 
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';

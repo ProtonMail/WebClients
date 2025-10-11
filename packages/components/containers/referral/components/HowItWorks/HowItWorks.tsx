@@ -3,7 +3,9 @@ import type { ComponentPropsWithoutRef } from 'react';
 import { c } from 'ttag';
 
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
-import { Href, VerticalStep, VerticalSteps } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
+import { VerticalStep } from '@proton/atoms/VerticalSteps/VerticalStep';
+import { VerticalSteps } from '@proton/atoms/VerticalSteps/VerticalSteps';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

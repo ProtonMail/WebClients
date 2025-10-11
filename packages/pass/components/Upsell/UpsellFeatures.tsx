@@ -2,9 +2,9 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Card } from '@proton/atoms';
-import type { IconName } from '@proton/components';
-import { Icon } from '@proton/components';
+import { Card } from '@proton/atoms/Card/Card';
+import Icon from '@proton/components/components/icon/Icon';
+import type { IconName } from '@proton/icons/types';
 import { PASS_SENTINEL_LINK } from '@proton/pass/constants';
 import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';

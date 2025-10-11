@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { organizationActions } from '@proton/account/organization';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import RadioGroup from '@proton/components/components/input/RadioGroup';
 import Info from '@proton/components/components/link/Info';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';

@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import Icon from '@proton/components/components/icon/Icon';
 import { FileAttachmentsFieldEdit } from '@proton/pass/components/FileAttachments/FileAttachmentsFieldEdit';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { ExtraFieldGroup } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraFieldGroup';

@@ -4,7 +4,8 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { CircleLoader, Scroll } from '@proton/atoms';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import { PillBadge } from '@proton/pass/components/Layout/Badge/PillBadge';
 import { ButtonCard } from '@proton/pass/components/Layout/Card/ButtonCard';
 import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';

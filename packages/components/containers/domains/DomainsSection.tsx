@@ -8,7 +8,7 @@ import { useCustomDomains } from '@proton/account/domains/hooks';
 import { useDomainsAddresses } from '@proton/account/domainsAddresses/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';

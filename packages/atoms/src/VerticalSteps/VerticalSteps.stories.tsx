@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Icon } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
 
 import { VerticalStep, VerticalStepStatusEnum } from './VerticalStep';
 import { VerticalSteps } from './VerticalSteps';

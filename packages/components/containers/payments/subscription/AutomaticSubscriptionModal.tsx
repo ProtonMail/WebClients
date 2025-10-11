@@ -8,7 +8,7 @@ import { usePlans } from '@proton/account/plans/hooks';
 import { usePreviousSubscription } from '@proton/account/previousSubscription/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import useAppLink from '@proton/components/components/link/useAppLink';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import useModalState from '@proton/components/components/modalTwo/useModalState';

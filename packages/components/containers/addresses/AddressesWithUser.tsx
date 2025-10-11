@@ -8,7 +8,9 @@ import BYOEClaimProtonAddressModal from '@proton/activation/src/components/Modal
 import ConnectGmailButton from '@proton/activation/src/components/SettingsArea/ConnectGmailButton';
 import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '@proton/activation/src/constants';
 import useBYOEAddressesCounts from '@proton/activation/src/hooks/useBYOEAddressesCounts';
-import { Button, Href, Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Alert from '@proton/components/components/alert/Alert';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import OrderableTable from '@proton/components/components/orderableTable/OrderableTable';

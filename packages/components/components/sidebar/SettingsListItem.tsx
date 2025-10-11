@@ -3,9 +3,9 @@ import { forwardRef } from 'react';
 
 import { c } from 'ttag';
 
-import { NotificationDot } from '@proton/atoms';
+import { NotificationDot } from '@proton/atoms/NotificationDot/NotificationDot';
 import type { ThemeColor } from '@proton/colors';
-import type { IconName } from '@proton/components/components/icon/Icon';
+import type { IconName } from '@proton/icons/types';
 
 import SidebarListItem from './SidebarListItem';
 import SidebarListItemContent from './SidebarListItemContent';

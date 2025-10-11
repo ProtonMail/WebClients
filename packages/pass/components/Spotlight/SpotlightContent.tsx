@@ -2,8 +2,8 @@ import { type ComponentType, type ElementType, type FC, type MouseEvent, type Re
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import Icon from '@proton/components/components/icon/Icon';
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { SpotlightMessage } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';

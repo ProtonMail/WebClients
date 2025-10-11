@@ -5,7 +5,7 @@ import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
-import { CircleLoader } from '@proton/atoms';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import SearchInput from '@proton/components/components/input/SearchInput';
 import type { ContactExportingProps } from '@proton/components/containers/contacts/modals/ContactExportingModal';
 import useApi from '@proton/components/hooks/useApi';

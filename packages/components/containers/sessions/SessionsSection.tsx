@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Pagination from '@proton/components/components/pagination/Pagination';
 import usePagination from '@proton/components/components/pagination/usePagination';

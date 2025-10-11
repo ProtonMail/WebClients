@@ -1,7 +1,8 @@
 import { type FC, useEffect, useState } from 'react';
 
-import { Card } from '@proton/atoms';
-import { ModalTwoContent, ModalTwoHeader } from '@proton/components';
+import { Card } from '@proton/atoms/Card/Card';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import type { AsyncModalState } from '@proton/pass/hooks/useAsyncModalHandles';
 import { useSessionLockPinSubmitEffect } from '@proton/pass/hooks/useSessionLockPinSubmitEffect';

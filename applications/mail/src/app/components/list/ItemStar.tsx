@@ -3,8 +3,9 @@ import type { MouseEvent } from 'react';
 import { c } from 'ttag';
 
 import { Kbd, Tooltip } from '@proton/atoms';
-import Icon, { type IconSize } from '@proton/components/components/icon/Icon';
+import Icon from '@proton/components/components/icon/Icon';
 import { useLoading } from '@proton/hooks';
+import type { IconSize } from '@proton/icons/types';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import useFlag from '@proton/unleash/useFlag';

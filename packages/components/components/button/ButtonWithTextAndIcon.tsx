@@ -1,8 +1,10 @@
-import type { ButtonLikeSize } from '@proton/atoms';
-import { Button } from '@proton/atoms';
+import type { IconName } from 'packages/icons/types';
+
+import { Button } from '@proton/atoms/Button/Button';
+import type { ButtonLikeSize } from '@proton/atoms/Button/ButtonLike';
 import type { ThemeColorUnion } from '@proton/colors/types';
 
-import Icon, { type IconName } from '../icon/Icon';
+import Icon from '../icon/Icon';
 
 export function ButtonWithTextAndIcon({
     color,

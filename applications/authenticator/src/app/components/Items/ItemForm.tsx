@@ -5,9 +5,10 @@ import { Field } from 'formik';
 import type { EntryAlgorithm, EntryDTO, EntryType } from 'proton-authenticator/lib/entries/items';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { ButtonGroup, Option } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import Icon from '@proton/components/components/icon/Icon';
+import Option from '@proton/components/components/option/Option';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { InlineFieldBox } from '@proton/pass/components/Form/Field/Layout/InlineFieldBox';
 import { SelectField } from '@proton/pass/components/Form/Field/SelectField';

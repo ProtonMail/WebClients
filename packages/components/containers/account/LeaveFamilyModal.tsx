@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { leaveOrganization } from '@proton/account/organization/actions';
 import { useOrganization } from '@proton/account/organization/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useNotifications from '@proton/components/hooks/useNotifications';

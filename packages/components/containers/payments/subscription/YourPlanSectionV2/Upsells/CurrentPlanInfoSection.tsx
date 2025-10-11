@@ -2,14 +2,12 @@ import { type ReactNode, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import {
-    Button,
-    DashboardCard,
-    DashboardCardContent,
-    DashboardCardImage,
-    DashboardGrid,
-    DashboardGridSectionHeader,
-} from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { DashboardCard } from '@proton/atoms/DashboardCard/DashboardCard';
+import { DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
+import { DashboardCardImage } from '@proton/atoms/DashboardCard/DashboardCard';
+import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
+import { DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import Info from '@proton/components/components/link/Info';
 import DriveLogo from '@proton/components/components/logo/DriveLogo';
 import MailLogo from '@proton/components/components/logo/MailLogo';
@@ -17,7 +15,7 @@ import PassLogo from '@proton/components/components/logo/PassLogo';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import usePopper from '@proton/components/components/popper/usePopper';
 import SubscriptionEndsBannerV2 from '@proton/components/containers/topBanners/SubscriptionEndsBannerV2';
-import { IcChevronRight } from '@proton/icons';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import type { Currency, Cycle, FreePlanDefault, FullPlansMap, PlansMap } from '@proton/payments';
 import { CYCLE, PLANS, PLAN_NAMES, type Subscription, getSubscriptionPlanTitle } from '@proton/payments';
 import { getPlanToCheck, usePaymentsPreloaded } from '@proton/payments/ui';

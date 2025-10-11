@@ -1,7 +1,7 @@
 import { type Ref, forwardRef, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 
-import type { InputProps } from '@proton/atoms';
-import { Input } from '@proton/atoms';
+import type { InputProps } from '@proton/atoms/Input/Input';
+import { Input } from '@proton/atoms/Input/Input';
 import { useRightToLeft } from '@proton/components/containers/rightToLeft/useRightToLeft';
 import useCombinedRefs from '@proton/hooks/useCombinedRefs';
 import clsx from '@proton/utils/clsx';

@@ -3,9 +3,10 @@ import { cloneElement, useContext } from 'react';
 
 import { c } from 'ttag';
 
-import type { ButtonProps } from '@proton/atoms';
-import { Button, Vr } from '@proton/atoms';
-import { Tooltip } from '@proton/atoms';
+import type { ButtonProps } from '@proton/atoms/Button/Button';
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { Vr } from '@proton/atoms/Vr/Vr';
 import Icon from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';

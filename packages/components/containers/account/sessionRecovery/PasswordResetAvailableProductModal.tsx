@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Button, ButtonLike } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';

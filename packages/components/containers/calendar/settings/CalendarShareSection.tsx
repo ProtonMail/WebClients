@@ -2,7 +2,9 @@ import type { Dispatch, SetStateAction } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, ButtonLike, Card } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Card } from '@proton/atoms/Card/Card';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';

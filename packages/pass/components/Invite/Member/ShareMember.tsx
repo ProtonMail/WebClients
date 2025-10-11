@@ -2,8 +2,8 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Info } from '@proton/components'
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import Info from '@proton/components/components/link/Info';
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
 import { type InviteLabels, useInviteLabels } from '@proton/pass/components/Invite/useInviteLabels';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';

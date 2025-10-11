@@ -8,7 +8,7 @@ import { BASIC_AUTH_PERMISSIONS } from 'proton-pass-extension/lib/utils/permissi
 import type { Dispatch } from 'redux';
 import { c } from 'ttag';
 
-import { Checkbox } from '@proton/components';
+import Checkbox from '@proton/components/components/input/Checkbox';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { settingsEditIntent } from '@proton/pass/store/actions';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';

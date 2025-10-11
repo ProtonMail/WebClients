@@ -1,8 +1,8 @@
 import type { CSSProperties, RefObject } from 'react';
 
 import { Button, Tooltip } from '@proton/atoms';
-import type { IconSize } from '@proton/components';
 import type { IconProps } from '@proton/components/components/icon/Icon';
+import type { IconSize } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
 import './CircleButton.scss';

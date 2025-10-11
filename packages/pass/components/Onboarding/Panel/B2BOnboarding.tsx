@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { Scroll } from '@proton/atoms';
+import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import onboardingExtension from '@proton/pass/assets/b2b-onboarding/icons/extension-icon.svg';
 import onboardingImport from '@proton/pass/assets/b2b-onboarding/icons/import-icon.svg';
 import onboardingShare from '@proton/pass/assets/b2b-onboarding/icons/share-icon.svg';

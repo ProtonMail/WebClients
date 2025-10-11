@@ -1,0 +1,8 @@
+{
+    "name": "@proton/types",
+    "version": "0.0.1",
+    "types": "./index.d.ts",
+    "devDependencies": {
+        "@proton/eslint-config-proton": "workspace:^"
+    }
+}

@@ -1,19 +1,21 @@
 import { c } from 'ttag';
 
-import { Button, ButtonLike } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { IcArrowOutSquare, IcCheckmark } from '@proton/icons';
+import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { AUTHENTICATOR_APP_NAME, BRAND_NAME } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 
 import authenticatorLogo from './assets/authenticator-logo.svg';
 import authenticatorGraphic from './assets/authenticator.jpg';
-import type { AuthenticatorPromoFlowId} from './authenticatorTelemetry';
+import type { AuthenticatorPromoFlowId } from './authenticatorTelemetry';
 import { sendAuthenticatorPromoModalClick } from './authenticatorTelemetry';
 
 interface AuthenticatorModalProps {

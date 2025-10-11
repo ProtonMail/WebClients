@@ -2,7 +2,7 @@ import { useHistory } from 'react-router';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Alert from '@proton/components/components/alert/Alert';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';

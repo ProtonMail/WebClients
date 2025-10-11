@@ -1,14 +1,15 @@
 import { c } from 'ttag';
 
-import { InlineLinkButton } from '@proton/atoms';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import Badge from '@proton/components/components/badge/Badge';
-import Icon, { type IconName } from '@proton/components/components/icon/Icon';
+import Icon from '@proton/components/components/icon/Icon';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Meter from '@proton/components/components/progress/Meter';
 import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';
 import Time from '@proton/components/components/time/Time';
 import LearnMoreModal from '@proton/components/containers/topBanners/LearnMoreModal';
+import type { IconName } from '@proton/icons/types';
 import {
     Renew,
     type Subscription,

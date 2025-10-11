@@ -4,8 +4,9 @@ import { useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import type { getStorageRange, getTotalStorage } from '@proton/account/organization/storage';
-import { Donut, Slider } from '@proton/atoms';
-import { Tooltip } from '@proton/atoms';
+import { Donut } from '@proton/atoms/Donut/Donut';
+import { Slider } from '@proton/atoms/Slider/Slider';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { ThemeColor, getVariableFromThemeColor } from '@proton/colors';
 import useElementRect from '@proton/components/hooks/useElementRect';
 import humanSize, { getLongSizeFormat, getSizeFormat, getUnit } from '@proton/shared/lib/helpers/humanSize';

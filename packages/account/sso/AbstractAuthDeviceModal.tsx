@@ -3,8 +3,11 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { AuthDeviceOutput } from '@proton/shared/lib/keys/device';
 import noop from '@proton/utils/noop';
 

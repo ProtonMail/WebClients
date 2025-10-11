@@ -14,7 +14,9 @@ import {
 import { useOrganization } from '@proton/account/organization/hooks';
 import { getStorageRange, getTotalStorage } from '@proton/account/organization/storage';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
-import { Button, Card, Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Card } from '@proton/atoms/Card/Card';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';

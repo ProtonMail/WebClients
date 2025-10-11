@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import { EasySwitchOauthImportButton, EasySwitchProvider } from '@proton/activation';
 import { EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '@proton/activation/src/interface';
-import { Button } from '@proton/atoms';
-import { Href } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
 import Alert from '@proton/components/components/alert/Alert';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';

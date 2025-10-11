@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import Option from '@proton/components/components/option/Option';
 import type { SelectTwoProps } from '@proton/components/components/selectTwo/SelectTwo';

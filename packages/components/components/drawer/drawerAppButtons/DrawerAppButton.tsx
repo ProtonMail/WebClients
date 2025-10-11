@@ -2,8 +2,9 @@ import type { ComponentPropsWithRef, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { NotificationCounter, NotificationDot } from '@proton/atoms';
-import { Tooltip } from '@proton/atoms';
+import { NotificationCounter } from '@proton/atoms/NotificationCounter/NotificationCounter';
+import { NotificationDot } from '@proton/atoms/NotificationDot/NotificationDot';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { ThemeColor } from '@proton/colors/types';
 import type { PopperPlacement } from '@proton/components/components/popper/interface';
 import clsx from '@proton/utils/clsx';

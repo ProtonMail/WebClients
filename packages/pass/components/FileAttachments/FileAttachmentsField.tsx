@@ -5,8 +5,12 @@ import { useLocation } from 'react-router-dom';
 import type { FieldProps } from 'formik';
 import { c } from 'ttag';
 
-import { Button, Tooltip } from '@proton/atoms';
-import { Dropzone, FileInput, Icon, useNotifications } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import Dropzone from '@proton/components/components/dropzone/Dropzone';
+import Icon from '@proton/components/components/icon/Icon';
+import FileInput from '@proton/components/components/input/FileInput';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { WithPaidUser } from '@proton/pass/components/Core/WithPaidUser';

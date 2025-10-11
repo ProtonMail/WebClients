@@ -2,8 +2,9 @@ import { clsx } from 'clsx';
 
 import type { ButtonLikeSize } from '@proton/atoms';
 import { Button, Tooltip } from '@proton/atoms';
-import type { IconName, IconSize, PopperPlacement } from '@proton/components';
+import type { PopperPlacement } from '@proton/components';
 import { Icon } from '@proton/components';
+import type { IconName, IconSize } from '@proton/icons/types';
 
 interface LumoButtonProps {
     iconName: IconName;

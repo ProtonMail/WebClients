@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { InlineLinkButton } from '@proton/atoms';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 
 interface Props {
     onMerge: () => void;

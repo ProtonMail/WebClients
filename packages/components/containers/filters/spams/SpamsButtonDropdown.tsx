@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import type { DropdownButtonProps } from '@proton/components/components/dropdown/DropdownButton';

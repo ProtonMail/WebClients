@@ -10,7 +10,7 @@ import type { NotificationAction, NotificationActions } from 'proton-pass-extens
 import { IFramePortMessageType } from 'proton-pass-extension/app/content/types';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { OTPDonut } from '@proton/pass/components/Otp/OTPDonut';
 import { OTPValue } from '@proton/pass/components/Otp/OTPValue';
 import type { IOtpRenderer } from '@proton/pass/components/Otp/types';

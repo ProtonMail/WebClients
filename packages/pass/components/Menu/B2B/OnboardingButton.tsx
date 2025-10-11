@@ -2,9 +2,9 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
 import { default as DropdownMenuButtonCore } from '@proton/components/components/dropdown/DropdownMenuButton';
+import Icon from '@proton/components/components/icon/Icon';
 import { DropdownMenuButtonLabel } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { useOnboarding } from '@proton/pass/components/Onboarding/OnboardingProvider';
 import clsx from '@proton/utils/clsx';

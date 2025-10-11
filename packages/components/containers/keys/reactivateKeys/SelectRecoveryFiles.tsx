@@ -3,7 +3,7 @@ import { forwardRef, useEffect, useRef } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import type { ButtonProps } from '@proton/atoms';
+import type { ButtonProps } from '@proton/atoms/Button/Button';
 import FileInput from '@proton/components/components/input/FileInput';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useCombinedRefs } from '@proton/hooks';

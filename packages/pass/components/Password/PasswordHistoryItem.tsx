@@ -2,8 +2,8 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import Icon from '@proton/components/components/icon/Icon';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { getCharsGroupedByColor } from '@proton/pass/hooks/usePasswordGenerator';

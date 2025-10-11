@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Radio from '@proton/components/components/input/Radio';
 import clsx from '@proton/utils/clsx';
 

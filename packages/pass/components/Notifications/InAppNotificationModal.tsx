@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { ModalTwoFooter, ModalTwoHeader } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { WithInAppNotification } from '@proton/pass/components/Notifications/WithInAppNotification';
 import { InAppNotificationState } from '@proton/pass/types';

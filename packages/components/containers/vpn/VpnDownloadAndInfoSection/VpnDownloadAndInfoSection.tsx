@@ -2,7 +2,10 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { Button, DashboardGrid, DashboardGridSection, DashboardGridSectionHeader } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
+import { DashboardGridSection } from '@proton/atoms/DashboardGrid/DashboardGrid';
+import { DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import Loader from '@proton/components/components/loader/Loader';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { PLANS, PLAN_NAMES } from '@proton/payments';

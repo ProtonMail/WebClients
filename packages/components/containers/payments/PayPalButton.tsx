@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import type { ButtonProps } from '@proton/atoms';
-import { Button } from '@proton/atoms';
+import type { ButtonProps } from '@proton/atoms/Button/Button';
+import { Button } from '@proton/atoms/Button/Button';
 import type { PaypalProcessorHook } from '@proton/components/payments/react-extensions/usePaypal';
 import type { PaymentMethodFlow } from '@proton/payments';
 

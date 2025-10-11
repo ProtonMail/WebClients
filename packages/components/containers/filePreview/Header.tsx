@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import FileIcon from '@proton/components/components/fileIcon/FileIcon';
 import FileNameDisplay from '@proton/components/components/fileNameDisplay/FileNameDisplay';
 import Icon from '@proton/components/components/icon/Icon';

@@ -4,7 +4,8 @@ import { useCallback, useEffect, useRef } from 'react';
 import clsx from 'clsx';
 import { c } from 'ttag';
 
-import { Button , Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Icon from '@proton/components/components/icon/Icon';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useConfig from '@proton/components/hooks/useConfig';

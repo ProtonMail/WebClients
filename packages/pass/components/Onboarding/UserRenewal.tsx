@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';

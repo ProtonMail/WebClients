@@ -2,18 +2,16 @@ import type { ComponentPropsWithoutRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import {
-    IcArrowsRotate,
-    IcCheckmark,
-    IcPassShieldFillDanger,
-    IcPassShieldFillSuccess,
-    IcPassShieldFillWarning,
-    IcSquares,
-} from '@proton/icons';
+import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { IcPassShieldFillDanger } from '@proton/icons/icons/IcPassShieldFillDanger';
+import { IcPassShieldFillSuccess } from '@proton/icons/icons/IcPassShieldFillSuccess';
+import { IcPassShieldFillWarning } from '@proton/icons/icons/IcPassShieldFillWarning';
+import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { MIN_PASSWORD_LENGTH } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { IconName } from '@proton/icons';
+import type { IconName } from '@proton/icons/types';
 import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
 import type { MaybeNull } from '@proton/pass/types';

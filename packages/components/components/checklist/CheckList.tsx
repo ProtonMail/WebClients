@@ -3,7 +3,7 @@ import type { CSSProperties } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
 import accountLoginSmall from '@proton/styles/assets/img/illustrations/checklist-account-login-small.svg';

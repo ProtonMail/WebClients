@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Button, Href } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
 import useConfig from '@proton/components/hooks/useConfig';

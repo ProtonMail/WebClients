@@ -7,7 +7,7 @@ import { c } from 'ttag';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { InlineLinkButton } from '@proton/atoms';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Time from '@proton/components/components/time/Time';

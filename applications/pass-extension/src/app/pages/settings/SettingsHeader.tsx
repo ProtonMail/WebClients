@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
-import { Avatar } from '@proton/atoms';
+import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
 import { UpsellRef } from '@proton/pass/constants';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';

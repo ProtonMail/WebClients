@@ -8,11 +8,7 @@ import testingLibrary from 'eslint-plugin-testing-library';
 import { defineConfig, globalIgnores } from 'eslint/config';
 import { configs, parser, plugin } from 'typescript-eslint';
 
-const typeScriptExtensions = ['.ts', '.cts', '.mts', '.tsx'];
-const allExtensions = [...typeScriptExtensions, '.js', '.jsx', '.mjs', '.cjs'];
-
-const typescriptGlobs = typeScriptExtensions.map((ext) => `**/*${ext}`);
-const allGlobs = allExtensions.map((ext) => `**/*${ext}`);
+import { allExtensions, allGlobs, typeScriptExtensions, typescriptGlobs } from './globs.js';
 
 export default defineConfig(
     {
@@ -315,11 +311,6 @@ export default defineConfig(
                         {
                             group: ['@proton/payments/ui/*'],
                             message: 'You should import from `@proton/payments/ui` instead.',
-                        },
-                        { group: ['@proton/atoms/*'], message: 'You should import from `@proton/atoms` instead.' },
-                        {
-                            group: ['@proton/components/index'],
-                            message: 'You should import from `@proton/components` instead.',
                         },
                         {
                             group: ['@proton/unleash/index'],

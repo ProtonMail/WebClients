@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { useCustomDomains } from '@proton/account/domains/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
-import { InlineLinkButton } from '@proton/atoms';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { getSsoAppInfo } from '@proton/components/containers/organization/sso/ssoAppInfo';
 import type { APP_NAMES } from '@proton/shared/lib/constants';

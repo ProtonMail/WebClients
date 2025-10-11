@@ -6,9 +6,12 @@ import { MenuUser } from 'proton-pass-extension/app/popup/Views/Header/MenuUser'
 import { useExtensionClient } from 'proton-pass-extension/lib/components/Extension/ExtensionClient';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import type { DropdownProps } from '@proton/components';
-import { Dropdown, DropdownMenu, DropdownSizeUnit, usePopperAnchor } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import type { DropdownProps } from '@proton/components/components/dropdown/Dropdown';
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { verticalPopperPlacements } from '@proton/components/components/popper/utils';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';

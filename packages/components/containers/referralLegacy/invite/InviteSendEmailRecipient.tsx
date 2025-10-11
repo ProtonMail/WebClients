@@ -2,7 +2,7 @@ import type { MouseEventHandler } from 'react';
 
 import { c } from 'ttag';
 
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Icon from '@proton/components/components/icon/Icon';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import type { Recipient } from '@proton/shared/lib/interfaces';

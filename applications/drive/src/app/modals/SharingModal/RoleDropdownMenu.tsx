@@ -3,10 +3,10 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms';
-import type { IconName } from '@proton/components';
 import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton, Icon, usePopperAnchor } from '@proton/components';
 import { MemberRole, NonProtonInvitationState } from '@proton/drive';
 import useLoading from '@proton/hooks/useLoading';
+import type { IconName } from '@proton/icons/types';
 
 export const MenuItem = ({
     iconName,

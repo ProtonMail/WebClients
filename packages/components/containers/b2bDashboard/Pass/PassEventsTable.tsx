@@ -3,7 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import { getUnixTime, parseISO } from 'date-fns';
 import { c } from 'ttag';
 
-import { Avatar, Tooltip } from '@proton/atoms';
+import { Avatar } from '@proton/atoms/Avatar/Avatar';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import AppLink from '@proton/components/components/link/AppLink';
 import { SortingTableHeader } from '@proton/components/components/table/SortingTableHeader';
 import Table from '@proton/components/components/table/Table';

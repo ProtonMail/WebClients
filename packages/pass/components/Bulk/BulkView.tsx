@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { useBulkActions } from '@proton/pass/components/Bulk/BulkSelectionActions';
 import { useBulkSelection } from '@proton/pass/components/Bulk/BulkSelectionState';
 import { useCanDragItems } from '@proton/pass/hooks/useItemDrag';

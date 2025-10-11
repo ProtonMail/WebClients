@@ -3,10 +3,11 @@ import type { ReactElement, ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { DashboardCard, DashboardCardContent } from '@proton/atoms';
+import { DashboardCard } from '@proton/atoms/DashboardCard/DashboardCard';
+import { DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { IcChevronRight } from '@proton/icons';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { hasPaidVpn } from '@proton/shared/lib/user/helpers';

@@ -3,7 +3,7 @@ import { useSelector, useStore } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { Icon } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
 import { PINNED_ITEM_MAX_WIDTH_PX, PinnedItem } from '@proton/pass/components/Item/Pinned/PinnedItem';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';

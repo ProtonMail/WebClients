@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { useMembers } from '@proton/account/members/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import AddressesAutocompleteTwo from '@proton/components/components/v2/addressesAutocomplete/AddressesAutocomplete';

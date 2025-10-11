@@ -1,4 +1,4 @@
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Icon from '@proton/components/components/icon/Icon';
 import { ProtectionType } from '@proton/shared/lib/authlog';
 import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
