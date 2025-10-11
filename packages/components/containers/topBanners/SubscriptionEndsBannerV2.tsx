@@ -1,7 +1,9 @@
 import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
-import { Banner, ButtonLike, Href } from '@proton/atoms';
+import { Banner } from '@proton/atoms/Banner/Banner';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Href } from '@proton/atoms/Href/Href';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { REACTIVATE_SOURCE } from '@proton/components/containers/payments/subscription/cancellationFlow/useCancellationTelemetry';
 import {

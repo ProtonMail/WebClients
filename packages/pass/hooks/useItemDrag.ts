@@ -3,8 +3,8 @@ import { useCallback, useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { useItemsDroppable } from '@proton/components';
 import useItemsDraggable from '@proton/components/containers/items/useItemsDraggable';
+import useItemsDroppable from '@proton/components/containers/items/useItemsDroppable';
 import { useBulkEnabled, useBulkSelection } from '@proton/pass/components/Bulk/BulkSelectionState';
 import { useStableRef } from '@proton/pass/hooks/useStableRef';
 import { fromItemKey, getItemKey } from '@proton/pass/lib/items/item.utils';

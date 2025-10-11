@@ -8,8 +8,8 @@ import { unlock } from 'proton-authenticator/store/lock';
 import { useAppDispatch, useAppSelector } from 'proton-authenticator/store/utils';
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import Icon from '@proton/components/components/icon/Icon';
 import { PasswordField } from '@proton/pass/components/Form/legacy/PasswordField';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { AUTHENTICATOR_APP_NAME } from '@proton/shared/lib/constants';

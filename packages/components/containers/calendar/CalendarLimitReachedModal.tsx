@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Button, ButtonLike } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import type { Subscription } from '@proton/payments';

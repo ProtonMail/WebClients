@@ -1,8 +1,8 @@
 import type { Ref } from 'react';
 import { forwardRef } from 'react';
 
-import type { ButtonProps } from '@proton/atoms';
-import { Button } from '@proton/atoms';
+import type { ButtonProps } from '@proton/atoms/Button/Button';
+import { Button } from '@proton/atoms/Button/Button';
 import clsx from '@proton/utils/clsx';
 
 interface Props extends ButtonProps {

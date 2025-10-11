@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import { useSessionRecoveryGracePeriodHoursRemaining } from '@proton/components/hooks/useSessionRecovery';

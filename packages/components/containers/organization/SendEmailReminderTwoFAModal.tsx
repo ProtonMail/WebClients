@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Avatar, Button } from '@proton/atoms';
+import { Avatar } from '@proton/atoms/Avatar/Avatar';
+import { Button } from '@proton/atoms/Button/Button';
 import Badge from '@proton/components/components/badge/Badge';
 import Form from '@proton/components/components/form/Form';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';

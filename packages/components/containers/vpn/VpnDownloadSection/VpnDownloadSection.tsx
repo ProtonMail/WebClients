@@ -2,17 +2,20 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { ButtonLike, DashboardCard, DashboardCardContent } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { DashboardCard } from '@proton/atoms/DashboardCard/DashboardCard';
+import { DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuLink from '@proton/components/components/dropdown/DropdownMenuLink';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import type { IconName } from '@proton/components/components/icon/Icon';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import type { Tab } from '@proton/components/components/tabs/Tabs';
 import Tabs from '@proton/components/components/tabs/Tabs';
-import { IcArrowDownLine, IcArrowOutSquare } from '@proton/icons';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
+import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
+import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
 import appleAppStoreImage from './images/apple-app-store.svg';

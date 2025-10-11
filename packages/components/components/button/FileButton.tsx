@@ -1,7 +1,7 @@
 import type { ChangeEvent, DetailedHTMLProps, InputHTMLAttributes, KeyboardEvent, ReactNode, Ref } from 'react';
 import { forwardRef, useRef } from 'react';
 
-import { ButtonLike } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { useCombinedRefs } from '@proton/hooks';
 import clsx from '@proton/utils/clsx';
 

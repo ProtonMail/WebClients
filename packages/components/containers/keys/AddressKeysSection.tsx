@@ -10,7 +10,7 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { getKTActivation } from '@proton/account/kt/actions';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserKeys } from '@proton/account/userKeys/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';

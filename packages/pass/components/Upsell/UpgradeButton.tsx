@@ -2,11 +2,13 @@ import type { CSSProperties, FC, MouseEventHandler } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, ButtonLike, type ButtonLikeSize } from '@proton/atoms';
-import type { IconSize } from '@proton/components';
-import { Icon } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import type { ButtonLikeSize } from '@proton/atoms/Button/ButtonLike';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
 import type { PromotionButtonProps } from '@proton/components/components/button/PromotionButton/PromotionButton';
+import Icon from '@proton/components/components/icon/Icon';
+import type { IconSize } from '@proton/icons/types';
 import type { UpsellRef } from '@proton/pass/constants';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import { wait } from '@proton/shared/lib/helpers/promise';

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Alert from '@proton/components/components/alert/Alert';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';

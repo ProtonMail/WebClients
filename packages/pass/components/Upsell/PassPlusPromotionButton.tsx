@@ -1,8 +1,8 @@
 import type { FC } from 'react';
 
-import { Icon } from '@proton/components';
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
 import type { PromotionButtonProps } from '@proton/components/components/button/PromotionButton/PromotionButton';
+import Icon from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
 
 import './PassPlusPromotionButton.scss';

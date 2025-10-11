@@ -5,7 +5,10 @@ import isEmpty from 'lodash/isEmpty';
 import { c } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
-import { Button, CircleLoader, Panel, PanelHeader } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { Panel } from '@proton/atoms/Panel/Panel';
+import { PanelHeader } from '@proton/atoms/Panel/PanelHeader';
 import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import useModalState from '@proton/components/components/modalTwo/useModalState';

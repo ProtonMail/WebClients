@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/components';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import type { OnFileUploadProgress } from '@proton/pass/hooks/files/useFileUpload';
 import { resolveMimeTypeForFile, useFileUpload } from '@proton/pass/hooks/files/useFileUpload';
 import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';

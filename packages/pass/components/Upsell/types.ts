@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import type { IconName } from '@proton/components';
+import type { IconName } from '@proton/icons/types';
 
 type FeatureKeys = 'individuals' | 'business';
 

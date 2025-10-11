@@ -3,9 +3,10 @@ import { type FC, useEffect, useState } from 'react';
 import { reloadManager } from 'proton-pass-extension/lib/utils/reload';
 import { c } from 'ttag';
 
-import { Button, CircleLoader } from '@proton/atoms';
-import type { IconName } from '@proton/components';
-import { Icon } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import Icon from '@proton/components/components/icon/Icon';
+import type { IconName } from '@proton/icons/types';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { LobbyLayout } from '@proton/pass/components/Layout/Lobby/LobbyLayout';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';

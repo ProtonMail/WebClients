@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { useFormik } from 'formik';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Icon from '@proton/components/components/icon/Icon';
 import { ItemCreatePanel } from '@proton/pass/components/Layout/Panel/ItemCreatePanel';
 import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';

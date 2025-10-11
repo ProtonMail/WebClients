@@ -3,7 +3,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/components';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import type { IOtpRenderer } from '@proton/pass/components/Otp/types';
 import type { Maybe, MaybeNull, MaybePromise, OtpCode, OtpRequest } from '@proton/pass/types';

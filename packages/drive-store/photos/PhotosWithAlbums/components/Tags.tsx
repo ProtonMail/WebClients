@@ -1,7 +1,8 @@
+import type { IconName } from 'packages/icons/types';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, type IconName, UncontainedWrapper } from '@proton/components';
+import { Icon, UncontainedWrapper } from '@proton/components';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import clsx from '@proton/utils/clsx';
 

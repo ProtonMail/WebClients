@@ -1,11 +1,4 @@
-import { useDocumentActions } from '../../__utils/document-actions'
-import type { ComponentPropsWithoutRef, ReactNode } from 'react'
-import { Fragment, useEffect, useRef, useState } from 'react'
-import { DocContextMenu } from './DocContextMenu/DocContextMenu'
-import { useContextMenu } from './DocContextMenu/context'
-import * as Table from './table'
-import { DateFormatter, type RecentDocumentsItem } from '@proton/docs-core'
-import type { IconName } from '@proton/components'
+import { Avatar, Button, Input, Tooltip } from '@proton/atoms'
 import {
   Dropdown,
   DropdownMenu,
@@ -14,19 +7,26 @@ import {
   useAuthentication,
   usePopperAnchor,
 } from '@proton/components'
-import { c } from 'ttag'
-import { Avatar, Button, Input, Tooltip } from '@proton/atoms'
-import { getInitials } from '@proton/shared/lib/helpers/string'
-import clsx from '@proton/utils/clsx'
+import { DateFormatter, type RecentDocumentsItem } from '@proton/docs-core'
+import type { IconName } from '@proton/icons/types'
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks'
+import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '@proton/shared/lib/constants'
+import { getInitials } from '@proton/shared/lib/helpers/string'
+import clsx from '@proton/utils/clsx'
+import type { ComponentPropsWithoutRef, ReactNode } from 'react'
+import { Fragment, useEffect, useRef, useState } from 'react'
+import { c } from 'ttag'
+import { useApplication } from '~/utils/application-context'
+import { useDocumentActions } from '../../__utils/document-actions'
+import { getOwnerName } from '../../__utils/get-owner-name'
 import type { RecentsSort } from '../../__utils/homepage-view'
 import { useHomepageView, type ItemsSection, type ItemsSectionId } from '../../__utils/homepage-view'
+import { DocContextMenu } from './DocContextMenu/DocContextMenu'
+import { useContextMenu } from './DocContextMenu/context'
 import { COLOR_BY_TYPE, ContentSheet, ICON_BY_TYPE } from './shared'
-import { useApplication } from '~/utils/application-context'
-import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
-import { getOwnerName } from '../../__utils/get-owner-name'
+import * as Table from './table'
 
 // table
 // -----

@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Icon } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 
 export const ContactAdminWarning: FC = () => {

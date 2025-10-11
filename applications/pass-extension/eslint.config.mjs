@@ -1,12 +1,14 @@
 import { defineConfig } from 'eslint/config';
 
 import defaultConfig from '@proton/eslint-config-proton/all';
+import barrelConfig from '@proton/eslint-config-proton/barrel';
 
 export default defineConfig([
     {
         files: ['src/**/*'],
         extends: [
             defaultConfig,
+            barrelConfig,
             {
                 rules: {
                     'no-console': ['error', { allow: ['warn', 'error', 'info'] }],

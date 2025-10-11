@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Editor from '@proton/components/components/editor/Editor';
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
 import type { EditorActions } from '@proton/components/components/editor/interface';

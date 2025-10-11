@@ -2,8 +2,9 @@ import { type CSSProperties, type FC, useEffect, useRef, useState } from 'react'
 
 import { c } from 'ttag';
 
-import { Button, Scroll } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import { Scroll } from '@proton/atoms/Scroll/Scroll';
+import Icon from '@proton/components/components/icon/Icon';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { mimetypeForDownload } from '@proton/pass/lib/file-attachments/helpers';
 import type { Maybe } from '@proton/pass/types';

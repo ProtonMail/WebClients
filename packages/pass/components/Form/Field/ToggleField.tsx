@@ -1,6 +1,6 @@
 import type { FieldProps } from 'formik';
 
-import { Toggle } from '@proton/components';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import type { ToggleProps } from '@proton/components/components/toggle/Toggle';
 
 type ToggleGroupFieldProps = FieldProps & ToggleProps;

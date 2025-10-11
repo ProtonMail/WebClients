@@ -6,8 +6,8 @@ import { ExtensionHead } from 'proton-pass-extension/lib/components/Extension/Ex
 import { useRequestForkWithPermissions } from 'proton-pass-extension/lib/hooks/useRequestFork';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { useNotifications } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 import { chromeAPI } from '@proton/pass/lib/globals/browser';
 import type { MaybeNull } from '@proton/pass/types';

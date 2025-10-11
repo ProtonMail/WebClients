@@ -5,8 +5,9 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Avatar, Button, ButtonLike } from '@proton/atoms';
-import type { IconName, ModalOwnProps } from '@proton/components';
+import type { ModalOwnProps } from '@proton/components';
 import { Icon, ModalTwo, ModalTwoContent, SettingsLink, useConfig } from '@proton/components';
+import type { IconName } from '@proton/icons/types';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { format } from '@proton/shared/lib/date-fns-utc';
 import { dateLocale } from '@proton/shared/lib/i18n';

@@ -8,7 +8,7 @@ import {
 } from 'proton-pass-extension/lib/utils/privacy';
 import { c } from 'ttag';
 
-import { Checkbox } from '@proton/components';
+import Checkbox from '@proton/components/components/input/Checkbox';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { settingsEditIntent } from '@proton/pass/store/actions';
 import { selectPendingBrowserAutofill } from '@proton/pass/store/selectors';

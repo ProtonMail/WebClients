@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Input } from '@proton/atoms';
+import { Input } from '@proton/atoms/Input/Input';
 import type { VCardAddress, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import generateUID from '@proton/utils/generateUID';
 

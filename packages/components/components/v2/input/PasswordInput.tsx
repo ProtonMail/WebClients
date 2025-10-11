@@ -3,8 +3,9 @@ import { forwardRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import type { InputProps } from '@proton/atoms';
-import { Button, Input } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import type { InputProps } from '@proton/atoms/Input/Input';
+import { Input } from '@proton/atoms/Input/Input';
 import Icon from '@proton/components/components/icon/Icon';
 
 type PasswordType = 'password' | 'text';

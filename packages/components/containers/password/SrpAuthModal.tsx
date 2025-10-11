@@ -6,7 +6,8 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { Button, InlineLinkButton } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import Form from '@proton/components/components/form/Form';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';

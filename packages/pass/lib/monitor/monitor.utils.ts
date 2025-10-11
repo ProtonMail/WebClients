@@ -1,4 +1,4 @@
-import type { FetchedBreaches } from '@proton/components';
+import type { FetchedBreaches } from '@proton/components/containers/credentialLeak/models';
 import { isBreached, isMonitored } from '@proton/pass/lib/items/item.predicates';
 import type {
     Breach,

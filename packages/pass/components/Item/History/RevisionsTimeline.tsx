@@ -4,8 +4,9 @@ import type { RouteChildrenProps } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button, CircleLoader } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import Icon from '@proton/components/components/icon/Icon';
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';

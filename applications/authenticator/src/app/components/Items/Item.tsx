@@ -10,7 +10,7 @@ import logger from 'proton-authenticator/lib/logger';
 import { service } from 'proton-authenticator/lib/wasm/service';
 import { c } from 'ttag';
 
-import { Marks } from '@proton/components';
+import Marks from '@proton/components/components/text/Marks';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { DEFAULT_OTP_COLORS, OTPDonut } from '@proton/pass/components/Otp/OTPDonut';
 import type { IOtpRenderer } from '@proton/pass/components/Otp/types';

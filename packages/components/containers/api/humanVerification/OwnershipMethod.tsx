@@ -4,7 +4,7 @@ import { flushSync } from 'react-dom';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Loader from '@proton/components/components/loader/Loader';
 import { isVerifyAddressOwnership } from '@proton/components/containers/api/humanVerification/helper';

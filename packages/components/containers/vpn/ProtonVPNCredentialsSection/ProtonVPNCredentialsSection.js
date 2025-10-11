@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
 import Alert from '@proton/components/components/alert/Alert';
 import Field from '@proton/components/components/container/Field';
 import Row from '@proton/components/components/container/Row';

@@ -3,7 +3,7 @@ import type { List } from 'react-virtualized';
 
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { ItemsListItem } from '@proton/pass/components/Item/List/ItemsListItem';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';

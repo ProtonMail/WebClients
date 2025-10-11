@@ -5,8 +5,12 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { Button, Card, CircleLoader, Href, InlineLinkButton } from '@proton/atoms';
-import { Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Card } from '@proton/atoms/Card/Card';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { Href } from '@proton/atoms/Href/Href';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Badge from '@proton/components/components/badge/Badge';
 import Icon from '@proton/components/components/icon/Icon';
 import AppLink from '@proton/components/components/link/AppLink';

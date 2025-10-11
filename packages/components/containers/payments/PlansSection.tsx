@@ -7,7 +7,7 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
 import useApi from '@proton/components/hooks/useApi';

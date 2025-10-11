@@ -1,6 +1,6 @@
 import type { IconName, IconSize } from 'packages/icons';
 
-import type { ButtonLikeShape } from '@proton/atoms';
+import type { ButtonLikeShape } from '@proton/atoms/Button/ButtonLike';
 import type { Feature } from '@proton/components/containers/offers/interface';
 import type { Currency } from '@proton/payments';
 

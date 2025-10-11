@@ -2,7 +2,9 @@ import { type FC, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Collapsible, CollapsibleContent, CollapsibleHeader } from '@proton/components';
+import Collapsible from '@proton/components/components/collapsible/Collapsible';
+import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
+import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import CollapsibleHeaderToggleButton from '@proton/pass/components/Layout/Button/CollapsibleHeaderToggleButton';
 import { LearnMoreCard, type LearnMoreProps } from '@proton/pass/components/Layout/Card/LearnMoreCard';

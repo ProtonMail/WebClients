@@ -3,8 +3,8 @@ import { Fragment, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Icon from '@proton/components/components/icon/Icon';
 import Input from '@proton/components/components/input/Input';
 import Radio from '@proton/components/components/input/Radio';

@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { type ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
-import Icon, { type IconName } from '@proton/components/components/icon/Icon';
+import Icon from '@proton/components/components/icon/Icon';
+import type { IconName } from '@proton/icons/types';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import googleLogo from '@proton/styles/assets/img/import/providers/google.svg';
 

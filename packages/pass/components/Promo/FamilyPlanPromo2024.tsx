@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import img from '@proton/pass/assets/upsell/family-plan-2024.png';
 import type { BaseSpotlightMessage } from '@proton/pass/components/Spotlight/SpotlightContent';

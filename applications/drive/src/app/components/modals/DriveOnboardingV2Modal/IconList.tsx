@@ -1,7 +1,7 @@
 import { memo } from 'react';
 
-import type { IconName } from '@proton/components';
 import { Icon } from '@proton/components';
+import type { IconName } from '@proton/icons/types';
 
 type Props = {
     items: ({ text: string; icon?: IconName } | false)[];

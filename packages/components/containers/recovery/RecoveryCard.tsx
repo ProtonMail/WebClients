@@ -2,8 +2,9 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { ButtonLike, Href } from '@proton/atoms';
-import Icon, { type IconName } from '@proton/components/components/icon/Icon';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Href } from '@proton/atoms/Href/Href';
+import Icon from '@proton/components/components/icon/Icon';
 import AppLink from '@proton/components/components/link/AppLink';
 import Loader from '@proton/components/components/loader/Loader';
 import SettingsSectionTitle from '@proton/components/containers/account/SettingsSectionTitle';
@@ -17,6 +18,7 @@ import useIsMnemonicAvailable from '@proton/components/hooks/useIsMnemonicAvaila
 import useIsSentinelUser from '@proton/components/hooks/useIsSentinelUser';
 import useRecoverySecrets from '@proton/components/hooks/useRecoverySecrets';
 import useRecoveryStatus from '@proton/components/hooks/useRecoveryStatus';
+import type { IconName } from '@proton/icons/types';
 import { SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';

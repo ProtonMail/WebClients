@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { organizationThunk } from '@proton/account/organization';
 import { userThunk } from '@proton/account/user';
-import { ButtonLike } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { PLANS } from '@proton/payments';
 import familyPlanBackground from '@proton/styles/assets/img/onboarding/familyPlan.svg';

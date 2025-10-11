@@ -4,19 +4,17 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import {
-    Checkbox,
-    Icon,
-    InputFieldTwo,
-    Table,
-    TableBody,
-    TableCell,
-    TableHeader,
-    TableHeaderCell,
-    TableRow,
-    useNotifications,
-} from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import Icon from '@proton/components/components/icon/Icon';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableCell from '@proton/components/components/table/TableCell';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
+import TableRow from '@proton/components/components/table/TableRow';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { hasCriteria, toggleCriteria } from '@proton/pass/lib/settings/criteria';
 import { settingsEditIntent } from '@proton/pass/store/actions';

@@ -3,11 +3,12 @@ import type { PropsWithChildren } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useMember } from '@proton/account/member/hook';
-import Icon, { type IconName } from '@proton/components/components/icon/Icon';
+import Icon from '@proton/components/components/icon/Icon';
 import Meter from '@proton/components/components/progress/Meter';
 import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';
 import { getHighSpeedVPNConnectionsText } from '@proton/components/containers/payments/features/vpn';
+import type { IconName } from '@proton/icons/types';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { Address, Organization, UserModel } from '@proton/shared/lib/interfaces';
 import type { Calendar } from '@proton/shared/lib/interfaces/calendar';

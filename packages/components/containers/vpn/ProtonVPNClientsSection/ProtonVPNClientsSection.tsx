@@ -2,7 +2,9 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button, ButtonLike, Href } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Href } from '@proton/atoms/Href/Href';
 import Copy from '@proton/components/components/button/Copy';
 import DropdownMenuLink from '@proton/components/components/dropdown/DropdownMenuLink';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';

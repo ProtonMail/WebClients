@@ -3,7 +3,8 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, CircleLoader } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Label from '@proton/components/components/label/Label';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';

@@ -3,7 +3,7 @@ import { type FC, useMemo } from 'react';
 import type { Item } from 'proton-authenticator/lib/db/entities/items';
 import { issuerService } from 'proton-authenticator/lib/wasm/service';
 
-import { CircleLoader } from '@proton/atoms';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 
 type CodeLogoProps = Pick<Item, 'name' | 'issuer'> & { syncing: boolean };

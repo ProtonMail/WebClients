@@ -2,7 +2,8 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Card } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Card } from '@proton/atoms/Card/Card';
 import Copy from '@proton/components/components/button/Copy';
 import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';

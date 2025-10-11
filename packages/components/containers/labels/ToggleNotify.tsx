@@ -2,7 +2,7 @@ import type { ChangeEvent } from 'react';
 
 import { c } from 'ttag';
 
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';

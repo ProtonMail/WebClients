@@ -2,8 +2,12 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Card } from '@proton/atoms';
-import { Table, TableBody, TableHeader, TableHeaderCell, TableRow } from '@proton/components';
+import { Card } from '@proton/atoms/Card/Card';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
+import TableRow from '@proton/components/components/table/TableRow';
 import type { LoginItem } from '@proton/pass/types';
 
 import { BreachUsageRow } from './BreachUsageRow';

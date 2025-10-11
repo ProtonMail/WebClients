@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { EasySwitchProvider } from '@proton/activation';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import type { SelectedDrawerOption } from '@proton/components/components/drawer/views/DrawerView';
 import DrawerView from '@proton/components/components/drawer/views/DrawerView';
 import { CONTACT_TAB } from '@proton/components/components/drawer/views/interface';

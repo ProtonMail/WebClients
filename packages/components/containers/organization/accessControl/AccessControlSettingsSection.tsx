@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { organizationActions } from '@proton/account/organization';
 import { useSamlSSO } from '@proton/account/samlSSO/hooks';
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Logo from '@proton/components/components/logo/Logo';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';

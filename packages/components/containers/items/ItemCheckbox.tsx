@@ -1,9 +1,10 @@
 import type { ChangeEvent, FocusEventHandler, MouseEventHandler } from 'react';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import Icon, { type IconName } from '@proton/components/components/icon/Icon';
+import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import ContactImage from '@proton/components/containers/contacts/ContactImage';
+import type { IconName } from '@proton/icons/types';
 import { DENSITY } from '@proton/shared/lib/constants';
 import { toValidHtmlId } from '@proton/shared/lib/dom/toValidHtmlId';
 import clsx from '@proton/utils/clsx';

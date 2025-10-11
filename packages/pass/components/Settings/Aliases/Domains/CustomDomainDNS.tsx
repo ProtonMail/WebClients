@@ -2,8 +2,9 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Banner, Button } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { Banner } from '@proton/atoms/Banner/Banner';
+import { Button } from '@proton/atoms/Button/Button';
+import Icon from '@proton/components/components/icon/Icon';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { verifyCustomDomain } from '@proton/pass/store/actions';

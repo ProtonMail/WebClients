@@ -4,7 +4,7 @@ import { c, msgid } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { DropdownActionProps } from '@proton/components/components/dropdown/DropdownActions';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import Icon from '@proton/components/components/icon/Icon';

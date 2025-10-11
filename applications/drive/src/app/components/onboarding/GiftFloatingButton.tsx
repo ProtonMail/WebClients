@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import type { ThemeColorUnion } from '@proton/colors';
-import type { IconName } from '@proton/components';
 import {
     FloatingButton,
     Icon,
@@ -13,6 +12,7 @@ import {
     useAuthentication,
     useLocalState,
 } from '@proton/components';
+import type { IconName } from '@proton/icons/types';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, BRAND_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants';

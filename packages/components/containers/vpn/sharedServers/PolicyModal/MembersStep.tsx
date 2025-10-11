@@ -2,7 +2,10 @@ import React, { useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { CircleLoader, Href, Input, Tooltip } from '@proton/atoms';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { Href } from '@proton/atoms/Href/Href';
+import { Input } from '@proton/atoms/Input/Input';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Table from '@proton/components/components/table/Table';

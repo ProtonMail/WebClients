@@ -2,8 +2,8 @@ import type { FC, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import Icon from '@proton/components/components/icon/Icon';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { ShareMember } from '@proton/pass/components/Invite/Member/ShareMember';
 import { PendingExistingMember, PendingNewMember } from '@proton/pass/components/Invite/Member/SharePendingMember';

@@ -1,9 +1,7 @@
 import React from 'react';
 
-import type { IconName } from '@proton/components/components/icon/Icon';
-
 export interface DealItem {
-    icon: IconName;
+    icon: string;
     text: string | string[];
 }
 

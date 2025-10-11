@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import type { ButtonProps } from '@proton/atoms';
-import { Button } from '@proton/atoms';
+import type { ButtonProps } from '@proton/atoms/Button/Button';
+import { Button } from '@proton/atoms/Button/Button';
 import useDownloadRecoveryFile from '@proton/components/hooks/recoveryFile/useDownloadRecoveryFile';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';

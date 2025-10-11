@@ -7,7 +7,9 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { Button, CircleLoader, Href } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { Href } from '@proton/atoms/Href/Href';
 import Alert from '@proton/components/components/alert/Alert';
 import Details from '@proton/components/components/container/Details';
 import Row from '@proton/components/components/container/Row';

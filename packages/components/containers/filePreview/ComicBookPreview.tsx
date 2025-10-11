@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import JSZip from 'jszip';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import clsx from '@proton/utils/clsx';
 

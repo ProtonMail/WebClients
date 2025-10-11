@@ -5,16 +5,14 @@ import { c } from 'ttag';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import {
-    Button,
-    ButtonLike,
-    DashboardCard,
-    DashboardCardContent,
-    DashboardCardImage,
-    DashboardGrid,
-    DashboardGridSection,
-    DashboardGridSectionHeader,
-} from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { DashboardCard } from '@proton/atoms/DashboardCard/DashboardCard';
+import { DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
+import { DashboardCardImage } from '@proton/atoms/DashboardCard/DashboardCard';
+import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
+import { DashboardGridSection } from '@proton/atoms/DashboardGrid/DashboardGrid';
+import { DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import Loader from '@proton/components/components/loader/Loader';
 import DriveLogo from '@proton/components/components/logo/DriveLogo';
 import MailLogo from '@proton/components/components/logo/MailLogo';
@@ -24,7 +22,7 @@ import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedTex
 import useConfig from '@proton/components/hooks/useConfig';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import useLoad from '@proton/components/hooks/useLoad';
-import { IcArrowRight } from '@proton/icons';
+import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import {
     CYCLE,
     FREE_PLAN,

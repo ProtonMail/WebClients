@@ -7,7 +7,7 @@ import { popupMessage, sendMessage } from 'proton-pass-extension/lib/message/sen
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { LobbyContent } from '@proton/pass/components/Layout/Lobby/LobbyContent';
 import { LobbyLayout } from '@proton/pass/components/Layout/Lobby/LobbyLayout';

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 
 import type { Condition, FilterStatement } from '../filters/interfaces';
 import useFilterConditions from '../filters/modal/useFilterConditions';

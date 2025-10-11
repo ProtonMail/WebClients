@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';

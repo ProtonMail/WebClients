@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { Info } from '@proton/components';
+import Info from '@proton/components/components/link/Info';
 import automaticThemeImg from '@proton/pass/assets/settings/theme-automatic.svg';
 import darkThemeImg from '@proton/pass/assets/settings/theme-dark.svg';
 import lightThemeImg from '@proton/pass/assets/settings/theme-light.svg';

@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Banner, BannerVariants } from '@proton/atoms';
+import { Banner } from '@proton/atoms/Banner/Banner';
+import { BannerVariants } from '@proton/atoms/Banner/Banner';
 import {
     type PaymentMethodType,
     type SavedPaymentMethod,

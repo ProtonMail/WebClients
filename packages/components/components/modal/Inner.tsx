@@ -1,7 +1,7 @@
 import type { ReactNode, Ref } from 'react';
 import { forwardRef } from 'react';
 
-import { ScrollShadows } from '@proton/atoms';
+import { ScrollShadows } from '@proton/atoms/Scroll/ScrollShadows';
 import clsx from '@proton/utils/clsx';
 
 interface Props {

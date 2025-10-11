@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { useCustomDomains } from '@proton/account/domains/hooks';
-import { Button } from '@proton/atoms';
-import { Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';

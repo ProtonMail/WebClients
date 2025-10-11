@@ -2,7 +2,7 @@ import type { ComponentPropsWithoutRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
 import clsx from '@proton/utils/clsx';
 
 interface SettingsParagraphProps extends ComponentPropsWithoutRef<'p'> {
@@ -24,7 +24,9 @@ const SettingsParagraph = ({
     const learnMoreElement = learnMoreUrl ? (
         <>
             {inlineLearnMore ? ' ' : <br />}
-            <Href href={learnMoreUrl} className={className}>{learnMoreText}</Href>
+            <Href href={learnMoreUrl} className={className}>
+                {learnMoreText}
+            </Href>
         </>
     ) : null;
 

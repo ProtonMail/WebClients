@@ -1,9 +1,11 @@
 import { c } from 'ttag';
 
-import { Button, DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
+import { DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import Info from '@proton/components/components/link/Info';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
-import { IcChevronRight } from '@proton/icons';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { CYCLE, PLANS, PLAN_NAMES, type Subscription } from '@proton/payments';
 import { getHasConsumerVpnPlan } from '@proton/payments';
 import { DASHBOARD_UPSELL_PATHS } from '@proton/shared/lib/constants';

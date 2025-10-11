@@ -2,7 +2,8 @@ import { type FC, type ReactNode, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, CircleLoader } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';

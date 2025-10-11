@@ -2,7 +2,8 @@ import { useEffect, useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Option, SelectTwo } from '@proton/components';
+import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { mailboxVerificationRequired } from '@proton/pass/lib/alias/alias.utils';
 
 import { useAliasMailboxes } from './AliasMailboxesProvider';

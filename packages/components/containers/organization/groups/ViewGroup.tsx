@@ -1,7 +1,9 @@
 import { c } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
-import { Button, Panel, PanelHeader } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Panel } from '@proton/atoms/Panel/Panel';
+import { PanelHeader } from '@proton/atoms/Panel/PanelHeader';
 import Copy from '@proton/components/components/button/Copy';
 import Icon from '@proton/components/components/icon/Icon';
 import useNotifications from '@proton/components/hooks/useNotifications';

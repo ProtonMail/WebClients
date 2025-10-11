@@ -3,8 +3,8 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Icon } from '@proton/components'
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import Icon from '@proton/components/components/icon/Icon';
 import { getShareRoleDefinition } from '@proton/pass/components/Invite/Member/ShareRoleOptions';
 import { useInviteLabels } from '@proton/pass/components/Invite/useInviteLabels';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';

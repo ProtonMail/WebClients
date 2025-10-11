@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Button, Href } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
 import { Audience, type Organization } from '@proton/shared/lib/interfaces';
 import illustration from '@proton/styles/assets/img/illustrations/activity-monitor-illustration.svg';
 

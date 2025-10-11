@@ -2,7 +2,8 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Kbd, Tooltip } from '@proton/atoms';
+import { Kbd } from '@proton/atoms/Kbd/Kbd';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { AutotypeKeyboardShortcut } from '@proton/pass/components/Item/Autotype/AutotypeKeyboardShortcut';
 import type { Item } from '@proton/pass/types';
 import type { AutotypeAction } from '@proton/pass/types/desktop/autotype';

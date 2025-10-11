@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { AbstractAuthDevicesModal } from '@proton/account/sso/AbstractAuthDeviceModal';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { TopBar } from '@proton/pass/components/Layout/Bar/TopBar';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { confirmPendingAuthDevice, rejectPendingAuthDevice } from '@proton/pass/store/actions/creators/sso';

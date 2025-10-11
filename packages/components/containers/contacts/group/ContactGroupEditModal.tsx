@@ -3,7 +3,8 @@ import { useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Button, Input } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Input } from '@proton/atoms/Input/Input';
 import {
     type AddressesAutocompleteItem,
     getContactsAutocompleteItems,

@@ -5,8 +5,8 @@ import type { Locale } from 'date-fns';
 import { addDays, format, parse } from 'date-fns';
 import { c } from 'ttag';
 
-import type { InputProps } from '@proton/atoms';
-import { Input } from '@proton/atoms';
+import type { InputProps } from '@proton/atoms/Input/Input';
+import { Input } from '@proton/atoms/Input/Input';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import LocalizedMiniCalendar from '@proton/components/components/miniCalendar/LocalizedMiniCalendar';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
@@ -98,7 +98,6 @@ const DateInputTwo = ({
                 return;
             }
             return newDate;
-            // eslint-disable-next-line no-empty
         } catch (e: any) {}
     }, [temporaryInput]);
 

@@ -7,7 +7,8 @@ import { useAvailableSessions } from 'proton-pass-web/app/Auth/AuthSwitchProvide
 import { c } from 'ttag';
 
 import { Scroll } from '@proton/atoms';
-import { DropdownButton, Icon } from '@proton/components';
+import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
+import Icon from '@proton/components/components/icon/Icon';
 import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';

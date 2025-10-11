@@ -5,8 +5,8 @@ import type { Locale } from 'date-fns';
 import { addMinutes, format, parse, startOfDay } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import type { InputProps } from '@proton/atoms';
-import { Input } from '@proton/atoms';
+import type { InputProps } from '@proton/atoms/Input/Input';
+import { Input } from '@proton/atoms/Input/Input';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';

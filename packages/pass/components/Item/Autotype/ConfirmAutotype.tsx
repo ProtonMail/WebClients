@@ -3,8 +3,11 @@ import type { FC } from 'react';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Checkbox, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ConfirmationModalProps } from '@proton/pass/components/Confirmation/ConfirmationModal';
 import { AutotypeKeyboardShortcut } from '@proton/pass/components/Item/Autotype/AutotypeKeyboardShortcut';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';

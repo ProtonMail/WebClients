@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import type { BaseSpotlightMessage } from '@proton/pass/components/Spotlight/SpotlightContent';

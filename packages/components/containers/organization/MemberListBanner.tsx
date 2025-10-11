@@ -2,9 +2,10 @@ import { type ReactNode, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Card, InlineLinkButton } from '@proton/atoms';
+import { Card } from '@proton/atoms/Card/Card';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import Icon from '@proton/components/components/icon/Icon';
-import type { IconName } from '@proton/icons';
+import type { IconName } from '@proton/icons/types';
 import type { Member } from '@proton/shared/lib/interfaces';
 import { getMemberEmailOrName } from '@proton/shared/lib/keys/memberHelper';
 

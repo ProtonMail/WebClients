@@ -2,7 +2,13 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Badge, Table, TableBody, TableCell, TableHeader, TableHeaderCell, TableRow } from '@proton/components';
+import Badge from '@proton/components/components/badge/Badge';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableCell from '@proton/components/components/table/TableCell';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
+import TableRow from '@proton/components/components/table/TableRow';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import type { CustomDomainOutput } from '@proton/pass/types';

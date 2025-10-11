@@ -1,8 +1,9 @@
 import type { ChangeEvent, FC, KeyboardEvent, KeyboardEventHandler } from 'react';
 import { useEffect, useReducer } from 'react';
 
-import { Button } from '@proton/atoms';
-import { Icon, InputFieldTwo } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import Icon from '@proton/components/components/icon/Icon';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import clsx from '@proton/utils/clsx';
 
 import './IncrementableInput.scss';

@@ -4,6 +4,6 @@
     "compilerOptions": {
         "target": "esnext",
         "lib": ["dom", "dom.iterable", "esnext", "WebWorker", "DOM.AsyncIterable"],
-        "types": ["webpack-env", "jest", "chrome", "webextension-polyfill", "./globals.d.ts"]
+        "types": ["@proton/types", "webpack-env", "jest", "chrome", "webextension-polyfill", "./globals.d.ts"]
     }
 }

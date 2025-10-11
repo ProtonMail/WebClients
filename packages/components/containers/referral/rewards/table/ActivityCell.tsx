@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
+import type { IconName } from '@proton/icons/types';
 import type { Referral } from '@proton/shared/lib/interfaces';
 import { ReferralState } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import Icon, { type IconName } from '../../../../components/icon/Icon';
+import Icon from '../../../../components/icon/Icon';
 
 type TickLevel = 'empty' | 'partial' | 'complete';
 

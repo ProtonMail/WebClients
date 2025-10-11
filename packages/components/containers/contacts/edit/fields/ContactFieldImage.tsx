@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import RemoteImage from '@proton/components/components/image/RemoteImage';
 import type { ContactImageProps } from '@proton/components/containers/contacts/modals/ContactImageModal';
 import type { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';

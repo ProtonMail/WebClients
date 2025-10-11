@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import Icon from '@proton/components/components/icon/Icon';
 import AppLink from '@proton/components/components/link/AppLink';
 import SettingsLink from '@proton/components/components/link/SettingsLink';

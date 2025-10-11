@@ -1,9 +1,9 @@
 import type { RefObject } from 'react';
 import React, { useRef } from 'react';
 
-import type { IconName } from '@proton/components/components/icon/Icon';
 import Icon from '@proton/components/components/icon/Icon';
 import SelectButton from '@proton/components/components/selectTwo/SelectButton';
+import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
 import './DeviceSelect.scss';

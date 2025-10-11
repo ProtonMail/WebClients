@@ -2,7 +2,8 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Href } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';

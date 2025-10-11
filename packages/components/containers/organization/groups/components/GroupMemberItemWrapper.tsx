@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { Avatar } from '@proton/atoms';
+import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { GROUP_MEMBER_TYPE } from '@proton/shared/lib/interfaces';
 

@@ -2,8 +2,11 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, CircleLoader } from '@proton/atoms';
-import { Badge, TableCell, TableRow } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import Badge from '@proton/components/components/badge/Badge';
+import TableCell from '@proton/components/components/table/TableCell';
+import TableRow from '@proton/components/components/table/TableRow';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';

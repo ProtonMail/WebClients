@@ -3,7 +3,12 @@ import { useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { Banner, BannerVariants, Button, Href, InlineLinkButton, Tooltip } from '@proton/atoms';
+import { Banner } from '@proton/atoms/Banner/Banner';
+import { BannerVariants } from '@proton/atoms/Banner/Banner';
+import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';

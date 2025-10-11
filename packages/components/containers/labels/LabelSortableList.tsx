@@ -2,7 +2,7 @@ import type { SortableContainerProps } from 'react-sortable-hoc';
 
 import { c } from 'ttag';
 
-import { Scroll } from '@proton/atoms';
+import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import Icon from '@proton/components/components/icon/Icon';
 import OrderableTable from '@proton/components/components/orderableTable/OrderableTable';
 import OrderableTableBody from '@proton/components/components/orderableTable/OrderableTableBody';

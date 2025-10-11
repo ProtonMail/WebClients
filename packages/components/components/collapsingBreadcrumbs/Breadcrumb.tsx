@@ -1,7 +1,7 @@
 import type { LiHTMLAttributes, ReactNode, Ref } from 'react';
 import { forwardRef } from 'react';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import clsx from '@proton/utils/clsx';
 
 interface Props extends Omit<LiHTMLAttributes<HTMLLIElement>, 'onClick'> {

@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { Card } from '@proton/atoms';
+import { Card } from '@proton/atoms/Card/Card';
 import Loader from '@proton/components/components/loader/Loader';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { PLANS, PLAN_NAMES } from '@proton/payments';

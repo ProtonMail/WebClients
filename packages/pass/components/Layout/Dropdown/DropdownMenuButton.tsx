@@ -12,11 +12,15 @@ import {
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import type { IconName, PopperPlacement } from '@proton/components';
-import { Dropdown, DropdownMenu, Icon, usePopperAnchor } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import type { Props as DropdownMenuButtonCoreProps } from '@proton/components/components/dropdown/DropdownMenuButton';
 import { default as DropdownMenuButtonCore } from '@proton/components/components/dropdown/DropdownMenuButton';
+import Icon from '@proton/components/components/icon/Icon';
+import type { PopperPlacement } from '@proton/components/components/popper/interface';
+import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
+import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
 type QuickActionChildProp = { onClick: (evt: MouseEvent) => void };

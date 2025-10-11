@@ -1,7 +1,7 @@
 import { type FC, useEffect, useState } from 'react';
 
-import type { IconSize } from '@proton/components/components/icon/Icon';
-import Icon, { type IconName } from '@proton/components/components/icon/Icon';
+import Icon from '@proton/components/components/icon/Icon';
+import type { IconName, IconSize } from '@proton/icons/types';
 import PassUI from '@proton/pass/lib/core/ui.proxy';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';

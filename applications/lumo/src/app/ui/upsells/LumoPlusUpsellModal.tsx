@@ -12,10 +12,10 @@ import {
     SUBSCRIPTION_STEPS,
     useSubscriptionModal,
 } from '@proton/components';
-import type { IconName } from '@proton/components/components/icon/Icon';
 import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
+import type { IconName } from '@proton/icons/types';
 import { CYCLE, PLANS } from '@proton/payments';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import lumoCatLoaf from '@proton/styles/assets/img/lumo/lumo-cat-loaf-upsell.svg';

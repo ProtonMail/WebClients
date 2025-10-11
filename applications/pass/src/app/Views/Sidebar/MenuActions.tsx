@@ -4,7 +4,8 @@ import { useCallback, useMemo } from 'react';
 import { useAuthService } from 'proton-pass-web/app/Auth/AuthServiceProvider';
 import { c } from 'ttag';
 
-import { type IconName, useNotifications } from '@proton/components';
+import useNotifications from '@proton/components/hooks/useNotifications';
+import type { IconName } from '@proton/icons/types';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
