@@ -17,13 +17,13 @@
     "devDependencies": {
         "@mlc-ai/web-llm": "patch:@mlc-ai/web-llm@npm%3A0.2.32#~/.yarn/patches/@mlc-ai-web-llm-npm-0.2.32-df249f5180.patch",
         "@proton/jest-env": "workspace:^",
-        "@testing-library/jest-dom": "^6.8.0",
+        "@testing-library/jest-dom": "^6.9.1",
         "babel-jest": "^30.2.0",
-        "eslint": "^9.36.0",
+        "eslint": "^9.37.0",
         "jest": "^30.2.0",
         "typescript": "^5.9.2",
         "vite": "^5.4.20",
-        "vite-plugin-mkcert": "^1.17.8",
+        "vite-plugin-mkcert": "^1.17.9",
         "vite-plugin-singlefile": "^2.3.0"
     }
 }
