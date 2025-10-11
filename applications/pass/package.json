@@ -36,12 +36,12 @@
         "@proton/pack": "workspace:^",
         "@proton/testing": "workspace:^",
         "@proton/types": "workspace:^",
-        "cross-env": "^10.0.0",
-        "eslint": "^9.36.0",
+        "cross-env": "^10.1.0",
+        "eslint": "^9.37.0",
         "jest": "^30.2.0",
         "prettier": "^3.6.2",
         "typescript": "^5.9.2",
-        "webpack": "^5.101.3",
+        "webpack": "^5.102.1",
         "webpack-manifest-plugin": "^5.0.1"
     }
 }
