@@ -161,7 +161,7 @@ export const createInlineService = () => {
 
             for (const frameId of path) {
                 if (frameId === 0) continue;
-                await browser.tabs.sendMessage(tabId, backgroundMessage(message), { frameId }).catch(noop);
+                void browser.tabs.sendMessage(tabId, backgroundMessage(message), { frameId }).catch(noop);
             }
 
             return true;
@@ -212,9 +212,8 @@ export const createInlineService = () => {
             const path = getFramePath(frames, payload.fieldFrameId);
 
             for (const frameId of path) {
-                if (frameId === payload.fieldFrameId) continue;
                 if (frameId === 0) continue;
-                await browser.tabs
+                void browser.tabs
                     .sendMessage(
                         tabId,
                         backgroundMessage({
