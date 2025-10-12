@@ -20,7 +20,7 @@ import { FieldType } from '@proton/pass/fathom/labels';
 import type { Maybe } from '@proton/pass/types';
 import { isElementBusy, isParentBusy } from '@proton/pass/utils/dom/form';
 import { findScrollableParent } from '@proton/pass/utils/dom/scroll';
-import { getMaxZIndex } from '@proton/pass/utils/dom/zindex';
+import { getOverlayZIndex } from '@proton/pass/utils/dom/zindex';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
@@ -41,20 +41,26 @@ export interface FormHandle {
     formType: FormType;
     formId: string;
     tracker?: FormTracker;
+    otp: boolean;
+    zIndex: number;
+    scrollParent: HTMLElement;
     detach: () => void;
     detachField: (field: FieldElement) => void;
     getFieldById: (fieldId: string) => Maybe<FieldHandle>;
     getFields: (predicate?: (handle: FieldHandle) => boolean) => FieldHandle[];
     getFieldsFor: (type: FieldType, predicate?: (handle: FieldHandle) => boolean) => FieldHandle[];
-    otp: boolean;
     reconciliate: (type: FormType, fields: DetectedField[]) => void;
 }
+
+type ComputedFormData = {
+    scrollParent?: HTMLElement;
+    zIndex?: number;
+};
 
 export const createFormHandles = (options: DetectedForm): FormHandle => {
     const { form, formType, fields: detectedFields } = options;
     const listeners = createListenerStore();
-    const zIndex = getMaxZIndex(options.fields.map(prop('field'))) + 5;
-    const scrollRef = findScrollableParent(form);
+    const data: ComputedFormData = {};
 
     const formHandle: FormHandle = {
         formId: uniqueId(8),
@@ -68,11 +74,20 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
                     element: field,
                     formType,
                     fieldType,
-                    zIndex,
                     getFormHandle: () => formHandle,
                 }),
             ])
         ),
+
+        get zIndex() {
+            data.zIndex = data.zIndex ?? getOverlayZIndex(options.fields.map(prop('field')), form) + 5;
+            return data.zIndex;
+        },
+
+        get scrollParent() {
+            data.scrollParent = data.scrollParent ?? findScrollableParent(form);
+            return data.scrollParent;
+        },
 
         get busy() {
             const btns = Array.from(form.querySelectorAll<HTMLElement>(buttonSelector));
@@ -158,7 +173,6 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
                         element: field,
                         formType,
                         fieldType,
-                        zIndex,
                         getFormHandle: () => formHandle,
                     });
 
@@ -252,7 +266,6 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
     );
 
     listeners.addResizeObserver(options.form, onFormResize);
-    listeners.addListener(scrollRef, 'scroll', () => repositionFields(false));
 
     return formHandle;
 };

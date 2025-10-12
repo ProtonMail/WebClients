@@ -42,9 +42,8 @@ export interface IconController {
 
 export const createIconController = (options: IconControllerOptions): IconController => {
     const { input, form, zIndex, tag } = options;
-
     const anchor = options.getAnchor({ reflow: false });
-    const { icon, control } = createIcon({ anchor: anchor.element, zIndex, tag });
+    const { icon, control } = createIcon({ form, zIndex, tag });
 
     let ready = false;
 

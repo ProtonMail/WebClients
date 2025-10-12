@@ -26,7 +26,6 @@ type CreateFieldHandlesOptions = {
     element: HTMLInputElement;
     formType: FormType;
     fieldType: FieldType;
-    zIndex: number;
     getFormHandle: () => FormHandle;
 };
 
@@ -57,8 +56,6 @@ export interface FieldHandle {
     tracker: MaybeNull<FieldTracker>;
     /** input value - updated on change */
     value: string;
-    /** optimal z-index for icon injection */
-    zIndex: number;
     attach: (tracker?: FormTracker) => void;
     attachIcon: () => Maybe<IconController>;
     autofill: (value: string, options?: AutofillOptions) => Promise<void>;
@@ -93,12 +90,7 @@ const canProcessAction = withContext<(action: DropdownAction) => boolean>((ctx, 
     }
 });
 
-export const createFieldHandles = ({
-    element,
-    fieldType,
-    zIndex,
-    getFormHandle,
-}: CreateFieldHandlesOptions): FieldHandle => {
+export const createFieldHandles = ({ element, fieldType, getFormHandle }: CreateFieldHandlesOptions): FieldHandle => {
     let anchor: Maybe<FieldAnchor>;
 
     const field: FieldHandle = {
@@ -111,7 +103,6 @@ export const createFieldHandles = ({
         autofilled: null,
         tracked: false,
         tracker: null,
-        zIndex,
         getFormHandle,
         getAnchor: (options) => {
             if (!anchor) anchor = createFieldAnchor(element);
@@ -163,15 +154,16 @@ export const createFieldHandles = ({
         /* if an icon is already attached recycle it */
         attachIcon: withContext((ctx) => {
             if (!ctx || !isInputElement(field.element)) return;
+            const form = field.getFormHandle();
 
             field.getAnchor().connect();
             field.icon =
                 field.icon ??
                 createIconController({
                     input: field.element,
-                    form: field.getFormHandle().element,
+                    form: form.element,
                     tag: ctx.elements.control,
-                    zIndex: field.zIndex,
+                    zIndex: form.zIndex,
                     getAnchor: field.getAnchor,
                     onClick: () => {
                         if (field.action) {

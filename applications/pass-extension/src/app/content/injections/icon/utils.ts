@@ -280,12 +280,12 @@ export const applyInjectionStyles = (refs: IconElementRefs) => {
 };
 
 export type CreateIconConfig = {
-    anchor: HTMLElement;
+    form: HTMLElement;
     tag: string;
     zIndex: number;
 };
 
-export const createIcon = ({ anchor, tag, zIndex }: CreateIconConfig): IconElement => {
+export const createIcon = ({ form, tag, zIndex }: CreateIconConfig): IconElement => {
     const control = createCustomElement<ProtonPassControl>({ type: tag, styles: ProtonPassControlStyles });
     const icon = createElement<HTMLButtonElement>({ type: 'button', classNames: [] });
 
@@ -299,9 +299,8 @@ export const createIcon = ({ anchor, tag, zIndex }: CreateIconConfig): IconEleme
      * while avoiding interferences in websites sensitive to the DOM structure of their
      * input fields (eg: some websites expect their input elements to always be the first
      * child of a wrapper component - interfering with this could cause unintented crashes) */
-    const parent = anchor.closest('form, [data-protonpass-form]') ?? document.body;
     control.shadowRoot.appendChild(icon);
-    parent.appendChild(control.customElement);
+    form.appendChild(control.customElement);
 
     return { icon, control: control.customElement };
 };
