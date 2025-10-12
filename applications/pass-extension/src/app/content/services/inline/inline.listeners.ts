@@ -38,8 +38,8 @@ export const createInlineFrameListeners = (channel: FrameMessageBroker) => {
             ).catch(noop);
         };
 
-        listeners.addListener(document, 'scroll', close, { passive: true, once: true, capture: true });
-        listeners.addListener(window, 'focus', close, { passive: true, once: true, capture: true });
+        listeners.addListener(window, 'scroll', close, { passive: true, once: true, capture: true });
+        listeners.addListener(window, 'focus', close, { once: true });
     };
 
     const onInlineDropdownClosed: FrameMessageHandler<WorkerMessageType.INLINE_DROPDOWN_CLOSED> = () => {

@@ -80,38 +80,12 @@ export const createInlineRelay = ({ controller }: ContentScriptContextFactoryOpt
                         },
                     })
                 );
-
-                const handleClose = () => dropdown.close({ type: 'field', field: req.field });
-
-                const handleBlur = () =>
-                    sendMessage(
-                        contentScriptMessage({
-                            type: WorkerMessageType.INLINE_FRAME_BLUR,
-                            payload: { formId, fieldId },
-                        })
-                    ).catch(noop);
-
-                /** Intercept scroll events in sub-frames. It is too costly to try to reposition
-                 * any injected UI elements in the top-frame via messaging. */
-                activeListeners.addListener(document, 'scroll', handleClose, { capture: true });
-                activeListeners.addListener(window, 'blur', handleBlur, { once: true });
-
-                /** Intercept backdrop clicks in sub-frames. The backdrop click
-                 * handler in the top-frame will not catch clicks in sub-frames */
-                activeListeners.addListener(window, 'mousedown', (event: Event) => {
-                    const target = event.target as MaybeNull<HTMLElement>;
-                    const rootNode = req.field.element.getRootNode();
-                    const host = isShadowRoot(rootNode) ? rootNode.host : null;
-                    const excludes = [req.field.icon?.element, req.field.element, host].filter(truthy);
-
-                    if (!target || !excludes.includes(target)) handleClose();
-                });
             });
         }),
 
         close: (target) => {
-            activeListeners.removeAll();
             void queue.push(async () => {
+                activeListeners.removeAll();
                 await sendMessage(
                     contentScriptMessage({
                         type: WorkerMessageType.INLINE_DROPDOWN_CLOSE,
@@ -167,14 +141,60 @@ export const createInlineRelay = ({ controller }: ContentScriptContextFactoryOpt
         }
     );
 
+    const onInlineDropdownOpened: FrameMessageHandler<WorkerMessageType.INLINE_DROPDOWN_OPENED> = withContext(
+        (ctx, { payload }) => {
+            const { fieldId, formId } = payload;
+            const form = ctx?.service.formManager.getFormById(formId);
+            const field = form?.getFieldById(fieldId);
+
+            if (!(form && field)) return;
+
+            const close = () => dropdown.close({ type: 'field', field });
+
+            const handleBlur = () =>
+                sendMessage(
+                    contentScriptMessage({
+                        type: WorkerMessageType.INLINE_FRAME_BLUR,
+                        payload: { formId, fieldId },
+                    })
+                ).catch(noop);
+
+            /** Intercept scroll events in sub-frames. It is too costly to try to reposition
+             * any injected UI elements in the top-frame via messaging. */
+            const scrollParent = form.scrollParent;
+            const scrollOptions = { capture: true, once: true, passive: true } as const;
+
+            activeListeners.addListener(window, 'scroll', close, scrollOptions);
+            activeListeners.addListener(scrollParent, 'scroll', close, scrollOptions);
+            activeListeners.addListener(window, 'blur', handleBlur, { once: true });
+
+            /** Intercept backdrop clicks in sub-frames. The backdrop click
+             * handler in the top-frame will not catch clicks in sub-frames.
+             * FIXME: this should be factorized */
+            activeListeners.addListener(window, 'mousedown', (event: Event) => {
+                const target = event.target as MaybeNull<HTMLElement>;
+                const rootNode = field.element.getRootNode();
+
+                const host = isShadowRoot(rootNode) ? rootNode.host : null;
+                const excludes = [field.icon?.element, field.element, host].filter(truthy);
+
+                if (!target || !excludes.includes(target)) close();
+            });
+        }
+    );
+
     return {
         init: () => {
             channel.register(WorkerMessageType.INLINE_DROPDOWN_CLOSED, onInlineDropdownClosed);
+            channel.register(WorkerMessageType.INLINE_DROPDOWN_OPENED, onInlineDropdownOpened);
             inlineListeners.init();
         },
         destroy: () => {
             channel.unregister(WorkerMessageType.INLINE_DROPDOWN_CLOSED, onInlineDropdownClosed);
+            channel.unregister(WorkerMessageType.INLINE_DROPDOWN_OPENED, onInlineDropdownOpened);
+            activeListeners.removeAll();
             inlineListeners.destroy();
+            queue.cancel();
         },
 
         setTheme: noop,

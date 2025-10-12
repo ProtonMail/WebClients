@@ -25,7 +25,6 @@ import { truthy } from '@proton/pass/utils/fp/predicates';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import type { ParsedUrl } from '@proton/pass/utils/url/types';
 import { resolveDomain, resolveSubdomain } from '@proton/pass/utils/url/utils';
-import { getScrollParent } from '@proton/shared/lib/helpers/dom';
 import noop from '@proton/utils/noop';
 
 import { createDropdownFocusController } from './dropdown.focus';
@@ -265,9 +264,7 @@ export const createDropdown = (popover: PopoverController): InjectedDropdown => 
 
                 switch (request.type) {
                     case 'field':
-                        const { field } = request;
-                        const scrollParent = getScrollParent(field.element);
-                        iframe.open(request.action, scrollParent);
+                        iframe.open(request.action);
                         updatePosition();
                         break;
 

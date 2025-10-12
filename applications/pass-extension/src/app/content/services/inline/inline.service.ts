@@ -54,13 +54,18 @@ export const createInlineService = ({
             if (autoclose) dropdown.close();
 
             if (didAnchorChange) {
-                const layer = payload.type === 'field' ? payload.field.getFormHandle().element : undefined;
-                iframes.attachDropdown(layer)?.open(payload);
-
+                const form = payload.type === 'field' ? payload.field.getFormHandle() : undefined;
+                const layer = form?.element;
                 const close = () => dropdown.close(payload);
 
+                iframes.attachDropdown(layer)?.open(payload);
+
+                const scrollParent = form?.scrollParent;
+                const scrollOptions = { capture: true, once: true, passive: true } as const;
+
                 activeListeners.addListener(window, 'resize', close, { once: true, passive: true });
-                activeListeners.addListener(document, 'scroll', close, { once: true, passive: true, capture: true });
+                activeListeners.addListener(window, 'scroll', close, scrollOptions);
+                activeListeners.addListener(scrollParent, 'scroll', close, scrollOptions);
             }
         },
 

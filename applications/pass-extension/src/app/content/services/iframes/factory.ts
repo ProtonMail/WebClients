@@ -76,7 +76,7 @@ export interface IFrameApp<A> {
     ensureReady: () => Promise<void>;
     getPosition: () => IFramePosition;
     init: (port: Runtime.Port, getPayload: () => IFrameInitPayload) => void;
-    open: (action: A, scrollRef?: HTMLElement) => void;
+    open: (action: A) => void;
     registerMessageHandler: <M extends IFrameMessage['type']>(
         type: M,
         handler: IFramePortMessageHandler<M>,
@@ -236,17 +236,11 @@ export const createIFrameApp = <A>({
         }
     };
 
-    const open = (action: A, anchor?: HTMLElement) => {
+    const open = (action: A) => {
         if (!state.visible) {
             popover.open();
             state.action = action;
             state.visible = true;
-
-            if (anchor) {
-                activeListeners.addListener(window, 'resize', updatePosition);
-                activeListeners.addListener(window, 'scroll', updatePosition);
-                activeListeners.addListener(anchor, 'scroll', updatePosition);
-            }
 
             if (backdrop?.enabled) {
                 const onMouseDown = (event: Event) => {
