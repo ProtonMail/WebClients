@@ -154,9 +154,16 @@ export const abortableSequence = async (operations: AsyncCallback[], signal: Abo
 
 export const createAsyncQueue = () => {
     let chain = Promise.resolve() as Promise<unknown>;
+    let active = true;
 
     return {
-        push: <T extends any>(job: () => MaybePromise<T>) =>
-            (chain = chain.then(() => Promise.resolve(job())).catch(noop)),
+        push: <T extends any>(job: () => MaybePromise<T>) => {
+            active = true;
+            return (chain = chain.then(() => (active ? Promise.resolve(job()) : undefined)).catch(noop));
+        },
+        cancel: () => {
+            active = false;
+            chain = Promise.resolve();
+        },
     };
 };
