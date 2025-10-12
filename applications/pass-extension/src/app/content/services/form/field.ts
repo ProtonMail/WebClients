@@ -115,7 +115,7 @@ export const createFieldHandles = ({
         getFormHandle,
         getAnchor: (options) => {
             if (!anchor) anchor = createFieldAnchor(element);
-            if (options?.reflow) anchor.revalidate();
+            else if (options?.reflow) anchor.revalidate();
             return anchor;
         },
         setValue: (value) => {
@@ -164,7 +164,7 @@ export const createFieldHandles = ({
         attachIcon: withContext((ctx) => {
             if (!ctx || !isInputElement(field.element)) return;
 
-            field.getAnchor().observe();
+            field.getAnchor().connect();
             field.icon =
                 field.icon ??
                 createIconController({
