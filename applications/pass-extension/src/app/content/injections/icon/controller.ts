@@ -82,7 +82,7 @@ export const createIconController = (options: IconControllerOptions): IconContro
 
         repositioning.request = requestAnimationFrame(async () => {
             /* Wait for anchor animations to complete before repositioning */
-            await waitUntil(() => !anchor.animating, 100, 1_000).catch(() => noop);
+            await waitUntil(() => !anchor.animating, 25, 1_000).catch(() => noop);
 
             if (!ready) {
                 ready = true;

@@ -5,8 +5,8 @@ import { createListenerStore } from '@proton/pass/utils/listener/factory';
 export interface FieldAnchor {
     animating: boolean;
     element: HTMLElement;
+    connect: () => void;
     disconnect: () => void;
-    observe: () => void;
     revalidate: () => void;
 }
 
@@ -19,29 +19,22 @@ export const createFieldAnchor = (element: HTMLElement) => {
         connected: false,
     };
 
+    const disconnect = () => {
+        state.connected = false;
+        state.animating = false;
+        listeners.removeAll();
+    };
+
     /* Listen for CSS transitions to track element animation state */
-    const observe = () => {
+    const connect = () => {
         if (!state.connected) {
             state.connected = true;
             listeners.removeAll();
+            const onTransition = () => !state.animating && (state.animating = true);
 
-            const onTransitionEnd = () => {
-                state.animating = false;
-                observe();
-            };
-
-            const onTransition = () => {
-                if (!state.animating) {
-                    state.animating = true;
-                    listeners.addListener(state.anchor, 'transitionend', onTransitionEnd, {
-                        passive: true,
-                        once: true,
-                    });
-                }
-            };
-
-            listeners.addListener(state.anchor, 'transitionrun', onTransition, { passive: true, once: true });
-            listeners.addListener(state.anchor, 'transitionstart', onTransition, { passive: true, once: true });
+            listeners.addListener(state.anchor, 'transitionrun', onTransition, { once: true });
+            listeners.addListener(state.anchor, 'transitionstart', onTransition, { once: true });
+            listeners.addListener(state.anchor, 'transitionend', disconnect, { once: true });
         }
     };
 
@@ -55,16 +48,11 @@ export const createFieldAnchor = (element: HTMLElement) => {
         revalidate: () => {
             const next = findInputBoundingElement(element);
             if (next !== state.anchor) {
-                state.animating = false;
                 state.anchor = next;
-                listeners.removeAll();
-                observe();
+                disconnect();
             }
         },
-        observe,
-        disconnect: () => {
-            state.connected = false;
-            listeners.removeAll();
-        },
+        connect,
+        disconnect,
     };
 };
