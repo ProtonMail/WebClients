@@ -30,6 +30,7 @@ export type Listener<T extends EventSource = any, E extends keyof EventMap<T> = 
           fn: (e: EventType<T, E>) => void;
           element: T;
           type: E;
+          options?: AddEventListenerOptions;
       }
     | {
           kind: 'observer';
@@ -58,19 +59,20 @@ export const createListenerStore = () => {
         options?: AddEventListenerOptions
     ): (() => void) => {
         if (element !== undefined) {
-            const listener: Listener = { kind: 'listener', element, type, fn };
-            listeners.push(listener);
+            const listener: Listener = { kind: 'listener', element, type, fn, options };
 
             const cleanup = () => {
                 const idx = listeners.indexOf(listener);
-                listeners.splice(idx, 1);
+                if (idx !== -1) listeners.splice(idx, 1);
             };
 
-            const handler = (options?.once ? pipe(fn, cleanup) : fn) as EventListener;
-            element.addEventListener(type as string, handler, options);
+            listener.fn = (options?.once ? pipe(fn, cleanup) : fn) as EventListener;
+            listeners.push(listener);
+
+            element.addEventListener(type as string, listener.fn, options);
 
             return () => {
-                element.removeEventListener(type as string, handler);
+                element.removeEventListener(type as string, listener.fn, options);
                 cleanup();
             };
         }
@@ -126,7 +128,7 @@ export const createListenerStore = () => {
                     return listener.unsubscribe();
                 case 'listener':
                     cancelDebounce(listener.fn);
-                    return listener.element.removeEventListener(listener.type, listener.fn);
+                    return listener.element.removeEventListener(listener.type, listener.fn, listener.options);
             }
         });
 
