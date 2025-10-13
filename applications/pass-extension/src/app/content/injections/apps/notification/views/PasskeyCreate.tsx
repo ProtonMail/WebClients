@@ -15,7 +15,7 @@ import { WithPinUnlock } from 'proton-pass-extension/app/content/injections/apps
 import { ScrollableItemsList } from 'proton-pass-extension/app/content/injections/apps/components/ScrollableItemsList';
 import { NotificationHeader } from 'proton-pass-extension/app/content/injections/apps/notification/components/NotificationHeader';
 import { IFramePortMessageType } from 'proton-pass-extension/app/content/services/iframes/messages';
-import type { NotificationRequest } from 'proton-pass-extension/app/content/services/iframes/notification';
+import type { NotificationRequest } from 'proton-pass-extension/app/content/services/iframes/notification/notification.app';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';

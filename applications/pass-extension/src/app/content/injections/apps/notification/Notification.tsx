@@ -7,7 +7,7 @@ import {
 } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 import { IFrameAppAutoSizer } from 'proton-pass-extension/app/content/injections/apps/components/IFrameAppAutoSizer';
 import { IFramePortMessageType } from 'proton-pass-extension/app/content/services/iframes/messages';
-import type { NotificationRequest } from 'proton-pass-extension/app/content/services/iframes/notification';
+import type { NotificationRequest } from 'proton-pass-extension/app/content/services/iframes/notification/notification.app';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import NotificationsChildren from '@proton/components/containers/notifications/Children';

@@ -1,5 +1,5 @@
 import type { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
-import type { DropdownAnchorRef } from 'proton-pass-extension/app/content/services/iframes/dropdown';
+import type { DropdownAnchorRef } from 'proton-pass-extension/app/content/services/iframes/dropdown/dropdown.app';
 import type { IFrameApp } from 'proton-pass-extension/app/content/services/iframes/factory';
 import { IFramePortMessageType } from 'proton-pass-extension/app/content/services/iframes/messages';
 import type { PopoverController } from 'proton-pass-extension/app/content/services/iframes/popover';

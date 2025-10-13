@@ -2,7 +2,7 @@ $base-font-size: 14 !default;
 
 @use 'sass:meta';
 @import '@proton/styles/scss/lib/em';
-@import '../styles/reset';
+@import './reset';
 
 :host {
 	@include reset;

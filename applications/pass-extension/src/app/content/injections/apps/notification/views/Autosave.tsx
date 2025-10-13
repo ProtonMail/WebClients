@@ -12,7 +12,7 @@ import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/
 import { AutosaveForm } from 'proton-pass-extension/app/content/injections/apps/notification/components/AutosaveForm';
 import { AutosaveSelect } from 'proton-pass-extension/app/content/injections/apps/notification/components/AutosaveSelect';
 import { NotificationHeader } from 'proton-pass-extension/app/content/injections/apps/notification/components/NotificationHeader';
-import type { NotificationRequest } from 'proton-pass-extension/app/content/services/iframes/notification';
+import type { NotificationRequest } from 'proton-pass-extension/app/content/services/iframes/notification/notification.app';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';

@@ -12,7 +12,7 @@ import { ListItem } from 'proton-pass-extension/app/content/injections/apps/comp
 import { ListItemIcon } from 'proton-pass-extension/app/content/injections/apps/components/ListItemIcon';
 import { PinUnlock } from 'proton-pass-extension/app/content/injections/apps/components/PinUnlock';
 import { AutofillCC } from 'proton-pass-extension/app/content/injections/apps/dropdown/views/AutofillCC';
-import type { DropdownActions } from 'proton-pass-extension/app/content/services/iframes/dropdown';
+import type { DropdownActions } from 'proton-pass-extension/app/content/services/iframes/dropdown/dropdown.app';
 import { IFramePortMessageType } from 'proton-pass-extension/app/content/services/iframes/messages';
 import { useRequestFork } from 'proton-pass-extension/lib/hooks/useRequestFork';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';

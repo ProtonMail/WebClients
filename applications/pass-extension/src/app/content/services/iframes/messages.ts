@@ -15,8 +15,8 @@ import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { AppState, ClientEndpoint, FormCredentials, ItemContent } from '@proton/pass/types';
 import type { Rect } from '@proton/pass/types/utils/dom';
 
-import type { DropdownActions } from './dropdown';
-import type { NotificationRequest } from './notification';
+import type { DropdownActions } from './dropdown/dropdown.app';
+import type { NotificationRequest } from './notification/notification.app';
 
 /** These messages are not exported on the main
  * `WorkerMessages` as they are always forwarded

@@ -1,6 +1,7 @@
 import { DROPDOWN_IFRAME_SRC, DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { DROPDOWN_MIN_HEIGHT, DROPDOWN_WIDTH } from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
+import { type IFrameAppService, createIFrameApp } from 'proton-pass-extension/app/content/services/iframes/factory';
 import type { IFrameCloseOptions } from 'proton-pass-extension/app/content/services/iframes/messages';
 import { IFramePortMessageType } from 'proton-pass-extension/app/content/services/iframes/messages';
 import type { PopoverController } from 'proton-pass-extension/app/content/services/iframes/popover';
@@ -20,7 +21,6 @@ import type { PasswordAutosuggestOptions } from '@proton/pass/lib/password/types
 import type { Coords, Maybe, MaybeNull } from '@proton/pass/types';
 import { createStyleParser, getComputedHeight } from '@proton/pass/utils/dom/computed-styles';
 import { animatePositionChange } from '@proton/pass/utils/dom/position';
-import { pipe } from '@proton/pass/utils/fp/pipe';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import type { ParsedUrl } from '@proton/pass/utils/url/types';
@@ -28,8 +28,6 @@ import { resolveDomain, resolveSubdomain } from '@proton/pass/utils/url/utils';
 import noop from '@proton/utils/noop';
 
 import { createDropdownFocusController } from './dropdown.focus';
-import type { IFrameAppService } from './factory';
-import { createIFrameApp } from './factory';
 
 export type DropdownAnchor = InlineFieldTarget | InlineFrameTarget;
 export type DropdownAnchorRef = { current: MaybeNull<DropdownAnchor> };
@@ -48,12 +46,12 @@ export type DropdownRequest = {
     autofocused: boolean;
 } & (InlineFieldTarget | InlineFrameTarget<{ coords: Coords; origin: string }>);
 
-export interface InjectedDropdown extends IFrameAppService<DropdownRequest> {
+export interface DropdownApp extends IFrameAppService<DropdownRequest> {
     anchor: MaybeNull<DropdownAnchor>;
     focused: boolean;
 }
 
-export const createDropdown = (popover: PopoverController): InjectedDropdown => {
+export const createDropdown = (popover: PopoverController): DropdownApp => {
     const anchor: DropdownAnchorRef = { current: null };
     const listeners = createListenerStore();
 
@@ -110,7 +108,12 @@ export const createDropdown = (popover: PopoverController): InjectedDropdown => 
             void sendMessage(
                 contentScriptMessage({
                     type: WorkerMessageType.INLINE_DROPDOWN_OPENED,
-                    payload: { fieldFrameId, formId, fieldId },
+                    payload: {
+                        type: 'request',
+                        fieldFrameId,
+                        formId,
+                        fieldId,
+                    },
                 })
             );
         }
@@ -133,6 +136,7 @@ export const createDropdown = (popover: PopoverController): InjectedDropdown => 
                     contentScriptMessage({
                         type: WorkerMessageType.INLINE_DROPDOWN_CLOSED,
                         payload: {
+                            type: 'request',
                             refocus: options.refocus ?? false,
                             fieldFrameId,
                             formId,
@@ -186,8 +190,6 @@ export const createDropdown = (popover: PopoverController): InjectedDropdown => 
             if (!ctx) return;
 
             const { action, autofocused } = request;
-            const field = anchor.current?.type === 'field' ? anchor.current.field : null;
-
             const url = ctx.getExtensionContext()?.url;
             const origin = url ? resolveOrigin(request, url) : null;
             const frameId = request.type === 'frame' ? request.fieldFrameId : 0;
@@ -205,7 +207,6 @@ export const createDropdown = (popover: PopoverController): InjectedDropdown => 
 
                 case DropdownAction.AUTOFILL_IDENTITY: {
                     if (autofocused && !(await ctx.service.autofill.getIdentitiesCount())) return;
-                    if (autofocused && field?.autofilled) return;
                     if (!authorized) return { action, origin: '', frameId };
                     return { action, origin, frameId };
                 }
@@ -364,7 +365,7 @@ export const createDropdown = (popover: PopoverController): InjectedDropdown => 
     listeners.addListener(window, 'hashchange', () => iframe.close({ discard: false }));
     listeners.addListener(window, 'beforeunload', () => iframe.close({ discard: false }));
 
-    const dropdown: InjectedDropdown = {
+    const dropdown: DropdownApp = {
         get anchor() {
             return anchor.current;
         },
@@ -372,11 +373,11 @@ export const createDropdown = (popover: PopoverController): InjectedDropdown => 
             return focus.focused || focus.willFocus;
         },
 
-        close: pipe(iframe.close, () => dropdown),
+        close: iframe.close,
         destroy: iframe.destroy,
         getState: () => iframe.state,
-        init: pipe(iframe.init, () => dropdown),
-        open: pipe(open, () => dropdown),
+        init: iframe.init,
+        open,
         sendMessage: iframe.sendPortMessage,
         subscribe: iframe.subscribe,
     };

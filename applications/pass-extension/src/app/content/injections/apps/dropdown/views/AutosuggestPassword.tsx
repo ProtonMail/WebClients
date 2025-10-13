@@ -8,7 +8,7 @@ import {
 import { ListItem } from 'proton-pass-extension/app/content/injections/apps/components/ListItem';
 import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/components/PauseListDropdown';
 import { DropdownHeader } from 'proton-pass-extension/app/content/injections/apps/dropdown/components/DropdownHeader';
-import type { DropdownActions } from 'proton-pass-extension/app/content/services/iframes/dropdown';
+import type { DropdownActions } from 'proton-pass-extension/app/content/services/iframes/dropdown/dropdown.app';
 import { IFramePortMessageType } from 'proton-pass-extension/app/content/services/iframes/messages';
 import { c } from 'ttag';
 

@@ -5,7 +5,7 @@ import { useIFrameAppController } from 'proton-pass-extension/app/content/inject
 import { ListItem } from 'proton-pass-extension/app/content/injections/apps/components/ListItem';
 import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/components/PauseListDropdown';
 import { DropdownHeader } from 'proton-pass-extension/app/content/injections/apps/dropdown/components/DropdownHeader';
-import type { DropdownActions } from 'proton-pass-extension/app/content/services/iframes/dropdown';
+import type { DropdownActions } from 'proton-pass-extension/app/content/services/iframes/dropdown/dropdown.app';
 import { IFramePortMessageType } from 'proton-pass-extension/app/content/services/iframes/messages';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
