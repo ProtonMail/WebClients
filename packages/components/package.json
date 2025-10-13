@@ -15,6 +15,9 @@
         "test:watch": "jest --watch"
     },
     "dependencies": {
+        "@dnd-kit/core": "^6.3.1",
+        "@dnd-kit/sortable": "^10.0.0",
+        "@dnd-kit/utilities": "^3.2.2",
         "@emoji-mart/data": "^1.0.3",
         "@floating-ui/dom": "^1.7.4",
         "@noble/ed25519": "1.7.5",
