@@ -329,7 +329,7 @@ describe('EditorController', () => {
 
     it('should restore revision by replacing', async () => {
       const lexicalState = { root: {} } as SerializedEditorState
-      await controller.restoreRevisionByReplacing(lexicalState)
+      await controller.restoreRevisionByReplacingLexicalState(lexicalState)
       expect(editorInvoker.replaceEditorState).toHaveBeenCalledWith(lexicalState)
     })
 
@@ -608,7 +608,7 @@ describe('EditorController', () => {
 
     it('should throw when restoring revision without editor', async () => {
       const lexicalState = { root: {} } as SerializedEditorState
-      await expect(controller.restoreRevisionByReplacing(lexicalState)).rejects.toThrow(
+      await expect(controller.restoreRevisionByReplacingLexicalState(lexicalState)).rejects.toThrow(
         'Attempting to restore revision by replacing before editor invoker is initialized',
       )
     })
