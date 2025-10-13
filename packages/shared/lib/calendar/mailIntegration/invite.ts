@@ -542,7 +542,7 @@ ${formattedStart} - ${formattedEnd}`
 ${formattedStart}`;
 };
 
-const buildUpdatedFieldText = (updatedBodyText: string, updatedFieldText: string, field: string) => {
+const buildUpdatedFieldText = (updatedBodyText: string, updatedFieldText: string, localizedField: string) => {
     // translator: text to display in the message body of an updated event when a certain field has been removed
     const removedFieldText = c('Email body for invitation (event details part)').t`Removed`;
 
@@ -552,14 +552,14 @@ const buildUpdatedFieldText = (updatedBodyText: string, updatedFieldText: string
 
     if (updatedBodyText === '') {
         return hasRemovedField
-            ? `${field}:
+            ? `${localizedField}
 ${removedFieldText}`
             : updatedFieldText;
     }
     return hasRemovedField
         ? `${updatedBodyText}
 
-${field}:
+${localizedField}
 ${removedFieldText}`
         : `${updatedBodyText}
 
@@ -593,19 +593,27 @@ const getUpdateEmailBodyText = ({
 
     let updatedBodyText = '';
     if (!hasSameTitle) {
-        updatedBodyText = buildUpdatedFieldText(updatedBodyText, eventTitle, 'TITLE');
+        updatedBodyText = buildUpdatedFieldText(updatedBodyText, eventTitle, c('Email body for invitation').t`TITLE:`);
     }
     if (!hasSameTime) {
-        updatedBodyText = buildUpdatedFieldText(updatedBodyText, whenText, 'TIME');
+        updatedBodyText = buildUpdatedFieldText(updatedBodyText, whenText, c('Email body for invitation').t`TIME:`);
     }
     if (!hasSameLocation) {
-        updatedBodyText = buildUpdatedFieldText(updatedBodyText, locationText, 'LOCATION');
+        updatedBodyText = buildUpdatedFieldText(
+            updatedBodyText,
+            locationText,
+            c('Email body for invitation').t`LOCATION:`
+        );
     }
     if (!hasSameDescription) {
-        updatedBodyText = buildUpdatedFieldText(updatedBodyText, descriptionText, 'DESCRIPTION');
+        updatedBodyText = buildUpdatedFieldText(
+            updatedBodyText,
+            descriptionText,
+            c('Email body for invitation').t`DESCRIPTION:`
+        );
     }
     if (!hasSameComment) {
-        updatedBodyText = buildUpdatedFieldText(updatedBodyText, commentText, 'NOTE');
+        updatedBodyText = buildUpdatedFieldText(updatedBodyText, commentText, c('Email body for invitation').t`NOTE:`);
     }
     return updatedBodyText;
 };
@@ -623,18 +631,11 @@ const getEmailBodyTexts = (
     const eventComment = comment && comment.length > 0 ? comment[0].value : undefined;
 
     const whenText = getWhenText(vevent, dateFormatOptions);
-    const locationText = eventLocation
-        ? c('Email body for invitation (location part)').t`LOCATION:
-${eventLocation}`
-        : '';
+    const locationText = eventLocation ? `${c('Email body for invitation').t`LOCATION:`}\n${eventLocation}` : '';
     const descriptionText = eventDescription
-        ? c('Email body for description (description part)').t`DESCRIPTION:
-${eventDescription}`
+        ? `${c('Email body for invitation').t`DESCRIPTION:`}\n${eventDescription}`
         : '';
-    const commentText = eventComment
-        ? c('Email body for comment (comment part)').t`NOTE:
-${eventComment}`
-        : '';
+    const commentText = eventComment ? `${c('Email body for invitation').t`NOTE:`}\n${eventComment}` : '';
     const locationAndDescriptionText =
         locationText && descriptionText
             ? `${locationText}
@@ -724,7 +725,7 @@ const createUpdateMessage = ({
     // format with exactly two spaces after the newline before "Here's what changed:"
     if (hasUpdatedText || (hasUpdatedComment && commentStatus)) {
         const formattedComment = commentStatus ? `\n\n${commentStatus}` : '';
-        return `${messageIntro}\n\nHere's what changed:\n\n${updateEventDetailsText}${formattedComment}`;
+        return `${messageIntro}\n\n${c('Email body for invitation').t`Here's what changed:`}\n\n${updateEventDetailsText}${formattedComment}`;
     }
 
     // If there's only a comment update without the header
@@ -884,7 +885,7 @@ export const generateEmailBody = ({
 
         if (isCreateEvent) {
             // For new invites, the comment is already included in eventDetailsText - we don't need to add it again
-            return `You are invited to ${eventTitle}.\n\n${eventDetailsText}`;
+            return `${c('Email body for invitation').t`You are invited to`} ${eventTitle}.\n\n${eventDetailsText}`;
         }
 
         return createUpdateMessage({
