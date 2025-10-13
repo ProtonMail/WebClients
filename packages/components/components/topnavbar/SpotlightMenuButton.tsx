@@ -31,7 +31,6 @@ export interface LinkDisplayItem extends DisplayItemBase {
 
 interface DisplayItemBase {
     imgSrc: string;
-    imgAlt?: string;
     title: string;
     description: string;
     type: 'dropdown' | 'link';
@@ -47,7 +46,7 @@ const DropdownItem = ({ item, onClick }: { item: DropdownDisplayItem; onClick: (
             <Button onClick={toggle} shape="ghost" color="weak">
                 <div className="flex flex-nowrap gap-x-2 items-center text-left">
                     <div className="shrink-0">
-                        <img src={item.imgSrc} alt={item.imgAlt} />
+                        <img src={item.imgSrc} alt="" />
                     </div>
                     <div>
                         <b>{item.title}</b>
@@ -67,7 +66,7 @@ const DropdownItem = ({ item, onClick }: { item: DropdownDisplayItem; onClick: (
                     {item.dropdownLinks?.map(({ label, icon, href }) => {
                         return (
                             <AppLink to={href} className="text-no-decoration" onClick={onClick} key={label}>
-                                <DropdownMenuButton className="text-left flex gap-2 items-center" key={label}>
+                                <DropdownMenuButton className="text-left flex gap-2 items-center">
                                     <Icon name={icon} size={4} />
                                     {label}
                                 </DropdownMenuButton>
@@ -135,7 +134,7 @@ export const SpotlightMenuButton = ({
             size="large"
             className="w-full"
             innerClassName="px-5 pt-6"
-            style={{ maxInlineSize: '600px' }}
+            style={{ maxInlineSize: '37.5rem' }}
             content={
                 <>
                     {header}
@@ -155,7 +154,7 @@ export const SpotlightMenuButton = ({
                             >
                                 <div className="flex flex-nowrap gap-x-2 text-left">
                                     <div className="shrink-0">
-                                        <img src={item.imgSrc} alt={item.imgAlt} />
+                                        <img src={item.imgSrc} alt="" />
                                     </div>
                                     <div>
                                         <b>{item.title}</b>

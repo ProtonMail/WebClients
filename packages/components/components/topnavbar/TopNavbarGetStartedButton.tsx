@@ -21,7 +21,7 @@ const localStorageKey = 'b2b-get-started-enabled';
 async function getDidUserMakeAnyAction() {
     return new Promise((resolve) => {
         // TODO replace with real API call
-        setTimeout(() => resolve(false), 500);
+        setTimeout(() => resolve(true), 500);
     });
 }
 
@@ -64,7 +64,6 @@ export const TopNavbarGetStartedButton = () => {
             [
                 {
                     imgSrc: profilesImg,
-                    imgAlt: c('Info:img-alt').t`Profile cards illustration`,
                     title: c('Info').t`Invite your team`,
                     description: c('Info')
                         .t`Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.`,
@@ -76,7 +75,6 @@ export const TopNavbarGetStartedButton = () => {
                 },
                 {
                     imgSrc: networkConfigurationImg,
-                    imgAlt: c('Info:img-alt').t`Server with user-bubbles flying around`,
                     title: c('Info').t`Configure your network`,
                     description: c('Info')
                         .t`Create a Gateway to give your users access to your IT resources through dedicated servers.`,
@@ -85,7 +83,6 @@ export const TopNavbarGetStartedButton = () => {
                 },
                 {
                     imgSrc: globeVpnImg,
-                    imgAlt: c('Info:img-alt').t`Globe with data lines`,
                     title: c('Info').t`Manage global VPN permissions`,
                     description: c('Info')
                         .t`Decide which users can connect to each of our 120+ shared server locations.`,
@@ -94,7 +91,6 @@ export const TopNavbarGetStartedButton = () => {
                 },
                 {
                     imgSrc: recoveryImg,
-                    imgAlt: c('Info:img-alt').t`A lock with arrows`,
                     title: c('Info').t`Secure your organization`,
                     description: c('Info')
                         .t`If you haven’t already, enable some recovery methods to make sure you never lose access to ${VPN_APP_NAME}.`,
