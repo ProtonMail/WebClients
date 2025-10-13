@@ -3,6 +3,7 @@ import { type FC, useEffect, useMemo, useState } from 'react';
 import type { InAppNotificationRenderProps } from '@proton/pass/components/Notifications/WithInAppNotification';
 import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { selectNextNotification } from '@proton/pass/store/selectors';
+import type { Maybe } from '@proton/pass/types';
 import { InAppNotificationDisplayType } from '@proton/pass/types';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { isModalOpen } from '@proton/shared/lib/busy';
@@ -11,7 +12,9 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { InAppNotificationBanner } from './InAppNotificationBanner';
 import { InAppNotificationModal } from './InAppNotificationModal';
 
-const getNotificationComponent = (displayType: InAppNotificationDisplayType): FC<InAppNotificationRenderProps> => {
+const getNotificationComponent = (
+    displayType: InAppNotificationDisplayType
+): Maybe<FC<InAppNotificationRenderProps>> => {
     switch (displayType) {
         case InAppNotificationDisplayType.BANNER:
             return InAppNotificationBanner;
@@ -42,5 +45,5 @@ export const InAppNotifications: FC = () => {
     if (!notification || !showNotification) return null;
 
     const Component = getNotificationComponent(notification?.content.displayType);
-    return <Component dense={EXTENSION_BUILD} notification={notification} />;
+    return Component && <Component dense={EXTENSION_BUILD} notification={notification} />;
 };
