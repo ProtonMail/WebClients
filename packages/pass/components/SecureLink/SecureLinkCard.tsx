@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import Alert from '@proton/components/components/alert/Alert';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import Icon from '@proton/components/components/icon/Icon';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
 import { Copy } from '@proton/pass/components/Copy/Copy';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
@@ -31,12 +30,10 @@ export const SecureLinkCard: FC<Props> = ({
     shareId,
     onClick,
 }) => {
-    const { createNotification } = useNotifications();
     const [openRemoveModal, setOpenRemoveModal] = useState(false);
 
     const { dispatch } = useRequest(secureLinkRemove, { initial: { shareId, itemId } });
     const onRemove = () => dispatch({ itemId, shareId, linkId });
-    const onCopy = () => createNotification({ text: c('Info').t`Copied to clipboard` });
 
     const remaining = useMemo(
         () =>
@@ -74,7 +71,7 @@ export const SecureLinkCard: FC<Props> = ({
                         </div>
                     </div>
                     <div className="flex">
-                        <Copy value={secureLink} shape="ghost" className="color-weak" onCopy={onCopy} pill />
+                        <Copy value={secureLink} shape="ghost" className="color-weak" pill />
                         <QuickActionsDropdown color="weak" shape="ghost" className="color-weak">
                             <DropdownMenuButton
                                 onClick={(e) => {
