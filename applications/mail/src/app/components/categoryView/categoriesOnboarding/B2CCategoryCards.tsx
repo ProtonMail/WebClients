@@ -4,8 +4,8 @@ import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 
-import { getB2CCardCopy, hasSeenCategoryCard } from './categoriesOnboarding.helpers';
-import { B2C_CATEGORIES_MAPPING } from './onboardingInterface';
+import { getOnboardingCardCopy, hasSeenCategoryCard } from './categoriesOnboarding.helpers';
+import { AudienceType, B2C_CATEGORIES_MAPPING } from './onboardingInterface';
 
 interface Props {
     labelID: string;
@@ -16,8 +16,8 @@ export const B2CCategoryCards = ({ labelID, flagValue }: Props) => {
     const { update } = useFeature(FeatureCode.CategoryViewB2COnboardingViewFlags);
 
     // We only want to show the card if the user has not seen it before
-    const hasAlreadySeenCard = hasSeenCategoryCard(labelID, flagValue);
-    const categoryDescription = getB2CCardCopy(labelID);
+    const hasAlreadySeenCard = hasSeenCategoryCard(AudienceType.B2C, labelID, flagValue);
+    const categoryDescription = getOnboardingCardCopy(AudienceType.B2C, labelID);
 
     if (!categoryDescription || hasAlreadySeenCard) {
         return null;
