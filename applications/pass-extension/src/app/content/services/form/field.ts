@@ -1,12 +1,12 @@
 import { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
-import type { IconController } from 'proton-pass-extension/app/content/injections/icon/controller';
-import { createIconController } from 'proton-pass-extension/app/content/injections/icon/controller';
 import { type FieldAnchor, createFieldAnchor } from 'proton-pass-extension/app/content/services/form/field.anchor';
 import type { FieldTracker } from 'proton-pass-extension/app/content/services/form/field.tracker';
 import { createFieldTracker } from 'proton-pass-extension/app/content/services/form/field.tracker';
 import type { FormHandle } from 'proton-pass-extension/app/content/services/form/form';
 import type { FormTracker } from 'proton-pass-extension/app/content/services/form/form.tracker';
+import type { IconController } from 'proton-pass-extension/app/content/services/inline/icon/icon.controller';
+import { createIconController } from 'proton-pass-extension/app/content/services/inline/icon/icon.controller';
 import { actionTrap, withActionTrap } from 'proton-pass-extension/app/content/utils/action-trap';
 import type { AutofillOptions } from 'proton-pass-extension/app/content/utils/autofill';
 import { createAutofill } from 'proton-pass-extension/app/content/utils/autofill';
@@ -161,7 +161,17 @@ export const createFieldHandles = ({ element, fieldType, getFormHandle }: Create
                 field.icon ??
                 createIconController({
                     input: field.element,
-                    form: form.element,
+                    parent: (() => {
+                        /** TBD: instead of injecting the icon next to the anchor (either the input element
+                         * or the resolved bounding element), prefer injecting in nearest detected form.
+                         * Fallsback to document.body as a precaution. This should preserve z-index layering
+                         * while avoiding interferences in websites sensitive to the DOM structure of their
+                         * input fields (eg: some websites expect their input elements to always be the first
+                         * child of a wrapper component - interfering with this could cause unintented crashes) */
+                        const root = field.element.getRootNode();
+                        if (root instanceof ShadowRoot) return root;
+                        return form.scrollChild;
+                    })(),
                     tag: ctx.elements.control,
                     zIndex: form.zIndex,
                     getAnchor: field.getAnchor,

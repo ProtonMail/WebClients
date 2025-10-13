@@ -27,7 +27,7 @@ type IconElement = {
 };
 
 type IconElementRefs = IconElement & {
-    form: HTMLElement;
+    parent: HTMLElement | ShadowRoot;
     input: HTMLInputElement;
     anchor: HTMLElement;
 };
@@ -47,12 +47,12 @@ const getOverlayShift = (options: {
     y: number;
     anchor: HTMLElement;
     input: HTMLElement;
-    form: HTMLElement;
+    parent: HTMLElement | ShadowRoot;
 }): number => {
     const restore: { el: HTMLElement; pointerEvents: string }[] = [];
 
     try {
-        const { x, y, form, input, anchor } = options;
+        const { x, y, parent, input, anchor } = options;
         const maxWidth = anchor.offsetWidth;
         const maxShift = maxWidth * 0.5; /* Maximum allowed shift */
 
@@ -89,7 +89,7 @@ const getOverlayShift = (options: {
             if (el === input || el === anchor) break; /* Stop at target elements */
             if (!isHTMLElement(el)) continue; /* Skip non-HTMLElements */
             if (el.tagName.startsWith('PROTONPASS')) continue; /* Skip injected pass elements */
-            if (!form.contains(el)) continue; /* Skip elements outside form */
+            if (!parent.contains(el)) continue; /* Skip elements outside parent element (form) */
             if (el.matches('svg *')) continue; /* Skip SVG subtrees */
 
             /** Skip large text elements. NOTE: The `isHTMLElement` check is loose in order to
@@ -130,7 +130,7 @@ const getOverlayShift = (options: {
  * ie: check amazon sign-in page without repaint to
  * reproduce issue */
 const computeIconInjectionStyles = (
-    { anchor, input, control, form }: Omit<IconElementRefs, 'icon'>,
+    { anchor, input, control, parent }: Omit<IconElementRefs, 'icon'>,
     { getInputStyle, getAnchorStyle: getBoxStyle }: IconInjectionOptions
 ) => {
     repaint(input, control);
@@ -163,7 +163,7 @@ const computeIconInjectionStyles = (
         y: inputTop + inputHeight / 2,
         anchor,
         input,
-        form,
+        parent,
     });
 
     overlayDx = overlayDx !== 0 ? overlayDx + iconPaddingLeft + size / 2 : 0;
@@ -280,12 +280,12 @@ export const applyInjectionStyles = (refs: IconElementRefs) => {
 };
 
 export type CreateIconConfig = {
-    form: HTMLElement;
+    parent: HTMLElement | ShadowRoot;
     tag: string;
     zIndex: number;
 };
 
-export const createIcon = ({ form, tag, zIndex }: CreateIconConfig): IconElement => {
+export const createIcon = ({ parent, tag, zIndex }: CreateIconConfig): IconElement => {
     const control = createCustomElement<ProtonPassControl>({ type: tag, styles: ProtonPassControlStyles });
     const icon = createElement<HTMLButtonElement>({ type: 'button', classNames: [] });
 
@@ -293,14 +293,8 @@ export const createIcon = ({ form, tag, zIndex }: CreateIconConfig): IconElement
     icon.style.zIndex = zIndex.toString();
     icon.setAttribute('type', 'button');
 
-    /** TBD: instead of injecting the icon next to the anchor (either the input element
-     * or the resolved bounding element), prefer injecting in nearest detected form.
-     * Fallsback to document.body as a precaution. This should preserve z-index layering
-     * while avoiding interferences in websites sensitive to the DOM structure of their
-     * input fields (eg: some websites expect their input elements to always be the first
-     * child of a wrapper component - interfering with this could cause unintented crashes) */
     control.shadowRoot.appendChild(icon);
-    form.appendChild(control.customElement);
+    parent.appendChild(control.customElement);
 
     return { icon, control: control.customElement };
 };

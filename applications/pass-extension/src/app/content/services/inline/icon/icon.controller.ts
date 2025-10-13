@@ -4,11 +4,6 @@ import {
     DISABLED_ICON_SRC,
     LOCKED_ICON_SRC,
 } from 'proton-pass-extension/app/content/constants.runtime';
-import {
-    applyInjectionStyles,
-    cleanupInjectionStyles,
-    createIcon,
-} from 'proton-pass-extension/app/content/injections/icon/utils';
 import type { FieldAnchor } from 'proton-pass-extension/app/content/services/form/field.anchor';
 
 import { clientDisabled, clientLocked } from '@proton/pass/lib/client';
@@ -19,10 +14,12 @@ import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import noop from '@proton/utils/noop';
 
+import { applyInjectionStyles, cleanupInjectionStyles, createIcon } from './icon.utils';
+
 type IconControllerOptions = {
     input: HTMLInputElement;
-    /** parent form element */
-    form: HTMLElement;
+    /** parent element for icon injection */
+    parent: HTMLElement | ShadowRoot;
     /** `protonpass-control` custom element tag name */
     tag: string;
     /** z-index for the control element */
@@ -41,9 +38,9 @@ export interface IconController {
 }
 
 export const createIconController = (options: IconControllerOptions): IconController => {
-    const { input, form, zIndex, tag } = options;
+    const { input, parent, zIndex, tag } = options;
     const anchor = options.getAnchor({ reflow: false });
-    const { icon, control } = createIcon({ form, zIndex, tag });
+    const { icon, control } = createIcon({ parent, zIndex, tag });
 
     let ready = false;
 
@@ -93,7 +90,7 @@ export const createIconController = (options: IconControllerOptions): IconContro
                 get: () => options.input.getBoundingClientRect(),
                 set: () => {
                     cleanupInjectionStyles({ input, control });
-                    applyInjectionStyles({ icon, control, input, anchor: anchor.element, form });
+                    applyInjectionStyles({ icon, control, input, anchor: anchor.element, parent });
                 },
             });
         });
