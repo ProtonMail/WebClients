@@ -86,7 +86,7 @@ export const createActivationService = () => {
             logger.info('[Activation] activating worker [alarms cleared - checking for update]');
             await browser.alarms.clearAll();
             const alarmRegistered = await browser.alarms.get(UPDATE_ALARM_NAME);
-            if (!alarmRegistered) browser.alarms.create(UPDATE_ALARM_NAME, { periodInMinutes: 60 });
+            if (!alarmRegistered) void browser.alarms.create(UPDATE_ALARM_NAME, { periodInMinutes: 60 });
         } catch {}
     };
 

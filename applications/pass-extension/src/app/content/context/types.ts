@@ -1,4 +1,4 @@
-import type { AutofillService } from 'proton-pass-extension/app/content/services/autofill/autofill';
+import type { AutofillService } from 'proton-pass-extension/app/content/services/autofill/autofill.service';
 import type { AutosaveService } from 'proton-pass-extension/app/content/services/autosave/autosave.abstract';
 import type { DetectorService } from 'proton-pass-extension/app/content/services/form/detector';
 import type { FormManager } from 'proton-pass-extension/app/content/services/form/manager';

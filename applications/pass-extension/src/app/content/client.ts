@@ -11,8 +11,8 @@
  * destruction on tab hiding. A continuous activity probe ensures connection health with the
  * service worker through periodic pings for long-running tabs. */
 import { createClientController } from 'proton-pass-extension/app/content/client.controller';
-import { registerCustomElements } from 'proton-pass-extension/app/content/injections/custom-elements/register';
 import { createContentScriptClient as clientFactory } from 'proton-pass-extension/app/content/services/client';
+import { registerCustomElements } from 'proton-pass-extension/app/content/services/inline/custom-elements/register';
 import 'proton-pass-extension/lib/polyfills/shim';
 
 import { isMainFrame } from '@proton/pass/utils/dom/is-main-frame';

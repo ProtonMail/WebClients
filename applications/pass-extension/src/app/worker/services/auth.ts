@@ -189,7 +189,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
                  * TTL duration, leading to an unsuccessful boot for the user */
                 if (ready && mode !== LockMode.NONE && ttl) {
                     const when = epochToMs(getEpoch() + ttl);
-                    browser.alarms.create(SESSION_LOCK_ALARM, { when });
+                    void browser.alarms.create(SESSION_LOCK_ALARM, { when });
                 }
             } catch {}
         }),
@@ -240,7 +240,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
                     logger.info(`[AuthService] Retrying session resume in ${delay}s ${retryInfo}`);
 
                     await browser.alarms.clear(SESSION_RESUME_ALARM).catch(noop);
-                    browser.alarms.create(SESSION_RESUME_ALARM, { when });
+                    void browser.alarms.create(SESSION_RESUME_ALARM, { when }).catch(noop);
                 } else logger.info(`[AuthService] Reached max number of resume retries ${retryInfo}`);
             }
         }),

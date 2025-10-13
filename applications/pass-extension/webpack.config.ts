@@ -145,13 +145,13 @@ const config: Configuration = {
             import: './src/app/content/client.ts',
             layer: 'injection',
         },
-        dropdown: nonAccessibleWebResource('./src/app/content/injections/apps/dropdown/index.tsx'),
+        dropdown: nonAccessibleWebResource('./src/app/content/services/inline/dropdown/app/index.tsx'),
         elements: {
             import: './src/app/content/elements.ts',
             layer: 'injection',
         },
         internal: './src/app/pages/internal/index.tsx',
-        notification: nonAccessibleWebResource('./src/app/content/injections/apps/notification/index.tsx'),
+        notification: nonAccessibleWebResource('./src/app/content/services/inline/notification/app/index.tsx'),
         onboarding: './src/app/pages/onboarding/index.tsx',
         orchestrator: {
             import: disableBrowserTrap('./src/app/content/orchestrator.ts'),
