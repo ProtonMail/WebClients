@@ -23,3 +23,7 @@
 		}
 	}
 }
+
+.meeting-row-tooltip::before {
+	border-block-start-color: var(--background-strong) !important;
+}
