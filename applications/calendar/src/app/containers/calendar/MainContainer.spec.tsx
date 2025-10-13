@@ -2,6 +2,7 @@ import { Router } from 'react-router-dom';
 
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { createMemoryHistory } from 'history';
 
 import { useCalendars } from '@proton/calendar/calendars/hooks';
