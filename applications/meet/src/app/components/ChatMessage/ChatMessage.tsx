@@ -92,10 +92,10 @@ export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
                         '--w-custom': '2.25rem',
                         '--h-custom': '2.25rem',
                     }}
-                    aria-label={c('Alt').t`Send an encrypted message`}
+                    aria-label={c('Action').t`Send an encrypted message`}
                     disabled={!trimMessage(message)}
                 >
-                    <IcMeetSend size={5} className="color-invert" />
+                    <IcMeetSend size={5} className="color-invert ml-0.5" />
                 </Button>
             </div>
         </div>
