@@ -134,7 +134,7 @@ export const createAutoFillService = () => {
     const clear = () => {
         browser.tabs
             .query({})
-            .then((tabs) => Promise.all(tabs.map(({ id: tabId }) => tabId && setPopupIconBadge(tabId, 0))))
+            .then((tabs) => tabs.forEach(({ id: tabId }) => tabId && setPopupIconBadge(tabId, 0)))
             .catch(noop);
     };
 
