@@ -13,7 +13,7 @@ import { mockUseUser } from '@proton/testing/lib/mockUseUser';
 
 import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 
-import { AudienceType, FeatureValueDefault } from './onboardingInterface';
+import { AudienceType } from './onboardingInterface';
 import { useCategoriesOnboarding } from './useCategoriesOnboarding';
 
 jest.mock('@proton/mail');
@@ -39,12 +39,13 @@ const getFeatureValues = (
         b2cOnboardingFlag,
         b2bOnboardingFlag,
         accountDateThreshold,
-    }: { b2cOnboardingFlag: number; b2bOnboardingFlag: boolean; accountDateThreshold: number }
+    }: { b2cOnboardingFlag: number; b2bOnboardingFlag: number; accountDateThreshold: number }
 ) => {
     if (code === FeatureCode.CategoryViewB2COnboardingViewFlags) {
         return { feature: { Value: b2cOnboardingFlag }, loading: false };
     }
-    if (code === FeatureCode.CategoryViewB2BOnboardingView) {
+
+    if (code === FeatureCode.CategoryViewB2BOnboardingViewFlags) {
         return { feature: { Value: b2bOnboardingFlag }, loading: false };
     }
 
@@ -73,7 +74,7 @@ describe('useCategoriesOnboarding', () => {
                 mockUseFeature.mockImplementation((code) => {
                     return getFeatureValues(code, {
                         b2cOnboardingFlag: 0,
-                        b2bOnboardingFlag: false,
+                        b2bOnboardingFlag: 0,
                         accountDateThreshold: febFirstMS,
                     });
                 });
@@ -82,7 +83,7 @@ describe('useCategoriesOnboarding', () => {
                 expect(result.current).toStrictEqual({
                     isUserEligible: true,
                     audienceType: AudienceType.B2B,
-                    flagValue: FeatureValueDefault,
+                    flagValue: 0,
                 });
             });
 
@@ -97,7 +98,7 @@ describe('useCategoriesOnboarding', () => {
                 mockUseFeature.mockImplementation((code) => {
                     return getFeatureValues(code, {
                         b2cOnboardingFlag: 0,
-                        b2bOnboardingFlag: true,
+                        b2bOnboardingFlag: parseInt('0110001', 2),
                         accountDateThreshold: febFirstMS,
                     });
                 });
@@ -106,7 +107,7 @@ describe('useCategoriesOnboarding', () => {
                 expect(result.current).toStrictEqual({
                     isUserEligible: false,
                     audienceType: AudienceType.B2B,
-                    flagValue: FeatureValueDefault,
+                    flagValue: parseInt('0110001', 2),
                 });
             });
         });
@@ -122,7 +123,7 @@ describe('useCategoriesOnboarding', () => {
                 mockUseFeature.mockImplementation((code) => {
                     return getFeatureValues(code, {
                         b2cOnboardingFlag: 0,
-                        b2bOnboardingFlag: false,
+                        b2bOnboardingFlag: 0,
                         accountDateThreshold: febFirstMS,
                     });
                 });
@@ -131,7 +132,7 @@ describe('useCategoriesOnboarding', () => {
                 expect(result.current).toStrictEqual({
                     isUserEligible: true,
                     audienceType: AudienceType.B2B,
-                    flagValue: FeatureValueDefault,
+                    flagValue: 0,
                 });
             });
 
@@ -146,7 +147,7 @@ describe('useCategoriesOnboarding', () => {
                 mockUseFeature.mockImplementation((code) => {
                     return getFeatureValues(code, {
                         b2cOnboardingFlag: 0,
-                        b2bOnboardingFlag: true,
+                        b2bOnboardingFlag: parseInt('0110001', 2),
                         accountDateThreshold: febFirstMS,
                     });
                 });
@@ -155,7 +156,7 @@ describe('useCategoriesOnboarding', () => {
                 expect(result.current).toStrictEqual({
                     isUserEligible: false,
                     audienceType: AudienceType.B2B,
-                    flagValue: FeatureValueDefault,
+                    flagValue: parseInt('0110001', 2),
                 });
             });
 
@@ -170,7 +171,7 @@ describe('useCategoriesOnboarding', () => {
                 mockUseFeature.mockImplementation((code) => {
                     return getFeatureValues(code, {
                         b2cOnboardingFlag: 0,
-                        b2bOnboardingFlag: false,
+                        b2bOnboardingFlag: 0,
                         accountDateThreshold: febFirstMS,
                     });
                 });
@@ -179,7 +180,7 @@ describe('useCategoriesOnboarding', () => {
                 expect(result.current).toStrictEqual({
                     isUserEligible: false,
                     audienceType: AudienceType.B2B,
-                    flagValue: FeatureValueDefault,
+                    flagValue: 0,
                 });
             });
         });
@@ -204,7 +205,7 @@ describe('useCategoriesOnboarding', () => {
                 mockUseFeature.mockImplementation((code) => {
                     return getFeatureValues(code, {
                         b2cOnboardingFlag: 0,
-                        b2bOnboardingFlag: false,
+                        b2bOnboardingFlag: 0,
                         accountDateThreshold: febFirstMS,
                     });
                 });
@@ -228,7 +229,7 @@ describe('useCategoriesOnboarding', () => {
                 mockUseFeature.mockImplementation((code) => {
                     return getFeatureValues(code, {
                         b2cOnboardingFlag: 0,
-                        b2bOnboardingFlag: false,
+                        b2bOnboardingFlag: 0,
                         accountDateThreshold: febFirstMS,
                     });
                 });
@@ -249,7 +250,7 @@ describe('useCategoriesOnboarding', () => {
                 mockUseFeature.mockImplementation((code) => {
                     return getFeatureValues(code, {
                         b2cOnboardingFlag: 0,
-                        b2bOnboardingFlag: false,
+                        b2bOnboardingFlag: 0,
                         accountDateThreshold: febFirstMS,
                     });
                 });
@@ -273,7 +274,7 @@ describe('useCategoriesOnboarding', () => {
                 mockUseFeature.mockImplementation((code) => {
                     return getFeatureValues(code, {
                         b2cOnboardingFlag: parseInt('11111', 2),
-                        b2bOnboardingFlag: false,
+                        b2bOnboardingFlag: 0,
                         accountDateThreshold: febFirstMS,
                     });
                 });
@@ -297,7 +298,7 @@ describe('useCategoriesOnboarding', () => {
                 mockUseFeature.mockImplementation((code) => {
                     return getFeatureValues(code, {
                         b2cOnboardingFlag: parseInt('11110', 2),
-                        b2bOnboardingFlag: false,
+                        b2bOnboardingFlag: 0,
                         accountDateThreshold: febFirstMS,
                     });
                 });
@@ -322,7 +323,7 @@ describe('useCategoriesOnboarding', () => {
                 mockUseFeature.mockImplementation((code) => {
                     return getFeatureValues(code, {
                         b2cOnboardingFlag: 0,
-                        b2bOnboardingFlag: false,
+                        b2bOnboardingFlag: 0,
                         accountDateThreshold: febFirstMS,
                     });
                 });
