@@ -10,7 +10,7 @@ The script takes 1 argument - the name of the component. For example,
 yarn create-atom MyAtom
 ```
 
-This will create a `MyAtom` directory in `@proton/atoms` and output the following skeleton fileS
+This will create a `MyAtom` directory in `@proton/atoms` and output the following skeleton files
 
 ```
 index.ts // Exports all exports from component file
