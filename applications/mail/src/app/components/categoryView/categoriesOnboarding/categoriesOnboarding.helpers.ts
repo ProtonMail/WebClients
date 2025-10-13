@@ -5,6 +5,7 @@ import { hasBit } from '@proton/shared/lib/helpers/bitset';
 
 import {
     AudienceType,
+    B2B_CATEGORIES_MAPPING,
     B2C_CATEGORIES_MAPPING,
     CategoriesOnboardingFlags,
     FeatureValueDefault,
@@ -34,6 +35,10 @@ export const hasSeeTransaction = (flagValue: number): boolean => {
     return hasBit(flagValue, CategoriesOnboardingFlags.TRANSACTION);
 };
 
+export const hasSeeUpdate = (flagValue: number): boolean => {
+    return hasBit(flagValue, CategoriesOnboardingFlags.UPDATE);
+};
+
 export const hasSeenCategoryCard = (audience: AudienceType, labelID: string, flagValue: number): boolean => {
     if (flagValue === FeatureValueDefault) {
         return true;
@@ -41,6 +46,15 @@ export const hasSeenCategoryCard = (audience: AudienceType, labelID: string, fla
 
     if (audience === AudienceType.B2C) {
         const config = B2C_CATEGORIES_MAPPING[labelID];
+        if (!config) {
+            return false;
+        }
+
+        return config.checker(flagValue);
+    }
+
+    if (audience === AudienceType.B2B) {
+        const config = B2B_CATEGORIES_MAPPING[labelID];
         if (!config) {
             return false;
         }
@@ -64,6 +78,17 @@ export const getOnboardingCardCopy = (audience: AudienceType, labelID: string) =
                 return c('Info').t`Includes bills, receipts, orders, and bookings.`;
         }
     }
+
+    if (audience === AudienceType.B2B) {
+        switch (labelID) {
+            case MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS:
+                return c('Info').t`Includes invoices, purchase orders, and payment confirmations.`;
+            case MAILBOX_LABEL_IDS.CATEGORY_UPDATES:
+                return c('Info').t`Includes marketing emails and non-urgent app notifications.`;
+        }
+    }
+
+    return '';
 };
 
 export const hasSeenAllOnboarding = (audience: AudienceType, flagValue: number): boolean => {
@@ -75,6 +100,10 @@ export const hasSeenAllOnboarding = (audience: AudienceType, flagValue: number):
             hasSeeNewsletter(flagValue) &&
             hasSeeTransaction(flagValue)
         );
+    }
+
+    if (audience === AudienceType.B2B) {
+        return hasSeeUpdate(flagValue) && hasSeeTransaction(flagValue);
     }
 
     return false;
