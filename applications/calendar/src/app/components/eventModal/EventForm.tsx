@@ -65,6 +65,7 @@ export interface EventFormProps {
     view: VIEWS;
     hasZoomError: boolean;
     setIsVideoConferenceLoading: (value: boolean) => void;
+    isDuplicating?: boolean;
 }
 
 const EventForm = ({
@@ -88,6 +89,7 @@ const EventForm = ({
     view,
     hasZoomError,
     setIsVideoConferenceLoading,
+    isDuplicating,
     ...props
 }: EventFormProps & HTMLAttributes<HTMLDivElement>) => {
     const isColorPerEventEnabled = useFlag('ColorPerEventWeb');
@@ -345,6 +347,7 @@ const EventForm = ({
                     isCreateEvent={isCreateEvent}
                     hasZoomError={hasZoomError}
                     setIsVideoConferenceLoading={setIsVideoConferenceLoading}
+                    isDuplicating={isDuplicating}
                 />
             )}
             {!isMinimal && showNotifications && notificationsRow}

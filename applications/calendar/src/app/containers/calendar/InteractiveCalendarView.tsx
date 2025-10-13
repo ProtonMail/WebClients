@@ -2613,6 +2613,7 @@ const InteractiveCalendarView = ({
                     isInvitation={isInvitation}
                     isOpen={createEventModal.isOpen}
                     hasZoomError={mustConnectToZoom}
+                    isDuplicating={isDuplicatingEvent}
                     onDisplayBusySlots={() => {
                         if (interactiveData?.temporaryEvent) {
                             switchFromModalToPopover(interactiveData.temporaryEvent);

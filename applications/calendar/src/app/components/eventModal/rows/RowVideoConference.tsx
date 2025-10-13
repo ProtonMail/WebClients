@@ -34,6 +34,7 @@ interface Props {
     setModel: (value: EventModel) => void;
     hasZoomError: boolean;
     setIsVideoConferenceLoading: (value: boolean) => void;
+    isDuplicating?: boolean;
 }
 
 export const RowVideoConference = ({
@@ -42,6 +43,7 @@ export const RowVideoConference = ({
     isCreateEvent,
     hasZoomError,
     setIsVideoConferenceLoading,
+    isDuplicating,
 }: Props) => {
     const [user] = useUser();
     const [organization] = useOrganization();
@@ -96,6 +98,7 @@ export const RowVideoConference = ({
         isActive: isProtonMeetMeeting,
         setActiveProvider,
         setIsVideoConferenceLoading,
+        isDuplicating,
     });
 
     const zoomAccessLevel = getAccessLevel();
