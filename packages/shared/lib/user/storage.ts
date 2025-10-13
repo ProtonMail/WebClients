@@ -111,7 +111,7 @@ export const getCanAddStorage = ({ user, subscription }: { user: UserModel; subs
 };
 
 export const getAppStorage = (app: string) => {
-    // Translator: Your 'mail storage' or 'drive storage' is full
+    // Translator: mail storage or drive storage
     return c('storage_split: info').t`${app} storage`;
 };
 
