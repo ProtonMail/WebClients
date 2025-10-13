@@ -1,6 +1,7 @@
 import { Router } from 'react-router-dom';
 
 import { fireEvent, render, screen } from '@testing-library/react';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { createMemoryHistory } from 'history';
 
 import { useUser } from '@proton/account/user/hooks';
