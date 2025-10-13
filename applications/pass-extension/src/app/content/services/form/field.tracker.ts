@@ -54,6 +54,8 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
 
                 await waitUntil(() => clientStatusResolved(ctx.getState().status), 50);
 
+                /** Sanity check if this is called multiple times while
+                 * an underlying async request is under way */
                 if (req !== state.focusRequest) return;
 
                 const { formType } = field.getFormHandle();

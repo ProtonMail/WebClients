@@ -19,7 +19,7 @@ import type { FormType } from '@proton/pass/fathom/labels';
 import { FieldType } from '@proton/pass/fathom/labels';
 import type { Maybe } from '@proton/pass/types';
 import { isElementBusy, isParentBusy } from '@proton/pass/utils/dom/form';
-import { findScrollableParent } from '@proton/pass/utils/dom/scroll';
+import { scrollableParent } from '@proton/pass/utils/dom/scroll';
 import { getOverlayZIndex } from '@proton/pass/utils/dom/zindex';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
@@ -44,6 +44,7 @@ export interface FormHandle {
     otp: boolean;
     zIndex: number;
     scrollParent: HTMLElement;
+    scrollChild: HTMLElement;
     detach: () => void;
     detachField: (field: FieldElement) => void;
     getFieldById: (fieldId: string) => Maybe<FieldHandle>;
@@ -54,6 +55,7 @@ export interface FormHandle {
 
 type ComputedFormData = {
     scrollParent?: HTMLElement;
+    scrollChild?: HTMLElement;
     zIndex?: number;
 };
 
@@ -85,8 +87,15 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
         },
 
         get scrollParent() {
-            data.scrollParent = data.scrollParent ?? findScrollableParent(form);
-            return data.scrollParent;
+            if (data.scrollParent) return data.scrollParent;
+            return (data.scrollParent = scrollableParent(form));
+        },
+
+        get scrollChild() {
+            if (data.scrollChild) return data.scrollChild;
+
+            const target = formHandle.getFields()[0]?.element;
+            return (data.scrollChild = target ? scrollableParent(target, form) : form);
         },
 
         get busy() {

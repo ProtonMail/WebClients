@@ -1,8 +1,7 @@
 import { INPUT_BASE_STYLES_ATTR } from 'proton-pass-extension/app/content/constants.static';
+import { cleanupInputInjectedStyles } from 'proton-pass-extension/app/content/services/inline/icon/icon.utils';
 
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
-
-import { cleanupInputInjectedStyles } from './icon/utils';
 
 export const DOMCleanUp = ({ root, control }: PassElementsConfig) => {
     /* remove all injected DOM nodes */
