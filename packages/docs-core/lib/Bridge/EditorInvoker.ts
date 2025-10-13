@@ -13,9 +13,8 @@ import type {
   SyncedEditorEvent,
   SheetImportData,
 } from '@proton/docs-shared'
-import { EditorBridgeMessageType, BridgeOriginProvider } from '@proton/docs-shared'
+import { EditorBridgeMessageType, BridgeOriginProvider, GenerateUUID } from '@proton/docs-shared'
 import type { LoggerInterface } from '@proton/utils/logs'
-import { GenerateUUID } from '@proton/docs-shared'
 import type { SerializedEditorState } from 'lexical'
 import type { UserSettings } from '@proton/shared/lib/interfaces'
 
@@ -127,8 +126,12 @@ export class EditorInvoker implements ClientRequiresEditorMethods {
     return this.invokeEditorMethod('toggleDebugTreeView', [])
   }
 
-  async getLatestSpreadsheetStateToLogJSON(): Promise<unknown> {
-    return this.invokeEditorMethod('getLatestSpreadsheetStateToLogJSON', [])
+  async getLocalSpreadsheetStateJSON(): Promise<unknown> {
+    return this.invokeEditorMethod('getLocalSpreadsheetStateJSON', [])
+  }
+
+  async replaceLocalSpreadsheetState(state: unknown): Promise<void> {
+    return this.invokeEditorMethod('replaceLocalSpreadsheetState', [state])
   }
 
   async getYDocAsJSON(): Promise<unknown> {
