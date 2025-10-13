@@ -196,6 +196,7 @@ export const createClientController = ({
             controller.stop(String(reason ?? 'destroyed'));
             controller.channel.destroy();
             controller.observer.destroy();
+            transport.destroy();
         },
     };
 

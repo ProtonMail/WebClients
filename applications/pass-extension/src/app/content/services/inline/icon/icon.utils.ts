@@ -4,8 +4,8 @@ import {
     ICON_PADDING,
     INPUT_BASE_STYLES_ATTR,
 } from 'proton-pass-extension/app/content/constants.static';
-import type { ProtonPassControl } from 'proton-pass-extension/app/content/injections/custom-elements/ProtonPassControl';
-import ProtonPassControlStyles from 'proton-pass-extension/app/content/injections/custom-elements/ProtonPassControl.raw.scss';
+import type { ProtonPassControl } from 'proton-pass-extension/app/content/services/inline/custom-elements/ProtonPassControl';
+import ProtonPassControlStyles from 'proton-pass-extension/app/content/services/inline/custom-elements/ProtonPassControl.raw.scss';
 
 import {
     type StyleParser,

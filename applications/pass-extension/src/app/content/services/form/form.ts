@@ -1,11 +1,11 @@
 import { FORM_TRACKER_CONFIG, NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { resolveIdentitySections } from 'proton-pass-extension/app/content/services/autofill/autofill.identity.sections';
+import { canAutosave } from 'proton-pass-extension/app/content/services/autosave/autosave.utils';
 import type { DetectedField, DetectedForm } from 'proton-pass-extension/app/content/services/form/detector';
 import type { FormTracker } from 'proton-pass-extension/app/content/services/form/form.tracker';
 import { createFormTracker } from 'proton-pass-extension/app/content/services/form/form.tracker';
 import { actionTrap } from 'proton-pass-extension/app/content/utils/action-trap';
-import { canAutosave } from 'proton-pass-extension/app/content/utils/autosave';
 import { hasProcessableFields, isActiveElement } from 'proton-pass-extension/app/content/utils/nodes';
 
 import {

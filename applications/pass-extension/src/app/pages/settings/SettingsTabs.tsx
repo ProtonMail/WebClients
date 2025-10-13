@@ -10,7 +10,7 @@ import { useRequestFork } from 'proton-pass-extension/lib/hooks/useRequestFork';
 import { c } from 'ttag';
 
 import Icon from '@proton/components/components/icon/Icon';
-import Tabs from '@proton/components/components/tabs/Tabs';
+import { default as Tabs } from '@proton/components/components/tabs/Tabs';
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import type { OnReauthFn } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { PasswordUnlockProvider } from '@proton/pass/components/Lock/PasswordUnlockProvider';

@@ -1,5 +1,5 @@
 import type { ClientController } from 'proton-pass-extension/app/content/client.controller';
-import { createAutofillService } from 'proton-pass-extension/app/content/services/autofill/autofill';
+import { createAutofillService } from 'proton-pass-extension/app/content/services/autofill/autofill.service';
 import { createAutosaveRelay } from 'proton-pass-extension/app/content/services/autosave/autosave.relay';
 import { createAutosaveService } from 'proton-pass-extension/app/content/services/autosave/autosave.service';
 import { createDetectorService } from 'proton-pass-extension/app/content/services/form/detector';

@@ -1,9 +1,5 @@
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { ContentScriptContextFactoryOptions } from 'proton-pass-extension/app/content/context/factory';
-import { createDropdownRelayHandler } from 'proton-pass-extension/app/content/services/inline/handlers/dropdown.relay';
-import { createNotificationRelayHandler } from 'proton-pass-extension/app/content/services/inline/handlers/notification.relay';
-import type { AbstractInlineService } from 'proton-pass-extension/app/content/services/inline/inline.abstract';
-import { createPassiveInlineListeners } from 'proton-pass-extension/app/content/services/inline/inline.listeners';
 import type { FrameMessageHandler } from 'proton-pass-extension/app/content/utils/frame.message-broker';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
@@ -13,6 +9,11 @@ import type { MaybeNull } from '@proton/pass/types';
 import { isMainFrame } from '@proton/pass/utils/dom/is-main-frame';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import noop from '@proton/utils/noop';
+
+import { createDropdownRelayHandler } from './dropdown/dropdown.relay';
+import type { AbstractInlineService } from './inline.abstract';
+import { createPassiveInlineListeners } from './inline.listeners';
+import { createNotificationRelayHandler } from './notification/notification.relay';
 
 export const createInlineRelay = ({ controller }: ContentScriptContextFactoryOptions): AbstractInlineService => {
     /** NOTE: This should only be spawned in sub-frames */

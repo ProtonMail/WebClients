@@ -1,8 +1,9 @@
 import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
-import type { DropdownHandler } from 'proton-pass-extension/app/content/services/inline/handlers/dropdown.abstract';
-import type { NotificationHandler } from 'proton-pass-extension/app/content/services/inline/handlers/notification.abstract';
 
 import type { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
+
+import type { DropdownHandler } from './dropdown/dropdown.abstract';
+import type { NotificationHandler } from './notification/notification.abstract';
 
 export type InlineFieldTarget = { type: 'field'; field: FieldHandle };
 

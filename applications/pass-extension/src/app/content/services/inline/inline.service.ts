@@ -1,10 +1,6 @@
 import { NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { ContentScriptContextFactoryOptions } from 'proton-pass-extension/app/content/context/factory';
-import { createIFrameRegistry } from 'proton-pass-extension/app/content/services/iframes/registry';
-import { createDropdownTopHandler } from 'proton-pass-extension/app/content/services/inline/handlers/dropdown.top';
-import { createNotificationTopHandler } from 'proton-pass-extension/app/content/services/inline/handlers/notification.top';
-import type { AbstractInlineService } from 'proton-pass-extension/app/content/services/inline/inline.abstract';
 import { getFrameElement } from 'proton-pass-extension/app/content/utils/frame';
 import type { FrameMessageHandler } from 'proton-pass-extension/app/content/utils/frame.message-broker';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
@@ -12,6 +8,11 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { clientNeedsSession, clientSessionLocked } from '@proton/pass/lib/client';
 import { isMainFrame } from '@proton/pass/utils/dom/is-main-frame';
 import noop from '@proton/utils/noop';
+
+import { createDropdownHandler } from './dropdown/dropdown.handler';
+import type { AbstractInlineService } from './inline.abstract';
+import { createInlineRegistry } from './inline.registry';
+import { createNotificationHandler } from './notification/notification.handler';
 
 export const createInlineService = ({
     elements,
@@ -21,9 +22,9 @@ export const createInlineService = ({
     if (!isMainFrame()) throw new Error('InlineService should only be created in top-frame');
 
     const { channel } = controller;
-    const registry = createIFrameRegistry(elements);
-    const dropdown = createDropdownTopHandler(registry);
-    const notification = createNotificationTopHandler(registry);
+    const registry = createInlineRegistry(elements);
+    const dropdown = createDropdownHandler(registry);
+    const notification = createNotificationHandler(registry);
 
     const onDropdownOpen: FrameMessageHandler<WorkerMessageType.INLINE_DROPDOWN_OPEN> = ({ payload }) => {
         if (payload.type === 'request') return;

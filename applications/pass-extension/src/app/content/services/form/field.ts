@@ -1,5 +1,7 @@
 import { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
+import type { AutofillOptions } from 'proton-pass-extension/app/content/services/autofill/autofill.utils';
+import { createAutofill } from 'proton-pass-extension/app/content/services/autofill/autofill.utils';
 import { type FieldAnchor, createFieldAnchor } from 'proton-pass-extension/app/content/services/form/field.anchor';
 import type { FieldTracker } from 'proton-pass-extension/app/content/services/form/field.tracker';
 import { createFieldTracker } from 'proton-pass-extension/app/content/services/form/field.tracker';
@@ -8,8 +10,6 @@ import type { FormTracker } from 'proton-pass-extension/app/content/services/for
 import type { IconController } from 'proton-pass-extension/app/content/services/inline/icon/icon.controller';
 import { createIconController } from 'proton-pass-extension/app/content/services/inline/icon/icon.controller';
 import { actionTrap, withActionTrap } from 'proton-pass-extension/app/content/utils/action-trap';
-import type { AutofillOptions } from 'proton-pass-extension/app/content/utils/autofill';
-import { createAutofill } from 'proton-pass-extension/app/content/utils/autofill';
 import { getFrameParentVisibility } from 'proton-pass-extension/app/content/utils/frame';
 import { isActiveElement } from 'proton-pass-extension/app/content/utils/nodes';
 import type { FrameField } from 'proton-pass-extension/types/frames';

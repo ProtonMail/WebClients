@@ -3,7 +3,7 @@ import { CLIENT_SCRIPT_READY_EVENT } from 'proton-pass-extension/app/content/con
 import { CSContext } from 'proton-pass-extension/app/content/context/context';
 import { createContentScriptContext } from 'proton-pass-extension/app/content/context/factory';
 import type { ContentScriptContext } from 'proton-pass-extension/app/content/context/types';
-import { DOMCleanUp } from 'proton-pass-extension/app/content/utils/cleanup';
+import { DOMCleanUp } from 'proton-pass-extension/app/content/services/inline/inline.cleanup';
 import type { FrameMessageHandler } from 'proton-pass-extension/app/content/utils/frame.message-broker';
 import type { ExtensionContextType } from 'proton-pass-extension/lib/context/extension-context';
 import { ExtensionContext, setupExtensionContext } from 'proton-pass-extension/lib/context/extension-context';

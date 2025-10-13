@@ -1,0 +1,30 @@
+import type { FC, PropsWithChildren } from 'react';
+
+import { Scroll } from '@proton/atoms/Scroll/Scroll';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import clsx from '@proton/utils/clsx';
+
+import { LIST_MAX_HEIGHT, LIST_MAX_VISIBLE_ITEMS } from './ListItem';
+
+import './ScrollableItemsList.scss';
+
+type Props = PropsWithChildren<{ increaseSurface?: boolean }>;
+
+export const ScrollableItemsList: FC<Props> = ({ children, increaseSurface }) => (
+    <DropdownMenu
+        className={clsx(
+            'pass-scrollable-items-list',
+            increaseSurface && 'pass-scrollable-items-list--increase-surface'
+        )}
+    >
+        <div className="max-h-custom overflow-hidden" style={{ '--max-h-custom': `${LIST_MAX_HEIGHT}rem` }}>
+            <Scroll
+                {...(Array.isArray(children) && children.length >= LIST_MAX_VISIBLE_ITEMS
+                    ? { style: { height: `${LIST_MAX_HEIGHT}rem` } }
+                    : {})}
+            >
+                {children}
+            </Scroll>
+        </div>
+    </DropdownMenu>
+);

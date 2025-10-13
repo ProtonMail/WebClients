@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { NOTIFICATION_MIN_HEIGHT, NOTIFICATION_WIDTH } from 'proton-pass-extension/app/content/constants.static';
-import { Notification } from 'proton-pass-extension/app/content/injections/apps/notification/Notification';
+import { Notification } from 'proton-pass-extension/app/content/services/inline/notification/app/Notification';
 
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { selectAllLoginItems } from '@proton/pass/store/selectors';

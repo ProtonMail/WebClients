@@ -1,0 +1,132 @@
+import { type FC, useCallback, useEffect, useRef, useState } from 'react';
+
+import type { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
+import { DropdownHeader } from 'proton-pass-extension/app/content/services/inline/dropdown/app/components/DropdownHeader';
+import type { DropdownActions } from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.app';
+import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
+import { useIFrameAppController, useIFrameAppState } from 'proton-pass-extension/lib/components/Inline/IFrameApp';
+import { ListItem } from 'proton-pass-extension/lib/components/Inline/ListItem';
+import { PauseListDropdown } from 'proton-pass-extension/lib/components/Inline/PauseListDropdown';
+import { c } from 'ttag';
+
+import { Button } from '@proton/atoms/Button/Button';
+import Icon from '@proton/components/components/icon/Icon';
+import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
+import { PasswordMemorableOptions } from '@proton/pass/components/Password/PasswordMemorableOptions';
+import { PasswordRandomOptions } from '@proton/pass/components/Password/PasswordRandomOptions';
+import { PasswordTypeSelect } from '@proton/pass/components/Password/PasswordTypeSelect';
+import {
+    getCharsGroupedByColor,
+    isUsingMemorablePassword,
+    isUsingRandomPassword,
+    usePasswordGenerator,
+} from '@proton/pass/hooks/usePasswordGenerator';
+import type { Maybe } from '@proton/pass/types';
+
+type Props = Extract<DropdownActions, { action: DropdownAction.AUTOSUGGEST_PASSWORD }>;
+
+export const AutosuggestPassword: FC<Props> = ({ origin, config, copy, policy }) => {
+    const { visible } = useIFrameAppState();
+    const controller = useIFrameAppController();
+    const timer = useRef<Maybe<ReturnType<typeof setTimeout>>>();
+    const inputRef = useRef<HTMLInputElement>(null);
+
+    const [advanced, setAdvanced] = useState(false);
+    const [copied, setCopied] = useState(false);
+
+    const generator = usePasswordGenerator({ config, policy });
+
+    useEffect(() => {
+        setCopied(false);
+        setAdvanced(false);
+        return () => clearTimeout(timer.current);
+    }, [visible]);
+
+    /* FIXME: move away from from `execCommand` and
+     * prefer `navigator.clipboard` API  */
+    const copyToClipboard = useCallback(() => {
+        inputRef.current?.select();
+        document.execCommand('copy');
+        setCopied(true);
+    }, []);
+
+    const autofillPassword = (feedback: boolean) => {
+        controller.forwardMessage({
+            type: InlinePortMessageType.AUTOFILL_GENERATED_PW,
+            payload: { password: generator.password },
+        });
+
+        if (copy) copyToClipboard();
+        if (feedback) timer.current = setTimeout(controller.close, 1_000);
+        else controller.close();
+    };
+
+    const label = copy ? c('Title').t`Fill & copy password` : c('Title').t`Fill password`;
+
+    return (
+        <>
+            <DropdownHeader
+                title={c('Title').t`Password`}
+                extra={
+                    <div className="flex gap-1">
+                        <Button
+                            className="shrink-0 button-xs"
+                            icon
+                            color="weak"
+                            shape="solid"
+                            pill
+                            onClick={() => setAdvanced((prev) => !prev)}
+                            size="small"
+                            title={c('Action').t`Show advanced options`}
+                        >
+                            <Icon name="cog-drawer" alt={c('Action').t`More options`} size={12} />
+                        </Button>
+                        <PauseListDropdown
+                            criteria="Autosuggest"
+                            dense
+                            hostname={origin}
+                            label={c('Action').t`Do not suggest on this website`}
+                        />
+                    </div>
+                }
+            />
+
+            <ListItem
+                subTheme={SubTheme.RED}
+                {...(copied
+                    ? {
+                          icon: { type: 'icon', icon: 'checkmark' },
+                          subTitle: c('Info').t`Password copied`,
+                          onClick: controller.close,
+                      }
+                    : {
+                          icon: { type: 'icon', icon: 'key' },
+                          title: label,
+                          subTitle: (
+                              <span className="text-monospace">{getCharsGroupedByColor(generator.password)}</span>
+                          ),
+                          onClick: () => autofillPassword(copy),
+                      })}
+            />
+            <input ref={inputRef} className="invisible" value={generator.password} readOnly />
+            {advanced && (
+                <div className="flex-column flex gap-y-2 px-4 pb-3 text-sm ui-red">
+                    <hr className="m-0" />
+                    <PasswordTypeSelect dense {...generator} />
+                    <hr className="m-0" />
+                    {isUsingRandomPassword(generator) && <PasswordRandomOptions advanced dense {...generator} />}
+                    {isUsingMemorablePassword(generator) && <PasswordMemorableOptions advanced dense {...generator} />}
+                    <hr className="m-0" />
+                    <div className="flex gap-x-2">
+                        <Button className="flex-1" pill shape="solid" onClick={() => autofillPassword(false)}>
+                            {label}
+                        </Button>
+                        <Button icon pill shape="solid" className="shrink-0" onClick={generator.regeneratePassword}>
+                            <Icon name="arrows-rotate" alt={c('Action').t`Regenerate`} />
+                        </Button>
+                    </div>
+                </div>
+            )}
+        </>
+    );
+};

@@ -4,8 +4,8 @@ import {
     IFrameAppControllerContext,
     type IFrameAppState,
     IFrameAppStateContext,
-} from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
-import type { IFrameAppController } from 'proton-pass-extension/app/content/injections/apps/components/IFrameAppController';
+} from 'proton-pass-extension/lib/components/Inline/IFrameApp';
+import type { IFrameAppController } from 'proton-pass-extension/lib/components/Inline/IFrameAppController';
 
 import { AppStateContext } from '@proton/pass/components/Core/AppStateProvider';
 import { getInitialSettings } from '@proton/pass/store/reducers/settings';

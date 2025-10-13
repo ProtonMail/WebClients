@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { DROPDOWN_WIDTH } from 'proton-pass-extension/app/content/constants.static';
-import { Dropdown } from 'proton-pass-extension/app/content/injections/apps/dropdown/Dropdown';
+import { Dropdown } from 'proton-pass-extension/app/content/services/inline/dropdown/app/Dropdown';
 
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { DEFAULT_RANDOM_PW_OPTIONS } from '@proton/pass/lib/password/constants';

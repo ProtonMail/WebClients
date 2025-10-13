@@ -4,8 +4,8 @@
 import 'proton-pass-extension/lib/polyfills/shim';
 
 import { exporter } from './bridge/utils';
-import { ProtonPassControl } from './injections/custom-elements/ProtonPassControl';
-import { ProtonPassRoot } from './injections/custom-elements/ProtonPassRoot';
+import { ProtonPassControl } from './services/inline/custom-elements/ProtonPassControl';
+import { ProtonPassRoot } from './services/inline/custom-elements/ProtonPassRoot';
 
 /** The `registerPassElements` function is temporarily exposed on the
  * global object to facilitate its invocation from an `executeScript`

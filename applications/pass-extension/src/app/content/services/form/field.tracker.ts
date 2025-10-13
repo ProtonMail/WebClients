@@ -1,7 +1,7 @@
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
 import type { FormTracker } from 'proton-pass-extension/app/content/services/form/form.tracker';
-import { IFramePortMessageType } from 'proton-pass-extension/app/content/services/iframes/messages';
+import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
 import { actionPrevented } from 'proton-pass-extension/app/content/utils/action-trap';
 
 import { FieldType, FormType } from '@proton/pass/fathom/labels';
@@ -21,7 +21,7 @@ export interface FieldTracker {
 const syncAutofillFilter = throttle(
     withContext<(startsWith: string) => void>((ctx, startsWith) => {
         ctx?.service.inline.dropdown.sendMessage({
-            type: IFramePortMessageType.AUTOFILL_FILTER,
+            type: InlinePortMessageType.AUTOFILL_FILTER,
             payload: { startsWith },
         });
     }),
