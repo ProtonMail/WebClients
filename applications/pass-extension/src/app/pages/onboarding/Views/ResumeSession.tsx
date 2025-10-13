@@ -29,7 +29,7 @@ const bypass = async () => {
             })
         );
     } finally {
-        void browser.tabs.remove(tabId);
+        browser.tabs.remove(tabId).catch(noop);
     }
 };
 
