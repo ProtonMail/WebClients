@@ -3,30 +3,30 @@ import { c } from 'ttag';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 
-import { B2COnboardingFlags, B2C_CATEGORIES_MAPPING, FeatureValueDefault } from './onboardingInterface';
+import { B2C_CATEGORIES_MAPPING, CategoriesOnboardingFlags, FeatureValueDefault } from './onboardingInterface';
 
 export const hasSeeFullDisplay = (flagValue: number): boolean => {
     if (flagValue === FeatureValueDefault) {
         return true;
     }
 
-    return hasBit(flagValue, B2COnboardingFlags.FULL_DISPLAY);
+    return hasBit(flagValue, CategoriesOnboardingFlags.FULL_DISPLAY);
 };
 
 export const hasSeeSocial = (flagValue: number): boolean => {
-    return hasBit(flagValue, B2COnboardingFlags.SOCIAL);
+    return hasBit(flagValue, CategoriesOnboardingFlags.SOCIAL);
 };
 
 export const hasSeePromotion = (flagValue: number): boolean => {
-    return hasBit(flagValue, B2COnboardingFlags.PROMOTION);
+    return hasBit(flagValue, CategoriesOnboardingFlags.PROMOTION);
 };
 
 export const hasSeeNewsletter = (flagValue: number): boolean => {
-    return hasBit(flagValue, B2COnboardingFlags.NEWSLETTER);
+    return hasBit(flagValue, CategoriesOnboardingFlags.NEWSLETTER);
 };
 
 export const hasSeeTransaction = (flagValue: number): boolean => {
-    return hasBit(flagValue, B2COnboardingFlags.TRANSACTION);
+    return hasBit(flagValue, CategoriesOnboardingFlags.TRANSACTION);
 };
 
 export const hasSeenCategoryCard = (labelID: string, flagValue: number): boolean => {
