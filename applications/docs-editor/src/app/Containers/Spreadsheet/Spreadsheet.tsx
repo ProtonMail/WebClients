@@ -19,7 +19,7 @@ import { downloadLogsAsJSON } from '../../../../../docs/src/app/utils/downloadLo
 import type { EditorLoadResult } from '../../Lib/EditorLoadResult'
 import { useApplication } from '../ApplicationProvider'
 import { LOCALE } from './constants'
-import { type ProtonSheetsState, useLogState, useProtonSheetsState } from './state'
+import { type ProtonSheetsState, useLocalState, useProtonSheetsState } from './state'
 
 import '@rowsncolumns/spreadsheet/dist/spreadsheet.min.css'
 import { Menubar } from './components/Menubar/Menubar'
@@ -36,6 +36,7 @@ import { Sidebar } from './components/Sidebar/Sidebar'
 
 export type SpreadsheetRef = {
   exportData: (format: DataTypesThatDocumentCanBeExportedAs) => Promise<Uint8Array<ArrayBuffer>>
+  replaceLocalSpreadsheetState: (state: unknown) => void
 }
 
 export type SpreadsheetProps = {
@@ -45,7 +46,7 @@ export type SpreadsheetProps = {
   editorInitializationConfig: EditorInitializationConfig | undefined
   systemMode: EditorSystemMode
   editingLocked: boolean
-  updateLatestStateToLog: (state: unknown) => void
+  updateLocalStateToLog: (state: unknown) => void
 }
 
 export const Spreadsheet = forwardRef(function Spreadsheet(
@@ -56,7 +57,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     editorInitializationConfig,
     systemMode,
     editingLocked,
-    updateLatestStateToLog,
+    updateLocalStateToLog,
   }: SpreadsheetProps,
   ref: ForwardedRef<SpreadsheetRef>,
 ) {
@@ -68,7 +69,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   const isReadonly = editingLocked || isRevisionMode
 
   const state = useProtonSheetsState({ docState, locale: LOCALE, functions, isReadonly })
-  const { getStateToLog } = useLogState(state, updateLatestStateToLog)
+  const { getLocalStateWithoutActions, replaceLocalSpreadsheetState } = useLocalState(state, updateLocalStateToLog)
 
   const exportData = async (format: DataTypesThatDocumentCanBeExportedAs) => {
     if (format === 'yjs') {
@@ -93,7 +94,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     }
     throw new Error(`Spreadsheet cannot be exported to format ${format}`)
   }
-  useImperativeHandle(ref, () => ({ exportData }))
+  useImperativeHandle(ref, (): SpreadsheetRef => ({ exportData, replaceLocalSpreadsheetState }))
 
   useEffect(() => {
     onEditorLoadResult(TranslatedResult.ok())
@@ -158,10 +159,10 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
       async getYDocAsJSON() {
         return docState.getDoc().toJSON()
       },
-      async getLatestSpreadsheetStateToLogJSON() {
-        return getStateToLog()
+      async getLocalSpreadsheetStateJSON() {
+        return getLocalStateWithoutActions()
       },
-    } as Pick<EditorControllerInterface, 'getYDocAsJSON' | 'getLatestSpreadsheetStateToLogJSON'>
+    } as Pick<EditorControllerInterface, 'getYDocAsJSON' | 'getLocalSpreadsheetStateJSON'>
 
     downloadLogsAsJSON(editorAdapter as EditorControllerInterface, 'sheet').catch(console.error)
   }
