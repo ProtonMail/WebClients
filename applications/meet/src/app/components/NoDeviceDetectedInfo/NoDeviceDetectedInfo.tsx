@@ -37,6 +37,7 @@ export const NoDeviceDetectedInfo = () => {
 
     const microphoneLinkButton = !hasMicrophone && (
         <InlineLinkButton
+            key="open-microphone-device-modal"
             className="color-primary mx-1"
             onClick={() => {
                 setNoDeviceDetected(PermissionPromptStatus.MICROPHONE);
@@ -48,6 +49,7 @@ export const NoDeviceDetectedInfo = () => {
 
     const cameraLinkButton = !hasCamera && (
         <InlineLinkButton
+            key="open-camera-device-modal"
             className="color-primary mx-1"
             onClick={() => {
                 setNoDeviceDetected(PermissionPromptStatus.CAMERA);
