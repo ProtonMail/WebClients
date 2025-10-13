@@ -1,6 +1,7 @@
 import { Router } from 'react-router-dom';
 
 import { renderHook } from '@testing-library/react-hooks';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { createMemoryHistory } from 'history';
 
 import { changeCalendarVisiblity } from '@proton/calendar/calendars/actions';

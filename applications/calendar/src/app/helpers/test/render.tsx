@@ -2,8 +2,11 @@ import type { ReactElement, ReactNode } from 'react';
 import * as React from 'react';
 import { Router } from 'react-router';
 
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { render as originalRender } from '@testing-library/react';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { renderHook as originalRenderHook } from '@testing-library/react-hooks';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { createMemoryHistory } from 'history';
 
 import { CacheProvider, ConfigProvider, ModalsChildren, ModalsProvider } from '@proton/components';
