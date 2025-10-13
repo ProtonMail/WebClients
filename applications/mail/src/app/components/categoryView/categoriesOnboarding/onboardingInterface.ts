@@ -12,12 +12,14 @@ export interface OnboardingInfo {
     flagValue: number;
 }
 
-export enum B2COnboardingFlags {
+export enum CategoriesOnboardingFlags {
     FULL_DISPLAY = 1 << 0,
     SOCIAL = 1 << 1,
     PROMOTION = 1 << 2,
     NEWSLETTER = 1 << 3,
     TRANSACTION = 1 << 4,
+    UPDATE = 1 << 5,
+    FORUMS = 1 << 6,
 }
 
 export const FeatureValueDefault = -1 as const;
@@ -30,25 +32,25 @@ export const B2COnboardinCategoriesWithCards = new Set<string>([
 ]);
 
 interface CategoryConfig {
-    flag: B2COnboardingFlags;
+    flag: CategoriesOnboardingFlags;
     checker: (flagValue: number) => boolean;
 }
 
 export const B2C_CATEGORIES_MAPPING: Record<string, CategoryConfig> = {
     [MAILBOX_LABEL_IDS.CATEGORY_SOCIAL]: {
-        flag: B2COnboardingFlags.SOCIAL,
-        checker: (flagValue: number) => hasBit(flagValue, B2COnboardingFlags.SOCIAL),
+        flag: CategoriesOnboardingFlags.SOCIAL,
+        checker: (flagValue: number) => hasBit(flagValue, CategoriesOnboardingFlags.SOCIAL),
     },
     [MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS]: {
-        flag: B2COnboardingFlags.PROMOTION,
-        checker: (flagValue: number) => hasBit(flagValue, B2COnboardingFlags.PROMOTION),
+        flag: CategoriesOnboardingFlags.PROMOTION,
+        checker: (flagValue: number) => hasBit(flagValue, CategoriesOnboardingFlags.PROMOTION),
     },
     [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS]: {
-        flag: B2COnboardingFlags.NEWSLETTER,
-        checker: (flagValue: number) => hasBit(flagValue, B2COnboardingFlags.NEWSLETTER),
+        flag: CategoriesOnboardingFlags.NEWSLETTER,
+        checker: (flagValue: number) => hasBit(flagValue, CategoriesOnboardingFlags.NEWSLETTER),
     },
     [MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS]: {
-        flag: B2COnboardingFlags.TRANSACTION,
-        checker: (flagValue: number) => hasBit(flagValue, B2COnboardingFlags.TRANSACTION),
+        flag: CategoriesOnboardingFlags.TRANSACTION,
+        checker: (flagValue: number) => hasBit(flagValue, CategoriesOnboardingFlags.TRANSACTION),
     },
 } as const;
