@@ -90,7 +90,7 @@ export const useCategoriesOnboarding = (): OnboardingInfo => {
 
     // B2C users conditions
     const isChecklistFull = mailChecklist.displayState === CHECKLIST_DISPLAY_TYPE.FULL;
-    const allOnboardingSeen = hasSeenAllOnboarding(b2cOnboardingFlag.feature?.Value ?? 0);
+    const allOnboardingSeen = hasSeenAllOnboarding(AudienceType.B2C, b2cOnboardingFlag.feature?.Value ?? 0);
     const allMailsElementsCount = getLocationElementsCount(
         MAILBOX_LABEL_IDS.ALL_MAIL,
         conversationCounts,
