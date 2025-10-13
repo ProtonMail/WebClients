@@ -1,9 +1,6 @@
-import type { NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
 import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
-import type { DropdownRequest } from 'proton-pass-extension/app/content/services/iframes/dropdown';
-import type { IFrameMessage } from 'proton-pass-extension/app/content/services/iframes/messages';
-import type { NotificationRequest } from 'proton-pass-extension/app/content/services/iframes/notification';
-import type { DropdownStateDTO } from 'proton-pass-extension/types/inline';
+import type { DropdownHandler } from 'proton-pass-extension/app/content/services/inline/handlers/dropdown.abstract';
+import type { NotificationHandler } from 'proton-pass-extension/app/content/services/inline/handlers/notification.abstract';
 
 import type { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 
@@ -28,19 +25,6 @@ export interface AbstractInlineService {
     destroy: () => void;
     setTheme: (theme?: PassThemeOption) => void;
 
-    dropdown: {
-        attach: (layer?: HTMLElement) => void;
-        close: (target?: InlineFieldTarget | Pick<InlineFrameTarget, 'type' | 'formId' | 'fieldId'>) => void;
-        destroy: () => void;
-        open: (request: DropdownRequest) => void;
-        sendMessage: (message: IFrameMessage) => void;
-        getState: () => Promise<DropdownStateDTO>;
-    };
-
-    notification: {
-        attach: () => void;
-        close: (action?: NotificationAction) => void;
-        destroy: () => void;
-        open: (request: NotificationRequest) => void;
-    };
+    dropdown: DropdownHandler;
+    notification: NotificationHandler;
 }
