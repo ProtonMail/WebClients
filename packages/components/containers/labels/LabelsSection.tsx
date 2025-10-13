@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { arrayMove } from 'react-sortable-hoc';
 
 import { c } from 'ttag';
 
@@ -24,6 +23,7 @@ import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { hasReachedLabelLimit } from '@proton/shared/lib/helpers/folder';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import type { Label } from '@proton/shared/lib/interfaces';
+import move from '@proton/utils/move';
 
 import LabelSortableList from './LabelSortableList';
 import EditLabelModal from './modals/EditLabelModal';
@@ -59,11 +59,11 @@ function LabelsSection({ showPromptOnAction }: Props) {
     /**
      * Refresh the list + update API and call event, it can be slow.
      * We want a responsive UI, if it fails the item will go back to its previous index
-     * @param  {Number} oldIndex cf https://github.com/clauderic/react-sortable-hoc#basic-example
+     * @param  {Number} oldIndex
      * @param  {Number} newIndex
      */
     const onSortEnd = async ({ oldIndex, newIndex }: { oldIndex: number; newIndex: number }) => {
-        const newLabels = arrayMove(localLabels, oldIndex, newIndex);
+        const newLabels = move(localLabels, oldIndex, newIndex);
         setLocalLabels(newLabels);
     };
 
