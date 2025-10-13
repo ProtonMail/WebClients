@@ -2,7 +2,7 @@
 
 > This is a "fork" of [kripod/react-polymorphic-types](https://github.com/kripod/react-polymorphic-types) which fixes the types export declaration for TS when using a `moduleResolution` mode that relies on the package.json `exports` field.
 
-<hr>
+---
 
 Zero-runtime polymorphic component definitions for React
 
