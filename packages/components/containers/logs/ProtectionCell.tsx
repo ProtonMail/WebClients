@@ -17,15 +17,15 @@ const ProtectionTooltip = () => {
     );
 };
 
-const ProtectionCell = ({ protection, protectionDesc, isB2B = false }: Props) => {
+const ProtectionCell = ({ protection, protectionDesc }: Props) => {
     const protectionTooltip = protection ? <ProtectionTooltip /> : null;
     if (protection === ProtectionType.OK) {
         return protectionTooltip;
     }
     return (
-        <div className={isB2B ? 'flex flex-column' : ''}>
-            <span className="shrink-0 mr-2">{protectionTooltip}</span>
-            <span className={isB2B ? 'max-w-full text-ellipsis' : 'flex-1'}>{protectionDesc || '-'}</span>
+        <div className="flex flex-row">
+            <div className="mr-2 self-center">{protectionTooltip}</div>
+            <div className="flex-1">{protectionDesc || '-'}</div>
         </div>
     );
 };
