@@ -7,7 +7,7 @@ import noop from '@proton/utils/noop';
  * closing the tab */
 if (BUILD_TARGET === 'chrome' && ENV === 'production') {
     if (window.self === window.top) {
-        void browser.tabs
+        browser.tabs
             .getCurrent()
             .then<any>(({ id }) => id !== undefined && browser.tabs.remove(id))
             .catch(noop);

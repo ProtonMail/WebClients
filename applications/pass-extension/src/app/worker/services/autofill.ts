@@ -117,7 +117,7 @@ export const createAutoFillService = () => {
                     tabs.map(({ id: tabId, url }) => {
                         if (tabId) {
                             const items = getLoginCandidates({ url });
-                            void setPopupIconBadge(tabId, items.length);
+                            setPopupIconBadge(tabId, items.length);
 
                             WorkerMessageBroker.ports.broadcast({ type: WorkerMessageType.AUTOFILL_SYNC }, (name) =>
                                 isContentScriptPort(name, tabId)
@@ -168,7 +168,7 @@ export const createAutoFillService = () => {
             const { shareIds, needsUpgrade } = getAutofillOptions(payload.writable);
 
             const items = getLoginCandidates({ url: host, shareIds }).map(intoLoginItemPreview);
-            if (tabId) void setPopupIconBadge(tabId, items.length);
+            if (tabId) setPopupIconBadge(tabId, items.length);
             return { items, needsUpgrade };
         })
     );
@@ -230,7 +230,7 @@ export const createAutoFillService = () => {
                 await ctx.ensureReady();
                 if (tabId) {
                     const items = getLoginCandidates({ url: tab.url });
-                    void setPopupIconBadge(tabId, items.length);
+                    setPopupIconBadge(tabId, items.length);
                 }
             } catch {}
         })
