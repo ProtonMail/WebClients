@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import type { IconName } from '@proton/icons/types';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';
@@ -19,7 +18,6 @@ type SecureLinkCard = { title: string; subtitle: string; icon: IconName; classNa
 
 export const SecureLinkDetails: FC<SecureLink> = ({ active, secureLink, readCount, maxReadCount, expirationDate }) => {
     const copyToClipboard = useCopyToClipboard();
-    const { createNotification } = useNotifications();
     const [linkCopied, setLinkCopied] = useState(false);
     const ref = useRef<HTMLButtonElement>(null);
 
@@ -27,7 +25,6 @@ export const SecureLinkDetails: FC<SecureLink> = ({ active, secureLink, readCoun
         await copyToClipboard(secureLink);
         ref.current?.focus();
         setLinkCopied(true);
-        createNotification({ text: c('Label').t`The URL has been copied to the clipboard` });
     };
 
     const optionCards = useMemo<SecureLinkCard[]>(() => {
