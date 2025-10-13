@@ -7,13 +7,15 @@ import { usePlans } from '@proton/account/plans/hooks';
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { Button, ButtonLike, type ButtonProps, InlineLinkButton } from '@proton/atoms';
+import { Button, type ButtonProps } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import Logo from '@proton/components/components/logo/Logo';
 import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { FeatureCode, useFeature } from '@proton/features';
-import { IcCheckmark } from '@proton/icons';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import {
     CYCLE,
     FREE_PLAN,
@@ -52,6 +54,7 @@ import type { SubscriptionContainerProps } from '../../payments/subscription/Sub
 import { useSubscriptionModal } from '../../payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../payments/subscription/constants';
 import type { UpsellFeature } from '../../payments/subscription/helpers/dashboard-upsells';
+import { TrialInfoModal } from '../../referral/components/TrialInfo/TrialInfo';
 import TopBanner from '../TopBanner';
 
 interface ModalActionProps extends Pick<ButtonProps, 'color' | 'shape'> {
@@ -313,6 +316,19 @@ const ContinueSubscriptionActionButton = ({ app }: { app: APP_NAMES }) => {
     );
 };
 
+const TrialInfoActionButton = () => {
+    const [modalProps, setModalOpen, renderModal] = useModalState();
+
+    return (
+        <>
+            {renderModal && <TrialInfoModal {...modalProps} />}
+            <InlineLinkButton className="color-inherit" onClick={() => setModalOpen(true)}>
+                {c('Action').t`Learn more`}
+            </InlineLinkButton>
+        </>
+    );
+};
+
 const ReferralTopBanner = ({ app }: { app: APP_NAMES }) => {
     const [subscription, loadingSubscription] = useSubscription();
 
@@ -328,7 +344,8 @@ const ReferralTopBanner = ({ app }: { app: APP_NAMES }) => {
         return null;
     }
 
-    const action = <ContinueSubscriptionActionButton app={app} key="trial-action-button" />;
+    const autoRenewalAction = <ContinueSubscriptionActionButton app={app} key="trial-action-button" />;
+    const nonAutoRenewalAction = <TrialInfoActionButton key="opt-out-trial-action-button" />;
 
     const isExpired = isTrialExpired(subscription);
 
@@ -347,7 +364,7 @@ const ReferralTopBanner = ({ app }: { app: APP_NAMES }) => {
             await setShowReferralTrialEndedBanner(false);
         };
 
-        const message = c('Message').jt`Your free trial has ended. ${action}`;
+        const message = c('Message').jt`Your free trial has ended. ${autoRenewalAction}`;
 
         return (
             <TopBanner className="bg-info" onClose={dismiss}>
@@ -372,8 +389,8 @@ const ReferralTopBanner = ({ app }: { app: APP_NAMES }) => {
             <TopBanner className="bg-info" onClose={dismiss}>
                 {isAutoRenewTrial(subscription)
                     ? c('Warning')
-                          .jt`Your trial will end on ${textDate}. You won’t be charged if you cancel before ${textDate}.`
-                    : c('Warning').jt`Your free trial ends on ${textDate}. ${action}`}
+                          .jt`Your trial will end on ${textDate}. You won’t be charged if you cancel before ${textDate}. ${nonAutoRenewalAction}`
+                    : c('Warning').jt`Your free trial ends on ${textDate}. ${nonAutoRenewalAction}`}
             </TopBanner>
         );
     }
