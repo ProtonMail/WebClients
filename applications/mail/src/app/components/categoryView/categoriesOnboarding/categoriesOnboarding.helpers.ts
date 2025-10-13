@@ -103,7 +103,7 @@ export const hasSeenAllOnboarding = (audience: AudienceType, flagValue: number):
     }
 
     if (audience === AudienceType.B2B) {
-        return hasSeeUpdate(flagValue) && hasSeeTransaction(flagValue);
+        return hasSeeFullDisplay(flagValue) && hasSeeUpdate(flagValue) && hasSeeTransaction(flagValue);
     }
 
     return false;
