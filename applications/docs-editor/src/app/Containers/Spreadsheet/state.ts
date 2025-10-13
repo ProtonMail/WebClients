@@ -24,6 +24,8 @@ import { DocProvider } from '@proton/docs-shared'
 import { useSyncedState } from '../../Hooks/useSyncedState'
 import { create } from 'zustand'
 import { useEvent } from './components/utils'
+import { useNotifications } from '@proton/components'
+import { c } from 'ttag'
 
 // local state
 // -----------
@@ -351,6 +353,22 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
     return newSheet
   })
 
+  const { createNotification } = useNotifications()
+  const onDeleteRow = useEvent((sheetId: number, rowIndexes: number[]) => {
+    if (baseState.rowCount === rowIndexes.length) {
+      createNotification({ text: c('sheets_2025:Spreadsheet editor').t`Cannot delete all rows`, type: 'error' })
+      return
+    }
+    baseState.onDeleteRow(sheetId, rowIndexes)
+  })
+  const onDeleteColumn = useEvent((sheetId: number, columnIndexes: number[]) => {
+    if (baseState.columnCount === columnIndexes.length) {
+      createNotification({ text: c('sheets_2025:Spreadsheet editor').t`Cannot delete all columns`, type: 'error' })
+      return
+    }
+    baseState.onDeleteColumn(sheetId, columnIndexes)
+  })
+
   return {
     ...baseState,
     chartsState,
@@ -361,6 +379,8 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
     onSelectTable,
     onMoveSheet,
     onCreateNewSheet,
+    onDeleteRow,
+    onDeleteColumn,
     getCellOffsetFromCoords,
     getGridContainerElement,
     getGridScrollPosition,
