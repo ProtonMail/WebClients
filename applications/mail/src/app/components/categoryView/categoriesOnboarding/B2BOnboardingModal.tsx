@@ -7,20 +7,29 @@ import useFeature from '@proton/features/useFeature';
 import useLoading from '@proton/hooks/useLoading';
 import { updateMailCategoryView } from '@proton/shared/lib/api/mailSettings';
 import { MAILBOX_LABEL_IDS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 
 import onboardingImage from './b2bOnboardingCategories.svg';
+import { CategoriesOnboardingFlags } from './onboardingInterface';
 
 import './B2BOnboardingModal.scss';
 
-export const B2BOnboardingModal = (props: ModalProps) => {
+interface Props extends ModalProps {
+    flagValue: number;
+}
+
+export const B2BOnboardingModal = ({ flagValue, ...props }: Props) => {
     const api = useApi();
-    const { update } = useFeature(FeatureCode.CategoryViewB2BOnboardingView);
+    const { update } = useFeature(FeatureCode.CategoryViewB2BOnboardingViewFlags);
 
     const [loading, withLoading] = useLoading();
 
     const handleClick = async (enableCategories: boolean) => {
-        const promises = [api(updateMailCategoryView(enableCategories)), update(true)];
+        const promises = [
+            api(updateMailCategoryView(enableCategories)),
+            update(setBit(flagValue, CategoriesOnboardingFlags.FULL_DISPLAY)),
+        ];
 
         await Promise.all(promises);
         props.onClose?.();

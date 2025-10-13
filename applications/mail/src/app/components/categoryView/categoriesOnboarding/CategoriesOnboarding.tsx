@@ -19,7 +19,12 @@ export const CategoriesOnboarding = ({ audience, flagValue }: Props) => {
 
     if (audience === AudienceType.B2B) {
         if (labelID === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT) {
-            return <B2BOnboarding />;
+            // We don't want to show the onboarding if the user has already seen it
+            if (hasSeeFullDisplay(flagValue)) {
+                return null;
+            }
+
+            return <B2BOnboarding flagValue={flagValue} />;
         } else if (B2BOnboardinCategoriesWithCards.has(labelID)) {
             return <CategoryCard audienceType={AudienceType.B2B} labelID={labelID} flagValue={flagValue} />;
         }
