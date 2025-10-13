@@ -24,6 +24,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import type { OrganizationExtended, OrganizationSettings, Recipient } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
@@ -395,6 +396,7 @@ const AuthenticationLogs = ({
                         error={error}
                         onTimeClick={handleClickableTime}
                         onEmailOrIPClick={handleClickableEmailOrIP}
+                        isSentinel={organization.Settings?.HighSecurity === SETTINGS_PROTON_SENTINEL_STATE.ENABLED}
                     />
                     <div className="flex flex-column items-center justify-space-around">
                         <Pagination

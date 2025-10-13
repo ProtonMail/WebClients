@@ -784,6 +784,7 @@ export enum SHARED_UPSELL_PATHS {
     STORAGE_PERCENTAGE = 'storage-percentage',
     ORGANIZATION_CAPACITY = 'organization-capacity',
     SENTINEL = 'sentinel',
+    SENTINEL_B2B = 'sentinel-b2b',
     TRIAL_WILL_END = 'trial-will-end',
     TOP_NAVIGATION_BAR = 'top-navigation-bar',
     PUBLIC_SHARING_PERMISSIONS_MENU = 'public-sharing-permissions-menu',

@@ -70,6 +70,10 @@ const LogsTable = ({ logs = [], logAuth, protonSentinel, loading, error }: Props
             header: c('Header').t`Event`,
         },
         {
+            header: c('Header').t`Device`,
+            info: c('Tooltip').t`Device name and app version`,
+        },
+        {
             className: isAuthLogAdvanced ? 'w-1/6' : 'bg-weak w-custom',
             style: { '--w-custom': '5%' },
             header: 'IP',
@@ -93,10 +97,6 @@ const LogsTable = ({ logs = [], logAuth, protonSentinel, loading, error }: Props
             header: c('Header').t`Protection`,
             info: c('Tooltip').t`Any protection applied to suspicious activity`,
         },
-        {
-            header: c('Header').t`Device`,
-            info: c('Tooltip').t`Device name and app version`,
-        },
     ].filter(isTruthy);
 
     return (
@@ -114,91 +114,86 @@ const LogsTable = ({ logs = [], logAuth, protonSentinel, loading, error }: Props
                 </TableRow>
             </TableHeader>
             <TableBody loading={loading} colSpan={headerCells.length}>
-                {logs.map(
-                    (
-                        log,
-                        index
-                    ) => {
-                        const key = index.toString();
-                        const cells = [
-                            {
-                                label: c('Header').t`Event`,
-                                className: 'text-left',
-                                content: (
-                                    <div className="flex flex-column my-1">
-                                        <EventCell description={log.Description} status={log.Status} isB2B />
-                                        <Time format="PPp" className="color-weak mt-2 ml-2">
-                                            {log.Time}
-                                        </Time>
-                                    </div>
-                                ),
-                            },
-                            {
-                                label: 'IP',
-                                className: isAuthLogAdvanced ? '' : 'bg-weak hidden lg:table-cell',
-                                colSpan: (() => {
-                                    if (!isAuthLogAdvanced) {
-                                        if (isProtonSentinelEnabled) {
-                                            return 3;
-                                        }
-                                        return 4;
+                {logs.map((log, index) => {
+                    const key = index.toString();
+                    const cells = [
+                        {
+                            label: c('Header').t`Event`,
+                            className: 'text-left',
+                            content: (
+                                <div className="flex flex-column my-1">
+                                    <EventCell description={log.Description} status={log.Status} isB2B />
+                                    <Time format="PPp" className="color-weak mt-2 ml-2">
+                                        {log.Time}
+                                    </Time>
+                                </div>
+                            ),
+                        },
+                        {
+                            label: c('Header').t`Device`,
+                            content: (
+                                <div className="flex flex-column my-1">
+                                    <span>{isProtonSentinelEnabled ? log.Device : '-'}</span>
+                                    <AppVersionCell appVersion={log.AppVersion} />
+                                </div>
+                            ),
+                        },
+                        {
+                            label: 'IP',
+                            className: isAuthLogAdvanced ? '' : 'bg-weak hidden lg:table-cell',
+                            colSpan: (() => {
+                                if (!isAuthLogAdvanced) {
+                                    if (isProtonSentinelEnabled) {
+                                        return 3;
                                     }
-                                    return 1;
-                                })(),
-                                content: (
-                                    <IPCell
-                                        isAuthLogAdvanced={isAuthLogAdvanced}
-                                        isProtonSentinelEnabled={isProtonSentinelEnabled}
-                                        ip={log.IP}
-                                        firstRow={index === 0}
-                                    />
-                                ),
-                            },
-                            isAuthLogAdvanced && {
-                                label: c('Header').t`Location`,
-                                className: `${isUnavailableClass()} ${
-                                    !isAuthLogAdvanced || !isProtonSentinelEnabled ? 'text-left lg:text-center' : ''
-                                }`,
-                                colSpan: isProtonSentinelEnabled ? 1 : 3,
-                                content: (
-                                    <LocationCell
-                                        isProtonSentinelEnabled={isProtonSentinelEnabled}
-                                        location={log.Location}
-                                        firstRow={index === 0}
-                                    />
-                                ),
-                            },
-                            isAuthLogAdvanced &&
-                                isProtonSentinelEnabled && {
-                                    label: 'ISP',
-                                    content: <span className="flex-1">{log.InternetProvider || '-'}</span>,
-                                },
+                                    return 4;
+                                }
+                                return 1;
+                            })(),
+                            content: (
+                                <IPCell
+                                    isAuthLogAdvanced={isAuthLogAdvanced}
+                                    isProtonSentinelEnabled={isProtonSentinelEnabled}
+                                    ip={log.IP}
+                                    firstRow={index === 0}
+                                />
+                            ),
+                        },
+                        isAuthLogAdvanced && {
+                            label: c('Header').t`Location`,
+                            className: `${isUnavailableClass()} ${
+                                !isAuthLogAdvanced || !isProtonSentinelEnabled ? 'text-left lg:text-center' : ''
+                            }`,
+                            colSpan: isProtonSentinelEnabled ? 1 : 3,
+                            content: (
+                                <LocationCell
+                                    isProtonSentinelEnabled={isProtonSentinelEnabled}
+                                    location={log.Location}
+                                    firstRow={index === 0}
+                                />
+                            ),
+                        },
+                        isAuthLogAdvanced &&
                             isProtonSentinelEnabled && {
-                                label: c('Header').t`Protection`,
-                                content: <ProtectionCell protection={log.Protection} protectionDesc={log.ProtectionDesc} />,
+                                label: 'ISP',
+                                content: <span className="flex-1">{log.InternetProvider || '-'}</span>,
                             },
-                            {
-                                label: c('Header').t`Device`,
-                                content: (
-                                    <div className="flex flex-column my-1">
-                                        <span>{isProtonSentinelEnabled ? log.Device : '-'}</span>
-                                        <AppVersionCell appVersion={log.AppVersion} />
-                                    </div>
-                                ),
-                            },
-                        ].filter(isTruthy);
+                        isProtonSentinelEnabled && {
+                            label: c('Header').t`Protection`,
+                            content: <ProtectionCell protection={log.Protection} protectionDesc={log.ProtectionDesc} />,
+                        },
+                    ].filter(isTruthy);
 
-                        return (
-                            <TableRow key={key}>
-                                {cells.map(({ label, className, colSpan, content }) => (
-                                    <TableCell key={label} label={label} className={className} colSpan={colSpan}>
-                                        {content}
-                                    </TableCell>
-                                ))}
-                            </TableRow>
-                        );
-                    }
-                )}
+                    return (
+                        <TableRow key={key}>
+                            {cells.map(({ label, className, colSpan, content }) => (
+                                <TableCell key={label} label={label} className={className} colSpan={colSpan}>
+                                    {content}
+                                </TableCell>
+                            ))}
+                        </TableRow>
+                    );
+                })}
             </TableBody>
         </Table>
     );
