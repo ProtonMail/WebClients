@@ -1,6 +1,11 @@
 import { NOTIFICATION_IFRAME_SRC, NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { NOTIFICATION_MIN_HEIGHT, NOTIFICATION_WIDTH } from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
+import {
+    type IFrameAppService,
+    type IFrameEvent,
+    createIFrameApp,
+} from 'proton-pass-extension/app/content/services/iframes/factory';
 import { IFramePortMessageType } from 'proton-pass-extension/app/content/services/iframes/messages';
 import type { PopoverController } from 'proton-pass-extension/app/content/services/iframes/popover';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
@@ -10,12 +15,8 @@ import { flagAsIgnored, removeClassifierFlags } from '@proton/pass/fathom';
 import { FieldType } from '@proton/pass/fathom/labels';
 import type { SelectedPasskey } from '@proton/pass/lib/passkeys/types';
 import type { AutosavePayload, LoginItemPreview } from '@proton/pass/types';
-import { pipe } from '@proton/pass/utils/fp/pipe';
 import { asyncQueue } from '@proton/pass/utils/fp/promises';
 import noop from '@proton/utils/noop';
-
-import type { IFrameAppService, IFrameEvent } from './factory';
-import { createIFrameApp } from './factory';
 
 export type NotificationRequest =
     | { action: NotificationAction.AUTOSAVE; data: AutosavePayload }
@@ -34,11 +35,10 @@ export type NotificationRequest =
           token: string;
       };
 
-export interface InjectedNotification extends IFrameAppService<NotificationRequest> {}
-
+export interface NotificationApp extends IFrameAppService<NotificationRequest> {}
 type NotificationEvent<T extends IFrameEvent<any>['type']> = Extract<IFrameEvent<NotificationAction>, { type: T }>;
 
-export const createNotification = (popover: PopoverController): InjectedNotification => {
+export const createNotification = (popover: PopoverController): NotificationApp => {
     const iframe = createIFrameApp<NotificationAction>({
         id: 'notification',
         src: NOTIFICATION_IFRAME_SRC,
@@ -126,12 +126,12 @@ export const createNotification = (popover: PopoverController): InjectedNotifica
         { userAction: true }
     );
 
-    const notification: InjectedNotification = {
-        close: pipe(iframe.close, () => notification),
+    const notification: NotificationApp = {
+        close: iframe.close,
         destroy: iframe.destroy,
         getState: () => iframe.state,
-        init: pipe(iframe.init, () => notification),
-        open: pipe(open, () => notification),
+        init: iframe.init,
+        open,
         sendMessage: iframe.sendPortMessage,
         subscribe: iframe.subscribe,
     };

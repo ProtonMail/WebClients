@@ -14,7 +14,7 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { waitForPageReady } from '@proton/pass/utils/dom/state';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-import { DOMCleanUp } from './injections/cleanup';
+import { DOMCleanUp } from './utils/cleanup';
 
 const unloadContentScript = () => sendMessage(contentScriptMessage({ type: WorkerMessageType.UNLOAD_CONTENT_SCRIPT }));
 const loadContentScript = () => sendMessage(contentScriptMessage({ type: WorkerMessageType.LOAD_CONTENT_SCRIPT }));

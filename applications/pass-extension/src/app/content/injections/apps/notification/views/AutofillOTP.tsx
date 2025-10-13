@@ -9,7 +9,7 @@ import { ListItem } from 'proton-pass-extension/app/content/injections/apps/comp
 import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/components/PauseListDropdown';
 import { NotificationHeader } from 'proton-pass-extension/app/content/injections/apps/notification/components/NotificationHeader';
 import { IFramePortMessageType } from 'proton-pass-extension/app/content/services/iframes/messages';
-import type { NotificationRequest } from 'proton-pass-extension/app/content/services/iframes/notification';
+import type { NotificationRequest } from 'proton-pass-extension/app/content/services/iframes/notification/notification.app';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';

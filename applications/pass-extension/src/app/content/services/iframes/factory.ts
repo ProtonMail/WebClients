@@ -100,11 +100,11 @@ export type IFrameState<Action> = {
 };
 
 export interface IFrameAppService<Options extends { action: any }, Action = Options['action']> {
-    close: () => IFrameAppService<Options>;
+    close: () => void;
     destroy: () => void;
     getState: () => IFrameState<Action>;
-    init: (port: Runtime.Port, getPayload: () => IFrameInitPayload) => IFrameAppService<Options>;
-    open: (options: Options) => IFrameAppService<Options>;
+    init: (port: Runtime.Port, getPayload: () => IFrameInitPayload) => void;
+    open: (options: Options) => void;
     sendMessage: IFrameApp<Action>['sendPortMessage'];
     subscribe: IFrameApp<Action>['subscribe'];
 }
@@ -289,6 +289,7 @@ export const createIFrameApp = <A>({
         pubsub.publish({ type: 'destroy' });
 
         state.port?.onMessage.removeListener(onMessageHandler);
+        portMessageHandlers.clear();
         safeCall(() => popover.root.shadowRoot.removeChild(iframe))();
         state.port = null;
 
