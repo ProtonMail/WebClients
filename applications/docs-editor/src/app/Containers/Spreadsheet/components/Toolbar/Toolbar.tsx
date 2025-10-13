@@ -36,6 +36,7 @@ export const Toolbar = createComponent(function Toolbar(props: ToolbarProps) {
       <ZoomCombobox />
       <Find />
       <ClearFormatting />
+      <PaintFormat />
       <T.Separator />
       <FormatAsCurrency />
       <FormatAsPercent />
@@ -126,6 +127,19 @@ function ClearFormatting() {
   return (
     <T.Item legacyIconName="eraser" onClick={useUI.$.format.clear} disabled={useUI((ui) => ui.info.isReadonly)}>
       {s('Clear formatting')}
+    </T.Item>
+  )
+}
+
+function PaintFormat() {
+  return (
+    <T.Item
+      legacyIconName="paint-roller"
+      pressed={useUI((ui) => ui.format.paintFormat.active)}
+      onClick={useUI.$.format.paintFormat.save}
+      disabled={useUI((ui) => ui.info.isReadonly)}
+    >
+      {s('Paint format')}
     </T.Item>
   )
 }
@@ -463,6 +477,7 @@ function strings() {
     Redo: c('sheets_2025:Spreadsheet editor toolbar').t`Redo`,
     Find: c('sheets_2025:Spreadsheet editor toolbar').t`Find`,
     'Clear formatting': c('sheets_2025:Spreadsheet editor toolbar').t`Clear formatting`,
+    'Paint format': c('sheets_2025:Spreadsheet editor toolbar').t`Paint format`,
     Bold: c('sheets_2025:Spreadsheet editor toolbar').t`Bold`,
     Italic: c('sheets_2025:Spreadsheet editor toolbar').t`Italic`,
     Underline: c('sheets_2025:Spreadsheet editor toolbar').t`Underline`,
