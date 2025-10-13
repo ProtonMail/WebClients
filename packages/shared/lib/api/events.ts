@@ -8,6 +8,7 @@ export const getEvents = (
     params?: {
         ConversationCounts: 1 | 0;
         MessageCounts: 1 | 0;
+        OnlyInInboxForCategories: 1 | 0;
     }
 ) => ({
     url: `core/v5/events/${eventID}`,
