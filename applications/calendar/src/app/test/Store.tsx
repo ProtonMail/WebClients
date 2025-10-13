@@ -7,7 +7,9 @@ import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import type { CachedOrganizationKey, DecryptedKey, UserModel, UserSettings } from '@proton/shared/lib/interfaces';
 import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 import { DEFAULT_MAIL_SETTINGS, DELAY_IN_SECONDS, PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { apiMock } from '@proton/testing/lib/api';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { getOrganizationState, getSubscriptionState } from '@proton/testing/lib/initialReduxState';
 
 import { extendStore, setupStore } from '../store/store';

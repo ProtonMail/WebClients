@@ -1,4 +1,5 @@
 import { addHours, getUnixTime } from 'date-fns';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { createMemoryHistory } from 'history';
 
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
