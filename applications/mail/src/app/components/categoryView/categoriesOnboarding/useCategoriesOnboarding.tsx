@@ -33,7 +33,6 @@ export const useCategoriesOnboarding = (): OnboardingInfo => {
 
     const b2cOnboardingViewFlag = useFeature<number>(FeatureCode.CategoryViewB2COnboardingViewFlags);
     const b2bOnboardingViewFlag = useFeature<number>(FeatureCode.CategoryViewB2BOnboardingViewFlags);
-    const b2bOnboardingFlag = useFeature<boolean>(FeatureCode.CategoryViewB2BOnboardingView);
     const accountDateThreshold = useFeature<number>(FeatureCode.CategoryViewOnboardingAccountDateThreshold);
 
     const loading =
@@ -43,7 +42,6 @@ export const useCategoriesOnboarding = (): OnboardingInfo => {
         messageCountsLoading ||
         conversationCountsLoading ||
         b2cOnboardingViewFlag.loading ||
-        b2bOnboardingFlag.loading ||
         b2bOnboardingViewFlag.loading ||
         accountDateThreshold.loading;
 
@@ -63,11 +61,10 @@ export const useCategoriesOnboarding = (): OnboardingInfo => {
 
     // B2B users conditions
     if (isUserB2B) {
-        const flagValue = !!b2bOnboardingFlag.feature?.Value;
         const allOnboardingSeen = hasSeenAllOnboarding(AudienceType.B2B, b2bOnboardingViewFlag.feature?.Value ?? 0);
 
         // The following condition apply for existing and new b2b users
-        const basicEligibility = !allOnboardingSeen && !flagValue && !isUserInWelcomeFlow;
+        const basicEligibility = !allOnboardingSeen && !isUserInWelcomeFlow;
 
         if (isExistingUser) {
             // Existing users see the spotlight right away
