@@ -17,7 +17,7 @@ import {
     upsellPlanSSO,
 } from '@proton/payments';
 import { appSupportsSSO } from '@proton/shared/lib/apps/apps';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { type APP_NAMES, PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, ORGANIZATION_STATE, ORGANIZATION_TWOFA_SETTING } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { canScheduleOrganizationPhoneCalls } from '@proton/shared/lib/helpers/support';
@@ -315,7 +315,7 @@ export const getOrganizationAppRoutes = ({
                 subsections: [{ id: 'retention-policies' }],
             },
             security: <SectionConfig>{
-                text: c('Title').t`Authentication security`,
+                text: c('Title').t`Security`,
                 to: '/authentication-security',
                 icon: 'shield',
                 available:
@@ -324,6 +324,11 @@ export const getOrganizationAppRoutes = ({
                     (organization.MaxMembers > 1 ||
                         organization.TwoFactorRequired !== ORGANIZATION_TWOFA_SETTING.NOT_REQUIRED),
                 subsections: [
+                    {
+                        text: PROTON_SENTINEL_NAME,
+                        id: 'sentinel',
+                        available: canShowB2BActivityMonitorEvents,
+                    },
                     {
                         text: c('Title').t`${BRAND_NAME} Account password rules`,
                         id: 'proton-account-password-rules',
