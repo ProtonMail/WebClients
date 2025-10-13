@@ -6,12 +6,12 @@ export const updateMonitoringSetting = (monitoring: number) => ({
     },
 });
 
-export const enableSentinelMonitoring = () => ({
+export const enableHighSecurityOrganization = () => ({
     url: 'core/v4/organizations/settings/highsecurity',
     method: 'post',
 });
 
-export const disableSentinelMonitoring = () => ({
+export const disableHighSecurityOrganization = () => ({
     url: 'core/v4/organizations/settings/highsecurity',
     method: 'delete',
 });

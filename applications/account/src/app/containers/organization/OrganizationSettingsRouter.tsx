@@ -19,6 +19,7 @@ import {
     OrganizationTwoFARemindersSection,
     PrivateMainSettingsArea,
     PrivateMainSettingsAreaBase,
+    SentinelSection,
     SharedServersSection,
     SsoPage,
     UsersAndAddressesSection,
@@ -150,6 +151,7 @@ const OrganizationSettingsRouter = ({
             {getIsSectionAvailable(security) && (
                 <Route path={getSectionPath(path, security)}>
                     <PrivateMainSettingsArea config={security}>
+                        <SentinelSection app={app} variant="organization" />
                         <OrganizationPasswordPoliciesSection organization={organization} />
                         <OrganizationTwoFARemindersSection organization={organization} />
                         <OrganizationTwoFAEnforcementSection organization={organization} />
