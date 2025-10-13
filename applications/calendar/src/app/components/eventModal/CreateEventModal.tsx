@@ -41,6 +41,7 @@ interface Props {
     onExit: () => void;
     view: VIEWS;
     hasZoomError: boolean;
+    isDuplicating?: boolean;
 }
 
 const CreateEventModal = ({
@@ -60,6 +61,7 @@ const CreateEventModal = ({
     onDisplayBusySlots,
     view,
     hasZoomError,
+    isDuplicating,
     ...rest
 }: Props) => {
     const [mailSettings] = useMailSettings();
@@ -219,6 +221,7 @@ const CreateEventModal = ({
                 hasZoomError={hasZoomError}
                 view={view}
                 setIsVideoConferenceLoading={setIsVideoConferenceLoading}
+                isDuplicating={isDuplicating}
             />
         </BasicModal>
     );
