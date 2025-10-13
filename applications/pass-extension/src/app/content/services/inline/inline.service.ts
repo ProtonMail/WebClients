@@ -1,9 +1,9 @@
 import { NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { ContentScriptContextFactoryOptions } from 'proton-pass-extension/app/content/context/factory';
-import type { DropdownAnchor, DropdownRequest } from 'proton-pass-extension/app/content/services/iframes/dropdown';
-import type { IFrameMessage } from 'proton-pass-extension/app/content/services/iframes/messages';
-import { createIFrameService } from 'proton-pass-extension/app/content/services/iframes/service';
+import { createIFrameRegistry } from 'proton-pass-extension/app/content/services/iframes/registry';
+import { createDropdownTopHandler } from 'proton-pass-extension/app/content/services/inline/handlers/dropdown.top';
+import { createNotificationTopHandler } from 'proton-pass-extension/app/content/services/inline/handlers/notification.top';
 import type { AbstractInlineService } from 'proton-pass-extension/app/content/services/inline/inline.abstract';
 import { getFrameElement } from 'proton-pass-extension/app/content/utils/frame';
 import type { FrameMessageHandler } from 'proton-pass-extension/app/content/utils/frame.message-broker';
@@ -11,7 +11,6 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { clientNeedsSession, clientSessionLocked } from '@proton/pass/lib/client';
 import { isMainFrame } from '@proton/pass/utils/dom/is-main-frame';
-import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import noop from '@proton/utils/noop';
 
 export const createInlineService = ({
@@ -22,143 +21,19 @@ export const createInlineService = ({
     if (!isMainFrame()) throw new Error('InlineService should only be created in top-frame');
 
     const { channel } = controller;
-    const iframes = createIFrameService(elements);
-    const activeListeners = createListenerStore();
+    const registry = createIFrameRegistry(elements);
+    const dropdown = createDropdownTopHandler(registry);
+    const notification = createNotificationTopHandler(registry);
 
-    const willDropdownAnchorChange = (anchor: DropdownAnchor, payload: DropdownRequest): boolean => {
-        if (!anchor) return true;
-
-        switch (payload.type) {
-            case 'field':
-                return anchor.type !== 'field' || anchor.field.element !== payload.field.element;
-
-            case 'frame':
-                return (
-                    anchor.type !== 'frame' ||
-                    anchor.fieldFrameId !== payload.fieldFrameId ||
-                    anchor.fieldId !== payload.fieldId
-                );
-        }
-    };
-
-    const dropdown: AbstractInlineService['dropdown'] = {
-        attach: (layer) => iframes.attachDropdown(layer),
-        open: (payload) => {
-            const attachedAnchor = iframes.dropdown?.anchor;
-            const visible = iframes.dropdown?.getState().visible;
-            const { autofocused } = payload;
-
-            const didAnchorChange = !attachedAnchor || willDropdownAnchorChange(attachedAnchor, payload);
-            const autoclose = visible && (didAnchorChange || !autofocused);
-
-            if (autoclose) dropdown.close();
-
-            if (didAnchorChange) {
-                const form = payload.type === 'field' ? payload.field.getFormHandle() : undefined;
-                const layer = form?.element;
-                const close = () => dropdown.close(payload);
-
-                iframes.attachDropdown(layer)?.open(payload);
-
-                const scrollParent = form?.scrollParent;
-                const scrollOptions = { capture: true, once: true, passive: true } as const;
-
-                activeListeners.addListener(window, 'resize', close, { once: true, passive: true });
-                activeListeners.addListener(window, 'scroll', close, scrollOptions);
-                activeListeners.addListener(scrollParent, 'scroll', close, scrollOptions);
-            }
-        },
-
-        close: (target) => {
-            activeListeners.removeAll();
-            const dropdown = iframes.dropdown;
-            const anchor = dropdown?.anchor;
-            const activeAnchor = (() => {
-                switch (target?.type) {
-                    case 'field':
-                        return anchor?.type === target.type && anchor.field.element === target.field.element;
-                    case 'frame':
-                        return (
-                            anchor?.type === target.type &&
-                            anchor.fieldId === target.fieldId &&
-                            anchor.formId === target.formId
-                        );
-                }
-            })();
-
-            /* If a field is passed as a parameter, only close the
-             * dropdown if it is currently attached to this element. */
-            if (target && !activeAnchor) return;
-            iframes.dropdown?.close();
-        },
-
-        destroy: () => iframes.dropdown?.destroy(),
-
-        sendMessage: (message: IFrameMessage) => iframes.dropdown?.sendMessage(message),
-
-        getState: async () => {
-            const dropdown = iframes.dropdown;
-            const visible = dropdown?.getState().visible ?? false;
-            const anchor = dropdown?.anchor;
-
-            return {
-                visible,
-                attachedField: anchor
-                    ? (() => {
-                          switch (anchor.type) {
-                              case 'field': {
-                                  const { fieldId } = anchor.field;
-                                  const { formId } = anchor.field.getFormHandle();
-                                  return { fieldId, formId };
-                              }
-                              case 'frame': {
-                                  const { fieldId, formId } = anchor;
-                                  return { fieldId, formId };
-                              }
-                          }
-                      })()
-                    : undefined,
-            };
-        },
-    };
-
-    const notification: AbstractInlineService['notification'] = {
-        attach: () => iframes.attachNotification(),
-        open: (request) => iframes.attachNotification()?.open(request),
-        close: (action) => {
-            /* If an action is passed as a parameter, only close the
-             * notification if it is currently attached to this action. */
-            if (action && iframes.notification?.getState().action !== action) return;
-            iframes.notification?.close();
-        },
-        destroy: () => iframes.notification?.destroy(),
-    };
-
-    const sync = withContext((ctx) => {
-        if (!ctx) return;
-
-        const { status } = ctx.getState();
-        const locked = clientSessionLocked(status);
-        const loggedOut = clientNeedsSession(status);
-
-        if (loggedOut || locked) {
-            const action = iframes.notification?.getState().action;
-            const unlockable = [NotificationAction.PASSKEY_CREATE, NotificationAction.PASSKEY_GET];
-            const shouldDestroy = !locked || (action && !unlockable.includes(action));
-            if (shouldDestroy) iframes.notification?.destroy();
-        }
-    });
-
-    const onInlineDropdownOpen: FrameMessageHandler<WorkerMessageType.INLINE_DROPDOWN_OPEN> = ({ payload }) => {
+    const onDropdownOpen: FrameMessageHandler<WorkerMessageType.INLINE_DROPDOWN_OPEN> = ({ payload }) => {
         if (payload.type === 'request') return;
 
         const { autofocused, coords, frameId, action, frameAttributes, fieldFrameId, field, origin } = payload;
-        const root = iframes.root;
+        const root = registry.root;
         const rootRect = root.customElement.getBoundingClientRect();
 
         const top = rootRect.top + coords.top;
         const left = rootRect.left + coords.left;
-
         const frame = getFrameElement(frameId, frameAttributes);
 
         if (!frame) return;
@@ -177,7 +52,7 @@ export const createInlineService = ({
         });
     };
 
-    const onInlineDropdownClose: FrameMessageHandler<WorkerMessageType.INLINE_DROPDOWN_CLOSE> = ({ payload }) => {
+    const onDropdownClose: FrameMessageHandler<WorkerMessageType.INLINE_DROPDOWN_CLOSE> = ({ payload }) => {
         return dropdown.close(
             payload.field
                 ? {
@@ -189,8 +64,9 @@ export const createInlineService = ({
         );
     };
 
-    const onInlineDropdownState: FrameMessageHandler<WorkerMessageType.INLINE_DROPDOWN_STATE> = (
-        _message,
+    /** Triggered when a sub-frame needs access to the top-level dropdown state */
+    const onDropdownState: FrameMessageHandler<WorkerMessageType.INLINE_DROPDOWN_STATE> = (
+        _,
         _sender,
         sendResponse
     ) => {
@@ -198,42 +74,57 @@ export const createInlineService = ({
         return true;
     };
 
-    const onInlineDropdownAttach: FrameMessageHandler<WorkerMessageType.INLINE_DROPDOWN_ATTACH> = () => {
-        iframes.attachDropdown();
+    /** Triggered when a sub-frame optimistically tries to attach
+     * a dropdown app in the top-frame because of a form detection */
+    const onDropdownAttach: FrameMessageHandler<WorkerMessageType.INLINE_DROPDOWN_ATTACH> = () => {
+        registry.attachDropdown();
     };
 
     /** When sub-frame loses focus but top-level UI gains focus, don't close dropdown
      * as this indicates legitimate user interaction with our UI elements */
     const onInlineFrameBlur: FrameMessageHandler<WorkerMessageType.INLINE_FRAME_BLUR> = ({ payload }) => {
         const { formId, fieldId } = payload;
-        const visible = iframes.dropdown?.getState().visible;
-        const focused = iframes.dropdown?.focused;
-
+        const visible = registry.dropdown?.getState().visible;
+        const focused = registry.dropdown?.focused;
         if (visible && !focused) dropdown.close({ type: 'frame', formId, fieldId });
     };
 
     return {
         init: () => {
-            iframes.init();
-            channel.register(WorkerMessageType.INLINE_DROPDOWN_OPEN, onInlineDropdownOpen);
-            channel.register(WorkerMessageType.INLINE_DROPDOWN_CLOSE, onInlineDropdownClose);
-            channel.register(WorkerMessageType.INLINE_DROPDOWN_STATE, onInlineDropdownState);
-            channel.register(WorkerMessageType.INLINE_DROPDOWN_ATTACH, onInlineDropdownAttach);
+            registry.init();
+            channel.register(WorkerMessageType.INLINE_DROPDOWN_OPEN, onDropdownOpen);
+            channel.register(WorkerMessageType.INLINE_DROPDOWN_CLOSE, onDropdownClose);
+            channel.register(WorkerMessageType.INLINE_DROPDOWN_STATE, onDropdownState);
+            channel.register(WorkerMessageType.INLINE_DROPDOWN_ATTACH, onDropdownAttach);
             channel.register(WorkerMessageType.INLINE_FRAME_BLUR, onInlineFrameBlur);
         },
 
-        setTheme: iframes.setTheme,
+        setTheme: registry.setTheme,
 
         destroy: () => {
-            iframes.destroy();
-            channel.unregister(WorkerMessageType.INLINE_DROPDOWN_OPEN, onInlineDropdownOpen);
-            channel.unregister(WorkerMessageType.INLINE_DROPDOWN_CLOSE, onInlineDropdownClose);
-            channel.unregister(WorkerMessageType.INLINE_DROPDOWN_STATE, onInlineDropdownState);
-            channel.unregister(WorkerMessageType.INLINE_DROPDOWN_ATTACH, onInlineDropdownAttach);
+            registry.destroy();
+            dropdown.destroy();
+            channel.unregister(WorkerMessageType.INLINE_DROPDOWN_OPEN, onDropdownOpen);
+            channel.unregister(WorkerMessageType.INLINE_DROPDOWN_CLOSE, onDropdownClose);
+            channel.unregister(WorkerMessageType.INLINE_DROPDOWN_STATE, onDropdownState);
+            channel.unregister(WorkerMessageType.INLINE_DROPDOWN_ATTACH, onDropdownAttach);
             channel.unregister(WorkerMessageType.INLINE_FRAME_BLUR, onInlineFrameBlur);
         },
 
-        sync,
+        sync: withContext((ctx) => {
+            if (!ctx) return;
+
+            const { status } = ctx.getState();
+            const locked = clientSessionLocked(status);
+            const loggedOut = clientNeedsSession(status);
+
+            if (loggedOut || locked) {
+                const action = registry.notification?.getState().action;
+                const unlockable = [NotificationAction.PASSKEY_CREATE, NotificationAction.PASSKEY_GET];
+                const shouldDestroy = !locked || (action && !unlockable.includes(action));
+                if (shouldDestroy) registry.notification?.destroy();
+            }
+        }),
 
         dropdown,
         notification,
