@@ -2,6 +2,7 @@ import { Router } from 'react-router-dom';
 
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { getUnixTime } from 'date-fns';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { createMemoryHistory } from 'history';
 
 import { CacheProvider, useSubscribedCalendars } from '@proton/components';
