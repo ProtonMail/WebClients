@@ -39,6 +39,7 @@ export const NoPermissionInfo = () => {
 
     const microphoneLinkButton = !hasMicrophonePermission && (
         <InlineLinkButton
+            key="request-microphone-permission"
             className="color-primary mx-1"
             onClick={() => {
                 setPermissionPromptStatus(PermissionPromptStatus.MICROPHONE);
@@ -50,6 +51,7 @@ export const NoPermissionInfo = () => {
 
     const cameraLinkButton = !hasCameraPermission && (
         <InlineLinkButton
+            key="request-camera-permission"
             className="color-primary mx-1"
             onClick={() => {
                 setPermissionPromptStatus(PermissionPromptStatus.CAMERA);
