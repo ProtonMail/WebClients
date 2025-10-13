@@ -24,11 +24,11 @@ import { useFlag } from '@proton/unleash';
 import debounce from '@proton/utils/debounce';
 
 import { calendarUrlQueryParams } from '../../constants';
-import { hasValidVideoConferenceInData } from '../videoConferencing/hasValidVideoConferenceInData';
 import {
     VideoConferenceProtonMeetIntegration,
     useVideoConfTelemetry,
 } from '../videoConferencing/useVideoConfTelemetry';
+import { shouldAutoAddMeetingLink } from './shouldAutoAddMeetingLink';
 import type { IntegrationState } from './types';
 
 interface UseProtonMeetIntegrationParameters {
@@ -37,6 +37,7 @@ interface UseProtonMeetIntegrationParameters {
     isActive: boolean;
     setActiveProvider: (provider: VIDEO_CONFERENCE_PROVIDER | null) => void;
     setIsVideoConferenceLoading: (value: boolean) => void;
+    isDuplicating?: boolean;
 }
 
 export const useProtonMeetIntegration = ({
@@ -45,6 +46,7 @@ export const useProtonMeetIntegration = ({
     isActive,
     setActiveProvider,
     setIsVideoConferenceLoading,
+    isDuplicating = false,
 }: UseProtonMeetIntegrationParameters) => {
     const history = useHistory();
     const location = useLocation();
@@ -248,20 +250,30 @@ export const useProtonMeetIntegration = ({
 
     const validAttendeeCount = model.attendees.filter((attendee) => attendee.email !== user.Email).length;
     const prevValidAttendeeCount = useRef(validAttendeeCount);
+    const triedToAddMeetingLinkToDuplicateEvent = useRef(false);
 
     useEffect(() => {
-        const newlyAddedAttendees = validAttendeeCount > 0 && prevValidAttendeeCount.current === 0;
-        const hasValidVideoConference = hasValidVideoConferenceInData(model);
+        const autoAddAvailable =
+            isMeetVideoConferenceEnabled && isAutoAddMeetingLinkEnabled && isProtonMeetSettingEnabled;
 
-        if (
-            isMeetVideoConferenceEnabled &&
-            isAutoAddMeetingLinkEnabled &&
-            isProtonMeetSettingEnabled &&
-            (!model.conferenceUrl || model.isConferenceTmpDeleted) &&
-            !hasValidVideoConference &&
-            newlyAddedAttendees
-        ) {
+        if (!autoAddAvailable) {
+            return;
+        }
+
+        const autoAddMeeting = shouldAutoAddMeetingLink({
+            model,
+            attendeesCount: validAttendeeCount,
+            prevAttendeesCount: prevValidAttendeeCount.current,
+            isDuplicating,
+            triedAddingMeetingLinkToDuplicateEvent: triedToAddMeetingLinkToDuplicateEvent.current,
+        });
+
+        if (autoAddMeeting) {
             void createVideoConferenceMeeting();
+        }
+
+        if (isDuplicating) {
+            triedToAddMeetingLinkToDuplicateEvent.current = true;
         }
 
         prevValidAttendeeCount.current = validAttendeeCount;
@@ -271,6 +283,9 @@ export const useProtonMeetIntegration = ({
         model.conferenceUrl,
         model.isConferenceTmpDeleted,
         model.conferenceProvider,
+        isDuplicating,
+        isAutoAddMeetingLinkEnabled,
+        isProtonMeetSettingEnabled,
     ]);
 
     const setupInProgress = useRef(false);
