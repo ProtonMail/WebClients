@@ -22,24 +22,27 @@ import noop from '@proton/utils/noop';
  * can't catch parent frame events. Solution: set up listeners in
  * all parent frames when dropdown opens in any child frame.
  */
-export const createInlineFrameListeners = (channel: FrameMessageBroker) => {
+export const createPassiveInlineListeners = (channel: FrameMessageBroker) => {
     const listeners = createListenerStore();
 
-    const onInlineDropdownOpened: FrameMessageHandler<WorkerMessageType.INLINE_DROPDOWN_OPENED> = ({
-        payload: field,
-    }) => {
-        const close = () => {
-            listeners.removeAll();
-            sendMessage(
-                contentScriptMessage({
-                    type: WorkerMessageType.INLINE_DROPDOWN_CLOSE,
-                    payload: { field },
-                })
-            ).catch(noop);
-        };
+    /** Start passively listening to scroll/focus events as soon as a dropdown is opened. */
+    const onDropdownOpened: FrameMessageHandler<WorkerMessageType.INLINE_DROPDOWN_OPENED> = ({ payload }) => {
+        if (payload.type === 'result' && payload.passive) {
+            const { fieldFrameId, fieldId, formId } = payload;
 
-        listeners.addListener(window, 'scroll', close, { passive: true, once: true, capture: true });
-        listeners.addListener(window, 'focus', close, { once: true });
+            const close = () => {
+                listeners.removeAll();
+                sendMessage(
+                    contentScriptMessage({
+                        type: WorkerMessageType.INLINE_DROPDOWN_CLOSE,
+                        payload: { field: { fieldFrameId, fieldId, formId } },
+                    })
+                ).catch(noop);
+            };
+
+            listeners.addListener(window, 'scroll', close, { passive: true, once: true, capture: true });
+            listeners.addListener(window, 'focus', close, { once: true });
+        }
     };
 
     const onInlineDropdownClosed: FrameMessageHandler<WorkerMessageType.INLINE_DROPDOWN_CLOSED> = () => {
@@ -48,13 +51,13 @@ export const createInlineFrameListeners = (channel: FrameMessageBroker) => {
 
     return {
         init: () => {
-            channel.register(WorkerMessageType.INLINE_DROPDOWN_OPENED, onInlineDropdownOpened);
+            channel.register(WorkerMessageType.INLINE_DROPDOWN_OPENED, onDropdownOpened);
             channel.register(WorkerMessageType.INLINE_DROPDOWN_CLOSED, onInlineDropdownClosed);
         },
 
         destroy: () => {
             listeners.removeAll();
-            channel.unregister(WorkerMessageType.INLINE_DROPDOWN_OPENED, onInlineDropdownOpened);
+            channel.unregister(WorkerMessageType.INLINE_DROPDOWN_OPENED, onDropdownOpened);
             channel.unregister(WorkerMessageType.INLINE_DROPDOWN_CLOSED, onInlineDropdownClosed);
         },
     };

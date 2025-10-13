@@ -21,10 +21,16 @@ export type DropdownOpenDTO = FrameRelay<
         /** Origin URL of requesting frame */
         origin: string;
     },
-    /** Result payload: calculated absolute positioning data */
-    { fieldFrameId: number; frameId: number }
+    {
+        /** Field frame ID. Maybe deeply nested and not resolvable
+         * from the top-frame */
+        fieldFrameId: number;
+        /** Frame ID of the last visited frame when walking
+         * up from `fieldFrameId` up to the top-frame */
+        frameId: number;
+    }
 >;
 
-export type DropdownOpenedDTO = Required<FrameField>;
+export type DropdownOpenedDTO = FrameRelay<Required<FrameField>, { passive: boolean }>;
 export type DropdownCloseDTO = { field?: FrameField };
-export type DropdownClosedDTO = { refocus: boolean } & Required<FrameField>;
+export type DropdownClosedDTO = FrameRelay<{ refocus: boolean } & Required<FrameField>, { passive: boolean }>;

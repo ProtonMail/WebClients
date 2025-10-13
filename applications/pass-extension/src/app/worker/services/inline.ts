@@ -155,13 +155,26 @@ export const createInlineService = () => {
      * Ensures cross-frame listeners are properly cleaned up when dropdown closes. */
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.INLINE_DROPDOWN_CLOSED,
-        withSender(async (message, tabId) => {
+        withSender(async ({ payload }, tabId) => {
             const frames = await getTabFrames(tabId);
-            const path = getFramePath(frames, message.payload.fieldFrameId);
+            const path = getFramePath(frames, payload.fieldFrameId);
 
             for (const frameId of path) {
                 if (frameId === 0) continue;
-                void browser.tabs.sendMessage(tabId, backgroundMessage(message), { frameId }).catch(noop);
+                void browser.tabs
+                    .sendMessage(
+                        tabId,
+                        backgroundMessage({
+                            type: WorkerMessageType.INLINE_DROPDOWN_CLOSED,
+                            payload: {
+                                ...payload,
+                                type: 'result',
+                                passive: frameId !== payload.fieldFrameId,
+                            },
+                        }),
+                        { frameId }
+                    )
+                    .catch(noop);
             }
 
             return true;
@@ -218,7 +231,11 @@ export const createInlineService = () => {
                         tabId,
                         backgroundMessage({
                             type: WorkerMessageType.INLINE_DROPDOWN_OPENED,
-                            payload,
+                            payload: {
+                                ...payload,
+                                type: 'result',
+                                passive: frameId !== payload.fieldFrameId,
+                            },
                         }),
                         { frameId }
                     )
