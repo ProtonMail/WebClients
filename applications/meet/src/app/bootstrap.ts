@@ -14,12 +14,14 @@ import { FeatureCode, fetchFeatures } from '@proton/features/index';
 import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import createApi from '@proton/shared/lib/api/createApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+import { getClientID } from '@proton/shared/lib/apps/helper';
 import { handleLogoutFromURL } from '@proton/shared/lib/authentication/handleLogoutFromURL';
 import {
     getPersistedSession,
     registerSessionRemovalListener,
 } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { getAppVersionStr } from '@proton/shared/lib/fetch/headers';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import { createUnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
@@ -32,7 +34,10 @@ import { setupStore } from './store';
 import { clearStoredDevices } from './utils/deviceStorage';
 import { clearDisabledRotatePersonalMeeting } from './utils/disableRotatePersonalMeeting';
 
-const initializeWasmApp = async (authentication: ProtonThunkArguments['authentication']): Promise<App> => {
+const initializeWasmApp = async (
+    authentication: ProtonThunkArguments['authentication'],
+    appVersion: string
+): Promise<App> => {
     await init();
 
     const persistedSession = getPersistedSession(authentication.localID);
@@ -42,7 +47,6 @@ const initializeWasmApp = async (authentication: ProtonThunkArguments['authentic
     const baseHostName = window.location.hostname.split('.').slice(1).join('.');
     const mlsSubdomain = 'meet-mls';
     const env = `${window.location.origin}/api`;
-    const appVersion = 'web-meet@5.0.999.999';
     const userAgent = navigator.userAgent;
     const dbPath = '';
     const wsHost = `${mlsSubdomain}.${baseHostName}`;
@@ -121,7 +125,9 @@ const eventManagerSetup = ({
 export const initAppDependencies = async (
     config: ProtonConfig,
     authentication: ProtonThunkArguments['authentication']
-): Promise<Omit<ProtonThunkArguments, 'config'> & { sessionResult: bootstrap.SessionPayloadData }> => {
+): Promise<
+    Omit<ProtonThunkArguments, 'config'> & { sessionResult: bootstrap.SessionPayloadData; appVersion: string }
+> => {
     const { api, silentApi } = getApis(config);
 
     const unleashClient = bootstrap.createUnleash({ api: silentApi });
@@ -131,7 +137,9 @@ export const initAppDependencies = async (
 
     const history = bootstrap.createHistory({ sessionResult, pathname: window.location.pathname });
 
-    return { api, authentication, unleashClient, eventManager, history, sessionResult };
+    const appVersion = getAppVersionStr(getClientID(config.APP_NAME), config.APP_VERSION);
+
+    return { api, authentication, unleashClient, eventManager, history, sessionResult, appVersion };
 };
 
 const completeAppBootstrap = async ({
@@ -143,11 +151,13 @@ const completeAppBootstrap = async ({
     config,
     sessionResult,
     history,
+    appVersion,
 }: ProtonThunkArguments & {
     signal?: AbortSignal;
     store: MeetStore;
     sessionResult: bootstrap.SessionPayloadData;
     notificationsManager: NotificationsManager;
+    appVersion: string;
 }) => {
     const dispatch = store.dispatch;
 
@@ -157,7 +167,7 @@ const completeAppBootstrap = async ({
 
     const [userData, wasmApp] = await Promise.all([
         loadUserData(dispatch, config.APP_NAME),
-        initializeWasmApp(authentication),
+        initializeWasmApp(authentication, appVersion),
         bootstrap.loadCrypto({ appName: config.APP_NAME, unleashClient }),
         bootstrap.unleashReady({ unleashClient }).catch(noop),
     ]);
@@ -192,7 +202,7 @@ export const executeBootstrapSteps = async ({
 }: BootstrapParameters & Pick<ProtonThunkArguments, 'authentication'>) => {
     setupGuestCrossStorage({ appMode, appName: config.APP_NAME });
 
-    const { sessionResult, ...restServices } = await initAppDependencies(config, authentication);
+    const { sessionResult, appVersion, ...restServices } = await initAppDependencies(config, authentication);
 
     initElectronClassnames();
     bootstrap.init({ config, authentication, locales });
@@ -212,6 +222,7 @@ export const executeBootstrapSteps = async ({
         store,
         config,
         sessionResult,
+        appVersion,
     });
 
     return {
@@ -243,9 +254,10 @@ export const bootstrapGuestApp = async (config: ProtonConfig) => {
 
     const unauthenticatedApi = createUnauthenticatedApi(api);
     const unleashClient = bootstrap.createUnleash({ api: unauthenticatedApi.apiCallback });
+    const appVersion = getAppVersionStr(getClientID(config.APP_NAME), config.APP_VERSION);
 
     const [wasmApp] = await Promise.all([
-        initializeWasmApp(authentication),
+        initializeWasmApp(authentication, appVersion),
         bootstrap.loadCrypto({ appName: config.APP_NAME, unleashClient }),
     ]);
 
