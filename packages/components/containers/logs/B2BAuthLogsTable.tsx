@@ -9,6 +9,7 @@ import TableCell from '@proton/components/components/table/TableCell';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableRow from '@proton/components/components/table/TableRow';
 import Time from '@proton/components/components/time/Time';
+import ProtectionCell from '@proton/components/containers/logs/ProtectionCell';
 import type { B2BAuthLog } from '@proton/shared/lib/authlog';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 
@@ -23,6 +24,7 @@ interface Props {
     userSection?: boolean;
     onEmailOrIPClick?: (email: string) => void;
     onTimeClick?: (time: number) => void;
+    isSentinel: boolean;
 }
 
 type HeaderCell = {
@@ -31,7 +33,7 @@ type HeaderCell = {
     info?: string;
 };
 
-const B2BAuthLogsTable = ({ logs, loading, error, userSection = false, onEmailOrIPClick, onTimeClick }: Props) => {
+const B2BAuthLogsTable = ({ logs, loading, error, onEmailOrIPClick, onTimeClick, isSentinel }: Props) => {
     if (!loading && error) {
         return (
             <Alert className="mb-4" type="error">
@@ -45,16 +47,12 @@ const B2BAuthLogsTable = ({ logs, loading, error, userSection = false, onEmailOr
     }
 
     const headerCells: HeaderCell[] = [
-        ...(!userSection
-            ? [
-                  {
-                      className: 'w-1/5',
-                      header: c('Header').t`User`,
-                  },
-              ]
-            : []),
         {
-            className: userSection ? '' : 'w-1/5',
+            className: 'w-1/5',
+            header: c('Header').t`User`,
+        },
+        {
+            className: 'w-1/5',
             header: c('Header').t`Event`,
         },
         {
@@ -71,6 +69,15 @@ const B2BAuthLogsTable = ({ logs, loading, error, userSection = false, onEmailOr
             header: c('Header').t`Location`,
             info: c('Tooltip').t`User's approximate location (based on their IP address)`,
         },
+        ...(isSentinel
+            ? [
+                  {
+                      className: '',
+                      header: c('Header').t`Protection`,
+                      info: c('Tooltip').t`Any protection applied to suspicious activity`,
+                  },
+              ]
+            : []),
     ];
 
     return (
@@ -90,7 +97,19 @@ const B2BAuthLogsTable = ({ logs, loading, error, userSection = false, onEmailOr
             <TableBody loading={loading} colSpan={headerCells.length}>
                 {logs.map(
                     (
-                        { Time: time, AppVersion, Description, IP, InternetProvider, Location, Device, Status, User },
+                        {
+                            Time: time,
+                            AppVersion,
+                            Description,
+                            IP,
+                            InternetProvider,
+                            Location,
+                            Device,
+                            Status,
+                            User,
+                            Protection,
+                            ProtectionDesc,
+                        },
                         index
                     ) => {
                         const key = `${index}${User.Email}${Description}${IP}${time}`;
@@ -100,29 +119,22 @@ const B2BAuthLogsTable = ({ logs, loading, error, userSection = false, onEmailOr
                             <TableRow
                                 key={key}
                                 cells={[
-                                    ...(!userSection
-                                        ? [
-                                              <div className="flex flex-row items-center my-2">
-                                                  <Avatar className="mr-2 p-5 content-center" color="weak">
-                                                      {initials}
-                                                  </Avatar>
-                                                  <div
-                                                      className="flex flex-column cursor-pointer w-2/3"
-                                                      onClick={() => onEmailOrIPClick?.(User.Email)}
-                                                  >
-                                                      <span title={User.Name} className="text-ellipsis max-w-full">
-                                                          {User.Name}
-                                                      </span>
-                                                      <span
-                                                          title={User.Email}
-                                                          className="color-weak text-ellipsis max-w-full mt-1"
-                                                      >
-                                                          {User.Email}
-                                                      </span>
-                                                  </div>
-                                              </div>,
-                                          ]
-                                        : []),
+                                    <div className="flex flex-row items-center my-2">
+                                        <Avatar className="mr-2 p-5 content-center" color="weak">
+                                            {initials}
+                                        </Avatar>
+                                        <div
+                                            className="cursor-pointer w-2/3"
+                                            onClick={() => onEmailOrIPClick?.(User.Email)}
+                                        >
+                                            <div title={User.Name} className="text-ellipsis">
+                                                {User.Name}
+                                            </div>
+                                            <div title={User.Email} className="color-weak text-ellipsis mt-1">
+                                                {User.Email}
+                                            </div>
+                                        </div>
+                                    </div>,
                                     <div className="cursor-pointer">
                                         <div className="flex flex-column my-1">
                                             <EventCell description={Description} status={Status} isB2B />
@@ -135,21 +147,37 @@ const B2BAuthLogsTable = ({ logs, loading, error, userSection = false, onEmailOr
                                             </Time>
                                         </div>
                                     </div>,
-                                    <div className="flex flex-column mt-1 text-ellipsis" title={AppVersion || '-'}>
-                                        <span className="color-norm">{Device || '-'}</span>
-                                        <span className="color-weak mt-1">{AppVersion || '-'}</span>
+                                    <div>
+                                        <div className="color-norm text-ellipsis" title={Device || '-'}>
+                                            {Device || '-'}
+                                        </div>
+                                        <div className="color-weak mt-1 text-ellipsis" title={AppVersion || '-'}>
+                                            {AppVersion || '-'}
+                                        </div>
                                     </div>,
-                                    <div className="flex flex-column">
-                                        <div title={IP} className="text-ellipsis color-norm">
+                                    <div>
+                                        <div className="color-norm text-ellipsis" title={IP}>
                                             {IP || '-'}
                                         </div>
                                         {InternetProvider && (
-                                            <div className="text-ellipsis color-weak mt-1">({InternetProvider})</div>
+                                            <div className="color-weak mt-1 text-ellipsis" title={InternetProvider}>
+                                                ({InternetProvider})
+                                            </div>
                                         )}
                                     </div>,
                                     <div className="text-ellipsis color-norm" title={Location || '-'}>
                                         {Location || '-'}
                                     </div>,
+                                    ...(isSentinel
+                                        ? [
+                                              <div className="color-norm">
+                                                  <ProtectionCell
+                                                      protection={Protection}
+                                                      protectionDesc={ProtectionDesc}
+                                                  ></ProtectionCell>
+                                              </div>,
+                                          ]
+                                        : []),
                                 ]}
                             />
                         );
