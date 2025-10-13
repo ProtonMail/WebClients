@@ -121,18 +121,27 @@ const TrialInfoContent = () => {
             </div>
 
             <p className="my-4">
-                {daysRemaining > 0
-                    ? getBoldFormattedText(
-                          c('Referral').ngettext(
-                              msgid`You have **${daysRemaining} day left** to explore all the powerful features that **${planTitle}** has to offer.`,
-                              `You have **${daysRemaining} days left** to explore all the powerful features that **${planTitle}** has to offer.`,
+                {!isAutoRenewTrial(subscription) &&
+                    (daysRemaining > 0
+                        ? getBoldFormattedText(
+                              c('Referral').ngettext(
+                                  msgid`You have **${daysRemaining} day left** to explore all the powerful features that **${planTitle}** has to offer.`,
+                                  `You have **${daysRemaining} days left** to explore all the powerful features that **${planTitle}** has to offer.`,
+                                  daysRemaining
+                              )
+                          )
+                        : getBoldFormattedText(
+                              c('Referral')
+                                  .t`Last chance to explore all the powerful features that **${planTitle}** has to offer.`
+                          ))}
+                {isAutoRenewTrial(subscription) &&
+                    (daysRemaining > 0
+                        ? c('Referral').ngettext(
+                              msgid`You can still cancel within ${daysRemaining} days and get a prorated refund.`,
+                              `You can still cancel within ${daysRemaining} day and get a prorated refund.`,
                               daysRemaining
                           )
-                      )
-                    : getBoldFormattedText(
-                          c('Referral')
-                              .t`Last chance to explore all the powerful features that **${planTitle}** has to offer.`
-                      )}
+                        : c('Referral').t`You can still cancel today and get a prorated refund.`)}
             </p>
         </>
     );
