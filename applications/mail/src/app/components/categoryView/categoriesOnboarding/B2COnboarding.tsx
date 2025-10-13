@@ -12,7 +12,7 @@ import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 
 import { getLabelFromCategoryId } from '../categoriesStringHelpers';
 import { ButtonOnboardingPrivate } from './B2COnboardingPromptPrivate';
-import { B2COnboardingFlags } from './onboardingInterface';
+import { CategoriesOnboardingFlags } from './onboardingInterface';
 
 interface Props {
     flagValue: number;
@@ -28,7 +28,7 @@ export const B2COnboarding = ({ flagValue }: Props) => {
     const handleNoCategories = async () => {
         const promises = [
             api(updateMailCategoryView(false)),
-            update(setBit(flagValue, B2COnboardingFlags.FULL_DISPLAY)),
+            update(setBit(flagValue, CategoriesOnboardingFlags.FULL_DISPLAY)),
         ];
 
         await Promise.all(promises);
@@ -37,7 +37,7 @@ export const B2COnboarding = ({ flagValue }: Props) => {
     };
 
     const handleKeepCategories = () => {
-        void update(setBit(flagValue, B2COnboardingFlags.FULL_DISPLAY));
+        void update(setBit(flagValue, CategoriesOnboardingFlags.FULL_DISPLAY));
     };
 
     const primaryCopy = getLabelFromCategoryId(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT);
