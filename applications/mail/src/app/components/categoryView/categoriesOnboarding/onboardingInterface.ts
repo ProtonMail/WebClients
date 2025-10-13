@@ -31,6 +31,11 @@ export const B2COnboardinCategoriesWithCards = new Set<string>([
     MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS,
 ]);
 
+export const B2BOnboardinCategoriesWithCards = new Set<string>([
+    MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS,
+    MAILBOX_LABEL_IDS.CATEGORY_UPDATES,
+]);
+
 interface CategoryConfig {
     flag: CategoriesOnboardingFlags;
     checker: (flagValue: number) => boolean;
@@ -52,5 +57,16 @@ export const B2C_CATEGORIES_MAPPING: Record<string, CategoryConfig> = {
     [MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS]: {
         flag: CategoriesOnboardingFlags.TRANSACTION,
         checker: (flagValue: number) => hasBit(flagValue, CategoriesOnboardingFlags.TRANSACTION),
+    },
+} as const;
+
+export const B2B_CATEGORIES_MAPPING: Record<string, CategoryConfig> = {
+    [MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS]: {
+        flag: CategoriesOnboardingFlags.TRANSACTION,
+        checker: (flagValue: number) => hasBit(flagValue, CategoriesOnboardingFlags.TRANSACTION),
+    },
+    [MAILBOX_LABEL_IDS.CATEGORY_UPDATES]: {
+        flag: CategoriesOnboardingFlags.UPDATE,
+        checker: (flagValue: number) => hasBit(flagValue, CategoriesOnboardingFlags.UPDATE),
     },
 } as const;
