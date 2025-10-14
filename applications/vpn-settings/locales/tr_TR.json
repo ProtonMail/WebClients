@@ -962,6 +962,9 @@
       "Upgrade to Business": [
         "Business tarifesine yükselt"
       ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "${ PROTON_SENTINEL_NAME } özelliğini açmak için tarifenizi yükseltin"
+      ],
       "Upgrade to Professional": [
         "Profesyonel tarifesine yükselt"
       ],
@@ -3497,16 +3500,6 @@
         "Başka bir aygıtta oturum açtınız"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "Not: ${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "AÇIKLAMA:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } iptal edildi."
@@ -3514,8 +3507,14 @@
       "All events in this series were updated.": [
         "Bu dizideki tüm etkinlikler güncellendi."
       ],
+      "DESCRIPTION:": [
+        "AÇIKLAMA:"
+      ],
       "Here's what changed:": [
         "Şu değişiklik yapıldı:"
+      ],
+      "LOCATION:": [
+        "KONUM:"
       ],
       "NOTE:": [
         "NOT:"
@@ -3528,6 +3527,15 @@
       ],
       "This event was updated.": [
         "Bu etkinlik güncellendi."
+      ],
+      "TIME:": [
+        "ZAMAN:"
+      ],
+      "TITLE:": [
+        "BAŞLIK:"
+      ],
+      "You are invited to": [
+        "Şuraya davet edildiniz"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3544,11 +3552,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Kaldırıldı"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "KONUM:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -4978,6 +4981,9 @@
       "Payment details": [
         "Ödeme ayrıntıları"
       ],
+      "Protection": [
+        "Koruma"
+      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "En iyi ${ VPN_APP_NAME } fırsatlarıyla büyük indirim kazanın"
       ],
@@ -5495,6 +5501,12 @@
       ],
       "${ planName } expires today.": [
         "${ planName } bugün sona eriyor."
+      ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME }, sizi kötü niyetli kişilerden ve güvenlik tehditlerinden korumak için günün her saati çalışan, gelişmiş yapay zeka sistemleri ile uzmanlar tarafından desteklenen gelişmiş bir hesap koruma programıdır."
+      ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME }, kuruluşunuzu kötü niyetli kişilerden ve güvenlik tehditlerinden korumak için günün her saati çalışan, gelişmiş yapay zeka sistemleri ile uzmanlar tarafından desteklenen gelişmiş bir hesap koruma programıdır."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } şüpheli etkinlikleri özel olarak izleyerek hesabınızı korur."
@@ -6287,6 +6299,9 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Tarifenizi düşürdüğünüzde, ücretli ${ VPN_APP_NAME } özelliklerini kullanamayacaksınız."
       ],
+      "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
+        "Kuruluşunuzda tanınmış kişiler varsa, önemli veriler işleniyorsa veya siber saldırılara hedef olabilecekse, kuruluşunuzdaki herkes için ${ PROTON_SENTINEL_NAME } özelliğini kullanmanız önemle önerilir."
+      ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Sorun yaşıyorsanız, size yardımcı olmak için buradayız. Destek uzmanlarımızdan biriyle ${ boldPhoneCall } yapın ya da ${ boldZoomMeeting } ile görüşün. Canlı destek almak için bir ${ boldLiveChat } açın."
       ],
@@ -6763,6 +6778,9 @@
       "Protected by Swiss privacy laws": [
         "İsviçre gizlilik yasaları tarafından korunmaktadır"
       ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Tanınmış kişiler, gazeteciler, yöneticiler ve siber saldırıların hedefi olabilecek diğer kişilerin, ${ PROTON_SENTINEL_NAME } özelliğini açması önemle önerilir."
+      ],
       "Public sharing of documents is not yet supported.": [
         "Henüz belgeleri herkese açık olarak paylaşma özelliği yok."
       ],
@@ -7209,6 +7227,9 @@
       ],
       "Upgrade to Professional or a higher plan to unlock": [
         "Professional ya da daha yüksek bir tarifeye yükselterek kullanın"
+      ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "${ PROTON_SENTINEL_NAME } hizmetine erişmek için ${ firstPlanNames } ya da ${ lastPlanName } tarifesine yükseltin."
       ],
       "Upload your completed CSV file to create accounts": [
         "Hesapları oluşturmak için hazırladığınız CSV dosyasını yükleyin"
@@ -9494,6 +9515,9 @@
       ],
       "Share files with no size limit": [
         "Dosyaları boyut sınırı olmadan paylaşın"
+      ],
+      "Short domain (@pm.me)": [
+        "Kısa etki alanı (@pm.me)"
       ],
       "Sign in as user": [
         "Kullanıcı olarak oturum açma"
@@ -13847,9 +13871,6 @@
       "Are you sure?": [
         "Emin misiniz?"
       ],
-      "Authentication security": [
-        "Kimlik doğrulama güvenliği"
-      ],
       "Auto-deletion is active": [
         "Otomatik silme özelliği açık"
       ],
@@ -14412,6 +14433,9 @@
       "SAML authentication": [
         "SAML kimlik doğrulaması"
       ],
+      "Security": [
+        "Güvenlik"
+      ],
       "Security events": [
         "Güvenlik olayları"
       ],
@@ -14721,6 +14745,9 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Yöneticiler kullanıcı hesaplarını yönetebilir ve diğer kullanıcılara yönetici yetkisi verebilir. Yalnızca birincil yönetici kuruluşun tarifesini değiştirebilir."
       ],
+      "Any protection applied to suspicious activity": [
+        "Şüpheli etkinliğe uygulanan herhangi bir koruma"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Sisteminizin gündüz veya gece kipinde olmasına göre gündüz ve gece için seçtiğiniz temalar arasında otomatik olarak geçiş yapın"
       ],
@@ -14813,6 +14840,9 @@
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Hesap yönetimi işlemleri yapılırken tüm kuruluş üyelerine bu e-posta adresi görüntülenir."
+      ],
+      "This setting is managed by your organization": [
+        "Bu ayar kuruluşunuz tarafından yönetiliyor."
       ],
       "User's approximate location (based on their IP address)": [
         "Kullanıcının yaklaşık konumu (IP adresine dayalı)"

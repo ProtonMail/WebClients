@@ -116,9 +116,6 @@
       "Back": [
         "Torna"
       ],
-      "Back to sign in": [
-        "Torna a l'inici de sessió"
-      ],
       "Block": [
         "Bloqueja"
       ],
@@ -654,7 +651,7 @@
         "Recuperar dades"
       ],
       "Refer a friend": [
-        "Recomana a un amic"
+        "Recomana una amistat"
       ],
       "Refresh": [
         "Actualitza"
@@ -951,16 +948,19 @@
         "Desbloquejar"
       ],
       "Upgrade": [
-        "Millora"
+        "Millora el pla"
       ],
       "Upgrade for 200GB": [
         "Milloreu el pla per a 200 GB"
       ],
       "Upgrade now": [
-        "Millora ara"
+        "Millora el pla ara"
       ],
       "Upgrade to Business": [
         "Millora a Business"
+      ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "Millora per activar ${ PROTON_SENTINEL_NAME }"
       ],
       "Upgrade to Professional": [
         "Millora al pla Professional"
@@ -3131,7 +3131,7 @@
         "Configureu això primer per activar la vostra organització i personalitzar la vostra adreça de correu."
       ],
       "Connect your CRM, website, printers, and more.": [
-        "Connecteu el vostre CRM, lloc web, impressores i molt més."
+        "Connecteu el CRM, lloc web, impressores i molt més."
       ],
       "Create groups you can email with a single address.": [
         "Creeu grups als quals podeu enviar correus amb una única adreça."
@@ -3497,16 +3497,6 @@
         "Heu iniciat la sessió correctament en un altre dispositiu."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "NOTA:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "DESCRIPCIÓ:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "S'ha cancel·lat ${ eventTitle }."
@@ -3514,8 +3504,14 @@
       "All events in this series were updated.": [
         "Tots els esdeveniments d'aquesta sèrie s'han actualitzat."
       ],
+      "DESCRIPTION:": [
+        "DESCRIPCIÓ:"
+      ],
       "Here's what changed:": [
         "Això és el que ha canviat:"
+      ],
+      "LOCATION:": [
+        "UBICACIÓ:"
       ],
       "NOTE:": [
         "NOTA:"
@@ -3528,6 +3524,15 @@
       ],
       "This event was updated.": [
         "S'ha actualitzat aquest esdeveniment."
+      ],
+      "TIME:": [
+        "HORA:"
+      ],
+      "TITLE:": [
+        "TÍTOL:"
+      ],
+      "You are invited to": [
+        "Us han convidat a"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3544,11 +3549,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Esborrat"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "UBICACIÓ:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -4978,6 +4978,9 @@
       "Payment details": [
         "Detalls del pagament"
       ],
+      "Protection": [
+        "Protecció"
+      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Gran estalvi en les millors ofertes de ${ VPN_APP_NAME }"
       ],
@@ -5496,6 +5499,12 @@
       "${ planName } expires today.": [
         "${ planName } caduca avui."
       ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } és un programa avançat de protecció de comptes alimentat per sofisticats sistemes d'IA i especialistes que treballen tot el dia per protegir-vos dels agents maliciosos i les amenaces de seguretat."
+      ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } és un programa avançat de protecció de comptes potenciat per sistemes d'IA sofisticats i especialistes que treballen ininterrompudament per a protegir la vostra organització d'agents maliciosos i amenaces de seguretat."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } protegeix el vostre compte amb un seguiment dedicat de l'activitat sospitosa."
       ],
@@ -5590,7 +5599,7 @@
         "**Importeu els vostres codis** d'altres aplicacions 2FA, com ara Google Authenticator"
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Pas 1:** Convideu amistats a ${ BRAND_NAME } amb el vostre enllaç de referència."
+        "**Pas 1:** Convideu amistats a ${ BRAND_NAME } amb el vostre enllaç de recomanació."
       ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
         "**Pas 2:** Les vostres amistats obtindran 2 setmanes de franc en el seu pla."
@@ -6287,6 +6296,9 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Si baixeu a un pla inferior, perdreu l'accés a les funcions de pagament de ${ VPN_APP_NAME }."
       ],
+      "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
+        "Si la vostra organització té figures públiques, gestiona dades sensibles o pot ser objecte d'atacs cibernètics, us recomanem especialment que activeu ${ PROTON_SENTINEL_NAME } per tots els membres de l'organització."
+      ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Si teniu problemes, estem aquí per ajudar-vos. ${ boldPhoneCall } o ${ boldZoomMeeting } amb un dels nostres especialistes en suport, o obriu un ${ boldLiveChat } per rebre suport per xat."
       ],
@@ -6763,6 +6775,9 @@
       "Protected by Swiss privacy laws": [
         "Protegit per les lleis de privacitat suïsses"
       ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Recomanem molt en especial a figures públiques, periodistes, executius i altres persones que poden ser objecte d'atacs cibernètics que habiliten ${ PROTON_SENTINEL_NAME }."
+      ],
       "Public sharing of documents is not yet supported.": [
         "L'intercanvi públic de documents encara no està suportat."
       ],
@@ -7209,6 +7224,9 @@
       ],
       "Upgrade to Professional or a higher plan to unlock": [
         "Milloreu al pla Professional o a un de superior per poder desbloquejar"
+      ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Milloreu al pla ${ firstPlanNames } o ${ lastPlanName } per tenir accés a ${ PROTON_SENTINEL_NAME }."
       ],
       "Upload your completed CSV file to create accounts": [
         "Pugeu el fitxer CSV completat per a crear comptes"
@@ -11903,7 +11921,7 @@
         "Cancel·la el restabliment de contrasenya"
       ],
       "Cancel reset": [
-        "Cancel·li el restabliment"
+        "Cancel·la el restabliment"
       ],
       "Reset password": [
         "Restableix la contrasenya"
@@ -12319,7 +12337,7 @@
         "Tingueu accés al contingut en estríming."
       ],
       "Upgrade": [
-        "Millora"
+        "Millora el pla"
       ],
       "Upgrade for ${ pricingTitle }": [
         "Milloreu el pla per ${ pricingTitle }"
@@ -13229,7 +13247,7 @@
         "Doneu suport a la nostra missió"
       ],
       "Upgrade": [
-        "Millora"
+        "Millora el pla"
       ],
       "Upgrade your productivity": [
         "Milloreu la vostra productivitat"
@@ -13793,9 +13811,6 @@
       "Are you sure?": [
         "N'esteu segur?"
       ],
-      "Authentication security": [
-        "Seguretat de l'autenticació"
-      ],
       "Auto-deletion is active": [
         "La supressió automàtica està activada."
       ],
@@ -14358,6 +14373,9 @@
       "SAML authentication": [
         "Autenticació SAML"
       ],
+      "Security": [
+        "Seguretat"
+      ],
       "Security events": [
         "Esdeveniments de seguretat"
       ],
@@ -14667,6 +14685,9 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Els administradors poden gestionar els comptes d'usuari i donar privilegis d'administrador a altres usuaris. Només l'administrador principal pot editar el pla de l'organització."
       ],
+      "Any protection applied to suspicious activity": [
+        "Qualsevol protecció aplicada a l'activitat sospitosa"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Canvia automàticament entre els temes preferits per a dia i nit en sincronització amb els modes de dia i nit del sistema"
       ],
@@ -14759,6 +14780,9 @@
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Aquesta adreça de correu electrònic es mostrarà a tots els membres de l'organització quan realitzin operacions de gestió del compte."
+      ],
+      "This setting is managed by your organization": [
+        "Aquesta preferència la gestiona la vostra organització"
       ],
       "User's approximate location (based on their IP address)": [
         "Ubicació aproximada de l'usuari (basada en la seva adreça IP)"

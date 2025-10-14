@@ -53,6 +53,9 @@
       "Add": [
         "Ajouter"
       ],
+      "Add ${ BRAND_NAME } address": [
+        "Ajouter l'adresse ${ BRAND_NAME }"
+      ],
       "Add account": [
         "Ajouter un compte"
       ],
@@ -958,6 +961,9 @@
       ],
       "Upgrade to Business": [
         "Passer à l'abonnement Business"
+      ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "Changez d'abonnement pour activer ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to Professional": [
         "Passer à l'abonnement Professional"
@@ -3494,16 +3500,6 @@
         "Vous vous êtes connecté à un autre appareil."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "NOTE :\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "DESCRIPTION :\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } a été annulé."
@@ -3511,8 +3507,14 @@
       "All events in this series were updated.": [
         "Tous les événements de cette série ont été mis à jour."
       ],
+      "DESCRIPTION:": [
+        "DESCRIPTION :"
+      ],
       "Here's what changed:": [
         "Voici ce qui a été modifié :"
+      ],
+      "LOCATION:": [
+        "EMPLACEMENT :"
       ],
       "NOTE:": [
         "NOTE :"
@@ -3525,6 +3527,15 @@
       ],
       "This event was updated.": [
         "Cet événement a été mis à jour."
+      ],
+      "TIME:": [
+        "HEURE :"
+      ],
+      "TITLE:": [
+        "TITRE :"
+      ],
+      "You are invited to": [
+        "Vous êtes invité à"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3541,11 +3552,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Retiré"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "LIEU : \n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -4975,6 +4981,9 @@
       "Payment details": [
         "Informations de paiement"
       ],
+      "Protection": [
+        "Protection"
+      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Faites de belles économies en profitant des meilleures offres de ${ VPN_APP_NAME }"
       ],
@@ -5492,6 +5501,12 @@
       ],
       "${ planName } expires today.": [
         "${ planName } arrive à expiration aujourd'hui."
+      ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } est un programme avancé de protection des comptes qui s'appuie sur des systèmes d'IA sophistiqués et des spécialistes qui travaillent en permanence pour vous protéger des acteurs malveillants et des menaces de sécurité."
+      ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } est un programme avancé de protection des comptes qui s'appuie sur des systèmes d'IA sophistiqués et des spécialistes qui travaillent en permanence pour protéger votre organisation des acteurs malveillants et des menaces de sécurité."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } protège votre compte grâce à une surveillance dédiée des activités suspectes."
@@ -6284,6 +6299,9 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "En passant à un abonnement inférieur, vous perdrez l'accès aux fonctionnalités payantes de ${ VPN_APP_NAME }."
       ],
+      "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
+        "Si votre organisation compte des personnalités publiques, gère des données sensibles ou pourrait être la cible de cyberattaques, nous vous encourageons vivement à activer ${ PROTON_SENTINEL_NAME } pour toutes les personnes de votre organisation."
+      ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Si vous rencontrez des difficultés, nous pouvons vous aider. ${ boldPhoneCall }, une ${ boldZoomMeeting } avec l'un de nos spécialistes ou utilisez notre ${ boldLiveChat } pour le support par chat."
       ],
@@ -6760,6 +6778,9 @@
       "Protected by Swiss privacy laws": [
         "Protégé par les lois suisses sur la vie privée"
       ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Si vous êtes une personnalité publique, un journaliste, un dirigeant ou une personne susceptible d'être la cible de cyberattaques, nous vous recommandons d'activer ${ PROTON_SENTINEL_NAME }."
+      ],
       "Public sharing of documents is not yet supported.": [
         "Le partage public de documents n'est pas encore pris en charge."
       ],
@@ -7207,6 +7228,9 @@
       "Upgrade to Professional or a higher plan to unlock": [
         "Passez à un abonnement Professional ou supérieur pour débloquer."
       ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Passez à l'abonnement ${ firstPlanNames } ou ${ lastPlanName } pour bénéficier de ${ PROTON_SENTINEL_NAME }."
+      ],
       "Upload your completed CSV file to create accounts": [
         "Importez votre fichier CSV pour créer des comptes."
       ],
@@ -7392,6 +7416,9 @@
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Avec une adresse chiffrée ${ BRAND_NAME }, vous pouvez utiliser tous les services ${ BRAND_NAME }."
+      ],
+      "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
+        "Avec les catégories de messages, les messages importants arrivent dans une boite de réception principale. Tout le reste est organisé en catégories."
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Grâce aux groupes, vous pouvez envoyer rapidement et facilement des messages à toutes les personnes d'un groupe spécifique."
@@ -7826,6 +7853,10 @@
       "${ nbDay } day": [
         "${ nbDay } jour",
         "${ nbDay } jours"
+      ],
+      "${ usedAddresses } of ${ maxAddresses } email address": [
+        "Nombre d'adresses e-mail : ${ usedAddresses } sur ${ maxAddresses }",
+        "Nombre d'adresses e-mail : ${ usedAddresses } sur ${ maxAddresses }"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(temporairement indisponible, nous vous invitons à vérifier plus tard)"
@@ -8532,6 +8563,12 @@
     "Label (end date/advanced search)": {
       "To": [
         "Pour"
+      ]
+    },
+    "Label BYOE": {
+      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
+        "Nombre d'adresses e-mail : ${ usedBYOEAddresses } sur ${ maxBYOEAddresses }",
+        "Nombre d'adresses e-mail : ${ usedBYOEAddresses } sur ${ maxBYOEAddresses }"
       ]
     },
     "Label for adding a new custom domain": {
@@ -13872,9 +13909,6 @@
       "Are you sure?": [
         "Êtes-vous sûr ?"
       ],
-      "Authentication security": [
-        "Sécurité de l'authentification"
-      ],
       "Auto-deletion is active": [
         "La suppression automatique est active."
       ],
@@ -14159,6 +14193,9 @@
       "Email": [
         "Adresse e-mail"
       ],
+      "Email categories": [
+        "Catégories de messages"
+      ],
       "Email subscriptions": [
         "Newsletters"
       ],
@@ -14433,6 +14470,9 @@
       ],
       "SAML authentication": [
         "Authentification SAML"
+      ],
+      "Security": [
+        "Sécurité"
       ],
       "Security events": [
         "Événements de sécurité"
@@ -14743,6 +14783,9 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Un administrateur peut gérer les comptes utilisateur ou accorder des droits administrateur aux autres utilisateurs. Seul l'administrateur principal peut modifier l'abonnement de l'organisation."
       ],
+      "Any protection applied to suspicious activity": [
+        "Toute protection appliquée aux activités suspectes"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Basculez automatiquement entre vos thèmes préférés pour le jour et la nuit, en synchronisation avec les modes jour et nuit de votre système."
       ],
@@ -14835,6 +14878,9 @@
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Tous les membres de l'organisation pourront voir cette adresse e-mail lors d'opérations de gestion de compte."
+      ],
+      "This setting is managed by your organization": [
+        "Ce paramètre est géré par votre organisation"
       ],
       "User's approximate location (based on their IP address)": [
         "Emplacement approximatif de l'utilisateur (basé sur son adresse IP)"

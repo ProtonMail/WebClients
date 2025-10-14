@@ -924,6 +924,9 @@
       "Upgrade to Business": [
         "升级到 Business 套餐"
       ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "升级账户即可启用 ${ PROTON_SENTINEL_NAME }"
+      ],
       "Upgrade to Professional": [
         "升级至专业版"
       ],
@@ -3298,16 +3301,6 @@
         "您已成功登录到其他设备"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "注意：\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "描述：\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } 已被取消。"
@@ -3345,11 +3338,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "已删除"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "位置：\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -4732,6 +4720,9 @@
       "Payment details": [
         "付款详情"
       ],
+      "Protection": [
+        "保护"
+      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "在最优惠的 ${ VPN_APP_NAME } 交易中节省大笔开支"
       ],
@@ -5226,6 +5217,9 @@
       ],
       "${ planName } expires today.": [
         "${ planName } 今天到期。"
+      ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } 是一项高等级账户保护计划，由精密的人工智能系统和资深专家组成，为您全方位抵御恶意攻击和安全威胁。"
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } 通过对可疑活动进行专门监测来保护您的账户。"
@@ -6372,6 +6366,9 @@
       ],
       "Protected by Swiss privacy laws": [
         "由瑞士隐私法律保护"
+      ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "如果您是公众人物、记者、政企高层等网络攻击的常见对象，强烈建议您启用 ${ PROTON_SENTINEL_NAME }。"
       ],
       "Public sharing of documents is not yet supported.": [
         "暂不支持公开分享。"
@@ -12930,9 +12927,6 @@
       "Are you sure?": [
         "是否确定？"
       ],
-      "Authentication security": [
-        "身份验证安全"
-      ],
       "Auto-deletion is active": [
         "自动删除已启用"
       ],
@@ -13750,6 +13744,9 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "管理员可以管理用户账户，并授予其他用户管理员权限。只有主要管理员可以编辑组织的计划。"
+      ],
+      "Any protection applied to suspicious activity": [
+        "对于可疑操作所采取的所有防护措施"
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "根据系统设置自动调整日间或夜间模式。"

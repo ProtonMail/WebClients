@@ -2020,11 +2020,6 @@
         "زمان:\n${ formattedStart }"
       ]
     },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "مکان:\n${ eventLocation }"
-      ]
-    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } افزوده شد"
@@ -2769,6 +2764,9 @@
       ],
       "Payment details": [
         "جزئیات پرداخت"
+      ],
+      "Protection": [
+        "حفاظت"
       ],
       "Select your pricing plan": [
         "طرح مورد نظر خود را انتخاب کنید"

@@ -962,6 +962,9 @@
       "Upgrade to Business": [
         "Aktualizovať na Biznis predplatné"
       ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "Upgradovať pre využívanie programu ${ PROTON_SENTINEL_NAME }"
+      ],
       "Upgrade to Professional": [
         "Aktualizovať na Professional"
       ],
@@ -3529,16 +3532,6 @@
         "Úspešne ste sa prihlásili do iného zariadenia"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "POZNÁMKA:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "POPIS:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "Udalosť ${ eventTitle } bola zrušená."
@@ -3576,11 +3569,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Odstránené"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "MIESTO:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -5048,6 +5036,9 @@
       "Payment details": [
         "Detaily platby"
       ],
+      "Protection": [
+        "Ochrana"
+      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Ušetrite množstvo peňazí na najlepších ponukách ${ VPN_APP_NAME }"
       ],
@@ -5605,6 +5596,9 @@
       ],
       "${ planName } expires today.": [
         "${ planName } skončí dnes."
+      ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } je pokročilý program na ochranu účtu založený sofistikovanými systémami umelej inteligencie (AI) a špecialistami, ktorí nepretržite pracujú na vašej ochrane pred nechcenými útočníkmi a bezpečnostnými hrozbami."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } chráni váš účet pomocou špeciálneho monitorovania podozrivých aktivít."
@@ -6934,6 +6928,9 @@
       ],
       "Protected by Swiss privacy laws": [
         "Chránené švajčiarskymi zákonmi o ochrane osobných údajov"
+      ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Verejným činiteľom, novinárom, vedúcim pracovníkom a ďalším, ktorí sa môžu stať terčom kybernetických útokov, sa dôrazne odporúča aktivovať službu ${ PROTON_SENTINEL_NAME }."
       ],
       "Public sharing of documents is not yet supported.": [
         "Verejné zdieľanie dokumentov zatiaľ nie je podporované."
@@ -14193,9 +14190,6 @@
       "Are you sure?": [
         "Ste si istí?"
       ],
-      "Authentication security": [
-        "Zabezpečenie overenia"
-      ],
       "Auto-deletion is active": [
         "Automatické mazanie je aktívne"
       ],
@@ -15076,6 +15070,9 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Správcovia môžu spravovať používateľské účty a udeľovať oprávnenia správcu iným používateľom. Plán organizácie môže upravovať iba primárny správca."
+      ],
+      "Any protection applied to suspicious activity": [
+        "Akákoľvek ochrana použitá proti podozrivej činnosti"
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automaticky prepínať medzi preferovanými motívmi počas dňa a noci, synchronizovane s motívmi vášho systému"
