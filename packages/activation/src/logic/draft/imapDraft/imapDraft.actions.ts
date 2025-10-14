@@ -16,6 +16,7 @@ import { AuthenticationMethod, ImportType, OAUTH_PROVIDER } from '@proton/activa
 import type { ImportProvider } from '@proton/activation/src/interface';
 import type { ApiResponse } from '@proton/shared/lib/interfaces';
 
+import { getEasySwitchFeaturesFromProducts } from '../../../hooks/useOAuthPopup.helpers';
 import type { EasySwitchThunkExtra } from '../../store';
 import type { MailImportState } from './imapDraft.interface';
 
@@ -117,7 +118,7 @@ export const resumeImapImport = createAsyncThunk<
     await thunkApi.extra.api<ApiResponse>(
         resumeImport({
             ImporterID: importID,
-            Products: [product],
+            Features: getEasySwitchFeaturesFromProducts([product]),
         })
     );
     await thunkApi.extra.eventManager.call();
