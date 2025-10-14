@@ -162,10 +162,10 @@
         "Reivindicar endereço da ${ BRAND_NAME }"
       ],
       "Claim this address": [
-        "Confirmar este endereço"
+        "Reivindicar este endereço"
       ],
       "Claim your free ${ BRAND_NAME } address": [
-        "Confirmar seu endereço de ${ BRAND_NAME }"
+        "Obtenha seu endereço ${ BRAND_NAME } gratuito"
       ],
       "Close": [
         "Fechar"
@@ -961,6 +961,9 @@
       ],
       "Upgrade to Business": [
         "Fazer upgrade para o Business"
+      ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "Faça o upgrade para ativar o ${ PROTON_SENTINEL_NAME }"
       ],
       "Upgrade to Professional": [
         "Upgrade para plano Profissional"
@@ -3497,16 +3500,6 @@
         "Você iniciou sessão com sucesso em outro dispositivo"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "NOTA:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "DESCRIÇÃO:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } foi cancelado."
@@ -3544,11 +3537,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Removido"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "LOCALIZAÇÃO:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -3618,7 +3606,7 @@
     },
     "emergency_access": {
       "Trusted contact": [
-        "Contato de confiança"
+        "Contato confiável"
       ]
     },
     "Empty group name": {
@@ -4978,6 +4966,9 @@
       "Payment details": [
         "Detalhes de pagamento"
       ],
+      "Protection": [
+        "Protecção"
+      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Economize muito nas melhores ofertas do ${ VPN_APP_NAME }"
       ],
@@ -5495,6 +5486,9 @@
       ],
       "${ planName } expires today.": [
         "${ planName } expira hoje."
+      ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } é um programa avançado de proteção de conta, alimentado por sofisticados sistemas de IA e especialistas, trabalhando ininterruptamente para proteger você de pessoas mal-intencionadas e ameaças à segurança."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "O ${ PROTON_SENTINEL_NAME } protege sua conta com monitoramento dedicado de atividades suspeitas."
@@ -6765,6 +6759,9 @@
       ],
       "Protected by Swiss privacy laws": [
         "Protegido pelas leis de privacidade suíças"
+      ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Figuras públicas, jornalistas, executivos e outros que possam ser alvo de ataques cibernéticos são altamente encorajados a ativar o ${ PROTON_SENTINEL_NAME }."
       ],
       "Public sharing of documents is not yet supported.": [
         "O compartilhamento público de documentos ainda não é suportado."
@@ -13903,9 +13900,6 @@
       "Are you sure?": [
         "Você tem certeza?"
       ],
-      "Authentication security": [
-        "Segurança de autenticação"
-      ],
       "Auto-deletion is active": [
         "A exclusão automática está ativa."
       ],
@@ -14776,6 +14770,9 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Os administradores podem gerenciar contas de usuários e conceder privilégios de administrador a outros usuários. Somente o administrador principal pode editar o plano da organização."
+      ],
+      "Any protection applied to suspicious activity": [
+        "Qualquer proteção aplicada a uma atividade suspeita"
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Troque automaticamente entre seus temas preferidos para dia e noite em sincronia com os modos dia e noite do seu sistema"

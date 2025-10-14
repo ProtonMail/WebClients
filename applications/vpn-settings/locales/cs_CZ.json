@@ -962,6 +962,9 @@
       "Upgrade to Business": [
         "Upgrade na Business"
       ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "Navyšte svůj tarif pro povolení ${ PROTON_SENTINEL_NAME }"
+      ],
       "Upgrade to Professional": [
         "Přejít na tarif Professional"
       ],
@@ -3529,16 +3532,6 @@
         "Úspěšně jste se přihlásili k jinému zařízení"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "POZNÁMKA:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "POPIS:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "Událost ${ eventTitle } byla zrušena."
@@ -3546,8 +3539,14 @@
       "All events in this series were updated.": [
         "Všechny události této série byly aktualizovány."
       ],
+      "DESCRIPTION:": [
+        "POPIS:"
+      ],
       "Here's what changed:": [
         "Toto se změnilo:"
+      ],
+      "LOCATION:": [
+        "UMÍSTĚNÍ:"
       ],
       "NOTE:": [
         "POZNÁMKA:"
@@ -3560,6 +3559,15 @@
       ],
       "This event was updated.": [
         "Tato událost byla aktualizována."
+      ],
+      "TIME:": [
+        "ČAS:"
+      ],
+      "TITLE:": [
+        "NÁZEV:"
+      ],
+      "You are invited to": [
+        "Jste pozváni na"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3576,11 +3584,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Odebráno"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "MÍSTO:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -5048,6 +5051,9 @@
       "Payment details": [
         "Platební údaje"
       ],
+      "Protection": [
+        "Ochrana"
+      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Využijte velké slevy na ${ VPN_APP_NAME }"
       ],
@@ -5605,6 +5611,12 @@
       ],
       "${ planName } expires today.": [
         "${ planName } vyprší dnes."
+      ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } je pokročilý program na ochranu účtů založený na sofistikovaných systémech umělé inteligence a specialistech, kteří nepřetržitě pracují na vaší ochraně před útočníky a bezpečnostními hrozbami."
+      ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } je pokročilý program na ochranu účtů založený na sofistikovaných systémech umělé inteligence a specialistech, kteří nepřetržitě pracují na vaší ochraně před útočníky a bezpečnostními hrozbami."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } chrání váš účet pomocí dedikovaného sledování podezřelých aktivit."
@@ -6449,6 +6461,9 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Pokud budete pokračovat ve snížení úrovně účtu, ztratíte přístup k placeným funkcím ${ VPN_APP_NAME }."
       ],
+      "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
+        "Pokud má vaše organizace veřejné osoby, nakládá s citlivými daty nebo se může stát cílem kybernetických útoků, důrazně doporučujeme povolit ${ PROTON_SENTINEL_NAME } pro všechny ve vaší organizaci."
+      ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Pokud máte potíže, rádi vám pomůžeme. ${ boldPhoneCall } nebo ${ boldZoomMeeting } s jedním z našich specialistů podpory, nebo si otevřete ${ boldLiveChat } pro podporu na chatu."
       ],
@@ -6938,6 +6953,9 @@
       "Protected by Swiss privacy laws": [
         "Chráněno švýcarskými zákony o ochraně soukromí"
       ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Veřejně známým osobám, novinářům, vedoucím pracovníkům a dalším osobám, které se mohou stát terčem kybernetických útoků, doporučujeme povolit ${ PROTON_SENTINEL_NAME }."
+      ],
       "Public sharing of documents is not yet supported.": [
         "Veřejné sdílení dokumentů ještě není podporováno."
       ],
@@ -7396,6 +7414,9 @@
       ],
       "Upgrade to Professional or a higher plan to unlock": [
         "Navyšte na tarif Professional nebo vyšší, abyste odemkli"
+      ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Navyšte na ${ firstPlanNames } nebo na tarif ${ lastPlanName } a získejte přístup k ${ PROTON_SENTINEL_NAME }."
       ],
       "Upload your completed CSV file to create accounts": [
         "Nahrajte svůj kompletní soubor CSV pro vytvoření účtů"
@@ -14211,9 +14232,6 @@
       "Are you sure?": [
         "Jste si jisti?"
       ],
-      "Authentication security": [
-        "Zabezpečení ověření"
-      ],
       "Auto-deletion is active": [
         "Automatické mazání je aktivní"
       ],
@@ -14784,6 +14802,9 @@
       "SAML authentication": [
         "Ověření SAML"
       ],
+      "Security": [
+        "Zabezpečení"
+      ],
       "Security events": [
         "Bezpečnostní události"
       ],
@@ -15095,6 +15116,9 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Správci mohou spravovat uživatelské účty a udělovat práva správce ostatním uživatelům. Tarif organizace může upravovat pouze hlavní správce."
       ],
+      "Any protection applied to suspicious activity": [
+        "Jakákoli ochrana uplatňovaná na podezřelou aktivitu"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automatické přepínání mezi preferovanými denními a nočními motivy v synchronizaci s denním a nočním režimem systému."
       ],
@@ -15187,6 +15211,9 @@
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Tato e-mailová adresa se zobrazí všem členům organizace při provádění operací správy účtu."
+      ],
+      "This setting is managed by your organization": [
+        "Tato nastavení je spravováno vaší organizací"
       ],
       "User's approximate location (based on their IP address)": [
         "Přibližná poloha uživatele (na základě jeho IP adresy)"

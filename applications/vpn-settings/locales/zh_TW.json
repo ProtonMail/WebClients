@@ -911,6 +911,9 @@
       "Upgrade to Business": [
         "升級企業版"
       ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "升級以啟用${ PROTON_SENTINEL_NAME }"
+      ],
       "Upgrade to Professional": [
         "升級到專業版"
       ],
@@ -3041,16 +3044,6 @@
         "安全性提示"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "備註：\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "描述：${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } 已被取消。"
@@ -3058,8 +3051,14 @@
       "All events in this series were updated.": [
         "該系列中的所有行程皆已更新。"
       ],
+      "DESCRIPTION:": [
+        "內容:"
+      ],
       "Here's what changed:": [
         "以下是變更內容："
+      ],
+      "LOCATION:": [
+        "地點:"
       ],
       "NOTE:": [
         "備注:"
@@ -3072,6 +3071,15 @@
       ],
       "This event was updated.": [
         "該行程已更新。"
+      ],
+      "TIME:": [
+        "時間:"
+      ],
+      "TITLE:": [
+        "標題:"
+      ],
+      "You are invited to": [
+        "你被邀請至"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3088,11 +3096,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "已移除"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "地點：${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -4427,6 +4430,9 @@
       "Payment details": [
         "繳款詳細資訊"
       ],
+      "Protection": [
+        "安全"
+      ],
       "Select your deal": [
         "請選擇您的優惠"
       ],
@@ -4888,6 +4894,9 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }要求至少1個獨立伺服器${ serverPricePerMonth }"
+      ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } 是一種高級帳戶保護程序，由最新的 AI 系統和全天候工作的專家提供協助，以保護您免受不良行為者與安全威脅的侵害。"
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME }透過監控可疑活動以保護您的帳戶。"
@@ -5980,6 +5989,9 @@
       ],
       "Protected by Swiss privacy laws": [
         "由瑞士隱私權相關法律保障"
+      ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "強烈鼓勵公眾人物、記者、管理人員和其他可能成為網絡攻擊目標的人啟用 ${ PROTON_SENTINEL_NAME }。"
       ],
       "Public sharing of documents is not yet supported.": [
         "公開分享尚未支援。"
@@ -11973,9 +11985,6 @@
       "Are you sure?": [
         "您確定嗎？"
       ],
-      "Authentication security": [
-        "安全驗證"
-      ],
       "Auto-deletion is active": [
         "自動刪除為起用狀態"
       ],
@@ -12474,6 +12483,9 @@
       "SAML authentication": [
         "SAML 驗證"
       ],
+      "Security": [
+        "安全性"
+      ],
       "Security events": [
         "安全事件"
       ],
@@ -12740,6 +12752,9 @@
       ]
     },
     "Tooltip": {
+      "Any protection applied to suspicious activity": [
+        "針對可疑活動所採取的保護措施"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "與系統的日夜模式同步，在白天和晚上的偏好布景主題之間自動切換"
       ],

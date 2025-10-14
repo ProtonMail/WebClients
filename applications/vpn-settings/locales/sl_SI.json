@@ -903,6 +903,9 @@
       "Upgrade to Business": [
         "Nadgradite na Business"
       ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "Nadgradite, da omogočite ${ PROTON_SENTINEL_NAME }."
+      ],
       "Upgrade your plan": [
         "Nadgradite trenutni paket"
       ],
@@ -3055,16 +3058,6 @@
         "Varnostni nasveti"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "OPOMBA:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "OPIS:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } je bil preklican."
@@ -3102,11 +3095,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Odstranjeno"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "LOKACIJA:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -4476,6 +4464,9 @@
       "Payment details": [
         "Podrobnosti plačila"
       ],
+      "Protection": [
+        "Zaščita"
+      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Izkoristite najboljše ponudbe ${ VPN_APP_NAME } in prihranite"
       ],
@@ -4967,6 +4958,9 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } zahteva vsaj en namenski strežnik ${ serverPricePerMonth }"
+      ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } je napreden program za zaščito računa, ki ga poganjajo sofisticirani AI sistemi in strokovnjaki, ki delajo neprekinjeno, da vas zaščitijo pred slabimi akterji in varnostnimi grožnjami."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } varuje vaš račun z namenskim nadzorom sumljivih dejavnosti."
@@ -5987,6 +5981,9 @@
       ],
       "Protected by Swiss privacy laws": [
         "Zaščiteni s švicarskimi zakoni o zasebnosti."
+      ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Javnim osebnostim, novinarjem, izvršnim direktorjem in drugim, ki bi lahko postali tarča kibernetskih napadov, močno priporočamo, da omogočijo ${ PROTON_SENTINEL_NAME }."
       ],
       "Recently used servers:": [
         "Nedavno uporabljeni strežniki:"
@@ -12109,9 +12106,6 @@
       "Are you sure?": [
         "Ali ste prepričani?"
       ],
-      "Authentication security": [
-        "Varnost preverjanja pristnosti"
-      ],
       "Auto-deletion is active": [
         "Samodejno brisanje je aktivno"
       ],
@@ -12885,6 +12879,9 @@
       ]
     },
     "Tooltip": {
+      "Any protection applied to suspicious activity": [
+        "Katera koli zaščita, ki je uporabljena za sumljive aktivnosti"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Samodejno preklapljajte med svojimi prednostnimi temami za dan in noč v skladu z dnevnim in nočnim načinom vašega sistema"
       ],

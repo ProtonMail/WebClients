@@ -962,6 +962,9 @@
       "Upgrade to Business": [
         "Αναβαθμίστε στο Business"
       ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "Αναβαθμίστε για να ενεργοποιήσετε το ${ PROTON_SENTINEL_NAME }"
+      ],
       "Upgrade to Professional": [
         "Αναβάθμιση σε Professional"
       ],
@@ -3497,16 +3500,6 @@
         "Συνδεθήκατε με επιτυχία σε μία άλλη συσκευή"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "ΣΗΜΕΙΩΣΗ:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "ΠΕΡΙΓΡΑΦΗ:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "Το ${ eventTitle } ακυρώθηκε."
@@ -3514,8 +3507,14 @@
       "All events in this series were updated.": [
         "Όλες οι εκδηλώσεις αυτής της σειράς ενημερώθηκαν."
       ],
+      "DESCRIPTION:": [
+        "ΠΕΡΙΓΡΑΦΗ:"
+      ],
       "Here's what changed:": [
         "Δείτε τι άλλαξε:"
+      ],
+      "LOCATION:": [
+        "ΤΟΠΟΘΕΣΙΑ:"
       ],
       "NOTE:": [
         "ΣΗΜΕΙΩΣΗ:"
@@ -3528,6 +3527,15 @@
       ],
       "This event was updated.": [
         "Αυτή η εκδήλωση ενημερώθηκε."
+      ],
+      "TIME:": [
+        "ΩΡΑ:"
+      ],
+      "TITLE:": [
+        "ΤΙΤΛΟΣ:"
+      ],
+      "You are invited to": [
+        "Είστε προσκεκλημένοι στο"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3544,11 +3552,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Αφαιρέθηκε"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "ΤΟΠΟΘΕΣΙΑ:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -4978,6 +4981,9 @@
       "Payment details": [
         "Στοιχεία Πληρωμής"
       ],
+      "Protection": [
+        "Προστασία"
+      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Εξοικονομήστε χρήματα στις καλύτερες ${ VPN_APP_NAME } προσφορές"
       ],
@@ -5495,6 +5501,12 @@
       ],
       "${ planName } expires today.": [
         "Το ${ planName } λήγει σήμερα."
+      ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } είναι ένα προηγμένο πρόγραμμα προστασίας λογαριασμού που λειτουργεί με προηγμένα συστήματα Τεχνητής Νοημοσύνης και οι ειδικοί εργάζονται συνεχώς για να σας προστατεύσουν από κακούς λειτουργούς και από απειλές ασφαλείας."
+      ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } είναι ένα προηγμένο πρόγραμμα προστασίας λογαριασμού που λειτουργεί με προηγμένα συστήματα Τεχνητής Νοημοσύνης και ειδικούς που εργάζονται συνεχώς για να προστατέψουν τον οργανισμό σας από κακούς λειτουργούς και απειλές ασφαλείας."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "Το ${ PROTON_SENTINEL_NAME } προστατεύει τον λογαριασμό σας με αποκλειστική παρακολούθηση ύποπτης δραστηριότητας."
@@ -6287,6 +6299,9 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Αν προχωρήσετε με την υποβάθμιση, θα χάσετε πρόσβαση στα χαρακτηριστικά επί πληρωμή του ${ VPN_APP_NAME }."
       ],
+      "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
+        "Εάν ο οργανισμός σας έχει δημόσια πρόσωπα, χειρίζεται ευαίσθητα δεδομένα ή ενδέχεται να αποτελέσει στόχο κυβερνοεπιθέσεων, σας συνιστούμε να ενεργοποιήσετε το ${ PROTON_SENTINEL_NAME } για όλους τους χρήστες του οργανισμού σας."
+      ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Αν αντιμετωπίζετε προβλήματα, είμαστε εδώ για να σας βοηθήσουμε. ${ boldPhoneCall } ή ${ boldZoomMeeting } με έναν από τους ειδικούς υποστήριξής μας ή ανοίξτε ένα ${ boldLiveChat } για υποστήριξη με ζωντανή συνομιλία."
       ],
@@ -6763,6 +6778,9 @@
       "Protected by Swiss privacy laws": [
         "Προστατεύεται από τους Ελβετικούς νόμους περί απορρήτου"
       ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Δημόσια πρόσωπα, δημοσιογράφοι, στελέχη, και λοιποί που μπορεί να στοχοποιηθούν απο κυβερνοεπιθέσεις ενθαρρύνονται ιδιαίτερα να ενεργοποιήσουν ${ PROTON_SENTINEL_NAME }."
+      ],
       "Public sharing of documents is not yet supported.": [
         "Η δημόσια κοινή χρήση εγγράφων δεν υποστηρίζεται ακόμη."
       ],
@@ -7209,6 +7227,9 @@
       ],
       "Upgrade to Professional or a higher plan to unlock": [
         "Αναβάθμιση σε Professional ή ένα υψηλότερο πλάνο για να ξεκλειδώσετε"
+      ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Αναβαθμίστε το πλάνο σας σε ${ firstPlanNames } ή ${ lastPlanName } για να αποκτήσετε πρόσβαση στο ${ PROTON_SENTINEL_NAME }."
       ],
       "Upload your completed CSV file to create accounts": [
         "Ανεβάστε το ολοκληρωμένο CSV αρχείο σας για να δημιουργήσετε λογαριασμούς"
@@ -13783,9 +13804,6 @@
       "Are you sure?": [
         "Είστε σίγουρος/η;"
       ],
-      "Authentication security": [
-        "Ασφάλεια ταυτοποίησης"
-      ],
       "Auto-deletion is active": [
         "Η αυτόματη διαγραφή είναι ενεργή"
       ],
@@ -14348,6 +14366,9 @@
       "SAML authentication": [
         "Ταυτοποίηση SAML"
       ],
+      "Security": [
+        "Ασφάλεια"
+      ],
       "Security events": [
         "Συμβάντα ασφαλείας"
       ],
@@ -14657,6 +14678,9 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Οι διαχειριστές μπορούν να διαχειρίζονται λογαριασμούς χρηστών και να εκχωρούν δικαιώματα διαχειριστή σε άλλους χρήστες. Μόνο ο κύριος διαχειριστής μπορεί να επεξεργαστεί το πλάνο του οργανισμού."
       ],
+      "Any protection applied to suspicious activity": [
+        "Οποιαδήποτε προστασία εφαρμόζεται σε ύποπτη δραστηριότητα"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Αυτόματη εναλλαγή μεταξύ των προτιμώμενων θεμάτων ημέρας και νύχτας σε συγχρονισμό με τις λειτουργίες ημέρας και νύχτας του συστήματός σας"
       ],
@@ -14749,6 +14773,9 @@
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Αυτή η διεύθυνση ηλεκτρονικού ταχυδρομείου θα εμφανίζεται σε όλα τα μέλη του οργανισμού κατά την εκτέλεση λειτουργιών διαχείρισης λογαριασμού."
+      ],
+      "This setting is managed by your organization": [
+        "Αυτή η ρύθμιση διαχειρίζεται από τον οργανισμό σας"
       ],
       "User's approximate location (based on their IP address)": [
         "Κατά προσέγγιση τοποθεσία του χρήστη (βάσει της διεύθυνσης IP του)"

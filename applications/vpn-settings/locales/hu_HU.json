@@ -921,6 +921,9 @@
       "Upgrade to Business": [
         "Verzió frissítés Business-re"
       ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "Váltson nagyobb csomagra a ${ PROTON_SENTINEL_NAME } engedélyezéséhez"
+      ],
       "Upgrade your plan": [
         "Váltson nagyobb csomagra"
       ],
@@ -3265,16 +3268,6 @@
         "Sikeresen bejelentkezett egy másik eszközre"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "Megjegyzés:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "LEÍRÁS:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } lemondva."
@@ -3312,11 +3305,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Törölve"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "HELY:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -4703,6 +4691,9 @@
       "Payment details": [
         "Fizetés részletei"
       ],
+      "Protection": [
+        "Védelem"
+      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Takarítson meg a legjobb ${ VPN_APP_NAME } ajánlatokkal"
       ],
@@ -5211,6 +5202,9 @@
       ],
       "${ planName } expires today.": [
         "${ planName } ma lejár."
+      ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "A ${ PROTON_SENTINEL_NAME } egy komplex MI rendszerekkel vezérelt, fejlett fiókvédelmi program, amely szakemberek folyamatos támogatásával védi a támadóktól és biztonsági fenyegetésekről."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "A ${ PROTON_SENTINEL_NAME } megvédi a felhasználói fiókját a gyanús tevékenységek figyelésével."
@@ -6373,6 +6367,9 @@
       ],
       "Protected by Swiss privacy laws": [
         "Svájc adatvédelmi törvényei által védve"
+      ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Közszereplőknek, újságíróknak, vezető beosztásban dolgozóknak és másoknak akik kibertámadások célpontjai lehetnek, kifejezetten ajánlott a ${ PROTON_SENTINEL_NAME } bekapcsolása."
       ],
       "Public sharing of documents is not yet supported.": [
         "A dokumentum nyilvános megosztása még nem támogatott."
@@ -12896,9 +12893,6 @@
       "Are you sure?": [
         "Biztos benne?"
       ],
-      "Authentication security": [
-        "Hitelesítés biztonsága"
-      ],
       "Auto-deletion is active": [
         "Az automatikus törlés aktív"
       ],
@@ -13715,6 +13709,9 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Az adminisztrátorok kezelhetik a felhasználói fiókokat, és adminisztrátori jogosultságokat adhatnak más felhasználóknak. Csak az elsődleges adminisztrátor szerkesztheti a szervezet előfizetését."
+      ],
+      "Any protection applied to suspicious activity": [
+        "Bármilyen védelem alkalmazása gyanús tevékenységre"
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automatikus váltás az Ön által preferált nappali és éjszakai témák között a rendszer nappali és éjszakai üzemmódjával szinkronban."
