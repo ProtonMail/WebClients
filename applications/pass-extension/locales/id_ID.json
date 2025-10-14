@@ -1834,6 +1834,9 @@
       "Open the Extensions menu": [
         "Buka menu Ekstensi"
       ],
+      "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
+        "Buka pengaturan Safari, cari ${ PASS_APP_NAME }, tuju \"Perizinan\", dan aktifkan perizinan situs."
+      ],
       "Owner": [
         "Pemilik"
       ],
@@ -2028,6 +2031,12 @@
       ],
       "Restoring trashed items...": [
         "Memulihkan item yang dibuang..."
+      ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Permissions & data\" and enable site permissions.": [
+        "Klik kanan ikon ekstensi dan pilih \"Kelola ekstensi\". Setelahnya, tuju \"Perizinan & data\" dan aktifkan perizinan situs."
+      ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Site access\" and enable site permissions.": [
+        "Klik kanan ikon ekstensi dan pilih \"Kelola ekstensi\". Setelahnya, tuju \"Akses situs\" dan aktifkan perizinan situs."
       ],
       "Save login": [
         "Tambah entri masuk"
@@ -2381,6 +2390,9 @@
     "Keyboard key": {
       "SHIFT": [
         "SHIFT"
+      ],
+      "V": [
+        "V"
       ]
     },
     "Label": {
@@ -3322,9 +3334,6 @@
       ],
       "Text": [
         "Teks"
-      ],
-      "The URL has been copied to the clipboard": [
-        "URL telah disalin ke papan klip"
       ],
       "Theme": [
         "Tema"
