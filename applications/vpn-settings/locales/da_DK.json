@@ -933,6 +933,9 @@
       "Upgrade to Business": [
         "Opgrader til Business"
       ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "Opgrader for at aktivere ${ PROTON_SENTINEL_NAME }"
+      ],
       "Upgrade your plan": [
         "Opgradér dit abonnement"
       ],
@@ -3190,16 +3193,6 @@
         "Log ind med QR-kode"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "NOTE:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "BESKRIVELSE:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } blev annulleret."
@@ -3237,11 +3230,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Fjernet"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "LOKATION:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -4609,6 +4597,9 @@
       "Payment details": [
         "Betalingsdetaljer"
       ],
+      "Protection": [
+        "Beskyttelse"
+      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Spar stort på de bedste ${ VPN_APP_NAME }-tilbud"
       ],
@@ -5096,6 +5087,9 @@
       ],
       "${ planName } expires today.": [
         "${ planName } udløber i dag."
+      ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } er et avanceret kontobeskyttelsesprogram, der drives af sofistikerede AI-systemer og specialister, der arbejder døgnet rundt for at beskytte dig mod ondsindede aktører og sikkerhedstrusler."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } beskytter din konto med dedikeret overvågning af mistænkelig aktivitet."
@@ -6190,6 +6184,9 @@
       ],
       "Protected by Swiss privacy laws": [
         "Beskyttet af schweizisk lovgivning om privatlivsbeskyttelse"
+      ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Offentlige personer, journalister, ledere og andre, der kan være mål for cyberangreb, opfordres kraftigt til at aktivere ${ PROTON_SENTINEL_NAME }."
       ],
       "Public sharing of documents is not yet supported.": [
         "Offentlig deling af dokumenter understøttes ikke endnu."
@@ -12565,9 +12562,6 @@
       "Are you sure?": [
         "Er du sikker?"
       ],
-      "Authentication security": [
-        "Godkendelses-sikkerhed"
-      ],
       "Auto-deletion is active": [
         "Automatisk sletning er aktiv"
       ],
@@ -13358,6 +13352,9 @@
       ]
     },
     "Tooltip": {
+      "Any protection applied to suspicious activity": [
+        "Enhver form for beskyttelse mod mistænkelig aktivitet"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Skift automatisk mellem dine foretrukne temaer for dag og nat synkront med dit systems dag- og nattilstande"
       ],

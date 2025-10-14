@@ -4903,16 +4903,6 @@
         "ეს ჩანართი უსაფრთხოდ შეგიძლიათ, დახუროთ."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "შენიშვნა:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "აღწერა:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } გაუქმდა."
@@ -4950,11 +4940,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "წაიშალა"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "მდებარეობა:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -10614,9 +10599,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "განაახლეთ ახლავე, რომ მიიღოთ პრემიუმ ფუნქციები, პროდუქტები და საცავი სპეციალურ ფასად"
-      ],
-      "Upgrade to ${ firstPlanNames }, or ${ lastPlanName } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "ასწიეთ სატარიფო გეგმა ${ firstPlanNames }-ზე ან ${ lastPlanName }-ზე, რომ მიიღოთ წვდომა ${ PROTON_SENTINEL_NAME }-ზე"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "აწიეთ ტარიფი, რათა უფრო მოკლე, @pm.me მისამართები გქონდეთ, რომლებიც გასაზიარებლად უფრო ადვილია. ის ნიშნავს \"${ MAIL_APP_NAME } მე\", ანუ \"პირადად მომწერე\"."
@@ -20736,9 +20718,6 @@
       ],
       "Are you sure?": [
         "დარწმუნებული ბრძანდებით?"
-      ],
-      "Authentication security": [
-        "ავთენტიკაციის უსაფრთხოება"
       ],
       "Auto-deletion is active": [
         "ავტოამოცნობა ჩართულია"

@@ -3348,6 +3348,9 @@
       "Payment details": [
         "Detalji o plaćanju"
       ],
+      "Protection": [
+        "Zaštita"
+      ],
       "Select your deal": [
         "Odaberite Vašu ponudu"
       ],
@@ -3665,6 +3668,9 @@
         "${ number } poslužitelj",
         "${ number } poslužitelja",
         "${ number } poslužitelja"
+      ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } je napredni program za zaštitu korisničkih računa pokretan sofisticiranim AI sustavima i stručnjacima koji rade danonoćno kako bi Vas zaštitili od zlonamjernih aktera i sigurnosnih prijetnji."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } mapa pronađena",
@@ -4253,6 +4259,9 @@
       ],
       "Protected by Swiss privacy laws": [
         "Zaštićeno švicarskim zakonima o privatnosti"
+      ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Javne osobe, novinari, rukovoditelji i drugi koji bi mogli biti meta kibernetičkih napada toplo se potiču da omoguće ${ PROTON_SENTINEL_NAME }."
       ],
       "Recently used servers:": [
         "Nedavno korišteni poslužitelji:"
@@ -8204,9 +8213,6 @@
       ],
       "Are you sure?": [
         "Jeste li sigurni?"
-      ],
-      "Authentication security": [
-        "Sigurnost autentifikacije"
       ],
       "Billing cycle": [
         "Ciklus naplate"

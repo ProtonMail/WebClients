@@ -1928,7 +1928,8 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
+        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -3612,9 +3613,6 @@
       ],
       "The best of ${ BRAND_NAME } with one subscription": [
         "Tek bir abonelikle en iyi ${ BRAND_NAME } hizmetleri"
-      ],
-      "The URL has been copied to the clipboard": [
-        "Adres panoya kopyalandı"
       ],
       "Theme": [
         "Tema"

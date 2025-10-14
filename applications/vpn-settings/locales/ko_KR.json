@@ -956,6 +956,9 @@
       "Upgrade to Business": [
         "Business로 업그레이드"
       ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "${ PROTON_SENTINEL_NAME }을 활성화하려면 업그레이드"
+      ],
       "Upgrade to Professional": [
         "Professional로 업그레이드"
       ],
@@ -3451,16 +3454,6 @@
         "다른 기기에서 로그인하는데 성공했습니다."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "참고:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "설명:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle }이(가) 취소되었습니다."
@@ -3498,11 +3491,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "제거됨"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "위치:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -4908,6 +4896,9 @@
       "Payment details": [
         "결제 수단 상세 정보"
       ],
+      "Protection": [
+        "보호"
+      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "최고의 ${ VPN_APP_NAME } 특가로 크게 절약하세요"
       ],
@@ -5405,6 +5396,9 @@
       ],
       "${ planName } expires today.": [
         "${ planName }이(가) 오늘 만료됩니다."
+      ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME }은 보안 위협으로부터 사용자를 보호하기 위해 24시간 작동하는 정교한 AI 시스템과 보안계 전문가들로 이루워진 고급 계정 보호 프로그램입니다."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME }이 의심스러운 활동에 대한 전담 모니터링으로 계정을 보호합니다."
@@ -6626,6 +6620,9 @@
       ],
       "Protected by Swiss privacy laws": [
         "스위스 개인정보법에 의해 보호됨"
+      ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "공인, 언론인, 임원 및 사이버 공격의 대상이 될 수 있는 다른 사람들은 ${ PROTON_SENTINEL_NAME }을 활성화하는 것이 적극 권장됩니다."
       ],
       "Public sharing of documents is not yet supported.": [
         "문서의 공개 공유가 아직 지원되지 않습니다."
@@ -13464,9 +13461,6 @@
       "Are you sure?": [
         "확실하신가요?"
       ],
-      "Authentication security": [
-        "보안 인증"
-      ],
       "Auto-deletion is active": [
         "자동 삭제가 이제 활성 상태입니다."
       ],
@@ -14323,6 +14317,9 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "조직 관리자는 다른 구성원의 사용자 계정을 관리하고 관리자 권한을 부여할 수 있습니다. 주 관리자만 조직의 플랜을 수정할 수 있습니다."
+      ],
+      "Any protection applied to suspicious activity": [
+        "의심스러운 활동에 적용되는 모든 보호"
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "시스템의 주/야간 모드와 동기화하여 선호하는 테마를 주/야간에 맞춰 자동으로 전환합니다"

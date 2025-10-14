@@ -3316,16 +3316,6 @@
         "Editare eveniment"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "NOTĂ:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "DESCRIERE:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } a fost anulat."
@@ -3363,11 +3353,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Eliminat"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "LOC:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {

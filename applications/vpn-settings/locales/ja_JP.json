@@ -962,6 +962,9 @@
       "Upgrade to Business": [
         "ビジネスへのアップグレード"
       ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "アップグレードして ${ PROTON_SENTINEL_NAME } を有効にしてください"
+      ],
       "Upgrade to Professional": [
         "Professionalにアップグレード"
       ],
@@ -3481,16 +3484,6 @@
         "別のデバイスでのサインインに成功しました"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "注意:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "説明:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } はキャンセルされました。"
@@ -3528,11 +3521,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "削除済み"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "場所:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -4943,6 +4931,9 @@
       "Payment details": [
         "支払い詳細"
       ],
+      "Protection": [
+        "保護"
+      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "大幅に節約して最高の${ VPN_APP_NAME }の取引を手に入れよう"
       ],
@@ -5440,6 +5431,9 @@
       ],
       "${ planName } expires today.": [
         "${ planName } の有効期限は本日です。"
+      ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } は、高度な AI システムとスペシャリストを活用した高度なアカウント保護プログラムで、悪者やセキュリティの脅威からユーザーを保護するために 24 時間体制で働いています。"
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } は、疑わしいアクティビティの専用モニタリングでアカウントを保護します。"
@@ -6676,6 +6670,9 @@
       ],
       "Protected by Swiss privacy laws": [
         "スイスの個人情報保護法により保護されています。"
+      ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "サイバー攻撃の標的になる可能性がある公人、ジャーナリスト、幹部などは、${ PROTON_SENTINEL_NAME } を有効にしておくことが強く推奨されています。"
       ],
       "Public sharing of documents is not yet supported.": [
         "ドキュメントの公開共有はまだサポートされていません。"
@@ -13572,9 +13569,6 @@
       "Are you sure?": [
         "本当によろしいですか？"
       ],
-      "Authentication security": [
-        "認証セキュリティ"
-      ],
       "Auto-deletion is active": [
         "自動削除が有効です"
       ],
@@ -14440,6 +14434,9 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "管理者はユーザーのアカウントを管理することができ、他のユーザーに管理者権限を与えることができます。プライマリー管理者のみが組織のプランを変更できます。"
+      ],
+      "Any protection applied to suspicious activity": [
+        "疑わしいアクティビティに適用される保護"
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "システムの昼夜モードに同期して、昼と夜の好みのテーマを自動的に切り替えます"

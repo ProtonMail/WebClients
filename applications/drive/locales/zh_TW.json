@@ -2869,16 +2869,6 @@
         "優先支援"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "備註：\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "描述：${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } 已被取消。"
@@ -2886,8 +2876,14 @@
       "All events in this series were updated.": [
         "該系列中的所有行程皆已更新。"
       ],
+      "DESCRIPTION:": [
+        "內容:"
+      ],
       "Here's what changed:": [
         "以下是變更內容："
+      ],
+      "LOCATION:": [
+        "地點:"
       ],
       "NOTE:": [
         "備注:"
@@ -2900,6 +2896,15 @@
       ],
       "This event was updated.": [
         "該行程已更新。"
+      ],
+      "TIME:": [
+        "時間:"
+      ],
+      "TITLE:": [
+        "標題:"
+      ],
+      "You are invited to": [
+        "你被邀請至"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2916,11 +2921,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "已移除"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "地點：${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {

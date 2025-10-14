@@ -1285,6 +1285,14 @@
         "Terabyte"
       ]
     },
+    "Header": {
+      "Domain": [
+        "Domain"
+      ],
+      "Username": [
+        "Nama pengguna"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "Item \"${ payload.itemName }\" telah diabaikan"
@@ -2418,6 +2426,9 @@
     "Keyboard key": {
       "SHIFT": [
         "SHIFT"
+      ],
+      "V": [
+        "V"
       ]
     },
     "Label": {
@@ -3401,9 +3412,6 @@
       ],
       "The best of ${ BRAND_NAME } with one subscription": [
         "Yang terbaik dari ${ BRAND_NAME } dengan satu langganan"
-      ],
-      "The URL has been copied to the clipboard": [
-        "URL telah disalin ke papan klip"
       ],
       "Theme": [
         "Tema"

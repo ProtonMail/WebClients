@@ -82,6 +82,9 @@
       "Authenticate": [
         "Autentikasi"
       ],
+      "Auto-type": [
+        "Ketik otomatis"
+      ],
       "Back": [
         "Kembali"
       ],
@@ -1342,6 +1345,14 @@
         "Mungil"
       ]
     },
+    "Header": {
+      "Domain": [
+        "Domain"
+      ],
+      "Username": [
+        "Nama pengguna"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "Item \"${ payload.itemName }\" telah diabaikan"
@@ -1873,6 +1884,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Memindahkan semua item dari \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Memindahkan item ke brankas lain akan menghapus tautan amannya."
       ],
       "Moving items": [
         "Memindahkan item"
@@ -2487,6 +2501,9 @@
       ],
       "TAB": [
         "TAB"
+      ],
+      "V": [
+        "V"
       ]
     },
     "Label": {
@@ -2828,6 +2845,9 @@
       ],
       "Email": [
         "Email"
+      ],
+      "EMAIL": [
+        "EMAIL"
       ],
       "Email (alias)": [
         "Email (alias)"
@@ -3255,6 +3275,9 @@
       "Password": [
         "Kata sandi"
       ],
+      "PASSWORD": [
+        "KATA SANDI"
+      ],
       "Password history": [
         "Riwayat kata sandi"
       ],
@@ -3509,9 +3532,6 @@
       ],
       "The best of ${ BRAND_NAME } with one subscription": [
         "Yang terbaik dari ${ BRAND_NAME } dengan satu langganan"
-      ],
-      "The URL has been copied to the clipboard": [
-        "URL telah disalin ke papan klip"
       ],
       "Theme": [
         "Tema"

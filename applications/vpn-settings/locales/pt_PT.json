@@ -927,6 +927,9 @@
       "Upgrade to Business": [
         "Atualizar para o Business"
       ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "Atualize para ativar ${ PROTON_SENTINEL_NAME }"
+      ],
       "Upgrade to Professional": [
         "Atualizar para Professional"
       ],
@@ -3292,16 +3295,6 @@
         "Iniciou sessão noutro dispositivo."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "NOTA:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "DESCRIÇÃO:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } foi cancelado."
@@ -3339,11 +3332,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Removido"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "LOCAL:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -4751,6 +4739,9 @@
       "Payment details": [
         "Detalhes do pagamento"
       ],
+      "Protection": [
+        "Protecção"
+      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Poupe em grande nas melhores promoções do ${ VPN_APP_NAME }"
       ],
@@ -5265,6 +5256,9 @@
       ],
       "${ planName } expires today.": [
         "${ planName } expira hoje."
+      ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "O ${ PROTON_SENTINEL_NAME } é um programa avançado de proteção de conta, alimentado por sofisticados sistemas de IA e especialistas que trabalham ininterruptamente para o proteger de pessoas mal-intencionadas e ameaças à segurança."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "O ${ PROTON_SENTINEL_NAME } protege a sua conta com monitorização dedicada de atividades suspeitas."
@@ -6439,6 +6433,9 @@
       ],
       "Protected by Swiss privacy laws": [
         "Protegido pelas leis de privacidade suíças"
+      ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "As figuras públicas, os jornalistas, os executivos e outros que possam ser alvo de ataques cibernéticos são altamente encorajados a ativar o ${ PROTON_SENTINEL_NAME }."
       ],
       "Public sharing of documents is not yet supported.": [
         "A partilha pública de documentos ainda não é suportada."
@@ -13126,9 +13123,6 @@
       "Are you sure?": [
         "Tem a certeza?"
       ],
-      "Authentication security": [
-        "Segurança de autenticação"
-      ],
       "Auto-deletion is active": [
         "A eliminação automática está ativa."
       ],
@@ -13954,6 +13948,9 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Os administradores podem gerir as contas de utilizador e atribuir privilégios de administrador a outros utilizadores. Apenas o administrador principal pode editar o plano da organização."
+      ],
+      "Any protection applied to suspicious activity": [
+        "Qualquer proteção aplicada a atividade suspeita"
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Alterne automaticamente entre os seus temas preferidos para o dia e para a noite, em sincronia com os modos diurno e noturno do seu sistema."

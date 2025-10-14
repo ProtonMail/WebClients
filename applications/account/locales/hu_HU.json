@@ -4595,16 +4595,6 @@
         "Most már nyugodtan bezárhatja ezt az ablakot."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "Megjegyzés:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "LEÍRÁS:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } lemondva."
@@ -4642,11 +4632,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Törölve"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "HELY:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -9981,9 +9966,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Váltson nagyobb csomagra a prémium funkciókért, termékekért és tárhelyért, egy kedvezményes áron"
-      ],
-      "Upgrade to ${ firstPlanNames }, or ${ lastPlanName } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Frissítsen ${ firstPlanNames } vagy ${ lastPlanName } csomagra, hogy hozzáférést kapjon a következőhöz: ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Frissítsd a fiókodat egy rövidebb @pm.me cím hozzáadásához, amit könnyebb megosztani. Ez a \"Private Message me\" vagy “${ MAIL_APP_NAME } me” rövidítése."
@@ -19318,9 +19300,6 @@
       ],
       "Are you sure?": [
         "Biztos benne?"
-      ],
-      "Authentication security": [
-        "Hitelesítés biztonsága"
       ],
       "Auto-deletion is active": [
         "Az automatikus törlés aktív"

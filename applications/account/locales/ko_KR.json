@@ -4907,16 +4907,6 @@
         "이 탭을 닫아도 안전합니다."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "참고:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "설명:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle }이(가) 취소되었습니다."
@@ -4954,11 +4944,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "제거됨"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "위치:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -10671,9 +10656,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "지금 업그레이드하여 프리미엄 기능, 제품, 저장 공간을 특별한 가격에 이용하세요."
-      ],
-      "Upgrade to ${ firstPlanNames }, or ${ lastPlanName } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "${ PROTON_SENTINEL_NAME }에 접근하려면 ${ firstPlanNames } 및 ${ lastPlanName } 플랜으로 업그레이드하세요."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "공유하기 쉽도록 계정에 @pm.me 짧은 주소로 업그레이드 하세요. \"${ MAIL_APP_NAME }\" 또는 \"비공개 메시지(Private Message)me\"를 의미합니다."
@@ -20678,9 +20660,6 @@
       ],
       "Are you sure?": [
         "확실하신가요?"
-      ],
-      "Authentication security": [
-        "보안 인증"
       ],
       "Auto-deletion is active": [
         "자동 삭제가 이제 활성 상태입니다."

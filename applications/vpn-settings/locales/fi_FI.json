@@ -932,6 +932,9 @@
       "Upgrade to Business": [
         "Päivitä Business-tilaukseen"
       ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "Ota ${ PROTON_SENTINEL_NAME } käyttöön päivittämällä tilauksesi"
+      ],
       "Upgrade to Professional": [
         "Päivitä Professionaliin"
       ],
@@ -3255,16 +3258,6 @@
         "Kirjautumisesi toiseen laitteeseen onnistui"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "MUISTIINPANO:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "KUVAUS:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } peruttiin."
@@ -3302,11 +3295,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Poistettu"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "SIJAINTI:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -4716,6 +4704,9 @@
       "Payment details": [
         "Maksutiedot"
       ],
+      "Protection": [
+        "Suojaus"
+      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Isoja säästöjä parhailla ${ VPN_APP_NAME } -tarjouksilla"
       ],
@@ -5224,6 +5215,9 @@
       ],
       "${ planName } expires today.": [
         "${ planName } erääntyy tänään."
+      ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } on edistynyt moderneja tekoälyjärjestelmiä ja asiantuntijoita hyödyntävä tilin suojausohjelma, joka suojaa sinua vaarallisilta tahoilta ja tietoturvauhkilta ympäri vuorokauden."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } suojelee tiliäsi valvomalla epäilyttävää toimintaa."
@@ -6401,6 +6395,9 @@
       ],
       "Protected by Swiss privacy laws": [
         "Sveitsin tietosuojalakien suojaama"
+      ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Julkisuuden henkilöitä, toimittajia, yritysjohtajia ja muita kyberhyökkäyksille erityisesti alttiita tahoja kehotetaan ottamaan ${ PROTON_SENTINEL_NAME } käyttöön."
       ],
       "Public sharing of documents is not yet supported.": [
         "Dokumenttien julkista jakamista ei vielä tueta."
@@ -12978,9 +12975,6 @@
       "Are you sure?": [
         "Oletko varma?"
       ],
-      "Authentication security": [
-        "Tunnistautumisen turvallisuus"
-      ],
       "Auto-deletion is active": [
         "Automaattinen poisto on käytössä"
       ],
@@ -13797,6 +13791,9 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Ylläpitäjät voivat hallita käyttäjätilejä ja antaa ylläpito-oikeuksia muille käyttäjille. Vain ensisijainen ylläpitäjä voi muokata organisaation tilausta."
+      ],
+      "Any protection applied to suspicious activity": [
+        "Epäilyttävään toimintaan kohdistetut suojaustoimenpiteet"
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Vaihda valitsemiesi päivä- ja yöteemojen välillä automaattisesti järjestelmäsi päivä-/yötilan mukaisesti"

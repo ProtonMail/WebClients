@@ -3136,16 +3136,6 @@
         "Yazı alanlarının doldurulması isteğe bağlıdır. Bu formda verdiğiniz bilgiler yalnızca seçtiğiniz faturayı değiştirir. Gelecekteki fatura bilgilerinizi değiştirmez."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "Not: ${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "AÇIKLAMA:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } iptal edildi."
@@ -3153,8 +3143,14 @@
       "All events in this series were updated.": [
         "Bu dizideki tüm etkinlikler güncellendi."
       ],
+      "DESCRIPTION:": [
+        "AÇIKLAMA:"
+      ],
       "Here's what changed:": [
         "Şu değişiklik yapıldı:"
+      ],
+      "LOCATION:": [
+        "KONUM:"
       ],
       "NOTE:": [
         "NOT:"
@@ -3167,6 +3163,15 @@
       ],
       "This event was updated.": [
         "Bu etkinlik güncellendi."
+      ],
+      "TIME:": [
+        "ZAMAN:"
+      ],
+      "TITLE:": [
+        "BAŞLIK:"
+      ],
+      "You are invited to": [
+        "Şuraya davet edildiniz"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3183,11 +3188,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Kaldırıldı"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "KONUM:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -8331,6 +8331,9 @@
       ],
       "Share files with no size limit": [
         "Dosyaları boyut sınırı olmadan paylaşın"
+      ],
+      "Short domain (@pm.me)": [
+        "Kısa etki alanı (@pm.me)"
       ],
       "Sign in as user": [
         "Kullanıcı olarak oturum açma"

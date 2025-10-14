@@ -1902,6 +1902,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
+      ],
       "Moving items": [
         "アイテムの移動"
       ],
@@ -3564,9 +3567,6 @@
       ],
       "The best of ${ BRAND_NAME } with one subscription": [
         "1つのサブスクリプションで最高の${ BRAND_NAME }"
-      ],
-      "The URL has been copied to the clipboard": [
-        "URLをクリップボードにコピーしました"
       ],
       "Theme": [
         "テーマ"

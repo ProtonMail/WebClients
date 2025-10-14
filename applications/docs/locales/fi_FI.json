@@ -2675,16 +2675,6 @@
         "Ensisijainen tuki"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "MUISTIINPANO:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "KUVAUS:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } peruttiin."
@@ -2722,11 +2712,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Poistettu"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "SIJAINTI:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {

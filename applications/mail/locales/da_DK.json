@@ -4165,16 +4165,6 @@
         "Tekstfelter er valgfrie. De oplysninger, du angiver i denne formular, vil kun ændre den faktura, du har valgt, og ikke dine fremtidige fakturadetaljer."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "NOTE:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "BESKRIVELSE:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } blev annulleret."
@@ -4212,11 +4202,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Fjernet"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "LOKATION:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {

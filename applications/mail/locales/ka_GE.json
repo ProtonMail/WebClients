@@ -4296,16 +4296,6 @@
         "პრიორიტეტული მხარდაჭერა"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "შენიშვნა:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "აღწერა:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } გაუქმდა."
@@ -4343,11 +4333,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "წაიშალა"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "მდებარეობა:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -7387,9 +7372,6 @@
       ],
       "Low Priority": [
         "დაბალი პრიორიტეტი"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "დააყენეთ ${ MAIL_APP_NAME } თქვენს ნაგულისხმევ ელფოსტის აპლიკაციად."
       ],
       "Manage your folders": [
         "თქვენი საქაღალდეების მართვა"

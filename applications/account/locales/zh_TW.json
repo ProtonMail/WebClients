@@ -4245,16 +4245,6 @@
         "您可以安全地關閉此分頁。"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "備註：\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "描述：${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } 已被取消。"
@@ -4262,8 +4252,14 @@
       "All events in this series were updated.": [
         "該系列中的所有行程皆已更新。"
       ],
+      "DESCRIPTION:": [
+        "內容:"
+      ],
       "Here's what changed:": [
         "以下是變更內容："
+      ],
+      "LOCATION:": [
+        "地點:"
       ],
       "NOTE:": [
         "備注:"
@@ -4276,6 +4272,15 @@
       ],
       "This event was updated.": [
         "該行程已更新。"
+      ],
+      "TIME:": [
+        "時間:"
+      ],
+      "TITLE:": [
+        "標題:"
+      ],
+      "You are invited to": [
+        "你被邀請至"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4292,11 +4297,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "已移除"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "地點：${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -9230,9 +9230,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "立即以優惠價升級就可以擁有進階功能、產品與儲存空間。"
-      ],
-      "Upgrade to ${ firstPlanNames }, or ${ lastPlanName } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "升級至${ firstPlanNames },或${ lastPlanName }方案以存取${ PROTON_SENTINEL_NAME }。"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "升級以新增較短且易於分享的 @pm.me 位址到您的帳號。其代表「${ MAIL_APP_NAME } 我」或是「寄私人訊息給我」。"
@@ -17729,9 +17726,6 @@
       "Are you sure?": [
         "您確定嗎？"
       ],
-      "Authentication security": [
-        "安全驗證"
-      ],
       "Auto-deletion is active": [
         "自動刪除為起用狀態"
       ],
@@ -18589,6 +18583,9 @@
       ],
       "Secure email based in Switzerland": [
         "總部設於瑞士的安全電郵"
+      ],
+      "Security": [
+        "安全性"
       ],
       "Security and privacy": [
         "安全與隱私"

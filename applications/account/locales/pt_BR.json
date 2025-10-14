@@ -271,10 +271,10 @@
         "Revindicar"
       ],
       "Claim this address": [
-        "Confirmar este endereço"
+        "Reivindicar este endereço"
       ],
       "Claim your free ${ BRAND_NAME } address": [
-        "Confirmar seu endereço de ${ BRAND_NAME }"
+        "Obtenha seu endereço ${ BRAND_NAME } gratuito"
       ],
       "Clear all formatting": [
         "Limpar toda a formatação"
@@ -4977,16 +4977,6 @@
         "Você pode fechar esta guia com segurança."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "NOTA:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "DESCRIÇÃO:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } foi cancelado."
@@ -5024,11 +5014,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Removido"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "LOCALIZAÇÃO:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -5637,7 +5622,7 @@
         "Tempo necessário antes de garantir acesso automaticamente a eles"
       ],
       "Trusted contact": [
-        "Contato de confiança"
+        "Contato confiável"
       ],
       "Upgrade": [
         "Fazer upgrade"
@@ -10861,9 +10846,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Faça upgrade agora para obter recursos premium, produtos e armazenamento por um preço especial"
-      ],
-      "Upgrade to ${ firstPlanNames }, or ${ lastPlanName } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Faça upgrade para o plano ${ firstPlanNames }, ou ${ lastPlanName } para obter acesso ao ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Faça o upgrade do seu plano para adicionar um endereço curto @pm.me para a sua conta para compartilhá-la facilmente. Ele significa \"${ MAIL_APP_NAME } me\" ou \"Private Message me\"."
@@ -21320,9 +21302,6 @@
       ],
       "Are you sure?": [
         "Você tem certeza?"
-      ],
-      "Authentication security": [
-        "Segurança de autenticação"
       ],
       "Auto-deletion is active": [
         "A exclusão automática está ativa."

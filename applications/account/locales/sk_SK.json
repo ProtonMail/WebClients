@@ -5021,16 +5021,6 @@
         "Túto kartu môžete bezpečne zavrieť."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "POZNÁMKA:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "POPIS:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "Udalosť ${ eventTitle } bola zrušená."
@@ -5068,11 +5058,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Odstránené"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "MIESTO:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -11075,9 +11060,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navýšte teraz a získajte prémiové funkcie, produkty a úložisko za špeciálnu cenu"
-      ],
-      "Upgrade to ${ firstPlanNames }, or ${ lastPlanName } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Navýšte na ${ firstPlanNames } alebo ${ lastPlanName } a získajte prístup k ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Upgradujte, ak chcete pridať kratšiu @pm.me adresu k vášmu účtu, ktorá sa jednoduchšie zdieľa. To znamená „${ MAIL_APP_NAME } me“ alebo „Private message me“."
@@ -21730,9 +21712,6 @@
       ],
       "Are you sure?": [
         "Ste si istí?"
-      ],
-      "Authentication security": [
-        "Zabezpečenie overenia"
       ],
       "Auto-deletion is active": [
         "Automatické mazanie je aktívne"

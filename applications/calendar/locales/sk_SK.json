@@ -3338,16 +3338,6 @@
         "Upraviť udalosť"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "POZNÁMKA:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "POPIS:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "Udalosť ${ eventTitle } bola zrušená."
@@ -3385,11 +3375,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Odstránené"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "MIESTO:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {

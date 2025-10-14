@@ -3247,16 +3247,6 @@
         "მოვლენის ჩასწორება"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "შენიშვნა:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "აღწერა:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } გაუქმდა."
@@ -3294,11 +3284,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "წაიშალა"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "მდებარეობა:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {

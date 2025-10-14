@@ -3294,16 +3294,6 @@
         "Rediger hendelse"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "NOTAT: \n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "Beskrivelse:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } ble kansellert."
@@ -3311,8 +3301,14 @@
       "All events in this series were updated.": [
         "Alle hendelsene i denne serien ble oppdatert."
       ],
+      "DESCRIPTION:": [
+        "BESKRIVELSE:"
+      ],
       "Here's what changed:": [
         "Her er hva som er endret:"
+      ],
+      "LOCATION:": [
+        "STED:"
       ],
       "NOTE:": [
         "NOTAT:"
@@ -3325,6 +3321,15 @@
       ],
       "This event was updated.": [
         "Denne hendelsen ble oppdatert."
+      ],
+      "TIME:": [
+        "TIDSPUNKT:"
+      ],
+      "TITLE:": [
+        "TITTEL:"
+      ],
+      "You are invited to": [
+        "Du er invitert til"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3341,11 +3346,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Fjernet"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "Sted:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {

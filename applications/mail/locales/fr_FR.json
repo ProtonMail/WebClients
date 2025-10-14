@@ -385,6 +385,9 @@
       "Customize": [
         "Personnaliser"
       ],
+      "Customize categories": [
+        "Personnaliser les catégories"
+      ],
       "Customize import": [
         "Personnaliser l'importation"
       ],
@@ -4343,16 +4346,6 @@
         "Les champs de texte sont facultatifs. Les informations que vous fournissez dans ce formulaire ne modifieront que la facture que vous avez sélectionnée et non les détails de votre future facture."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "NOTE :\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "DESCRIPTION :\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } a été annulé."
@@ -4360,8 +4353,14 @@
       "All events in this series were updated.": [
         "Tous les événements de cette série ont été mis à jour."
       ],
+      "DESCRIPTION:": [
+        "DESCRIPTION :"
+      ],
       "Here's what changed:": [
         "Voici ce qui a été modifié :"
+      ],
+      "LOCATION:": [
+        "EMPLACEMENT :"
       ],
       "NOTE:": [
         "NOTE :"
@@ -4374,6 +4373,15 @@
       ],
       "This event was updated.": [
         "Cet événement a été mis à jour."
+      ],
+      "TIME:": [
+        "HEURE :"
+      ],
+      "TITLE:": [
+        "TITRE :"
+      ],
+      "You are invited to": [
+        "Vous êtes invité à"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4390,11 +4398,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Retiré"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "LIEU : \n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -7508,7 +7511,7 @@
         "Priorité basse"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Définissez ${ MAIL_APP_NAME } comme application de messagerie par défaut."
+        "Faire de ${ MAIL_APP_NAME } votre application de messagerie par défaut."
       ],
       "Manage your folders": [
         "Gérer vos dossiers"
@@ -9161,6 +9164,9 @@
       ],
       "Add image URL": [
         "Ajouter l'URL de l'image"
+      ],
+      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
+        "Ajoutez ou retirez des catégories. Activez ou désactivez les notifications. Ajustez-les à tout moment dans le menu ${ menuIcon }."
       ],
       "Add to group": [
         "Ajouter au groupe"
@@ -14793,6 +14799,9 @@
       ],
       "Customize categories": [
         "Personnaliser les catégories"
+      ],
+      "Customize categories to fit your needs": [
+        "Personnalisez les catégories pour répondre à vos besoins"
       ],
       "Customize your mail import": [
         "Personnalisez votre importation de messagerie"

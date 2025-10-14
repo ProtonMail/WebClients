@@ -4274,16 +4274,6 @@
         "Lahko varno zaprete ta zavihek."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "OPOMBA:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "OPIS:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } je bil preklican."
@@ -4321,11 +4311,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Odstranjeno"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "LOKACIJA:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -17938,9 +17923,6 @@
       ],
       "Are you sure?": [
         "Ali ste prepričani?"
-      ],
-      "Authentication security": [
-        "Varnost preverjanja pristnosti"
       ],
       "Auto-deletion is active": [
         "Samodejno brisanje je aktivno"

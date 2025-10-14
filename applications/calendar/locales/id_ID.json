@@ -596,6 +596,9 @@
       "Open settings": [
         "Buka pengaturan"
       ],
+      "Passphrase": [
+        "Frasa sandi"
+      ],
       "Pause indexing": [
         "Jeda pengindeksan"
       ],
@@ -1224,6 +1227,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
         "Anda dapat memiliki hingga ${ TRIAL_MAX_USERS } pengguna selama masa uji coba."
+      ],
+      "You have reached the trial limit.": [
+        "Anda telah mencapai batas uji coba Anda."
       ]
     },
     "b2b_trials_Action": {
@@ -1801,6 +1807,9 @@
       ],
       "Upload and query small files": [
         "Unggah dan kuerikan berkas kecil"
+      ],
+      "Web search access": [
+        "Akses pencarian web"
       ]
     },
     "collider_2025: Info": {
@@ -3224,16 +3233,6 @@
         "Sunting acara"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "CATATAN:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "DESKRIPSI:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } telah dibatalkan."
@@ -3271,11 +3270,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Dihapus"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "LOKASI:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -4409,6 +4403,9 @@
       "Contacts": [
         "Kontak"
       ],
+      "Domain": [
+        "Domain"
+      ],
       "Drawer": [
         "Panel Samping"
       ],
@@ -4423,6 +4420,9 @@
       ],
       "Security Center": [
         "Pusat Keamanan"
+      ],
+      "Username": [
+        "Nama pengguna"
       ]
     },
     "Hint": {
@@ -4869,6 +4869,18 @@
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Langkah 1:** Undang teman Anda ke ${ BRAND_NAME } dengan tautan rujukan Anda."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
+        "**Langkah 2:** Teman Anda memperoleh 2 minggu gratis untuk paket ${ BRAND_NAME } pilihan mereka."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Langkah 2:** Teman Anda memperoleh 2 minggu gratis untuk paket mereka."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**Langkah 3:** Dapatkan saldo senilai ${ referrerRewardAmount } untuk setiap teman yang berlangganan ke salah satu paket."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Langkah 3:** Dapatkan saldo senilai ${ referrerRewardAmount } untuk setiap orang yang berlangganan ke salah satu paket."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ruang penyimpanan tambahan"
@@ -9143,6 +9155,9 @@
       ]
     },
     "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } per rujukan"
+      ],
       "Friend joined": [
         "Teman yang bergabung"
       ],
@@ -9154,6 +9169,9 @@
       ],
       "More sharing options": [
         "Opsi pembagian lainnya"
+      ],
+      "Refer friends": [
+        "Rujuk teman"
       ]
     },
     "Reload event button tooltip": {

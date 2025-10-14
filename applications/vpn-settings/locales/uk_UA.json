@@ -813,6 +813,9 @@
       "Upgrade to Business": [
         "Перейти на Business"
       ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "Щоб увімкнути ${ PROTON_SENTINEL_NAME }, передплатіть тарифний план"
+      ],
       "Upgrade your plan": [
         "Покращити тарифний план"
       ],
@@ -2854,11 +2857,6 @@
         "Ви пересилаєте електронні листи з ${ MAX_SYNC_FREE_USER } облікового(их) запису(ів) до ${ MAIL_APP_NAME }."
       ]
     },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "ОПИС:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "Подію ${ eventTitle } скасовано."
@@ -2893,11 +2891,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Вилучено"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "РОЗТАШУВАННЯ:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -4304,6 +4297,9 @@
       "Payment details": [
         "Подробиці платежу"
       ],
+      "Protection": [
+        "захист"
+      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Заощаджуйте на найкращих пропозиціях ${ VPN_APP_NAME }"
       ],
@@ -4813,6 +4809,9 @@
         "${ planName } завершиться за ${ daysLeft } дні.",
         "${ planName } завершиться за ${ daysLeft } днів.",
         "${ planName } завершиться за ${ daysLeft } дня(ів)."
+      ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } це вдосконалена програма захисту облікових записів, яка працює завдяки складним системам штучного інтелекту та фахівцям, які цілодобово захищають вас від зловмисників і загроз безпеці."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "Знайдено ${ providerFoldersNumLocalized } теку",
@@ -5932,6 +5931,9 @@
       ],
       "Protected by Swiss privacy laws": [
         "Захищено швейцарським законодавством про приватність"
+      ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Громадським діячам, журналістам, керівникам та іншим особам, які можуть стати об'єктом кібератак, наполегливо рекомендується ввімкнути ${ PROTON_SENTINEL_NAME }."
       ],
       "Public sharing of documents is not yet supported.": [
         "Загальнодоступний обмін документами наразі не підтримується."
@@ -12127,9 +12129,6 @@
       "Are you sure?": [
         "Ви впевнені?"
       ],
-      "Authentication security": [
-        "Безпека автентифікації"
-      ],
       "Billing cycle": [
         "Платіжний цикл"
       ],
@@ -12863,6 +12862,9 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Адміністратори можуть керувати обліковими записами користувачів і надавати права адміністратора іншим користувачам. Тільки головний адміністратор може редагувати план організації."
+      ],
+      "Any protection applied to suspicious activity": [
+        "Будь-який захист, застосований до підозрілої активності"
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Автоматичне перемикання між вашими улюбленими темами дня і ночі синхронізовано з денним і нічним режимами вашої системи"
