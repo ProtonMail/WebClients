@@ -7,6 +7,7 @@ import { ConditionalFormatDialog } from './ConditionalFormatDialog'
 import type { ProtonSheetsState } from '../../state'
 import { SidebarContext, type SidebarContextValue, type SidebarDialogStore } from './shared'
 import { DataValidationDialog } from './DataValidationDialog'
+import { NamedRangeEditorDialog } from './NamedRangeEditorDialog'
 
 function SidebarContainer(props: PropsWithChildren) {
   const [dialogs, setDialogs] = useState<SidebarDialogStore[]>([])
@@ -107,6 +108,11 @@ export function Sidebar({ state }: SidebarProps) {
         onDeleteRule={state.onDeleteDataValidationRule}
         onCreateRule={state.onCreateDataValidationRule}
         onUpdateRule={state.onUpdateDataValidationRule}
+      />
+      <NamedRangeEditorDialog
+        sheetId={state.activeSheetId}
+        onCreateNamedRange={state.onCreateNamedRange}
+        onUpdateNamedRange={state.onUpdateNamedRange}
       />
     </SidebarContainer>
   )
