@@ -3128,16 +3128,6 @@
         "Esemény szerkesztése"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "Megjegyzés:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "LEÍRÁS:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } lemondva."
@@ -3175,11 +3165,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Törölve"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "HELY:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
