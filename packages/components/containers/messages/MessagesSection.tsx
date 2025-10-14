@@ -99,7 +99,6 @@ const MessagesSection = () => {
                         <SettingsLayoutLeft>
                             <label htmlFor="almostAllMail" className="text-semibold">
                                 <span className="mr-2">{c('Label').t`Exclude Spam/Trash from All mail`}</span>
-                                <Info title={c('Info').t`Not yet available in our Android mobile app.`} />
                             </label>
                         </SettingsLayoutLeft>
                         <SettingsLayoutRight isToggleContainer>
