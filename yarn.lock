@@ -8500,6 +8500,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@proton/gitlab@workspace:utilities/gitlab":
+  version: 0.0.0-use.local
+  resolution: "@proton/gitlab@workspace:utilities/gitlab"
+  dependencies:
+    "@types/jest": "npm:^30.0.0"
+    axios: "npm:^1.12.2"
+    jest: "npm:^30.2.0"
+    ts-jest: "npm:^29.4.4"
+    ts-node: "npm:^10.9.2"
+  languageName: unknown
+  linkType: soft
+
 "@proton/hooks@workspace:^, @proton/hooks@workspace:packages/hooks":
   version: 0.0.0-use.local
   resolution: "@proton/hooks@workspace:packages/hooks"
