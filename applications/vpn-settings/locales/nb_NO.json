@@ -962,6 +962,9 @@
       "Upgrade to Business": [
         "Oppgrader til Business"
       ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "Oppgrader for å aktivere ${ PROTON_SENTINEL_NAME }"
+      ],
       "Upgrade to Professional": [
         "Oppgrader til Professional"
       ],
@@ -3497,16 +3500,6 @@
         "Du har logget på en annen enhet"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "NOTAT: \n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "Beskrivelse:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } ble kansellert."
@@ -3514,8 +3507,14 @@
       "All events in this series were updated.": [
         "Alle hendelsene i denne serien ble oppdatert."
       ],
+      "DESCRIPTION:": [
+        "BESKRIVELSE:"
+      ],
       "Here's what changed:": [
         "Her er hva som er endret:"
+      ],
+      "LOCATION:": [
+        "STED:"
       ],
       "NOTE:": [
         "NOTAT:"
@@ -3528,6 +3527,15 @@
       ],
       "This event was updated.": [
         "Denne hendelsen ble oppdatert."
+      ],
+      "TIME:": [
+        "TIDSPUNKT:"
+      ],
+      "TITLE:": [
+        "TITTEL:"
+      ],
+      "You are invited to": [
+        "Du er invitert til"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3544,11 +3552,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Fjernet"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "Sted:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -4978,6 +4981,9 @@
       "Payment details": [
         "Betalingsinformasjon"
       ],
+      "Protection": [
+        "Beskyttelse"
+      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Spar stort på de beste ${ VPN_APP_NAME }-tilbudene"
       ],
@@ -5495,6 +5501,12 @@
       ],
       "${ planName } expires today.": [
         "${ planName } utløper i dag."
+      ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } er et avansert kontobeskyttelsesprogram drevet av sofistikerte AI-systemer og spesialister som jobber døgnet rundt for å beskytte deg mot dårlige aktører og sikkerhetstrusler."
+      ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } er et avansert kontobeskyttelsesprogram drevet av sofistikerte AI-systemer og spesialister som jobber døgnet rundt for å beskytte din organisasjon mot dårlige aktører og sikkerhetstrusler."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } beskytter kontoen din med dedikert overvåking av mistenkelig aktivitet."
@@ -6287,6 +6299,9 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Hvis du fortsetter med nedgraderingen, vil du miste tilgang til de betalte funksjonene til ${ VPN_APP_NAME }."
       ],
+      "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
+        "Hvis din organisasjon har offentlige personer, håndterer sensitive data, eller kan bli målrettet i cyberangrep, blir du sterkt oppfordret til å aktivere ${ PROTON_SENTINEL_NAME } for alle i din organisasjon."
+      ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Hvis du har problemer, er vi her for å hjelpe. ${ boldPhoneCall } eller ${ boldZoomMeeting } med en av våre brukerstøttespesialister, eller åpne en ${ boldLiveChat } for chat-støtte."
       ],
@@ -6766,6 +6781,9 @@
       "Protected by Swiss privacy laws": [
         "Beskyttet av sveitsiske personvernlover"
       ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Offentlige personer, journalister, ledere og andre som kan være målet for cyberangrep, oppfordres sterkt til å aktivere ${ PROTON_SENTINEL_NAME }."
+      ],
       "Public sharing of documents is not yet supported.": [
         "Offentlig deling av dokumenter støttes enda ikke."
       ],
@@ -7212,6 +7230,9 @@
       ],
       "Upgrade to Professional or a higher plan to unlock": [
         "Oppgrader til Professional eller en høyere plan for å låse opp"
+      ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Oppgrader planen din til ${ firstPlanNames } eller ${ lastPlanName } for å få tilgang til ${ PROTON_SENTINEL_NAME }."
       ],
       "Upload your completed CSV file to create accounts": [
         "Last opp din fullførte CSV-fil for å opprette kontoer"
@@ -13798,9 +13819,6 @@
       "Are you sure?": [
         "Er du sikker?"
       ],
-      "Authentication security": [
-        "Sikkerhet for autentisering"
-      ],
       "Auto-deletion is active": [
         "Auto-sletting er aktiv"
       ],
@@ -14363,6 +14381,9 @@
       "SAML authentication": [
         "SAML-autentisering"
       ],
+      "Security": [
+        "Sikkerhet"
+      ],
       "Security events": [
         "Sikkerhetshendelser"
       ],
@@ -14672,6 +14693,9 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Administratorer kan administrere brukerkontoer og gi administratorrettigheter til andre brukere. Bare den primære administratoren kan redigere planen for organisasjonen."
       ],
+      "Any protection applied to suspicious activity": [
+        "Enhver beskyttelse som brukes på mistenkelig aktivitet"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Bytt automatisk mellom foretrukket tema for dag og natt synkronisert med systemets dag- og nattmodus."
       ],
@@ -14764,6 +14788,9 @@
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Denne e-postadressen vises til alle organisasjonsmedlemmer når de utfører kontoadministrasjonsoperasjoner."
+      ],
+      "This setting is managed by your organization": [
+        "Denne innstillingen håndteres av organisasjonen din"
       ],
       "User's approximate location (based on their IP address)": [
         "Brukerens omtrentlige plassering (basert på deres IP-adresse)"

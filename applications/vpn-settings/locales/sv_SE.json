@@ -962,6 +962,9 @@
       "Upgrade to Business": [
         "Uppgradera till Business"
       ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "Uppgradera för att aktivera ${ PROTON_SENTINEL_NAME }"
+      ],
       "Upgrade to Professional": [
         "Uppgradera till Professional"
       ],
@@ -3476,16 +3479,6 @@
         "Du har lyckats logga in på en annan enhet"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "OBS:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "BESKRIVNING:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } avbokades."
@@ -3493,8 +3486,14 @@
       "All events in this series were updated.": [
         "Alla händelser i denna serie uppdaterades."
       ],
+      "DESCRIPTION:": [
+        "BESKRIVNING:"
+      ],
       "Here's what changed:": [
         "Här är vad som ändrades:"
+      ],
+      "LOCATION:": [
+        "PLATS:"
       ],
       "NOTE:": [
         "OBS:"
@@ -3507,6 +3506,15 @@
       ],
       "This event was updated.": [
         "Denna händelse uppdaterades."
+      ],
+      "TIME:": [
+        "TID:"
+      ],
+      "TITLE:": [
+        "RUBRIK:"
+      ],
+      "You are invited to": [
+        "Du är inbjuden till"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3523,11 +3531,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Borttagen"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "PLATS:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -4957,6 +4960,9 @@
       "Payment details": [
         "Betalningsdetaljer"
       ],
+      "Protection": [
+        "Skydd"
+      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Spara stort med de bästa ${ VPN_APP_NAME }-erbjudanden"
       ],
@@ -5471,6 +5477,9 @@
       ],
       "${ planName } expires today.": [
         "${ planName } löper ut idag."
+      ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } är ett avancerat kontoskyddsprogram som drivs av sofistikerade AI-system och specialister som arbetar dygnet runt för att skydda dig från dåliga aktörer och säkerhetshot."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } skyddar ditt konto med dedikerad övervakning av misstänkt aktivitet."
@@ -6742,6 +6751,9 @@
       "Protected by Swiss privacy laws": [
         "Skyddad av schweiziska integritetslagar"
       ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Offentliga personer, journalister, chefer och andra som kan vara måltavla för cyberattacker uppmuntras starkt att aktivera ${ PROTON_SENTINEL_NAME }."
+      ],
       "Public sharing of documents is not yet supported.": [
         "Offentlig delning av dokument stöds ännu inte."
       ],
@@ -7188,6 +7200,9 @@
       ],
       "Upgrade to Professional or a higher plan to unlock": [
         "Uppgradera till Professional eller ett högre paket för att låsa upp"
+      ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Uppgradera ditt paket till ${ firstPlanNames } eller ${ lastPlanName } för att få åtkomst till ${ PROTON_SENTINEL_NAME }."
       ],
       "Upload your completed CSV file to create accounts": [
         "Ladda upp din färdiga CSV-fil för att skapa konton"
@@ -13712,9 +13727,6 @@
       "Are you sure?": [
         "Är du säker?"
       ],
-      "Authentication security": [
-        "Autentiseringssäkerhet"
-      ],
       "Auto-deletion is active": [
         "Automatisk borttagning är aktivt"
       ],
@@ -14579,6 +14591,9 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Administratörer kan hantera användarkonton och ge administratörsrättigheter till andra användare. Endast den primära administratören kan redigera paketet för organisationen."
+      ],
+      "Any protection applied to suspicious activity": [
+        "Allt skydd tillämpat till misstänkt aktivitet"
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Växla automatiskt mellan dina föredragna teman för dag och natt i synk med ditt systems dag- och nattlägen"

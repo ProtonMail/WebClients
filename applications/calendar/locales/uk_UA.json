@@ -2922,11 +2922,6 @@
         "Змінити подію"
       ]
     },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "ОПИС:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "Подію ${ eventTitle } скасовано."
@@ -2961,11 +2956,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Вилучено"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "РОЗТАШУВАННЯ:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {

@@ -4322,16 +4322,6 @@
         "テキスト フィールドはオプションです。このフォームで入力した情報は、選択した請求書のみを変更し、将来の請求書の詳細は変更しません。"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "注意:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "説明:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } はキャンセルされました。"
@@ -4369,11 +4359,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "削除済み"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "場所:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {

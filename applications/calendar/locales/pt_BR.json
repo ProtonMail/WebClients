@@ -139,10 +139,10 @@
         "Escolha um arquivo ou arraste-o aqui"
       ],
       "Claim this address": [
-        "Confirmar este endereço"
+        "Reivindicar este endereço"
       ],
       "Claim your free ${ BRAND_NAME } address": [
-        "Confirmar seu endereço de ${ BRAND_NAME }"
+        "Obtenha seu endereço ${ BRAND_NAME } gratuito"
       ],
       "Clear": [
         "Limpar"
@@ -3294,16 +3294,6 @@
         "Editar evento"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "NOTA:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "DESCRIÇÃO:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } foi cancelado."
@@ -3343,11 +3333,6 @@
         "Removido"
       ]
     },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "LOCALIZAÇÃO:\n${ eventLocation }"
-      ]
-    },
     "Email body for response to invitation": {
       "${ emailAddress } accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } aceitou seu convite para ${ eventTitle }"
@@ -3381,7 +3366,7 @@
     },
     "emergency_access": {
       "Trusted contact": [
-        "Contato de confiança"
+        "Contato confiável"
       ]
     },
     "Error": {
@@ -5385,7 +5370,7 @@
         "finança"
       ],
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
-        "Para segurança extra, você pode definir uma passphrase. Ela não será incluída no convite do calendário. Lembre-se de compartilhá-la com seus convidados separadamente."
+        "Para segurança extra, você pode definir uma frase secreta. Ela não será incluída no convite do calendário. Lembre-se de compartilhá-la com seus convidados separadamente."
       ],
       "Frequency modifications will be lost.": [
         "As modificações de frequência serão perdidas."

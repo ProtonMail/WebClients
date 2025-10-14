@@ -99,6 +99,9 @@
       "Add ${ BRAND_NAME } Account": [
         "Ajouter un compte ${ BRAND_NAME }"
       ],
+      "Add ${ BRAND_NAME } address": [
+        "Ajouter l'adresse ${ BRAND_NAME }"
+      ],
       "Add account": [
         "Ajouter un compte"
       ],
@@ -4918,7 +4921,7 @@
         "Prenez un autre appareil connecté à votre compte ${ BRAND_NAME }"
       ],
       "How to sign in using another device": [
-        "Comment se connecter à l’aide d’un autre appareil ?"
+        "Comment se connecter à l’aide d’un autre appareil"
       ],
       "QR code expired": [
         "Le QR code a expiré."
@@ -4974,16 +4977,6 @@
         "Vous pouvez fermer cet onglet en toute sécurité."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "NOTE :\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "DESCRIPTION :\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } a été annulé."
@@ -4991,8 +4984,14 @@
       "All events in this series were updated.": [
         "Tous les événements de cette série ont été mis à jour."
       ],
+      "DESCRIPTION:": [
+        "DESCRIPTION :"
+      ],
       "Here's what changed:": [
         "Voici ce qui a été modifié :"
+      ],
+      "LOCATION:": [
+        "EMPLACEMENT :"
       ],
       "NOTE:": [
         "NOTE :"
@@ -5005,6 +5004,15 @@
       ],
       "This event was updated.": [
         "Cet événement a été mis à jour."
+      ],
+      "TIME:": [
+        "HEURE :"
+      ],
+      "TITLE:": [
+        "TITRE :"
+      ],
+      "You are invited to": [
+        "Vous êtes invité à"
       ]
     },
     "Email body for invitation (date part)": {
@@ -5021,11 +5029,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Retiré"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "LIEU : \n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -8267,6 +8270,9 @@
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } est un programme avancé de protection des comptes qui s'appuie sur des systèmes d'IA sophistiqués et des spécialistes qui travaillent en permanence pour vous protéger des acteurs malveillants et des menaces de sécurité."
       ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } est un programme avancé de protection des comptes qui s'appuie sur des systèmes d'IA sophistiqués et des spécialistes qui travaillent en permanence pour protéger votre organisation des acteurs malveillants et des menaces de sécurité."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } protège votre compte grâce à une surveillance dédiée des activités suspectes."
       ],
@@ -9468,6 +9474,9 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Si vous avez récemment réinitialisé votre mot de passe, vous pouvez utiliser une méthode de récupération de données pour déverrouiller vos données."
+      ],
+      "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
+        "Si votre organisation compte des personnalités publiques, gère des données sensibles ou pourrait être la cible de cyberattaques, nous vous encourageons vivement à activer ${ PROTON_SENTINEL_NAME } pour toutes les personnes de votre organisation."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Si vous rencontrez des difficultés, nous pouvons vous aider. ${ boldPhoneCall }, une ${ boldZoomMeeting } avec l'un de nos spécialistes ou utilisez notre ${ boldLiveChat } pour le support par chat."
@@ -10856,9 +10865,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Passez à la version supérieure pour profiter de fonctionnalités, de produits et d'espace de stockage premium à un tarif avantageux."
       ],
-      "Upgrade to ${ firstPlanNames }, or ${ lastPlanName } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Passez à l'abonnement ${ firstPlanNames } ou ${ lastPlanName } pour bénéficier de ${ PROTON_SENTINEL_NAME }."
-      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Changez d'abonnement pour ajouter une adresse plus courte @pm.me à votre compte, plus facile à partager et qui signifie « ${ MAIL_APP_NAME } me » ou « Private Message me » (envoyez-moi un message privé)."
       ],
@@ -10867,6 +10873,9 @@
       ],
       "Upgrade to unlock": [
         "Changez d'abonnement pour débloquer cette fonctionnalité."
+      ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Passez à l'abonnement ${ firstPlanNames } ou ${ lastPlanName } pour bénéficier de ${ PROTON_SENTINEL_NAME }."
       ],
       "Upload picture": [
         "Importer une image"
@@ -11122,6 +11131,9 @@
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Avec une adresse chiffrée ${ BRAND_NAME }, vous pouvez utiliser tous les services ${ BRAND_NAME }."
+      ],
+      "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
+        "Avec les catégories de messages, les messages importants arrivent dans une boite de réception principale. Tout le reste est organisé en catégories."
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Grâce aux groupes, vous pouvez envoyer rapidement et facilement des messages à toutes les personnes d'un groupe spécifique."
@@ -12060,6 +12072,10 @@
         "${ nbYear } an",
         "${ nbYear } ans"
       ],
+      "${ usedAddresses } of ${ maxAddresses } email address": [
+        "Nombre d'adresses e-mail : ${ usedAddresses } sur ${ maxAddresses }",
+        "Nombre d'adresses e-mail : ${ usedAddresses } sur ${ maxAddresses }"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(temporairement indisponible, nous vous invitons à vérifier plus tard)"
       ],
@@ -12542,6 +12558,9 @@
       ],
       "Email address": [
         "Adresse e-mail"
+      ],
+      "Email categories": [
+        "Catégories de message"
       ],
       "Email or username": [
         "E-mail ou nom d'utilisateur"
@@ -13353,6 +13372,12 @@
     "Label (end date/advanced search)": {
       "To": [
         "Pour"
+      ]
+    },
+    "Label BYOE": {
+      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
+        "Nombre d'adresses e-mail : ${ usedBYOEAddresses } sur ${ maxBYOEAddresses }",
+        "Nombre d'adresses e-mail : ${ usedBYOEAddresses } sur ${ maxBYOEAddresses }"
       ]
     },
     "Label for adding a new custom domain": {
@@ -21275,9 +21300,6 @@
       "Are you sure?": [
         "Êtes-vous sûr ?"
       ],
-      "Authentication security": [
-        "Sécurité de l'authentification"
-      ],
       "Auto-deletion is active": [
         "La suppression automatique est active."
       ],
@@ -21684,6 +21706,9 @@
       ],
       "Email breaches": [
         "Fuites de données d'e-mail"
+      ],
+      "Email categories": [
+        "Catégories de messages"
       ],
       "Email composer": [
         "Éditeur de messages"
@@ -22238,6 +22263,9 @@
       ],
       "Secure your passwords. Everywhere.": [
         "Sécurisez vos mots de passe. Où que vous soyez."
+      ],
+      "Security": [
+        "Sécurité"
       ],
       "Security and privacy": [
         "Sécurité et vie privée"
@@ -22950,6 +22978,9 @@
       ],
       "This key is used for email forwarding": [
         "Cette clé est utilisée pour le transfert automatique des messages."
+      ],
+      "This setting is managed by your organization": [
+        "Ce paramètre est géré par votre organisation"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "À moins d’être déchiffrés, les mots de passe chiffrés restent sécurisés même s’ils sont exposés."
