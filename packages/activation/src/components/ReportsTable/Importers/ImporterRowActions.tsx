@@ -71,7 +71,7 @@ const ImporterRowActions = ({ activeImporterID }: Props) => {
                         Code,
                         RedirectUri,
                         Source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_RECONNECT_IMPORT,
-                        Products: products || [product],
+                        Features: getEasySwitchFeaturesFromProducts(products || [product]),
                     })
                 );
 
@@ -79,7 +79,7 @@ const ImporterRowActions = ({ activeImporterID }: Props) => {
                 await api(
                     resumeImport({
                         ImporterID,
-                        Products: [product],
+                        Features: getEasySwitchFeaturesFromProducts([product]),
                     })
                 );
                 await call();
@@ -99,7 +99,7 @@ const ImporterRowActions = ({ activeImporterID }: Props) => {
         await api(
             resumeImport({
                 ImporterID,
-                Products: [product],
+                Features: getEasySwitchFeaturesFromProducts([product]),
             })
         );
         await call();
