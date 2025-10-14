@@ -2375,11 +2375,6 @@
         "टेक्स्ट फील्ड वैकल्पिक हैं। इस फॉर्म में दी गई जानकारी केवल आपके द्वारा चयनित इनवॉइस को बदलेगी और आपके भविष्य के इनवॉइस विवरण को प्रभावित नहीं करेगी।"
       ]
     },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "विवरण:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } रद्द कर दिया गया था।"
@@ -2408,11 +2403,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "हटाया गया"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "स्थान:\n${ eventLocation }"
       ]
     },
     "Email subject": {

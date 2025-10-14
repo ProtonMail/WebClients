@@ -3136,16 +3136,6 @@
         "Textfelder sind optional. Die Informationen, die du in diesem Formular eingibst, ändern nur die von dir ausgewählte Rechnung und nicht deine zukünftigen Rechnungsdetails."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "HINWEIS:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "BESCHREIBUNG:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } wurde abgesagt."
@@ -3153,8 +3143,14 @@
       "All events in this series were updated.": [
         "Alle Termine in dieser Serie wurden aktualisiert."
       ],
+      "DESCRIPTION:": [
+        "Beschreibung:"
+      ],
       "Here's what changed:": [
         "Das hat sich geändert:"
+      ],
+      "LOCATION:": [
+        "Ort:"
       ],
       "NOTE:": [
         "HINWEIS:"
@@ -3167,6 +3163,15 @@
       ],
       "This event was updated.": [
         "Dieser Termin wurde aktualisiert."
+      ],
+      "TIME:": [
+        "Zeit:"
+      ],
+      "TITLE:": [
+        "Titel:"
+      ],
+      "You are invited to": [
+        "Du wurdest eingeladen zu"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3183,11 +3188,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Entfernt"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "ORT:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
