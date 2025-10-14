@@ -1904,6 +1904,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
+        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
+      ],
       "Moving items": [
         "Items verplaatsen"
       ],
@@ -3542,9 +3546,6 @@
       ],
       "The best of ${ BRAND_NAME } with one subscription": [
         "Het beste van ${ BRAND_NAME } met één abonnement"
-      ],
-      "The URL has been copied to the clipboard": [
-        "De URL is naar het klembord gekopieerd."
       ],
       "Theme": [
         "Thema"

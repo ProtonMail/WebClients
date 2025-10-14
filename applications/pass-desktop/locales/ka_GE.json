@@ -1895,6 +1895,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
+      ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
       ],
@@ -3538,9 +3542,6 @@
       ],
       "The best of ${ BRAND_NAME } with one subscription": [
         "${ BRAND_NAME }-ის საუკეთესო ფუნქციები ერთი გამოწერით"
-      ],
-      "The URL has been copied to the clipboard": [
-        "ბმული დაკოპირდა ბუფერში"
       ],
       "Theme": [
         "თემა"
