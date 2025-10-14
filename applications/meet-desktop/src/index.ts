@@ -22,7 +22,6 @@ import { setRequestPermission, extendAppVersionHeader } from "./utils/session";
 import { captureTopLevelRejection, captureUncaughtErrors } from "./utils/log/captureUncaughtErrors";
 import { logInitialAppInfo } from "./utils/log/logInitialAppInfo";
 import metrics from "./utils/metrics";
-import { measureRequestTime } from "./utils/log/measureRequestTime";
 
 (async function () {
     initializeLog();
@@ -104,7 +103,6 @@ import { measureRequestTime } from "./utils/log/measureRequestTime";
 
     checkDeepLinks();
     connectNetLogger(getWebContentsViewName);
-    measureRequestTime();
     initializeUpdateChecks();
     new Notification();
 
