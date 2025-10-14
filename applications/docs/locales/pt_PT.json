@@ -2707,16 +2707,6 @@
         "Os campos de texto são opcionais. As informações fornecidas neste formulário só irão alterar a fatura que selecionou e não os detalhes da futura fatura."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "NOTA:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "DESCRIÇÃO:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } foi cancelado."
@@ -2754,11 +2744,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Removido"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "LOCAL:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {

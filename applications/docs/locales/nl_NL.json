@@ -2824,16 +2824,6 @@
         "Tekstvelden zijn optioneel. De informatie die u in dit formulier opgeeft, zal alleen de door u geselecteerde factuur wijzigen en niet uw toekomstige factuurgegevens."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "LET OP:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "BESCHRIJVING:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } werd geannuleerd."
@@ -2871,11 +2861,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Verwijderd"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "LOCATIE:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
