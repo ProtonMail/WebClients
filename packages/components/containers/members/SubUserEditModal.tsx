@@ -17,6 +17,7 @@ import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import useBYOEFeatureStatus from '@proton/activation/src/hooks/useBYOEFeatureStatus';
 import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';
@@ -50,7 +51,6 @@ import { sizeUnits } from '@proton/shared/lib/helpers/size';
 import type { EnhancedMember, Member } from '@proton/shared/lib/interfaces';
 import { getIsPasswordless } from '@proton/shared/lib/keys';
 import { MemberUnprivatizationMode, getMemberUnprivatizationMode } from '@proton/shared/lib/keys/memberHelper';
-import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
 import Addresses from '../addresses/Addresses';
@@ -247,7 +247,7 @@ const SubUserEditModal = ({
 
     const canRevokeAdmin = !isSelf && member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN;
 
-    const hasAccessToBYOE = useFlag('InboxBringYourOwnEmailClient');
+    const hasAccessToBYOE = useBYOEFeatureStatus();
 
     const errorHandler = useErrorHandler();
 
