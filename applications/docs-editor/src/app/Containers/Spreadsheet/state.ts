@@ -57,6 +57,21 @@ type LocalState = {
   onChangeCellXfs: SetState<CellXfs | null | undefined>
   onChangeScale: SetState<number>
 }
+type LocalStateWithoutActions = Omit<
+  LocalState,
+  | 'onChangeSheets'
+  | 'onChangeSheetData'
+  | 'onChangeTheme'
+  | 'onChangeTables'
+  | 'onChangeNamedRanges'
+  | 'onChangeConditionalFormats'
+  | 'onChangeEmbeds'
+  | 'onChangeDataValidations'
+  | 'onChangeCharts'
+  | 'onChangeProtectedRanges'
+  | 'onChangeCellXfs'
+  | 'onChangeScale'
+>
 function getValueFromUpdateAction<T>(updateAction: UpdateAction<T>, prevValue: T): T {
   return typeof updateAction === 'function' ? (updateAction as (state: T) => T)(prevValue) : updateAction
 }
@@ -355,11 +370,12 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
 export type ProtonSheetsState = ReturnType<typeof useProtonSheetsState>
 
 // TODO: refactor into a lazy approach to avoid perf issues
-export function useLogState(state: ProtonSheetsState, updateLatestStateToLog: (stateToLog: unknown) => void) {
-  const getStateToLog = useCallback(
-    () => ({
-      activeCell: state.activeCell,
-      activeSheetId: state.activeSheetId,
+export function useLocalState(
+  state: ProtonSheetsState,
+  updateLocalStateToLog: (stateToLog: LocalStateWithoutActions) => void,
+) {
+  const getLocalStateWithoutActions = useCallback(
+    (): LocalStateWithoutActions => ({
       sheets: state.sheets,
       sheetData: state.sheetData,
       conditionalFormats: state.conditionalFormats,
@@ -368,23 +384,39 @@ export function useLogState(state: ProtonSheetsState, updateLatestStateToLog: (s
       embeds: state.embeds,
       tables: state.tables,
       namedRanges: state.namedRanges,
+      theme: state.theme,
+      dataValidations: state.dataValidations,
+      cellXfs: state.cellXfs,
+      scale: state.scale,
     }),
     [
-      state.activeCell,
-      state.activeSheetId,
+      state.cellXfs,
       state.charts,
       state.conditionalFormats,
+      state.dataValidations,
       state.embeds,
       state.namedRanges,
       state.protectedRanges,
+      state.scale,
       state.sheetData,
       state.sheets,
       state.tables,
+      state.theme,
     ],
   )
-  useEffect(() => {
-    updateLatestStateToLog(getStateToLog())
-  }, [getStateToLog, updateLatestStateToLog])
 
-  return { getStateToLog }
+  const replaceLocalSpreadsheetState = useCallback(
+    async (newState: unknown) => {
+      useLocalSpreadsheetState.setState(newState as LocalStateWithoutActions)
+      const patches = await state.generateStatePatches()
+      state.yjsState.onBroadcastPatch([[patches]])
+    },
+    [state],
+  )
+
+  useEffect(() => {
+    updateLocalStateToLog(getLocalStateWithoutActions())
+  }, [getLocalStateWithoutActions, updateLocalStateToLog])
+
+  return { getLocalStateWithoutActions, replaceLocalSpreadsheetState }
 }

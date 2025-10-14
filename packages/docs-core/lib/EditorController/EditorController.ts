@@ -10,8 +10,7 @@ import type { SerializedEditorState } from 'lexical'
 import type { DocumentState, DocumentStateValues, PublicDocumentState } from '../State/DocumentState'
 import metrics from '@proton/metrics'
 import type { HttpsProtonMeDocsReadonlyModeDocumentsTotalV1SchemaJson } from '@proton/metrics/types/docs_readonly_mode_documents_total_v1.schema'
-import { EventTypeEnum } from '@proton/docs-proto'
-import { EventType } from '@proton/docs-proto'
+import { EventTypeEnum, EventType } from '@proton/docs-proto'
 import { LoadLogger } from '../LoadLogger/LoadLogger'
 import { PostApplicationError } from '../Application/ApplicationEvent'
 import { c } from 'ttag'
@@ -23,11 +22,12 @@ export interface EditorControllerInterface {
   getDocumentClientId(): Promise<number | undefined>
   getDocumentState(): Promise<Uint8Array<ArrayBuffer>>
   getEditorJSON(): Promise<SerializedEditorState | undefined>
-  getLatestSpreadsheetStateToLogJSON(): Promise<unknown>
+  getLocalSpreadsheetStateJSON(): Promise<unknown>
   getYDocAsJSON(): Promise<unknown>
   printAsPDF(): Promise<void>
   receiveEditor(editorInvoker: ClientRequiresEditorMethods): void
-  restoreRevisionByReplacing(lexicalState: SerializedEditorState): Promise<void>
+  restoreRevisionByReplacingLexicalState(lexicalState: SerializedEditorState): Promise<void>
+  restoreRevisionByReplacingSpreadsheetState(spreadsheetState: unknown): Promise<void>
   showCommentsPanel(): void
   toggleDebugTreeView(): Promise<void>
   initializeEditor(editorInitializationConfig: EditorInitializationConfig | undefined, userAddress: string): void
@@ -261,12 +261,12 @@ export class EditorController implements EditorControllerInterface {
     return json
   }
 
-  async getLatestSpreadsheetStateToLogJSON(): Promise<unknown> {
+  async getLocalSpreadsheetStateJSON(): Promise<unknown> {
     if (!this.editorInvoker) {
       throw new Error('Editor invoker not initialized')
     }
 
-    const json = await this.editorInvoker.getLatestSpreadsheetStateToLogJSON()
+    const json = await this.editorInvoker.getLocalSpreadsheetStateJSON()
     return json
   }
 
@@ -329,12 +329,22 @@ export class EditorController implements EditorControllerInterface {
     return undefined
   }
 
-  public async restoreRevisionByReplacing(lexicalState: SerializedEditorState): Promise<void> {
+  public async restoreRevisionByReplacingLexicalState(lexicalState: SerializedEditorState): Promise<void> {
     if (!this.editorInvoker) {
       throw new Error('Attempting to restore revision by replacing before editor invoker is initialized')
     }
 
     await this.editorInvoker.replaceEditorState(lexicalState)
+  }
+
+  async restoreRevisionByReplacingSpreadsheetState(spreadsheetState: unknown): Promise<void> {
+    if (!this.editorInvoker) {
+      throw new Error(
+        'Attempting to restore revision by replacing spreadsheet state before editor invoker is initialized',
+      )
+    }
+
+    await this.editorInvoker.replaceLocalSpreadsheetState(spreadsheetState)
   }
 
   reloadEditingLockedState(): void {
