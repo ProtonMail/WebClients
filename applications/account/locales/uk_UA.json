@@ -4090,11 +4090,6 @@
         "Тепер ви можете закрити цю вкладку."
       ]
     },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "ОПИС:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "Подію ${ eventTitle } скасовано."
@@ -4129,11 +4124,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Вилучено"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "РОЗТАШУВАННЯ:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -9244,9 +9234,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Передплатіть зараз, щоб отримати преміумфункції, продукти та сховище за спеціальною ціною"
-      ],
-      "Upgrade to ${ firstPlanNames }, or ${ lastPlanName } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Оновіть план до ${ firstPlanNames } або ${ lastPlanName }, щоб отримати доступ до ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Передплатіть тарифний план, щоб додати до облікового запису коротку адресу @pm.me, якою легше ділитися. Вона розшифровується як \"${ MAIL_APP_NAME } me\" або \"Private Message me\"."
@@ -18144,9 +18131,6 @@
       ],
       "Are you sure?": [
         "Ви впевнені?"
-      ],
-      "Authentication security": [
-        "Безпека автентифікації"
       ],
       "Auto-reply": [
         "Автоматична відповідь"

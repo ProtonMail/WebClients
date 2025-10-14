@@ -4977,16 +4977,6 @@
         "Μπορείτε να κλείσετε με ασφάλεια αυτήν την καρτέλα."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "ΣΗΜΕΙΩΣΗ:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "ΠΕΡΙΓΡΑΦΗ:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "Το ${ eventTitle } ακυρώθηκε."
@@ -4994,8 +4984,14 @@
       "All events in this series were updated.": [
         "Όλες οι εκδηλώσεις αυτής της σειράς ενημερώθηκαν."
       ],
+      "DESCRIPTION:": [
+        "ΠΕΡΙΓΡΑΦΗ:"
+      ],
       "Here's what changed:": [
         "Δείτε τι άλλαξε:"
+      ],
+      "LOCATION:": [
+        "ΤΟΠΟΘΕΣΙΑ:"
       ],
       "NOTE:": [
         "ΣΗΜΕΙΩΣΗ:"
@@ -5008,6 +5004,15 @@
       ],
       "This event was updated.": [
         "Αυτή η εκδήλωση ενημερώθηκε."
+      ],
+      "TIME:": [
+        "ΩΡΑ:"
+      ],
+      "TITLE:": [
+        "ΤΙΤΛΟΣ:"
+      ],
+      "You are invited to": [
+        "Είστε προσκεκλημένοι στο"
       ]
     },
     "Email body for invitation (date part)": {
@@ -5024,11 +5029,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Αφαιρέθηκε"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "ΤΟΠΟΘΕΣΙΑ:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -8267,6 +8267,9 @@
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } είναι ένα προηγμένο πρόγραμμα προστασίας λογαριασμού που λειτουργεί με προηγμένα συστήματα Τεχνητής Νοημοσύνης και οι ειδικοί εργάζονται συνεχώς για να σας προστατεύσουν από κακούς λειτουργούς και από απειλές ασφαλείας."
       ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } είναι ένα προηγμένο πρόγραμμα προστασίας λογαριασμού που λειτουργεί με προηγμένα συστήματα Τεχνητής Νοημοσύνης και ειδικούς που εργάζονται συνεχώς για να προστατέψουν τον οργανισμό σας από κακούς λειτουργούς και απειλές ασφαλείας."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "Το ${ PROTON_SENTINEL_NAME } προστατεύει τον λογαριασμό σας με αποκλειστική παρακολούθηση ύποπτης δραστηριότητας."
       ],
@@ -9468,6 +9471,9 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Εάν πρόσφατα έχετε επαναφέρει τον κωδικό σας, μπορείτε να χρησιμοποιήσετε μία μέθοδο επαναφοράς δεδομένων για να ξεκλειδώσετε τα δεδομένα σας"
+      ],
+      "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
+        "Εάν ο οργανισμός σας έχει δημόσια πρόσωπα, χειρίζεται ευαίσθητα δεδομένα ή ενδέχεται να αποτελέσει στόχο κυβερνοεπιθέσεων, σας συνιστούμε να ενεργοποιήσετε το ${ PROTON_SENTINEL_NAME } για όλους τους χρήστες του οργανισμού σας."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Αν αντιμετωπίζετε προβλήματα, είμαστε εδώ για να σας βοηθήσουμε. ${ boldPhoneCall } ή ${ boldZoomMeeting } με έναν από τους ειδικούς υποστήριξής μας ή ανοίξτε ένα ${ boldLiveChat } για υποστήριξη με ζωντανή συνομιλία."
@@ -10856,9 +10862,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Αναβαθμίστε τώρα τον λογαριασμό σας για να λάβετε premium χαρακτηριστικά, προϊόντα και αποθηκευτικό χώρο σε ειδική τιμή"
       ],
-      "Upgrade to ${ firstPlanNames }, or ${ lastPlanName } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Αναβαθμίστε σε ${ firstPlanNames } ή ${ lastPlanName } πλάνο για να αποκτήσετε πρόσβαση στο ${ PROTON_SENTINEL_NAME }."
-      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Κάντε αναβάθμιση για να προσθέσετε μια συντομότερη διεύθυνση @pm.me στον λογαριασμό σας, η οποία θα είναι πιο εύκολη στην κοινή χρήση. Σημαίνει \"${ MAIL_APP_NAME } me\" ή \"Private Message me\". (Στείλε μου Προσωπικό Μήνυμα)"
       ],
@@ -10867,6 +10870,9 @@
       ],
       "Upgrade to unlock": [
         "Αναβαθμίστε για να ξεκλειδώσετε"
+      ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Αναβαθμίστε το πλάνο σας σε ${ firstPlanNames } ή ${ lastPlanName } για να αποκτήσετε πρόσβαση στο ${ PROTON_SENTINEL_NAME }."
       ],
       "Upload picture": [
         "Ανέβασμα εικόνας"
@@ -21193,9 +21199,6 @@
       "Are you sure?": [
         "Είστε σίγουρος/η;"
       ],
-      "Authentication security": [
-        "Ασφάλεια ταυτοποίησης"
-      ],
       "Auto-deletion is active": [
         "Η αυτόματη διαγραφή είναι ενεργή"
       ],
@@ -22160,6 +22163,9 @@
       "Secure your passwords. Everywhere.": [
         "Προστατέψτε τους κωδικούς πρόσβασής σας. Παντού."
       ],
+      "Security": [
+        "Ασφάλεια"
+      ],
       "Security and privacy": [
         "Ασφάλεια και απόρρητο"
       ],
@@ -22871,6 +22877,9 @@
       ],
       "This key is used for email forwarding": [
         "Αυτό το κλειδί χρησιμοποιείται για προώθηση μηνυμάτων ηλεκτρονικού ταχυδρομείου"
+      ],
+      "This setting is managed by your organization": [
+        "Αυτή η ρύθμιση διαχειρίζεται από τον οργανισμό σας"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Εκτός αν αποκρυπτογραφηθούν, οι κρυπτογραφημένοι κωδικοί παραμένουν ασφαλείς ακόμα και αν εκτεθούν."

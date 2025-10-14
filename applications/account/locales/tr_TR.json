@@ -4977,16 +4977,6 @@
         "Bu sekmeyi kapatabilirsiniz."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "Not: ${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "AÇIKLAMA:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } iptal edildi."
@@ -4994,8 +4984,14 @@
       "All events in this series were updated.": [
         "Bu dizideki tüm etkinlikler güncellendi."
       ],
+      "DESCRIPTION:": [
+        "AÇIKLAMA:"
+      ],
       "Here's what changed:": [
         "Şu değişiklik yapıldı:"
+      ],
+      "LOCATION:": [
+        "KONUM:"
       ],
       "NOTE:": [
         "NOT:"
@@ -5008,6 +5004,15 @@
       ],
       "This event was updated.": [
         "Bu etkinlik güncellendi."
+      ],
+      "TIME:": [
+        "ZAMAN:"
+      ],
+      "TITLE:": [
+        "BAŞLIK:"
+      ],
+      "You are invited to": [
+        "Şuraya davet edildiniz"
       ]
     },
     "Email body for invitation (date part)": {
@@ -5024,11 +5029,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Kaldırıldı"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "KONUM:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -8267,6 +8267,9 @@
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME }, sizi kötü niyetli kişilerden ve güvenlik tehditlerinden korumak için günün her saati çalışan, gelişmiş yapay zeka sistemleri ile uzmanlar tarafından desteklenen gelişmiş bir hesap koruma programıdır."
       ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME }, kuruluşunuzu kötü niyetli kişilerden ve güvenlik tehditlerinden korumak için günün her saati çalışan, gelişmiş yapay zeka sistemleri ile uzmanlar tarafından desteklenen gelişmiş bir hesap koruma programıdır."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } şüpheli etkinlikleri özel olarak izleyerek hesabınızı korur."
       ],
@@ -9468,6 +9471,9 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Parolanızı yakın zamanda sıfırladıysanız, bir veri kurtarma yöntemini kullanarak verilerinizin kilidini açabilirsiniz"
+      ],
+      "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
+        "Kuruluşunuzda tanınmış kişiler varsa, önemli veriler işleniyorsa veya siber saldırılara hedef olabilecekse, kuruluşunuzdaki herkes için ${ PROTON_SENTINEL_NAME } özelliğini kullanmanız önemle önerilir."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Sorun yaşıyorsanız, size yardımcı olmak için buradayız. Destek uzmanlarımızdan biriyle ${ boldPhoneCall } yapın ya da ${ boldZoomMeeting } ile görüşün. Canlı destek almak için bir ${ boldLiveChat } açın."
@@ -10856,9 +10862,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Ücretli özellikleri, ürünleri ve depolama alanını özel bir ücret ile almak için tarifenizi şimdi yükseltin"
       ],
-      "Upgrade to ${ firstPlanNames }, or ${ lastPlanName } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "${ PROTON_SENTINEL_NAME } kullanabilmek için ${ firstPlanNames } ya da ${ lastPlanName } tarifesine yükseltin."
-      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Hesabınızı paylaşması daha kolay ve daha kısa @pm.me adresi ile kullanmak için tarifenizi yükseltin. İngilizce olarak \"${ MAIL_APP_NAME } ben\" ya da \"Bana özel ileti\" anlamına gelir."
       ],
@@ -10867,6 +10870,9 @@
       ],
       "Upgrade to unlock": [
         "Kullanmak için tarifenizi yükseltin"
+      ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "${ PROTON_SENTINEL_NAME } hizmetine erişmek için ${ firstPlanNames } ya da ${ lastPlanName } tarifesine yükseltin."
       ],
       "Upload picture": [
         "Görsel yükle"
@@ -14759,6 +14765,9 @@
       ],
       "Share files with no size limit": [
         "Dosyaları boyut sınırı olmadan paylaşın"
+      ],
+      "Short domain (@pm.me)": [
+        "Kısa etki alanı (@pm.me)"
       ],
       "Sign in as user": [
         "Kullanıcı olarak oturum açma"
@@ -21285,9 +21294,6 @@
       "Are you sure?": [
         "Emin misiniz?"
       ],
-      "Authentication security": [
-        "Kimlik doğrulama güvenliği"
-      ],
       "Auto-deletion is active": [
         "Otomatik silme özelliği açık"
       ],
@@ -22252,6 +22258,9 @@
       "Secure your passwords. Everywhere.": [
         "Parolalarınızı koruyun. Her yerde."
       ],
+      "Security": [
+        "Güvenlik"
+      ],
       "Security and privacy": [
         "Güvenlik ve gizlilik"
       ],
@@ -22963,6 +22972,9 @@
       ],
       "This key is used for email forwarding": [
         "Bu anahtar, e-posta iletimi için kullanılır"
+      ],
+      "This setting is managed by your organization": [
+        "Bu ayar kuruluşunuz tarafından yönetiliyor."
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Şifrelenmiş parolalar, şifreleri çözülmediği sürece açığa çıksalar bile güvende kalırlar."
