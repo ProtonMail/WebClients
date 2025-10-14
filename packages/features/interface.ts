@@ -81,8 +81,8 @@ export enum FeatureCode {
     // Flags for the category views
     CategoryViewBadgeSpotlight = 'CategoryViewBadgeSpotlight',
     CategoryViewEditReminderSpotlight = 'CategoryViewEditReminderSpotlight',
-    CategoryViewB2BOnboardingView = 'CategoryViewB2BOnboardingView',
     CategoryViewB2COnboardingViewFlags = 'CategoryViewB2COnboardingViewFlags',
+    CategoryViewB2BOnboardingViewFlags = 'CategoryViewB2BOnboardingViewFlags',
     CategoryViewOnboardingAccountDateThreshold = 'CategoryViewOnboardingAccountDateThreshold',
 
     OfferPassFamilyPlan2024Yearly = 'OfferPassFamilyPlan2024Yearly',
