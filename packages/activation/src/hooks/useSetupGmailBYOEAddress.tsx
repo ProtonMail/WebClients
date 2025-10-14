@@ -27,7 +27,7 @@ const useSetupGmailBYOEAddress = () => {
     const { createNotification } = useNotifications();
     const dispatch = useDispatch();
 
-    const handleSyncCallback = async (hasError: boolean, sync?: Sync, displayName?: string) => {
+    const handleSyncCallback = async (hasError: boolean, sync?: Sync) => {
         if (!hasAccessToBYOE) {
             return;
         }
@@ -50,12 +50,7 @@ const useSetupGmailBYOEAddress = () => {
                 });
             } else {
                 try {
-                    const address = await dispatch(
-                        createBYOEAddress({
-                            emailAddressParts,
-                            displayName,
-                        })
-                    );
+                    const address = await dispatch(createBYOEAddress({ emailAddressParts }));
 
                     if (address) {
                         createNotification({ text: c('Success').t`Address successfully added` });

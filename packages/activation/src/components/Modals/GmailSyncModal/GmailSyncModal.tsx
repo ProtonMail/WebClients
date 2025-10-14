@@ -18,7 +18,7 @@ import SignInWithGoogle from './SignInWithGoogle';
 interface Props extends ModalProps {
     source: EASY_SWITCH_SOURCES;
     reduceHeight?: boolean;
-    onSyncCallback?: (hasError: boolean, sync?: Sync, displayName?: string) => void;
+    onSyncCallback?: (hasError: boolean, sync?: Sync) => void;
     onSyncSkipCallback?: () => void;
     noSkip?: boolean;
     hasAccessToBYOE?: boolean;
@@ -62,13 +62,12 @@ const GmailSyncModal = ({
                 const payload = res.type.endsWith('fulfilled') ? res?.payload : undefined;
 
                 const sync = payload?.sync as Sync;
-                const displayName = payload?.displayName;
 
                 const hasError = res.type.endsWith('rejected');
                 if (!hasError) {
                     rest?.onClose?.();
                 }
-                onSyncCallback?.(hasError, sync, displayName);
+                onSyncCallback?.(hasError, sync);
             },
         });
     };

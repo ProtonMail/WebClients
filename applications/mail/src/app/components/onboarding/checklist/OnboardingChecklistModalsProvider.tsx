@@ -1,14 +1,12 @@
 import { type ReactNode, createContext, useContext } from 'react';
 
-import { useUser } from '@proton/account/user/hooks';
 import { GmailSyncModal } from '@proton/activation';
 import BYOEClaimProtonAddressModal from '@proton/activation/src/components/Modals/BYOEClaimProtonAddressModal/BYOEClaimProtonAddressModal';
 import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '@proton/activation/src/constants';
+import useBYOEFeatureStatus from '@proton/activation/src/hooks/useBYOEFeatureStatus';
 import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
 import { useModalState } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
-import { isAdmin } from '@proton/shared/lib/user/helpers';
-import { useFlag } from '@proton/unleash';
 
 import AccountsLoginModal from './modals/AccountsLoginModal';
 import MobileAppModal from './modals/MobileAppModal';
@@ -33,8 +31,7 @@ export const useOnboardingChecklistModalsContext = () => {
 };
 
 const OnboardingChecklistModalsProvider = ({ children }: { children: ReactNode }) => {
-    const [user] = useUser();
-    const hasAccessToBYOE = useFlag('InboxBringYourOwnEmailClient') && isAdmin(user);
+    const hasAccessToBYOE = useBYOEFeatureStatus(false);
 
     const [gmailForwardProps, setGmailForwardOpen, renderGmailForward] = useModalState();
     const [protectLoginProps, setProtectModalOpen, renderProtectInbox] = useModalState();
@@ -93,9 +90,11 @@ const OnboardingChecklistModalsProvider = ({ children }: { children: ReactNode }
             {renderStorageReward && <StorageRewardModal {...storageRewardProps} />}
             {renderGmailForward && (
                 <GmailSyncModal
-                    source={hasAccessToBYOE
-                        ? EASY_SWITCH_SOURCES.MAIL_WEB_CHECKLIST_BYOE
-                        : EASY_SWITCH_SOURCES.MAIL_WEB_CHECKLIST}
+                    source={
+                        hasAccessToBYOE
+                            ? EASY_SWITCH_SOURCES.MAIL_WEB_CHECKLIST_BYOE
+                            : EASY_SWITCH_SOURCES.MAIL_WEB_CHECKLIST
+                    }
                     noSkip
                     onSyncCallback={(hasError?: boolean) => {
                         if (!hasError) {

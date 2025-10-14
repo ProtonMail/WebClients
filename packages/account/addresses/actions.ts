@@ -2,6 +2,7 @@ import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import { type UserInvitationsState, userInvitationsThunk } from '@proton/account/userInvitations';
+import { createBYOEAddress as createBYOEAddressApi } from '@proton/activation/src/api/api';
 import { createKTVerifier, createPreAuthKTVerifier } from '@proton/key-transparency';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities';
@@ -38,7 +39,6 @@ import {
     setupMemberKeys,
 } from '@proton/shared/lib/keys';
 import { getOrganizationKeyInfo, validateOrganizationKey } from '@proton/shared/lib/organization/helper';
-import { isFree } from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';
 
 import type { KtState } from '../kt';
@@ -502,26 +502,21 @@ export const setupExternalUserForProton = ({
 
 export const createBYOEAddress = ({
     emailAddressParts,
-    displayName,
 }: {
     emailAddressParts: { Local: string; Domain: string };
     displayName?: string;
 }): ThunkAction<Promise<Address | undefined>, RequiredState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, _, extra) => {
-        const user = await dispatch(userThunk());
-
-        if (isFree(user)) {
-            return;
-        }
+        const organization = await dispatch(organizationThunk());
 
         const addresses = await dispatch(addressesThunk());
         const api = getSilentApi(extra.api);
+        const emailAddress = `${emailAddressParts.Local}@${emailAddressParts.Domain}`;
 
         const { Address } = await api<{ Address: Address }>(
-            createAddressConfig({
-                Local: emailAddressParts.Local,
-                Domain: emailAddressParts.Domain,
-                DisplayName: displayName,
+            createBYOEAddressApi({
+                Email: emailAddress,
+                OrganizationId: organization.ID,
             })
         );
 

@@ -2,10 +2,9 @@ import type { CSSProperties } from 'react';
 
 import { c } from 'ttag';
 
-import { useUser } from '@proton/account/user/hooks';
+import useBYOEFeatureStatus from '@proton/activation/src/hooks/useBYOEFeatureStatus';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import { isAdmin } from '@proton/shared/lib/user/helpers';
 import accountLoginSmall from '@proton/styles/assets/img/illustrations/checklist-account-login-small.svg';
 import accountLogin from '@proton/styles/assets/img/illustrations/checklist-account-login.svg';
 import appStoreSmall from '@proton/styles/assets/img/illustrations/checklist-app-store-small.svg';
@@ -65,8 +64,7 @@ export const CheckListGmailForward = ({
     disabled = false,
     'data-testid': dataTestId,
 }: CheckListItemProps) => {
-    const [user] = useUser();
-    const hasAccessToBYOE = useFlag('InboxBringYourOwnEmailClient') && isAdmin(user);
+    const hasAccessToBYOE = useBYOEFeatureStatus(false);
 
     const isInMaintenance = useFlag('MaintenanceImporter');
     // translator: This text is in bold inside the sentence "Set up auto-forwarding from Gmail"
