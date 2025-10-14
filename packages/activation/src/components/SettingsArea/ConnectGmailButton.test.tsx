@@ -39,6 +39,13 @@ jest.mock('@proton/components/components/upsell/UpsellModal/UpsellModal', () => 
     default: (props: any) => <div data-testid="UpsellModal" {...props} />,
 }));
 
+jest.mock('../../hooks/useBYOEFeatureStatus', () => ({
+    __esModule: true,
+    default: () => {
+        return false;
+    },
+}));
+
 describe('ConnectGmailButton', () => {
     beforeEach(() => {
         mockUseUser.mockReturnValue([{}, false]);

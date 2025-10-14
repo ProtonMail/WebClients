@@ -179,3 +179,9 @@ export const createSignupOAuthToken = (
     method: 'POST',
     data,
 });
+
+export const createBYOEAddress = ({Email, OrganizationId}: {Email: string, OrganizationId?: string}) => ({
+    url: 'mail/v4/byoe-address',
+    method: 'POST',
+    data: {Email, OrganizationId},
+})
