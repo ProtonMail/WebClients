@@ -909,6 +909,9 @@
       "Upgrade to Business": [
         "Улучшить до Business"
       ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "Улучшение, чтобы включить ${ PROTON_SENTINEL_NAME }"
+      ],
       "Upgrade your plan": [
         "Улучшить тариф"
       ],
@@ -3267,16 +3270,6 @@
         "Вы успешно вошли в другой устройство"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "ПРИМЕЧАНИЕ:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "Описание:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } было отменено."
@@ -3314,11 +3307,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Удалено"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "Местоположение:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -4734,6 +4722,9 @@
       "Payment details": [
         "Информация платежа"
       ],
+      "Protection": [
+        "Защита"
+      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Экономьте много на лучших предложениях ${ VPN_APP_NAME }"
       ],
@@ -5283,6 +5274,9 @@
       "${ planName } expires today.": [
         "Срок действия ${ planName } истекает сегодня."
       ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } - это продвинутая программа для защиты аккаунта, которая защищает вас от злоумышленников и угроз безопасности при помощи мощных ИИ и круглосуточно работающих специалистов."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } защищает вашу учётную запись посредством специального наблюдения за подозрительной активностью."
       ],
@@ -5684,7 +5678,7 @@
       ],
       "Create a secure cloud for ${ value } member": [
         "Создать безопасное облако для ${ value } участника",
-        "Создать безопасное облако для ${ value } участника",
+        "Создать безопасное облако для ${ value } участников",
         "Создать безопасное облако для ${ value } участников",
         "Создать безопасное облако для ${ value } участников"
       ],
@@ -6482,6 +6476,9 @@
       ],
       "Protected by Swiss privacy laws": [
         "Защищен швейцарскими законами о конфиденциальности"
+      ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Общественным деятелям, журналистам, руководителям и другим лицам, которые могут стать объектом кибератак, настоятельно рекомендуется включить ${ PROTON_SENTINEL_NAME }."
       ],
       "Public sharing of documents is not yet supported.": [
         "Публичный обмен документами пока не поддерживается."
@@ -13208,9 +13205,6 @@
       "Are you sure?": [
         "Вы уверены?"
       ],
-      "Authentication security": [
-        "Безопасность аутентификации"
-      ],
       "Auto-deletion is active": [
         "Автоматическое удаление включено"
       ],
@@ -14028,6 +14022,9 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Администраторы могут управлять аккаунтами пользователей и предоставлять права администратора другим пользователям. Только основной администратор может изменить тариф организации."
+      ],
+      "Any protection applied to suspicious activity": [
+        "Любая защита, применяемая в отношении подозрительных действий"
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Автоматически переключаться между вашими предпочтительными темами для дня и ночи синхронно с системными дневным и ночным режимами."

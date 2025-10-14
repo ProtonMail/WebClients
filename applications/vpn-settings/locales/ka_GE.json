@@ -962,6 +962,9 @@
       "Upgrade to Business": [
         "Business-მდე აწევა"
       ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "${ PROTON_SENTINEL_NAME }-ის ჩასართავად ტრაფიკი ასწიეთ"
+      ],
       "Upgrade to Professional": [
         "აწევა Professional-ზე"
       ],
@@ -3429,16 +3432,6 @@
         "თქვენ წარმატებით შესვედით სხვა მოწყობილობაზე"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "შენიშვნა:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "აღწერა:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } გაუქმდა."
@@ -3476,11 +3469,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "წაიშალა"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "მდებარეობა:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -4904,6 +4892,9 @@
       "Payment details": [
         "გადახდის დეტალები"
       ],
+      "Protection": [
+        "დაცვა"
+      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "დაზოგეთ კარგად ${ VPN_APP_NAME }-ის სატარიფო გეგმებით"
       ],
@@ -5411,6 +5402,9 @@
       ],
       "${ planName } expires today.": [
         "${ planName }-ის ვადა დღეს იწურება."
+      ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } დამატებითი ანგარიშის დაცვის პროგრამაა, რომელიც რთულ AI სისტემებს ეყრდნობა და გვყავს სპეციალისტები, რომლებიც მუხლჩაუხრელად მუშაობენ, რათა თქვენი უსაფრთხოება არასასურველი პირებისგან დაიცვან."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } იცავს თქვენს ანგარიშს საეჭვო აქტივობების გამოყოფილი მონიტორინგით."
@@ -6642,6 +6636,9 @@
       ],
       "Protected by Swiss privacy laws": [
         "დაცულია შვეიცარიული კონფიდენციალობის კანონებით"
+      ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "საჯარო პირები, ჟურნალისტები, აღმასრულებელი პირები და სხვები, რომლებიც, შეიძლება, კიბერშეტევის სამიზნეები გახდნენ, ვურჩევთ, ${ PROTON_SENTINEL_NAME } ჩართონ."
       ],
       "Public sharing of documents is not yet supported.": [
         "დოკუმენტების საჯაროდ გაზიარება ჯერ მხარდაჭერილი არაა."
@@ -13507,9 +13504,6 @@
       "Are you sure?": [
         "დარწმუნებული ბრძანდებით?"
       ],
-      "Authentication security": [
-        "ავთენტიკაციის უსაფრთხოება"
-      ],
       "Auto-deletion is active": [
         "ავტოამოცნობა ჩართულია"
       ],
@@ -14377,6 +14371,9 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "ადმინებს შეუძლიათ მომხმარებლის ანგარიშებს მართვა და სხვა მომხმარებლებისთვის ადმინის პრივილეგიების მიცემა. ორგანიზაციის სატარიფო გეგმის ჩასწორება, მხოლოდ, ძირითად ადმინს შეუძლია."
+      ],
+      "Any protection applied to suspicious activity": [
+        "ნებისმიერი დაცვა, რომელიც საეჭვო აქტივობაზე გადატარდება"
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "ავტომატურად გადაერთეთ რჩეულ თემებს შორის დღისა და ღამისთვის თქვენი სისტემის დღისა და ღამის რეჟიმებთან ერთად"

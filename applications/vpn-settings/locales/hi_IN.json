@@ -822,6 +822,9 @@
       "Upgrade to Business": [
         "Business में अपग्रेड करें"
       ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "${ PROTON_SENTINEL_NAME } सक्षम करने के लिए अपग्रेड करें"
+      ],
       "Upgrade your plan": [
         "अपनी योजना अपग्रेड करें"
       ],
@@ -2696,11 +2699,6 @@
         "टेक्स्ट फील्ड वैकल्पिक हैं। इस फॉर्म में दी गई जानकारी केवल आपके द्वारा चयनित इनवॉइस को बदलेगी और आपके भविष्य के इनवॉइस विवरण को प्रभावित नहीं करेगी।"
       ]
     },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "विवरण:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } रद्द कर दिया गया था।"
@@ -2729,11 +2727,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "हटाया गया"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "स्थान:\n${ eventLocation }"
       ]
     },
     "Email spam notification": {
@@ -3982,6 +3975,9 @@
       "Payment details": [
         "भुगतान जानकारी"
       ],
+      "Protection": [
+        "सुरक्षा"
+      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "${ VPN_APP_NAME } पर बेहतरीन डील के साथ बड़ी बचत करें"
       ],
@@ -4460,6 +4456,9 @@
       ],
       "${ planName } expires today.": [
         "${ planName } आज समाप्त हो रहा है।"
+      ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } एक उन्नत खाता सुरक्षा कार्यक्रम है जो परिष्कृत एआई सिस्टम और विशेषज्ञों द्वारा संचालित है जो आपको बुरे तत्वों और सुरक्षा खतरों से बचाने के लिए चौबीसों घंटे काम करता है।"
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } संदिग्ध गतिविधि की समर्पित निगरानी के साथ आपके खाते की रक्षा करता है।"
@@ -5526,6 +5525,9 @@
       ],
       "Protected by Swiss privacy laws": [
         "स्विस निजता कानूनो से सुरक्षित रखा गया"
+      ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "सार्वजनिक हस्तियों, पत्रकारों, अधिकारियों और अन्य लोगों को, जो साइबर हमलों का लक्ष्य हो सकते हैं, ${ PROTON_SENTINEL_NAME } को सक्षम करने के लिए अत्यधिक प्रोत्साहित किया जाता है।"
       ],
       "Recently used servers:": [
         "हाल में उपयोग किए गए सर्वर:"
@@ -10941,9 +10943,6 @@
       "Are you sure?": [
         "क्या आप पक्का हैं?"
       ],
-      "Authentication security": [
-        "प्रमाणीकरण सुरक्षा"
-      ],
       "Auto-deletion is active": [
         "स्वचालित हटाना सक्रिय है"
       ],
@@ -11682,6 +11681,9 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "व्यवस्थापक उपयोगकर्ता खातों को प्रबंधित कर सकते हैं और अन्य उपयोगकर्ताओं को व्यवस्थापक अधिकार दे सकते हैं। केवल प्राथमिक व्यवस्थापक संगठन की योजना संपादित कर सकता है।"
+      ],
+      "Any protection applied to suspicious activity": [
+        "संदिग्ध गतिविधि पर लागू कोई भी सुरक्षा"
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "अपने पसंदीदा दिन और रात के विषयों के बीच स्वचालित रूप से स्विच करें, जो आपके सिस्टम के दिन और रात मोड के साथ सिंक में हो।"
