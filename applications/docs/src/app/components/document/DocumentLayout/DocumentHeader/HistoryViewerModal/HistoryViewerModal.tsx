@@ -86,7 +86,7 @@ function HistoryViewerModalContent({
   }, [createNotification])
 
   const showSuccessfullRestoreNotification = useCallback(
-    (editorStateBeforeReplacing: SerializedEditorState) => {
+    (state: SerializedEditorState | unknown) => {
       const shortDate = versionHistory.getShortFormattedDateAndTimeForBatch(selectedBatch)
       const notificationId = createNotification({
         type: 'success',
@@ -103,11 +103,20 @@ function HistoryViewerModalContent({
             <NotificationButton
               onClick={() => {
                 hideNotification(notificationId)
-                void withRestoring(
-                  editorController
-                    .restoreRevisionByReplacing(editorStateBeforeReplacing)
-                    .then(showSuccessfulUndoNotification),
-                )
+
+                if (documentType === 'sheet') {
+                  void withRestoring(
+                    editorController
+                      .restoreRevisionByReplacingSpreadsheetState(state)
+                      .then(showSuccessfulUndoNotification),
+                  )
+                } else {
+                  void withRestoring(
+                    editorController
+                      .restoreRevisionByReplacingLexicalState(state as SerializedEditorState)
+                      .then(showSuccessfulUndoNotification),
+                  )
+                }
               }}
             >{c('Action').t`Undo`}</NotificationButton>
           </>
@@ -119,8 +128,9 @@ function HistoryViewerModalContent({
       selectedBatch,
       createNotification,
       hideNotification,
-      withRestoring,
+      documentType,
       editorController,
+      withRestoring,
       showSuccessfulUndoNotification,
     ],
   )
@@ -142,16 +152,29 @@ function HistoryViewerModalContent({
               .t`Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.`,
             onCancel: resolve,
             onSubmit: async () => {
-              const editorStateBeforeReplacing = await editorController.getEditorJSON()
-              const lexicalState = await editorInvoker.getCurrentEditorState()
-              if (!lexicalState || !editorStateBeforeReplacing) {
+              if (documentType === 'sheet') {
+                const sheetStateBeforeReplacing = await editorController.getLocalSpreadsheetStateJSON()
+                const sheetState = await editorInvoker.getLocalSpreadsheetStateJSON()
+                if (!sheetStateBeforeReplacing || !sheetState) {
+                  resolve()
+                  return
+                }
+                await editorController.restoreRevisionByReplacingSpreadsheetState(sheetState)
+                onClose()
+                showSuccessfullRestoreNotification(sheetStateBeforeReplacing)
                 resolve()
-                return
+              } else {
+                const editorStateBeforeReplacing = await editorController.getEditorJSON()
+                const lexicalState = await editorInvoker.getCurrentEditorState()
+                if (!lexicalState || !editorStateBeforeReplacing) {
+                  resolve()
+                  return
+                }
+                await editorController.restoreRevisionByReplacingLexicalState(lexicalState)
+                onClose()
+                showSuccessfullRestoreNotification(editorStateBeforeReplacing)
+                resolve()
               }
-              await editorController.restoreRevisionByReplacing(lexicalState)
-              onClose()
-              showSuccessfullRestoreNotification(editorStateBeforeReplacing)
-              resolve()
             },
           })
         })
@@ -163,7 +186,15 @@ function HistoryViewerModalContent({
         await docController.restoreRevisionAsCopy(yjsState)
       }
     },
-    [editorInvoker, showConfirmModal, editorController, docController, onClose, showSuccessfullRestoreNotification],
+    [
+      editorInvoker,
+      showConfirmModal,
+      editorController,
+      docController,
+      documentType,
+      onClose,
+      showSuccessfullRestoreNotification,
+    ],
   )
 
   if (!versionHistory.batches.length) {
