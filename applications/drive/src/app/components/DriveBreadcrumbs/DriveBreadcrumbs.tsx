@@ -4,6 +4,8 @@ import { NavLink } from 'react-router-dom-v5-compat';
 import { c } from 'ttag';
 
 import { type BreadcrumbInfo, CollapsingBreadcrumbs, Icon, Loader, useNotifications } from '@proton/components';
+import { generateNodeUid } from '@proton/drive/index';
+import useFlag from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import type { DriveFolder } from '../../hooks/drive/useActiveShare';
@@ -29,7 +31,6 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
     const { traverseLinksToRoot } = useLinkPath(); // TODO: Get data using useFolderView instead one day.
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const { isSharedWithMe: getIsSharedWithMe } = useDirectSharingInfo();
-
     const [dropTarget, setDropTarget] = useState<string>();
     const [rootShare, setRootShare] = useState<Share>();
     const { getShare } = useShare();
@@ -37,6 +38,7 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
 
     const [breadcrumbs, setBreadcrumbs] = useState<BreadcrumbInfo[]>([]);
     const [isSharedWithMeFolder, setIsSharedWithMeFolder] = useState(false);
+    const useSDKFolders = useFlag('DriveWebSDKFolders');
 
     useEffect(() => {
         const abortController = new AbortController();
@@ -44,7 +46,8 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
         traverseLinksToRoot(abortController.signal, activeFolder.shareId, activeFolder.linkId)
             .then((pathItems) => {
                 const breadcrumbs = pathItems.map(({ linkId, name, isRoot, link, isReadOnly }) => {
-                    const handleDrop = getHandleItemDrop(linkId);
+                    const destinationUid = generateNodeUid(link.volumeId, linkId);
+                    const handleDrop = getHandleItemDrop(useSDKFolders ? destinationUid : linkId);
 
                     let onClick;
                     if (linkId === activeFolder.linkId) {
