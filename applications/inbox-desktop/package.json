@@ -1,6 +1,6 @@
 {
     "name": "proton-inbox-desktop",
-    "version": "1.9.0",
+    "version": "1.9.1",
     "description": "Proton official desktop application for Proton Mail and Proton Calendar",
     "license": "GPL-3.0",
     "author": {
@@ -24,9 +24,11 @@
         "lint": "yarn run check:lint",
         "make": "electron-forge make",
         "make:beta": "cross-env RELEASE=beta electron-forge make",
+        "make:snap": "IS_SNAP=1 electron-forge make --platform=linux --arch=x64 --targets=@electron-forge/maker-deb && bash ./scripts/package_snap.sh",
         "negativity": "electronegativity -i ./src",
         "package": "electron-forge package",
         "start": "electron-forge start",
+        "start:snap": "IS_SNAP=1 electron-forge start ",
         "test": "jest --runInBand"
     },
     "config": {
