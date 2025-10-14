@@ -54,10 +54,15 @@ export const createApiProxyService = () => {
     /* Firefox does not support service workers yet : reassess
      * this workaround when full MV3 support is released */
     if (BUILD_TARGET === 'firefox') {
+        const allowedOrigin = browser.runtime.getURL('/');
         browser.webRequest.onBeforeSendHeaders.addListener(
             (details) => {
                 const UID = authStore.getUID();
                 const AccessToken = authStore.getAccessToken();
+
+                /** Avoid intercepting calls from pass-web app if the extension and the
+                 * web-app are running in the same browsing context. */
+                if (!details.originUrl || !details.originUrl.startsWith(allowedOrigin)) return;
 
                 if (UID && AccessToken && details.url.startsWith(`${config.API_URL}${API_PROXY_IMAGE_ENDPOINT}`)) {
                     details.requestHeaders?.push({ name: 'x-pm-uid', value: UID });
