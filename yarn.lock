@@ -9095,6 +9095,7 @@ __metadata:
   dependencies:
     "@proton/ci-tools": "workspace:^"
     "@types/jest": "npm:^30.0.0"
+    "@vercel/ncc": "npm:^0.38.4"
     jest: "npm:^30.2.0"
     ts-jest: "npm:^29.4.4"
     ts-node: "npm:^10.9.2"
@@ -14910,6 +14911,17 @@ __metadata:
   version: 1.11.1
   resolution: "@unrs/resolver-binding-win32-x64-msvc@npm:1.11.1"
   conditions: os=win32 & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@vercel/ncc@npm:^0.38.4":
+  version: 0.38.4
+  resolution: "@vercel/ncc@npm:0.38.4"
+  dependencies:
+    node-gyp: "npm:latest"
+  bin:
+    ncc: dist/ncc/cli.js
+  checksum: 10c0/dd6f5e95c09aa2db957788dd1fc7e5dc208b5268dc19a1560f8a71c1b18d234bb8ca0990f972051efcbc8d1cc5458242168bbdca54212a605ed0b4f680d3d876
   languageName: node
   linkType: hard
 
