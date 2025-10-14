@@ -4,6 +4,7 @@ export enum ModalType {
     Schedule = 'schedule',
     Snooze = 'snooze',
     Unsubscribe = 'unsubscribe',
+    CategoriesViewB2BOnboarding = 'categoriesViewB2BOnboarding',
 }
 
 export interface ScheduleModalPayload {
@@ -30,7 +31,18 @@ export interface UnsubscribeModalPayload {
     };
 }
 
-export type ModalPayload = ScheduleModalPayload | SnoozeModalPayload | UnsubscribeModalPayload;
+export interface CategoriesViewB2BOnboardingModalPayload {
+    type: ModalType.CategoriesViewB2BOnboarding;
+    value: {
+        flagValue: number;
+    };
+}
+
+export type ModalPayload =
+    | ScheduleModalPayload
+    | SnoozeModalPayload
+    | UnsubscribeModalPayload
+    | CategoriesViewB2BOnboardingModalPayload;
 export type ModalListener = (payload: ModalPayload) => void;
 
 export interface GlobalModal {
