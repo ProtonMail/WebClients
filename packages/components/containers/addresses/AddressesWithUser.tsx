@@ -175,17 +175,21 @@ const AddressesUser = ({
                 </SettingsParagraph>
             )}
 
-            {!user.hasPaidMail && (
+            {(!user.hasPaidMail || hasAccessToBYOE) && (
                 <div className="mb-4 flex gap-6 self-start items-start">
-                    <MailUpsellButton
-                        onClick={() => handleUpsellModalDisplay(true)}
-                        text={c('Action').t`Get more addresses`}
-                    />
+                    {!user.hasPaidMail && (
+                        <>
+                            <MailUpsellButton
+                                onClick={() => handleUpsellModalDisplay(true)}
+                                text={c('Action').t`Get more addresses`}
+                            />
 
-                    {isBYOEOnlyAccount && user.isFree && getIsBYOEOnlyAccount(addresses) && (
-                        <Button onClick={() => setClaimProtonAddressModalOpen(true)}>
-                            {c('Action').t`Claim ${BRAND_NAME} address`}
-                        </Button>
+                            {isBYOEOnlyAccount && user.isFree && getIsBYOEOnlyAccount(addresses) && (
+                                <Button onClick={() => setClaimProtonAddressModalOpen(true)}>
+                                    {c('Action').t`Claim ${BRAND_NAME} address`}
+                                </Button>
+                            )}
+                        </>
                     )}
 
                     {hasAccessToBYOE && (
