@@ -344,8 +344,10 @@ const ReferralTopBanner = ({ app }: { app: APP_NAMES }) => {
         return null;
     }
 
-    const autoRenewalAction = <ContinueSubscriptionActionButton app={app} key="trial-action-button" />;
-    const nonAutoRenewalAction = <TrialInfoActionButton key="opt-out-trial-action-button" />;
+    const nonAutoRenewalAction = <ContinueSubscriptionActionButton app={app} key="trial-action-button" />;
+    const autoRenewalAction = <TrialInfoActionButton key="opt-out-trial-action-button" />;
+
+    const action = isAutoRenewTrial(subscription) ? autoRenewalAction : nonAutoRenewalAction;
 
     const isExpired = isTrialExpired(subscription);
 
@@ -364,7 +366,7 @@ const ReferralTopBanner = ({ app }: { app: APP_NAMES }) => {
             await setShowReferralTrialEndedBanner(false);
         };
 
-        const message = c('Message').jt`Your free trial has ended. ${autoRenewalAction}`;
+        const message = c('Message').jt`Your free trial has ended. ${nonAutoRenewalAction}`;
 
         return (
             <TopBanner className="bg-info" onClose={dismiss}>
@@ -389,8 +391,8 @@ const ReferralTopBanner = ({ app }: { app: APP_NAMES }) => {
             <TopBanner className="bg-info" onClose={dismiss}>
                 {isAutoRenewTrial(subscription)
                     ? c('Warning')
-                          .jt`Your trial will end on ${textDate}. You won’t be charged if you cancel before ${textDate}. ${nonAutoRenewalAction}`
-                    : c('Warning').jt`Your free trial ends on ${textDate}. ${nonAutoRenewalAction}`}
+                          .jt`Your trial will end on ${textDate}. You won’t be charged if you cancel before ${textDate}. ${action}`
+                    : c('Warning').jt`Your free trial ends on ${textDate}. ${action}`}
             </TopBanner>
         );
     }
