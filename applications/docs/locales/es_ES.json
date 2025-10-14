@@ -2836,16 +2836,6 @@
         "Los campos de texto son opcionales. La información que proporcionas en este formulario solo cambiará la factura que has seleccionado y no los detalles de la futura factura."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "NOTA:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "DESCRIPCIÓN:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "Se ha cancelado ${ eventTitle }."
@@ -2853,8 +2843,14 @@
       "All events in this series were updated.": [
         "Todos los eventos en esta serie se han actualizado."
       ],
+      "DESCRIPTION:": [
+        "DESCRIPCIÓN:"
+      ],
       "Here's what changed:": [
         "Esto es lo que ha cambiado:"
+      ],
+      "LOCATION:": [
+        "UBICACIÓN:"
       ],
       "NOTE:": [
         "NOTA:"
@@ -2867,6 +2863,15 @@
       ],
       "This event was updated.": [
         "Se ha actualizado este evento."
+      ],
+      "TIME:": [
+        "HORA:"
+      ],
+      "TITLE:": [
+        "TÍTULO:"
+      ],
+      "You are invited to": [
+        "Estás invitado a"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2883,11 +2888,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Eliminado"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "LUGAR:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
