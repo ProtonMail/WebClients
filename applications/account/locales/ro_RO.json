@@ -4999,16 +4999,6 @@
         "Puteți închide această filă în siguranță."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "NOTĂ:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "DESCRIERE:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } a fost anulat."
@@ -5046,11 +5036,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Eliminat"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "LOC:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -10968,9 +10953,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Modernizați acum contul pentru a accesa funcții premium, produse și stocare la un preț special."
-      ],
-      "Upgrade to ${ firstPlanNames }, or ${ lastPlanName } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Treceți la ${ firstPlanNames } sau ${ lastPlanName } pentru a obține acces la ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Modernizați contul pentru a adăuga o adresă @pm.me mai scurtă în cont, care este mai ușor de partajat. Înseamnă „${ MAIL_APP_NAME } al meu” sau „Mesaj privat mie”."
@@ -21488,9 +21470,6 @@
       ],
       "Are you sure?": [
         "Confirmați?"
-      ],
-      "Authentication security": [
-        "Securitate autentificare"
       ],
       "Auto-deletion is active": [
         "Ștergerea automată este activă"

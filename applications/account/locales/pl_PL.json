@@ -4799,16 +4799,6 @@
         "Możesz zamknąć tę kartę."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "WIADOMOŚĆ:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "OPIS:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "Wydarzenie ${ eventTitle } zostało anulowane."
@@ -4846,11 +4836,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Usunięte"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "LOKALIZACJA:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -10660,9 +10645,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Ulepsz konto w specjalnej cenie, aby uzyskać dostęp do funkcji premium oraz większej przestrzeni dyskowej"
-      ],
-      "Upgrade to ${ firstPlanNames }, or ${ lastPlanName } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Ulepsz plan do wersji ${ firstPlanNames } lub ${ lastPlanName }, aby uzyskać dostęp do ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Ulepsz konto, aby dodać krótszy adres @pm.me, który jest łatwiejszy do udostępniania. To jest skrót od “${ MAIL_APP_NAME } me” lub “Private Message me”."
@@ -20919,9 +20901,6 @@
       ],
       "Are you sure?": [
         "Czy na pewno?"
-      ],
-      "Authentication security": [
-        "Bezpieczeństwo uwierzytelniania"
       ],
       "Auto-deletion is active": [
         "Automatyczne usuwanie jest aktywne"

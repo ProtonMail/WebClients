@@ -216,9 +216,6 @@
       "Back": [
         "Torna"
       ],
-      "Back to sign in": [
-        "Torna a l'inici de sessió"
-      ],
       "Block": [
         "Bloqueja"
       ],
@@ -1105,7 +1102,7 @@
         "Recuperar dades"
       ],
       "Refer a friend": [
-        "Recomana a un amic"
+        "Recomana una amistat"
       ],
       "Refresh": [
         "Actualitza"
@@ -1249,7 +1246,7 @@
         "Desa"
       ],
       "Save address": [
-        "Desar adreça"
+        "Desa l'adreça"
       ],
       "Save and continue": [
         "Desa i continua"
@@ -1540,13 +1537,13 @@
         "Actualitza la frase de recuperació"
       ],
       "Upgrade": [
-        "Millora"
+        "Millora el pla"
       ],
       "Upgrade for 200GB": [
         "Milloreu el pla per a 200 GB"
       ],
       "Upgrade now": [
-        "Millora ara"
+        "Millora el pla ara"
       ],
       "Upgrade to Business": [
         "Millora a Business"
@@ -4428,7 +4425,7 @@
         "Enhorabona! Heu aconseguit el màxim de ${ rewardsLimit } mesos gratuïts de ${ plusPlanName }."
       ],
       "Connect your CRM, website, printers, and more.": [
-        "Connecteu el vostre CRM, lloc web, impressores i molt més."
+        "Connecteu el CRM, lloc web, impressores i molt més."
       ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Creeu una reunió a Zoom i afegiu els detalls de participació a l'esdeveniment en un clic."
@@ -4482,7 +4479,7 @@
         "Rebeu una notificació si la vostra contrasenya o altres dades s'han filtrat d'un servei de tercers."
       ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
-        "Rebeu fins a ${ credits } en crèdits convidant els vostres amics a ${ BRAND_NAME }."
+        "Rebeu fins a ${ credits } en crèdits convidant les vostres amistats a ${ BRAND_NAME }."
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Ajudeu el vostre equip a emmagatzemar de manera segura les contrasenyes d'informació confidencial de l'empresa i dels clients."
@@ -4977,16 +4974,6 @@
         "Podeu tancar aquesta pestanya amb seguretat."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "NOTA:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "DESCRIPCIÓ:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "S'ha cancel·lat ${ eventTitle }."
@@ -4994,8 +4981,14 @@
       "All events in this series were updated.": [
         "Tots els esdeveniments d'aquesta sèrie s'han actualitzat."
       ],
+      "DESCRIPTION:": [
+        "DESCRIPCIÓ:"
+      ],
       "Here's what changed:": [
         "Això és el que ha canviat:"
+      ],
+      "LOCATION:": [
+        "UBICACIÓ:"
       ],
       "NOTE:": [
         "NOTA:"
@@ -5008,6 +5001,15 @@
       ],
       "This event was updated.": [
         "S'ha actualitzat aquest esdeveniment."
+      ],
+      "TIME:": [
+        "HORA:"
+      ],
+      "TITLE:": [
+        "TÍTOL:"
+      ],
+      "You are invited to": [
+        "Us han convidat a"
       ]
     },
     "Email body for invitation (date part)": {
@@ -5024,11 +5026,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Esborrat"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "UBICACIÓ:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -8267,6 +8264,9 @@
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } és un programa avançat de protecció de comptes alimentat per sofisticats sistemes d'IA i especialistes que treballen tot el dia per protegir-vos dels agents maliciosos i les amenaces de seguretat."
       ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } és un programa avançat de protecció de comptes potenciat per sistemes d'IA sofisticats i especialistes que treballen ininterrompudament per a protegir la vostra organització d'agents maliciosos i amenaces de seguretat."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } protegeix el vostre compte amb un seguiment dedicat de l'activitat sospitosa."
       ],
@@ -8382,10 +8382,10 @@
         "**Importeu els vostres codis** d'altres aplicacions 2FA, com ara Google Authenticator"
       ],
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Convideu amistats** a ${ BRAND_NAME } amb el vostre enllaç de referència."
+        "**Convideu amistats** a ${ BRAND_NAME } amb el vostre enllaç de recomanació."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Pas 1:** Convideu amistats a ${ BRAND_NAME } amb el vostre enllaç de referència."
+        "**Pas 1:** Convideu amistats a ${ BRAND_NAME } amb el vostre enllaç de recomanació."
       ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
         "**Pas 2:** Les vostres amistats obtindran 2 setmanes de franc en el seu pla."
@@ -8970,7 +8970,7 @@
         "adreça de correu electrònic per defecte"
       ],
       "Default email application": [
-        "Aplicació de correu per defecte"
+        "Aplicació de correu electrònic per defecte"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Elimineu qualsevol altre registre MX o assegureu-vos que la prioritat de ${ MAIL_APP_NAME } és el número més baix."
@@ -9359,7 +9359,7 @@
         "Rebeu una notificació si la vostra contrasenya o altres dades personals han estat filtrades. ${ learnMoreLinkNoBreach }"
       ],
       "Get started with the referral link above.": [
-        "Comenceu amb l'enllaç de referència anterior."
+        "Comenceu amb l'enllaç de recomanació anterior."
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Doneu al testimoni un nom descriptiu, com ara el servei amb el qual voleu utilitzar-lo, i seleccioneu una de les adreces de domini personalitzades actives. Només aquesta adreça podrà enviar correus electrònics amb aquest testimoni."
@@ -9468,6 +9468,9 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Si recentment heu restablert la vostra contrasenya, podeu utilitzar un mètode de recuperació de dades per desbloquejar les vostres dades."
+      ],
+      "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
+        "Si la vostra organització té figures públiques, gestiona dades sensibles o pot ser objecte d'atacs cibernètics, us recomanem especialment que activeu ${ PROTON_SENTINEL_NAME } per tots els membres de l'organització."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Si teniu problemes, estem aquí per ajudar-vos. ${ boldPhoneCall } o ${ boldZoomMeeting } amb un dels nostres especialistes en suport, o obriu un ${ boldLiveChat } per rebre suport per xat."
@@ -9649,7 +9652,7 @@
         "és obligatori"
       ],
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
-        "He estat usant @ProtonMail i he pensat que us podria agradar. És un servei de correu electrònic segur que protegeix la vostra privacitat. Registreu-vos amb el meu enllaç de referència per obtenir 1 mes de característiques prèmium gratuïtament: ${ referrerLink }"
+        "He estat usant @ProtonMail i he pensat que us podria agradar. És un servei de correu electrònic segur que protegeix la vostra privacitat. Registreu-vos amb el meu enllaç de recomanació per a obtenir 1 mes de característiques prèmium gratuïtament: ${ referrerLink }"
       ],
       "JCB logo": [
         "Logotip de JCB"
@@ -10856,9 +10859,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Milloreu ara per obtenir característiques prèmium, productes i emmagatzematge a un preu especial"
       ],
-      "Upgrade to ${ firstPlanNames }, or ${ lastPlanName } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Milloreu al pla ${ firstPlanNames } o ${ lastPlanName } per tenir accés a ${ PROTON_SENTINEL_NAME }."
-      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Milloreu per afegir una adreça @pm.me més curta al vostre compte que sigui més fàcil de compartir. Vol dir «${ MAIL_APP_NAME } me» o «Private Message me»."
       ],
@@ -10867,6 +10867,9 @@
       ],
       "Upgrade to unlock": [
         "Milloreu el vostre pla per a desbloquejar"
+      ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Milloreu al pla ${ firstPlanNames } o ${ lastPlanName } per tenir accés a ${ PROTON_SENTINEL_NAME }."
       ],
       "Upload picture": [
         "Carrega la imatge"
@@ -13010,7 +13013,7 @@
         "Propòsit"
       ],
       "Read": [
-        "Llegeix"
+        "Llegits"
       ],
       "Recommended": [
         "Recomanat"
@@ -16310,7 +16313,7 @@
         "Comenceu a utilitzar ${ appName }"
       ],
       "Upgrade": [
-        "Millora"
+        "Millora el pla"
       ],
       "Upgrade my plan": [
         "Millora el meu pla"
@@ -18401,7 +18404,7 @@
         "Cancel·la el restabliment de contrasenya"
       ],
       "Cancel reset": [
-        "Cancel·li el restabliment"
+        "Cancel·la el restabliment"
       ],
       "Reset password": [
         "Restableix la contrasenya"
@@ -19413,7 +19416,7 @@
         "Tingueu accés al contingut en estríming."
       ],
       "Upgrade": [
-        "Millora"
+        "Millora el pla"
       ],
       "Upgrade for ${ pricingTitle }": [
         "Milloreu el pla per ${ pricingTitle }"
@@ -20424,7 +20427,7 @@
         "Doneu suport a la nostra missió"
       ],
       "Upgrade": [
-        "Millora"
+        "Millora el pla"
       ],
       "Upgrade your productivity": [
         "Milloreu la vostra productivitat"
@@ -21196,9 +21199,6 @@
       "Are you sure?": [
         "N'esteu segur?"
       ],
-      "Authentication security": [
-        "Seguretat de l'autenticació"
-      ],
       "Auto-deletion is active": [
         "La supressió automàtica està activada."
       ],
@@ -21797,7 +21797,7 @@
         "Com triar un bon logo"
       ],
       "How to refer a friend and get credits": [
-        "Com recomanar un amic i obtenir crèdits"
+        "Com recomanar una amistat i obtenir crèdits"
       ],
       "How your free trial works": [
         "Com funciona la vostra prova gratuïta"
@@ -22086,7 +22086,7 @@
         "Arxiu de recuperació"
       ],
       "Refer a friend": [
-        "Recomana a un amic"
+        "Recomana una amistat"
       ],
       "Reject device?": [
         "Voleu rebutjar el dispositiu?"
@@ -22162,6 +22162,9 @@
       ],
       "Secure your passwords. Everywhere.": [
         "Protegiu les vostres contrasenyes allà on sigueu."
+      ],
+      "Security": [
+        "Seguretat"
       ],
       "Security and privacy": [
         "Seguretat i privacitat"
@@ -22874,6 +22877,9 @@
       ],
       "This key is used for email forwarding": [
         "Aquesta clau s'utilitza per al reenviament de correu electrònic"
+      ],
+      "This setting is managed by your organization": [
+        "Aquesta preferència la gestiona la vostra organització"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "A menys que es desxifrin, les contrasenyes xifrades romanen segures encara que estiguin exposades."

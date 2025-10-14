@@ -2144,6 +2144,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
         "Anda dapat memiliki hingga ${ TRIAL_MAX_USERS } pengguna selama masa uji coba."
+      ],
+      "You have reached the trial limit.": [
+        "Anda telah mencapai batas uji coba Anda."
       ]
     },
     "b2b_trials_2025_Label": {
@@ -2936,6 +2939,9 @@
       ],
       "Upload and query small files": [
         "Unggah dan kuerikan berkas kecil"
+      ],
+      "Web search access": [
+        "Akses pencarian web"
       ]
     },
     "collider_2025: Feature": {
@@ -4916,16 +4922,6 @@
         "Anda kini dapat menutup tab ini."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "CATATAN:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "DESKRIPSI:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } telah dibatalkan."
@@ -4963,11 +4959,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Dihapus"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "LOKASI:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -7431,6 +7422,9 @@
       "Device": [
         "Perangkat"
       ],
+      "Domain": [
+        "Domain"
+      ],
       "Enter your email address": [
         "Masukkan alamat email Anda"
       ],
@@ -7505,6 +7499,9 @@
       ],
       "User": [
         "Pengguna"
+      ],
+      "Username": [
+        "Nama pengguna"
       ]
     },
     "Header for addresses table": {
@@ -8255,6 +8252,12 @@
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Langkah 1:** Undang teman Anda ke ${ BRAND_NAME } dengan tautan rujukan Anda."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Langkah 2:** Teman Anda memperoleh 2 minggu gratis untuk paket mereka."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Langkah 3:** Dapatkan saldo senilai ${ referrerRewardAmount } untuk setiap orang yang berlangganan ke salah satu paket."
       ],
       "**Sync codes** to all your devices": [
         "**Sinkronkan kode** ke seluruh perangkat Anda"
@@ -10688,9 +10691,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Tingkatkan sekarang untuk memperoleh berbagai fitur, produk, dan ruang penyimpanan berkapasitas premium dengan harga khusus"
-      ],
-      "Upgrade to ${ firstPlanNames }, or ${ lastPlanName } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Tingkatkan ke paket ${ firstPlanNames } atau ${ lastPlanName } untuk memperoleh akses ke ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Tingkatkan akun Anda untuk menggunakan alamat @pm.me yang lebih pendek dan lebih mudah untuk dibagikan. Alamat ini merupakan kependekan dari “${ MAIL_APP_NAME } me” atau \"Private Message me\"."
@@ -13788,6 +13788,9 @@
       ],
       "Edit": [
         "Sunting"
+      ],
+      "Enable user": [
+        "Aktifkan pengguna"
       ],
       "Remove": [
         "Hapus"
@@ -17248,6 +17251,9 @@
       ]
     },
     "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } per rujukan"
+      ],
       "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
         "**Apabila Anda membatalkan sebelum tanggal ini,** paket Anda akan **diturunkan** ke ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } pada saat masa uji coba berakhir."
       ],
@@ -17262,6 +17268,9 @@
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Nikmati **${ planTitle }** secara cuma-cuma hingga **${ textDate }**."
+      ],
+      "Refer friends": [
+        "Rujuk teman"
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Anda memiliki **${ daysRemaining } hari tersisa** untuk menjelajahi seluruh fitur canggih yang dimiliki oleh **${ planTitle }**."
@@ -20809,9 +20818,6 @@
       ],
       "Are you sure?": [
         "Apakah Anda yakin?"
-      ],
-      "Authentication security": [
-        "Keamanan autentikasi"
       ],
       "Auto-deletion is active": [
         "Penghapusan otomatis aktif"

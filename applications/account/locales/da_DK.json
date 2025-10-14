@@ -4467,16 +4467,6 @@
         "Du kan godt lukke denne fane."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "NOTE:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "BESKRIVELSE:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } blev annulleret."
@@ -4514,11 +4504,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Fjernet"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "LOKATION:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -18655,9 +18640,6 @@
       ],
       "Are you sure?": [
         "Er du sikker?"
-      ],
-      "Authentication security": [
-        "Godkendelses-sikkerhed"
       ],
       "Auto-deletion is active": [
         "Automatisk sletning er aktiv"

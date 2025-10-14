@@ -5021,16 +5021,6 @@
         "Tuto záložku můžete bezpečně zavřít."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "POZNÁMKA:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "POPIS:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "Událost ${ eventTitle } byla zrušena."
@@ -5038,8 +5028,14 @@
       "All events in this series were updated.": [
         "Všechny události této série byly aktualizovány."
       ],
+      "DESCRIPTION:": [
+        "POPIS:"
+      ],
       "Here's what changed:": [
         "Toto se změnilo:"
+      ],
+      "LOCATION:": [
+        "UMÍSTĚNÍ:"
       ],
       "NOTE:": [
         "POZNÁMKA:"
@@ -5052,6 +5048,15 @@
       ],
       "This event was updated.": [
         "Tato událost byla aktualizována."
+      ],
+      "TIME:": [
+        "ČAS:"
+      ],
+      "TITLE:": [
+        "NÁZEV:"
+      ],
+      "You are invited to": [
+        "Jste pozváni na"
       ]
     },
     "Email body for invitation (date part)": {
@@ -5068,11 +5073,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Odebráno"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "MÍSTO:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -8409,6 +8409,9 @@
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } je pokročilý program na ochranu účtů založený na sofistikovaných systémech umělé inteligence a specialistech, kteří nepřetržitě pracují na vaší ochraně před útočníky a bezpečnostními hrozbami."
       ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } je pokročilý program na ochranu účtů založený na sofistikovaných systémech umělé inteligence a specialistech, kteří nepřetržitě pracují na vaší ochraně před útočníky a bezpečnostními hrozbami."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } chrání váš účet pomocí dedikovaného sledování podezřelých aktivit."
       ],
@@ -9662,6 +9665,9 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Pokud jste nedávno resetovali heslo, můžete svá data odemknout pomocí metody obnovy dat"
+      ],
+      "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
+        "Pokud má vaše organizace veřejné osoby, nakládá s citlivými daty nebo se může stát cílem kybernetických útoků, důrazně doporučujeme povolit ${ PROTON_SENTINEL_NAME } pro všechny ve vaší organizaci."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Pokud máte potíže, rádi vám pomůžeme. ${ boldPhoneCall } nebo ${ boldZoomMeeting } s jedním z našich specialistů podpory, nebo si otevřete ${ boldLiveChat } pro podporu na chatu."
@@ -11079,9 +11085,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navyšte tarif nyní a získejte tím prémiové funkce, produkty a úložiště za speciální cenu"
       ],
-      "Upgrade to ${ firstPlanNames }, or ${ lastPlanName } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Navyšte na ${ firstPlanNames } nebo na tarif ${ lastPlanName } a získejte přístup k ${ PROTON_SENTINEL_NAME }."
-      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Navyšte tarif pro získání kratší adresy @pm.me, kterou lze snáze sdílet. Její význam je \"${ MAIL_APP_NAME } me\" nebo \"Private Message me\"."
       ],
@@ -11090,6 +11093,9 @@
       ],
       "Upgrade to unlock": [
         "Navyšte pro odemknutí"
+      ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Navyšte na ${ firstPlanNames } nebo na tarif ${ lastPlanName } a získejte přístup k ${ PROTON_SENTINEL_NAME }."
       ],
       "Upload picture": [
         "Nahrát obrázek"
@@ -21758,9 +21764,6 @@
       "Are you sure?": [
         "Jste si jisti?"
       ],
-      "Authentication security": [
-        "Zabezpečení ověření"
-      ],
       "Auto-deletion is active": [
         "Automatické mazání je aktivní"
       ],
@@ -22733,6 +22736,9 @@
       "Secure your passwords. Everywhere.": [
         "Zabezpečte svá hesla. Kdekoliv."
       ],
+      "Security": [
+        "Zabezpečení"
+      ],
       "Security and privacy": [
         "Bezpečnost a soukromí"
       ],
@@ -23446,6 +23452,9 @@
       ],
       "This key is used for email forwarding": [
         "Tento klíč se používá k přeposílání e-mailů"
+      ],
+      "This setting is managed by your organization": [
+        "Tato nastavení je spravováno vaší organizací"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Pokud nejsou dešifrována, zůstávají zašifrovaná hesla bezpečná, i když uniknou."

@@ -4974,16 +4974,6 @@
         "Ya puedes cerrar esta ventana."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "NOTA:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "DESCRIPCIÓN:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "Se ha cancelado ${ eventTitle }."
@@ -4991,8 +4981,14 @@
       "All events in this series were updated.": [
         "Todos los eventos en esta serie se han actualizado."
       ],
+      "DESCRIPTION:": [
+        "DESCRIPCIÓN:"
+      ],
       "Here's what changed:": [
         "Esto es lo que ha cambiado:"
+      ],
+      "LOCATION:": [
+        "UBICACIÓN:"
       ],
       "NOTE:": [
         "NOTA:"
@@ -5005,6 +5001,15 @@
       ],
       "This event was updated.": [
         "Se ha actualizado este evento."
+      ],
+      "TIME:": [
+        "HORA:"
+      ],
+      "TITLE:": [
+        "TÍTULO:"
+      ],
+      "You are invited to": [
+        "Estás invitado a"
       ]
     },
     "Email body for invitation (date part)": {
@@ -5021,11 +5026,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Eliminado"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "LUGAR:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -8267,6 +8267,9 @@
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } es un programa avanzado de protección de cuentas impulsado por sistemas sofisticados de inteligencia artificial y especialistas que trabajan las 24 horas para protegerte de malos actores y amenazas de seguridad."
       ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } es un programa avanzado de protección de cuentas impulsado por sofisticados sistemas de inteligencia artificial y especialistas que trabajan las 24 horas para proteger a tu organización de malos actores y amenazas de seguridad."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } protege tu cuenta con monitoreo dedicado de actividades sospechosas."
       ],
@@ -9468,6 +9471,9 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Si has restablecido recientemente tu contraseña, puedes utilizar un método de recuperación de datos para desbloquear tus datos."
+      ],
+      "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
+        "Si tu organización tiene figuras públicas, maneja datos sensibles o puede ser blanco de ciberataques, se recomienda encarecidamente activar ${ PROTON_SENTINEL_NAME } para todos los miembros de tu organización."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Estamos para ayudarte si tienes problemas. ${ boldPhoneCall } o una ${ boldZoomMeeting } con uno de nuestros especialistas de soporte, o abre el ${ boldLiveChat } para soporte vía chat."
@@ -10853,9 +10859,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Pasa a un plan superior ahora para obtener funciones premium, productos y almacenamiento a un precio especial."
       ],
-      "Upgrade to ${ firstPlanNames }, or ${ lastPlanName } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Mejora al plan de ${ firstPlanNames }, o ${ lastPlanName } para obtener acceso a ${ PROTON_SENTINEL_NAME }."
-      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Mejora tu cuenta para añadir una dirección corta @pm.me que es más fácil de compartir. Significa «${ MAIL_APP_NAME }» o «Private Message me»."
       ],
@@ -10864,6 +10867,9 @@
       ],
       "Upgrade to unlock": [
         "Mejora tu suscripción para desbloquear"
+      ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Mejora tu plan a ${ firstPlanNames } o ${ lastPlanName } para obtener acceso a ${ PROTON_SENTINEL_NAME }."
       ],
       "Upload picture": [
         "Cargar imagen"
@@ -21260,9 +21266,6 @@
       "Are you sure?": [
         "¿Estás seguro?"
       ],
-      "Authentication security": [
-        "Autenticación de seguridad"
-      ],
       "Auto-deletion is active": [
         "La eliminación automática está activa."
       ],
@@ -22224,6 +22227,9 @@
       "Secure your passwords. Everywhere.": [
         "Asegura tus contraseñas. En todo lugar."
       ],
+      "Security": [
+        "Seguridad"
+      ],
       "Security and privacy": [
         "Seguridad y privacidad"
       ],
@@ -22935,6 +22941,9 @@
       ],
       "This key is used for email forwarding": [
         "Esta clave se usa para el reenvío de correo electrónico."
+      ],
+      "This setting is managed by your organization": [
+        "Este ajuste está administrado por su organización"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "A menos que se descifren, las contraseñas cifradas permanecen seguras incluso si están expuestas."

@@ -4955,16 +4955,6 @@
         "このタブは安全に閉じても問題ありません。"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "注意:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "説明:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } はキャンセルされました。"
@@ -5002,11 +4992,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "削除済み"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "場所:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -10745,9 +10730,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "今すぐアップグレードして、プレミアム機能、製品、ストレージを特別価格で手に入れよう"
-      ],
-      "Upgrade to ${ firstPlanNames }, or ${ lastPlanName } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "${ PROTON_SENTINEL_NAME }を利用するには、${ firstPlanNames }または${ lastPlanName }をアップグレードしてください。"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "アップグレードすると、共有しやすくなる短い @pm.me アドレスがアカウントに追加されます。 これは「${ MAIL_APP_NAME } me」または「Private Message me」の略です。"
@@ -20923,9 +20905,6 @@
       ],
       "Are you sure?": [
         "本当によろしいですか？"
-      ],
-      "Authentication security": [
-        "認証セキュリティ"
       ],
       "Auto-deletion is active": [
         "自動削除が有効です"
