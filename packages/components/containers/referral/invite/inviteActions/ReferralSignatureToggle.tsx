@@ -26,6 +26,7 @@ const useAvailableApps = () => {
     const [organization] = useOrganization();
 
     const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
+    const isSheetsAvailable = useFlag('DocsSheetsEnabled');
     const isMeetAvailable = useFlag('PMVC2025');
 
     const availableApps = getAvailableApps({
@@ -33,6 +34,7 @@ const useAvailableApps = () => {
         context: 'app',
         organization,
         isDocsHomepageAvailable,
+        isSheetsAvailable,
         isMeetAvailable,
     });
 
