@@ -1,7 +1,6 @@
 import { Notification, Event, app } from "electron";
 import { saveAppID } from "./store/idStore";
 import { getSettings } from "./store/settingsStore";
-import { performStoreMigrations } from "./store/storeMigrations";
 import { initializeUpdateChecks, updateDownloaded } from "./update";
 import { isMac } from "./utils/helpers";
 import { urlOverrideError } from "./utils/view/dialogs";
@@ -16,7 +15,6 @@ import pkg from "../package.json";
 import { initializeDarkTheme } from "./utils/themes";
 import { handleWebContents } from "./utils/view/webContents";
 import { connectNetLogger, initializeLog, mainLogger } from "./utils/log";
-import { checkDeepLinks } from "./utils/protocol/deep_links";
 import { initializeSentry } from "./utils/sentry";
 import { setRequestPermission, extendAppVersionHeader } from "./utils/session";
 import { captureTopLevelRejection, captureUncaughtErrors } from "./utils/log/captureUncaughtErrors";
@@ -54,9 +52,6 @@ import metrics from "./utils/metrics";
             "DocumentPictureInPictureAPI",
         ].join(","),
     );
-
-    // Store migrations
-    performStoreMigrations();
 
     // Used to make the app run on Parallels Desktop
     // app.commandLine.appendSwitch("no-sandbox");
@@ -101,7 +96,6 @@ import metrics from "./utils/metrics";
     // After this point we should be able to use all electron APIs safely.
     await app.whenReady();
 
-    checkDeepLinks();
     connectNetLogger(getWebContentsViewName);
     initializeUpdateChecks();
     new Notification();
