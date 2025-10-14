@@ -3136,16 +3136,6 @@
         "Τα πεδία κειμένου είναι προαιρετικά. Οι πληροφορίες που παρέχετε σε αυτήν τη φόρμα θα αλλάξουν μόνο το τιμολόγιο που έχετε επιλέξει και όχι τα μελλοντικά στοιχεία του τιμολογίου σας."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "ΣΗΜΕΙΩΣΗ:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "ΠΕΡΙΓΡΑΦΗ:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "Το ${ eventTitle } ακυρώθηκε."
@@ -3153,8 +3143,14 @@
       "All events in this series were updated.": [
         "Όλες οι εκδηλώσεις αυτής της σειράς ενημερώθηκαν."
       ],
+      "DESCRIPTION:": [
+        "ΠΕΡΙΓΡΑΦΗ:"
+      ],
       "Here's what changed:": [
         "Δείτε τι άλλαξε:"
+      ],
+      "LOCATION:": [
+        "ΤΟΠΟΘΕΣΙΑ:"
       ],
       "NOTE:": [
         "ΣΗΜΕΙΩΣΗ:"
@@ -3167,6 +3163,15 @@
       ],
       "This event was updated.": [
         "Αυτή η εκδήλωση ενημερώθηκε."
+      ],
+      "TIME:": [
+        "ΩΡΑ:"
+      ],
+      "TITLE:": [
+        "ΤΙΤΛΟΣ:"
+      ],
+      "You are invited to": [
+        "Είστε προσκεκλημένοι στο"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3183,11 +3188,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Αφαιρέθηκε"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "ΤΟΠΟΘΕΣΙΑ:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
