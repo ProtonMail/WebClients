@@ -1,9 +1,11 @@
 import type { RenderResult } from '@testing-library/react';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { fireEvent } from '@testing-library/react';
 
 import type { MessageStateWithData, PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
 import { pick } from '@proton/shared/lib/helpers/object';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 
 import { addComposerAction } from 'proton-mail/store/composers/composerActions';

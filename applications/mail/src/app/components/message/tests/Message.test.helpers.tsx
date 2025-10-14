@@ -1,5 +1,6 @@
 import type { MutableRefObject } from 'react';
 
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { act, findByTestId, fireEvent, waitFor } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 

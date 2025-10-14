@@ -1,4 +1,5 @@
 import type { FeatureCode } from '@proton/features';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import {
     addApiMock,
     addApiResolver,
