@@ -1,5 +1,6 @@
 import type { MutableRefObject, ReactElement, ReactNode } from 'react';
 
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { act } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
@@ -15,6 +16,7 @@ import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import { DEFAULT_MAIL_SETTINGS, VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
 import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 import range from '@proton/utils/range';
 
