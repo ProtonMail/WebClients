@@ -4977,16 +4977,6 @@
         "Puoi chiudere questa scheda."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "NOTA:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "DESCRIZIONE:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } è stato cancellato."
@@ -4994,8 +4984,14 @@
       "All events in this series were updated.": [
         "Tutti gli eventi di questa serie sono stati aggiornati."
       ],
+      "DESCRIPTION:": [
+        "DESCRIZIONE:"
+      ],
       "Here's what changed:": [
         "Ecco cosa è cambiato:"
+      ],
+      "LOCATION:": [
+        "LUOGO:"
       ],
       "NOTE:": [
         "NOTA:"
@@ -5008,6 +5004,15 @@
       ],
       "This event was updated.": [
         "Questo evento è stato aggiornato."
+      ],
+      "TIME:": [
+        "DATA:"
+      ],
+      "TITLE:": [
+        "TITOLO:"
+      ],
+      "You are invited to": [
+        "Sei invitato a"
       ]
     },
     "Email body for invitation (date part)": {
@@ -5024,11 +5029,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Rimosso"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "POSIZIONE:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -8267,6 +8267,9 @@
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } è un programma di protezione avanzato per gli account, basato su una sofisticata intelligenza artificiale e specialisti pronti a proteggerti dai malintenzionati in rete e da tutte le minacce di sicurezza."
       ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } è un programma di protezione avanzato per gli account, basato su una sofisticata intelligenza artificiale e specialisti pronti a proteggerti dai malintenzionati in rete e da tutte le minacce di sicurezza."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } protegge il tuo account con uno scrupoloso monitoraggio delle attività sospette."
       ],
@@ -9468,6 +9471,9 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Se hai recentemente reimpostato la tua password, puoi usare un metodo di recupero dei dati per sbloccare i tuoi dati"
+      ],
+      "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
+        "Se la tua organizzazione ha figure pubbliche, gestisce dati sensibili o potrebbe essere oggetto di attacchi informatici, ti invitiamo vivamente ad attivare ${ PROTON_SENTINEL_NAME } per tutti i membri della tua organizzazione."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Se riscontri problemi, siamo qui per aiutarti. ${ boldPhoneCall } o ${ boldZoomMeeting } con uno dei nostri specialisti dell'assistenza oppure apri una ${ boldLiveChat } per ricevere assistenza via chat."
@@ -10859,9 +10865,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Effettua l'upgrade adesso per ottenere funzionalità premium, prodotti e spazio di archiviazione a un prezzo speciale"
       ],
-      "Upgrade to ${ firstPlanNames }, or ${ lastPlanName } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Esegui l'upgrade al piano ${ firstPlanNames } o al piano ${ lastPlanName } per ottenere l'accesso a ${ PROTON_SENTINEL_NAME }."
-      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Effettua l'upgrade per aggiungere un indirizzo @pm.me al tuo account, più breve e più facile da condividere. Significa \"${ MAIL_APP_NAME } me\" o \"Private Message me\"."
       ],
@@ -10870,6 +10873,9 @@
       ],
       "Upgrade to unlock": [
         "Effettua l'upgrade per sbloccare"
+      ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Esegui l'upgrade al piano ${ firstPlanNames } o al piano ${ lastPlanName } per ottenere l'accesso a ${ PROTON_SENTINEL_NAME }."
       ],
       "Upload picture": [
         "Carica immagine"
@@ -21318,9 +21324,6 @@
       "Are you sure?": [
         "Sei sicuro?"
       ],
-      "Authentication security": [
-        "Sicurezza autenticazione"
-      ],
       "Auto-deletion is active": [
         "L'eliminazione automatica é attiva."
       ],
@@ -22285,6 +22288,9 @@
       "Secure your passwords. Everywhere.": [
         "Proteggi le tue password. Ovunque."
       ],
+      "Security": [
+        "Sicurezza"
+      ],
       "Security and privacy": [
         "Sicurezza e privacy"
       ],
@@ -22996,6 +23002,9 @@
       ],
       "This key is used for email forwarding": [
         "Questa chiave è usata per l'inoltro delle email"
+      ],
+      "This setting is managed by your organization": [
+        "Questa impostazione è gestita dalla tua organizzazione"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "A meno che non vengano decifrate, le password crittografate rimangono sicure anche se vengono esposte."

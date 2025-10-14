@@ -3888,11 +3888,6 @@
         "आप इस टैब को सुरक्षित रूप से बंद कर सकते हैं।"
       ]
     },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "विवरण:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } रद्द कर दिया गया था।"
@@ -3921,11 +3916,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "हटाया गया"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "स्थान:\n${ eventLocation }"
       ]
     },
     "Email spam notification": {
@@ -8730,9 +8720,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "विशेष मूल्य पर प्रीमियम सुविधाएं, उत्पाद और संग्रहण प्राप्त करने के लिए अभी अपग्रेड करें"
-      ],
-      "Upgrade to ${ firstPlanNames }, or ${ lastPlanName } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "अपग्रेड करें ${ firstPlanNames }, या ${ lastPlanName } प्लैन में, ताकि आपको ${ PROTON_SENTINEL_NAME } तक पहुंच मिल सके।"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "अपने खाते में एक छोटा @pm.me पता जोड़ने के लिए अपग्रेड करें जिसे साझा करना आसान हो। इसका मतलब है “${ MAIL_APP_NAME } me” या “मुझे निजी संदेश भेजें”।"
@@ -16703,9 +16690,6 @@
       ],
       "Are you sure?": [
         "क्या आप पक्का हैं?"
-      ],
-      "Authentication security": [
-        "प्रमाणीकरण सुरक्षा"
       ],
       "Auto-deletion is active": [
         "स्वचालित हटाना सक्रिय है"

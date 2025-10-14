@@ -4661,16 +4661,6 @@
         "Voit sulkea välilehden turvallisesti."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "MUISTIINPANO:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "KUVAUS:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } peruttiin."
@@ -4708,11 +4698,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Poistettu"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "SIJAINTI:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -10169,9 +10154,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Päivitä nyt hankkiaksesi premium-ominaisuudet, -tuotteet ja -tallennustila erikoishintaan"
-      ],
-      "Upgrade to ${ firstPlanNames }, or ${ lastPlanName } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Hanki ${ PROTON_SENTINEL_NAME } päivittämällä ${ firstPlanNames }- tai ${ lastPlanName }-tilaukseen."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Päivitä tilauksesi ja lisää tilillesi jakamista helpottava lyhyempi @pm.me-osoite. Se on lyhenne sanoista \"${ MAIL_APP_NAME } me\" tai \"Private Message me\"."
@@ -19675,9 +19657,6 @@
       ],
       "Are you sure?": [
         "Oletko varma?"
-      ],
-      "Authentication security": [
-        "Tunnistautumisen turvallisuus"
       ],
       "Auto-deletion is active": [
         "Automaattinen poisto on käytössä"

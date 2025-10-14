@@ -4589,16 +4589,6 @@
         "Вы можете безопасно закрыть эту вкладку."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "ПРИМЕЧАНИЕ:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "Описание:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } было отменено."
@@ -4636,11 +4626,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Удалено"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "Местоположение:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -8216,7 +8201,7 @@
       ],
       "Create a secure cloud for ${ value } member": [
         "Создать безопасное облако для ${ value } участника",
-        "Создать безопасное облако для ${ value } участника",
+        "Создать безопасное облако для ${ value } участников",
         "Создать безопасное облако для ${ value } участников",
         "Создать безопасное облако для ${ value } участников"
       ],
@@ -10079,9 +10064,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Улучшить сейчас, чтобы получить платные функции, программное обеспечение и хранилище по специальной цене"
-      ],
-      "Upgrade to ${ firstPlanNames }, or ${ lastPlanName } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Перейдите на тариф ${ firstPlanNames } или ${ lastPlanName }, чтобы получить доступ к ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Обновите тариф, чтобы добавить к своей учетной записи более короткий адрес @pm.me, которым проще поделиться. Он означает «Напишите мне в ${ MAIL_APP_NAME }» или «Отправьте мне личное сообщение»."
@@ -19620,9 +19602,6 @@
       ],
       "Are you sure?": [
         "Вы уверены?"
-      ],
-      "Authentication security": [
-        "Безопасность аутентификации"
       ],
       "Auto-deletion is active": [
         "Автоматическое удаление включено"
