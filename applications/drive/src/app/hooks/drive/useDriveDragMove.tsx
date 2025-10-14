@@ -15,6 +15,8 @@ import type { DragMoveControls } from '../../components/FileBrowser/interface';
 import type { DriveItem } from '../../components/sections/Drive/Drive';
 import { useActions } from '../../store';
 import type { LinkInfo } from '../../store/_actions/interface';
+import { getActionEventManager } from '../../utils/ActionEventManager/ActionEventManager';
+import { ActionEventName } from '../../utils/ActionEventManager/ActionEventManagerTypes';
 import { type MoveNodesItemMap, useMoveNodes } from '../sdk/useMoveNodes';
 
 type DragAndDropItem = DriveItem;
@@ -27,7 +29,11 @@ export default function useDriveDragMove(shareId: string, contents: DragAndDropI
     const dragEnterCounter = useRef(0);
     const selectionControls = useSelection();
     const useSDKFolders = useFlag('DriveWebSDKFolders');
-    const { moveNodes } = useMoveNodes();
+    const { moveNodes } = useMoveNodes({ onSuccess });
+
+    function onSuccess(items: { uid: string; parentUid: string | undefined }[]) {
+        void getActionEventManager().emit({ type: ActionEventName.MOVED_NODES, items });
+    }
 
     const selectedItems = React.useMemo(
         () =>
@@ -64,7 +70,8 @@ export default function useDriveDragMove(shareId: string, contents: DragAndDropI
         }));
 
         if (useSDKFolders) {
-            const itemMap: MoveNodesItemMap = selectedItems.reduce((acc, item) => {
+            // When dropping from the breadcrumb we don't have selectedItems so we have to use the drag start payload
+            const itemMap: MoveNodesItemMap = toMoveInfo.reduce((acc, item) => {
                 const uid = generateNodeUid(item.volumeId, item.linkId);
                 const parentUid = generateNodeUid(item.volumeId, item.parentLinkId);
                 return { ...acc, [uid]: { name: item.name, parentUid } };
