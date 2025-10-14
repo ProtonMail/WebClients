@@ -1,6 +1,6 @@
 import type { FieldType } from '@proton/pass/fathom';
 import { seq } from '@proton/pass/utils/fp/promises';
-import { safeCall } from '@proton/pass/utils/fp/safe-call';
+import { safeAsyncCall } from '@proton/pass/utils/fp/safe-call';
 import noop from '@proton/utils/noop';
 
 export type AutofillOptions = {
@@ -28,7 +28,7 @@ const dispatchEvents =
  * attach their event listeners not directly on the input
  * elements (ie: account.google.com) */
 export const createAutofill = (input: HTMLInputElement) =>
-    safeCall(async (data: string, options?: AutofillOptions) => {
+    safeAsyncCall(async (data: string, options?: AutofillOptions) => {
         const dispatch = dispatchEvents(input);
 
         if (typeof input?.click === 'function') input.click();
