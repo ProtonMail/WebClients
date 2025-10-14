@@ -4284,16 +4284,6 @@
         "Pola tekstowe są opcjonalne. Podane informacje zmienią tylko wybraną fakturę, a nie dane przyszłej faktury."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "WIADOMOŚĆ:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "OPIS:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "Wydarzenie ${ eventTitle } zostało anulowane."
@@ -4331,11 +4321,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Usunięte"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "LOKALIZACJA:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {

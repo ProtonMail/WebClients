@@ -1029,6 +1029,9 @@
       "Page ${ pageNumber }": [
         "Halaman ${ pageNumber }"
       ],
+      "Passphrase": [
+        "Frasa sandi"
+      ],
       "Pause": [
         "Jeda"
       ],
@@ -1475,6 +1478,9 @@
       ],
       "Try another method": [
         "Coba metode lain"
+      ],
+      "Try categories": [
+        "Coba kategori"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Cobalah untuk menyimpan kembali. Penyimpanan gagal karena: ${ saveError }"
@@ -1989,6 +1995,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
         "Anda dapat memiliki hingga ${ TRIAL_MAX_USERS } pengguna selama masa uji coba."
+      ],
+      "You have reached the trial limit.": [
+        "Anda telah mencapai batas uji coba Anda."
       ]
     },
     "b2b_trials_Action": {
@@ -2663,6 +2672,9 @@
       ],
       "Upload and query small files": [
         "Unggah dan kuerikan berkas kecil"
+      ],
+      "Web search access": [
+        "Akses pencarian web"
       ]
     },
     "collider_2025: Info": {
@@ -4262,16 +4274,6 @@
         "Kolom teks bersifat opsional. Informasi yang Anda sediakan dalam formulir ini hanya akan mengubah isi faktur yang Anda pilih tanpa memengaruhi rincian faktur yang akan datang."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "CATATAN:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "DESKRIPSI:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } telah dibatalkan."
@@ -4309,11 +4311,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Dihapus"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "LOKASI:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -5857,6 +5854,9 @@
       "Contacts": [
         "Kontak"
       ],
+      "Domain": [
+        "Domain"
+      ],
       "Drawer": [
         "Panel Samping"
       ],
@@ -5880,6 +5880,9 @@
       ],
       "Tell us more": [
         "Beri tahu kami lebih lanjut"
+      ],
+      "Username": [
+        "Nama pengguna"
       ]
     },
     "Hint": {
@@ -6468,6 +6471,18 @@
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Langkah 1:** Undang teman Anda ke ${ BRAND_NAME } dengan tautan rujukan Anda."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
+        "**Langkah 2:** Teman Anda memperoleh 2 minggu gratis untuk paket ${ BRAND_NAME } pilihan mereka."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Langkah 2:** Teman Anda memperoleh 2 minggu gratis untuk paket mereka."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**Langkah 3:** Dapatkan saldo senilai ${ referrerRewardAmount } untuk setiap teman yang berlangganan ke salah satu paket."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Langkah 3:** Dapatkan saldo senilai ${ referrerRewardAmount } untuk setiap orang yang berlangganan ke salah satu paket."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ruang penyimpanan tambahan"
@@ -7188,6 +7203,9 @@
       ],
       "Included for free with your plan": [
         "Terliput secara gratis dengan paket Anda"
+      ],
+      "Includes marketing emails like offers and product announcements.": [
+        "Meliputi email pemasaaran seperti penawaran dan pengumuman produk."
       ],
       "Includes news recaps and other non-promotional content. ": [
         "Meliputi rekap berita dan konten non-promosional lainnya. "
@@ -9205,6 +9223,9 @@
       ],
       "Go to Promotions": [
         "Ke Penawaran"
+      ],
+      "Go to Social": [
+        "Pergi ke Sosial"
       ],
       "Go to Transactions": [
         "Ke Transaksi"
@@ -11367,6 +11388,9 @@
       "Finance": [
         "Keuangan"
       ],
+      "Maybe later": [
+        "Mungkin nanti"
+      ],
       "Privacy for all your online accounts": [
         "Privasi untuk seluruh akun online Anda"
       ],
@@ -12272,6 +12296,9 @@
       ]
     },
     "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } per rujukan"
+      ],
       "Friend joined": [
         "Teman yang bergabung"
       ],
@@ -12283,6 +12310,9 @@
       ],
       "More sharing options": [
         "Opsi pembagian lainnya"
+      ],
+      "Refer friends": [
+        "Rujuk teman"
       ]
     },
     "Remaining days before the message expire": {
@@ -14595,6 +14625,9 @@
         "Pindahkan seluruh pesan ke sampah"
       ],
       "Move message to": [
+        "Pindahkan pesan ke"
+      ],
+      "Move messages to": [
         "Pindahkan pesan ke"
       ],
       "Move to": [
