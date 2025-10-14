@@ -120,7 +120,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
         setStatus(status: AppStatus) {
             logger.info(`[Worker::Context] Status update : ${context.status} -> ${status}`);
             context.status = status;
-            void setPopupIcon({ disabled: clientDisabled(status), locked: clientLocked(status) });
+            setPopupIcon({ disabled: clientDisabled(status), locked: clientLocked(status) });
             onStateUpdate(context.getState());
         },
     });
