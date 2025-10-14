@@ -328,6 +328,8 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
                 token: meetingToken,
             });
 
+            accessTokenRef.current = accessToken;
+
             const { key: groupKey, epoch } = (await handleMlsSetup(meetingToken, accessToken)) || {};
 
             await keyProvider.setKey(groupKey as string, epoch);
