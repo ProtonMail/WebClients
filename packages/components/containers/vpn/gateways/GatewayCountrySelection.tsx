@@ -270,16 +270,12 @@ export const GatewayCountrySelection = ({
                     );
                 })}
             </div>
-            <div className="flex flex-nowrap mb-4 rounded p-2 bg-weak">
-                <Icon name="info-circle" className="shrink-0" />
-                <div className="ml-2">
-                    {c('Info').ngettext(
-                        msgid`Your free trial includes ${ownedCount} dedicated server.`,
-                        `Your free trial includes ${ownedCount} dedicated servers.`,
-                        ownedCount
-                    )}
+            {isTrial && (
+                <div className="flex flex-nowrap mb-4 rounded p-2 bg-weak">
+                    <Icon name="info-circle" className="shrink-0" />
+                    <div className="ml-2">{c('Info').t`Your free trial includes 1 dedicated server.`}</div>
                 </div>
-            </div>
+            )}
         </>
     );
 };
