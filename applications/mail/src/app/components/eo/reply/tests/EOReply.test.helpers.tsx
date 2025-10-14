@@ -1,4 +1,5 @@
 import type { RenderResult } from '@testing-library/react';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { fireEvent } from '@testing-library/react';
 
 import { EORender } from '../../../../helpers/test/eo/EORender';

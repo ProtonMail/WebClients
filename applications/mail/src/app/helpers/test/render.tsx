@@ -3,7 +3,9 @@ import { useRef } from 'react';
 import { Route, Router } from 'react-router';
 
 import type { RenderResult as OriginalRenderResult, RenderOptions } from '@testing-library/react';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { act, render as originalRender } from '@testing-library/react';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { act as actHook, renderHook as originalRenderHook } from '@testing-library/react-hooks';
 import type { History } from 'history';
 import { createMemoryHistory } from 'history';
@@ -36,7 +38,9 @@ import type {
 } from '@proton/shared/lib/interfaces';
 import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 import { DEFAULT_MAIL_SETTINGS, DELAY_IN_SECONDS, PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { registerFeatureFlagsApiMock } from '@proton/testing/lib/features';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { getOrganizationState, getSubscriptionState } from '@proton/testing/lib/initialReduxState';
 
 import { ComposerAssistantProvider } from 'proton-mail/components/assistant/provider/ComposerAssistantProvider';
