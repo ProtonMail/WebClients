@@ -17,7 +17,7 @@ export interface ClientRequiresEditorMethods {
   /** Returns the Lexical state of the editor, unrelated to the Yjs state */
   getCurrentEditorState(): Promise<SerializedEditorState | undefined>
   /** Returns all the state in the current Sheet as JSON */
-  getLatestSpreadsheetStateToLogJSON(): Promise<unknown>
+  getLocalSpreadsheetStateJSON(): Promise<unknown>
   /** Returns the current Y.Doc as JSON */
   getYDocAsJSON(): Promise<unknown>
   /**
@@ -25,6 +25,7 @@ export interface ClientRequiresEditorMethods {
    * used when restoring a document from history
    */
   replaceEditorState(state: SerializedEditorState): Promise<void>
+  replaceLocalSpreadsheetState(state: unknown): Promise<void>
   getClientId(): Promise<number>
   showEditor(): Promise<void>
   showCommentsPanel(): Promise<void>

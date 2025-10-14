@@ -445,7 +445,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
         }
       },
 
-      async getLatestSpreadsheetStateToLogJSON() {
+      async getLocalSpreadsheetStateJSON() {
         return latestSpreadsheetStateToLogRef.current
       },
 
@@ -459,6 +459,12 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
           type: SheetImportEvent,
           payload: data,
         })
+      },
+
+      async replaceLocalSpreadsheetState(state) {
+        if (spreadsheetRef.current) {
+          spreadsheetRef.current.replaceLocalSpreadsheetState(state)
+        }
       },
     }
 
@@ -679,7 +685,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
               editorInitializationConfig={editorConfig.current.editorInitializationConfig}
               systemMode={systemMode}
               editingLocked={editingLocked || userMode === EditorUserMode.Preview}
-              updateLatestStateToLog={(state) => {
+              updateLocalStateToLog={(state) => {
                 latestSpreadsheetStateToLogRef.current = state
               }}
             />

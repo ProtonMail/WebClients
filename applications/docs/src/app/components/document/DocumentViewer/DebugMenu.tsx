@@ -67,7 +67,7 @@ export function DebugMenu({ docController, editorController, documentState, docu
   }
 
   const copyLatestSpreadsheetStateToLogJSON = async () => {
-    const json = await editorController.getLatestSpreadsheetStateToLogJSON()
+    const json = await editorController.getLocalSpreadsheetStateJSON()
     if (!json) {
       return
     }
