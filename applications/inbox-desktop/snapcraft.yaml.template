@@ -1,0 +1,54 @@
+name: proton-mail
+icon: assets/linux/icon.svg
+version: $APP_VERSION
+summary: Proton Mail Desktop Application
+description: |
+  Proton Mail desktop application built with Electron.
+  Secure email client from ProtonMail.
+
+base: core22
+grade: stable
+confinement: strict
+compression: lzo
+
+parts:
+  launcher:
+    plugin: dump
+    source: snap/local
+    source-type: local
+    override-build: |
+      cp -r bin $CRAFT_PART_INSTALL/
+      chmod 755 $SNAPCRAFT_PART_INSTALL/bin/launcher
+
+  proton-mail:
+    plugin: dump
+    source-type: deb
+    source: $APP_DEB_PATH
+    override-build: |
+      cp -a . $CRAFT_PART_INSTALL/
+    prime:
+      - -usr/lib/proton-mail/chrome-sandbox
+
+apps:
+  proton-mail:
+    extensions:
+      - gnome
+    command: bin/launcher
+    desktop: usr/share/applications/proton-mail.desktop
+    common-id: me.proton.Mail
+    environment:
+      TMPDIR: $XDG_RUNTIME_DIR
+      DISABLE_WAYLAND: 1
+    plugs:
+      - desktop
+      - desktop-legacy
+      - wayland
+      - unity7
+      - x11
+      - browser-support
+      - gsettings
+      - home
+      - removable-media
+      - hardware-observe
+      - u2f-devices
+      - network
