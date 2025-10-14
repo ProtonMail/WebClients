@@ -31,8 +31,8 @@ export const useCategoriesOnboarding = (): OnboardingInfo => {
     const mailChecklist = useGetStartedChecklist();
     const welcomeFlags = useWelcomeFlags();
 
-    const b2cOnboardingFlag = useFeature<number>(FeatureCode.CategoryViewB2COnboardingViewFlags);
-    const b2bOnboardingFlag = useFeature<boolean>(FeatureCode.CategoryViewB2BOnboardingView);
+    const b2cOnboardingViewFlag = useFeature<number>(FeatureCode.CategoryViewB2COnboardingViewFlags);
+    const b2bOnboardingViewFlag = useFeature<number>(FeatureCode.CategoryViewB2BOnboardingViewFlags);
     const accountDateThreshold = useFeature<number>(FeatureCode.CategoryViewOnboardingAccountDateThreshold);
 
     const loading =
@@ -41,8 +41,8 @@ export const useCategoriesOnboarding = (): OnboardingInfo => {
         loadingMailSettings ||
         messageCountsLoading ||
         conversationCountsLoading ||
-        b2cOnboardingFlag.loading ||
-        b2bOnboardingFlag.loading ||
+        b2cOnboardingViewFlag.loading ||
+        b2bOnboardingViewFlag.loading ||
         accountDateThreshold.loading;
 
     if (loading || !accountDateThreshold.feature?.Value) {
@@ -61,14 +61,17 @@ export const useCategoriesOnboarding = (): OnboardingInfo => {
 
     // B2B users conditions
     if (isUserB2B) {
-        const flagValue = !!b2bOnboardingFlag.feature?.Value;
+        const allOnboardingSeen = hasSeenAllOnboarding(AudienceType.B2B, b2bOnboardingViewFlag.feature?.Value ?? 0);
+
+        // The following condition apply for existing and new b2b users
+        const basicEligibility = !allOnboardingSeen && !isUserInWelcomeFlow;
 
         if (isExistingUser) {
             // Existing users see the spotlight right away
             return {
-                isUserEligible: !flagValue && !isUserInWelcomeFlow,
+                isUserEligible: basicEligibility,
                 audienceType: AudienceType.B2B,
-                flagValue: FeatureValueDefault,
+                flagValue: b2bOnboardingViewFlag.feature?.Value ?? 0,
             };
         } else {
             // New B2B users see the spotlight once they have a given amount of email
@@ -80,17 +83,16 @@ export const useCategoriesOnboarding = (): OnboardingInfo => {
             );
 
             return {
-                isUserEligible:
-                    !flagValue && allMailsElementsCount >= B2B_REQUIRED_NUMBER_OF_MAILS && !isUserInWelcomeFlow,
+                isUserEligible: basicEligibility && allMailsElementsCount >= B2B_REQUIRED_NUMBER_OF_MAILS,
                 audienceType: AudienceType.B2B,
-                flagValue: FeatureValueDefault,
+                flagValue: b2bOnboardingViewFlag.feature?.Value ?? 0,
             };
         }
     }
 
     // B2C users conditions
     const isChecklistFull = mailChecklist.displayState === CHECKLIST_DISPLAY_TYPE.FULL;
-    const allOnboardingSeen = hasSeenAllOnboarding(b2cOnboardingFlag.feature?.Value ?? 0);
+    const allOnboardingSeen = hasSeenAllOnboarding(AudienceType.B2C, b2cOnboardingViewFlag.feature?.Value ?? 0);
     const allMailsElementsCount = getLocationElementsCount(
         MAILBOX_LABEL_IDS.ALL_MAIL,
         conversationCounts,
@@ -106,6 +108,6 @@ export const useCategoriesOnboarding = (): OnboardingInfo => {
             allMailsElementsCount > B2C_REQUIRED_NUMBER_OF_MAILS &&
             !isChecklistFull,
         audienceType: AudienceType.B2C,
-        flagValue: b2cOnboardingFlag.feature?.Value ?? 0,
+        flagValue: b2cOnboardingViewFlag.feature?.Value ?? 0,
     };
 };
