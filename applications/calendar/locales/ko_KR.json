@@ -3263,16 +3263,6 @@
         "이벤트 편집"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "참고:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "설명:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle }이(가) 취소되었습니다."
@@ -3310,11 +3300,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "제거됨"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "위치:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {

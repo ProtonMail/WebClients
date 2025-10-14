@@ -206,7 +206,7 @@
         "Alterar senha"
       ],
       "Change sorting": [
-        "Mudar tipo"
+        "Alterar ordenação"
       ],
       "Chat with us": [
         "Converse conosco"
@@ -221,10 +221,10 @@
         "Reivindicar endereço da ${ BRAND_NAME }"
       ],
       "Claim this address": [
-        "Confirmar este endereço"
+        "Reivindicar este endereço"
       ],
       "Claim your free ${ BRAND_NAME } address": [
-        "Confirmar seu endereço de ${ BRAND_NAME }"
+        "Obtenha seu endereço ${ BRAND_NAME } gratuito"
       ],
       "Clear": [
         "Limpar"
@@ -794,7 +794,7 @@
         "Marcar como"
       ],
       "Label as...": [
-        "Rotular como..."
+        "Marcar como..."
       ],
       "label emails as": [
         "marcar e-mail como"
@@ -2424,7 +2424,7 @@
         "${ participantName } recusou o seu convite."
       ],
       "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName } havia aceito um convite e proposto um novo horário para uma ocorrências deste evento. A resposta e a proposta estão desatualizadas."
+        "${ participantName } aceitou um convite e propôs um novo horário para uma das ocorrências deste evento. A resposta e a proposta estão desatualizadas."
       ],
       "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } havia aceito um convite e proposto um novo horário para este evento. A resposta e a proposta estão desatualizadas."
@@ -4346,16 +4346,6 @@
         "Os campos de texto são opcionais. As informações fornecidas neste formulário alterarão apenas a fatura selecionada, e não os detalhes das faturas futuras."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "NOTA:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "DESCRIÇÃO:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } foi cancelado."
@@ -4393,11 +4383,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Removido"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "LOCALIZAÇÃO:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -4474,7 +4459,7 @@
     },
     "emergency_access": {
       "Trusted contact": [
-        "Contato de confiança"
+        "Contato confiável"
       ]
     },
     "Encrypted Headers": {
@@ -4979,7 +4964,7 @@
         "O nome do marcador é muito longo. Escolha um nome diferente."
       ],
       "The maximum expiration is 4 weeks": [
-        "A validade máxima é de 4 semanas"
+        "O prazo máximo de validade é de 4 semanas"
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "O valor mínimo de crédito que pode ser adicionado é ${ price }."
@@ -5111,13 +5096,13 @@
     },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
-        "Rascunhos não podem ser movidos para a caixa de entrada"
+        "Rascunhos não podem ser movidos para a Caixa de entrada"
       ],
       "Drafts cannot be moved to Spam": [
         "Rascunhos não podem ser movidos para Spam"
       ],
       "Sent messages cannot be moved to Inbox": [
-        "Mensagens enviadas não podem ser movidas para a caixa de entrada"
+        "Mensagens enviadas não podem ser movidas para a Caixa de entrada"
       ],
       "Sent messages cannot be moved to Spam": [
         "Mensagens enviadas não podem ser movidas para Spam"
@@ -5254,7 +5239,7 @@
     },
     "Error message": {
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
-        "Aliases não podem ser usados quando uma senha extra está ativada em ${ PASS_APP_NAME }"
+        "Aliases não podem ser usados quando uma senha extra está ativada no ${ PASS_APP_NAME }"
       ],
       "An error occurred with the categories": [
         "Ocorreu um erro com as categorias"
@@ -5824,7 +5809,7 @@
         "Lista de verificação completa"
       ],
       "Claim ${ BRAND_NAME } address": [
-        "Confirmar endereço de ${ BRAND_NAME }"
+        "Confirmar endereço da ${ BRAND_NAME }"
       ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Complete esta lista de tarefas em ${ daysCount } para dobrar seu armazenamento gratuitamente."
@@ -6938,7 +6923,7 @@
         "Limpar os dados do navegador também desativa a busca por conteúdo de mensagens neste dispositivo. Será necessário baixar todas as mensagens novamente para poder pesquisá-las."
       ],
       "Clears browser data (including downloaded messages, …)": [
-        "Limpa todos os dados do navegador (incluindo mensagens baixadas, …)"
+        "Limpa os dados do navegador (incluindo mensagens baixadas, …)"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clique em \"Solicitar novo código\" para que um novo código seja enviado para ${ strong }. Se esse número de telefone estiver incorreto, clique em \"Editar\" para corrigir isso."
@@ -7270,7 +7255,7 @@
         "Para acessar seu e-mail a qualquer momento e aproveitar uma experiência otimizada no seu dispositivo móvel, faça o download do nosso aplicativo para ${ androidAppLink } ou ${ iosAppLink }."
       ],
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
-        "Para segurança extra, você pode definir uma passphrase. Ela não será incluída no convite do calendário. Lembre-se de compartilhá-la com seus convidados separadamente."
+        "Para segurança extra, você pode definir uma frase secreta. Ela não será incluída no convite do calendário. Lembre-se de compartilhá-la com seus convidados separadamente."
       ],
       "For messages newer than ${ oldestDate }": [
         "Para mensagens mais novas que ${ oldestDate }"
@@ -7399,7 +7384,7 @@
         "Inclui contas, recebimentos, pedidos e reservas."
       ],
       "Includes marketing emails like offers and product announcements.": [
-        "Inclui e-mails de marketing como ofertas e anúncios de produtos."
+        "Inclui e-mails de marketing, como ofertas e anúncios de produtos."
       ],
       "Includes news recaps and other non-promotional content. ": [
         "Inclui resumos de notícias e outros conteúdos não promocionais. "
@@ -7451,7 +7436,7 @@
         "Apenas confirme sua seleção e faremos o restante."
       ],
       "Keep your login and credit card details safe but always on hand by adding it to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
-        "Mantenha seus dados de início de sessão e cartão de crédito seguros, mas sempre à mão, adicionando-os a ${ PASS_APP_NAME }. É gratuito e está incluído na sua conta ${ BRAND_NAME }."
+        "Mantenha seus dados de início de sessão e cartão de crédito seguros, mas sempre à mão, adicionando-os ao ${ PASS_APP_NAME }. É gratuito e está incluído na sua conta ${ BRAND_NAME }."
       ],
       "Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.": [
         "Mantenha sua caixa de correio organizada, limpando automaticamente o lixo e o spam que estão lá há mais de 30 dias."
@@ -7544,7 +7529,7 @@
         "Ações de mensagens em andamento. Isso pode demorar um pouco."
       ],
       "Message download status:": [
-        "Status do download de mensagens:"
+        "Status do download da mensagem:"
       ],
       "Message headers": [
         "Cabeçalho da mensagem"
@@ -7562,7 +7547,7 @@
         "Visualização de mensagem"
       ],
       "Message will be sent in the morning at ${ formattedTime }": [
-        "A mensagem será enviada amanhã às ${ formattedTime }"
+        "A mensagem será enviada pela manhã às ${ formattedTime }"
       ],
       "Message will be sent on ${ dateString } at ${ formattedTime }": [
         "A mensagem será enviada em ${ dateString } às ${ formattedTime }"
@@ -7923,7 +7908,7 @@
         "A pesquisa está demorando demais? ${ dropdownButton } ou ${ toggleOffButton } nesta pesquisa."
       ],
       "Secure your files with encrypted cloud storage for free, today.": [
-        "Proteja seus arquivos com armazenamento em nuvem criptografado gratuitamente, hoje."
+        "Proteja seus arquivos com armazenamento em nuvem criptografado gratuitamente, hoje mesmo."
       ],
       "Seems like you are all caught up for now": [
         "Parece que você está a par de tudo agora"
@@ -8312,7 +8297,7 @@
         "Para remover restrições, você pode fazer um upgrade para um plano pago."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
-        "Para cancelar a inscrição desta lista de e-mail, um e-mail será enviado de ${ boldFrom } com os seguintes detalhes definidos pelo remetente da newsletter:"
+        "Para cancelar a inscrição nesta lista de e-mails, um e-mail será enviado de ${ boldFrom } com os seguintes detalhes, conforme definido pelo remetente do boletim informativo:"
       ],
       "To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:": [
         "Para cancelar a inscrição desta lista de endereços, você será levado para o seguinte URL onde as instruções serão fornecidas pelo remetente da newsletter:"
@@ -8411,7 +8396,7 @@
         "Atualize para oferecer suporte a uma Internet que prioriza a privacidade."
       ],
       "Upgrade to support our mission of privacy for all.": [
-        "Atualize para apoiar nossa missão de privacidade para todos."
+        "Faça upgrade para apoiar nossa missão de privacidade para todos."
       ],
       "Upgrade to support privacy and get more features.": [
         "Atualize para oferecer suporte à privacidade e obter mais recursos."
@@ -8916,7 +8901,7 @@
         "Clicar em \"Chave confiável\" associará esta chave pública a este remetente e os e-mails deste endereço serão automaticamente verificados criptograficamente."
       ],
       "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
-        "Ao clicar em \"Chave confiável\" será criado um contato e esta chave pública será associada a este remetente. Os e-mails deste endereço serão automaticamente verificados de forma criptográfica."
+        "Clicar em \"Chave de Confiança\" criará um novo contato e associará esta chave pública ao remetente. Os e-mails deste endereço serão verificados criptograficamente automaticamente."
       ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Você deseja confiar a chave pública primária com a seguinte impressão digital?",
@@ -10206,7 +10191,7 @@
         "Você precisa ativar as chaves da agenda para responder este convite"
       ],
       "You need to activate your calendar keys to manage this invitation": [
-        "Você precisa ativar suas chaves de agenda para gerenciar este convite"
+        "Você precisa ativar suas chaves de calendário para gerenciar este convite"
       ],
       "You need to activate your calendar keys to see the updated event": [
         "Você precisa ativar suas chaves de calendário para ver o evento atualizado"

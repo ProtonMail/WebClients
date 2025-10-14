@@ -236,7 +236,7 @@
         "Neteja les dades de l'aplicació"
       ],
       "Clear browser data": [
-        "Netejar les dades del navegador"
+        "Neteja les dades del navegador"
       ],
       "Clear data": [
         "Neteja les dades"
@@ -317,7 +317,7 @@
         "Continua amb Outlook"
       ],
       "Continue without categories": [
-        "Continueu sense categories"
+        "Continua sense categories"
       ],
       "Contract composer": [
         "Contraure l'editor"
@@ -448,7 +448,7 @@
         "Deshabiliteu les categories"
       ],
       "Disabling alias": [
-        "Desactivació de l'àlies"
+        "S'està desactivant l'àlies"
       ],
       "Discard": [
         "Descarta"
@@ -1112,7 +1112,7 @@
         "Recuperar dades"
       ],
       "Refer a friend": [
-        "Recomana a un amic"
+        "Recomana una amistat"
       ],
       "Refine it": [
         "Afina-la"
@@ -1214,7 +1214,7 @@
         "Torneu a la vista original"
       ],
       "Run on ${ BRAND_NAME } servers": [
-        "Executeu-ho als servidors de ${ BRAND_NAME }"
+        "Executa als servidors de ${ BRAND_NAME }"
       ],
       "Save": [
         "Desa"
@@ -1502,7 +1502,7 @@
         "Proveu amb un altre mètode"
       ],
       "Try categories": [
-        "Proveu les categories"
+        "Prova les categories"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Intenteu tornar a desar. No s'ha pogut desar a causa de: ${ saveError }"
@@ -1559,16 +1559,16 @@
         "Actualitzeu la frase de contrasenya secreta"
       ],
       "Upgrade": [
-        "Millora"
+        "Millora el pla"
       ],
       "Upgrade for 200GB": [
         "Milloreu el pla per a 200 GB"
       ],
       "Upgrade Now": [
-        "Millora ara"
+        "Millora el pla ara"
       ],
       "Upgrade now": [
-        "Millora ara"
+        "Millora el pla ara"
       ],
       "Upload and share files": [
         "Carrega i comparteix fitxers"
@@ -4084,7 +4084,7 @@
         "Configureu això primer per activar la vostra organització i personalitzar la vostra adreça de correu."
       ],
       "Connect your CRM, website, printers, and more.": [
-        "Connecteu el vostre CRM, lloc web, impressores i molt més."
+        "Connecteu el CRM, lloc web, impressores i molt més."
       ],
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Creeu tantes etiquetes o carpetes com necessiteu per mantenir ordenada la safata d'entrada."
@@ -4346,16 +4346,6 @@
         "Els camps de text són opcionals. La informació que proporcioneu en aquest formulari només canviarà la factura que heu seleccionat i no els detalls de les factures futures."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "NOTA:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "DESCRIPCIÓ:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "S'ha cancel·lat ${ eventTitle }."
@@ -4363,8 +4353,14 @@
       "All events in this series were updated.": [
         "Tots els esdeveniments d'aquesta sèrie s'han actualitzat."
       ],
+      "DESCRIPTION:": [
+        "DESCRIPCIÓ:"
+      ],
       "Here's what changed:": [
         "Això és el que ha canviat:"
+      ],
+      "LOCATION:": [
+        "UBICACIÓ:"
       ],
       "NOTE:": [
         "NOTA:"
@@ -4377,6 +4373,15 @@
       ],
       "This event was updated.": [
         "S'ha actualitzat aquest esdeveniment."
+      ],
+      "TIME:": [
+        "HORA:"
+      ],
+      "TITLE:": [
+        "TÍTOL:"
+      ],
+      "You are invited to": [
+        "Us han convidat a"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4393,11 +4398,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Esborrat"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "UBICACIÓ:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -5671,7 +5671,7 @@
     },
     "Filter option to only show message with attachments": {
       "Has attachments": [
-        "Té adjunts"
+        "Amb adjunts"
       ]
     },
     "Filter preview": {
@@ -6637,7 +6637,7 @@
         "**Interruptor de bloqueig**: atura les filtracions de dades en bloquejar la connexió a Internet si la VPN es desconnecta sobtadament."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Pas 1:** Convideu amistats a ${ BRAND_NAME } amb el vostre enllaç de referència."
+        "**Pas 1:** Convideu amistats a ${ BRAND_NAME } amb el vostre enllaç de recomanació."
       ],
       "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
         "**Pas 2:** Les vostres amistats obtindran 2 setmanes de franc en el seu pla ${ BRAND_NAME } escollit."
@@ -6908,7 +6908,7 @@
         "No podeu trobar el que esteu buscant? ${ displayAllMailButton }"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "No podeu recordar la vostra contrasenya? Us podem ajudar a netejar les dades xifrades de tots els contactes xifrats amb aquesta clau i en el procés desactivar l'alerta."
+        "No podeu recordar la vostra contrasenya? Us podem ajudar a netejar les dades xifrades de tots els contactes xifrats amb aquesta clau i, en el procés, desactivar l'alerta."
       ],
       "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
         "Les categories funcionen igual que els filtres de correu brossa. ${ MAIL_APP_NAME } mai llegeix els vostres correus ni comparteix les vostres dades."
@@ -7045,7 +7045,7 @@
         "adreça de correu electrònic per defecte"
       ],
       "Default email application": [
-        "Aplicació de correu per defecte"
+        "Aplicació de correu electrònic per defecte"
       ],
       "Detection takes place on your device, so no data from your emails is sent to our servers.": [
         "La detecció es realitza al vostre dispositiu, de manera que no s'envien dades dels vostres correus electrònics als nostres servidors."
@@ -7511,7 +7511,7 @@
         "Prioritat baixa"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Establiu ${ MAIL_APP_NAME } com aplicació de correu electrònic per defecte."
+        "Establiu ${ MAIL_APP_NAME } com l'aplicació de correu electrònic per defecte."
       ],
       "Manage your folders": [
         "Gestioneu les vostres carpetes"
@@ -7911,7 +7911,7 @@
         "L'enviament programat d'aquest missatge es cancel·larà."
       ],
       "Scheduling message...": [
-        "S'està programant un missatge..."
+        "S'està planificant un missatge..."
       ],
       "Scribe panel": [
         "Panell de Scribe"
@@ -8166,7 +8166,7 @@
         "Aquest navegador no suporta la previsualització de documents PDF. Descarregueu-vos l'arxiu."
       ],
       "This conversation contains a scheduled message. Sending of this message will be canceled.": [
-        "Aquesta conversa conté un missatge programat. L'enviament d'aquest missatge es cancel·larà."
+        "Aquesta conversa conté un missatge planificat. L'enviament d'aquest missatge es cancel·larà."
       ],
       "This conversation contains non-trashed messages.": [
         "Aquesta conversa conté missatges no esborrats."
@@ -8348,7 +8348,7 @@
         "Envia els missatges existents a la paperera"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Proveu les noves característiques, actualitzacions i productes de ${ BRAND_NAME } abans que es llancin al públic. Això tornarà a carregar l'aplicació"
+        "Proveu les noves característiques, actualitzacions i productes de ${ BRAND_NAME } abans que es llancin al públic. Es tornarà a carregar l'aplicació."
       ],
       "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
         "Desactiveu-ho per cercar només per data, nom, adreça de correu electrònic o assumpte. Per a desactivar la cerca en el contingut dels missatges (i suprimir els missatges descarregats per a activar aquesta funció), aneu a Preferències."
@@ -8390,7 +8390,7 @@
         "Milloreu el pla per afegir més adreces al vostre compte."
       ],
       "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days.": [
-        "Milloreu el vostre pla per a eliminar automàticament els missatges que han estat a la paperera o al correu brossa durant més de 30 dies."
+        "Milloreu el pla per a eliminar automàticament els missatges que han estat a la paperera o al correu brossa durant més de 30 dies."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Milloreu el pla per crear més carpetes, filtres i adreces."
@@ -8399,7 +8399,7 @@
         "Milloreu el vostre pla per augmentar la privacitat."
       ],
       "Upgrade to send email from @pm.me addresses.": [
-        "Milloreu el pla per enviar correus des d'adreces @pm.me."
+        "Milloreu el pla per a enviar correus des d'adreces @pm.me."
       ],
       "Upgrade to send emails from your custom email domain.": [
         "Milloreu per a enviar missatges des del vostre domini de correu electrònic personalitzat."
@@ -9442,7 +9442,7 @@
         "De: ${ fromEmail }"
       ],
       "Go to Forums": [
-        "Aneu als fòrums"
+        "Ves als fòrums"
       ],
       "Go to Newsletters": [
         "Aneu als butlletins"
@@ -9454,7 +9454,7 @@
         "Ves a les promocions"
       ],
       "Go to Social": [
-        "Aneu al canal de continguts"
+        "Ves al canal de continguts"
       ],
       "Go to Transactions": [
         "Aneu a les transaccions"
@@ -9694,7 +9694,7 @@
         "Claus públiques"
       ],
       "Read": [
-        "Llegeix"
+        "Llegits"
       ],
       "Recipient": [
         "Destinatari"
@@ -10116,7 +10116,7 @@
         "Gestiona les adreces de correu electrònic bloquejades"
       ],
       "Manage your folders": [
-        "Gestioneu les vostres carpetes"
+        "Gestioneu les carpetes"
       ],
       "More": [
         "Més"
@@ -12864,7 +12864,7 @@
     },
     "session_recovery:available:action": {
       "Cancel reset": [
-        "Cancel·li el restabliment"
+        "Cancel·la el restabliment"
       ],
       "Reset password": [
         "Restableix la contrasenya"
@@ -13230,7 +13230,7 @@
         "Tingueu accés al contingut en estríming."
       ],
       "Upgrade": [
-        "Millora"
+        "Millora el pla"
       ],
       "Upgrade for ${ pricingTitle }": [
         "Milloreu el pla per ${ pricingTitle }"
@@ -13907,7 +13907,7 @@
         "Doneu suport a la nostra missió"
       ],
       "Upgrade": [
-        "Millora"
+        "Millora el pla"
       ],
       "Upgrade your productivity": [
         "Milloreu la vostra productivitat"
@@ -14463,7 +14463,7 @@
         "Crea una etiqueta «${ suggestedLabelName }»"
       ],
       "Create new email address": [
-        "Crea una nova adreça de correu"
+        "Crea una nova adreça de correu electrònic"
       ],
       "Create “${ suggestedFolderName }“ folder": [
         "Crea la carpeta «${ suggestedFolderName }»"
@@ -14744,7 +14744,7 @@
         "Elimina ${ value }"
       ],
       "Delete all messages": [
-        "Eliminar tots els missatges"
+        "Elimina tots els missatges"
       ],
       "Delete conversation": [
         "Elimineu la conversa"

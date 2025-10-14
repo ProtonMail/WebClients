@@ -962,6 +962,9 @@
       "Upgrade to Business": [
         "Палепшыць да Business"
       ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "Палепшыце свой тарыфны план, каб уключыць ${ PROTON_SENTINEL_NAME }"
+      ],
       "Upgrade to Professional": [
         "Палепшыць да Professional"
       ],
@@ -1273,7 +1276,7 @@
         "Блакіроўка рэкламы, праграм сачэння і шкодных праграм"
       ],
       "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Скідкі разлічваюцца на падставе стандартнай платы. Пасля завяршэння перыяду аплаты ваша падпіска будзе аўтаматычна падоўжана па стандартнай гадавой стаўцы."
+        "Скідкі разлічваюцца на падставе стандартнай месячнай платы. Пасля завяршэння перыяду аплаты ваша падпіска будзе аўтаматычна падоўжана па стандартнай гадавой стаўцы."
       ],
       "Double your encrypted storage – get 1 TB for all your data": [
         "Удвойце сваё зашыфраванае сховішча. Атрымайце 1 ТБ для ўсіх сваіх даных"
@@ -1993,7 +1996,7 @@
         "Поўная гісторыя чатаў з пошукам"
       ],
       "Large file upload support": [
-        "Падтрымка запамоўвання вялікіх файлаў"
+        "Падтрымка запампоўвання вялікіх файлаў"
       ],
       "Limited daily chats": [
         "Абмежаваная колькасць штодзённых чатаў"
@@ -3529,16 +3532,6 @@
         "Вы паспяхова ўвайшлі ў іншую прыладу"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "НАТАТКА:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "АПІСАННЕ:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } было скасавана."
@@ -3576,11 +3569,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Выдалена"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "РАЗМЯШЧЭННЕ:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -4890,7 +4878,7 @@
         "тэрабайт",
         "тэрабайты",
         "тэрабайтаў",
-        "Тэрабайтаў"
+        "тэрабайтаў"
       ]
     },
     "Filter notification": {
@@ -5047,6 +5035,9 @@
       ],
       "Payment details": [
         "Падрабязнасці плацяжу"
+      ],
+      "Protection": [
+        "Абарона"
       ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Зэканомце больш з лепшымі прапановамі ${ VPN_APP_NAME }"
@@ -5216,7 +5207,7 @@
         "${ totalImported } падзей з ${ totalToImport } зашыфравана і дададзена ў ваш каляндар"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Адбылася памылка пры шыфравання і дадавання падзеі. ${ totalImported } падзея з ${ totalToImport } паспяхова імпартавана.",
+        "Адбылася памылка пры шыфраванні і дадаванні падзеі. ${ totalImported } падзея з ${ totalToImport } паспяхова імпартавана.",
         "Адбылася памылка пры шыфраванні і дадаванні падзей. ${ totalImported } падзеі з ${ totalToImport } паспяхова імпартавана.",
         "Адбылася памылка пры шыфраванні і дадаванні падзей. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартавана.",
         "Адбылася памылка пры шыфраванні і дадаванні падзей. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартавана."
@@ -5605,6 +5596,9 @@
       ],
       "${ planName } expires today.": [
         "${ planName } міне сёння."
+      ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } з'яўляецца перадавой праграмай абароны ўліковых запісаў на базе выдасканаленай сістэмы штучнага інтэлекту і спецыялістаў, якія кругласутачна працуюць, каб абараніць вас ад зламыснікаў і пагроз бяспекі."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } абараняе ваш уліковы запіс па сродках адмысловага назірання падазронай актыўнасці."
@@ -6934,6 +6928,9 @@
       ],
       "Protected by Swiss privacy laws": [
         "Абаронены швейцарскімі законамі аб прыватнасці"
+      ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Грамадскім дзеячам, журналістам і ўсім астатнім, хто можа стаць мішэнню кібератак, мы настойліва раім уключыць ${ PROTON_SENTINEL_NAME }"
       ],
       "Public sharing of documents is not yet supported.": [
         "Публічнае абагульванне дакументаў пакуль не падтрымліваецца."
@@ -12271,28 +12268,28 @@
         "Вы можаце скінуць свой пароль да ${ boldDate }"
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
-        "У вас ${ timeRemaining.inDays } дзень, каб скінуць свой пароль.",
-        "У вас ${ timeRemaining.inDays } дні, каб скінуць свой пароль.",
-        "У вас ${ timeRemaining.inDays } дзён, каб скінуць свой пароль.",
-        "У вас ${ timeRemaining.inDays } дзён, каб скінуць свой пароль."
+        "У вас ёсць ${ timeRemaining.inDays } дзень, каб скінуць свой пароль.",
+        "У вас ёсць ${ timeRemaining.inDays } дні, каб скінуць свой пароль.",
+        "У вас ёсць ${ timeRemaining.inDays } дзён, каб скінуць свой пароль.",
+        "У вас ёсць ${ timeRemaining.inDays } дзён, каб скінуць свой пароль."
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "У вас ${ timeRemaining.inHours } гадзіна, каб скінуць свой пароль.",
-        " У вас ${ timeRemaining.inHours } гадзіны, каб скінуць свой пароль.",
-        " У вас ${ timeRemaining.inHours } гадзін, каб скінуць свой пароль.",
-        " У вас ${ timeRemaining.inHours } гадзін, каб скінуць свой пароль."
+        "У вас ёсць ${ timeRemaining.inHours } гадзіна, каб скінуць свой пароль.",
+        " У вас ёсць ${ timeRemaining.inHours } гадзіны, каб скінуць свой пароль.",
+        " У вас ёсць ${ timeRemaining.inHours } гадзін, каб скінуць свой пароль.",
+        " У вас ёсць ${ timeRemaining.inHours } гадзін, каб скінуць свой пароль."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "У вас ${ timeRemaining.inMinutes } хвіліна, каб скінуць свой пароль.",
-        " У вас ${ timeRemaining.inMinutes } хвіліны, каб скінуць свой пароль.",
-        " У вас ${ timeRemaining.inMinutes } хвілін, каб скінуць свой пароль.",
-        " У вас ${ timeRemaining.inMinutes } хвілін, каб скінуць свой пароль."
+        "У вас ёсць ${ timeRemaining.inMinutes } хвіліна, каб скінуць свой пароль.",
+        " У вас ёсць ${ timeRemaining.inMinutes } хвіліны, каб скінуць свой пароль.",
+        " У вас ёсць ${ timeRemaining.inMinutes } хвілін, каб скінуць свой пароль.",
+        " У вас ёсць ${ timeRemaining.inMinutes } хвілін, каб скінуць свой пароль."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "У вас ${ timeRemaining.inSeconds } секунда, каб скінуць свой пароль.",
-        " У вас ${ timeRemaining.inSeconds } секунды, каб скінуць свой пароль.",
-        " У вас ${ timeRemaining.inSeconds } секунд, каб скінуць свой пароль.",
-        " У вас ${ timeRemaining.inSeconds } секунд, каб скінуць свой пароль."
+        "У вас ёсць ${ timeRemaining.inSeconds } секунда, каб скінуць свой пароль.",
+        " У вас ёсць ${ timeRemaining.inSeconds } секунды, каб скінуць свой пароль.",
+        " У вас ёсць ${ timeRemaining.inSeconds } секунд, каб скінуць свой пароль.",
+        " У вас ёсць ${ timeRemaining.inSeconds } секунд, каб скінуць свой пароль."
       ]
     },
     "session_recovery:available:link": {
@@ -12356,10 +12353,10 @@
     },
     "session_recovery:in_progress:info": {
       "${ gracePeriodHoursRemaining } more hour": [
-        "яшчэ ${ gracePeriodHoursRemaining } гадзіна",
-        "яшчэ ${ gracePeriodHoursRemaining } гадзіны",
-        "яшчэ ${ gracePeriodHoursRemaining } гадзін",
-        "яшчэ ${ gracePeriodHoursRemaining } гадзін"
+        "Яшчэ ${ gracePeriodHoursRemaining } гадзіна",
+        "Яшчэ ${ gracePeriodHoursRemaining } гадзіны",
+        "Яшчэ ${ gracePeriodHoursRemaining } гадзін",
+        "Яшчэ ${ gracePeriodHoursRemaining } гадзін"
       ],
       "Didn’t make this request?": [
         "Не рабілі гэты запыт?"
@@ -14196,9 +14193,6 @@
       "Are you sure?": [
         "Вы ўпэўнены?"
       ],
-      "Authentication security": [
-        "Бяспека аўтэнтыфікацыі"
-      ],
       "Auto-deletion is active": [
         "Аўтавыдаленне ў актыўным стане"
       ],
@@ -15079,6 +15073,9 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Адміністратары могуць кіраваць уліковымі запісамі карыстальнікаў і даваць правы адміністратара іншым карыстальнікам. Толькі асноўны адміністратар можа рэдагаваць тарыфны план арганізацыі."
+      ],
+      "Any protection applied to suspicious activity": [
+        "Любая абарона ўжываецца да падазронай актыўнасці"
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Аўтаматычна пераключацца паміж вашымі пажаданымі тэмамі для дня і ночы згодна з начным і дзённым рэжымам вашай сістэмы."

@@ -4857,16 +4857,6 @@
         "U kan dit tabblad veilig sluiten."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "LET OP:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "BESCHRIJVING:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } werd geannuleerd."
@@ -4904,11 +4894,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Verwijderd"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "LOCATIE:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -10635,9 +10620,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Upgrade nu om alle premium functionaliteiten, producten en opslag te krijgen voor een speciale prijs"
-      ],
-      "Upgrade to ${ firstPlanNames }, or ${ lastPlanName } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Upgrade naar ${ firstPlanNames }- of ${ lastPlanName }-abonnement om toegang te krijgen tot ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Upgrade om een korter @pm.me-adres aan uw account toe te voegen dat gemakkelijker te delen is. Het staat voor \"${ MAIL_APP_NAME } me\" of \"Private Message me\"."
@@ -20712,9 +20694,6 @@
       ],
       "Are you sure?": [
         "Weet u het zeker?"
-      ],
-      "Authentication security": [
-        "Authenticatiebeveiliging"
       ],
       "Auto-deletion is active": [
         "Automatisch verwijderen is actief"

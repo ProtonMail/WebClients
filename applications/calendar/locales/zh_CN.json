@@ -3168,16 +3168,6 @@
         "编辑事件"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "注意：\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "描述：\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } 已被取消。"
@@ -3215,11 +3205,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "已删除"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "位置：\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {

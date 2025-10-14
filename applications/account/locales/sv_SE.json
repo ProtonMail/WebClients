@@ -4941,16 +4941,6 @@
         "Du kan stänga denna flik säkert."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "OBS:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "BESKRIVNING:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } avbokades."
@@ -4958,8 +4948,14 @@
       "All events in this series were updated.": [
         "Alla händelser i denna serie uppdaterades."
       ],
+      "DESCRIPTION:": [
+        "BESKRIVNING:"
+      ],
       "Here's what changed:": [
         "Här är vad som ändrades:"
+      ],
+      "LOCATION:": [
+        "PLATS:"
       ],
       "NOTE:": [
         "OBS:"
@@ -4972,6 +4968,15 @@
       ],
       "This event was updated.": [
         "Denna händelse uppdaterades."
+      ],
+      "TIME:": [
+        "TID:"
+      ],
+      "TITLE:": [
+        "RUBRIK:"
+      ],
+      "You are invited to": [
+        "Du är inbjuden till"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4988,11 +4993,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Borttagen"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "PLATS:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -10789,9 +10789,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Uppgradera nu för att få premiumfunktioner, produkter och lagringsutrymme till ett specialpris"
       ],
-      "Upgrade to ${ firstPlanNames }, or ${ lastPlanName } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Uppgradera till ${ firstPlanNames } eller ${ lastPlanName }-paket för att få åtkomst till ${ PROTON_SENTINEL_NAME }."
-      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Uppgradera för att lägga till en kortare @pm.me-adress till ditt konto som är lättare att dela. Det står för “${ MAIL_APP_NAME } me“ eller “Private Message me“."
       ],
@@ -10800,6 +10797,9 @@
       ],
       "Upgrade to unlock": [
         "Uppgradera för att låsa upp"
+      ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Uppgradera ditt paket till ${ firstPlanNames } eller ${ lastPlanName } för att få åtkomst till ${ PROTON_SENTINEL_NAME }."
       ],
       "Upload picture": [
         "Ladda upp bild"
@@ -21026,9 +21026,6 @@
       ],
       "Are you sure?": [
         "Är du säker?"
-      ],
-      "Authentication security": [
-        "Autentiseringssäkerhet"
       ],
       "Auto-deletion is active": [
         "Automatisk borttagning är aktivt"

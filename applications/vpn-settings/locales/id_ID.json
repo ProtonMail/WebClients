@@ -962,6 +962,9 @@
       "Upgrade to Business": [
         "Tingkatkan ke Business"
       ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "Tingkatkan untuk mengaktifkan ${ PROTON_SENTINEL_NAME }"
+      ],
       "Upgrade to Professional": [
         "Tingkatkan ke Professional"
       ],
@@ -1419,6 +1422,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
         "Anda dapat memiliki hingga ${ TRIAL_MAX_USERS } pengguna selama masa uji coba."
+      ],
+      "You have reached the trial limit.": [
+        "Anda telah mencapai batas uji coba Anda."
       ]
     },
     "b2b_trials_2025_Label": {
@@ -1946,6 +1952,9 @@
       ],
       "Upload and query small files": [
         "Unggah dan kuerikan berkas kecil"
+      ],
+      "Web search access": [
+        "Akses pencarian web"
       ]
     },
     "collider_2025: Info": {
@@ -3442,16 +3451,6 @@
         "Anda telah berhasil masuk ke perangkat lain"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "CATATAN:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "DESKRIPSI:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } telah dibatalkan."
@@ -3489,11 +3488,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Dihapus"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "LOKASI:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -4904,6 +4898,9 @@
       "Payment details": [
         "Rincian pembayaran"
       ],
+      "Protection": [
+        "Perlindungan"
+      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Dapatkan potongan harga besar-besaran untuk berbagai penawaran ${ VPN_APP_NAME } terbaik"
       ],
@@ -5402,6 +5399,9 @@
       "${ planName } expires today.": [
         "${ planName } akan kedaluwarsa hari ini."
       ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } merupakan program perlindungan akun tingkat lanjut yang diberdayakan oleh sistem AI canggih dan para ahli yang bekerja tanpa henti untuk melindungi Anda dari pelaku tindak kejahatan dan ancaman keamanan."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } melindungi akun Anda dengan pengawasan yang telaten terhadap aktivitas yang mencurigakan."
       ],
@@ -5485,6 +5485,12 @@
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Langkah 1:** Undang teman Anda ke ${ BRAND_NAME } dengan tautan rujukan Anda."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Langkah 2:** Teman Anda memperoleh 2 minggu gratis untuk paket mereka."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Langkah 3:** Dapatkan saldo senilai ${ referrerRewardAmount } untuk setiap orang yang berlangganan ke salah satu paket."
       ],
       "**Sync codes** to all your devices": [
         "**Sinkronkan kode** ke seluruh perangkat Anda"
@@ -6631,6 +6637,9 @@
       ],
       "Protected by Swiss privacy laws": [
         "Dilindungi oleh undang-undang privasi Swiss"
+      ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Tokoh publik, jurnalis, eksekutif bisnis, dan pihak lainnya yang berpotensi untuk menjadi target serangan siber sangat disarankan untuk mengaktifkan ${ PROTON_SENTINEL_NAME }."
       ],
       "Public sharing of documents is not yet supported.": [
         "Pembagian dokumen secara publik belum didukung."
@@ -8827,6 +8836,9 @@
       ],
       "Edit": [
         "Sunting"
+      ],
+      "Enable user": [
+        "Aktifkan pengguna"
       ],
       "Remove": [
         "Hapus"
@@ -11187,6 +11199,9 @@
       ]
     },
     "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } per rujukan"
+      ],
       "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
         "**Apabila Anda membatalkan sebelum tanggal ini,** paket Anda akan **diturunkan** ke ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } pada saat masa uji coba berakhir."
       ],
@@ -11201,6 +11216,9 @@
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Nikmati **${ planTitle }** secara cuma-cuma hingga **${ textDate }**."
+      ],
+      "Refer friends": [
+        "Rujuk teman"
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Anda memiliki **${ daysRemaining } hari tersisa** untuk menjelajahi seluruh fitur canggih yang dimiliki oleh **${ planTitle }**."
@@ -13473,9 +13491,6 @@
       "Are you sure?": [
         "Apakah Anda yakin?"
       ],
-      "Authentication security": [
-        "Keamanan autentikasi"
-      ],
       "Auto-deletion is active": [
         "Penghapusan otomatis aktif"
       ],
@@ -14341,6 +14356,9 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Para admin dapat mengelola akun pengguna dan memberikan hak admin kepada pengguna lain. Hanya admin utama yang dapat menyunting paket organisasi."
+      ],
+      "Any protection applied to suspicious activity": [
+        "Segala perlindungan yang diterapkan terhadap aktivitas yang mencurigakan"
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Sesuaikan tema aplikasi dengan mode terang dan gelap pada sistem Anda secara otomatis"

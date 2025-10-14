@@ -4080,16 +4080,6 @@
         "優先支援"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "備註：\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "描述：${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } 已被取消。"
@@ -4097,8 +4087,14 @@
       "All events in this series were updated.": [
         "該系列中的所有行程皆已更新。"
       ],
+      "DESCRIPTION:": [
+        "內容:"
+      ],
       "Here's what changed:": [
         "以下是變更內容："
+      ],
+      "LOCATION:": [
+        "地點:"
       ],
       "NOTE:": [
         "備注:"
@@ -4111,6 +4107,15 @@
       ],
       "This event was updated.": [
         "該行程已更新。"
+      ],
+      "TIME:": [
+        "時間:"
+      ],
+      "TITLE:": [
+        "標題:"
+      ],
+      "You are invited to": [
+        "你被邀請至"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4127,11 +4132,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "已移除"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "地點：${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -6085,7 +6085,7 @@
         "${ elementsCount }對話內容將被標記為:"
       ],
       "${ elementsCount } conversation will be marked as read.": [
-        "${ elementsCount } 則往來對話將被標記為已讀。"
+        "${ elementsCount } 則往來對話將標記為已讀。"
       ],
       "${ elementsCount } conversation will be marked as unread.": [
         "${ elementsCount } 則往來對話將被標記為未讀。"
@@ -6112,7 +6112,7 @@
         "${ elementsCount }訊息將被取消標記:"
       ],
       "${ embeddedAttachmentsCount } embedded image": [
-        "${ embeddedAttachmentsCount } 個內嵌圖像"
+        "${ embeddedAttachmentsCount } 個內嵌影像"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }：完整大小圖片"
@@ -6232,7 +6232,7 @@
         "(無收件人)"
       ],
       "**${ total }** result found in ${ labelName }": [
-        "在 ${ labelName } 裡找到 **${ total }** 筆資料"
+        "**${ total }** 筆總數出現在 ${ labelName }"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 附贈的儲存空間"
@@ -7007,6 +7007,9 @@
       ],
       "Low Priority": [
         "較低優先順序"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "將${ MAIL_APP_NAME }設為預設電子郵件應用程式."
       ],
       "Manage your folders": [
         "管理您的資料夾"
@@ -8304,7 +8307,7 @@
         "按一下「信任金鑰」將創建一個新的連絡人，並將此公開金鑰與此寄件人關聯。來自此電郵位址的郵件將自動以密碼學進行驗證。"
       ],
       "Do you want to trust the primary public key with the following fingerprint?": [
-        "您要信任下列指紋的主要公開金鑰嗎？"
+        "您要信任帶有下列指紋的主要公開金鑰嗎？"
       ],
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
         "您已將這些電郵位址啟用透過信任金鑰進行位址驗證，\n惟仍未將使用中的加密金鑰授予信任。\n你必須備有信任的金鑰，在傳送訊息至這些電郵位址時不可或缺。"
@@ -12896,7 +12899,7 @@
         "${ elementsCount } 則往來對話標記為已讀。"
       ],
       "${ elementsCount } conversation marked as Starred.": [
-        "${ elementsCount } 則往來對話已加星號。"
+        "${ elementsCount } 則往來對話已標星號。"
       ],
       "${ elementsCount } conversation marked as unread.": [
         "${ elementsCount } 則往來對話已標記未讀。"
@@ -14223,7 +14226,7 @@
         "警告：疑似假冒網站"
       ],
       "We protected you from ${ trackersCount } tracker": [
-        "我們保護您避免 ${ trackersCount } 個追蹤程式的追踪"
+        "我們已保護您免受 ${ trackersCount } 個追蹤程式的侵害"
       ],
       "Welcome": [
         "歡迎"

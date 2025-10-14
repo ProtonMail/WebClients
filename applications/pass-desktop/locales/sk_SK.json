@@ -1977,6 +1977,12 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
+      ],
       "Moving items": [
         "Presúvanie položiek"
       ],
@@ -3699,9 +3705,6 @@
       ],
       "The best of ${ BRAND_NAME } with one subscription": [
         "To najlepšie od ${ BRAND_NAME } s jedným predplatným"
-      ],
-      "The URL has been copied to the clipboard": [
-        "URL adresa bola skopírovaná do schránky"
       ],
       "Theme": [
         "Vzhľad"

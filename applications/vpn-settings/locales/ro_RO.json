@@ -962,6 +962,9 @@
       "Upgrade to Business": [
         "Trecere la Business"
       ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "Modificați planul pentru a activa ${ PROTON_SENTINEL_NAME }"
+      ],
       "Upgrade to Professional": [
         "Trecere la Professional"
       ],
@@ -3513,16 +3516,6 @@
         "V-ați conectat pe alt dispozitiv"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "NOTĂ:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "DESCRIERE:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } a fost anulat."
@@ -3560,11 +3553,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Eliminat"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "LOC:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -5013,6 +5001,9 @@
       "Payment details": [
         "Detalii plată"
       ],
+      "Protection": [
+        "Protecție"
+      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Economisiți mult la cele mai bune oferte de ${ VPN_APP_NAME }"
       ],
@@ -5550,6 +5541,9 @@
       ],
       "${ planName } expires today.": [
         "${ planName } expiră astăzi."
+      ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } este un program avansat de protecție a conturilor, alimentat de sisteme de IA sofisticate și specialiști care lucrează non-stop pentru a vă proteja de atacatori și amenințările de securitate."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } vă protejează contul prin monitorizarea activității suspicioase."
@@ -6851,6 +6845,9 @@
       ],
       "Protected by Swiss privacy laws": [
         "Protejat de legile stricte elvețiene privind confidențialitatea"
+      ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Persoanele publice, jurnaliștii, directorii și alții care pot fi ținta atacurilor cibernetice sunt foarte încurajați să activeze ${ PROTON_SENTINEL_NAME }."
       ],
       "Public sharing of documents is not yet supported.": [
         "Partajarea publică a documentelor nu este încă implementată."
@@ -13994,9 +13991,6 @@
       "Are you sure?": [
         "Confirmați?"
       ],
-      "Authentication security": [
-        "Securitate autentificare"
-      ],
       "Auto-deletion is active": [
         "Ștergerea automată este activă"
       ],
@@ -14872,6 +14866,9 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Administratorii pot gestiona conturile de utilizatori și să acorde drepturi de administrare altor utilizatori. Doar administratorul principal poate modifica planul organizației."
+      ],
+      "Any protection applied to suspicious activity": [
+        "Tipul de protecție aplicat activităților suspecte."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Comutare automată a temei preferate sincron cu modul luminos sau întunecat setat al sistemului."

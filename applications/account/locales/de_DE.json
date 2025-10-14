@@ -4977,16 +4977,6 @@
         "Du kannst diesen Tab bedenkenlos schließen."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "HINWEIS:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "BESCHREIBUNG:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } wurde abgesagt."
@@ -4994,8 +4984,14 @@
       "All events in this series were updated.": [
         "Alle Termine in dieser Serie wurden aktualisiert."
       ],
+      "DESCRIPTION:": [
+        "Beschreibung:"
+      ],
       "Here's what changed:": [
         "Das hat sich geändert:"
+      ],
+      "LOCATION:": [
+        "Ort:"
       ],
       "NOTE:": [
         "HINWEIS:"
@@ -5008,6 +5004,15 @@
       ],
       "This event was updated.": [
         "Dieser Termin wurde aktualisiert."
+      ],
+      "TIME:": [
+        "Zeit:"
+      ],
+      "TITLE:": [
+        "Titel:"
+      ],
+      "You are invited to": [
+        "Du wurdest eingeladen zu"
       ]
     },
     "Email body for invitation (date part)": {
@@ -5024,11 +5029,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Entfernt"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "ORT:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -8267,6 +8267,9 @@
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } ist ein fortschrittliches Kontoschutzprogramm, das von hochentwickelten KI-Systemen und Spezialisten betrieben wird, die rund um die Uhr arbeiten, um dich vor böswilligen Akteuren und Sicherheitsbedrohungen zu schützen."
       ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } ist ein fortschrittliches Programm zum Schutz von Konten, das auf hochentwickelten KI-Systemen basiert und von Spezialisten rund um die Uhr bereitgestellt wird, um deine Organisation vor böswilligen Akteuren und Sicherheitsbedrohungen zu schützen."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } schützt dein Konto durch gezielte Überwachung verdächtiger Aktivitäten."
       ],
@@ -9468,6 +9471,9 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Falls du kürzlich dein Passwort zurückgesetzt hast, kannst du deine Daten mit einer Datenwiederherstellungsmethode wiederherstellen"
+      ],
+      "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
+        "Wenn deine Organisation mit Personen des öffentlichen Lebens zu tun hat, sensible Daten verarbeitet oder Ziel von Cyberangriffen werden könnte, solltest du ${ PROTON_SENTINEL_NAME } für alle Mitglieder deiner Organisation aktivieren"
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Wenn du Probleme hast, sind wir für dich da. ${ boldPhoneCall } oder ${ boldZoomMeeting } mit einem unserer Support-Spezialisten, oder öffne einen ${ boldLiveChat } für Chat-Support."
@@ -10856,9 +10862,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Jetzt upgraden um Premium-Funktionen, Produkte und Speicherplatz zu einem Sonderpreis zu erhalten."
       ],
-      "Upgrade to ${ firstPlanNames }, or ${ lastPlanName } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Steige auf den ${ firstPlanNames }, oder ${ lastPlanName } Plan um, um Zugang zu ${ PROTON_SENTINEL_NAME } zu erhalten."
-      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Führe ein Upgrade durch, um deinem Konto kürzere @pm.me-Adressen hinzuzufügen, die einfacher zu teilen sind. Das steht für \"${ MAIL_APP_NAME } me\" oder \"Private Message me\"."
       ],
@@ -10867,6 +10870,9 @@
       ],
       "Upgrade to unlock": [
         "Upgraden zum Freischalten"
+      ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Wechseln Sie zu einem Abonnement ${ firstPlanNames } oder ${ lastPlanName }, um Zugang zu ${ PROTON_SENTINEL_NAME } zu erhalten."
       ],
       "Upload picture": [
         "Bild hochladen"
@@ -21288,9 +21294,6 @@
       "Are you sure?": [
         "Bist du sicher?"
       ],
-      "Authentication security": [
-        "Sicherheit der Authentifizierung"
-      ],
       "Auto-deletion is active": [
         "Automatisches Löschen ist aktiv"
       ],
@@ -22255,6 +22258,9 @@
       "Secure your passwords. Everywhere.": [
         "Deine Passwörter überall sichern."
       ],
+      "Security": [
+        "Sicherheit"
+      ],
       "Security and privacy": [
         "Sicherheit und Datenschutz"
       ],
@@ -22966,6 +22972,9 @@
       ],
       "This key is used for email forwarding": [
         "Dieser Schlüssel wird zur E-Mail-Weiterleitung verwendet."
+      ],
+      "This setting is managed by your organization": [
+        "Diese Einstellung wird von deiner Organisation verwaltet"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Solange sie nicht entschlüsselt werden, bleiben verschlüsselte Passwörter sicher, auch wenn sie offengelegt wurden."
