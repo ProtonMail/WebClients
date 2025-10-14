@@ -3155,16 +3155,6 @@
         "Редактировать событие"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "ПРИМЕЧАНИЕ:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "Описание:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } было отменено."
@@ -3202,11 +3192,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Удалено"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "Местоположение:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -5099,7 +5084,7 @@
       ],
       "Create a secure cloud for ${ value } member": [
         "Создать безопасное облако для ${ value } участника",
-        "Создать безопасное облако для ${ value } участника",
+        "Создать безопасное облако для ${ value } участников",
         "Создать безопасное облако для ${ value } участников",
         "Создать безопасное облако для ${ value } участников"
       ],

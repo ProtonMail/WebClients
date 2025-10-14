@@ -102,10 +102,10 @@
         "Ужыць"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
-        "На адну групу кантактаў дапускаецца не больш за ${ maxContacts } кантакт",
-        "На адну групу кантактаў дапускаецца не больш за ${ maxContacts } кантакты",
-        "На адну групу кантактаў дапускаецца не больш за ${ maxContacts } кантактаў",
-        "На адну групу кантактаў дапускаецца не больш за ${ maxContacts } кантактаў"
+        "У групе кантактаў можа быць не больш за ${ maxContacts } кантакт",
+        "У групе кантактаў можа быць не больш за ${ maxContacts } кантакты",
+        "У групе кантактаў можа быць не больш за ${ maxContacts } кантактаў",
+        "У групе кантактаў можа быць не больш за ${ maxContacts } кантактаў"
       ],
       "Attach screenshot(s)": [
         "Далучыць здымак(-і) экрана"
@@ -1110,7 +1110,7 @@
         "Блакіроўка рэкламы, праграм сачэння і шкодных праграм"
       ],
       "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Скідкі разлічваюцца на падставе стандартнай платы. Пасля завяршэння перыяду аплаты ваша падпіска будзе аўтаматычна падоўжана па стандартнай гадавой стаўцы."
+        "Скідкі разлічваюцца на падставе стандартнай месячнай платы. Пасля завяршэння перыяду аплаты ваша падпіска будзе аўтаматычна падоўжана па стандартнай гадавой стаўцы."
       ],
       "Double your encrypted storage – get 1 TB for all your data": [
         "Удвойце сваё зашыфраванае сховішча. Атрымайце 1 ТБ для ўсіх сваіх даных"
@@ -1872,7 +1872,7 @@
         "Поўная гісторыя чатаў з пошукам"
       ],
       "Large file upload support": [
-        "Падтрымка запамоўвання вялікіх файлаў"
+        "Падтрымка запампоўвання вялікіх файлаў"
       ],
       "Limited daily chats": [
         "Абмежаваная колькасць штодзённых чатаў"
@@ -3338,16 +3338,6 @@
         "Рэдагаваць падзею"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "НАТАТКА:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "АПІСАННЕ:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } было скасавана."
@@ -3385,11 +3375,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Выдалена"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "РАЗМЯШЧЭННЕ:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -4515,7 +4500,7 @@
         "тэрабайт",
         "тэрабайты",
         "тэрабайтаў",
-        "Тэрабайтаў"
+        "тэрабайтаў"
       ]
     },
     "Filter notification": {
@@ -4694,7 +4679,7 @@
         "${ totalImported } падзей з ${ totalToImport } зашыфравана і дададзена ў ваш каляндар"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Адбылася памылка пры шыфравання і дадавання падзеі. ${ totalImported } падзея з ${ totalToImport } паспяхова імпартавана.",
+        "Адбылася памылка пры шыфраванні і дадаванні падзеі. ${ totalImported } падзея з ${ totalToImport } паспяхова імпартавана.",
         "Адбылася памылка пры шыфраванні і дадаванні падзей. ${ totalImported } падзеі з ${ totalToImport } паспяхова імпартавана.",
         "Адбылася памылка пры шыфраванні і дадаванні падзей. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартавана.",
         "Адбылася памылка пры шыфраванні і дадаванні падзей. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартавана."
@@ -9925,28 +9910,28 @@
         "Цяпер вы можаце змяніць свой пароль для ўліковага запісу ${ boldEmail }"
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
-        "У вас ${ timeRemaining.inDays } дзень, каб скінуць свой пароль.",
-        "У вас ${ timeRemaining.inDays } дні, каб скінуць свой пароль.",
-        "У вас ${ timeRemaining.inDays } дзён, каб скінуць свой пароль.",
-        "У вас ${ timeRemaining.inDays } дзён, каб скінуць свой пароль."
+        "У вас ёсць ${ timeRemaining.inDays } дзень, каб скінуць свой пароль.",
+        "У вас ёсць ${ timeRemaining.inDays } дні, каб скінуць свой пароль.",
+        "У вас ёсць ${ timeRemaining.inDays } дзён, каб скінуць свой пароль.",
+        "У вас ёсць ${ timeRemaining.inDays } дзён, каб скінуць свой пароль."
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "У вас ${ timeRemaining.inHours } гадзіна, каб скінуць свой пароль.",
-        " У вас ${ timeRemaining.inHours } гадзіны, каб скінуць свой пароль.",
-        " У вас ${ timeRemaining.inHours } гадзін, каб скінуць свой пароль.",
-        " У вас ${ timeRemaining.inHours } гадзін, каб скінуць свой пароль."
+        "У вас ёсць ${ timeRemaining.inHours } гадзіна, каб скінуць свой пароль.",
+        " У вас ёсць ${ timeRemaining.inHours } гадзіны, каб скінуць свой пароль.",
+        " У вас ёсць ${ timeRemaining.inHours } гадзін, каб скінуць свой пароль.",
+        " У вас ёсць ${ timeRemaining.inHours } гадзін, каб скінуць свой пароль."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "У вас ${ timeRemaining.inMinutes } хвіліна, каб скінуць свой пароль.",
-        " У вас ${ timeRemaining.inMinutes } хвіліны, каб скінуць свой пароль.",
-        " У вас ${ timeRemaining.inMinutes } хвілін, каб скінуць свой пароль.",
-        " У вас ${ timeRemaining.inMinutes } хвілін, каб скінуць свой пароль."
+        "У вас ёсць ${ timeRemaining.inMinutes } хвіліна, каб скінуць свой пароль.",
+        " У вас ёсць ${ timeRemaining.inMinutes } хвіліны, каб скінуць свой пароль.",
+        " У вас ёсць ${ timeRemaining.inMinutes } хвілін, каб скінуць свой пароль.",
+        " У вас ёсць ${ timeRemaining.inMinutes } хвілін, каб скінуць свой пароль."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "У вас ${ timeRemaining.inSeconds } секунда, каб скінуць свой пароль.",
-        " У вас ${ timeRemaining.inSeconds } секунды, каб скінуць свой пароль.",
-        " У вас ${ timeRemaining.inSeconds } секунд, каб скінуць свой пароль.",
-        " У вас ${ timeRemaining.inSeconds } секунд, каб скінуць свой пароль."
+        "У вас ёсць ${ timeRemaining.inSeconds } секунда, каб скінуць свой пароль.",
+        " У вас ёсць ${ timeRemaining.inSeconds } секунды, каб скінуць свой пароль.",
+        " У вас ёсць ${ timeRemaining.inSeconds } секунд, каб скінуць свой пароль.",
+        " У вас ёсць ${ timeRemaining.inSeconds } секунд, каб скінуць свой пароль."
       ]
     },
     "session_recovery:available:link": {
@@ -10007,10 +9992,10 @@
     },
     "session_recovery:in_progress:info": {
       "${ gracePeriodHoursRemaining } more hour": [
-        "яшчэ ${ gracePeriodHoursRemaining } гадзіна",
-        "яшчэ ${ gracePeriodHoursRemaining } гадзіны",
-        "яшчэ ${ gracePeriodHoursRemaining } гадзін",
-        "яшчэ ${ gracePeriodHoursRemaining } гадзін"
+        "Яшчэ ${ gracePeriodHoursRemaining } гадзіна",
+        "Яшчэ ${ gracePeriodHoursRemaining } гадзіны",
+        "Яшчэ ${ gracePeriodHoursRemaining } гадзін",
+        "Яшчэ ${ gracePeriodHoursRemaining } гадзін"
       ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Скасуйце запыт, калі вы не запытвалі скіданне пароля."
