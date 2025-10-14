@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [[ ! -n "$DISABLE_WAYLAND" ]] && [[ -n "$WAYLAND_DISPLAY" ]] ; then
+  WAYLAND_OPTS="--enable-features=WaylandWindowDecorations,WebRTCPipeWireCapturer --ozone-platform-hint=auto"
+fi
+
+exec "$SNAP/usr/bin/proton-mail" --no-sandbox --disable-seccomp-filter-sandbox $WAYLAND_OPTS "$@"

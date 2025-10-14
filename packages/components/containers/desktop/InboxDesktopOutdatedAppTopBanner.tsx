@@ -90,7 +90,7 @@ const DisplayTopBanner = ({ displayTopBanner, link }: { displayTopBanner: boolea
 
 export const InboxDesktopOutdatedAppTopBanner = () => {
     const version = electronAppVersion;
-    const { windowsApp, macosApp, linuxApp, loading } = useInboxDesktopVersion();
+    const { windowsApp, macosApp, linuxApp, isSnapPackage, loading } = useInboxDesktopVersion();
     const isUpdateBannerDisabled = useFlag('InboxDesktopManualUpdateBannerDisabled');
 
     if (!isElectronMail || isUpdateBannerDisabled || !version || loading) {
@@ -99,7 +99,7 @@ export const InboxDesktopOutdatedAppTopBanner = () => {
 
     const displayMac = (isMac && macosApp && doesEarlyVersionNeedsManualUpdate(macosApp, version)) || false;
     const displayWindows = (isWindows && windowsApp && doesEarlyVersionNeedsManualUpdate(windowsApp, version)) || false;
-    const displayLinux = (isLinux && linuxApp && isLinuxOutdated(linuxApp, version)) || false;
+    const displayLinux = (isLinux && !isSnapPackage && linuxApp && isLinuxOutdated(linuxApp, version)) || false;
 
     return (
         <>

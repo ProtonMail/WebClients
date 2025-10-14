@@ -7,6 +7,8 @@ import { c } from "ttag";
 export const isMac = process.platform === "darwin";
 export const isWindows = process.platform === "win32";
 export const isLinux = process.platform === "linux";
+export const isSnap = process.env.IS_SNAP === "1";
+export const snapRevision: string = process.env.SNAP_REVISION ?? "";
 
 export const getPlatform = (): DESKTOP_PLATFORMS => {
     if (isMac) {
