@@ -57,6 +57,7 @@ const allApps = new Set([
     APPS.PROTONPASS,
     APPS.PROTONDRIVE,
     APPS.PROTONDOCS,
+    APPS.PROTONSHEETS,
     APPS.PROTONWALLET,
     APPS.PROTONLUMO,
     APPS.PROTONMEET,
@@ -82,6 +83,7 @@ const getAllowedProducts = (products: OrganizationSettingsAllowedProduct[]) => {
 const defaultOptions: Parameters<typeof getAvailableApps>[0] = {
     user: getProtonUser(),
     isDocsHomepageAvailable: true,
+    isSheetsAvailable: true,
     isMeetAvailable: true,
     context: 'app',
 };
@@ -266,6 +268,7 @@ describe('available apps', () => {
                     APPS.PROTONPASS,
                     APPS.PROTONDRIVE,
                     APPS.PROTONDOCS,
+                    APPS.PROTONSHEETS,
                     APPS.PROTONLUMO,
                     APPS.PROTONWALLET,
                     APPS.PROTONVPN_SETTINGS,
@@ -410,6 +413,7 @@ describe('available apps', () => {
                     APPS.PROTONPASS,
                     APPS.PROTONDRIVE,
                     APPS.PROTONDOCS,
+                    APPS.PROTONSHEETS,
                     APPS.PROTONLUMO,
                     APPS.PROTONWALLET,
                     APPS.PROTONVPN_SETTINGS,

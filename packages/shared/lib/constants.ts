@@ -278,7 +278,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         clientID: 'web-sheets',
         icon: 'brand-proton', // TODO: brand icon for Sheets
         settingsSlug: 'sheets',
-        product: Product.Docs,
+        product: Product.Sheets,
     },
     [APPS.PROTONSHEETSEDITOR]: {
         publicPath: '',
@@ -288,7 +288,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         clientID: 'web-sheets-editor',
         icon: 'brand-proton', // TODO: brand icon for Sheets
         settingsSlug: 'sheets-editor',
-        product: Product.Docs,
+        product: Product.Sheets,
     },
     [APPS.PROTONLUMO]: {
         publicPath: '',

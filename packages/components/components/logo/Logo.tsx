@@ -10,6 +10,7 @@ import LumoLogo from './LumoLogo';
 import MailLogo from './MailLogo';
 import MeetLogo from './MeetLogo';
 import PassLogo from './PassLogo';
+import SheetsLogo from './SheetsLogo';
 import VpnLogo from './VpnLogo';
 import WalletLogo from './WalletLogo';
 
@@ -20,6 +21,7 @@ const {
     PROTONVPN_SETTINGS,
     PROTONPASS,
     PROTONDOCS,
+    PROTONSHEETS,
     PROTONWALLET,
     PROTONLUMO,
     PROTONMEET,
@@ -55,6 +57,10 @@ const Logo = ({ appName, fallback = null, ...rest }: LogoProps) => {
 
     if (appName === PROTONDOCS) {
         return <DocsLogo {...rest} />;
+    }
+
+    if (appName === PROTONSHEETS) {
+        return <SheetsLogo {...rest} />;
     }
 
     if (appName === PROTONWALLET) {

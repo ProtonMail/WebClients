@@ -15,6 +15,7 @@ export interface GetAvailableAppsByUserTypeArguments {
     context: AppContext;
     isDocsHomepageAvailable: boolean;
     isMeetAvailable: boolean;
+    isSheetsAvailable: boolean;
     oauth?: boolean;
 }
 
@@ -30,6 +31,7 @@ const allApps: APP_NAMES[] = [
     APPS.PROTONVPN_SETTINGS,
     APPS.PROTONPASS,
     APPS.PROTONDOCS,
+    APPS.PROTONSHEETS,
     APPS.PROTONWALLET,
     APPS.PROTONLUMO,
     APPS.PROTONMEET,
@@ -71,6 +73,7 @@ const getAvailableAppsByUser = (options: GetAvailableAppsByUserTypeArguments): A
             APPS.PROTONPASS,
             APPS.PROTONDRIVE,
             APPS.PROTONDOCS,
+            APPS.PROTONSHEETS,
             APPS.PROTONWALLET,
             APPS.PROTONLUMO,
             APPS.PROTONMEET,
@@ -92,6 +95,9 @@ export const getAvailableApps = (
 
     if (options.context === 'dropdown' && !options.isDocsHomepageAvailable) {
         removeApps.add(APPS.PROTONDOCS);
+    }
+    if (options.context === 'dropdown' && !options.isSheetsAvailable) {
+        removeApps.add(APPS.PROTONSHEETS);
     }
     if (options.context === 'dropdown' && !options.isMeetAvailable) {
         removeApps.add(APPS.PROTONMEET);
