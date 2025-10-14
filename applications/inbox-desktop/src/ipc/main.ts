@@ -6,7 +6,7 @@ import type {
     IPCInboxGetInfoMessage,
     IPCInboxGetUserInfoMessage,
 } from "@proton/shared/lib/desktop/desktopTypes";
-import { clearStorage } from "../utils/helpers";
+import { clearStorage, isSnap, snapRevision } from "../utils/helpers";
 import { ipcLogger } from "../utils/log";
 import { getColorScheme, getTheme, isEqualTheme, setTheme } from "../utils/themes";
 import {
@@ -61,6 +61,12 @@ export const handleIPCCalls = () => {
                 break;
             case "latestVersion":
                 event.returnValue = cachedLatestVersion;
+                break;
+            case "isSnap":
+                event.returnValue = isSnap;
+                break;
+            case "snapRevision":
+                event.returnValue = snapRevision;
                 break;
             case "installSource": {
                 const installSource = getInstallSource();
