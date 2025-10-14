@@ -1,7 +1,7 @@
 import { autoUpdater, app, dialog } from "electron";
 import { updateElectronApp, UpdateSourceType } from "update-electron-app";
 import pkg from "../package.json";
-import { getPlatform } from "./utils/helpers";
+import { getPlatform, isSnap } from "./utils/helpers";
 import { getSettings } from "./store/settingsStore";
 import { verifyDownloadCertificate } from "./utils/keyPinning";
 import { updateLogger } from "./utils/log";
@@ -26,6 +26,11 @@ export let cachedLatestVersion: DesktopVersion | null = null;
  * it will trigger the update.
  */
 export function initializeUpdateChecks() {
+    if (isSnap) {
+        updateLogger.info("Skipping update check initialization. Running as Snap.");
+        return;
+    }
+
     updateLogger.info("Initialization of update checks.");
 
     autoUpdater.on("update-downloaded", async () => {
