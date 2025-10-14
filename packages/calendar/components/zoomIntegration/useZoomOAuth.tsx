@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { createToken } from '@proton/activation/src/api';
 import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
 import type { OAuthProps } from '@proton/activation/src/interface';
-import { EASY_SWITCH_SOURCES, ImportType, OAUTH_PROVIDER } from '@proton/activation/src/interface';
+import { EASY_SWITCH_FEATURES, EASY_SWITCH_SOURCES, OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import { oauthTokenActions } from '@proton/activation/src/logic/oauthToken';
 import { useApi } from '@proton/components';
 import { useDispatch } from '@proton/redux-shared-store';
@@ -25,7 +25,7 @@ export const useZoomOAuth = () => {
                 Code,
                 RedirectUri,
                 Source: EASY_SWITCH_SOURCES.CALENDAR_WEB_CREATE_EVENT,
-                Products: [ImportType.CALENDAR],
+                Features: [EASY_SWITCH_FEATURES.MANAGE_MEETINGS],
             })
         );
 

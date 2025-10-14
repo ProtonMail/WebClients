@@ -17,7 +17,7 @@ export const getTokens = () => ({
 
 export const createToken = (
     data: OAuthProps & {
-        Products: ImportType[];
+        Features: EASY_SWITCH_FEATURES[];
         Source: EASY_SWITCH_SOURCES;
         Account?: string;
     }
@@ -151,22 +151,22 @@ export const deleteImportReport = (reportID: string, importType: ImportType) => 
     }
 };
 
-export const cancelImport = (data: { ImporterID: string; Products: ImportType[] }) => ({
+export const cancelImport = (data: { ImporterID: string; Features: EASY_SWITCH_FEATURES[] }) => ({
     url: 'importer/v1/importers/cancel',
     method: 'PUT',
     data,
 });
 
-export const resumeImport = (data: { ImporterID: string; Products: ImportType[] }) => ({
+export const resumeImport = (data: { ImporterID: string; Features: EASY_SWITCH_FEATURES[] }) => ({
     url: 'importer/v1/importers/resume',
     method: 'PUT',
     data,
 });
 
-export const rollbackImport = (reportID: string, Products: ImportType[]) => ({
+export const rollbackImport = (reportID: string, Features: EASY_SWITCH_FEATURES[]) => ({
     url: `importer/v1/reports/${reportID}/undo`,
     method: 'POST',
-    data: { Products },
+    data: { Features },
 });
 
 export const createSignupOAuthToken = (
