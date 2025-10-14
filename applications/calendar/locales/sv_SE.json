@@ -3276,16 +3276,6 @@
         "Redigera händelse"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "OBS:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "BESKRIVNING:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } avbokades."
@@ -3293,8 +3283,14 @@
       "All events in this series were updated.": [
         "Alla händelser i denna serie uppdaterades."
       ],
+      "DESCRIPTION:": [
+        "BESKRIVNING:"
+      ],
       "Here's what changed:": [
         "Här är vad som ändrades:"
+      ],
+      "LOCATION:": [
+        "PLATS:"
       ],
       "NOTE:": [
         "OBS:"
@@ -3307,6 +3303,15 @@
       ],
       "This event was updated.": [
         "Denna händelse uppdaterades."
+      ],
+      "TIME:": [
+        "TID:"
+      ],
+      "TITLE:": [
+        "RUBRIK:"
+      ],
+      "You are invited to": [
+        "Du är inbjuden till"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3323,11 +3328,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Borttagen"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "PLATS:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {

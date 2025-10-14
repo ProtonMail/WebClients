@@ -3338,16 +3338,6 @@
         "Upravit událost"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "POZNÁMKA:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "POPIS:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "Událost ${ eventTitle } byla zrušena."
@@ -3355,8 +3345,14 @@
       "All events in this series were updated.": [
         "Všechny události této série byly aktualizovány."
       ],
+      "DESCRIPTION:": [
+        "POPIS:"
+      ],
       "Here's what changed:": [
         "Toto se změnilo:"
+      ],
+      "LOCATION:": [
+        "UMÍSTĚNÍ:"
       ],
       "NOTE:": [
         "POZNÁMKA:"
@@ -3369,6 +3365,15 @@
       ],
       "This event was updated.": [
         "Tato událost byla aktualizována."
+      ],
+      "TIME:": [
+        "ČAS:"
+      ],
+      "TITLE:": [
+        "NÁZEV:"
+      ],
+      "You are invited to": [
+        "Jste pozváni na"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3385,11 +3390,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Odebráno"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "MÍSTO:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {

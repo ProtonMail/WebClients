@@ -148,7 +148,7 @@
         "Neteja"
       ],
       "Clear browser data": [
-        "Netejar les dades del navegador"
+        "Neteja les dades del navegador"
       ],
       "Clear data": [
         "Neteja les dades"
@@ -648,7 +648,7 @@
         "Recuperar dades"
       ],
       "Refer a friend": [
-        "Recomana a un amic"
+        "Recomana una amistat"
       ],
       "Refresh the page": [
         "Refresca la pàgina"
@@ -861,16 +861,16 @@
         "Actualitzeu la frase de contrasenya secreta"
       ],
       "Upgrade": [
-        "Millora"
+        "Millora el pla"
       ],
       "Upgrade for 200GB": [
         "Milloreu el pla per a 200 GB"
       ],
       "Upgrade Now": [
-        "Millora ara"
+        "Millora el pla ara"
       ],
       "Upgrade now": [
-        "Millora ara"
+        "Millora el pla ara"
       ],
       "Upload and share files": [
         "Carrega i comparteix fitxers"
@@ -3037,7 +3037,7 @@
         "Configureu això primer per activar la vostra organització i personalitzar la vostra adreça de correu."
       ],
       "Connect your CRM, website, printers, and more.": [
-        "Connecteu el vostre CRM, lloc web, impressores i molt més."
+        "Connecteu el CRM, lloc web, impressores i molt més."
       ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Creeu una reunió a Zoom i afegiu els detalls de participació a l'esdeveniment en un clic."
@@ -3294,16 +3294,6 @@
         "Edita l'esdeveniment"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "NOTA:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "DESCRIPCIÓ:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "S'ha cancel·lat ${ eventTitle }."
@@ -3311,8 +3301,14 @@
       "All events in this series were updated.": [
         "Tots els esdeveniments d'aquesta sèrie s'han actualitzat."
       ],
+      "DESCRIPTION:": [
+        "DESCRIPCIÓ:"
+      ],
       "Here's what changed:": [
         "Això és el que ha canviat:"
+      ],
+      "LOCATION:": [
+        "UBICACIÓ:"
       ],
       "NOTE:": [
         "NOTA:"
@@ -3325,6 +3321,15 @@
       ],
       "This event was updated.": [
         "S'ha actualitzat aquest esdeveniment."
+      ],
+      "TIME:": [
+        "HORA:"
+      ],
+      "TITLE:": [
+        "TÍTOL:"
+      ],
+      "You are invited to": [
+        "Us han convidat a"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3341,11 +3346,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Esborrat"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "UBICACIÓ:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -4996,7 +4996,7 @@
         "**Interruptor de bloqueig**: atura les filtracions de dades en bloquejar la connexió a Internet si la VPN es desconnecta sobtadament."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Pas 1:** Convideu amistats a ${ BRAND_NAME } amb el vostre enllaç de referència."
+        "**Pas 1:** Convideu amistats a ${ BRAND_NAME } amb el vostre enllaç de recomanació."
       ],
       "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
         "**Pas 2:** Les vostres amistats obtindran 2 setmanes de franc en el seu pla ${ BRAND_NAME } escollit."
@@ -5165,7 +5165,7 @@
         "No trobeu els esdeveniments que esteu buscant? Alguns esdeveniments en els calendaris ocults coincideixen amb la vostra consulta. Per veure aquests resultats, activeu la visibilitat per a ${ hiddenWithItemsCalendarList }."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "No podeu recordar la vostra contrasenya? Us podem ajudar a netejar les dades xifrades de tots els contactes xifrats amb aquesta clau i en el procés desactivar l'alerta."
+        "No podeu recordar la vostra contrasenya? Us podem ajudar a netejar les dades xifrades de tots els contactes xifrats amb aquesta clau i, en el procés, desactivar l'alerta."
       ],
       "Change your password": [
         "Canvieu la vostra contrasenya"
@@ -5920,7 +5920,7 @@
         "Seguiment"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Proveu les noves característiques, actualitzacions i productes de ${ BRAND_NAME } abans que es llancin al públic. Això tornarà a carregar l'aplicació"
+        "Proveu les noves característiques, actualitzacions i productes de ${ BRAND_NAME } abans que es llancin al públic. Es tornarà a carregar l'aplicació."
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Milloreu ara per obtenir característiques prèmium, productes i emmagatzematge a un preu especial"
@@ -7223,7 +7223,7 @@
         "Gestiona els calendaris"
       ],
       "Upgrade": [
-        "Millora"
+        "Millora el pla"
       ]
     },
     "Modal for received invitation to share calendar; text": {
@@ -9550,7 +9550,7 @@
     },
     "session_recovery:available:action": {
       "Cancel reset": [
-        "Cancel·li el restabliment"
+        "Cancel·la el restabliment"
       ],
       "Reset password": [
         "Restableix la contrasenya"
@@ -9913,7 +9913,7 @@
         "Tingueu accés al contingut en estríming."
       ],
       "Upgrade": [
-        "Millora"
+        "Millora el pla"
       ],
       "Upgrade for ${ pricingTitle }": [
         "Milloreu el pla per ${ pricingTitle }"
@@ -10549,7 +10549,7 @@
         "Doneu suport a la nostra missió"
       ],
       "Upgrade": [
-        "Millora"
+        "Millora el pla"
       ],
       "Upgrade your productivity": [
         "Milloreu la vostra productivitat"

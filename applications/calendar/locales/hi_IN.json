@@ -2568,11 +2568,6 @@
         "इवेंट बदलें"
       ]
     },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "विवरण:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } रद्द कर दिया गया था।"
@@ -2601,11 +2596,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "हटाया गया"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "स्थान:\n${ eventLocation }"
       ]
     },
     "Email subject": {

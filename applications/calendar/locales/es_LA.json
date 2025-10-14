@@ -3294,16 +3294,6 @@
         "Editar evento"
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "NOTA:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "DESCRIPCIÓN:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } fue cancelado."
@@ -3311,8 +3301,14 @@
       "All events in this series were updated.": [
         "Todos los eventos en esta serie fueron actualizados."
       ],
+      "DESCRIPTION:": [
+        "DESCRIPCIÓN:"
+      ],
       "Here's what changed:": [
         "Esto es lo que ha cambiado:"
+      ],
+      "LOCATION:": [
+        "UBICACIÓN:"
       ],
       "NOTE:": [
         "NOTA:"
@@ -3325,6 +3321,15 @@
       ],
       "This event was updated.": [
         "Este evento fue actualizado."
+      ],
+      "TIME:": [
+        "HORA:"
+      ],
+      "TITLE:": [
+        "TÍTULO:"
+      ],
+      "You are invited to": [
+        "Se le invitó a"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3341,11 +3346,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Eliminado"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "LUGAR:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -7814,6 +7814,9 @@
       ],
       "Share files with no size limit": [
         "Comparta archivos sin límite de tamaño"
+      ],
+      "Short domain (@pm.me)": [
+        "Dominio corto (@pm.me)"
       ],
       "Sign in as user": [
         "Iniciar sesión como usuario"
