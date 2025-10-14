@@ -101,6 +101,7 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
 
     const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
     const isMeetAvailable = useFlag('PMVC2025');
+    const isSheetsAvailable = useFlag('DocsSheetsEnabled');
     const subscribed = User.Subscribed;
 
     return (
@@ -144,6 +145,7 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
                             user: User,
                             organization: Organization,
                             isDocsHomepageAvailable,
+                            isSheetsAvailable,
                             oauth: persistedSession.source === SessionSource.Oauth,
                             isMeetAvailable,
                         })}

@@ -5,6 +5,7 @@ export enum Product {
     Calendar = 'Calendar',
     Wallet = 'Wallet',
     Docs = 'Docs',
+    Sheets = 'Sheets',
     Lumo = 'Lumo',
     Drive = 'Drive',
     VPN = 'VPN',
