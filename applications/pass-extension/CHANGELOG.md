@@ -1,3 +1,9 @@
+### Version 1.32.10
+
+- Remove theme onboarding modal (defaults to OS theme)
+- Fix secure-links shared view not de-duplicating items
+- Fix voided/unhandled browser API rejections
+
 ### Version 1.32.9
 
 - Fix unhandled safari native messaging errors
