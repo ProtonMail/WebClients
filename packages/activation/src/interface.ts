@@ -58,6 +58,7 @@ export interface ImportToken {
     Account: string;
     Provider: OAUTH_PROVIDER;
     Products: ImportType[];
+    Features: EASY_SWITCH_FEATURES[];
 }
 
 /* Mail Specific */
@@ -265,9 +266,9 @@ export interface EasySwitchFeatureFlag {
 }
 
 export enum EASY_SWITCH_FEATURES {
-    IMPORT_MAIL = 'ImportMail',
-    IMPORT_CALENDAR = 'ImportCalendar',
-    IMPORT_CONTACTS = 'ImportContacts',
-    MANAGE_MEETINGS = 'ManageMeetings',
+    IMPORT_MAIL = 'import_mail',
+    IMPORT_CALENDAR = 'import_calendar',
+    IMPORT_CONTACTS = 'import_contacts',
+    MANAGE_MEETINGS = 'manage_meetings',
     BYOE = 'byoe',
 }
