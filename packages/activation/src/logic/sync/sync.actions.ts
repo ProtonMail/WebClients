@@ -17,10 +17,12 @@ import type {
     ImportToken,
     OAUTH_PROVIDER,
 } from '@proton/activation/src/interface';
+import { EASY_SWITCH_FEATURES } from '@proton/activation/src/interface';
 import { AuthenticationMethod, ImportType } from '@proton/activation/src/interface';
 import { formatApiSync } from '@proton/activation/src/logic/sync/sync.helpers';
 import type { CreateNotificationOptions } from '@proton/components';
 
+import { getEasySwitchFeaturesFromProducts } from '../../hooks/useOAuthPopup.helpers';
 import type { EasySwitchThunkExtra } from '../store';
 import type { LoadingState, Sync } from './sync.interface';
 
@@ -90,12 +92,12 @@ export const createSyncItem = createAsyncThunk<
                 Code,
                 RedirectUri,
                 Source,
-                Products: [ImportType.MAIL],
+                Features: getEasySwitchFeaturesFromProducts([ImportType.MAIL]),
                 Account: reconnectEmailAddress,
             })
         );
 
-        const { Products, ID, Account } = Token;
+        const { Features, ID, Account } = Token;
 
         // When reconnecting the BYOE address, the user can chose a different gmail account that the BYOE he's trying to reconnect.
         // We need to make sure they are matching to continue
@@ -108,7 +110,7 @@ export const createSyncItem = createAsyncThunk<
             Source,
         };
 
-        if (Products.includes(ImportType.MAIL)) {
+        if (Features.includes(EASY_SWITCH_FEATURES.IMPORT_MAIL)) {
             createImportPayload[ImportType.MAIL] = {
                 Account,
                 Sasl: AuthenticationMethod.OAUTH,
@@ -160,7 +162,7 @@ export const resumeSyncItem = createAsyncThunk<
                 Code,
                 RedirectUri,
                 Source,
-                Products: [ImportType.MAIL],
+                Features: getEasySwitchFeaturesFromProducts([ImportType.MAIL]),
             })
         );
 
