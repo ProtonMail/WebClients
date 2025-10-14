@@ -142,10 +142,10 @@
         "Як запланавана"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
-        "На адну групу кантактаў дапускаецца не больш за ${ maxContacts } кантакт",
-        "На адну групу кантактаў дапускаецца не больш за ${ maxContacts } кантакты",
-        "На адну групу кантактаў дапускаецца не больш за ${ maxContacts } кантактаў",
-        "На адну групу кантактаў дапускаецца не больш за ${ maxContacts } кантактаў"
+        "У групе кантактаў можа быць не больш за ${ maxContacts } кантакт",
+        "У групе кантактаў можа быць не больш за ${ maxContacts } кантакты",
+        "У групе кантактаў можа быць не больш за ${ maxContacts } кантактаў",
+        "У групе кантактаў можа быць не больш за ${ maxContacts } кантактаў"
       ],
       "Attach screenshot(s)": [
         "Далучыць здымак(-і) экрана"
@@ -934,7 +934,7 @@
         "Больш параметраў для ўліковых запісаў"
       ],
       "More refine actions": [
-        "Больш дзеянняў па ўдасканаленні"
+        "Больш удасканаленыя дзеянні"
       ],
       "More search options": [
         "Больш параметраў пошуку"
@@ -1465,7 +1465,7 @@
         "На гэтых выхадных"
       ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
-        "Каб шукаць вашы лісты бяспечна, неабходна спампаваць копіі вашых паведамленняў для прагляду. Першапачатковае спампоўванне можа заняць некаторы час."
+        "Неабходна спампаваць копіі вашых паведамленняў у браўзер, каб шукаць лісты бяспечна. Першапачатковае спампоўванне можа заняць некаторы час."
       ],
       "Toggle Calendar app": [
         "Пераключыць на праграму Каляндар"
@@ -1859,7 +1859,7 @@
         "Блакіроўка рэкламы, праграм сачэння і шкодных праграм"
       ],
       "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Скідкі разлічваюцца на падставе стандартнай платы. Пасля завяршэння перыяду аплаты ваша падпіска будзе аўтаматычна падоўжана па стандартнай гадавой стаўцы."
+        "Скідкі разлічваюцца на падставе стандартнай месячнай платы. Пасля завяршэння перыяду аплаты ваша падпіска будзе аўтаматычна падоўжана па стандартнай гадавой стаўцы."
       ],
       "Double your encrypted storage – get 1 TB for all your data": [
         "Удвойце сваё зашыфраванае сховішча. Атрымайце 1 ТБ для ўсіх сваіх даных"
@@ -2606,7 +2606,7 @@
         "Гэта прапанова новага часу не супадае з падрабязнасцямі вашага запрашэння. Спраўдзіце падрабязнасці запрашэння ў вашым календары."
       ],
       "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "Гэты адказ не супадае з падрабязнасцямі вашага запрашэння. Спраўдзіце падрабязнасці запрашэння ў вашым календары."
+        "Гэты адказ не супадае з падрабязнасцямі вашага запрашэння. Спраўдзіце падрабязнасці запрашэння ў сваім календары."
       ],
       "This response is out of date.": [
         "Гэты адказ састарэў."
@@ -2743,7 +2743,7 @@
         "Поўная гісторыя чатаў з пошукам"
       ],
       "Large file upload support": [
-        "Падтрымка запамоўвання вялікіх файлаў"
+        "Падтрымка запампоўвання вялікіх файлаў"
       ],
       "Limited daily chats": [
         "Абмежаваная колькасць штодзённых чатаў"
@@ -4164,7 +4164,7 @@
         "Для бясшвовага пераходу ў ${ BRAND_NAME } імпартуйце свае даныя з Google, Outlook і іншых сэрвісаў."
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
-        "Палепшыце да ${ BRAND_NAME } Duo, каб атрымаць безлімітны доступ да памочніка ў напісанні і іншыя функцыі."
+        "Палепшыце да ${ BRAND_NAME } Duo, каб атрымаць неабмежаваны доступ да памочніка ў напісанні і іншыя функцыі."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Атрымлівайце апавяшчэнні, калі адбываецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
@@ -4254,7 +4254,7 @@
         "Вы зможаце адпраўляць лісты кожнаму ўдзельніку ў групе адным націскам з дапамогай груп кантактаў."
       ],
       "With custom snooze, you can hide emails and set them to reappear at a better time.": [
-        "З дапамогай карыстальніцкай адкладкі вы можаце хаваць электронныя лісты і задаваць іх паўторнае з'яўленне ў больш зручны час."
+        "З дапамогай карыстальніцкага адкладання вы можаце хаваць электронныя лісты і задаваць іх паўторнае з'яўленне ў больш зручны час."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Вы можаце імпартаваць падзеі ў фармаце iCal (файл ICS). Максімальна памер файла павінен быць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець не больш за ${ MAX_IMPORT_EVENTS_STRING } падзей. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі."
@@ -4388,16 +4388,6 @@
         "Тэкставыя палі з'яўляюцца неабавязковымі. Звесткі, якія вы падалі ў гэтай форме, зменяць толькі выбраны рахунак і гэта не акажа ўплыў на будучыя падрабязнасці рахунка."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "НАТАТКА:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "АПІСАННЕ:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } было скасавана."
@@ -4437,11 +4427,6 @@
         "Выдалена"
       ]
     },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "РАЗМЯШЧЭННЕ:\n${ eventLocation }"
-      ]
-    },
     "Email body for response to invitation": {
       "${ emailAddress } accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } прыняў ваша запрашэнне на ${ eventTitle }"
@@ -4472,7 +4457,7 @@
     },
     "Email reminder decryption error": {
       "Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${ learnMoreLink }": [
-        "Падрабязнасці падзеі зашыфраваны. Увайдзіце яшчэ раз, каб аднавіць каляндар і расшыфраваць вашы даныя. ${ learnMoreLink }"
+        "Падрабязнасці падзеі зашыфраваны. Увайдзіце яшчэ раз, каб аднавіць каляндар і расшыфраваць свае даныя. ${ learnMoreLink }"
       ],
       "Event details cannot be decrypted. ${ whyNotLink }": [
         "Немагчыма расшыфраваць падрабязнасці падзеі. ${ whyNotLink }"
@@ -5658,7 +5643,7 @@
         "тэрабайт",
         "тэрабайты",
         "тэрабайтаў",
-        "Тэрабайтаў"
+        "тэрабайтаў"
       ]
     },
     "Filter": {
@@ -5973,7 +5958,7 @@
         "Колькасць заданняў для выканання"
       ],
       "This feature is currently unavailable": [
-        "Гэта функцыя зараз недаступна"
+        "Гэта функцыя ў цяперашні час недаступна"
       ],
       "Update your logins": [
         "Абнавіце вашы запісы ўваходу"
@@ -6174,7 +6159,7 @@
         "${ totalImported } падзей з ${ totalToImport } зашыфравана і дададзена ў ваш каляндар"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Адбылася памылка пры шыфравання і дадавання падзеі. ${ totalImported } падзея з ${ totalToImport } паспяхова імпартавана.",
+        "Адбылася памылка пры шыфраванні і дадаванні падзеі. ${ totalImported } падзея з ${ totalToImport } паспяхова імпартавана.",
         "Адбылася памылка пры шыфраванні і дадаванні падзей. ${ totalImported } падзеі з ${ totalToImport } паспяхова імпартавана.",
         "Адбылася памылка пры шыфраванні і дадаванні падзей. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартавана.",
         "Адбылася памылка пры шыфраванні і дадаванні падзей. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартавана."
@@ -7295,7 +7280,7 @@
         "Не забудзьце абагуліць ваш пароль з атрымальнікам"
       ],
       "Don't have time to tackle an important email now, but don't want to forget about it? Set a better time for it to appear in your inbox.": [
-        "Няма часу адказаць на важны электронны ліст, але вам неабходна памятаць пра яго? Прызначце лепшы час для з'яўлення яго ў вашай паштовай скрыні."
+        "Няма часу адказаць на важны ліст, але вам неабходна памятаць пра яго? Прызначце лепшы час для з'яўлення яго ў вашай паштовай скрыні."
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Нічога не бачыце? Праверце, ці адключаны блакіроўшчыкі ўсплывальных вокнаў."
@@ -7823,7 +7808,7 @@
         "Падрабязней"
       ],
       "More refine actions": [
-        "Больш дзеянняў па ўдасканаленні"
+        "Больш удасканаленыя дзеянні"
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Большасць агульнадаступных сетак Wi-Fi з'яўляюцца бяспечнымі, але ў некаторых адсутнічаюць функцыі бяспекі і гэта падвяргае вас кіберпагрозам. VPN шыфруе трафік і абараняе ваша падключэнне."
@@ -8264,7 +8249,7 @@
         "Некаторыя вэб-сайты і сэрвісы з трансляцыямі блакіруюць змесціва па рэгіёнах. VPN дазваляе абысці гэтыя абмежаванні і атрымаць свабодны доступ у інтэрнэт."
       ],
       "Sorry, this message does not exist or has already expired.": [
-        "Прабачце, але гэтага паведамлення не існуе або яно пратэрмінаванае."
+        "Прабачце, але гэтага паведамлення не існуе або яно ўжо пратэрмінавана."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Пачніце абагульваць яго са сваімі кантактамі і выкарыстоўваць для сэрвісаў у інтэрнэце."
@@ -8363,7 +8348,7 @@
         "Тэрмін дзеяння паведамлення мінуў"
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
-        "Арыгінальнае паведамленне, якое вы спрабуеце пераслаць або адказаць, знаходзіцца ў працэсе адпраўкі. Калі вы перацягніце, вы не зможаце адрабіць адпраўку арыгінальнага паведамлення."
+        "Арыгінальнае паведамленне, якое вы спрабуеце пераслаць або адказаць, знаходзіцца ў працэсе адпраўкі. Вы не зможаце адрабіць адпраўку арыгінальнага паведамлення, калі перацягніце."
       ],
       "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
         "Пачатковы адпраўнік гэтага паведамлення больш не з'яўляецца сапраўдным. Ваша паведамленне будзе адпраўлена з прадвызначанага адраса ${ defaultEmail }."
@@ -8393,7 +8378,7 @@
         "Няма паведамленняў ад гэтага адпраўніка ў вашай паштовай скрыні."
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
-        "Адбылася памылка подпісу, якая выкарыстоўваецца для спраўджання кантактных звестак, што можа быць выклікана скіданнем пароля."
+        "Адбылася памылка подпісу, якая выкарыстоўваецца для спраўджання кантактных звестак. Яна можа быць выклікана скіданнем пароля."
       ],
       "These conversations are kept here based on your organization's data retention policy.": [
         "Гэтыя размовы захоўваюцца тут у адпаведнасці з палітыкай захоўвання даных вашай арганізацыі."
@@ -8642,7 +8627,7 @@
         "Палепшыце свой тарыфны план, каб ствараць больш папак, фільтраў і адрасоў."
       ],
       "Upgrade to level up your privacy.": [
-        "Палепшыце свой тарыфны план, каб павысіць свой узровень прыватнасці."
+        "Палепшыце тарыфны план, каб павысіць узровень прыватнасці."
       ],
       "Upgrade to send email from @pm.me addresses.": [
         "Палепшыце свой тарыфны план, каб адпраўляць лісты з адраса @pm.me."
@@ -8846,7 +8831,7 @@
         "Тым часам вы можаце закрыць укладку або браўзер."
       ],
       "You can either update your search query or ${ button }": [
-        "Вы можаце абнавіць ваш пошукавы запыт або ${ button }"
+        "Вы можаце абнавіць свой пошукавы запыт або ${ button }"
       ],
       "You can either update your search query or clear it": [
         "Вы можаце абнавіць свой пошукавы запыт або ачысціць яго"
@@ -9744,7 +9729,7 @@
         "Перайсці ў рассылкі"
       ],
       "Go to Primary": [
-        "Перайсці ў Асноўныя"
+        "Перайсці ў асноўныя"
       ],
       "Go to Promotions": [
         "Перайсці да рэкламных акцый"
@@ -9753,7 +9738,7 @@
         "Перайсці ў сацыяльныя сеткі"
       ],
       "Go to Transactions": [
-        "Перайсці ў Трансакцыі"
+        "Перайсці ў трансакцыі"
       ],
       "Go to Updates": [
         "Перайсці ў абнаўленні"
@@ -12051,7 +12036,7 @@
         "${ advancedEncryptionTitle } гарантуе, што толькі вы і прызначаныя атрымальнікі змогуць атрымаць доступ да вашых лістоў."
       ],
       "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
-        "${ industryLeadingSpamProtectionTitle }, якая прадухіляе атрыманне падманных лістоў у вашу паштовую скрыню."
+        "${ industryLeadingSpamProtectionTitle }, якая прадухіляе атрыманне падманных лістоў ад трапляння ў вашу паштовую скрыню."
       ],
       "${ MAIL_APP_NAME } on App Store": [
         "${ MAIL_APP_NAME } у App Store"
@@ -13317,28 +13302,28 @@
         "Цяпер вы можаце змяніць свой пароль для ўліковага запісу ${ boldEmail }"
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
-        "У вас ${ timeRemaining.inDays } дзень, каб скінуць свой пароль.",
-        "У вас ${ timeRemaining.inDays } дні, каб скінуць свой пароль.",
-        "У вас ${ timeRemaining.inDays } дзён, каб скінуць свой пароль.",
-        "У вас ${ timeRemaining.inDays } дзён, каб скінуць свой пароль."
+        "У вас ёсць ${ timeRemaining.inDays } дзень, каб скінуць свой пароль.",
+        "У вас ёсць ${ timeRemaining.inDays } дні, каб скінуць свой пароль.",
+        "У вас ёсць ${ timeRemaining.inDays } дзён, каб скінуць свой пароль.",
+        "У вас ёсць ${ timeRemaining.inDays } дзён, каб скінуць свой пароль."
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "У вас ${ timeRemaining.inHours } гадзіна, каб скінуць свой пароль.",
-        " У вас ${ timeRemaining.inHours } гадзіны, каб скінуць свой пароль.",
-        " У вас ${ timeRemaining.inHours } гадзін, каб скінуць свой пароль.",
-        " У вас ${ timeRemaining.inHours } гадзін, каб скінуць свой пароль."
+        "У вас ёсць ${ timeRemaining.inHours } гадзіна, каб скінуць свой пароль.",
+        " У вас ёсць ${ timeRemaining.inHours } гадзіны, каб скінуць свой пароль.",
+        " У вас ёсць ${ timeRemaining.inHours } гадзін, каб скінуць свой пароль.",
+        " У вас ёсць ${ timeRemaining.inHours } гадзін, каб скінуць свой пароль."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "У вас ${ timeRemaining.inMinutes } хвіліна, каб скінуць свой пароль.",
-        " У вас ${ timeRemaining.inMinutes } хвіліны, каб скінуць свой пароль.",
-        " У вас ${ timeRemaining.inMinutes } хвілін, каб скінуць свой пароль.",
-        " У вас ${ timeRemaining.inMinutes } хвілін, каб скінуць свой пароль."
+        "У вас ёсць ${ timeRemaining.inMinutes } хвіліна, каб скінуць свой пароль.",
+        " У вас ёсць ${ timeRemaining.inMinutes } хвіліны, каб скінуць свой пароль.",
+        " У вас ёсць ${ timeRemaining.inMinutes } хвілін, каб скінуць свой пароль.",
+        " У вас ёсць ${ timeRemaining.inMinutes } хвілін, каб скінуць свой пароль."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "У вас ${ timeRemaining.inSeconds } секунда, каб скінуць свой пароль.",
-        " У вас ${ timeRemaining.inSeconds } секунды, каб скінуць свой пароль.",
-        " У вас ${ timeRemaining.inSeconds } секунд, каб скінуць свой пароль.",
-        " У вас ${ timeRemaining.inSeconds } секунд, каб скінуць свой пароль."
+        "У вас ёсць ${ timeRemaining.inSeconds } секунда, каб скінуць свой пароль.",
+        " У вас ёсць ${ timeRemaining.inSeconds } секунды, каб скінуць свой пароль.",
+        " У вас ёсць ${ timeRemaining.inSeconds } секунд, каб скінуць свой пароль.",
+        " У вас ёсць ${ timeRemaining.inSeconds } секунд, каб скінуць свой пароль."
       ]
     },
     "session_recovery:available:link": {
@@ -13399,10 +13384,10 @@
     },
     "session_recovery:in_progress:info": {
       "${ gracePeriodHoursRemaining } more hour": [
-        "яшчэ ${ gracePeriodHoursRemaining } гадзіна",
-        "яшчэ ${ gracePeriodHoursRemaining } гадзіны",
-        "яшчэ ${ gracePeriodHoursRemaining } гадзін",
-        "яшчэ ${ gracePeriodHoursRemaining } гадзін"
+        "Яшчэ ${ gracePeriodHoursRemaining } гадзіна",
+        "Яшчэ ${ gracePeriodHoursRemaining } гадзіны",
+        "Яшчэ ${ gracePeriodHoursRemaining } гадзін",
+        "Яшчэ ${ gracePeriodHoursRemaining } гадзін"
       ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Скасуйце запыт, калі вы не запытвалі скіданне пароля."
@@ -14498,10 +14483,10 @@
         "У ${ elementsCount } размовах скасавана адкладанне"
       ],
       "${ elementsCount } message added to ${ labelName }.": [
-        "${ elementsCount } паведамленне дададзена да ${ labelName }.",
-        "${ elementsCount } паведамленні дададзена да ${ labelName }.",
-        "${ elementsCount } паведамленняў дададзена да ${ labelName }.",
-        "${ elementsCount } паведамленняў дададзена да ${ labelName }."
+        "Дададзена да ${ labelName } ${ elementsCount } паведамленне.",
+        "Дададзена да ${ labelName } ${ elementsCount } паведамленні.",
+        "Дададзена да ${ labelName } ${ elementsCount } паведамленняў.",
+        "Дададзена да ${ labelName } ${ elementsCount } паведамленняў."
       ],
       "${ elementsCount } message marked as read.": [
         "Пазначана як прачытанае ${ elementsCount } паведамленне.",

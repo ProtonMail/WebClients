@@ -4364,16 +4364,6 @@
         "Câmpurile de text sunt opționale. Informațiile pe care le furnizați în acest formular vor modifica doar factura pe care ați selectat-o ​​și nu detaliile viitoarei facturi."
       ]
     },
-    "Email body for comment (comment part)": {
-      "NOTE:\n${ eventComment }": [
-        "NOTĂ:\n${ eventComment }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "DESCRIPTION:\n${ eventDescription }": [
-        "DESCRIERE:\n${ eventDescription }"
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } a fost anulat."
@@ -4411,11 +4401,6 @@
     "Email body for invitation (event details part)": {
       "Removed": [
         "Eliminat"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "LOCATION:\n${ eventLocation }": [
-        "LOC:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
@@ -7623,9 +7608,6 @@
       ],
       "Low Priority": [
         "Prioritate scăzută"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Setați ${ MAIL_APP_NAME } ca aplicație implicită de e-mail."
       ],
       "Manage your folders": [
         "Gestionare foldere"
