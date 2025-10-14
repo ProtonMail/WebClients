@@ -259,6 +259,10 @@ export function useProtonSheetsUIState(state: ProtonSheetsState, isReadonly: boo
     increaseDecimalPlaces: useEvent(() =>
       state.onChangeDecimals(state.activeSheetId, state.activeCell, state.selections, 'increment'),
     ),
+    paintFormat: {
+      active: state.isPaintFormatActive,
+      save: useEvent(() => state.onSavePaintFormat(state.activeSheetId, state.activeCell, state.selections)),
+    },
   }
 
   // insert
