@@ -2,6 +2,7 @@ import { NodeType, getDrive } from '@proton/drive/index';
 
 import { getActionEventManager } from '../../../utils/ActionEventManager/ActionEventManager';
 import { ActionEventName } from '../../../utils/ActionEventManager/ActionEventManagerTypes';
+import { sendErrorReport } from '../../../utils/errorHandling';
 import { handleSdkError } from '../../../utils/errorHandling/useSdkErrorHandler';
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import { useSidebarStore } from './useSidebar.store';
@@ -61,8 +62,15 @@ export const subscribeToSidebarEvents = () => {
             case ActionEventName.MOVED_NODES:
                 for (const item of event.items) {
                     const itemExists = !!store.getItem(item.uid);
-                    if (itemExists) {
-                        store.updateItem(item.uid, { parentUid: item.parentUid });
+                    if (itemExists && item.parentUid) {
+                        const parent = store.getItem(item.parentUid);
+                        if (parent) {
+                            store.updateItem(item.uid, { parentUid: item.parentUid, level: parent.level + 1 });
+                        } else {
+                            sendErrorReport('Sidebar item in store but its parent is not', {
+                                extra: { parentUid: item.parentUid, itemUid: item.uid },
+                            });
+                        }
                     } else if (item.parentUid && store.getItem(item.parentUid)?.isExpanded) {
                         const sidebarItem = await getSidebarItemFromUid(item.uid);
                         if (sidebarItem) {
