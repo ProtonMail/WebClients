@@ -4,12 +4,14 @@ import { Router } from 'react-router';
 import { Route } from 'react-router-dom';
 
 import type { RenderResult as OriginalRenderResult } from '@testing-library/react';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { render as originalRender } from '@testing-library/react';
 import type { MemoryHistory } from 'history';
 import { createMemoryHistory } from 'history';
 
 import { ApiContext, CacheProvider, ConfigProvider, ModalsChildren, ModalsProvider } from '@proton/components';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { registerFeatureFlagsApiMock } from '@proton/testing/lib/features';
 
 import type { EOOriginalMessageOptions } from 'proton-mail/helpers/test/eo/helpers';

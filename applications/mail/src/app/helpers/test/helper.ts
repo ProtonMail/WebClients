@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { act, waitFor } from '@testing-library/react';
 
 import { useEventManager } from '@proton/components';
