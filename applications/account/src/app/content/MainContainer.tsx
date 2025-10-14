@@ -171,6 +171,7 @@ const MainContainer = () => {
         (useFlag('CryptoPostQuantumOptIn') && user.isPrivate) || !!userSettings.Flags.SupportPgpV6Keys;
     const canDisplayPassReports = useFlag('PassB2BReports');
     const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
+    const isSheetsAvailable = useFlag('DocsSheetsEnabled');
     const isReferralExpansionEnabled = useFlag('ReferralExpansion');
     const isSsoForPbsEnabled = useFlag('SsoForPbs');
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
@@ -404,6 +405,7 @@ const MainContainer = () => {
         organization,
         isDocsHomepageAvailable,
         isMeetAvailable,
+        isSheetsAvailable,
     });
 
     // Should never happen that available apps is empty, but just as a safety mechanism anyway
