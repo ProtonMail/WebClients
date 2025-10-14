@@ -8,6 +8,7 @@ import { DESKTOP_PLATFORMS, RELEASE_CATEGORIES } from '@proton/shared/lib/consta
 import { type DesktopVersion, VersionFileSchema } from '@proton/shared/lib/desktop/DesktopVersion';
 import { getLatestRelease } from '@proton/shared/lib/desktop/getLatestRelease';
 import { getInboxDesktopInfo, hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
+import { getInboxDesktopIsSnapPackage } from '@proton/shared/lib/desktop/snapHelpers';
 import { isDebianBased, isFedoraOrRedHatBased, isMac, isWindows } from '@proton/shared/lib/helpers/browser';
 import { isElectronOnLinux, isElectronOnMac, isElectronOnWindows } from '@proton/shared/lib/helpers/desktop';
 import { getDownloadUrl } from '@proton/shared/lib/helpers/url';
@@ -107,6 +108,8 @@ const useInboxDesktopVersion = () => {
     const [macosApp, setMacosApp] = useState<DesktopVersion>(initialMacosClient);
     const [linuxApp, setLinuxApp] = useState<DesktopVersion>(initialLinuxClients);
 
+    const isSnapPackage = getInboxDesktopIsSnapPackage();
+
     const desktopAppLink = useMemo(() => {
         const isMacOS = isMac();
         const isWindow = isWindows();
@@ -180,7 +183,7 @@ const useInboxDesktopVersion = () => {
         }
     }, [currentEnvironment]);
 
-    return { windowsApp, macosApp, linuxApp, loading, desktopAppLink };
+    return { windowsApp, macosApp, linuxApp, isSnapPackage, loading, desktopAppLink };
 };
 
 export default useInboxDesktopVersion;

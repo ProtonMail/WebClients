@@ -40,6 +40,8 @@ export type IPCInboxDesktopFeature =
 export type IPCInboxGetInfoMessage =
     | { type: 'theme'; result: ThemeSetting }
     | { type: 'latestVersion'; result: DesktopVersion | null }
+    | { type: 'isSnap'; result: boolean | null }
+    | { type: 'snapRevision'; result: string }
     | { type: 'installSource'; result: string | null }
     | { type: 'defaultMailto'; result: DefaultProtocol }
     | { type: 'defaultMailtoBannerDismissed'; result: boolean }
