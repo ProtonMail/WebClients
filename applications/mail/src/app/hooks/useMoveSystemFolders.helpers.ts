@@ -353,6 +353,15 @@ export const getSidebarNavItems = (
                     Color: ACCENT_COLORS[0],
                     Name: apiSystemFolder.Name,
                 },
+                // Force inbox to be at the top, regardless of what the API says.
+                // In some cases, the API has moved the inbox to be the last item of
+                // the list, we rather have the extra logic here and prevent that
+                // behavior from happening ever again.
+                ...((apiSystemFolder.ID === MAILBOX_LABEL_IDS.INBOX && {
+                    order: 0,
+                    display: SYSTEM_FOLDER_SECTION.MAIN,
+                }) ||
+                    {}),
             };
         })
         .filter((item): item is SystemFolder => item !== null);
