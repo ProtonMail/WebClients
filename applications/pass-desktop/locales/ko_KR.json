@@ -1892,7 +1892,7 @@
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
+        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -3547,9 +3547,6 @@
       ],
       "The best of ${ BRAND_NAME } with one subscription": [
         "한 번의 구독으로 누리는 최고의 ${ BRAND_NAME }"
-      ],
-      "The URL has been copied to the clipboard": [
-        "URL이 클립보드로 복사되었습니다."
       ],
       "Theme": [
         "테마"
