@@ -1,29 +1,22 @@
 import type { ReactNode } from 'react';
-import { useMemo, useRef, useState } from 'react';
+import { useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Button, Tooltip } from '@proton/atoms';
-import { changeCalendarVisiblity } from '@proton/calendar/calendars/actions';
+import { Tooltip } from '@proton/atoms';
 import {
     AppVersion,
     AppsDropdown,
     CalendarLimitReachedModal,
-    DropdownMenu,
-    DropdownMenuButton,
     HolidaysCalendarModal,
     Icon,
     PersonalCalendarModal,
     Sidebar,
     SidebarDrawerItems,
-    SidebarList,
-    SidebarListItemHeaderLink,
     SidebarLogo,
     SidebarNav,
     SidebarPrimaryButton,
-    SimpleDropdown,
-    SimpleSidebarListItemHeader,
     SubscribedCalendarModal,
     useActiveBreakpoint,
     useApi,
@@ -32,10 +25,8 @@ import {
     useSubscribedCalendars,
 } from '@proton/components';
 import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
-import { useLoadingByKey } from '@proton/hooks/useLoading';
 import { groupCalendarsByTaxonomy, sortCalendars } from '@proton/shared/lib/calendar/calendar';
 import { getHasUserReachedCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';
-import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { APPS } from '@proton/shared/lib/constants';
 import {
     COLLAPSE_EVENTS,
@@ -44,18 +35,14 @@ import {
     useLeftSidebarButton,
 } from '@proton/shared/lib/helpers/collapsibleSidebar';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
-import type { Address } from '@proton/shared/lib/interfaces';
 import type { CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
-import noop from '@proton/utils/noop';
 
-import { useCalendarDispatch } from '../../store/hooks';
-import CalendarSidebarListItems from './CalendarSidebarListItems';
 import { ProtonMeetSpotlightWrapper } from './ProtonMeetSpotlightWrapper';
+import { MyCalendars } from './sidebar/MyCalendars';
 import { OtherCalendars } from './sidebar/OtherCalendars';
 
 export interface CalendarSidebarProps {
-    addresses: Address[];
     calendars: VisualCalendar[];
     calendarUserSettings: CalendarUserSettings;
     expanded?: boolean;
@@ -66,7 +53,6 @@ export interface CalendarSidebarProps {
 }
 
 const CalendarSidebar = ({
-    addresses,
     calendars,
     calendarUserSettings,
     expanded = false,
@@ -77,7 +63,6 @@ const CalendarSidebar = ({
 }: CalendarSidebarProps) => {
     const api = useApi();
     const [user] = useUser();
-    const dispatch = useCalendarDispatch();
 
     const [showSideBar, setshowSideBar] = useLocalState(true, `${user.ID}-${APPS.PROTONCALENDAR}-left-nav-opened`);
     const { viewportWidth } = useActiveBreakpoint();
@@ -98,8 +83,6 @@ const CalendarSidebar = ({
     const { isScrollPresent } = useLeftSidebarButton({
         navigationRef,
     });
-
-    const [loadingVisibility, withLoadingVisibility] = useLoadingByKey();
 
     const [calendarModal, setIsCalendarModalOpen, renderCalendarModal] = useModalState();
     const [holidaysCalendarModal, setIsHolidaysCalendarModalOpen, renderHolidaysCalendarModal] = useModalState();
@@ -132,12 +115,6 @@ const CalendarSidebar = ({
         calendars,
         !user.hasPaidMail
     );
-
-    const addCalendarText = c('Dropdown action icon tooltip').t`Add calendar`;
-
-    const handleChangeVisibility = async (calendarID: string, display: boolean) => {
-        dispatch(changeCalendarVisiblity({ calendarID, display })).catch(noop);
-    };
 
     const handleCreatePersonalCalendar = () => {
         if (!isCalendarsLimitReached) {
@@ -187,90 +164,6 @@ const CalendarSidebar = ({
         </Tooltip>
     );
 
-    const [displayMyCalendars, setDisplayMyCalendars] = useState(true);
-
-    const headerButton = (
-        <Tooltip title={c('Info').t`Manage your calendars`}>
-            <SidebarListItemHeaderLink
-                toApp={APPS.PROTONACCOUNT}
-                to={getCalendarsSettingsPath({ fullPath: true })}
-                target="_self"
-                icon="cog-wheel"
-                alt={c('Link').t`Calendars`}
-            />
-        </Tooltip>
-    );
-
-    const myCalendarsList = (
-        <SidebarList>
-            <SimpleSidebarListItemHeader
-                toggle={displayMyCalendars}
-                onToggle={() => setDisplayMyCalendars((prevState) => !prevState)}
-                right={
-                    <div className="flex flex-nowrap items-center">
-                        {!isOtherCalendarsLimitReached ? (
-                            <Tooltip title={addCalendarText}>
-                                <SimpleDropdown
-                                    as="button"
-                                    type="button"
-                                    hasCaret={false}
-                                    className="navigation-link-header-group-control flex"
-                                    content={<Icon name="plus" className="navigation-icon" alt={addCalendarText} />}
-                                    ref={dropdownRef}
-                                >
-                                    <DropdownMenu>
-                                        <DropdownMenuButton
-                                            className="text-left"
-                                            onClick={handleCreatePersonalCalendar}
-                                        >
-                                            {c('Action').t`Create calendar`}
-                                        </DropdownMenuButton>
-                                        <DropdownMenuButton className="text-left" onClick={handleAddHolidaysCalendar}>
-                                            {c('Action').t`Add public holidays`}
-                                        </DropdownMenuButton>
-                                        <DropdownMenuButton
-                                            className="text-left"
-                                            onClick={handleCreateSubscribedCalendar}
-                                        >
-                                            {c('Calendar sidebar dropdown item').t`Add calendar from URL`}
-                                        </DropdownMenuButton>
-                                    </DropdownMenu>
-                                </SimpleDropdown>
-                            </Tooltip>
-                        ) : (
-                            <Button
-                                shape="ghost"
-                                color="weak"
-                                size="medium"
-                                icon
-                                className="navigation-link-header-group-control"
-                                onClick={handleCreatePersonalCalendar}
-                            >
-                                <Tooltip title={addCalendarText}>
-                                    <Icon name="plus" className="navigation-icon" alt={addCalendarText} />
-                                </Tooltip>
-                            </Button>
-                        )}
-                        {headerButton}
-                    </div>
-                }
-                text={c('Link').t`My calendars`}
-                testId="calendar-sidebar:my-calendars-button"
-            />
-            {displayMyCalendars && (
-                <CalendarSidebarListItems
-                    calendars={myCalendars}
-                    allCalendars={calendars}
-                    onChangeVisibility={(calendarID, value) =>
-                        withLoadingVisibility(calendarID, handleChangeVisibility(calendarID, value))
-                    }
-                    addresses={addresses}
-                    loadingVisibility={loadingVisibility}
-                />
-            )}
-        </SidebarList>
-    );
-
     const displayContactsInHeader = useDisplayContactsWidget();
 
     const logo = <SidebarLogo collapsed={collapsed} to="/" app={APPS.PROTONCALENDAR} />;
@@ -311,7 +204,15 @@ const CalendarSidebar = ({
                     <>
                         <div className="shrink-0 w-full">{miniCalendar}</div>
                         <div>
-                            {myCalendarsList}
+                            <MyCalendars
+                                myCalendars={myCalendars}
+                                allCalendars={calendars}
+                                isOtherCalendarsLimitReached={isOtherCalendarsLimitReached}
+                                dropdownRef={dropdownRef}
+                                handleCreatePersonalCalendar={handleCreatePersonalCalendar}
+                                handleAddHolidaysCalendar={handleAddHolidaysCalendar}
+                                handleCreateSubscribedCalendar={handleCreateSubscribedCalendar}
+                            />
                             <OtherCalendars
                                 calendars={calendars}
                                 otherCalendars={otherCalendars}
