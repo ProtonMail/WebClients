@@ -79,13 +79,17 @@ export const useProtonMeetIntegration = ({
         hidePassphrase: !isMeetVideoConferenceEnabled || !isCurrentUserMeetingHost || !isMeetPassphraseEnabled,
     });
 
-    const protonMeetConferenceDetails = useRef<{
-        conferenceId: string;
-        conferenceUrl: string;
-    }>({
-        conferenceId: '',
-        conferenceUrl: '',
-    });
+    const protonMeetConferenceDetails = useRef(
+        model.conferenceProvider === VIDEO_CONFERENCE_PROVIDER.PROTON_MEET
+            ? {
+                  conferenceId: model.conferenceId,
+                  conferenceUrl: model.conferenceUrl,
+              }
+            : {
+                  conferenceId: '',
+                  conferenceUrl: '',
+              }
+    );
 
     const modelRef = useRef(model);
 

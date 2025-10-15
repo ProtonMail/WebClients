@@ -27,10 +27,5 @@ export const shouldAutoAddMeetingLink = ({
         return attendeesCount > 0 && model.conferenceProvider !== VIDEO_CONFERENCE_PROVIDER.ZOOM;
     }
 
-    return (
-        (!model.conferenceUrl ||
-            (!!model.isConferenceTmpDeleted && model.conferenceProvider !== VIDEO_CONFERENCE_PROVIDER.ZOOM)) &&
-        attendeesCount > 0 &&
-        prevAttendeesCount === 0
-    );
+    return (!model.conferenceUrl || !!model.isConferenceTmpDeleted) && attendeesCount > 0 && prevAttendeesCount === 0;
 };
