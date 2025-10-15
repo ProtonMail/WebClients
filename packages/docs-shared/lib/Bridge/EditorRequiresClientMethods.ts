@@ -7,6 +7,44 @@ import type { WordCountInfoCollection } from '../WordCount/WordCountTypes'
 import type { SuggestionSummaryType } from '../SuggestionType'
 import type { EditorEvent, EditorEventData } from './EditorEvent'
 import type { SafeDocsUserState } from '../Doc/DocsAwareness'
+import type { DataTypesThatDocumentCanBeExportedAs } from '../ExportableDataType'
+
+export type FileMenuAction =
+  | {
+      type: 'new-spreadsheet'
+    }
+  | {
+      type: 'import'
+    }
+  | {
+      type: 'make-a-copy'
+    }
+  | {
+      type: 'move-to-folder'
+    }
+  | {
+      type: 'see-version-history'
+    }
+  | {
+      type: 'move-to-trash'
+    }
+  | {
+      type: 'print'
+    }
+  | {
+      type: 'download'
+      format: DataTypesThatDocumentCanBeExportedAs
+    }
+  | {
+      type: 'help'
+    }
+  | {
+      type: 'view-recent-spreadsheets'
+    }
+  | {
+      type: 'open-proton-drive'
+    }
+export const FileMenuActionEvent = 'FileMenuAction' as const
 
 export interface EditorRequiresClientMethods {
   editorRequestsPropagationOfUpdate(message: RtsMessagePayload, debugSource: BroadcastSource): Promise<void>
@@ -59,4 +97,6 @@ export interface EditorRequiresClientMethods {
   showGenericAlertModal(message: string): void
 
   fetchExternalImageAsBase64(url: string): Promise<string | undefined>
+
+  handleFileMenuAction(action: FileMenuAction): Promise<void>
 }

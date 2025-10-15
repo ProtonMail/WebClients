@@ -9,6 +9,7 @@ import type {
   EditorEvent,
   EditorEventData,
   SafeDocsUserState,
+  FileMenuAction,
 } from '@proton/docs-shared'
 
 export interface EditorOrchestratorInterface {
@@ -48,4 +49,6 @@ export interface EditorOrchestratorInterface {
   handleAwarenessStateUpdate(states: SafeDocsUserState[]): Promise<void>
 
   fetchExternalImageAsBase64(url: string): Promise<string | undefined>
+
+  handleFileMenuAction(action: FileMenuAction): Promise<void>
 }
