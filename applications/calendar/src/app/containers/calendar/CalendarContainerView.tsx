@@ -576,7 +576,6 @@ const CalendarContainerView = ({
     const sidebar = (
         <CalendarSidebar
             calendars={calendars}
-            addresses={addresses}
             calendarUserSettings={calendarUserSettings}
             expanded={expanded}
             onToggleExpand={onToggleExpand}
