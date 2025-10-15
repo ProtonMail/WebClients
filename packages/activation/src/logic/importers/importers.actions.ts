@@ -3,7 +3,6 @@ import { c } from 'ttag';
 
 import { cancelImport, getImportsList } from '@proton/activation/src/api';
 import type { ApiImportListResponse } from '@proton/activation/src/api/api.interface';
-import { getEasySwitchFeaturesFromProducts } from '@proton/activation/src/hooks/useOAuthPopup.helpers';
 
 import type { EasySwitchThunkExtra } from '../store';
 import type { ActiveImportID } from './importers.interface';
@@ -25,7 +24,7 @@ export const cancelImporter = createAsyncThunk<void, { activeImporterID: ActiveI
         await thunkApi.extra.api(
             cancelImport({
                 ImporterID: activeImporter.importerID,
-                Features: getEasySwitchFeaturesFromProducts([activeImporter.product]),
+                Products: [activeImporter.product],
             })
         );
         await thunkApi.extra.eventManager.call();

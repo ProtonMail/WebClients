@@ -21,7 +21,6 @@ import type {
     ImportedCalendar,
     OAuthProps,
 } from '@proton/activation/src/interface';
-import { EASY_SWITCH_FEATURES } from '@proton/activation/src/interface';
 import { AuthenticationMethod, IMPORT_ERROR, ImportProvider, ImportType } from '@proton/activation/src/interface';
 import { getApiError, getIsTimeoutError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
@@ -30,7 +29,6 @@ import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { Address, UserModel } from '@proton/shared/lib/interfaces';
 import truncate from '@proton/utils/truncate';
 
-import { getEasySwitchFeaturesFromProducts } from '../../../hooks/useOAuthPopup.helpers';
 import type { EasySwitchThunkExtra } from '../../store';
 import { OAUTH_ACTION_PREFIX } from './oauthDraft.actions';
 import type { ImporterCalendar, ImporterData } from './oauthDraft.interface';
@@ -70,14 +68,14 @@ export const createImporterThunk = createAsyncThunk<ImporterData, Props, EasySwi
                 Code,
                 RedirectUri,
                 Source: source,
-                Features: getEasySwitchFeaturesFromProducts(products),
+                Products: products,
             })
         );
-        const { Features, ID, Account } = Token;
+        const { Products, ID, Account } = Token;
 
         const createImportPayload: CreateImportPayload = { TokenID: ID, Source: source };
 
-        if (Features.includes(EASY_SWITCH_FEATURES.IMPORT_MAIL)) {
+        if (Products.includes(ImportType.MAIL)) {
             createImportPayload[ImportType.MAIL] = {
                 Account,
                 Sasl: AuthenticationMethod.OAUTH,
@@ -85,11 +83,11 @@ export const createImporterThunk = createAsyncThunk<ImporterData, Props, EasySwi
         }
 
         // Calendar and contacts need empty payload
-        if (Features.includes(EASY_SWITCH_FEATURES.IMPORT_CALENDAR)) {
+        if (Products.includes(ImportType.CALENDAR)) {
             createImportPayload[ImportType.CALENDAR] = {};
         }
 
-        if (Features.includes(EASY_SWITCH_FEATURES.IMPORT_CONTACTS)) {
+        if (Products.includes(ImportType.CONTACTS)) {
             createImportPayload[ImportType.CONTACTS] = {};
         }
 

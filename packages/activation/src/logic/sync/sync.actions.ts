@@ -17,12 +17,10 @@ import type {
     ImportToken,
     OAUTH_PROVIDER,
 } from '@proton/activation/src/interface';
-import { EASY_SWITCH_FEATURES } from '@proton/activation/src/interface';
 import { AuthenticationMethod, ImportType } from '@proton/activation/src/interface';
 import { formatApiSync } from '@proton/activation/src/logic/sync/sync.helpers';
 import type { CreateNotificationOptions } from '@proton/components';
 
-import { getEasySwitchFeaturesFromProducts } from '../../hooks/useOAuthPopup.helpers';
 import type { EasySwitchThunkExtra } from '../store';
 import type { LoadingState, Sync } from './sync.interface';
 
@@ -90,18 +88,18 @@ export const createSyncItem = createAsyncThunk<
                 Code,
                 RedirectUri,
                 Source,
-                Features: getEasySwitchFeaturesFromProducts([ImportType.MAIL]),
+                Products: [ImportType.MAIL],
             })
         );
 
-        const { Features, ID, Account } = Token;
+        const { Products, ID, Account } = Token;
 
         const createImportPayload: CreateImportPayload = {
             TokenID: ID,
             Source,
         };
 
-        if (Features.includes(EASY_SWITCH_FEATURES.IMPORT_MAIL)) {
+        if (Products.includes(ImportType.MAIL)) {
             createImportPayload[ImportType.MAIL] = {
                 Account,
                 Sasl: AuthenticationMethod.OAUTH,
@@ -153,7 +151,7 @@ export const resumeSyncItem = createAsyncThunk<
                 Code,
                 RedirectUri,
                 Source,
-                Features: getEasySwitchFeaturesFromProducts([ImportType.MAIL]),
+                Products: [ImportType.MAIL],
             })
         );
 
