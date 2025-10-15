@@ -55,4 +55,4 @@ The code and data files in this distribution are licensed under the terms of the
 by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 See https://www.gnu.org/licenses/ for a copy of this license.
 
-See [LICENSE](LICENSE) file
+See [LICENSE](LICENSE) file.
