@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
-import { Button } from 'packages/atoms/src/Button/Button';
-import { Tooltip } from 'packages/atoms/src/Tooltip/Tooltip';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { useCalendarUserSettings } from '@proton/calendar';
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { changeCalendarVisiblity } from '@proton/calendar/calendars/actions';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
