@@ -161,9 +161,12 @@ export const createAsyncQueue = () => {
             active = true;
             return (chain = chain.then(() => (active ? Promise.resolve(job()) : undefined)).catch(noop));
         },
+
         cancel: () => {
             active = false;
             chain = Promise.resolve();
         },
+
+        settled: () => chain.then(() => true).catch(() => true),
     };
 };
