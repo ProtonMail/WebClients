@@ -8,20 +8,15 @@ import { Tooltip } from '@proton/atoms';
 import {
     AppVersion,
     AppsDropdown,
-    CalendarLimitReachedModal,
-    HolidaysCalendarModal,
     Icon,
-    PersonalCalendarModal,
     Sidebar,
     SidebarDrawerItems,
     SidebarLogo,
     SidebarNav,
     SidebarPrimaryButton,
-    SubscribedCalendarModal,
     useActiveBreakpoint,
     useApi,
     useLocalState,
-    useModalState,
     useSubscribedCalendars,
 } from '@proton/components';
 import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
@@ -54,7 +49,6 @@ export interface CalendarSidebarProps {
 
 const CalendarSidebar = ({
     calendars,
-    calendarUserSettings,
     expanded = false,
     onToggleExpand,
     miniCalendar,
@@ -84,11 +78,6 @@ const CalendarSidebar = ({
         navigationRef,
     });
 
-    const [calendarModal, setIsCalendarModalOpen, renderCalendarModal] = useModalState();
-    const [holidaysCalendarModal, setIsHolidaysCalendarModalOpen, renderHolidaysCalendarModal] = useModalState();
-    const [subscribedCalendarModal, setIsSubscribedCalendarModalOpen, renderSubscribedCalendarModal] = useModalState();
-    const [limitReachedModal, setIsLimitReachedModalOpen, renderLimitReachedModal] = useModalState();
-
     const headerRef = useRef(null);
     const dropdownRef = useRef(null);
 
@@ -115,30 +104,6 @@ const CalendarSidebar = ({
         calendars,
         !user.hasPaidMail
     );
-
-    const handleCreatePersonalCalendar = () => {
-        if (!isCalendarsLimitReached) {
-            setIsCalendarModalOpen(true);
-        } else {
-            setIsLimitReachedModalOpen(true);
-        }
-    };
-
-    const handleAddHolidaysCalendar = () => {
-        if (!isCalendarsLimitReached) {
-            setIsHolidaysCalendarModalOpen(true);
-        } else {
-            setIsLimitReachedModalOpen(true);
-        }
-    };
-
-    const handleCreateSubscribedCalendar = () => {
-        if (!isOtherCalendarsLimitReached) {
-            setIsSubscribedCalendarModalOpen(true);
-        } else {
-            setIsLimitReachedModalOpen(true);
-        }
-    };
 
     const primaryAction = (
         <Tooltip title={collapsed ? c('Action').t`New event` : null}>
@@ -181,37 +146,19 @@ const CalendarSidebar = ({
             collapsed={collapsed}
             navigationRef={navigationRef}
         >
-            {renderCalendarModal && (
-                <PersonalCalendarModal
-                    {...calendarModal}
-                    calendars={calendars}
-                    defaultCalendarID={calendarUserSettings.DefaultCalendarID}
-                    onCreateCalendar={onCreateCalendar}
-                />
-            )}
-            {renderSubscribedCalendarModal && (
-                <SubscribedCalendarModal {...subscribedCalendarModal} onCreateCalendar={onCreateCalendar} />
-            )}
-            {renderHolidaysCalendarModal && (
-                <HolidaysCalendarModal {...holidaysCalendarModal} holidaysCalendars={holidaysCalendars} />
-            )}
-            {renderLimitReachedModal && (
-                <CalendarLimitReachedModal user={user} {...limitReachedModal} isFreeUser={!user.hasPaidMail} />
-            )}
-
             <SidebarNav className="flex *:min-size-auto" data-testid="calendar-sidebar:calendars-list-area">
                 {!collapsed && (
                     <>
                         <div className="shrink-0 w-full">{miniCalendar}</div>
                         <div>
                             <MyCalendars
+                                isCalendarsLimitReached={isCalendarsLimitReached}
                                 myCalendars={myCalendars}
                                 allCalendars={calendars}
+                                holidaysCalendars={holidaysCalendars}
                                 isOtherCalendarsLimitReached={isOtherCalendarsLimitReached}
                                 dropdownRef={dropdownRef}
-                                handleCreatePersonalCalendar={handleCreatePersonalCalendar}
-                                handleAddHolidaysCalendar={handleAddHolidaysCalendar}
-                                handleCreateSubscribedCalendar={handleCreateSubscribedCalendar}
+                                onCreateCalendar={onCreateCalendar}
                             />
                             <OtherCalendars
                                 calendars={calendars}
