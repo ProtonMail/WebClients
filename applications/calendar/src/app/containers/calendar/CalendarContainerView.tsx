@@ -576,7 +576,6 @@ const CalendarContainerView = ({
     const sidebar = (
         <CalendarSidebar
             calendars={calendars}
-            calendarUserSettings={calendarUserSettings}
             expanded={expanded}
             onToggleExpand={onToggleExpand}
             onCreateEvent={onCreateEvent ? () => onCreateEvent?.() : undefined}
