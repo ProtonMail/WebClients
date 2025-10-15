@@ -1,7 +1,10 @@
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getItem } from '@proton/shared/lib/helpers/storage';
+import { useFlag } from '@proton/unleash';
 
 import RecipientType from 'proton-mail/components/message/recipients/RecipientType';
+import { hasLabel } from 'proton-mail/helpers/elements';
 import type { Element } from 'proton-mail/models/element';
 
 import { CategoryBadge } from './CategoryBadge';
@@ -19,8 +22,12 @@ interface Props {
 
 export const ExtraMessageCategory = ({ message, element }: Props) => {
     const { canSeeCategoryLabel } = useCategoryViewExperiment();
+    const dataRetentionPolicyEnabled = useFlag('DataRetentionPolicy');
 
     if (!hasCategoryLabel(message.data?.LabelIDs) || !canSeeCategoryLabel || getItem(DISABLED_BADGE)) {
+        return null;
+    }
+    if (dataRetentionPolicyEnabled && hasLabel(message.data, MAILBOX_LABEL_IDS.SOFT_DELETED)) {
         return null;
     }
 
