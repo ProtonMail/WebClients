@@ -19,6 +19,6 @@ export function logInitialAppInfo() {
 
     mainLogger.info(
         "Build info:",
-        JSON.stringify({ idaTag: process.env.IDA_TAG, buildTag: process.env.BUILD_TAG, appVersion: pkg.version }),
+        JSON.stringify({ idaTag: process.env.MEET_TAG, buildTag: process.env.BUILD_TAG, appVersion: pkg.version }),
     );
 }
