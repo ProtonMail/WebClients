@@ -17,7 +17,6 @@ import { isLinux, isMac, isWindows } from "./helpers";
 import Logger, { LogMessage, Transport } from "electron-log";
 import { getAppURL } from "../store/urlStore";
 import { getSettings } from "../store/settingsStore";
-import { getWindowBounds } from "../store/boundsStore";
 import { getAccountView, getCurrentViewID, getMainWindow } from "./view/viewManagement";
 import { NET_LOGGER_VIEW_PREFIX, sentryLogger } from "./log";
 import { isProdEnv } from "./isProdEnv";
@@ -118,7 +117,6 @@ export async function initializeSentry() {
                 extra: {
                     appID: getAppID(),
                     settings: getSettings(),
-                    windowBounds: getWindowBounds(),
                     mainWindow: {
                         isMinimized: getMainWindow().isMinimized(),
                         currentView: getCurrentViewID(),

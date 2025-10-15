@@ -19,7 +19,6 @@ import { initializeSentry } from "./utils/sentry";
 import { setRequestPermission, extendAppVersionHeader } from "./utils/session";
 import { captureTopLevelRejection, captureUncaughtErrors } from "./utils/log/captureUncaughtErrors";
 import { logInitialAppInfo } from "./utils/log/logInitialAppInfo";
-import metrics from "./utils/metrics";
 
 (async function () {
     initializeLog();
@@ -102,7 +101,6 @@ import metrics from "./utils/metrics";
 
     // After this point the main window and views have been created
     viewCreationAppStartup();
-    metrics.initialize();
 
     const settings = getSettings();
 

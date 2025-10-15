@@ -1,10 +1,7 @@
 import { BrowserWindow, app } from "electron";
-import { saveWindowBounds } from "../../store/boundsStore";
 import { mainLogger } from "../log";
 
 export const macOSExitEvent = (window: BrowserWindow) => {
-    saveWindowBounds(window);
-
     if (window.isFullScreen()) {
         mainLogger.info("close, isFullScreen on macOS");
         window.setFullScreen(false);
