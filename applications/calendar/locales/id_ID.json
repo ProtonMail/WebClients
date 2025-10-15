@@ -928,6 +928,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Masa uji coba aplikasi desktop Anda akan berakhir pada ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Passphrase": [
+        "Frasa sandi"
       ]
     },
     "action": {
@@ -1218,6 +1221,15 @@
     "b2b_trials_2025_Info": {
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Anda dapat memiliki hingga ${ TRIAL_MAX_SCRIBE_SEATS } kuota Scribe selama masa uji coba."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Setelah masa uji coba ini berakhir pada ${ formattedDate }, paket Anda akan menjadi langganan berbayar yang diperbarui secara otomatis secara bulanan. Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Anda dapat memiliki hingga ${ TRIAL_MAX_USERS } pengguna selama masa uji coba."
+      ],
+      "You have reached the trial limit.": [
+        "Anda telah mencapai batas uji coba Anda."
       ]
     },
     "b2b_trials_Action": {
@@ -1783,6 +1795,21 @@
     "collider_2025: feature": {
       "Access to advanced AI models": [
         "Akses ke berbagai model AI lanjutan"
+      ],
+      "Basic chat history": [
+        "Riwayat percakapan dasar"
+      ],
+      "Limited favorites": [
+        "Favorit dalam jumlah yang terbatas"
+      ],
+      "Unlimited daily chats": [
+        "Tanpa batasan jumlah percakapan harian"
+      ],
+      "Upload and query small files": [
+        "Unggah dan kuerikan berkas kecil"
+      ],
+      "Web search access": [
+        "Akses pencarian web"
       ]
     },
     "collider_2025: Info": {
@@ -4405,6 +4432,12 @@
       ],
       "Security Center": [
         "Pusat Keamanan"
+      ],
+      "Domain": [
+        "Domain"
+      ],
+      "Username": [
+        "Nama pengguna"
       ]
     },
     "Hint": {
@@ -4720,13 +4753,13 @@
         "Impor dari Google"
       ],
       "Import from other": [
-        "Impor dari yang lain"
+        "Impor dari layanan lain"
       ],
       "Import from Outlook": [
         "Impor dari Outlook"
       ],
       "Import from Yahoo": [
-        "Masukan dari Yahoo"
+        "Impor dari Yahoo"
       ]
     },
     "Import warning": {
@@ -5435,7 +5468,7 @@
         "Satu atau lebih kunci terpercaya Anda telah ditandai sebagai \"bocor\" oleh pemiliknya. Kami menyarankan Anda untuk tidak lagi \"memercayai\" kunci tersebut."
       ],
       "One time import": [
-        "Satu kali impor"
+        "Impor sekali jadi"
       ],
       "Open shortcut cheat sheet": [
         "Buka lembar contekan pintasan"
@@ -6066,6 +6099,24 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Anda akan tetap dapat melihat data milik akun Anda, namun seluruh akun pengguna akan dihapus dari organisasi Anda."
+      ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Langkah 1:** Undang teman Anda ke ${ BRAND_NAME } dengan tautan rujukan Anda."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
+        "**Langkah 2:** Teman Anda memperoleh 2 minggu gratis untuk paket ${ BRAND_NAME } pilihan mereka."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Langkah 2:** Teman Anda memperoleh 2 minggu gratis untuk paket mereka."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**Langkah 3:** Dapatkan saldo senilai ${ referrerRewardAmount } untuk setiap teman yang berlangganan ke salah satu paket."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Langkah 3:** Dapatkan saldo senilai ${ referrerRewardAmount } untuk setiap orang yang berlangganan ke salah satu paket."
+      ],
+      "You are currently signed in as ${ username }.": [
+        "Anda sedang masuk sebagai ${ username }"
       ]
     },
     "info": {
@@ -7689,6 +7740,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Kami memindai dark web untuk memeriksa apakah alamat atau alias ${ BRAND_NAME } Anda telah dibocorkan serta memberitahukan Anda dengan segera apabila kami menemukan sesuatu."
+      ],
+      "Short domain (@pm.me)": [
+        "Domain pendek (@pm.me)"
       ]
     },
     "new_plans: feature highlight": {
@@ -7798,7 +7852,7 @@
         "Akun gratis yang dirancang untuk menyediakan privasi sebagai hal yang baku bagi semua."
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
-        "Privasi tanpa batas dan ruang penyimpanan yang lebih untuk hingga 2 orang pengguna."
+        "Privasi tanpa batas dan ruang penyimpanan yang lebih lowong untuk hingga 2 orang pengguna."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menghapus akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon apabila Anda membuat akun baru."
@@ -8763,6 +8817,12 @@
       ],
       "Your payment is still being processed": [
         "Pembayaran Anda masih diproses"
+      ],
+      "Amount due after trial on ${ formattedDate }": [
+        "Jumlah tagihan setelah masa uji coba pada ${ formattedDate }"
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Anda telah memiliki langganan untuk paket ini. Anda dapat mengubah langganan Anda pada ${ subscriptionPlatform }."
       ]
     },
     "Payments.Error": {
@@ -9110,6 +9170,18 @@
       ],
       "Friend subscribed": [
         "Teman yang berlangganan"
+      ],
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } per rujukan"
+      ],
+      "Invited friends": [
+        "Teman yang diundang"
+      ],
+      "More sharing options": [
+        "Opsi pembagian lainnya"
+      ],
+      "Refer friends": [
+        "Rujuk teman"
       ]
     },
     "Reload event button tooltip": {
@@ -11757,6 +11829,11 @@
       ],
       "Passcode:": [
         "Kode sandi:"
+      ]
+    },
+    "Payments.info": {
+      "Credits will be added to your balance": [
+        "Saldo akan ditambahkan ke tabungan Anda"
       ]
     }
   }

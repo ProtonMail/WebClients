@@ -139,10 +139,10 @@
         "Escolha um arquivo ou arraste-o aqui"
       ],
       "Claim this address": [
-        "Confirmar este endereço"
+        "Reivindicar este endereço"
       ],
       "Claim your free ${ BRAND_NAME } address": [
-        "Confirmar seu endereço de ${ BRAND_NAME }"
+        "Obtenha seu endereço ${ BRAND_NAME } gratuito"
       ],
       "Clear": [
         "Limpar"
@@ -3325,6 +3325,12 @@
       ],
       "This event was updated.": [
         "Este evento foi atualizado."
+      ],
+      "DESCRIPTION:": [
+        "DESCRIÇÃO:"
+      ],
+      "LOCATION:": [
+        "LOCALIZAÇÃO:"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3381,7 +3387,7 @@
     },
     "emergency_access": {
       "Trusted contact": [
-        "Contato de confiança"
+        "Contato confiável"
       ]
     },
     "Error": {
@@ -3560,7 +3566,7 @@
         "Falha ao carregar o modal OAuth."
       ],
       "Failed to open to contact": [
-        "Não foi possível abrir o contato."
+        "Não foi possível abrir o contato"
       ],
       "Failed to update secret passphrase": [
         "Falha ao atualizar a passphrase secreta"
@@ -3695,7 +3701,7 @@
         "A chave de organização não está descriptografada"
       ],
       "Passphrase unavailable": [
-        "Passphrase indisponível"
+        "Frase secreta indisponível"
       ],
       "Password is required": [
         "A senha é obrigatória"
@@ -4269,7 +4275,7 @@
         "suporte ao cliente"
       ],
       "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
-        "Os planos familiares não suportam contas externas no momento. Crie um endereço para ${ BRAND_NAME } antes de participar.${ link }"
+        "Os planos familiares não suportam contas externas no momento. Crie um endereço para ${ BRAND_NAME } antes de participar. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Se aceitar o convite, seu plano atual será alterado e você receberá um crédito em sua conta com o saldo restante, se houver."
@@ -5385,7 +5391,7 @@
         "finança"
       ],
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
-        "Para segurança extra, você pode definir uma passphrase. Ela não será incluída no convite do calendário. Lembre-se de compartilhá-la com seus convidados separadamente."
+        "Para segurança extra, você pode definir uma frase secreta. Ela não será incluída no convite do calendário. Lembre-se de compartilhá-la com seus convidados separadamente."
       ],
       "Frequency modifications will be lost.": [
         "As modificações de frequência serão perdidas."
@@ -7074,7 +7080,7 @@
         "Solicitar um convite"
       ],
       "Resume now": [
-        "Continuar agora"
+        "Retomar agora"
       ],
       "settings": [
         "configurações"
@@ -7914,6 +7920,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Rastreamos a dark web para verificar se seus endereços ou aliases ${ BRAND_NAME } sofreram vazamento e alertarmos você imediatamente se encontrarmos alguma coisa."
+      ],
+      "Short domain (@pm.me)": [
+        "Domínio curto (@pm.me)"
       ]
     },
     "new_plans: feature highlight": {
@@ -8975,7 +8984,7 @@
         "Estou comprando como empresa"
       ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Incluindo ${ taxRate }${ taxName }${ taxAmount }"
+        "Incluindo ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
       "Including ${ taxRate }% taxes: ${ taxAmount }": [
         "Incluindo ${ taxRate }% de impostos: ${ taxAmount }"
@@ -9046,6 +9055,15 @@
       ],
       "Your payment is still being processed": [
         "Seu pagamento ainda está sendo processado"
+      ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Forneça um método de pagamento para ativar a assinatura após o término da avaliação."
+      ],
+      "You already have a subscription to this plan.": [
+        "Você já assina este plano."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Você já assina este plano. Você pode mudar sua assinatura na ${ subscriptionPlatform }."
       ]
     },
     "Payments.Error": {

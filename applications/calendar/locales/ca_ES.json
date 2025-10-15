@@ -66,7 +66,7 @@
         "Afegeix un contacte"
       ],
       "Add credit / debit card": [
-        "Afegir targeta de crèdit/dèbit"
+        "Afegeix una targeta de crèdit/dèbit"
       ],
       "Add email": [
         "Afegeix correu electrònic"
@@ -139,7 +139,7 @@
         "Trieu un fitxer o arrossegueu-lo aquí"
       ],
       "Claim this address": [
-        "Aconseguiu aquesta adreça"
+        "Reclama aquesta adreça"
       ],
       "Claim your free ${ BRAND_NAME } address": [
         "Aconseguiu la vostra adreça gratuïta de ${ BRAND_NAME }"
@@ -148,7 +148,7 @@
         "Neteja"
       ],
       "Clear browser data": [
-        "Netejar les dades del navegador"
+        "Neteja les dades del navegador"
       ],
       "Clear data": [
         "Neteja les dades"
@@ -648,7 +648,7 @@
         "Recuperar dades"
       ],
       "Refer a friend": [
-        "Recomana a un amic"
+        "Recomana una amistat"
       ],
       "Refresh the page": [
         "Refresca la pàgina"
@@ -861,16 +861,16 @@
         "Actualitzeu la frase de contrasenya secreta"
       ],
       "Upgrade": [
-        "Millora"
+        "Millora el pla"
       ],
       "Upgrade for 200GB": [
         "Milloreu el pla per a 200 GB"
       ],
       "Upgrade Now": [
-        "Millora ara"
+        "Millora el pla ara"
       ],
       "Upgrade now": [
-        "Millora ara"
+        "Millora el pla ara"
       ],
       "Upload and share files": [
         "Carrega i comparteix fitxers"
@@ -1257,7 +1257,7 @@
         "No podeu afegir dominis personalitzats durant el període de prova."
       ],
       "You have reached the trial limit.": [
-        "Heu arribat al límit de la prova."
+        "Heu arribat al límit de la versió de prova."
       ]
     },
     "b2b_trials_Action": {
@@ -1847,7 +1847,7 @@
         "Nombre de preferits limitat"
       ],
       "Unlimited daily chats": [
-        "Xats diaris sense límits"
+        "Xats diaris il·limitats"
       ],
       "Unlimited favorites for quick access": [
         "Preferits il·limitats per a un accés ràpid"
@@ -3037,7 +3037,7 @@
         "Configureu això primer per activar la vostra organització i personalitzar la vostra adreça de correu."
       ],
       "Connect your CRM, website, printers, and more.": [
-        "Connecteu el vostre CRM, lloc web, impressores i molt més."
+        "Connecteu el CRM, lloc web, impressores i molt més."
       ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Creeu una reunió a Zoom i afegiu els detalls de participació a l'esdeveniment en un clic."
@@ -3246,7 +3246,7 @@
         "Descarrega per al macOS"
       ],
       "Download for Windows": [
-        "Descarregueu-lo per Windows"
+        "Descarrega per a Windows"
       ]
     },
     "driveplus2024: Deal details": {
@@ -3325,6 +3325,21 @@
       ],
       "This event was updated.": [
         "S'ha actualitzat aquest esdeveniment."
+      ],
+      "DESCRIPTION:": [
+        "DESCRIPCIÓ:"
+      ],
+      "LOCATION:": [
+        "UBICACIÓ:"
+      ],
+      "TIME:": [
+        "HORA:"
+      ],
+      "TITLE:": [
+        "TÍTOL:"
+      ],
+      "You are invited to": [
+        "Us han convidat a"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3778,7 +3793,7 @@
         "Destinataris duplicats esborrats: ${ joinedRecipients }"
       ],
       "Request timed out": [
-        "S'ha esgotat el temps d'espera"
+        "La sol·licitud ha caducat"
       ],
       "Self invitation not allowed": [
         "Autoinvitació no permesa"
@@ -4269,7 +4284,7 @@
         "atenció al client"
       ],
       "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
-        "Els plans familiars actualment no suporten comptes externs. Creeu una adreça ${ BRAND_NAME } abans d'unir-vos-hi. ${ link }"
+        "Els plans familiars actualment no admeten comptes externs. Creeu una adreça ${ BRAND_NAME } abans d'unir-vos-hi. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Si accepteu la invitació, us canviarem del vostre pla actual i abonarem el saldo restant al vostre compte."
@@ -4376,7 +4391,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Quelcom va anar malament autenticant-se amb la vostra clau de seguretat. Torneu-ho a provar."
+        "Alguna cosa ha anat malament en autenticar-se amb la vostra clau de seguretat. Torneu-ho a provar."
       ]
     },
     "fido2: Info": {
@@ -4996,7 +5011,7 @@
         "**Interruptor de bloqueig**: atura les filtracions de dades en bloquejar la connexió a Internet si la VPN es desconnecta sobtadament."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Pas 1:** Convideu amistats a ${ BRAND_NAME } amb el vostre enllaç de referència."
+        "**Pas 1:** Convideu amistats a ${ BRAND_NAME } amb el vostre enllaç de recomanació."
       ],
       "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
         "**Pas 2:** Les vostres amistats obtindran 2 setmanes de franc en el seu pla ${ BRAND_NAME } escollit."
@@ -5165,7 +5180,7 @@
         "No trobeu els esdeveniments que esteu buscant? Alguns esdeveniments en els calendaris ocults coincideixen amb la vostra consulta. Per veure aquests resultats, activeu la visibilitat per a ${ hiddenWithItemsCalendarList }."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "No podeu recordar la vostra contrasenya? Us podem ajudar a netejar les dades xifrades de tots els contactes xifrats amb aquesta clau i en el procés desactivar l'alerta."
+        "No podeu recordar la vostra contrasenya? Us podem ajudar a netejar les dades xifrades de tots els contactes xifrats amb aquesta clau i, en el procés, desactivar l'alerta."
       ],
       "Change your password": [
         "Canvieu la vostra contrasenya"
@@ -5330,7 +5345,7 @@
         "S'està activant la supressió automàtica…"
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
-        "Assegureu-vos una comunicació totalment privada i xifrada. Aconseguiu ara la vostra adreça gratuïta de correu de ${ BRAND_NAME }."
+        "Assegureu-vos una comunicació totalment privada i xifrada. Aconseguiu ara la vostra adreça gratuïta de correu electrònic de ${ BRAND_NAME }."
       ],
       "Enter the code from your authenticator app": [
         "Introduïu el codi de la vostra aplicació d'autenticació."
@@ -5345,7 +5360,7 @@
         "Introduïu el codi de verificació. Dígit ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
-        "Introduïu la vostra contrasenya (com a administrador d'organització)."
+        "Introduïu la vostra contrasenya (com a administrador de l'organització)."
       ],
       "Enter your own password (as trusted contact).": [
         "Introduïu la vostra contrasenya (com a contacte de confiança)."
@@ -5385,7 +5400,7 @@
         "finances"
       ],
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
-        "Per més seguretat, podeu establir una frase de contrasenya. No s'inclourà a la invitació del calendari, recordeu compartir-la amb els vostres convidats per separat."
+        "Per a més seguretat, podeu establir una frase de contrasenya. No s'inclourà a la invitació del calendari; recordeu de compartir-la amb els vostres convidats per separat."
       ],
       "Frequency modifications will be lost.": [
         "Es perdran les modificacions de freqüència."
@@ -5920,7 +5935,7 @@
         "Seguiment"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Proveu les noves característiques, actualitzacions i productes de ${ BRAND_NAME } abans que es llancin al públic. Això tornarà a carregar l'aplicació"
+        "Proveu les noves característiques, actualitzacions i productes de ${ BRAND_NAME } abans que es llancin al públic. Es tornarà a carregar l'aplicació."
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Milloreu ara per obtenir característiques prèmium, productes i emmagatzematge a un preu especial"
@@ -5992,7 +6007,7 @@
         "Quan us connecteu a la VPN, aquesta utilitza tecnologia de xifratge per ocultar la vostra adreça IP (un codi únic assignat al vostre dispositiu)."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quan configureu l’autenticació de dos factors, proporcionem codis de recuperació que podeu utilitzar per iniciar la sessió si perdeu l’accés a l’aplicació d'autenticació."
+        "Quan configureu l’autenticació de doble factor, proporcionem codis de recuperació que podeu utilitzar per iniciar la sessió si perdeu l’accés a l’aplicació d'autenticació."
       ],
       "Which event would you like to delete?": [
         "Quin esdeveniment voleu eliminar?"
@@ -6996,7 +7011,7 @@
     },
     "Link": {
       "Add a gift code": [
-        "Afegir un codi regal"
+        "Afegeix un codi de regal"
       ],
       "Calendars": [
         "Calendaris"
@@ -7074,7 +7089,7 @@
         "Demana una invitació"
       ],
       "Resume now": [
-        "Repreneu-ho ara"
+        "Reprèn ara"
       ],
       "settings": [
         "preferències"
@@ -7110,7 +7125,7 @@
         "Quantitat de calendaris creats: ${ createdCalendarCount } d'un total de ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
-        "Connectant al vostre prveïdor de correu electrònic"
+        "S'està connectant al vostre proveïdor de correu electrònic"
       ],
       "Creating new calendars": [
         "Creant els calendaris nous"
@@ -7223,7 +7238,7 @@
         "Gestiona els calendaris"
       ],
       "Upgrade": [
-        "Millora"
+        "Millora el pla"
       ]
     },
     "Modal for received invitation to share calendar; text": {
@@ -7914,6 +7929,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escanegem el web fosc per a comprovar si les vostres adreces o àlies de ${ BRAND_NAME } s'han filtrat i us avisem immediatament si trobem alguna cosa."
+      ],
+      "Short domain (@pm.me)": [
+        "Domini curt (@pm.me)"
       ]
     },
     "new_plans: feature highlight": {
@@ -8955,7 +8973,7 @@
         "Exclòs el ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
       "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Exclòs el ${ taxRate }% d'impostos: ${ taxAmount }"
+        "Excloent el ${ taxRate }% d'impostos: ${ taxAmount }"
       ],
       "Got it": [
         "Fet"
@@ -9407,8 +9425,8 @@
         "Guanyeu fins a ${ maxRewardAmount } en crèdits. Rebreu ${ referrerRewardAmount } quan la persona que convideu se subscrigui a un pla de ${ BRAND_NAME }."
       ],
       "Friend joined": [
-        "Una amistat s'hi ha afegit",
-        "Unes amistats s'hi han afegit"
+        "Una amistat s'ha unit",
+        "Unes amistats s'han unit"
       ],
       "Friend subscribed": [
         "Una amistat s'ha subscrit",
@@ -9424,7 +9442,7 @@
         "Més opcions de compartició"
       ],
       "Refer friends": [
-        "Recomaneu amistats"
+        "Recomana amistats"
       ],
       "Start earning credits": [
         "Comenceu a guanyar crèdits"
@@ -9547,7 +9565,7 @@
     },
     "session_recovery:available:action": {
       "Cancel reset": [
-        "Cancel·li el restabliment"
+        "Cancel·la el restabliment"
       ],
       "Reset password": [
         "Restableix la contrasenya"
@@ -9910,7 +9928,7 @@
         "Tingueu accés al contingut en estríming."
       ],
       "Upgrade": [
-        "Millora"
+        "Millora el pla"
       ],
       "Upgrade for ${ pricingTitle }": [
         "Milloreu el pla per ${ pricingTitle }"
@@ -10546,7 +10564,7 @@
         "Doneu suport a la nostra missió"
       ],
       "Upgrade": [
-        "Millora"
+        "Millora el pla"
       ],
       "Upgrade your productivity": [
         "Milloreu la vostra productivitat"
@@ -10965,7 +10983,7 @@
         "Afegeix el nom del grup de contactes"
       ],
       "Add credit/debit card": [
-        "Afegir targeta de crèdit/dèbit"
+        "Afegeix una targeta de crèdit/dèbit"
       ],
       "Add event location": [
         "Afegiu la ubicació de l'esdeveniment."

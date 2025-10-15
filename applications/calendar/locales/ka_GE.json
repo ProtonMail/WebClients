@@ -1234,6 +1234,9 @@
       ],
       "You have reached the trial limit.": [
         "მიაღწიეთ გამოსაცდელი პერიოდის ზღვარს."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "გამოსაცდელი პერიოდისას შეგიძლიათ ${ TRIAL_MAX_USERS } მომხმარებლის შექმნა."
       ]
     },
     "b2b_trials_Action": {
@@ -7760,6 +7763,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ჩვენ ვასკანერებთ ბნელ ვებს, რომ აღმოვაჩინოთ, არის თუ არა თქვენი ${ BRAND_NAME }-ის მისამართები ან ფსევდონიმები გაჟონილი და გაგაფრთხილოთ, თუ რამეს აღმოვაჩენთ."
+      ],
+      "Short domain (@pm.me)": [
+        "მოკლე დომენი (@pm.me)"
       ]
     },
     "new_plans: feature highlight": {
@@ -8558,6 +8564,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "თქვენი სრული ${ planTitle } გამოწერის დაწყების თარიღია ${ boldEndDate }."
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "ისიამოვნეთ უფასო ბიზნესის უსაფრთხოების ფუნქციებით თარიღამდე ${ trialEndsOnFormatted }."
       ]
     },
     "Option": {
@@ -8835,6 +8844,18 @@
       ],
       "Your payment is still being processed": [
         "თქვენი გადახდა ჯერ კიდევ მუშავდება"
+      ],
+      "Amount due after trial on ${ formattedDate }": [
+        "გამოსაცდელი ვადის (${ formattedDate }) გადასახდელი თანხა"
+      ],
+      "terms and conditions": [
+        "პირობები და წესები"
+      ],
+      "This offer is not available with your current plan.": [
+        "ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
+      ],
+      "You already have a subscription to this plan.": [
+        "თქვენ უკვე გაქვთ ეს სატარიფო გეგმა."
       ]
     },
     "Payments.Error": {
@@ -11935,6 +11956,11 @@
       ],
       "Passcode:": [
         "საკვანძო კოდი:"
+      ]
+    },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "შედით იგივე Gmail-ის მისამართით, რომლითაც პირველად"
       ]
     }
   }
