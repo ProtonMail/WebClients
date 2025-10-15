@@ -6,12 +6,7 @@ import { getUnixTime } from 'date-fns';
 import { createMemoryHistory } from 'history';
 
 import { CacheProvider, useSubscribedCalendars } from '@proton/components';
-import {
-    CALENDAR_FLAGS,
-    CALENDAR_TYPE,
-    MAX_CALENDARS_PAID,
-    SETTINGS_VIEW,
-} from '@proton/shared/lib/calendar/constants';
+import { CALENDAR_FLAGS, CALENDAR_TYPE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { CALENDAR_SUBSCRIPTION_STATUS } from '@proton/shared/lib/interfaces/calendar';
@@ -92,6 +87,24 @@ jest.mock('@proton/components/hooks/drawer/useDrawer', () => () => {
     return { toggleDrawerApp: jest.fn() };
 });
 
+jest.mock('@proton/calendar/calendarUserSettings/hooks', () => ({
+    useGetCalendarUserSettings: jest.fn(),
+    useCalendarUserSettings: jest.fn(() => [
+        {
+            WeekLength: 7,
+            DisplayWeekNumber: 1,
+            DefaultCalendarID: '1',
+            AutoDetectPrimaryTimezone: 1,
+            PrimaryTimezone: 'America/New_York',
+            DisplaySecondaryTimezone: 0,
+            SecondaryTimezone: null,
+            ViewPreference: 1,
+            InviteLocale: null,
+            AutoImportInvite: 0,
+        },
+    ]),
+}));
+
 const mockedUseSubscribedCalendars = useSubscribedCalendars as jest.Mock<ReturnType<typeof useSubscribedCalendars>>;
 
 const mockCalendar: VisualCalendar = {
@@ -140,21 +153,8 @@ function renderComponent(props?: Partial<CalendarSidebarProps>) {
     });
     const defaultProps: CalendarSidebarProps = {
         onToggleExpand: jest.fn(),
-        addresses: [],
         calendars: [mockCalendar],
         miniCalendar: <span>mockedMiniCalendar</span>,
-        calendarUserSettings: {
-            WeekLength: 7,
-            DisplayWeekNumber: 1,
-            DefaultCalendarID: '1',
-            AutoDetectPrimaryTimezone: 1,
-            PrimaryTimezone: 'America/New_York',
-            DisplaySecondaryTimezone: 0,
-            SecondaryTimezone: null,
-            ViewPreference: SETTINGS_VIEW.WEEK,
-            InviteLocale: null,
-            AutoImportInvite: 0,
-        },
         onCreateCalendar: noop,
     };
     mockUseAuthentication({} as any);
