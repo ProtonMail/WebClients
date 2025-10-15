@@ -720,7 +720,7 @@ describe('elements', () => {
                     expect(filtered).toEqual([messageInPromotions]);
                 });
 
-                it('should show elements from disabled categories in default category', () => {
+                it('should show messages from disabled categories in default category', () => {
                     const messageInPromotions = {
                         ID: 'message1',
                         ConversationID: 'conversationID1',
@@ -764,6 +764,30 @@ describe('elements', () => {
                     });
 
                     expect(filtered).toEqual([messageInPromotions, messageInDefaultCategory, messageInSocial]);
+                });
+
+                it('should not show trashed messages in category', () => {
+                    const messageInPromotions = {
+                        ID: 'message1',
+                        ConversationID: 'conversationID1',
+                        LabelIDs: [MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS, MAILBOX_LABEL_IDS.TRASH],
+                        Unread: 0,
+                    } as Message;
+
+                    const filtered = filterElementsInState({
+                        elements: [messageInPromotions],
+                        bypassFilter: [],
+                        labelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+                        filter: {},
+                        conversationMode: false,
+                        search: {} as SearchParameters,
+                        disabledCategoriesIDs: [
+                            MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+                            MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                        ],
+                    });
+
+                    expect(filtered).toEqual([]);
                 });
             });
 
@@ -861,6 +885,32 @@ describe('elements', () => {
                         conversationInDefaultCategory,
                         conversationInSocial,
                     ]);
+                });
+
+                it('should not show trashed conversations in category', () => {
+                    const converationInPromotions = {
+                        ID: 'conversation1',
+                        Labels: [
+                            { ID: MAILBOX_LABEL_IDS.TRASH } as ConversationLabel,
+                            { ID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS } as ConversationLabel,
+                        ],
+                        NumUnread: 0,
+                    } as Conversation;
+
+                    const filtered = filterElementsInState({
+                        elements: [converationInPromotions],
+                        bypassFilter: [],
+                        labelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+                        filter: {},
+                        conversationMode: false,
+                        search: {} as SearchParameters,
+                        disabledCategoriesIDs: [
+                            MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+                            MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                        ],
+                    });
+
+                    expect(filtered).toEqual([]);
                 });
             });
         });
