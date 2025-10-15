@@ -92,6 +92,8 @@ const getSearchParams = (app: APP_NAMES, searchArgs: SearchArgs) => {
                 hasAddress: (!!address).toString(),
                 hasFrom: (!!from).toString(),
                 hasTo: (!!to).toString(),
+                // The first item of the labelsIDs list is the current labelID.
+                // We have a list of IDs when performing a search against the default category.
                 labelID: getLabelNameAnonymised(labelIDs[0]),
             };
         } else if (app === APPS.PROTONCALENDAR) {
