@@ -1,11 +1,13 @@
-export const getItem = (key: string, defaultValue?: string) => {
+export function getItem<T extends string = string>(key: string): T | undefined;
+export function getItem<T extends string = string, D extends T = T>(key: string, defaultValue: D): T;
+export function getItem(key: string, defaultValue?: string) {
     try {
         const value = window.localStorage.getItem(key);
         return value === undefined ? defaultValue : value;
     } catch (e: any) {
         return defaultValue;
     }
-};
+}
 
 export const setItem = (key: string, value: string) => {
     try {
