@@ -38,7 +38,7 @@ describe('shouldAutoAddMeetingLink', () => {
             ).toBe(true);
         });
 
-        it('should return false if the attendee count go from 0 to non-zero value, having a temporary deleted Zoom conference url', () => {
+        it('should return true if the attendee count go from 0 to non-zero value, having a temporary deleted Zoom conference url', () => {
             expect(
                 shouldAutoAddMeetingLink({
                     ...defaultParams,
@@ -49,7 +49,7 @@ describe('shouldAutoAddMeetingLink', () => {
                         conferenceProvider: VIDEO_CONFERENCE_PROVIDER.ZOOM,
                     },
                 })
-            ).toBe(false);
+            ).toBe(true);
         });
 
         it('should return false when the previous attendee count is not 0', () => {
