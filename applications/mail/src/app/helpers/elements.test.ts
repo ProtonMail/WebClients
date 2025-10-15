@@ -689,6 +689,181 @@ describe('elements', () => {
             });
             expect(deletedFiltered).toEqual([softDeletedDraft, softDeletedInboxMessage]);
         });
+
+        describe('categories filtering', () => {
+            describe('message mode', () => {
+                it('should not show messages from different categories', () => {
+                    const messageInPromotions = {
+                        ID: 'message1',
+                        ConversationID: 'conversationID1',
+                        LabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS],
+                        Unread: 0,
+                    } as Message;
+
+                    const messageInSocial = {
+                        ID: 'message2',
+                        ConversationID: 'conversationID2',
+                        LabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.CATEGORY_SOCIAL],
+                        Unread: 0,
+                    } as Message;
+
+                    const filtered = filterElementsInState({
+                        elements: [messageInPromotions, messageInSocial],
+                        bypassFilter: [],
+                        labelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+                        filter: {},
+                        conversationMode: false,
+                        search: {} as SearchParameters,
+                        disabledCategoriesIDs: [],
+                    });
+
+                    expect(filtered).toEqual([messageInPromotions]);
+                });
+
+                it('should show elements from disabled categories in default category', () => {
+                    const messageInPromotions = {
+                        ID: 'message1',
+                        ConversationID: 'conversationID1',
+                        LabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS],
+                        Unread: 0,
+                    } as Message;
+
+                    const messageInDefaultCategory = {
+                        ID: 'message2',
+                        ConversationID: 'conversationID2',
+                        LabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.CATEGORY_DEFAULT],
+                        Unread: 0,
+                    } as Message;
+
+                    const messageInSocial = {
+                        ID: 'message3',
+                        ConversationID: 'conversationID3',
+                        LabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.CATEGORY_SOCIAL],
+                        Unread: 0,
+                    } as Message;
+
+                    // This element should not be visible since the category is not disabled
+                    const messageInForum = {
+                        ID: 'message3',
+                        ConversationID: 'conversationID3',
+                        LabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.CATEGORY_FORUMS],
+                        Unread: 0,
+                    } as Message;
+
+                    const filtered = filterElementsInState({
+                        elements: [messageInPromotions, messageInDefaultCategory, messageInSocial, messageInForum],
+                        bypassFilter: [],
+                        labelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
+                        filter: {},
+                        conversationMode: false,
+                        search: {} as SearchParameters,
+                        disabledCategoriesIDs: [
+                            MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+                            MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                        ],
+                    });
+
+                    expect(filtered).toEqual([messageInPromotions, messageInDefaultCategory, messageInSocial]);
+                });
+            });
+
+            describe('conversation mode', () => {
+                it('should not show messages from different categories', () => {
+                    const converationInPromotions = {
+                        ID: 'conversation1',
+                        Labels: [
+                            { ID: MAILBOX_LABEL_IDS.INBOX } as ConversationLabel,
+                            { ID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS } as ConversationLabel,
+                        ],
+                        NumUnread: 0,
+                    } as Conversation;
+
+                    const conversationInSocial = {
+                        ID: 'conversation2',
+                        Labels: [
+                            { ID: MAILBOX_LABEL_IDS.INBOX } as ConversationLabel,
+                            { ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL } as ConversationLabel,
+                        ],
+                        NumUnread: 0,
+                    } as Conversation;
+
+                    const filtered = filterElementsInState({
+                        elements: [converationInPromotions, conversationInSocial],
+                        bypassFilter: [],
+                        labelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+                        filter: {},
+                        conversationMode: true,
+                        search: {} as SearchParameters,
+                        disabledCategoriesIDs: [],
+                    });
+
+                    expect(filtered).toEqual([converationInPromotions]);
+                });
+
+                it('should show elements from disabled categories in default category', () => {
+                    const conversationInDefaultCategory = {
+                        ID: 'conversation4',
+                        Labels: [
+                            { ID: MAILBOX_LABEL_IDS.INBOX } as ConversationLabel,
+                            { ID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT } as ConversationLabel,
+                        ],
+                        NumUnread: 0,
+                    } as Conversation;
+
+                    const converationInPromotions = {
+                        ID: 'conversation1',
+                        Labels: [
+                            { ID: MAILBOX_LABEL_IDS.INBOX } as ConversationLabel,
+                            { ID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS } as ConversationLabel,
+                        ],
+                        NumUnread: 0,
+                    } as Conversation;
+
+                    const conversationInSocial = {
+                        ID: 'conversation2',
+                        Labels: [
+                            { ID: MAILBOX_LABEL_IDS.INBOX } as ConversationLabel,
+                            { ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL } as ConversationLabel,
+                        ],
+                        NumUnread: 0,
+                    } as Conversation;
+
+                    // This element should not be visible since the category is not disabled
+                    const conversationInForum = {
+                        ID: 'conversation3',
+                        Labels: [
+                            { ID: MAILBOX_LABEL_IDS.INBOX } as ConversationLabel,
+                            { ID: MAILBOX_LABEL_IDS.CATEGORY_FORUMS } as ConversationLabel,
+                        ],
+                        NumUnread: 0,
+                    } as Conversation;
+
+                    const filtered = filterElementsInState({
+                        elements: [
+                            converationInPromotions,
+                            conversationInDefaultCategory,
+                            conversationInSocial,
+                            conversationInForum,
+                        ],
+                        bypassFilter: [],
+                        labelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
+                        filter: {},
+                        conversationMode: true,
+                        search: {} as SearchParameters,
+                        disabledCategoriesIDs: [
+                            MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+                            MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                        ],
+                    });
+
+                    expect(filtered).toEqual([
+                        converationInPromotions,
+                        conversationInDefaultCategory,
+                        conversationInSocial,
+                    ]);
+                });
+            });
+        });
     });
 
     describe('isElementOutsideFolders', () => {
