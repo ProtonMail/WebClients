@@ -623,6 +623,71 @@ describe('elements', () => {
                 })
             ).toEqual(expectedFilteredList);
         });
+
+        it('should exclude SOFT_DELETED elements from all folders except SOFT_DELETED folder', () => {
+            const draftMessage = {
+                ID: 'draft1',
+                ConversationID: 'conversationID1',
+                LabelIDs: [MAILBOX_LABEL_IDS.DRAFTS],
+                Unread: 0,
+            } as Message;
+
+            const softDeletedDraft = {
+                ID: 'draft2',
+                ConversationID: 'conversationID2',
+                LabelIDs: [MAILBOX_LABEL_IDS.DRAFTS, MAILBOX_LABEL_IDS.SOFT_DELETED],
+                Unread: 0,
+            } as Message;
+
+            const inboxMessage = {
+                ID: 'inbox1',
+                ConversationID: 'conversationID3',
+                LabelIDs: [MAILBOX_LABEL_IDS.INBOX],
+                Unread: 0,
+            } as Message;
+
+            const softDeletedInboxMessage = {
+                ID: 'inbox2',
+                ConversationID: 'conversationID4',
+                LabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.SOFT_DELETED],
+                Unread: 0,
+            } as Message;
+
+            const elements: Element[] = [draftMessage, softDeletedDraft, inboxMessage, softDeletedInboxMessage];
+
+            // When viewing Drafts folder, should only see non-deleted drafts
+            const draftsFiltered = filterElementsInState({
+                elements,
+                bypassFilter: [],
+                labelID: MAILBOX_LABEL_IDS.DRAFTS,
+                filter: {},
+                conversationMode: false,
+                search: {} as SearchParameters,
+            });
+            expect(draftsFiltered).toEqual([draftMessage]);
+
+            // When viewing Inbox folder, should only see non-deleted inbox messages
+            const inboxFiltered = filterElementsInState({
+                elements,
+                bypassFilter: [],
+                labelID: MAILBOX_LABEL_IDS.INBOX,
+                filter: {},
+                conversationMode: false,
+                search: {} as SearchParameters,
+            });
+            expect(inboxFiltered).toEqual([inboxMessage]);
+
+            // When viewing SOFT_DELETED folder, should see all deleted items
+            const deletedFiltered = filterElementsInState({
+                elements,
+                bypassFilter: [],
+                labelID: MAILBOX_LABEL_IDS.SOFT_DELETED,
+                filter: {},
+                conversationMode: false,
+                search: {} as SearchParameters,
+            });
+            expect(deletedFiltered).toEqual([softDeletedDraft, softDeletedInboxMessage]);
+        });
     });
 
     describe('isElementOutsideFolders', () => {
