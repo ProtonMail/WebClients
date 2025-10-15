@@ -12,7 +12,7 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
-import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { maxLengthValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import {
     type RetentionRule,
     RetentionRuleAction,
@@ -44,6 +44,7 @@ const INITIAL_FORM_VALUES: RetentionRuleFormData = {
     action: RetentionRuleAction.RetainAll,
     scopes: [],
 };
+const MAX_TITLE_LENGTH = 191;
 
 export const getRuleNamePlaceholder = (product: RetentionRuleProduct) => {
     if (product === RetentionRuleProduct.Mail) {
@@ -108,6 +109,10 @@ const RetentionPolicyModal = ({
             if (nameError) {
                 errors.name = nameError;
             }
+            const nameLengthError = maxLengthValidator(name, MAX_TITLE_LENGTH);
+            if (nameLengthError) {
+                errors.name = nameLengthError;
+            }
             if (action === RetentionRuleAction.RetainAll && lifetime !== null) {
                 errors.lifetime = c('retention_policy_2025_Error').t`Lifetime must not be set for "Retain All" action`;
             }
@@ -144,6 +149,26 @@ const RetentionPolicyModal = ({
     });
 
     const { values, setValues, errors, isValid, dirty } = form;
+
+    const getTitleWordCountHint = () => {
+        const currentLength = values.name.length;
+        let colorClass = 'text-weak';
+
+        if (currentLength > MAX_TITLE_LENGTH) {
+            colorClass = 'color-danger';
+        } else if (currentLength >= MAX_TITLE_LENGTH * 0.9) {
+            colorClass = 'color-warning';
+        }
+
+        return (
+            <div className={`text-sm ${colorClass}`}>
+                {
+                    // translator: Character count hint showing current length and maximum allowed length for rule title. Example: '25/191 characters'
+                    c('retention_policy_2025_Hint').t`${currentLength}/${MAX_TITLE_LENGTH} characters`
+                }
+            </div>
+        );
+    };
 
     const showValidationErrors = () => {
         Object.values(errors)
@@ -196,6 +221,7 @@ const RetentionPolicyModal = ({
                             value={values.name}
                             disabled={loading}
                             onValue={(value) => setValues({ ...values, name: value }, true)}
+                            hint={getTitleWordCountHint()}
                             error={errors.name}
                             autoFocus
                         />
