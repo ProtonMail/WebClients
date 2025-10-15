@@ -4,10 +4,12 @@ import { Vr } from '@proton/atoms';
 import { Toolbar, useActiveBreakpoint } from '@proton/components';
 import { MemberRole } from '@proton/drive/index';
 import { getDevice } from '@proton/shared/lib/helpers/browser';
+import useFlag from '@proton/unleash/useFlag';
 
 import { useSelection } from '../../../components/FileBrowser';
 import useIsEditEnabled from '../../../components/sections/useIsEditEnabled';
 import { useDebug } from '../../../hooks/drive/useDebug';
+import { DownloadManager } from '../../../managers/download/DownloadManager';
 import { ActionsDropdown } from '../buttons/ActionsDropdown';
 import { CreateNewDocumentButton } from '../buttons/CreateNewDocumentButton';
 import { CreateNewFileButton } from '../buttons/CreateNewFileButton';
@@ -41,6 +43,7 @@ interface Props {
 export const FolderToolbar = ({ volumeId, shareId, linkId, showOptionsForNoSelection = true }: Props) => {
     const isDesktop = !getDevice()?.type;
     const debug = useDebug();
+    const useSDKDownload = useFlag('DriveWebSDKDownload');
     const { viewportWidth } = useActiveBreakpoint();
     const selectionControls = useSelection();
     const isEditEnabled = useIsEditEnabled();
@@ -75,6 +78,7 @@ export const FolderToolbar = ({ volumeId, shareId, linkId, showOptionsForNoSelec
     const shouldShowShareLinkButton = isAdmin && (selectedItems.length > 0 || permissions.canShareNode);
     const selectedItem = selectedItems.length === 1 ? selectedItems[0] : undefined;
     const { downloadItems } = useDownloadActions({ selectedItems });
+    const dm = DownloadManager.getInstance();
 
     const renderSelectionActions = () => {
         if (!selectedItems.length) {
@@ -111,6 +115,13 @@ export const FolderToolbar = ({ volumeId, shareId, linkId, showOptionsForNoSelec
 
         return (
             <>
+                {useSDKDownload && (
+                    <DownloadButton
+                        type="toolbar"
+                        selectedItems={selectedItems}
+                        onClick={() => dm.download(selectedItems)}
+                    />
+                )}
                 <PreviewButton selectedItems={selectedItems} type="toolbar" />
                 <OpenInDocsButton type="toolbar" selectedItems={selectedItems} />
                 <DownloadButton type="toolbar" selectedItems={selectedItems} onClick={downloadItems} />
