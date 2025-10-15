@@ -55,7 +55,7 @@ const serializePolicyState = (state: PasswordPoliciesState): PasswordPolicySetti
     });
 };
 
-const defaultLabel = <span className="color-hint ml-0.5" key="eslint-autofix-43BFDA">{c('Info').t`(default)`}</span>;
+const defaultLabel = <span className="color-hint ml-0.5" key="default-label-key">{c('Info').t`(default)`}</span>;
 
 const MIN_CHARS = MIN_PASSWORD_LENGTH;
 const MAX_CHARS = 70;
@@ -276,7 +276,7 @@ const OrganizationPasswordPoliciesSection = ({ organization }: OrganizationProto
                             aria-labelledby="min-character-length-label"
                             value={getValue('AtLeastXCharacters')}
                             onChange={(e) => handleMinCharacterLengthChange(e.target.value)}
-                            suffix={charCount === MIN_CHARS ? defaultLabel : undefined}
+                            assistiveText={c('Label').t`Minimum ${MIN_CHARS} characters`}
                             min={MIN_CHARS}
                             max={MAX_CHARS}
                             error={(() => {
