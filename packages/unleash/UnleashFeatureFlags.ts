@@ -13,7 +13,6 @@ enum CommonFeatureFlag {
     KeyTransparencyShowUI = 'KeyTransparencyShowUI',
     KeyTransparencyLogOnly = 'KeyTransparencyLogOnly',
     CryptoDisableUndecryptableKeys = 'CryptoDisableUndecryptableKeys',
-    InboxUpsellFlow = 'InboxUpsellFlow',
     CalendarBusyTimeSlots = 'CalendarBusyTimeSlots',
     CalendarHotkeys = 'CalendarHotkeys',
     InboxDesktopInAppPayments = 'InboxDesktopInAppPayments',
