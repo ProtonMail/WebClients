@@ -74,6 +74,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
   const { userMode } = useEditorStateValues()
   const userModeRef = useStateRef(userMode)
 
+  const [isPublicMode, setIsPublicMode] = useState(false)
   const [editorError, setEditorError] = useState<Error | undefined>(undefined)
   const [editorHidden, setEditorHidden] = useState(true)
   const [editingLocked, setEditingLocked] = useState(true)
@@ -155,7 +156,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
   const applyBeforePrintFixesForChrome = useCallback(() => {
     const editor = editorRef.current
     if (!editor) {
-      throw new Error('Trying to print document before the editor is ready.')
+      return
     }
     if (!IS_CHROME) {
       return
@@ -314,10 +315,12 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
         documentId: string,
         userAddress: string,
         role: DocumentRoleType,
+        isPublicMode,
         editorInitializationConfig,
       ) {
         docMap.set(documentId, docState.getDoc())
         application.setRole(role)
+        setIsPublicMode(isPublicMode)
 
         application.logger.info('Initialized editor with role', role, 'config', editorInitializationConfig)
 
@@ -688,6 +691,8 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
               updateLocalStateToLog={(state) => {
                 latestSpreadsheetStateToLogRef.current = state
               }}
+              clientInvoker={bridge.getClientInvoker()}
+              isPublicMode={isPublicMode}
             />
           </SpreadsheetProvider>
         </ErrorBoundary>

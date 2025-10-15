@@ -315,14 +315,19 @@ export function DocumentViewer({
 
       setBridge(clientToEditorBridge)
 
-      void editorController.initializeEditor(editorInitializationConfig, orchestrator.userAddress)
+      void editorController.initializeEditor(
+        editorInitializationConfig,
+        orchestrator.userAddress,
+        application.isPublicMode,
+      )
     },
     [
+      application.eventBus,
+      application.isPublicMode,
+      application.logger,
+      application.syncedEditorState,
       bridge,
       documentState,
-      application.logger,
-      application.eventBus,
-      application.syncedEditorState,
       editorInitializationConfig,
     ],
   )
