@@ -135,13 +135,8 @@ const TrialInfoContent = () => {
                                   .t`Last chance to explore all the powerful features that **${planTitle}** has to offer.`
                           ))}
                 {isAutoRenewTrial(subscription) &&
-                    (daysRemaining > 0
-                        ? c('Referral').ngettext(
-                              msgid`You can still cancel within ${daysRemaining} days and get a prorated refund.`,
-                              `You can still cancel within ${daysRemaining} day and get a prorated refund.`,
-                              daysRemaining
-                          )
-                        : c('Referral').t`You can still cancel today and get a prorated refund.`)}
+                    c('Referral')
+                        .t`Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.`}
             </p>
         </>
     );
