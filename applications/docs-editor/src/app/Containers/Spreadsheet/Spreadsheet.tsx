@@ -5,6 +5,7 @@ import type {
   DataTypesThatDocumentCanBeExportedAs,
   DocStateInterface,
   EditorInitializationConfig,
+  EditorRequiresClientMethods,
   SheetImportData,
 } from '@proton/docs-shared'
 import { EditorSystemMode, SheetImportDestination, SheetImportEvent, TranslatedResult } from '@proton/docs-shared'
@@ -47,6 +48,8 @@ export type SpreadsheetProps = {
   systemMode: EditorSystemMode
   editingLocked: boolean
   updateLocalStateToLog: (state: unknown) => void
+  clientInvoker: EditorRequiresClientMethods
+  isPublicMode: boolean
 }
 
 export const Spreadsheet = forwardRef(function Spreadsheet(
@@ -58,6 +61,8 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     systemMode,
     editingLocked,
     updateLocalStateToLog,
+    clientInvoker,
+    isPublicMode,
   }: SpreadsheetProps,
   ref: ForwardedRef<SpreadsheetRef>,
 ) {
@@ -168,7 +173,16 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   }
 
   if (useNewUIEnabled()) {
-    return <UI hidden={hidden} state={state} isReadonly={isReadonly} isRevisionMode={isRevisionMode} />
+    return (
+      <UI
+        hidden={hidden}
+        state={state}
+        isReadonly={isReadonly}
+        isRevisionMode={isRevisionMode}
+        clientInvoker={clientInvoker}
+        isPublicMode={isPublicMode}
+      />
+    )
   }
   return (
     <LegacyUI
@@ -186,9 +200,11 @@ type UIProps = {
   state: ProtonSheetsState
   isReadonly: boolean
   isRevisionMode: boolean
+  clientInvoker: EditorRequiresClientMethods
+  isPublicMode: boolean
 }
 
-function UI({ hidden, state, isReadonly, isRevisionMode }: UIProps) {
+function UI({ hidden, state, isReadonly, isRevisionMode, clientInvoker, isPublicMode }: UIProps) {
   return (
     <ProtonSheetsUIStoreProvider state={state} isReadonly={isReadonly}>
       {hidden && (
@@ -202,7 +218,7 @@ function UI({ hidden, state, isReadonly, isRevisionMode }: UIProps) {
         <div className="flex h-full grow flex-col">
           {!isRevisionMode && (
             <>
-              <Menubar className="mb-2" />
+              <Menubar className="mb-2" clientInvoker={clientInvoker} isPublicMode={isPublicMode} />
               <Toolbar />
               {/* TODO: formula bar */}
             </>

@@ -1,7 +1,14 @@
 import type { LoggerInterface } from '@proton/utils/logs'
-import type { EditorInitializationConfig, InternalEventBusInterface, SheetImportData } from '@proton/docs-shared'
+import type {
+  EditorInitializationConfig,
+  FileMenuAction,
+  InternalEventBusInterface,
+  SheetImportData,
+} from '@proton/docs-shared'
 import {
   DocUpdateOrigin,
+  FileMenuActionEvent,
+  InternalEventPublishStrategy,
   type ClientRequiresEditorMethods,
   type DataTypesThatDocumentCanBeExportedAs,
 } from '@proton/docs-shared'
@@ -30,8 +37,13 @@ export interface EditorControllerInterface {
   restoreRevisionByReplacingSpreadsheetState(spreadsheetState: unknown): Promise<void>
   showCommentsPanel(): void
   toggleDebugTreeView(): Promise<void>
-  initializeEditor(editorInitializationConfig: EditorInitializationConfig | undefined, userAddress: string): void
+  initializeEditor(
+    editorInitializationConfig: EditorInitializationConfig | undefined,
+    userAddress: string,
+    isPublicMode: boolean,
+  ): void
   importDataIntoSheet(data: SheetImportData): Promise<void>
+  handleFileMenuAction(action: FileMenuAction): Promise<void>
 }
 
 /** Allows the UI to invoke methods on the editor. */
@@ -150,7 +162,11 @@ export class EditorController implements EditorControllerInterface {
     }
   }
 
-  initializeEditor(editorInitializationConfig: EditorInitializationConfig | undefined, userAddress: string): void {
+  initializeEditor(
+    editorInitializationConfig: EditorInitializationConfig | undefined,
+    userAddress: string,
+    isPublicMode: boolean,
+  ): void {
     if (!this.editorInvoker) {
       throw new Error('Editor invoker not initialized')
     }
@@ -161,6 +177,7 @@ export class EditorController implements EditorControllerInterface {
       docMeta.uniqueIdentifier,
       userAddress,
       this.documentState.getProperty('userRole').roleType,
+      isPublicMode,
       editorInitializationConfig,
     )
 
@@ -407,5 +424,19 @@ export class EditorController implements EditorControllerInterface {
     }
 
     await this.editorInvoker.importDataIntoSheet(data)
+  }
+
+  async handleFileMenuAction(action: FileMenuAction): Promise<void> {
+    if (!this.editorInvoker) {
+      throw new Error('Attempting to handle file menu action before editor invoker is initialized')
+    }
+
+    return this.eventBus.publishSync(
+      {
+        type: FileMenuActionEvent,
+        payload: action,
+      },
+      InternalEventPublishStrategy.SEQUENCE,
+    )
   }
 }

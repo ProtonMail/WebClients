@@ -26,10 +26,10 @@ export class InternalEventBus implements InternalEventBusInterface {
     this.eventHandlers.set(eventType, handlersForEventType)
   }
 
-  addEventCallback<Data = unknown>(callback: (data: Data) => void, eventType: string): () => void {
+  addEventCallback<Data = unknown>(callback: (data: Data) => void | Promise<void>, eventType: string): () => void {
     const handler: InternalEventHandlerInterface = {
       handleEvent: async (event: InternalEventInterface<Data>) => {
-        callback(event.payload)
+        await callback(event.payload)
       },
     }
 

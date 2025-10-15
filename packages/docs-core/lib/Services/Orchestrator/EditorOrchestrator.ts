@@ -1,4 +1,4 @@
-import type { SafeDocsUserState } from '@proton/docs-shared'
+import type { FileMenuAction, SafeDocsUserState } from '@proton/docs-shared'
 import {
   type CommentInterface,
   type CommentThreadInterface,
@@ -234,5 +234,13 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
     }
 
     return result.getValue()
+  }
+
+  async handleFileMenuAction(action: FileMenuAction): Promise<void> {
+    if (!this.editor) {
+      throw new Error('Editor not initialized')
+    }
+
+    return this.editor.handleFileMenuAction(action)
   }
 }

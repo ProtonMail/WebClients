@@ -98,6 +98,7 @@ export type IconName =
     | 'brand-proton-calendar'
     | 'brand-proton-calendar-filled'
     | 'brand-proton-docs'
+    | 'brand-proton-sheets-filled'
     | 'brand-proton-sheets'
     | 'brand-proton-drive'
     | 'brand-proton-drive-filled'

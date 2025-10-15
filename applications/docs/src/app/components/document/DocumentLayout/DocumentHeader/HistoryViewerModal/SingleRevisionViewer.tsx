@@ -29,7 +29,7 @@ export function SingleRevisionViewer({ state, onEditorInvokerRef, documentType }
 
       const newEditorInvoker = bridge.editorInvoker
 
-      newEditorInvoker.initializeEditor('DummyDocumentId', 'DummyUserAddress', 'Viewer').catch(console.error)
+      newEditorInvoker.initializeEditor('DummyDocumentId', 'DummyUserAddress', 'Viewer', false).catch(console.error)
 
       newEditorInvoker
         .receiveMessage({
