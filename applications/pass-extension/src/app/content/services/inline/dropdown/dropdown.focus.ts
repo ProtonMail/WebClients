@@ -8,6 +8,7 @@ import { isHTMLElement } from '@proton/pass/utils/dom/predicates';
 
 import type { DropdownAnchorRef } from './dropdown.app';
 
+export const DROPDOWN_FOCUS_TIMEOUT = 50;
 export interface DropdownFocusController {
     focused: boolean;
     willFocus: boolean;
@@ -61,7 +62,7 @@ export const createDropdownFocusController = ({
             switch (anchor.current?.type) {
                 case 'field':
                     anchor.current?.field.element.blur();
-                    setTimeout(refocus, 50);
+                    setTimeout(refocus, DROPDOWN_FOCUS_TIMEOUT);
                     break;
                 case 'frame':
                     refocus();

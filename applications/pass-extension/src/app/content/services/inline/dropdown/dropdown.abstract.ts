@@ -29,4 +29,5 @@ export interface DropdownHandler {
     open: (request: DropdownRequest) => void;
     sendMessage: (message: InlineMessage) => void;
     getState: () => Promise<DropdownStateDTO>;
+    settled: () => Promise<boolean>;
 }

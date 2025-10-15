@@ -3,7 +3,11 @@ import type { FrameAttributes, FrameField, FrameRelay } from 'proton-pass-extens
 
 import type { Coords } from '@proton/pass/types';
 
-export type DropdownStateDTO = { visible: boolean; attachedField?: FrameField };
+export type DropdownStateDTO = {
+    visible: boolean;
+    focused: boolean;
+    attachedField?: FrameField;
+};
 
 export type DropdownOpenDTO = FrameRelay<
     {

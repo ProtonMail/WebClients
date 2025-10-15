@@ -1,6 +1,7 @@
 import type { InlineRegistry } from 'proton-pass-extension/app/content/services/inline/inline.registry';
 
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
+import { onNextTick } from '@proton/pass/utils/time/next-tick';
 
 import type { DropdownHandler } from './dropdown.abstract';
 import type { DropdownAnchor, DropdownRequest } from './dropdown.app';
@@ -33,22 +34,32 @@ export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler
             const { autofocused } = payload;
 
             const didAnchorChange = !attachedAnchor || willDropdownAnchorChange(attachedAnchor, payload);
-            const autoclose = visible && (didAnchorChange || !autofocused);
 
+            /** Close if anchor changed or user clicked icon to toggle dropdown */
+            const autoclose = visible && (didAnchorChange || !autofocused);
             if (autoclose) dropdown.close();
 
             if (didAnchorChange) {
                 const form = payload.type === 'field' ? payload.field.getFormHandle() : undefined;
                 const layer = form?.element;
+
                 const close = () => dropdown.close(payload);
+                /** Defer close until next tick - only close if dropdown lost focus */
+                const maybeClose = onNextTick(() => !registry.dropdown?.focused && close());
 
                 registry.attachDropdown(layer)?.open(payload);
 
                 const scrollParent = form?.scrollParent;
                 const scrollOptions = { capture: true, once: true, passive: true } as const;
 
+                /** Register event listeners to auto-close dropdown on various UI interactions.
+                 * - resize/scroll: close immediately on layout changes
+                 * - focus: close on tab switching
+                 * - blur: conditionally close only if dropdown lost focus */
                 listeners.addListener(window, 'resize', close, { once: true, passive: true });
                 listeners.addListener(window, 'scroll', close, scrollOptions);
+                listeners.addListener(window, 'focus', close);
+                listeners.addListener(window, 'blur', maybeClose);
                 listeners.addListener(scrollParent, 'scroll', close, scrollOptions);
             }
         },
@@ -57,6 +68,7 @@ export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler
             listeners.removeAll();
             const dropdown = registry.dropdown;
             const anchor = dropdown?.anchor;
+
             const activeAnchor = (() => {
                 switch (target?.type) {
                     case 'field':
@@ -87,9 +99,11 @@ export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler
             const dropdown = registry.dropdown;
             const visible = dropdown?.getState().visible ?? false;
             const anchor = dropdown?.anchor;
+            const focused = dropdown?.focused ?? false;
 
             return {
                 visible,
+                focused,
                 attachedField: anchor
                     ? (() => {
                           switch (anchor.type) {
@@ -107,6 +121,8 @@ export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler
                     : undefined,
             };
         },
+
+        settled: async () => true,
     };
 
     return dropdown;

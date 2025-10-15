@@ -55,7 +55,17 @@ export const Dropdown: FC<Props> = ({ initial = null }) => {
         useCallback(({ payload }) => setState(payload), [])
     );
 
-    useEffect(() => setState((prev) => (visible ? prev : null)), [visible]);
+    useEffect(() => {
+        setState((prev) => (visible ? prev : null));
+
+        if (visible) {
+            /** Dropdown iframe is isolated by shadow DOM - blur events don't bubble up.
+             * Listen on iframe window to detect when user switches away and close dropdown. */
+            const onBlur = () => controller.close();
+            window.addEventListener('blur', onBlur, { once: true });
+            return () => window.removeEventListener('blur', onBlur);
+        }
+    }, [visible]);
 
     return (
         <IFrameAppAutoSizer

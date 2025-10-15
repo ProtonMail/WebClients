@@ -1,7 +1,7 @@
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { ContentScriptContextFactoryOptions } from 'proton-pass-extension/app/content/context/factory';
+import { onFieldDropdownClose } from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.utils';
 import type { FrameMessageHandler } from 'proton-pass-extension/app/content/utils/frame.message-broker';
-import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { isShadowRoot } from '@proton/pass/fathom';
@@ -37,14 +37,6 @@ export const createInlineRelay = ({ controller }: ContentScriptContextFactoryOpt
 
             const close = () => dropdown.close({ type: 'field', field });
 
-            const handleBlur = () =>
-                sendMessage(
-                    contentScriptMessage({
-                        type: WorkerMessageType.INLINE_FRAME_BLUR,
-                        payload: { formId, fieldId },
-                    })
-                ).catch(noop);
-
             /** Intercept scroll events in sub-frames. It is too costly to try to reposition
              * any injected UI elements in the top-frame via messaging. */
             const scrollParent = form.scrollParent;
@@ -52,7 +44,6 @@ export const createInlineRelay = ({ controller }: ContentScriptContextFactoryOpt
 
             dropdown.listeners.addListener(window, 'scroll', close, scrollOptions);
             dropdown.listeners.addListener(scrollParent, 'scroll', close, scrollOptions);
-            dropdown.listeners.addListener(window, 'blur', handleBlur, { once: true });
 
             /** Intercept backdrop clicks in sub-frames. The backdrop click
              * handler in the top-frame will not catch clicks in sub-frames.
@@ -73,13 +64,13 @@ export const createInlineRelay = ({ controller }: ContentScriptContextFactoryOpt
         (ctx, { payload }) => {
             if (!(payload.type === 'result' && !payload.passive)) return;
 
+            dropdown.listeners.removeAll();
+
             const { fieldId, formId } = payload;
             const form = ctx?.service.formManager.getFormById(formId);
             const field = form?.getFieldById(fieldId);
 
-            dropdown.listeners.removeAll();
-            if (payload.refocus) field?.focus();
-            else if (field?.element !== document.activeElement) field?.detachIcon();
+            if (field) onFieldDropdownClose(field, payload.refocus);
         }
     );
 

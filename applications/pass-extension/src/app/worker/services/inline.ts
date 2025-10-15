@@ -113,16 +113,6 @@ export const createInlineService = () => {
         })
     );
 
-    /** Propagates a frame blur if an inline element was
-     * opened from a sub-frame. UX purposes. */
-    WorkerMessageBroker.registerMessage(
-        WorkerMessageType.INLINE_FRAME_BLUR,
-        withSender(async (message, tabId) => {
-            await browser.tabs.sendMessage(tabId, backgroundMessage(message), { frameId: 0 });
-            return true;
-        })
-    );
-
     /** Forward inline dropdown state from top-level frame */
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.INLINE_DROPDOWN_STATE,
