@@ -5,7 +5,6 @@ import {
     childProcessIntegration,
     electronMinidumpIntegration,
     init,
-    setTag,
     setTags,
     setUser,
     SeverityLevel,
@@ -14,7 +13,6 @@ import { appSession, updateSession } from "./session";
 import pkg from "../../package.json";
 import { app } from "electron";
 import { getAppID } from "../store/idStore";
-import { DESKTOP_FEATURES } from "../constants/desktopFeatures";
 import { isLinux, isMac, isWindows } from "./helpers";
 import Logger, { LogMessage, Transport } from "electron-log";
 import { getAppURL } from "../store/urlStore";
@@ -24,8 +22,6 @@ import { getAccountView, getCurrentViewID, getMainWindow } from "./view/viewMana
 import { NET_LOGGER_VIEW_PREFIX, sentryLogger } from "./log";
 import { isProdEnv } from "./isProdEnv";
 import { getOSInfo } from "./log/getOSInfo";
-
-const MAX_TAG_LENGTH = 32;
 
 const LOG_LEVEL_TO_SEVERITY: Record<LogMessage["level"], SeverityLevel> = {
     error: "error",
@@ -96,11 +92,6 @@ export async function initializeSentry() {
         "os.isWindows": isWindows,
         "os.isLinux": isLinux,
     });
-
-    for (const [feature, enabled] of Object.entries(DESKTOP_FEATURES)) {
-        const tagName = `flag.${feature}`.substring(0, MAX_TAG_LENGTH);
-        setTag(tagName, enabled);
-    }
 
     const sentryTransport: Transport = ({ data, level, scope, date }: LogMessage) => {
         if (scope === "sentry") {
