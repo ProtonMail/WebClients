@@ -333,7 +333,7 @@
         "Nastavitve e-pošte"
       ],
       "enable desktop notifications": [
-        "omogoči obvestila na namizju"
+        "prikazovanje obvestil na namizju"
       ],
       "Expand video conferencing widget": [
         "Razširi gradnik za videokonference"
@@ -4306,6 +4306,12 @@
       ],
       "Security Center": [
         "Center za varnost"
+      ],
+      "Password ends with": [
+        "Geslo se konča z"
+      ],
+      "Username": [
+        "Uporabniško ime"
       ]
     },
     "Hint": {
@@ -6000,6 +6006,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Vaše preizkusno obdobje se bo končalo čez ${ timeRemaining }."
+      ],
+      "You are currently signed in as ${ username }.": [
+        "Trenutno ste prijavljeni kot ${ username }."
       ]
     },
     "info": {
@@ -8950,6 +8959,9 @@
       ],
       "ZIP code": [
         "Poštna številka"
+      ],
+      "Select country": [
+        "Izberite državo"
       ]
     },
     "Placeholder for contact group name": {
@@ -11849,6 +11861,11 @@
       ],
       "Passcode:": [
         "Koda za dostop:"
+      ]
+    },
+    "Referral": {
+      "More sharing options": [
+        "Več možnosti skupne rabe"
       ]
     }
   }

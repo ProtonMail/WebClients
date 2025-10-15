@@ -911,6 +911,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Ilmainen työpöytäsovelluksen kokeilujaksosi päättyy ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add secret passphrase": [
+        "Lisää salalause"
+      ],
+      "Update secret passphrase": [
+        "Päivitä salalause"
       ]
     },
     "action": {
@@ -4296,6 +4302,12 @@
       ],
       "Security Center": [
         "Suojauskeskus"
+      ],
+      "Drawer": [
+        "Valikko"
+      ],
+      "Username": [
+        "Käyttäjätunnus"
       ]
     },
     "Hint": {
@@ -4953,7 +4965,7 @@
         "Kopioi linkki leikepöydälle"
       ],
       "Copy your referral link": [
-        "Kopioi suosituslinkkisi"
+        "Kopioi suosittelulinkkisi"
       ],
       "Country code": [
         "Maakoodi"
@@ -5439,7 +5451,7 @@
         "Palautustiedot säilyvät tällä laitteella, kunnes poistat ne."
       ],
       "Referral link copied to your clipboard": [
-        "Suosituslinkki kopioitiin leikepöydälle"
+        "Suosittelulinkki kopioitiin leikepöydälle"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sivun päivitys tai ${ link } korjaa useimmat ongelmat automaattisesti."
@@ -5950,6 +5962,21 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Voit silti tarkastella omia tilitietojasi, mutta kaikki käyttäjätilit poistetaan organisaatiostasi."
+      ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Vaihe 1:** Kutsu kaverisi ${ BRAND_NAME }:iin suosittelulinkilläsi."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
+        "**Vaihe 2:** Kaverisi saavat valitsemansa ${ BRAND_NAME }-tilauksen ilmaiseksi kahdeksi viikoksi."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Vaihe 2:** Kaverisi saavat kahden viikon ilmaisen tilauksen."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**Vaihe 3:** Ansaitse ${ referrerRewardAmount } krediittiä jokaista tilauksen hankkivaa kaveria kohden."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Vaihe 3:** Ansaitse ${ referrerRewardAmount } krediitteinä jokaista tilauksen hankkivaa kaveria kohden."
       ]
     },
     "info": {
@@ -6608,6 +6635,15 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Add Zoom meeting": [
+        "Lisää Zoom-kokous"
+      ],
+      "Video conference": [
+        "Videoneuvottelu"
+      ],
+      "Zoom meeting": [
+        "Zoom-kokous"
       ]
     },
     "Label for contact group color": {
@@ -7713,6 +7749,9 @@
       ],
       "Switch plans?": [
         "Vaihdetaanko tilaus?"
+      ],
+      "Review subscription": [
+        "Tarkastele tilausta"
       ]
     },
     "new_plans: tooltip": {
@@ -8021,6 +8060,9 @@
       ],
       "Passcode copied to clipboard": [
         "Tunnuskoodi kopioitiin leikepöydälle"
+      ],
+      "Passphrase copied to clipboard": [
+        "Salalause kopioitiin leikepöydälle"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8270,6 +8312,9 @@
       ],
       "Storage": [
         "Tallennustila"
+      ],
+      "Edit docs online": [
+        "Muokkaa dokumentteja verkossa"
       ]
     },
     "Onboarding": {
@@ -8645,6 +8690,15 @@
       ],
       "VAT number": [
         "ALV-numero"
+      ],
+      "Add Business Number": [
+        "Lisää yritystunnus"
+      ],
+      "Edit ABN": [
+        "Muokkaa ABT-tunnusta"
+      ],
+      "Edit EIN": [
+        "Muokkaa EIN-tunnusta"
       ]
     },
     "PGP key encryption warning": {
@@ -8803,6 +8857,9 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Enter passphrase": [
+        "Syötä salalause"
       ]
     },
     "Placeholder for contact group name": {
@@ -9365,6 +9422,9 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "Päivitä hintaan ${ pricingTitle }"
+      ],
+      "Keep passwords safe": [
+        "Pidä salasanat turvassa"
       ]
     },
     "specialoffer: Offers": {
@@ -9475,7 +9535,7 @@
         "Omat tapahtumavärit"
       ],
       "Get up to ${ credits } in credits.": [
-        "Ansaitse jopa ${ credits } krediittiä."
+        "Ansaitse jopa ${ credits } krediitteinä."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Kutsu kavereita ${ BRAND_NAME }iin"
@@ -10196,6 +10256,9 @@
       ],
       "You have successfully unsubscribed": [
         "Tilauksesi on lopetettu"
+      ],
+      "Secret passphrase updated": [
+        "Salalause päivitettiin"
       ]
     },
     "Suffix": {
@@ -11009,6 +11072,9 @@
       ],
       "Your shorter address is now ready": [
         "Lyhyempi osoittesi on nyt valmis"
+      ],
+      "Share your link": [
+        "Jaa linkkisi"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11570,6 +11636,51 @@
       ],
       "Passcode:": [
         "Tunnuskoodi:"
+      ]
+    },
+    "collider_2025: feature": {
+      "Basic chat history": [
+        "Rajoitettu keskusteluhistoria"
+      ],
+      "Full chat history with search": [
+        "Täysi keskusteluhistoria haulla"
+      ],
+      "Limited daily chats": [
+        "Rajoitetusti päivittäisiä keskusteluja"
+      ],
+      "Unlimited daily chats": [
+        "Rajattomasti päivittäisiä keskusteluja"
+      ]
+    },
+    "collider_2025: Info": {
+      "High-speed chats and advanced AI features.": [
+        "Nopeita keskusteluja ja edistyneitä tekoälyominaisuuksia."
+      ]
+    },
+    "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } suosittelua kohden"
+      ],
+      "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Ansaitse jopa ${ maxRewardAmount } krediitteinä. Saat ${ referrerRewardAmount }, kun kutsumasi henkilö hankkii ${ BRAND_NAME } -tilauksen."
+      ],
+      "Invite friends. Get credits.": [
+        "Kutsu kavereita. Hanki krediittejä."
+      ],
+      "Invited friends": [
+        "Kutsu kavereita"
+      ],
+      "More sharing options": [
+        "Lisää jakamisvaihtoehtoja"
+      ],
+      "Refer friends": [
+        "Kerro kavereille"
+      ],
+      "Start earning credits": [
+        "Aloita krediittien ansaitseminen"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Voit ansaita jopa **${ maxRewardAmount }** krediitteinä."
       ]
     }
   }

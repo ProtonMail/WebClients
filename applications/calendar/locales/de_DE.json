@@ -3325,6 +3325,21 @@
       ],
       "This event was updated.": [
         "Dieser Termin wurde aktualisiert."
+      ],
+      "DESCRIPTION:": [
+        "Beschreibung:"
+      ],
+      "LOCATION:": [
+        "Ort:"
+      ],
+      "TIME:": [
+        "Zeit:"
+      ],
+      "TITLE:": [
+        "Titel:"
+      ],
+      "You are invited to": [
+        "Du wurdest eingeladen zu"
       ]
     },
     "Email body for invitation (date part)": {
@@ -7909,6 +7924,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Wir scannen das Dark Web, um zu überprüfen, ob deine ${ BRAND_NAME }-Adressen oder Aliasse veröffentlicht wurden, und benachrichtigen dich sofort, wenn wir etwas finden."
+      ],
+      "Short domain (@pm.me)": [
+        "Kurzdomain (@pm.me)"
       ]
     },
     "new_plans: feature highlight": {
@@ -9030,6 +9048,18 @@
       ],
       "terms and conditions": [
         "Allgemeinen Geschäftsbedingungen"
+      ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Für die Aktivierung des Abonnements nach dem Ende der Testversion ist eine Zahlungsmethode erforderlich."
+      ],
+      "This offer is not available with your current plan.": [
+        "Dieses Angebot ist mit deinem aktuellen Abonnement nicht verfügbar."
+      ],
+      "You already have a subscription to this plan.": [
+        "Du hast dieses Abonnement bereits."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Du hast dieses Abonnement bereits. Du kannst dein Abonnement auf ${ subscriptionPlatform } ändern."
       ]
     },
     "Payments.Error": {

@@ -936,7 +936,7 @@
         "Áno, budem sa zúčastňovať"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
-        "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov",
+        "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktu",
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov",
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov",
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov"
@@ -1087,7 +1087,7 @@
     },
     "anniversary_2025": {
       "Get the deal": [
-        "Využite ponuku"
+        "Využiť ponuku"
       ]
     },
     "anniversary_2025: Offer": {
@@ -1185,7 +1185,7 @@
         "Používajte vlastnú emailovú doménu"
       ],
       "years": [
-        "roka"
+        "rokov"
       ]
     },
     "anniversary_2025: offer": {
@@ -1201,7 +1201,7 @@
         "${ n } mesiacov"
       ],
       "/ month": [
-        "/ mesačným"
+        "/ mesiac"
       ],
       "12 months": [
         "12 mesiacov"
@@ -2811,7 +2811,7 @@
         "Tanzánia"
       ],
       "Tanzania, United Republic of": [
-        "Tanzánijská zjednotená Republika"
+        "Tanzánijská zjednotená republika"
       ],
       "Thailand": [
         "Thajsko"
@@ -3805,7 +3805,7 @@
         "Zadajte meno, priezvisko alebo zobrazované meno, prosím"
       ],
       "Please select a country": [
-        "Prosím, vyberte krajinu"
+        "Vyberte krajinu, prosím"
       ],
       "Please select a state": [
         "Vyberte kraj, prosím"
@@ -4335,7 +4335,7 @@
         "Účty s vlastnými doménami sa nemôžu pripojiť k rodinnému plánu."
       ],
       "customer support": [
-        "zákaznícka podpora"
+        "zákaznícku podporu"
       ],
       "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
         "Rodinné plány v súčasnosti nepodporujú externé účty. Pred pripojením si vytvorte ${ BRAND_NAME } adresu. ${ link }"
@@ -4531,7 +4531,7 @@
         "Veľké"
       ],
       "Medium (recommended)": [
-        "Stredné (odporúčané)"
+        "Stredná (odporúčané)"
       ],
       "Small": [
         "Malé"
@@ -5895,7 +5895,7 @@
         "Vyberte, ktoré kalendáre chcete importovať. Pre každý importovaný kalendár sa vytvorí nový kalendár podľa počtu kalendárov dostupných vo vašom pláne."
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
-        "SEPA platby sú momentálne nedostupné. Skúste to znova neskôr."
+        "SEPA platby sú momentálne nedostupné. Skúste to znova neskôr, prosím."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servery sú nedostupné. Skúste to prosím o pár minút"
@@ -6453,10 +6453,10 @@
     },
     "Info: partial": {
       "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } vybratá zložka",
-        "${ selectedFoldersCount } vybraté zložky",
-        "${ selectedFoldersCount } vybratých zložiek",
-        "${ selectedFoldersCount } vybratých priečinkov"
+        "${ selectedFoldersCount } vybraný priečinok",
+        "${ selectedFoldersCount } vybrané priečinky",
+        "${ selectedFoldersCount } vybraných priečinkov",
+        "${ selectedFoldersCount } vybraných priečinkov"
       ],
       "${ selectedFoldersCount } label selected": [
         "${ selectedFoldersCount } vybratý štítok",
@@ -7310,7 +7310,7 @@
         "Ak chcete naďalej používať ${ BRAND_NAME }, uistite sa, prosím, že vaše prémiové funkcie už nepoužívate, alebo si zvýšte úroveň svojho plánu."
       ],
       "upgrade for more storage": [
-        "upgrajdujte pre väčšie úložisko"
+        "upgradujte pre väčšie úložisko"
       ],
       "Upgrade to restore full access": [
         "Upgradujte pre obnovenie plného prístupu"
@@ -7971,7 +7971,7 @@
         "Usporiadanie položiek pomocou viacerých trezorov"
       ],
       "Passkeys supported": [
-        "Prístupové kľúče sú podporované"
+        "Podpora prístupových kľúčov"
       ],
       "Password health": [
         "Zdravie hesla"
@@ -8019,7 +8019,7 @@
         "Podpora routeru"
       ],
       "Save time emailing": [
-        "Ušetriť čas pri emailovaní"
+        "Ušetrite čas pri posielaní emailov"
       ],
       "Schedule and snooze emails for any time": [
         "Plánovanie a odkladanie emailov na ľubovoľný čas"
@@ -8148,7 +8148,10 @@
         "Zdieľanie trezora (až s ${ n } osobami)"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
-        "Skenujeme temný web a kontrolujeme, či nedošlo k úniku vašich adries alebo aliasov ${ BRAND_NAME }, a ak niečo nájdeme, okamžite vás upozorníme."
+        "Skenujeme dark web a kontrolujeme, či nedošlo k úniku vašich adries alebo aliasov ${ BRAND_NAME }, a ak niečo nájdeme, okamžite vás upozorníme."
+      ],
+      "Short domain (@pm.me)": [
+        "Skrátený tvar domény (@pm.me)"
       ]
     },
     "new_plans: feature highlight": {
@@ -8429,7 +8432,7 @@
         "Prispôsobte si svoj emailový podpis pomocou log, obrázkov, ikon sociálnych médií, odkazov na vaše kontaktné údaje a ďalších"
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "Telefonická podpora je k dispozícii od tímu zákazníckej podpory ${ BRAND_NAME } počas európskych pracovných hodín, pre zákazníkov s 20 a viac používateľmi"
+        "Telefonická podpora od tímu zákazníckej podpory ${ BRAND_NAME } je k dispozícii počas európskych pracovných hodín pre zákazníkov s viac než 20 používateľmi"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Zabraňuje prístupu ${ BRAND_NAME } alebo tretím stranám k správam. Jediní ľudia, ktorí môžu čítať správy, sú odosielateľ a zamýšľaný príjemca."
@@ -8842,7 +8845,7 @@
         "Získajte ${ BRAND_NAME } Unlimited"
       ],
       "Get the deal": [
-        "Využite ponuku"
+        "Využiť ponuku"
       ],
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Posledná šanca získať 80% zľavu na prvý mesiac ${ plan }."
@@ -9007,7 +9010,7 @@
         "Stále môžete zrušiť do 30 dní a získať pomernú náhradu späť."
       ],
       "You can still cancel within 30 days and get a prorated refund.": [
-        "Stále môžete zrušiť do 30 dní a získať späť pomernú náhradu."
+        "Stále môžete do 30 dní zrušiť a získať späť pomernú náhradu."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "Môžete používať ${ planTitle } až do konca skúšobného obdobia bez spoplatnenia."
@@ -9149,7 +9152,7 @@
         "Záznam aktivity"
       ],
       "Admin panel to manage users and subscription": [
-        "Panel správcu pre správu užívateľov a predplatného"
+        "Panel správcu pre správu používateľov a predplatného"
       ],
       "Advanced account protection": [
         "Pokročilá ochrana účtu"
@@ -9318,7 +9321,7 @@
         "Toto číslo bude uvedené na všetkých budúcich faktúrach."
       ],
       "This payment method will become your new default for all future renewals.": [
-        "Tento spôsob platby sa stane vaším novým predvoleným pre všetky budúce obnovenia."
+        "Tento spôsob platby sa stane vašim novým predvoleným spôsobom platby pre všetky budúce obnovenia."
       ],
       "Timeout exceeded": [
         "Prekročený časový limit"
@@ -9340,6 +9343,18 @@
       ],
       "terms and conditions": [
         "zmluvnými podmienkami používania"
+      ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Spôsob platby potrebný na aktiváciu predplatného po skončení skúšobnej doby."
+      ],
+      "This offer is not available with your current plan.": [
+        "Táto ponuka nie je s vaším aktuálnym programom dostupná."
+      ],
+      "You already have a subscription to this plan.": [
+        "Tento plán už máte predplatený."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Tento plán už máte predplatený. Predplatné môžete zmeniť na ${ subscriptionPlatform }."
       ]
     },
     "Payments.Error": {
@@ -9569,7 +9584,7 @@
         "Vyberte krajinu"
       ],
       "Select state": [
-        "Vybrať stav"
+        "Vyberte stav"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Dajte nám vedieť, čo by podľa vás mohlo vylepšiť ${ BRAND_NAME }"
@@ -9929,7 +9944,7 @@
         "Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekundu.",
         " Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekundy.",
         " Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekúnd.",
-        " Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekundy."
+        " Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekúnd."
       ]
     },
     "session_recovery:available:link": {
@@ -10005,7 +10020,7 @@
         "Bolo vyžiadané obnovenie hesla (${ user.Email }). Heslo si môžete zmeniť za ${ hoursRemaining } hodín."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
-        "Aby sme sa uistili, že sa pokúšate obnoviť heslo naozaj vy, počkáme 72 hodín pred schválením žiadosti. Heslo si môžete zmeniť v ${ boldTimeLeft }. ${ viewRequest }"
+        "Aby sme sa uistili, že sa pokúšate obnoviť heslo naozaj vy, počkáme 72 hodín pred schválením žiadosti. Heslo si môžete zmeniť o ${ boldTimeLeft }. ${ viewRequest }"
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "Dostali sme žiadosť o obnovenie hesla pre ${ boldEmail }."
@@ -10152,10 +10167,10 @@
         "${ days } deň",
         "${ days } dni",
         "${ days } dní",
-        "${ days } dňa"
+        "${ days } dní"
       ],
       "${ hours } hour": [
-        "${ hours } hodiny",
+        "${ hours } hodina",
         "${ hours } hodiny",
         "${ hours } hodín",
         "${ hours } hodín"
@@ -10262,7 +10277,7 @@
         "${ n } mesiacov"
       ],
       "/ month": [
-        "/ mesačným"
+        "/ mesiac"
       ],
       "/month": [
         "/mesiac"
@@ -10295,7 +10310,7 @@
         "Účtovaná suma ${ amount } za 30 mesiacov"
       ],
       "Get the deal": [
-        "Využite ponuku"
+        "Využiť ponuku"
       ],
       "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "Obnoví sa po 1 roku za zľavnenú cenu ${ discountedAmount } namiesto ${ regularAmount } (zľava ${ discount }%)"
@@ -10481,7 +10496,7 @@
         "Vaše úložisko ${ appStorage } je takmer plné"
       ],
       "Your ${ appStorage } is full": [
-        "Vaše úložisko ${ appStorage } je plné"
+        "Vaše ${ appStorage } je plné"
       ],
       "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
         "Vaše ${ productString } je zaplnené na ${ percentage }%. ${ cta }."
@@ -10841,7 +10856,7 @@
         "Nahrávať nové súbory"
       ],
       "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
-        "Jediným zdrojom príjmov spoločnosti ${ BRAND_NAME } je užívateľské predplatné. Vaša podpora nám umožňuje zostať nezávislými, pokračovať v našom poslaní chrániť online súkromie a pomáhať aktivistom a organizáciám bojujúcim za slobodu."
+        "Jediným zdrojom príjmov spoločnosti ${ BRAND_NAME } je predplatné používateľov. Vaša podpora nám pomáha zachovať nezávislosť, napomáha našej misii v oblasti online súkromia a pomáha aktivistom a organizáciám bojujúcim za slobodu."
       ],
       "Users won’t be able to manage their calendars": [
         "Používatelia nebudú môcť spravovať svoje kalendáre"
@@ -10912,10 +10927,10 @@
         "Podporte naše poslanie"
       ],
       "Upgrade": [
-        "Upgrade"
+        "Zvýšiť úroveň"
       ],
       "Upgrade your productivity": [
-        "Zlepšite svoju produktivitu"
+        "Zvýšte svoju produktivitu"
       ],
       "We don't sell your data": [
         "Nepredávame vaše údaje"
@@ -11170,7 +11185,7 @@
         "Vytvorte si bezpečné prihlasovacie údaje na všetkých svojich zariadeniach. Zahŕňa neobmedzené aliasy, 20 trezorov, integrované 2FA, automatické dopĺňanie platobných kariet a ďalšie."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Zahŕňa 2950+ serverov vo viac ako 65 krajinách, pripojenie až 10 zariadení, prístup k celosvetovým streamovacím službám, blokovaniu malvéru a reklám a ďalšie."
+        "Zahŕňa 2950+ serverov vo viac ako 65 krajinách, pripojenie až 10 zariadení, prístup k celosvetovým streamovacím službám, blokovanie malvéru a reklám a ďalšie."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Zahŕňa podporu pre 1 vlastnú emailovú doménu, 10 emailových adries, 10 hide-my-email aliasov, zdieľanie kalendára a ďalšie."
@@ -12095,7 +12110,7 @@
         "Obrázok sa nepodarilo načítať"
       ],
       "The image could not be loaded using proxy": [
-        "Obrázok nie je možné načítať pomocou proxy serveru"
+        "Obrázok nie je možné načítať pomocou proxy servera"
       ],
       "The import will start with the most recent messages.": [
         "Import začne najnovšími správami."
@@ -12453,7 +12468,7 @@
         "Každý ${ interval } týždeň v ${ multipleDaysString }, ${ timesString }",
         "Každé ${ interval } týždne v ${ multipleDaysString }, ${ timesString }",
         "Každých ${ interval } týždňov v ${ multipleDaysString }, ${ timesString }",
-        "Každé ${ interval } týždne v ${ multipleDaysString }, ${ timesString }"
+        "Každých ${ interval } týždňov v ${ multipleDaysString }, ${ timesString }"
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
         "Každý ${ interval } týždeň vo všetky dni, ${ timesString }",

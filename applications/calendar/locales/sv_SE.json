@@ -1249,6 +1249,9 @@
       ],
       "You cannot add custom domains during the trial period.": [
         "Du kan inte lägga till anpassade domäner under provperioden."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Efter provperioden slutar den ${ formattedDate } kommer den bli en betald prenumeration som förnyas automatiskt månadsvis. Du kommer inte att debiteras om du avbryter före ${ formattedDate }."
       ]
     },
     "b2b_trials_Action": {
@@ -1415,6 +1418,10 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagringsutrymme delas mellan alla ${ BRAND_NAME }-tjänster."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadress, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsat antal hide-my-email-alias och mer.",
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadresser, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsat antal hide-my-email-alias och mer."
       ]
     },
     "Billing cycle option": {
@@ -1835,6 +1842,9 @@
       ],
       "Unlimited favorites for quick access": [
         "Obegränsade favoriter för snabb åtkomst"
+      ],
+      "Web search access": [
+        "Webbsökningsåtkomst"
       ]
     },
     "collider_2025: Info": {
@@ -1843,6 +1853,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Lägg till ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Chattar med hög hastighet och avancerade AI-funktioner."
       ]
     },
     "colon": {
@@ -3297,6 +3310,21 @@
       ],
       "This event was updated.": [
         "Denna händelse uppdaterades."
+      ],
+      "DESCRIPTION:": [
+        "BESKRIVNING:"
+      ],
+      "LOCATION:": [
+        "PLATS:"
+      ],
+      "TIME:": [
+        "TID:"
+      ],
+      "TITLE:": [
+        "RUBRIK:"
+      ],
+      "You are invited to": [
+        "Du är inbjuden till"
       ]
     },
     "Email body for invitation (date part)": {
@@ -6207,6 +6235,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kommer fortfarande att kunna se dina egna kontodata, men alla användarkonton kommer att tas bort från din organisation."
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Prenumeration slutar: För att behålla dina ${ planName }-förmåner, starta om din prenumeration i Apple App Store senast ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Prenumeration slutar: För att behålla dina ${ planName }-förmåner, starta om din prenumeration i Google Play Butik senast ${ byDate }. ${ reactivateLink }"
       ]
     },
     "info": {
@@ -7872,6 +7906,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skannar den mörka webben för att kontrollera om dina ${ BRAND_NAME }-adresser eller alias har läckt och varnar dig omedelbart om vi hittar något."
+      ],
+      "Short domain (@pm.me)": [
+        "Kort domän (@pm.me)"
       ]
     },
     "new_plans: feature highlight": {
@@ -8992,6 +9029,18 @@
       ],
       "Amount due after trial on ${ formattedDate }": [
         "Belopp att betala efter provperioden den ${ formattedDate }"
+      ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Betalningsmetod krävs för att prenumerationen ska aktiveras efter provperioden är slut."
+      ],
+      "This offer is not available with your current plan.": [
+        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
+      ],
+      "You already have a subscription to this plan.": [
+        "Du har redan en prenumeration på detta paket."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Du har redan en prenumeration på detta paket. Du kan ändra din prenumeration på ${ subscriptionPlatform }."
       ]
     },
     "Payments.Error": {
@@ -9064,6 +9113,15 @@
       ],
       "VAT number": [
         "Momsnummer"
+      ],
+      "Add Business Number": [
+        "Lägg till företagsnummer"
+      ],
+      "Business Number": [
+        "Företagsnummer"
+      ],
+      "Edit Business Number": [
+        "Redigera företagsnummer"
       ]
     },
     "PGP key encryption warning": {
@@ -9356,6 +9414,14 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Du kan få upp till **${ maxRewardAmount }** i kredit."
+      ],
+      "Friend joined": [
+        "Vän gick med",
+        "Vänner gick med"
+      ],
+      "Friend subscribed": [
+        "Vän prenumererade",
+        "Vänner prenumererade"
       ]
     },
     "Reload event button tooltip": {

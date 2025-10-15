@@ -877,6 +877,30 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "桌面應用程式免費試用期將會在${ formattedEndDate }.${ upgradeButton }完結"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "認領您的免費 ${ BRAND_NAME } 位址"
+      ],
+      "Connect apps and devices": [
+        "連線應用程式和裝置"
+      ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "下載 ${ DRIVE_APP_NAME } 應用程式"
+      ],
+      "Import emails, calendars, contacts": [
+        "匯入電子郵件、行事曆、聯絡人"
+      ],
+      "Passphrase": [
+        "助記詞"
+      ],
+      "Remove button": [
+        "移除按鈕"
+      ],
+      "Upgrade for 200GB": [
+        "升級至200GB"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "將 ${ PASS_APP_NAME } 用於商務"
       ]
     },
     "action": {
@@ -1042,6 +1066,18 @@
       ],
       "years": [
         "年"
+      ],
+      "500 GB encrypted storage": [
+        "500 GB 已加密儲存空間"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "為了慶祝我們共同的旅程，這是一份專屬獻禮。"
+      ],
+      "Secure email with unlimited aliases": [
+        "提供無限別名的安全電子郵件"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "將您的已加密儲存空間增加三倍 – 為您的所有資料取得 3 TB"
       ]
     },
     "anniversary_2025: Offers": {
@@ -1204,6 +1240,15 @@
       ],
       "VPN Accelerator": [
         "VPN 加速器"
+      ],
+      "1 user account": [
+        "1 使用者帳號"
+      ],
+      "6 user accounts": [
+        "6 位使用者帳號"
+      ],
+      "Protect 10 devices at a time": [
+        "同時保護 10 台裝置"
       ]
     },
     "BF2024: Offers": {
@@ -2825,6 +2870,21 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已經創建10個別名。${ BRAND_NAME }無限版可獲得無限別名和500GB的儲存容量。"
+      ],
+      "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
+        "以顏色標示事件，讓您更容易安排一天、追蹤時間並優先處理任務。"
+      ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "確保安全存取組織資料，即使您的團隊是遠端工作或使用公共 WiFi。"
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "透過 ${ PROTON_SENTINEL_NAME } 程式，確保您的帳號擁有頂級安全性。"
+      ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "讓您可以立即新增會議連結到您的活動邀請。"
+      ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "設定所有使用者的帳號，並邀請他們加入 ${ BRAND_NAME }。"
       ]
     },
     "description": {
@@ -2999,6 +3059,21 @@
       ],
       "This event was updated.": [
         "該行程已更新。"
+      ],
+      "DESCRIPTION:": [
+        "內容:"
+      ],
+      "LOCATION:": [
+        "地點:"
+      ],
+      "TIME:": [
+        "時間:"
+      ],
+      "TITLE:": [
+        "標題:"
+      ],
+      "You are invited to": [
+        "你被邀請至"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3574,6 +3649,12 @@
       ],
       "ZIP code is required": [
         "郵遞區號為必要項目"
+      ],
+      "Passphrase unavailable": [
+        "助記詞無法使用"
+      ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "無法載入 VPN 儀表板。請檢查您的連線，然後重試。"
       ]
     },
     "Error accepting calendar invitation": {
@@ -4147,6 +4228,12 @@
       ],
       "Security Center": [
         "安全中心"
+      ],
+      "Domain": [
+        "網域"
+      ],
+      "Password ends with": [
+        "密碼結尾是"
       ]
     },
     "Hint": {
@@ -5646,6 +5733,57 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "您的系統時區似乎已更改為 ${ timezone }。您要更新您的時區喜好設定嗎？"
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "VPN 會加密您的連線並隱藏您的 IP 位址，使任何人都更難追蹤或監控您的瀏覽。"
+      ],
+      "Ad targeting": [
+        "廣告目標鎖定"
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "廣告商會追蹤您的瀏覽紀錄，以顯示目標式廣告。${ VPN_APP_NAME } 會封鎖追蹤程式和廣告，讓您的連線速度更快，並改善您的線上體驗。"
+      ],
+      "Geoblocking": [
+        "地理封鎖"
+      ],
+      "In restrictive countries": [
+        "在受限制的國家"
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "最好始終使用 VPN。但在以下情況下，網路安全威脅可能會達到最高點："
+      ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "大多數公共 WiFi 網路是安全的，但有些缺乏安全性，讓您暴露於網路威脅之下。VPN 會加密您的流量，保護您的安全。"
+      ],
+      "One time import": [
+        "一次性匯入"
+      ],
+      "Open the guide for recommended actions and helpful links.": [
+        "開啟指南，以查看建議的動作和實用連結。"
+      ],
+      "Please fill in all required fields.": [
+        "請填寫所有必填的欄位"
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "有些網站和串流服務會根據地區限制內容。VPN 能讓您繞過這些限制並自由存取網路。"
+      ],
+      "Surveillance": [
+        "監視"
+      ],
+      "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
+        "感謝您選擇 ${ BRAND_NAME } 保護您的組織。"
+      ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "這表示您的 ISP 和您造訪的網站無法將您的個人資訊與您的線上活動連線。"
+      ],
+      "When working remotely": [
+        "當遠端工作時"
+      ],
+      "Your online activity is protected": [
+        "你的線上活動受到保護"
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "您的實體位置可見，並可用於限制您對網際網路的存取。"
       ]
     },
     "info": {
@@ -6283,6 +6421,12 @@
       ],
       "ZIP code": [
         "郵遞區號"
+      ],
+      "Passphrase:": [
+        "助記詞:"
+      ],
+      "Zoom meeting": [
+        "Zoom 會議"
       ]
     },
     "Label for contact group color": {
@@ -6391,6 +6535,18 @@
       ],
       "What’s this?": [
         "這是什麼？"
+      ],
+      "How to add Zoom links": [
+        "如何新增 Zoom 連結"
+      ],
+      "How to share via email": [
+        "如何透過電子郵件共享"
+      ],
+      "How to use email forwarding": [
+        "如何使用電子郵件轉發"
+      ],
+      "How to use Groups": [
+        "如何使用群組"
       ]
     },
     "Link label (optional)": {
@@ -6455,6 +6611,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "您的訂閱已到期。 ${ cta } 以避免資料遺失。"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "若要繼續使用 ${ BRAND_NAME }，請確認您已不再使用頂級質子版功能，或升級您的方案。"
       ]
     },
     "Log preference": {
@@ -7185,6 +7344,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我們會掃描暗網去檢查你的${ BRAND_NAME }地址或别名是否被外洩，並且在發現任何問題時立即通知你。"
+      ],
+      "Manage user permissions and access": [
+        "管理使用者權限和存取"
       ]
     },
     "new_plans: feature highlight": {
@@ -7283,6 +7445,12 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "你正在當前的方案中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
+      ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB 的雲端儲存空間，讓您可以輕鬆儲存、同步及共享檔案。受端對端加密保護。"
+      ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "透過${ plusTitle }頂級功能保護家庭及6位使用者。"
       ]
     },
     "new_plans: Subtext": {
@@ -7801,6 +7969,12 @@
       ],
       "Your subscription renews soon": [
         "您的訂閱即將重新續約"
+      ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "最後獲得${ plan }進階首月80%折價"
+      ],
+      "Save big when you pay annually": [
+        "按年支付可節省大筆費用"
       ]
     },
     "Offer fearue": {
@@ -7879,6 +8053,21 @@
       ],
       "Once your full subscription starts...": [
         "您的正式訂購授權一旦開始..."
+      ],
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " 參閱我們的 ${ helpCenterLink } 或 ${ contactSupportLink }。"
+      ],
+      "contact our support team": [
+        "聯絡我們的客戶支援團隊"
+      ],
+      "If you need help,": [
+        "如果您需要協助，"
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "您仍然可以在 30 天內取消並獲得按比例的退款。"
+      ],
+      "Your free trial has started": [
+        "您的免費試用已開始"
       ]
     },
     "Option": {
@@ -7972,6 +8161,9 @@
     "pass_signup_2023: Info": {
       "Secure vault sharing": [
         "安全分享保管庫"
+      ],
+      "Secure vault, item and link sharing": [
+        "安全保管庫、項目和共享連結"
       ]
     },
     "pass_signup_2023: Title": {
@@ -8139,6 +8331,15 @@
       ],
       "Your payment is still being processed": [
         "您的付款仍在處理中"
+      ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "為了讓訂閱在試用期結束後啟用，需要付款方式。"
+      ],
+      "This offer is not available with your current plan.": [
+        "抱歉，此優惠無法在您的方案中使用。"
+      ],
+      "You already have a subscription to this plan.": [
+        "您已訂閱此方案。"
       ]
     },
     "Payments.Error": {
@@ -9678,6 +9879,9 @@
       ],
       "You have successfully unsubscribed": [
         "您已成功取消訂購"
+      ],
+      "Secret passphrase updated": [
+        "秘密助記詞已更新"
       ]
     },
     "Suffix": {
@@ -10413,6 +10617,24 @@
       ],
       "Your shorter address is now ready": [
         "您的短地址已完成"
+      ],
+      "Connect to video conferencing": [
+        "連接視訊會議"
+      ],
+      "Enhance security with 2FA": [
+        "透過雙重驗證強化安全性"
+      ],
+      "Private browsing vs VPN": [
+        "私有瀏覽 對比 VPN"
+      ],
+      "Simplify email distribution": [
+        "簡化電子郵件發送"
+      ],
+      "VPN explained": [
+        "VPN 說明"
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "歡迎使用 ${ BRAND_NAME } 商務版"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10525,6 +10747,9 @@
     "Unlimited offer": {
       "/month": [
         "/個月"
+      ],
+      "Only": [
+        "僅選取地面"
       ]
     },
     "Validation": {
@@ -10922,6 +11147,52 @@
       ],
       "Passcode:": [
         "數字密碼:"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "週年優惠"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "您可以在試用期間擁有最多 ${ TRIAL_MAX_SCRIBE_SEATS } 個抄寫座席。"
+      ]
+    },
+    "collider_2025: feature": {
+      "Basic chat history": [
+        "基本聊天記錄"
+      ],
+      "Full chat history with search": [
+        "具備搜尋功能的完整聊天記錄"
+      ],
+      "Large file upload support": [
+        "大型檔案上載支援"
+      ],
+      "Unlimited daily chats": [
+        "無限每日聊天"
+      ],
+      "Upload and query multiple large files": [
+        "上載及查詢多個大型檔案"
+      ],
+      "Web search access": [
+        "網頁搜尋存取"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } 是一款隱私優先的人工智慧，可協助您提高效率，同時確保您的資料安全。釋放其全部潛力，並搶先體驗隨著它們推出而帶來的新功能。"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "高速聊天和先進的人工智慧功能。"
+      ]
+    },
+    "Referral": {
+      "Friend joined": [
+        "已加入的朋友"
+      ],
+      "Friend subscribed": [
+        "已訂閱的朋友"
       ]
     }
   }

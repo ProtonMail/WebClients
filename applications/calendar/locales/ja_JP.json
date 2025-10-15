@@ -3303,6 +3303,21 @@
       ],
       "This event was updated.": [
         "この予定は更新されました。"
+      ],
+      "DESCRIPTION:": [
+        "詳細："
+      ],
+      "LOCATION:": [
+        "場所："
+      ],
+      "TIME:": [
+        "時間："
+      ],
+      "TITLE:": [
+        "タイトル："
+      ],
+      "You are invited to": [
+        "あなたは、次の場所に招待されています："
       ]
     },
     "Email body for invitation (date part)": {
@@ -6145,6 +6160,21 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "お客様ご自身のアカウントデータは引き続き表示できますが、すべてのユーザーアカウントがお客様の組織から削除されます。"
+      ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "ステップ1：招待リンクで${ BRAND_NAME }に**友達を招待してください**"
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
+        "**ステップ2：** あなたの友達は、選択した${ BRAND_NAME }プランを2週間無料で利用できます。"
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**ステップ2：** あなたの友達は、プランを2週間無料でご利用いただけます。"
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**ステップ3：**友達がプランに登録するたびに、${ referrerRewardAmount } クレジットを獲得できます。"
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**ステップ3：**プランに登録する人ごとに、${ referrerRewardAmount } クレジットを獲得できます。"
       ]
     },
     "info": {
@@ -7774,6 +7804,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ダークウェブをスキャンして、お客様の ${ BRAND_NAME } アドレスやエイリアスが漏洩していないかを確認し、何か見つかった場合はすぐに警告します。"
+      ],
+      "Short domain (@pm.me)": [
+        "短縮ドメイン (@pm.me)"
       ]
     },
     "new_plans: feature highlight": {
@@ -8851,6 +8884,27 @@
       ],
       "Your payment is still being processed": [
         "お支払いが現在処理中です"
+      ],
+      "Amount due after trial on ${ formattedDate }": [
+        "${ formattedDate } のトライアル後のお支払い額"
+      ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "トライアル終了後、サブスクリプションを有効化するためには支払い方法が必要です。"
+      ],
+      "terms and conditions": [
+        "利用規約"
+      ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "この操作により、既存のサブスクリプションが拡張されます。新しいアドオンと、現在の支払間隔の残りの期間に対してのみ課金されます。お客様のサブスクリプションの更新日は変更されません。"
+      ],
+      "This offer is not available with your current plan.": [
+        "この特典は現在のプランではご利用いただけません。"
+      ],
+      "You already have a subscription to this plan.": [
+        "すでにこのプランのサブスクリプションに加入済みです。"
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "お客様は既にこのプランのサブスクリプションを契約済みです。${ subscriptionPlatform }でサブスクリプションを変更できます。"
       ]
     },
     "Payments.Error": {
@@ -11317,6 +11371,9 @@
       ],
       "Your shorter address is now ready": [
         "短いアドレスの準備ができました"
+      ],
+      "Share your link": [
+        "リンクを共有"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11840,6 +11897,51 @@
       ],
       "Passcode:": [
         "パスコード："
+      ]
+    },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "最初に接続した同じGmailアドレスでサインインしてください"
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "以前のサブスクリプションプランの未使用分のクレジット"
+      ],
+      "Credits will be added to your balance": [
+        "クレジットがお客様の残高に追加されます。"
+      ]
+    },
+    "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } 紹介ごとに"
+      ],
+      "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "最大${ maxRewardAmount }のクレジットを獲得できます。お客様が招待された方が${ BRAND_NAME }のプランに登録されますと、お客様は${ referrerRewardAmount }を受け取ることができます。"
+      ],
+      "Friend joined": [
+        "友達が参加しました"
+      ],
+      "Friend subscribed": [
+        "友達が登録済み"
+      ],
+      "Invite friends. Get credits.": [
+        "友達を招待。クレジットを獲得。"
+      ],
+      "Invited friends": [
+        "招待済みの友達"
+      ],
+      "More sharing options": [
+        "その他の共有オプション"
+      ],
+      "Refer friends": [
+        "友達を招待"
+      ],
+      "Start earning credits": [
+        "クレジット獲得を開始する"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "最大**${ maxRewardAmount }**分のクレジットを獲得できます。"
       ]
     }
   }
