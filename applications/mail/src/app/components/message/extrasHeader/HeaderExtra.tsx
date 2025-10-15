@@ -1,8 +1,11 @@
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { isReceived, isScheduled, isSnoozed } from '@proton/shared/lib/mail/messages';
+import { useFlag } from '@proton/unleash';
 
 import ExtraPassNudge from 'proton-mail/components/message/extrasHeader/components/ExtraPassNudge';
+import { hasLabel } from 'proton-mail/helpers/elements';
 
 import { getMessageHasData } from '../../../helpers/message/messages';
 import useScheduleSendFeature from '../../composer/actions/scheduleSend/useScheduleSendFeature';
@@ -41,14 +44,19 @@ const HeaderExtra = ({
     onLoadEmbeddedImages,
 }: Props) => {
     const [mailSettings] = useMailSettings();
+    const dataRetentionPolicyEnabled = useFlag('DataRetentionPolicy');
     const received = isReceived(message.data);
 
     const { canScheduleSend } = useScheduleSendFeature();
     const isScheduledMessage = isScheduled(message.data);
     const isSnoozeMessage = isSnoozed(message.data);
     const showCalendarWidget = messageLoaded && received;
+    const isInDeletedFolder = dataRetentionPolicyEnabled && hasLabel(message.data, MAILBOX_LABEL_IDS.SOFT_DELETED);
 
     if (!getMessageHasData(message)) {
+        return null;
+    }
+    if (isInDeletedFolder) {
         return null;
     }
 
