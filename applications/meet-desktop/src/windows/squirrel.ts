@@ -32,7 +32,7 @@ async function spawnUninstallProcess() {
         appendFileSync(uninstallLogPath, `${prefix}${message}`, "utf8");
     };
 
-    const uninstallScriptPath = resolve(process.resourcesPath, "uninstall.bat");
+    const uninstallScriptPath = resolve(process.resourcesPath, "proton-meet-uninstall.bat");
     const uninstallScriptTempPath = resolve(app.getPath("temp"), "proton-meet-uninstall.bat");
 
     log(`Copying uninstall script "${uninstallScriptPath}" to "${uninstallScriptTempPath}"`);
