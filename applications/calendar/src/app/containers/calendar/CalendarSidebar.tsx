@@ -29,7 +29,7 @@ import {
     useLeftSidebarButton,
 } from '@proton/shared/lib/helpers/collapsibleSidebar';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
-import type { CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
 
 import { ProtonMeetSpotlightWrapper } from './ProtonMeetSpotlightWrapper';
@@ -38,7 +38,6 @@ import { OtherCalendars } from './sidebar/OtherCalendars';
 
 export interface CalendarSidebarProps {
     calendars: VisualCalendar[];
-    calendarUserSettings: CalendarUserSettings;
     expanded?: boolean;
     miniCalendar: ReactNode;
     onToggleExpand: () => void;
