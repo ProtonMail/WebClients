@@ -7,6 +7,7 @@ import { useUser } from '@proton/account/user/hooks';
 import Icon from '@proton/components/components/icon/Icon';
 import { getIsB2BAudienceFromPlan } from '@proton/payments';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
 import globeVpnImg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-globe-vpn.svg';
 import networkConfigurationImg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-network-configuration.svg';
@@ -15,14 +16,23 @@ import recoveryImg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-recove
 
 import { type DisplayItem, SpotlightMenuButton } from './SpotlightMenuButton';
 
-const localStorageKey = 'b2b-get-started-enabled';
+const localStorageKey = 'b2b-get-started-state';
 
-/** This endpoint returns `false` for a pristine account and `true` once the user has done any action */
+enum GetStartedStatus {
+    Dismissed = '0',
+    Enabled = '1',
+}
+
+/** This endpoint returns `false` for a pristine account and `true` once the user has done any action. */
 async function getDidUserMakeAnyAction() {
     return new Promise((resolve) => {
         // TODO replace with real API call
         setTimeout(() => resolve(true), 500);
     });
+}
+
+function recordAction() {
+    // TODO replace with real API call to record the user's action on the server.
 }
 
 export const TopNavbarGetStartedButton = () => {
@@ -31,31 +41,36 @@ export const TopNavbarGetStartedButton = () => {
 
     const [shouldShowGetStartedButton, setShowGetStartedButton] = useState<true | null>(null);
 
-    /* Show the button when:
+    /** Show the button when:
      * - User is an org admin && subscribed to a b2b plan
      * - User did not hide the button manually
      * - User did not take any action yet (new user)
      */
-
-    const canShowB2BButton = isAdmin(user) && getIsB2BAudienceFromPlan(organization?.PlanName);
+    const canShowB2BButton = true || (isAdmin(user) && getIsB2BAudienceFromPlan(organization?.PlanName));
 
     useEffect(() => {
         if (!canShowB2BButton) {
             return;
         }
 
-        /* Show the get started button when a new user has not taken any action yet. */
-        void getDidUserMakeAnyAction().then((didMake) => {
-            if (!didMake) {
-                localStorage.setItem(localStorageKey, 'true');
+        const localStatus = getItem<GetStartedStatus>(localStorageKey);
+        switch (localStatus) {
+            /* Show the get started button as it was enabled previously. */
+            case GetStartedStatus.Enabled:
                 setShowGetStartedButton(true);
-            }
-        });
-
-        /* Show the get started button if it wasn't dismissed. */
-        const enabled = JSON.parse(localStorage.getItem(localStorageKey) || 'false');
-        if (enabled) {
-            setShowGetStartedButton(true);
+                break;
+            /* The user dismissed the button manually. */
+            case GetStartedStatus.Dismissed:
+                setShowGetStartedButton(null);
+                break;
+            /* This is a fresh browser (no localstorage), let's ask the API if the user is a new user and has not taken any action yet. */
+            default:
+                void getDidUserMakeAnyAction().then((didMake) => {
+                    if (!didMake) {
+                        setItem(localStorageKey, GetStartedStatus.Enabled);
+                        setShowGetStartedButton(true);
+                    }
+                });
         }
     }, [canShowB2BButton]);
 
@@ -120,9 +135,9 @@ export const TopNavbarGetStartedButton = () => {
                     </>
                 }
                 onDismiss={() => {
-                    /* TODO send user event to api */
-                    localStorage.removeItem(localStorageKey);
+                    setItem(localStorageKey, GetStartedStatus.Dismissed);
                     setShowGetStartedButton(null);
+                    recordAction();
                 }}
                 dismissTitle={c('Title').t`Dismiss setup checklist`}
             />
