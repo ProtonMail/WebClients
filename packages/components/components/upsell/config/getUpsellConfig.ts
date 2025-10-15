@@ -65,12 +65,11 @@ export const getUpsellConfig = ({
     configOverride?: (config: OpenCallbackProps) => void;
 }): { upgradePath: string; onUpgrade?: () => void } => {
     const hasSubscriptionModal = openSubscriptionModal !== noop;
-    const inboxUpsellFlowEnabled = getFlag('InboxUpsellFlow');
     const hasInboxDesktopInAppPayments = getHasInboxDesktopInAppPayments(getFlag);
 
     const hasInAppPayments = APPS_WITH_IN_APP_PAYMENTS.has(appName) || hasInboxDesktopInAppPayments;
 
-    if (hasSubscriptionModal && hasInAppPayments && inboxUpsellFlowEnabled && upsellRef && !preventInApp) {
+    if (hasSubscriptionModal && hasInAppPayments && upsellRef && !preventInApp) {
         const subscriptionCallBackProps: OpenCallbackProps = {
             coupon,
             cycle,
