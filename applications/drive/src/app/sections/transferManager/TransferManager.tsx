@@ -17,7 +17,7 @@ export const TransferManager = () => {
                 id: item.downloadId,
                 name: item.name,
                 status: item.status,
-                progress: item.progress,
+                progress: item.storageSize ? (item.downloadedBytes / item.storageSize) * 100 : 0,
             })),
         [downloadQueue]
     );
