@@ -48,7 +48,7 @@ const getLabelID = (location: Location) => {
 /**
  * Parse search parameters from URL
  */
-export const parseSearchParams = (location: Location) => {
+export const parseSearchParams = (location: Location, disabledCategoriesIDs: string[]) => {
     const searchParameters = extractSearchParameters(location);
     const isSearch = checkIsSearch(searchParameters);
 
@@ -56,12 +56,13 @@ export const parseSearchParams = (location: Location) => {
         isSearch,
         page: pageFromUrl(location),
         esSearchParams: isSearch
-            ? normaliseSearchParams(
-                  searchParameters,
-                  getLabelID(location),
-                  filterFromUrl(location),
-                  sortFromUrl(location)
-              )
+            ? normaliseSearchParams({
+                  disabledCategoriesIDs,
+                  searchParams: searchParameters,
+                  labelID: getLabelID(location),
+                  filter: filterFromUrl(location),
+                  sort: sortFromUrl(location),
+              })
             : undefined,
     };
 };

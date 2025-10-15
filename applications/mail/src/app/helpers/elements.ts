@@ -321,7 +321,21 @@ export const filterElementsInState = ({
             return false;
         }
 
-        if (!hasLabel(element, labelID) && labelID !== CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS) {
+        const disabledCategoriesIDs: string[] = [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT];
+
+        const elementContainsDisabledCategory = isElementMessage(element)
+            ? element.LabelIDs.some((labelID) => disabledCategoriesIDs.includes(labelID))
+            : disabledCategoriesIDs.some((category) =>
+                  (element as Conversation)?.Labels?.some((label) => label.ID === category)
+              );
+        const isPrimaryAndDisabledCategory =
+            labelID === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT && elementContainsDisabledCategory;
+
+        if (
+            !hasLabel(element, labelID) &&
+            labelID !== CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS &&
+            isPrimaryAndDisabledCategory
+        ) {
             return false;
         }
 

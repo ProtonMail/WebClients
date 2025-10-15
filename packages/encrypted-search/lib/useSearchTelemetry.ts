@@ -78,7 +78,7 @@ const getSearchParams = (app: APP_NAMES, searchArgs: SearchArgs) => {
         let params = {};
 
         if (app === APPS.PROTONMAIL) {
-            const { sort, filter, search, normalizedKeywords, labelID } = searchParams as NormalizedSearchParams;
+            const { sort, filter, search, normalizedKeywords, labelIDs } = searchParams as NormalizedSearchParams;
 
             const { begin, end, from, to, address } = search;
 
@@ -92,7 +92,7 @@ const getSearchParams = (app: APP_NAMES, searchArgs: SearchArgs) => {
                 hasAddress: (!!address).toString(),
                 hasFrom: (!!from).toString(),
                 hasTo: (!!to).toString(),
-                labelID: getLabelNameAnonymised(labelID),
+                labelID: getLabelNameAnonymised(labelIDs[0]),
             };
         } else if (app === APPS.PROTONCALENDAR) {
             const { begin, end, keyword, calendarID, page } = searchParams as ESCalendarSearchParams;
