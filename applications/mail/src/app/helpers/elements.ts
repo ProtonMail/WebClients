@@ -316,6 +316,11 @@ export const filterElementsInState = ({
             return false;
         }
 
+        // Exclude SOFT_DELETED elements from all folders except the Deleted folder itself
+        if (labelID !== MAILBOX_LABEL_IDS.SOFT_DELETED && hasLabel(element, MAILBOX_LABEL_IDS.SOFT_DELETED)) {
+            return false;
+        }
+
         if (!hasLabel(element, labelID) && labelID !== CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS) {
             return false;
         }
