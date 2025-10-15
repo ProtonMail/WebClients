@@ -3,12 +3,10 @@ import { app, session, desktopCapturer, systemPreferences } from "electron";
 import { isHostAllowed } from "./urls/urlTests";
 import { ALLOWED_PERMISSIONS } from "../constants";
 import { mainLogger } from "./log";
-import { getSettings } from "../store/settingsStore";
 import { isMac } from "./helpers";
 
 export const appSession = () => {
-    const cache = getSettings().appCacheEnabled || false;
-    return session.fromPartition("persist:app", { cache });
+    return session.fromPartition("persist:app", { cache: false });
 };
 
 export const updateSession = () => session.fromPartition("persist:update", { cache: false });
