@@ -22,6 +22,7 @@ import SubscribedCalendarModal from '@proton/components/containers/calendar/cale
 import { PersonalCalendarModal } from '@proton/components/index';
 import { useLoadingByKey } from '@proton/hooks/useLoading';
 import { DEFAULT_CALENDAR_USER_SETTINGS } from '@proton/shared/lib/calendar/calendar';
+import { getHasUserReachedCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { APPS } from '@proton/shared/lib/constants';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
@@ -31,24 +32,14 @@ import { useCalendarDispatch } from '../../../store/hooks';
 import CalendarSidebarListItems from '../CalendarSidebarListItems';
 
 interface Props {
-    isCalendarsLimitReached: boolean;
     myCalendars: VisualCalendar[];
-    allCalendars: VisualCalendar[];
+    calendars: VisualCalendar[];
     holidaysCalendars: VisualCalendar[];
-    isOtherCalendarsLimitReached: boolean;
     dropdownRef: React.RefObject<HTMLDivElement>;
     onCreateCalendar?: (id: string) => void;
 }
 
-export const MyCalendars = ({
-    isCalendarsLimitReached,
-    myCalendars,
-    allCalendars,
-    holidaysCalendars,
-    isOtherCalendarsLimitReached,
-    dropdownRef,
-    onCreateCalendar,
-}: Props) => {
+export const MyCalendars = ({ myCalendars, calendars, holidaysCalendars, dropdownRef, onCreateCalendar }: Props) => {
     const [displayMyCalendars, setDisplayMyCalendars] = useState(true);
 
     const [user] = useUser();
@@ -62,6 +53,11 @@ export const MyCalendars = ({
     const [holidaysCalModal, setIsHolidaysCalModalOpen, renderHolidaysCalModal] = useModalState();
     const [subscribedCalModal, setIsSubscribedCalModalOpen, renderSubscribedCalModal] = useModalState();
     const [limitReachedModal, setIsLimitReachedModalOpen, renderLimitReachedModal] = useModalState();
+
+    const { isCalendarsLimitReached, isOtherCalendarsLimitReached } = getHasUserReachedCalendarsLimit(
+        calendars,
+        !user.hasPaidMail
+    );
 
     const handleChangeVisibility = async (calendarID: string, display: boolean) => {
         dispatch(changeCalendarVisiblity({ calendarID, display })).catch(noop);
@@ -164,7 +160,7 @@ export const MyCalendars = ({
                 {displayMyCalendars && (
                     <CalendarSidebarListItems
                         calendars={myCalendars}
-                        allCalendars={allCalendars}
+                        allCalendars={calendars}
                         onChangeVisibility={(calendarID, value) =>
                             withLoadingVisibility(calendarID, handleChangeVisibility(calendarID, value))
                         }
@@ -186,7 +182,7 @@ export const MyCalendars = ({
             {renderCalModal && (
                 <PersonalCalendarModal
                     {...calModal}
-                    calendars={allCalendars}
+                    calendars={calendars}
                     defaultCalendarID={calendarUserSettings.DefaultCalendarID}
                     onCreateCalendar={onCreateCalendar}
                 />

@@ -21,7 +21,6 @@ import {
 } from '@proton/components';
 import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
 import { groupCalendarsByTaxonomy, sortCalendars } from '@proton/shared/lib/calendar/calendar';
-import { getHasUserReachedCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';
 import { APPS } from '@proton/shared/lib/constants';
 import {
     COLLAPSE_EVENTS,
@@ -100,11 +99,6 @@ const CalendarSidebar = ({
         ...unknownCalendars,
     ]);
 
-    const { isCalendarsLimitReached, isOtherCalendarsLimitReached } = getHasUserReachedCalendarsLimit(
-        calendars,
-        !user.hasPaidMail
-    );
-
     const primaryAction = (
         <Tooltip title={collapsed ? c('Action').t`New event` : null}>
             <ProtonMeetSpotlightWrapper>
@@ -152,11 +146,9 @@ const CalendarSidebar = ({
                         <div className="shrink-0 w-full">{miniCalendar}</div>
                         <div>
                             <MyCalendars
-                                isCalendarsLimitReached={isCalendarsLimitReached}
                                 myCalendars={myCalendars}
-                                allCalendars={calendars}
+                                calendars={calendars}
                                 holidaysCalendars={holidaysCalendars}
-                                isOtherCalendarsLimitReached={isOtherCalendarsLimitReached}
                                 dropdownRef={dropdownRef}
                                 onCreateCalendar={onCreateCalendar}
                             />
