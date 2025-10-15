@@ -69,7 +69,8 @@ const getLegacyIsAnonymous = (node: NodeEntity) => {
 // totalStorageSize is the sum of the sizes of all revisions, so it's not the size of the single file
 // Because of this we want to get the file size from the active revision and we use totalStorageSize only as a fallback
 // For proton docs or spreadsheets we get the revision size empty and we will instead read totalStorageSize
-const getLegacySize = (node: NodeEntity) => node.activeRevision?.storageSize || node.totalStorageSize || 0;
+export const getNodeDisplaySize = (node: NodeEntity) =>
+    node.activeRevision?.claimedSize ?? node.activeRevision?.storageSize ?? node.totalStorageSize ?? 0;
 
 export const getRootNode = async (node: NodeEntity, drive: ProtonDriveClient): Promise<NodeEntity> => {
     if (node.parentUid) {
@@ -101,7 +102,7 @@ export const mapNodeToLegacyItem = async (
         activeRevision = {
             id: splitNodeRevisionUid(nodeRevision.uid).revisionId,
             createTime: dateToLegacyTimestamp(nodeRevision.creationTime),
-            size: nodeRevision.storageSize,
+            size: getNodeDisplaySize(node),
             state: nodeRevision.state === RevisionState.Active ? 1 : 0,
             manifestSignature: '',
             blocs: [],
@@ -117,7 +118,7 @@ export const mapNodeToLegacyItem = async (
         isFile: node.type === NodeType.File,
         hasThumbnail: node.type === NodeType.File,
         fileModifyTime: getLegacyModifiedTime(node),
-        size: getLegacySize(node),
+        size: getNodeDisplaySize(node),
         trashed: getLegacyTrashedTime(node),
         parentLinkId: node.parentUid ? splitNodeUid(node.parentUid).nodeId : '',
         linkId: splitNodeUid(node.uid).nodeId,
