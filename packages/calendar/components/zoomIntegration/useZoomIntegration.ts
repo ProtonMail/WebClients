@@ -51,15 +51,19 @@ export const useZoomIntegration = ({
     const [isLoading, setIsLoading] = useState(false);
     const [disconnectedError, setDisconnectedError] = useState(false);
 
-    const zoomConferenceDetails = useRef<{
-        conferenceId: string;
-        conferenceUrl: string;
-        conferencePassword: string | undefined;
-    }>({
-        conferenceId: '',
-        conferenceUrl: '',
-        conferencePassword: undefined,
-    });
+    const zoomConferenceDetails = useRef(
+        model.conferenceProvider === VIDEO_CONFERENCE_PROVIDER.ZOOM
+            ? {
+                  conferenceId: model.conferenceId,
+                  conferenceUrl: model.conferenceUrl,
+                  conferencePassword: model.conferencePassword,
+              }
+            : {
+                  conferenceId: '',
+                  conferenceUrl: '',
+                  conferencePassword: undefined,
+              }
+    );
 
     const deriveProcessState = (): ZoomIntegrationState => {
         if (isLoading) {
