@@ -52,6 +52,7 @@ import noop from '@proton/utils/noop';
 import { useCalendarDispatch } from '../../store/hooks';
 import CalendarSidebarListItems from './CalendarSidebarListItems';
 import { ProtonMeetSpotlightWrapper } from './ProtonMeetSpotlightWrapper';
+import { OtherCalendars } from './sidebar/OtherCalendars';
 
 export interface CalendarSidebarProps {
     addresses: Address[];
@@ -187,7 +188,6 @@ const CalendarSidebar = ({
     );
 
     const [displayMyCalendars, setDisplayMyCalendars] = useState(true);
-    const [displayOtherCalendars, setDisplayOtherCalendars] = useState(true);
 
     const headerButton = (
         <Tooltip title={c('Info').t`Manage your calendars`}>
@@ -271,31 +271,6 @@ const CalendarSidebar = ({
         </SidebarList>
     );
 
-    const otherCalendarsList = otherCalendars.length ? (
-        <SidebarList>
-            <SimpleSidebarListItemHeader
-                toggle={displayOtherCalendars}
-                onToggle={() => setDisplayOtherCalendars((prevState) => !prevState)}
-                text={c('Link').t`Other calendars`}
-                testId="calendar-sidebar:other-calendars-button"
-                headerRef={headerRef}
-                spaceAbove
-            />
-            {displayOtherCalendars && (
-                <CalendarSidebarListItems
-                    loadingSubscriptionParameters={loadingSubscribedCalendars}
-                    calendars={otherCalendars}
-                    allCalendars={calendars}
-                    onChangeVisibility={(calendarID, value) =>
-                        withLoadingVisibility(calendarID, handleChangeVisibility(calendarID, value))
-                    }
-                    addresses={addresses}
-                    loadingVisibility={loadingVisibility}
-                />
-            )}
-        </SidebarList>
-    ) : null;
-
     const displayContactsInHeader = useDisplayContactsWidget();
 
     const logo = <SidebarLogo collapsed={collapsed} to="/" app={APPS.PROTONCALENDAR} />;
@@ -337,7 +312,12 @@ const CalendarSidebar = ({
                         <div className="shrink-0 w-full">{miniCalendar}</div>
                         <div>
                             {myCalendarsList}
-                            {otherCalendarsList}
+                            <OtherCalendars
+                                calendars={calendars}
+                                otherCalendars={otherCalendars}
+                                headerRef={headerRef}
+                                loadingSubscribedCalendars={loadingSubscribedCalendars}
+                            />
                         </div>
                         {displayContactsInHeader && <SidebarDrawerItems toggleHeaderDropdown={onToggleExpand} />}
                     </>
