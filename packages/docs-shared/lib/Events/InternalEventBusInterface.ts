@@ -11,7 +11,7 @@ export interface InternalEventBusInterface {
    */
   addEventHandler(handler: InternalEventHandlerInterface, eventType: InternalEventType): void
 
-  addEventCallback<Data = unknown>(callback: (data: Data) => void, eventType: string): () => void
+  addEventCallback<Data = unknown>(callback: (data: Data) => void | Promise<void>, eventType: string): () => void
 
   removeEventHandler(handler: InternalEventHandlerInterface, eventType: string): void
 

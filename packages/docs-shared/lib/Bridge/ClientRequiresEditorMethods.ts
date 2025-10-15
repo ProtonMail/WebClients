@@ -33,6 +33,7 @@ export interface ClientRequiresEditorMethods {
     documentId: string,
     userAddress: string,
     role: DocumentRoleType,
+    isPublicMode: boolean,
     editorInitializationConfig?: EditorInitializationConfig,
   ): Promise<void>
   handleCommentsChange(): Promise<void>

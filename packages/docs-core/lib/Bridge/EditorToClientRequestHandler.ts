@@ -3,17 +3,19 @@ import type {
   CommentInterface,
   CommentThreadInterface,
   EditorRequiresClientMethods,
+  FileMenuAction,
   InternalEventBusInterface,
   RtsMessagePayload,
   SafeDocsUserState,
   SuggestionSummaryType,
+  WordCountInfoCollection,
+  EditorEvent,
+  EditorEventData,
 } from '@proton/docs-shared'
-import type { WordCountInfoCollection } from '@proton/docs-shared'
 import type { EditorOrchestratorInterface } from '../Services/Orchestrator/EditorOrchestratorInterface'
 import type { ErrorInfo } from 'react'
 import { ApplicationEvent } from '../Application/ApplicationEvent'
 import { WordCountEvent } from './Events'
-import type { EditorEvent, EditorEventData } from '@proton/docs-shared'
 
 /** Handle messages sent by the editor to the client */
 export class EditorToClientRequestHandler implements EditorRequiresClientMethods {
@@ -150,5 +152,9 @@ export class EditorToClientRequestHandler implements EditorRequiresClientMethods
 
   async fetchExternalImageAsBase64(url: string): Promise<string | undefined> {
     return this.docOrchestrator.fetchExternalImageAsBase64(url)
+  }
+
+  async handleFileMenuAction(action: FileMenuAction): Promise<void> {
+    return this.docOrchestrator.handleFileMenuAction(action)
   }
 }

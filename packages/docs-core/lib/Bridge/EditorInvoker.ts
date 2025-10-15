@@ -146,12 +146,14 @@ export class EditorInvoker implements ClientRequiresEditorMethods {
     documentId: string,
     userAddress: string,
     documentRole: DocumentRoleType,
+    isPublicMode: boolean,
     editorInitializationConfig?: EditorInitializationConfig,
   ): Promise<void> {
     return this.invokeEditorMethod('initializeEditor', [
       documentId,
       userAddress,
       documentRole,
+      isPublicMode,
       editorInitializationConfig,
     ])
   }

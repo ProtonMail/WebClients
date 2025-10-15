@@ -79,6 +79,7 @@ export { IcBrandProton } from './icons/IcBrandProton';
 export { IcBrandProtonCalendar } from './icons/IcBrandProtonCalendar';
 export { IcBrandProtonCalendarFilled } from './icons/IcBrandProtonCalendarFilled';
 export { IcBrandProtonDocs } from './icons/IcBrandProtonDocs';
+export { IcBrandProtonSheetsFilled } from './icons/IcBrandProtonSheetsFilled';
 export { IcBrandProtonSheets } from './icons/IcBrandProtonSheets';
 export { IcBrandProtonDrive } from './icons/IcBrandProtonDrive';
 export { IcBrandProtonDriveFilled } from './icons/IcBrandProtonDriveFilled';
