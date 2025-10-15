@@ -1475,7 +1475,8 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel"
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -1663,6 +1664,24 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Continue with categories": [
+        "Fortsätt med kategorier"
+      ],
+      "Continue without categories": [
+        "Fortsätt utan kategorier"
+      ],
+      "Customize categories": [
+        "Anpassa kategorier"
+      ],
+      "Is this private?": [
+        "Är detta privat?"
+      ],
+      "Keep inbox as before": [
+        "Behåll inkorg som förut"
+      ],
+      "Try categories": [
+        "Prova kategorier"
       ]
     },
     "action": {
@@ -2012,6 +2031,9 @@
       ],
       "You cannot add custom domains during the trial period.": [
         "Du kan inte lägga till anpassade domäner under provperioden."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Efter provperioden slutar den ${ formattedDate } kommer den bli en betald prenumeration som förnyas automatiskt månadsvis. Du kommer inte att debiteras om du avbryter före ${ formattedDate }."
       ]
     },
     "b2b_trials_Action": {
@@ -2173,6 +2195,10 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagringsutrymme delas mellan alla ${ BRAND_NAME }-tjänster."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadress, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsat antal hide-my-email-alias och mer.",
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadresser, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsat antal hide-my-email-alias och mer."
       ]
     },
     "Billing cycle option": {
@@ -2692,6 +2718,9 @@
       ],
       "Unlimited favorites for quick access": [
         "Obegränsade favoriter för snabb åtkomst"
+      ],
+      "Web search access": [
+        "Webbsökningsåtkomst"
       ]
     },
     "collider_2025: Info": {
@@ -2700,6 +2729,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Lägg till ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Chattar med hög hastighet och avancerade AI-funktioner."
       ]
     },
     "color": {
@@ -4331,6 +4363,21 @@
       ],
       "This event was updated.": [
         "Denna händelse uppdaterades."
+      ],
+      "DESCRIPTION:": [
+        "BESKRIVNING:"
+      ],
+      "LOCATION:": [
+        "PLATS:"
+      ],
+      "TIME:": [
+        "TID:"
+      ],
+      "TITLE:": [
+        "RUBRIK:"
+      ],
+      "You are invited to": [
+        "Du är inbjuden till"
       ]
     },
     "Email body for invitation (date part)": {
@@ -7339,8 +7386,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -8747,6 +8793,42 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du är bara några klick bort från en skräpfri inkorg"
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Alla meddelanden kommer att visas i inkorgen, och kategoriflikarna och etiketterna kommer inte längre att vara synliga. "
+      ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Kategorier fungerar precis som skräppostfilter. ${ MAIL_APP_NAME } läser aldrig din e-post eller delar dina data."
+      ],
+      "Categories work like spam filters. We only look for patterns in unencrypted header and technical data. We do not read email content, share your data, or infringe on your privacy.": [
+        "Kategorier fungerar som skräppostfilter. Vi letar bara efter mönster i okrypterade rubriker och tekniska data. Vi läser inte e-postinnehåll, delar inte dina data eller kränker din integritet."
+      ],
+      "Includes bills, receipts, orders, and bookings.": [
+        "Inkluderar fakturor, kvitton, beställningar och bokningar."
+      ],
+      "Includes invoices, purchase orders, and payment confirmations.": [
+        "Inkluderar fakturor, inköpsordrar och betalningsbekräftelser."
+      ],
+      "Includes marketing emails and non-urgent app notifications.": [
+        "Inkluderar e-postmarknadsföring och icke-brådskande appaviseringar."
+      ],
+      "Includes marketing emails like offers and product announcements.": [
+        "Inkluderar e-postmarknadsföring som erbjudanden och produktmeddelanden."
+      ],
+      "Includes news recaps and other non-promotional content. ": [
+        "Inkluderar nyhetssammanfattningar och annat icke-kampanjbaserat innehåll. "
+      ],
+      "Includes updates from social networks and media-sharing sites.": [
+        "Inkluderar uppdateringar från sociala nätverk och webbplatser för mediedelning."
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Prenumeration slutar: För att behålla dina ${ planName }-förmåner, starta om din prenumeration i Apple App Store senast ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Prenumeration slutar: För att behålla dina ${ planName }-förmåner, starta om din prenumeration i Google Play Butik senast ${ byDate }. ${ reactivateLink }"
+      ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "Med nya e-postkategorier hamnar endast viktiga meddelanden i din primära inkorg. Allt annat organiseras i kategorier."
       ]
     },
     "info": {
@@ -9768,6 +9850,26 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "${ count } unread conversation": [
+        "${ count } oläst konversation",
+        "${ count } olästa konversationer"
+      ],
+      "${ count } unread message": [
+        "${ count } oläst meddelande",
+        "${ count } olästa meddelanden"
+      ],
+      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
+        "Lägg till eller ta bort kategorier. Ställ in eller stäng av aviseringar. Justera när som helst i ${ menuIcon }-menyn."
+      ],
+      "Deals, offers, marketing emails": [
+        "Erbjudanden, kampanjer, e-postmarknadsföring"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Hjälp oss att förbättra den kommande e-postkategoriseringen"
+      ],
+      "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
+        "Inga fler missade viktiga meddelanden! Dessa visas nu under ${ primaryCopy }. Allt annat är sorterat efter kategori så att de är lätta att hitta och inte skräpar ner din inkorg."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10923,6 +11025,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skannar den mörka webben för att kontrollera om dina ${ BRAND_NAME }-adresser eller alias har läckt och varnar dig omedelbart om vi hittar något."
+      ],
+      "Short domain (@pm.me)": [
+        "Kort domän (@pm.me)"
       ]
     },
     "new_plans: feature highlight": {
@@ -11558,6 +11663,12 @@
       ],
       "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
         "Använd din ${ MAIL_APP_NAME }-adress för att logga in på tjänster online för att undvika att bli spårad och profilerad. Ändra din e-post för populära tjänster nu. ${ learnMoreLink }"
+      ],
+      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
+        "Ändra din e-postadress för populära tjänster nu för att undvika bli spårad och profileras. ${ learnMoreLink }"
+      ],
+      "Maybe later": [
+        "Kanske senare"
       ]
     },
     "Onboarding modal": {
@@ -12032,6 +12143,24 @@
       ],
       "Your payment is still being processed": [
         "Din betalning håller fortfarande på att behandlas"
+      ],
+      "Amount due after trial on ${ formattedDate }": [
+        "Belopp att betala efter provperioden den ${ formattedDate }"
+      ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Betalningsmetod krävs för att prenumerationen ska aktiveras efter provperioden är slut."
+      ],
+      "terms and conditions": [
+        "användarvillkor"
+      ],
+      "This offer is not available with your current plan.": [
+        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
+      ],
+      "You already have a subscription to this plan.": [
+        "Du har redan en prenumeration på detta paket."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Du har redan en prenumeration på detta paket. Du kan ändra din prenumeration på ${ subscriptionPlatform }."
       ]
     },
     "Payments.Error": {
@@ -12104,6 +12233,15 @@
       ],
       "VAT number": [
         "Momsnummer"
+      ],
+      "Add Business Number": [
+        "Lägg till företagsnummer"
+      ],
+      "Business Number": [
+        "Företagsnummer"
+      ],
+      "Edit Business Number": [
+        "Redigera företagsnummer"
       ]
     },
     "PGP key encryption warning": {
@@ -12471,6 +12609,14 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Du kan få upp till **${ maxRewardAmount }** i kredit."
+      ],
+      "Friend joined": [
+        "Vän gick med",
+        "Vänner gick med"
+      ],
+      "Friend subscribed": [
+        "Vän prenumererade",
+        "Vänner prenumererade"
       ]
     },
     "Remaining days before the message expire": {
@@ -15327,6 +15473,18 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorier kommer!"
+      ],
+      "Built for privacy": [
+        "Byggd för integritet"
+      ],
+      "Customize categories to fit your needs": [
+        "Anpassa kategorier för att passa dina behov"
+      ],
+      "Fewer distractions, more focus": [
+        "Färre distraktioner, mer fokus"
+      ],
+      "Introducing email categories": [
+        "Introducerar e-postkategorier"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15895,6 +16053,11 @@
       ],
       "Passcode:": [
         "Lösenkod:"
+      ]
+    },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Logga in med samma Gmail-adress som du ursprungligen anslöt"
       ]
     }
   }

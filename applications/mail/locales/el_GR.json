@@ -1475,7 +1475,8 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Εμπιστοσύνη στο κλειδί"
+        "Κλειδί Εμπιστοσύνης",
+        "Κλειδιά Εμπιστοσύνης"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -1663,6 +1664,24 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Continue with categories": [
+        "Συνεχίστε με κατηγορίες"
+      ],
+      "Continue without categories": [
+        "Συνεχίστε χωρίς κατηγορίες"
+      ],
+      "Customize categories": [
+        "Προσαρμογή κατηγοριών"
+      ],
+      "Is this private?": [
+        "Είναι αυτό ιδιωτικό;"
+      ],
+      "Keep inbox as before": [
+        "Διατηρήστε τα εισερχόμενά σας όπως πριν"
+      ],
+      "Try categories": [
+        "Δοκιμάστε τις κατηγορίες"
       ]
     },
     "action": {
@@ -4359,6 +4378,21 @@
       ],
       "This event was updated.": [
         "Αυτή η εκδήλωση ενημερώθηκε."
+      ],
+      "DESCRIPTION:": [
+        "ΠΕΡΙΓΡΑΦΗ:"
+      ],
+      "LOCATION:": [
+        "ΤΟΠΟΘΕΣΙΑ:"
+      ],
+      "TIME:": [
+        "ΩΡΑ:"
+      ],
+      "TITLE:": [
+        "ΤΙΤΛΟΣ:"
+      ],
+      "You are invited to": [
+        "Είστε προσκεκλημένοι στο"
       ]
     },
     "Email body for invitation (date part)": {
@@ -7373,8 +7407,7 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας",
-        "Εισαγωγή εικόνων"
+        "Εισαγωγή εικόνας"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -8799,6 +8832,33 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Είστε μόνο μερικά κλικ μακριά από τα εισερχόμενα χωρίς ακαταστασία"
+      ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Οι κατηγορίες λειτουργούν ακριβώς όπως τα φίλτρα ανεπιθύμητων. Το ${ MAIL_APP_NAME } δε διαβάζει ποτέ τα ηλεκτρονικά μυνήματά σας και δε μοιράζεται τα δεδομένα σας."
+      ],
+      "Categories work like spam filters. We only look for patterns in unencrypted header and technical data. We do not read email content, share your data, or infringe on your privacy.": [
+        "Οι κατηγορίες λειτουργούν όπως τα φίλτρα ανεπιθύμητων. Αναζητούμε μόνο μοτίβα σε μη κρυπτογραφημένες κεφαλίδες και τεχνικά δεδομένα. Δε διαβάζουμε το περιεχόμενο των ηλεκτρονικών μηνυμάτων σας, δε μοιραζόμαστε τα δεδομένα σας και δεν παραβιάζουμε την ιδιωτικότητά σας."
+      ],
+      "Includes bills, receipts, orders, and bookings.": [
+        "Περιλαμβάνει λογαριασμούς, αποδείξεις, παραγγελίες και κρατήσεις."
+      ],
+      "Includes invoices, purchase orders, and payment confirmations.": [
+        "Περιλαμβάνει τιμολόγια, παραγγελίες αγοράς και επιβεβαιώσεις πληρωμών."
+      ],
+      "Includes marketing emails and non-urgent app notifications.": [
+        "Περιλαμβάνει διαφημιστικά μηνύματα ηλεκτρονικού ταχυδρομείου και μη επείγουσες ειδοποιήσεις εφαρμογών"
+      ],
+      "Includes marketing emails like offers and product announcements.": [
+        "Περιλαμβάνει διαφημιστικά μηνύματα ηλεκτρονικού ταχυδρομείου, όπως προσφορές και ανακοινώσεις προϊόντων."
+      ],
+      "Includes news recaps and other non-promotional content. ": [
+        "Περιλαμβάνει ανακεφαλαιώσεις ειδήσεων και άλλο μη διαφημιστικό περιεχόμενο. "
+      ],
+      "Includes updates from social networks and media-sharing sites.": [
+        "Περιλαμβάνει ενημερώσεις από κοινωνικά δίκτυα και ιστότοπους κοινής χρήσης πολυμέσων."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "Με τις νέες κατηγορίες ηλεκτρονικών μηνυμάτων, μόνο τα σημαντικά μηνύματα καταλήγουν στον κύριο φάκελο εισερχομένων σας. Όλα τα άλλα οργανώνονται σε κατηγορίες."
       ]
     },
     "info": {
@@ -9829,6 +9889,20 @@
       ],
       "ZIP code": [
         "Τ.Κ."
+      ],
+      "${ count } unread conversation": [
+        "${ count } μη διαβασμένη συνομιλία",
+        "${ count } μη διαβασμένες συνομιλίες"
+      ],
+      "${ count } unread message": [
+        "${ count } μη διαβασμένο μήνυμα",
+        "${ count } μη διαβασμένα μηνύματα"
+      ],
+      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
+        "Προσθέστε ή αφαιρέστε κατηγορίες. Ρυθμίστε ή απενεργοποιήστε τις ειδοποιήσεις. Προσαρμόστε ανά πάσα στιγμή στο μενού ${ menuIcon }."
+      ],
+      "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
+        "Δε θα χάσετε πια σημαντικά μηνύματα! Αυτά εμφανίζονται πλέον κάτω από το ${ primaryCopy }. Όλα τα άλλα ταξινομούνται ανά κατηγορία, ώστε να είναι εύκολο να τα βρείτε και να μη γεμίζουν τα εισερχόμενά σας."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10984,6 +11058,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Σαρώνουμε τον σκοτεινό ιστό για να ελέγξουμε εάν οι διευθύνσεις ή τα ψευδώνυμά σας ${ BRAND_NAME } έχουν διαρρεύσει και σας ειδοποιούμε αμέσως αν βρούμε κάτι."
+      ],
+      "Short domain (@pm.me)": [
+        "Σύντομος τομέας (@pm.me)"
       ]
     },
     "new_plans: feature highlight": {
@@ -11614,6 +11691,12 @@
       ],
       "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
         "Χρησιμοποιήστε την ${ MAIL_APP_NAME } διεύθυνσή σας για να κάνετε είσοδος σε online υπηρεσίες για να αποφύγετε την παρακολούθηση και τη δημιουργία προφίλ. Αλλάξτε την ηλεκτρονική διεύθυνσή σας για δημοφιλείς υπηρεσίες τώρα. ${ learnMoreLink }"
+      ],
+      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
+        "Αλλάξτε τώρα την ηλεκτρονική διεύθυνσή για δημοφιλείς υπηρεσίες, ώστε να αποφύγετε την παρακολούθηση και τη δημιουργία προφίλ. ${ learnMoreLink }"
+      ],
+      "Maybe later": [
+        "Ίσως αργότερα"
       ]
     },
     "Onboarding modal": {
@@ -12094,6 +12177,24 @@
       ],
       "Your payment is still being processed": [
         "Η πληρωμή σας βρίσκεται ακόμα υπό επεξεργασία"
+      ],
+      "Amount due after trial on ${ formattedDate }": [
+        "Ποσό οφειλής μετά τη δοκιμή στις ${ formattedDate }"
+      ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Η μέθοδος πληρωμής απαιτείται για την ενεργοποίηση της συνδρομής μετά τη λήξη της δοκιμαστικής περιόδου."
+      ],
+      "terms and conditions": [
+        "όροι και προϋποθέσεις"
+      ],
+      "This offer is not available with your current plan.": [
+        "Αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας."
+      ],
+      "You already have a subscription to this plan.": [
+        "Έχετε ήδη μια συνδρομή σε αυτό το πλάνο."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Έχετε ήδη συνδρομή σε αυτό το πλάνο. Μπορείτε να αλλάξετε τη συνδρομή σας στο ${ subscriptionPlatform }."
       ]
     },
     "Payments.Error": {
@@ -15412,6 +15513,18 @@
       ],
       "✨ Categories are coming!": [
         "✨ Οι κατηγορίες έρχονται!"
+      ],
+      "Built for privacy": [
+        "Κατασκευασμένο για ιδιωτικότητα"
+      ],
+      "Customize categories to fit your needs": [
+        "Προσαρμόστε τις κατηγορίες στις ανάγκες σας"
+      ],
+      "Fewer distractions, more focus": [
+        "Λιγότερες περισπασμοί, περισσότερη συγκέντρωση"
+      ],
+      "Introducing email categories": [
+        "Παρουσιάζουμε κατηγορίες ηλεκτρονικών μηνυμάτων"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15983,6 +16096,11 @@
       ],
       "Passcode:": [
         "Κωδικός πρόσβασης:"
+      ]
+    },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Παρακαλούμε συνδεθείτε με την ίδια διεύθυνση Gmail που συνδεθήκατε αρχικά."
       ]
     }
   }

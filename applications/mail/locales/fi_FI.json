@@ -475,7 +475,7 @@
         "Muokkaa osoitetta"
       ],
       "Edit categories": [
-        "Muokkaa kategorioita"
+        "Muokkaa luokkia"
       ],
       "Edit draft": [
         "Muokkaa luonnosta"
@@ -1612,6 +1612,37 @@
       ],
       "Zoom out": [
         "Loitonna"
+      ],
+      "Add secret passphrase": [
+        "Lisää salalause"
+      ],
+      "Continue with categories": [
+        "Jatka luokilla"
+      ],
+      "Continue without categories": [
+        "Jatka ilman luokkia"
+      ],
+      "Customize categories": [
+        "Mukauta luokkia"
+      ],
+      "Disable categories": [
+        "Poista luokat käytöstä"
+      ],
+      "Is this private?": [
+        "Onko tämä yksityinen?"
+      ],
+      "Keep categories": [
+        "Säilytä luokat"
+      ],
+      "Trust key": [
+        "Luota avaimeen",
+        "Luota avaimiin"
+      ],
+      "Try categories": [
+        "Kokeile luokkia"
+      ],
+      "Update secret passphrase": [
+        "Päivitä salalause"
       ]
     },
     "action": {
@@ -4593,7 +4624,7 @@
         "Syötä joko etu-, suku- tai näyttönimi"
       ],
       "Please select a category and what went wrong with the generated text": [
-        "Valitse kategoria ja mikä meni pieleen luodussa tekstissä"
+        "Valitse luokka ja mikä luodussa tekstissä meni pieleen"
       ],
       "Please select a country": [
         "Valitse maa"
@@ -5046,6 +5077,9 @@
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Sinulla ei vielä ole yhteystietoja. Aloita luomalla uusi yhteystieto"
+      ],
+      "An error occurred with the categories": [
+        "Virhe luokissa"
       ]
     },
     "Error notification": {
@@ -5732,6 +5766,12 @@
       ],
       "Tell us more": [
         "Kerro meille lisää"
+      ],
+      "Drawer": [
+        "Valikko"
+      ],
+      "Username": [
+        "Käyttäjätunnus"
       ]
     },
     "Hint": {
@@ -6678,7 +6718,7 @@
         "Kopioi linkki leikepöydälle"
       ],
       "Copy your referral link": [
-        "Kopioi suosituslinkkisi"
+        "Kopioi suosittelulinkkisi"
       ],
       "Country code": [
         "Maakoodi"
@@ -7088,8 +7128,7 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva",
-        "Lisää kuvia"
+        "Lisää kuva"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -7531,7 +7570,7 @@
         "Palautustiedot säilyvät tällä laitteella, kunnes poistat ne."
       ],
       "Referral link copied to your clipboard": [
-        "Suosituslinkki kopioitiin leikepöydälle"
+        "Suosittelulinkki kopioitiin leikepöydälle"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sivun päivitys tai ${ link } korjaa useimmat ongelmat automaattisesti."
@@ -8481,6 +8520,21 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Olet vain muutaman klikkauksen päässä siististä postilaatikosta"
+      ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Vaihe 1:** Kutsu kaverisi ${ BRAND_NAME }:iin suosittelulinkilläsi."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
+        "**Vaihe 2:** Kaverisi saavat valitsemansa ${ BRAND_NAME }-tilauksen ilmaiseksi kahdeksi viikoksi."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Vaihe 2:** Kaverisi saavat kahden viikon ilmaisen tilauksen."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**Vaihe 3:** Ansaitse ${ referrerRewardAmount } krediittiä jokaista tilauksen hankkivaa kaveria kohden."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Vaihe 3:** Ansaitse ${ referrerRewardAmount } krediitteinä jokaista tilauksen hankkivaa kaveria kohden."
       ]
     },
     "info": {
@@ -9436,6 +9490,44 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "${ count } unread conversation": [
+        "${ count } lukematon keskustelu",
+        "${ count } lukematonta keskustelua"
+      ],
+      "${ count } unread message": [
+        "${ count } lukematon viesti",
+        "${ count } lukematonta viestiä"
+      ],
+      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
+        "Lisää tai poista luokkia. Ota tai poista ilmoitukset käytöstä. Säädä milloin tahansa ${ menuIcon }-valikosta."
+      ],
+      "Categories badge": [
+        "Luokat-merkki"
+      ],
+      "Go to Forums": [
+        "Siirry foorumeille"
+      ],
+      "Go to Updates": [
+        "Siirry päivityksiin"
+      ],
+      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
+        "Auta meitä parantamaan luokkia valitsemalla se, joka sopii parhaiten tälle sähköpostille. Kiitos avustasi!"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Auttakaa meitä parantamaan tulevaa sähköpostien luokittelua"
+      ],
+      "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
+        "Tärkeät viestit eivät enää katoa! Ne näkyvät nyt kohdassa ${ primaryCopy }. Kaikki muu luokitellaan, jotta ne on helppo löytää eivätkä ne täytä saapuneitasi."
+      ],
+      "No results found": [
+        "Ei tuloksia"
+      ],
+      "Video conference": [
+        "Videoneuvottelu"
+      ],
+      "Which category should this be recategorized under?": [
+        "Mihin luokkaan tämä tulisi lajitella?"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9768,6 +9860,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Sinun on aktivoitava avaimesi uudelleen nähdäksesi päivitetyn kutsun"
+      ],
+      "Deleted": [
+        "Poistetut"
       ]
     },
     "Link to calendar event": {
@@ -10710,6 +10805,9 @@
       ],
       "Switch plans?": [
         "Vaihdetaanko tilaus?"
+      ],
+      "Review subscription": [
+        "Tarkastele tilausta"
       ]
     },
     "new_plans: tooltip": {
@@ -11034,6 +11132,9 @@
       ],
       "Trial started": [
         "Kokeilujakso on alkanut"
+      ],
+      "Passphrase copied to clipboard": [
+        "Salalause kopioitiin leikepöydälle"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11141,6 +11242,9 @@
       ],
       "Storage": [
         "Tallennustila"
+      ],
+      "Edit docs online": [
+        "Muokkaa dokumentteja verkossa"
       ]
     },
     "Onboarding List Placeholder": {
@@ -11161,6 +11265,9 @@
       ],
       "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
         "Käytä ${ MAIL_APP_NAME } -osoitettasi verkkopalveluihin kirjautumiseen välttyäksesi seurannalta ja profiloinnilta. Vaihda sähköpostiosoitteesi suosituissa palveluissa nyt. ${ learnMoreLink }"
+      ],
+      "Maybe later": [
+        "Ehkä myöhemmin"
       ]
     },
     "Onboarding modal": {
@@ -11637,6 +11744,15 @@
       ],
       "VAT number": [
         "ALV-numero"
+      ],
+      "Add Business Number": [
+        "Lisää yritystunnus"
+      ],
+      "Edit ABN": [
+        "Muokkaa ABT-tunnusta"
+      ],
+      "Edit EIN": [
+        "Muokkaa EIN-tunnusta"
       ]
     },
     "PGP key encryption warning": {
@@ -11840,6 +11956,9 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Enter passphrase": [
+        "Syötä salalause"
       ]
     },
     "Placeholder for contact group name": {
@@ -12551,6 +12670,9 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "Päivitä hintaan ${ pricingTitle }"
+      ],
+      "Keep passwords safe": [
+        "Pidä salasanat turvassa"
       ]
     },
     "specialoffer: Offers": {
@@ -12664,7 +12786,7 @@
         "Sähköpostin seurantasuojaus"
       ],
       "Get up to ${ credits } in credits.": [
-        "Ansaitse jopa ${ credits } krediittiä."
+        "Ansaitse jopa ${ credits } krediitteinä."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Kutsu kavereita ${ BRAND_NAME }iin"
@@ -13555,6 +13677,25 @@
       ],
       "You have successfully unsubscribed": [
         "Tilauksesi on lopetettu"
+      ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } keskustelu poistettiin tähdellisistä.",
+        "${ elementsCount } keskustelua poistettiin tähdellisistä."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } viesti poistettiin tähdellisistä.",
+        "${ elementsCount } viestiä poistettiin tähdellisistä."
+      ],
+      "Conversation updated": [
+        "Keskustelu päivitettiin",
+        "Keskustelut päivitettiin"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "${ elementsCount } viesti uudelleenluokiteltiin.",
+        "${ elementsCount } viestiä uudelleenluokiteltiin."
+      ],
+      "Secret passphrase updated": [
+        "Salalause päivitettiin"
       ]
     },
     "Success notification": {
@@ -13971,7 +14112,7 @@
         "Mukauta kalenterin tuontia"
       ],
       "Customize categories": [
-        "Mukauta kategorioita"
+        "Mukauta luokkia"
       ],
       "Customize your mail import": [
         "Mukauta viestien tuontia"
@@ -14730,7 +14871,26 @@
         "Tilauksesi yhdessä paikassa"
       ],
       "✨ Categories are coming!": [
-        "✨ Kategoriat ovat tulossa!"
+        "✨ Luokat ovat tulossa!"
+      ],
+      "Customize categories to fit your needs": [
+        "Mukauta luokkia tarpeisiisi sopiviksi"
+      ],
+      "Disable categories?": [
+        "Poistetaanko luokat käytöstä?"
+      ],
+      "Introducing email categories": [
+        "Esittelyssä sähköpostiluokat"
+      ],
+      "Label message as": [
+        "Merkitse viesti tunnisteella",
+        "Merkitse viestit tunnisteella"
+      ],
+      "Referral": [
+        "Suosittelu"
+      ],
+      "Share your link": [
+        "Jaa linkkisi"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15296,6 +15456,51 @@
       ],
       "Passcode:": [
         "Tunnuskoodi:"
+      ]
+    },
+    "collider_2025: feature": {
+      "Basic chat history": [
+        "Rajoitettu keskusteluhistoria"
+      ],
+      "Full chat history with search": [
+        "Täysi keskusteluhistoria haulla"
+      ],
+      "Limited daily chats": [
+        "Rajoitetusti päivittäisiä keskusteluja"
+      ],
+      "Unlimited daily chats": [
+        "Rajattomasti päivittäisiä keskusteluja"
+      ]
+    },
+    "collider_2025: Info": {
+      "High-speed chats and advanced AI features.": [
+        "Nopeita keskusteluja ja edistyneitä tekoälyominaisuuksia."
+      ]
+    },
+    "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } suosittelua kohden"
+      ],
+      "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Ansaitse jopa ${ maxRewardAmount } krediitteinä. Saat ${ referrerRewardAmount }, kun kutsumasi henkilö hankkii ${ BRAND_NAME } -tilauksen."
+      ],
+      "Invite friends. Get credits.": [
+        "Kutsu kavereita. Hanki krediittejä."
+      ],
+      "Invited friends": [
+        "Kutsu kavereita"
+      ],
+      "More sharing options": [
+        "Lisää jakamisvaihtoehtoja"
+      ],
+      "Refer friends": [
+        "Kerro kavereille"
+      ],
+      "Start earning credits": [
+        "Aloita krediittien ansaitseminen"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Voit ansaita jopa **${ maxRewardAmount }** krediitteinä."
       ]
     }
   }

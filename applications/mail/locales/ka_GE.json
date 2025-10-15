@@ -1651,6 +1651,37 @@
       ],
       "Zoom out": [
         "დაპატარავება"
+      ],
+      "Continue with categories": [
+        "კატეგორიებზე გაგრძელება"
+      ],
+      "Continue without categories": [
+        "კაკრძელება კატეგორიების გარეშე"
+      ],
+      "Customize categories": [
+        "კატეგორიების მორგება"
+      ],
+      "Is this private?": [
+        "ეს კონფიდენციალურია?"
+      ],
+      "Keep inbox as before": [
+        "საფოსტო ყუთის დატოვება, როგორც იყო"
+      ],
+      "Remove video conference": [
+        "ვიდეოკონფერენციის წაშლა"
+      ],
+      "Toggle notifications": [
+        "გაფრთხილებების გადართვა"
+      ],
+      "Toggle referral": [
+        "რეფერალის გადართვა"
+      ],
+      "Trust key": [
+        "ნდობის გასაღები",
+        "ნდობის გასაღებები"
+      ],
+      "Try categories": [
+        "კატეგორიების ცდა"
       ]
     },
     "action": {
@@ -1985,6 +2016,9 @@
       ],
       "You have reached the trial limit.": [
         "მიაღწიეთ გამოსაცდელი პერიოდის ზღვარს."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "გამოსაცდელი პერიოდისას შეგიძლიათ ${ TRIAL_MAX_USERS } მომხმარებლის შექმნა."
       ]
     },
     "b2b_trials_Action": {
@@ -7242,8 +7276,7 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
-        "გამოსახულების ჩასმა",
-        "გამოსახულებების ჩასმა"
+        "გამოსახულების ჩასმა"
       ],
       "Insert link": [
         "ბმულის ჩასმა"
@@ -8617,6 +8650,21 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "გაჭედვისგან თავისუფალი საფოსტო ყუთისგან რამდენიმე წკაპი გაშორებთ"
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**ნაბიჯი 2:** თქვენი მეგობრები მიიღებენ 2 კვირას უფასოდ თავიანთ სატარიფო გეგმაზე."
+      ],
+      "Includes bills, receipts, orders, and bookings.": [
+        "შეიცავს გადახდებს, ინვოისებს, შეკვეთებს და ჯავშნებს."
+      ],
+      "Includes marketing emails like offers and product announcements.": [
+        "შეიცავს მარკეტინგის ელფოსტებს, როგორიცაა შეთავაზებები და ახალი პროდუქტის შეტყობინებები."
+      ],
+      "Includes news recaps and other non-promotional content. ": [
+        "შეიცავს სიახლეებს და სხვა არსარეკლამო შემცველობას. "
+      ],
+      "Includes updates from social networks and media-sharing sites.": [
+        "შეიცავს ატვირთვებს სოციალური ქსელებიდან და მედიის გაზიარების საიტებიდან."
       ]
     },
     "info": {
@@ -9632,6 +9680,20 @@
       ],
       "ZIP code": [
         "საფოსტო კოდი"
+      ],
+      "${ count } unread conversation": [
+        "${ count } წაუკითხავი საუბარი",
+        "${ count } წაუკითხავი საუბარი"
+      ],
+      "${ count } unread message": [
+        "${ count } წაუკითხავი შეტყობინება",
+        "${ count } წაუკითხავი შეტყობინება"
+      ],
+      "Remove ${ MEET_APP_NAME } video conference": [
+        "${ MEET_APP_NAME }-ის ვიდეოკონფერენციის წაშლა"
+      ],
+      "Remove Zoom video conference": [
+        "Zoom ვიდეოკონფერენციის წაშლა"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10781,6 +10843,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ჩვენ ვასკანერებთ ბნელ ვებს, რომ აღმოვაჩინოთ, არის თუ არა თქვენი ${ BRAND_NAME }-ის მისამართები ან ფსევდონიმები გაჟონილი და გაგაფრთხილოთ, თუ რამეს აღმოვაჩენთ."
+      ],
+      "Short domain (@pm.me)": [
+        "მოკლე დომენი (@pm.me)"
       ]
     },
     "new_plans: feature highlight": {
@@ -11396,6 +11461,9 @@
       ],
       "Social media": [
         "სოციალური მედია"
+      ],
+      "Maybe later": [
+        "შესაძლოა მოგვიანებით"
       ]
     },
     "Onboarding modal": {
@@ -11585,6 +11653,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "თქვენი სრული ${ planTitle } გამოწერის დაწყების თარიღია ${ boldEndDate }."
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "ისიამოვნეთ უფასო ბიზნესის უსაფრთხოების ფუნქციებით თარიღამდე ${ trialEndsOnFormatted }."
       ]
     },
     "Online accounts": {
@@ -11851,6 +11922,18 @@
       ],
       "Your payment is still being processed": [
         "თქვენი გადახდა ჯერ კიდევ მუშავდება"
+      ],
+      "Amount due after trial on ${ formattedDate }": [
+        "გამოსაცდელი ვადის (${ formattedDate }) გადასახდელი თანხა"
+      ],
+      "terms and conditions": [
+        "პირობები და წესები"
+      ],
+      "This offer is not available with your current plan.": [
+        "ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
+      ],
+      "You already have a subscription to this plan.": [
+        "თქვენ უკვე გაქვთ ეს სატარიფო გეგმა."
       ]
     },
     "Payments.Error": {
@@ -15101,6 +15184,24 @@
       ],
       "✨ Categories are coming!": [
         "✨ კატეგორიები გზაშია!"
+      ],
+      "Built for privacy": [
+        "აგებულია კონფიდენციალობისთვის"
+      ],
+      "Customize categories to fit your needs": [
+        "მოირგეთ კატეგორიები საჭიროებისამებრ"
+      ],
+      "Fewer distractions, more focus": [
+        "ნაკლები ყურადღების გადატანა, მეტი ფოკუსი"
+      ],
+      "Introducing email categories": [
+        "წარმოგიდგენთ ელფოსტის კატეგორიებს"
+      ],
+      "Referral": [
+        "რეფერალი"
+      ],
+      "Share your link": [
+        "გააზიარეთ თქვენი ბმული"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15666,6 +15767,50 @@
       ],
       "Passcode:": [
         "საკვანძო კოდი:"
+      ]
+    },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "შედით იგივე Gmail-ის მისამართით, რომლითაც პირველად"
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "წინა გამოწერის დარჩენილი ნაწილის კრედიტი"
+      ],
+      "Credits will be added to your balance": [
+        "თქვენს ბალანსზე კრედიტები დაგემატებათ"
+      ]
+    },
+    "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } თითო რეფერალისთვის"
+      ],
+      "Friend joined": [
+        "მეგობარი შემოვიდა",
+        "მეგობრები შემოვიდნენ"
+      ],
+      "Friend subscribed": [
+        "მეგობარი გამოწერილია",
+        "მეგობრები გამოწერილია"
+      ],
+      "Invite friends. Get credits.": [
+        "მოიწვიეთ მეგობრები და მიიღეთ კრედიტები."
+      ],
+      "Invited friends": [
+        "მოწვეული მეგობრები"
+      ],
+      "More sharing options": [
+        "მეტი გაზიარების პარამეტრი"
+      ],
+      "Refer friends": [
+        "რეკომენდაცია მეგობრებს"
+      ],
+      "Start earning credits": [
+        "დაიწყეთ კრედიტების გამომუშავება"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "შეგიძლიათ, გქონდეთ **${ maxRewardAmount }**-მდე კრედიტი."
       ]
     }
   }

@@ -703,7 +703,7 @@
         "插入"
       ],
       "Insert ${ totalChecked } contact": [
-        "插入 ${ totalChecked } 個聯絡人"
+        "插入 ${ totalChecked } 位聯絡人"
       ],
       "Insert contact": [
         "插入聯絡人"
@@ -1544,6 +1544,66 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Change sorting": [
+        "改變排序"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "認領您的免費 ${ BRAND_NAME } 位址"
+      ],
+      "Connect apps and devices": [
+        "連線應用程式和裝置"
+      ],
+      "Continue with categories": [
+        "繼續使用類別"
+      ],
+      "Create folder ${ boldFolderName }": [
+        "創建資料夾 ${ boldFolderName }"
+      ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "下載 ${ DRIVE_APP_NAME } 應用程式"
+      ],
+      "Edit categories": [
+        "編輯分類"
+      ],
+      "Hide-my-email": [
+        "Hide-my-email"
+      ],
+      "Import emails, calendars, contacts": [
+        "匯入電子郵件、行事曆、聯絡人"
+      ],
+      "Keep categories": [
+        "保留分類"
+      ],
+      "Keep inbox as before": [
+        "保持收件匣不變"
+      ],
+      "Least read": [
+        "閱讀量最少"
+      ],
+      "Most frequent": [
+        "最頻繁"
+      ],
+      "Passphrase": [
+        "助記詞"
+      ],
+      "Remove button": [
+        "移除按鈕"
+      ],
+      "Send unsubscribe email": [
+        "傳送取消訂閱電子郵件"
+      ],
+      "Stop moving to Archive": [
+        "停止移至封存"
+      ],
+      "Trust key": [
+        "信任金鑰"
+      ],
+      "Upgrade for 200GB": [
+        "升級至200GB"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "將 ${ PASS_APP_NAME } 用於商務"
       ]
     },
     "action": {
@@ -1716,6 +1776,18 @@
       ],
       "years": [
         "年"
+      ],
+      "500 GB encrypted storage": [
+        "500 GB 已加密儲存空間"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "為了慶祝我們共同的旅程，這是一份專屬獻禮。"
+      ],
+      "Secure email with unlimited aliases": [
+        "提供無限別名的安全電子郵件"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "將您的已加密儲存空間增加三倍 – 為您的所有資料取得 3 TB"
       ]
     },
     "anniversary_2025: Offers": {
@@ -1907,6 +1979,15 @@
       ],
       "VPN Accelerator": [
         "VPN 加速器"
+      ],
+      "1 user account": [
+        "1 使用者帳號"
+      ],
+      "6 user accounts": [
+        "6 位使用者帳號"
+      ],
+      "Protect 10 devices at a time": [
+        "同時保護 10 台裝置"
       ]
     },
     "BF2024: Offers": {
@@ -3772,7 +3853,7 @@
         "正在合併聯絡人... 該過程或需時數分鐘。完成後您即可以關閉此往來對話方塊。"
       ],
       "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
-        "從 ${ senderEmailAddress } 及 ${ otherSendersCount } 其他的新電子郵件無法遞送而且將會被永久刪除。"
+        "從 ${ senderEmailAddress } 傳送過來的新電郵以及其它共計 ${ otherSendersCount } 等訊息，無法完成遞送，將會永遠刪除。"
       ],
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "從 ${ senderEmailAddress } 來的新電子郵件無法遞送而且將會被永久刪除。"
@@ -3845,6 +3926,18 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已經創建10個別名。${ BRAND_NAME }無限版可獲得無限別名和500GB的儲存容量。"
+      ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "確保安全存取組織資料，即使您的團隊是遠端工作或使用公共 WiFi。"
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "透過 ${ PROTON_SENTINEL_NAME } 程式，確保您的帳號擁有頂級安全性。"
+      ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "讓您可以立即新增會議連結到您的活動邀請。"
+      ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "設定所有使用者的帳號，並邀請他們加入 ${ BRAND_NAME }。"
       ]
     },
     "description": {
@@ -3983,6 +4076,21 @@
       ],
       "This event was updated.": [
         "該行程已更新。"
+      ],
+      "DESCRIPTION:": [
+        "內容:"
+      ],
+      "LOCATION:": [
+        "地點:"
+      ],
+      "TIME:": [
+        "時間:"
+      ],
+      "TITLE:": [
+        "標題:"
+      ],
+      "You are invited to": [
+        "你被邀請至"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4158,7 +4266,7 @@
         "選擇一個未來的日期。"
       ],
       "Choose a date within the next ${ n } day.": [
-        "在接下來的${ n }天內選擇一個日期。"
+        "請在接下來的 ${ n } 天數裡選擇一個您要的日期。"
       ],
       "Condition incomplete": [
         "條件不完整"
@@ -4536,7 +4644,7 @@
         "應付金額已變更。請再試一次。"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
-        "附件未能解密。\n若您持有對應的私密金鑰，您仍可使用\n像是 GnuPG 的程式來解密檔案。"
+        "少數附件無法進行解密。\n若您持有相應的私密金鑰，您仍可沿用進行解密\n諸如使用 GnuPG 應用程式進行解密的檔案。"
       ],
       "The email addresses do not match": [
         "電子郵件位址不相符"
@@ -4638,7 +4746,7 @@
         "您無法將郵件傳送給超過 ${ maxContacts } 位收件人"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
-        "您無法在同一時間開啟超過 ${ maxActiveComposer } 個撰寫新郵件視窗"
+        "您無法同時開啟 ${ maxActiveComposer } 個撰寫新郵件視窗"
       ],
       "You did not provide a file.": [
         "您沒有提供檔案。"
@@ -4669,11 +4777,17 @@
       ],
       "ZIP code is required": [
         "郵遞區號為必要項目"
+      ],
+      "Passphrase unavailable": [
+        "助記詞無法使用"
+      ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "無法載入 VPN 儀表板。請檢查您的連線，然後重試。"
       ]
     },
     "Error adding participants to a calendar event": {
       "At most ${ maxAttendees } participant is allowed per invitation": [
-        "您最多可以一次邀請 ${ maxAttendees } 位參與者"
+        "每一邀請函至多僅能包含 ${ maxAttendees } 位參與者"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -4857,6 +4971,9 @@
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "您尚未有任何聯絡人。立即開始創建一個新的聯絡人"
+      ],
+      "An error occurred with the categories": [
+        "類別發生錯誤"
       ]
     },
     "Error notification": {
@@ -5346,10 +5463,10 @@
         "Play 商店的${ MAIL_APP_NAME }"
       ],
       "${ remainingDaysCount } day": [
-        "${ remainingDaysCount }天"
+        "${ remainingDaysCount } 剩餘天數"
       ],
       "${ remainingDaysCount } day left": [
-        "剩下${ remainingDaysCount }天"
+        "${ remainingDaysCount } 剩餘天數"
       ],
       "account logins": [
         "帳號登錄"
@@ -5535,6 +5652,12 @@
       ],
       "Tell us more": [
         "請詳細說明"
+      ],
+      "Domain": [
+        "網域"
+      ],
+      "Password ends with": [
+        "密碼結尾是"
       ]
     },
     "Hint": {
@@ -5608,7 +5731,7 @@
     },
     "ICS widget label for event details": {
       "${ totalAttendees } participant": [
-        "${ totalAttendees } 個參與者"
+        "${ totalAttendees } 位參與者"
       ],
       "Organizer:": [
         "召集人："
@@ -5936,40 +6059,40 @@
         "${ contactsLength } 位聯絡人"
       ],
       "${ currentProgress } out of ${ totalProgress }": [
-        "${ totalProgress } 中的 ${ currentProgress }"
+        "${ totalProgress } 總數其中的 ${ currentProgress }"
       ],
       "${ elementsCount } conversation will be labelled as:": [
-        "${ elementsCount }對話內容將被標記為:"
+        "${ elementsCount } 則對話內容將標記為："
       ],
       "${ elementsCount } conversation will be marked as read.": [
-        "${ elementsCount } 則往來對話將被標記為已讀。"
+        "${ elementsCount } 則往來對話將標記為已讀。"
       ],
       "${ elementsCount } conversation will be marked as unread.": [
-        "${ elementsCount } 則往來對話將被標記為未讀。"
+        "${ elementsCount } 則往來對話將標記為未讀。"
       ],
       "${ elementsCount } conversation will be moved": [
-        "${ elementsCount }則對話內容將被移動"
+        "${ elementsCount } 則對話內容將被移動"
       ],
       "${ elementsCount } conversation will be unlabelled from:": [
-        "${ elementsCount }對話內容將被取消標記:"
+        "${ elementsCount } 則對話內容將取消標記："
       ],
       "${ elementsCount } message will be labelled as:": [
-        "${ elementsCount }訊息將被標記為:"
+        "${ elementsCount } 則訊息將標記為："
       ],
       "${ elementsCount } message will be marked as read.": [
-        "${ elementsCount } 封郵件將被標記為已讀。"
+        "${ elementsCount } 封郵件將標記為已讀。"
       ],
       "${ elementsCount } message will be marked as unread.": [
-        "${ elementsCount } 封郵件將被標記為未讀。"
+        "${ elementsCount } 封郵件將被標記成未讀。"
       ],
       "${ elementsCount } message will be moved": [
         "${ elementsCount }則訊息將被移動"
       ],
       "${ elementsCount } message will be unlabelled from:": [
-        "${ elementsCount }訊息將被取消標記:"
+        "${ elementsCount } 訊息將取消標記："
       ],
       "${ embeddedAttachmentsCount } embedded image": [
-        "${ embeddedAttachmentsCount } 個內嵌圖像"
+        "${ embeddedAttachmentsCount } 個內嵌影像"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }：完整大小圖片"
@@ -5987,10 +6110,10 @@
         "${ MAIL_APP_NAME } 亦可防護您的企業商號。"
       ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
-        "${ messagesNotAuthorizedToMove } 封郵件無法進行移動。"
+        "${ messagesNotAuthorizedToMove } 封郵件無法將其移動。"
       ],
       "${ n } unread conversation": [
-        "${ n } 篇未讀往來對話"
+        "${ n } 則未讀的往來對話"
       ],
       "${ numberOfUTMTrackers } link cleaned": [
         "${ numberOfUTMTrackers } 個連結已清理"
@@ -6089,7 +6212,7 @@
         "(無收件人)"
       ],
       "**${ total }** result found in ${ labelName }": [
-        "在 ${ labelName } 裡找到 **${ total }** 筆資料"
+        "**${ total }** 筆總數出現在 ${ labelName }"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 附贈的儲存空間"
@@ -6446,7 +6569,7 @@
         "Discover ProtectBuy 商標"
       ],
       "Do you want to download this attachment anyway?": [
-        "無論如何，您仍要下載附件嗎？"
+        "無論如何，您仍打算要下載這些附件嗎？"
       ],
       "Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?": [
         "您要重新簽署此聯絡人詳細資料，並同時信任下列指紋的金鑰嗎？"
@@ -6554,7 +6677,7 @@
         "帶有此標籤${ nameDeleted }的電子郵件不會被刪除，仍可在對應的資料夾中找到。"
       ],
       "embedded image": [
-        "嵌入圖像"
+        "內崁圖像"
       ],
       "Enabling auto-deletion…": [
         "啟用自動刪除…"
@@ -6608,13 +6731,13 @@
         "將於${ formattedDate }過期"
       ],
       "Expires in ${ minutesDiff } minute": [
-        "將於${ minutesDiff }分鐘後過期"
+        "過期前還剩 ${ minutesDiff } 分鐘"
       ],
       "Expires in less than ${ hoursDiff } hour": [
-        "將於少於${ hoursDiff }小時後過期"
+        "到過期前還剩下 ${ hoursDiff } 小時"
       ],
       "file attached": [
-        "檔案已附加"
+        "已附加檔案"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "篩選器適用於所有電郵，包括內送及外寄電郵。每一個篩選器起碼必須包含一個名稱、一個條件及一個動作。"
@@ -6638,7 +6761,7 @@
         "若要更多結果，請於通訊錄中搜尋您的電子郵件訊息的關鍵字。"
       ],
       "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
-        "免費試用${ ASSISTANT_TRIAL_TIME_DAYS }天"
+        "嚐鮮體驗版還有 ${ ASSISTANT_TRIAL_TIME_DAYS } 天"
       ],
       "From": [
         "寄件者"
@@ -6656,7 +6779,7 @@
         "替新的帳單標示顏色，如${ suggestedLabelName }。並於繳納後轉標示為${ suggestedPaidLabelName }。"
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
-        "有 ${ numAttachments } 個附件 (${ numAttachmentsSize })"
+        "計有 ${ numAttachments } 個附件，檔案大小為 (${ numAttachmentsSize })"
       ],
       "here": [
         "這裡"
@@ -6746,7 +6869,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入圖片"
+        "插入圖像"
       ],
       "Insert link": [
         "插入連結"
@@ -6836,7 +6959,7 @@
         "較低優先順序"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "設定${ MAIL_APP_NAME }為預設電子郵件應用程式."
+        "將${ MAIL_APP_NAME }設為預設電子郵件應用程式."
       ],
       "Manage your folders": [
         "管理您的資料夾"
@@ -7217,7 +7340,7 @@
         "目前您已完成最新進度"
       ],
       "Select all ${ elementsCount } in ${ location }": [
-        "選取於${ location }全部的${ elementsCount }"
+        "選取全部 ${ elementsCount } 位置在 ${ location }"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "請選擇用於傳送至該電郵位址時使用的預設電郵格式。"
@@ -7400,7 +7523,7 @@
         "寄件人要求發送讀取回條。"
       ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
-        "無法驗證 ${ contactNames } ：聯絡人名片並未正確地簽署。\n這很可能是因為重設密碼所導致。\n您必須重新簽署聯絡人名片後，才能發送郵件給 ${ contactAddresses }，或是編輯聯絡人名片。"
+        "此位 ${ contactNames } 的驗證失敗：並未正確地將聯絡人名片\n進行簽署。\n這很可能是重設密碼後導致的結果。\n您必須重新簽署聯絡人名片，以便傳送訊息給 ${ contactAddresses } 或是進行編輯等動作。"
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "驗證過程將開新瀏覽器索引標籤。請停用任何使用中的彈出視窗攔截程式。"
@@ -7436,7 +7559,7 @@
         "這對話內容含有拉圾訊息。"
       ],
       "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "往來對話會標記為垃圾信件。請問您也想退訂日後相關的電郵嗎？"
+        "這些往來對話將標記為垃圾信件。請問您也想退訂日後相關的電郵嗎？"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "此電郵未能通過其網域的認證需求。可能是因為遭人假冒或不當轉寄。"
@@ -7868,13 +7991,13 @@
         "您有 **${ count } 則往來對話** 儲存於此資料夾"
       ],
       "You have **${ count } conversation** tagged with this label": [
-        "您選取了有此標籤的 **${ count } 個交談**"
+        "您有 **${ count } 則往來對話** 已標上此標籤"
       ],
       "You have **${ count } message** stored in this folder": [
         "您有 **${ count } 則訊息** 儲存於此資料夾"
       ],
       "You have **${ count } message** tagged with this label": [
-        "您選取了有此標籤的 **${ count } 則訊息**"
+        "您有 **${ count } 則訊息** 以此標籤標注"
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "您有一個試用期 ${ planTitle } 訂購授權。如果您希望在試用期完結後繼續您的訂購授權，請增加一個繳款方式。"
@@ -7901,25 +8024,25 @@
         "您從此資料夾選取了 **${ count } 則往來對話**"
       ],
       "You selected **${ count } conversation** with this label": [
-        "您選取有此標籤的 **${ count } 則往來對話**"
+        "您選取了 **${ count } 則往來對話** 皆有此標籤"
       ],
       "You selected **${ count } message** from this folder": [
-        "您已在此資料夾選取 **${ count } 則訊息**"
+        "您已選取了 **${ count } 則訊息** 位置在此資料夾"
       ],
       "You selected **${ count } message** with this label": [
-        "您選取了有此標籤的 **${ count } 則訊息**"
+        "您選取了 **${ count } 則訊息** 且帶有此標籤"
       ],
       "You selected **${ elementsCount } conversation** in ${ location }": [
-        "您選擇**${ elementsCount }則於${ location }的對話內容**。"
+        "您選取了 **${ elementsCount } 則對話內容** 位置在 ${ location }"
       ],
       "You selected **${ elementsCount } conversation**.": [
-        "您選擇**${ elementsCount }則對話內容**。"
+        "您選取了 **${ elementsCount } 則對話內容**。"
       ],
       "You selected **${ elementsCount } message** in ${ location }": [
-        "您選擇**${ elementsCount }則於${ location }的訊息**。"
+        "您選取了 **${ elementsCount } 則訊息** 位置在 ${ location }"
       ],
       "You selected **${ elementsCount } message**.": [
-        "您選擇**${ elementsCount }則訊息**。"
+        "您選取了 **${ elementsCount } 則訊息**。"
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "您將於此日失去存取${ planTitle }功能"
@@ -7991,7 +8114,7 @@
         "匯入完成後不會保存您的登入資訊。"
       ],
       "Your message will expire in ${ numberOfDays } day.": [
-        "您的郵件到期日還有 ${ numberOfDays } 天。"
+        "您的郵件訊息過期倒數 ${ numberOfDays } 天。"
       ],
       "Your message will expire today.": [
         "您的郵件將在今日到期。"
@@ -8025,6 +8148,75 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "輕點幾下滑鼠，即可擁有整潔的收件匣"
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "VPN 會加密您的連線並隱藏您的 IP 位址，使任何人都更難追蹤或監控您的瀏覽。"
+      ],
+      "Ad targeting": [
+        "廣告目標鎖定"
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "廣告商會追蹤您的瀏覽紀錄，以顯示目標式廣告。${ VPN_APP_NAME } 會封鎖追蹤程式和廣告，讓您的連線速度更快，並改善您的線上體驗。"
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "此郵寄清單的所有訊息都將移至封存。"
+      ],
+      "Browse privately and access blocked content.": [
+        "私密瀏覽並存取遭封鎖的內容。"
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "由於您的收件者組態，此訊息無法帶有過期日期傳送給 ${ firstRecipients }。"
+      ],
+      "Geoblocking": [
+        "地理封鎖"
+      ],
+      "In restrictive countries": [
+        "在受限制的國家"
+      ],
+      "Includes marketing emails like offers and product announcements.": [
+        "包含行銷電子郵件，例如優惠和產品公告。"
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "最好始終使用 VPN。但在以下情況下，網路安全威脅可能會達到最高點："
+      ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "大多數公共 WiFi 網路是安全的，但有些缺乏安全性，讓您暴露於網路威脅之下。VPN 會加密您的流量，保護您的安全。"
+      ],
+      "One time import": [
+        "一次性匯入"
+      ],
+      "Open the guide for recommended actions and helpful links.": [
+        "開啟指南，以查看建議的動作和實用連結。"
+      ],
+      "Our system flagged this as suspicious. If it is not a phishing or scam email, mark as legitimate.": [
+        "我們的系統將此標記為可疑。如果這不是一封網路釣魚或詐騙電子郵件，請標記為合法。"
+      ],
+      "Please fill in all required fields.": [
+        "請填寫所有必填的欄位"
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "有些網站和串流服務會根據地區限制內容。VPN 能讓您繞過這些限制並自由存取網路。"
+      ],
+      "Surveillance": [
+        "監視"
+      ],
+      "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
+        "感謝您選擇 ${ BRAND_NAME } 保護您的組織。"
+      ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "這些對話會根據您組織的資料保留政策而保留在此。"
+      ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "這表示您的 ISP 和您造訪的網站無法將您的個人資訊與您的線上活動連線。"
+      ],
+      "When working remotely": [
+        "當遠端工作時"
+      ],
+      "Your online activity is protected": [
+        "你的線上活動受到保護"
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "您的實體位置可見，並可用於限制您對網際網路的存取。"
       ]
     },
     "info": {
@@ -8095,10 +8287,10 @@
         "按一下「信任金鑰」將創建一個新的連絡人，並將此公開金鑰與此寄件人關聯。來自此電郵位址的郵件將自動以密碼學進行驗證。"
       ],
       "Do you want to trust the primary public key with the following fingerprint?": [
-        "您要信任下列指紋的主要公開金鑰嗎？"
+        "您要信任帶有下列指紋的主要公開金鑰嗎？"
       ],
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
-        "你已經在此電子信箱啟用了「以信任的金鑰驗證位址」的功能，\n但您還未將任何有效的加密金鑰設為信任。\n你必須要信任一把有效的金鑰才能寄送郵件到此電子信箱。"
+        "您已將這些電郵位址啟用透過信任金鑰進行位址驗證，\n惟仍未將使用中的加密金鑰授予信任。\n你必須備有信任的金鑰，在傳送訊息至這些電郵位址時不可或缺。"
       ]
     },
     "Key validation warning": {
@@ -8944,6 +9136,39 @@
       ],
       "ZIP code": [
         "郵遞區號"
+      ],
+      "Automated confirmations and alerts": [
+        "自動確認和警報"
+      ],
+      "Categories badge": [
+        "類別標籤"
+      ],
+      "Deals, offers, marketing emails": [
+        "優惠、促銷、行銷電子郵件"
+      ],
+      "Go to Primary": [
+        "到主要"
+      ],
+      "Go to Promotions": [
+        "前往優惠活動"
+      ],
+      "Go to Social": [
+        "去社交"
+      ],
+      "Newsletter entry deleted": [
+        "電子報訂閱已刪除"
+      ],
+      "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
+        "不再遺漏重要訊息！即刻起，這些會顯示在 ${ primaryCopy } 下方。而其它全部的訊息將以類別排序，方便您更容易找出郵件，同時讓收件匣井然有序。"
+      ],
+      "Passphrase:": [
+        "助記詞:"
+      ],
+      "Social media updates and activity": [
+        "社交媒體更新和活動"
+      ],
+      "The category has been updated, thanks for your feedback!": [
+        "類別已更新，感謝您的意見回饋！"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9225,6 +9450,18 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "您需要先重新啟用您的金鑰，才可查看已更新的邀請"
+      ],
+      "How to add Zoom links": [
+        "如何新增 Zoom 連結"
+      ],
+      "How to share via email": [
+        "如何透過電子郵件共享"
+      ],
+      "How to use email forwarding": [
+        "如何使用電子郵件轉發"
+      ],
+      "How to use Groups": [
+        "如何使用群組"
       ]
     },
     "Link to calendar event": {
@@ -9284,6 +9521,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "您的訂閱已到期。 ${ cta } 以避免資料遺失。"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "若要繼續使用 ${ BRAND_NAME }，請確認您已不再使用頂級質子版功能，或升級您的方案。"
       ]
     },
     "Log preference": {
@@ -10009,6 +10249,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我們會掃描暗網去檢查你的${ BRAND_NAME }地址或别名是否被外洩，並且在發現任何問題時立即通知你。"
+      ],
+      "Manage user permissions and access": [
+        "管理使用者權限和存取"
       ]
     },
     "new_plans: feature highlight": {
@@ -10107,6 +10350,12 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "你正在當前的方案中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
+      ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB 的雲端儲存空間，讓您可以輕鬆儲存、同步及共享檔案。受端對端加密保護。"
+      ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "透過${ plusTitle }頂級功能保護家庭及6位使用者。"
       ]
     },
     "new_plans: Subtext": {
@@ -10520,6 +10769,12 @@
       ],
       "Your subscription renews soon": [
         "您的訂閱即將重新續約"
+      ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "最後獲得${ plan }進階首月80%折價"
+      ],
+      "Save big when you pay annually": [
+        "按年支付可節省大筆費用"
       ]
     },
     "Offer fearue": {
@@ -10568,6 +10823,9 @@
       ],
       "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
         "使用您的${ MAIL_APP_NAME }地址以線上登入並避免被追蹤及建檔。於熱門服務變更電子郵件。${ learnMoreLink }。"
+      ],
+      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
+        "立即變更您在常用服務上的電子郵件地址，以避免遭到追蹤及分析。${ learnMoreLink }"
       ]
     },
     "Onboarding modal": {
@@ -10727,6 +10985,21 @@
       ],
       "Once your full subscription starts...": [
         "您的正式訂購授權一旦開始..."
+      ],
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " 參閱我們的 ${ helpCenterLink } 或 ${ contactSupportLink }。"
+      ],
+      "contact our support team": [
+        "聯絡我們的客戶支援團隊"
+      ],
+      "If you need help,": [
+        "如果您需要協助，"
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "您仍然可以在 30 天內取消並獲得按比例的退款。"
+      ],
+      "Your free trial has started": [
+        "您的免費試用已開始"
       ]
     },
     "Online accounts": {
@@ -10810,6 +11083,9 @@
     "pass_signup_2023: Info": {
       "Secure vault sharing": [
         "安全分享保管庫"
+      ],
+      "Secure vault, item and link sharing": [
+        "安全保管庫、項目和共享連結"
       ]
     },
     "pass_signup_2023: Title": {
@@ -10977,6 +11253,15 @@
       ],
       "Your payment is still being processed": [
         "您的付款仍在處理中"
+      ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "為了讓訂閱在試用期結束後啟用，需要付款方式。"
+      ],
+      "This offer is not available with your current plan.": [
+        "抱歉，此優惠無法在您的方案中使用。"
+      ],
+      "You already have a subscription to this plan.": [
+        "您已訂閱此方案。"
       ]
     },
     "Payments.Error": {
@@ -11360,7 +11645,7 @@
     },
     "Remaining days before the message expire": {
       "${ remainingDays } d": [
-        "${ remainingDays }天"
+        "${ remainingDays } 剩餘天數"
       ],
       "<1 d": [
         "<1天"
@@ -11504,7 +11789,7 @@
         "無論如何，您仍要傳送此電郵嗎？"
       ],
       "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
-        "偵測到錯誤。您的郵件無法傳送到該電子信箱，原因如下："
+        "偵測到錯誤。您的電郵無法傳送到任一輸入的電郵位址，相關成因如下所示："
       ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
         "偵測到一些錯誤。您的電郵無法傳送到一或多個所輸入的電郵位址，原因如下："
@@ -11515,10 +11800,10 @@
         "無論如何，您仍要傳送此電郵嗎？"
       ],
       "The following address is not valid: ${ invalidAddresses }": [
-        "下列電子信箱無效：${ invalidAddresses }"
+        "以下電郵位址是無效的：${ invalidAddresses }"
       ],
       "We have detected some warnings. The following email address may not receive emails:": [
-        "偵測到一些警告。下列電子信箱有可能無法接收郵件："
+        "我們偵測些許警示。下列電郵位址可能將無法接收郵件："
       ]
     },
     "Sender verification details": {
@@ -11558,13 +11843,13 @@
         "由 ${ MAIL_APP_NAME } 採用零存取加密傳送"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
-        "由 ${ MAIL_APP_NAME } 採用零存取加密傳送給驗證收件人"
+        "郵件遞送採用 ${ MAIL_APP_NAME } 搭配零存取加密技術得以把訊息送到驗證過的收件者"
       ],
       "Sent by you with end-to-end encryption": [
         "由您寄出的端到端加密訊息"
       ],
       "Sent by you with end-to-end encryption to verified recipient": [
-        "由您透過端對端加密寄送給已驗證收件人"
+        "由您透過端對端加密寄送給已驗證收件者"
       ],
       "Stored with zero-access encryption": [
         "以零存取加密儲存"
@@ -12580,7 +12865,7 @@
         "${ count } 則往來對話已刪除"
       ],
       "${ count } draft deleted": [
-        "${ count } 個草稿已刪除"
+        "${ count } 則草稿已刪除"
       ],
       "${ count } message deleted": [
         "${ count } 封郵件已刪除"
@@ -12592,10 +12877,10 @@
         "${ elementsCount } 則往來對話已加上 ${ labelName } 標籤。"
       ],
       "${ elementsCount } conversation marked as read.": [
-        "${ elementsCount } 則往來對話已標記為已讀。"
+        "${ elementsCount } 則往來對話標記為已讀。"
       ],
       "${ elementsCount } conversation marked as Starred.": [
-        "${ elementsCount } 則往來對話已加星號。"
+        "${ elementsCount } 則往來對話已標星號。"
       ],
       "${ elementsCount } conversation marked as unread.": [
         "${ elementsCount } 則往來對話已標記未讀。"
@@ -12607,16 +12892,16 @@
         "${ elementsCount } 往來對話已移至 ${ labelName }."
       ],
       "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
-        "${ elementsCount } 篇對話已被移至垃圾郵件，寄件者已被列入您的垃圾郵件清單。"
+        "${ elementsCount } 則對話已被移至垃圾郵件，寄件者已被列入您的垃圾郵件清單。"
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } 則往來對話已移除 ${ labelName } 標籤。"
       ],
       "${ elementsCount } conversation snoozed": [
-        "${ elementsCount } 個會話已緩辦"
+        "${ elementsCount } 則對話內容已延遲"
       ],
       "${ elementsCount } conversation unsnoozed": [
-        "${ elementsCount } 個會話已取消緩辦"
+        "${ elementsCount } 則對話取消延後"
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } 封郵件已加上 ${ labelName } 標籤。"
@@ -12637,10 +12922,10 @@
         "${ elementsCount } 訊息已移至 ${ labelName }."
       ],
       "${ elementsCount } message moved to spam and sender added to your spam list.": [
-        "${ elementsCount } 則訊息已被移至垃圾郵件，寄件者已被列入垃圾郵件清單。"
+        "${ elementsCount } 則訊息已移至垃圾郵件，寄件者已加入垃圾郵件清單。"
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
-        "${ elementsCount } 封郵件已移除 ${ labelName } 標籤。"
+        "${ elementsCount } 則訊息已不再歸屬 ${ labelName }。"
       ],
       "Address copied to clipboard": [
         "位址已複製到剪貼簿"
@@ -12857,6 +13142,12 @@
       ],
       "You have successfully unsubscribed": [
         "您已成功取消訂購"
+      ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } 則往來對話已移除星號標籤。"
+      ],
+      "Secret passphrase updated": [
+        "秘密助記詞已更新"
       ]
     },
     "Success notification": {
@@ -13259,7 +13550,7 @@
         "刪除 ${ count } 則往來對話"
       ],
       "Delete ${ count } draft": [
-        "刪除 ${ count } 個草稿"
+        "刪除 ${ count } 件草稿"
       ],
       "Delete ${ count } message": [
         "刪除 ${ count } 封電郵"
@@ -13892,7 +14183,7 @@
         "警告：疑似假冒網站"
       ],
       "We protected you from ${ trackersCount } tracker": [
-        "我們保護您避免 ${ trackersCount } 個追蹤程式的追踪"
+        "我們已保護您免受 ${ trackersCount } 個追蹤程式的侵害"
       ],
       "Welcome": [
         "歡迎"
@@ -13932,6 +14223,36 @@
       ],
       "Your subscriptions in one place": [
         "集中管理您的訂閱"
+      ],
+      "Archive all messages?": [
+        "封存全部訊息?"
+      ],
+      "Connect to video conferencing": [
+        "連接視訊會議"
+      ],
+      "Customize categories": [
+        "自訂類別"
+      ],
+      "Disable categories?": [
+        "停用分類？"
+      ],
+      "Enhance security with 2FA": [
+        "透過雙重驗證強化安全性"
+      ],
+      "Private browsing vs VPN": [
+        "私有瀏覽 對比 VPN"
+      ],
+      "Simplify email distribution": [
+        "簡化電子郵件發送"
+      ],
+      "VPN explained": [
+        "VPN 說明"
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "歡迎使用 ${ BRAND_NAME } 商務版"
+      ],
+      "✨ Categories are coming!": [
+        "✨ 分類功能即將推出！"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14038,6 +14359,9 @@
     "Unlimited offer": {
       "/month": [
         "/個月"
+      ],
+      "Only": [
+        "僅選取地面"
       ]
     },
     "Update font modal": {
@@ -14171,7 +14495,7 @@
         "部分需合併的聯絡人顯示錯誤。請逐一查看"
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
-        "附件簽章驗證失敗。\n您仍可下載附件，惟附件可能已遭篡改。"
+        "附件的簽章驗證失敗。\n您仍可下載附件，惟附件可能已遭篡改。"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "此聯絡人資料已毀損，無法顯示。"
@@ -14444,6 +14768,52 @@
       ],
       "Passcode:": [
         "數字密碼:"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "週年優惠"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "您可以在試用期間擁有最多 ${ TRIAL_MAX_SCRIBE_SEATS } 個抄寫座席。"
+      ]
+    },
+    "collider_2025: feature": {
+      "Basic chat history": [
+        "基本聊天記錄"
+      ],
+      "Full chat history with search": [
+        "具備搜尋功能的完整聊天記錄"
+      ],
+      "Large file upload support": [
+        "大型檔案上載支援"
+      ],
+      "Unlimited daily chats": [
+        "無限每日聊天"
+      ],
+      "Upload and query multiple large files": [
+        "上載及查詢多個大型檔案"
+      ],
+      "Web search access": [
+        "網頁搜尋存取"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } 是一款隱私優先的人工智慧，可協助您提高效率，同時確保您的資料安全。釋放其全部潛力，並搶先體驗隨著它們推出而帶來的新功能。"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "高速聊天和先進的人工智慧功能。"
+      ]
+    },
+    "Referral": {
+      "Friend joined": [
+        "已加入的朋友"
+      ],
+      "Friend subscribed": [
+        "已訂閱的朋友"
       ]
     }
   }

@@ -511,7 +511,7 @@
         "Omogoči ${ darkWebMonitoring }"
       ],
       "enable desktop notifications": [
-        "omogoči obvestila na namizju"
+        "prikazovanje obvestil na namizju"
       ],
       "Encryption": [
         "Šifrirano"
@@ -1613,6 +1613,18 @@
       ],
       "Zoom out": [
         "Pomanjšaj"
+      ],
+      "Disable categories": [
+        "Onemogoči kategorije"
+      ],
+      "Keep categories": [
+        "Obdrži kategorije"
+      ],
+      "Most frequent": [
+        "Najpogostejše"
+      ],
+      "Try categories": [
+        "Preizkusite kategorije"
       ]
     },
     "action": {
@@ -5733,6 +5745,12 @@
       ],
       "Tell us more": [
         "Povejte nam več"
+      ],
+      "Password ends with": [
+        "Geslo se konča z"
+      ],
+      "Username": [
+        "Uporabniško ime"
       ]
     },
     "Hint": {
@@ -7184,10 +7202,7 @@
         "Zagon …"
       ],
       "Insert image": [
-        "Vstavi sliko",
-        "Vstavi sliki",
-        "Vstavi slike",
-        "Vstavi slik"
+        "Vstavi sliko"
       ],
       "Insert link": [
         "Vstavi povezavo"
@@ -8589,6 +8604,21 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Do urejenega poštnega predala vas loči le nekaj klikov."
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } neprebran",
+        "${ subscription.UnreadMessageCount } neprebrani",
+        "${ subscription.UnreadMessageCount } neprebrana",
+        "${ subscription.UnreadMessageCount } neprebranih"
+      ],
+      "Includes marketing emails like offers and product announcements.": [
+        "Vključuje promocijska sporočila, kot so ponudbe in najave novih izdelkov."
+      ],
+      "Selection pane": [
+        "Podokno izbora"
+      ],
+      "You are currently signed in as ${ username }.": [
+        "Trenutno ste prijavljeni kot ${ username }."
       ]
     },
     "info": {
@@ -9529,6 +9559,24 @@
       ],
       "ZIP code": [
         "Poštna številka"
+      ],
+      "${ count } unread conversation": [
+        "${ count } neprebran pogovor",
+        "${ count } neprebrana pogovora",
+        "${ count } neprebrani pogovori",
+        "${ count } neprebranih pogovorov"
+      ],
+      "${ count } unread message": [
+        "${ count } neprebrano sporočilo",
+        "${ count } neprebrani sporočili",
+        "${ count } neprebrana sporočila",
+        "${ count } neprebranih sporočil"
+      ],
+      "Go to Forums": [
+        "Obišči forume"
+      ],
+      "No results found": [
+        "Ni zadetkov"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9566,7 +9614,7 @@
         "Od"
       ],
       "To": [
-        "Do"
+        "Za"
       ]
     },
     "Label, credit card": {
@@ -9852,6 +9900,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Za ogled posodobljenega povabila morate ponovno aktivirati vaše ključe."
+      ],
+      "Deleted": [
+        "Izbrisano"
       ]
     },
     "Link to calendar event": {
@@ -11315,6 +11366,9 @@
       ],
       "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
         "Uporabite svoj naslov ${ MAIL_APP_NAME } za prijavo v spletne storitve, da bi se izognili sledenju in profiliranju. Spremenite svojo e-pošto za priljubljene storitve. ${ learnMoreLink }"
+      ],
+      "Maybe later": [
+        "Morda pozneje"
       ]
     },
     "Onboarding modal": {
@@ -11961,7 +12015,7 @@
         "Janez"
       ],
       "To": [
-        "Do"
+        "Za"
       ],
       "Type text or keyword": [
         "Vpišite besedilo ali ključno besedo"
@@ -11974,6 +12028,9 @@
       ],
       "ZIP code": [
         "Poštna številka"
+      ],
+      "Select country": [
+        "Izberite državo"
       ]
     },
     "Placeholder for contact group name": {
@@ -14840,7 +14897,7 @@
         "To polje ne sme biti izpolnjeno le s presledki"
       ],
       "To": [
-        "Do"
+        "Za"
       ],
       "Trash": [
         "Smetnjak"
@@ -14964,6 +15021,21 @@
       ],
       "Your subscriptions in one place": [
         "Vaše naročnine na enem mestu"
+      ],
+      "Label message as": [
+        "Dodaj sporočilu oznako",
+        "Dodaj sporočiloma oznako",
+        "Dodaj sporočilom oznako",
+        "Dodaj sporočilom oznako"
+      ],
+      "Move message to": [
+        "Premakni sporočilo v",
+        "Premakni sporočili v",
+        "Premakni sporočila v",
+        "Premakni sporočila v"
+      ],
+      "Move messages to": [
+        "Premakni sporočila v"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15608,6 +15680,11 @@
       ],
       "Passcode:": [
         "Koda za dostop:"
+      ]
+    },
+    "Referral": {
+      "More sharing options": [
+        "Več možnosti skupne rabe"
       ]
     }
   }

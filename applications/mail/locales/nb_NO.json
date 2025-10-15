@@ -1654,6 +1654,34 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "Continue with categories": [
+        "Fortsett med kategorier"
+      ],
+      "Continue without categories": [
+        "Fortsett uten kategorier"
+      ],
+      "Customize categories": [
+        "Tilpass kategorier"
+      ],
+      "Is this private?": [
+        "Er dette privat?"
+      ],
+      "Keep inbox as before": [
+        "Behold innboksen som før"
+      ],
+      "Toggle notifications": [
+        "Slå varslinger av/på"
+      ],
+      "Toggle referral": [
+        "Slå verving av/på"
+      ],
+      "Trust key": [
+        "Klarér nøkkel",
+        "Klarér nøkler"
+      ],
+      "Try categories": [
+        "Prøv kategorier"
       ]
     },
     "action": {
@@ -4350,6 +4378,21 @@
       ],
       "This event was updated.": [
         "Denne hendelsen ble oppdatert."
+      ],
+      "DESCRIPTION:": [
+        "BESKRIVELSE:"
+      ],
+      "LOCATION:": [
+        "STED:"
+      ],
+      "TIME:": [
+        "TIDSPUNKT:"
+      ],
+      "TITLE:": [
+        "TITTEL:"
+      ],
+      "You are invited to": [
+        "Du er invitert til"
       ]
     },
     "Email body for invitation (date part)": {
@@ -6416,8 +6459,8 @@
         "${ elementsCount } samtaler flyttes"
       ],
       "${ elementsCount } conversation will be unlabelled from:": [
-        "${ elementsCount } samtale vil bli avmerket fra:",
-        "${ elementsCount } samtaler vil bli avmerket fra:"
+        "${ elementsCount } samtale avmerkes fra:",
+        "${ elementsCount } samtaler avmerkes fra:"
       ],
       "${ elementsCount } message will be labelled as:": [
         "${ elementsCount } melding merkes som:",
@@ -6436,8 +6479,8 @@
         "${ elementsCount } meldinger flyttes"
       ],
       "${ elementsCount } message will be unlabelled from:": [
-        "${ elementsCount } melding vil bli avmerket fra:",
-        "${ elementsCount } meldinger vil bli avmerket fra:"
+        "${ elementsCount } melding avmerkes fra:",
+        "${ elementsCount } meldinger avmerkes fra:"
       ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } innebygd bilde",
@@ -7349,8 +7392,7 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde",
-        "Sett inn bilder"
+        "Sett inn bilde"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -8113,8 +8155,8 @@
         "Denne samtalen inneholder meldinger i papirkurven."
       ],
       "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Denne samtalen vil bli merket som søppelpost. Ønsker du å melde deg av fremtidige e-poster?",
-        "Disse samtalene vil bli merket som søppelpost. Ønsker du å melde deg av fremtidige e-poster?"
+        "Denne samtalen merkes som søppelpost. Ønsker du å melde deg av fremtidige e-poster?",
+        "Disse samtalene merkes som søppelpost. Ønsker du å melde deg av fremtidige e-poster?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "Denne e-posten har ikke oppfylt domenets autentiseringskrav. Den kan være forfalsket eller feilaktig videresendt."
@@ -8775,6 +8817,48 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er bare noen få klikk unna en ryddig innboks"
+      ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Trinn 1:** Inviter vennene dine til ${ BRAND_NAME } med vervekoblingen."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
+        "**Trinn 2:** Vennene dine får 2 uker gratis på den valgte ${ BRAND_NAME }-planen."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Trinn 2:** Vennene dine får 2 uker gratis på planene deres."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**Trinn 3:** Få ${ referrerRewardAmount } kreditter for hver venn som abonnerer på en plan."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Trinn 3:** Få ${ referrerRewardAmount } i kreditter for hver person som abonnerer på en plan."
+      ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Kategorier fungerer akkurat som søppelpostfiltre. ${ MAIL_APP_NAME } leser aldri e-postene eller deler dataene dine."
+      ],
+      "Categories work like spam filters. We only look for patterns in unencrypted header and technical data. We do not read email content, share your data, or infringe on your privacy.": [
+        "Kategorier fungerer som søppelpostfiltre. Vi ser bare etter mønstre i ukrypterte topptekster og tekniske data. Vi leser ikke e-postinnhold, deler dataene dine eller krenker personvernet ditt."
+      ],
+      "Includes bills, receipts, orders, and bookings.": [
+        "Inkluderer regninger, kvitteringer, bestillinger og reservasjoner."
+      ],
+      "Includes invoices, purchase orders, and payment confirmations.": [
+        "Inkluderer fakturaer, bestillinger og betalingsbekreftelser."
+      ],
+      "Includes marketing emails and non-urgent app notifications.": [
+        "Inkluderer markedsførings-e-poster og appvarsler som ikke haster."
+      ],
+      "Includes marketing emails like offers and product announcements.": [
+        "Inkluderer markedsførings-e-poster som tilbud og produktannonseringer."
+      ],
+      "Includes news recaps and other non-promotional content. ": [
+        "Inkluderer nyhetssammendrag og annet ikke-salgsfremmende innhold. "
+      ],
+      "Includes updates from social networks and media-sharing sites.": [
+        "Inkluderer oppdateringer fra sosiale nettverk og nettsteder for mediedeling."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "Med nye e-postkategorier havner bare viktige meldinger i den primær innboksen. Alt annet organiseres i kategorier."
       ]
     },
     "info": {
@@ -9805,6 +9889,20 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "${ count } unread conversation": [
+        "${ count } ulest samtale",
+        "${ count } uleste samtaler"
+      ],
+      "${ count } unread message": [
+        "${ count } ulest melding",
+        "${ count } uleste meldinger"
+      ],
+      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
+        "Legg til eller fjern kategorier. Angi eller slå av varsler. Juster når som helst i ${ menuIcon }-menyen."
+      ],
+      "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
+        "Slutt på å gå glipp av viktige meldinger! Disse vises nå under ${ primaryCopy }. Alt annet er sortert etter kategori, slik at de er enkle å finne og ikke roter til innboksen din."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10960,6 +11058,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skanner det mørke nettet for å sjekke om ${ BRAND_NAME }-adressene eller aliasene dine har blitt lekket, og varsler deg umiddelbart hvis vi finner noe."
+      ],
+      "Short domain (@pm.me)": [
+        "Kort domene (@pm.me)"
       ]
     },
     "new_plans: feature highlight": {
@@ -11590,6 +11691,12 @@
       ],
       "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
         "Bruk ${ MAIL_APP_NAME }-adressen din til å logge på nettjenester for å unngå å bli sporet og profilert. Endre e-postadressen din for populære tjenester nå. ${ learnMoreLink }"
+      ],
+      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
+        "Endre e-postadressen din for populære tjenester nå for å unngå sporing og profilering. ${ learnMoreLink }"
+      ],
+      "Maybe later": [
+        "Kanskje senere"
       ]
     },
     "Onboarding modal": {
@@ -12070,6 +12177,24 @@
       ],
       "Your payment is still being processed": [
         "Betalingen din behandles fortsatt"
+      ],
+      "Amount due after trial on ${ formattedDate }": [
+        "Beløp som forfaller etter prøveperioden på ${ formattedDate }"
+      ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Betalingsmåte kreves for at abonnementet skal aktiveres etter at prøveperioden er over."
+      ],
+      "terms and conditions": [
+        "vilkår og betingelser"
+      ],
+      "This offer is not available with your current plan.": [
+        "Dette tilbudet er ikke tilgjengelig med din nåværende plan."
+      ],
+      "You already have a subscription to this plan.": [
+        "Du har allerede et abonnement på denne planen."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Du har allerede et abonnement på denne planen. Du kan endre abonnementet ditt på ${ subscriptionPlatform }."
       ]
     },
     "Payments.Error": {
@@ -13222,7 +13347,7 @@
     },
     "Spotlight": {
       "Check out what's included with your subscription and start enjoying the benefits.": [
-        "Sjekk ut hva som er inkludert i abonnementet ditt og begynn å nyte fordelene."
+        "Sjekk ut hva som er inkludert i abonnementet ditt og begynn å kose deg over fordelene."
       ],
       "Discover your subscription benefits": [
         "Oppdag abonnementsfordelene dine"
@@ -13850,8 +13975,8 @@
         "${ elementsCount } samtaler merket som ulest."
       ],
       "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
-        "${ elementsCount } samtale flyttet til ${ labelName } og avsender lagt til din ikke-søppelpostliste.",
-        "${ elementsCount } samtaler flyttet til ${ labelName } og avsenderene lagt til din ikke-søppelpostliste."
+        "${ elementsCount } samtale flyttet til ${ labelName } og avsender lagt til ikke-søppelpostlisten din.",
+        "${ elementsCount } samtaler flyttet til ${ labelName } og avsenderene lagt til ikke-søppelpostlisten din."
       ],
       "${ elementsCount } conversation moved to ${ labelName }.": [
         "${ elementsCount } samtale flyttet til ${ labelName }.",
@@ -15348,6 +15473,24 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorier kommer!"
+      ],
+      "Built for privacy": [
+        "Bygget for personvern"
+      ],
+      "Customize categories to fit your needs": [
+        "Tilpass kategorier etter dine behov"
+      ],
+      "Fewer distractions, more focus": [
+        "Færre forstyrrelser, mer fokus"
+      ],
+      "Introducing email categories": [
+        "Introduksjon av e-postkategorier"
+      ],
+      "Referral": [
+        "Verving"
+      ],
+      "Share your link": [
+        "Del koblingen din"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15919,6 +16062,45 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Logg på med den samme Gmail-adressen du opprinnelig koblet til"
+      ]
+    },
+    "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } per verving"
+      ],
+      "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Tjen opptil ${ maxRewardAmount } i kreditt. Du får ${ referrerRewardAmount } når personen du inviterer, abonnerer på en ${ BRAND_NAME }-plan."
+      ],
+      "Friend joined": [
+        "Venn ble med",
+        "Venner ble med"
+      ],
+      "Friend subscribed": [
+        "Venn abonnerte",
+        "Venner abonnerte"
+      ],
+      "Invite friends. Get credits.": [
+        "Inviter venner. Få kreditter."
+      ],
+      "Invited friends": [
+        "Inviterte venner"
+      ],
+      "More sharing options": [
+        "Flere delingsalternativer"
+      ],
+      "Refer friends": [
+        "Verv venner"
+      ],
+      "Start earning credits": [
+        "Begynn å tjene kreditter"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Du kan få opptil **${ maxRewardAmount }** i kreditt."
       ]
     }
   }

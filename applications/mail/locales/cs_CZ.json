@@ -694,7 +694,7 @@
         "Hide-my-email"
       ],
       "hide-my-email aliases": [
-        "aliasy hide-my-email"
+        "aliasů Hide-my-email"
       ],
       "I like this response": [
         "Odpověď se mi líbí"
@@ -1477,7 +1477,10 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči"
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -1667,6 +1670,30 @@
       ],
       "Zoom out": [
         "Oddálit"
+      ],
+      "Continue with categories": [
+        "Pokračovat s kategoriemi"
+      ],
+      "Continue without categories": [
+        "Pokračovat bez kategorií"
+      ],
+      "Customize categories": [
+        "Přizpůsobit kategore"
+      ],
+      "Is this private?": [
+        "Je to soukromé?"
+      ],
+      "Keep inbox as before": [
+        "Ponechat doručenou poštu beze změn"
+      ],
+      "Toggle notifications": [
+        "Přepnout upozornění"
+      ],
+      "Toggle referral": [
+        "Přepnout doporučení"
+      ],
+      "Try categories": [
+        "Vyzkoušejte kategorie"
       ]
     },
     "action": {
@@ -2015,10 +2042,10 @@
     },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po skončení zkušební verze ${ formattedDate } se z ní stane placené předplatné, které se automaticky obnovuje každých ${ renewCycle } měsíců. Pokud předplatné zrušíte před ${ formattedDate }, nebudou vám účtovány žádné poplatky."
+        "Po skončení zkušební verze ${ formattedDate } začne placené předplatné, které se automaticky obnovuje každých ${ renewCycle } měsíců. Pokud zrušíte předplatné před ${ formattedDate }, nebudou vám účtovány žádné poplatky."
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po skončení zkušební verze ${ formattedDate } se z ní stane placené předplatné, které se automaticky obnovuje každý měsíc. Pokud předplatné zrušíte před ${ formattedDate }, nebudou vám účtovány žádné poplatky."
+        "Po skončení zkušební verze ${ formattedDate } se z ní stane předplatné, které bude automaticky obnoveno každý měsíc. Pokud předplatné zrušíte před ${ formattedDate }, nebudete nic platit."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Můžete mít až ${ TRIAL_MAX_DEDICATED_IPS } vyhrazený server během zkušební doby."
@@ -4395,6 +4422,21 @@
       ],
       "This event was updated.": [
         "Tato událost byla aktualizována."
+      ],
+      "DESCRIPTION:": [
+        "POPIS:"
+      ],
+      "LOCATION:": [
+        "MÍSTO:"
+      ],
+      "TIME:": [
+        "ČAS:"
+      ],
+      "TITLE:": [
+        "NÁZEV:"
+      ],
+      "You are invited to": [
+        "Jste pozváni na"
       ]
     },
     "Email body for invitation (date part)": {
@@ -7584,10 +7626,7 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -9058,6 +9097,42 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Od doručené pošty bez nepořádku vás dělí jen několik kliknutí"
+      ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Krok 1:** Pozvěte své přátele do ${ BRAND_NAME } pomocí svého doporučujícího odkazu."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
+        "**Krok 2:** Vaši přátelé získají 2 týdny zdarma na jejich zvoleném tarifu ${ BRAND_NAME }."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Krok 2:** Vaši přátelé získají 2 týdny zdarma na svém tarifu."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**Krok 3:** Získejte ${ referrerRewardAmount } kreditů za každého přítele, který se přihlásí k odběru tarifu."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Krok 3:** Získejte ${ referrerRewardAmount } kreditů za každou osobu, která se přihlásí k odběru tarifu."
+      ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Kategorie fungují stejně jako spam filtry. ${ MAIL_APP_NAME } nikdy nečte vaše e-maily ani nesdílí vaše data."
+      ],
+      "Categories work like spam filters. We only look for patterns in unencrypted header and technical data. We do not read email content, share your data, or infringe on your privacy.": [
+        "Kategorie fungují jako filtry spamu. Hledáme pouze vzorce v nešifrovaných hlavičkách a technických datech. Nečteme obsah e-mailů, nesdílíme vaše data ani neporušujeme vaše soukromí."
+      ],
+      "Includes bills, receipts, orders, and bookings.": [
+        "Zahrnuje faktury, potvrzení, objednávky a rezervace."
+      ],
+      "Includes marketing emails like offers and product announcements.": [
+        "Zahrnuje marketingové e-maily, jako jsou nabídky a oznámení o produktech."
+      ],
+      "Includes news recaps and other non-promotional content. ": [
+        "Zahrnuje souhrny zpráv a další nepropagační obsah. "
+      ],
+      "Includes updates from social networks and media-sharing sites.": [
+        "Zahrnuje aktualizace ze sociálních sítí a webů pro sdílení médií."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "Díky novým kategoriím e-mailů se pouze důležité zprávy dostanou do vaší primární doručené pošty. Všechno ostatní je uspořádáno do kategorií."
       ]
     },
     "info": {
@@ -10100,6 +10175,24 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "${ count } unread conversation": [
+        "${ count } nepřečtená konverzace",
+        "${ count } nepřečtené konverzace",
+        "${ count } nepřečtených konverzací",
+        "${ count } nepřečtených konverzací"
+      ],
+      "${ count } unread message": [
+        "${ count } nepřečtená zpráva",
+        "${ count } nepřečtené zprávy",
+        "${ count } nepřečtených zpráv",
+        "${ count } nepřečtených zpráv"
+      ],
+      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
+        "Přidávejte nebo odebírejte kategorie. Nastavujte nebo vypínejte upozornění. Upravujte kdykoli v menu ${ menuIcon }."
+      ],
+      "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
+        "Už vám neuniknou žádné důležité zprávy! Ty se nyní zobrazují pod ${ primaryCopy }. Všechno ostatní je seřazeno podle kategorií, takže se snadno hledá a nezahltí vaši doručenou poštu."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11315,6 +11408,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Prohledáváme dark web a kontrolujeme, zda nedošlo k úniku vašich adres nebo aliasů ${ BRAND_NAME }, pokud něco najdeme, okamžitě vás upozorníme."
+      ],
+      "Short domain (@pm.me)": [
+        "Krátká doména (@pm.me)"
       ]
     },
     "new_plans: feature highlight": {
@@ -11955,6 +12051,12 @@
       ],
       "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
         "Pro přihlášení k online službám používejte svou adresu ${ MAIL_APP_NAME }, abyste se vyhnuli sledování a profilování. Změňte si nyní e-mail u vašich oblíbených služeb. ${ learnMoreLink }"
+      ],
+      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
+        "Změňte si ihned svou e-mailovou adresu u oblíbených služeb, abyste se vyhnuli sledování a profilování. ${ learnMoreLink }"
+      ],
+      "Maybe later": [
+        "Možná později"
       ]
     },
     "Onboarding modal": {
@@ -12442,6 +12544,27 @@
       ],
       "Your payment is still being processed": [
         "Vaše platba se stále zpracovává"
+      ],
+      "Amount due after trial on ${ formattedDate }": [
+        "Částka k úhradě po zkušební verzi ${ formattedDate }"
+      ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Platební metoda požadovaná pro aktivaci předplatného po skončení zkušební doby."
+      ],
+      "terms and conditions": [
+        "smluvní podmínky užívání"
+      ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Tato akce rozšiřuje stávající předplatné. Budou vám účtovány pouze nové doplňky a zbývající čas aktuálního fakturačního cyklu. Datum obnovení vašeho předplatného se nezmění."
+      ],
+      "This offer is not available with your current plan.": [
+        "Tato nabídka není s vaším aktuálním tarifem k dispozici."
+      ],
+      "You already have a subscription to this plan.": [
+        "Již máte předplatné tohoto tarifu."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Již máte předplatné tohoto tarifu. Můžete si změnit své předplatné na ${ subscriptionPlatform }."
       ]
     },
     "Payments.Error": {
@@ -15898,6 +16021,24 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorie se blíží!"
+      ],
+      "Built for privacy": [
+        "Vytvořeno pro soukromí"
+      ],
+      "Customize categories to fit your needs": [
+        "Přizpůsobte kategorie svým potřebám"
+      ],
+      "Fewer distractions, more focus": [
+        "Méně rozptylování, více soustředění"
+      ],
+      "Introducing email categories": [
+        "Představujeme e-mailové kategorie"
+      ],
+      "Referral": [
+        "Doporučení"
+      ],
+      "Share your link": [
+        "Sdílejte svůj odkaz"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16559,6 +16700,57 @@
       ],
       "Passcode:": [
         "Přístupový kód:"
+      ]
+    },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Přihlaste se prosím pomocí stejné adresy Gmail, kterou jste původně použili pro připojení"
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Kredit za nevyužitou část vašeho předchozího předplatného"
+      ],
+      "Credits will be added to your balance": [
+        "Kredity budou přidány k vašemu zůstatku"
+      ]
+    },
+    "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } za doporučení"
+      ],
+      "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Získejte až ${ maxRewardAmount } v kreditech. Získáte ${ referrerRewardAmount }, když se osoba, kterou pozvete, přihlásí k odběru tarifu ${ BRAND_NAME }."
+      ],
+      "Friend joined": [
+        "Přítel se připojil",
+        "Přátelé se připojili",
+        "Přátelé se připojili",
+        "Přátelé se připojili"
+      ],
+      "Friend subscribed": [
+        "Přítel si předplatil tarif",
+        "Přátelé si předplatili tarif",
+        "Přátelé si předplatili tarif",
+        "Přátelé si předplatili tarif"
+      ],
+      "Invite friends. Get credits.": [
+        "Pozvěte přátele. Získejte kredity."
+      ],
+      "Invited friends": [
+        "Pozvaní přátelé"
+      ],
+      "More sharing options": [
+        "Více možností sdílení"
+      ],
+      "Refer friends": [
+        "Doporučte přátele"
+      ],
+      "Start earning credits": [
+        "Začněte získávat kredity"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Můžete získat až **${ maxRewardAmount }** v kreditech."
       ]
     }
   }

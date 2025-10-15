@@ -1634,6 +1634,33 @@
       ],
       "Zoom out": [
         "Perkecil"
+      ],
+      "Continue with categories": [
+        "Lanjut dengan kategori"
+      ],
+      "Continue without categories": [
+        "Lanjut tanpa kategori"
+      ],
+      "Disable categories": [
+        "Nonaktifkan kategori"
+      ],
+      "Is this private?": [
+        "Apakah kategori ini privat?"
+      ],
+      "Keep inbox as before": [
+        "Pertahankan kotak masuk seperti sedia kala"
+      ],
+      "Passphrase": [
+        "Frasa sandi"
+      ],
+      "Toggle notifications": [
+        "Tampilkan notifikasi"
+      ],
+      "Trust key": [
+        "Percayai kunci"
+      ],
+      "Try categories": [
+        "Coba kategori"
       ]
     },
     "action": {
@@ -1965,6 +1992,15 @@
     "b2b_trials_2025_Info": {
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Anda dapat memiliki hingga ${ TRIAL_MAX_SCRIBE_SEATS } kuota Scribe selama masa uji coba."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Setelah masa uji coba ini berakhir pada ${ formattedDate }, paket Anda akan menjadi langganan berbayar yang diperbarui secara otomatis secara bulanan. Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Anda dapat memiliki hingga ${ TRIAL_MAX_USERS } pengguna selama masa uji coba."
+      ],
+      "You have reached the trial limit.": [
+        "Anda telah mencapai batas uji coba Anda."
       ]
     },
     "b2b_trials_Action": {
@@ -5834,6 +5870,12 @@
       ],
       "Tell us more": [
         "Beri tahu kami lebih lanjut"
+      ],
+      "Domain": [
+        "Domain"
+      ],
+      "Username": [
+        "Nama pengguna"
       ]
     },
     "Hint": {
@@ -6165,13 +6207,13 @@
         "Impor dari Google"
       ],
       "Import from other": [
-        "Impor dari yang lain"
+        "Impor dari layanan lain"
       ],
       "Import from Outlook": [
         "Impor dari Outlook"
       ],
       "Import from Yahoo": [
-        "Masukan dari Yahoo"
+        "Impor dari Yahoo"
       ]
     },
     "Import warning": {
@@ -7411,7 +7453,7 @@
         "Satu atau lebih kunci terpercaya Anda telah ditandai sebagai \"bocor\" oleh pemiliknya. Kami menyarankan Anda untuk tidak lagi \"memercayai\" kunci tersebut."
       ],
       "One time import": [
-        "Satu kali impor"
+        "Impor sekali jadi"
       ],
       "Open shortcut cheat sheet": [
         "Buka lembar contekan pintasan"
@@ -8543,6 +8585,39 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Anda hanya berjarak beberapa klik dari kotak masuk yang rapi"
+      ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Langkah 1:** Undang teman Anda ke ${ BRAND_NAME } dengan tautan rujukan Anda."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
+        "**Langkah 2:** Teman Anda memperoleh 2 minggu gratis untuk paket ${ BRAND_NAME } pilihan mereka."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Langkah 2:** Teman Anda memperoleh 2 minggu gratis untuk paket mereka."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**Langkah 3:** Dapatkan saldo senilai ${ referrerRewardAmount } untuk setiap teman yang berlangganan ke salah satu paket."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Langkah 3:** Dapatkan saldo senilai ${ referrerRewardAmount } untuk setiap orang yang berlangganan ke salah satu paket."
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Seluruh pesan akan ditampilkan di Kotak masuk, serta tab kategori dan tag tidak akan lagi terlihat. "
+      ],
+      "Includes marketing emails like offers and product announcements.": [
+        "Meliputi email pemasaaran seperti penawaran dan pengumuman produk."
+      ],
+      "Includes news recaps and other non-promotional content. ": [
+        "Meliputi rekap berita dan konten non-promosional lainnya. "
+      ],
+      "Includes updates from social networks and media-sharing sites.": [
+        "Meliputi pembaruan dari media sosial dan situs berbagi media."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "Dengan fitur kategori email baru ini, kotak masuk utama Anda hanya diisi oleh pesan penting. Seluruh pesan lainnya akan dikelompokkan ke dalam berbagai kategori."
+      ],
+      "You are currently signed in as ${ username }.": [
+        "Anda sedang masuk sebagai ${ username }"
       ]
     },
     "info": {
@@ -9540,6 +9615,33 @@
       ],
       "ZIP code": [
         "Kode pos"
+      ],
+      "${ count } unread conversation": [
+        "${ count } percakapan yang belum dibaca"
+      ],
+      "${ count } unread message": [
+        "${ count } pesan yang belum dibaca"
+      ],
+      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
+        "Tambah atau hapus kategori. Pasang atau matikan notifikasi. Atur kapan saja pada menu ${ menuIcon }."
+      ],
+      "Go to Forums": [
+        "Ke Forum"
+      ],
+      "Go to Newsletters": [
+        "Ke Buletin"
+      ],
+      "Go to Social": [
+        "Pergi ke Sosial"
+      ],
+      "Go to Updates": [
+        "Ke Pembaruan"
+      ],
+      "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
+        "Jangan lagi sampai ada pesan penting yang terlewatkan! Pesan penting Anda kini akan muncul pada ${ primaryCopy }. Pesan lainnya akan diurutkan berdasarkan kategori, sehingga Anda akan dapat dengan mudah menemukan pesan ini tanpa memenuh-menuhi kotak masuk Anda."
+      ],
+      "No results found": [
+        "Tidak ada hasil yang ditemukan"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10665,6 +10767,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Kami memindai dark web untuk memeriksa apakah alamat atau alias ${ BRAND_NAME } Anda telah dibocorkan serta memberitahukan Anda dengan segera apabila kami menemukan sesuatu."
+      ],
+      "Short domain (@pm.me)": [
+        "Domain pendek (@pm.me)"
       ]
     },
     "new_plans: feature highlight": {
@@ -10774,7 +10879,7 @@
         "Akun gratis yang dirancang untuk menyediakan privasi sebagai hal yang baku bagi semua."
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
-        "Privasi tanpa batas dan ruang penyimpanan yang lebih untuk hingga 2 orang pengguna."
+        "Privasi tanpa batas dan ruang penyimpanan yang lebih lowong untuk hingga 2 orang pengguna."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menghapus akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon apabila Anda membuat akun baru."
@@ -11290,6 +11395,9 @@
       ],
       "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
         "Gunakan alamat ${ MAIL_APP_NAME } Anda untuk masuk ke berbagai layanan online agar Anda tidak dilacak dan diprofilkan. Ubah email Anda untuk layanan populer di bawah ini sekarang juga. ${ learnMoreLink }"
+      ],
+      "Maybe later": [
+        "Mungkin nanti"
       ]
     },
     "Onboarding modal": {
@@ -11762,6 +11870,12 @@
       ],
       "Your payment is still being processed": [
         "Pembayaran Anda masih diproses"
+      ],
+      "Amount due after trial on ${ formattedDate }": [
+        "Jumlah tagihan setelah masa uji coba pada ${ formattedDate }"
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Anda telah memiliki langganan untuk paket ini. Anda dapat mengubah langganan Anda pada ${ subscriptionPlatform }."
       ]
     },
     "Payments.Error": {
@@ -14930,6 +15044,18 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategori akan segera hadir!"
+      ],
+      "Built for privacy": [
+        "Dirancang untuk privasi"
+      ],
+      "Customize categories to fit your needs": [
+        "Atur kategori sesuai kebutuhan Anda"
+      ],
+      "Move messages to": [
+        "Pindahkan pesan ke"
+      ],
+      "Referral": [
+        "Rujukan"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15456,6 +15582,56 @@
       ],
       "Passcode:": [
         "Kode sandi:"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Akses ke berbagai model AI lanjutan"
+      ],
+      "Basic chat history": [
+        "Riwayat percakapan dasar"
+      ],
+      "Limited favorites": [
+        "Favorit dalam jumlah yang terbatas"
+      ],
+      "Unlimited daily chats": [
+        "Tanpa batasan jumlah percakapan harian"
+      ],
+      "Upload and query small files": [
+        "Unggah dan kuerikan berkas kecil"
+      ],
+      "Web search access": [
+        "Akses pencarian web"
+      ]
+    },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Silakan masuk dengan alamat Gmail yang sama dengan yang Anda gunakan pertama kali untuk terhubung"
+      ]
+    },
+    "Payments.info": {
+      "Credits will be added to your balance": [
+        "Saldo akan ditambahkan ke tabungan Anda"
+      ]
+    },
+    "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } per rujukan"
+      ],
+      "Friend joined": [
+        "Teman yang bergabung"
+      ],
+      "Friend subscribed": [
+        "Teman yang berlangganan"
+      ],
+      "Invited friends": [
+        "Teman yang diundang"
+      ],
+      "More sharing options": [
+        "Opsi pembagian lainnya"
+      ],
+      "Refer friends": [
+        "Rujuk teman"
       ]
     }
   }
