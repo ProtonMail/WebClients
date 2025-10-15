@@ -5,7 +5,6 @@ import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, APPS_WITH_IN_APP_PAYMENTS } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { formatURLForAjaxRequest } from '@proton/shared/lib/helpers/url';
-import useFlag from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import { openLinkInBrowser } from '../../desktop/openExternalLink';
@@ -19,7 +18,6 @@ const useSelectDeal = (callback?: () => void) => {
     const { APP_NAME } = useConfig();
 
     const goToSettingsLink = useSettingsLink();
-    const inboxUpsellFlowEnabled = useFlag('InboxUpsellFlow');
     const hasInboxDesktopInAppPayments = useHasInboxDesktopInAppPayments();
 
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
@@ -30,7 +28,7 @@ const useSelectDeal = (callback?: () => void) => {
         const plan = getPlanNameFromIDs(deal.planIDs);
         const hasSubscriptionModal = openSubscriptionModal !== noop;
 
-        if (hasSubscriptionModal && hasInAppPayment && inboxUpsellFlowEnabled && !loadingSubscriptionModal && plan) {
+        if (hasSubscriptionModal && hasInAppPayment && !loadingSubscriptionModal && plan) {
             const subscriptionParams: OpenCallbackProps = {
                 plan,
                 coupon: deal.couponCode,
