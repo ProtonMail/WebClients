@@ -74,6 +74,7 @@ export {
     DriveEventType,
     ServerError,
     DecryptionError,
+    SDKEvent,
 } from '@protontech/drive-sdk';
 
 let driveSingleton: ProtonDriveClient;

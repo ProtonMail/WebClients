@@ -120,7 +120,7 @@ describe('mapNodeToLegacyItem', () => {
             rootShareId: 'share-id-1',
             hasThumbnail: true,
             fileModifyTime: modifyTime / 1000,
-            size: 1024,
+            size: mockRevision.claimedSize,
             trashed: null,
             parentLinkId: parentId,
             parentUid: parentUid,
@@ -138,7 +138,7 @@ describe('mapNodeToLegacyItem', () => {
             activeRevision: {
                 id: revId,
                 createTime: revisionTime / 1000,
-                size: 1024,
+                size: mockRevision.claimedSize,
                 state: 1,
                 manifestSignature: '',
                 blocs: [],
@@ -258,8 +258,8 @@ describe('mapNodeToLegacyItem', () => {
 
         const result = await mapNodeToLegacyItem(maybeNode, mockShare.shareId, mockDrive);
 
-        expect(result.size).toBe(2048);
-        expect(result.activeRevision?.size).toBe(2048);
+        expect(result.size).toBe(1500);
+        expect(result.activeRevision?.size).toBe(1500);
     });
 
     it('should handle node with only storageSize', async () => {
@@ -282,7 +282,7 @@ describe('mapNodeToLegacyItem', () => {
 
         const result = await mapNodeToLegacyItem(maybeNode, mockShare.shareId, mockDrive);
 
-        expect(result.size).toBe(2048);
+        expect(result.size).toBe(0);
     });
 
     it('should handle node with only totalStorageSize', async () => {
