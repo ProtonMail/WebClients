@@ -1487,7 +1487,8 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel"
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -1675,6 +1676,12 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Continue without categories": [
+        "Fortsätt utan kategorier"
+      ],
+      "Try categories": [
+        "Prova kategorier"
       ]
     },
     "action": {
@@ -2711,6 +2718,9 @@
       ],
       "Unlimited favorites for quick access": [
         "Obegränsade favoriter för snabb åtkomst"
+      ],
+      "Web search access": [
+        "Webbsökningsåtkomst"
       ]
     },
     "collider_2025: Info": {
@@ -2719,6 +2729,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Lägg till ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Chattar med hög hastighet och avancerade AI-funktioner."
       ]
     },
     "color": {
@@ -4350,6 +4363,21 @@
       ],
       "This event was updated.": [
         "Denna händelse uppdaterades."
+      ],
+      "DESCRIPTION:": [
+        "BESKRIVNING:"
+      ],
+      "LOCATION:": [
+        "PLATS:"
+      ],
+      "TIME:": [
+        "TID:"
+      ],
+      "TITLE:": [
+        "RUBRIK:"
+      ],
+      "You are invited to": [
+        "Du är inbjuden till"
       ]
     },
     "Email body for invitation (date part)": {
@@ -7381,8 +7409,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -8795,6 +8822,18 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du är bara några klick bort från en skräpfri inkorg"
+      ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Kategorier fungerar precis som skräppostfilter. ${ MAIL_APP_NAME } läser aldrig din e-post eller delar dina data."
+      ],
+      "Includes invoices, purchase orders, and payment confirmations.": [
+        "Inkluderar fakturor, inköpsordrar och betalningsbekräftelser."
+      ],
+      "Includes marketing emails and non-urgent app notifications.": [
+        "Inkluderar e-postmarknadsföring och icke-brådskande appaviseringar."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "Med nya e-postkategorier hamnar endast viktiga meddelanden i din primära inkorg. Allt annat organiseras i kategorier."
       ]
     },
     "info": {
@@ -9833,6 +9872,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Deals, offers, marketing emails": [
+        "Erbjudanden, kampanjer, e-postmarknadsföring"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10988,6 +11030,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skannar den mörka webben för att kontrollera om dina ${ BRAND_NAME }-adresser eller alias har läckt och varnar dig omedelbart om vi hittar något."
+      ],
+      "Short domain (@pm.me)": [
+        "Kort domän (@pm.me)"
       ]
     },
     "new_plans: feature highlight": {
@@ -12184,6 +12229,15 @@
       ],
       "VAT number": [
         "Momsnummer"
+      ],
+      "Add Business Number": [
+        "Lägg till företagsnummer"
+      ],
+      "Business Number": [
+        "Företagsnummer"
+      ],
+      "Edit Business Number": [
+        "Redigera företagsnummer"
       ]
     },
     "PGP key encryption warning": {
@@ -12551,6 +12605,14 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Du kan få upp till **${ maxRewardAmount }** i kredit."
+      ],
+      "Friend joined": [
+        "Vän gick med",
+        "Vänner gick med"
+      ],
+      "Friend subscribed": [
+        "Vän prenumererade",
+        "Vänner prenumererade"
       ]
     },
     "Remaining days before the message expire": {
@@ -15416,6 +15478,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorier kommer!"
+      ],
+      "Fewer distractions, more focus": [
+        "Färre distraktioner, mer fokus"
       ]
     },
     "Today icon tooltip in mini calendar": {

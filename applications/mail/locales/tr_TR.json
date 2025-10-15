@@ -1487,7 +1487,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Güvenilen anahtar",
+        "Güvenilen anahtarlar"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1675,6 +1676,12 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Continue without categories": [
+        "Kategoriler olmadan ilerle"
+      ],
+      "Try categories": [
+        "Kategorileri deneyin"
       ]
     },
     "action": {
@@ -4371,6 +4378,21 @@
       ],
       "This event was updated.": [
         "Bu etkinlik güncellendi."
+      ],
+      "DESCRIPTION:": [
+        "AÇIKLAMA:"
+      ],
+      "LOCATION:": [
+        "KONUM:"
+      ],
+      "TIME:": [
+        "ZAMAN:"
+      ],
+      "TITLE:": [
+        "BAŞLIK:"
+      ],
+      "You are invited to": [
+        "Şuraya davet edildiniz"
       ]
     },
     "Email body for invitation (date part)": {
@@ -7405,8 +7427,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -7502,7 +7523,7 @@
         "Düşük Öncelik"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME } varsayılan e-posta uygulamanız olsun."
+        "${ MAIL_APP_NAME } uygulamasını varsayılan e-posta uygulamanız yapın."
       ],
       "Manage your folders": [
         "Klasörlerinizi yönetin"
@@ -8831,6 +8852,18 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Dağınıklıktan arındırılmış bir gelen kutusundan yalnızca birkaç tık uzaktasınız."
+      ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Kategoriler istenmeyen ileti süzgeçleri gibi çalışır. ${ MAIL_APP_NAME } e-postalarınızı asla okumaz veya verilerinizi paylaşmaz."
+      ],
+      "Includes invoices, purchase orders, and payment confirmations.": [
+        "Faturaları, satın alma siparişlerini ve ödeme onaylarını içerir."
+      ],
+      "Includes marketing emails and non-urgent app notifications.": [
+        "Pazarlama e-postalarını ve acil olmayan uygulama bildirimlerini içerir."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "Yeni e-posta kategorileri ile, yalnızca önemli iletiler birincil gelen kutunuza düşer. Diğer her şey kategoriler halinde düzenlenir."
       ]
     },
     "info": {
@@ -11030,6 +11063,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } adreslerinizin veya takma adlarınızın sızıp sızmadığını denetlemek için karanlık ağı tararız ve herhangi bir şey bulursak sizi hemen uyarırız."
+      ],
+      "Short domain (@pm.me)": [
+        "Kısa etki alanı (@pm.me)"
       ]
     },
     "new_plans: feature highlight": {
@@ -15577,6 +15613,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategoriler özelliği geliyor!"
+      ],
+      "Fewer distractions, more focus": [
+        "Daha az dikkat dağınıklığı, daha iyi odaklanma"
       ]
     },
     "Today icon tooltip in mini calendar": {

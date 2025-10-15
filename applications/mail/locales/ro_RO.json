@@ -1677,6 +1677,17 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Continue without categories": [
+        "Continuare fără categorii"
+      ],
+      "Trust key": [
+        "Cheie de încredere",
+        "Cheie de încredere",
+        "Chei de încredere"
+      ],
+      "Try categories": [
+        "Încercați categoriile"
       ]
     },
     "action": {
@@ -7518,9 +7529,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -8968,6 +8977,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sunteți la doar câteva clicuri distanță de un cont cu mesaje ordonate."
+      ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Categoriile funcționează la fel ca filtrele de mesaje nedorite. ${ MAIL_APP_NAME } nu vă citește niciodată mesajele și nu vă partajează datele."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "Cu noile categorii de mesaje, doar mesajele importante ajung în folderul principal de mesaje primite. Restul sunt organizate pe categorii."
       ]
     },
     "info": {
@@ -11205,6 +11220,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Scanăm internetul ascuns pentru a verifica dacă adresele sau aliasurile ${ BRAND_NAME } v-au fost divulgate și vă avertizăm imediat dacă găsim ceva."
+      ],
+      "Short domain (@pm.me)": [
+        "Domeniu scurt (@pm.me)"
       ]
     },
     "new_plans: feature highlight": {
@@ -12542,7 +12560,7 @@
         "Număr de telefon"
       ],
       "Please describe the problem and include any error messages": [
-        "Descrieți problema incluzând și mesajele de eroare ce apar"
+        "Descrieți problema incluzând și mesajele de eroare care apar."
       ],
       "Please insert link first": [
         "Introduceți mai întâi legătura"
@@ -15762,6 +15780,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Sosesc categoriile!"
+      ],
+      "Fewer distractions, more focus": [
+        "Mai puține distrageri, mai multă concentrare"
       ]
     },
     "Today icon tooltip in mini calendar": {

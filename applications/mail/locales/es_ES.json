@@ -1660,6 +1660,16 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Continue without categories": [
+        "Continuar sin categorías"
+      ],
+      "Trust key": [
+        "Clave de confianza",
+        "Claves de confianza"
+      ],
+      "Try categories": [
+        "Prueba las categorías"
       ]
     },
     "action": {
@@ -4356,6 +4366,21 @@
       ],
       "This event was updated.": [
         "Se ha actualizado este evento."
+      ],
+      "DESCRIPTION:": [
+        "DESCRIPCIÓN:"
+      ],
+      "LOCATION:": [
+        "UBICACIÓN:"
+      ],
+      "TIME:": [
+        "HORA:"
+      ],
+      "TITLE:": [
+        "TÍTULO:"
+      ],
+      "You are invited to": [
+        "Estás invitado a"
       ]
     },
     "Email body for invitation (date part)": {
@@ -7375,8 +7400,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar una imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -8801,6 +8825,18 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Estás a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Las categorías funcionan igual que los filtros de spam. ${ MAIL_APP_NAME } nunca lee tus correos electrónicos ni comparte tus datos."
+      ],
+      "Includes invoices, purchase orders, and payment confirmations.": [
+        "Incluye facturas, órdenes de compra y confirmaciones de pago."
+      ],
+      "Includes marketing emails and non-urgent app notifications.": [
+        "Incluye correos electrónicos de marketing y notificaciones no urgentes de la aplicación."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "Con las nuevas categorías de correo electrónico, solo los mensajes importantes llegan a tu bandeja de entrada principal. Todo lo demás se organiza en categorías."
       ]
     },
     "info": {
@@ -9831,6 +9867,10 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "${ count } unread message": [
+        "${ count } mensaje sin leer",
+        "${ count } mensajes sin leer"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10986,6 +11026,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la red oscura para verificar si tus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarte de inmediato si encontramos algo."
+      ],
+      "Short domain (@pm.me)": [
+        "Dominio corto (@pm.me)"
       ]
     },
     "new_plans: feature highlight": {
@@ -15512,6 +15555,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ ¡Llegan las categorías!"
+      ],
+      "Fewer distractions, more focus": [
+        "Menos distracciones, más concentración"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1484,7 +1484,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "La clé est fiable"
+        "Clé de confiance",
+        "Clés de confiance"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -1672,6 +1673,15 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Continue without categories": [
+        "Continuer sans catégories"
+      ],
+      "Customize categories": [
+        "Personnaliser les catégories"
+      ],
+      "Try categories": [
+        "Essayer les catégories"
       ]
     },
     "action": {
@@ -4368,6 +4378,21 @@
       ],
       "This event was updated.": [
         "Cet événement a été mis à jour."
+      ],
+      "DESCRIPTION:": [
+        "DESCRIPTION :"
+      ],
+      "LOCATION:": [
+        "EMPLACEMENT :"
+      ],
+      "TIME:": [
+        "HEURE :"
+      ],
+      "TITLE:": [
+        "TITRE :"
+      ],
+      "You are invited to": [
+        "Vous êtes invité à"
       ]
     },
     "Email body for invitation (date part)": {
@@ -7402,8 +7427,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images."
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -7499,7 +7523,7 @@
         "Priorité basse"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Définissez ${ MAIL_APP_NAME } comme application de messagerie par défaut."
+        "Faire de ${ MAIL_APP_NAME } votre application de messagerie par défaut."
       ],
       "Manage your folders": [
         "Gérer vos dossiers"
@@ -8828,6 +8852,18 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Plus que quelques clics pour une boite de réception bien rangée"
+      ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Les catégories fonctionnent comme des filtres anti-indésirables/spam. ${ MAIL_APP_NAME } ne lit jamais vos messages ni ne partage vos données."
+      ],
+      "Includes invoices, purchase orders, and payment confirmations.": [
+        "Inclus les factures, les bons de commande et les confirmations de paiement."
+      ],
+      "Includes marketing emails and non-urgent app notifications.": [
+        "Inclut les messages marketing et les notifications d'application non urgentes."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "Avec les nouvelles catégories de messages, seuls les messages importants arrivent dans votre boite de réception principale. Tout le reste est organisé en catégories."
       ]
     },
     "info": {
@@ -9869,6 +9905,9 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
+        "Ajoutez ou retirez des catégories. Activez ou désactivez les notifications. Ajustez-les à tout moment dans le menu ${ menuIcon }."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11024,6 +11063,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Nous analysons le dark web et vérifions si vos adresses ou vos alias ${ BRAND_NAME } ont été divulgués et nous vous informons immédiatement des résultats."
+      ],
+      "Short domain (@pm.me)": [
+        "Domaine court (@pm.me)"
       ]
     },
     "new_plans: feature highlight": {
@@ -15568,6 +15610,12 @@
       ],
       "✨ Categories are coming!": [
         "✨ Les catégories arrivent !"
+      ],
+      "Customize categories to fit your needs": [
+        "Personnalisez les catégories pour répondre à vos besoins"
+      ],
+      "Fewer distractions, more focus": [
+        "Moins de distractions, plus de concentration"
       ]
     },
     "Today icon tooltip in mini calendar": {

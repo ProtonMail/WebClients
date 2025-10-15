@@ -1475,7 +1475,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar clave"
+        "Clave de confianza",
+        "Claves de confianza"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -1663,6 +1664,24 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Continue with categories": [
+        "Continuar con categorías"
+      ],
+      "Continue without categories": [
+        "Continuar sin categorías"
+      ],
+      "Customize categories": [
+        "Personalizar categorías"
+      ],
+      "Is this private?": [
+        "¿Esto es privado?"
+      ],
+      "Keep inbox as before": [
+        "Mantener la bandeja de entrada como antes"
+      ],
+      "Try categories": [
+        "Pruebe las categorías"
       ]
     },
     "action": {
@@ -4359,6 +4378,21 @@
       ],
       "This event was updated.": [
         "Este evento fue actualizado."
+      ],
+      "DESCRIPTION:": [
+        "DESCRIPCIÓN:"
+      ],
+      "LOCATION:": [
+        "UBICACIÓN:"
+      ],
+      "TIME:": [
+        "HORA:"
+      ],
+      "TITLE:": [
+        "TÍTULO:"
+      ],
+      "You are invited to": [
+        "Se le invitó a"
       ]
     },
     "Email body for invitation (date part)": {
@@ -7373,8 +7407,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -8799,6 +8832,33 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Está a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Las categorías funcionan igual que los filtros de spam. ${ MAIL_APP_NAME } nunca lee sus correos electrónicos ni comparte sus datos."
+      ],
+      "Categories work like spam filters. We only look for patterns in unencrypted header and technical data. We do not read email content, share your data, or infringe on your privacy.": [
+        "Las categorías funcionan como filtros de spam. Solo buscamos patrones en los encabezados sin cifrar y datos técnicos. No leemos el contenido del correo, sus datos ni infringimos su privacidad."
+      ],
+      "Includes bills, receipts, orders, and bookings.": [
+        "Incluye facturas, recibos, órdenes y reservaciones."
+      ],
+      "Includes invoices, purchase orders, and payment confirmations.": [
+        "Incluye facturas, órdenes de compra y confirmaciones de pago."
+      ],
+      "Includes marketing emails and non-urgent app notifications.": [
+        "Incluye correos electrónicos de marketing y notificaciones no urgentes de la aplicación."
+      ],
+      "Includes marketing emails like offers and product announcements.": [
+        "Incluye correos de mercadeo como ofertas y anuncios de productos."
+      ],
+      "Includes news recaps and other non-promotional content. ": [
+        "Incluye recapitulaciones de noticias y otros contenidos no promocionales. "
+      ],
+      "Includes updates from social networks and media-sharing sites.": [
+        "Incluye actualizaciones de redes sociales y sitios de medios"
+      ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "Con las nuevas categorías de correo electrónico, solo los mensajes importantes llegan a su bandeja de entrada principal. Todo lo demás se organiza en categorías."
       ]
     },
     "info": {
@@ -9829,6 +9889,20 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "${ count } unread conversation": [
+        "${ count } conversación sin leer",
+        "${ count } conversaciones sin leer"
+      ],
+      "${ count } unread message": [
+        "${ count } mensaje sin leer",
+        "${ count } mensajes sin leer"
+      ],
+      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
+        "Añada o elimine categorías. Configue o apague notificaciones. Ajústelo en cualquier momento en el menú ${ menuIcon }."
+      ],
+      "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
+        "¡No más mensajes importantes perdidos! Ahora se muestran en ${ primaryCopy }. Todo lo demás está ordenado por categoría para que sea fácil encontrarlo y no sature la bandeja de entrada."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10984,6 +11058,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la dark web para verificar si sus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarle de inmediato si encontramos algo."
+      ],
+      "Short domain (@pm.me)": [
+        "Dominio corto (@pm.me)"
       ]
     },
     "new_plans: feature highlight": {
@@ -11608,6 +11685,12 @@
       ],
       "Social media": [
         "Redes sociales"
+      ],
+      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
+        "Cambie su dirección de correo para servicios populares ahora para evitar que le rastreen y perfilen. ${ learnMoreLink }"
+      ],
+      "Maybe later": [
+        "Quizás más tarde"
       ]
     },
     "Onboarding modal": {
@@ -12091,6 +12174,18 @@
       ],
       "Your payment is still being processed": [
         "Su pago aún está siendo procesado"
+      ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Se requiere un método de pago para activar la suscripción después de que finalice el periodo de prueba."
+      ],
+      "This offer is not available with your current plan.": [
+        "Esta oferta no está disponible con el plan actual."
+      ],
+      "You already have a subscription to this plan.": [
+        "Ya tiene una suscripción a este plan."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Ya tiene una suscripción a este plan. Puede cambiar la suscripción en ${ subscriptionPlatform }."
       ]
     },
     "Payments.Error": {
@@ -15504,6 +15599,18 @@
       ],
       "✨ Categories are coming!": [
         "✨ ¡Llegan las categorías!"
+      ],
+      "Built for privacy": [
+        "Hechas para la privacidad"
+      ],
+      "Customize categories to fit your needs": [
+        "Personalice las categorías según sus necesidades"
+      ],
+      "Fewer distractions, more focus": [
+        "Menos distracciones, más concentración"
+      ],
+      "Introducing email categories": [
+        "Presentamos las categorías de correos"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16075,6 +16182,11 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Inicie sesión con la misma dirección de Gmail que conectó originalmente"
       ]
     }
   }

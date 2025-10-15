@@ -1652,6 +1652,30 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Continue with categories": [
+        "カテゴリを続ける"
+      ],
+      "Continue without categories": [
+        "カテゴリを指定せずに続行"
+      ],
+      "Customize categories": [
+        "カテゴリのカスタマイズ"
+      ],
+      "Is this private?": [
+        "これはプライベートですか？"
+      ],
+      "Keep inbox as before": [
+        "受信トレイを以前のままに保つ"
+      ],
+      "Toggle referral": [
+        "紹介の切り替え"
+      ],
+      "Trust key": [
+        "鍵を信頼する"
+      ],
+      "Try categories": [
+        "カテゴリを試す"
       ]
     },
     "action": {
@@ -1998,6 +2022,12 @@
       ],
       "You have reached the trial limit.": [
         "トライアルの制限に達しました。"
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate } にトライアルが終了すると、${ renewCycle } か月ごとに自動更新される有料サブスクリプションに移行します。${ formattedDate } までにキャンセルされれば、課金されることはありません。"
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate } にトライアルが終了すると、毎月自動更新される有料サブスクリプションに移行します。${ formattedDate } までにキャンセルされれば、課金されることはありません。"
       ]
     },
     "b2b_trials_Action": {
@@ -4326,6 +4356,21 @@
       ],
       "This event was updated.": [
         "この予定は更新されました。"
+      ],
+      "DESCRIPTION:": [
+        "詳細："
+      ],
+      "LOCATION:": [
+        "場所："
+      ],
+      "TIME:": [
+        "時間："
+      ],
+      "TITLE:": [
+        "タイトル："
+      ],
+      "You are invited to": [
+        "あなたは、次の場所に招待されています："
       ]
     },
     "Email body for invitation (date part)": {
@@ -7230,7 +7275,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像を挿入"
+        "画像の挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -7326,7 +7371,7 @@
         "優先度：低"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME }をデフォルトのメールアプリとして設定。"
+        "${ MAIL_APP_NAME }をデフォルトのメールアプリに設定。"
       ],
       "Manage your folders": [
         "フォルダを管理"
@@ -8632,6 +8677,42 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "不要なものが整理された受信トレイまで、あと数クリックです。"
+      ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "ステップ1：招待リンクで${ BRAND_NAME }に**友達を招待してください**"
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
+        "**ステップ2：** あなたの友達は、選択した${ BRAND_NAME }プランを2週間無料で利用できます。"
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**ステップ2：** あなたの友達は、プランを2週間無料でご利用いただけます。"
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**ステップ3：**友達がプランに登録するたびに、${ referrerRewardAmount } クレジットを獲得できます。"
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**ステップ3：**プランに登録する人ごとに、${ referrerRewardAmount } クレジットを獲得できます。"
+      ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "カテゴリは迷惑メールフィルターと同様に機能します。${ MAIL_APP_NAME } はお客様のメールを既読することはありませんし、お客様のデータを共有することはありません。"
+      ],
+      "Categories work like spam filters. We only look for patterns in unencrypted header and technical data. We do not read email content, share your data, or infringe on your privacy.": [
+        "カテゴリは迷惑メールフィルターのように機能します。当社は暗号化なしのヘッダーおよび技術データのみのパターンを検索します。当社はメールコンテンツを閲覧したり、お客様のデータを共有したり、お客様のプライバシーを侵害することはありません。"
+      ],
+      "Includes bills, receipts, orders, and bookings.": [
+        "請求書、領収書、注文、予約が含まれます。"
+      ],
+      "Includes marketing emails like offers and product announcements.": [
+        "オファーや製品発表などのマーケティングメールが含まれます。"
+      ],
+      "Includes news recaps and other non-promotional content. ": [
+        "ニュースの要約とプロモーション以外のコンテンツが含まれています。 "
+      ],
+      "Includes updates from social networks and media-sharing sites.": [
+        "ソーシャルネットワークおよびメディア共有サイトからの更新が含まれます。"
+      ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "新しいメールカテゴリにより、重要なメッセージのみがお客様のプライマリー受信トレイに届きます。それ以外のすべてはカテゴリに整理されます。"
       ]
     },
     "info": {
@@ -9656,6 +9737,18 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "${ count } unread conversation": [
+        "${ count } 件の未読の会話"
+      ],
+      "${ count } unread message": [
+        "${ count } 件の未読メッセージ"
+      ],
+      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
+        "カテゴリを追加または削除します。通知を設定またはオフにします。${ menuIcon } メニューでいつでも調整できます。"
+      ],
+      "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
+        "重要なメッセージを見逃す心配はもうありません！ これらは${ primaryCopy }の下に表示されます。その他の項目はすべてカテゴリ別に整理されているため、簡単に見つけることができ、お客様の受信トレイを煩雑にすることもありません。"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10781,6 +10874,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ダークウェブをスキャンして、お客様の ${ BRAND_NAME } アドレスやエイリアスが漏洩していないかを確認し、何か見つかった場合はすぐに警告します。"
+      ],
+      "Short domain (@pm.me)": [
+        "短縮ドメイン (@pm.me)"
       ]
     },
     "new_plans: feature highlight": {
@@ -11400,6 +11496,12 @@
       ],
       "Social media": [
         "ソーシャルメディア"
+      ],
+      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
+        "追跡やプロファイリングを回避するため、人気のあるサービスで今すぐお客様のメールアドレスを変更してください。${ learnMoreLink }"
+      ],
+      "Maybe later": [
+        "たぶんあとで"
       ]
     },
     "Onboarding modal": {
@@ -11869,6 +11971,27 @@
       ],
       "Your payment is still being processed": [
         "お支払いが現在処理中です"
+      ],
+      "Amount due after trial on ${ formattedDate }": [
+        "${ formattedDate } のトライアル後のお支払い額"
+      ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "トライアル終了後、サブスクリプションを有効化するためには支払い方法が必要です。"
+      ],
+      "terms and conditions": [
+        "利用規約"
+      ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "この操作により、既存のサブスクリプションが拡張されます。新しいアドオンと、現在の支払間隔の残りの期間に対してのみ課金されます。お客様のサブスクリプションの更新日は変更されません。"
+      ],
+      "This offer is not available with your current plan.": [
+        "この特典は現在のプランではご利用いただけません。"
+      ],
+      "You already have a subscription to this plan.": [
+        "すでにこのプランのサブスクリプションに加入済みです。"
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "お客様は既にこのプランのサブスクリプションを契約済みです。${ subscriptionPlatform }でサブスクリプションを変更できます。"
       ]
     },
     "Payments.Error": {
@@ -15046,6 +15169,24 @@
       ],
       "✨ Categories are coming!": [
         "✨ カテゴリがまもなく登場します！"
+      ],
+      "Built for privacy": [
+        "プライバシーのために構築"
+      ],
+      "Customize categories to fit your needs": [
+        "お客様のニーズに合わせてカテゴリをカスタマイズ"
+      ],
+      "Fewer distractions, more focus": [
+        "気を散らすものを減らし、集中力を高める"
+      ],
+      "Introducing email categories": [
+        "メールカテゴリのご紹介"
+      ],
+      "Referral": [
+        "紹介"
+      ],
+      "Share your link": [
+        "リンクを共有"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15572,6 +15713,51 @@
       ],
       "Passcode:": [
         "パスコード："
+      ]
+    },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "最初に接続した同じGmailアドレスでサインインしてください"
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "以前のサブスクリプションプランの未使用分のクレジット"
+      ],
+      "Credits will be added to your balance": [
+        "クレジットがお客様の残高に追加されます。"
+      ]
+    },
+    "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } 紹介ごとに"
+      ],
+      "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "最大${ maxRewardAmount }のクレジットを獲得できます。お客様が招待された方が${ BRAND_NAME }のプランに登録されますと、お客様は${ referrerRewardAmount }を受け取ることができます。"
+      ],
+      "Friend joined": [
+        "友達が参加しました"
+      ],
+      "Friend subscribed": [
+        "友達が登録済み"
+      ],
+      "Invite friends. Get credits.": [
+        "友達を招待。クレジットを獲得。"
+      ],
+      "Invited friends": [
+        "招待済みの友達"
+      ],
+      "More sharing options": [
+        "その他の共有オプション"
+      ],
+      "Refer friends": [
+        "友達を招待"
+      ],
+      "Start earning credits": [
+        "クレジット獲得を開始する"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "最大**${ maxRewardAmount }**分のクレジットを獲得できます。"
       ]
     }
   }

@@ -1663,6 +1663,25 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "Continue with categories": [
+        "Fortsett med kategorier"
+      ],
+      "Continue without categories": [
+        "Fortsett uten kategorier"
+      ],
+      "Is this private?": [
+        "Er dette privat?"
+      ],
+      "Keep inbox as before": [
+        "Behold innboksen som før"
+      ],
+      "Trust key": [
+        "Klarér nøkkel",
+        "Klarér nøkler"
+      ],
+      "Try categories": [
+        "Prøv kategorier"
       ]
     },
     "action": {
@@ -4359,6 +4378,21 @@
       ],
       "This event was updated.": [
         "Denne hendelsen ble oppdatert."
+      ],
+      "DESCRIPTION:": [
+        "BESKRIVELSE:"
+      ],
+      "LOCATION:": [
+        "STED:"
+      ],
+      "TIME:": [
+        "TIDSPUNKT:"
+      ],
+      "TITLE:": [
+        "TITTEL:"
+      ],
+      "You are invited to": [
+        "Du er invitert til"
       ]
     },
     "Email body for invitation (date part)": {
@@ -7378,8 +7412,7 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde",
-        "Sett inn bilder"
+        "Sett inn bilde"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -8804,6 +8837,33 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er bare noen få klikk unna en ryddig innboks"
+      ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Kategorier fungerer akkurat som søppelpostfiltre. ${ MAIL_APP_NAME } leser aldri e-postene eller deler dataene dine."
+      ],
+      "Categories work like spam filters. We only look for patterns in unencrypted header and technical data. We do not read email content, share your data, or infringe on your privacy.": [
+        "Kategorier fungerer som søppelpostfiltre. Vi ser bare etter mønstre i ukrypterte topptekster og tekniske data. Vi leser ikke e-postinnhold, deler dataene dine eller krenker personvernet ditt."
+      ],
+      "Includes bills, receipts, orders, and bookings.": [
+        "Inkluderer regninger, kvitteringer, bestillinger og reservasjoner."
+      ],
+      "Includes invoices, purchase orders, and payment confirmations.": [
+        "Inkluderer fakturaer, bestillinger og betalingsbekreftelser."
+      ],
+      "Includes marketing emails and non-urgent app notifications.": [
+        "Inkluderer markedsførings-e-poster og appvarsler som ikke haster."
+      ],
+      "Includes marketing emails like offers and product announcements.": [
+        "Inkluderer markedsførings-e-poster som tilbud og produktannonseringer."
+      ],
+      "Includes news recaps and other non-promotional content. ": [
+        "Inkluderer nyhetssammendrag og annet ikke-salgsfremmende innhold. "
+      ],
+      "Includes updates from social networks and media-sharing sites.": [
+        "Inkluderer oppdateringer fra sosiale nettverk og nettsteder for mediedeling."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "Med nye e-postkategorier havner bare viktige meldinger i den primær innboksen. Alt annet organiseres i kategorier."
       ]
     },
     "info": {
@@ -9845,6 +9905,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
+        "Slutt på å gå glipp av viktige meldinger! Disse vises nå under ${ primaryCopy }. Alt annet er sortert etter kategori, slik at de er enkle å finne og ikke roter til innboksen din."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11000,6 +11063,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skanner det mørke nettet for å sjekke om ${ BRAND_NAME }-adressene eller aliasene dine har blitt lekket, og varsler deg umiddelbart hvis vi finner noe."
+      ],
+      "Short domain (@pm.me)": [
+        "Kort domene (@pm.me)"
       ]
     },
     "new_plans: feature highlight": {
@@ -12113,6 +12179,18 @@
       ],
       "Your payment is still being processed": [
         "Betalingen din behandles fortsatt"
+      ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Betalingsmåte kreves for at abonnementet skal aktiveres etter at prøveperioden er over."
+      ],
+      "This offer is not available with your current plan.": [
+        "Dette tilbudet er ikke tilgjengelig med din nåværende plan."
+      ],
+      "You already have a subscription to this plan.": [
+        "Du har allerede et abonnement på denne planen."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Du har allerede et abonnement på denne planen. Du kan endre abonnementet ditt på ${ subscriptionPlatform }."
       ]
     },
     "Payments.Error": {
@@ -15434,6 +15512,15 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorier kommer!"
+      ],
+      "Built for privacy": [
+        "Bygget for personvern"
+      ],
+      "Fewer distractions, more focus": [
+        "Færre forstyrrelser, mer fokus"
+      ],
+      "Introducing email categories": [
+        "Introduksjon av e-postkategorier"
       ]
     },
     "Today icon tooltip in mini calendar": {

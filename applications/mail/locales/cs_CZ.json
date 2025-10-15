@@ -1495,7 +1495,10 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči"
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -1685,6 +1688,12 @@
       ],
       "Zoom out": [
         "Oddálit"
+      ],
+      "Continue without categories": [
+        "Pokračovat bez kategorií"
+      ],
+      "Try categories": [
+        "Vyzkoušejte kategorie"
       ]
     },
     "action": {
@@ -4413,6 +4422,21 @@
       ],
       "This event was updated.": [
         "Tato událost byla aktualizována."
+      ],
+      "DESCRIPTION:": [
+        "POPIS:"
+      ],
+      "LOCATION:": [
+        "MÍSTO:"
+      ],
+      "TIME:": [
+        "ČAS:"
+      ],
+      "TITLE:": [
+        "NÁZEV:"
+      ],
+      "You are invited to": [
+        "Jste pozváni na"
       ]
     },
     "Email body for invitation (date part)": {
@@ -7637,10 +7661,7 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -9111,6 +9132,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Od doručené pošty bez nepořádku vás dělí jen několik kliknutí"
+      ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Kategorie fungují stejně jako spam filtry. ${ MAIL_APP_NAME } nikdy nečte vaše e-maily ani nesdílí vaše data."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "Díky novým kategoriím e-mailů se pouze důležité zprávy dostanou do vaší primární doručené pošty. Všechno ostatní je uspořádáno do kategorií."
       ]
     },
     "info": {
@@ -11386,6 +11413,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Prohledáváme dark web a kontrolujeme, zda nedošlo k úniku vašich adres nebo aliasů ${ BRAND_NAME }, pokud něco najdeme, okamžitě vás upozorníme."
+      ],
+      "Short domain (@pm.me)": [
+        "Krátká doména (@pm.me)"
       ]
     },
     "new_plans: feature highlight": {
@@ -16048,6 +16078,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorie se blíží!"
+      ],
+      "Fewer distractions, more focus": [
+        "Méně rozptylování, více soustředění"
       ]
     },
     "Today icon tooltip in mini calendar": {

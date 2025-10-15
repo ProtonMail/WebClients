@@ -1487,7 +1487,8 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Εμπιστοσύνη στο κλειδί"
+        "Κλειδί Εμπιστοσύνης",
+        "Κλειδιά Εμπιστοσύνης"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -1675,6 +1676,12 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Continue without categories": [
+        "Συνεχίστε χωρίς κατηγορίες"
+      ],
+      "Try categories": [
+        "Δοκιμάστε τις κατηγορίες"
       ]
     },
     "action": {
@@ -4371,6 +4378,21 @@
       ],
       "This event was updated.": [
         "Αυτή η εκδήλωση ενημερώθηκε."
+      ],
+      "DESCRIPTION:": [
+        "ΠΕΡΙΓΡΑΦΗ:"
+      ],
+      "LOCATION:": [
+        "ΤΟΠΟΘΕΣΙΑ:"
+      ],
+      "TIME:": [
+        "ΩΡΑ:"
+      ],
+      "TITLE:": [
+        "ΤΙΤΛΟΣ:"
+      ],
+      "You are invited to": [
+        "Είστε προσκεκλημένοι στο"
       ]
     },
     "Email body for invitation (date part)": {
@@ -7405,8 +7427,7 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας",
-        "Εισαγωγή εικόνων"
+        "Εισαγωγή εικόνας"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -8831,6 +8852,18 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Είστε μόνο μερικά κλικ μακριά από τα εισερχόμενα χωρίς ακαταστασία"
+      ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Οι κατηγορίες λειτουργούν ακριβώς όπως τα φίλτρα ανεπιθύμητων. Το ${ MAIL_APP_NAME } δε διαβάζει ποτέ τα ηλεκτρονικά μυνήματά σας και δε μοιράζεται τα δεδομένα σας."
+      ],
+      "Includes invoices, purchase orders, and payment confirmations.": [
+        "Περιλαμβάνει τιμολόγια, παραγγελίες αγοράς και επιβεβαιώσεις πληρωμών."
+      ],
+      "Includes marketing emails and non-urgent app notifications.": [
+        "Περιλαμβάνει διαφημιστικά μηνύματα ηλεκτρονικού ταχυδρομείου και μη επείγουσες ειδοποιήσεις εφαρμογών"
+      ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "Με τις νέες κατηγορίες ηλεκτρονικών μηνυμάτων, μόνο τα σημαντικά μηνύματα καταλήγουν στον κύριο φάκελο εισερχομένων σας. Όλα τα άλλα οργανώνονται σε κατηγορίες."
       ]
     },
     "info": {
@@ -11030,6 +11063,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Σαρώνουμε τον σκοτεινό ιστό για να ελέγξουμε εάν οι διευθύνσεις ή τα ψευδώνυμά σας ${ BRAND_NAME } έχουν διαρρεύσει και σας ειδοποιούμε αμέσως αν βρούμε κάτι."
+      ],
+      "Short domain (@pm.me)": [
+        "Σύντομος τομέας (@pm.me)"
       ]
     },
     "new_plans: feature highlight": {
@@ -15482,6 +15518,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Οι κατηγορίες έρχονται!"
+      ],
+      "Fewer distractions, more focus": [
+        "Λιγότερες περισπασμοί, περισσότερη συγκέντρωση"
       ]
     },
     "Today icon tooltip in mini calendar": {
