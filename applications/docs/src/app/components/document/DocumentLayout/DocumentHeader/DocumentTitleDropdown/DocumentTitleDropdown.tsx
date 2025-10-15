@@ -26,8 +26,8 @@ import type {
   RenameControllerInterface,
 } from '@proton/docs-core'
 import { isDocumentState, PostApplicationError } from '@proton/docs-core'
-import type { SheetImportData } from '@proton/docs-shared'
-import { type DocTrashState, isWordCountSupported } from '@proton/docs-shared'
+import type { FileMenuAction, SheetImportData } from '@proton/docs-shared'
+import { type DocTrashState, FileMenuActionEvent, isWordCountSupported } from '@proton/docs-shared'
 import { isPrivateNodeMeta, type DocumentAction } from '@proton/drive-store'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS, APPS_CONFIGURATION, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
@@ -77,7 +77,7 @@ export function DocumentTitleDropdown({
   const [isMakingNewDocument, setIsMakingNewDocument] = useState<boolean>(false)
   const [pdfModal, openPdfModal] = useExportToPDFModal()
   const [historyModal, showHistoryModal] = useHistoryViewerModal()
-  const [sheetImportModal, openSheetImportModal] = useSheetImportModal()
+  const [sheetImportModal, showSheetImportModal] = useSheetImportModal()
   const [showVersionNumber, setShowVersionNumber] = useState(false)
   const [showDebugToggle, setShowDebugToggle] = useState(false)
   const { toggleDebugMode } = useDebugMode()
@@ -148,28 +148,22 @@ export function DocumentTitleDropdown({
     }
   }, [application.eventBus, renameController, renameInputValue, title])
 
-  const onDuplicate = useCallback(
-    async (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-      if (!authenticatedController) {
-        throw new Error('Attempting to duplicate document in a public context')
-      }
+  const onDuplicate = useCallback(async () => {
+    if (!authenticatedController) {
+      throw new Error('Attempting to duplicate document in a public context')
+    }
 
-      event.preventDefault()
-      event.stopPropagation()
+    setIsDuplicating(true)
 
-      setIsDuplicating(true)
-
+    try {
       const editorState = await editorController?.exportData('yjs')
       if (editorState) {
-        void authenticatedController.duplicateDocument(editorState).finally(() => {
-          setIsDuplicating(false)
-        })
-      } else {
-        setIsDuplicating(false)
+        await authenticatedController.duplicateDocument(editorState)
       }
-    },
-    [authenticatedController, editorController],
-  )
+    } finally {
+      setIsDuplicating(false)
+    }
+  }, [authenticatedController, editorController])
 
   const printAsPDF = useCallback(() => {
     editorController.printAsPDF().catch(console.error)
@@ -197,19 +191,14 @@ export function DocumentTitleDropdown({
     )
   }, [documentState, authenticatedController])
 
-  const onNewDocument = useCallback(
-    (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-      event.preventDefault()
-      event.stopPropagation()
-
-      setIsMakingNewDocument(true)
-
-      void authenticatedController?.createNewDocument(documentType).finally(() => {
-        setIsMakingNewDocument(false)
-      })
-    },
-    [authenticatedController, documentType],
-  )
+  const onNewDocument = useCallback(async () => {
+    setIsMakingNewDocument(true)
+    try {
+      await authenticatedController?.createNewDocument(documentType)
+    } finally {
+      setIsMakingNewDocument(false)
+    }
+  }, [authenticatedController, documentType])
 
   useEffect(() => {
     if (actionMode === 'history') {
@@ -240,6 +229,10 @@ export function DocumentTitleDropdown({
     [getLocalID],
   )
 
+  const openRecentSpreadsheets = useCallback(() => {
+    window.open(getAppHref('/', APPS.PROTONSHEETS, getLocalID()), '_blank')
+  }, [getLocalID])
+
   const openDriveFolderForDocument = useCallback(async () => {
     const node = documentState.getProperty('decryptedNode')
     const nodeMeta = documentState.getProperty('entitlements').nodeMeta
@@ -266,6 +259,93 @@ export function DocumentTitleDropdown({
   const handleDownloadLogs = useCallback(() => {
     void downloadLogsAsJSON(editorController, documentType)
   }, [editorController, documentType])
+
+  const openSheetImportModal = useCallback(() => {
+    showSheetImportModal({
+      handleImport: handleSheetImportData,
+    })
+  }, [handleSheetImportData, showSheetImportModal])
+
+  const openMoveToFolderModal = useCallback(() => {
+    authenticatedController?.openMoveToFolderModal()
+  }, [authenticatedController])
+
+  const trashDocument = useCallback(async () => {
+    if (!authenticatedController) {
+      throw new Error('Attempting to trash document in a public context')
+    }
+    try {
+      await authenticatedController.trashDocument()
+    } finally {
+      close()
+    }
+  }, [authenticatedController, close])
+
+  const showVersionHistory = useCallback(() => {
+    if (!authenticatedController) {
+      throw new Error('Attempting to view version history in a public context')
+    }
+    showHistoryModal({
+      versionHistory: authenticatedController.getVersionHistory(),
+      editorController,
+      docController: authenticatedController,
+      documentType,
+    })
+  }, [authenticatedController, editorController, documentType, showHistoryModal])
+
+  const openHelp = useCallback(() => {
+    window.open(getStaticURL('/support'), '_blank')
+  }, [])
+
+  useEffect(() => {
+    return application.eventBus.addEventCallback(async (data: FileMenuAction) => {
+      switch (data.type) {
+        case 'new-spreadsheet':
+          return onNewDocument()
+        case 'import':
+          openSheetImportModal()
+          return
+        case 'make-a-copy':
+          return onDuplicate()
+        case 'move-to-folder':
+          openMoveToFolderModal()
+          break
+        case 'see-version-history':
+          showVersionHistory()
+          break
+        case 'move-to-trash':
+          return trashDocument()
+        case 'print':
+          printAsPDF()
+          break
+        case 'help':
+          openHelp()
+          break
+        case 'open-proton-drive':
+          openProtonDrive()
+          break
+        case 'download':
+          void editorController.exportAndDownload(data.format)
+          break
+        case 'view-recent-spreadsheets':
+          openRecentSpreadsheets()
+          break
+      }
+    }, FileMenuActionEvent)
+  }, [
+    application.eventBus,
+    onDuplicate,
+    onNewDocument,
+    openMoveToFolderModal,
+    openSheetImportModal,
+    showVersionHistory,
+    trashDocument,
+    printAsPDF,
+    openHelp,
+    openProtonDrive,
+    editorController,
+    openRecentSpreadsheets,
+  ])
 
   if (isRenaming) {
     return (
@@ -337,7 +417,11 @@ export function DocumentTitleDropdown({
             <DropdownMenuButton
               disabled={isMakingNewDocument}
               className="flex items-center text-left"
-              onClick={onNewDocument}
+              onClick={(e) => {
+                e.preventDefault()
+                e.stopPropagation()
+                void onNewDocument()
+              }}
               data-testid="dropdown-new-document"
             >
               <Icon name="file" className="color-weak mr-2" />
@@ -346,15 +430,11 @@ export function DocumentTitleDropdown({
             </DropdownMenuButton>
           )}
 
-          {isSpreadsheet && (
+          {isSpreadsheet && documentState.getProperty('userRole').canEdit() && (
             <DropdownMenuButton
               className="flex items-center text-left"
               data-testid="dropdown-sheet-import"
-              onClick={() => {
-                openSheetImportModal({
-                  handleImport: handleSheetImportData,
-                })
-              }}
+              onClick={openSheetImportModal}
             >
               <Icon name="file-arrow-in-up" className="color-weak mr-2" />
               {c('Action').t`Import`}
@@ -365,7 +445,11 @@ export function DocumentTitleDropdown({
             <DropdownMenuButton
               disabled={isDuplicating}
               className="flex items-center text-left"
-              onClick={onDuplicate}
+              onClick={(e) => {
+                e.preventDefault()
+                e.stopPropagation()
+                void onDuplicate()
+              }}
               data-testid="dropdown-duplicate"
             >
               <Icon name="squares" className="color-weak mr-2" />
@@ -378,7 +462,7 @@ export function DocumentTitleDropdown({
             <DropdownMenuButton
               className="flex items-center text-left"
               data-testid="dropdown-move-to-folder"
-              onClick={() => authenticatedController.openMoveToFolderModal()}
+              onClick={openMoveToFolderModal}
             >
               <Icon name="arrows-cross" className="color-weak mr-2" />
               {c('Action').t`Move to folder`}
@@ -388,18 +472,7 @@ export function DocumentTitleDropdown({
           {!isPublicMode && (
             <DropdownMenuButton
               className="flex items-center text-left"
-              onClick={() => {
-                if (!authenticatedController) {
-                  throw new Error('Attempting to view version history in a public context')
-                }
-
-                showHistoryModal({
-                  versionHistory: authenticatedController.getVersionHistory(),
-                  editorController,
-                  docController: authenticatedController,
-                  documentType,
-                })
-              }}
+              onClick={showVersionHistory}
               data-testid="dropdown-versioning"
             >
               <Icon name="clock-rotate-left" className="color-weak mr-2" />
@@ -483,16 +556,9 @@ export function DocumentTitleDropdown({
               disabled={trashState === 'trashing' || trashState === 'trashed'}
               data-testid="dropdown-trash"
               onClick={(event) => {
-                if (!authenticatedController) {
-                  throw new Error('Attempting to trash document in a public context')
-                }
-
                 event.preventDefault()
                 event.stopPropagation()
-
-                void authenticatedController.trashDocument().finally(() => {
-                  close()
-                })
+                void trashDocument()
               }}
               className="flex items-center text-left"
             >
@@ -624,13 +690,7 @@ export function DocumentTitleDropdown({
 
           <hr className="my-1 min-h-px" />
 
-          <DropdownMenuButton
-            className="flex items-center text-left"
-            onClick={() => {
-              window.open(getStaticURL('/support'), '_blank')
-            }}
-            data-testid="dropdown-help"
-          >
+          <DropdownMenuButton className="flex items-center text-left" onClick={openHelp} data-testid="dropdown-help">
             <Icon name="info-circle" className="color-weak mr-2" />
             {c('Action').t`Help`}
             {showVersionNumber && <span className="ml-auto text-[--text-hint]">v{APP_VERSION}</span>}

@@ -11,6 +11,7 @@ import type {
   BroadcastSource,
   SuggestionSummaryType,
   SafeDocsUserState,
+  FileMenuAction,
 } from '@proton/docs-shared'
 import { EditorBridgeMessageType, BridgeOriginProvider } from '@proton/docs-shared'
 import { GenerateUUID } from '@proton/docs-shared'
@@ -136,6 +137,10 @@ export class ClientInvoker implements EditorRequiresClientMethods {
 
   async fetchExternalImageAsBase64(url: string): Promise<string | undefined> {
     return this.invokeClientMethod('fetchExternalImageAsBase64', [url])
+  }
+
+  async handleFileMenuAction(action: FileMenuAction): Promise<void> {
+    return this.invokeClientMethod('handleFileMenuAction', [action])
   }
 
   public handleReplyFromClient(message: ClientToEditorReplyMessage): void {
