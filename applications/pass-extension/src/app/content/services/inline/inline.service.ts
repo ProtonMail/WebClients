@@ -81,15 +81,6 @@ export const createInlineService = ({
         registry.attachDropdown();
     };
 
-    /** When sub-frame loses focus but top-level UI gains focus, don't close dropdown
-     * as this indicates legitimate user interaction with our UI elements */
-    const onInlineFrameBlur: FrameMessageHandler<WorkerMessageType.INLINE_FRAME_BLUR> = ({ payload }) => {
-        const { formId, fieldId } = payload;
-        const visible = registry.dropdown?.getState().visible;
-        const focused = registry.dropdown?.focused;
-        if (visible && !focused) dropdown.close({ type: 'frame', formId, fieldId });
-    };
-
     return {
         init: () => {
             registry.init();
@@ -97,7 +88,6 @@ export const createInlineService = ({
             channel.register(WorkerMessageType.INLINE_DROPDOWN_CLOSE, onDropdownClose);
             channel.register(WorkerMessageType.INLINE_DROPDOWN_STATE, onDropdownState);
             channel.register(WorkerMessageType.INLINE_DROPDOWN_ATTACH, onDropdownAttach);
-            channel.register(WorkerMessageType.INLINE_FRAME_BLUR, onInlineFrameBlur);
         },
 
         setTheme: registry.setTheme,
@@ -109,7 +99,6 @@ export const createInlineService = ({
             channel.unregister(WorkerMessageType.INLINE_DROPDOWN_CLOSE, onDropdownClose);
             channel.unregister(WorkerMessageType.INLINE_DROPDOWN_STATE, onDropdownState);
             channel.unregister(WorkerMessageType.INLINE_DROPDOWN_ATTACH, onDropdownAttach);
-            channel.unregister(WorkerMessageType.INLINE_FRAME_BLUR, onInlineFrameBlur);
         },
 
         sync: withContext((ctx) => {

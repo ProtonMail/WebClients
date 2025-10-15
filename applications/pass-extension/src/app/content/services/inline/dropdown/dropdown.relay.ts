@@ -9,6 +9,7 @@ import { createStyleParser, getComputedHeight, getComputedWidth } from '@proton/
 import { createAsyncQueue } from '@proton/pass/utils/fp/promises';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { resolveDomain, resolveSubdomain } from '@proton/pass/utils/url/utils';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
 import type { DropdownHandler } from './dropdown.abstract';
@@ -113,8 +114,12 @@ export const createDropdownRelayHandler = (): DropdownHandler => {
             );
 
             if (res?.type === 'success') return res;
-            else return { visible: false };
+            else return { visible: false, focused: false };
         },
+
+        /** Wait for async queue to settle, preventing race conditions
+         * between synchronous frame events and async top-frame operations */
+        settled: () => wait(20).then(queue.settled),
     };
 
     return dropdown;

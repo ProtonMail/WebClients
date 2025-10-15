@@ -1,6 +1,7 @@
 import { DROPDOWN_IFRAME_SRC, DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { DROPDOWN_MIN_HEIGHT, DROPDOWN_WIDTH } from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
+import { onFieldDropdownClose } from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.utils';
 import type {
     InlineFieldTarget,
     InlineFrameTarget,
@@ -9,7 +10,6 @@ import { type InlineAppHandler, createInlineApp } from 'proton-pass-extension/ap
 import type { IFrameCloseOptions } from 'proton-pass-extension/app/content/services/inline/inline.messages';
 import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
 import type { PopoverController } from 'proton-pass-extension/app/content/services/inline/inline.popover';
-import { isActiveElement } from 'proton-pass-extension/app/content/utils/nodes';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import type { WithAutofillOrigin } from 'proton-pass-extension/types/autofill';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
@@ -124,14 +124,12 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
 
         switch (target?.type) {
             case 'field': {
-                if (options.refocus) target.field.focus();
-                else if (!isActiveElement(target.field.element)) target.field.detachIcon();
+                onFieldDropdownClose(target.field, options.refocus ?? false);
                 break;
             }
 
             case 'frame': {
                 const { formId, fieldId, fieldFrameId } = target;
-
                 void sendMessage(
                     contentScriptMessage({
                         type: WorkerMessageType.INLINE_DROPDOWN_CLOSED,
