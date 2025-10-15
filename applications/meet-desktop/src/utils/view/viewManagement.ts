@@ -1,6 +1,5 @@
 import { BrowserWindow, Event, Rectangle, WebContents, WebContentsView, app, nativeTheme } from "electron";
 import { debounce } from "lodash";
-import { getWindowBounds, saveWindowBounds } from "../../store/boundsStore";
 import { updateDownloaded } from "../../update";
 import { isLinux, isMac, isWindows } from "../helpers";
 import { checkKeys } from "../keyPinning";
@@ -20,13 +19,11 @@ import { handleBeforeHandle } from "./dialogs";
 import { macOSExitEvent, windowsAndLinuxExitEvent } from "./windowClose";
 import { handleBeforeInput } from "./windowShortcuts";
 import { getAppURL, URLConfig } from "../../store/urlStore";
-import metrics from "../metrics";
 import { join } from "node:path";
 import { c } from "ttag";
 import { isElectronOnMac } from "@proton/shared/lib/helpers/desktop";
 import { APPS, APPS_CONFIGURATION } from "@proton/shared/lib/constants";
 import { MenuBarMonitor } from "./MenuBarMonitor";
-import telemetry from "./../telemetry";
 import { PROTON_THEMES_MAP } from "@proton/shared/lib/themes/themes";
 import { ThemeTypes } from "@proton/shared/lib/themes/constants";
 import { DEFAULT_ZOOM_FACTOR, ZOOM_FACTOR_LIST, ZoomFactor } from "../../constants/zoom";
@@ -86,12 +83,6 @@ export const viewCreationAppStartup = async () => {
     mainWindow = createBrowserWindow();
     createViews();
 
-    const debouncedSaveWindowBounds = debounce(() => saveWindowBounds(mainWindow!), 1000);
-    mainWindow.on("move", debouncedSaveWindowBounds);
-    mainWindow.on("resize", debouncedSaveWindowBounds);
-    mainWindow.on("maximize", debouncedSaveWindowBounds);
-    mainWindow.on("unmaximize", debouncedSaveWindowBounds);
-
     mainWindow.on("maximize", debouncedUpdateViewsBounds);
     mainWindow.on("unmaximize", debouncedUpdateViewsBounds);
     mainWindow.on("enter-full-screen", debouncedUpdateViewsBounds);
@@ -111,10 +102,6 @@ export const viewCreationAppStartup = async () => {
             windowsAndLinuxExitEvent(mainWindow!);
         }
     });
-
-    if (getWindowBounds().maximized) {
-        mainWindow!.maximize();
-    }
 
     // We add the delay to avoid blank windows on startup, only mac supports openAtLogin for now
     const delay = isMac && app.getLoginItemSettings().openAtLogin ? 100 : 0;
@@ -263,7 +250,7 @@ export async function showView(viewID: ViewID, url: string = "") {
 
     const view = viewMap[viewID]!;
     updateViewBounds(view, viewID);
-    view.webContents.setZoomFactor(getWindowBounds().zoom);
+    view.webContents.setZoomFactor(DEFAULT_ZOOM_FACTOR);
 
     if (viewID === currentViewID) {
         if (!url) {
@@ -278,8 +265,6 @@ export async function showView(viewID: ViewID, url: string = "") {
 
     currentViewID = viewID;
     mainWindow!.title = viewTitleMap[viewID];
-
-    telemetry.showView(viewID);
 
     if (url && !isSameURL(url, getViewURL(viewID))) {
         viewLogger(viewID).debug("showView current url is different", getViewURL(viewID));
@@ -343,7 +328,6 @@ export async function loadURL(viewID: ViewID, url: string, { force } = { force: 
         const handleLoadError = (_event: Event, errorCode: number, errorDescription: string) => {
             if (!IGNORED_NET_ERROR_CODES.includes(errorCode)) {
                 viewLogger(viewID).error("did-fail-load", url, errorCode, errorDescription);
-                metrics.recordFailToLoadView();
                 showNetworkErrorPage(viewID);
             }
             cleanup();
@@ -499,12 +483,6 @@ export function getWebContentsViewName(webContents: WebContents): ViewID | null 
 }
 
 export function getZoom() {
-    const zoomFactor = getWindowBounds().zoom;
-
-    if (ZOOM_FACTOR_LIST.includes(zoomFactor)) {
-        return zoomFactor;
-    }
-
     return DEFAULT_ZOOM_FACTOR;
 }
 
@@ -513,12 +491,6 @@ export function setZoom(zoomFactor: ZoomFactor) {
 
     for (const view of Object.values(viewMap)) {
         view?.webContents.setZoomFactor(zoomFactor);
-    }
-
-    if (mainWindow) {
-        saveWindowBounds(mainWindow, {
-            zoom: zoomFactor,
-        });
     }
 }
 
