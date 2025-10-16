@@ -5,6 +5,7 @@ import type { DropdownAction } from 'proton-pass-extension/app/content/constants
 import { DropdownHeader } from 'proton-pass-extension/app/content/services/inline/dropdown/app/components/DropdownHeader';
 import type { DropdownActions } from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.app';
 import { useIFrameAppController, useIFrameAppState } from 'proton-pass-extension/lib/components/Inline/IFrameApp';
+import { useBlurTrap } from 'proton-pass-extension/lib/components/Inline/IFrameFocusController';
 import { ListItem } from 'proton-pass-extension/lib/components/Inline/ListItem';
 import { PauseListDropdown } from 'proton-pass-extension/lib/components/Inline/PauseListDropdown';
 import { ScrollableItemsList } from 'proton-pass-extension/lib/components/Inline/ScrollableItemsList';
@@ -35,6 +36,7 @@ export const AutofillCC: FC<Props> = ({ origin, frameId }) => {
     const [state, setState] = useMountedState<MaybeNull<AutofillCCResult>>(null);
     const loading = useMemo(() => state === null, [state]);
 
+    const withBlurTrap = useBlurTrap();
     const navigateToUpgrade = useNavigateToUpgrade({ upsellRef: UpsellRef.LIMIT_AUTOFILL });
 
     const resolveCandidates = useCallback(() => {
@@ -93,15 +95,15 @@ export const AutofillCC: FC<Props> = ({ origin, frameId }) => {
                                         icon: 'credit-card',
                                         customIcon: getCreditCardIcon(cardType),
                                     }}
-                                    onClick={() =>
+                                    onClick={withBlurTrap(() =>
                                         sendMessage.onSuccess(
                                             contentScriptMessage({
                                                 type: WorkerMessageType.AUTOFILL_CC,
                                                 payload: { shareId, itemId, origin, frameId },
                                             }),
-                                            () => controller.close({ refocus: false })
+                                            () => controller.close({ refocus: true })
                                         )
-                                    }
+                                    )}
                                     subTheme={SubTheme.LIME}
                                 />
                             ))

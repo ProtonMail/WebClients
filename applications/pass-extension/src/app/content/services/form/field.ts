@@ -127,7 +127,7 @@ export const createFieldHandles = ({ element, fieldType, getFormHandle }: Create
         focus(options) {
             const isFocusedField = isActiveElement(field.element);
             if (options?.preventAction) actionTrap(field.element);
-            field.element.focus();
+            field.element.focus({ preventScroll: true });
 
             if (isFocusedField) {
                 const focusEvent = new FocusEvent('focus', {

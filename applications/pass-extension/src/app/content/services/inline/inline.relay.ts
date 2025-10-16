@@ -47,6 +47,7 @@ export const createInlineRelay = ({ controller }: ContentScriptContextFactoryOpt
 
             dropdown.listeners.addListener(window, 'scroll', close, scrollOptions);
             dropdown.listeners.addListener(window, 'blur', maybeClose);
+            dropdown.listeners.addListener(window, 'focus', maybeClose);
             dropdown.listeners.addListener(scrollParent, 'scroll', close, scrollOptions);
             dropdown.listeners.addListener(window, 'mousedown', handleBackdrop(cons(field), close));
         }

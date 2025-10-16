@@ -10,6 +10,7 @@ import {
     useIFrameAppState,
     useRegisterMessageHandler,
 } from 'proton-pass-extension/lib/components/Inline/IFrameApp';
+import { useBlurTrap } from 'proton-pass-extension/lib/components/Inline/IFrameFocusController';
 import { ListItem } from 'proton-pass-extension/lib/components/Inline/ListItem';
 import { PauseListDropdown } from 'proton-pass-extension/lib/components/Inline/PauseListDropdown';
 import { ScrollableItemsList } from 'proton-pass-extension/lib/components/Inline/ScrollableItemsList';
@@ -37,6 +38,8 @@ type Props = Extract<DropdownActions, { action: DropdownAction.AUTOFILL_LOGIN }>
 export const AutofillLogin: FC<Props> = ({ origin, startsWith }) => {
     const { settings, visible } = useIFrameAppState();
     const controller = useIFrameAppController();
+
+    const withBlurTrap = useBlurTrap();
     const navigateToUpgrade = useNavigateToUpgrade({ upsellRef: UpsellRef.LIMIT_AUTOFILL });
 
     const [state, setState] = useMountedState<MaybeNull<AutofillLoginResult>>(null);
@@ -107,7 +110,7 @@ export const AutofillLogin: FC<Props> = ({ origin, startsWith }) => {
                                       icon: 'user',
                                       url: settings.loadDomainImages ? url : undefined,
                                   }}
-                                  onClick={() =>
+                                  onClick={withBlurTrap(() =>
                                       sendMessage.onSuccess(
                                           contentScriptMessage({
                                               type: WorkerMessageType.AUTOFILL_LOGIN,
@@ -118,10 +121,10 @@ export const AutofillLogin: FC<Props> = ({ origin, startsWith }) => {
                                                   type: InlinePortMessageType.AUTOFILL_LOGIN,
                                                   payload: { userIdentifier, password },
                                               });
-                                              controller.close({ refocus: false });
+                                              controller.close();
                                           }
                                       )
-                                  }
+                                  )}
                               />
                           );
                       }),

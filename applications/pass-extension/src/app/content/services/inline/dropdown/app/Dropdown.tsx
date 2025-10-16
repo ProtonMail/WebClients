@@ -11,6 +11,7 @@ import {
     useRegisterMessageHandler,
 } from 'proton-pass-extension/lib/components/Inline/IFrameApp';
 import { IFrameAppAutoSizer } from 'proton-pass-extension/lib/components/Inline/IFrameAppAutoSizer';
+import { IFrameFocusController } from 'proton-pass-extension/lib/components/Inline/IFrameFocusController';
 import { ListItem } from 'proton-pass-extension/lib/components/Inline/ListItem';
 import { ListItemIcon } from 'proton-pass-extension/lib/components/Inline/ListItemIcon';
 import { PinUnlock } from 'proton-pass-extension/lib/components/Inline/PinUnlock';
@@ -55,118 +56,110 @@ export const Dropdown: FC<Props> = ({ initial = null }) => {
         useCallback(({ payload }) => setState(payload), [])
     );
 
-    useEffect(() => {
-        setState((prev) => (visible ? prev : null));
-
-        if (visible) {
-            /** Dropdown iframe is isolated by shadow DOM - blur events don't bubble up.
-             * Listen on iframe window to detect when user switches away and close dropdown.
-             * FIXME: this shouldn't trigger as part of an autofill request which will
-             * cause the dropdown to close prematurely before autofill completes */
-            const onBlur = () => controller.close();
-            window.addEventListener('blur', onBlur, { once: true });
-            return () => window.removeEventListener('blur', onBlur);
-        }
-    }, [visible]);
+    useEffect(() => setState((prev) => (visible ? prev : null)), [visible]);
 
     return (
         <IFrameAppAutoSizer
             className="min-h-custom bg-norm relative"
             style={{ '--min-h-custom': `${DROPDOWN_MIN_HEIGHT}px` }}
         >
-            <Localized>
-                {(() => {
-                    if (loading) return <CircleLoader className="absolute inset-center m-auto" />;
+            <IFrameFocusController>
+                <Localized>
+                    {(() => {
+                        if (loading) return <CircleLoader className="absolute inset-center m-auto" />;
 
-                    if (clientSessionLocked(status)) {
-                        return (
-                            <PinUnlock
-                                header={
-                                    <div className="flex items-center gap-3 mb-3">
-                                        <ListItemIcon type="status" icon={PassIconStatus.LOCKED_DROPDOWN} />
-                                        <div className="flex-1">
-                                            <span className="block text-ellipsis">{c('Label')
-                                                .t`Unlock ${PASS_APP_NAME}`}</span>
-                                            <span className={clsx('block color-weak text-sm text-ellipsis')}>{c('Info')
-                                                .t`Enter your PIN code`}</span>
+                        if (clientSessionLocked(status)) {
+                            return (
+                                <PinUnlock
+                                    header={
+                                        <div className="flex items-center gap-3 mb-3">
+                                            <ListItemIcon type="status" icon={PassIconStatus.LOCKED_DROPDOWN} />
+                                            <div className="flex-1">
+                                                <span className="block text-ellipsis">{c('Label')
+                                                    .t`Unlock ${PASS_APP_NAME}`}</span>
+                                                <span className={clsx('block color-weak text-sm text-ellipsis')}>{c(
+                                                    'Info'
+                                                ).t`Enter your PIN code`}</span>
+                                            </div>
                                         </div>
-                                    </div>
-                                }
-                                onUnlock={() => controller.close({ refocus: true })}
-                            />
-                        );
-                    }
+                                    }
+                                    onUnlock={() => controller.close({ refocus: true })}
+                                />
+                            );
+                        }
 
-                    if (clientErrored(status)) {
-                        return (
-                            <ListItem
-                                onClick={() =>
-                                    sendMessage(
-                                        contentScriptMessage({
-                                            type: WorkerMessageType.AUTH_INIT,
-                                            options: {
-                                                retryable: false,
-                                                forceLock: true,
-                                            },
-                                        })
-                                    )
-                                }
-                                title={c('Action').t`Sign back in`}
-                                subTitle={
-                                    <span className="color-danger">{c('Warning')
-                                        .t`Your session could not be resumed.`}</span>
-                                }
-                                icon={{ type: 'status', icon: PassIconStatus.DISABLED }}
-                                autogrow
-                            />
-                        );
-                    }
+                        if (clientErrored(status)) {
+                            return (
+                                <ListItem
+                                    onClick={() =>
+                                        sendMessage(
+                                            contentScriptMessage({
+                                                type: WorkerMessageType.AUTH_INIT,
+                                                options: {
+                                                    retryable: false,
+                                                    forceLock: true,
+                                                },
+                                            })
+                                        )
+                                    }
+                                    title={c('Action').t`Sign back in`}
+                                    subTitle={
+                                        <span className="color-danger">{c('Warning')
+                                            .t`Your session could not be resumed.`}</span>
+                                    }
+                                    icon={{ type: 'status', icon: PassIconStatus.DISABLED }}
+                                    autogrow
+                                />
+                            );
+                        }
 
-                    if (clientMissingScope(status)) {
-                        return (
-                            <ListItem
-                                onClick={controller.close}
-                                subTitle={c('Info')
-                                    .t`Please enter your extra password to start using ${PASS_SHORT_APP_NAME}.`}
-                                icon={{ type: 'status', icon: PassIconStatus.LOCKED }}
-                                autogrow
-                            />
-                        );
-                    }
+                        if (clientMissingScope(status)) {
+                            return (
+                                <ListItem
+                                    onClick={controller.close}
+                                    subTitle={c('Info')
+                                        .t`Please enter your extra password to start using ${PASS_SHORT_APP_NAME}.`}
+                                    icon={{ type: 'status', icon: PassIconStatus.LOCKED }}
+                                    autogrow
+                                />
+                            );
+                        }
 
-                    if (!authorized) {
-                        return (
-                            <ListItem
-                                onClick={() => {
-                                    if (!lockSetup) return accountFork({ forkType: ForkType.SWITCH });
-                                    controller.close();
-                                }}
-                                subTitle={
-                                    lockSetup
-                                        ? c('Info')
-                                              .t`Your organization requires you to secure your access to ${PASS_APP_NAME}`
-                                        : c('Info').t`Enable ${PASS_APP_NAME} by connecting your ${BRAND_NAME} account`
-                                }
-                                icon={{ type: 'status', icon: PassIconStatus.DISABLED }}
-                                autogrow
-                            />
-                        );
-                    }
+                        if (!authorized) {
+                            return (
+                                <ListItem
+                                    onClick={() => {
+                                        if (!lockSetup) return accountFork({ forkType: ForkType.SWITCH });
+                                        controller.close();
+                                    }}
+                                    subTitle={
+                                        lockSetup
+                                            ? c('Info')
+                                                  .t`Your organization requires you to secure your access to ${PASS_APP_NAME}`
+                                            : c('Info')
+                                                  .t`Enable ${PASS_APP_NAME} by connecting your ${BRAND_NAME} account`
+                                    }
+                                    icon={{ type: 'status', icon: PassIconStatus.DISABLED }}
+                                    autogrow
+                                />
+                            );
+                        }
 
-                    switch (state.action) {
-                        case DropdownAction.AUTOFILL_CC:
-                            return <AutofillCC {...state} />;
-                        case DropdownAction.AUTOFILL_IDENTITY:
-                            return <AutofillIdentity {...state} />;
-                        case DropdownAction.AUTOFILL_LOGIN:
-                            return <AutofillLogin {...state} />;
-                        case DropdownAction.AUTOSUGGEST_PASSWORD:
-                            return <AutosuggestPassword {...state} />;
-                        case DropdownAction.AUTOSUGGEST_ALIAS:
-                            return <AutosuggestEmail {...state} />;
-                    }
-                })()}
-            </Localized>
+                        switch (state.action) {
+                            case DropdownAction.AUTOFILL_CC:
+                                return <AutofillCC {...state} />;
+                            case DropdownAction.AUTOFILL_IDENTITY:
+                                return <AutofillIdentity {...state} />;
+                            case DropdownAction.AUTOFILL_LOGIN:
+                                return <AutofillLogin {...state} />;
+                            case DropdownAction.AUTOSUGGEST_PASSWORD:
+                                return <AutosuggestPassword {...state} />;
+                            case DropdownAction.AUTOSUGGEST_ALIAS:
+                                return <AutosuggestEmail {...state} />;
+                        }
+                    })()}
+                </Localized>
+            </IFrameFocusController>
         </IFrameAppAutoSizer>
     );
 };

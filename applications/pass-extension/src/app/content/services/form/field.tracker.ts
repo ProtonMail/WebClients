@@ -88,13 +88,16 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
 
     /** This should be called on next tick: `document.activeElement` isn't synchronously
      * updated during the blur event handler. Avoids detaching the icon if the blur event
-     * was triggered because of the dropdown gaining focus when attached to this field. */
+     * was triggered because of the dropdown gaining focus when attached to this field.
+     * Avoid triggering if field action is prevented during an autofill request. */
     const onBlur = onNextTick(
         withContext(async (ctx) => {
-            if (!ctx) return;
+            if (!ctx || actionPrevented(field.element)) return;
+
             const { focused, attachedField, visible } = await ctx.service.inline.dropdown.getState();
             const attached = visible && focused && field.matches(attachedField);
             const blurred = !(document.hasFocus() && isActiveElement(field.element));
+
             if (!attached && blurred) field.detachIcon();
         })
     );
