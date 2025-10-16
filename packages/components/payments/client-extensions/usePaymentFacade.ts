@@ -99,6 +99,7 @@ type PaymentFacadeProps = {
     subscription?: Subscription;
     onBeforeSepaPayment?: () => Promise<boolean>;
     planIDs?: PlanIDs;
+    isTrial?: boolean;
 };
 
 /**
@@ -128,6 +129,7 @@ export const usePaymentFacade = ({
     subscription,
     onBeforeSepaPayment,
     planIDs,
+    isTrial: isTrialOverride,
 }: PaymentFacadeProps) => {
     const enableSepa = useFlag('SepaPayments');
     const enableSepaB2C = useFlag('SepaPaymentsB2C');
@@ -161,7 +163,7 @@ export const usePaymentFacade = ({
         onPaymentFailure: reportPaymentFailure,
     });
 
-    const isTrial = checkResult?.SubscriptionMode === SubscriptionMode.Trial;
+    const isTrial = isTrialOverride ?? checkResult?.SubscriptionMode === SubscriptionMode.Trial;
     const { canUseApplePay, applePayModalHandles } = useApplePayDependencies(chargebeeHandles, {
         onPaymentAttempt: reportPaymentAttempt,
         onPaymentFailure: reportPaymentFailure,

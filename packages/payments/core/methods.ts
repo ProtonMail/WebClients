@@ -415,7 +415,11 @@ export class PaymentMethods {
 
     private isCashAvailable(): boolean {
         return (
-            this.paymentStatus.VendorStates.Cash && !isSignupFlow(this.flow) && !this.isBF2024Offer() && !this.coupon
+            this.paymentStatus.VendorStates.Cash &&
+            !isSignupFlow(this.flow) &&
+            !this.isBF2024Offer() &&
+            !this.coupon &&
+            !this.isTrial
         );
     }
 
@@ -479,7 +483,8 @@ export class PaymentMethods {
             this.amount >= MIN_BITCOIN_AMOUNT &&
             !this.isB2BPlan() &&
             !btcDisabledSpecialCases &&
-            (notDelinquent || this.flow === 'credit')
+            (notDelinquent || this.flow === 'credit') &&
+            !this.isTrial
         );
     }
 
@@ -505,7 +510,10 @@ export class PaymentMethods {
         const isInvoice = this.flow === 'invoice';
 
         const paypalAvailable =
-            this.paymentStatus.VendorStates.Paypal && !alreadyHasPayPal && (isPaypalAmountValid || isInvoice);
+            this.paymentStatus.VendorStates.Paypal &&
+            !alreadyHasPayPal &&
+            (isPaypalAmountValid || isInvoice) &&
+            !this.isTrial;
         return paypalAvailable;
     }
 
@@ -529,7 +537,8 @@ export class PaymentMethods {
             isApplePayAmountValid &&
             isAllowedFlow &&
             this.canUseApplePay &&
-            isSafari()
+            isSafari() &&
+            !this.isTrial
         );
     }
 
