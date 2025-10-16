@@ -275,3 +275,24 @@ export type WorkerResponse =
     | ListSpacesResponse
     | GetConversationResponse
     ;
+
+
+
+export type UserSettingsFromApi = {
+    UserSettingsTag?: string;
+    Encrypted?: Base64; // Encrypted user settings data
+    CreateTime?: string;
+    UpdateTime?: string;
+};
+
+export type UserSettingsToApi = {
+    UserSettingsTag: string;
+    Encrypted: Base64; // Encrypted user settings data
+};
+
+export type SerializedUserSettings = {
+    userSettingsTag: string;
+    encrypted: Base64;
+    createTime: string;
+    updateTime: string;
+};

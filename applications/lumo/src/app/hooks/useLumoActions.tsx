@@ -19,6 +19,7 @@ import { type ConversationId, type Message, Role, type Space, type SpaceId, getS
 import type { ActionParams, ErrorContext, RetryStrategy } from '../types-api';
 import {
     generateFakeConversationToShowTierError,
+    getPersonalizationPromptFromState,
     regenerateMessage,
     retrySendMessage,
     sendMessage,
@@ -73,6 +74,7 @@ export const useLumoActions = ({
     const { hasTierErrors } = useTierErrors();
     const isLumoToolingEnabled = useFlag('LumoTooling');
     const contextFilters = useLumoSelector(selectContextFilters);
+    const lumoUserSettings = useLumoSelector((state) => state.lumoUserSettings);
     const { handleActionError } = useActionErrorHandler();
 
     // Custom hooks
@@ -152,6 +154,17 @@ export const useLumoActions = ({
             spaceDek
         );
 
+        // Get personalization data for retry from saved user settings (not unsaved Redux state)
+        const savedPersonalization = lumoUserSettings?.personalization;
+        let personalizationPrompt: string | undefined;
+        
+        if (savedPersonalization?.enableForNewChats) {
+            personalizationPrompt = getPersonalizationPromptFromState(savedPersonalization);
+            console.log('Retry: Generated personalization prompt from saved settings:', personalizationPrompt);
+        } else {
+            console.log('Retry: Personalization not enabled or no saved personalization data');
+        }
+
         await retrySendMessage({
             api,
             dispatch,
@@ -162,6 +175,7 @@ export const useLumoActions = ({
             signal,
             enableExternalTools: isWebSearchButtonToggled && isLumoToolingEnabled,
             contextFilters,
+            personalizationPrompt,
         });
     };
 

@@ -12671,12 +12671,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tiptap/core@npm:^2.26.1":
-  version: 2.26.1
-  resolution: "@tiptap/core@npm:2.26.1"
+"@tiptap/core@npm:^2.26.1, @tiptap/core@npm:^2.26.2":
+  version: 2.26.3
+  resolution: "@tiptap/core@npm:2.26.3"
   peerDependencies:
     "@tiptap/pm": ^2.7.0
-  checksum: 10c0/2646dbcea9a07d46df39a19f05e5e2639e2673cb4cfde81ceac86b18fcc851aae14e0ee021ba4d5fef4d3e7b01ab69a2cec58530f77e7f8428bec4690f99f255
+  checksum: 10c0/fb099dae1b5a989e44c50aa940c45c2e04a6f75eef61c3b12338542fbaee15bbb1aa09333ed6682b83c48522bc1a9bc844741c667791eace72a81e281ac83e86
   languageName: node
   linkType: hard
 
@@ -12890,9 +12890,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tiptap/pm@npm:^2.26.1":
-  version: 2.26.1
-  resolution: "@tiptap/pm@npm:2.26.1"
+"@tiptap/pm@npm:^2.26.1, @tiptap/pm@npm:^2.26.2":
+  version: 2.26.3
+  resolution: "@tiptap/pm@npm:2.26.3"
   dependencies:
     prosemirror-changeset: "npm:^2.3.0"
     prosemirror-collab: "npm:^1.3.1"
@@ -12912,7 +12912,7 @@ __metadata:
     prosemirror-trailing-node: "npm:^3.0.0"
     prosemirror-transform: "npm:^1.10.2"
     prosemirror-view: "npm:^1.37.0"
-  checksum: 10c0/03cc35b0c9973a756c2f269dd7bedf13d0dbd431933a12b202a1bbf0772542760b5229b0f991d3fc9ef55f969d9572e958c5bf00d29b0ff00e696822ecd49a02
+  checksum: 10c0/625f4ebd3265dfdfe1f952c0fc72650b802a86a8a6618a224721e742b85e64eca3f5a79b130448ed223a13cb2932e95dc6fb1f7a2787919d0bb10dc29651d1f3
   languageName: node
   linkType: hard
 
@@ -36924,6 +36924,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "proton-lumo@workspace:applications/lumo"
   dependencies:
+    "@babel/core": "npm:^7.28.4"
     "@bjorn3/browser_wasi_shim": "npm:^0.4.2"
     "@msgpack/msgpack": "npm:^3.1.2"
     "@peculiar/webcrypto": "npm:^1.5.0"
@@ -36936,7 +36937,9 @@ __metadata:
     "@proton/styles": "workspace:^"
     "@proton/testing": "workspace:^"
     "@reduxjs/toolkit": "npm:^2.9.0"
+    "@tiptap/core": "npm:^2.26.2"
     "@tiptap/extension-placeholder": "npm:^2.26.2"
+    "@tiptap/pm": "npm:^2.26.2"
     "@tiptap/react": "npm:^2.26.2"
     "@tiptap/starter-kit": "npm:^2.26.1"
     "@types/jest": "npm:^30.0.0"

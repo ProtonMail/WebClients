@@ -9,6 +9,8 @@ import ghostChatReducer from './ghostChat';
 import eligibilityStatusReducer from './meta/eligibilityStatus';
 import errorsReducer from './meta/errors';
 import { remainingInvitesReducer } from './meta/remainingInvites';
+import personalizationReducer from './personalization';
+import lumoUserSettingsReducer from './lumoUserSettings';
 
 export const lumoReducers = {
     spaces: spacesReducer,
@@ -21,5 +23,7 @@ export const lumoReducers = {
     errors: errorsReducer,
     contextFilters: contextFiltersReducer,
     ghostChat: ghostChatReducer,
+    personalization: personalizationReducer,
+    lumoUserSettings: lumoUserSettingsReducer,
     ...remainingInvitesReducer,
 };
