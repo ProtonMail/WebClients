@@ -9,6 +9,7 @@ import clsx from '@proton/utils/clsx';
 
 import { SecurityShield } from '../../atoms/SecurityShield/SecurityShield';
 import { SpeakingIndicator } from '../../atoms/SpeakingIndicator';
+import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useDebouncedSpeakingStatus } from '../../hooks/useDebouncedSpeakingStatus';
 import { getParticipantDisplayColors } from '../../utils/getParticipantDisplayColors';
@@ -48,6 +49,7 @@ const indicatorSizeBySize = {
 export const ParticipantTile = ({ participant, viewSize = 'large' }: ParticipantTileProps) => {
     const { localParticipant } = useLocalParticipant();
     const { participantNameMap, disableVideos, participantsWithDisabledVideos, displayName } = useMeetContext();
+    const { facingMode } = useMediaManagementContext();
     const cameraVideoPublication = getCameraVideoPublication(participant);
 
     const audioPublication = Array.from(participant.trackPublications.values()).find(
@@ -135,7 +137,10 @@ export const ParticipantTile = ({ participant, viewSize = 'large' }: Participant
                         }}
                         muted={participant.isLocal}
                         style={{
-                            transform: isLocalParticipant && !(isSafari() && isMobile()) ? 'scaleX(-1)' : undefined,
+                            transform:
+                                isLocalParticipant && !(isSafari() && isMobile()) && facingMode === 'user'
+                                    ? 'scaleX(-1)'
+                                    : undefined,
                         }}
                     />
                 </>
