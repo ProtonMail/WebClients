@@ -38,14 +38,14 @@ const AccountSwitcherItemBase = <E extends ElementType = typeof defaultElement>(
             {...rest}
             ref={ref}
         >
-            <div className="flex gap-4 justify-space-between items-center">
-                <div className="flex gap-4 items-center">
+            <div className="flex gap-4 justify-space-between items-center flex-nowrap">
+                <div className="flex gap-4 justify-space-between items-center flex-1">
                     <Avatar>{initials}</Avatar>
-                    <div className="flex flex-column">
-                        <div className="text-break">
+                    <div className="flex flex-1 flex-column flex-nowrap">
+                        <div className="text-break text-ellipsis">
                             <strong>{nameToDisplay}</strong>
                         </div>
-                        {email && <div className="text-break color-weak">{email}</div>}
+                        {email && <div className="text-break color-weak text-ellipsis">{email}</div>}
                     </div>
                 </div>
                 {right}

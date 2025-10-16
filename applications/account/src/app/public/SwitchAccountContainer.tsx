@@ -95,14 +95,14 @@ const AccountItem = ({
             <div className="account-button-content mx-3 flex-1 mt-custom" style={{ '--mt-custom': `-0.25em` }}>
                 <button
                     type="button"
-                    className="text-left expand-click-area outline-none--at-all"
+                    className="text-left expand-click-area outline-none--at-all w-full"
                     title={continueWithText}
                     aria-label={continueWithText}
                     onClick={() => {
                         onClick(sessionDisplayData.localID);
                     }}
                 >
-                    <div className="text-break">
+                    <div className="text-break text-ellipsis">
                         <strong>{nameToDisplay}</strong>
                         {sessionDisplayData.accessType === AccessType.AdminAccess && (
                             <span className="color-weak">
@@ -118,7 +118,7 @@ const AccountItem = ({
                         )}
                     </div>
                     {sessionDisplayData.email && (
-                        <div className="text-break color-weak">{sessionDisplayData.email}</div>
+                        <div className="text-break color-weak text-ellipsis">{sessionDisplayData.email}</div>
                     )}
                 </button>
                 <div>
