@@ -29,6 +29,8 @@ import type {
     RemoteConversation,
     RemoteDeletedAsset,
     RemoteDeletedConversation,
+    SerializedUserSettings,
+    UserSettingsFromApi,
     SpaceTag,
 } from './types';
 import {
@@ -487,5 +489,20 @@ export function convertMasterKeysFromApi(input: unknown): MasterKey[] {
 export function convertMasterKeyToApi(encryptedMasterKeyBase64: Base64): MasterKeyToApi {
     return {
         MasterKey: encryptedMasterKeyBase64,
+    };
+}
+
+
+// Convert user settings data from API format to serialized format
+export function convertUserSettingsFromApi(userSettingsFromApi: UserSettingsFromApi): SerializedUserSettings {
+    if (!userSettingsFromApi.UserSettingsTag || !userSettingsFromApi.Encrypted) {
+        throw new Error('Invalid UserSettingsFromApi: missing UserSettingsTag or Encrypted field');
+    }
+    
+    return {
+        userSettingsTag: userSettingsFromApi.UserSettingsTag,
+        encrypted: userSettingsFromApi.Encrypted,
+        createTime: userSettingsFromApi.CreateTime || new Date().toISOString(),
+        updateTime: userSettingsFromApi.UpdateTime || new Date().toISOString(),
     };
 }
