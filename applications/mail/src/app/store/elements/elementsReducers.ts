@@ -851,7 +851,7 @@ const updateTotal = ({
     state: Draft<ElementsState>;
     affectedElementsNumber: number;
     destinationLabelID: string;
-    sourceLabelID?: string;
+    sourceLabelID: string;
 }) => {
     const contextParams = {
         conversationMode: state.params.conversationMode,
@@ -952,10 +952,18 @@ export const unlabelMessagesPending = (
     action: PayloadAction<
         undefined,
         string,
-        { arg: { elements: MessageMetadata[]; destinationLabelID: string; labels: Label[]; folders: Folder[] } }
+        {
+            arg: {
+                elements: MessageMetadata[];
+                sourceLabelID: string;
+                destinationLabelID: string;
+                labels: Label[];
+                folders: Folder[];
+            };
+        }
     >
 ) => {
-    const { elements, destinationLabelID, labels } = action.meta.arg;
+    const { elements, sourceLabelID, destinationLabelID, labels } = action.meta.arg;
 
     elements.forEach((element) => {
         const conversationElementState = state.elements[element.ConversationID] as Conversation;
@@ -973,7 +981,7 @@ export const unlabelMessagesPending = (
         removeLabelFromMessage(elementState, destinationLabelID, labels);
     });
 
-    updateTotal({ state, affectedElementsNumber: elements.length, destinationLabelID });
+    updateTotal({ state, affectedElementsNumber: elements.length, destinationLabelID, sourceLabelID });
 };
 
 export const labelMessagesRejected = (
@@ -1042,10 +1050,18 @@ export const unlabelConversationsPending = (
     action: PayloadAction<
         undefined,
         string,
-        { arg: { conversations: Conversation[]; destinationLabelID: string; labels: Label[]; folders: Folder[] } }
+        {
+            arg: {
+                conversations: Conversation[];
+                sourceLabelID: string;
+                destinationLabelID: string;
+                labels: Label[];
+                folders: Folder[];
+            };
+        }
     >
 ) => {
-    const { conversations, destinationLabelID, labels } = action.meta.arg;
+    const { conversations, sourceLabelID, destinationLabelID, labels } = action.meta.arg;
 
     conversations.forEach((conversation) => {
         const conversationState = state.elements[conversation.ID] as Conversation;
@@ -1065,5 +1081,5 @@ export const unlabelConversationsPending = (
         });
     });
 
-    updateTotal({ state, affectedElementsNumber: conversations.length, destinationLabelID });
+    updateTotal({ state, affectedElementsNumber: conversations.length, sourceLabelID, destinationLabelID });
 };

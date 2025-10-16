@@ -841,6 +841,7 @@ describe('Update context Total', () => {
                     arg: {
                         conversations: [conversation],
                         destinationLabelID: CUSTOM_LABEL_ID1,
+                        sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -1124,27 +1125,25 @@ describe('Update context Total', () => {
                 [inboxMessageID]: inputInboxMessage,
             };
 
+            testState.params.filter = {};
+            testState.params.sort = { sort: 'Time', desc: true };
+            testState.params.conversationMode = false;
+
+            const inboxContext = generateElementContextIdentifier({ labelID: MAILBOX_LABEL_IDS.INBOX });
+            const customLabelContext = generateElementContextIdentifier({ labelID: CUSTOM_LABEL_ID1 });
+
             testState.total = {
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.INBOX,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: false,
-                })]: 2,
-                [getElementContextIdentifier({
-                    labelID: CUSTOM_LABEL_ID1,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: false,
-                })]: 1,
+                [inboxContext]: 2,
+                [customLabelContext]: 1,
             };
 
             unlabelMessagesPending(testState, {
-                type: 'mailbox/labelConversations',
+                type: 'mailbox/unlabelMessages',
                 payload: undefined,
                 meta: {
                     arg: {
                         elements: [message],
+                        sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                         destinationLabelID: CUSTOM_LABEL_ID1,
                         labels: customLabels,
                         folders: customFolders,
@@ -1154,12 +1153,8 @@ describe('Update context Total', () => {
 
             const updatedTotal = testState.total;
             expect(updatedTotal).toEqual({
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.INBOX,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: false,
-                })]: 2,
+                [inboxContext]: 1,
+                [customLabelContext]: 2,
             });
         });
     });

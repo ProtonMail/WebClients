@@ -51,6 +51,7 @@ describe('unlabelMessagesPending', () => {
                 arg: {
                     elements: [message],
                     destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    sourceLabelID: MAILBOX_LABEL_IDS.STARRED,
                     labels: customLabels,
                     folders: customFolders,
                 },
@@ -89,6 +90,7 @@ describe('unlabelMessagesPending', () => {
                 arg: {
                     elements: [message],
                     destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
+                    sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                     labels: customLabels,
                     folders: customFolders,
                 },
@@ -127,6 +129,7 @@ describe('unlabelMessagesPending', () => {
                 arg: {
                     elements: [message],
                     destinationLabelID: CUSTOM_LABEL_ID1,
+                    sourceLabelID: MAILBOX_LABEL_IDS.STARRED,
                     labels: customLabels,
                     folders: customFolders,
                 },
@@ -200,6 +203,7 @@ describe('unlabelMessagesPending', () => {
                     arg: {
                         elements: [message],
                         destinationLabelID: CUSTOM_LABEL_ID1,
+                        sourceLabelID: MAILBOX_LABEL_IDS.STARRED,
                         labels: customLabels,
                         folders: customFolders,
                     },
