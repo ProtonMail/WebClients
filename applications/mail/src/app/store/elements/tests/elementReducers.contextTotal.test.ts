@@ -2,7 +2,6 @@ import type { Draft } from '@reduxjs/toolkit';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { getElementContextIdentifier } from 'proton-mail/helpers/elements';
 import type { ConversationLabel } from 'proton-mail/models/conversation';
 import type { ElementsState } from 'proton-mail/store/elements/elementsTypes';
 
@@ -18,10 +17,10 @@ import {
     MESSAGE_ID,
     customFolders,
     customLabels,
+    generateElementContextIdentifier,
     setupConversation,
     setupMessage,
 } from './elementsReducer.test.helpers';
-import { generateElementContextIdentifier } from './helpers';
 
 describe('Update context Total', () => {
     let testState: Draft<ElementsState>;
@@ -714,19 +713,16 @@ describe('Update context Total', () => {
                 [inboxConversationID]: inputInboxConversation,
             };
 
+            testState.params.filter = {};
+            testState.params.sort = { sort: 'Time', desc: true };
+            testState.params.conversationMode = false;
+
+            const inboxContext = generateElementContextIdentifier({ labelID: MAILBOX_LABEL_IDS.INBOX });
+            const customContext = generateElementContextIdentifier({ labelID: CUSTOM_LABEL_ID1 });
+
             testState.total = {
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.INBOX,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: true,
-                })]: 2,
-                [getElementContextIdentifier({
-                    labelID: CUSTOM_LABEL_ID1,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: true,
-                })]: 1,
+                [inboxContext]: 2,
+                [customContext]: 1,
             };
 
             unlabelConversationsPending(testState, {
@@ -745,12 +741,8 @@ describe('Update context Total', () => {
 
             const updatedTotal = testState.total;
             expect(updatedTotal).toEqual({
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.INBOX,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: true,
-                })]: 2,
+                [inboxContext]: 1,
+                [customContext]: 2,
             });
         });
     });
