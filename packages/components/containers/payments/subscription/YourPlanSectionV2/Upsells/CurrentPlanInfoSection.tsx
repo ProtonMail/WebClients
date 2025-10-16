@@ -3,11 +3,8 @@ import { type ReactNode, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { DashboardCard } from '@proton/atoms/DashboardCard/DashboardCard';
-import { DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
-import { DashboardCardImage } from '@proton/atoms/DashboardCard/DashboardCard';
-import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
-import { DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
+import { DashboardCard, DashboardCardContent, DashboardCardImage } from '@proton/atoms/DashboardCard/DashboardCard';
+import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import Info from '@proton/components/components/link/Info';
 import DriveLogo from '@proton/components/components/logo/DriveLogo';
 import MailLogo from '@proton/components/components/logo/MailLogo';
@@ -369,7 +366,7 @@ const VPNPlanCard = ({
                     {getVPNFeatures(serversCount).map(({ text, tooltip, highResIcon }, index) => {
                         const key = typeof text === 'string' ? text : index;
                         return (
-                            <li key={key} className="flex items-center">
+                            <li key={key} className="flex items-center flex-nowrap">
                                 {highResIcon && <img src={highResIcon} alt="" className="shrink-0 mr-2" />}
                                 {text}
                                 {tooltip && <Info buttonClass="ml-2 align-middle" title={tooltip} />}
