@@ -60,7 +60,9 @@ export const Dropdown: FC<Props> = ({ initial = null }) => {
 
         if (visible) {
             /** Dropdown iframe is isolated by shadow DOM - blur events don't bubble up.
-             * Listen on iframe window to detect when user switches away and close dropdown. */
+             * Listen on iframe window to detect when user switches away and close dropdown.
+             * FIXME: this shouldn't trigger as part of an autofill request which will
+             * cause the dropdown to close prematurely before autofill completes */
             const onBlur = () => controller.close();
             window.addEventListener('blur', onBlur, { once: true });
             return () => window.removeEventListener('blur', onBlur);
