@@ -20,7 +20,7 @@ export const WEB_REQUEST_PERMISSIONS = ((): Permission[] => {
     }
 })();
 
-export const CLIPBOARD_PERMISSIONS: Permission[] = ['clipboardRead', 'clipboardWrite'];
+export const CLIPBOARD_PERMISSIONS: Permission[] = BUILD_TARGET === 'safari' ? [] : ['clipboardRead', 'clipboardWrite'];
 
 const MANIFEST = browser?.runtime.getManifest() ?? {};
 const HOST_PERMISSIONS = MANIFEST.host_permissions ?? [];
@@ -53,7 +53,7 @@ export const hasClipboardPermissions = () => hasPermissions(CLIPBOARD_PERMISSION
 export const requestPermissions = async (permissions: Permission[]): Promise<boolean> => {
     try {
         return await browser.permissions.request({ permissions });
-    } catch (error) {
+    } catch {
         return false;
     }
 };
