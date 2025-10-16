@@ -8500,7 +8500,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/gitlab@workspace:utilities/gitlab":
+"@proton/gitlab@workspace:^, @proton/gitlab@workspace:utilities/gitlab":
   version: 0.0.0-use.local
   resolution: "@proton/gitlab@workspace:utilities/gitlab"
   dependencies:
@@ -45087,6 +45087,7 @@ __metadata:
     "@manypkg/get-packages": "npm:^3.1.0"
     "@proton/ci-tools": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
+    "@proton/gitlab": "workspace:^"
     "@types/async-retry": "npm:^1.4.9"
     "@types/jest": "npm:^30.0.0"
     "@types/prompts": "npm:^2.4.9"
