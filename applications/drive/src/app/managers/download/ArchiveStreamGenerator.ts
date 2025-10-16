@@ -92,7 +92,7 @@ const createArchiveItem = async (
 
     let controller: DownloadController;
     try {
-        controller = downloader.writeToStream(writable, (downloadedBytes) => {
+        controller = downloader.downloadToStream(writable, (downloadedBytes) => {
             tracker.updateDownloadProgress(entry.uid, downloadedBytes);
         });
     } catch (error) {

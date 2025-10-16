@@ -17,7 +17,7 @@ import { nodesStructureTraversal } from './utils/nodesStructureTraversal';
 const DEFAULT_MIME_TYPE = 'application/octet-stream';
 
 export type FileDownloader = Awaited<ReturnType<ProtonDriveClient['getFileDownloader']>>;
-export type DownloadController = ReturnType<FileDownloader['writeToStream']>;
+export type DownloadController = ReturnType<FileDownloader['downloadToStream']>;
 
 type ActiveDownload = {
     controller: DownloadController;
@@ -138,7 +138,7 @@ export class DownloadManager {
         const { readable, writable } = new TransformStream<Uint8Array<ArrayBuffer>>();
         const streamWrapperPromise = loadCreateReadableStreamWrapper(readable);
 
-        const controller = fileDownloader.writeToStream(writable, (downloadedBytes) => {
+        const controller = fileDownloader.downloadToStream(writable, (downloadedBytes) => {
             updateDownloadItem(downloadId, { downloadedBytes });
         });
 

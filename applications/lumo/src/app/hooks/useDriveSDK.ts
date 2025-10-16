@@ -327,7 +327,7 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods {
                 });
 
                 // Start the download
-                const downloadController = downloader.writeToStream(stream, (downloadedBytes) => {
+                const downloadController = downloader.downloadToStream(stream, (downloadedBytes) => {
                     if (onProgress && claimedSize > 0) {
                         const progress = (downloadedBytes / claimedSize) * 100;
                         onProgress(progress);
@@ -411,10 +411,10 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods {
                 const streamWithProgress = originalStream.pipeThrough(progressStream);
 
                 // Start the upload
-                const uploadController = await uploader.writeStream(streamWithProgress, []);
+                const uploadController = await uploader.uploadFromStream(streamWithProgress, []);
 
                 // Wait for completion and get the node UID
-                const nodeUid = await uploadController.completion();
+                const { nodeUid } = await uploadController.completion();
 
                 console.log(`Upload completed for ${file.name}, node UID: ${nodeUid}`);
                 return nodeUid;
