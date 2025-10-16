@@ -10,6 +10,7 @@ import {
     filterElementsInState,
     getAddressID,
     getDate,
+    getElementContextIdentifier,
     getLocationElementsCount,
     isElementConversation,
     isElementMessage,
@@ -779,6 +780,40 @@ describe('elements', () => {
 
             expect(isElementOutsideFolders(message, labels)).toBeFalsy();
             expect(isElementOutsideFolders(conversation, labels)).toBeFalsy();
+        });
+    });
+
+    describe('getElementContextIdentifier', () => {
+        it('should generate the same identifier despite the order of the keys', () => {
+            const first = getElementContextIdentifier({
+                labelID: MAILBOX_LABEL_IDS.INBOX,
+                conversationMode: false,
+                filter: {},
+                sort: { sort: 'Time', desc: true },
+                from: 'hello@proton.me',
+                to: 'world@proton.me',
+                address: 'hello@proton.me',
+                begin: 10,
+                end: 20,
+                keyword: 'test',
+                newsletterSubscriptionID: '1000',
+            });
+
+            const second = getElementContextIdentifier({
+                from: 'hello@proton.me',
+                newsletterSubscriptionID: '1000',
+                labelID: MAILBOX_LABEL_IDS.INBOX,
+                keyword: 'test',
+                conversationMode: false,
+                filter: {},
+                sort: { sort: 'Time', desc: true },
+                address: 'hello@proton.me',
+                begin: 10,
+                end: 20,
+                to: 'world@proton.me',
+            });
+
+            expect(first).toEqual(second);
         });
     });
 });
