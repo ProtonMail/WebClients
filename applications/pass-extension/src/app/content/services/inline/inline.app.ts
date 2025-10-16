@@ -16,13 +16,14 @@ import type { Dimensions, Rect } from '@proton/pass/types/utils/dom';
 import { pixelEncoder } from '@proton/pass/utils/dom/computed-styles';
 import { createElement } from '@proton/pass/utils/dom/create-element';
 import { TopLayerManager } from '@proton/pass/utils/dom/popover';
-import { safeCall } from '@proton/pass/utils/fp/safe-call';
+import { safeAsyncCall, safeCall } from '@proton/pass/utils/fp/safe-call';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object/merge';
 import type { Subscriber } from '@proton/pass/utils/pubsub/factory';
 import { createPubSub } from '@proton/pass/utils/pubsub/factory';
+import noop from '@proton/utils/noop';
 
 import type {
     IFrameCloseOptions,
@@ -39,8 +40,6 @@ import type { PopoverController } from './inline.popover';
 type CreateInlineAppOptions<A> = {
     /** Entering animation on visibility toggles */
     animation: 'slidein' | 'fadein';
-    /** Backdrop auto-closing configuration */
-    backdrop?: { exclude: () => Element[]; enabled: boolean };
     /** Extra classNames to apply to iframe element */
     classNames?: string[];
     /** IFrame app identifier */
@@ -72,11 +71,9 @@ export interface InlineApp<A> {
     state: InlineState<A>;
     close: (options?: IFrameCloseOptions) => void;
     destroy: () => void;
-    ensureLoaded: () => Promise<void>;
-    ensureReady: () => Promise<void>;
     getPosition: () => IFramePosition;
     init: (port: Runtime.Port, getPayload: () => IFrameInitPayload) => void;
-    open: (action: A) => void;
+    open: (action: A, prepare?: () => Promise<boolean>) => Promise<void>;
     registerMessageHandler: <M extends InlineMessage['type']>(
         type: M,
         handler: InlinePortMessageHandler<M>,
@@ -89,13 +86,23 @@ export interface InlineApp<A> {
 }
 
 export type InlineState<Action> = {
+    /** Active action for inline app */
     action: MaybeNull<Action>;
+    /** Abort controller for current inline app request */
+    ctrl: MaybeNull<AbortController>;
+    /** Port identifier for message forwarding */
     framePort: MaybeNull<string>;
+    /** Flag indicating iframe has loaded and is rendered  */
     loaded: boolean;
+    /** Extension context port */
     port: MaybeNull<Runtime.Port>;
+    /** Position state */
     position: IFramePosition;
+    /** Repositioning animation frame request */
     positionReq: number;
+    /** Flag indicating iframe is loaded and communication is connected */
     ready: boolean;
+    /** Visible state of the frame */
     visible: boolean;
 };
 
@@ -111,7 +118,6 @@ export interface InlineAppHandler<Options extends { action: any }, Action = Opti
 
 export const createInlineApp = <A>({
     animation,
-    backdrop,
     classNames,
     id,
     popover,
@@ -122,10 +128,10 @@ export const createInlineApp = <A>({
     const portMessageHandlers: Map<InlineMessageType, InlinePortMessageHandler> = new Map();
     const pubsub = createPubSub<InlineEvent<A>>();
     const listeners = createListenerStore();
-    const activeListeners = createListenerStore();
 
     const state: InlineState<A> = {
         action: null,
+        ctrl: null,
         framePort: null,
         loaded: false,
         port: null,
@@ -146,7 +152,7 @@ export const createInlineApp = <A>({
 
     const checkStale = withContext<() => boolean>((ctx) => Boolean(ctx?.getState().stale));
     const ensureLoaded = () => waitUntil({ check: () => state.loaded, cancel: checkStale }, 50);
-    const ensureReady = () => waitUntil({ check: () => state.ready, cancel: checkStale }, 50);
+    const ensureReady = () => waitUntil({ check: () => state.ready, cancel: checkStale }, 20);
 
     const unlisten = listeners.addListener(window, 'message', (event) => {
         if (event.data.type === IFRAME_APP_READY_EVENT && event.data.endpoint === id) {
@@ -199,8 +205,6 @@ export const createInlineApp = <A>({
         return () => portMessageHandlers.delete(type);
     };
 
-    const getPosition = (): IFramePosition => state.position;
-
     const setIframePosition = (values: IFramePosition) => {
         state.position = values;
 
@@ -221,9 +225,11 @@ export const createInlineApp = <A>({
     };
 
     const close = (options: IFrameCloseOptions = {}) => {
+        state.ctrl?.abort();
+        state.ctrl = null;
+
         if (state.visible) {
             cancelAnimationFrame(state.positionReq);
-            activeListeners.removeAll();
 
             popover.close();
             pubsub.publish({ type: 'close', state, options }); /* ⚠️ call before resetting state */
@@ -236,30 +242,30 @@ export const createInlineApp = <A>({
         }
     };
 
-    const open = (action: A) => {
-        if (!state.visible) {
-            popover.open();
-            state.action = action;
-            state.visible = true;
+    /** Inline apps reuse the same iframe instead of creating new ones for each field.
+     * Opening requires preparing the iframe and ensuring it's in a ready state before
+     * sending action data. This process may be triggered automatically on page load
+     * when autofill detection occurs. */
+    const open = safeAsyncCall(async (action: A, prepare?: () => Promise<boolean>) => {
+        state.ctrl?.abort();
+        state.ctrl = new AbortController();
 
-            if (backdrop?.enabled) {
-                const onMouseDown = (event: Event) => {
-                    const target = event.target as MaybeNull<HTMLElement>;
-                    if (!target || !backdrop.exclude?.().includes(target)) {
-                        close({ discard: true, refocus: false });
-                    }
-                };
+        await ensureReady();
+        if (state.ctrl.signal.aborted) return;
 
-                activeListeners.addListener(window, 'mousedown', onMouseDown);
-            }
+        const proceed = prepare ? await prepare() : true;
+        if (!proceed || state.ctrl.signal.aborted || state.visible) return;
 
-            void sendPortMessage({ type: InlinePortMessageType.IFRAME_OPEN });
+        popover.open();
+        state.action = action;
+        state.visible = true;
 
-            iframe.classList.add('visible');
-            setIframeDimensions(dimensions(state));
-            pubsub.publish({ type: 'open', state });
-        }
-    };
+        void sendPortMessage({ type: InlinePortMessageType.IFRAME_OPEN });
+
+        iframe.classList.add('visible');
+        setIframeDimensions(dimensions(state));
+        pubsub.publish({ type: 'open', state });
+    });
 
     const onMessageHandler = (message: unknown) =>
         isInlineMessage(message) && portMessageHandlers.get(message.type)?.(message);
@@ -267,21 +273,15 @@ export const createInlineApp = <A>({
     /** `IFrameInitPayload` should be resolved once the port has been
      * injected or we could hit a race-condition where the init payload
      * does not reflect the most recent content-script state. */
-    const init = async (port: Runtime.Port, getPayload: () => IFrameInitPayload) => {
+    const init = (port: Runtime.Port, getPayload: () => IFrameInitPayload) => {
         state.port?.disconnect();
         state.port = port;
         state.port.onMessage.addListener(onMessageHandler);
         state.port.onDisconnect.addListener(() => (state.ready = false));
 
-        void sendSecurePostMessage({
-            type: InlinePortMessageType.IFRAME_INJECT_PORT,
-            payload: { port: port.name },
-        }).then(() =>
-            sendPortMessage({
-                type: InlinePortMessageType.IFRAME_INIT,
-                payload: getPayload(),
-            })
-        );
+        void sendSecurePostMessage({ type: InlinePortMessageType.IFRAME_INJECT_PORT, payload: { port: port.name } })
+            .then(() => sendPortMessage({ type: InlinePortMessageType.IFRAME_INIT, payload: getPayload() }))
+            .catch(noop);
     };
 
     const destroy = () => {
@@ -295,7 +295,6 @@ export const createInlineApp = <A>({
 
         pubsub.unsubscribe();
         listeners.removeAll();
-        activeListeners.removeAll();
     };
 
     registerMessageHandler(InlinePortMessageType.IFRAME_CONNECTED, ({ payload: { framePort } }) => {
@@ -318,9 +317,7 @@ export const createInlineApp = <A>({
         state,
         close,
         destroy,
-        ensureLoaded,
-        ensureReady,
-        getPosition,
+        getPosition: () => state.position,
         init,
         open,
         registerMessageHandler,

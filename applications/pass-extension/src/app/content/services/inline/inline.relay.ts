@@ -1,13 +1,15 @@
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { ContentScriptContextFactoryOptions } from 'proton-pass-extension/app/content/context/factory';
-import { onFieldDropdownClose } from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.utils';
+import {
+    handleBackdrop,
+    onFieldDropdownClose,
+} from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.utils';
 import type { FrameMessageHandler } from 'proton-pass-extension/app/content/utils/frame.message-broker';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import { isShadowRoot } from '@proton/pass/fathom';
-import type { MaybeNull } from '@proton/pass/types';
 import { isMainFrame } from '@proton/pass/utils/dom/is-main-frame';
-import { truthy } from '@proton/pass/utils/fp/predicates';
+import { cons } from '@proton/pass/utils/fp/lens';
+import { onNextTick } from '@proton/pass/utils/time/next-tick';
 import noop from '@proton/utils/noop';
 
 import { createDropdownRelayHandler } from './dropdown/dropdown.relay';
@@ -36,6 +38,7 @@ export const createInlineRelay = ({ controller }: ContentScriptContextFactoryOpt
             if (!(form && field)) return;
 
             const close = () => dropdown.close({ type: 'field', field });
+            const maybeClose = onNextTick(async () => !(await dropdown.getState()).focused && close());
 
             /** Intercept scroll events in sub-frames. It is too costly to try to reposition
              * any injected UI elements in the top-frame via messaging. */
@@ -43,20 +46,9 @@ export const createInlineRelay = ({ controller }: ContentScriptContextFactoryOpt
             const scrollOptions = { capture: true, once: true, passive: true } as const;
 
             dropdown.listeners.addListener(window, 'scroll', close, scrollOptions);
+            dropdown.listeners.addListener(window, 'blur', maybeClose);
             dropdown.listeners.addListener(scrollParent, 'scroll', close, scrollOptions);
-
-            /** Intercept backdrop clicks in sub-frames. The backdrop click
-             * handler in the top-frame will not catch clicks in sub-frames.
-             * FIXME: this should be factorized */
-            dropdown.listeners.addListener(window, 'mousedown', (event: Event) => {
-                const target = event.target as MaybeNull<HTMLElement>;
-                const rootNode = field.element.getRootNode();
-
-                const host = isShadowRoot(rootNode) ? rootNode.host : null;
-                const excludes = [field.icon?.element, field.element, host].filter(truthy);
-
-                if (!target || !excludes.includes(target)) close();
-            });
+            dropdown.listeners.addListener(window, 'mousedown', handleBackdrop(cons(field), close));
         }
     );
 

@@ -88,23 +88,6 @@ export const createNotification = (popover: PopoverController): NotificationApp 
         }
     });
 
-    const open = asyncQueue((payload: NotificationRequest) =>
-        iframe
-            .ensureReady()
-            .then(() => {
-                /** if OTP autofill notification is opened - do not process
-                 * any other actions : it should take precedence */
-                const autosave = payload.action === NotificationAction.AUTOSAVE;
-                const { action, visible } = iframe.state;
-                if (autosave && visible && action === NotificationAction.OTP) return;
-
-                iframe.sendPortMessage({ type: InlinePortMessageType.NOTIFICATION_ACTION, payload });
-                iframe.open(payload.action);
-                iframe.updatePosition();
-            })
-            .catch(noop)
-    );
-
     iframe.registerMessageHandler(
         InlinePortMessageType.AUTOFILL_OTP,
         withContext(async (ctx, { payload: { code } }) => {
@@ -128,7 +111,21 @@ export const createNotification = (popover: PopoverController): NotificationApp 
         destroy: iframe.destroy,
         getState: () => iframe.state,
         init: iframe.init,
-        open,
+        open: asyncQueue(async (payload: NotificationRequest) => {
+            await iframe
+                .open(payload.action, async () => {
+                    /** if OTP autofill notification is opened - do not process
+                     * any other actions : it should take precedence */
+                    const autosave = payload.action === NotificationAction.AUTOSAVE;
+                    const { action, visible } = iframe.state;
+                    if (autosave && visible && action === NotificationAction.OTP) return false;
+
+                    iframe.sendPortMessage({ type: InlinePortMessageType.NOTIFICATION_ACTION, payload });
+                    iframe.updatePosition();
+                    return true;
+                })
+                .catch(noop);
+        }),
         sendMessage: iframe.sendPortMessage,
         subscribe: iframe.subscribe,
     };
