@@ -48,6 +48,7 @@ export interface MediaManagementContextType {
     setInitialAudioState: (initialAudioState: boolean) => void;
     switchActiveDevice: SwitchActiveDevice;
     initializeDevices: () => Promise<void>;
+    facingMode: 'environment' | 'user';
 }
 
 const defaultValues: MediaManagementContextType = {
@@ -80,6 +81,7 @@ const defaultValues: MediaManagementContextType = {
     setInitialAudioState: () => {},
     switchActiveDevice: () => {},
     initializeDevices: () => Promise.resolve(),
+    facingMode: 'user',
 };
 
 export const MediaManagementContext = createContext<MediaManagementContextType>(defaultValues);
