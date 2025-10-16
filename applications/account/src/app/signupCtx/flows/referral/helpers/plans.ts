@@ -6,12 +6,12 @@ import getAvailablePlansWithCycles from '../../../helpers/getAvailablePlansWithC
 
 type ReferralSelectedPlan = {
     planIDs: PlanIDs;
-    trial?: boolean;
+    requiresPaymentMethod?: boolean;
 };
 
 export const unlimited: ReferralSelectedPlan = {
     planIDs: { [PLANS.BUNDLE]: 1 },
-    trial: true,
+    requiresPaymentMethod: true,
 };
 
 const mailPlus: ReferralSelectedPlan = {
@@ -28,7 +28,7 @@ const passPlus: ReferralSelectedPlan = {
 
 const vpnPlus: ReferralSelectedPlan = {
     planIDs: { [PLANS.VPN2024]: 1 },
-    trial: true,
+    requiresPaymentMethod: true,
 };
 
 export type SupportedReferralPlans = PLANS.BUNDLE | PLANS.MAIL | PLANS.DRIVE | PLANS.PASS | PLANS.VPN2024;
@@ -45,11 +45,11 @@ const referralPlanMap: Record<SupportedReferralPlans, ReferralSelectedPlan> = {
  * Trial plans require payment token
  */
 export const plansRequiringPaymentToken: SupportedReferralPlans[] = Object.entries(referralPlanMap)
-    .filter(([, { trial }]) => trial)
+    .filter(([, { requiresPaymentMethod }]) => requiresPaymentMethod)
     .map(([plan]) => plan as SupportedReferralPlans);
 
 export const autoRenewingPlans: SupportedReferralPlans[] = Object.entries(referralPlanMap)
-    .filter(([, { trial }]) => trial)
+    .filter(([, { requiresPaymentMethod }]) => requiresPaymentMethod)
     .map(([plan]) => plan as SupportedReferralPlans);
 
 export const getReferralSelectedPlan = (plan: SupportedReferralPlans | undefined): ReferralSelectedPlan => {
