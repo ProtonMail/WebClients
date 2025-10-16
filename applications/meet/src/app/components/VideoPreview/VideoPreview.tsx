@@ -68,7 +68,7 @@ export const VideoPreview = ({ selectedCameraId, facingMode }: VideoPreviewProps
                 {/* This is just a video preview of the user's camera, so we don't need a caption */}
                 {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
                 <video
-                    className="absolute h-full w-full lg:h-auto lg:w-full"
+                    className="absolute h-full w-full lg:w-full"
                     ref={videoRef}
                     autoPlay
                     playsInline
