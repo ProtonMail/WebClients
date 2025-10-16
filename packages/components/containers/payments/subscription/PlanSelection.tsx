@@ -14,7 +14,7 @@ import WalletLogo from '@proton/components/components/logo/WalletLogo';
 import Option from '@proton/components/components/option/Option';
 import Price from '@proton/components/components/price/Price';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import Tabs from '@proton/components/components/tabs/Tabs';
+import { Tabs } from '@proton/components/components/tabs/Tabs';
 import useCancellationFlow from '@proton/components/containers/payments/subscription/cancellationFlow/useCancellationFlow';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import {
@@ -475,13 +475,15 @@ const PlanSelection = (props: Props) => {
         user,
     });
 
+    const trial = isTrial(subscription);
+
     const isFreeSubscription = getIsFreeSubscription(subscription);
     // experimentally re-enable the cycle selector in Pass App even for paid users. Previously it was problematic due to
     // the chargebee migration and inability to do subscription/check for the same plan+cycle as user currently has.
     // After some changes the subscription/check is no longer triggered at the stage of plan selection, but I want to be
     // extra carefull and keep it limited to the pass app only for now. If that's ok then renderCycleSelector can be set
     // to always true.
-    const renderCycleSelector = isFreeSubscription || isTrial(subscription) || app === APPS.PROTONPASS;
+    const renderCycleSelector = isFreeSubscription || trial || app === APPS.PROTONPASS;
 
     const { b2bAccess, b2cAccess, redirectToCancellationFlow } = useCancellationFlow();
     const { sendStartCancellationPricingReport } = useCancellationTelemetry();
@@ -561,7 +563,6 @@ const PlanSelection = (props: Props) => {
         const cycle = notHigherThanAvailableOnBackend({ [plan.Name]: 1 }, plansMap, restrictedCycle);
 
         const planTitle = shortPlan.title;
-        const trial = isTrial(subscription);
 
         const action = (() => {
             if (isCurrentPlan && !trial) {
