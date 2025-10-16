@@ -75,7 +75,8 @@ export const VideoPreview = ({ selectedCameraId, facingMode }: VideoPreviewProps
                     style={{
                         objectFit: 'cover',
                         background: '#000',
-                        transform: isSafari() && isMobile() ? undefined : 'scaleX(-1)',
+                        transform:
+                            (isSafari() || facingMode === 'environment') && isMobile() ? undefined : 'scaleX(-1)',
                     }}
                 />
             </div>
