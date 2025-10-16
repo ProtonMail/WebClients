@@ -1,8 +1,10 @@
 import { c } from 'ttag';
 
-import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
-import { DashboardGridSection } from '@proton/atoms/DashboardGrid/DashboardGrid';
-import { DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
+import {
+    DashboardGrid,
+    DashboardGridSection,
+    DashboardGridSectionHeader,
+} from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 
 import changeIpAddress from './illustrations/change-ip-address.jpg';
@@ -60,9 +62,9 @@ const blogPosts: BlogPost[] = [
         link: 'https://protonvpn.com/blog/is-telegram-safe',
     },
     {
-        title: () => c('Blog').t`Which VPN protocol is the best?`,
+        title: () => c('Blog').t`How to change your IP address on Windows`,
         description: () =>
-            c('Blog').t`This article has been updated to include the WireGuard and Stealth VPN protocols.`,
+            c('Blog').t`We discuss how to change the external and local IP addresses of your Windows device.`,
         image: changeIpAddress,
         link: 'https://protonvpn.com/blog/change-ip-address-windows',
     },
