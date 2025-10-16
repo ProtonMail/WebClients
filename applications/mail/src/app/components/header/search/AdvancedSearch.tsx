@@ -67,13 +67,13 @@ const getRecipients = (value = '') =>
 const formatRecipients = (recipients: Recipient[] = []) => recipients.map(({ Address }) => Address).join(',');
 
 const initializeModel = (history: History, selectedLabelID: string, searchInputValue: string) => {
-    const { keyword, address, wildcard, from, to, begin, end } = extractSearchParameters(history.location);
+    const { keyword, address, wildcard, from = '', to, begin, end } = extractSearchParameters(history.location);
 
     const { filter } = getSearchParams(history.location.search);
 
     return {
         ...(keyword && { labelID: selectedLabelID }),
-        keyword: searchInputValue ? keyword || '' : '',
+        keyword: searchInputValue ?? keyword ?? '',
         address: address || ALL_ADDRESSES,
         wildcard,
         from,
@@ -133,10 +133,13 @@ const AdvancedSearch = ({
     const { sendClearSearchFieldsReport } = useSearchTelemetry();
     const [{ AlmostAllMail }] = useMailSettings();
 
-    const DEFAULT_MODEL: SearchModel = {
-        ...DEFAULT_MODEL_WITHOUT_LABEL_ID,
-        labelID: AlmostAllMail ? MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL : MAILBOX_LABEL_IDS.ALL_MAIL,
-    };
+    const DEFAULT_MODEL: SearchModel = useMemo(
+        () => ({
+            ...DEFAULT_MODEL_WITHOUT_LABEL_ID,
+            labelID: AlmostAllMail ? MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL : MAILBOX_LABEL_IDS.ALL_MAIL,
+        }),
+        [AlmostAllMail]
+    );
 
     const [model, updateModel] = useState<SearchModel>({
         ...DEFAULT_MODEL,
@@ -207,9 +210,7 @@ const AdvancedSearch = ({
         sendClearSearchFieldsReport(esEnabled);
     };
 
-    const canReset = useMemo(() => {
-        return !isDeepEqual(omit(model, ['labelID']), omit(DEFAULT_MODEL, ['labelID']));
-    }, [model]);
+    const canReset = useMemo(() => !isDeepEqual(omit(model, ['labelID']), DEFAULT_MODEL_WITHOUT_LABEL_ID), [model]);
 
     return (
         <form name="advanced-search" onSubmit={handleSubmit} onReset={handleReset}>
@@ -345,7 +346,7 @@ const AdvancedSearch = ({
                 )}
             </div>
             <div className="my-4 mx-5 flex items-center justify-space-between">
-                {showMore ? null : (
+                {showMore || (
                     <Button
                         data-testid="advanced-search:show-more"
                         className="mb-2 w-full md:w-auto"
@@ -356,14 +357,14 @@ const AdvancedSearch = ({
                     </Button>
                 )}
                 <div className="ml-auto w-full md:w-auto">
-                    {canReset ? (
+                    {canReset && (
                         <Button
                             data-testid="advanced-search:reset"
                             className="mb-2 w-full md:w-auto mr-4"
                             type="reset"
                             title={c('Action').t`Reset search form`}
                         >{c('Action').t`Reset`}</Button>
-                    ) : null}
+                    )}
                     <Button
                         color="norm"
                         data-testid="advanced-search:submit"
