@@ -293,7 +293,7 @@ const ContinueSubscriptionActionButton = ({ app }: { app: APP_NAMES }) => {
                         </div>
                         {featuresList}
                     </ModalTwoContent>
-                    <ModalTwoFooter className="flex flex-column">
+                    <ModalTwoFooter className="flex flex-column flex-nowrap">
                         <ManageSubscriptionButton color="norm" app={app} target="checkout" closeModal={closeModal}>
                             {planTitle ? getPlanOrAppNameText(planTitle) : c('Info').t`Continue`}
                         </ManageSubscriptionButton>
