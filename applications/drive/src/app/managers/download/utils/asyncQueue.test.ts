@@ -1,5 +1,3 @@
-import { describe, expect, it } from '@jest/globals';
-
 import { createAsyncQueue } from './asyncQueue';
 
 async function collect<T>(asyncIterable: AsyncIterable<T>) {
@@ -11,7 +9,7 @@ async function collect<T>(asyncIterable: AsyncIterable<T>) {
 }
 
 describe('createAsyncQueue', () => {
-    it('yields values in FIFO order', async () => {
+    it('should yield values in FIFO order', async () => {
         const queue = createAsyncQueue<number>();
 
         queue.push(1);
@@ -22,7 +20,7 @@ describe('createAsyncQueue', () => {
         expect(values).toEqual([1, 2]);
     });
 
-    it('propagates errors to the consumer', async () => {
+    it('should propagate errors to the consumer', async () => {
         const queue = createAsyncQueue<number>();
         const error = new Error('boom');
 
@@ -31,7 +29,7 @@ describe('createAsyncQueue', () => {
         await expect(collect(queue.iterator())).rejects.toThrow(error);
     });
 
-    it('supports producers that await async work', async () => {
+    it('should support producers that await async work', async () => {
         const queue = createAsyncQueue<number>();
 
         void (async () => {
