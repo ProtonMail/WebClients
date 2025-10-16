@@ -2,6 +2,7 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Draft } from 'immer';
 
 import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
@@ -877,8 +878,21 @@ const updateTotal = ({
         ...contextParams,
     });
 
+    const almostAllMailIdentifier = getElementContextIdentifier({
+        labelID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+        ...contextParams,
+    });
+
     Object.keys(state.total).forEach((contextIdentifier) => {
         const contextValue = state.total[contextIdentifier];
+
+        // We decrease the total of almost all mail when destination is trash or spam
+        if (
+            (destinationLabelID === MAILBOX_LABEL_IDS.TRASH || destinationLabelID === MAILBOX_LABEL_IDS.SPAM) &&
+            contextIdentifier === almostAllMailIdentifier
+        ) {
+            state.total[contextIdentifier] = safeDecreaseCount(contextValue, affectedElementsNumber);
+        }
 
         if (contextIdentifier === sourceContextIdentifier) {
             state.total[contextIdentifier] = safeDecreaseCount(contextValue, affectedElementsNumber);
