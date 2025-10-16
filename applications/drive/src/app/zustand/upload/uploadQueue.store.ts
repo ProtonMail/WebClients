@@ -1,10 +1,11 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
+import generateUID from '@proton/utils/generateUID';
+
 export enum UploadStatus {
     Uploading = 'uploading',
     Failed = 'failed',
-    Paused = 'paused',
     PausedServer = 'pausedServer',
     Finished = 'finished',
     Pending = 'pending',
@@ -13,7 +14,6 @@ export enum UploadStatus {
 }
 
 export type UploadItem = {
-    uploadId: string;
     name: string;
     progress: number;
     thumbnailUrl?: string;
@@ -22,29 +22,31 @@ export type UploadItem = {
     status: UploadStatus;
 };
 
-type UploadManagerStore = {
+type UploadQueueStore = {
     queue: Map<string, UploadItem>;
-    addUploadItem: (item: UploadItem) => void;
+
+    addUploadItem: (item: UploadItem) => string;
     updateUploadItem: (uploadId: string, update: Partial<UploadItem>) => void;
     removeUploadItems: (uploadIds: string[]) => void;
     clearQueue: () => void;
-    getQueue: () => UploadItem[];
+    getQueue: () => { uploadId: string; item: UploadItem }[];
     getQueueItem: (uploadId: string) => UploadItem | undefined;
 };
 
-const initialState: Pick<UploadManagerStore, 'queue'> = {
-    queue: new Map(),
-};
-
-export const useUploadManagerStore = create<UploadManagerStore>()(
+export const useUploadQueueStore = create<UploadQueueStore>()(
     devtools(
         (set, get) => ({
-            ...initialState,
-            addUploadItem: (item: UploadItem) =>
+            queue: new Map(),
+
+            addUploadItem: (item: UploadItem) => {
+                const uploadId = generateUID();
                 set((state) => ({
-                    queue: new Map(state.queue).set(item.uploadId, item),
-                })),
-            updateUploadItem: (uploadId, update) =>
+                    queue: new Map(state.queue).set(uploadId, item),
+                }));
+                return uploadId;
+            },
+
+            updateUploadItem: (uploadId, update) => {
                 set((state) => {
                     const existing = state.queue.get(uploadId);
                     if (!existing) {
@@ -53,8 +55,10 @@ export const useUploadManagerStore = create<UploadManagerStore>()(
                     const queue = new Map(state.queue);
                     queue.set(uploadId, { ...existing, ...update });
                     return { queue };
-                }),
-            removeUploadItems: (uploadIds) =>
+                });
+            },
+
+            removeUploadItems: (uploadIds) => {
                 set((state) => {
                     if (uploadIds.length === 0) {
                         return {};
@@ -62,11 +66,20 @@ export const useUploadManagerStore = create<UploadManagerStore>()(
                     const queue = new Map(state.queue);
                     uploadIds.forEach((id) => queue.delete(id));
                     return { queue };
-                }),
-            clearQueue: () => set({ queue: new Map() }),
-            getQueue: () => Array.from(get().queue.values()),
+                });
+            },
+
+            getQueue: () => {
+                return Array.from(get().queue.entries()).map(([uploadId, item]) => {
+                    return { uploadId, item };
+                });
+            },
             getQueueItem: (uploadId) => get().queue.get(uploadId),
+
+            clearQueue: () => {
+                set({ queue: new Map() });
+            },
         }),
-        { name: 'UploadManagerStore' }
+        { name: 'UploadQueueStore' }
     )
 );

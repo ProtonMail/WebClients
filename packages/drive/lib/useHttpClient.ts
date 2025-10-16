@@ -106,7 +106,7 @@ async function postXmlHttpRequest(options: ProtonDriveHTTPClientBlobRequest) {
         let total = 0;
         xhr.upload.onprogress = (e) => {
             total = e.total;
-            options.onProgress?.((e.loaded - lastLoaded) / total);
+            options.onProgress?.(e.loaded - lastLoaded);
             lastLoaded = e.loaded;
         };
 
