@@ -194,7 +194,6 @@ export async function getSpaceDek(s: SpaceKeyClear): Promise<AesGcmCryptoKey> {
 }
 
 // *** Message ***
-
 export type MessagePub = {
     id: MessageId; // uuid
     createdAt: string; // date

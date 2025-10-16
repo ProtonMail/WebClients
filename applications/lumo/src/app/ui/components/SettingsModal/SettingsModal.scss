@@ -4,19 +4,20 @@
 	// Mobile adjustments
 	@include media('<=small') {
 		block-size: auto;
-		min-block-size: 100vh;
-		max-block-size: 100vh;
+		min-block-size: calc(100vh - 2rem);
+		max-block-size: calc(100vh - 2rem);
 
-		// Make modal full screen on mobile
+		// Make modal nearly full screen on mobile with spacing
 		.modal-two-dialog {
-			block-size: 100vh;
-			max-block-size: 100vh;
-			border-radius: 0;
+			block-size: calc(100vh - 2rem);
+			max-block-size: calc(100vh - 2rem);
+			border-radius: 0.75rem;
+			margin: 1rem;
 		}
 
 		.modal-two-content {
 			block-size: 100%;
-			max-block-size: 100vh;
+			max-block-size: calc(100vh - 2rem);
 		}
 
 		// Reset ul styles specifically for settings modal
@@ -39,6 +40,13 @@
 		}
 	}
 
+	// Allow content container to scroll
+	.content-container {
+		.overflow-y-auto {
+			overflow-y: auto !important;
+		}
+	}
+
 	// Completely override all modal content padding/margins for flush borders
 	.modal-two-content {
 		padding: 0 !important;
@@ -49,11 +57,15 @@
 	.modal-main-container {
 		padding: 1rem;
 		min-block-size: 60vh; // Ensure minimum height for the modal
+		block-size: 60vh; // Set explicit height for proper flex behavior
+		display: flex;
+		flex-direction: column;
 
 		// Mobile specific adjustments
 		@include media('<=small') {
-			padding: 1.5rem;
+			padding: 1rem;
 			min-block-size: auto;
+			block-size: calc(100vh - 2rem);
 		}
 	}
 
@@ -80,6 +92,12 @@
 		inset-inline-end: 1rem;
 		z-index: 10;
 		color: var(--text-weak);
+
+		// Adjust positioning on mobile to align with Settings text
+		@include media('<=small') {
+			inset-block-start: 1rem;
+			inset-inline-end: 1rem;
+		}
 	}
 
 	// Top bar with border that extends full width to edges
@@ -101,12 +119,83 @@
 			margin-block-end: 1rem;
 		}
 
-		.mobile-settings-section {
-			&:not(:last-child) {
-				border-block-end: 1px solid var(--border-weak);
-				padding-block-end: 2rem;
-				margin-block-end: 2rem;
+		// Mobile tabs styling - minimal design
+		.mobile-tabs-container {
+			margin-block-end: 1rem;
+			max-inline-size: 100%;
+		}
+
+		.mobile-tabs {
+			display: flex;
+			background-color: transparent;
+			border-radius: 0;
+			padding: 0;
+			gap: 0;
+			overflow-x: auto;
+		}
+
+		.mobile-tab {
+			flex: 1;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			gap: 0.5rem;
+			padding-block: 0.75rem;
+			padding-inline: 0.5rem;
+			border-radius: 0.375rem;
+			transition: all 0.2s ease;
+			min-block-size: auto;
+			background-color: transparent;
+			border: none;
+			cursor: pointer;
+			margin-block: 0;
+			margin-inline: 0.125rem;
+
+			&:hover {
+				background-color: var(--background-weak);
 			}
+
+			&.mobile-tab-active {
+				background-color: var(--background-weak);
+				box-shadow: none;
+			}
+
+			&:disabled {
+				opacity: 0.5;
+				cursor: not-allowed;
+			}
+
+			// Icon styling - smaller and inline
+			.icon {
+				color: var(--text-weak);
+				inline-size: 16px;
+				block-size: 16px;
+			}
+
+			&.mobile-tab-active .icon {
+				color: var(--text-norm);
+			}
+
+			// Text styling - inline with icon
+			span {
+				font-weight: 500;
+				color: var(--text-weak);
+				text-align: center;
+				line-height: 1.2;
+				font-size: 0.875rem;
+			}
+
+			&.mobile-tab-active span {
+				color: var(--text-norm);
+				font-weight: 600;
+			}
+		}
+
+		.mobile-tab-content {
+			flex: 1;
+			overflow: hidden;
+			min-block-size: 0;
 		}
 
 		// Hide Lumo cat image on mobile for the upgrade panel

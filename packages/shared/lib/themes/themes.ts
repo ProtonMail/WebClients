@@ -254,7 +254,7 @@ export const PROTON_THEMES_MAP: Record<ThemeTypes, ThemeDefinition> = {
         theme: walletDarkTheme.toString(),
     },
     [ThemeTypes.LumoLight]: {
-        label: 'Proton',
+        label: 'LumoLight',
         identifier: ThemeTypes.LumoLight,
         themeColorMeta: '#1b1340',
         thumbColors: {
@@ -266,7 +266,7 @@ export const PROTON_THEMES_MAP: Record<ThemeTypes, ThemeDefinition> = {
         theme: lumoLightTheme.toString(),
     },
     [ThemeTypes.LumoDark]: {
-        label: 'Proton',
+        label: 'LumoDark',
         identifier: ThemeTypes.LumoDark,
         themeColorMeta: '#1b1340',
         thumbColors: {
