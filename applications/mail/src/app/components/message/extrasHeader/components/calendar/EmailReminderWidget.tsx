@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useAddresses, useGetAddresses } from '@proton/account/addresses/hooks';
 import { Banner, ButtonLike, Href } from '@proton/atoms';
-import { VideoConferencingWidgetConfig } from '@proton/calendar';
+import { useVideoConferencingWidget } from '@proton/calendar';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import {
     AppLink,
@@ -318,6 +318,8 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
         return restrictedCalendarSanitize(escaped);
     }, [vevent]);
 
+    const videoConferencingWidget = useVideoConferencingWidget({ model: vevent, widgetLocation: 'event-details' });
+
     if (isLoading) {
         return <EmailReminderWidgetSkeleton />;
     }
@@ -401,9 +403,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                             </IconRow>
                         )}
 
-                        <div className="mb-4">
-                            <VideoConferencingWidgetConfig model={vevent} widgetLocation="event-details" />
-                        </div>
+                        <div className="mb-4">{videoConferencingWidget}</div>
 
                         {!!participantsList.length && (
                             <IconRow title={c('Label').t`Participants`} icon="users" labelClassName={labelClassName}>
