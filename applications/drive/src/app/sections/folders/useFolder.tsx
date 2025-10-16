@@ -82,6 +82,11 @@ export function useFolder() {
                 let showErrorNotification = false;
                 for await (const maybeNode of drive.iterateFolderChildren(folderNodeUid, undefined, ac.signal)) {
                     try {
+                        if (ac.signal.aborted) {
+                            // Stop processing as soon as the request gets superseded so stale items from the previous folder
+                            // do not bleed into the current view even though the SDK iteration is still yielding results.
+                            return;
+                        }
                         const legacyItem = await mapNodeToLegacyItem(maybeNode, folderShareId, drive);
                         setItem(legacyItem);
                     } catch (e) {
