@@ -12,7 +12,7 @@ export const DropdownPopover = forwardRef<HTMLDivElement, Ariakit.RoleProps>(fun
       ref={ref}
       {...props}
       className={clsx(
-        'border-weak z-10 max-h-[--popover-available-height] overflow-auto overscroll-contain rounded-[.5rem] border bg-[white] py-2 shadow-[0px_8px_24px_0px_rgba(0,0,0,0.16)] focus:outline-none',
+        'border-weak z-10 max-h-[--popover-available-height] max-w-[--popover-available-width] overflow-auto overscroll-contain rounded-[.5rem] border bg-[white] py-2 shadow-[0px_8px_24px_0px_rgba(0,0,0,0.16)] focus:outline-none',
         props.className,
       )}
     />
@@ -99,7 +99,7 @@ export const DropdownItem = forwardRef<HTMLDivElement, DropdownItemProps>(functi
       ref={ref}
       {...props}
       className={clsx(
-        'flex h-9 select-none items-center gap-2 text-[.875rem] text-[#0C0C14]',
+        'flex h-9 select-none items-center gap-2 truncate text-[.875rem] text-[#0C0C14]',
         'disabled:text-[#8F8D8A] aria-disabled:text-[#8F8D8A]',
         padding && 'px-4',
         // TODO: "hocus" type tw variant
@@ -114,8 +114,8 @@ export const DropdownItem = forwardRef<HTMLDivElement, DropdownItemProps>(functi
       <span className="grow leading-none">
         {hintSlot ? (
           <span className="flex grow justify-between gap-4">
-            <span className="grow">{props.children}</span>
-            <span className="text-[#8F8D8A]">{hintSlot}</span>
+            <span className="grow truncate">{props.children}</span>
+            <span className="truncate text-[#8F8D8A]">{hintSlot}</span>
           </span>
         ) : (
           props.children
