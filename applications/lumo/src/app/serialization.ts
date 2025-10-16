@@ -5,6 +5,7 @@ import isNil from 'lodash/isNil';
 import isObject from 'lodash/isObject';
 
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
+import { generateAndImportKey } from '@proton/crypto/lib/subtle/aesGcm';
 
 import {
     base64ToSpaceKey,
@@ -17,6 +18,9 @@ import {
     wrapAesKey,
 } from './crypto';
 import type { AesGcmCryptoKey, AesKwCryptoKey } from './crypto/types';
+import { safeLogger } from './util/safeLogger';
+import type { LumoUserSettings } from './redux/slices/lumoUserSettings';
+import type { SerializedUserSettings, UserSettingsToApi } from './remote/types';
 import {
     type AdString,
     type Attachment,
@@ -60,13 +64,14 @@ const APP_NAME = 'lumo';
 // because the AD won't match anymore during decryption.
 function getSpaceAd(space: SpacePub): AdString {
     const { id } = space;
-    return (
-        stableStringify({
-            app: APP_NAME,
-            type: 'space',
-            id,
-        }) || ''
-    );
+
+    const _adString = stableStringify({
+        app: APP_NAME,
+        type: 'space',
+        id,
+    });
+    if (!_adString) throw new Error('Could not get AD for space');
+    return _adString;
 }
 
 // Warning: It is critical to always get the same AD for the same conversation.
@@ -75,14 +80,15 @@ function getSpaceAd(space: SpacePub): AdString {
 // because the AD won't match anymore during decryption.
 function getConversationAd(conversation: ConversationPub): AdString {
     const { id, spaceId } = conversation;
-    return (
-        stableStringify({
-            app: APP_NAME,
-            type: 'conversation',
-            id,
-            spaceId,
-        }) || ''
-    );
+    
+    const _adString = stableStringify({
+        app: APP_NAME,
+        type: 'conversation',
+        id,
+        spaceId,
+    });
+    if (!_adString) throw new Error('Could not get AD for conversation');
+    return _adString;
 }
 
 // Warning: It is critical to always get the same AD for the same message.
@@ -91,16 +97,17 @@ function getConversationAd(conversation: ConversationPub): AdString {
 // because the AD won't match anymore during decryption.
 function getMessageAd(message: MessagePub): AdString {
     const { id, role, parentId, conversationId } = message;
-    return (
-        stableStringify({
-            app: APP_NAME,
-            type: 'message',
-            id,
-            role,
-            parentId,
-            conversationId,
-        }) || ''
-    );
+    
+    const _adString = stableStringify({
+        app: APP_NAME,
+        type: 'message',
+        id,
+        role,
+        parentId,
+        conversationId,
+    });
+    if (!_adString) throw new Error('Could not get AD for message');
+    return _adString;
 }
 
 // Warning: It is critical to always get the same AD for the same attachment.
@@ -109,13 +116,14 @@ function getMessageAd(message: MessagePub): AdString {
 // because the AD won't match anymore during decryption.
 function getAttachmentAd(attachment: AttachmentPub): AdString {
     const { id } = attachment;
-    return (
-        stableStringify({
-            app: APP_NAME,
-            type: 'attachment',
-            id,
-        }) || ''
-    );
+    
+    const _adString = stableStringify({
+        app: APP_NAME,
+        type: 'attachment',
+        id,
+    });
+    if (!_adString) throw new Error('Could not get AD for attachment');
+    return _adString;
 }
 
 export async function serializeSpace(space: Space, masterKey: AesKwCryptoKey): Promise<SerializedSpace> {
@@ -179,7 +187,7 @@ export async function deserializeSpace(
             ...spacePriv,
         };
     } catch (e) {
-        console.warn(`Cannot deserialize space ${serializedSpace.id}: `, e);
+        safeLogger.warn(`Cannot deserialize space ${serializedSpace.id}: `, e);
         return null;
     }
 }
@@ -216,8 +224,7 @@ export async function deserializeConversation(
             ...conversationPriv,
         };
     } catch (e) {
-        console.warn(`Cannot deserialize conversation ${serializedConversation.id}`);
-        console.warn(e);
+        safeLogger.warn(`Cannot deserialize conversation ${serializedConversation.id}:`, e);
         return null;
     }
 }
@@ -239,8 +246,7 @@ export async function serializeMessage(message: Message, spaceDek: AesGcmCryptoK
             encrypted,
         };
     } catch (e) {
-        console.warn(`Cannot serialize message ${message.id}`);
-        console.warn(e);
+        safeLogger.warn(`Cannot serialize message ${message.id}:`, e);
         return null;
     }
 }
@@ -266,8 +272,7 @@ export async function deserializeMessage(
             ...messagePriv,
         };
     } catch (e) {
-        console.warn(`Cannot deserialize message ${serializedMessage.id}`);
-        console.warn(e);
+        safeLogger.warn(`Cannot deserialize message ${serializedMessage.id}:`, e);
         return null;
     }
 }
@@ -297,8 +302,7 @@ export async function serializeAttachment(
             encrypted,
         };
     } catch (e) {
-        console.warn(`Cannot serialize attachment ${attachment.id}`);
-        console.warn(e);
+        safeLogger.warn(`Cannot serialize attachment ${attachment.id}:`, e);
         return null;
     }
 }
@@ -336,8 +340,85 @@ export async function deserializeAttachment(
             ...(!isNil(rawBytes) && typeof rawBytes === 'number' && Number.isInteger(rawBytes) ? { rawBytes } : {}),
         };
     } catch (e) {
-        console.warn(`Cannot deserialize attachment ${serializedAttachment.id}`);
-        console.warn(e);
+        safeLogger.warn(`Cannot deserialize attachment ${serializedAttachment.id}:`, e);
+        return null;
+    }
+}
+
+
+// User settings serialization functions
+// Warning: It is critical to always get the same AD for the same user settings.
+// This has consequences in terms of backward compatibility: if you
+// change this logic, this might make older user settings unreadable,
+// because the AD won't match anymore during decryption.
+function getUserSettingsAd(): AdString {
+    const _adString = stableStringify({
+        app: APP_NAME,
+        type: 'user-settings',
+    });
+    if (!_adString) throw new Error('Could not get AD for user settings');
+    return _adString;
+}
+
+export async function serializeUserSettings(
+    userSettings: LumoUserSettings,
+    masterKey: AesKwCryptoKey
+): Promise<UserSettingsToApi> {
+    // Create a data encryption key for user settings (similar to space DEK)
+    const userSettingsDek = await generateAndImportKey();
+    
+
+    // Wrap the DEK with the master key
+    const wrappedKey = await wrapAesKey(
+        { type: 'AesGcmCryptoKey', encryptKey: userSettingsDek },
+        masterKey
+    );
+    const wrappedKeyBase64 = uint8ArrayToBase64String(wrappedKey);
+
+    // Serialize user settings to JSON
+    const userSettingsJson = JSON.stringify(userSettings);
+
+    // Encrypt the user settings data
+    const ad = getUserSettingsAd();
+    const encrypted = await encryptString(userSettingsJson, { type: 'AesGcmCryptoKey', encryptKey: userSettingsDek }, ad);
+
+    // Combine wrapped key and encrypted data
+    const combined = {
+        wrappedKey: wrappedKeyBase64,
+        encrypted,
+    };
+
+    return {
+        UserSettingsTag: crypto.randomUUID(), // Unique tag for user settings
+        Encrypted: uint8ArrayToBase64String(msgpackEncode(combined) as Uint8Array<ArrayBuffer>),
+    };
+}
+
+export async function deserializeUserSettings(
+    serializedUserSettings: SerializedUserSettings,
+    masterKey: AesKwCryptoKey
+): Promise<LumoUserSettings | null> {
+    try {
+        // Decode the combined data
+        const combinedBytes = base64StringToUint8Array(serializedUserSettings.encrypted);
+        const combined = msgpackDecode(combinedBytes) as {
+            wrappedKey: string;
+            encrypted: EncryptedData;
+        };
+        
+        // Unwrap the DEK
+        const wrappedKeyBytes = base64StringToUint8Array(combined.wrappedKey);
+        const userSettingsDek = await unwrapAesKey(wrappedKeyBytes, masterKey);
+        
+        // Decrypt the user settings data
+        const ad = getUserSettingsAd();
+        const userSettingsJson = await decryptString(combined.encrypted, userSettingsDek, ad);
+        
+        const result = JSON.parse(userSettingsJson) as LumoUserSettings;
+        
+        return result;
+    } catch (error) {
+        safeLogger.warn('Failed to deserialize user settings:', error);
         return null;
     }
 }

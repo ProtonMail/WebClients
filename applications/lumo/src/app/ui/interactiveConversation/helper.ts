@@ -3,6 +3,8 @@ import { c } from 'ttag';
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import { generateSpaceKeyBase64 } from '../../crypto';
+import type { PersonalizationSettings } from '../../redux/slices/personalization';
+import { PERSONALITY_OPTIONS } from '../../redux/slices/personalization';
 import { sendMessageWithRedux } from '../../lib/lumo-api-client/integrations/redux';
 import type { ContextFilter } from '../../llm';
 import { ENABLE_U2L_ENCRYPTION, getFilteredTurns } from '../../llm';
@@ -163,6 +165,20 @@ export function sendMessage({
             // Request title for new conversations (when messageChain is empty, it's the first message)
             const shouldRequestTitle = messageChain.length === 0;
 
+            // Get personalization prompt for new conversations
+            let personalizationPrompt: string | undefined;
+            if (shouldRequestTitle) {
+                const state = getState();
+                const personalization = state.personalization;
+                console.log('Personalization state:', personalization);
+                if (personalization?.enableForNewChats) {
+                    personalizationPrompt = getPersonalizationPromptFromState(personalization);
+                    console.log('Generated personalization prompt:', personalizationPrompt);
+                } else {
+                    console.log('Personalization not enabled for new chats or no personalization data');
+                }
+            }
+
             await fetchAssistantResponse({
                 api,
                 dispatch,
@@ -174,6 +190,7 @@ export function sendMessage({
                 enableExternalTools: noAttachment && enableExternalToolsToggled,
                 requestTitle: shouldRequestTitle,
                 contextFilters,
+                personalizationPrompt,
             });
         } catch (error) {
             console.warn('error: ', error);
@@ -213,6 +230,7 @@ export function regenerateMessage(
         }
 
         try {
+            // Note: regeneration doesn't use personalization since it's not a new conversation
             const turns = getFilteredTurns(messagesWithContext, contextFilters);
 
             // Add retry instructions if provided
@@ -256,6 +274,7 @@ export async function retrySendMessage({
     signal,
     enableExternalTools,
     contextFilters = [],
+    personalizationPrompt,
 }: {
     api: Api;
     dispatch: AppDispatch;
@@ -266,6 +285,7 @@ export async function retrySendMessage({
     signal: AbortSignal;
     enableExternalTools: boolean;
     contextFilters?: any[];
+    personalizationPrompt?: string;
 }) {
     const [, date2] = createDatePair();
 
@@ -307,6 +327,7 @@ export async function retrySendMessage({
             enableExternalTools,
             requestTitle: messageChain.length === 1, // only request title if retrying first message
             contextFilters,
+            personalizationPrompt,
         });
     } catch (error) {
         console.warn('retry error: ', error);
@@ -415,6 +436,7 @@ export async function fetchAssistantResponse({
     enableExternalTools,
     requestTitle = false,
     contextFilters = [],
+    personalizationPrompt,
 }: {
     api: Api;
     dispatch: AppDispatch;
@@ -426,8 +448,11 @@ export async function fetchAssistantResponse({
     enableExternalTools: boolean;
     requestTitle?: boolean;
     contextFilters?: any[];
+    personalizationPrompt?: string;
 }) {
-    const turns = getFilteredTurns(linearChain, contextFilters);
+
+    const turns = getFilteredTurns(linearChain, contextFilters, personalizationPrompt);
+    console.log('Final turns being sent to LLM:', turns);
     await dispatch(
         sendMessageWithRedux(api, turns, {
             messageId: assistantMessageId,
@@ -499,4 +524,39 @@ export function generateFakeConversationToShowTierError({
 
         return userMessage;
     };
+}
+
+// Helper function to generate personalization prompt from state (without using hooks)
+export function getPersonalizationPromptFromState(personalization: PersonalizationSettings): string {
+    if (!personalization.enableForNewChats) {
+        return '';
+    }
+
+    const parts: string[] = [];
+
+    if (personalization.nickname) {
+        parts.push(`Please address me as ${personalization.nickname}.`);
+    }
+
+    if (personalization.jobRole) {
+        parts.push(`My role/job: ${personalization.jobRole}.`);
+    }
+
+    if (personalization.personality !== 'default') {
+        const personalityOption = PERSONALITY_OPTIONS.find(p => p.value === personalization.personality);
+        const description = personalityOption?.description;
+        if (description) {
+            parts.push(`Please adopt a ${description.toLowerCase()} personality.`);
+        }
+    }
+
+    if (personalization.lumoTraits) {
+        parts.push(`Lumo traits: ${personalization.lumoTraits}`);
+    }
+
+    if (personalization.additionalContext) {
+        parts.push(`Additional context: ${personalization.additionalContext}`);
+    }
+
+    return parts.join(' ');
 }

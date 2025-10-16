@@ -3,6 +3,19 @@ import pdfParse from '../lib/attachments/pdfParse';
 import { isFileTypeSupported } from '../util/filetypes';
 import { mimeTypeToPandocFormat, needsPandocConversion, shouldProcessAsPlainText } from '../util/mimetype';
 
+// Safe logger for worker context (avoids console.warn/console.error that are forbidden in tests)
+const workerLogger = {
+    log: (message: string, ...args: any[]) => {
+        console.log(`[WORKER] ${message}`, ...args);
+    },
+    warn: (message: string, ...args: any[]) => {
+        console.log(`[WORKER-WARN] ${message}`, ...args);
+    },
+    error: (message: string, ...args: any[]) => {
+        console.log(`[WORKER-ERROR] ${message}`, ...args);
+    }
+};
+
 export interface FileProcessingRequest {
     id: string;
     file: {
@@ -11,6 +24,7 @@ export interface FileProcessingRequest {
         size: number;
         data: ArrayBuffer;
     };
+    isLumoPaid?: boolean; // User tier information for tiered processing limits
 }
 
 export interface FileProcessingResponse {
@@ -122,20 +136,20 @@ async function convertXlsxToCsv(fileData: FileProcessingRequest['file']): Promis
         console.log(`Excel file converted: ${lines.length} rows`);
         return csvData;
     } catch (error) {
-        console.error('Error converting Excel to CSV:', error);
+        workerLogger.error('Error converting Excel to CSV:', error);
         throw error instanceof Error ? error : new Error('Failed to convert Excel file to CSV');
     }
 }
 
-async function processFile(fileData: FileProcessingRequest['file']): Promise<FileProcessingResponse['result'] | null> {
+async function processFile(fileData: FileProcessingRequest['file'], isLumoPaid: boolean = false): Promise<FileProcessingResponse['result'] | null> {
     const startTime = performance.now();
     const fileSizeMB = fileData.size / (1024 * 1024);
     console.log(
         `[Performance] Starting processing for ${fileData.name} (${fileData.type}, ${fileSizeMB.toFixed(2)}MB)`
     );
 
-    // Performance optimization: Set size limits for different file types
-    const SIZE_LIMITS = {
+    // Performance optimization: Set size limits for different file types based on user tier
+    const BASE_LIMITS = {
         'text/plain': 50, // 50MB
         'text/csv': 100, // 100MB
         'application/pdf': 200, // 200MB
@@ -144,11 +158,14 @@ async function processFile(fileData: FileProcessingRequest['file']): Promise<Fil
         default: 50, // 50MB for other types
     };
 
-    const sizeLimit = SIZE_LIMITS[fileData.type as keyof typeof SIZE_LIMITS] || SIZE_LIMITS.default;
+    // Apply user tier multiplier - paid users get higher processing limits
+    const tierMultiplier = isLumoPaid ? 2 : 1; // Paid users get 2x processing limits
+    const baseSizeLimit = BASE_LIMITS[fileData.type as keyof typeof BASE_LIMITS] || BASE_LIMITS.default;
+    const sizeLimit = baseSizeLimit * tierMultiplier;
 
     if (fileSizeMB > sizeLimit) {
-        console.warn(
-            `[Performance] File ${fileData.name} (${fileSizeMB.toFixed(2)}MB) exceeds size limit (${sizeLimit}MB)`
+        workerLogger.warn(
+            `File ${fileData.name} (${fileSizeMB.toFixed(2)}MB) exceeds size limit (${sizeLimit}MB)`
         );
         throw new Error(`File too large: ${fileSizeMB.toFixed(1)}MB exceeds ${sizeLimit}MB limit for ${fileData.type}`);
     }
@@ -272,7 +289,7 @@ async function processFile(fileData: FileProcessingRequest['file']): Promise<Fil
     } catch (error) {
         const endTime = performance.now();
         const duration = endTime - startTime;
-        console.error(`[Performance] Error processing ${fileData.name} after ${duration.toFixed(2)}ms:`, error);
+        workerLogger.error(`Error processing ${fileData.name} after ${duration.toFixed(2)}ms:`, error);
         throw error instanceof Error ? error : new Error(String(error));
     } finally {
         const endTime = performance.now();
@@ -305,7 +322,7 @@ async function processFileWithPandoc(
         // Check if conversion produced any content
         if (!converted || converted.trim() === '') {
             const errorMsg = `Pandoc conversion produced empty output for ${fileData.type}. This may indicate the format is not supported by the WASM build.`;
-            console.error(errorMsg);
+            workerLogger.error(errorMsg);
             throw new Error(errorMsg);
         }
 
@@ -316,7 +333,7 @@ async function processFileWithPandoc(
             convertedSize: converted.length,
         };
     } catch (error) {
-        console.error(`Error converting ${fileData.type} with pandoc:`, error);
+        workerLogger.error(`Error converting ${fileData.type} with pandoc:`, error);
         throw error instanceof Error ? error : new Error(String(error));
     }
 }
@@ -328,10 +345,10 @@ async function convertPdfToText(fileData: FileProcessingRequest['file']): Promis
 
 // Handle messages from the main thread
 self.addEventListener('message', async (event: MessageEvent<FileProcessingRequest>) => {
-    const { id, file } = event.data;
+    const { id, file, isLumoPaid = false } = event.data;
 
     try {
-        const result = await processFile(file);
+        const result = await processFile(file, isLumoPaid);
 
         if (result === null) {
             // Unsupported file type

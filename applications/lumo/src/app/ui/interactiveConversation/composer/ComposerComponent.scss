@@ -9,10 +9,9 @@
 
 	// Mobile styles
 	@include media('<=small') {
-		// Remove bottom border radius and border
-		border-end-start-radius: 0 !important;
-		border-end-end-radius: 0 !important;
 		border-block-end: none !important;
+		inline-size: 98% !important;
+		margin-block-end: 5px;
 
 		// Mobile background override
 		background-color: var(--background-composer-mobile), var(--background-norm);
@@ -68,15 +67,6 @@
 
 		// Ghost mode mobile overrides
 		@include media('<=small') {
-			// Layout adjustments
-			inline-size: 98% !important;
-			margin-inline-start: 1% !important;
-			margin-block-end: 5px;
-
-			// Restore rounded corners for ghost mode
-			border-end-start-radius: var(--border-radius-xl) !important;
-			border-end-end-radius: var(--border-radius-xl) !important;
-
 			// Theme overrides
 			background-color: var(--ghost-bg-primary) !important;
 
