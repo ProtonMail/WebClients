@@ -12,7 +12,6 @@ import { IcArrowLeft } from '@proton/icons';
 import {
     PAYMENT_METHOD_TYPES,
     type PaymentProcessorHook,
-    SubscriptionMode,
     TRIAL_DURATION_DAYS,
     getPaymentsVersion,
     getPlanFromPlanIDs,
@@ -51,7 +50,7 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
 
     const { options } = payments;
 
-    const startTrial = options.checkResult.SubscriptionMode === SubscriptionMode.Trial;
+    const startTrial = true;
 
     const paymentFacade = usePaymentFacade({
         checkResult: options.checkResult,
@@ -65,6 +64,7 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
         },
         paymentStatus: payments.paymentStatus,
         flow: 'signup',
+        isTrial: startTrial,
     });
 
     const validatePayment = () => {
