@@ -8,11 +8,15 @@ import { selectPersistModel } from '@proton/redux-utilities';
 
 import type { AppStartListening, LumoListener, LumoState } from '../store';
 import type { LumoThunkArguments } from '../thunk';
+import { startPersonalizationListeners } from './personalizationListener';
+import { startLumoUserSettingsListeners } from './lumoUserSettingsListener';
 
 const persistReducer: Partial<{ [key in keyof LumoState]: any }> = {
     ...sharedPersistReducer,
     sessions: selectPersistModel,
     contextFilters: selectPersistModel, // Persist context filters so they survive page reloads
+    personalization: selectPersistModel, // Persist personalization settings
+    lumoUserSettings: selectPersistModel, // Persist Lumo user settings
 };
 
 const getLumoPersistedState = (state: LumoState) => {
@@ -23,6 +27,8 @@ export const start = (startListening: AppStartListening) => {
     startSharedListening(startListening);
     startPersistListener(startListening, getLumoPersistedState);
     startAccountSessionsListener(startListening);
+    startPersonalizationListeners(startListening);
+    startLumoUserSettingsListeners(startListening);
 };
 
 export const createLumoListenerMiddleware = ({ extra }: { extra: LumoThunkArguments }): LumoListener => {

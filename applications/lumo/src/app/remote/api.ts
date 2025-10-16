@@ -16,6 +16,7 @@ import {
     convertMessageFromApi,
     convertSpaceFromApi,
     convertSpacesFromApi,
+    convertUserSettingsFromApi,
 } from './conversion';
 import { type Priority, RequestScheduler } from './scheduler';
 import type {
@@ -37,13 +38,16 @@ import type {
     RemoteDeletedAsset,
     RemoteId,
     RemoteMessage,
+    SerializedUserSettings,
+    UserSettingsFromApi,
+    UserSettingsToApi,
     SpaceTag,
     SpaceToApi,
 } from './types';
 import { objectToPascalCaseKeys, oldestDateReducer } from './util';
 
 export type RemoteStatus = 'ok' | 'deleted';
-export type ResourceName = 'masterkeys' | 'spaces' | 'conversations' | 'messages' | 'assets';
+export type ResourceName = 'masterkeys' | 'spaces' | 'conversations' | 'messages' | 'assets' | 'personalization' | 'settings';
 
 // prettier-ignore
 type PostableResource =
@@ -52,6 +56,7 @@ type PostableResource =
     | NewSpaceToApi
     | NewAssetToApi
     | MasterKeyFromApi
+    | UserSettingsToApi
     ;
 
 // prettier-ignore
@@ -71,6 +76,8 @@ const idExtractorMap: Record<ResourceName, (json: object) => RemoteId | undefine
     spaces: (json) => (json as any)?.Space?.ID,
     assets: (json) => (json as any)?.Asset?.ID,
     masterkeys: () => undefined,
+    personalization: () => undefined,
+    settings: () => undefined,
 };
 
 export interface LumoApi {
@@ -97,6 +104,12 @@ export interface LumoApi {
     putAttachment(attachmentArgs: NewAssetToApi, remoteId: RemoteId, priority: Priority): Promise<RemoteStatus>;
     deleteAttachment(attachmentId: RemoteId, priority: Priority): Promise<RemoteStatus>;
     getAttachment(attachmentId: RemoteId, spaceId: LocalId): Promise<RemoteAttachment | null>;
+
+
+    // User settings methods
+    getUserSettings(): Promise<SerializedUserSettings | null>;
+    postUserSettings(userSettingsArgs: UserSettingsToApi): Promise<RemoteStatus>;
+    putUserSettings(userSettingsArgs: UserSettingsToApi): Promise<RemoteStatus>;
 }
 
 export class LumoApi {
@@ -180,6 +193,25 @@ export class LumoApi {
             }
             throw new Error(`Error during POST ${resourceName}: got ${response.status}`);
         }
+    }
+
+    private async sendPutJson(
+        resourceName: ResourceName,
+        resource: PostableResource,
+        path?: string
+    ): Promise<Response> {
+        path = !path ? `/${resourceName}` : path.startsWith('/') ? path : `/${path}`;
+        const url = `/api/lumo/v1${path}`;
+        console.log(`lumo api: http put ${url} <-`, resource);
+        const response = await fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                ...this.protonHeaders(),
+            },
+            body: JSON.stringify(resource),
+        });
+        return response;
     }
 
     private async callPutJson(
@@ -377,6 +409,40 @@ export class LumoApi {
         if (!response.ok) {
             throw new Error(`Failed to POST master key: got ${response.status}`);
         }
+    }
+
+
+    // User settings methods
+    public async getUserSettings(): Promise<SerializedUserSettings | null> {
+        try {
+            const data = await this.callListJson('settings');
+            const userSettingsFromApi = data?.UserSettings as UserSettingsFromApi;
+            
+            if (!userSettingsFromApi) {
+                return null;
+            }
+            const result = convertUserSettingsFromApi(userSettingsFromApi);
+            return result;
+        } catch (error) {
+            console.warn('Failed to get user settings:', error);
+            return null;
+        }
+    }
+
+    public async postUserSettings(userSettingsArgs: UserSettingsToApi): Promise<RemoteStatus> {
+        const response = await this.sendPostJson('settings', userSettingsArgs);
+        if (!response.ok) {
+            throw new Error(`Failed to POST user settings: got ${response.status}`);
+        }
+        return 'ok';
+    }
+
+    public async putUserSettings(userSettingsArgs: UserSettingsToApi): Promise<RemoteStatus> {
+        const response = await this.sendPutJson('settings', userSettingsArgs);
+        if (!response.ok) {
+            throw new Error(`Failed to PUT user settings: got ${response.status}`);
+        }
+        return 'ok';
     }
 
     public postSpace(space: NewSpaceToApi, priority: Priority): Promise<RemoteId> {
