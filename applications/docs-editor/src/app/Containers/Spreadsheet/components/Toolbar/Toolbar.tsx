@@ -30,48 +30,70 @@ const { s } = createStringifier(strings)
 
 export const Toolbar = createComponent(function Toolbar(props: ToolbarProps) {
   return (
-    <T.Container {...props} formulaBarSlot={<FormulaBar />}>
-      <Undo />
-      <Redo />
-      <ZoomCombobox />
-      <Find />
-      <ClearFormatting />
-      <PaintFormat />
-      <T.Separator />
-      <FormatAsCurrency />
-      <FormatAsPercent />
-      <DecreaseDecimalPlaces />
-      <IncreaseDecimalPlaces />
-      <NumberFormatsMenu renderMenuButton={<T.Item icon={Icons.numbers}>{s('More formats')}</T.Item>} />
-      <T.Separator />
-      <FontSelect
-        renderSelect={<T.Item variant="label" dropdownIndicator className="w-[8rem]" accessibilityLabel={s('Font')} />}
-      />
-      <FontSizeControls />
-      <T.Separator />
-      <Bold />
-      <Italic />
-      <Underline />
-      <Strikethrough />
-      <TextColor />
-      <T.Separator />
-      <FillColor />
-      <BorderSelector />
-      <MergeCells />
-      <T.Separator />
-      <TextHorizontalAlign />
-      <TextVerticalAlign />
-      <TextWrap />
-      <T.Separator />
-      <Link />
-      {/* TODO: functions */}
-      {/* TODO: create a filter */}
-      {/* TODO: insert image */}
-      <Note />
-      {/* TODO: toolbar overflow popover? */}
-    </T.Container>
+    <T.Container
+      {...props}
+      mainToolbarSlot={<ToolbarGroups />}
+      overflowToolbarSlot={<ToolbarGroups />}
+      trailingSlot={<InsertChart />}
+      formulaBarSlot={<FormulaBar />}
+      renderOverflowDisclosure={<T.Item legacyIconName="three-dots-vertical">{s('More')}</T.Item>}
+    />
   )
 })
+
+function ToolbarGroups() {
+  return (
+    <>
+      <T.Group groupId="main">
+        <Undo />
+        <Redo />
+        <ZoomCombobox />
+        <Find />
+        <ClearFormatting />
+        <PaintFormat />
+      </T.Group>
+      <T.Group groupId="number">
+        <FormatAsCurrency />
+        <FormatAsPercent />
+        <DecreaseDecimalPlaces />
+        <IncreaseDecimalPlaces />
+        <NumberFormatsMenu renderMenuButton={<T.Item icon={Icons.numbers}>{s('More formats')}</T.Item>} />
+      </T.Group>
+      <T.Group groupId="font">
+        <FontSelect
+          renderSelect={
+            <T.Item variant="label" dropdownIndicator className="w-[8rem]" accessibilityLabel={s('Font')} />
+          }
+        />
+        <FontSizeControls />
+      </T.Group>
+      <T.Group groupId="text-style">
+        <Bold />
+        <Italic />
+        <Underline />
+        <Strikethrough />
+        <TextColor />
+      </T.Group>
+      <T.Group groupId="cell-style">
+        <FillColor />
+        <BorderSelector />
+        <MergeCells />
+      </T.Group>
+      <T.Group groupId="alignment">
+        <TextHorizontalAlign />
+        <TextVerticalAlign />
+        <TextWrap />
+      </T.Group>
+      <T.Group groupId="insert">
+        <Link />
+        {/* TODO: functions */}
+        {/* TODO: create a filter */}
+        {/* TODO: insert image */}
+        <Note />
+      </T.Group>
+    </>
+  )
+}
 
 // TODO: most things should be using withFocusGrid
 // TODO: should there be a withFocusGridExceptKeyboard? maybe not if going back to the toolbar is easy with the keyboard, and we remember the last element that was focused
@@ -457,7 +479,7 @@ function TextWrap() {
 function Link() {
   return (
     <T.Item legacyIconName="link" onClick={useUI.$.insert.link} disabled={useUI((ui) => ui.info.isReadonly)}>
-      {s('Link')}
+      {s('Insert link')}
     </T.Item>
   )
 }
@@ -466,7 +488,15 @@ function Note() {
   return (
     // TODO: icon needs to be note-with-text but we don't have it yet
     <T.Item legacyIconName="note" onClick={useUI.$.insert.note} disabled={useUI((ui) => ui.info.isReadonly)}>
-      {s('Note')}
+      {s('Insert note')}
+    </T.Item>
+  )
+}
+
+function InsertChart() {
+  return (
+    <T.Item variant="label" icon={Icons.barChart} accessibilityLabel={s('Insert chart')} onClick={useUI.$.insert.chart}>
+      {s('Chart')}
     </T.Item>
   )
 }
@@ -495,7 +525,10 @@ function strings() {
     'Horizontal align': c('sheets_2025:Spreadsheet editor toolbar').t`Horizontal align`,
     'Vertical align': c('sheets_2025:Spreadsheet editor toolbar').t`Vertical align`,
     'Text wrapping': c('sheets_2025:Spreadsheet editor toolbar').t`Text wrapping`,
-    Link: c('sheets_2025:Spreadsheet editor toolbar').t`Insert link`,
-    Note: c('sheets_2025:Spreadsheet editor toolbar').t`Insert note`,
+    'Insert link': c('sheets_2025:Spreadsheet editor toolbar').t`Insert link`,
+    'Insert note': c('sheets_2025:Spreadsheet editor toolbar').t`Insert note`,
+    Chart: c('sheets_2025:Spreadsheet editor toolbar').t`Chart`,
+    'Insert chart': c('sheets_2025:Spreadsheet editor toolbar').t`Insert chart`,
+    More: c('sheets_2025:Spreadsheet editor toolbar').t`More`,
   }
 }
