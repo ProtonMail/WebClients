@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Tooltip } from '@proton/atoms';
-import { Icon, InputFieldTwo, TextAreaTwo } from '@proton/components';
+import {Banner, Button, Tooltip} from '@proton/atoms';
+import {Icon, InputFieldTwo, TextAreaTwo} from '@proton/components';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useLumoUserSettings } from '../../../hooks/useLumoUserSettings';
@@ -189,7 +189,7 @@ const PersonalizationPanel = () => {
 
     const handleReset = async () => {
         dispatch(resetPersonalizationSettings());
-        
+
         // Save the reset state to persistent storage
         const resetState = {
             nickname: '',
@@ -200,7 +200,7 @@ const PersonalizationPanel = () => {
             additionalContext: '',
             enableForNewChats: true,
         };
-        
+
         try {
             dispatch(savePersonalizationSettings(resetState));
             setLastSavedPersonalization({ ...resetState });
@@ -253,6 +253,11 @@ const PersonalizationPanel = () => {
     return (
         <div className="personalization-panel">
             <div className="personalization-content">
+
+                <Banner className={"mt-0 mb-4"}>
+                    {c('Info').t`This information is zero-access encrypted.`}
+                </Banner>
+
                 <div className="flex flex-column gap-3">
                     {/* Nickname */}
                     <div className="personalization-field">
