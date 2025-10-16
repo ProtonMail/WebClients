@@ -19,7 +19,7 @@ export type { CalendarsState } from './calendars';
 export { startCalendarEventListener } from './calendars/listener';
 export { calendarSettingsReducer, calendarSettingsThunk, selectCalendarUserSettings } from './calendarUserSettings';
 export { getVideoConferencingData } from './components/videoConferencing/modelHelpers';
-export { VideoConferencingWidgetConfig } from './components/videoConferencing/VideoConferencingWidgetConfig';
+export { useVideoConferencingWidget } from './components/videoConferencing/useVideoConferencingWidget';
 export { useZoomOAuth } from './components/zoomIntegration/useZoomOAuth';
 export { VideoConferenceToggle } from './components/zoomIntegration/VideoConferenceToggle';
 export { ZoomRow } from './components/zoomIntegration/ZoomRow';

@@ -32,13 +32,13 @@ export const getVideoConferencingData = (model: EventModelReadView | VcalVeventC
     return {
         description: model.description.trim(),
         location: model.location.trim(),
-        meetingId: model.rest['x-pm-conference-id']?.value,
-        meetingUrl: model.rest['x-pm-conference-url']?.value,
+        meetingId: model.rest?.['x-pm-conference-id']?.value,
+        meetingUrl: model.rest?.['x-pm-conference-url']?.value,
         password:
-            model.rest['x-pm-conference-url']?.parameters?.['x-pm-password'] ||
-            model.rest['x-pm-conference-url']?.parameters?.password,
+            model.rest?.['x-pm-conference-url']?.parameters?.['x-pm-password'] ||
+            model.rest?.['x-pm-conference-url']?.parameters?.password,
         meetingHost:
-            model.rest['x-pm-conference-url']?.parameters?.['x-pm-host'] ||
-            model.rest['x-pm-conference-url']?.parameters?.host,
+            model.rest?.['x-pm-conference-url']?.parameters?.['x-pm-host'] ||
+            model.rest?.['x-pm-conference-url']?.parameters?.host,
     };
 };
