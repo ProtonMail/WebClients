@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import {Banner, Button, Tooltip} from '@proton/atoms';
-import {Icon, InputFieldTwo, TextAreaTwo} from '@proton/components';
+import {Banner, Button, ButtonLike, Tooltip} from '@proton/atoms';
+import {Icon, InputFieldTwo, SettingsLink, TextAreaTwo} from '@proton/components';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
+import { useLumoCommon } from '../../../hooks/useLumoCommon';
 import { useLumoUserSettings } from '../../../hooks/useLumoUserSettings';
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
 import { safeLogger } from '../../../util/safeLogger';
@@ -69,6 +70,7 @@ const getContextPlaceholders = () => [
 const PersonalizationPanel = () => {
     const dispatch = useLumoDispatch();
     const personalization = useLumoSelector((state) => state.personalization);
+    const { isGuest } = useLumoCommon();
 
     // Safely get user settings with error handling
     let userSettings;
@@ -254,11 +256,55 @@ const PersonalizationPanel = () => {
         <div className="personalization-panel">
             <div className="personalization-content">
 
-                <Banner className={"mt-0 mb-4"}>
-                    {c('Info').t`This information is zero-access encrypted.`}
-                </Banner>
+                {isGuest ? (
+                    // Guest user: Show sign-in prompt
+                    <div className="text-center py-6">
+                        <Icon name="sliders" className="mb-4" size={6}/>
+                        
+                        <h3 className="text-bold mb-2">
+                            {c('collider_2025: Personalization').t`Personalize your ${LUMO_SHORT_APP_NAME} experience`}
+                        </h3>
+                        
+                        <p className="color-weak mb-4 px-4">
+                            {c('collider_2025: Personalization')
+                                .t`Sign in or create a free account to customize how ${LUMO_SHORT_APP_NAME} interacts with you. Set your preferences, communication style, and more.`}
+                        </p>
 
-                <div className="flex flex-column gap-3">
+                        <div className="flex flex-column items-center gap-2 max-w-custom mx-auto" style={{ '--max-w-custom': '20rem' }}>
+                            <ButtonLike
+                                as={SettingsLink}
+                                color="norm"
+                                shape="solid"
+                                path="/signup"
+                                className="w-full"
+                            >
+                                {c('collider_2025: Link').t`Create a free account`}
+                            </ButtonLike>
+
+                            <ButtonLike
+                                as={SettingsLink}
+                                path=""
+                                shape="outline"
+                                color="weak"
+                                className="w-full"
+                            >
+                                {c('collider_2025: Link').t`Sign in`}
+                            </ButtonLike>
+                        </div>
+
+                        <p className="text-sm color-weak mt-4">
+                            <Icon name="lock" size={3} className="mr-1" />
+                            {c('collider_2025: Info').t`Your information is zero-access encrypted`}
+                        </p>
+                    </div>
+                ) : (
+                    // Authenticated user: Show personalization form
+                    <>
+                        <Banner className={"mt-0 mb-4"}>
+                            {c('Info').t`This information is zero-access encrypted.`}
+                        </Banner>
+
+                        <div className="flex flex-column gap-3">
                     {/* Nickname */}
                     <div className="personalization-field">
                         <InputFieldTwo
@@ -357,36 +403,38 @@ const PersonalizationPanel = () => {
                         </div>
                     </div>
                 </div>
-            </div>
 
-            {/* Fixed Footer */}
-            <div className="personalization-footer flex items-center">
-                <Button
-                    color="danger"
-                    shape="outline"
-                    size="small"
-                    onClick={handleReset}
-                    disabled={
-                        !personalization.nickname &&
-                        !personalization.jobRole &&
-                        personalization.personality === 'default' &&
-                        personalization.traits.length === 0 &&
-                        !personalization.lumoTraits &&
-                        !personalization.additionalContext
-                    }
-                >
-                    {c('Action').t`Reset all`}
-                </Button>
-                <div className="flex-1" />
-                <Button
-                    color="norm"
-                    size="small"
-                    onClick={handleSave}
-                    disabled={!hasUnsavedChanges || isSaving}
-                    loading={isSaving}
-                >
-                    {isSaving ? c('Action').t`Saving...` : c('Action').t`Save`}
-                </Button>
+                        {/* Fixed Footer - only show for authenticated users */}
+                        <div className="personalization-footer flex items-center">
+                            <Button
+                                color="danger"
+                                shape="outline"
+                                size="small"
+                                onClick={handleReset}
+                                disabled={
+                                    !personalization.nickname &&
+                                    !personalization.jobRole &&
+                                    personalization.personality === 'default' &&
+                                    personalization.traits.length === 0 &&
+                                    !personalization.lumoTraits &&
+                                    !personalization.additionalContext
+                                }
+                            >
+                                {c('Action').t`Reset all`}
+                            </Button>
+                            <div className="flex-1" />
+                            <Button
+                                color="norm"
+                                size="small"
+                                onClick={handleSave}
+                                disabled={!hasUnsavedChanges || isSaving}
+                                loading={isSaving}
+                            >
+                                {isSaving ? c('Action').t`Saving...` : c('Action').t`Save`}
+                            </Button>
+                        </div>
+                    </>
+                )}
             </div>
         </div>
     );
