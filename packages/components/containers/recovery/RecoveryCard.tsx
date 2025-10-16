@@ -357,10 +357,7 @@ const SecurityCheckupCard = () => {
                 subtitle={c('Safety review').t`Your account and data can be recovered.`}
                 icon="pass-shield-warning"
                 color="info"
-                description={
-                    // TODO: copy:
-                    c('Safety review').t`You have recommended actions to safeguard your account further.`
-                }
+                description={c('Safety review').t`You have recommended actions to safeguard your account further.`}
                 cta={c('Safety review').t`Safeguard account now`}
             />
         );
@@ -374,7 +371,6 @@ const SecurityCheckupCard = () => {
                 icon="pass-shield-warning"
                 color="warning"
                 description={getBoldFormattedText(
-                    // TODO: copy:
                     c('Safety review').t`You have recommended actions to safeguard your account further.`
                 )}
                 cta={c('Safety review').t`Safeguard account now`}

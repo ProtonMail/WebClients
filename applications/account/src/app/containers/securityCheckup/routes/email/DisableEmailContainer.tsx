@@ -51,10 +51,7 @@ const DisableEmailContainer = () => {
                 </div>
 
                 <div className="mt-6">
-                    {
-                        // TODO: copy: this sounds like we're blaming the user. This is a recommendation for high security accounts, not a restriction.
-                        c('Safety review').t`You will no longer be able to use this address to reset your account.`
-                    }
+                    {c('Safety review').t`You will no longer be able to use this address to reset your account.`}
                 </div>
 
                 <ButtonLike className="mt-8" fullWidth as={Link} to={SECURITY_CHECKUP_PATHS.ROOT} color="norm" replace>
@@ -81,13 +78,10 @@ const DisableEmailContainer = () => {
             <div className="rounded bg-weak p-3 mb-4">{email.value}</div>
 
             <div>
-                {
-                    // TODO: copy:
-                    getBoldFormattedText(
-                        c('Safety review')
-                            .t`**Disable account reset by email** to ensure highest possible security of your account.`
-                    )
-                }
+                {getBoldFormattedText(
+                    c('Safety review')
+                        .t`**Disable account reset by email** to prevent attackers from taking over your account.`
+                )}
             </div>
 
             <Button

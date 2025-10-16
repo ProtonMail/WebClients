@@ -54,10 +54,7 @@ const DisablePhoneContainer = () => {
                 </div>
 
                 <div className="mt-6">
-                    {
-                        // TODO: copy:
-                        c('Safety review').t`You will no longer be able to use this phone number to reset your account.`
-                    }
+                    {c('Safety review').t`You will no longer be able to use this phone number to reset your account.`}
                 </div>
 
                 <ButtonLike className="mt-8" fullWidth as={Link} to={SECURITY_CHECKUP_PATHS.ROOT} color="norm" replace>
@@ -84,13 +81,10 @@ const DisablePhoneContainer = () => {
             <div className="rounded bg-weak p-3 mb-4">{formattedPhoneNumber}</div>
 
             <div>
-                {
-                    // TODO: copy:
-                    getBoldFormattedText(
-                        c('Safety review')
-                            .t` **Disable recovery by phone** to ensure highest possible security of your account.`
-                    )
-                }
+                {getBoldFormattedText(
+                    c('Safety review')
+                        .t` **Disable recovery by phone** to prevent attackers from taking over your account.`
+                )}
             </div>
 
             <Button
