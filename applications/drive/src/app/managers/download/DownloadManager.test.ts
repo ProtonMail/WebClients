@@ -231,7 +231,7 @@ describe('DownloadManager', () => {
             completion: jest.fn(() => controllerCompletion.promise),
         };
         const fileDownloader = {
-            writeToStream: jest.fn((_writable: unknown, onProgress: (bytes: number) => void) => {
+            downloadToStream: jest.fn((_writable: unknown, onProgress: (bytes: number) => void) => {
                 onProgress(64);
                 return controller;
             }),

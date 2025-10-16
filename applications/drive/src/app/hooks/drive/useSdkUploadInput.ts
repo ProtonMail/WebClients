@@ -37,7 +37,7 @@ async function uploadFileSdk(
             const fileUploader = await drive.getFileUploader(parentFolderUid, file.name, metadata, ac.signal);
             onChange(UploadingState.Uploading);
 
-            uploadController = await fileUploader.writeFile(
+            uploadController = await fileUploader.uploadFromFile(
                 file,
                 [], // TODO: implement thumbnail after POC
                 (uploadedBytes: number) => {
