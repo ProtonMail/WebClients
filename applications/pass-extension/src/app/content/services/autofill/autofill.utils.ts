@@ -35,7 +35,7 @@ const autofillInputElement = async (input: HTMLInputElement, data: string, optio
 
     if (typeof input?.click === 'function') input.click();
     if (isFocused(input)) await dispatch([new FocusEvent('focusin'), new FocusEvent('focus')]);
-    else input.focus();
+    else input.focus({ preventScroll: true });
 
     if (options?.paste) {
         const clipboardData = new DataTransfer();

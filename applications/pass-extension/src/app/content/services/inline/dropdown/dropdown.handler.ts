@@ -68,8 +68,8 @@ export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler
                 listeners.addListener(window, 'popstate', close);
                 listeners.addListener(window, 'hashchange', close);
                 listeners.addListener(window, 'beforeunload', close);
-                listeners.addListener(window, 'focus', close);
-                listeners.addListener(window, 'blur', () => maybeClose());
+                listeners.addListener(window, 'focus', maybeClose);
+                listeners.addListener(window, 'blur', maybeClose);
                 listeners.addListener(window, 'mousedown', handleBackdrop(getAnchorField, close));
                 listeners.addListener(scrollParent, 'scroll', close, scrollOptions);
             }
