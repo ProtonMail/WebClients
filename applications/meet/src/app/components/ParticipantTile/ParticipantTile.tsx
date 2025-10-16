@@ -4,6 +4,7 @@ import { Track } from '@proton-meet/livekit-client';
 import { c } from 'ttag';
 
 import { IcMeetMicrophoneOff } from '@proton/icons';
+import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
 import { SecurityShield } from '../../atoms/SecurityShield/SecurityShield';
@@ -124,6 +125,7 @@ export const ParticipantTile = ({ participant, viewSize = 'large' }: Participant
             {shouldShowVideo ? (
                 <>
                     <div className="gradient-overlay absolute top-0 left-0 w-full h-full" />
+                    {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
                     <video
                         className="participant-tile-body__video bg-strong w-full h-full rounded-xl"
                         ref={(el) => {
@@ -132,7 +134,9 @@ export const ParticipantTile = ({ participant, viewSize = 'large' }: Participant
                             }
                         }}
                         muted={participant.isLocal}
-                        style={{ transform: isLocalParticipant ? 'scaleX(-1)' : undefined }}
+                        style={{
+                            transform: isLocalParticipant && !(isSafari() && isMobile()) ? 'scaleX(-1)' : undefined,
+                        }}
                     />
                 </>
             ) : (

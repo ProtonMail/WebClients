@@ -1,10 +1,11 @@
 import { useRef, useState } from 'react';
 
-import { useLocalParticipant } from '@livekit/components-react';
+import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
 import { BackgroundBlur, type BackgroundProcessorOptions } from '@livekit/track-processors';
 import type { LocalParticipant } from '@proton-meet/livekit-client';
-import { Track } from '@proton-meet/livekit-client';
+import { ConnectionState, Track } from '@proton-meet/livekit-client';
 
+import { isMobile } from '@proton/shared/lib/helpers/browser';
 import debounce from '@proton/utils/debounce';
 
 import type { SwitchActiveDevice } from '../types';
@@ -29,6 +30,7 @@ export const useVideoToggle = (
     switchActiveDevice: SwitchActiveDevice,
     initialCameraState: boolean
 ) => {
+    const room = useRoomContext();
     const { isCameraEnabled, localParticipant } = useLocalParticipant();
 
     const [facingMode, setFacingMode] = useState<'environment' | 'user'>('user');
@@ -66,13 +68,15 @@ export const useVideoToggle = (
 
         toggleInProgress.current = true;
 
-        const facingModeDependentOptions = customFacingMode
-            ? {
-                  facingMode: customFacingMode ?? facingMode,
-              }
-            : {
-                  deviceId: { exact: videoDeviceId },
-              };
+        const facingModeDependentOptions =
+            customFacingMode || isMobile()
+                ? {
+                      facingMode: customFacingMode ?? facingMode,
+                  }
+                : {
+                      deviceId: { exact: videoDeviceId },
+                      facingMode,
+                  };
 
         const currentVideoTrack = getCurrentVideoTrack();
 
@@ -81,7 +85,10 @@ export const useVideoToggle = (
             await currentVideoTrack?.stopProcessor();
         }
 
-        await switchActiveDevice('videoinput', videoDeviceId as string);
+        if (!isMobile()) {
+            await switchActiveDevice('videoinput', videoDeviceId as string);
+        }
+
         await localParticipant.setCameraEnabled(isEnabled, facingModeDependentOptions);
 
         const newVideoTrack = getCurrentVideoTrack();
@@ -91,6 +98,11 @@ export const useVideoToggle = (
             await newVideoTrack?.setProcessor(backgroundBlurProcessor);
         }
 
+        // We need to restart the video track on mobile to make sure the facing mode is applied
+        if (customFacingMode) {
+            await newVideoTrack?.restartTrack({ facingMode: { exact: customFacingMode } });
+        }
+
         toggleInProgress.current = false;
     };
 
@@ -98,11 +110,7 @@ export const useVideoToggle = (
         const newFacingMode = facingMode === 'environment' ? 'user' : 'environment';
         setFacingMode(newFacingMode);
 
-        const videoTrack = [...localParticipant.trackPublications.values()].find(
-            (item) => item.kind === Track.Kind.Video && item.source !== Track.Source.ScreenShare
-        )?.track;
-
-        if (videoTrack) {
+        if (room.state === ConnectionState.Connected) {
             await toggleVideo({
                 isEnabled: true,
                 facingMode: newFacingMode,
@@ -131,5 +139,6 @@ export const useVideoToggle = (
         backgroundBlur,
         toggleBackgroundBlur: debouncedToggleBackgroundBlur,
         isVideoEnabled: isCameraEnabled,
+        facingMode,
     };
 };

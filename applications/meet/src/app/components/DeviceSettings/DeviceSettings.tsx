@@ -58,6 +58,9 @@ export const DeviceSettings = ({
 }: DeviceSettingsProps) => {
     const {
         devicePermissions: { camera, microphone },
+        handleRotateCamera,
+        initialCameraState,
+        facingMode,
     } = useMediaManagementContext();
 
     const noCameraPermission = camera !== 'granted';
@@ -85,8 +88,6 @@ export const DeviceSettings = ({
     const handleCameraChange = (deviceId: string) => {
         onCameraChange(cameras.find((camera) => camera.deviceId === deviceId)!);
     };
-
-    const { handleRotateCamera } = useMediaManagementContext();
 
     const { activeBreakpoint } = useActiveBreakpoint();
 
@@ -131,7 +132,7 @@ export const DeviceSettings = ({
                         {displayName}
                     </div>
                 )}
-                {activeBreakpoint === 'xsmall' && (
+                {activeBreakpoint === 'xsmall' && initialCameraState && (
                     <div
                         className="absolute right-custom top-custom z-up text-ellipsis"
                         style={{ '--right-custom': '0.5rem', '--top-custom': '1.25rem' }}
@@ -152,7 +153,7 @@ export const DeviceSettings = ({
                 )}
 
                 {isCameraEnabled ? (
-                    <VideoPreview selectedCameraId={selectedCameraId} />
+                    <VideoPreview selectedCameraId={selectedCameraId} facingMode={facingMode} />
                 ) : (
                     <ParticipantPlaceholder
                         participantName={displayName}
