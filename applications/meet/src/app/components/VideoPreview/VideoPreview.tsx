@@ -3,15 +3,16 @@ import { useEffect, useRef } from 'react';
 import { createLocalVideoTrack } from '@proton-meet/livekit-client';
 import type { LocalVideoTrack } from '@proton-meet/livekit-client';
 
-import { isChrome } from '@proton/shared/lib/helpers/browser';
+import { isChrome, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 
 import './VideoPreview.scss';
 
 interface VideoPreviewProps {
     selectedCameraId: string;
+    facingMode: 'environment' | 'user';
 }
 
-export const VideoPreview = ({ selectedCameraId }: VideoPreviewProps) => {
+export const VideoPreview = ({ selectedCameraId, facingMode }: VideoPreviewProps) => {
     const trackRef = useRef<LocalVideoTrack | null>(null);
     const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -24,15 +25,16 @@ export const VideoPreview = ({ selectedCameraId }: VideoPreviewProps) => {
 
             try {
                 const videoTrack = await createLocalVideoTrack({
-                    deviceId: selectedCameraId || undefined,
-                    facingMode: 'user',
-                    ...(isChrome() && {
-                        resolution: {
-                            width: 3840,
-                            height: 2160,
-                            aspectRatio: 16 / 9,
-                        },
-                    }),
+                    deviceId: isMobile() ? undefined : selectedCameraId || undefined,
+                    facingMode,
+                    ...(isChrome() &&
+                        !isMobile() && {
+                            resolution: {
+                                width: 3840,
+                                height: 2160,
+                                aspectRatio: 16 / 9,
+                            },
+                        }),
                 });
 
                 if (videoRef.current && videoTrack) {
@@ -54,7 +56,7 @@ export const VideoPreview = ({ selectedCameraId }: VideoPreviewProps) => {
                 trackRef.current = null;
             }
         };
-    }, [selectedCameraId]);
+    }, [selectedCameraId, facingMode]);
 
     return (
         <>
@@ -63,6 +65,8 @@ export const VideoPreview = ({ selectedCameraId }: VideoPreviewProps) => {
                     className="gradient-overlay absolute top-0 left-0 w-full h-full z-custom"
                     style={{ '--z-custom': '2' }}
                 />
+                {/* This is just a video preview of the user's camera, so we don't need a caption */}
+                {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
                 <video
                     className="absolute h-full w-full lg:h-auto lg:w-full"
                     ref={videoRef}
@@ -71,7 +75,7 @@ export const VideoPreview = ({ selectedCameraId }: VideoPreviewProps) => {
                     style={{
                         objectFit: 'cover',
                         background: '#000',
-                        transform: 'scaleX(-1)',
+                        transform: isSafari() && isMobile() ? undefined : 'scaleX(-1)',
                     }}
                 />
             </div>

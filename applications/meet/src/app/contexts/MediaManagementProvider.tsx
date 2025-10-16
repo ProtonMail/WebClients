@@ -1,6 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { useMediaDeviceSelect, useRoomContext } from '@livekit/components-react';
+import { Track } from 'livekit-client';
+
+import { isMobile } from '@proton/shared/lib/helpers/browser';
 
 import { useAudioToggle } from '../hooks/useAudioToggle';
 import { useDevicePermissionChangeListener } from '../hooks/useDevicePermissionChangeListener';
@@ -51,11 +54,8 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
         [room]
     );
 
-    const { toggleVideo, handleRotateCamera, backgroundBlur, toggleBackgroundBlur, isVideoEnabled } = useVideoToggle(
-        activeCameraDeviceId,
-        switchActiveDevice,
-        initialCameraState
-    );
+    const { toggleVideo, handleRotateCamera, backgroundBlur, toggleBackgroundBlur, isVideoEnabled, facingMode } =
+        useVideoToggle(activeCameraDeviceId, switchActiveDevice, initialCameraState);
 
     const { toggleAudio, noiseFilter, toggleNoiseFilter, isAudioEnabled } = useAudioToggle(
         activeMicrophoneDeviceId,
@@ -69,9 +69,20 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
 
     const initializeDevices = async () => {
         await Promise.all([
-            room.localParticipant.setCameraEnabled(initialCameraState),
+            room.localParticipant.setCameraEnabled(initialCameraState, isMobile() ? { facingMode } : undefined),
             room.localParticipant.setMicrophoneEnabled(initialAudioState),
         ]);
+
+        // We need to restart the video track on mobile to make sure the facing mode is applied
+        if (isMobile() && initialCameraState) {
+            const videoTrack = [...room.localParticipant.trackPublications.values()].filter(
+                (track) => track.kind === Track.Kind.Video && track.source !== Track.Source.ScreenShare
+            )[0]?.track;
+
+            if (videoTrack) {
+                await videoTrack.restartTrack({ facingMode: { exact: facingMode } });
+            }
+        }
     };
 
     useDevicePermissionChangeListener(handleDevicePermissionChange, activeCameraDeviceId);
@@ -124,6 +135,7 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
                 selectedAudioOutputDeviceId: activeAudioOutputDeviceId,
                 isVideoEnabled,
                 isAudioEnabled,
+                facingMode,
                 toggleVideo,
                 toggleAudio,
                 backgroundBlur,
