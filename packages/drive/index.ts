@@ -56,6 +56,7 @@ export type {
     Bookmark,
     BookmarkOrUid,
     DriveEvent,
+    UploadController,
 } from '@protontech/drive-sdk';
 
 /* Other export */
@@ -74,6 +75,7 @@ export {
     DriveEventType,
     ServerError,
     DecryptionError,
+    NodeWithSameNameExistsValidationError,
     SDKEvent,
 } from '@protontech/drive-sdk';
 

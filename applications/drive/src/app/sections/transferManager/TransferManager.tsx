@@ -4,12 +4,12 @@ import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { useDownloadManagerStore } from '../../zustand/download/downloadManager.store';
-import { useUploadManagerStore } from '../../zustand/upload/uploadManager.store';
+import { useUploadUIStore } from '../../zustand/upload/uploadUI.store';
 import { TransferList, type TransferListItem } from './TransferList';
 
 export const TransferManager = () => {
     const downloadQueue = useDownloadManagerStore(useShallow((state) => state.getQueue()));
-    const uploadQueue = useUploadManagerStore(useShallow((state) => state.getQueue()));
+    const uploadQueue = useUploadUIStore(useShallow((state) => state.getAll()));
 
     const downloadItems = useMemo<TransferListItem[]>(
         () =>

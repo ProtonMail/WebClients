@@ -1,9 +1,8 @@
 import type { ChangeEvent } from 'react';
 import { useRef } from 'react';
 
-import { getDrive } from '@proton/drive/index';
-
 import { logError } from '../../utils/errorHandling';
+import { uploadManager } from '../../zustand/upload/uploadManager';
 
 enum UploadingState {
     Uploading = 'uploading',
@@ -23,33 +22,10 @@ async function uploadFileSdk(
     onProgress: (pct: number) => void,
     onChange: (status: UploadingState) => void
 ) {
-    const drive = getDrive();
-    const ac = new AbortController();
-    let uploadController: any | undefined;
-
     const done = (async () => {
         try {
-            const metadata = {
-                mediaType: file.type /* || guessMediaType(file.name) */,
-                expectedSize: file.size,
-            };
-
-            const fileUploader = await drive.getFileUploader(parentFolderUid, file.name, metadata, ac.signal);
-            onChange(UploadingState.Uploading);
-
-            uploadController = await fileUploader.uploadFromFile(
-                file,
-                [], // TODO: implement thumbnail after POC
-                (uploadedBytes: number) => {
-                    const pct = Math.min((uploadedBytes / file.size) * 100, 100);
-                    onProgress(pct);
-                }
-            );
-
-            const nodeUid = await uploadController.completion();
-            console.log(nodeUid);
+            await uploadManager.uploadFiles([file], parentFolderUid);
             onChange(UploadingState.Finished);
-            return nodeUid;
         } catch (e) {
             onChange(UploadingState.Failed);
             logError(e);
@@ -58,20 +34,6 @@ async function uploadFileSdk(
     })();
 
     return {
-        pause: () => {
-            if (!uploadController) {
-                return;
-            }
-            uploadController.pause();
-            onChange(UploadingState.Paused);
-        },
-        resume: () => {
-            if (!uploadController) {
-                return;
-            }
-            uploadController.resume();
-        },
-        abort: () => ac.abort(),
         completion: () => done,
     };
 }
