@@ -1,16 +1,10 @@
 import { getDrive } from '@proton/drive';
 
-import type { DownloadController } from '../DownloadManager';
-import type {
-    ArchiveItem,
-    ArchiveStreamGeneratorResult,
-    DownloadQueueTask,
-    DownloadScheduler,
-    DownloadableItem,
-} from '../downloadTypes';
-import { createAsyncQueue } from './asyncQueue';
+import type { DownloadController } from './DownloadManager';
+import type { ArchiveItem, DownloadQueueTask, DownloadScheduler, DownloadableItem } from './downloadTypes';
+import { createAsyncQueue } from './utils/asyncQueue';
 
-export type { ArchiveItem, ArchiveStreamGeneratorResult } from '../downloadTypes';
+export type { ArchiveItem } from './downloadTypes';
 
 type ArchiveTracker = {
     registerFile(uid: string): void;
@@ -24,8 +18,10 @@ type ArchiveTracker = {
 /**
  * Called to start the creation of a new archive
  * will keep track of the individual files being downloaded while they are scheduled
+ * it's a sort of orchestrator object
  */
 const createArchiveTracker = (onProgress: (downloadedBytes: number) => void): ArchiveTracker => {
+    // Each file of the archive records its own downloaded bytes
     const downloadedBytesMap: Record<string, number> = {};
     const controllerByUid = new Map<string, DownloadController>();
     const completionPromises = new Map<string, Promise<void>>();
@@ -64,11 +60,17 @@ const createArchiveTracker = (onProgress: (downloadedBytes: number) => void): Ar
             if (!pendingCompletions.length) {
                 return Promise.resolve();
             }
+            // Only return ONCE when all archive files have finished download
             return Promise.all(pendingCompletions).then(() => {});
         },
     };
 };
 
+/**
+ * createArchiveItem sets things up: it registers the file, kicks off downloader.writeToStream,
+ * and returns the ArchiveItem.
+ * It does not wait for the network transfer to finish.
+ */
 const createArchiveItem = async (
     entry: DownloadableItem,
     tracker: ArchiveTracker,
@@ -111,44 +113,69 @@ const createArchiveItem = async (
 /**
  * Instantiates an ArchiveTracker and uses the shared scheduler to start downloading the archive files individually.
  * All the logic related to when and why files start downloading must be kept inside the Scheduler.
- *
- * @returns {ArchiveStreamGeneratorResult} Object exposing the async generator (yielding entries in traversal order)
- * and a getter that aggregates the active controllers for pause/resume/completion operations.
  */
-export function createArchiveStreamGenerator(
-    entries: AsyncIterable<DownloadableItem>,
-    onProgress: (downloadedBytes: number) => void,
-    scheduler: DownloadScheduler,
-    abortSignal: AbortSignal
-): ArchiveStreamGeneratorResult {
-    const tracker = createArchiveTracker(onProgress);
-    const archiveItemsQueue = createAsyncQueue<ArchiveItem>();
-    let pendingArchiveTasks = 0;
-    let schedulingCompleted = false;
+export class ArchiveStreamGenerator {
+    private readonly tracker: ArchiveTracker;
+    // Queue of the items that have started actively downloading
+    private readonly archiveItemsQueue = createAsyncQueue<ArchiveItem>();
+    private pendingArchiveTasks = 0;
+    private schedulingCompleted = false;
 
-    const maybeCloseQueue = () => {
-        if (schedulingCompleted && pendingArchiveTasks === 0) {
-            archiveItemsQueue.close();
-        }
-    };
+    readonly generator: AsyncGenerator<ArchiveItem>;
+    readonly controller: DownloadController;
 
-    const scheduleArchiveEntry = (entry: DownloadableItem) => {
+    constructor(
+        private readonly entries: AsyncIterable<DownloadableItem>,
+        onProgress: (downloadedBytes: number) => void,
+        private readonly scheduler: DownloadScheduler,
+        private readonly abortSignal: AbortSignal
+    ) {
+        this.tracker = createArchiveTracker(onProgress);
+        this.generator = this.createGenerator();
+        this.controller = {
+            pause: () => this.tracker.pauseAll(),
+            resume: () => this.tracker.resumeAll(),
+            completion: () => this.tracker.waitForCompletion(),
+        };
+
+        void this.scheduleEntries();
+    }
+
+    /**
+     * This generator yields prepared ArchiveItem files,
+     * their download has started but has not necessarily finished,
+     * this generator will finish yelding once all archive files have been fully downloaded.
+     */
+    private createGenerator(): AsyncGenerator<ArchiveItem> {
+        const queueIterator = this.archiveItemsQueue.iterator();
+        const tracker = this.tracker;
+
+        return (async function* generate() {
+            for await (const item of queueIterator) {
+                yield item;
+            }
+
+            await tracker.waitForCompletion();
+        })();
+    }
+
+    private insertArchiveEntryInScheduler(entry: DownloadableItem) {
         const downloadTask: DownloadQueueTask = {
             nodes: [],
             start: async () => {
-                pendingArchiveTasks += 1;
-                const archivePromise = createArchiveItem(entry, tracker, abortSignal);
+                this.pendingArchiveTasks += 1;
+                const archivePromise = createArchiveItem(entry, this.tracker, this.abortSignal);
 
                 archivePromise
                     .then((item) => {
-                        archiveItemsQueue.push(item);
+                        this.archiveItemsQueue.push(item);
                     })
                     .catch((error) => {
-                        archiveItemsQueue.error(error);
+                        this.archiveItemsQueue.error(error);
                     })
                     .finally(() => {
-                        pendingArchiveTasks -= 1;
-                        maybeCloseQueue();
+                        this.pendingArchiveTasks -= 1;
+                        this.maybeCloseQueue();
                     });
 
                 return {
@@ -158,37 +185,24 @@ export function createArchiveStreamGenerator(
             storageSizeEstimate: entry.storageSize,
         };
 
-        scheduler.scheduleDownload(downloadTask);
-    };
+        this.scheduler.scheduleDownload(downloadTask);
+    }
 
-    (async () => {
+    private maybeCloseQueue() {
+        if (this.schedulingCompleted && this.pendingArchiveTasks === 0) {
+            this.archiveItemsQueue.close();
+        }
+    }
+
+    private async scheduleEntries(): Promise<void> {
         try {
-            for await (const entry of entries) {
-                scheduleArchiveEntry(entry);
+            for await (const entry of this.entries) {
+                this.insertArchiveEntryInScheduler(entry);
             }
-            schedulingCompleted = true;
-            maybeCloseQueue();
+            this.schedulingCompleted = true;
+            this.maybeCloseQueue();
         } catch (error) {
-            archiveItemsQueue.error(error);
+            this.archiveItemsQueue.error(error);
         }
-    })();
-
-    const generator = (async function* generate() {
-        for await (const item of archiveItemsQueue.iterator()) {
-            yield item;
-        }
-
-        await tracker.waitForCompletion();
-    })();
-
-    const aggregateController: DownloadController = {
-        pause: () => tracker.pauseAll(),
-        resume: () => tracker.resumeAll(),
-        completion: () => tracker.waitForCompletion(),
-    };
-
-    return {
-        generator,
-        controller: aggregateController,
-    };
+    }
 }

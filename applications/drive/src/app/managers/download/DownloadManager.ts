@@ -9,9 +9,9 @@ import {
     useDownloadManagerStore,
 } from '../../zustand/download/downloadManager.store';
 import ArchiveGenerator from './ArchiveGenerator';
+import { ArchiveStreamGenerator } from './ArchiveStreamGenerator';
 import { DownloadScheduler } from './DownloadScheduler';
 import type { DownloadQueueTaskHandle, DownloadableItem } from './downloadTypes';
-import { createArchiveStreamGenerator } from './utils/archiveStreamGenerator';
 import { nodesStructureTraversal } from './utils/nodesStructureTraversal';
 
 const DEFAULT_MIME_TYPE = 'application/octet-stream';
@@ -53,7 +53,6 @@ export class DownloadManager {
         const { getQueueItem } = useDownloadManagerStore.getState();
 
         drive.onMessage(SDKEvent.TransfersPaused, () => {
-            console.log('[DownloadManager] SDKEvent.TransfersPaused');
             this.activeDownloads.forEach((_, downloadId) => {
                 if (getQueueItem(downloadId)?.status === DownloadStatus.Downloading) {
                     this.updateStatus([downloadId], DownloadStatus.PausedServer);
@@ -61,7 +60,6 @@ export class DownloadManager {
             });
         });
         drive.onMessage(SDKEvent.TransfersResumed, () => {
-            console.log('[DownloadManager] SDKEvent.TransfersResumed');
             this.activeDownloads.forEach((_, downloadId) => {
                 if (getQueueItem(downloadId)?.status === DownloadStatus.PausedServer) {
                     this.updateStatus([downloadId], DownloadStatus.Downloading);
@@ -153,6 +151,7 @@ export class DownloadManager {
             throw error;
         }
 
+        // eslint-disable-next-line no-console
         const log = (message: string) => console.debug(`[DownloadManager] ${downloadId}: ${message}`);
         const savePromise = fileSaver.instance.saveAsFile(
             streamForSaver,
@@ -162,7 +161,7 @@ export class DownloadManager {
 
         const controllerCompletion = controller.completion();
 
-        controllerCompletion.then(() => {
+        void controllerCompletion.then(() => {
             this.updateStatus([downloadId], DownloadStatus.Finalizing);
         });
 
@@ -205,7 +204,7 @@ export class DownloadManager {
         const { nodesQueue, totalEncryptedSizePromise } = nodesStructureTraversal(nodes, abortController.signal);
 
         // We can only know the full size of the archive after traversing all nodes
-        totalEncryptedSizePromise.then((totalSize) => (archiveSizeInBytes = totalSize));
+        void totalEncryptedSizePromise.then((totalSize) => (archiveSizeInBytes = totalSize));
         updateDownloadItem(downloadId, { status: DownloadStatus.Downloading });
 
         const updateProgress = (downloadedBytes: number) => {
@@ -213,21 +212,24 @@ export class DownloadManager {
         };
 
         // While the traversal is happening the nodesQueue is populated with entities to archive
-        // and passed to the createArchiveStreamGenerator that will create archive and update download progress
-        const { generator, controller: trackerController } = createArchiveStreamGenerator(
+        // and passed to the ArchiveStreamGenerator that will create archive and update download progress
+        const archiveStreamGenerator = new ArchiveStreamGenerator(
             nodesQueue.iterator(),
             updateProgress,
             this.scheduler,
             abortController.signal
         );
+        const generator = archiveStreamGenerator.generator;
+        const trackerController = archiveStreamGenerator.controller;
 
+        // eslint-disable-next-line no-console
         const log = (message: string) => console.debug(`[DownloadManager] ${downloadId}: ${message}`);
         const archiveGenerator = new ArchiveGenerator();
         abortController.signal.addEventListener('abort', () => archiveGenerator.cancel());
 
         // Archive creation
         const archivePromise = archiveGenerator.writeLinks(generator);
-        archivePromise.then(() => {
+        void archivePromise.then(() => {
             this.updateStatus([downloadId], DownloadStatus.Finalizing);
         });
 
@@ -242,7 +244,9 @@ export class DownloadManager {
             log
         );
 
-        const combinedCompletion = Promise.all([totalEncryptedSizePromise, archivePromise, savePromise]);
+        const combinedCompletion = Promise.all([totalEncryptedSizePromise, archivePromise, savePromise]).catch((e) => {
+            console.warn('Archive creation failed', e);
+        });
 
         const controllerProxy: DownloadController = {
             pause: () => trackerController.pause(),
