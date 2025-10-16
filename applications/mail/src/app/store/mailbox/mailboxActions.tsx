@@ -477,6 +477,7 @@ export const unlabelConversations = createAsyncThunk<
     PromiseSettledResult<string | undefined>[],
     {
         conversations: Conversation[];
+        sourceLabelID: string;
         destinationLabelID: string;
         showSuccessNotification?: boolean;
         labels: Label[];
