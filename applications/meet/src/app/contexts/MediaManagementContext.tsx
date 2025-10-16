@@ -2,7 +2,15 @@ import { createContext, useContext } from 'react';
 
 import debounce from '@proton/utils/debounce';
 
-import type { SwitchActiveDevice } from '../types';
+import type { DeviceState, SwitchActiveDevice } from '../types';
+
+const DEFAULT_DEVICE_STATE: DeviceState = {
+    systemDefault: null,
+    systemDefaultLabel: '',
+    useSystemDefault: true,
+    cachedAvailable: false,
+    cachedDeviceId: null,
+};
 
 export interface MediaManagementContextType {
     devicePermissions: {
@@ -19,23 +27,30 @@ export interface MediaManagementContextType {
     defaultCamera: MediaDeviceInfo | null;
     defaultMicrophone: MediaDeviceInfo | null;
     defaultSpeaker: MediaDeviceInfo | null;
+    cameraState: DeviceState;
+    microphoneState: DeviceState;
+    speakerState: DeviceState;
     isVideoEnabled: boolean;
     isAudioEnabled: boolean;
     toggleVideo: ({
         isEnabled,
         videoDeviceId,
         forceUpdate,
+        preserveCache,
     }: {
         isEnabled?: boolean;
         videoDeviceId?: string;
         forceUpdate?: boolean;
+        preserveCache?: boolean;
     }) => Promise<void>;
     toggleAudio: ({
         isEnabled,
         audioDeviceId,
+        preserveCache,
     }: {
         isEnabled?: boolean;
         audioDeviceId?: string | null;
+        preserveCache?: boolean;
     }) => Promise<void>;
     backgroundBlur: boolean;
     toggleBackgroundBlur: ReturnType<typeof debounce>;
@@ -67,6 +82,9 @@ const defaultValues: MediaManagementContextType = {
     defaultCamera: null,
     defaultMicrophone: null,
     defaultSpeaker: null,
+    cameraState: DEFAULT_DEVICE_STATE,
+    microphoneState: DEFAULT_DEVICE_STATE,
+    speakerState: DEFAULT_DEVICE_STATE,
     isVideoEnabled: false,
     isAudioEnabled: false,
     toggleVideo: () => Promise.resolve(),
@@ -81,7 +99,7 @@ const defaultValues: MediaManagementContextType = {
     initialAudioState: false,
     setInitialCameraState: () => {},
     setInitialAudioState: () => {},
-    switchActiveDevice: () => {},
+    switchActiveDevice: () => Promise.resolve(),
     initializeDevices: () => Promise.resolve(),
     facingMode: 'user',
 };

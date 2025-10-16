@@ -80,4 +80,17 @@ export type MLSGroupState = {
     displayCode: string | null;
     epoch: bigint;
 };
-export type SwitchActiveDevice = (deviceType: 'audioinput' | 'audiooutput' | 'videoinput', deviceId: string) => void;
+export type SwitchActiveDevice = (params: {
+    deviceType: 'audioinput' | 'audiooutput' | 'videoinput';
+    deviceId: string;
+    isSystemDefaultDevice: boolean;
+    preserveDefaultDevice?: boolean;
+}) => Promise<void>;
+
+export interface DeviceState {
+    systemDefault: MediaDeviceInfo | null;
+    systemDefaultLabel: string;
+    useSystemDefault: boolean;
+    cachedAvailable: boolean;
+    cachedDeviceId: string | null;
+}

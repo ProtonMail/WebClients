@@ -4,6 +4,7 @@ import { RoomContext } from '@livekit/components-react';
 import { Room } from 'livekit-client';
 
 import { MediaManagementProvider } from '../../contexts/MediaManagementProvider';
+import { StoredDevicesProvider } from '../../contexts/StoredDevicesProvider';
 import { audioQuality, qualityConstants, screenShareQuality } from '../../qualityConstants';
 import { QualityScenarios } from '../../types';
 import { ProtonMeetKeyProvider } from '../../utils/ProtonMeetKeyProvider';
@@ -43,9 +44,11 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
 
     return (
         <RoomContext.Provider value={roomRef.current}>
-            <MediaManagementProvider>
-                <ProtonMeetContainer guestMode={guestMode} room={roomRef.current} keyProvider={keyProvider} />
-            </MediaManagementProvider>
+            <StoredDevicesProvider>
+                <MediaManagementProvider>
+                    <ProtonMeetContainer guestMode={guestMode} room={roomRef.current} keyProvider={keyProvider} />
+                </MediaManagementProvider>
+            </StoredDevicesProvider>
         </RoomContext.Provider>
     );
 };

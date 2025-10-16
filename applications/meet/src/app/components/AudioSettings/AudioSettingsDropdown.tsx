@@ -8,18 +8,27 @@ import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { OptionButton } from '../../atoms/OptionButton/OptionButton';
+import { DEFAULT_DEVICE_ID } from '../../constants';
+import type { DeviceState } from '../../types';
+import { shouldShowDeviceCheckmark, shouldShowSystemDefaultCheckmark } from '../../utils/device-utils';
 import { DeviceSettingsDropdown } from '../DeviceSettingsDropdown';
 
 interface AudioSettingsDropdownProps {
     anchorRef: RefObject<HTMLButtonElement>;
-    handleInputDeviceChange: (deviceId: string) => void;
-    handleOutputDeviceChange: (deviceId: string) => void;
+    handleInputDeviceChange: (deviceId: string) => Promise<void>;
+    handleOutputDeviceChange: (deviceId: string) => Promise<void>;
     audioDeviceId: string | null;
     activeOutputDeviceId: string | null;
+    microphoneState: DeviceState;
+    speakerState: DeviceState;
     microphones: MediaDeviceInfo[];
     speakers: MediaDeviceInfo[];
     onClose: () => void;
     anchorPosition?: PopperPosition;
+    isMicrophoneLoading: (deviceId: string) => boolean;
+    isSpeakerLoading: (deviceId: string) => boolean;
+    withMicrophoneLoading: (deviceId: string, operation: () => Promise<void>) => Promise<void>;
+    withSpeakerLoading: (deviceId: string, operation: () => Promise<void>) => Promise<void>;
 }
 
 const AudioSettingsDropdownComponent = ({
@@ -28,10 +37,16 @@ const AudioSettingsDropdownComponent = ({
     handleOutputDeviceChange,
     audioDeviceId,
     activeOutputDeviceId,
+    microphoneState,
+    speakerState,
     microphones,
     speakers,
     onClose,
     anchorPosition,
+    isMicrophoneLoading,
+    isSpeakerLoading,
+    withMicrophoneLoading,
+    withSpeakerLoading,
 }: AudioSettingsDropdownProps) => {
     const noMicrophoneDetected = microphones.length === 0;
     const noSpeakerDetected = speakers.length === 0;
@@ -43,11 +58,40 @@ const AudioSettingsDropdownComponent = ({
                     <div className="color-weak meet-font-weight">
                         {!noMicrophoneDetected ? c('Info').t`Select a microphone` : c('Info').t`No microphone detected`}
                     </div>
+                    {microphoneState.systemDefault && (
+                        <OptionButton
+                            key={DEFAULT_DEVICE_ID}
+                            onClick={() => {
+                                const isAlreadySelected = shouldShowSystemDefaultCheckmark(microphoneState);
+                                if (isAlreadySelected) {
+                                    return;
+                                }
+                                void withMicrophoneLoading(DEFAULT_DEVICE_ID, () =>
+                                    handleInputDeviceChange(DEFAULT_DEVICE_ID)
+                                );
+                            }}
+                            showIcon={shouldShowSystemDefaultCheckmark(microphoneState)}
+                            loading={isMicrophoneLoading(DEFAULT_DEVICE_ID)}
+                            label={microphoneState.systemDefaultLabel}
+                            Icon={IcCheckmark}
+                        />
+                    )}
                     {microphones.map((mic) => (
                         <OptionButton
                             key={mic.deviceId}
-                            onClick={() => handleInputDeviceChange(mic.deviceId)}
-                            showIcon={mic.deviceId === audioDeviceId}
+                            onClick={() => {
+                                const isAlreadySelected = shouldShowDeviceCheckmark(
+                                    mic.deviceId,
+                                    audioDeviceId!,
+                                    microphoneState
+                                );
+                                if (isAlreadySelected) {
+                                    return;
+                                }
+                                void withMicrophoneLoading(mic.deviceId, () => handleInputDeviceChange(mic.deviceId));
+                            }}
+                            showIcon={shouldShowDeviceCheckmark(mic.deviceId, audioDeviceId!, microphoneState)}
+                            loading={isMicrophoneLoading(mic.deviceId)}
                             label={mic.label}
                             Icon={IcCheckmark}
                         />
@@ -58,12 +102,47 @@ const AudioSettingsDropdownComponent = ({
                         <div className="color-weak meet-font-weight">
                             {!noSpeakerDetected ? c('Info').t`Select a speaker` : c('Info').t`No speaker detected`}
                         </div>
+                        {speakerState.systemDefault && (
+                            <OptionButton
+                                key={DEFAULT_DEVICE_ID}
+                                onClick={() => {
+                                    const isAlreadySelected = shouldShowSystemDefaultCheckmark(speakerState);
+                                    if (isAlreadySelected) {
+                                        return;
+                                    }
+                                    void withSpeakerLoading(DEFAULT_DEVICE_ID, () =>
+                                        handleOutputDeviceChange(DEFAULT_DEVICE_ID)
+                                    );
+                                }}
+                                showIcon={shouldShowSystemDefaultCheckmark(speakerState)}
+                                loading={isSpeakerLoading(DEFAULT_DEVICE_ID)}
+                                label={speakerState.systemDefaultLabel}
+                                Icon={IcCheckmark}
+                            />
+                        )}
                         {speakers.map((speaker) => (
                             <OptionButton
                                 key={speaker.deviceId}
-                                showIcon={speaker.deviceId === activeOutputDeviceId}
+                                showIcon={shouldShowDeviceCheckmark(
+                                    speaker.deviceId,
+                                    activeOutputDeviceId!,
+                                    speakerState
+                                )}
+                                loading={isSpeakerLoading(speaker.deviceId)}
                                 label={speaker.label}
-                                onClick={() => handleOutputDeviceChange(speaker.deviceId)}
+                                onClick={() => {
+                                    const isAlreadySelected = shouldShowDeviceCheckmark(
+                                        speaker.deviceId,
+                                        activeOutputDeviceId!,
+                                        speakerState
+                                    );
+                                    if (isAlreadySelected) {
+                                        return;
+                                    }
+                                    void withSpeakerLoading(speaker.deviceId, () =>
+                                        handleOutputDeviceChange(speaker.deviceId)
+                                    );
+                                }}
                                 Icon={IcCheckmark}
                             />
                         ))}

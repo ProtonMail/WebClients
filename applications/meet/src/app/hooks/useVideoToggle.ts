@@ -8,6 +8,7 @@ import { ConnectionState, Track } from 'livekit-client';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import debounce from '@proton/utils/debounce';
 
+import { DEFAULT_DEVICE_ID } from '../constants';
 import type { SwitchActiveDevice } from '../types';
 import { getPersistedBackgroundBlur, persistBackgroundBlur } from '../utils/backgroundBlurPersistance';
 
@@ -47,7 +48,8 @@ const getVideoTrackPublications = (localParticipant: LocalParticipant) => {
 export const useVideoToggle = (
     activeCameraDeviceId: string,
     switchActiveDevice: SwitchActiveDevice,
-    initialCameraState: boolean
+    initialCameraState: boolean,
+    systemDefaultCamera: MediaDeviceInfo
 ) => {
     const room = useRoomContext();
     const { isCameraEnabled, localParticipant } = useLocalParticipant();
@@ -80,13 +82,17 @@ export const useVideoToggle = (
             isEnabled?: boolean;
             videoDeviceId?: string;
             facingMode?: 'environment' | 'user';
+            preserveCache?: boolean;
         } = {}
     ) => {
         const {
             isEnabled = prevEnabled.current ?? initialCameraState,
             videoDeviceId = activeCameraDeviceId,
             facingMode: customFacingMode,
+            preserveCache,
         } = params;
+
+        const deviceId = videoDeviceId === DEFAULT_DEVICE_ID ? systemDefaultCamera.deviceId : videoDeviceId;
 
         if (toggleInProgress.current) {
             return;
@@ -103,7 +109,7 @@ export const useVideoToggle = (
                       facingMode: customFacingMode ?? facingMode,
                   }
                 : {
-                      deviceId: { exact: videoDeviceId },
+                      deviceId: { exact: deviceId },
                       facingMode,
                   };
 
@@ -115,7 +121,12 @@ export const useVideoToggle = (
         }
 
         if (!isMobile()) {
-            await switchActiveDevice('videoinput', videoDeviceId as string);
+            await switchActiveDevice({
+                deviceType: 'videoinput',
+                deviceId: deviceId as string,
+                isSystemDefaultDevice: videoDeviceId === DEFAULT_DEVICE_ID,
+                preserveDefaultDevice: !!preserveCache,
+            });
         }
 
         await localParticipant.setCameraEnabled(isEnabled, facingModeDependentOptions);

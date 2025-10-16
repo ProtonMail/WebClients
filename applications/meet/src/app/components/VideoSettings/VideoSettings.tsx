@@ -1,8 +1,10 @@
-import type { RefObject } from 'react';
+import { type RefObject, useMemo } from 'react';
 
 import type { PopperPosition } from '@proton/components/components/popper/interface';
 
 import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
+import { useDeviceLoading } from '../../hooks/useDeviceLoading';
+import { filterDevices } from '../../utils/device-utils';
 import { VideoSettingsDropdown } from './VideoSettingsDropdown';
 
 interface VideoSettingsProps {
@@ -12,14 +14,20 @@ interface VideoSettingsProps {
 }
 
 export function VideoSettings({ anchorRef, onClose, anchorPosition }: VideoSettingsProps) {
-    const { selectedCameraId: videoDeviceId, toggleVideo, cameras, isVideoEnabled } = useMediaManagementContext();
+    const {
+        selectedCameraId: videoDeviceId,
+        toggleVideo,
+        cameras,
+        isVideoEnabled,
+        cameraState,
+    } = useMediaManagementContext();
+
+    const { isLoading, withLoading } = useDeviceLoading();
+
+    const filteredCameras = useMemo(() => filterDevices(cameras), [cameras]);
 
     const handleCameraChange = async (deviceId: string) => {
-        if (deviceId === videoDeviceId) {
-            return;
-        }
-
-        void toggleVideo({ videoDeviceId: deviceId, isEnabled: isVideoEnabled });
+        await toggleVideo({ videoDeviceId: deviceId, isEnabled: isVideoEnabled });
     };
 
     return (
@@ -27,9 +35,12 @@ export function VideoSettings({ anchorRef, onClose, anchorPosition }: VideoSetti
             anchorRef={anchorRef}
             handleCameraChange={handleCameraChange}
             videoDeviceId={videoDeviceId}
-            cameras={cameras}
+            cameraState={cameraState}
+            cameras={filteredCameras}
             onClose={onClose}
             anchorPosition={anchorPosition}
+            isCameraLoading={(deviceId) => isLoading('camera', deviceId)}
+            withCameraLoading={(deviceId, operation) => withLoading('camera', deviceId, operation)}
         />
     );
 }

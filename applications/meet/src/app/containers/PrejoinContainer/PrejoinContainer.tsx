@@ -72,16 +72,28 @@ export const PrejoinContainer = ({
         handleJoin(displayName);
     };
 
-    const handleCameraChange = (camera: MediaDeviceInfo) => {
-        void switchActiveDevice('videoinput', camera.deviceId);
+    const handleCameraChange = async (camera: MediaDeviceInfo, isDefaultDevice: boolean) => {
+        await switchActiveDevice({
+            deviceType: 'videoinput',
+            deviceId: camera.deviceId,
+            isSystemDefaultDevice: isDefaultDevice,
+        });
     };
 
-    const handleMicrophoneChange = (microphone: MediaDeviceInfo) => {
-        void switchActiveDevice('audioinput', microphone.deviceId);
+    const handleMicrophoneChange = async (microphone: MediaDeviceInfo, isDefaultDevice: boolean) => {
+        await switchActiveDevice({
+            deviceType: 'audioinput',
+            deviceId: microphone.deviceId,
+            isSystemDefaultDevice: isDefaultDevice,
+        });
     };
 
-    const handleAudioOutputDeviceChange = (speaker: MediaDeviceInfo) => {
-        void switchActiveDevice('audiooutput', speaker.deviceId);
+    const handleAudioOutputDeviceChange = async (speaker: MediaDeviceInfo, isDefaultDevice: boolean) => {
+        await switchActiveDevice({
+            deviceType: 'audiooutput',
+            deviceId: speaker.deviceId,
+            isSystemDefaultDevice: isDefaultDevice,
+        });
     };
 
     return (

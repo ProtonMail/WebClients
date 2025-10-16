@@ -8,6 +8,7 @@ import { isChromiumBased, isFirefox, isMobile, isSafari } from '@proton/shared/l
 
 import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
 import type { MeetChatMessage } from '../../types';
+import { restoreIOSAudioQuality } from '../../utils/ios-audio-session';
 import { PiPSessionManager } from './PiPSessionManager';
 import { useLatest } from './useLatest';
 import { usePiPMediaSession } from './usePiPMediaSession';
@@ -268,6 +269,7 @@ export function usePictureInPicture({
             if (silentStream) {
                 silentStream.getTracks().forEach((track) => track.stop());
                 silentStream = null;
+                restoreIOSAudioQuality();
             }
         };
 
@@ -290,6 +292,7 @@ export function usePictureInPicture({
 
             if (silentStream) {
                 silentStream.getTracks().forEach((track) => track.stop());
+                restoreIOSAudioQuality();
             }
         };
     }, [room, isVideoEnabled, isAudioEnabled]);
