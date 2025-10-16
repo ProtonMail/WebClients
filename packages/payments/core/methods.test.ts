@@ -1649,6 +1649,134 @@ describe('Chargebee PayPal', () => {
     });
 });
 
+describe('Trial mode payment method restrictions', () => {
+    describe('when isTrial is true', () => {
+        it('should only display Chargebee Card payment method', () => {
+            const methods = new PaymentMethods({
+                paymentStatus: status,
+                paymentMethods: [],
+                amount: 500,
+                currency: TEST_CURRENCY,
+                coupon: '',
+                flow: 'subscription',
+                selectedPlanName: undefined,
+                billingAddress: { CountryCode: 'CH', State: '' },
+                enableSepa: true,
+                enableSepaB2C: true,
+                canUseApplePay: true,
+                isTrial: true,
+            });
+
+            const newMethods = methods.getNewMethods();
+            const methodTypes = newMethods.map((method) => method.type);
+
+            // Only Chargebee Card should be available
+            expect(methodTypes).toEqual([PAYMENT_METHOD_TYPES.CHARGEBEE_CARD]);
+            expect(newMethods.some((method) => method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD)).toBe(true);
+        });
+
+        it('should not display Cash when isTrial is true', () => {
+            const methods = new PaymentMethods({
+                paymentStatus: status,
+                paymentMethods: [],
+                amount: 500,
+                currency: TEST_CURRENCY,
+                coupon: '',
+                flow: 'subscription',
+                selectedPlanName: undefined,
+                billingAddress: undefined,
+                enableSepa: true,
+                isTrial: true,
+            });
+
+            expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.CASH)).toBe(false);
+        });
+
+        it('should not display SEPA Direct Debit when isTrial is true', () => {
+            const methods = new PaymentMethods({
+                paymentStatus: status,
+                paymentMethods: [],
+                amount: 500,
+                currency: TEST_CURRENCY,
+                coupon: '',
+                flow: 'subscription',
+                selectedPlanName: PLANS.MAIL_PRO,
+                billingAddress: { CountryCode: 'CH', State: '' },
+                enableSepa: true,
+                isTrial: true,
+            });
+
+            expect(
+                methods
+                    .getNewMethods()
+                    .some((method) => method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT)
+            ).toBe(false);
+        });
+
+        it('should not display Bitcoin when isTrial is true', () => {
+            const methods = new PaymentMethods({
+                paymentStatus: status,
+                paymentMethods: [],
+                amount: 500,
+                currency: TEST_CURRENCY,
+                coupon: '',
+                flow: 'subscription',
+                selectedPlanName: undefined,
+                billingAddress: undefined,
+                enableSepa: true,
+                isTrial: true,
+            });
+
+            expect(
+                methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN)
+            ).toBe(false);
+        });
+
+        it('should not display PayPal when isTrial is true', () => {
+            const methods = new PaymentMethods({
+                paymentStatus: status,
+                paymentMethods: [],
+                amount: 500,
+                currency: TEST_CURRENCY,
+                coupon: '',
+                flow: 'subscription',
+                selectedPlanName: undefined,
+                billingAddress: undefined,
+                enableSepa: true,
+                isTrial: true,
+            });
+
+            expect(
+                methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL)
+            ).toBe(false);
+        });
+
+        it('should not display Apple Pay when isTrial is true', () => {
+            const { isSafari } = require('@proton/shared/lib/helpers/browser');
+            const mockIsSafari = isSafari as jest.MockedFunction<() => boolean>;
+            mockIsSafari.mockReturnValue(true);
+
+            const methods = new PaymentMethods({
+                paymentStatus: status,
+                paymentMethods: [],
+                amount: MIN_APPLE_PAY_AMOUNT,
+                currency: TEST_CURRENCY,
+                coupon: '',
+                flow: 'subscription',
+                selectedPlanName: undefined,
+                billingAddress: undefined,
+                enableSepa: true,
+                canUseApplePay: true,
+                isTrial: true,
+            });
+
+            expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.APPLE_PAY)).toBe(
+                false
+            );
+        });
+    });
+});
+
 describe('SEPA', () => {
     it('should display SEPA', () => {
         const flow: PaymentMethodFlow = 'subscription';
