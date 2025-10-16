@@ -1,30 +1,113 @@
 import * as Ariakit from '@ariakit/react'
+import * as Atoms from '../atoms'
+import { useCompositeOverflowStore } from '@ariakit/react-core/composite/composite-overflow-store'
+import { CompositeOverflow } from '@ariakit/react-core/composite/composite-overflow'
+import {
+  CompositeOverflowDisclosure,
+  type CompositeOverflowDisclosureProps,
+} from '@ariakit/react-core/composite/composite-overflow-disclosure'
 import type { IconName } from '@proton/icons'
 import clsx from '@proton/utils/clsx'
-import { type ComponentPropsWithoutRef, type ReactNode, type Ref, forwardRef } from 'react'
+import {
+  type ComponentPropsWithRef,
+  type ComponentPropsWithoutRef,
+  type ReactElement,
+  type ReactNode,
+  type Ref,
+  forwardRef,
+  useState,
+} from 'react'
 import { Icon, type IconData } from '../ui'
 import * as UI from '../ui'
 import { createComponent } from '../utils'
+import { GroupsProvider, GroupTypeProvider, useGroup, useHasOverflow } from './groups'
 
 export interface ContainerProps extends ComponentPropsWithoutRef<'div'> {
+  mainToolbarSlot?: ReactNode
+  overflowToolbarSlot?: ReactNode
+  trailingSlot?: ReactNode
   formulaBarSlot?: ReactNode
+  renderOverflowDisclosure: ReactElement
 }
 
 export const Container = forwardRef<HTMLDivElement, ContainerProps>(function Container(
-  { formulaBarSlot, ...props }: ContainerProps,
+  {
+    mainToolbarSlot,
+    overflowToolbarSlot,
+    trailingSlot,
+    formulaBarSlot,
+    renderOverflowDisclosure,
+    ...props
+  }: ContainerProps,
   ref,
 ) {
+  const overflow = useCompositeOverflowStore()
+  const [toolbarContainerElement, setToolbarContainerElement] = useState<HTMLDivElement | null>(null)
   return (
-    <div ref={ref} {...props} className={clsx('px-4 pb-3', props.className)}>
+    <div ref={ref} {...props} className={clsx('select-none px-4 pb-3', props.className)}>
       <div className="border-weak rounded-[1rem] border bg-[white] shadow-[0_4px_10px_0_rgba(0,0,0,0.06)]">
-        <Ariakit.Toolbar className="flex !flex-wrap items-center gap-[.125rem] px-3 py-[.375rem]">
-          {props.children}
-        </Ariakit.Toolbar>
+        <GroupsProvider toolbarContainerElement={toolbarContainerElement}>
+          <Ariakit.Toolbar className="flex grow gap-[.5rem]">
+            <div
+              className="flex grow items-center gap-[.5rem] overflow-hidden px-3 py-[.375rem]"
+              ref={setToolbarContainerElement}
+            >
+              <GroupTypeProvider type="main">{mainToolbarSlot}</GroupTypeProvider>
+            </div>
+            <div className="flex shrink-0 items-center gap-[.5rem] px-3 py-[.375rem]">
+              <Overflow store={overflow} renderOverflowDisclosure={renderOverflowDisclosure}>
+                <GroupTypeProvider type="overflow">{overflowToolbarSlot}</GroupTypeProvider>
+              </Overflow>
+              {trailingSlot}
+            </div>
+          </Ariakit.Toolbar>
+        </GroupsProvider>
         {formulaBarSlot}
       </div>
     </div>
   )
 })
+
+export interface OverflowProps extends CompositeOverflowDisclosureProps {
+  renderOverflowDisclosure: ReactElement
+}
+
+export function Overflow({ store, children, renderOverflowDisclosure, ...props }: OverflowProps) {
+  const hasOverflow = useHasOverflow()
+  if (!hasOverflow) {
+    return null
+  }
+  return (
+    <>
+      <CompositeOverflowDisclosure store={store} {...props} render={renderOverflowDisclosure} />
+
+      <Atoms.DropdownPopover
+        {...Atoms.DROPDOWN_POPOVER_DEFAULTS}
+        className="flex !flex-wrap items-center gap-[.5rem] px-3 py-[.375rem]"
+        render={<CompositeOverflow store={store}>{children}</CompositeOverflow>}
+      />
+    </>
+  )
+}
+
+export interface GroupProps extends ComponentPropsWithRef<'div'> {
+  groupId: string
+}
+
+export function Group({ children, groupId, ...props }: GroupProps) {
+  const group = useGroup(groupId)
+  return (
+    <div
+      {...group.props}
+      {...props}
+      className={clsx('flex shrink-0 items-center gap-[.125rem]', props.className, group.props.className)}
+    >
+      {children}
+      {/* eslint-disable-next-line @typescript-eslint/no-use-before-define */}
+      <Separator {...group.separatorProps} className={clsx('ml-[.375rem]', group.separatorProps.className)} />
+    </div>
+  )
+}
 
 export interface ItemProps extends Ariakit.ToolbarItemProps {
   ref?: Ref<HTMLButtonElement>
@@ -33,7 +116,6 @@ export interface ItemProps extends Ariakit.ToolbarItemProps {
   icon?: IconData
   /** @deprecated Use `icon` instead */
   legacyIconName?: IconName
-  showLabel?: boolean
   pressed?: boolean
   dropdownIndicator?: boolean
   children?: string
@@ -46,7 +128,6 @@ export const Item = createComponent<ItemProps>(function Item({
   variant = 'icon',
   icon,
   legacyIconName,
-  showLabel,
   pressed,
   dropdownIndicator,
   children,
@@ -54,7 +135,7 @@ export const Item = createComponent<ItemProps>(function Item({
   shortcut,
   ...props
 }: ItemProps) {
-  const displayLabel = Boolean(variant === 'label' || showLabel)
+  const displayLabel = Boolean(variant === 'label')
   let pressedValue: 'true' | 'false' | undefined = undefined
   if (pressed != null) {
     pressedValue = pressed ? 'true' : 'false'
@@ -78,9 +159,12 @@ export const Item = createComponent<ItemProps>(function Item({
       props.className,
     ),
   }
+
+  const showTooltip = !displayLabel || Boolean(shortcut)
   const content = (
     <Ariakit.ToolbarItem
-      aria-label={!displayLabel ? accessibilityLabel : undefined}
+      {...(showTooltip ? {} : outputProps)}
+      aria-label={!displayLabel || accessibilityLabel !== children ? accessibilityLabel : undefined}
       aria-pressed={pressedValue}
       accessibleWhenDisabled
     >
@@ -90,7 +174,6 @@ export const Item = createComponent<ItemProps>(function Item({
     </Ariakit.ToolbarItem>
   )
 
-  const showTooltip = !showLabel || Boolean(shortcut)
   if (!showTooltip) {
     return content
   }
@@ -110,7 +193,7 @@ export const Separator = forwardRef<HTMLHRElement, SeparatorProps>(function Sepa
     <Ariakit.ToolbarSeparator
       ref={ref}
       {...props}
-      className={clsx('mx-2 h-[1.25rem] w-[1px] flex-shrink-0 border-l border-[#D1CFCD]', props.className)}
+      className={clsx('h-[1.25rem] w-[1px] flex-shrink-0 border-l border-[#D1CFCD]', props.className)}
     />
   )
 })

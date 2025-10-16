@@ -163,7 +163,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ariakit/react-core@npm:0.4.19":
+"@ariakit/react-core@npm:0.4.19, @ariakit/react-core@npm:^0.4.19":
   version: 0.4.19
   resolution: "@ariakit/react-core@npm:0.4.19"
   dependencies:
@@ -36610,6 +36610,7 @@ __metadata:
   resolution: "proton-docs-editor@workspace:applications/docs-editor"
   dependencies:
     "@ariakit/react": "npm:^0.4.19"
+    "@ariakit/react-core": "npm:^0.4.19"
     "@babel/preset-typescript": "npm:^7.27.1"
     "@lexical/clipboard": "npm:0.30.0"
     "@lexical/code": "npm:0.30.0"
