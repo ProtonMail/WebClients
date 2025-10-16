@@ -24,6 +24,7 @@ import LumoThemeButton from '../LumoThemeButton';
 import { SignInLinkButton } from '../SignInLink';
 import DeleteAllButton from './DeleteAllButton';
 import LumoSettingsUpgradePanel from './LumoSettingsUpgradePanel';
+import PersonalizationPanel from './PersonalizationPanel';
 
 import './SettingsModal.scss';
 
@@ -89,6 +90,12 @@ const SettingsItems: SettingsItem[] = [
         id: 'account',
         icon: 'user',
         getText: () => c('collider_2025: Settings Item').t`Account`,
+        guest: true,
+    },
+    {
+        id: 'personalization',
+        icon: 'sliders',
+        getText: () => c('collider_2025: Settings Item').t`Personalization`,
         guest: true,
     },
     { id: 'general', icon: 'cog-wheel', getText: () => c('collider_2025: Settings Item').t`General`, guest: true },
@@ -230,8 +237,12 @@ const AccountSettingsPanelGuest = () => {
     );
 };
 
-const SettingsModal = ({ ...modalProps }: ModalOwnProps) => {
-    const [activePanel, setActivePanel] = useState('account');
+interface SettingsModalProps extends ModalOwnProps {
+    initialPanel?: string;
+}
+
+const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModalProps) => {
+    const [activePanel, setActivePanel] = useState(initialPanel);
     const { isGuest } = useLumoCommon();
     const closeModal = modalProps.onClose;
 
@@ -252,7 +263,7 @@ const SettingsModal = ({ ...modalProps }: ModalOwnProps) => {
 
                 <div className="modal-main-container">
                     {/* Desktop view with sidebar */}
-                    <div className="hidden md:flex md:flex-row flex-nowrap">
+                    <div className="hidden md:flex md:flex-row flex-nowrap flex-1">
                         <div className="sidebar-container">
                             <LumoSettingsSidebar
                                 activePanel={activePanel}
@@ -270,9 +281,13 @@ const SettingsModal = ({ ...modalProps }: ModalOwnProps) => {
                             </div>
 
                             {/* Panel content */}
-                            <div className="flex flex-column flex-nowrap gap-2">
+                            <div
+                                className="flex flex-column flex-nowrap gap-2 flex-1 overflow-hidden"
+                                style={{ minHeight: 0 }}
+                            >
                                 {activePanel === 'account' &&
                                     (isGuest ? <AccountSettingsPanelGuest /> : <AccountSettingsPanel />)}
+                                {activePanel === 'personalization' && <PersonalizationPanel />}
                                 {activePanel === 'general' && (
                                     <GeneralSettingsPanel isGuest={isGuest} onClose={closeModal} />
                                 )}
@@ -280,29 +295,40 @@ const SettingsModal = ({ ...modalProps }: ModalOwnProps) => {
                         </div>
                     </div>
 
-                    {/* Mobile view without tabs - all content vertically */}
-                    <div className="md:hidden flex flex-column">
+                    {/* Mobile view with tabs */}
+                    <div className="md:hidden flex flex-column flex-1">
                         {/* Settings title */}
                         <div className="mobile-section-header">
                             <h1 className="text-2xl text-bold m-0">Settings</h1>
                         </div>
 
-                        {/* Account section */}
-                        <div className="mobile-settings-section">
-                            <h2 className="text-lg text-semibold mb-4 flex items-center gap-3">
-                                <Icon name="user" size={4} />
-                                Account
-                            </h2>
-                            {isGuest ? <AccountSettingsPanelGuest /> : <AccountSettingsPanel />}
+                        {/* Mobile tabs */}
+                        <div className="mobile-tabs-container">
+                            <div className="mobile-tabs">
+                                {SettingsItems.map((item) => (
+                                    <Button
+                                        key={item.id}
+                                        shape="ghost"
+                                        className={clsx('mobile-tab', activePanel === item.id && 'mobile-tab-active')}
+                                        onClick={() => setActivePanel(item.id)}
+                                        disabled={isGuest && !item.guest}
+                                        aria-pressed={activePanel === item.id}
+                                    >
+                                        <Icon className="shrink-0" name={item.icon} size={4} />
+                                        <span className="text-sm">{item.getText()}</span>
+                                    </Button>
+                                ))}
+                            </div>
                         </div>
 
-                        {/* General section */}
-                        <div className="mobile-settings-section">
-                            <h2 className="text-lg text-semibold mb-4 flex items-center gap-3">
-                                <Icon name="cog-wheel" size={4} />
-                                General
-                            </h2>
-                            <GeneralSettingsPanel isGuest={isGuest} onClose={closeModal} />
+                        {/* Tab content */}
+                        <div className="mobile-tab-content flex flex-column flex-1">
+                            {activePanel === 'account' &&
+                                (isGuest ? <AccountSettingsPanelGuest /> : <AccountSettingsPanel />)}
+                            {activePanel === 'personalization' && <PersonalizationPanel />}
+                            {activePanel === 'general' && (
+                                <GeneralSettingsPanel isGuest={isGuest} onClose={closeModal} />
+                            )}
                         </div>
                     </div>
                 </div>

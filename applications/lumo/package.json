@@ -61,10 +61,13 @@
         "uuid": "^13.0.0"
     },
     "devDependencies": {
+        "@babel/core": "^7.28.4",
         "@peculiar/webcrypto": "^1.5.0",
         "@proton/i18n": "workspace:^",
         "@proton/pack": "workspace:^",
         "@proton/testing": "workspace:^",
+        "@tiptap/core": "^2.26.2",
+        "@tiptap/pm": "^2.26.2",
         "@types/node": "^22.18.8",
         "@types/react": "^18.3.26",
         "@types/react-dom": "^18.3.7",

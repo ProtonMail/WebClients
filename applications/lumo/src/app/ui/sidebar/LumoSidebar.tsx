@@ -251,7 +251,7 @@ const LumoSidebarContent = () => {
                     {!isSmallScreen && (
                         <SidebarItem
                             icon={isCollapsed ? 'chevron-right' : 'chevron-left'}
-                            label={c('collider_2025:Button').t`Hide sidebar`}
+                            label={isCollapsed ? c('collider_2025:Button').t`Show sidebar` : c('collider_2025:Button').t`Hide sidebar`}
                             onClick={toggle}
                             showText={showText}
                         />

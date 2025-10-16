@@ -117,7 +117,7 @@ const MainContainer = ({
                         isSmallScreen={isSmallScreen}
                     />
                 </div>
-                {!isGuest && <WhatsNew />}
+                <WhatsNew />
                 {!isSmallScreen && <LumoOnboarding />}
             </div>
             {openPanel.type === 'files' && (
