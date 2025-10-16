@@ -98,7 +98,10 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
             const attached = visible && focused && field.matches(attachedField);
             const blurred = !(document.hasFocus() && isActiveElement(field.element));
 
-            if (!attached && blurred) field.detachIcon();
+            if (!attached && blurred) {
+                field.detachIcon();
+                ctx.service.inline.dropdown.close();
+            }
         })
     );
 
