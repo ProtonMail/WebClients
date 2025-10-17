@@ -93,7 +93,7 @@ export const getInitialDateTimeModel = (initialDate: Date, defaultEventDuration:
 export const getInitialFrequencyModel = (startDate: Date): FrequencyModel => {
     return {
         type: FREQUENCY.ONCE,
-        frequency: FREQUENCY.WEEKLY,
+        frequency: FREQUENCY.ONCE,
         interval: 1,
         daily: { type: DAILY_TYPE.ALL_DAYS },
         weekly: { type: WEEKLY_TYPE.ON_DAYS, days: [startDate.getDay()] },
