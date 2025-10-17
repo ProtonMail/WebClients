@@ -11,7 +11,7 @@
 	@include media('<=small') {
 		border-block-end: none !important;
 		inline-size: 98% !important;
-		margin-block-end: 5px;
+		margin-block-end: 10px;
 
 		// Mobile background override
 		background-color: var(--background-composer-mobile), var(--background-norm);
@@ -88,4 +88,8 @@
 .web-search-button.is-active {
 	background-color: rgb(186 186 247 / 0.3) !important;
 	color: var(--text-strong) !important;
+}
+
+.shadow-lifted-composer {
+	box-shadow: var(--optional-shadow-lifted-offset, 0 calc(var(--1px) * 5) calc(var(--1px) * 12)) rgb(var(--shadow-color,var(--shadow-default-color))/var(--shadow-lifted-opacity));
 }

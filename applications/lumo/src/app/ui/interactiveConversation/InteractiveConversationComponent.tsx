@@ -10,6 +10,7 @@ import { useLumoActions } from '../../hooks/useLumoActions';
 import { useLumoNavigate as useNavigate } from '../../hooks/useLumoNavigate';
 import { useConversation } from '../../providers/ConversationProvider';
 import { DragAreaProvider, useDragArea } from '../../providers/DragAreaProvider';
+import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { PandocProvider } from '../../providers/PandocProvider';
 import { WebSearchProvider } from '../../providers/WebSearchProvider';
@@ -40,6 +41,7 @@ const InteractiveConversationComponentInner = ({ user }: InteractiveConversation
     const { conversationId: curConversationId } = useParams<RouteParams>();
     const { setConversationId } = useConversation();
     const isGuest = useIsGuest();
+    const { isGhostChatMode } = useGhostChat();
     const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
     const { onDragOver, onDragEnter, onDragLeave, onDrop } = useDragArea();
 
@@ -90,8 +92,10 @@ const InteractiveConversationComponentInner = ({ user }: InteractiveConversation
 
     // ** Effects & related **
 
-    // Set document title
-    useDocumentTitle(conversationTitle ? `${conversationTitle} | Lumo` : LUMO_FULL_APP_TITLE);
+    // Set document title - don't expose conversation title in ghost mode for privacy
+    useDocumentTitle(
+        isGhostChatMode || !conversationTitle ? LUMO_FULL_APP_TITLE : `${conversationTitle} | Lumo`
+    );
 
     // Synchronize the /c/:conversationId parameter with ConversationProvider.
     useEffect(() => {

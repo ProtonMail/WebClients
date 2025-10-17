@@ -3,7 +3,6 @@ import type { ReactNode } from 'react';
 import { GhostChatProvider } from '../providers/GhostChatProvider';
 import { SidebarProvider, useSidebar } from '../providers/SidebarProvider';
 import HighLoadWarning from './components/HighLoadWarning';
-import { Background } from './components/LumoBackground/Background';
 import LumoSidebar from './sidebar/LumoSidebar';
 
 export type ActivePanel = 'chatHistory' | 'favoriteChats' | null;
@@ -17,7 +16,6 @@ const MainLayoutContent = ({ children, HeaderComponent }: Props) => {
     const { isSmallScreen } = useSidebar();
     return (
         <div className="relative reset4print flex flex-row h-full w-full overflow-hidden">
-            <Background />
             <div className="absolute top-0 left-0 w-full h-full no-print">
                 <div className="flex flex-column flex-nowrap h-full flex-1 reset4print">
                     {!isSmallScreen && <HeaderComponent />}
