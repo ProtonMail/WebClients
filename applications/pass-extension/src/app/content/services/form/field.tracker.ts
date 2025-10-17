@@ -5,11 +5,9 @@ import { InlinePortMessageType } from 'proton-pass-extension/app/content/service
 import { actionPrevented } from 'proton-pass-extension/app/content/utils/action-trap';
 import { isActiveElement } from 'proton-pass-extension/app/content/utils/nodes';
 
-import { FieldType, FormType } from '@proton/pass/fathom/labels';
-import { clientStatusResolved } from '@proton/pass/lib/client';
+import { FieldType } from '@proton/pass/fathom/labels';
 import type { MaybeNull } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
-import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { onNextTick } from '@proton/pass/utils/time/next-tick';
 import throttle from '@proton/utils/throttle';
@@ -41,35 +39,21 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
     const listeners = createListenerStore();
     const state: FieldTrackerState = { focusRequest: null };
 
-    const onFocus = withContext<(evt: FocusEvent) => void>(async (ctx) => {
-        if (state.focusRequest) cancelAnimationFrame(state.focusRequest);
+    const onFocus = onNextTick(
+        withContext<(evt: FocusEvent) => void>((ctx) => {
+            if (state.focusRequest) cancelAnimationFrame(state.focusRequest);
 
-        const { action } = field;
-        if (!ctx || !action) return;
+            const { action } = field;
+            if (!ctx || !action) return;
 
-        await ctx.service.inline.dropdown?.settled();
-        if (actionPrevented(field.element)) return;
+            if (actionPrevented(field.element)) return;
 
-        const req = requestAnimationFrame(async () => {
-            try {
+            const req = requestAnimationFrame(() => {
                 field.attachIcon();
-                await waitUntil(() => clientStatusResolved(ctx.getState().status), 50);
-
-                /** Sanity check if this is called multiple times while
-                 * an underlying async request is under way */
-                if (req !== state.focusRequest) return;
-
-                const { formType } = field.getFormHandle();
-                const { authorized, status } = ctx.getState();
-
-                const login = formType === FormType.LOGIN;
-                const count = authorized && login ? ((await ctx.service.autofill.getCredentialsCount()) ?? 0) : 0;
-                field.icon?.setStatus(status);
-                field.icon?.setCount(count);
 
                 /** NOTE: auto-open dropdown if field was not
                  * previously autofilled [to be determined] */
-                if (authorized && !field.autofilled) {
+                if (!field.autofilled) {
                     ctx.service.inline.dropdown.open({
                         type: 'field',
                         action: action.type,
@@ -77,14 +61,11 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
                         field,
                     });
                 }
-            } catch {
-            } finally {
-                state.focusRequest = null;
-            }
-        });
+            });
 
-        state.focusRequest = req;
-    });
+            state.focusRequest = req;
+        })
+    );
 
     /** This should be called on next tick: `document.activeElement` isn't synchronously
      * updated during the blur event handler. Avoids detaching the icon if the blur event
@@ -93,6 +74,7 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
     const onBlur = onNextTick(
         withContext(async (ctx) => {
             if (!ctx || actionPrevented(field.element)) return;
+            if (state.focusRequest) cancelAnimationFrame(state.focusRequest);
 
             const { focused, attachedField, visible } = await ctx.service.inline.dropdown.getState();
             const attached = visible && focused && field.matches(attachedField);
@@ -100,7 +82,7 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
 
             if (!attached && blurred) {
                 field.detachIcon();
-                ctx.service.inline.dropdown.close();
+                ctx.service.inline.dropdown.close({ type: 'field', field });
             }
         })
     );
@@ -112,7 +94,7 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
         const { value } = field.element;
 
         if (!actionPrevented(element)) {
-            if (!action?.filterable) ctx?.service.inline.dropdown.close();
+            if (!action?.filterable) ctx?.service.inline.dropdown.close({ type: 'field', field });
             else syncAutofillFilter(value);
         }
 

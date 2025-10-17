@@ -2,7 +2,7 @@ import type { DropdownAction } from 'proton-pass-extension/app/content/constants
 import { DROPDOWN_IFRAME_SRC } from 'proton-pass-extension/app/content/constants.runtime';
 import { DROPDOWN_MIN_HEIGHT, DROPDOWN_WIDTH } from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
-import { onFieldDropdownClose } from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.utils';
+import { handleOnClosed } from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.utils';
 import type {
     InlineFieldTarget,
     InlineFrameTarget,
@@ -109,10 +109,11 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
 
     const onClose = (options: IFrameCloseOptions) => {
         const target = anchor.current;
+        const refocus = options.refocus ?? false;
 
         switch (target?.type) {
             case 'field': {
-                onFieldDropdownClose(target.field, options.refocus ?? false);
+                handleOnClosed(target.field, refocus);
                 break;
             }
 
@@ -123,7 +124,7 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
                         type: WorkerMessageType.INLINE_DROPDOWN_CLOSED,
                         payload: {
                             type: 'request',
-                            refocus: options.refocus ?? false,
+                            refocus,
                             fieldFrameId,
                             formId,
                             fieldId,
@@ -164,7 +165,7 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
         InlinePortMessageType.AUTOFILL_LOGIN,
         withContext(async (ctx, { payload }) => {
             const target = anchor.current;
-            if (!target || target.type === 'frame') return;
+            if (target?.type !== 'field') return;
 
             const form = target.field.getFormHandle();
             if (!form) return;
@@ -182,7 +183,7 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
         InlinePortMessageType.AUTOFILL_GENERATED_PW,
         withContext(async (ctx, { payload }) => {
             const target = anchor.current;
-            if (!target || target.type === 'frame') return;
+            if (target?.type !== 'field') return;
 
             const form = target.field.getFormHandle();
             if (!form) return;
@@ -204,14 +205,14 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
      * aliases everytime the injected iframe dropdown is opened */
     iframe.registerMessageHandler(
         InlinePortMessageType.AUTOFILL_EMAIL,
-        async ({ payload }) => {
+        withContext(async (ctx, { payload }) => {
             const target = anchor.current;
-            if (!target || target.type === 'frame') return;
+            if (target?.type !== 'field') return;
 
-            await target.field.autofill(payload.email);
+            await ctx?.service.autofill.autofillEmail(target.field, payload.email);
             target.field.focus({ preventAction: true });
             void target.field.getFormHandle()?.tracker?.processForm({ submit: false, partial: true });
-        },
+        }),
         { userAction: true }
     );
 
@@ -219,7 +220,7 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
         InlinePortMessageType.AUTOFILL_IDENTITY,
         withContext(async (ctx, { payload }) => {
             const target = anchor.current;
-            if (!target || target.type === 'frame') return;
+            if (target?.type !== 'field') return;
 
             await ctx?.service.autofill.autofillIdentity(target.field, payload);
             target.field.focus({ preventAction: true });

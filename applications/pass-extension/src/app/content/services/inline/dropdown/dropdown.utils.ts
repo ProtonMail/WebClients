@@ -8,27 +8,37 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { isShadowRoot } from '@proton/pass/fathom';
 import { deriveAliasPrefix } from '@proton/pass/lib/alias/alias.utils';
+import { clientStatusResolved } from '@proton/pass/lib/client';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
-import { nextTick } from '@proton/pass/utils/time/next-tick';
+import { waitUntil } from '@proton/pass/utils/fp/wait-until';
+import { nextTick, onNextTick } from '@proton/pass/utils/time/next-tick';
 import type { ParsedUrl } from '@proton/pass/utils/url/types';
 import { resolveDomain, resolveSubdomain } from '@proton/pass/utils/url/utils';
 import { omit } from '@proton/shared/lib/helpers/object';
 
-import type { DropdownActions, DropdownRequest } from './dropdown.app';
-import { DROPDOWN_FOCUS_TIMEOUT } from './dropdown.focus';
+import type { DropdownHandler } from './dropdown.abstract';
+import type { DropdownActions, DropdownAnchor, DropdownRequest } from './dropdown.app';
 
 /** Handles field cleanup when dropdown closes, preventing race conditions.
  * Uses actionTrap to block interactions during transitions and nextTick
  * to ensure DOM state has settled before focus/icon operations. */
-export const onFieldDropdownClose = (field: FieldHandle, refocus: boolean) => {
-    if (!refocus) actionTrap(field.element, DROPDOWN_FOCUS_TIMEOUT);
-
+export const handleOnClosed = (field: FieldHandle, refocus: boolean) => {
+    if (!refocus) actionTrap(field.element, 1);
     nextTick(() => {
         if (refocus) field.focus();
         else if (!isActiveElement(field.element)) field.detachIcon();
     });
 };
+
+export const handleAutoClose = (dropdown: DropdownHandler, field?: FieldHandle) =>
+    onNextTick(
+        withContext(async (ctx) => {
+            const autofilling = ctx?.service.autofill.processing ?? false;
+            const dropdownFocused = (await dropdown.getState()).focused;
+            if (!(autofilling || dropdownFocused)) dropdown.close(field ? { type: 'field', field } : undefined);
+        })
+    );
 
 export const handleBackdrop = (getField: () => Maybe<FieldHandle>, effect: () => void) => (evt: Event) => {
     const target = evt.target as MaybeNull<HTMLElement>;
@@ -66,14 +76,20 @@ export const prepareDropdownAction = withContext<(request: DropdownRequest) => P
     async (ctx, request) => {
         if (!ctx) return;
 
+        /** If we're refocusing after an unlock request from the dropdown,
+         * ensure the client status has resolved before continuing */
+        await waitUntil(() => clientStatusResolved(ctx.getState().status), 50);
+
         const { action, autofocused } = request;
+        const { authorized } = ctx.getState();
+
+        if (autofocused && !authorized) return;
+
         const url = ctx.getExtensionContext()?.url;
         const origin = url ? resolveDropdownOrigin(request, url) : null;
         const frameId = request.type === 'frame' ? request.fieldFrameId : 0;
 
         if (!origin) return;
-
-        const { authorized } = ctx.getState();
 
         switch (action) {
             case DropdownAction.AUTOFILL_CC: {
@@ -106,3 +122,19 @@ export const prepareDropdownAction = withContext<(request: DropdownRequest) => P
         }
     }
 );
+
+export const willDropdownAnchorChange = (anchor: DropdownAnchor, payload: DropdownRequest): boolean => {
+    if (!anchor) return true;
+
+    switch (payload.type) {
+        case 'field':
+            return anchor.type !== 'field' || anchor.field.element !== payload.field.element;
+
+        case 'frame':
+            return (
+                anchor.type !== 'frame' ||
+                anchor.fieldFrameId !== payload.fieldFrameId ||
+                anchor.fieldId !== payload.fieldId
+            );
+    }
+};
