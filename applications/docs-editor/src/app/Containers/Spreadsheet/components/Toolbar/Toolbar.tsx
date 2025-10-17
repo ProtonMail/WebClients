@@ -356,6 +356,7 @@ function MergeCells() {
       activeCell={useUI((ui) => ui.legacy.activeCell)}
       selections={useUI((ui) => ui.legacy.selections)}
       sheetId={useUI((ui) => ui.legacy.activeSheetId)}
+      merges={useUI((ui) => ui.legacy.merges)}
       onMerge={useUI.$.legacy.onMergeCells}
       onUnMerge={useUI.$.legacy.onUnMergeCells}
     />
