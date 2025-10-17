@@ -255,19 +255,31 @@ const deprecatedClassNames = [
 export default {
     meta: {
         docs: {
-            description: '',
+            description: 'Detect deprecated CSS class names inside JSX className attributes.',
             url: 'https://design-system.protontech.ch',
         },
     },
+
     create: (context) => {
         return {
-            Literal(node) {
-                const { value } = node;
-                if (!value || !value.split) {
+            JSXAttribute(node) {
+                // We only care about attributes named "className"
+                if (node.name.name !== 'className') {
                     return;
                 }
 
-                const classes = new Set(value.split(' '));
+                // We only handle string literals directly here
+                const literal = node.value;
+                if (!literal || literal.type !== 'Literal') {
+                    return;
+                }
+
+                const value = literal.value;
+                if (typeof value !== 'string') {
+                    return;
+                }
+
+                const classes = new Set(value.split(/\s+/).filter(Boolean));
 
                 deprecatedClassNames.forEach(({ deprecatedClassName, suggestedClassName }) => {
                     if (!classes.has(deprecatedClassName)) {
@@ -279,7 +291,7 @@ export default {
                     const message = `${messageDeprecated} ${messageSuggested}`;
 
                     context.report({
-                        node,
+                        node: literal,
                         message,
                     });
                 });
