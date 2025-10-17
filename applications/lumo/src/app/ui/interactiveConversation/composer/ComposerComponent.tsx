@@ -167,7 +167,7 @@ export const ComposerComponent = ({
 
                     <div
                         className={clsx(
-                            'lumo-input-container shadow-lifted bg-weak w-full',
+                            'lumo-input-container shadow-lifted-composer bg-weak w-full',
                             isGhostChatMode && 'ghost-mode'
                         )}
                     >
