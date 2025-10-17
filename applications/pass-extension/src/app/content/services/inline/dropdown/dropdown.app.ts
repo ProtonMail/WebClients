@@ -8,7 +8,7 @@ import type {
     InlineFrameTarget,
 } from 'proton-pass-extension/app/content/services/inline/inline.abstract';
 import { type InlineAppHandler, createInlineApp } from 'proton-pass-extension/app/content/services/inline/inline.app';
-import type { IFrameCloseOptions } from 'proton-pass-extension/app/content/services/inline/inline.messages';
+import type { InlineCloseOptions } from 'proton-pass-extension/app/content/services/inline/inline.messages';
 import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
 import type { PopoverController } from 'proton-pass-extension/app/content/services/inline/inline.popover';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
@@ -107,7 +107,7 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
         }
     });
 
-    const onClose = (options: IFrameCloseOptions) => {
+    const onClose = (options: InlineCloseOptions) => {
         const target = anchor.current;
         const refocus = options.refocus ?? false;
 
@@ -225,6 +225,20 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
             await ctx?.service.autofill.autofillIdentity(target.field, payload);
             target.field.focus({ preventAction: true });
         }),
+        { userAction: true }
+    );
+
+    iframe.registerMessageHandler(
+        InlinePortMessageType.AUTOFILL_ACTION,
+        async ({ payload }) => {
+            switch (payload.type) {
+                case 'creditCard':
+                    await sendMessage.onSuccess(
+                        contentScriptMessage({ type: WorkerMessageType.AUTOFILL_CC, payload }),
+                        () => iframe.close({ refocus: true })
+                    );
+            }
+        },
         { userAction: true }
     );
 

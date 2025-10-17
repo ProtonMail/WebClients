@@ -1,4 +1,5 @@
 import type { BridgeResponse } from 'proton-pass-extension/app/content/bridge/types';
+import type { AutofillItem } from 'proton-pass-extension/types/autofill';
 import type {
     AutofillSyncMessage,
     FeatureFlagsUpdateMessage,
@@ -12,7 +13,7 @@ import type {
 import type { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import type { AppState, ClientEndpoint, FormCredentials, ItemContent } from '@proton/pass/types';
+import type { AppState, ClientEndpoint, FormCredentials, ItemContent, ItemType } from '@proton/pass/types';
 import type { Rect } from '@proton/pass/types/utils/dom';
 import { isObject } from '@proton/pass/utils/object/is-object';
 
@@ -23,6 +24,7 @@ import type { NotificationRequest } from './notification/notification.app';
  * `WorkerMessages` as they are always forwarded
  * between the content-script and iframe. */
 export enum InlinePortMessageType {
+    AUTOFILL_ACTION = 'AUTOFILL_ACTION',
     AUTOFILL_EMAIL = 'AUTOFILL_EMAIL',
     AUTOFILL_FILTER = 'AUTOFILL_FILTER',
     AUTOFILL_GENERATED_PW = 'AUTOFILL_GENERATED_PASSWORD',
@@ -51,7 +53,7 @@ type PasskeyRelayedMessages =
 
 export type IFramePosition = Partial<Rect>;
 export type IFrameEndpoint = 'notification' | 'dropdown';
-export type IFrameCloseOptions = { discard?: boolean; refocus?: boolean };
+export type InlineCloseOptions = { discard?: boolean; refocus?: boolean };
 
 export type IFrameInitPayload = {
     domain: string;
@@ -75,6 +77,7 @@ export type InlineMessageType = InlinePortMessageType | InlineWorkerMessages['ty
 
 export type InlineMessage<T extends InlineMessageType = InlineMessageType> = Extract<
     | InlineWorkerMessages
+    | { type: InlinePortMessageType.AUTOFILL_ACTION; payload: AutofillItem & { type: ItemType } }
     | { type: InlinePortMessageType.AUTOFILL_EMAIL; payload: { email: string } }
     | { type: InlinePortMessageType.AUTOFILL_FILTER; payload: { startsWith: string } }
     | { type: InlinePortMessageType.AUTOFILL_GENERATED_PW; payload: { password: string } }
@@ -85,7 +88,7 @@ export type InlineMessage<T extends InlineMessageType = InlineMessageType> = Ext
     | { type: InlinePortMessageType.DROPDOWN_FOCUSED }
     | { type: InlinePortMessageType.DROPDOWN_FOCUS }
     | { type: InlinePortMessageType.DROPDOWN_FOCUS_REQUEST }
-    | { type: InlinePortMessageType.IFRAME_CLOSE; payload: IFrameCloseOptions }
+    | { type: InlinePortMessageType.IFRAME_CLOSE; payload: InlineCloseOptions }
     | { type: InlinePortMessageType.IFRAME_CONNECTED; payload: { framePort: string; id: IFrameEndpoint } }
     | { type: InlinePortMessageType.IFRAME_DIMENSIONS; payload: { height: number; width?: number } }
     | { type: InlinePortMessageType.IFRAME_HIDDEN }

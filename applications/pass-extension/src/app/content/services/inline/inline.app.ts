@@ -27,9 +27,9 @@ import { createPubSub } from '@proton/pass/utils/pubsub/factory';
 import noop from '@proton/utils/noop';
 
 import type {
-    IFrameCloseOptions,
     IFrameInitPayload,
     IFramePosition,
+    InlineCloseOptions,
     InlineMessage,
     InlineMessageType,
     InlineMessageWithSender,
@@ -63,14 +63,14 @@ type InlineMessageHandlerOptions = {
 
 export type InlineEvent<A> =
     | { type: 'open'; state: InlineState<A> }
-    | { type: 'close'; state: InlineState<A>; options: IFrameCloseOptions }
+    | { type: 'close'; state: InlineState<A>; options: InlineCloseOptions }
     | { type: 'destroy' }
     | { type: 'error'; error: unknown };
 
 export interface InlineApp<A> {
     element: HTMLIFrameElement;
     state: InlineState<A>;
-    close: (options?: IFrameCloseOptions) => void;
+    close: (options?: InlineCloseOptions) => void;
     destroy: () => void;
     getPosition: () => IFramePosition;
     init: (port: Runtime.Port, getPayload: () => IFrameInitPayload) => void;
@@ -108,7 +108,7 @@ export type InlineState<Action> = {
 };
 
 export interface InlineAppHandler<Options extends { action: any }, Action = Options['action']> {
-    close: () => void;
+    close: (options?: InlineCloseOptions) => void;
     destroy: () => void;
     getState: () => InlineState<Action>;
     init: (port: Runtime.Port, getPayload: () => IFrameInitPayload) => void;
@@ -230,7 +230,7 @@ export const createInlineApp = <A>({
         });
     };
 
-    const close = (options: IFrameCloseOptions = {}) => {
+    const close = (options: InlineCloseOptions = {}) => {
         state.ctrl?.abort();
         state.ctrl = null;
 

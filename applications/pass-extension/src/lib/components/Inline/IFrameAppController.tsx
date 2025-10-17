@@ -1,7 +1,7 @@
 import { IFRAME_APP_READY_EVENT } from 'proton-pass-extension/app/content/constants.static';
 import type {
-    IFrameCloseOptions,
     IFrameEndpoint,
+    InlineCloseOptions,
     InlineMessage,
     InlineMessageType,
     InlineMessageWithSender,
@@ -26,7 +26,7 @@ import { objectHandler } from '@proton/pass/utils/object/handler';
 import { type Subscriber, createPubSub } from '@proton/pass/utils/pubsub/factory';
 
 export interface IFrameAppController {
-    close: (options?: IFrameCloseOptions) => void;
+    close: (options?: InlineCloseOptions) => void;
     connect: (port: Runtime.Port, forwardTo: string) => void;
     disconnect: () => void;
     forwardMessage: (message: InlineMessage) => void;
