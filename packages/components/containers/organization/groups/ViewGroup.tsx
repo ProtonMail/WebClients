@@ -99,6 +99,7 @@ const ViewGroup = ({
                     loading={loadingGroupMembers}
                     group={selectedGroup}
                     canOnlyDelete={canOnlyDelete}
+                    canChangeVisibility={showMail}
                 />
             </div>
         </Panel>

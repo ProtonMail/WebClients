@@ -387,6 +387,7 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                         group={selectedGroup}
                         edit
                         canOnlyDelete={canOnlyDelete}
+                        canChangeVisibility={!hideMail}
                     />
                 </div>
             </Panel>
