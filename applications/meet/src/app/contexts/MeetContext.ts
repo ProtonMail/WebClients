@@ -1,5 +1,6 @@
 import { createContext, useContext } from 'react';
 
+import type { TrackReference } from '@livekit/components-react';
 import { VideoQuality } from '@proton-meet/livekit-client';
 import type { LocalParticipant, Participant, RemoteParticipant } from '@proton-meet/livekit-client';
 
@@ -41,8 +42,12 @@ export interface MeetContextValues {
     isLocalScreenShare: boolean;
     isScreenShare: boolean;
     screenShareParticipant: Participant | null;
+    screenShareTrack: TrackReference | null;
     handleMeetingLockToggle: (enable: boolean) => Promise<void>;
     isMeetingLocked: boolean;
+    isDisconnected: boolean;
+    startPiP: () => void;
+    stopPiP: () => void;
 }
 
 export const MeetContext = createContext<MeetContextValues>({
@@ -80,8 +85,12 @@ export const MeetContext = createContext<MeetContextValues>({
     isLocalScreenShare: false,
     isScreenShare: false,
     screenShareParticipant: null,
+    screenShareTrack: null,
     handleMeetingLockToggle: () => Promise.resolve(),
     isMeetingLocked: false,
+    isDisconnected: false,
+    startPiP: () => {},
+    stopPiP: () => {},
 });
 
 export const useMeetContext = () => {

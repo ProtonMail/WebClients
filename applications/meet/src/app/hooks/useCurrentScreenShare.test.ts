@@ -79,7 +79,7 @@ describe('useCurrentScreenShare', () => {
         });
         useParticipantsMock.mockReturnValue([mockLocalParticipant]);
 
-        const { result } = renderHook(() => useCurrentScreenShare());
+        const { result } = renderHook(() => useCurrentScreenShare({ stopPiP: vi.fn(), startPiP: vi.fn() }));
 
         expect(result.current.isLocalScreenShare).toBe(true);
     });
@@ -96,7 +96,7 @@ describe('useCurrentScreenShare', () => {
         });
         useParticipantsMock.mockReturnValue([mockParticipant, mockLocalParticipant]);
 
-        const { result } = renderHook(() => useCurrentScreenShare());
+        const { result } = renderHook(() => useCurrentScreenShare({ stopPiP: vi.fn(), startPiP: vi.fn() }));
         expect(result.current.isLocalScreenShare).toBe(false);
     });
 
@@ -121,7 +121,7 @@ describe('useCurrentScreenShare', () => {
             },
         });
 
-        const { result } = renderHook(() => useCurrentScreenShare());
+        const { result } = renderHook(() => useCurrentScreenShare({ stopPiP: vi.fn(), startPiP: vi.fn() }));
         result.current.stopScreenShare();
 
         expect(setScreenShareEnabled).toHaveBeenCalledWith(false);
@@ -141,7 +141,7 @@ describe('useCurrentScreenShare', () => {
             createNotification,
         });
 
-        const { result } = renderHook(() => useCurrentScreenShare());
+        const { result } = renderHook(() => useCurrentScreenShare({ stopPiP: vi.fn(), startPiP: vi.fn() }));
 
         await result.current.startScreenShare();
 
