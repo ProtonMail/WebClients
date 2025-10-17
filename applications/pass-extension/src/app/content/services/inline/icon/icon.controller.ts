@@ -4,11 +4,14 @@ import {
     DISABLED_ICON_SRC,
     LOCKED_ICON_SRC,
 } from 'proton-pass-extension/app/content/constants.runtime';
-import type { FieldAnchor } from 'proton-pass-extension/app/content/services/form/field.anchor';
+import { withContext } from 'proton-pass-extension/app/content/context/context';
+import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
 
+import { FieldType, FormType } from '@proton/pass/fathom/labels';
 import { clientDisabled, clientLocked } from '@proton/pass/lib/client';
-import type { AppStatus } from '@proton/pass/types';
+import type { AppStatus, MaybeNull } from '@proton/pass/types';
 import { animatePositionChange } from '@proton/pass/utils/dom/position';
+import { isInputElement } from '@proton/pass/utils/dom/predicates';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
@@ -17,15 +20,9 @@ import noop from '@proton/utils/noop';
 import { applyInjectionStyles, cleanupInjectionStyles, createIcon } from './icon.utils';
 
 type IconControllerOptions = {
-    input: HTMLInputElement;
-    /** parent element for icon injection */
-    parent: HTMLElement | ShadowRoot;
+    field: FieldHandle;
     /** `protonpass-control` custom element tag name */
     tag: string;
-    /** z-index for the control element */
-    zIndex: number;
-
-    getAnchor: (options: { reflow: boolean }) => FieldAnchor;
     onClick: () => void;
 };
 
@@ -33,13 +30,29 @@ export interface IconController {
     element: HTMLElement;
     detach: () => void;
     reposition: (reflow: boolean) => void;
-    setCount: (count: number) => void;
-    setStatus: (status: AppStatus) => void;
+    sync: () => void;
 }
 
-export const createIconController = (options: IconControllerOptions): IconController => {
-    const { input, parent, zIndex, tag } = options;
-    const anchor = options.getAnchor({ reflow: false });
+export const createIconController = (options: IconControllerOptions): MaybeNull<IconController> => {
+    const { field, tag } = options;
+    const input = field.element;
+    const zIndex = field.getFormHandle().zIndex;
+
+    if (!isInputElement(input)) return null;
+
+    const parent = (() => {
+        /** TBD: instead of injecting the icon next to the anchor (either the input element
+         * or the resolved bounding element), prefer injecting in nearest detected form.
+         * Fallsback to document.body as a precaution. This should preserve z-index layering
+         * while avoiding interferences in websites sensitive to the DOM structure of their
+         * input fields (eg: some websites expect their input elements to always be the first
+         * child of a wrapper component - interfering with this could cause unintented crashes) */
+        const root = field.element.getRootNode();
+        if (root instanceof ShadowRoot) return root;
+        return field.getFormHandle().scrollChild;
+    })();
+
+    const anchor = field.getAnchor({ reflow: false });
     const { icon, control } = createIcon({ parent, zIndex, tag });
 
     let ready = false;
@@ -63,6 +76,27 @@ export const createIconController = (options: IconControllerOptions): IconContro
         if (count > 0) icon.style.setProperty('background-image', `url("${COUNTER_ICON_SRC}")`, 'important');
     };
 
+    const sync = withContext((ctx) => {
+        if (!ctx) return;
+
+        const { authorized, status } = ctx.getState();
+        const { formType } = field.getFormHandle();
+        const { fieldType } = field;
+
+        setStatus(status);
+
+        const showCounter =
+            formType === FormType.LOGIN ||
+            (formType === FormType.RECOVERY && [FieldType.USERNAME, FieldType.EMAIL].includes(fieldType));
+
+        if (!showCounter) setCount(0);
+        else {
+            void Promise.resolve(authorized ? (ctx.service.autofill.getCredentialsCount() ?? 0) : 0)
+                .then(setCount)
+                .catch(noop);
+        }
+    });
+
     /* `reposition` is debounced and wrapped in a `requestAnimationFrame`
      * for performance reasons. If form is detached, we must cancel the
      * ongoing repositioning */
@@ -74,7 +108,7 @@ export const createIconController = (options: IconControllerOptions): IconContro
     const reposition = (reflow: boolean = false) => {
         cancelReposition();
 
-        const anchor = options.getAnchor({ reflow });
+        const anchor = field.getAnchor({ reflow });
 
         repositioning.request = requestAnimationFrame(async () => {
             /* Wait for anchor animations to complete before repositioning */
@@ -87,7 +121,7 @@ export const createIconController = (options: IconControllerOptions): IconContro
 
             animatePositionChange({
                 onAnimate: (request) => (repositioning.animate = request),
-                get: () => options.input.getBoundingClientRect(),
+                get: () => input.getBoundingClientRect(),
                 set: () => {
                     cleanupInjectionStyles({ input, control });
                     applyInjectionStyles({ icon, control, input, anchor: anchor.element, parent });
@@ -147,5 +181,5 @@ export const createIconController = (options: IconControllerOptions): IconContro
 
     reposition(true); /* fire reposition on initial icon handle creation */
 
-    return { element: icon, setStatus, setCount, detach, reposition };
+    return { element: icon, sync, detach, reposition };
 };
