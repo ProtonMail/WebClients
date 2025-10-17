@@ -2,7 +2,6 @@ import { ALMOST_ALL_MAIL } from '@proton/shared/lib/mail/mailSettings';
 import { mockUseFolders, mockUseLabels } from '@proton/testing';
 import { mockUseMailSettings } from '@proton/testing/lib/mockUseMailSettings';
 
-import { mockUseEncryptedSearchContext } from 'proton-mail/helpers/test/mockUseEncryptedSearchContext';
 import { mockUseScheduleSendFeature } from 'proton-mail/helpers/test/mockUseScheduleSendFeature';
 
 import { isCustomFolder, isDefaultFolder, isLabel } from './advancesSearchFieldHelpers';
@@ -19,7 +18,6 @@ jest.mock('proton-mail/components/categoryView/useCategoriesView', () => ({
 
 describe('useLocationFieldOptions', () => {
     beforeEach(() => {
-        mockUseEncryptedSearchContext();
         mockUseMailSettings();
         mockUseScheduleSendFeature();
         mockUseLabels([

@@ -56,6 +56,7 @@ interface Props {
     user: UserModel;
     history: History;
     numAddresses: number;
+    disabledCategoriesIDs: string[];
 }
 
 export const getItemInfo = (item: ESBaseMessage | ESMessage): ESItemInfo => ({
@@ -70,6 +71,7 @@ export const getESCallbacks = ({
     user,
     history,
     numAddresses,
+    disabledCategoriesIDs,
 }: Props): ESCallbacks<ESBaseMessage, NormalizedSearchParams, ESMessageContent> => {
     const { ID: userID } = user;
 
@@ -179,7 +181,7 @@ export const getESCallbacks = ({
     const getKeywords = (esSearchParams: NormalizedSearchParams) => esSearchParams.normalizedKeywords;
 
     const getSearchParams = () => {
-        const { isSearch, esSearchParams } = parseSearchParamsMail(history.location);
+        const { isSearch, esSearchParams } = parseSearchParamsMail(history.location, disabledCategoriesIDs);
         return {
             isSearch,
             esSearchParams,

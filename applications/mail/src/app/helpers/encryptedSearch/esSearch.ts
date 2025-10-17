@@ -1,28 +1,44 @@
 import { normalizeKeyword } from '@proton/encrypted-search';
 import type { NormalizedSearchParams } from '@proton/encrypted-search/lib/models/mail';
+import type { CategoryLabelID } from '@proton/shared/lib/constants';
+import { CATEGORY_LABEL_IDS_SET, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
 
 import type { ESMessage } from '../../models/encryptedSearch';
 import { isExpired } from '../expiration';
 
+interface NormalizeProps {
+    searchParams: SearchParameters;
+    labelID: string;
+    disabledCategoriesIDs: string[];
+    filter?: Filter;
+    sort?: Sort;
+}
+
 /**
- * Remove wildcard, normalise keyword and recipients
+ * Remove wildcard, normalize keyword and recipients
  */
-export const normaliseSearchParams = (
-    searchParams: SearchParameters,
-    labelID: string,
-    filter?: Filter,
-    sort?: Sort
-) => {
+export const normaliseSearchParams = ({
+    searchParams,
+    labelID,
+    disabledCategoriesIDs,
+    filter,
+    sort,
+}: NormalizeProps) => {
     const { wildcard, keyword, to, from, ...otherParams } = searchParams;
     let normalizedKeywords: string[] | undefined;
     if (keyword) {
         normalizedKeywords = normalizeKeyword(keyword);
     }
 
+    const labelIDs = [labelID];
+    if (labelID === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT) {
+        labelIDs.push(...disabledCategoriesIDs);
+    }
+
     const normalisedSearchParams: NormalizedSearchParams = {
-        labelID,
+        labelIDs,
         search: {
             from: from ? from.toLocaleLowerCase() : undefined,
             to: to ? to.toLocaleLowerCase() : undefined,
@@ -45,12 +61,23 @@ export const testMetadata = (
     recipients: string[],
     sender: string[]
 ) => {
-    const { search, labelID, filter } = normalisedSearchParams;
+    const { search, labelIDs, filter } = normalisedSearchParams;
     const { address, from, to, begin, end } = search || {};
     const { AddressID, Time, LabelIDs, NumAttachments, Unread } = messageToSearch;
 
+    // This prevents from showing messages that are not in the inbox anymore but still have a category label
+    let isMessageInCategoryButNotInbox = false;
+    const searchingACategory = labelIDs.some((id) => CATEGORY_LABEL_IDS_SET.has(id as CategoryLabelID));
+    if (searchingACategory) {
+        const messageToSearchHasCategory = LabelIDs.some((id) => labelIDs.includes(id));
+        const hasInbox = LabelIDs.includes(MAILBOX_LABEL_IDS.INBOX);
+
+        isMessageInCategoryButNotInbox = messageToSearchHasCategory && !hasInbox;
+    }
+
     if (
-        !LabelIDs.includes(labelID) ||
+        isMessageInCategoryButNotInbox ||
+        !LabelIDs.some((id) => labelIDs.includes(id)) ||
         (address && AddressID !== address) ||
         isExpired(messageToSearch) ||
         (begin && Time < begin) ||
@@ -76,13 +103,13 @@ export const shouldOnlySortResults = (
     previousNormSearchParams: NormalizedSearchParams
 ) => {
     const {
-        labelID,
+        labelIDs,
         filter,
         search: { address, from, to, begin, end },
         normalizedKeywords,
     } = normalisedSearchParams;
     const {
-        labelID: prevLabelID,
+        labelIDs: prevLabelIDs,
         filter: prevFilter,
         search: { address: prevAddress, from: prevFrom, to: prevTo, begin: prevBegin, end: prevEnd },
         normalizedKeywords: prevNormalisedKeywords,
@@ -90,7 +117,9 @@ export const shouldOnlySortResults = (
 
     // In case search parameters are different, then a new search is needed
     if (
-        labelID !== prevLabelID ||
+        labelIDs.length !== prevLabelIDs.length ||
+        // The first label of the list is the current category. Disabled categories are appended after it
+        labelIDs[0] !== prevLabelIDs[0] ||
         address !== prevAddress ||
         from !== prevFrom ||
         to !== prevTo ||

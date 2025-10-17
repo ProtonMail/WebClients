@@ -1,5 +1,5 @@
 import { useOrganization } from '@proton/account/organization/hooks';
-import { selectCategoriesLabel } from '@proton/mail/store/labels/selector';
+import { selectCategoriesLabel, selectDisabledCategoriesIDs } from '@proton/mail/store/labels/selector';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { useFlag } from '@proton/unleash';
@@ -12,19 +12,26 @@ export const useCategoriesData = () => {
     const [organization] = useOrganization();
 
     const categoryViewFlag = useFlag('CategoryView');
-    const categoriesStore = useSelector(selectCategoriesLabel);
 
+    const categoriesStore = useSelector(selectCategoriesLabel);
+    const disabledCategoriesIDs = useSelector(selectDisabledCategoriesIDs);
+
+    const activeCategoriesTabs: CategoryTab[] = [];
     const categoriesTabs =
         categoriesStore?.map((category): CategoryTab => {
             const data = getCategoryData(category.ID);
-            return {
+            const tmpCategory: CategoryTab = {
                 ...data,
                 display: !!category.Display,
                 notify: !!category.Notify,
             };
-        }) || [];
 
-    const activeCategoriesTabs = categoriesTabs.filter((category) => category.display);
+            if (tmpCategory.display) {
+                activeCategoriesTabs.push(tmpCategory);
+            }
+
+            return tmpCategory;
+        }) || [];
 
     const settingAccess = organization?.Settings?.MailCategoryViewEnabled ? !!mailSettings.MailCategoryView : false;
     const categoryViewAccess = categoryViewFlag && settingAccess;
@@ -33,6 +40,7 @@ export const useCategoriesData = () => {
         categoriesStore,
         categoriesTabs: categoryViewAccess ? categoriesTabs : [],
         activeCategoriesTabs: categoryViewAccess ? activeCategoriesTabs : [],
+        disabledCategoriesIDs: categoryViewAccess ? disabledCategoriesIDs : [],
         categoryViewAccess,
     };
 };

@@ -875,6 +875,7 @@ const updateTotal = (state: Draft<ElementsState>) => {
                 conversationMode: context.conversationMode,
                 search: getSearchParameters(context),
                 newsletterSubscriptionID: context.newsletterSubscriptionID,
+                disabledCategoriesIDs: [],
             });
 
             if (filteredElements.length > 0) {

@@ -20,6 +20,7 @@ describe('useCategoriesShortcuts', () => {
                 activeCategoriesTabs: [],
                 categoryViewAccess: false,
                 shouldShowTabs: false,
+                disabledCategoriesIDs: [],
             });
 
             const { result } = renderHook(() => useCategoriesShortcuts());
@@ -43,6 +44,7 @@ describe('useCategoriesShortcuts', () => {
                 activeCategoriesTabs: [],
                 categoryViewAccess: true,
                 shouldShowTabs: true,
+                disabledCategoriesIDs: [],
             });
 
             const { result } = renderHook(() => useCategoriesShortcuts());
@@ -66,6 +68,7 @@ describe('useCategoriesShortcuts', () => {
                 activeCategoriesTabs: mockActiveCategoriesData,
                 categoryViewAccess: false,
                 shouldShowTabs: false,
+                disabledCategoriesIDs: [],
             });
 
             const { result } = renderHook(() => useCategoriesShortcuts());
@@ -82,6 +85,7 @@ describe('useCategoriesShortcuts', () => {
                 activeCategoriesTabs: mockActiveCategoriesData,
                 categoryViewAccess: true,
                 shouldShowTabs: true,
+                disabledCategoriesIDs: [],
             });
 
             const { result } = renderHook(() => useCategoriesShortcuts());
@@ -100,6 +104,7 @@ describe('useCategoriesShortcuts', () => {
                 ],
                 categoryViewAccess: true,
                 shouldShowTabs: true,
+                disabledCategoriesIDs: [],
             });
 
             const { result } = renderHook(() => useCategoriesShortcuts());
