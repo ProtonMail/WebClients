@@ -47,9 +47,7 @@ const LogoBase = ({
     return (
         // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
         <svg
-            // eslint-disable-next-line custom-rules/deprecate-sizing-classes
             xmlns="http://www.w3.org/2000/svg"
-            // eslint-disable-next-line custom-rules/deprecate-sizing-classes
             xmlnsXlink="http://www.w3.org/1999/xlink"
             viewBox={`0 0 ${logoWidth} ${logoHeight}`}
             width={logoWidthScaled}
