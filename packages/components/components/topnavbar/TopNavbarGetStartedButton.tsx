@@ -46,7 +46,7 @@ export const TopNavbarGetStartedButton = () => {
      * - User did not hide the button manually
      * - User did not take any action yet (new user)
      */
-    const canShowB2BButton = true || (isAdmin(user) && getIsB2BAudienceFromPlan(organization?.PlanName));
+    const canShowB2BButton = isAdmin(user) && getIsB2BAudienceFromPlan(organization?.PlanName);
 
     useEffect(() => {
         if (!canShowB2BButton) {
@@ -79,35 +79,35 @@ export const TopNavbarGetStartedButton = () => {
             [
                 {
                     imgSrc: profilesImg,
-                    title: c('Info').t`Invite your team`,
-                    description: c('Info')
+                    title: c('Button').t`Invite your team`,
+                    description: c('Description')
                         .t`Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.`,
                     type: 'dropdown',
                     dropdownLinks: [
-                        { label: 'Add users manually', icon: 'users', href: '/users-addresses' },
-                        { label: 'Set up SSO', icon: 'key', href: '/single-sign-on' },
+                        { label: c('Button').t`Add users manually`, icon: 'users', href: '/users-addresses' },
+                        { label: c('Button').t`Set up SSO`, icon: 'key', href: '/single-sign-on' },
                     ],
                 },
                 {
                     imgSrc: networkConfigurationImg,
-                    title: c('Info').t`Configure your network`,
-                    description: c('Info')
+                    title: c('Button').t`Configure your network`,
+                    description: c('Description')
                         .t`Create a Gateway to give your users access to your IT resources through dedicated servers.`,
                     type: 'link',
                     linkHref: '/gateways',
                 },
                 {
                     imgSrc: globeVpnImg,
-                    title: c('Info').t`Manage global VPN permissions`,
-                    description: c('Info')
+                    title: c('Button').t`Manage global VPN permissions`,
+                    description: c('Description')
                         .t`Decide which users can connect to each of our 120+ shared server locations.`,
                     type: 'link',
                     linkHref: '/shared-servers',
                 },
                 {
                     imgSrc: recoveryImg,
-                    title: c('Info').t`Secure your organization`,
-                    description: c('Info')
+                    title: c('Button').t`Secure your organization`,
+                    description: c('Description')
                         .t`If you haven’t already, enable some recovery methods to make sure you never lose access to ${VPN_APP_NAME}.`,
                     type: 'link',
                     linkHref: '/authentication-security',
