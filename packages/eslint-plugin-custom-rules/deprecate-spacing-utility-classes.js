@@ -29,6 +29,7 @@ export default {
     create: (context) => {
         return {
             JSXAttribute(node) {
+                // We only care about attributes named "className"
                 if (node.name.name !== 'className') {
                     return;
                 }
