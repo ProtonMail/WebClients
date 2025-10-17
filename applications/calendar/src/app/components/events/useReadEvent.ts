@@ -137,7 +137,7 @@ const useReadEvent = (
                     if (vcalAttendees.length > 0) {
                         // If we have vcalAttendees from the internal model, use toInternalAttendee to process them
                         processedAttendees = await Promise.all(
-                            await toInternalAttendee(
+                            toInternalAttendee(
                                 { attendee: vcalAttendees },
                                 backendAttendees,
                                 sharedSessionKey,
@@ -162,7 +162,7 @@ const useReadEvent = (
                         }));
 
                         processedAttendees = await Promise.all(
-                            await toInternalAttendee(
+                            toInternalAttendee(
                                 { attendee: backendVcalAttendees },
                                 backendAttendees,
                                 sharedSessionKey,
@@ -209,7 +209,7 @@ const useReadEvent = (
             }
         };
 
-        mergeAndDecrypt();
+        void mergeAndDecrypt();
     }, [targetEventData]);
 
     const notifications =
