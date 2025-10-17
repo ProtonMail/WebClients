@@ -250,7 +250,7 @@ export const getESEventsFromCalendarInBatch = async ({
 
     const events = await runInQueue(
         eventIDs.map(
-            // eslint-disable-next-line @typescript-eslint/no-loop-func
+             
             (eventID) => () => getESEvent(eventID, calendarID, api, getCalendarEventRaw)
         ),
         ES_MAX_CONCURRENT
