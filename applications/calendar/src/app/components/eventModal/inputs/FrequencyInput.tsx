@@ -1,4 +1,4 @@
-import React, { type ReactNode, useEffect, useMemo, useState } from 'react';
+import React, { type ReactNode, useMemo } from 'react';
 
 import { c } from 'ttag';
 
@@ -45,7 +45,7 @@ interface Props extends Omit<SelectTwoProps<string>, 'onChange' | 'children'> {
 }
 
 const FrequencyInput = ({ start, weekStartsOn, frequencyModel, onChange, className, ...rest }: Props) => {
-    const weekdaysLong = useMemo(() => getFormattedWeekdays('cccc', { locale: dateLocale }), [dateLocale]);
+    const weekdaysLong = useMemo(() => getFormattedWeekdays('cccc', { locale: dateLocale }), []);
 
     const currentDay = start.date.getDay();
     const options = useMonthlyOptions(start.date);
@@ -126,7 +126,7 @@ const FrequencyInput = ({ start, weekStartsOn, frequencyModel, onChange, classNa
         return option.weekly?.days.sort().toString() === frequencyModel.weekly.days.sort().toString();
     };
 
-    const getInitialSelection = () => {
+    const getSelectedFrequency = () => {
         const isDefault = frequencyModel.type === FREQUENCY.ONCE;
         const isCustom = frequencyModel.type === FREQUENCY.CUSTOM;
         const isDaily = frequencyModel.frequency === FREQUENCY.DAILY;
@@ -195,17 +195,6 @@ const FrequencyInput = ({ start, weekStartsOn, frequencyModel, onChange, classNa
     };
 
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const [selectedOption, setSelectedOption] = useState(getInitialSelection);
-
-    useEffect(() => {
-        setSelectedOption(getInitialSelection);
-    }, [start]);
-
-    useEffect(() => {
-        if (frequencyModel.type === FREQUENCY.CUSTOM) {
-            setSelectedOption(getInitialSelection);
-        }
-    }, [frequencyModel]);
 
     const filteredFrequencies = frequencies.filter(({ shouldDisplay }) => shouldDisplay);
 
@@ -213,8 +202,9 @@ const FrequencyInput = ({ start, weekStartsOn, frequencyModel, onChange, classNa
         toggle();
     };
 
+    const selectedFrequency = getSelectedFrequency();
     const selectedOptionTitle =
-        selectedOption.value === FREQUENCY.CUSTOM ? c('Option').t`Custom` : selectedOption.title;
+        selectedFrequency.value === FREQUENCY.CUSTOM ? c('Option').t`Custom` : selectedFrequency.title;
 
     return (
         <>
@@ -280,14 +270,13 @@ const FrequencyInput = ({ start, weekStartsOn, frequencyModel, onChange, classNa
                                             interval:
                                                 frequencyOption.type !== FREQUENCY.CUSTOM ? 1 : frequencyModel.interval,
                                         });
-                                        setSelectedOption(frequencyOption);
                                     }
                                 }}
-                                aria-pressed={selectedOption.title === title}
+                                aria-pressed={selectedFrequency.title === title}
                                 key={title}
                             >
                                 <span className="pr-1">{text}</span>
-                                {selectedOption.title === title && (
+                                {selectedFrequency.title === title && (
                                     <span className="ml-auto flex color-primary">
                                         <Icon name="checkmark" />
                                     </span>
