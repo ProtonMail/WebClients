@@ -1,13 +1,15 @@
+import { useEffect } from 'react';
+
 import { useLocalParticipant, useRoomContext, useTracks } from '@livekit/components-react';
 import { Track } from '@proton-meet/livekit-client';
 import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { isMobile } from '@proton/shared/lib/helpers/browser';
+import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { screenShareQuality } from '../qualityConstants';
 
-export function useCurrentScreenShare() {
+export function useCurrentScreenShare({ stopPiP, startPiP }: { stopPiP: () => void; startPiP: () => void }) {
     const { localParticipant } = useLocalParticipant();
 
     const notifications = useNotifications();
@@ -21,6 +23,7 @@ export function useCurrentScreenShare() {
     const room = useRoomContext();
 
     const stopScreenShare = () => {
+        stopPiP();
         void room.localParticipant.setScreenShareEnabled(false);
     };
 
@@ -37,6 +40,11 @@ export function useCurrentScreenShare() {
                 return;
             }
 
+            // In Safari we need to start PiP before setting the screen share to not lose user gesture
+            if (isSafari()) {
+                startPiP();
+            }
+
             await room.localParticipant.setScreenShareEnabled(
                 true,
                 {
@@ -48,7 +56,12 @@ export function useCurrentScreenShare() {
                 },
                 { simulcast: false }
             );
+
+            if (!isSafari()) {
+                startPiP();
+            }
         } catch (err: any) {
+            stopPiP();
             if (err.message === 'Permission denied by user') {
                 return;
             }
@@ -59,6 +72,18 @@ export function useCurrentScreenShare() {
             });
         }
     };
+
+    useEffect(() => {
+        if (screenShareTrack?.publication?.track) {
+            screenShareTrack.publication.track.on('ended', stopPiP);
+        }
+
+        return () => {
+            if (screenShareTrack?.publication?.track) {
+                screenShareTrack.publication.track.off('ended', stopPiP);
+            }
+        };
+    }, [screenShareTrack?.publication?.trackSid]);
 
     return {
         isLocalScreenShare,
