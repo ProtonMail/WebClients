@@ -9,7 +9,7 @@ import type { FormHandle } from 'proton-pass-extension/app/content/services/form
 import type { FormTracker } from 'proton-pass-extension/app/content/services/form/form.tracker';
 import type { IconController } from 'proton-pass-extension/app/content/services/inline/icon/icon.controller';
 import { createIconController } from 'proton-pass-extension/app/content/services/inline/icon/icon.controller';
-import { actionTrap, withActionTrap } from 'proton-pass-extension/app/content/utils/action-trap';
+import { actionTrap } from 'proton-pass-extension/app/content/utils/action-trap';
 import { getFrameParentVisibility } from 'proton-pass-extension/app/content/utils/frame';
 import { isActiveElement } from 'proton-pass-extension/app/content/utils/nodes';
 import type { FrameField } from 'proton-pass-extension/types/frames';
@@ -20,6 +20,7 @@ import { enableLoginAutofill } from '@proton/pass/lib/settings/utils';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { isInputElement } from '@proton/pass/utils/dom/predicates';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
+import { nextTick } from '@proton/pass/utils/time/next-tick';
 import noop from '@proton/utils/noop';
 
 type CreateFieldHandlesOptions = {
@@ -145,8 +146,10 @@ export const createFieldHandles = ({ element, fieldType, getFormHandle }: Create
                 .getVisibility()
                 .then(async (visible) => {
                     if (visible) {
-                        await withActionTrap(element, createAutofill(element))(value, options);
+                        const release = actionTrap(element);
+                        await createAutofill(element)(value, options);
                         if (value) field.autofilled = options?.type ?? field.fieldType;
+                        nextTick(release);
                     }
                 })
                 .catch(noop),
