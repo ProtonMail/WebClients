@@ -56,9 +56,10 @@ interface Props {
     member: GroupMember;
     group: Group; // needs to be removed once backend doesn't need Group.ID
     canOnlyDelete: boolean;
+    canChangeVisibility: boolean;
 }
 
-const GroupMemberItemDropdown = ({ member, group, canOnlyDelete }: Props) => {
+const GroupMemberItemDropdown = ({ member, group, canOnlyDelete, canChangeVisibility }: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const api = useApi();
     const handleError = useErrorHandler();
@@ -156,16 +157,21 @@ const GroupMemberItemDropdown = ({ member, group, canOnlyDelete }: Props) => {
                 size={{ width: DropdownSizeUnit.Dynamic, maxWidth: DropdownSizeUnit.Viewport }}
             >
                 <DropdownMenu>
-                    {memberPermissionOptions.map((option) => (
-                        <Option
-                            key={option.value}
-                            option={option}
-                            isSelected={option.value === overrideGroupPermissions}
-                            onSelect={handleOverrideGroupPermissions}
-                            disabled={canOnlyDelete}
-                        />
-                    ))}
-                    <hr className="mt-2 mb-0" />
+                    {canChangeVisibility && (
+                        <>
+                            {memberPermissionOptions.map((option) => (
+                                <Option
+                                    key={option.value}
+                                    option={option}
+                                    isSelected={option.value === overrideGroupPermissions}
+                                    onSelect={handleOverrideGroupPermissions}
+                                    disabled={canOnlyDelete}
+                                />
+                            ))}
+                            <hr className="mt-2 mb-0" />
+                        </>
+                    )}
+
                     {isPaused && (
                         <DropdownMenuButton
                             className="text-left"
