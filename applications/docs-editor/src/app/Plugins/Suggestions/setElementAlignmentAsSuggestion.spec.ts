@@ -1,4 +1,3 @@
-/* eslint-disable custom-rules/deprecate-classes */
 import { createHeadlessEditor } from '@lexical/headless'
 import type { Logger } from '@proton/utils/logs'
 import { AllNodes } from '../../AllNodes'
