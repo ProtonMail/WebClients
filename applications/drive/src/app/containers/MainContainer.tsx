@@ -3,7 +3,13 @@ import { useEffect, useState } from 'react';
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom-v5-compat';
 
 import { useUser } from '@proton/account/user/hooks';
-import { GlobalLoader, GlobalLoaderProvider, LoaderPage, ModalsChildren } from '@proton/components';
+import {
+    GlobalLoader,
+    GlobalLoaderProvider,
+    LoaderPage,
+    ModalsChildren,
+    SubscriptionModalProvider,
+} from '@proton/components';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import { useDrive } from '@proton/drive';
 import { useLoading } from '@proton/hooks';
@@ -225,9 +231,11 @@ const MainContainer: FunctionComponent = () => {
             <GlobalLoader />
             <LocationErrorBoundary location={location}>
                 <DriveProvider>
-                    <QuickSettingsRemindersProvider>
-                        <InitContainer />
-                    </QuickSettingsRemindersProvider>
+                    <SubscriptionModalProvider app={config.APP_NAME}>
+                        <QuickSettingsRemindersProvider>
+                            <InitContainer />
+                        </QuickSettingsRemindersProvider>
+                    </SubscriptionModalProvider>
                 </DriveProvider>
             </LocationErrorBoundary>
         </GlobalLoaderProvider>
