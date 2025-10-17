@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { VideoQuality } from '@proton-meet/livekit-client';
+
+import { isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { AutoCloseMeetingModal } from '../components/AutoCloseMeetingModal/AutoCloseMeetingModal';
 import { MeetingBody } from '../components/MeetingBody/MeetingBody';
@@ -29,6 +31,13 @@ interface MeetContainerProps {
     guestMode: boolean;
     handleMeetingLockToggle: (enable: boolean) => Promise<void>;
     isMeetingLocked: boolean;
+    isDisconnected: boolean;
+    startPiP: () => void;
+    stopPiP: () => void;
+    chatMessages: MeetChatMessage[];
+    setChatMessages: React.Dispatch<React.SetStateAction<MeetChatMessage[]>>;
+    pipSetup: (throttle: boolean) => void;
+    pipCleanup: () => void;
 }
 
 export const MeetContainer = ({
@@ -46,6 +55,13 @@ export const MeetContainer = ({
     guestMode,
     handleMeetingLockToggle,
     isMeetingLocked,
+    isDisconnected,
+    startPiP,
+    stopPiP,
+    chatMessages,
+    setChatMessages,
+    pipSetup,
+    pipCleanup,
 }: MeetContainerProps) => {
     const [quality, setQuality] = useState<VideoQuality>(VideoQuality.HIGH);
     const [page, setPage] = useState(0);
@@ -56,7 +72,6 @@ export const MeetContainer = ({
     const [pageSize, setPageSize] = useState(isLargerThanMd && !isNarrowHeight ? PAGE_SIZE : SMALL_SCREEN_PAGE_SIZE);
     const [resolution, setResolution] = useState<string | null>(null);
 
-    const [chatMessages, setChatMessages] = useState<MeetChatMessage[]>([]);
     const participantEvents = useParticipantEvents(participantNameMap);
 
     const [disableVideos, setDisableVideos] = useState(false);
@@ -75,7 +90,15 @@ export const MeetContainer = ({
         stopScreenShare,
         screenShareParticipant,
         screenShareTrack,
-    } = useCurrentScreenShare();
+    } = useCurrentScreenShare({ stopPiP, startPiP });
+
+    useEffect(() => {
+        if (isSafari()) {
+            void pipSetup(true);
+
+            return pipCleanup;
+        }
+    }, []);
 
     return (
         <div className="w-full h-full flex flex-col flex-nowrap items-center justify-center">
@@ -115,8 +138,12 @@ export const MeetContainer = ({
                     isLocalScreenShare,
                     isScreenShare,
                     screenShareParticipant,
+                    screenShareTrack,
                     handleMeetingLockToggle,
                     isMeetingLocked,
+                    isDisconnected,
+                    startPiP,
+                    stopPiP,
                 }}
             >
                 <UIStateProvider instantMeeting={instantMeeting}>

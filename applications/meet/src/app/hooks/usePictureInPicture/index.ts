@@ -1,0 +1,1 @@
+export { usePictureInPicture } from './usePictureInPicture';
