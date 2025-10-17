@@ -87,7 +87,7 @@ const SpyTrackerModal = ({ message, ...rest }: Props) => {
                                 {tracker.urls.map((url, index) => (
                                     <p
                                         className="color-weak text-break my-2"
-                                        key={`${tracker.name}-${index}-tracker`} // eslint-disable-line react/no-array-index-key
+                                        key={`${tracker.name}-${index}-tracker`}  
                                     >
                                         {url}
                                     </p>

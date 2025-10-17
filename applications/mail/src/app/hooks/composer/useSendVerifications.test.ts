@@ -239,7 +239,7 @@ describe('useSendVerifications', () => {
     });
 
     describe('extended verifications of last-minute preferences', () => {
-        // eslint-disable-next-line no-only-tests/no-only-tests
+         
         it('should warn user on deletion of contact with pinned keys (internal)', async () => {
             const recipient = 'internal.deleted@test.email';
             const cachedPreferences: SendInfo = {

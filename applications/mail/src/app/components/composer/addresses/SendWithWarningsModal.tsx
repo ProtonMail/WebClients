@@ -30,7 +30,7 @@ const SendWithWarningsModal = ({ mapWarnings, onSubmit, onClose, ...rest }: Prop
                 <ul>
                     {emails.map((email, index) => (
                         <li
-                            key={index} // eslint-disable-line react/no-array-index-key
+                            key={index}  
                             className={clsx([index !== emails.length && 'mb-2'])}
                         >
                             <span className="block max-w-full">{`${mapWarnings[email].join(', ')} <${email}>`}</span>

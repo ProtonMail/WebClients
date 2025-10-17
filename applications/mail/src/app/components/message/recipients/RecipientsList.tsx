@@ -30,7 +30,7 @@ const RecipientsList = ({
     <Fragment>
         {recipientsOrGroup.map((recipientOrGroup, index) => (
             <Fragment
-                key={index} // eslint-disable-line react/no-array-index-key
+                key={index}  
             >
                 <RecipientItem
                     recipientOrGroup={recipientOrGroup}
