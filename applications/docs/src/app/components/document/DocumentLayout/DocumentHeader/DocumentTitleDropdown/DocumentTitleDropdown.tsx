@@ -353,44 +353,57 @@ export function DocumentTitleDropdown({
 
   if (isSpreadsheet) {
     return (
-      <div className="inline-grid pl-2 pr-1.5 [grid-template-columns:100%]">
-        <Ariakit.TooltipProvider>
-          <Ariakit.TooltipAnchor
-            render={
-              <input
-                type="text"
-                className="text-ellipsis rounded-[4px] px-1 py-1.5 [border:1px_solid_transparent] [grid-column:1] [grid-row:1] focus:border-[#6D4AFF] focus-visible:outline-none hover:[&:not(:focus)]:bg-[#C2C1C033]"
-                value={renameInputValue}
-                onChange={(e) => setRenameInputValue(e.target.value)}
-                onKeyDown={(e) => {
-                  const { key, currentTarget } = e
-                  if (key === 'Escape') {
-                    setRenameInputValue(title)
-                    editorController.focusSpreadsheet()
-                    e.preventDefault()
-                    e.stopPropagation()
-                  } else if (key === 'Enter') {
-                    currentTarget.blur()
-                    editorController.focusSpreadsheet()
-                  }
-                }}
-                onBlur={confirmRename}
-                ref={renameInputRef}
-              />
-            }
-          ></Ariakit.TooltipAnchor>
-          <Ariakit.Tooltip
-            /* @TODO: the styles have only temporarily been copied. at some point this should use a shared component */
-            className="leading-0 z-20 flex shrink-0 items-center gap-1 rounded-[.5rem] bg-[#0C0C14] px-2 py-[.375rem] text-[.75rem] text-[white] shadow-[0px_-2px_12px_0px_rgba(0,0,0,0.05)]"
-          >{c('Action').t`Rename`}</Ariakit.Tooltip>
-        </Ariakit.TooltipProvider>
-        <div
-          className="select-none whitespace-pre border px-1 py-1.5 opacity-0 [grid-column:1] [grid-row:1]"
-          aria-hidden="true"
-        >
-          {renameInputValue}
+      <>
+        <div className="inline-grid pl-2 pr-1.5 [grid-template-columns:100%]">
+          <Ariakit.TooltipProvider>
+            <Ariakit.TooltipAnchor
+              render={
+                <input
+                  type="text"
+                  className="text-ellipsis rounded-[4px] px-1 py-1.5 [border:1px_solid_transparent] [grid-column:1] [grid-row:1] focus:border-[#6D4AFF] focus-visible:outline-none hover:[&:not(:focus)]:bg-[#C2C1C033]"
+                  value={renameInputValue}
+                  onChange={(e) => setRenameInputValue(e.target.value)}
+                  onKeyDown={(e) => {
+                    const { key, currentTarget } = e
+                    if (key === 'Escape') {
+                      setRenameInputValue(title)
+                      editorController.focusSpreadsheet()
+                      e.preventDefault()
+                      e.stopPropagation()
+                    } else if (key === 'Enter') {
+                      currentTarget.blur()
+                      editorController.focusSpreadsheet()
+                    }
+                  }}
+                  onBlur={confirmRename}
+                  ref={renameInputRef}
+                />
+              }
+            ></Ariakit.TooltipAnchor>
+            <Ariakit.Tooltip
+              /* @TODO: the styles have only temporarily been copied. at some point this should use a shared component */
+              className="leading-0 z-20 flex shrink-0 items-center gap-1 rounded-[.5rem] bg-[#0C0C14] px-2 py-[.375rem] text-[.75rem] text-[white] shadow-[0px_-2px_12px_0px_rgba(0,0,0,0.05)]"
+            >{c('Action').t`Rename`}</Ariakit.Tooltip>
+          </Ariakit.TooltipProvider>
+          <div
+            className="select-none whitespace-pre border px-1 py-1.5 opacity-0 [grid-column:1] [grid-row:1]"
+            aria-hidden="true"
+          >
+            {renameInputValue}
+          </div>
         </div>
-      </div>
+        {historyModal}
+        {pdfModal}
+        {sheetImportModal}
+        {authenticatedController && isDocumentState(documentState) && (
+          <TrashedDocumentModal
+            documentTitle={title || ''}
+            onOpenProtonDrive={() => openProtonDrive('/', '_self')}
+            controller={authenticatedController}
+            documentState={documentState}
+          />
+        )}
+      </>
     )
   }
 
