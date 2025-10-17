@@ -24,6 +24,7 @@ type IconControllerOptions = {
     /** `protonpass-control` custom element tag name */
     tag: string;
     onClick: () => void;
+    onDetach: () => void;
 };
 
 export interface IconController {
@@ -40,6 +41,8 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
 
     if (!isInputElement(input)) return null;
 
+    let ready = false;
+
     const parent = (() => {
         /** TBD: instead of injecting the icon next to the anchor (either the input element
          * or the resolved bounding element), prefer injecting in nearest detected form.
@@ -55,7 +58,7 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
     const anchor = field.getAnchor({ reflow: false });
     const { icon, control } = createIcon({ parent, zIndex, tag });
 
-    let ready = false;
+    anchor.connect();
 
     const listeners = createListenerStore();
     const repositioning = { request: -1, animate: -1 };
@@ -146,11 +149,17 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
 
     const detach = safeCall(() => {
         ready = false;
+        options.onDetach();
+
+        field.getAnchor().disconnect();
+        field.setIcon(null);
+
+        icon.remove();
+        control.remove();
+
         listeners.removeAll();
         cancelReposition();
         cleanupInjectionStyles({ input, control });
-        icon.remove();
-        control.remove();
     });
 
     /* repositioning the icon can happen either :
@@ -179,7 +188,10 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
         { childList: true, subtree: true }
     );
 
-    reposition(true); /* fire reposition on initial icon handle creation */
+    /* fire reposition & sync on initial
+     * icon handle creation */
+    sync();
+    reposition(true);
 
     return { element: icon, sync, detach, reposition };
 };

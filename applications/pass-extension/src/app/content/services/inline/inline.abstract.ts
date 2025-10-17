@@ -1,4 +1,5 @@
 import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
+import type { IconRegistry } from 'proton-pass-extension/app/content/services/inline/icon/icon.registry';
 
 import type { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 
@@ -28,4 +29,5 @@ export interface AbstractInlineService {
 
     dropdown: DropdownHandler;
     notification: NotificationHandler;
+    icon: IconRegistry;
 }
