@@ -1,4 +1,4 @@
-import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import type { AddressKeysByUsage } from '@proton/components/hooks/useGetAddressKeysByUsage';
 
 import type { Attachment, Message } from '../../interfaces/mail/Message';
 import type { AttachmentDirect, PackageDirect, SendPreferences } from '../../interfaces/mail/crypto';
@@ -13,16 +13,14 @@ const generatePackages = async ({
     sendPreferencesMap,
     attachments,
     attachmentData,
-    publicKeys,
-    privateKeys,
+    addressKeysByUsage,
 }: {
     message: RequireOnly<Message, 'Body' | 'MIMEType'>;
     emails: string[];
     sendPreferencesMap: SimpleMap<SendPreferences>;
     attachments: Attachment[];
     attachmentData: { attachment: AttachmentDirect; data: string };
-    publicKeys: PublicKeyReference[];
-    privateKeys: PrivateKeyReference[];
+    addressKeysByUsage: AddressKeysByUsage;
 }): Promise<SimpleMap<PackageDirect>> => {
     // There are two packages to be generated for the payload.
     // The Packages in the request body, called here top-level packages
@@ -41,8 +39,7 @@ const generatePackages = async ({
     return encryptPackages({
         packages,
         attachments,
-        publicKeys,
-        privateKeys,
+        addressKeysByUsage,
         message,
     });
 };
