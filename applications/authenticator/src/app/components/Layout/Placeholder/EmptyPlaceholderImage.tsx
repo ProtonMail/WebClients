@@ -1,4 +1,3 @@
-/* eslint-disable custom-rules/deprecate-sizing-classes */
 import './EmptyPlaceholderImage.scss';
 
 export const EmptyPlaceholderImage = ({ className }: { className?: string }) => {

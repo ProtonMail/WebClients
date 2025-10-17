@@ -24,25 +24,35 @@ export default {
             url: 'https://design-system.protontech.ch/?path=/docs/css-utilities-sizing--fractions',
         },
     },
+
     create: (context) => {
         return {
-            Literal(node) {
-                const { value } = node;
-                if (!value || !value.split) {
+            JSXAttribute(node) {
+                if (node.name.name !== 'className') {
                     return;
                 }
 
-                const classes = new Set(value.split(' '));
+                const literal = node.value;
+                if (!literal || literal.type !== 'Literal') {
+                    return;
+                }
+
+                const value = literal.value;
+                if (typeof value !== 'string') {
+                    return;
+                }
+
+                // Split into class names
+                const classes = new Set(value.split(/\s+/).filter(Boolean));
+
+                // Check each class against your patterns
                 classes.forEach((className) => {
                     deprecatedClasses.forEach(({ pattern, getMessage }) => {
                         const match = pattern.exec(className);
-
                         if (match) {
-                            const message = getMessage(match[0]);
-
                             context.report({
-                                node,
-                                message,
+                                node: literal,
+                                message: getMessage(match[0]),
                             });
                         }
                     });
