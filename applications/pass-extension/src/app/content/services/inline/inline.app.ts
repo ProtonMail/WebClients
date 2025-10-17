@@ -16,6 +16,7 @@ import type { Dimensions, Rect } from '@proton/pass/types/utils/dom';
 import { pixelEncoder } from '@proton/pass/utils/dom/computed-styles';
 import { createElement } from '@proton/pass/utils/dom/create-element';
 import { TopLayerManager } from '@proton/pass/utils/dom/popover';
+import { animatePositionChange } from '@proton/pass/utils/dom/position';
 import { safeAsyncCall, safeCall } from '@proton/pass/utils/fp/safe-call';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
@@ -206,6 +207,7 @@ export const createInlineApp = <A>({
     };
 
     const setIframePosition = (values: IFramePosition) => {
+        cancelAnimationFrame(state.positionReq);
         state.position = values;
 
         const { top, left, right } = values;
@@ -221,7 +223,11 @@ export const createInlineApp = <A>({
 
     const updatePosition = () => {
         cancelAnimationFrame(state.positionReq);
-        state.positionReq = requestAnimationFrame(() => setIframePosition(position(popover.root.customElement)));
+        animatePositionChange({
+            get: () => position(popover.root.customElement),
+            set: (rect) => setIframePosition(rect),
+            onAnimate: (req) => (state.positionReq = req),
+        });
     };
 
     const close = (options: IFrameCloseOptions = {}) => {
