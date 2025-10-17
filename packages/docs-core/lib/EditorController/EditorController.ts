@@ -44,6 +44,7 @@ export interface EditorControllerInterface {
   ): void
   importDataIntoSheet(data: SheetImportData): Promise<void>
   handleFileMenuAction(action: FileMenuAction): Promise<void>
+  focusSpreadsheet(): void
 }
 
 /** Allows the UI to invoke methods on the editor. */
@@ -424,6 +425,14 @@ export class EditorController implements EditorControllerInterface {
     }
 
     await this.editorInvoker.importDataIntoSheet(data)
+  }
+
+  focusSpreadsheet(): void {
+    if (!this.editorInvoker) {
+      throw new Error('Attempting to focus spreadsheet before editor invoker is initialized')
+    }
+
+    void this.editorInvoker.focusSpreadsheet()
   }
 
   async handleFileMenuAction(action: FileMenuAction): Promise<void> {

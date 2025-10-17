@@ -50,6 +50,7 @@ export interface ClientRequiresEditorMethods {
   loadUserSettings(settings: UserSettings): Promise<void>
   toggleDebugTreeView(): Promise<void>
   importDataIntoSheet(data: SheetImportData): Promise<void>
+  focusSpreadsheet(): Promise<void>
 
   syncProperty(
     property: keyof SyncedEditorStateValues,
