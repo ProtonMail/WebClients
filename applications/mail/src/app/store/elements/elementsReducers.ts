@@ -12,14 +12,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import range from '@proton/utils/range';
 import unique from '@proton/utils/unique';
 
-import {
-    filterElementsInState,
-    getElementContextIdentifier,
-    getSearchParameters,
-    isElementMessage,
-    parseElementContextIdentifier,
-    parseLabelIDsInEvent,
-} from '../../helpers/elements';
+import { getElementContextIdentifier, isElementMessage, parseLabelIDsInEvent } from '../../helpers/elements';
 import type { Conversation } from '../../models/conversation';
 import type { Element } from '../../models/element';
 import {
@@ -848,9 +841,18 @@ export const markNewsletterElementsAsReadPending = (
     });
 };
 
-const updateTotal = (state: Draft<ElementsState>) => {
-    const currentContextIdentifier = getElementContextIdentifier({
-        labelID: state.params.labelID,
+const updateTotal = ({
+    state,
+    affectedElementsNumber,
+    destinationLabelID,
+    sourceLabelID,
+}: {
+    state: Draft<ElementsState>;
+    affectedElementsNumber: number;
+    destinationLabelID: string;
+    sourceLabelID?: string;
+}) => {
+    const contextParams = {
         conversationMode: state.params.conversationMode,
         filter: state.params.filter,
         sort: state.params.sort,
@@ -860,29 +862,28 @@ const updateTotal = (state: Draft<ElementsState>) => {
         begin: state.params.search?.begin,
         end: state.params.search?.end,
         keyword: state.params.search?.keyword,
+    };
+
+    let sourceContextIdentifier: string | undefined;
+    if (sourceLabelID) {
+        sourceContextIdentifier = getElementContextIdentifier({
+            labelID: sourceLabelID,
+            ...contextParams,
+        });
+    }
+
+    const destinationContextIdentifier = getElementContextIdentifier({
+        labelID: destinationLabelID,
+        ...contextParams,
     });
-    const elements = Object.values(state.elements);
 
     Object.keys(state.total).forEach((contextIdentifier) => {
-        const context = parseElementContextIdentifier(contextIdentifier);
+        const contextValue = state.total[contextIdentifier];
 
-        if (context) {
-            const filteredElements = filterElementsInState({
-                elements,
-                bypassFilter: currentContextIdentifier === contextIdentifier ? state.bypassFilter : [],
-                labelID: context.labelID,
-                filter: context.filter || {},
-                conversationMode: context.conversationMode,
-                search: getSearchParameters(context),
-                newsletterSubscriptionID: context.newsletterSubscriptionID,
-                disabledCategoriesIDs: [],
-            });
-
-            if (filteredElements.length > 0) {
-                state.total[contextIdentifier] = filteredElements.length;
-            } else {
-                delete state.total[contextIdentifier];
-            }
+        if (contextIdentifier === sourceContextIdentifier) {
+            state.total[contextIdentifier] = safeDecreaseCount(contextValue, affectedElementsNumber);
+        } else if (contextIdentifier === destinationContextIdentifier) {
+            state.total[contextIdentifier] = safeIncreaseCount(contextValue, affectedElementsNumber);
         }
     });
 };
@@ -929,7 +930,7 @@ export const labelMessagesPending = (
         applyLabelToMessage(elementState, destinationLabelID, folders, labels);
     });
 
-    updateTotal(state);
+    updateTotal({ state, affectedElementsNumber: elements.length, destinationLabelID, sourceLabelID });
 };
 
 export const unlabelMessagesPending = (
@@ -958,7 +959,7 @@ export const unlabelMessagesPending = (
         removeLabelFromMessage(elementState, destinationLabelID, labels);
     });
 
-    updateTotal(state);
+    updateTotal({ state, affectedElementsNumber: elements.length, destinationLabelID });
 };
 
 export const labelMessagesRejected = (
@@ -1019,7 +1020,7 @@ export const labelConversationsPending = (
         });
     });
 
-    updateTotal(state);
+    updateTotal({ state, affectedElementsNumber: conversations.length, destinationLabelID, sourceLabelID });
 };
 
 export const unlabelConversationsPending = (
@@ -1050,5 +1051,5 @@ export const unlabelConversationsPending = (
         });
     });
 
-    updateTotal(state);
+    updateTotal({ state, affectedElementsNumber: conversations.length, destinationLabelID });
 };
