@@ -16,6 +16,7 @@ interface Props {
     group: Group | undefined; // needs to be removed once GroupMemberItem doesn't need it
     edit?: boolean;
     canOnlyDelete: boolean;
+    canChangeVisibility: boolean;
 }
 
 const compareMemberNames = (a: GroupMember, b: GroupMember) => {
@@ -25,7 +26,15 @@ const getSortedGroupMembers = (members: GroupMember[]) => {
     return [...members].sort(compareMemberNames);
 };
 
-const GroupMemberList = ({ addressToMemberMap, groupMembers, loading, group, edit = false, canOnlyDelete }: Props) => {
+const GroupMemberList = ({
+    addressToMemberMap,
+    groupMembers,
+    loading,
+    group,
+    edit = false,
+    canOnlyDelete,
+    canChangeVisibility,
+}: Props) => {
     const sortedGroupMembers = useMemo(() => getSortedGroupMembers(groupMembers), [groupMembers]);
 
     if (loading) {
@@ -61,6 +70,7 @@ const GroupMemberList = ({ addressToMemberMap, groupMembers, loading, group, edi
                                 group={group}
                                 key={memberData.ID}
                                 canOnlyDelete={canOnlyDelete}
+                                canChangeVisibility={canChangeVisibility}
                             />
                         );
                     })}
