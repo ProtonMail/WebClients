@@ -12,3 +12,7 @@ export const selectCategoriesLabel = createSelector([selectCategories], (categor
     const onlyCategories = raw.filter((label) => isCategoryLabel(label.ID));
     return sortSystemCategories(onlyCategories);
 });
+
+export const selectDisabledCategoriesIDs = createSelector([selectCategoriesLabel], (categories): string[] => {
+    return categories.filter((category) => !category.Display).map((category) => category.ID);
+});

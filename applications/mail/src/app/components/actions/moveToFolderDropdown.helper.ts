@@ -7,6 +7,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { FolderItem } from 'proton-mail/hooks/useMailTreeView/interface';
 
 import { getLabelFromCategoryId } from '../categoryView/categoriesStringHelpers';
+import { categoryColorClassName } from '../categoryView/categoriesTabs/tabsInterface';
 
 export const getInboxCategoriesItems = ({
     canMoveToInbox,
@@ -35,7 +36,7 @@ export const getInboxCategoriesItems = ({
                   icon: category.icon,
                   level: category.id === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT ? 0 : 1,
                   folderIconProps: {
-                      className: 'mail-category-color',
+                      className: categoryColorClassName,
                       color: category.colorShade,
                   },
               }))
