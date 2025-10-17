@@ -91,9 +91,9 @@ const MainContainer: FunctionComponent = () => {
                 <AssistantProvider>
                     <QuickSettingsRemindersProvider>
                         <DrawerThemeInjector />
-                        <EncryptedSearchProvider>
-                            <MailContentRefProvider mailContentRef={mailContentRef}>
-                                <ChecklistsProvider>
+                        <ChecklistsProvider>
+                            <EncryptedSearchProvider>
+                                <MailContentRefProvider mailContentRef={mailContentRef}>
                                     <SubscriptionModalProvider app={APP_NAME}>
                                         <ComposerContainer>
                                             <CheckAllRefProvider>
@@ -109,9 +109,9 @@ const MainContainer: FunctionComponent = () => {
                                             </CheckAllRefProvider>
                                         </ComposerContainer>
                                     </SubscriptionModalProvider>
-                                </ChecklistsProvider>
-                            </MailContentRefProvider>
-                        </EncryptedSearchProvider>
+                                </MailContentRefProvider>
+                            </EncryptedSearchProvider>
+                        </ChecklistsProvider>
                     </QuickSettingsRemindersProvider>
                 </AssistantProvider>
             </KeyTransparencyManager>
