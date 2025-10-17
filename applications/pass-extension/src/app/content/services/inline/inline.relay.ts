@@ -5,6 +5,7 @@ import {
     handleBackdrop,
     handleOnClosed,
 } from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.utils';
+import { createIconRegistry } from 'proton-pass-extension/app/content/services/inline/icon/icon.registry';
 import type { FrameMessageHandler } from 'proton-pass-extension/app/content/utils/frame.message-broker';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
@@ -17,7 +18,10 @@ import type { AbstractInlineService } from './inline.abstract';
 import { createPassiveInlineListeners } from './inline.listeners';
 import { createNotificationRelayHandler } from './notification/notification.relay';
 
-export const createInlineRelay = ({ controller }: ContentScriptContextFactoryOptions): AbstractInlineService => {
+export const createInlineRelay = ({
+    controller,
+    elements,
+}: ContentScriptContextFactoryOptions): AbstractInlineService => {
     /** NOTE: This should only be spawned in sub-frames */
     if (isMainFrame()) throw new Error('InlineRelay should only be created in sub-frames');
 
@@ -26,6 +30,7 @@ export const createInlineRelay = ({ controller }: ContentScriptContextFactoryOpt
     const passiveListeners = createPassiveInlineListeners(channel);
     const dropdown = createDropdownRelayHandler();
     const notification = createNotificationRelayHandler();
+    const icon = createIconRegistry(dropdown, elements.control);
 
     const onDropdownOpened: FrameMessageHandler<WorkerMessageType.INLINE_DROPDOWN_OPENED> = withContext(
         (ctx, { payload }) => {
@@ -74,15 +79,19 @@ export const createInlineRelay = ({ controller }: ContentScriptContextFactoryOpt
             passiveListeners.init();
         },
         destroy: () => {
+            dropdown.destroy();
+            notification.destroy();
+            icon.destroy();
+
             channel.unregister(WorkerMessageType.INLINE_DROPDOWN_OPENED, onDropdownOpened);
             channel.unregister(WorkerMessageType.INLINE_DROPDOWN_CLOSED, onDropdownClosed);
-            dropdown.destroy();
             passiveListeners.destroy();
         },
 
         setTheme: noop,
         sync: noop,
 
+        icon,
         dropdown,
         notification,
     };

@@ -27,7 +27,7 @@ export const handleOnClosed = (field: FieldHandle, refocus: boolean) => {
     if (!refocus) actionTrap(field.element, 1);
     nextTick(() => {
         if (refocus) field.focus();
-        else if (!isActiveElement(field.element)) field.detachIcon();
+        else if (!isActiveElement(field.element)) field.icon?.detach();
     });
 };
 

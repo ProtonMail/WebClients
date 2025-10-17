@@ -49,7 +49,7 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
             if (actionPrevented(field.element)) return;
 
             const req = requestAnimationFrame(() => {
-                field.attachIcon();
+                ctx.service.inline.icon.attach(field);
 
                 /** NOTE: auto-open dropdown if field was not
                  * previously autofilled [to be determined] */
@@ -81,7 +81,7 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
             const blurred = !(document.hasFocus() && isActiveElement(field.element));
 
             if (!attached && blurred) {
-                field.detachIcon();
+                field.icon?.detach();
                 ctx.service.inline.dropdown.close({ type: 'field', field });
             }
         })

@@ -1,6 +1,7 @@
 import { NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { ContentScriptContextFactoryOptions } from 'proton-pass-extension/app/content/context/factory';
+import { createIconRegistry } from 'proton-pass-extension/app/content/services/inline/icon/icon.registry';
 import { getFrameElement } from 'proton-pass-extension/app/content/utils/frame';
 import type { FrameMessageHandler } from 'proton-pass-extension/app/content/utils/frame.message-broker';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
@@ -25,6 +26,7 @@ export const createInlineService = ({
     const registry = createInlineRegistry(elements);
     const dropdown = createDropdownHandler(registry);
     const notification = createNotificationHandler(registry);
+    const icon = createIconRegistry(dropdown, elements.control);
 
     const onDropdownOpen: FrameMessageHandler<WorkerMessageType.INLINE_DROPDOWN_OPEN> = ({ payload }) => {
         if (payload.type === 'request') return;
@@ -84,6 +86,7 @@ export const createInlineService = ({
     return {
         init: () => {
             registry.init();
+
             channel.register(WorkerMessageType.INLINE_DROPDOWN_OPEN, onDropdownOpen);
             channel.register(WorkerMessageType.INLINE_DROPDOWN_CLOSE, onDropdownClose);
             channel.register(WorkerMessageType.INLINE_DROPDOWN_STATE, onDropdownState);
@@ -95,6 +98,8 @@ export const createInlineService = ({
         destroy: () => {
             registry.destroy();
             dropdown.destroy();
+            icon.destroy();
+
             channel.unregister(WorkerMessageType.INLINE_DROPDOWN_OPEN, onDropdownOpen);
             channel.unregister(WorkerMessageType.INLINE_DROPDOWN_CLOSE, onDropdownClose);
             channel.unregister(WorkerMessageType.INLINE_DROPDOWN_STATE, onDropdownState);
@@ -116,6 +121,7 @@ export const createInlineService = ({
             }
         }),
 
+        icon,
         dropdown,
         notification,
     };

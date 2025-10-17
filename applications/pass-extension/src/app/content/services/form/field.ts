@@ -8,7 +8,6 @@ import { createFieldTracker } from 'proton-pass-extension/app/content/services/f
 import type { FormHandle } from 'proton-pass-extension/app/content/services/form/form';
 import type { FormTracker } from 'proton-pass-extension/app/content/services/form/form.tracker';
 import type { IconController } from 'proton-pass-extension/app/content/services/inline/icon/icon.controller';
-import { createIconController } from 'proton-pass-extension/app/content/services/inline/icon/icon.controller';
 import { actionTrap } from 'proton-pass-extension/app/content/utils/action-trap';
 import { getFrameParentVisibility } from 'proton-pass-extension/app/content/utils/frame';
 import { isActiveElement } from 'proton-pass-extension/app/content/utils/nodes';
@@ -58,16 +57,15 @@ export interface FieldHandle {
     /** input value - updated on change */
     value: string;
     attach: (tracker?: FormTracker) => void;
-    attachIcon: () => MaybeNull<IconController>;
     autofill: (value: string, options?: AutofillOptions) => Promise<void>;
     detach: () => void;
-    detachIcon: () => void;
     focus: (options?: { preventAction?: boolean }) => void;
     getAnchor: (options?: { reflow: boolean }) => FieldAnchor;
     getFormHandle: () => FormHandle;
     getVisibility: () => Promise<boolean>;
     matches: (field?: FrameField) => boolean;
     setAction: (action: MaybeNull<FieldAction>) => void;
+    setIcon: (icon: MaybeNull<IconController>) => void;
     setValue: (value: string) => void;
     sync: () => void;
 }
@@ -154,31 +152,9 @@ export const createFieldHandles = ({ element, fieldType, getFormHandle }: Create
                 })
                 .catch(noop),
 
-        /* If an icon is already attached recycle it */
-        attachIcon: withContext((ctx) => {
-            if (!ctx) return null;
-
-            field.getAnchor().connect();
-            field.icon =
-                field.icon ??
-                createIconController({
-                    field,
-                    tag: ctx.elements.control,
-                    onClick: () => {
-                        if (field.action) {
-                            ctx.service.inline.dropdown.open({
-                                type: 'field',
-                                action: field.action.type,
-                                autofocused: false,
-                                field,
-                            });
-                        }
-                    },
-                });
-
-            field.icon?.sync();
-            return field.icon;
-        }),
+        setIcon: (val) => {
+            field.icon = val;
+        },
 
         getVisibility: withContext(async (ctx) => {
             /** Check if field element is visible (prevents honeypot/hidden field attacks) */
@@ -192,14 +168,6 @@ export const createFieldHandles = ({ element, fieldType, getFormHandle }: Create
             return true;
         }),
 
-        detachIcon() {
-            if (field.icon) {
-                field.getAnchor().disconnect();
-                field.icon.detach();
-                field.icon = null;
-            }
-        },
-
         attach(tracker) {
             if (!field.tracked && isInputElement(field.element)) {
                 field.tracked = true;
@@ -211,7 +179,7 @@ export const createFieldHandles = ({ element, fieldType, getFormHandle }: Create
             field.tracked = false;
             field.tracker?.detach();
             field.tracker = null;
-            field.detachIcon();
+            field.icon?.detach();
         },
 
         matches: (frameField) => {
@@ -225,7 +193,7 @@ export const createFieldHandles = ({ element, fieldType, getFormHandle }: Create
              * have been invalidated. As such, reset the action and detach icon */
             if (field.action && !canProcessAction(field.action.type)) {
                 field.action = null;
-                field.detachIcon();
+                field.icon?.detach();
             }
         },
     };
