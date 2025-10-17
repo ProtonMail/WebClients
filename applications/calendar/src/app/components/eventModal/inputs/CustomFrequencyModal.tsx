@@ -35,7 +35,13 @@ const CustomFrequencyModal = ({
     modalProps,
     view,
 }: Props) => {
-    const [values, setValues] = useState(frequencyModel);
+    const initialValues: FrequencyModel = {
+        ...frequencyModel,
+        // Force 'Does not repeat' into one of the supported options
+        frequency: frequencyModel.frequency === FREQUENCY.ONCE ? FREQUENCY.WEEKLY : frequencyModel.frequency,
+    };
+
+    const [values, setValues] = useState(initialValues);
     const isDrawerApp = getIsCalendarAppInDrawer(view);
 
     return (
