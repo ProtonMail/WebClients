@@ -1,29 +1,12 @@
+import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
 import type { InlineRegistry } from 'proton-pass-extension/app/content/services/inline/inline.registry';
 
 import type { Maybe } from '@proton/pass/types';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
-import { onNextTick } from '@proton/pass/utils/time/next-tick';
 
 import type { DropdownHandler } from './dropdown.abstract';
-import type { DropdownAnchor, DropdownRequest } from './dropdown.app';
-import { handleBackdrop } from './dropdown.utils';
-
-const willDropdownAnchorChange = (anchor: DropdownAnchor, payload: DropdownRequest): boolean => {
-    if (!anchor) return true;
-
-    switch (payload.type) {
-        case 'field':
-            return anchor.type !== 'field' || anchor.field.element !== payload.field.element;
-
-        case 'frame':
-            return (
-                anchor.type !== 'frame' ||
-                anchor.fieldFrameId !== payload.fieldFrameId ||
-                anchor.fieldId !== payload.fieldId
-            );
-    }
-};
+import { handleAutoClose, handleBackdrop, willDropdownAnchorChange } from './dropdown.utils';
 
 export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler => {
     const listeners = createListenerStore();
@@ -36,7 +19,7 @@ export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler
     const dropdown: DropdownHandler = {
         listeners,
         attach: (layer) => registry.attachDropdown(layer),
-        open: (payload) => {
+        open: withContext((ctx, payload) => {
             const attachedAnchor = registry.dropdown?.anchor;
             const visible = registry.dropdown?.getState().visible;
             const { autofocused } = payload;
@@ -52,7 +35,7 @@ export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler
                 const layer = form?.element;
 
                 const close = () => dropdown.close();
-                const maybeClose = onNextTick(() => !registry.dropdown?.focused && close());
+                const autoclose = handleAutoClose(dropdown);
 
                 registry.attachDropdown(layer)?.open(payload);
 
@@ -68,12 +51,12 @@ export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler
                 listeners.addListener(window, 'popstate', close);
                 listeners.addListener(window, 'hashchange', close);
                 listeners.addListener(window, 'beforeunload', close);
-                listeners.addListener(window, 'focus', maybeClose);
-                listeners.addListener(window, 'blur', maybeClose);
+                listeners.addListener(window, 'focus', autoclose);
+                listeners.addListener(window, 'blur', autoclose);
                 listeners.addListener(window, 'mousedown', handleBackdrop(getAnchorField, close));
                 listeners.addListener(scrollParent, 'scroll', close, scrollOptions);
             }
-        },
+        }),
 
         close: (target) => {
             const dropdown = registry.dropdown;
@@ -133,8 +116,6 @@ export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler
                     : undefined,
             };
         },
-
-        settled: async () => true,
     };
 
     return dropdown;
