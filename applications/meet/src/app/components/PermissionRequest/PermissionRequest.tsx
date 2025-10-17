@@ -15,7 +15,7 @@ import './PermissionRequest.scss';
 export const PermissionRequest = () => {
     const { permissionPromptStatus, setPermissionPromptStatus } = useUIStateContext();
 
-    const { toggleVideo, toggleAudio, setDevicePermissions } = useMediaManagementContext();
+    const { toggleVideo, toggleAudio, handleDevicePermissionChange } = useMediaManagementContext();
 
     const requestDevicePermission = useRequestPermission();
 
@@ -41,13 +41,13 @@ export const PermissionRequest = () => {
                 }
             }
 
-            setDevicePermissions({
+            handleDevicePermissionChange({
                 [deviceType === 'video' ? 'camera' : 'microphone']: 'granted',
             });
 
             return true;
         } catch (err: any) {
-            setDevicePermissions({
+            handleDevicePermissionChange({
                 [deviceType === 'video' ? 'camera' : 'microphone']: 'denied',
             });
 
