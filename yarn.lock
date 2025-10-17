@@ -13026,19 +13026,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tpe/quark-client@npm:1.3.0":
-  version: 1.3.0
-  resolution: "@tpe/quark-client@npm:1.3.0::__archiveUrl=https%3A%2F%2Fgitlab.protontech.ch%2Fapi%2Fv4%2Fprojects%2F4357%2Fpackages%2Fnpm%2F%40tpe%2Fquark-client%2F-%2F%40tpe%2Fquark-client-1.3.0.tgz"
+"@tpe/quark-client@npm:1.3.1":
+  version: 1.3.1
+  resolution: "@tpe/quark-client@npm:1.3.1::__archiveUrl=https%3A%2F%2Fgitlab.protontech.ch%2Fapi%2Fv4%2Fprojects%2F4357%2Fpackages%2Fnpm%2F%40tpe%2Fquark-client%2F-%2F%40tpe%2Fquark-client-1.3.1.tgz"
   dependencies:
-    chance: "npm:^1.1.13"
-    date-fns: "npm:^4.1.0"
-    js-yaml: "npm:^4.1.0"
-    nodemailer: "npm:^7.0.3"
-    nodemailer-smtp-transport: "npm:^2.7.4"
-    vcf: "npm:^2.1.2"
+    chance: "npm:1.1.13"
+    date-fns: "npm:4.1.0"
+    js-yaml: "npm:4.1.0"
+    nodemailer: "npm:7.0.3"
+    vcf: "npm:2.1.2"
   peerDependencies:
     "@playwright/test": ">=1.52.0"
-  checksum: 10c0/72baf152c248877312477a1574c64d6f106d9e8ccb5fa85e59dc2addbed4f77a9aff32bdca6a6bb3fd62583a258420f7e53c0fd6f6c60a5e389d95d5e1d83f97
+  checksum: 10c0/82f8a498159170d1c528b0648150393dc2b208b02ef48aa9474f35ec337ed576dd3d58fe637753dda91ad3f3270abeca8399ecd30efab5d9970d9fd8c234cca2
   languageName: node
   linkType: hard
 
@@ -19110,7 +19109,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chance@npm:^1.1.13":
+"chance@npm:1.1.13, chance@npm:^1.1.13":
   version: 1.1.13
   resolution: "chance@npm:1.1.13"
   checksum: 10c0/0e1523b0ef75061df5771c052e8bf8d5fb7d92e56a58e98e170e4be5f2166cceac2f70dd209e49e0605ea2e376ba99fb5e391987e8610c7037cd2fce19c35e3e
@@ -21217,19 +21216,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"date-fns@npm:4.1.0, date-fns@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "date-fns@npm:4.1.0"
+  checksum: 10c0/b79ff32830e6b7faa009590af6ae0fb8c3fd9ffad46d930548fbb5acf473773b4712ae887e156ba91a7b3dc30591ce0f517d69fd83bd9c38650fdc03b4e0bac8
+  languageName: node
+  linkType: hard
+
 "date-fns@npm:^2.30.0":
   version: 2.30.0
   resolution: "date-fns@npm:2.30.0"
   dependencies:
     "@babel/runtime": "npm:^7.21.0"
   checksum: 10c0/e4b521fbf22bc8c3db332bbfb7b094fd3e7627de0259a9d17c7551e2d2702608a7307a449206065916538e384f37b181565447ce2637ae09828427aed9cb5581
-  languageName: node
-  linkType: hard
-
-"date-fns@npm:^4.1.0":
-  version: 4.1.0
-  resolution: "date-fns@npm:4.1.0"
-  checksum: 10c0/b79ff32830e6b7faa009590af6ae0fb8c3fd9ffad46d930548fbb5acf473773b4712ae887e156ba91a7b3dc30591ce0f517d69fd83bd9c38650fdc03b4e0bac8
   languageName: node
   linkType: hard
 
@@ -27185,23 +27184,6 @@ __metadata:
     quick-lru: "npm:^5.1.1"
     resolve-alpn: "npm:^1.2.0"
   checksum: 10c0/7207201d3c6e53e72e510c9b8912e4f3e468d3ecc0cf3bf52682f2aac9cd99358b896d1da4467380adc151cf97c412bedc59dc13dae90c523f42053a7449eedb
-  languageName: node
-  linkType: hard
-
-"httpntlm@npm:1.6.1":
-  version: 1.6.1
-  resolution: "httpntlm@npm:1.6.1"
-  dependencies:
-    httpreq: "npm:>=0.4.22"
-    underscore: "npm:~1.7.0"
-  checksum: 10c0/cea2079d5427c116d1661f8c707cc9c08f34eac0c3a4265590a68a88bc0871f5b726c9c171018dde177d974e954b0cd6dfcd51e822419fe8750f44a64f52cd4a
-  languageName: node
-  linkType: hard
-
-"httpreq@npm:>=0.4.22":
-  version: 1.1.1
-  resolution: "httpreq@npm:1.1.1"
-  checksum: 10c0/d7d30d2e744277d8f0183d2388721c85116aa072b8bd514707abb3fae075c661953454116cd91e4460e4d941513aba398be4110b1617bbe598103ed915ba932c
   languageName: node
   linkType: hard
 
@@ -33295,44 +33277,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nodemailer-fetch@npm:1.6.0":
-  version: 1.6.0
-  resolution: "nodemailer-fetch@npm:1.6.0"
-  checksum: 10c0/47b1aa2c7704582663b71b314251260bd9ceeb7f88cd016a27060a10dab41e21ad14e24a46fdbd1cf9a8c056824f99e56415653c6134b82e80c756baa67218b5
-  languageName: node
-  linkType: hard
-
-"nodemailer-shared@npm:1.1.0":
-  version: 1.1.0
-  resolution: "nodemailer-shared@npm:1.1.0"
-  dependencies:
-    nodemailer-fetch: "npm:1.6.0"
-  checksum: 10c0/15d19fb0d1b546527da4e2d443cd53e50c3a7638b5b33a1ccd7ddc401680bc9163337cf09f6fb4e76a5f12de42f5fadf85dad80e56378edc3c27dd641413b3f7
-  languageName: node
-  linkType: hard
-
-"nodemailer-smtp-transport@npm:^2.7.4":
-  version: 2.7.4
-  resolution: "nodemailer-smtp-transport@npm:2.7.4"
-  dependencies:
-    nodemailer-shared: "npm:1.1.0"
-    nodemailer-wellknown: "npm:0.1.10"
-    smtp-connection: "npm:2.12.0"
-  checksum: 10c0/e5e2c40be2b0e3c926e11ec70681aeef9a4d616b339380cc83982fa5a4f02d34613f28b6d14b7fab8867c620e82274ddb06866d1ca77e1775c83334e4bb77ae9
-  languageName: node
-  linkType: hard
-
-"nodemailer-wellknown@npm:0.1.10":
-  version: 0.1.10
-  resolution: "nodemailer-wellknown@npm:0.1.10"
-  checksum: 10c0/67e9a4ef1d47184f0615b37d123ce2370e24be4f9149ed8e59415685269ed83fcbcfa248406da14f53f5d4f82936526e845e043ef67e2bfe52145d3b026ff292
-  languageName: node
-  linkType: hard
-
-"nodemailer@npm:^7.0.3":
-  version: 7.0.6
-  resolution: "nodemailer@npm:7.0.6"
-  checksum: 10c0/84d3bdca7baa048df538506726a3e63a116276b9ee1ad1e3cd55a8ccbdbf3dea34af0d9bfbe2fdb63cc83f9abe2dbab1737cd58562955e42cbf6cd46e82da49a
+"nodemailer@npm:7.0.3":
+  version: 7.0.3
+  resolution: "nodemailer@npm:7.0.3"
+  checksum: 10c0/835492262328471b94a080cea43ea20f4232e19a915400cd71c7f4f4ab93a7d361775154eebe30a8fc40379eecf11a0bbc73e6cf4bbee9dccb6dd1cf7a1dc792
   languageName: node
   linkType: hard
 
@@ -36834,7 +36782,7 @@ __metadata:
     "@tpe/measurement-sdk": "npm:0.2.2"
     "@tpe/minimum-test-set": "npm:0.1.1"
     "@tpe/mock-proxy-web-client": "npm:1.1.1"
-    "@tpe/quark-client": "npm:1.3.0"
+    "@tpe/quark-client": "npm:1.3.1"
     "@types/chance": "npm:^1.1.7"
     "@types/fs-extra": "npm:^11.0.4"
     "@types/node": "npm:^22.18.8"
@@ -41216,16 +41164,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"smtp-connection@npm:2.12.0":
-  version: 2.12.0
-  resolution: "smtp-connection@npm:2.12.0"
-  dependencies:
-    httpntlm: "npm:1.6.1"
-    nodemailer-shared: "npm:1.1.0"
-  checksum: 10c0/1abbae665dd2bce09e8a7b552b22e0c0d300c834159e00300d42a7ef30a608fffd3c21002660d1574abfe892481441045370593edf1300dcf8d92da79ff27d06
-  languageName: node
-  linkType: hard
-
 "socket.io-adapter@npm:~2.5.2":
   version: 2.5.5
   resolution: "socket.io-adapter@npm:2.5.5"
@@ -44214,13 +44152,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"underscore@npm:~1.7.0":
-  version: 1.7.0
-  resolution: "underscore@npm:1.7.0"
-  checksum: 10c0/03d6d187c88031c8bf6fada822f43e956974b87dfd37232960e637dc10036968596b644ba4a65bdf09390493eff121d780e276c016addea6e2b3d5b6dd848696
-  languageName: node
-  linkType: hard
-
 "undici-types@npm:~5.26.4":
   version: 5.26.5
   resolution: "undici-types@npm:5.26.5"
@@ -45069,7 +45000,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vcf@npm:^2.1.2":
+"vcf@npm:2.1.2":
   version: 2.1.2
   resolution: "vcf@npm:2.1.2"
   dependencies:
