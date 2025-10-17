@@ -1,6 +1,5 @@
 import { splitFullName } from 'proton-pass-extension/app/content/services/autofill/autofill.identity';
 import type { FieldElement, FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
-import { actionTrap } from 'proton-pass-extension/app/content/utils/action-trap';
 
 import {
     formatExpirationDate,
@@ -69,8 +68,6 @@ export const CC_FIELDS_CONFIG: Record<CCFieldType, CCFieldValueExtract> = {
 };
 
 export const autofillCCFields = async (fields: FieldHandle[], data: Partial<CCItemData>): Promise<CCFieldType[]> => {
-    fields.forEach(({ element }) => actionTrap(element, 250));
-
     const result = await seq(fields, async (field): Promise<Maybe<CCFieldType>> => {
         const ccType = getCCFieldType(field.element);
         if (!ccType) return;
