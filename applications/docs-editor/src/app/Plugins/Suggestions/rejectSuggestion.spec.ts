@@ -1,4 +1,3 @@
-/* eslint-disable custom-rules/deprecate-classes */
 import { createHeadlessEditor } from '@lexical/headless'
 import { AllNodes } from '../../AllNodes'
 import type { ProtonNode } from './ProtonNode'

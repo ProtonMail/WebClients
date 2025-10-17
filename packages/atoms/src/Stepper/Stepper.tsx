@@ -11,7 +11,6 @@ import './Stepper.scss';
 
 export enum StepperPositionEnum {
     Start = 'start',
-    // eslint-disable-next-line custom-rules/deprecate-classes
     Center = 'center',
     End = 'end',
 }

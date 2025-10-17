@@ -107,7 +107,6 @@ export function CommentsPanelListThread({ thread, className }: { thread: Comment
           if (shouldScroll) {
             const shouldSmoothScroll = !window.matchMedia('(prefers-reduced-motion: reduce)').matches
             markNodeElement.scrollIntoView({
-              // eslint-disable-next-line custom-rules/deprecate-classes
               block: 'center',
               behavior: shouldSmoothScroll ? 'smooth' : 'instant',
             })
