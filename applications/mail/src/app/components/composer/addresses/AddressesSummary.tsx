@@ -105,7 +105,7 @@ const AddressesSummary = ({
 
                                     return (
                                         <span
-                                            key={i} // eslint-disable-line react/no-array-index-key
+                                            key={i}  
                                             className={clsx(['mr-2 align-top', cannotSend && 'color-danger'])}
                                         >
                                             <span>

@@ -36,7 +36,7 @@ const OnboardingChecklistSidebarHeader = ({
     const itemsCompletedCount = itemsToComplete.filter((key) => items.has(key)).length;
 
     const action = canCloseChecklist ? (
-        // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+         
         <button
             data-testid="onboarding-checklist-header-hide-button"
             className="flex navigation-link-header-group-control shrink-0 mt-1"
