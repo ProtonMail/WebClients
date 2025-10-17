@@ -289,7 +289,7 @@ function TextColor() {
         }
       />
       {mounted && (
-        <Atoms.DropdownPopover className="p-2" render={<Ariakit.Popover />}>
+        <Atoms.DropdownPopover {...Atoms.DROPDOWN_POPOVER_DEFAULTS} className="p-2" render={<Ariakit.Popover />}>
           <ColorSelector color={color} theme={theme} onChange={onChange} />
         </Atoms.DropdownPopover>
       )}
@@ -314,7 +314,7 @@ function FillColor() {
         }
       />
       {mounted && (
-        <Atoms.DropdownPopover className="p-2" render={<Ariakit.Popover />}>
+        <Atoms.DropdownPopover {...Atoms.DROPDOWN_POPOVER_DEFAULTS} className="p-2" render={<Ariakit.Popover />}>
           <ColorSelector color={color} theme={theme} onChange={onChange} />
         </Atoms.DropdownPopover>
       )}
@@ -338,7 +338,11 @@ function BorderSelector() {
         }
       />
       {mounted && (
-        <Atoms.DropdownPopover className="p-2 [&_.flex-wrap]:!flex-wrap" render={<Ariakit.Popover />}>
+        <Atoms.DropdownPopover
+          {...Atoms.DROPDOWN_POPOVER_DEFAULTS}
+          className="p-2 [&_.flex-wrap]:!flex-wrap"
+          render={<Ariakit.Popover />}
+        >
           <BorderSelectorContent borders={borders} onChange={onChange} theme={theme} />
         </Atoms.DropdownPopover>
       )}
@@ -390,7 +394,11 @@ function TextHorizontalAlign() {
         }
       />
       {mounted && (
-        <Atoms.DropdownPopover className="p-2 [&_.flex-wrap]:!flex-wrap" render={<Ariakit.Popover />}>
+        <Atoms.DropdownPopover
+          {...Atoms.DROPDOWN_POPOVER_DEFAULTS}
+          className="p-2 [&_.flex-wrap]:!flex-wrap"
+          render={<Ariakit.Popover />}
+        >
           <TextHorizontalAlignSelectorContent value={value} onChange={onChange} close={popover.hide} />
         </Atoms.DropdownPopover>
       )}
@@ -429,7 +437,11 @@ function TextVerticalAlign() {
         }
       />
       {mounted && (
-        <Atoms.DropdownPopover className="p-2 [&_.flex-wrap]:!flex-wrap" render={<Ariakit.Popover />}>
+        <Atoms.DropdownPopover
+          {...Atoms.DROPDOWN_POPOVER_DEFAULTS}
+          className="p-2 [&_.flex-wrap]:!flex-wrap"
+          render={<Ariakit.Popover />}
+        >
           <TextVerticalAlignSelectorContent value={value} onChange={onChange} close={popover.hide} />
         </Atoms.DropdownPopover>
       )}
@@ -468,7 +480,11 @@ function TextWrap() {
         }
       />
       {mounted && (
-        <Atoms.DropdownPopover className="p-2 [&_.flex-wrap]:!flex-wrap" render={<Ariakit.Popover />}>
+        <Atoms.DropdownPopover
+          {...Atoms.DROPDOWN_POPOVER_DEFAULTS}
+          className="p-2 [&_.flex-wrap]:!flex-wrap"
+          render={<Ariakit.Popover />}
+        >
           <TextWrapSelectorContent value={value} onChange={onChange} close={popover.hide} />
         </Atoms.DropdownPopover>
       )}

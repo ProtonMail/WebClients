@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 import { mergeRegister } from '@lexical/utils'
 import { c } from 'ttag'
@@ -43,8 +43,9 @@ import { WordCountIcon } from '../icons'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
 import { useSheetImportModal } from './SheetImportModal'
 import { downloadLogsAsJSON } from '~/utils/downloadLogs'
-import { useIsDownloadLogsAllowed } from '~/utils/misc'
+import { useEvent, useIsDownloadLogsAllowed } from '~/utils/misc'
 import { useDebugMode } from '~/utils/debug-mode-context'
+import * as Ariakit from '@ariakit/react'
 
 export type DocumentTitleDropdownProps = {
   authenticatedController: AuthenticatedDocControllerInterface | undefined
@@ -89,6 +90,7 @@ export function DocumentTitleDropdown({
   useEffect(() => {
     setRenameInputValue(title)
   }, [title])
+  const renameInputRef = useRef<HTMLInputElement>(null)
 
   const isSpreadsheet = documentType === 'sheet'
 
@@ -124,7 +126,9 @@ export function DocumentTitleDropdown({
     }
   }, [])
 
-  const confirmRename = useCallback(() => {
+  const confirmRename = useEvent(() => {
+    renameInputRef.current?.scrollTo(0, 0)
+
     if (!renameController) {
       throw new Error('Cannot rename document without rename controller')
     }
@@ -146,7 +150,7 @@ export function DocumentTitleDropdown({
     } else {
       setIsRenaming(false)
     }
-  }, [application.eventBus, renameController, renameInputValue, title])
+  })
 
   const onDuplicate = useCallback(async () => {
     if (!authenticatedController) {
@@ -347,6 +351,49 @@ export function DocumentTitleDropdown({
     openRecentSpreadsheets,
   ])
 
+  if (isSpreadsheet) {
+    return (
+      <div className="inline-grid pl-2 pr-1.5 [grid-template-columns:100%]">
+        <Ariakit.TooltipProvider>
+          <Ariakit.TooltipAnchor
+            render={
+              <input
+                type="text"
+                className="text-ellipsis rounded-[4px] px-1 py-1.5 [border:1px_solid_transparent] [grid-column:1] [grid-row:1] focus:border-[#6D4AFF] focus-visible:outline-none hover:[&:not(:focus)]:bg-[#C2C1C033]"
+                value={renameInputValue}
+                onChange={(e) => setRenameInputValue(e.target.value)}
+                onKeyDown={(e) => {
+                  const { key, currentTarget } = e
+                  if (key === 'Escape') {
+                    setRenameInputValue(title)
+                    editorController.focusSpreadsheet()
+                    e.preventDefault()
+                    e.stopPropagation()
+                  } else if (key === 'Enter') {
+                    currentTarget.blur()
+                    editorController.focusSpreadsheet()
+                  }
+                }}
+                onBlur={confirmRename}
+                ref={renameInputRef}
+              />
+            }
+          ></Ariakit.TooltipAnchor>
+          <Ariakit.Tooltip
+            /* @TODO: the styles have only temporarily been copied. at some point this should use a shared component */
+            className="leading-0 z-20 flex shrink-0 items-center gap-1 rounded-[.5rem] bg-[#0C0C14] px-2 py-[.375rem] text-[.75rem] text-[white] shadow-[0px_-2px_12px_0px_rgba(0,0,0,0.05)]"
+          >{c('Action').t`Rename`}</Ariakit.Tooltip>
+        </Ariakit.TooltipProvider>
+        <div
+          className="select-none whitespace-pre border px-1 py-1.5 opacity-0 [grid-column:1] [grid-row:1]"
+          aria-hidden="true"
+        >
+          {renameInputValue}
+        </div>
+      </div>
+    )
+  }
+
   if (isRenaming) {
     return (
       <div className="flex items-center px-1.5 pl-1">
@@ -358,6 +405,7 @@ export function DocumentTitleDropdown({
           onKeyDown={({ key }) => {
             if (key === 'Escape') {
               setIsRenaming(false)
+              setRenameInputValue(title)
             } else if (key === 'Enter') {
               confirmRename()
             }
