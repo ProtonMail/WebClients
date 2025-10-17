@@ -22,12 +22,7 @@ import {
 } from '@proton/shared/lib/calendar/constants';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import type { Address } from '@proton/shared/lib/interfaces';
-import type {
-    EventModel,
-    EventModelErrors,
-    FrequencyModel,
-    NotificationModel,
-} from '@proton/shared/lib/interfaces/calendar';
+import type { EventModel, EventModelErrors, NotificationModel } from '@proton/shared/lib/interfaces/calendar';
 import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 
@@ -114,7 +109,6 @@ const EventForm = ({
     const showNotifications = canAddNotifications || notifications.length;
 
     const customModal = useModalStateObject();
-    const previousFrequencyRef = useRef<FrequencyModel>();
 
     const frequencyDropdown = (
         <>
@@ -129,7 +123,6 @@ const EventForm = ({
                     onChange={(frequencyModel) => {
                         if (frequencyModel.type === FREQUENCY.CUSTOM) {
                             customModal.openModal(true);
-                            previousFrequencyRef.current = model.frequencyModel;
                         } else {
                             setModel({
                                 ...model,
@@ -143,19 +136,7 @@ const EventForm = ({
 
             {customModal.render && (
                 <CustomFrequencyModal
-                    modalProps={{
-                        ...customModal.modalProps,
-                        onClose: () => {
-                            customModal.modalProps.onClose();
-                            const frequencyModel = previousFrequencyRef.current;
-                            if (frequencyModel) {
-                                setModel({
-                                    ...model,
-                                    frequencyModel: { ...model.frequencyModel, type: FREQUENCY.CUSTOM },
-                                });
-                            }
-                        },
-                    }}
+                    modalProps={customModal.modalProps}
                     frequencyModel={model.frequencyModel}
                     start={model.start}
                     displayWeekNumbers={displayWeekNumbers}
