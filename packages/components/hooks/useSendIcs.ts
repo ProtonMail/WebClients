@@ -61,7 +61,7 @@ const useSendIcs = () => {
             if (!addressID) {
                 throw new Error('Missing addressID');
             }
-            const { encryptionKey, signingKeys } = await getAddressKeysByUsage({
+            const { encryptionKey, signingKeys, decryptionKeys } = await getAddressKeysByUsage({
                 AddressID: addressID,
                 withV6SupportForEncryption: true,
                 // only sign with v4 keys for now, since presence of v6 signatures breaks parsing for some
@@ -132,8 +132,11 @@ const useSendIcs = () => {
                 attachmentData,
                 attachments: [attachment],
                 emails,
-                publicKeys: [encryptionKey],
-                privateKeys: signingKeys,
+                addressKeysByUsage: {
+                    decryptionKeys,
+                    encryptionKey,
+                    signingKeys,
+                },
             });
             const payload: any = {
                 Message: directMessage,
