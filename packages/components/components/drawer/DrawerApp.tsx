@@ -80,7 +80,6 @@ const DrawerApp = ({ customAppSettings, onCompose, onMailTo, contactCustomAction
                 className={clsx([
                     'drawer-app border-left border-weak bg-norm overflow-hidden no-print',
                     !appInView && 'hidden',
-                    // eslint-disable-next-line custom-rules/deprecate-responsive-utility-classes
                     !isDisplayedOnMobile && 'drawer-app--hide-on-mobile',
                 ])}
                 onClick={onContainerClick}
