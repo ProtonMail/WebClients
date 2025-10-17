@@ -63,7 +63,7 @@ export const validateFramePath = (frames: Frames, frameID: FrameID, allowedOrigi
     });
 };
 
-type AutofillableFrame = { frameId: FrameID; crossOrigin: boolean };
+export type AutofillableFrame = { frameId: FrameID; crossOrigin: boolean };
 
 /** Determines which frames are safe to autofill based on origin validation.
  * For same-origin requests (`frameID === 0`), only allows frames matching the
@@ -93,5 +93,16 @@ export const getAutofillableFrameIDs = async (
         }
     }
 
-    return autofillableFrameIDs;
+    return autofillableFrameIDs.sort((a, b) => {
+        /** 1. Direct originFrameID match takes highest priority */
+        if (a.frameId === originFrameID) return -1;
+        if (b.frameId === originFrameID) return 1;
+
+        /** 2. Same origin frames (non-cross-origin) come next */
+        if (!a.crossOrigin && b.crossOrigin) return -1;
+        if (a.crossOrigin && !b.crossOrigin) return 1;
+
+        /** 3. Rest maintain their relative order */
+        return 0;
+    });
 };
