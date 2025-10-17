@@ -50,7 +50,7 @@ const formatListWithAnd = (items: string[]) => {
     }, []);
 
     const lastItem = (
-        <i className="text-nowrap" key="eslint-autofix-5BD23E">
+        <i className="text-nowrap" key="last-item">
             {items[items.length - 1]}
         </i>
     );
