@@ -181,8 +181,8 @@ describe('inline service', () => {
             const result = await getAutofillableFrameIDs(tabId, 'payments.com', 1);
 
             expect(result).toEqual([
-                { frameId: 0, crossOrigin: true },
                 { frameId: 1, crossOrigin: false },
+                { frameId: 0, crossOrigin: true },
             ]);
         });
 
@@ -242,10 +242,10 @@ describe('inline service', () => {
             const result = await getAutofillableFrameIDs(tabId, 'payments.com', 2);
 
             expect(result).toEqual([
-                { frameId: 0, crossOrigin: true },
-                { frameId: 1, crossOrigin: true },
                 { frameId: 2, crossOrigin: false },
                 { frameId: 4, crossOrigin: false },
+                { frameId: 0, crossOrigin: true },
+                { frameId: 1, crossOrigin: true },
                 { frameId: 5, crossOrigin: true },
             ]);
         });
@@ -279,8 +279,8 @@ describe('inline service', () => {
             const result = await getAutofillableFrameIDs(tabId, 'example.com', 1);
 
             expect(result).toEqual([
-                { frameId: 0, crossOrigin: false },
                 { frameId: 1, crossOrigin: false },
+                { frameId: 0, crossOrigin: false },
             ]);
         });
 
@@ -304,8 +304,8 @@ describe('inline service', () => {
             const result = await getAutofillableFrameIDs(tabId, 'payment.com', 2);
 
             expect(result).toEqual([
-                { frameId: 0, crossOrigin: true },
                 { frameId: 3, crossOrigin: false },
+                { frameId: 0, crossOrigin: true },
             ]);
         });
 
@@ -334,10 +334,10 @@ describe('inline service', () => {
             const result = await getAutofillableFrameIDs(tabId, 'payment.com', 2);
 
             expect(result).toEqual([
-                { frameId: 0, crossOrigin: true },
-                { frameId: 1, crossOrigin: true },
                 { frameId: 2, crossOrigin: false },
                 { frameId: 3, crossOrigin: false },
+                { frameId: 0, crossOrigin: true },
+                { frameId: 1, crossOrigin: true },
             ]);
         });
 
@@ -360,9 +360,9 @@ describe('inline service', () => {
             const result = await getAutofillableFrameIDs(tabId, 'stripe.com', 1);
 
             expect(result).toEqual([
-                { frameId: 0, crossOrigin: true },
                 { frameId: 1, crossOrigin: false },
                 { frameId: 2, crossOrigin: false },
+                { frameId: 0, crossOrigin: true },
                 { frameId: 3, crossOrigin: true },
             ]);
         });
