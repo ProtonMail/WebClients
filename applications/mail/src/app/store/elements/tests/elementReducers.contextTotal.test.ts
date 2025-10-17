@@ -458,7 +458,7 @@ describe('Update context Total', () => {
             testState.total = {
                 [inboxContext]: 2,
                 [inboxUnreadOnContext]: 1,
-                [inboxUnreadOffContext]: 1,
+                [inboxUnreadOffContext]: 2,
                 [archiveContext]: 2,
                 [customContext]: 1,
             };
@@ -869,7 +869,7 @@ describe('Update context Total', () => {
             testState.total = {
                 [inboxContext]: 2,
                 [inboxUnreadOnContext]: 1,
-                [inboxUnreadOffContext]: 1,
+                [inboxUnreadOffContext]: 2,
                 [archiveContext]: 1,
                 [customLabelContext]: 1,
             };
