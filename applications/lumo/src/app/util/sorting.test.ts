@@ -1,4 +1,3 @@
-/* eslint-disable custom-rules/deprecate-spacing-utility-classes */
 import type { MessageFromApi, RemoteId, RemoteMessage } from '../remote/types';
 import { StatusInt } from '../remote/types';
 import { Role } from '../types';
