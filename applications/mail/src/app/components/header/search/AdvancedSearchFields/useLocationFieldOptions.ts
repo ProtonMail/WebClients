@@ -11,8 +11,8 @@ import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 
 import { getLabelFromCategoryId } from 'proton-mail/components/categoryView/categoriesStringHelpers';
+import { categoryColorClassName } from 'proton-mail/components/categoryView/categoriesTabs/tabsInterface';
 import { useCategoriesView } from 'proton-mail/components/categoryView/useCategoriesView';
-import { useEncryptedSearchContext } from 'proton-mail/containers/EncryptedSearchProvider';
 
 import { getStandardFolders } from '../../../../helpers/labels';
 import useScheduleSendFeature from '../../../composer/actions/scheduleSend/useScheduleSendFeature';
@@ -66,21 +66,19 @@ export function useLocationFieldOptions(): UseLocationFieldOptionsReturn {
 
     const folderMap = getStandardFolders();
 
-    const { esStatus } = useEncryptedSearchContext();
     const categoryView = useCategoriesView();
-    const categoriesOptions: ItemDefaultFolder[] =
-        categoryView.categoryViewAccess && !esStatus.esEnabled
-            ? categoryView.activeCategoriesTabs.map((category) => {
-                  return {
-                      value: category.id,
-                      text: getLabelFromCategoryId(category.id),
-                      url: `/${LABEL_IDS_TO_HUMAN[category.id]}`,
-                      icon: category.icon,
-                      className: 'mail-category-color',
-                      color: category.colorShade,
-                  };
-              })
-            : [buildFolderOption(folderMap, MAILBOX_LABEL_IDS.INBOX)];
+    const categoriesOptions: ItemDefaultFolder[] = categoryView.categoryViewAccess
+        ? categoryView.activeCategoriesTabs.map((category) => {
+              return {
+                  value: category.id,
+                  text: getLabelFromCategoryId(category.id),
+                  url: `/${LABEL_IDS_TO_HUMAN[category.id]}`,
+                  icon: category.icon,
+                  className: categoryColorClassName,
+                  color: category.colorShade,
+              };
+          })
+        : [buildFolderOption(folderMap, MAILBOX_LABEL_IDS.INBOX)];
 
     const defaultFolders: ItemDefaultFolder[] = [
         buildFolderOption(

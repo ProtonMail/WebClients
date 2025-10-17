@@ -7,6 +7,7 @@ import { useNotifications } from '@proton/components';
 import useSearchTelemetry, { SEARCH_TYPE } from '@proton/encrypted-search/lib/useSearchTelemetry';
 import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
 
+import { useCategoriesView } from 'proton-mail/components/categoryView/useCategoriesView';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
@@ -59,6 +60,7 @@ export const useApplyEncryptedSearch = ({
     const { esEnabled } = esStatus;
 
     const { sendPerformSearchReport } = useSearchTelemetry();
+    const categoriesView = useCategoriesView();
 
     const params = { conversationMode, sort, filter, search, esEnabled, isSearching: isSearch(search) };
 
@@ -72,7 +74,7 @@ export const useApplyEncryptedSearch = ({
         dispatch(
             addESResults({
                 elements,
-                page: parseSearchParams(history.location).page,
+                page: parseSearchParams(history.location, categoriesView.disabledCategoriesIDs).page,
                 params: { ...params, labelID },
                 pageSize,
             })
@@ -145,7 +147,7 @@ export const useApplyEncryptedSearch = ({
             // We navigate directly to the requested page first, because it is always guaranteed
             // to contain some messages, either because it's an already full intermediate page or
             // because it's the partial last page available
-            dispatch(updatePage(parseSearchParams(history.location).page));
+            dispatch(updatePage(parseSearchParams(history.location, categoriesView.disabledCategoriesIDs).page));
             void encryptedSearch(setEncryptedSearchResults, messagesToLoadMoreES);
         }
     }, [shouldLoadElements, messagesToLoadMoreES, search]);
