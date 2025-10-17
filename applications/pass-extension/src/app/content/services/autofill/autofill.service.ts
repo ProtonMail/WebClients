@@ -95,15 +95,9 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
         const identityFields = trackedForms?.some((form) => form.getFieldsFor(FieldType.IDENTITY).length > 0);
         const ccFields = trackedForms?.some((form) => form.getFieldsFor(FieldType.CREDIT_CARD).length > 0);
 
-        const credentials = loginForms.length && authorized ? await getCredentialsCount() : 0;
+        trackedForms.forEach((form) => form.getFields().forEach((field) => field.icon?.sync()));
 
-        trackedForms.forEach((form) => {
-            form.getFields().forEach((field) => {
-                field.icon?.setStatus(ctx.getState().status);
-                if (form.formType === FormType.LOGIN) field.icon?.setCount(credentials);
-            });
-        });
-
+        if (loginForms && authorized) await getCredentialsCount();
         if (identityFields && authorized) await getIdentitiesCount();
         if (ccFields && authorized) await getCreditCardsCount();
     });

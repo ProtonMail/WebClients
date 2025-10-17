@@ -249,10 +249,6 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
         }),
     };
 
-    const repositionFields = (reflow: boolean) => {
-        formHandle.getFields().forEach((field) => field.action && field.icon?.reposition(reflow));
-    };
-
     /**
      * Detection trigger & repositioning via Form Resize
      *
@@ -266,7 +262,7 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
      * on the full DOM as this may lead to too many detection triggers */
     const onFormResize = debounce(
         withContext((ctx) => {
-            repositionFields(true);
+            formHandle.getFields().forEach((field) => field.icon?.reposition(true));
             const formParent = options.form.parentElement;
             const triggerDetection = formParent === null || hasProcessableFields(formParent);
             if (triggerDetection) void ctx?.service.formManager.detect({ reason: 'NewFormFieldsOnResize' });

@@ -58,7 +58,7 @@ export interface FieldHandle {
     /** input value - updated on change */
     value: string;
     attach: (tracker?: FormTracker) => void;
-    attachIcon: () => Maybe<IconController>;
+    attachIcon: () => MaybeNull<IconController>;
     autofill: (value: string, options?: AutofillOptions) => Promise<void>;
     detach: () => void;
     detachIcon: () => void;
@@ -154,30 +154,16 @@ export const createFieldHandles = ({ element, fieldType, getFormHandle }: Create
                 })
                 .catch(noop),
 
-        /* if an icon is already attached recycle it */
+        /* If an icon is already attached recycle it */
         attachIcon: withContext((ctx) => {
-            if (!ctx || !isInputElement(field.element)) return;
-            const form = field.getFormHandle();
+            if (!ctx) return null;
 
             field.getAnchor().connect();
             field.icon =
                 field.icon ??
                 createIconController({
-                    input: field.element,
-                    parent: (() => {
-                        /** TBD: instead of injecting the icon next to the anchor (either the input element
-                         * or the resolved bounding element), prefer injecting in nearest detected form.
-                         * Fallsback to document.body as a precaution. This should preserve z-index layering
-                         * while avoiding interferences in websites sensitive to the DOM structure of their
-                         * input fields (eg: some websites expect their input elements to always be the first
-                         * child of a wrapper component - interfering with this could cause unintented crashes) */
-                        const root = field.element.getRootNode();
-                        if (root instanceof ShadowRoot) return root;
-                        return form.scrollChild;
-                    })(),
+                    field,
                     tag: ctx.elements.control,
-                    zIndex: form.zIndex,
-                    getAnchor: field.getAnchor,
                     onClick: () => {
                         if (field.action) {
                             ctx.service.inline.dropdown.open({
@@ -190,8 +176,7 @@ export const createFieldHandles = ({ element, fieldType, getFormHandle }: Create
                     },
                 });
 
-            field.icon.setStatus(ctx.getState().status);
-
+            field.icon?.sync();
             return field.icon;
         }),
 
@@ -208,9 +193,11 @@ export const createFieldHandles = ({ element, fieldType, getFormHandle }: Create
         }),
 
         detachIcon() {
-            field.getAnchor().disconnect();
-            field.icon?.detach();
-            field.icon = null;
+            if (field.icon) {
+                field.getAnchor().disconnect();
+                field.icon.detach();
+                field.icon = null;
+            }
         },
 
         attach(tracker) {
