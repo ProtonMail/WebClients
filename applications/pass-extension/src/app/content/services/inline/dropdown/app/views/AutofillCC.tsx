@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo } from 'react';
 import type { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { DropdownHeader } from 'proton-pass-extension/app/content/services/inline/dropdown/app/components/DropdownHeader';
 import type { DropdownActions } from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.app';
+import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
 import { useIFrameAppController, useIFrameAppState } from 'proton-pass-extension/lib/components/Inline/IFrameApp';
 import { useBlurTrap } from 'proton-pass-extension/lib/components/Inline/IFrameFocusController';
 import { ListItem } from 'proton-pass-extension/lib/components/Inline/ListItem';
@@ -96,13 +97,10 @@ export const AutofillCC: FC<Props> = ({ origin, frameId }) => {
                                         customIcon: getCreditCardIcon(cardType),
                                     }}
                                     onClick={withBlurTrap(() =>
-                                        sendMessage.onSuccess(
-                                            contentScriptMessage({
-                                                type: WorkerMessageType.AUTOFILL_CC,
-                                                payload: { shareId, itemId, origin, frameId },
-                                            }),
-                                            () => controller.close({ refocus: true })
-                                        )
+                                        controller.forwardMessage({
+                                            type: InlinePortMessageType.AUTOFILL_ACTION,
+                                            payload: { shareId, itemId, origin, frameId, type: 'creditCard' },
+                                        })
                                     )}
                                     subTheme={SubTheme.LIME}
                                 />
