@@ -23,19 +23,22 @@ import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/fo
 import type { Address, EnhancedMember, Group, GroupMember, Organization } from '@proton/shared/lib/interfaces';
 import { GroupFlags, GroupPermissions } from '@proton/shared/lib/interfaces';
 
+import shouldShowMail from './shouldShowMail';
 import type { DomainSuggestion, GroupFormData, GroupsManagementReturn } from './types';
 import useGroupsProtonMeDomain from './useGroupsProtonMeDomain';
 import usePmMeDomain from './usePmMeDomain';
 
 export type GROUPS_STATE = 'empty' | 'view' | 'new' | 'edit';
 
-const INITIAL_FORM_VALUES: GroupFormData = {
+const INITIAL_FORM_VALUES = (organization?: Organization) => ({
     name: '',
     description: '',
     address: '',
-    permissions: GroupPermissions.EveryoneCanSend,
+    permissions: shouldShowMail(organization?.PlanName)
+        ? GroupPermissions.EveryoneCanSend
+        : GroupPermissions.NobodyCanSend,
     members: '',
-};
+});
 
 const useGroupsManagement = (organization?: Organization): GroupsManagementReturn | undefined => {
     const handleError = useErrorHandler();
@@ -151,7 +154,7 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
     };
 
     const form = useFormik({
-        initialValues: INITIAL_FORM_VALUES,
+        initialValues: INITIAL_FORM_VALUES(organization),
         onSubmit: () => {},
         validateOnChange: true,
         validateOnMount: false,
@@ -314,7 +317,7 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
     const handleCreateGroup = () => {
         setUiState('new');
         resetForm({
-            values: INITIAL_FORM_VALUES,
+            values: INITIAL_FORM_VALUES(organization),
         });
         setSelectedGroup(undefined);
     };
@@ -322,7 +325,7 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
     const handleDiscardChanges = () => {
         setUiState(groups.length === 0 ? 'empty' : 'view');
         resetForm({
-            values: INITIAL_FORM_VALUES,
+            values: INITIAL_FORM_VALUES(organization),
         });
     };
 
