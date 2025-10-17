@@ -19,7 +19,6 @@ import { clientSessionLocked } from '@proton/pass/lib/client';
 import type { PasswordAutosuggestOptions } from '@proton/pass/lib/password/types';
 import type { Coords, MaybeNull } from '@proton/pass/types';
 import { createStyleParser, getComputedHeight } from '@proton/pass/utils/dom/computed-styles';
-import { animatePositionChange } from '@proton/pass/utils/dom/position';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import noop from '@proton/utils/noop';
 
@@ -145,15 +144,6 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
         focus.disconnect();
     };
 
-    /* if the dropdown is opened while the field is being animated
-     * we must update its position until the position stabilizes */
-    const updatePosition = () =>
-        animatePositionChange({
-            onAnimate: noop,
-            get: () => iframe.getPosition(),
-            set: () => iframe.updatePosition(),
-        });
-
     iframe.subscribe((evt) => {
         switch (evt.type) {
             case 'open':
@@ -277,7 +267,7 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
                         payload,
                     });
 
-                    if (request.type === 'field') updatePosition();
+                    if (request.type === 'field') iframe.updatePosition();
                     if (request.type === 'frame') iframe.setPosition(request.coords);
 
                     return true;

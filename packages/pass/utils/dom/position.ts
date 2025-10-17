@@ -4,11 +4,12 @@ const REFRESH_RATE = 1000 / 24;
 
 export const animatePositionChange = (options: {
     get: () => Partial<Rect>;
-    set: () => void;
+    set: (rect: Partial<Rect>) => void;
     onAnimate: (request: number) => void;
 }): void => {
-    options.set();
-    let { top, left, right, bottom } = options.get();
+    const current = options.get();
+    let { top, left, right, bottom } = current;
+    options.set(current);
     let updatedAt = 0;
 
     const check = () =>
@@ -16,9 +17,10 @@ export const animatePositionChange = (options: {
             requestAnimationFrame((timestamp) => {
                 if (timestamp - updatedAt >= REFRESH_RATE) {
                     updatedAt = timestamp;
-                    const { top: nTop, left: nLeft, right: nRight, bottom: nBottom } = options.get();
+                    const next = options.get();
+                    const { top: nTop, left: nLeft, right: nRight, bottom: nBottom } = next;
                     if (nTop !== top || nLeft !== left || nRight !== right || nBottom !== bottom) {
-                        options.set();
+                        options.set(next);
                         top = nTop;
                         left = nLeft;
                         right = nRight;
