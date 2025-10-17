@@ -10,12 +10,14 @@ import { useMeetErrorReporting } from '@proton/meet';
 import { useCreateInstantMeeting } from '@proton/meet/hooks/useCreateInstantMeeting';
 import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import { CustomPasswordState } from '@proton/shared/lib/interfaces/Meet';
 import { message as sanitizeMessage } from '@proton/shared/lib/sanitize/purify';
 
 import { ConnectionLostModal } from '../../components/ConnectionLostModal/ConnectionLostModal';
 import { MeetingLockedModal } from '../../components/MeetingLockedModal/MeetingLockedModal';
 import { PasswordPrompt } from '../../components/PasswordPrompt/PasswordPrompt';
+import { PiPPreviewVideo } from '../../components/PiPPreviewVideo/PiPPreviewVideo';
 import { MEETING_LOCKED_ERROR_CODE } from '../../constants';
 import { MLSContext } from '../../contexts/MLSContext';
 import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
@@ -25,8 +27,9 @@ import { useMeetingSetup } from '../../hooks/srp/useMeetingSetup';
 import { useDependencySetup } from '../../hooks/useDependencySetup';
 import { useLockMeeting } from '../../hooks/useLockMeeting';
 import { useParticipantNameMap } from '../../hooks/useParticipantNameMap';
+import { usePictureInPicture } from '../../hooks/usePictureInPicture/usePictureInPicture';
 import { useWakeLock } from '../../hooks/useWakeLock';
-import type { MLSGroupState } from '../../types';
+import type { MLSGroupState, MeetChatMessage } from '../../types';
 import { LoadingState } from '../../types';
 import { setupWasmDependencies } from '../../utils/wasmUtils';
 import { MeetContainer } from '../MeetContainer';
@@ -87,7 +90,15 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
 
     const [connectionLost, setConnectionLost] = useState(false);
 
+    const [chatMessages, setChatMessages] = useState<MeetChatMessage[]>([]);
+
     const { getParticipants, participantNameMap, participantsMap, resetParticipantNameMap } = useParticipantNameMap();
+
+    const { stopPiP, startPiP, isPipActive, canvas, tracksLength, pipSetup, pipCleanup } = usePictureInPicture({
+        isDisconnected: connectionLost,
+        participantNameMap,
+        chatMessages,
+    });
 
     const [initialisedParticipantNameMap, setInitialisedParticipantNameMap] = useState(false);
 
@@ -354,6 +365,7 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
 
                 setInitialisedParticipantNameMap(false);
                 setJoinedRoom(false);
+                void stopPiP();
             });
 
             setJoinedRoom(true);
@@ -499,6 +511,7 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
         void room.disconnect();
         resetParticipantNameMap();
         void wasmApp?.leaveMeeting();
+        stopPiP();
         mlsSetupDone.current = false; // need to set mls again after leave meeting
         startHealthCheck.current = false;
 
@@ -592,6 +605,13 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
                         handleMeetingLockToggle={handleMeetingLockToggle}
                         isMeetingLocked={isMeetingLocked}
                         mlsGroupState={mlsGroupState}
+                        isDisconnected={connectionLost}
+                        startPiP={startPiP}
+                        stopPiP={stopPiP}
+                        chatMessages={chatMessages}
+                        setChatMessages={setChatMessages}
+                        pipSetup={pipSetup}
+                        pipCleanup={pipCleanup}
                     />
                 ) : (
                     <PrejoinContainer
@@ -608,6 +628,15 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
                     />
                 )}
                 {connectionLost && <ConnectionLostModal onClose={() => setConnectionLost(false)} />}
+                {joinedRoom && !!canvas && isPipActive && isFirefox() ? (
+                    <PiPPreviewVideo
+                        canvas={canvas}
+                        onClose={() => {
+                            void stopPiP();
+                        }}
+                        tracksLength={tracksLength}
+                    />
+                ) : null}
             </div>
         </MLSContext.Provider>
     );
