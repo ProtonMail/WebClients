@@ -5,45 +5,46 @@ import { isSafari } from '@proton/shared/lib/helpers/browser';
 import { useRequestPermission } from './useRequestPermission';
 
 export const useDevicePermissionChangeListener = (
-    setDevicePermissions: ({ camera, microphone }: { camera?: PermissionState; microphone?: PermissionState }) => void,
+    handleDevicePermissionChange: ({
+        camera,
+        microphone,
+    }: {
+        camera?: PermissionState;
+        microphone?: PermissionState;
+    }) => void,
     cameraId?: string
 ) => {
     const requestDevicePermission = useRequestPermission();
 
-    const getPermissions = async () => {
+    const setup = async () => {
         const [cameraStatus, micStatus] = await Promise.all([
-            requestDevicePermission('camera', isSafari() ? cameraId : undefined),
-            requestDevicePermission('microphone'),
+            navigator.permissions.query({ name: 'camera' as PermissionName }),
+            navigator.permissions.query({ name: 'microphone' as PermissionName }),
         ]);
 
-        setDevicePermissions({ camera: cameraStatus, microphone: micStatus });
-    };
-    const setup = async () => {
-        let cameraStatus: PermissionStatus | null = null;
-        let micStatus: PermissionStatus | null = null;
+        let cameraState = cameraStatus?.state;
+        let micState = micStatus?.state;
 
-        if (isSafari()) {
-            await getPermissions();
-            return;
+        if (cameraState !== 'granted') {
+            cameraState = await requestDevicePermission('camera', isSafari() ? cameraId : undefined);
         }
+
+        if (micState !== 'granted') {
+            micState = await requestDevicePermission('microphone');
+        }
+
+        handleDevicePermissionChange({ camera: cameraState, microphone: micState });
 
         async function listenToPermissions() {
             if (navigator.permissions) {
-                [cameraStatus, micStatus] = await Promise.all([
-                    navigator.permissions.query({ name: 'camera' as PermissionName }),
-                    navigator.permissions.query({ name: 'microphone' as PermissionName }),
-                ]);
-
-                setDevicePermissions({ camera: cameraStatus.state, microphone: micStatus.state });
-
                 cameraStatus.onchange = () => {
-                    setDevicePermissions({ camera: cameraStatus!.state });
+                    handleDevicePermissionChange({ camera: cameraStatus!.state });
                     if (cameraStatus!.state === 'granted') {
                         navigator.mediaDevices?.dispatchEvent?.(new Event('devicechange'));
                     }
                 };
                 micStatus.onchange = () => {
-                    setDevicePermissions({ microphone: micStatus!.state });
+                    handleDevicePermissionChange({ microphone: micStatus!.state });
                     if (micStatus!.state === 'granted') {
                         navigator.mediaDevices?.dispatchEvent?.(new Event('devicechange'));
                     }
@@ -64,6 +65,18 @@ export const useDevicePermissionChangeListener = (
     };
 
     useEffect(() => {
-        void setup();
+        let cleanup: (() => void) | undefined;
+
+        setup()
+            .then((cleanupFn) => {
+                cleanup = cleanupFn;
+            })
+            .catch(() => {
+                // Silently handle errors during setup
+            });
+
+        return () => {
+            cleanup?.();
+        };
     }, []);
 };

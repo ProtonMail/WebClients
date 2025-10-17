@@ -1,14 +1,18 @@
-import { isFirefox } from '@proton/shared/lib/helpers/browser';
+import { useRef } from 'react';
 
 import { useMediaManagementContext } from '../contexts/MediaManagementContext';
 
 export const useRequestPermission = () => {
     const { devicePermissions } = useMediaManagementContext();
 
-    const requestDevicePermission = async (deviceType: 'camera' | 'microphone', deviceId?: string) => {
-        const deviceState = devicePermissions[deviceType];
+    const devicePermissionsRef = useRef(devicePermissions);
 
-        if (deviceState !== 'granted' || isFirefox()) {
+    devicePermissionsRef.current = devicePermissions;
+
+    const requestDevicePermission = async (deviceType: 'camera' | 'microphone', deviceId?: string) => {
+        const deviceState = devicePermissionsRef.current[deviceType];
+
+        if (deviceState !== 'granted') {
             try {
                 const videoStream = await navigator.mediaDevices.getUserMedia({
                     [deviceType === 'camera' ? 'video' : 'audio']: deviceId ? { deviceId } : true,
