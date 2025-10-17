@@ -89,6 +89,7 @@ export const PhotosLayout = () => {
         userAddressEmail,
         isAlbumsLoading,
         isPhotosLoading,
+        isAlbumPhotosLoading,
         handleSelectTag,
 
         initializePhotosView,
@@ -767,6 +768,7 @@ export const PhotosLayout = () => {
                         onRemoveAlbumPhotos={onRemoveAlbumPhotos}
                         onSavePhotos={onSavePhotos}
                         onStartUpload={handleRedirectToAlbum}
+                        isAlbumPhotosLoading={isAlbumPhotosLoading}
                     />
                 }
             />
