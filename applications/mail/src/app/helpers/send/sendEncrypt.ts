@@ -228,13 +228,13 @@ const encryptBody = async (pack: Package, messageKeys: PublicPrivateKey, message
                 passwords: [message.data?.Password || ''],
             });
 
-            // eslint-disable-next-line require-atomic-updates
+             
             subPack.BodyKeyPacket = BodyKeyPacket;
         })
     );
 
     if ((pack.Type || 0) & (PACKAGE_TYPE.SEND_CLEAR | PACKAGE_TYPE.SEND_CLEAR_MIME)) {
-        // eslint-disable-next-line require-atomic-updates
+         
         pack.BodyKey = packToBase64(sessionKey);
     }
 
