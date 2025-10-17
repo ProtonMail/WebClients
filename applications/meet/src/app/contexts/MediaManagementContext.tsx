@@ -9,7 +9,7 @@ export interface MediaManagementContextType {
         camera?: PermissionState;
         microphone?: PermissionState;
     };
-    setDevicePermissions: ({ camera, microphone }: { camera?: PermissionState; microphone?: PermissionState }) => void;
+    handleDevicePermissionChange: (permissions: { camera?: PermissionState; microphone?: PermissionState }) => void;
     cameras: MediaDeviceInfo[];
     microphones: MediaDeviceInfo[];
     speakers: MediaDeviceInfo[];
@@ -56,7 +56,7 @@ const defaultValues: MediaManagementContextType = {
         camera: 'prompt',
         microphone: 'prompt',
     },
-    setDevicePermissions: () => {},
+    handleDevicePermissionChange: () => {},
     microphones: [],
     cameras: [],
     speakers: [],
