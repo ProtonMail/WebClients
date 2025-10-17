@@ -8064,6 +8064,27 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@proton/ci-release@workspace:utilities/ci-release":
+  version: 0.0.0-use.local
+  resolution: "@proton/ci-release@workspace:utilities/ci-release"
+  dependencies:
+    "@proton/ci-tools": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/gitlab": "workspace:^"
+    "@proton/version": "workspace:^"
+    "@types/jest": "npm:^30.0.0"
+    "@vercel/ncc": "npm:^0.38.4"
+    async-retry: "npm:^1.3.3"
+    commander: "npm:^12.1.0"
+    eslint: "npm:^9.37.0"
+    jest: "npm:^30.2.0"
+    ts-jest: "npm:^29.4.4"
+    ts-node: "npm:^10.9.2"
+    tsx: "npm:^4.20.6"
+    yaml: "npm:^2.8.1"
+  languageName: unknown
+  linkType: soft
+
 "@proton/ci-tools@workspace:^, @proton/ci-tools@workspace:utilities/ci-tools":
   version: 0.0.0-use.local
   resolution: "@proton/ci-tools@workspace:utilities/ci-tools"
@@ -9180,6 +9201,30 @@ __metadata:
     lodash: "npm:^4.17.21"
     ts-jest: "npm:^29.4.4"
     typescript: "npm:^5.9.3"
+  languageName: unknown
+  linkType: soft
+
+"@proton/version@workspace:^, @proton/version@workspace:utilities/version":
+  version: 0.0.0-use.local
+  resolution: "@proton/version@workspace:utilities/version"
+  dependencies:
+    "@manypkg/find-root": "npm:^3.1.0"
+    "@manypkg/get-packages": "npm:^3.1.0"
+    "@proton/ci-tools": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/gitlab": "workspace:^"
+    "@types/async-retry": "npm:^1.4.9"
+    "@types/jest": "npm:^30.0.0"
+    "@types/prompts": "npm:^2.4.9"
+    async-retry: "npm:^1.3.3"
+    commander: "npm:^12.1.0"
+    execa: "npm:^5.1.1"
+    jest: "npm:^30.2.0"
+    prompts: "npm:^2.4.2"
+    ts-jest: "npm:^29.4.4"
+    ts-node: "npm:^10.9.2"
+    tsx: "npm:^4.20.6"
+    yaml: "npm:^2.8.1"
   languageName: unknown
   linkType: soft
 
@@ -45009,30 +45054,6 @@ __metadata:
   checksum: 10c0/c7045443fb179f4957a5494f1819113eabf94d043e5858d6c4e63f452048ad44a0ab525f7deb5568aea57690cf766e14dfac2d592d041ff8839c0e19059cb623
   languageName: node
   linkType: hard
-
-"version@workspace:utilities/version":
-  version: 0.0.0-use.local
-  resolution: "version@workspace:utilities/version"
-  dependencies:
-    "@manypkg/find-root": "npm:^3.1.0"
-    "@manypkg/get-packages": "npm:^3.1.0"
-    "@proton/ci-tools": "workspace:^"
-    "@proton/eslint-config-proton": "workspace:^"
-    "@proton/gitlab": "workspace:^"
-    "@types/async-retry": "npm:^1.4.9"
-    "@types/jest": "npm:^30.0.0"
-    "@types/prompts": "npm:^2.4.9"
-    async-retry: "npm:^1.3.3"
-    commander: "npm:^12.1.0"
-    execa: "npm:^5.1.1"
-    jest: "npm:^30.2.0"
-    prompts: "npm:^2.4.2"
-    ts-jest: "npm:^29.4.4"
-    ts-node: "npm:^10.9.2"
-    tsx: "npm:^4.20.6"
-    yaml: "npm:^2.8.1"
-  languageName: unknown
-  linkType: soft
 
 "vfile-message@npm:^4.0.0":
   version: 4.0.3
