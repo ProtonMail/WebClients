@@ -27,8 +27,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { type AlbumPhoto, type Photo, type ShareWithKey, useDefaultShare, useDriveEventManager } from '../../store';
 import { decryptedLinkToPhotos, photoPayloadToPhotos, useDebouncedRequest } from '../../store/_api';
-import { type DecryptedLink, useLink, useLinkActions } from '../../store/_links';
-import { useLinksActions } from '../../store/_links';
+import { type DecryptedLink, useLink, useLinkActions, useLinksActions } from '../../store/_links';
 import useLinksState from '../../store/_links/useLinksState';
 import { useShare } from '../../store/_shares';
 import { useDirectSharingInfo } from '../../store/_shares/useDirectSharingInfo';
@@ -238,6 +237,8 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             if (!volumeId) {
                 return;
             }
+            setIsAlbumPhotosLoading(true);
+
             const albumPhotosCall = async (anchorID?: string) => {
                 let albumVolumeId = volumeId;
                 if (albumShareId !== undefined && shareId !== albumShareId) {
@@ -290,12 +291,12 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                     // Limit of 1000 photos per albums for now
                     if (More) {
                         void albumPhotosCall(AnchorID);
+                    } else {
+                        setIsAlbumPhotosLoading(false);
                     }
                 }
-                setIsAlbumPhotosLoading(false);
             };
 
-            setIsAlbumPhotosLoading(true);
             void albumPhotosCall();
         },
         [request, volumeId, shareId, getShare]

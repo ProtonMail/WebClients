@@ -470,10 +470,10 @@ export const usePhotosWithAlbumsView = () => {
             const album = albumLinkId && links.length === albumPhotos.length ? albums.get(albumLinkId) : undefined;
 
             await download(links, {
-                zipName: album?.name,
+                zipName: album?.name ? `${album?.name}.zip` : undefined,
             });
         },
-        [shareId, albumLinkId, albumPhotos.length, albums, download, loadLinksMeta]
+        [albumLinkId, albumPhotos.length, albums, download, loadLinksMeta]
     );
 
     const addAlbumPhoto = useCallback(

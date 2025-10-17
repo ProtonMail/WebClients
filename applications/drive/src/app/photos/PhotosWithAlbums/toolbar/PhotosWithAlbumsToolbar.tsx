@@ -1,4 +1,5 @@
 import type { FC, ReactNode } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -15,9 +16,11 @@ import {
     useActiveBreakpoint,
     usePopperAnchor,
 } from '@proton/components';
+import useLoading from '@proton/hooks/useLoading';
 import type { IconName } from '@proton/icons/types';
 import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
+import noop from '@proton/utils/noop';
 
 import { useLinkSharingModal } from '../../../components/modals/ShareLinkModal/ShareLinkModal';
 import type {
@@ -264,6 +267,7 @@ interface ToolbarRightActionsAlbumGalleryProps extends ToolbarRightActionsGaller
     onLeaveAlbum: () => void;
     onShowDetails: () => void;
     onAddAlbumPhotos: () => void;
+    isAlbumPhotosLoading?: boolean;
 }
 
 const ToolbarRightActionsGallery = ({
@@ -290,6 +294,7 @@ const ToolbarRightActionsAlbumGallery = ({
     onLeaveAlbum,
     onShowDetails,
     onAddAlbumPhotos,
+    isAlbumPhotosLoading,
 }: ToolbarRightActionsAlbumGalleryProps) => {
     const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled');
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
@@ -298,6 +303,47 @@ const ToolbarRightActionsAlbumGallery = ({
     const showUploadButton = !album.permissions.isOwner && !uploadDisabled;
     const showAddAlbumsButton =
         (album.permissions.isOwner || album.permissions.isAdmin || album.permissions.isEditor) && !driveAlbumsDisabled;
+    const [isDownloading, withDownloading] = useLoading();
+    const [pendingDownload, setPendingDownload] = useState(false);
+    const wasLoadingRef = useRef(isAlbumPhotosLoading);
+
+    const extractLinkIdsFromData = (data: PhotoGridItem[]): { linkId: string; shareId: string }[] => {
+        return data
+            .map((photoItem) => {
+                if (!isPhotoGroup(photoItem)) {
+                    return { linkId: photoItem.linkId, shareId: photoItem.rootShareId };
+                }
+                return {
+                    linkId: '',
+                    shareId: '',
+                };
+            })
+            .filter((photoItem) => photoItem.linkId && photoItem.shareId);
+    };
+
+    // Track when pagination finishes and trigger pending download with latest data
+    // This prevent request download before all photos ids have been fetched.
+    useEffect(() => {
+        if (wasLoadingRef.current && !isAlbumPhotosLoading && pendingDownload) {
+            setPendingDownload(false);
+            const linkIds = extractLinkIdsFromData(data);
+            void withDownloading(requestDownload(linkIds)).catch(noop);
+        }
+        wasLoadingRef.current = isAlbumPhotosLoading;
+    }, [isAlbumPhotosLoading, pendingDownload, data, requestDownload, withDownloading]);
+
+    // If the isAlbumPhotosLoading is false, we can requestDownload right away
+    const handleDownloadClick = () => {
+        if (isAlbumPhotosLoading) {
+            setPendingDownload(true);
+        } else {
+            const linkIds = extractLinkIdsFromData(data);
+            void withDownloading(requestDownload(linkIds)).catch(noop);
+        }
+    };
+
+    const showLoading = pendingDownload || isDownloading;
+
     return (
         <>
             {!showIconOnly && showAddAlbumsButton && (
@@ -312,32 +358,24 @@ const ToolbarRightActionsAlbumGallery = ({
                     isAlbumUpload
                 />
             )}
-            {data.length > 0 && (
+            {!isAlbumPhotosLoading && data.length === 0 ? null : (
                 <ToolbarButton
-                    onClick={() => {
-                        // TODO: avoid the data loop and just execute callback
-                        const linkIds: { linkId: string; shareId: string }[] = data
-                            .map((d) => {
-                                if (!isPhotoGroup(d)) {
-                                    return { linkId: d.linkId, shareId: d.rootShareId };
-                                }
-                                return { linkId: '', shareId: '' };
-                            })
-                            .filter((d) => d.linkId && d.shareId);
-                        void requestDownload(linkIds);
-                    }}
+                    loading={showLoading}
+                    onClick={handleDownloadClick}
                     data-testid="toolbar-download-album"
                     title={c('Action').t`Download`}
-                    className="inline-flex flex-nowrap flex-row items-center"
+                    icon={
+                        <Icon
+                            name="arrow-down-line"
+                            className={clsx(!showIconOnly && 'mr-2')}
+                            alt={c('Action').t`Download`}
+                        />
+                    }
                 >
-                    <Icon
-                        name="arrow-down-line"
-                        className={clsx(!showIconOnly && 'mr-2')}
-                        alt={c('Action').t`Download`}
-                    />
                     <span className={clsx(showIconOnly && 'sr-only')}>{c('Action').t`Download`}</span>
                 </ToolbarButton>
             )}
+
             {album.permissions.isOwner && (
                 <PhotosAlbumShareButton
                     showIconOnly={showIconOnly}
@@ -421,6 +459,7 @@ interface PhotosWithAlbumToolbarProps {
     onShowDetails?: () => void;
     onAddAlbumPhotos?: () => void;
     onSavePhotos?: () => Promise<void>;
+    isAlbumPhotosLoading?: boolean;
 }
 
 export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
@@ -446,6 +485,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
     onShowDetails,
     onAddAlbumPhotos,
     onSavePhotos,
+    isAlbumPhotosLoading,
 }) => {
     const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled');
     const { viewportWidth } = useActiveBreakpoint();
@@ -511,6 +551,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                             onLeaveAlbum={onLeaveAlbum}
                             onShowDetails={onShowDetails}
                             onAddAlbumPhotos={onAddAlbumPhotos}
+                            isAlbumPhotosLoading={isAlbumPhotosLoading}
                         />
                     )}
 
@@ -522,31 +563,31 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                             requestDownload={requestDownload}
                             selectedLinks={selectedItems}
                         />
-                        {canSavePhotos && (
-                            <PhotosSavePhotoButton showIconOnly={showIconOnly} onSavePhotos={onSavePhotos!} />
+                        {canSavePhotos && onSavePhotos && (
+                            <PhotosSavePhotoButton showIconOnly={showIconOnly} onSavePhotos={onSavePhotos} />
                         )}
-                        {canSelectCover && (
-                            <PhotosMakeCoverButton showIconOnly={showIconOnly} onSelectCover={onSelectCover!} />
+                        {canSelectCover && onSelectCover && (
+                            <PhotosMakeCoverButton showIconOnly={showIconOnly} onSelectCover={onSelectCover} />
                         )}
-                        {canShare && (
+                        {canShare && openSharePhotoModal && (
                             <PhotosShareLinkButton
                                 showIconOnly={showIconOnly}
                                 selectedLink={selectedItems[0]}
-                                onClick={openSharePhotoModal!}
+                                onClick={openSharePhotoModal}
                             />
                         )}
-                        {canShareMultiple && (
+                        {canShareMultiple && openSharePhotosIntoAnAlbumModal && (
                             <PhotosShareMultipleLinkButton
                                 showIconOnly={showIconOnly}
-                                onClick={openSharePhotosIntoAnAlbumModal!}
+                                onClick={openSharePhotosIntoAnAlbumModal}
                             />
                         )}
-                        {canAddPhotosFromGallery && (
-                            <PhotosAddToAlbumButton showIconOnly={showIconOnly} onClick={openAddPhotosToAlbumModal!} />
+                        {canAddPhotosFromGallery && openAddPhotosToAlbumModal && (
+                            <PhotosAddToAlbumButton showIconOnly={showIconOnly} onClick={openAddPhotosToAlbumModal} />
                         )}
                         {(canRemoveAlbum || !album) && <Vr className="h-full" />}
-                        {canRemoveAlbum && (
-                            <PhotosRemoveAlbumPhotosButton showIconOnly={showIconOnly} onClick={removeAlbumPhotos!} />
+                        {canRemoveAlbum && removeAlbumPhotos && (
+                            <PhotosRemoveAlbumPhotosButton showIconOnly={showIconOnly} onClick={removeAlbumPhotos} />
                         )}
                         {!album && <PhotosTrashButton showIconOnly={showIconOnly} selectedLinks={selectedItems} />}
                     </>
@@ -559,37 +600,37 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                             requestDownload={requestDownload}
                             selectedLinks={selectedItems}
                         />
-                        {canAddPhotosFromGallery && (
-                            <PhotosAddToAlbumButton showIconOnly={showIconOnly} onClick={openAddPhotosToAlbumModal!} />
+                        {canAddPhotosFromGallery && openAddPhotosToAlbumModal && (
+                            <PhotosAddToAlbumButton showIconOnly={showIconOnly} onClick={openAddPhotosToAlbumModal} />
                         )}
                         <SelectionDropdownButton>
-                            {canSavePhotos && (
+                            {canSavePhotos && onSavePhotos && (
                                 <PhotosSavePhotoButton
                                     dropDownMenuButton={true}
                                     showIconOnly={false}
-                                    onSavePhotos={onSavePhotos!}
+                                    onSavePhotos={onSavePhotos}
                                 />
                             )}
-                            {canSelectCover && (
+                            {canSelectCover && onSelectCover && (
                                 <PhotosMakeCoverButton
                                     dropDownMenuButton={true}
                                     showIconOnly={false}
-                                    onSelectCover={onSelectCover!}
+                                    onSelectCover={onSelectCover}
                                 />
                             )}
-                            {canShare && (
+                            {canShare && openSharePhotoModal && (
                                 <PhotosShareLinkButton
                                     dropDownMenuButton={true}
                                     showIconOnly={false}
                                     selectedLink={selectedItems[0]}
-                                    onClick={openSharePhotoModal!}
+                                    onClick={openSharePhotoModal}
                                 />
                             )}
-                            {canShareMultiple && (
+                            {canShareMultiple && openSharePhotosIntoAnAlbumModal && (
                                 <PhotosShareMultipleLinkButton
                                     dropDownMenuButton={true}
                                     showIconOnly={false}
-                                    onClick={openSharePhotosIntoAnAlbumModal!}
+                                    onClick={openSharePhotosIntoAnAlbumModal}
                                 />
                             )}
                             <PhotosDetailsButton
@@ -597,11 +638,11 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                                 showIconOnly={false}
                                 selectedLinks={selectedItems}
                             />
-                            {canRemoveAlbum && (
+                            {canRemoveAlbum && removeAlbumPhotos && (
                                 <PhotosRemoveAlbumPhotosButton
                                     dropDownMenuButton={true}
                                     showIconOnly={false}
-                                    onClick={removeAlbumPhotos!}
+                                    onClick={removeAlbumPhotos}
                                 />
                             )}
                             {!album && (
