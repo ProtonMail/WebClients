@@ -8,6 +8,22 @@ export const defaultVPNServersCountData: VPNServersCountData = {
 };
 
 export const getVPNServersCountData = async (api: Api) => {
+    const isDrive = window.location.origin.includes('drive');
+    // This is a temporary solution to quickly enable checkout inside Drive app.
+    // We should find another way to not depend on a VPN endpoint inside the offer viewer.
+    if (isDrive) {
+        return {
+            free: {
+                servers: defaultVPNServersCountData.free.servers,
+                countries: defaultVPNServersCountData.free.countries,
+            },
+            paid: {
+                servers: 15000,
+                countries: 120,
+            },
+        };
+    }
+
     const [serversCount] = await Promise.all([api<VPNServersCount>(queryVPNServersCount())]);
 
     const countPaidVPNServers = Math.floor(serversCount.Servers / 50) * 50;
