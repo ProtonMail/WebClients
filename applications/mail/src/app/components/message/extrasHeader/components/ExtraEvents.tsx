@@ -308,7 +308,7 @@ const ExtraEvents = ({ message }: Props) => {
             {invitations.map((invitation, index: number) => {
                 return (
                     <ExtraEvent
-                        key={index}  
+                        key={index}
                         invitationOrError={invitation}
                         message={message}
                         calendars={calData.calendars}

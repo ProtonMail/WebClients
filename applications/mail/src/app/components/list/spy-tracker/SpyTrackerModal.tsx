@@ -85,10 +85,7 @@ const SpyTrackerModal = ({ message, ...rest }: Props) => {
                             </CollapsibleHeader>
                             <CollapsibleContent>
                                 {tracker.urls.map((url, index) => (
-                                    <p
-                                        className="color-weak text-break my-2"
-                                        key={`${tracker.name}-${index}-tracker`}  
-                                    >
+                                    <p className="color-weak text-break my-2" key={`${tracker.name}-${index}-tracker`}>
                                         {url}
                                     </p>
                                 ))}

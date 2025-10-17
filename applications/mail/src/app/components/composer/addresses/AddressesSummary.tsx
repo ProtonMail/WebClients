@@ -105,7 +105,7 @@ const AddressesSummary = ({
 
                                     return (
                                         <span
-                                            key={i}  
+                                            key={i}
                                             className={clsx(['mr-2 align-top', cannotSend && 'color-danger'])}
                                         >
                                             <span>
