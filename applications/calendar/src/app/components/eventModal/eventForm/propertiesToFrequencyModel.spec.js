@@ -126,6 +126,7 @@ describe('frequency properties to model, weekly recurring rule', () => {
         expect(propertiesToFrequencyModel(rrule, startModel)).toEqual({
             ...dummyFrequencyModel(rrule),
             type: FREQUENCY.WEEKLY,
+            frequency: FREQUENCY.WEEKLY,
         });
     });
 
