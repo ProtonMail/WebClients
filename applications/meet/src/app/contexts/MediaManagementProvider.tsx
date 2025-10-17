@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { useMediaDeviceSelect, useRoomContext } from '@livekit/components-react';
-import { Track } from 'livekit-client';
+import { ConnectionState, Track } from 'livekit-client';
 
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 
@@ -64,6 +64,20 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
     );
 
     const handleDevicePermissionChange = (permissions: { camera?: PermissionState; microphone?: PermissionState }) => {
+        if (permissions.camera === 'denied') {
+            if (room.state === ConnectionState.Connected) {
+                void room.localParticipant.setCameraEnabled(false);
+            } else {
+                setInitialCameraState(false);
+            }
+        }
+        if (permissions.microphone === 'denied') {
+            if (room.state === ConnectionState.Connected) {
+                void room.localParticipant.setMicrophoneEnabled(false);
+            } else {
+                setInitialAudioState(false);
+            }
+        }
         setDevicePermissions((prevPermissions) => ({ ...prevPermissions, ...permissions }));
     };
 
@@ -123,7 +137,7 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
         <MediaManagementContext.Provider
             value={{
                 devicePermissions,
-                setDevicePermissions,
+                handleDevicePermissionChange,
                 microphones,
                 cameras,
                 speakers,
