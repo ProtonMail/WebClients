@@ -34,10 +34,12 @@ import { ProtonSheetsUIStoreProvider } from './ui-store'
 import { useNewUIEnabled } from './new-ui-enabled'
 import { Dialogs } from './components/Dialogs/Dialogs'
 import { Sidebar } from './components/Sidebar/Sidebar'
+import { useFocusSheet } from '@rowsncolumns/spreadsheet'
 
 export type SpreadsheetRef = {
   exportData: (format: DataTypesThatDocumentCanBeExportedAs) => Promise<Uint8Array<ArrayBuffer>>
   replaceLocalSpreadsheetState: (state: unknown) => void
+  focusSheet: (() => void) | undefined
 }
 
 export type SpreadsheetProps = {
@@ -75,6 +77,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
 
   const state = useProtonSheetsState({ docState, locale: LOCALE, functions, isReadonly })
   const { getLocalStateWithoutActions, replaceLocalSpreadsheetState } = useLocalState(state, updateLocalStateToLog)
+  const focusSheet = useFocusSheet()
 
   const exportData = async (format: DataTypesThatDocumentCanBeExportedAs) => {
     if (format === 'yjs') {
@@ -99,7 +102,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     }
     throw new Error(`Spreadsheet cannot be exported to format ${format}`)
   }
-  useImperativeHandle(ref, (): SpreadsheetRef => ({ exportData, replaceLocalSpreadsheetState }))
+  useImperativeHandle(ref, (): SpreadsheetRef => ({ exportData, replaceLocalSpreadsheetState, focusSheet }))
 
   useEffect(() => {
     onEditorLoadResult(TranslatedResult.ok())
