@@ -1,6 +1,7 @@
 /**
  * Currently this is basically a copy of sendEncrypt from the mail repo. TO BE IMPROVED
  */
+import type { AddressKeysByUsage } from '@proton/components/hooks/useGetAddressKeysByUsage';
 import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
@@ -103,16 +104,14 @@ const generateSessionKeyHelper = async (): Promise<SessionKey> => ({
  */
 const encryptDraftBodyPackage = async ({
     body,
-    publicKeys,
-    privateKeys,
+    addressKeysByUsage,
     publicKeysList = [],
 }: {
     body?: string;
-    privateKeys: PrivateKeyReference[];
-    publicKeys: PublicKeyReference[];
+    addressKeysByUsage: AddressKeysByUsage;
     publicKeysList?: (PublicKeyReference | undefined)[];
 }) => {
-    const cleanPublicKeys = [...publicKeys, ...publicKeysList].filter(isTruthy);
+    const cleanPublicKeys = [addressKeysByUsage.encryptionKey, ...publicKeysList].filter(isTruthy);
 
     // pass all public keys to make sure the generated session key is compatible with them all
     const sessionKey = await CryptoProxy.generateSessionKey({ recipientKeys: cleanPublicKeys });
@@ -122,12 +121,12 @@ const encryptDraftBodyPackage = async ({
         textData: body || '',
         stripTrailingSpaces: true,
         sessionKey,
-        signingKeys: privateKeys,
+        signingKeys: addressKeysByUsage.signingKeys,
         format: 'binary',
     });
 
     // Encrypt to each public key separetely to get separate serialized session keys.
-    const encryptedSessionKeys = await Promise.all(
+    const [selfEncryptedSessionKey, ...otherEncryptedSessionKeys] = await Promise.all(
         cleanPublicKeys.map((publicKey) =>
             CryptoProxy.encryptSessionKey({
                 ...sessionKey,
@@ -137,13 +136,11 @@ const encryptDraftBodyPackage = async ({
         )
     );
 
-    // combine message
-    const value = mergeUint8Arrays([...encryptedSessionKeys.slice(0, publicKeys.length), encryptedData]);
-    // _.flowRight(mergeUint8Arrays, _.flatten, _.values)(packets);
+    const armoredBody = await CryptoProxy.getArmoredMessage({
+        binaryMessage: mergeUint8Arrays([selfEncryptedSessionKey, encryptedData]),
+    });
 
-    const armoredBody = await CryptoProxy.getArmoredMessage({ binaryMessage: value });
-
-    return { keys: encryptedSessionKeys.slice(publicKeys.length), encrypted: encryptedData, sessionKey, armoredBody };
+    return { keys: otherEncryptedSessionKeys, encrypted: encryptedData, sessionKey, armoredBody };
 };
 
 /**
@@ -152,11 +149,11 @@ const encryptDraftBodyPackage = async ({
  */
 const encryptBodyPackage = async ({
     body,
-    privateKeys,
+    signingKeys,
     publicKeysList,
 }: {
     body?: string;
-    privateKeys: PrivateKeyReference[];
+    signingKeys: PrivateKeyReference[];
     publicKeysList: (PublicKeyReference | undefined)[];
 }) => {
     const cleanPublicKeys = publicKeysList.filter(isTruthy);
@@ -170,7 +167,7 @@ const encryptBodyPackage = async ({
         textData: body || '',
         stripTrailingSpaces: true,
         sessionKey,
-        signingKeys: privateKeys,
+        signingKeys,
         format: 'binary',
     });
 
@@ -192,15 +189,13 @@ const encryptBodyPackage = async ({
  * Temporary helper to encrypt the draft body. Get rid of this mutating function with refactor
  */
 const encryptDraftBody = async ({
-    publicKeys,
-    privateKeys,
+    addressKeysByUsage,
     message,
 }: {
-    privateKeys: PrivateKeyReference[];
-    publicKeys: PublicKeyReference[];
+    addressKeysByUsage: AddressKeysByUsage;
     message: RequireOnly<Message, 'Body' | 'MIMEType'>;
 }) => {
-    const { armoredBody } = await encryptDraftBodyPackage({ body: message.Body, publicKeys, privateKeys });
+    const { armoredBody } = await encryptDraftBodyPackage({ body: message.Body, addressKeysByUsage });
     message.Body = armoredBody;
 };
 
@@ -210,13 +205,11 @@ const encryptDraftBody = async ({
  */
 const encryptBody = async ({
     pack,
-    privateKeys,
-    publicKeys,
+    addressKeysByUsage,
     message,
 }: {
     pack: PackageDirect;
-    privateKeys: PrivateKeyReference[];
-    publicKeys: PublicKeyReference[];
+    addressKeysByUsage: AddressKeysByUsage;
     message: RequireOnly<Message, 'Body' | 'MIMEType'>;
 }): Promise<void> => {
     const addressKeys = Object.keys(pack.Addresses || {}).filter(isTruthy);
@@ -227,13 +220,12 @@ const encryptBody = async ({
         message.MIMEType === pack.MIMEType
             ? await encryptDraftBodyPackage({
                   body: pack.Body,
-                  publicKeys,
-                  privateKeys,
+                  addressKeysByUsage,
                   publicKeysList,
               })
             : await encryptBodyPackage({
                   body: pack.Body,
-                  privateKeys,
+                  signingKeys: addressKeysByUsage.signingKeys,
                   publicKeysList,
               });
 
@@ -252,28 +244,25 @@ const encryptBody = async ({
     });
 
     if ((pack.Type || 0) & (SEND_CLEAR | SEND_CLEAR_MIME)) {
-        // eslint-disable-next-line require-atomic-updates
         pack.BodyKey = packToBase64(sessionKey);
     }
-    // eslint-disable-next-line require-atomic-updates
+
     pack.Body = uint8ArrayToBase64String(encrypted);
 };
 
 const encryptPackage = async ({
     pack,
-    publicKeys,
-    privateKeys,
+    addressKeysByUsage,
     attachmentKeys,
     message,
 }: {
     pack: PackageDirect;
-    publicKeys: PublicKeyReference[];
-    privateKeys: PrivateKeyReference[];
+    addressKeysByUsage: AddressKeysByUsage;
     attachmentKeys: AttachmentKeys[];
     message: RequireOnly<Message, 'Body' | 'MIMEType'>;
 }): Promise<void> => {
     await Promise.all([
-        encryptBody({ pack, publicKeys, privateKeys, message }),
+        encryptBody({ pack, addressKeysByUsage, message }),
         encryptAttachmentKeys({ pack, attachmentKeys }),
     ]);
 
@@ -297,21 +286,26 @@ const getAttachmentKeys = async (
 export const encryptPackages = async ({
     packages,
     attachments,
-    privateKeys,
-    publicKeys,
+    addressKeysByUsage,
     message,
 }: {
     packages: SimpleMap<PackageDirect>;
     attachments: Attachment[];
-    privateKeys: PrivateKeyReference[];
-    publicKeys: PublicKeyReference[];
+    addressKeysByUsage: AddressKeysByUsage;
     message: RequireOnly<Message, 'Body' | 'MIMEType'>;
 }): Promise<SimpleMap<PackageDirect>> => {
-    const attachmentKeys = await getAttachmentKeys(attachments, privateKeys);
+    const attachmentKeys = await getAttachmentKeys(attachments, addressKeysByUsage.decryptionKeys);
     const packageList = Object.values(packages) as PackageDirect[];
     await Promise.all([
-        ...packageList.map((pack) => encryptPackage({ pack, privateKeys, publicKeys, attachmentKeys, message })),
-        encryptDraftBody({ publicKeys, privateKeys, message }),
+        ...packageList.map((pack) =>
+            encryptPackage({
+                pack,
+                addressKeysByUsage,
+                attachmentKeys,
+                message,
+            })
+        ),
+        encryptDraftBody({ addressKeysByUsage, message }),
     ]);
 
     return packages;
