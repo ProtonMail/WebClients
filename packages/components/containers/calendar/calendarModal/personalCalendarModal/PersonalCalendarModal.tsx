@@ -33,6 +33,7 @@ import { useLoading } from '@proton/hooks';
 import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
 import { getIsCalendarWritable, getIsSubscribedCalendar, getShowDuration } from '@proton/shared/lib/calendar/calendar';
 import { MAX_CHARS_API, MAX_DEFAULT_NOTIFICATIONS } from '@proton/shared/lib/calendar/constants';
+import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eventDefaults';
 import { getSharedCalendarSubHeaderText } from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
 import type { Nullable } from '@proton/shared/lib/interfaces';
 import type { NotificationModel, SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
@@ -251,6 +252,7 @@ export const PersonalCalendarModal = ({
         </InputFieldTwo>
     );
 
+    const eventDuration = getCalendarEventDefaultDuration();
     const defaultEventDurationRow = showDuration ? (
         <InputFieldTwo
             as={SelectTwo}
@@ -261,12 +263,7 @@ export const PersonalCalendarModal = ({
             // @ts-ignore
             onChange={({ value }: SelectChangeEvent<string>) => setModel({ ...model, duration: +value })}
         >
-            {[
-                { text: c('Duration').t`30 minutes`, value: 30 },
-                { text: c('Duration').t`60 minutes`, value: 60 },
-                { text: c('Duration').t`90 minutes`, value: 90 },
-                { text: c('Duration').t`120 minutes`, value: 120 },
-            ].map(({ value, text }) => (
+            {eventDuration.map(({ value, text }) => (
                 <Option key={value} value={value} title={text} />
             ))}
         </InputFieldTwo>

@@ -23,6 +23,7 @@ import AlarmContainer from '../alarms/AlarmContainer';
 import type { CalendarsAlarmsCache } from '../alarms/CacheInterface';
 import { useCalendarsAlarmsEventListeners } from '../alarms/useCalendarAlarmsEventListener';
 import { getCalendarsAlarmsCache } from '../alarms/useCalendarsAlarms';
+import { SchedulingProvider } from '../scheduling/schedulingProvider/SchedulingProvider';
 import CalendarContainer from './CalendarContainer';
 import CalendarStartupModals from './CalendarStartupModals';
 import EventActionContainer from './EventActionContainer';
@@ -114,27 +115,29 @@ const MainContainerSetup = ({
                     </Route>
                     <Route path="/">
                         <CalendarSearchProvider>
-                            <CalendarContainer
-                                tzid={tzid}
-                                setCustomTzid={setCustomTzid}
-                                drawerView={drawerView}
-                                user={user}
-                                subscription={subscription}
-                                addresses={addresses}
-                                activeAddresses={activeAddresses}
-                                visibleCalendars={visibleCalendars}
-                                activeCalendars={activeCalendars}
-                                calendars={calendars}
-                                createEventCalendar={preferredPersonalActiveCalendar}
-                                calendarsEventsCacheRef={calendarsEventsCacheRef}
-                                calendarUserSettings={calendarUserSettings}
-                                userSettings={userSettings}
-                                eventTargetAction={eventTargetAction}
-                                setEventTargetAction={setEventTargetAction}
-                                shareCalendarInvitationRef={shareCalendarInvitationRef}
-                                startupModalOpen={startupModalOpen}
-                                getOpenedMailEvents={getOpenedMailEvents}
-                            />
+                            <SchedulingProvider>
+                                <CalendarContainer
+                                    tzid={tzid}
+                                    setCustomTzid={setCustomTzid}
+                                    drawerView={drawerView}
+                                    user={user}
+                                    subscription={subscription}
+                                    addresses={addresses}
+                                    activeAddresses={activeAddresses}
+                                    visibleCalendars={visibleCalendars}
+                                    activeCalendars={activeCalendars}
+                                    calendars={calendars}
+                                    createEventCalendar={preferredPersonalActiveCalendar}
+                                    calendarsEventsCacheRef={calendarsEventsCacheRef}
+                                    calendarUserSettings={calendarUserSettings}
+                                    userSettings={userSettings}
+                                    eventTargetAction={eventTargetAction}
+                                    setEventTargetAction={setEventTargetAction}
+                                    shareCalendarInvitationRef={shareCalendarInvitationRef}
+                                    startupModalOpen={startupModalOpen}
+                                    getOpenedMailEvents={getOpenedMailEvents}
+                                />
+                            </SchedulingProvider>
                         </CalendarSearchProvider>
                     </Route>
                     <Redirect to="/" />
