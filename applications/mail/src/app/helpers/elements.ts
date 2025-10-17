@@ -383,7 +383,7 @@ export const getElementContextIdentifier = (contextFilter: ContextIdentifier) =>
         ? { ...contextFilter, newsletterSubscriptionID: undefined }
         : contextFilter;
 
-    return JSON.stringify(contextForIdentifier);
+    return JSON.stringify(contextForIdentifier, Object.keys(contextForIdentifier).sort());
 };
 
 export const parseElementContextIdentifier = (contextIdentifier: string): ContextIdentifier | null => {
