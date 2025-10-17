@@ -239,7 +239,6 @@ describe('useSendVerifications', () => {
     });
 
     describe('extended verifications of last-minute preferences', () => {
-         
         it('should warn user on deletion of contact with pinned keys (internal)', async () => {
             const recipient = 'internal.deleted@test.email';
             const cachedPreferences: SendInfo = {

@@ -129,7 +129,7 @@ const PagingControls = ({
                                     const active = page === pageNumber;
                                     return (
                                         <DropdownMenuButton
-                                            key={i}  
+                                            key={i}
                                             loading={loading}
                                             aria-selected={active}
                                             isSelected={active}

@@ -11,7 +11,6 @@ export const findUpwards = (target: HTMLElement, outOfBoundsElement: HTMLElement
             return;
         }
         current = current.parentElement;
-         
     } while (true);
 };
 

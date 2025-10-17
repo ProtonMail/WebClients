@@ -228,13 +228,11 @@ const encryptBody = async (pack: Package, messageKeys: PublicPrivateKey, message
                 passwords: [message.data?.Password || ''],
             });
 
-             
             subPack.BodyKeyPacket = BodyKeyPacket;
         })
     );
 
     if ((pack.Type || 0) & (PACKAGE_TYPE.SEND_CLEAR | PACKAGE_TYPE.SEND_CLEAR_MIME)) {
-         
         pack.BodyKey = packToBase64(sessionKey);
     }
 

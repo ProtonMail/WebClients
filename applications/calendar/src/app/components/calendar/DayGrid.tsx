@@ -186,7 +186,6 @@ const DayGrid = ({
                             const { eventsInRow, eventsInRowStyles, eventsInRowSummary } = eventsPerRows[rowIndex];
 
                             return (
-                                 
                                 <div key={rowIndex} className="flex-1 flex flex-column h-full w-full relative">
                                     <div
                                         data-testid="calendar-month-view:week-row"

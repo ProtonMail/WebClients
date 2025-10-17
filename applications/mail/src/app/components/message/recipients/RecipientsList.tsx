@@ -29,9 +29,7 @@ const RecipientsList = ({
 }: Props) => (
     <Fragment>
         {recipientsOrGroup.map((recipientOrGroup, index) => (
-            <Fragment
-                key={index}  
-            >
+            <Fragment key={index}>
                 <RecipientItem
                     recipientOrGroup={recipientOrGroup}
                     mapStatusIcons={mapStatusIcons}
