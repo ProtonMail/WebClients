@@ -157,7 +157,13 @@ function DocsHeaderForDocument({
       data-testid="docs-header"
     >
       <div className="flex flex-1 flex-nowrap items-center head-480-749:!flex-none head-max-479:!basis-auto">
-        {isHomepageEnabled ? <a href={getAppHref('/', APPS.PROTONDOCS)}>{icon}</a> : icon}
+        {isHomepageEnabled ? (
+          <a className="flex-shrink-0" href={getAppHref('/', APPS.PROTONDOCS)}>
+            {icon}
+          </a>
+        ) : (
+          icon
+        )}
 
         <DocumentTitleDropdown
           documentType={documentType}
@@ -190,12 +196,12 @@ function DocsHeaderForDocument({
             {documentState.getProperty('userRole').canShare() && (
               <Button
                 shape="ghost"
-                className="flex flex-nowrap items-center gap-2 head-max-849:!mr-2 head-max-849:!border head-max-849:!border-[--border-norm] head-max-849:!px-[0.5em]"
+                className="flex flex-nowrap items-center gap-2 border !border-[transparent] head-max-849:!mr-2 head-max-849:!border head-max-849:!border-[--border-norm] head-max-849:!px-[0.5em]"
                 data-testid="share-button"
                 onClick={() => authenticatedController?.openDocumentSharingModal()}
               >
                 <Icon name="user-plus" />
-                <span className="head-max-849:!sr-only">{c('Action').t`Share`}</span>
+                <span className="leading-none head-max-849:!sr-only">{c('Action').t`Share`}</span>
               </Button>
             )}
           </>
@@ -203,7 +209,7 @@ function DocsHeaderForDocument({
 
         {!publicContext && (
           <>
-            {documentState.getProperty('userRole').canComment() && (
+            {documentState.getProperty('userRole').canComment() && documentType !== 'sheet' && (
               <CommentsButton editorController={editorController} />
             )}
             <div className="w-2" />

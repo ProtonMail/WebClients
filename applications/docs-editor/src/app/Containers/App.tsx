@@ -469,6 +469,12 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
           spreadsheetRef.current.replaceLocalSpreadsheetState(state)
         }
       },
+
+      async focusSpreadsheet() {
+        if (spreadsheetRef.current) {
+          spreadsheetRef.current.focusSheet?.()
+        }
+      },
     }
 
     application.logger.info('Setting request handler for bridge')
