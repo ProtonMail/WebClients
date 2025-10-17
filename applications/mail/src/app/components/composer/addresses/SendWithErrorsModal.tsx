@@ -45,10 +45,7 @@ const SendWithErrorsModal = ({ mapErrors, cannotSend, onSubmit, onClose, ...rest
                     </span>
                     <ul>
                         {emails.map((email, index) => (
-                            <li
-                                key={index}  
-                                className={clsx([index !== emails.length && 'mb-2'])}
-                            >
+                            <li key={index} className={clsx([index !== emails.length && 'mb-2'])}>
                                 <span className="block max-w-full">{getErrorMessage(mapErrors[email], email)}</span>
                             </li>
                         ))}
@@ -77,10 +74,7 @@ const SendWithErrorsModal = ({ mapErrors, cannotSend, onSubmit, onClose, ...rest
                 </span>
                 <ul>
                     {emails.map((email, index) => (
-                        <li
-                            key={index}  
-                            className={clsx([index !== emails.length && 'mb-2'])}
-                        >
+                        <li key={index} className={clsx([index !== emails.length && 'mb-2'])}>
                             <span className="block max-w-full">{getErrorMessage(mapErrors[email], email)}</span>
                         </li>
                     ))}

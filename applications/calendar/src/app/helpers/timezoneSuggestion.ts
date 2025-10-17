@@ -25,7 +25,6 @@ export const saveLastTimezoneSuggestion = (key: string) => {
     try {
         const timestamp = +new Date();
         window.localStorage.setItem(key, `${timestamp}`);
-         
     } catch (e: any) {}
 };
 

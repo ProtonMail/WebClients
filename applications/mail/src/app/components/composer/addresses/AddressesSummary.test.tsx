@@ -17,7 +17,6 @@ const props = {
     contacts: [],
     contactGroups: [],
     onFocus: noop,
-     
     toggleExpanded: (_type: RecipientType) => noop,
     disabled: false,
     handleContactModal: jest.fn(),

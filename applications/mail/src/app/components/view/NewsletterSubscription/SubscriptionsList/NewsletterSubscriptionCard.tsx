@@ -92,7 +92,6 @@ export const NewsletterSubscriptionCard = ({ subscription, isDeleting }: Props) 
                         isActive ? 'border-primary' : 'shadow-norm border-transparent',
                         isDeleting && 'subscription-card--deleted'
                     )}
-                     
                     tabIndex={isDeleting ? -1 : 0}
                     aria-hidden={isDeleting}
                     aria-labelledby={`subscription-card-title-${subscription.ID}`}

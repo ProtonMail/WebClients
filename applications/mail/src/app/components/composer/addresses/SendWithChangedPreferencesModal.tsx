@@ -42,10 +42,7 @@ const SendWithChangedPreferencesModal = ({ emails, changeType, onSubmit, onClose
                 <br />
                 <ul>
                     {emails.map((email, index) => (
-                        <li
-                            key={index}  
-                            className={clsx([index !== emails.length && 'mb-2'])}
-                        >
+                        <li key={index} className={clsx([index !== emails.length && 'mb-2'])}>
                             <span className="block max-w-full">{email}</span>
                         </li>
                     ))}

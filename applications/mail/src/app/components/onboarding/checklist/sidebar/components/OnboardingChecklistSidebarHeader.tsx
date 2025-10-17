@@ -36,7 +36,6 @@ const OnboardingChecklistSidebarHeader = ({
     const itemsCompletedCount = itemsToComplete.filter((key) => items.has(key)).length;
 
     const action = canCloseChecklist ? (
-         
         <button
             data-testid="onboarding-checklist-header-hide-button"
             className="flex navigation-link-header-group-control shrink-0 mt-1"
