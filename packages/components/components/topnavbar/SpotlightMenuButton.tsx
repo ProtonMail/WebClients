@@ -191,7 +191,7 @@ export const SpotlightMenuButton = ({
                     title={dismissTitle}
                     className={clsx({ 'button-for-icon': viewportWidth['<=medium'] })}
                     onClick={onDismiss}
-                    icon={<Icon name="cross" style={{ margin: 0 }} />}
+                    icon={<Icon name="cross" className="m-0" />}
                 />
             </ButtonGroup>
         </Spotlight>

@@ -41,7 +41,7 @@ const SecureYourAccountModal = (props: Props) => {
                 subline={<span className="text-sm">{c('Header').t`Save your Recovery Kit to continue`}</span>}
             />
             <ModalContent className="px-4 mt-6">
-                <img src={recoveryKitImg} alt="" className="mb-6" style={{ width: '100%' }} />
+                <img src={recoveryKitImg} alt="" className="mb-6 w-full" />
                 <div className="flex flex-column gap-2">
                     <div>
                         {getBoldFormattedText(
@@ -55,7 +55,7 @@ const SecureYourAccountModal = (props: Props) => {
                     </div>
                 </div>
                 <InlineLinkButton key="download-pdf-button" onClick={handleDownload} className="p-4 my-2">
-                    <Icon name="arrow-down-line" alt={c('Action').t`Download PDF`} />
+                    <Icon name="arrow-down-line" />
                     {c('Secure Your Account').t`Download PDF (${size})`}
                 </InlineLinkButton>
                 <div className="mb-4">
