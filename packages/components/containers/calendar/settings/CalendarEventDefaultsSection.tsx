@@ -28,6 +28,7 @@ import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proto
 import { modelToNotifications } from '@proton/shared/lib/calendar/alarms/modelToNotifications';
 import { getIsHolidaysCalendar, getShowDuration } from '@proton/shared/lib/calendar/calendar';
 import { CALENDAR_SHARE_BUSY_TIME_SLOTS, MAX_DEFAULT_NOTIFICATIONS } from '@proton/shared/lib/calendar/constants';
+import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eventDefaults';
 import type {
     CalendarBootstrap,
     NotificationModel,
@@ -124,6 +125,8 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) =
         setHasTouchedFullDayNotifications(false);
     }, [bootstrap]);
 
+    const eventDuration = getCalendarEventDefaultDuration();
+
     return (
         <SettingsSectionWide className="container-section-sticky-section">
             <div className="h2 mb-1 text-bold">{c('Default calendar event settings section title')
@@ -172,12 +175,7 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) =
                             // @ts-ignore
                             onChange={handleChangeDuration}
                         >
-                            {[
-                                { text: c('Duration').t`30 minutes`, value: 30 },
-                                { text: c('Duration').t`60 minutes`, value: 60 },
-                                { text: c('Duration').t`90 minutes`, value: 90 },
-                                { text: c('Duration').t`120 minutes`, value: 120 },
-                            ].map(({ value, text }) => (
+                            {eventDuration.map(({ value, text }) => (
                                 <Option key={value} value={value} title={text} />
                             ))}
                         </InputFieldTwo>
