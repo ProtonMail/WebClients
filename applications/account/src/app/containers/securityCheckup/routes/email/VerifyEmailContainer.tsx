@@ -43,9 +43,8 @@ const VerifyEmailContainer = () => {
 
                 <div className="mt-6">
                     {hasSentinelEnabled
-                        ? // TODO: copy:
-                          c('Safety review')
-                              .t`${BRAND_NAME} will use this address to keep you updated on your account security..`
+                        ? c('Safety review')
+                              .t`${BRAND_NAME} will use this address to keep you updated on your account security.`
                         : c('Safety review')
                               .t`${BRAND_NAME} will use this address to send a reset code by email when you reset your password.`}
                 </div>
