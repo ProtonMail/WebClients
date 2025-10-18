@@ -18,7 +18,7 @@ interface BookingsContextValue {
     bookingSlots: Slot[];
     addBookingSlot: (startDate: Date, eventDuration: number) => void;
     removeBookingSlot: (slotId: string) => void;
-    convertSlotToCalendarViewEvents: (createEventCalendar?: VisualCalendar) => CalendarViewEvent[];
+    convertSlotToCalendarViewEvents: (visualCalendar?: VisualCalendar) => CalendarViewEvent[];
 }
 
 const BookingsContext = createContext<BookingsContextValue | undefined>(undefined);
@@ -53,8 +53,8 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         setBookingSlots(bookingSlots.filter((slot) => slot.id !== slotId));
     };
 
-    const convertSlotToCalendarViewEvents = (createEventCalendar?: VisualCalendar): CalendarViewEvent[] => {
-        if (!createEventCalendar) {
+    const convertSlotToCalendarViewEvents = (visualCalendar?: VisualCalendar): CalendarViewEvent[] => {
+        if (!visualCalendar) {
             return [];
         }
 
@@ -66,7 +66,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             end: slot.end,
             data: {
                 // TODO change this to the selected visual calendar coming from the form
-                calendarData: createEventCalendar,
+                calendarData: visualCalendar,
             },
         }));
     };
