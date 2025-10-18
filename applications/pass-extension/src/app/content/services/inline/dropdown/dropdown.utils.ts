@@ -1,8 +1,6 @@
 import { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
-import { actionTrap } from 'proton-pass-extension/app/content/utils/action-trap';
-import { isActiveElement } from 'proton-pass-extension/app/content/utils/nodes';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
@@ -10,6 +8,7 @@ import { isShadowRoot } from '@proton/pass/fathom';
 import { deriveAliasPrefix } from '@proton/pass/lib/alias/alias.utils';
 import { clientStatusResolved } from '@proton/pass/lib/client';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
+import { isActiveElement } from '@proton/pass/utils/dom/active-element';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { nextTick, onNextTick } from '@proton/pass/utils/time/next-tick';
@@ -24,7 +23,7 @@ import type { DropdownActions, DropdownAnchor, DropdownRequest } from './dropdow
  * Uses actionTrap to block interactions during transitions and nextTick
  * to ensure DOM state has settled before focus/icon operations. */
 export const handleOnClosed = (field: FieldHandle, refocus: boolean) => {
-    if (!refocus) actionTrap(field.element, 1);
+    if (!refocus) field.preventAction(1);
     nextTick(() => {
         if (refocus) field.focus();
         else if (!isActiveElement(field.element)) field.icon?.detach();

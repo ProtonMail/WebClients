@@ -1,16 +1,16 @@
 import { withContext } from 'proton-pass-extension/app/content/context/context';
-import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
-import type { FormTracker } from 'proton-pass-extension/app/content/services/form/form.tracker';
 import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
-import { actionPrevented } from 'proton-pass-extension/app/content/utils/action-trap';
-import { isActiveElement } from 'proton-pass-extension/app/content/utils/nodes';
 
 import { FieldType } from '@proton/pass/fathom/labels';
 import type { MaybeNull } from '@proton/pass/types';
+import { isActiveElement } from '@proton/pass/utils/dom/active-element';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { onNextTick } from '@proton/pass/utils/time/next-tick';
 import throttle from '@proton/utils/throttle';
+
+import type { FieldHandle } from './field';
+import type { FormTracker } from './form.tracker';
 
 export type FieldTrackerState = { focusRequest: MaybeNull<number> };
 
@@ -46,7 +46,7 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
             const { action } = field;
             if (!ctx || !action) return;
 
-            if (actionPrevented(field.element)) return;
+            if (field.actionPrevented) return;
 
             const req = requestAnimationFrame(() => {
                 ctx.service.inline.icon.attach(field);
@@ -73,7 +73,7 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
      * Avoid triggering if field action is prevented during an autofill request. */
     const onBlur = onNextTick(
         withContext(async (ctx) => {
-            if (!ctx || actionPrevented(field.element)) return;
+            if (!ctx || field.actionPrevented) return;
             if (state.focusRequest) cancelAnimationFrame(state.focusRequest);
 
             const { focused, attachedField, visible } = await ctx.service.inline.dropdown.getState();
@@ -90,10 +90,10 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
     /* on input change : close the dropdown if it was visible
      * and update the field's handle tracked value */
     const onInput = withContext<(evt: Event) => void>((ctx) => {
-        const { action, element } = field;
+        const { action } = field;
         const { value } = field.element;
 
-        if (!actionPrevented(element)) {
+        if (!field.actionPrevented) {
             if (!action?.filterable) ctx?.service.inline.dropdown.close({ type: 'field', field });
             else syncAutofillFilter(value);
         }

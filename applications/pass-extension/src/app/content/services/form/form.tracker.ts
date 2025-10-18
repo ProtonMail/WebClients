@@ -1,7 +1,4 @@
 import { withContext } from 'proton-pass-extension/app/content/context/context';
-import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
-import type { FormHandle } from 'proton-pass-extension/app/content/services/form/form';
-import { actionTrap } from 'proton-pass-extension/app/content/utils/action-trap';
 import type { FrameMessageHandler } from 'proton-pass-extension/app/content/utils/frame.message-broker';
 import { stage, stash, validateFormCredentials } from 'proton-pass-extension/lib/utils/form-entry';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
@@ -17,6 +14,9 @@ import { logger } from '@proton/pass/utils/logger';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import lastItem from '@proton/utils/lastItem';
 import noop from '@proton/utils/noop';
+
+import type { FieldHandle } from './field';
+import type { FormHandle } from './form';
 
 /** Idle timeout check after a submit: this timeout is used
  * to identify a failed submission when we cannot determine it
@@ -201,7 +201,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
         /** Certain websites (ie: login.live.com) will refocus input
          * fields on form submit. This could potentially result in
          * dropdown actions being triggered, so we create a trap */
-        form.getFields().forEach(({ element }) => actionTrap(element));
+        form.getFields().forEach((field) => field.preventAction());
         ctx?.service.inline.dropdown.close();
 
         await processForm({ partial: true, submit: true });
