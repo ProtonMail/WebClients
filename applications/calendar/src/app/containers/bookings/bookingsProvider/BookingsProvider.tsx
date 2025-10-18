@@ -1,22 +1,31 @@
 import { createContext, useContext, useState } from 'react';
 import type { ReactNode } from 'react';
 
+import { addMilliseconds } from 'date-fns';
+
 import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
-import { BookingState } from './interface';
+import { BookingState, type Slot } from './interface';
 
 interface BookingsContextValue {
+    isBookingActive: boolean;
     createNewBookingsPage: () => void;
     bookingsState: BookingState;
     writeableCalendars: VisualCalendar[];
     loadingWriteableCalendars: boolean;
+    bookingSlots: Slot[];
+    addBookingSlot: (startDate: Date, eventDuration: number) => void;
+    removeBookingSlot: (slotId: string) => void;
 }
 
 const BookingsContext = createContext<BookingsContextValue | undefined>(undefined);
 
+// TODO maybe a reset booking slot method might be useful
+// TODO change the view to weekly view when starting a new booking page
 export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     const [bookingsState, setBookingsState] = useState<BookingState>(BookingState.OFF);
+    const [bookingSlots, setBookingSlots] = useState<Slot[]>([]);
 
     const [writeableCalendars = [], loadingWriteableCalendars] = useWriteableCalendars();
 
@@ -24,11 +33,33 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         setBookingsState(BookingState.CREATE_NEW);
     };
 
+    // TODO what should happen if we add a slot in the past
+    const addBookingSlot = (startDate: Date, eventDuration: number) => {
+        const duration = Math.min(eventDuration, 120 * 60 * 1000);
+
+        setBookingSlots([
+            ...bookingSlots,
+            {
+                id: `booking-slot-${startDate.getTime().toString()}`,
+                start: startDate,
+                end: addMilliseconds(startDate, duration),
+            },
+        ]);
+    };
+
+    const removeBookingSlot = (slotId: string) => {
+        setBookingSlots(bookingSlots.filter((slot) => slot.id !== slotId));
+    };
+
     const value: BookingsContextValue = {
-        createNewBookingsPage: createNewBookingsPage,
-        bookingsState: bookingsState,
+        isBookingActive: bookingsState === BookingState.CREATE_NEW || bookingsState === BookingState.EDIT_EXISTING,
+        createNewBookingsPage,
+        bookingsState,
         writeableCalendars,
         loadingWriteableCalendars,
+        bookingSlots,
+        addBookingSlot,
+        removeBookingSlot,
     };
 
     return <BookingsContext.Provider value={value}>{children}</BookingsContext.Provider>;

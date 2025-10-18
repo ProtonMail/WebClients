@@ -3,3 +3,9 @@ export enum BookingState {
     CREATE_NEW = 'CREATE_NEW',
     EDIT_EXISTING = 'EDIT_EXISTING',
 }
+
+export interface Slot {
+    id: string;
+    start: Date;
+    end: Date;
+}
