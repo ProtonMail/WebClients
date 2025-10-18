@@ -1,4 +1,6 @@
-import { isActiveElement, selectNodeFromPath } from './nodes';
+import { isActiveElement } from '@proton/pass/utils/dom/active-element';
+
+import { selectNodeFromPath } from './detector.utils';
 
 describe('`selectNodeFromPath`', () => {
     beforeEach(() => {

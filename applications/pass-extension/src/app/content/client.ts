@@ -10,14 +10,15 @@
  * Performance is optimized by freeing resources in inactive tabs through complete client
  * destruction on tab hiding. A continuous activity probe ensures connection health with the
  * service worker through periodic pings for long-running tabs. */
-import { createClientController } from 'proton-pass-extension/app/content/client.controller';
-import { createContentScriptClient as clientFactory } from 'proton-pass-extension/app/content/services/client';
-import { registerCustomElements } from 'proton-pass-extension/app/content/services/inline/custom-elements/register';
 import 'proton-pass-extension/lib/polyfills/shim';
 
 import { isMainFrame } from '@proton/pass/utils/dom/is-main-frame';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import noop from '@proton/utils/noop';
+
+import { createContentScriptClient as clientFactory } from './services/client/client';
+import { createClientController } from './services/client/client.controller';
+import { registerCustomElements } from './services/inline/custom-elements/register';
 
 (async () => {
     const elements = await registerCustomElements();

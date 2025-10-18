@@ -1,5 +1,4 @@
 import {
-    getActiveElement,
     hasProcessableFields,
     hasProcessableNodes,
     isAddedNodeOfInterest,
@@ -7,7 +6,7 @@ import {
     isParentOfInterest,
     isRemovedNodeOfInterest,
     isUnprocessedInput,
-} from 'proton-pass-extension/app/content/utils/nodes';
+} from 'proton-pass-extension/app/content/services/detector/detector.utils';
 
 import {
     getIgnoredParent,
@@ -18,6 +17,7 @@ import {
     removeProcessedFlag,
 } from '@proton/pass/fathom';
 import type { MaybeNull } from '@proton/pass/types';
+import { getActiveElement } from '@proton/pass/utils/dom/active-element';
 import { isHTMLElement, isInputElement } from '@proton/pass/utils/dom/predicates';
 import { debounceBuffer } from '@proton/pass/utils/fp/control';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
@@ -44,13 +44,13 @@ const getObserverConfig = (attributeFilter: string[]): MutationObserverInit => (
     attributeOldValue: true,
 });
 
-export type PageObserver = {
+export type ClientObserver = {
     observe: () => void;
     destroy: () => void;
     subscribe: (fn: Subscriber<string>, options?: { once?: true }) => () => void;
 };
 
-export const createPageObserver = (): PageObserver => {
+export const createClientObserver = (): ClientObserver => {
     const pubsub = createPubSub<string>();
     const listeners = createListenerStore();
     const state: PageObserverState = {

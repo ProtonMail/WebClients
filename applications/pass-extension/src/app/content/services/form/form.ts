@@ -2,11 +2,8 @@ import { FORM_TRACKER_CONFIG, NotificationAction } from 'proton-pass-extension/a
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { resolveIdentitySections } from 'proton-pass-extension/app/content/services/autofill/autofill.identity.sections';
 import { canAutosave } from 'proton-pass-extension/app/content/services/autosave/autosave.utils';
-import type { DetectedField, DetectedForm } from 'proton-pass-extension/app/content/services/form/detector';
-import type { FormTracker } from 'proton-pass-extension/app/content/services/form/form.tracker';
-import { createFormTracker } from 'proton-pass-extension/app/content/services/form/form.tracker';
-import { actionTrap } from 'proton-pass-extension/app/content/utils/action-trap';
-import { hasProcessableFields, isActiveElement } from 'proton-pass-extension/app/content/utils/nodes';
+import type { DetectedField, DetectedForm } from 'proton-pass-extension/app/content/services/detector/detector.service';
+import { hasProcessableFields } from 'proton-pass-extension/app/content/services/detector/detector.utils';
 
 import {
     buttonSelector,
@@ -18,6 +15,7 @@ import {
 import type { FormType } from '@proton/pass/fathom/labels';
 import { FieldType } from '@proton/pass/fathom/labels';
 import type { Maybe } from '@proton/pass/types';
+import { isActiveElement } from '@proton/pass/utils/dom/active-element';
 import { isElementBusy, isParentBusy } from '@proton/pass/utils/dom/form';
 import { scrollableParent } from '@proton/pass/utils/dom/scroll';
 import { getOverlayZIndex } from '@proton/pass/utils/dom/zindex';
@@ -29,6 +27,8 @@ import debounce from '@proton/utils/debounce';
 
 import type { FieldElement, FieldHandle } from './field';
 import { createFieldHandles } from './field';
+import type { FormTracker } from './form.tracker';
+import { createFormTracker } from './form.tracker';
 
 export type FormHandlesProps = { zIndex: number };
 
@@ -133,8 +133,7 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
          * blocks actions, removes the field from tracking, and clears its flags. */
         detachField: withContext((ctx, element) => {
             const field = formHandle.fields.get(element);
-
-            actionTrap(element);
+            field?.preventAction();
             field?.detach();
             formHandle.fields.delete(element);
             removeClassifierFlags(element, { preserveIgnored: false });

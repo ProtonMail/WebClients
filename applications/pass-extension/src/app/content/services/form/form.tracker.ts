@@ -1,5 +1,5 @@
 import { withContext } from 'proton-pass-extension/app/content/context/context';
-import type { FrameMessageHandler } from 'proton-pass-extension/app/content/utils/frame.message-broker';
+import type { FrameMessageHandler } from 'proton-pass-extension/app/content/services/client/client.channel';
 import { stage, stash, validateFormCredentials } from 'proton-pass-extension/lib/utils/form-entry';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 

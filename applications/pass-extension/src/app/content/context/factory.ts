@@ -1,13 +1,13 @@
-import type { ClientController } from 'proton-pass-extension/app/content/client.controller';
 import { createAutofillService } from 'proton-pass-extension/app/content/services/autofill/autofill.service';
 import { createAutosaveRelay } from 'proton-pass-extension/app/content/services/autosave/autosave.relay';
 import { createAutosaveService } from 'proton-pass-extension/app/content/services/autosave/autosave.service';
-import { createDetectorService } from 'proton-pass-extension/app/content/services/form/detector';
-import { createFormManager } from 'proton-pass-extension/app/content/services/form/manager';
+import type { ClientController } from 'proton-pass-extension/app/content/services/client/client.controller';
+import { createDetectorService } from 'proton-pass-extension/app/content/services/detector/detector.service';
+import { IGNORED_TAGS } from 'proton-pass-extension/app/content/services/detector/detector.utils';
+import { createFormManager } from 'proton-pass-extension/app/content/services/form/form.manager';
 import { createInlineRelay } from 'proton-pass-extension/app/content/services/inline/inline.relay';
 import { createInlineService } from 'proton-pass-extension/app/content/services/inline/inline.service';
-import { createWebAuthNService } from 'proton-pass-extension/app/content/services/webauthn';
-import { IGNORED_TAGS } from 'proton-pass-extension/app/content/utils/nodes';
+import { createPasskeyService } from 'proton-pass-extension/app/content/services/webauthn/passkey.service';
 import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 
 import { FieldType } from '@proton/pass/fathom/labels';
@@ -85,7 +85,7 @@ export const createContentScriptContext = (options: ContentScriptContextFactoryO
             }),
 
             inline: options.mainFrame ? createInlineService(options) : createInlineRelay(options),
-            webauthn: options.mainFrame ? createWebAuthNService() : undefined,
+            passkey: options.mainFrame ? createPasskeyService() : undefined,
         },
 
         destroy: options.destroy,

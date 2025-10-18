@@ -2,9 +2,9 @@ import { NotificationAction } from 'proton-pass-extension/app/content/constants.
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { ContentScriptContextFactoryOptions } from 'proton-pass-extension/app/content/context/factory';
 import { autofillCCFields } from 'proton-pass-extension/app/content/services/autofill/autofill.cc';
+import type { FrameMessageHandler } from 'proton-pass-extension/app/content/services/client/client.channel';
 import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
 import type { FormHandle } from 'proton-pass-extension/app/content/services/form/form';
-import type { FrameMessageHandler } from 'proton-pass-extension/app/content/utils/frame.message-broker';
 import { sendContentScriptTelemetry } from 'proton-pass-extension/app/content/utils/telemetry';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import type { AutofillRequest, AutofillResult } from 'proton-pass-extension/types/autofill';
