@@ -48,8 +48,9 @@ export const createFieldAnchor = (element: HTMLElement) => {
         revalidate: () => {
             const next = findInputBoundingElement(element);
             if (next !== state.anchor) {
-                state.anchor = next;
                 disconnect();
+                state.anchor = next;
+                connect();
             }
         },
         connect,

@@ -2,25 +2,26 @@ import { DropdownAction } from 'proton-pass-extension/app/content/constants.runt
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { AutofillOptions } from 'proton-pass-extension/app/content/services/autofill/autofill.utils';
 import { createAutofill } from 'proton-pass-extension/app/content/services/autofill/autofill.utils';
-import { type FieldAnchor, createFieldAnchor } from 'proton-pass-extension/app/content/services/form/field.anchor';
-import type { FieldTracker } from 'proton-pass-extension/app/content/services/form/field.tracker';
-import { createFieldTracker } from 'proton-pass-extension/app/content/services/form/field.tracker';
-import type { FormHandle } from 'proton-pass-extension/app/content/services/form/form';
-import type { FormTracker } from 'proton-pass-extension/app/content/services/form/form.tracker';
 import type { IconController } from 'proton-pass-extension/app/content/services/inline/icon/icon.controller';
-import { actionTrap } from 'proton-pass-extension/app/content/utils/action-trap';
 import { getFrameParentVisibility } from 'proton-pass-extension/app/content/utils/frame';
-import { isActiveElement } from 'proton-pass-extension/app/content/utils/nodes';
 import type { FrameField } from 'proton-pass-extension/types/frames';
 
 import { isVisible } from '@proton/pass/fathom';
 import type { FieldType, FormType, IdentityFieldType } from '@proton/pass/fathom/labels';
 import { enableLoginAutofill } from '@proton/pass/lib/settings/utils';
-import type { Maybe, MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types';
+import { isActiveElement } from '@proton/pass/utils/dom/active-element';
 import { isInputElement } from '@proton/pass/utils/dom/predicates';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { nextTick } from '@proton/pass/utils/time/next-tick';
 import noop from '@proton/utils/noop';
+
+import { type FieldAnchor, createFieldAnchor } from './field.anchor';
+import type { FieldTracker } from './field.tracker';
+import { createFieldTracker } from './field.tracker';
+import { actionPrevented, actionTrap } from './field.utils';
+import type { FormHandle } from './form';
+import type { FormTracker } from './form.tracker';
 
 type CreateFieldHandlesOptions = {
     element: HTMLInputElement;
@@ -37,6 +38,7 @@ export interface FieldHandle {
     fieldId: string;
     /** action attached for this field */
     action: MaybeNull<FieldAction>;
+    actionPrevented: boolean;
     /** Indicates the autofill status of the field. A value of `null`
      * means the current field value was a user input. Otherwise, it
      * stores the FieldType that triggered the autofilled value */
@@ -64,6 +66,7 @@ export interface FieldHandle {
     getFormHandle: () => FormHandle;
     getVisibility: () => Promise<boolean>;
     matches: (field?: FrameField) => boolean;
+    preventAction: (duration?: number) => () => void;
     setAction: (action: MaybeNull<FieldAction>) => void;
     setIcon: (icon: MaybeNull<IconController>) => void;
     setValue: (value: string) => void;
@@ -90,7 +93,7 @@ const canProcessAction = withContext<(action: DropdownAction) => boolean>((ctx, 
 });
 
 export const createFieldHandles = ({ element, fieldType, getFormHandle }: CreateFieldHandlesOptions): FieldHandle => {
-    let anchor: Maybe<FieldAnchor>;
+    let anchor: MaybeNull<FieldAnchor> = null;
 
     const field: FieldHandle = {
         fieldId: uniqueId(8),
@@ -102,16 +105,24 @@ export const createFieldHandles = ({ element, fieldType, getFormHandle }: Create
         autofilled: null,
         tracked: false,
         tracker: null,
+
+        get actionPrevented() {
+            return actionPrevented(element);
+        },
+
         getFormHandle,
+
         getAnchor: (options) => {
             if (!anchor) anchor = createFieldAnchor(element);
             else if (options?.reflow) anchor.revalidate();
             return anchor;
         },
+
         setValue: (value) => {
             field.autofilled = null;
             return (field.value = value);
         },
+
         setAction: (action) => {
             if (!action) field.action = null;
             else field.action = canProcessAction(action.type) ? action : null;
@@ -125,7 +136,7 @@ export const createFieldHandles = ({ element, fieldType, getFormHandle }: Create
          * so we rely on adding custom properties on the field element itself */
         focus(options) {
             const isFocusedField = isActiveElement(field.element);
-            if (options?.preventAction) actionTrap(field.element);
+            if (options?.preventAction) field.preventAction();
             field.element.focus({ preventScroll: true });
 
             if (isFocusedField) {
@@ -144,7 +155,7 @@ export const createFieldHandles = ({ element, fieldType, getFormHandle }: Create
                 .getVisibility()
                 .then(async (visible) => {
                     if (visible) {
-                        const release = actionTrap(element);
+                        const release = field.preventAction();
                         await createAutofill(element)(value, options);
                         if (value) field.autofilled = options?.type ?? field.fieldType;
                         nextTick(release);
@@ -180,6 +191,7 @@ export const createFieldHandles = ({ element, fieldType, getFormHandle }: Create
             field.tracker?.detach();
             field.tracker = null;
             field.icon?.detach();
+            anchor = null;
         },
 
         matches: (frameField) => {
@@ -187,6 +199,8 @@ export const createFieldHandles = ({ element, fieldType, getFormHandle }: Create
             const { fieldId, formId } = frameField;
             return field.fieldId === fieldId && field.getFormHandle().formId === formId;
         },
+
+        preventAction: (duration = 250) => actionTrap(element, duration),
 
         sync: () => {
             /** If settings or feature flags have changed, this field's action may
