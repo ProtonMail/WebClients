@@ -450,7 +450,7 @@ const InteractiveCalendarView = ({
         setEventTargetAction,
     });
 
-    const { isBookingActive, addBookingSlot, convertSlotToCalendarViewEvents } = useBookings();
+    const { isBookingActive, addBookingSlot, removeBookingSlot, convertSlotToCalendarViewEvents } = useBookings();
 
     // Handle events coming from outside if calendar app is open in the drawer
     useOpenEventsFromMail({
@@ -777,6 +777,11 @@ const InteractiveCalendarView = ({
             let initialModel = newTemporaryModel;
 
             return (mouseUpAction: MouseUpAction) => {
+                if (isBookingActive) {
+                    removeBookingSlot(event.uniqueId);
+                    return;
+                }
+
                 if (mouseUpAction.action === ACTIONS.EVENT_UP) {
                     const { idx } = mouseUpAction.payload;
 
