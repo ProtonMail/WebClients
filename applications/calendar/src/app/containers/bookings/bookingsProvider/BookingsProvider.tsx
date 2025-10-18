@@ -6,6 +6,7 @@ import { addMilliseconds } from 'date-fns';
 import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
+import type { CalendarViewEvent } from '../../calendar/interface';
 import { BookingState, type Slot } from './interface';
 
 interface BookingsContextValue {
@@ -17,6 +18,7 @@ interface BookingsContextValue {
     bookingSlots: Slot[];
     addBookingSlot: (startDate: Date, eventDuration: number) => void;
     removeBookingSlot: (slotId: string) => void;
+    convertSlotToCalendarViewEvents: (createEventCalendar?: VisualCalendar) => CalendarViewEvent[];
 }
 
 const BookingsContext = createContext<BookingsContextValue | undefined>(undefined);
@@ -51,6 +53,24 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         setBookingSlots(bookingSlots.filter((slot) => slot.id !== slotId));
     };
 
+    const convertSlotToCalendarViewEvents = (createEventCalendar?: VisualCalendar): CalendarViewEvent[] => {
+        if (!createEventCalendar) {
+            return [];
+        }
+
+        return bookingSlots.map((slot: any) => ({
+            uniqueId: slot.id,
+            isAllDay: false,
+            isAllPartDay: false,
+            start: slot.start,
+            end: slot.end,
+            data: {
+                // TODO change this to the selected visual calendar coming from the form
+                calendarData: createEventCalendar,
+            },
+        }));
+    };
+
     const value: BookingsContextValue = {
         isBookingActive: bookingsState === BookingState.CREATE_NEW || bookingsState === BookingState.EDIT_EXISTING,
         createNewBookingsPage,
@@ -60,6 +80,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         bookingSlots,
         addBookingSlot,
         removeBookingSlot,
+        convertSlotToCalendarViewEvents,
     };
 
     return <BookingsContext.Provider value={value}>{children}</BookingsContext.Provider>;

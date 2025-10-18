@@ -450,7 +450,7 @@ const InteractiveCalendarView = ({
         setEventTargetAction,
     });
 
-    const { isBookingActive, addBookingSlot } = useBookings();
+    const { isBookingActive, addBookingSlot, convertSlotToCalendarViewEvents } = useBookings();
 
     // Handle events coming from outside if calendar app is open in the drawer
     useOpenEventsFromMail({
@@ -496,8 +496,13 @@ const InteractiveCalendarView = ({
     useBeforeUnload(isInTemporaryBlocking ? c('Alert').t`By leaving now, you will lose your event.` : '');
 
     const sortedEvents = useMemo(() => {
+        if (isBookingActive) {
+            const booklyCalendarEvents = convertSlotToCalendarViewEvents(createEventCalendar);
+            return sortEvents(booklyCalendarEvents);
+        }
+
         return sortEvents(events.concat());
-    }, [events]);
+    }, [events, isBookingActive, convertSlotToCalendarViewEvents, createEventCalendar]);
 
     const isProcessing = useCallback(
         (uniqueId: string) => {
