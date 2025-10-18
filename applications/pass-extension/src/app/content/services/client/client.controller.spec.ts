@@ -2,8 +2,8 @@ import browser, { clearBrowserMocks } from 'proton-pass-extension/__mocks__/webe
 import type {
     ContentScriptClient,
     ContentScriptClientFactoryOptions,
-} from 'proton-pass-extension/app/content/services/client';
-import { createPageObserver } from 'proton-pass-extension/app/content/utils/page-observer';
+} from 'proton-pass-extension/app/content/services/client/client';
+import { createClientObserver } from 'proton-pass-extension/app/content/services/client/client.observer';
 import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
@@ -13,9 +13,9 @@ import { type ClientController, createClientController } from './client.controll
 
 const TEST_SCRIPT_ID = 'test-script-id';
 
-jest.mock('proton-pass-extension/app/content/utils/page-observer');
+jest.mock('proton-pass-extension/app/content/services/client/client.observer');
 
-const mockCreatePageObserver = createPageObserver as jest.MockedFunction<typeof createPageObserver>;
+const mockCreatePageObserver = createClientObserver as jest.MockedFunction<typeof createClientObserver>;
 const mockObserver = { observe: jest.fn(), destroy: jest.fn(), subscribe: jest.fn() };
 const mockClient = { context: {} as any, start: jest.fn(() => Promise.resolve()), destroy: jest.fn() };
 const mockClientFactory = jest.fn((_: ContentScriptClientFactoryOptions) => mockClient as ContentScriptClient);

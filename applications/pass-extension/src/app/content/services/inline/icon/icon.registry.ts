@@ -13,8 +13,7 @@ export interface IconRegistry {
 }
 
 /** Icon registry ensures only one icon can be injected at a time.
- * We keep a reference on the field itself
- */
+ * We keep a reference on the field itself */
 export const createIconRegistry = (dropdown: DropdownHandler, tag: string): IconRegistry => {
     const icon: IconRef = { current: null };
 

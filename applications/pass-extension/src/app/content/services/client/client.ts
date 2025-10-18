@@ -1,10 +1,10 @@
-import type { ClientController } from 'proton-pass-extension/app/content/client.controller';
 import { CLIENT_SCRIPT_READY_EVENT } from 'proton-pass-extension/app/content/constants.static';
 import { CSContext } from 'proton-pass-extension/app/content/context/context';
 import { createContentScriptContext } from 'proton-pass-extension/app/content/context/factory';
 import type { ContentScriptContext } from 'proton-pass-extension/app/content/context/types';
+import type { FrameMessageHandler } from 'proton-pass-extension/app/content/services/client/client.channel';
+import type { ClientController } from 'proton-pass-extension/app/content/services/client/client.controller';
 import { DOMCleanUp } from 'proton-pass-extension/app/content/services/inline/inline.cleanup';
-import type { FrameMessageHandler } from 'proton-pass-extension/app/content/utils/frame.message-broker';
 import type { ExtensionContextType } from 'proton-pass-extension/lib/context/extension-context';
 import { ExtensionContext, setupExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
@@ -57,7 +57,7 @@ export const createContentScriptClient = ({
             context.service.formManager.destroy();
             context.service.inline.destroy();
             context.service.autofill.destroy();
-            context.service.webauthn?.destroy();
+            context.service.passkey?.destroy();
             TopLayerManager.disconnect();
 
             DOMCleanUp(elements);
@@ -108,7 +108,7 @@ export const createContentScriptClient = ({
              * the webauthn interceptors in the main-world on `document_start` we
              * need to avoid missing on events of the `MessageBridge` */
             context.service.inline.init();
-            context.service.webauthn?.init();
+            context.service.passkey?.init();
 
             const res = await sendMessage(
                 contentScriptMessage({

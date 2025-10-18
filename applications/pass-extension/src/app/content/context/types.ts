@@ -1,10 +1,10 @@
 import type { AutofillService } from 'proton-pass-extension/app/content/services/autofill/autofill.service';
 import type { AutosaveService } from 'proton-pass-extension/app/content/services/autosave/autosave.abstract';
-import type { DetectorService } from 'proton-pass-extension/app/content/services/form/detector';
-import type { FormManager } from 'proton-pass-extension/app/content/services/form/manager';
+import type { FrameMessageBroker } from 'proton-pass-extension/app/content/services/client/client.channel';
+import type { DetectorService } from 'proton-pass-extension/app/content/services/detector/detector.service';
+import type { FormManager } from 'proton-pass-extension/app/content/services/form/form.manager';
 import type { AbstractInlineService } from 'proton-pass-extension/app/content/services/inline/inline.abstract';
-import type { WebAuthNService } from 'proton-pass-extension/app/content/services/webauthn';
-import type { FrameMessageBroker } from 'proton-pass-extension/app/content/utils/frame.message-broker';
+import type { PasskeyService } from 'proton-pass-extension/app/content/services/webauthn/passkey.service';
 import type { ExtensionContextType } from 'proton-pass-extension/lib/context/extension-context';
 
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
@@ -38,7 +38,7 @@ export interface ContentScriptContext {
         detector: DetectorService;
         formManager: FormManager;
         inline: AbstractInlineService;
-        webauthn: Maybe<WebAuthNService>;
+        passkey: Maybe<PasskeyService>;
     };
 
     destroy: (options: { reason: string; recycle?: boolean }) => void;

@@ -1,12 +1,12 @@
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { ContentScriptContextFactoryOptions } from 'proton-pass-extension/app/content/context/factory';
+import type { FrameMessageHandler } from 'proton-pass-extension/app/content/services/client/client.channel';
 import {
     handleAutoClose,
     handleBackdrop,
     handleOnClosed,
 } from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.utils';
 import { createIconRegistry } from 'proton-pass-extension/app/content/services/inline/icon/icon.registry';
-import type { FrameMessageHandler } from 'proton-pass-extension/app/content/utils/frame.message-broker';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { isMainFrame } from '@proton/pass/utils/dom/is-main-frame';

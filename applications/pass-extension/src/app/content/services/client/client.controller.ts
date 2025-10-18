@@ -9,7 +9,16 @@ import type { DebouncedFunc } from 'lodash';
 import type {
     ContentScriptClient,
     ContentScriptClientFactoryOptions,
-} from 'proton-pass-extension/app/content/services/client';
+} from 'proton-pass-extension/app/content/services/client/client';
+import type {
+    FrameMessageBroker,
+    FrameMessageHandler,
+} from 'proton-pass-extension/app/content/services/client/client.channel';
+import { createFrameMessageBroker } from 'proton-pass-extension/app/content/services/client/client.channel';
+import {
+    type ClientObserver,
+    createClientObserver,
+} from 'proton-pass-extension/app/content/services/client/client.observer';
 import {
     getFrameAttributes,
     getFrameElement,
@@ -17,12 +26,6 @@ import {
     getFrameVisibility,
     isNegligableFrameRect,
 } from 'proton-pass-extension/app/content/utils/frame';
-import type {
-    FrameMessageBroker,
-    FrameMessageHandler,
-} from 'proton-pass-extension/app/content/utils/frame.message-broker';
-import { createFrameMessageBroker } from 'proton-pass-extension/app/content/utils/frame.message-broker';
-import { type PageObserver, createPageObserver } from 'proton-pass-extension/app/content/utils/page-observer';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { getNodePosition } from 'proton-pass-extension/lib/utils/dom';
 import 'proton-pass-extension/lib/utils/polyfills';
@@ -45,7 +48,7 @@ export interface ClientController {
 
     deferred: boolean;
     instance: MaybeNull<ContentScriptClient>;
-    observer: PageObserver;
+    observer: ClientObserver;
     channel: FrameMessageBroker;
 }
 
@@ -97,7 +100,7 @@ export const createClientController = ({
 }: ClientControllerOptions): ClientController => {
     const probe = createActivityProbe();
     const listeners = createListenerStore();
-    const observer = createPageObserver();
+    const observer = createClientObserver();
     const transport = createFrameMessageBroker();
 
     const controller: ClientController = {

@@ -1,9 +1,9 @@
 import { NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { ContentScriptContextFactoryOptions } from 'proton-pass-extension/app/content/context/factory';
+import type { FrameMessageHandler } from 'proton-pass-extension/app/content/services/client/client.channel';
 import { createIconRegistry } from 'proton-pass-extension/app/content/services/inline/icon/icon.registry';
 import { getFrameElement } from 'proton-pass-extension/app/content/utils/frame';
-import type { FrameMessageHandler } from 'proton-pass-extension/app/content/utils/frame.message-broker';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { clientNeedsSession, clientSessionLocked } from '@proton/pass/lib/client';

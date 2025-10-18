@@ -2,8 +2,8 @@ import type { DropdownAction } from 'proton-pass-extension/app/content/constants
 import type { InlineApp } from 'proton-pass-extension/app/content/services/inline/inline.app';
 import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
 import type { PopoverController } from 'proton-pass-extension/app/content/services/inline/inline.popover';
-import { isActiveElement } from 'proton-pass-extension/app/content/utils/nodes';
 
+import { isActiveElement } from '@proton/pass/utils/dom/active-element';
 import { isHTMLElement } from '@proton/pass/utils/dom/predicates';
 
 import type { DropdownAnchorRef } from './dropdown.app';

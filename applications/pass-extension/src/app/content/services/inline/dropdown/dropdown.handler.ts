@@ -1,4 +1,3 @@
-import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
 import type { InlineRegistry } from 'proton-pass-extension/app/content/services/inline/inline.registry';
 
@@ -19,7 +18,7 @@ export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler
     const dropdown: DropdownHandler = {
         listeners,
         attach: (layer) => registry.attachDropdown(layer),
-        open: withContext((ctx, payload) => {
+        open: (payload) => {
             const attachedAnchor = registry.dropdown?.anchor;
             const visible = registry.dropdown?.getState().visible;
             const { autofocused } = payload;
@@ -56,7 +55,7 @@ export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler
                 listeners.addListener(window, 'mousedown', handleBackdrop(getAnchorField, close));
                 listeners.addListener(scrollParent, 'scroll', close, scrollOptions);
             }
-        }),
+        },
 
         close: (target) => {
             const dropdown = registry.dropdown;

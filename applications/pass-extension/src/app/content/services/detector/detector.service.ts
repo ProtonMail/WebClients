@@ -1,6 +1,6 @@
 import { MAX_MAX_DETECTION_TIME, MIN_MAX_DETECTION_TIME } from 'proton-pass-extension/app/content/constants.static';
 import type { CSFeatures } from 'proton-pass-extension/app/content/context/types';
-import { selectNodeFromPath } from 'proton-pass-extension/app/content/utils/nodes';
+import { selectNodeFromPath } from 'proton-pass-extension/app/content/services/detector/detector.utils';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 

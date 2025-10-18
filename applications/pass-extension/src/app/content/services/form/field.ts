@@ -157,7 +157,7 @@ export const createFieldHandles = ({ element, fieldType, getFormHandle }: Create
                     if (visible) {
                         const release = field.preventAction();
                         await createAutofill(element)(value, options);
-                        if (value) field.autofilled = options?.type ?? field.fieldType;
+                        field.autofilled = options?.type ?? field.fieldType;
                         nextTick(release);
                     }
                 })

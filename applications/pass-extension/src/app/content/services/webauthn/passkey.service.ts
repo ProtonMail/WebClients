@@ -19,11 +19,11 @@ import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { objectHandler } from '@proton/pass/utils/object/handler';
 
-type WebAuthNServiceState = { requestToken: MaybeNull<string> };
+type PasskeyServiceState = { requestToken: MaybeNull<string> };
 
-export const createWebAuthNService = () => {
+export const createPasskeyService = () => {
     const listeners = createListenerStore();
-    const state = objectHandler<WebAuthNServiceState>({ requestToken: null });
+    const state = objectHandler<PasskeyServiceState>({ requestToken: null });
 
     const abort = (browserFallback: boolean) => {
         const token = state.get('requestToken');
@@ -159,4 +159,4 @@ export const createWebAuthNService = () => {
     return { init, destroy };
 };
 
-export type WebAuthNService = ReturnType<typeof createWebAuthNService>;
+export type PasskeyService = ReturnType<typeof createPasskeyService>;

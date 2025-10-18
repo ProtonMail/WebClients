@@ -1,7 +1,7 @@
 import type {
     FrameMessageBroker,
     FrameMessageHandler,
-} from 'proton-pass-extension/app/content/utils/frame.message-broker';
+} from 'proton-pass-extension/app/content/services/client/client.channel';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
