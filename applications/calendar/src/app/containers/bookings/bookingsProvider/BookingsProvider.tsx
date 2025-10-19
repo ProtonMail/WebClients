@@ -6,8 +6,8 @@ import { addMilliseconds } from 'date-fns';
 import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
-import type { CalendarViewEvent } from '../../calendar/interface';
-import { BookingState, type Slot } from './interface';
+import type { CalendarViewBusyEvent, CalendarViewEvent } from '../../calendar/interface';
+import { BOOKING_SLOT_ID, BookingState, type Slot } from './interface';
 
 interface BookingsContextValue {
     isBookingActive: boolean;
@@ -19,6 +19,7 @@ interface BookingsContextValue {
     addBookingSlot: (startDate: Date, eventDuration: number) => void;
     removeBookingSlot: (slotId: string) => void;
     convertSlotToCalendarViewEvents: (visualCalendar?: VisualCalendar) => CalendarViewEvent[];
+    isBookingSlotEvent: (event: CalendarViewEvent | CalendarViewBusyEvent) => event is CalendarViewEvent;
 }
 
 const BookingsContext = createContext<BookingsContextValue | undefined>(undefined);
@@ -42,7 +43,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         setBookingSlots([
             ...bookingSlots,
             {
-                id: `booking-slot-${startDate.getTime().toString()}`,
+                id: `${BOOKING_SLOT_ID}-${startDate.getTime().toString()}`,
                 start: startDate,
                 end: addMilliseconds(startDate, duration),
             },
@@ -71,6 +72,10 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         }));
     };
 
+    const isBookingSlotEvent = (event: CalendarViewEvent | CalendarViewBusyEvent): event is CalendarViewEvent => {
+        return event.uniqueId.startsWith(BOOKING_SLOT_ID);
+    };
+
     const value: BookingsContextValue = {
         isBookingActive: bookingsState === BookingState.CREATE_NEW || bookingsState === BookingState.EDIT_EXISTING,
         createNewBookingsPage,
@@ -81,6 +86,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         addBookingSlot,
         removeBookingSlot,
         convertSlotToCalendarViewEvents,
+        isBookingSlotEvent,
     };
 
     return <BookingsContext.Provider value={value}>{children}</BookingsContext.Provider>;

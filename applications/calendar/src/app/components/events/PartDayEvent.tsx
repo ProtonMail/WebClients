@@ -4,6 +4,8 @@ import { forwardRef } from 'react';
 import { MINUTE } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
+import { PartDayBookingEvent } from '../../containers/bookings/PartDayBookingEvent';
+import { useBookings } from '../../containers/bookings/bookingsProvider/BookingsProvider';
 import type {
     CalendarViewBusyEvent,
     CalendarViewEvent,
@@ -79,11 +81,17 @@ export interface PartDayEventProps {
     tzid: string;
 }
 const PartDayEvent = ({ event, ...rest }: PartDayEventProps) => {
-    return isBusySlotEvent(event) ? (
-        <PartDayBusyEvent event={event} {...rest} />
-    ) : (
-        <PartDayRegularEvent event={event} {...rest} />
-    );
+    const { isBookingSlotEvent } = useBookings();
+
+    if (isBookingSlotEvent(event)) {
+        return <PartDayBookingEvent event={event} {...rest} />;
+    }
+
+    if (isBusySlotEvent(event)) {
+        return <PartDayBusyEvent event={event} {...rest} />;
+    }
+
+    return <PartDayRegularEvent event={event} {...rest} />;
 };
 
 export default PartDayEvent;
