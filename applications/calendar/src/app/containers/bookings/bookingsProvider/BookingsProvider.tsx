@@ -24,6 +24,11 @@ interface BookingsContextValue {
 
 const BookingsContext = createContext<BookingsContextValue | undefined>(undefined);
 
+// TODO used as temporary value, will be replaced with value coming from the booking form.
+// The value will be based on the even duration of the selected calendar.
+const tmpEventDurationMinute = 120;
+const tmpEventDurationMiliSeconds = tmpEventDurationMinute * 60 * 1000;
+
 // TODO maybe a reset booking slot method might be useful
 // TODO change the view to weekly view when starting a new booking page
 export const BookingsProvider = ({ children }: { children: ReactNode }) => {
@@ -38,7 +43,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
 
     // TODO what should happen if we add a slot in the past
     const addBookingSlot = (startDate: Date, eventDuration: number) => {
-        const duration = Math.min(eventDuration, 120 * 60 * 1000);
+        const duration = Math.min(eventDuration, tmpEventDurationMiliSeconds);
 
         setBookingSlots([
             ...bookingSlots,
