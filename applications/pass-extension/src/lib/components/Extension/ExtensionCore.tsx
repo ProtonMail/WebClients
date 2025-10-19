@@ -132,14 +132,20 @@ const getPassCoreProviderProps = (
 
         getRatingURL: getWebStoreUrl,
 
-        onLink: (url, options) =>
-            options?.replace
+        onLink: (url, options) => {
+            /** Fallback to `window.open` API if the tabs API is not
+             * available (eg: in extension controlled pages served via
+             * iframes in the content-script on firefox/safari) */
+            if (browser.tabs === undefined) return window.open(url, '_BLANK');
+
+            return options?.replace
                 ? browser.tabs.update({ url }).catch(noop)
                 : browser.tabs
                       .create({ url })
                       /** Popup may not auto-close on firefox  */
                       .then(() => endpoint === 'popup' && BUILD_TARGET === 'firefox' && window.close())
-                      .catch(noop),
+                      .catch(noop);
+        },
 
         onForceUpdate: () =>
             sendMessage(messageFactory({ type: WorkerMessageType.WORKER_RELOAD }))
