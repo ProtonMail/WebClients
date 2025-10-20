@@ -7,7 +7,6 @@ import Row from '@proton/components/components/container/Row';
 import Input from '@proton/components/components/input/Input';
 import Label from '@proton/components/components/label/Label';
 import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
-import FormModal from '@proton/components/components/modal/FormModal';
 import Price from '@proton/components/components/price/Price';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import useEventManager from '@proton/components/hooks/useEventManager';
@@ -20,6 +19,11 @@ import { ChargebeePaypalButton } from '@proton/payments/ui';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getSentryError } from '@proton/shared/lib/keys';
 
+import Form from '../../components/form/Form';
+import ModalTwo from '../../components/modalTwo/Modal';
+import ModalTwoContent from '../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../components/modalTwo/ModalHeader';
 import useApiResult from '../../hooks/useApiResult';
 import PaymentWrapper from '../payments/PaymentWrapper';
 import StyledPayPalButton from '../payments/StyledPayPalButton';
@@ -125,7 +129,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
             }
         });
 
-    const submit = (() => {
+    const submitButton = (() => {
         if (paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.PAYPAL) {
             return (
                 <StyledPayPalButton
@@ -139,14 +143,10 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
 
         if (paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
             return (
-                <div className="flex justify-end">
-                    <div className="w-1/2 mr-1">
-                        <ChargebeePaypalButton
-                            chargebeePaypal={paymentFacade.chargebeePaypal}
-                            iframeHandles={paymentFacade.iframeHandles}
-                        />
-                    </div>
-                </div>
+                <ChargebeePaypalButton
+                    chargebeePaypal={paymentFacade.chargebeePaypal}
+                    iframeHandles={paymentFacade.iframeHandles}
+                />
             );
         }
 
@@ -172,53 +172,57 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
     })();
 
     return (
-        <FormModal
+        <ModalTwo
+            as={Form}
             onSubmit={() => process(paymentFacade.selectedProcessor)}
-            loading={loading}
-            close={c('Action').t`Close`}
-            submit={submit}
-            title={c('Title').t`Pay invoice`}
             data-testid="pay-invoice-modal"
             {...rest}
         >
-            {amountLoading ? (
-                <EllipsisLoader />
-            ) : (
-                <>
-                    {!!Credit && (
-                        <>
-                            <Row>
-                                <Label>{c('Label').t`Amount`}</Label>
-                                <Field className="text-right">
-                                    <Price className="label" currency={currency}>
-                                        {Amount ?? 0}
-                                    </Price>
-                                </Field>
-                            </Row>
-                            <Row>
-                                <Label>{c('Label').t`Credits used`}</Label>
-                                <Field className="text-right">
-                                    <Price className="label" currency={currency}>
-                                        {Credit}
-                                    </Price>
-                                </Field>
-                            </Row>
-                        </>
-                    )}
-                    <Row>
-                        <Label>{c('Label').t`Amount due`}</Label>
-                        <Field>
-                            <Input
-                                className="field--highlight pointer-events-none text-strong text-right"
-                                readOnly
-                                value={getSimplePriceString(currency, amountDue)}
-                            />
-                        </Field>
-                    </Row>
-                    {amountDue > 0 ? <PaymentWrapper {...paymentFacade} noMaxWidth /> : null}
-                </>
-            )}
-        </FormModal>
+            <ModalTwoHeader title={c('Title').t`Pay invoice`} />
+            <ModalTwoContent>
+                {amountLoading ? (
+                    <EllipsisLoader />
+                ) : (
+                    <>
+                        {!!Credit && (
+                            <>
+                                <Row>
+                                    <Label>{c('Label').t`Amount`}</Label>
+                                    <Field className="text-right">
+                                        <Price className="label" currency={currency}>
+                                            {Amount ?? 0}
+                                        </Price>
+                                    </Field>
+                                </Row>
+                                <Row>
+                                    <Label>{c('Label').t`Credits used`}</Label>
+                                    <Field className="text-right">
+                                        <Price className="label" currency={currency}>
+                                            {Credit}
+                                        </Price>
+                                    </Field>
+                                </Row>
+                            </>
+                        )}
+                        <Row>
+                            <Label>{c('Label').t`Amount due`}</Label>
+                            <Field>
+                                <Input
+                                    className="field--highlight pointer-events-none text-strong text-right"
+                                    readOnly
+                                    value={getSimplePriceString(currency, amountDue)}
+                                />
+                            </Field>
+                        </Row>
+                        {amountDue > 0 ? <PaymentWrapper {...paymentFacade} noMaxWidth /> : null}
+                    </>
+                )}
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                <Button onClick={rest.onClose}>{c('Action').t`Close`}</Button>
+                {submitButton}
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 

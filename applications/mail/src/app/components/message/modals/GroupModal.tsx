@@ -2,7 +2,12 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Checkbox, FormModal, type GroupWithContacts, Label } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { Checkbox, type GroupWithContacts, Label } from '@proton/components';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { contactToInput } from '@proton/shared/lib/mail/recipient';
 import generateUID from '@proton/utils/generateUID';
@@ -31,35 +36,34 @@ const GroupModal = ({ recipientGroup, group, globalIcon, mapStatusIcons, onClose
     const title = `${recipientGroup?.group?.Name} (${contacts.length} ${members})`;
 
     return (
-        <FormModal
-            title={title}
-            submit={c('Action').t`Close`}
-            close={null}
-            onSubmit={onClose}
-            onClose={onClose}
-            {...rest}
-        >
-            <ul className="unstyled">
-                {contacts.map((contact) => {
-                    const id = `${uid}-${contact.ID}`;
-                    const icon = globalIcon || (mapStatusIcons ? mapStatusIcons[contact.Email] : undefined);
-                    return (
-                        <li key={contact.ID} className="mb-2">
-                            <Checkbox id={id} checked={isChecked(contact)} disabled />
-                            <span
-                                className="min-w-custom inline-flex align-middle"
-                                style={{ '--min-w-custom': '1.4em' }}
-                            >
-                                {icon && <EncryptionStatusIcon {...icon} />}
-                            </span>
-                            <Label htmlFor={id} className="pt-0 pl-1">
-                                {contactToInput(contact)}
-                            </Label>
-                        </li>
-                    );
-                })}
-            </ul>
-        </FormModal>
+        <ModalTwo onClose={onClose} {...rest}>
+            <ModalTwoHeader title={title} />
+            <ModalTwoContent>
+                <ul className="unstyled">
+                    {contacts.map((contact) => {
+                        const id = `${uid}-${contact.ID}`;
+                        const icon = globalIcon || (mapStatusIcons ? mapStatusIcons[contact.Email] : undefined);
+                        return (
+                            <li key={contact.ID} className="mb-2">
+                                <Checkbox id={id} checked={isChecked(contact)} disabled />
+                                <span
+                                    className="min-w-custom inline-flex align-middle"
+                                    style={{ '--min-w-custom': '1.4em' }}
+                                >
+                                    {icon && <EncryptionStatusIcon {...icon} />}
+                                </span>
+                                <Label htmlFor={id} className="pt-0 pl-1">
+                                    {contactToInput(contact)}
+                                </Label>
+                            </li>
+                        );
+                    })}
+                </ul>
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                <Button onClick={onClose}>{c('Action').t`Close`}</Button>
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 
