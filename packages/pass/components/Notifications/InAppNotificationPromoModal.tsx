@@ -54,8 +54,8 @@ export const InAppNotificationPromoModal: FC<Props> = ({
                         fullWidth
                         onClick={onDismiss}
                         style={{
-                            '--button-default-text-color': themeValues.closePromoTextColor,
-                            '--button-hover-text-color': themeValues.closePromoTextColor,
+                            '--button-default-text-color': `#${themeValues.closePromoTextColor}`,
+                            '--button-hover-text-color': `#${themeValues.closePromoTextColor}`,
                         }}
                         disabled={isOffline}
                     >
