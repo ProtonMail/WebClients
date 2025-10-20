@@ -76,7 +76,7 @@ export const monitorToggle = requestActionsFactory<UpdateUserMonitorStateRequest
 });
 
 export const getBreaches = requestActionsFactory<void, BreachesGetResponse>('monitor::breaches::get')({
-    success: { config: { maxAge: UNIX_MINUTE } },
+    success: { config: { maxAge: UNIX_MINUTE, hot: true } },
 });
 
 export const getProtonBreach = requestActionsFactory<ProtonAddressID, FetchedBreaches[]>(

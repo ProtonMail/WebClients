@@ -57,12 +57,12 @@ describe('reducer', () => {
             const initial = { [requestID]: { status: 'start', progress: 1 } } as const;
             const request = withRequest({ status: 'success', id: requestID, maxAge: 100, data })(action);
             const state = reducer(initial, request);
-            expect(state).toEqual({ [requestID]: { status: 'success', maxAge: 100, requestedAt: 0, data } });
+            expect(state).toEqual({ [requestID]: { status: 'success', maxAge: 100, requestedAt: 0, data, hot: false } });
         });
 
         test('should use action payload if no request data', () => {
             const state = reducer({}, withRequest({ status: 'success', id: requestID, maxAge: 100 })(action));
-            expect(state).toEqual({ [requestID]: { status: 'success', maxAge: 100, requestedAt: 0, data } });
+            expect(state).toEqual({ [requestID]: { status: 'success', maxAge: 100, requestedAt: 0, data, hot: false } });
         });
     });
 

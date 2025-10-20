@@ -21,9 +21,7 @@ export const selectCachableState = (state: State) => {
     whiteListedState.items.byOptimisticId = {};
     whiteListedState.request = objectFilter(
         whiteListedState.request,
-        (requestId, request) =>
-            // FIXME: add non-cachable flag on request metadata
-            request.status === 'success' && request.maxAge !== undefined && !requestId.startsWith('files::')
+        (_, request) => request.status === 'success' && request.maxAge !== undefined && !request.hot
     );
 
     return whiteListedState;

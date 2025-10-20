@@ -47,6 +47,7 @@ const requestReducer: Reducer<RequestState> = (state = {}, action: Action) => {
                 nextState[request.id] = {
                     status: request.status,
                     maxAge: request.maxAge,
+                    hot: request.hot ?? false,
                     requestedAt: now,
                     data: (() => {
                         if ('data' in request) return request.data;
