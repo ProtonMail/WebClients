@@ -1,6 +1,7 @@
 import { call, put, race, select, take } from 'redux-saga/effects';
 
 import {
+    getInAppNotifications,
     getUserAccessIntent,
     getUserFeaturesIntent,
     secureLinksGet,
@@ -36,6 +37,7 @@ function* syncWorker({ payload }: ReturnType<typeof syncIntent>) {
         yield put(withRevalidate(getUserFeaturesIntent(user.ID)));
         yield put(withRevalidate(getOrganizationSettings.intent()));
         yield put(withRevalidate(secureLinksGet.intent()));
+        yield put(withRevalidate(getInAppNotifications.intent()));
         yield put(getAuthDevices.intent());
 
         if (EXTENSION_BUILD) {

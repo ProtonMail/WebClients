@@ -69,3 +69,4 @@ export const PassThemeProvider: FC<PropsWithChildren> = ({ children }) => {
 };
 
 export const usePassTheme = () => useContext(PassThemeContext);
+export const usePassThemeMode = () => (getThemeConfig(usePassTheme()).className === 'pass-light' ? 'light' : 'dark');

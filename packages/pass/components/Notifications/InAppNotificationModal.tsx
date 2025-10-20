@@ -39,7 +39,7 @@ export const InAppNotificationModal = WithInAppNotification(({ setNotificationSt
                         shape="solid"
                         size="large"
                         fullWidth
-                        onClick={onAction}
+                        onClick={() => onAction()}
                         pill
                     >
                         {content.cta.text}
