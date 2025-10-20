@@ -244,6 +244,7 @@ export type PendingShareKeyPromoteRequest = {
     /* Pending share keys to promote */
     Keys: EncryptedKeyWithRotation[];
 };
+export type GetNotificationsQueryParams = { CountryCode?: string | null };
 export type ChangeNotificationStateRequest = { State: InAppNotificationState };
 export type OrganizationUpdateSettingsRequest = {
     /* Allowed ways to share within the organization. 0 means unrestricted, 1 means sharing is only allowed within the organization */
@@ -1053,8 +1054,10 @@ export type SyncEventListOutput = {
     SharesUpdated?: SyncEventShareOutput[];
     /* Share IDs that have been deleted */
     SharesDeleted?: SyncEventShareOutput[];
-    /* If not null, there changes in the invites waiting to be accepted by this user */
+    /* If not null, there are changes in the invites waiting to be accepted by this user */
     InvitesChanged?: SyncEventInvitesChangedOutput | null;
+    /* If not null, there are changes in the group invites that this user can accept or reject */
+    GroupInvitesChanged?: SyncEventInvitesChangedOutput | null;
     /* Share IDs that have invites that have to be created due to a user having registered with a pending new user invite */
     SharesWithInvitesToCreate?: SyncEventShareOutput[];
     /* If the user plan has changed */
@@ -1196,6 +1199,8 @@ export type Breach = {
     PasswordLastChars?: string | null;
     /* Recommended actions to take */
     Actions: BreachAction[];
+    /* Leaked combos of domain, username and password (infostealer only) */
+    BreachedCombos: BreachCombo[];
 };
 export type BreachSample = {
     ID: Id;
@@ -1252,6 +1257,7 @@ export type GroupInviteListItemResponse = {
     InvitedEmail: string;
     /* Type of target for this invite */
     TargetType: number;
+    TargetID: Id;
     /* Number of reminders sent */
     RemindersSent: number;
     /* InviteToken */
@@ -1442,6 +1448,8 @@ export type PassPlanResponse = {
     ManageSubscription: boolean;
     /* If this user has a paid plan when does the subscription end */
     SubscriptionEnd?: number | null;
+    /* If this user has a plan, the subscription cycle in months */
+    SubscriptionCycle?: number | null;
     /* If this user has a plaid plan and the plan is set to auto-renew */
     SubscriptionRenewal: boolean;
     /* Coupon used for this subscription if any was used */
@@ -1525,6 +1533,16 @@ export type BreachAction = {
     /* List of URLs used to build clickable links in the description. */
     Urls?: string[];
 };
+export type BreachCombo = {
+    /* Unique id */
+    ID: string;
+    /* The website for user info */
+    Domain: string;
+    /* Username used in the website */
+    Username: string;
+    /* Password used in the webiste, last 3 chars in plain-text */
+    PasswordLastChars: string;
+};
 export enum BreachAlertState2 {
     UNREAD = 1,
     READ = 2,
@@ -1554,6 +1572,8 @@ export type InAppNotificationContent = {
     Theme?: string | null;
     /* CTA of the notification */
     Cta?: InAppNotificationCta | null;
+    /* Minimizable promo contents. Only for minimizable promos. */
+    PromoContents?: InAppNotificationPromoContents | null;
 };
 export type BreachMonitorCounter = {
     /* Number of emails monitored */
@@ -1593,6 +1613,7 @@ export type BreachCountry = {
 export enum InAppNotificationDisplayType {
     BANNER = 0,
     MODAL = 1,
+    PROMO = 2,
 }
 export type InAppNotificationCta = {
     /* Text of the CTA */
@@ -1601,10 +1622,28 @@ export type InAppNotificationCta = {
     /* Destination of the CTA. If type=external_link, it's a URL. If type=internal_navigation, it's a deeplink */
     Ref: string;
 };
+export type InAppNotificationPromoContents = {
+    /* Whether the promo should start minimized. True means the image should be minimized from the start. False means that the promo should initially be displayed and the user can minimize. */
+    StartMinimized: boolean;
+    /* Text to show on the close promo link */
+    ClosePromoText: string;
+    /* Text to show when the promo is minimized */
+    MinimizedPromoText: string;
+    LightThemeContents: InAppNotificationPromoThemedContents;
+    DarkThemeContents: InAppNotificationPromoThemedContents;
+};
 export enum InAppNotificationCtaType {
     INTERNAL_NAVIGATION = 'internal_navigation',
     EXTERNAL_LINK = 'external_link',
 }
+export type InAppNotificationPromoThemedContents = {
+    /* Background image url */
+    BackgroundImageUrl: string;
+    /* Content image url */
+    ContentImageUrl: string;
+    /* Color of the close promo text */
+    ClosePromoTextColor: string;
+};
 export type ApiResponse<Path extends string, Method extends string> =
     Path extends `pass/v1/share/${string}/item/${string}/file/${string}/chunk/${string}` ?
         Method extends `get` ?
@@ -1969,9 +2008,9 @@ export type ApiResponse<Path extends string, Method extends string> =
             { Code: ResponseCodeSuccess }
         :   never
     : Path extends `pass/v1/invite/group/${string}` ?
-        Method extends `post` ?
-            { Code: ResponseCodeSuccess }
-        :   never
+        Method extends `post` ? { Code: ResponseCodeSuccess }
+        : Method extends `delete` ? { Code: ResponseCodeSuccess }
+        : never
     : Path extends `pass/v1/organization/urlpause/${string}` ?
         Method extends `put` ? { Code: ResponseCodeSuccess }
         : Method extends `delete` ? { Code: ResponseCodeSuccess }
