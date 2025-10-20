@@ -211,39 +211,13 @@ describe('getAutoCoupon', () => {
             expect(result).toBeUndefined();
         });
 
-        describe('date-based coupon selection', () => {
-            it('should return VPN_INTRO_2025_UK after 2025-09-10 for GBP currency', () => {
-                jest.setSystemTime(new Date('2025-09-15T10:00:00.000Z'));
-
-                const result = getAutoCoupon({
-                    planIDs: { [PLANS.VPN2024]: 1 },
-                    cycle: CYCLE.YEARLY,
-                    currency: 'GBP',
-                });
-                expect(result).toBe(COUPON_CODES.VPN_INTRO_2025_UK);
+        it('should return VPN_INTRO_2025', () => {
+            const result = getAutoCoupon({
+                planIDs: { [PLANS.VPN2024]: 1 },
+                cycle: CYCLE.YEARLY,
+                currency: 'USD',
             });
-
-            it('should return VPN_INTRO_2025 after 2025-10-23', () => {
-                jest.setSystemTime(new Date('2025-10-24T10:00:00.000Z'));
-
-                const result = getAutoCoupon({
-                    planIDs: { [PLANS.VPN2024]: 1 },
-                    cycle: CYCLE.YEARLY,
-                    currency: 'USD',
-                });
-                expect(result).toBe(COUPON_CODES.VPN_INTRO_2025);
-            });
-
-            it('should return VPN_INTRO_2025 after 2025-10-23 even for GBP currency', () => {
-                jest.setSystemTime(new Date('2025-10-24T10:00:00.000Z'));
-
-                const result = getAutoCoupon({
-                    planIDs: { [PLANS.VPN2024]: 1 },
-                    cycle: CYCLE.YEARLY,
-                    currency: 'GBP',
-                });
-                expect(result).toBe(COUPON_CODES.VPN_INTRO_2025);
-            });
+            expect(result).toBe(COUPON_CODES.VPN_INTRO_2025);
         });
 
         describe('cycle requirements', () => {
@@ -253,7 +227,7 @@ describe('getAutoCoupon', () => {
                     currency: 'USD',
                     cycle,
                 });
-                expect(result).toBe(COUPON_CODES.VPN_INTRO_2025_UK);
+                expect(result).toBe(COUPON_CODES.VPN_INTRO_2025);
             });
 
             it.each([CYCLE.MONTHLY, CYCLE.SIX, CYCLE.FIFTEEN, CYCLE.EIGHTEEN, CYCLE.THIRTY])(
@@ -278,7 +252,7 @@ describe('getAutoCoupon', () => {
                 currency: 'USD',
                 coupon: null,
             });
-            expect(result).toBe(COUPON_CODES.VPN_INTRO_2025_UK);
+            expect(result).toBe(COUPON_CODES.VPN_INTRO_2025);
         });
 
         it('should handle empty string coupon', () => {
@@ -288,7 +262,7 @@ describe('getAutoCoupon', () => {
                 currency: 'USD',
                 coupon: '',
             });
-            expect(result).toBe(COUPON_CODES.VPN_INTRO_2025_UK);
+            expect(result).toBe(COUPON_CODES.VPN_INTRO_2025);
         });
     });
 });
