@@ -377,6 +377,7 @@ export function DocumentTitleDropdown({
                   }}
                   onBlur={confirmRename}
                   ref={renameInputRef}
+                  data-testid="sheet-name-input"
                 />
               }
             ></Ariakit.TooltipAnchor>
