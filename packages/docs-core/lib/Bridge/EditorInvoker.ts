@@ -151,6 +151,7 @@ export class EditorInvoker implements ClientRequiresEditorMethods {
     userAddress: string,
     documentRole: DocumentRoleType,
     isPublicMode: boolean,
+    appVersion: string,
     editorInitializationConfig?: EditorInitializationConfig,
   ): Promise<void> {
     return this.invokeEditorMethod('initializeEditor', [
@@ -158,6 +159,7 @@ export class EditorInvoker implements ClientRequiresEditorMethods {
       userAddress,
       documentRole,
       isPublicMode,
+      appVersion,
       editorInitializationConfig,
     ])
   }
