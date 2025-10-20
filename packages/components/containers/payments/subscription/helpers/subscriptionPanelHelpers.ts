@@ -14,7 +14,7 @@ import {
 } from '../../features/vpn';
 
 const getUserText = (isOrganizationDelinquent: boolean, MaxMembers: number, UsedMembers: number) => {
-    if (isOrganizationDelinquent) {
+    if (isOrganizationDelinquent || MaxMembers === 0) {
         return null;
     }
 
