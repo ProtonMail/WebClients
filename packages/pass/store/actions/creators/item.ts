@@ -483,7 +483,7 @@ export const itemHistoryFailure = createAction(
 );
 
 export const secureLinksGet = requestActionsFactory<void, SecureLink[]>('secure-link::get')({
-    success: { config: { maxAge: UNIX_MINUTE, data: null } },
+    success: { config: { maxAge: UNIX_MINUTE, data: null, hot: true } },
 });
 
 export const secureLinkCreate = requestActionsFactory<SecureLinkCreationDTO, SecureLink>('secure-link::create')({
