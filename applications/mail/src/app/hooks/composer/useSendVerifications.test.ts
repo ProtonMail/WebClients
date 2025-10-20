@@ -11,6 +11,12 @@ import { useSendVerifications } from './useSendVerifications';
 
 loudRejection();
 
+const createDocument = (content: string): Element => {
+    const newDocument = document.createElement('div');
+    newDocument.innerHTML = content;
+    return newDocument;
+};
+
 const createMessage: (emailAddress: string) => {} = (emailAddress) => ({
     data: {
         ToList: [{ Address: emailAddress, Name: 'test' }],
@@ -175,6 +181,18 @@ jest.mock('@proton/components/hooks/useModals', () => ({
     },
 }));
 
+const mockAddresses = [
+    {
+        ID: 'address-123',
+        Signature: 'Best regards, John Smith, For attached files, please email support@example.com',
+    },
+];
+
+jest.mock('@proton/account/addresses/hooks', () => ({
+    __esModule: true,
+    useAddresses: () => [mockAddresses, false],
+}));
+
 const originalResizeObserver = window.ResizeObserver;
 const ResizeObserverMock = jest.fn(() => ({
     disconnect: jest.fn(),
@@ -217,24 +235,154 @@ describe('useSendVerifications', () => {
     afterEach(clearAll);
 
     describe('preliminary verifications', () => {
-        it('should call handleNoAttachments when message has attachment keyword in subject but no attachments', async () => {
+        it('should call handleNoAttachments when subject has attachment keyword but no attachments', async () => {
             const preliminaryVerifications = await setupPreliminaryVerificationsWithHandlers();
 
             const message = {
                 localID: '1',
                 data: {
                     Subject: 'see attached file',
-                    Sender: { Name: '', Address: 'test@test.com' },
-                    AddressID: 'test@test.com',
-                    ToList: [{ Address: 'recipient@test.com', Name: '' }],
-                    CCList: [],
-                    BCCList: [],
                     Attachments: [],
                 },
             };
 
             await preliminaryVerifications(message, {});
             expect(mockHandleNoAttachments).toHaveBeenCalledWith('see attached');
+        });
+
+        it('should call handleNoAttachments when body has attachment keyword but no attachments', async () => {
+            const preliminaryVerifications = await setupPreliminaryVerificationsWithHandlers();
+            const content = `
+                            <div style="font-family: verdana; font-size: 20px;">
+                                <div style="font-family: verdana; font-size: 20px;">see attachment<br></div>
+                            </div>`;
+
+            const message = {
+                data: {
+                    Subject: '',
+                    Attachments: [],
+                },
+                messageDocument: {
+                    document: createDocument(content),
+                },
+            };
+
+            await preliminaryVerifications(message, {});
+            expect(mockHandleNoAttachments).toHaveBeenCalledWith('see attachment');
+        });
+
+        it('should not call handleNoAttachments when signature has attachment keyword in it and message is document', async () => {
+            const preliminaryVerifications = await setupPreliminaryVerificationsWithHandlers();
+            const content = `
+                            <div style="font-family: verdana; font-size: 20px;">
+                                <div style="font-family: verdana; font-size: 20px;"><br></div>
+                                <div class="protonmail_signature_block" style="font-family: verdana; font-size: 20px;">
+                                    <div class="protonmail_signature_block-user">
+                                        <div style="font-family: Arial, sans-serif; font-size: 14px; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">see attachment</div>
+                                    </div>
+                                    <div class="protonmail_signature_block-proton protonmail_signature_block-empty"></div>
+                                </div>
+                            </div>`;
+
+            const message = {
+                localID: '1',
+                data: {
+                    Subject: '',
+                    Attachments: [],
+                },
+                messageDocument: {
+                    document: createDocument(content),
+                },
+            };
+
+            await preliminaryVerifications(message, {});
+            expect(mockHandleNoAttachments).not.toHaveBeenCalledWith('see attachment');
+        });
+
+        it('should not call handleNoAttachments when blockquote has attachment keyword in it and message is document', async () => {
+            const preliminaryVerifications = await setupPreliminaryVerificationsWithHandlers();
+            const content = `
+                            <div style="font-family: verdana; font-size: 20px;">
+                                <div style="font-family: verdana; font-size: 20px;"><br></div>
+                                <div class="protonmail_signature_block protonmail_signature_block-empty" style="font-family: verdana; font-size: 20px;">
+                                    <div class="protonmail_signature_block-user protonmail_signature_block-empty">
+                                        <div style="font-family: Arial, sans-serif; font-size: 14px; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"></div>
+                                    </div>
+                                    <div class="protonmail_signature_block-proton protonmail_signature_block-empty"></div>
+                                </div>
+                                <div style="font-family: verdana; font-size: 20px;"><br></div>
+                                <div class="protonmail_quote">
+                                    On Tuesday, January 4th, 2022 at 17:13, Swiip - Test account &lt;swiip.test@protonmail.com&gt; wrote:<br>
+                                    <blockquote class="protonmail_quote" type="cite">
+                                        <div style="font-family: verdana; font-size: 20px;">
+                                            <div style="font-family: verdana; font-size: 20px;">test</div>
+                                            <div class="protonmail_signature_block" style="font-family: verdana; font-size: 20px;">
+                                                <div class="protonmail_signature_block-user">see attachment</div>
+                                                <div class="protonmail_signature_block-proton protonmail_signature_block-empty"></div>
+                                            </div>
+                                        </div>
+                                    </blockquote><br>
+                                </div>
+                            </div>`;
+
+            const message = {
+                localID: '1',
+                data: {
+                    Attachments: [],
+                },
+                messageDocument: {
+                    document: createDocument(content),
+                },
+            };
+
+            await preliminaryVerifications(message, {});
+            expect(mockHandleNoAttachments).not.toHaveBeenCalledWith('see attached');
+        });
+
+        it('should not call handleNoAttachments when only signature has "attached" keyword in plaintext message', async () => {
+            const preliminaryVerifications = await setupPreliminaryVerificationsWithHandlers();
+            const signature = 'Best regards, John Smith, For attached files, please email support@example.com';
+            const bodyText = 'Here is the information you requested.';
+            const plainText = `${bodyText}\n\n${signature}`;
+
+            const message = {
+                localID: '1',
+                data: {
+                    MIMEType: MIME_TYPES.PLAINTEXT,
+                    AddressID: 'address-123',
+                    Subject: 'Information',
+                    Attachments: [],
+                },
+                messageDocument: {
+                    plainText,
+                },
+            };
+
+            await preliminaryVerifications(message, {});
+            expect(mockHandleNoAttachments).not.toHaveBeenCalled();
+        });
+
+        it('should call handleNoAttachments when body has "see attachment" keyword in plaintext message', async () => {
+            const preliminaryVerifications = await setupPreliminaryVerificationsWithHandlers();
+            const signature = 'Best regards,\nJohn Smith';
+            const bodyText = 'Please see attachment for details.';
+            const plainText = `${bodyText}\n\n${signature}`;
+
+            const message = {
+                localID: '1',
+                data: {
+                    MIMEType: MIME_TYPES.PLAINTEXT,
+                    AddressID: 'address-123',
+                    Subject: 'Document',
+                    Attachments: [],
+                },
+                messageDocument: {
+                    plainText,
+                },
+            };
+
+            await preliminaryVerifications(message, {});
+            expect(mockHandleNoAttachments).toHaveBeenCalledWith('see attachment');
         });
     });
 

@@ -1,5 +1,9 @@
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
+import type { Address } from '@proton/shared/lib/interfaces';
 import { FORWARDED_MESSAGE, ORIGINAL_MESSAGE } from '@proton/shared/lib/mail/messages';
+import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
+
+import { exportPlainText } from './messageContent';
 
 export const BLOCKQUOTE_SELECTORS = [
     '.protonmail_quote', // Proton Mail
@@ -196,6 +200,12 @@ export const locateBlockquote = (inputDocument: Element | undefined): [content: 
     return result || [parentHTML, ''];
 };
 
+export const removeSignatureFromHTMLMessage = (contentBeforeBlockquote: string): string => {
+    const contentDocument = parseStringToDOM(contentBeforeBlockquote);
+    contentDocument.body.querySelector('.protonmail_signature_block')?.remove();
+    return contentDocument.body.outerHTML;
+};
+
 /**
  * Try to locate blockquotes on a plaintext message
  * Warning, use it carefully because this detection finds blockquotes that are built internally,
@@ -273,4 +283,33 @@ export const locatePlaintextInternalBlockquotes = (content?: string) => {
     }
 
     return [content, ''];
+};
+
+export const removeSignatureFromPlainTextMessage = (
+    contentBeforeBlockquote: string,
+    addressID: string,
+    addresses: Address[] | undefined
+): string => {
+    const address = addresses?.find((a) => a.ID === addressID);
+    const addressSignature = exportPlainText(address?.Signature ?? '');
+    const protonSignaturePlainText = exportPlainText(getProtonMailSignature());
+
+    const signatureIndex = addressSignature === '' ? -1 : contentBeforeBlockquote.lastIndexOf(addressSignature);
+
+    if (signatureIndex === -1) {
+        return contentBeforeBlockquote;
+    }
+
+    const beforeSignature = contentBeforeBlockquote.slice(0, signatureIndex);
+    const afterSignature = contentBeforeBlockquote.slice(signatureIndex + addressSignature.length);
+
+    const isAtEnd = afterSignature.trim() === '';
+    const isOnlyProtonSignature = afterSignature.trim() === protonSignaturePlainText;
+    const hasNewlinesBefore = /\n\s*\n\s*$/.test(beforeSignature);
+
+    if ((isAtEnd || isOnlyProtonSignature) && hasNewlinesBefore) {
+        return contentBeforeBlockquote.slice(0, signatureIndex);
+    }
+
+    return contentBeforeBlockquote;
 };
