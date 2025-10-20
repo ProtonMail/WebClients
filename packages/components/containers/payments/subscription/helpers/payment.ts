@@ -1,5 +1,3 @@
-import { isAfter } from 'date-fns';
-
 import {
     COUPON_CODES,
     CYCLE,
@@ -153,16 +151,7 @@ const getVpnAutoCoupon = ({ coupon, planIDs, cycle }: Parameters<typeof getAutoC
         return;
     }
 
-    // if you're reading this code after the hardcoded dates, feel free to remove the code that's not relevant in your
-    // light cone anymore. After the date below, we don't need VPN_INTRO_2025_UK coupon. Only VPN_INTRO_2025 should
-    // remain.
-    const isAfterVpn2025CouponStartDate = isAfter(new Date(), new Date('2025-10-23T10:00:00.000Z'));
-
-    if (isAfterVpn2025CouponStartDate) {
-        return COUPON_CODES.VPN_INTRO_2025;
-    }
-
-    return COUPON_CODES.VPN_INTRO_2025_UK;
+    return COUPON_CODES.VPN_INTRO_2025;
 };
 
 export const getAutoCoupon = ({
