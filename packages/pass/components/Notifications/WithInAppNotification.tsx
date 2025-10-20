@@ -20,7 +20,7 @@ export type InAppNotificationRenderProps = {
 
 interface InAppNotificationHandles {
     setNotificationState: (state: InAppNotificationState) => void;
-    onAction: () => void;
+    onAction: (state?: InAppNotificationState) => void;
 }
 
 const TelemetryStatusName: Record<InAppNotificationState, TelemetryInAppNotificationStatus> = {
@@ -54,13 +54,13 @@ export const WithInAppNotification = <P extends InAppNotificationRenderProps>(
                     );
                 },
 
-                onAction: () => {
+                onAction: (state = InAppNotificationState.READ) => {
                     if (content.cta) {
                         const { type, ref } = content.cta;
                         const subPath = ref.substring(1);
 
                         onTelemetry(TelemetryEventName.PassNotificationCTAClick, {}, { notificationKey });
-                        handles.setNotificationState(InAppNotificationState.READ);
+                        handles.setNotificationState(state);
 
                         if (type === InAppNotificationCtaType.EXTERNAL_LINK) return onLink(ref);
                         else if (!EXTENSION_BUILD) return history.push(getLocalPath(subPath));

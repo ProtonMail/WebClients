@@ -65,7 +65,7 @@ export const InAppNotificationBanner = WithInAppNotification(
                                 size={dense ? 'small' : 'medium'}
                                 pill
                                 fullWidth
-                                onClick={onAction}
+                                onClick={() => onAction()}
                             >
                                 {content.cta.text}
                             </Button>

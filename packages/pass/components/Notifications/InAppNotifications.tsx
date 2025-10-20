@@ -2,8 +2,8 @@ import { type FC, useEffect, useMemo, useState } from 'react';
 
 import type { InAppNotificationRenderProps } from '@proton/pass/components/Notifications/WithInAppNotification';
 import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
-import { selectNextNotification } from '@proton/pass/store/selectors';
-import type { Maybe } from '@proton/pass/types';
+import { selectActiveNotification } from '@proton/pass/store/selectors';
+import type { MaybeNull } from '@proton/pass/types';
 import { InAppNotificationDisplayType } from '@proton/pass/types';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { isModalOpen } from '@proton/shared/lib/busy';
@@ -14,18 +14,22 @@ import { InAppNotificationModal } from './InAppNotificationModal';
 
 const getNotificationComponent = (
     displayType: InAppNotificationDisplayType
-): Maybe<FC<InAppNotificationRenderProps>> => {
+): MaybeNull<FC<InAppNotificationRenderProps>> => {
     switch (displayType) {
         case InAppNotificationDisplayType.BANNER:
             return InAppNotificationBanner;
         case InAppNotificationDisplayType.MODAL:
             return InAppNotificationModal;
+        /* Promo modal is rooted in the promo menu button to keep state local */
+        case InAppNotificationDisplayType.PROMO:
+        default:
+            return null;
     }
 };
 
 export const InAppNotifications: FC = () => {
     const now = useMemo(() => getEpoch(), []);
-    const notification = useMemoSelector(selectNextNotification, [now]);
+    const notification = useMemoSelector(selectActiveNotification, [now]);
     const [showNotification, setShowNotification] = useState(false);
 
     useEffect(() => {
@@ -45,5 +49,6 @@ export const InAppNotifications: FC = () => {
     if (!notification || !showNotification) return null;
 
     const Component = getNotificationComponent(notification?.content.displayType);
-    return Component && <Component dense={EXTENSION_BUILD} notification={notification} />;
+    if (Component === null) return null;
+    return <Component dense={EXTENSION_BUILD} notification={notification} />;
 };
