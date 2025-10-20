@@ -26,6 +26,7 @@ enum CommonFeatureFlag {
     InboxWebPostSubscriptionFlow = 'InboxWebPostSubscriptionFlow',
     NewCancellationFlowUpsell = 'NewCancellationFlowUpsell',
     GoUnlimitedOffer2025 = 'GoUnlimitedOffer2025',
+    UnlimitedToDuoPermanentOffer = 'UnlimitedToDuoPermanentOffer',
     ScribeAdminSetting = 'ScribeAdminSetting',
     SelfTroubleshoot = 'SelfTroubleshoot',
     WalletAztecoWeb = 'WalletAztecoWeb',

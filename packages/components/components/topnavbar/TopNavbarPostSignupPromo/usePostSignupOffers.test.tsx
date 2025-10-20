@@ -8,6 +8,7 @@ import { useMailSubscriptionReminder } from './MailSubscriptionReminder/useMailS
 import { usePaidUsersNudge } from './PaidUsersNudge/hooks/usePaidUsersNudge';
 import { useDrivePostSignupOneDollar } from './PostSignupOneDollar/DrivePostSignupOneDollar/useDrivePostSignupOneDollar';
 import { useMailPostSignupOneDollar } from './PostSignupOneDollar/MailPostSignupOneDollar/useMailPostSignupOneDollar';
+import { useUnlimitedToDuoOffer } from './UnlimitedToDuoOffer/hooks/useUnlimitedToDuoOffer';
 import { usePostSignupOffers } from './usePostSignupOffers';
 
 jest.mock('./PostSignupOneDollar/MailPostSignupOneDollar/useMailPostSignupOneDollar');
@@ -27,6 +28,9 @@ const mockUsePaidUsersNudge = usePaidUsersNudge as jest.Mock;
 
 jest.mock('./GoUnlimitedOffer/hooks/useGoUnlimited2025');
 const mockUseGoUnlimited2025 = useGoUnlimited2025 as jest.Mock;
+
+jest.mock('./UnlimitedToDuoOffer/hooks/useUnlimitedToDuoOffer');
+const mockUseUnlimitedToDuoOffer = useUnlimitedToDuoOffer as jest.Mock;
 
 describe('usePostSignupOffers', () => {
     beforeEach(() => {
@@ -61,6 +65,12 @@ describe('usePostSignupOffers', () => {
         });
 
         mockUseGoUnlimited2025.mockReturnValue({
+            isEligible: false,
+            isLoading: false,
+            openSpotlight: false,
+        });
+
+        mockUseUnlimitedToDuoOffer.mockReturnValue({
             isEligible: false,
             isLoading: false,
             openSpotlight: false,
