@@ -43,7 +43,7 @@ export function LegacyDialogs({ state }: LegacyDialogsProps) {
         />
       </ConditionalFormatDialog>
       <TableEditor sheetId={state.activeSheetId} onSubmit={state.onUpdateTable} theme={state.theme} />
-      <DeleteSheetConfirmation sheetId={state.activeSheetId} onDeleteSheet={state.onDeleteSheet} />
+      <DeleteSheetConfirmation onDeleteSheet={state.onDeleteSheet} />
       <NamedRangeEditor
         sheetId={state.activeSheetId}
         onCreateNamedRange={state.onCreateNamedRange}

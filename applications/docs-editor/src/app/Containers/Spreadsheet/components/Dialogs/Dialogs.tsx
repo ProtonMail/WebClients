@@ -25,7 +25,7 @@ export function Dialogs({ state }: DialogsProps) {
         />
       </ChartEditorDialog>
       <TableEditor sheetId={state.activeSheetId} onSubmit={state.onUpdateTable} theme={state.theme} />
-      <DeleteSheetConfirmation sheetId={state.activeSheetId} onDeleteSheet={state.onDeleteSheet} />
+      <DeleteSheetConfirmation onDeleteSheet={state.onDeleteSheet} />
       <SheetSearch
         isActive={state.searchState.isSearchActive}
         onSubmit={state.searchState.onSearch}
