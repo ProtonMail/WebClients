@@ -11,7 +11,6 @@ then
   rm -rf $HOME/Library/Application\ Support/Proton\ Meet/
   rm -rf $HOME/Library/Logs/Proton\ Meet/
   rm -rf /Applications/Proton\ Meet.app
-  rm -rf /Applications/Proton\ Meet\ Beta.app
 
   rm -rf Applications/Proton\ Meet\ Uninstaller.app
   
