@@ -3,12 +3,19 @@ import type { PartialMessageState } from '@proton/mail/store/messages/messagesTy
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { Address, MailSettings, Recipient, UserSettings } from '@proton/shared/lib/interfaces';
 import { FORWARDED_MESSAGE } from '@proton/shared/lib/mail/messages';
+import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 
 import { formatFullDate } from 'proton-mail/helpers/date';
 import { createNewDraft } from 'proton-mail/helpers/message/messageDraft';
 
 import mails from './__fixtures__/messageBlockquote.fixtures';
-import { locateBlockquote, locatePlaintextInternalBlockquotes } from './messageBlockquote';
+import {
+    locateBlockquote,
+    locatePlaintextInternalBlockquotes,
+    removeSignatureFromHTMLMessage,
+    removeSignatureFromPlainTextMessage,
+} from './messageBlockquote';
+import { exportPlainText } from './messageContent';
 
 /**
  * Creating a whole document each time is needed because locate blockquote is using xpath request
@@ -189,7 +196,7 @@ describe('locatePlaintextInternalBlockquotes', () => {
 
 
 
-Sent with Proton Mail secure email.
+${exportPlainText(getProtonMailSignature())}
 
 `;
 
@@ -261,5 +268,321 @@ Envoyé avec la messagerie sécurisée Proton Mail.`;
         const [content, blockquotes] = locatePlaintextInternalBlockquotes(messageContent);
         expect(content).toEqual(messageContent);
         expect(blockquotes).toEqual('');
+    });
+});
+
+describe('removeSignatureFromHTMLMessage', () => {
+    it('should remove the signature out of the HTML', () => {
+        const content = `
+            <body>
+                <div>
+                    <p>Hi John,</p>
+                    <p>Thank you for your email. I've reviewed the proposal and I think it looks great!</p>
+                    <p>I have a few minor suggestions:</p>
+                    <ul>
+                        <li>Update the timeline in section 3</li>
+                        <li>Add more detail about the budget breakdown</li>
+                        <li>Include the risk assessment we discussed</li>
+                    </ul>
+                    <p>Let me know if you'd like to schedule a call to discuss these points further.</p>
+                    <p>Best regards,</p>
+                </div>
+                <div class="protonmail_signature_block" style="margin-top: 14px;">
+                    <div>Sarah Mitchell</div>
+                    <div>Senior Product Manager</div>
+                    <div>Acme Corporation</div>
+                    <div>sarah.mitchell@acme.com</div>
+                    <div>+1 (555) 123-4567</div>
+                </div>
+            </body>
+        `;
+
+        const expectedContent = `<body>
+                <div>
+                    <p>Hi John,</p>
+                    <p>Thank you for your email. I've reviewed the proposal and I think it looks great!</p>
+                    <p>I have a few minor suggestions:</p>
+                    <ul>
+                        <li>Update the timeline in section 3</li>
+                        <li>Add more detail about the budget breakdown</li>
+                        <li>Include the risk assessment we discussed</li>
+                    </ul>
+                    <p>Let me know if you'd like to schedule a call to discuss these points further.</p>
+                    <p>Best regards,</p>
+                </div>
+                
+            
+        </body>`;
+
+        const contentWithoutSignature = removeSignatureFromHTMLMessage(content);
+        expect(contentWithoutSignature).toEqual(expectedContent);
+    });
+    it('should locate content before blockquote and remove the signature', () => {
+        const content = `
+        <div style="font-family: verdana; font-size: 20px;">
+            <div style="font-family: verdana; font-size: 20px;">This is the content before the blockquote and signature<br></div>
+            <div class="protonmail_signature_block protonmail_signature_block-empty" style="font-family: verdana; font-size: 20px;">
+                <div class="protonmail_signature_block-user protonmail_signature_block-empty"></div>
+                <div class="protonmail_signature_block-proton protonmail_signature_block-empty"></div>
+            </div>
+            <div class="protonmail_quote">
+                On Tuesday, January 4th, 2022 at 17:13, Swiip - Test account &lt;swiip.test@protonmail.com&gt; wrote:<br>
+                <blockquote class="protonmail_quote" type="cite">
+                    <div style="font-family: verdana; font-size: 20px;">
+                        <div style="font-family: verdana; font-size: 20px;">test</div>
+                        <div class="protonmail_signature_block protonmail_signature_block-empty" style="font-family: verdana; font-size: 20px;">
+                            <div class="protonmail_signature_block-user protonmail_signature_block-empty"></div>
+                            <div class="protonmail_signature_block-proton protonmail_signature_block-empty"></div>
+                        </div>
+                    </div>
+                </blockquote><br>
+            </div>
+        </div>`;
+
+        const expectedContent = `<body><div style=\"font-family: verdana; font-size: 20px;\">
+            <div style=\"font-family: verdana; font-size: 20px;\">This is the content before the blockquote and signature<br></div>
+            
+            </div></body>`;
+
+        const [contentWithoutBlockQuotes] = locateBlockquote(createDocument(content));
+        const contentWithoutSignature = removeSignatureFromHTMLMessage(contentWithoutBlockQuotes);
+        expect(contentWithoutSignature).toEqual(expectedContent);
+    });
+});
+
+describe('removeSignatureFromPlainTextMessage', () => {
+    it('should remove the signature from plain text content', () => {
+        const signature = `This is a test signature`;
+
+        const content = `Hi John,
+
+            Thank you for your email. I've reviewed the proposal and I think it looks great!
+
+            I have a few minor suggestions:
+            - Update the timeline in section 3
+            - Add more detail about the budget breakdown
+            - Include the risk assessment we discussed
+
+            Let me know if you'd like to schedule a call to discuss these points further.
+
+            Best regards,
+
+            ${signature}
+        `;
+
+        const expectedContent = `Hi John,
+
+            Thank you for your email. I've reviewed the proposal and I think it looks great!
+
+            I have a few minor suggestions:
+            - Update the timeline in section 3
+            - Add more detail about the budget breakdown
+            - Include the risk assessment we discussed
+
+            Let me know if you'd like to schedule a call to discuss these points further.
+
+            Best regards,
+
+            `;
+
+        const mockAddresses: Address[] = [
+            {
+                ID: 'address-123',
+                Signature: signature,
+            } as Address,
+        ];
+
+        const contentWithoutSignature = removeSignatureFromPlainTextMessage(content, 'address-123', mockAddresses);
+        expect(contentWithoutSignature).toEqual(expectedContent);
+    });
+
+    it('should return original content when signature is not found', () => {
+        const content = `Hi John,
+
+            This is a simple message without any signature.
+
+            Best regards,
+            Sarah
+        `;
+
+        const mockAddresses: Address[] = [
+            {
+                ID: 'address-123',
+                Signature: 'This signature does not exist in the content',
+            } as Address,
+        ];
+
+        const contentWithoutSignature = removeSignatureFromPlainTextMessage(content, 'address-123', mockAddresses);
+        expect(contentWithoutSignature).toEqual(content);
+    });
+
+    it('should return original content when signature is empty', () => {
+        const content = `Hi John,
+
+            This is a simple message.
+
+            Best regards,
+            Sarah
+        `;
+
+        const mockAddresses: Address[] = [
+            {
+                ID: 'address-123',
+                Signature: '',
+            } as Address,
+        ];
+
+        const contentWithoutSignature = removeSignatureFromPlainTextMessage(content, 'address-123', mockAddresses);
+        expect(contentWithoutSignature).toEqual(content);
+    });
+
+    it('should remove only the last occurrence of signature when same text appears in body of message', () => {
+        const signature = `Sarah Mitchell`;
+
+        const content = `Hi Sarah Mitchell,
+
+            I wanted to follow up on our conversation.
+
+            Best regards,
+
+            ${signature}
+        `;
+
+        const expectedContent = `Hi Sarah Mitchell,
+
+            I wanted to follow up on our conversation.
+
+            Best regards,
+
+            `;
+
+        const mockAddresses: Address[] = [
+            {
+                ID: 'address-123',
+                Signature: signature,
+            } as Address,
+        ];
+
+        const contentWithoutSignature = removeSignatureFromPlainTextMessage(content, 'address-123', mockAddresses);
+        expect(contentWithoutSignature).toEqual(expectedContent);
+    });
+
+    it('should remove the signature if the Proton message is the only content after', () => {
+        const signature = `Sarah Mitchell`;
+
+        const content = `Hi Sarah Mitchell,
+
+            I wanted to follow up on our conversation.
+
+            Best regards,
+
+            ${signature}
+
+            ${exportPlainText(getProtonMailSignature())}
+        `;
+
+        const expectedContent = `Hi Sarah Mitchell,
+
+            I wanted to follow up on our conversation.
+
+            Best regards,
+
+            `;
+
+        const mockAddresses: Address[] = [
+            {
+                ID: 'address-123',
+                Signature: signature,
+            } as Address,
+        ];
+
+        const contentWithoutSignature = removeSignatureFromPlainTextMessage(content, 'address-123', mockAddresses);
+        expect(contentWithoutSignature).toEqual(expectedContent);
+    });
+
+    it('should remove the signature if content after is empty', () => {
+        const signature = `Test Signature`;
+
+        const content = `Hi Sarah Mitchell,
+
+            I wanted to follow up on our conversation.
+
+            Best regards,
+
+            ${signature}
+        `;
+
+        const expectedContent = `Hi Sarah Mitchell,
+
+            I wanted to follow up on our conversation.
+
+            Best regards,
+
+            `;
+
+        const mockAddresses: Address[] = [
+            {
+                ID: 'address-123',
+                Signature: signature,
+            } as Address,
+        ];
+
+        const contentWithoutSignature = removeSignatureFromPlainTextMessage(content, 'address-123', mockAddresses);
+        expect(contentWithoutSignature).toEqual(expectedContent);
+    });
+
+    it('should remove signature if it has newlines before and the content after is empty', () => {
+        const signature = `Test Signature`;
+
+        const content = `Hi Sarah Mitchell,
+
+            I wanted to follow up on our conversation.
+
+            ${signature}
+        `;
+
+        const expectedContent = `Hi Sarah Mitchell,
+
+            I wanted to follow up on our conversation.
+
+            `;
+
+        const mockAddresses: Address[] = [
+            {
+                ID: 'address-123',
+                Signature: signature,
+            } as Address,
+        ];
+
+        const contentWithoutSignature = removeSignatureFromPlainTextMessage(content, 'address-123', mockAddresses);
+        expect(contentWithoutSignature).toEqual(expectedContent);
+    });
+
+    it('should not remove signature if there is a match but it is not at the end', () => {
+        const signature = `Test Signature`;
+
+        const content = `Hi Sarah Mitchell,
+            
+            ${signature}
+
+            I wanted to follow up on our conversation.
+        `;
+
+        const expectedContent = `Hi Sarah Mitchell,
+            
+            ${signature}
+
+            I wanted to follow up on our conversation.
+        `;
+
+        const mockAddresses: Address[] = [
+            {
+                ID: 'address-123',
+                Signature: signature,
+            } as Address,
+        ];
+
+        const contentWithoutSignature = removeSignatureFromPlainTextMessage(content, 'address-123', mockAddresses);
+        expect(contentWithoutSignature).toEqual(expectedContent);
     });
 });
