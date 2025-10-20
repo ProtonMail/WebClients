@@ -141,12 +141,6 @@ export function handleWebContents(contents: WebContents) {
             return details.preventDefault();
         }
 
-        if (!isHostAllowed(details.url) && !global.oauthProcess && !global.subscriptionProcess) {
-            logger().info("opening external URL", details.url);
-            shell.openExternal(details.url);
-            return details.preventDefault();
-        }
-
         // Only redirect to a different browser view if the navigation is happening in
         // the visible web contents.
         if (isCurrentContent()) {
@@ -212,16 +206,6 @@ export function handleWebContents(contents: WebContents) {
             // that are not calendar/mail/account domains and should be handled as a regular
             // unknown link. We are keeping it enabled for now to detect error cases.
             logWindowOpen("allowed", `host not caught by any electron view ${url}`, "error");
-            return { action: "allow" };
-        }
-
-        if (global.oauthProcess) {
-            logWindowOpen("allowed", `oauth process enabled ${url}`);
-            return { action: "allow" };
-        }
-
-        if (global.subscriptionProcess) {
-            logWindowOpen("allowed", `subscription process enabled ${url}`);
             return { action: "allow" };
         }
 
