@@ -15,7 +15,7 @@ import { mockUseAuthentication } from '@proton/testing/lib/mockUseAuthentication
 import noop from '@proton/utils/noop';
 
 import { getStoreWrapper } from '../../test/Store';
-import { SchedulingProvider } from '../scheduling/schedulingProvider/SchedulingProvider';
+import { BookingsProvider } from '../bookings/bookingsProvider/BookingsProvider';
 import type { CalendarSidebarProps } from './CalendarSidebar';
 import CalendarSidebar from './CalendarSidebar';
 
@@ -164,11 +164,11 @@ function renderComponent(props?: Partial<CalendarSidebarProps>) {
     return (
         <Router history={history}>
             <Wrapper>
-                <SchedulingProvider>
+                <BookingsProvider>
                     <CacheProvider cache={createCache()}>
                         <CalendarSidebar {...defaultProps} {...props} />
                     </CacheProvider>
-                </SchedulingProvider>
+                </BookingsProvider>
             </Wrapper>
         </Router>
     );

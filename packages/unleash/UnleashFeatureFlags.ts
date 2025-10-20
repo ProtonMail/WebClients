@@ -109,7 +109,7 @@ enum CalendarFeatureFlag {
     CalendarMetrics = 'CalendarMetrics',
     CalendarCommander = 'CalendarCommander',
     RsvpCommentWeb = 'RsvpCommentWeb',
-    CalendarScheduling = 'CalendarScheduling',
+    CalendarBookings = 'CalendarBookings',
 }
 
 enum DriveFeatureFlag {

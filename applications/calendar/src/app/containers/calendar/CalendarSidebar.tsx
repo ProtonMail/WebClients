@@ -33,9 +33,9 @@ import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
 
 import { ProtonMeetSpotlightWrapper } from './ProtonMeetSpotlightWrapper';
+import { Bookings } from './sidebar/Bookings';
 import { MyCalendars } from './sidebar/MyCalendars';
 import { OtherCalendars } from './sidebar/OtherCalendars';
-import { SchedulingSidebarItems } from './sidebar/SchedulingSidebarItems';
 
 export interface CalendarSidebarProps {
     calendars: VisualCalendar[];
@@ -158,7 +158,7 @@ const CalendarSidebar = ({
                                 headerRef={headerRef}
                                 loadingSubscribedCalendars={loadingSubscribedCalendars}
                             />
-                            <SchedulingSidebarItems headerRef={headerRef} />
+                            <Bookings headerRef={headerRef} />
                         </div>
                         {displayContactsInHeader && <SidebarDrawerItems toggleHeaderDropdown={onToggleExpand} />}
                     </>
