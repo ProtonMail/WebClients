@@ -289,7 +289,6 @@ describe('EmailReminderWidget', () => {
     describe('decryption error', () => {
         beforeEach(() => {
             mockedUseGetCalendarEventRaw.mockImplementation(
-                // eslint-disable-next-line prefer-promise-reject-errors
                 () => () => Promise.reject({ message: 'DECRYPTION_FAILED' })
             );
         });

@@ -29,9 +29,7 @@ const RecipientsList = ({
 }: Props) => (
     <Fragment>
         {recipientsOrGroup.map((recipientOrGroup, index) => (
-            <Fragment
-                key={index} // eslint-disable-line react/no-array-index-key
-            >
+            <Fragment key={index}>
                 <RecipientItem
                     recipientOrGroup={recipientOrGroup}
                     mapStatusIcons={mapStatusIcons}

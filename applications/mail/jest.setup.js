@@ -59,8 +59,8 @@ jest.mock('@proton/components/hooks/useEventManager.ts', () => {
 jest.mock('./src/app/helpers/upload');
 
 global.MutationObserver = class {
-    disconnect() {} // eslint-disable-line
-    observe() {} // eslint-disable-line
+    disconnect() {}
+    observe() {}
 };
 
 // Mock window.getComputedStyle to prevent "Not implemented" errors in jsdom, as it's required by useActiveBreakpoint to determine the active breakpoint.

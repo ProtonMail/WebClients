@@ -1,7 +1,6 @@
 import { VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calendar';
 
-import { VIDEO_CONF_SERVICES } from './constants';
-import { SEPARATOR_PROTON_EVENTS } from './constants';
+import { SEPARATOR_PROTON_EVENTS, VIDEO_CONF_SERVICES } from './constants';
 import {
     addVideoConfInfoToDescription,
     isVideoConfOnlyLink,
