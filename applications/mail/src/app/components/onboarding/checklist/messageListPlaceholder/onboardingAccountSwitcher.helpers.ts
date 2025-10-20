@@ -21,7 +21,7 @@ export const getFinanceServicesByCountry = ({
             return ['santander', 'bbva', 'caixa-bank'] satisfies OnlineServicesKey[];
         }
         if (countryLocation === 'CH') {
-            return ['ubs', 'raiffeisen', 'zurcher-kantonalbank'] satisfies OnlineServicesKey[];
+            return ['alpian', 'ubs', 'raiffeisen'] satisfies OnlineServicesKey[];
         }
         // Default to US
         return ['bank-of-america', 'american-express', 'capital-one'] satisfies OnlineServicesKey[];
