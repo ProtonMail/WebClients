@@ -18,6 +18,7 @@ import {
 } from '@proton/pass/fathom';
 import type { MaybeNull } from '@proton/pass/types';
 import { getActiveElement } from '@proton/pass/utils/dom/active-element';
+import { TopLayerManager } from '@proton/pass/utils/dom/popover';
 import { isHTMLElement, isInputElement } from '@proton/pass/utils/dom/predicates';
 import { debounceBuffer } from '@proton/pass/utils/fp/control';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
@@ -205,13 +206,16 @@ export const createClientObserver = (): ClientObserver => {
             listeners.addListener(document.body, 'transitionend', onTransitionEnd);
             listeners.addListener(document.body, 'animationend', onTransitionEnd);
             listeners.addListener(document.body, 'focusin', onFocusIn);
+            TopLayerManager.connect();
         }
     };
 
     const destroy = () => {
         logger.debug('[PageObserver] Destroyed');
+        pubsub.unsubscribe();
         listeners.removeAll();
         onTransitionEnd.cancel();
+        TopLayerManager.disconnect();
         state.observer = null;
         state.idle = true;
     };

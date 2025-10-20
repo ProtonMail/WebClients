@@ -16,7 +16,6 @@ import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { AppState } from '@proton/pass/types';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
-import { TopLayerManager } from '@proton/pass/utils/dom/popover';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { logger } from '@proton/pass/utils/logger';
@@ -58,7 +57,7 @@ export const createContentScriptClient = ({
             context.service.inline.destroy();
             context.service.autofill.destroy();
             context.service.passkey?.destroy();
-            TopLayerManager.disconnect();
+            context.service.autosave.destroy();
 
             DOMCleanUp(elements);
             ExtensionContext.read()?.destroy();
@@ -160,24 +159,27 @@ export const createContentScriptClient = ({
 
         /** Connects the content-script service to the extension context.
          * Will automatically try to recycle the extension context if the
-         * port is disconnected if the service worker is killed */
+         * port is disconnected if the service worker is killed. */
         start: async () => {
             try {
-                const extensionContext = await setupExtensionContext({
+                const ext = await setupExtensionContext({
                     endpoint: 'contentscript',
                     onDisconnect: () => {
-                        context.destroy({ reason: 'port disconnected' });
+                        controller.stop('port disconnected');
                         return { recycle: true };
                     },
                     /** if the extension context errors out: destroy the parent
                      * controller. This will cascade to remove both the extension
                      * context and the content-script context */
                     onError: controller.destroy,
-                    onRecycle: handleStart,
+                    onRecycle: async (next) => {
+                        await controller.start();
+                        return handleStart(next);
+                    },
                 });
 
                 logger.debug(`[ContentScript::${scriptId}] Starting content-script service`);
-                if (!context.getState().stale) await handleStart(extensionContext);
+                if (!context.getState().stale) await handleStart(ext);
             } catch {}
         },
 
