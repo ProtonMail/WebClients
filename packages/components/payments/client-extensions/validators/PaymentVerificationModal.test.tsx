@@ -27,6 +27,7 @@ beforeEach(() => {
     };
 
     props = {
+        open: true,
         onSubmit: jest.fn(),
         onClose: jest.fn(),
         onProcess: jest.fn().mockReturnValue(promiseWithController),
