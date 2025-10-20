@@ -7,8 +7,8 @@ import Icon from '@proton/components/components/icon/Icon';
 import SidebarList from '@proton/components/components/sidebar/SidebarList';
 import SimpleSidebarListItemHeader from '@proton/components/components/sidebar/SimpleSidebarListItemHeader';
 
-import { useScheduling } from '../../scheduling/schedulingProvider/SchedulingProvider';
-import { useSchedulingAvailability } from '../../scheduling/useSchedulingAvailability';
+import { useBookings } from '../../bookings/bookingsProvider/BookingsProvider';
+import { useBookingsAvailability } from '../../bookings/useBookingsAvailability';
 
 interface Props {
     headerRef: React.RefObject<HTMLDivElement>;
@@ -16,37 +16,37 @@ interface Props {
 
 // TODO have an empty state placeholder
 // TODO handle the state of the plus button
-export const SchedulingSidebarItems = ({ headerRef }: Props) => {
-    const [displayScheduling, setDisplayScheduling] = useState(true);
+export const Bookings = ({ headerRef }: Props) => {
+    const [displayBookings, setDisplayBookings] = useState(true);
 
-    const isSchedulingAvailable = useSchedulingAvailability();
-    const { createNewSchedulingPage } = useScheduling();
+    const isBookingsAvailable = useBookingsAvailability();
+    const { createNewBookingsPage } = useBookings();
 
-    if (!isSchedulingAvailable) {
+    if (!isBookingsAvailable) {
         return null;
     }
 
     const handleCreate = () => {
-        createNewSchedulingPage();
+        createNewBookingsPage();
     };
 
     return (
         <SidebarList>
             <SimpleSidebarListItemHeader
-                toggle={displayScheduling}
-                onToggle={() => setDisplayScheduling((prevState) => !prevState)}
-                text={c('Link').t`Scheduling pages`}
-                testId="calendar-sidebar:scheduling-pages-button"
+                toggle={displayBookings}
+                onToggle={() => setDisplayBookings((prevState) => !prevState)}
+                text={c('Link').t`Bookings pages`}
+                testId="calendar-sidebar:bookings-pages-button"
                 headerRef={headerRef}
                 right={
-                    <Tooltip title={c('Action').t`Create a new scheduling page`}>
+                    <Tooltip title={c('Action').t`Create a new bookings page`}>
                         <button
                             type="button"
                             className="flex navigation-link-header-group-control shrink-0"
                             onClick={handleCreate}
-                            data-testid="navigation-link:create-scheduling-page"
+                            data-testid="navigation-link:create-bookings-page"
                         >
-                            <Icon name="plus" alt={c('Action').t`Create a new scheduling page`} />
+                            <Icon name="plus" alt={c('Action').t`Create a new bookings page`} />
                         </button>
                     </Tooltip>
                 }

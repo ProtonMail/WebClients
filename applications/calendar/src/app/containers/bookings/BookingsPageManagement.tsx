@@ -10,7 +10,7 @@ import { InputFieldTwo, Option, SelectTwo, TimeZoneSelector } from '@proton/comp
 import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eventDefaults';
 
-import { useScheduling } from './schedulingProvider/SchedulingProvider';
+import { useBookings } from './bookingsProvider/BookingsProvider';
 
 interface BookingFormData {
     title: string;
@@ -19,10 +19,10 @@ interface BookingFormData {
     timeZone: string | undefined;
 }
 
-export const SchedulePageManagement = () => {
+export const BookingsPageManagement = () => {
     const scheduleOptions = getCalendarEventDefaultDuration();
 
-    const { writeableCalendars } = useScheduling();
+    const { writeableCalendars } = useBookings();
     const [calendarUserSettings] = useCalendarUserSettings();
 
     const [formData, setFormData] = useState<BookingFormData>({
