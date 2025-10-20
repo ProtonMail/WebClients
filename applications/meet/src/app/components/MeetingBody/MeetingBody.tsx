@@ -7,6 +7,7 @@ import { c } from 'ttag';
 
 import { IcMeetRotateCamera } from '@proton/icons';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
+import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
@@ -59,6 +60,8 @@ export const MeetingBody = ({
     const { handleRotateCamera, isVideoEnabled } = useMediaManagementContext();
 
     const { sideBarState } = useUIStateContext();
+
+    const isEarlyAccess = useFlag('MeetEarlyAccess');
 
     const isSideBarOpen = Object.values(sideBarState).some((value) => value);
 
@@ -131,6 +134,7 @@ export const MeetingBody = ({
                             flexBasis: 0,
                         }}
                     >
+                        {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
                         <video
                             className="screen-share-video w-full h-full block object-contain"
                             ref={screenShareVideoRef}
@@ -165,7 +169,7 @@ export const MeetingBody = ({
                         <Participants />
                         <Settings />
                         <Chat />
-                        {guestMode ? <MeetingDetails /> : <WrappedMeetingDetails />}
+                        {guestMode || !isEarlyAccess ? <MeetingDetails /> : <WrappedMeetingDetails />}
                     </div>
                 )}
             </div>
