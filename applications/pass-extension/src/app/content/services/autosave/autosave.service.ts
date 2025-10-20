@@ -103,5 +103,9 @@ export const createAutosaveService = (): AutosaveService => {
         250
     );
 
-    return { prompt, reconciliate };
+    return {
+        destroy: () => reconciliate.cancel(),
+        prompt,
+        reconciliate,
+    };
 };

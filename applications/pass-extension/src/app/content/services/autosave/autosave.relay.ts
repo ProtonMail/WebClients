@@ -8,6 +8,7 @@ import noop from '@proton/utils/noop';
  * -frame field value reconciliation */
 export const createAutosaveRelay = (): AutosaveService => {
     return {
+        destroy: noop,
         prompt: () => false,
         reconciliate: noop,
     };

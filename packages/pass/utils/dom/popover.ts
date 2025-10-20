@@ -43,10 +43,12 @@ export const TopLayerManager = (() => {
         }
     };
 
-    listeners.addListener(document, 'toggle', onToggle, { capture: true });
-    listeners.addObserver(document.body, onMutation, { childList: true, subtree: true });
-
     return {
+        connect: () => {
+            listeners.addListener(document, 'toggle', onToggle, { capture: true });
+            listeners.addObserver(document.body, onMutation, { childList: true, subtree: true });
+        },
+
         disconnect: () => listeners.removeAll(),
 
         /** Ensures a given element is the top-most popover element. This should be

@@ -93,7 +93,6 @@ export const createFormManager = (options: FormManagerOptions) => {
 
                         try {
                             const forms = ctx?.service.detector.predictAll({ excludedFieldTypes });
-
                             forms?.forEach((options) => {
                                 const formHandle = state.trackedForms.get(options.form) ?? createFormHandles(options);
                                 state.trackedForms.set(options.form, formHandle);

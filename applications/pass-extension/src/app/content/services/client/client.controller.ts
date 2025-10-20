@@ -170,11 +170,12 @@ export const createClientController = ({
          * captured while preventing thrashing during quick changes in Safari. */
         start: debounce(
             async () => {
+                observer.observe();
+
                 if (!controller.instance) {
                     controller.deferred = false;
                     controller.instance = clientFactory({ scriptId, elements, mainFrame, controller });
                     probe.start(sendActivityProbe, ACTIVITY_PROBE_MS);
-                    observer.observe();
                     return controller.instance.start();
                 }
             },
@@ -194,12 +195,10 @@ export const createClientController = ({
          * called, the current controller can no longer be re-used. */
         destroy: (err?: unknown) => {
             const reason = err instanceof Error ? err.message : err;
-
             listeners.removeAll();
             controller.stop(String(reason ?? 'destroyed'));
             controller.channel.destroy();
             controller.observer.destroy();
-            transport.destroy();
         },
     };
 
