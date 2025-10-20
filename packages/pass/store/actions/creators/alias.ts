@@ -82,9 +82,8 @@ export const getAliasDetailsFailure = createAction(
     withRequestFailure((payload: { aliasEmail: string }, error: unknown) => ({ payload, error }))
 );
 
-export const aliasDetailsSync = createAction(
-    'alias::details::sync',
-    (payload: { aliasEmail: string } & Partial<AliasDetails>) => withCache({ payload })
+export const aliasDetailsSync = createAction('alias::details::sync', (payload: { aliasEmail: string } & Partial<AliasDetails>) =>
+    withCache({ payload })
 );
 
 export const aliasSyncEnable = requestActionsFactory<ShareId, ShareId>('alias::sync::enable')({
@@ -105,12 +104,10 @@ export const aliasSyncEnable = requestActionsFactory<ShareId, ShareId>('alias::s
     },
 });
 
-export const aliasSyncPending = requestActionsFactory<void, { items: ItemRevision[]; shareId: string }>(
-    'alias::sync::pending'
-)({});
+export const aliasSyncPending = requestActionsFactory<void, { items: ItemRevision[]; shareId: string }>('alias::sync::pending')({});
 
 export const aliasSyncStatus = requestActionsFactory<void, SlSyncStatusOutput, void>('alias::sync::status')({
-    success: { config: { maxAge: UNIX_MINUTE, data: null } },
+    success: { config: { maxAge: UNIX_MINUTE, data: null, hot: true } },
 });
 
 export const aliasSyncStatusToggle = requestActionsFactory<AliasToggleStatusDTO, SelectedItem & { item: ItemRevision }>(
@@ -124,10 +121,8 @@ export const aliasSyncStatusToggle = requestActionsFactory<AliasToggleStatusDTO,
                 withNotification({
                     type: 'info',
                     text: isDisabledAlias(item)
-                        ? c('Info')
-                              .t`Alias successfully disabled. You will no longer receive emails sent to ${item.aliasEmail}`
-                        : c('Info')
-                              .t`Alias successfully enabled. You can now receive emails sent to ${item.aliasEmail}`,
+                        ? c('Info').t`Alias successfully disabled. You will no longer receive emails sent to ${item.aliasEmail}`
+                        : c('Info').t`Alias successfully enabled. You can now receive emails sent to ${item.aliasEmail}`,
                 })
             )({ payload: { shareId, itemId, item } }),
     },
@@ -243,9 +238,7 @@ export const cancelMailboxEdit = requestActionsFactory<number, number>('alias::m
     },
 });
 
-export const setDefaultMailbox = requestActionsFactory<MailboxDTO, UserAliasSettingsGetOutput>(
-    'alias::mailbox::set-default'
-)({
+export const setDefaultMailbox = requestActionsFactory<MailboxDTO, UserAliasSettingsGetOutput>('alias::mailbox::set-default')({
     key: ({ mailboxID }) => mailboxID.toString(),
     success: {
         prepare: (data) =>
@@ -266,9 +259,7 @@ export const setDefaultMailbox = requestActionsFactory<MailboxDTO, UserAliasSett
 
 export const getAliasDomains = requestActionsFactory<void, UserAliasDomainOutput[]>('alias::domains')();
 
-export const setDefaultAliasDomain = requestActionsFactory<MaybeNull<string>, UserAliasSettingsGetOutput>(
-    'alias::domain::set-default'
-)({
+export const setDefaultAliasDomain = requestActionsFactory<MaybeNull<string>, UserAliasSettingsGetOutput>('alias::domain::set-default')({
     key: (domain) => domain ?? 'not-selected',
     success: {
         prepare: (payload) =>
@@ -323,8 +314,7 @@ export const verifyCustomDomain = requestActionsFactory<
                                         .t`Domain successfully verified. Your domain can start receiving emails and creating aliases`
                                   : c('Success').t`Domain ownership verified. You can now set up MX record.`;
                           } else {
-                              return c('Error')
-                                  .t`Domain could not be verified. Please make sure you added the correct DNS records`;
+                              return c('Error').t`Domain could not be verified. Please make sure you added the correct DNS records`;
                           }
                       })(),
                   })({ payload }),
@@ -358,9 +348,7 @@ export const deleteCustomDomain = requestActionsFactory<number, number>('alias::
     },
 });
 
-export const getCustomDomainSettings = requestActionsFactory<number, CustomDomainSettingsOutput>(
-    'alias::custom-domain::settings'
-)({
+export const getCustomDomainSettings = requestActionsFactory<number, CustomDomainSettingsOutput>('alias::custom-domain::settings')({
     key: intKey,
 
     failure: {
@@ -373,9 +361,7 @@ export const getCustomDomainSettings = requestActionsFactory<number, CustomDomai
     },
 });
 
-export const updateCatchAll = requestActionsFactory<CatchAllDTO, CustomDomainSettingsOutput>(
-    'alias::custom-domain::settings::catch-all'
-)({
+export const updateCatchAll = requestActionsFactory<CatchAllDTO, CustomDomainSettingsOutput>('alias::custom-domain::settings::catch-all')({
     key: ({ domainID }) => String(domainID),
     success: {
         prepare: (data) =>
@@ -461,21 +447,15 @@ export const updateCustomDomainMailboxes = requestActionsFactory<CustomDomainMai
     },
 });
 
-export const aliasGetContactsList = requestActionsFactory<UniqueItem, AliasContactWithStatsGetResponse[]>(
-    'alias::contact::get-list'
-)({
+export const aliasGetContactsList = requestActionsFactory<UniqueItem, AliasContactWithStatsGetResponse[]>('alias::contact::get-list')({
     key: selectedItemKey,
 });
 
-export const aliasGetContactInfo = requestActionsFactory<AliasContactInfoDTO, AliasContactGetResponse>(
-    'alias::contact::get-info'
-)({
+export const aliasGetContactInfo = requestActionsFactory<AliasContactInfoDTO, AliasContactGetResponse>('alias::contact::get-info')({
     key: (dto) => withKey(selectedItemKey(dto))(dto.contactId),
 });
 
-export const aliasCreateContact = requestActionsFactory<AliasContactNewDTO, AliasContactGetResponse>(
-    'alias::contact::create'
-)({
+export const aliasCreateContact = requestActionsFactory<AliasContactNewDTO, AliasContactGetResponse>('alias::contact::create')({
     key: (dto) => withKey(selectedItemKey(dto))(dto.email),
     success: {
         prepare: (payload) =>
@@ -513,17 +493,13 @@ export const aliasDeleteContact = requestActionsFactory<AliasContactInfoDTO, num
     },
 });
 
-export const aliasBlockContact = requestActionsFactory<AliasContactBlockDTO, AliasContactGetResponse>(
-    'alias::contact::block'
-)({
+export const aliasBlockContact = requestActionsFactory<AliasContactBlockDTO, AliasContactGetResponse>('alias::contact::block')({
     key: (dto) => withKey(selectedItemKey(dto))(dto.contactId),
     success: {
         prepare: (payload) =>
             withNotification({
                 type: 'success',
-                text: payload.Blocked
-                    ? c('Success').t`Contact successfully blocked`
-                    : c('Success').t`Contact successfully unblocked`,
+                text: payload.Blocked ? c('Success').t`Contact successfully blocked` : c('Success').t`Contact successfully unblocked`,
             })({ payload }),
     },
     failure: {
