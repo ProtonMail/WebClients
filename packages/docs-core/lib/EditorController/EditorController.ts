@@ -41,6 +41,7 @@ export interface EditorControllerInterface {
     editorInitializationConfig: EditorInitializationConfig | undefined,
     userAddress: string,
     isPublicMode: boolean,
+    appVersion: string,
   ): void
   importDataIntoSheet(data: SheetImportData): Promise<void>
   handleFileMenuAction(action: FileMenuAction): Promise<void>
@@ -167,6 +168,7 @@ export class EditorController implements EditorControllerInterface {
     editorInitializationConfig: EditorInitializationConfig | undefined,
     userAddress: string,
     isPublicMode: boolean,
+    appVersion: string,
   ): void {
     if (!this.editorInvoker) {
       throw new Error('Editor invoker not initialized')
@@ -179,6 +181,7 @@ export class EditorController implements EditorControllerInterface {
       userAddress,
       this.documentState.getProperty('userRole').roleType,
       isPublicMode,
+      appVersion,
       editorInitializationConfig,
     )
 
