@@ -140,6 +140,9 @@ export enum FeatureCode {
     OfferGoUnlimited2025 = 'OfferGoUnlimited2025',
     OfferUnlimitedRotationState = 'OfferUnlimitedRotationState',
 
+    // Unlimited to Duo permanent offer
+    HideUnlimitedToDuoPermanentOffer = 'HideUnlimitedToDuoPermanentOffer',
+
     // Meet
     NewScheduleOptionSpotlight = 'NewScheduleOptionSpotlight',
 }
