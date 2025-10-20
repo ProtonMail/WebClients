@@ -17,8 +17,7 @@ import type {
     ImportToken,
     OAUTH_PROVIDER,
 } from '@proton/activation/src/interface';
-import { EASY_SWITCH_FEATURES } from '@proton/activation/src/interface';
-import { AuthenticationMethod, ImportType } from '@proton/activation/src/interface';
+import { AuthenticationMethod, EASY_SWITCH_FEATURES, ImportType } from '@proton/activation/src/interface';
 import { formatApiSync } from '@proton/activation/src/logic/sync/sync.helpers';
 import type { CreateNotificationOptions } from '@proton/components';
 

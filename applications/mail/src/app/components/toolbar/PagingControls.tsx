@@ -129,7 +129,7 @@ const PagingControls = ({
                                     const active = page === pageNumber;
                                     return (
                                         <DropdownMenuButton
-                                            key={i} // eslint-disable-line react/no-array-index-key
+                                            key={i}
                                             loading={loading}
                                             aria-selected={active}
                                             isSelected={active}

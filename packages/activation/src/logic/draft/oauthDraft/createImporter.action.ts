@@ -21,8 +21,13 @@ import type {
     ImportedCalendar,
     OAuthProps,
 } from '@proton/activation/src/interface';
-import { EASY_SWITCH_FEATURES } from '@proton/activation/src/interface';
-import { AuthenticationMethod, IMPORT_ERROR, ImportProvider, ImportType } from '@proton/activation/src/interface';
+import {
+    AuthenticationMethod,
+    EASY_SWITCH_FEATURES,
+    IMPORT_ERROR,
+    ImportProvider,
+    ImportType,
+} from '@proton/activation/src/interface';
 import { getApiError, getIsTimeoutError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';

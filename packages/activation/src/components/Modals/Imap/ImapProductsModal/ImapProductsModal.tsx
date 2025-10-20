@@ -41,7 +41,7 @@ const ImapProductsModal = ({ onClick, onClose }: Props) => {
     const getCalendarDisabledText = () => {
         if (getIsBYOEOnlyAccount(addresses)) {
             const claimAddressButton = (
-                <InlineLinkButton onClick={() => setClaimProtonAddressModalOpen(true)} key="eslint-autofix-2FD3BA">
+                <InlineLinkButton onClick={() => setClaimProtonAddressModalOpen(true)} key="free-address-cta">
                     {c('Action').t`Get a free ${BRAND_NAME} address`}
                 </InlineLinkButton>
             );

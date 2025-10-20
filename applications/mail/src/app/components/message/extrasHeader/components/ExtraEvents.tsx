@@ -308,7 +308,7 @@ const ExtraEvents = ({ message }: Props) => {
             {invitations.map((invitation, index: number) => {
                 return (
                     <ExtraEvent
-                        key={index} // eslint-disable-line react/no-array-index-key
+                        key={index}
                         invitationOrError={invitation}
                         message={message}
                         calendars={calData.calendars}

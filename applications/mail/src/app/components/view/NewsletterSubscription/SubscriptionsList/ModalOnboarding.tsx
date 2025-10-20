@@ -12,9 +12,9 @@ interface Props extends ModalProps {}
 const ModalOnboarding = ({ ...rest }: Props) => {
     const { update } = useFeature(FeatureCode.NewsletterSubscriptionViewOnboarding);
 
-    const boldQuicklySpot = <b key="eslint-autofix-B970FC">{c('Info').t`Quickly spot`}</b>;
-    const boldUnsubscribe = <b key="eslint-autofix-F76426">{c('Info').t`Unsubscribe`}</b>;
-    const boldBulkDelete = <b key="eslint-autofix-A2BEBB">{c('Info').t`Bulk delete`}</b>;
+    const boldQuicklySpot = <b key="quick-spot">{c('Info').t`Quickly spot`}</b>;
+    const boldUnsubscribe = <b key="unsubscribe">{c('Info').t`Unsubscribe`}</b>;
+    const boldBulkDelete = <b key="bulk-delete">{c('Info').t`Bulk delete`}</b>;
 
     const handleClose = () => {
         rest.onClose?.();

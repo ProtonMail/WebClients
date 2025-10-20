@@ -249,10 +249,7 @@ export const getESEventsFromCalendarInBatch = async ({
     const cursor = eventIDs.length === limit ? eventIDs[eventIDs.length - 1] : undefined;
 
     const events = await runInQueue(
-        eventIDs.map(
-            // eslint-disable-next-line @typescript-eslint/no-loop-func
-            (eventID) => () => getESEvent(eventID, calendarID, api, getCalendarEventRaw)
-        ),
+        eventIDs.map((eventID) => () => getESEvent(eventID, calendarID, api, getCalendarEventRaw)),
         ES_MAX_CONCURRENT
     );
 
@@ -337,12 +334,12 @@ export const updateRecurrenceIDsMap = async (
     await Promise.all(
         events.map(async (event) => {
             if (event.Action === EVENT_ACTIONS.DELETE) {
-                handleDeleteRecurrenceIDInMap(deletions, event.ID, userID, itemIDs, indexKey);
+                void handleDeleteRecurrenceIDInMap(deletions, event.ID, userID, itemIDs, indexKey);
             } else if (event.Action === EVENT_ACTIONS.CREATE) {
                 handleCreateRecurrenceIDInMap(additions, event.Event);
             } else if (event.Action === EVENT_ACTIONS.UPDATE) {
                 handleCreateRecurrenceIDInMap(additions, event.Event);
-                handleDeleteRecurrenceIDInMap(deletions, event.ID, userID, itemIDs, indexKey);
+                void handleDeleteRecurrenceIDInMap(deletions, event.ID, userID, itemIDs, indexKey);
             }
         })
     );
