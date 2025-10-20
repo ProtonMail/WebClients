@@ -138,11 +138,11 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
   )
 
   const showFromValue = useMemo(() => {
-    return shouldShowFromValue(booleanRule?.condition?.type)
+    return shouldShowFromValue(booleanRule?.condition?.type ?? undefined)
   }, [booleanRule?.condition.type])
 
   const showToValue = useMemo(() => {
-    return shouldShowToValue(booleanRule?.condition?.type)
+    return shouldShowToValue(booleanRule?.condition?.type ?? undefined)
   }, [booleanRule?.condition.type])
 
   const normalizeRuleData = useEvent((rule: ConditionalFormatRule) => {
