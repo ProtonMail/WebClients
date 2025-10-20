@@ -10,10 +10,7 @@ export type RequestState = Record<string, RequestEntry>;
 export type RequestType = 'start' | 'failure' | 'success' | 'progress';
 export type RequestStatus = Exclude<RequestType, 'progress'>;
 export type RequestMeta<T extends RequestType, D extends unknown = never> = { request: RequestMetadata<T, D> };
-export type WithRequest<A extends object, T extends RequestType, D extends unknown = never> = WithMeta<
-    RequestMeta<T, D>,
-    A
->;
+export type WithRequest<A extends object, T extends RequestType, D extends unknown = never> = WithMeta<RequestMeta<T, D>, A>;
 
 /** `RequestMetadata` is designed for proper type inference when using
  * request action enhancers. The `Data` type defaults to `undefined` to
@@ -43,6 +40,10 @@ export type RequestConfig<T extends RequestType, D extends unknown = never> = {
         /** Response data to cache if `maxAge` is set.
          * If not explicitly set, falls back to `action.payload` */
         data?: D;
+        /** If enabled: the request should not be persisted
+         * accross app reboots as data is considered "hot"
+         * and will have to be refetched. */
+        hot?: boolean;
     };
     failure: {};
     progress: { progress: number };
@@ -50,7 +51,7 @@ export type RequestConfig<T extends RequestType, D extends unknown = never> = {
 
 export type RequestEntry<T extends RequestStatus = RequestStatus, D = any> = {
     start: { status: 'start'; progress: number; data?: D };
-    success: { status: 'success'; maxAge?: number; requestedAt: number; data?: D };
+    success: { status: 'success'; maxAge?: number; requestedAt: number; data?: D; hot?: boolean };
     failure: { status: 'failure' };
 }[T];
 
