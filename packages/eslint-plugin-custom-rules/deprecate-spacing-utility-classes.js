@@ -1,4 +1,6 @@
 /* eslint-env es6 */
+import { createClassNameRule } from './lib/deprecate-classname-utils.js';
+
 const deprecatedClasses = [
     {
         pattern: /\b(on-(tiny-mobile|mobile|tablet|desktop)-)?[m][btlrxy]?\d+(-\d+)?\b/,
@@ -26,40 +28,5 @@ export default {
         },
     },
 
-    create: (context) => {
-        return {
-            JSXAttribute(node) {
-                // We only care about attributes named "className"
-                if (node.name.name !== 'className') {
-                    return;
-                }
-
-                const literal = node.value;
-                if (!literal || literal.type !== 'Literal') {
-                    return;
-                }
-
-                const value = literal.value;
-                if (typeof value !== 'string') {
-                    return;
-                }
-
-                // Split the string into individual class names
-                const classes = new Set(value.split(/\s+/).filter(Boolean));
-
-                classes.forEach((className) => {
-                    deprecatedClasses.forEach(({ pattern, getMessage }) => {
-                        const match = pattern.exec(className);
-
-                        if (match) {
-                            context.report({
-                                node: literal,
-                                message: getMessage(match[0]),
-                            });
-                        }
-                    });
-                });
-            },
-        };
-    },
+    create: createClassNameRule(deprecatedClasses),
 };
