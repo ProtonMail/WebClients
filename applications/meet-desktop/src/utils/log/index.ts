@@ -94,6 +94,7 @@ const isIDKey = (str: string) => {
 /** @see https://docs.sentry.io/security-legal-pii/scrubbing/server-side-scrubbing/ */
 const FORBIDDEN_REGEXP_LIST = [
     /password/gi,
+    /pwd-/gi,
     /secret/gi,
     /passwd/gi,
     /api_key/gi,

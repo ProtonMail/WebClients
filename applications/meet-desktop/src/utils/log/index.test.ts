@@ -130,4 +130,11 @@ describe("filter sensitve data", () => {
             "[2024-11-19 10:08:49.760] [info] (calendar) loadURL from file:////__HOME_NONASCII_8889dffe3531b138c1c6dad2f4fba23da5f8765c__/AppData/Local/proton_mail/app-1.3.1/resources/loading.html?message=Loading%20Proton%20Calendar%E2%80%A6&theme=dark to https://calendar.proton.me/u/0/",
         );
     });
+
+    it("should not include meeting password in logs", () => {
+        expectFilterSensitiveString(
+            "https://meet.proton.me/u/1/join/id-ABCDEFGHIJKL#pwd-meetpass123",
+            "https://meet.proton.me/u/1/join/id-ABCDEFGHIJKL#__FORBIDDEN__=",
+        );
+    });
 });
