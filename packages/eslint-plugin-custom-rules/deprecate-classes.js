@@ -1,254 +1,254 @@
 /* eslint-env es6 */
+import { createClassNameRule } from './lib/deprecate-classname-utils.js';
 
-// suggestedClassName is optional
-const deprecatedClassNames = [
+const deprecatedClasses = [
     {
-        deprecatedClassName: 'mauto',
-        suggestedClassName: 'm-auto',
+        pattern: /\bmauto\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use m-auto instead`,
     },
     {
-        deprecatedClassName: 'center',
-        suggestedClassName: 'mx-auto',
+        pattern: /\bcenter\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use mx-auto instead`,
     },
     {
-        deprecatedClassName: 'mxauto',
-        suggestedClassName: 'mx-auto',
+        pattern: /\bmxauto\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use mx-auto instead`,
     },
     {
-        deprecatedClassName: 'myauto',
-        suggestedClassName: 'my-auto',
+        pattern: /\bmyauto\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use my-auto instead`,
     },
     {
-        deprecatedClassName: 'mtauto',
-        suggestedClassName: 'mt-auto',
+        pattern: /\bmtauto\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use mt-auto instead`,
     },
     {
-        deprecatedClassName: 'mrauto',
-        suggestedClassName: 'mr-auto',
+        pattern: /\bmrauto\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use mr-auto instead`,
     },
     {
-        deprecatedClassName: 'mbauto',
-        suggestedClassName: 'mb-auto',
+        pattern: /\bmbauto\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use mb-auto instead`,
     },
     {
-        deprecatedClassName: 'mlauto',
-        suggestedClassName: 'ml-auto',
+        pattern: /\bmlauto\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use ml-auto instead`,
     },
     {
-        deprecatedClassName: 'wauto',
-        suggestedClassName: 'w-auto',
+        pattern: /\bwauto\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use w-auto instead`,
     },
     {
-        deprecatedClassName: 'hauto',
-        suggestedClassName: 'h-auto',
+        pattern: /\bhauto\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use h-auto instead`,
     },
     {
-        deprecatedClassName: 'h0',
-        suggestedClassName: 'h-0',
+        pattern: /\bh0\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use h-0 instead`,
     },
     {
-        deprecatedClassName: 'h100',
-        suggestedClassName: 'h-full',
+        pattern: /\bh100\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use h-full instead`,
     },
     {
-        deprecatedClassName: 'opacity-on-hover',
-        suggestedClassName: 'group-hover:opacity-100',
+        pattern: /\bopacity-on-hover\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use group-hover:opacity-100 instead`,
     },
     {
-        deprecatedClassName: 'opacity-on-hover-container',
-        suggestedClassName: 'group-hover-opacity-container',
+        pattern: /\bopacity-on-hover-container\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use group-hover:opacity-100 instead`,
     },
     {
-        deprecatedClassName: 'text-underline-on-hover',
-        suggestedClassName: 'hover:text-underline',
+        pattern: /\btext-underline-on-hover\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use hover:text-underline instead`,
     },
     {
-        deprecatedClassName: 'opacity-on-focus',
-        suggestedClassName: 'opacity-0 focus:opacity-100',
+        pattern: /\bopacity-on-focus\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use opacity-0 focus:opacity-100 instead`,
     },
     {
-        deprecatedClassName: 'hide-on-hover',
-        suggestedClassName: 'group-hover:hidden',
+        pattern: /\bhide-on-hover\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use group-hover:hidden instead`,
     },
     {
-        deprecatedClassName: 'hide-on-hover-container',
-        suggestedClassName: 'group-hover-hide-container',
+        pattern: /\bhide-on-hover-container\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use group-hover:hidden instead`,
     },
     {
-        deprecatedClassName: 'on-hover-opacity-100',
-        suggestedClassName: '',
+        pattern: /\bon-hover-opacity-100\b/,
+        getMessage: (match) => `"${match}" is deprecated.`,
     },
     {
-        deprecatedClassName: 'flex-justify-start',
-        suggestedClassName: 'justify-start',
+        pattern: /\bflex-justify-start\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use flex-start instead`,
     },
     {
-        deprecatedClassName: 'flex-justify-center',
-        suggestedClassName: 'justify-center',
+        pattern: /\bflex-justify-center\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use flex-center instead`,
     },
     {
-        deprecatedClassName: 'flex-justify-end',
-        suggestedClassName: 'justify-end',
+        pattern: /\bflex-justify-end\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use flex-end instead`,
     },
     {
-        deprecatedClassName: 'flex-justify-space-between',
-        suggestedClassName: 'justify-space-between',
+        pattern: /\bflex-justify-space-between\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use flex-space-between instead`,
     },
     {
-        deprecatedClassName: 'flex-justify-space-around',
-        suggestedClassName: 'justify-space-around',
+        pattern: /\bflex-justify-space-around\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use flex-space-around instead`,
     },
     {
-        deprecatedClassName: 'flex-justify-space-evenly',
-        suggestedClassName: 'justify-space-evenly',
+        pattern: /\bflex-justify-space-evenly\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use flex-space-evenly instead`,
     },
     {
-        deprecatedClassName: 'flex-align-items-start',
-        suggestedClassName: 'items-start',
+        pattern: /\bflex-align-items-start\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use flex-start instead`,
     },
     {
-        deprecatedClassName: 'flex-align-items-center',
-        suggestedClassName: 'items-center',
+        pattern: /\bflex-align-items-center\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use flex-center instead`,
     },
     {
-        deprecatedClassName: 'flex-align-items-end',
-        suggestedClassName: 'items-end',
+        pattern: /\bflex-align-items-end\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use flex-end instead`,
     },
     {
-        deprecatedClassName: 'flex-align-items-baseline',
-        suggestedClassName: 'items-baseline',
+        pattern: /\bflex-align-items-baseline\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use flex-baseline instead`,
     },
     {
-        deprecatedClassName: 'flex-align-items-stretch',
-        suggestedClassName: 'items-stretch',
+        pattern: /\bflex-align-items-stretch\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use flex-stretch instead`,
     },
     {
-        deprecatedClassName: 'flex-align-items-inherit',
-        suggestedClassName: 'items-inherit',
+        pattern: /\bflex-align-items-inherit\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use flex-inherit instead`,
     },
     {
-        deprecatedClassName: 'flex-align-self-start',
-        suggestedClassName: 'self-start',
+        pattern: /\bflex-align-self-start\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use flex-start instead`,
     },
     {
-        deprecatedClassName: 'flex-align-self-center',
-        suggestedClassName: 'self-center',
+        pattern: /\bflex-align-self-center\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use flex-center instead`,
     },
     {
-        deprecatedClassName: 'flex-align-self-end',
-        suggestedClassName: 'self-end',
+        pattern: /\bflex-align-self-end\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use flex-end instead`,
     },
     {
-        deprecatedClassName: 'flex-align-self-baseline',
-        suggestedClassName: 'self-baseline',
+        pattern: /\bflex-align-self-baseline\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use flex-baseline instead`,
     },
     {
-        deprecatedClassName: 'flex-align-self-stretch',
-        suggestedClassName: 'self-stretch',
+        pattern: /\bflex-align-self-stretch\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use flex-stretch instead`,
     },
     {
-        deprecatedClassName: 'flex-align-self-inherit',
-        suggestedClassName: 'self-inherit',
+        pattern: /\bflex-align-self-inherit\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use flex-inherit instead`,
     },
     {
-        deprecatedClassName: 'flex-item-fluid-auto',
-        suggestedClassName: 'flex-auto',
+        pattern: /\bflex-item-fluid-auto\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use flex-auto instead`,
     },
     {
-        deprecatedClassName: 'flex-item-fluid',
-        suggestedClassName: 'flex-1',
+        pattern: /\bflex-item-fluid\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use flex-1 instead`,
     },
     {
-        deprecatedClassName: 'flex-item-noflex',
-        suggestedClassName: 'flex-none',
+        pattern: /\bflex-item-noflex\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use flex-none instead`,
     },
     {
-        deprecatedClassName: 'flex-item-grow',
-        suggestedClassName: 'grow',
+        pattern: /\bflex-item-grow\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use grow instead`,
     },
     {
-        deprecatedClassName: 'flex-item-grow-2',
-        suggestedClassName: 'grow-2',
+        pattern: /\bflex-item-grow-2\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use grow-2 instead`,
     },
     {
-        deprecatedClassName: 'flex-item-nogrow',
-        suggestedClassName: 'grow-0',
+        pattern: /\bflex-item-nogrow\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use grow-0 instead`,
     },
     {
-        deprecatedClassName: 'flex-item-grow-custom',
-        suggestedClassName: 'grow-custom',
+        pattern: /\bflex-item-grow-custom\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use grow-custom instead`,
     },
     {
-        deprecatedClassName: 'flex-item-shrink',
-        suggestedClassName: 'shrink',
+        pattern: /\bflex-item-shrink\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use shrink instead`,
     },
     {
-        deprecatedClassName: 'flex-item-noshrink',
-        suggestedClassName: 'shrink-0',
+        pattern: /\bflex-item-noshrink\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use shrink-0 instead`,
     },
     {
-        deprecatedClassName: 'flex-flex-children',
-        suggestedClassName: 'flex and *:flex',
+        pattern: /\bflex-flex-children\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use flex and *:flex instead`,
     },
     {
-        deprecatedClassName: 'flex-items-center',
-        suggestedClassName: '*:items-center',
+        pattern: /\bflex-items-center\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use *:items-center instead`,
     },
     {
-        deprecatedClassName: 'inline-flex-vcenter',
-        suggestedClassName: 'inline-flex and *:self-center',
+        pattern: /\binline-flex-vcenter\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use inline-flex and *:self-center instead`,
     },
     {
-        deprecatedClassName: 'flex-item-centered-vert',
-        suggestedClassName: 'self-center and my-auto',
+        pattern: /\bflex-item-centered-vert\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use self-center and my-auto instead`,
     },
     {
-        deprecatedClassName: 'flex-no-min-children',
-        suggestedClassName: 'flex and *:min-size-auto',
+        pattern: /\bflex-no-min-children\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use flex and *:min-size-auto instead`,
     },
     {
-        deprecatedClassName: 'flex-no-wrap',
-        suggestedClassName: 'flex-nowrap',
+        pattern: /\bflex-no-wrap\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use flex-nowrap instead`,
     },
     {
-        deprecatedClassName: 'hidden-empty',
-        suggestedClassName: 'empty:hidden',
+        pattern: /\bhidden-empty\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use empty:hidden instead`,
     },
     {
-        deprecatedClassName: 'scroll-if-needed',
-        suggestedClassName: 'overflow-auto',
+        pattern: /\bscroll-if-needed\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use overflow-auto instead`,
     },
     {
-        deprecatedClassName: 'scroll-horizontal-if-needed',
-        suggestedClassName: 'overflow-x-auto',
+        pattern: /\bscroll-horizontal-if-needed\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use overflow-x-auto instead`,
     },
     {
-        deprecatedClassName: 'no-scroll',
-        suggestedClassName: 'overflow-hidden',
+        pattern: /\bno-scroll\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use overflow-hidden instead`,
     },
     {
-        deprecatedClassName: 'ratio-container-square',
-        suggestedClassName: 'ratio-square',
+        pattern: /\bratio-container-square\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use ratio-square instead`,
     },
     {
-        deprecatedClassName: 'ratio-container-16-9',
-        suggestedClassName: 'ratio-16/9',
+        pattern: /\bratio-container-16-9\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use ratio-16/9 instead`,
     },
     {
-        deprecatedClassName: 'ratio-container-5-1',
-        suggestedClassName: 'ratio-5/1',
+        pattern: /\bratio-container-5-1\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use ratio-5/1 instead`,
     },
     {
-        deprecatedClassName: 'no-pointer-events',
-        suggestedClassName: 'pointer-events-none',
+        pattern: /\bno-pointer-events\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use pointer-events-none instead`,
     },
     {
-        deprecatedClassName: 'increase-click-surface',
-        suggestedClassName: 'expand-click-area',
+        pattern: /\bincrease-click-surface\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use expand-click-area instead`,
     },
     {
-        deprecatedClassName: 'no-border',
-        suggestedClassName: 'border-none',
+        pattern: /\bno-border\b/,
+        getMessage: (match) => `"${match}" is deprecated. Use border-none instead`,
     },
 ];
 
@@ -260,42 +260,5 @@ export default {
         },
     },
 
-    create: (context) => {
-        return {
-            JSXAttribute(node) {
-                // We only care about attributes named "className"
-                if (node.name.name !== 'className') {
-                    return;
-                }
-
-                // We only handle string literals directly here
-                const literal = node.value;
-                if (!literal || literal.type !== 'Literal') {
-                    return;
-                }
-
-                const value = literal.value;
-                if (typeof value !== 'string') {
-                    return;
-                }
-
-                const classes = new Set(value.split(/\s+/).filter(Boolean));
-
-                deprecatedClassNames.forEach(({ deprecatedClassName, suggestedClassName }) => {
-                    if (!classes.has(deprecatedClassName)) {
-                        return;
-                    }
-
-                    const messageDeprecated = `"${deprecatedClassName}" has been deprecated.`;
-                    const messageSuggested = suggestedClassName && `Please use "${suggestedClassName}" instead.`;
-                    const message = `${messageDeprecated} ${messageSuggested}`;
-
-                    context.report({
-                        node: literal,
-                        message,
-                    });
-                });
-            },
-        };
-    },
+    create: createClassNameRule(deprecatedClasses),
 };
