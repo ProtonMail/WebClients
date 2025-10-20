@@ -19,7 +19,7 @@ import useFlag from '@proton/unleash/useFlag';
 import { getIsCalendarAppInDrawer } from '../../helpers/views';
 import useCalendarFavicon from '../../hooks/useCalendarFavicon';
 import { useCalendarSelector } from '../../store/hooks';
-import { SchedulingProvider } from '../scheduling/schedulingProvider/SchedulingProvider';
+import { BookingsProvider } from '../bookings/bookingsProvider/BookingsProvider';
 import CalendarOnboardingContainer from '../setup/CalendarOnboardingContainer';
 import CalendarSetupContainer from '../setup/CalendarSetupContainer';
 import UnlockCalendarsContainer from '../setup/UnlockCalendarsContainer';
@@ -143,13 +143,13 @@ const WrappedMainContainer = () => {
     useDrawerParent();
     return (
         <SubscriptionModalProvider app={APPS.PROTONCALENDAR}>
-            <SchedulingProvider>
+            <BookingsProvider>
                 <KeyTransparencyManager>
                     <QuickSettingsRemindersProvider>
                         <MainContainer />
                     </QuickSettingsRemindersProvider>
                 </KeyTransparencyManager>
-            </SchedulingProvider>
+            </BookingsProvider>
         </SubscriptionModalProvider>
     );
 };
