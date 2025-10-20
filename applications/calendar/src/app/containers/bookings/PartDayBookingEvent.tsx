@@ -46,7 +46,7 @@ export const PartDayBookingEvent = ({
         >
             <div data-testid="calendar-day-week-view:part-day-event" className="calendar-eventcell-title">
                 <div className="flex flex-nowrap items-center">
-                    <span className="text-ellipsis flex-shrink color-weak">{timeString}</span>
+                    <span className="text-ellipsis flex-shrink color-weak" title={timeString}>{timeString}</span>
                 </div>
             </div>
         </PartDayEventView>
