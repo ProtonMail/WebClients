@@ -203,8 +203,6 @@ export const useElements: UseElements = ({
         const shouldResetElementsState =
             // Always reset for search keyword changes (even in newsletter view)
             hasSearchKeywordChange ||
-            // When the view mode of the mailbox change
-            conversationMode !== stateParams.conversationMode ||
             // For other changes, only reset if not in newsletter view
             (!isNavigatingToNewsletterView && (hasESEnabledChange || hasPageJump || hasSortChange));
 
