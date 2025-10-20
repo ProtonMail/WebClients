@@ -31,6 +31,24 @@ export const getNotifications = async (): Promise<MaybeNull<InAppNotifications>>
                       }
                     : null,
             },
+            promoContents: notification.Content.PromoContents
+                ? {
+                      startMinimized: notification.Content.PromoContents.StartMinimized,
+                      closePromoText: notification.Content.PromoContents.ClosePromoText,
+                      minimizedPromoText: notification.Content.PromoContents.MinimizedPromoText,
+                      light: {
+                          backgroundImageUrl: notification.Content.PromoContents.LightThemeContents.BackgroundImageUrl,
+                          contentImageUrl: notification.Content.PromoContents.LightThemeContents.ContentImageUrl,
+                          closePromoTextColor:
+                              notification.Content.PromoContents.LightThemeContents.ClosePromoTextColor,
+                      },
+                      dark: {
+                          backgroundImageUrl: notification.Content.PromoContents.DarkThemeContents.BackgroundImageUrl,
+                          contentImageUrl: notification.Content.PromoContents.DarkThemeContents.ContentImageUrl,
+                          closePromoTextColor: notification.Content.PromoContents.DarkThemeContents.ClosePromoTextColor,
+                      },
+                  }
+                : null,
         })).sort(chainSort(sortOn('priority', 'DESC'), sortOn('startTime', 'ASC'))),
         lastId: Notifications.LastID ?? null,
         total: Notifications.Total,

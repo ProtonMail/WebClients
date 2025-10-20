@@ -20,6 +20,20 @@ type MessageContent = {
     cta: MaybeNull<MessageCTA>;
 };
 
+type ThemeContent = {
+    backgroundImageUrl: string;
+    contentImageUrl: string;
+    closePromoTextColor: string;
+};
+
+type PromoContent = {
+    startMinimized: boolean;
+    closePromoText: string;
+    minimizedPromoText: string;
+    light: ThemeContent;
+    dark: ThemeContent;
+};
+
 export type InAppNotification = {
     id: string;
     notificationKey: string;
@@ -28,6 +42,7 @@ export type InAppNotification = {
     state: InAppNotificationState;
     content: MessageContent;
     priority: number;
+    promoContents: MaybeNull<PromoContent>;
 };
 
 export type InAppNotifications = {

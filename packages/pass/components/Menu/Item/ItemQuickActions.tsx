@@ -15,11 +15,8 @@ import { getNewItemRoute } from '@proton/pass/components/Navigation/routing';
 import { OrganizationPolicyTooltip } from '@proton/pass/components/Organization/OrganizationPolicyTooltip';
 import { usePasswordGeneratorAction } from '@proton/pass/components/Password/PasswordGeneratorAction';
 import { usePasswordHistoryActions } from '@proton/pass/components/Password/PasswordHistoryActions';
-import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
-import { UpsellRef } from '@proton/pass/constants';
 import { useCopyToClipboard } from '@proton/pass/hooks/useCopyToClipboard';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
-import { useMatchUser } from '@proton/pass/hooks/useMatchUser';
 import { useNewItemShortcut } from '@proton/pass/hooks/useNewItemShortcut';
 import {
     selectAliasLimits,
@@ -52,7 +49,6 @@ export const ItemQuickActions: FC<Props> = ({ origin = null }) => {
     const passwordHistory = usePasswordHistoryActions();
     const generatePassword = usePasswordGeneratorAction();
     const copyToClipboard = useCopyToClipboard();
-    const paidUser = useMatchUser({ paid: true });
     const showCustomItem = useFeatureFlag(PassFeature.PassCustomTypeV1);
 
     const onCreate = useCallback((type: ItemType) => navigate(getNewItemRoute(type, scope)), [scope]);
@@ -101,19 +97,6 @@ export const ItemQuickActions: FC<Props> = ({ origin = null }) => {
 
     return (
         <>
-            {!paidUser && BUILD_TARGET !== 'safari' && (
-                <UpgradeButton
-                    upsellRef={UpsellRef.NAVBAR_UPGRADE}
-                    iconName="upgrade"
-                    iconSize={3.5}
-                    iconGradient
-                    gradient
-                    style={{
-                        '--upgrade-color-stop-1': '#9834ff',
-                        '--upgrade-color-stop-2': '#F6CC88',
-                    }}
-                />
-            )}
             <OrganizationPolicyTooltip
                 enforced={orgDisabled}
                 text={c('Warning').t`Your administrator needs to create a vault for you before you can create items`}

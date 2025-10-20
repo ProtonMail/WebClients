@@ -12,15 +12,13 @@ export const notification = createAction('notification', (notification: Notifica
     payload: {},
 }));
 
-export const getInAppNotifications = requestActionsFactory<void, MaybeNull<InAppNotifications>>(
-    'in-app-notification::get'
-)({
-    success: { config: { maxAge: UNIX_HOUR * 2 } },
+export const getInAppNotifications = requestActionsFactory<void, MaybeNull<InAppNotifications>>('in-app-notification::get')({
+    success: {
+        prepare: (payload) => withCache({ payload }),
+        config: { maxAge: UNIX_HOUR * 2, data: null },
+    },
 });
 
-export const updateInAppNotificationState = requestActionsFactory<
-    UpdateInAppNotificationDTO,
-    UpdateInAppNotificationDTO
->('in-app-notification::update-state')({
-    success: { prepare: (payload) => withCache({ payload }) },
-});
+export const updateInAppNotificationState = requestActionsFactory<UpdateInAppNotificationDTO, UpdateInAppNotificationDTO>(
+    'in-app-notification::update-state'
+)({ success: { prepare: (payload) => withCache({ payload }) } });

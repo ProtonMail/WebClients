@@ -7,6 +7,7 @@ import { Header as CoreHeader, Hamburger } from '@proton/components';
 import { PinnedItemsBar } from '@proton/pass/components/Item/Pinned/PinnedItemsBar';
 import { SearchBar } from '@proton/pass/components/Item/Search/SearchBar';
 import { ItemQuickActions } from '@proton/pass/components/Menu/Item/ItemQuickActions';
+import { UpsellButton } from '@proton/pass/components/Menu/Upsell/UpsellButton';
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { Spotlight } from '@proton/pass/components/Spotlight/Spotlight';
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
@@ -45,6 +46,7 @@ export const HeaderMain = memo(({ sidebarExpanded, sidebarToggle }: HeaderProps)
                 <div className="flex items-center gap-x-2 w-full">
                     <Hamburger expanded={sidebarExpanded} onToggle={sidebarToggle} />
                     <SearchBar disabled={!interactive} />
+                    <UpsellButton />
                     <ItemQuickActions />
                     {interactive && <SpotlightSection />}
                 </div>
