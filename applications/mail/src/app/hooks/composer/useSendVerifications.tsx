@@ -2,6 +2,7 @@ import { useCallback } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { useGetEncryptionPreferences, useModals, useNotifications } from '@proton/components';
 import { serverTime } from '@proton/crypto';
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
@@ -25,7 +26,12 @@ import SendWithExpirationModal from '../../components/composer/addresses/SendWit
 import SendWithWarningsModal from '../../components/composer/addresses/SendWithWarningsModal';
 import { MESSAGE_ALREADY_SENT_INTERNAL_ERROR, NO_REPLY_EMAIL_DONT_SHOW_AGAIN_KEY } from '../../constants';
 import { removeMessageRecipients, uniqueMessageRecipients } from '../../helpers/message/cleanMessage';
-import { locateBlockquote, locatePlaintextInternalBlockquotes } from '../../helpers/message/messageBlockquote';
+import {
+    locateBlockquote,
+    locatePlaintextInternalBlockquotes,
+    removeSignatureFromHTMLMessage,
+    removeSignatureFromPlainTextMessage,
+} from '../../helpers/message/messageBlockquote';
 import type { MapSendInfo } from '../../models/crypto';
 import { useContactsMap } from '../contact/useContacts';
 import { useGetMessage } from '../message/useMessage';
@@ -54,6 +60,7 @@ export const useSendVerifications = (
     handleNoReplyEmail?: (email: string) => void
 ) => {
     const { createModal } = useModals();
+    const [addresses] = useAddresses();
     const { createNotification } = useNotifications();
     const getEncryptionPreferences = useGetEncryptionPreferences();
     const getMessage = useGetMessage();
@@ -66,6 +73,8 @@ export const useSendVerifications = (
                 ...defaultVerifications,
                 ...optionalVerifications,
             };
+
+            const { AddressID } = message.data;
 
             const msg = getMessage(message.localID);
             // Message already sent
@@ -100,12 +109,18 @@ export const useSendVerifications = (
                     await handleNoSubjects();
                 }
             }
-
             if (verifications.noAttachments) {
-                const [contentBeforeBlockquote] = isPlainText(message.data)
+                const messageIsPlainText = isPlainText(message.data);
+
+                const [contentBeforeBlockquote] = messageIsPlainText
                     ? locatePlaintextInternalBlockquotes(message.messageDocument?.plainText)
                     : locateBlockquote(message.messageDocument?.document);
-                const normalized = normalize(`${message.data.Subject} ${contentBeforeBlockquote || ''}`);
+
+                const contentWithoutSignature = messageIsPlainText
+                    ? removeSignatureFromPlainTextMessage(contentBeforeBlockquote, AddressID, addresses)
+                    : removeSignatureFromHTMLMessage(contentBeforeBlockquote);
+
+                const normalized = normalize(`${message.data.Subject} ${contentWithoutSignature || ''}`);
                 const [keyword] = mentionAttachment(normalized) || [];
 
                 // Attachment word without attachments
@@ -116,7 +131,15 @@ export const useSendVerifications = (
                 }
             }
         },
-        []
+        [
+            addresses,
+            dontShowNoReplyAgain,
+            handleNoAttachments,
+            handleNoReplyEmail,
+            handleNoRecipients,
+            handleNoSubjects,
+            getMessage,
+        ]
     );
 
     const extendedVerifications = useCallback(
@@ -316,7 +339,7 @@ export const useSendVerifications = (
 
             return { cleanMessage, mapSendPrefs, hasChanged: emailsWithErrors.length > 0 };
         },
-        [contactsMap]
+        [contactsMap, createModal, createNotification, getEncryptionPreferences]
     );
 
     return { preliminaryVerifications, extendedVerifications };
