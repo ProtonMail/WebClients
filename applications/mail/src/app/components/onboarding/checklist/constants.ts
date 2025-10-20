@@ -1,6 +1,7 @@
 import type { CountryTimezoneShortFormat } from '@proton/shared/lib/date/singleCountryTimezoneDatabase';
 import airbnb from '@proton/styles/assets/img/brand/airbnb.svg';
 import aliexpress from '@proton/styles/assets/img/brand/aliexpress.svg';
+import alpian from '@proton/styles/assets/img/brand/alpian.svg';
 import amazon from '@proton/styles/assets/img/brand/amazon.svg';
 import americanExpress from '@proton/styles/assets/img/brand/american-express.svg';
 import apple from '@proton/styles/assets/img/brand/apple.svg';
@@ -81,6 +82,7 @@ export type OnlineServicesKey =
     | 'apple'
     | 'amazon'
     | 'aliexpress'
+    | 'alpian'
     | 'ebay'
     | 'facebook'
     | 'github'
@@ -183,6 +185,14 @@ export const ONLINE_SERVICES: Record<OnlineServicesKey, OnlineService> = {
         url: 'https://aliexpress.com/',
         img: aliexpress,
         category: 'SHOPPING',
+    },
+    alpian: {
+        key: 'alpian',
+        name: 'Alpian',
+        url: 'https://www.alpian.com/',
+        img: alpian,
+        country: 'CH',
+        category: 'BANKING',
     },
     ebay: {
         key: 'ebay',

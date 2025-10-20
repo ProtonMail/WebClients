@@ -133,6 +133,7 @@ type AllowedServices = Extract<
     | 'santander'
     | 'bbva'
     | 'caixa-bank'
+    | 'alpian'
     | 'ubs'
     | 'raiffeisen'
     | 'zurcher-kantonalbank'
