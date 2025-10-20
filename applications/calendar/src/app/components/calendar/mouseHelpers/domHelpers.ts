@@ -11,7 +11,6 @@ export const findUpwards = (target: HTMLElement, outOfBoundsElement: HTMLElement
             return;
         }
         current = current.parentElement;
-        // eslint-disable-next-line no-constant-condition
     } while (true);
 };
 

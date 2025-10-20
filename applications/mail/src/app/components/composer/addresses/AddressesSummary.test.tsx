@@ -17,7 +17,6 @@ const props = {
     contacts: [],
     contactGroups: [],
     onFocus: noop,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     toggleExpanded: (_type: RecipientType) => noop,
     disabled: false,
     handleContactModal: jest.fn(),
