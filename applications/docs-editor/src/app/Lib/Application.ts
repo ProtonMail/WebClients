@@ -12,6 +12,7 @@ export class Application {
   private role: DocumentRole = new DocumentRole('Viewer')
   public readonly logger: LoggerInterface
   public languageCode: Intl.LocalesArgument = 'en'
+  public appVersion: string = ''
 
   /**
    * `useEarlyAccess` throws an error when used without a <ProtonStoreProvider />
@@ -37,5 +38,9 @@ export class Application {
 
     this.logger.info('Setting editor language code', languageCode)
     this.languageCode = languageCode
+  }
+
+  public setAppVersion(version: string): void {
+    this.appVersion = version
   }
 }

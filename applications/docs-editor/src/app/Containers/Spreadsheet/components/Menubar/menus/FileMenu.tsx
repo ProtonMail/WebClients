@@ -1,6 +1,6 @@
 import * as Ariakit from '@ariakit/react'
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants'
-import { useCallback, type ReactElement } from 'react'
+import { useCallback, useEffect, useState, type ReactElement } from 'react'
 import { c } from 'ttag'
 import { createStringifier } from '../../../stringifier'
 import * as UI from '../../ui'
@@ -20,6 +20,30 @@ export interface FileMenuProps extends Ariakit.MenuProviderProps {
 
 export function FileMenu({ renderMenuButton, clientInvoker, isPublicMode, ...props }: FileMenuProps) {
   const { application } = useApplication()
+
+  const [showVersionNumber, setShowVersionNumber] = useState(false)
+  useEffect(() => {
+    // When the user holds down the shift key, show the version number. When they release, hide it.
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.shiftKey) {
+        setShowVersionNumber(true)
+      }
+    }
+
+    const handleKeyUp = (event: KeyboardEvent) => {
+      if (!event.shiftKey) {
+        setShowVersionNumber(false)
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    window.addEventListener('keyup', handleKeyUp)
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+      window.removeEventListener('keyup', handleKeyUp)
+    }
+  }, [])
 
   const triggerMenuAction = useCallback(
     async (action: FileMenuAction) => {
@@ -96,8 +120,9 @@ export function FileMenu({ renderMenuButton, clientInvoker, isPublicMode, ...pro
               type: 'help',
             })
           }}
+          hintSlot={showVersionNumber && <span className="ml-auto text-[--text-hint]">v{application.appVersion}</span>}
         >
-          {s('Help')}
+          <span>{s('Help')}</span>
         </UI.MenuItem>
         <UI.MenuItem
           leadingIconSlot={<UI.Icon legacyName="brand-proton-sheets" />}
