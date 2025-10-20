@@ -15,6 +15,8 @@ import { DrivePostSignupOneDollar } from './PostSignupOneDollar/DrivePostSignupO
 import { useDrivePostSignupOneDollar } from './PostSignupOneDollar/DrivePostSignupOneDollar/useDrivePostSignupOneDollar';
 import { MailPostSignupOneDollar } from './PostSignupOneDollar/MailPostSignupOneDollar/MailPostSignupOneDollar';
 import { useMailPostSignupOneDollar } from './PostSignupOneDollar/MailPostSignupOneDollar/useMailPostSignupOneDollar';
+import { UnlimitedToDuoOffer } from './UnlimitedToDuoOffer/UnlimitedToDuoOffer';
+import { useUnlimitedToDuoOffer } from './UnlimitedToDuoOffer/hooks/useUnlimitedToDuoOffer';
 import type { OfferHookReturnValue } from './common/interface';
 
 interface Props {
@@ -39,6 +41,7 @@ export const usePostSignupOffers = ({ app }: Props) => {
     const bundlePaidUser = usePaidUsersNudge({ plan: PLANS.BUNDLE });
 
     const goUnlimited2025 = useGoUnlimited2025();
+    const unlimitedToDuoOffer = useUnlimitedToDuoOffer();
 
     // Define offers in order of priority
     const offers: Offer[] = [
@@ -94,6 +97,12 @@ export const usePostSignupOffers = ({ app }: Props) => {
             isLoading: alwaysOnUpsell.isLoading,
             Component: AlwaysOnUpsell,
             props: { app },
+        },
+        {
+            id: 'unlimited-to-duo-offer',
+            isEligible: unlimitedToDuoOffer.isEligible,
+            isLoading: unlimitedToDuoOffer.isLoading,
+            Component: UnlimitedToDuoOffer,
         },
     ];
 
