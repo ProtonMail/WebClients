@@ -76,6 +76,9 @@
       "Advanced options": [
         "고급 옵션"
       ],
+      "Allow access": [
+        "접근 허용"
+      ],
       "Apply lifetime coupon code": [
         "평생 쿠폰 코드 적용"
       ],
@@ -760,9 +763,14 @@
         "펼치기"
       ]
     },
+    "Confirm": {
+      "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
+        "클립보드를 ${ timeoutDurationHumanReadable } 후에 자동으로 비우시겠어요?"
+      ]
+    },
     "Description": {
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
-        "${ DARK_WEB_MONITORING_NAME }은 유료 요금제에서 이용할 수 있습니다. 업그레이드하는 즉시 접근할 수 있습니다."
+        "${ DARK_WEB_MONITORING_NAME }은 유료 플랜으로 이용할 수 있습니다. 업그레이드하는 즉시 접근할 수 있습니다."
       ],
       "${ total } other login uses the same password": [
         "${ total }개의 다른 로그인이 같은 비밀번호를 사용하고 있습니다"
@@ -1141,7 +1149,7 @@
         "현재 오프라인 모드에서는 2차 비밀번호 모드를 사용할 수 없습니다."
       ],
       "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
-        "현재 요금제에서는 오프라인 모드를 사용할 수 없으며 2차 비밀번호 모드와 호환되지 않습니다."
+        "현재 플랜에서는 오프라인 모드를 사용할 수 없으며 2차 비밀번호 모드와 호환되지 않습니다."
       ],
       "Passphrase is incorrect": [
         "비밀번호가 올바르지 않습니다."
@@ -1585,6 +1593,9 @@
       "Copied to clipboard": [
         "클립보드로 복사함"
       ],
+      "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
+        "클립보드에 복사됨 (${ timeoutDurationHumanReadable } 후 만료)"
+      ],
       "Coupon successfully applied!": [
         "쿠폰을 성공적으로 적용했습니다!"
       ],
@@ -1892,7 +1903,7 @@
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
+        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -1941,6 +1952,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "${ PASS_APP_NAME }이 온라인에 접근하려면 PIN 코드가 필요합니다. 3번의 시도가 실패하면 로그아웃됩니다."
+      ],
+      "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
+        "Safari 확장 설정을 열고 ${ BRAND_NAME } 도메인에 대한 사이트 권한이 활성화되었는지 확인하십시오."
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "당사의 알림은 안전을 최우선으로 합니다. 만약 유출된 정보에 대해 아는 것이 없다면, 이 보고서를 무시할 수 있습니다."
@@ -2095,8 +2109,14 @@
       "Please follow the steps below to set up your domain.": [
         "도메인 설정을 위해 아래 단계를 따라주세요."
       ],
+      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
+        "클립보드가 자동으로 비워질 수 있도록 ${ PASS_APP_NAME }를 실행한 상태로 유지해 주세요."
+      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "데이터를 불러오는 동안 이 창을 계속 유지하세요. 이 작업은 몇 분 정도 소요됩니다."
+      ],
+      "Please keep your browser open so the clipboard can be automatically cleared.": [
+        "클립보드가 자동으로 비워질 수 있도록 브라우저를 실행한 상태로 유지해 주세요."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "이전에 활성화된 창이 자동 입력할 위치이며 커서가 로그인 필드에 집중되어 있는지 확인하십시오."
@@ -3923,6 +3943,11 @@
         "${ price }/월간"
       ]
     },
+    "Permission": {
+      "Will require a permission from your browser": [
+        "브라우저에서 권한이 필요합니다."
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "2단계 인증 비밀 키 추가"
@@ -4244,6 +4269,9 @@
       ],
       "Change your lock method": [
         "잠금 방식을 변경하세요"
+      ],
+      "Clear clipboard": [
+        "클립보드 비우기"
       ],
       "Confirm extra password": [
         "추가 비밀번호 확인"
@@ -4805,6 +4833,9 @@
       ],
       "Failed to load breaches.": [
         "침해를 불러오지 못했습니다."
+      ],
+      "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
+        "복사된 비밀번호 및 데이터의 자동 삭제를 활성화하기 위해 클립보드 접근 권한을 부여하십시오."
       ],
       "Identity could not be confirmed": [
         "신원을 확인하지 못했습니다"
