@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" class="feature-scrollbars-off">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +9,9 @@
 
     <link rel="canonical" href="<%= url %>">
 
-    <title><%= appName %></title>
+    <title>
+        <%= appName %>
+    </title>
     <meta name="description" content="<%= description %>">
 
     <meta property="og:title" content="<%= appName %>">
@@ -39,6 +42,7 @@
     <link rel="icon" href="/assets/favicon.ico" sizes="1025x1025">
     <link rel="icon" href="<%= require('./favicon.svg') %>" type="image/svg+xml">
 </head>
+
 <body>
     <div class="app-root"></div>
     <noscript class="app-noscript">
@@ -46,4 +50,5 @@
     </noscript>
     <style id="theme-root"></style>
 </body>
+
 </html>
