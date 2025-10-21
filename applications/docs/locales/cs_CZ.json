@@ -2858,6 +2858,23 @@
         "Prioritní podpora"
       ]
     },
+    "Duo offer": {
+      "/month": [
+        "/měsíčně"
+      ],
+      "1 TB of storage to share": [
+        "1 TB úložiště k sdílení"
+      ],
+      "2 user accounts": [
+        "2 uživatelské účty"
+      ],
+      "All premium features from your current plan": [
+        "Všechny prémiové funkce z vašeho aktuálního tarifu"
+      ],
+      "Only": [
+        "Pouze"
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Textová pole jsou nepovinná. Informace, které uvedete v tomto formuláři, se objeví pouze na fakturách vystavených v budoucnu a nebudou mít vliv na stávající faktury."
@@ -2880,7 +2897,7 @@
         "Toto se změnilo:"
       ],
       "LOCATION:": [
-        "UMÍSTĚNÍ:"
+        "MÍSTO:"
       ],
       "NOTE:": [
         "POZNÁMKA:"
@@ -8308,11 +8325,17 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } nabídka končí dnes!"
       ],
+      "Don't show this again": [
+        "Příště nezobrazovat"
+      ],
       "Don’t show this again": [
         "Příště již nezobrazovat"
       ],
       "Don’t show this offer again": [
         "Tuto nabídku již nezobrazovat"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Získat ${ BRAND_NAME } Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "Získejte ${ BRAND_NAME } Unlimited"
@@ -10497,6 +10520,9 @@
       ],
       "Document verification failed": [
         "Ověření dokumentu se nezdařilo"
+      ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Zdvojnásobte své úložiště s ${ BRAND_NAME } Duo"
       ],
       "Downgrade account": [
         "Snížit úroveň účtu"

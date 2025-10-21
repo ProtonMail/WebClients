@@ -795,6 +795,9 @@
       "Take out of trash": [
         "Keluarkan dari sampah"
       ],
+      "Toggle debug mode": [
+        "Aktifkan mode debug"
+      ],
       "Trashing...": [
         "Membuang..."
       ],
@@ -1125,6 +1128,9 @@
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Setelah masa uji coba ini berakhir pada ${ formattedDate }, paket Anda akan menjadi langganan berbayar yang diperbarui secara otomatis secara bulanan. Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Anda dapat memiliki hingga ${ TRIAL_MAX_DEDICATED_IPS } server khusus selama masa uji coba."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Anda dapat memiliki hingga ${ TRIAL_MAX_SCRIBE_SEATS } kuota Scribe selama masa uji coba."
@@ -2791,6 +2797,9 @@
       ],
       "All events in this series were updated.": [
         "Seluruh acara dalam rangkaian ini telah diperbarui."
+      ],
+      "DESCRIPTION:": [
+        "DESKRIPSI:"
       ],
       "Here's what changed:": [
         "Berikut apa-apa saja yang telah berubah:"
@@ -8366,6 +8375,9 @@
       ]
     },
     "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Saldo yang belum terpakai dari paket langganan Anda sebelumnya"
+      ],
       "Credits will be added to your balance": [
         "Saldo akan ditambahkan ke tabungan Anda"
       ]
@@ -8713,6 +8725,9 @@
       ],
       "Friend subscribed": [
         "Teman yang berlangganan"
+      ],
+      "Invite friends. Get credits.": [
+        "Undang teman. Dapatkan saldo."
       ],
       "Invited friends": [
         "Teman yang diundang"
@@ -10251,6 +10266,9 @@
       ],
       "Share your calendar with your team": [
         "Bagikan kalender Anda dengan tim Anda"
+      ],
+      "Share your link": [
+        "Bagikan tautan Anda"
       ],
       "Sign in and grant access": [
         "Masuk dan berikan izin akses"
