@@ -1,16 +1,10 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 export const BookingsRouter = () => {
     return (
-        <BrowserRouter>
-            <Switch>
-                <Route path="/bookings/:bookingID">
-                    <p>Bookings detail route</p>
-                </Route>
-                <Route path="/bookings">
-                    <p>Root route</p>
-                </Route>
-            </Switch>
-        </BrowserRouter>
+        <>
+            <Route path="/" exact render={() => <p>Root route</p>} />
+            <Route path="/:bookingID" render={() => <p>Bookings detail route</p>} />
+        </>
     );
 };
