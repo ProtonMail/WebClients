@@ -39,6 +39,7 @@ export interface MediaManagementContextType {
     }) => Promise<void>;
     backgroundBlur: boolean;
     toggleBackgroundBlur: ReturnType<typeof debounce>;
+    isBackgroundBlurSupported: boolean;
     noiseFilter: boolean;
     toggleNoiseFilter: () => Promise<void>;
     handleRotateCamera: () => void;
@@ -72,6 +73,7 @@ const defaultValues: MediaManagementContextType = {
     toggleAudio: () => Promise.resolve(),
     backgroundBlur: false,
     toggleBackgroundBlur: debounce(() => Promise.resolve(), 500),
+    isBackgroundBlurSupported: true,
     noiseFilter: false,
     toggleNoiseFilter: () => Promise.resolve(),
     handleRotateCamera: () => {},

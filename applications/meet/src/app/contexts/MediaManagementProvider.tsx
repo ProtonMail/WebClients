@@ -54,8 +54,15 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
         [room]
     );
 
-    const { toggleVideo, handleRotateCamera, backgroundBlur, toggleBackgroundBlur, isVideoEnabled, facingMode } =
-        useVideoToggle(activeCameraDeviceId, switchActiveDevice, initialCameraState);
+    const {
+        toggleVideo,
+        handleRotateCamera,
+        backgroundBlur,
+        toggleBackgroundBlur,
+        isVideoEnabled,
+        facingMode,
+        isBackgroundBlurSupported,
+    } = useVideoToggle(activeCameraDeviceId, switchActiveDevice, initialCameraState);
 
     const { toggleAudio, noiseFilter, toggleNoiseFilter, isAudioEnabled } = useAudioToggle(
         activeMicrophoneDeviceId,
@@ -154,6 +161,7 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
                 toggleAudio,
                 backgroundBlur,
                 toggleBackgroundBlur,
+                isBackgroundBlurSupported,
                 noiseFilter,
                 toggleNoiseFilter,
                 handleRotateCamera,
