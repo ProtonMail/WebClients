@@ -165,18 +165,12 @@ export function sendMessage({
             // Request title for new conversations (when messageChain is empty, it's the first message)
             const shouldRequestTitle = messageChain.length === 0;
 
-            // Get personalization prompt for new conversations
+            // Get personalization prompt for all messages (not just new conversations)
             let personalizationPrompt: string | undefined;
-            if (shouldRequestTitle) {
-                const state = getState();
-                const personalization = state.personalization;
-                console.log('Personalization state:', personalization);
-                if (personalization?.enableForNewChats) {
-                    personalizationPrompt = getPersonalizationPromptFromState(personalization);
-                    console.log('Generated personalization prompt:', personalizationPrompt);
-                } else {
-                    console.log('Personalization not enabled for new chats or no personalization data');
-                }
+            const state = getState();
+            const personalization = state.personalization;
+            if (personalization?.enableForNewChats) {
+                personalizationPrompt = getPersonalizationPromptFromState(personalization);
             }
 
             await fetchAssistantResponse({
@@ -213,7 +207,7 @@ export function regenerateMessage(
     contextFilters: any[] = [],
     retryInstructions?: string
 ) {
-    return async (dispatch: AppDispatch) => {
+    return async (dispatch: AppDispatch, getState: () => any) => {
         dispatch(updateConversationStatus({ id: conversationId, status: ConversationStatus.GENERATING }));
 
         // Calculate which files will actually be used for the regenerated response
@@ -230,8 +224,15 @@ export function regenerateMessage(
         }
 
         try {
-            // Note: regeneration doesn't use personalization since it's not a new conversation
-            const turns = getFilteredTurns(messagesWithContext, contextFilters);
+            // Get personalization prompt for regeneration as well
+            const state = getState();
+            const personalization = state.personalization;
+            let personalizationPrompt: string | undefined;
+            if (personalization?.enableForNewChats) {
+                personalizationPrompt = getPersonalizationPromptFromState(personalization);
+            }
+            
+            const turns = getFilteredTurns(messagesWithContext, contextFilters, personalizationPrompt);
 
             // Add retry instructions if provided
             if (retryInstructions) {
@@ -452,7 +453,6 @@ export async function fetchAssistantResponse({
 }) {
 
     const turns = getFilteredTurns(linearChain, contextFilters, personalizationPrompt);
-    console.log('Final turns being sent to LLM:', turns);
     await dispatch(
         sendMessageWithRedux(api, turns, {
             messageId: assistantMessageId,

@@ -1,14 +1,22 @@
+@import '~@proton/styles/scss/lib';
+
 .personalization-panel {
     display: flex;
     flex-direction: column;
     height: 100%; /* Fill the parent container */
     min-height: 0; /* Allow flex item to shrink */
+    max-height: 100%; /* Prevent overflow */
 
     .personalization-content {
         flex: 1;
         overflow-y: auto;
         padding: 1rem;
         min-height: 0; /* Allow flex item to shrink */
+        
+        // On mobile, ensure content doesn't take up all space so footer is visible
+        @include media('<=small') {
+            max-height: calc(100vh - 16rem); // Reserve space for header, tabs, and footer
+        }
     }
 
     .personalization-field {
@@ -55,9 +63,20 @@
 
     .personalization-footer {
         flex-shrink: 0; // Prevent footer from shrinking
-        padding: 1rem 1rem 2.5rem 1rem; // Add extra bottom padding
+        padding: 1rem;
         border-top: 1px solid var(--border-weak);
         background-color: var(--background-norm);
+        margin-top: auto; // Push to bottom if content is short
+        margin-bottom: 1rem;
+        
+        // Ensure footer is always visible on mobile
+        @include media('<=small') {
+            position: sticky;
+            bottom: 0;
+            z-index: 10;
+            margin-bottom: 0;
+            padding-bottom: 1.5rem; // Extra padding for mobile safe area
+        }
     }
 
     .trait-pills {
