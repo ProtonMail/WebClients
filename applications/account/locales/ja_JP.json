@@ -2468,6 +2468,9 @@
       "How safe is Telegram?": [
         "Telegramはどれくらい安全ですか？"
       ],
+      "How to change your IP address on Windows": [
+        "Windowsでお客様の IP アドレスを変更する方法"
+      ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "この記事では、WiFiを使用するときに誰がインターネット履歴を見られるか、彼らが何を見ることができるか、そしてなぜそれを行うかについて見ていきます。"
       ],
@@ -2500,6 +2503,9 @@
       ],
       "Watch your favorite movies and TV shows": [
         "お気に入りの映画やTV番組を見る"
+      ],
+      "We discuss how to change the external and local IP addresses of your Windows device.": [
+        "お客様のWindowsデバイスにおける外部およびローカルIPアドレスの変更方法について説明します。"
       ],
       "Which VPN protocol is the best?": [
         "どのVPNプロトコルが一番良いですか？"
@@ -4962,8 +4968,14 @@
       "All events in this series were updated.": [
         "この連続した全てのイベントは更新されました。"
       ],
+      "DESCRIPTION:": [
+        "詳細："
+      ],
       "Here's what changed:": [
         "変更内容:"
+      ],
+      "LOCATION:": [
+        "場所："
       ],
       "NOTE:": [
         "注意:"
@@ -4976,6 +4988,15 @@
       ],
       "This event was updated.": [
         "この予定は更新されました。"
+      ],
+      "TIME:": [
+        "時間："
+      ],
+      "TITLE:": [
+        "タイトル："
+      ],
+      "You are invited to": [
+        "あなたは、次の場所に招待されています："
       ]
     },
     "Email body for invitation (date part)": {
@@ -8181,6 +8202,9 @@
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } は、高度な AI システムとスペシャリストを活用した高度なアカウント保護プログラムで、悪者やセキュリティの脅威からユーザーを保護するために 24 時間体制で働いています。"
       ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } は、高度な AI システムとスペシャリストを活用した高度なアカウント保護プログラムで、お客様の組織を悪者やセキュリティの脅威から保護するために 24 時間体制で稼働しています。"
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } は、疑わしいアクティビティの専用モニタリングでアカウントを保護します。"
       ],
@@ -9357,6 +9381,9 @@
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "最近、パスワードをリセットしたのであれば、回復手段を使ってデータのロックを解除することができます"
       ],
+      "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
+        "お客様の組織に公人がいたり、機密データを扱ったり、サイバー攻撃の標的になる可能性がある場合、組織内のすべてのお客様に対して${ PROTON_SENTINEL_NAME }を有効にすることを強く推奨します。"
+      ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "問題がある場合は、私たちがお手伝いいたします。弊社のサポート スペシャリストの 1 人に${ boldPhoneCall } または ${ boldZoomMeeting } でご相談いただくか、${ boldLiveChat } を開いてチャット サポートをご利用ください。"
       ],
@@ -9780,9 +9807,6 @@
       "Not a valid URL": [
         "有効な URL ではありません"
       ],
-      "Not yet available in our Android mobile app.": [
-        "Android モバイル アプリではまだ利用できません。"
-      ],
       "Number of dedicated servers in the organization": [
         "組織内の専用サーバー数"
       ],
@@ -10109,9 +10133,6 @@
       ],
       "Restore": [
         "復元"
-      ],
-      "Revoke certificate ${ name }": [
-        "証明書 ${ name } を失効させます"
       ],
       "Right to Left": [
         "右から左に"
@@ -10740,6 +10761,9 @@
       "Upgrade to unlock": [
         "アップグレードしてロックを解除"
       ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "${ PROTON_SENTINEL_NAME }を利用するには、${ firstPlanNames }または${ lastPlanName }をアップグレードしてください。"
+      ],
       "Upload picture": [
         "写真をアップロード"
       ],
@@ -11283,8 +11307,8 @@
       "Your files will be encrypted and then saved": [
         "ファイルは暗号化して保存されます"
       ],
-      "Your free trial includes ${ ownedCount } dedicated server.": [
-        "お客様の無料トライアルには${ ownedCount }台の専用サーバーが含まれています。"
+      "Your free trial includes 1 dedicated server.": [
+        "お客様の無料トライアルには1台の専用サーバーが含まれています。"
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "お客様の無料トライアルは、${ cycle }ヶ月サブスクリプションに移行されました。お客様の更新日は ${ nextBillingDate } です。"
@@ -12673,6 +12697,9 @@
       ],
       "Method for importing metadata": [
         "メタデータのインポート方法"
+      ],
+      "Minimum ${ MIN_CHARS } characters": [
+        "最小 ${ MIN_CHARS } 文字"
       ],
       "Minimum number of characters": [
         "最小文字数"
@@ -17617,14 +17644,8 @@
       ]
     },
     "Safety review": {
-      " **Disable recovery by phone** to ensure highest possible security of your account.": [
-        " **電話番号による復元を無効化**し、お客様のアカウントのセキュリティを最大限に確保します。"
-      ],
       " **Enable recovery by phone** to regain access to your account if you forget your password.": [
         " **電話番号での回復を有効化**することでパスワードを忘れた場合に、アカウントへのアクセスを取り戻すことができます。"
-      ],
-      "${ BRAND_NAME } will use this address to keep you updated on your account security..": [
-        "${ BRAND_NAME } は、お客様のアカウントセキュリティに関する更新情報をお届けするために、このアドレスを使用します。"
       ],
       "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
         "パスワードをリセットした時、${ BRAND_NAME }はこのアドレスにメールでリセットコードをお送りします。"
@@ -17634,9 +17655,6 @@
       ],
       "${ enableDeviceRecovery } to ensure your data can be recovered.": [
         "${ enableDeviceRecovery }でデータを復元できるようにします。"
-      ],
-      "**Disable account reset by email** to ensure highest possible security of your account.": [
-        "**メールアドレスによるアカウントのリセットを無効化**し、お客様のアカウントのセキュリティを最大限に確保します。"
       ],
       "**Enable recovery by email** to regain access to your account if you forget your password.": [
         "**メールでの回復を有効化**することでパスワードを忘れた場合に、アカウントへのアクセスを取り戻すことができます。"
@@ -21845,9 +21863,6 @@
       "Reused passwords": [
         "再利用パスワード"
       ],
-      "Revoke certificate": [
-        "証明書を失効"
-      ],
       "Same inbox, shorter email address": [
         "同じ受信箱で、より短いメールアドレスを"
       ],
@@ -21865,6 +21880,9 @@
       ],
       "Secure your passwords. Everywhere.": [
         "お客様のパスワードを保護。どこででも。"
+      ],
+      "Security": [
+        "セキュリティ"
       ],
       "Security and privacy": [
         "セキュリティとプライバシー"
@@ -22577,6 +22595,9 @@
       "This key is used for email forwarding": [
         "このキーはメール転送に使用されます。"
       ],
+      "This setting is managed by your organization": [
+        "この設定は組織によって管理されています"
+      ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "暗号化されたパスワードは、それらが解読されない限り、漏洩した場合でも安全です。"
       ],
@@ -23017,11 +23038,11 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "2要素認証"
+      ],
       "Administrators can't access the data of private users": [
         "管理者がプライベートユーザーのデータにアクセスすることはできません。"
-      ],
-      "Authenticator app": [
-        "認証アプリ"
       ],
       "Inactive": [
         "非アクティブ"
@@ -23041,14 +23062,20 @@
       "Private": [
         "プライベート"
       ],
-      "Security key": [
-        "セキュリティキー"
-      ],
       "SSO": [
         "SSO"
       ],
       "SSO user provided by your identity provider": [
         "ID プロバイダーによって提供された SSO ユーザー"
+      ],
+      "User has enabled two-factor authentication with a security key.": [
+        "ユーザーはセキュリティキーを使用して2要素認証を有効にしました。"
+      ],
+      "User has enabled two-factor authentication with an authenticator app and a security key.": [
+        "ユーザーは認証アプリおよびセキュリティキーを使用して2要素認証を有効にしました。"
+      ],
+      "User has enabled two-factor authentication with an authenticator app.": [
+        "ユーザーは認証アプリを使用して2要素認証を有効にしました。"
       ],
       "Writing assistant": [
         "執筆アシスタント"
