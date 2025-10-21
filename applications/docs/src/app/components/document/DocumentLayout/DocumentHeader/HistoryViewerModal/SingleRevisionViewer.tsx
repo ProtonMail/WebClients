@@ -1,12 +1,12 @@
-import type { EditorInvoker } from '@proton/docs-core'
+import type { EditorInvoker, EditorOrchestratorInterface } from '@proton/docs-core'
 import type { YjsState } from '@proton/docs-shared'
 import { EditorSystemMode, InternalEventBus, SyncedEditorState } from '@proton/docs-shared'
 import { EditorFrame } from '../../../EditorFrame'
 import { useCallback } from 'react'
 import { ClientToEditorBridge } from '@proton/docs-core'
-import type { EditorOrchestratorInterface } from '@proton/docs-core'
 import { useApplication } from '~/utils/application-context'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
+import { useConfig } from '@proton/components'
 
 export type SingleRevisionViewerProps = {
   state: YjsState
@@ -16,7 +16,7 @@ export type SingleRevisionViewerProps = {
 
 export function SingleRevisionViewer({ state, onEditorInvokerRef, documentType }: SingleRevisionViewerProps) {
   const { logger } = useApplication()
-
+  const { APP_VERSION } = useConfig()
   const onFrameReady = useCallback(
     async (frame: HTMLIFrameElement) => {
       const orchestrator = {
@@ -29,7 +29,9 @@ export function SingleRevisionViewer({ state, onEditorInvokerRef, documentType }
 
       const newEditorInvoker = bridge.editorInvoker
 
-      newEditorInvoker.initializeEditor('DummyDocumentId', 'DummyUserAddress', 'Viewer', false).catch(console.error)
+      newEditorInvoker
+        .initializeEditor('DummyDocumentId', 'DummyUserAddress', 'Viewer', false, APP_VERSION)
+        .catch(console.error)
 
       newEditorInvoker
         .receiveMessage({
@@ -44,7 +46,7 @@ export function SingleRevisionViewer({ state, onEditorInvokerRef, documentType }
 
       onEditorInvokerRef(newEditorInvoker)
     },
-    [onEditorInvokerRef, state],
+    [APP_VERSION, onEditorInvokerRef, state],
   )
 
   return (
