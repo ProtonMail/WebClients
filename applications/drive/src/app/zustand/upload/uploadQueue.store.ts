@@ -17,7 +17,8 @@ export enum UploadStatus {
 
 export type UploadItem = {
     name: string;
-    progress: number;
+    uploadedBytes: number;
+    clearTextExpectedSize: number;
     thumbnailUrl?: string;
     error?: Error;
     speedBytesPerSecond?: number;
