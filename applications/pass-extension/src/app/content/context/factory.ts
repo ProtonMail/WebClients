@@ -58,7 +58,9 @@ export const createContentScriptContext = (options: ContentScriptContextFactoryO
 
         service: {
             autofill: createAutofillService(options),
+
             autosave: options.mainFrame ? createAutosaveService() : createAutosaveRelay(),
+
             detector: createDetectorService({
                 ...(options.mainFrame ? {} : { fieldTypes: [FieldType.CREDIT_CARD] }),
                 root: document,
@@ -67,7 +69,9 @@ export const createContentScriptContext = (options: ContentScriptContextFactoryO
                     context.destroy({ reason: 'bottleneck' });
                 },
             }),
+
             formManager: createFormManager({
+                channel: options.controller.channel,
                 onDetection: async (forms) => {
                     /* attach or detach dropdown based on the detection results */
                     const didDetect = forms.length > 0;
@@ -116,6 +120,7 @@ export const createContentScriptContext = (options: ContentScriptContextFactoryO
             (Object.keys(featureFlags) as PassFeature[]).forEach((key) => delete featureFlags[key]);
             return Object.assign(featureFlags, update);
         },
+
         setSettings: (update) => Object.assign(settings, update),
         setState: (update) => Object.assign(state, update),
     });
