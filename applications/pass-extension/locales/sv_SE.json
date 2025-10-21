@@ -1680,6 +1680,9 @@
       "Extra password successfully removed": [
         "Extralösenord borttaget"
       ],
+      "Failed updating your vault organization": [
+        "Misslyckades att uppdatera din valvorganisation"
+      ],
       "Fill in the CSV with your data": [
         "Fyll i CSV med dina data"
       ],
@@ -2292,6 +2295,9 @@
       "Update login": [
         "Uppdatera inloggning"
       ],
+      "Updating vault organization...": [
+        "Uppdaterar valvorganisation …"
+      ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Uppgradera ${ PASS_APP_NAME }"
       ],
@@ -2318,6 +2324,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "Valv “${ share.content.name }“ togs bort"
+      ],
+      "Vault organization successfully updated": [
+        "Valvorganisation uppdaterad"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Valvdelning: ${ vaultMembersCount } medlem",
