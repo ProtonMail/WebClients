@@ -19,47 +19,52 @@ import {
     featureListVPNBrowseSecurely,
     featureListVPNUnblockStreaming,
 } from './features';
-import { MessageType, POST_SIGNUP_GO_UNLIMITED_DURATION, type TipProps, type UnlimitedOfferConfig } from './interface';
+import {
+    POST_SIGNUP_GO_UNLIMITED_DURATION,
+    UnlimitedMessageType,
+    type UnlimitedOfferConfig,
+    type UnlimitedOfferTipProps,
+} from './interface';
 
-const getTips = (): TipProps[] => [
+const getTips = (): UnlimitedOfferTipProps[] => [
     {
-        type: MessageType.Generic,
+        type: UnlimitedMessageType.Generic,
         cta: c('specialoffer: Link').t`Do more with ${BRAND_NAME}`,
         spotlightTitle: c('specialoffer: Title').t`Get one plan that includes it all, get ${BRAND_NAME} Unlimited`,
         features: featureListGeneric,
     },
     {
-        type: MessageType.InboxThreatProtection,
+        type: UnlimitedMessageType.InboxThreatProtection,
         cta: c('specialoffer: Link').t`Guard against threats`,
         spotlightTitle: c('specialoffer: Title').t`Protect your account from threats with Sentinel`,
         features: featureListInboxThreatProtection,
     },
     {
-        type: MessageType.InboxUnlimitedAliases,
+        type: UnlimitedMessageType.InboxUnlimitedAliases,
         cta: c('specialoffer: Link').t`Get unlimited aliases`,
         spotlightTitle: c('specialoffer: Title').t`Get unlimited aliases to protect your identity and reduce spam`,
         features: featureListInboxUnlimitedAliases,
     },
     {
-        type: MessageType.Drive,
+        type: UnlimitedMessageType.Drive,
         cta: c('specialoffer: Link').t`Increase your storage`,
         spotlightTitle: c('specialoffer: Title').t`Get 500 GB to securely store all your files and photos`,
         features: featureListDrive,
     },
     {
-        type: MessageType.VPNBrowseSecurely,
+        type: UnlimitedMessageType.VPNBrowseSecurely,
         cta: c('specialoffer: Link').t`Browse securely`,
         spotlightTitle: c('specialoffer: Title').t`Get access to ultrafast VPN servers in 110+ countries`,
         features: featureListVPNBrowseSecurely,
     },
     {
-        type: MessageType.VPNUnblockStreaming,
+        type: UnlimitedMessageType.VPNUnblockStreaming,
         cta: c('specialoffer: Link').t`Unblock streaming content`,
         spotlightTitle: c('specialoffer: Title').t`Access content on streaming services worldwide`,
         features: featureListVPNUnblockStreaming,
     },
     {
-        type: MessageType.Pass,
+        type: UnlimitedMessageType.Pass,
         cta: c('specialoffer: Link').t`Keep passwords safe`,
         spotlightTitle: c('specialoffer: Title').t`Keep your passwords safe and organized in multiple vaults `,
         features: featureListPass,
@@ -90,7 +95,7 @@ export const useGoUnlimited2025Config = (): UnlimitedOfferConfig => {
         }
 
         if (lastRotationDateFeature.Value.rotationDate === 0) {
-            update({ rotationDate: getUnixTime(new Date()), rotationIndex: 0 });
+            void update({ rotationDate: getUnixTime(new Date()), rotationIndex: 0 });
             return false;
         }
         const lastRotationDate = fromUnixTime(lastRotationDateFeature.Value.rotationDate);
@@ -100,7 +105,7 @@ export const useGoUnlimited2025Config = (): UnlimitedOfferConfig => {
             const storedIndex = lastRotationDateFeature.Value.rotationIndex;
             const nextIndex = (storedIndex + 1) % tips.length;
             setCurrentTipIndex(nextIndex);
-            update({ rotationDate: getUnixTime(new Date()), rotationIndex: nextIndex });
+            void update({ rotationDate: getUnixTime(new Date()), rotationIndex: nextIndex });
             return true;
         }
 

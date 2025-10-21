@@ -1,8 +1,11 @@
-import type { Currency } from '@proton/payments';
+import type { TipProps, TopNavbarOfferConfig } from '../../common/interface';
 
 export type SUPPORTED_PRODUCTS = 'mail' | 'drive';
 
-export interface UnlimitedToDuoConfig {
-    currency: Currency;
-    price: number;
+export type UnlimitedToDuoOfferConfig = TopNavbarOfferConfig<UnlimitedToDuoMessageType>;
+export type UnlimitedToDuoTipProps = TipProps<UnlimitedToDuoMessageType>;
+
+export enum UnlimitedToDuoMessageType {
+    DoubleYourStorage = 'double-your-storage',
+    ShareYourPlan = 'share-your-plan',
 }
