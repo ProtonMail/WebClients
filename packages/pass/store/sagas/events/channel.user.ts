@@ -105,7 +105,7 @@ function* onUserEvent(
     yield put((revalidateUserAccess ? withRevalidate : identity)(getUserAccessIntent(userId)));
     yield put(getUserFeaturesIntent(userId));
     yield put(getOrganizationSettings.intent());
-    yield put(getInAppNotifications.intent());
+    yield put((revalidateUserAccess ? withRevalidate : identity)(getInAppNotifications.intent()));
 }
 
 export const createUserChannel = (api: Api, eventID: string) =>
