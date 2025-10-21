@@ -1,0 +1,24 @@
+@use 'sass:map';
+@import '~@proton/styles/scss/lib';
+
+.transfer-manager-fixed-position {
+	position: fixed;
+	inset-block-end: 1.5rem;
+	inset-inline-end: 1.5rem;
+	inline-size: 500px;
+	max-block-size: calc(100vh - 3rem);
+	display: flex;
+	flex-direction: column;
+	z-index: map.get($z-indexes, 'transfer-manager');
+	box-shadow: var(--shadow-lifted);
+	border-radius: var(--border-radius-md);
+	background: var(--background-norm);
+	color: var(--text-norm);
+	overflow: hidden;
+
+	@include media('<=small') {
+		inset-inline: 1rem;
+		inline-size: auto;
+		max-inline-size: calc(100vw - 2rem);
+	}
+}
