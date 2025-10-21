@@ -2,6 +2,7 @@ import { functionDescriptions } from '@rowsncolumns/functions'
 import FormulaParser from '@rowsncolumns/fast-formula-parser'
 import { type CellFormat, getCurrencySymbol } from '@rowsncolumns/spreadsheet'
 import { getDefaultDateFormat, getLongDateFormat } from '@rowsncolumns/utils'
+import type { useSpreadsheetState } from '@rowsncolumns/spreadsheet-state'
 
 export const CURRENCY_DEFAULT = 'USD'
 export const LOCALE_DEFAULT = 'en-US'
@@ -122,4 +123,14 @@ export const onlyImplementedFunctionDescriptions = functionDescriptions.filter((
 export const OPEN_LINK_EVENT = 'open-link' as const
 export type OpenLinkEventData = {
   link: string
+}
+
+export const CUSTOM_GRID_COLORS: ReturnType<typeof useSpreadsheetState>['spreadsheetColors'] = {
+  headerBackgroundColor: '#FAFAFA', // Light gray for headers
+  headerColor: '#666666', // Dark gray for header text
+  headerActiveBackgroundColor: '#E3F9EB', // Mint green when cell is selected
+  selectionBorderColor: '#4DB89D', // Lighter mint green border for selected cells (appears thinner)
+  selectionBackgroundColor: 'rgba(80, 200, 120, 0.1)', // Light mint green background
+  gridLineColor: '#F0F0F0', // Light gray grid lines
+  headerBorderColor: '#EDEDED', // Light gray border for header cells
 }
