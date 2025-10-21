@@ -4,28 +4,30 @@ import { Button } from '@proton/atoms/Button/Button';
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import type { InAppNotification } from '@proton/pass/types/data/notification';
+import { intoColorHex } from '@proton/pass/utils/dom/colors';
 
 type Props = {
+    disabled?: boolean;
     notification: InAppNotification;
     theme: 'dark' | 'light';
     onAction: () => void;
     onClose: () => void;
     onDismiss: () => void;
-    isOffline?: boolean;
 };
 
 export const InAppNotificationPromoModal: FC<Props> = ({
+    disabled,
+    notification,
+    theme,
     onAction,
     onClose,
     onDismiss,
-    notification,
-    theme,
-    isOffline,
 }) => {
     const { promoContents } = notification;
     if (!promoContents) return null;
 
     const themeValues = promoContents[theme];
+    const closePromoTextColor = intoColorHex(themeValues.closePromoTextColor);
 
     return (
         <PassModal className="overflow-auto relative" size="small" open onClose={onClose}>
@@ -54,10 +56,10 @@ export const InAppNotificationPromoModal: FC<Props> = ({
                         fullWidth
                         onClick={onDismiss}
                         style={{
-                            '--button-default-text-color': `#${themeValues.closePromoTextColor}`,
-                            '--button-hover-text-color': `#${themeValues.closePromoTextColor}`,
+                            '--button-default-text-color': closePromoTextColor,
+                            '--button-hover-text-color': closePromoTextColor,
                         }}
-                        disabled={isOffline}
+                        disabled={disabled}
                     >
                         {promoContents.closePromoText}
                     </Button>
