@@ -227,8 +227,14 @@
       "Resend code": [
         "Reenviar código"
       ],
+      "Reset all": [
+        "Restablecer todo"
+      ],
       "Save": [
         "Guardar"
+      ],
+      "Saving...": [
+        "Guardando..."
       ],
       "Scroll to bottom": [
         "Desplazarse hasta el final"
@@ -801,6 +807,14 @@
         "Tú tienes el control"
       ]
     },
+    "collider_2025: Context": {
+      "I collect vintage error messages": [
+        "Colecciono mensajes de error antiguos"
+      ],
+      "I have a PhD in overthinking simple problems": [
+        "Tengo un doctorado en complicarme con problemas sencillos."
+      ]
+    },
     "collider_2025: Description": {
       "Elevate your private AI experience and unlock advanced models and premium features with ${ LUMO_SHORT_APP_NAME } Plus.": [
         "Eleva tu experiencia de IA privada y desbloquea modelos avanzados y funciones prémium con ${ LUMO_SHORT_APP_NAME } Plus."
@@ -1371,6 +1385,28 @@
         "contrata ${ LUMO_SHORT_APP_NAME } Plus."
       ]
     },
+    "collider_2025: Personality": {
+      "Business Cat": [
+        "Gato empresario"
+      ],
+      "Default": [
+        "Por defecto"
+      ],
+      "Lazy Cat": [
+        "Gato Perezoso"
+      ],
+      "Playful Cat": [
+        "Gato juguetón"
+      ],
+      "Wise Cat": [
+        "Gato Sabio"
+      ]
+    },
+    "collider_2025: Personality Description": {
+      "Professional but still a cat": [
+        "Profesional pero sigue siendo un gato"
+      ]
+    },
     "collider_2025: Pill": {
       "Protected by ${ BRAND_NAME }": [
         "Protegido por ${ BRAND_NAME }"
@@ -1472,6 +1508,27 @@
       ],
       "Try ${ MAIL_APP_NAME }": [
         "Probar ${ MAIL_APP_NAME }"
+      ]
+    },
+    "collider_2025: Trait": {
+      "Forward thinking": [
+        "Visión de futuro"
+      ],
+      "Gen Z": [
+        "Generación Z"
+      ],
+      "Witty": [
+        "Ingenioso"
+      ]
+    },
+    "collider_2025: Trait Description": {
+      "Maintain a formal and conventional approach": [
+        "Mantén un enfoque formal y convencional"
+      ]
+    },
+    "collider_2025: Trait Sentence": {
+      "Embrace progressive and innovative perspectives.": [
+        "Adopta perspectivas progresistas e innovadoras."
       ]
     },
     "collider_2025: Upsell": {
@@ -1614,6 +1671,9 @@
       "Settings": [
         "Ajustes"
       ],
+      "Show sidebar": [
+        "Mostrar la barra lateral"
+      ],
       "Unfavorite": [
         "Quitar de favoritos"
       ],
@@ -1669,14 +1729,14 @@
       ]
     },
     "collider_2025:Title": {
-      "${ LUMO_SHORT_APP_NAME } 1.1 is much smarter, more capable, with improved awareness of recent events, ready to give you more thorough and useful answers.": [
-        "${ LUMO_SHORT_APP_NAME } 1.1 es mucho más inteligente, más capaz, con una mayor conciencia de los eventos recientes, listo para darte respuestas más completas y útiles."
-      ],
       "An AI assistant should empower you, not exploit you for your data. That’s why we built ${ LUMO_SHORT_APP_NAME }: To bring you all the benefits of AI, without compromising your privacy and data security.": [
         "Un asistente de IA debería empoderarte, no explotar tus datos. Por eso creamos ${ LUMO_SHORT_APP_NAME }: para ofrecerte todos los beneficios de la IA, sin comprometer la privacidad y la seguridad de tus datos."
       ],
       "Built by the team that knows privacy": [
         "Creado por el equipo que sabe de privacidad"
+      ],
+      "Dark mode and conversation personalization": [
+        "Modo oscuro y personalización de la conversación"
       ],
       "Earlier": [
         "Anterior"
@@ -1723,8 +1783,8 @@
       "Today": [
         "Hoy"
       ],
-      "What's new in ${ LUMO_SHORT_APP_NAME } 1.1": [
-        "¿Qué hay de nuevo en ${ LUMO_SHORT_APP_NAME } 1.1?"
+      "What's new": [
+        "Novedades"
       ],
       "Whatever you ask me is:": [
         "Todo lo que me preguntes es:"
@@ -3715,6 +3775,9 @@
       "Hide password": [
         "Ocultar contraseña"
       ],
+      "How should ${ LUMO_SHORT_APP_NAME } behave?": [
+        "¿Cómo debería comportarse ${ LUMO_SHORT_APP_NAME }?"
+      ],
       "IBAN": [
         "IBAN"
       ],
@@ -3786,6 +3849,9 @@
       ],
       "Verification code": [
         "Código de verificación"
+      ],
+      "What do you do?": [
+        "¿Qué es lo que haces?"
       ],
       "What happened?": [
         "¿Qué ha ocurrido?"
