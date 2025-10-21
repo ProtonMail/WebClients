@@ -1404,6 +1404,9 @@
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Setelah masa uji coba ini berakhir pada ${ formattedDate }, paket Anda akan menjadi langganan berbayar yang diperbarui secara otomatis secara bulanan. Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ formattedDate }."
       ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Anda dapat memiliki hingga ${ TRIAL_MAX_DEDICATED_IPS } server khusus selama masa uji coba."
+      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Anda dapat memiliki hingga ${ TRIAL_MAX_SCRIBE_SEATS } kuota Scribe selama masa uji coba."
       ],
@@ -3094,6 +3097,9 @@
       "All events in this series were updated.": [
         "Seluruh acara dalam rangkaian ini telah diperbarui."
       ],
+      "DESCRIPTION:": [
+        "DESKRIPSI:"
+      ],
       "Here's what changed:": [
         "Berikut apa-apa saja yang telah berubah:"
       ],
@@ -3228,6 +3234,9 @@
       ],
       "Calendar limit reached": [
         "Batas kalender tercapai"
+      ],
+      "Can't find any secure link": [
+        "Tidak dapat menemukan tautan aman mana pun"
       ],
       "Cannot export this contact": [
         "Kontak tidak dapat diekspor"
@@ -3571,6 +3580,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Sebagian nama label Anda melebihi batas jumlah karakter yang diperbolehkan oleh ${ MAIL_APP_NAME }. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
       ],
+      "Something went wrong during folder listing": [
+        "Terjadi kesalahan pada saat menerakan daftar folder"
+      ],
       "Something went wrong. Please try again.": [
         "Terdapat suatu kesalahan. Silakan coba lagi"
       ],
@@ -3696,6 +3708,9 @@
       ],
       "We were not able to load some invitations": [
         "Kami tidak dapat memuat sebagian undangan"
+      ],
+      "We were not able to load some items": [
+        "Kami tidak dapat memuat sebagian item"
       ],
       "We were not able to load some items shared with you": [
         "Kami tidak dapat memuat sebagian item yang dibagikan kepada Anda"
@@ -8996,6 +9011,9 @@
       "The spreadsheet failed to be created": [
         "Lembar kerja gagal dibuat"
       ],
+      "This secure link expired, please change expire date in sharing settings": [
+        "Tautan aman ini telah kedaluwarsa. Silakan ubah tanggal kedaluwarsa pada pengaturan pembagian"
+      ],
       "Trash failed to be emptied": [
         "Gagal mengosongkan sampah"
       ],
@@ -9196,6 +9214,9 @@
       ],
       "Upload folder": [
         "Unggah folder"
+      ],
+      "Upload more files": [
+        "Unggah lebih banyak berkas"
       ]
     },
     "Onboarding Info": {
@@ -9226,6 +9247,9 @@
       "Edit documents online": [
         "Sunting dokumen secara online"
       ],
+      "Encryption happens automatically": [
+        "Enkripsi berlangsung secara otomatis"
+      ],
       "End-to-end encrypted storage for your files": [
         "Ruang penyimpanan yang terenkripsi end-to-end untuk berkas Anda"
       ],
@@ -9234,6 +9258,9 @@
       ],
       "Files uploaded during this time won’t count towards your storage limit.": [
         "Berkas yang diunggah dalam rentang waktu ini tidak akan dihitung ke batas penyimpanan Anda."
+      ],
+      "Files uploaded now will not count towards your storage limit": [
+        "Berkas yang diunggah sekarang tidak akan dihitung ke batas penyimpanan Anda"
       ],
       "Final approval in progress": [
         "Persetujuan akhir sedang berlangsung"
@@ -9268,6 +9295,9 @@
       "Invite team members": [
         "Undang anggota tim"
       ],
+      "Keep the momentum going by uploading more files using the storage included with your plan.": [
+        "Pertahankan momentum Anda dengan mengunggah lebih banyak berkas melalui ruang penyimpanan yang tersedia dengan paket Anda."
+      ],
       "Manage access": [
         "Kelola akses"
       ],
@@ -9295,6 +9325,9 @@
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "Pemilik perlu untuk mengonfirmasi akses berbagi. Anda akan memperoleh email setelah akses telah dikonfirmasi."
       ],
+      "Upload files, folders, photos": [
+        "Unggah berkas, folder, foto"
+      ],
       "Upload your first file": [
         "Unggah berkas pertama Anda"
       ],
@@ -9303,6 +9336,12 @@
       ],
       "Work together": [
         "Bekerja bersama"
+      ],
+      "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
+        "Anda baru saja memperoleh data gratis dan mengamankan berkas Anda dengan enkripsi end-to-end — dalam waktu yang singkat!"
+      ],
+      "Your storage limit won’t be affected": [
+        "Batas penyimpanan Anda tidak akan terpengaruh"
       ]
     },
     "Onboarding Trial": {
@@ -9614,6 +9653,9 @@
       ]
     },
     "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Saldo yang belum terpakai dari paket langganan Anda sebelumnya"
+      ],
       "Credits will be added to your balance": [
         "Saldo akan ditambahkan ke tabungan Anda"
       ]
@@ -9935,6 +9977,9 @@
       ],
       "Friend subscribed": [
         "Teman yang berlangganan"
+      ],
+      "Invite friends. Get credits.": [
+        "Undang teman. Dapatkan saldo."
       ],
       "Invited friends": [
         "Teman yang diundang"
@@ -11935,6 +11980,9 @@
       "Re-signing contacts": [
         "Menandatangani ulang kontak"
       ],
+      "Ready, set, upload.": [
+        "Siap, sedia, unggah."
+      ],
       "Recommended": [
         "Direkomendasikan"
       ],
@@ -12021,6 +12069,9 @@
       ],
       "Share your calendar with your team": [
         "Bagikan kalender Anda dengan tim Anda"
+      ],
+      "Share your link": [
+        "Bagikan tautan Anda"
       ],
       "Shared": [
         "Dibagikan"
@@ -12232,6 +12283,9 @@
       "You have no folders yet": [
         "Anda belum memiliki folder"
       ],
+      "Your ${ freeUploadLength } has started.": [
+        "${ freeUploadLength } Anda telah dimulai."
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Masa uji coba gratis ${ planName } Anda akan berakhir pada ${ textDate }"
       ],
@@ -12261,6 +12315,9 @@
       ],
       "Your welcome actions": [
         "Tindakan selamat datang Anda"
+      ],
+      "You’re off to a great start!": [
+        "Awal yang luar biasa!"
       ],
       "You’ve got 5 GB of storage": [
         "Anda mendapatkan ruang penyimpanan 5 GB"
