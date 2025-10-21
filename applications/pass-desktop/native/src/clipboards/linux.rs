@@ -10,11 +10,18 @@ impl ClipboardTrait for Clipboard {
         clipboard.get_text().map_err(|e| e.into())
     }
 
-    fn write(text: &str, _: bool) -> Result<(), anyhow::Error> {
+    fn write(text: &str, sensitive: bool) -> Result<(), anyhow::Error> {
         let value = text.to_owned();
         std::thread::spawn(move || -> Result<()> {
             let mut clipboard = arboard::Clipboard::new()?;
-            clipboard.set().wait().text(value)?;
+
+            let set = if sensitive {
+                clipboard.set().exclude_from_history().wait()
+            } else {
+                clipboard.set().wait()
+            };
+
+            set.text(value)?;
             Ok(())
         });
         Ok(())
