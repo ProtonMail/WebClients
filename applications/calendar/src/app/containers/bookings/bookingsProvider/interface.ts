@@ -11,3 +11,10 @@ export interface Slot {
     start: Date;
     end: Date;
 }
+
+export interface BookingFormData {
+    title: string;
+    selectedCalendar: string | null;
+    duration: number;
+    timeZone: string | undefined;
+}

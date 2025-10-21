@@ -1,9 +1,6 @@
-import { useEffect, useState } from 'react';
-
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import Icon from '@proton/components/components/icon/Icon';
 import IconRow from '@proton/components/components/iconRow/IconRow';
 import { InputFieldTwo, Option, SelectTwo, TimeZoneSelector } from '@proton/components/index';
@@ -13,37 +10,10 @@ import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eve
 import { useBookings } from './bookingsProvider/BookingsProvider';
 import { BookingState } from './bookingsProvider/interface';
 
-interface BookingFormData {
-    title: string;
-    selectedCalendar: string | null;
-    duration: number;
-    timeZone: string | undefined;
-}
-
 export const Form = () => {
     const scheduleOptions = getCalendarEventDefaultDuration();
 
-    const { writeableCalendars } = useBookings();
-    const [calendarUserSettings] = useCalendarUserSettings();
-
-    const [formData, setFormData] = useState<BookingFormData>({
-        title: '',
-        selectedCalendar: null,
-        duration: scheduleOptions[0].value,
-        timeZone: calendarUserSettings?.PrimaryTimezone,
-    });
-
-    const updateFormData = (field: keyof BookingFormData, value: any) => {
-        setFormData((prev) => ({ ...prev, [field]: value }));
-    };
-
-    useEffect(() => {
-        if (!writeableCalendars || formData.selectedCalendar !== null) {
-            return;
-        }
-
-        updateFormData('selectedCalendar', writeableCalendars[0].ID);
-    }, [writeableCalendars, formData.selectedCalendar]);
+    const { writeableCalendars, formData, updateFormData } = useBookings();
 
     return (
         <form className="flex flex-column">
@@ -116,15 +86,12 @@ const Header = () => {
 };
 
 const Buttons = () => {
-    const { changeBookingState } = useBookings();
-
-    // TODO Handle form submission logic here
-    const handleSubmit = () => {};
+    const { changeBookingState, submitForm } = useBookings();
 
     return (
         <div className="flex justify-center gap-6">
             <Button onClick={() => changeBookingState(BookingState.OFF)}>{c('Action').t`Cancel`}</Button>
-            <Button className="grow" color="norm" type="submit" onClick={handleSubmit}>{c('Action')
+            <Button className="grow" color="norm" type="submit" onClick={submitForm}>{c('Action')
                 .t`Create booking page`}</Button>
         </div>
     );
