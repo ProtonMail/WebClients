@@ -36,7 +36,7 @@ export const NoDeviceDetectedModal = () => {
                 setNoDeviceDetected(PermissionPromptStatus.CLOSED);
             }}
             rootClassName="no-device-available-backdrop"
-            className="no-device-available-modal"
+            className="no-device-available-modal border border-norm"
         >
             <ModalTwoHeader />
             <ModalTwoContent className="flex flex-column justify-center gap-4 text-center ">
