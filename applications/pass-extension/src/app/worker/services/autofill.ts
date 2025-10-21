@@ -6,7 +6,6 @@ import type { AutofillableFrame } from 'proton-pass-extension/lib/utils/frames';
 import { getAutofillableFrameIDs } from 'proton-pass-extension/lib/utils/frames';
 import { setPopupIconBadge } from 'proton-pass-extension/lib/utils/popup';
 import { isContentScriptPort } from 'proton-pass-extension/lib/utils/port';
-import type { AutofillCheckFormMessage, WorkerMessageResponse } from 'proton-pass-extension/types/messages';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import type { CCFieldType } from '@proton/pass/fathom/labels';
@@ -163,17 +162,18 @@ export const createAutoFillService = () => {
             .catch(noop);
     };
 
-    const queryTabLoginForms = async (tabID: TabId): Promise<boolean> => {
+    const queryTabLoginForms = async (tabId: TabId): Promise<boolean> => {
         try {
-            return (
-                (
-                    await browser.tabs.sendMessage<
-                        AutofillCheckFormMessage,
-                        WorkerMessageResponse<WorkerMessageType.AUTOFILL_CHECK_FORM>
-                    >(tabID, backgroundMessage({ type: WorkerMessageType.AUTOFILL_CHECK_FORM }), { frameId: 0 })
-                )?.hasLoginForm ?? false
-            );
-        } catch (err) {
+            const frames = (await browser.webNavigation.getAllFrames({ tabId })) ?? [];
+
+            for (const frame of frames) {
+                const message = backgroundMessage({ type: WorkerMessageType.AUTOFILL_CHECK_FORM });
+                const res = await sendTabMessage(message, { tabId, frameId: frame.frameId }).catch(noop);
+                if (res?.hasLoginForm) return true;
+            }
+
+            return false;
+        } catch {
             return false;
         }
     };

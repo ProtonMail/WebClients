@@ -1,7 +1,12 @@
 import { withContext } from 'proton-pass-extension/app/content/context/context';
+import type {
+    FrameMessageBroker,
+    FrameMessageHandler,
+} from 'proton-pass-extension/app/content/services/client/client.channel';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { clearDetectionCache } from '@proton/pass/fathom';
-import { FieldType } from '@proton/pass/fathom/labels';
+import { FieldType, FormType } from '@proton/pass/fathom/labels';
 import { logger } from '@proton/pass/utils/logger';
 import throttle from '@proton/utils/throttle';
 
@@ -9,6 +14,7 @@ import type { FormHandle } from './form';
 import { createFormHandles } from './form';
 
 type FormManagerOptions = {
+    channel: FrameMessageBroker;
     onDetection: (forms: FormHandle[]) => void;
 };
 
@@ -25,7 +31,7 @@ export type FormManagerState = {
     trackedForms: Map<HTMLElement, FormHandle>;
 };
 
-export const createFormManager = (options: FormManagerOptions) => {
+export const createFormManager = ({ onDetection, channel }: FormManagerOptions) => {
     const state: FormManagerState = {
         active: true,
         detectionAt: 0,
@@ -99,7 +105,7 @@ export const createFormManager = (options: FormManagerOptions) => {
                                 formHandle.reconciliate(options.formType, options.fields);
                             });
 
-                            options.onDetection(getTrackedForms());
+                            onDetection(getTrackedForms());
                         } catch (err) {
                             logger.warn(`[FormTracker::Detector] ${err}`);
                         }
@@ -142,7 +148,19 @@ export const createFormManager = (options: FormManagerOptions) => {
         void runDetection(options.reason);
     };
 
+    const onCheckForm: FrameMessageHandler<WorkerMessageType.AUTOFILL_CHECK_FORM> = (_message, _, sendResponse) => {
+        const trackedForms = getTrackedForms();
+        const hasLoginForm = trackedForms?.some(({ formType }) => formType === FormType.LOGIN);
+        sendResponse({ hasLoginForm });
+
+        return true;
+    };
+
+    channel.register(WorkerMessageType.AUTOFILL_CHECK_FORM, onCheckForm);
+
     const destroy = () => {
+        channel.unregister(WorkerMessageType.AUTOFILL_CHECK_FORM, onCheckForm);
+
         cancelIdleCallback(state.detectionRequest);
         runDetection.cancel();
 

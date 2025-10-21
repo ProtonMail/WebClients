@@ -2,7 +2,6 @@ import { CLIENT_SCRIPT_READY_EVENT } from 'proton-pass-extension/app/content/con
 import { CSContext } from 'proton-pass-extension/app/content/context/context';
 import { createContentScriptContext } from 'proton-pass-extension/app/content/context/factory';
 import type { ContentScriptContext } from 'proton-pass-extension/app/content/context/types';
-import type { FrameMessageHandler } from 'proton-pass-extension/app/content/services/client/client.channel';
 import type { ClientController } from 'proton-pass-extension/app/content/services/client/client.controller';
 import { DOMCleanUp } from 'proton-pass-extension/app/content/services/inline/inline.cleanup';
 import type { ExtensionContextType } from 'proton-pass-extension/lib/context/extension-context';
@@ -11,7 +10,6 @@ import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/mes
 import { matchExtensionMessage } from 'proton-pass-extension/lib/message/utils';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import { FormType } from '@proton/pass/fathom/labels';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { AppState } from '@proton/pass/types';
@@ -190,16 +188,6 @@ export const createContentScriptClient = ({
             CSContext.clear();
         },
     };
-
-    const onCheckForm: FrameMessageHandler<WorkerMessageType.AUTOFILL_CHECK_FORM> = (_message, _, sendResponse) => {
-        const trackedForms = context.service.formManager.getTrackedForms();
-        const hasLoginForm = trackedForms?.some(({ formType }) => formType === FormType.LOGIN);
-        sendResponse({ hasLoginForm });
-
-        return true;
-    };
-
-    controller.channel.register(WorkerMessageType.AUTOFILL_CHECK_FORM, onCheckForm);
 
     return client;
 };
