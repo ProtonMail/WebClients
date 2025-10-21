@@ -61,7 +61,6 @@ import {
 import type { OpenedMailEvent } from '../../hooks/useGetOpenedMailEvents';
 import { useCalendarCEDTMetric } from '../../metrics/useCalendarCEDTMetric';
 import { useCalendarPTTMetric } from '../../metrics/useCalendarPTTMetric';
-import { BookingSidePanel } from '../bookings/BookingSidePanel';
 import { useBookings } from '../bookings/bookingsProvider/BookingsProvider';
 import AskUpdateTimezoneModal from '../settings/AskUpdateTimezoneModal';
 import CalendarContainerView from './CalendarContainerView';
@@ -530,93 +529,90 @@ const CalendarContainer = ({
     }, [calendarsEvents]);
 
     return (
-        <>
-            <CalendarContainerView
-                calendarUserSettings={calendarUserSettings}
-                calendars={calendars}
-                onCreateCalendarFromSidebar={(id: string) => setInitializeCacheOnlyCalendarsIDs([id])}
-                prefetchCalendarEvents={prefetchCalendarEvents}
-                isLoading={isLoading}
-                displayWeekNumbers={displayWeekNumbers}
-                weekStartsOn={weekStartsOn}
-                tzid={tzid}
-                setTzid={setCustomTzid}
-                range={range}
-                view={view}
-                utcDateRangeInTimezone={utcDateRangeInTimezone}
-                utcDefaultDate={utcDefaultDate}
-                utcDate={utcDate}
-                utcDateRange={utcDateRange}
-                onCreateEvent={
-                    isEventCreationDisabled
-                        ? undefined
-                        : (attendees: AttendeeModel[] = []) => interactiveRef.current?.createEvent(attendees)
-                }
-                onBackFromSearch={handleGoBackFromSearch}
-                onClickToday={handleClickToday}
-                onClickNextView={handleClickNext}
-                onClickPreviousView={handleClickPrev}
-                onChangeDate={handleChangeDate}
-                onChangeDateRange={handleChangeDateRange}
-                onChangeView={handleChangeView}
-                containerRef={containerRef}
-                onSearch={handleSearch}
-                addresses={addresses}
-            >
-                {!!localTimezoneId && (
-                    <AskUpdateTimezoneModal
-                        isOpen={isAskUpdateTimezoneModalOpen}
-                        onClose={() => setIsAskUpdateTimezoneModalOpen(false)}
-                        localTzid={localTimezoneId}
-                    />
-                )}
-                {renderShareCalendarInvitationModal && shareCalendarInvitation && (
-                    <ShareCalendarInvitationModal
-                        {...shareCalendarInvitationModal}
-                        addresses={addresses}
-                        calendars={calendars}
-                        user={user}
-                        subscription={subscription}
-                        invitation={shareCalendarInvitation}
-                    />
-                )}
-                <InteractiveCalendarView
-                    view={view}
-                    isLoading={isLoading}
-                    tzid={tzid}
-                    {...timezoneInformation}
-                    displayWeekNumbers={displayWeekNumbers}
-                    displaySecondaryTimezone={displaySecondaryTimezone}
-                    weekStartsOn={weekStartsOn}
-                    inviteLocale={inviteLocale}
-                    now={utcNowDateInTimezone}
-                    date={utcDate}
-                    dateRange={utcDateRange}
-                    events={calendarsEvents}
-                    onClickDate={viewportWidth['<=small'] ? handleChangeDate : handleClickDateWeekView}
-                    onChangeDate={handleChangeDate}
-                    onChangeDateAndRevertView={handleChangeDateAndRevertView}
-                    onClickToday={handleClickToday}
-                    isEventCreationDisabled={isEventCreationDisabled}
-                    onInteraction={(active: boolean) => setDisableCreate(active)}
-                    calendars={calendars}
-                    addresses={addresses}
-                    activeAddresses={activeAddresses}
-                    activeCalendars={activeCalendars}
-                    createEventCalendar={createEventCalendar}
-                    createEventCalendarBootstrap={createEventCalendarBootstrap}
-                    interactiveRef={interactiveRef}
-                    containerRef={containerRef}
-                    timeGridViewRef={timeGridViewRef}
-                    calendarsEventsCacheRef={calendarsEventsCacheRef}
-                    eventTargetAction={eventTargetAction}
-                    setEventTargetAction={setEventTargetAction}
-                    getOpenedMailEvents={getOpenedMailEvents}
-                    onBackFromSearch={handleGoBackFromSearch}
+        <CalendarContainerView
+            calendarUserSettings={calendarUserSettings}
+            calendars={calendars}
+            onCreateCalendarFromSidebar={(id: string) => setInitializeCacheOnlyCalendarsIDs([id])}
+            prefetchCalendarEvents={prefetchCalendarEvents}
+            isLoading={isLoading}
+            displayWeekNumbers={displayWeekNumbers}
+            weekStartsOn={weekStartsOn}
+            tzid={tzid}
+            setTzid={setCustomTzid}
+            range={range}
+            view={view}
+            utcDateRangeInTimezone={utcDateRangeInTimezone}
+            utcDefaultDate={utcDefaultDate}
+            utcDate={utcDate}
+            utcDateRange={utcDateRange}
+            onCreateEvent={
+                isEventCreationDisabled
+                    ? undefined
+                    : (attendees: AttendeeModel[] = []) => interactiveRef.current?.createEvent(attendees)
+            }
+            onBackFromSearch={handleGoBackFromSearch}
+            onClickToday={handleClickToday}
+            onClickNextView={handleClickNext}
+            onClickPreviousView={handleClickPrev}
+            onChangeDate={handleChangeDate}
+            onChangeDateRange={handleChangeDateRange}
+            onChangeView={handleChangeView}
+            containerRef={containerRef}
+            onSearch={handleSearch}
+            addresses={addresses}
+        >
+            {!!localTimezoneId && (
+                <AskUpdateTimezoneModal
+                    isOpen={isAskUpdateTimezoneModalOpen}
+                    onClose={() => setIsAskUpdateTimezoneModalOpen(false)}
+                    localTzid={localTimezoneId}
                 />
-            </CalendarContainerView>
-            {isBookingActive && <BookingSidePanel />}
-        </>
+            )}
+            {renderShareCalendarInvitationModal && shareCalendarInvitation && (
+                <ShareCalendarInvitationModal
+                    {...shareCalendarInvitationModal}
+                    addresses={addresses}
+                    calendars={calendars}
+                    user={user}
+                    subscription={subscription}
+                    invitation={shareCalendarInvitation}
+                />
+            )}
+            <InteractiveCalendarView
+                view={view}
+                isLoading={isLoading}
+                tzid={tzid}
+                {...timezoneInformation}
+                displayWeekNumbers={displayWeekNumbers}
+                displaySecondaryTimezone={displaySecondaryTimezone}
+                weekStartsOn={weekStartsOn}
+                inviteLocale={inviteLocale}
+                now={utcNowDateInTimezone}
+                date={utcDate}
+                dateRange={utcDateRange}
+                events={calendarsEvents}
+                onClickDate={viewportWidth['<=small'] ? handleChangeDate : handleClickDateWeekView}
+                onChangeDate={handleChangeDate}
+                onChangeDateAndRevertView={handleChangeDateAndRevertView}
+                onClickToday={handleClickToday}
+                isEventCreationDisabled={isEventCreationDisabled}
+                onInteraction={(active: boolean) => setDisableCreate(active)}
+                calendars={calendars}
+                addresses={addresses}
+                activeAddresses={activeAddresses}
+                activeCalendars={activeCalendars}
+                createEventCalendar={createEventCalendar}
+                createEventCalendarBootstrap={createEventCalendarBootstrap}
+                interactiveRef={interactiveRef}
+                containerRef={containerRef}
+                timeGridViewRef={timeGridViewRef}
+                calendarsEventsCacheRef={calendarsEventsCacheRef}
+                eventTargetAction={eventTargetAction}
+                setEventTargetAction={setEventTargetAction}
+                getOpenedMailEvents={getOpenedMailEvents}
+                onBackFromSearch={handleGoBackFromSearch}
+            />
+        </CalendarContainerView>
     );
 };
 
