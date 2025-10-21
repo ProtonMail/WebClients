@@ -47,27 +47,27 @@ export const InAppNotificationPromoButton = WithInAppNotification(
                     <PromotionButton
                         className="button-pill items-center flex-nowrap shrink-0"
                         color="norm"
+                        disabled={!online}
+                        icon={viewportWidth['<=medium']}
+                        iconGradient
+                        iconName="upgrade"
+                        iconSize={3.5}
                         onClick={() => setShowModal(true)}
                         style={{
                             '--upgrade-color-stop-1': '#9834ff',
                             '--upgrade-color-stop-2': '#F6CC88',
                         }}
-                        icon={viewportWidth['<=medium']}
-                        iconName="upgrade"
-                        iconSize={3.5}
-                        iconGradient
-                        disabled={!online}
                     >
                         <span className="hidden md:inline">{notification.promoContents?.minimizedPromoText}</span>
                     </PromotionButton>
                     {showModal && (
                         <InAppNotificationPromoModal
-                            theme={theme}
+                            disabled={!online}
                             notification={notification}
+                            theme={theme}
                             onAction={withClose(() => onAction(InAppNotificationState.DISMISSED))}
                             onClose={withClose(() => setNotificationState(InAppNotificationState.READ))}
                             onDismiss={withClose(() => setNotificationState(InAppNotificationState.DISMISSED))}
-                            isOffline={!online}
                         />
                     )}
                 </>
