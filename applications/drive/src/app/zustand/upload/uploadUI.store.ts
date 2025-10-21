@@ -6,13 +6,14 @@ import type { UploadStatus } from './uploadQueue.store';
 export type UploadUIItem = {
     uploadId: string;
     name: string;
-    progress: number;
+    uploadedBytes: number;
+    clearTextExpectedSize: number;
     status: UploadStatus;
     error?: Error;
     speedBytesPerSecond?: number;
 };
 
-// TODO: This can be merge with download and transform to transferManager store
+// TODO: This can be merge inside the uploadQueue
 type UploadUIStore = {
     items: Map<string, UploadUIItem>;
     itemIds: Set<string>;
