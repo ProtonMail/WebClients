@@ -11,6 +11,7 @@ import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eventDefaults';
 
 import { useBookings } from './bookingsProvider/BookingsProvider';
+import { BookingState } from './bookingsProvider/interface';
 
 interface BookingFormData {
     title: string;
@@ -19,7 +20,7 @@ interface BookingFormData {
     timeZone: string | undefined;
 }
 
-export const BookingsPageManagement = () => {
+export const Form = () => {
     const scheduleOptions = getCalendarEventDefaultDuration();
 
     const { writeableCalendars } = useBookings();
@@ -44,81 +45,89 @@ export const BookingsPageManagement = () => {
         updateFormData('selectedCalendar', writeableCalendars[0].ID);
     }, [writeableCalendars, formData.selectedCalendar]);
 
-    // TODO Handle form submission logic here
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-    };
+    return (
+        <form className="flex flex-column">
+            <IconRow icon="earth" title={c('Label').t`Time zone`}>
+                <TimeZoneSelector
+                    onChange={(value) => updateFormData('timeZone', value)}
+                    timezone={formData.timeZone}
+                />
+            </IconRow>
 
-    // TODO Handle the close action
-    const handleClose = () => {};
+            <IconRow icon="text-align-left" title={c('Label').t`Title`}>
+                <InputFieldTwo
+                    id="booking-title"
+                    placeholder={c('Placeholder').t`Add title`}
+                    value={formData.title}
+                    onChange={(e) => updateFormData('title', e.target.value)}
+                    maxLength={MAX_CHARS_API.TITLE}
+                    assistContainerClassName="hidden"
+                    autoFocus
+                />
+            </IconRow>
+
+            <IconRow icon="clock" title={c('Label').t`Duration`}>
+                <InputFieldTwo
+                    as={SelectTwo}
+                    id="duration-select"
+                    value={formData.duration}
+                    onChange={({ value }: { value: any }) => {
+                        updateFormData('duration', value);
+                    }}
+                    assistContainerClassName="hidden"
+                >
+                    {scheduleOptions.map(({ value, text }) => (
+                        <Option key={value} value={value} title={text} />
+                    ))}
+                </InputFieldTwo>
+            </IconRow>
+
+            <IconRow icon="calendar-grid" title={c('Label').t`Calendar`}>
+                <InputFieldTwo
+                    as={SelectTwo}
+                    id="calendar-select"
+                    value={formData.selectedCalendar}
+                    onChange={({ value }: { value: any }) => {
+                        updateFormData('selectedCalendar', value);
+                    }}
+                    assistContainerClassName="hidden"
+                >
+                    {writeableCalendars.map((calendar) => (
+                        <Option key={calendar.ID} value={calendar.ID} title={calendar.Name} />
+                    ))}
+                </InputFieldTwo>
+            </IconRow>
+        </form>
+    );
+};
+
+const Header = () => {
+    const { changeBookingState } = useBookings();
 
     return (
-        <div className="w-full px-6 py-4">
-            <div className="flex items-center mb-6 justify-space-between">
-                <h2 className="text-bold text-lg">{c('Title').t`Booking page`}</h2>
-                <Button icon shape="ghost" onClick={handleClose}>
-                    <Icon name="cross" />
-                </Button>
-            </div>
-            <form className="flex flex-column" onSubmit={handleSubmit}>
-                <div className="mb-6">
-                    <IconRow icon="earth" title={c('Label').t`Time zone`}>
-                        <TimeZoneSelector
-                            onChange={(value) => updateFormData('timeZone', value)}
-                            timezone={formData.timeZone}
-                        />
-                    </IconRow>
+        <div className="flex items-center mb-6 justify-space-between">
+            <h2 className="text-bold text-lg">{c('Title').t`Booking page`}</h2>
 
-                    <IconRow icon="text-align-left" title={c('Label').t`Title`}>
-                        <InputFieldTwo
-                            id="booking-title"
-                            placeholder={c('Placeholder').t`Add title`}
-                            value={formData.title}
-                            onChange={(e) => updateFormData('title', e.target.value)}
-                            maxLength={MAX_CHARS_API.TITLE}
-                            assistContainerClassName="hidden"
-                            autoFocus
-                        />
-                    </IconRow>
-
-                    <IconRow icon="clock" title={c('Label').t`Duration`}>
-                        <InputFieldTwo
-                            as={SelectTwo}
-                            id="duration-select"
-                            value={formData.duration}
-                            onChange={({ value }: { value: any }) => {
-                                updateFormData('duration', value);
-                            }}
-                            assistContainerClassName="hidden"
-                        >
-                            {scheduleOptions.map(({ value, text }) => (
-                                <Option key={value} value={value} title={text} />
-                            ))}
-                        </InputFieldTwo>
-                    </IconRow>
-
-                    <IconRow icon="calendar-grid" title={c('Label').t`Calendar`}>
-                        <InputFieldTwo
-                            as={SelectTwo}
-                            id="calendar-select"
-                            value={formData.selectedCalendar}
-                            onChange={({ value }: { value: any }) => {
-                                updateFormData('selectedCalendar', value);
-                            }}
-                            assistContainerClassName="hidden"
-                        >
-                            {writeableCalendars.map((calendar) => (
-                                <Option key={calendar.ID} value={calendar.ID} title={calendar.Name} />
-                            ))}
-                        </InputFieldTwo>
-                    </IconRow>
-                </div>
-
-                <div className="flex justify-center gap-6">
-                    <Button onClick={handleClose}>{c('Action').t`Cancel`}</Button>
-                    <Button className="grow" color="norm" type="submit">{c('Action').t`Create booking page`}</Button>
-                </div>
-            </form>
+            <Button icon shape="ghost" onClick={() => changeBookingState(BookingState.OFF)}>
+                <Icon name="cross-big" />
+            </Button>
         </div>
     );
 };
+
+const Buttons = () => {
+    const { changeBookingState } = useBookings();
+
+    // TODO Handle form submission logic here
+    const handleSubmit = () => {};
+
+    return (
+        <div className="flex justify-center gap-6">
+            <Button onClick={() => changeBookingState(BookingState.OFF)}>{c('Action').t`Cancel`}</Button>
+            <Button className="grow" color="norm" type="submit" onClick={handleSubmit}>{c('Action')
+                .t`Create booking page`}</Button>
+        </div>
+    );
+};
+
+export const BookingManagement = { Form, Buttons, Header };

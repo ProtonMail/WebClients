@@ -21,14 +21,14 @@ export const Bookings = ({ headerRef }: Props) => {
     const [displayBookings, setDisplayBookings] = useState(true);
 
     const isBookingsAvailable = useBookingsAvailability();
-    const { toggleBookingPageCreation, bookingsState } = useBookings();
+    const { changeBookingState, bookingsState } = useBookings();
 
     if (!isBookingsAvailable) {
         return null;
     }
 
     const handleCreate = () => {
-        toggleBookingPageCreation();
+        changeBookingState(BookingState.CREATE_NEW);
     };
 
     return (
