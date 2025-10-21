@@ -49,11 +49,11 @@ class UploadManager {
                         if (!this.isAutomaticallyPaused) {
                             uploadQueueStore.updateUploadItem(uploadId, {
                                 progress: event.progress,
-                                status: UploadStatus.Uploading,
+                                status: UploadStatus.InProgress,
                             });
                             uiStore.updateItem(uploadId, {
                                 progress: event.progress,
-                                status: UploadStatus.Uploading,
+                                status: UploadStatus.InProgress,
                             });
                         }
                         break;
@@ -143,7 +143,7 @@ class UploadManager {
         const items = uiStore.getAll();
         return items.some(
             (item) =>
-                item.status === UploadStatus.Uploading ||
+                item.status === UploadStatus.InProgress ||
                 item.status === UploadStatus.Pending ||
                 item.status === UploadStatus.PausedServer
         );
@@ -181,7 +181,7 @@ class UploadManager {
 
         const queue = uploadQueueStore.getQueue();
         queue.forEach(({ uploadId, item }) => {
-            if (item.status === UploadStatus.Uploading || item.status === UploadStatus.Pending) {
+            if (item.status === UploadStatus.InProgress || item.status === UploadStatus.Pending) {
                 uploadQueueStore.updateUploadItem(uploadId, { status: UploadStatus.PausedServer });
                 uiStore.updateItem(uploadId, { status: UploadStatus.PausedServer });
             }
@@ -196,8 +196,8 @@ class UploadManager {
         const queue = uploadQueueStore.getQueue();
         queue.forEach(({ uploadId, item }) => {
             if (item.status === UploadStatus.PausedServer) {
-                uploadQueueStore.updateUploadItem(uploadId, { status: UploadStatus.Uploading });
-                uiStore.updateItem(uploadId, { status: UploadStatus.Uploading });
+                uploadQueueStore.updateUploadItem(uploadId, { status: UploadStatus.InProgress });
+                uiStore.updateItem(uploadId, { status: UploadStatus.InProgress });
             }
         });
     }

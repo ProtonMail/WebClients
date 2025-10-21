@@ -265,7 +265,7 @@ describe('DownloadManager', () => {
         expect(activeDownloads.has('download-1')).toBe(true);
 
         expect(storeMockState.updateDownloadItem).toHaveBeenCalledWith('download-1', {
-            status: DownloadStatus.Downloading,
+            status: DownloadStatus.InProgress,
         });
         expect(storeMockState.updateDownloadItem).toHaveBeenCalledWith('download-1', { downloadedBytes: 64 });
 
@@ -395,7 +395,7 @@ describe('DownloadManager', () => {
             abortController: { abort: jest.fn() },
         };
         Reflect.set(manager, 'activeDownloads', new Map([['job-1', activeDownload]]));
-        storeMockState.getQueueItem.mockReturnValue({ status: DownloadStatus.Downloading });
+        storeMockState.getQueueItem.mockReturnValue({ status: DownloadStatus.InProgress });
 
         manager.pause(['job-1']);
 
@@ -416,7 +416,7 @@ describe('DownloadManager', () => {
 
         expect(activeDownload.controller.resume).toHaveBeenCalled();
         expect(storeMockState.updateDownloadItem).toHaveBeenCalledWith('job-2', {
-            status: DownloadStatus.Downloading,
+            status: DownloadStatus.InProgress,
         });
     });
 
@@ -428,7 +428,7 @@ describe('DownloadManager', () => {
             abortController: { abort: abortMock },
         };
         Reflect.set(manager, 'activeDownloads', new Map([['job-3', activeDownload]]));
-        storeMockState.getQueueItem.mockReturnValue({ status: DownloadStatus.Downloading });
+        storeMockState.getQueueItem.mockReturnValue({ status: DownloadStatus.InProgress });
 
         manager.cancel(['job-3']);
 
@@ -479,7 +479,7 @@ describe('DownloadManager', () => {
         };
         Reflect.set(manager, 'activeDownloads', new Map([['job-7', activeDownload]]));
 
-        let currentStatus = DownloadStatus.Downloading;
+        let currentStatus = DownloadStatus.InProgress;
         storeMockState.getQueueItem.mockImplementation(() => ({ status: currentStatus }));
 
         manager.addListeners();
@@ -497,7 +497,7 @@ describe('DownloadManager', () => {
 
         sdkMock.emitSDKEvent(sdkMock.SDKEvent.TransfersResumed);
         expect(storeMockState.updateDownloadItem).toHaveBeenCalledWith('job-7', {
-            status: DownloadStatus.Downloading,
+            status: DownloadStatus.InProgress,
         });
     });
 });

@@ -3,18 +3,29 @@ import { devtools } from 'zustand/middleware';
 
 import generateUID from '@proton/utils/generateUID';
 
-export enum DownloadStatus {
-    Downloading = 'downloading',
+// Maybe find a new home for this enum since it's shared between download/upload
+export enum BaseTransferStatus {
+    InProgress = 'inProgress',
     Failed = 'failed',
     Paused = 'paused',
     PausedServer = 'pausedServer',
+    Finished = 'finished',
+    Pending = 'pending',
+    Cancelled = 'cancelled',
+}
+
+export enum DownloadStatus {
+    InProgress = BaseTransferStatus.InProgress,
+    Failed = BaseTransferStatus.Failed,
+    Paused = BaseTransferStatus.Paused,
+    PausedServer = BaseTransferStatus.PausedServer,
     // During Finalizing the SDK has finished, we're saving the file
     Finalizing = 'finalizing',
     // The savePromise has finished and the file is downloaded
-    Finished = 'finished',
+    Finished = BaseTransferStatus.Finished,
     // Download waiting to start in queue
-    Pending = 'pending',
-    Cancelled = 'cancelled',
+    Pending = BaseTransferStatus.Pending,
+    Cancelled = BaseTransferStatus.Cancelled,
 }
 
 export enum MalawareDownloadResolution {
