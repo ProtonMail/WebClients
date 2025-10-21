@@ -9,14 +9,12 @@ import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eve
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import type { CalendarViewBusyEvent, CalendarViewEvent } from '../../calendar/interface';
-import { BOOKING_SLOT_ID, type BookingFormData, BookingState, type Slot } from './interface';
+import { BOOKING_SLOT_ID, type BookingFormData, BookingState } from './interface';
 
 interface BookingsContextValue {
     submitForm: () => Promise<void>;
     isBookingActive: boolean;
     changeBookingState: (state: BookingState) => void;
-    bookingsState: BookingState;
-    bookingSlots: Slot[];
     addBookingSlot: (startDate: Date, eventDuration: number) => void;
     removeBookingSlot: (slotId: string) => void;
     convertSlotToCalendarViewEvents: (visualCalendar?: VisualCalendar) => CalendarViewEvent[];
@@ -38,7 +36,6 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     const scheduleOptions = getCalendarEventDefaultDuration();
 
     const [bookingsState, setBookingsState] = useState<BookingState>(BookingState.OFF);
-    const [bookingSlots, setBookingSlots] = useState<Slot[]>([]);
 
     const getCalendarSettings = useReadCalendarBootstrap();
     const [calendarUserSettings] = useCalendarUserSettings();
@@ -48,6 +45,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         selectedCalendar: null,
         duration: scheduleOptions[0].value,
         timeZone: calendarUserSettings?.PrimaryTimezone,
+        bookingSlots: [],
     });
 
     const updateFormData = (field: keyof BookingFormData, value: any) => {
@@ -71,7 +69,10 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
 
     const changeBookingState = (state: BookingState) => {
         if (state === BookingState.OFF) {
-            setBookingSlots([]);
+            setFormData((prevFormData) => ({
+                ...prevFormData,
+                bookingSlots: [],
+            }));
         }
 
         setBookingsState(state);
@@ -81,18 +82,24 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     const addBookingSlot = (startDate: Date, eventDuration: number) => {
         const duration = Math.min(eventDuration, tmpEventDurationMiliSeconds);
 
-        setBookingSlots([
-            ...bookingSlots,
-            {
-                id: `${BOOKING_SLOT_ID}-${startDate.getTime().toString()}`,
-                start: startDate,
-                end: addMilliseconds(startDate, duration),
-            },
-        ]);
+        setFormData((prevFormData) => ({
+            ...prevFormData,
+            bookingSlots: [
+                ...prevFormData.bookingSlots,
+                {
+                    id: `${BOOKING_SLOT_ID}-${startDate.getTime().toString()}`,
+                    start: startDate,
+                    end: addMilliseconds(startDate, duration),
+                },
+            ],
+        }));
     };
 
     const removeBookingSlot = (slotId: string) => {
-        setBookingSlots(bookingSlots.filter((slot) => slot.id !== slotId));
+        setFormData((prevFormData) => ({
+            ...prevFormData,
+            bookingSlots: prevFormData.bookingSlots.filter((slot) => slot.id !== slotId),
+        }));
     };
 
     const convertSlotToCalendarViewEvents = (visualCalendar?: VisualCalendar): CalendarViewEvent[] => {
@@ -100,7 +107,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             return [];
         }
 
-        return bookingSlots.map((slot: any) => ({
+        return formData.bookingSlots.map((slot: any) => ({
             uniqueId: slot.id,
             isAllDay: false,
             isAllPartDay: false,
@@ -124,8 +131,6 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     const value: BookingsContextValue = {
         isBookingActive: bookingsState === BookingState.CREATE_NEW || bookingsState === BookingState.EDIT_EXISTING,
         changeBookingState,
-        bookingsState,
-        bookingSlots,
         addBookingSlot,
         removeBookingSlot,
         convertSlotToCalendarViewEvents,
