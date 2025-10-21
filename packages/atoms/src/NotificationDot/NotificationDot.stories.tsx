@@ -58,7 +58,6 @@ export const WithPositionHelper: Story = {
     parameters: {
         docs: {
             description: {
-                // eslint-disable-next-line custom-rules/deprecate-classes
                 story: 'A `notification-dot--top-right` css class to align the center of the dot to the top right of the container.',
             },
         },
