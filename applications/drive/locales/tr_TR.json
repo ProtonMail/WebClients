@@ -3128,6 +3128,23 @@
         "Öncelikli destek"
       ]
     },
+    "Duo offer": {
+      "/month": [
+        "/aylık"
+      ],
+      "1 TB of storage to share": [
+        "Paylaşım için 1 TB depolama alanı"
+      ],
+      "2 user accounts": [
+        "2 kullanıcı hesabı"
+      ],
+      "All premium features from your current plan": [
+        "Mevcut tarifenizdeki tüm ücretli özellikler"
+      ],
+      "Only": [
+        "Yalnızca"
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Yazı alanlarının doldurulması isteğe bağlıdır. Bu formda verdiğiniz bilgiler yalnızca gelecekte düzenlenecek faturalarda görüntülenecek ve var olan faturaları etkilemeyecek."
@@ -9201,11 +9218,17 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } teklifi bugün sona eriyor!"
       ],
+      "Don't show this again": [
+        "Bunu bir daha gösterme"
+      ],
       "Don’t show this again": [
         "Bunu bir daha gösterme"
       ],
       "Don’t show this offer again": [
         "Bu teklifi bir daha gösterme"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "${ BRAND_NAME } Duo edinin"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "${ BRAND_NAME } Unlimited tarifesini alın"
@@ -11944,6 +11967,9 @@
       ],
       "Discard changes?": [
         "Değişiklikler silinsin mi?"
+      ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "${ BRAND_NAME } Duo ile depolama alanınızı iki katına çıkarın"
       ],
       "Downgrade account": [
         "Hesap tarifesini düşür"

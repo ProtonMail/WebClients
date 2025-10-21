@@ -9900,9 +9900,6 @@
       "Not a valid URL": [
         "URL non valido"
       ],
-      "Not yet available in our Android mobile app.": [
-        "Non ancora disponibile nella nostra app mobile Android."
-      ],
       "Number of dedicated servers in the organization": [
         "Numero di server dedicati nell'organizzazione"
       ],
@@ -10237,9 +10234,6 @@
       ],
       "Restore": [
         "Ripristina"
-      ],
-      "Revoke certificate ${ name }": [
-        "Revoca il certificato ${ name }"
       ],
       "Right to Left": [
         "Da destra a sinistra"
@@ -11431,9 +11425,8 @@
       "Your files will be encrypted and then saved": [
         "I tuoi file verranno crittografati e poi salvati."
       ],
-      "Your free trial includes ${ ownedCount } dedicated server.": [
-        "La tua prova gratuita include ${ ownedCount } server dedicato.",
-        "La tua prova gratuita include ${ ownedCount } server dedicati."
+      "Your free trial includes 1 dedicated server.": [
+        "La tua prova gratuita include 1 server dedicato."
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "La tua prova gratuita è stata convertita con successo in un abbonamento di ${ cycle } mesi. La tua data di rinnovo è ${ nextBillingDate }."
@@ -17954,14 +17947,14 @@
       ]
     },
     "Safety review": {
-      " **Disable recovery by phone** to ensure highest possible security of your account.": [
-        " **Disabilita il recupero tramite telefono** per garantire la massima sicurezza possibile del tuo account."
+      " **Disable recovery by phone** to prevent attackers from taking over your account.": [
+        " **Disabilita il recupero tramite telefono **per impedire che utenti malintenzionati prendano il controllo del tuo account."
       ],
       " **Enable recovery by phone** to regain access to your account if you forget your password.": [
         " **Abilita il recupero tramite telefono** per riottenere l'accesso al tuo account se dimentichi la password."
       ],
-      "${ BRAND_NAME } will use this address to keep you updated on your account security..": [
-        "${ BRAND_NAME } userà questo indirizzo per tenerti aggiornato sulla sicurezza del tuo account."
+      "${ BRAND_NAME } will use this address to keep you updated on your account security.": [
+        "${ BRAND_NAME }userà questo indirizzo per tenerti aggiornato sulla sicurezza del tuo account."
       ],
       "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
         "${ BRAND_NAME } utilizzerà questo indirizzo per inviare un codice di reset via email quando reimposti la tua password."
@@ -17972,8 +17965,8 @@
       "${ enableDeviceRecovery } to ensure your data can be recovered.": [
         "${ enableDeviceRecovery } per garantire che i tuoi dati possano essere recuperati."
       ],
-      "**Disable account reset by email** to ensure highest possible security of your account.": [
-        "**Disabilita il reset dell'account tramite email** per garantire la massima sicurezza possibile del tuo account."
+      "**Disable account reset by email** to prevent attackers from taking over your account.": [
+        "**Disabilita il ripristino dell’account tramite email**per impedire che utenti malintenzionati prendano il controllo del tuo account.\n\n"
       ],
       "**Enable recovery by email** to regain access to your account if you forget your password.": [
         "**Abilita il recupero tramite email** per riottenere l'accesso al tuo account se dimentichi la password."
@@ -22267,9 +22260,6 @@
       "Reused passwords": [
         "Password riutilizzate"
       ],
-      "Revoke certificate": [
-        "Revoca certificato"
-      ],
       "Same inbox, shorter email address": [
         "Stessa casella di posta, indirizzo email più corto"
       ],
@@ -23448,11 +23438,11 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "2FA"
+      ],
       "Administrators can't access the data of private users": [
         "Gli amministratori non possono accedere ai dati degli utenti privati"
-      ],
-      "Authenticator app": [
-        "App di autenticazione"
       ],
       "Inactive": [
         "Inattivo"
@@ -23472,14 +23462,20 @@
       "Private": [
         "Privato"
       ],
-      "Security key": [
-        "Chiave di sicurezza"
-      ],
       "SSO": [
         "SSO"
       ],
       "SSO user provided by your identity provider": [
         "Utente SSO fornito dal tuo fornitore di identità"
+      ],
+      "User has enabled two-factor authentication with a security key.": [
+        "L'utente ha attivato l'autenticazione a due fattori con una chiave di sicurezza."
+      ],
+      "User has enabled two-factor authentication with an authenticator app and a security key.": [
+        "L'utente ha attivato l'autenticazione a due fattori con un'app di autenticazione e una chiave di sicurezza."
+      ],
+      "User has enabled two-factor authentication with an authenticator app.": [
+        "L'utente ha attivato l'autenticazione a due fattori con un'app di autenticazione."
       ],
       "Writing assistant": [
         "Assistente alla scrittura"

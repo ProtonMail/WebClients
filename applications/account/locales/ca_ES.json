@@ -216,6 +216,9 @@
       "Back": [
         "Torna"
       ],
+      "Back to sign in": [
+        "Torneu a l'inici de sessió"
+      ],
       "Block": [
         "Bloqueja"
       ],
@@ -1279,7 +1282,7 @@
         "Mostra les característiques del pla"
       ],
       "Select ${ planOrAppName }": [
-        "Seleccioneu ${ planOrAppName }"
+        "Selecciona ${ planOrAppName }"
       ],
       "Select a calendar to export": [
         "Seleccioneu un calendari per exportar"
@@ -2152,7 +2155,7 @@
         "Podeu tenir fins a ${ TRIAL_MAX_LUMO_SEATS } llicències de ${ LUMO_SHORT_APP_NAME } durant el període de prova."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
-        "Podeu tenir fins a ${ TRIAL_MAX_SCRIBE_SEATS } llicències Scribe durant el període de prova."
+        "Podeu tenir fins a ${ TRIAL_MAX_SCRIBE_SEATS } llicències d'Scribe durant el període de prova."
       ],
       "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
         "Podeu tenir fins a ${ TRIAL_MAX_USERS } usuaris durant el període de prova."
@@ -2475,6 +2478,9 @@
       "How safe is Telegram?": [
         "Com de segur és Telegram?"
       ],
+      "How to change your IP address on Windows": [
+        "Com canviar la vostra adreça IP a Windows"
+      ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "En aquest article, analitzem qui pot veure el vostre historial d'internet quan utilitzeu WiFi, què poden veure i per què podrien fer-ho."
       ],
@@ -2507,6 +2513,9 @@
       ],
       "Watch your favorite movies and TV shows": [
         "Mireu les vostres pel·lícules i programes de televisió preferits"
+      ],
+      "We discuss how to change the external and local IP addresses of your Windows device.": [
+        "Estem valorant com canviar les adreces IP externes i locals del vostre dispositiu Windows."
       ],
       "Which VPN protocol is the best?": [
         "Quin protocol VPN és el millor?"
@@ -4852,6 +4861,23 @@
       ],
       "Priority support": [
         "Suport prioritari"
+      ]
+    },
+    "Duo offer": {
+      "/month": [
+        "/mes"
+      ],
+      "1 TB of storage to share": [
+        "1 TB d'emmagatzematge per compartir"
+      ],
+      "2 user accounts": [
+        "2 comptes d'usuari"
+      ],
+      "All premium features from your current plan": [
+        "Totes les funcions prèmium del vostre pla actual"
+      ],
+      "Only": [
+        "Només"
       ]
     },
     "Duration": {
@@ -8678,6 +8704,9 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Segur que voleu esborrar el domini «${ boldDomain }»?"
       ],
+      "Are you sure you want to revoke certificate **${ name }**": [
+        "Segur que voleu revocar el certificat **${ name }**?"
+      ],
       "Are you sure you want to sort your folders alphabetically?": [
         "Segur que voleu ordenar les carpetes alfabèticament?"
       ],
@@ -9897,9 +9926,6 @@
       "Not a valid URL": [
         "No és un URL vàlid."
       ],
-      "Not yet available in our Android mobile app.": [
-        "Encara no està disponible a la nostra aplicació mòbil per a Android."
-      ],
       "Number of dedicated servers in the organization": [
         "Nombre de servidors dedicats a l'organització"
       ],
@@ -10231,9 +10257,6 @@
       ],
       "Restore": [
         "Restaura"
-      ],
-      "Revoke certificate ${ name }": [
-        "Revoca el certificat ${ name }"
       ],
       "Right to Left": [
         "De dreta a esquerra"
@@ -11425,9 +11448,8 @@
       "Your files will be encrypted and then saved": [
         "Es xifraran els fitxers i després es desaran."
       ],
-      "Your free trial includes ${ ownedCount } dedicated server.": [
-        "La prova gratuïta inclou ${ ownedCount } servidor dedicat.",
-        "La prova gratuïta inclou ${ ownedCount } servidors dedicats."
+      "Your free trial includes 1 dedicated server.": [
+        "La vostra prova gratuïta inclou 1 servidor dedicat."
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "La prova gratuïta s'ha convertit correctament en una subscripció de ${ cycle } mesos. La data de renovació és ${ nextBillingDate }."
@@ -12825,6 +12847,9 @@
       ],
       "Method for importing metadata": [
         "Mètode per a importar metadades"
+      ],
+      "Minimum ${ MIN_CHARS } characters": [
+        "Mínim ${ MIN_CHARS } caràcters"
       ],
       "Minimum number of characters": [
         "Nombre mínim de caràcters"
@@ -15670,11 +15695,17 @@
       "${ pricingTitle } offer expires today!": [
         "L'oferta de ${ pricingTitle } caduca avui!"
       ],
+      "Don't show this again": [
+        "No m'ho torneu a mostrar"
+      ],
       "Don’t show this again": [
         "No ho tornis a mostrar"
       ],
       "Don’t show this offer again": [
         "No tornis a mostrar aquesta oferta"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Obtingueu ${ BRAND_NAME } Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "Obteniu ${ BRAND_NAME } Unlimited"
@@ -17529,7 +17560,7 @@
     },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
-        "${ referrerRewardAmount } com a referència"
+        "${ referrerRewardAmount } per referència"
       ],
       "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
         "**Si cancel·leu abans d'aquesta data,** **passareu al pla inferior** ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } quan la prova finalitzi."
@@ -17831,14 +17862,14 @@
       ]
     },
     "Safety review": {
-      " **Disable recovery by phone** to ensure highest possible security of your account.": [
-        " **Desactiveu la recuperació per telèfon** per garantir la màxima seguretat possible del vostre compte."
+      " **Disable recovery by phone** to prevent attackers from taking over your account.": [
+        " **Desactiveu la recuperació per telèfon** per evitar que els atacants se us apoderin del compte."
       ],
       " **Enable recovery by phone** to regain access to your account if you forget your password.": [
         " **Activeu la recuperació per telèfon** per recuperar l'accés al vostre compte si oblideu la contrasenya."
       ],
-      "${ BRAND_NAME } will use this address to keep you updated on your account security..": [
-        "${ BRAND_NAME } utilitzarà aquesta adreça per mantenir-vos actualitzat sobre la seguretat del vostre compte."
+      "${ BRAND_NAME } will use this address to keep you updated on your account security.": [
+        "${ BRAND_NAME } farà servir aquesta adreça per mantenir-vos actualitzat sobre la seguretat del vostre compte."
       ],
       "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
         "${ BRAND_NAME } utilitzarà aquesta adreça per enviar un codi de restabliment per correu electrònic quan restabliu la contrasenya."
@@ -17849,8 +17880,8 @@
       "${ enableDeviceRecovery } to ensure your data can be recovered.": [
         "${ enableDeviceRecovery } per garantir que les vostres dades es puguin recuperar."
       ],
-      "**Disable account reset by email** to ensure highest possible security of your account.": [
-        "**Desactiveu el restabliment del compte per correu ** per garantir la màxima seguretat possible del compte."
+      "**Disable account reset by email** to prevent attackers from taking over your account.": [
+        "**Desactiveu el restabliment del compte per correu electrònic** per evitar que els atacants us agafin el control del compte."
       ],
       "**Enable recovery by email** to regain access to your account if you forget your password.": [
         "**Activeu la recuperació per correu electrònic** per recuperar l'accés al vostre compte si oblideu la contrasenya."
@@ -21525,6 +21556,9 @@
       "Don't show again?": [
         "No voleu que es torni a mostrar?"
       ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Dupliqueu el vostre emmagatzematge amb ${ BRAND_NAME } Duo"
+      ],
       "Downgrade account": [
         "Passa a un pla inferior"
       ],
@@ -22142,8 +22176,8 @@
       "Reused passwords": [
         "Contrasenyes reutilitzades"
       ],
-      "Revoke certificate": [
-        "Revoca el certificat"
+      "Revoke certificate?": [
+        "Voleu revocar el certificat?"
       ],
       "Same inbox, shorter email address": [
         "La mateixa safata d'entrada amb una adreça de correu electrònic més curta"
@@ -23323,11 +23357,11 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "Autenticació de doble factor"
+      ],
       "Administrators can't access the data of private users": [
         "Els administradors no poden accedir a les dades dels usuaris privats"
-      ],
-      "Authenticator app": [
-        "Aplicació d'autenticació"
       ],
       "Inactive": [
         "Inactiva"
@@ -23347,14 +23381,20 @@
       "Private": [
         "Privat"
       ],
-      "Security key": [
-        "Clau de seguretat"
-      ],
       "SSO": [
         "Inici de sessió únic (SSO)"
       ],
       "SSO user provided by your identity provider": [
         "Usuari SSO proporcionat pel vostre proveïdor d'identitat"
+      ],
+      "User has enabled two-factor authentication with a security key.": [
+        "L'usuari ha habilitat l'autenticació de doble factor amb una clau de seguretat."
+      ],
+      "User has enabled two-factor authentication with an authenticator app and a security key.": [
+        "L'usuari ha habilitat l'autenticació de doble factor amb una aplicació d'autenticació i una clau de seguretat."
+      ],
+      "User has enabled two-factor authentication with an authenticator app.": [
+        "L'usuari ha habilitat l'autenticació de doble factor amb una aplicació d'autenticació."
       ],
       "Writing assistant": [
         "Assistent d'escriptura"

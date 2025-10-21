@@ -3128,6 +3128,23 @@
         "Soporte prioritario"
       ]
     },
+    "Duo offer": {
+      "/month": [
+        "/mes"
+      ],
+      "1 TB of storage to share": [
+        "1 TB de almacenamiento para compartir"
+      ],
+      "2 user accounts": [
+        "2 cuentas de usuario"
+      ],
+      "All premium features from your current plan": [
+        "Todas las características prémium de tu plan actual"
+      ],
+      "Only": [
+        "Solamente"
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Los campos de texto son opcionales. La información que proporciones en este formulario solo aparecerá en las facturas emitidas en el futuro y no afectará a las facturas existentes."
@@ -9261,11 +9278,17 @@
       "${ pricingTitle } offer expires today!": [
         "¡La oferta de ${ pricingTitle } vence hoy!"
       ],
+      "Don't show this again": [
+        "No mostrar esto de nuevo"
+      ],
       "Don’t show this again": [
         "No mostrar esto de nuevo"
       ],
       "Don’t show this offer again": [
         "No volver a mostrar esta oferta"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Obtén ${ BRAND_NAME } Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "Obtén ${ BRAND_NAME } Unlimited"
@@ -11965,6 +11988,9 @@
       ],
       "Discard changes?": [
         "¿Descartar los cambios?"
+      ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Duplica tu almacenamiento con ${ BRAND_NAME } Duo"
       ],
       "Downgrade account": [
         "Pasar a un plan inferior"

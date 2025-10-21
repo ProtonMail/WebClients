@@ -2498,6 +2498,9 @@
       "How safe is Telegram?": [
         "Jak bezpečný je Telegram?"
       ],
+      "How to change your IP address on Windows": [
+        "Jak změnit IP adresu ve Windows"
+      ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "V tomto článku se podíváme na to, kdo může vidět vaši historii na internetu při používání Wi-Fi, co může vidět a proč."
       ],
@@ -2530,6 +2533,9 @@
       ],
       "Watch your favorite movies and TV shows": [
         "Sledujte oblíbené filmy a seriály"
+      ],
+      "We discuss how to change the external and local IP addresses of your Windows device.": [
+        "Probíráme, jak změnit externí a lokální IP adresy vašeho zařízení se systémem Windows."
       ],
       "Which VPN protocol is the best?": [
         "Který VPN protokol je nejlepší?"
@@ -4897,6 +4903,23 @@
         "Prioritní podpora"
       ]
     },
+    "Duo offer": {
+      "/month": [
+        "/měsíčně"
+      ],
+      "1 TB of storage to share": [
+        "1 TB úložiště k sdílení"
+      ],
+      "2 user accounts": [
+        "2 uživatelské účty"
+      ],
+      "All premium features from your current plan": [
+        "Všechny prémiové funkce z vašeho aktuálního tarifu"
+      ],
+      "Only": [
+        "Pouze"
+      ]
+    },
     "Duration": {
       "120 minutes": [
         "120 minut"
@@ -5035,7 +5058,7 @@
         "Toto se změnilo:"
       ],
       "LOCATION:": [
-        "UMÍSTĚNÍ:"
+        "MÍSTO:"
       ],
       "NOTE:": [
         "POZNÁMKA:"
@@ -8865,6 +8888,9 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Opravdu chcete odebrat doménu ${ boldDomain }?"
       ],
+      "Are you sure you want to revoke certificate **${ name }**": [
+        "Opravdu chcete zrušit certifikát **${ name }**?"
+      ],
       "Are you sure you want to sort your folders alphabetically?": [
         "Opravdu chcete své složky řadit podle abecedy?"
       ],
@@ -9667,7 +9693,7 @@
         "Pokud jste nedávno resetovali heslo, můžete svá data odemknout pomocí metody obnovy dat"
       ],
       "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
-        "Pokud má vaše organizace veřejné osoby, nakládá s citlivými daty nebo se může stát cílem kybernetických útoků, důrazně doporučujeme povolit ${ PROTON_SENTINEL_NAME } pro všechny ve vaší organizaci."
+        "Pokud má vaše organizace veřejné činitele, zpracovává citlivá data nebo může být terčem kybernetických útoků, důrazně doporučujeme povolit ${ PROTON_SENTINEL_NAME } pro všechny členy vaší organizace."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Pokud máte potíže, rádi vám pomůžeme. ${ boldPhoneCall } nebo ${ boldZoomMeeting } s jedním z našich specialistů podpory, nebo si otevřete ${ boldLiveChat } pro podporu na chatu."
@@ -10098,9 +10124,6 @@
       "Not a valid URL": [
         "Neplatný odkaz"
       ],
-      "Not yet available in our Android mobile app.": [
-        "V naší mobilní aplikaci pro Android zatím není k dispozici."
-      ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverů v organizaci"
       ],
@@ -10445,9 +10468,6 @@
       ],
       "Restore": [
         "Obnovit"
-      ],
-      "Revoke certificate ${ name }": [
-        "Zrušit certifikát ${ name }"
       ],
       "Right to Left": [
         "Zprava doleva"
@@ -11095,7 +11115,7 @@
         "Navyšte pro odemknutí"
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Navyšte na ${ firstPlanNames } nebo na tarif ${ lastPlanName } a získejte přístup k ${ PROTON_SENTINEL_NAME }."
+        "Navyšte váš tarif na ${ firstPlanNames } nebo ${ lastPlanName } a získejte přístup k ${ PROTON_SENTINEL_NAME }."
       ],
       "Upload picture": [
         "Nahrát obrázek"
@@ -11673,11 +11693,8 @@
       "Your files will be encrypted and then saved": [
         "Vaše soubory budou zašifrovány a uloženy"
       ],
-      "Your free trial includes ${ ownedCount } dedicated server.": [
-        "Vaše bezplatná zkušební verze obsahuje ${ ownedCount } dedikovaný server.",
-        "Vaše bezplatná zkušební verze obsahuje ${ ownedCount } dedikované servery.",
-        "Vaše bezplatná zkušební verze obsahuje ${ ownedCount } dedikovaných serverů.",
-        "Vaše bezplatná zkušební verze obsahuje ${ ownedCount } dedikovaných serverů."
+      "Your free trial includes 1 dedicated server.": [
+        "Vaše bezplatná zkušební verze obsahuje 1 dedikovaný server."
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "Vaše bezplatná zkušební verze byla úspěšně převedena na ${ cycle }měsíční předplatné. Datum obnovení je ${ nextBillingDate }."
@@ -13093,6 +13110,9 @@
       ],
       "Method for importing metadata": [
         "Metoda pro import metadat"
+      ],
+      "Minimum ${ MIN_CHARS } characters": [
+        "Minimálně ${ MIN_CHARS } znaků"
       ],
       "Minimum number of characters": [
         "Minimální počet znaků"
@@ -16031,11 +16051,17 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } nabídka končí dnes!"
       ],
+      "Don't show this again": [
+        "Příště nezobrazovat"
+      ],
       "Don’t show this again": [
         "Příště již nezobrazovat"
       ],
       "Don’t show this offer again": [
         "Tuto nabídku již nezobrazovat"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Získat ${ BRAND_NAME } Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "Získejte ${ BRAND_NAME } Unlimited"
@@ -18247,13 +18273,13 @@
       ]
     },
     "Safety review": {
-      " **Disable recovery by phone** to ensure highest possible security of your account.": [
-        " **Deaktivujte obnovení telefonem** pro zajištění maximální možné bezpečnosti vašeho účtu."
+      " **Disable recovery by phone** to prevent attackers from taking over your account.": [
+        " **Deaktivujte obnovení pomocí telefonu**, abyste zabránili útočníkům převzít váš účet."
       ],
       " **Enable recovery by phone** to regain access to your account if you forget your password.": [
         " **Povolte obnovení telefonem** pro opětovné získání přístupu ke svému účtu, pokud zapomenete heslo."
       ],
-      "${ BRAND_NAME } will use this address to keep you updated on your account security..": [
+      "${ BRAND_NAME } will use this address to keep you updated on your account security.": [
         "${ BRAND_NAME } bude tuto adresu používat k zasílání informací o zabezpečení vašeho účtu."
       ],
       "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
@@ -18265,8 +18291,8 @@
       "${ enableDeviceRecovery } to ensure your data can be recovered.": [
         "${ enableDeviceRecovery } pro zajištění možnosti obnovy vašich dat."
       ],
-      "**Disable account reset by email** to ensure highest possible security of your account.": [
-        "**Deaktivujte resetování účtu e-mailem** pro zajištění maximální možné bezpečnosti vašeho účtu."
+      "**Disable account reset by email** to prevent attackers from taking over your account.": [
+        "**Deaktivujte reset účtu e-mailem**, abyste zabránili útočníkům převzít váš účet."
       ],
       "**Enable recovery by email** to regain access to your account if you forget your password.": [
         "**Povolte obnovení e-mailem** pro opětovné získání přístupu ke svému účtu, pokud zapomenete heslo."
@@ -22094,6 +22120,9 @@
       "Don't show again?": [
         "Příště nezobrazovat?"
       ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Zdvojnásobte své úložiště s ${ BRAND_NAME } Duo"
+      ],
       "Downgrade account": [
         "Snížit úroveň účtu"
       ],
@@ -22715,8 +22744,8 @@
       "Reused passwords": [
         "Opakovaně použitá hesla"
       ],
-      "Revoke certificate": [
-        "Zrušit certifikát"
+      "Revoke certificate?": [
+        "Zrušit certifikát?"
       ],
       "Same inbox, shorter email address": [
         "Stejná schránka, kratší e-mailová adresa"
@@ -23454,7 +23483,7 @@
         "Tento klíč se používá k přeposílání e-mailů"
       ],
       "This setting is managed by your organization": [
-        "Tato nastavení je spravováno vaší organizací"
+        "Toto nastavení spravuje vaše organizace"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Pokud nejsou dešifrována, zůstávají zašifrovaná hesla bezpečná, i když uniknou."
@@ -23902,11 +23931,11 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "2FA"
+      ],
       "Administrators can't access the data of private users": [
         "Správci nemají přístup k datům soukromých uživatelů"
-      ],
-      "Authenticator app": [
-        "Ověřovací aplikace"
       ],
       "Inactive": [
         "Neaktivní"
@@ -23926,14 +23955,20 @@
       "Private": [
         "Soukromý"
       ],
-      "Security key": [
-        "Bezpečnostní klíč"
-      ],
       "SSO": [
         "SSO"
       ],
       "SSO user provided by your identity provider": [
         "SSO uživatel poskytnutý poskytovatelem identity"
+      ],
+      "User has enabled two-factor authentication with a security key.": [
+        "Uživatel aktivoval dvoufázové ověření pomocí bezpečnostního klíče."
+      ],
+      "User has enabled two-factor authentication with an authenticator app and a security key.": [
+        "Uživatel aktivoval dvoufázové ověření pomocí ověřovací aplikace a bezpečnostního klíče."
+      ],
+      "User has enabled two-factor authentication with an authenticator app.": [
+        "Uživatel aktivoval dvoufázové ověření pomocí ověřovací aplikace."
       ],
       "Writing assistant": [
         "Asistent psaní"
