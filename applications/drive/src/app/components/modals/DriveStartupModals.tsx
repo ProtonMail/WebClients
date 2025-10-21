@@ -5,7 +5,6 @@ import {
     useLightLabellingFeatureModal,
     useModalState,
     useNewFeatureOnboarding,
-    useReferralModal,
     useTrialEndedModal,
 } from '@proton/components';
 import type { StartupModal } from '@proton/components';
@@ -48,10 +47,9 @@ const useStartupModals = () => {
     const welcomeModal = useDriveOnboardingV2Modal();
     const docsModal = useDocsSuggestionsOnboardingModal();
     const reminderModal = useCancellationReminderModal();
-    const referralModal = useReferralModal();
     const lightLabellingFeatureModal = useLightLabellingFeatureModal();
 
-    return [trialEndedModal, welcomeModal, docsModal, reminderModal, referralModal, lightLabellingFeatureModal];
+    return [trialEndedModal, welcomeModal, docsModal, reminderModal, lightLabellingFeatureModal];
 };
 
 export const DriveStartupModals = () => {

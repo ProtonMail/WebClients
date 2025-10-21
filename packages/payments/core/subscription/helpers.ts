@@ -1,4 +1,4 @@
-import { addWeeks, fromUnixTime, isBefore } from 'date-fns';
+import { addWeeks, fromUnixTime, isAfter, isBefore, subWeeks } from 'date-fns';
 
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS } from '@proton/shared/lib/constants';
@@ -398,7 +398,7 @@ export const isTrial = (subscription: Subscription | FreeSubscription | undefine
     const trial = !!subscription.IsTrial;
 
     if (!plan) {
-        return !!subscription.IsTrial;
+        return trial;
     }
 
     return trial && getPlanName(subscription) === plan;
@@ -415,11 +415,20 @@ export const isAutoRenewTrial = (subscription: Subscription | undefined) => {
 };
 
 export const isTrialExpired = (subscription: Subscription | undefined) => {
+    if (!isTrial(subscription)) {
+        return false;
+    }
+
     const now = new Date();
     return now > fromUnixTime(subscription?.PeriodEnd || 0);
 };
 
-export const willTrialExpire = (subscription: Subscription | undefined) => {
+export const hasTrialExpiredLessThan4Weeks = (subscription: Subscription | undefined) => {
+    const now = new Date();
+    return isAfter(fromUnixTime(subscription?.PeriodEnd || 0), subWeeks(now, 4));
+};
+
+export const willTrialExpireInLessThan1Week = (subscription: Subscription | undefined) => {
     const now = new Date();
     return isBefore(fromUnixTime(subscription?.PeriodEnd || 0), addWeeks(now, 1));
 };

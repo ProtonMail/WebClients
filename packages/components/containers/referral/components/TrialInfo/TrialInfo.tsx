@@ -121,18 +121,22 @@ const TrialInfoContent = () => {
             </div>
 
             <p className="my-4">
-                {daysRemaining > 0
-                    ? getBoldFormattedText(
-                          c('Referral').ngettext(
-                              msgid`You have **${daysRemaining} day left** to explore all the powerful features that **${planTitle}** has to offer.`,
-                              `You have **${daysRemaining} days left** to explore all the powerful features that **${planTitle}** has to offer.`,
-                              daysRemaining
+                {!isAutoRenewTrial(subscription) &&
+                    (daysRemaining > 0
+                        ? getBoldFormattedText(
+                              c('Referral').ngettext(
+                                  msgid`You have **${daysRemaining} day left** to explore all the powerful features that **${planTitle}** has to offer.`,
+                                  `You have **${daysRemaining} days left** to explore all the powerful features that **${planTitle}** has to offer.`,
+                                  daysRemaining
+                              )
                           )
-                      )
-                    : getBoldFormattedText(
-                          c('Referral')
-                              .t`Last chance to explore all the powerful features that **${planTitle}** has to offer.`
-                      )}
+                        : getBoldFormattedText(
+                              c('Referral')
+                                  .t`Last chance to explore all the powerful features that **${planTitle}** has to offer.`
+                          ))}
+                {isAutoRenewTrial(subscription) &&
+                    c('Referral')
+                        .t`Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.`}
             </p>
         </>
     );
