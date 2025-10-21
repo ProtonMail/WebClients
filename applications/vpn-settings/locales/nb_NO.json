@@ -1722,6 +1722,9 @@
       "How safe is Telegram?": [
         "Hvor sikker er Telegram?"
       ],
+      "How to change your IP address on Windows": [
+        "Hvordan endre IP-adressen din på Windows"
+      ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "I denne artikkelen ser vi på hvem som kan se internettloggen din når du bruker WiFi, hva de kan se, og hvorfor de kan gjøre dette."
       ],
@@ -1754,6 +1757,9 @@
       ],
       "Watch your favorite movies and TV shows": [
         "Se favorittfilmene og TV-programmene dine"
+      ],
+      "We discuss how to change the external and local IP addresses of your Windows device.": [
+        "Vi diskuterer hvordan du endrer de eksterne og lokale IP-adressene til Windows-enheten din."
       ],
       "Which VPN protocol is the best?": [
         "Hvilken VPN-protokoll er den beste?"
@@ -6300,7 +6306,7 @@
         "Hvis du fortsetter med nedgraderingen, vil du miste tilgang til de betalte funksjonene til ${ VPN_APP_NAME }."
       ],
       "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
-        "Hvis din organisasjon har offentlige personer, håndterer sensitive data, eller kan bli målrettet i cyberangrep, blir du sterkt oppfordret til å aktivere ${ PROTON_SENTINEL_NAME } for alle i din organisasjon."
+        "Hvis organisasjonen din har offentlige personer, håndterer sensitive data, eller kan bli målrettet i cyberangrep, blir du sterkt oppfordret til å aktivere ${ PROTON_SENTINEL_NAME } for alle i din organisasjon."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Hvis du har problemer, er vi her for å hjelpe. ${ boldPhoneCall } eller ${ boldZoomMeeting } med en av våre brukerstøttespesialister, eller åpne en ${ boldLiveChat } for chat-støtte."
@@ -6813,9 +6819,6 @@
       ],
       "Restore": [
         "Gjenopprett"
-      ],
-      "Revoke certificate ${ name }": [
-        "Tilbakekall sertifikat ${ name }"
       ],
       "SAML configuration saved": [
         "SAML-konfigurasjon lagret"
@@ -7631,9 +7634,8 @@
       "Your files will be encrypted and then saved": [
         "Filene dine vil bli kryptert og deretter lagret"
       ],
-      "Your free trial includes ${ ownedCount } dedicated server.": [
-        "Din gratis prøveversjon inkluderer ${ ownedCount } dedikert tjener.",
-        "Din gratis prøveversjon inkluderer ${ ownedCount } dedikerte tjenere."
+      "Your free trial includes 1 dedicated server.": [
+        "Din gratis prøveperiode inkluderer én dedikert tjener."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Din informasjon er trygg hos oss. Vi kontakter deg kun når det kreves for å tilby våre tjenester."
@@ -8253,6 +8255,9 @@
       ],
       "Method for importing metadata": [
         "Metode for import av metadata"
+      ],
+      "Minimum ${ MIN_CHARS } characters": [
+        "Minimum ${ MIN_CHARS } tegn"
       ],
       "Minimum number of characters": [
         "Minimum antall tegn"
@@ -14375,9 +14380,6 @@
       "Restore administrator privileges": [
         "Gjenopprett administratorprivilegier"
       ],
-      "Revoke certificate": [
-        "Opphev sertifikat"
-      ],
       "SAML authentication": [
         "SAML-autentisering"
       ],
@@ -15109,11 +15111,11 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "2FA"
+      ],
       "Administrators can't access the data of private users": [
         "Administratorer har ikke tilgang til dataene til private brukere"
-      ],
-      "Authenticator app": [
-        "Autentiseringsapp"
       ],
       "Inactive": [
         "Inaktiv"
@@ -15133,14 +15135,20 @@
       "Private": [
         "Privat"
       ],
-      "Security key": [
-        "Sikkerhetsnøkkel"
-      ],
       "SSO": [
         "SSO"
       ],
       "SSO user provided by your identity provider": [
         "SSO-bruker levert av identitetsleverandøren din"
+      ],
+      "User has enabled two-factor authentication with a security key.": [
+        "Bruker har aktivert tofaktorautentisering med en sikkerhetsnøkkel."
+      ],
+      "User has enabled two-factor authentication with an authenticator app and a security key.": [
+        "Bruker har aktivert tofaktorautentisering med en autentiseringsapp og en sikkerhetsnøkkel."
+      ],
+      "User has enabled two-factor authentication with an authenticator app.": [
+        "Bruker har aktivert tofaktorautentisering med en autentiseringsapp."
       ],
       "Writing assistant": [
         "Skriveassistent"

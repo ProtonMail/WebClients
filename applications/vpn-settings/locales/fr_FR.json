@@ -1722,6 +1722,9 @@
       "How safe is Telegram?": [
         "Est-ce que Telegram est sûr ?"
       ],
+      "How to change your IP address on Windows": [
+        "Comment changer votre adresse IP sur Windows"
+      ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "Dans cet article, nous examinons qui peut voir votre historique internet lorsque vous utilisez une connexion wifi, ce qu'ils peuvent voir et pourquoi ils peuvent le faire."
       ],
@@ -1754,6 +1757,9 @@
       ],
       "Watch your favorite movies and TV shows": [
         "Regardez vos films et séries préférés."
+      ],
+      "We discuss how to change the external and local IP addresses of your Windows device.": [
+        "Nous expliquons comment changer les adresses IP externes et locales de votre appareil Windows."
       ],
       "Which VPN protocol is the best?": [
         "Quel est le meilleur protocole VPN ?"
@@ -3433,6 +3439,23 @@
       ],
       "Priority support": [
         "Assistance prioritaire"
+      ]
+    },
+    "Duo offer": {
+      "/month": [
+        "/mois"
+      ],
+      "1 TB of storage to share": [
+        "1 To d'espace de stockage à partager"
+      ],
+      "2 user accounts": [
+        "2 comptes utilisateur"
+      ],
+      "All premium features from your current plan": [
+        "Toutes les fonctionnalités premium de votre abonnement actuel"
+      ],
+      "Only": [
+        "Seulement"
       ]
     },
     "Easy switch": {
@@ -5784,6 +5807,9 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Voulez-vous vraiment retirer le domaine ${ boldDomain } ?"
       ],
+      "Are you sure you want to revoke certificate **${ name }**": [
+        "Voulez-vous vraiment révoquer le certificat **${ name }**"
+      ],
       "Ask your organization admin to setup Gateways.": [
         "Demandez à l'administrateur de votre organisation de configurer des passerelles."
       ],
@@ -6811,9 +6837,6 @@
       "Restore": [
         "Restauration"
       ],
-      "Revoke certificate ${ name }": [
-        "Révoquer le certificat ${ name }"
-      ],
       "SAML configuration saved": [
         "La configuration SAML a été enregistrée."
       ],
@@ -7628,9 +7651,8 @@
       "Your files will be encrypted and then saved": [
         "Vos fichiers seront chiffrés puis sauvegardés."
       ],
-      "Your free trial includes ${ ownedCount } dedicated server.": [
-        "Votre essai gratuit inclut ${ ownedCount } serveur dédié.",
-        "Votre essai gratuit inclut ${ ownedCount } serveurs dédiés."
+      "Your free trial includes 1 dedicated server.": [
+        "Votre essai gratuit inclut 1 serveur dédié."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Vos informations sont en sécurité avec nous. Nous ne vous contacterons que si cela est nécessaire pour fournir nos services."
@@ -8250,6 +8272,9 @@
       ],
       "Method for importing metadata": [
         "Méthode d'importation des métadonnées"
+      ],
+      "Minimum ${ MIN_CHARS } characters": [
+        "${ MIN_CHARS } caractères minimum"
       ],
       "Minimum number of characters": [
         "Nombre minimum de caractères"
@@ -10274,11 +10299,17 @@
       "${ pricingTitle } offer expires today!": [
         "L'offre ${ pricingTitle } expire aujourd'hui !"
       ],
+      "Don't show this again": [
+        "Ne plus afficher"
+      ],
       "Don’t show this again": [
         "Ne plus afficher"
       ],
       "Don’t show this offer again": [
         "Ne plus montrer cette offre"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Essayez ${ BRAND_NAME } Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "Profitez de ${ BRAND_NAME } Unlimited"
@@ -14133,6 +14164,9 @@
       "Domain names": [
         "Noms de domaine"
       ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Doublez votre espace de stockage avec ${ BRAND_NAME } Duo"
+      ],
       "Downgrade account": [
         "Passer à un abonnement inférieur"
       ],
@@ -14465,8 +14499,8 @@
       "Restore administrator privileges": [
         "Restaurer les droits administrateur"
       ],
-      "Revoke certificate": [
-        "Révoquer le certificat"
+      "Revoke certificate?": [
+        "Révoquer le certificat ?"
       ],
       "SAML authentication": [
         "Authentification SAML"
@@ -15199,11 +15233,11 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "A2F"
+      ],
       "Administrators can't access the data of private users": [
         "Les administrateurs ne peuvent pas accéder aux données des utilisateurs privés."
-      ],
-      "Authenticator app": [
-        "Application d'authentification"
       ],
       "Inactive": [
         "Inactive"
@@ -15223,14 +15257,20 @@
       "Private": [
         "Privé"
       ],
-      "Security key": [
-        "Clé de sécurité"
-      ],
       "SSO": [
         "Authentification unique (SSO)"
       ],
       "SSO user provided by your identity provider": [
         "Utilisateur d'authentification unique (SSO) fourni par votre fournisseur d'identité"
+      ],
+      "User has enabled two-factor authentication with a security key.": [
+        "L'utilisateur a activé l'authentification à deux facteurs avec une clé de sécurité."
+      ],
+      "User has enabled two-factor authentication with an authenticator app and a security key.": [
+        "L'utilisateur a activé l'authentification à deux facteurs avec une application d'authentification et une clé de sécurité."
+      ],
+      "User has enabled two-factor authentication with an authenticator app.": [
+        "L'utilisateur a activé l'authentification à deux facteurs avec une application d'authentification."
       ],
       "Writing assistant": [
         "Assistant d'écriture"
