@@ -1,4 +1,6 @@
 /* eslint-env es6 */
+import { createClassNameRule } from './lib/deprecate-classname-utils.js';
+
 const deprecatedClasses = [
     {
         pattern: /\b((min|max)-)?w\d+(p|e|r|ch)?\b/,
@@ -24,30 +26,6 @@ export default {
             url: 'https://design-system.protontech.ch/?path=/docs/css-utilities-sizing--fractions',
         },
     },
-    create: (context) => {
-        return {
-            Literal(node) {
-                const { value } = node;
-                if (!value || !value.split) {
-                    return;
-                }
 
-                const classes = new Set(value.split(' '));
-                classes.forEach((className) => {
-                    deprecatedClasses.forEach(({ pattern, getMessage }) => {
-                        const match = pattern.exec(className);
-
-                        if (match) {
-                            const message = getMessage(match[0]);
-
-                            context.report({
-                                node,
-                                message,
-                            });
-                        }
-                    });
-                });
-            },
-        };
-    },
+    create: createClassNameRule(deprecatedClasses),
 };

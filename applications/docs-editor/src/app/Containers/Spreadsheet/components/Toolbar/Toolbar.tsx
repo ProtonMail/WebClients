@@ -372,7 +372,6 @@ function TextHorizontalAlign() {
 
   let icon: IconName
   switch (value) {
-    // eslint-disable-next-line custom-rules/deprecate-classes
     case 'center':
       icon = 'text-align-center'
       break

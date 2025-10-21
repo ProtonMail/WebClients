@@ -36,7 +36,6 @@ describe('getCategorizedRevisions', () => {
             ['yesterday', { title: 'Yesterday', list: [revisions[2], revisions[3], revisions[4]] }],
             ['d2', { title: 'Tuesday', list: [revisions[5]] }],
             ['last-week', { title: 'Last week', list: [revisions[6], revisions[7]] }],
-            // eslint-disable-next-line custom-rules/deprecate-spacing-utility-classes
             ['m1', { title: 'February', list: [revisions[8], revisions[9]] }],
             ['2021', { title: '2021', list: [revisions[10], revisions[11]] }],
             ['2020', { title: '2020', list: [revisions[12]] }],

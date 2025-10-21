@@ -227,7 +227,6 @@ function DocsHeaderForDocument({
 function ViewOnlyPill() {
   return (
     <PopoverPill
-      // eslint-disable-next-line custom-rules/deprecate-classes
       alignment="center"
       title={
         <div className="flex gap-2" data-testid="changes-info-e2e-encrypted">

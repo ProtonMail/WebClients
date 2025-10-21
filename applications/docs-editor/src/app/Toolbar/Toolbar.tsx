@@ -492,7 +492,6 @@ export default function DocumentEditorToolbar({
               return activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'left')
             }
             case 'CENTER_ALIGN_SHORTCUT': {
-              // eslint-disable-next-line custom-rules/deprecate-classes
               return activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'center')
             }
             case 'RIGHT_ALIGN_SHORTCUT': {
