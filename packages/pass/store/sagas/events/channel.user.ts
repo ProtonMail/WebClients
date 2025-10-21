@@ -91,21 +91,20 @@ function* onUserEvent(
 
     if (user) yield call(onUserRefreshed, user, keyPassword);
 
-    /* Revalidate the user access if we detect a subscription or plan type change. */
-    const revalidateUserAccess =
+    const planChanged =
         (event.User && event.User.Subscribed !== cachedUser?.Subscribed) ||
         (event.Organization && event.Organization.PlanName !== cachedPlan?.InternalName);
 
     /* Synchronize whenever polling for core user events:
-     * · User access
+     * · User access (revalidate on plan change)
+     * · In-app Notification (revalidate on plan change)
      * · Feature flags
      * · Organization
-     * · In-app Notification
      * These actions are throttled via `maxAge` metadata */
-    yield put((revalidateUserAccess ? withRevalidate : identity)(getUserAccessIntent(userId)));
+    yield put((planChanged ? withRevalidate : identity)(getUserAccessIntent(userId)));
+    yield put((planChanged ? withRevalidate : identity)(getInAppNotifications.intent()));
     yield put(getUserFeaturesIntent(userId));
     yield put(getOrganizationSettings.intent());
-    yield put((revalidateUserAccess ? withRevalidate : identity)(getInAppNotifications.intent()));
 }
 
 export const createUserChannel = (api: Api, eventID: string) =>
