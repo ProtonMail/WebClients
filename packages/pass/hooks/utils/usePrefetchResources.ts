@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-export type PreloadableResource = {
+export type PrefetchResource = {
     url: string;
     as:
         | 'audio'
@@ -17,12 +17,12 @@ export type PreloadableResource = {
         | 'worker';
 };
 
-export const usePreloadResources = (resources: PreloadableResource[]) => {
+export const usePrefetchResources = (resources: PrefetchResource[]) => {
     useEffect(() => {
         if (resources.length === 0) return;
         const links = resources.map(({ url, as }) => {
             const link = document.createElement('link');
-            link.rel = 'preload';
+            link.rel = 'prefetch';
             link.as = as;
             link.href = url;
             document.head.appendChild(link);
