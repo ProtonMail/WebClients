@@ -1,31 +1,21 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import type { PropsWithChildren } from 'react';
 
 import UnAuthenticated from '@proton/components/containers/authentication/UnAuthenticated';
 import ThemeProvider from '@proton/components/containers/themes/ThemeProvider';
 
 import config from '../config';
+import { BookingsRouter } from './BookingsRouter';
 
-export const BookingPageContainer = () => {
-    return (
-        <UnAuthenticated>
-            <BrowserRouter>
-                <Switch>
-                    <Route path="/bookings/:bookingID">
-                        <p>Bookings detail route</p>
-                    </Route>
-                    <Route path="/bookings">
-                        <p>Root route</p>
-                    </Route>
-                </Switch>
-            </BrowserRouter>
-        </UnAuthenticated>
-    );
+export const BookingPageContainer = ({ children }: PropsWithChildren) => {
+    return <UnAuthenticated>{children}</UnAuthenticated>;
 };
 
 export const BookingsApp = () => {
     return (
         <ThemeProvider appName={config.APP_NAME}>
-            <BookingPageContainer />
+            <BookingPageContainer>
+                <BookingsRouter />
+            </BookingPageContainer>
         </ThemeProvider>
     );
 };
