@@ -1,10 +1,14 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
 
-import { addMilliseconds } from 'date-fns';
+import { addMinutes, isBefore } from 'date-fns';
+import { c } from 'ttag';
 
 import { useReadCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
+import { useCalendars } from '@proton/calendar/calendars/hooks';
+import { useNotifications } from '@proton/components/index';
+import { getVisualCalendar } from '@proton/shared/lib/calendar/calendar';
 import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eventDefaults';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
@@ -15,7 +19,7 @@ interface BookingsContextValue {
     submitForm: () => Promise<void>;
     isBookingActive: boolean;
     changeBookingState: (state: BookingState) => void;
-    addBookingSlot: (startDate: Date, eventDuration: number) => void;
+    addBookingSlot: (startDate: Date) => void;
     removeBookingSlot: (slotId: string) => void;
     convertSlotToCalendarViewEvents: (visualCalendar?: VisualCalendar) => CalendarViewEvent[];
     isBookingSlotEvent: (event: CalendarViewEvent | CalendarViewBusyEvent) => event is CalendarViewEvent;
@@ -25,20 +29,16 @@ interface BookingsContextValue {
 
 const BookingsContext = createContext<BookingsContextValue | undefined>(undefined);
 
-// TODO used as temporary value, will be replaced with value coming from the booking form.
-// The value will be based on the even duration of the selected calendar.
-const tmpEventDurationMinute = 120;
-const tmpEventDurationMiliSeconds = tmpEventDurationMinute * 60 * 1000;
-
-// TODO maybe a reset booking slot method might be useful
-// TODO change the view to weekly view when starting a new booking page
 export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     const scheduleOptions = getCalendarEventDefaultDuration();
 
     const [bookingsState, setBookingsState] = useState<BookingState>(BookingState.OFF);
 
+    const [calendars = []] = useCalendars();
     const getCalendarSettings = useReadCalendarBootstrap();
     const [calendarUserSettings] = useCalendarUserSettings();
+
+    const { createNotification } = useNotifications();
 
     const [formData, setFormData] = useState<BookingFormData>({
         title: '',
@@ -78,9 +78,11 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         setBookingsState(state);
     };
 
-    // TODO what should happen if we add a slot in the past
-    const addBookingSlot = (startDate: Date, eventDuration: number) => {
-        const duration = Math.min(eventDuration, tmpEventDurationMiliSeconds);
+    const addBookingSlot = (startDate: Date) => {
+        if (isBefore(startDate, new Date())) {
+            createNotification({ text: c('Info').t`A booking slot cannot be added in the past.` });
+            return;
+        }
 
         setFormData((prevFormData) => ({
             ...prevFormData,
@@ -89,7 +91,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
                 {
                     id: `${BOOKING_SLOT_ID}-${startDate.getTime().toString()}`,
                     start: startDate,
-                    end: addMilliseconds(startDate, duration),
+                    end: addMinutes(startDate, formData.duration),
                 },
             ],
         }));
@@ -107,6 +109,11 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             return [];
         }
 
+        const calendar = calendars.find((cal) => cal.ID === formData.selectedCalendar);
+        if (!calendar) {
+            return [];
+        }
+
         return formData.bookingSlots.map((slot: any) => ({
             uniqueId: slot.id,
             isAllDay: false,
@@ -114,8 +121,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             start: slot.start,
             end: slot.end,
             data: {
-                // TODO change this to the selected visual calendar coming from the form
-                calendarData: visualCalendar,
+                calendarData: getVisualCalendar(calendar),
             },
         }));
     };
