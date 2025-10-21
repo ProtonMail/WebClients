@@ -12,6 +12,9 @@ RewriteRule ^assets/ - [L]
 # Redirect nothing to app
 RewriteRule ^$ /index.html [NC,L]
 
+# Redirect all bookings requests to the bookings bundle
+RewriteRule ^bookings/.* /bookings.html [NC,L]
+
 # Hide .git stuff
 RewriteRule ^.*?\.git.* /index.html [NC,L]
 
