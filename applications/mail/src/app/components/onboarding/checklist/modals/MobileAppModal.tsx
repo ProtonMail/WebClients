@@ -13,7 +13,7 @@ const MobileAppModal = ({ ...rest }: ModalStateProps) => (
     <ModalTwo {...rest} size="small">
         <ModalTwoHeader />
         <ModalTwoContent className="modal-content text-center flex gap-4 mb-6">
-            <h1 className="text-bold text-2xl">{c('Get started checklist instructions')
+            <h1 className="text-bold w-full text-2xl">{c('Get started checklist instructions')
                 .t`Get the ${MAIL_APP_NAME} mobile app`}</h1>
             <div className="mobile-modal-gradient flex flex-column gap-4 p-8 rounded-lg items-center">
                 <QRCode
