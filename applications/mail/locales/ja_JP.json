@@ -4329,8 +4329,14 @@
       "All events in this series were updated.": [
         "この連続した全てのイベントは更新されました。"
       ],
+      "DESCRIPTION:": [
+        "詳細："
+      ],
       "Here's what changed:": [
         "変更内容:"
+      ],
+      "LOCATION:": [
+        "場所："
       ],
       "NOTE:": [
         "注意:"
@@ -4343,6 +4349,15 @@
       ],
       "This event was updated.": [
         "この予定は更新されました。"
+      ],
+      "TIME:": [
+        "時間："
+      ],
+      "TITLE:": [
+        "タイトル："
+      ],
+      "You are invited to": [
+        "あなたは、次の場所に招待されています："
       ]
     },
     "Email body for invitation (date part)": {
@@ -7263,6 +7278,12 @@
       ],
       "Includes bills, receipts, orders, and bookings.": [
         "請求書、領収書、注文、予約が含まれます。"
+      ],
+      "Includes invoices, purchase orders, and payment confirmations.": [
+        "請求書、注文書、および支払確認書が含まれます。"
+      ],
+      "Includes marketing emails and non-urgent app notifications.": [
+        "マーケティングメールと緊急性の低いアプリの通知が含まれます。"
       ],
       "Includes marketing emails like offers and product announcements.": [
         "オファーや製品発表などのマーケティングメールが含まれます。"
