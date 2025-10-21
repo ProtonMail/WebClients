@@ -3,7 +3,7 @@ import useConfig from '@proton/components/hooks/useConfig';
 import { type Currency, getPlanNameFromIDs } from '@proton/payments';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, APPS_WITH_IN_APP_PAYMENTS } from '@proton/shared/lib/constants';
-import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import { isElectronApp, isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { formatURLForAjaxRequest } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
 
@@ -24,7 +24,8 @@ const useSelectDeal = (callback?: () => void) => {
 
     const handleOnSelectDeal = (offer: Offer, deal: Deal, currency: Currency) => {
         // Open the in-app purchase modal if available
-        const hasInAppPayment = APPS_WITH_IN_APP_PAYMENTS.has(APP_NAME) || hasInboxDesktopInAppPayments;
+        const hasInAppPayment =
+            APPS_WITH_IN_APP_PAYMENTS.has(APP_NAME) && (!isElectronMail || hasInboxDesktopInAppPayments);
         const plan = getPlanNameFromIDs(deal.planIDs);
         const hasSubscriptionModal = openSubscriptionModal !== noop;
 
