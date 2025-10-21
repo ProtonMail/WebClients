@@ -1,11 +1,11 @@
 import Icon from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
 
-import type { UnlimitedOfferConfig } from '../helpers/interface';
+import type { TopNavbarOfferConfig } from '../interface';
 
 export interface ListProps {
     className?: string;
-    config: UnlimitedOfferConfig;
+    config: TopNavbarOfferConfig;
 }
 
 export const FeatureList = ({ className, config }: ListProps) => {

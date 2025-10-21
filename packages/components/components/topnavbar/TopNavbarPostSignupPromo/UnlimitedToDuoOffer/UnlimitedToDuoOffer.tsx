@@ -18,7 +18,7 @@ import { getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/
 
 import { SpotlightWithPromo } from '../common/SpotlightWithPromo';
 import { UnlimitedToDuoOfferContent } from './components/UnlimitedToDuoOfferContent';
-import { useUnlimitedToDuoConfig } from './hooks/useUnlimitedToDuoConfig';
+import { useUnlimitedToDuoConfig } from './helpers/configuration';
 
 const duoOfferUpsellConfig = {
     step: SUBSCRIPTION_STEPS.CHECKOUT,
@@ -105,8 +105,8 @@ export const UnlimitedToDuoOffer = () => {
             promoOnClick={() => {
                 setSpotlightState(true);
             }}
-            promoIconName="lightbulb"
-            promoChildren="Double your storage"
+            promoIconName={config.topButton?.icon}
+            promoChildren={config.topButton?.title}
             promoColor="norm"
             spotlightShow={spotlightState}
             spotlightOnClose={handleClose}
