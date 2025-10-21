@@ -316,12 +316,13 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
         userAddress: string,
         role: DocumentRoleType,
         isPublicMode,
+        appVersion,
         editorInitializationConfig,
       ) {
         docMap.set(documentId, docState.getDoc())
         application.setRole(role)
         setIsPublicMode(isPublicMode)
-
+        application.setAppVersion(appVersion)
         application.logger.info('Initialized editor with role', role, 'config', editorInitializationConfig)
 
         const userCanEdit = application.getRole().canEdit()

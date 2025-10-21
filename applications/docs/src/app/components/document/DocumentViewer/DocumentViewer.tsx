@@ -7,6 +7,7 @@ import type {
   GeneralUserDisplayableErrorOccurredPayload,
   PublicDocumentState,
   WebsocketConnectionEventPayloads,
+  EditorControllerInterface,
 } from '@proton/docs-core'
 import {
   ClientToEditorBridge,
@@ -46,13 +47,12 @@ import { Availability, AvailabilityTypes } from '@proton/utils/availability'
 import { useGetUserSettings } from '@proton/account/userSettings/hooks'
 import { WordCountOverlay } from '../WordCount'
 import { useWelcomeSplashModal } from '../public/WelcomeSplashModal'
-import type { EditorControllerInterface } from '@proton/docs-core'
 import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
 import type { InviteAutoAcceptResult } from './InviteAutoAccepter'
 import { InviteAutoAccepter } from './InviteAutoAccepter'
 import { type DocumentError, DocumentErrorFallback } from './DocumentErrorFallback'
 import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
-import { useAuthentication } from '@proton/components'
+import { useAuthentication, useConfig } from '@proton/components'
 import { useApplication } from '~/utils/application-context'
 import { useDocsUrlBar } from '~/utils/docs-url-bar'
 import { AppendPublicShareKeyMaterialToTitle } from './append-public-share-key-material-to-title'
@@ -90,6 +90,7 @@ export function DocumentViewer({
   const { getLocalID } = useAuthentication()
   const getUserSettings = useGetUserSettings()
   const { isDebugMode } = useDebugMode()
+  const { APP_VERSION } = useConfig()
 
   const { removeLocalIDFromUrl } = useDocsUrlBar()
 
@@ -319,6 +320,7 @@ export function DocumentViewer({
         editorInitializationConfig,
         orchestrator.userAddress,
         application.isPublicMode,
+        APP_VERSION,
       )
     },
     [
@@ -329,6 +331,7 @@ export function DocumentViewer({
       bridge,
       documentState,
       editorInitializationConfig,
+      APP_VERSION,
     ],
   )
 
