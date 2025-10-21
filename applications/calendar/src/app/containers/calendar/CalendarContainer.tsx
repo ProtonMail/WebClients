@@ -61,6 +61,7 @@ import {
 import type { OpenedMailEvent } from '../../hooks/useGetOpenedMailEvents';
 import { useCalendarCEDTMetric } from '../../metrics/useCalendarCEDTMetric';
 import { useCalendarPTTMetric } from '../../metrics/useCalendarPTTMetric';
+import { useBookings } from '../bookings/bookingsProvider/BookingsProvider';
 import AskUpdateTimezoneModal from '../settings/AskUpdateTimezoneModal';
 import CalendarContainerView from './CalendarContainerView';
 import InteractiveCalendarView from './InteractiveCalendarView';
@@ -165,6 +166,8 @@ const CalendarContainer = ({
 
     const [nowDate, setNowDate] = useState(() => new Date());
     const [localTimezoneId, setLocalTimezoneId] = useState<string>();
+
+    const { isBookingActive } = useBookings();
 
     useEffect(() => {
         const handle = setInterval(() => setNowDate(new Date()), 30 * SECOND);
@@ -286,6 +289,10 @@ const CalendarContainer = ({
     const defaultView = getDefaultView(calendarUserSettings);
 
     const view = (() => {
+        if (isBookingActive) {
+            return VIEWS.WEEK;
+        }
+
         const requestedView = customView || defaultView;
         const { view: drawerView, isDrawerApp } = embeddedDrawerAppInfos;
 
