@@ -8,6 +8,7 @@ import SidebarList from '@proton/components/components/sidebar/SidebarList';
 import SimpleSidebarListItemHeader from '@proton/components/components/sidebar/SimpleSidebarListItemHeader';
 
 import { useBookings } from '../../bookings/bookingsProvider/BookingsProvider';
+import { BookingState } from '../../bookings/bookingsProvider/interface';
 import { useBookingsAvailability } from '../../bookings/useBookingsAvailability';
 
 interface Props {
@@ -20,14 +21,14 @@ export const Bookings = ({ headerRef }: Props) => {
     const [displayBookings, setDisplayBookings] = useState(true);
 
     const isBookingsAvailable = useBookingsAvailability();
-    const { createNewBookingsPage } = useBookings();
+    const { toggleBookingPageCreation, bookingsState } = useBookings();
 
     if (!isBookingsAvailable) {
         return null;
     }
 
     const handleCreate = () => {
-        createNewBookingsPage();
+        toggleBookingPageCreation();
     };
 
     return (
@@ -52,6 +53,8 @@ export const Bookings = ({ headerRef }: Props) => {
                 }
                 spaceAbove
             />
+            {bookingsState === BookingState.CREATE_NEW && <span>Booking started</span>}
+            {bookingsState === BookingState.OFF && <span>Booking off</span>}
         </SidebarList>
     );
 };
