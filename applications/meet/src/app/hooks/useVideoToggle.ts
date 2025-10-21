@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
 import { BackgroundBlur, type BackgroundProcessorOptions } from '@livekit/track-processors';
@@ -17,7 +17,25 @@ const backgroundProcessorOptions: BackgroundProcessorOptions = {
     },
 };
 
-const backgroundBlurProcessor = BackgroundBlur(40, undefined, undefined, backgroundProcessorOptions);
+let backgroundBlurProcessorInstance: ReturnType<typeof BackgroundBlur> | null = null;
+let backgroundBlurInitializationFailed = false;
+
+const initializeBackgroundBlurProcessor = async (): Promise<boolean> => {
+    if (backgroundBlurProcessorInstance) {
+        return true;
+    }
+    if (backgroundBlurInitializationFailed) {
+        return false;
+    }
+
+    try {
+        backgroundBlurProcessorInstance = BackgroundBlur(40, undefined, undefined, backgroundProcessorOptions);
+        return true;
+    } catch (error) {
+        backgroundBlurInitializationFailed = true;
+        return false;
+    }
+};
 
 const getVideoTrackPublications = (localParticipant: LocalParticipant) => {
     return [...localParticipant.trackPublications.values()].filter(
@@ -35,10 +53,19 @@ export const useVideoToggle = (
 
     const [facingMode, setFacingMode] = useState<'environment' | 'user'>('user');
     const [backgroundBlur, setBackgroundBlur] = useState(false);
+    const [isBackgroundBlurSupported, setIsBackgroundBlurSupported] = useState(true);
 
     const toggleInProgress = useRef(false);
 
     const prevEnabled = useRef<boolean | null>(null);
+
+    useEffect(() => {
+        const initialize = async () => {
+            const isSupported = await initializeBackgroundBlurProcessor();
+            setIsBackgroundBlurSupported(isSupported);
+        };
+        void initialize();
+    }, []);
 
     const getCurrentVideoTrack = () => {
         return getVideoTrackPublications(localParticipant).filter(
@@ -93,9 +120,10 @@ export const useVideoToggle = (
 
         const newVideoTrack = getCurrentVideoTrack();
 
-        // Adding background blur processor after applying updates
-        if (backgroundBlur) {
-            await newVideoTrack?.setProcessor(backgroundBlurProcessor);
+        if (backgroundBlur && backgroundBlurProcessorInstance) {
+            try {
+                await newVideoTrack?.setProcessor(backgroundBlurProcessorInstance);
+            } catch (error) {}
         }
 
         // We need to restart the video track on mobile to make sure the facing mode is applied
@@ -119,15 +147,22 @@ export const useVideoToggle = (
     };
 
     const toggleBackgroundBlur = async () => {
-        const currentVideoTrack = getCurrentVideoTrack();
-
-        if (backgroundBlur) {
-            await currentVideoTrack?.stopProcessor();
-        } else {
-            await currentVideoTrack?.setProcessor(backgroundBlurProcessor);
+        if (!isBackgroundBlurSupported || !backgroundBlurProcessorInstance) {
+            return;
         }
 
-        setBackgroundBlur((prevEnableBlur) => !prevEnableBlur);
+        const currentVideoTrack = getCurrentVideoTrack();
+
+        try {
+            if (backgroundBlur) {
+                await currentVideoTrack?.stopProcessor();
+            } else {
+                await currentVideoTrack?.setProcessor(backgroundBlurProcessorInstance);
+            }
+            setBackgroundBlur((prevEnableBlur) => !prevEnableBlur);
+        } catch (error) {
+            return;
+        }
     };
 
     // Too frequent toggling can freeze the page completely
@@ -140,5 +175,6 @@ export const useVideoToggle = (
         toggleBackgroundBlur: debouncedToggleBackgroundBlur,
         isVideoEnabled: isCameraEnabled,
         facingMode,
+        isBackgroundBlurSupported,
     };
 };
