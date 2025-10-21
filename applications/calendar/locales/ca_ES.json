@@ -237,6 +237,9 @@
       "Create": [
         "Crear"
       ],
+      "Create a new bookings page": [
+        "Creeu una nova pàgina de reserves"
+      ],
       "Create a new contact group": [
         "Crear un nou grup de contactes"
       ],
@@ -717,7 +720,7 @@
         "Mostra les característiques del pla"
       ],
       "Select ${ planOrAppName }": [
-        "Seleccioneu ${ planOrAppName }"
+        "Selecciona ${ planOrAppName }"
       ],
       "Select all": [
         "Seleccionar-ho tot"
@@ -858,7 +861,7 @@
         "Actualitza la frase de recuperació"
       ],
       "Update secret passphrase": [
-        "Actualitzeu la frase de contrasenya secreta"
+        "Actualitza la frase de contrasenya secreta"
       ],
       "Upgrade": [
         "Millora el pla"
@@ -1248,7 +1251,7 @@
         "Podeu tenir fins a ${ TRIAL_MAX_LUMO_SEATS } llicències de ${ LUMO_SHORT_APP_NAME } durant el període de prova."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
-        "Podeu tenir fins a ${ TRIAL_MAX_SCRIBE_SEATS } llicències Scribe durant el període de prova."
+        "Podeu tenir fins a ${ TRIAL_MAX_SCRIBE_SEATS } llicències d'Scribe durant el període de prova."
       ],
       "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
         "Podeu tenir fins a ${ TRIAL_MAX_USERS } usuaris durant el període de prova."
@@ -3260,6 +3263,23 @@
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "Afegeix un calendari"
+      ]
+    },
+    "Duo offer": {
+      "/month": [
+        "/mes"
+      ],
+      "1 TB of storage to share": [
+        "1 TB d'emmagatzematge per compartir"
+      ],
+      "2 user accounts": [
+        "2 comptes d'usuari"
+      ],
+      "All premium features from your current plan": [
+        "Totes les funcions prèmium del vostre pla actual"
+      ],
+      "Only": [
+        "Només"
       ]
     },
     "Duplicate event button tooltip": {
@@ -6998,6 +7018,9 @@
       "Add a gift code": [
         "Afegeix un codi de regal"
       ],
+      "Bookings pages": [
+        "Pàgines de reserves"
+      ],
       "Calendars": [
         "Calendaris"
       ],
@@ -8548,11 +8571,17 @@
       "${ pricingTitle } offer expires today!": [
         "L'oferta de ${ pricingTitle } caduca avui!"
       ],
+      "Don't show this again": [
+        "No m'ho torneu a mostrar"
+      ],
       "Don’t show this again": [
         "No ho tornis a mostrar"
       ],
       "Don’t show this offer again": [
         "No tornis a mostrar aquesta oferta"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Obtingueu ${ BRAND_NAME } Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "Obteniu ${ BRAND_NAME } Unlimited"
@@ -9404,7 +9433,7 @@
     },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
-        "${ referrerRewardAmount } com a referència"
+        "${ referrerRewardAmount } per referència"
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Guanyeu fins a ${ maxRewardAmount } en crèdits. Rebreu ${ referrerRewardAmount } quan la persona que convideu se subscrigui a un pla de ${ BRAND_NAME }."
@@ -11140,6 +11169,9 @@
       ],
       "Does not repeat": [
         "No es repeteix"
+      ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Dupliqueu el vostre emmagatzematge amb ${ BRAND_NAME } Duo"
       ],
       "Downgrade account": [
         "Passa a un pla inferior"
