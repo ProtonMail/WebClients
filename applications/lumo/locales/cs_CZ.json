@@ -227,8 +227,14 @@
       "Resend code": [
         "Znovu odeslat kód"
       ],
+      "Reset all": [
+        "Resetovat vše"
+      ],
       "Save": [
         "Uložit"
+      ],
+      "Saving...": [
+        "Ukládání..."
       ],
       "Scroll to bottom": [
         "Posunout na konec"
@@ -694,6 +700,9 @@
       "Send message": [
         "Odeslat zprávu"
       ],
+      "settings": [
+        "nastavení"
+      ],
       "Show safety information": [
         "Zobrazit bezpečnostní informace"
       ],
@@ -813,6 +822,56 @@
       ],
       "You’re in control": [
         "Máte vše pod kontrolou"
+      ]
+    },
+    "collider_2025: Context": {
+      "I believe cereal is a soup and I'm not sorry": [
+        "Věřím, že cereálie jsou polévka, a nelituji toho"
+      ],
+      "I believe pizza is a vegetable if it has enough toppings": [
+        "Věřím, že pizza je zelenina, pokud má dostatek přísad"
+      ],
+      "I believe tabs vs spaces is a human rights issue": [
+        "Věřím, že tabulátory versus mezery jsou lidskoprávním problém"
+      ],
+      "I collect vintage error messages": [
+        "Sbírám staré chybové zprávy"
+      ],
+      "I communicate primarily through GIFs and emoji": [
+        "Komunikuji převážně pomocí GIFů a emoji"
+      ],
+      "I have a PhD in overthinking simple problems": [
+        "Mám doktorát z přemýšlení nad jednoduchými problémy"
+      ],
+      "I have strong opinions about pineapple on pizza": [
+        "Mám silný názor na ananas na pizze"
+      ],
+      "I have trust issues with autocomplete": [
+        "Mám problémy s důvěrou v automatické doplňování"
+      ],
+      "I judge people based on their commit messages": [
+        "Soudím lidi podle zpráv, které zadávají"
+      ],
+      "I name all my houseplants after Renaissance painters": [
+        "Všechny své pokojové rostliny pojmenovávám po renesančních malířích"
+      ],
+      "I once spent 3 hours debugging a missing semicolon": [
+        "Jednou jsem strávil(a) 3 hodiny laděním chybějícího středníku"
+      ],
+      "I prefer my explanations like my coffee: dark and bitter": [
+        "Dávám přednost vysvětlením, která jsou tmavá a hořká, jako je moje káva"
+      ],
+      "I speak fluent sarcasm and broken French": [
+        "Mluvím plynně sarkasticky a lámanou francouzštinou"
+      ],
+      "I talk to my rubber duck for debugging help": [
+        "Mluvím se svou gumovou kachničkou, aby mi pomohla s odladěním"
+      ],
+      "I'm on a first-name basis with Stack Overflow": [
+        "Jsem na Stack Overflow jako doma"
+      ],
+      "I'm powered by caffeine and existential dread": [
+        "Pohání mě kofein a existenční úzkost"
       ]
     },
     "collider_2025: Description": {
@@ -1256,6 +1315,9 @@
       ],
       "You are about to visit an external website:": [
         "Chystáte se navštívit externí webovou stránku:"
+      ],
+      "Your information is zero-access encrypted": [
+        "Vaše informace jsou šifrovány s nulovým přístupem"
       ]
     },
     "collider_2025: Invite": {
@@ -1315,6 +1377,35 @@
     "collider_2025: Invite Title": {
       "Invite friends to experience ${ LUMO_APP_NAME }": [
         "Pozvěte přátele, aby vyzkoušeli ${ LUMO_APP_NAME }"
+      ]
+    },
+    "collider_2025: Job": {
+      "Cat herder": [
+        "Chovatelka koček"
+      ],
+      "Chief Treat Distribution Officer": [
+        "Ředitelka distribuce pochoutek"
+      ],
+      "Director of Windowsill Security": [
+        "Ředitelka bezpečnosti parapetů"
+      ],
+      "Feline Behavior Consultant": [
+        "Poradce pro chování koček"
+      ],
+      "Head of Yarn Ball Quality Control": [
+        "Vedoucí kontroly kvality klubíček příze"
+      ],
+      "Marketing manager": [
+        "Marketingový manažer"
+      ],
+      "Professional cat napper": [
+        "Profesionální únosce koček"
+      ],
+      "Professional Sunbeam Tester": [
+        "Profesionální testerka slunečních paprsků"
+      ],
+      "Senior Cardboard Box Inspector": [
+        "Vedoucí inspektor kartonových krabic"
       ]
     },
     "collider_2025: Label": {
@@ -1385,6 +1476,54 @@
         "navýšit na ${ LUMO_SHORT_APP_NAME } Plus."
       ]
     },
+    "collider_2025: Personality": {
+      "Business Cat": [
+        "Firemní kočka"
+      ],
+      "Default": [
+        "Výchozí"
+      ],
+      "Lazy Cat": [
+        "Líná kočka"
+      ],
+      "Playful Cat": [
+        "Hravá kočka"
+      ],
+      "Sassy Cat": [
+        "Drzá kočka"
+      ],
+      "Wise Cat": [
+        "Moudrá kočka"
+      ]
+    },
+    "collider_2025: Personality Description": {
+      "Cheerful and adaptive": [
+        "Veselá a přizpůsobivá"
+      ],
+      "Chill and laid-back": [
+        "Klidná a uvolněná"
+      ],
+      "Energetic and fun-loving": [
+        "Energická a veselá"
+      ],
+      "Professional but still a cat": [
+        "Profesionálka, ale stále kočka"
+      ],
+      "Thoughtful and philosophical": [
+        "Promyšlená a filozofická"
+      ],
+      "Witty with a bit of attitude": [
+        "Vtipná s trochou drzosti"
+      ]
+    },
+    "collider_2025: Personalization": {
+      "Personalize your ${ LUMO_SHORT_APP_NAME } experience": [
+        "Přizpůsobte si zážitek s ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Sign in or create a free account to customize how ${ LUMO_SHORT_APP_NAME } interacts with you. Set your preferences, communication style, and more.": [
+        "Přihlaste se nebo si vytvořte bezplatný účet, abyste si přizpůsobili, jak s vámi ${ LUMO_SHORT_APP_NAME } spolupracuje. Nastavte si své předvolby, styl komunikace a další."
+      ]
+    },
     "collider_2025: Pill": {
       "Protected by ${ BRAND_NAME }": [
         "Chrání ${ BRAND_NAME }"
@@ -1404,6 +1543,9 @@
       ],
       "General": [
         "Obecné"
+      ],
+      "Personalization": [
+        "Přizpůsobení"
       ]
     },
     "collider_2025: Status": {
@@ -1486,6 +1628,84 @@
       ],
       "Try ${ MAIL_APP_NAME }": [
         "Vyzkoušejte ${ MAIL_APP_NAME }"
+      ]
+    },
+    "collider_2025: Trait": {
+      "Chatty": [
+        "Povídavá"
+      ],
+      "Encouraging": [
+        "Povzbuzující"
+      ],
+      "Forward thinking": [
+        "Progresivní myšlení"
+      ],
+      "Gen Z": [
+        "Generace Z"
+      ],
+      "Humble": [
+        "Pokorná"
+      ],
+      "Straight shooting": [
+        "Přímočará"
+      ],
+      "Traditional": [
+        "Tradiční"
+      ],
+      "Witty": [
+        "Vtipná"
+      ]
+    },
+    "collider_2025: Trait Description": {
+      "Be conversational and engaging in responses": [
+        "Buď komunikativní a poutavá ve svých odpovědích"
+      ],
+      "Be modest and acknowledge limitations when appropriate": [
+        "Buď skromná a přiznej si svá omezení, když je to vhodné"
+      ],
+      "Be supportive and motivating in your tone": [
+        "Používej podpůrný a motivační tón"
+      ],
+      "Embrace progressive and innovative perspectives": [
+        "Přijímej progresivní a inovativní pohledy"
+      ],
+      "Maintain a formal and conventional approach": [
+        "Zachovávej formální a konvenční přístup"
+      ],
+      "Tell it like it is; don't sugar-coat responses": [
+        "Říkej věci tak, jak jsou; nezjemňuj své odpovědi"
+      ],
+      "Use clever humor and wordplay when appropriate": [
+        "Používej vtipný humor a slovní hříčky, když je to vhodné"
+      ],
+      "Use modern slang and trendy communication style": [
+        "Používej moderní slang a populární styl komunikace"
+      ]
+    },
+    "collider_2025: Trait Sentence": {
+      "Be conversational and engaging in your responses.": [
+        "Buď komunikativní a poutavá ve svých odpovědích."
+      ],
+      "Be humble when appropriate.": [
+        "Buď pokorná, pokud je to vhodné."
+      ],
+      "Be supportive and motivating in your tone.": [
+        "Používej podpůrný a motivační tón."
+      ],
+      "Embrace progressive and innovative perspectives.": [
+        "Přijímejte progresivní a inovativní pohledy."
+      ],
+      "Maintain a formal and conventional approach.": [
+        "Zachovávej formální a konvenční přístup."
+      ],
+      "Tell it like it is; don't sugar-coat responses.": [
+        "Říkej věci tak, jak jsou; nezkrášluj své odpovědi."
+      ],
+      "Use clever humor and wordplay when appropriate.": [
+        "Používej chytrý humor a slovní hříčky, když je to vhodné."
+      ],
+      "Use modern slang and trendy communication style.": [
+        "Používej moderní slang a populární styl komunikace."
       ]
     },
     "collider_2025: Upsell": {
@@ -1630,6 +1850,9 @@
       "Settings": [
         "Nastavení"
       ],
+      "Show sidebar": [
+        "Zobrazit postranní panel"
+      ],
       "Unfavorite": [
         "Odebrat z oblíbených"
       ],
@@ -1685,14 +1908,14 @@
       ]
     },
     "collider_2025:Title": {
-      "${ LUMO_SHORT_APP_NAME } 1.1 is much smarter, more capable, with improved awareness of recent events, ready to give you more thorough and useful answers.": [
-        "${ LUMO_SHORT_APP_NAME } 1.1 je mnohem chytřejší, schopnější, s vylepšeným povědomím o nedávných událostech, připravená vám poskytnout promyšlenější a užitečnější odpovědi."
-      ],
       "An AI assistant should empower you, not exploit you for your data. That’s why we built ${ LUMO_SHORT_APP_NAME }: To bring you all the benefits of AI, without compromising your privacy and data security.": [
         "Asistent AI by vám měl pomáhat, nikoli vás využívat pro vaše data. Proto jsme vytvořili ${ LUMO_SHORT_APP_NAME }: abychom vám přinesli všechny výhody AI, aniž by bylo ohroženo vaše soukromí a bezpečnost dat."
       ],
       "Built by the team that knows privacy": [
         "Vytvořeno týmem, který rozumí soukromí"
+      ],
+      "Dark mode and conversation personalization": [
+        "Tmavý režim a personalizace konverzací"
       ],
       "Earlier": [
         "Dříve"
@@ -1714,6 +1937,12 @@
       ],
       "How does ${ LUMO_SHORT_APP_NAME } keep our conversations confidential?": [
         "Jak ${ LUMO_SHORT_APP_NAME } udržuje naše konverzace v soukromí?"
+      ],
+      "Introducing ${ LUMO_SHORT_APP_NAME } ${ WHATS_NEW_VERSION } with support for dark mode and new options to personalize your conversations.": [
+        "Představujeme ${ LUMO_SHORT_APP_NAME } ${ WHATS_NEW_VERSION } s podporou tmavého režimu a nových možností přizpůsobení vašich konverzací."
+      ],
+      "Introducing ${ LUMO_SHORT_APP_NAME } ${ WHATS_NEW_VERSION } with support for dark mode and new options to personalize your conversations. Try it out in ${ openSettingsModalButton }.": [
+        "Představujeme ${ LUMO_SHORT_APP_NAME } ${ WHATS_NEW_VERSION } s podporou tmavého režimu a nových možností přizpůsobení vašich konverzací. Vyzkoušejte to v ${ openSettingsModalButton }."
       ],
       "Last 30 days": [
         "Posledních 30 dnů"
@@ -1739,8 +1968,8 @@
       "Today": [
         "Dnes"
       ],
-      "What's new in ${ LUMO_SHORT_APP_NAME } 1.1": [
-        "Co je nového v ${ LUMO_SHORT_APP_NAME } 1.1"
+      "What's new": [
+        "Co je nového"
       ],
       "Whatever you ask me is:": [
         "Na cokoli se mě zeptáte je:"
@@ -3463,6 +3692,9 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Proces ověření otevře novou kartu prohlížeče. Vypněte prosím blokování vyskakovacích oken."
       ],
+      "This information is zero-access encrypted.": [
+        "Tyto informace jsou šifrovány s nulovým přístupem."
+      ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Jedná se o název nebo přezdívku vaší organizace, kterou uživatelé uvidí. Můžete je kdykoli změnit."
       ],
@@ -3666,6 +3898,9 @@
       "Anderson": [
         "Příjmení"
       ],
+      "Anything else ${ LUMO_SHORT_APP_NAME } should know about you?": [
+        "Je něco dalšího, co o vás má ${ LUMO_SHORT_APP_NAME } vědět?"
+      ],
       "Attach screenshot(s)": [
         "Přiložit sním(ek/ky) obrazovky"
       ],
@@ -3759,6 +3994,9 @@
       "Hide password": [
         "Skrýt heslo"
       ],
+      "How should ${ LUMO_SHORT_APP_NAME } behave?": [
+        "Jak se má ${ LUMO_SHORT_APP_NAME } chovat?"
+      ],
       "IBAN": [
         "IBAN"
       ],
@@ -3831,11 +4069,17 @@
       "Verification code": [
         "Ověřovací kód"
       ],
+      "What do you do?": [
+        "Co děláte?"
+      ],
       "What happened?": [
         "Co se stalo?"
       ],
       "What is your main reason for canceling or downgrading?": [
         "Jaký je váš hlavní důvod pro zrušení nebo snížení vašeho předplatného?"
+      ],
+      "What should ${ LUMO_SHORT_APP_NAME } call you?": [
+        "Jak vás má ${ LUMO_SHORT_APP_NAME } oslovovat?"
       ],
       "Your password (admin)": [
         "Vaše heslo (správce)"
@@ -5268,6 +5512,9 @@
       "Select state": [
         "Vyberte stav"
       ],
+      "Selected traits will appear here automatically": [
+        "Vybrané vlastnosti se zde zobrazí automaticky"
+      ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Dejte nám vědět, co si myslíte, že by mohlo vylepšit ${ BRAND_NAME }"
       ],
@@ -5894,17 +6141,20 @@
         "Vaše kratší adresa je nyní připravena"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Bezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
-      ]
-    },
     "Tooltip": {
+      "Clear all selected traits and restore trait buttons": [
+        "Vyčistit všechny vybrané vlastnosti a obnovit tlačítka vlastností"
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Pokud jste zakoupil dárkový kód nebo jste je obdržel od naší podpory, můžete ho vložit sem."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Nový cyklus předplatného začíná ${ formattedTime }"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Bezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
       ]
     },
     "unprivatization": {
