@@ -916,7 +916,7 @@ const InteractiveCalendarView = ({
 
                 // We want to create a booking slot unless it's a all day event
                 if (isBookingActive && !isFromAllDay && ACTIONS.CREATE_MOVE_UP) {
-                    addBookingSlot(start, eventDuration);
+                    addBookingSlot(start);
                     return;
                 }
 
