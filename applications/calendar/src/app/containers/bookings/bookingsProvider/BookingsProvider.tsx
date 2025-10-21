@@ -1,15 +1,19 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
 
 import { addMilliseconds } from 'date-fns';
 
+import { useCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
+import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
+import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eventDefaults';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import type { CalendarViewBusyEvent, CalendarViewEvent } from '../../calendar/interface';
-import { BOOKING_SLOT_ID, BookingState, type Slot } from './interface';
+import { BOOKING_SLOT_ID, type BookingFormData, BookingState, type Slot } from './interface';
 
 interface BookingsContextValue {
+    submitForm: () => Promise<void>;
     isBookingActive: boolean;
     changeBookingState: (state: BookingState) => void;
     bookingsState: BookingState;
@@ -20,6 +24,8 @@ interface BookingsContextValue {
     removeBookingSlot: (slotId: string) => void;
     convertSlotToCalendarViewEvents: (visualCalendar?: VisualCalendar) => CalendarViewEvent[];
     isBookingSlotEvent: (event: CalendarViewEvent | CalendarViewBusyEvent) => event is CalendarViewEvent;
+    formData: BookingFormData;
+    updateFormData: (field: keyof BookingFormData, value: any) => void;
 }
 
 const BookingsContext = createContext<BookingsContextValue | undefined>(undefined);
@@ -32,10 +38,46 @@ const tmpEventDurationMiliSeconds = tmpEventDurationMinute * 60 * 1000;
 // TODO maybe a reset booking slot method might be useful
 // TODO change the view to weekly view when starting a new booking page
 export const BookingsProvider = ({ children }: { children: ReactNode }) => {
+    const scheduleOptions = getCalendarEventDefaultDuration();
+
+    const [calendarUserSettings] = useCalendarUserSettings();
+
     const [bookingsState, setBookingsState] = useState<BookingState>(BookingState.OFF);
     const [bookingSlots, setBookingSlots] = useState<Slot[]>([]);
 
     const [writeableCalendars = [], loadingWriteableCalendars] = useWriteableCalendars();
+
+    const [createEventCalendarBootstrap] = useCalendarBootstrap(calendarUserSettings?.DefaultCalendarID || undefined);
+
+    const [formData, setFormData] = useState<BookingFormData>({
+        title: '',
+        selectedCalendar: null,
+        duration: scheduleOptions[0].value,
+        timeZone: calendarUserSettings?.PrimaryTimezone,
+    });
+
+    const updateFormData = (field: keyof BookingFormData, value: any) => {
+        setFormData((prev) => ({ ...prev, [field]: value }));
+    };
+
+    // Used to set the default duration and selected calendar
+    useEffect(() => {
+        if (!writeableCalendars || formData.selectedCalendar !== null) {
+            return;
+        }
+
+        const defaultCalendar = writeableCalendars.find(
+            (calendar) => calendar.ID === calendarUserSettings?.DefaultCalendarID
+        );
+
+        updateFormData('selectedCalendar', defaultCalendar?.ID);
+        updateFormData('duration', createEventCalendarBootstrap?.CalendarSettings.DefaultEventDuration);
+    }, [
+        writeableCalendars,
+        formData.selectedCalendar,
+        calendarUserSettings?.DefaultCalendarID,
+        createEventCalendarBootstrap?.CalendarSettings.DefaultEventDuration,
+    ]);
 
     const changeBookingState = (state: BookingState) => {
         if (state === BookingState.OFF) {
@@ -85,6 +127,10 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         return event.uniqueId.startsWith(BOOKING_SLOT_ID);
     };
 
+    const submitForm = async () => {
+        setBookingsState(BookingState.OFF);
+    };
+
     const value: BookingsContextValue = {
         isBookingActive: bookingsState === BookingState.CREATE_NEW || bookingsState === BookingState.EDIT_EXISTING,
         changeBookingState,
@@ -96,6 +142,9 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         removeBookingSlot,
         convertSlotToCalendarViewEvents,
         isBookingSlotEvent,
+        formData,
+        updateFormData,
+        submitForm,
     };
 
     return <BookingsContext.Provider value={value}>{children}</BookingsContext.Provider>;
