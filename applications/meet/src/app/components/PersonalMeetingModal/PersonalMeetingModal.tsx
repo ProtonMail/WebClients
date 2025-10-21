@@ -62,7 +62,12 @@ export const PersonalMeetingModal = ({
     }, []);
 
     return (
-        <ModalTwo open={true} rootClassName="personal-meeting-modal" className="meet-radius" onClose={onClose}>
+        <ModalTwo
+            open={true}
+            rootClassName="personal-meeting-modal"
+            className="meet-radius border border-norm"
+            onClose={onClose}
+        >
             <ModalTwoHeader />
 
             <ModalTwoContent className="flex flex-column justify-space-between mx-4 gap-6">

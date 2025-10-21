@@ -49,7 +49,11 @@ export const AutoCloseMeetingModal = ({ onLeave }: AutoCloseMeetingModalProps) =
     return (
         <>
             {timeAlone >= showAutoCloseAfterSeconds && (
-                <ModalTwo open={true} rootClassName="bg-transparent connection-lost-modal" className="meet-radius">
+                <ModalTwo
+                    open={true}
+                    rootClassName="bg-transparent connection-lost-modal"
+                    className="meet-radius border border-norm"
+                >
                     <ModalTwoContent
                         className="flex flex-column justify-space-between p-4 mx-4 pb-0 gap-4 text-center bg-norm pt-custom"
                         style={{ '--pt-custom': '3rem' }}

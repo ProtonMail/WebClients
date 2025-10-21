@@ -1,4 +1,10 @@
+import { useState } from 'react';
+
 import { c } from 'ttag';
+
+import { InlineLinkButton } from '@proton/atoms';
+
+import { OpenLinkModal } from './OpenLinkModal/OpenLinkModal';
 
 // Simple URL regex - matches http:// or https:// followed by non-whitespace characters
 const URL_REGEX = /https:\/\/[^\s<]+[^<.,:;"')\]\s]/g;
@@ -11,8 +17,6 @@ const validateUrl = (url: string) => {
             return { valid: false, url };
         }
 
-        parsedUrl.hash = '';
-        parsedUrl.search = '';
         return { valid: true, url: parsedUrl.href };
     } catch {
         return { valid: false, url };
@@ -25,6 +29,12 @@ interface ChatMessageContentProps {
 export const ChatMessageContent = ({ message }: ChatMessageContentProps) => {
     const parts = message.split(URL_REGEX);
     const matches = message.match(URL_REGEX) || [];
+
+    const [currentLink, setCurrentLink] = useState<string | null>(null);
+
+    const handleLinkClick = (link: string) => {
+        setCurrentLink(link);
+    };
 
     return (
         <>
@@ -40,21 +50,16 @@ export const ChatMessageContent = ({ message }: ChatMessageContentProps) => {
                     <>
                         {part}
                         {valid && validatedUrl ? (
-                            <a
-                                key={`link-${i}`}
-                                href={validatedUrl}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="link text-no-decoration color-primary"
-                            >
+                            <InlineLinkButton key={`link-${i}`} onClick={() => handleLinkClick(validatedUrl)}>
                                 {validatedUrl}
-                            </a>
+                            </InlineLinkButton>
                         ) : (
                             <>{c('Info').t`<Removed dangerous URL>`}</>
                         )}
                     </>
                 );
             })}
+            {!!currentLink && <OpenLinkModal link={currentLink} onClose={() => setCurrentLink(null)} />}
         </>
     );
 };

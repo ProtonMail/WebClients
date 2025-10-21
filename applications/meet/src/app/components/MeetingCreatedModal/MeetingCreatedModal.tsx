@@ -65,7 +65,7 @@ export const MeetingCreatedModal = ({
     return (
         <ModalTwo
             open={true}
-            className="no-shadow meet-radius"
+            className="no-shadow meet-radius border border-norm"
             rootClassName="meeting-created-modal-backdrop"
             onClose={onClose}
         >
