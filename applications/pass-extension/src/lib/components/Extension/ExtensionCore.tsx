@@ -10,6 +10,7 @@ import { createCoreServiceBridge } from 'proton-pass-extension/lib/services/core
 import { createMonitorBridge } from 'proton-pass-extension/lib/services/monitor.bridge';
 import { createPopupController } from 'proton-pass-extension/lib/utils/popup';
 import { reloadManager } from 'proton-pass-extension/lib/utils/reload';
+import { assertTabsAPIAvailable } from 'proton-pass-extension/lib/utils/tabs';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import useInstance from '@proton/hooks/useInstance';
@@ -132,10 +133,7 @@ const getPassCoreProviderProps = (
         getRatingURL: getWebStoreUrl,
 
         onLink: (url, options) => {
-            /** Fallback to `window.open` API if the tabs API is not
-             * available (eg: in extension controlled pages served via
-             * iframes in the content-script on firefox/safari) */
-            if (browser.tabs === undefined) return window.open(url, '_BLANK');
+            if (!assertTabsAPIAvailable(endpoint)) return window.open(url, '_BLANK');
 
             return options?.replace
                 ? browser.tabs.update({ url }).catch(noop)
