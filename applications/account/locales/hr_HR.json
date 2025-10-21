@@ -32,6 +32,9 @@
       "Accept": [
         "Prihvati"
       ],
+      "Access account": [
+        "Pristup korisničkom računu"
+      ],
       "activate": [
         "aktiviraj"
       ],
@@ -52,6 +55,9 @@
       ],
       "Add ${ BRAND_NAME } Account": [
         "Dodaj ${ BRAND_NAME } račun"
+      ],
+      "Add ${ BRAND_NAME } address": [
+        "Dodaj ${ BRAND_NAME } adresu"
       ],
       "Add account": [
         "Dodaj račun"
@@ -409,6 +415,9 @@
       ],
       "Download recovery file": [
         "Preuzimanje datoteke za oporavak"
+      ],
+      "Download the desktop app": [
+        "Preuzmite aplikaciju za radnu površinu"
       ],
       "Edit": [
         "Uredi"
@@ -839,6 +848,9 @@
       "Request a feature": [
         "Zatraži značajku"
       ],
+      "Request access": [
+        "Zatražite pristup"
+      ],
       "Request new code": [
         "Zatraži novi kôd"
       ],
@@ -1245,6 +1257,12 @@
       "Disable address “${ emailAddress }”": [
         "Onemogući adresu \"${ emailAddress }\""
       ],
+      "Disconnect": [
+        "Odspoji"
+      ],
+      "Disconnect address “${ emailAddress }”": [
+        "Odspoji adresu \"${ emailAddress }\""
+      ],
       "Edit": [
         "Uredi"
       ],
@@ -1297,6 +1315,9 @@
       ],
       "Orphan": [
         "Siroče"
+      ],
+      "Permission revoked": [
+        "Dozvola opozvana"
       ]
     },
     "Admin": {
@@ -1390,6 +1411,9 @@
       ],
       "Protect your passwords and identity": [
         "Zaštitite svoje lozinke i identitet"
+      ],
+      "Talk confidentially": [
+        "Razgovarajte povjerljivo"
       ]
     },
     "Assistant option": {
@@ -1422,6 +1446,16 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Ja sam izvan ureda s ograničenim pristupom mojoj e-pošti."
+      ]
+    },
+    "b2b_trials_2025: Header": {
+      "Payment details": [
+        "Detalji o plaćanju"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Kada ga otkažete, Vaš besplatni probni period neće biti pretvoren u plaćenu pretplatu, ali i dalje možete uživati u pogodnostima plana do kraja probnog perioda. Nakon toga, bit ćete unazađeni na ${ BRAND_NAME } Free plan."
       ]
     },
     "b2b_trials_Action": {
@@ -1886,9 +1920,31 @@
         "Proširi"
       ]
     },
+    "collider_2025: Info": {
+      "Access to advanced AI models": [
+        "Pristup naprednim AI modelima"
+      ],
+      "Basic chat history": [
+        "Osnovna povijest čavrljanja"
+      ],
+      "Limited daily chats": [
+        "Ograničeni dnevni razgovori"
+      ],
+      "Open source": [
+        "Otvoreni kôd"
+      ]
+    },
+    "collider_2025: Navigation": {
+      "Conversations": [
+        "Razgovori"
+      ]
+    },
     "color": {
       "apple": [
         "jabuka"
+      ],
+      "azureish white": [
+        "azurnobijela"
       ],
       "black": [
         "crno"
@@ -1916,6 +1972,9 @@
       ],
       "dandelion": [
         "maslačak"
+      ],
+      "dark cerulean": [
+        "tamnoceruleansko"
       ],
       "dim gray": [
         "zagasito siva"
@@ -1982,6 +2041,9 @@
       ],
       "reef": [
         "greben"
+      ],
+      "ruddy pink": [
+        "rumenoružičasta"
       ],
       "sahara": [
         "sahara"
@@ -3145,6 +3207,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Možete uvesti događaje u iCal formatu (ICS datoteka). Datoteka bi trebala imati maksimalnu veličinu od ${ MAX_IMPORT_FILE_SIZE_STRING } i imati do ${ MAX_IMPORT_EVENTS_STRING } događaja. Ako je vaša datoteka veća, podijelite je na manje datoteke."
+      ],
+      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
+        "Primit ćete ${ referralInfo.referrerRewardAmount } u ${ BRAND_NAME } kreditu kada se osoba koju pozovete registrira za ${ BRAND_NAME } plan, a ona će također dobiti ${ referralInfo.refereeRewardAmount } u kreditima za početak."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3711,6 +3776,9 @@
       "Add": [
         "Dodaj"
       ],
+      "Add emergency contact": [
+        "Dodajte kontakt za hitne slučajeve"
+      ],
       "Added on ${ formattedDate }": [
         "Dodano ${ formattedDate }"
       ],
@@ -3722,6 +3790,9 @@
       ],
       "Don't lose emergency access. Enable auto-renew today.": [
         "Nemojte izgubiti hitni pristup. Omogućite automatsku obnovu danas."
+      ],
+      "Emergency access for ${ user } removed": [
+        "Hitni pristupa za ${ user } uklonjen"
       ],
       "Emergency access refused": [
         "Hitni pristup odbijen"
@@ -3735,6 +3806,15 @@
       "Enable auto-renew": [
         "Omogući automatsku obnovu"
       ],
+      "Give immediate access?": [
+        "Dati trenutačni pristup?"
+      ],
+      "Included with ${ planName }": [
+        "Uključeno uz ${ planName }"
+      ],
+      "Less than a day": [
+        "Manje od jednog dana"
+      ],
       "Less than a minute left": [
         "Još manje od minute"
       ],
@@ -3744,14 +3824,23 @@
       "Only ": [
         "Samo "
       ],
+      "Protect your legacy with emergency access": [
+        "Zaštitite svoju ostavštinu pomoću pristupa za hitne slučajeve"
+      ],
       "Refuse access": [
         "Nemoj dozvoliti pristup"
       ],
       "Refuse access?": [
         "Nemoj dozvoliti pristup?"
       ],
+      "Remove trusted contact": [
+        "Ukloni pouzdani kontakt"
+      ],
       "Renew to get emergency access again.": [
         "Obnovite kako biste ponovo dobili hitni pristup."
+      ],
+      "Request access?": [
+        "Zatražiti pristup?"
       ],
       "Revoke access": [
         "Uskrati pristup?"
@@ -3762,6 +3851,9 @@
       "Subscription expired": [
         "Pretplata istekla"
       ],
+      "They may ask to access my account in case of an emergency.": [
+        "Mogu tražiti da pristupe mojem korisničkom računu u hitnom slučaju."
+      ],
       "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
         "Oni će automatski dobiti pristup za **${ days } dan**, u **${ formattedAccessibleAt }**, možete odbiti njihov zahtjev ili im dodijeliti pristup u bilo kojem trenutku.",
         "Oni će automatski dobiti pristup za **${ days } dana**, u **${ formattedAccessibleAt }**, možete odbiti njihov zahtjev ili im dodijeliti pristup u bilo kojem trenutku.",
@@ -3769,6 +3861,9 @@
       ],
       "Time required before automatically giving you access": [
         "Vrijeme potrebno prije nego što vam se automatski omogući pristup"
+      ],
+      "Time required before automatically granting them access": [
+        "Vrijeme potrebno prije nego što im se automatski omogući pristup"
       ],
       "Upgrade": [
         "Nadogradnja"
@@ -3778,6 +3873,21 @@
       ],
       "View request": [
         "Prikaži zahtjev"
+      ],
+      "Wait time saved": [
+        "Ušteđeno vrijeme čekanja"
+      ],
+      "You can now access and manage their account.": [
+        "Sada možete pristupiti njihovom korisničkom računu i upravljati njime."
+      ],
+      "You can remove their access at any time to regain exclusive control of your account.": [
+        "Možete ukloniti njihov pristup u bilo kojem trenutku kako biste povratili isključivu kontrolu nad svojim korisničkim računom."
+      ],
+      "You have not been designated as an emergency contact for anyone yet.": [
+        "Još niste dodijeljeni kao kontakt za hitne slučajeve."
+      ],
+      "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
+        "Više nećete moći zatražiti pristup računu korisnika ${ user } u slučaju nužde."
       ],
       "You will still be able to request access to the account of ${ user } at a later time.": [
         "I dalje ćete moći zatražiti pristup korisničkom računu korisnika ${ user } kasnije."
@@ -4127,6 +4237,9 @@
       ],
       "You must set a name": [
         "Morate postaviti naziv"
+      ],
+      "You've reached the maximum character number. Please shorten your message.": [
+        "Dosegli ste maksimalan broj znakova. Molimo skratite svoju poruku."
       ],
       "Your forward will not be processed.": [
         "Vaše prosljeđivanje neće biti obrađeno."
@@ -4549,17 +4662,26 @@
       ]
     },
     "Features": {
+      "${ VPN_CONNECTIONS } devices": [
+        "${ VPN_CONNECTIONS } uređaja"
+      ],
       "Ad-blocker and malware protection": [
         "Blokator oglasa i zaštita od zlonamjernih programa"
       ],
       "All premium ${ BRAND_NAME } services": [
         "Sve premium ${ BRAND_NAME } usluge"
       ],
+      "Lightning-fast VPN speeds": [
+        "Munjevito brze VPN brzine"
+      ],
       "NetShield Ad-blocker": [
         "NetShield blokator oglasa"
       ],
       "Secure streaming": [
         "Siguran streaming"
+      ],
+      "Stream from Netflix, HBO, and more": [
+        "Streamajte s Netflixa, HBO-a i više"
       ]
     },
     "Features: Tooltip": {
@@ -4829,6 +4951,9 @@
       ]
     },
     "Gmail forwarding": {
+      "Automatically forward": [
+        "Automatsko prosljeđivanje"
+      ],
       "Gmail messages to your inbox": [
         "Gmail poruke u svoju pristiglu poštu"
       ],
@@ -5370,6 +5495,15 @@
         "${ n } adrese",
         "${ n } adresa"
       ],
+      "${ name } for GNU/Linux": [
+        "${ name } za GNU/Linux"
+      ],
+      "${ name } for Web": [
+        "${ name } za web"
+      ],
+      "${ name } for Windows": [
+        "${ name } za Windows"
+      ],
       "${ number } city": [
         "${ number } grad",
         "${ number } grada",
@@ -5385,6 +5519,9 @@
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } je napredni program za zaštitu korisničkih računa pokretan sofisticiranim AI sustavima i stručnjacima koji rade danonoćno kako bi Vas zaštitili od zlonamjernih aktera i sigurnosnih prijetnji."
+      ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } je napredni program za zaštitu korisničkih računa pogonjen sofisticiranim AI sustavima i stručnjacima koji rade danonoćno kako bi zaštitili Vašu organizaciju od zlonamjernih aktera i sigurnosnih prijetnji."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } mapa pronađena",
@@ -5437,6 +5574,9 @@
       ],
       "* No credit card required.": [
         "* Nije potrebna kreditna kartica."
+      ],
+      "**Sync codes** to all your devices": [
+        "**Sinkronizirajte kôdove** na sve Vaše uređaje"
       ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } dodatnog prostora za pohranu"
@@ -5561,6 +5701,9 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Alias e-pošte funkcionira kao adresa e-pošte, ali smanjuje neželjenu poštu i čuva Vašu stvarnu e-poštu i identitet skrivenima."
       ],
+      "An error occurred while communicating with **${ applicationName }**": [
+        "Došlo je do pogreške prilikom komunikacije s **${ applicationName }**"
+      ],
       "An error occurred while communicating with the extension": [
         "Došlo je do pogreške tijekom komunikacije s proširenjem"
       ],
@@ -5614,6 +5757,9 @@
       ],
       "Auto-reply is always active on the days of the week you select, between the selected hours.": [
         "Automatski odgovor uvijek je aktivan u odabranim danima u tjednu i to između odabranih sati."
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Automatski očistite e-poštu premještenu u Otpad i Neželjenu poštu prije više od 30 dana."
       ],
       "Available on macOS, Windows, and Linux.": [
         "Dostupno na macOS, Windows i Linux."
@@ -5854,6 +6000,9 @@
       "End-to-end encrypted": [
         "End-to-End šifriranje"
       ],
+      "Ends on ${ formattedPeriodEndDate }": [
+        "Završava ${ formattedPeriodEndDate }"
+      ],
       "Enter key manually instead": [
         "Ručno unesite ključ"
       ],
@@ -5911,6 +6060,9 @@
       "finance": [
         "financije"
       ],
+      "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
+        "Za pristup e-pošti u svako doba i optimizirano mobilno iskustvo, preuzmite našu ${ androidAppLink } ili ${ iosAppLink }."
+      ],
       "for choosing ${ product }": [
         "što ste odabrali ${ product }"
       ],
@@ -5932,8 +6084,14 @@
       "Generating a new recovery phrase will deactivate your old one.": [
         "Generiranjem nove fraze za oporavak deaktivirat će se Vaša stara fraza."
       ],
+      "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
+        "Preuzmite ${ AUTHENTICATOR_APP_NAME } za sve svoje uređaje."
+      ],
       "Get ${ upsellPlanName }": [
         "Nabavite ${ upsellPlanName }"
+      ],
+      "Get it on Google Play": [
+        "Preuzmite na Google Playju"
       ],
       "Get started with the referral link above.": [
         "Započnite s poveznicom za preporuku iznad."
@@ -5997,6 +6155,9 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Ako ste nedavno resetirali svoju lozinku, možete koristiti metodu oporavka podataka kako biste otključali svoje podatke"
+      ],
+      "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
+        "Ako Vaša organizacija ima javne ličnosti, rukuje osjetljivim podacima ili bi mogla biti metom kibernetičkih napada, izrazito se preporučuje da omogućite ${ PROTON_SENTINEL_NAME } za sve u Vašoj organizaciji."
       ],
       "Image description": [
         "Opis slike"
@@ -6161,6 +6322,9 @@
       ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
         "Velike usluge e-pošte mogu odbiti ili filtrirati Vašu e-poštu u neželjenu poštu ako SPF/DKIM/DMARC nedostaju ili nisu pravilno postavljeni."
+      ],
+      "Manage which features the members of your organization can access.": [
+        "Upravljajte kojim značajkama članovi Vaše organizacije mogu pristupiti."
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logotip"
@@ -6442,6 +6606,9 @@
       ],
       "Settings updated": [
         "Ažurirane postavke"
+      ],
+      "Shared ${ vaultLink } deleted": [
+        "Podijeljeni ${ vaultLink } izbrisan"
       ],
       "Shared vault updated": [
         "Dijeljeni trezor je ažuriran"
@@ -6939,6 +7106,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Vaše datoteke će biti šifrirane i spremljene"
+      ],
+      "Your free trial includes 1 dedicated server.": [
+        "Vaš besplatni probni period uključuje 1 namjenski poslužitelj."
       ],
       "Your friends get **2 weeks for free** on their chosen plan.": [
         "Vaši prijatelji dobivaju **2 tjedna besplatno** na svom odabranom planu."
@@ -7469,6 +7639,9 @@
       "5 minutes": [
         "5 minuta"
       ],
+      "500 GB Storage": [
+        "500 GB prostora za pohranu"
+      ],
       "Account holder": [
         "Vlasnik računa"
       ],
@@ -7619,6 +7792,9 @@
       "BTC amount": [
         "Iznos u BTC-u"
       ],
+      "Built-in 2FA authenticator": [
+        "Ugrađeni 2FA autentifikator"
+      ],
       "Calendar": [
         "Kalendar"
       ],
@@ -7751,6 +7927,9 @@
       "Days of the week": [
         "Dani u tjednu"
       ],
+      "Default email address": [
+        "Zadana adresa e-pošte"
+      ],
       "Default language": [
         "Zadani jezik"
       ],
@@ -7807,6 +7986,9 @@
       ],
       "Email address": [
         "Adresa e-pošte"
+      ],
+      "Email categories": [
+        "Kategorije e-pošte"
       ],
       "Email or username": [
         "Adresa e-pošte ili korisničko ime"
@@ -8297,6 +8479,9 @@
       "Undo send": [
         "Poništi slanje"
       ],
+      "Unlimited hide-my-email aliases": [
+        "Neograničen broj hide-my-email pseudonima"
+      ],
       "Upload 1 or more recovery files or encryption keys": [
         "Učitajte jednu ili više datoteka za oporavak ili ključeva za šifriranje"
       ],
@@ -8368,6 +8553,9 @@
       ]
     },
     "label": {
+      "Notification phone number": [
+        "Telefonski broj za obavijesti"
+      ],
       "Recovery phone number": [
         "Broj mobitela za oporavak"
       ],
@@ -8760,6 +8948,11 @@
         "tijekom Vašeg prvog mjeseca"
       ]
     },
+    "Maintenance mode": {
+      "This feature is temporarily unavailable": [
+        "Ova značajka je privremeno nedostupna"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "Aktiviraj korisnika"
@@ -8778,6 +8971,9 @@
       ],
       "Edit": [
         "Uredi"
+      ],
+      "Enable user": [
+        "Omogući korisnika"
       ],
       "Remove": [
         "Ukloni"
@@ -9022,6 +9218,9 @@
       ],
       "Back": [
         "Natrag"
+      ],
+      "Back to ${ MEET_SHORT_APP_NAME }": [
+        "Natrag na ${ MEET_SHORT_APP_NAME }"
       ],
       "Back to calendar": [
         "Natrag na kalendar"
@@ -9702,6 +9901,9 @@
       "Too many recent API requests": [
         "Prevelik broj zahtjeva API-ju"
       ],
+      "Trial started": [
+        "Probno razdoblje započelo"
+      ],
       "Two-factor authentication has been enforced for administrators": [
         "Dvofaktorska autentikacija je primijenjena za administratore"
       ]
@@ -10195,6 +10397,11 @@
         "Nadogradi moj plan"
       ]
     },
+    "pass_signup_2023: Action - open web app": {
+      "Continue to ${ appName }": [
+        "Nastavite na ${ appName }"
+      ]
+    },
     "pass_signup_2023: Feature": {
       "End-to-end encrypted": [
         "End-to-End šifriranje"
@@ -10423,6 +10630,9 @@
       "Use a data recovery method or reset the organization key to restore administrator privileges.": [
         "Koristite metodu oporavka podataka ili resetirajte ključ organizacije za obnovu administratorskih privilegija."
       ],
+      "We have verified the authenticity of this sender and invitation.": [
+        "Provjerili smo autentičnost ovog pošiljatelja i pozivnice."
+      ],
       "You have been made administrator of the organization **${ organizationName }** by": [
         "Imenovani ste administratorom organizacije **${ organizationName }** od strane"
       ]
@@ -10614,6 +10824,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Molimo opišite problem i pridružite sve poruke o pogreškama"
+      ],
+      "Please insert link first": [
+        "Molimo prvo umetnite poveznicu"
       ],
       "Please select a country": [
         "Molimo odaberite državu"
@@ -10861,6 +11074,27 @@
         "Prikaži"
       ]
     },
+    "RecoveryPhrase: Info": {
+      "I understand that if I lose my recovery phrase, I may permanently lose access to my account.": [
+        "Razumijem da ako izgubim svoju frazu za oporavak, mogu trajno izgubiti pristup svom korisničkom računu."
+      ]
+    },
+    "RecoveryPhrase: Title": {
+      "Save your Recovery Kit": [
+        "Spremite svoj Komplet za oporavak"
+      ],
+      "Save your recovery phrase": [
+        "Spremite svoju frazu za oporavak"
+      ]
+    },
+    "Referral": {
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Ako se pretplatite prije ovog datuma,** dobit žete **${ referrerRewardAmount }** u kreditima."
+      ],
+      "your subscription": [
+        "Vaša pretplata"
+      ]
+    },
     "Remark about a key type option": {
       "Classic": [
         "Klasično"
@@ -11041,6 +11275,9 @@
       "Add a recovery phone number": [
         "Dodajte telefonski broj za oporavak"
       ],
+      "Add an alternative email address": [
+        "Dodajte alternativnu adresu e-pošte"
+      ],
       "Back to Safety Review": [
         "Natrag na sigurnosni pregled"
       ],
@@ -11055,6 +11292,12 @@
       ],
       "Continue to Safety Review": [
         "Nastavite na sigurnosni pregled"
+      ],
+      "Disable account reset by email": [
+        "Onemogući ponovno pokretanje korisničkog računa putem e-pošte"
+      ],
+      "Disable recovery by phone ": [
+        "Onemogućite oporavak putem telefona "
       ],
       "Download ${ size }": [
         "Preuzmi ${ size }"
@@ -11119,11 +11362,17 @@
       "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
         "Možete koristiti sigurnosnu frazu iz ovog Kompleta za oporavak kako biste u potpunosti vratili svoj račun prilikom poništavanja lozinke, stoga je svakako čuvajte na sigurnom mjestu."
       ],
+      "You can use your email to regain access to your account if you forget your password.": [
+        "Možete koristiti svoju e-poštu kako biste ponovno pristupili svom korisničkom računu ako zaboravite svoju lozinku."
+      ],
       "You can use your recovery phone to regain access to your account if you forget your password.": [
         "Možete koristiti svoj telefon za oporavak kako biste ponovno pristupili svom korisničkom računu ako zaboravite svoju lozinku."
       ],
       "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
         "Prethodno ste preuzeli Komplet za oporavak. Preuzimanjem novog, **stari će biti deaktiviran**."
+      ],
+      "You recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
+        "Vašu adresu e-pošte za oporavak napadači bi mogli zloupotrijebiti kako bi preuzeli Vaš korisnički račun. ${ disableEmail } za povećanje sigurnosti Vašeg korisničkog računa."
       ],
       "Your account and data can be recovered. You have recommended actions.": [
         "Vaš korisnički račun i podaci mogu se oporaviti. Imate preporučene radnje."
@@ -11133,6 +11382,9 @@
       ],
       "Your account is secure.": [
         "Vaš korisnički račun je siguran."
+      ],
+      "Your email is set": [
+        "Vaša e-pošta je postavljena"
       ],
       "Your recovery email": [
         "Vaša adresa e-pošte za oporavak"
@@ -11649,6 +11901,9 @@
       "Stream your favorite TV shows and movies": [
         "Streamajte svoje omiljene TV emisije i filmove"
       ],
+      "Swiss-based": [
+        "Bazirano u Švicarskoj"
+      ],
       "Sync files across devices and users": [
         "Sinkronizirajte datoteke između uređaja i korisnika"
       ],
@@ -11896,6 +12151,9 @@
       ]
     },
     "Spotlight": {
+      "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Ostvarite kredite kada se osoba koju pozovete pretplati na ${ BRAND_NAME } plan."
+      ],
       "Invite friends to ${ BRAND_NAME }": [
         "Pozovite prijatelje u ${ BRAND_NAME }"
       ]
@@ -12389,6 +12647,11 @@
         "Besplatna proba"
       ]
     },
+    "Subtitle": {
+      "Pay once, access forever.": [
+        "Platite jednom, pristupite zauvijek."
+      ]
+    },
     "Success": {
       "Address added": [
         "Adresa je dodana"
@@ -12762,6 +13025,9 @@
       "3. Select config file and download": [
         "3. Odaberite konfiguracijsku datoteku i preuzmite"
       ],
+      "A filter with this name already exists": [
+        "Filter s ovim nazivom već postoji"
+      ],
       "Access control": [
         "Kontrola pristupa"
       ],
@@ -12782,6 +13048,9 @@
       ],
       "Account recovery": [
         "Oporavak računa"
+      ],
+      "Account restricted": [
+        "Račun ograničen"
       ],
       "Account suspended": [
         "Račun je suspendiran"
@@ -12857,6 +13126,9 @@
       ],
       "Amount due": [
         "Dospjeli iznos"
+      ],
+      "Anytime, anywhere access": [
+        "Pristup bilo kada i bilo gdje"
       ],
       "App": [
         "Aplikacija"
@@ -12956,6 +13228,9 @@
       ],
       "Connect ${ name }": [
         "Poveži sa ${ name }"
+      ],
+      "Connect more addresses": [
+        "Povežite više adresa"
       ],
       "Connect organization": [
         "Povežite organizaciju"
@@ -13104,6 +13379,9 @@
       "Download ${ VPN_APP_NAME }": [
         "Preuzmi ${ VPN_APP_NAME }"
       ],
+      "Download the desktop app": [
+        "Preuzmite aplikaciju za radnu površinu"
+      ],
       "Downloads": [
         "Preuzimanja"
       ],
@@ -13187,6 +13465,9 @@
       ],
       "External PGP settings": [
         "Postavke vanjskog PGP-a"
+      ],
+      "Filter name cannot contain only spaces": [
+        "Ime filtra ne smije sadržavati samo razmake"
       ],
       "Filters": [
         "Filtri"
@@ -13374,6 +13655,9 @@
       "Night theme": [
         "Noćna tema"
       ],
+      "No need to empty the trash": [
+        "Nema potrebe za pražnjenjem otpada"
+      ],
       "No recovery method": [
         "Nema načina za oporavak"
       ],
@@ -13412,6 +13696,9 @@
       ],
       "Other sign-in issues": [
         "Drugi problemi s prijavom"
+      ],
+      "Pass Plus Lifetime for ${ plusLifetimePrice }": [
+        "Pass Plus doživotno za ${ plusLifetimePrice }"
       ],
       "Password": [
         "Lozinka"
@@ -13581,6 +13868,12 @@
       "Set up a recovery method": [
         "Postavite način oporavka"
       ],
+      "Set up authenticator app": [
+        "Postavite aplikaciju autentifikatora"
+      ],
+      "Set up your family account": [
+        "Postavite svoj obiteljski korisnički račun"
+      ],
       "Set up your organization": [
         "Postavite vašu organizaciju"
       ],
@@ -13666,6 +13959,12 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "This field cannot be empty": [
+        "Ovo polje ne može biti prazno"
+      ],
+      "This field cannot contain only spaces": [
+        "Ovo polje ne smije sadržavati samo razmake"
       ],
       "Time zone": [
         "Vremenska zona"
@@ -13877,6 +14176,9 @@
       ]
     },
     "Tooltip": {
+      "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
+        "Promjena na strani Gmaila blokira ${ BRAND_NAME } od povezivanja. Dodijelite dopuštenje za ponovno uspostavljanje funkcionalnosti e-pošte"
+      ],
       "Account is disconnected": [
         "Račun je odspojen"
       ],
@@ -13954,6 +14256,9 @@
       ],
       "This address has been disabled": [
         "Ova adresa e-pošte je onemogućena"
+      ],
+      "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
+        "Ova adresa e-pošte može se koristiti samo za prijavu na Vaš ${ BRAND_NAME } korisnički račun."
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Ova značajka odgađa slanje vaše e-pošte, dajući vam mogućnost poništavanja slanja tijekom odabranog vremenskog okvira."
@@ -14157,6 +14462,9 @@
       ]
     },
     "Update font modal": {
+      "Today is a good day to write an email": [
+        "Danas je dobar dan za pisanje e-pošte"
+      ],
       "Update default font and size": [
         "Ažuriraj zadani font i veličinu."
       ]
@@ -14255,6 +14563,9 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "2FA"
+      ],
       "Inactive": [
         "Neaktivano"
       ],
@@ -14269,6 +14580,9 @@
       ],
       "SSO user provided by your identity provider": [
         "SSO korisnik kojeg pruža Vaš davatelj identiteta"
+      ],
+      "User has enabled two-factor authentication with an authenticator app.": [
+        "Korisnik je omogućio dvofaktorsku autentifikaciju pomoću aplikacije za autentifikaciju."
       ],
       "Writing assistant": [
         "Pomoćnik za pisanje"

@@ -1746,6 +1746,9 @@
       "Extra password successfully removed": [
         "Extralösenord borttaget"
       ],
+      "Failed updating your vault organization": [
+        "Misslyckades att uppdatera din valvorganisation"
+      ],
       "Fill in the CSV with your data": [
         "Fyll i CSV med dina data"
       ],
@@ -1923,10 +1926,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
-        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"
@@ -2392,6 +2391,9 @@
       "Unverified": [
         "Overifierad"
       ],
+      "Updating vault organization...": [
+        "Uppdaterar valvorganisation …"
+      ],
       "Upgrade Now to Unlock Premium Features": [
         "Uppgradera nu för att låsa upp premiumfunktioner"
       ],
@@ -2418,6 +2420,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "Valv “${ share.content.name }“ togs bort"
+      ],
+      "Vault organization successfully updated": [
+        "Valvorganisation uppdaterad"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Valvdelning: ${ vaultMembersCount } medlem",

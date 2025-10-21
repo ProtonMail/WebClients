@@ -237,6 +237,9 @@
       "Create": [
         "Criar"
       ],
+      "Create a new bookings page": [
+        "Criar uma nova página de reservas"
+      ],
       "Create a new contact group": [
         "Criar um grupo de contatos"
       ],
@@ -3262,6 +3265,20 @@
         "Adicionar calendário"
       ]
     },
+    "Duo offer": {
+      "/month": [
+        "/mês"
+      ],
+      "1 TB of storage to share": [
+        "1 TB de armazenamento para compartilhar"
+      ],
+      "2 user accounts": [
+        "2 contas de usuário"
+      ],
+      "Only": [
+        "Somente"
+      ]
+    },
     "Duplicate event button tooltip": {
       "Duplicate event": [
         "Duplicar evento"
@@ -3301,8 +3318,14 @@
       "All events in this series were updated.": [
         "Todos os eventos desta série foram atualizados."
       ],
+      "DESCRIPTION:": [
+        "DESCRIÇÃO:"
+      ],
       "Here's what changed:": [
         "Aqui está o que mudou:"
+      ],
+      "LOCATION:": [
+        "LOCALIZAÇÃO:"
       ],
       "NOTE:": [
         "NOTA:"
@@ -3315,6 +3338,15 @@
       ],
       "This event was updated.": [
         "Este evento foi atualizado."
+      ],
+      "TIME:": [
+        "HORA:"
+      ],
+      "TITLE:": [
+        "TÍTULO:"
+      ],
+      "You are invited to": [
+        "Você está convidado para"
       ]
     },
     "Email body for invitation (date part)": {
@@ -5315,7 +5347,7 @@
         "Ativando a exclusão automática…"
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
-        "Garanta uma comunicação totalmente privada e criptografada. Resgate seu endereço de e-mail ${ BRAND_NAME } gratuito agora."
+        "Garanta uma comunicação totalmente privada e criptografada. Crie seu endereço de e-mail ${ BRAND_NAME } gratuito agora."
       ],
       "Enter the code from your authenticator app": [
         "Insira o código do seu aplicativo de autenticação."
@@ -6983,6 +7015,9 @@
       "Add a gift code": [
         "Adicionar código de vale-presente"
       ],
+      "Bookings pages": [
+        "Páginas de reservas"
+      ],
       "Calendars": [
         "Calendários"
       ],
@@ -8363,7 +8398,7 @@
         "Código de acesso copiado para a área de transferência"
       ],
       "Passphrase copied to clipboard": [
-        "Passphrase copiada para a área de transferência"
+        "Frase secreta copiada para a área de transferência"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8538,11 +8573,17 @@
       "${ pricingTitle } offer expires today!": [
         "A oferta ${ pricingTitle } expira hoje!"
       ],
+      "Don't show this again": [
+        "Não mostrar isso novamente"
+      ],
       "Don’t show this again": [
         "Não exibir novamente"
       ],
       "Don’t show this offer again": [
         "Não mostrar mais esta oferta"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Obter ${ BRAND_NAME } Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "Obtenha o ${ BRAND_NAME } Unlimited"

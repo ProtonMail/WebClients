@@ -2276,6 +2276,9 @@
       "How safe is Telegram?": [
         "Telegram 的安全性如何？"
       ],
+      "How to change your IP address on Windows": [
+        "如何在 Windows 上更改您的 IP 地址"
+      ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "在本文中，我们将介绍使用 WiFi 时谁可以查看您的上网历史记录、他们能看到什么以及他们为什么会这样做。"
       ],
@@ -4612,7 +4615,7 @@
         "二维码登录已启用"
       ],
       "Scan QR code on your mobile device to sign in": [
-        "扫描移动设备上的二维码以登录"
+        "使用移动设备扫描二维码即可登录"
       ],
       "Scan the code to sign in": [
         "扫码以登录"
@@ -7725,11 +7728,20 @@
       "**${ appName }** is not supported.": [
         "不支持**${ appName }**。"
       ],
+      "**Enable automatic backups** for peace of mind": [
+        "**开启自动备份**，安全无忧"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**获取 ${ BRAND_NAME } 地址**以使用所有 ${ BRAND_NAME_TWO } 服务，包括 ${ MAIL_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME }。"
       ],
+      "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
+        "从其他双重验证应用（如 Google Authenticator）**导入现有的验证码**"
+      ],
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
         "使用您的推荐链接**邀请您的朋友**体验 ${ BRAND_NAME }"
+      ],
+      "**Sync codes** to all your devices": [
+        "在所有设备之间**同步验证码**"
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } 更多"
@@ -7820,6 +7832,9 @@
       ],
       "Add a recovery phone number": [
         "添加密保手机"
+      ],
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
+        "登录时要求输入双重验证码，为您的账户安全再增设一道防线。"
       ],
       "Add domain": [
         "添加域名"
@@ -7991,6 +8006,9 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "确定要移除域名 ${ boldDomain } 吗？"
+      ],
+      "Are you sure you want to revoke certificate **${ name }**": [
+        "确定要撤销证书 **${ name }** 吗？"
       ],
       "Ask your organization admin to setup Gateways.": [
         "要求您的组织管理员设置网关。"
@@ -8361,6 +8379,9 @@
       "Download recovery file": [
         "下载恢复文件"
       ],
+      "Download the app and import existing codes.": [
+        "下载应用后您还可以导入先前已有的验证码。"
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "即刻下载您所需的应用，随时随地保护隐私。"
       ],
@@ -8597,6 +8618,9 @@
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "新生成的恢复密语将取代旧的。"
+      ],
+      "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
+        "使用 ${ AUTHENTICATOR_APP_NAME } 即可在您的任意设备上获取验证码。"
       ],
       "Get ${ upsellPlanName }": [
         "开通 ${ upsellPlanName }"
@@ -8841,6 +8865,9 @@
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "更改服务器的国家/地区需要 10 天时间，因此请确保您的选择正确。"
       ],
+      "It won't be linked to your ${ BRAND_NAME } Account, so there's **no risk of getting locked out**.": [
+        "该应用不会与您的 ${ BRAND_NAME } 账户绑定，**无需担心因忘记密码而无法使用**。"
+      ],
       "It's better to have:": [
         "最好是有："
       ],
@@ -9018,6 +9045,9 @@
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode 图标"
       ],
+      "Maybe later": [
+        "以后再说"
+      ],
       "Medium Priority": [
         "中等优先顺序"
       ],
@@ -9125,9 +9155,6 @@
       ],
       "Not a valid URL": [
         "URL 无效"
-      ],
-      "Not yet available in our Android mobile app.": [
-        "尚未在我们的 Android 移动应用程序中提供。"
       ],
       "Number of dedicated servers in the organization": [
         "组织中的专用服务器数量"
@@ -9447,9 +9474,6 @@
       "Restore": [
         "还原"
       ],
-      "Revoke certificate ${ name }": [
-        "吊销证书 ${ name }"
-      ],
       "Right to Left": [
         "从右到左"
       ],
@@ -9583,7 +9607,7 @@
         "显示原始邮件"
       ],
       "Sign in only": [
-        "仅登入"
+        "仅用于登录"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "登录 ${ MAIL_APP_NAME } 以激活您的地址"
@@ -9593,6 +9617,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "作为 Proton 忠实用户，您拥有以下特权。"
+      ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
+        "第三方服务或设备可以使用 SMTP 投递功能通过您的 ${ MAIL_APP_NAME } 自有域名地址发送邮件。"
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "第三方服务或设备可以使用 SMTP 投递功能通过您的 ${ MAIL_APP_NAME } 自有域名地址发送邮件。如需开通此功能，请${ createTicket }并说明您的用途、希望使用的自有域名，以及每小时与每天的预计邮件数量。"
@@ -9752,6 +9779,9 @@
       ],
       "The most recent data update, excluding breaches.": [
         "最近更新的数据，不包括外泄数据。"
+      ],
+      "The most secure and private two-factor authentication app, that's free and open-source.": [
+        "最安全、最私密的双重验证应用，并且免费开源。"
       ],
       "The name will be visible to your users while they are signed in.": [
         "您的用户在登录时将可以看到该名称。"
@@ -10056,6 +10086,9 @@
       "Upgrade to unlock": [
         "升级以解锁"
       ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "开通 ${ firstPlanNames } 或 ${ lastPlanName } 方可启用 ${ PROTON_SENTINEL_NAME }。"
+      ],
       "Upload picture": [
         "上传图片"
       ],
@@ -10292,6 +10325,9 @@
       ],
       "Why?": [
         "为什么？"
+      ],
+      "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
+        "使用 ${ AUTHENTICATOR_APP_NAME }，您可以："
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "开通 Business 套餐或者 Enterprise 套餐，为团体选购 ${ boldDedicatedServers }，分到各 ${ boldGateways }，设置谁要使用哪些服务器。"
@@ -10577,9 +10613,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "文件会加密保存"
-      ],
-      "Your free trial includes ${ ownedCount } dedicated server.": [
-        "免费试用版包含 ${ ownedCount } 个专用服务器。"
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "您的免费试用已成功转换为 ${ cycle } 个月订阅。您的续订日期是 ${ nextBillingDate }。"
@@ -11866,6 +11899,9 @@
       ],
       "Method for importing metadata": [
         "导入元数据的方法"
+      ],
+      "Minimum ${ MIN_CHARS } characters": [
+        "最少 ${ MIN_CHARS } 个字符"
       ],
       "Minimum number of characters": [
         "最少字符单位"
@@ -13745,7 +13781,7 @@
         "经 Tor 连接 VPN"
       ],
       "Two-factor authentication": [
-        "双因素身份验证"
+        "双重验证"
       ],
       "Unlimited devices": [
         "无设备数量限制"
@@ -16394,14 +16430,14 @@
       ]
     },
     "Safety review": {
-      " **Disable recovery by phone** to ensure highest possible security of your account.": [
-        " **禁用电话恢复**，以确保您的账户拥有最高的安全。"
+      " **Disable recovery by phone** to prevent attackers from taking over your account.": [
+        " **禁止通过短信重置密码** 以防止攻击者窃取您的账户。"
       ],
       " **Enable recovery by phone** to regain access to your account if you forget your password.": [
         " 如果忘记密码，可通过**密保手机**恢复密码，并重新访问您的账户。"
       ],
-      "${ BRAND_NAME } will use this address to keep you updated on your account security..": [
-        "关于账户安全的问题，${ BRAND_NAME } 将使用此邮箱地址与您保持联络。"
+      "${ BRAND_NAME } will use this address to keep you updated on your account security.": [
+        "${ BRAND_NAME } 将使用此邮箱地址与您保持联络关于账户安全的问题。"
       ],
       "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
         "重置密码时，${ BRAND_NAME } 将使用此地址通过电子邮件发送重置密码。"
@@ -16412,8 +16448,8 @@
       "${ enableDeviceRecovery } to ensure your data can be recovered.": [
         "${ enableDeviceRecovery } 以确保您的数据可以恢复。"
       ],
-      "**Disable account reset by email** to ensure highest possible security of your account.": [
-        "**禁用通过电子邮件重置账户**，以确保您的帐户拥有最高的安全。"
+      "**Disable account reset by email** to prevent attackers from taking over your account.": [
+        "**禁止通过邮件重置密码** 以防止攻击者窃取您的账户。"
       ],
       "**Enable recovery by email** to regain access to your account if you forget your password.": [
         "如果忘记密码，可通过**密保邮箱**恢复密码，并重新访问您的账户。"
@@ -20493,8 +20529,8 @@
       "Reused passwords": [
         "重复使用的密码"
       ],
-      "Revoke certificate": [
-        "吊销证书"
+      "Revoke certificate?": [
+        "撤销证书?"
       ],
       "Same inbox, shorter email address": [
         "同一个收件箱，但使用更短的邮箱地址"
@@ -20686,7 +20722,7 @@
         "文本"
       ],
       "Theme": [
-        "主题"
+        "配色"
       ],
       "There are no events for your account": [
         "您的账户暂无任何活动"
@@ -20705,6 +20741,9 @@
       ],
       "Time zone": [
         "时区"
+      ],
+      "Try ${ AUTHENTICATOR_APP_NAME }": [
+        "体验 ${ AUTHENTICATOR_APP_NAME }"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "启用 ${ DARK_WEB_MONITORING_NAME }"
@@ -21157,7 +21196,7 @@
         "这可能时密码重置或用户尚未登录造成的。"
       ],
       "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
-        "此电子邮件地址只能用来登入您的 ${ BRAND_NAME } 账户。"
+        "此邮箱地址只能用于登录您的 ${ BRAND_NAME } 账户。"
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "执行账户管理操作时，该电子邮件地址将显示给所有组织成员。"

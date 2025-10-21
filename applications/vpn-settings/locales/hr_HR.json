@@ -20,6 +20,9 @@
       "Add": [
         "Dodaj"
       ],
+      "Add ${ BRAND_NAME } address": [
+        "Dodaj ${ BRAND_NAME } adresu"
+      ],
       "Add account": [
         "Dodaj račun"
       ],
@@ -777,6 +780,12 @@
       "Disable address “${ emailAddress }”": [
         "Onemogući adresu \"${ emailAddress }\""
       ],
+      "Disconnect": [
+        "Odspoji"
+      ],
+      "Disconnect address “${ emailAddress }”": [
+        "Odspoji adresu \"${ emailAddress }\""
+      ],
       "Edit": [
         "Uredi"
       ],
@@ -829,6 +838,9 @@
       ],
       "Orphan": [
         "Siroče"
+      ],
+      "Permission revoked": [
+        "Dozvola opozvana"
       ]
     },
     "Admin": {
@@ -923,6 +935,11 @@
       ],
       "Unsupported event": [
         "Događaj nije podržan"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Kada ga otkažete, Vaš besplatni probni period neće biti pretvoren u plaćenu pretplatu, ali i dalje možete uživati u pogodnostima plana do kraja probnog perioda. Nakon toga, bit ćete unazađeni na ${ BRAND_NAME } Free plan."
       ]
     },
     "b2b_trials_Action": {
@@ -3097,17 +3114,26 @@
       ]
     },
     "Features": {
+      "${ VPN_CONNECTIONS } devices": [
+        "${ VPN_CONNECTIONS } uređaja"
+      ],
       "Ad-blocker and malware protection": [
         "Blokator oglasa i zaštita od zlonamjernih programa"
       ],
       "All premium ${ BRAND_NAME } services": [
         "Sve premium ${ BRAND_NAME } usluge"
       ],
+      "Lightning-fast VPN speeds": [
+        "Munjevito brze VPN brzine"
+      ],
       "NetShield Ad-blocker": [
         "NetShield blokator oglasa"
       ],
       "Secure streaming": [
         "Siguran streaming"
+      ],
+      "Stream from Netflix, HBO, and more": [
+        "Streamajte s Netflixa, HBO-a i više"
       ]
     },
     "Features: Tooltip": {
@@ -3273,6 +3299,9 @@
       ]
     },
     "Gmail forwarding": {
+      "Automatically forward": [
+        "Automatsko prosljeđivanje"
+      ],
       "Gmail messages to your inbox": [
         "Gmail poruke u svoju pristiglu poštu"
       ],
@@ -3672,6 +3701,9 @@
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } je napredni program za zaštitu korisničkih računa pokretan sofisticiranim AI sustavima i stručnjacima koji rade danonoćno kako bi Vas zaštitili od zlonamjernih aktera i sigurnosnih prijetnji."
       ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } je napredni program za zaštitu korisničkih računa pogonjen sofisticiranim AI sustavima i stručnjacima koji rade danonoćno kako bi zaštitili Vašu organizaciju od zlonamjernih aktera i sigurnosnih prijetnji."
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } mapa pronađena",
         "${ providerFoldersNumLocalized } mape pronađene",
@@ -3708,6 +3740,9 @@
       ],
       "(default)": [
         "(zadano)"
+      ],
+      "**Sync codes** to all your devices": [
+        "**Sinkronizirajte kôdove** na sve Vaše uređaje"
       ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } dodatnog prostora za pohranu"
@@ -3939,6 +3974,9 @@
       "End-to-end email encryption is disabled for this group. It can be enabled.": [
         "Šifriranje e-pošte s kraja na kraj onemogućeno je za ovu grupu. Može se omogućiti."
       ],
+      "Ends on ${ formattedPeriodEndDate }": [
+        "Završava ${ formattedPeriodEndDate }"
+      ],
       "Enter key manually instead": [
         "Ručno unesite ključ"
       ],
@@ -3993,6 +4031,9 @@
       "Gateways": [
         "Pristupnici"
       ],
+      "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
+        "Preuzmite ${ AUTHENTICATOR_APP_NAME } za sve svoje uređaje."
+      ],
       "Get ${ upsellPlanName }": [
         "Nabavite ${ upsellPlanName }"
       ],
@@ -4040,6 +4081,9 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Ako nastavite sa snižavanjem statusa, izgubit ćete pristup plaćenim ${ VPN_APP_NAME } značajkama."
+      ],
+      "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
+        "Ako Vaša organizacija ima javne ličnosti, rukuje osjetljivim podacima ili bi mogla biti metom kibernetičkih napada, izrazito se preporučuje da omogućite ${ PROTON_SENTINEL_NAME } za sve u Vašoj organizaciji."
       ],
       "Import from": [
         "Uvoz iz"
@@ -4154,6 +4198,9 @@
       ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
         "Velike usluge e-pošte mogu odbiti ili filtrirati Vašu e-poštu u neželjenu poštu ako SPF/DKIM/DMARC nedostaju ili nisu pravilno postavljeni."
+      ],
+      "Manage which features the members of your organization can access.": [
+        "Upravljajte kojim značajkama članovi Vaše organizacije mogu pristupiti."
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logotip"
@@ -4319,6 +4366,9 @@
       ],
       "Set up your organization": [
         "Postavite vašu organizaciju"
+      ],
+      "Shared ${ vaultLink } deleted": [
+        "Podijeljeni ${ vaultLink } izbrisan"
       ],
       "Shared vault updated": [
         "Dijeljeni trezor je ažuriran"
@@ -4627,6 +4677,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Vaše datoteke će biti šifrirane i spremljene"
+      ],
+      "Your free trial includes 1 dedicated server.": [
+        "Vaš besplatni probni period uključuje 1 namjenski poslužitelj."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Vaši podaci za prijavi neće biti spremljeni nakon što se uvoz završi."
@@ -5605,6 +5658,9 @@
       "Edit": [
         "Uredi"
       ],
+      "Enable user": [
+        "Omogući korisnika"
+      ],
       "Remove": [
         "Ukloni"
       ],
@@ -6533,6 +6589,9 @@
       "Use a data recovery method or reset the organization key to restore administrator privileges.": [
         "Koristite metodu oporavka podataka ili resetirajte ključ organizacije za obnovu administratorskih privilegija."
       ],
+      "We have verified the authenticity of this sender and invitation.": [
+        "Provjerili smo autentičnost ovog pošiljatelja i pozivnice."
+      ],
       "You have been made administrator of the organization **${ organizationName }** by": [
         "Imenovani ste administratorom organizacije **${ organizationName }** od strane"
       ]
@@ -6884,6 +6943,14 @@
       ],
       "Verify recovery phone?": [
         "Potvrditi broj telefona za oporavak?"
+      ]
+    },
+    "Referral": {
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Ako se pretplatite prije ovog datuma,** dobit žete **${ referrerRewardAmount }** u kreditima."
+      ],
+      "your subscription": [
+        "Vaša pretplata"
       ]
     },
     "Remove organization logo": {
@@ -8145,6 +8212,9 @@
       "Account": [
         "Korisnički račun"
       ],
+      "Account restricted": [
+        "Račun ograničen"
+      ],
       "Account suspended": [
         "Račun je suspendiran"
       ],
@@ -8267,6 +8337,9 @@
       ],
       "Confirm phone number": [
         "Potvrdite broj telefona"
+      ],
+      "Connect more addresses": [
+        "Povežite više adresa"
       ],
       "Connect organization": [
         "Povežite organizaciju"
@@ -8619,6 +8692,9 @@
       "Set organization name": [
         "Postavite naziv organizacije"
       ],
+      "Set up authenticator app": [
+        "Postavite aplikaciju autentifikatora"
+      ],
       "Set up your organization": [
         "Postavite vašu organizaciju"
       ],
@@ -8788,6 +8864,9 @@
       ]
     },
     "Tooltip": {
+      "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
+        "Promjena na strani Gmaila blokira ${ BRAND_NAME } od povezivanja. Dodijelite dopuštenje za ponovno uspostavljanje funkcionalnosti e-pošte"
+      ],
       "Customize import to reduce the number of folders": [
         "Prilagodite uvoz da biste smanjili broj mapa"
       ],
@@ -8823,6 +8902,9 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Podmape sustava prikazat će se kao zasebne mape u ${ MAIL_APP_NAME }u"
+      ],
+      "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
+        "Ova adresa e-pošte može se koristiti samo za prijavu na Vaš ${ BRAND_NAME } korisnički račun."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Otkrili smo problem s vašim DNS postavkama. Pobrinite se da se vaši zapisi podudaraju s uputama u nastavku. Ako se problem nastavi, morat ćemo isključiti potpisivanje DKIM-a."
@@ -9039,6 +9121,9 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "2FA"
+      ],
       "Inactive": [
         "Neaktivano"
       ],
@@ -9053,6 +9138,9 @@
       ],
       "SSO user provided by your identity provider": [
         "SSO korisnik kojeg pruža Vaš davatelj identiteta"
+      ],
+      "User has enabled two-factor authentication with an authenticator app.": [
+        "Korisnik je omogućio dvofaktorsku autentifikaciju pomoću aplikacije za autentifikaciju."
       ],
       "Writing assistant": [
         "Pomoćnik za pisanje"

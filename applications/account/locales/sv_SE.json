@@ -2463,6 +2463,9 @@
       "How safe is Telegram?": [
         "Hur säkert är Telegram?"
       ],
+      "How to change your IP address on Windows": [
+        "Hur man ändrar din IP-adress på Windows"
+      ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "I denna artikel tittar vi på vem som kan se din internethistorik när du använder WiFi, vad de kan se och varför de kan göra detta."
       ],
@@ -2495,6 +2498,9 @@
       ],
       "Watch your favorite movies and TV shows": [
         "Titta på dina favoritfilmer och TV-program"
+      ],
+      "We discuss how to change the external and local IP addresses of your Windows device.": [
+        "Vi diskuterar hur man ändrar de externa och lokala IP-adresserna på din Windows-enhet."
       ],
       "Which VPN protocol is the best?": [
         "Vilket VPN-protokoll är bäst?"
@@ -2986,6 +2992,9 @@
       ],
       "Full chat history with search": [
         "Fullständig chatthistorik med sök"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Chattar med hög hastighet och avancerade AI-funktioner."
       ],
       "Limited daily chats": [
         "Begränsat antal dagliga chattar"
@@ -4821,6 +4830,23 @@
         "Prioriterad support"
       ]
     },
+    "Duo offer": {
+      "/month": [
+        "/månad"
+      ],
+      "1 TB of storage to share": [
+        "1 TB lagringsutrymme att dela"
+      ],
+      "2 user accounts": [
+        "2 användarkonton"
+      ],
+      "All premium features from your current plan": [
+        "Alla premiumfunktioner från ditt nuvarande paket"
+      ],
+      "Only": [
+        "Endast"
+      ]
+    },
     "Duration": {
       "120 minutes": [
         "120 minuter"
@@ -5574,6 +5600,9 @@
       ],
       "Time required before automatically giving access": [
         "Tid som krävs innan åtkomst beviljas automatiskt"
+      ],
+      "Time required before automatically giving you access": [
+        "Tid som krävs innan du automatiskt beviljas åtkomst"
       ],
       "Time required before automatically granting them access": [
         "Tid som krävs innan de automatiskt beviljas åtkomst"
@@ -8620,6 +8649,9 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Är det säker på att du vill ta bort domänen ${ boldDomain }?"
       ],
+      "Are you sure you want to revoke certificate **${ name }**": [
+        "Är du säker på att du vill återkalla certifikat **${ name }**?"
+      ],
       "Are you sure you want to sort your folders alphabetically?": [
         "Är du säker på att du vill sortera dina mappar alfabetiskt?"
       ],
@@ -9408,6 +9440,9 @@
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Om du nyligen har återställt ditt lösenord kan du använda en dataåterställningsmetod för att låsa upp dina data"
       ],
+      "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
+        "Om din organisation har offentliga personer, hanterar känsliga data eller kan vara måltavla för cyberattacker, rekommenderas du starkt att aktivera ${ PROTON_SENTINEL_NAME } för alla i din organisation."
+      ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Om du har problem finns vi här för att hjälpa dig. ${ boldPhoneCall } eller ${ boldZoomMeeting } med en av våra supportspecialister, eller öppna en ${ boldLiveChat } för chattsupport."
       ],
@@ -9830,9 +9865,6 @@
       "Not a valid URL": [
         "Ogiltig URL"
       ],
-      "Not yet available in our Android mobile app.": [
-        "Ännu inte tillgängligt i vår mobilapp för Android."
-      ],
       "Number of dedicated servers in the organization": [
         "Antal dedikerade servrar i organisationen"
       ],
@@ -10164,9 +10196,6 @@
       ],
       "Restore": [
         "Återställ"
-      ],
-      "Revoke certificate ${ name }": [
-        "Återkalla certifikat ${ name }"
       ],
       "Right to Left": [
         "Höger till vänster"
@@ -11345,9 +11374,8 @@
       "Your files will be encrypted and then saved": [
         "Dina filer kommer att krypteras och sedan sparas"
       ],
-      "Your free trial includes ${ ownedCount } dedicated server.": [
-        "Din gratis provperiod inkluderar ${ ownedCount } dedikerad server.",
-        "Din gratis provperiod inkluderar ${ ownedCount } dedikerade servrar."
+      "Your free trial includes 1 dedicated server.": [
+        "Din gratis provperiod inkluderar 1 dedikerad server."
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "Din gratis provperiod har konverterats till en ${ cycle }-månaders prenumeration. Ditt förnyelsedatum är ${ nextBillingDate }."
@@ -12734,6 +12762,9 @@
       "Method for importing metadata": [
         "Metod för att importera metadata"
       ],
+      "Minimum ${ MIN_CHARS } characters": [
+        "Minimum ${ MIN_CHARS } tecken"
+      ],
       "Minimum number of characters": [
         "Minst antal tecken"
       ],
@@ -13181,6 +13212,9 @@
       ],
       "Value": [
         "Värde"
+      ],
+      "Vault, item & secure link sharing": [
+        "Delning av valv, objekt och säker länk"
       ],
       "Verification code": [
         "Verifieringskod"
@@ -15578,11 +15612,17 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }-erbjudandet löper ut idag!"
       ],
+      "Don't show this again": [
+        "Visa inte detta igen"
+      ],
       "Don’t show this again": [
         "Visa inte detta igen"
       ],
       "Don’t show this offer again": [
         "Visa inte detta erbjudande igen"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Skaffa ${ BRAND_NAME } Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "Skaffa ${ BRAND_NAME } Unlimited"
@@ -16191,6 +16231,11 @@
       "${ n } month": [
         "${ n } månad",
         "${ n } månader"
+      ]
+    },
+    "pass_lifetime_signup: Info": {
+      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment.": [
+        "Få livstidsåtkomst till alla nuvarande och framtida ${ PASS_APP_NAME } premiumfunktioner med en engångsbetalning."
       ]
     },
     "pass_signup_2023: Action": {
@@ -17659,13 +17704,10 @@
       ]
     },
     "Safety review": {
-      " **Disable recovery by phone** to ensure highest possible security of your account.": [
-        " **Inaktivera återställning med telefon** för att säkerställa högsta möjliga säkerhet för ditt konto."
-      ],
       " **Enable recovery by phone** to regain access to your account if you forget your password.": [
         " **Aktivera telefon för återställning** för att återfå åtkomst till ditt konto om du glömmer ditt lösenord."
       ],
-      "${ BRAND_NAME } will use this address to keep you updated on your account security..": [
+      "${ BRAND_NAME } will use this address to keep you updated on your account security.": [
         "${ BRAND_NAME } kommer använda denna adress för att hålla dig uppdaterad om din kontosäkerhet."
       ],
       "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
@@ -17676,9 +17718,6 @@
       ],
       "${ enableDeviceRecovery } to ensure your data can be recovered.": [
         "${ enableDeviceRecovery } för att säkerställa att din data kan återställas."
-      ],
-      "**Disable account reset by email** to ensure highest possible security of your account.": [
-        "**Inaktivera kontoåterställning med e-post** för att säkerställa högsta möjliga säkerhet för ditt konto."
       ],
       "**Enable recovery by email** to regain access to your account if you forget your password.": [
         "**Aktivera e-post för återställning** för att återfå åtkomst till ditt konto om du glömmer ditt lösenord."
@@ -21350,6 +21389,9 @@
       "Don't show again?": [
         "Visa inte igen?"
       ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Dubbla ditt lagringsutrymme med ${ BRAND_NAME } Duo"
+      ],
       "Downgrade account": [
         "Nedgradera konto"
       ],
@@ -21970,8 +22012,8 @@
       "Reused passwords": [
         "Återanvända lösenord"
       ],
-      "Revoke certificate": [
-        "Återkalla certifikat"
+      "Revoke certificate?": [
+        "Återkalla certifikat?"
       ],
       "Same inbox, shorter email address": [
         "Samma inkorg, kortare e-postadress"
@@ -21990,6 +22032,9 @@
       ],
       "Secure your passwords. Everywhere.": [
         "Säkra dina lösenord. Överallt."
+      ],
+      "Security": [
+        "Säkerhet"
       ],
       "Security and privacy": [
         "Säkerhet och integritet"
@@ -22502,6 +22547,9 @@
       ]
     },
     "Tooltip": {
+      "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
+        "En ändring på Gmail-sidan blockerar ${ BRAND_NAME } från att ansluta. Bevilja behörighet att återupprätta e-postfunktionalitet"
+      ],
       "Account is disconnected": [
         "Kontot är frånkopplat"
       ],
@@ -22696,6 +22744,9 @@
       ],
       "This key is used for email forwarding": [
         "Denna nyckel används för vidarebefordran av e-post"
+      ],
+      "This setting is managed by your organization": [
+        "Denna inställning hanteras av din organisation"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Om de inte avkodas förblir krypterade lösenord säkra även om de exponeras."
@@ -23139,11 +23190,11 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "2FA"
+      ],
       "Administrators can't access the data of private users": [
         "Administratörer kan inte komma åt privata användares data"
-      ],
-      "Authenticator app": [
-        "Autentiseringsapp"
       ],
       "Inactive": [
         "Inaktiva"
@@ -23163,14 +23214,20 @@
       "Private": [
         "Privat"
       ],
-      "Security key": [
-        "Säkerhetsnyckel"
-      ],
       "SSO": [
         "SSO"
       ],
       "SSO user provided by your identity provider": [
         "SSO-användare tillhandahållen av din identitetsleverantör"
+      ],
+      "User has enabled two-factor authentication with a security key.": [
+        "Användare har aktiverat tvåfaktorsautentisering med en säkerhetsnyckel."
+      ],
+      "User has enabled two-factor authentication with an authenticator app and a security key.": [
+        "Användare har aktiverat tvåfaktorsautentisering med en autentiseringsapp och en säkerhetsnyckel."
+      ],
+      "User has enabled two-factor authentication with an authenticator app.": [
+        "Användare har aktiverat tvåfaktorsautentisering med en autentiseringsapp."
       ],
       "Writing assistant": [
         "Skrivassistent"

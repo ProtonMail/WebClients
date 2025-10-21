@@ -6023,9 +6023,6 @@
       "Restore": [
         "還原"
       ],
-      "Revoke certificate ${ name }": [
-        "撤銷憑證 ${ name }"
-      ],
       "SAML configuration saved": [
         "SAML設置已儲存"
       ],
@@ -7286,6 +7283,9 @@
       ],
       "Method for importing metadata": [
         "匯入後設資料方案"
+      ],
+      "Minimum ${ MIN_CHARS } characters": [
+        "最少 ${ MIN_CHARS } 個字元"
       ],
       "Minimum number of characters": [
         "最低字元數"
@@ -12477,9 +12477,6 @@
       "Restore administrator privileges": [
         "恢復系統管理員權限"
       ],
-      "Revoke certificate": [
-        "撤銷憑證"
-      ],
       "SAML authentication": [
         "SAML 驗證"
       ],
@@ -13022,9 +13019,6 @@
       ],
       "Private": [
         "不公開"
-      ],
-      "Security key": [
-        "安全金鑰"
       ],
       "SSO": [
         "單一登入"

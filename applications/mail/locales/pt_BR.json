@@ -2457,7 +2457,7 @@
         "${ participantName } recusou seu convite e propôs um novo horário para uma das ocorrências deste evento. A resposta e a proposta estão desatualizadas."
       ],
       "${ participantName } had declined your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName } havia recusado seu convite e proposto um novo horário para este evento. A resposta e a proposta estão desatualizadas."
+        "${ participantName } recusou seu convite e propôs um novo horário para este evento. A resposta e a proposta estão desatualizadas."
       ],
       "${ participantName } had previously accepted your invitation to one occurrence of the event.": [
         "${ participantName } havia aceitado o seu convite para uma ocorrência do evento."
@@ -2487,7 +2487,7 @@
         "${ participantName } havia proposto um novo horário para uma ocorrência deste evento. Esta proposta está desatualizada. Você não tem calendários."
       ],
       "${ participantName } had proposed a new time for this event. This proposal is out of date.": [
-        "${ participantName } havia proposto um novo horário para este evento. Esta proposta está desatualizada."
+        "${ participantName } propôs um novo horário para este evento. Esta proposta está desatualizada."
       ],
       "${ participantName } had proposed a new time for this event. This proposal is out of date. The event does not exist in your calendar anymore.": [
         "${ participantName } havia proposto um novo horário para este evento. Esta proposta está desatualizada. O evento não existe mais em seu calendário."
@@ -2505,7 +2505,7 @@
         "${ participantName } havia aceito provisoriamente um convite para uma ocorrência do evento."
       ],
       "${ participantName } had tentatively accepted an invitation to this event.": [
-        "${ participantName } havia aceito provisoriamente um convite para este evento."
+        "${ participantName } aceitou provisoriamente um convite para este evento."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } havia aceitado provisoriamente seu convite e proposto um novo horário para uma ocorrência deste evento. A resposta e a proposta estão desatualizadas."
@@ -4338,6 +4338,20 @@
         "Suporte prioritário"
       ]
     },
+    "Duo offer": {
+      "/month": [
+        "/mês"
+      ],
+      "1 TB of storage to share": [
+        "1 TB de armazenamento para compartilhar"
+      ],
+      "2 user accounts": [
+        "2 contas de usuário"
+      ],
+      "Only": [
+        "Somente"
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Os campos de texto são opcionais. As informações que você fornecer neste formulário aparecerão somente em faturas emitidas no futuro e não afetarão as faturas existentes."
@@ -4353,8 +4367,14 @@
       "All events in this series were updated.": [
         "Todos os eventos desta série foram atualizados."
       ],
+      "DESCRIPTION:": [
+        "DESCRIÇÃO:"
+      ],
       "Here's what changed:": [
         "Aqui está o que mudou:"
+      ],
+      "LOCATION:": [
+        "LOCALIZAÇÃO:"
       ],
       "NOTE:": [
         "NOTA:"
@@ -4367,6 +4387,15 @@
       ],
       "This event was updated.": [
         "Este evento foi atualizado."
+      ],
+      "TIME:": [
+        "HORA:"
+      ],
+      "TITLE:": [
+        "TÍTULO:"
+      ],
+      "You are invited to": [
+        "Você está convidado para"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4982,7 +5011,7 @@
         "Existem muitas pastas em sua conta externa. Personalize a importação para excluir algumas pastas."
       ],
       "There has been an issue with content search. Default search has been used instead.": [
-        "Houve um problema com a pesquisa de conteúdo. Portanto, a pesquisa padrão foi usada."
+        "Ocorreu um problema com a pesquisa de conteúdo. A pesquisa padrão foi usada."
       ],
       "There was an error when exporting the contacts vCards": [
         "Houve um erro ao exportar os vCards dos contatos"
@@ -5068,7 +5097,7 @@
         "Você atingiu o número máximo de caracteres. Encurte sua mensagem."
       ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
-        "Suas mensagens não podem ser descriptografadas devido a uma recente redefinição de senha. Caso lembre-se de sua senha anterior, você pode ${ reActivateKeyLink } para acessar suas mensagens. ${ learnMoreLink }"
+        "Seus e-mails não podem ser descriptografados devido a uma redefinição de senha recente. Se você se lembrar da sua senha anterior, poderá ${ reActivateKeyLink } para acessar suas mensagens. ${ learnMoreLink }"
       ],
       "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
         "Suas mensagens não podem ser descriptografadas. Isso pode ser devido a uma recente redefinição de senha. ${ learnMoreLink }"
@@ -6379,7 +6408,7 @@
         "O ${ CALENDAR_APP_NAME } exige um endereço ${ BRAND_NAME } para sincronização segura de eventos e criptografia. ${ claimAddressButton }."
       ],
       "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
-        "O ${ CALENDAR_APP_NAME } exige um endereço ${ BRAND_NAME } para sincronização segura de eventos e para a criptografia. Resgate seu endereço ${ MAIL_APP_NAME } gratuito agora."
+        "O ${ CALENDAR_APP_NAME } exige um endereço ${ BRAND_NAME } para sincronização segura de eventos e para a criptografia. Crie seu endereço ${ MAIL_APP_NAME } gratuito agora."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } novo calendário",
@@ -7179,7 +7208,7 @@
         "Curta uma experiência de e-mail mais rápida e focada com o aplicativo para desktop."
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
-        "Garanta uma comunicação totalmente privada e criptografada. Resgate seu endereço de e-mail ${ BRAND_NAME } gratuito agora."
+        "Garanta uma comunicação totalmente privada e criptografada. Crie seu endereço de e-mail ${ BRAND_NAME } gratuito agora."
       ],
       "Enter the code from your authenticator app": [
         "Insira o código do seu aplicativo de autenticação."
@@ -7382,6 +7411,12 @@
       ],
       "Includes bills, receipts, orders, and bookings.": [
         "Inclui contas, recebimentos, pedidos e reservas."
+      ],
+      "Includes invoices, purchase orders, and payment confirmations.": [
+        "Inclui faturas, pedidos de compra e confirmações de pagamento."
+      ],
+      "Includes marketing emails and non-urgent app notifications.": [
+        "Inclui e-mails de marketing e notificações não urgentes do aplicativo."
       ],
       "Includes marketing emails like offers and product announcements.": [
         "Inclui e-mails de marketing, como ofertas e anúncios de produtos."
@@ -8179,7 +8214,7 @@
         "Este é um nome ou apelido para sua organização que seus usuários verão. Você pode alterá-lo a qualquer momento."
       ],
       "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
-        "O objetivo é servir como ajuda para à escrita. Verifique a precisão do texto sugerido. ${ learnMoreResult }"
+        "O objetivo é servir como ajuda para a escrita. Verifique a precisão do texto sugerido. ${ learnMoreResult }"
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Este é agora o seu ${ defaultEmailAddress } para enviar novas mensagens."
@@ -11492,7 +11527,7 @@
         "Código de acesso copiado para a área de transferência"
       ],
       "Passphrase copied to clipboard": [
-        "Passphrase copiada para a área de transferência"
+        "Frase secreta copiada para a área de transferência"
       ],
       "Password has been set successfully": [
         "A senha foi definida com sucesso"
@@ -11540,11 +11575,17 @@
       "${ pricingTitle } offer expires today!": [
         "A oferta ${ pricingTitle } expira hoje!"
       ],
+      "Don't show this again": [
+        "Não mostrar isso novamente"
+      ],
       "Don’t show this again": [
         "Não exibir novamente"
       ],
       "Don’t show this offer again": [
         "Não mostrar mais esta oferta"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Obter ${ BRAND_NAME } Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "Obtenha o ${ BRAND_NAME } Unlimited"
@@ -12668,7 +12709,7 @@
         "Mensagem criptografada com PGP"
       ],
       "PGP-encrypted message from verified sender": [
-        "Mensagem criptografada por PGP de um remetente verificado"
+        "Mensagem criptografada por PGP de remetente verificado"
       ],
       "PGP-signed message": [
         "Mensagem assinada por PGP"

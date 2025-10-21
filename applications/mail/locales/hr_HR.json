@@ -339,6 +339,9 @@
       "Download ${ attachmentName }": [
         "Preuzmi ${ attachmentName }"
       ],
+      "Download the desktop app": [
+        "Preuzmite aplikaciju za radnu površinu"
+      ],
       "Downloading": [
         "Preuzimanje"
       ],
@@ -1716,6 +1719,9 @@
       "apple": [
         "jabuka"
       ],
+      "azureish white": [
+        "azurnobijela"
+      ],
       "black": [
         "crno"
       ],
@@ -1742,6 +1748,9 @@
       ],
       "dandelion": [
         "maslačak"
+      ],
+      "dark cerulean": [
+        "tamnoceruleansko"
       ],
       "dim gray": [
         "zagasito siva"
@@ -1808,6 +1817,9 @@
       ],
       "reef": [
         "greben"
+      ],
+      "ruddy pink": [
+        "rumenoružičasta"
       ],
       "sahara": [
         "sahara"
@@ -3352,6 +3364,9 @@
       "You must set a name": [
         "Morate postaviti naziv"
       ],
+      "You've reached the maximum character number. Please shorten your message.": [
+        "Dosegli ste maksimalan broj znakova. Molimo skratite svoju poruku."
+      ],
       "Your import will not be processed.": [
         "Vaš uvoz nije moguće obraditi."
       ],
@@ -3856,6 +3871,9 @@
       ]
     },
     "Gmail forwarding": {
+      "Automatically forward": [
+        "Automatsko prosljeđivanje"
+      ],
       "Gmail messages to your inbox": [
         "Gmail poruke u svoju pristiglu poštu"
       ],
@@ -4366,6 +4384,9 @@
       "Attach public key": [
         "Pridodajte javni ključ"
       ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Automatski očistite e-poštu premještenu u Otpad i Neželjenu poštu prije više od 30 dana."
+      ],
       "Awaiting transaction": [
         "Čekanje transakcije"
       ],
@@ -4428,6 +4449,9 @@
       ],
       "Create in": [
         "Stvori u"
+      ],
+      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
+        "Stvaranje više besplatnih računa nije dopušteno prema našim ${ termsLink }."
       ],
       "Current plan": [
         "Trenutni plan"
@@ -4557,6 +4581,12 @@
       "Folder": [
         "Mapa"
       ],
+      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
+        "Za dodatne informacije i za uklanjanje ograničenja, prijavite se na ${ mailLink }."
+      ],
+      "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
+        "Za pristup e-pošti u svako doba i optimizirano mobilno iskustvo, preuzmite našu ${ androidAppLink } ili ${ iosAppLink }."
+      ],
       "For messages newer than ${ oldestDate }": [
         "Za poruke novije od ${ oldestDate }"
       ],
@@ -4565,6 +4595,9 @@
       ],
       "Generate text": [
         "Stvori tekst"
+      ],
+      "Get it on Google Play": [
+        "Preuzmite na Google Playju"
       ],
       "here": [
         "ovdje"
@@ -4577,6 +4610,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ako imate poteškoća s otvaranjem računa, zatražite pozivnicu i odgovorit ćemo vam u roku jednog radnog dana."
+      ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "Ako smatrate da smo pogriješili, molimo ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ako ne pronađete e-poštu u pristigloj pošti, provjerite svoju mapu neželjene pošte."
@@ -4987,6 +5023,9 @@
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Da bismo ponovno potpisali svoje kontakte, moramo svaki kontakt provjeriti s popisom ključeva za šifriranje dostupnih na vašem računu. Ako se ne pronađe podudaranje, vaš će se kontakt ponovo potpisati s primarnim ključem šifriranja."
       ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "Kako biste uklonili ograničenja, možete nadograditi na plaćeni plan."
+      ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "Da biste otkazali pretplatu s ove mailing liste, e-poruka će biti poslana s ${ boldFrom } sa sljedećim pojedinostima kako ih definira pošiljatelj biltena:"
       ],
@@ -5064,6 +5103,9 @@
       ],
       "We could not verify the sender's trusted keys.": [
         "Nismo uspjeli provjeriti pouzdane ključeve pošiljatelja."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "Imamo planove koji su posebno osmišljeni za korisnike poput Vas koji trebaju više od jedne adrese e-pošte."
       ],
       "We need to authenticate your payment with your bank.": [
         "Moramo potvrditi Vašu uplatu s Vašom bankom."
@@ -6899,6 +6941,9 @@
       ],
       "Link copied to clipboard": [
         "Poveznica kopirana u međuspremnik"
+      ],
+      "Trial started": [
+        "Probno razdoblje započelo"
       ]
     },
     "Offer": {
@@ -7254,6 +7299,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Molimo opišite problem i pridružite sve poruke o pogreškama"
+      ],
+      "Please insert link first": [
+        "Molimo prvo umetnite poveznicu"
       ],
       "Postal code": [
         "Poštanski broj"
@@ -8446,8 +8494,14 @@
       "(active)": [
         "(aktivno)"
       ],
+      "A filter with this name already exists": [
+        "Filter s ovim nazivom već postoji"
+      ],
       "Account recovery": [
         "Oporavak računa"
+      ],
+      "Account restricted": [
+        "Račun ograničen"
       ],
       "Account security": [
         "Sigurnost računa"
@@ -8480,6 +8534,9 @@
       ],
       "Amount due": [
         "Dospjeli iznos"
+      ],
+      "Anytime, anywhere access": [
+        "Pristup bilo kada i bilo gdje"
       ],
       "Apply gift code": [
         "Primijeni darovni kôd"
@@ -8674,6 +8731,9 @@
       "Exporting contacts": [
         "Izvoz kontakata"
       ],
+      "Filter name cannot contain only spaces": [
+        "Ime filtra ne smije sadržavati samo razmake"
+      ],
       "Filter on...": [
         "Filtar za..."
       ],
@@ -8812,6 +8872,9 @@
       "No attachment found": [
         "Nije pronađen nijedan privitak"
       ],
+      "No need to empty the trash": [
+        "Nema potrebe za pražnjenjem otpada"
+      ],
       "Notes": [
         "Bilješke"
       ],
@@ -8938,6 +9001,9 @@
       "Set recovery phrase": [
         "Postavite frazu za oporavak"
       ],
+      "Set up your family account": [
+        "Postavite svoj obiteljski korisnički račun"
+      ],
       "Set up your organization": [
         "Postavite vašu organizaciju"
       ],
@@ -8973,6 +9039,12 @@
       ],
       "Summary": [
         "Sažetak"
+      ],
+      "This field cannot be empty": [
+        "Ovo polje ne može biti prazno"
+      ],
+      "This field cannot contain only spaces": [
+        "Ovo polje ne smije sadržavati samo razmake"
       ],
       "To": [
         "Za"
@@ -9094,6 +9166,9 @@
       ]
     },
     "Update font modal": {
+      "Today is a good day to write an email": [
+        "Danas je dobar dan za pisanje e-pošte"
+      ],
       "Update default font and size": [
         "Ažuriraj zadani font i veličinu."
       ]

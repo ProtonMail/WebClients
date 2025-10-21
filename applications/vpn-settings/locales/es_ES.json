@@ -1719,6 +1719,9 @@
       "How safe is Telegram?": [
         "¿Qué tan seguro es Telegram?"
       ],
+      "How to change your IP address on Windows": [
+        "Cómo cambiar tu dirección IP en Windows"
+      ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "En este artículo, repasamos quién puede ver tu historial de internet cuando usa wifi, lo que puede ver y por qué podría hacerlo."
       ],
@@ -1751,6 +1754,9 @@
       ],
       "Watch your favorite movies and TV shows": [
         "Ve tus películas y programas favoritos"
+      ],
+      "We discuss how to change the external and local IP addresses of your Windows device.": [
+        "Explicamos cómo cambiar las direcciones IP externas y locales de tu dispositivo Windows."
       ],
       "Which VPN protocol is the best?": [
         "¿Cuál es el mejor protocolo VPN?"
@@ -3430,6 +3436,23 @@
       ],
       "Priority support": [
         "Soporte prioritario"
+      ]
+    },
+    "Duo offer": {
+      "/month": [
+        "/mes"
+      ],
+      "1 TB of storage to share": [
+        "1 TB de almacenamiento para compartir"
+      ],
+      "2 user accounts": [
+        "2 cuentas de usuario"
+      ],
+      "All premium features from your current plan": [
+        "Todas las características prémium de tu plan actual"
+      ],
+      "Only": [
+        "Solamente"
       ]
     },
     "Easy switch": {
@@ -5781,6 +5804,9 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "¿Estás seguro de que quieres eliminar el dominio ${ boldDomain }?"
       ],
+      "Are you sure you want to revoke certificate **${ name }**": [
+        "¿Seguro de que quieres revocar el certificado **${ name }**?"
+      ],
       "Ask your organization admin to setup Gateways.": [
         "Pregunta al administrador de la organización para configurar puertas de enlace."
       ],
@@ -6808,9 +6834,6 @@
       "Restore": [
         "Restaurar"
       ],
-      "Revoke certificate ${ name }": [
-        "Revocar certificado ${ name }"
-      ],
       "SAML configuration saved": [
         "Se ha guardado la configuración SAML."
       ],
@@ -7622,9 +7645,8 @@
       "Your files will be encrypted and then saved": [
         "Tus archivos serán cifrados y después guardados."
       ],
-      "Your free trial includes ${ ownedCount } dedicated server.": [
-        "Tu prueba gratuita incluye ${ ownedCount } servidor dedicado.",
-        "Tu prueba gratuita incluye ${ ownedCount } servidores dedicados."
+      "Your free trial includes 1 dedicated server.": [
+        "Tu prueba gratuita incluye 1 servidor dedicado."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Tus datos están a salvo con nosotros. Solo te contactaremos cuando sea necesario para prestar nuestros servicios."
@@ -10258,11 +10280,17 @@
       "${ pricingTitle } offer expires today!": [
         "¡La oferta de ${ pricingTitle } vence hoy!"
       ],
+      "Don't show this again": [
+        "No mostrar esto de nuevo"
+      ],
       "Don’t show this again": [
         "No mostrar esto de nuevo"
       ],
       "Don’t show this offer again": [
         "No volver a mostrar esta oferta"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Obtén ${ BRAND_NAME } Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "Obtén ${ BRAND_NAME } Unlimited"
@@ -14105,6 +14133,9 @@
       "Domain names": [
         "Nombres de dominio"
       ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Duplica tu almacenamiento con ${ BRAND_NAME } Duo"
+      ],
       "Downgrade account": [
         "Pasar a un plan inferior"
       ],
@@ -14434,8 +14465,8 @@
       "Restore administrator privileges": [
         "Restaurar privilegios de administrador"
       ],
-      "Revoke certificate": [
-        "Revocar certificado"
+      "Revoke certificate?": [
+        "¿Revocar certificado?"
       ],
       "SAML authentication": [
         "Autenticación SAML"
@@ -15168,11 +15199,11 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "2FA"
+      ],
       "Administrators can't access the data of private users": [
         "Los administradores no pueden acceder a los datos de usuarios privados."
-      ],
-      "Authenticator app": [
-        "Aplicación de autenticación"
       ],
       "Inactive": [
         "Inactiva"
@@ -15192,14 +15223,20 @@
       "Private": [
         "Privado"
       ],
-      "Security key": [
-        "Clave de seguridad"
-      ],
       "SSO": [
         "Inicio de sesión único (SSO)"
       ],
       "SSO user provided by your identity provider": [
         "Usuario SSO proporcionado por el proveedor de identidad"
+      ],
+      "User has enabled two-factor authentication with a security key.": [
+        "El usuario ha activado la autenticación de dos factores con una clave de seguridad."
+      ],
+      "User has enabled two-factor authentication with an authenticator app and a security key.": [
+        "El usuario ha activado la autenticación de dos factores con una aplicación de autenticación y una clave de seguridad."
+      ],
+      "User has enabled two-factor authentication with an authenticator app.": [
+        "El usuario ha activado la autenticación de dos factores con una aplicación de autenticación."
       ],
       "Writing assistant": [
         "Asistente de escritura"

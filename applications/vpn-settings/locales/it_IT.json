@@ -6814,9 +6814,6 @@
       "Restore": [
         "Ripristina"
       ],
-      "Revoke certificate ${ name }": [
-        "Revoca il certificato ${ name }"
-      ],
       "SAML configuration saved": [
         "Configurazione SAML salvata"
       ],
@@ -7631,9 +7628,8 @@
       "Your files will be encrypted and then saved": [
         "I tuoi file verranno crittografati e poi salvati."
       ],
-      "Your free trial includes ${ ownedCount } dedicated server.": [
-        "La tua prova gratuita include ${ ownedCount } server dedicato.",
-        "La tua prova gratuita include ${ ownedCount } server dedicati."
+      "Your free trial includes 1 dedicated server.": [
+        "La tua prova gratuita include 1 server dedicato."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Le tue informazioni sono al sicuro con noi. Ti contatteremo solo quando sarà necessario per fornire i nostri servizi."
@@ -14492,9 +14488,6 @@
       "Restore administrator privileges": [
         "Ripristina i privilegi di amministratore"
       ],
-      "Revoke certificate": [
-        "Revoca certificato"
-      ],
       "SAML authentication": [
         "Autenticazione SAML"
       ],
@@ -15226,11 +15219,11 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "2FA"
+      ],
       "Administrators can't access the data of private users": [
         "Gli amministratori non possono accedere ai dati degli utenti privati"
-      ],
-      "Authenticator app": [
-        "App di autenticazione"
       ],
       "Inactive": [
         "Inattivo"
@@ -15250,14 +15243,20 @@
       "Private": [
         "Privato"
       ],
-      "Security key": [
-        "Chiave di sicurezza"
-      ],
       "SSO": [
         "SSO"
       ],
       "SSO user provided by your identity provider": [
         "Utente SSO fornito dal tuo fornitore di identità"
+      ],
+      "User has enabled two-factor authentication with a security key.": [
+        "L'utente ha attivato l'autenticazione a due fattori con una chiave di sicurezza."
+      ],
+      "User has enabled two-factor authentication with an authenticator app and a security key.": [
+        "L'utente ha attivato l'autenticazione a due fattori con un'app di autenticazione e una chiave di sicurezza."
+      ],
+      "User has enabled two-factor authentication with an authenticator app.": [
+        "L'utente ha attivato l'autenticazione a due fattori con un'app di autenticazione."
       ],
       "Writing assistant": [
         "Assistente alla scrittura"

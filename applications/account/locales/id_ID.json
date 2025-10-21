@@ -163,7 +163,7 @@
         "Tambah tautan rujukan ke tanda tangan ${ MAIL_APP_NAME }"
       ],
       "Add sieve filter": [
-        "Tambah filter sieve"
+        "Tambah filter Sieve"
       ],
       "Add user": [
         "Tambah pengguna"
@@ -2138,6 +2138,9 @@
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Pada saat Anda membatalkan, uji coba gratis Anda tidak akan dialihkan menjadi langganan berbayar, namun Anda masih akan tetap dapat menikmati berbagai keutamaan paket berbayar hingga akhir masa uji coba Anda. Setelahnya, Anda akan diturunkan ke paket ${ BRAND_NAME } Free."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Anda dapat memiliki hingga ${ TRIAL_MAX_DEDICATED_IPS } server khusus selama masa uji coba."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Anda dapat memiliki hingga ${ TRIAL_MAX_SCRIBE_SEATS } kuota Scribe selama masa uji coba."
@@ -4928,6 +4931,9 @@
       ],
       "All events in this series were updated.": [
         "Seluruh acara dalam rangkaian ini telah diperbarui."
+      ],
+      "DESCRIPTION:": [
+        "DESKRIPSI:"
       ],
       "Here's what changed:": [
         "Berikut apa-apa saja yang telah berubah:"
@@ -9541,7 +9547,7 @@
         "Pelajari lebih lanjut tentang Gateway"
       ],
       "learn more about Sieve programming language": [
-        "mempelajari bahasa pemrograman Sieve lebih lanjut"
+        "mempelajari bahasa pemrograman Sieve lebih lanjut pada tautan ini"
       ],
       "Learn more about single sign-on": [
         "Pelajari lebih lanjut mengenai single sign-on"
@@ -9743,9 +9749,6 @@
       ],
       "Not a valid URL": [
         "URL tidak valid"
-      ],
-      "Not yet available in our Android mobile app.": [
-        "Fitur ini belum tersedia pada aplikasi seluler Android kami."
       ],
       "Number of dedicated servers in the organization": [
         "Jumlah server khusus pada organisasi"
@@ -10070,9 +10073,6 @@
       ],
       "Restore": [
         "Pulihkan"
-      ],
-      "Revoke certificate ${ name }": [
-        "Cabut sertifikat ${ name }"
       ],
       "Right to Left": [
         "Kanan ke Kiri"
@@ -10618,7 +10618,7 @@
         "Untuk menggunakan ${ toAppName }, Anda memerlukan alamat ${ MAIL_APP_NAME }."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
-        "Untuk dapat berfungsi sebagaimana mestinya, masing-masing filter harus memiliki setidaknya nama dan kode Sieve yang valid. Anda dapat ${ link }."
+        "Untuk dapat berfungsi, masing-masing filter harus memiliki setidaknya satu nama dan kode Sieve yang valid. Anda dapat ${ link }."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Isikan akun Anda dengan kredit yang dapat Anda pakai untuk berlangganan paket baru atau memperbarui paket. Anda mendapatkan satu kredit untuk setiap ${ i18nCurrency } yang dihabiskan."
@@ -11243,9 +11243,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Berkas Anda akan dienkripsi lalu disimpan"
-      ],
-      "Your free trial includes ${ ownedCount } dedicated server.": [
-        "Uji coba gratis Anda meliputi ${ ownedCount } server khusus."
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "Masa uji coba gratis Anda berhasil diubah menjadi langganan ${ cycle }-bulanan. Tanggal pembaruan Anda adalah ${ nextBillingDate }."
@@ -13785,6 +13782,9 @@
       ],
       "Detach from SSO": [
         "Lepas dari SSO"
+      ],
+      "Disable user": [
+        "Nonaktifkan pengguna"
       ],
       "Edit": [
         "Sunting"
@@ -16660,6 +16660,9 @@
       ]
     },
     "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Saldo yang belum terpakai dari paket langganan Anda sebelumnya"
+      ],
       "Credits will be added to your balance": [
         "Saldo akan ditambahkan ke tabungan Anda"
       ]
@@ -17269,6 +17272,9 @@
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Nikmati **${ planTitle }** secara cuma-cuma hingga **${ textDate }**."
       ],
+      "Invite friends. Get credits.": [
+        "Undang teman. Dapatkan saldo."
+      ],
       "Refer friends": [
         "Rujuk teman"
       ],
@@ -17536,14 +17542,8 @@
       ]
     },
     "Safety review": {
-      " **Disable recovery by phone** to ensure highest possible security of your account.": [
-        " **Nonaktifkan pemulihan melalui telepon** untuk memastikan keamanan yang setinggi mungkin pada akun Anda."
-      ],
       " **Enable recovery by phone** to regain access to your account if you forget your password.": [
         " **Aktifkan pemulihan melalui nomor telepon** untuk memperoleh kembali akses ke akun Anda apabila Anda lupa kata sandi Anda."
-      ],
-      "${ BRAND_NAME } will use this address to keep you updated on your account security..": [
-        "${ BRAND_NAME } akan menggunakan alamat ini untuk memberikan Anda kabar terkini seputar keamanan akun Anda."
       ],
       "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
         "${ BRAND_NAME } akan menggunakan alamat ini untuk mengirimkan kode pengaturan ulang melalui email ketika Anda mengatur ulang kata sandi Anda."
@@ -17553,9 +17553,6 @@
       ],
       "${ enableDeviceRecovery } to ensure your data can be recovered.": [
         "${ enableDeviceRecovery } untuk memastikan data Anda dapat dipulihkan."
-      ],
-      "**Disable account reset by email** to ensure highest possible security of your account.": [
-        "**Nonaktifkan pengaturan ulang akun melalui email** untuk memastikan keamanan yang setinggi mungkin pada akun Anda."
       ],
       "**Enable recovery by email** to regain access to your account if you forget your password.": [
         "**Aktifkan pemulihan melalui email** untuk memperoleh kembali akses ke akun Anda apabila Anda lupa kata sandi Anda."
@@ -21758,9 +21755,6 @@
       "Reused passwords": [
         "Kata sandi yang digunakan ulang"
       ],
-      "Revoke certificate": [
-        "Cabut sertifikat"
-      ],
       "Same inbox, shorter email address": [
         "Kotak masuk yang sama, alamat email yang lebih pendek"
       ],
@@ -22933,9 +22927,6 @@
       "Administrators can't access the data of private users": [
         "Administrator tidak dapat mengakses data pengguna privat"
       ],
-      "Authenticator app": [
-        "Aplikasi autentikator"
-      ],
       "Inactive": [
         "Tidak aktif"
       ],
@@ -22953,9 +22944,6 @@
       ],
       "Private": [
         "Privat"
-      ],
-      "Security key": [
-        "Kunci keamanan"
       ],
       "SSO": [
         "SSO"

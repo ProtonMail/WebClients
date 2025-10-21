@@ -2478,6 +2478,9 @@
       "How safe is Telegram?": [
         "¿Qué tan seguro es Telegram?"
       ],
+      "How to change your IP address on Windows": [
+        "Cómo cambiar su dirección IP en Windows"
+      ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "En este artículo, repasamos quién puede ver su historial de internet cuando usa Wi-Fi, lo que puede ver y por qué podría hacerlo."
       ],
@@ -2510,6 +2513,9 @@
       ],
       "Watch your favorite movies and TV shows": [
         "Mire sus películas y programas favoritos"
+      ],
+      "We discuss how to change the external and local IP addresses of your Windows device.": [
+        "Explicamos cómo cambiar las direcciones IP externas y locales de su dispositivo de Windows."
       ],
       "Which VPN protocol is the best?": [
         "¿Cuál es el mejor protocolo VPN?"
@@ -9903,9 +9909,6 @@
       "Not a valid URL": [
         "No es una URL válida"
       ],
-      "Not yet available in our Android mobile app.": [
-        "Aún no disponible en nuestra aplicación para Android."
-      ],
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados en la organización"
       ],
@@ -10237,9 +10240,6 @@
       ],
       "Restore": [
         "Restaurar"
-      ],
-      "Revoke certificate ${ name }": [
-        "Revocar certificado ${ name }"
       ],
       "Right to Left": [
         "Derecha a izquierda"
@@ -11431,9 +11431,8 @@
       "Your files will be encrypted and then saved": [
         "Los archivos serán cifrados y luego guardados."
       ],
-      "Your free trial includes ${ ownedCount } dedicated server.": [
-        "Su prueba gratuita incluye ${ ownedCount } servidor dedicado.",
-        "Su prueba gratuita incluye ${ ownedCount } servidores dedicados."
+      "Your free trial includes 1 dedicated server.": [
+        "Su prueba gratuita incluye 1 servidor dedicado."
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "Su prueba gratuita se convirtió en una suscripción de ${ cycle }-meses. Su fecha de renovación es ${ nextBillingDate }."
@@ -12831,6 +12830,9 @@
       ],
       "Method for importing metadata": [
         "Método para importar metadatos"
+      ],
+      "Minimum ${ MIN_CHARS } characters": [
+        "Mínimo ${ MIN_CHARS } caracteres"
       ],
       "Minimum number of characters": [
         "Número mínimo de caracteres"
@@ -17927,13 +17929,13 @@
       ]
     },
     "Safety review": {
-      " **Disable recovery by phone** to ensure highest possible security of your account.": [
-        " **Desactive el restablecimiento por teléfono** para garantizar la mayor seguridad de su cuenta."
+      " **Disable recovery by phone** to prevent attackers from taking over your account.": [
+        " **Desactive la recuperación por teléfono** para evitar que los atacantes tomen el control de su cuenta."
       ],
       " **Enable recovery by phone** to regain access to your account if you forget your password.": [
         " **Active la recuperación por teléfono** para recuperar el acceso a la cuenta si olvidara la contraseña."
       ],
-      "${ BRAND_NAME } will use this address to keep you updated on your account security..": [
+      "${ BRAND_NAME } will use this address to keep you updated on your account security.": [
         "${ BRAND_NAME } usará esta dirección para mantenerle actualizado sobre la seguridad de su cuenta."
       ],
       "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
@@ -17945,8 +17947,8 @@
       "${ enableDeviceRecovery } to ensure your data can be recovered.": [
         "${ enableDeviceRecovery } para asegurar que sus datos puedan ser recuperados."
       ],
-      "**Disable account reset by email** to ensure highest possible security of your account.": [
-        "**Desactive el restablecimiento de la cuenta por correo electrónico** para garantizar la mayor seguridad de su cuenta."
+      "**Disable account reset by email** to prevent attackers from taking over your account.": [
+        "**Desactive el restablecimiento de la cuenta por correo electrónico** para evitar que los atacantes tomen el control de su cuenta."
       ],
       "**Enable recovery by email** to regain access to your account if you forget your password.": [
         "**Active la recuperación por correo electrónico** para recuperar el acceso a la cuenta si olvidara la contraseña."
@@ -22240,9 +22242,6 @@
       "Reused passwords": [
         "Contraseñas reusadas"
       ],
-      "Revoke certificate": [
-        "Revocar certificado"
-      ],
       "Same inbox, shorter email address": [
         "El mismo buzón con una dirección de correo más corta"
       ],
@@ -23421,11 +23420,11 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "2FA"
+      ],
       "Administrators can't access the data of private users": [
         "Los administradores no pueden acceder a los datos de usuarios privados"
-      ],
-      "Authenticator app": [
-        "Aplicación de autenticación"
       ],
       "Inactive": [
         "Inactiva"
@@ -23445,14 +23444,20 @@
       "Private": [
         "Privado"
       ],
-      "Security key": [
-        "Clave de seguridad"
-      ],
       "SSO": [
         "SSO"
       ],
       "SSO user provided by your identity provider": [
         "Usuario SSO proporcionado por el proveedor de identidad"
+      ],
+      "User has enabled two-factor authentication with a security key.": [
+        "El usuario ha activado la autenticación de dos factores con una llave de seguridad."
+      ],
+      "User has enabled two-factor authentication with an authenticator app and a security key.": [
+        "El usuario ha activado la autenticación de dos factores con una app de autenticación y una llave de seguridad."
+      ],
+      "User has enabled two-factor authentication with an authenticator app.": [
+        "El usuario ha activado la autenticación de dos factores con una app de autenticación."
       ],
       "Writing assistant": [
         "Asistente de escritura"

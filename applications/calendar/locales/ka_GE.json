@@ -3254,8 +3254,14 @@
       "All events in this series were updated.": [
         "ამ სერიაში ყველა მოვლენა განახლდა."
       ],
+      "DESCRIPTION:": [
+        "აღწერა:"
+      ],
       "Here's what changed:": [
         "აი, რა შეიცვალა:"
+      ],
+      "LOCATION:": [
+        "მდებარეობა:"
       ],
       "NOTE:": [
         "შენიშვნა:"
@@ -3268,6 +3274,15 @@
       ],
       "This event was updated.": [
         "ეს მოვლენა განახლდა."
+      ],
+      "TIME:": [
+        "დრო:"
+      ],
+      "TITLE:": [
+        "სათაური:"
+      ],
+      "You are invited to": [
+        "თქვენ მიგიწვიეს"
       ]
     },
     "Email body for invitation (date part)": {
@@ -8423,6 +8438,9 @@
       "This offer won't be shown again.": [
         "ამ შემოთავაზებას აღარ გაჩვენებთ."
       ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "ასწიეთ თქვენი პროდუქტიულობა ${ pricingTitle }-ისთვის ${ planName }-ით"
+      ],
       "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
         "ასწიეთ თქვენი საცავი, მხოლოდ, ${ pricingTitle }-ით ${ planName }-ისთან ერთად"
       ],
@@ -8552,11 +8570,17 @@
       "You can still cancel within 30 days and get a prorated refund.": [
         "გაუქმება შემდეგ 30 დღეში ჯერ კიდევ შეგიძლიათ. თანხა დაგიბრუნდებათ"
       ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "შეგიძლიათ გამოიყენოთ ${ planTitle } საცდელი პერიოდის ამოწურვამდე და საფასური არ დაგერიცხებათ."
+      ],
       "Your free trial has started": [
         "თქვენი გამოსაცდელი პერიოდი დაიწყო"
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "თქვენი სრული ${ planTitle } გამოწერის დაწყების თარიღია ${ boldEndDate }."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "${ planTitle }-ის გამოყენებას შეძლებთ საცდელი პერიოდის დასრულებამდე, უფასოდ."
       ]
     },
     "Option": {
@@ -8831,6 +8855,9 @@
       ],
       "This offer is not available with your current plan.": [
         "ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "ეს გადახდის მეთოდი თქვენი ნაგულისხმევი იქნება ყველა მომავალი განახლებისთვის."
       ],
       "Timeout exceeded": [
         "მოლოდინის ვადა ამოიწურა"

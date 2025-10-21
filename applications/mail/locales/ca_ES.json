@@ -206,7 +206,7 @@
         "Canvia la contrasenya"
       ],
       "Change sorting": [
-        "Canvieu l'ordenació"
+        "Canvia l'ordenació"
       ],
       "Chat with us": [
         "Xategeu amb nosaltres"
@@ -580,7 +580,7 @@
         "Exporta la selecció com a .vcf"
       ],
       "External encryption": [
-        "Xifrat extern"
+        "Xifratge extern"
       ],
       "Fewer search options": [
         "Menys opcions de cerca"
@@ -646,7 +646,7 @@
         "Ves a l'etiqueta"
       ],
       "Go to next page": [
-        "Aneu a la pàgina següent"
+        "Ves a la pàgina següent"
       ],
       "Go to page ${ page }": [
         "Ves a la pàgina ${ page }"
@@ -655,7 +655,7 @@
         "Ves al panell ${ index }"
       ],
       "Go to previous page": [
-        "Aneu a la pàgina anterior"
+        "Ves a la pàgina anterior"
       ],
       "Go to settings": [
         "Ves a les preferències"
@@ -685,7 +685,7 @@
         "Amaga els detalls"
       ],
       "Hide messages": [
-        "Amagar missatges"
+        "Amaga els missatges"
       ],
       "Hide more benefits": [
         "Amaga més avantatges"
@@ -794,7 +794,7 @@
         "Etiqueta com a"
       ],
       "Label as...": [
-        "Etiqueteu com a…"
+        "Etiqueta com a…"
       ],
       "label emails as": [
         "etiqueta els correus electrònics com a"
@@ -1250,7 +1250,7 @@
         "Mostra les característiques del pla"
       ],
       "Select ${ planOrAppName }": [
-        "Seleccioneu ${ planOrAppName }"
+        "Selecciona ${ planOrAppName }"
       ],
       "Select All": [
         "Selecciona-ho tot"
@@ -1469,7 +1469,7 @@
         "Activa/desactiva les notificacions"
       ],
       "Toggle referral": [
-        "Activar/desactivar referit"
+        "Activa/desactiva la referència"
       ],
       "Toggle security center app": [
         "Commuta l'aplicació del centre de seguretat"
@@ -1556,7 +1556,7 @@
         "Actualitza la frase de recuperació"
       ],
       "Update secret passphrase": [
-        "Actualitzeu la frase de contrasenya secreta"
+        "Actualitza la frase de contrasenya secreta"
       ],
       "Upgrade": [
         "Millora el pla"
@@ -1640,7 +1640,7 @@
         "Mostra els detalls del missatge"
       ],
       "View recipients": [
-        "Veure els destinataris"
+        "Mostra els destinataris"
       ],
       "View rendered HTML": [
         "Mostra el codi HTML renderitzat"
@@ -2029,7 +2029,7 @@
         "Podeu tenir fins a ${ TRIAL_MAX_LUMO_SEATS } llicències de ${ LUMO_SHORT_APP_NAME } durant el període de prova."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
-        "Podeu tenir fins a ${ TRIAL_MAX_SCRIBE_SEATS } llicències Scribe durant el període de prova."
+        "Podeu tenir fins a ${ TRIAL_MAX_SCRIBE_SEATS } llicències d'Scribe durant el període de prova."
       ],
       "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
         "Podeu tenir fins a ${ TRIAL_MAX_USERS } usuaris durant el període de prova."
@@ -2964,7 +2964,7 @@
         "Xifrat amb PGP"
       ],
       "PGP-encrypted to verified recipient": [
-        "Xifrat-PGP per a un destinatari verificat"
+        "Xifrat amb PGP per a un destinatari verificat"
       ],
       "PGP-encrypted. ${ warningsText }": [
         "Xifrat PGP. ${ warningsText }"
@@ -4338,6 +4338,23 @@
         "Suport prioritari"
       ]
     },
+    "Duo offer": {
+      "/month": [
+        "/mes"
+      ],
+      "1 TB of storage to share": [
+        "1 TB d'emmagatzematge per compartir"
+      ],
+      "2 user accounts": [
+        "2 comptes d'usuari"
+      ],
+      "All premium features from your current plan": [
+        "Totes les funcions prèmium del vostre pla actual"
+      ],
+      "Only": [
+        "Només"
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Els camps de text són opcionals. La informació que proporcioneu en aquest formulari només apareixerà en les factures emeses en el futur i no afectarà les factures existents."
@@ -5068,7 +5085,7 @@
         "No podeu obrir més de ${ maxActiveComposer } finestres d'edició a la vegada"
       ],
       "You did not provide a file.": [
-        "No heu proporcionat un arxiu."
+        "No heu proporcionat un fitxer."
       ],
       "You have reached the maximum number of calendars.": [
         "Heu arribat al nombre màxim de calendaris."
@@ -5763,7 +5780,7 @@
         "Gaudiu d'un accés ràpid, segur i sense distraccions a la safata d'entrada i al calendari."
       ],
       "Get unlimited access with any ${ MAIL_APP_NAME } plan.": [
-        "Obtingueu accés il·limitat amb qualsevol pla de ${ MAIL_APP_NAME }."
+        "Obteniu accés il·limitat amb qualsevol pla de ${ MAIL_APP_NAME }."
       ],
       "No credit card required.": [
         "No cal targeta de crèdit."
@@ -7398,6 +7415,12 @@
       "Includes bills, receipts, orders, and bookings.": [
         "Inclou factures, rebuts, comandes i reserves."
       ],
+      "Includes invoices, purchase orders, and payment confirmations.": [
+        "Inclou factures, comandes i confirmacions de pagament."
+      ],
+      "Includes marketing emails and non-urgent app notifications.": [
+        "Inclou correus electrònics de màrqueting i notificacions d'aplicacions no urgents."
+      ],
       "Includes marketing emails like offers and product announcements.": [
         "Inclou correus electrònics de màrqueting com ara ofertes i anuncis de productes."
       ],
@@ -7839,7 +7862,7 @@
         "Reviseu la selecció"
       ],
       "Proofread text": [
-        "Reviseu el text"
+        "Revisa el text"
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
         "Protegeix el vostre correu de filtracions a llistes de correu o generadors de correu brossa amb ${ hideMyEmailAliasesLink }."
@@ -8221,7 +8244,7 @@
         "Aquest missatge és d'una llista de correu."
       ],
       "This message is signed by a key that has not been trusted yet.": [
-        "Aquest missatge està signat per una clau que encara no s'ha marcat com a fiable."
+        "Aquest missatge està signat amb una clau que encara no s'ha marcat com a fiable."
       ],
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Aquest missatge s'ha signat per la clau adjunta que encara no és de confiança."
@@ -8913,10 +8936,10 @@
     },
     "Key pinning": {
       "Clicking \"Trust Key\" will associate this public key with this sender and emails from this address will be automatically cryptographically verified.": [
-        "En fer clic a \"Clau de confiança\" s'associarà aquesta clau pública amb aquest remitent i els correus electrònics d’aquesta adreça es verificaran de forma criptogràfica automàticament."
+        "En fer clic a \"Clau de confiança\", s'associarà aquesta clau pública amb aquest remitent i es verificaran els correus electrònics d’aquesta adreça criptogràficament de manera automàtica."
       ],
       "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
-        "En fer clic a «Clau de confiança» es crearà un contacte nou i s'associarà aquesta clau pública amb aquest remitent. Els correus electrònics d’aquesta adreça es verificaran de forma criptogràfica automàticament."
+        "En fer clic a «Clau de confiança» es crearà un contacte nou i s'associarà aquesta clau pública amb aquest remitent. Els correus electrònics d’aquesta adreça es verificaran criptogràficament de manera automàtica."
       ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Voleu confiar en la clau pública principal amb la següent empremta digital?",
@@ -9964,7 +9987,7 @@
     },
     "Labels": {
       "Newsletters or mailing lists you unsubscribe from will show up here.": [
-        "Els butlletins informatius o llistes de correu als quals n'anul·leu la subscripció apareixeran aquí."
+        "Els butlletins informatius o llistes de correu dels quals anul·leu la subscripció apareixeran aquí."
       ],
       "You don't have any active newsletters or mailing list subscriptions.": [
         "No teniu cap subscripció activa a butlletins informatius o a llistes de correu."
@@ -11550,11 +11573,17 @@
       "${ pricingTitle } offer expires today!": [
         "L'oferta de ${ pricingTitle } caduca avui!"
       ],
+      "Don't show this again": [
+        "No m'ho torneu a mostrar"
+      ],
       "Don’t show this again": [
         "No ho tornis a mostrar"
       ],
       "Don’t show this offer again": [
         "No tornis a mostrar aquesta oferta"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Obtingueu ${ BRAND_NAME } Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "Obteniu ${ BRAND_NAME } Unlimited"
@@ -12602,7 +12631,7 @@
     },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
-        "${ referrerRewardAmount } com a referència"
+        "${ referrerRewardAmount } per referència"
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Guanyeu fins a ${ maxRewardAmount } en crèdits. Rebreu ${ referrerRewardAmount } quan la persona que convideu se subscrigui a un pla de ${ BRAND_NAME }."
@@ -14153,7 +14182,7 @@
         "Últims àlies modificats emmagatzemats a la vostra caixa forta més antiga"
       ],
       "Mail list unsubscribed": [
-        "S'ha eliminat la suscripció a la llista de correu"
+        "S'ha cancel·lat la subscripció a la llista de correu"
       ],
       "Message added to ${ labelName }.": [
         "El missatge s'ha afegit a ${ labelName }."
@@ -14222,7 +14251,7 @@
         "Mètode de pagament actualitzat"
       ],
       "Phishing reported": [
-        "S'ha informat d'intent de suplantació d'identitat"
+        "S'ha informat de la suplantació d'identitat"
       ],
       "Phone number copied to clipboard": [
         "Número de telèfon copiat al porta-retalls"
@@ -14779,6 +14808,9 @@
       "Don't give spam a chance": [
         "No li doneu cap oportunitat al correu brossa."
       ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Dupliqueu el vostre emmagatzematge amb ${ BRAND_NAME } Duo"
+      ],
       "Downgrade account": [
         "Passa a un pla inferior"
       ],
@@ -14986,7 +15018,7 @@
         "Marca les converses com a no llegides"
       ],
       "Mark email as legitimate": [
-        "Marqueu el correu electrònic com a legítim"
+        "Marca el correu electrònic com a legítim"
       ],
       "Mark messages as read": [
         "Marqueu els missatges com a llegits"

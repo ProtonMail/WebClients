@@ -1732,6 +1732,9 @@
       "How safe is Telegram?": [
         "Cât de sigur este Telegram?"
       ],
+      "How to change your IP address on Windows": [
+        "Cum să vă schimbați adresa IP pe Windows"
+      ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "În acest articol, analizăm cine vă poate vedea istoricul navigării pe internet atunci când utilizați o rețea Wi-Fi, ce poate vedea și de ce ar putea face acest lucru."
       ],
@@ -1764,6 +1767,9 @@
       ],
       "Watch your favorite movies and TV shows": [
         "Vizionați filmele și emisiunile TV favorite"
+      ],
+      "We discuss how to change the external and local IP addresses of your Windows device.": [
+        "Discutăm cum să schimbați adresele IP externe și locale ale dispozitivului Windows."
       ],
       "Which VPN protocol is the best?": [
         "Care protocol VPN este cel mai bun?"
@@ -3523,8 +3529,14 @@
       "All events in this series were updated.": [
         "Toate evenimentele din serie au fost modificate."
       ],
+      "DESCRIPTION:": [
+        "DESCRIERE:"
+      ],
       "Here's what changed:": [
         "Iată ce s-a schimbat:"
+      ],
+      "LOCATION:": [
+        "LOC:"
       ],
       "NOTE:": [
         "NOTĂ:"
@@ -3537,6 +3549,15 @@
       ],
       "This event was updated.": [
         "Acest eveniment a fost modificat."
+      ],
+      "TIME:": [
+        "ORA:"
+      ],
+      "TITLE:": [
+        "TITLU:"
+      ],
+      "You are invited to": [
+        "Ați primit o invitație la"
       ]
     },
     "Email body for invitation (date part)": {
@@ -5545,6 +5566,9 @@
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } este un program avansat de protecție a conturilor, alimentat de sisteme de IA sofisticate și specialiști care lucrează non-stop pentru a vă proteja de atacatori și amenințările de securitate."
       ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } este un program avansat de protecție a conturilor, alimentat de sisteme de IA sofisticate și specialiști care lucrează non-stop pentru a vă proteja organizația de atacatori și amenințările de securitate."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } vă protejează contul prin monitorizarea activității suspicioase."
       ],
@@ -6362,6 +6386,9 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Dacă continuați cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ VPN_APP_NAME }."
       ],
+      "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
+        "Dacă organizația dvs. are persoane publice, gestionează date sensibile sau ar putea fi ținta atacurilor cibernetice, vă încurajăm cu tărie să activați ${ PROTON_SENTINEL_NAME } pentru toți membrii organizației."
+      ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Dacă întâmpinați probleme, suntem aici pentru a vă ajuta. ${ boldPhoneCall } sau ${ boldZoomMeeting } cu unul dintre specialiștii noștri de asistență sau deschideți o ${ boldLiveChat } pentru asistență."
       ],
@@ -6879,9 +6906,6 @@
       "Restore": [
         "Restaurare"
       ],
-      "Revoke certificate ${ name }": [
-        "Anulare certificat ${ name }"
-      ],
       "SAML configuration saved": [
         "Configurare SAML salvată."
       ],
@@ -7302,6 +7326,9 @@
       "Upgrade to Professional or a higher plan to unlock": [
         "Treceți la planul Professional sau superior pentru a debloca"
       ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Treceți la ${ firstPlanNames } sau ${ lastPlanName } pentru a obține acces la ${ PROTON_SENTINEL_NAME }."
+      ],
       "Upload your completed CSV file to create accounts": [
         "Încărcați fișierul CSV completat pentru a crea conturi"
       ],
@@ -7709,10 +7736,8 @@
       "Your files will be encrypted and then saved": [
         "Fișierele vor fi criptate și apoi salvate."
       ],
-      "Your free trial includes ${ ownedCount } dedicated server.": [
-        "Servere dedicate incluse in perioada de probare gratuită: ${ ownedCount }.",
-        "Servere dedicate incluse in perioada de probare gratuită: ${ ownedCount }.",
-        "Servere dedicate incluse in perioada de probare gratuită: ${ ownedCount }."
+      "Your free trial includes 1 dedicated server.": [
+        "Perioada de probare gratuită include un server dedicat."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Informațiile vă sunt în siguranță la noi. Vă vom contacta doar atunci când este necesar să vă furnizăm serviciile."
@@ -8339,6 +8364,9 @@
       ],
       "Method for importing metadata": [
         "Metoda de importare a metadatelor"
+      ],
+      "Minimum ${ MIN_CHARS } characters": [
+        "Maxim ${ MIN_CHARS } caractere"
       ],
       "Minimum number of characters": [
         "Număr minim de caractere"
@@ -14551,11 +14579,11 @@
       "Restore administrator privileges": [
         "Restaurare privilegii administrator"
       ],
-      "Revoke certificate": [
-        "Anulare certificat"
-      ],
       "SAML authentication": [
         "Autentificare SAML"
+      ],
+      "Security": [
+        "Securitate"
       ],
       "Security events": [
         "Evenimente de securitate"
@@ -14963,6 +14991,9 @@
       "This email address will be shown to all organization members when performing account management operations.": [
         "Această adresă de e-mail va fi afișată tuturor membrilor organizației atunci când efectuează operațiuni de gestionare a contului."
       ],
+      "This setting is managed by your organization": [
+        "Această setare este gestionată de către organizația proprie."
+      ],
       "User's approximate location (based on their IP address)": [
         "Un loc aproximativ al utilizatorului (bazat pe adresa sa IP)."
       ],
@@ -15281,11 +15312,11 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "A2F"
+      ],
       "Administrators can't access the data of private users": [
         "Administratorii nu pot accesa datele utilizatorilor privați."
-      ],
-      "Authenticator app": [
-        "Aplicația Authenticator"
       ],
       "Inactive": [
         "Inactiv"
@@ -15305,14 +15336,20 @@
       "Private": [
         "Privat"
       ],
-      "Security key": [
-        "Cheia de securitate"
-      ],
       "SSO": [
         "Autentificare unică (SSO)"
       ],
       "SSO user provided by your identity provider": [
         "Utilizator cu autentificare unică (SSO) oferit de furnizorul de identitate personal"
+      ],
+      "User has enabled two-factor authentication with a security key.": [
+        "Utilizatorul a activat autentificarea cu doi factori cu o cheie de securitate."
+      ],
+      "User has enabled two-factor authentication with an authenticator app and a security key.": [
+        "Utilizatorul a activat autentificarea cu doi factori cu o aplicație de autentificare și o cheie de securitate."
+      ],
+      "User has enabled two-factor authentication with an authenticator app.": [
+        "Utilizatorul a activat autentificarea cu doi factori cu o aplicație de autentificare."
       ],
       "Writing assistant": [
         "Asistent de scriere"

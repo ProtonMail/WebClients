@@ -4371,8 +4371,14 @@
       "All events in this series were updated.": [
         "Toate evenimentele din serie au fost modificate."
       ],
+      "DESCRIPTION:": [
+        "DESCRIERE:"
+      ],
       "Here's what changed:": [
         "Iată ce s-a schimbat:"
+      ],
+      "LOCATION:": [
+        "LOC:"
       ],
       "NOTE:": [
         "NOTĂ:"
@@ -4385,6 +4391,15 @@
       ],
       "This event was updated.": [
         "Acest eveniment a fost modificat."
+      ],
+      "TIME:": [
+        "ORA:"
+      ],
+      "TITLE:": [
+        "TITLU:"
+      ],
+      "You are invited to": [
+        "Ați primit o invitație la"
       ]
     },
     "Email body for invitation (date part)": {
@@ -7496,6 +7511,12 @@
       "Includes bills, receipts, orders, and bookings.": [
         "Include facturi, confirmări de primire, comenzi și rezervări."
       ],
+      "Includes invoices, purchase orders, and payment confirmations.": [
+        "Include facturi, comenzi de achiziție și confirmări de plată."
+      ],
+      "Includes marketing emails and non-urgent app notifications.": [
+        "Include e-mailuri de marketing și notificări de aplicație neurgente."
+      ],
       "Includes marketing emails like offers and product announcements.": [
         "Include e-mailuri de marketing, cum ar fi oferte și anunțuri de produse."
       ],
@@ -7608,6 +7629,9 @@
       ],
       "Low Priority": [
         "Prioritate scăzută"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Setați ${ MAIL_APP_NAME } ca aplicație implicită de e-mail."
       ],
       "Manage your folders": [
         "Gestionare foldere"

@@ -2478,6 +2478,9 @@
       "How safe is Telegram?": [
         "Est-ce que Telegram est sûr ?"
       ],
+      "How to change your IP address on Windows": [
+        "Comment changer votre adresse IP sur Windows"
+      ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "Dans cet article, nous examinons qui peut voir votre historique internet lorsque vous utilisez une connexion wifi, ce qu'ils peuvent voir et pourquoi ils peuvent le faire."
       ],
@@ -2510,6 +2513,9 @@
       ],
       "Watch your favorite movies and TV shows": [
         "Regardez vos films et séries préférés."
+      ],
+      "We discuss how to change the external and local IP addresses of your Windows device.": [
+        "Nous expliquons comment changer les adresses IP externes et locales de votre appareil Windows."
       ],
       "Which VPN protocol is the best?": [
         "Quel est le meilleur protocole VPN ?"
@@ -4855,6 +4861,23 @@
       ],
       "Priority support": [
         "Assistance prioritaire"
+      ]
+    },
+    "Duo offer": {
+      "/month": [
+        "/mois"
+      ],
+      "1 TB of storage to share": [
+        "1 To d'espace de stockage à partager"
+      ],
+      "2 user accounts": [
+        "2 comptes utilisateur"
+      ],
+      "All premium features from your current plan": [
+        "Toutes les fonctionnalités premium de votre abonnement actuel"
+      ],
+      "Only": [
+        "Seulement"
       ]
     },
     "Duration": {
@@ -8684,6 +8707,9 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Voulez-vous vraiment retirer le domaine ${ boldDomain } ?"
       ],
+      "Are you sure you want to revoke certificate **${ name }**": [
+        "Voulez-vous vraiment révoquer le certificat **${ name }**"
+      ],
       "Are you sure you want to sort your folders alphabetically?": [
         "Êtes-vous certain(ne) de vouloir trier vos dossiers par ordre alphabétique ?"
       ],
@@ -9903,9 +9929,6 @@
       "Not a valid URL": [
         "L'URL n'est pas valide."
       ],
-      "Not yet available in our Android mobile app.": [
-        "Pas encore disponible sur notre application mobile pour Android."
-      ],
       "Number of dedicated servers in the organization": [
         "Nombre de serveurs dédiés dans l'organisation"
       ],
@@ -10237,9 +10260,6 @@
       ],
       "Restore": [
         "Restauration"
-      ],
-      "Revoke certificate ${ name }": [
-        "Révoquer le certificat ${ name }"
       ],
       "Right to Left": [
         "De droite à gauche"
@@ -11431,9 +11451,8 @@
       "Your files will be encrypted and then saved": [
         "Vos fichiers seront chiffrés puis sauvegardés."
       ],
-      "Your free trial includes ${ ownedCount } dedicated server.": [
-        "Votre essai gratuit inclut ${ ownedCount } serveur dédié.",
-        "Votre essai gratuit inclut ${ ownedCount } serveurs dédiés."
+      "Your free trial includes 1 dedicated server.": [
+        "Votre essai gratuit inclut 1 serveur dédié."
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "Votre période d'essai a été convertie en abonnement de ${ cycle } mois. Votre date de renouvellement est le ${ nextBillingDate }."
@@ -12831,6 +12850,9 @@
       ],
       "Method for importing metadata": [
         "Méthode d'importation des métadonnées"
+      ],
+      "Minimum ${ MIN_CHARS } characters": [
+        "${ MIN_CHARS } caractères minimum"
       ],
       "Minimum number of characters": [
         "Nombre minimum de caractères"
@@ -15676,11 +15698,17 @@
       "${ pricingTitle } offer expires today!": [
         "L'offre ${ pricingTitle } expire aujourd'hui !"
       ],
+      "Don't show this again": [
+        "Ne plus afficher"
+      ],
       "Don’t show this again": [
         "Ne plus afficher"
       ],
       "Don’t show this offer again": [
         "Ne plus montrer cette offre"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Essayez ${ BRAND_NAME } Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "Profitez de ${ BRAND_NAME } Unlimited"
@@ -17927,13 +17955,13 @@
       ]
     },
     "Safety review": {
-      " **Disable recovery by phone** to ensure highest possible security of your account.": [
-        " **Désactivez la récupération par téléphone** pour garantir la sécurité maximale de votre compte."
+      " **Disable recovery by phone** to prevent attackers from taking over your account.": [
+        " **Désactivez la récupération par téléphone** pour empêcher les attaquants de prendre le contrôle de votre compte."
       ],
       " **Enable recovery by phone** to regain access to your account if you forget your password.": [
         "**Activez la récupération par téléphone** pour récupérer l'accès à votre compte si vous avez perdu votre mot de passe."
       ],
-      "${ BRAND_NAME } will use this address to keep you updated on your account security..": [
+      "${ BRAND_NAME } will use this address to keep you updated on your account security.": [
         "${ BRAND_NAME } utilisera cette adresse pour vous tenir informé de la sécurité de votre compte."
       ],
       "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
@@ -17945,8 +17973,8 @@
       "${ enableDeviceRecovery } to ensure your data can be recovered.": [
         "${ enableDeviceRecovery } pour vous assurer que vos données puissent être récupérées."
       ],
-      "**Disable account reset by email** to ensure highest possible security of your account.": [
-        "**Désactivez la réinitialisation de compte par e-mail** pour garantir la sécurité maximale de votre compte."
+      "**Disable account reset by email** to prevent attackers from taking over your account.": [
+        "**Désactivez la réinitialisation de compte par e-mail** pour empêcher les attaquants de prendre le contrôle de votre compte."
       ],
       "**Enable recovery by email** to regain access to your account if you forget your password.": [
         "**Activez la récupération par e-mail** pour récupérer l'accès à votre compte si vous avez perdu votre mot de passe."
@@ -21626,6 +21654,9 @@
       "Don't show again?": [
         "Ne plus afficher ?"
       ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Doublez votre espace de stockage avec ${ BRAND_NAME } Duo"
+      ],
       "Downgrade account": [
         "Passer à un abonnement inférieur"
       ],
@@ -22243,8 +22274,8 @@
       "Reused passwords": [
         "Mots de passe réutilisés"
       ],
-      "Revoke certificate": [
-        "Révoquer le certificat"
+      "Revoke certificate?": [
+        "Révoquer le certificat ?"
       ],
       "Same inbox, shorter email address": [
         "La même boite de réception, avec une adresse e-mail plus courte"
@@ -23424,11 +23455,11 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "A2F"
+      ],
       "Administrators can't access the data of private users": [
         "Les administrateurs ne peuvent pas accéder aux données des utilisateurs privés."
-      ],
-      "Authenticator app": [
-        "Application d'authentification"
       ],
       "Inactive": [
         "Inactive"
@@ -23448,14 +23479,20 @@
       "Private": [
         "Privé"
       ],
-      "Security key": [
-        "Clé de sécurité"
-      ],
       "SSO": [
         "Authentification unique (SSO)"
       ],
       "SSO user provided by your identity provider": [
         "Utilisateur d'authentification unique (SSO) fourni par votre fournisseur d'identité"
+      ],
+      "User has enabled two-factor authentication with a security key.": [
+        "L'utilisateur a activé l'authentification à deux facteurs avec une clé de sécurité."
+      ],
+      "User has enabled two-factor authentication with an authenticator app and a security key.": [
+        "L'utilisateur a activé l'authentification à deux facteurs avec une application d'authentification et une clé de sécurité."
+      ],
+      "User has enabled two-factor authentication with an authenticator app.": [
+        "L'utilisateur a activé l'authentification à deux facteurs avec une application d'authentification."
       ],
       "Writing assistant": [
         "Assistant d'écriture"

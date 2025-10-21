@@ -227,8 +227,14 @@
       "Resend code": [
         "Code erneut senden"
       ],
+      "Reset all": [
+        "Alle zurücksetzen"
+      ],
       "Save": [
         "Speichern"
+      ],
+      "Saving...": [
+        "Wird gespeichert..."
       ],
       "Scroll to bottom": [
         "Zum Ende scrollen"
@@ -680,6 +686,9 @@
       "Send message": [
         "Nachricht senden"
       ],
+      "settings": [
+        "Einstellungen"
+      ],
       "Show safety information": [
         "Sicherheitsinformationen anzeigen"
       ],
@@ -799,6 +808,56 @@
       ],
       "You’re in control": [
         "Du hast die Kontrolle"
+      ]
+    },
+    "collider_2025: Context": {
+      "I believe cereal is a soup and I'm not sorry": [
+        "Ich glaube, Müsli ist eine Suppe und es tut mir nicht leid."
+      ],
+      "I believe pizza is a vegetable if it has enough toppings": [
+        "Ich glaube, Pizza ist ein Gemüse, wenn sie genug Belag hat."
+      ],
+      "I believe tabs vs spaces is a human rights issue": [
+        "Ich glaube, dass Tabulatoren gegen Leerzeichen eine Frage der Menschenrechte ist"
+      ],
+      "I collect vintage error messages": [
+        "Ich sammle alte Fehlernachrichten"
+      ],
+      "I communicate primarily through GIFs and emoji": [
+        "Ich kommuniziere hauptsächlich über GIFs und Emojis"
+      ],
+      "I have a PhD in overthinking simple problems": [
+        "Ich habe einen Doktortitel im Grübeln über einfache Probleme"
+      ],
+      "I have strong opinions about pineapple on pizza": [
+        "Ich habe eine starke Meinung zu Ananas auf Pizza."
+      ],
+      "I have trust issues with autocomplete": [
+        "Ich habe Probleme mit der Vertrauenswürdigkeit bei der Autovervollständigung"
+      ],
+      "I judge people based on their commit messages": [
+        "Ich beurteile Leute anhand ihrer Beschreibungen der Änderungen (commit messages)"
+      ],
+      "I name all my houseplants after Renaissance painters": [
+        "Ich benenne alle meine Zimmerpflanzen nach Renaissance-Malern"
+      ],
+      "I once spent 3 hours debugging a missing semicolon": [
+        "Ich habe einmal 3 Stunden damit verbracht, einen Fehler wegen eines fehlenden Semikolons zu beheben."
+      ],
+      "I prefer my explanations like my coffee: dark and bitter": [
+        "Ich mag meine Erklärungen wie meinen Kaffee: dunkel und bitter"
+      ],
+      "I speak fluent sarcasm and broken French": [
+        "Ich spreche fließend Sarkasmus und gebrochenes Französisch"
+      ],
+      "I talk to my rubber duck for debugging help": [
+        "Ich spreche mit meiner Gummiente, um Hilfe bei der Fehlersuche zu erhalten"
+      ],
+      "I'm on a first-name basis with Stack Overflow": [
+        "Ich bin mit Stack-Overflow per Du"
+      ],
+      "I'm powered by caffeine and existential dread": [
+        "Ich werde von Koffein und existenzieller Angst angetrieben."
       ]
     },
     "collider_2025: Description": {
@@ -1242,6 +1301,9 @@
       ],
       "You are about to visit an external website:": [
         "Du bist dabei, eine externe Webseite zu besuchen:"
+      ],
+      "Your information is zero-access encrypted": [
+        "Deine Informationen sind Zero-Access-verschlüsselt."
       ]
     },
     "collider_2025: Invite": {
@@ -1301,6 +1363,35 @@
     "collider_2025: Invite Title": {
       "Invite friends to experience ${ LUMO_APP_NAME }": [
         "Freunde einladen, ${ LUMO_APP_NAME } zu erleben"
+      ]
+    },
+    "collider_2025: Job": {
+      "Cat herder": [
+        "Katzenhirt"
+      ],
+      "Chief Treat Distribution Officer": [
+        "Leiter für die Verteilung von Leckereien"
+      ],
+      "Director of Windowsill Security": [
+        "Leiter der Abteilung für Fensterbank-Sicherheit"
+      ],
+      "Feline Behavior Consultant": [
+        "Katzenverhaltensberater"
+      ],
+      "Head of Yarn Ball Quality Control": [
+        "Leiter der Wollknäuel-Qualitätskontrolle"
+      ],
+      "Marketing manager": [
+        "Marketingleiter"
+      ],
+      "Professional cat napper": [
+        "Professioneller Katzennickerchen-Experte"
+      ],
+      "Professional Sunbeam Tester": [
+        "Professioneller Sonnenstrahl-Tester"
+      ],
+      "Senior Cardboard Box Inspector": [
+        "Senior Kartoninspektor"
       ]
     },
     "collider_2025: Label": {
@@ -1371,6 +1462,54 @@
         "Upgrade auf ${ LUMO_SHORT_APP_NAME } Plus."
       ]
     },
+    "collider_2025: Personality": {
+      "Business Cat": [
+        "Business-Katze"
+      ],
+      "Default": [
+        "Standard"
+      ],
+      "Lazy Cat": [
+        "Faules Kätzchen"
+      ],
+      "Playful Cat": [
+        "Verspielte Katze"
+      ],
+      "Sassy Cat": [
+        "Freche Katze"
+      ],
+      "Wise Cat": [
+        "Weise Katze"
+      ]
+    },
+    "collider_2025: Personality Description": {
+      "Cheerful and adaptive": [
+        "Fröhlich und anpassungsfähig"
+      ],
+      "Chill and laid-back": [
+        "Entspannt und locker"
+      ],
+      "Energetic and fun-loving": [
+        "Energisch und lebensfroh"
+      ],
+      "Professional but still a cat": [
+        "Professionell, aber trotzdem eine Katze"
+      ],
+      "Thoughtful and philosophical": [
+        "Nachdenklich und philosophisch"
+      ],
+      "Witty with a bit of attitude": [
+        "Witzig mit etwas Frechheit"
+      ]
+    },
+    "collider_2025: Personalization": {
+      "Personalize your ${ LUMO_SHORT_APP_NAME } experience": [
+        "Personalisiere dein ${ LUMO_SHORT_APP_NAME }-Erlebnis"
+      ],
+      "Sign in or create a free account to customize how ${ LUMO_SHORT_APP_NAME } interacts with you. Set your preferences, communication style, and more.": [
+        "Melde dich an oder erstelle ein kostenloses Konto, um anzupassen, wie ${ LUMO_SHORT_APP_NAME } mit dir interagiert. Lege deine Einstellungen, deinen Kommunikationsstil und mehr fest."
+      ]
+    },
     "collider_2025: Pill": {
       "Protected by ${ BRAND_NAME }": [
         "Geschützt durch ${ BRAND_NAME }"
@@ -1390,6 +1529,9 @@
       ],
       "General": [
         "Allgemeines"
+      ],
+      "Personalization": [
+        "Personalisierung"
       ]
     },
     "collider_2025: Status": {
@@ -1472,6 +1614,84 @@
       ],
       "Try ${ MAIL_APP_NAME }": [
         "Teste ${ MAIL_APP_NAME }"
+      ]
+    },
+    "collider_2025: Trait": {
+      "Chatty": [
+        "Gesprächig"
+      ],
+      "Encouraging": [
+        "Ermutigend"
+      ],
+      "Forward thinking": [
+        "Vorausschauend"
+      ],
+      "Gen Z": [
+        "Gen Z"
+      ],
+      "Humble": [
+        "Bescheiden"
+      ],
+      "Straight shooting": [
+        "Geradlinig"
+      ],
+      "Traditional": [
+        "Traditionell"
+      ],
+      "Witty": [
+        "Witzig"
+      ]
+    },
+    "collider_2025: Trait Description": {
+      "Be conversational and engaging in responses": [
+        "Sei gesprächig und ansprechend in deinen Antworten"
+      ],
+      "Be modest and acknowledge limitations when appropriate": [
+        "Sei bescheiden und erkenne Grenzen an, wenn es angebracht ist."
+      ],
+      "Be supportive and motivating in your tone": [
+        "Sei unterstützend und motivierend in deinem Tonfall"
+      ],
+      "Embrace progressive and innovative perspectives": [
+        "Fortschrittlicher und innovativer Perspektiven annehmen"
+      ],
+      "Maintain a formal and conventional approach": [
+        "Behalte einen formellen und angemessenen Ansatz bei"
+      ],
+      "Tell it like it is; don't sugar-coat responses": [
+        "Sprich es, wie es ist; beschönige deine Antworten nicht"
+      ],
+      "Use clever humor and wordplay when appropriate": [
+        "Verwende bei Bedarf geschickt Humor und Wortspiele"
+      ],
+      "Use modern slang and trendy communication style": [
+        "Nutze modernen Slang und einen angesagten Kommunikationsstil"
+      ]
+    },
+    "collider_2025: Trait Sentence": {
+      "Be conversational and engaging in your responses.": [
+        "Sei in deinen Antworten gesprächig und einnehmend."
+      ],
+      "Be humble when appropriate.": [
+        "Sei bescheiden, wenn es angebracht ist."
+      ],
+      "Be supportive and motivating in your tone.": [
+        "Sei unterstützend und motivierend in deinem Ton."
+      ],
+      "Embrace progressive and innovative perspectives.": [
+        "Nimm progressive und innovative Perspektiven an."
+      ],
+      "Maintain a formal and conventional approach.": [
+        "Behalte einen formellen und konventionellen Ansatz bei."
+      ],
+      "Tell it like it is; don't sugar-coat responses.": [
+        "Sag es, wie es ist; beschönige keine Antworten."
+      ],
+      "Use clever humor and wordplay when appropriate.": [
+        "Nutze cleveren Humor und Wortspiele, wenn es angemessen ist."
+      ],
+      "Use modern slang and trendy communication style.": [
+        "Nutze modernen Slang und einen angesagten Kommunikationsstil."
       ]
     },
     "collider_2025: Upsell": {
@@ -1614,6 +1834,9 @@
       "Settings": [
         "Einstellungen"
       ],
+      "Show sidebar": [
+        "Seitenleiste anzeigen"
+      ],
       "Unfavorite": [
         "Favorit entfernen"
       ],
@@ -1669,14 +1892,14 @@
       ]
     },
     "collider_2025:Title": {
-      "${ LUMO_SHORT_APP_NAME } 1.1 is much smarter, more capable, with improved awareness of recent events, ready to give you more thorough and useful answers.": [
-        "${ LUMO_SHORT_APP_NAME } 1.1 ist viel intelligenter, leistungsfähiger, mit verbessertem Verständnis für aktuelle Ereignisse, bereit, dir gründlichere und nützlichere Antworten zu geben."
-      ],
       "An AI assistant should empower you, not exploit you for your data. That’s why we built ${ LUMO_SHORT_APP_NAME }: To bring you all the benefits of AI, without compromising your privacy and data security.": [
         "Ein KI-Assistent sollte dich stärken, nicht deine Daten ausnutzen. Deshalb haben wir ${ LUMO_SHORT_APP_NAME } entwickelt: Um dir alle Vorteile der KI zu bieten, ohne deine Privatsphäre und Datensicherheit zu gefährden."
       ],
       "Built by the team that knows privacy": [
         "Entwickelt vom Team, das Datenschutz versteht"
+      ],
+      "Dark mode and conversation personalization": [
+        "Dunkler Modus und Personalisierung von Unterhaltungen"
       ],
       "Earlier": [
         "Früher"
@@ -1698,6 +1921,12 @@
       ],
       "How does ${ LUMO_SHORT_APP_NAME } keep our conversations confidential?": [
         "Wie hält ${ LUMO_SHORT_APP_NAME } unsere Unterhaltungen vertraulich?"
+      ],
+      "Introducing ${ LUMO_SHORT_APP_NAME } ${ WHATS_NEW_VERSION } with support for dark mode and new options to personalize your conversations.": [
+        "Wir stellen ${ LUMO_SHORT_APP_NAME } ${ WHATS_NEW_VERSION } vor: Support für den dunklen Modus und neue Optionen, um deine Unterhaltungen zu personalisieren."
+      ],
+      "Introducing ${ LUMO_SHORT_APP_NAME } ${ WHATS_NEW_VERSION } with support for dark mode and new options to personalize your conversations. Try it out in ${ openSettingsModalButton }.": [
+        "Wir stellen vor: ${ LUMO_SHORT_APP_NAME } ${ WHATS_NEW_VERSION } mit Unterstützung für den Dunkelmodus und neuen Optionen zur Personalisierung Ihrer Unterhaltungen. Probiere es aus unter ${ openSettingsModalButton }."
       ],
       "Last 30 days": [
         "Letzte 30 Tage"
@@ -1723,8 +1952,8 @@
       "Today": [
         "Heute"
       ],
-      "What's new in ${ LUMO_SHORT_APP_NAME } 1.1": [
-        "Was ist neu in ${ LUMO_SHORT_APP_NAME } 1.1"
+      "What's new": [
+        "Neue Funktionen"
       ],
       "Whatever you ask me is:": [
         "Was auch immer du mich fragst:"
@@ -3429,6 +3658,9 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Der Verifikationsvorgang wird einen neuen Browser-Tab öffnen. Bitte deaktiviere jegliche Pop-up-Blocker."
       ],
+      "This information is zero-access encrypted.": [
+        "Diese Informationen sind mit Zero-Access-Verschlüsselung geschützt."
+      ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Dies ist ein Name oder ein Spitzname für deine Organisation, der deinen Benutzern angezeigt wird. Du kannst ihn jederzeit ändern."
       ],
@@ -3622,6 +3854,9 @@
       "Anderson": [
         "Mustermann"
       ],
+      "Anything else ${ LUMO_SHORT_APP_NAME } should know about you?": [
+        "Gibt es noch etwas, das ${ LUMO_SHORT_APP_NAME } über dich wissen sollte?"
+      ],
       "Attach screenshot(s)": [
         "Screenshot(s) anhängen"
       ],
@@ -3715,6 +3950,9 @@
       "Hide password": [
         "Passwort ausblenden"
       ],
+      "How should ${ LUMO_SHORT_APP_NAME } behave?": [
+        "Wie soll sich ${ LUMO_SHORT_APP_NAME } verhalten?"
+      ],
       "IBAN": [
         "IBAN"
       ],
@@ -3787,11 +4025,17 @@
       "Verification code": [
         "Verifizierungscode"
       ],
+      "What do you do?": [
+        "Was machst du beruflich?"
+      ],
       "What happened?": [
         "Problembeschreibung"
       ],
       "What is your main reason for canceling or downgrading?": [
         "Was ist der Hauptgrund für deine Kündigung oder das Downgrade?"
+      ],
+      "What should ${ LUMO_SHORT_APP_NAME } call you?": [
+        "Wie soll ${ LUMO_SHORT_APP_NAME } dich nennen?"
       ],
       "Your password (admin)": [
         "Dein Passwort (Admin)"
@@ -5160,6 +5404,9 @@
       "Select state": [
         "Bundesland wählen"
       ],
+      "Selected traits will appear here automatically": [
+        "Ausgewählte Merkmale werden hier automatisch angezeigt"
+      ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Teile uns mit, was deiner Meinung nach ${ BRAND_NAME } besser machen könnte"
       ],
@@ -5766,17 +6013,20 @@
         "Deine kürzere E-Mail-Adresse ist jetzt fertig"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
-      ]
-    },
     "Tooltip": {
+      "Clear all selected traits and restore trait buttons": [
+        "Alle ausgewählten Merkmale entfernen und Merkmal-Schaltflächen wiederherstellen"
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Wenn du einen Geschenkgutschein erworben oder von unserem Support-Team erhalten hast, kannst du ihn hier eingeben."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Der neue Abonnementzyklus beginnt am ${ formattedTime }."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
       ]
     },
     "unprivatization": {
