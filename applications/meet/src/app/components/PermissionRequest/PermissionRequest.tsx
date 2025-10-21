@@ -83,7 +83,7 @@ export const PermissionRequest = () => {
                 setPermissionPromptStatus(PermissionPromptStatus.CLOSED);
             }}
             rootClassName="permission-request-backdrop"
-            className="permission-request-modal"
+            className="permission-request-modal border border-norm"
         >
             <ModalTwoHeader />
             <ModalTwoContent className="flex flex-column justify-center gap-4 text-center ">
