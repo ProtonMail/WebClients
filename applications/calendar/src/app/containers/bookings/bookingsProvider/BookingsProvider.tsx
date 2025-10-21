@@ -3,9 +3,8 @@ import type { ReactNode } from 'react';
 
 import { addMilliseconds } from 'date-fns';
 
-import { useCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
+import { useReadCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
-import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
 import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eventDefaults';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
@@ -17,8 +16,6 @@ interface BookingsContextValue {
     isBookingActive: boolean;
     changeBookingState: (state: BookingState) => void;
     bookingsState: BookingState;
-    writeableCalendars: VisualCalendar[];
-    loadingWriteableCalendars: boolean;
     bookingSlots: Slot[];
     addBookingSlot: (startDate: Date, eventDuration: number) => void;
     removeBookingSlot: (slotId: string) => void;
@@ -40,14 +37,11 @@ const tmpEventDurationMiliSeconds = tmpEventDurationMinute * 60 * 1000;
 export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     const scheduleOptions = getCalendarEventDefaultDuration();
 
-    const [calendarUserSettings] = useCalendarUserSettings();
-
     const [bookingsState, setBookingsState] = useState<BookingState>(BookingState.OFF);
     const [bookingSlots, setBookingSlots] = useState<Slot[]>([]);
 
-    const [writeableCalendars = [], loadingWriteableCalendars] = useWriteableCalendars();
-
-    const [createEventCalendarBootstrap] = useCalendarBootstrap(calendarUserSettings?.DefaultCalendarID || undefined);
+    const getCalendarSettings = useReadCalendarBootstrap();
+    const [calendarUserSettings] = useCalendarUserSettings();
 
     const [formData, setFormData] = useState<BookingFormData>({
         title: '',
@@ -62,22 +56,18 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
 
     // Used to set the default duration and selected calendar
     useEffect(() => {
-        if (!writeableCalendars || formData.selectedCalendar !== null) {
+        if (formData.selectedCalendar !== null || !calendarUserSettings?.DefaultCalendarID) {
             return;
         }
 
-        const defaultCalendar = writeableCalendars.find(
-            (calendar) => calendar.ID === calendarUserSettings?.DefaultCalendarID
-        );
+        const calendarSettings = getCalendarSettings(calendarUserSettings.DefaultCalendarID);
+        if (!calendarSettings) {
+            return;
+        }
 
-        updateFormData('selectedCalendar', defaultCalendar?.ID);
-        updateFormData('duration', createEventCalendarBootstrap?.CalendarSettings.DefaultEventDuration);
-    }, [
-        writeableCalendars,
-        formData.selectedCalendar,
-        calendarUserSettings?.DefaultCalendarID,
-        createEventCalendarBootstrap?.CalendarSettings.DefaultEventDuration,
-    ]);
+        updateFormData('selectedCalendar', calendarUserSettings.DefaultCalendarID);
+        updateFormData('duration', calendarSettings.CalendarSettings.DefaultEventDuration);
+    }, [formData.selectedCalendar, calendarUserSettings?.DefaultCalendarID, getCalendarSettings]);
 
     const changeBookingState = (state: BookingState) => {
         if (state === BookingState.OFF) {
@@ -135,8 +125,6 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         isBookingActive: bookingsState === BookingState.CREATE_NEW || bookingsState === BookingState.EDIT_EXISTING,
         changeBookingState,
         bookingsState,
-        writeableCalendars,
-        loadingWriteableCalendars,
         bookingSlots,
         addBookingSlot,
         removeBookingSlot,
