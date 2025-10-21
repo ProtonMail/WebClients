@@ -45,13 +45,19 @@ const mapDownload = ({
     storageSize: storageSize ?? 0,
 });
 
-const mapUpload = ({ uploadId, name, status, progress }: UploadUIItem): TransferManagerEntry => ({
+const mapUpload = ({
+    uploadId,
+    name,
+    status,
+    uploadedBytes,
+    clearTextExpectedSize,
+}: UploadUIItem): TransferManagerEntry => ({
     type: 'upload',
     id: uploadId,
     name,
     status,
-    transferredBytes: progress, // TODO: replace with uploaded bytes when available
-    storageSize: 100, // TODO: replace with actual size when available
+    transferredBytes: uploadedBytes, // TODO: replace with uploaded bytes when available
+    storageSize: clearTextExpectedSize, // TODO: replace with actual size when available
 });
 
 export const useTransferManagerState = () => {

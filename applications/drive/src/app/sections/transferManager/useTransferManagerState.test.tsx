@@ -47,7 +47,8 @@ const createDownloadItem = (overrides: Partial<DownloadItem> = {}): DownloadItem
 const createUploadItem = (overrides: Partial<UploadUIItem> = {}): UploadUIItem => ({
     uploadId: 'upload-1',
     name: 'Upload item',
-    progress: 0,
+    uploadedBytes: 0,
+    clearTextExpectedSize: 100,
     status: UploadStatus.Pending,
     error: undefined,
     speedBytesPerSecond: undefined,
@@ -104,7 +105,7 @@ describe('useTransferManagerState', () => {
         addUploadItems(
             createUploadItem({
                 name: 'Draft.docx',
-                progress: 25,
+                uploadedBytes: 25,
                 status: UploadStatus.Pending,
             })
         );
@@ -142,7 +143,7 @@ describe('useTransferManagerState', () => {
         addUploadItems(
             createUploadItem({
                 name: 'Upload only',
-                progress: 75,
+                uploadedBytes: 75,
                 status: UploadStatus.InProgress,
             })
         );
