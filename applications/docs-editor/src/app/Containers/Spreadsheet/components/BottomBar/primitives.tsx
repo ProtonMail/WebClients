@@ -8,7 +8,7 @@ export interface ContainerProps extends ComponentPropsWithoutRef<'div'> {}
 
 export const Container = forwardRef<HTMLDivElement, ContainerProps>(function Container(props: ContainerProps, ref) {
   return (
-    <div ref={ref} {...props} className={clsx('border-t border-[#DEDEDE] bg-[#F9FBFC]', props.className)}>
+    <div ref={ref} {...props} className={clsx('bg-[#FAFCF9]', props.className)}>
       <Ariakit.Toolbar className="flex h-10 items-center">{props.children}</Ariakit.Toolbar>
     </div>
   )
@@ -51,6 +51,7 @@ export const TabItem = createComponent<TabItemProps>(function TabItem({
   return (
     <Ariakit.ToolbarItem
       render={
+        // eslint-disable-next-line jsx-a11y/control-has-associated-label, jsx-a11y/interactive-supports-focus, jsx-a11y/prefer-tag-over-role
         <div
           role="button"
           onDragStart={onDragStart}
@@ -74,8 +75,8 @@ export const TabItem = createComponent<TabItemProps>(function TabItem({
       role="tab"
       className={clsx(
         'relative mb-[4px] flex h-[26px] min-w-[115px] cursor-pointer items-center gap-2 rounded-[6px] px-8 text-[.875rem] transition-colors',
-        'hover:bg-[#EDEDED]/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4695F3]/50',
-        active && 'bg-white border border-[#4695F3]',
+        'hover:bg-[#E7F5F1] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4695F3]/50',
+        active && 'bg-[#E7F5F1]',
         !active && 'border-transparent border',
         className,
       )}
