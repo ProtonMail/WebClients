@@ -11,7 +11,7 @@ import { BOOKING_SLOT_ID, BookingState, type Slot } from './interface';
 
 interface BookingsContextValue {
     isBookingActive: boolean;
-    toggleBookingPageCreation: () => void;
+    changeBookingState: (state: BookingState) => void;
     bookingsState: BookingState;
     writeableCalendars: VisualCalendar[];
     loadingWriteableCalendars: boolean;
@@ -37,13 +37,12 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
 
     const [writeableCalendars = [], loadingWriteableCalendars] = useWriteableCalendars();
 
-    const toggleBookingPageCreation = () => {
-        if (bookingsState === BookingState.CREATE_NEW) {
-            setBookingsState(BookingState.OFF);
+    const changeBookingState = (state: BookingState) => {
+        if (state === BookingState.OFF) {
             setBookingSlots([]);
-        } else {
-            setBookingsState(BookingState.CREATE_NEW);
         }
+
+        setBookingsState(state);
     };
 
     // TODO what should happen if we add a slot in the past
@@ -88,7 +87,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
 
     const value: BookingsContextValue = {
         isBookingActive: bookingsState === BookingState.CREATE_NEW || bookingsState === BookingState.EDIT_EXISTING,
-        toggleBookingPageCreation,
+        changeBookingState,
         bookingsState,
         writeableCalendars,
         loadingWriteableCalendars,
