@@ -1742,6 +1742,9 @@
       "How safe is Telegram?": [
         "Jak bezpečný je Telegram?"
       ],
+      "How to change your IP address on Windows": [
+        "Jak změnit IP adresu ve Windows"
+      ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "V tomto článku se podíváme na to, kdo může vidět vaši historii na internetu při používání Wi-Fi, co může vidět a proč."
       ],
@@ -1774,6 +1777,9 @@
       ],
       "Watch your favorite movies and TV shows": [
         "Sledujte oblíbené filmy a seriály"
+      ],
+      "We discuss how to change the external and local IP addresses of your Windows device.": [
+        "Probíráme, jak změnit externí a lokální IP adresy vašeho zařízení se systémem Windows."
       ],
       "Which VPN protocol is the best?": [
         "Který VPN protokol je nejlepší?"
@@ -3463,6 +3469,23 @@
         "Prioritní podpora"
       ]
     },
+    "Duo offer": {
+      "/month": [
+        "/měsíčně"
+      ],
+      "1 TB of storage to share": [
+        "1 TB úložiště k sdílení"
+      ],
+      "2 user accounts": [
+        "2 uživatelské účty"
+      ],
+      "All premium features from your current plan": [
+        "Všechny prémiové funkce z vašeho aktuálního tarifu"
+      ],
+      "Only": [
+        "Pouze"
+      ]
+    },
     "Easy switch": {
       "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
         "Chcete-li přeposílat e-maily z ${ MAX_SYNC_PAID_USER } účtu, navyšte tarif na ${ planName }.",
@@ -3546,7 +3569,7 @@
         "Toto se změnilo:"
       ],
       "LOCATION:": [
-        "UMÍSTĚNÍ:"
+        "MÍSTO:"
       ],
       "NOTE:": [
         "POZNÁMKA:"
@@ -5936,6 +5959,9 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Opravdu chcete odebrat doménu ${ boldDomain }?"
       ],
+      "Are you sure you want to revoke certificate **${ name }**": [
+        "Opravdu chcete zrušit certifikát **${ name }**?"
+      ],
       "Ask your organization admin to setup Gateways.": [
         "Požádejte správce organizace o nastavení brány."
       ],
@@ -6462,7 +6488,7 @@
         "Pokud budete pokračovat ve snížení úrovně účtu, ztratíte přístup k placeným funkcím ${ VPN_APP_NAME }."
       ],
       "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
-        "Pokud má vaše organizace veřejné osoby, nakládá s citlivými daty nebo se může stát cílem kybernetických útoků, důrazně doporučujeme povolit ${ PROTON_SENTINEL_NAME } pro všechny ve vaší organizaci."
+        "Pokud má vaše organizace veřejné činitele, zpracovává citlivá data nebo může být terčem kybernetických útoků, důrazně doporučujeme povolit ${ PROTON_SENTINEL_NAME } pro všechny členy vaší organizace."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Pokud máte potíže, rádi vám pomůžeme. ${ boldPhoneCall } nebo ${ boldZoomMeeting } s jedním z našich specialistů podpory, nebo si otevřete ${ boldLiveChat } pro podporu na chatu."
@@ -6986,9 +7012,6 @@
       "Restore": [
         "Obnovit"
       ],
-      "Revoke certificate ${ name }": [
-        "Zrušit certifikát ${ name }"
-      ],
       "SAML configuration saved": [
         "Nastavení SAML uloženo"
       ],
@@ -7416,7 +7439,7 @@
         "Navyšte na tarif Professional nebo vyšší, abyste odemkli"
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Navyšte na ${ firstPlanNames } nebo na tarif ${ lastPlanName } a získejte přístup k ${ PROTON_SENTINEL_NAME }."
+        "Navyšte váš tarif na ${ firstPlanNames } nebo ${ lastPlanName } a získejte přístup k ${ PROTON_SENTINEL_NAME }."
       ],
       "Upload your completed CSV file to create accounts": [
         "Nahrajte svůj kompletní soubor CSV pro vytvoření účtů"
@@ -7835,11 +7858,8 @@
       "Your files will be encrypted and then saved": [
         "Vaše soubory budou zašifrovány a uloženy"
       ],
-      "Your free trial includes ${ ownedCount } dedicated server.": [
-        "Vaše bezplatná zkušební verze obsahuje ${ ownedCount } dedikovaný server.",
-        "Vaše bezplatná zkušební verze obsahuje ${ ownedCount } dedikované servery.",
-        "Vaše bezplatná zkušební verze obsahuje ${ ownedCount } dedikovaných serverů.",
-        "Vaše bezplatná zkušební verze obsahuje ${ ownedCount } dedikovaných serverů."
+      "Your free trial includes 1 dedicated server.": [
+        "Vaše bezplatná zkušební verze obsahuje 1 dedikovaný server."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Vaše informace jsou u nás v bezpečí. Budeme vás kontaktovat pouze v případě, že to bude nutné pro poskytování našich služeb."
@@ -8473,6 +8493,9 @@
       ],
       "Method for importing metadata": [
         "Metoda pro import metadat"
+      ],
+      "Minimum ${ MIN_CHARS } characters": [
+        "Minimálně ${ MIN_CHARS } znaků"
       ],
       "Minimum number of characters": [
         "Minimální počet znaků"
@@ -10537,11 +10560,17 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } nabídka končí dnes!"
       ],
+      "Don't show this again": [
+        "Příště nezobrazovat"
+      ],
       "Don’t show this again": [
         "Příště již nezobrazovat"
       ],
       "Don’t show this offer again": [
         "Tuto nabídku již nezobrazovat"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Získat ${ BRAND_NAME } Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "Získejte ${ BRAND_NAME } Unlimited"
@@ -14460,6 +14489,9 @@
       "Domain names": [
         "Názvy domén"
       ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Zdvojnásobte své úložiště s ${ BRAND_NAME } Duo"
+      ],
       "Downgrade account": [
         "Downgrade účtu"
       ],
@@ -14796,8 +14828,8 @@
       "Restore administrator privileges": [
         "Obnovit oprávnění správce"
       ],
-      "Revoke certificate": [
-        "Zrušit certifikát"
+      "Revoke certificate?": [
+        "Zrušit certifikát?"
       ],
       "SAML authentication": [
         "Ověření SAML"
@@ -15213,7 +15245,7 @@
         "Tato e-mailová adresa se zobrazí všem členům organizace při provádění operací správy účtu."
       ],
       "This setting is managed by your organization": [
-        "Tato nastavení je spravováno vaší organizací"
+        "Toto nastavení spravuje vaše organizace"
       ],
       "User's approximate location (based on their IP address)": [
         "Přibližná poloha uživatele (na základě jeho IP adresy)"
@@ -15534,11 +15566,11 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "2FA"
+      ],
       "Administrators can't access the data of private users": [
         "Správci nemají přístup k datům soukromých uživatelů"
-      ],
-      "Authenticator app": [
-        "Ověřovací aplikace"
       ],
       "Inactive": [
         "Neaktivní"
@@ -15558,14 +15590,20 @@
       "Private": [
         "Soukromý"
       ],
-      "Security key": [
-        "Bezpečnostní klíč"
-      ],
       "SSO": [
         "SSO"
       ],
       "SSO user provided by your identity provider": [
         "SSO uživatel poskytnutý poskytovatelem identity"
+      ],
+      "User has enabled two-factor authentication with a security key.": [
+        "Uživatel aktivoval dvoufázové ověření pomocí bezpečnostního klíče."
+      ],
+      "User has enabled two-factor authentication with an authenticator app and a security key.": [
+        "Uživatel aktivoval dvoufázové ověření pomocí ověřovací aplikace a bezpečnostního klíče."
+      ],
+      "User has enabled two-factor authentication with an authenticator app.": [
+        "Uživatel aktivoval dvoufázové ověření pomocí ověřovací aplikace."
       ],
       "Writing assistant": [
         "Asistent psaní"

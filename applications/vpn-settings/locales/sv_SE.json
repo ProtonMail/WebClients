@@ -1713,6 +1713,9 @@
       "How safe is Telegram?": [
         "Hur säkert är Telegram?"
       ],
+      "How to change your IP address on Windows": [
+        "Hur man ändrar din IP-adress på Windows"
+      ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "I denna artikel tittar vi på vem som kan se din internethistorik när du använder WiFi, vad de kan se och varför de kan göra detta."
       ],
@@ -1745,6 +1748,9 @@
       ],
       "Watch your favorite movies and TV shows": [
         "Titta på dina favoritfilmer och TV-program"
+      ],
+      "We discuss how to change the external and local IP addresses of your Windows device.": [
+        "Vi diskuterar hur man ändrar de externa och lokala IP-adresserna på din Windows-enhet."
       ],
       "Which VPN protocol is the best?": [
         "Vilket VPN-protokoll är bäst?"
@@ -1984,6 +1990,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Lägg till ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Chattar med hög hastighet och avancerade AI-funktioner."
       ]
     },
     "color": {
@@ -3412,6 +3421,23 @@
       ],
       "Priority support": [
         "Prioriterad support"
+      ]
+    },
+    "Duo offer": {
+      "/month": [
+        "/månad"
+      ],
+      "1 TB of storage to share": [
+        "1 TB lagringsutrymme att dela"
+      ],
+      "2 user accounts": [
+        "2 användarkonton"
+      ],
+      "All premium features from your current plan": [
+        "Alla premiumfunktioner från ditt nuvarande paket"
+      ],
+      "Only": [
+        "Endast"
       ]
     },
     "Easy switch": {
@@ -5757,6 +5783,9 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Är det säker på att du vill ta bort domänen ${ boldDomain }?"
       ],
+      "Are you sure you want to revoke certificate **${ name }**": [
+        "Är du säker på att du vill återkalla certifikat **${ name }**?"
+      ],
       "Ask your organization admin to setup Gateways.": [
         "Be din organisationsadministratör att ställa in gateways."
       ],
@@ -6272,6 +6301,9 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Om du fortsätter med nedgraderingen förlorar du åtkomst till betalda funktioner i ${ VPN_APP_NAME }."
       ],
+      "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
+        "Om din organisation har offentliga personer, hanterar känsliga data eller kan vara måltavla för cyberattacker, rekommenderas du starkt att aktivera ${ PROTON_SENTINEL_NAME } för alla i din organisation."
+      ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Om du har problem finns vi här för att hjälpa dig. ${ boldPhoneCall } eller ${ boldZoomMeeting } med en av våra supportspecialister, eller öppna en ${ boldLiveChat } för chattsupport."
       ],
@@ -6783,9 +6815,6 @@
       ],
       "Restore": [
         "Återställ"
-      ],
-      "Revoke certificate ${ name }": [
-        "Återkalla certifikat ${ name }"
       ],
       "SAML configuration saved": [
         "SAML-konfiguration sparad"
@@ -7591,9 +7620,8 @@
       "Your files will be encrypted and then saved": [
         "Dina filer kommer att krypteras och sedan sparas"
       ],
-      "Your free trial includes ${ ownedCount } dedicated server.": [
-        "Din gratis provperiod inkluderar ${ ownedCount } dedikerad server.",
-        "Din gratis provperiod inkluderar ${ ownedCount } dedikerade servrar."
+      "Your free trial includes 1 dedicated server.": [
+        "Din gratis provperiod inkluderar 1 dedikerad server."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Din information är säker hos oss. Vi kommer endast kontakta dig när det krävs för att tillhandahålla våra tjänster."
@@ -8213,6 +8241,9 @@
       ],
       "Method for importing metadata": [
         "Metod för att importera metadata"
+      ],
+      "Minimum ${ MIN_CHARS } characters": [
+        "Minimum ${ MIN_CHARS } tecken"
       ],
       "Minimum number of characters": [
         "Minst antal tecken"
@@ -10230,11 +10261,17 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }-erbjudandet löper ut idag!"
       ],
+      "Don't show this again": [
+        "Visa inte detta igen"
+      ],
       "Don’t show this again": [
         "Visa inte detta igen"
       ],
       "Don’t show this offer again": [
         "Visa inte detta erbjudande igen"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Skaffa ${ BRAND_NAME } Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "Skaffa ${ BRAND_NAME } Unlimited"
@@ -13948,6 +13985,9 @@
       "Domain names": [
         "Domännamn"
       ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Dubbla ditt lagringsutrymme med ${ BRAND_NAME } Duo"
+      ],
       "Downgrade account": [
         "Nedgradera konto"
       ],
@@ -14280,11 +14320,14 @@
       "Restore administrator privileges": [
         "Återställ administratörsrättigheter"
       ],
-      "Revoke certificate": [
-        "Återkalla certifikat"
+      "Revoke certificate?": [
+        "Återkalla certifikat?"
       ],
       "SAML authentication": [
         "SAML-autentisering"
+      ],
+      "Security": [
+        "Säkerhet"
       ],
       "Security events": [
         "Säkerhetshändelser"
@@ -14589,6 +14632,9 @@
       ]
     },
     "Tooltip": {
+      "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
+        "En ändring på Gmail-sidan blockerar ${ BRAND_NAME } från att ansluta. Bevilja behörighet att återupprätta e-postfunktionalitet"
+      ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Administratörer kan hantera användarkonton och ge administratörsrättigheter till andra användare. Endast den primära administratören kan redigera paketet för organisationen."
       ],
@@ -14681,6 +14727,9 @@
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Denna e-postadress kommer att visas för alla organisationsmedlemmar när de utför kontohanteringsåtgärder."
+      ],
+      "This setting is managed by your organization": [
+        "Denna inställning hanteras av din organisation"
       ],
       "User's approximate location (based on their IP address)": [
         "Användares ungefärliga plats (baserat på deras IP-adress)"
@@ -14999,11 +15048,11 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "2FA"
+      ],
       "Administrators can't access the data of private users": [
         "Administratörer kan inte komma åt privata användares data"
-      ],
-      "Authenticator app": [
-        "Autentiseringsapp"
       ],
       "Inactive": [
         "Inaktiva"
@@ -15023,14 +15072,20 @@
       "Private": [
         "Privat"
       ],
-      "Security key": [
-        "Säkerhetsnyckel"
-      ],
       "SSO": [
         "SSO"
       ],
       "SSO user provided by your identity provider": [
         "SSO-användare tillhandahållen av din identitetsleverantör"
+      ],
+      "User has enabled two-factor authentication with a security key.": [
+        "Användare har aktiverat tvåfaktorsautentisering med en säkerhetsnyckel."
+      ],
+      "User has enabled two-factor authentication with an authenticator app and a security key.": [
+        "Användare har aktiverat tvåfaktorsautentisering med en autentiseringsapp och en säkerhetsnyckel."
+      ],
+      "User has enabled two-factor authentication with an authenticator app.": [
+        "Användare har aktiverat tvåfaktorsautentisering med en autentiseringsapp."
       ],
       "Writing assistant": [
         "Skrivassistent"

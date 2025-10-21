@@ -1573,6 +1573,9 @@
       "How safe is Telegram?": [
         "Telegram 的安全性如何？"
       ],
+      "How to change your IP address on Windows": [
+        "如何在 Windows 上更改您的 IP 地址"
+      ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "在本文中，我们将介绍使用 WiFi 时谁可以查看您的上网历史记录、他们能看到什么以及他们为什么会这样做。"
       ],
@@ -5293,8 +5296,17 @@
       "(default)": [
         "(默认)"
       ],
+      "**Enable automatic backups** for peace of mind": [
+        "**开启自动备份**，安全无忧"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**获取 ${ BRAND_NAME } 地址**以使用所有 ${ BRAND_NAME_TWO } 服务，包括 ${ MAIL_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME }。"
+      ],
+      "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
+        "从其他双重验证应用（如 Google Authenticator）**导入现有的验证码**"
+      ],
+      "**Sync codes** to all your devices": [
+        "在所有设备之间**同步验证码**"
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } 更多"
@@ -5343,6 +5355,9 @@
       ],
       "add a recovery method": [
         "添加恢复方法"
+      ],
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
+        "登录时要求输入双重验证码，为您的账户安全再增设一道防线。"
       ],
       "Add domain": [
         "添加域名"
@@ -5445,6 +5460,9 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "确定要移除域名 ${ boldDomain } 吗？"
+      ],
+      "Are you sure you want to revoke certificate **${ name }**": [
+        "确定要撤销证书 **${ name }** 吗？"
       ],
       "Ask your organization admin to setup Gateways.": [
         "要求您的组织管理员设置网关。"
@@ -5701,6 +5719,9 @@
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "下载我们的 csv 模板，填写用户信息，之后上传填写完成的 csv 文件即可创建对应账户。"
       ],
+      "Download the app and import existing codes.": [
+        "下载应用后您还可以导入先前已有的验证码。"
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "即刻下载您所需的应用，随时随地保护隐私。"
       ],
@@ -5851,6 +5872,9 @@
       "Gateways": [
         "网关"
       ],
+      "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
+        "使用 ${ AUTHENTICATOR_APP_NAME } 即可在您的任意设备上获取验证码。"
+      ],
       "Get ${ upsellPlanName }": [
         "开通 ${ upsellPlanName }"
       ],
@@ -5995,6 +6019,9 @@
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "更改服务器的国家/地区需要 10 天时间，因此请确保您的选择正确。"
       ],
+      "It won't be linked to your ${ BRAND_NAME } Account, so there's **no risk of getting locked out**.": [
+        "该应用不会与您的 ${ BRAND_NAME } 账户绑定，**无需担心因忘记密码而无法使用**。"
+      ],
       "It's better to have:": [
         "最好是有："
       ],
@@ -6126,6 +6153,9 @@
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode 图标"
+      ],
+      "Maybe later": [
+        "以后再说"
       ],
       "Medium Priority": [
         "中等优先顺序"
@@ -6400,9 +6430,6 @@
       "Restore": [
         "还原"
       ],
-      "Revoke certificate ${ name }": [
-        "吊销证书 ${ name }"
-      ],
       "SAML configuration saved": [
         "SAML 配置已经保存了"
       ],
@@ -6497,7 +6524,7 @@
         "共享保险库已更新"
       ],
       "Sign in only": [
-        "仅登入"
+        "仅用于登录"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "登录 ${ MAIL_APP_NAME } 以激活您的地址"
@@ -6597,6 +6624,9 @@
       ],
       "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
         "您当前的订阅不支持群组功能。以前创建的组已禁用，只能删除。"
+      ],
+      "The most secure and private two-factor authentication app, that's free and open-source.": [
+        "最安全、最私密的双重验证应用，并且免费开源。"
       ],
       "The name will be visible to your users while they are signed in.": [
         "您的用户在登录时将可以看到该名称。"
@@ -6796,6 +6826,9 @@
       "Upgrade to Professional or a higher plan to unlock": [
         "升级至专业版或更高版本以解锁"
       ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "开通 ${ firstPlanNames } 或 ${ lastPlanName } 方可启用 ${ PROTON_SENTINEL_NAME }。"
+      ],
       "Upload your completed CSV file to create accounts": [
         "上传完成的 CSV 文件以创建账户"
       ],
@@ -6969,6 +7002,9 @@
       ],
       "Why?": [
         "为什么？"
+      ],
+      "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
+        "使用 ${ AUTHENTICATOR_APP_NAME }，您可以："
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "开通 Business 套餐或者 Enterprise 套餐，为团体选购 ${ boldDedicatedServers }，分到各 ${ boldGateways }，设置谁要使用哪些服务器。"
@@ -7167,9 +7203,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "文件会加密保存"
-      ],
-      "Your free trial includes ${ ownedCount } dedicated server.": [
-        "免费试用版包含 ${ ownedCount } 个专用服务器。"
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "您的个人信息交由我们处理是安全的，我们只会在提供服务所必需的情况下联系您。"
@@ -7773,6 +7806,9 @@
       ],
       "Method for importing metadata": [
         "导入元数据的方法"
+      ],
+      "Minimum ${ MIN_CHARS } characters": [
+        "最少 ${ MIN_CHARS } 个字符"
       ],
       "Minimum number of characters": [
         "最少字符单位"
@@ -13455,8 +13491,8 @@
       "Restore administrator privileges": [
         "恢复管理员权限"
       ],
-      "Revoke certificate": [
-        "吊销证书"
+      "Revoke certificate?": [
+        "撤销证书?"
       ],
       "SAML authentication": [
         "SAML 授权"
@@ -13568,6 +13604,9 @@
       ],
       "There are no groups": [
         "没有任何群组"
+      ],
+      "Try ${ AUTHENTICATOR_APP_NAME }": [
+        "体验 ${ AUTHENTICATOR_APP_NAME }"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "启用 ${ DARK_WEB_MONITORING_NAME }"
@@ -13836,7 +13875,7 @@
         "这可能时密码重置或用户尚未登录造成的。"
       ],
       "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
-        "此电子邮件地址只能用来登入您的 ${ BRAND_NAME } 账户。"
+        "此邮箱地址只能用于登录您的 ${ BRAND_NAME } 账户。"
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "执行账户管理操作时，该电子邮件地址将显示给所有组织成员。"

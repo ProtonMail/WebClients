@@ -1712,6 +1712,9 @@
       "How safe is Telegram?": [
         "Telegramはどれくらい安全ですか？"
       ],
+      "How to change your IP address on Windows": [
+        "Windowsでお客様の IP アドレスを変更する方法"
+      ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "この記事では、WiFiを使用するときに誰がインターネット履歴を見られるか、彼らが何を見ることができるか、そしてなぜそれを行うかについて見ていきます。"
       ],
@@ -1744,6 +1747,9 @@
       ],
       "Watch your favorite movies and TV shows": [
         "お気に入りの映画やTV番組を見る"
+      ],
+      "We discuss how to change the external and local IP addresses of your Windows device.": [
+        "お客様のWindowsデバイスにおける外部およびローカルIPアドレスの変更方法について説明します。"
       ],
       "Which VPN protocol is the best?": [
         "どのVPNプロトコルが一番良いですか？"
@@ -3491,8 +3497,14 @@
       "All events in this series were updated.": [
         "この連続した全てのイベントは更新されました。"
       ],
+      "DESCRIPTION:": [
+        "詳細："
+      ],
       "Here's what changed:": [
         "変更内容:"
+      ],
+      "LOCATION:": [
+        "場所："
       ],
       "NOTE:": [
         "注意:"
@@ -3505,6 +3517,15 @@
       ],
       "This event was updated.": [
         "この予定は更新されました。"
+      ],
+      "TIME:": [
+        "時間："
+      ],
+      "TITLE:": [
+        "タイトル："
+      ],
+      "You are invited to": [
+        "あなたは、次の場所に招待されています："
       ]
     },
     "Email body for invitation (date part)": {
@@ -5435,6 +5456,9 @@
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } は、高度な AI システムとスペシャリストを活用した高度なアカウント保護プログラムで、悪者やセキュリティの脅威からユーザーを保護するために 24 時間体制で働いています。"
       ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } は、高度な AI システムとスペシャリストを活用した高度なアカウント保護プログラムで、お客様の組織を悪者やセキュリティの脅威から保護するために 24 時間体制で稼働しています。"
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } は、疑わしいアクティビティの専用モニタリングでアカウントを保護します。"
       ],
@@ -6200,6 +6224,9 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "ダウングレードすると ${ VPN_APP_NAME } の有料機能が使えなくなります。"
       ],
+      "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
+        "お客様の組織に公人がいたり、機密データを扱ったり、サイバー攻撃の標的になる可能性がある場合、組織内のすべてのお客様に対して${ PROTON_SENTINEL_NAME }を有効にすることを強く推奨します。"
+      ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "問題がある場合は、私たちがお手伝いいたします。弊社のサポート スペシャリストの 1 人に${ boldPhoneCall } または ${ boldZoomMeeting } でご相談いただくか、${ boldLiveChat } を開いてチャット サポートをご利用ください。"
       ],
@@ -6704,9 +6731,6 @@
       "Restore": [
         "復元"
       ],
-      "Revoke certificate ${ name }": [
-        "証明書 ${ name } を失効させます"
-      ],
       "SAML configuration saved": [
         "SAML設定が保存されました"
       ],
@@ -7115,6 +7139,9 @@
       "Upgrade to Professional or a higher plan to unlock": [
         "アンロックするにはProfessionalもしくはより上位のプランにアップグレード"
       ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "${ PROTON_SENTINEL_NAME }を利用するには、${ firstPlanNames }または${ lastPlanName }をアップグレードしてください。"
+      ],
       "Upload your completed CSV file to create accounts": [
         "完成したCSVファイルをアップロードしてアカウントを作成する"
       ],
@@ -7502,8 +7529,8 @@
       "Your files will be encrypted and then saved": [
         "ファイルは暗号化して保存されます"
       ],
-      "Your free trial includes ${ ownedCount } dedicated server.": [
-        "お客様の無料トライアルには${ ownedCount }台の専用サーバーが含まれています。"
+      "Your free trial includes 1 dedicated server.": [
+        "お客様の無料トライアルには1台の専用サーバーが含まれています。"
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "あなたの情報は安全です。 サービスの提供に必要な場合にのみ、お客様に連絡します。"
@@ -8116,6 +8143,9 @@
       ],
       "Method for importing metadata": [
         "メタデータのインポート方法"
+      ],
+      "Minimum ${ MIN_CHARS } characters": [
+        "最小 ${ MIN_CHARS } 文字"
       ],
       "Minimum number of characters": [
         "最小文字数"
@@ -14121,11 +14151,11 @@
       "Restore administrator privileges": [
         "管理者権限の復元"
       ],
-      "Revoke certificate": [
-        "証明書を失効"
-      ],
       "SAML authentication": [
         "SAML認証"
+      ],
+      "Security": [
+        "セキュリティ"
       ],
       "Security events": [
         "セキュリティイベント"
@@ -14531,6 +14561,9 @@
       "This email address will be shown to all organization members when performing account management operations.": [
         "このメールアドレスはアカウント管理の操作を実行した際に組織メンバー全員に表示されます。"
       ],
+      "This setting is managed by your organization": [
+        "この設定は組織によって管理されています"
+      ],
       "User's approximate location (based on their IP address)": [
         "お客様のIPアドレスに基づくおおよその位置"
       ],
@@ -14847,11 +14880,11 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "2要素認証"
+      ],
       "Administrators can't access the data of private users": [
         "管理者がプライベートユーザーのデータにアクセスすることはできません。"
-      ],
-      "Authenticator app": [
-        "認証アプリ"
       ],
       "Inactive": [
         "非アクティブ"
@@ -14871,14 +14904,20 @@
       "Private": [
         "プライベート"
       ],
-      "Security key": [
-        "セキュリティキー"
-      ],
       "SSO": [
         "SSO"
       ],
       "SSO user provided by your identity provider": [
         "ID プロバイダーによって提供された SSO ユーザー"
+      ],
+      "User has enabled two-factor authentication with a security key.": [
+        "ユーザーはセキュリティキーを使用して2要素認証を有効にしました。"
+      ],
+      "User has enabled two-factor authentication with an authenticator app and a security key.": [
+        "ユーザーは認証アプリおよびセキュリティキーを使用して2要素認証を有効にしました。"
+      ],
+      "User has enabled two-factor authentication with an authenticator app.": [
+        "ユーザーは認証アプリを使用して2要素認証を有効にしました。"
       ],
       "Writing assistant": [
         "執筆アシスタント"
