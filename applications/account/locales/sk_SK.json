@@ -2498,6 +2498,9 @@
       "How safe is Telegram?": [
         "Aký bezpečný je Telegram?"
       ],
+      "How to change your IP address on Windows": [
+        "Ako zmeniť svoju IP adresu v systéme Windows"
+      ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "V tomto článku sa pozrieme na to, kto môže vidieť vašu internetovú históriu, keď používate Wi-Fi, čo môže vidieť a prečo to môže robiť."
       ],
@@ -2530,6 +2533,9 @@
       ],
       "Watch your favorite movies and TV shows": [
         "Pozerajte vaše obľúbené filmy a televízne relácie"
+      ],
+      "We discuss how to change the external and local IP addresses of your Windows device.": [
+        "Rozoberieme, ako zmeniť externú a lokálnu IP adresu vášho zariadenia so systémom Windows."
       ],
       "Which VPN protocol is the best?": [
         "Ktorý VPN protokol je najlepší?"
@@ -5028,8 +5034,14 @@
       "All events in this series were updated.": [
         "Všetky udalosti v tejto sérii boli aktualizované."
       ],
+      "DESCRIPTION:": [
+        "POPIS:"
+      ],
       "Here's what changed:": [
         "Popis zmien:"
+      ],
+      "LOCATION:": [
+        "UMIESTNENIE:"
       ],
       "NOTE:": [
         "POZNÁMKA:"
@@ -5042,6 +5054,15 @@
       ],
       "This event was updated.": [
         "Táto udalosť bola aktualizovaná."
+      ],
+      "TIME:": [
+        "ČAS:"
+      ],
+      "TITLE:": [
+        "NÁZOV:"
+      ],
+      "You are invited to": [
+        "Dostali ste pozvánku na"
       ]
     },
     "Email body for invitation (date part)": {
@@ -5559,7 +5580,7 @@
         "Núdzový prístup"
       ],
       "Emergency access for ${ user } removed": [
-        "Núdzový prístup pre ${ user } odstránený"
+        "Núdzový prístup pre ${ user } odobraný"
       ],
       "Emergency access granted": [
         "Núdzový prístup povolený"
@@ -8335,7 +8356,7 @@
         "${ name } pre macOS"
       ],
       "${ name } for Web": [
-        "${ name } pre web"
+        "topo${ name } pre web"
       ],
       "${ name } for Windows": [
         "${ name } pre Windows"
@@ -8393,6 +8414,9 @@
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } je pokročilý program na ochranu účtu založený sofistikovanými systémami umelej inteligencie (AI) a špecialistami, ktorí nepretržite pracujú na vašej ochrane pred nechcenými útočníkmi a bezpečnostnými hrozbami."
+      ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } je pokročilý program na ochranu účtu založený sofistikovanými systémami umelej inteligencie (AI) a špecialistami, ktorí nepretržite pracujú na ochranu vašej organizácie pred nechcenými útočníkmi a bezpečnostnými hrozbami."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } chráni váš účet pomocou špeciálneho monitorovania podozrivých aktivít."
@@ -8846,6 +8870,9 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Skutočne chcete odstrániť doménu ${ boldDomain }?"
+      ],
+      "Are you sure you want to revoke certificate **${ name }**": [
+        "Skutočne chcete zrušiť certifikát **${ name }**?"
       ],
       "Are you sure you want to sort your folders alphabetically?": [
         "Skutočne chcete zoradiť svoje priečinky podľa abecedy?"
@@ -9463,7 +9490,7 @@
         "Odporúčané v Digital Trends"
       ],
       "Featured in PC Magazine": [
-        "Odporúčané v PC Magazine"
+        "Písali o nás v časopise PC Magazine"
       ],
       "Featured in TechRadar": [
         "Odporúčané v TechRadar"
@@ -9647,6 +9674,9 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Ak ste si nedávno obnovili heslo, na odomknutie údajov môžete použiť metódu obnovenia údajov"
+      ],
+      "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
+        "Ak vaša organizácia zamestnáva známe osobnosti, spracováva citlivé údaje alebo môže byť terčom kybernetických útokov, dôrazne odporúčame aktivovať ${ PROTON_SENTINEL_NAME } pre všetkých členov vašej organizácie."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Ak máte problémy, sme tu, aby sme vám pomohli. Skúste ${ boldPhoneCall } alebo ${ boldZoomMeeting } s jedným z našich špecialistov podpory, alebo otvorte ${ boldLiveChat } pre chatovú podporu."
@@ -10077,9 +10107,6 @@
       "Not a valid URL": [
         "Neplatný odkaz"
       ],
-      "Not yet available in our Android mobile app.": [
-        "Zatiaľ nedostupné v našej mobilnej Android aplikácií."
-      ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverov v organizácii"
       ],
@@ -10421,9 +10448,6 @@
       ],
       "Restore": [
         "Obnoviť"
-      ],
-      "Revoke certificate ${ name }": [
-        "Zrušiť certifikát ${ name }"
       ],
       "Right to Left": [
         "Sprava doľava"
@@ -11070,6 +11094,9 @@
       "Upgrade to unlock": [
         "Pre odomknutie upgradujte"
       ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Navýšte svoj plán na ${ firstPlanNames } alebo ${ lastPlanName }, aby ste získali prístup k ${ PROTON_SENTINEL_NAME }."
+      ],
       "Upload picture": [
         "Nahrať obrázok"
       ],
@@ -11646,11 +11673,8 @@
       "Your files will be encrypted and then saved": [
         "Vaše súbory budú zašifrované a potom uložené"
       ],
-      "Your free trial includes ${ ownedCount } dedicated server.": [
-        "Vaša bezplatná skúšobná verzia zahŕňa ${ ownedCount } vyhradený server.",
-        "Vaša bezplatná skúšobná verzia zahŕňa ${ ownedCount } vyhradené servery.",
-        "Vaša bezplatná skúšobná verzia zahŕňa ${ ownedCount } vyhradených serverov.",
-        "Vaša bezplatná skúšobná verzia zahŕňa ${ ownedCount } vyhradených serverov."
+      "Your free trial includes 1 dedicated server.": [
+        "Vaša bezplatná skúšobná verzia zahŕňa 1 vyhradený server."
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "Vaša bezplatná skúšobná verzia bola úspešne konvertovaná na ${ cycle }-mesačné predplatné. Váš dátum obnovenia je ${ nextBillingDate }."
@@ -13066,6 +13090,9 @@
       ],
       "Method for importing metadata": [
         "Spôsob importu metadát"
+      ],
+      "Minimum ${ MIN_CHARS } characters": [
+        "Minimálne ${ MIN_CHARS } znakov"
       ],
       "Minimum number of characters": [
         "Minimálny počet znakov"
@@ -16344,7 +16371,7 @@
         "Normálne"
       ],
       "Not allowed": [
-        "Zakázané"
+        "Nie je povolené"
       ],
       "Off": [
         "Vypnuté"
@@ -18196,13 +18223,13 @@
       ]
     },
     "Safety review": {
-      " **Disable recovery by phone** to ensure highest possible security of your account.": [
-        " **Deaktivujte obnovenie pomocou telefónu**, aby ste zaistili čo najvyššiu bezpečnosť svojho účtu."
+      " **Disable recovery by phone** to prevent attackers from taking over your account.": [
+        " **Deaktivujte obnovenie prostredníctvom telefónu**, aby ste zabránili útočníkom prevziať kontrolu nad vaším účtom."
       ],
       " **Enable recovery by phone** to regain access to your account if you forget your password.": [
         " **Povolením obnovy telefónom** získate späť prístup k svojmu kontu, ak zabudnete heslo."
       ],
-      "${ BRAND_NAME } will use this address to keep you updated on your account security..": [
+      "${ BRAND_NAME } will use this address to keep you updated on your account security.": [
         "${ BRAND_NAME } bude túto adresu používať na zasielanie informácií o bezpečnosti vášho účtu."
       ],
       "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
@@ -18214,8 +18241,8 @@
       "${ enableDeviceRecovery } to ensure your data can be recovered.": [
         "${ enableDeviceRecovery } pre zaistenie možnosti obnovy vašich dát."
       ],
-      "**Disable account reset by email** to ensure highest possible security of your account.": [
-        "**Deaktivujte obnovenie účtu prostredníctvom emailu**, aby ste zaistili čo najvyššiu bezpečnosť svojho účtu."
+      "**Disable account reset by email** to prevent attackers from taking over your account.": [
+        "**Deaktivujte resetovanie účtu prostredníctvom emailu**, aby ste zabránili útočníkom prevziať kontrolu nad vaším účtom."
       ],
       "**Enable recovery by email** to regain access to your account if you forget your password.": [
         "**Povolením obnovy emailom** získate späť prístup k svojmu kontu, ak zabudnete heslo."
@@ -18281,7 +18308,7 @@
         "Zakázať obnovenie telefónom"
       ],
       "Disable recovery by phone ": [
-        "Deaktivujte obnovenie telefónom "
+        "Deaktivovať obnovenie telefónom "
       ],
       "Download ${ size }": [
         "Stiahnuť ${ size }"
@@ -18515,7 +18542,7 @@
         "Vaša sada pre obnovenie"
       ],
       "Your Recovery Kit is set": [
-        "Vaša sada na obnovu je nastavená"
+        "Vaša sada pre obnovenie je nastavená"
       ],
       "Your recovery methods": [
         "Vaše metódy obnovenia"
@@ -22664,8 +22691,8 @@
       "Reused passwords": [
         "Opakovane použité heslá"
       ],
-      "Revoke certificate": [
-        "Zrušiť certifikát"
+      "Revoke certificate?": [
+        "Zrušiť certifikát?"
       ],
       "Same inbox, shorter email address": [
         "Rovnaká schránka, kratšia emailová adresa"
@@ -22684,6 +22711,9 @@
       ],
       "Secure your passwords. Everywhere.": [
         "Zabezpečte svoje heslá. Všade."
+      ],
+      "Security": [
+        "Bezpečnosť"
       ],
       "Security and privacy": [
         "Bezpečnosť a súkromie"
@@ -23256,7 +23286,7 @@
         "Povoliť/zakázať hlásenia pre počítače a mobilné zariadenia"
       ],
       "Enable/disable desktop and mobile notifications for “${ labelName }”": [
-        "Povoliť/zakázať hlásenia pre počítače a mobilné zariadenia pre „${ labelName }“"
+        "Povoliť/zakázať notifikácie pre počítače a mobilné zariadenia pre „${ labelName }“"
       ],
       "Enabling detailed events records the IP address for each event.": [
         "Povolením podrobných udalostí sa zaznamenáva IP adresa pre každú udalosť."
@@ -23398,6 +23428,9 @@
       ],
       "This key is used for email forwarding": [
         "Tento kľúč sa používa na preposielanie emailov"
+      ],
+      "This setting is managed by your organization": [
+        "Toto nastavenie spravuje vaša organizácia"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Pokiaľ nie sú dešifrované, zašifrované heslá zostávajú v bezpečí, aj keď sú odhalené."
@@ -23845,11 +23878,11 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "2FA"
+      ],
       "Administrators can't access the data of private users": [
         "Administrátori nemajú prístup k údajom súkromných používateľov"
-      ],
-      "Authenticator app": [
-        "Overovacia aplikácia"
       ],
       "Inactive": [
         "Neaktívni"
@@ -23869,14 +23902,20 @@
       "Private": [
         "Súkromné"
       ],
-      "Security key": [
-        "Bezpečnostný kľúč"
-      ],
       "SSO": [
         "SSO"
       ],
       "SSO user provided by your identity provider": [
         "SSO používateľ poskytnutý poskytovateľom identity"
+      ],
+      "User has enabled two-factor authentication with a security key.": [
+        "Používateľ povolil dvojstupňové overovanie pomocou bezpečnostného kľúča."
+      ],
+      "User has enabled two-factor authentication with an authenticator app and a security key.": [
+        "Používateľ povolil dvojstupňové overovanie pomocou overovacej aplikácie a bezpečnostného kľúča."
+      ],
+      "User has enabled two-factor authentication with an authenticator app.": [
+        "Používateľ povolil dvojstupňové overovanie pomocou overovacej aplikácie."
       ],
       "Writing assistant": [
         "Asistent písania"

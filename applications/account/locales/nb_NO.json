@@ -2478,6 +2478,9 @@
       "How safe is Telegram?": [
         "Hvor sikker er Telegram?"
       ],
+      "How to change your IP address on Windows": [
+        "Hvordan endre IP-adressen din på Windows"
+      ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "I denne artikkelen ser vi på hvem som kan se internettloggen din når du bruker WiFi, hva de kan se, og hvorfor de kan gjøre dette."
       ],
@@ -2510,6 +2513,9 @@
       ],
       "Watch your favorite movies and TV shows": [
         "Se favorittfilmene og TV-programmene dine"
+      ],
+      "We discuss how to change the external and local IP addresses of your Windows device.": [
+        "Vi diskuterer hvordan du endrer de eksterne og lokale IP-adressene til Windows-enheten din."
       ],
       "Which VPN protocol is the best?": [
         "Hvilken VPN-protokoll er den beste?"
@@ -9473,7 +9479,7 @@
         "Hvis du nylig tilbakestilte passordet ditt, kan du bruke en datagjenopprettingsmetode til å låse opp dine data."
       ],
       "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
-        "Hvis din organisasjon har offentlige personer, håndterer sensitive data, eller kan bli målrettet i cyberangrep, blir du sterkt oppfordret til å aktivere ${ PROTON_SENTINEL_NAME } for alle i din organisasjon."
+        "Hvis organisasjonen din har offentlige personer, håndterer sensitive data, eller kan bli målrettet i cyberangrep, blir du sterkt oppfordret til å aktivere ${ PROTON_SENTINEL_NAME } for alle i din organisasjon."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Hvis du har problemer, er vi her for å hjelpe. ${ boldPhoneCall } eller ${ boldZoomMeeting } med en av våre brukerstøttespesialister, eller åpne en ${ boldLiveChat } for chat-støtte."
@@ -9900,9 +9906,6 @@
       "Not a valid URL": [
         "Ikke en gyldig nettadresse"
       ],
-      "Not yet available in our Android mobile app.": [
-        "Ikke tilgjengelig enda i vår Android mobilapp."
-      ],
       "Number of dedicated servers in the organization": [
         "Antall dedikerte tjenere i organisasjonen"
       ],
@@ -10237,9 +10240,6 @@
       ],
       "Restore": [
         "Gjenopprett"
-      ],
-      "Revoke certificate ${ name }": [
-        "Tilbakekall sertifikat ${ name }"
       ],
       "Right to Left": [
         "Høyre til venstre"
@@ -11431,9 +11431,8 @@
       "Your files will be encrypted and then saved": [
         "Filene dine vil bli kryptert og deretter lagret"
       ],
-      "Your free trial includes ${ ownedCount } dedicated server.": [
-        "Din gratis prøveversjon inkluderer ${ ownedCount } dedikert tjener.",
-        "Din gratis prøveversjon inkluderer ${ ownedCount } dedikerte tjenere."
+      "Your free trial includes 1 dedicated server.": [
+        "Din gratis prøveperiode inkluderer én dedikert tjener."
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "Din gratis prøveperiode ble vellykket konvertert til et ${ cycle }-måneders abonnement. Din fornyelsesdato er ${ nextBillingDate }."
@@ -12831,6 +12830,9 @@
       ],
       "Method for importing metadata": [
         "Metode for import av metadata"
+      ],
+      "Minimum ${ MIN_CHARS } characters": [
+        "Minimum ${ MIN_CHARS } tegn"
       ],
       "Minimum number of characters": [
         "Minimum antall tegn"
@@ -17861,13 +17863,13 @@
       ]
     },
     "Safety review": {
-      " **Disable recovery by phone** to ensure highest possible security of your account.": [
-        " **Deaktiver gjenoppretting via telefon** for å sikre høyest mulig sikkerhet for kontoen din."
+      " **Disable recovery by phone** to prevent attackers from taking over your account.": [
+        " **Deaktiver gjenoppretting via telefon** for å forhindre angripere fra å ta over kontoen din."
       ],
       " **Enable recovery by phone** to regain access to your account if you forget your password.": [
         "**Aktiver gjenoppretting via telefon** for å få tilgang til kontoen din igjen hvis du glemmer passordet ditt."
       ],
-      "${ BRAND_NAME } will use this address to keep you updated on your account security..": [
+      "${ BRAND_NAME } will use this address to keep you updated on your account security.": [
         "${ BRAND_NAME } vil bruke denne adressen for å holde deg oppdatert om kontosikkerheten din."
       ],
       "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
@@ -17879,8 +17881,8 @@
       "${ enableDeviceRecovery } to ensure your data can be recovered.": [
         "${ enableDeviceRecovery } for å sikre at dataene dine kan gjenopprettes."
       ],
-      "**Disable account reset by email** to ensure highest possible security of your account.": [
-        "**Deaktiver kontotilbakestilling via e-post** for å sikre høyest mulig sikkerhet for kontoen din."
+      "**Disable account reset by email** to prevent attackers from taking over your account.": [
+        "**Deaktiver kontotilbakestilling via e-post** for å forhindre angripere fra å ta over kontoen din."
       ],
       "**Enable recovery by email** to regain access to your account if you forget your password.": [
         "**Aktiver gjenoppretting via e-post** for å få tilgang til kontoen din igjen hvis du glemmer passordet ditt."
@@ -22169,9 +22171,6 @@
       "Reused passwords": [
         "Gjenbrukte passord"
       ],
-      "Revoke certificate": [
-        "Opphev sertifikat"
-      ],
       "Same inbox, shorter email address": [
         "Samme innboks, kortere e-postadresse"
       ],
@@ -23350,11 +23349,11 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "2FA"
+      ],
       "Administrators can't access the data of private users": [
         "Administratorer har ikke tilgang til dataene til private brukere"
-      ],
-      "Authenticator app": [
-        "Autentiseringsapp"
       ],
       "Inactive": [
         "Inaktiv"
@@ -23374,14 +23373,20 @@
       "Private": [
         "Privat"
       ],
-      "Security key": [
-        "Sikkerhetsnøkkel"
-      ],
       "SSO": [
         "SSO"
       ],
       "SSO user provided by your identity provider": [
         "SSO-bruker levert av identitetsleverandøren din"
+      ],
+      "User has enabled two-factor authentication with a security key.": [
+        "Bruker har aktivert tofaktorautentisering med en sikkerhetsnøkkel."
+      ],
+      "User has enabled two-factor authentication with an authenticator app and a security key.": [
+        "Bruker har aktivert tofaktorautentisering med en autentiseringsapp og en sikkerhetsnøkkel."
+      ],
+      "User has enabled two-factor authentication with an authenticator app.": [
+        "Bruker har aktivert tofaktorautentisering med en autentiseringsapp."
       ],
       "Writing assistant": [
         "Skriveassistent"
