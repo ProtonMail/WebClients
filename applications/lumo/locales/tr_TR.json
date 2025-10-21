@@ -227,8 +227,14 @@
       "Resend code": [
         "Kodu yeniden gönder"
       ],
+      "Reset all": [
+        "Tümünü sıfırla"
+      ],
       "Save": [
         "Kaydet"
+      ],
+      "Saving...": [
+        "Kaydediliyor..."
       ],
       "Scroll to bottom": [
         "En alta kaydır"
@@ -680,6 +686,9 @@
       "Send message": [
         "İletiyi gönder"
       ],
+      "settings": [
+        "ayarlar"
+      ],
       "Show safety information": [
         "Güvenlik bilgilerini görüntüle"
       ],
@@ -799,6 +808,56 @@
       ],
       "You’re in control": [
         "Kontrol sizde"
+      ]
+    },
+    "collider_2025: Context": {
+      "I believe cereal is a soup and I'm not sorry": [
+        "Kahvaltılık gevreğin bir çorba olduğuna inanıyorum ve bundan pişman değilim"
+      ],
+      "I believe pizza is a vegetable if it has enough toppings": [
+        "Yeterli malzemesi varsa pizzanın bir sebze olduğuna inanıyorum"
+      ],
+      "I believe tabs vs spaces is a human rights issue": [
+        "Sekmeler ile boşlukların bir insan hakları sorunu olduğuna inanıyorum"
+      ],
+      "I collect vintage error messages": [
+        "Eski hata iletileri koleksiyonu yapıyorum."
+      ],
+      "I communicate primarily through GIFs and emoji": [
+        "Öncelikli olarak GIF'ler ve emojiler aracılığıyla iletişim kurarım"
+      ],
+      "I have a PhD in overthinking simple problems": [
+        "Basit sorunları aşırı düşünmek konusunda doktoram var"
+      ],
+      "I have strong opinions about pineapple on pizza": [
+        "Pizzaya ananas koymakla ilgili güçlü düşüncelerim var"
+      ],
+      "I have trust issues with autocomplete": [
+        "Otomatik tamamlama ile güven sorunlarım var"
+      ],
+      "I judge people based on their commit messages": [
+        "İnsanları gönderdikleri iletilere göre yargılarım."
+      ],
+      "I name all my houseplants after Renaissance painters": [
+        "Tüm ev bitkilerime Rönesans dönemi ressamlarının adlarını veririm"
+      ],
+      "I once spent 3 hours debugging a missing semicolon": [
+        "Bir keresinde eksik bir noktalı virgülü bulmak için 3 saat geçirdim"
+      ],
+      "I prefer my explanations like my coffee: dark and bitter": [
+        "Açıklamalarımı kahvem gibi tercih ederim: Koyu ve acı"
+      ],
+      "I speak fluent sarcasm and broken French": [
+        "Akıcı bir şekilde alaycı konuşurum ve bozuk Fransızca bilirim"
+      ],
+      "I talk to my rubber duck for debugging help": [
+        "Hata ayıklamaya yardımcı olması için lastik ördeğimle konuşurum"
+      ],
+      "I'm on a first-name basis with Stack Overflow": [
+        "Stack Overflow ile samimiyetim var"
+      ],
+      "I'm powered by caffeine and existential dread": [
+        "Gücümü kafein ve varoluşsal kaygıdan alıyorum"
       ]
     },
     "collider_2025: Description": {
@@ -1242,6 +1301,9 @@
       ],
       "You are about to visit an external website:": [
         "Bir dış siteyi ziyaret etmek üzeresiniz:"
+      ],
+      "Your information is zero-access encrypted": [
+        "Bilgilerinize sıfır erişim şifrelemesi uygulanır"
       ]
     },
     "collider_2025: Invite": {
@@ -1301,6 +1363,35 @@
     "collider_2025: Invite Title": {
       "Invite friends to experience ${ LUMO_APP_NAME }": [
         "Arkadaşlarınızı ${ LUMO_APP_NAME } deneyimlemeye davet edin"
+      ]
+    },
+    "collider_2025: Job": {
+      "Cat herder": [
+        "Kedi çobanı"
+      ],
+      "Chief Treat Distribution Officer": [
+        "Baş ikram dağıtımı görevlisi"
+      ],
+      "Director of Windowsill Security": [
+        "Pencere pervazı güvenlik direktörü"
+      ],
+      "Feline Behavior Consultant": [
+        "Kedi davranışı danışmanı"
+      ],
+      "Head of Yarn Ball Quality Control": [
+        "İplik topu kalite kontrol müdürü"
+      ],
+      "Marketing manager": [
+        "Pazarlama müdürü"
+      ],
+      "Professional cat napper": [
+        "Profesyonel kedi uyku uzmanı"
+      ],
+      "Professional Sunbeam Tester": [
+        "Profesyonel güneş ışını test uzmanı"
+      ],
+      "Senior Cardboard Box Inspector": [
+        "Kıdemli karton kutu müfettişi"
       ]
     },
     "collider_2025: Label": {
@@ -1371,6 +1462,54 @@
         "${ LUMO_SHORT_APP_NAME } Plus tarifesine yükseltin."
       ]
     },
+    "collider_2025: Personality": {
+      "Business Cat": [
+        "İş kedisi"
+      ],
+      "Default": [
+        "Varsayılan"
+      ],
+      "Lazy Cat": [
+        "Tembel kedi"
+      ],
+      "Playful Cat": [
+        "Oyuncu kedi"
+      ],
+      "Sassy Cat": [
+        "Fettan kedi"
+      ],
+      "Wise Cat": [
+        "Bilge kedi"
+      ]
+    },
+    "collider_2025: Personality Description": {
+      "Cheerful and adaptive": [
+        "Neşeli ve uyumlu"
+      ],
+      "Chill and laid-back": [
+        "Rahat ve sakin"
+      ],
+      "Energetic and fun-loving": [
+        "Enerjik ve eğlenceyi seven"
+      ],
+      "Professional but still a cat": [
+        "Profesyonel, ancak yine de bir kedi."
+      ],
+      "Thoughtful and philosophical": [
+        "Düşünceli ve felsefi"
+      ],
+      "Witty with a bit of attitude": [
+        "Nüktedan ve tavırlı"
+      ]
+    },
+    "collider_2025: Personalization": {
+      "Personalize your ${ LUMO_SHORT_APP_NAME } experience": [
+        "${ LUMO_SHORT_APP_NAME } deneyiminizi kişiselleştirin"
+      ],
+      "Sign in or create a free account to customize how ${ LUMO_SHORT_APP_NAME } interacts with you. Set your preferences, communication style, and more.": [
+        "Oturum açın ya da ${ LUMO_SHORT_APP_NAME } ile etkileşiminizin nasıl olacağını özelleştirmek için ücretsiz bir hesap açın. Ayarlarınızı, iletişim tarzınızı ve diğer şeyleri belirleyin."
+      ]
+    },
     "collider_2025: Pill": {
       "Protected by ${ BRAND_NAME }": [
         "${ BRAND_NAME } tarafından korunuyor"
@@ -1390,6 +1529,9 @@
       ],
       "General": [
         "Genel"
+      ],
+      "Personalization": [
+        "Kişiselleştirme"
       ]
     },
     "collider_2025: Status": {
@@ -1472,6 +1614,84 @@
       ],
       "Try ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } tarifesini deneyin"
+      ]
+    },
+    "collider_2025: Trait": {
+      "Chatty": [
+        "Konuşkan"
+      ],
+      "Encouraging": [
+        "Cesaretlendirici"
+      ],
+      "Forward thinking": [
+        "İleri görüşlü"
+      ],
+      "Gen Z": [
+        "Z kuşağı"
+      ],
+      "Humble": [
+        "Mütevazı"
+      ],
+      "Straight shooting": [
+        "Dürüstlük"
+      ],
+      "Traditional": [
+        "Geleneksel"
+      ],
+      "Witty": [
+        "Zeki"
+      ]
+    },
+    "collider_2025: Trait Description": {
+      "Be conversational and engaging in responses": [
+        "Yanıtlarında samimi ve katılımcı bir üslup benimse"
+      ],
+      "Be modest and acknowledge limitations when appropriate": [
+        "Uygun olduğunda alçak gönüllü olun ve sınırları kabul edin"
+      ],
+      "Be supportive and motivating in your tone": [
+        "Tonun destekleyici ve motive edici olsun"
+      ],
+      "Embrace progressive and innovative perspectives": [
+        "İlerici ve yenilikçi bakış açılarını benimseyin"
+      ],
+      "Maintain a formal and conventional approach": [
+        "Resmi ve geleneksel bir yaklaşım sürdür"
+      ],
+      "Tell it like it is; don't sugar-coat responses": [
+        "Gerçekleri olduğu gibi ifade et. Yanıtları süsleme"
+      ],
+      "Use clever humor and wordplay when appropriate": [
+        "Uygun olduğunda akıllıca mizah ve sözcük oyunu kullan"
+      ],
+      "Use modern slang and trendy communication style": [
+        "Modern argo ve güncel iletişim tarzı kullan"
+      ]
+    },
+    "collider_2025: Trait Sentence": {
+      "Be conversational and engaging in your responses.": [
+        "Yanıtlarında samimi ve katılımcı bir üslup benimse."
+      ],
+      "Be humble when appropriate.": [
+        "Uygun olduğunda mütevazı ol."
+      ],
+      "Be supportive and motivating in your tone.": [
+        "Tonun destekleyici ve motive edici olsun."
+      ],
+      "Embrace progressive and innovative perspectives.": [
+        "İlerici ve yenilikçi bakış açılarını benimseyin."
+      ],
+      "Maintain a formal and conventional approach.": [
+        "Resmi ve geleneksel bir yaklaşım sürdür."
+      ],
+      "Tell it like it is; don't sugar-coat responses.": [
+        "Gerçekleri olduğu gibi ifade et. Yanıtları süsleme."
+      ],
+      "Use clever humor and wordplay when appropriate.": [
+        "Uygun olduğunda akıllıca mizah ve sözcük oyunu kullan."
+      ],
+      "Use modern slang and trendy communication style.": [
+        "Modern argo ve güncel iletişim tarzı kullan."
       ]
     },
     "collider_2025: Upsell": {
@@ -1614,6 +1834,9 @@
       "Settings": [
         "Ayarlar"
       ],
+      "Show sidebar": [
+        "Kenar çubuğunu görüntüle"
+      ],
       "Unfavorite": [
         "Beğenilenlerden kaldır"
       ],
@@ -1669,14 +1892,14 @@
       ]
     },
     "collider_2025:Title": {
-      "${ LUMO_SHORT_APP_NAME } 1.1 is much smarter, more capable, with improved awareness of recent events, ready to give you more thorough and useful answers.": [
-        "${ LUMO_SHORT_APP_NAME } 1.1, çok daha akıllı, daha yetenekli, son etkinliklerle ilgili daha çok bilgi sahibi ve daha kapsamlı ve kullanışlı yanıtlar sunmaya hazır."
-      ],
       "An AI assistant should empower you, not exploit you for your data. That’s why we built ${ LUMO_SHORT_APP_NAME }: To bring you all the benefits of AI, without compromising your privacy and data security.": [
         "Bir yapay zeka asistanı sizi güçlendirmeli, verileriniz için sizi sömürmemeli. Bu nedenle, gizliliğinizden ve veri güvenliğinizden ödün vermeden yapay zekanın tüm faydalarını size sunmak için ${ LUMO_SHORT_APP_NAME } hizmetini geliştirdik."
       ],
       "Built by the team that knows privacy": [
         "Gizliliği bilen bir ekip tarafından geliştirildi"
+      ],
+      "Dark mode and conversation personalization": [
+        "Koyu kip ve yazışma kişiselleştirme"
       ],
       "Earlier": [
         "Daha önce"
@@ -1698,6 +1921,12 @@
       ],
       "How does ${ LUMO_SHORT_APP_NAME } keep our conversations confidential?": [
         "${ LUMO_SHORT_APP_NAME } sohbetlerinizi nasıl gizli tutar?"
+      ],
+      "Introducing ${ LUMO_SHORT_APP_NAME } ${ WHATS_NEW_VERSION } with support for dark mode and new options to personalize your conversations.": [
+        "Koyu kip desteği ve yazışmalarınızı kişiselleştirmek için yeni seçeneklerle ${ LUMO_SHORT_APP_NAME } ${ WHATS_NEW_VERSION } sürümünü sunuyoruz."
+      ],
+      "Introducing ${ LUMO_SHORT_APP_NAME } ${ WHATS_NEW_VERSION } with support for dark mode and new options to personalize your conversations. Try it out in ${ openSettingsModalButton }.": [
+        "Koyu kip desteği ve yazışmalarınızı kişiselleştirmek için yeni seçeneklerle ${ LUMO_SHORT_APP_NAME } ${ WHATS_NEW_VERSION } sürümünü sunuyoruz. ${ openSettingsModalButton } içinde deneyin."
       ],
       "Last 30 days": [
         "Son 30 gün"
@@ -1723,8 +1952,8 @@
       "Today": [
         "Bugün"
       ],
-      "What's new in ${ LUMO_SHORT_APP_NAME } 1.1": [
-        "${ LUMO_SHORT_APP_NAME } 1.1 sürümündeki yenilikler neler?"
+      "What's new": [
+        "Yenilikler"
       ],
       "Whatever you ask me is:": [
         "Bana istediğinizi sorun:"
@@ -3429,6 +3658,9 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Doğrulama işlemi için yeni bir tarayıcı sekmesi açılacak. Kullanıyorsanız lütfen açılır pencere engelleyicileri kapatın."
       ],
+      "This information is zero-access encrypted.": [
+        "Bu bilgilere sıfır erişim şifrelemesi uygulanmıştır."
+      ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Kullanıcılarınıza görüntülenecek kuruluş adınız veya kısaltmanız. İstediğiniz zaman değiştirebilirsiniz."
       ],
@@ -3622,6 +3854,9 @@
       "Anderson": [
         "Kaya"
       ],
+      "Anything else ${ LUMO_SHORT_APP_NAME } should know about you?": [
+        "${ LUMO_SHORT_APP_NAME } sizinle ilgili başka bir şey bilmeli mi?"
+      ],
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
       ],
@@ -3715,6 +3950,9 @@
       "Hide password": [
         "Parolayı gizle"
       ],
+      "How should ${ LUMO_SHORT_APP_NAME } behave?": [
+        "${ LUMO_SHORT_APP_NAME } nasıl davranmalı?"
+      ],
       "IBAN": [
         "IBAN"
       ],
@@ -3787,11 +4025,17 @@
       "Verification code": [
         "Doğrulama kodu"
       ],
+      "What do you do?": [
+        "Ne yapıyorsun?"
+      ],
       "What happened?": [
         "Ne oldu?"
       ],
       "What is your main reason for canceling or downgrading?": [
         "İptal etmenizin ya da tarifenizi düşürmenizin temel nedeni nedir?"
+      ],
+      "What should ${ LUMO_SHORT_APP_NAME } call you?": [
+        "${ LUMO_SHORT_APP_NAME } size nasıl hitap etsin?"
       ],
       "Your password (admin)": [
         "Parolanız (yönetici)"
@@ -5160,6 +5404,9 @@
       "Select state": [
         "İl seçin"
       ],
+      "Selected traits will appear here automatically": [
+        "Seçilmiş karakter özellikleri otomatik olarak burada görüntülenir"
+      ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "${ BRAND_NAME } uygulamasını iyileştirmek için bir düşünceniz varsa paylaşın"
       ],
@@ -5766,17 +6013,20 @@
         "Daha kısa adresiniz hazır"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
-      ]
-    },
     "Tooltip": {
+      "Clear all selected traits and restore trait buttons": [
+        "Tüm seçilmiş karakter özelliklerini temizle ve özellik düğmelerini geri yükle"
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Satın aldığınız ya da destek ekibimizden verilen bir hediye kodunuz varsa, buraya yazabilirsiniz."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Yeni gönderim döngüsü ${ formattedTime } zamanında başlayacak"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
       ]
     },
     "unprivatization": {
