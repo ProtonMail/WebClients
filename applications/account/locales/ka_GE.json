@@ -2454,6 +2454,9 @@
       "How safe is Telegram?": [
         "რა დონეზე უსაფრთხოა Telegram?"
       ],
+      "How to change your IP address on Windows": [
+        "როგორ შეცვალოთ თქვენი IP მისამართი Windows-ზე"
+      ],
       "Increase VPN speeds by up to 400% with VPN Accelerator": [
         "გაზარდეთ VPN-ის სიჩქარე 400%-მდე VPN-ის ამაჩქარებელთან ერთად"
       ],
@@ -4910,8 +4913,14 @@
       "All events in this series were updated.": [
         "ამ სერიაში ყველა მოვლენა განახლდა."
       ],
+      "DESCRIPTION:": [
+        "აღწერა:"
+      ],
       "Here's what changed:": [
         "აი, რა შეიცვალა:"
+      ],
+      "LOCATION:": [
+        "მდებარეობა:"
       ],
       "NOTE:": [
         "შენიშვნა:"
@@ -4924,6 +4933,15 @@
       ],
       "This event was updated.": [
         "ეს მოვლენა განახლდა."
+      ],
+      "TIME:": [
+        "დრო:"
+      ],
+      "TITLE:": [
+        "სათაური:"
+      ],
+      "You are invited to": [
+        "თქვენ მიგიწვიეს"
       ]
     },
     "Email body for invitation (date part)": {
@@ -5552,6 +5570,9 @@
       ],
       "You'll receive access to their account immediately.": [
         "მათ ანგარიშებთან წვდომას დაუყოვნებლივ მიიღებთ."
+      ],
+      "Your emergency contact ${ name } is requesting access to your account.": [
+        "თქვენი სასწრაფო კონტაქტი ${ name } ითხოვს წვდომას თქვენს ანგარიშთან."
       ]
     },
     "Empty group name": {
@@ -9668,9 +9689,6 @@
       "Not a valid URL": [
         "არასწორი URL"
       ],
-      "Not yet available in our Android mobile app.": [
-        "ჩვენს Android-ის მობილურ აპში ჯერ ხელმისაწვდომი არაა."
-      ],
       "Number of dedicated servers in the organization": [
         "გამოყოფილი სერვერების რაოდენობა ორგანიზაციაში"
       ],
@@ -9999,9 +10017,6 @@
       ],
       "Restore": [
         "აღდგენა"
-      ],
-      "Revoke certificate ${ name }": [
-        "სერტიფიკატის გაუქმება (${ name })"
       ],
       "Right to Left": [
         "მარჯვნიდან მარცხნივ"
@@ -11138,9 +11153,8 @@
       "Your files will be encrypted and then saved": [
         "თქვენი ფაილები ჯერ დაიშიფრება და, მხოლოდ, შემდეგ შეინახება"
       ],
-      "Your free trial includes ${ ownedCount } dedicated server.": [
-        "თქვენი უფასო საცდელი პერიოდი მოიცავს ${ ownedCount } გამოყოფილ სერვერს.",
-        "თქვენი უფასო საცდელი პერიოდი მოიცავს ${ ownedCount } გამოყოფილ სერვერს."
+      "Your free trial includes 1 dedicated server.": [
+        "თქვენი უფასო საცდელი პერიოდი მოიცავს 1 გამოყოფილ სერვერს."
       ],
       "Your friends get **2 weeks for free** on their chosen plan.": [
         "თქვენი მეგობრები მიიღებენ **2 კვირას უფასოდ** თავიანთ არჩეულ სატარიფო გეგმაზე."
@@ -12515,6 +12529,9 @@
       ],
       "Method for importing metadata": [
         "მეტამონაცემების შემოტანის მეთოდი"
+      ],
+      "Minimum ${ MIN_CHARS } characters": [
+        "მინიმუმ ${ MIN_CHARS } სიმბოლო"
       ],
       "Minimum number of characters": [
         "სიმბოლოების მინიმალური რაოდენობა"
@@ -15390,6 +15407,9 @@
       "This offer won't be shown again.": [
         "ამ შემოთავაზებას აღარ გაჩვენებთ."
       ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "ასწიეთ თქვენი პროდუქტიულობა ${ pricingTitle }-ისთვის ${ planName }-ით"
+      ],
       "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
         "ასწიეთ თქვენი საცავი, მხოლოდ, ${ pricingTitle }-ით ${ planName }-ისთან ერთად"
       ],
@@ -15499,11 +15519,17 @@
       "You can still cancel within 30 days and get a prorated refund.": [
         "გაუქმება შემდეგ 30 დღეში ჯერ კიდევ შეგიძლიათ. თანხა დაგიბრუნდებათ"
       ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "შეგიძლიათ გამოიყენოთ ${ planTitle } საცდელი პერიოდის ამოწურვამდე და საფასური არ დაგერიცხებათ."
+      ],
       "Your free trial has started": [
         "თქვენი გამოსაცდელი პერიოდი დაიწყო"
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "თქვენი სრული ${ planTitle } გამოწერის დაწყების თარიღია ${ boldEndDate }."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "${ planTitle }-ის გამოყენებას შეძლებთ საცდელი პერიოდის დასრულებამდე, უფასოდ."
       ]
     },
     "Option": {
@@ -16530,6 +16556,9 @@
       ],
       "This offer is not available with your current plan.": [
         "ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "ეს გადახდის მეთოდი თქვენი ნაგულისხმევი იქნება ყველა მომავალი განახლებისთვის."
       ],
       "Timeout exceeded": [
         "მოლოდინის ვადა ამოიწურა"
@@ -17654,6 +17683,9 @@
       ],
       "You will no longer be able to use this address to reset your account.": [
         "ამ მისამართს თქვენი ანგარიშის ჩამოსაყრელად ვეღარ გამოიყენებთ."
+      ],
+      "You will no longer be able to use this phone number to reset your account.": [
+        "ამ ტელეფონის ნომერს თქვენი ანგარიშის ჩამოსაყრელად ვეღარ გამოიყენებთ."
       ],
       "Your account and data can be recovered": [
         "თქვენი ანგარიშის და მონაცემების აღდგენა შესაძლებელია"
@@ -21659,9 +21691,6 @@
       "Reused passwords": [
         "განმეორებით გამოყენებული პაროლები"
       ],
-      "Revoke certificate": [
-        "სერტიფიკატის გაუქმება"
-      ],
       "Same inbox, shorter email address": [
         "იგივე საფოსტო ყუთი, უფრო მოკლე ელფოსტის მისამართი"
       ],
@@ -21679,6 +21708,9 @@
       ],
       "Secure your passwords. Everywhere.": [
         "დაიცავით თქვენი პაროლები. ყველგან."
+      ],
+      "Security": [
+        "უსაფრთხოება"
       ],
       "Security and privacy": [
         "უსაფრთხოება და კონფიდენციალობა"
@@ -22377,6 +22409,9 @@
       "This key is used for email forwarding": [
         "ეს გასაღები ელფოსტის გადამისამართებისთვის გამოიყენება"
       ],
+      "This setting is managed by your organization": [
+        "ეს პარამეტრი იმართება თქვენი ორგანიზაციის მიერ"
+      ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "თუ მათ არ გაშიფრავთ, დაშიფრული პაროლები დაცულია მაშინაც კი, თუ მათ ვინმე ნახავს."
       ],
@@ -22807,11 +22842,11 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "2FA"
+      ],
       "Administrators can't access the data of private users": [
         "ადმინისტრატორებს კონფიდენციალური მომხმარებლების მონაცემებთან წვდომა არ აქვთ"
-      ],
-      "Authenticator app": [
-        "ავთენტიკატორი აპი"
       ],
       "Inactive": [
         "არააქტიური"
@@ -22831,14 +22866,17 @@
       "Private": [
         "პირადი"
       ],
-      "Security key": [
-        "უსაფრთხოების გასაღები"
-      ],
       "SSO": [
         "SSO"
       ],
       "SSO user provided by your identity provider": [
         "თქვენი იდენტიფიკატორების მომწოდებლის მიერ გამოყოფილი SSO მომხმარებელი"
+      ],
+      "User has enabled two-factor authentication with a security key.": [
+        "მომხმარებელმა ჩართო 2FA უსაფრთხოების გასაღებით."
+      ],
+      "User has enabled two-factor authentication with an authenticator app.": [
+        "მომხმარებელმა ჩართო 2FA ავთენტიკატორი აპით."
       ],
       "Writing assistant": [
         "წერაში დამხმარე"
