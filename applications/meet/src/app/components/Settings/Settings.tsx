@@ -2,6 +2,7 @@ import type { ChangeEvent } from 'react';
 
 import { c } from 'ttag';
 
+import { Tooltip } from '@proton/atoms';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { useLoading } from '@proton/hooks';
 import clsx from '@proton/utils/clsx';
@@ -18,7 +19,8 @@ import './Settings.scss';
 export const Settings = () => {
     const { disableVideos, setDisableVideos, handleMeetingLockToggle, isMeetingLocked } = useMeetContext();
 
-    const { backgroundBlur, toggleBackgroundBlur, noiseFilter, toggleNoiseFilter } = useMediaManagementContext();
+    const { backgroundBlur, toggleBackgroundBlur, isBackgroundBlurSupported, noiseFilter, toggleNoiseFilter } =
+        useMediaManagementContext();
 
     const { sideBarState, toggleSideBarState } = useUIStateContext();
 
@@ -35,7 +37,7 @@ export const Settings = () => {
         <SideBar
             onClose={() => toggleSideBarState(MeetingSideBars.Settings)}
             header={
-                <div className="text-semibold flex items-center">
+                <div className="text-semibold flex mx-auto">
                     <div className="text-2xl">{c('Title').t`Settings`}</div>
                 </div>
             }
@@ -45,7 +47,7 @@ export const Settings = () => {
                     <div className="flex flex-column w-full gap-4">
                         <div className="text-semibold color-weak pb-2">Host</div>
                         <div className="flex flex-column w-full gap-4 pl-4">
-                            <div className="flex items-center justify-space-between gap-2 setting-container w-full flex-nowrap">
+                            <div className="flex mx-auto justify-space-between gap-2 setting-container w-full flex-nowrap">
                                 <label
                                     className={clsx(
                                         'setting-label text-ellipsis',
@@ -57,7 +59,7 @@ export const Settings = () => {
                                     id="lock-meeting"
                                     checked={isMeetingLocked}
                                     onChange={(event: ChangeEvent<HTMLInputElement>) => {
-                                        withLoadingLock(handleMeetingLockToggle(event.target.checked));
+                                        void withLoadingLock(handleMeetingLockToggle(event.target.checked));
                                     }}
                                     className={clsx(
                                         'settings-toggle',
@@ -73,7 +75,7 @@ export const Settings = () => {
                 <div className="flex flex-column w-full gap-4">
                     {isLocalParticipantHost && <div className="text-semibold color-weak py-2">Meeting</div>}
                     <div className={clsx('flex flex-column w-full gap-4', isLocalParticipantHost && 'pl-4')}>
-                        <div className="flex items-center justify-space-between gap-2 setting-container w-full flex-nowrap">
+                        <div className="flex mx-auto justify-space-between gap-2 setting-container w-full flex-nowrap">
                             <label
                                 className={clsx(
                                     'setting-label text-ellipsis',
@@ -81,19 +83,32 @@ export const Settings = () => {
                                 )}
                                 htmlFor="blur-background"
                             >{c('Action').t`Blur background`}</label>
-                            <Toggle
-                                id="blur-background"
-                                checked={backgroundBlur}
-                                onChange={() => {
-                                    void withLoadingBackgroundBlur(toggleBackgroundBlur());
-                                }}
-                                className={clsx('settings-toggle', backgroundBlur ? '' : 'settings-toggle-inactive')}
-                                aria-label={c('Alt').t`Blur background`}
-                                loading={loadingBackgroundBlur}
-                                disabled={loadingBackgroundBlur}
-                            />
+                            <Tooltip
+                                title={
+                                    !isBackgroundBlurSupported
+                                        ? c('Tooltip').t`Blur background is not supported on your browser`
+                                        : c('Tooltip').t`Blur background`
+                                }
+                            >
+                                <span>
+                                    <Toggle
+                                        id="blur-background"
+                                        checked={backgroundBlur}
+                                        onChange={() => {
+                                            void withLoadingBackgroundBlur(toggleBackgroundBlur());
+                                        }}
+                                        className={clsx(
+                                            'settings-toggle',
+                                            backgroundBlur ? '' : 'settings-toggle-inactive'
+                                        )}
+                                        aria-label={c('Alt').t`Blur background`}
+                                        loading={loadingBackgroundBlur}
+                                        disabled={!isBackgroundBlurSupported || loadingBackgroundBlur}
+                                    />
+                                </span>
+                            </Tooltip>
                         </div>
-                        <div className="flex items-center justify-space-between gap-2 setting-container w-full flex-nowrap">
+                        <div className="flex mx-auto justify-space-between gap-2 setting-container w-full flex-nowrap">
                             <label
                                 className={clsx(
                                     'setting-label text-ellipsis',
@@ -109,7 +124,7 @@ export const Settings = () => {
                                 aria-label={c('Alt').t`Noise filter`}
                             />
                         </div>
-                        <div className="flex items-center justify-space-between gap-2 setting-container w-full flex-nowrap">
+                        <div className="flex mx-auto justify-space-between gap-2 setting-container w-full flex-nowrap">
                             <label
                                 className={clsx(
                                     'setting-label text-ellipsis',
