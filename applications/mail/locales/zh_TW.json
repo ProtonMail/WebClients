@@ -730,7 +730,7 @@
         "插入"
       ],
       "Insert ${ totalChecked } contact": [
-        "插入 ${ totalChecked } 個聯絡人"
+        "插入 ${ totalChecked } 位聯絡人"
       ],
       "Insert contact": [
         "插入聯絡人"
@@ -4667,7 +4667,7 @@
         "應付金額已變更。請再試一次。"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
-        "附件未能解密。\n若您持有對應的私密金鑰，您仍可使用\n像是 GnuPG 的程式來解密檔案。"
+        "少數附件無法進行解密。\n若您持有相應的私密金鑰，您仍可沿用進行解密\n諸如使用 GnuPG 應用程式進行解密的檔案。"
       ],
       "The email addresses do not match": [
         "電子郵件位址不相符"
@@ -4807,7 +4807,7 @@
     },
     "Error adding participants to a calendar event": {
       "At most ${ maxAttendees } participant is allowed per invitation": [
-        "您最多可以一次邀請 ${ maxAttendees } 位參與者"
+        "每一邀請函至多僅能包含 ${ maxAttendees } 位參與者"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -5483,7 +5483,7 @@
         "Play 商店的${ MAIL_APP_NAME }"
       ],
       "${ remainingDaysCount } day": [
-        "${ remainingDaysCount }天"
+        "${ remainingDaysCount } 剩餘天數"
       ],
       "${ remainingDaysCount } day left": [
         "${ remainingDaysCount } 剩餘天數"
@@ -6082,13 +6082,13 @@
         "${ totalProgress } 總數其中的 ${ currentProgress }"
       ],
       "${ elementsCount } conversation will be labelled as:": [
-        "${ elementsCount }對話內容將被標記為:"
+        "${ elementsCount } 則對話內容將標記為："
       ],
       "${ elementsCount } conversation will be marked as read.": [
         "${ elementsCount } 則往來對話將標記為已讀。"
       ],
       "${ elementsCount } conversation will be marked as unread.": [
-        "${ elementsCount } 則往來對話將被標記為未讀。"
+        "${ elementsCount } 則往來對話將標記為未讀。"
       ],
       "${ elementsCount } conversation will be moved": [
         "${ elementsCount } 則對話內容將被移動"
@@ -6109,7 +6109,7 @@
         "${ elementsCount }則訊息將被移動"
       ],
       "${ elementsCount } message will be unlabelled from:": [
-        "${ elementsCount }訊息將被取消標記:"
+        "${ elementsCount } 訊息將取消標記："
       ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } 個內嵌影像"
@@ -6820,7 +6820,7 @@
         "替新的帳單標示顏色，如${ suggestedLabelName }。並於繳納後轉標示為${ suggestedPaidLabelName }。"
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
-        "有 ${ numAttachments } 個附件 (${ numAttachmentsSize })"
+        "計有 ${ numAttachments } 個附件，檔案大小為 (${ numAttachmentsSize })"
       ],
       "here": [
         "這裡"
@@ -6916,7 +6916,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入圖片"
+        "插入影像"
       ],
       "Insert link": [
         "插入連結"
@@ -8113,7 +8113,7 @@
         "您已選取了 **${ count } 則訊息** 位置在此資料夾"
       ],
       "You selected **${ count } message** with this label": [
-        "您選取了有此標籤的 **${ count } 則訊息**"
+        "您選取了 **${ count } 則訊息** 且帶有此標籤"
       ],
       "You selected **${ elementsCount } conversation** in ${ location }": [
         "您選取了 **${ elementsCount } 則對話內容** 位置在 ${ location }"
@@ -11664,7 +11664,7 @@
     },
     "Remaining days before the message expire": {
       "${ remainingDays } d": [
-        "${ remainingDays }天"
+        "${ remainingDays } 剩餘天數"
       ],
       "<1 d": [
         "<1天"
@@ -11868,7 +11868,7 @@
         "由您寄出的端到端加密訊息"
       ],
       "Sent by you with end-to-end encryption to verified recipient": [
-        "由您透過端對端加密寄送給已驗證收件人"
+        "由您透過端對端加密寄送給已驗證收件者"
       ],
       "Stored with zero-access encryption": [
         "以零存取加密儲存"
@@ -12944,7 +12944,7 @@
         "${ elementsCount } 訊息已移至 ${ labelName }."
       ],
       "${ elementsCount } message moved to spam and sender added to your spam list.": [
-        "${ elementsCount } 則訊息已被移至垃圾郵件，寄件者已被列入垃圾郵件清單。"
+        "${ elementsCount } 則訊息已移至垃圾郵件，寄件者已加入垃圾郵件清單。"
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } 則訊息已不再歸屬 ${ labelName }。"

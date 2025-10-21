@@ -2478,6 +2478,9 @@
       "How safe is Telegram?": [
         "Πόσο ασφαλές είναι το Telegram;"
       ],
+      "How to change your IP address on Windows": [
+        "Πώς να αλλάξετε τη διεύθυνση IP σας στα Windows"
+      ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "Σε αυτό το άρθρο, θα δούμε ποιος μπορεί να δει το ιστορικό περιήγησής σας όταν συνδέεστε με WiFi, τι μπορούν να δουν, και γιατί θα το έκαναν."
       ],
@@ -2510,6 +2513,9 @@
       ],
       "Watch your favorite movies and TV shows": [
         "Παρακολουθήστε τις αγαπημένες σας ταινίες και τηλεοπτικές εκπομπές"
+      ],
+      "We discuss how to change the external and local IP addresses of your Windows device.": [
+        "Συζητάμε πώς να αλλάξετε τις εξωτερικές και τοπικές διευθύνσεις IP της Windows συσκευής σας."
       ],
       "Which VPN protocol is the best?": [
         "Ποιο πρωτόκολλο VPN είναι το καλύτερο;"
@@ -4855,6 +4861,23 @@
       ],
       "Priority support": [
         "Υποστήριξη κατά προτεραιότητα"
+      ]
+    },
+    "Duo offer": {
+      "/month": [
+        "/μήνα"
+      ],
+      "1 TB of storage to share": [
+        "1 TB αποθηκευτικού χώρου για κοινή χρήση"
+      ],
+      "2 user accounts": [
+        "2 λογαριασμοί χρηστών"
+      ],
+      "All premium features from your current plan": [
+        "Όλες οι premium λειτουργίες του τρέχοντος πλάνου σας"
+      ],
+      "Only": [
+        "Μόνο"
       ]
     },
     "Duration": {
@@ -8681,6 +8704,9 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Θέλετε σίγουρα να καταργήσετε τον τομέα ${ boldDomain };"
       ],
+      "Are you sure you want to revoke certificate **${ name }**": [
+        "Είστε σίγουροι ότι θέλετε να ανακαλέσετε το πιστοποιητικό **${ name }**"
+      ],
       "Are you sure you want to sort your folders alphabetically?": [
         "Είστε σίγουροι ότι θέλετε να ταξινομήσετε τους φακέλους σας αλφαβητικά;"
       ],
@@ -9900,9 +9926,6 @@
       "Not a valid URL": [
         "Μη έγκυρο URL"
       ],
-      "Not yet available in our Android mobile app.": [
-        "Δεν είναι ακόμα διαθέσιμο στην εφαρμογή μας για κινητά Android."
-      ],
       "Number of dedicated servers in the organization": [
         "Αριθμός αποκλειστικών διακομιστών στον οργανισμό"
       ],
@@ -10234,9 +10257,6 @@
       ],
       "Restore": [
         "Επαναφορά"
-      ],
-      "Revoke certificate ${ name }": [
-        "Ανάκληση πιστοποιητικού ${ name }"
       ],
       "Right to Left": [
         "Δεξιά προς Αριστερά"
@@ -11428,9 +11448,8 @@
       "Your files will be encrypted and then saved": [
         "Τα αρχεία σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν"
       ],
-      "Your free trial includes ${ ownedCount } dedicated server.": [
-        "Η δωρεάν δοκιμή σας περιλαμβάνει ${ ownedCount } αποκλειστικό διακομιστή.",
-        "Η δωρεάν δοκιμή σας περιλαμβάνει ${ ownedCount } αποκλειστικούς διακομιστές."
+      "Your free trial includes 1 dedicated server.": [
+        "Η δωρεάν δοκιμή σας περιλαμβάνει 1 αποκλειστικό διακομιστή."
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "Η δωρεάν δοκιμή σας μετατράπηκε επιτυχώς σε συνδρομή διάρκειας ${ cycle } μηνών. Η ημερομηνία ανανέωσής σας είναι ${ nextBillingDate }."
@@ -12828,6 +12847,9 @@
       ],
       "Method for importing metadata": [
         "Μέθοδος εισαγωγής μεταδεδομένων"
+      ],
+      "Minimum ${ MIN_CHARS } characters": [
+        "Τουλάχιστον ${ MIN_CHARS } χαρακτήρες"
       ],
       "Minimum number of characters": [
         "Ελάχιστος αριθμός χαρακτήρων"
@@ -15673,11 +15695,17 @@
       "${ pricingTitle } offer expires today!": [
         "Η ${ pricingTitle } προσφορά λήγει σήμερα!"
       ],
+      "Don't show this again": [
+        "Να μην εμφανιστεί ξανά"
+      ],
       "Don’t show this again": [
         "Να μην εμφανιστεί ξανά"
       ],
       "Don’t show this offer again": [
         "Να μην εμφανιστεί ξανά αυτή η προσφορά"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Αποκτήστε το ${ BRAND_NAME } Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "Αποκτήστε ${ BRAND_NAME } Unlimited"
@@ -17834,13 +17862,13 @@
       ]
     },
     "Safety review": {
-      " **Disable recovery by phone** to ensure highest possible security of your account.": [
-        " **Απενεργοποιήστε την ανάκτηση μέσω τηλεφώνου** για να διασφαλίσετε τη μέγιστη δυνατή ασφάλεια του λογαριασμού σας."
+      " **Disable recovery by phone** to prevent attackers from taking over your account.": [
+        " **Απενεργοποιήστε την ανάκτηση μέσω τηλεφώνου** για να αποτρέψετε τους εισβολείς από το να καταλάβουν τον λογαριασμό σας."
       ],
       " **Enable recovery by phone** to regain access to your account if you forget your password.": [
         " **Ενεργοποιήστε την ανάκτηση μέσω τηλεφώνου** για να αποκτήσετε ξανά πρόσβαση στον λογαριασμό σας εάν ξεχάσετε τον κωδικό πρόσβασής σας."
       ],
-      "${ BRAND_NAME } will use this address to keep you updated on your account security..": [
+      "${ BRAND_NAME } will use this address to keep you updated on your account security.": [
         "Το ${ BRAND_NAME } θα χρησιμοποιήσει αυτή τη διεύθυνση για να σας κρατά ενήμερους σχετικά με την ασφάλεια του λογαριασμού σας."
       ],
       "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
@@ -17852,8 +17880,8 @@
       "${ enableDeviceRecovery } to ensure your data can be recovered.": [
         "${ enableDeviceRecovery } για να διασφαλίσετε ότι τα δεδομένα σας μπορούν να ανακτηθούν."
       ],
-      "**Disable account reset by email** to ensure highest possible security of your account.": [
-        "**Απενεργοποίηση επαναφοράς λογαριασμού μέσω ηλεκτρονικής διεύθυνσης** για να διασφαλιστεί η μέγιστη δυνατή ασφάλεια του λογαριασμού σας."
+      "**Disable account reset by email** to prevent attackers from taking over your account.": [
+        "**Απενεργοποιήστε την επαναφορά λογαριασμού μέσω email** για να αποτρέψετε τους εισβολείς από το να καταλάβουν τον λογαριασμό σας."
       ],
       "**Enable recovery by email** to regain access to your account if you forget your password.": [
         "**Ενεργοποιήστε την ανάκτηση μέσω email** για να αποκτήσετε ξανά πρόσβαση στον λογαριασμό σας εάν ξεχάσετε τον κωδικό πρόσβασής σας."
@@ -21525,6 +21553,9 @@
       "Don't show again?": [
         "Να μην εμφανιστεί ξανά;"
       ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Διπλασιάστε τον αποθηκευτικό σας χώρο με το ${ BRAND_NAME } Duo"
+      ],
       "Downgrade account": [
         "Υποβάθμιση λογαριασμού"
       ],
@@ -22142,8 +22173,8 @@
       "Reused passwords": [
         "Επαναχρησιμοποιημένοι κωδικοί πρόσβασης"
       ],
-      "Revoke certificate": [
-        "Ανάκληση πιστοποιητικού"
+      "Revoke certificate?": [
+        "Ανάκληση πιστοποιητικού;"
       ],
       "Same inbox, shorter email address": [
         "Ίδια εισερχόμενα, μικρότερη διεύθυνση ηλεκτρονικού ταχυδρομείου"
@@ -23323,11 +23354,11 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "2FA"
+      ],
       "Administrators can't access the data of private users": [
         "Οι διαχειριστές δεν έχουν πρόσβαση στα δεδομένα ιδιωτικών χρηστών"
-      ],
-      "Authenticator app": [
-        "Εφαρμογή επαλήθευσης"
       ],
       "Inactive": [
         "Ανενεργό"
@@ -23347,14 +23378,20 @@
       "Private": [
         "Ιδιωτικό"
       ],
-      "Security key": [
-        "Κλειδί ασφαλείας"
-      ],
       "SSO": [
         "SSO"
       ],
       "SSO user provided by your identity provider": [
         "Χρήστης SSO που παρέχεται από τον πάροχο ταυτότητάς σας"
+      ],
+      "User has enabled two-factor authentication with a security key.": [
+        "Ο χρήστης έχει ενεργοποιήσει την ταυτοποίηση δύο παραγόντων με κλειδί ασφαλείας."
+      ],
+      "User has enabled two-factor authentication with an authenticator app and a security key.": [
+        "Ο χρήστης έχει ενεργοποιήσει την ταυτοποίηση δύο παραγόντων με μια εφαρμογή επαλήθευσης και ένα κλειδί ασφαλείας."
+      ],
+      "User has enabled two-factor authentication with an authenticator app.": [
+        "Ο χρήστης έχει ενεργοποιήσει την ταυτοποίηση δύο παραγόντων με μια εφαρμογή επαλήθευσης."
       ],
       "Writing assistant": [
         "Βοηθός γραφής"

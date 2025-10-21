@@ -1417,6 +1417,9 @@
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Pada saat Anda membatalkan, uji coba gratis Anda tidak akan dialihkan menjadi langganan berbayar, namun Anda masih akan tetap dapat menikmati berbagai keutamaan paket berbayar hingga akhir masa uji coba Anda. Setelahnya, Anda akan diturunkan ke paket ${ BRAND_NAME } Free."
       ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Anda dapat memiliki hingga ${ TRIAL_MAX_DEDICATED_IPS } server khusus selama masa uji coba."
+      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Anda dapat memiliki hingga ${ TRIAL_MAX_SCRIBE_SEATS } kuota Scribe selama masa uji coba."
       ],
@@ -3457,6 +3460,9 @@
       ],
       "All events in this series were updated.": [
         "Seluruh acara dalam rangkaian ini telah diperbarui."
+      ],
+      "DESCRIPTION:": [
+        "DESKRIPSI:"
       ],
       "Here's what changed:": [
         "Berikut apa-apa saja yang telah berubah:"
@@ -6671,9 +6677,6 @@
       "Restore": [
         "Pulihkan"
       ],
-      "Revoke certificate ${ name }": [
-        "Cabut sertifikat ${ name }"
-      ],
       "SAML configuration saved": [
         "Konfigurasi SAML disimpan"
       ],
@@ -7468,9 +7471,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Berkas Anda akan dienkripsi lalu disimpan"
-      ],
-      "Your free trial includes ${ ownedCount } dedicated server.": [
-        "Uji coba gratis Anda meliputi ${ ownedCount } server khusus."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Informasi Anda aman di tangan kami. Kami hanya akan menghubungi Anda pada saat tindak lanjut Anda dibutuhkan untuk menghadirkan layanan kami."
@@ -8833,6 +8833,9 @@
       ],
       "Detach from SSO": [
         "Lepas dari SSO"
+      ],
+      "Disable user": [
+        "Nonaktifkan pengguna"
       ],
       "Edit": [
         "Sunting"
@@ -10798,6 +10801,9 @@
       ]
     },
     "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Saldo yang belum terpakai dari paket langganan Anda sebelumnya"
+      ],
       "Credits will be added to your balance": [
         "Saldo akan ditambahkan ke tabungan Anda"
       ]
@@ -11216,6 +11222,9 @@
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Nikmati **${ planTitle }** secara cuma-cuma hingga **${ textDate }**."
+      ],
+      "Invite friends. Get credits.": [
+        "Undang teman. Dapatkan saldo."
       ],
       "Refer friends": [
         "Rujuk teman"
@@ -14043,9 +14052,6 @@
       "Restore administrator privileges": [
         "Pulihkan hak administrator"
       ],
-      "Revoke certificate": [
-        "Cabut sertifikat"
-      ],
       "SAML authentication": [
         "Autentikasi SAML"
       ],
@@ -14772,9 +14778,6 @@
       "Administrators can't access the data of private users": [
         "Administrator tidak dapat mengakses data pengguna privat"
       ],
-      "Authenticator app": [
-        "Aplikasi autentikator"
-      ],
       "Inactive": [
         "Tidak aktif"
       ],
@@ -14792,9 +14795,6 @@
       ],
       "Private": [
         "Privat"
-      ],
-      "Security key": [
-        "Kunci keamanan"
       ],
       "SSO": [
         "SSO"

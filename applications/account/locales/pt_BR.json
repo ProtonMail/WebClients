@@ -2478,6 +2478,9 @@
       "How safe is Telegram?": [
         "Quão seguro é o Telegram?"
       ],
+      "How to change your IP address on Windows": [
+        "Como mudar o seu enderenço de IP no Windows"
+      ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "Neste artigo, veremos quem pode ver seu histórico da Internet quando você usa WiFi, o que eles podem ver e por que podem fazer isso."
       ],
@@ -2510,6 +2513,9 @@
       ],
       "Watch your favorite movies and TV shows": [
         "Assista aos seus filmes e programas de TV favoritos"
+      ],
+      "We discuss how to change the external and local IP addresses of your Windows device.": [
+        "Discutimos como mudar os endereços de IP externos e locais do seu dispositivo Windows."
       ],
       "Which VPN protocol is the best?": [
         "Qual protocolo VPN é o melhor?"
@@ -4857,6 +4863,20 @@
         "Suporte prioritário"
       ]
     },
+    "Duo offer": {
+      "/month": [
+        "/mês"
+      ],
+      "1 TB of storage to share": [
+        "1 TB de armazenamento para compartilhar"
+      ],
+      "2 user accounts": [
+        "2 contas de usuário"
+      ],
+      "Only": [
+        "Somente"
+      ]
+    },
     "Duration": {
       "120 minutes": [
         "120 minutos"
@@ -4984,8 +5004,14 @@
       "All events in this series were updated.": [
         "Todos os eventos desta série foram atualizados."
       ],
+      "DESCRIPTION:": [
+        "DESCRIÇÃO:"
+      ],
       "Here's what changed:": [
         "Aqui está o que mudou:"
+      ],
+      "LOCATION:": [
+        "LOCALIZAÇÃO:"
       ],
       "NOTE:": [
         "NOTA:"
@@ -4998,6 +5024,15 @@
       ],
       "This event was updated.": [
         "Este evento foi atualizado."
+      ],
+      "TIME:": [
+        "HORA:"
+      ],
+      "TITLE:": [
+        "TÍTULO:"
+      ],
+      "You are invited to": [
+        "Você está convidado para"
       ]
     },
     "Email body for invitation (date part)": {
@@ -8255,6 +8290,9 @@
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } é um programa avançado de proteção de conta, alimentado por sofisticados sistemas de IA e especialistas, trabalhando ininterruptamente para proteger você de pessoas mal-intencionadas e ameaças à segurança."
       ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } é um programa avançado de proteção de conta, alimentado por sofisticados sistemas de IA e especialistas, trabalhando ininterruptamente para proteger sua organização de pessoas mal-intencionadas e ameaças à segurança."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "O ${ PROTON_SENTINEL_NAME } protege sua conta com monitoramento dedicado de atividades suspeitas."
       ],
@@ -8665,6 +8703,9 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Você tem certeza que deseja remover o domínio ${ boldDomain }?"
+      ],
+      "Are you sure you want to revoke certificate **${ name }**": [
+        "Você tem certeza que quer revogar o certificado **${ name }**"
       ],
       "Are you sure you want to sort your folders alphabetically?": [
         "Você tem certeza que deseja ordenar suas pastas alfabeticamente?"
@@ -9182,7 +9223,7 @@
         "Curta uma experiência de e-mail mais rápida e focada com o aplicativo para desktop."
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
-        "Garanta uma comunicação totalmente privada e criptografada. Resgate seu endereço de e-mail ${ BRAND_NAME } gratuito agora."
+        "Garanta uma comunicação totalmente privada e criptografada. Crie seu endereço de e-mail ${ BRAND_NAME } gratuito agora."
       ],
       "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
         "Digite sua senha para finalizar sua conta ${ BRAND_NAME } e comece a usar ${ VPN_APP_NAME } em todos os seus dispositivos!"
@@ -9456,6 +9497,9 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Se você redefiniu sua senha recentemente, poderá usar um método de recuperação de dados para desbloquear seus dados"
+      ],
+      "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
+        "Se a sua organização tem figuras públicas, lida com dados sensíveis ou pode ser alvo de ataques cibernéticos, é altamente recomendável que você ative ${ PROTON_SENTINEL_NAME } para todos na sua organização."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Estamos aqui para te ajudar se estiver com problemas. ${ boldPhoneCall } ou ${ boldZoomMeeting } com um de nossos especialistas de suporte, ou abra o ${ boldLiveChat } para suporte via chat."
@@ -9882,9 +9926,6 @@
       "Not a valid URL": [
         "Não é uma URL válida"
       ],
-      "Not yet available in our Android mobile app.": [
-        "Ainda não está disponível em nosso aplicativo móvel para Android."
-      ],
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados na organização"
       ],
@@ -10219,9 +10260,6 @@
       ],
       "Restore": [
         "Restaurar"
-      ],
-      "Revoke certificate ${ name }": [
-        "Revogar certificado ${ name }"
       ],
       "Right to Left": [
         "Direita para esquerda"
@@ -10856,6 +10894,9 @@
       "Upgrade to unlock": [
         "Faça o upgrade para desbloquear"
       ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Faça upgrade do seu plano para ${ firstPlanNames } ou ${ lastPlanName } para obter acesso ao ${ PROTON_SENTINEL_NAME }."
+      ],
       "Upload picture": [
         "Carregar imagem"
       ],
@@ -11410,9 +11451,8 @@
       "Your files will be encrypted and then saved": [
         "Seus arquivos serão criptografados e depois salvos"
       ],
-      "Your free trial includes ${ ownedCount } dedicated server.": [
-        "Sua avaliação gratuita inclui ${ ownedCount } servidor dedicado.",
-        "Sua avaliação gratuita inclui ${ ownedCount } servidores dedicados."
+      "Your free trial includes 1 dedicated server.": [
+        "Sua avaliação gratuita inclui 1 servidor dedicado."
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "Sua avaliação gratuita foi convertida em uma assinatura de ${ cycle } meses. Sua data de renovação é ${ nextBillingDate }."
@@ -12810,6 +12850,9 @@
       ],
       "Method for importing metadata": [
         "Método para importar metadados"
+      ],
+      "Minimum ${ MIN_CHARS } characters": [
+        "Mínimo de ${ MIN_CHARS } caracteres"
       ],
       "Minimum number of characters": [
         "Número mínimo de caracteres"
@@ -15664,11 +15707,17 @@
       "${ pricingTitle } offer expires today!": [
         "A oferta ${ pricingTitle } expira hoje!"
       ],
+      "Don't show this again": [
+        "Não mostrar isso novamente"
+      ],
       "Don’t show this again": [
         "Não exibir novamente"
       ],
       "Don’t show this offer again": [
         "Não mostrar mais esta oferta"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Obter ${ BRAND_NAME } Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "Obtenha o ${ BRAND_NAME } Unlimited"
@@ -17930,13 +17979,13 @@
       ]
     },
     "Safety review": {
-      " **Disable recovery by phone** to ensure highest possible security of your account.": [
-        " **Desativar recuperação por telefone** para garantir a maior segurança possível da sua conta."
+      " **Disable recovery by phone** to prevent attackers from taking over your account.": [
+        " **Desativar recuperação por telefone** para impedir que invasores tomem sua conta."
       ],
       " **Enable recovery by phone** to regain access to your account if you forget your password.": [
         " **Habilite a recuperação por telefone** para recuperar o acesso à sua conta caso esqueça a senha."
       ],
-      "${ BRAND_NAME } will use this address to keep you updated on your account security..": [
+      "${ BRAND_NAME } will use this address to keep you updated on your account security.": [
         "${ BRAND_NAME } usará esse endereço para informar-lhe sobre a segurança da sua conta."
       ],
       "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
@@ -17948,8 +17997,8 @@
       "${ enableDeviceRecovery } to ensure your data can be recovered.": [
         "${ enableDeviceRecovery } para garantir que seus dados possam ser recuperados."
       ],
-      "**Disable account reset by email** to ensure highest possible security of your account.": [
-        "**Desativar a redefinição de conta por e-mail** para assegurar a máxima proteção da sua conta."
+      "**Disable account reset by email** to prevent attackers from taking over your account.": [
+        "**Desativar a redefinição de conta por e-mail** para impedir que invasores tomem sua conta."
       ],
       "**Enable recovery by email** to regain access to your account if you forget your password.": [
         "**Ative a recuperação por e-mail** para recuperar o acesso à sua conta caso esqueça a senha."
@@ -22252,8 +22301,8 @@
       "Reused passwords": [
         "Senhas reutilizadas"
       ],
-      "Revoke certificate": [
-        "Revogar certificado"
+      "Revoke certificate?": [
+        "Revogar certificado?"
       ],
       "Same inbox, shorter email address": [
         "Mesma caixa de entrada, endereço de e-mail mais curto"
@@ -22272,6 +22321,9 @@
       ],
       "Secure your passwords. Everywhere.": [
         "Proteja suas senhas. Em todos os lugares."
+      ],
+      "Security": [
+        "Segurança"
       ],
       "Security and privacy": [
         "Segurança e privacidade"
@@ -22988,6 +23040,9 @@
       "This key is used for email forwarding": [
         "Esta chave é usada para encaminhamento de e-mail"
       ],
+      "This setting is managed by your organization": [
+        "Esta configuração é gerenciada pela sua organização"
+      ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "A menos que sejam decifradas, as senhas criptografadas permanecem seguras mesmo se forem expostas."
       ],
@@ -23430,11 +23485,11 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "A2F"
+      ],
       "Administrators can't access the data of private users": [
         "Os administradores não podem acessar os dados de usuários privados"
-      ],
-      "Authenticator app": [
-        "Aplicativo de autenticação"
       ],
       "Inactive": [
         "Inativa"
@@ -23454,14 +23509,20 @@
       "Private": [
         "Privado"
       ],
-      "Security key": [
-        "Chave de segurança"
-      ],
       "SSO": [
         "SSO"
       ],
       "SSO user provided by your identity provider": [
         "Usuário SSO fornecido pelo seu provedor de identidade"
+      ],
+      "User has enabled two-factor authentication with a security key.": [
+        "Usuário ativou a autenticação de dois fatores com uma chave de segurança."
+      ],
+      "User has enabled two-factor authentication with an authenticator app and a security key.": [
+        "O usuário ativou a autenticação de dois fatores com um aplicativo de autenticação e uma chave de segurança."
+      ],
+      "User has enabled two-factor authentication with an authenticator app.": [
+        "O usuário ativou a autenticação de dois fatores com um aplicativo de autenticação."
       ],
       "Writing assistant": [
         "Assistente de escrita"

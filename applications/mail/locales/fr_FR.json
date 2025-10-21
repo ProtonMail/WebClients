@@ -4338,6 +4338,23 @@
         "Assistance prioritaire"
       ]
     },
+    "Duo offer": {
+      "/month": [
+        "/mois"
+      ],
+      "1 TB of storage to share": [
+        "1 To d'espace de stockage à partager"
+      ],
+      "2 user accounts": [
+        "2 comptes utilisateur"
+      ],
+      "All premium features from your current plan": [
+        "Toutes les fonctionnalités premium de votre abonnement actuel"
+      ],
+      "Only": [
+        "Seulement"
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Les champs de texte sont facultatifs. Les informations fournies dans ce formulaire apparaîtront uniquement sur les factures émises à l’avenir et n’affecteront pas les factures existantes."
@@ -7397,6 +7414,12 @@
       ],
       "Includes bills, receipts, orders, and bookings.": [
         "Comprend les factures, les accusés de réception, les commandes et les réservations."
+      ],
+      "Includes invoices, purchase orders, and payment confirmations.": [
+        "Inclus les factures, les bons de commande et les confirmations de paiement."
+      ],
+      "Includes marketing emails and non-urgent app notifications.": [
+        "Inclut les messages marketing et les notifications d'application non urgentes."
       ],
       "Includes marketing emails like offers and product announcements.": [
         "Comprend les messages marketing tels que les offres et les annonces de produits."
@@ -11550,11 +11573,17 @@
       "${ pricingTitle } offer expires today!": [
         "L'offre ${ pricingTitle } expire aujourd'hui !"
       ],
+      "Don't show this again": [
+        "Ne plus afficher"
+      ],
       "Don’t show this again": [
         "Ne plus afficher"
       ],
       "Don’t show this offer again": [
         "Ne plus montrer cette offre"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Essayez ${ BRAND_NAME } Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "Profitez de ${ BRAND_NAME } Unlimited"
@@ -14873,6 +14902,9 @@
       ],
       "Don't give spam a chance": [
         "Ne laissez aucune chance aux messages indésirables/spam"
+      ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Doublez votre espace de stockage avec ${ BRAND_NAME } Duo"
       ],
       "Downgrade account": [
         "Passer à un abonnement inférieur"
