@@ -7,8 +7,8 @@ import { usePassThemeMode } from '@proton/pass/components/Layout/Theme/ThemeProv
 import { InAppNotificationPromoModal } from '@proton/pass/components/Notifications/InAppNotificationPromoModal';
 import { WithInAppNotification } from '@proton/pass/components/Notifications/WithInAppNotification';
 import { useOnboarding } from '@proton/pass/components/Onboarding/OnboardingProvider';
-import type { PreloadableResource } from '@proton/pass/hooks/utils/usePreloadResources';
-import { usePreloadResources } from '@proton/pass/hooks/utils/usePreloadResources';
+import type { PrefetchResource } from '@proton/pass/hooks/utils/usePrefetchResources';
+import { usePrefetchResources } from '@proton/pass/hooks/utils/usePrefetchResources';
 import { isUnreadNotification } from '@proton/pass/lib/notifications/notifications.utils';
 import type { Callback } from '@proton/pass/types';
 import { InAppNotificationState } from '@proton/pass/types';
@@ -32,14 +32,14 @@ export const InAppNotificationPromoButton = WithInAppNotification(
 
         const withClose = <T extends Callback>(fn: T) => pipe(fn, () => setShowModal(false));
 
-        const resources = useMemo((): PreloadableResource[] => {
-            const preload: PreloadableResource[] = [];
+        const resources = useMemo((): PrefetchResource[] => {
+            const preload: PrefetchResource[] = [];
             if (backgroundImageUrl) preload.push({ url: backgroundImageUrl, as: 'image' });
             if (contentImageUrl) preload.push({ url: contentImageUrl, as: 'image' });
             return preload;
         }, [backgroundImageUrl, contentImageUrl]);
 
-        usePreloadResources(resources);
+        usePrefetchResources(resources);
 
         return (
             promoContents && (
