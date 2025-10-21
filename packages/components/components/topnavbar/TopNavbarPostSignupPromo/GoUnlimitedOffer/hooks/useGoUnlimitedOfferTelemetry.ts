@@ -8,7 +8,7 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { sendTelemetryReportWithBaseDimensions } from '@proton/shared/lib/helpers/metrics';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 
-import type { MessageType } from '../helpers/interface';
+import type { UnlimitedMessageType } from '../helpers/interface';
 
 export const useGoUnlimitedOfferTelemetry = (app: APP_NAMES) => {
     const api = useApi();
@@ -29,7 +29,7 @@ export const useGoUnlimitedOfferTelemetry = (app: APP_NAMES) => {
         });
     };
 
-    const sendTelemetryReportGoUnlimited2025 = (action: TelemetryUnlimitedOffer2025, type: MessageType) => {
+    const sendTelemetryReportGoUnlimited2025 = (action: TelemetryUnlimitedOffer2025, type: UnlimitedMessageType) => {
         sendReport(action, {
             appName: app,
             messageType: type,
