@@ -1,0 +1,34 @@
+@import '~@proton/styles/scss/lib';
+@import '~@proton/styles/scss/meet/meet-breakpoints';
+
+.open-link-modal {
+	backdrop-filter: blur(10px);
+
+	.reload-button:hover {
+		color: var(--text-invert);
+	}
+
+	.close-button {
+		background-color: var(--interaction-weak);
+
+		&:hover,
+		&:focus {
+			background-color: var(--interaction-weak-major-1);
+		}
+	}
+
+	.modal-two-dialog-container,
+	.modal-two-dialog {
+		inline-size: 90%;
+		box-shadow: none !important;
+
+		@include media('>medium') {
+			inline-size: 24.5rem !important;
+			block-size: fit-content !important;
+		}
+	}
+
+	.link-to-open {
+		word-break: break-all;
+	}
+}

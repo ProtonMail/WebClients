@@ -28,7 +28,7 @@ export const PasswordPrompt = ({ password, setPassword, onPasswordSubmit, invali
     return (
         <ModalTwo
             open={true}
-            className="shadow-none w-custom h-custom"
+            className="shadow-none w-custom h-custom border border-norm"
             rootClassName="blurry-backdrop"
             style={{ '--w-custom': '24.5rem', '--h-custom': '24.5rem' }}
         >
