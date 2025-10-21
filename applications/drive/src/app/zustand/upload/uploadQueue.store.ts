@@ -3,13 +3,15 @@ import { devtools } from 'zustand/middleware';
 
 import generateUID from '@proton/utils/generateUID';
 
+import { BaseTransferStatus } from '../download/downloadManager.store';
+
 export enum UploadStatus {
-    Uploading = 'uploading',
-    Failed = 'failed',
-    PausedServer = 'pausedServer',
-    Finished = 'finished',
-    Pending = 'pending',
-    Cancelled = 'cancelled',
+    InProgress = BaseTransferStatus.InProgress,
+    Failed = BaseTransferStatus.Failed,
+    PausedServer = BaseTransferStatus.PausedServer,
+    Finished = BaseTransferStatus.Finished,
+    Pending = BaseTransferStatus.Pending,
+    Cancelled = BaseTransferStatus.Cancelled,
     ConflictFound = 'conflictFound',
 }
 
@@ -74,6 +76,7 @@ export const useUploadQueueStore = create<UploadQueueStore>()(
                     return { uploadId, item };
                 });
             },
+
             getQueueItem: (uploadId) => get().queue.get(uploadId),
 
             clearQueue: () => {
