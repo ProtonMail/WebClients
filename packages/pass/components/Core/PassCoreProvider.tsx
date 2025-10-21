@@ -1,10 +1,11 @@
 import type { FC, PropsWithChildren } from 'react';
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 
 import ConfigProvider from '@proton/components/containers/config/Provider';
 import useInstance from '@proton/hooks/useInstance';
 import { PassThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
 import type { PassThemeService } from '@proton/pass/components/Layout/Theme/ThemeService';
+import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import type { UsePeriodOtpCodeOptions } from '@proton/pass/hooks/useOTPCode';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
@@ -132,7 +133,7 @@ export const PassCoreProvider: FC<PropsWithChildren<PassCoreProviderProps>> = ({
     );
 };
 
-export const usePassCore = (): PassCoreContextValue => useContext(PassCoreContext)!;
+export const usePassCore = createUseContext(PassCoreContext);
 
 export const useCurrentTabID = (): Maybe<TabId> => {
     const { getExtensionClientState } = usePassCore();
