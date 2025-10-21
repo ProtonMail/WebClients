@@ -116,6 +116,9 @@
       "Back": [
         "Torna"
       ],
+      "Back to sign in": [
+        "Torneu a l'inici de sessió"
+      ],
       "Block": [
         "Bloqueja"
       ],
@@ -771,7 +774,7 @@
         "Mostra les característiques del pla"
       ],
       "Select ${ planOrAppName }": [
-        "Seleccioneu ${ planOrAppName }"
+        "Selecciona ${ planOrAppName }"
       ],
       "Select billing cycle ${ billingText }": [
         "Selecciona el cicle de facturació ${ billingText }"
@@ -1430,7 +1433,7 @@
         "Podeu tenir fins a ${ TRIAL_MAX_LUMO_SEATS } llicències de ${ LUMO_SHORT_APP_NAME } durant el període de prova."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
-        "Podeu tenir fins a ${ TRIAL_MAX_SCRIBE_SEATS } llicències Scribe durant el període de prova."
+        "Podeu tenir fins a ${ TRIAL_MAX_SCRIBE_SEATS } llicències d'Scribe durant el període de prova."
       ],
       "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
         "Podeu tenir fins a ${ TRIAL_MAX_USERS } usuaris durant el període de prova."
@@ -1719,6 +1722,9 @@
       "How safe is Telegram?": [
         "Què tan segur és Telegram?"
       ],
+      "How to change your IP address on Windows": [
+        "Com canviar la vostra adreça IP a Windows"
+      ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "En aquest article, analitzem qui pot veure el vostre historial d'internet quan utilitzeu WiFi, què poden veure i per què podrien fer-ho."
       ],
@@ -1751,6 +1757,9 @@
       ],
       "Watch your favorite movies and TV shows": [
         "Mireu les vostres pel·lícules i programes de televisió preferits"
+      ],
+      "We discuss how to change the external and local IP addresses of your Windows device.": [
+        "Estem valorant com canviar les adreces IP externes i locals del vostre dispositiu Windows."
       ],
       "Which VPN protocol is the best?": [
         "Quin protocol VPN és el millor?"
@@ -3430,6 +3439,23 @@
       ],
       "Priority support": [
         "Suport prioritari"
+      ]
+    },
+    "Duo offer": {
+      "/month": [
+        "/mes"
+      ],
+      "1 TB of storage to share": [
+        "1 TB d'emmagatzematge per compartir"
+      ],
+      "2 user accounts": [
+        "2 comptes d'usuari"
+      ],
+      "All premium features from your current plan": [
+        "Totes les funcions prèmium del vostre pla actual"
+      ],
+      "Only": [
+        "Només"
       ]
     },
     "Easy switch": {
@@ -5781,6 +5807,9 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Segur que voleu esborrar el domini «${ boldDomain }»?"
       ],
+      "Are you sure you want to revoke certificate **${ name }**": [
+        "Segur que voleu revocar el certificat **${ name }**?"
+      ],
       "Ask your organization admin to setup Gateways.": [
         "Demaneu a l'administrador de l'organització que configuri passarel·les."
       ],
@@ -6808,9 +6837,6 @@
       "Restore": [
         "Restaura"
       ],
-      "Revoke certificate ${ name }": [
-        "Revoca el certificat ${ name }"
-      ],
       "SAML configuration saved": [
         "S'ha desat la configuració SAML."
       ],
@@ -7625,9 +7651,8 @@
       "Your files will be encrypted and then saved": [
         "Es xifraran els fitxers i després es desaran."
       ],
-      "Your free trial includes ${ ownedCount } dedicated server.": [
-        "La prova gratuïta inclou ${ ownedCount } servidor dedicat.",
-        "La prova gratuïta inclou ${ ownedCount } servidors dedicats."
+      "Your free trial includes 1 dedicated server.": [
+        "La vostra prova gratuïta inclou 1 servidor dedicat."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "La vostra informació està segura amb nosaltres. Només ens posarem en contacte quan sigui necessari per oferir els nostres serveis."
@@ -8247,6 +8272,9 @@
       ],
       "Method for importing metadata": [
         "Mètode per a importar metadades"
+      ],
+      "Minimum ${ MIN_CHARS } characters": [
+        "Mínim ${ MIN_CHARS } caràcters"
       ],
       "Minimum number of characters": [
         "Nombre mínim de caràcters"
@@ -10271,11 +10299,17 @@
       "${ pricingTitle } offer expires today!": [
         "L'oferta de ${ pricingTitle } caduca avui!"
       ],
+      "Don't show this again": [
+        "No m'ho torneu a mostrar"
+      ],
       "Don’t show this again": [
         "No ho tornis a mostrar"
       ],
       "Don’t show this offer again": [
         "No tornis a mostrar aquesta oferta"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Obtingueu ${ BRAND_NAME } Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "Obteniu ${ BRAND_NAME } Unlimited"
@@ -11442,7 +11476,7 @@
     },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
-        "${ referrerRewardAmount } com a referència"
+        "${ referrerRewardAmount } per referència"
       ],
       "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
         "**Si cancel·leu abans d'aquesta data,** **passareu al pla inferior** ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } quan la prova finalitzi."
@@ -14035,6 +14069,9 @@
       "Domain names": [
         "Noms de domini"
       ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Dupliqueu el vostre emmagatzematge amb ${ BRAND_NAME } Duo"
+      ],
       "Downgrade account": [
         "Passar a un pla inferior"
       ],
@@ -14367,8 +14404,8 @@
       "Restore administrator privileges": [
         "Restaurar els privilegis d'administrador"
       ],
-      "Revoke certificate": [
-        "Revoca el certificat"
+      "Revoke certificate?": [
+        "Voleu revocar el certificat?"
       ],
       "SAML authentication": [
         "Autenticació SAML"
@@ -15101,11 +15138,11 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "Autenticació de doble factor"
+      ],
       "Administrators can't access the data of private users": [
         "Els administradors no poden accedir a les dades dels usuaris privats"
-      ],
-      "Authenticator app": [
-        "Aplicació d'autenticació"
       ],
       "Inactive": [
         "Inactiva"
@@ -15125,14 +15162,20 @@
       "Private": [
         "Privat"
       ],
-      "Security key": [
-        "Clau de seguretat"
-      ],
       "SSO": [
         "Inici de sessió únic (SSO)"
       ],
       "SSO user provided by your identity provider": [
         "Usuari SSO proporcionat pel vostre proveïdor d'identitat"
+      ],
+      "User has enabled two-factor authentication with a security key.": [
+        "L'usuari ha habilitat l'autenticació de doble factor amb una clau de seguretat."
+      ],
+      "User has enabled two-factor authentication with an authenticator app and a security key.": [
+        "L'usuari ha habilitat l'autenticació de doble factor amb una aplicació d'autenticació i una clau de seguretat."
+      ],
+      "User has enabled two-factor authentication with an authenticator app.": [
+        "L'usuari ha habilitat l'autenticació de doble factor amb una aplicació d'autenticació."
       ],
       "Writing assistant": [
         "Assistent d'escriptura"

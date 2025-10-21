@@ -1742,6 +1742,9 @@
       "How safe is Telegram?": [
         "Aký bezpečný je Telegram?"
       ],
+      "How to change your IP address on Windows": [
+        "Ako zmeniť svoju IP adresu v systéme Windows"
+      ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "V tomto článku sa pozrieme na to, kto môže vidieť vašu internetovú históriu, keď používate Wi-Fi, čo môže vidieť a prečo to môže robiť."
       ],
@@ -1774,6 +1777,9 @@
       ],
       "Watch your favorite movies and TV shows": [
         "Pozerajte vaše obľúbené filmy a televízne relácie"
+      ],
+      "We discuss how to change the external and local IP addresses of your Windows device.": [
+        "Rozoberieme, ako zmeniť externú a lokálnu IP adresu vášho zariadenia so systémom Windows."
       ],
       "Which VPN protocol is the best?": [
         "Ktorý VPN protokol je najlepší?"
@@ -3539,8 +3545,14 @@
       "All events in this series were updated.": [
         "Všetky udalosti v tejto sérii boli aktualizované."
       ],
+      "DESCRIPTION:": [
+        "POPIS:"
+      ],
       "Here's what changed:": [
         "Popis zmien:"
+      ],
+      "LOCATION:": [
+        "UMIESTNENIE:"
       ],
       "NOTE:": [
         "POZNÁMKA:"
@@ -3553,6 +3565,15 @@
       ],
       "This event was updated.": [
         "Táto udalosť bola aktualizovaná."
+      ],
+      "TIME:": [
+        "ČAS:"
+      ],
+      "TITLE:": [
+        "NÁZOV:"
+      ],
+      "You are invited to": [
+        "Dostali ste pozvánku na"
       ]
     },
     "Email body for invitation (date part)": {
@@ -5600,6 +5621,9 @@
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } je pokročilý program na ochranu účtu založený sofistikovanými systémami umelej inteligencie (AI) a špecialistami, ktorí nepretržite pracujú na vašej ochrane pred nechcenými útočníkmi a bezpečnostnými hrozbami."
       ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } je pokročilý program na ochranu účtu založený sofistikovanými systémami umelej inteligencie (AI) a špecialistami, ktorí nepretržite pracujú na ochranu vašej organizácie pred nechcenými útočníkmi a bezpečnostnými hrozbami."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } chráni váš účet pomocou špeciálneho monitorovania podozrivých aktivít."
       ],
@@ -5917,6 +5941,9 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Skutočne chcete odstrániť doménu ${ boldDomain }?"
+      ],
+      "Are you sure you want to revoke certificate **${ name }**": [
+        "Skutočne chcete zrušiť certifikát **${ name }**?"
       ],
       "Ask your organization admin to setup Gateways.": [
         "Požiadajte správcu organizácie o nastavenie brány."
@@ -6443,6 +6470,9 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Ak prejdete na nižšie predplatné, stratíte prístup k plateným funkciám ${ VPN_APP_NAME } ."
       ],
+      "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
+        "Ak vaša organizácia zamestnáva známe osobnosti, spracováva citlivé údaje alebo môže byť terčom kybernetických útokov, dôrazne odporúčame aktivovať ${ PROTON_SENTINEL_NAME } pre všetkých členov vašej organizácie."
+      ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Ak máte problémy, sme tu, aby sme vám pomohli. Skúste ${ boldPhoneCall } alebo ${ boldZoomMeeting } s jedným z našich špecialistov podpory, alebo otvorte ${ boldLiveChat } pre chatovú podporu."
       ],
@@ -6962,9 +6992,6 @@
       "Restore": [
         "Obnoviť"
       ],
-      "Revoke certificate ${ name }": [
-        "Zrušiť certifikát ${ name }"
-      ],
       "SAML configuration saved": [
         "Konfigurácia SAML bola uložená"
       ],
@@ -7391,6 +7418,9 @@
       "Upgrade to Professional or a higher plan to unlock": [
         "Zvýšiť úroveň na Professional alebo vyšší plán na odomknutie"
       ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Navýšte svoj plán na ${ firstPlanNames } alebo ${ lastPlanName }, aby ste získali prístup k ${ PROTON_SENTINEL_NAME }."
+      ],
       "Upload your completed CSV file to create accounts": [
         "Nahrajte vyplnený súbor CSV a vytvorte účty"
       ],
@@ -7808,11 +7838,8 @@
       "Your files will be encrypted and then saved": [
         "Vaše súbory budú zašifrované a potom uložené"
       ],
-      "Your free trial includes ${ ownedCount } dedicated server.": [
-        "Vaša bezplatná skúšobná verzia zahŕňa ${ ownedCount } vyhradený server.",
-        "Vaša bezplatná skúšobná verzia zahŕňa ${ ownedCount } vyhradené servery.",
-        "Vaša bezplatná skúšobná verzia zahŕňa ${ ownedCount } vyhradených serverov.",
-        "Vaša bezplatná skúšobná verzia zahŕňa ${ ownedCount } vyhradených serverov."
+      "Your free trial includes 1 dedicated server.": [
+        "Vaša bezplatná skúšobná verzia zahŕňa 1 vyhradený server."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Vaše informácie sú u nás v bezpečí. Budeme vás kontaktovať len vtedy, keď to bude potrebné na poskytovanie našich služieb."
@@ -8446,6 +8473,9 @@
       ],
       "Method for importing metadata": [
         "Spôsob importu metadát"
+      ],
+      "Minimum ${ MIN_CHARS } characters": [
+        "Minimálne ${ MIN_CHARS } znakov"
       ],
       "Minimum number of characters": [
         "Minimálny počet znakov"
@@ -14754,11 +14784,14 @@
       "Restore administrator privileges": [
         "Obnoviť oprávnenia správcu"
       ],
-      "Revoke certificate": [
-        "Zrušiť certifikát"
+      "Revoke certificate?": [
+        "Zrušiť certifikát?"
       ],
       "SAML authentication": [
         "SAML overenie"
+      ],
+      "Security": [
+        "Bezpečnosť"
       ],
       "Security events": [
         "Bezpečnostné udalosti"
@@ -15167,6 +15200,9 @@
       "This email address will be shown to all organization members when performing account management operations.": [
         "Táto emailová adresa sa zobrazí všetkým členom organizácie pri vykonávaní operácií správy účtu."
       ],
+      "This setting is managed by your organization": [
+        "Toto nastavenie spravuje vaša organizácia"
+      ],
       "User's approximate location (based on their IP address)": [
         "Približná poloha používateľa (založená na IP adrese)"
       ],
@@ -15486,11 +15522,11 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "2FA"
+      ],
       "Administrators can't access the data of private users": [
         "Administrátori nemajú prístup k údajom súkromných používateľov"
-      ],
-      "Authenticator app": [
-        "Overovacia aplikácia"
       ],
       "Inactive": [
         "Neaktívni"
@@ -15510,14 +15546,20 @@
       "Private": [
         "Súkromné"
       ],
-      "Security key": [
-        "Bezpečnostný kľúč"
-      ],
       "SSO": [
         "SSO"
       ],
       "SSO user provided by your identity provider": [
         "SSO používateľ poskytnutý poskytovateľom identity"
+      ],
+      "User has enabled two-factor authentication with a security key.": [
+        "Používateľ povolil dvojstupňové overovanie pomocou bezpečnostného kľúča."
+      ],
+      "User has enabled two-factor authentication with an authenticator app and a security key.": [
+        "Používateľ povolil dvojstupňové overovanie pomocou overovacej aplikácie a bezpečnostného kľúča."
+      ],
+      "User has enabled two-factor authentication with an authenticator app.": [
+        "Používateľ povolil dvojstupňové overovanie pomocou overovacej aplikácie."
       ],
       "Writing assistant": [
         "Asistent písania"

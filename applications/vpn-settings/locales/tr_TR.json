@@ -1722,6 +1722,9 @@
       "How safe is Telegram?": [
         "Telegram ne kadar güvenli?"
       ],
+      "How to change your IP address on Windows": [
+        "Windows üzerinde IP adresinizi nasıl değiştirirsiniz?"
+      ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "Bu yazıda, W-Fi kullandığınızda internet geçmişinizi kimlerin görebileceğine, ne görebileceklerine ve bunu neden yapabileceklerine bakıyoruz."
       ],
@@ -1754,6 +1757,9 @@
       ],
       "Watch your favorite movies and TV shows": [
         "Beğendiğiniz film ve TV dizilerini izleyin"
+      ],
+      "We discuss how to change the external and local IP addresses of your Windows device.": [
+        "Windows aygıtınızın dış ve yerel IP adreslerini nasıl değiştireceğinizi anlatıyoruz."
       ],
       "Which VPN protocol is the best?": [
         "En iyi VPN iletişim kuralı hangisidir?"
@@ -3433,6 +3439,23 @@
       ],
       "Priority support": [
         "Öncelikli destek"
+      ]
+    },
+    "Duo offer": {
+      "/month": [
+        "/aylık"
+      ],
+      "1 TB of storage to share": [
+        "Paylaşım için 1 TB depolama alanı"
+      ],
+      "2 user accounts": [
+        "2 kullanıcı hesabı"
+      ],
+      "All premium features from your current plan": [
+        "Mevcut tarifenizdeki tüm ücretli özellikler"
+      ],
+      "Only": [
+        "Yalnızca"
       ]
     },
     "Easy switch": {
@@ -5784,6 +5807,9 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "${ boldDomain } etki alanını kaldırmak istediğinize emin misiniz?"
       ],
+      "Are you sure you want to revoke certificate **${ name }**": [
+        "**${ name }** sertifikasını geçersiz kılmak istediğinize emin misiniz?"
+      ],
       "Ask your organization admin to setup Gateways.": [
         "Kuruluş yöneticinizden ağ geçitlerini kurmasını isteyin."
       ],
@@ -6811,9 +6837,6 @@
       "Restore": [
         "Geri yükle"
       ],
-      "Revoke certificate ${ name }": [
-        "${ name } sertifikasını geçersiz kıl"
-      ],
       "SAML configuration saved": [
         "SAML yapılandırması kaydedildi"
       ],
@@ -7624,9 +7647,8 @@
       "Your files will be encrypted and then saved": [
         "Dosyalarınız şifrelendikten sonra kaydedilir"
       ],
-      "Your free trial includes ${ ownedCount } dedicated server.": [
-        "Ücretsiz denemenizde size ayrılmış ${ ownedCount } sunucu var.",
-        "Ücretsiz denemenizde size ayrılmış ${ ownedCount } sunucu var."
+      "Your free trial includes 1 dedicated server.": [
+        "Ücretsiz denemenizde size ayrılmış 1 sunucu bulunur."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Bilgileriniz bizimle güvende olur. Sizinle yalnızca hizmetlerimizi sağlamak için gerekli olduğunda iletişim kuracağız."
@@ -8246,6 +8268,9 @@
       ],
       "Method for importing metadata": [
         "Üst verileri içe aktarma yöntemi"
+      ],
+      "Minimum ${ MIN_CHARS } characters": [
+        "En az ${ MIN_CHARS } karakter"
       ],
       "Minimum number of characters": [
         "En az karakter sayısı"
@@ -10251,11 +10276,17 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } teklifi bugün sona eriyor!"
       ],
+      "Don't show this again": [
+        "Bunu bir daha gösterme"
+      ],
       "Don’t show this again": [
         "Bunu bir daha gösterme"
       ],
       "Don’t show this offer again": [
         "Bu teklifi bir daha gösterme"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "${ BRAND_NAME } Duo edinin"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "${ BRAND_NAME } Unlimited tarifesini alın"
@@ -14095,6 +14126,9 @@
       "Domain names": [
         "Etki alanları"
       ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "${ BRAND_NAME } Duo ile depolama alanınızı iki katına çıkarın"
+      ],
       "Downgrade account": [
         "Hesap tarifesini düşür"
       ],
@@ -14427,8 +14461,8 @@
       "Restore administrator privileges": [
         "Yönetici yetkilerini geri yükle"
       ],
-      "Revoke certificate": [
-        "Sertifikayı geçersiz kıl"
+      "Revoke certificate?": [
+        "Sertifika geçersiz kılınsın mı?"
       ],
       "SAML authentication": [
         "SAML kimlik doğrulaması"
@@ -15161,11 +15195,11 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "İki adımlı doğrulama"
+      ],
       "Administrators can't access the data of private users": [
         "Yöneticiler korunan kullanıcıların verilerine erişemez"
-      ],
-      "Authenticator app": [
-        "Kimlik doğrulama uygulaması"
       ],
       "Inactive": [
         "Etkin değil"
@@ -15185,14 +15219,20 @@
       "Private": [
         "Korunan"
       ],
-      "Security key": [
-        "Güvenlik anahtarı"
-      ],
       "SSO": [
         "Tek oturum açma"
       ],
       "SSO user provided by your identity provider": [
         "Kimlik hizmeti sağlayıcınızın sunduğu tek oturum açma"
+      ],
+      "User has enabled two-factor authentication with a security key.": [
+        "Kullanıcı, bir güvenlik anahtarıyla iki adımlı doğrulamayı açtı."
+      ],
+      "User has enabled two-factor authentication with an authenticator app and a security key.": [
+        "Kullanıcı, bir kimlik doğrulama uygulaması ve bir güvenlik anahtarıyla iki adımlı doğrulamayı açtı."
+      ],
+      "User has enabled two-factor authentication with an authenticator app.": [
+        "Kullanıcı, bir kimlik doğrulama uygulaması ile iki adımlı doğrulamayı açtı."
       ],
       "Writing assistant": [
         "Yazma yardımcısı"

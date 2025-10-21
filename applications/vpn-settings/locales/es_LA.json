@@ -1722,6 +1722,9 @@
       "How safe is Telegram?": [
         "¿Qué tan seguro es Telegram?"
       ],
+      "How to change your IP address on Windows": [
+        "Cómo cambiar su dirección IP en Windows"
+      ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "En este artículo, repasamos quién puede ver su historial de internet cuando usa Wi-Fi, lo que puede ver y por qué podría hacerlo."
       ],
@@ -1754,6 +1757,9 @@
       ],
       "Watch your favorite movies and TV shows": [
         "Mire sus películas y programas favoritos"
+      ],
+      "We discuss how to change the external and local IP addresses of your Windows device.": [
+        "Explicamos cómo cambiar las direcciones IP externas y locales de su dispositivo de Windows."
       ],
       "Which VPN protocol is the best?": [
         "¿Cuál es el mejor protocolo VPN?"
@@ -6811,9 +6817,6 @@
       "Restore": [
         "Restaurar"
       ],
-      "Revoke certificate ${ name }": [
-        "Revocar certificado ${ name }"
-      ],
       "SAML configuration saved": [
         "Configuración SAML guardada"
       ],
@@ -7628,9 +7631,8 @@
       "Your files will be encrypted and then saved": [
         "Los archivos serán cifrados y luego guardados."
       ],
-      "Your free trial includes ${ ownedCount } dedicated server.": [
-        "Su prueba gratuita incluye ${ ownedCount } servidor dedicado.",
-        "Su prueba gratuita incluye ${ ownedCount } servidores dedicados."
+      "Your free trial includes 1 dedicated server.": [
+        "Su prueba gratuita incluye 1 servidor dedicado."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Sus datos están a salvo con nosotros. Solo le contactaremos cuando sea necesario para prestar nuestros servicios."
@@ -8250,6 +8252,9 @@
       ],
       "Method for importing metadata": [
         "Método para importar metadatos"
+      ],
+      "Minimum ${ MIN_CHARS } characters": [
+        "Mínimo ${ MIN_CHARS } caracteres"
       ],
       "Minimum number of characters": [
         "Número mínimo de caracteres"
@@ -14465,9 +14470,6 @@
       "Restore administrator privileges": [
         "Restaurar privilegios de administrador"
       ],
-      "Revoke certificate": [
-        "Revocar certificado"
-      ],
       "SAML authentication": [
         "Autenticación SAML"
       ],
@@ -15199,11 +15201,11 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "2FA"
+      ],
       "Administrators can't access the data of private users": [
         "Los administradores no pueden acceder a los datos de usuarios privados"
-      ],
-      "Authenticator app": [
-        "Aplicación de autenticación"
       ],
       "Inactive": [
         "Inactiva"
@@ -15223,14 +15225,20 @@
       "Private": [
         "Privado"
       ],
-      "Security key": [
-        "Clave de seguridad"
-      ],
       "SSO": [
         "SSO"
       ],
       "SSO user provided by your identity provider": [
         "Usuario SSO proporcionado por el proveedor de identidad"
+      ],
+      "User has enabled two-factor authentication with a security key.": [
+        "El usuario ha activado la autenticación de dos factores con una llave de seguridad."
+      ],
+      "User has enabled two-factor authentication with an authenticator app and a security key.": [
+        "El usuario ha activado la autenticación de dos factores con una app de autenticación y una llave de seguridad."
+      ],
+      "User has enabled two-factor authentication with an authenticator app.": [
+        "El usuario ha activado la autenticación de dos factores con una app de autenticación."
       ],
       "Writing assistant": [
         "Asistente de escritura"
