@@ -26,6 +26,7 @@ import { create } from 'zustand'
 import { useEvent } from './components/utils'
 import { useNotifications } from '@proton/components'
 import { c } from 'ttag'
+import { CUSTOM_GRID_COLORS } from './constants'
 
 // local state
 // -----------
@@ -374,6 +375,7 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
     chartsState,
     searchState,
     yjsState,
+    spreadsheetColors: CUSTOM_GRID_COLORS,
     onSelectRange,
     onSelectNamedRange,
     onSelectTable,

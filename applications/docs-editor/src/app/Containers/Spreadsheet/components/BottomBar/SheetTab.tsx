@@ -200,7 +200,7 @@ export function SheetTab({
           onDragOver={handleDragOver}
           onDragLeave={handleDragLeave}
           onDrop={handleDrop}
-          className={`${isDragging ? 'opacity-50' : ''} ${isDragOver ? 'ring-2 ring-[#4695F3]' : ''}`}
+          className={`${isDragging ? 'opacity-50' : ''} ${isDragOver ? 'ring-2 ring-[#1EA885]' : ''}`}
           style={{
             cursor: (() => {
               if (!isReadonly && isDragging) {
@@ -215,12 +215,12 @@ export function SheetTab({
         >
           {isProtected && (
             <IcLock
-              className={`absolute left-2 top-1/2 h-3 w-3 -translate-y-1/2 ${active ? 'text-[#4695F3]' : 'text-[#5D5D5D]'}`}
+              className={`absolute left-2 top-1/2 h-3 w-3 -translate-y-1/2 ${active ? 'text-[#1EA885]' : 'text-[#5D5D5D]'}`}
             />
           )}
-          <span className={active ? 'text-[#4695F3]' : 'text-[#5D5D5D]'}>{sheet.title}</span>
+          <span className={active ? 'text-[#1EA885]' : 'text-[#5D5D5D]'}>{sheet.title}</span>
           <Ariakit.MenuButton
-            className={`absolute right-2 top-1/2 flex h-4 w-4 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full transition-colors hover:bg-[#D1CFCD] hover:text-[#3A7FD5] ${active ? 'text-[#4695F3]' : 'text-[#5D5D5D]'}`}
+            className={`absolute right-2 top-1/2 flex h-4 w-4 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full transition-colors hover:bg-[#D1CFCD] hover:text-[#3A7FD5] ${active ? 'text-[#1EA885]' : 'text-[#5D5D5D]'}`}
             onClick={(e: React.MouseEvent) => e.stopPropagation()}
           >
             {isMenuOpen ? <IcChevronUp className="h-4 w-4" /> : <IcChevronDown className="h-4 w-4" />}
