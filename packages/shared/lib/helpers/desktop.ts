@@ -7,7 +7,12 @@ import { isLinux, isMac, isWindows } from './browser';
 const uaParser = new UAParser();
 const ua = uaParser.getResult();
 
-export const SUPPORTED_ELECTRON_APP: APP_NAMES[] = [APPS.PROTONACCOUNT, APPS.PROTONCALENDAR, APPS.PROTONMAIL];
+export const SUPPORTED_ELECTRON_APP: APP_NAMES[] = [
+    APPS.PROTONACCOUNT,
+    APPS.PROTONCALENDAR,
+    APPS.PROTONMAIL,
+    APPS.PROTONMEET,
+];
 
 export const isElectronApp = /electron/i.test(ua.ua);
 export const isElectronOnMac = isElectronApp && isMac();
