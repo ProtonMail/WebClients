@@ -54,7 +54,7 @@ export class DownloadManager {
 
         drive.onMessage(SDKEvent.TransfersPaused, () => {
             this.activeDownloads.forEach((_, downloadId) => {
-                if (getQueueItem(downloadId)?.status === DownloadStatus.Downloading) {
+                if (getQueueItem(downloadId)?.status === DownloadStatus.InProgress) {
                     this.updateStatus([downloadId], DownloadStatus.PausedServer);
                 }
             });
@@ -62,7 +62,7 @@ export class DownloadManager {
         drive.onMessage(SDKEvent.TransfersResumed, () => {
             this.activeDownloads.forEach((_, downloadId) => {
                 if (getQueueItem(downloadId)?.status === DownloadStatus.PausedServer) {
-                    this.updateStatus([downloadId], DownloadStatus.Downloading);
+                    this.updateStatus([downloadId], DownloadStatus.InProgress);
                 }
             });
         });
@@ -132,7 +132,7 @@ export class DownloadManager {
         }
 
         updateDownloadItem(downloadId, {
-            status: DownloadStatus.Downloading,
+            status: DownloadStatus.InProgress,
         });
 
         const { readable, writable } = new TransformStream<Uint8Array<ArrayBuffer>>();
@@ -205,7 +205,7 @@ export class DownloadManager {
 
         // We can only know the full size of the archive after traversing all nodes
         void totalEncryptedSizePromise.then((totalSize) => (archiveSizeInBytes = totalSize));
-        updateDownloadItem(downloadId, { status: DownloadStatus.Downloading });
+        updateDownloadItem(downloadId, { status: DownloadStatus.InProgress });
 
         const updateProgress = (downloadedBytes: number) => {
             updateDownloadItem(downloadId, { downloadedBytes });
@@ -305,7 +305,7 @@ export class DownloadManager {
         downloadIds.forEach((id) => {
             const storeItem = getQueueItem(id);
             const activeDownload = this.activeDownloads.get(id);
-            if (storeItem && activeDownload && storeItem.status === DownloadStatus.Downloading) {
+            if (storeItem && activeDownload && storeItem.status === DownloadStatus.InProgress) {
                 activeDownload.controller.pause();
                 this.updateStatus(downloadIds, DownloadStatus.Paused);
             }
@@ -319,7 +319,7 @@ export class DownloadManager {
             const activeDownload = this.activeDownloads.get(id);
             if (storeItem && activeDownload && storeItem.status === DownloadStatus.Paused) {
                 activeDownload.controller.resume();
-                this.updateStatus(downloadIds, DownloadStatus.Downloading);
+                this.updateStatus(downloadIds, DownloadStatus.InProgress);
             }
         });
     }
