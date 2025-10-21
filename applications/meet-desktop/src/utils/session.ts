@@ -1,9 +1,8 @@
-import { app, session, desktopCapturer, systemPreferences } from "electron";
+import { app, session, desktopCapturer } from "electron";
 
 import { isHostAllowed } from "./urls/urlTests";
 import { ALLOWED_PERMISSIONS } from "../constants";
 import { mainLogger } from "./log";
-import { isMac } from "./helpers";
 
 export const appSession = () => {
     return session.fromPartition("persist:app", { cache: false });
@@ -12,7 +11,6 @@ export const appSession = () => {
 export const updateSession = () => session.fromPartition("persist:update", { cache: false });
 
 export const setRequestPermission = () => {
-    // Security addition, reject all permissions except allowed ones
     appSession().setPermissionRequestHandler((webContents, permission, callback) => {
         try {
             const { host, protocol } = new URL(webContents.getURL());
@@ -32,73 +30,45 @@ export const setRequestPermission = () => {
         }
     });
 
-    appSession().setDisplayMediaRequestHandler(async (request, callback) => {
-        try {
-            const frame = request.frame;
-            if (!frame) {
-                mainLogger.error("Display media request frame is null");
-                return callback({});
-            }
-
-            const { host, protocol } = new URL(frame.url);
-            if (!isHostAllowed(host) || protocol !== "https:") {
-                mainLogger.info("Display media request rejected - invalid host or protocol");
-                return callback({});
-            }
-
-            mainLogger.info("Display media request approved, fetching sources...");
-
-            if (isMac) {
-                const status = systemPreferences.getMediaAccessStatus("screen");
-                mainLogger.info(`macOS Screen Recording permission status: ${status}`);
-
-                if (status === "denied") {
-                    mainLogger.error(
-                        "Screen Recording permission denied. Please grant permission in System Preferences > Privacy & Security > Screen Recording",
-                    );
-                    callback({});
-                    return;
-                } else if (status === "not-determined") {
-                    mainLogger.info("Screen Recording permission not determined yet, requesting...");
-                }
-            }
-
+    // Handle screen sharing with native system picker
+    appSession().setDisplayMediaRequestHandler(
+        async (request, callback) => {
             try {
+                const frame = request.frame;
+                if (!frame) {
+                    return callback({});
+                }
+
+                const { host, protocol } = new URL(frame.url);
+                if (!isHostAllowed(host) || protocol !== "https:") {
+                    return callback({});
+                }
+
+                // Fallback: if system picker is not available, auto-select primary screen
                 const sources = await desktopCapturer.getSources({
                     types: ["screen", "window"],
                     thumbnailSize: { width: 150, height: 150 },
                 });
 
-                mainLogger.info(`Desktop capturer returned ${sources.length} sources`);
-
                 if (sources.length === 0) {
-                    mainLogger.error(
-                        "No desktop capturer sources available - check Screen Recording permission in System Preferences",
-                    );
-                    callback({});
-                    return;
+                    return callback({});
                 }
 
-                const screenSource = sources.find((source) => source.id.startsWith("screen")) || sources[0];
-                mainLogger.info(`Selected source: ${screenSource.name} (${screenSource.id})`);
+                const primaryScreen =
+                    sources.find((source) => source.id.startsWith("screen:0:")) ||
+                    sources.find((source) => source.id.startsWith("screen")) ||
+                    sources[0];
 
                 callback({
-                    video: screenSource,
+                    video: primaryScreen,
                     audio: "loopback",
-                    enableLocalEcho: false,
                 });
-            } catch (err) {
-                mainLogger.error("Failed to get desktop capturer sources:", err);
-                mainLogger.error(
-                    "Make sure Screen Recording permission is granted in System Preferences > Privacy & Security > Screen Recording",
-                );
+            } catch (error) {
                 callback({});
             }
-        } catch (error) {
-            mainLogger.error("Display media request error:", error);
-            callback({});
-        }
-    });
+        },
+        { useSystemPicker: true },
+    );
 };
 
 export const extendAppVersionHeader = () => {

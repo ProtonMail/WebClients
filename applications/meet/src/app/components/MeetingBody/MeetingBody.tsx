@@ -7,6 +7,7 @@ import { c } from 'ttag';
 
 import { IcMeetRotateCamera } from '@proton/icons';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
@@ -87,10 +88,12 @@ export const MeetingBody = ({
         <div
             className={clsx(
                 'w-full h-full flex flex-column flex-nowrap overflow-hidden pl-4 pr-4 pb-0 pt-4',
-                isScreenShare ? 'gap-0' : 'gap-4'
+                isScreenShare ? 'gap-0' : 'gap-4',
+                isElectronApp && 'pt-6'
             )}
         >
             {!isNarrowHeight && (
+                // eslint-disable-next-line custom-rules/deprecate-classes
                 <div className="flex lg:hidden flex-nowrap gap-2 justify-between items-center">
                     <div className="flex-1 h3 text-ellipsis overflow-hidden">{roomName}</div>
                     <div className="text-ellipsis overflow-hidden">

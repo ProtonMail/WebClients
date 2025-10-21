@@ -65,5 +65,6 @@ export const getAppTransportSecuity = () => {
         },
         NSCameraUsageDescription: "Proton Meet needs access to your camera for video calls.",
         NSMicrophoneUsageDescription: "Proton Meet needs access to your microphone for audio calls.",
+        NSScreenCaptureUsageDescription: "Proton Meet needs access to your screen for screen sharing during meetings.",
     };
 };

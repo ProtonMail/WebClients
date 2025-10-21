@@ -49,6 +49,9 @@ import { logInitialAppInfo } from "./utils/log/logInitialAppInfo";
             "AutoPictureInPicture",
             // Ensure Document Picture-in-Picture API is available
             "DocumentPictureInPictureAPI",
+            // Enable native screen sharing picker
+            "GetDisplayMediaSet",
+            "GetDisplayMediaSetAutoSelectAllScreens",
         ].join(","),
     );
 

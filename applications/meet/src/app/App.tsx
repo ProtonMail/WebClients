@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Route, useHistory, useLocation } from 'react-router-dom';
 
 import ProtonApp from '@proton/components/containers/app/ProtonApp';
-import { electronAppVersion, isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { isWasmSupported } from '@proton/shared/lib/helpers/isWasmSupported';
 import { isWebRtcSupported } from '@proton/shared/lib/helpers/isWebRtcSupported';
 import useFlag from '@proton/unleash/useFlag';
@@ -86,7 +86,6 @@ export const App = () => {
     return (
         <ProtonApp config={config}>
             <style id="meet-dark-theme">{meetTheme.toString()}</style>
-            <div className="text-3xl text-center">{electronAppVersion}</div>
             <div className={clsx('w-full h-full', isElectronApp ? 'pt-4' : '')}>
                 {isGuest ? (
                     <GuestContainer>
