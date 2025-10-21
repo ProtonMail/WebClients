@@ -26,28 +26,33 @@ export function usePiPMediaSession({
 
     // Setup MediaSession metadata and action handlers
     const setupMediaSession = () => {
-        if ('mediaSession' in navigator && !isSafari() && !isFirefox()) {
-            navigator.mediaSession.metadata = new MediaMetadata({
-                title: 'Proton Meet',
-            });
+        try {
+            if ('mediaSession' in navigator && !isSafari() && !isFirefox()) {
+                navigator.mediaSession.metadata = new MediaMetadata({
+                    title: 'Proton Meet',
+                });
 
-            navigator.mediaSession.setActionHandler('togglecamera' as MediaSessionAction, () => {
-                if (videoDeviceId) {
-                    void toggleVideo({
-                        isEnabled: !isVideoEnabledRef.current,
-                        videoDeviceId: videoDeviceId,
-                    });
-                }
-            });
+                navigator.mediaSession.setActionHandler('togglecamera' as MediaSessionAction, () => {
+                    if (videoDeviceId) {
+                        void toggleVideo({
+                            isEnabled: !isVideoEnabledRef.current,
+                            videoDeviceId: videoDeviceId,
+                        });
+                    }
+                });
 
-            navigator.mediaSession.setActionHandler('togglemicrophone' as MediaSessionAction, () => {
-                if (audioDeviceId) {
-                    void toggleAudio({
-                        isEnabled: !isAudioEnabledRef.current,
-                        audioDeviceId: audioDeviceId,
-                    });
-                }
-            });
+                navigator.mediaSession.setActionHandler('togglemicrophone' as MediaSessionAction, () => {
+                    if (audioDeviceId) {
+                        void toggleAudio({
+                            isEnabled: !isAudioEnabledRef.current,
+                            audioDeviceId: audioDeviceId,
+                        });
+                    }
+                });
+            }
+        } catch (error) {
+            // eslint-disable-next-line no-console
+            console.error(error);
         }
     };
 
