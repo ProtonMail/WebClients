@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
 import Icon from '@proton/components/components/icon/Icon';
 import IconRow from '@proton/components/components/iconRow/IconRow';
 import { InputFieldTwo, Option, SelectTwo, TimeZoneSelector } from '@proton/components/index';
@@ -12,8 +13,9 @@ import { BookingState } from './bookingsProvider/interface';
 
 export const Form = () => {
     const scheduleOptions = getCalendarEventDefaultDuration();
+    const [writeableCalendars = []] = useWriteableCalendars();
 
-    const { writeableCalendars, formData, updateFormData } = useBookings();
+    const { formData, updateFormData } = useBookings();
 
     return (
         <form className="flex flex-column">
