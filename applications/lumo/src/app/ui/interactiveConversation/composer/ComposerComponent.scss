@@ -22,6 +22,14 @@
 		}
 	}
 
+	&.shadow-lifted-composer {
+		box-shadow: var(--optional-shadow-lifted-offset, 0 calc(var(--1px) * 5) calc(var(--1px) * 12)) rgb(var(--shadow-color,var(--shadow-default-color))/var(--shadow-lifted-opacity));
+		@include media('<=small') {
+			// Theme overrides
+			box-shadow: none !important;
+		}
+	}
+
 	// Ghost Mode Theme
 	&.ghost-mode {
 		// Define ghost mode color palette
@@ -90,6 +98,3 @@
 	color: var(--text-strong) !important;
 }
 
-.shadow-lifted-composer {
-	box-shadow: var(--optional-shadow-lifted-offset, 0 calc(var(--1px) * 5) calc(var(--1px) * 12)) rgb(var(--shadow-color,var(--shadow-default-color))/var(--shadow-lifted-opacity));
-}
