@@ -31,37 +31,16 @@ import * as Ariakit from '@ariakit/react'
 import omit from 'lodash/omit'
 import clsx from '@proton/utils/clsx'
 import { createStringifier } from '../../stringifier'
-import { type ComponentPropsWithRef, forwardRef, Fragment, useState, useMemo, useEffect } from 'react'
+import { forwardRef, Fragment, useState, useMemo, useEffect } from 'react'
 import { bucket_color } from '../icons'
 import { SidebarDialog, SidebarDialogHeader } from './SidebarDialog'
 import { produce } from 'immer'
 import { useForm } from 'react-hook-form'
 import { onlyImplementedFunctionDescriptions as functionDescriptions } from '../../constants'
 import { useEvent } from '../utils'
+import { FormGroup, FormLabel, NativeSelect } from './shared'
 
 const { s } = createStringifier(strings)
-
-const NativeSelect = forwardRef<HTMLSelectElement, ComponentPropsWithRef<'select'>>(function NativeSelect(
-  { ...props },
-  ref,
-) {
-  return (
-    <div className={'relative isolate h-[36px] rounded-lg border border-[#ADABA8]'}>
-      <select className="absolute inset-0 appearance-none px-3 text-[13px]" {...props} ref={ref} />
-      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
-        <Icon className="shrink-0" legacyName="chevron-down-filled" />
-      </div>
-    </div>
-  )
-})
-
-const FormGroup = forwardRef<HTMLDivElement, Ariakit.RoleProps>(function FormGroup({ className, ...props }, ref) {
-  return <Ariakit.Role className={clsx('grid gap-2', className)} {...props} ref={ref} />
-})
-
-const FormLabel = forwardRef<HTMLDivElement, Ariakit.RoleProps>(function FormLabel({ className, ...props }, ref) {
-  return <Ariakit.Role render={<p />} className={clsx('text-sm font-semibold', className)} {...props} ref={ref} />
-})
 
 const Tab = forwardRef<HTMLButtonElement, Ariakit.TabProps>(function Tab({ className, ...props }, ref) {
   return (
@@ -80,7 +59,7 @@ const Tab = forwardRef<HTMLButtonElement, Ariakit.TabProps>(function Tab({ class
 const TABS = {
   SINGLE_COLOR: 'SINGLE_COLOR',
   COLOR_SCALE: 'COLOR_SCALE',
-}
+} as const
 type TabId = (typeof TABS)[keyof typeof TABS]
 
 const FormatButton = forwardRef<HTMLButtonElement, Ariakit.ButtonProps>(function FormatButton(
