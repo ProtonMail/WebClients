@@ -48,7 +48,6 @@ export default defineConfig([
                 },
             ],
             '@typescript-eslint/no-use-before-define': 'off',
-            'custom-rules/deprecate-sizing-classes': 'off',
             'jsx-a11y/alt-text': 'off',
             'react/prop-types': 'off',
             'monorepo-cop/no-disable-monorepo-no-relative-rule': 'off',

@@ -89,7 +89,6 @@ export function PreviewModeEditor({
                 fontFamily: DefaultFont.value,
                 gridRow: 1,
                 gridColumn: 1,
-                // eslint-disable-next-line custom-rules/deprecate-classes
                 justifySelf: 'center',
               }}
               isSuggestionMode={false}

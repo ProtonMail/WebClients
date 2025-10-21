@@ -49,9 +49,7 @@ const getDomainValueMessage = (domain: ReactNode) =>
     c('Description')
         .jt`Some DNS registrar might require a full record path, in this case please use ${domain} as domain value instead.`;
 
-// eslint-disable-next-line custom-rules/deprecate-spacing-utility-classes
 const copyMx1 = 'mx1.alias.proton.me';
-// eslint-disable-next-line custom-rules/deprecate-spacing-utility-classes
 const copyMx2 = 'mx2.alias.proton.me';
 const copySpf = 'v=spf1 include:alias.proton.me ~all';
 const copyDkimDomain = 'dkim._domainkey';
