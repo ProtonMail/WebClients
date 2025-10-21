@@ -2,10 +2,12 @@ import { useCallback, useMemo } from 'react';
 
 import config from 'proton-pass-extension/app/config';
 import { getMinimalHostPermissions } from 'proton-pass-extension/lib/utils/permissions';
+import { assertTabsAPIAvailable } from 'proton-pass-extension/lib/utils/tabs';
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import type { RequestForkData, RequestForkOptions } from '@proton/pass/lib/auth/fork';
 import { getStateKey, requestFork } from '@proton/pass/lib/auth/fork';
@@ -19,11 +21,10 @@ import { getHostPermissionsWarning, useHostPermissions } from './useHostPermissi
 type UseRequestForkOptions = Partial<RequestForkOptions & { data: RequestForkData; replace: boolean }>;
 type UseRequestForkWithPermissionsOptions = Partial<{ autoClose: boolean; replace: boolean }>;
 
-/* depending on where we execute this : we may or may not
- * have access to the tabs API - Firefox content-scripts have
- * very limited support for the tabs API */
-export const useRequestFork = () =>
-    useCallback(async ({ data, replace, ...options }: UseRequestForkOptions) => {
+export const useRequestFork = () => {
+    const { endpoint } = usePassCore();
+
+    return useCallback(async ({ data, replace, ...options }: UseRequestForkOptions) => {
         const { url, state } = requestFork({
             ...options,
             host: config.SSO_URL,
@@ -33,8 +34,11 @@ export const useRequestFork = () =>
 
         if (data) await browser.storage.session.set({ [getStateKey(state)]: JSON.stringify(data) }).catch(noop);
         if (replace) return window.location.replace(url);
-        return browser.tabs ? browser.tabs.create({ url }).catch(noop) : window.open(url, '_BLANK');
+
+        if (assertTabsAPIAvailable(endpoint)) browser.tabs.create({ url }).catch(noop);
+        else window.open(url, '_BLANK');
     }, []);
+};
 
 /** Prompts for extension permissions required for login before navigating.
  * Essential on Firefox & Safari for fallback account communication to function. */
