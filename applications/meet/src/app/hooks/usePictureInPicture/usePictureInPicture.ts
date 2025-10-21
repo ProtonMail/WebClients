@@ -215,23 +215,28 @@ export function usePictureInPicture({
     }, [startPiP, isPipActive, room]);
 
     useEffect(() => {
-        if ('mediaSession' in navigator && isChromiumBased() && !isMobile()) {
-            // @ts-ignore - Only available in Chrome
-            navigator.mediaSession.setActionHandler('enterpictureinpicture', async () => {
-                const isScreenShareActive = [
-                    room.localParticipant,
-                    ...Array.from(room.remoteParticipants.values()),
-                ].some((participant) => participant.isScreenShareEnabled);
-
-                if (isScreenShareActive) {
-                    await startPiP();
-                }
-            });
-
-            return () => {
+        try {
+            if ('mediaSession' in navigator && isChromiumBased() && !isMobile()) {
                 // @ts-ignore - Only available in Chrome
-                navigator.mediaSession.setActionHandler('enterpictureinpicture', null);
-            };
+                navigator.mediaSession.setActionHandler('enterpictureinpicture', async () => {
+                    const isScreenShareActive = [
+                        room.localParticipant,
+                        ...Array.from(room.remoteParticipants.values()),
+                    ].some((participant) => participant.isScreenShareEnabled);
+
+                    if (isScreenShareActive) {
+                        await startPiP();
+                    }
+                });
+
+                return () => {
+                    // @ts-ignore - Only available in Chrome
+                    navigator.mediaSession.setActionHandler('enterpictureinpicture', null);
+                };
+            }
+        } catch (error) {
+            // eslint-disable-next-line no-console
+            console.error(error);
         }
     }, [startPiP]);
 
