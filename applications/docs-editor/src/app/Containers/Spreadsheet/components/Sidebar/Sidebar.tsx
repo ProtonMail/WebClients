@@ -111,8 +111,11 @@ export function Sidebar({ state }: SidebarProps) {
       />
       <NamedRangeEditorDialog
         sheetId={state.activeSheetId}
+        namedRanges={state.namedRanges}
         onCreateNamedRange={state.onCreateNamedRange}
         onUpdateNamedRange={state.onUpdateNamedRange}
+        onDeleteNamedRange={state.onDeleteNamedRange}
+        onRequestDefineNamedRange={state.onRequestDefineNamedRange}
       />
     </SidebarContainer>
   )
