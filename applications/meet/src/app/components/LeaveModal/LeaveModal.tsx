@@ -36,7 +36,11 @@ export const LeaveModal = ({ hasAdminPermission }: LeaveModalProps) => {
                 {isLargerThanMd ? c('Alt').t`Leave` : <IcMeetPhone className="shrink-0" size={8} />}
             </Button>
             {render && (
-                <ModalTwo {...modalProps} rootClassName="bg-transparent leave-modal" className="meet-radius">
+                <ModalTwo
+                    {...modalProps}
+                    rootClassName="bg-transparent leave-modal"
+                    className="meet-radius border border-norm"
+                >
                     <ModalTwoContent className="flex flex-column justify-space-between p-4 mx-4 pb-0">
                         <div className="text-center text-3xl">{c('Action').t`Leave meeting`}</div>
 
