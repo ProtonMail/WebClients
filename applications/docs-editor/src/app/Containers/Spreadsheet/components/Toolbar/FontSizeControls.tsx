@@ -142,8 +142,8 @@ function FontSizeCombobox({ realValue }: FontSizeComboboxProps) {
                   ref={comboboxRef}
                   className="border-weak h-[1.875rem] w-[2.875rem] shrink-0 rounded-[.5rem] border text-center text-[.875rem] focus:border focus:border-[#6D4AFF] focus:outline-none focus:ring-[.1875rem] focus:ring-[#6D4AFF]/20"
                   autoComplete="inline"
-                  // On combobox blur, commit the value.
-                  onBlur={() => commitValue(combobox)}
+                  // On combobox blur, reset the value
+                  onBlur={() => combobox.setValue(String(realValue))}
                   onKeyDown={(event) => {
                     let preventDefault = false
                     const { current: inputElement } = comboboxRef
@@ -161,6 +161,7 @@ function FontSizeCombobox({ realValue }: FontSizeComboboxProps) {
                     // On escape, reset the value to the real value.
                     if (event.key === 'Escape') {
                       combobox.setValue(String(realValue))
+                      combobox.hide()
                       queueMicrotask(inputElement.select.bind(inputElement))
                       preventDefault = true
                     }
