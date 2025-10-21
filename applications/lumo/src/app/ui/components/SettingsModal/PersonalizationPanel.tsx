@@ -18,6 +18,8 @@ import {
     toggleTrait,
     updatePersonalizationSettings,
 } from '../../../redux/slices/personalization';
+import { saveLumoUserSettingsToRemote } from '../../../redux/slices/lumoUserSettingsThunks';
+import type { LumoUserSettings } from '../../../redux/slices/lumoUserSettings';
 
 import './PersonalizationPanel.scss';
 
@@ -91,6 +93,8 @@ const PersonalizationPanel = () => {
 
     const [isSaving, setIsSaving] = useState(false);
     const [lastSavedPersonalization, setLastSavedPersonalization] = useState<PersonalizationSettings | null>(null);
+    const [isInitialized, setIsInitialized] = useState(false);
+    const [hasUserInteracted, setHasUserInteracted] = useState(false);
 
     // Initialize the saved state when component mounts
     // Only set it if personalization is empty (initial state), not if it has data from UserSettings
@@ -112,30 +116,32 @@ const PersonalizationPanel = () => {
     ]);
 
     // Manual sync: If userSettings has personalization data but personalization slice doesn't, sync it
+    // Only do this during initial load, not when user is actively editing
     useEffect(() => {
-        if (
-            userSettings &&
-            (userSettings as any).personalization &&
-            !personalization.nickname &&
-            !personalization.jobRole &&
-            !personalization.additionalContext
-        ) {
-            dispatch(updatePersonalizationSettings((userSettings as any).personalization));
+        // Only sync on the very first load, never after user interaction
+        if (!isInitialized && userSettings) {
+            if (!hasUserInteracted && (userSettings as any).personalization) {
+                dispatch(updatePersonalizationSettings((userSettings as any).personalization));
+            }
+            setIsInitialized(true);
         }
-    }, [userSettings, personalization.nickname, personalization.jobRole, personalization.additionalContext, dispatch]);
+    }, [userSettings, dispatch, isInitialized, hasUserInteracted]);
 
     // Update lastSavedPersonalization when personalization data is loaded from UserSettings
     // Only do this once when data is first loaded, not on every change
     useEffect(() => {
-        if (
-            userSettings &&
-            (userSettings as any).personalization &&
-            personalization.nickname &&
-            !lastSavedPersonalization?.nickname
-        ) {
+        if (isInitialized && !lastSavedPersonalization && personalization) {
+            // Set the baseline after initialization
             setLastSavedPersonalization({ ...personalization });
         }
-    }, [userSettings, personalization.nickname, lastSavedPersonalization?.nickname]);
+    }, [isInitialized, lastSavedPersonalization, personalization]);
+
+    // Mark as initialized if there's no userSettings data to sync from
+    useEffect(() => {
+        if (!isInitialized && (!userSettings || !(userSettings as any).personalization)) {
+            setIsInitialized(true);
+        }
+    }, [userSettings, isInitialized]);
 
     // Get fresh translated placeholders
     const jobPlaceholders = getJobPlaceholders();
@@ -173,10 +179,12 @@ const PersonalizationPanel = () => {
     }, [jobPlaceholders.length, nicknamePlaceholders.length, contextPlaceholders.length]);
 
     const handleInputChange = (field: keyof PersonalizationSettings, value: any) => {
+        setHasUserInteracted(true);
         dispatch(updatePersonalizationSettings({ [field]: value }));
     };
 
     const handleTraitToggle = (traitId: string) => {
+        setHasUserInteracted(true);
         const trait = AVAILABLE_TRAITS.find((t) => t.id === traitId);
         if (!trait) return;
 
@@ -190,6 +198,7 @@ const PersonalizationPanel = () => {
     };
 
     const handleReset = async () => {
+        setHasUserInteracted(true);
         dispatch(resetPersonalizationSettings());
 
         // Save the reset state to persistent storage
@@ -243,7 +252,18 @@ const PersonalizationPanel = () => {
 
         setIsSaving(true);
         try {
+            // First update the Redux state
             dispatch(savePersonalizationSettings(personalization));
+            
+            // Get the current user settings and update it with personalization
+            const updatedUserSettings: LumoUserSettings = {
+                theme: (userSettings as any)?.theme || 'auto',
+                personalization
+            };
+            
+            // Directly save to remote API and wait for completion
+            await dispatch(saveLumoUserSettingsToRemote(updatedUserSettings)).unwrap();
+            
             setLastSavedPersonalization({ ...personalization });
         } catch (error) {
             safeLogger.error('PersonalizationPanel: Failed to save personalization:', error);
@@ -388,6 +408,7 @@ const PersonalizationPanel = () => {
                                         color="weak"
                                         className="trait-reset"
                                         onClick={() => {
+                                            setHasUserInteracted(true);
                                             dispatch(
                                                 updatePersonalizationSettings({
                                                     traits: [],
@@ -403,39 +424,41 @@ const PersonalizationPanel = () => {
                         </div>
                     </div>
                 </div>
-
-                        {/* Fixed Footer - only show for authenticated users */}
-                        <div className="personalization-footer flex items-center">
-                            <Button
-                                color="danger"
-                                shape="outline"
-                                size="small"
-                                onClick={handleReset}
-                                disabled={
-                                    !personalization.nickname &&
-                                    !personalization.jobRole &&
-                                    personalization.personality === 'default' &&
-                                    personalization.traits.length === 0 &&
-                                    !personalization.lumoTraits &&
-                                    !personalization.additionalContext
-                                }
-                            >
-                                {c('Action').t`Reset all`}
-                            </Button>
-                            <div className="flex-1" />
-                            <Button
-                                color="norm"
-                                size="small"
-                                onClick={handleSave}
-                                disabled={!hasUnsavedChanges || isSaving}
-                                loading={isSaving}
-                            >
-                                {isSaving ? c('Action').t`Saving...` : c('Action').t`Save`}
-                            </Button>
-                        </div>
                     </>
                 )}
             </div>
+            
+            {/* Fixed Footer - only show for authenticated users */}
+            {!isGuest && (
+                <div className="personalization-footer flex items-center">
+                    <Button
+                        color="danger"
+                        shape="outline"
+                        size="small"
+                        onClick={handleReset}
+                        disabled={
+                            !personalization.nickname &&
+                            !personalization.jobRole &&
+                            personalization.personality === 'default' &&
+                            personalization.traits.length === 0 &&
+                            !personalization.lumoTraits &&
+                            !personalization.additionalContext
+                        }
+                    >
+                        {c('Action').t`Reset all`}
+                    </Button>
+                    <div className="flex-1" />
+                    <Button
+                        color="norm"
+                        size="small"
+                        onClick={handleSave}
+                        disabled={!hasUnsavedChanges || isSaving}
+                        loading={isSaving}
+                    >
+                        {isSaving ? c('Action').t`Saving...` : c('Action').t`Save`}
+                    </Button>
+                </div>
+            )}
         </div>
     );
 };
