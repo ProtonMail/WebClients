@@ -329,24 +329,27 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
     const breadcrumbs = getBreadcrumbs({ domain: domainModel, domainAddresses });
 
     return (
-        <ModalTwo className="modal--full" as={Form} onSubmit={onSubmit} {...rest}>
+        <ModalTwo size="large" as={Form} onSubmit={onSubmit} {...rest}>
             <ModalTwoHeader title={domainModel?.ID ? c('Title').t`Edit domain` : c('Title').t`Add domain`} />
             <ModalTwoContent>
-                <ButtonGroup className="mb-4">
-                    {breadcrumbs.map(({ label, disabled, icon }, index) => (
-                        <Button
-                            icon
-                            key={label}
-                            className={clsx(['flex flex-nowrap items-center', index === step && 'is-selected'])}
-                            disabled={disabled}
-                            onClick={() => goTo(index)}
-                            title={label}
-                        >
-                            {disabled ? null : icon}
-                            <span className="text-ellipsis max-w-full">{label}</span>
-                        </Button>
-                    ))}
-                </ButtonGroup>
+                <div className="overflow-x-auto">
+                    <ButtonGroup className="mb-4">
+                        {breadcrumbs.map(({ label, disabled, icon }, index) => (
+                            <Button
+                                icon
+                                key={label}
+                                className={clsx(['flex flex-nowrap items-center', index === step && 'is-selected'])}
+                                disabled={disabled}
+                                onClick={() => goTo(index)}
+                                title={label}
+                            >
+                                {disabled ? null : icon}
+                                <span className="text-ellipsis max-w-full">{label}</span>
+                            </Button>
+                        ))}
+                    </ButtonGroup>
+                </div>
+
                 {section}
             </ModalTwoContent>
             <ModalTwoFooter>
