@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta http-equiv="x-dns-prefetch-control" content="off">
+    <base href="/">
+    <title><%= appName %></title>
+    <meta name="google" content="notranslate">
+    <link rel="icon" href="/assets/favicon.ico" sizes="any">
+    <!-- Working around https://bugzilla.mozilla.org/show_bug.cgi?id=1801614
+       * otherwise Firefox picks the 1024x1024 declination of the apple-touch-icon -->
+    <link rel="icon" href="/assets/favicon.ico" sizes="1025x1025">
+    <link rel="icon" href="<%= require('./favicon.svg') %>" type="image/svg+xml">
+</head>
+<body>
+    <div class="app-root"></div>
+    <noscript class="app-noscript">
+        <%= appName %> requires Javascript. Enable Javascript and reload this page to continue.
+    </noscript>
+</body>
+</html>
