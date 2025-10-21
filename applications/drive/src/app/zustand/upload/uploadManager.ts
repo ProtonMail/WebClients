@@ -4,19 +4,111 @@ import { getActionEventManager } from '../../utils/ActionEventManager/ActionEven
 import { ActionEventName } from '../../utils/ActionEventManager/ActionEventManagerTypes';
 import { handleSdkError } from '../../utils/errorHandling/useSdkErrorHandler';
 import { useUploadControllerStore } from './uploadController.store';
-import { UploadEventType, startUpload } from './uploadHandler';
+import { type UploadEvent, UploadEventType, startUpload } from './uploadHandler';
 import { UploadStatus, useUploadQueueStore } from './uploadQueue.store';
 import { useUploadUIStore } from './uploadUI.store';
+import { type FolderNode, buildFolderStructure } from './utils/buildFolderStructure';
+import { hasFolderStructure } from './utils/hasFolderStructure';
+import { processDroppedItems } from './utils/processDroppedItems';
+
+interface FolderStructureWithUids {
+    nodeUid: string;
+    files: File[];
+    subfolders: Map<string, FolderStructureWithUids>;
+}
 
 class UploadManager {
     private sdkEventsDisposer: (() => void) | null = null;
     private isAutomaticallyPaused = false;
 
+    private async createFolder(folderName: string, parentUid: string, modificationTime?: Date): Promise<string> {
+        const drive = getDrive();
+        const folder = await drive.createFolder(parentUid, folderName, modificationTime);
+        // TODO: Find a way to show the folder creation in TransferManager. It is different from file queue
+        return folder.ok ? folder.value.uid : folder.error.uid;
+    }
+
+    private async createFolderStructure(node: FolderNode, parentUid: string): Promise<FolderStructureWithUids> {
+        const currentUid = await this.createFolder(node.name, parentUid);
+
+        const subfolders = new Map<string, FolderStructureWithUids>();
+
+        for (const [folderName, subfolder] of node.subfolders) {
+            const subfolderWithUid = await this.createFolderStructure(subfolder, currentUid);
+            subfolders.set(folderName, subfolderWithUid);
+        }
+
+        return {
+            nodeUid: currentUid,
+            files: node.files,
+            subfolders,
+        };
+    }
+
+    private async onChangeCallback(uploadId: string, parentUid: string, event: UploadEvent): Promise<void> {
+        const controllerStore = useUploadControllerStore.getState();
+        const actionEventManager = getActionEventManager();
+        const uploadQueueStore = useUploadQueueStore.getState();
+        const uiStore = useUploadUIStore.getState();
+        switch (event.type) {
+            case UploadEventType.ControllerReady:
+                controllerStore.setController(uploadId, {
+                    uploadController: event.controller,
+                    abortController: event.abortController,
+                });
+                break;
+            case UploadEventType.Progress:
+                if (!this.isAutomaticallyPaused) {
+                    uploadQueueStore.updateUploadItem(uploadId, {
+                        uploadedBytes: event.uploadedBytes,
+                        status: UploadStatus.InProgress,
+                    });
+                    uiStore.updateItem(uploadId, {
+                        uploadedBytes: event.uploadedBytes,
+                        status: UploadStatus.InProgress,
+                    });
+                }
+                break;
+            case UploadEventType.Error:
+                const currentItem = uploadQueueStore.getQueueItem(uploadId);
+                if (currentItem?.status === UploadStatus.Cancelled) {
+                    break;
+                }
+
+                const err = event.error instanceof Error ? event.error : new Error('Failed');
+                uploadQueueStore.updateUploadItem(uploadId, {
+                    status: UploadStatus.Failed,
+                    error: err,
+                });
+                uiStore.updateItem(uploadId, {
+                    status: UploadStatus.Failed,
+                    error: err,
+                });
+                controllerStore.removeController(uploadId);
+                this.checkAndUnsubscribeIfQueueEmpty();
+                handleSdkError(event.error);
+                break;
+            case UploadEventType.Complete:
+                await actionEventManager.emit({
+                    type: ActionEventName.CREATED_NODES,
+                    items: [{ uid: event.nodeUid, parentUid }],
+                });
+                uploadQueueStore.updateUploadItem(uploadId, {
+                    status: UploadStatus.Finished,
+                });
+                uiStore.updateItem(uploadId, {
+                    status: UploadStatus.Finished,
+                });
+                controllerStore.removeController(uploadId);
+                this.checkAndUnsubscribeIfQueueEmpty();
+                break;
+        }
+    }
+
+    // TOOD: Add scheduler logic
     async uploadFiles(files: File[], parentUid: string): Promise<void> {
         const uploadQueueStore = useUploadQueueStore.getState();
-        const controllerStore = useUploadControllerStore.getState();
         const uiStore = useUploadUIStore.getState();
-        const actionEventManager = getActionEventManager();
 
         if (!this.sdkEventsDisposer && uploadQueueStore.queue.size === 0) {
             this.subscribeToSDKEvents();
@@ -25,68 +117,55 @@ class UploadManager {
         for (const file of files) {
             const uploadId = uploadQueueStore.addUploadItem({
                 name: file.name,
-                progress: 0,
+                uploadedBytes: 0, // TODO: Probably we can prevent having to pass the 0 at the beggining
+                clearTextExpectedSize: file.size,
                 status: UploadStatus.Pending,
             });
 
             uiStore.addItem({
                 uploadId,
+                uploadedBytes: 0,
+                clearTextExpectedSize: file.size,
                 name: file.name,
-                progress: 0,
                 status: UploadStatus.Pending,
             });
 
-            // TOOD: Add scheduler logic
-            void startUpload(file, parentUid, async (event) => {
-                switch (event.type) {
-                    case UploadEventType.ControllerReady:
-                        controllerStore.setController(uploadId, {
-                            uploadController: event.controller,
-                            abortController: event.abortController,
-                        });
-                        break;
-                    case UploadEventType.Progress:
-                        if (!this.isAutomaticallyPaused) {
-                            uploadQueueStore.updateUploadItem(uploadId, {
-                                progress: event.progress,
-                                status: UploadStatus.InProgress,
-                            });
-                            uiStore.updateItem(uploadId, {
-                                progress: event.progress,
-                                status: UploadStatus.InProgress,
-                            });
-                        }
-                        break;
-                    case UploadEventType.Error:
-                        const err = event.error instanceof Error ? event.error : new Error('Failed');
-                        uploadQueueStore.updateUploadItem(uploadId, {
-                            status: UploadStatus.Failed,
-                            error: err,
-                        });
-                        uiStore.updateItem(uploadId, {
-                            status: UploadStatus.Failed,
-                            error: err,
-                        });
-                        controllerStore.removeController(uploadId);
-                        this.checkAndUnsubscribeIfQueueEmpty();
-                        handleSdkError(event.error);
-                        break;
-                    case UploadEventType.Complete:
-                        await actionEventManager.emit({
-                            type: ActionEventName.CREATED_NODES,
-                            items: [{ uid: event.nodeUid, parentUid }],
-                        });
-                        uploadQueueStore.updateUploadItem(uploadId, {
-                            status: UploadStatus.Finished,
-                        });
-                        uiStore.updateItem(uploadId, {
-                            status: UploadStatus.Finished,
-                        });
-                        controllerStore.removeController(uploadId);
-                        this.checkAndUnsubscribeIfQueueEmpty();
-                        break;
-                }
-            });
+            void startUpload(file, parentUid, (event) => this.onChangeCallback(uploadId, parentUid, event));
+        }
+    }
+
+    async uploadFolder(files: File[] | FileList, parentUid: string): Promise<void> {
+        const uploadQueueStore = useUploadQueueStore.getState();
+
+        if (!this.sdkEventsDisposer && uploadQueueStore.queue.size === 0) {
+            this.subscribeToSDKEvents();
+        }
+
+        const structure = buildFolderStructure(files);
+
+        const folderStructureWithUids = await this.createFolderStructure(structure, parentUid);
+
+        this.uploadFilesFromFolderStructure(folderStructureWithUids, parentUid);
+    }
+
+    async uploadFileDrop(items: DataTransferItemList, parentUid: string) {
+        const files = await processDroppedItems(items);
+
+        if (hasFolderStructure(files)) {
+            await this.uploadFolder(files, parentUid);
+        } else {
+            await this.uploadFiles(files, parentUid);
+        }
+    }
+
+    private uploadFilesFromFolderStructure(
+        folderStructure: { nodeUid: string; files: File[]; subfolders: Map<string, any> },
+        rootParentUid: string
+    ): void {
+        void this.uploadFiles(folderStructure.files, folderStructure.nodeUid);
+
+        for (const [, subfolder] of folderStructure.subfolders) {
+            void this.uploadFilesFromFolderStructure(subfolder, rootParentUid);
         }
     }
 
@@ -130,7 +209,10 @@ class UploadManager {
         }
     }
 
-    getCapacity() {
+    getCapacity(): {
+        activeUploads: number;
+        isAutomaticallyPaused: boolean;
+    } {
         const uiStore = useUploadUIStore.getState();
         return {
             activeUploads: uiStore.getAll().length,
