@@ -164,6 +164,7 @@ import { getCurrentPartstat } from '../../store/events/eventsCache';
 import { pendingUniqueIdsSelector, selectIsTmpEventSaving } from '../../store/events/eventsSelectors';
 import { type CalendarViewEventStore, eventsActions } from '../../store/events/eventsSlice';
 import { useCalendarDispatch, useCalendarSelector } from '../../store/hooks';
+import { useBookings } from '../bookings/bookingsProvider/BookingsProvider';
 import CalendarView from './CalendarView';
 import { EscapeTryBlockError } from './EscapeTryBlockError';
 import CloseConfirmationModal from './confirmationModals/CloseConfirmation';
@@ -448,6 +449,9 @@ const InteractiveCalendarView = ({
         tzid,
         setEventTargetAction,
     });
+
+    const { isBookingActive, addBookingSlot, removeBookingSlot, convertSlotToCalendarViewEvents } = useBookings();
+
     // Handle events coming from outside if calendar app is open in the drawer
     useOpenEventsFromMail({
         calendars,
@@ -492,8 +496,13 @@ const InteractiveCalendarView = ({
     useBeforeUnload(isInTemporaryBlocking ? c('Alert').t`By leaving now, you will lose your event.` : '');
 
     const sortedEvents = useMemo(() => {
+        if (isBookingActive) {
+            const booklyCalendarEvents = convertSlotToCalendarViewEvents(createEventCalendar);
+            return sortEvents(booklyCalendarEvents);
+        }
+
         return sortEvents(events.concat());
-    }, [events]);
+    }, [events, isBookingActive, convertSlotToCalendarViewEvents, createEventCalendar]);
 
     const isProcessing = useCallback(
         (uniqueId: string) => {
@@ -768,6 +777,11 @@ const InteractiveCalendarView = ({
             let initialModel = newTemporaryModel;
 
             return (mouseUpAction: MouseUpAction) => {
+                if (isBookingActive) {
+                    removeBookingSlot(event.uniqueId);
+                    return;
+                }
+
                 if (mouseUpAction.action === ACTIONS.EVENT_UP) {
                     const { idx } = mouseUpAction.payload;
 
@@ -899,6 +913,12 @@ const InteractiveCalendarView = ({
                     result: { start, end },
                     idx,
                 } = payload;
+
+                // We want to create a booking slot unless it's a all day event
+                if (isBookingActive && !isFromAllDay && ACTIONS.CREATE_MOVE_UP) {
+                    addBookingSlot(start, eventDuration);
+                    return;
+                }
 
                 const isBeforeMinBoundary = start < MINIMUM_DATE_UTC;
                 const isAfterMaxBoundary = end > MAXIMUM_DATE_UTC;

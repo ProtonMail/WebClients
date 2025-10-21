@@ -59,6 +59,7 @@ import CalendarQuickSettings from '../../components/drawer/CalendarQuickSettings
 import getDateRangeText from '../../components/getDateRangeText';
 import { getNoonDateForTimeZoneOffset } from '../../helpers/date';
 import { getIsCalendarAppInDrawer } from '../../helpers/views';
+import { useBookings } from '../bookings/bookingsProvider/BookingsProvider';
 import CalendarSidebar from './CalendarSidebar';
 import CalendarToolbar from './CalendarToolbar';
 import { getMonthDateRange } from './eventStore/prefetching/getMonthDateRange';
@@ -160,6 +161,8 @@ const CalendarContainerView = ({
     const defaultView = getDefaultView(calendarUserSettings);
 
     const { isSearching, setIsSearching } = useCalendarSearch();
+
+    const { isBookingActive } = useBookings();
 
     const handleBackFromSearch = () => {
         setIsSearching(false);
@@ -452,9 +455,9 @@ const CalendarContainerView = ({
             date={noonDate}
             timezone={tzid}
             setTzid={setTzid}
-            hideTimeZoneSelector={isSearching}
+            hideTimeZoneSelector={isSearching || isBookingActive}
             dateCursorButtons={
-                !isSearching && (
+                isSearching ? null : (
                     <DateCursorButtons
                         view={view}
                         currentRange={currentRange}
@@ -466,7 +469,7 @@ const CalendarContainerView = ({
                 )
             }
             viewSelector={
-                !isSearching && (
+                isSearching || isBookingActive ? null : (
                     <ViewSelector
                         data-testid="calendar-view:view-options-dropdown"
                         view={view}
@@ -478,8 +481,7 @@ const CalendarContainerView = ({
                 )
             }
             searchButton={
-                isCalendarEncryptedSearchEnabled &&
-                !isSearching && (
+                (isCalendarEncryptedSearchEnabled && isSearching) || isBookingActive ? null : (
                     <ToolbarButton
                         ref={searchSpotlightAnchorRef}
                         icon={<Icon name="magnifier" alt={c('Action').t`Search`} />}
@@ -498,10 +500,6 @@ const CalendarContainerView = ({
                 )
             }
         />
-    );
-
-    const drawerSettingsButton = (
-        <QuickSettingsAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.QUICK_SETTINGS, appInView)} />
     );
 
     const header = isDrawerApp ? (
@@ -544,8 +542,12 @@ const CalendarContainerView = ({
                 expanded={expanded}
                 onToggleExpand={onToggleExpand}
                 isSmallViewport={viewportWidth['<=small']}
-                actionArea={!isDrawerApp ? toolbar : null}
-                settingsButton={drawerSettingsButton}
+                actionArea={isDrawerApp ? null : toolbar}
+                hideUpsellButton={isBookingActive}
+                hideSettingsButton={isBookingActive}
+                settingsButton={
+                    <QuickSettingsAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.QUICK_SETTINGS, appInView)} />
+                }
             />
         </>
     );
