@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import Price from '@proton/components/components/price/Price';
 
+import { FeatureList } from '../../common/components/FeatureList';
 import type { UnlimitedOfferConfig } from '../helpers/interface';
-import { FeatureList } from './FeatureList';
 import { GoUnlimitedOfferHeader } from './GoUnlimitedOfferHeader';
 import { GoUnlimitedOfferFooter } from './GoUnlimiterOfferFooter';
 
