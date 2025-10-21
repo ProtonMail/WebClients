@@ -56,6 +56,9 @@
       "Advanced options": [
         "고급 옵션"
       ],
+      "Allow access": [
+        "접근 허용"
+      ],
       "and": [
         "및"
       ],
@@ -723,9 +726,14 @@
         "펼치기"
       ]
     },
+    "Confirm": {
+      "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
+        "클립보드를 ${ timeoutDurationHumanReadable } 후에 자동으로 비우시겠어요?"
+      ]
+    },
     "Description": {
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
-        "${ DARK_WEB_MONITORING_NAME }은 유료 요금제에서 이용할 수 있습니다. 업그레이드하는 즉시 접근할 수 있습니다."
+        "${ DARK_WEB_MONITORING_NAME }은 유료 플랜으로 이용할 수 있습니다. 업그레이드하는 즉시 접근할 수 있습니다."
       ],
       "${ total } other login uses the same password": [
         "${ total }개의 다른 로그인이 같은 비밀번호를 사용하고 있습니다"
@@ -1040,6 +1048,9 @@
       "Importing items failed": [
         "항목 불러오기 실패"
       ],
+      "In order to continue, ${ PASS_APP_NAME } requires these extension permissions: ${ permissionsJSX }": [
+        "계속하려면, ${ PASS_APP_NAME }에 다음 확장 권한이 필요합니다: ${ permissionsJSX }"
+      ],
       "Inactive secure links could not be removed.": [
         "비활성된 안전한 링크를 삭제할 수 없습니다."
       ],
@@ -1078,6 +1089,12 @@
       ],
       "Passphrase is incorrect": [
         "비밀번호가 올바르지 않습니다."
+      ],
+      "Permission denied for ${ domainsJSX } website access.": [
+        "${ domainsJSX } 웹사이트 접근 권한이 거부되었습니다."
+      ],
+      "Permission denied for website access.": [
+        "웹사이트 접근 권한이 거부되었습니다."
       ],
       "PIN codes do not match": [
         "PIN 코드가 일치하지 않습니다."
@@ -1504,6 +1521,9 @@
       "Copied to clipboard": [
         "클립보드로 복사함"
       ],
+      "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
+        "클립보드에 복사됨 (${ timeoutDurationHumanReadable } 후 만료)"
+      ],
       "Coupon successfully applied!": [
         "쿠폰을 성공적으로 적용했습니다!"
       ],
@@ -1807,6 +1827,9 @@
       "Moving items to trash": [
         "항목을 휴지통으로 이동 중"
       ],
+      "Navigate to your browser's extension settings and enable site permissions for ${ PASS_SHORT_APP_NAME }.": [
+        "브라우저 확장 설정으로 이동하여 ${ PASS_SHORT_APP_NAME }에 대한 사이트 권한을 활성화하십시오."
+      ],
       "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
         "누군가에게 이메일을 보내야 하지만 내 실제 이메일 주소가 보이는 것을 원치 않으신다면? 연락처 별칭을 설정해 보세요."
       ],
@@ -1839,6 +1862,9 @@
       ],
       "Open the Extensions menu": [
         "확장 메뉴 열기"
+      ],
+      "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
+        "Safari 설정을 열고, ${ PASS_APP_NAME }를 찾아서, \"권한\"으로 이동한 다음, 사이트 권한을 활성화하세요."
       ],
       "Owner": [
         "소유자"
@@ -1975,8 +2001,14 @@
       "Please follow the steps below to set up your domain.": [
         "도메인 설정을 위해 아래 단계를 따라주세요."
       ],
+      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
+        "클립보드가 자동으로 비워질 수 있도록 ${ PASS_APP_NAME }를 실행한 상태로 유지해 주세요."
+      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "데이터를 불러오는 동안 이 창을 계속 유지하세요. 이 작업은 몇 분 정도 소요됩니다."
+      ],
+      "Please keep your browser open so the clipboard can be automatically cleared.": [
+        "클립보드가 자동으로 비워질 수 있도록 브라우저를 실행한 상태로 유지해 주세요."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "이전에 활성화된 창이 자동 입력할 위치이며 커서가 로그인 필드에 집중되어 있는지 확인하십시오."
@@ -2037,6 +2069,12 @@
       ],
       "Restoring trashed items...": [
         "휴지통 내 항목 복구 중..."
+      ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Permissions & data\" and enable site permissions.": [
+        "확장 아이콘을 오른쪽 클릭하여 \"확장 관리\"를 선택하십시오. \"권한 및 데이터\"로 이동하여 사이트 권한을 활성화하십시오."
+      ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Site access\" and enable site permissions.": [
+        "확장 아이콘을 마우스 오른쪽 버튼으로 클릭하고 \"확장 관리\"를 선택합니다. \"사이트 접근\"으로 이동하여 사이트 권한을 활성화합니다."
       ],
       "Save login": [
         "로그인 저장"
@@ -3643,6 +3681,11 @@
         "파일 저장 후 이 창을 닫아도 무관합니다."
       ]
     },
+    "Permission": {
+      "Will require a permission from your browser": [
+        "브라우저에서 권한이 필요합니다."
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "2단계 인증 비밀 키 추가"
@@ -3941,6 +3984,9 @@
       ],
       "Change your lock method": [
         "잠금 방식을 변경하세요"
+      ],
+      "Clear clipboard": [
+        "클립보드 비우기"
       ],
       "Confirm extra password": [
         "추가 비밀번호 확인"
@@ -4426,6 +4472,9 @@
       "Extra password should have at least 8 characters": [
         "추가 비밀번호는 최소 8글자여야합니다."
       ],
+      "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
+        "복사된 비밀번호 및 데이터의 자동 삭제를 활성화하기 위해 클립보드 접근 권한을 부여하십시오."
+      ],
       "Invalid alias prefix": [
         "유효하지 않은 별칭 접두사"
       ],
@@ -4583,7 +4632,7 @@
         "사용자의 조직이 개인 항목의 공유를 허용하지 않습니다."
       ],
       "Your plan does not allow you to create more aliases": [
-        "이 요금제에서는 더 많은 별칭을 생성할 수 없습니다"
+        "이 플랜에서 더 많은 별칭을 생성할 수 없습니다"
       ],
       "Your plan only allows you to autofill from your first two vaults": [
         "사용자의 플랜에서 처음 두개 금고에서만 자동 완성을 지원합니다."
