@@ -59,6 +59,7 @@ import CalendarQuickSettings from '../../components/drawer/CalendarQuickSettings
 import getDateRangeText from '../../components/getDateRangeText';
 import { getNoonDateForTimeZoneOffset } from '../../helpers/date';
 import { getIsCalendarAppInDrawer } from '../../helpers/views';
+import { BookingSidebar } from '../bookings/BookingSidebar';
 import { useBookings } from '../bookings/bookingsProvider/BookingsProvider';
 import CalendarSidebar from './CalendarSidebar';
 import CalendarToolbar from './CalendarToolbar';
@@ -575,29 +576,6 @@ const CalendarContainerView = ({
 
     const bottom = isDrawerApp ? <DrawerAppFooter offsetNotifications buttons={footerButtons} /> : undefined;
 
-    const sidebar = (
-        <CalendarSidebar
-            calendars={calendars}
-            expanded={expanded}
-            onToggleExpand={onToggleExpand}
-            onCreateEvent={onCreateEvent ? () => onCreateEvent?.() : undefined}
-            onCreateCalendar={onCreateCalendarFromSidebar}
-            miniCalendar={
-                <LocalizedMiniCalendar
-                    min={MINIMUM_DATE}
-                    max={MAXIMUM_DATE}
-                    onSelectDateRange={handleSelectDateRange}
-                    onSelectDate={handleClickLocalDate}
-                    date={localDate}
-                    now={localNowDate}
-                    displayWeekNumbers={displayWeekNumbers}
-                    dateRange={view === VIEWS.WEEK || range > 0 ? localDateRange : undefined}
-                    weekStartsOn={weekStartsOn}
-                />
-            }
-        />
-    );
-
     const loader =
         isLoading && !isSearchView ? (
             <div className="calendar-loader-container">
@@ -620,7 +598,32 @@ const CalendarContainerView = ({
         <PrivateAppContainer
             top={top}
             bottom={bottom}
-            sidebar={sidebar}
+            sidebar={
+                isBookingActive ? (
+                    <BookingSidebar />
+                ) : (
+                    <CalendarSidebar
+                        calendars={calendars}
+                        expanded={expanded}
+                        onToggleExpand={onToggleExpand}
+                        onCreateEvent={onCreateEvent ? () => onCreateEvent?.() : undefined}
+                        onCreateCalendar={onCreateCalendarFromSidebar}
+                        miniCalendar={
+                            <LocalizedMiniCalendar
+                                min={MINIMUM_DATE}
+                                max={MAXIMUM_DATE}
+                                onSelectDateRange={handleSelectDateRange}
+                                onSelectDate={handleClickLocalDate}
+                                date={localDate}
+                                now={localNowDate}
+                                displayWeekNumbers={displayWeekNumbers}
+                                dateRange={view === VIEWS.WEEK || range > 0 ? localDateRange : undefined}
+                                weekStartsOn={weekStartsOn}
+                            />
+                        }
+                    />
+                )
+            }
             header={header}
             containerRef={containerRef}
             drawerApp={
