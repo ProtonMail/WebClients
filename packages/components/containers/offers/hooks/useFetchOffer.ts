@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react';
 
 import { usePlans } from '@proton/account/plans/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
+import useConfig from '@proton/components/hooks/useConfig';
 import { usePaymentsApiWithCheckFallback } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
-import type { Currency } from '@proton/payments';
+import { type Currency, getPlansMap } from '@proton/payments';
 
+import { getCheckoutRenewNoticeTextFromCheckResult } from '../../payments/RenewalNotice';
 import { fetchDealPrices } from '../helpers/dealPrices';
 import type { Offer, OfferConfig } from '../interface';
 
@@ -21,6 +24,9 @@ function useFetchOffer({ offerConfig, currency, onSuccess, onError }: Props): [O
     const [state, setState] = useState<Partial<{ offer: Offer; offerConfig: OfferConfig }>>();
     const [plansResult, plansLoading] = usePlans();
     const plans = plansResult?.plans;
+    const [subscription] = useSubscription();
+    const { APP_NAME } = useConfig();
+    const plansMap = plans ? getPlansMap(plans, currency, false) : {};
 
     useEffect(() => {
         if (!offerConfig || !plans) {
@@ -41,9 +47,17 @@ function useFetchOffer({ offerConfig, currency, onSuccess, onError }: Props): [O
                     ...offerConfig,
                     deals: offerConfig.deals.map((deal, index) => {
                         const [withCoupon, withoutCoupon, withoutCouponMonthly] = result[index];
+                        const renew = getCheckoutRenewNoticeTextFromCheckResult({
+                            checkResult: withCoupon,
+                            planIDs: deal.planIDs,
+                            subscription,
+                            plansMap,
+                            app: APP_NAME,
+                        }) as string;
 
                         return {
                             ...deal,
+                            renew,
                             prices: {
                                 withCoupon: withCoupon.Amount + (withCoupon.CouponDiscount || 0),
                                 withoutCoupon: withoutCoupon.Amount + (withoutCoupon.CouponDiscount || 0), // BUNDLE discount can be applied

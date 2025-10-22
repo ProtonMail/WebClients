@@ -1,13 +1,40 @@
 import type { JSXElementConstructor, ReactNode } from 'react';
 
-import type { ButtonLikeShape } from '@proton/atoms/Button/ButtonLike';
-import type { ButtonLikeSize } from '@proton/atoms/Button/ButtonLike';
+import type { ButtonLikeShape, ButtonLikeSize } from '@proton/atoms/Button/ButtonLike';
 import type { FeatureCode } from '@proton/features';
 import type { IconName, IconSize } from '@proton/icons/types';
 import type { COUPON_CODES, CYCLE, Currency, PlanIDs } from '@proton/payments';
 import type { Optional } from '@proton/shared/lib/interfaces';
 
 export type OfferId =
+    | 'black-friday-2025-inbox-free-yearly'
+    | 'black-friday-2025-inbox-free-monthly'
+    | 'black-friday-2025-inbox-plus-monthly'
+    | 'black-friday-2025-inbox-plus-monthly2'
+    | 'black-friday-2025-inbox-plus-yearly'
+    | 'black-friday-2025-inbox-plus-yearly2'
+    | 'black-friday-2025-unlimited'
+    | 'black-friday-2025-duo'
+    | 'black-friday-2025-family-monthly'
+    | 'black-friday-2025-vpn-free-yearly'
+    | 'black-friday-2025-vpn-free-monthly'
+    | 'black-friday-2025-vpn-plus-monthly'
+    | 'black-friday-2025-vpn-plus-monthly2'
+    | 'black-friday-2025-vpn-plus-yearly'
+    | 'black-friday-2025-vpn-plus-yearly2'
+    | 'black-friday-2025-vpn-plus-two-year'
+    | 'black-friday-2025-drive-free-yearly'
+    | 'black-friday-2025-drive-free-monthly'
+    | 'black-friday-2025-drive-plus-monthly'
+    | 'black-friday-2025-drive-plus-monthly2'
+    | 'black-friday-2025-drive-plus-yearly'
+    | 'black-friday-2025-pass-free-yearly'
+    | 'black-friday-2025-pass-free-monthly'
+    | 'black-friday-2025-pass-plus-monthly'
+    | 'black-friday-2025-pass-plus-monthly2'
+    | 'black-friday-2025-pass-plus-yearly'
+    | 'black-friday-2025-lumo-free-yearly'
+    | 'black-friday-2025-lumo-plus-monthly'
     | 'go-unlimited-2022'
     | 'mail-trial-2023'
     | 'pass-family-plan-2024-yearly'
@@ -52,11 +79,16 @@ export interface OfferImages {
     bannerImage2x?: string;
 }
 
+export interface OfferDealSaveSentenceType {
+    sentenceSaveType?: 'switch-yearly' | 'limited-time-deal';
+}
+
 export interface OfferConfig {
     ID: OfferId;
     featureCode: FeatureCode;
     autoPopUp?: 'each-time' | 'one-time';
     title?: () => string;
+    subTitle?: () => string;
     canBeDisabled?: boolean;
     deals: Deal[];
     layout: JSXElementConstructor<OfferLayoutProps>;
@@ -99,6 +131,7 @@ export interface Deal {
     buttonSize?: ButtonLikeSize;
     planIDs: PlanIDs; // planIDs used to subscribe
     dealName: string; // most of the time we show the plan name of the deal
+    renew?: string; // Renew description to display in the footer
     popular?: number; // 1 = most popular, 2 = second most popular, etc.
     mobileOrder?: number; // 1 = most popular, 2 = second most popular, etc. if using this, please specify it for all plans to avoid issues
     header?: () => string | ReactNode;
@@ -108,6 +141,8 @@ export interface Deal {
     suffixOnNewLine?: boolean;
     /** to replace "Save xxx%", better use a short text */
     bubbleText?: string;
+    sentence?: string;
+    sentenceSaveType?: 'switch-yearly' | 'switch-two-year' | 'limited-time-deal';
 }
 
 export interface Prices {
