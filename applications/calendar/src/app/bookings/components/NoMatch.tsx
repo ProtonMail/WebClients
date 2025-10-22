@@ -1,9 +1,8 @@
 import { c } from 'ttag';
 
-import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import linkExpiredImage from '@proton/styles/assets/img/calendar-booking/booking-expired.svg';
 
-import { RedirectToCalendar } from './RedirectToCalendar';
+import { RedirectToCalendarButton } from './RedirectToCalendar';
 
 export enum Reason {
     notFound = 'not-found',
@@ -32,8 +31,7 @@ export const NoMatch = ({ reason }: Props) => {
             <h1 className="text-2xl text-bold">{title[reason]}</h1>
             <div className="mt-6 text-center">
                 <p className="color-weak m-0">{c('Info').t`Want to create your own booking page?`}</p>
-                <RedirectToCalendar shape="underline" color="norm" className="p-0">{c('Action')
-                    .t`Get ${CALENDAR_APP_NAME}`}</RedirectToCalendar>
+                <RedirectToCalendarButton shape="underline" color="norm" className="p-0" />
             </div>
         </div>
     );
