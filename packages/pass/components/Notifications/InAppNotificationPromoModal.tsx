@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import { type FC, useState } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
@@ -15,6 +15,10 @@ type Props = {
     onDismiss: () => void;
 };
 
+const InAppNotificationResource: FC<{ url: string; onEvent: () => void }> = ({ url, onEvent }) => (
+    <img className="hidden" alt="" src={url} onLoad={onEvent} />
+);
+
 export const InAppNotificationPromoModal: FC<Props> = ({
     disabled,
     notification,
@@ -23,6 +27,10 @@ export const InAppNotificationPromoModal: FC<Props> = ({
     onClose,
     onDismiss,
 }) => {
+    const [resourcesLoaded, setResourcesLoaded] = useState(0);
+    const onResourceEvent = () => setResourcesLoaded((prev) => prev + 1);
+    const loaded = resourcesLoaded == 2;
+
     const { promoContents } = notification;
     if (!promoContents) return null;
 
@@ -30,41 +38,54 @@ export const InAppNotificationPromoModal: FC<Props> = ({
     const closePromoTextColor = intoColorHex(themeValues.closePromoTextColor);
 
     return (
-        <PassModal className="overflow-auto relative" size="small" open onClose={onClose}>
-            <div
-                className="pt-4 rounded-none"
-                style={{
-                    backgroundSize: 'cover',
-                    backgroundImage: `url(${themeValues.backgroundImageUrl})`,
-                }}
+        <>
+            <InAppNotificationResource key="bg" url={themeValues.backgroundImageUrl} onEvent={onResourceEvent} />
+            <InAppNotificationResource key="content" url={themeValues.contentImageUrl} onEvent={onResourceEvent} />
+
+            <PassModal
+                className="overflow-auto relative"
+                size="small"
+                open={loaded}
+                onClose={onClose}
+                enableCloseWhenClickOutside
             >
-                <div className="absolute top-0 right-0 p-2">
-                    <ModalHeaderCloseButton buttonProps={{ shape: 'solid', className: 'rounded-full opacity-70' }} />
+                <div
+                    className="pt-4 rounded-none"
+                    style={{
+                        backgroundSize: 'cover',
+                        backgroundImage: `url(${themeValues.backgroundImageUrl})`,
+                    }}
+                >
+                    <div className="absolute top-0 right-0 p-2">
+                        <ModalHeaderCloseButton
+                            buttonProps={{ shape: 'solid', className: 'rounded-full opacity-70' }}
+                        />
+                    </div>
+
+                    <button className="block" onClick={onAction}>
+                        <img
+                            className="rounded-lg pointer-events-none user-select-none w-full max-w-full"
+                            src={themeValues.contentImageUrl}
+                            alt={notification.content.cta?.text}
+                        />
+                    </button>
+
+                    {promoContents?.closePromoText && (
+                        <Button
+                            shape="ghost"
+                            fullWidth
+                            onClick={onDismiss}
+                            style={{
+                                '--button-default-text-color': closePromoTextColor,
+                                '--button-hover-text-color': closePromoTextColor,
+                            }}
+                            disabled={disabled}
+                        >
+                            {promoContents.closePromoText}
+                        </Button>
+                    )}
                 </div>
-
-                <button className="block" onClick={onAction}>
-                    <img
-                        className="rounded-lg pointer-events-none user-select-none w-full max-w-full"
-                        src={themeValues.contentImageUrl}
-                        alt={notification.content.cta?.text}
-                    />
-                </button>
-
-                {promoContents?.closePromoText && (
-                    <Button
-                        shape="ghost"
-                        fullWidth
-                        onClick={onDismiss}
-                        style={{
-                            '--button-default-text-color': closePromoTextColor,
-                            '--button-hover-text-color': closePromoTextColor,
-                        }}
-                        disabled={disabled}
-                    >
-                        {promoContents.closePromoText}
-                    </Button>
-                )}
-            </div>
-        </PassModal>
+            </PassModal>
+        </>
     );
 };
