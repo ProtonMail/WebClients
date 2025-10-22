@@ -5,6 +5,7 @@ export declare class Autotype {
     text(text: string): void;
     tab(): void;
     enter(): void;
+    paste(): void;
 }
 export declare namespace biometric {
     export function canCheckPresence(): Promise<boolean>;

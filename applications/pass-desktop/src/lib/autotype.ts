@@ -3,7 +3,7 @@ import type { BrowserWindow } from 'electron';
 import type { AutotypeProperties, MaybeNull } from '@proton/pass/types';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-import { Autotype } from '../../native';
+import { Autotype, clipboard } from '../../native';
 import logger from '../utils/logger';
 import { setupIpcHandler } from './ipc';
 import { hideWindow } from './window-management';
@@ -35,14 +35,46 @@ export const setupIpcHandlers = (getWindow: () => MaybeNull<BrowserWindow>) => {
         hideWindow(mainWindow);
         await wait(1000);
 
-        fields.forEach((field, i) => {
-            autotype.text(field);
-
-            if (i < fields.length - 1) {
+        const performAutotypeSeparator = ({
+            i,
+            length,
+            enterAtTheEnd,
+        }: {
+            i: number;
+            length: number;
+            enterAtTheEnd?: boolean;
+        }) => {
+            if (i < length - 1) {
                 autotype.tab();
             } else if (enterAtTheEnd) {
                 autotype.enter();
             }
-        });
+        };
+
+        /* On Linux, the autotype library (enigo with libei feature)
+         * cannot type special characters with autotype.text(),
+         * so we copy the field value in clipboard and paste it instead.
+         * Related issue: https://github.com/enigo-rs/enigo/issues/404. */
+        if (BUILD_TARGET === 'linux') {
+            // Save current clipboard value to restore it after autotype is done
+            const initialClipboardValue = await clipboard.read().catch(() => '');
+
+            for (let i = 0; i < fields.length; i++) {
+                const field = fields[i];
+                await clipboard.writeText(field, true);
+                // Waiting to avoid race conditions between clipboard and pasting
+                await wait(300);
+                autotype.paste();
+                await wait(300);
+                performAutotypeSeparator({ i, length: fields.length, enterAtTheEnd });
+            }
+
+            await clipboard.writeText(initialClipboardValue, true);
+        } else {
+            fields.forEach((field, i) => {
+                autotype.text(field);
+                performAutotypeSeparator({ i, length: fields.length, enterAtTheEnd });
+            });
+        }
     });
 };

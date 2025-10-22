@@ -1,5 +1,8 @@
 use anyhow::{Error, Result};
-use enigo::{Direction::Click, Enigo, Key, Keyboard, Settings};
+use enigo::{
+    Direction::{Click, Press, Release},
+    Enigo, Key, Keyboard, Settings,
+};
 
 pub struct Autotype {
     enigo: Enigo,
@@ -24,6 +27,18 @@ impl Autotype {
 
     pub fn enter(&mut self) -> Result<(), Error> {
         self.enigo.key(Key::Return, Click)?;
+        Ok(())
+    }
+
+    pub fn paste(&mut self) -> Result<(), Error> {
+        #[cfg(target_os = "macos")]
+        let modifier = Key::Meta;
+        #[cfg(not(target_os = "macos"))]
+        let modifier = Key::Control;
+
+        self.enigo.key(modifier, Press)?;
+        self.enigo.key(Key::Unicode('v'), Click)?;
+        self.enigo.key(modifier, Release)?;
         Ok(())
     }
 }
