@@ -7,6 +7,7 @@ import loudRejection from 'loud-rejection';
 import { serverEvent } from '@proton/account';
 import { getModelState } from '@proton/account/test';
 import { getHumanLabelID } from '@proton/mail/helpers/location';
+import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';
@@ -215,6 +216,16 @@ export const setup = async ({
                 retry: { payload: null, count: 0, error: undefined },
                 taskRunning: { labelIDs: [], timeoutID: undefined },
             },
+            paymentStatus: getModelState({
+                VendorStates: {
+                    Card: true,
+                    Paypal: true,
+                    Apple: true,
+                    Cash: true,
+                    Bitcoin: true,
+                },
+                ...DEFAULT_TAX_BILLING_ADDRESS,
+            }),
             ...preloadedState, // TODO merge object instead of overwriting, if needed for new test-cases
         },
         initialPath,

@@ -1,5 +1,13 @@
-import { CYCLE, type PaymentsApi, type Plan, getPlanByName, hasCycle } from '@proton/payments';
 import type { Currency } from '@proton/payments';
+import {
+    CYCLE,
+    type PaymentsApi,
+    type Plan,
+    getOptimisticCheckResult,
+    getPlanByName,
+    getPlansMap,
+    hasCycle,
+} from '@proton/payments';
 
 import type { DealWithPrices, OfferConfig } from '../interface';
 
@@ -9,17 +17,20 @@ export const fetchDealPrices = async (
     currency: Currency,
     plans: Plan[]
 ) => {
+    const plansMap = getPlansMap(plans, currency, false);
     return Promise.all(
         offerConfig.deals.map(({ planIDs, cycle, couponCode }) => {
             const plan = getPlanByName(plans, planIDs, currency, undefined, false);
+
             if (!plan) {
                 return Promise.resolve([]);
             }
 
-            const withoutCouponPromise = paymentsApi.checkSubscription({
-                Plans: planIDs,
-                Currency: currency,
-                Cycle: cycle,
+            const withoutCouponPromise = getOptimisticCheckResult({
+                cycle,
+                planIDs,
+                plansMap,
+                currency,
             });
 
             const withCouponPromise = couponCode
@@ -34,10 +45,11 @@ export const fetchDealPrices = async (
             // There are plans without montly price. The frontend shouldn't fetch them.
             const hasMonthlyCycle = hasCycle(plan, CYCLE.MONTHLY);
             const monthlyPromise = hasMonthlyCycle
-                ? paymentsApi.checkSubscription({
-                      Plans: planIDs,
-                      Currency: currency,
-                      Cycle: CYCLE.MONTHLY,
+                ? getOptimisticCheckResult({
+                      planIDs,
+                      currency,
+                      cycle: CYCLE.MONTHLY,
+                      plansMap,
                   })
                 : undefined;
 
