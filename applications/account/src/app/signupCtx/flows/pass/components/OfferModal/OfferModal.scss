@@ -1,13 +1,15 @@
+@use 'sass:map';
 @import '~@proton/styles/scss/lib';
 
 .modal-overlay {
-	background: rgba(0, 0, 0, 0.5);
+	background: rgba(0 0 0 / 0.5);
 	backdrop-filter: blur(8px);
+	z-index: map.get($z-indexes, 'modals');
 }
 
 .modal {
 	background: var(--pass-signup-bg);
-	max-width: 390px;
+	max-inline-size: rem(390);
 	border: 3px solid var(--primary);
 
 	&-title-container {
@@ -19,7 +21,7 @@
 	}
 
 	.badge {
-		background-color: rgba(75, 185, 157, 0.15);
+		background-color: rgba(75 185 157 / 0.15);
 		color: var(--signal-success-major-2);
 	}
 }
