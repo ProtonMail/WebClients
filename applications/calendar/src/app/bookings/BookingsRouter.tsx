@@ -31,7 +31,7 @@ export const BookingsRouter = () => {
     return (
         <BookingPageLayout>
             <Switch>
-                <Route path="/:bookingId" exact component={BookingDetails} />
+                <Route path="/:bookingID" exact component={BookingDetails} />
                 <Route component={RedirectToOrigin} />
             </Switch>
         </BookingPageLayout>
