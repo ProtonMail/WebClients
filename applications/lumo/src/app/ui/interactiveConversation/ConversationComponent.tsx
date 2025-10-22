@@ -111,7 +111,7 @@ const FloatingRetryPanel = ({ buttonRef, onRetry, onClose }: FloatingRetryPanelP
     );
 };
 
-interface ConversationComponentProps {
+export interface ConversationComponentProps {
     messageChainRef: React.MutableRefObject<HTMLDivElement | null>;
     handleSendMessage: HandleSendMessage;
     handleRegenerateMessage: HandleRegenerateMessage;
@@ -123,6 +123,7 @@ interface ConversationComponentProps {
     conversation?: Conversation;
     getSiblingInfo: (message: Message) => SiblingInfo;
     handleRetryGeneration: (error: ConversationError) => void;
+    initialQuery?: string;
 }
 
 const ConversationComponent = ({
@@ -137,6 +138,7 @@ const ConversationComponent = ({
     isGenerating,
     isProcessingAttachment,
     handleRetryGeneration,
+    initialQuery,
 }: ConversationComponentProps) => {
     const sourcesContainerRef = useRef<HTMLDivElement>(null);
     const filesContainerRef = useRef<HTMLDivElement>(null);
@@ -285,6 +287,7 @@ const ConversationComponent = ({
                             messageChain={messageChain}
                             handleOpenFiles={handleOpenFiles}
                             onShowDriveBrowser={handleShowDriveBrowser}
+                            initialQuery={initialQuery}
                         />
                     </div>
                     <p className="text-center relative color-weak text-xs my-2 hidden md:block">
