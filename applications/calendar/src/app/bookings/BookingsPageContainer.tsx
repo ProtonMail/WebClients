@@ -3,10 +3,13 @@ import { BrowserRouter } from 'react-router-dom';
 
 import type { ProtonThunkArguments } from 'packages/redux-shared-store-types';
 
-import { ApiProvider, ErrorBoundary, StandardErrorPage, ThemeProvider } from '@proton/components';
+import ApiProvider from '@proton/components/containers/api/ApiProvider';
+import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import LoaderPage from '@proton/components/containers/app/LoaderPage';
 import ProtonApp from '@proton/components/containers/app/ProtonApp';
+import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
+import ThemeProvider from '@proton/components/containers/themes/ThemeProvider';
 import Icons from '@proton/icons/Icons';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import type { UnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
