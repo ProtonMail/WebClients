@@ -8,6 +8,7 @@ import spacesReducer from './core/spaces';
 import ghostChatReducer from './ghostChat';
 import eligibilityStatusReducer from './meta/eligibilityStatus';
 import errorsReducer from './meta/errors';
+import initializationReducer from './meta/initialization';
 import { remainingInvitesReducer } from './meta/remainingInvites';
 import personalizationReducer from './personalization';
 import lumoUserSettingsReducer from './lumoUserSettings';
@@ -25,5 +26,6 @@ export const lumoReducers = {
     ghostChat: ghostChatReducer,
     personalization: personalizationReducer,
     lumoUserSettings: lumoUserSettingsReducer,
+    initialization: initializationReducer,
     ...remainingInvitesReducer,
 };
