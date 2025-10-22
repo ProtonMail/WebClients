@@ -95,17 +95,53 @@
 		}
 	}
 
-	// used for BF, to be used with ghost variant
-	&--bf-2024 {
+	// BF 2025 temporary layouts
+	&--bf-2025-free {
 		&#{&} {
-			--button-default-background-color: var(--optional-bg-promotion-bw-button);
-			--button-hover-background-color: color-mix(in srgb, var(--optional-bg-promotion-bw-button) 90%, transparent);
-			--button-active-background-color: color-mix(in srgb, var(--optional-bg-promotion-bw-button) 80%, transparent);
-			--button-default-text-color: var(--optional-text-promotion-bw-button);
-			--button-hover-text-color: var(--optional-text-promotion-bw-button);
-			--button-active-text-color: var(--optional-text-promotion-bw-button);
+			&,
+			&:hover,
+			&:focus {
+				background: #d8ff00;
+				color: #251b4e;
+				border: 1px solid #251b4e;
+				border-radius: var(--border-radius-md);
+			}
 
-			border: 0;
+			&:hover,
+			&:focus {
+				background: #cff402;
+			}
+		}
+	}
+
+	&--bf-2025-paid {
+		&#{&} {
+			// --button-hover-background-color: --interaction-default-hover;
+			// --button-active-background-color: --interaction-default-hover;
+			--button-default-text-color: var(--primary);
+			--button-hover-text-color: var(--primary);
+			--button-active-text-color: var(--primary);
+
+			border-color: var(--primary);
+		}
+	}
+
+	&--bf-2025-wave2 {
+		&#{&} {
+			&,
+			&:hover,
+			&:focus {
+				background-color: #251b4e;
+				color: #d8ff00;
+				border: 1px solid #d8ff00;
+				border-radius: var(--border-radius-md);
+				background-clip: padding-box; // to avoid issues with radiuses rendering between background and border
+			}
+
+			&:hover,
+			&:focus {
+				background-color: #040209;
+			}
 		}
 	}
 

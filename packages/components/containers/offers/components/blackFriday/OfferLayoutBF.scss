@@ -1,21 +1,85 @@
 @import '~@proton/styles/scss/lib';
 
-.offer-modal[class*='offer-black-friday-2024'] {
-	background: linear-gradient(180deg, #40395f 0%, #08031f 100%);
+@font-face {
+	font-family: 'SFSUPER05-BOLD';
+	src:
+		url(sf-super-05-bold.woff2) format('woff2'),
+		url(sf-super-05-bold.woff) format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.offer-modal[class*='offer-black-friday-2025'] {
+	background:
+		radial-gradient(farthest-corner at 47% 3%, rgb(90 65 189 / 0.74) 0%, #1b134063 50%),
+		linear-gradient(180deg, rgb(90 65 189) 0%, #1a133f 35%, #1b1340 100%);
+
+	// radial-gradient(farthest-corner at 47% 6%, rgb(90 65 189) 0%, #1b1340 50%),
+	//			linear-gradient(180deg, rgb(90 65 189) 0%, #1a133f 35%, #1b1340 100%);
+	background-position: top right;
 
 	// taxonomy override for unique layout
 	--modal-text-color: white;
 	--text-norm: white;
 	--text-weak: rgb(255 255 255 / 0.7);
-	--color-promo: #fad857;
+	--color-promo: #d8ff00;
+
+	.offer-close-button {
+		--top-custom: 0 !important;
+
+		background-color: #fffc;
+		border-radius: 50%;
+		inline-size: rem(36);
+		block-size: rem(36);
+		margin-block-start: rem(24);
+		margin-inline-end: rem(24);
+	}
 
 	.modal-close-icon {
 		inline-size: 1rem;
 		block-size: 1rem;
+		color: #030712;
+	}
+
+	.font-super5 {
+		font-family: 'SFSUPER05-BOLD', var(--setting-font-family, var(--optional-font-family, system-ui, sans-serif));
 	}
 
 	// overrides for 1 plan design
 	&.offer-modal--one-deal {
+		// overrides for Lumo modals
+		&[class*='offer-black-friday-2025-lumo'] {
+			background: radial-gradient(farthest-corner at 96% 5%, #fbfaf9ff 0%, #e1d9fbff 44%);
+			border-radius: var(--border-radius-xl);
+
+			--modal-text-color: #251b4e;
+			--text-norm: #251b4e;
+			--text-weak: #251b4e;
+
+			.offer-features {
+				--background-weak: rgb(37 27 78 / 0.05);
+
+				svg.color-success {
+					color: var(--text-norm);
+				}
+			}
+
+			.offer-percentage--one-plan {
+				--color-promo: #494b7a;
+			}
+
+			.offers-currency-selector .button-group-item.is-selected:not([disabled]) {
+				background-color: rgb(37 27 78 / 0.05);
+				color: var(--text-norm);
+			}
+		}
+
+		background:
+			radial-gradient(farthest-corner at 110% 0%, rgba(90, 65, 189, 1) 0%, rgba(27, 19, 64, 0) 45%),
+			// linear-gradient(to bottom left,rgba(90, 65, 189, 1) 0%, rgba(27, 19, 64, 0) 15%),
+			linear-gradient(180deg, #36247d 0%, #1a133f 75%, #1b1340 100%);
+		background-position: top right;
+
 		&#{&} {
 			--size: #{em(470)};
 
@@ -48,8 +112,17 @@
 			position: static;
 			transform: none;
 			inset-inline-start: 0;
-			margin-block: 0.25em auto;
+			margin-block: 0;
 			max-inline-size: none;
+			background-color: transparent;
+			color: var(--color-promo);
+			font-size: em(54);
+			font-weight: bold;
+			line-height: 1.4;
+			@include media('<=#{em(480, 16)}') {
+				font-size: em(40);
+				margin-block-start: 0.25em;
+			}
 		}
 
 		.offer-cta {
@@ -106,7 +179,7 @@
 		padding: var(--space-6);
 
 		&.is-focused {
-			box-shadow: 0 0 0 3px #b5a3ff;
+			box-shadow: 0 0 0 3px var(--color-promo);
 		}
 	}
 
@@ -116,16 +189,19 @@
 		--text-weak: #494b7a;
 
 		border: 0;
-		font-size: em(16);
-		padding-block: var(--space-2);
-		border-radius: var(--border-radius-full);
 
-		&.bg-primary {
+		// font-size: em(16);
+		// padding-block: var(--space-2);
+		// border-radius: var(--border-radius-full);
+
+		/* &.bg-primary {
 			color: #322080;
-		}
+		} */
 	}
 
 	.offer-plan-container {
+		max-inline-size: 100%;
+
 		@include media('>=medium') {
 			max-inline-size: rem(384);
 		}
@@ -137,23 +213,35 @@
 
 	.offer-monthly-price-container {
 		text-align: start;
+		margin-block-start: 0;
 
 		.offer-monthly-price {
+			.suffix {
+				color: var(--text-norm);
+			}
+
 			.currency,
 			.amount--large {
 				font-size: em(48); // will probably remove it because of 3 plans
+				@include media('<=#{em(480, 16)}') {
+					font-size: em(40);
+				}
 			}
+		}
+
+		.offer-regular-price {
+			color: var(--text-norm);
 		}
 	}
 
 	.offer-cta {
 		&.button-solid-norm {
-			--button-default-background-color: white;
-			--button-hover-background-color: white;
-			--button-active-background-color: rgb(255 255 255 / 0.8);
-			--button-default-text-color: #6d4aff;
-			--button-hover-text-color: #6d4aff;
-			--button-active-text-color: #6d4aff;
+			--button-default-background-color: var(--color-promo);
+			--button-hover-background-color: var(--color-promo);
+			--button-active-background-color: var(--color-promo);
+			--button-default-text-color: #291c5d;
+			--button-hover-text-color: #291c5d;
+			--button-active-text-color: #291c5d;
 
 			// box-shadow: 0 0 24px 0 rgb(250 216 87 / 0.5);
 
@@ -167,20 +255,20 @@
 		}
 
 		&.button-outline-norm {
-			--button-default-background-color: transparent;
-			--button-hover-background-color: rgb(255 255 255 / 0.05);
-			--button-active-background-color: rgb(255 255 255 / 0.1);
+			--button-default-background-color: rgb(255 255 255 / 0.2);
+			--button-hover-background-color: rgb(255 255 255 / 0.25);
+			--button-active-background-color: rgb(255 255 255 / 0.3);
 			--button-default-text-color: white;
 			--button-hover-text-color: white;
 			--button-active-text-color: white;
-			--button-default-border-color: white;
-			--button-hover-border-color: white;
-			--button-active-border-color: white;
+			--button-default-border-color: transparent;
+			--button-hover-border-color: transparent;
+			--button-active-border-color: transparent;
 		}
 	}
 
 	.offer-see-plan-features {
-		color: var(--text-weak);
+		color: var(--text-norm);
 	}
 
 	// dirty overrides for feature list because no other way to do it
@@ -239,14 +327,22 @@
 		}
 	}
 
+	.offer-renew-footer--multiple {
+		margin-block-end: 0;
+
+		+ .offer-renew-footer--multiple {
+			margin-block-start: 0;
+		}
+	}
+
 	.offer-disable-button {
-		color: var(--text-weak);
+		color: var(--text-norm);
 		font-size: em(12);
 	}
 }
 
 // small fix to save a bit of space for some promotions
-.modal-two:has([class*='offer-black-friday-2024']) {
+.modal-two:has([class*='offer-black-friday-2025']) {
 	@include media('>=#{em(680, 16)}') {
 		padding-inline: 2em;
 	}

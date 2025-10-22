@@ -17,19 +17,22 @@ const OfferFooter = forwardRef<HTMLDivElement, Props>((props, ref) => {
 
     return (
         <footer ref={ref}>
-            {user.isFree ? (
-                <div className="my-4 text-center offers-currency-selector">
-                    <CurrencySelector
-                        // essentially, that's a placeholder. If/when you need the regional currencies in offers,
-                        // then it should be extended
-                        currencies={mainCurrencies}
-                        id="offers-currency-selector"
-                        mode="buttons"
-                        currency={currency}
-                        onSelect={onChangeCurrency}
-                    />
-                </div>
-            ) : null}
+            {
+                // we only show the currency selector for free users and NO regional currencies
+                user.isFree && (user.Currency === 'EUR' || user.Currency === 'CHF' || user.Currency === 'USD') ? (
+                    <div className="my-4 text-center offers-currency-selector">
+                        <CurrencySelector
+                            // essentially, that's a placeholder. If/when you need the regional currencies in offers,
+                            // then it should be extended
+                            currencies={mainCurrencies}
+                            id="offers-currency-selector"
+                            mode="buttons"
+                            currency={currency}
+                            onSelect={onChangeCurrency}
+                        />
+                    </div>
+                ) : null
+            }
             {children}
             {props.offer.canBeDisabled ? (
                 <div className="mb-4 text-center">

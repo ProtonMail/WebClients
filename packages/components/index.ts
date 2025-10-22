@@ -698,7 +698,7 @@ export { default as NotificationsProvider } from './containers/notifications/Pro
 export { default as OfferModal } from './containers/offers/components/OfferModal';
 export {
     getDealDurationText,
-    getMailPlus2024InboxFeatures,
+    getMailPlusInboxFeatures,
     getTryDrivePlus2024Features,
 } from './containers/offers/helpers/offerCopies';
 export { isBlackFridayPeriod, isCyberWeekPeriod } from './containers/offers/helpers/offerPeriods';
