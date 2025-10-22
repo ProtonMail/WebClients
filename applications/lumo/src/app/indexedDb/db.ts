@@ -72,9 +72,6 @@ export enum RemoteIdStoreIndexes {
     TypeRemoteId = 'idx_type_remoteId',
 }
 
-// @ts-ignore
-type SerializedResource = SerializedAttachment | SerializedMessage | SerializedSpace | SerializedConversation;
-
 // Store configuration types
 interface StoreConfig<T> {
     storeName: string;
@@ -298,6 +295,7 @@ class StoreOperations<T extends BaseResource> {
         }
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     markAsSynced(snapshot: T, resourceType: ResourceType, tx?: IDBTransaction): Promise<boolean> {
         const id = snapshot.id;
         console.log(`Marking ${resourceType} ${id} as synced`);
@@ -902,7 +900,6 @@ export class DbApi {
             const userHash = userId ? await computeSha256AsBase64(userAndSalt) : undefined;
             const dbName = userHash ? `${DB_BASE_NAME}_${userHash}` : DB_BASE_NAME;
             const request = indexedDB.open(dbName, 8);
-
             request.onupgradeneeded = async (event) => {
                 const db = (event.target as IDBOpenDBRequest).result;
                 const tx = (event.target as IDBOpenDBRequest).transaction;

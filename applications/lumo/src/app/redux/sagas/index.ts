@@ -23,6 +23,7 @@ import {
 } from '../../types';
 import { mapEmpty, mapIds, mapLength } from '../../util/collections';
 import { reloadReduxRequest, stopRootSaga, unloadReduxRequest } from '../slices/core';
+import { setReduxLoadedFromIdb } from '../slices/meta/initialization';
 import {
     addAttachment,
     deleteAllAttachments,
@@ -363,6 +364,8 @@ export function* loadReduxFromIdb(): SagaIterator {
             console.warn('Error while loading attachment from IndexedDB:', e);
         }
     }
+
+    yield put(setReduxLoadedFromIdb());
 }
 
 export function* unloadRedux(): SagaIterator {
