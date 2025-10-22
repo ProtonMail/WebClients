@@ -1,5 +1,5 @@
 import type { OrganizationState, PaymentStatusState, SubscriptionState } from '@proton/account';
-import type { PaymentStatus, Subscription } from '@proton/payments';
+import { DEFAULT_TAX_BILLING_ADDRESS, type PaymentStatus, type Subscription } from '@proton/payments';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
 
 export const getSubscriptionState = (value: Subscription = {} as any): SubscriptionState['subscription'] => {
@@ -26,7 +26,18 @@ export const getOrganizationState = (value: OrganizationExtended = {} as any): O
     };
 };
 
-export const getPaymentStatusState = (value: PaymentStatus = {} as any): PaymentStatusState['paymentStatus'] => {
+export const getPaymentStatusState = (
+    value: PaymentStatus = {
+        VendorStates: {
+            Card: true,
+            Paypal: true,
+            Apple: true,
+            Cash: true,
+            Bitcoin: true,
+        },
+        ...DEFAULT_TAX_BILLING_ADDRESS,
+    }
+): PaymentStatusState['paymentStatus'] => {
     return {
         meta: {
             fetchedAt: Date.now(),

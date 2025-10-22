@@ -1,13 +1,19 @@
 import type { Subscription } from '@proton/payments';
 import {
     CYCLE,
+    getHas2025OfferCoupon,
+    getIsVariableCycleOffer,
     hasAnniversary2025Coupon,
     hasBundle,
     hasDeprecatedVPN,
     hasDrive,
+    hasDrive1TB,
     hasDuo,
+    hasFamily,
+    hasLumoPlan,
     hasMail,
     hasPass,
+    hasPassFamily,
     hasVPN2024,
     isManagedExternally,
 } from '@proton/payments';
@@ -23,6 +29,10 @@ class OfferSubscription {
     }
 
     getCycle() {
+        if (getIsVariableCycleOffer(this.subscription)) {
+            return this.subscription.Cycle;
+        }
+
         if (this.upcomingSubscription) {
             return this.upcomingSubscription?.Cycle;
         }
@@ -38,16 +48,24 @@ class OfferSubscription {
         return this.subscription.CouponCode;
     }
 
-    isMonthly() {
+    hasMonthlyCycle() {
         return this.getCycle() === CYCLE.MONTHLY;
     }
 
-    isYearly() {
+    hasYearlyCycle() {
         return this.getCycle() === CYCLE.YEARLY;
     }
 
-    isTwoYears() {
+    hasFifteenMonthsCycle() {
+        return this.getCycle() === CYCLE.FIFTEEN;
+    }
+
+    hasTwoYearsCycle() {
         return this.getCycle() === CYCLE.TWO_YEARS;
+    }
+
+    hasThirtyMonthsCycle() {
+        return this.getCycle() === CYCLE.THIRTY;
     }
 
     isManagedExternally() {
@@ -66,6 +84,14 @@ class OfferSubscription {
         return hasDrive(this.subscription);
     }
 
+    hasDrive1TB() {
+        if (this.upcomingSubscription) {
+            return hasDrive1TB(this.upcomingSubscription);
+        }
+
+        return hasDrive1TB(this.subscription);
+    }
+
     hasPass() {
         if (this.upcomingSubscription) {
             return hasPass(this.upcomingSubscription);
@@ -74,12 +100,28 @@ class OfferSubscription {
         return hasPass(this.subscription);
     }
 
+    hasPassFamily() {
+        if (this.upcomingSubscription) {
+            return hasPassFamily(this.upcomingSubscription);
+        }
+
+        return hasPassFamily(this.subscription);
+    }
+
     hasMail() {
         if (this.upcomingSubscription) {
             return hasMail(this.upcomingSubscription);
         }
 
         return hasMail(this.subscription);
+    }
+
+    hasLumo() {
+        if (this.upcomingSubscription) {
+            return hasLumoPlan(this.upcomingSubscription);
+        }
+
+        return hasLumoPlan(this.subscription);
     }
 
     hasDeprecatedVPN() {
@@ -106,6 +148,14 @@ class OfferSubscription {
         return hasDuo(this.subscription);
     }
 
+    hasFamily() {
+        if (this.upcomingSubscription) {
+            return hasFamily(this.upcomingSubscription);
+        }
+
+        return hasFamily(this.subscription);
+    }
+
     hasBundle() {
         if (this.upcomingSubscription) {
             return hasBundle(this.upcomingSubscription);
@@ -120,6 +170,17 @@ class OfferSubscription {
         }
 
         return hasAnniversary2025Coupon(this.subscription);
+    }
+
+    hasBF2025Coupon() {
+        if (this.upcomingSubscription) {
+            return (
+                getHas2025OfferCoupon(this.upcomingSubscription.CouponCode) ||
+                getHas2025OfferCoupon(this.subscription.CouponCode)
+            );
+        }
+
+        return getHas2025OfferCoupon(this.subscription.CouponCode);
     }
 }
 
