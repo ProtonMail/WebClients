@@ -90,4 +90,11 @@ impl Autotype {
             .enter()
             .map_err(|e| napi::Error::from_reason(e.to_string()))
     }
+
+    #[napi]
+    pub fn paste(&mut self) -> napi::Result<()> {
+        self.autotype
+            .paste()
+            .map_err(|e| napi::Error::from_reason(e.to_string()))
+    }
 }
