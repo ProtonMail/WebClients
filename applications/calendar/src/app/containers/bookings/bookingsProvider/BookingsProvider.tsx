@@ -1,67 +1,107 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
 
-import { addMilliseconds } from 'date-fns';
+import { addMinutes, isBefore } from 'date-fns';
+import { c } from 'ttag';
 
-import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
+import { useReadCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
+import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
+import { useCalendars } from '@proton/calendar/calendars/hooks';
+import { useNotifications } from '@proton/components/index';
+import { getVisualCalendar } from '@proton/shared/lib/calendar/calendar';
+import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eventDefaults';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import type { CalendarViewBusyEvent, CalendarViewEvent } from '../../calendar/interface';
-import { BOOKING_SLOT_ID, BookingState, type Slot } from './interface';
+import { BOOKING_SLOT_ID, type BookingFormData, BookingState } from './interface';
 
 interface BookingsContextValue {
+    submitForm: () => Promise<void>;
     isBookingActive: boolean;
-    toggleBookingPageCreation: () => void;
-    bookingsState: BookingState;
-    writeableCalendars: VisualCalendar[];
-    loadingWriteableCalendars: boolean;
-    bookingSlots: Slot[];
-    addBookingSlot: (startDate: Date, eventDuration: number) => void;
+    changeBookingState: (state: BookingState) => void;
+    addBookingSlot: (startDate: Date) => void;
     removeBookingSlot: (slotId: string) => void;
     convertSlotToCalendarViewEvents: (visualCalendar?: VisualCalendar) => CalendarViewEvent[];
     isBookingSlotEvent: (event: CalendarViewEvent | CalendarViewBusyEvent) => event is CalendarViewEvent;
+    formData: BookingFormData;
+    updateFormData: (field: keyof BookingFormData, value: any) => void;
 }
 
 const BookingsContext = createContext<BookingsContextValue | undefined>(undefined);
 
-// TODO used as temporary value, will be replaced with value coming from the booking form.
-// The value will be based on the even duration of the selected calendar.
-const tmpEventDurationMinute = 120;
-const tmpEventDurationMiliSeconds = tmpEventDurationMinute * 60 * 1000;
-
-// TODO maybe a reset booking slot method might be useful
-// TODO change the view to weekly view when starting a new booking page
 export const BookingsProvider = ({ children }: { children: ReactNode }) => {
+    const scheduleOptions = getCalendarEventDefaultDuration();
+
     const [bookingsState, setBookingsState] = useState<BookingState>(BookingState.OFF);
-    const [bookingSlots, setBookingSlots] = useState<Slot[]>([]);
 
-    const [writeableCalendars = [], loadingWriteableCalendars] = useWriteableCalendars();
+    const [calendars = []] = useCalendars();
+    const getCalendarSettings = useReadCalendarBootstrap();
+    const [calendarUserSettings] = useCalendarUserSettings();
 
-    const toggleBookingPageCreation = () => {
-        if (bookingsState === BookingState.CREATE_NEW) {
-            setBookingsState(BookingState.OFF);
-            setBookingSlots([]);
-        } else {
-            setBookingsState(BookingState.CREATE_NEW);
-        }
+    const { createNotification } = useNotifications();
+
+    const [formData, setFormData] = useState<BookingFormData>({
+        title: '',
+        selectedCalendar: null,
+        duration: scheduleOptions[0].value,
+        timeZone: calendarUserSettings?.PrimaryTimezone,
+        bookingSlots: [],
+    });
+
+    const updateFormData = (field: keyof BookingFormData, value: any) => {
+        setFormData((prev) => ({ ...prev, [field]: value }));
     };
 
-    // TODO what should happen if we add a slot in the past
-    const addBookingSlot = (startDate: Date, eventDuration: number) => {
-        const duration = Math.min(eventDuration, tmpEventDurationMiliSeconds);
+    // Used to set the default duration and selected calendar
+    useEffect(() => {
+        if (formData.selectedCalendar !== null || !calendarUserSettings?.DefaultCalendarID) {
+            return;
+        }
 
-        setBookingSlots([
-            ...bookingSlots,
-            {
-                id: `${BOOKING_SLOT_ID}-${startDate.getTime().toString()}`,
-                start: startDate,
-                end: addMilliseconds(startDate, duration),
-            },
-        ]);
+        const calendarSettings = getCalendarSettings(calendarUserSettings.DefaultCalendarID);
+        if (!calendarSettings) {
+            return;
+        }
+
+        updateFormData('selectedCalendar', calendarUserSettings.DefaultCalendarID);
+        updateFormData('duration', calendarSettings.CalendarSettings.DefaultEventDuration);
+    }, [formData.selectedCalendar, calendarUserSettings?.DefaultCalendarID, getCalendarSettings]);
+
+    const changeBookingState = (state: BookingState) => {
+        if (state === BookingState.OFF) {
+            setFormData((prevFormData) => ({
+                ...prevFormData,
+                bookingSlots: [],
+            }));
+        }
+
+        setBookingsState(state);
+    };
+
+    const addBookingSlot = (startDate: Date) => {
+        if (isBefore(startDate, new Date())) {
+            createNotification({ text: c('Info').t`A booking slot cannot be added in the past.` });
+            return;
+        }
+
+        setFormData((prevFormData) => ({
+            ...prevFormData,
+            bookingSlots: [
+                ...prevFormData.bookingSlots,
+                {
+                    id: `${BOOKING_SLOT_ID}-${startDate.getTime().toString()}`,
+                    start: startDate,
+                    end: addMinutes(startDate, formData.duration),
+                },
+            ],
+        }));
     };
 
     const removeBookingSlot = (slotId: string) => {
-        setBookingSlots(bookingSlots.filter((slot) => slot.id !== slotId));
+        setFormData((prevFormData) => ({
+            ...prevFormData,
+            bookingSlots: prevFormData.bookingSlots.filter((slot) => slot.id !== slotId),
+        }));
     };
 
     const convertSlotToCalendarViewEvents = (visualCalendar?: VisualCalendar): CalendarViewEvent[] => {
@@ -69,15 +109,19 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             return [];
         }
 
-        return bookingSlots.map((slot: any) => ({
+        const calendar = calendars.find((cal) => cal.ID === formData.selectedCalendar);
+        if (!calendar) {
+            return [];
+        }
+
+        return formData.bookingSlots.map((slot: any) => ({
             uniqueId: slot.id,
             isAllDay: false,
             isAllPartDay: false,
             start: slot.start,
             end: slot.end,
             data: {
-                // TODO change this to the selected visual calendar coming from the form
-                calendarData: visualCalendar,
+                calendarData: getVisualCalendar(calendar),
             },
         }));
     };
@@ -86,17 +130,20 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         return event.uniqueId.startsWith(BOOKING_SLOT_ID);
     };
 
+    const submitForm = async () => {
+        setBookingsState(BookingState.OFF);
+    };
+
     const value: BookingsContextValue = {
         isBookingActive: bookingsState === BookingState.CREATE_NEW || bookingsState === BookingState.EDIT_EXISTING,
-        toggleBookingPageCreation,
-        bookingsState,
-        writeableCalendars,
-        loadingWriteableCalendars,
-        bookingSlots,
+        changeBookingState,
         addBookingSlot,
         removeBookingSlot,
         convertSlotToCalendarViewEvents,
         isBookingSlotEvent,
+        formData,
+        updateFormData,
+        submitForm,
     };
 
     return <BookingsContext.Provider value={value}>{children}</BookingsContext.Provider>;
