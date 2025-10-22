@@ -4,7 +4,7 @@ import { Button } from '@proton/atoms/Button/Button';
 
 import { useDealContext } from '../shared/deal/DealContext';
 
-const DealCTABF2024 = () => {
+const DealCTABF = () => {
     const { deal, onSelectDeal, offer, currency } = useDealContext();
     const { popular, buttonSize } = deal;
 
@@ -24,4 +24,4 @@ const DealCTABF2024 = () => {
     );
 };
 
-export default DealCTABF2024;
+export default DealCTABF;
