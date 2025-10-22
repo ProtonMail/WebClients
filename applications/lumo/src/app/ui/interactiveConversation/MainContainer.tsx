@@ -21,9 +21,11 @@ import { ComposerComponent } from './composer/ComposerComponent';
 const MainContainer = ({
     handleSendMessage,
     isProcessingAttachment,
+    initialQuery,
 }: {
     handleSendMessage: HandleSendMessage;
     isProcessingAttachment: boolean;
+    initialQuery?: string;
 }) => {
     const { isOnboardingCompleted } = useOnboardingContext();
     const { isSmallScreen } = useIsLumoSmallScreen();
@@ -115,6 +117,7 @@ const MainContainer = ({
                         onShowDriveBrowser={handleShowDriveBrowser}
                         isGuest={isGuest}
                         isSmallScreen={isSmallScreen}
+                        initialQuery={initialQuery}
                     />
                 </div>
                 <WhatsNew />

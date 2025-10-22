@@ -8,6 +8,7 @@ import { LUMO_FULL_APP_TITLE } from '../../constants';
 import type { RouteParams } from '../../entrypoint/auth/RouterContainer';
 import { useLumoActions } from '../../hooks/useLumoActions';
 import { useLumoNavigate as useNavigate } from '../../hooks/useLumoNavigate';
+import { useQueryParam } from '../../hooks/useQueryParam';
 import { useConversation } from '../../providers/ConversationProvider';
 import { DragAreaProvider, useDragArea } from '../../providers/DragAreaProvider';
 import { useGhostChat } from '../../providers/GhostChatProvider';
@@ -44,6 +45,10 @@ const InteractiveConversationComponentInner = ({ user }: InteractiveConversation
     const { isGhostChatMode } = useGhostChat();
     const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
     const { onDragOver, onDragEnter, onDragLeave, onDrop } = useDragArea();
+    
+    // Extract 'q' query parameter from URL (will be cleared after reading)
+    const queryFromUrl = useQueryParam('q');
+    const initialQuery = queryFromUrl;
 
     // ** Selectors **
     const messageMap = useLumoMemoSelector(selectMessagesByConversationId, [curConversationId]);
@@ -55,7 +60,8 @@ const InteractiveConversationComponentInner = ({ user }: InteractiveConversation
     const conversationTitle = conversation?.title.trim() || '';
     // const spaceId = conversation?.spaceId;
     const isProcessingAttachment = provisionalAttachments.some((a) => a.processing);
-    const remoteWasSynced = conversations !== EMPTY_CONVERSATION_MAP;
+    const reduxLoadedFromIdb = useLumoSelector((state) => state.initialization.reduxLoadedFromIdb);
+    const remoteWasSynced = conversations !== EMPTY_CONVERSATION_MAP && reduxLoadedFromIdb;
     // const displayName = user?.DisplayName ?? ''; //TODO: if not using user, can update guest vs authorized use of component
     const isGenerating = conversation?.status && conversation.status === ConversationStatus.GENERATING;
     // const welcomeText = displayName
@@ -174,7 +180,11 @@ const InteractiveConversationComponentInner = ({ user }: InteractiveConversation
             onDragOver={onDragOver}
         >
             {!curConversationId && (
-                <MainContainer isProcessingAttachment={isProcessingAttachment} handleSendMessage={handleSendMessage} />
+                <MainContainer 
+                    isProcessingAttachment={isProcessingAttachment} 
+                    handleSendMessage={handleSendMessage}
+                    initialQuery={initialQuery || undefined}
+                />
             )}
             {curConversationId && isLoading && <ConversationSkeleton />}
             {curConversationId && !isLoading && (
@@ -191,6 +201,7 @@ const InteractiveConversationComponentInner = ({ user }: InteractiveConversation
                     handleEditMessage={handleEditMessage}
                     getSiblingInfo={getSiblingInfo}
                     handleRetryGeneration={handleRetryGeneration}
+                    initialQuery={initialQuery || undefined}
                 />
             )}
         </div>
