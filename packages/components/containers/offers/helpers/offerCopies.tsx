@@ -1,9 +1,9 @@
 import type { ReactElement } from 'react';
 
+import type { IconName } from 'packages/icons';
 import { c, msgid } from 'ttag';
 
-import { getDesktopAppText, getOwnDomainText } from '@proton/components/containers/payments/features/mail';
-import type { IconName } from '@proton/icons/types';
+import { getOwnDomainText } from '@proton/components/containers/payments/features/mail';
 import { CYCLE, PLANS, PLAN_NAMES, type PlanIDs, getRenewCycle } from '@proton/payments';
 import {
     BRAND_NAME,
@@ -14,6 +14,7 @@ import {
     DRIVE_SHORT_APP_NAME,
     MAIL_APP_NAME,
     MAIL_SHORT_APP_NAME,
+    PASS_SHORT_APP_NAME,
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { getPremiumPasswordManagerText } from '@proton/shared/lib/helpers/checkout';
@@ -170,37 +171,27 @@ const getPremiumInboxFeature = (domains?: number, addresses?: number, scribe?: b
     };
 };
 
-export const getMailPlusInboxFeatures = () => {
+export const getMailPlusInboxFeatures = (): { name: string }[] => {
     return [
-        getStorageSizeFeature(humanSize({ bytes: 15 * 1024 ** 3, fraction: 0 })),
-        {
-            name: c('specialoffer: Deal details').t`1 user`,
-        },
-        getPremiumInboxFeature(1, 10),
+        { ...getStorageSizeFeature(humanSize({ bytes: 15 * 1024 ** 3, fraction: 0 }), true) }, // true remove the tooltip
+        { name: c('BF2024: Deal details').t`Unlimited folders, labels and filters` },
+        { name: getOwnDomainText() },
     ];
 };
 
-export const getMailPlus2024InboxFeatures = (): { name: string }[] => {
+export const getLumoPlusFeatures = () => {
     return [
-        { ...getStorageSizeFeature(humanSize({ bytes: 15 * 1024 ** 3, fraction: 0 }), true) }, // true remove the tooltip
-        { name: c('BF2024: Deal details').t`10 email addresses` },
-        { name: c('BF2024: Deal details').t`Unlimited folders, labels and filters` },
-        { name: getOwnDomainText() },
-        { name: getDesktopAppText() },
-        { name: DARK_WEB_MONITORING_NAME },
+        { name: c('BF2025: Deal details').t`Unlimited daily chats` },
+        { name: c('BF2025: Deal details').t`Access advanced AI models` },
+        { name: c('BF2025: Deal details').t`Full chat history with easy search and favorites` },
     ];
 };
 
 export const getPassPlusFeatures = () => {
     return [
-        { name: c('BF2024: Deal details').t`1 user account` },
-        { name: getUnlimitedLoginsAndNotesText() },
-        { name: getSecureVaultSharingText() },
         { name: getUnlimitedHideMyEmailAliasesText() },
-        { name: get2FAAuthenticatorText() },
-        { name: c('BF2024: Deal details').t`Password health alerts` },
+        { name: c('BF2025: Deal details').t`Built-in 2FA authenticator` },
         { name: DARK_WEB_MONITORING_NAME },
-        { name: c('BF2024: Deal details').t`Advanced account protection` },
     ];
 };
 
@@ -263,12 +254,12 @@ export const getUnlimitedVPNFeatures = () => [
 ];
 
 export const getUnlimitedInboxFeatures = () => [
+    {
+        name: c('BF2025: Deal details')
+            .t`All premium features of ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`,
+    },
     getStorageSizeFeature(humanSize({ bytes: 500 * 1024 ** 3, fraction: 0 })),
-    { name: c('BF2024: Deal details').t`1 user` },
-    getPremiumInboxFeature(3, 15, false),
-    getPremiumVPNFeature(),
-    getPremiumPasswordManagerFeature(),
-    getPremiumDriveFeature(),
+    { name: c('BF2025: Deal details').t`Stronger protection against cyber threats` },
 ];
 
 export const getUnlimitedInboxFeaturesForPass = () => [
@@ -280,72 +271,46 @@ export const getUnlimitedInboxFeaturesForPass = () => [
     //...getPremiumNonInboxFeature(),
 ];
 
-export const getDuoInboxFeatures = () => [
-    // humanSize doesn't support TB and we don't want to add it yet because of "nice numbers" rounding issues.
-    getStorageSizeFeature(c('BF2024: Deal details').t`1 TB total`),
-    { name: c('BF2024: Deal details').t`2 users` },
-    getPremiumInboxFeature(3, 15),
-    getPremiumVPNFeature(),
-    getPremiumPasswordManagerFeature(),
-    getPremiumDriveFeature(),
+export const getDuoFeatures = () => [
+    {
+        name: c('BF2025: Deal details')
+            .t`All premium features of ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`,
+    },
+    { name: c('BF2025: Deal details').t`Individual accounts for you and a partner` },
+    { name: c('BF2025: Deal details').t`2 TB data storage` },
 ];
 
-export const getFamilyInboxFeatures = () => [
-    // humanSize doesn't support TB and we don't want to add it yet because of "nice numbers" rounding issues.
-    getStorageSizeFeature(c('BF2024: Deal details').t`3 TB`),
-    { name: c('BF2024: Deal details').t`6 users` },
-    getPremiumInboxFeature(3, 90),
-    getPremiumVPNFeature(),
-    getPremiumPasswordManagerFeature(),
-    getPremiumDriveFeature(),
+export const getFamilyFeaturesforUnlimited = () => [
+    {
+        name: c('BF2025: Deal details')
+            .t`All premium features of ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`,
+    },
+    { name: c('BF2025: Deal details').t`Individual accounts for 6 users` },
+    { name: c('BF2025: Deal details').t`3 TB data storage` },
+];
+
+export const getFamilyFeaturesforDuoOrFamily = () => [
+    { name: c('BF2025: Deal details').t`Individual accounts for 6 users` },
+    { name: c('BF2025: Deal details').t`3 TB data storage` },
+    {
+        name: c('BF2025: Deal details')
+            .t`All premium features of ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`,
+    },
 ];
 
 export const getDriveFeatures = () => [
-    getStorageSizeFeature(humanSize({ bytes: 200 * 1024 ** 3, fraction: 0 })),
-    { name: c('BF2024: Deal details').t`Secure file storage & sharing` },
+    { name: c('BF2024: Deal details').t`200 GB storage: 40x your current plan` },
     { name: c('BF2024: Deal details').t`Online document editor` },
-    { name: c('BF2024: Deal details').t`Private photo backup` },
-    { name: c('BF2024: Deal details').t`Version history` },
-];
-
-export const getUnlimitedDriveFeatures = () => [
-    getStorageSizeFeature(humanSize({ bytes: 500 * 1024 ** 3, fraction: 0 })),
-    { name: c('bf2023: Deal details').t`1 user` },
-    getPremiumDriveFeature(),
-    getPremiumInboxFeature(3, 15),
-    getPremiumVPNFeature(),
-    getPremiumPasswordManagerFeature(),
-];
-
-export const getFamilyDriveFeatures = () => [
-    // humanSize doesn't support TB and we don't want to add it yet because of "nice numbers" rounding issues.
-    getStorageSizeFeature(c('bf2023: Deal details').t`3 TB`),
-    { name: c('bf2023: Deal details').t`6 users` },
-    getPremiumDriveFeature(),
-    getPremiumInboxFeature(3, 90),
-    getPremiumVPNFeature(),
-    getPremiumPasswordManagerFeature(),
+    { name: c('BF2024: Deal details').t`Recover previous file versions` },
 ];
 
 export const getVPNFeatures = () => [
+    { name: c('BF2025: Deal details').t`Connect 10 devices at once` },
+    { name: c('BF2025: Deal details').t`Access 15,000+ servers in 120+ countries` },
     {
-        name: c('BF2024: Deal details').t`8500+ servers across 110+ countries`,
-    },
-    {
-        name: c('BF2024: Deal details').t`Protect 10 devices at a time`,
-    },
-    {
-        name: c('BF2024: Deal details').t`High speed streaming`,
-        tooltip: c('BF2024: Tooltip')
-            .t`Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.`,
-    },
-    {
-        name: c('BF2024: Deal details').t`Ad-blocker and malware protection`,
-        tooltip: c('BF2024: Tooltip')
+        name: c('BF2025: Deal details').t`Block ads, trackers, and malware`,
+        tooltip: c('BF2025: Tooltip')
             .t`Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.`,
-    },
-    {
-        name: c('BF2024: Deal details').t`VPN Accelerator`,
     },
 ];
 
