@@ -8,7 +8,7 @@ import { BookingsHeader } from './BookingsHeader';
 
 export const BookingPageLayout = ({ children }: PropsWithChildren) => {
     return (
-        <div id="booking-app" className="h-full flex flex-column flex-nowrap">
+        <div data-testid="booking-app" className="h-full flex flex-column flex-nowrap">
             <BookingsHeader />
             <ErrorBoundary component={<StandardErrorPage />}>
                 <Scroll className="flex-1 w-full">
