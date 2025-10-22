@@ -90,7 +90,7 @@
         "Afegeix dies festius"
       ],
       "Add secret passphrase": [
-        "Afegiu una frase de contrasenya secreta"
+        "Afegeix una frase de contrasenya secreta"
       ],
       "Add to group": [
         "Afegeix al grup"
@@ -717,7 +717,7 @@
         "Mostra les característiques del pla"
       ],
       "Select ${ planOrAppName }": [
-        "Seleccioneu ${ planOrAppName }"
+        "Selecciona ${ planOrAppName }"
       ],
       "Select all": [
         "Seleccionar-ho tot"
@@ -858,7 +858,7 @@
         "Actualitza la frase de recuperació"
       ],
       "Update secret passphrase": [
-        "Actualitzeu la frase de contrasenya secreta"
+        "Actualitza la frase de contrasenya secreta"
       ],
       "Upgrade": [
         "Millora el pla"
@@ -941,6 +941,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "La prova gratuïta de l'aplicació d'escriptori finalitza el ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Create a new bookings page": [
+        "Creeu una nova pàgina de reserves"
+      ],
+      "Explore other plans": [
+        "Explora altres plans"
+      ],
+      "Subscribe now": [
+        "Subscriviu-vos ara"
       ]
     },
     "action": {
@@ -1248,7 +1257,7 @@
         "Podeu tenir fins a ${ TRIAL_MAX_LUMO_SEATS } llicències de ${ LUMO_SHORT_APP_NAME } durant el període de prova."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
-        "Podeu tenir fins a ${ TRIAL_MAX_SCRIBE_SEATS } llicències Scribe durant el període de prova."
+        "Podeu tenir fins a ${ TRIAL_MAX_SCRIBE_SEATS } llicències d'Scribe durant el període de prova."
       ],
       "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
         "Podeu tenir fins a ${ TRIAL_MAX_USERS } usuaris durant el període de prova."
@@ -4387,6 +4396,12 @@
     "Feature": {
       "Unlimited hide-my-email aliases": [
         "Nombre il·limitat d'àlies hide-my-email"
+      ],
+      "Encrypted cloud storage for files, photos and documents": [
+        "Emmagatzematge xifrat al núvol per a fitxers, fotos i documents"
+      ],
+      "More premium features": [
+        "Més característiques prèmium"
       ]
     },
     "fido2: Error": {
@@ -5008,7 +5023,7 @@
         "**Connexió automàtica**: s'obre i es connecta a la VPN tan bon punt encengueu el dispositiu."
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
-        "**Interruptor de bloqueig**: atura les filtracions de dades en bloquejar la connexió a Internet si la VPN es desconnecta sobtadament."
+        "**Interruptor de bloqueig (kill switch)**: atura les filtracions de dades en bloquejar la connexió a Internet si la VPN es desconnecta sobtadament."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Pas 1:** Convideu amistats a ${ BRAND_NAME } amb el vostre enllaç de recomanació."
@@ -6264,6 +6279,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Encara podreu veure les dades del vostre compte, però tots els comptes d'usuari s'eliminaran de la vostra organització."
+      ],
+      "Choose a plan that works best for you.": [
+        "Trieu el pla que se us adapti millor."
+      ],
+      "Continue": [
+        "Continueu"
+      ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "Actualitzeu el pla per conservar els vostres avantatges de ${ planTitle }."
       ]
     },
     "info": {
@@ -7099,6 +7123,9 @@
       ],
       "What’s this?": [
         "Què és això?"
+      ],
+      "Bookings pages": [
+        "Pàgines de reserves"
       ]
     },
     "Link label (optional)": {
@@ -7215,6 +7242,9 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "S'ha acabat la prova gratuïta. L'accés al compte es desactivarà prompte. ${ action }"
+      ],
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "La prova gratuïta us ha finalitzat. ${ nonAutoRenewalAction }"
       ]
     },
     "Message display when a new app version is available": {
@@ -8622,6 +8652,12 @@
       ],
       "Your subscription renews soon": [
         "La subscripció es renovarà aviat."
+      ],
+      "Don't show this again": [
+        "No m'ho torneu a mostrar"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Obtingueu ${ BRAND_NAME } Duo"
       ]
     },
     "Offer fearue": {
@@ -9419,7 +9455,7 @@
     },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
-        "${ referrerRewardAmount } com a referència"
+        "${ referrerRewardAmount } per referència"
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Guanyeu fins a ${ maxRewardAmount } en crèdits. Rebreu ${ referrerRewardAmount } quan la persona que convideu se subscrigui a un pla de ${ BRAND_NAME }."
@@ -9449,6 +9485,34 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Podeu obtenir fins a **${ maxRewardAmount }** en crèdits."
+      ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Si cancel·leu abans d'aquesta data,** **passareu al pla inferior** ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } quan la prova finalitzi."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Si no us subscriviu,** se us **baixarà de categoria** a ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Si no cancel·leu,** el vostre pla complet començarà i rebreu **${ referrerRewardAmount }** en crèdits."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Si us subscriviu abans d'aquesta data,** rebreu **${ referrerRewardAmount }** en crèdits."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Gaudiu de **${ planTitle }** de franc fins al **${ textDate }**."
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Última oportunitat per explorar les potents característiques que us ofereix el **${ planTitle }**."
+      ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "Un cop comenci la vostra subscripció completa, disposeu d'un termini de 30 dies per cancel·lar-la i obtenir-ne el reembossament prorratejat."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Us queda **${ daysRemaining } dia** per explorar totes les potents funcionalitats que ofereix el **${ planTitle }**.",
+        "Us queden **${ daysRemaining } dies** per explorar totes les potents funcionalitats que ofereix el **${ planTitle }**."
+      ],
+      "your subscription": [
+        "la vostra subscripció"
       ]
     },
     "Reload event button tooltip": {
@@ -11624,6 +11688,18 @@
       ],
       "Your shorter address is now ready": [
         "La vostra adreça més curta ja està a punt."
+      ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Dupliqueu el vostre emmagatzematge amb ${ BRAND_NAME } Duo"
+      ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Aconseguiu **${ referralInfo.uiData.refereeRewardAmount }** en crèdits amb ${ planTitle }"
+      ],
+      "How your free trial works": [
+        "Com funciona la vostra prova gratuïta"
+      ],
+      "Upgrade to keep your premium benefits.": [
+        "Milloreu de pla per mantenir els vostres avantatges prèmium."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11925,6 +12001,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "La prova gratuïta acaba el ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "La vostra prova finalitzarà el ${ textDate }. No se us cobrarà si cancel·leu abans del ${ textDate }. ${ action }"
       ]
     },
     "Warning in modal to accept calendar invitation; Description": {
@@ -12191,6 +12270,39 @@
       ],
       "Passcode:": [
         "Codi d'accés:"
+      ]
+    },
+    "Duo offer": {
+      "/month": [
+        "/mes"
+      ],
+      "1 TB of storage to share": [
+        "1 TB d'emmagatzematge per compartir"
+      ],
+      "2 user accounts": [
+        "2 comptes d'usuari"
+      ],
+      "All premium features from your current plan": [
+        "Totes les funcions prèmium del vostre pla actual"
+      ],
+      "Only": [
+        "Només"
+      ]
+    },
+    "Duo offer: Link": {
+      "Double your storage": [
+        "Dupliqueu el vostre emmagatzematge"
+      ],
+      "Share your plan": [
+        "Compartiu el vostre pla"
+      ]
+    },
+    "Duo offer: Title": {
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Dupliqueu el vostre emmagatzematge amb ${ BRAND_NAME } Duo"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "Compartiu els avantatges del vostre pla amb ${ BRAND_NAME } Duo"
       ]
     }
   }

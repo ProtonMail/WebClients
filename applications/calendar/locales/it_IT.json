@@ -941,6 +941,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "La tua prova gratuita dell'applicazione desktop termina ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Explore other plans": [
+        "Esplora gli altri piani"
+      ],
+      "Subscribe now": [
+        "Abbonati ora"
       ]
     },
     "action": {
@@ -9544,6 +9550,31 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Puoi guadagnare fino a **${ maxRewardAmount }** in credito."
+      ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Se annulli prima di questa data,** ti verrà **eseguito il downgrade** al ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } quando termina la prova."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Se non ti abboni,** ti verrà **eseguito il downgrade** al ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Se non annulli,** inizierà il tuo piano completo e riceverai **${ referrerRewardAmount }** in crediti."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Se ti abboni prima di questa data,** riceverai **${ referrerRewardAmount }** in crediti."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Goditi **${ planTitle }** gratuitamente fino al **${ textDate }**."
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Ultima possibilità per esplorare tutte le potenti funzionalità che **${ planTitle }** ha da offrire."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Ti rimane **${ daysRemaining } giorno** per esplorare tutte le potenti funzionalità che **${ planTitle }** ha da offrire.",
+        "Ti restano **${ daysRemaining } giorni** per esplorare tutte le potenti funzionalità che **${ planTitle }** ha da offrire."
+      ],
+      "your subscription": [
+        "il tuo abbonamento"
       ]
     },
     "Reload event button tooltip": {
@@ -11719,6 +11750,9 @@
       ],
       "Your shorter address is now ready": [
         "Il tuo indirizzo breve ora è pronto"
+      ],
+      "How your free trial works": [
+        "Come funziona la tua prova gratuita"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

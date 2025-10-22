@@ -941,6 +941,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Deine kostenlose Testversion der Desktop-App endet am ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Create a new bookings page": [
+        "Erstelle eine neue Buchungsseite"
+      ],
+      "Explore other plans": [
+        "Entdecke weitere Abonnemente"
+      ],
+      "Subscribe now": [
+        "Jetzt abonnieren"
       ]
     },
     "action": {
@@ -4387,6 +4396,12 @@
     "Feature": {
       "Unlimited hide-my-email aliases": [
         "Unbegrenzte hide-my-email-Aliasse"
+      ],
+      "Encrypted cloud storage for files, photos and documents": [
+        "Verschlüsselter Cloud-Speicher für Dateien, Fotos und Dokumente"
+      ],
+      "More premium features": [
+        "Weitere Premium-Funktionen"
       ]
     },
     "fido2: Error": {
@@ -6264,6 +6279,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kannst weiterhin deine eigenen Kontodaten ansehen, aber alle Benutzerkonten werden aus deiner Organisation entfernt."
+      ],
+      "Choose a plan that works best for you.": [
+        "Wähle ein Abonnement, das am besten für dich funktioniert."
+      ],
+      "Continue": [
+        "Fortfahren"
+      ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "Upgrade, um deine ${ planTitle }-Vorteile zu behalten."
       ]
     },
     "info": {
@@ -7099,6 +7123,9 @@
       ],
       "What’s this?": [
         "Was ist das?"
+      ],
+      "Bookings pages": [
+        "Buchungsseiten"
       ]
     },
     "Link label (optional)": {
@@ -7215,6 +7242,9 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Deine kostenlose Testversion ist beendet. Der Zugriff auf dein Konto wird in Kürze deaktiviert. ${ action }"
+      ],
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "Deine kostenlose Testversion ist abgelaufen. ${ nonAutoRenewalAction }"
       ]
     },
     "Message display when a new app version is available": {
@@ -8622,6 +8652,12 @@
       ],
       "Your subscription renews soon": [
         "Dein Abonnement verlängert sich bald"
+      ],
+      "Don't show this again": [
+        "Nicht erneut anzeigen"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Hol dir ${ BRAND_NAME } Duo"
       ]
     },
     "Offer fearue": {
@@ -9539,6 +9575,34 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Du kannst bis zu **${ maxRewardAmount }** als Guthaben erhalten."
+      ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Wenn du vor diesem Datum kündigst,** wirst du auf ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } **zurückgestuft**, wenn die Testversion endet."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Wenn du nicht abonnierst,** wirst du auf ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } **zurückgestuft**."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Wenn du nicht kündigst,** startet dein volles Abonnement und du erhältst **${ referrerRewardAmount }** an Guthaben."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Wenn du vor diesem Datum abonnierst,** erhältst du **${ referrerRewardAmount }** an Guthaben."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Genieße **${ planTitle }** kostenlos bis zum **${ textDate }**."
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Letzte Chance, alle leistungsstarken Funktionen zu erkunden, die **${ planTitle }** zu bieten hat."
+      ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "Sobald dein volles Abonnement beginnt, kannst du immer noch innerhalb von 30 Tagen kündigen und eine anteilige Rückerstattung erhalten."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Du hast noch **${ daysRemaining } Tag übrig**, um alle leistungsstarken Funktionen zu erkunden, die **${ planTitle }** zu bieten hat.",
+        "Du hast **noch ${ daysRemaining } Tage übrig**, um alle leistungsstarken Funktionen zu erkunden, die **${ planTitle }** zu bieten hat."
+      ],
+      "your subscription": [
+        "Dein Abonnement"
       ]
     },
     "Reload event button tooltip": {
@@ -11714,6 +11778,18 @@
       ],
       "Your shorter address is now ready": [
         "Deine kürzere E-Mail-Adresse ist jetzt fertig"
+      ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Verdopple deinen Speicher mit ${ BRAND_NAME } Duo"
+      ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Erhalte **${ referralInfo.uiData.refereeRewardAmount }** als Guthaben mit ${ planTitle }"
+      ],
+      "How your free trial works": [
+        "So funktioniert deine kostenlose Testversion"
+      ],
+      "Upgrade to keep your premium benefits.": [
+        "Upgrade, um deine Premium-Vorteile zu behalten."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12015,6 +12091,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Deine kostenlose Testversion endet am ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Deine Testversion endet am ${ textDate }. Dir werden keine Kosten berechnet, wenn du vor dem ${ textDate } kündigst. ${ action }"
       ]
     },
     "Warning in modal to accept calendar invitation; Description": {
@@ -12281,6 +12360,39 @@
       ],
       "Passcode:": [
         "Passcode:"
+      ]
+    },
+    "Duo offer": {
+      "/month": [
+        "/ Monat"
+      ],
+      "1 TB of storage to share": [
+        "1 TB Speicher zum Teilen"
+      ],
+      "2 user accounts": [
+        "2 Benutzerkonten"
+      ],
+      "All premium features from your current plan": [
+        "Alle Premium-Funktionen deines aktuellen Abonnements"
+      ],
+      "Only": [
+        "Nur"
+      ]
+    },
+    "Duo offer: Link": {
+      "Double your storage": [
+        "Verdopple deinen Speicherplatz"
+      ],
+      "Share your plan": [
+        "Teile dein Abonnement"
+      ]
+    },
+    "Duo offer: Title": {
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Verdopple deinen Speicherplatz mit ${ BRAND_NAME } Duo"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "Teile deine Abonnementsvorteile mit ${ BRAND_NAME } Duo"
       ]
     }
   }

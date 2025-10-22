@@ -941,6 +941,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Den gratis prøveperioden for skrivebordsappen avsluttes ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Explore other plans": [
+        "Utforsk andre planer"
+      ],
+      "Subscribe now": [
+        "Abonner nå"
       ]
     },
     "action": {
@@ -9449,6 +9455,31 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Du kan få opptil **${ maxRewardAmount }** i kreditt."
+      ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Hvis du avbryter før denne datoen,** vil du bli **nedgradert** til ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } når prøveperioden avsluttes."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Hvis du ikke abonnerer,** blir du **nedgradert** til ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Hvis du ikke avbryter,** starter hele planen din, og du får **${ referrerRewardAmount }** i kreditter."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Hvis du abonnerer før denne datoen,** får du **${ referrerRewardAmount }** i kreditter."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Kos deg gratis med **${ planTitle }** frem til **${ textDate }**."
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Siste sjanse til å utforske alle de kraftige funksjonene som **${ planTitle }** har å tilby."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Du har **${ daysRemaining } dag igjen** til å utforske alle de kraftige funksjonene som **${ planTitle }** har å tilby.",
+        "Du har **${ daysRemaining } dager igjen** til å utforske alle de kraftige funksjonene som **${ planTitle }** har å tilby."
+      ],
+      "your subscription": [
+        "abonnementet ditt"
       ]
     },
     "Reload event button tooltip": {
@@ -11624,6 +11655,9 @@
       ],
       "Your shorter address is now ready": [
         "Den kortere adressen din er nå klar"
+      ],
+      "How your free trial works": [
+        "Hvordan din gratis prøveperiode fungerer"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
