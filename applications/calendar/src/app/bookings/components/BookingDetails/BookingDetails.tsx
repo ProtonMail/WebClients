@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react';
-import type { RouteComponentProps } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import type { PublicBooking } from '../../interface';
 import { DetailsFooter } from './DetailsFooter';
 import { DetailsHeader } from './DetailsHeader';
 import { DetailsSlotPicking } from './DetailsSlotPicking';
 
-export const BookingDetails = ({ match }: RouteComponentProps<{ bookingID: string }>) => {
-    const { bookingID } = match.params;
-
+export const BookingDetails = () => {
+    const { bookingID } = useParams<{ bookingID: string }>();
     const [booking, setBooking] = useState<PublicBooking | null>(null);
 
     useEffect(() => {
