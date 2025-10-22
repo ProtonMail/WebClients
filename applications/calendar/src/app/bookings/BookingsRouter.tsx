@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 
 import { useFlag } from '@proton/unleash';
 
-import { BookingDetails } from './components/BookingDetails';
+import { BookingDetails } from './components/BookingDetails/BookingDetails';
 import { BookingPageLayout } from './components/BookingPageLaout';
 
 export const BookingsRouter = () => {
@@ -21,7 +21,7 @@ export const BookingsRouter = () => {
 
     return (
         <BookingPageLayout>
-            <Route path="/" exact render={() => <BookingDetails />} />
+            <Route path="/:bookingId" exact component={BookingDetails} />
         </BookingPageLayout>
     );
 };
