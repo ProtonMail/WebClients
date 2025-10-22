@@ -41,6 +41,7 @@ export type ComposerComponentProps = {
     onShowDriveBrowser?: () => void; // Optional for Drive browser functionality
     isGuest?: boolean; // For showing disclaimer in guest mode
     isSmallScreen?: boolean; // For mobile-specific disclaimer positioning
+    initialQuery?: string; // Initial query to populate and auto-execute
 };
 
 export const ComposerComponent = ({
@@ -58,6 +59,7 @@ export const ComposerComponent = ({
     onShowDriveBrowser,
     isGuest,
     isSmallScreen,
+    initialQuery,
 }: ComposerComponentProps) => {
     const { isDragging: isDraggingOverScreen } = useDragArea();
     const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
@@ -142,6 +144,31 @@ export const ComposerComponent = ({
     useEffect(() => {
         setIsEditorEmpty?.(isEditorEmpty ?? true);
     }, [isEditorEmpty, setIsEditorEmpty]);
+
+    // Handle initial query from URL parameter
+    const hasExecutedInitialQuery = useRef(false);
+    const lastExecutedQuery = useRef<string | null>(null);
+    
+    useEffect(() => {
+        // Reset execution flag if initialQuery changes to a new value
+        if (initialQuery !== lastExecutedQuery.current) {
+            hasExecutedInitialQuery.current = false;
+            lastExecutedQuery.current = initialQuery || null;
+        }
+        
+        if (initialQuery && editor && !hasExecutedInitialQuery.current && !isProcessingAttachment) {
+            // Set the content in the editor
+            editor.commands.setContent(initialQuery);
+            
+            // Mark as executed to prevent re-execution
+            hasExecutedInitialQuery.current = true;
+            
+            // Wait a tick for the editor to update, then submit
+            setTimeout(() => {
+                void sendGenerateMessage(editor);
+            }, 100);
+        }
+    }, [initialQuery, editor, isProcessingAttachment, sendGenerateMessage]);
 
     const canShowLegalDisclaimer = isGuest && isSmallScreen && !isEditorFocused && isEditorEmpty;
 
