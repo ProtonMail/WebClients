@@ -62,7 +62,6 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
     const redirectToAccountApp = useRedirectToAccountApp();
     const [modalDepsLoading, setModalDepsLoading] = useState(true);
     const subscriptionModalRef = useRef<SubscriptionModalFowardedRefProps>(null);
-
     const handleDepsLoaded = useCallback(() => {
         setModalDepsLoading(false);
     }, []);
@@ -73,10 +72,14 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
             <SubscriptionModalContext.Provider
                 value={[
                     (props) => {
-                        if (redirectToAccountApp()) {
+                        if (
+                            redirectToAccountApp({
+                                app: app,
+                                ...props,
+                            })
+                        ) {
                             return;
                         }
-
                         if (modalDepsLoading || subscriptionModalRef.current?.isOpened) {
                             return;
                         }
