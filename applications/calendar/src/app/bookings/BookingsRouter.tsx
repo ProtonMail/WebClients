@@ -3,6 +3,9 @@ import { Route } from 'react-router-dom';
 
 import { useFlag } from '@proton/unleash';
 
+import { BookingDetails } from './components/BookingDetails';
+import { BookingPageLayout } from './components/BookingPageLaout';
+
 export const BookingsRouter = () => {
     const isEnabled = useFlag('CalendarExternalBookings');
 
@@ -16,5 +19,9 @@ export const BookingsRouter = () => {
         return null;
     }
 
-    return <Route path="/" exact render={() => <p data-testid="booking-app">Booking app</p>} />;
+    return (
+        <BookingPageLayout>
+            <Route path="/" exact render={() => <BookingDetails />} />
+        </BookingPageLayout>
+    );
 };
