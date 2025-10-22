@@ -10,7 +10,6 @@ import ProtonApp from '@proton/components/containers/app/ProtonApp';
 import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
 import ThemeProvider from '@proton/components/containers/themes/ThemeProvider';
-import Icons from '@proton/icons/Icons';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import type { UnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 import { FlagProvider } from '@proton/unleash';
@@ -64,7 +63,6 @@ export const BookingPageContainer = ({ children }: PropsWithChildren) => {
                     <FlagProvider unleashClient={unleashClient} startClient={false}>
                         <ApiProvider api={api}>
                             <ThemeProvider appName={config.APP_NAME}>
-                                <Icons />
                                 <ErrorBoundary big component={<StandardErrorPage big />}>
                                     {children}
                                 </ErrorBoundary>
