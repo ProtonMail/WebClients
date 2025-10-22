@@ -6,27 +6,27 @@ import { DetailsFooter } from './DetailsFooter';
 import { DetailsHeader } from './DetailsHeader';
 import { DetailsSlotPicking } from './DetailsSlotPicking';
 
-export const BookingDetails = ({ match }: RouteComponentProps<{ bookingId: string }>) => {
-    const { bookingId } = match.params;
+export const BookingDetails = ({ match }: RouteComponentProps<{ bookingID: string }>) => {
+    const { bookingID } = match.params;
 
     const [booking, setBooking] = useState<PublicBooking | null>(null);
 
     useEffect(() => {
-        if (!bookingId) {
+        if (!bookingID) {
             return;
         }
 
         setBooking({
-            id: bookingId,
+            id: bookingID,
             title: '[Title] Meeting with Eric Norbert',
             description: 'Description e.g. Meeting goal is to decide how to move forward with the controlling tool',
             duration: 60,
             location: 'Zoom',
             timezone: 'GMT+1 • Europe/Zurich',
         });
-    }, [bookingId]);
+    }, [bookingID]);
 
-    if (!bookingId) {
+    if (!bookingID) {
         throw new Error('Booking not found');
     }
 
