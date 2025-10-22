@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Route, useHistory, useLocation } from 'react-router-dom';
 
 import ProtonApp from '@proton/components/containers/app/ProtonApp';
+import { isMac } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { isWasmSupported } from '@proton/shared/lib/helpers/isWasmSupported';
 import { isWebRtcSupported } from '@proton/shared/lib/helpers/isWebRtcSupported';
@@ -87,6 +88,12 @@ export const App = () => {
         <ProtonApp config={config}>
             <style id="meet-dark-theme">{meetTheme.toString()}</style>
             <div className={clsx('w-full h-full', isElectronApp ? 'pt-4' : '')}>
+                {isElectronApp && isMac() ? (
+                    <div
+                        className="draggable-mac-electron-header absolute top-0 left-0 w-full h-custom"
+                        style={{ '--h-custom': '2rem' }}
+                    />
+                ) : null}
                 {isGuest ? (
                     <GuestContainer>
                         <RedirectWrapper>
