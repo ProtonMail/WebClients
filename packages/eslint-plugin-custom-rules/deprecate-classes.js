@@ -3,251 +3,251 @@ import { createClassNameRule } from './lib/deprecate-classname-utils.js';
 
 const deprecatedClasses = [
     {
-        pattern: /\bmauto\b/,
+        pattern: /^mauto$/,
         getMessage: (match) => `"${match}" is deprecated. Use m-auto instead`,
     },
     {
-        pattern: /\bcenter\b/,
+        pattern: /^center$/,
         getMessage: (match) => `"${match}" is deprecated. Use mx-auto instead`,
     },
     {
-        pattern: /\bmxauto\b/,
+        pattern: /^mxauto$/,
         getMessage: (match) => `"${match}" is deprecated. Use mx-auto instead`,
     },
     {
-        pattern: /\bmyauto\b/,
+        pattern: /^myauto$/,
         getMessage: (match) => `"${match}" is deprecated. Use my-auto instead`,
     },
     {
-        pattern: /\bmtauto\b/,
+        pattern: /^mtauto$/,
         getMessage: (match) => `"${match}" is deprecated. Use mt-auto instead`,
     },
     {
-        pattern: /\bmrauto\b/,
+        pattern: /^mrauto$/,
         getMessage: (match) => `"${match}" is deprecated. Use mr-auto instead`,
     },
     {
-        pattern: /\bmbauto\b/,
+        pattern: /^mbauto$/,
         getMessage: (match) => `"${match}" is deprecated. Use mb-auto instead`,
     },
     {
-        pattern: /\bmlauto\b/,
+        pattern: /^mlauto$/,
         getMessage: (match) => `"${match}" is deprecated. Use ml-auto instead`,
     },
     {
-        pattern: /\bwauto\b/,
+        pattern: /^wauto$/,
         getMessage: (match) => `"${match}" is deprecated. Use w-auto instead`,
     },
     {
-        pattern: /\bhauto\b/,
+        pattern: /^hauto$/,
         getMessage: (match) => `"${match}" is deprecated. Use h-auto instead`,
     },
     {
-        pattern: /\bh0\b/,
+        pattern: /^h0$/,
         getMessage: (match) => `"${match}" is deprecated. Use h-0 instead`,
     },
     {
-        pattern: /\bh100\b/,
+        pattern: /^h100$/,
         getMessage: (match) => `"${match}" is deprecated. Use h-full instead`,
     },
     {
-        pattern: /\bopacity-on-hover\b/,
+        pattern: /^opacity-on-hover$/,
         getMessage: (match) => `"${match}" is deprecated. Use group-hover:opacity-100 instead`,
     },
     {
-        pattern: /\bopacity-on-hover-container\b/,
+        pattern: /^opacity-on-hover-container$/,
         getMessage: (match) => `"${match}" is deprecated. Use group-hover:opacity-100 instead`,
     },
     {
-        pattern: /\btext-underline-on-hover\b/,
+        pattern: /^text-underline-on-hover$/,
         getMessage: (match) => `"${match}" is deprecated. Use hover:text-underline instead`,
     },
     {
-        pattern: /\bopacity-on-focus\b/,
+        pattern: /^opacity-on-focus$/,
         getMessage: (match) => `"${match}" is deprecated. Use opacity-0 focus:opacity-100 instead`,
     },
     {
-        pattern: /\bhide-on-hover\b/,
+        pattern: /^hide-on-hover$/,
         getMessage: (match) => `"${match}" is deprecated. Use group-hover:hidden instead`,
     },
     {
-        pattern: /\bhide-on-hover-container\b/,
+        pattern: /^hide-on-hover-container$/,
         getMessage: (match) => `"${match}" is deprecated. Use group-hover:hidden instead`,
     },
     {
-        pattern: /\bon-hover-opacity-100\b/,
+        pattern: /^on-hover-opacity-100$/,
         getMessage: (match) => `"${match}" is deprecated.`,
     },
     {
-        pattern: /\bflex-justify-start\b/,
+        pattern: /^flex-justify-start$/,
         getMessage: (match) => `"${match}" is deprecated. Use flex-start instead`,
     },
     {
-        pattern: /\bflex-justify-center\b/,
+        pattern: /^flex-justify-center$/,
         getMessage: (match) => `"${match}" is deprecated. Use flex-center instead`,
     },
     {
-        pattern: /\bflex-justify-end\b/,
+        pattern: /^flex-justify-end$/,
         getMessage: (match) => `"${match}" is deprecated. Use flex-end instead`,
     },
     {
-        pattern: /\bflex-justify-space-between\b/,
+        pattern: /^flex-justify-space-between$/,
         getMessage: (match) => `"${match}" is deprecated. Use flex-space-between instead`,
     },
     {
-        pattern: /\bflex-justify-space-around\b/,
+        pattern: /^flex-justify-space-around$/,
         getMessage: (match) => `"${match}" is deprecated. Use flex-space-around instead`,
     },
     {
-        pattern: /\bflex-justify-space-evenly\b/,
+        pattern: /^flex-justify-space-evenly$/,
         getMessage: (match) => `"${match}" is deprecated. Use flex-space-evenly instead`,
     },
     {
-        pattern: /\bflex-align-items-start\b/,
+        pattern: /^flex-align-items-start$/,
         getMessage: (match) => `"${match}" is deprecated. Use flex-start instead`,
     },
     {
-        pattern: /\bflex-align-items-center\b/,
+        pattern: /^flex-align-items-center$/,
         getMessage: (match) => `"${match}" is deprecated. Use flex-center instead`,
     },
     {
-        pattern: /\bflex-align-items-end\b/,
+        pattern: /^flex-align-items-end$/,
         getMessage: (match) => `"${match}" is deprecated. Use flex-end instead`,
     },
     {
-        pattern: /\bflex-align-items-baseline\b/,
+        pattern: /^flex-align-items-baseline$/,
         getMessage: (match) => `"${match}" is deprecated. Use flex-baseline instead`,
     },
     {
-        pattern: /\bflex-align-items-stretch\b/,
+        pattern: /^flex-align-items-stretch$/,
         getMessage: (match) => `"${match}" is deprecated. Use flex-stretch instead`,
     },
     {
-        pattern: /\bflex-align-items-inherit\b/,
+        pattern: /^flex-align-items-inherit$/,
         getMessage: (match) => `"${match}" is deprecated. Use flex-inherit instead`,
     },
     {
-        pattern: /\bflex-align-self-start\b/,
+        pattern: /^flex-align-self-start$/,
         getMessage: (match) => `"${match}" is deprecated. Use flex-start instead`,
     },
     {
-        pattern: /\bflex-align-self-center\b/,
+        pattern: /^flex-align-self-center$/,
         getMessage: (match) => `"${match}" is deprecated. Use flex-center instead`,
     },
     {
-        pattern: /\bflex-align-self-end\b/,
+        pattern: /^flex-align-self-end$/,
         getMessage: (match) => `"${match}" is deprecated. Use flex-end instead`,
     },
     {
-        pattern: /\bflex-align-self-baseline\b/,
+        pattern: /^flex-align-self-baseline$/,
         getMessage: (match) => `"${match}" is deprecated. Use flex-baseline instead`,
     },
     {
-        pattern: /\bflex-align-self-stretch\b/,
+        pattern: /^flex-align-self-stretch$/,
         getMessage: (match) => `"${match}" is deprecated. Use flex-stretch instead`,
     },
     {
-        pattern: /\bflex-align-self-inherit\b/,
+        pattern: /^flex-align-self-inherit$/,
         getMessage: (match) => `"${match}" is deprecated. Use flex-inherit instead`,
     },
     {
-        pattern: /\bflex-item-fluid-auto\b/,
+        pattern: /^flex-item-fluid-auto$/,
         getMessage: (match) => `"${match}" is deprecated. Use flex-auto instead`,
     },
     {
-        pattern: /\bflex-item-fluid\b/,
+        pattern: /^flex-item-fluid$/,
         getMessage: (match) => `"${match}" is deprecated. Use flex-1 instead`,
     },
     {
-        pattern: /\bflex-item-noflex\b/,
+        pattern: /^flex-item-noflex$/,
         getMessage: (match) => `"${match}" is deprecated. Use flex-none instead`,
     },
     {
-        pattern: /\bflex-item-grow\b/,
+        pattern: /^flex-item-grow$/,
         getMessage: (match) => `"${match}" is deprecated. Use grow instead`,
     },
     {
-        pattern: /\bflex-item-grow-2\b/,
+        pattern: /^flex-item-grow-2$/,
         getMessage: (match) => `"${match}" is deprecated. Use grow-2 instead`,
     },
     {
-        pattern: /\bflex-item-nogrow\b/,
+        pattern: /^flex-item-nogrow$/,
         getMessage: (match) => `"${match}" is deprecated. Use grow-0 instead`,
     },
     {
-        pattern: /\bflex-item-grow-custom\b/,
+        pattern: /^flex-item-grow-custom$/,
         getMessage: (match) => `"${match}" is deprecated. Use grow-custom instead`,
     },
     {
-        pattern: /\bflex-item-shrink\b/,
+        pattern: /^flex-item-shrink$/,
         getMessage: (match) => `"${match}" is deprecated. Use shrink instead`,
     },
     {
-        pattern: /\bflex-item-noshrink\b/,
+        pattern: /^flex-item-noshrink$/,
         getMessage: (match) => `"${match}" is deprecated. Use shrink-0 instead`,
     },
     {
-        pattern: /\bflex-flex-children\b/,
+        pattern: /^flex-flex-children$/,
         getMessage: (match) => `"${match}" is deprecated. Use flex and *:flex instead`,
     },
     {
-        pattern: /\bflex-items-center\b/,
+        pattern: /^flex-items-center$/,
         getMessage: (match) => `"${match}" is deprecated. Use *:items-center instead`,
     },
     {
-        pattern: /\binline-flex-vcenter\b/,
+        pattern: /^inline-flex-vcenter$/,
         getMessage: (match) => `"${match}" is deprecated. Use inline-flex and *:self-center instead`,
     },
     {
-        pattern: /\bflex-item-centered-vert\b/,
+        pattern: /^flex-item-centered-vert$/,
         getMessage: (match) => `"${match}" is deprecated. Use self-center and my-auto instead`,
     },
     {
-        pattern: /\bflex-no-min-children\b/,
+        pattern: /^flex-no-min-children$/,
         getMessage: (match) => `"${match}" is deprecated. Use flex and *:min-size-auto instead`,
     },
     {
-        pattern: /\bflex-no-wrap\b/,
+        pattern: /^flex-no-wrap$/,
         getMessage: (match) => `"${match}" is deprecated. Use flex-nowrap instead`,
     },
     {
-        pattern: /\bhidden-empty\b/,
+        pattern: /^hidden-empty$/,
         getMessage: (match) => `"${match}" is deprecated. Use empty:hidden instead`,
     },
     {
-        pattern: /\bscroll-if-needed\b/,
+        pattern: /^scroll-if-needed$/,
         getMessage: (match) => `"${match}" is deprecated. Use overflow-auto instead`,
     },
     {
-        pattern: /\bscroll-horizontal-if-needed\b/,
+        pattern: /^scroll-horizontal-if-needed$/,
         getMessage: (match) => `"${match}" is deprecated. Use overflow-x-auto instead`,
     },
     {
-        pattern: /\bno-scroll\b/,
+        pattern: /^no-scroll$/,
         getMessage: (match) => `"${match}" is deprecated. Use overflow-hidden instead`,
     },
     {
-        pattern: /\bratio-container-square\b/,
+        pattern: /^ratio-container-square$/,
         getMessage: (match) => `"${match}" is deprecated. Use ratio-square instead`,
     },
     {
-        pattern: /\bratio-container-16-9\b/,
+        pattern: /^ratio-container-16-9$/,
         getMessage: (match) => `"${match}" is deprecated. Use ratio-16/9 instead`,
     },
     {
-        pattern: /\bratio-container-5-1\b/,
+        pattern: /^ratio-container-5-1$/,
         getMessage: (match) => `"${match}" is deprecated. Use ratio-5/1 instead`,
     },
     {
-        pattern: /\bno-pointer-events\b/,
+        pattern: /^no-pointer-events$/,
         getMessage: (match) => `"${match}" is deprecated. Use pointer-events-none instead`,
     },
     {
-        pattern: /\bincrease-click-surface\b/,
+        pattern: /^increase-click-surface$/,
         getMessage: (match) => `"${match}" is deprecated. Use expand-click-area instead`,
     },
     {
-        pattern: /\bno-border\b/,
+        pattern: /^no-border$/,
         getMessage: (match) => `"${match}" is deprecated. Use border-none instead`,
     },
 ];
