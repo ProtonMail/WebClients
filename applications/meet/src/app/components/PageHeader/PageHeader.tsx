@@ -3,14 +3,9 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import MeetLogo from '@proton/components/components/logo/MeetLogo';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
 import AppsDropdown, { UnAuthenticatedAppsDropdown } from '@proton/components/containers/app/AppsDropdown';
 import UserDropdown from '@proton/components/containers/heading/UserDropdown';
-import AuthenticatedBugModal from '@proton/components/containers/support/AuthenticatedBugModal';
-import BugModal from '@proton/components/containers/support/BugModal';
-import { IcBug } from '@proton/icons';
 import { isUrlPasswordValid } from '@proton/meet/utils/isUrlPasswordValid';
 import { ForkType, requestFork } from '@proton/shared/lib/authentication/fork';
 import { APPS } from '@proton/shared/lib/constants';
@@ -27,7 +22,6 @@ interface PageHeaderProps {
 
 export const PageHeader = ({ isScheduleInAdvanceEnabled, guestMode, showAppSwitcher = true }: PageHeaderProps) => {
     const history = useHistory();
-    const [bugReportModal, setBugReportModal, renderBugReportModal] = useModalState();
 
     const handleSignIn = (returnUrl: string) =>
         requestFork({
@@ -59,19 +53,6 @@ export const PageHeader = ({ isScheduleInAdvanceEnabled, guestMode, showAppSwitc
                     )}
                 </>
             )}
-
-            <DropdownButton
-                as="button"
-                className="apps-dropdown-button shrink-0"
-                onClick={() => setBugReportModal(true)}
-                hasCaret={false}
-            >
-                <IcBug
-                    size={5}
-                    className="apps-dropdown-button-icon shrink-0 no-print"
-                    alt={c('Alt').t`Report a problem`}
-                />
-            </DropdownButton>
         </div>
     );
 
@@ -120,15 +101,6 @@ export const PageHeader = ({ isScheduleInAdvanceEnabled, guestMode, showAppSwitc
                     <UserDropdown app={APPS.PROTONMEET} />
                 )}
             </div>
-            {renderBugReportModal && (
-                <>
-                    {guestMode ? (
-                        <BugModal app={APPS.PROTONMEET} {...bugReportModal} />
-                    ) : (
-                        <AuthenticatedBugModal app={APPS.PROTONMEET} {...bugReportModal} />
-                    )}
-                </>
-            )}
         </div>
     );
 };
