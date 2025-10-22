@@ -13,7 +13,7 @@ import { CYCLE, PLANS, PLAN_NAMES, getPreferredCurrency } from '@proton/payments
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
-import useGetFlag from '@proton/unleash/useGetFlag';
+import { useGetFlag } from '@proton/unleash/useGetFlag';
 import noop from '@proton/utils/noop';
 
 import { getUpsellConfig } from '../../config/getUpsellConfig';
@@ -121,7 +121,6 @@ const useUpsellModalConfig = ({ upsellRef, preventInAppPayment, onSubscribed, st
                     coupon,
                     configOverride,
                     cycle,
-                    getFlag,
                     onSubscribed,
                     openSubscriptionModal,
                     planIDs,
@@ -158,7 +157,6 @@ const useUpsellModalConfig = ({ upsellRef, preventInAppPayment, onSubscribed, st
                 const { upgradePath, onUpgrade } = getUpsellConfig({
                     appName: APP_NAME,
                     cycle: defaultCycle,
-                    getFlag,
                     onSubscribed,
                     openSubscriptionModal,
                     planIDs: defaultPlanIDs,
