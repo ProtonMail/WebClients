@@ -50,11 +50,10 @@ export const createDropdownFocusController = ({
         state.willFocusTimer = setTimeout(onFocus, 500);
     };
 
-    /** Only used when dropdown UI has input elements that may lose focus
-     * due to page code. This can happen if blur/focus management is too
-     * strict (eg: ticketmaster.com) where the dropdown can never get a
-     * full focus. In this case, blur the anchor field and force the active
-     * element to blur to ensure we're in an "unfocused state". */
+    /** Handles focus recovery when page code interferes with dropdown focus.
+     * Sites with strict blur/focus management (eg: ticketmaster.com) can
+     * prevent dropdown from maintaining focus. Solution: blur anchor field,
+     * force activeElement to blur, then refocus dropdown (see PinUnlock.tsx). */
     const onFocusRequest = () => {
         state.willFocus = true;
 

@@ -159,11 +159,12 @@ export const createIFrameAppController = (endpoint: IFrameEndpoint, onMessage: (
             return () => handlers.delete(onMessageHandler);
         },
 
-        close: (payload = {}) =>
+        close: (payload = {}) => {
             IFrameBridge.forwardMessage({
                 type: InlinePortMessageType.IFRAME_CLOSE,
                 payload,
-            }),
+            });
+        },
 
         resize: (height) => {
             if (height > 0) {

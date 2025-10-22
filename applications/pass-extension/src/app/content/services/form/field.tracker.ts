@@ -77,10 +77,10 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
             if (state.focusRequest) cancelAnimationFrame(state.focusRequest);
 
             const { focused, attachedField, visible } = await ctx.service.inline.dropdown.getState();
-            const attached = visible && focused && field.matches(attachedField);
-            const blurred = !(document.hasFocus() && isActiveElement(field.element));
+            const dropdownFocused = visible && focused && field.matches(attachedField);
+            const fieldBlurred = !(document.hasFocus() && isActiveElement(field.element));
 
-            if (!attached && blurred) {
+            if (!dropdownFocused && fieldBlurred) {
                 field.icon?.detach();
                 ctx.service.inline.dropdown.close({ type: 'field', field });
             }
