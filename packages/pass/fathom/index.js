@@ -18,12 +18,22 @@ const kSocialSelector = `[class*=social], [aria-label*=with]`;
 
 const kEditorElements = ['body', 'div', 'section', 'main'];
 
-const kEditorPatterns = ['[class*="editor" i]', '[id*="editor" i]', '[class*="composer" i]', '[id*="composer" i]'];
+const kEditorPatterns = [
+    '[class*="editor"]',
+    '[class*="Editor"]',
+    '[class*="EDITOR"]',
+    '[id*="editor"]',
+    '[id*="Editor"]',
+    '[id*="EDITOR"]',
+    '[class*="composer" i]',
+    '[id*="composer" i]',
+    '[class*="wysiwyg" i]',
+    '[id*="wysiwyg" i]',
+    '[class*="tinymce" i]',
+    '[id*="tinymce" i]',
+];
 
-const kEditorSelector = [
-    '[contenteditable="true"]',
-    ...kEditorElements.flatMap((el) => kEditorPatterns.map((pattern) => `${el}${pattern}`)),
-].join(', ');
+const kEditorSelector = `[contenteditable="true"], :is(${kEditorElements.join(',')}):is(${kEditorPatterns.join(',')})`;
 
 const kDomGroupSelector = `[role="dialog"], [role="tabpanel"], [role="group"], [role="form"], [id*="modal"], [class*="modal"], header, section, nav, footer, aside`;
 
@@ -1088,31 +1098,35 @@ const fType = (type) => (fnode) => fnode.hasType(type);
 
 const fCC = fType(FieldType.CREDIT_CARD);
 
-const fInputType = (types) => (fnode) => types.includes(fnode.element.type);
+const fIdentity = fType(FieldType.IDENTITY);
+
+const fInput = (types) => (fnode) => types.includes(fnode.element.type);
 
 const fMatch = (selector) => (fnode) => fnode.element.matches(selector);
 
-const fInputMode = (inputMode) => (fnode) => fnode.element.inputMode === inputMode;
+const fMode = (mode) => (fnode) => fnode.element.inputMode === mode;
 
 const fActive = (fnode) => isActiveFieldFNode(fnode);
 
 const fList = (fnode) =>
     fnode.element.getAttribute('aria-autocomplete') === 'list' || fnode.element.role === 'combobox';
 
-const maybeEmail = and(not(fList), or(fInputType(['email', 'text']), fInputMode('email')), fActive, not(fCC));
+const fNotPreClassified = not(or(fCC, fIdentity));
 
-const maybePassword = and(fMatch(kPasswordSelector), fActive, not(fCC));
+const maybeEmail = and(not(fList), or(fInput(['email', 'text']), fMode('email')), fActive, fNotPreClassified);
 
-const maybeOTP = and(fMatch(otpSelector), fActive, not(fList), not(fCC));
+const maybePassword = and(not(fList), fMatch(kPasswordSelector), fActive, fNotPreClassified);
+
+const maybeOTP = and(fMatch(otpSelector), fActive, not(fList), fNotPreClassified);
 
 const maybeUsername = and(
     not(fList),
-    or(and(not(fInputMode('email')), fInputType(['text', 'tel'])), fMatch(kUsernameSelector)),
+    or(and(not(fMode('email')), fInput(['text', 'tel'])), fMatch(kUsernameSelector)),
     fActive,
-    not(fCC)
+    fNotPreClassified
 );
 
-const maybeHiddenUsername = and(not(fList), fInputType(['email', 'text', 'hidden']), not(fActive), not(fCC));
+const maybeHiddenUsername = and(not(fList), fInput(['email', 'text', 'hidden']), not(fActive), fNotPreClassified);
 
 const isUsernameCandidate = (el) => !el.matches('input[type="email"]') && any(matchUsername)(getAllFieldHaystacks(el));
 
@@ -2829,10 +2843,12 @@ const getExpirationFormatFromAttributes = (input) => {
 
 const getExpirationFormat = (field, allowFallback = true) => {
     if (field instanceof HTMLInputElement) {
+        const validMaxLength = field.maxLength > 2;
+        const validPattern = field.pattern && (field.maxLength === -1 || validMaxLength);
         return (
             getExpirationFormatFromAttributes(field) ||
-            (field.pattern && getExpirationFormatFromPattern(field.pattern)) ||
-            (field.maxLength > 0 && getExpirationFormatFromMaxLength(field.maxLength)) ||
+            (validPattern && getExpirationFormatFromPattern(field.pattern)) ||
+            (validMaxLength && getExpirationFormatFromMaxLength(field.maxLength)) ||
             (allowFallback ? CC_EXP_DEFAULT_FORMAT : undefined)
         );
     }
@@ -3219,6 +3235,8 @@ export {
     clearVisibilityCache,
     createInputIterator,
     fCC,
+    fIdentity,
+    fType,
     flagAsHidden,
     flagAsIgnored,
     flagAsProcessed,

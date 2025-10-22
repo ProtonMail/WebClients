@@ -1,6 +1,6 @@
 import { Fnode, rule, ruleset } from './fathom.js';
 import * as fathomWeb from './fathom.js';
-import { CCFieldType, IdentityFieldType } from './labels.js';
+import { CCFieldType, FieldType, IdentityFieldType } from './labels.js';
 
 export { fathomWeb as fathom };
 
@@ -93,7 +93,9 @@ declare const maybeCCField: (fnode: Fnode) => boolean;
 declare const getTypeScore: (node: Fnode | null, type: string) => any;
 
 declare const splitFieldsByVisibility: (els: HTMLElement[]) => [HTMLElement[], HTMLElement[]];
+declare const fType: (type: FieldType) => (fnode: Fnode) => boolean;
 declare const fCC: (fnode: Fnode) => boolean;
+declare const fIdentity: (fnode: Fnode) => boolean;
 declare const maybeEmail: (value: Fnode) => boolean;
 declare const maybePassword: (value: Fnode) => boolean;
 declare const maybeOTP: (value: Fnode) => boolean;
@@ -228,6 +230,8 @@ export {
     clearVisibilityCache,
     createInputIterator,
     fCC,
+    fIdentity,
+    fType,
     flagAsHidden,
     flagAsIgnored,
     flagAsProcessed,
