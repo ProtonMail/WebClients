@@ -1,37 +1,30 @@
-import Price from '@proton/components/components/price/Price';
+import clsx from '@proton/utils/clsx';
 
-import { getDiscount } from '../../helpers/dealPrices';
-import { getRenewDescription } from '../../helpers/offerCopies';
 import type { OfferProps } from '../../interface';
 
-const BlackFridayFooter = ({ offer, currency }: OfferProps) => {
+const BlackFridayFooter = ({ offer }: OfferProps) => {
+    const numberDeals = offer.deals.length;
     return (
         <div className="mb-4">
             {offer.deals.map((deal) => {
-                const { prices, cycle, dealName, planIDs } = deal;
-                const { withoutCoupon = 0, withoutCouponMonthly = 0 } = prices || {};
-                const discount = getDiscount(deal);
-                const discountedAmount = (
-                    <Price key="discounted-amount" currency={currency} isDisplayedInSentence>
-                        {withoutCoupon}
-                    </Price>
-                );
-                const regularAmount = (
-                    <Price key="regular-amount" currency={currency} isDisplayedInSentence>
-                        {withoutCouponMonthly * cycle}
-                    </Price>
-                );
-                const description = getRenewDescription(cycle, discountedAmount, regularAmount, discount, planIDs);
+                const { cycle, dealName, star, renew: renewDescription } = deal;
 
-                if (!description) {
+                if (!renewDescription) {
                     return null;
                 }
 
                 const key = `${dealName}-${cycle}`;
 
                 return (
-                    <p key={key} className="text-sm text-center color-weak">
-                        {description}
+                    <p
+                        key={key}
+                        className={clsx(
+                            'text-sm text-center offer-renew-footer text-wrap-balance',
+                            numberDeals > 1 && 'offer-renew-footer--multiple'
+                        )}
+                    >
+                        {numberDeals > 1 && star && <sup className="mr-2">{star}</sup>}
+                        {renewDescription}
                     </p>
                 );
             })}

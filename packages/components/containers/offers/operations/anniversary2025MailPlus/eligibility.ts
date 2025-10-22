@@ -40,7 +40,7 @@ export const getIsEligible = ({
     if (user.isPaid) {
         const offerSubscription = new OfferSubscription(subscription);
         const canModifySubscription = canModify(subscription);
-        const hasMailMonthly = offerSubscription.hasMail() && offerSubscription.isMonthly();
+        const hasMailMonthly = offerSubscription.hasMail() && offerSubscription.hasMonthlyCycle();
 
         return (
             hasValidApp &&
