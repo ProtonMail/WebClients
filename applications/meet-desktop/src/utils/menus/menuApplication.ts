@@ -1,6 +1,5 @@
 import { app, Menu, shell, WebContentsView, type MenuItemConstructorOptions } from "electron";
 import { c } from "ttag";
-import { uninstallProton } from "../../macos/uninstall";
 import { clearStorage, isMac } from "../helpers";
 import { getMainWindow, resetZoom, updateZoom } from "../view/viewManagement";
 import { isProdEnv } from "../isProdEnv";
@@ -155,11 +154,6 @@ export const setApplicationMenu = () => {
                             openAtLogin: !app.getLoginItemSettings().openAtLogin,
                         });
                     },
-                },
-                {
-                    label: c("App menu").t`Uninstall ${MEET_APP_NAME}`,
-                    type: "normal",
-                    click: () => uninstallProton(),
                 },
                 { type: "separator" },
                 { role: "quit", label: c("App menu").t`Quit ${MEET_APP_NAME}` },
