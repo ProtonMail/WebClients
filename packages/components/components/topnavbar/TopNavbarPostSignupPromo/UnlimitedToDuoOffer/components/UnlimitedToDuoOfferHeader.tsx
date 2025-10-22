@@ -1,12 +1,13 @@
-import { c } from 'ttag';
+import type { UnlimitedToDuoOfferConfig } from '../helpers/interface';
 
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+interface Props {
+    config: UnlimitedToDuoOfferConfig;
+}
 
-export const UnlimitedToDuoOfferHeader = () => {
+export const UnlimitedToDuoOfferHeader = ({ config }: Props) => {
     return (
         <header>
-            <h2 className="text-center text-xl text-bold">{c('Title')
-                .t`Double your storage with ${BRAND_NAME} Duo`}</h2>
+            <h2 className="text-center text-xl text-bold">{config.title}</h2>
         </header>
     );
 };
