@@ -1670,6 +1670,12 @@
       ],
       "Try categories": [
         "Prueba las categorías"
+      ],
+      "Explore other plans": [
+        "Explorar otros planes"
+      ],
+      "Subscribe now": [
+        "Suscríbete ahora"
       ]
     },
     "action": {
@@ -5523,6 +5529,12 @@
     "Feature": {
       "Unlimited hide-my-email aliases": [
         "Alias hide-my-email ilimitados"
+      ],
+      "Encrypted cloud storage for files, photos and documents": [
+        "Almacenamiento en la nube cifrado de archivos, fotos y documentos"
+      ],
+      "More premium features": [
+        "Más características prémium"
       ]
     },
     "fido2: Error": {
@@ -8837,6 +8849,15 @@
       ],
       "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
         "Con las nuevas categorías de correo electrónico, solo los mensajes importantes llegan a tu bandeja de entrada principal. Todo lo demás se organiza en categorías."
+      ],
+      "Choose a plan that works best for you.": [
+        "Elige el plan que mejor se adapte a ti."
+      ],
+      "Continue": [
+        "Continuar"
+      ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "Mejora para mantener tus beneficios de ${ planTitle }."
       ]
     },
     "info": {
@@ -10334,6 +10355,9 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Tu periodo de prueba gratuito ha terminado. El acceso a tu cuenta será desactivado pronto. ${ action }"
+      ],
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "Tu periodo de prueba gratuita ha terminado. ${ nonAutoRenewalAction }"
       ]
     },
     "Message display when a new app version is available": {
@@ -11593,6 +11617,12 @@
       ],
       "Your subscription renews soon": [
         "Tu suscripción se renueva pronto."
+      ],
+      "Don't show this again": [
+        "No mostrar esto de nuevo"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Obtén ${ BRAND_NAME } Duo"
       ]
     },
     "Offer fearue": {
@@ -12694,6 +12724,34 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Gana hasta **${ maxRewardAmount }** en crédito."
+      ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Si cancelas antes de esta fecha,** pasarás a un **plan inferior** a ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } cuando finalice la prueba."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Si no te suscribes,** pasarás a un **plan inferior** a ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Si no cancelas,** comenzará tu plan completo y recibirás **${ referrerRewardAmount }** en créditos."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Si te suscribes antes de esta fecha,** recibirás **${ referrerRewardAmount }** en créditos."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Disfruta de **${ planTitle }** gratis hasta el **${ textDate }**."
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Última oportunidad para explorar todas las potentes funciones que **${ planTitle }** tiene para ofrecerte."
+      ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "Una vez que tu suscripción completa comience, todavía puedes cancelar en un plazo de 30 días y obtener un reembolso proporcional."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Te queda **${ daysRemaining } día** para explorar todas las ventajosas funciones que **${ planTitle }** tiene para ofrecerte.",
+        "Te quedan **${ daysRemaining } días** para explorar todas las ventajosas funciones que **${ planTitle }** tiene para ofrecerte."
+      ],
+      "your subscription": [
+        "tu suscripción"
       ]
     },
     "Remaining days before the message expire": {
@@ -15558,6 +15616,18 @@
       ],
       "Fewer distractions, more focus": [
         "Menos distracciones, más concentración"
+      ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Duplica tu almacenamiento con ${ BRAND_NAME } Duo"
+      ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Consigue **${ referralInfo.uiData.refereeRewardAmount }** en créditos con ${ planTitle }"
+      ],
+      "How your free trial works": [
+        "Cómo funciona tu prueba gratuita"
+      ],
+      "Upgrade to keep your premium benefits.": [
+        "Mejora para mantener tus beneficios prémium."
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15860,6 +15930,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Tu periodo de prueba gratuito acaba el ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Tu prueba terminará el ${ textDate }. No se te cobrará si cancelas antes del ${ textDate }. ${ action }"
       ]
     },
     "WeekDay": {
@@ -16129,6 +16202,23 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "Duo offer": {
+      "/month": [
+        "/mes"
+      ],
+      "1 TB of storage to share": [
+        "1 TB de almacenamiento para compartir"
+      ],
+      "2 user accounts": [
+        "2 cuentas de usuario"
+      ],
+      "All premium features from your current plan": [
+        "Todas las características prémium de tu plan actual"
+      ],
+      "Only": [
+        "Solamente"
       ]
     }
   }

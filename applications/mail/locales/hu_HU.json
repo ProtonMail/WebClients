@@ -1415,7 +1415,8 @@
         "Megbízható"
       ],
       "Trust key": [
-        "Megbízható kulcs"
+        "Kulcs megjelölése megbízhatóként",
+        "Kulcsok megjelölése megbízhatóként"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -1597,6 +1598,9 @@
       ],
       "Zoom out": [
         "Távolítás"
+      ],
+      "Explore other plans": [
+        "További csomagok megismerése"
       ]
     },
     "action": {
@@ -13503,6 +13507,26 @@
       ],
       "You have successfully unsubscribed": [
         "Sikeresen leiratkozott"
+      ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } beszélgetés eltávolítva a csillaggal jelöltek közül.",
+        "${ elementsCount } beszélgetés eltávolítva a csillaggal jelöltek közül."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } üzenet eltávolítva a csillaggal jelöltek közül.",
+        "${ elementsCount } üzenet eltávolítva a csillaggal jelöltek közül."
+      ],
+      "Conversation updated": [
+        "Beszélgetés frissítve",
+        "Beszélgetések frissítve"
+      ],
+      "Message updated": [
+        "Üzenet frissítve",
+        "Üzenetek frissítve"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "${ elementsCount } üzenet átkategorizálva.",
+        "${ elementsCount } üzenet átkategorizálva."
       ]
     },
     "Success notification": {
@@ -14663,6 +14687,14 @@
       ],
       "Your subscriptions in one place": [
         "Az előfizetései egy helyen"
+      ],
+      "Label message as": [
+        "Üzenet megjelölése címkével:",
+        "Üzenetek megjelölése címkével:"
+      ],
+      "Move message to": [
+        "Üzenet áthelyezése ide:",
+        "Üzenetek áthelyezése ide:"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15229,6 +15261,16 @@
       ],
       "Passcode:": [
         "Belépési kód:"
+      ]
+    },
+    "Referral": {
+      "Friend joined": [
+        "Ismerős csatlakozott",
+        "Ismerősök csatlakoztak"
+      ],
+      "Friend subscribed": [
+        "Ismerős előfizetett",
+        "Ismerősök előfizettek"
       ]
     }
   }

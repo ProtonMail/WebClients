@@ -1682,6 +1682,12 @@
       ],
       "Try categories": [
         "კატეგორიების ცდა"
+      ],
+      "Explore other plans": [
+        "სხვა სატარიფო გეგმების დათვალიერება"
+      ],
+      "Subscribe now": [
+        "გამოიწერეთ ახლავე"
       ]
     },
     "action": {
@@ -4331,6 +4337,21 @@
       ],
       "This event was updated.": [
         "ეს მოვლენა განახლდა."
+      ],
+      "DESCRIPTION:": [
+        "აღწერა:"
+      ],
+      "LOCATION:": [
+        "მდებარეობა:"
+      ],
+      "TIME:": [
+        "დრო:"
+      ],
+      "TITLE:": [
+        "სათაური:"
+      ],
+      "You are invited to": [
+        "თქვენ მიგიწვიეს"
       ]
     },
     "Email body for invitation (date part)": {
@@ -8665,6 +8686,12 @@
       ],
       "Includes updates from social networks and media-sharing sites.": [
         "შეიცავს ატვირთვებს სოციალური ქსელებიდან და მედიის გაზიარების საიტებიდან."
+      ],
+      "Includes invoices, purchase orders, and payment confirmations.": [
+        "შეიცავს ინვოისებს, შეძენის შეკვეთებს და გადახდის დადასტურებებს."
+      ],
+      "Includes marketing emails and non-urgent app notifications.": [
+        "შეიცავს მარკეტინგის ელფოსტებს და არასასწრაფო აპის გაფრთხილებებს."
       ]
     },
     "info": {
@@ -11398,6 +11425,9 @@
       ],
       "Your subscription renews soon": [
         "თქვენი გამოწერა მალე განახლდება"
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "ასწიეთ თქვენი პროდუქტიულობა ${ pricingTitle }-ისთვის ${ planName }-ით"
       ]
     },
     "Offer fearue": {
@@ -11653,6 +11683,12 @@
       ],
       "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
         "ისიამოვნეთ უფასო ბიზნესის უსაფრთხოების ფუნქციებით თარიღამდე ${ trialEndsOnFormatted }."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "შეგიძლიათ გამოიყენოთ ${ planTitle } საცდელი პერიოდის ამოწურვამდე და საფასური არ დაგერიცხებათ."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "${ planTitle }-ის გამოყენებას შეძლებთ საცდელი პერიოდის დასრულებამდე, უფასოდ."
       ]
     },
     "Online accounts": {
@@ -11928,6 +11964,9 @@
       ],
       "You already have a subscription to this plan.": [
         "თქვენ უკვე გაქვთ ეს სატარიფო გეგმა."
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "ეს გადახდის მეთოდი თქვენი ნაგულისხმევი იქნება ყველა მომავალი განახლებისთვის."
       ]
     },
     "Payments.Error": {
@@ -12373,6 +12412,12 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "შეგიძლიათ, გქონდეთ **${ maxRewardAmount }**-მდე კრედიტი."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "ისიამოვნეთ **${ planTitle }**-ით **${ textDate }**-მდე"
+      ],
+      "your subscription": [
+        "თქვენი გამოწერა"
       ]
     },
     "Remaining days before the message expire": {
@@ -15235,6 +15280,9 @@
       ],
       "Introducing email categories": [
         "წარმოგიდგენთ ელფოსტის კატეგორიებს"
+      ],
+      "How your free trial works": [
+        "როგორ მუშაობს საცდელი ვერსია"
       ]
     },
     "Today icon tooltip in mini calendar": {

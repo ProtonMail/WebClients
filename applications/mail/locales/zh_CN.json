@@ -1628,6 +1628,9 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "Explore other plans": [
+        "浏览其他套餐"
       ]
     },
     "action": {
@@ -2206,6 +2209,9 @@
       ],
       "Website access problem": [
         "网站连接问题"
+      ],
+      "Black Friday": [
+        "黑色星期五"
       ]
     },
     "Button": {
@@ -5322,6 +5328,12 @@
     "Feature": {
       "Unlimited hide-my-email aliases": [
         "无限制地 hide-my-email"
+      ],
+      "Encrypted cloud storage for files, photos and documents": [
+        "用于文件、照片和文档的加密云存储空间"
+      ],
+      "More premium features": [
+        "更多高级功能"
       ]
     },
     "fido2: Error": {
@@ -6458,7 +6470,7 @@
         "带有此标签的所有邮件都将被永久删除。"
       ],
       "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
-        "所有的邮件将显示在邮箱里面。类别标签与标签页将不再出现。 "
+        "所有邮件都将显示在收件箱中，邮件分类和标签将不再显示。 "
       ],
       "All your calendars are disabled.": [
         "您的所有日历都已禁用。"
@@ -8469,6 +8481,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "只需点击几下，您的收件箱就不会杂乱无章了"
+      ],
+      "Choose a plan that works best for you.": [
+        "选择一个最适合您的套餐。"
+      ],
+      "Continue": [
+        "继续"
+      ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "升级以保留您的 ${ planTitle } 权益。"
       ]
     },
     "info": {
@@ -9906,6 +9927,9 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "您的免费体验期已结束，账户即将停用。${ action }"
+      ],
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "您的免费体验期已结束。${ nonAutoRenewalAction }"
       ]
     },
     "Message display when a new app version is available": {
@@ -10503,7 +10527,7 @@
         "经 Tor 连接 VPN"
       ],
       "Two-factor authentication": [
-        "双因素身份验证"
+        "双重验证"
       ],
       "Unlimited devices": [
         "无设备数量限制"
@@ -11123,6 +11147,12 @@
       ],
       "Your subscription renews soon": [
         "您的订阅即将续订"
+      ],
+      "Don't show this again": [
+        "不再显示此内容"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "获得 ${ BRAND_NAME } Duo"
       ]
     },
     "Offer fearue": {
@@ -14707,6 +14737,15 @@
       ],
       "Your subscriptions in one place": [
         "一站式订阅服务"
+      ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "使用 ${ BRAND_NAME } Duo 将您的存储空间翻倍"
+      ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "配合${ planTitle }获得**${ referralInfo.uiData.refereeRewardAmount }**余额奖励。"
+      ],
+      "Upgrade to keep your premium benefits.": [
+        "升级以保留您的高级权益。"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14988,6 +15027,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "您的免费体验期将于 ${ textDate } 结束。${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "您的试用将于 ${ textDate } 结束。如果您在 ${ textDate } 之前取消，将不会被收费。${ action }"
       ]
     },
     "WeekDay": {
@@ -15227,6 +15269,47 @@
       ],
       "Passcode:": [
         "密码："
+      ]
+    },
+    "Duo offer": {
+      "/month": [
+        "/月"
+      ],
+      "1 TB of storage to share": [
+        "1 TB 的可共享存储空间"
+      ],
+      "2 user accounts": [
+        "2 个用户账户"
+      ],
+      "All premium features from your current plan": [
+        "您当前套餐的所有付费版服务器功能"
+      ],
+      "Only": [
+        "仅"
+      ]
+    },
+    "Duo offer: Link": {
+      "Double your storage": [
+        "将您的存储空间翻倍"
+      ],
+      "Share your plan": [
+        "分享您的套餐"
+      ]
+    },
+    "Duo offer: Title": {
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "使用 ${ BRAND_NAME } Duo 将您的存储空间翻倍"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "使用 ${ BRAND_NAME } Duo 分享您的套餐"
+      ]
+    },
+    "Referral": {
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "一旦您的完整订阅开始，您仍然可以在 30 天内取消并获得按比例的退款。"
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "您还有**${ daysRemaining }天**的时间，可以尽情探索**${ planTitle }**提供的所有强大功能。"
       ]
     }
   }

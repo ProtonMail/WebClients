@@ -1606,7 +1606,7 @@
         "Выкарыстоўваць для адпраўкі"
       ],
       "Use recovery code": [
-        "Выкарыстоўваць код аднаўлення"
+        "Выкарыстаць код аднаўлення"
       ],
       "Use this": [
         "Выкарыстоўваць гэта"
@@ -1694,6 +1694,12 @@
       ],
       "Try categories": [
         "Паспрабуйце катэгорыі"
+      ],
+      "Explore other plans": [
+        "Даследаваць іншыя тарыфныя планы"
+      ],
+      "Subscribe now": [
+        "Падпісацца"
       ]
     },
     "action": {
@@ -2341,6 +2347,9 @@
       ],
       "Website access problem": [
         "Праблема з доступам да вэб-сайта"
+      ],
+      "Black Friday": [
+        "Чорная пятніца"
       ]
     },
     "Button": {
@@ -5607,6 +5616,12 @@
     "Feature": {
       "Unlimited hide-my-email aliases": [
         "Неабмежаваная колькасць псеўданімаў hide-my-email"
+      ],
+      "Encrypted cloud storage for files, photos and documents": [
+        "Зашыфраванае воблачнае сховішча для файлаў, фатаграфій і дакументаў"
+      ],
+      "More premium features": [
+        "Больш прэміяльных функцый"
       ]
     },
     "fido2: Error": {
@@ -5934,7 +5949,7 @@
         "Завяршыце гэты кантрольны спіс за ${ daysCount }, каб падвоіць сваё сховішча бясплатна."
       ],
       "Discover how our ${ strongText } protect you": [
-        "Даведайцеся, як нашы ${ strongText } вас абараняюць"
+        "Даведайцеся, як нашы ${ strongText } абараняюць вас"
       ],
       "Discover privacy features": [
         "Пазнаёмцеся з функцыямі прыватнасці"
@@ -9137,13 +9152,22 @@
         "Катэгорыі працуюць як фільтры спаму. ${ MAIL_APP_NAME } ніколі не чытае вашы лісты і не абагульвае ніякія даныя."
       ],
       "Includes invoices, purchase orders, and payment confirmations.": [
-        "Уключае фактуры, заказы на куплю і пацверджанні аплаты."
+        "Уключае рахункі, заказы на куплю і пацвярджэнні аплаты."
       ],
       "Includes marketing emails and non-urgent app notifications.": [
-        "Уключае рэкламныя электронныя лісты і не тэрміновыя апавяшчэнні праграмы."
+        "Уключае маркетынгавыя лісты і не тэрміновыя апавяшчэнні праграмы."
       ],
       "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
         "З новымі катэгорыямі электроннай пошты толькі важныя паведамленні трапляюць у асноўную паштовую скрыню. Усё астатняе размяркоўваецца па катэгорыях."
+      ],
+      "Choose a plan that works best for you.": [
+        "Выберыце тарыфны план, які найлепш вам пасуе."
+      ],
+      "Continue": [
+        "Працягнуць"
+      ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "Палепшыць падпіску, каб захаваць ${ planTitle } перавагі."
       ]
     },
     "info": {
@@ -10677,6 +10701,9 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ваш бясплатны пробны перыяд завяршыўся. Доступ да вашых уліковых запісаў будзе неўзабаве адключаны. ${ action }"
+      ],
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "Ваш бясплатны пробны перыяд завершыўся. ${ nonAutoRenewalAction }"
       ]
     },
     "Message display when a new app version is available": {
@@ -11996,6 +12023,12 @@
       ],
       "Your subscription renews soon": [
         "Ваша падпіска неўзабаве падоўжыцца"
+      ],
+      "Don't show this again": [
+        "Больш не паказваць"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Атрымаць ${ BRAND_NAME } Duo"
       ]
     },
     "Offer fearue": {
@@ -13039,6 +13072,36 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Вы можаце атрымаць да **${ maxRewardAmount }** у крэдытах."
+      ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Калі вы скасуеце падпіску да гэтай даты,** то будзеце **паніжаны** да ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } пасля завяршэння пробнага перыяду."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Калі вы не падпішацеся,** то вы будзеце **паніжаны** да ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Калі вы не скасуеце, то ** ваш поўны тарыфны план пачне дзейнічаць, і вы атрымаеце **${ referrerRewardAmount }** у крэдытах."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "Вы атрымаеце **${ referrerRewardAmount }** у крэдытах **пры падпісцы да гэтай даты**."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Атрымлівайце асалоду ад **${ planTitle }** бясплатна да **${ textDate }**."
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Апошняя магчымасць даследаваць усе магутныя функцыі, якія прапануе **${ planTitle }**."
+      ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "Пасля таго, як пачнецца ваша поўная падпіска, вы ўсё яшчэ можаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "У вас застаўся **${ daysRemaining } дзень**, каб даследаваць усе магутныя функцыі, якія прапануе **${ planTitle }**.",
+        "У вас засталося **${ daysRemaining } дні**, каб даследаваць усе магутныя функцыі, якія прапануе **${ planTitle }**.",
+        "У вас засталося **${ daysRemaining } дзён**, каб даследаваць усе магутныя функцыі, якія прапануе **${ planTitle }**.",
+        "У вас засталося **${ daysRemaining } дзён**, каб даследаваць усе магутныя функцыі, якія прапануе **${ planTitle }**."
+      ],
+      "your subscription": [
+        "ваша падпіска"
       ]
     },
     "Remaining days before the message expire": {
@@ -16087,6 +16150,18 @@
       ],
       "Fewer distractions, more focus": [
         "Менш фактараў, якія адцягваюць увагу і больш канцэнтрацыі"
+      ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Падвойце сваё сховішча з ${ BRAND_NAME } Duo"
+      ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Атрымайце **${ referralInfo.uiData.refereeRewardAmount }** у крэдытах з ${ planTitle }"
+      ],
+      "How your free trial works": [
+        "Як працуе бясплатны пробны перыяд"
+      ],
+      "Upgrade to keep your premium benefits.": [
+        "Палепшыць падпіску, каб захаваць перавагі прэміум-класа."
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16419,6 +16494,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Ваш бясплатны пробны перыяд завершыцца ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Ваш пробны перыяд скончыцца ${ textDate }. З вас не будзе спаганяцца плата, калі вы адмовіцеся да ${ textDate }. ${ action }"
       ]
     },
     "WeekDay": {
@@ -16748,6 +16826,23 @@
       ],
       "Passcode:": [
         "Код доступу:"
+      ]
+    },
+    "Duo offer": {
+      "/month": [
+        "/месяц"
+      ],
+      "1 TB of storage to share": [
+        "1 ТБ сховішча для абагульвання"
+      ],
+      "2 user accounts": [
+        "2 уліковых запісаў карыстальнікаў"
+      ],
+      "All premium features from your current plan": [
+        "Усе прэміяльныя функцыі з вашага бягучага тарыфнага плана"
+      ],
+      "Only": [
+        "Толькі"
       ]
     }
   }
