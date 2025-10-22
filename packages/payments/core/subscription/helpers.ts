@@ -112,6 +112,22 @@ export const getHas2024OfferCoupon = (coupon: string | undefined | null): boolea
     return blackFriday2024Discounts.has(coupon?.toUpperCase());
 };
 
+const blackFriday2025Discounts: Set<string> = new Set([
+    COUPON_CODES.BLACK_FRIDAY_2025,
+    COUPON_CODES.BLACK_FRIDAY_2025_MONTH,
+    COUPON_CODES.BLACK_FRIDAY_2025_BUNDLE,
+    COUPON_CODES.BLACK_FRIDAY_2025_LIGHTNING,
+    COUPON_CODES.BLACK_FRIDAY_2025_LUMOADDON,
+    COUPON_CODES.BLACK_FRIDAY_2025_DEALPD,
+    COUPON_CODES.BLACK_FRIDAY_2025_DEALVM,
+]);
+export const getHas2025OfferCoupon = (coupon: string | undefined | null): boolean => {
+    if (!coupon) {
+        return false;
+    }
+    return blackFriday2025Discounts.has(coupon?.toUpperCase());
+};
+
 type MaybeFreeSubscription = Subscription | FreeSubscription | undefined;
 
 export const getAddons = (subscription: Subscription | undefined) =>
@@ -783,7 +799,7 @@ export function getIsPlanTransitionForbidden({
  * 12m subscription. User will be billed when the upcoming 12m term starts. Another example is when user subscribes to
  * bundle2022 6m - the backend will also create scheduled 12m subscription. P2-634 is the relevant ticket.
  */
-function isVariableCycleOffer(subscription: Subscription | FreeSubscription | null | undefined): boolean {
+export function getIsVariableCycleOffer(subscription: Subscription | FreeSubscription | null | undefined): boolean {
     if (!subscription || isFreeSubscription(subscription)) {
         return false;
     }
@@ -792,6 +808,16 @@ function isVariableCycleOffer(subscription: Subscription | FreeSubscription | nu
     const upcoming = subscription.UpcomingSubscription;
 
     return !!upcoming && current.Cycle !== upcoming.Cycle && isUpcomingSubscriptionUnpaid(subscription);
+}
+
+export function hasIntentionalScheduledModification(
+    subscription: Subscription | FreeSubscription | null | undefined
+): boolean {
+    if (!subscription || isFreeSubscription(subscription) || !subscription.UpcomingSubscription) {
+        return false;
+    }
+
+    return !getIsVariableCycleOffer(subscription);
 }
 
 export function isSubscriptionCheckForbiddenWithReason(
@@ -812,7 +838,7 @@ export function isSubscriptionCheckForbiddenWithReason(
     const hasUpcomingSubscription = !!upcoming;
     const selectedSameAsUpcoming = hasUpcomingSubscription ? isSubscriptionUnchanged(upcoming, planIDs, cycle) : false;
 
-    const variableCycleOffer = isVariableCycleOffer(subscription);
+    const variableCycleOffer = getIsVariableCycleOffer(subscription);
 
     const isScheduledUnpaidModification =
         hasUpcomingSubscription && !variableCycleOffer && isUpcomingSubscriptionUnpaid(subscription);

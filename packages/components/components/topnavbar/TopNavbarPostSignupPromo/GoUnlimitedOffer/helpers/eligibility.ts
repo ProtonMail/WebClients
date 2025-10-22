@@ -30,7 +30,7 @@ export const getIsEligible = ({ user, subscription, protonConfig, parentApp }: P
     const isWebSubscription = !isManagedExternally(subscription);
 
     const offerSubscription = new OfferSubscription(subscription);
-    const isEligibleCycle = offerSubscription.isYearly() || offerSubscription.isTwoYears();
+    const isEligibleCycle = offerSubscription.hasYearlyCycle() || offerSubscription.hasTwoYearsCycle();
     const hasEligiblePlan = offerSubscription.hasMail() || offerSubscription.hasDrive();
 
     const hasNoScheduledSubscription = !subscription?.UpcomingSubscription;
