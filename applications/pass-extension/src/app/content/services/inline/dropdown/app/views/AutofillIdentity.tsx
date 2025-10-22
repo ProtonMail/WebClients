@@ -2,11 +2,11 @@ import type { FC } from 'react';
 import { useCallback, useEffect, useMemo } from 'react';
 
 import type { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
+import { useBlurTrap } from 'proton-pass-extension/app/content/services/inline/dropdown/app/components/DropdownFocusController';
 import { DropdownHeader } from 'proton-pass-extension/app/content/services/inline/dropdown/app/components/DropdownHeader';
 import type { DropdownActions } from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.app';
 import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
 import { useIFrameAppController, useIFrameAppState } from 'proton-pass-extension/lib/components/Inline/IFrameApp';
-import { useBlurTrap } from 'proton-pass-extension/lib/components/Inline/IFrameFocusController';
 import { ListItem } from 'proton-pass-extension/lib/components/Inline/ListItem';
 import { PauseListDropdown } from 'proton-pass-extension/lib/components/Inline/PauseListDropdown';
 import { ScrollableItemsList } from 'proton-pass-extension/lib/components/Inline/ScrollableItemsList';

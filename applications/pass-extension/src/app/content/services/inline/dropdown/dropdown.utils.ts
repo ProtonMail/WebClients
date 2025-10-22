@@ -32,7 +32,7 @@ export const handleOnClosed = (field: FieldHandle, refocus: boolean) => {
 
 export const handleAutoClose = (dropdown: DropdownHandler, field?: FieldHandle) =>
     onNextTick(
-        withContext(async (ctx) => {
+        withContext<() => void>(async (ctx) => {
             const autofilling = ctx?.service.autofill.processing ?? false;
             const dropdownFocused = (await dropdown.getState()).focused;
             if (!(autofilling || dropdownFocused)) dropdown.close(field ? { type: 'field', field } : undefined);

@@ -2,7 +2,6 @@ import { type FC, useCallback, useEffect, useState } from 'react';
 
 import { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { DROPDOWN_MIN_HEIGHT } from 'proton-pass-extension/app/content/constants.static';
-import { AutofillCC } from 'proton-pass-extension/app/content/services/inline/dropdown/app/views/AutofillCC';
 import type { DropdownActions } from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.app';
 import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
 import {
@@ -11,10 +10,7 @@ import {
     useRegisterMessageHandler,
 } from 'proton-pass-extension/lib/components/Inline/IFrameApp';
 import { IFrameAppAutoSizer } from 'proton-pass-extension/lib/components/Inline/IFrameAppAutoSizer';
-import { IFrameFocusController } from 'proton-pass-extension/lib/components/Inline/IFrameFocusController';
 import { ListItem } from 'proton-pass-extension/lib/components/Inline/ListItem';
-import { ListItemIcon } from 'proton-pass-extension/lib/components/Inline/ListItemIcon';
-import { PinUnlock } from 'proton-pass-extension/lib/components/Inline/PinUnlock';
 import { useRequestFork } from 'proton-pass-extension/lib/hooks/useRequestFork';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
@@ -28,8 +24,10 @@ import type { MaybeNull } from '@proton/pass/types';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
 import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { BRAND_NAME, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import clsx from '@proton/utils/clsx';
 
+import { DropdownFocusController } from './components/DropdownFocusController';
+import { DropdownUnlock } from './components/DropdownUnlock';
+import { AutofillCC } from './views/AutofillCC';
 import { AutofillIdentity } from './views/AutofillIdentity';
 import { AutofillLogin } from './views/AutofillLogin';
 import { AutosuggestEmail } from './views/AutosuggestEmail';
@@ -63,30 +61,12 @@ export const Dropdown: FC<Props> = ({ initial = null }) => {
             className="min-h-custom bg-norm relative"
             style={{ '--min-h-custom': `${DROPDOWN_MIN_HEIGHT}px` }}
         >
-            <IFrameFocusController>
+            <DropdownFocusController>
                 <Localized>
                     {(() => {
                         if (loading) return <CircleLoader className="absolute inset-center m-auto" />;
 
-                        if (clientSessionLocked(status)) {
-                            return (
-                                <PinUnlock
-                                    header={
-                                        <div className="flex items-center gap-3 mb-3">
-                                            <ListItemIcon type="status" icon={PassIconStatus.LOCKED_DROPDOWN} />
-                                            <div className="flex-1">
-                                                <span className="block text-ellipsis">{c('Label')
-                                                    .t`Unlock ${PASS_APP_NAME}`}</span>
-                                                <span className={clsx('block color-weak text-sm text-ellipsis')}>{c(
-                                                    'Info'
-                                                ).t`Enter your PIN code`}</span>
-                                            </div>
-                                        </div>
-                                    }
-                                    onUnlock={() => controller.close({ refocus: true })}
-                                />
-                            );
-                        }
+                        if (clientSessionLocked(status)) return <DropdownUnlock />;
 
                         if (clientErrored(status)) {
                             return (
@@ -159,7 +139,7 @@ export const Dropdown: FC<Props> = ({ initial = null }) => {
                         }
                     })()}
                 </Localized>
-            </IFrameFocusController>
+            </DropdownFocusController>
         </IFrameAppAutoSizer>
     );
 };
