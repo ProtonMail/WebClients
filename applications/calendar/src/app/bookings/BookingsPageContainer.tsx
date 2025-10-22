@@ -3,10 +3,11 @@ import { BrowserRouter } from 'react-router-dom';
 
 import type { ProtonThunkArguments } from 'packages/redux-shared-store-types';
 
-import { ApiProvider, ErrorBoundary, StandardErrorPage } from '@proton/components';
+import { ApiProvider, ErrorBoundary, StandardErrorPage, ThemeProvider } from '@proton/components';
 import LoaderPage from '@proton/components/containers/app/LoaderPage';
 import ProtonApp from '@proton/components/containers/app/ProtonApp';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
+import Icons from '@proton/icons/Icons';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import type { UnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 import { FlagProvider } from '@proton/unleash';
@@ -59,9 +60,12 @@ export const BookingPageContainer = ({ children }: PropsWithChildren) => {
                 <BrowserRouter basename="/bookings">
                     <FlagProvider unleashClient={unleashClient} startClient={false}>
                         <ApiProvider api={api}>
-                            <ErrorBoundary big component={<StandardErrorPage big />}>
-                                {children}
-                            </ErrorBoundary>
+                            <ThemeProvider appName={config.APP_NAME}>
+                                <Icons />
+                                <ErrorBoundary big component={<StandardErrorPage big />}>
+                                    {children}
+                                </ErrorBoundary>
+                            </ThemeProvider>
                         </ApiProvider>
                     </FlagProvider>
                 </BrowserRouter>
