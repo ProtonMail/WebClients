@@ -36,9 +36,9 @@ export const useUnlimitedToDuoConfig = (): UnlimitedToDuoOfferConfig => {
 
     const tips = useMemo(() => getTips(), []);
 
-    // TODO: rotation in next ticket
-    // Selected tip just defaulting to storage for now -- will update with rotation
-    const selectedTip = tips[0];
+    const currentMonthIndex = new Date().getMonth() + 1;
+    const monthlyRotatedTipIndex = currentMonthIndex % 2;
+    const selectedTip = tips[monthlyRotatedTipIndex];
 
     return {
         type: selectedTip.type,
