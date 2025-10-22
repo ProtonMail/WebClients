@@ -945,6 +945,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Perioada de încercare a versiunii pentru desktop se încheie ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Explore other plans": [
+        "Explorare alte planuri"
+      ],
+      "Subscribe now": [
+        "Abonați-vă acum"
       ]
     },
     "action": {
@@ -3337,6 +3343,21 @@
       ],
       "This event was updated.": [
         "Acest eveniment a fost modificat."
+      ],
+      "DESCRIPTION:": [
+        "DESCRIERE:"
+      ],
+      "LOCATION:": [
+        "LOC:"
+      ],
+      "TIME:": [
+        "ORA:"
+      ],
+      "TITLE:": [
+        "TITLU:"
+      ],
+      "You are invited to": [
+        "Ați primit o invitație la"
       ]
     },
     "Email body for invitation (date part)": {
@@ -9579,6 +9600,32 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Puteți obține până la **${ maxRewardAmount }** în credite."
+      ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Dacă anulați înainte de această dată**, contul va fi **retrogradat** la ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } când se termină perioada de probare."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Dacă nu vă abonați**, contul va fi **retrogradat** la ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Dacă nu anulați,** planul complet va începe și veți primi **${ referrerRewardAmount }** în credite."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Dacă vă abonați înainte de această dată**, veți primi **${ referrerRewardAmount }** în credite."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Bucurați-vă de **${ planTitle }** gratuit până la **${ textDate }**."
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Ultima șansă de a explora toate funcțiile puternice pe care le oferă **${ planTitle }**."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Mai aveți **${ daysRemaining } zi** pentru a explora toate funcțiile puternice pe care le oferă **${ planTitle }**.",
+        "Mai aveți **${ daysRemaining } zile** pentru a explora toate funcțiile puternice pe care vi le oferă **${ planTitle }**.",
+        "Mai aveți **${ daysRemaining } de zile** pentru a explora toate funcțiile puternice pe care **${ planTitle }** le are de oferit."
+      ],
+      "your subscription": [
+        "abonament personal"
       ]
     },
     "Reload event button tooltip": {
@@ -11802,6 +11849,9 @@
       ],
       "Your shorter address is now ready": [
         "Adresa scurtă este pregătită acum"
+      ],
+      "How your free trial works": [
+        "Cum funcționează probarea gratuită"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

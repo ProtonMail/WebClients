@@ -941,6 +941,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Sua avaliação gratuita do aplicativo de computador termina em ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Create a new bookings page": [
+        "Criar uma nova página de reservas"
+      ],
+      "Explore other plans": [
+        "Explorar outros planos"
+      ],
+      "Subscribe now": [
+        "Assine agora"
       ]
     },
     "action": {
@@ -3315,6 +3324,21 @@
       ],
       "This event was updated.": [
         "Este evento foi atualizado."
+      ],
+      "DESCRIPTION:": [
+        "DESCRIÇÃO:"
+      ],
+      "LOCATION:": [
+        "LOCALIZAÇÃO:"
+      ],
+      "TIME:": [
+        "HORA:"
+      ],
+      "TITLE:": [
+        "TÍTULO:"
+      ],
+      "You are invited to": [
+        "Você está convidado para"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4357,6 +4381,12 @@
     "Feature": {
       "Unlimited hide-my-email aliases": [
         "Aliases do Hide-my-email ilimitados"
+      ],
+      "Encrypted cloud storage for files, photos and documents": [
+        "Armazenamento em nuvem criptografado para arquivos, fotos e documentos"
+      ],
+      "More premium features": [
+        "Recursos premium adicionais"
       ]
     },
     "fido2: Error": {
@@ -5315,7 +5345,7 @@
         "Ativando a exclusão automática…"
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
-        "Garanta uma comunicação totalmente privada e criptografada. Resgate seu endereço de e-mail ${ BRAND_NAME } gratuito agora."
+        "Garanta uma comunicação totalmente privada e criptografada. Crie seu endereço de e-mail ${ BRAND_NAME } gratuito agora."
       ],
       "Enter the code from your authenticator app": [
         "Insira o código do seu aplicativo de autenticação."
@@ -6234,6 +6264,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Você ainda poderá visualizar os dados da sua própria conta, mas todas as contas de usuário serão removidas da sua organização."
+      ],
+      "Choose a plan that works best for you.": [
+        "Escolha um plano que funcione melhor para você."
+      ],
+      "Continue": [
+        "Continuar"
+      ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "Faça upgrade para manter seus benefícios ${ planTitle }."
       ]
     },
     "info": {
@@ -7069,6 +7108,9 @@
       ],
       "What’s this?": [
         "O que é isso?"
+      ],
+      "Bookings pages": [
+        "Páginas de reservas"
       ]
     },
     "Link label (optional)": {
@@ -7185,6 +7227,9 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Sua avaliação gratuita terminou. O acesso a sua será desativada em breve. ${ action }"
+      ],
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "Sua avaliação gratuita terminou. ${ nonAutoRenewalAction }"
       ]
     },
     "Message display when a new app version is available": {
@@ -8363,7 +8408,7 @@
         "Código de acesso copiado para a área de transferência"
       ],
       "Passphrase copied to clipboard": [
-        "Passphrase copiada para a área de transferência"
+        "Frase secreta copiada para a área de transferência"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8597,6 +8642,12 @@
       ],
       "Your subscription renews soon": [
         "Sua assinatura renovará em breve"
+      ],
+      "Don't show this again": [
+        "Não mostrar isso novamente"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Obter ${ BRAND_NAME } Duo"
       ]
     },
     "Offer fearue": {
@@ -9520,6 +9571,34 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Você pode receber até **${ maxRewardAmount }** em crédito."
+      ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Se você cancelar antes desta data,** faremos um **downgrade** para ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } quando a avaliação terminar."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Se você não se inscrever,** faremos um **downgrade** para ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Se você não cancelar, ** seu plano completo começará e você receberá **${ referrerRewardAmount }** em créditos."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Se você se inscrever antes desta data, ** você receberá **${ referrerRewardAmount }** em créditos."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Aproveite o **${ planTitle }** gratuitamente até **${ textDate }**."
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Última oportunidade para explorar todos os recursos avançados que **${ planTitle }** tem para oferecer."
+      ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "Assim que sua assinatura completa começar, você ainda pode cancelar em até 30 dias e receber um reembolso proporcional."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Você tem **${ daysRemaining } dia restante** para explorar todos os poderosos recursos que o **${ planTitle }** tem a oferecer.",
+        "Você tem **${ daysRemaining } dias restantes** para explorar todos os poderosos recursos que o **${ planTitle }** tem a oferecer."
+      ],
+      "your subscription": [
+        "sua assinatura"
       ]
     },
     "Reload event button tooltip": {
@@ -11695,6 +11774,18 @@
       ],
       "Your shorter address is now ready": [
         "Seu endereço mais curto já está pronto"
+      ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Dobre seu armazenamento com ${ BRAND_NAME } Duo"
+      ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Receba **${ referralInfo.uiData.refereeRewardAmount }** em créditos com ${ planTitle }"
+      ],
+      "How your free trial works": [
+        "Como funciona seu teste gratuito"
+      ],
+      "Upgrade to keep your premium benefits.": [
+        "Faça upgrade para manter seus benefícios premium."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11996,6 +12087,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Sua avaliação gratuita termina em ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Sua avaliação terminará em ${ textDate }. Você não será cobrado se cancelar antes de ${ textDate }. ${ action }"
       ]
     },
     "Warning in modal to accept calendar invitation; Description": {
@@ -12262,6 +12356,23 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "Duo offer": {
+      "/month": [
+        "/mês"
+      ],
+      "1 TB of storage to share": [
+        "1 TB de armazenamento para compartilhar"
+      ],
+      "2 user accounts": [
+        "2 contas de usuário"
+      ],
+      "All premium features from your current plan": [
+        "Todos os recursos premium do seu plano atual"
+      ],
+      "Only": [
+        "Somente"
       ]
     }
   }

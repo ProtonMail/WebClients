@@ -937,6 +937,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "デスクトップアプリの無料トライアルは ${ formattedEndDate } で終了します。${ upgradeButton }"
+      ],
+      "Create a new bookings page": [
+        "新しい予約ページを作成"
+      ],
+      "Explore other plans": [
+        "その他のプランを表示"
+      ],
+      "Subscribe now": [
+        "今すぐ登録"
       ]
     },
     "action": {
@@ -3293,6 +3302,21 @@
       ],
       "This event was updated.": [
         "この予定は更新されました。"
+      ],
+      "DESCRIPTION:": [
+        "詳細："
+      ],
+      "LOCATION:": [
+        "場所："
+      ],
+      "TIME:": [
+        "時間："
+      ],
+      "TITLE:": [
+        "タイトル："
+      ],
+      "You are invited to": [
+        "あなたは、次の場所に招待されています："
       ]
     },
     "Email body for invitation (date part)": {
@@ -6979,6 +7003,9 @@
       ],
       "What’s this?": [
         "これは何ですか?"
+      ],
+      "Bookings pages": [
+        "予約ページ"
       ]
     },
     "Link label (optional)": {
@@ -8446,6 +8473,12 @@
       ],
       "Your subscription renews soon": [
         "サブスクリプションはまもなく更新されます"
+      ],
+      "Don't show this again": [
+        "次回から表示しない"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "${ BRAND_NAME } Duoを入手"
       ]
     },
     "Offer fearue": {
@@ -9259,6 +9292,30 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "最大**${ maxRewardAmount }**分のクレジットを獲得できます。"
+      ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**この日付より前にキャンセルされた場合**、トライアル終了時にお客様は${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }に**ダウングレードされます**。"
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**ご登録がない場合**、お客様は${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }に**ダウングレードされます**。"
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**キャンセルしない場合**、お客様のフルプランが開始され、お客様は**${ referrerRewardAmount }**のクレジットを獲得できます。"
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**この日までに登録**すると、お客様は**${ referrerRewardAmount }**のクレジットを獲得できます。"
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "**${ textDate }** まで、**${ planTitle }** を無料でお楽しみいただけます。"
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "**${ planTitle }**が提供するすべての強力な機能をお試しいただける最後の機会です。"
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "**${ planTitle }**が提供するすべての強力な機能をお試しいただける期間は、残り**${ daysRemaining }日**です。"
+      ],
+      "your subscription": [
+        "あなたのサブスクリプション"
       ]
     },
     "Reload event button tooltip": {
@@ -11386,6 +11443,12 @@
       ],
       "Your shorter address is now ready": [
         "短いアドレスの準備ができました"
+      ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "${ BRAND_NAME } Duo でストレージを2倍に"
+      ],
+      "How your free trial works": [
+        "無料トライアルについて"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11909,6 +11972,23 @@
       ],
       "Passcode:": [
         "パスコード："
+      ]
+    },
+    "Duo offer": {
+      "/month": [
+        "/ 月"
+      ],
+      "1 TB of storage to share": [
+        "1 TBのストレージを共有"
+      ],
+      "2 user accounts": [
+        "2 ユーザーアカウント"
+      ],
+      "All premium features from your current plan": [
+        "現在のプランのすべてのプレミアム機能"
+      ],
+      "Only": [
+        "のみ"
       ]
     }
   }

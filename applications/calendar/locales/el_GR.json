@@ -941,6 +941,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Η δωρεάν δοκιμή της εφαρμογής για υπολογιστές λήγει στις ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Create a new bookings page": [
+        "Δημιουργήστε μια νέα σελίδα κρατήσεων"
+      ],
+      "Explore other plans": [
+        "Εξερευνήστε άλλα πλάνα"
+      ],
+      "Subscribe now": [
+        "Εγγραφείτε τώρα"
       ]
     },
     "action": {
@@ -4372,6 +4381,12 @@
     "Feature": {
       "Unlimited hide-my-email aliases": [
         "Απεριόριστα hide-my-email ψευδώνυμα"
+      ],
+      "Encrypted cloud storage for files, photos and documents": [
+        "Κρυπτογραφημένος χώρος αποθήκευσης στο cloud για αρχεία, φωτογραφίες και έγγραφα"
+      ],
+      "More premium features": [
+        "Περισσότερες premium δυνατότητες"
       ]
     },
     "fido2: Error": {
@@ -6249,6 +6264,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Θα εξακολουθείτε να μπορείτε να βλέπετε τα δικά σας δεδομένα λογαριασμού, αλλά όλοι οι λογαριασμοί χρηστών θα καταργηθούν από τον οργανισμό σας."
+      ],
+      "Choose a plan that works best for you.": [
+        "Επιλέξτε το πλάνο που σας ταιριάζει καλύτερα."
+      ],
+      "Continue": [
+        "Συνέχεια"
+      ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "Αναβαθμίστε για να διατηρήσετε τα ${ planTitle } προνόμιά σας."
       ]
     },
     "info": {
@@ -7084,6 +7108,9 @@
       ],
       "What’s this?": [
         "Τι είναι αυτό;"
+      ],
+      "Bookings pages": [
+        "Σελίδες κρατήσεων"
       ]
     },
     "Link label (optional)": {
@@ -7200,6 +7227,9 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Η δωρεάν δοκιμή σας έληξε. Η πρόσβαση στον λογαριασμό σας θα απενεργοποιηθεί σύντομα. ${ action }"
+      ],
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "Η δωρεάν δοκιμή σας έχει λήξει. ${ nonAutoRenewalAction }"
       ]
     },
     "Message display when a new app version is available": {
@@ -8607,6 +8637,12 @@
       ],
       "Your subscription renews soon": [
         "Η συνδρομή σας ανανεωθεί σύντομα"
+      ],
+      "Don't show this again": [
+        "Να μην εμφανιστεί ξανά"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Αποκτήστε το ${ BRAND_NAME } Duo"
       ]
     },
     "Offer fearue": {
@@ -9434,6 +9470,34 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Μπορείτε να λάβετε έως και **${ maxRewardAmount }** σε πίστωση."
+      ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Εάν ακυρώσετε πριν από αυτή την ημερομηνία,** θα **υποβαθμιστείτε** σε ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } όταν λήξει η δοκιμαστική περίοδος."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Εάν δεν εγγραφείτε,** θα **υποβαθμιστείτε** στο ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Εάν δεν ακυρώσετε,** το πλήρες πλάνο σας θα ξεκινήσει και θα λάβετε **${ referrerRewardAmount }** σε πιστώσεις."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Εάν εγγραφείτε πριν από αυτή την ημερομηνία,** θα λάβετε **${ referrerRewardAmount }** σε πιστώσεις."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Απολαύστε το **${ planTitle }** δωρεάν μέχρι τις **${ textDate }**."
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Τελευταία ευκαιρία να εξερευνήσετε όλες τις ισχυρές λειτουργίες που προσφέρει το **${ planTitle }**."
+      ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "Μόλις ξεκινήσει η πλήρης συνδρομή σας, μπορείτε να την ακυρώσετε εντός 30 ημερών και να λάβετε αναλογική επιστροφή χρημάτων."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Έχετε **${ daysRemaining } ημέρα** για να εξερευνήσετε όλες τις ισχυρές λειτουργίες που προσφέρει το **${ planTitle }**.",
+        "Έχετε **${ daysRemaining } ημέρες** για να εξερευνήσετε όλες τις ισχυρές λειτουργίες που προσφέρει το **${ planTitle }**."
+      ],
+      "your subscription": [
+        "η συνδρομή σας"
       ]
     },
     "Reload event button tooltip": {
@@ -11609,6 +11673,18 @@
       ],
       "Your shorter address is now ready": [
         "Η συντομότερη διεύθυνσή σας είναι τώρα έτοιμη"
+      ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Διπλασιάστε τον αποθηκευτικό σας χώρο με το ${ BRAND_NAME } Duo"
+      ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Λάβετε **${ referralInfo.uiData.refereeRewardAmount }** σε πιστώσεις με το ${ planTitle }"
+      ],
+      "How your free trial works": [
+        "Πως λειτουργεί η δοκιμαστική περίοδος σας"
+      ],
+      "Upgrade to keep your premium benefits.": [
+        "Αναβαθμίστε για να διατηρήσετε τα premium προνόμιά σας."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11910,6 +11986,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Η δωρεάν δοκιμή σας λήγει στις ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Η δοκιμαστική περίοδος θα λήξει στις ${ textDate }. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ textDate }. ${ action }"
       ]
     },
     "Warning in modal to accept calendar invitation; Description": {
@@ -12176,6 +12255,23 @@
       ],
       "Passcode:": [
         "Κωδικός πρόσβασης:"
+      ]
+    },
+    "Duo offer": {
+      "/month": [
+        "/μήνα"
+      ],
+      "1 TB of storage to share": [
+        "1 TB αποθηκευτικού χώρου για κοινή χρήση"
+      ],
+      "2 user accounts": [
+        "2 λογαριασμοί χρηστών"
+      ],
+      "All premium features from your current plan": [
+        "Όλες οι premium λειτουργίες του τρέχοντος πλάνου σας"
+      ],
+      "Only": [
+        "Μόνο"
       ]
     }
   }
