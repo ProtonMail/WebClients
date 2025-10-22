@@ -2,7 +2,6 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import useConfig from '@proton/components/hooks/useConfig';
-import { useGetFlag } from '@proton/unleash';
 
 import { type GetUpsellConfigProps, getUpsellConfig } from './getUpsellConfig';
 
@@ -24,11 +23,9 @@ const useUpsellConfig = ({
     const [subscription] = useSubscription();
     const [openSubscriptionModal] = useSubscriptionModal();
     const { APP_NAME: appName } = useConfig();
-    const getFlag = useGetFlag();
 
     return getUpsellConfig({
         appName,
-        getFlag,
         openSubscriptionModal,
         subscription,
         user,
