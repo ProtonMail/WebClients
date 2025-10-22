@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import type { PublicBooking } from '../../interface';
+import { NoMatch, Reason } from '../NoMatch';
 import { DetailsFooter } from './DetailsFooter';
 import { DetailsHeader } from './DetailsHeader';
 import { DetailsSlotPicking } from './DetailsSlotPicking';
@@ -26,7 +27,7 @@ export const BookingDetails = () => {
     }, [bookingID]);
 
     if (!bookingID) {
-        throw new Error('Booking not found');
+        return <NoMatch reason={Reason.notFound} />;
     }
 
     // TODO change this to a loader while the booking is being fetched
