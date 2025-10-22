@@ -5,15 +5,7 @@ import { useFlag } from '@proton/unleash';
 
 import { BookingDetails } from './components/BookingDetails/BookingDetails';
 import { BookingPageLayout } from './components/BookingPageLaout';
-
-// Catch-all that redirects non-supported URL to the origin
-const RedirectToOrigin = () => {
-    useEffect(() => {
-        window.location.replace(window.location.origin);
-    }, []);
-
-    return null;
-};
+import { NoMatch, Reason } from './components/NoMatch';
 
 export const BookingsRouter = () => {
     const isEnabled = useFlag('CalendarExternalBookings');
@@ -32,7 +24,9 @@ export const BookingsRouter = () => {
         <BookingPageLayout>
             <Switch>
                 <Route path="/:bookingID" exact component={BookingDetails} />
-                <Route component={RedirectToOrigin} />
+                <Route>
+                    <NoMatch reason={Reason.notFound} />
+                </Route>
             </Switch>
         </BookingPageLayout>
     );
