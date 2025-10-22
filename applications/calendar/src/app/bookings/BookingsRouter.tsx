@@ -16,5 +16,5 @@ export const BookingsRouter = () => {
         return null;
     }
 
-    return <Route path="/" exact render={() => <></>} />;
+    return <Route path="/" exact render={() => <p id="booking-app">Booking app</p>} />;
 };
