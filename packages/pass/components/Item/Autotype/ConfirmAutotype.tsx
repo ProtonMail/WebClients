@@ -51,7 +51,7 @@ const ConfirmAutotypeCore: FC<ConfirmAutotypePropsCore> = ({
                 )}
                 {BUILD_TARGET === 'linux' && (
                     <div className="text-sm color-weak mb-4">{c('Info')
-                        .t`You may need to accept a permission prompt and may have to restart the application depending on your system.`}</div>
+                        .t`After confirming, you will need to accept a permission prompt for ${PASS_APP_NAME}.`}</div>
                 )}
                 <FormikProvider value={form}>
                     <Form id={FORM_ID}>
