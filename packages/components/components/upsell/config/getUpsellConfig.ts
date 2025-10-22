@@ -1,19 +1,14 @@
-import { openLinkInBrowser } from '@proton/components/containers/desktop/openExternalLink';
-import { getHasInboxDesktopInAppPayments } from '@proton/components/containers/desktop/useHasInboxDesktopInAppPayments';
 import type {
     OpenCallbackProps,
     OpenSubscriptionModalCallback,
 } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
-import { CYCLE, getPlanNameFromIDs } from '@proton/payments';
+import { CYCLE } from '@proton/payments';
 import type { COUPON_CODES, Plan, PlanIDs, Subscription } from '@proton/payments';
-import { getAppHref } from '@proton/shared/lib/apps/helper';
-import { APPS, APPS_WITH_IN_APP_PAYMENTS, type APP_NAMES } from '@proton/shared/lib/constants';
-import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
+import { APPS_WITH_IN_APP_PAYMENTS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
 import { formatURLForAjaxRequest } from '@proton/shared/lib/helpers/url';
 import type { UserModel } from '@proton/shared/lib/interfaces';
-import type { useGetFlag } from '@proton/unleash/useGetFlag';
 import noop from '@proton/utils/noop';
 
 export interface GetUpsellConfigProps {
@@ -48,7 +43,6 @@ export const getUpsellConfig = ({
     cycle = CYCLE.YEARLY,
     maximumCycle,
     minimumCycle,
-    getFlag,
     onSubscribed,
     openSubscriptionModal,
     planIDs,
@@ -60,7 +54,6 @@ export const getUpsellConfig = ({
 }: Omit<GetUpsellConfigProps, 'plan'> & {
     appName: APP_NAMES;
     planIDs?: PlanIDs;
-    getFlag: ReturnType<typeof useGetFlag>;
     openSubscriptionModal: OpenSubscriptionModalCallback;
     subscription: Subscription | undefined;
     user: UserModel;
@@ -68,10 +61,8 @@ export const getUpsellConfig = ({
     configOverride?: (config: OpenCallbackProps) => void;
 }): { upgradePath: string; onUpgrade?: () => void } => {
     const hasSubscriptionModal = openSubscriptionModal !== noop;
-    const hasInboxDesktopInAppPayments = getHasInboxDesktopInAppPayments(getFlag);
 
-    const hasInAppPayments =
-        APPS_WITH_IN_APP_PAYMENTS.has(appName) && (!isElectronMail || hasInboxDesktopInAppPayments);
+    const hasInAppPayments = APPS_WITH_IN_APP_PAYMENTS.has(appName);
 
     if (hasSubscriptionModal && hasInAppPayments && upsellRef && !preventInApp) {
         const subscriptionCallBackProps: OpenCallbackProps = {
@@ -103,31 +94,6 @@ export const getUpsellConfig = ({
 
                 // Open the subscription modal
                 openSubscriptionModal({ ...subscriptionCallBackProps, onSubscribed });
-            },
-        };
-    }
-
-    // On Desktop, explicitly open up an external window instead of redirecting to account first.
-    if (isElectronMail && !hasInboxDesktopInAppPayments) {
-        const selectedPlan = planIDs ? getPlanNameFromIDs(planIDs) : undefined;
-        const upsellPath = addUpsellPath(
-            getUpgradePath({
-                user,
-                subscription,
-                plan: selectedPlan,
-                app: appName,
-                coupon,
-                cycle,
-                maximumCycle,
-                minimumCycle,
-            }),
-            upsellRef
-        );
-
-        return {
-            upgradePath: '',
-            onUpgrade() {
-                openLinkInBrowser(getAppHref(upsellPath, APPS.PROTONACCOUNT));
             },
         };
     }
