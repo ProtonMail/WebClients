@@ -1498,7 +1498,10 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč"
+        "Dôveryhodný kľúč",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -1691,6 +1694,12 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Explore other plans": [
+        "Preskúmajte ďalšie plány"
+      ],
+      "Subscribe now": [
+        "Predplaťte si teraz"
       ]
     },
     "action": {
@@ -4409,6 +4418,21 @@
       ],
       "This event was updated.": [
         "Táto udalosť bola aktualizovaná."
+      ],
+      "DESCRIPTION:": [
+        "POPIS:"
+      ],
+      "LOCATION:": [
+        "UMIESTNENIE:"
+      ],
+      "TIME:": [
+        "ČAS:"
+      ],
+      "TITLE:": [
+        "NÁZOV:"
+      ],
+      "You are invited to": [
+        "Dostali ste pozvánku na"
       ]
     },
     "Email body for invitation (date part)": {
@@ -5574,6 +5598,12 @@
     "Feature": {
       "Unlimited hide-my-email aliases": [
         "Neobmedzený počet hide-my-email aliasov"
+      ],
+      "Encrypted cloud storage for files, photos and documents": [
+        "Šifrované cloudové úložisko na súbory, fotografie a dokumenty"
+      ],
+      "More premium features": [
+        "Viac prémiových funkcií"
       ]
     },
     "fido2: Error": {
@@ -7631,10 +7661,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -9108,6 +9135,21 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Ste len pár kliknutí od prehľadnej doručenej pošty."
+      ],
+      "Choose a plan that works best for you.": [
+        "Vyberte si plán, ktorý vám najviac vyhovuje."
+      ],
+      "Continue": [
+        "Pokračovať"
+      ],
+      "Includes invoices, purchase orders, and payment confirmations.": [
+        "Zahŕňa faktúry, objednávky a potvrdenia o platbách."
+      ],
+      "Includes marketing emails and non-urgent app notifications.": [
+        "Zahŕňa marketingové emaily a menej dôležité notifikácie aplikácie."
+      ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "Zvýšte si úroveň, aby ste si zachovali svoje ${ planTitle } výhody."
       ]
     },
     "info": {
@@ -10641,6 +10683,9 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Vaša bezplatná skúšobná verzia sa skončila. Prístup k vášmu účtu bude čoskoro deaktivovaný. ${ action }"
+      ],
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "Vaša bezplatná skúšobná verzia skončila. ${ nonAutoRenewalAction }"
       ]
     },
     "Message display when a new app version is available": {
@@ -11960,6 +12005,12 @@
       ],
       "Your subscription renews soon": [
         "Vaše predplatné sa čoskoro obnoví"
+      ],
+      "Don't show this again": [
+        "Nabudúce nezobrazovať"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Získajte ${ BRAND_NAME } Duo"
       ]
     },
     "Offer fearue": {
@@ -13003,6 +13054,36 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Môžete získať kredit až **${ maxRewardAmount }**."
+      ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Ak zrušíte pred týmto dátumom**, po skončení skúšobnej doby dôjde k **zníženíu** na ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Ak si nepredplatíte,** dôjde k **zníženiu** na ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Ak nezrušíte,** začne platiť celý váš plán a získate kredit v hodnote **${ referrerRewardAmount }**."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Ak si predplatíte pred týmto dátumom,** získate kredit v hodnote **${ referrerRewardAmount }**."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Užite si **${ planTitle }** zadarmo až do **${ textDate }**."
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Posledná šanca vyskúšať všetky pokročilé funkcie, ktoré ponúka **${ planTitle }**."
+      ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "Po začatí platnosti predplatného môžete do 30 dní predplatné zrušiť a získať pomernú refundáciu."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Zostáva vám **${ daysRemaining } deň** na to, aby ste vyskúšali všetky pokročilé funkcie, ktoré ponúka **${ planTitle }**.",
+        "Zostávajú vám **${ daysRemaining } dni** na to, aby ste vyskúšali všetky pokročilé funkcie, ktoré ponúka **${ planTitle }**.",
+        "Zostáva vám **${ daysRemaining } dní** na to, aby ste vyskúšali všetky pokročilé funkcie, ktoré ponúka **${ planTitle }**.",
+        "Zostáva vám **${ daysRemaining } dní** na to, aby ste vyskúšali všetky pokročilé funkcie, ktoré ponúka **${ planTitle }**."
+      ],
+      "your subscription": [
+        "vaše predplatné"
       ]
     },
     "Remaining days before the message expire": {
@@ -16051,6 +16132,18 @@
       ],
       "✨ Categories are coming!": [
         "✨ Prichádzajú kategórie!"
+      ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Zdvojnásobte svoje úložisko s ${ BRAND_NAME } Duo"
+      ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Získajte **${ referralInfo.uiData.refereeRewardAmount }** v kreditoch s ${ planTitle }"
+      ],
+      "How your free trial works": [
+        "Ako funguje vaša bezplatná skúšobná verzia"
+      ],
+      "Upgrade to keep your premium benefits.": [
+        "Zvýšte si úroveň, aby ste si zachovali svoje prémiové výhody."
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16383,6 +16476,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Bezplatná skúšobná verzia končí ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Vaše skúšobné obdobie skončí dňa ${ textDate }. Ak ho zrušíte pred ${ textDate }, nebudú vám účtované žiadne poplatky. ${ action }"
       ]
     },
     "WeekDay": {
@@ -16712,6 +16808,23 @@
       ],
       "Passcode:": [
         "Prístupový kód:"
+      ]
+    },
+    "Duo offer": {
+      "/month": [
+        "/mesiac"
+      ],
+      "1 TB of storage to share": [
+        "1 TB úložiska na zdieľanie"
+      ],
+      "2 user accounts": [
+        "2 používateľské účty"
+      ],
+      "All premium features from your current plan": [
+        "Všetky prémiové funkcie z vášho aktuálneho plánu"
+      ],
+      "Only": [
+        "Iba"
       ]
     }
   }

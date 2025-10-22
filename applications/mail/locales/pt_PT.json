@@ -1612,6 +1612,9 @@
       ],
       "Zoom out": [
         "Reduzir"
+      ],
+      "Explore other plans": [
+        "Explorar outros planos"
       ]
     },
     "action": {
@@ -6265,8 +6268,8 @@
         "${ numOccurrences } ocorrências encontradas"
       ],
       "${ numOccurrences } occurrence found in the mail content": [
-        "${ numOccurrences } ocurrência encontrada no conteúdo de e-mail ",
-        "${ numOccurrences } ocurrências encontradas no conteúdo de e-mail "
+        "${ numOccurrences } ocorrência encontrada no conteúdo do e-mail",
+        "${ numOccurrences } ocorrências encontradas no conteúdo de e-mail"
       ],
       "${ PASS_APP_NAME } allows you to store passwords, notes, and other sensitive information with end-to-end encryption. Available on ${ ios }, ${ android } and in your ${ browser }.": [
         "${ PASS_APP_NAME } permite armazenar palavras-passe, notas e outras informações confidenciais com encriptação de ponta a ponta. Disponível em ${ ios }, ${ android } e no seu ${ browser }."
@@ -7122,8 +7125,7 @@
         "A inicializar…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir uma imagem"
       ],
       "Insert link": [
         "Inserir uma ligação"

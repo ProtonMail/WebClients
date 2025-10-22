@@ -1678,6 +1678,16 @@
       ],
       "Zoom out": [
         "Zoom indietro"
+      ],
+      "Explore other plans": [
+        "Esplora gli altri piani"
+      ],
+      "Subscribe now": [
+        "Abbonati ora"
+      ],
+      "Trust key": [
+        "chiave attendibile",
+        "chiavi attendibili"
       ]
     },
     "action": {
@@ -7411,8 +7421,7 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine",
-        "Inserisci immagini"
+        "Inserisci immagine"
       ],
       "Insert link": [
         "Inserisci link"
@@ -8840,6 +8849,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sei a pochi clic da una posta in arrivo organizzata"
+      ],
+      "Includes invoices, purchase orders, and payment confirmations.": [
+        "Include fatture, ordini di acquisto e conferme di pagamento."
+      ],
+      "Includes marketing emails and non-urgent app notifications.": [
+        "Include email di marketing e notifiche non urgenti dell'app."
       ]
     },
     "info": {
@@ -12724,6 +12739,31 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Puoi guadagnare fino a **${ maxRewardAmount }** in credito."
+      ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Se annulli prima di questa data,** ti verrà **eseguito il downgrade** al ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } quando termina la prova."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Se non ti abboni,** ti verrà **eseguito il downgrade** al ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Se non annulli,** inizierà il tuo piano completo e riceverai **${ referrerRewardAmount }** in crediti."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Se ti abboni prima di questa data,** riceverai **${ referrerRewardAmount }** in crediti."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Goditi **${ planTitle }** gratuitamente fino al **${ textDate }**."
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Ultima possibilità per esplorare tutte le potenti funzionalità che **${ planTitle }** ha da offrire."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Ti rimane **${ daysRemaining } giorno** per esplorare tutte le potenti funzionalità che **${ planTitle }** ha da offrire.",
+        "Ti restano **${ daysRemaining } giorni** per esplorare tutte le potenti funzionalità che **${ planTitle }** ha da offrire."
+      ],
+      "your subscription": [
+        "il tuo abbonamento"
       ]
     },
     "Remaining days before the message expire": {
@@ -15597,6 +15637,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Le categorie stanno arrivando!"
+      ],
+      "How your free trial works": [
+        "Come funziona la tua prova gratuita"
       ]
     },
     "Today icon tooltip in mini calendar": {

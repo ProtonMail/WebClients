@@ -1673,6 +1673,15 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Explore other plans": [
+        "その他のプランを表示"
+      ],
+      "Subscribe now": [
+        "今すぐ登録"
+      ],
+      "Trust key": [
+        "鍵を信頼する"
       ]
     },
     "action": {
@@ -4343,6 +4352,21 @@
       ],
       "This event was updated.": [
         "この予定は更新されました。"
+      ],
+      "DESCRIPTION:": [
+        "詳細："
+      ],
+      "LOCATION:": [
+        "場所："
+      ],
+      "TIME:": [
+        "時間："
+      ],
+      "TITLE:": [
+        "タイトル："
+      ],
+      "You are invited to": [
+        "あなたは、次の場所に招待されています："
       ]
     },
     "Email body for invitation (date part)": {
@@ -7280,7 +7304,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像を挿入"
+        "画像の挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -8685,6 +8709,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "不要なものが整理された受信トレイまで、あと数クリックです。"
+      ],
+      "Includes invoices, purchase orders, and payment confirmations.": [
+        "請求書、注文書、および支払確認書が含まれます。"
+      ],
+      "Includes marketing emails and non-urgent app notifications.": [
+        "マーケティングメールと緊急性の低いアプリの通知が含まれます。"
       ]
     },
     "info": {
@@ -11408,6 +11438,12 @@
       ],
       "Your subscription renews soon": [
         "サブスクリプションはまもなく更新されます"
+      ],
+      "Don't show this again": [
+        "次回から表示しない"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "${ BRAND_NAME } Duoを入手"
       ]
     },
     "Offer fearue": {
@@ -12421,6 +12457,30 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "最大**${ maxRewardAmount }**分のクレジットを獲得できます。"
+      ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**この日付より前にキャンセルされた場合**、トライアル終了時にお客様は${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }に**ダウングレードされます**。"
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**ご登録がない場合**、お客様は${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }に**ダウングレードされます**。"
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**キャンセルしない場合**、お客様のフルプランが開始され、お客様は**${ referrerRewardAmount }**のクレジットを獲得できます。"
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**この日までに登録**すると、お客様は**${ referrerRewardAmount }**のクレジットを獲得できます。"
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "**${ textDate }** まで、**${ planTitle }** を無料でお楽しみいただけます。"
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "**${ planTitle }**が提供するすべての強力な機能をお試しいただける最後の機会です。"
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "**${ planTitle }**が提供するすべての強力な機能をお試しいただける期間は、残り**${ daysRemaining }日**です。"
+      ],
+      "your subscription": [
+        "あなたのサブスクリプション"
       ]
     },
     "Remaining days before the message expire": {
@@ -15199,6 +15259,12 @@
       ],
       "✨ Categories are coming!": [
         "✨ カテゴリがまもなく登場します！"
+      ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "${ BRAND_NAME } Duo でストレージを2倍に"
+      ],
+      "How your free trial works": [
+        "無料トライアルについて"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15725,6 +15791,23 @@
       ],
       "Passcode:": [
         "パスコード："
+      ]
+    },
+    "Duo offer": {
+      "/month": [
+        "/ 月"
+      ],
+      "1 TB of storage to share": [
+        "1 TBのストレージを共有"
+      ],
+      "2 user accounts": [
+        "2 ユーザーアカウント"
+      ],
+      "All premium features from your current plan": [
+        "現在のプランのすべてのプレミアム機能"
+      ],
+      "Only": [
+        "のみ"
       ]
     }
   }

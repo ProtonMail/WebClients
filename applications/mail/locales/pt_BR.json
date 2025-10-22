@@ -1490,7 +1490,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança"
+        "Chave de confiança",
+        "Chaves de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1681,6 +1682,12 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "Explore other plans": [
+        "Explorar outros planos"
+      ],
+      "Subscribe now": [
+        "Assine agora"
       ]
     },
     "action": {
@@ -2457,7 +2464,7 @@
         "${ participantName } recusou seu convite e propôs um novo horário para uma das ocorrências deste evento. A resposta e a proposta estão desatualizadas."
       ],
       "${ participantName } had declined your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName } havia recusado seu convite e proposto um novo horário para este evento. A resposta e a proposta estão desatualizadas."
+        "${ participantName } recusou seu convite e propôs um novo horário para este evento. A resposta e a proposta estão desatualizadas."
       ],
       "${ participantName } had previously accepted your invitation to one occurrence of the event.": [
         "${ participantName } havia aceitado o seu convite para uma ocorrência do evento."
@@ -2487,7 +2494,7 @@
         "${ participantName } havia proposto um novo horário para uma ocorrência deste evento. Esta proposta está desatualizada. Você não tem calendários."
       ],
       "${ participantName } had proposed a new time for this event. This proposal is out of date.": [
-        "${ participantName } havia proposto um novo horário para este evento. Esta proposta está desatualizada."
+        "${ participantName } propôs um novo horário para este evento. Esta proposta está desatualizada."
       ],
       "${ participantName } had proposed a new time for this event. This proposal is out of date. The event does not exist in your calendar anymore.": [
         "${ participantName } havia proposto um novo horário para este evento. Esta proposta está desatualizada. O evento não existe mais em seu calendário."
@@ -2505,7 +2512,7 @@
         "${ participantName } havia aceito provisoriamente um convite para uma ocorrência do evento."
       ],
       "${ participantName } had tentatively accepted an invitation to this event.": [
-        "${ participantName } havia aceito provisoriamente um convite para este evento."
+        "${ participantName } aceitou provisoriamente um convite para este evento."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } havia aceitado provisoriamente seu convite e proposto um novo horário para uma ocorrência deste evento. A resposta e a proposta estão desatualizadas."
@@ -4367,6 +4374,21 @@
       ],
       "This event was updated.": [
         "Este evento foi atualizado."
+      ],
+      "DESCRIPTION:": [
+        "DESCRIÇÃO:"
+      ],
+      "LOCATION:": [
+        "LOCALIZAÇÃO:"
+      ],
+      "TIME:": [
+        "HORA:"
+      ],
+      "TITLE:": [
+        "TÍTULO:"
+      ],
+      "You are invited to": [
+        "Você está convidado para"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4982,7 +5004,7 @@
         "Existem muitas pastas em sua conta externa. Personalize a importação para excluir algumas pastas."
       ],
       "There has been an issue with content search. Default search has been used instead.": [
-        "Houve um problema com a pesquisa de conteúdo. Portanto, a pesquisa padrão foi usada."
+        "Ocorreu um problema com a pesquisa de conteúdo. A pesquisa padrão foi usada."
       ],
       "There was an error when exporting the contacts vCards": [
         "Houve um erro ao exportar os vCards dos contatos"
@@ -5068,7 +5090,7 @@
         "Você atingiu o número máximo de caracteres. Encurte sua mensagem."
       ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
-        "Suas mensagens não podem ser descriptografadas devido a uma recente redefinição de senha. Caso lembre-se de sua senha anterior, você pode ${ reActivateKeyLink } para acessar suas mensagens. ${ learnMoreLink }"
+        "Seus e-mails não podem ser descriptografados devido a uma redefinição de senha recente. Se você se lembrar da sua senha anterior, poderá ${ reActivateKeyLink } para acessar suas mensagens. ${ learnMoreLink }"
       ],
       "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
         "Suas mensagens não podem ser descriptografadas. Isso pode ser devido a uma recente redefinição de senha. ${ learnMoreLink }"
@@ -5504,6 +5526,12 @@
     "Feature": {
       "Unlimited hide-my-email aliases": [
         "Aliases do Hide-my-email ilimitados"
+      ],
+      "Encrypted cloud storage for files, photos and documents": [
+        "Armazenamento em nuvem criptografado para arquivos, fotos e documentos"
+      ],
+      "More premium features": [
+        "Recursos premium adicionais"
       ]
     },
     "fido2: Error": {
@@ -6379,7 +6407,7 @@
         "O ${ CALENDAR_APP_NAME } exige um endereço ${ BRAND_NAME } para sincronização segura de eventos e criptografia. ${ claimAddressButton }."
       ],
       "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
-        "O ${ CALENDAR_APP_NAME } exige um endereço ${ BRAND_NAME } para sincronização segura de eventos e para a criptografia. Resgate seu endereço ${ MAIL_APP_NAME } gratuito agora."
+        "O ${ CALENDAR_APP_NAME } exige um endereço ${ BRAND_NAME } para sincronização segura de eventos e para a criptografia. Crie seu endereço ${ MAIL_APP_NAME } gratuito agora."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } novo calendário",
@@ -7179,7 +7207,7 @@
         "Curta uma experiência de e-mail mais rápida e focada com o aplicativo para desktop."
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
-        "Garanta uma comunicação totalmente privada e criptografada. Resgate seu endereço de e-mail ${ BRAND_NAME } gratuito agora."
+        "Garanta uma comunicação totalmente privada e criptografada. Crie seu endereço de e-mail ${ BRAND_NAME } gratuito agora."
       ],
       "Enter the code from your authenticator app": [
         "Insira o código do seu aplicativo de autenticação."
@@ -7399,8 +7427,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir imagem"
       ],
       "Insert link": [
         "Inserir link"
@@ -8179,7 +8206,7 @@
         "Este é um nome ou apelido para sua organização que seus usuários verão. Você pode alterá-lo a qualquer momento."
       ],
       "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
-        "O objetivo é servir como ajuda para à escrita. Verifique a precisão do texto sugerido. ${ learnMoreResult }"
+        "O objetivo é servir como ajuda para a escrita. Verifique a precisão do texto sugerido. ${ learnMoreResult }"
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Este é agora o seu ${ defaultEmailAddress } para enviar novas mensagens."
@@ -8828,6 +8855,21 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Você está a alguns cliques de distância de ter uma caixa de entrada organizada"
+      ],
+      "Choose a plan that works best for you.": [
+        "Escolha um plano que funcione melhor para você."
+      ],
+      "Continue": [
+        "Continuar"
+      ],
+      "Includes invoices, purchase orders, and payment confirmations.": [
+        "Inclui faturas, pedidos de compra e confirmações de pagamento."
+      ],
+      "Includes marketing emails and non-urgent app notifications.": [
+        "Inclui e-mails de marketing e notificações não urgentes do aplicativo."
+      ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "Faça upgrade para manter seus benefícios ${ planTitle }."
       ]
     },
     "info": {
@@ -10335,6 +10377,9 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Sua avaliação gratuita terminou. O acesso a sua será desativada em breve. ${ action }"
+      ],
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "Sua avaliação gratuita terminou. ${ nonAutoRenewalAction }"
       ]
     },
     "Message display when a new app version is available": {
@@ -11492,7 +11537,7 @@
         "Código de acesso copiado para a área de transferência"
       ],
       "Passphrase copied to clipboard": [
-        "Passphrase copiada para a área de transferência"
+        "Frase secreta copiada para a área de transferência"
       ],
       "Password has been set successfully": [
         "A senha foi definida com sucesso"
@@ -11599,6 +11644,12 @@
       ],
       "Your subscription renews soon": [
         "Sua assinatura renovará em breve"
+      ],
+      "Don't show this again": [
+        "Não mostrar isso novamente"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Obter ${ BRAND_NAME } Duo"
       ]
     },
     "Offer fearue": {
@@ -12668,7 +12719,7 @@
         "Mensagem criptografada com PGP"
       ],
       "PGP-encrypted message from verified sender": [
-        "Mensagem criptografada por PGP de um remetente verificado"
+        "Mensagem criptografada por PGP de remetente verificado"
       ],
       "PGP-signed message": [
         "Mensagem assinada por PGP"
@@ -12718,6 +12769,34 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Você pode receber até **${ maxRewardAmount }** em crédito."
+      ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Se você cancelar antes desta data,** faremos um **downgrade** para ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } quando a avaliação terminar."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Se você não se inscrever,** faremos um **downgrade** para ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Se você não cancelar, ** seu plano completo começará e você receberá **${ referrerRewardAmount }** em créditos."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Se você se inscrever antes desta data, ** você receberá **${ referrerRewardAmount }** em créditos."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Aproveite o **${ planTitle }** gratuitamente até **${ textDate }**."
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Última oportunidade para explorar todos os recursos avançados que **${ planTitle }** tem para oferecer."
+      ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "Assim que sua assinatura completa começar, você ainda pode cancelar em até 30 dias e receber um reembolso proporcional."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Você tem **${ daysRemaining } dia restante** para explorar todos os poderosos recursos que o **${ planTitle }** tem a oferecer.",
+        "Você tem **${ daysRemaining } dias restantes** para explorar todos os poderosos recursos que o **${ planTitle }** tem a oferecer."
+      ],
+      "your subscription": [
+        "sua assinatura"
       ]
     },
     "Remaining days before the message expire": {
@@ -15591,6 +15670,18 @@
       ],
       "✨ Categories are coming!": [
         "✨ Categorias estão chegando!"
+      ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Dobre seu armazenamento com ${ BRAND_NAME } Duo"
+      ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Receba **${ referralInfo.uiData.refereeRewardAmount }** em créditos com ${ planTitle }"
+      ],
+      "How your free trial works": [
+        "Como funciona seu teste gratuito"
+      ],
+      "Upgrade to keep your premium benefits.": [
+        "Faça upgrade para manter seus benefícios premium."
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15893,6 +15984,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Sua avaliação gratuita termina em ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Sua avaliação terminará em ${ textDate }. Você não será cobrado se cancelar antes de ${ textDate }. ${ action }"
       ]
     },
     "WeekDay": {
@@ -16162,6 +16256,23 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "Duo offer": {
+      "/month": [
+        "/mês"
+      ],
+      "1 TB of storage to share": [
+        "1 TB de armazenamento para compartilhar"
+      ],
+      "2 user accounts": [
+        "2 contas de usuário"
+      ],
+      "All premium features from your current plan": [
+        "Todos os recursos premium do seu plano atual"
+      ],
+      "Only": [
+        "Somente"
       ]
     }
   }

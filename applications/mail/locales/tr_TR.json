@@ -1490,7 +1490,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Güvenilen anahtar",
+        "Güvenilen anahtarlar"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1681,6 +1682,12 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Explore other plans": [
+        "Diğer tarifeleri keşfedin"
+      ],
+      "Subscribe now": [
+        "Şimdi abone olun"
       ]
     },
     "action": {
@@ -2312,6 +2319,9 @@
       ],
       "Website access problem": [
         "Site erişim sorunu"
+      ],
+      "Black Friday": [
+        "Muhteşem Cuma"
       ]
     },
     "Button": {
@@ -5519,6 +5529,12 @@
     "Feature": {
       "Unlimited hide-my-email aliases": [
         "Sınırsız sayıda hide-my-email takma adı"
+      ],
+      "Encrypted cloud storage for files, photos and documents": [
+        "Dosyalar, fotoğraflar ve belgeler için şifrelenmiş bulut depolama alanı"
+      ],
+      "More premium features": [
+        "Daha fazla ücretli özellik"
       ]
     },
     "fido2: Error": {
@@ -7414,8 +7430,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -8843,6 +8858,21 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Dağınıklıktan arındırılmış bir gelen kutusundan yalnızca birkaç tık uzaktasınız."
+      ],
+      "Choose a plan that works best for you.": [
+        "Sizin için en uygun tarifeyi seçin."
+      ],
+      "Continue": [
+        "İlerle"
+      ],
+      "Includes invoices, purchase orders, and payment confirmations.": [
+        "Faturaları, satın alma siparişlerini ve ödeme onaylarını içerir."
+      ],
+      "Includes marketing emails and non-urgent app notifications.": [
+        "Pazarlama e-postalarını ve acil olmayan uygulama bildirimlerini içerir."
+      ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "${ planTitle } avantajlarınızı korumak için yükseltin."
       ]
     },
     "info": {
@@ -10350,6 +10380,9 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ücretsiz deneme süreniz doldu. Hesabınıza erişim yakında kapatılacak. ${ action }"
+      ],
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "Ücretsiz tarifeniz sona erdi. ${ nonAutoRenewalAction }"
       ]
     },
     "Message display when a new app version is available": {
@@ -11609,6 +11642,12 @@
       ],
       "Your subscription renews soon": [
         "Aboneliğiniz yakında yenilenecek"
+      ],
+      "Don't show this again": [
+        "Bunu bir daha gösterme"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "${ BRAND_NAME } Duo edinin"
       ]
     },
     "Offer fearue": {
@@ -12722,6 +12761,34 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "**${ maxRewardAmount }** tutarına kadar kredi kazanabilirsiniz."
+      ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "Bu tarihten önce **iptal ederseniz**, deneme süresi sona erdiğinde ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } tarifesine **düşürüleceksiniz**."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Abone olmazsanız**, ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } tarifesine **düşürüleceksiniz**."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**İptal etmezseniz,** tam tarifeniz başlar ve **${ referrerRewardAmount }** kredi kazanırsınız."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Bu tarihten önce abone olursanız,** **${ referrerRewardAmount }** kredi kazanırsınız."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "**${ planTitle }** tarifesini **${ textDate }** tarihine kadar ücretsiz kullanın."
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "**${ planTitle }** tarifesinin sunduğu tüm güçlü özellikleri keşfetmek için son şansınız."
+      ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "Tam aboneliğiniz başladıktan sonra, 30 gün içinde iptal edebilir ve kalan gün sayısına göre geri ödeme alabilirsiniz."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "**${ planTitle }** tarifesinin sunduğu tüm güçlü özellikleri keşfetmek için **${ daysRemaining } gününüz kaldı**.",
+        "**${ planTitle }** tarifesinin sunduğu tüm güçlü özellikleri keşfetmek için **${ daysRemaining } gününüz kaldı**."
+      ],
+      "your subscription": [
+        "aboneliğiniz"
       ]
     },
     "Remaining days before the message expire": {
@@ -15595,6 +15662,18 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategoriler özelliği geliyor!"
+      ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "${ BRAND_NAME } Duo ile depolama alanınızı iki katına çıkarın"
+      ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "${ planTitle } ile **${ referralInfo.uiData.refereeRewardAmount }** kredi kazanın."
+      ],
+      "How your free trial works": [
+        "Ücretsiz denemeniz nasıl işler"
+      ],
+      "Upgrade to keep your premium benefits.": [
+        "Ücretli avantajlarınızı korumak için tarifenizi yükseltin."
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15897,6 +15976,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Ücretsiz denemeniz ${ textDate } tarihinde sona erecek. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Deneme tarifeniz ${ textDate } tarihinde sona erecektir. ${ textDate } tarihinden önce iptal etmeniz durumunda sizden ücret alınmayacaktır. ${ action }"
       ]
     },
     "WeekDay": {
@@ -16166,6 +16248,39 @@
       ],
       "Passcode:": [
         "Parola:"
+      ]
+    },
+    "Duo offer": {
+      "/month": [
+        "/aylık"
+      ],
+      "1 TB of storage to share": [
+        "Paylaşım için 1 TB depolama alanı"
+      ],
+      "2 user accounts": [
+        "2 kullanıcı hesabı"
+      ],
+      "All premium features from your current plan": [
+        "Mevcut tarifenizdeki tüm ücretli özellikler"
+      ],
+      "Only": [
+        "Yalnızca"
+      ]
+    },
+    "Duo offer: Link": {
+      "Double your storage": [
+        "Depolama alanınızı iki katına çıkarın"
+      ],
+      "Share your plan": [
+        "Tarifenizi paylaşın"
+      ]
+    },
+    "Duo offer: Title": {
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "${ BRAND_NAME } Duo ile depolama alanınızı iki katına çıkarın"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "${ BRAND_NAME } Duo ile tarifenizin avantajlarını paylaşın"
       ]
     }
   }

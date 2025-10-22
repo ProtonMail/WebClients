@@ -1490,7 +1490,8 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel"
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -1681,6 +1682,12 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Explore other plans": [
+        "Utforska andra paket"
+      ],
+      "Subscribe now": [
+        "Prenumerera nu"
       ]
     },
     "action": {
@@ -2728,6 +2735,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Lägg till ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Chattar med hög hastighet och avancerade AI-funktioner."
       ]
     },
     "color": {
@@ -5501,6 +5511,12 @@
     "Feature": {
       "Unlimited hide-my-email aliases": [
         "Obegränsat antal hide-my-email-alias"
+      ],
+      "Encrypted cloud storage for files, photos and documents": [
+        "Krypterad molnlagring för filer, foton och dokument"
+      ],
+      "More premium features": [
+        "Fler premiumfunktioner"
       ]
     },
     "fido2: Error": {
@@ -7393,8 +7409,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -8810,6 +8825,18 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du är bara några klick bort från en skräpfri inkorg"
+      ],
+      "Choose a plan that works best for you.": [
+        "Välj ett paket som passar dig bäst."
+      ],
+      "Continue": [
+        "Fortsätt"
+      ],
+      "Includes invoices, purchase orders, and payment confirmations.": [
+        "Inkluderar fakturor, inköpsordrar och betalningsbekräftelser."
+      ],
+      "Includes marketing emails and non-urgent app notifications.": [
+        "Inkluderar e-postmarknadsföring och icke-brådskande appaviseringar."
       ]
     },
     "info": {
@@ -9848,6 +9875,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Deals, offers, marketing emails": [
+        "Erbjudanden, kampanjer, e-postmarknadsföring"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11575,6 +11605,12 @@
       ],
       "Your subscription renews soon": [
         "Din prenumeration förnyas snart"
+      ],
+      "Don't show this again": [
+        "Visa inte detta igen"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Skaffa ${ BRAND_NAME } Duo"
       ]
     },
     "Offer fearue": {
@@ -12586,6 +12622,31 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Du kan få upp till **${ maxRewardAmount }** i kredit."
+      ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Om du avbryter före detta datum** kommer du att **nedgraderas** till ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } när provperioden slutar."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Om du inte prenumererar** kommer du att **nedgraderas** till ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Om du inte avbryter** kommer ditt fullständiga paket att starta och du får **${ referrerRewardAmount }** i krediter."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Om du prenumererar före detta datum** får du **${ referrerRewardAmount }** i krediter."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Njut av **${ planTitle }** gratis fram till **${ textDate }**."
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Sista chansen att utforska alla kraftfulla funktioner som **${ planTitle }** har att erbjuda."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Du har **${ daysRemaining } dag kvar** att utforska alla kraftfulla funktioner som **${ planTitle }** har att erbjuda.",
+        "Du har **${ daysRemaining } dagar kvar** för att utforska alla kraftfulla funktioner som **${ planTitle }** har att erbjuda."
+      ],
+      "your subscription": [
+        "din prenumeration"
       ]
     },
     "Remaining days before the message expire": {
@@ -15454,6 +15515,18 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorier kommer!"
+      ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Dubbla ditt lagringsutrymme med ${ BRAND_NAME } Duo"
+      ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Få **${ referralInfo.uiData.refereeRewardAmount }** i krediter med ${ planTitle }"
+      ],
+      "How your free trial works": [
+        "Hur din gratis provperiod fungerar"
+      ],
+      "Upgrade to keep your premium benefits.": [
+        "Uppgradera för att behålla dina premiumförmåner."
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16022,6 +16095,28 @@
       ],
       "Passcode:": [
         "Lösenkod:"
+      ]
+    },
+    "Duo offer": {
+      "/month": [
+        "/månad"
+      ],
+      "1 TB of storage to share": [
+        "1 TB lagringsutrymme att dela"
+      ],
+      "2 user accounts": [
+        "2 användarkonton"
+      ],
+      "All premium features from your current plan": [
+        "Alla premiumfunktioner från ditt nuvarande paket"
+      ],
+      "Only": [
+        "Endast"
+      ]
+    },
+    "Duo offer: Link": {
+      "Share your plan": [
+        "Dela ditt paket"
       ]
     }
   }
