@@ -1,21 +1,25 @@
 import { type PropsWithChildren, useEffect, useRef, useState } from 'react';
-import { Router } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 import type { ProtonThunkArguments } from 'packages/redux-shared-store-types';
 
+import { ApiProvider, ErrorBoundary, StandardErrorPage } from '@proton/components';
 import LoaderPage from '@proton/components/containers/app/LoaderPage';
 import ProtonApp from '@proton/components/containers/app/ProtonApp';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
-import ThemeProvider from '@proton/components/containers/themes/ThemeProvider';
-import { ApiContext } from '@proton/components/index';
+import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import type { UnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 import { FlagProvider } from '@proton/unleash';
 
 import config from '../config';
+import type { BookingsStore } from '../store/bookingsStore';
 import { BookingsRouter } from './BookingsRouter';
 import { bootstrapBooking } from './bootstrapBooking';
 
-type ExtraThunkArguments = Omit<ProtonThunkArguments, 'config' | 'api' | 'eventManager' | 'notificationsManager'> & {
+type ExtraThunkArguments = Omit<
+    ProtonThunkArguments,
+    'config' | 'eventManager' | 'notificationsManager' | 'history'
+> & {
     unauthenticatedApi: UnauthenticatedApi;
 };
 
@@ -23,38 +27,46 @@ export const BookingPageContainer = ({ children }: PropsWithChildren) => {
     const [initialised, setInitialised] = useState(false);
     const extraThunkArgumentsRef = useRef<ExtraThunkArguments>();
 
-    const initializeServices = () => {
-        const { unauthenticatedApi, unleashClient, authentication, history } = bootstrapBooking();
+    const storeRef = useRef<BookingsStore>();
+
+    const initializeServices = async () => {
+        const { unauthenticatedApi, unleashClient, authentication, api, store } = await bootstrapBooking();
         extraThunkArgumentsRef.current = {
             unauthenticatedApi,
             unleashClient,
             authentication,
-            history,
+            api,
         };
+
+        storeRef.current = store;
 
         setInitialised(true);
     };
 
     useEffect(() => {
-        initializeServices();
+        void initializeServices();
     }, []);
 
     if (!initialised || !extraThunkArgumentsRef.current) {
         return <LoaderPage />;
     }
 
-    const { unauthenticatedApi, unleashClient, authentication, history } = extraThunkArgumentsRef.current;
+    const { api, unleashClient, authentication } = extraThunkArgumentsRef.current;
 
     return (
-        <ThemeProvider appName={config.APP_NAME}>
+        <ProtonStoreProvider store={storeRef.current as BookingsStore}>
             <AuthenticationProvider store={authentication}>
-                <Router history={history}>
+                <BrowserRouter basename="/bookings">
                     <FlagProvider unleashClient={unleashClient} startClient={false}>
-                        <ApiContext.Provider value={unauthenticatedApi.apiCallback}>{children}</ApiContext.Provider>
+                        <ApiProvider api={api}>
+                            <ErrorBoundary big component={<StandardErrorPage big />}>
+                                {children}
+                            </ErrorBoundary>
+                        </ApiProvider>
                     </FlagProvider>
-                </Router>
+                </BrowserRouter>
             </AuthenticationProvider>
-        </ThemeProvider>
+        </ProtonStoreProvider>
     );
 };
 
