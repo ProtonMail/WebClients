@@ -5,6 +5,9 @@ export { useFilteredFiles } from './useFilteredFiles';
 // Personalization hooks
 export { usePersonalization } from './usePersonalization';
 
+// URL parameter hooks
+export { useQueryParam } from './useQueryParam';
+
 // User settings hooks
 export { useLumoUserSettings } from './useLumoUserSettings';
 
