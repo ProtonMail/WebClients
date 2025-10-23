@@ -12,7 +12,7 @@ import {
   TableEditor,
 } from '@rowsncolumns/spreadsheet-state'
 import type { ProtonSheetsState } from '../../state'
-import { onlyImplementedFunctionDescriptions as functionDescriptions } from '../../constants'
+import { FUNCTION_DESCRIPTIONS } from '../../constants'
 import { SheetSearch } from '@rowsncolumns/spreadsheet'
 import { ChartEditor, ChartEditorDialog } from '@rowsncolumns/charts'
 
@@ -35,7 +35,7 @@ export function LegacyDialogs({ state }: LegacyDialogsProps) {
           sheetId={state.activeSheetId}
           theme={state.theme}
           conditionalFormats={state.conditionalFormats}
-          functionDescriptions={functionDescriptions}
+          functionDescriptions={FUNCTION_DESCRIPTIONS}
           onCreateRule={state.onCreateConditionalFormattingRule}
           onDeleteRule={state.onDeleteConditionalFormattingRule}
           onUpdateRule={state.onUpdateConditionalFormattingRule}
@@ -65,7 +65,7 @@ export function LegacyDialogs({ state }: LegacyDialogsProps) {
         <DataValidationEditor
           dataValidations={state.dataValidations}
           sheetId={state.activeSheetId}
-          functionDescriptions={functionDescriptions}
+          functionDescriptions={FUNCTION_DESCRIPTIONS}
           onDeleteRules={state.onDeleteDataValidationRules}
           onDeleteRule={state.onDeleteDataValidationRule}
           onCreateRule={state.onCreateDataValidationRule}

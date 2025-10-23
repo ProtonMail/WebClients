@@ -51,7 +51,7 @@ export function ProtonSheetsUIStoreProvider({ state, isReadonly, children }: Pro
       useUI,
       // this is a setters getter, set here letter by letter to better get the setters, get it?
       get setters() {
-        return uiStateRef.current
+        return uiStateRef.current as ProtonSheetsUIStoreSetters
       },
     }),
     [useUI],
@@ -114,23 +114,27 @@ Object.defineProperty(useUI, '$', {
   },
 })
 
+// TODO: broken somehow, non-function stuff shows up in .selection for example, maybe related to the depth?
 /**
  * Omits non-function properties from a type, recursively. Useful in this case to prevent using
  * values without a proper subscription when using `useUI.$`, as that API is meant exclusively
  * for setters, which should always be stable (e.g. via useEvent in `ui-state.ts`).
  */
 // biome-ignore lint/suspicious/noExplicitAny: it's fine.
-type FunctionsOnly<T> = T extends (...args: any) => any
-  ? T
-  : // biome-ignore lint/suspicious/noExplicitAny: it's fine.
-    T extends readonly any[] // treat arrays as leaves; drop them
-    ? never
-    : T extends object
-      ? {
-          [K in keyof T as FunctionsOnly<T[K]> extends never ? never : K]: FunctionsOnly<T[K]>
-        } extends infer O
-        ? keyof O extends never
-          ? never
-          : { [K in keyof O]: O[K] }
+type FunctionsOnly<T, D extends number = 20> = D extends 0
+  ? never
+  : T extends (...args: any) => any
+    ? T
+    : T extends readonly any[] // treat arrays as leaves; drop them
+      ? never
+      : T extends object
+        ? {
+            [K in keyof T as FunctionsOnly<T[K], Prev[D]> extends never ? never : K]: FunctionsOnly<T[K], Prev[D]>
+          } extends infer O
+          ? keyof O extends never
+            ? never
+            : { [K in keyof O]: O[K] }
+          : never
         : never
-      : never
+
+type Prev = [never, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]

@@ -11,7 +11,7 @@ import {
 import { addressToCell, cellToAddress, convertCellToRange } from '@rowsncolumns/utils'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useUI } from '../../ui-store'
-import { onlyImplementedFunctionDescriptions as functionDescriptions } from '../../constants'
+import { FUNCTION_DESCRIPTIONS } from '../../constants'
 import * as Ariakit from '@ariakit/react'
 import * as UI from '../ui'
 import * as Icons from '../icons'
@@ -242,7 +242,7 @@ function FormulaBarContent() {
           className="border-none bg-[white] text-sm font-normal focus:ring-0"
           sheetId={useUI((ui) => ui.legacy.activeSheetId)}
           activeCell={useUI((ui) => ui.legacy.activeCell)}
-          functionDescriptions={functionDescriptions}
+          functionDescriptions={FUNCTION_DESCRIPTIONS}
           disabled={useUI((ui) => ui.info.isReadonly)}
         />
       </div>

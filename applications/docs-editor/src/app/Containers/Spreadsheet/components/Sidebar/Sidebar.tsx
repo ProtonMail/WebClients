@@ -2,7 +2,7 @@ import React, { useMemo, useState, type PropsWithChildren } from 'react'
 import clsx from '@proton/utils/clsx'
 import { produce } from 'immer'
 import { useEvent } from '../utils'
-import { onlyImplementedFunctionDescriptions as functionDescriptions } from '../../constants'
+import { FUNCTION_DESCRIPTIONS } from '../../constants'
 import { ConditionalFormatDialog } from './ConditionalFormatDialog'
 import type { ProtonSheetsState } from '../../state'
 import { SidebarContext, type SidebarContextValue, type SidebarDialogStore } from './shared'
@@ -94,7 +94,7 @@ export function Sidebar({ state }: SidebarProps) {
         sheetId={state.activeSheetId}
         theme={state.theme}
         conditionalFormats={state.conditionalFormats}
-        functionDescriptions={functionDescriptions}
+        functionDescriptions={FUNCTION_DESCRIPTIONS}
         onCreateRule={state.onCreateConditionalFormattingRule}
         onDeleteRule={state.onDeleteConditionalFormattingRule}
         onUpdateRule={state.onUpdateConditionalFormattingRule}
@@ -103,7 +103,7 @@ export function Sidebar({ state }: SidebarProps) {
       <DataValidationDialog
         dataValidations={state.dataValidations}
         sheetId={state.activeSheetId}
-        functionDescriptions={functionDescriptions}
+        functionDescriptions={FUNCTION_DESCRIPTIONS}
         onDeleteRules={state.onDeleteDataValidationRules}
         onDeleteRule={state.onDeleteDataValidationRule}
         onCreateRule={state.onCreateDataValidationRule}
