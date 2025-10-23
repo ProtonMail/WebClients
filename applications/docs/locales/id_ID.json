@@ -66,9 +66,6 @@
       "Add contact": [
         "Tambah kontak"
       ],
-      "Add credit / debit card": [
-        "Tambah kartu kredit / debit"
-      ],
       "Add email": [
         "Tambah email"
       ],
@@ -125,9 +122,6 @@
       ],
       "Cancel subscription": [
         "Batalkan langganan"
-      ],
-      "Cancel trial and pay": [
-        "Batalkan uji coba dan bayar"
       ],
       "Change password": [
         "Ubah kata sandi"
@@ -252,17 +246,11 @@
       "Create and copy alias": [
         "Buat dan salin alias"
       ],
-      "Create folder": [
-        "Buat folder"
-      ],
       "Create new folder": [
         "Buat folder baru"
       ],
       "Create new password": [
         "Buat kata sandi baru"
-      ],
-      "Current plan": [
-        "Paket saat ini"
       ],
       "Customize": [
         "Atur"
@@ -278,9 +266,6 @@
       ],
       "Decline invite": [
         "Tolak undangan"
-      ],
-      "Decrease": [
-        "Kurangi"
       ],
       "Delete": [
         "Hapus"
@@ -342,9 +327,6 @@
       "Edit sign-in details": [
         "Sunting rincian masuk"
       ],
-      "Edit subscription": [
-        "Sunting jenis langganan"
-      ],
       "Email settings": [
         "Pengaturan email"
       ],
@@ -356,6 +338,9 @@
       ],
       "Expand": [
         "Lebarkan"
+      ],
+      "Explore other plans": [
+        "Telusuri paket lainnya"
       ],
       "Export": [
         "Ekspor"
@@ -383,9 +368,6 @@
       ],
       "Get a free ${ BRAND_NAME } address": [
         "Dapatkan alamat ${ BRAND_NAME } gratis"
-      ],
-      "Get in touch": [
-        "Hubungi kami"
       ],
       "Get the apps": [
         "Dapatkan aplikasinya"
@@ -462,17 +444,11 @@
       "Import from Outlook": [
         "Impor dari Outlook"
       ],
-      "Increase": [
-        "Tambah"
-      ],
       "Keep my subscription": [
         "Pertahankan langganan saya"
       ],
       "Learn more": [
         "Pelajari lebih lanjut"
-      ],
-      "Let's talk": [
-        "Mari berbincang"
       ],
       "Load": [
         "Muat"
@@ -573,12 +549,6 @@
       "Open navigation": [
         "Buka navigasi"
       ],
-      "Pay": [
-        "Bayar"
-      ],
-      "Pay ${ price } now": [
-        "Bayar ${ price } sekarang"
-      ],
       "PDF (.pdf)": [
         "PDF (.pdf)"
       ],
@@ -632,9 +602,6 @@
       ],
       "Remove file": [
         "Hapus berkas"
-      ],
-      "Remove gift code": [
-        "Hapus kode hadiah"
       ],
       "Rename": [
         "Ubah nama"
@@ -714,12 +681,6 @@
       "Select all": [
         "Pilih semua"
       ],
-      "Select billing cycle ${ billingText }": [
-        "Pilih siklus pembayaran ${ billingText }"
-      ],
-      "Select country": [
-        "Pilih negara"
-      ],
       "Set recovery methods": [
         "Atur metode pemulihan"
       ],
@@ -783,14 +744,14 @@
       "Submit": [
         "Kirim"
       ],
+      "Subscribe now": [
+        "Langgan sekarang"
+      ],
       "Switch accounts": [
         "Ganti akun"
       ],
       "Switch or add account": [
         "Ubah atau tambah akun"
-      ],
-      "Take a tour": [
-        "Ikuti tur kami"
       ],
       "Take out of trash": [
         "Keluarkan dari sampah"
@@ -858,12 +819,6 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Gunakan ${ VPN_SHORT_APP_NAME } untuk privasi data"
       ],
-      "Use a different card": [
-        "Gunakan kartu lain"
-      ],
-      "Use a different payment method": [
-        "Gunakan metode pembayaran lainnya"
-      ],
       "Use authentication code": [
         "Gunakan kode autentikasi"
       ],
@@ -893,9 +848,6 @@
       ],
       "Web page (.html)": [
         "Halaman web (.html)"
-      ],
-      "What do I get?": [
-        "Apa yang akan saya dapatkan?"
       ],
       "Word count": [
         "Jumlah kata"
@@ -933,18 +885,6 @@
       ],
       "${ ips } server": [
         "${ ips } server"
-      ],
-      "${ price } per dedicated server": [
-        "${ price } per server khusus"
-      ],
-      "${ price } per domain": [
-        "${ price } per domain"
-      ],
-      "${ price } per seat": [
-        "${ price } per kuota"
-      ],
-      "${ price } per user": [
-        "${ price } per pengguna"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } kuota ${ LUMO_APP_NAME }"
@@ -1100,11 +1040,6 @@
         "Aplikasi ${ BRAND_NAME }"
       ]
     },
-    "Assistant toggle": {
-      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
-        "Bawa produktivitas email Anda ke tingkatan yang baru. Biarkan ${ BRAND_NAME } Scribe membantu Anda menulis, membalas, dan mengoreksi email Anda."
-      ]
-    },
     "Attached ics file error": {
       "Empty ICS file": [
         "Berkas ICS kosong"
@@ -1126,20 +1061,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Setelah uji coba ini berakhir pada ${ formattedDate }, paket Anda akan menjadi langganan berbayar yang diperbarui secara otomatis setiap ${ renewCycle } bulan. Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ formattedDate }."
+      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Setelah masa uji coba ini berakhir pada ${ formattedDate }, paket Anda akan menjadi langganan berbayar yang diperbarui secara otomatis secara bulanan. Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ formattedDate }."
-      ],
-      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
-        "Anda dapat memiliki hingga ${ TRIAL_MAX_DEDICATED_IPS } server khusus selama masa uji coba."
-      ],
-      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
-        "Anda dapat memiliki hingga ${ TRIAL_MAX_SCRIBE_SEATS } kuota Scribe selama masa uji coba."
-      ],
-      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
-        "Anda dapat memiliki hingga ${ TRIAL_MAX_USERS } pengguna selama masa uji coba."
-      ],
-      "You have reached the trial limit.": [
-        "Anda telah mencapai batas uji coba Anda."
       ]
     },
     "b2b_trials_Action": {
@@ -1156,15 +1082,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "1 user": [
-        "1 pengguna"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 pengguna"
-      ],
       "Premium Password Manager": [
         "Pengelola Kata Sandi Premium"
       ]
@@ -1189,35 +1106,11 @@
       "${ storageSize } storage": [
         "Ruang penyimpanan ${ storageSize }"
       ],
-      "1 TB total": [
-        "Jumlah 1 TB"
-      ],
-      "1 user": [
-        "1 pengguna"
-      ],
       "1 user account": [
         "1 akun pengguna"
       ],
-      "10 email addresses": [
-        "10 alamat surel"
-      ],
-      "2 users": [
-        "2 pengguna"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
       "6 user accounts": [
         "6 akun pengguna"
-      ],
-      "6 users": [
-        "6 pengguna"
-      ],
-      "8500+ servers across 110+ countries": [
-        "8500+ server di 110+ negara"
-      ],
-      "Ad-blocker and malware protection": [
-        "Pemblokiran iklan dan perlindungan perangkat lunak jahat"
       ],
       "Admin panel to manage your family": [
         "Panel akun untuk mengelola keluarga Anda"
@@ -1228,9 +1121,6 @@
       "Easily add or remove users": [
         "Tambah atau kurangi pengguna secara mudah"
       ],
-      "High speed streaming": [
-        "Streaming berkecepatan tinggi"
-      ],
       "One-time payment, lifetime deal": [
         "Satu kali pembayaran, untuk selamanya"
       ],
@@ -1240,15 +1130,6 @@
       "Password health alerts": [
         "Peringatan kesehatan kata sandi"
       ],
-      "Private photo backup": [
-        "Pencadangan foto pribadi"
-      ],
-      "Protect 10 devices at a time": [
-        "Lindungi 10 perangkat secara bersamaan"
-      ],
-      "Secure file storage & sharing": [
-        "Penyimpanan & pembagian berkas aman"
-      ],
       "Unlimited folders, labels and filters": [
         "Tanpa batasan jumlah folder, label, dan filter"
       ],
@@ -1257,12 +1138,6 @@
       ],
       "Use your own email domain": [
         "Gunakan domain email milik Anda sendiri"
-      ],
-      "Version history": [
-        "Riwayat versi"
-      ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -1276,9 +1151,6 @@
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
         "Akses konten yang diblokir dan jelajahi internet secara privat. Meliputi 8500+ server di 110+ negara, 10 perangkat, streaming berkecepatan tinggi, pemblokir iklan, perlindungan malware, VPN Accelerator, dan masih banyak lagi."
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Akses konten pada berbagai layanan streaming seperti Netflix, Disney+, Prime Video, dan lainnya dari mana saja."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Entri masuk yang aman pada seluruh perangkat Anda. Meliputi alias hide-my-email tanpa batasan jumlah, pembagian entri, 2FA yang terintegrasi, ${ DARK_WEB_MONITORING_NAME }, dan masih banyak lagi."
@@ -1298,31 +1170,8 @@
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Amankan berkas Anda dengan penyimpanan cloud yang terenkripsi. Meliputi penyunting dokumen online, pencadangan foto, riwayat versi, pembagian berkas yang terenkripsi, dan masih banyak lagi."
       ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Dirancang secara khusus, NetShield melindungi perangkat Anda dan mempercepat penjelajahan Anda dengan memblokir iklan, pelacak, dan perangkat lunak jahat."
-      ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Ruang penyimpanan terbagi antar seluruh layanan ${ BRAND_NAME }."
-      ]
-    },
-    "Billing cycle option": {
-      "1 month": [
-        "1 bulan"
-      ],
-      "12 months": [
-        "12 bulan"
-      ],
-      "Annually": [
-        "Tahunan"
-      ],
-      "Lifetime": [
-        "Seumur hidup"
-      ],
-      "Monthly": [
-        "Bulanan"
-      ],
-      "Two-year": [
-        "Dua tahun"
       ]
     },
     "Browser": {
@@ -1414,9 +1263,6 @@
       ]
     },
     "Button": {
-      "Close": [
-        "Tutup"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Lanjut dengan ${ MAIL_APP_NAME }."
       ],
@@ -1426,23 +1272,8 @@
       "Continue your subscription": [
         "Lanjutkan langganan Anda"
       ],
-      "Create label": [
-        "Buat label"
-      ],
-      "Discover and set up features": [
-        "Telusuri dan siapkan berbagai fitur"
-      ],
       "Maybe later": [
         "Mungkin nanti"
-      ],
-      "Remind me later": [
-        "Ingatkan saya nanti"
-      ],
-      "Set up other features": [
-        "Siapkan fitur lainnya"
-      ],
-      "Take a tour": [
-        "Ikuti tur kami"
       ]
     },
     "Cancellation upsell": {
@@ -1495,12 +1326,6 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } pengguna"
-      ],
-      "Total": [
-        "Total"
-      ],
-      "Total for ${ n } month": [
-        "Total untuk ${ n } bulan"
       ]
     },
     "Collapsible tooltip": {
@@ -1518,11 +1343,23 @@
       "Basic chat history": [
         "Riwayat percakapan dasar"
       ],
+      "Full chat history with search": [
+        "Riwayat percakapan utuh dengan fitur pencarian"
+      ],
+      "Limited daily chats": [
+        "Percakapan harian dalam jumlah yang terbatas"
+      ],
       "Limited favorites": [
         "Favorit dalam jumlah yang terbatas"
       ],
       "Unlimited daily chats": [
         "Tanpa batasan jumlah percakapan harian"
+      ],
+      "Unlimited favorites for quick access": [
+        "Tanpa batasan jumlah favorit untuk akses yang cepat"
+      ],
+      "Upload and query multiple large files": [
+        "Unggah dan kuerikan beberapa berkas besar sekaligus"
       ],
       "Upload and query small files": [
         "Unggah dan kuerikan berkas kecil"
@@ -1532,8 +1369,8 @@
       ]
     },
     "collider_2025: Info": {
-      "Add ${ LUMO_APP_NAME }": [
-        "Tambah ${ LUMO_APP_NAME }"
+      "High-speed chats and advanced AI features.": [
+        "Percakapan berkecepatan tinggi dan berbagai fitur AI mutakhir."
       ]
     },
     "color": {
@@ -2530,14 +2367,6 @@
         "Untuk ${ VPN_APP_NAME }"
       ]
     },
-    "Cycle": {
-      "/month": [
-        "/bulan"
-      ],
-      "/user per month": [
-        "/pengguna per bulan"
-      ]
-    },
     "Default display name vcard": {
       "Unknown": [
         "Tidak diketahui"
@@ -2783,12 +2612,37 @@
         "Dukungan prioritas"
       ]
     },
-    "Edit billing address form note": {
-      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
-        "Kolom teks bersifat opsional. Informasi yang Anda sediakan pada kolom ini hanya akan terlihat pada faktur yang diterbitkan ke depannya tanpa memengaruhi faktur yang telah ada."
+    "Duo offer": {
+      "/month": [
+        "/bulan"
       ],
-      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
-        "Kolom teks bersifat opsional. Informasi yang Anda sediakan dalam formulir ini hanya akan mengubah isi faktur yang Anda pilih tanpa memengaruhi rincian faktur yang akan datang."
+      "1 TB of storage to share": [
+        "Ruang penyimpanan 1 TB untuk digunakan bersama-sama"
+      ],
+      "2 user accounts": [
+        "2 akun pengguna"
+      ],
+      "All premium features from your current plan": [
+        "Seluruh fitur premium dari paket Anda saat ini"
+      ],
+      "Only": [
+        "Hanya"
+      ]
+    },
+    "Duo offer: Link": {
+      "Double your storage": [
+        "Gandakan ruang penyimpanan Anda"
+      ],
+      "Share your plan": [
+        "Bagikan paket Anda"
+      ]
+    },
+    "Duo offer: Title": {
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Gandakan ruang penyimpanan Anda dengan ${ BRAND_NAME } Duo"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "Bagikan keutamaan paket Anda dengan ${ BRAND_NAME } Duo"
       ]
     },
     "Email body for invitation": {
@@ -2804,6 +2658,9 @@
       "Here's what changed:": [
         "Berikut apa-apa saja yang telah berubah:"
       ],
+      "LOCATION:": [
+        "LOKASI"
+      ],
       "NOTE:": [
         "CATATAN:"
       ],
@@ -2815,6 +2672,15 @@
       ],
       "This event was updated.": [
         "Acara ini telah diperbarui."
+      ],
+      "TIME:": [
+        "WAKTU:"
+      ],
+      "TITLE:": [
+        "JUDUL:"
+      ],
+      "You are invited to": [
+        "Anda diundang ke"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2909,12 +2775,6 @@
       "Already a member of this share": [
         "Pengguna sudah merupakan anggota dari partisi ini"
       ],
-      "Amount above the maximum.": [
-        "Jumlah melebihi nilai maksimum."
-      ],
-      "Amount below minimum (${ minimumAmount }).": [
-        "Nominal di bawah nilai minimum (${ minimumAmount })."
-      ],
       "An error occurred while attempting to convert the document. Please try again.": [
         "Terjadi kesalahan pada saat mencoba untuk mengonversi dokumen. Silakan coba lagi."
       ],
@@ -2948,9 +2808,6 @@
       "Cannot export this contact": [
         "Kontak tidak dapat diekspor"
       ],
-      "Checkout expired, please try again": [
-        "Sesi pembayaran telah kedaluwarsa, silakan coba lagi"
-      ],
       "Contact could not be saved": [
         "Kontak tidak dapat disimpan"
       ],
@@ -2975,9 +2832,6 @@
       "Domain not available, try again later": [
         "Domain tidak tersedia, coba lagi nanti"
       ],
-      "Editing billing address is not available at the moment. Please try again later.": [
-        "Penyuntingan alamat tagihan saat ini tidak tersedia. Silakan coba lagi nanti."
-      ],
       "Email address is required": [
         "Alamat email diperlukan"
       ],
@@ -2986,9 +2840,6 @@
       ],
       "Enter 6 digits": [
         "Masukkan 6 digit"
-      ],
-      "Error connecting to the Bitcoin API.": [
-        "Terdapat kesalahan dalam menghubungkan ke API Bitcoin."
       ],
       "Error decrypting a computer": [
         "Terjadi kesalahan mendekripsi komputer"
@@ -3047,29 +2898,11 @@
       "Incorrect username": [
         "Nama pengguna salah"
       ],
-      "Invalid ${ name } code": [
-        "Kode ${ name } tidak valid"
-      ],
-      "Invalid card number": [
-        "Nomor kartu tidak valid"
-      ],
-      "Invalid code": [
-        "Kode tidak valid"
-      ],
       "Invalid email address": [
         "Alamat email tidak valid"
       ],
-      "Invalid expiration date": [
-        "Tanggal kedaluwarsa tidak valid"
-      ],
-      "Invalid IBAN": [
-        "IBAN tidak valid"
-      ],
       "Invalid name": [
         "Nama tidak valid"
-      ],
-      "Invalid postal code": [
-        "Kode pos tidak valid"
       ],
       "Invalid public key file": [
         "Berkas kunci publik tidak valid"
@@ -3131,32 +2964,8 @@
       "Passwords do not match": [
         "Kata sandi tidak sesuai"
       ],
-      "Payment process canceled": [
-        "Proses pembayaran dibatalkan"
-      ],
-      "Payment process consumed": [
-        "Proses pembayaran telah melewati batas tenggat waktu"
-      ],
-      "Payment process failed": [
-        "Proses pembayaran gagal"
-      ],
-      "Payment process not supported": [
-        "Proses pembayaran tidak didukung"
-      ],
       "Photos upload is temporarily disabled. Please try again later": [
         "Unggahan foto untuk sementara dinonaktifkan. Silakan coba lagi nanti"
-      ],
-      "Please enter a valid postal code": [
-        "Silakan masukkan kode pos yang valid"
-      ],
-      "Please enter a valid ZIP code": [
-        "Silakan masukkan kode pos yang valid"
-      ],
-      "Please enter postal code": [
-        "Silakan masukkan kode pos"
-      ],
-      "Please enter ZIP code": [
-        "Silakan masukkan kode pos"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Silakan selesaikan permasalahan yang disorot untuk melanjutkan."
@@ -3170,26 +2979,14 @@
       "Please select a state": [
         "Silakan pilih negara bagian/provinsi"
       ],
-      "Please select billing country": [
-        "Silakan pilih negara penagihan"
-      ],
-      "Please select billing state": [
-        "Silakan pilih negara bagian penagihan"
-      ],
       "Port is required": [
         "Nomor port diperlukan"
-      ],
-      "Postal code is required": [
-        "Kode pos dibutuhkan"
       ],
       "Primary address key is not decrypted": [
         "Kunci alamat utama tidak didekripsi"
       ],
       "Primary address key is not decrypted.": [
         "Kunci alamat utama tidak didekripsi."
-      ],
-      "Process aborted": [
-        "Proses dibatalkan"
       ],
       "Removed duplicate invitee: ${ joinedInvitee }": [
         "Penerima undangan duplikat dihapus: ${ joinedInvitee }"
@@ -3233,14 +3030,8 @@
       "status page": [
         "halaman status"
       ],
-      "Tab closed": [
-        "Tab ditutup"
-      ],
       "The address might be misspelled": [
         "Alamat mungkin salah ketik"
-      ],
-      "The amount due has changed. Please try again.": [
-        "Biaya yang tertagih telah berubah. Silakan coba lagi."
       ],
       "The document you are trying to convert is too large. This may occur if the document has a large number of images or other media. Please try again with a smaller document.": [
         "Dokumen yang Anda coba konversi terlalu besar. Hal ini dapat terjadi apabila dokumen ini mengandung gambar atau media lainnya dalam jumlah yang besar. Silakan coba lagi dengan dokumen yang lebih kecil."
@@ -3268,9 +3059,6 @@
       ],
       "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
         "Pembaruan terakhir yang Anda buat pada dokumen terlalu besar atau akan melebihi jumlah batas ukuran dokumen. Penyuntingan saat ini telah dinonaktifkan. Perubahan Anda tidak akan disimpan. Silakan ekspor salinan dokumen Anda dan muat ulang halaman ini."
-      ],
-      "The minimum amount of credit that can be added is ${ price }": [
-        "Nominal saldo minimal yang dapat ditambahkan adalah ${ price }"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "Revisi baru berkas asli belum diunggah. Silakan coba lagi nanti"
@@ -3329,9 +3117,6 @@
       "Unknown error": [
         "Kesalahan yang tidak diketahui"
       ],
-      "Unknown payment token status": [
-        "Status token pembayaran tidak dikenal"
-      ],
       "Update Too Large": [
         "Pembaruan Terlalu Besar"
       ],
@@ -3364,9 +3149,6 @@
       ],
       "Your import will not be processed.": [
         "Impor Anda tidak akan diproses."
-      ],
-      "ZIP code is required": [
-        "Kode pos diperlukan"
       ]
     },
     "error": {
@@ -3730,6 +3512,12 @@
       ]
     },
     "Feature": {
+      "Encrypted cloud storage for files, photos and documents": [
+        "Ruang penyimpanan cloud terenkripsi untuk berkas, foto, dan dokumen"
+      ],
+      "More premium features": [
+        "Fitur premium lainnya"
+      ],
       "Unlimited hide-my-email aliases": [
         "Tanpa batasan jumlah alias hide-my-email"
       ]
@@ -3839,6 +3627,9 @@
       ],
       "Drawer": [
         "Panel Samping"
+      ],
+      "Password ends with": [
+        "Kata sandi berakhir dengan"
       ],
       "Username": [
         "Nama pengguna"
@@ -4238,26 +4029,17 @@
       "${ groupCounts } group found": [
         "${ groupCounts } grup ditemukan"
       ],
-      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
-        "${ LUMO_APP_NAME } meliputi asisten penulisan ${ BRAND_NAME } Scribe"
-      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Penawaran ${ PASS_SHORT_APP_NAME } seumur hidup tidak memiliki harga perpanjangan, ini merupakan pembayaran sekali untuk akses seumur hidup ke ${ PASS_SHORT_APP_NAME }."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Penawaran ${ PASS_SHORT_APP_NAME } seumur hidup tidak memiliki harga perpanjangan, ini merupakan pembayaran sekali untuk akses seumur hidup ke ${ PASS_SHORT_APP_NAME }. Harga dan tanggal pembaruan langganan ${ planTitle } Anda tidak akan berubah."
       ],
-      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
-        "${ plan.Title } memerlukan setidaknya 1 server khusus ${ serverPricePerMonth }"
-      ],
       "${ planName } expires in ${ daysLeft } day.": [
         "${ planName } akan kedaluwarsa dalam ${ daysLeft } hari."
       ],
       "${ planName } expires today.": [
         "${ planName } akan kedaluwarsa hari ini."
-      ],
-      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
-        "${ PROTON_SENTINEL_NAME } melindungi akun Anda dengan pengawasan yang telaten terhadap aktivitas yang mencurigakan."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } folder ditemukan"
@@ -4280,9 +4062,6 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } label dipilih"
       ],
-      "${ storage } storage": [
-        "Kuota penyimpanan ${ storage }"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontak berhasil diperbarui."
       ],
@@ -4294,9 +4073,6 @@
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } anggota)"
-      ],
-      "(${ serverPrice }/month)": [
-        "(${ serverPrice }/bulan)"
       ],
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**Sambungan otomatis**: Membuka aplikasi dan menghubungkan Anda ke VPN segera setelah Anda menyalakan perangkat Anda."
@@ -4325,9 +4101,6 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } koneksi untuk ${ VPN_APP_NAME } (memungkinkan Anda untuk menyambungkan lebih banyak perangkat ke VPN)"
       ],
-      "30-day money-back guarantee.": [
-        "Jaminan 30 hari uang kembali."
-      ],
       "A number will be added to the filename": [
         "Nomor akan ditambahkan ke nama berkas"
       ],
@@ -4339,9 +4112,6 @@
       ],
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "Koneksi yang aman sangat penting pada saat bekerja secara remote. VPN melindungi data perusahaan Anda dari ancaman siber dan menjaga pekerjaan Anda tetap privat."
-      ],
-      "A user is an account associated with a single username, mailbox, and person": [
-        "Pengguna di sini didefinisikan sebagai akun yang terhubung dengan nama pengguna, kotak surat, dan individu tunggal"
       ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
         "VPN mengenkripsi koneksi Anda dan menyembunyikan alamat IP Anda, yang mempersulit siapa pun untuk melacak atau memantau aktivitas penjelajahan Anda."
@@ -4358,23 +4128,14 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Akses akun dibatasi karena tagihan yang tertunggak. Silakan hubungi administrator Anda."
       ],
-      "Account successfully updated": [
-        "Akun berhasil diperbarui"
-      ],
       "Ad targeting": [
         "Penargetan iklan"
-      ],
-      "Address copied to clipboard": [
-        "Alamat disalin ke papan klip"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Verifikasi Alamat dengan Kunci Terpercaya sudah diaktifkan untuk alamat ini. Agar dapat mengirim ke alamat ini, percayai terlebih dahulu kunci publik yang akan dipakai untuk mengirim pesan."
       ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Para pengiklan dapat melacak penjelajahan Anda untuk menampilkan iklan yang ditargetkan. ${ VPN_APP_NAME } memblokir program pelacak dan iklan, yang mempercepat koneksi Anda dan meningkatkan pengalaman online Anda."
-      ],
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Asisten berteknologi AI yang membantu Anda merancang email yang lebih baik secara cepat dan mudah."
       ],
       "All (${ totalFoldersCount } folder)": [
         "Semua (${ totalFoldersCount } folder)"
@@ -4384,15 +4145,6 @@
       ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Seluruh kontak Anda akan diimpor hingga batas jumlah ${ MAX_CONTACTS_PER_USER } kontak"
-      ],
-      "American Express SafeKey logo": [
-        "Logo American Express Safekey"
-      ],
-      "Amount above maximum (${ amount }).": [
-        "Nominal transaksi melebihi batas maksimum (${ amount })."
-      ],
-      "Amount below minimum (${ amount }).": [
-        "Di bawah jumlah minimum (${ amount })."
       ],
       "an anonymous user": [
         "pengguna anonim"
@@ -4427,17 +4179,8 @@
       "Attention required": [
         "Diperlukan perhatian"
       ],
-      "Awaiting transaction": [
-        "Menunggu transaksi"
-      ],
-      "Balance from your previous subscription": [
-        "Saldo dari langganan terakhir Anda"
-      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Sebelum meminta kode verifikasi baru, periksa folder spam Anda dan pastikan ${ strong } merupakan alamat email yang benar."
-      ],
-      "Billing cycle: ${ text }": [
-        "Siklus tagihan: ${ text }"
       ],
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
         "Bawa pesan, kontak, dan kalender Anda ke ${ BRAND_NAME }."
@@ -4466,6 +4209,9 @@
       "Checking signatures": [
         "Memeriksa tanda tangan"
       ],
+      "Choose a plan that works best for you.": [
+        "Pilih paket yang paling sesuai dengan kebutuhan Anda."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang akan dikirim ke ${ strong }. Apabila nomor telepon ini tidak sesuai, klik \"Sunting\" untuk mengubahnya."
       ],
@@ -4480,6 +4226,9 @@
       ],
       "Contact unassigned from group ${ contactGroupName }": [
         "Kaitan kontak dihilangkan dari grup ${ contactGroupName }"
+      ],
+      "Continue": [
+        "Lanjutkan"
       ],
       "Converting document...": [
         "Mengonversi dokumen..."
@@ -4508,9 +4257,6 @@
       "Create a new contact group": [
         "Buat grup kontak baru"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Buat ruang cloud yang aman untuk ${ value } anggota"
-      ],
       "Create an end-to-end encrypted document.": [
         "Buat dokumen terenkripsi secara end-to-end."
       ],
@@ -4532,41 +4278,17 @@
       "Creating new document...": [
         "Membuat dokumen baru..."
       ],
-      "Credit for the unused portion of your previous plan subscription": [
-        "Saldo yang belum terpakai dari paket langganan Anda sebelumnya"
-      ],
       "Current plan": [
         "Paket saat ini"
       ],
       "Current version": [
         "Versi saat ini"
       ],
-      "Custom email domains": [
-        "Domain email khusus"
-      ],
-      "Dedicated servers": [
-        "Server khusus"
-      ],
-      "Dedicated VPN servers": [
-        "Server VPN khusus"
-      ],
-      "default email address": [
-        "alamat email bawaan"
-      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Tanda tangan digital berhasil diverifikasi. Berkas ini diunggah secara aman oleh ${ emailAddress }."
       ],
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Tanda tangan digital berhasil diverifikasi. Folder ini diunggah secara aman oleh ${ emailAddress }."
-      ],
-      "Discover new features unlocked and start using them right away!": [
-        "Telusuri berbagai fitur yang terbuka dan gunakan fitur-fitur ini sekarang juga!"
-      ],
-      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
-        "Telusuri berbagai fitur yang terbuka dengan ${ planTitle } dan gunakan fitur-fitur ini sekarang juga!"
-      ],
-      "Discover ProtectBuy logo": [
-        "Logo Discover ProtectBuy"
       ],
       "Display word count": [
         "Tampilkan jumlah kata"
@@ -4579,9 +4301,6 @@
       ],
       "Document owner has the password": [
         "Kata sandi dimiliki oleh pemilik dokumen"
-      ],
-      "Don’t see anything? Remember to turn off pop-up blockers.": [
-        "Tidak melihat layar apapun? Jangan lupa untuk menonaktifkan pemblokir pop-up Anda."
       ],
       "Downgrade": [
         "Turunkan"
@@ -4597,9 +4316,6 @@
       ],
       "Download was canceled": [
         "Unduhan dibatalkan"
-      ],
-      "Download your favorite app today and take privacy with you everywhere you go.": [
-        "Unduh aplikasi favorit Anda sekarang juga dan bawa privasi ke mana pun Anda pergi."
       ],
       "Drop file here to upload": [
         "Lepaskan berkas di sini untuk mengunggah"
@@ -4619,17 +4335,8 @@
       "email": [
         "email"
       ],
-      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
-        "Hosting email hanya tersedia untuk domain yang telah Anda miliki. Pendaftaran domain melalui ${ BRAND_NAME } saat ini tidak tersedia. Anda dapat meng-host email untuk domain yang terdaftar pada pendaftar domain mana pun."
-      ],
       "Emails are automatically signed": [
         "Email ditandatangani secara otomatis"
-      ],
-      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
-        "Email yang telah dipindahkan ke Sampah dan Spam lebih dari 30 hari yang lalu akan dihapus secara otomatis."
-      ],
-      "Enabling auto-deletion…": [
-        "Mengaktifkan penghapusan otomatis…"
       ],
       "End-to-end encrypted": [
         "Terenkripsi secara end-to-end"
@@ -4675,9 +4382,6 @@
       ],
       "Everything in ${ planOrAppName }": [
         "Segalanya di ${ planOrAppName }"
-      ],
-      "Expired": [
-        "Kedaluwarsa"
       ],
       "Failed to generate a secure link. The reason is: ${ error }": [
         "Tautan aman gagal dihasilkan. Alasan: ${ error }"
@@ -4787,9 +4491,6 @@
       "In restrictive countries": [
         "Di negara dengan pembatasan yang ketat"
       ],
-      "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
-        "Pada langkah selanjutnya, Anda dapat mengirimkan deposit menggunakan alamat Bitcoin."
-      ],
       "Inherited from parent folder": [
         "Diwariskan dari folder induk"
       ],
@@ -4813,9 +4514,6 @@
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Tidak ada waktu yang tidak tepat untuk menggunakan VPN. Meskipun demikian, terdapat beberapa lokasi dan situasi di mana ancaman kejahatan siber dapat sangat membahayakan:"
-      ],
-      "JCB logo": [
-        "Logo JCB"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Anda hanya perlu menentukan pilihan Anda -- biarkan kami yang mengurus sisanya."
@@ -4880,9 +4578,6 @@
       "Making a copy...": [
         "Membuat salinan..."
       ],
-      "Mastercard SecureCode logo": [
-        "Logo Mastercard SecureCode"
-      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maksimal ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter"
       ],
@@ -4897,9 +4592,6 @@
       ],
       "Merged": [
         "Tergabung"
-      ],
-      "Messages to all your email addresses will go to your inbox.": [
-        "Pesan ke semua alamat email Anda akan menuju ke kotak masuk Anda."
       ],
       "Monitor accounts": [
         "Monitor akun"
@@ -4925,9 +4617,6 @@
       "No group found": [
         "Tidak ada grup yang ditemukan"
       ],
-      "No payment is required at this time.": [
-        "Tidak ada pembayaran yang dibutuhkan untuk saat ini."
-      ],
       "No recent documents match your search.": [
         "Tidak ada dokumen terkini yang sesuai dengan pencarian Anda."
       ],
@@ -4945,12 +4634,6 @@
       ],
       "Not connected": [
         "Tidak terhubung"
-      ],
-      "Number of dedicated servers in the organization": [
-        "Jumlah server khusus pada organisasi"
-      ],
-      "Number of dedicated VPN servers in the organization": [
-        "Jumlah server VPN khusus pada organisasi"
       ],
       "Numbers": [
         "Angka"
@@ -4979,12 +4662,6 @@
       "Opening...": [
         "Membuka..."
       ],
-      "or discover other features:": [
-        "atau telusuri berbagai fitur lainnya:"
-      ],
-      "Organization size": [
-        "Ukuran organisasi"
-      ],
       "Other accounts": [
         "Akun lainnya"
       ],
@@ -5003,9 +4680,6 @@
       "Password must have:": [
         "Kata sandi harus memiliki:"
       ],
-      "Payments are protected with TLS encryption and Swiss privacy laws.": [
-        "Pembayaran dilindungi dengan enkripsi TLS dan undang-undang privasi Swiss."
-      ],
       "Pending invitations": [
         "Undangan yang belum ditanggapi"
       ],
@@ -5018,20 +4692,11 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "Enkripsi PGP/MIME akan secara otomatis mengirim pesan dengan mode komposer yang saat ini digunakan."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Silakan autentikasi kartu Anda pada tab verifikasi."
-      ],
-      "Please authenticate your payment in the verification tab.": [
-        "Silakan autentikasi pembayaran Anda pada tab verifikasi."
-      ],
       "Please enter the password to decrypt and view content.": [
         "Silakan masukkan kata sandi untuk mendekripsi dan melihat isi konten."
       ],
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "Silakan ekspor salinan perubahan Anda saat ini dari menu utama dan muat ulang halaman ini."
-      ],
-      "Please fill in all required fields.": [
-        "Silakan ini seluruh kolom yang dibutuhkan."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Harap diperhatikan bahwa alamat yang terhubung ke grup ini TIDAK akan dihapus."
@@ -5057,12 +4722,6 @@
       "Please try again in a few moments": [
         "Silakan coba lagi dalam beberapa saat"
       ],
-      "Please try again using a different payment method, or contact your bank.": [
-        "Silakan coba lagi dengan menggunakan metode pembayaran lainnya, atau hubungi bank Anda."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Silakan coba lagi, gunakan metode pembayaran lainnya, atau hubungi PayPal untuk memperoleh bantuan."
-      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Silakan tunggu selagi kami mencari kontak yang dapat ditandatangani ulang dengan kunci enkripsi utama."
       ],
@@ -5074,9 +4733,6 @@
       ],
       "Preparing link to folder": [
         "Mempersiapkan tautan folder"
-      ],
-      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
-        "Harga termasuk seluruh diskon berbasis siklus yang berlaku dan kupon tanpa tanggal berakhir yang disimpan di akun Anda."
       ],
       "Primary": [
         "Utama"
@@ -5101,9 +4757,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Memuat ulang halaman atau ${ link } akan secara otomatis mengatasi sebagian besar masalah."
-      ],
-      "Registering your subscription…": [
-        "Mendaftarkan langganan Anda…"
       ],
       "Restored version to": [
         "Versi dipulihkan ke"
@@ -5132,9 +4785,6 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Pilih kalender mana saja yang akan diimpor. Untuk setiap kalender yang diimpor, sistem kami akan membuat kalender baru hingga batas jumlah kalender maksimum yang diperkenankan oleh paket Anda."
       ],
-      "SEPA payments are not available at the moment. Please try again later.": [
-        "Pembayaran SEPA tidak tersedia saat ini. Silakan coba lagi nanti."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
       ],
@@ -5144,14 +4794,8 @@
       "Set up your organization": [
         "Atur organisasi Anda"
       ],
-      "Setting up ${ feature }…": [
-        "Mempersiapkan ${ feature }…"
-      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Memasang PGP memungkinkan Anda untuk saling bertukar email yang terenkripsi secara ujung ke ujung dengan para pengguna non-${ BRAND_NAME } yang juga mendukung PGP."
-      ],
-      "Setting up your new address…": [
-        "Mempersiapkan alamat baru Anda…"
       ],
       "Settings update failed": [
         "Pembaruan pengaturan gagal"
@@ -5189,14 +4833,8 @@
       "Something went wrong": [
         "Terjadi kesalahan"
       ],
-      "Start sharing it with contacts and use it for online services.": [
-        "Mulai membagikan dengan kontak Anda dan gunakan untuk layanan daring."
-      ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Buat diri Anda selalu terhubung tanpa harus repot dengan mengaktifkan pengaturan VPN berikut:"
-      ],
-      "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
-        "Kirimkan deposit melalui alamat berikut atau pindai kode QR di bawah ini. Deposit Anda akan muncul pada akun setelah terkonfirmasi."
       ],
       "Subscription auto-renews every ${ cycle } month.": [
         "Langganan diperbarui secara otomatis setiap ${ cycle } bulan."
@@ -5221,9 +4859,6 @@
       ],
       "Temporarily unavailable. Please check back later.": [
         "Tindakan ini untuk sementara tidak tersedia. Silakan periksa kembali di kemudian waktu."
-      ],
-      "Thank you for subscribing. Secure browsing starts now.": [
-        "Terima kasih telah berlangganan. Penjelajahan yang aman dimulai dari sekarang."
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Akun ini mungkin memiliki kunci baru, atau berkas/folder berikut mungkin telah dimodifikasi: ${ items }. Mohon buka berkas/folder ini hanya apabila Anda memercayai sumbernya."
@@ -5252,9 +4887,6 @@
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
         "URL yang Anda masukkan sepertinya tidak disalin dari Slack dengan benar. Pada saat menyalin tautan yang panjang dari Slack, klik kanan tautan ini, lalu pilih \"Salin tautan\" alih-alih menyalin teks URL yang terpotong secara langsung."
       ],
-      "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
-        "Proses verifikasi akan membuka tab browser baru. Mohon nonaktifkan segala pemblokir pop-up yang aktif."
-      ],
       "There are no documents in the trash.": [
         "Tidak ada dokumen di sampah."
       ],
@@ -5275,9 +4907,6 @@
       ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Nama ini adalah nama atau julukan organisasi yang akan dilihat oleh para pengguna Anda. Anda dapat mengubah nama ini kapan saja."
-      ],
-      "This is now your ${ defaultEmailAddress } for sending new messages.": [
-        "Alamat ini kini merupakan ${ defaultEmailAddress } Anda untuk mengirim pesan baru."
       ],
       "This item already exists in your library": [
         "Item ini telah ada pada pustaka Anda"
@@ -5324,9 +4953,6 @@
       "This will upload a new version of the folder": [
         "Dengan ini, versi baru folder akan diunggah"
       ],
-      "To complete your payment, please send ${ btcAmountBold } to the address below.": [
-        "Untuk menyelesaikan pembayaran Anda, silakan kirim ${ btcAmountBold } ke alamat di bawah ini."
-      ],
       "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
         "Untuk mengunduh berkas ${ DOCS_APP_NAME }, buka berkas ini di ${ DOCS_APP_NAME } dan ekspor."
       ],
@@ -5344,18 +4970,6 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Untuk menggunakan Verifikasi Alamat, Anda harus terlebih dahulu memercayai satu atau lebih kunci publik yang tersedia, termasuk kunci yang ingin Anda gunakan untuk mengirim. Hal ini mencegah kunci enkripsi untuk dapat dipalsukan."
-      ],
-      "Total email addresses": [
-        "Total alamat email"
-      ],
-      "Total storage": [
-        "Total ruang penyimpanan"
-      ],
-      "Total supported domains": [
-        "Total domain yang didukung"
-      ],
-      "Total VPN connections": [
-        "Total koneksi VPN"
       ],
       "Tracking": [
         "Pelacakan"
@@ -5390,6 +5004,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Tingkatkan sekarang untuk memperoleh berbagai fitur, produk, dan ruang penyimpanan berkapasitas premium dengan harga khusus"
       ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "Tingkatkan untuk mempertahankan berbagai keutamaan ${ planTitle } Anda."
+      ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Mengunggah ratusan berkas sekaligus dapat berdampak pada kinerja."
       ],
@@ -5402,23 +5019,11 @@
       "username": [
         "nama pengguna"
       ],
-      "Users": [
-        "Pengguna"
-      ],
-      "Verification may take a few minutes.": [
-        "Proses verifikasi dapat memakan waktu sejenak."
-      ],
-      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "Proses verifikasi akan berlangsung pada tab baru. Mohon nonaktifkan pemblokir pop-up mana pun yang sedang aktif. Anda tidak akan dikenakan biaya sepeser pun. Seluruh dana yang digunakan untuk memverifikasi kartu akan langsung dikembalikan."
-      ],
       "Version number successfully copied to clipboard": [
         "Nomor versi berhasil disalin ke papan klip"
       ],
       "View only": [
         "Hanya lihat"
-      ],
-      "Visa Secure logo": [
-        "Logo Visa Secure"
       ],
       "VPN IP": [
         "IP VPN"
@@ -5426,26 +5031,11 @@
       "Warning": [
         "Peringatan"
       ],
-      "We couldn’t process your payment.": [
-        "Kami tidak dapat memproses pembayaran Anda."
-      ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Kami tidak dapat memverifikasi bahwa ${ fileName } diunggah oleh ${ emailAddress }."
       ],
       "We couldn’t verify who uploaded ${ fileName }.": [
         "Kami tidak dapat memverifikasi siapa yang mengunggah ${ fileName }."
-      ],
-      "We need to authenticate your payment method with your bank.": [
-        "Kami perlu untuk mengautentikasi metode pembayaran Anda dengan bank Anda."
-      ],
-      "We need to authenticate your payment with your bank.": [
-        "Kami perlu untuk mengautentikasi pembayaran Anda dengan bank Anda."
-      ],
-      "We use 3-D Secure to protect your payments": [
-        "Kami menggunakan 3-D Secure untuk melindungi pembayaran Anda"
-      ],
-      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Untuk menyelesaikan transaksi, kami akan mengarahkan Anda ke PayPal di tab baru. Nonaktifkan pemblokir pop-up terlebih dahulu sebelum melanjutkan."
       ],
       "We'll email you once import is complete.": [
         "Kami akan mengirimkan email kepada Anda setelah impor ini selesai."
@@ -5516,9 +5106,6 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Anda juga dapat menggabungkan kalender yang diimpor dengan kalender ${ BRAND_NAME } yang telah ada."
       ],
-      "You can change this anytime in ${ settingsLink }.": [
-        "Anda dapat mengubah hal ini kapan saja di ${ settingsLink }."
-      ],
       "You can check the progress ${ importProgressLink }.": [
         "Anda dapat mengecek status proses impor Anda ${ importProgressLink }."
       ],
@@ -5546,18 +5133,6 @@
       "You don't have access": [
         "Anda tidak memiliki akses"
       ],
-      "You get notified if your password or other data was leaked from a third-party service.": [
-        "Anda akan diberi tahu apabila kata sandi atau data lainnya yang Anda miliki terbocorkan dari layanan pihak ketiga."
-      ],
-      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
-        "Anda memiliki langganan ${ planTitle } versi uji coba. Apabila Anda ingin melanjutkan langganan Anda setelah masa uji coba ini berakhir, silakan tambahkan metode pembayaran."
-      ],
-      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
-        "Anda memiliki langganan ${ planTitle } yang berada dalam masa uji coba. Tidak ada pembayaran yang diperlukan untuk saat ini. Langganan Anda akan diperbarui secara otomatis pada akhir masa uji coba."
-      ],
-      "You may be redirected to your bank’s website.": [
-        "Anda mungkin akan dialihkan ke situs web milik bank Anda."
-      ],
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "Anda mungkin tidak memiliki izin yang memadai untuk melihat dokumen ini dengan akun yang Anda pilih. Coba gunakan akun yang berbeda atau hubungi pemilik dokumen untuk meminta akses."
       ],
@@ -5569,9 +5144,6 @@
       ],
       "You will lose all unsaved changes.": [
         "Anda akan kehilangan semua perubahan yang belum disimpan."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Anda akan segera dialihkan menuju PayPal untuk memverifikasi pembayaran anda."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ trialEndsOnFormatted }."
@@ -5701,19 +5273,8 @@
       ]
     },
     "info": {
-      "Optional": [
-        "Opsional"
-      ],
       "Selected color:": [
         "Warna terpilih:"
-      ]
-    },
-    "Info for cash payment method": {
-      "How to send a cash payment?": [
-        "Bagaimana cara mengirim pembayaran tunai?"
-      ],
-      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
-        "Silakan ikuti instruksi yang tertera pada artikel berikut: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -5790,14 +5351,8 @@
       "${ BRAND_NAME } username": [
         "Nama pengguna ${ BRAND_NAME }"
       ],
-      "${ n } month": [
-        "${ n } bulan"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Sedang tidak tersedia. Mohon periksa lagi nanti.)"
-      ],
-      "Account holder": [
-        "Pemilik akun"
       ],
       "Add email address": [
         "Tambah alamat email"
@@ -5808,14 +5363,8 @@
       "Add to group": [
         "Tambah ke grup"
       ],
-      "Address": [
-        "Alamat"
-      ],
       "Alias title": [
         "Judul alias"
-      ],
-      "Anderson": [
-        "Anderson"
       ],
       "Anyone on the Internet with the link can edit": [
         "Siapa pun di Internet yang memiliki tautan ini akan dapat menyunting"
@@ -5847,20 +5396,11 @@
       "Beta Access": [
         "Akses Beta"
       ],
-      "Billing cycle": [
-        "Siklus tagihan"
-      ],
       "Browser": [
         "Browser"
       ],
       "Browser version": [
         "Versi browser"
-      ],
-      "BTC address": [
-        "Alamat BTC"
-      ],
-      "BTC amount": [
-        "Jumlah BTC"
       ],
       "Calendar": [
         "Kalender"
@@ -5870,18 +5410,6 @@
       ],
       "Cancel download": [
         "Batalkan unduhan"
-      ],
-      "Card details": [
-        "Rincian kartu"
-      ],
-      "Card holder": [
-        "Pemegang kartu"
-      ],
-      "Card number": [
-        "Nomor kartu"
-      ],
-      "Cash": [
-        "Tunai"
       ],
       "Category": [
         "Kategori"
@@ -5894,12 +5422,6 @@
       ],
       "Colors": [
         "Warna"
-      ],
-      "Company": [
-        "Perusahaan"
-      ],
-      "Company name": [
-        "Nama perusahaan"
       ],
       "Confirm password": [
         "Konfirmasi kata sandi"
@@ -5921,9 +5443,6 @@
       ],
       "Country": [
         "Negara"
-      ],
-      "Credits": [
-        "Saldo"
       ],
       "Delete": [
         "Hapus"
@@ -5985,17 +5504,11 @@
       "Erase this link and remove everyone with access": [
         "Hapus tautan ini dan hapus semua orang yang dapat mengakses"
       ],
-      "Expires": [
-        "Kedaluwarsa"
-      ],
       "Extended address": [
         "Alamat lengkap"
       ],
       "File": [
         "Berkas"
-      ],
-      "First name": [
-        "Nama depan"
       ],
       "Folder location": [
         "Lokasi folder"
@@ -6014,9 +5527,6 @@
       ],
       "I understand the risk": [
         "Saya paham akan risikonya"
-      ],
-      "IBAN": [
-        "Nomor Rekening Bank Internasional"
       ],
       "Ignore": [
         "Abaikan"
@@ -6065,9 +5575,6 @@
       ],
       "Last month only": [
         "Hanya sebulan terakhir"
-      ],
-      "Last name": [
-        "Nama belakang"
       ],
       "Log in or sign up ": [
         "Masuk atau daftar "
@@ -6129,15 +5636,6 @@
       "Password strength": [
         "Kekuatan kata sandi"
       ],
-      "Payer": [
-        "Pembayar"
-      ],
-      "Payment details": [
-        "Rincian pembayaran"
-      ],
-      "Payment method": [
-        "Metode pembayaran"
-      ],
       "PGP scheme": [
         "Skema PGP"
       ],
@@ -6152,9 +5650,6 @@
       ],
       "Postal code": [
         "Kode pos"
-      ],
-      "Proration": [
-        "Prorasi"
       ],
       "Public keys": [
         "Kunci publik"
@@ -6177,9 +5672,6 @@
       "Reveal password": [
         "Perlihatkan kata sandi"
       ],
-      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
-        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
-      ],
       "Set expiration date": [
         "Atur tanggal kedaluwarsa"
       ],
@@ -6198,12 +5690,6 @@
       "Skip folder": [
         "Lewati folder"
       ],
-      "Start date": [
-        "Tanggal mulai"
-      ],
-      "State": [
-        "Keadaan"
-      ],
       "Stop sharing": [
         "Berhenti berbagi"
       ],
@@ -6216,9 +5702,6 @@
       "Strong password": [
         "Kata sandi yang kuat"
       ],
-      "Subscription options": [
-        "Pilihan langganan"
-      ],
       "Sync with system": [
         "Sinkronkan dengan sistem"
       ],
@@ -6227,9 +5710,6 @@
       ],
       "Theme": [
         "Tema"
-      ],
-      "Thomas": [
-        "Thomas"
       ],
       "To: ${ toEmail }": [
         "Kepada: ${ toEmail }"
@@ -6284,9 +5764,6 @@
       ],
       "Your password (trusted contact)": [
         "Kata sandi Anda (kontak terpercaya)"
-      ],
-      "ZIP code": [
-        "Kode pos"
       ]
     },
     "Label for contact group color": {
@@ -6297,14 +5774,6 @@
     "Label for contact group name": {
       "Name": [
         "Nama"
-      ]
-    },
-    "Label, credit card": {
-      "Postal code": [
-        "Kode pos"
-      ],
-      "ZIP code": [
-        "Kode pos"
       ]
     },
     "Label/folder modal": {
@@ -6346,9 +5815,6 @@
       ]
     },
     "Link": {
-      "Add a gift code": [
-        "Tambah kode hadiah"
-      ],
       "clearing your browser cache": [
         "membersihkan cache browser Anda"
       ],
@@ -6369,9 +5835,6 @@
       ],
       "How to migrate to ${ BRAND_NAME }": [
         "Cara berpindah ke ${ BRAND_NAME }"
-      ],
-      "How to pay with Bitcoin?": [
-        "Bagaimana cara membayar dengan Bitcoin?"
       ],
       "How to set up ${ VPN_APP_NAME }": [
         "Cara mengatur ${ VPN_APP_NAME }"
@@ -6417,9 +5880,6 @@
       ],
       "Resume now": [
         "Lanjutkan sekarang"
-      ],
-      "settings": [
-        "pengaturan"
       ],
       "Types of recovery methods": [
         "Berbagai jenis metode pemulihan"
@@ -6508,17 +5968,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asisten penulisan ${ BRAND_NAME } Scribe"
       ],
-      "Add ${ BRAND_NAME } Scribe writing assistant": [
-        "Tambah asisten penulisan ${ BRAND_NAME } Scribe"
-      ],
       "Add-on with free trial": [
         "Tambahan dengan uji coba gratis"
-      ],
-      "for ${ price }": [
-        "untuk ${ price }"
       ]
     },
     "Message": {
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "Uji coba gratis Anda telah berakhir. ${ nonAutoRenewalAction }"
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Masa uji coba gratis Anda telah berakhir. Akses menuju akun Anda akan segera dinonaktifkan. ${ action }"
       ]
@@ -7313,9 +6770,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } akan berakhir dalam ${ last4 }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "Ruang penyimpanan 1 TB yang memungkinkan Anda untuk menyimpan, menyinkronkan, dan membagikan berkas dengan mudah. Terlindung oleh enkripsi end-to-end."
       ],
@@ -7326,7 +6780,7 @@
         "Keamanan jaringan dan pengelolaan akses tingkat lanjut dengan Gateway khusus yang aman"
       ],
       "Advanced protection for teams that goes beyond industry standards.": [
-        "Perlindungan tingkat lanjut untuk tim yang melampaui standar industri."
+        "Perlindungan mutakhir untuk tim yang melampaui standar industri."
       ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Seluruh aplikasi ${ BRAND_NAME } dan berbagai fitur premium di dalamnya"
@@ -7418,12 +6872,6 @@
       ],
       "Downgrade account?": [
         "Turunkan jenis akun?"
-      ],
-      "Review subscription": [
-        "Tinjau langganan"
-      ],
-      "Review subscription and pay": [
-        "Peninjauan dan pembayaran langganan"
       ],
       "Switch plans?": [
         "Ubah paket?"
@@ -7957,11 +7405,17 @@
       "${ pricingTitle } offer expires today!": [
         "Penawaran ${ pricingTitle } berakhir hari ini!"
       ],
+      "Don't show this again": [
+        "Jangan ingatkan lagi"
+      ],
       "Don’t show this again": [
         "Jangan tampilkan ini lagi"
       ],
       "Don’t show this offer again": [
         "Jangan tampilkan penawaran ini lagi"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Dapatkan ${ BRAND_NAME } Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "Dapatkan ${ BRAND_NAME } Unlimited"
@@ -8166,11 +7620,6 @@
         "Tanpa batasan jumlah entri masuk, catatan, kartu kredit, dan masih banyak lagi"
       ]
     },
-    "pass_signup_2023: Title": {
-      "${ upsellPlanTitle } plan": [
-        "Paket ${ upsellPlanTitle }"
-      ]
-    },
     "pass_signup_2024: Info": {
       "${ n } user account": [
         "${ n } akun pengguna"
@@ -8182,7 +7631,7 @@
         "Panel admin untuk mengelola pengguna dan langganan"
       ],
       "Advanced account protection": [
-        "Perlindungan akun bertingkat lanjut"
+        "Perlindungan akun mutakhir"
       ],
       "Team policies": [
         "Kebijakan tim"
@@ -8237,73 +7686,9 @@
         "Anda memerlukan akses ke kunci organisasi untuk melangsungkan tindakan ini."
       ]
     },
-    "Payment method option": {
-      "Apple Pay": [
-        "Apple Pay"
-      ],
-      "Bank transfer": [
-        "Transfer bank"
-      ],
-      "Credit/debit card": [
-        "Kartu kredit/debit"
-      ],
-      "New credit/debit card": [
-        "Kartu kredit/debit baru"
-      ]
-    },
-    "Payment.Sepa.Action": {
-      "Use company name": [
-        "Gunakan nama perusahaan"
-      ],
-      "Use personal name": [
-        "Gunakan nama pribadi"
-      ]
-    },
     "Payments": {
       "Amount due after trial on ${ formattedDate }": [
         "Jumlah tagihan setelah masa uji coba pada ${ formattedDate }"
-      ],
-      "Billing Country": [
-        "Negara Penagihan"
-      ],
-      "Card number": [
-        "Nomor kartu"
-      ],
-      "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
-        "Pembaruan langganan otomatis saat ini sedang dinonaktifkan. Apabila Anda mengubah langganan sekarang, maka pembaruan otomatis ini akan kembali diaktifkan."
-      ],
-      "CVC": [
-        "CVC"
-      ],
-      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
-        "Selama periode ini, Anda tidak akan dapat mengubah atau membatalkan langganan Anda. Silakan tunggu hingga pembayaran Anda rampung sebelum mencoba untuk merubah suatu hal. Terima kasih atas kesabaran Anda."
-      ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Tanpa termasuk ${ taxName } ${ taxRate }%: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Tanpa termasuk pajak ${ taxRate }%: ${ taxAmount }"
-      ],
-      "Got it": [
-        "Paham"
-      ],
-      "I'm purchasing as a business": [
-        "Saya membeli produk ini selaku pihak bisnis"
-      ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Meliputi ${ taxName } ${ taxRate }%: ${ taxAmount }"
-      ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "Meliputi pajak ${ taxRate }%: ${ taxAmount }"
-      ],
-      "MM/YY": [
-        "BB/TT"
-      ],
-      "More plans are available in other currencies": [
-        "Lebih banyak paket tersedia pada mata uang lainnya"
-      ],
-      "Please reactivate your subscription first to decrease the number of add-ons.": [
-        "Silakan aktifkan kembali langganan Anda terlebih dahulu untuk menurunkan jumlah pengaya."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Harga pembaruan dapat berubah sewaktu-waktu sesuai dengan ${ termsAndConditionsLink } yang berlaku."
@@ -8311,8 +7696,8 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Diperbarui seharga ${ renewPriceStr }, batalkan kapan saja."
       ],
-      "Taxes": [
-        "Pajak"
+      "terms and conditions": [
+        "syarat dan ketentuan"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Kupon ini valid untuk ${ couponRedemptions } kali pembaruan."
@@ -8328,117 +7713,6 @@
       ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Setelahnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } setiap ${ renewalLength } bulan. Anda dapat membatalkan langganan Anda kapan saja."
-      ],
-      "This number will be shown on all future invoices": [
-        "Nomor ini akan ditampilkan pada seluruh faktur yang akan datang"
-      ],
-      "This payment method will become your new default for all future renewals.": [
-        "Metode pembayaran ini akan menjadi metode bawaan baru Anda untuk segala perpanjangan yang dilakukan ke depannya."
-      ],
-      "Timeout exceeded": [
-        "Batas waktu terlampaui"
-      ],
-      "VAT": [
-        "PPN"
-      ],
-      "VAT number": [
-        "Nomor PPN"
-      ],
-      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
-        "Anda telah memiliki langganan untuk paket ini. Anda dapat mengubah langganan Anda pada ${ subscriptionPlatform }."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "Mata uang Anda telah diubah menjadi euro (€) karena transfer bank SEPA hanya mendukung pembayaran dalam euro."
-      ],
-      "Your payment is still being processed": [
-        "Pembayaran Anda masih diproses"
-      ]
-    },
-    "Payments.Error": {
-      "Invalid card number": [
-        "Nomor kartu tidak valid"
-      ],
-      "Invalid expiration date": [
-        "Tanggal kedaluwarsa tidak valid"
-      ],
-      "Invalid security code": [
-        "Kode keamanan tidak valid"
-      ],
-      "Something went wrong. Please try again later.": [
-        "Terdapat suatu kesalahan. Silakan coba lagi nanti."
-      ],
-      "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
-        "Kami tidak dapat mengautentikasi metode pembayaran Anda. Silakan coba metode pembayaran lainnya atau coba lagi."
-      ],
-      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
-        "Kartu Anda ditolak. Silakan coba kartu lainnya atau kontak bank Anda untuk mengautorisir pembayaran."
-      ]
-    },
-    "Payments.info": {
-      "Credit for the unused portion of your previous plan subscription": [
-        "Saldo yang belum terpakai dari paket langganan Anda sebelumnya"
-      ],
-      "Credits will be added to your balance": [
-        "Saldo akan ditambahkan ke tabungan Anda"
-      ]
-    },
-    "Payments.plan_name": {
-      "Free": [
-        "Free"
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - kartu berakhiran ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Transfer bank - ${ details }"
-      ]
-    },
-    "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Dengan mengonfirmasi pembayaran ini, Anda mengotorisir ${ BRAND_NAME } dan Stripe, penyedia layanan pembayaran kami, untuk meminta bank Anda mendebit akun Anda sesuai dengan jumlah yang dibutuhkan. Anda dapat memperoleh pengembalian dana dalam jangka waktu 8 minggu dari tanggal pendebitan, sesuai dengan ketentuan perjanjian antara Anda dan bank Anda."
-      ],
-      "Street address, postal code, and city": [
-        "Alamat, kode pos, dan kota"
-      ]
-    },
-    "Payments.VAT number name": {
-      "ABN": [
-        "ABN"
-      ],
-      "Add ABN": [
-        "Tambah ABN"
-      ],
-      "Add Business Number": [
-        "Sunting Nomor Bisnis"
-      ],
-      "Add EIN": [
-        "Tambah EIN"
-      ],
-      "Add VAT number": [
-        "Tambah nomor PPN"
-      ],
-      "Business Number": [
-        "Nomor Bisnis"
-      ],
-      "Edit ABN": [
-        "Sunting ABN"
-      ],
-      "Edit Business Number": [
-        "Sunting Nomor Bisnis"
-      ],
-      "Edit EIN": [
-        "Sunting EIN"
-      ],
-      "Edit VAT number": [
-        "Sunting nomor PPN"
-      ],
-      "EIN": [
-        "NPWP"
-      ],
-      "VAT number": [
-        "Nomor PPN"
       ]
     },
     "PGP key encryption warning": {
@@ -8475,17 +7749,8 @@
       "A way to contact you": [
         "Cara untuk menghubungi Anda"
       ],
-      "Anderson": [
-        "Anderson"
-      ],
-      "Anytown": [
-        "Kota A"
-      ],
       "Choose password": [
         "Tentukan kata sandi"
-      ],
-      "Company name": [
-        "Nama perusahaan"
       ],
       "E.g., ": [
         "Misalnya "
@@ -8502,9 +7767,6 @@
       "First name": [
         "Nama depan"
       ],
-      "Gift code": [
-        "Kode hadiah"
-      ],
       "Group name": [
         "Nama grup"
       ],
@@ -8513,9 +7775,6 @@
       ],
       "Last name": [
         "Nama belakang"
-      ],
-      "Main street 12": [
-        "Jalan Utama No. 12"
       ],
       "Message": [
         "Pesan"
@@ -8535,9 +7794,6 @@
       "Please describe the problem and include any error messages": [
         "Mohon uraikan masalah Anda dan sertakan pesan kesalahan yang Anda temui"
       ],
-      "Postal code": [
-        "Kode pos"
-      ],
       "Search for group name": [
         "Cari nama grup"
       ],
@@ -8553,12 +7809,6 @@
       "Select a reason": [
         "Pilih alasan"
       ],
-      "Select country": [
-        "Pilih negara"
-      ],
-      "Select state": [
-        "Pilih negara bagian"
-      ],
       "Set date": [
         "Atur tanggal"
       ],
@@ -8568,27 +7818,13 @@
       "Start typing an email address": [
         "Mulai ketik alamat email"
       ],
-      "Thomas": [
-        "Thomas"
-      ],
-      "VAT number": [
-        "Nomor PPN"
-      ],
       "Your organization name": [
         "Nama organisasi Anda"
-      ],
-      "ZIP code": [
-        "Kode pos"
       ]
     },
     "Placeholder for contact group name": {
       "Name": [
         "Nama"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "hubungi"
       ]
     },
     "Plan description": {
@@ -8597,25 +7833,6 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Seluruh fitur premium ${ BRAND_NAME } dari ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, dan ${ CALENDAR_SHORT_APP_NAME }"
-      ]
-    },
-    "plus_block": {
-      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
-        "Sebagai pelanggan **${ currentPlanTitle }**, Anda dapat membuka akses ke **${ unlockPlanTitle }** dan lebih banyak layanan premium ${ BRAND_NAME } dengan meningkatkan ke **${ upsellPlanTitle }**."
-      ],
-      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
-        "Lebih banyak layanan ${ BRAND_NAME }.${ br }Satu langganan mudah."
-      ],
-      "Stay on ${ currentPlanTitle }": [
-        "Tetap di ${ currentPlanTitle }"
-      ],
-      "Upgrade to ${ upsellPlanTitle }": [
-        "Tingkatkan ke ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Gratis"
       ]
     },
     "Progress bar description": {
@@ -8720,6 +7937,24 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } per rujukan"
       ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Apabila Anda membatalkan sebelum tanggal ini,** paket Anda akan **diturunkan** ke ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } pada saat masa uji coba berakhir."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Apabila Anda tidak berlangganan,** paket Anda akan **diturunkan** ke ${ BRAND_NAME }${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Apabila Anda tidak membatalkan langganan,** paket penuh Anda akan dimulai dan Anda akan memeroleh saldo senilai **${ referrerRewardAmount }**."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Apabila Anda berlangganan sebelum tanggal ini,** Anda akan memperoleh saldo senilai **${ referrerRewardAmount }**."
+      ],
+      "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Dapatkan saldo senilai hingga ${ maxRewardAmount }. Anda akan memperoleh ${ referrerRewardAmount } pada saat pengguna yang Anda undang berlangganan ke paket ${ BRAND_NAME }."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Nikmati **${ planTitle }** secara cuma-cuma hingga **${ textDate }**."
+      ],
       "Friend joined": [
         "Teman yang bergabung"
       ],
@@ -8732,11 +7967,29 @@
       "Invited friends": [
         "Teman yang diundang"
       ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Kesempatan terakhir untuk menelusuri seluruh fitur canggih yang ditawarkan oleh **${ planTitle }**."
+      ],
       "More sharing options": [
         "Opsi pembagian lainnya"
       ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "Setelah langganan penuh Anda dimulai, Anda masih dapat membatalkan dalam kurun waktu 30 hari dan memperoleh uang kembali secara proratif."
+      ],
       "Refer friends": [
         "Rujuk teman"
+      ],
+      "Start earning credits": [
+        "Mulai peroleh saldo"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Anda dapat memperoleh saldo hingga **${ maxRewardAmount }**."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Anda memiliki **${ daysRemaining } hari tersisa** untuk menjelajahi seluruh fitur canggih yang dimiliki oleh **${ planTitle }**."
+      ],
+      "your subscription": [
+        "langganan Anda"
       ]
     },
     "Safety review": {
@@ -9068,9 +8321,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "1 user": [
-        "1 pengguna"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -9082,9 +8332,6 @@
       ],
       "High speed VPN": [
         "VPN berkecepatan tinggi"
-      ],
-      "Highest VPN speed": [
-        "Kecepatan VPN tertinggi"
       ],
       "Premium ${ appName1 }": [
         "${ appName1 } Premium"
@@ -9100,9 +8347,6 @@
       ],
       "Secure cloud storage": [
         "Penyimpanan cloud yang aman"
-      ],
-      "Secure streaming": [
-        "Streaming aman"
       ],
       "Support online privacy": [
         "Dukung privasi online"
@@ -9395,17 +8639,6 @@
         "Anda akan kehilangan akses ke entri masuk dan catatan yang tak terbatas, alias hide-my-email yang tak terbatas, 20 brankas, serta dukungan prioritas."
       ]
     },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Ditagihkan setiap 2 tahun"
-      ],
-      "Billed monthly": [
-        "Ditagihkan bulanan"
-      ],
-      "Billed yearly": [
-        "Ditagihkan tahunan"
-      ]
-    },
     "Subscription attribute": {
       "${ n } free VPN connection per user": [
         "${ n } koneksi VPN gratis per pengguna"
@@ -9452,16 +8685,6 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "Langganan akan diturunkan pada akhir siklus tagihan."
-      ]
-    },
-    "Subscription length": {
-      "Lifetime": [
-        "Seumur hidup"
-      ]
-    },
-    "Subscription price": {
-      "For ${ totalPrice }": [
-        "Untuk ${ totalPrice }"
       ]
     },
     "subscription reminder": {
@@ -9525,37 +8748,6 @@
         "Dukungan prioritas"
       ]
     },
-    "Subscription renewal state": {
-      "Are you sure?": [
-        "Apakah Anda yakin?"
-      ],
-      "Auto-pay is disabled": [
-        "Autodebet dinonaktifkan"
-      ],
-      "Auto-pay is enabled": [
-        "Autodebet diaktifkan"
-      ],
-      "Disable": [
-        "Nonaktifkan"
-      ],
-      "Enable auto-pay support": [
-        "Aktifkan dukungan autodebet"
-      ],
-      "Keep auto-pay": [
-        "Tetap aktifkan autodebet"
-      ],
-      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
-        "Sistem kami tidak akan lagi mendebit Anda secara otomatis melalui metode pembayaran ini, namun langganan Anda akan tetap diperbarui pada akhir siklus tagihan. Apabila Anda ingin menurunkan akun atau mengubah paket berlangganan, Anda tetap harus mengurus proses pemindahan paket secara manual sebelum tagihan Anda jatuh tempo. Di samping itu, apabila Anda menonaktifkan autodebit dan lupa membayar tagihan, kami dapat menurunkan akun Anda dan menonaktifkan berbagai fitur berbayar yang ada secara otomatis."
-      ],
-      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "Sistem kami tidak akan lagi mendebit Anda secara otomatis melalui metode pembayaran ini, namun langganan Anda akan tetap diperbarui pada akhir siklus tagihan. Apabila Anda ingin menurunkan akun atau mengubah paket berlangganan, Anda tetap harus mengurus proses pemindahan paket secara manual sebelum tagihan Anda jatuh tempo. Mohon diperhatikan bahwa kami tidak dapat menurunkan akun Anda apabila Anda melebihi batas kuota yang diizinkan atau menggunakan fitur berbayar selaku pengguna gratis, dan kami juga tidak dapat menghapus berkas, email, atau data lainnya yang Anda miliki. Apabila Anda menonaktifkan autodebit, jangan lupa untuk membayar tagihan Anda pada waktunya untuk menghindari penangguhan akun."
-      ]
-    },
-    "Subscription saving": {
-      "Save ${ priceString }": [
-        "Hemat ${ priceString }"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } kontak terlihat identik."
@@ -9568,9 +8760,6 @@
       ],
       "Alias saved and copied": [
         "Alias disimpan dan disalin"
-      ],
-      "Billing details updated": [
-        "Rincian penagihan diperbarui"
       ],
       "Canceling import": [
         "Membatalkan impor"
@@ -9590,9 +8779,6 @@
       "Contacts deleted": [
         "Kontak dihapus"
       ],
-      "Copied to clipboard": [
-        "Disalin ke papan klip"
-      ],
       "Email address copied to clipboard": [
         "Alamat email disalin ke clipboard"
       ],
@@ -9607,12 +8793,6 @@
       ],
       "Last modified aliases stored in your oldest vault": [
         "Alias yang terakhir digunakan tersimpan dalam brankas terlawas Anda"
-      ],
-      "Payment method added": [
-        "Metode pembayaran ditambahkan"
-      ],
-      "Payment method updated": [
-        "Metode pembayaran diperbarui"
       ],
       "Phone number copied to clipboard": [
         "Nomor telepon disalin ke clipboard"
@@ -9650,14 +8830,6 @@
         "/pengguna per bulan"
       ]
     },
-    "Suffix for price": {
-      "per month": [
-        "per bulan"
-      ],
-      "per user per month": [
-        "per pengguna per bulan"
-      ]
-    },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
         "Buat rincian entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, 20 brankas, 2FA yang terintegrasi, pengisian kartu kredit otomatis, dan masih banyak lagi."
@@ -9670,17 +8842,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Amankan berkas Anda dengan penyimpanan cloud yang terenkripsi. Meliputi riwayat versi, pembagian berkas terenkripsi, dan masih banyak lagi."
-      ]
-    },
-    "Tab subscription modal": {
-      "For businesses": [
-        "Untuk bisnis"
-      ],
-      "For families": [
-        "Untuk keluarga"
-      ],
-      "For individuals": [
-        "Untuk individu"
       ]
     },
     "Table header": {
@@ -9781,9 +8942,6 @@
       "${ emailsCount } email address": [
         "${ emailsCount } alamat email"
       ],
-      "${ feature } is now active": [
-        "${ feature } kini telah aktif"
-      ],
       "Account recovery": [
         "Pemulihan akun"
       ],
@@ -9798,9 +8956,6 @@
       ],
       "Add contact group name": [
         "Tambah nama grup kontak"
-      ],
-      "Add credit/debit card": [
-        "Tambah kartu kredit/debit"
       ],
       "Add to ${ groupCount } group": [
         "Tambahkan ke ${ groupCount } grup"
@@ -9817,20 +8972,8 @@
       "All settings": [
         "Semua pengaturan"
       ],
-      "Amount due": [
-        "Jumlah tagihan"
-      ],
-      "Apply gift code": [
-        "Gunakan kode hadiah"
-      ],
       "Are you sure?": [
         "Apakah Anda yakin?"
-      ],
-      "Auto-deletion is active": [
-        "Penghapusan otomatis aktif"
-      ],
-      "Billing cycle": [
-        "Siklus tagihan"
       ],
       "Birthday": [
         "Tanggal lahir"
@@ -9849,9 +8992,6 @@
       ],
       "Cannot load link": [
         "Tautan tidak dapat dimuat"
-      ],
-      "Card verification": [
-        "Verifikasi kartu"
       ],
       "Change password": [
         "Ubah kata sandi"
@@ -9891,9 +9031,6 @@
       ],
       "Continue with partial import?": [
         "Lanjut impor walau hanya sebagian?"
-      ],
-      "Coupon": [
-        "Kupon"
       ],
       "Create a new folder": [
         "Buat folder baru"
@@ -9967,6 +9104,9 @@
       "Document verification failed": [
         "Verifikasi dokumen gagal"
       ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Gandakan ruang penyimpanan Anda dengan ${ BRAND_NAME } Duo"
+      ],
       "Downgrade account": [
         "Turunkan jenis akun"
       ],
@@ -9994,17 +9134,11 @@
       "Duplicate folder found": [
         "Ditemukan folder duplikat"
       ],
-      "Edit billing address": [
-        "Sunting alamat penagihan"
-      ],
       "Edit contact": [
         "Sunting kontak"
       ],
       "Edit contact group": [
         "Sunting grup kontak"
-      ],
-      "Edit credit/debit card": [
-        "Sunting rincian kartu kredit/debit"
       ],
       "Edit email settings": [
         "Sunting pengaturan email"
@@ -10036,23 +9170,20 @@
       "Enter your password": [
         "Masukkan kata sandi Anda"
       ],
-      "Error": [
-        "Kesalahan"
-      ],
       "Error Syncing": [
         "Terjadi Kesalahan Menyinkronkan"
       ],
       "Exporting contacts": [
         "Mengekspor kontak"
       ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Dapatkan **saldo senilai ${ referralInfo.uiData.refereeRewardAmount }** dengan ${ planTitle }"
+      ],
       "Get more from your VPN": [
         "Dapatkan yang lebh dari VPN Anda"
       ],
       "Get the apps": [
         "Dapatkan aplikasinya"
-      ],
-      "Gift": [
-        "Hadiah"
       ],
       "Groups": [
         "Grup"
@@ -10071,6 +9202,9 @@
       ],
       "How does it work?": [
         "Bagaimana cara hal ini bekerja?"
+      ],
+      "How your free trial works": [
+        "Bagaimana masa uji coba gratis Anda bekerja"
       ],
       "Human verification": [
         "Verifikasi manusia"
@@ -10135,9 +9269,6 @@
       "Need to share more files with edit access?": [
         "Butuh untuk membagikan lebih banyak berkas dengan akses penyuntingan?"
       ],
-      "Network error": [
-        "Kesalahan jaringan"
-      ],
       "Next": [
         "Selanjutnya"
       ],
@@ -10174,15 +9305,6 @@
       "Other names": [
         "Nama lain"
       ],
-      "Payment failed": [
-        "Pembayaran gagal"
-      ],
-      "Payment verification": [
-        "Verifikasi pembayaran"
-      ],
-      "PayPal verification failed": [
-        "Verifikasi PayPal gagal"
-      ],
       "Performance might be affected": [
         "Performa mungkin akan terdampak"
       ],
@@ -10198,17 +9320,11 @@
       "Private browsing vs VPN": [
         "Penjelajahan pribadi vs. VPN"
       ],
-      "Processing...": [
-        "Memproses..."
-      ],
       "Re-sign all contacts": [
         "Menandatangani ulang semua kontak"
       ],
       "Re-signing contacts": [
         "Menandatangani ulang kontak"
-      ],
-      "Recommended": [
-        "Direkomendasikan"
       ],
       "Recommended actions": [
         "Tindakan yang direkomendasikan"
@@ -10230,9 +9346,6 @@
       ],
       "Security center": [
         "Pusat keamanan"
-      ],
-      "Select a plan": [
-        "Pilih paket"
       ],
       "Select action to take on contact group": [
         "Pilih tindakan untuk diterapkan pada grup kontak"
@@ -10300,9 +9413,6 @@
       "Subscription canceled": [
         "Langganan dibatalkan"
       ],
-      "Summary": [
-        "Ikhtisar"
-      ],
       "The link either does not exist or has expired": [
         "Tautan tidak ada atau telah kadaluwarsa"
       ],
@@ -10324,11 +9434,11 @@
       "Untitled spreadsheet ${ date }": [
         "Lembar kerja tak berjudul ${ date }"
       ],
-      "Upgrade complete!": [
-        "Peningkatan selesai!"
-      ],
       "Upgrade to ${ planName }": [
         "Tingkatkan ke ${ planName }"
+      ],
+      "Upgrade to keep your premium benefits.": [
+        "Tingkatkan untuk mempertahankan berbagai keutamaan premium Anda."
       ],
       "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
         "Tingkatkan ruang penyimpanan Anda dengan ${ planName } seharga ${ formattedPrice }"
@@ -10344,15 +9454,6 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Gunakan ${ VPN_SHORT_APP_NAME } untuk privasi data"
-      ],
-      "Verification failed": [
-        "Verifikasi gagal"
-      ],
-      "Verifying your card...": [
-        "Memverifikasi kartu Anda..."
-      ],
-      "Verifying your payment...": [
-        "Memverifikasi pembayaran Anda..."
       ],
       "VPN explained": [
         "Kupas tuntas VPN"
@@ -10378,9 +9479,6 @@
       "When is it most important to use a VPN?": [
         "Kapan waktu yang paling tepat untuk menggunakan VPN?"
       ],
-      "You can now create unlimited folders and labels": [
-        "Anda kini dapat membuat folder dan label tanpa batasan jumlah"
-      ],
       "You have no folders yet": [
         "Anda belum memiliki folder"
       ],
@@ -10398,12 +9496,6 @@
       ],
       "Your exposed information": [
         "Informasi Anda yang terpapar"
-      ],
-      "Your plan": [
-        "Paket Anda"
-      ],
-      "Your shorter address is now ready": [
-        "Alamat lebih pendek Anda sudah siap"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -10451,9 +9543,6 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail secara otomatis mengelompokkan email tertentu ke dalam kategori seperti Sosial dan Promosi. Anda dapat menentukan ke kategori mana email berikut akan diimpor."
       ],
-      "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Apabila Anda telah membeli kode hadiah atau telah menerima kode hadiah dari tim layanan dukungan kami, silakan masukkan kode tersebut di sini."
-      ],
       "Load image": [
         "Muat gambar"
       ],
@@ -10480,9 +9569,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Proses impor akan dimulai dari pesan yang paling baru."
-      ],
-      "The new subscription cycle starts on ${ formattedTime }": [
-        "Siklus langganan baru akan dimulai pada ${ formattedTime }"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Kecuali kata sandi ini didekripsi, kata sandi yang terenkripsi akan tetap aman bahkan apabila terpapar."
@@ -10671,6 +9757,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Masa uji coba gratis Anda akan berakhir pada ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Uji coba Anda akan berakhir pada ${ textDate }. Anda tidak akan dikenakan biaya apabila Anda membatalkan sebelum ${ textDate }. ${ action }"
       ]
     }
   }

@@ -66,9 +66,6 @@
       "Add contact": [
         "კონტაქტის დამატება"
       ],
-      "Add credit / debit card": [
-        "ახალი საკრედიტო/სადებეტო ბარათის დამატება"
-      ],
       "Add email": [
         "ელფოსტის დამატება"
       ],
@@ -126,9 +123,6 @@
       ],
       "Cancel subscription": [
         "გამოწერის გაუქმება"
-      ],
-      "Cancel trial and pay": [
-        "გამოსაცდელი პერიოდის გაუქმება და გადახდა"
       ],
       "Change password": [
         "პაროლის შეცვლა"
@@ -253,17 +247,11 @@
       "Create and copy alias": [
         "ფსევდონიმის შექმნა და კოპირება"
       ],
-      "Create folder": [
-        "საქაღალდის შექმნა"
-      ],
       "Create new folder": [
         "ახალი საქაღალდის შექმნა"
       ],
       "Create new password": [
         "ახალი პაროლის შექმნა"
-      ],
-      "Current plan": [
-        "მიმდინარე ტარიფი"
       ],
       "Customize": [
         "მორგება"
@@ -279,9 +267,6 @@
       ],
       "Decline invite": [
         "მოწვევის უარყოფა"
-      ],
-      "Decrease": [
-        "შემცირება"
       ],
       "Delete": [
         "წაშლა"
@@ -345,9 +330,6 @@
       "Edit sign-in details": [
         "შესვლის დეტალების ჩასწორება"
       ],
-      "Edit subscription": [
-        "გამოწერის ჩასწორება"
-      ],
       "Email settings": [
         "ელფოსტის მორგება"
       ],
@@ -359,6 +341,9 @@
       ],
       "Expand": [
         "ამოკეცვა"
+      ],
+      "Explore other plans": [
+        "სხვა სატარიფო გეგმების დათვალიერება"
       ],
       "Export": [
         "გატანა"
@@ -386,9 +371,6 @@
       ],
       "Get a free ${ BRAND_NAME } address": [
         "მიიღეთ უფასო ${ BRAND_NAME }-ის მისამართი"
-      ],
-      "Get in touch": [
-        "დაგვიკავშირდით"
       ],
       "Get the apps": [
         "აპების გადმოწერა"
@@ -465,17 +447,11 @@
       "Import from Outlook": [
         "Outlook-დან შემოტანა"
       ],
-      "Increase": [
-        "გაგრძელება"
-      ],
       "Keep my subscription": [
         "ჩემი გამოწერის შენარჩუნება"
       ],
       "Learn more": [
         "გაიგეთ მეტი"
-      ],
-      "Let's talk": [
-        "ვიბაზროთ"
       ],
       "Load": [
         "ჩატვირთვა"
@@ -576,12 +552,6 @@
       "Open navigation": [
         "ნავიგაციის გახსნა"
       ],
-      "Pay": [
-        "გადახდა"
-      ],
-      "Pay ${ price } now": [
-        "${ price }-ის გადახდა"
-      ],
       "PDF (.pdf)": [
         "PDF (.pdf)"
       ],
@@ -635,9 +605,6 @@
       ],
       "Remove file": [
         "ფაილის წაშლა"
-      ],
-      "Remove gift code": [
-        "სასაჩუქრე კოდის წაშლა"
       ],
       "Rename": [
         "სახელის გადარქმევა"
@@ -717,12 +684,6 @@
       "Select all": [
         "ყველაფრის მონიშვნა"
       ],
-      "Select billing cycle ${ billingText }": [
-        "აირჩიეთ გადახდის ციკლი ${ billingText }"
-      ],
-      "Select country": [
-        "აირჩიეთ ქვეყანა"
-      ],
       "Set recovery methods": [
         "აღდგენის მეთოდების დაყენება"
       ],
@@ -786,14 +747,14 @@
       "Submit": [
         "დამტკიცება"
       ],
+      "Subscribe now": [
+        "გამოიწერეთ ახლავე"
+      ],
       "Switch accounts": [
         "ანგარიშის გადართვა"
       ],
       "Switch or add account": [
         "ანგარიშის დამატება ან გადართვა"
-      ],
-      "Take a tour": [
-        "გასაცნობი ტური"
       ],
       "Take out of trash": [
         "ნაგვის ყუთიდან გამოტანა"
@@ -861,12 +822,6 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "გამოიყენეთ ${ VPN_SHORT_APP_NAME } მონაცემთა კონფიდენციალობისთვის"
       ],
-      "Use a different card": [
-        "სხვა ბარათის გამოყენება"
-      ],
-      "Use a different payment method": [
-        "განსხვავებული გადახდის მეთოდის გამოყენება"
-      ],
       "Use authentication code": [
         "ავთენტიკაციის კოდის გამოყენება"
       ],
@@ -897,9 +852,6 @@
       ],
       "Web page (.html)": [
         "ვებგვერდი (.html)"
-      ],
-      "What do I get?": [
-        "რას მივიღებ?"
       ],
       "Word count": [
         "სიტყვების რაოდენობა"
@@ -940,18 +892,6 @@
       "${ ips } server": [
         "${ ips } სერვერი",
         "${ ips } სერვერი"
-      ],
-      "${ price } per dedicated server": [
-        "${ price } გამოყოფილი სერვერი"
-      ],
-      "${ price } per domain": [
-        "${ price }/დომენი"
-      ],
-      "${ price } per seat": [
-        "${ price }/ლიცენზია"
-      ],
-      "${ price } per user": [
-        "${ price }/მომხმარებელი"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats }${ LUMO_APP_NAME } ლიცენზია",
@@ -1105,11 +1045,6 @@
         "${ BRAND_NAME }-ის აპლიკაციები"
       ]
     },
-    "Assistant toggle": {
-      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
-        "აიყვანეთ ელფოსტის წარმადობა ახალ დონეებზე. მიეცით საშუალება ${ BRAND_NAME } Scribe-ს, რომ დაგეხმაროთ თქვენი ელფოსტების წერაში, პასუხში და გადამოწმებაში."
-      ]
-    },
     "Attached ics file error": {
       "Empty ICS file": [
         "ცარიელი ICS ფაილი"
@@ -1130,17 +1065,6 @@
         "გაუთვალისწინებელი შემთხვევა"
       ]
     },
-    "b2b_trials_2025_Info": {
-      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
-        "გამოსაცდელი პერიოდისას შეგიძლიათ ${ TRIAL_MAX_USERS } მომხმარებლის შექმნა."
-      ],
-      "You cannot add custom domains during the trial period.": [
-        "გამოსაცდელი პერიოდის მიმდინარეობისას თქვენს დომენებს ვერ დაამატებთ."
-      ],
-      "You have reached the trial limit.": [
-        "მიაღწიეთ გამოსაცდელი პერიოდის ზღვარს."
-      ]
-    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "გამოწერის გაუქმება"
@@ -1155,15 +1079,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "1 user": [
-        "1 მომხმარებელი"
-      ],
-      "3 TB": [
-        "3 ტბ"
-      ],
-      "6 users": [
-        "6 მომხმარებელი"
-      ],
       "Premium Password Manager": [
         "პაროლების მმართველის ფასიანი ვერსია"
       ]
@@ -1188,35 +1103,11 @@
       "${ storageSize } storage": [
         "${ storageSize } საცავი"
       ],
-      "1 TB total": [
-        "1 ტბ ჯამში"
-      ],
-      "1 user": [
-        "1 მომხმარებელი"
-      ],
       "1 user account": [
         "1 მომხმარებლის ანგარიში"
       ],
-      "10 email addresses": [
-        "10 ელფოსტის მისამართი"
-      ],
-      "2 users": [
-        "2 მომხმარებელი"
-      ],
-      "3 TB": [
-        "3 ტბ"
-      ],
       "6 user accounts": [
         "6 მომხმარებლის ანგარიში"
-      ],
-      "6 users": [
-        "6 მომხმარებელი"
-      ],
-      "8500+ servers across 110+ countries": [
-        "8500+ სერვერი 110+ ქვეყანაში"
-      ],
-      "Ad-blocker and malware protection": [
-        "რეკლამების დაბლოკვა და არასასურველი პროგრამებისგან დაცვა"
       ],
       "Admin panel to manage your family": [
         "ადმინის პანელი ოჯახის სამართავად"
@@ -1227,9 +1118,6 @@
       "Easily add or remove users": [
         "ადვილად დაამატეთ ან წაშალეთ მომხმარებლები"
       ],
-      "High speed streaming": [
-        "ჩქაროსნული სტრიმინგი"
-      ],
       "One-time payment, lifetime deal": [
         "ერთჯერადი გადახდა, სამუდამო შეთანხმება"
       ],
@@ -1239,15 +1127,6 @@
       "Password health alerts": [
         "პაროლის სიმთელის გაფრთხილებები"
       ],
-      "Private photo backup": [
-        "კონფიდენციალური სურათების მარქაფი"
-      ],
-      "Protect 10 devices at a time": [
-        "დაიცავით 10 მოწყობილობამდე ერთდროულად"
-      ],
-      "Secure file storage & sharing": [
-        "დაცული ფაილების საცავი და გაზიარება"
-      ],
       "Unlimited folders, labels and filters": [
         "ულიმიტო საქაღალდეები, ჭდეები და ფილტრები"
       ],
@@ -1256,12 +1135,6 @@
       ],
       "Use your own email domain": [
         "გამოიყენეთ თქვენი საკუთარი ელფოსტის დომენი"
-      ],
-      "Version history": [
-        "ვერსიის ისტორია"
-      ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -1275,9 +1148,6 @@
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
         "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more."
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "იქონიეთ წვდომა სტრიმინგის სერვისებთან, Netflix, Display+, Prime Video- და სხვ. ნებისმიერი ადგილიდან."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ hide-my-email-ის ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს, ${ DARK_WEB_MONITORING_NAME }-ის მონიტორინგს და სხვ."
@@ -1299,31 +1169,8 @@
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "დაიცავით თქვენი ფაილები დაშიფრული ღრუბლოვანი საცავით. ეს შეიცავს დოკუმენტის რედაქტორს ბრაუზერისთვის, ფოტოების მარქაფს, ვერსიების ისტორიას, დაშიფრულ ფაილების გაზიარებას და ბევრ სხვას."
       ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield-ი იცავს თქვენს მოწყობილობებს და აჩქარებს ინტერნეტში მუშაობას რეკლამების, ტრეკერების და არასასურველი პროგრამების დაბლოკვით."
-      ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "საცავის სივრცე გაზიარებულია ყველა ${ BRAND_NAME }-ის სერვისებს შორის."
-      ]
-    },
-    "Billing cycle option": {
-      "1 month": [
-        "1 თვე"
-      ],
-      "12 months": [
-        "12 თვე"
-      ],
-      "Annually": [
-        "წელიწადში ერთხელ"
-      ],
-      "Lifetime": [
-        "სამუდამოდ"
-      ],
-      "Monthly": [
-        "თვეში ერთხელ"
-      ],
-      "Two-year": [
-        "ორი წლით"
       ]
     },
     "Browser": {
@@ -1415,9 +1262,6 @@
       ]
     },
     "Button": {
-      "Close": [
-        "დახურვა"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }-ის მოხმარების გაგრძელება."
       ],
@@ -1427,23 +1271,8 @@
       "Continue your subscription": [
         "გააგრძელეთ თქვენი გამოწერა"
       ],
-      "Create label": [
-        "ჭდის შექმნა"
-      ],
-      "Discover and set up features": [
-        "აღმოაჩინეთ და მოირგეთ ფუნქციები"
-      ],
       "Maybe later": [
         "მოგვიანებით"
-      ],
-      "Remind me later": [
-        "შემახსენე მოგვიანებით"
-      ],
-      "Set up other features": [
-        "სხვა ფუნქციების მორგება"
-      ],
-      "Take a tour": [
-        "გასაცნობი ტური"
       ]
     },
     "Cancellation upsell": {
@@ -1494,13 +1323,6 @@
       "${ users } user": [
         "${ users } მომხმარებელი",
         "${ users } მომხმარებელი"
-      ],
-      "Total": [
-        "ჯამი"
-      ],
-      "Total for ${ n } month": [
-        "ჯამში ${ n } თვის",
-        "ჯამში ${ n } თვის"
       ]
     },
     "Collapsible tooltip": {
@@ -1520,9 +1342,6 @@
       ],
       "Full chat history with search": [
         "სრული ჩატის ისტორია ძებნით"
-      ],
-      "Large file upload support": [
-        "დიდი ფაილის ატვირთვის მხარდაჭერა"
       ],
       "Limited daily chats": [
         "შეზღუდული ყოველდღიური ჩატები"
@@ -1547,9 +1366,6 @@
       ]
     },
     "collider_2025: Info": {
-      "Add ${ LUMO_APP_NAME }": [
-        "${ LUMO_APP_NAME }-ის დამატება"
-      ],
       "High-speed chats and advanced AI features.": [
         "სწრაფი ჩატები და დამატებითი ხი-ის ფუნქციები"
       ]
@@ -2548,14 +2364,6 @@
         "${ VPN_APP_NAME }-Სთვის"
       ]
     },
-    "Cycle": {
-      "/month": [
-        "/თვე"
-      ],
-      "/user per month": [
-        "/მომხმარებელი თვეში"
-      ]
-    },
     "Default display name vcard": {
       "Unknown": [
         "უცნობი"
@@ -2916,12 +2724,6 @@
       "Already a member of this share": [
         "უკვე წარმოადგენს ამ გაზიარების წევრს"
       ],
-      "Amount above the maximum.": [
-        "თანხა დასაშვებზე მაღალია."
-      ],
-      "Amount below minimum (${ minimumAmount }).": [
-        "თანხა მინიმუმზე ნაკლებია (${ minimumAmount })."
-      ],
       "An error occurred while attempting to convert the document. Please try again.": [
         "შეცდომა დოკუმენტის გადაყვანის მცდელობისას. მოგვიანებით სცადეთ."
       ],
@@ -2955,9 +2757,6 @@
       "Cannot export this contact": [
         "ამ კონტაქტის გატანა შეუძლებელია"
       ],
-      "Checkout expired, please try again": [
-        "გადახდის დრო გავიდა. თავიდან სცადეთ"
-      ],
       "Contact could not be saved": [
         "კონტაქტის შენახვის შეცდომა"
       ],
@@ -2984,9 +2783,6 @@
       "Domain not available, try again later": [
         "დომენი ხელმიუწვდომელია. თავიდან სცადეთ"
       ],
-      "Editing billing address is not available at the moment. Please try again later.": [
-        "გადახდის მისამართის ჩასწორება, ამჟამად, ხელმისაწვდომი არაა. მოგვიანებით სცადეთ."
-      ],
       "Email address is required": [
         "ელფოსტის მისამართი აუცილებელია"
       ],
@@ -2995,9 +2791,6 @@
       ],
       "Enter 6 digits": [
         "შეიყვანეთ 6 ციფრი"
-      ],
-      "Error connecting to the Bitcoin API.": [
-        "Bitcoin-ის API-თან მიერთების შეცდომა."
       ],
       "Error decrypting a computer": [
         "კომპიუტერის გაშიფვრის შეცდომა"
@@ -3056,29 +2849,11 @@
       "Incorrect username": [
         "მომხმარებლის სახელი არასწორია"
       ],
-      "Invalid ${ name } code": [
-        "არასწორი კოდი ${ name }"
-      ],
-      "Invalid card number": [
-        "ბარათის არასწორი ნომერი"
-      ],
-      "Invalid code": [
-        "არასწორი კოდი"
-      ],
       "Invalid email address": [
         "არასწორი ელფოსტის მისამართი"
       ],
-      "Invalid expiration date": [
-        "არასწორი ვადა"
-      ],
-      "Invalid IBAN": [
-        "არასწორი IBAN"
-      ],
       "Invalid name": [
         "არასწორი სახელი"
-      ],
-      "Invalid postal code": [
-        "არასწორი საფოსტო კოდი"
       ],
       "Invalid public key file": [
         "არასწორი საჯარო გასაღების ფაილი"
@@ -3143,32 +2918,8 @@
       "Passwords do not match": [
         "პაროლები არ ემთხვევა"
       ],
-      "Payment process canceled": [
-        "გადახდის პროცესი გაუქმდა"
-      ],
-      "Payment process consumed": [
-        "გადახდის პროცესი დასრულებულია"
-      ],
-      "Payment process failed": [
-        "გადახდის პროცესის შეცდომა"
-      ],
-      "Payment process not supported": [
-        "გადახდის პროცესის მხარდაჭერა არ არსებობს"
-      ],
       "Photos upload is temporarily disabled. Please try again later": [
         "სურათების ატვირთვა დროებით გათიშულია. მოგვიანებით სცადეთ"
-      ],
-      "Please enter a valid postal code": [
-        "გთხოვთ შეიყვანოთ სწორი საფოსტო კოდი"
-      ],
-      "Please enter a valid ZIP code": [
-        "შეიყვანეთ სწორი ZIP კოდი"
-      ],
-      "Please enter postal code": [
-        "შეყვანეთ საფოსტო კოდი"
-      ],
-      "Please enter ZIP code": [
-        "შეიყვანეთ ZIP კოდი"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "გასაგრძელებლად, გთხოვთ, შეასწოროთ გამოკვეთილი კონფლიქტი.",
@@ -3183,26 +2934,14 @@
       "Please select a state": [
         "აირჩიეთ შტატი"
       ],
-      "Please select billing country": [
-        "აირჩიეთ გადახდის ქვეყანა"
-      ],
-      "Please select billing state": [
-        "აირჩიეთ გადახდის მდგომარეობა"
-      ],
       "Port is required": [
         "პორტი აუცილებელია"
-      ],
-      "Postal code is required": [
-        "საფოსტო კოდი აუცილებელია"
       ],
       "Primary address key is not decrypted": [
         "ძირითადი მისამართის გასაღები გაშიფრული არაა"
       ],
       "Primary address key is not decrypted.": [
         "ძირითადი მისამართის გასაღები გაშიფრული არაა."
-      ],
-      "Process aborted": [
-        "პროცესი გაჩერდა"
       ],
       "Removed duplicate invitee: ${ joinedInvitee }": [
         "წაშლილია გამეორებადი მოსაწვევი: ${ joinedInvitee }",
@@ -3247,14 +2986,8 @@
       "status page": [
         "სტატუსის გვერდი"
       ],
-      "Tab closed": [
-        "ჩანართი დახურულია"
-      ],
       "The address might be misspelled": [
         "ალბათ, მისამართი შეგეშალათ"
-      ],
-      "The amount due has changed. Please try again.": [
-        "გადასახდელი თანხა შეიცვალა. თავიდან სცადეთ."
       ],
       "The document you are trying to convert is too large. This may occur if the document has a large number of images or other media. Please try again with a smaller document.": [
         "დოკუმენტი, რომლის გადაყვანასაც ცდილობთ, მეტისმეტად დიდია. ეს, შეიძლება, მაშინ მოხეს, თუ დოკუმენტი ბევრ სურათს ან სხვა მედიას შეიცავს. სცადეთ თავიდან, ამჯერად ცოტა პატარა დოკუმენტით."
@@ -3282,9 +3015,6 @@
       ],
       "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
         "ბოლო განახლება, რომელიც დოკუმენტში შეიტანეთ, ან ძალიან დიდია, ან სცდება დოკუმენტის ზომის შეზღუდვას. ჩასწორება დროებით გათიშულია. თქვენი ცვლილებები შენახული არ იქნება. გაიტანეთ თქვენი დოკუმენტის ასლი და ჩატვირთეთ გვერდი თავიდან."
-      ],
-      "The minimum amount of credit that can be added is ${ price }": [
-        "დამატებადი თანხის მინიმალური რაოდენობაა ${ price }"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "საწყისის ფაილი ახალი რევიზია ჯერ ატვირთული არაა. მოგვიანებით სცადეთ"
@@ -3340,9 +3070,6 @@
       "Unknown error": [
         "უცნობი შეცდომა"
       ],
-      "Unknown payment token status": [
-        "გადახდის სტატუსის არასწორი კოდი"
-      ],
       "Update Too Large": [
         "განახლება ძალიან დიდია"
       ],
@@ -3376,9 +3103,6 @@
       ],
       "Your import will not be processed.": [
         "თქვენი შემოტანა არ დამუშავდება."
-      ],
-      "ZIP code is required": [
-        "საფოსტო კოდი აუცილებელია"
       ]
     },
     "error": {
@@ -4267,14 +3991,8 @@
         "ნაპოვნია ${ groupCounts } ჯგუფი",
         "ნაპოვნია ${ groupCounts } ჯგუფი"
       ],
-      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
-        "${ LUMO_APP_NAME } შეიცავს ${ BRAND_NAME } Scribe წერის დამხმარეს"
-      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } სამუდამო გეგმას განახლების ფასი არ გააჩნია. ის ერთჯერადი გადასახადია და ${ PASS_SHORT_APP_NAME }-თან სამუდამო წვდომას მოგცემთ."
-      ],
-      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
-        "${ plan.Title }-ს სულ ცოტა 1 გამოყოფილი სერვერი ესაჭიროება ${ serverPricePerMonth }"
       ],
       "${ planName } expires in ${ daysLeft } day.": [
         "${ planName }-ის ვადა იწურება ${ daysLeft } დღეში.",
@@ -4282,9 +4000,6 @@
       ],
       "${ planName } expires today.": [
         "${ planName }-ის ვადა დღეს იწურება."
-      ],
-      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
-        "${ PROTON_SENTINEL_NAME } იცავს თქვენს ანგარიშს საეჭვო აქტივობების გამოყოფილი მონიტორინგით."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "ნაპოვნია ${ providerFoldersNumLocalized } საქაღალდე",
@@ -4314,9 +4029,6 @@
         "მონიშნულია ${ selectedFoldersCountLocalized } ჭდე",
         "მონიშნულია ${ selectedFoldersCountLocalized } ჭდე"
       ],
-      "${ storage } storage": [
-        "${ storage } საცავი"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } კონტაქტი წარმატებით განახლდა.",
         "${ updated } კონტაქტი წარმატებით განახლდა."
@@ -4330,9 +4042,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } წევრი)",
         "(${ memberCount } წევრი)"
-      ],
-      "(${ serverPrice }/month)": [
-        "(${ serverPrice } /თვეში)"
       ],
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**ავტოდაკავშირება**: გახსნის და დააკავშირებს VPN-ს მაშინვე, როცა თქვენს მოწყობილობას ჩართავთ."
@@ -4350,9 +4059,6 @@
         "+${ organization.BonusVPN } შეერთება ${ VPN_APP_NAME }-სთვის (უფლებას გაძლევთ VPN-ს მეტი მოწყობილობით დაუკავშირდეთ )",
         "+${ organization.BonusVPN } შეერთება ${ VPN_APP_NAME }-სთვის (უფლებას გაძლევთ VPN-ს მეტი მოწყობილობით დაუკავშირდეთ )"
       ],
-      "30-day money-back guarantee.": [
-        "30 დღიანი გარანტირებული ფულის დაბრუნება."
-      ],
       "A number will be added to the filename": [
         "ფაილის სახელს რიცხვი მიემატება"
       ],
@@ -4362,29 +4068,17 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "ტელეფონის ნომერი, მხოლოდ, ერთი ${ BRAND_NAME }-ის ანგარიშის გადასამოწმებლად შეგიძლიათ, გამოიყენოთ"
       ],
-      "A user is an account associated with a single username, mailbox, and person": [
-        "მომხმარებელი წარმოადგენს ანგარიშს, რომელსაც ერთადერთი მომხმარებლის სახელი, საფოსტო ყუთი და მფლობელი გააჩნია"
-      ],
       "Accept/decline": [
         "მიღება/უარყოფა"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "ანგარიშთან წვდომა აკრძალულია გადაუხდელი ინვოისების გამო. დაუკავშირდით თქვენს ადმინისტრატორს."
       ],
-      "Account successfully updated": [
-        "ანგარში წარმატებით განახლდა"
-      ],
       "Ad targeting": [
         "დამიზნებული რეკლამა"
       ],
-      "Address copied to clipboard": [
-        "მისამართი დაკოპირდა გაცვლის ბაფერში"
-      ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "ამ მისამართისთვის ჩართულია მისამართის დადასტურება სანდო გასაღებებით. იმისათვის, რომ შეძლოთ ამ მისამართზე გაგზავნა, ჯერ ენდეთ საჯარო გასაღებებს, რომლებიც შეიძლება, გამოყენებულ იქნას გაგზავნისთვის."
-      ],
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "ხელოვნურ ინტელექტზე დაფუძნებული ასისტენტი, რომელიც დაგეხმარებათ, ადვილად და პრობლემები გარეშე შექმნათ უკეთესი ელფოსტები."
       ],
       "All (${ totalFoldersCount } folder)": [
         "ყველა (${ totalFoldersCount } საქაღალდე)",
@@ -4397,15 +4091,6 @@
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ MAX_CONTACTS_PER_USER }",
         "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ MAX_CONTACTS_PER_USER }"
-      ],
-      "American Express SafeKey logo": [
-        "American Express SafeKey-ის ლოგო"
-      ],
-      "Amount above maximum (${ amount }).": [
-        "თანხა მაქსიმუმზე მეტია (${ amount })."
-      ],
-      "Amount below minimum (${ amount }).": [
-        "თანხა მინიმუმზე ნაკლებია (${ amount })."
       ],
       "an anonymous user": [
         "ანონიმური მომხმარებელი"
@@ -4437,17 +4122,8 @@
       "Attention required": [
         "საჭიროა ყურადღება"
       ],
-      "Awaiting transaction": [
-        "ტრანზაქციის მოლოდინი"
-      ],
-      "Balance from your previous subscription": [
-        "ბალანსი წინა გამოწერიდან"
-      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "შემოწმების ახალი კოდის მოთხოვნამდე შეამოწმეთ თქვენი სპამის საქაღალდე და რომ ${ strong } სწორი მისამართია."
-      ],
-      "Billing cycle: ${ text }": [
-        "გადახდის ციკლი: ${ text }"
       ],
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
         "გადმოიტანეთ თქვენი შეტყობინებები, კონტაქტები და კალენდრები ${ BRAND_NAME }-ზე."
@@ -4519,10 +4195,6 @@
       "Create a new contact group": [
         "კონტაქტების ახალი ჯგუფის შექმნა"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "დაცული ღრუბლის შექმნა ${ value } წევრისთვის",
-        "დაცული ღრუბლის შექმნა ${ value } წევრისთვის"
-      ],
       "Create an end-to-end encrypted document.": [
         "შექმენით თქვენი გამჭოლად დაშიფრული დოკუმენტი."
       ],
@@ -4544,41 +4216,17 @@
       "Creating new document...": [
         "ახალი დოკუმენტის შექმნა..."
       ],
-      "Credit for the unused portion of your previous plan subscription": [
-        "წინა გამოწერის დარჩენილი ნაწილის კრედიტი"
-      ],
       "Current plan": [
         "მიმდინარე ტარიფი"
       ],
       "Current version": [
         "მიმდინარე ვერსია"
       ],
-      "Custom email domains": [
-        "ელფოსტის თქვენი დომენები"
-      ],
-      "Dedicated servers": [
-        "გამოყოფილი სერვერები"
-      ],
-      "Dedicated VPN servers": [
-        "გამოყოფილი VPN სერვერები"
-      ],
-      "default email address": [
-        "ნაგულისხმევი ელფოსტის მისამართი"
-      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "ციფრული ხელმოწერა შემოწმებულია. ეს ფაილი დაცულად ატვირთა ${ emailAddress }-მა."
       ],
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "ციფრული ხელმოწერა შემოწმებულია. ეს საქაღალდე დაცულად ატვირთა ${ emailAddress }-მა."
-      ],
-      "Discover new features unlocked and start using them right away!": [
-        "აღმოაჩინეთ ახალი ფუნქციები და დაიწყეთ მათი გამოყენება ახლავე!"
-      ],
-      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
-        "აღმოაჩინეთ ახალი ფუნქციები${ planTitle }-ში და დაიწყეთ მათი გამოყენება ახლავე!"
-      ],
-      "Discover ProtectBuy logo": [
-        "Discover ProtectBuy-ის ლოგო"
       ],
       "Display word count": [
         "სიტყვების რაოდენობის ჩვენება"
@@ -4591,9 +4239,6 @@
       ],
       "Document owner has the password": [
         "პაროლი დოკუმენტის მფლობელს აქვს"
-      ],
-      "Don’t see anything? Remember to turn off pop-up blockers.": [
-        "ვერაფერს ხედავთ? არ დაგავიწყდეთ, მხტუნარა ფანჯრის დამბლოკველები გამორთოთ."
       ],
       "Downgrade": [
         "ტარიფის ჩამოწევა"
@@ -4609,9 +4254,6 @@
       ],
       "Download was canceled": [
         "გადმოწერა გაწყდა"
-      ],
-      "Download your favorite app today and take privacy with you everywhere you go.": [
-        "გადმოწერეთ თქვენი რჩეული აპლიკაცია დღეს და გქონდეთ თქვენი კონფიდენციალობა თან, სადაც უნდა წახვიდეთ."
       ],
       "Drop file here to upload": [
         "ასატვირთად გადმოათრიეთ ფაილები აქ"
@@ -4631,17 +4273,8 @@
       "email": [
         "ელფოსტა"
       ],
-      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
-        "ელფოსტის ჰოსტინგი ხელმისაწვდომია, მხოლოდ, იმ დომენებისთვის, რომლებსაც უკვე ფლობთ. დომენის რეგისტრაცია, ამჟამად, არ არის ხელმისაწვდომი ${ BRAND_NAME }-ის საშუალებით. დომენის შეძენა ნებისმიერ რეგისტრატორთან შეგიძლიათ."
-      ],
       "Emails are automatically signed": [
         "ელფოსტების ხელმოწერა ავტომატურია"
-      ],
-      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
-        "ელფოსტები, რომლებიც ნაგვის ყუთში ან სპამში 30 ან მეტი დღის წინ მოხვდნენ, ავტომატურად წაიშლება."
-      ],
-      "Enabling auto-deletion…": [
-        "ავტოამოცნობის ჩართვა…"
       ],
       "End-to-end encrypted": [
         "გამჭოლი შიფრაცია"
@@ -4684,9 +4317,6 @@
       ],
       "Everything in ${ planOrAppName }": [
         "ყველაფერი ${ planOrAppName }-ში"
-      ],
-      "Expired": [
-        "ვადაგასულია"
       ],
       "Failed to generate a secure link. The reason is: ${ error }": [
         "დაცული ბმულის გენერაციის შეცდომა. მიზეზი: ${ error }"
@@ -4791,9 +4421,6 @@
       "In restrictive countries": [
         "აკრძალვების მქონე ქვეყნებში"
       ],
-      "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
-        "შემდეგ ნაბიჯზე თქვენ საშუალება გექნებათ, დეპოზიტი ბიტკოინის მისამართით გადმოგვცეთ."
-      ],
       "Inherited from parent folder": [
         "მემკვიდრეობით მშობელი საქაღალდისგან"
       ],
@@ -4817,9 +4444,6 @@
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "საუკეთესო გზაა, VPN ყოველთვის გამოიყენოთ. მაგრამ ეს ადგილებია, სადაც კიბერუსაფრთხოების საფრთხეები ყველაზე დიდია:"
-      ],
-      "JCB logo": [
-        "JCB ლოგო"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "დაადასტურეთ თქვენი არჩევანი. დანარჩენს ჩვენ გავაკეთებთ."
@@ -4884,9 +4508,6 @@
       "Making a copy...": [
         "ასლის შექმნა..."
       ],
-      "Mastercard SecureCode logo": [
-        "Mastercard SecureCode-ის ლოგო"
-      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "მაქს ${ MAX_SHARED_URL_PASSWORD_LENGTH } სიმბოლო",
         "მაქს ${ MAX_SHARED_URL_PASSWORD_LENGTH } სიმბოლო"
@@ -4902,9 +4523,6 @@
       ],
       "Merged": [
         "შერწყმული"
-      ],
-      "Messages to all your email addresses will go to your inbox.": [
-        "შეტყობინებები ყველა თქვენს ელფოსტის მისამართზე საფოსტ ყუთში მოგივათ."
       ],
       "Monitor accounts": [
         "ანგარიშების მონიტორი"
@@ -4927,9 +4545,6 @@
       "No group found": [
         "ჯგუფი ნაპოვნი არაა"
       ],
-      "No payment is required at this time.": [
-        "ჯერჯერობით გადახდა საჭირო არაა."
-      ],
       "No recent documents match your search.": [
         "თქვენი ძებნის პირობას უახლესი დოკუმენტები არ აკმაყოფილებენ."
       ],
@@ -4947,12 +4562,6 @@
       ],
       "Not connected": [
         "მიერთებული არაა"
-      ],
-      "Number of dedicated servers in the organization": [
-        "გამოყოფილი სერვერების რაოდენობა ორგანიზაციაში"
-      ],
-      "Number of dedicated VPN servers in the organization": [
-        "გამოყოფილი VPN სერვერების რაოდენობა ორგანიზაციაში"
       ],
       "Numbers": [
         "რიცხვები"
@@ -4981,12 +4590,6 @@
       "Opening...": [
         "გახსნა..."
       ],
-      "or discover other features:": [
-        "ან აღმოაჩინეთ სხვა ფუნქციები:"
-      ],
-      "Organization size": [
-        "ორგანიზაციის ზომა"
-      ],
       "Other accounts": [
         "სხვა ანგარიშები"
       ],
@@ -5005,9 +4608,6 @@
       "Password must have:": [
         "პაროლს უნდა ჰქონდეს:"
       ],
-      "Payments are protected with TLS encryption and Swiss privacy laws.": [
-        "გადახდები TLS-ით და შვეიცარიული კანონებითაა დაცული."
-      ],
       "Pending invitations": [
         "მომლოდინე მოსაწვევები"
       ],
@@ -5020,20 +4620,11 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME ავტომატურად აგზავნის შეტყობინებას, რედაქტორის მიმდინარე რეჟიმის გამოყენებით."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "გთხოვთ, დაადასტუროთ თქვენი ბარათი გადამოწმების ჩანართში."
-      ],
-      "Please authenticate your payment in the verification tab.": [
-        "გთხოვთ დაადასტუროთ თქვენი გადახდა გადამოწმების ჩანართში."
-      ],
       "Please enter the password to decrypt and view content.": [
         "გთხოვთ, შეიყვანოთ პაროლი შინაარსის გასაშიფრად და სანახავად."
       ],
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "გადაიტანეთ თქვენი მიმდინარე ცვლილებების ასლი მთავარი მენიუდან და თავიდან ჩატვირთეთ ეს გვერდი."
-      ],
-      "Please fill in all required fields.": [
-        "გთხოვთ, შეავსოთ ყველა საჭირო ველი."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "დაიმახსოვრეთ, რომ ამ ჯგუფებზე მინიჭებული მისამართები *არ* წაიშლება."
@@ -5060,12 +4651,6 @@
       "Please try again in a few moments": [
         "გთხოვთ, ხელახლა სცადოთ რამდენიმე წამში"
       ],
-      "Please try again using a different payment method, or contact your bank.": [
-        "ან თავიდან სცადეთ, ან გადახდის სხვა საშუალება გამოიყენეთ, ან დაუკავშირდით თქვენს ბანკს."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "ან თავიდან სცადეთ, ან გადახდის სხვა საშუალება გამოიყენეთ, ან დაუკავშირდით PayPal-ს."
-      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "მიმდინარეობს კონტაქტების მოძებნა, რომლების ხელმოწერაც შიფრაციის ძირითადი გასაღებით თავიდან შეიძლება. გთხოვთ, მოითმინოთ."
       ],
@@ -5077,9 +4662,6 @@
       ],
       "Preparing link to folder": [
         "საქაღალდემდე ბმულის მომზადება"
-      ],
-      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
-        "ფასი შეიცავს ყველა შესაბამის ციკლზე-ბაზირებულ ფასდაკლებებს და ვადაგაუსვლელ კუპონებს, რომლებიც თქვენს ანგარიშზე გაქვთ შენახული."
       ],
       "Primary": [
         "ძირითადი"
@@ -5101,9 +4683,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "ამ გვერდის განახლება ან ${ link } პრობლემების უმრავლესობას ავტომატურად წყვეტს."
-      ],
-      "Registering your subscription…": [
-        "თქვენი გამოწერის რეგისტრაცია…"
       ],
       "Restored version to": [
         "ვერსია აღდგენილია მნიშვნელობაზე"
@@ -5132,9 +4711,6 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "აირჩიეთ რომელი კალენდრები შემოტანა. ყოველი შემოტანილი კალენდრისთვის შეიქმნება ახალი კალენდარი თქვენს გეგმაში არსებული კალენდრების რაოდენობის მიხედვით."
       ],
-      "SEPA payments are not available at the moment. Please try again later.": [
-        "SEPA გადახდები ამჟამად ხელმისაწვდომი არაა. მოგვიანებით სცადეთ."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "სერვერი მიუწვდომელია. ცოტა ხანში სცადეთ"
       ],
@@ -5144,14 +4720,8 @@
       "Set up your organization": [
         "მოირგეთ თქვენი ორგანიზაცია"
       ],
-      "Setting up ${ feature }…": [
-        "${ feature }-ის მორგება…"
-      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP-ის აწყობა საშუალებას მოგცემთ, გააგზავნოთ დაშიფრული ელფოსტები არა${ BRAND_NAME }-ის მომხმარებლებთან, რომლებიც ასევე იყენებენ PGP-სთან თავსებად სერვისს."
-      ],
-      "Setting up your new address…": [
-        "თქვენი ახალი მისამართის მორგება…"
       ],
       "Settings update failed": [
         "პარამეტრების განახლება ჩავარდა"
@@ -5183,14 +4753,8 @@
       "Something went wrong": [
         "რაღაც არასწორად წავიდა"
       ],
-      "Start sharing it with contacts and use it for online services.": [
-        "დაიწყეთ კონტაქტებთან გაზიარება და გამოიყენეთ ის ინტერნეტ-სერვისებისთვის."
-      ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "დარჩით დაკავშირებული შემდეგი VPN-ის პარამეტრების ჩართვით:"
-      ],
-      "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
-        "გადმორიცხეთ დეპოზიტი შემდეგ მისამართზე ან დაასკანერეთ QR კოდი. თქვენი დეპოზიტი ანგარიშში დადასტურების შემდეგ აისახება."
       ],
       "Subscription auto-renews every ${ cycle } month.": [
         "გამოწერა ყოველ ${ cycle } თვეში განახლდება.",
@@ -5211,9 +4775,6 @@
       "Temporarily unavailable. Please check back later.": [
         "დროებით მიუწვდომელია. მოგვიანებით სცადეთ."
       ],
-      "Thank you for subscribing. Secure browsing starts now.": [
-        "მადლობა გამოწერისთვის. ინტერნეტში დაცულად მუშაობა ახლა იწყება."
-      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "ამ ანგარიშს შეიძლება, ახალი გასაღები ჰქონდეს, ან შეიცვალა: ${ items } არ გახსნათ, თუ არ ენდობით."
       ],
@@ -5232,9 +4793,6 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "ამ მისამართის მფლობელმა გამჭოლი დაშიფვრა გამორთო. იმისათვის, რომ შეგეძლოთ, ამ მისამართზე დაშიფრული შეტყობინებები გააგზავნოთ, მფლობელმა გამჭოლი დაშიფვრა თავიდან უნდა ჩართოს."
       ],
-      "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
-        "გადამოწმების პროცესი ბრაუზერის ახალ ჩანართს გახსნის. გთხოვთ, გამორთოთ მხტუნარა ფანჯრებს მბლოკავები."
-      ],
       "There are no documents in the trash.": [
         "ნაგვის ყუთში დოკუმენტები არაა."
       ],
@@ -5252,9 +4810,6 @@
       ],
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.": [
         "ეს დოკუმენტი ან არ არსებობს, ან მისი ნახვის უფლება არ გაქვთ. შეგიძლიათ, სცადოთ თავიდან ჩატვირთოთ გვერდი, რომ ნახოთ, გაქრება თუ არა პრობლემა, ან მისცეწრეთ მის მფლობელს წვდომისთვის."
-      ],
-      "This is now your ${ defaultEmailAddress } for sending new messages.": [
-        "ეს ახლა თქვენი ${ defaultEmailAddress }-ია ახალი შეტყობინებების გასაგზავნად."
       ],
       "This item already exists in your library": [
         "ეს ელემენტი თქვენს ბიბლიოთეკაში უკვე არსებობს"
@@ -5295,9 +4850,6 @@
       "This will upload a new version of the folder": [
         "ეს საქაღალდის ახალ ვერსიას ატვირთავს"
       ],
-      "To complete your payment, please send ${ btcAmountBold } to the address below.": [
-        "გადახდის დასასრულებლად, გამოაგზავნეთ ${ btcAmountBold } ქვემორე მისამართზე."
-      ],
       "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
         "${ DOCS_APP_NAME }-ის ფაილების გადმოსაწერად გახსენით ისინი ${ DOCS_APP_NAME }-ში და მოახდინეთ მათი გატანა."
       ],
@@ -5315,18 +4867,6 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "მისამართის დადასტურების გამოსაყენებლად უნდა ენდოთ ერთ ან მეტ საჯარო გასაღებს, მათ შორის, რომლის გამოყენებაც გსურთ გასაგზავნად. ეს ხელს უშლის დაშიფვრის გასაღებების გაყალბებას."
-      ],
-      "Total email addresses": [
-        "ელფოსტები სულ"
-      ],
-      "Total storage": [
-        "სრული საცავი"
-      ],
-      "Total supported domains": [
-        "მხარდაჭერილი დომენები სულ"
-      ],
-      "Total VPN connections": [
-        "VPN შეერთებები სულ"
       ],
       "Tracking": [
         "ტრეკინგი"
@@ -5373,23 +4913,11 @@
       "username": [
         "მომხმარებლის სახელი"
       ],
-      "Users": [
-        "მომხმარებლები"
-      ],
-      "Verification may take a few minutes.": [
-        "გადამოწმებას შეიძლება, რამდენიმე წუთი დასჭირდეს."
-      ],
-      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "შემოწმებისთვის ახალი ჩანართი გაიხსნება. გთხოვთ გამორთოთ მხტუნარების მბლოკავები. თანხა, რომელიც ბარათის შესამოწმებლად ჩამოგეჭრებათ, მომენტალურად დაგიბრუნდებათ."
-      ],
       "Version number successfully copied to clipboard": [
         "ვერსიის ნომერი წარმატებით დაკოპირდა ბუფერში"
       ],
       "View only": [
         "მხოლოდ დათვალიერებისთვის"
-      ],
-      "Visa Secure logo": [
-        "Visa-ის დაცულობის ლოგო"
       ],
       "VPN IP": [
         "VPN IP"
@@ -5397,26 +4925,11 @@
       "Warning": [
         "გაფრთხილება"
       ],
-      "We couldn’t process your payment.": [
-        "თქვენი გადახდა ვერ დავამუშავეთ."
-      ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "ჩვენ ვერ შევამოწმეთ, ატვირთა ${ fileName } ${ emailAddress }-მა, თუ არა."
       ],
       "We couldn’t verify who uploaded ${ fileName }.": [
         "ჩვენ ვერ ვამოწმებთ, ვინ ატვირთა ${ fileName }."
-      ],
-      "We need to authenticate your payment method with your bank.": [
-        "ჩვენ თქვენი გადახდის მეთოდის ავთენტიკაცია გვჭირდება თქვენს ბანკში."
-      ],
-      "We need to authenticate your payment with your bank.": [
-        "ჩვენ თქვენი გადახდის ავთენტიკაცია გვჭირდება თქვენს ბანკში."
-      ],
-      "We use 3-D Secure to protect your payments": [
-        "თქვენი გადახდების დასაცავად ჩვენ ვიყენებთ 3-D Secure-ს"
-      ],
-      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "ამ ტრანზაქციის დასასრულებლად გადამისამართებული იქნებით PayPal-ზე ბრაუზერის ახალ ჩანართში. თუ იყენებთ მხტუნარების მბლოკავებს, გთხოვთ, გამორთოთ ისინი."
       ],
       "We'll email you once import is complete.": [
         "როცა შემოტანა დასრულდება, ელფოსტაზე მოგწერთ."
@@ -5487,9 +5000,6 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "ასევე შეგიძლიათ, შემოტანილი კალენდრების შერწყმა ${ BRAND_NAME }-ის არსებულ კალენდრებთან."
       ],
-      "You can change this anytime in ${ settingsLink }.": [
-        "ამის შეცვლა ყოველთვის შეგიძლიათ ${ settingsLink }-ში."
-      ],
       "You can check the progress ${ importProgressLink }.": [
         "მიმდინარეობის ნახვა შეგიძლიათ აქ: ${ importProgressLink }."
       ],
@@ -5519,18 +5029,6 @@
       "You don't have access": [
         "წვდომა არ გაქვთ"
       ],
-      "You get notified if your password or other data was leaked from a third-party service.": [
-        "თქვენ მიიღებთ გაფრთხილებას, თუ თქვენი პაროლი ან სხვა მონაცემები გაიჟონა მესამე პირების სერვისისგან."
-      ],
-      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
-        "გაქვთ საცდელი ${ planTitle }-ის გამოწერა. თუ გნებავთ, გააგრძელოთ თქვენი გამოწერა მას შემდეგ, რაც სატესტო პერიოდი ამოიწურება, დაამატეთ გადახდის მეთოდი."
-      ],
-      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
-        "გაქვთ ${ planTitle }-ის საცდელი გამოწერა. ამისთვის გადახდა საჭირო არაა. თქვენი გამოწერა სატესტო პერიოდის ბოლოს ავტომატურად განახლდება."
-      ],
-      "You may be redirected to your bank’s website.": [
-        "შეიძლება, თქვენი ბანკის ვებგვერდზე გადამისამართდეთ."
-      ],
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "შეიძლება, საკმარისი წვდომები არ გაქვთ თქვენი არჩეული ანგარიშით. სცადეთ სხვა ანგარიში, ან დაუკავშირდით მფლობელს წვდომებისთვის."
       ],
@@ -5542,9 +5040,6 @@
       ],
       "You will lose all unsaved changes.": [
         "დაკარგავთ ყველა შეუნახავ ცვლილებას."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "გადახდის დასასრულებლად PayPal-ის ვებგვერდზე გადამისამართდებით."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "თქვენ არ გადაიხდით, თუ გააუქმებთ თარიღამდე ${ trialEndsOnFormatted }."
@@ -5661,19 +5156,8 @@
       ]
     },
     "info": {
-      "Optional": [
-        "არასავალდებულო"
-      ],
       "Selected color:": [
         "არჩეული ფერი:"
-      ]
-    },
-    "Info for cash payment method": {
-      "How to send a cash payment?": [
-        "როგორ გავაგზავნო გადასახდელი თანხა?"
-      ],
-      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
-        "ინსტრუქციებს იპოვით სტატიაში: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -5752,15 +5236,8 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-ის მომხმარებელი"
       ],
-      "${ n } month": [
-        "${ n } თვე",
-        "${ n } თვე"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(დრობით მიუწვდომელია. მოგვიანებით სცადეთ)"
-      ],
-      "Account holder": [
-        "ანგარიშის მფლობელი"
       ],
       "Add email address": [
         "ელფოსტის მისამართის დამატება"
@@ -5771,14 +5248,8 @@
       "Add to group": [
         "ჯგუფში ჩამატება"
       ],
-      "Address": [
-        "მისამართი"
-      ],
       "Alias title": [
         "ფსევდონიმის სათაური"
-      ],
-      "Anderson": [
-        "ღობეგლეჯიაშვილი"
       ],
       "Anyone on the Internet with the link can edit": [
         "ჩასწორება შეუძლია ყველას, ვისაც ინტერნეტი და ეს ბმული აქვს"
@@ -5810,20 +5281,11 @@
       "Beta Access": [
         "წვდომა ბეტა ვერსიებზე"
       ],
-      "Billing cycle": [
-        "გადახდის პერიოდი"
-      ],
       "Browser": [
         "ბრაუზერი"
       ],
       "Browser version": [
         "ბრაუზერის ვერსია"
-      ],
-      "BTC address": [
-        "BTC მისამართი"
-      ],
-      "BTC amount": [
-        "BTC-ის რაოდენობა"
       ],
       "Calendar": [
         "კალენდარი"
@@ -5833,18 +5295,6 @@
       ],
       "Cancel download": [
         "გადმოწერის გაუქმება"
-      ],
-      "Card details": [
-        "ბარათის დეტალები"
-      ],
-      "Card holder": [
-        "ბარათის მფლობელი"
-      ],
-      "Card number": [
-        "ბარათის ნომერი"
-      ],
-      "Cash": [
-        "ხელზე ფული"
       ],
       "Category": [
         "კატეგორია"
@@ -5857,12 +5307,6 @@
       ],
       "Colors": [
         "ფერები"
-      ],
-      "Company": [
-        "კომპანია"
-      ],
-      "Company name": [
-        "კომპანიის სახელი"
       ],
       "Confirm password": [
         "პაროლის დადასტურება"
@@ -5884,9 +5328,6 @@
       ],
       "Country": [
         "ქვეყანა"
-      ],
-      "Credits": [
-        "კრედიტები"
       ],
       "Delete": [
         "წაშლა"
@@ -5948,17 +5389,11 @@
       "Erase this link and remove everyone with access": [
         "ამ ბმულის წაშლა და წვდომის მქონეების მოცილება"
       ],
-      "Expires": [
-        "ვადა"
-      ],
       "Extended address": [
         "გაფართოებული მისამართი"
       ],
       "File": [
         "ფაილი"
-      ],
-      "First name": [
-        "სახელი"
       ],
       "Folder location": [
         "საქაღალდის მდებარეობა"
@@ -5977,9 +5412,6 @@
       ],
       "I understand the risk": [
         "მე ვიღებ რისკს"
-      ],
-      "IBAN": [
-        "IBAN"
       ],
       "Ignore": [
         "იგნორი"
@@ -6028,9 +5460,6 @@
       ],
       "Last month only": [
         "მხოლოდ ბოლო თვეში"
-      ],
-      "Last name": [
-        "გვარი"
       ],
       "Log in or sign up ": [
         "შედით, ან დარეგისტრირდით "
@@ -6092,15 +5521,6 @@
       "Password strength": [
         "პაროლის სიძლიერე"
       ],
-      "Payer": [
-        "გადამხდელი"
-      ],
-      "Payment details": [
-        "გადახდის დეტალები"
-      ],
-      "Payment method": [
-        "გადახდის მეთოდები"
-      ],
       "PGP scheme": [
         "PGP-ის სქემა"
       ],
@@ -6115,9 +5535,6 @@
       ],
       "Postal code": [
         "საფოსტო კოდი"
-      ],
-      "Proration": [
-        "პროპორცია"
       ],
       "Public keys": [
         "საჯარო გასაღებები"
@@ -6140,9 +5557,6 @@
       "Reveal password": [
         "პაროლის ჩვენება"
       ],
-      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
-        "Route de la Galaise 32, 1228 Plan-les-Ouates, ჟენევა"
-      ],
       "Set expiration date": [
         "ვადის დაყენება"
       ],
@@ -6161,12 +5575,6 @@
       "Skip folder": [
         "საქაღალდის გამოტოვება"
       ],
-      "Start date": [
-        "საწყისი თარიღი"
-      ],
-      "State": [
-        "მდგომარეობა"
-      ],
       "Stop sharing": [
         "გაზიარების შეწყვეტა"
       ],
@@ -6179,9 +5587,6 @@
       "Strong password": [
         "ძლიერი პაროლი"
       ],
-      "Subscription options": [
-        "გამოწერის პარამეტრები"
-      ],
       "Sync with system": [
         "სისტემასთან სინქრონიზაცია"
       ],
@@ -6190,9 +5595,6 @@
       ],
       "Theme": [
         "თემა"
-      ],
-      "Thomas": [
-        "მზევინარ"
       ],
       "To: ${ toEmail }": [
         "მიმღები: ${ toEmail }"
@@ -6247,9 +5649,6 @@
       ],
       "Your password (trusted contact)": [
         "თქვენი პაროლი (სანდო კონტაქტი)"
-      ],
-      "ZIP code": [
-        "საფოსტო კოდი"
       ]
     },
     "Label for contact group color": {
@@ -6260,14 +5659,6 @@
     "Label for contact group name": {
       "Name": [
         "სახელი"
-      ]
-    },
-    "Label, credit card": {
-      "Postal code": [
-        "საფოსტო კოდი"
-      ],
-      "ZIP code": [
-        "საფოსტო კოდი"
       ]
     },
     "Label/folder modal": {
@@ -6309,9 +5700,6 @@
       ]
     },
     "Link": {
-      "Add a gift code": [
-        "ჩასვით სასაჩუქრე კოდი"
-      ],
       "clearing your browser cache": [
         "ბრაუზერის ქეშის გასუფთავება"
       ],
@@ -6332,9 +5720,6 @@
       ],
       "How to migrate to ${ BRAND_NAME }": [
         "როგორ გადავიდე ${ BRAND_NAME }-ზე"
-      ],
-      "How to pay with Bitcoin?": [
-        "როგორ გადავიხადო ბიტკოინით?"
       ],
       "How to set up ${ VPN_APP_NAME }": [
         "როგორ მოვირგო ${ VPN_APP_NAME }"
@@ -6380,9 +5765,6 @@
       ],
       "Resume now": [
         "გაგრძელება ახლა"
-      ],
-      "settings": [
-        "მორგება"
       ],
       "Types of recovery methods": [
         "აღდგენის მეთოდის ტიპები"
@@ -6470,14 +5852,8 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe წერის დამხმარე"
       ],
-      "Add ${ BRAND_NAME } Scribe writing assistant": [
-        "დააატეთ წერის დამხმარე ${ BRAND_NAME } Scribe"
-      ],
       "Add-on with free trial": [
         "დამატება უფასო გამოსაცდელი ვადით"
-      ],
-      "for ${ price }": [
-        "${ price }-თვის"
       ]
     },
     "Message": {
@@ -7242,9 +6618,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } დასრულდება ${ last4 }"
-      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "დამატებითი ქსელის უსაფრთხოება და წვდომის მართვა გამოყოფილ დაცულ კარიბჭეებთან ერთად"
       ],
@@ -7338,12 +6711,6 @@
       ],
       "Downgrade account?": [
         "გნებავთ ანგარიშის გეგმის ჩამოწევა?"
-      ],
-      "Review subscription": [
-        "გამოწერის გადახედვა"
-      ],
-      "Review subscription and pay": [
-        "გადახედეთ გამოწერას და გადაიხადეთ"
       ],
       "Switch plans?": [
         "გადავრთო სატარიფო გეგმა?"
@@ -8105,11 +7472,6 @@
         "შეუზღუდავი შესვლის დეტალები, შენიშვნები, საკრედიტო ბარათები და სხვა"
       ]
     },
-    "pass_signup_2023: Title": {
-      "${ upsellPlanTitle } plan": [
-        "გეგმა ${ upsellPlanTitle }"
-      ]
-    },
     "pass_signup_2024: Info": {
       "${ n } user account": [
         "${ n } მომხმარებლის ანგარიში",
@@ -8177,79 +7539,15 @@
         "ოპერაციის შესასრულებლად ორგანიზაციის გასაღებთან წვდომა გჭირდებათ."
       ]
     },
-    "Payment method option": {
-      "Apple Pay": [
-        "Apple Pay"
-      ],
-      "Bank transfer": [
-        "საბანკო გადარიცხვა"
-      ],
-      "Credit/debit card": [
-        "საკრედიტო/სადებეტო ბარათი"
-      ],
-      "New credit/debit card": [
-        "ახალი საკრედიტო/სადებეტო ბარათი"
-      ]
-    },
-    "Payment.Sepa.Action": {
-      "Use company name": [
-        "კომპანიის სახელის გამოყენება"
-      ],
-      "Use personal name": [
-        "პირადი სახელის გამოყენება"
-      ]
-    },
     "Payments": {
       "Amount due after trial on ${ formattedDate }": [
         "გამოსაცდელი ვადის (${ formattedDate }) გადასახდელი თანხა"
-      ],
-      "Billing Country": [
-        "გადახდის ქვეყანა"
-      ],
-      "Card number": [
-        "ბარათის ნომერი"
-      ],
-      "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
-        "ამჟამად გამოწერის ავტომატური განახლება გათიშულია. თუ გამოწერას ახლა შეცვლით, ავტომატური განახლება თავიდან ჩაირთვება."
-      ],
-      "CVC": [
-        "CVC"
-      ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "${ taxRate }%-ის არჩათვლით ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "${ taxRate }% გადასახადების ამოღებით: ${ taxAmount }"
-      ],
-      "Got it": [
-        "გავიგე"
-      ],
-      "I'm purchasing as a business": [
-        "ვაპირებ შევიძინო ბიზნესისთვის"
-      ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "${ taxRate }%-ის ჩათვლით ${ taxName }: ${ taxAmount }"
-      ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "${ taxRate }% გადასახადის გათვალისწინებით: ${ taxAmount }"
-      ],
-      "MM/YY": [
-        "თთ/წწ"
-      ],
-      "More plans are available in other currencies": [
-        "მეტი სატარიფო გეგმა ხელმისაწვდომია სხვა ვალუტებში"
-      ],
-      "Please reactivate your subscription first to decrease the number of add-ons.": [
-        "ჯერ თავიდან გაააქტიურეთ გამოწერა, რომ შეამციროთ დამატებების რაოდენობა."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "განახლების ფასები იცვლება ${ termsAndConditionsLink }-ის წესებით."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "განახლების დრო ${ renewPriceStr }. გააუქმეთ ნებისმიერ დროს."
-      ],
-      "Taxes": [
-        "გადასახადები"
       ],
       "terms and conditions": [
         "პირობები და წესები"
@@ -8268,114 +7566,6 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "შემდეტ ის ავტომატურად განახლდება ${ renewPriceStr }-ზე ${ renewalLength } თვის განმავლობაში. გაუქმება ყოველთვის შეგეძლებათ.",
         "შემდეტ ის ავტომატურად განახლდება ${ renewPriceStr }-ზე ${ renewalLength } თვის განმავლობაში. გაუქმება ყოველთვის შეგეძლებათ."
-      ],
-      "This number will be shown on all future invoices": [
-        "ეს რიცხვი ყველა მომავალ ინვოისზე გამოჩნდება"
-      ],
-      "This offer is not available with your current plan.": [
-        "ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
-      ],
-      "This payment method will become your new default for all future renewals.": [
-        "ეს გადახდის მეთოდი თქვენი ნაგულისხმევი იქნება ყველა მომავალი განახლებისთვის."
-      ],
-      "Timeout exceeded": [
-        "მოლოდინის ვადა ამოიწურა"
-      ],
-      "VAT": [
-        "დღგ"
-      ],
-      "VAT number": [
-        "დღგ ნომერი"
-      ],
-      "You already have a subscription to this plan.": [
-        "თქვენ უკვე გაქვთ ეს სატარიფო გეგმა."
-      ],
-      "Your payment is still being processed": [
-        "თქვენი გადახდა ჯერ კიდევ მუშავდება"
-      ]
-    },
-    "Payments.Error": {
-      "Invalid card number": [
-        "ბარათის არასწორი ნომერი"
-      ],
-      "Invalid expiration date": [
-        "არასწორი ვადა"
-      ],
-      "Invalid security code": [
-        "უსაფრთხოების არასწორი კოდი"
-      ],
-      "Something went wrong. Please try again later.": [
-        "რაღაც არასწორად წავიდა. კიდევ სცადეთ."
-      ],
-      "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
-        "თქვენი გადახდის მეთოდის ავთენტიკაცია ვერ მოხერხდა. აირჩიეთ სხვა გადახდის მეთოდი, ან თავიდან სცადეთ."
-      ],
-      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
-        "ბარათი უარყოფილია. სცადეთ სხვა ბარათი, ან გადახდის ავტორიზაციისთვის დაუკავშირდით ბანკს."
-      ]
-    },
-    "Payments.info": {
-      "Credit for the unused portion of your previous plan subscription": [
-        "წინა გამოწერის დარჩენილი ნაწილის კრედიტი"
-      ],
-      "Credits will be added to your balance": [
-        "თქვენს ბალანსზე კრედიტები დაგემატებათ"
-      ]
-    },
-    "Payments.plan_name": {
-      "Free": [
-        "Free"
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - ბარათის ვადა იწურება ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "საბანკო გადარიცხვა - ${ details }"
-      ]
-    },
-    "Payments.Sepa": {
-      "Street address, postal code, and city": [
-        "ქუჩის მსამართი, საფოსტო კოდი და ქალაქი"
-      ]
-    },
-    "Payments.VAT number name": {
-      "ABN": [
-        "ABN"
-      ],
-      "Add ABN": [
-        "ABN-ის დამატება"
-      ],
-      "Add Business Number": [
-        "ბიზნესის ნომრის დამატება"
-      ],
-      "Add EIN": [
-        "EIN-ის დამატება"
-      ],
-      "Add VAT number": [
-        "დღგ ნომრის დამატება"
-      ],
-      "Business Number": [
-        "ბიზნესის ნომერი"
-      ],
-      "Edit ABN": [
-        "ABN-ის რედაქტირება"
-      ],
-      "Edit Business Number": [
-        "ბიზნესის ნომრის ჩასწორება"
-      ],
-      "Edit EIN": [
-        "EIN-ის ჩასწორება"
-      ],
-      "Edit VAT number": [
-        "დღგ ნომრის ჩასწორება"
-      ],
-      "EIN": [
-        "EIN"
-      ],
-      "VAT number": [
-        "დღგ ნომერი"
       ]
     },
     "PGP key encryption warning": {
@@ -8412,17 +7602,8 @@
       "A way to contact you": [
         "თქვენთან დაკავშირების საშუალება"
       ],
-      "Anderson": [
-        "ღობეგლეჯიაშვილი"
-      ],
-      "Anytown": [
-        "თბილისი"
-      ],
       "Choose password": [
         "აირჩიეთ პაროლი"
-      ],
-      "Company name": [
-        "კომპანიის სახელი"
       ],
       "E.g., ": [
         "მაგ. "
@@ -8439,9 +7620,6 @@
       "First name": [
         "სახელი"
       ],
-      "Gift code": [
-        "სასაჩუქრე კოდი"
-      ],
       "Group name": [
         "ჯგუფის სახელი"
       ],
@@ -8450,9 +7628,6 @@
       ],
       "Last name": [
         "გვარი"
-      ],
-      "Main street 12": [
-        "ევას შესახვევი 13"
       ],
       "Message": [
         "შეტყობინება"
@@ -8472,9 +7647,6 @@
       "Please describe the problem and include any error messages": [
         "აღწერეთ პრობლემა და დაურთეთ შეცდომის ნებისმიერი შეტყობინება"
       ],
-      "Postal code": [
-        "საფოსტო კოდი"
-      ],
       "Search for group name": [
         "ჯგუფის სახელის მოძებნა"
       ],
@@ -8490,12 +7662,6 @@
       "Select a reason": [
         "აირჩიეთ მიზეზი"
       ],
-      "Select country": [
-        "აირჩიეთ ქვეყანა"
-      ],
-      "Select state": [
-        "აირჩიეთ შტატი"
-      ],
       "Set date": [
         "თარიღის დაყენება"
       ],
@@ -8505,43 +7671,13 @@
       "Start typing an email address": [
         "დაიწყეთ ელფოსტის მისამართის აკრეფა"
       ],
-      "Thomas": [
-        "მზევინარ"
-      ],
-      "VAT number": [
-        "დღგ ნომერი"
-      ],
       "Your organization name": [
         "თქვენი ორგანიზაციის სახელი"
-      ],
-      "ZIP code": [
-        "საფოსტო კოდი"
       ]
     },
     "Placeholder for contact group name": {
       "Name": [
         "სახელი"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "კონტაქტი"
-      ]
-    },
-    "plus_block": {
-      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
-        "მეტი ${ BRAND_NAME }-ის სერვისი. ${ br }ერთი იოლი გამოწერა."
-      ],
-      "Stay on ${ currentPlanTitle }": [
-        "${ currentPlanTitle }-ზე დარჩენა"
-      ],
-      "Upgrade to ${ upsellPlanTitle }": [
-        "სატარიფო გეგმის განახლება: ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "უფასო"
       ]
     },
     "Progress bar description": {
@@ -8649,6 +7785,9 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } თითო რეფერალისთვის"
       ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "ისიამოვნეთ **${ planTitle }**-ით **${ textDate }**-მდე"
+      ],
       "Friend joined": [
         "მეგობარი შემოვიდა",
         "მეგობრები შემოვიდნენ"
@@ -8674,6 +7813,9 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "შეგიძლიათ, გქონდეთ **${ maxRewardAmount }**-მდე კრედიტი."
+      ],
+      "your subscription": [
+        "თქვენი გამოწერა"
       ]
     },
     "Safety review": {
@@ -9020,9 +8162,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "1 user": [
-        "1 მომხმარებელი"
-      ],
       "3 TB": [
         "3 ტბ"
       ],
@@ -9034,9 +8173,6 @@
       ],
       "High speed VPN": [
         "ჩქაროსნული VPN"
-      ],
-      "Highest VPN speed": [
-        "უსწრაფესი VPN"
       ],
       "Premium ${ appName1 }": [
         "Premium ${ appName1 }"
@@ -9052,9 +8188,6 @@
       ],
       "Secure cloud storage": [
         "დაცული ღრუბლოვანი საცავი"
-      ],
-      "Secure streaming": [
-        "დაცული სტრიმინგი"
       ],
       "Support online privacy": [
         "თქვენი ონლაინ კონფიდენციალობა"
@@ -9349,17 +8482,6 @@
         "დაკარგავთ წვდომას შეუზღუდავ შესვლის დეტალებთან და შენიშვნებთან, შეუზღუდავ hide-my-email-ის ფსევდონიმებთან, 20 საცავთან და პრიორიტეტულ ხარდაჭერასთან."
       ]
     },
-    "Subscription": {
-      "Billed every 2 years": [
-        "გადახდა 2 წელიწადში ერთხელ"
-      ],
-      "Billed monthly": [
-        "გადაიხდით თვეში ერთხელ"
-      ],
-      "Billed yearly": [
-        "გადახდა წელიწადში ერთხელ"
-      ]
-    },
     "Subscription attribute": {
       "${ n } free VPN connection per user": [
         "${ n } უფასო VPN კავშირი თითოეული მომხმარებლისთვის",
@@ -9412,16 +8534,6 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "გამოწერის სატარიფო გეგმა ჩამოიწევა გადახდის ციკლის ბოლოს."
-      ]
-    },
-    "Subscription length": {
-      "Lifetime": [
-        "სამუდამოდ"
-      ]
-    },
-    "Subscription price": {
-      "For ${ totalPrice }": [
-        "${ totalPrice }-თვის"
       ]
     },
     "subscription reminder": {
@@ -9487,37 +8599,6 @@
         "პრიორიტეტული მხარდაჭერა"
       ]
     },
-    "Subscription renewal state": {
-      "Are you sure?": [
-        "დარწმუნებული ბრძანდებით?"
-      ],
-      "Auto-pay is disabled": [
-        "ავტომატური გადახდა გამორთულია"
-      ],
-      "Auto-pay is enabled": [
-        "ავტომატური გადახდა ჩართულია"
-      ],
-      "Disable": [
-        "გათიშვა"
-      ],
-      "Enable auto-pay support": [
-        "ავტომატური გადახდის ჩართვა"
-      ],
-      "Keep auto-pay": [
-        "ავტომატური გადახდის შენარჩუნება"
-      ],
-      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
-        "ჩვენი სისტემა გადახდის ამ მეთოდით ავტომატურად გადახდას აღრ სცდის, მაგრამ თქვენი გამოწერა გადახდის ციკლის გასვლის შემდეგ მაინც განახლდება. თუ გნებავთ, ჩამოსწიოთ თქვენი პაკეტი, ეს თქვენ თვითონ, გადახდის ციკლის დასასრულამდე უნდა გააკეთოთ. უფრო მეტიც, თუ დაგავიწყდათ წლიური გადასახადის გადახდა და ავტომატური გადახდა გამორთულია ყველა გადახდის მეთოდისთვის, ჩვენ შეიძლება, თქვენი პაკეტი ავტომატურად ჩამოვწიოთ, რაც საკმაო რაოდენობის ფუნქციონალს დაგაკარგვინებთ."
-      ],
-      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "ჩვენი სისტემა გადახდის ამ მეთოდით ავტომატურად გადახდას აღარ სცდის, მაგრამ თქვენი გამოწერა გადახდის ციკლის გასვლის შემდეგ მაინც განახლდება. თუ გნებავთ, ჩამოსწიოთ თქვენი პაკეტი, ეს თქვენ თვითონ, გადახდის ციკლის დასრულებამდე უნდა გააკეთოთ. ჩვენ არ შეგვიძლია თქვენი პაკეტის ავტომატურად ჩამოწევა, რადგან თქვენი მონაცემების ზომა უფასო ანგარიშის საცავის ლიმიტებს აჭარბებს ან ფასიან ფუნქციებს იყენებთ. ჩვენ არ წავშლით ავტომატურად თქვენს ფაილებს, ელფოსტებსა თუ სხვა მონაცემებს. თუ ავტომატურად გადახდას გამორთავთ, დაიმახსოვრეთ, რომ საჭიროა გადაიხადოთ ინვოისები. წინააღმდეგ შემთხვევაში, თქვენი ანგარიში შეჩერდება."
-      ]
-    },
-    "Subscription saving": {
-      "Save ${ priceString }": [
-        "დაზოგეთ ${ priceString }"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } ერთნაირია.",
@@ -9531,9 +8612,6 @@
       ],
       "Alias saved and copied": [
         "ფსევდონიმი შენახული და კოპირებულია"
-      ],
-      "Billing details updated": [
-        "გადახდის დეტალები განახლდა"
       ],
       "Canceling import": [
         "შემოტანის გაუქმება"
@@ -9555,9 +8633,6 @@
       "Contacts deleted": [
         "კონტაქტებ წაიშალა"
       ],
-      "Copied to clipboard": [
-        "დაკოპირდა გაცვლის ბაფერში"
-      ],
       "Email address copied to clipboard": [
         "ელფოსტის მისამართები დაკოპირდა გაცვლის ბაფერში"
       ],
@@ -9572,12 +8647,6 @@
       ],
       "Last modified aliases stored in your oldest vault": [
         "ბოლოს შეცვლილი ფსევდონიმები თქვენს უძველეს საცავშია შენახული"
-      ],
-      "Payment method added": [
-        "გადახდის მეთოდი დამატებულია"
-      ],
-      "Payment method updated": [
-        "გადახდის მეთოდი განახლებულია"
       ],
       "Phone number copied to clipboard": [
         "ტელეფონის ნომერი დაკოპირებულია გაცვლის ბაფერში"
@@ -9615,14 +8684,6 @@
         "/მომხმარებელი თვეში"
       ]
     },
-    "Suffix for price": {
-      "per month": [
-        "თვეში"
-      ],
-      "per user per month": [
-        "თითოეული მომხმარებლისთვის თვეში"
-      ]
-    },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
         "შექმენით დაცული შესვლის დეტალები ყველა თქვენს მოწყობლობაზე. შეიცავს უსაზღვრო რაოდენობის ფსევდონიმს, 20 საცავს, ჩაშენებულ 2FA-ს, საკრედიტო ბარათების ავტომატურ შევსებას და სხვ."
@@ -9635,17 +8696,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "დაიცავით თქვენი ფაილები დაშიფრული ღრუბლოვანი საცავით. ეს შეიცავს ვერსიების ისტორიას, დაშიფრულ ფაილების გაზიარებას და ბევრ სხვას."
-      ]
-    },
-    "Tab subscription modal": {
-      "For businesses": [
-        "ბიზნესებისთვის"
-      ],
-      "For families": [
-        "ოჯახებისთვის"
-      ],
-      "For individuals": [
-        "ინდივიდუალური პირებისთვის"
       ]
     },
     "Table header": {
@@ -9757,9 +8807,6 @@
         "${ emailsCount } ელფოსტის მისამართი",
         "${ emailsCount } ელფოსტის მისამართი"
       ],
-      "${ feature } is now active": [
-        "${ feature } ახლა აქტიურია"
-      ],
       "Account recovery": [
         "ანგარიშის აღდგენა"
       ],
@@ -9774,9 +8821,6 @@
       ],
       "Add contact group name": [
         "დაამატეთ კონტაქტის ჯგუფის სახელი"
-      ],
-      "Add credit/debit card": [
-        "ახალი საკრედიტო/სადებეტო ბარათის დამატება"
       ],
       "Add to ${ groupCount } group": [
         "${ groupCount } ჯგუფში ჩამატება",
@@ -9794,20 +8838,8 @@
       "All settings": [
         "ყველა პარამეტრი"
       ],
-      "Amount due": [
-        "გადასახდელი თანხა"
-      ],
-      "Apply gift code": [
-        "სასაჩუქრე კოდის გადატარება"
-      ],
       "Are you sure?": [
         "დარწმუნებული ბრძანდებით?"
-      ],
-      "Auto-deletion is active": [
-        "ავტოამოცნობა ჩართულია"
-      ],
-      "Billing cycle": [
-        "გადახდის პერიოდი"
       ],
       "Birthday": [
         "დაბადების დღე"
@@ -9826,9 +8858,6 @@
       ],
       "Cannot load link": [
         "ბმულის ჩატვირთვის შეცდომა"
-      ],
-      "Card verification": [
-        "ბარათის გადამოწმება"
       ],
       "Change password": [
         "პაროლის შეცვლა"
@@ -9868,9 +8897,6 @@
       ],
       "Continue with partial import?": [
         "გავაგრძელო ნაწილობრივი შემოტანით?"
-      ],
-      "Coupon": [
-        "კუპონი"
       ],
       "Create a new folder": [
         "ახალი საქაღალდის შექმნა"
@@ -9973,17 +8999,11 @@
       "Duplicate folder found": [
         "ნაპოვნია საქაღალდის ასლი"
       ],
-      "Edit billing address": [
-        "გადახდის მისამართის ჩასწორება"
-      ],
       "Edit contact": [
         "კონტაქტის ჩასწორება"
       ],
       "Edit contact group": [
         "კონტაქტების ჯგუფის ჩასწორება"
-      ],
-      "Edit credit/debit card": [
-        "საკრედიტო/სადებეტო ბარათის ჩასწორება"
       ],
       "Edit email settings": [
         "ელფოსტის პარამეტრების ჩასწორება"
@@ -10015,9 +9035,6 @@
       "Enter your password": [
         "შეიყვანეთ თქვენი პაროლი"
       ],
-      "Error": [
-        "შეცდომა"
-      ],
       "Error Syncing": [
         "სინქრონიზაციის შეცდომა"
       ],
@@ -10029,9 +9046,6 @@
       ],
       "Get the apps": [
         "აპების გადმოწერა"
-      ],
-      "Gift": [
-        "საჩუქარი"
       ],
       "Groups": [
         "ჯგუფები"
@@ -10050,6 +9064,9 @@
       ],
       "How does it work?": [
         "როგორ მუშაობს?"
+      ],
+      "How your free trial works": [
+        "როგორ მუშაობს საცდელი ვერსია"
       ],
       "Human verification": [
         "ადამიანის შემოწმება"
@@ -10115,9 +9132,6 @@
       "Need to share more files with edit access?": [
         "გჭირდებათ, მეტი ფაილი გააზიაროთ ჩასწორების წვდომით?"
       ],
-      "Network error": [
-        "ქსელის შეცდომა"
-      ],
       "Next": [
         "შემდეგი"
       ],
@@ -10154,15 +9168,6 @@
       "Other names": [
         "სხვა სახელები"
       ],
-      "Payment failed": [
-        "გადახდის შეცდომა"
-      ],
-      "Payment verification": [
-        "გადახდის შემოწმება"
-      ],
-      "PayPal verification failed": [
-        "PayPal-ით გადახდის შეცდომა"
-      ],
       "Performance might be affected": [
         "გავლენა ექნება წარმადობაზე"
       ],
@@ -10178,17 +9183,11 @@
       "Private browsing vs VPN": [
         "კონფიდენციალური რეჟიმი vs VPN"
       ],
-      "Processing...": [
-        "დამუშავება..."
-      ],
       "Re-sign all contacts": [
         "ყველა კონტაქტის თავიდან ხელმოწერა"
       ],
       "Re-signing contacts": [
         "კონტაქტის თავიდან ხელმოწერა"
-      ],
-      "Recommended": [
-        "რეკომენდებულია"
       ],
       "Recommended actions": [
         "რეკომენდებული ქმედებები"
@@ -10210,9 +9209,6 @@
       ],
       "Security center": [
         "უსაფრთხოების ცენტრი"
-      ],
-      "Select a plan": [
-        "აირჩეთ გეგმა"
       ],
       "Select action to take on contact group": [
         "აირჩიეთ კონტაქტების ჯგუფზე განსახორციელებელი ქმედება"
@@ -10280,9 +9276,6 @@
       "Subscription canceled": [
         "გამოწერა გაუქმებულია"
       ],
-      "Summary": [
-        "შეჯამება"
-      ],
       "The link either does not exist or has expired": [
         "ბმული არ არსებობს ან ვადაგასულია"
       ],
@@ -10304,9 +9297,6 @@
       "Untitled spreadsheet ${ date }": [
         "უსათაურო ელცხრილი ${ date }"
       ],
-      "Upgrade complete!": [
-        "განახლება დასრულებულია!"
-      ],
       "Upgrade to ${ planName }": [
         "სატარიფო გეგმის განახლება: ${ planName }"
       ],
@@ -10324,15 +9314,6 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "გამოიყენეთ ${ VPN_SHORT_APP_NAME } მონაცემთა კონფიდენციალობისთვის"
-      ],
-      "Verification failed": [
-        "გადამოწმების შეცდომა"
-      ],
-      "Verifying your card...": [
-        "მიმდინარეობს ბარათის გადამოწმება ..."
-      ],
-      "Verifying your payment...": [
-        "თქვენი გადახდის გადამოწმება..."
       ],
       "VPN explained": [
         "VPN-ის ახსნა"
@@ -10358,9 +9339,6 @@
       "When is it most important to use a VPN?": [
         "როდისაა VPN-ის გამოყენება ყველაზე მნიშვნელოვანი?"
       ],
-      "You can now create unlimited folders and labels": [
-        "ახლა, შეგიძლიათ, განუსაზღვრელი რაოდენობის საქაღალდეები და ჭდეები შექმნათ"
-      ],
       "You have no folders yet": [
         "საქაღალდეები ჯერ არ გაქვთ"
       ],
@@ -10378,12 +9356,6 @@
       ],
       "Your exposed information": [
         "თქვენი გაჟონილი ინფორმაცია"
-      ],
-      "Your plan": [
-        "თქვენი გეგმა"
-      ],
-      "Your shorter address is now ready": [
-        "თქვენი მოკლე მისამართი ახლა მზადაა"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -10431,9 +9403,6 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail-ი ავტომატურად ახდენს ზოგიერთი ელფოსტისთვის კატეგორიების მინიჭებას, როგორიცაა, მაგალითად, სოციალური ან რეკლამები. შეგიძლიათ, აირჩიოთ, ასეთი ელფოსტები სად შემოიტანოთ."
       ],
-      "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "თუ შეიძინეთ სასაჩუქრე ბარათი ან ის ჩვენი მხარდაჭერის გუნდისგან მიიღეთ, ის აქ შეგიძლიათ, შეიყვანოთ."
-      ],
       "Load image": [
         "გამოსახულების ჩატვირთვა"
       ],
@@ -10460,9 +9429,6 @@
       ],
       "The import will start with the most recent messages.": [
         "შემოტანა უახლესი შეყობინებებიდან დაიწყება."
-      ],
-      "The new subscription cycle starts on ${ formattedTime }": [
-        "გამოწერის ახალი ციკლის დაწყების დრო: ${ formattedTime }"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "თუ მათ არ გაშიფრავთ, დაშიფრული პაროლები დაცულია მაშინაც კი, თუ მათ ვინმე ნახავს."
