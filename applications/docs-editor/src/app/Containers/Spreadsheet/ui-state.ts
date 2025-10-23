@@ -150,7 +150,9 @@ export function useProtonSheetsUIState(state: ProtonSheetsState, isReadonly: boo
         /**
          * Pass `undefined` to set the font family to the default value.
          */
-        set: useEvent((value: string | undefined) => formatUtils.setTextFormat('fontFamily', value)),
+        set: useEvent((value: string | undefined) => {
+          formatUtils.setTextFormat('fontFamily', value)
+        }),
       },
       /**
        * The default value is represented by `undefined`.
