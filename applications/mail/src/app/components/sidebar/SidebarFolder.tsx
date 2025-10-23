@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import type { HotkeyTuple } from '@proton/components';
-import { FolderIcon, Icon } from '@proton/components';
+import { FolderIcon } from '@proton/components';
+import { IcChevronDownFilled } from '@proton/icons';
 import { formatFolderName } from '@proton/shared/lib/helpers/folder';
 import type { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 import clsx from '@proton/utils/clsx';
@@ -94,13 +95,10 @@ const SidebarFolder = ({
                                 onToggle(folder, !expanded);
                             }}
                         >
-                            <Icon
-                                name="chevron-down-filled"
-                                className={clsx([
+                            <IcChevronDownFilled className={clsx([
                                     'navigation-icon navigation-icon--expand',
                                     !folder.Expanded && 'rotateZ-270',
-                                ])}
-                            />
+                                ])} />
                         </button>
                     ) : (
                         noChevron

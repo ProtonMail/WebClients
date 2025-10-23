@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms';
-import { Icon, ToolbarButton } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
+import { IcCrossCircle } from '@proton/icons';
 import { useLoading } from '@proton/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { metaKey } from '@proton/shared/lib/helpers/browser';
@@ -33,7 +34,7 @@ const DeleteButton = ({ onDelete, selectedIDs = [] }: Props) => {
             onClick={() => withLoading(onDelete(SOURCE_ACTION.TOOLBAR))}
             disabled={loading || !selectedIDs.length}
             data-testid="toolbar:deletepermanently"
-            icon={<Icon name="cross-circle" alt={c('Action').t`Delete permanently`} />}
+            icon={<IcCrossCircle alt={c('Action').t`Delete permanently`} />}
         />
     );
 };

@@ -4,7 +4,8 @@ import { useEffect, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Checkbox, EditLabelModal, Icon, LabelsUpsellModal, Mark, useModalState } from '@proton/components';
+import { Checkbox, EditLabelModal, LabelsUpsellModal, Mark, useModalState } from '@proton/components';
+import { IcTagFilled } from '@proton/icons';
 import { useLoading } from '@proton/hooks';
 import { useFolders, useLabels } from '@proton/mail';
 import { isCustomLabel } from '@proton/mail/helpers/location';
@@ -387,7 +388,7 @@ export const MoveToLabelDropdown = ({ selectedIDs, labelID, onClose, onLock, sel
                                     data-testid={`label-dropdown:label-${label.Name}`}
                                     onClick={() => handleCheck(label.ID)}
                                 >
-                                    <Icon name="tag-filled" size={4} color={label.Color} className="shrink-0 mr-2" />
+                                    <IcTagFilled size={4} color={label.Color} className="shrink-0 mr-2" />
                                     <span className="text-ellipsis">
                                         <Mark value={search}>{label.Name}</Mark>
                                     </span>

@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { FolderIcon, Icon } from '@proton/components';
+import { FolderIcon } from '@proton/components';
+import { IcCheckmarkStrong } from '@proton/icons';
 import clsx from '@proton/utils/clsx';
 
 import type { FolderItem } from 'proton-mail/hooks/useMailTreeView/interface';
@@ -51,11 +52,8 @@ export const MoveToTreeView = ({ treeView, selectedFolder, handleSelectFolder, s
                                         {folder.Name}
                                     </span>
                                     {selectedFolder?.ID === folder.ID && (
-                                        <Icon
-                                            name="checkmark-strong"
-                                            data-testid={`move-to-selected-icon-${folder.Name}`}
-                                            className="color-primary shrink-0 mt-0.5"
-                                        />
+                                        <IcCheckmarkStrong data-testid={`move-to-selected-icon-${folder.Name}`}
+                                            className="color-primary shrink-0 mt-0.5" />
                                     )}
                                 </div>
                             </Button>

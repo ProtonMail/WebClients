@@ -2,7 +2,8 @@ import type { ReactNode } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Icon, SimpleSidebarListItemHeader } from '@proton/components';
+import { SimpleSidebarListItemHeader } from '@proton/components';
+import { IcCross } from '@proton/icons';
 import clsx from '@proton/utils/clsx';
 
 import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
@@ -41,7 +42,7 @@ const OnboardingChecklistSidebarHeader = ({
             className="flex navigation-link-header-group-control shrink-0 mt-1"
             onClick={onCloseChecklist}
         >
-            <Icon name="cross" alt={c('Action').t`Close`} />
+            <IcCross alt={c('Action').t`Close`} />
         </button>
     ) : (
         <Counter title={c('Get started checklist instructions').t`Tasks to complete count`}>

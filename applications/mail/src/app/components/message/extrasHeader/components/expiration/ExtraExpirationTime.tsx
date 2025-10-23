@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button, Tooltip } from '@proton/atoms';
-import { Icon, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/components';
+import { IcHourglass } from '@proton/icons';
 import { FeatureCode, useFeature } from '@proton/features';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import clsx from '@proton/utils/clsx';
@@ -57,7 +58,7 @@ const ExtraExpirationTime = ({ message }: Props) => {
             )}
         >
             <div className="md:flex-1 flex flex-nowrap mb-2 md:mb-0" data-testid="expiration-banner">
-                <Icon name="hourglass" className="mt-1 ml-0.5 shrink-0" />
+                <IcHourglass className="mt-1 ml-0.5 shrink-0" />
                 <span className={clsx(!canExpire && 'mt-1', 'px-2 flex flex-1 items-center')}>{expirationMessage}</span>
             </div>
             {canExpire ? (

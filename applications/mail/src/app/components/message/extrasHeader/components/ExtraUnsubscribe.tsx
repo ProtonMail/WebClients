@@ -4,21 +4,8 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { Banner, Button, Href } from '@proton/atoms';
-import {
-    Field,
-    Icon,
-    Label,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    Prompt,
-    Row,
-    useApi,
-    useEventManager,
-    useModalState,
-    useNotifications,
-} from '@proton/components';
+import { Field, Label, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Prompt, Row, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
+import { IcEnvelope } from '@proton/icons';
 import { useLoading } from '@proton/hooks';
 import type {
     MessageStateWithData,
@@ -248,7 +235,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
 
     return (
         <Banner
-            icon={<Icon name="envelope" />}
+            icon={<IcEnvelope />}
             variant="norm-outline"
             action={
                 <Button

@@ -4,16 +4,8 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms';
-import {
-    ContextMenu,
-    DropdownMenu,
-    DropdownMenuButton,
-    Icon,
-    useContactModals,
-    useDragOver,
-    useNotifications,
-    usePopperAnchor,
-} from '@proton/components';
+import { ContextMenu, DropdownMenu, DropdownMenuButton, useContactModals, useDragOver, useNotifications, usePopperAnchor } from '@proton/components';
+import { IcCross, IcCrossCircle, IcPen, IcSquares, IcUser, IcUserPlus } from '@proton/icons';
 import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
@@ -226,7 +218,7 @@ const AddressesRecipientItem = ({
                         onClick={handleRemove}
                         data-testid={`remove-address-button-${recipient.Address}`}
                     >
-                        <Icon name="cross" size={3} className="m-auto" />
+                        <IcCross size={3} className="m-auto" />
                         <span className="sr-only">{c('Action').t`Remove`}</span>
                     </button>
                 </Tooltip>
@@ -239,11 +231,11 @@ const AddressesRecipientItem = ({
             >
                 <DropdownMenu>
                     <DropdownMenuButton className="text-left flex flex-nowrap items-center" onClick={handleCopy}>
-                        <Icon name="squares" className="mr-2" />
+                        <IcSquares className="mr-2" />
                         <span className="flex-1 my-auto">{c('Action').t`Copy address`}</span>
                     </DropdownMenuButton>
                     <DropdownMenuButton className="text-left flex flex-nowrap items-center" onClick={handleDoubleClick}>
-                        <Icon name="pen" className="mr-2" />
+                        <IcPen className="mr-2" />
                         <span className="flex-1 my-auto">{c('Action').t`Edit address`}</span>
                     </DropdownMenuButton>
                     {ContactID ? (
@@ -251,7 +243,7 @@ const AddressesRecipientItem = ({
                             className="text-left flex flex-nowrap items-center"
                             onClick={handleClickContact}
                         >
-                            <Icon name="user" className="mr-2" />
+                            <IcUser className="mr-2" />
                             <span className="flex-1 my-auto">{c('Action').t`View contact details`}</span>
                         </DropdownMenuButton>
                     ) : (
@@ -259,7 +251,7 @@ const AddressesRecipientItem = ({
                             className="text-left flex flex-nowrap items-center"
                             onClick={handleClickContact}
                         >
-                            <Icon name="user-plus" className="mr-2" />
+                            <IcUserPlus className="mr-2" />
                             <span className="flex-1 my-auto">{c('Action').t`Create new contact`}</span>
                         </DropdownMenuButton>
                     )}
@@ -268,7 +260,7 @@ const AddressesRecipientItem = ({
                         liClassName="dropdown-item--delete"
                         onClick={handleRemove}
                     >
-                        <Icon name="cross-circle" className="mr-2" />
+                        <IcCrossCircle className="mr-2" />
                         <span className="flex-1 my-auto">{c('Action').t`Remove`}</span>
                     </DropdownMenuButton>
                 </DropdownMenu>

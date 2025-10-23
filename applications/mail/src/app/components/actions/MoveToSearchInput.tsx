@@ -1,6 +1,7 @@
 import type { ChangeEventHandler } from 'react';
 
-import { Icon, InputFieldTwo, useActiveBreakpoint } from '@proton/components';
+import { InputFieldTwo, useActiveBreakpoint } from '@proton/components';
+import { IcMagnifier } from '@proton/icons';
 
 interface Props {
     title: string;
@@ -25,7 +26,7 @@ export const MoveToSearchInput = ({ title, placeholder, value, onChange }: Props
             label={title}
             data-prevent-arrow-navigation
             assistContainerClassName="h-2"
-            prefix={<Icon name="magnifier" />}
+            prefix={<IcMagnifier />}
             placeholder={placeholder}
             autoFocus={!breakpoints.viewportWidth['<=small']}
         />

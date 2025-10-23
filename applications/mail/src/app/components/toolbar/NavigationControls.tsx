@@ -3,7 +3,8 @@ import { useLocation } from 'react-router';
 import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms';
-import { Icon, ToolbarButton } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
+import { IcArrowDown, IcArrowUp } from '@proton/icons';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 
 import { isConversationMode } from '../../helpers/mailSettings';
@@ -86,10 +87,7 @@ const NavigationControls = ({
                 className="hidden lg:flex"
                 data-testid="toolbar:previous-element"
                 icon={
-                    <Icon
-                        name="arrow-up"
-                        alt={conversationMode ? c('Action').t`Previous conversation` : c('Action').t`Previous message`}
-                    />
+                    <IcArrowUp alt={conversationMode ? c('Action').t`Previous conversation` : c('Action').t`Previous message`} />
                 }
             />
             <ToolbarButton
@@ -99,10 +97,7 @@ const NavigationControls = ({
                 className="hidden lg:flex"
                 data-testid="toolbar:next-element"
                 icon={
-                    <Icon
-                        name="arrow-down"
-                        alt={conversationMode ? c('Action').t`Next conversation` : c('Action').t`Next message`}
-                    />
+                    <IcArrowDown alt={conversationMode ? c('Action').t`Next conversation` : c('Action').t`Next message`} />
                 }
             />
         </>

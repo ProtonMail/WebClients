@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { IcHourglass } from '@proton/icons';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import clsx from '@proton/utils/clsx';
 
@@ -29,7 +29,7 @@ const ComposerExpirationTime = ({ message, onEditExpiration }: Props) => {
             ])}
             data-testid="expiration-banner"
         >
-            <Icon name="hourglass" className="shrink-0 my-auto" />
+            <IcHourglass className="shrink-0 my-auto" />
             <span className="flex-1">{expireOnMessage}</span>
             <span className="w-full md:w-auto shrink-0 items-start flex">
                 <Button

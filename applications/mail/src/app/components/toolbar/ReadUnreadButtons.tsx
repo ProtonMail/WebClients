@@ -3,7 +3,8 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms';
-import { Icon, ToolbarButton } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
+import { IcEnvelopeDot, IcEnvelopeOpen } from '@proton/icons';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
@@ -60,7 +61,7 @@ const ReadUnreadButtons = ({ selectedIDs, onMarkAs }: Props) => {
                     disabled={!selectedIDs.length}
                     onClick={() => onMarkAs(MARK_AS_STATUS.READ, SOURCE_ACTION.TOOLBAR)}
                     data-testid="toolbar:read"
-                    icon={<Icon name="envelope-open" alt={c('Action').t`Mark as read`} />}
+                    icon={<IcEnvelopeOpen alt={c('Action').t`Mark as read`} />}
                 />
             ) : (
                 <ToolbarButton
@@ -69,7 +70,7 @@ const ReadUnreadButtons = ({ selectedIDs, onMarkAs }: Props) => {
                     disabled={!selectedIDs.length}
                     onClick={() => onMarkAs(MARK_AS_STATUS.UNREAD, SOURCE_ACTION.TOOLBAR)}
                     data-testid="toolbar:unread"
-                    icon={<Icon name="envelope-dot" alt={c('Action').t`Mark as unread`} />}
+                    icon={<IcEnvelopeDot alt={c('Action').t`Mark as unread`} />}
                 />
             )}
         </>
