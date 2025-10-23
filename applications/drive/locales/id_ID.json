@@ -438,6 +438,9 @@
       "Expand folder": [
         "Lebarkan folder"
       ],
+      "Explore other plans": [
+        "Telusuri paket lainnya"
+      ],
       "Export": [
         "Ekspor"
       ],
@@ -1029,6 +1032,9 @@
       "Submit report": [
         "Kirim laporan"
       ],
+      "Subscribe now": [
+        "Langgan sekarang"
+      ],
       "Switch or add account": [
         "Ubah atau tambah akun"
       ],
@@ -1401,17 +1407,26 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Setelah uji coba ini berakhir pada ${ formattedDate }, paket Anda akan menjadi langganan berbayar yang diperbarui secara otomatis setiap ${ renewCycle } bulan. Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ formattedDate }."
+      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Setelah masa uji coba ini berakhir pada ${ formattedDate }, paket Anda akan menjadi langganan berbayar yang diperbarui secara otomatis secara bulanan. Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Anda dapat memiliki hingga ${ TRIAL_MAX_DEDICATED_IPS } server khusus selama masa uji coba."
       ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Anda dapat memiliki hingga ${ TRIAL_MAX_LUMO_SEATS } kuota ${ LUMO_SHORT_APP_NAME } selama masa uji coba."
+      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Anda dapat memiliki hingga ${ TRIAL_MAX_SCRIBE_SEATS } kuota Scribe selama masa uji coba."
       ],
       "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
         "Anda dapat memiliki hingga ${ TRIAL_MAX_USERS } pengguna selama masa uji coba."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Anda tidak dapat menambahkan domain khusus selama masa uji coba."
       ],
       "You have reached the trial limit.": [
         "Anda telah mencapai batas uji coba Anda."
@@ -1436,15 +1451,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "1 user": [
-        "1 pengguna"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 pengguna"
-      ],
       "Premium Password Manager": [
         "Pengelola Kata Sandi Premium"
       ]
@@ -1469,35 +1475,11 @@
       "${ storageSize } storage": [
         "Ruang penyimpanan ${ storageSize }"
       ],
-      "1 TB total": [
-        "Jumlah 1 TB"
-      ],
-      "1 user": [
-        "1 pengguna"
-      ],
       "1 user account": [
         "1 akun pengguna"
       ],
-      "10 email addresses": [
-        "10 alamat surel"
-      ],
-      "2 users": [
-        "2 pengguna"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
       "6 user accounts": [
         "6 akun pengguna"
-      ],
-      "6 users": [
-        "6 pengguna"
-      ],
-      "8500+ servers across 110+ countries": [
-        "8500+ server di 110+ negara"
-      ],
-      "Ad-blocker and malware protection": [
-        "Pemblokiran iklan dan perlindungan perangkat lunak jahat"
       ],
       "Admin panel to manage your family": [
         "Panel akun untuk mengelola keluarga Anda"
@@ -1508,9 +1490,6 @@
       "Easily add or remove users": [
         "Tambah atau kurangi pengguna secara mudah"
       ],
-      "High speed streaming": [
-        "Streaming berkecepatan tinggi"
-      ],
       "One-time payment, lifetime deal": [
         "Satu kali pembayaran, untuk selamanya"
       ],
@@ -1520,15 +1499,6 @@
       "Password health alerts": [
         "Peringatan kesehatan kata sandi"
       ],
-      "Private photo backup": [
-        "Pencadangan foto pribadi"
-      ],
-      "Protect 10 devices at a time": [
-        "Lindungi 10 perangkat secara bersamaan"
-      ],
-      "Secure file storage & sharing": [
-        "Penyimpanan & pembagian berkas aman"
-      ],
       "Unlimited folders, labels and filters": [
         "Tanpa batasan jumlah folder, label, dan filter"
       ],
@@ -1537,12 +1507,6 @@
       ],
       "Use your own email domain": [
         "Gunakan domain email milik Anda sendiri"
-      ],
-      "Version history": [
-        "Riwayat versi"
-      ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -1556,9 +1520,6 @@
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
         "Akses konten yang diblokir dan jelajahi internet secara privat. Meliputi 8500+ server di 110+ negara, 10 perangkat, streaming berkecepatan tinggi, pemblokir iklan, perlindungan malware, VPN Accelerator, dan masih banyak lagi."
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Akses konten pada berbagai layanan streaming seperti Netflix, Disney+, Prime Video, dan lainnya dari mana saja."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Entri masuk yang aman pada seluruh perangkat Anda. Meliputi alias hide-my-email tanpa batasan jumlah, pembagian entri, 2FA yang terintegrasi, ${ DARK_WEB_MONITORING_NAME }, dan masih banyak lagi."
@@ -1577,9 +1538,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Amankan berkas Anda dengan penyimpanan cloud yang terenkripsi. Meliputi penyunting dokumen online, pencadangan foto, riwayat versi, pembagian berkas yang terenkripsi, dan masih banyak lagi."
-      ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Dirancang secara khusus, NetShield melindungi perangkat Anda dan mempercepat penjelajahan Anda dengan memblokir iklan, pelacak, dan perangkat lunak jahat."
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Ruang penyimpanan terbagi antar seluruh layanan ${ BRAND_NAME }."
@@ -1809,11 +1767,26 @@
       "Basic chat history": [
         "Riwayat percakapan dasar"
       ],
+      "Full chat history with search": [
+        "Riwayat percakapan utuh dengan fitur pencarian"
+      ],
+      "Large file upload support": [
+        "Dukungan untuk unggahan berkas besar"
+      ],
+      "Limited daily chats": [
+        "Percakapan harian dalam jumlah yang terbatas"
+      ],
       "Limited favorites": [
         "Favorit dalam jumlah yang terbatas"
       ],
       "Unlimited daily chats": [
         "Tanpa batasan jumlah percakapan harian"
+      ],
+      "Unlimited favorites for quick access": [
+        "Tanpa batasan jumlah favorit untuk akses yang cepat"
+      ],
+      "Upload and query multiple large files": [
+        "Unggah dan kuerikan beberapa berkas besar sekaligus"
       ],
       "Upload and query small files": [
         "Unggah dan kuerikan berkas kecil"
@@ -1823,8 +1796,14 @@
       ]
     },
     "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } merupakan AI berorientasi privasi yang membantu Anda untuk menyelesaikan lebih banyak hal sembari menjaga keamanan data Anda. Dapatkan potensi maksimal dari AI ini dan nikmati akses dini ke berbagai fitur baru pada saat fitur ini dirilis."
+      ],
       "Add ${ LUMO_APP_NAME }": [
         "Tambah ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Percakapan berkecepatan tinggi dan berbagai fitur AI mutakhir."
       ]
     },
     "color": {
@@ -3082,6 +3061,39 @@
         "Dukungan prioritas"
       ]
     },
+    "Duo offer": {
+      "/month": [
+        "/bulan"
+      ],
+      "1 TB of storage to share": [
+        "Ruang penyimpanan 1 TB untuk digunakan bersama-sama"
+      ],
+      "2 user accounts": [
+        "2 akun pengguna"
+      ],
+      "All premium features from your current plan": [
+        "Seluruh fitur premium dari paket Anda saat ini"
+      ],
+      "Only": [
+        "Hanya"
+      ]
+    },
+    "Duo offer: Link": {
+      "Double your storage": [
+        "Gandakan ruang penyimpanan Anda"
+      ],
+      "Share your plan": [
+        "Bagikan paket Anda"
+      ]
+    },
+    "Duo offer: Title": {
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Gandakan ruang penyimpanan Anda dengan ${ BRAND_NAME } Duo"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "Bagikan keutamaan paket Anda dengan ${ BRAND_NAME } Duo"
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Kolom teks bersifat opsional. Informasi yang Anda sediakan pada kolom ini hanya akan terlihat pada faktur yang diterbitkan ke depannya tanpa memengaruhi faktur yang telah ada."
@@ -3103,6 +3115,9 @@
       "Here's what changed:": [
         "Berikut apa-apa saja yang telah berubah:"
       ],
+      "LOCATION:": [
+        "LOKASI"
+      ],
       "NOTE:": [
         "CATATAN:"
       ],
@@ -3114,6 +3129,15 @@
       ],
       "This event was updated.": [
         "Acara ini telah diperbarui."
+      ],
+      "TIME:": [
+        "WAKTU:"
+      ],
+      "TITLE:": [
+        "JUDUL:"
+      ],
+      "You are invited to": [
+        "Anda diundang ke"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3453,6 +3477,9 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "Tidak ada email yang ditemukan untuk dapat diimpor - akun ini tidak memiliki kotak masuk"
+      ],
+      "No file to upload": [
+        "Tidak ada berkas untuk diunggah"
       ],
       "No valid address found": [
         "Tidak ada alamat valid yang ditemukan"
@@ -4139,6 +4166,12 @@
       ]
     },
     "Feature": {
+      "Encrypted cloud storage for files, photos and documents": [
+        "Ruang penyimpanan cloud terenkripsi untuk berkas, foto, dan dokumen"
+      ],
+      "More premium features": [
+        "Fitur premium lainnya"
+      ],
       "Unlimited hide-my-email aliases": [
         "Tanpa batasan jumlah alias hide-my-email"
       ]
@@ -4257,6 +4290,9 @@
       ],
       "Drawer": [
         "Panel Samping"
+      ],
+      "Password ends with": [
+        "Kata sandi berakhir dengan"
       ],
       "Rename album": [
         "Ubah nama album"
@@ -5003,6 +5039,9 @@
       "Checking signatures": [
         "Memeriksa tanda tangan"
       ],
+      "Choose a plan that works best for you.": [
+        "Pilih paket yang paling sesuai dengan kebutuhan Anda."
+      ],
       "Clear data": [
         "Hapus data"
       ],
@@ -5032,6 +5071,9 @@
       ],
       "Contact unassigned from group ${ contactGroupName }": [
         "Kaitan kontak dihilangkan dari grup ${ contactGroupName }"
+      ],
+      "Continue": [
+        "Lanjutkan"
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Lanjut gunakan ${ DRIVE_APP_NAME } tanpa membuka kunci berkas"
@@ -6232,6 +6274,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Tingkatkan sekarang untuk memperoleh berbagai fitur, produk, dan ruang penyimpanan berkapasitas premium dengan harga khusus"
+      ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "Tingkatkan untuk mempertahankan berbagai keutamaan ${ planTitle } Anda."
       ],
       "upgrade your storage": [
         "tingkatkan ruang penyimpanan Anda"
@@ -7556,6 +7601,9 @@
       ]
     },
     "Message": {
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "Uji coba gratis Anda telah berakhir. ${ nonAutoRenewalAction }"
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Masa uji coba gratis Anda telah berakhir. Akses menuju akun Anda akan segera dinonaktifkan. ${ action }"
       ]
@@ -8363,7 +8411,7 @@
         "Keamanan jaringan dan pengelolaan akses tingkat lanjut dengan Gateway khusus yang aman"
       ],
       "Advanced protection for teams that goes beyond industry standards.": [
-        "Perlindungan tingkat lanjut untuk tim yang melampaui standar industri."
+        "Perlindungan mutakhir untuk tim yang melampaui standar industri."
       ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Seluruh aplikasi ${ BRAND_NAME } dan berbagai fitur premium di dalamnya"
@@ -9060,11 +9108,17 @@
       "${ pricingTitle } offer expires today!": [
         "Penawaran ${ pricingTitle } berakhir hari ini!"
       ],
+      "Don't show this again": [
+        "Jangan ingatkan lagi"
+      ],
       "Don’t show this again": [
         "Jangan tampilkan ini lagi"
       ],
       "Don’t show this offer again": [
         "Jangan tampilkan penawaran ini lagi"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Dapatkan ${ BRAND_NAME } Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "Dapatkan ${ BRAND_NAME } Unlimited"
@@ -9460,7 +9514,7 @@
         "Panel admin untuk mengelola pengguna dan langganan"
       ],
       "Advanced account protection": [
-        "Perlindungan akun bertingkat lanjut"
+        "Perlindungan akun mutakhir"
       ],
       "Team policies": [
         "Kebijakan tim"
@@ -9580,6 +9634,9 @@
       "More plans are available in other currencies": [
         "Lebih banyak paket tersedia pada mata uang lainnya"
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Metode pembayaran dibutuhkan bagi langganan untuk dapat diaktifkan setelah masa uji coba berakhir."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Silakan aktifkan kembali langganan Anda terlebih dahulu untuk menurunkan jumlah pengaya."
       ],
@@ -9591,6 +9648,9 @@
       ],
       "Taxes": [
         "Pajak"
+      ],
+      "terms and conditions": [
+        "syarat dan ketentuan"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Kupon ini valid untuk ${ couponRedemptions } kali pembaruan."
@@ -9607,8 +9667,14 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Setelahnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } setiap ${ renewalLength } bulan. Anda dapat membatalkan langganan Anda kapan saja."
       ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Tindakan ini akan memperpanjang langganan yang telah ada. Anda hanya akan ditagih untuk item yang baru ditambahkan dan sisa waktu siklus tagihan Anda saat ini. Tanggal pembaruan langganan Anda tidak akan berubah."
+      ],
       "This number will be shown on all future invoices": [
         "Nomor ini akan ditampilkan pada seluruh faktur yang akan datang"
+      ],
+      "This offer is not available with your current plan.": [
+        "Penawaran ini tidak tersedia dengan paket Anda saat ini."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Metode pembayaran ini akan menjadi metode bawaan baru Anda untuk segala perpanjangan yang dilakukan ke depannya."
@@ -9621,6 +9687,9 @@
       ],
       "VAT number": [
         "Nomor PPN"
+      ],
+      "You already have a subscription to this plan.": [
+        "Anda telah memiliki langganan untuk paket ini."
       ],
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Anda telah memiliki langganan untuk paket ini. Anda dapat mengubah langganan Anda pada ${ subscriptionPlatform }."
@@ -9972,6 +10041,24 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } per rujukan"
       ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Apabila Anda membatalkan sebelum tanggal ini,** paket Anda akan **diturunkan** ke ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } pada saat masa uji coba berakhir."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Apabila Anda tidak berlangganan,** paket Anda akan **diturunkan** ke ${ BRAND_NAME }${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Apabila Anda tidak membatalkan langganan,** paket penuh Anda akan dimulai dan Anda akan memeroleh saldo senilai **${ referrerRewardAmount }**."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Apabila Anda berlangganan sebelum tanggal ini,** Anda akan memperoleh saldo senilai **${ referrerRewardAmount }**."
+      ],
+      "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Dapatkan saldo senilai hingga ${ maxRewardAmount }. Anda akan memperoleh ${ referrerRewardAmount } pada saat pengguna yang Anda undang berlangganan ke paket ${ BRAND_NAME }."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Nikmati **${ planTitle }** secara cuma-cuma hingga **${ textDate }**."
+      ],
       "Friend joined": [
         "Teman yang bergabung"
       ],
@@ -9984,11 +10071,29 @@
       "Invited friends": [
         "Teman yang diundang"
       ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Kesempatan terakhir untuk menelusuri seluruh fitur canggih yang ditawarkan oleh **${ planTitle }**."
+      ],
       "More sharing options": [
         "Opsi pembagian lainnya"
       ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "Setelah langganan penuh Anda dimulai, Anda masih dapat membatalkan dalam kurun waktu 30 hari dan memperoleh uang kembali secara proratif."
+      ],
       "Refer friends": [
         "Rujuk teman"
+      ],
+      "Start earning credits": [
+        "Mulai peroleh saldo"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Anda dapat memperoleh saldo hingga **${ maxRewardAmount }**."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Anda memiliki **${ daysRemaining } hari tersisa** untuk menjelajahi seluruh fitur canggih yang dimiliki oleh **${ planTitle }**."
+      ],
+      "your subscription": [
+        "langganan Anda"
       ]
     },
     "Safety review": {
@@ -10306,9 +10411,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "1 user": [
-        "1 pengguna"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -11620,6 +11722,9 @@
       "Discard changes?": [
         "Batalkan perubahan?"
       ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Gandakan ruang penyimpanan Anda dengan ${ BRAND_NAME } Duo"
+      ],
       "Downgrade account": [
         "Turunkan jenis akun"
       ],
@@ -11722,6 +11827,9 @@
       "Found ${ searchView.numberOfResults } result": [
         "${ searchView.numberOfResults } hasil pencarian ditemukan"
       ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Dapatkan **saldo senilai ${ referralInfo.uiData.refereeRewardAmount }** dengan ${ planTitle }"
+      ],
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "Dapatkan akses penuh ke ${ CALENDAR_APP_NAME }"
       ],
@@ -11757,6 +11865,9 @@
       ],
       "How does it work?": [
         "Bagaimana cara hal ini bekerja?"
+      ],
+      "How your free trial works": [
+        "Bagaimana masa uji coba gratis Anda bekerja"
       ],
       "Human verification": [
         "Verifikasi manusia"
@@ -12184,6 +12295,9 @@
       "Upgrade to ${ planName }": [
         "Tingkatkan ke ${ planName }"
       ],
+      "Upgrade to keep your premium benefits.": [
+        "Tingkatkan untuk mempertahankan berbagai keutamaan premium Anda."
+      ],
       "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
         "Tingkatkan ruang penyimpanan Anda dengan ${ planName } seharga ${ formattedPrice }"
       ],
@@ -12597,6 +12711,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Masa uji coba gratis Anda akan berakhir pada ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Uji coba Anda akan berakhir pada ${ textDate }. Anda tidak akan dikenakan biaya apabila Anda membatalkan sebelum ${ textDate }. ${ action }"
       ]
     }
   }

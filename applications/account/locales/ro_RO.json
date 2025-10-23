@@ -2228,15 +2228,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "1 user": [
-        "Un utilizator"
-      ],
-      "3 TB": [
-        "3 TiB"
-      ],
-      "6 users": [
-        "6 utilizatori"
-      ],
       "Premium Password Manager": [
         "Manager de parole premium"
       ]
@@ -2316,35 +2307,14 @@
       "${ storageSize } storage": [
         "${ storageSize } spațiu de stocare"
       ],
-      "1 TB total": [
-        "1 TiB total"
-      ],
-      "1 user": [
-        "Un utilizator"
-      ],
       "1 user account": [
         "Un cont de utilizator"
       ],
-      "10 email addresses": [
-        "10 adrese de e-mail"
-      ],
-      "2 users": [
-        "Doi utilizatori"
-      ],
-      "3 TB": [
-        "3 TiB"
+      "200 GB storage: 40x your current plan": [
+        "200 GiB stocare: de 40 de ori planul actual"
       ],
       "6 user accounts": [
         "6 conturi de utilizator"
-      ],
-      "6 users": [
-        "6 utilizatori"
-      ],
-      "8500+ servers across 110+ countries": [
-        "Peste 8.500 de servere în peste 110 de țări"
-      ],
-      "Ad-blocker and malware protection": [
-        "Protecție programe malițioase și blocare reclame"
       ],
       "Admin panel to manage your family": [
         "Panou de administrare pentru gestionarea familiei"
@@ -2355,9 +2325,6 @@
       "Easily add or remove users": [
         "Adăugare și eliminare ușoară utilizatori"
       ],
-      "High speed streaming": [
-        "Transmisii în flux de mare viteză"
-      ],
       "One-time payment, lifetime deal": [
         "O singură plată, ofertă pe viață"
       ],
@@ -2367,14 +2334,8 @@
       "Password health alerts": [
         "Alerte stare parole"
       ],
-      "Private photo backup": [
-        "Conservare fotografii private"
-      ],
-      "Protect 10 devices at a time": [
-        "Protejare 10 dispozitive simultan"
-      ],
-      "Secure file storage & sharing": [
-        "Stocare și partajare securizată fișiere"
+      "Recover previous file versions": [
+        "Recuperați versiunile anterioare ale fișierelor"
       ],
       "Unlimited folders, labels and filters": [
         "Foldere, etichete și filtre nelimitate"
@@ -2384,17 +2345,14 @@
       ],
       "Use your own email domain": [
         "Utilizați propriul domeniu de e-mail"
-      ],
-      "Version history": [
-        "Istoric versiuni fișiere"
-      ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Facturat cu ${ amount } o singură dată"
+      ],
+      "forever": [
+        "permanent"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Se reînnoiește lunar cu ${ regularAmount }."
@@ -2403,9 +2361,6 @@
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
         "Accesați conținutul blocat și navigați în mod privat. Include peste 8.500 de servere în peste 110 țări, 10 dispozitive simultan, transmisii în flux la viteză maximă, blocare reclame și protecție malware, accelerator VPN și altele."
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Accesați de oriunde conținutul serviciilor de transmisii în flux, inclusiv Netflix, Disney +, Prime Video și altele."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Autentificări securizate pe toate dispozitivele. Include aliasuri hide-my-email nelimitate, partajare, A2F integrată, ${ DARK_WEB_MONITORING_NAME } și altele."
@@ -2428,9 +2383,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Securizați-vă fișierele cu stocare criptată în cloud. Include editor de documente online, conservare pentru fotografii, istoricul versiunilor, partajarea fișierelor criptate și multe altele."
-      ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield special conceput să vă protejeze dispozitivele și să vă accelereze navigarea prin blocarea reclamelor, monitorizării și a programelor malițioase."
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Spațiul de stocare este partajat între toate serviciile ${ BRAND_NAME }."
@@ -2555,6 +2507,9 @@
       ],
       "Application problem": [
         "Problemă aplicație"
+      ],
+      "Black Friday": [
+        "Vinerea Neagră"
       ],
       "Bridge problem": [
         "Problemă „Bridge”"
@@ -4883,6 +4838,39 @@
         "Asistență prioritară"
       ]
     },
+    "Duo offer": {
+      "/month": [
+        "/lună"
+      ],
+      "1 TB of storage to share": [
+        "1 TiB de stocare pentru partajare"
+      ],
+      "2 user accounts": [
+        "2 conturi de utilizator"
+      ],
+      "All premium features from your current plan": [
+        "Toate funcțiile premium din planul curent"
+      ],
+      "Only": [
+        "Doar"
+      ]
+    },
+    "Duo offer: Link": {
+      "Double your storage": [
+        "Dublați-vă spațiul de stocare"
+      ],
+      "Share your plan": [
+        "Partajați-vă planul"
+      ]
+    },
+    "Duo offer: Title": {
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Dublați-vă spațiul de stocare cu ${ BRAND_NAME } Duo"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "Partajați beneficiile planului cu ${ BRAND_NAME } Duo"
+      ]
+    },
     "Duration": {
       "120 minutes": [
         "120 de minute"
@@ -7050,8 +7038,14 @@
       "Continue": [
         "Continuare"
       ],
+      "Encrypted cloud storage for files, photos and documents": [
+        "Stocare în cloud criptată pentru fișiere, fotografii și documente."
+      ],
       "Fastest VPN servers": [
         "Cele mai rapide servere VPN"
+      ],
+      "More premium features": [
+        "Mai multe funcții premium"
       ],
       "Remove": [
         "Eliminare"
@@ -8779,6 +8773,9 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Eliminați domeniul ${ boldDomain }?"
       ],
+      "Are you sure you want to revoke certificate **${ name }**": [
+        "Sigur doriți să anulați certificatul **${ name }**?"
+      ],
       "Are you sure you want to sort your folders alphabetically?": [
         "Sortați folderele alfabetic?"
       ],
@@ -8917,6 +8914,9 @@
       "Check the status of imports and forwarding.": [
         "Verificați starea importărilor și redirecționărilor."
       ],
+      "Choose a plan that works best for you.": [
+        "Alegeți un plan care vi se potrivește cel mai bine."
+      ],
       "Choose an Entity ID to continue.": [
         "Alegeți un ID de entitate pentru a continua."
       ],
@@ -8940,6 +8940,9 @@
       ],
       "Connection data will be available in around 1 hour.": [
         "Datele de conectare vor fi disponibile peste aproximativ o oră."
+      ],
+      "Continue": [
+        "Continuare"
       ],
       "Continue to allow **${ affiliationsText }** from **${ organizationValue.Name }** to join your ${ BRAND_NAME } organization.": [
         "Continuați să permiteți ca **${ affiliationsText }** din **${ organizationValue.Name }** să vi se alăture organizației din ${ BRAND_NAME }."
@@ -10977,6 +10980,9 @@
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Modernizați contul pentru a adăuga o adresă @pm.me mai scurtă în cont, care este mai ușor de partajat. Înseamnă „${ MAIL_APP_NAME } al meu” sau „Mesaj privat mie”."
+      ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "Îmbunătățiți contul pentru a vă menține beneficiile din ${ planTitle }."
       ],
       "Upgrade to Professional or a higher plan to unlock": [
         "Treceți la planul Professional sau superior pentru a debloca"
@@ -14177,6 +14183,9 @@
       "View user sign-in, recovery and security events.": [
         "Vizualizați evenimentele de conectare, recuperare și securitate ale utilizatorului."
       ],
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "Perioada de probare gratuită s-a încheiat. ${ nonAutoRenewalAction }"
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Perioada de probare a expirat. Accesul la cont va fi dezactivat în curând. ${ action }"
       ]
@@ -15856,11 +15865,17 @@
       "${ pricingTitle } offer expires today!": [
         "Oferta cu ${ pricingTitle } expiră astăzi!"
       ],
+      "Don't show this again": [
+        "Nu mai arăta asta"
+      ],
       "Don’t show this again": [
         "Nu mai arăta asta"
       ],
       "Don’t show this offer again": [
         "Nu mai arăta această ofertă"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Luați ${ BRAND_NAME } Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "Obțineți ${ BRAND_NAME } Unlimited"
@@ -17770,6 +17785,9 @@
       "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Ultima șansă de a explora toate funcțiile puternice pe care le oferă **${ planTitle }**."
       ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "După ce începe abonamentul complet, încă puteți anula în termen de 30 de zile și puteți obține o rambursare proporțională."
+      ],
       "Refer friends": [
         "Recomandați persoane"
       ],
@@ -19594,9 +19612,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "1 user": [
-        "Un utilizator"
-      ],
       "3 TB": [
         "3 TiB"
       ],
@@ -21824,6 +21839,9 @@
       "Don't show again?": [
         "Nu mai afișez asta?"
       ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Dublați-vă spațiul de stocare cu ${ BRAND_NAME } Duo"
+      ],
       "Downgrade account": [
         "Retrogradare cont"
       ],
@@ -22047,6 +22065,9 @@
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Obțineți ${ vpnPlus } pentru a accesa toate serverele"
+      ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Obțineți **${ referralInfo.uiData.refereeRewardAmount }** în credite cu ${ planTitle }"
       ],
       "Get complete privacy coverage": [
         "Obțineți o acoperire completă a intimității"
@@ -22443,6 +22464,9 @@
       "Reused passwords": [
         "Parole refolosite"
       ],
+      "Revoke certificate?": [
+        "Anulați certificatul?"
+      ],
       "Same inbox, shorter email address": [
         "Același cont, adresă de e-mail mai scurtă"
       ],
@@ -22702,6 +22726,9 @@
       ],
       "Upgrade to ${ planName }": [
         "Treceți la ${ planName }"
+      ],
+      "Upgrade to keep your premium benefits.": [
+        "Îmbunătățiți contul pentru a vă menține beneficiile premium."
       ],
       "Upgrade your privacy": [
         "Îmbunătățiți-vă confidențialitatea"
@@ -24065,6 +24092,9 @@
       ],
       "Your recovery phrase is outdated. It can't recover new data if you reset your password again.": [
         "Fraza de recuperare este veche. Nu vă poate recupera datele dacă vă veți mai reseta parola."
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Perioada de probare se va încheia la ${ textDate }. Nu vă vom taxa dacă anulați înainte de ${ textDate }. ${ action }"
       ]
     },
     "Warning for domain modal": {

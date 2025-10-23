@@ -2207,15 +2207,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "1 user": [
-        "1 användare"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 användare"
-      ],
       "Premium Password Manager": [
         "Premium lösenordshanterare"
       ]
@@ -2294,35 +2285,11 @@
       "${ storageSize } storage": [
         "${ storageSize } lagringsutrymme"
       ],
-      "1 TB total": [
-        "1 TB totalt"
-      ],
-      "1 user": [
-        "1 användare"
-      ],
       "1 user account": [
         "1 användarkonto"
       ],
-      "10 email addresses": [
-        "10 e-postadresser"
-      ],
-      "2 users": [
-        "2 användare"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
       "6 user accounts": [
         "6 användarkonton"
-      ],
-      "6 users": [
-        "6 användare"
-      ],
-      "8500+ servers across 110+ countries": [
-        "8 500+ servrar i 110+ länder"
-      ],
-      "Ad-blocker and malware protection": [
-        "Annonsblockerare och skydd mot skadlig kod"
       ],
       "Admin panel to manage your family": [
         "Adminpanel för att hantera din familj"
@@ -2333,9 +2300,6 @@
       "Easily add or remove users": [
         "Lägg till eller ta bort användare enkelt"
       ],
-      "High speed streaming": [
-        "Höghastighetsstreaming"
-      ],
       "One-time payment, lifetime deal": [
         "Engångsbetalning, livstidserbjudande"
       ],
@@ -2345,15 +2309,6 @@
       "Password health alerts": [
         "Aviseringar om lösenordshälsa"
       ],
-      "Private photo backup": [
-        "Privat säkerhetskopiering av foton"
-      ],
-      "Protect 10 devices at a time": [
-        "Skydda 10 enheter åt gången"
-      ],
-      "Secure file storage & sharing": [
-        "Säker fillagring och delning"
-      ],
       "Unlimited folders, labels and filters": [
         "Obegränsat antal mappar, etiketter och filter"
       ],
@@ -2362,12 +2317,6 @@
       ],
       "Use your own email domain": [
         "Använd din egen e-postdomän"
-      ],
-      "Version history": [
-        "Versionshistorik"
-      ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -2381,9 +2330,6 @@
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
         "Få åtkomst till blockerat innehåll och surfa privat. Inkluderar 8 500+ servrar i över 110 länder, 10 enheter, höghastighetsstreaming, annonsblockerare och skydd mot skadlig kod, VPN Accelerator och mer."
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Få åtkomst till innehåll på streamingtjänster inklusive Netflix, Disney+, Prime Video och mer var som helst."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Säkra inloggningar på alla dina enheter. Inkluderar obegränsat antal hide-my-email-alias, delning, integrerad 2FA, ${ DARK_WEB_MONITORING_NAME } och mer."
@@ -2404,9 +2350,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Säkra dina filer med krypterad molnlagring. Inkluderar online dokumentredigerare, säkerhetskopiering av foto, versionshistorik, krypterad fildelning och mer."
-      ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Specialdesignade NetShield skyddar dina enheter och snabbar upp din surfning genom att blockera annonser, spårare och skadlig kod."
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagringsutrymme delas mellan alla ${ BRAND_NAME }-tjänster."
@@ -2530,6 +2473,9 @@
       ],
       "Application problem": [
         "Problem med applikation"
+      ],
+      "Black Friday": [
+        "Black Friday"
       ],
       "Bridge problem": [
         "Problem med Bridge"
@@ -4847,6 +4793,19 @@
         "Endast"
       ]
     },
+    "Duo offer: Link": {
+      "Double your storage": [
+        "Dubbla ditt lagringsutrymme"
+      ],
+      "Share your plan": [
+        "Dela ditt paket"
+      ]
+    },
+    "Duo offer: Title": {
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Dubbla ditt lagringsutrymme med ${ BRAND_NAME } Duo"
+      ]
+    },
     "Duration": {
       "120 minutes": [
         "120 minuter"
@@ -6976,8 +6935,14 @@
       "Continue": [
         "Fortsätt"
       ],
+      "Encrypted cloud storage for files, photos and documents": [
+        "Krypterad molnlagring för filer, foton och dokument"
+      ],
       "Fastest VPN servers": [
         "Snabbaste VPN-servrar"
+      ],
+      "More premium features": [
+        "Fler premiumfunktioner"
       ],
       "Remove": [
         "Ta bort"
@@ -8787,6 +8752,9 @@
       "Check the status of imports and forwarding.": [
         "Kontrollera status för importer och vidarebefordran."
       ],
+      "Choose a plan that works best for you.": [
+        "Välj ett paket som passar dig bäst."
+      ],
       "Choose an Entity ID to continue.": [
         "Välj ett entitets-ID för att fortsätta."
       ],
@@ -8810,6 +8778,9 @@
       ],
       "Connection data will be available in around 1 hour.": [
         "Anslutningsdata kommer vara tillgänglig om cirka 1 timme."
+      ],
+      "Continue": [
+        "Fortsätt"
       ],
       "Continue to allow **${ affiliationsText }** from **${ organizationValue.Name }** to join your ${ BRAND_NAME } organization.": [
         "Fortsätt för att tillåta **${ affiliationsText }** från **${ organizationValue.Name }** att gå med i din ${ BRAND_NAME }-organisation."
@@ -19206,9 +19177,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "1 user": [
-        "1 användare"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -21615,6 +21583,9 @@
       "Get ${ vpnPlus } to access all servers": [
         "Skaffa ${ vpnPlus } för att komma åt alla servrar"
       ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Få **${ referralInfo.uiData.refereeRewardAmount }** i krediter med ${ planTitle }"
+      ],
       "Get complete privacy coverage": [
         "Få fullständig integritetstäckning"
       ],
@@ -22273,6 +22244,9 @@
       ],
       "Upgrade to ${ planName }": [
         "Uppgradera till ${ planName }"
+      ],
+      "Upgrade to keep your premium benefits.": [
+        "Uppgradera för att behålla dina premiumförmåner."
       ],
       "Upgrade your privacy": [
         "Uppgradera din integritet"

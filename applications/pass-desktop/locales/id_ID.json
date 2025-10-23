@@ -76,6 +76,9 @@
       "Advanced options": [
         "Opsi lanjutan"
       ],
+      "Allow access": [
+        "Izinkan akses"
+      ],
       "Apply lifetime coupon code": [
         "Terapkan kode kupon Lifetime"
       ],
@@ -252,6 +255,9 @@
       ],
       "Dismiss": [
         "Abaikan"
+      ],
+      "Do not show again": [
+        "Jangan tampilkan lagi"
       ],
       "Do not show again when I press": [
         "Jangan tampilkan lagi pada saat saya menekan"
@@ -755,6 +761,11 @@
       ],
       "Expand": [
         "Lebarkan"
+      ]
+    },
+    "Confirm": {
+      "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
+        "Apakah Anda ingin papan klip Anda dibersihkan secara otomatis setelah ${ timeoutDurationHumanReadable }?"
       ]
     },
     "Description": {
@@ -1349,6 +1360,9 @@
       "Domain": [
         "Domain"
       ],
+      "Password ends with": [
+        "Kata sandi berakhir dengan"
+      ],
       "Username": [
         "Nama pengguna"
       ]
@@ -1578,6 +1592,9 @@
       ],
       "Copied to clipboard": [
         "Disalin ke papan klip"
+      ],
+      "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
+        "Disalin ke papan klip (kedaluwarsa dalam ${ timeoutDurationHumanReadable })"
       ],
       "Coupon successfully applied!": [
         "Kupon berhasil diterapkan!"
@@ -1885,6 +1902,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Memindahkan semua item dari \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Memindahkan item ke brankas lain akan menghapus tautan amannya."
+      ],
       "Moving items": [
         "Memindahkan item"
       ],
@@ -1932,6 +1952,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Akses online ke ${ PASS_APP_NAME } akan memerlukan kode PIN. Anda akan dikeluarkan setelah 3 upaya percobaan yang gagal."
+      ],
+      "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
+        "Buka pengaturan Safari Anda untuk ekstensi dan pastikan izin situs telah diaktifkan untuk domain ${ BRAND_NAME }"
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Peringatan kami mengutamakan keamanan. Apabila Anda tidak mengenali informasi mana pun yang telah ditandai bocor, Anda dapat mengabaikan laporan ini dengan aman."
@@ -2086,8 +2109,17 @@
       "Please follow the steps below to set up your domain.": [
         "Silakan ikuti langkah-langkah di bawah ini untuk mengatur domain Anda."
       ],
+      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
+        "Silakan biarkan ${ PASS_APP_NAME } tetap terbuka agar papan klip dapat dibersihkan secara otomatis."
+      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Mohon biarkan jendela ini terbuka selagi data Anda diimpor. Proses ini dapat memakan waktu sejenak."
+      ],
+      "Please keep your browser open so the clipboard can be automatically cleared.": [
+        "Silakan biarkan browser Anda tetap terbuka agar papan klip dapat dibersihkan secara otomatis."
+      ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "Silakan pastikan jendela yang sebelumnya aktif adalah jendela di mana Anda ingin mengisi otomatis, dan kursor Anda telah terfokus pada kolom entri masuk."
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Mohon diperhatikan bahwa setelah dihapus, alias ini tidak akan lagi dapat dipulihkan. Apakah Anda ingin sekadar menonaktifkan alias ini?"
@@ -2442,6 +2474,9 @@
       ],
       "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
         "Tergantung dari sistem yang Anda gunakan, Anda mungkin akan perlu untuk menerima permintaan izin dan menyalakan ulang aplikasi."
+      ],
+      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+        "Anda mungkin akan perlu untuk memberikan izin aksesibilitas kepada ${ PASS_APP_NAME }."
       ],
       "You need a vault with edit permission before you can import items.": [
         "Anda butuh brankas dengan izin penyuntingan sebelum Anda dapat mengimpor item."
@@ -3061,6 +3096,9 @@
       ],
       "Key type": [
         "Jenis kunci"
+      ],
+      "Keyboard shortcut:": [
+        "Pintasan keyboard :"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Pintasan keyboard: ${ shortcut }"
@@ -3905,6 +3943,11 @@
         "${ price }/bulan"
       ]
     },
+    "Permission": {
+      "Will require a permission from your browser": [
+        "Akan membutuhkan izin dari browser Anda"
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "Tambah kunci rahasia 2FA"
@@ -4226,6 +4269,9 @@
       ],
       "Change your lock method": [
         "Ubah metode penguncian Anda"
+      ],
+      "Clear clipboard": [
+        "Bersihkan papan klip"
       ],
       "Confirm extra password": [
         "Konfirmasi kata sandi tambahan"
@@ -4787,6 +4833,9 @@
       ],
       "Failed to load breaches.": [
         "Daftar kebocoran gagal dimuat."
+      ],
+      "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
+        "Berikan akses ke papan klip untuk mengaktifkan pembersihan otomatis kata sandi dan data yang disalin."
       ],
       "Identity could not be confirmed": [
         "Identitas tidak dapat dikonfirmasi"

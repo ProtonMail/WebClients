@@ -1355,15 +1355,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "1 user": [
-        "1 käyttäjä"
-      ],
-      "3 TB": [
-        "3 Tt"
-      ],
-      "6 users": [
-        "6 käyttäjää"
-      ],
       "Premium Password Manager": [
         "Premium-salasanahallinta"
       ]
@@ -1385,35 +1376,11 @@
       "${ storageSize } storage": [
         "${ storageSize } tallennustilaa"
       ],
-      "1 TB total": [
-        "1 Tt yhteensä"
-      ],
-      "1 user": [
-        "1 käyttäjä"
-      ],
       "1 user account": [
         "1 käyttäjätili"
       ],
-      "10 email addresses": [
-        "10 sähköpostiosoitetta"
-      ],
-      "2 users": [
-        "2 käyttäjää"
-      ],
-      "3 TB": [
-        "3 Tt"
-      ],
       "6 user accounts": [
         "Kuusi käyttäjätiliä"
-      ],
-      "6 users": [
-        "6 käyttäjää"
-      ],
-      "8500+ servers across 110+ countries": [
-        "8500+ palvelinta 110+ maassa"
-      ],
-      "Ad-blocker and malware protection": [
-        "Mainos- ja haittaohjelmaesto"
       ],
       "Admin panel to manage your family": [
         "Ylläpitopaneeli perheesi hallintaan"
@@ -1424,9 +1391,6 @@
       "Easily add or remove users": [
         "Lisää tai poista käyttäjiä helposti"
       ],
-      "High speed streaming": [
-        "Nopea suoratoisto"
-      ],
       "One-time payment, lifetime deal": [
         "Kertamaksu, elinikäinen tarjous"
       ],
@@ -1436,15 +1400,6 @@
       "Password health alerts": [
         "Salasanaterveyshälytykset"
       ],
-      "Private photo backup": [
-        "Yksityinen kuvien varmuuskopiointi"
-      ],
-      "Protect 10 devices at a time": [
-        "Suojaa samanaikaisesti 10 laitetta"
-      ],
-      "Secure file storage & sharing": [
-        "Suojattu tiedoston tallennus ja jako"
-      ],
       "Unlimited folders, labels and filters": [
         "Rajattomasti kansioita, tunnisteita ja suodattimia"
       ],
@@ -1453,12 +1408,6 @@
       ],
       "Use your own email domain": [
         "Käytä omaa sähköpostiverkkotunnusta"
-      ],
-      "Version history": [
-        "Versiohistoria"
-      ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -1472,9 +1421,6 @@
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
         "Käytä estettyä sisältöä ja selaa yksityisesti. Sisältää yli 8500 palvelinta yli 110 maassa, 10 laitetta, nopean suoratoiston, haittasisällön- ja mainoseston sekä paljon muuta."
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Käytä mm. Netflixin, Disney+:n ja Prime Videon kaltaisten suoratoistopalveluiden sisältöä mistä tahansa."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Suojaa kirjautumisesi kaikilla laitteillasi. Sisältää rajattomasti Hide-my-email-aliaksia, jakamisen, sisäänrakennetun 2FA:n, ${ DARK_WEB_MONITORING_NAME } ja muuta."
@@ -1495,9 +1441,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää verkkodokumenttieditorin, kuvien varmuuskopioinnin, versiohistorian, salatun tiedostojen jakamisen ja paljon muuta."
-      ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Erityisesti suunniteltu NetShield suojaa laitteitasi ja nopeuttaa selaamistasi estämällä mainoksia, seurantoja ja haittaohjelmia."
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Tallennustila jaetaan kaikkien ${ BRAND_NAME }-palveluiden kesken."
@@ -9619,6 +9562,12 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } suosittelua kohden"
       ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Jos et peruuta,** täysi tilauksesi alkaa ja saat **${ referrerRewardAmount }** krediitteinä."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Jos tilaat ennen tätä päivämäärää,** ansaitset **${ referrerRewardAmount }** krediitteinä."
+      ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Ansaitse jopa ${ maxRewardAmount } krediitteinä. Saat ${ referrerRewardAmount }, kun kutsumasi henkilö hankkii ${ BRAND_NAME } -tilauksen."
       ],
@@ -9971,9 +9920,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "1 user": [
-        "1 käyttäjä"
-      ],
       "3 TB": [
         "3 Tt"
       ],

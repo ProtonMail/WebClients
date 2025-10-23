@@ -1492,15 +1492,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "1 user": [
-        "1 bruker"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 brukere"
-      ],
       "Premium Password Manager": [
         "Premium passordbehandler"
       ]
@@ -1556,35 +1547,14 @@
       "${ storageSize } storage": [
         "${ storageSize } lagringsplass"
       ],
-      "1 TB total": [
-        "1 TB totalt"
-      ],
-      "1 user": [
-        "1 bruker"
-      ],
       "1 user account": [
         "1 brukerkonto"
       ],
-      "10 email addresses": [
-        "10 e-postadresser"
-      ],
-      "2 users": [
-        "2 brukere"
-      ],
-      "3 TB": [
-        "3 TB"
+      "200 GB storage: 40x your current plan": [
+        "200 GB lagringsplass: 40x din nåværende plan"
       ],
       "6 user accounts": [
         "6 brukerkontoer"
-      ],
-      "6 users": [
-        "6 brukere"
-      ],
-      "8500+ servers across 110+ countries": [
-        "8500+ tjenere i 110+ land"
-      ],
-      "Ad-blocker and malware protection": [
-        "Annonseblokkering og skadevarebeskyttelse"
       ],
       "Admin panel to manage your family": [
         "Administrasjonspanel for å administrere familien din"
@@ -1595,9 +1565,6 @@
       "Easily add or remove users": [
         "Enkelt legg til eller fjern brukere"
       ],
-      "High speed streaming": [
-        "Strømming med høy hastighet"
-      ],
       "One-time payment, lifetime deal": [
         "Engangsbetaling, livstidsavtale"
       ],
@@ -1607,14 +1574,8 @@
       "Password health alerts": [
         "Varsler for passordhelse"
       ],
-      "Private photo backup": [
-        "Privat sikkerhetskopiering av bilder"
-      ],
-      "Protect 10 devices at a time": [
-        "Beskytt 10 enheter om gangen"
-      ],
-      "Secure file storage & sharing": [
-        "Sikker fillagring og -deling"
+      "Recover previous file versions": [
+        "Gjenopprett tidligere filversjoner"
       ],
       "Unlimited folders, labels and filters": [
         "Ubegrenset antall mapper, etiketter og filtre"
@@ -1624,17 +1585,14 @@
       ],
       "Use your own email domain": [
         "Bruk ditt eget e-postdomene"
-      ],
-      "Version history": [
-        "Versjonshistorikk"
-      ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Faktureres til ${ amount } én gang"
+      ],
+      "forever": [
+        "for alltid"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Fornyes etter 1 måned til ${ regularAmount }."
@@ -1643,9 +1601,6 @@
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
         "Få tilgang til blokkert innhold og surf privat. Inkluderer 8 500+ tjenere i 110+ land, 10 enheter, høyhastighetsstrømming, annonseblokkering og beskyttelse mot skadelig programvare, VPN Accelerator og mer."
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Få tilgang til innhold på strømmetjenester inkludert Netflix, Disney+, Prime Video og mer fra hvor som helst."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Sikre pålogginger på alle dine enheter. Inkluderer ubegrenset antall hide-my-email-aliaser, deling, integrert 2FA, ${ DARK_WEB_MONITORING_NAME } og mer."
@@ -1666,9 +1621,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Sikre filene dine med kryptert skylagring. Inkluderer dokumentredigering på nett, sikkerhetskopiering av bilder, versjonshistorikk, kryptert fildeling og mer."
-      ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Spesialdesignet NetShield beskytter enheten din og øker hastigheten på surfingen din ved å blokkere annonser, sporere og skadelig programvare."
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagringsplass deles mellom alle ${ BRAND_NAME }-tjenestene."
@@ -1779,6 +1731,9 @@
       ],
       "Application problem": [
         "Applikasjonsproblem"
+      ],
+      "Black Friday": [
+        "Black Friday"
       ],
       "Bridge problem": [
         "Problem med Bridge"
@@ -3441,6 +3396,39 @@
         "Prioritert brukerstøtte"
       ]
     },
+    "Duo offer": {
+      "/month": [
+        "/måned"
+      ],
+      "1 TB of storage to share": [
+        "1 TB med lagringsplass å dele"
+      ],
+      "2 user accounts": [
+        "2 brukerkontoer"
+      ],
+      "All premium features from your current plan": [
+        "Alle premiumfunksjoner fra din nåværende plan"
+      ],
+      "Only": [
+        "Kun"
+      ]
+    },
+    "Duo offer: Link": {
+      "Double your storage": [
+        "Doble lagringsplassen din"
+      ],
+      "Share your plan": [
+        "Del planen din"
+      ]
+    },
+    "Duo offer: Title": {
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Doble lagringsplassen din med ${ BRAND_NAME } Duo"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "Del fordelene med planen din med ${ BRAND_NAME } Duo"
+      ]
+    },
     "Easy switch": {
       "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
         "For å videresende e-poster fra opptil ${ MAX_SYNC_PAID_USER } konto, oppgrader til ${ planName }.",
@@ -4637,8 +4625,14 @@
       "Continue": [
         "Fortsett"
       ],
+      "Encrypted cloud storage for files, photos and documents": [
+        "Kryptert skylagring for filer, bilder og dokumenter"
+      ],
       "Fastest VPN servers": [
         "Raskeste VPN-tjenere"
+      ],
+      "More premium features": [
+        "Flere premiumfunksjoner"
       ],
       "Remove": [
         "Fjern"
@@ -5790,6 +5784,9 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Er du sikker på at du ønsker å fjerne domenet ${ boldDomain }?"
       ],
+      "Are you sure you want to revoke certificate **${ name }**": [
+        "Er du sikker på at du ønsker å oppheve sertifikatet **${ name }**?"
+      ],
       "Ask your organization admin to setup Gateways.": [
         "Be organisasjonsadministratoren om å konfigurere porttjenere."
       ],
@@ -5859,6 +5856,9 @@
       "Change your password": [
         "Endre passordet ditt"
       ],
+      "Choose a plan that works best for you.": [
+        "Velg en plan som fungerer best for deg."
+      ],
       "Choose an Entity ID to continue.": [
         "Velg en enhets-ID for å fortsette."
       ],
@@ -5882,6 +5882,9 @@
       ],
       "Connection data will be available in around 1 hour.": [
         "Tilkoblingsdata vil være tilgjengelig om ca. 1 time."
+      ],
+      "Continue": [
+        "Fortsett"
       ],
       "Continue to allow **${ affiliationsText }** from **${ organizationValue.Name }** to join your ${ BRAND_NAME } organization.": [
         "Fortsett for å tillate **${ affiliationsText }** fra **${ organizationValue.Name }** til å bli med i ${ BRAND_NAME }-organisasjonen din."
@@ -7230,6 +7233,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Oppgrader nå for å få premiumfunksjoner, produkter og lagringsplass til spesialpris."
+      ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "Oppgrader for å beholde ${ planTitle } fordelene dine."
       ],
       "Upgrade to Professional or a higher plan to unlock": [
         "Oppgrader til Professional eller en høyere plan for å låse opp"
@@ -9060,6 +9066,9 @@
       "View user sign-in, recovery and security events.": [
         "Vis brukerpålogging, gjenoppretting og sikkerhetshendelser."
       ],
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "Din gratis prøveperiode er over. ${ nonAutoRenewalAction }"
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Prøveperioden er avsluttet. Tilgang til kontoen din vil snart bli deaktivert. ${ action }"
       ]
@@ -10270,11 +10279,17 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }-tilbud utløper i dag!"
       ],
+      "Don't show this again": [
+        "Ikke vis dette igjen"
+      ],
       "Don’t show this again": [
         "Ikke vis dette igjen"
       ],
       "Don’t show this offer again": [
         "Ikke vis dette tilbudet igjen"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Skaff deg ${ BRAND_NAME } Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "Skaff deg ${ BRAND_NAME } Unlimited"
@@ -11482,6 +11497,9 @@
       "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Siste sjanse til å utforske alle de kraftige funksjonene som **${ planTitle }** har å tilby."
       ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "Når det fulle abonnementet ditt starter, kan du fortsatt kansellere innen 30 dager og få en forholdsmessig refusjon."
+      ],
       "Refer friends": [
         "Verv venner"
       ],
@@ -12280,9 +12298,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "1 user": [
-        "1 bruker"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -14048,6 +14063,9 @@
       "Domain names": [
         "Domenenavn"
       ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Doble lagringsplassen din med ${ BRAND_NAME } Duo"
+      ],
       "Downgrade account": [
         "Nedgrader kontoen"
       ],
@@ -14171,6 +14189,9 @@
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Skaff deg ${ vpnPlus } for å få tilgang til alle tjenere"
+      ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Få **${ referralInfo.uiData.refereeRewardAmount }** i kreditter med ${ planTitle }"
       ],
       "Get complete privacy coverage": [
         "Få fullstendig personverndekning"
@@ -14380,6 +14401,9 @@
       "Restore administrator privileges": [
         "Gjenopprett administratorprivilegier"
       ],
+      "Revoke certificate?": [
+        "Oppheve sertifikatet?"
+      ],
       "SAML authentication": [
         "SAML-autentisering"
       ],
@@ -14530,6 +14554,9 @@
       ],
       "Upgrade to ${ planName }": [
         "Oppgrader til ${ planName }"
+      ],
+      "Upgrade to keep your premium benefits.": [
+        "Oppgrader for å beholde premiumfordelene dine."
       ],
       "Upgrade your network protection with dedicated servers": [
         "Oppgrader nettverksbeskyttelsen med dedikerte tjenere"
@@ -15434,6 +15461,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Prøveperioden avsluttes ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Prøveperioden avsluttes ${ textDate }. Du blir ikke belastet hvis du avbryter før ${ textDate }. ${ action }"
       ]
     },
     "Warning for domain modal": {

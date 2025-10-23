@@ -66,9 +66,6 @@
       "Add contact": [
         "Añadir contacto"
       ],
-      "Add credit / debit card": [
-        "Añadir tarjeta de crédito / débito"
-      ],
       "Add email": [
         "Añadir correo electrónico"
       ],
@@ -126,9 +123,6 @@
       ],
       "Cancel subscription": [
         "Cancelar tu suscripción"
-      ],
-      "Cancel trial and pay": [
-        "Cancelar la prueba gratuita y pagar"
       ],
       "Change password": [
         "Cambiar contraseña"
@@ -253,17 +247,11 @@
       "Create and copy alias": [
         "Crear y copiar el alias"
       ],
-      "Create folder": [
-        "Crear una carpeta"
-      ],
       "Create new folder": [
         "Crear una nueva carpeta"
       ],
       "Create new password": [
         "Crear una contraseña nueva"
-      ],
-      "Current plan": [
-        "Plan actual"
       ],
       "Customize": [
         "Personalizar"
@@ -279,9 +267,6 @@
       ],
       "Decline invite": [
         "Declinar invitación"
-      ],
-      "Decrease": [
-        "Reducir"
       ],
       "Delete": [
         "Eliminar"
@@ -345,9 +330,6 @@
       "Edit sign-in details": [
         "Editar datos de inicio de sesión"
       ],
-      "Edit subscription": [
-        "Editar suscripción"
-      ],
       "Email settings": [
         "Configuración del correo electrónico"
       ],
@@ -359,6 +341,9 @@
       ],
       "Expand": [
         "Expandir"
+      ],
+      "Explore other plans": [
+        "Explorar otros planes"
       ],
       "Export": [
         "Exportar"
@@ -386,9 +371,6 @@
       ],
       "Get a free ${ BRAND_NAME } address": [
         "Obtén una dirección gratuita de ${ BRAND_NAME }"
-      ],
-      "Get in touch": [
-        "Ponte en contacto"
       ],
       "Get the apps": [
         "Obtener las aplicaciones"
@@ -465,17 +447,11 @@
       "Import from Outlook": [
         "Importar desde Outlook"
       ],
-      "Increase": [
-        "Aumentar"
-      ],
       "Keep my subscription": [
         "Mantener mi suscripción"
       ],
       "Learn more": [
         "Más información"
-      ],
-      "Let's talk": [
-        "Habla con nosotros"
       ],
       "Load": [
         "Cargar"
@@ -579,12 +555,6 @@
       "Open navigation": [
         "Abrir la navegación"
       ],
-      "Pay": [
-        "Pagar"
-      ],
-      "Pay ${ price } now": [
-        "Pagar ${ price } ahora"
-      ],
       "PDF (.pdf)": [
         "PDF (.pdf)"
       ],
@@ -638,9 +608,6 @@
       ],
       "Remove file": [
         "Eliminar el archivo"
-      ],
-      "Remove gift code": [
-        "Eliminar el código de regalo"
       ],
       "Rename": [
         "Renombrar"
@@ -720,12 +687,6 @@
       "Select all": [
         "Seleccionar todo"
       ],
-      "Select billing cycle ${ billingText }": [
-        "Selecciona el ciclo de facturación de ${ billingText }"
-      ],
-      "Select country": [
-        "Seleccionar un país"
-      ],
       "Set recovery methods": [
         "Establecer los métodos de recuperación"
       ],
@@ -789,14 +750,14 @@
       "Submit": [
         "Enviar"
       ],
+      "Subscribe now": [
+        "Suscríbete ahora"
+      ],
       "Switch accounts": [
         "Cambiar de cuenta"
       ],
       "Switch or add account": [
         "Cambiar o añadir cuenta"
-      ],
-      "Take a tour": [
-        "Explora ahora"
       ],
       "Take out of trash": [
         "Restaurar de la papelera"
@@ -861,12 +822,6 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Usar ${ VPN_SHORT_APP_NAME } para la privacidad de los datos"
       ],
-      "Use a different card": [
-        "Utilizar una tarjeta diferente"
-      ],
-      "Use a different payment method": [
-        "Utilizar un método de pago diferente"
-      ],
       "Use authentication code": [
         "Usar un código de autenticación"
       ],
@@ -897,9 +852,6 @@
       ],
       "Web page (.html)": [
         "Página web (.html)"
-      ],
-      "What do I get?": [
-        "¿Qué obtengo?"
       ],
       "Word count": [
         "Conteo de palabras"
@@ -940,18 +892,6 @@
       "${ ips } server": [
         "${ ips } servidor",
         "${ ips } servidores"
-      ],
-      "${ price } per dedicated server": [
-        "${ price } por servidor dedicado"
-      ],
-      "${ price } per domain": [
-        "${ price } por dominio"
-      ],
-      "${ price } per seat": [
-        "${ price } por licencia"
-      ],
-      "${ price } per user": [
-        "${ price } por usuario"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } licencia de ${ LUMO_APP_NAME }",
@@ -1111,11 +1051,6 @@
         "Aplicaciones de ${ BRAND_NAME }"
       ]
     },
-    "Assistant toggle": {
-      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
-        "Lleva la productividad de tus correos electrónicos a nuevos niveles. Deja que ${ BRAND_NAME } Scribe te ayude a escribir, responder y revisar tus correos electrónicos."
-      ]
-    },
     "Attached ics file error": {
       "Empty ICS file": [
         "Archivo ICS vacío"
@@ -1142,24 +1077,6 @@
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada mes. No se te cobrará nada si cancelas antes del ${ formattedDate }."
-      ],
-      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
-        "Puedes tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores exclusivos durante el periodo de prueba."
-      ],
-      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
-        "Puedes tener hasta ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } licencias durante el periodo de prueba."
-      ],
-      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
-        "Puedes tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias de Scribe durante el período de prueba."
-      ],
-      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
-        "Puedes tener hasta ${ TRIAL_MAX_USERS } usuarios durante el periodo de prueba."
-      ],
-      "You cannot add custom domains during the trial period.": [
-        "No puedes añadir dominios personalizados durante el periodo de prueba."
-      ],
-      "You have reached the trial limit.": [
-        "Has alcanzado el límite del periodo de prueba."
       ]
     },
     "b2b_trials_Action": {
@@ -1176,15 +1093,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "1 user": [
-        "1 usuario"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 usuarios"
-      ],
       "Premium Password Manager": [
         "Administrador de contraseñas premium"
       ]
@@ -1209,35 +1117,11 @@
       "${ storageSize } storage": [
         "${ storageSize } de almacenamiento"
       ],
-      "1 TB total": [
-        "1 TB en total"
-      ],
-      "1 user": [
-        "1 usuario"
-      ],
       "1 user account": [
         "1 cuenta de usuario"
       ],
-      "10 email addresses": [
-        "10 direcciones de correo electrónico"
-      ],
-      "2 users": [
-        "2 usuarios"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
       "6 user accounts": [
         "6 cuentas de usuario"
-      ],
-      "6 users": [
-        "6 usuarios"
-      ],
-      "8500+ servers across 110+ countries": [
-        "Más de 8500 servidores en más de 110 países"
-      ],
-      "Ad-blocker and malware protection": [
-        "Bloqueador de anuncios y protección contra malware"
       ],
       "Admin panel to manage your family": [
         "Panel de administración para administrar tu familia"
@@ -1248,9 +1132,6 @@
       "Easily add or remove users": [
         "Fácil adición y borrado de usuarios"
       ],
-      "High speed streaming": [
-        "Streaming de alta velocidad"
-      ],
       "One-time payment, lifetime deal": [
         "Pago único, oferta de por vida"
       ],
@@ -1260,15 +1141,6 @@
       "Password health alerts": [
         "Alertas de estado de las contraseñas"
       ],
-      "Private photo backup": [
-        "Copia de seguridad de fotos privada"
-      ],
-      "Protect 10 devices at a time": [
-        "Protección de 10 dispositivos a la vez"
-      ],
-      "Secure file storage & sharing": [
-        "Almacenamiento y uso compartido seguros de archivos"
-      ],
       "Unlimited folders, labels and filters": [
         "Número ilimitado de carpetas, etiquetas y filtros"
       ],
@@ -1277,12 +1149,6 @@
       ],
       "Use your own email domain": [
         "Usa tu propio dominio de correo electrónico"
-      ],
-      "Version history": [
-        "Historial de versiones"
-      ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -1296,9 +1162,6 @@
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
         "Accede a contenido bloqueado y navega de forma privada. Incluye más de 8500 servidores en más de 110 países, 10 dispositivos, streaming de alta velocidad, bloqueador de anuncios, protección contra malware, VPN Accelerator y mucho más."
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Accede desde cualquier lugar al contenido de servicios de transmisión como Netflix, Disney+ o Prime Video, entre otros."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Inicios de sesión seguros en todos tus dispositivos. Incluye un número ilimitado de alias de hide-my-email, uso compartido, 2FA integrada, ${ DARK_WEB_MONITORING_NAME } y mucho más."
@@ -1320,31 +1183,8 @@
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Protege tus archivos con almacenamiento en la nube cifrado. Incluye editor de documentos en línea, copia de seguridad de fotos, historial de versiones, uso de intercambio de archivos cifrados y más."
       ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "La tecnología NetShield tiene como fin proteger tus dispositivos y que puedas navegar mucho más rápido bloqueando anuncios, rastreadores y malware."
-      ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "El espacio de almacenamiento se distribuye entre todos los servicios de ${ BRAND_NAME }."
-      ]
-    },
-    "Billing cycle option": {
-      "1 month": [
-        "1 mes"
-      ],
-      "12 months": [
-        "12 meses"
-      ],
-      "Annually": [
-        "Anual"
-      ],
-      "Lifetime": [
-        "De por vida"
-      ],
-      "Monthly": [
-        "Mensual"
-      ],
-      "Two-year": [
-        "Bienal"
       ]
     },
     "Browser": {
@@ -1436,9 +1276,6 @@
       ]
     },
     "Button": {
-      "Close": [
-        "Cerrar"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuar usando ${ MAIL_APP_NAME }."
       ],
@@ -1448,23 +1285,8 @@
       "Continue your subscription": [
         "Continuar con tu suscripción"
       ],
-      "Create label": [
-        "Crea una etiqueta"
-      ],
-      "Discover and set up features": [
-        "Descubre y configura las funcionalidades"
-      ],
       "Maybe later": [
         "Quizás más tarde"
-      ],
-      "Remind me later": [
-        "Recordarme más tarde"
-      ],
-      "Set up other features": [
-        "Configura otras funciones"
-      ],
-      "Take a tour": [
-        "Explora ahora"
       ]
     },
     "Cancellation upsell": {
@@ -1518,13 +1340,6 @@
       "${ users } user": [
         "${ users } usuario",
         "${ users } usuarios"
-      ],
-      "Total": [
-        "Total"
-      ],
-      "Total for ${ n } month": [
-        "Total por ${ n } mes",
-        "Total para ${ n } meses"
       ]
     },
     "Collapsible tooltip": {
@@ -1544,9 +1359,6 @@
       ],
       "Full chat history with search": [
         "Historial de chat completo con búsqueda"
-      ],
-      "Large file upload support": [
-        "Soporte para la carga de archivos grandes"
       ],
       "Limited daily chats": [
         "Chats diarios limitados"
@@ -1571,12 +1383,6 @@
       ]
     },
     "collider_2025: Info": {
-      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
-        "${ LUMO_APP_NAME } es una IA centrada en la privacidad que te ayuda a hacer más, mientras mantiene tus datos seguros. Desbloquea todo su potencial y disfruta de acceso anticipado a nuevas funciones a medida que se introducen."
-      ],
-      "Add ${ LUMO_APP_NAME }": [
-        "Añadir ${ LUMO_APP_NAME }"
-      ],
       "High-speed chats and advanced AI features.": [
         "Chats de alta velocidad y funciones de IA avanzadas."
       ]
@@ -2575,14 +2381,6 @@
         "Para ${ VPN_APP_NAME }"
       ]
     },
-    "Cycle": {
-      "/month": [
-        "/mes"
-      ],
-      "/user per month": [
-        "/usuario por mes"
-      ]
-    },
     "Default display name vcard": {
       "Unknown": [
         "Desconocido"
@@ -2845,14 +2643,6 @@
         "Solamente"
       ]
     },
-    "Edit billing address form note": {
-      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
-        "Los campos de texto son opcionales. La información que proporciones en este formulario solo aparecerá en las facturas emitidas en el futuro y no afectará a las facturas existentes."
-      ],
-      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
-        "Los campos de texto son opcionales. La información que proporcionas en este formulario solo cambiará la factura que has seleccionado y no los detalles de la futura factura."
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "Se ha cancelado ${ eventTitle }."
@@ -2983,12 +2773,6 @@
       "Already a member of this share": [
         "Ya se ha compartido con este miembro."
       ],
-      "Amount above the maximum.": [
-        "Cantidad por encima del máximo."
-      ],
-      "Amount below minimum (${ minimumAmount }).": [
-        "Cantidad inferior al mínimo (${ minimumAmount })."
-      ],
       "An error occurred while attempting to convert the document. Please try again.": [
         "Se ha producido un error al intentar convertir el documento. Inténtalo de nuevo."
       ],
@@ -3022,9 +2806,6 @@
       "Cannot export this contact": [
         "No se puede exportar este contacto"
       ],
-      "Checkout expired, please try again": [
-        "La compra ha expirado. Inténtalo de nuevo."
-      ],
       "Contact could not be saved": [
         "No se ha podido guardar el contacto."
       ],
@@ -3051,9 +2832,6 @@
       "Domain not available, try again later": [
         "Dominio no disponible. Inténtalo de nuevo más tarde."
       ],
-      "Editing billing address is not available at the moment. Please try again later.": [
-        "La edición de la dirección de facturación no está disponible en este momento. Inténtalo de nuevo más tarde."
-      ],
       "Email address is required": [
         "Dirección de correo electrónico requerida"
       ],
@@ -3062,9 +2840,6 @@
       ],
       "Enter 6 digits": [
         "Introduce 6 dígitos."
-      ],
-      "Error connecting to the Bitcoin API.": [
-        "Se ha producido un error al conectar a la API de Bitcoin."
       ],
       "Error decrypting a computer": [
         "Error al descifrar el ordenador"
@@ -3123,29 +2898,11 @@
       "Incorrect username": [
         "El nombre de usuario no es correcto."
       ],
-      "Invalid ${ name } code": [
-        "Código de ${ name } no válido"
-      ],
-      "Invalid card number": [
-        "Número de tarjeta no válido"
-      ],
-      "Invalid code": [
-        "Código no válido"
-      ],
       "Invalid email address": [
         "Dirección de correo electrónico no válida"
       ],
-      "Invalid expiration date": [
-        "Fecha de expiración no válida"
-      ],
-      "Invalid IBAN": [
-        "El IBAN no es válido."
-      ],
       "Invalid name": [
         "Nombre no válido"
-      ],
-      "Invalid postal code": [
-        "Código postal no válido"
       ],
       "Invalid public key file": [
         "Archivo de clave pública no válido"
@@ -3210,32 +2967,8 @@
       "Passwords do not match": [
         "Las contraseñas no coinciden."
       ],
-      "Payment process canceled": [
-        "Se ha cancelado el proceso de pago"
-      ],
-      "Payment process consumed": [
-        "El proceso de pago está terminado."
-      ],
-      "Payment process failed": [
-        "Error al procesar el pago"
-      ],
-      "Payment process not supported": [
-        "Proceso de pago no soportado"
-      ],
       "Photos upload is temporarily disabled. Please try again later": [
         "La carga de fotos está temporalmente desactivada. Inténtalo de nuevo más tarde."
-      ],
-      "Please enter a valid postal code": [
-        "Por favor, introduzca un código postal válido"
-      ],
-      "Please enter a valid ZIP code": [
-        "Introduce un código postal válido"
-      ],
-      "Please enter postal code": [
-        "Por favor, introduzca el código postal"
-      ],
-      "Please enter ZIP code": [
-        "Por favor, introduzca el código postal"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Arregla el conflicto resaltado para continuar.",
@@ -3250,26 +2983,14 @@
       "Please select a state": [
         "Selecciona un estado"
       ],
-      "Please select billing country": [
-        "Por favor, selecciona el país de facturación"
-      ],
-      "Please select billing state": [
-        "Selecciona el estado de facturación"
-      ],
       "Port is required": [
         "Puerto requerido"
-      ],
-      "Postal code is required": [
-        "El código postal es requerido"
       ],
       "Primary address key is not decrypted": [
         "La clave principal no está descifrada."
       ],
       "Primary address key is not decrypted.": [
         "La clave principal no está descifrada."
-      ],
-      "Process aborted": [
-        "Proceso anulado"
       ],
       "Removed duplicate invitee: ${ joinedInvitee }": [
         "Invitado duplicado eliminado: ${ joinedInvitee }",
@@ -3314,14 +3035,8 @@
       "status page": [
         "página de estado"
       ],
-      "Tab closed": [
-        "Pestaña cerrada"
-      ],
       "The address might be misspelled": [
         "La dirección podría estar mal escrita."
-      ],
-      "The amount due has changed. Please try again.": [
-        "El importe a pagar ha cambiado. Inténtalo de nuevo."
       ],
       "The document you are trying to convert is too large. This may occur if the document has a large number of images or other media. Please try again with a smaller document.": [
         "El documento que intentas convertir es demasiado grande. Esto puede ocurrir si el documento tiene muchas imágenes u otra multimedia. Intenta de nuevo con un documento más pequeño."
@@ -3349,9 +3064,6 @@
       ],
       "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
         "La última actualización realizada al documento es demasiado grande o excede el tamaño límite del documento. Se ha desactivado temporalmente la edición. Tus cambios no se guardarán. Exporta una copia de tu documento y recarga la página."
-      ],
-      "The minimum amount of credit that can be added is ${ price }": [
-        "La cantidad mínima de crédito que puede añadirse es de ${ price }"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "La nueva revisión del archivo original aún no se ha cargado. Inténtalo de nuevo más tarde."
@@ -3410,9 +3122,6 @@
       "Unknown error": [
         "Error desconocido"
       ],
-      "Unknown payment token status": [
-        "Estado del token de pago desconocido"
-      ],
       "Update Too Large": [
         "La actualización es demasiado grande."
       ],
@@ -3446,9 +3155,6 @@
       ],
       "Your import will not be processed.": [
         "No se procesará tu importación."
-      ],
-      "ZIP code is required": [
-        "Se requiere el código postal."
       ]
     },
     "error": {
@@ -3813,6 +3519,12 @@
       ]
     },
     "Feature": {
+      "Encrypted cloud storage for files, photos and documents": [
+        "Almacenamiento en la nube cifrado de archivos, fotos y documentos"
+      ],
+      "More premium features": [
+        "Más características prémium"
+      ],
       "Unlimited hide-my-email aliases": [
         "Alias hide-my-email ilimitados"
       ]
@@ -4346,17 +4058,11 @@
         "${ groupCounts } grupo encontrado",
         "${ groupCounts } grupos encontrados"
       ],
-      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
-        "${ LUMO_APP_NAME } incluye el asistente de escritura ${ BRAND_NAME } Scribe."
-      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "La oferta de por vida de ${ PASS_SHORT_APP_NAME } Plus no tiene precio de renovación. Es un pago único por el acceso de por vida a ${ PASS_SHORT_APP_NAME }."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "La oferta de por vida de ${ PASS_SHORT_APP_NAME } no tiene precio de renovación. Es un pago único para acceso de por vida a ${ PASS_SHORT_APP_NAME }. El precio y la fecha de renovación de tu suscripción ${ planTitle } se mantienen sin cambios."
-      ],
-      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
-        "${ plan.Title } requiere al menos 1 servidor dedicado ${ serverPricePerMonth }"
       ],
       "${ planName } expires in ${ daysLeft } day.": [
         "${ planName } expira en ${ daysLeft } día.",
@@ -4364,9 +4070,6 @@
       ],
       "${ planName } expires today.": [
         "${ planName } expira hoy."
-      ],
-      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
-        "${ PROTON_SENTINEL_NAME } protege tu cuenta con monitoreo dedicado de actividades sospechosas."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } carpeta encontrada",
@@ -4396,9 +4099,6 @@
         "${ selectedFoldersCountLocalized } etiqueta seleccionada",
         "${ selectedFoldersCountLocalized } etiquetas seleccionadas"
       ],
-      "${ storage } storage": [
-        "${ storage } de almacenamiento"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contacto actualizado.",
         "${ updated } contactos actualizados."
@@ -4412,9 +4112,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } miembro)",
         "(${ memberCount } miembros)"
-      ],
-      "(${ serverPrice }/month)": [
-        "(${ serverPrice }/mes)"
       ],
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**Conexión automática**: Inicia y conéctate a la VPN en cuanto enciendas tu dispositivo."
@@ -4444,9 +4141,6 @@
         "+${ organization.BonusVPN } conexión para ${ VPN_APP_NAME } (te permite conectar más dispositivos a la VPN)",
         "+${ organization.BonusVPN } conexiones para ${ VPN_APP_NAME } (te permite conectar más dispositivos a la VPN)"
       ],
-      "30-day money-back guarantee.": [
-        "Garantía de reembolso de 30 días."
-      ],
       "A number will be added to the filename": [
         "Se añadirá un número al nombre del archivo."
       ],
@@ -4458,9 +4152,6 @@
       ],
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "Una conexión segura es esencial al trabajar remotamente. Una VPN protege los datos de la empresa de amenazas cibernéticas y mantiene tu trabajo privado."
-      ],
-      "A user is an account associated with a single username, mailbox, and person": [
-        "Un usuario es una cuenta asociada a un único nombre de usuario, bandeja de entrada y persona"
       ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
         "Una VPN cifra tu conexión y oculta tu dirección IP, lo que hace que sea mucho más difícil para cualquiera rastrear o monitorear tu navegación."
@@ -4477,23 +4168,14 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "El acceso a la cuenta ha sido restringido debido a facturas impagadas. Contacta con tu administrador."
       ],
-      "Account successfully updated": [
-        "Cuenta actualizada"
-      ],
       "Ad targeting": [
         "Orientación de anuncios"
-      ],
-      "Address copied to clipboard": [
-        "Se ha copiado la dirección al portapapeles."
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La verificación de dirección con claves de confianza está activada para esta dirección. Para poder enviar a esta dirección, primero verifica las claves públicas que se pueden utilizar para enviar."
       ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Los anunciantes rastrean tu navegación para mostrar anuncios específicos. ${ VPN_APP_NAME } bloquea rastreadores y anuncios, lo que hace que tu conexión sea más rápida y mejora tu experiencia en línea."
-      ],
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Asistente con tecnología de IA para ayudarte a crear mejores correos electrónicos de manera rápida y sin esfuerzo."
       ],
       "All (${ totalFoldersCount } folder)": [
         "Todo (${ totalFoldersCount } carpeta)",
@@ -4506,15 +4188,6 @@
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Todos tus contactos serán importados hasta un límite de ${ MAX_CONTACTS_PER_USER }.",
         "Todos tus contactos serán importados hasta un límite de ${ MAX_CONTACTS_PER_USER }."
-      ],
-      "American Express SafeKey logo": [
-        "Logo de American Express SafeKey"
-      ],
-      "Amount above maximum (${ amount }).": [
-        "Importe superior al máximo (${ amount })."
-      ],
-      "Amount below minimum (${ amount }).": [
-        "Cantidad por debajo del mínimo (${ amount })."
       ],
       "an anonymous user": [
         "un usuario anónimo"
@@ -4549,17 +4222,8 @@
       "Attention required": [
         "Atención requerida"
       ],
-      "Awaiting transaction": [
-        "Esperando la transacción"
-      ],
-      "Balance from your previous subscription": [
-        "Saldo de tu suscripción anterior"
-      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de solicitar un nuevo código de verificación, verifica tu carpeta de spam y verifica que ${ strong } la dirección es correcta."
-      ],
-      "Billing cycle: ${ text }": [
-        "Ciclo de facturación: ${ text }"
       ],
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
         "Trae tus mensajes, contactos y calendarios a ${ BRAND_NAME }."
@@ -4588,6 +4252,9 @@
       "Checking signatures": [
         "Verificando firmas"
       ],
+      "Choose a plan that works best for you.": [
+        "Elige el plan que mejor se adapte a ti."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Haz clic en \"Solicitar nuevo código\" para enviarte un nuevo código de verificación a ${ strong }. Si esta dirección de correo electrónico es incorrecta, haz clic en \"Editar\" para corregirla."
       ],
@@ -4602,6 +4269,9 @@
       ],
       "Contact unassigned from group ${ contactGroupName }": [
         "Se ha eliminado el contacto del grupo ${ contactGroupName }."
+      ],
+      "Continue": [
+        "Continuar"
       ],
       "Converting document...": [
         "Convirtiendo el documento..."
@@ -4631,10 +4301,6 @@
       "Create a new contact group": [
         "Crear un grupo de contactos"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Crear una nube segura para ${ value } miembro",
-        "Crear una nube segura para ${ value } miembros"
-      ],
       "Create an end-to-end encrypted document.": [
         "Crea un documento cifrado de extremo a extremo."
       ],
@@ -4656,41 +4322,17 @@
       "Creating new document...": [
         "Creando el documento..."
       ],
-      "Credit for the unused portion of your previous plan subscription": [
-        "Crédito por la parte no utilizada de tu suscripción al plan anterior"
-      ],
       "Current plan": [
         "Plan actual"
       ],
       "Current version": [
         "Versión actual"
       ],
-      "Custom email domains": [
-        "Dominios de correo personalizados"
-      ],
-      "Dedicated servers": [
-        "Servidores dedicados"
-      ],
-      "Dedicated VPN servers": [
-        "Servidores VPN dedicados"
-      ],
-      "default email address": [
-        "dirección de correo electrónico por defecto"
-      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Firma digital verificada. Se ha cargado este archivo de forma segura por ${ emailAddress }."
       ],
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Firma digital verificada. Se ha cargado esta carpeta de forma segura por ${ emailAddress }."
-      ],
-      "Discover new features unlocked and start using them right away!": [
-        "Descubre las nuevas funciones desbloqueadas y empieza a usarlas de inmediato."
-      ],
-      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
-        "Descubre las nuevas funciones desbloqueadas con ${ planTitle } y empieza a usarlas de inmediato."
-      ],
-      "Discover ProtectBuy logo": [
-        "Logo de Discover ProtectBuy"
       ],
       "Display word count": [
         "Mostrar el conteo de palabras"
@@ -4703,9 +4345,6 @@
       ],
       "Document owner has the password": [
         "El propietario del documento tiene la contraseña."
-      ],
-      "Don’t see anything? Remember to turn off pop-up blockers.": [
-        "¿No aparece nada? No olvides desactivar los bloqueadores de ventanas emergentes."
       ],
       "Downgrade": [
         "Pasar a un plan inferior"
@@ -4721,9 +4360,6 @@
       ],
       "Download was canceled": [
         "Se ha cancelado la descarga."
-      ],
-      "Download your favorite app today and take privacy with you everywhere you go.": [
-        "Descarga hoy tu aplicación favorita y lleva la privacidad contigo donde quieras que vayas."
       ],
       "Drop file here to upload": [
         "Suelta tus archivos aquí para cargarlos"
@@ -4743,17 +4379,8 @@
       "email": [
         "correo electrónico"
       ],
-      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
-        "El alojamiento de correo electrónico solo está disponible para dominios que posees. El registro de dominios no está disponible a través de ${ BRAND_NAME }. Puedes alojar correos electrónicos para dominios registrados en cualquier registrador de dominios."
-      ],
       "Emails are automatically signed": [
         "Los correos electrónicos son firmados automáticamente."
-      ],
-      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
-        "Los correos electrónicos movidos a las carpetas Papelera y Spam hace más de 30 días se eliminarán automáticamente."
-      ],
-      "Enabling auto-deletion…": [
-        "Activando la eliminación automática…"
       ],
       "End-to-end encrypted": [
         "Cifrado de extremo a extremo"
@@ -4799,9 +4426,6 @@
       ],
       "Everything in ${ planOrAppName }": [
         "Todo en ${ planOrAppName }"
-      ],
-      "Expired": [
-        "Expirado"
       ],
       "Failed to generate a secure link. The reason is: ${ error }": [
         "Error al generar un enlace seguro. Motivo: ${ error }"
@@ -4912,9 +4536,6 @@
       "In restrictive countries": [
         "En países con restricciones"
       ],
-      "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
-        "En el siguiente paso, podrás enviar un depósito con una dirección Bitcoin."
-      ],
       "Inherited from parent folder": [
         "Heredado de la carpeta principal"
       ],
@@ -4938,9 +4559,6 @@
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Es mejor usar una VPN en todo momento. Pero estos son los casos en que las amenazas de ciberseguridad pueden ser mayores:"
-      ],
-      "JCB logo": [
-        "Logo de JCB"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Solo tienes que confirmar tu selección y nosotros haremos el resto."
@@ -5005,9 +4623,6 @@
       "Making a copy...": [
         "Haciendo una copia..."
       ],
-      "Mastercard SecureCode logo": [
-        "Logo de Mastercard SecureCode"
-      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Máximo ${ MAX_SHARED_URL_PASSWORD_LENGTH } carácter",
         "Máximo ${ MAX_SHARED_URL_PASSWORD_LENGTH } caracteres"
@@ -5023,9 +4638,6 @@
       ],
       "Merged": [
         "Combinado"
-      ],
-      "Messages to all your email addresses will go to your inbox.": [
-        "Los mensajes de todas tus direcciones de correo electrónico se enviarán a tu bandeja de entrada."
       ],
       "Monitor accounts": [
         "Monitoreo de cuentas"
@@ -5051,9 +4663,6 @@
       "No group found": [
         "No se ha encontrado ningún grupo."
       ],
-      "No payment is required at this time.": [
-        "En este momento no se requiere ningún pago."
-      ],
       "No recent documents match your search.": [
         "No hay documentos recientes que coincidan con tu búsqueda."
       ],
@@ -5071,12 +4680,6 @@
       ],
       "Not connected": [
         "No conectado"
-      ],
-      "Number of dedicated servers in the organization": [
-        "Número de servidores dedicados en la organización"
-      ],
-      "Number of dedicated VPN servers in the organization": [
-        "Número de servidores VPN dedicados en la organización"
       ],
       "Numbers": [
         "Números"
@@ -5105,12 +4708,6 @@
       "Opening...": [
         "Abriendo..."
       ],
-      "or discover other features:": [
-        "o descubre otras funciones:"
-      ],
-      "Organization size": [
-        "Tamaño de la organización"
-      ],
       "Other accounts": [
         "Otras cuentas"
       ],
@@ -5129,9 +4726,6 @@
       "Password must have:": [
         "La contraseña debe tener:"
       ],
-      "Payments are protected with TLS encryption and Swiss privacy laws.": [
-        "Los pagos están protegidos con cifrado TLS y por las leyes de privacidad suizas."
-      ],
       "Pending invitations": [
         "Invitaciones pendientes"
       ],
@@ -5144,20 +4738,11 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "El formato PGP/MIME automáticamente envía el mensaje usando el modo de composición actual."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Autentica tu tarjeta en la pestaña de verificación."
-      ],
-      "Please authenticate your payment in the verification tab.": [
-        "Autentica tu pago en la pestaña de verificación."
-      ],
       "Please enter the password to decrypt and view content.": [
         "Introduce la contraseña para descifrar y visualizar el contenido."
       ],
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "Exporta una copia de los cambios actuales desde el menú principal y vuelve a cargar la página."
-      ],
-      "Please fill in all required fields.": [
-        "Rellena todos los campos obligatorios."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Ten en cuenta que las direcciones asignadas a estos grupos NO se eliminarán."
@@ -5184,12 +4769,6 @@
       "Please try again in a few moments": [
         "Vuelve a intentarlo en un momento."
       ],
-      "Please try again using a different payment method, or contact your bank.": [
-        "Inténtalo de nuevo con otro método de pago o ponte en contacto con tu banco."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Inténtalo de nuevo. Utiliza un método de pago diferente o ponte en contacto con PayPal para obtener ayuda."
-      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Espera mientras buscamos contactos que puedan volver a firmarse con la clave de cifrado principal."
       ],
@@ -5201,9 +4780,6 @@
       ],
       "Preparing link to folder": [
         "Preparando enlace a la carpeta"
-      ],
-      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
-        "El precio incluye todos los descuentos aplicables según el ciclo de facturación y cupones sin expirar guardados en tu cuenta."
       ],
       "Primary": [
         "Principal"
@@ -5228,9 +4804,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualiza la página o ${ link } para resolver automáticamente la mayoría de los problemas."
-      ],
-      "Registering your subscription…": [
-        "Registrando tu suscripción…"
       ],
       "Restored version to": [
         "La versión está restaurada a"
@@ -5259,9 +4832,6 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selecciona los calendarios que quieres importar. Se creará un calendario para cada calendario importado de acuerdo con el número de calendarios disponibles en tu plan."
       ],
-      "SEPA payments are not available at the moment. Please try again later.": [
-        "Los pagos SEPA no están disponibles en este momento. Intenta de nuevo más tarde."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "No se puede acceder a los servidores. Inténtalo de nuevo en unos minutos."
       ],
@@ -5271,14 +4841,8 @@
       "Set up your organization": [
         "Configura tu organización"
       ],
-      "Setting up ${ feature }…": [
-        "Configurando ${ feature }…"
-      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "La configuración de PGP te permite enviar correos electrónicos cifrados de extremo a extremo con un usuario que no sea ${ BRAND_NAME } y que utilice un servicio compatible con PGP."
-      ],
-      "Setting up your new address…": [
-        "Configurando tu nueva dirección…"
       ],
       "Settings update failed": [
         "Error al actualizar los ajustes"
@@ -5316,14 +4880,8 @@
       "Something went wrong": [
         "Ha ocurrido un error."
       ],
-      "Start sharing it with contacts and use it for online services.": [
-        "Comienza a compartirla con tus contactos y úsala para servicios en línea."
-      ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Mantente en línea sin ningún esfuerzo al activar los siguientes ajustes VPN:"
-      ],
-      "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
-        "Envía un depósito usando la siguiente dirección o escanea el código QR. Tu depósito aparecerá en tu cuenta después de la confirmación."
       ],
       "Subscription auto-renews every ${ cycle } month.": [
         "La suscripción se renueva automáticamente cada ${ cycle } mes.",
@@ -5349,9 +4907,6 @@
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporalmente no disponible. Intenta comprobarlo más tarde."
-      ],
-      "Thank you for subscribing. Secure browsing starts now.": [
-        "Gracias por suscribirte. La navegación segura comienza ahora."
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "La cuenta puede tener una nueva clave o es posible que se haya manipulado los siguientes elementos: ${ items }. Ábrelos solo si son de confianza."
@@ -5380,9 +4935,6 @@
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
         "La URL introducida parece haber sido copiada de Slack incorrectamente. Al copiar enlaces largos de Slack, haz clic derecho en el enlace, luego selecciona «Copiar el enlace» en lugar de copiar directamente el texto de URL truncado."
       ],
-      "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
-        "El proceso de verificación abrirá una nueva pestaña en el navegador. Desactiva cualquier bloqueador de ventanas emergentes activo."
-      ],
       "There are no documents in the trash.": [
         "No hay documentos en la papelera."
       ],
@@ -5403,9 +4955,6 @@
       ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Este es un nombre o un apodo para tu organización que verán tus usuarios. Puedes cambiarlo cuando quieras."
-      ],
-      "This is now your ${ defaultEmailAddress } for sending new messages.": [
-        "Esta es ahora tu ${ defaultEmailAddress } para enviar mensajes nuevos."
       ],
       "This item already exists in your library": [
         "Este elemento ya existe en tu librería."
@@ -5452,9 +5001,6 @@
       "This will upload a new version of the folder": [
         "Esto cargará una nueva versión de la carpeta."
       ],
-      "To complete your payment, please send ${ btcAmountBold } to the address below.": [
-        "Para completar tu pago, envía ${ btcAmountBold } a la dirección de abajo."
-      ],
       "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
         "Para descargar los archivos de ${ DOCS_APP_NAME }, ábrelos en ${ DOCS_APP_NAME } y expórtalos."
       ],
@@ -5472,18 +5018,6 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Para utilizar la verificación de dirección, debes confiar en una o más de las claves públicas disponibles, incluyendo la clave que quieres utilizar para enviar. Esto impedirá que las claves de cifrado sean falsificadas."
-      ],
-      "Total email addresses": [
-        "Direcciones de correo electrónico totales"
-      ],
-      "Total storage": [
-        "Almacenamiento total"
-      ],
-      "Total supported domains": [
-        "Total de dominios compatibles"
-      ],
-      "Total VPN connections": [
-        "Conexiones VPN totales"
       ],
       "Tracking": [
         "Rastreadores"
@@ -5518,6 +5052,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Pasa a un plan superior ahora para obtener funciones premium, productos y almacenamiento a un precio especial."
       ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "Mejora para mantener tus beneficios de ${ planTitle }."
+      ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Cargar cientos de archivos a la vez puede reducir el rendimiento."
       ],
@@ -5530,23 +5067,11 @@
       "username": [
         "nombre de usuario"
       ],
-      "Users": [
-        "Usuarios"
-      ],
-      "Verification may take a few minutes.": [
-        "La verificación puede tardar unos minutos."
-      ],
-      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "La verificación abrirá una nueva pestaña, desactiva cualquier bloqueador de ventanas emergentes. No se te cobrará este proceso. Cualquier monto utilizado para verificar la tarjeta te será reembolsado inmediatamente."
-      ],
       "Version number successfully copied to clipboard": [
         "El número de versión fue copiado en el portapapeles."
       ],
       "View only": [
         "Solo lectura"
-      ],
-      "Visa Secure logo": [
-        "Logo de Visa Secure"
       ],
       "VPN IP": [
         "IP de VPN"
@@ -5554,26 +5079,11 @@
       "Warning": [
         "Advertencia"
       ],
-      "We couldn’t process your payment.": [
-        "No hemos podido procesar tu pago."
-      ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "No se ha podido verificar que ${ emailAddress } haya cargado ${ fileName }."
       ],
       "We couldn’t verify who uploaded ${ fileName }.": [
         "No se ha podido verificar quién ha cargado ${ fileName }."
-      ],
-      "We need to authenticate your payment method with your bank.": [
-        "Necesitamos autenticar el método de pago con tu banco."
-      ],
-      "We need to authenticate your payment with your bank.": [
-        "Necesitamos autenticar el pago con tu banco."
-      ],
-      "We use 3-D Secure to protect your payments": [
-        "Se utiliza 3-D Secure para proteger tus pagos."
-      ],
-      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Te redirigiremos a PayPal en una nueva pestaña del navegador para completar esta transacción. Si utilizas cualquier bloqueador emergente, desactívalo para continuar."
       ],
       "We'll email you once import is complete.": [
         "Te enviaremos un correo electrónico cuando la importación se complete."
@@ -5644,9 +5154,6 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "También puedes combinar calendarios importados con calendarios ${ BRAND_NAME } existentes."
       ],
-      "You can change this anytime in ${ settingsLink }.": [
-        "Puedes cambiarlo en cualquier momento en ${ settingsLink }."
-      ],
       "You can check the progress ${ importProgressLink }.": [
         "Puedes comprobar el progreso ${ importProgressLink }."
       ],
@@ -5676,18 +5183,6 @@
       "You don't have access": [
         "No tienes acceso"
       ],
-      "You get notified if your password or other data was leaked from a third-party service.": [
-        "Recibe notificaciones si tu contraseña u otro dato fue filtrado desde un servicio de terceros."
-      ],
-      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
-        "Tiene una suscripción de prueba ${ planTitle }. Si deseas continuar tu suscripción después del periodo de prueba, añade un método de pago."
-      ],
-      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
-        "Tiene una suscripción de prueba ${ planTitle }. No se requiere un pago en este momento. Tu suscripción será renovada automáticamente al finalizar el periodo de prueba."
-      ],
-      "You may be redirected to your bank’s website.": [
-        "Puedes ser redirigido al sitio web de tu banco."
-      ],
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "Puede que no tengas los premisos necesarios para verlo en la cuenta seleccionada. Intenta con otra cuenta o contacta al propietario para obtener acceso."
       ],
@@ -5699,9 +5194,6 @@
       ],
       "You will lose all unsaved changes.": [
         "Perderás todos los cambios no guardados."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Pronto serás redirigido a PayPal para verificar tu pago."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "No se te cobrará si cancelas antes del ${ trialEndsOnFormatted }."
@@ -5833,19 +5325,8 @@
       ]
     },
     "info": {
-      "Optional": [
-        "Opcional"
-      ],
       "Selected color:": [
         "Color seleccionado:"
-      ]
-    },
-    "Info for cash payment method": {
-      "How to send a cash payment?": [
-        "¿Cómo enviar un pago en efectivo?"
-      ],
-      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
-        "Encuentra las instrucciones en el artículo: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -5924,15 +5405,8 @@
       "${ BRAND_NAME } username": [
         "Nombre de usuario de ${ BRAND_NAME }"
       ],
-      "${ n } month": [
-        "${ n } mes",
-        "${ n } meses"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalmente. Vuelve a comprobarlo más tarde.)"
-      ],
-      "Account holder": [
-        "Titular de la cuenta"
       ],
       "Add email address": [
         "Añadir correo electrónico"
@@ -5943,14 +5417,8 @@
       "Add to group": [
         "Añadir al grupo"
       ],
-      "Address": [
-        "Dirección"
-      ],
       "Alias title": [
         "Título del alias"
-      ],
-      "Anderson": [
-        "García"
       ],
       "Anyone on the Internet with the link can edit": [
         "Cualquiera en Internet que tenga el enlace puede editar."
@@ -5982,20 +5450,11 @@
       "Beta Access": [
         "Acceso beta"
       ],
-      "Billing cycle": [
-        "Ciclo de facturación"
-      ],
       "Browser": [
         "Navegador"
       ],
       "Browser version": [
         "Versión del navegador"
-      ],
-      "BTC address": [
-        "Dirección BTC"
-      ],
-      "BTC amount": [
-        "Importe en BTC"
       ],
       "Calendar": [
         "Calendario"
@@ -6005,18 +5464,6 @@
       ],
       "Cancel download": [
         "Cancelar descarga"
-      ],
-      "Card details": [
-        "Detalles de la tarjeta"
-      ],
-      "Card holder": [
-        "Titular de la tarjeta"
-      ],
-      "Card number": [
-        "Número de tarjeta"
-      ],
-      "Cash": [
-        "Efectivo"
       ],
       "Category": [
         "Categoría"
@@ -6029,12 +5476,6 @@
       ],
       "Colors": [
         "Colores"
-      ],
-      "Company": [
-        "Empresa"
-      ],
-      "Company name": [
-        "Nombre de la empresa"
       ],
       "Confirm password": [
         "Confirmar contraseña"
@@ -6056,9 +5497,6 @@
       ],
       "Country": [
         "País"
-      ],
-      "Credits": [
-        "Créditos"
       ],
       "Delete": [
         "Eliminar"
@@ -6120,17 +5558,11 @@
       "Erase this link and remove everyone with access": [
         "Eliminar este enlace y quitar a todos con acceso"
       ],
-      "Expires": [
-        "Expira"
-      ],
       "Extended address": [
         "Dirección extendida"
       ],
       "File": [
         "Archivo"
-      ],
-      "First name": [
-        "Nombre"
       ],
       "Folder location": [
         "Ubicación de la carpeta"
@@ -6149,9 +5581,6 @@
       ],
       "I understand the risk": [
         "Entiendo el riesgo."
-      ],
-      "IBAN": [
-        "IBAN"
       ],
       "Ignore": [
         "Ignorar"
@@ -6200,9 +5629,6 @@
       ],
       "Last month only": [
         "Solo el último mes"
-      ],
-      "Last name": [
-        "Apellido"
       ],
       "Log in or sign up ": [
         "Iniciar sesión o registrarte "
@@ -6264,15 +5690,6 @@
       "Password strength": [
         "Nivel de seguridad de la contraseña"
       ],
-      "Payer": [
-        "Emisor del pago"
-      ],
-      "Payment details": [
-        "Detalles del pago"
-      ],
-      "Payment method": [
-        "Método de pago"
-      ],
       "PGP scheme": [
         "Esquema PGP"
       ],
@@ -6287,9 +5704,6 @@
       ],
       "Postal code": [
         "Código postal"
-      ],
-      "Proration": [
-        "Prorrateo"
       ],
       "Public keys": [
         "Claves públicas"
@@ -6312,9 +5726,6 @@
       "Reveal password": [
         "Mostrar contraseña"
       ],
-      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
-        "Route de la Galaise 32, 1228 Plan-les-Ouates, Ginebra"
-      ],
       "Set expiration date": [
         "Establecer fecha de expiración"
       ],
@@ -6333,12 +5744,6 @@
       "Skip folder": [
         "Omitir carpeta"
       ],
-      "Start date": [
-        "Fecha de inicio"
-      ],
-      "State": [
-        "Estado"
-      ],
       "Stop sharing": [
         "Dejar de compartir"
       ],
@@ -6351,9 +5756,6 @@
       "Strong password": [
         "Contraseña segura"
       ],
-      "Subscription options": [
-        "Opciones de suscripción"
-      ],
       "Sync with system": [
         "Sincronizar con el sistema"
       ],
@@ -6362,9 +5764,6 @@
       ],
       "Theme": [
         "Tema"
-      ],
-      "Thomas": [
-        "Andrea"
       ],
       "To: ${ toEmail }": [
         "Para: ${ toEmail }"
@@ -6419,9 +5818,6 @@
       ],
       "Your password (trusted contact)": [
         "Tu contraseña (contacto de confianza)"
-      ],
-      "ZIP code": [
-        "Código postal"
       ]
     },
     "Label for contact group color": {
@@ -6432,14 +5828,6 @@
     "Label for contact group name": {
       "Name": [
         "Nombre"
-      ]
-    },
-    "Label, credit card": {
-      "Postal code": [
-        "Código postal"
-      ],
-      "ZIP code": [
-        "Código postal"
       ]
     },
     "Label/folder modal": {
@@ -6481,9 +5869,6 @@
       ]
     },
     "Link": {
-      "Add a gift code": [
-        "Añadir código promocional"
-      ],
       "clearing your browser cache": [
         "limpiando la memoria caché de tu navegador"
       ],
@@ -6504,9 +5889,6 @@
       ],
       "How to migrate to ${ BRAND_NAME }": [
         "Cómo migrar a ${ BRAND_NAME }"
-      ],
-      "How to pay with Bitcoin?": [
-        "¿Cómo pagar con Bitcoin?"
       ],
       "How to set up ${ VPN_APP_NAME }": [
         "Cómo configurar ${ VPN_APP_NAME }"
@@ -6552,9 +5934,6 @@
       ],
       "Resume now": [
         "Reanudar ahora"
-      ],
-      "settings": [
-        "ajustes"
       ],
       "Types of recovery methods": [
         "Tipos de métodos de recuperación"
@@ -6648,17 +6027,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistente de escritura ${ BRAND_NAME } Scribe"
       ],
-      "Add ${ BRAND_NAME } Scribe writing assistant": [
-        "Añadir el asistente de escritura ${ BRAND_NAME } Scribe"
-      ],
       "Add-on with free trial": [
         "Complemento con prueba gratuita"
-      ],
-      "for ${ price }": [
-        "para ${ price }"
       ]
     },
     "Message": {
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "Tu periodo de prueba gratuita ha terminado. ${ nonAutoRenewalAction }"
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Tu periodo de prueba gratuito ha terminado. El acceso a tu cuenta será desactivado pronto. ${ action }"
       ]
@@ -7477,9 +6853,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } que termina con ${ last4 }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB de almacenamiento en la nube que te permite almacenar, sincronizar y compartir archivos fácilmente. Asegurado por cifrado de extremo a extremo."
       ],
@@ -7582,12 +6955,6 @@
       ],
       "Downgrade account?": [
         "¿Pasar a un plan con menos funciones?"
-      ],
-      "Review subscription": [
-        "Revisar la suscripción"
-      ],
-      "Review subscription and pay": [
-        "Verificar suscripción y pagar"
       ],
       "Switch plans?": [
         "¿Cambiar de plan?"
@@ -8355,11 +7722,6 @@
         "Inicios de sesión ilimitados, notas, tarjetas de crédito y más"
       ]
     },
-    "pass_signup_2023: Title": {
-      "${ upsellPlanTitle } plan": [
-        "Plan ${ upsellPlanTitle }"
-      ]
-    },
     "pass_signup_2024: Info": {
       "${ n } user account": [
         "${ n } cuenta de usuario",
@@ -8427,82 +7789,15 @@
         "Necesitas acceso a la clave de la organización para realizar esta acción."
       ]
     },
-    "Payment method option": {
-      "Apple Pay": [
-        "Apple Pay"
-      ],
-      "Bank transfer": [
-        "Transferencia bancaria"
-      ],
-      "Credit/debit card": [
-        "Tarjeta de crédito/débito"
-      ],
-      "New credit/debit card": [
-        "Nueva tarjeta de crédito/débito"
-      ]
-    },
-    "Payment.Sepa.Action": {
-      "Use company name": [
-        "Usar el nombre de la empresa"
-      ],
-      "Use personal name": [
-        "Usar el nombre de la persona"
-      ]
-    },
     "Payments": {
       "Amount due after trial on ${ formattedDate }": [
         "Cantidad a pagar después de la prueba el ${ formattedDate }"
-      ],
-      "Billing Country": [
-        "País de facturación"
-      ],
-      "Card number": [
-        "Número de tarjeta"
-      ],
-      "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
-        "Actualmente la renovación automática de la suscripción está desactivada. Si deseas cambiar la suscripción ahora, la renovación automática volverá a activarse."
-      ],
-      "CVC": [
-        "CVC"
-      ],
-      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
-        "Durante este tiempo no podrás modificar o cancelar tu suscripción. Espera hasta que tu pago se complete antes de intentar cualquier cambio. Gracias por tu paciencia."
-      ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Excluyendo ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Excluyendo el ${ taxRate }% de impuestos: ${ taxAmount }"
-      ],
-      "Got it": [
-        "Entiendo"
-      ],
-      "I'm purchasing as a business": [
-        "Estoy comprando como empresa"
-      ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Incluyendo ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "Incluyendo el ${ taxRate }% de impuestos: ${ taxAmount }"
-      ],
-      "MM/YY": [
-        "MM/AA"
-      ],
-      "More plans are available in other currencies": [
-        "Hay más planes disponibles en otras divisas."
-      ],
-      "Please reactivate your subscription first to decrease the number of add-ons.": [
-        "Reactiva primero la suscripción para disminuir la cantidad de complementos."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Precio de renovación sujeta a cambios de acuerdo a ${ termsAndConditionsLink }"
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Se renueva por ${ renewPriceStr } y cancela cuando quieras."
-      ],
-      "Taxes": [
-        "Impuestos"
       ],
       "terms and conditions": [
         "términos y condiciones"
@@ -8525,117 +7820,6 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Después se renovará automáticamente a ${ renewPriceStr } por ${ renewalLength } mes. Puedes cancelar en cualquier momento.",
         "Después se renovará automáticamente a ${ renewPriceStr } por ${ renewalLength } meses. Puedes cancelar en cualquier momento."
-      ],
-      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
-        "Esta acción amplía la suscripción existente. Se te cobrará solo por los nuevos complementos y el tiempo restante del ciclo de facturación actual. La fecha de renovación de tu suscripción no cambiará."
-      ],
-      "This number will be shown on all future invoices": [
-        "Este número se mostrará en todas las futuras facturas"
-      ],
-      "This payment method will become your new default for all future renewals.": [
-        "Este se convertirá en tu nuevo método de pago por defecto para todas las futuras renovaciones."
-      ],
-      "Timeout exceeded": [
-        "Se ha agotado el tiempo de espera."
-      ],
-      "VAT": [
-        "IVA"
-      ],
-      "VAT number": [
-        "Número de IVA"
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "Tu moneda ha sido cambiada a euros (€) porque las transferencias bancarias SEPA solo soportan pagos en euros."
-      ],
-      "Your payment is still being processed": [
-        "Tu pago aún está siendo procesado."
-      ]
-    },
-    "Payments.Error": {
-      "Invalid card number": [
-        "El número de tarjeta ingresado no es válido."
-      ],
-      "Invalid expiration date": [
-        "La fecha de expiración no es válida."
-      ],
-      "Invalid security code": [
-        "El código de seguridad no es válido."
-      ],
-      "Something went wrong. Please try again later.": [
-        "Se ha producido un error. Inténtalo de nuevo más tarde."
-      ],
-      "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
-        "No podemos autenticar tu método de pago. Elige un método de pago diferente o intenta de nuevo."
-      ],
-      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
-        "Tu tarjeta ha sido rechazada. Prueba con una tarjeta diferente o contacta con tu banco para autorizar el cargo."
-      ]
-    },
-    "Payments.info": {
-      "Credit for the unused portion of your previous plan subscription": [
-        "Crédito por la parte no utilizada de tu suscripción al plan anterior"
-      ],
-      "Credits will be added to your balance": [
-        "Se añadirán créditos a tu saldo."
-      ]
-    },
-    "Payments.plan_name": {
-      "Free": [
-        "Gratuito"
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - tarjeta terminada en ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Transferencia bancaria - ${ details }"
-      ]
-    },
-    "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Al confirmar este pago, autorizas a ${ BRAND_NAME } y a Stripe, nuestro proveedor de servicios de pago, a dar instrucciones a tu banco para que realice el cargo en tu cuenta. Puedes obtener un reembolso en un plazo de 8 semanas a partir de la fecha del cargo, según las condiciones de tu acuerdo con tu banco."
-      ],
-      "Street address, postal code, and city": [
-        "Dirección, código postal y ciudad"
-      ]
-    },
-    "Payments.VAT number name": {
-      "ABN": [
-        "Número de empresa australiano (ABN)"
-      ],
-      "Add ABN": [
-        "Añadir ABN"
-      ],
-      "Add Business Number": [
-        "Añadir el número empresarial"
-      ],
-      "Add EIN": [
-        "Añadir EIN"
-      ],
-      "Add VAT number": [
-        "Añadir un número de IVA"
-      ],
-      "Business Number": [
-        "Número empresarial"
-      ],
-      "Edit ABN": [
-        "Editar ABN"
-      ],
-      "Edit Business Number": [
-        "Editar el número empresarial"
-      ],
-      "Edit EIN": [
-        "Editar EIN"
-      ],
-      "Edit VAT number": [
-        "Editar el número de IVA"
-      ],
-      "EIN": [
-        "Número de identificación fiscal (EIN)"
-      ],
-      "VAT number": [
-        "Número de IVA"
       ]
     },
     "PGP key encryption warning": {
@@ -8672,17 +7856,8 @@
       "A way to contact you": [
         "Una forma de contactarte"
       ],
-      "Anderson": [
-        "García"
-      ],
-      "Anytown": [
-        "Valclaro"
-      ],
       "Choose password": [
         "Elegir una contraseña"
-      ],
-      "Company name": [
-        "Nombre de la empresa"
       ],
       "E.g., ": [
         "P. ej., "
@@ -8699,9 +7874,6 @@
       "First name": [
         "Nombre"
       ],
-      "Gift code": [
-        "Código promocional"
-      ],
       "Group name": [
         "Nombre del grupo"
       ],
@@ -8710,9 +7882,6 @@
       ],
       "Last name": [
         "Apellido"
-      ],
-      "Main street 12": [
-        "Calle del Sol, 12"
       ],
       "Message": [
         "Mensaje"
@@ -8732,9 +7901,6 @@
       "Please describe the problem and include any error messages": [
         "Describe el problema e incluye cualquier mensaje de error."
       ],
-      "Postal code": [
-        "Código postal"
-      ],
       "Search for group name": [
         "Buscar por nombre de grupo"
       ],
@@ -8750,12 +7916,6 @@
       "Select a reason": [
         "Selecciona un motivo"
       ],
-      "Select country": [
-        "Seleccionar un país"
-      ],
-      "Select state": [
-        "Seleccionar el estado"
-      ],
       "Set date": [
         "Establecer una fecha"
       ],
@@ -8765,27 +7925,13 @@
       "Start typing an email address": [
         "Comienza a escribir una dirección de correo electrónico."
       ],
-      "Thomas": [
-        "Andrea"
-      ],
-      "VAT number": [
-        "Número de IVA"
-      ],
       "Your organization name": [
         "El nombre de tu organización"
-      ],
-      "ZIP code": [
-        "Código postal"
       ]
     },
     "Placeholder for contact group name": {
       "Name": [
         "Nombre"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "contactar"
       ]
     },
     "Plan description": {
@@ -8794,25 +7940,6 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Todas las funciones prémium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
-      ]
-    },
-    "plus_block": {
-      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
-        "Como suscriptor de **${ currentPlanTitle }**, puedes desbloquear **${ unlockPlanTitle }** y más servicios de ${ BRAND_NAME } al mejorar tu plan a **${ upsellPlanTitle }**."
-      ],
-      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
-        "Más servicios de ${ BRAND_NAME }.${ br }Una suscripción sencilla."
-      ],
-      "Stay on ${ currentPlanTitle }": [
-        "Permanecer en ${ currentPlanTitle }"
-      ],
-      "Upgrade to ${ upsellPlanTitle }": [
-        "Mejorar a ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Gratis"
       ]
     },
     "Progress bar description": {
@@ -9010,8 +8137,23 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } por cada referido"
       ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Si cancelas antes de esta fecha,** pasarás a un **plan inferior** a ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } cuando finalice la prueba."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Si no te suscribes,** pasarás a un **plan inferior** a ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Si no cancelas,** comenzará tu plan completo y recibirás **${ referrerRewardAmount }** en créditos."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Si te suscribes antes de esta fecha,** recibirás **${ referrerRewardAmount }** en créditos."
+      ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Gana hasta ${ maxRewardAmount } en crédito. Recibirás ${ referrerRewardAmount } cuando la persona que invites se suscriba a un plan de ${ BRAND_NAME }."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Disfruta de **${ planTitle }** gratis hasta el **${ textDate }**."
       ],
       "Friend joined": [
         "Un amigo se unió",
@@ -9027,8 +8169,14 @@
       "Invited friends": [
         "Invitar a amigos"
       ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Última oportunidad para explorar todas las potentes funciones que **${ planTitle }** tiene para ofrecerte."
+      ],
       "More sharing options": [
         "Más opciones para compartir"
+      ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "Una vez que tu suscripción completa comience, todavía puedes cancelar en un plazo de 30 días y obtener un reembolso proporcional."
       ],
       "Refer friends": [
         "Invitar a amigos"
@@ -9038,6 +8186,13 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Gana hasta **${ maxRewardAmount }** en crédito."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Te queda **${ daysRemaining } día** para explorar todas las ventajosas funciones que **${ planTitle }** tiene para ofrecerte.",
+        "Te quedan **${ daysRemaining } días** para explorar todas las ventajosas funciones que **${ planTitle }** tiene para ofrecerte."
+      ],
+      "your subscription": [
+        "tu suscripción"
       ]
     },
     "Safety review": {
@@ -9440,9 +8595,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "1 user": [
-        "1 usuario"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -9454,9 +8606,6 @@
       ],
       "High speed VPN": [
         "VPN de alta velocidad"
-      ],
-      "Highest VPN speed": [
-        "VPN de máxima velocidad"
       ],
       "Premium ${ appName1 }": [
         "${ appName1 } premium"
@@ -9472,9 +8621,6 @@
       ],
       "Secure cloud storage": [
         "Almacenamiento seguro en la nube"
-      ],
-      "Secure streaming": [
-        "Transmisiones seguras"
       ],
       "Support online privacy": [
         "Apoya la privacidad online"
@@ -9769,17 +8915,6 @@
         "Perderás acceso a notas e inicios de sesión ilimitados, alias ilimitados de hide-my-email y 20 bóvedas así como al soporte prioritario."
       ]
     },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Facturado cada 2 años"
-      ],
-      "Billed monthly": [
-        "Facturación mensual"
-      ],
-      "Billed yearly": [
-        "Facturación anual"
-      ]
-    },
     "Subscription attribute": {
       "${ n } free VPN connection per user": [
         "${ n } conexión VPN gratis por usuario",
@@ -9832,16 +8967,6 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "Pasarás a un plan inferior al finalizar el ciclo de facturación."
-      ]
-    },
-    "Subscription length": {
-      "Lifetime": [
-        "De por vida"
-      ]
-    },
-    "Subscription price": {
-      "For ${ totalPrice }": [
-        "Por ${ totalPrice }"
       ]
     },
     "subscription reminder": {
@@ -9907,37 +9032,6 @@
         "Soporte prioritario"
       ]
     },
-    "Subscription renewal state": {
-      "Are you sure?": [
-        "¿Estás seguro?"
-      ],
-      "Auto-pay is disabled": [
-        "Pago automático desactivado"
-      ],
-      "Auto-pay is enabled": [
-        "Pago automático activado"
-      ],
-      "Disable": [
-        "Desactivar"
-      ],
-      "Enable auto-pay support": [
-        "Activar el soporte de pago automático"
-      ],
-      "Keep auto-pay": [
-        "Mantener pago automático"
-      ],
-      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
-        "Nuestro sistema ya no te cobrará automáticamente con este método de pago, pero tu suscripción aún se renovará al final del ciclo de facturación. Si quieres pasar a una versión con menos funciones o cambiar tu suscripción, debes hacerlo ti mismo antes del final del periodo de facturación. Además, si olvidas realizar un pago manual y el pago automático está desactivado para todos los métodos de pago, es posible que pasemos a una versión con menos funciones automáticamente para tu cuenta, lo que provocará la pérdida de muchas funciones."
-      ],
-      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "Nuestro sistema ya no te cobrará automáticamente con este método de pago, pero tu suscripción aún se renovará al final del ciclo de facturación. Si quieres pasar a una versión con menos funciones o cambiar tu suscripción, debes hacerlo tú mismo antes de finalizar el periodo de facturación. No podemos pasarte a una versión con menos funciones automáticamente porque si superas la cuota de almacenamiento del plan gratuito o si utilizas otras funciones de pago, no podemos eliminar automáticamente archivos, correos electrónicos u otros datos por ti. Si desactivas el pago automático, recuerda pagar tu próxima factura de suscripción antes de la fecha de vencimiento para evitar la suspensión de la cuenta."
-      ]
-    },
-    "Subscription saving": {
-      "Save ${ priceString }": [
-        "Ahorra un ${ priceString }"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } contacto parece idéntico.",
@@ -9951,9 +9045,6 @@
       ],
       "Alias saved and copied": [
         "Se ha guardado y copiado el alias."
-      ],
-      "Billing details updated": [
-        "Se han actualizado los datos de facturación."
       ],
       "Canceling import": [
         "Cancelando la importación"
@@ -9975,9 +9066,6 @@
       "Contacts deleted": [
         "Contactos eliminados"
       ],
-      "Copied to clipboard": [
-        "Copiado al portapapeles"
-      ],
       "Email address copied to clipboard": [
         "Dirección de correo electrónico copiada al portapapeles"
       ],
@@ -9992,12 +9080,6 @@
       ],
       "Last modified aliases stored in your oldest vault": [
         "Últimos alias modificados guardados en tu caja fuerte más antigua"
-      ],
-      "Payment method added": [
-        "Método de pago añadido"
-      ],
-      "Payment method updated": [
-        "Método de pago actualizado"
       ],
       "Phone number copied to clipboard": [
         "Número de teléfono copiado al portapapeles"
@@ -10035,14 +9117,6 @@
         "/usuario por mes"
       ]
     },
-    "Suffix for price": {
-      "per month": [
-        "por mes"
-      ],
-      "per user per month": [
-        "por usuario por mes"
-      ]
-    },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
         "Crea credenciales seguras de inicio de sesión en todos tus dispositivos. Incluye alias ilimitados, 20 cámaras acorazadas, 2FA integrado, introducción automática de datos de tarjeta de pago, etc."
@@ -10055,17 +9129,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Protege tus archivos con el almacenamiento cifrado en la nube. Incluye historial de versiones, posibilidad de compartir archivos cifrados, etc."
-      ]
-    },
-    "Tab subscription modal": {
-      "For businesses": [
-        "Para empresas"
-      ],
-      "For families": [
-        "Para familias"
-      ],
-      "For individuals": [
-        "Para particulares"
       ]
     },
     "Table header": {
@@ -10177,9 +9240,6 @@
         "${ emailsCount } dirección de correo electrónico",
         "${ emailsCount } direcciones de correo electrónico"
       ],
-      "${ feature } is now active": [
-        "La funcionalidad ${ feature } ya está activada."
-      ],
       "Account recovery": [
         "Recuperación de cuenta"
       ],
@@ -10194,9 +9254,6 @@
       ],
       "Add contact group name": [
         "Añadir nombre del grupo de contactos"
-      ],
-      "Add credit/debit card": [
-        "Añadir tarjeta de crédito/débito"
       ],
       "Add to ${ groupCount } group": [
         "Añadir a ${ groupCount } grupo",
@@ -10214,20 +9271,8 @@
       "All settings": [
         "Todos los ajustes"
       ],
-      "Amount due": [
-        "Importe a pagar"
-      ],
-      "Apply gift code": [
-        "Aplicar código de regalo"
-      ],
       "Are you sure?": [
         "¿Estás seguro?"
-      ],
-      "Auto-deletion is active": [
-        "La eliminación automática está activa."
-      ],
-      "Billing cycle": [
-        "Ciclo de facturación"
       ],
       "Birthday": [
         "Cumpleaño"
@@ -10246,9 +9291,6 @@
       ],
       "Cannot load link": [
         "Error al cargar el enlace"
-      ],
-      "Card verification": [
-        "Verificación de la tarjeta"
       ],
       "Change password": [
         "Cambiar contraseña"
@@ -10288,9 +9330,6 @@
       ],
       "Continue with partial import?": [
         "¿Continuar con una importación parcial?"
-      ],
-      "Coupon": [
-        "Cupón"
       ],
       "Create a new folder": [
         "Crear una carpeta"
@@ -10396,17 +9435,11 @@
       "Duplicate folder found": [
         "Carpeta duplicada encontrada"
       ],
-      "Edit billing address": [
-        "Editar la dirección de la factura"
-      ],
       "Edit contact": [
         "Editar contacto"
       ],
       "Edit contact group": [
         "Editar grupo de contactos"
-      ],
-      "Edit credit/debit card": [
-        "Editar tarjeta de crédito/débito"
       ],
       "Edit email settings": [
         "Editar configuración de correo electrónico"
@@ -10438,23 +9471,20 @@
       "Enter your password": [
         "Introduce tu contraseña."
       ],
-      "Error": [
-        "Error"
-      ],
       "Error Syncing": [
         "Error al sincronizar"
       ],
       "Exporting contacts": [
         "Exportando contactos"
       ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Consigue **${ referralInfo.uiData.refereeRewardAmount }** en créditos con ${ planTitle }"
+      ],
       "Get more from your VPN": [
         "Obtén más de tu VPN"
       ],
       "Get the apps": [
         "Obtener las aplicaciones"
-      ],
-      "Gift": [
-        "Regalo"
       ],
       "Groups": [
         "Grupos"
@@ -10473,6 +9503,9 @@
       ],
       "How does it work?": [
         "¿Cómo funciona?"
+      ],
+      "How your free trial works": [
+        "Cómo funciona tu prueba gratuita"
       ],
       "Human verification": [
         "Verificación humana"
@@ -10538,9 +9571,6 @@
       "Need to share more files with edit access?": [
         "¿Necesitas compartir más archivos con acceso de edición?"
       ],
-      "Network error": [
-        "Error de red"
-      ],
       "Next": [
         "Siguiente"
       ],
@@ -10577,15 +9607,6 @@
       "Other names": [
         "Otros nombres"
       ],
-      "Payment failed": [
-        "Error en el pago"
-      ],
-      "Payment verification": [
-        "Verificación del pago"
-      ],
-      "PayPal verification failed": [
-        "Error con la verificación de PayPal"
-      ],
       "Performance might be affected": [
         "Esto puede afectar el rendimiento."
       ],
@@ -10601,17 +9622,11 @@
       "Private browsing vs VPN": [
         "Navegación privada y VPN"
       ],
-      "Processing...": [
-        "Procesando..."
-      ],
       "Re-sign all contacts": [
         "Volver a firmar todos los contactos"
       ],
       "Re-signing contacts": [
         "Volviendo a firmar los contactos"
-      ],
-      "Recommended": [
-        "Recomendado"
       ],
       "Recommended actions": [
         "Acciones recomendadas"
@@ -10633,9 +9648,6 @@
       ],
       "Security center": [
         "Centro de seguridad"
-      ],
-      "Select a plan": [
-        "Selecciona un plan"
       ],
       "Select action to take on contact group": [
         "Selecciona la acción a realizar en el grupo de contactos."
@@ -10703,9 +9715,6 @@
       "Subscription canceled": [
         "Se ha cancelado la suscripción."
       ],
-      "Summary": [
-        "Resumen"
-      ],
       "The link either does not exist or has expired": [
         "El enlace no existe o ha expirado."
       ],
@@ -10727,11 +9736,11 @@
       "Untitled spreadsheet ${ date }": [
         "Hoja de cálculo sin título ${ date }"
       ],
-      "Upgrade complete!": [
-        "Se ha mejorado tu plan."
-      ],
       "Upgrade to ${ planName }": [
         "Mejorar a ${ planName }"
+      ],
+      "Upgrade to keep your premium benefits.": [
+        "Mejora para mantener tus beneficios prémium."
       ],
       "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
         "Mejora tu productividad por ${ formattedPrice } con ${ planName }"
@@ -10747,15 +9756,6 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Usa ${ VPN_SHORT_APP_NAME } para la privacidad de los datos"
-      ],
-      "Verification failed": [
-        "Error de verificación"
-      ],
-      "Verifying your card...": [
-        "Verificando tu tarjeta..."
-      ],
-      "Verifying your payment...": [
-        "Verificando tu pago..."
       ],
       "VPN explained": [
         "Explicaciones sobre la VPN"
@@ -10781,9 +9781,6 @@
       "When is it most important to use a VPN?": [
         "¿Cuándo es más importante usar una VPN?"
       ],
-      "You can now create unlimited folders and labels": [
-        "Ahora puedes crear carpetas y etiquetas ilimitadas."
-      ],
       "You have no folders yet": [
         "Todavía no tienes carpetas."
       ],
@@ -10801,12 +9798,6 @@
       ],
       "Your exposed information": [
         "Tus datos expuestos"
-      ],
-      "Your plan": [
-        "Tu plan"
-      ],
-      "Your shorter address is now ready": [
-        "Tu dirección en formato más corto ya está lista."
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -10854,9 +9845,6 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail asigna categorías automáticamente a algunos correos como Redes Sociales o Promociones. Puedes seleccionar a dónde importar estos correos."
       ],
-      "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Si has comprado un código de regalo o recibido uno de nuestro equipo de soporte, puedes introducirlo aquí."
-      ],
       "Load image": [
         "Cargar la imagen"
       ],
@@ -10883,9 +9871,6 @@
       ],
       "The import will start with the most recent messages.": [
         "La importación comenzará con los mensajes más recientes."
-      ],
-      "The new subscription cycle starts on ${ formattedTime }": [
-        "El nuevo ciclo de suscripción comienza el ${ formattedTime }"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "A menos que se descifren, las contraseñas cifradas permanecen seguras incluso si están expuestas."
@@ -11089,6 +10074,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Tu periodo de prueba gratuito acaba el ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Tu prueba terminará el ${ textDate }. No se te cobrará si cancelas antes del ${ textDate }. ${ action }"
       ]
     }
   }

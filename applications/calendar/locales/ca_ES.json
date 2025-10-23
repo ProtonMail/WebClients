@@ -90,7 +90,7 @@
         "Afegeix dies festius"
       ],
       "Add secret passphrase": [
-        "Afegiu una frase de contrasenya secreta"
+        "Afegeix una frase de contrasenya secreta"
       ],
       "Add to group": [
         "Afegeix al grup"
@@ -246,6 +246,9 @@
       "Create and copy alias": [
         "Crea i copia un àlies"
       ],
+      "Create booking page": [
+        "Creeu una pàgina de reserves"
+      ],
       "Create calendar": [
         "Crea un calendari"
       ],
@@ -349,6 +352,9 @@
       ],
       "Expand video conferencing widget": [
         "Amplia el giny de videoconferència"
+      ],
+      "Explore other plans": [
+        "Explora altres plans"
       ],
       "Export": [
         "Exporta"
@@ -814,6 +820,9 @@
       ],
       "Submit": [
         "Envia"
+      ],
+      "Subscribe now": [
+        "Subscriviu-vos ara"
       ],
       "Switch or add account": [
         "Canvia o afegeix un compte"
@@ -1282,15 +1291,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "1 user": [
-        "1 usuari"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 usuaris"
-      ],
       "Premium Password Manager": [
         "Gestor de contrasenyes prèmium"
       ]
@@ -1315,35 +1315,14 @@
       "${ storageSize } storage": [
         "${ storageSize } d'emmagatzematge"
       ],
-      "1 TB total": [
-        "1 TB en total"
-      ],
-      "1 user": [
-        "1 usuari"
-      ],
       "1 user account": [
         "1 compte d'usuari"
       ],
-      "10 email addresses": [
-        "10 adreces de correu electrònic"
-      ],
-      "2 users": [
-        "2 usuaris"
-      ],
-      "3 TB": [
-        "3 TB"
+      "200 GB storage: 40x your current plan": [
+        "200 GB d'emmagatzematge: 40 vegades el vostre pla actual"
       ],
       "6 user accounts": [
         "6 comptes d'usuari"
-      ],
-      "6 users": [
-        "6 usuaris"
-      ],
-      "8500+ servers across 110+ countries": [
-        "Més de 8 500 servidors en més de 110 països"
-      ],
-      "Ad-blocker and malware protection": [
-        "Bloquejador d'anuncis i protecció contra programari maliciós"
       ],
       "Admin panel to manage your family": [
         "Panell d'administració per a gestionar la família"
@@ -1354,9 +1333,6 @@
       "Easily add or remove users": [
         "Afegiu o elimineu usuaris fàcilment"
       ],
-      "High speed streaming": [
-        "Estríming d'alta velocitat"
-      ],
       "One-time payment, lifetime deal": [
         "Un pagament únic, una oferta de per vida"
       ],
@@ -1366,14 +1342,8 @@
       "Password health alerts": [
         "Alertes d'estat de les contrasenyes"
       ],
-      "Private photo backup": [
-        "Còpia de seguretat de fotos privada"
-      ],
-      "Protect 10 devices at a time": [
-        "Protegiu 10 dispositius alhora"
-      ],
-      "Secure file storage & sharing": [
-        "Emmagatzematge i ús compartit de fitxers segurs"
+      "Recover previous file versions": [
+        "Recupereu versions anteriors dels fitxers"
       ],
       "Unlimited folders, labels and filters": [
         "Nombre il·limitat de carpetes, etiquetes i filtres"
@@ -1383,17 +1353,14 @@
       ],
       "Use your own email domain": [
         "Utilitzeu el vostre propi domini de correu electrònic"
-      ],
-      "Version history": [
-        "Historial de versions"
-      ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Facturat a ${ amount } una vegada"
+      ],
+      "forever": [
+        "per sempre"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Es renova al cap d'1 mes a ${ regularAmount }"
@@ -1402,9 +1369,6 @@
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
         "Accediu al contingut bloquejat i navegueu de forma privada. Inclou més de 8.500 servidors en més de 110 països, 10 dispositius, estríming d'alta velocitat, bloquejador d'anuncis i protecció contra programari maliciós, VPN Accelerator, etc."
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Accediu al contingut dels serveis d'estríming, com ara Netflix, Disney+, Prime Video i altres, des de qualsevol lloc."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats de hide-my-email, compartició, 2FA integrada, ${ DARK_WEB_MONITORING_NAME } i més."
@@ -1425,9 +1389,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Protegiu els vostres fitxers amb emmagatzematge xifrat al núvol. Inclou editor de documents en línia, còpia de seguretat de fotos, historial de versions, intercanvi de fitxers xifrats i més."
-      ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield, dissenyat especialment, protegeix els vostres dispositius i accelera la navegació en bloquejar anuncis, rastrejadors i programari maliciós."
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "L'espai d'emmagatzematge està compartit entre tots els serveis de ${ BRAND_NAME }."
@@ -1464,6 +1425,9 @@
       ],
       "Application problem": [
         "Problema d’aplicació"
+      ],
+      "Black Friday": [
+        "Divendres negre"
       ],
       "Bridge problem": [
         "Problema a Bridge"
@@ -3282,6 +3246,22 @@
         "Només"
       ]
     },
+    "Duo offer: Link": {
+      "Double your storage": [
+        "Dupliqueu el vostre emmagatzematge"
+      ],
+      "Share your plan": [
+        "Compartiu el vostre pla"
+      ]
+    },
+    "Duo offer: Title": {
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Dupliqueu el vostre emmagatzematge amb ${ BRAND_NAME } Duo"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "Compartiu els avantatges del vostre pla amb ${ BRAND_NAME } Duo"
+      ]
+    },
     "Duplicate event button tooltip": {
       "Duplicate event": [
         "Duplica l'esdeveniment"
@@ -4390,6 +4370,12 @@
       ]
     },
     "Feature": {
+      "Encrypted cloud storage for files, photos and documents": [
+        "Emmagatzematge xifrat al núvol per a fitxers, fotos i documents"
+      ],
+      "More premium features": [
+        "Més característiques prèmium"
+      ],
       "Unlimited hide-my-email aliases": [
         "Nombre il·limitat d'àlies hide-my-email"
       ]
@@ -5013,7 +4999,7 @@
         "**Connexió automàtica**: s'obre i es connecta a la VPN tan bon punt encengueu el dispositiu."
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
-        "**Interruptor de bloqueig**: atura les filtracions de dades en bloquejar la connexió a Internet si la VPN es desconnecta sobtadament."
+        "**Interruptor de bloqueig (kill switch)**: atura les filtracions de dades en bloquejar la connexió a Internet si la VPN es desconnecta sobtadament."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Pas 1:** Convideu amistats a ${ BRAND_NAME } amb el vostre enllaç de recomanació."
@@ -5039,6 +5025,9 @@
       ],
       "30-day money-back guarantee.": [
         "30 dies de garantia de reemborsament."
+      ],
+      "A booking slot cannot be added in the past.": [
+        "No es pot afegir una franja de reserva en el passat."
       ],
       "A cancellation email will be sent to removed participants.": [
         "Els participants esborrats rebran un correu electrònic de cancel·lació."
@@ -5193,6 +5182,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Comprovant contacte ${ progress } de ${ max }..."
       ],
+      "Choose a plan that works best for you.": [
+        "Trieu el pla que se us adapti millor."
+      ],
       "Clear data": [
         "Neteja les dades"
       ],
@@ -5219,6 +5211,9 @@
       ],
       "Contact unassigned from group ${ contactGroupName }": [
         "S'ha desfet l'assignació del contacte al grup ${ contactGroupName }."
+      ],
+      "Continue": [
+        "Continueu"
       ],
       "Copy the link to clipboard": [
         "Copia l'enllaç al porta-retalls"
@@ -5945,6 +5940,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Milloreu ara per obtenir característiques prèmium, productes i emmagatzematge a un preu especial"
       ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "Actualitzeu el pla per conservar els vostres avantatges de ${ planTitle }."
+      ],
       "Uppercase and lowercase letters": [
         "Lletres majúscules i minúscules"
       ],
@@ -6597,6 +6595,9 @@
       "Don't show this again": [
         "No ho tornis a mostrar"
       ],
+      "Duration": [
+        "Durada"
+      ],
       "e.g., Amazon, eBay, Etsy": [
         "per exemple, Amazon, eBay, Etsy"
       ],
@@ -6882,6 +6883,9 @@
       ],
       "Time zone": [
         "Zona horària"
+      ],
+      "Title": [
+        "Títol"
       ],
       "To: ${ toEmail }": [
         "Per a: ${ toEmail }"
@@ -7220,6 +7224,9 @@
       ],
       "Re:": [
         "Re:"
+      ],
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "La prova gratuïta us ha finalitzat. ${ nonAutoRenewalAction }"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "S'ha acabat la prova gratuïta. L'accés al compte es desactivarà prompte. ${ action }"
@@ -9435,8 +9442,23 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } per referència"
       ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Si cancel·leu abans d'aquesta data,** **passareu al pla inferior** ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } quan la prova finalitzi."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Si no us subscriviu,** se us **baixarà de categoria** a ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Si no cancel·leu,** el vostre pla complet començarà i rebreu **${ referrerRewardAmount }** en crèdits."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Si us subscriviu abans d'aquesta data,** rebreu **${ referrerRewardAmount }** en crèdits."
+      ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Guanyeu fins a ${ maxRewardAmount } en crèdits. Rebreu ${ referrerRewardAmount } quan la persona que convideu se subscrigui a un pla de ${ BRAND_NAME }."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Gaudiu de **${ planTitle }** de franc fins al **${ textDate }**."
       ],
       "Friend joined": [
         "Una amistat s'ha unit",
@@ -9452,8 +9474,14 @@
       "Invited friends": [
         "Amistats que heu convidat"
       ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Última oportunitat per explorar les potents característiques que us ofereix el **${ planTitle }**."
+      ],
       "More sharing options": [
         "Més opcions de compartició"
+      ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "Un cop comenci la vostra subscripció completa, disposeu d'un termini de 30 dies per cancel·lar-la i obtenir-ne el reembossament prorratejat."
       ],
       "Refer friends": [
         "Recomana amistats"
@@ -9463,6 +9491,13 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Podeu obtenir fins a **${ maxRewardAmount }** en crèdits."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Us queda **${ daysRemaining } dia** per explorar totes les potents funcionalitats que ofereix el **${ planTitle }**.",
+        "Us queden **${ daysRemaining } dies** per explorar totes les potents funcionalitats que ofereix el **${ planTitle }**."
+      ],
+      "your subscription": [
+        "la vostra subscripció"
       ]
     },
     "Reload event button tooltip": {
@@ -9868,9 +9903,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "1 user": [
-        "1 usuari"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -11048,6 +11080,9 @@
       "Birthday": [
         "Aniversari"
       ],
+      "Booking page": [
+        "Pàgina de reserves"
+      ],
       "Calendar": [
         "Calendari"
       ],
@@ -11254,6 +11289,9 @@
       "Exporting contacts": [
         "Exportant contactes"
       ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Aconseguiu **${ referralInfo.uiData.refereeRewardAmount }** en crèdits amb ${ planTitle }"
+      ],
       "Get more from your VPN": [
         "Obteniu més de la vostra VPN"
       ],
@@ -11286,6 +11324,9 @@
       ],
       "How does it work?": [
         "Com funciona?"
+      ],
+      "How your free trial works": [
+        "Com funciona la vostra prova gratuïta"
       ],
       "Human verification": [
         "Verificació humana"
@@ -11560,6 +11601,9 @@
       ],
       "Upgrade to ${ planName }": [
         "Milloreu el pla a ${ planName }"
+      ],
+      "Upgrade to keep your premium benefits.": [
+        "Milloreu de pla per mantenir els vostres avantatges prèmium."
       ],
       "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
         "Milloreu la vostra productivitat per ${ formattedPrice } amb ${ planName }"
@@ -11942,6 +11986,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "La prova gratuïta acaba el ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "La vostra prova finalitzarà el ${ textDate }. No se us cobrarà si cancel·leu abans del ${ textDate }. ${ action }"
       ]
     },
     "Warning in modal to accept calendar invitation; Description": {
