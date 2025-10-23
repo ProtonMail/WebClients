@@ -2051,15 +2051,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "1 user": [
-        "1 位用户"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 位用户"
-      ],
       "Premium Password Manager": [
         "高级密码管理器"
       ]
@@ -2137,35 +2128,11 @@
       "${ storageSize } storage": [
         "${ storageSize } 存储空间"
       ],
-      "1 TB total": [
-        "共 1 TB"
-      ],
-      "1 user": [
-        "1 位用户"
-      ],
-      "10 email addresses": [
-        "10 个邮箱地址"
-      ],
-      "2 users": [
-        "2 位用户"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 位用户"
-      ],
-      "8500+ servers across 110+ countries": [
-        "110+ 个国家，8500+ 台服务器"
-      ],
-      "Ad-blocker and malware protection": [
-        "广告拦截及恶意软件防护"
+      "200 GB storage: 40x your current plan": [
+        "200 GB 存储空间：您当前套餐的 40 倍"
       ],
       "Advanced account protection": [
         "高级账户保护"
-      ],
-      "High speed streaming": [
-        "高速看视频"
       ],
       "One-time payment, lifetime deal": [
         "一次性付款，终身有效"
@@ -2173,14 +2140,8 @@
       "Online document editor": [
         "在线文档编辑器"
       ],
-      "Private photo backup": [
-        "私人照片备份"
-      ],
-      "Protect 10 devices at a time": [
-        "可同时保护 10 台设备"
-      ],
-      "Secure file storage & sharing": [
-        "安全文件存储与共享"
+      "Recover previous file versions": [
+        "恢复先前的文件版本"
       ],
       "Unlimited folders, labels and filters": [
         "不限量文件夹、标签和筛选规则"
@@ -2190,17 +2151,14 @@
       ],
       "Use your own email domain": [
         "个性化邮箱域名"
-      ],
-      "Version history": [
-        "各版本历史"
-      ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "按 ${ amount } 一次计费"
+      ],
+      "forever": [
+        "永久"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "次月起按 ${ regularAmount } 续费。"
@@ -2210,9 +2168,6 @@
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
         "突破网络封锁，保护线上隐私，最多可通过 10 台设备连接全球逾 110 个国家超过 8500 台服务器，畅享全球流媒体服务，拦截恶意软件和广告，还有 VPN 加速器等更多功能等您体验。"
       ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "随时随地访问流媒体服务内容，包括 Netflix、Disney+、Prime Video 等。"
-      ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "在所有设备上安全登录。包括无限制 hide-my-email 别名、共享、集成 2FA、${ DARK_WEB_MONITORING_NAME } 等功能。"
       ],
@@ -2221,9 +2176,6 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "采用端到端加密技术守护您的邮件安全，并且支持自有域名、15 个邮箱地址、无限量的 hide-my-email 邮箱别名、${ BRAND_NAME } Scribe 写作助手等高级功能。"
-      ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "完善的 NetShield 机制能够屏蔽广告、追踪脚本和恶意软件，增强设备安全性，提升网络性能."
       ]
     },
     "Billing cycle": {
@@ -2340,6 +2292,9 @@
       ],
       "Application problem": [
         "应用程序问题"
+      ],
+      "Black Friday": [
+        "黑色星期五"
       ],
       "Bridge problem": [
         "Bridge 问题"
@@ -4541,6 +4496,39 @@
         "优先支持"
       ]
     },
+    "Duo offer": {
+      "/month": [
+        "/月"
+      ],
+      "1 TB of storage to share": [
+        "1 TB 的可共享存储空间"
+      ],
+      "2 user accounts": [
+        "2 个用户账户"
+      ],
+      "All premium features from your current plan": [
+        "您当前套餐的所有付费版服务器功能"
+      ],
+      "Only": [
+        "仅"
+      ]
+    },
+    "Duo offer: Link": {
+      "Double your storage": [
+        "将您的存储空间翻倍"
+      ],
+      "Share your plan": [
+        "分享您的套餐"
+      ]
+    },
+    "Duo offer: Title": {
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "使用 ${ BRAND_NAME } Duo 将您的存储空间翻倍"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "使用 ${ BRAND_NAME } Duo 分享您的套餐"
+      ]
+    },
     "Duration": {
       "120 minutes": [
         "120 分钟"
@@ -6428,8 +6416,14 @@
       "Continue": [
         "继续"
       ],
+      "Encrypted cloud storage for files, photos and documents": [
+        "用于文件、照片和文档的加密云存储空间"
+      ],
       "Fastest VPN servers": [
         "高速 VPN 服务器"
+      ],
+      "More premium features": [
+        "更多高级功能"
       ],
       "Remove": [
         "注销"
@@ -8130,6 +8124,9 @@
       "Check the status of imports and forwarding.": [
         "检查导入和转发的状态。"
       ],
+      "Choose a plan that works best for you.": [
+        "选择一个最适合您的套餐。"
+      ],
       "Choose an Entity ID to continue.": [
         "选择一个实体 ID 以继续。"
       ],
@@ -8153,6 +8150,9 @@
       ],
       "Connection data will be available in around 1 hour.": [
         "连接数据将在 1 小时左右可用。"
+      ],
+      "Continue": [
+        "继续"
       ],
       "Continue to allow **${ affiliationsText }** from **${ organizationValue.Name }** to join your ${ BRAND_NAME } organization.": [
         "继续允许来自 **${ organizationValue.Name }** 的 **${ affiliationsText }** 加入您的 ${ BRAND_NAME } 组织。"
@@ -10079,6 +10079,9 @@
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "升级账户即可增设一个简短的 @pm.me 邮箱地址，这个域名可以代表 ${ MAIL_APP_NAME } me 或者 Private Message me。"
+      ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "升级以保留您的 ${ planTitle } 权益。"
       ],
       "Upgrade to Professional or a higher plan to unlock": [
         "升级至专业版或更高版本以解锁"
@@ -13039,6 +13042,9 @@
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "将域名与 ${ BRAND_NAME } 关联即可使用您自己的域名设立邮箱地址（如 you@yourcompany.com）。我们将全程指导您完成设置。"
       ],
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "您的免费体验期已结束。${ nonAutoRenewalAction }"
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "您的免费体验期已结束，账户即将停用。${ action }"
       ]
@@ -14622,11 +14628,17 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } 优惠今天到期！"
       ],
+      "Don't show this again": [
+        "不再显示此内容"
+      ],
       "Don’t show this again": [
         "不再显示此内容"
       ],
       "Don’t show this offer again": [
         "不再显示此优惠"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "获得 ${ BRAND_NAME } Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "开通 ${ BRAND_NAME } Unlimited"
@@ -16247,6 +16259,9 @@
       ]
     },
     "Referral": {
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "一旦您的完整订阅开始，您仍然可以在 30 天内取消并获得按比例的退款。"
+      ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "您还有**${ daysRemaining }天**的时间，可以尽情探索**${ planTitle }**提供的所有强大功能。"
       ]
@@ -17865,9 +17880,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "1 user": [
-        "1 位用户"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -19944,6 +19956,9 @@
       "Don't show again?": [
         "不再显示？"
       ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "使用 ${ BRAND_NAME } Duo 将您的存储空间翻倍"
+      ],
       "Downgrade account": [
         "降级账户"
       ],
@@ -20150,6 +20165,9 @@
       ],
       "Get ${ vpnPlus } to access all servers": [
         "开通 ${ vpnPlus }，任意选择服务器"
+      ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "配合${ planTitle }获得**${ referralInfo.uiData.refereeRewardAmount }**余额奖励。"
       ],
       "Get complete privacy coverage": [
         "获取更全面的隐私保护"
@@ -20774,6 +20792,9 @@
       ],
       "Upgrade to ${ planName }": [
         "升级至 ${ planName }"
+      ],
+      "Upgrade to keep your premium benefits.": [
+        "升级以保留您的高级权益。"
       ],
       "Upgrade your privacy": [
         "提升隐私保护"
@@ -22019,6 +22040,9 @@
       ],
       "Your recovery phrase is outdated. It can't recover new data if you reset your password again.": [
         "您的恢复短语已过期。如果您再次重置密码，它将无法恢复新数据。"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "您的试用将于 ${ textDate } 结束。如果您在 ${ textDate } 之前取消，将不会被收费。${ action }"
       ]
     },
     "Warning for domain modal": {
