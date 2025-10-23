@@ -12,6 +12,7 @@ import {
     cacheRequest,
     draftsGarbageCollect,
     getBreaches,
+    getInAppNotifications,
     getUserAccessIntent,
     getUserFeaturesIntent,
     getUserSettings,
@@ -75,6 +76,7 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
             yield put(withRevalidate(getBreaches.intent()));
             yield put(withRevalidate(aliasSyncStatus.intent()));
             yield put(withRevalidate(secureLinksGet.intent()));
+            yield put(withRevalidate(getInAppNotifications.intent()));
             yield put(getAuthDevices.intent());
 
             if (EXTENSION_BUILD) {
