@@ -2,7 +2,6 @@ import { mockHandlers } from 'proton-pass-extension/__mocks__/app/worker/channel
 import { sender } from 'proton-pass-extension/__mocks__/mocks';
 
 const browser = {
-    tabs: {},
     runtime: {
         getVersion: jest.fn(() => '0.0.1'),
         getURL: jest.fn((asset: string) => `test://${asset}`),

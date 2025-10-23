@@ -148,7 +148,7 @@ export const createFormManager = ({ onDetection, channel }: FormManagerOptions) 
         void runDetection(options.reason);
     };
 
-    const onCheckForm: FrameMessageHandler<WorkerMessageType.AUTOFILL_CHECK_FORM> = (_message, _, sendResponse) => {
+    const onCheckForm: FrameMessageHandler<WorkerMessageType.AUTOFILL_CHECK_FORM> = (_, sendResponse) => {
         const trackedForms = getTrackedForms();
         const hasLoginForm = trackedForms?.some(({ formType }) => formType === FormType.LOGIN);
         sendResponse({ hasLoginForm });

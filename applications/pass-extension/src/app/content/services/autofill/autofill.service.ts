@@ -227,11 +227,7 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
         }
     );
 
-    const onAutofillRequest: FrameMessageHandler<WorkerMessageType.AUTOFILL_REQUEST> = (
-        { payload },
-        _,
-        sendResponse
-    ) => {
+    const onAutofillRequest: FrameMessageHandler<WorkerMessageType.AUTOFILL_REQUEST> = ({ payload }, sendResponse) => {
         switch (payload.status) {
             case 'start':
                 state.processing = true;
