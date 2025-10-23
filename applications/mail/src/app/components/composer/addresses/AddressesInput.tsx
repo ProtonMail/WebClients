@@ -4,7 +4,8 @@ import { Fragment, useEffect, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button, Tooltip } from '@proton/atoms';
-import { AddressesAutocomplete, Icon, useNotifications } from '@proton/components';
+import { AddressesAutocomplete, useNotifications } from '@proton/components';
+import { IcUserPlus } from '@proton/icons';
 import { useContactGroups } from '@proton/mail';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { rootFontSize, scrollIntoView } from '@proton/shared/lib/helpers/dom';
@@ -311,7 +312,7 @@ const AddressesInput = ({
                                 icon
                                 data-testid="composer:to-button"
                             >
-                                <Icon name="user-plus" size={4} alt={addContactButton} />
+                                <IcUserPlus size={4} alt={addContactButton} />
                             </Button>
                         </Tooltip>
                     </span>

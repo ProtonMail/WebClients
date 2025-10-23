@@ -4,7 +4,8 @@ import { Fragment, memo } from 'react';
 import { c } from 'ttag';
 
 import { Button, Tooltip } from '@proton/atoms';
-import { Icon, Label } from '@proton/components';
+import { Label } from '@proton/components';
+import { IcUserPlus } from '@proton/icons';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
@@ -148,7 +149,7 @@ const AddressesSummary = ({
                             icon
                             data-testid="composer:to-button"
                         >
-                            <Icon name="user-plus" size={4} alt={c('Title').t`To`} />
+                            <IcUserPlus size={4} alt={c('Title').t`To`} />
                         </Button>
                     </Tooltip>
                 </span>

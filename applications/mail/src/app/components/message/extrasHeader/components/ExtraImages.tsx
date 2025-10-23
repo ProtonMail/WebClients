@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button, Kbd, Tooltip } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { IcFileImage } from '@proton/icons';
 import LoadRemoteImageBanner from '@proton/components/containers/banner/LoadRemoteImageBanner';
 import type { MessageImages } from '@proton/mail/store/messages/messagesTypes';
 import { shiftKey } from '@proton/shared/lib/helpers/browser';
@@ -72,7 +72,7 @@ const ExtraImages = ({ messageImages, type, onLoadImages, mailSettings }: Props)
                     data-testid="embedded-content:load"
                     className="inline-flex items-center w-full md:w-auto justify-center md:justify-start mr-0 md:mr-0 mb-3 px-2"
                 >
-                    <Icon name="file-image" className="shrink-0 ml-1" />
+                    <IcFileImage className="shrink-0 ml-1" />
                     <span className="ml-2">{actionText}</span>
                 </Button>
             </Tooltip>

@@ -2,17 +2,8 @@ import { c, msgid } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
-import {
-    Collapsible,
-    CollapsibleContent,
-    CollapsibleHeader,
-    CollapsibleHeaderIconButton,
-    Icon,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-} from '@proton/components';
+import { Collapsible, CollapsibleContent, CollapsibleHeader, CollapsibleHeaderIconButton, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
+import { IcChevronDown } from '@proton/icons';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import trackersImg from '@proton/styles/assets/img/illustrations/trackers-found.svg';
 import clsx from '@proton/utils/clsx';
@@ -77,7 +68,7 @@ const SpyTrackerModal = ({ message, ...rest }: Props) => {
                                         expandText={c('Action').t`Expand URL`}
                                         collapseText={c('Action').t`Collapse URL`}
                                     >
-                                        <Icon name="chevron-down" />
+                                        <IcChevronDown />
                                     </CollapsibleHeaderIconButton>
                                 }
                             >

@@ -4,7 +4,8 @@ import { c, msgid } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { ButtonLike, InlineLinkButton, Tooltip } from '@proton/atoms';
-import { Dropdown, DropdownMenuButton, Icon, usePopperAnchor } from '@proton/components';
+import { Dropdown, DropdownMenuButton, usePopperAnchor } from '@proton/components';
+import { IcSquares } from '@proton/icons';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import ProtonLogo from '@proton/components/components/logo/ProtonLogo';
@@ -117,7 +118,7 @@ const ToolbarAddressesDropdown = ({ labelID, selectedIDs }: Props) => {
                                                 {address.Email}
                                             </span>
 
-                                            <Icon name="squares" className="shrink-0 group-hover:opacity-100" />
+                                            <IcSquares className="shrink-0 group-hover:opacity-100" />
                                         </DropdownMenuButton>
                                     </Tooltip>
                                 );

@@ -3,7 +3,8 @@ import { useLocation } from 'react-router';
 import { c } from 'ttag';
 
 import { Scroll } from '@proton/atoms';
-import { DropdownMenu, DropdownMenuButton, EllipsisLoader, Icon, ToolbarButton } from '@proton/components';
+import { DropdownMenu, DropdownMenuButton, EllipsisLoader, ToolbarButton } from '@proton/components';
+import { IcCheckmark, IcChevronLeft, IcChevronRight } from '@proton/icons';
 import { TelemetryMailPagingControlsEvents } from '@proton/shared/lib/api/telemetry';
 import type { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 import clsx from '@proton/utils/clsx';
@@ -109,7 +110,7 @@ const PagingControls = ({
                 title={c('Action').t`Previous page`}
                 onClick={handleClickPrevious}
                 className="rtl:mirror toolbar-button--small toolbar-button--small-icon"
-                icon={<Icon name="chevron-left" alt={c('Action').t`Previous page`} />}
+                icon={<IcChevronLeft alt={c('Action').t`Previous page`} />}
                 data-testid="toolbar:previous-page"
             />
             <ToolbarDropdown
@@ -139,7 +140,7 @@ const PagingControls = ({
                                             className={clsx(['flex flex-row'])}
                                         >
                                             <span className="text-left flex-1">{pageNumber}</span>
-                                            {active ? <Icon name="checkmark" className="mt-0.5" /> : null}
+                                            {active ? <IcCheckmark className="mt-0.5" /> : null}
                                         </DropdownMenuButton>
                                     );
                                 })}
@@ -154,7 +155,7 @@ const PagingControls = ({
                 title={c('Action').t`Next page`}
                 onClick={handleClickNext}
                 className="rtl:mirror toolbar-button--small toolbar-button--small-icon"
-                icon={<Icon name="chevron-right" alt={c('Action').t`Next page`} />}
+                icon={<IcChevronRight alt={c('Action').t`Next page`} />}
                 data-testid="toolbar:next-page"
             />
         </div>

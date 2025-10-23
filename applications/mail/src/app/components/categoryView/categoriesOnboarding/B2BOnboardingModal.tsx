@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, type ModalProps, ModalTwo, ModalTwoContent, ModalTwoHeader, useApi } from '@proton/components';
+import { type ModalProps, ModalTwo, ModalTwoContent, ModalTwoHeader, useApi } from '@proton/components';
+import { IcLockFilled } from '@proton/icons';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import useLoading from '@proton/hooks/useLoading';
@@ -66,7 +67,7 @@ export const B2BOnboardingModal = ({ flagValue, ...props }: Props) => {
                         .t`Continue without categories`}</Button>
                 </div>
                 <div className="flex justify-center">
-                    <Icon name="lock-filled" className="color-hint" />
+                    <IcLockFilled className="color-hint" />
                     <p className="text-sm text-center color-weak m-0 mt-1">{c('Info')
                         .t`Categories work just like spam filters. ${MAIL_APP_NAME} never reads your emails or shares your data.`}</p>
                 </div>

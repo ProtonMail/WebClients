@@ -3,7 +3,8 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import { Kbd, Tooltip } from '@proton/atoms';
-import { Icon, SidebarPrimaryButton } from '@proton/components';
+import { SidebarPrimaryButton } from '@proton/components';
+import { IcPencil } from '@proton/icons';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import clsx from '@proton/utils/clsx';
 
@@ -36,7 +37,7 @@ const MailSidebarPrimaryButton = ({ collapsed = false, handleCompose }: Props) =
                 ref={anchorRef}
             >
                 {collapsed ? (
-                    <Icon name="pencil" className="flex mx-auto my-0.5" alt={c('Action').t`New message`} />
+                    <IcPencil className="flex mx-auto my-0.5" alt={c('Action').t`New message`} />
                 ) : (
                     c('Action').t`New message`
                 )}

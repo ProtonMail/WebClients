@@ -1,12 +1,7 @@
 import { c } from 'ttag';
 
-import {
-    Collapsible,
-    CollapsibleContent,
-    CollapsibleHeader,
-    CollapsibleHeaderIconButton,
-    Icon,
-} from '@proton/components';
+import { Collapsible, CollapsibleContent, CollapsibleHeader, CollapsibleHeaderIconButton } from '@proton/components';
+import { IcChevronDown, IcInfoCircle } from '@proton/icons';
 
 import { getUnsubscribeMethod } from '../../helper';
 import { type PropsWithNewsletterSubscription, UnsubscribeMethod } from '../../interface';
@@ -26,7 +21,7 @@ export const ModalUnsubscribeMailToContent = ({ subscription }: PropsWithNewslet
     return (
         <div className="border border-weak rounded p-1 max-w-full mb-4">
             <div className="flex flex-nowrap gap-2 pl-1 py-1">
-                <Icon name="info-circle" className="shrink-0 mt-0.5 color-info" />
+                <IcInfoCircle className="shrink-0 mt-0.5 color-info" />
                 <div className="flex-1 text-sm max-w-full">
                     {c('Info').t`An unsubscribe email will be sent on your behalf.`}
 
@@ -35,7 +30,7 @@ export const ModalUnsubscribeMailToContent = ({ subscription }: PropsWithNewslet
                             className="color-weak text-sm"
                             suffix={
                                 <CollapsibleHeaderIconButton>
-                                    <Icon name="chevron-down" size={3} />
+                                    <IcChevronDown size={3} />
                                 </CollapsibleHeaderIconButton>
                             }
                         >

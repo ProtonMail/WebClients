@@ -5,7 +5,8 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Tooltip } from '@proton/atoms';
-import { Dropdown, DropdownButton, Icon, useApi, useModalState, usePopperAnchor } from '@proton/components';
+import { Dropdown, DropdownButton, useApi, useModalState, usePopperAnchor } from '@proton/components';
+import { IcClock } from '@proton/icons';
 import { TelemetryMailEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
@@ -116,7 +117,7 @@ const SnoozeDropdown = ({ elements, size, labelID }: Props) => {
                     size={size}
                     icon
                 >
-                    <Icon name="clock" alt={labelText} />
+                    <IcClock alt={labelText} />
                 </DropdownButton>
             </Tooltip>
             <Dropdown

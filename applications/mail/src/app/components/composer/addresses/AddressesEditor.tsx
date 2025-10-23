@@ -4,7 +4,8 @@ import { useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Tooltip } from '@proton/atoms';
-import { Icon, Label } from '@proton/components';
+import { Label } from '@proton/components';
+import { IcUserPlus } from '@proton/icons';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
@@ -109,7 +110,7 @@ const AddressesEditor = ({
                                 icon
                                 data-testid="composer:to-button"
                             >
-                                <Icon name="user-plus" size={4} alt={c('Title').t`To`} />
+                                <IcUserPlus size={4} alt={c('Title').t`To`} />
                             </Button>
                         </Tooltip>
                     </span>

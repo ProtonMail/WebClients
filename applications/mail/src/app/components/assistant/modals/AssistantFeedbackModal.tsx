@@ -5,17 +5,8 @@ import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button, Tooltip } from '@proton/atoms';
-import {
-    Checkbox,
-    Icon,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    useApi,
-    useModalStateObject,
-    useNotifications,
-} from '@proton/components';
+import { Checkbox, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useApi, useModalStateObject, useNotifications } from '@proton/components';
+import { IcThumbDown, IcThumbUp } from '@proton/icons';
 import TextArea from '@proton/components/components/v2/input/TextArea';
 import useLoading from '@proton/hooks/useLoading';
 import { useAssistant } from '@proton/llm/lib';
@@ -146,7 +137,7 @@ const AssistantFeedbackModal = ({ disabled, result, prompt, feedbackSubmitted, s
                     loading={loading}
                     onClick={() => withLoading(handlePositiveSubmit())}
                 >
-                    <Icon name="thumb-up" size={6} alt={c('Action').t`I like this response`} />
+                    <IcThumbUp size={6} alt={c('Action').t`I like this response`} />
                 </Button>
             </Tooltip>
             <Tooltip title={c('Action').t`Report an issue`}>
@@ -157,7 +148,7 @@ const AssistantFeedbackModal = ({ disabled, result, prompt, feedbackSubmitted, s
                     disabled={disableButtons}
                     onClick={() => feedbackModal.openModal(true)}
                 >
-                    <Icon name="thumb-down" size={6} alt={c('Action').t`Report an issue`} />
+                    <IcThumbDown size={6} alt={c('Action').t`Report an issue`} />
                 </Button>
             </Tooltip>
             <ModalTwo as="form" onSubmit={(e) => withLoading(handleSubmit(e))} {...feedbackModal.modalProps}>

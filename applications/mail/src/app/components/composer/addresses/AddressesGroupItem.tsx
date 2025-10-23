@@ -4,16 +4,8 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms';
-import {
-    ContextMenu,
-    DropdownMenu,
-    DropdownMenuButton,
-    Icon,
-    useDragOver,
-    useModalState,
-    useNotifications,
-    usePopperAnchor,
-} from '@proton/components';
+import { ContextMenu, DropdownMenu, DropdownMenuButton, useDragOver, useModalState, useNotifications, usePopperAnchor } from '@proton/components';
+import { IcCross, IcCrossCircle, IcSquares, IcUser, IcUsers } from '@proton/icons';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
@@ -107,7 +99,7 @@ const AddressesGroupItem = ({
             >
                 <span className="relative interactive-pseudo-inset flex flex-row flex-nowrap">
                     <span className="inline-flex shrink-0 composer-addresses-item-icon px-2 ml-0.5 *:pointer-events-none h-full">
-                        <Icon name="users" size={3} color={recipientGroup?.group?.Color} className="m-auto" />
+                        <IcUsers size={3} color={recipientGroup?.group?.Color} className="m-auto" />
                     </span>
                     <Tooltip title={c('Info').t`Click to view group details`}>
                         <span
@@ -126,7 +118,7 @@ const AddressesGroupItem = ({
                         className="composer-addresses-item-remove inline-flex shrink-0 p-2 *:pointer-events-none h-full relative interactive-pseudo-inset"
                         onClick={handleRemove}
                     >
-                        <Icon name="cross" size={3} className="m-auto" />
+                        <IcCross size={3} className="m-auto" />
                         <span className="sr-only">{c('Action').t`Remove`}</span>
                     </button>
                 </Tooltip>
@@ -148,14 +140,14 @@ const AddressesGroupItem = ({
             >
                 <DropdownMenu>
                     <DropdownMenuButton className="text-left flex flex-nowrap items-center" onClick={handleCopy}>
-                        <Icon name="squares" className="mr-2" />
+                        <IcSquares className="mr-2" />
                         <span className="flex-1 my-auto">{c('Action').t`Copy addresses`}</span>
                     </DropdownMenuButton>
                     <DropdownMenuButton
                         className="text-left flex flex-nowrap items-center"
                         onClick={() => showModalCallback(true)}
                     >
-                        <Icon name="user" className="mr-2" />
+                        <IcUser className="mr-2" />
                         <span className="flex-1 my-auto">{c('Action').t`View recipients`}</span>
                     </DropdownMenuButton>
                     <DropdownMenuButton
@@ -163,7 +155,7 @@ const AddressesGroupItem = ({
                         liClassName="dropdown-item--delete"
                         onClick={handleRemove}
                     >
-                        <Icon name="cross-circle" className="mr-2" />
+                        <IcCrossCircle className="mr-2" />
                         <span className="flex-1 my-auto">{c('Action').t`Remove`}</span>
                     </DropdownMenuButton>
                 </DropdownMenu>

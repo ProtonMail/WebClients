@@ -1,4 +1,5 @@
 import { FolderIcon, Icon } from '@proton/components';
+import { IcCircleFilled } from '@proton/icons';
 import { isCategoryLabel } from '@proton/mail/helpers/location';
 import clsx from '@proton/utils/clsx';
 
@@ -31,7 +32,7 @@ export const LocationFieldDropdownItemIcon = ({ value, item }: Props) => {
     }
 
     if (isLabel(item)) {
-        return <Icon name="circle-filled" color={item.color} className="shrink-0 mr-2" />;
+        return <IcCircleFilled color={item.color} className="shrink-0 mr-2" />;
     }
 
     return null;
