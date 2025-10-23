@@ -25,6 +25,12 @@ global.OffscreenCanvas = jest.fn().mockImplementation((width, height) => ({
 const crypto = require('crypto').webcrypto;
 global.crypto.subtle = crypto.subtle;
 
+global.ResizeObserver = jest.fn().mockImplementation(() => ({
+    observe: jest.fn(),
+    unobserve: jest.fn(),
+    disconnect: jest.fn(),
+}));
+
 // Do not start crypto worker pool, let the single tests setup/mock the CryptoProxy as needed
 jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
     __esModule: true,
