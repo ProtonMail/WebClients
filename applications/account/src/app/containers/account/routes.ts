@@ -130,9 +130,7 @@ export const getAccountAppRoutes = ({
     const showVideoConferenceSection =
         (isZoomIntegrationEnabled || isProtonMeetIntegrationEnabled) &&
         !isExternalUser &&
-        (organization?.Settings.VideoConferencingEnabled ||
-            organization?.Settings.MeetVideoConferencingEnabled ||
-            !hasPaidMail);
+        (organization?.Settings.VideoConferencingEnabled || !hasPaidMail);
 
     const isAccountRecoveryAvailable = getIsAccountRecoveryAvailable(user);
     const isEmergencyAccessAvailable = user.isPrivate && getIsOutgoingDelegatedAccessAvailable(user);

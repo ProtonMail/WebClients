@@ -82,7 +82,6 @@ export interface OrganizationSettings {
     LogoID: string | null;
     ShowScribeWritingAssistant: boolean;
     VideoConferencingEnabled: boolean;
-    MeetVideoConferencingEnabled: boolean;
     MailCategoryViewEnabled: boolean;
     AllowedProducts: SerializedOrganizationSettingsAllowedProduct[];
     // Settings for admin
