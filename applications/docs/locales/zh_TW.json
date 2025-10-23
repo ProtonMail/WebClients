@@ -60,9 +60,6 @@
       "Add contact": [
         "加入聯絡人"
       ],
-      "Add credit / debit card": [
-        "加入信用卡 / 簽帳金融卡"
-      ],
       "Add email": [
         "加入電郵"
       ],
@@ -119,9 +116,6 @@
       ],
       "Cancel subscription": [
         "取消訂購授權"
-      ],
-      "Cancel trial and pay": [
-        "取消試用並付款"
       ],
       "Change password": [
         "變更密碼"
@@ -228,17 +222,11 @@
       "Create and copy alias": [
         "建立及複製別名"
       ],
-      "Create folder": [
-        "新建資料夾"
-      ],
       "Create new folder": [
         "創建新資料夾"
       ],
       "Create new password": [
         "建立新密碼"
-      ],
-      "Current plan": [
-        "現行方案"
       ],
       "Customize": [
         "自訂"
@@ -251,9 +239,6 @@
       ],
       "Decline invite": [
         "婉拒邀請"
-      ],
-      "Decrease": [
-        "減"
       ],
       "Delete": [
         "刪除"
@@ -315,9 +300,6 @@
       "Edit sign-in details": [
         "編輯登入詳細資訊"
       ],
-      "Edit subscription": [
-        "更換授權約期"
-      ],
       "Email settings": [
         "電郵設定"
       ],
@@ -353,9 +335,6 @@
       ],
       "Get ${ planOrAppName }": [
         "選用 ${ planOrAppName }"
-      ],
-      "Get in touch": [
-        "保持聯絡"
       ],
       "Get the apps": [
         "取得應用程式"
@@ -432,17 +411,11 @@
       "Import from Outlook": [
         "從 Outlook 匯入"
       ],
-      "Increase": [
-        "加"
-      ],
       "Keep my subscription": [
         "保持訂閱"
       ],
       "Learn more": [
         "瞭解詳情"
-      ],
-      "Let's talk": [
-        "我們一起聊聊！"
       ],
       "Load": [
         "載入"
@@ -531,12 +504,6 @@
       "Open navigation": [
         "開啟導覽"
       ],
-      "Pay": [
-        "付款"
-      ],
-      "Pay ${ price } now": [
-        "繳款金額 ${ price }"
-      ],
       "PDF (.pdf)": [
         "PDF (.pdf)"
       ],
@@ -587,9 +554,6 @@
       ],
       "Remove button": [
         "移除按鈕"
-      ],
-      "Remove gift code": [
-        "移除禮品代碼"
       ],
       "Rename": [
         "重新命名"
@@ -663,12 +627,6 @@
       "Select all": [
         "全選"
       ],
-      "Select billing cycle ${ billingText }": [
-        "選取繳款週期${ billingText }"
-      ],
-      "Select country": [
-        "選擇國家"
-      ],
       "Set recovery methods": [
         "設定復原方式"
       ],
@@ -729,9 +687,6 @@
       "Switch or add account": [
         "切換或是添加帳號"
       ],
-      "Take a tour": [
-        "瀏覽"
-      ],
       "Toggle debug mode": [
         "切換成偵錯模式"
       ],
@@ -789,12 +744,6 @@
       "Use ${ PASS_APP_NAME } for Business": [
         "將 ${ PASS_APP_NAME } 用於商務"
       ],
-      "Use a different card": [
-        "改用另一張卡"
-      ],
-      "Use a different payment method": [
-        "改用另一個繳款方式"
-      ],
       "Use authentication code": [
         "使用驗證代碼"
       ],
@@ -821,9 +770,6 @@
       ],
       "Web page (.html)": [
         "Web page (.html)"
-      ],
-      "What do I get?": [
-        "我的專屬服務方案："
       ],
       "Word count": [
         "字數"
@@ -858,18 +804,6 @@
       ],
       "${ ips } server": [
         "${ ips } 台伺服器"
-      ],
-      "${ price } per dedicated server": [
-        "每專用伺服器${ price }"
-      ],
-      "${ price } per domain": [
-        "每網域${ price }"
-      ],
-      "${ price } per seat": [
-        "${ price } 每席"
-      ],
-      "${ price } per user": [
-        "每使用者${ price }"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } 個 ${ LUMO_APP_NAME } 授權席次"
@@ -980,11 +914,6 @@
         "${ BRAND_NAME } 應用程式"
       ]
     },
-    "Assistant toggle": {
-      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
-        "使電子郵件生產力至新的等級。讓${ BRAND_NAME }以幫助書寫，回覆至，和校閱您的電子郵件。"
-      ]
-    },
     "Attached ics file error": {
       "Empty ICS file": [
         "空的 ICS 檔案"
@@ -1005,11 +934,6 @@
         "不支援的事件"
       ]
     },
-    "b2b_trials_2025_Info": {
-      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
-        "您可以在試用期間擁有最多 ${ TRIAL_MAX_SCRIBE_SEATS } 個抄寫座席。"
-      ]
-    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "取消訂購授權"
@@ -1024,15 +948,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "1 user": [
-        "1 位使用者"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 位使用者"
-      ],
       "Premium Password Manager": [
         "進階版密碼管理器"
       ]
@@ -1057,41 +972,17 @@
       "${ storageSize } storage": [
         "${ storageSize } 儲存空間"
       ],
-      "1 user": [
-        "1 位使用者"
-      ],
       "1 user account": [
         "1 使用者帳號"
       ],
-      "10 email addresses": [
-        "10 個電子信箱"
-      ],
-      "2 users": [
-        "2 位使用者"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
       "6 user accounts": [
         "6 位使用者帳號"
-      ],
-      "6 users": [
-        "6 位使用者"
-      ],
-      "8500+ servers across 110+ countries": [
-        "超過 8500 臺伺服器，遍布於 110 個以上的國家"
-      ],
-      "Ad-blocker and malware protection": [
-        "廣告攔截器及惡意軟體防護"
       ],
       "Advanced account protection": [
         "進階的帳號保護"
       ],
       "Easily add or remove users": [
         "輕鬆新增或移除使用者"
-      ],
-      "High speed streaming": [
-        "高速串流"
       ],
       "One-time payment, lifetime deal": [
         "一次付款，終身方案"
@@ -1102,20 +993,8 @@
       "Password health alerts": [
         "密碼堅固性警示"
       ],
-      "Private photo backup": [
-        "私人照片備份"
-      ],
-      "Protect 10 devices at a time": [
-        "同時保護 10 台裝置"
-      ],
       "Unlimited folders, labels and filters": [
         "資料夾、標籤與篩選器無上限"
-      ],
-      "Version history": [
-        "版本歷史紀錄"
-      ],
-      "VPN Accelerator": [
-        "VPN 加速器"
       ]
     },
     "BF2024: Offers": {
@@ -1130,9 +1009,6 @@
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
         "暢遊網路，保護隱私。提供 110 多個國家 8,500 多台伺服器、10 個裝置、高速串流、廣告阻擋和惡意軟體防護、VPN 加速器等功能。"
       ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "在世界各地暢享串流服務的影音內容，包含 Netflix、Disney+、Prime Video 等平台。"
-      ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "於全部裝置安全登入。包和無限hide-my-email別名，共享，整合雙重驗證，${ DARK_WEB_MONITORING_NAME }及更多。"
       ],
@@ -1141,29 +1017,6 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "透過端對端加密保護電子郵件及行事曆。包含15個電子郵件地址,支援自訂電子郵件網域,${ BRAND_NAME }Scribe 撰寫工具，無限hide-my-email別名及更多"
-      ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "精心設計的 NetShield 保護您的裝置並攔截讓您變慢的廣告、追蹤程式與惡意軟體。"
-      ]
-    },
-    "Billing cycle option": {
-      "1 month": [
-        "1 個月"
-      ],
-      "12 months": [
-        "12 個月"
-      ],
-      "Annually": [
-        "每年"
-      ],
-      "Lifetime": [
-        "終身"
-      ],
-      "Monthly": [
-        "每月"
-      ],
-      "Two-year": [
-        "兩年"
       ]
     },
     "Browser": {
@@ -1177,6 +1030,9 @@
       ],
       "Application problem": [
         "應用程式問題"
+      ],
+      "Black Friday": [
+        "黑色星期五"
       ],
       "Bridge problem": [
         "Bridge 問題"
@@ -1252,9 +1108,6 @@
       ]
     },
     "Button": {
-      "Close": [
-        "關閉"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "繼續使用 ${ MAIL_APP_NAME }。"
       ],
@@ -1264,23 +1117,8 @@
       "Continue your subscription": [
         "繼續您的訂閱"
       ],
-      "Create label": [
-        "創建標籤"
-      ],
-      "Discover and set up features": [
-        "探索及設定功能"
-      ],
       "Maybe later": [
         "稍後再說"
-      ],
-      "Remind me later": [
-        "稍後提醒我"
-      ],
-      "Set up other features": [
-        "設置其他功能"
-      ],
-      "Take a tour": [
-        "瀏覽"
       ]
     },
     "Cancellation upsell": {
@@ -1330,12 +1168,6 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } 位使用者"
-      ],
-      "Total": [
-        "總共"
-      ],
-      "Total for ${ n } month": [
-        " ${ n } 個月總計"
       ]
     },
     "Collapsible tooltip": {
@@ -1353,9 +1185,6 @@
       "Full chat history with search": [
         "具備搜尋功能的完整聊天記錄"
       ],
-      "Large file upload support": [
-        "大型檔案上載支援"
-      ],
       "Unlimited daily chats": [
         "無限每日聊天"
       ],
@@ -1367,9 +1196,6 @@
       ]
     },
     "collider_2025: Info": {
-      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
-        "${ LUMO_APP_NAME } 是一款隱私優先的人工智慧，可協助您提高效率，同時確保您的資料安全。釋放其全部潛力，並搶先體驗隨著它們推出而帶來的新功能。"
-      ],
       "High-speed chats and advanced AI features.": [
         "高速聊天和先進的人工智慧功能。"
       ]
@@ -2368,14 +2194,6 @@
         "為期 ${ VPN_APP_NAME }"
       ]
     },
-    "Cycle": {
-      "/month": [
-        "/月"
-      ],
-      "/user per month": [
-        "/ 每使用者每月"
-      ]
-    },
     "Default display name vcard": {
       "Unknown": [
         "未知"
@@ -2573,6 +2391,33 @@
         "優先支援"
       ]
     },
+    "Duo offer": {
+      "/month": [
+        "/月"
+      ],
+      "1 TB of storage to share": [
+        "共享 1 TB 儲存空間"
+      ],
+      "2 user accounts": [
+        "2 位使用者帳號"
+      ],
+      "Only": [
+        "僅"
+      ]
+    },
+    "Duo offer: Link": {
+      "Double your storage": [
+        "加倍您的儲存空間"
+      ],
+      "Share your plan": [
+        "共享您的方案"
+      ]
+    },
+    "Duo offer: Title": {
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "透過 ${ BRAND_NAME } Duo 將您的儲存空間加倍"
+      ]
+    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } 已被取消。"
@@ -2703,12 +2548,6 @@
       "Already a member of this share": [
         "已經是這個分享的成員了"
       ],
-      "Amount above the maximum.": [
-        "金額高於上限。"
-      ],
-      "Amount below minimum (${ minimumAmount }).": [
-        "金額不得低於 (${ minimumAmount })。"
-      ],
       "An error occurred while attempting to convert the document. Please try again.": [
         "轉換文件時發生錯誤，請再試一次。"
       ],
@@ -2742,9 +2581,6 @@
       "Cannot export this contact": [
         "無法匯出通訊名片"
       ],
-      "Checkout expired, please try again": [
-        "結帳已逾時，請重試"
-      ],
       "Contact could not be saved": [
         "無法儲存聯絡人"
       ],
@@ -2769,9 +2605,6 @@
       "Domain not available, try again later": [
         "網域無法使用，請稍後再試"
       ],
-      "Editing billing address is not available at the moment. Please try again later.": [
-        "目前不可編輯付款地址。請稍後再試。"
-      ],
       "Email address is required": [
         "電郵位址為必填"
       ],
@@ -2780,9 +2613,6 @@
       ],
       "Enter 6 digits": [
         "請輸入 6 位驗證碼"
-      ],
-      "Error connecting to the Bitcoin API.": [
-        "連線到比特幣 API 時發生錯誤。"
       ],
       "Error decrypting a computer": [
         "解密電腦時發生錯誤"
@@ -2838,29 +2668,11 @@
       "Incorrect username": [
         "錯誤的使用者名稱"
       ],
-      "Invalid ${ name } code": [
-        "${ name } 代碼無效"
-      ],
-      "Invalid card number": [
-        "卡號無效"
-      ],
-      "Invalid code": [
-        "代碼無效"
-      ],
       "Invalid email address": [
         "電郵位址無效"
       ],
-      "Invalid expiration date": [
-        "到期日無效"
-      ],
-      "Invalid IBAN": [
-        "國際銀行帳號不正確"
-      ],
       "Invalid name": [
         "無效的名稱"
-      ],
-      "Invalid postal code": [
-        "郵遞區號無效"
       ],
       "Invalid public key file": [
         "公開金鑰檔案無效"
@@ -2922,32 +2734,8 @@
       "Passwords do not match": [
         "密碼不一致"
       ],
-      "Payment process canceled": [
-        "付款過程已取消"
-      ],
-      "Payment process consumed": [
-        "已進行付款"
-      ],
-      "Payment process failed": [
-        "付款程序失敗"
-      ],
-      "Payment process not supported": [
-        "不支援此付款程序"
-      ],
       "Photos upload is temporarily disabled. Please try again later": [
         "照片上載暫時停用。請稍後再試"
-      ],
-      "Please enter a valid postal code": [
-        "請輸入有效的郵遞區號"
-      ],
-      "Please enter a valid ZIP code": [
-        "請輸入有效的郵遞區號"
-      ],
-      "Please enter postal code": [
-        "請輸入郵遞區號"
-      ],
-      "Please enter ZIP code": [
-        "請輸入郵遞區號"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "請先修正已標示的衝突以便繼續。"
@@ -2961,26 +2749,14 @@
       "Please select a state": [
         "請選擇一個州"
       ],
-      "Please select billing country": [
-        "請選擇您的付款國家"
-      ],
-      "Please select billing state": [
-        "請選擇您的付款州名"
-      ],
       "Port is required": [
         "通訊埠為必填"
-      ],
-      "Postal code is required": [
-        "郵遞區號為必填"
       ],
       "Primary address key is not decrypted": [
         "主要位址金鑰並未被解密"
       ],
       "Primary address key is not decrypted.": [
         "主要位址金鑰並未被解密。"
-      ],
-      "Process aborted": [
-        "處理已中止"
       ],
       "Removed duplicate invitee: ${ joinedInvitee }": [
         "已移除重覆的受邀者：${ joinedInvitee }"
@@ -3024,14 +2800,8 @@
       "status page": [
         "狀態頁面"
       ],
-      "Tab closed": [
-        "分頁已關閉"
-      ],
       "The address might be misspelled": [
         "位址可能拼錯了"
-      ],
-      "The amount due has changed. Please try again.": [
-        "應付金額已變更。請再試一次。"
       ],
       "The document you are trying to convert is too large. This may occur if the document has a large number of images or other media. Please try again with a smaller document.": [
         "您嘗試轉換的文件過大。這可能是因為文件包含大量圖片或其他媒體檔案所致。請嘗試轉換較小的文件。"
@@ -3059,9 +2829,6 @@
       ],
       "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
         "您最近對文件所做的更新過大，或將超過文件總大小限制。編輯功能已暫時停用。您的變更將不會被儲存。請匯出文件副本並重新載入頁面。"
-      ],
-      "The minimum amount of credit that can be added is ${ price }": [
-        "每次儲值的最低金額為 ${ price }"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "原始檔案的新修訂版本尚未上載，請稍後再試"
@@ -3117,9 +2884,6 @@
       "Unknown error": [
         "未知錯誤"
       ],
-      "Unknown payment token status": [
-        "未知的付款權仗狀態"
-      ],
       "Update Too Large": [
         "更新內容超過大小限制"
       ],
@@ -3152,9 +2916,6 @@
       ],
       "Your import will not be processed.": [
         "將不會處理您的匯入。"
-      ],
-      "ZIP code is required": [
-        "郵遞區號為必要項目"
       ]
     },
     "Error importing calendar": {
@@ -4009,20 +3770,11 @@
       "${ groupCounts } group found": [
         "找到 ${ groupCounts } 個群組"
       ],
-      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
-        "${ LUMO_APP_NAME } 包含 ${ BRAND_NAME } Scribe 撰稿助理"
-      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME }終身方案無續約費，他是單次付費終身存取${ PASS_SHORT_APP_NAME }。"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME }終身方案無續約費,他是單次付款終身存取${ PASS_SHORT_APP_NAME }。您${ planTitle }訂閱價格及日期保持不便。"
-      ],
-      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
-        "${ plan.Title }要求至少1個獨立伺服器${ serverPricePerMonth }"
-      ],
-      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
-        "${ PROTON_SENTINEL_NAME }透過監控可疑活動以保護您的帳戶。"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "找到 ${ providerFoldersNumLocalized } 個資料夾"
@@ -4045,9 +3797,6 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "已選取 ${ selectedFoldersCountLocalized } 種標籤"
       ],
-      "${ storage } storage": [
-        "${ storage } 儲存空間"
-      ],
       "${ updated } contact updated successfully.": [
         "已成功更新 ${ updated } 位聯絡人。"
       ],
@@ -4057,17 +3806,11 @@
       "(${ memberCount } member)": [
         "(${ memberCount } 位成員)"
       ],
-      "(${ serverPrice }/month)": [
-        "(${ serverPrice } /月)"
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 附贈的儲存空間"
       ],
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } 紅利加碼連線數至 ${ VPN_APP_NAME } (您即可享受多設備同時連上 VPN)"
-      ],
-      "30-day money-back guarantee.": [
-        "30天退款保證。"
       ],
       "A number will be added to the filename": [
         "將在檔案名稱中加入數字"
@@ -4078,32 +3821,20 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "電話號碼僅能用於驗證一組 ${ BRAND_NAME } 帳號"
       ],
-      "A user is an account associated with a single username, mailbox, and person": [
-        "一位使用者意味著一個帳號與單一使用者名稱、信箱及個人對應"
-      ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
         "VPN 會加密您的連線並隱藏您的 IP 位址，使任何人都更難追蹤或監控您的瀏覽。"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "由於有帳單仍未繳付，因此帳號存取已受限制。請聯絡您的系統管理員。"
       ],
-      "Account successfully updated": [
-        "帳號已成功更新"
-      ],
       "Ad targeting": [
         "廣告目標鎖定"
-      ],
-      "Address copied to clipboard": [
-        "地址已複製到剪貼簿"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "此電郵位址已啟用以受信任的金鑰驗證位址。若要傳送到此電郵位址，請首先信任可用於傳送的公開金鑰。"
       ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "廣告商會追蹤您的瀏覽紀錄，以顯示目標式廣告。${ VPN_APP_NAME } 會封鎖追蹤程式和廣告，讓您的連線速度更快，並改善您的線上體驗。"
-      ],
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "AI驅動撰寫功能以創建更好電子郵件，快速地和有效地。"
       ],
       "All (${ totalFoldersCount } folder)": [
         "全部 (${ totalFoldersCount } 個資料夾)"
@@ -4113,15 +3844,6 @@
       ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "所有聯絡人都已匯入，已達 ${ MAX_CONTACTS_PER_USER } 的限制"
-      ],
-      "American Express SafeKey logo": [
-        "American Express SafeKey 標誌"
-      ],
-      "Amount above maximum (${ amount }).": [
-        "金額不得高於 (${ amount })。"
-      ],
-      "Amount below minimum (${ amount }).": [
-        "金額不得低於 (${ amount })。"
       ],
       "an anonymous user": [
         "一位未知使用者"
@@ -4153,17 +3875,8 @@
       "Attention required": [
         "需要您的處理"
       ],
-      "Awaiting transaction": [
-        "等待交易"
-      ],
-      "Balance from your previous subscription": [
-        "您先前訂購授權的餘額"
-      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "在申請一組新的驗證碼之前，請檢查您的垃圾郵件資料夾以及 ${ strong } 的位址正確無誤。"
-      ],
-      "Billing cycle: ${ text }": [
-        "繳款單週期：${ text }"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "一旦降級至免費方案，您將永久失去這些優惠，即便您日後再次升級也是如此。"
@@ -4228,9 +3941,6 @@
       "Create a new contact group": [
         "創建新聯絡人群組"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "替成員創建一個安全${ value }雲端"
-      ],
       "Create in": [
         "創建在"
       ],
@@ -4249,41 +3959,17 @@
       "Creating new document...": [
         "正在建立新文件..."
       ],
-      "Credit for the unused portion of your previous plan subscription": [
-        "您之前訂購授權方案裡未使用部分的餘額"
-      ],
       "Current plan": [
         "當前方案"
       ],
       "Current version": [
         "目前版本"
       ],
-      "Custom email domains": [
-        "自訂電郵網域"
-      ],
-      "Dedicated servers": [
-        "專用伺服器"
-      ],
-      "Dedicated VPN servers": [
-        "專用 VPN 伺服器"
-      ],
-      "default email address": [
-        "預設電子信箱地址"
-      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "數碼簽署已通過驗證。此檔案由 ${ emailAddress } 安全上載。"
       ],
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "數碼簽署已通過驗證。此資料夾由 ${ emailAddress } 安全上載。"
-      ],
-      "Discover new features unlocked and start using them right away!": [
-        "探索解鎖的新功能並立即使用!"
-      ],
-      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
-        "探索${ planTitle }解鎖的新功能並立即使用!"
-      ],
-      "Discover ProtectBuy logo": [
-        "Discover ProtectBuy 商標"
       ],
       "Display word count": [
         "顯示字數統計"
@@ -4296,9 +3982,6 @@
       ],
       "Document owner has the password": [
         "文件擁有者有密碼"
-      ],
-      "Don’t see anything? Remember to turn off pop-up blockers.": [
-        "什麼都看不到嗎？記得關閉彈出視窗攔截程式。"
       ],
       "Downgrade": [
         "降級"
@@ -4314,9 +3997,6 @@
       ],
       "Download was canceled": [
         "下載已取消"
-      ],
-      "Download your favorite app today and take privacy with you everywhere you go.": [
-        "現在就下載您最愛的應用程式，隱私隨身帶著走。"
       ],
       "Drop file here to upload": [
         "拖曳檔案到此處來上傳"
@@ -4336,17 +4016,8 @@
       "email": [
         "電子信箱"
       ],
-      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
-        "電郵網域名稱託管服務，僅適用於您已擁有的網域名稱。 ${ BRAND_NAME } 現階段並未提供網域名稱註冊服務。 您的託管服務，可使用任何網域註冊商已註冊的名稱。"
-      ],
       "Emails are automatically signed": [
         "電子郵件已自動簽章"
-      ],
-      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
-        "電子郵件移至垃圾桶和垃圾郵件將於30天後自動刪除。"
-      ],
-      "Enabling auto-deletion…": [
-        "啟用自動刪除…"
       ],
       "End-to-end encrypted": [
         "端到端加密"
@@ -4380,9 +4051,6 @@
       ],
       "Everything in ${ planOrAppName }": [
         "全部都在 ${ planOrAppName }"
-      ],
-      "Expired": [
-        "已過期"
       ],
       "Failed to generate a secure link. The reason is: ${ error }": [
         "產生安全連結失敗。原因：${ error }"
@@ -4486,9 +4154,6 @@
       "In restrictive countries": [
         "在受限制的國家"
       ],
-      "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
-        "在下一步驟裡，您將可以使用比特幣數位錢包，提交單筆存款。"
-      ],
       "Inherited from parent folder": [
         "繼承自上層資料夾"
       ],
@@ -4512,9 +4177,6 @@
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "最好始終使用 VPN。但在以下情況下，網路安全威脅可能會達到最高點："
-      ],
-      "JCB logo": [
-        "JCB 符號"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "現在只需確認您的選擇，我們就會處理餘下一切。"
@@ -4573,9 +4235,6 @@
       "Making a copy...": [
         "製作副本"
       ],
-      "Mastercard SecureCode logo": [
-        "Mastercard SecureCode 標誌"
-      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "最多 ${ MAX_SHARED_URL_PASSWORD_LENGTH } 個字元"
       ],
@@ -4590,9 +4249,6 @@
       ],
       "Merged": [
         "合併的"
-      ],
-      "Messages to all your email addresses will go to your inbox.": [
-        "送至您全部電子郵件地址的訊息將傳至您的收件匣。"
       ],
       "Monitor accounts": [
         "監控帳號"
@@ -4615,9 +4271,6 @@
       "No group found": [
         "未找到群組"
       ],
-      "No payment is required at this time.": [
-        "此時毋須付款。"
-      ],
       "No results found": [
         "找不到相符的結果"
       ],
@@ -4632,9 +4285,6 @@
       ],
       "Not connected": [
         "未連線"
-      ],
-      "Number of dedicated servers in the organization": [
-        "團隊專用的伺服器數量"
       ],
       "Numbers": [
         "數字"
@@ -4660,12 +4310,6 @@
       "Opening...": [
         "正在打開..."
       ],
-      "or discover other features:": [
-        "或探索其他功能:"
-      ],
-      "Organization size": [
-        "組織規模"
-      ],
       "Other accounts": [
         "其他帳號"
       ],
@@ -4684,9 +4328,6 @@
       "Password must have:": [
         "密碼必須包含："
       ],
-      "Payments are protected with TLS encryption and Swiss privacy laws.": [
-        "支付受 TLS 加密及瑞士隱私法律保護。"
-      ],
       "Pending invitations": [
         "佇候的邀請"
       ],
@@ -4699,17 +4340,8 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME 使用目前的編輯器模式自動傳送訊息。"
       ],
-      "Please authenticate your card in the verification tab.": [
-        "請在驗證索引標籤中認證您的信用卡。"
-      ],
-      "Please authenticate your payment in the verification tab.": [
-        "請在驗證索引標籤中認證您的付款。"
-      ],
       "Please enter the password to decrypt and view content.": [
         "請輸入密碼以解密並檢視內容。"
-      ],
-      "Please fill in all required fields.": [
-        "請填寫所有必填的欄位"
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "請注意：指派到此群組中的電子郵件位址不會被刪除。"
@@ -4735,12 +4367,6 @@
       "Please try again in a few moments": [
         "請稍候再試"
       ],
-      "Please try again using a different payment method, or contact your bank.": [
-        "諘換另一個繳款方式再試一次，或聯絡您的銀行尋求協助。"
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "諘再試一次，您也可換另一個繳款方式，或聯絡 PayPal 尋求協助。"
-      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "請稍候，我們正查找可使用主要加密金鑰重新簽署的聯絡人。"
       ],
@@ -4752,9 +4378,6 @@
       ],
       "Preparing link to folder": [
         "資料夾連結準備中"
-      ],
-      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
-        "價格計入週期之下所有適用的折扣，以及儲存在您的帳號內未逾期的優惠券。"
       ],
       "Primary": [
         "主要"
@@ -4773,9 +4396,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "重新整理此頁面或${ link }將自動解決大部分問題。"
-      ],
-      "Registering your subscription…": [
-        "正在註冊您的訂閱…"
       ],
       "Save Document as PDF": [
         "另存為 PDF"
@@ -4798,9 +4418,6 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "請選取要匯入的行事曆。將根據您的方案中可用的行事曆數量為每個匯入的行事曆創建一個新的行事曆。"
       ],
-      "SEPA payments are not available at the moment. Please try again later.": [
-        "SEPA 付款目前不可用。請稍後再試。"
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "無法連線至伺服器。請過幾分鐘後再試"
       ],
@@ -4810,14 +4427,8 @@
       "Set up your organization": [
         "設定您的組織"
       ],
-      "Setting up ${ feature }…": [
-        "設定${ feature }…"
-      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "設定好 PGP，您就能夠傳送端對端加密電郵，給 ${ BRAND_NAME } 以外的使用者，只需確認使用 PGP 相容服務即可。"
-      ],
-      "Setting up your new address…": [
-        "正在設定您的新地址…"
       ],
       "Settings update failed": [
         "設定更新失敗"
@@ -4848,12 +4459,6 @@
       ],
       "Something went wrong": [
         "發生錯誤"
-      ],
-      "Start sharing it with contacts and use it for online services.": [
-        "開始共享此內容和使用於線上服務。"
-      ],
-      "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
-        "提交單筆存款時，可使用以下位址或者掃描 QR 代碼。該筆存入款項在確認後，就會顯示在您的帳號裡。"
       ],
       "Subscription auto-renews every ${ cycle } month.": [
         "每${ cycle }個月自動續訂。"
@@ -4897,17 +4502,11 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "這個收件者已停用端到端加密。若要傳送加密郵件給這個收件者，該收件者必須重新啟用端到端加密。"
       ],
-      "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
-        "驗證過程將開新瀏覽器索引標籤。請停用任何使用中的彈出視窗攔截程式。"
-      ],
       "This action will delete the link and revoke access for all users.": [
         "此項目將刪除連結並撤銷全部使用者的存取權。"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "此電郵位址已停用。若要傳送到此電郵位址，請其擁有者首先啟用此電郵位址。"
-      ],
-      "This is now your ${ defaultEmailAddress } for sending new messages.": [
-        "此為您新傳送新電子郵件的${ defaultEmailAddress }"
       ],
       "This item already exists in your library": [
         "此項目已存在於資料庫"
@@ -4948,9 +4547,6 @@
       "This will upload a new version of the folder": [
         "這將會上傳新版本的資料夾"
       ],
-      "To complete your payment, please send ${ btcAmountBold } to the address below.": [
-        "欲完成您的繳款，請傳送 ${ btcAmountBold } 至以下位址。"
-      ],
       "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
         "於${ DOCS_APP_NAME }開啟它們及匯出以下載${ DOCS_APP_NAME }檔案。"
       ],
@@ -4968,18 +4564,6 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "若要使用電郵驗證，您必須啟用信任金鑰並信任一個或多個可用的公開金鑰，包括此電郵的主要金鑰。這樣可以防止加密金鑰遭到偽造。"
-      ],
-      "Total email addresses": [
-        "可使用的電郵位址總數"
-      ],
-      "Total storage": [
-        "總儲存量"
-      ],
-      "Total supported domains": [
-        "可支援的網域總數"
-      ],
-      "Total VPN connections": [
-        "總 VPN 連線數量"
       ],
       "Transfer canceled for file \"${ name }\"": [
         "已取消檔案「${ name }」的傳輸"
@@ -5017,23 +4601,11 @@
       "username": [
         "使用者名稱"
       ],
-      "Users": [
-        "使用者"
-      ],
-      "Verification may take a few minutes.": [
-        "驗證或需時數分鐘。"
-      ],
-      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "驗證將開新索引標籤，請停用任何彈出式視窗攔截程式。您不會被收費。任何用於驗證信用卡的金額都會馬上退還。"
-      ],
       "Version number successfully copied to clipboard": [
         "成功地將版本號碼複製到剪貼簿"
       ],
       "View only": [
         "僅能檢視"
-      ],
-      "Visa Secure logo": [
-        "Visa Secure 標誌"
       ],
       "VPN IP": [
         "VPN IP"
@@ -5041,26 +4613,11 @@
       "Warning": [
         "注意"
       ],
-      "We couldn’t process your payment.": [
-        "我們未能處理您的付款。"
-      ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "我們無法驗證 ${ fileName } 是由 ${ emailAddress } 上傳"
       ],
       "We couldn’t verify who uploaded ${ fileName }.": [
         "我們無法驗證 ${ fileName } 由誰上傳"
-      ],
-      "We need to authenticate your payment method with your bank.": [
-        "我們需要與您的銀行認證您的繳款方式。"
-      ],
-      "We need to authenticate your payment with your bank.": [
-        "我們需要與您的銀行認證您的付款。"
-      ],
-      "We use 3-D Secure to protect your payments": [
-        "我們使用 3D 驗證來保護您的交易安全"
-      ],
-      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "我們將在瀏覽器的新索引標籤中重新導向到 PayPal 以完成此交易。若您有使用任何彈出式視窗攔截程式，請先停用，然後才繼續。"
       ],
       "We'll email you once import is complete.": [
         "當您匯入完成將電子郵件通知您。"
@@ -5119,9 +4676,6 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "你也可以將匯入的行事曆與現有的 ${ BRAND_NAME } 行事曆合併。"
       ],
-      "You can change this anytime in ${ settingsLink }.": [
-        "您隨時都可以在${ settingsLink }中變更。"
-      ],
       "You can check the progress ${ importProgressLink }.": [
         "您可以檢查進度 ${ importProgressLink }。"
       ],
@@ -5146,18 +4700,6 @@
       "You cannot undo this action.": [
         "此操作無法復原。"
       ],
-      "You get notified if your password or other data was leaked from a third-party service.": [
-        "當您的密碼或其他資料在第三方服務中洩漏時取得通知。"
-      ],
-      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
-        "您有一個試用期 ${ planTitle } 訂購授權。如果您希望在試用期完結後繼續您的訂購授權，請增加一個繳款方式。"
-      ],
-      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
-        "您有一個試用期 ${ planTitle } 訂購授權。您暫時無需付費。你的訂購授權將會在試用期結束時自動繳付。"
-      ],
-      "You may be redirected to your bank’s website.": [
-        "您或會重新導向至您的銀行網站。"
-      ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "您必須先停用或移除任何額外的 ${ MAIL_APP_NAME } 使用者、電郵位址及自訂網域，方可降級。"
       ],
@@ -5166,9 +4708,6 @@
       ],
       "You will lose all unsaved changes.": [
         "您所有未儲存的變更將會消失。"
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "即將重新導向到 PayPal 驗證您的付款。"
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "在截止日 ${ trialEndsOnFormatted } 到期之前取消，便不會向您收取任何費用。"
@@ -5259,19 +4798,8 @@
       ]
     },
     "info": {
-      "Optional": [
-        "選項"
-      ],
       "Selected color:": [
         "已選取的色彩:"
-      ]
-    },
-    "Info for cash payment method": {
-      "How to send a cash payment?": [
-        "如何傳送現金付款?"
-      ],
-      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
-        "請參見此文章的指示:${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -5345,14 +4873,8 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 使用者名稱"
       ],
-      "${ n } month": [
-        "${ n } 月"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(暫時無法使用。請稍後再試。)"
-      ],
-      "Account holder": [
-        "帳戶持有人"
       ],
       "Add email address": [
         "加入電郵位址"
@@ -5362,12 +4884,6 @@
       ],
       "Add to group": [
         "加入至群組"
-      ],
-      "Address": [
-        "電郵位址"
-      ],
-      "Anderson": [
-        "安德松"
       ],
       "Anyone on the Internet with the link can edit": [
         "網路上的任何人只要知道連結都可以編輯"
@@ -5399,20 +4915,11 @@
       "Beta Access": [
         "測試版體驗"
       ],
-      "Billing cycle": [
-        "繳款單週期"
-      ],
       "Browser": [
         "瀏覽器"
       ],
       "Browser version": [
         "瀏覽器版本"
-      ],
-      "BTC address": [
-        "比特幣位址 (數位錢包)"
-      ],
-      "BTC amount": [
-        "比特幣金額"
       ],
       "Calendar": [
         "行事曆"
@@ -5422,18 +4929,6 @@
       ],
       "Cancel download": [
         "取消下載"
-      ],
-      "Card details": [
-        "信用卡資訊"
-      ],
-      "Card holder": [
-        "持卡人"
-      ],
-      "Card number": [
-        "卡號"
-      ],
-      "Cash": [
-        "現金"
       ],
       "Category": [
         "類別"
@@ -5446,12 +4941,6 @@
       ],
       "Colors": [
         "色彩"
-      ],
-      "Company": [
-        "公司"
-      ],
-      "Company name": [
-        "公司名稱"
       ],
       "Confirm password": [
         "確認密碼"
@@ -5473,9 +4962,6 @@
       ],
       "Country": [
         "國家"
-      ],
-      "Credits": [
-        "額度"
       ],
       "Delete": [
         "刪除"
@@ -5537,17 +5023,11 @@
       "Erase this link and remove everyone with access": [
         "刪除連結並移除所有有權限者"
       ],
-      "Expires": [
-        "有效期限"
-      ],
       "Extended address": [
         "詳細位址"
       ],
       "File": [
         "檔案"
-      ],
-      "First name": [
-        "名"
       ],
       "Folder location": [
         "資料夾位置"
@@ -5566,9 +5046,6 @@
       ],
       "I understand the risk": [
         "我已了解此可能的風險"
-      ],
-      "IBAN": [
-        "國際銀行帳號"
       ],
       "Ignore": [
         "忽略"
@@ -5614,9 +5091,6 @@
       ],
       "Last month only": [
         "僅過去 1 個月"
-      ],
-      "Last name": [
-        "姓"
       ],
       "Log in or sign up ": [
         "登入或註冊 "
@@ -5672,15 +5146,6 @@
       "Password": [
         "密碼"
       ],
-      "Payer": [
-        "付款人"
-      ],
-      "Payment details": [
-        "付款細節"
-      ],
-      "Payment method": [
-        "付款方式"
-      ],
       "PGP scheme": [
         "PGP 方案"
       ],
@@ -5695,9 +5160,6 @@
       ],
       "Postal code": [
         "郵遞區號"
-      ],
-      "Proration": [
-        "按比例分配後"
       ],
       "Public keys": [
         "公開金鑰"
@@ -5720,9 +5182,6 @@
       "Reveal password": [
         "顯示密碼"
       ],
-      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
-        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
-      ],
       "Set expiration date": [
         "設定到期日"
       ],
@@ -5741,12 +5200,6 @@
       "Skip folder": [
         "略過資料夾"
       ],
-      "Start date": [
-        "開始日期"
-      ],
-      "State": [
-        "州"
-      ],
       "Stop sharing": [
         "停止共用"
       ],
@@ -5759,9 +5212,6 @@
       "Strong password": [
         "高強度密碼"
       ],
-      "Subscription options": [
-        "訂購授權選項"
-      ],
       "Sync with system": [
         "與系統同步"
       ],
@@ -5770,9 +5220,6 @@
       ],
       "Theme": [
         "布景主題"
-      ],
-      "Thomas": [
-        "湯姆斯"
       ],
       "To: ${ toEmail }": [
         "收件者：${ toEmail }"
@@ -5824,9 +5271,6 @@
       ],
       "Your password (admin)": [
         "您的密碼（管理員）"
-      ],
-      "ZIP code": [
-        "郵遞區號"
       ]
     },
     "Label for contact group color": {
@@ -5837,14 +5281,6 @@
     "Label for contact group name": {
       "Name": [
         "名稱"
-      ]
-    },
-    "Label, credit card": {
-      "Postal code": [
-        "郵遞區號"
-      ],
-      "ZIP code": [
-        "郵遞區號"
       ]
     },
     "Label/folder modal": {
@@ -5886,9 +5322,6 @@
       ]
     },
     "Link": {
-      "Add a gift code": [
-        "加入禮品代碼"
-      ],
       "clearing your browser cache": [
         "清除瀏覽器快取"
       ],
@@ -5897,9 +5330,6 @@
       ],
       "How to add Zoom links": [
         "如何新增 Zoom 連結"
-      ],
-      "How to pay with Bitcoin?": [
-        "如何以比特幣繳款？"
       ],
       "How to share via email": [
         "如何透過電子郵件共享"
@@ -5927,9 +5357,6 @@
       ],
       "Resume now": [
         "立即恢復"
-      ],
-      "settings": [
-        "設定"
       ],
       "What’s this?": [
         "這是什麼？"
@@ -6015,14 +5442,8 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME }Scribe撰寫幫手"
       ],
-      "Add ${ BRAND_NAME } Scribe writing assistant": [
-        "添加${ BRAND_NAME }訂閱撰寫扳手"
-      ],
       "Add-on with free trial": [
         "可免費試用的擴充功能"
-      ],
-      "for ${ price }": [
-        "${ price } 版"
       ]
     },
     "Message": {
@@ -6760,9 +6181,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } 後四碼 ${ last4 }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB 的雲端儲存空間，讓您可以輕鬆儲存、同步及共享檔案。受端對端加密保護。"
       ],
@@ -6853,12 +6271,6 @@
       ],
       "Downgrade account?": [
         "確定要換成精簡功能的帳號？"
-      ],
-      "Review subscription": [
-        "檢閱訂購授權"
-      ],
-      "Review subscription and pay": [
-        "檢視訂購授權與繳款"
       ],
       "Switch plans?": [
         "切換方案？"
@@ -7371,11 +6783,17 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }優惠今日過期!"
       ],
+      "Don't show this again": [
+        "不再顯示此內容"
+      ],
       "Don’t show this again": [
         "不再顯示此內容"
       ],
       "Don’t show this offer again": [
         "不再顯示此優惠"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "取得${ BRAND_NAME }Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "取得 ${ BRAND_NAME } 無限版"
@@ -7532,11 +6950,6 @@
         "安全保管庫、項目和共享連結"
       ]
     },
-    "pass_signup_2023: Title": {
-      "${ upsellPlanTitle } plan": [
-        "${ upsellPlanTitle }方案"
-      ]
-    },
     "pass_signup_2024: Info": {
       "${ n } user account": [
         "${ n }使用者帳號"
@@ -7594,79 +7007,9 @@
         "您要先存取至組織金鑰以完成此操作"
       ]
     },
-    "Payment method option": {
-      "Apple Pay": [
-        "Apple Pay"
-      ],
-      "Bank transfer": [
-        "銀行轉帳"
-      ],
-      "Credit/debit card": [
-        "信用卡/簽帳金融卡"
-      ],
-      "New credit/debit card": [
-        "加入信用卡/扣帳卡"
-      ]
-    },
-    "Payment.Sepa.Action": {
-      "Use company name": [
-        "使用公司名字"
-      ],
-      "Use personal name": [
-        "使用個人名字"
-      ]
-    },
     "Payments": {
-      "Billing Country": [
-        "計費國家"
-      ],
-      "Card number": [
-        "卡號"
-      ],
-      "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
-        "目前自動續訂為關閉。若現在變更訂閱，自動續訂將重新啟用。"
-      ],
-      "CVC": [
-        "CVC"
-      ],
-      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
-        "目前您將暫時無法修改或取消您的訂購授權。請等待付款完成後，再進行修改。感謝您耐心等候。"
-      ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "不包含 ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "不包含 ${ taxRate }% 稅金：${ taxAmount }"
-      ],
-      "Got it": [
-        "瞭解"
-      ],
-      "I'm purchasing as a business": [
-        "我以公司名義購買"
-      ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "包含 ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "包含 ${ taxRate }% 稅金：${ taxAmount }"
-      ],
-      "MM/YY": [
-        "MM/YY"
-      ],
-      "More plans are available in other currencies": [
-        "其他貨幣有更多的方案"
-      ],
-      "Payment method required for the subscription to be activated after the trial ends.": [
-        "為了讓訂閱在試用期結束後啟用，需要付款方式。"
-      ],
-      "Please reactivate your subscription first to decrease the number of add-ons.": [
-        "請先重新啟用訂閱以減少添加數量。"
-      ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "更新價 ${ renewPriceStr }，任何時間都可取消。"
-      ],
-      "Taxes": [
-        "稅金"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "此折價券可適用續約訂購 ${ couponRedemptions } 次。"
@@ -7682,97 +7025,6 @@
       ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "到期後將自動以 ${ renewPriceStr } 的價格續約 ${ renewalLength } 個月。您可以隨時取消。"
-      ],
-      "This number will be shown on all future invoices": [
-        "未來所有的帳單將會顯示此統一編號"
-      ],
-      "This offer is not available with your current plan.": [
-        "抱歉，此優惠無法在您的方案中使用。"
-      ],
-      "Timeout exceeded": [
-        "已經逾時"
-      ],
-      "VAT": [
-        "增值稅"
-      ],
-      "VAT number": [
-        "增值稅編號（VAT）"
-      ],
-      "You already have a subscription to this plan.": [
-        "您已訂閱此方案。"
-      ],
-      "Your payment is still being processed": [
-        "您的付款仍在處理中"
-      ]
-    },
-    "Payments.Error": {
-      "Invalid card number": [
-        "卡號無效"
-      ],
-      "Invalid expiration date": [
-        "到期日無效"
-      ],
-      "Invalid security code": [
-        "無效安全碼"
-      ],
-      "Something went wrong. Please try again later.": [
-        "發生錯誤。請稍後再試。"
-      ],
-      "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
-        "我們無法驗證您的繳款方式. 請選擇別種繳款方式或者再試一次."
-      ],
-      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
-        "您的信用卡被拒。請嘗試換另一張卡或聯絡您的銀行以授權此收費."
-      ]
-    },
-    "Payments.info": {
-      "Credits will be added to your balance": [
-        "可用額度將會增加到您的餘額"
-      ]
-    },
-    "Payments.plan_name": {
-      "Free": [
-        "免費"
-      ]
-    },
-    "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "透過確認此付款，您授權 ${ BRAND_NAME } 和我們的支付服務提供者 Stripe 指示您的銀行從您的帳戶中扣款。根據您與銀行達成的協議條件，您可以在扣款日起 8 週內獲得退款。"
-      ],
-      "Street address, postal code, and city": [
-        "地址，郵政區碼，及城市"
-      ]
-    },
-    "Payments.VAT number name": {
-      "ABN": [
-        "商業號碼（ABN）"
-      ],
-      "Add Business Number": [
-        "新增營業人統一編號"
-      ],
-      "Add VAT number": [
-        "新增增值稅編號（VAT）"
-      ],
-      "Business Number": [
-        "營業人統一編號"
-      ],
-      "Edit ABN": [
-        "編輯 ABN"
-      ],
-      "Edit Business Number": [
-        "編輯營業人統一編號"
-      ],
-      "Edit EIN": [
-        "編輯 EIN"
-      ],
-      "Edit VAT number": [
-        "編輯增值稅編號（VAT）"
-      ],
-      "EIN": [
-        "僱主身份識別號碼（EIN）"
-      ],
-      "VAT number": [
-        "增值稅編號（VAT）"
       ]
     },
     "PGP key encryption warning": {
@@ -7809,14 +7061,8 @@
       "A way to contact you": [
         "您的聯絡方式"
       ],
-      "Anderson": [
-        "安德松"
-      ],
       "Choose password": [
         "設定密碼"
-      ],
-      "Company name": [
-        "公司名稱"
       ],
       "E.g., ": [
         "例如： "
@@ -7832,9 +7078,6 @@
       ],
       "First name": [
         "名"
-      ],
-      "Gift code": [
-        "禮品代碼"
       ],
       "Group name": [
         "群組名稱"
@@ -7863,9 +7106,6 @@
       "Please describe the problem and include any error messages": [
         "請描述問題並附上相關的錯誤訊息 (如有)"
       ],
-      "Postal code": [
-        "郵遞區號"
-      ],
       "Search for group name": [
         "搜尋群組名稱"
       ],
@@ -7881,12 +7121,6 @@
       "Select a reason": [
         "選取理由"
       ],
-      "Select country": [
-        "選擇國家"
-      ],
-      "Select state": [
-        "請選州"
-      ],
       "Set date": [
         "設定日期"
       ],
@@ -7895,35 +7129,11 @@
       ],
       "Start typing an email address": [
         "在此輸入一個電郵位址"
-      ],
-      "Thomas": [
-        "湯姆斯"
-      ],
-      "VAT number": [
-        "增值稅編號（VAT）"
-      ],
-      "ZIP code": [
-        "郵遞區號"
       ]
     },
     "Placeholder for contact group name": {
       "Name": [
         "名稱"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "業務聯繫"
-      ]
-    },
-    "plus_block": {
-      "Upgrade to ${ upsellPlanTitle }": [
-        "升級至${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "免費"
       ]
     },
     "Progress bar description": {
@@ -8336,9 +7546,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "1 user": [
-        "1 位使用者"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -8350,9 +7557,6 @@
       ],
       "High speed VPN": [
         "高速 VPN"
-      ],
-      "Highest VPN speed": [
-        "業界最高 VPN 速率"
       ],
       "Premium ${ appName1 }": [
         "進階版 ${ appName1 }"
@@ -8368,9 +7572,6 @@
       ],
       "Secure cloud storage": [
         "安全的雲端儲存空間"
-      ],
-      "Secure streaming": [
-        "安全的串流"
       ],
       "Support online privacy": [
         "支援線上隱私"
@@ -8627,17 +7828,6 @@
         "您將不能使用我們的無限密碼記錄、無限的 hide-my-email 別名、高達20個密碼保險箱與我們的全力支援。"
       ]
     },
-    "Subscription": {
-      "Billed every 2 years": [
-        "雙年繳制"
-      ],
-      "Billed monthly": [
-        "月繳"
-      ],
-      "Billed yearly": [
-        "年繳"
-      ]
-    },
     "Subscription attribute": {
       "${ n } free VPN connection per user": [
         "每一位用戶${ n }個免費VPN連線"
@@ -8684,16 +7874,6 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "此訂閱將於繳款單週期末被降級"
-      ]
-    },
-    "Subscription length": {
-      "Lifetime": [
-        "終身"
-      ]
-    },
-    "Subscription price": {
-      "For ${ totalPrice }": [
-        "為期 ${ totalPrice }"
       ]
     },
     "subscription reminder": {
@@ -8754,37 +7934,6 @@
         "優先支援"
       ]
     },
-    "Subscription renewal state": {
-      "Are you sure?": [
-        "您確定嗎？"
-      ],
-      "Auto-pay is disabled": [
-        "自動付款已停用"
-      ],
-      "Auto-pay is enabled": [
-        "自動付款已啟用"
-      ],
-      "Disable": [
-        "停用"
-      ],
-      "Enable auto-pay support": [
-        "啟用自動付款支援"
-      ],
-      "Keep auto-pay": [
-        "保留自動付款"
-      ],
-      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
-        "我們的系統將不再以此付款方法自動向您收費，惟您的訂購授權仍會在繳款單週期屆滿時續約。若您想降級或更改您的訂購授權，您仍需於繳款單週期完結前自行辦妥。再者，若您忘記手動進行付款，且所有付款方法的自動付款都已停用，我們可能會降級您的帳號，將導致失去許多功能。"
-      ],
-      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "我們的系統將不再以此付款方法自動向您收費，惟您的訂購授權仍會在繳款單週期屆滿時續約。若您想降級或更改您的訂購授權，您仍需於繳款單週期完結前自行辦妥。我們無法自動為您降級，因為若您已超過免費方案的儲存空間配額，或是在使用其它付款功能，我們無法為您自動刪除檔案、電子郵件或其它資料。若您停用自動付款，請記得在到期日之前繳付您下一張訂購授權帳單，以免帳號被暫停。"
-      ]
-    },
-    "Subscription saving": {
-      "Save ${ priceString }": [
-        "降價 ${ priceString }"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } 個聯絡人似乎相同。"
@@ -8797,9 +7946,6 @@
       ],
       "Alias saved and copied": [
         "已成功儲存及複製別名"
-      ],
-      "Billing details updated": [
-        "帳單詳情已更新"
       ],
       "Canceling import": [
         "正在取消匯入"
@@ -8819,9 +7965,6 @@
       "Contacts deleted": [
         "聯絡人已刪除"
       ],
-      "Copied to clipboard": [
-        "已複製到剪貼簿"
-      ],
       "Email address copied to clipboard": [
         "電郵位址已複製到剪貼簿"
       ],
@@ -8836,12 +7979,6 @@
       ],
       "Last modified aliases stored in your oldest vault": [
         "最後修改的別名已儲存到您最舊的保險庫"
-      ],
-      "Payment method added": [
-        "付款方式已加入"
-      ],
-      "Payment method updated": [
-        "付款方式已更新"
       ],
       "Phone number copied to clipboard": [
         "手機號碼已複製到剪貼簿"
@@ -8879,14 +8016,6 @@
         "/ 每使用者每月"
       ]
     },
-    "Suffix for price": {
-      "per month": [
-        "每月"
-      ],
-      "per user per month": [
-        "每月每位用戶"
-      ]
-    },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
         "於您全部的裝置創建安全登入的詳細資料。包含無限別名、20個保管庫、組合雙重驗證、信用卡自動填入及更多。"
@@ -8899,17 +8028,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "透過加密的雲端儲存保護檔案。包含版本紀錄、加密的檔案共享、及更多。"
-      ]
-    },
-    "Tab subscription modal": {
-      "For businesses": [
-        "商業使用"
-      ],
-      "For families": [
-        "家庭用"
-      ],
-      "For individuals": [
-        "個人使用"
       ]
     },
     "Table header": {
@@ -9010,9 +8128,6 @@
       "${ emailsCount } email address": [
         "${ emailsCount }電子郵件位址"
       ],
-      "${ feature } is now active": [
-        "${ feature }現在為起用狀態"
-      ],
       "Account recovery": [
         "帳號救援"
       ],
@@ -9024,9 +8139,6 @@
       ],
       "Add contact group name": [
         "加入聯絡人群組名稱"
-      ],
-      "Add credit/debit card": [
-        "加入信用卡/扣帳卡"
       ],
       "Add to ${ groupCount } group": [
         "加入至 ${ groupCount } 個群組"
@@ -9043,20 +8155,8 @@
       "All settings": [
         "所有設定"
       ],
-      "Amount due": [
-        "應付金額"
-      ],
-      "Apply gift code": [
-        "套用禮品代碼"
-      ],
       "Are you sure?": [
         "您確定嗎？"
-      ],
-      "Auto-deletion is active": [
-        "自動刪除為起用狀態"
-      ],
-      "Billing cycle": [
-        "繳款單週期"
       ],
       "Birthday": [
         "生日"
@@ -9075,9 +8175,6 @@
       ],
       "Cannot load link": [
         "無法載入連結"
-      ],
-      "Card verification": [
-        "信用卡驗證"
       ],
       "Change password": [
         "更改密碼"
@@ -9108,9 +8205,6 @@
       ],
       "Continue with partial import?": [
         "要繼續部分匯入嗎？"
-      ],
-      "Coupon": [
-        "優惠券"
       ],
       "Create a new folder": [
         "創建新資料夾"
@@ -9184,6 +8278,9 @@
       "Document verification failed": [
         "文件驗證失敗"
       ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "透過 ${ BRAND_NAME } Duo 將您的儲存空間加倍"
+      ],
       "Downgrade account": [
         "降級帳號"
       ],
@@ -9208,17 +8305,11 @@
       "Duplicate folder found": [
         "發現重複資料夾"
       ],
-      "Edit billing address": [
-        "編輯帳單地址"
-      ],
       "Edit contact": [
         "編輯聯絡人"
       ],
       "Edit contact group": [
         "編輯聯絡人群組"
-      ],
-      "Edit credit/debit card": [
-        "編輯信用卡/扣帳卡"
       ],
       "Edit email settings": [
         "編輯電子郵件設定"
@@ -9247,9 +8338,6 @@
       "Enter your password": [
         "請輸入您的密碼"
       ],
-      "Error": [
-        "錯誤"
-      ],
       "Error Syncing": [
         "同步失敗"
       ],
@@ -9261,9 +8349,6 @@
       ],
       "Get the apps": [
         "取得應用程式"
-      ],
-      "Gift": [
-        "禮物"
       ],
       "Groups": [
         "群組"
@@ -9331,9 +8416,6 @@
       "Need to share more files with edit access?": [
         "需要共享更多有編輯權限的檔案嗎?"
       ],
-      "Network error": [
-        "網路錯誤"
-      ],
       "Next": [
         "下一頁"
       ],
@@ -9367,15 +8449,6 @@
       "Other names": [
         "其它名稱"
       ],
-      "Payment failed": [
-        "付款失敗"
-      ],
-      "Payment verification": [
-        "付款驗證"
-      ],
-      "PayPal verification failed": [
-        "PayPal 驗證失敗"
-      ],
       "Performance might be affected": [
         "效能可能會受到影響"
       ],
@@ -9391,17 +8464,11 @@
       "Private browsing vs VPN": [
         "私有瀏覽 對比 VPN"
       ],
-      "Processing...": [
-        "處理中..."
-      ],
       "Re-sign all contacts": [
         "重新簽署所有聯絡人"
       ],
       "Re-signing contacts": [
         "正在重新簽署聯絡人"
-      ],
-      "Recommended": [
-        "推薦"
       ],
       "Recommended actions": [
         "建議行動"
@@ -9423,9 +8490,6 @@
       ],
       "Security center": [
         "安全中心"
-      ],
-      "Select a plan": [
-        "請選擇一個方案"
       ],
       "Select action to take on contact group": [
         "選擇針對聯絡人群組的動作"
@@ -9487,9 +8551,6 @@
       "Subscription canceled": [
         "訂購授權已取消"
       ],
-      "Summary": [
-        "總結"
-      ],
       "The link either does not exist or has expired": [
         "連結不存在或已失效"
       ],
@@ -9505,23 +8566,11 @@
       "Untitled document ${ date }": [
         "未命名文件 ${ date }"
       ],
-      "Upgrade complete!": [
-        "升級完成！"
-      ],
       "Upgrade to ${ planName }": [
         "升級至${ planName }"
       ],
       "Uploading a large file or folder": [
         "上傳大檔案或資料夾"
-      ],
-      "Verification failed": [
-        "驗證失敗"
-      ],
-      "Verifying your card...": [
-        "正在驗證您的信用卡..."
-      ],
-      "Verifying your payment...": [
-        "正在驗證您的付款..."
       ],
       "VPN explained": [
         "VPN 說明"
@@ -9541,9 +8590,6 @@
       "What would you like to import?": [
         "您打算要匯入什麼資料呢？"
       ],
-      "You can now create unlimited folders and labels": [
-        "您現在可創建無上限標籤和資料夾"
-      ],
       "You have no folders yet": [
         "您尚未創建任何資料夾"
       ],
@@ -9558,12 +8604,6 @@
       ],
       "Your exposed information": [
         "你的外﻿﻿﻿洩資料"
-      ],
-      "Your plan": [
-        "您的方案"
-      ],
-      "Your shorter address is now ready": [
-        "您的短地址已完成"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -9611,9 +8651,6 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail 會自動將一些電子郵件分類，例如促銷內容或社交網路。您可以自行決定要將這些郵件匯入的地方。"
       ],
-      "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "若您已購買或從我們的支援團隊收到禮品代碼，您可在此輸入。"
-      ],
       "Load image": [
         "載入圖像"
       ],
@@ -9634,9 +8671,6 @@
       ],
       "The import will start with the most recent messages.": [
         "匯入將自近期的郵件開始。"
-      ],
-      "The new subscription cycle starts on ${ formattedTime }": [
-        "新的訂購授權週期開始在${ formattedTime }"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "上載公開金鑰以啟用傳送端對端加密電郵到此電郵位址"
