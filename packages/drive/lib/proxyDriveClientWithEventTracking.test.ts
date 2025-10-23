@@ -14,6 +14,7 @@ const mockSubscription = {
 
 const mockEvent = {
     eventId: 'event-123',
+    treeEventScopeId: 'scope-123',
     type: 'NodeCreated',
     nodeUid: 'node-456',
     parentNodeUid: 'parent-789',

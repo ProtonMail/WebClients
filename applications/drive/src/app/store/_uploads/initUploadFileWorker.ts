@@ -1,6 +1,10 @@
+import { type ThumbnailResult, ThumbnailType, generateThumbnail } from '@proton/drive';
+import { getItem } from '@proton/shared/lib/helpers/storage';
+
 import { TransferCancel } from '../../components/TransferManager/transfer';
 import config from '../../config';
 import { sendErrorReport } from '../../utils/errorHandling';
+import { unleashVanillaStore } from '../../zustand/unleash/unleash.store';
 import type {
     FileKeys,
     FileRequestBlock,
@@ -11,11 +15,24 @@ import type {
     UploadFileControls,
     UploadFileProgressCallbacks,
 } from './interface';
-import { getMediaInfo } from './media';
+import { ThumbnailType as LegacyThumbnailType, getMediaInfo } from './media';
 import { mimeTypeFromFile } from './mimeTypeParser/mimeTypeParser';
 import { UploadWorkerController } from './workerController';
 
 type LogCallback = (message: string) => void;
+
+/**
+ * TODO: Remove this once we fully migrate to the new thumbnail generation.
+ */
+function mapNewThumbnailTypeToLegacy(newType: ThumbnailType): LegacyThumbnailType {
+    if (newType === ThumbnailType.Type1) {
+        return LegacyThumbnailType.PREVIEW;
+    }
+    if (newType === ThumbnailType.Type2) {
+        return LegacyThumbnailType.HD_PREVIEW;
+    }
+    return LegacyThumbnailType.PREVIEW;
+}
 
 class TransferRetry extends Error {
     constructor(options: { message: string }) {
@@ -41,10 +58,25 @@ export function initUploadFileWorker(
     const abortController = new AbortController();
     let workerApi: UploadWorkerController;
 
+    const useNewThumbnailGeneration = unleashVanillaStore.getState().isEnabled('DriveWebNewThumbnailGeneration');
+
     // Start detecting mime type right away to have this information once the
     // upload starts, so we can generate thumbnail as fast as possible without
     // need to wait for creation of revision on API.
-    const mimeTypePromise = mimeTypeFromFile(file);
+    let mimeTypePromise: Promise<string>;
+    let thumbnailResultPromise:
+        | Promise<{ ok: true; result: ThumbnailResult } | { ok: false; error: unknown }>
+        | undefined;
+
+    if (useNewThumbnailGeneration) {
+        const thumbnailGeneration = generateThumbnail(file, file.name, file.size, {
+            debug: Boolean(getItem('proton-drive-debug', 'false')),
+        });
+        mimeTypePromise = thumbnailGeneration.mimeTypePromise;
+        thumbnailResultPromise = thumbnailGeneration.resultPromise;
+    } else {
+        mimeTypePromise = mimeTypeFromFile(file);
+    }
 
     const startUpload = async ({
         onInit,
@@ -54,7 +86,28 @@ export function initUploadFileWorker(
     }: UploadFileProgressCallbacks = {}) => {
         // Worker has a slight overhead about 40 ms. Let's start generating
         // thumbnail a bit sooner.
-        const mediaInfoPromise = getMediaInfo(mimeTypePromise, file);
+        const mediaInfoPromise =
+            useNewThumbnailGeneration && thumbnailResultPromise
+                ? (async () => {
+                      const thumbnailResult = await thumbnailResultPromise;
+
+                      if (!thumbnailResult.ok || !thumbnailResult.result) {
+                          return undefined;
+                      }
+                      const legacyThumbnails = thumbnailResult.result.thumbnails?.map((thumbnail) => {
+                          return {
+                              thumbnailData: thumbnail.thumbnailData,
+                              thumbnailType: mapNewThumbnailTypeToLegacy(thumbnail.thumbnailType),
+                          };
+                      });
+                      return {
+                          width: thumbnailResult.result.width,
+                          height: thumbnailResult.result.height,
+                          duration: thumbnailResult.result.duration,
+                          thumbnails: legacyThumbnails,
+                      };
+                  })()
+                : getMediaInfo(mimeTypePromise, file);
 
         return new Promise<OnFileUploadSuccessCallbackData>((resolve, reject) => {
             const worker = new Worker(

@@ -559,7 +559,7 @@ describe('MetricHandler', () => {
             });
 
             expect(captureMessage).toHaveBeenCalledWith('Metric event details: decryption error', {
-                level: 'debug',
+                level: 'error',
                 tags: {
                     driveSdkMetricEvent: 'decryptionError',
                 },

@@ -159,6 +159,8 @@ enum DriveFeatureFlag {
     DriveWebSDKDownload = 'DriveWebSDKDownload',
     // Video Preview
     DriveWebVideoAutoPlay = 'DriveWebVideoAutoPlay',
+    // Thumbnail Generation
+    DriveWebNewThumbnailGeneration = 'DriveWebNewThumbnailGeneration',
     // Others
     DriveWebRecoveryASV = 'DriveWebRecoveryASV',
 }
