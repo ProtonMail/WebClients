@@ -248,6 +248,9 @@
       "Create and copy alias": [
         "Vytvořit a kopírovat alias"
       ],
+      "Create booking page": [
+        "Vytvořit stránku rezervace"
+      ],
       "Create calendar": [
         "Vytvořit kalendář"
       ],
@@ -355,6 +358,9 @@
       ],
       "Expand video conferencing widget": [
         "Rozšířit widget pro videokonference"
+      ],
+      "Explore other plans": [
+        "Objevte další tarify"
       ],
       "Export": [
         "Exportovat"
@@ -820,6 +826,9 @@
       ],
       "Submit": [
         "Odeslat"
+      ],
+      "Subscribe now": [
+        "Předplatit si nyní"
       ],
       "Switch or add account": [
         "Přepnout nebo přidat účet"
@@ -1302,15 +1311,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "1 user": [
-        "1 uživatel"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 uživatelů"
-      ],
       "Premium Password Manager": [
         "Prémiový správce hesel"
       ]
@@ -1335,35 +1335,14 @@
       "${ storageSize } storage": [
         "${ storageSize } úložiště"
       ],
-      "1 TB total": [
-        "1 TB celkem"
-      ],
-      "1 user": [
-        "1 uživatel"
-      ],
       "1 user account": [
         "1 uživatelský účet"
       ],
-      "10 email addresses": [
-        "10 e-mailových adres"
-      ],
-      "2 users": [
-        "2 uživatelé"
-      ],
-      "3 TB": [
-        "3 TB"
+      "200 GB storage: 40x your current plan": [
+        "200 GB prostoru: 40x váš současný tarif"
       ],
       "6 user accounts": [
         "6 uživatelských účtů"
-      ],
-      "6 users": [
-        "6 uživatelů"
-      ],
-      "8500+ servers across 110+ countries": [
-        "Více než 8500 serverů ve více než 110 zemích"
-      ],
-      "Ad-blocker and malware protection": [
-        "Blokování reklam a ochrana před malware"
       ],
       "Admin panel to manage your family": [
         "Panel správce pro správu rodiny"
@@ -1374,9 +1353,6 @@
       "Easily add or remove users": [
         "Snadné přidávání a odebírání uživatelů"
       ],
-      "High speed streaming": [
-        "Vysokorychlostní streamování"
-      ],
       "One-time payment, lifetime deal": [
         "Jednorázová platba, doživotní přístup"
       ],
@@ -1386,14 +1362,8 @@
       "Password health alerts": [
         "Upozornění na sílu hesla"
       ],
-      "Private photo backup": [
-        "Soukromé zálohování fotek"
-      ],
-      "Protect 10 devices at a time": [
-        "Chraňte 10 zařízení současně"
-      ],
-      "Secure file storage & sharing": [
-        "Bezpečné ukládání souborů a sdílení"
+      "Recover previous file versions": [
+        "Obnova předchozích verzí souborů"
       ],
       "Unlimited folders, labels and filters": [
         "Neomezený počet složek, štítků a filtrů"
@@ -1403,17 +1373,14 @@
       ],
       "Use your own email domain": [
         "Použijte svou vlastní e-mailovou doménu"
-      ],
-      "Version history": [
-        "Historie verzí"
-      ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Účtováno ${ amount } jednorázově"
+      ],
+      "forever": [
+        "navždy"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Obnovuje se po 1 měsíci za ${ regularAmount }."
@@ -1422,9 +1389,6 @@
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
         "Přístup k blokovanému obsahu a soukromé procházení internetu. K dispozici je více než 8500 serverů ve více než 110 zemích, možnost připojit až 10 zařízení, vysokorychlostní streamování, blokování reklam a ochrana před malware, VPN Accelerator a další."
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Přístup k obsahu streamovacích služeb, včetně Netflix, Disney+, Prime Video a dalších, odkudkoli."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Bezpečené přihlašování na všech zařízeních. Obsahuje neomezený počet aliasů hide-my-email, sdílení, integrované 2FA, Sledování ${ DARK_WEB_MONITORING_NAME } a další funkce."
@@ -1449,9 +1413,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Obsahuje online editor dokumentů, zálohování fotografií, historii verzí souborů, šifrované sdílení souborů a další funkce."
-      ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield chrání vaše zařízení a zrychluje prohlížení tím, že blokuje reklamy, sledovací prvky a malware."
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Úložný prostor je sdílen mezi všemi službami ${ BRAND_NAME }."
@@ -1488,6 +1449,9 @@
       ],
       "Application problem": [
         "Problém s aplikací"
+      ],
+      "Black Friday": [
+        "Black Friday"
       ],
       "Bridge problem": [
         "Problém s aplikací Bridge"
@@ -3311,10 +3275,10 @@
     },
     "Duo offer": {
       "/month": [
-        "/měsíčně"
+        "/měsíc"
       ],
       "1 TB of storage to share": [
-        "1 TB úložiště k sdílení"
+        "1 TB prostoru ke sdílení"
       ],
       "2 user accounts": [
         "2 uživatelské účty"
@@ -3324,6 +3288,22 @@
       ],
       "Only": [
         "Pouze"
+      ]
+    },
+    "Duo offer: Link": {
+      "Double your storage": [
+        "Zdvojnásobte své úložiště"
+      ],
+      "Share your plan": [
+        "Sdílejte svůj tarif"
+      ]
+    },
+    "Duo offer: Title": {
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Zdvojnásobte své úložiště s ${ BRAND_NAME } Duo"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "Sdílejte výhody svého tarifu s ${ BRAND_NAME } Duo"
       ]
     },
     "Duplicate event button tooltip": {
@@ -4464,6 +4444,12 @@
       ]
     },
     "Feature": {
+      "Encrypted cloud storage for files, photos and documents": [
+        "Šifrované cloudové úložiště pro soubory, fotky a dokumenty"
+      ],
+      "More premium features": [
+        "Další prémiové funkce"
+      ],
       "Unlimited hide-my-email aliases": [
         "Neomezený počet aliasů Hide-my-email"
       ]
@@ -5178,6 +5164,9 @@
       "30-day money-back guarantee.": [
         "30denní záruka vrácení peněz."
       ],
+      "A booking slot cannot be added in the past.": [
+        "Rezervační termín nelze přidat do minulosti"
+      ],
       "A cancellation email will be sent to removed participants.": [
         "Odebraným účastníkům bude zaslán e-mail o zrušení účasti."
       ],
@@ -5337,6 +5326,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Kontroluji kontakt ${ progress } z ${ max }..."
       ],
+      "Choose a plan that works best for you.": [
+        "Vyberte tarif, který vám nejlépe vyhovuje."
+      ],
       "Clear data": [
         "Smazat data"
       ],
@@ -5363,6 +5355,9 @@
       ],
       "Contact unassigned from group ${ contactGroupName }": [
         "Kontakt byl odebrán ze skupiny ${ contactGroupName }"
+      ],
+      "Continue": [
+        "Pokračovat"
       ],
       "Copy the link to clipboard": [
         "Kopírovat odkaz do schránky"
@@ -6105,6 +6100,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navyšte tarif nyní a získejte tím prémiové funkce, produkty a úložiště za speciální cenu"
       ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "Navyšte tarif a zachovejte si své výhody ${ planTitle }."
+      ],
       "Uppercase and lowercase letters": [
         "Velká a malá písmena"
       ],
@@ -6775,6 +6773,9 @@
       "Don't show this again": [
         "Příště nezobrazovat"
       ],
+      "Duration": [
+        "Doba trvání"
+      ],
       "e.g., Amazon, eBay, Etsy": [
         "například Amazon, eBay, Etsy"
       ],
@@ -7062,6 +7063,9 @@
       ],
       "Time zone": [
         "Časové pásmo"
+      ],
+      "Title": [
+        "Název"
       ],
       "To: ${ toEmail }": [
         "Komu: ${ toEmail }"
@@ -7410,6 +7414,9 @@
       ],
       "Re:": [
         "Re:"
+      ],
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "Bezplatná zkušební verze skončila. ${ nonAutoRenewalAction }"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Vaše bezplatná zkušební verze skončila. Přístup k vašemu účtu bude brzy deaktivován. ${ action }"
@@ -8873,7 +8880,7 @@
         "Tuto nabídku již nezobrazovat"
       ],
       "Get ${ BRAND_NAME } Duo": [
-        "Získat ${ BRAND_NAME } Duo"
+        "Získejte ${ BRAND_NAME } Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "Získejte ${ BRAND_NAME } Unlimited"
@@ -9751,8 +9758,23 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } za doporučení"
       ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Pokud zrušíte před tímto datem,** budete **sníženi** na ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } po skončení zkušební verze."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Pokud si nepředplatíte službu,** budete **sníženi** na ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Pokud nezrušíte,** váš plný tarif začne platit a získáte **${ referrerRewardAmount }** v kreditech."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Pokud si předplatíte službu před tímto datem,** získáte **${ referrerRewardAmount }** v kreditech."
+      ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Získejte až ${ maxRewardAmount } v kreditech. Získáte ${ referrerRewardAmount }, když se osoba, kterou pozvete, přihlásí k odběru tarifu ${ BRAND_NAME }."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Užívejte si **${ planTitle }** zdarma až do **${ textDate }**."
       ],
       "Friend joined": [
         "Přítel se připojil",
@@ -9772,8 +9794,14 @@
       "Invited friends": [
         "Pozvaní přátelé"
       ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Poslední šance prozkoumat všechny výkonné funkce, které **${ planTitle }** nabízí."
+      ],
       "More sharing options": [
         "Více možností sdílení"
+      ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "Po zahájení plného předplatného jej můžete stále do 30 dnů zrušit a získat poměrnou částku zpět."
       ],
       "Refer friends": [
         "Doporučte přátele"
@@ -9783,6 +9811,15 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Můžete získat až **${ maxRewardAmount }** v kreditech."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Zbývá vám **${ daysRemaining } den** k prozkoumání všech výkonných funkcí, které **${ planTitle }** nabízí.",
+        "Zbývají vám **${ daysRemaining } dny** k prozkoumání všech výkonných funkcí, které **${ planTitle }** nabízí.",
+        "Zbývá vám **${ daysRemaining } dní** na to, abyste prozkoumali všechny výkonné funkce, které **${ planTitle }** nabízí.",
+        "Zbývá vám **${ daysRemaining } dní** na to, abyste prozkoumali všechny výkonné funkce, které **${ planTitle }** nabízí."
+      ],
+      "your subscription": [
+        "vaše předplatné"
       ]
     },
     "Reload event button tooltip": {
@@ -10220,9 +10257,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "1 user": [
-        "1 uživatel"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -11458,6 +11492,9 @@
       "Birthday": [
         "Narozeniny"
       ],
+      "Booking page": [
+        "Rezervační stránka"
+      ],
       "Calendar": [
         "Kalendář"
       ],
@@ -11668,6 +11705,9 @@
       "Exporting contacts": [
         "Exportování kontaktů"
       ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Získejte **${ referralInfo.uiData.refereeRewardAmount }** v kreditech s ${ planTitle }"
+      ],
       "Get more from your VPN": [
         "Získejte více ze své VPN"
       ],
@@ -11700,6 +11740,9 @@
       ],
       "How does it work?": [
         "Jak to funguje?"
+      ],
+      "How your free trial works": [
+        "Jak funguje bezplatná zkušební verze"
       ],
       "Human verification": [
         "Lidské ověření"
@@ -11976,6 +12019,9 @@
       ],
       "Upgrade to ${ planName }": [
         "Navýšit na ${ planName }"
+      ],
+      "Upgrade to keep your premium benefits.": [
+        "Navyšte tarif a zachovejte si své prémiové výhody"
       ],
       "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
         "Vylepšete svou produktivitu jen za ${ formattedPrice } s ${ planName }"
@@ -12386,6 +12432,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Bezplatná zkušební verze končí ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Vaše zkušební verze skončí ${ textDate }. Pokud ji zrušíte před ${ textDate }, nebudou vám účtovány žádné poplatky. ${ action }"
       ]
     },
     "Warning in modal to accept calendar invitation; Description": {
