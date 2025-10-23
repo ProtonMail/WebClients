@@ -81,17 +81,17 @@ const LinkConfirmationModal = ({
                 )}
             </ModalTwoContent>
             <ModalTwoFooter>
-                <div className="flex flex-nowrap flex-row-reverse gap-2 items-center sm:flex-row">
-                    <Button onClick={rest.onClose} className="grow">{c('Action').t`Cancel`}</Button>
+                <div className="flex sm:flex-nowrap flex-row-reverse gap-2 items-center sm:flex-row">
+                    <Button onClick={rest.onClose} className="shrink-0">{c('Action').t`Cancel`}</Button>
                     {/* We show the checkbox only if the link is not a phishing attempt */}
                     {!isPhishingAttempt && !isOutside && (
-                        <Label className="flex pt-0 w-fit-content">
+                        <Label className="flex flex-1 flex-nowrap label gap-2 pt-0">
                             <Checkbox
                                 checked={dontAskAgain}
                                 onChange={() => setDontAskAgain(!dontAskAgain)}
-                                className="mr-2"
+                                className="shrink-0"
                             />
-                            {c('Label').t`Don't ask again`}
+                            <span>{c('Label').t`Don't ask again`}</span>
                         </Label>
                     )}
                 </div>
