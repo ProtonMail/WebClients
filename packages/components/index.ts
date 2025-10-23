@@ -47,10 +47,7 @@ export {
     default as confirmActionModal,
     useConfirmActionModal,
 } from './components/confirmActionModal/ConfirmActionModal';
-export {
-    default as ConfirmSignOutModal,
-    shouldShowConfirmSignOutModal,
-} from './components/confirmSignOutModal/ConfirmSignOutModal';
+export { default as ConfirmSignOutModal } from './components/confirmSignOutModal/ConfirmSignOutModal';
 export { default as Bordered } from './components/container/Bordered';
 export { default as Details } from './components/container/Details';
 export { default as EditableSection } from './components/container/EditableSection';
@@ -122,11 +119,10 @@ export { default as MiddleEllipsis } from './components/ellipsis/MiddleEllipsis'
 export { FEATURE_TOUR_STEPS } from './components/featureTour/constants';
 export { default as FeatureTour } from './components/featureTour/FeatureTour';
 export { default as FeatureTourDrawerSpotlight } from './components/featureTour/FeatureTourDrawerSpotlight';
-export { type FeatureTourStepId } from './components/featureTour/interface';
 export { default as FileIcon } from './components/fileIcon/FileIcon';
 export { default as FileNameDisplay } from './components/fileNameDisplay/FileNameDisplay';
 export { default as useFocusTrap } from './components/focus/useFocusTrap';
-export { default as Form, FormContext } from './components/form/Form';
+export { default as Form } from './components/form/Form';
 export { default as GlobalLoader } from './components/globalLoader/GlobalLoader';
 export { default as GlobalLoaderProvider } from './components/globalLoader/GlobalLoaderProvider';
 export { default as useGlobalLoader } from './components/globalLoader/useGlobalLoader';
@@ -197,15 +193,12 @@ export { default as SettingsMaintenanceLayoutWrapper } from './components/mainte
 export { default as LocalizedMiniCalendar } from './components/miniCalendar/LocalizedMiniCalendar';
 export { default as MiniCalendar } from './components/miniCalendar/MiniCalendar';
 export { default as BasicModal } from './components/modalTwo/BasicModal';
-export { ModalContext, default as ModalTwo } from './components/modalTwo/Modal';
+export { default as ModalTwo } from './components/modalTwo/Modal';
 export type { ModalOwnProps, ModalProps, ModalSize } from './components/modalTwo/Modal';
 export { default as ModalContent, default as ModalTwoContent } from './components/modalTwo/ModalContent';
 export type { ModalContentProps } from './components/modalTwo/ModalContent';
 export { default as ModalTwoFooter } from './components/modalTwo/ModalFooter';
-export {
-    default as ModalTwoHeader,
-    ModalHeaderCloseButton as ModalTwoHeaderCloseButton,
-} from './components/modalTwo/ModalHeader';
+export { default as ModalTwoHeader } from './components/modalTwo/ModalHeader';
 export {
     default as useModalState,
     useModalStateObject,
@@ -232,11 +225,11 @@ export { default as Popper } from './components/popper/Popper';
 export { default as usePopper } from './components/popper/usePopper';
 export { default as usePopperAnchor } from './components/popper/usePopperAnchor';
 export { default as usePopperState } from './components/popper/usePopperState';
-export { allPopperPlacements, cornerPopperPlacements, verticalPopperPlacements } from './components/popper/utils';
+export { allPopperPlacements } from './components/popper/utils';
 export { default as Price } from './components/price/Price';
 export { default as CircularProgress } from './components/progress/CircularProgress';
 export { default as DynamicProgress } from './components/progress/DynamicProgress';
-export { getMeterColor, default as Meter } from './components/progress/Meter';
+export { default as Meter } from './components/progress/Meter';
 export type { MeterValue } from './components/progress/Meter';
 export { default as Progress } from './components/progress/Progress';
 export { default as Prompt } from './components/prompt/Prompt';
@@ -254,7 +247,7 @@ export { default as Hamburger } from './components/sidebar/Hamburger';
 export { default as SettingsListItem } from './components/sidebar/SettingsListItem';
 export { default as Sidebar } from './components/sidebar/Sidebar';
 export { default as SidebarBackButton } from './components/sidebar/SidebarBackButton';
-export { default as SidebarList, SubSidebarList } from './components/sidebar/SidebarList';
+export { default as SidebarList } from './components/sidebar/SidebarList';
 export { default as SidebarListItem, SubSidebarListItem } from './components/sidebar/SidebarListItem';
 export { default as SidebarListItemButton } from './components/sidebar/SidebarListItemButton';
 export { default as SidebarListItemContent } from './components/sidebar/SidebarListItemContent';
@@ -290,7 +283,7 @@ export { default as StripedItem } from './components/stripedList/StripedItem';
 export { StripedList } from './components/stripedList/StripedList';
 export type { StripedListProps } from './components/stripedList/StripedList';
 export { default as Cell } from './components/table/Cell';
-export { SortingTableCellHeader, SortingTableHeader } from './components/table/SortingTableHeader';
+export { SortingTableHeader } from './components/table/SortingTableHeader';
 export { default as Table } from './components/table/Table';
 export { default as TableBody } from './components/table/TableBody';
 export { default as TableCell } from './components/table/TableCell';
@@ -465,43 +458,24 @@ export { default as ContactGroupDropdown } from './containers/contacts/ContactGr
 export { default as ContactImage } from './containers/contacts/ContactImage';
 export { default as ContactEditModal } from './containers/contacts/edit/ContactEditModal';
 export type { ContactEditModalProps, ContactEditProps } from './containers/contacts/edit/ContactEditModal';
-export {
-    default as ContactGroupModal,
-    type ContactGroupEditProps,
-} from './containers/contacts/group/ContactGroupEditModal';
-export { collectContacts, default as useApplyGroups } from './containers/contacts/hooks/useApplyGroups';
+export { default as ContactGroupModal } from './containers/contacts/group/ContactGroupEditModal';
+export { default as useApplyGroups } from './containers/contacts/hooks/useApplyGroups';
 export { useContactModals } from './containers/contacts/hooks/useContactModals';
 export { default as useSenderImage } from './containers/contacts/hooks/useSenderImage';
 export { default as ContactsRow } from './containers/contacts/lists/ContactRow';
 export { default as ContactsList } from './containers/contacts/lists/ContactsList';
 export { default as MergeModal } from './containers/contacts/merge/ContactMergeModal';
 export type { ContactMergeModalProps, ContactMergeProps } from './containers/contacts/merge/ContactMergeModal';
-export {
-    default as ContactDeleteModal,
-    type ContactDeleteProps,
-} from './containers/contacts/modals/ContactDeleteModal';
-export {
-    default as ContactExportingModal,
-    type ContactExportingProps,
-} from './containers/contacts/modals/ContactExportingModal';
-export {
-    default as ContactSelectorModal,
-    type ContactSelectorProps,
-} from './containers/contacts/selector/ContactSelectorModal';
-export {
-    default as ContactDetailsModal,
-    type ContactDetailsProps,
-} from './containers/contacts/view/ContactDetailsModal';
+export { default as ContactDeleteModal } from './containers/contacts/modals/ContactDeleteModal';
+export { default as ContactExportingModal } from './containers/contacts/modals/ContactExportingModal';
+export { default as ContactSelectorModal } from './containers/contacts/selector/ContactSelectorModal';
+export { default as ContactDetailsModal } from './containers/contacts/view/ContactDetailsModal';
 export { default as ContactView } from './containers/contacts/view/ContactView';
 export { default as ContactViewErrors } from './containers/contacts/view/ContactViewErrors';
 export { default as CredentialLeakSection } from './containers/credentialLeak/CredentialLeakSection';
 export type { FetchedBreaches, SampleBreach } from './containers/credentialLeak/models';
-export { InboxDesktopDefaultAppTopBanner } from './containers/desktop/defaultApp/InboxDesktopDefaultAppTopBanner';
 export { useElectronDefaultApp } from './containers/desktop/defaultApp/useElectronDefaultApp';
 export { InboxDesktopFreeTrialOnboardingModal } from './containers/desktop/freeTrial/InboxDesktopFreeTrialOnboardingModal';
-export { InboxDesktopFreeTrialTopBanner } from './containers/desktop/freeTrial/InboxDesktopFreeTrialTopBanner';
-export { InboxDesktopAppSwitcher } from './containers/desktop/InboxDesktopAppSwitcher';
-export { InboxDesktopOutdatedAppTopBanner } from './containers/desktop/InboxDesktopOutdatedAppTopBanner';
 export { InboxDesktopSettingsSection } from './containers/desktop/InboxDesktopSettingsSection';
 export { CommentEmailSection } from './containers/docs/settings/CommentEmailSection';
 export { default as CatchAllSection } from './containers/domains/CatchAllSection';
@@ -533,36 +507,15 @@ export { default as NavigationControl } from './containers/filePreview/Navigatio
 export { default as PDFPreview } from './containers/filePreview/PDFPreview';
 export { default as TextPreview } from './containers/filePreview/TextPreview';
 export { default as ZoomControl } from './containers/filePreview/ZoomControl';
-export {
-    COMPARATORS,
-    getComparatorLabels,
-    getConditionTypeLabels,
-    getDefaultFolderOptions,
-    getDefaultFolders,
-    getOperatorLabels,
-    noFolderOption,
-    noFolderValue,
-    OPERATORS,
-    TYPES,
-} from './containers/filters/constants';
+export { OPERATORS } from './containers/filters/constants';
 export { default as FiltersSection } from './containers/filters/FiltersSection';
-export { ConditionComparator, ConditionType, FilterStatement } from './containers/filters/interfaces';
+export { ConditionComparator, ConditionType } from './containers/filters/interfaces';
 export type { Condition, Filter, SimpleObject } from './containers/filters/interfaces';
 export { default as SieveEditor } from './containers/filters/modal/advanced/SieveEditor';
 export { default as FilterConditionsFormRow } from './containers/filters/modal/FilterConditionsFormRow';
 export { default as FilterModal } from './containers/filters/modal/FilterModal';
 export { default as SpamFiltersSection } from './containers/filters/SpamFiltersSection';
-export {
-    computeFromTree,
-    computeTree,
-    convertModel,
-    createDefaultLabelsFilter,
-    createUniqueName,
-    isSieve,
-    default as newFilter,
-    normalize,
-    sieveTemplates,
-} from './containers/filters/utils';
+export { computeTree, createDefaultLabelsFilter, default as newFilter } from './containers/filters/utils';
 export { default as MinimalForgotUsernameContainer } from './containers/forgotUsername/MinimalForgotUsernameContainer';
 export { default as AutoSaveContactsToggle } from './containers/general/AutoSaveContactsToggle';
 export { default as DateFormatSection } from './containers/general/DateFormatSection';
@@ -596,10 +549,7 @@ export { default as PostQuantumKeysOptInSection } from './containers/keys/PostQu
 export { default as SelectKeyFiles } from './containers/keys/shared/SelectKeyFiles';
 export { default as UserKeysSection } from './containers/keys/UserKeysSection';
 export { default as KeyTransparencyManager } from './containers/keyTransparency/KeyTransparencyManager';
-export {
-    KeyTransparencyContext,
-    useKeyTransparencyContext,
-} from './containers/keyTransparency/useKeyTransparencyContext';
+export { useKeyTransparencyContext } from './containers/keyTransparency/useKeyTransparencyContext';
 export { default as useKTActivation } from './containers/keyTransparency/useKTActivation';
 export { default as useKTVerifier } from './containers/keyTransparency/useKTVerifier';
 export { default as FolderIcon } from './containers/labels/FolderIcon';
@@ -644,11 +594,6 @@ export { default as MemberStorageSelector } from './containers/members/MemberSto
 export { default as MultiUserCreationSection } from './containers/members/multipleUserCreation/MultiUserCreationSection';
 export { default as SubUserCreateModal } from './containers/members/SubUserCreateModal';
 export { default as SubUserEditModal } from './containers/members/SubUserEditModal';
-export {
-    getInvitationAcceptLimit,
-    getInvitationLimit,
-    getInviteLimit,
-} from './containers/members/UsersAndAddressesSection/helper';
 export { default as UsersAndAddressesSection } from './containers/members/UsersAndAddressesSection/UsersAndAddressesSection';
 export { default as AlmostAllMailToggle } from './containers/messages/AlmostAllMailToggle';
 export { default as AutoDeleteSpamAndTrashDaysToggle } from './containers/messages/AutoDeleteSpamAndTrashDaysToggle';
@@ -683,11 +628,7 @@ export type {
     NotificationType,
 } from './containers/notifications/interfaces';
 export { default as createNotificationManager } from './containers/notifications/manager';
-export {
-    default as NotificationButton,
-    NotificationCloseButton,
-    type NotificationButtonProps,
-} from './containers/notifications/NotificationButton';
+export { default as NotificationButton } from './containers/notifications/NotificationButton';
 export { default as NotificationContext } from './containers/notifications/notificationContext';
 export {
     default as NotificationsContext,
@@ -715,7 +656,6 @@ export { default as canUseGroups } from './containers/organization/groups/canUse
 export { default as OrganizationGroupsManagementSection } from './containers/organization/groups/OrganizationGroupsManagementSection';
 export { default as LightLabellingFeatureModal } from './containers/organization/logoUpload/LightLabellingFeatureModal';
 export { useOrganizationTheme } from './containers/organization/logoUpload/useOrganizationTheme';
-export { useShowLightLabellingFeatureModal } from './containers/organization/logoUpload/useShowLightLabellingFeatureModal';
 export { default as OrganizationPasswordPoliciesSection } from './containers/organization/OrganizationPasswordPoliciesSection';
 export { default as OrganizationPasswordSection } from './containers/organization/OrganizationPasswordSection';
 export { default as OrganizationScheduleCallSection } from './containers/organization/OrganizationScheduleCallSection';
@@ -748,7 +688,6 @@ export { default as AssistantIncompatibleHardwareModal } from './containers/paym
 export { default as AssistantToggle } from './containers/payments/subscription/assistant/AssistantToggle';
 export { default as AutomaticSubscriptionModal } from './containers/payments/subscription/AutomaticSubscriptionModal';
 export { CancellationReminderSection } from './containers/payments/subscription/cancellationFlow/CancellationReminderSection';
-export { shouldOpenReminderModal } from './containers/payments/subscription/cancellationReminder/cancellationReminderHelper';
 export { default as CancellationReminderModal } from './containers/payments/subscription/cancellationReminder/CancellationReminderModal';
 export { CancelSubscriptionSection } from './containers/payments/subscription/cancelSubscription';
 export { default as CancelSubscriptionViaSupportSection } from './containers/payments/subscription/cancelSubscriptionViaSupport/CancelSubscriptionViaSupportSection';
@@ -777,23 +716,19 @@ export { default as PrivacySection } from './containers/privacy/PrivacySection';
 export { default as TelemetryToggle } from './containers/privacy/TelemetryToggle';
 export { AccountRecoverySection } from './containers/recovery/AccountRecoverySection';
 export { DataRecoverySection } from './containers/recovery/DataRecoverySection';
-export { getOverallStatus } from './containers/recovery/getOverallStatus';
 export { OverviewSection } from './containers/recovery/OverviewSection';
 export { SessionRecoverySection } from './containers/recovery/SessionRecoverySection';
 export { InviteSection } from './containers/referral/invite/InviteSection';
-export { ReferralFeaturesList } from './containers/referral/ReferralFeaturesList';
 export { ReferralInvitesContextProvider } from './containers/referral/ReferralInvitesContext';
 export { RewardSection } from './containers/referral/rewards/RewardSection';
 export { InviteSection as InviteSectionLegacy } from './containers/referralLegacy/invite/InviteSection';
 export { ReferralFeaturesList as ReferralFeaturesListLegacy } from './containers/referralLegacy/ReferralFeaturesList';
 export { ReferralInvitesContextProvider as ReferralInvitesContextProviderLegacy } from './containers/referralLegacy/ReferralInvitesContext';
-export { ReferralSpotlight as ReferralSpotlightLegacy } from './containers/referralLegacy/ReferralSpotlight';
 export { RewardSection as RewardSectionLegacy } from './containers/referralLegacy/rewards/RewardSection';
 export { RightToLeftProvider } from './containers/rightToLeft/Provider';
 export { useRightToLeft } from './containers/rightToLeft/useRightToLeft';
 export { AddressVerificationSection } from './containers/security/AddressVerificationSection';
 export { ExternalPGPSettingsSection } from './containers/security/ExternalPGPSettingsSection';
-export { PGPSchemeSelect } from './containers/security/PGPSchemeSelect';
 export { SentinelSection } from './containers/sentinel/SentinelSection';
 export { default as SessionAction } from './containers/sessions/SessionAction';
 export { default as SessionsSection } from './containers/sessions/SessionsSection';
@@ -814,7 +749,6 @@ export { default as useThemeQueryParameter } from './containers/themes/useThemeQ
 export { ThirdPartySection } from './containers/thirdParty/ThirdPartySection';
 export { default as BadAppVersionBanner } from './containers/topBanners/BadAppVersionBanner';
 export { default as DelinquentTopBanner } from './containers/topBanners/DelinquentTopBanner';
-export { LockedStateTopBanner } from './containers/topBanners/LockedStateTopBanner';
 export { default as OnlineTopBanner } from './containers/topBanners/OnlineTopBanner';
 export { default as PublicTopBanners } from './containers/topBanners/PublicTopBanners';
 export { default as StorageLimitTopBanner } from './containers/topBanners/StorageLimitTopBanner';
@@ -822,7 +756,6 @@ export { default as TimeOutOfSyncTopBanner } from './containers/topBanners/TimeO
 export { default as TopBanner } from './containers/topBanners/TopBanner';
 export { default as TopBanners } from './containers/topBanners/TopBanners';
 export { default as EmbeddedVerification } from './containers/verification/EmbeddedVerification';
-export { getFlagSvg } from './containers/vpn/flag';
 export { default as GatewaysSection } from './containers/vpn/gateways/GatewaysSection';
 export { default as OpenVPNConfigurationSection } from './containers/vpn/OpenVPNConfigurationSection/OpenVPNConfigurationSection';
 export { default as OpenVPNCredentialsSection } from './containers/vpn/OpenVPNCredentialsSection';
@@ -838,9 +771,7 @@ export { default as VpnDownloadSection } from './containers/vpn/VpnDownloadSecti
 export { default as VpnGetMoreSection } from './containers/vpn/VpnGetMoreSection/VpnGetMoreSection';
 export { default as WireGuardConfigurationSection } from './containers/vpn/WireGuardConfigurationSection/WireGuardConfigurationSection';
 export { getAppVersion } from './helpers/appVersion';
-export { escapeCsvValue } from './helpers/escapeCsvValue';
 export { getCustomSizingClasses } from './helpers/getCustomSizingClasses';
-export { getObjectKeys } from './helpers/getObjectKeys';
 export { DrawerProvider, default as useDrawer } from './hooks/drawer/useDrawer';
 export { default as useDrawerLocalStorage } from './hooks/drawer/useDrawerLocalStorage';
 export { default as useDrawerParent } from './hooks/drawer/useDrawerParent';
@@ -848,9 +779,7 @@ export { default as useDrawerWidth } from './hooks/drawer/useDrawerWidth';
 export { default as useObserveDrawerIframeAppLocation } from './hooks/drawer/useObserveDrawerIframeAppLocation';
 export { default as useOpenDrawerOnLoad } from './hooks/drawer/useOpenDrawerOnLoad';
 export { default as useToggleDrawerApp } from './hooks/drawer/useToggleDrawerApp';
-export { useDriveB2BPhotosEnabledSetting } from './hooks/drive/useDriveB2BPhotosEnabledSetting';
 export { useDrivePlan } from './hooks/drive/useDrivePlan';
-export { useRevisionRetentionDays } from './hooks/drive/useRevisionRetentionDays';
 export { default as useShortDomainAddress } from './hooks/mail/useShortDomainAddress';
 export { default as useIsSecurityCheckupAvailable } from './hooks/securityCheckup/useIsSecurityCheckupAvailable';
 export { default as useSecurityCheckup } from './hooks/securityCheckup/useSecurityCheckup';
@@ -868,7 +797,7 @@ export { default as useCache } from './hooks/useCache';
 export { default as useCalendarShareInvitationActions } from './hooks/useCalendarShareInvitationActions';
 export { default as useCalendarShareInvitations } from './hooks/useCalendarShareInvitations';
 export { default as useConfig } from './hooks/useConfig';
-export { useDeviceRecovery, useIsDeviceRecoveryAvailable, useIsDeviceRecoveryEnabled } from './hooks/useDeviceRecovery';
+export { useDeviceRecovery } from './hooks/useDeviceRecovery';
 export { default as useDragMove } from './hooks/useDragMove';
 export { default as useDragOver } from './hooks/useDragOver';
 export { default as useDropdownArrowNavigation } from './hooks/useDropdownArrowNavigation';
@@ -882,9 +811,9 @@ export { default as useFolderColor } from './hooks/useFolderColor';
 export { default as useForceRefresh } from './hooks/useForceRefresh';
 export { default as useGetCalendarEventRaw } from './hooks/useGetCalendarEventRaw';
 export { default as useGetCalendarInfo } from './hooks/useGetCalendarInfo';
-export { CACHE_KEY, default as useGetEncryptionPreferences } from './hooks/useGetEncryptionPreferences';
+export { default as useGetEncryptionPreferences } from './hooks/useGetEncryptionPreferences';
 export { default as useGetVerificationPreferences } from './hooks/useGetVerificationPreferences';
-export { useEventListener, useHandler, useInterval, useSubscribeEventManager } from './hooks/useHandler';
+export { useHandler, useInterval, useSubscribeEventManager } from './hooks/useHandler';
 export type { Cancellable } from './hooks/useHandler';
 export { default as useHasSuspendedCounter } from './hooks/useHasSuspendedCounter';
 export { useHotkeys, type HotkeyTuple } from './hooks/useHotkeys';
@@ -901,28 +830,15 @@ export { default as useMyCountry } from './hooks/useMyCountry';
 export { default as useNewFeatureOnboarding } from './hooks/useNewFeatureOnboarding';
 export { default as useNotifications } from './hooks/useNotifications';
 export { getOnlineStatus, default as useOnline } from './hooks/useOnline';
-export { usePreferredPlansMap } from './hooks/usePreferredPlansMap';
 export { default as usePreventCloseTab } from './hooks/usePreventCloseTab';
 export { PreventLeaveProvider, default as usePreventLeave } from './hooks/usePreventLeave';
 export { default as useProgressiveRollout } from './hooks/useProgressiveRollout';
 export { default as useRecoveryNotification } from './hooks/useRecoveryNotification';
 export { default as useRelocalizeText } from './hooks/useRelocalizeText';
 export { default as useSearchParamsEffect } from './hooks/useSearchParamsEffect';
-export {
-    useAvailableRecoveryMethods,
-    useIsSessionRecoveryAvailable,
-    useIsSessionRecoveryEnabled,
-    useIsSessionRecoveryInitiatedByCurrentSession,
-    useIsSessionRecoveryInitiationAvailable,
-    useSessionRecoveryGracePeriodHoursRemaining,
-    useSessionRecoveryInsecureTimeRemaining,
-    useShouldNotifyPasswordResetAvailable,
-    useShouldNotifySessionRecoveryCancelled,
-    useShouldNotifySessionRecoveryInProgress,
-} from './hooks/useSessionRecovery';
-export { useSessionRecoveryState } from './hooks/useSessionRecoveryState';
+export { useIsSessionRecoveryAvailable } from './hooks/useSessionRecovery';
 export { default as useShowThemeSelection } from './hooks/useShowThemeSelection';
-export { useMultiSortedList, default as useSortedList, useSortedListAsync } from './hooks/useSortedList';
+export { useMultiSortedList, default as useSortedList } from './hooks/useSortedList';
 export type { SortConfig } from './hooks/useSortedList';
 export { default as useSpotlightOnFeature } from './hooks/useSpotlightOnFeature';
 export { default as useSubscribedCalendars } from './hooks/useSubscribedCalendars';
