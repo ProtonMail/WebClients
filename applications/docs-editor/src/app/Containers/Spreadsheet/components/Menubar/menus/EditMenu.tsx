@@ -56,33 +56,38 @@ function Redo() {
 }
 
 function Cut() {
-  // TODO: need RnC to provide useCopyPasteCut
   return (
-    <UI.MenuItem leadingIconSlot={<UI.Icon data={Icons.scissors} />} disabled={useUI((ui) => ui.info.isReadonly)}>
-      {s('Cut')} (unimplemented)
+    <UI.MenuItem
+      leadingIconSlot={<UI.Icon data={Icons.scissors} />}
+      onClick={useUI.$.operation.cut}
+      disabled={useUI((ui) => ui.info.isReadonly)}
+    >
+      {s('Cut')}
     </UI.MenuItem>
   )
 }
 
 function Copy() {
-  // TODO: need RnC to provide useCopyPasteCut
-  return <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="squares" />}>{s('Copy')} (unimplemented)</UI.MenuItem>
+  return (
+    <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="squares" />} onClick={useUI.$.operation.copy}>
+      {s('Copy')}
+    </UI.MenuItem>
+  )
 }
 
 function Paste() {
-  // TODO: need RnC to provide useCopyPasteCut
   return (
     <UI.MenuItem
       leadingIconSlot={<UI.Icon data={Icons.notepadChecklist} />}
+      onClick={useUI.$.operation.paste.default}
       disabled={useUI((ui) => ui.info.isReadonly)}
     >
-      {s('Paste')} (unimplemented)
+      {s('Paste')}
     </UI.MenuItem>
   )
 }
 
 function PasteSpecialSubmenu() {
-  // TODO: need RnC to provide useCopyPasteCut
   return (
     <Ariakit.MenuProvider>
       <UI.SubMenuButton
@@ -93,14 +98,27 @@ function PasteSpecialSubmenu() {
       </UI.SubMenuButton>
       <UI.SubMenu unmountOnHide>
         {/* TODO: platform-aware shortcut hints */}
-        <UI.MenuItem hintSlot="⌘+Shift+V" disabled={useUI((ui) => ui.info.isReadonly)}>
-          {s('Values only')} (unimplemented)
+        <UI.MenuItem
+          hintSlot="⌘+Shift+V"
+          onClick={useUI.$.operation.paste.value}
+          disabled={useUI((ui) => ui.info.isReadonly)}
+        >
+          {s('Values only')}
         </UI.MenuItem>
-        <UI.MenuItem hintSlot="⌘+Option+V" disabled={useUI((ui) => ui.info.isReadonly)}>
-          {s('Formatting only')} (unimplemented)
+        <UI.MenuItem
+          hintSlot="⌘+Option+V"
+          onClick={useUI.$.operation.paste.formatting}
+          disabled={useUI((ui) => ui.info.isReadonly)}
+        >
+          {s('Formatting only')}
+        </UI.MenuItem>
+        <UI.MenuItem onClick={useUI.$.operation.paste.formula} disabled={useUI((ui) => ui.info.isReadonly)}>
+          {s('Formula only')}
         </UI.MenuItem>
         <UI.MenuSeparator />
-        <UI.MenuItem disabled={useUI((ui) => ui.info.isReadonly)}>{s('Transposed')} (unimplemented)</UI.MenuItem>
+        <UI.MenuItem onClick={useUI.$.operation.paste.transposed} disabled={useUI((ui) => ui.info.isReadonly)}>
+          {s('Transposed')}
+        </UI.MenuItem>
       </UI.SubMenu>
     </Ariakit.MenuProvider>
   )
@@ -124,6 +142,7 @@ function strings() {
     'Paste special': c('sheets_2025:Spreadsheet editor menubar edit menu').t`Paste special`,
     'Values only': c('sheets_2025:Spreadsheet editor menubar edit menu').t`Values only`,
     'Formatting only': c('sheets_2025:Spreadsheet editor menubar edit menu').t`Formatting only`,
+    'Formula only': c('sheets_2025:Spreadsheet editor menubar edit menu').t`Formula only`,
     Transposed: c('sheets_2025:Spreadsheet editor menubar edit menu').t`Transposed`,
     Find: c('sheets_2025:Spreadsheet editor menubar edit menu').t`Find`,
   }
