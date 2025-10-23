@@ -25,13 +25,13 @@ export function CellTooltip({
   height = 0,
   scrollLeft = 0,
   scrollTop = 0,
-  position = 'bottom',
+  hyperlink,
+  position = hyperlink ? 'bottom' : 'right',
   variant,
   content,
   title,
   note,
   noteEditorCell,
-  hyperlink,
   cell,
   onRequestPersistence,
   onRequestUpdateNote,
@@ -40,7 +40,7 @@ export function CellTooltip({
   const sheetId = useUI((state) => state.legacy.activeSheetId)
   const onRemoveLink = useUI.$.legacy.onRemoveLink
   if (!hyperlink) {
-    if (!title && !content && !note) {
+    if (!title && !content && !note && !noteEditorCell) {
       // no tooltip to show
       return null
     }
