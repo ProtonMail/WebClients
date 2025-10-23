@@ -438,6 +438,9 @@
       "Expand folder": [
         "폴더 확장"
       ],
+      "Explore other plans": [
+        "다른 플랜 알아보기"
+      ],
       "Export": [
         "내보내기"
       ],
@@ -1029,6 +1032,9 @@
       "Submit report": [
         "신고 제출"
       ],
+      "Subscribe now": [
+        "지금 구독하기"
+      ],
       "Switch or add account": [
         "계정 전환 및 추가"
       ],
@@ -1445,15 +1451,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "1 user": [
-        "사용자 1명"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6명의 사용자"
-      ],
       "Premium Password Manager": [
         "프리미엄 암호 관리자"
       ]
@@ -1478,35 +1475,11 @@
       "${ storageSize } storage": [
         "저장공간 ${ storageSize }"
       ],
-      "1 TB total": [
-        "총 1 TB"
-      ],
-      "1 user": [
-        "사용자 1명"
-      ],
       "1 user account": [
         "1개 사용자 계정"
       ],
-      "10 email addresses": [
-        "이메일 주소 10개"
-      ],
-      "2 users": [
-        "사용자 2명"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
       "6 user accounts": [
         "6개 사용자 계정"
-      ],
-      "6 users": [
-        "6명의 사용자"
-      ],
-      "8500+ servers across 110+ countries": [
-        "110개 국가에서 8500개 이상의 서버"
-      ],
-      "Ad-blocker and malware protection": [
-        "광고 차단기 및 멀웨어 보호"
       ],
       "Admin panel to manage your family": [
         "내 가족 계정 관리를 위한 관리자 패널"
@@ -1517,9 +1490,6 @@
       "Easily add or remove users": [
         "쉬운 사용자 추가 및 제거"
       ],
-      "High speed streaming": [
-        "고속 스트리밍"
-      ],
       "One-time payment, lifetime deal": [
         "일회성 결제, 평생 이용"
       ],
@@ -1529,15 +1499,6 @@
       "Password health alerts": [
         "비밀번호 건강도 알림"
       ],
-      "Private photo backup": [
-        "안전한 사진 백업"
-      ],
-      "Protect 10 devices at a time": [
-        "동시에 최대 10개 장치 보호"
-      ],
-      "Secure file storage & sharing": [
-        "안전한 파일 저장 공간 및 공유"
-      ],
       "Unlimited folders, labels and filters": [
         "무제한 폴더, 라벨 및 필터"
       ],
@@ -1546,12 +1507,6 @@
       ],
       "Use your own email domain": [
         "기존 이메일 도메인 사용"
-      ],
-      "Version history": [
-        "버전 기록"
-      ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -1565,9 +1520,6 @@
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
         "차단된 콘텐츠에 접근 및 비공개로 브라우징하세요. 110여개 이상 국가에서 8500개 이상 서버와 10개 기기, 고속 스트리밍, 광고 제거 및 멀웨어 보호, VPN Accelerator 등이 포함됩니다."
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "어디서든지 스트리밍 서비스에서 콘텐츠를 접근하세요, Netflix, Disney+, Prime Video 등이 포함됩니다."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "모든 기기의 로그인 항목을 보호하세요. 무제한 hide-my-email 별칭 공유, 통합된 2단계 인증기, ${ DARK_WEB_MONITORING_NAME } 등 기능이 포함되어 있습니다."
@@ -1586,9 +1538,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "온라인 문서 편집기, 사진 백업, 버전 기록, 암호화된 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
-      ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "특별히 설계된 NetShield는 광고, 추적기 및 맬웨어를 차단하여 장치를 보호하고 브라우징 속도를 높입니다."
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "스토리지 공간은 모든 ${ BRAND_NAME } 서비스에 공유됩니다."
@@ -9975,8 +9924,23 @@
       "${ referrerRewardAmount } per referral": [
         "추천당 ${ referrerRewardAmount }"
       ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**해당 날짜 전에 취소시,** 체험판이 종료될 때 회원님의 계정이 ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } 플랜으로 **다운그레이드됩니다.**"
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**구독하지 않을 시,** 회원님의 계정이 ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } 플랜으로 **다운그레이드됩니다.**"
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**취소하지 않을 시,** 정규 플랜으로 시작되며 **${ referrerRewardAmount }** 크레딧을 받게 됩니다."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**해당 날짜 이전에 구독시,** **${ referrerRewardAmount }** 크레딧을 받게 됩니다."
+      ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "최대 ${ maxRewardAmount } 크레딧을 적립하세요. 초대한 사람이 ${ BRAND_NAME } 플랜을 구독하면 ${ referrerRewardAmount }을 받게 됩니다."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "**${ textDate }**까지 **${ planTitle }**을(를) 무료로 즐겨보세요."
       ],
       "Friend joined": [
         "친구가 가입함"
@@ -9990,6 +9954,9 @@
       "Invited friends": [
         "초대된 친구들"
       ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "**${ planTitle }**이(가) 제공하는 강력한 기능들을 탐색할 수 있는 마지막 기회"
+      ],
       "More sharing options": [
         "공유 옵션 더보기"
       ],
@@ -10001,6 +9968,12 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "최대 **${ maxRewardAmount }**의 크레딧을 받을 수 있습니다."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "**${ planTitle }**가 제공하는 강력한 기능들을 탐색할 수 있는 시간이 **${ daysRemaining }일** 남았습니다."
+      ],
+      "your subscription": [
+        "내 구독"
       ]
     },
     "Safety review": {
@@ -10318,9 +10291,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "1 user": [
-        "사용자 1명"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -11769,6 +11739,9 @@
       ],
       "How does it work?": [
         "어떻게 작동하나요?"
+      ],
+      "How your free trial works": [
+        "무료 체험 작동 원리"
       ],
       "Human verification": [
         "사람임을 인증"
