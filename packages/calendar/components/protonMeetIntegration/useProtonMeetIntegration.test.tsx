@@ -74,14 +74,6 @@ jest.mock('@proton/meet/utils/cryptoUtils', () => ({
     encryptMeetingName: jest.fn().mockResolvedValue('encrypted-title'),
 }));
 
-jest.mock('@proton/account/organization/hooks', () => ({
-    useOrganization: jest.fn().mockReturnValue([
-        {
-            Settings: { MeetVideoConferencingEnabled: true },
-        },
-    ]),
-}));
-
 const Wrapper = ({ children }: { children: React.ReactNode }) => {
     return <Router history={createBrowserHistory()}>{children}</Router>;
 };
