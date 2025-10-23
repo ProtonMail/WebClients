@@ -1,59 +1,69 @@
-import { escapeCsvValue } from "@proton/components/helpers/escapeCsvValue";
-import type { B2BAuthLog } from "@proton/shared/lib/authlog";
-import downloadFile from "@proton/shared/lib/helpers/downloadFile";
-import type { EnhancedMember, OrganizationExtended, Recipient } from "@proton/shared/lib/interfaces";
-import { fromUnixTime } from "date-fns";
-import { convertEnhancedMembersToContactEmails, convertGroupMemberToRecipient } from "../../organization/groups/NewGroupMemberInput";
+import { fromUnixTime } from 'date-fns';
+
+import { escapeCsvValue } from '@proton/components/helpers/escapeCsvValue';
+import type { B2BAuthLog } from '@proton/shared/lib/authlog';
+import downloadFile from '@proton/shared/lib/helpers/downloadFile';
+import type { EnhancedMember, OrganizationExtended, Recipient } from '@proton/shared/lib/interfaces';
+
+import {
+    convertEnhancedMembersToContactEmails,
+    convertGroupMemberToRecipient,
+} from '../../organization/groups/helpers';
 
 export const handleDownload = async (logs: B2BAuthLog[], organization: OrganizationExtended) => {
-    const data = logs.reduce((acc, log) => {
-        const {
-            Time,
-            Description,
-            Status,
-            User,
-            IP,
-            Location,
-            InternetProvider,
-            AppVersion,
-            Device,
-            ProtectionDesc,
-        } = log;
+    const data = logs.reduce(
+        (acc, log) => {
+            const {
+                Time,
+                Description,
+                Status,
+                User,
+                IP,
+                Location,
+                InternetProvider,
+                AppVersion,
+                Device,
+                ProtectionDesc,
+            } = log;
 
-        const row = [
-            fromUnixTime(Time).toISOString(),
-            Description,
-            Status || '',
-            User?.Name || '',
-            User?.Email || '',
-            IP || '',
-            Location || '',
-            InternetProvider || '',
-            AppVersion || '',
-            Device || '',
-        ];
+            const row = [
+                fromUnixTime(Time).toISOString(),
+                Description,
+                Status || '',
+                User?.Name || '',
+                User?.Email || '',
+                IP || '',
+                Location || '',
+                InternetProvider || '',
+                AppVersion || '',
+                Device || '',
+            ];
 
-        if (organization?.Settings?.HighSecurity === 1) {
-            row.push(ProtectionDesc || '');
-        }
+            if (organization?.Settings?.HighSecurity === 1) {
+                row.push(ProtectionDesc || '');
+            }
 
-        acc.push(row.map(escapeCsvValue).join(','));
-        return acc;
-    }, [
+            acc.push(row.map(escapeCsvValue).join(','));
+            return acc;
+        },
         [
-            'Time',
-            'Event',
-            'Status',
-            'User Name',
-            'User Email',
-            'IP',
-            'Location',
-            'InternetProvider',
-            'AppVersion',
-            'Device',
-            'Protection',
-        ].map(escapeCsvValue).join(','),
-    ]);
+            [
+                'Time',
+                'Event',
+                'Status',
+                'User Name',
+                'User Email',
+                'IP',
+                'Location',
+                'InternetProvider',
+                'AppVersion',
+                'Device',
+                'Protection',
+            ]
+                .map(escapeCsvValue)
+                .join(','),
+        ]
+    );
 
     const filename = 'events.csv';
     const csvString = data.join('\r\n');
@@ -73,10 +83,8 @@ export const mapMembersToRecipients = (members: EnhancedMember[], Emails: string
     const filteredMembers = convertEnhancedMembersToContactEmails(
         members.filter((member) => member.Addresses?.some((address) => Emails.includes(address.Email)))
     );
-    const uniqueMembers = Array.from(
-        new Map(filteredMembers.map((m) => [m.ContactID, m])).values()
-    );
+    const uniqueMembers = Array.from(new Map(filteredMembers.map((m) => [m.ContactID, m])).values());
     const newRecipients = convertGroupMemberToRecipient(uniqueMembers);
 
     return newRecipients;
-}
+};
