@@ -27,6 +27,7 @@ import { useEvent } from './components/utils'
 import { useNotifications } from '@proton/components'
 import { c } from 'ttag'
 import { CUSTOM_GRID_COLORS } from './constants'
+import { LoadedFontFamilies, loadFont } from './font-state'
 
 // local state
 // -----------
@@ -218,8 +219,49 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
   }
 
   const localState = useLocalSpreadsheetState()
-  const depsWithLocalState = { localState, onChangeHistory, ...deps }
+
+  const onRequestFonts: (fonts: string[]) => Promise<void | undefined> = useEvent(async (fonts) => {
+    await Promise.allSettled(fonts.map(loadFont))
+  })
+
+  const depsWithLocalState = { localState, onChangeHistory, onRequestFonts, ...deps }
   const spreadsheetState = useSpreadsheetState(depsWithLocalState)
+  const { scrollToCell, getCellOffsetFromCoords: _getCellOffsetFromCoords, getGridRef, redrawGrid } = useSpreadsheet()
+
+  useEffect(() => {
+    const xfsValues = localState.cellXfs?.values()
+    if (!xfsValues) {
+      console.error('No cellXfs values found')
+      return
+    }
+    const fontFamiliesToRequest = new Set<string>()
+    for (const xfs of xfsValues) {
+      if (xfs?.textFormat?.fontFamily && !LoadedFontFamilies.has(xfs.textFormat.fontFamily)) {
+        fontFamiliesToRequest.add(xfs.textFormat.fontFamily)
+      }
+    }
+    if (fontFamiliesToRequest.size > 0) {
+      onRequestFonts(Array.from(fontFamiliesToRequest)).catch(console.error)
+    }
+  }, [localState.cellXfs, redrawGrid, onRequestFonts])
+
+  useEffect(() => {
+    const abortController = new AbortController()
+    const handleFontLoaded = () => {
+      requestAnimationFrame(() => {
+        const grid = getGridRef?.()
+        if (!grid) {
+          return
+        }
+        grid.clearCache()
+        grid.redrawGrid()
+      })
+    }
+    document.addEventListener('fontloaded', handleFontLoaded, { signal: abortController.signal })
+    return () => {
+      abortController.abort()
+    }
+  }, [getGridRef])
 
   const { getEffectiveFormat } = spreadsheetState
   const { activeSheetId, activeCell } = spreadsheetState
@@ -236,7 +278,6 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
 
   const baseState = { ...localState, ...spreadsheetState, ...computedValues }
 
-  const { scrollToCell, getCellOffsetFromCoords: _getCellOffsetFromCoords, getGridRef } = useSpreadsheet()
   /**
    * Requires this wrapper function, otherwise the `ProtonSheetsUIStoreSetters` type
    * complains about `getCellOffsetFromCoords` being undefined
@@ -387,6 +428,7 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
     getGridContainerElement,
     getGridScrollPosition,
     getHyperlink,
+    onRequestFonts,
   }
 }
 export type ProtonSheetsState = ReturnType<typeof useProtonSheetsState>
