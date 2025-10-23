@@ -6,15 +6,13 @@ import {
     DownloadStatus,
     useDownloadManagerStore,
 } from '../../zustand/download/downloadManager.store';
-import { UploadStatus } from '../../zustand/upload/uploadQueue.store';
-import type { UploadUIItem } from '../../zustand/upload/uploadUI.store';
-import { useUploadUIStore } from '../../zustand/upload/uploadUI.store';
+import { type UploadItem, UploadStatus, useUploadQueueStore } from '../../zustand/upload/uploadQueue.store';
 import { TransferManagerStatus, useTransferManagerState } from './useTransferManagerState';
 
 const resetStores = () => {
     act(() => {
         useDownloadManagerStore.getState().clearQueue();
-        useUploadUIStore.getState().clearAll();
+        useUploadQueueStore.getState().clearQueue();
     });
 };
 
@@ -24,9 +22,9 @@ const seedDownloadQueue = (items: Parameters<typeof useDownloadManagerStore.setS
     });
 };
 
-const seedUploadStore = (items: Parameters<typeof useUploadUIStore.setState>[0]) => {
+const seedUploadStore = (items: Parameters<typeof useUploadQueueStore.setState>[0]) => {
     act(() => {
-        useUploadUIStore.setState(items);
+        useUploadQueueStore.setState(items);
     });
 };
 
@@ -44,16 +42,17 @@ const createDownloadItem = (overrides: Partial<DownloadItem> = {}): DownloadItem
     ...overrides,
 });
 
-const createUploadItem = (overrides: Partial<UploadUIItem> = {}): UploadUIItem => ({
-    uploadId: 'upload-1',
-    name: 'Upload item',
-    uploadedBytes: 0,
-    clearTextExpectedSize: 100,
-    status: UploadStatus.Pending,
-    error: undefined,
-    speedBytesPerSecond: undefined,
-    ...overrides,
-});
+const createUploadItem = (overrides: Partial<UploadItem> = {}): UploadItem => {
+    return {
+        name: 'Upload item',
+        uploadedBytes: 0,
+        clearTextExpectedSize: 100,
+        status: UploadStatus.Pending,
+        speedBytesPerSecond: undefined,
+        batchId: 'batch-1',
+        ...overrides,
+    } as UploadItem;
+};
 
 const addDownloadItems = (...items: DownloadItem[]) => {
     seedDownloadQueue((state) => {
@@ -67,15 +66,13 @@ const addDownloadItems = (...items: DownloadItem[]) => {
     });
 };
 
-const addUploadItems = (...items: UploadUIItem[]) => {
+const addUploadItems = (...items: { uploadId: string; item: UploadItem }[]) => {
     seedUploadStore((state) => {
-        const collection = new Map(state.items);
-        const itemIds = new Set(state.itemIds);
-        items.forEach((item) => {
-            collection.set(item.uploadId, item);
-            itemIds.add(item.uploadId);
+        const queue = new Map(state.queue);
+        items.forEach(({ uploadId, item }) => {
+            queue.set(uploadId, item);
         });
-        return { ...state, items: collection, itemIds };
+        return { ...state, queue };
     });
 };
 
@@ -102,13 +99,14 @@ describe('useTransferManagerState', () => {
             })
         );
 
-        addUploadItems(
-            createUploadItem({
+        addUploadItems({
+            uploadId: 'upload-1',
+            item: createUploadItem({
                 name: 'Draft.docx',
                 uploadedBytes: 25,
                 status: UploadStatus.Pending,
-            })
-        );
+            }),
+        });
 
         const { result } = renderHook(() => useTransferManagerState());
 
@@ -140,13 +138,14 @@ describe('useTransferManagerState', () => {
     });
 
     it('should return upload-only queue details', () => {
-        addUploadItems(
-            createUploadItem({
+        addUploadItems({
+            uploadId: 'upload-1',
+            item: createUploadItem({
                 name: 'Upload only',
                 uploadedBytes: 75,
                 status: UploadStatus.InProgress,
-            })
-        );
+            }),
+        });
 
         const { result } = renderHook(() => useTransferManagerState());
 
