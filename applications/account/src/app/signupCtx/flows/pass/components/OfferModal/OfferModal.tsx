@@ -6,7 +6,6 @@ import { Button } from '@proton/atoms';
 import { Icon, PassLogo } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import type { PaymentsCheckout } from '@proton/payments';
-import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import './OfferModal.scss';
 
@@ -31,10 +30,9 @@ export const OfferModal: FC<OfferModalProps> = ({ uiData, loading, onClose, onCo
         <div className="modal-overlay fixed top-0 left-0 w-full h-full flex items-center justify-center rounded-lg">
             <div className="modal rounded-lg relative">
                 <div className="relative bg-primary flex items-center justify-center py-2">
-                    <div className="modal-title-container">
+                    <div className="modal-title-container flex items-center">
                         <Icon name="hourglass" />
-                        <span className="ml-1 text-bold">{c('Label')
-                            .t`Special Offer: Get ${PASS_SHORT_APP_NAME} Plus for ${offerPrice}`}</span>
+                        <span className="ml-1 text-bold">{c('Label').t`Special Offer!`}</span>
                     </div>
                     <Button className="absolute right-0" shape="ghost" icon pill onClick={onClose}>
                         <Icon name="cross" size={5} />
