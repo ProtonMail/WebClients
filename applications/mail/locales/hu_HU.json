@@ -531,6 +531,9 @@
       "Explore ${ VPN_APP_NAME }": [
         "Fedezze fel a ${ VPN_APP_NAME } szolgáltatást"
       ],
+      "Explore other plans": [
+        "További csomagok megismerése"
+      ],
       "Export": [
         "Exportálás"
       ],
@@ -1936,15 +1939,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "1 user": [
-        "1 felhasználó"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 felhasználó"
-      ],
       "Premium Password Manager": [
         "Prémium jelszókezelő"
       ]
@@ -1966,41 +1960,14 @@
       "${ storageSize } storage": [
         "${ storageSize } tárhely"
       ],
-      "1 user": [
-        "1 felhasználó"
-      ],
-      "10 email addresses": [
-        "10 e-mail cím"
-      ],
-      "2 users": [
-        "2 felhasználó"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 felhasználó"
-      ],
-      "8500+ servers across 110+ countries": [
-        "8500+ szerver több mint 110 országban"
-      ],
-      "Ad-blocker and malware protection": [
-        "Hirdetésblokkoló és rosszindulatú program elleni védelem"
-      ],
       "Advanced account protection": [
         "Fejlett fiókvédelem"
-      ],
-      "High speed streaming": [
-        "Nagy sebességű videózás"
       ],
       "One-time payment, lifetime deal": [
         "Egyszeri fizetés, örök életre szóló ajánlat"
       ],
       "Online document editor": [
         "Online dokumentumszerkesztő"
-      ],
-      "Private photo backup": [
-        "Privát fotó biztonsági mentés"
       ],
       "Unlimited folders, labels and filters": [
         "Korlátlan számú mappa, címke és szűrő"
@@ -2010,12 +1977,6 @@
       ],
       "Use your own email domain": [
         "Saját e-mail domain használata"
-      ],
-      "Version history": [
-        "Verziótörténet"
-      ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -2026,9 +1987,6 @@
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
         "Hozzáférés a védett tartalmakhoz és privát böngészés. Több mint 110 ország több mint 8500 szerverét, 10 eszközt, nagy sebességű streaminget, hirdetésblokkolót és rosszindulatú programok elleni védelmet, VPN gyorsítót és még sok mást tartalmaz."
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Akárhonnan hozzáférhet a videó tartalmakhoz, beleértve a Netflixet, a Disney+-t, a Prime Videót és más szolgáltatásokat."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Biztonságos bejelentkezés minden eszközén. Korlátlan hide-my-email álnévvel, megosztással, integrált kétlépcsős hitelesítéssel, ${ DARK_WEB_MONITORING_NAME } szolgáltatással és sok mással."
@@ -11880,6 +11838,16 @@
         "Zéró-hozzáférés titkosítással tárolva"
       ]
     },
+    "Referral": {
+      "Friend joined": [
+        "Ismerős csatlakozott",
+        "Ismerősök csatlakoztak"
+      ],
+      "Friend subscribed": [
+        "Ismerős előfizetett",
+        "Ismerősök előfizettek"
+      ]
+    },
     "Remaining days before the message expire": {
       "${ remainingDays } d": [
         "${ remainingDays } n",
@@ -12402,9 +12370,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "1 user": [
-        "1 felhasználó"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -13236,6 +13201,10 @@
         "${ labelName } címke eltávolítva ${ elementsCount } beszélgetésről.",
         "${ labelName } címke eltávolítva ${ elementsCount } beszélgetésről."
       ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } beszélgetés eltávolítva a csillaggal jelöltek közül.",
+        "${ elementsCount } beszélgetés eltávolítva a csillaggal jelöltek közül."
+      ],
       "${ elementsCount } conversation snoozed": [
         "${ elementsCount } beszélgetés némítva",
         "${ elementsCount } beszélgetés némítva"
@@ -13275,6 +13244,10 @@
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ labelName } címke eltávolítva ${ elementsCount } üzenetről.",
         "${ labelName } címke eltávolítva ${ elementsCount } üzenetről."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } üzenet eltávolítva a csillaggal jelöltek közül.",
+        "${ elementsCount } üzenet eltávolítva a csillaggal jelöltek közül."
       ],
       "Address copied to clipboard": [
         "Cím a vágólapra másolva"
@@ -13340,6 +13313,10 @@
       ],
       "Conversation removed from ${ labelName }.": [
         "${ labelName } címke eltávolítva a beszélgetésről."
+      ],
+      "Conversation updated": [
+        "Beszélgetés frissítve",
+        "Beszélgetések frissítve"
       ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "${ sendersList } érkező üzenetek a(z) ${ labelsList } címkével lesznek megjelölve"
@@ -13413,6 +13390,10 @@
       "Message removed from ${ labelName }.": [
         "${ labelName } címke eltávolítva az üzenetről."
       ],
+      "Message updated": [
+        "Üzenet frissítve",
+        "Üzenetek frissítve"
+      ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "${ sendersList } érkező üzenetek a(z) ${ labelsList } címkével lesznek megjelölve"
       ],
@@ -13456,6 +13437,10 @@
       ],
       "Read receipt sent": [
         "Olvasási visszaigazolás elküldve"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "${ elementsCount } üzenet átkategorizálva.",
+        "${ elementsCount } üzenet átkategorizálva."
       ],
       "Self-destruction removed": [
         "Önmegsemmisítés eltávolítva"
@@ -14132,6 +14117,10 @@
       "Label as": [
         "Címkézés"
       ],
+      "Label message as": [
+        "Üzenet megjelölése címkével:",
+        "Üzenetek megjelölése címkével:"
+      ],
       "Label options": [
         "Címke beállításai"
       ],
@@ -14215,6 +14204,10 @@
       ],
       "Move all messages to trash": [
         "Az összes üzenetet áthelyezése a Lomtárba"
+      ],
+      "Move message to": [
+        "Üzenet áthelyezése ide:",
+        "Üzenetek áthelyezése ide:"
       ],
       "Move to": [
         "Áthelyezés ide"
