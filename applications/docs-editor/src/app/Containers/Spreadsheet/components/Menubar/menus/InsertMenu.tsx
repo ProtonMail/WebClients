@@ -1,10 +1,11 @@
 import * as Ariakit from '@ariakit/react'
 import type { ReactElement } from 'react'
-import { c } from 'ttag'
+import { c, msgid } from 'ttag'
 import { createStringifier } from '../../../stringifier'
 import * as UI from '../../ui'
 import * as Icons from '../../icons'
 import { useUI } from '../../../ui-store'
+import { InsertFormulaMenu } from '../../shared/InsertFormulaMenu'
 
 const { s } = createStringifier(strings)
 
@@ -40,7 +41,10 @@ export function InsertMenu({ renderMenuButton, ...props }: InsertMenuProps) {
 function CellsSubmenu() {
   return (
     <Ariakit.MenuProvider>
-      <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.cell} />} disabled={useUI((ui) => ui.info.isReadonly)}>
+      <UI.SubMenuButton
+        leadingIconSlot={<UI.Icon data={Icons.cell} />}
+        disabled={useUI((ui) => ui.selection.isMultiple || ui.info.isReadonly)}
+      >
         {s('Cells')}
       </UI.SubMenuButton>
       <UI.SubMenu>
@@ -62,23 +66,29 @@ function CellsSubmenu() {
 }
 
 function RowsSubmenu() {
+  const selectedRowCount = useUI((ui) => ui.info.selectedRowCount)
+  const insertRowsAbove = useUI.$.insert.rowsAbove
+  const insertRowsBelow = useUI.$.insert.rowsBelow
   return (
     <Ariakit.MenuProvider>
-      <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.rows} />} disabled={useUI((ui) => ui.info.isReadonly)}>
+      <UI.SubMenuButton
+        leadingIconSlot={<UI.Icon data={Icons.rows} />}
+        disabled={useUI((ui) => ui.selection.isMultiple || ui.info.isReadonly)}
+      >
         {s('Rows')}
       </UI.SubMenuButton>
       <UI.SubMenu>
         <UI.MenuItem
-          onClick={useUI.$.withFocusGrid(useUI.$.insert.rowAbove)}
+          onClick={useUI.$.withFocusGrid(() => insertRowsAbove(selectedRowCount))}
           disabled={useUI((ui) => ui.info.isReadonly)}
         >
-          {s('Insert 1 row above')}
+          {s('Insert')} <b>{rowsString(selectedRowCount)}</b> {s('above')}
         </UI.MenuItem>
         <UI.MenuItem
-          onClick={useUI.$.withFocusGrid(useUI.$.insert.rowBelow)}
+          onClick={useUI.$.withFocusGrid(() => insertRowsBelow(selectedRowCount))}
           disabled={useUI((ui) => ui.info.isReadonly)}
         >
-          {s('Insert 1 row below')}
+          {s('Insert')} <b>{rowsString(selectedRowCount)}</b> {s('below')}
         </UI.MenuItem>
       </UI.SubMenu>
     </Ariakit.MenuProvider>
@@ -86,23 +96,29 @@ function RowsSubmenu() {
 }
 
 function ColumnsSubmenu() {
+  const selectedColumnCount = useUI((ui) => ui.info.selectedColumnCount)
+  const insertColumnsLeft = useUI.$.insert.columnsLeft
+  const insertColumnsRight = useUI.$.insert.columnsRight
   return (
     <Ariakit.MenuProvider>
-      <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.columns} />} disabled={useUI((ui) => ui.info.isReadonly)}>
+      <UI.SubMenuButton
+        leadingIconSlot={<UI.Icon data={Icons.columns} />}
+        disabled={useUI((ui) => ui.selection.isMultiple || ui.info.isReadonly)}
+      >
         {s('Columns')}
       </UI.SubMenuButton>
       <UI.SubMenu>
         <UI.MenuItem
-          onClick={useUI.$.withFocusGrid(useUI.$.insert.columnLeft)}
+          onClick={useUI.$.withFocusGrid(() => insertColumnsLeft(selectedColumnCount))}
           disabled={useUI((ui) => ui.info.isReadonly)}
         >
-          {s('Insert 1 column left')}
+          {s('Insert')} <b>{columnsString(selectedColumnCount)}</b> {s('left')}
         </UI.MenuItem>
         <UI.MenuItem
-          onClick={useUI.$.withFocusGrid(useUI.$.insert.columnRight)}
+          onClick={useUI.$.withFocusGrid(() => insertColumnsRight(selectedColumnCount))}
           disabled={useUI((ui) => ui.info.isReadonly)}
         >
-          {s('Insert 1 column right')}
+          {s('Insert')} <b>{columnsString(selectedColumnCount)}</b> {s('right')}
         </UI.MenuItem>
       </UI.SubMenu>
     </Ariakit.MenuProvider>
@@ -149,15 +165,11 @@ function ImageSubmenu() {
 
 function FunctionSubmenu() {
   return (
-    <Ariakit.MenuProvider>
+    <InsertFormulaMenu asSubmenu>
       <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.sigma} />} disabled={useUI((ui) => ui.info.isReadonly)}>
         {s('Function')}
       </UI.SubMenuButton>
-      <UI.SubMenu>
-        {/* TODO: implement */}
-        <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="clock" />}>Coming soon...</UI.MenuItem>
-      </UI.SubMenu>
-    </Ariakit.MenuProvider>
+    </InsertFormulaMenu>
   )
 }
 
@@ -210,6 +222,24 @@ function Note() {
   )
 }
 
+function columnsString(numberOfColumns: number) {
+  // translator: this is used in the context of three strings put together - "Insert | N columns | above/below" (the | symbol is used to show the separation between the three strings, and the / symbol is used to denote variants), and it's separate because "X columns/rows" needs to be bold, the order of these three strings cannot be changed and they will be separated by spaces
+  return c('sheets_2025:Spreadsheet editor menubar insert menu (columns/rows submenus)').ngettext(
+    msgid`${numberOfColumns} column`,
+    `${numberOfColumns} columns`,
+    numberOfColumns,
+  )
+}
+
+function rowsString(numberOfRows: number) {
+  // translator: this is used in the context of three strings put together - "Insert | N rows | above/below" (the | symbol is used to show the separation between the three strings, and the / symbol is used to denote variants), and it's separate because "X columns/rows" needs to be bold, the order of these three strings cannot be changed and they will be separated by spaces
+  return c('sheets_2025:Spreadsheet editor menubar insert menu (columns/rows submenus)').ngettext(
+    msgid`${numberOfRows} row`,
+    `${numberOfRows} rows`,
+    numberOfRows,
+  )
+}
+
 function strings() {
   return {
     Cells: c('sheets_2025:Spreadsheet editor menubar insert menu').t`Cells`,
@@ -217,12 +247,18 @@ function strings() {
       .t`Insert cells and shift right`,
     'Insert cells and shift down': c('sheets_2025:Spreadsheet editor menubar insert menu')
       .t`Insert cells and shift down`,
+    // translator: this is used in the context of three strings put together - "Insert | N rows/columns | above/below" (the | symbol is used to show the separation between the three strings, and the / symbol is used to denote variants), and it's separate because "X columns/rows" needs to be bold, the order of these three strings cannot be changed and they will be separated by spaces
+    Insert: c('sheets_2025:Spreadsheet editor menubar insert menu (columns/rows submenus)').t`Insert`,
     Rows: c('sheets_2025:Spreadsheet editor menubar insert menu').t`Rows`,
-    'Insert 1 row above': c('sheets_2025:Spreadsheet editor menubar insert menu').t`Insert 1 row above`,
-    'Insert 1 row below': c('sheets_2025:Spreadsheet editor menubar insert menu').t`Insert 1 row below`,
+    // translator: this is used in the context of three strings put together - "Insert | N rows | above" (the | symbol is used to show the separation between the three strings, and the / symbol is used to denote variants), and it's separate because "X rows" needs to be bold, the order of these three strings cannot be changed and they will be separated by spaces
+    above: c('sheets_2025:Spreadsheet editor menubar insert menu (columns/rows submenus)').t`above`,
+    // translator: this is used in the context of three strings put together - "Insert | N rows | below" (the | symbol is used to show the separation between the three strings, and the / symbol is used to denote variants), and it's separate because "X rows" needs to be bold, the order of these three strings cannot be changed and they will be separated by spaces
+    below: c('sheets_2025:Spreadsheet editor menubar insert menu (columns/rows submenus)').t`below`,
     Columns: c('sheets_2025:Spreadsheet editor menubar insert menu').t`Columns`,
-    'Insert 1 column left': c('sheets_2025:Spreadsheet editor menubar insert menu').t`Insert 1 column left`,
-    'Insert 1 column right': c('sheets_2025:Spreadsheet editor menubar insert menu').t`Insert 1 column right`,
+    // translator: this is used in the context of three strings put together - "Insert | N columns | left" (the | symbol is used to show the separation between the three strings, and the / symbol is used to denote variants), and it's separate because "X columns" needs to be bold, the order of these three strings cannot be changed and they will be separated by spaces
+    left: c('sheets_2025:Spreadsheet editor menubar insert menu (columns/rows submenus)').t`left`,
+    // translator: this is used in the context of three strings put together - "Insert | N columns | right" (the | symbol is used to show the separation between the three strings, and the / symbol is used to denote variants), and it's separate because "X columns" needs to be bold, the order of these three strings cannot be changed and they will be separated by spaces
+    right: c('sheets_2025:Spreadsheet editor menubar insert menu (columns/rows submenus)').t`right`,
     Sheet: c('sheets_2025:Spreadsheet editor menubar insert menu').t`Sheet`,
     Chart: c('sheets_2025:Spreadsheet editor menubar insert menu').t`Chart`,
     Image: c('sheets_2025:Spreadsheet editor menubar insert menu').t`Image`,

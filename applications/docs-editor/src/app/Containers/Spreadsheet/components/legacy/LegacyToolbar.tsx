@@ -45,7 +45,7 @@ import {
 } from '@rowsncolumns/ui'
 import { MagnifyingGlassIcon, DownloadIcon, ImageIcon } from '@rowsncolumns/icons'
 import type { ProtonSheetsState } from '../../state'
-import { LOCALE, CURRENCY, onlyImplementedFunctionDescriptions as functionDescriptions } from '../../constants'
+import { LOCALE, CURRENCY, FUNCTION_DESCRIPTIONS } from '../../constants'
 import { useRef } from 'react'
 import { c } from 'ttag'
 
@@ -316,7 +316,7 @@ function LegacyFormulaBar({ state, isReadonly }: LegacyFormulaBarProps) {
       <FormulaBarInput
         sheetId={state.activeSheetId}
         activeCell={state.activeCell}
-        functionDescriptions={functionDescriptions}
+        functionDescriptions={FUNCTION_DESCRIPTIONS}
         readOnly={isReadonly}
       />
     </FormulaBar>

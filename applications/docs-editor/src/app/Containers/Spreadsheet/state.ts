@@ -26,7 +26,6 @@ import { create } from 'zustand'
 import { useEvent } from './components/utils'
 import { useNotifications } from '@proton/components'
 import { c } from 'ttag'
-import { CUSTOM_GRID_COLORS } from './constants'
 import { LoadedFontFamilies, loadFont } from './font-state'
 
 // local state
@@ -226,7 +225,9 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
 
   const depsWithLocalState = { localState, onChangeHistory, onRequestFonts, ...deps }
   const spreadsheetState = useSpreadsheetState(depsWithLocalState)
-  const { scrollToCell, getCellOffsetFromCoords: _getCellOffsetFromCoords, getGridRef, redrawGrid } = useSpreadsheet()
+  const canvasGridMethods = useSpreadsheet()
+
+  const { scrollToCell, getCellOffsetFromCoords: _getCellOffsetFromCoords, getGridRef, redrawGrid } = canvasGridMethods
 
   useEffect(() => {
     const xfsValues = localState.cellXfs?.values()
@@ -277,7 +278,6 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
   const yjsState = useYjsState(depsWithBaseState)
 
   const baseState = { ...localState, ...spreadsheetState, ...computedValues }
-
   /**
    * Requires this wrapper function, otherwise the `ProtonSheetsUIStoreSetters` type
    * complains about `getCellOffsetFromCoords` being undefined
@@ -416,7 +416,7 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
     chartsState,
     searchState,
     yjsState,
-    spreadsheetColors: CUSTOM_GRID_COLORS,
+    grid: canvasGridMethods,
     onSelectRange,
     onSelectNamedRange,
     onSelectTable,

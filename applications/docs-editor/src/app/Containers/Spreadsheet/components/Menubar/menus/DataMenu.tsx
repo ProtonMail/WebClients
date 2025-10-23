@@ -20,7 +20,7 @@ export function DataMenu({ renderMenuButton, ...props }: DataMenuProps) {
         <SortSubmenu />
         <CreateFilter />
         <UI.MenuSeparator />
-        <ProtectRange />
+        {/* <ProtectRange /> */}
         <DataValidation />
       </UI.Menu>
     </Ariakit.MenuProvider>
@@ -70,18 +70,19 @@ function CreateFilter() {
   )
 }
 
-function ProtectRange() {
-  return (
-    <UI.MenuItem
-      // TODO: need a different icon for "unlock range"
-      leadingIconSlot={<UI.Icon legacyName={useUI((ui) => ui.data.isProtectedRange) ? 'lock' : 'lock'} />}
-      onClick={useUI.$.withFocusGrid(useUI.$.data.toggleProtectRange)}
-      disabled={useUI((ui) => ui.info.isReadonly)}
-    >
-      {useUI((ui) => ui.data.isProtectedRange) ? s('Unlock range') : s('Protect range')}
-    </UI.MenuItem>
-  )
-}
+// TODO: need to carefully design this feature
+// function ProtectRange() {
+//   return (
+//     <UI.MenuItem
+//       // TODO: need a different icon for "unlock range"
+//       leadingIconSlot={<UI.Icon legacyName={useUI((ui) => ui.data.isProtectedRange) ? 'lock' : 'lock'} />}
+//       onClick={useUI.$.withFocusGrid(useUI.$.data.toggleProtectRange)}
+//       disabled={useUI((ui) => ui.info.isReadonly)}
+//     >
+//       {useUI((ui) => ui.data.isProtectedRange) ? s('Unlock range') : s('Protect range')}
+//     </UI.MenuItem>
+//   )
+// }
 
 function DataValidation() {
   return (
