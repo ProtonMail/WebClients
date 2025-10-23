@@ -453,6 +453,9 @@
       "Expand folder": [
         "Разгарнуць папку"
       ],
+      "Explore other plans": [
+        "Даследаваць іншыя тарыфныя планы"
+      ],
       "Export": [
         "Экспартаваць"
       ],
@@ -1044,6 +1047,9 @@
       "Submit report": [
         "Адправіць скаргу"
       ],
+      "Subscribe now": [
+        "Падпісацца"
+      ],
       "Switch or add account": [
         "Змяніць або дадаць уліковы запіс"
       ],
@@ -1481,15 +1487,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "1 user": [
-        "1 карыстальнік"
-      ],
-      "3 TB": [
-        "3 ТБ"
-      ],
-      "6 users": [
-        "6 карыстальнікаў"
-      ],
       "Premium Password Manager": [
         "Прэміяльны менеджар пароляў"
       ]
@@ -1514,35 +1511,11 @@
       "${ storageSize } storage": [
         "${ storageSize } прасторы ў сховішчы"
       ],
-      "1 TB total": [
-        "Агулам 1 ТБ"
-      ],
-      "1 user": [
-        "1 карыстальнік"
-      ],
       "1 user account": [
         "1 уліковы запіс карыстальніка"
       ],
-      "10 email addresses": [
-        "10 адрасоў электроннай пошты"
-      ],
-      "2 users": [
-        "2 карыстальнікі"
-      ],
-      "3 TB": [
-        "3 ТБ"
-      ],
       "6 user accounts": [
         "6 уліковых запісаў карыстальнікаў"
-      ],
-      "6 users": [
-        "6 карыстальнікаў"
-      ],
-      "8500+ servers across 110+ countries": [
-        "Больш за 8500 сервераў у больш чым 110 краінах"
-      ],
-      "Ad-blocker and malware protection": [
-        "Блакіроўшчык рэкламы і абарона ад шкодных праграм"
       ],
       "Admin panel to manage your family": [
         "Панэль адміністратара для кіравання вашай сям'ёй"
@@ -1553,9 +1526,6 @@
       "Easily add or remove users": [
         "Лёгкае дадаванне або выдаленне карыстальнікаў"
       ],
-      "High speed streaming": [
-        "Высакахуткасныя трансляцыі"
-      ],
       "One-time payment, lifetime deal": [
         "Аднаразовая аплата, пажыццёвы доступ"
       ],
@@ -1565,15 +1535,6 @@
       "Password health alerts": [
         "Папярэджанні якасці пароля"
       ],
-      "Private photo backup": [
-        "Прыватнае рэзерваванне фатаграфій"
-      ],
-      "Protect 10 devices at a time": [
-        "Абараняйце 10 прылад адначасова"
-      ],
-      "Secure file storage & sharing": [
-        "Бяспечнае файлавае сховішча і абагульванне"
-      ],
       "Unlimited folders, labels and filters": [
         "Неабмежаваная колькасць папак, метак і фільтраў"
       ],
@@ -1582,12 +1543,6 @@
       ],
       "Use your own email domain": [
         "Выкарыстоўвайце ўласны дамен электроннай пошты"
-      ],
-      "Version history": [
-        "Гісторыя версій"
-      ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -1601,9 +1556,6 @@
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
         "Доступ да заблакіраванага змесціва і прыватны прагляд. Уключае больш за 8500 сервераў у больш чым 110 краінах, 10 прылад, высакахуткасныя трансляцыі, блакіроўшчык рэкламы і шкодных праграм, VPN Accelerator і многае іншае."
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Атрымлівайце доступ да змесціва сэрвісаў з трансляцыямі, такіх як Netflix, Disney+, Prime Video з любой краіны ў свеце."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў hide-my-email, абагульванне, інтэграцыю з 2ФА, ${ DARK_WEB_MONITORING_NAME } і іншыя функцыі."
@@ -1628,9 +1580,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае воблачны рэдактар дакументаў, рэзерваванне фатаграфій, гісторыю версій, абагульванне зашыфраваных файлаў і іншыя функцыі."
-      ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Адмыслова распрацаваная функцыя NetShield абароніць вашы прылады і паскорыць прагляд старонак пры дапамозе блакіравання рэкламы, праграм сачэння і шкодных праграм."
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Прастора сховішча размеркавана паміж усімі сэрвісамі ${ BRAND_NAME }"
@@ -1667,6 +1616,9 @@
       ],
       "Application problem": [
         "Праблема з праграмай"
+      ],
+      "Black Friday": [
+        "Чорная пятніца"
       ],
       "Bridge problem": [
         "Праблема з Bridge"
@@ -3160,6 +3112,39 @@
         "Прыярытэтная падтрымка"
       ]
     },
+    "Duo offer": {
+      "/month": [
+        "/месяц"
+      ],
+      "1 TB of storage to share": [
+        "1 ТБ сховішча для абагульвання"
+      ],
+      "2 user accounts": [
+        "2 уліковых запісаў карыстальнікаў"
+      ],
+      "All premium features from your current plan": [
+        "Усе прэміяльныя функцыі з вашага бягучага тарыфнага плана"
+      ],
+      "Only": [
+        "Толькі"
+      ]
+    },
+    "Duo offer: Link": {
+      "Double your storage": [
+        "Падвойце сваё сховішча"
+      ],
+      "Share your plan": [
+        "Абагуліце свой тарыфны план"
+      ]
+    },
+    "Duo offer: Title": {
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Падвойце сваё сховішча з ${ BRAND_NAME } Duo"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "Абагуліце свае перавагі тарыфнага плана з ${ BRAND_NAME } Duo"
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Тэкставыя палі з'яўляюцца неабавязковымі. Звесткі, якія вы падалі ў гэтай форме, з'явяцца толькі ў выстаўленых рахунках у будучым і гэта не акажа ўплыў на бягучыя рахункі."
@@ -3552,6 +3537,9 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "Не знойдзена лістоў для імпартавання - уліковы запіс не мае ўваходных"
+      ],
+      "No file to upload": [
+        "Няма файла для запампоўкі"
       ],
       "No valid address found": [
         "Не знойдзена сапраўдных адрасоў"
@@ -4259,6 +4247,12 @@
       ]
     },
     "Feature": {
+      "Encrypted cloud storage for files, photos and documents": [
+        "Зашыфраванае воблачнае сховішча для файлаў, фатаграфій і дакументаў"
+      ],
+      "More premium features": [
+        "Больш прэміяльных функцый"
+      ],
       "Unlimited hide-my-email aliases": [
         "Неабмежаваная колькасць псеўданімаў hide-my-email"
       ]
@@ -5279,6 +5273,9 @@
       "Checking signatures": [
         "Праверка подпісаў"
       ],
+      "Choose a plan that works best for you.": [
+        "Выберыце тарыфны план, які найлепш вам пасуе."
+      ],
       "Clear data": [
         "Ачысціць даныя"
       ],
@@ -5308,6 +5305,9 @@
       ],
       "Contact unassigned from group ${ contactGroupName }": [
         "Прызначэнне кантакту скасавана з групы ${ contactGroupName }"
+      ],
+      "Continue": [
+        "Працягнуць"
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Працягнуць выкарыстоўваць ${ DRIVE_APP_NAME } і разблакіраваць дыск пазней"
@@ -6535,6 +6535,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Палепшыце свой тарыфны план зараз, каб атрымаць прэміяльныя функцыі, прадукты, а таксама палепшыць сховішча па спецыяльнай цане"
+      ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "Палепшыць падпіску, каб захаваць ${ planTitle } перавагі."
       ],
       "upgrade your storage": [
         "палепшыце сваё сховішча"
@@ -7913,6 +7916,9 @@
       ]
     },
     "Message": {
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "Ваш бясплатны пробны перыяд завершыўся. ${ nonAutoRenewalAction }"
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ваш бясплатны пробны перыяд завяршыўся. Доступ да вашых уліковых запісаў будзе неўзабаве адключаны. ${ action }"
       ]
@@ -9558,11 +9564,17 @@
       "${ pricingTitle } offer expires today!": [
         "Прапанова з коштам ${ pricingTitle } міне сёння!"
       ],
+      "Don't show this again": [
+        "Больш не паказваць"
+      ],
       "Don’t show this again": [
         "Больш не паказваць"
       ],
       "Don’t show this offer again": [
         "Больш не паказваць гэту прапанову"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Атрымаць ${ BRAND_NAME } Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "Атрымаць ${ BRAND_NAME } Unlimited"
@@ -10509,8 +10521,23 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } за кожнае запрашэнне"
       ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Калі вы скасуеце падпіску да гэтай даты,** то будзеце **паніжаны** да ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } пасля завяршэння пробнага перыяду."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Калі вы не падпішацеся,** то вы будзеце **паніжаны** да ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Калі вы не скасуеце, то ** ваш поўны тарыфны план пачне дзейнічаць, і вы атрымаеце **${ referrerRewardAmount }** у крэдытах."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "Вы атрымаеце **${ referrerRewardAmount }** у крэдытах **пры падпісцы да гэтай даты**."
+      ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Зарабіце да ${ maxRewardAmount } у крэдытах. Вы атрымаеце ${ referrerRewardAmount }, калі запрошаная асоба падпішацца на тарыфны план ${ BRAND_NAME }."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Атрымлівайце асалоду ад **${ planTitle }** бясплатна да **${ textDate }**."
       ],
       "Friend joined": [
         "Сябар далучыўся",
@@ -10530,8 +10557,14 @@
       "Invited friends": [
         "Запрошаныя сябры"
       ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Апошняя магчымасць даследаваць усе магутныя функцыі, якія прапануе **${ planTitle }**."
+      ],
       "More sharing options": [
         "Больш параметраў для абагульвання"
+      ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "Пасля таго, як пачнецца ваша поўная падпіска, вы ўсё яшчэ можаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
       ],
       "Refer friends": [
         "Параіць сябрам"
@@ -10541,6 +10574,15 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Вы можаце атрымаць да **${ maxRewardAmount }** у крэдытах."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "У вас застаўся **${ daysRemaining } дзень**, каб даследаваць усе магутныя функцыі, якія прапануе **${ planTitle }**.",
+        "У вас засталося **${ daysRemaining } дні**, каб даследаваць усе магутныя функцыі, якія прапануе **${ planTitle }**.",
+        "У вас засталося **${ daysRemaining } дзён**, каб даследаваць усе магутныя функцыі, якія прапануе **${ planTitle }**.",
+        "У вас засталося **${ daysRemaining } дзён**, каб даследаваць усе магутныя функцыі, якія прапануе **${ planTitle }**."
+      ],
+      "your subscription": [
+        "ваша падпіска"
       ]
     },
     "Safety review": {
@@ -10903,9 +10945,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "1 user": [
-        "1 карыстальнік"
-      ],
       "3 TB": [
         "3 ТБ"
       ],
@@ -12328,6 +12367,9 @@
       "Discard changes?": [
         "Адхіліць змены?"
       ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Падвойце сваё сховішча з ${ BRAND_NAME } Duo"
+      ],
       "Downgrade account": [
         "Панізіць уліковы запіс"
       ],
@@ -12433,6 +12475,9 @@
         "Знойдзены ${ searchView.numberOfResults } вынікаў",
         "Знойдзены ${ searchView.numberOfResults } вынікаў"
       ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Атрымайце **${ referralInfo.uiData.refereeRewardAmount }** у крэдытах з ${ planTitle }"
+      ],
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "Атрыманне поўнага доступу да ${ CALENDAR_APP_NAME }"
       ],
@@ -12468,6 +12513,9 @@
       ],
       "How does it work?": [
         "Як гэта працуе?"
+      ],
+      "How your free trial works": [
+        "Як працуе бясплатны пробны перыяд"
       ],
       "Human verification": [
         "Антыспамавая праверка"
@@ -12900,6 +12948,9 @@
       ],
       "Upgrade to ${ planName }": [
         "Палепшыць да ${ planName }"
+      ],
+      "Upgrade to keep your premium benefits.": [
+        "Палепшыць падпіску, каб захаваць перавагі прэміум-класа."
       ],
       "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
         "Палепшыць вашу прадукцыйнасць за ${ formattedPrice } з ${ planName }"
@@ -13359,6 +13410,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Ваш бясплатны пробны перыяд завершыцца ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Ваш пробны перыяд скончыцца ${ textDate }. З вас не будзе спаганяцца плата, калі вы адмовіцеся да ${ textDate }. ${ action }"
       ]
     }
   }
