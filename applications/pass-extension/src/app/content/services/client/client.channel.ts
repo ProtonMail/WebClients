@@ -14,7 +14,6 @@ import { logger } from '@proton/pass/utils/logger';
 
 export type FrameMessageHandler<T extends WorkerMessageType = WorkerMessageType> = (
     message: WorkerMessageWithSender<Extract<WorkerMessage, { type: T }>>,
-    sender: Runtime.MessageSender,
     sendResponse: SendTabResponse<T>
 ) => true | void;
 
@@ -33,7 +32,7 @@ export const createFrameMessageBroker = (): FrameMessageBroker => {
 
             handlers.get(message.type)?.forEach((handler) => {
                 try {
-                    const willReply = handler(message, sender, sendResponse);
+                    const willReply = handler(message, sendResponse);
                     if (willReply === true) shouldReply = true;
                 } catch (err) {
                     logger.error(`[FrameMessageBroker] Failed processing "${message.type}"`, err);

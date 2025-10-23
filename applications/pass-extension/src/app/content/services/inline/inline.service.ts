@@ -67,18 +67,14 @@ export const createInlineService = ({
         );
     };
 
-    /** Triggered when a sub-frame needs access to the top-level dropdown state */
-    const onDropdownState: FrameMessageHandler<WorkerMessageType.INLINE_DROPDOWN_STATE> = (
-        _,
-        _sender,
-        sendResponse
-    ) => {
+    /** Handles dropdown state requests from sub-frames for icon/dropdown management. */
+    const onDropdownState: FrameMessageHandler<WorkerMessageType.INLINE_DROPDOWN_STATE> = (_, sendResponse) => {
         Promise.resolve(dropdown.getState()).then(sendResponse).catch(noop);
         return true;
     };
 
-    /** Triggered when a sub-frame optimistically tries to attach
-     * a dropdown app in the top-frame because of a form detection */
+    /** Handles dropdown attachment requests from sub-frames after form detection.
+     * Pre-creates dropdown elements before actual open requests. */
     const onDropdownAttach: FrameMessageHandler<WorkerMessageType.INLINE_DROPDOWN_ATTACH> = () => {
         registry.attachDropdown();
     };

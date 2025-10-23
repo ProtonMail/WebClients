@@ -61,7 +61,7 @@ const sendActivityProbe = () => sendMessage(contentScriptMessage({ type: WorkerM
 
 /** Validates frame visibility to prevent autofill in hidden iframes and ensure
  * UI overlays only appear on visible frames. Rejects if any parent frame is hidden. */
-const onFrameQuery: FrameMessageHandler<WorkerMessageType.FRAME_QUERY> = ({ payload }, _, sendResponse) => {
+const onFrameQuery: FrameMessageHandler<WorkerMessageType.FRAME_QUERY> = ({ payload }, sendResponse) => {
     const target = getFrameElement(payload.frameId, payload.frameAttributes);
     if (!target) sendResponse({ ok: false });
     else if (!getFrameVisibility(target)) sendResponse({ ok: false });
