@@ -1,7 +1,11 @@
 import { useEffect } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import { useFlag } from '@proton/unleash';
+
+import { BookingDetails } from './components/BookingDetails/BookingDetails';
+import { BookingPageLayout } from './components/BookingPageLaout';
+import { NoMatch, Reason } from './components/NoMatch';
 
 export const BookingsRouter = () => {
     const isEnabled = useFlag('CalendarExternalBookings');
@@ -16,5 +20,14 @@ export const BookingsRouter = () => {
         return null;
     }
 
-    return <Route path="/" exact render={() => <p data-testid="booking-app">Booking app</p>} />;
+    return (
+        <BookingPageLayout>
+            <Switch>
+                <Route path="/:bookingID" exact component={BookingDetails} />
+                <Route>
+                    <NoMatch reason={Reason.notFound} />
+                </Route>
+            </Switch>
+        </BookingPageLayout>
+    );
 };
