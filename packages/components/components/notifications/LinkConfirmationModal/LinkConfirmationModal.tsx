@@ -80,12 +80,13 @@ const LinkConfirmationModal = ({
                     <LinkConfirmationModalLink isPunnyCoded={isPunnyCodeLink} link={linkToShow} />
                 )}
             </ModalTwoContent>
-            <ModalTwoFooter>
-                <div className="flex sm:flex-nowrap flex-row-reverse gap-2 items-center sm:flex-row">
-                    <Button onClick={rest.onClose} className="shrink-0">{c('Action').t`Cancel`}</Button>
-                    {/* We show the checkbox only if the link is not a phishing attempt */}
+            <ModalTwoFooter className="items-center items-inherit">
+                <Button onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>
+
+                <div className="*:min-size-auto flex flex-1 flex-column gap-2 items-center sm:ml-2 sm:flex-nowrap sm:flex-row">
+                    {/* translator: this string is only for blind people, it will be vocalized: confirm opening of link https://link.com */}
                     {!isPhishingAttempt && !isOutside && (
-                        <Label className="flex flex-1 flex-nowrap label gap-2 pt-0">
+                        <Label className="w-auto flex-1 self-end sm:self-center flex flex-nowrap justify-end label gap-2 pt-0">
                             <Checkbox
                                 checked={dontAskAgain}
                                 onChange={() => setDontAskAgain(!dontAskAgain)}
@@ -94,18 +95,18 @@ const LinkConfirmationModal = ({
                             <span>{c('Label').t`Don't ask again`}</span>
                         </Label>
                     )}
+                    <Button
+                        autoFocus
+                        color="norm"
+                        type="button"
+                        className="shrink-0 w-full sm:w-auto"
+                        onClick={handleConfirm}
+                        aria-label={c('Action').t`Confirm opening of link ${linkToShow}`}
+                        disabled={isPhishingAttempt && !understandRisk}
+                    >
+                        {c('Action').t`Confirm`}
+                    </Button>
                 </div>
-                {/* translator: this string is only for blind people, it will be vocalized: confirm opening of link https://link.com */}
-                <Button
-                    autoFocus
-                    color="norm"
-                    type="button"
-                    onClick={handleConfirm}
-                    aria-label={c('Action').t`Confirm opening of link ${linkToShow}`}
-                    disabled={isPhishingAttempt && !understandRisk}
-                >
-                    {c('Action').t`Confirm`}
-                </Button>
             </ModalTwoFooter>
         </ModalTwo>
     );
