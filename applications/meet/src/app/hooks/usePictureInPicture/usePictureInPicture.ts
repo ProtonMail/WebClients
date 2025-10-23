@@ -63,6 +63,7 @@ export function usePictureInPicture({
 
     // PiP session manager for resource management
     const sessionManager = useRef(new PiPSessionManager());
+    const preventBlur = useRef(false);
 
     // Use specialized hooks
     const { setupMediaSession } = usePiPMediaSession({
@@ -98,8 +99,6 @@ export function usePictureInPicture({
         setIsPipActive(false);
     }, [stopRendering, startRendering, tracksForDisplay, messages, participantNameMapRef]);
 
-    const pipInProgress = useRef(false);
-
     const pipSetup = async (throttle: boolean = false) => {
         if (isMobile()) {
             return;
@@ -118,7 +117,7 @@ export function usePictureInPicture({
     // Start PiP
     const startPiP = useCallback(async () => {
         try {
-            if (isMobile() || pipInProgress.current || isPipActive) {
+            if (isMobile() || isPipActive) {
                 return;
             }
 
@@ -140,6 +139,8 @@ export function usePictureInPicture({
             sessionManager.current.addPiPEndListener(() => {
                 void stopPiP();
             });
+
+            return;
         } catch (error) {
             notifications.createNotification({
                 type: 'error',
@@ -147,7 +148,7 @@ export function usePictureInPicture({
             });
             void stopPiP();
         } finally {
-            pipInProgress.current = false;
+            preventBlur.current = false;
         }
     }, [
         isPipActive,
@@ -159,6 +160,10 @@ export function usePictureInPicture({
         setupMediaSession,
         stopPiP,
     ]);
+
+    const preparePictureInPicture = () => {
+        preventBlur.current = true;
+    };
 
     // Effect to handle disconnection
     useEffect(() => {
@@ -198,6 +203,10 @@ export function usePictureInPicture({
         );
 
         const handleWindowBlur = () => {
+            if (preventBlur.current) {
+                return;
+            }
+
             setTimeout(async () => {
                 const isTabSwitch = document.hidden;
                 const leftBrowser = !document.hasFocus() && !isTabSwitch;
@@ -224,7 +233,7 @@ export function usePictureInPicture({
                         ...Array.from(room.remoteParticipants.values()),
                     ].some((participant) => participant.isScreenShareEnabled);
 
-                    if (isScreenShareActive) {
+                    if (isScreenShareActive && !preventBlur.current) {
                         await startPiP();
                     }
                 });
@@ -293,5 +302,6 @@ export function usePictureInPicture({
         tracksLength: tracksForDisplay.length,
         pipSetup,
         pipCleanup,
+        preparePictureInPicture,
     };
 }

@@ -48,6 +48,7 @@ export interface MeetContextValues {
     isDisconnected: boolean;
     startPiP: () => void;
     stopPiP: () => void;
+    preparePictureInPicture: () => void;
 }
 
 export const MeetContext = createContext<MeetContextValues>({
@@ -91,6 +92,7 @@ export const MeetContext = createContext<MeetContextValues>({
     isDisconnected: false,
     startPiP: () => {},
     stopPiP: () => {},
+    preparePictureInPicture: () => {},
 });
 
 export const useMeetContext = () => {

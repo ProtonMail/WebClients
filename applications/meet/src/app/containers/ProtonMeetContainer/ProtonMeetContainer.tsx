@@ -97,11 +97,12 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
 
     const { getParticipants, participantNameMap, participantsMap, resetParticipantNameMap } = useParticipantNameMap();
 
-    const { stopPiP, startPiP, isPipActive, canvas, tracksLength, pipSetup, pipCleanup } = usePictureInPicture({
-        isDisconnected: connectionLost,
-        participantNameMap,
-        chatMessages,
-    });
+    const { stopPiP, startPiP, isPipActive, canvas, tracksLength, pipSetup, pipCleanup, preparePictureInPicture } =
+        usePictureInPicture({
+            isDisconnected: connectionLost,
+            participantNameMap,
+            chatMessages,
+        });
 
     const [initialisedParticipantNameMap, setInitialisedParticipantNameMap] = useState(false);
 
@@ -186,7 +187,7 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
                 case MeetCoreErrorEnum.MlsGroupError:
                 case MeetCoreErrorEnum.HttpClientError:
                 default:
-                    /* eslint-disable no-console */
+                    // eslint-disable-next-line no-console
                     console.error(error);
                     throw new Error(c('Error').t`Failed to join meeting. Please try again later.`);
             }
@@ -338,7 +339,7 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
             try {
                 await getParticipants(meetingToken);
             } catch (error) {
-                /* eslint-disable no-console */
+                // eslint-disable-next-line no-console
                 console.error(error);
             } finally {
                 setInitialisedParticipantNameMap(true);
@@ -628,6 +629,7 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
                         setChatMessages={setChatMessages}
                         pipSetup={pipSetup}
                         pipCleanup={pipCleanup}
+                        preparePictureInPicture={preparePictureInPicture}
                     />
                 ) : (
                     <PrejoinContainer
