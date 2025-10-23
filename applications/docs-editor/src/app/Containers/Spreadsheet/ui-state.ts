@@ -29,7 +29,7 @@ import type { ProtonSheetsState } from './state'
 import { useEvent } from './components/utils'
 import { useMemo, useState } from 'react'
 import type { CellInterface } from '@rowsncolumns/grid'
-import { isCellWithinBounds, selectionFromActiveCell } from '@rowsncolumns/grid'
+import { Direction, isCellWithinBounds, isEqualCells, selectionFromActiveCell } from '@rowsncolumns/grid'
 
 type PatternSpec = {
   type: NonNullable<CellFormat['numberFormat']>['type']
@@ -66,19 +66,60 @@ export function useProtonSheetsUIState(state: ProtonSheetsState, isReadonly: boo
       focusGrid()
     }
   }
+  function withFocusGridBefore(fn: () => void) {
+    return () => {
+      focusGrid()
+      fn()
+    }
+  }
+
+  // selection
+  const firstSelection = useMemo(
+    () => (state.selections.length ? state.selections.at(0) : undefined),
+    [state.selections],
+  )
+  /** The first selection. If none exists, falls back to a selection created from the active cell. */
+  const defaultSelection = useMemo(
+    () => firstSelection ?? selectionFromActiveCell(state.activeCell)[0],
+    [firstSelection, state.activeCell],
+  )
+  const selectionCount = useMemo(() => state.selections.length, [state.selections])
+  const selection = {
+    first: firstSelection,
+    last: useMemo(() => (state.selections.length ? state.selections.at(-1) : undefined), [state.selections]),
+    /** The first selection. If none exists, falls back to a selection created from the active cell. */
+    default: useMemo(
+      () => firstSelection ?? selectionFromActiveCell(state.activeCell)[0],
+      [firstSelection, state.activeCell],
+    ),
+    isMultiple: selectionCount > 1,
+    isSingle: selectionCount === 1,
+    isNone: selectionCount === 0,
+  }
 
   // info
   const info = {
     activeColumnIndex: state.activeCell.columnIndex,
     activeColumnName: number2Alpha(state.activeCell.columnIndex - 1),
     activeRowIndex: state.activeCell.rowIndex,
+    selectedColumnCount: defaultSelection.range.endColumnIndex - defaultSelection.range.startColumnIndex + 1,
+    selectedRowCount: defaultSelection.range.endRowIndex - defaultSelection.range.startRowIndex + 1,
     isReadonly,
   }
 
   // operation
-  // TODO: add cut, copy and paste (including paste special) operations
   const operation = {
     delete: useEvent(() => state.onDelete(state.activeSheetId, state.activeCell, state.selections)),
+    cut: useEvent(withFocusGridBefore(() => state.grid.cut?.())),
+    copy: useEvent(withFocusGridBefore(() => state.grid.copy?.())),
+    paste: {
+      default: useEvent(withFocusGrid(() => state.grid.paste?.())),
+      value: useEvent(withFocusGrid(() => state.grid.paste?.('Value'))),
+      formatting: useEvent(withFocusGrid(() => state.grid.paste?.('Formatting'))),
+      transposed: useEvent(withFocusGrid(() => state.grid.paste?.('Transposed'))),
+      formula: useEvent(withFocusGrid(() => state.grid.paste?.('Formula'))),
+      link: useEvent(withFocusGrid(() => state.grid.paste?.('Link'))),
+    },
   }
 
   // view
@@ -132,6 +173,23 @@ export function useProtonSheetsUIState(state: ProtonSheetsState, isReadonly: boo
   // format
   const patternSpecs = PATTERN_SPECS({ locale: LOCALE, currency: CURRENCY })
   const formatUtils = useFormatUtils(state, patternSpecs)
+  const canUnmerge = useMemo(
+    () =>
+      !selection.isMultiple &&
+      state.merges?.some((merge) =>
+        isEqualCells({ rowIndex: merge.startRowIndex, columnIndex: merge.startColumnIndex }, state.activeCell),
+      ),
+    [selection.isMultiple, state.activeCell, state.merges],
+  )
+  const canMergeHorizontally = useMemo(
+    () => selection.isSingle && selection.default.range.startColumnIndex !== selection.default.range.endColumnIndex,
+    [selection.default.range.endColumnIndex, selection.default.range.startColumnIndex, selection.isSingle],
+  )
+  const canMergeVertically = useMemo(
+    () => selection.isSingle && selection.default.range.startRowIndex !== selection.default.range.endRowIndex,
+    [selection.default.range.endRowIndex, selection.default.range.startRowIndex, selection.isSingle],
+  )
+  const canMerge = useMemo(() => canMergeHorizontally || canMergeVertically, [canMergeHorizontally, canMergeVertically])
   const format = {
     clear: useEvent(() => state.onClearFormatting(state.activeSheetId, state.activeCell, state.selections)),
     text: {
@@ -261,6 +319,26 @@ export function useProtonSheetsUIState(state: ProtonSheetsState, isReadonly: boo
     increaseDecimalPlaces: useEvent(() =>
       state.onChangeDecimals(state.activeSheetId, state.activeCell, state.selections, 'increment'),
     ),
+    merge: {
+      can: {
+        all: canMerge,
+        horizontally: canMergeHorizontally,
+        vertically: canMergeVertically,
+        unmerge: canUnmerge,
+      },
+      all: useEvent(() => state.onMergeCells(state.activeSheetId, state.activeCell, state.selections)),
+      horizontally: useEvent(() =>
+        state.onMergeCells(state.activeSheetId, state.activeCell, state.selections, Direction.Right),
+      ),
+      vertically: useEvent(() =>
+        state.onMergeCells(state.activeSheetId, state.activeCell, state.selections, Direction.Down),
+      ),
+      unmerge: useEvent(() => state.onUnMergeCells(state.activeSheetId, state.activeCell, state.selections)),
+      menu: {
+        enabled: useMemo(() => canMerge || canUnmerge, [canMerge, canUnmerge]),
+        defaultAction: useMemo(() => (!canMerge && canUnmerge ? 'unmerge' : 'merge'), [canMerge, canUnmerge]),
+      },
+    },
     paintFormat: {
       active: state.isPaintFormatActive,
       save: useEvent(() => state.onSavePaintFormat(state.activeSheetId, state.activeCell, state.selections)),
@@ -275,13 +353,21 @@ export function useProtonSheetsUIState(state: ProtonSheetsState, isReadonly: boo
     cellsShiftDown: useEvent(() =>
       state.onInsertCellsShiftDown(state.activeSheetId, state.activeCell, state.selections),
     ),
-    rowAbove: useEvent(() => state.onInsertRow(state.activeSheetId, state.activeCell.rowIndex, 1)),
-    rowBelow: useEvent(() => state.onInsertRow(state.activeSheetId, state.activeCell.rowIndex + 1, 1)),
-    columnLeft: useEvent(() => state.onInsertColumn(state.activeSheetId, state.activeCell.columnIndex, 1)),
-    columnRight: useEvent(() => state.onInsertColumn(state.activeSheetId, state.activeCell.columnIndex + 1, 1)),
+    rowsAbove: useEvent((amount: number) => state.onInsertRow(state.activeSheetId, state.activeCell.rowIndex, amount)),
+    rowsBelow: useEvent((amount: number) =>
+      state.onInsertRow(state.activeSheetId, state.activeCell.rowIndex + 1, amount),
+    ),
+    columnsLeft: useEvent((amount: number) =>
+      state.onInsertColumn(state.activeSheetId, state.activeCell.columnIndex, amount),
+    ),
+    columnsRight: useEvent((amount: number) =>
+      state.onInsertColumn(state.activeSheetId, state.activeCell.columnIndex + 1, amount),
+    ),
     sheet: useEvent(() => state.onCreateNewSheet()),
     chart: useEvent(() => state.chartsState.onCreateChart(state.activeSheetId, state.activeCell, state.selections)),
-    // link: useEvent(() => state.onRequestInsertLink(state.activeSheetId, state.activeCell, state.selections)),
+    formula: useEvent((formula: string) =>
+      state.grid.makeEditable?.(state.activeSheetId, state.activeCell, `=${formula}(`, true),
+    ),
     link: useEvent(() => view.insertLinkDialog.open()),
     // TODO: probably want to customize (or, at least, localize) the default options
     dropdown: useEvent(() => {
@@ -312,7 +398,6 @@ export function useProtonSheetsUIState(state: ProtonSheetsState, isReadonly: boo
   }
 
   // data
-
   const activeBasicFilter = useMemo(
     () =>
       state.basicFilter && isCellWithinBounds(state.activeCell, state.basicFilter.range)
@@ -320,13 +405,9 @@ export function useProtonSheetsUIState(state: ProtonSheetsState, isReadonly: boo
         : undefined,
     [state.activeCell, state.basicFilter],
   )
-  const selection = useMemo(
-    () => (state.selections.length ? state.selections[0] : selectionFromActiveCell(state.activeCell)[0]),
-    [state.activeCell, state.selections],
-  )
   const isProtectedRange = useMemo(
-    () => isProtectedRangeFn(state.activeSheetId, selection.range, state.protectedRanges),
-    [selection.range, state.activeSheetId, state.protectedRanges],
+    () => isProtectedRangeFn(state.activeSheetId, defaultSelection.range, state.protectedRanges),
+    [defaultSelection.range, state.activeSheetId, state.protectedRanges],
   )
   const data = {
     sortAscending: useEvent(() => state.onSortColumn(state.activeSheetId, state.activeCell.columnIndex, 'ASCENDING')),
@@ -334,7 +415,7 @@ export function useProtonSheetsUIState(state: ProtonSheetsState, isReadonly: boo
     toggleFilter: useEvent(() => state.onCreateBasicFilter?.(state.activeSheetId, state.activeCell, state.selections)),
     hasFilter: Boolean(activeBasicFilter),
     toggleProtectRange: useEvent(() => {
-      const protectedRange = getProtectedRange(state.activeSheetId, selection.range, state.protectedRanges)
+      const protectedRange = getProtectedRange(state.activeSheetId, defaultSelection.range, state.protectedRanges)
       if (protectedRange?.protectedRangeId) {
         state.onUnProtectRange?.(state.activeSheetId, protectedRange.protectedRangeId)
       } else {
@@ -379,7 +460,21 @@ export function useProtonSheetsUIState(state: ProtonSheetsState, isReadonly: boo
     getEffectiveValue: state.getEffectiveValue,
   }
 
-  return { focusGrid, withFocusGrid, info, operation, view, history, zoom, search, format, insert, data, legacy }
+  return {
+    focusGrid,
+    withFocusGrid,
+    selection,
+    info,
+    operation,
+    view,
+    history,
+    zoom,
+    search,
+    format,
+    insert,
+    data,
+    legacy,
+  }
 }
 
 export type ProtonSheetsUIState = ReturnType<typeof useProtonSheetsUIState>

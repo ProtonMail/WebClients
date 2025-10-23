@@ -1,8 +1,7 @@
 import { functionDescriptions } from '@rowsncolumns/functions'
 import FormulaParser from '@rowsncolumns/fast-formula-parser'
-import { type CellFormat, getCurrencySymbol } from '@rowsncolumns/spreadsheet'
+import { type CanvasGridProps, type CellFormat, getCurrencySymbol } from '@rowsncolumns/spreadsheet'
 import { getDefaultDateFormat, getLongDateFormat } from '@rowsncolumns/utils'
-import type { useSpreadsheetState } from '@rowsncolumns/spreadsheet-state'
 
 export const CURRENCY_DEFAULT = 'USD'
 export const LOCALE_DEFAULT = 'en-US'
@@ -186,18 +185,45 @@ export function PATTERN_SPECS({ locale, currency }: PatternSpecsOptions) {
       pattern: `_("${currencySymbol}"* #,##0.00_);_("${currencySymbol}"* (#,##0.00);_("${currencySymbol}"* "-"??_);_(@_)`,
     },
     FINANCIAL: { type: 'CURRENCY', pattern: '#,##0.00;(#,##0.00)' },
-    CURRENCY: { type: 'CURRENCY', pattern: CURRENCY_PATTERN({ locale, currency }) },
-    CURRENCY_ROUNDED: { type: 'CURRENCY', pattern: CURRENCY_ROUNDED_PATTERN({ locale, currency }) },
-    USD: { type: 'CURRENCY', pattern: CURRENCY_PATTERN({ locale, currency: 'USD' }) },
-    EUR: { type: 'CURRENCY', pattern: CURRENCY_PATTERN({ locale, currency: 'EUR' }) },
-    GBP: { type: 'CURRENCY', pattern: CURRENCY_PATTERN({ locale, currency: 'GBP' }) },
-    JPY: { type: 'CURRENCY', pattern: CURRENCY_PATTERN({ locale, currency: 'JPY' }) },
-    CNY: { type: 'CURRENCY', pattern: CURRENCY_PATTERN({ locale, currency: 'CNY' }) },
-    INR: { type: 'CURRENCY', pattern: CURRENCY_PATTERN({ locale, currency: 'INR' }) },
+    CURRENCY: {
+      type: 'CURRENCY',
+      pattern: CURRENCY_PATTERN({ locale, currency }),
+    },
+    CURRENCY_ROUNDED: {
+      type: 'CURRENCY',
+      pattern: CURRENCY_ROUNDED_PATTERN({ locale, currency }),
+    },
+    USD: {
+      type: 'CURRENCY',
+      pattern: CURRENCY_PATTERN({ locale, currency: 'USD' }),
+    },
+    EUR: {
+      type: 'CURRENCY',
+      pattern: CURRENCY_PATTERN({ locale, currency: 'EUR' }),
+    },
+    GBP: {
+      type: 'CURRENCY',
+      pattern: CURRENCY_PATTERN({ locale, currency: 'GBP' }),
+    },
+    JPY: {
+      type: 'CURRENCY',
+      pattern: CURRENCY_PATTERN({ locale, currency: 'JPY' }),
+    },
+    CNY: {
+      type: 'CURRENCY',
+      pattern: CURRENCY_PATTERN({ locale, currency: 'CNY' }),
+    },
+    INR: {
+      type: 'CURRENCY',
+      pattern: CURRENCY_PATTERN({ locale, currency: 'INR' }),
+    },
     DATE: { type: 'DATE', pattern: getDefaultDateFormat(locale) },
     LONG_DATE: { type: 'DATE', pattern: getLongDateFormat(locale) },
     TIME: { type: 'DATE_TIME', pattern: `[$-${locale}]h:mm AM/PM;@` },
-    DATE_TIME: { type: 'DATE_TIME', pattern: `[$-${locale}]${getDefaultDateFormat(locale)} hh:mm:ss` },
+    DATE_TIME: {
+      type: 'DATE_TIME',
+      pattern: `[$-${locale}]${getDefaultDateFormat(locale)} hh:mm:ss`,
+    },
     DURATION: { type: 'TIME', pattern: `[$-${locale}][h]:mm:ss` },
   } satisfies Record<string, PatternSpec>
 }
@@ -206,21 +232,17 @@ export const PERCENT_PATTERN_EXAMPLE_VALUE = 0.1012
 export const DATE_PATTERN_EXAMPLE_VALUE = new Date('2008-09-26T15:59:00')
 
 const implementedFunctionNames = FormulaParser.getImplementedFunctionNames()
-export const onlyImplementedFunctionDescriptions = functionDescriptions.filter((fn) => {
-  return implementedFunctionNames.has(fn.title)
-})
+export const FUNCTION_DESCRIPTIONS = functionDescriptions.filter((fn) => implementedFunctionNames.has(fn.title))
+
+export const GRID_THEME_PROPS: Partial<CanvasGridProps> = {
+  headerBackgroundColor: '#FAFAFA',
+  headerColor: '#666666',
+  headerActiveBackgroundColor: '#E3F9EB',
+  selectionBorderColor: '#4DB89D',
+  selectionBackgroundColor: 'rgba(80, 200, 120, 0.1)',
+  gridLineColor: '#F0F0F0',
+  headerBorderColor: '#EDEDED',
+}
 
 export const OPEN_LINK_EVENT = 'open-link' as const
-export type OpenLinkEventData = {
-  link: string
-}
-
-export const CUSTOM_GRID_COLORS: ReturnType<typeof useSpreadsheetState>['spreadsheetColors'] = {
-  headerBackgroundColor: '#FAFAFA', // Light gray for headers
-  headerColor: '#666666', // Dark gray for header text
-  headerActiveBackgroundColor: '#E3F9EB', // Mint green when cell is selected
-  selectionBorderColor: '#4DB89D', // Lighter mint green border for selected cells (appears thinner)
-  selectionBackgroundColor: 'rgba(80, 200, 120, 0.1)', // Light mint green background
-  gridLineColor: '#F0F0F0', // Light gray grid lines
-  headerBorderColor: '#EDEDED', // Light gray border for header cells
-}
+export type OpenLinkEventData = { link: string }
