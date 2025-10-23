@@ -3,7 +3,6 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/components';
 import type { SessionKey } from '@proton/crypto';
@@ -50,10 +49,6 @@ export const useProtonMeetIntegration = ({
 }: UseProtonMeetIntegrationParameters) => {
     const history = useHistory();
     const location = useLocation();
-
-    const [organization] = useOrganization();
-
-    const isProtonMeetSettingEnabled = organization?.Settings.MeetVideoConferencingEnabled;
 
     const isMeetVideoConferenceEnabled = useFlag('NewScheduleOption');
     const isMeetPassphraseEnabled = useFlag('MeetPassphraseEnabled');
@@ -257,8 +252,7 @@ export const useProtonMeetIntegration = ({
     const triedToAddMeetingLinkToDuplicateEvent = useRef(false);
 
     useEffect(() => {
-        const autoAddAvailable =
-            isMeetVideoConferenceEnabled && isAutoAddMeetingLinkEnabled && isProtonMeetSettingEnabled;
+        const autoAddAvailable = isMeetVideoConferenceEnabled && isAutoAddMeetingLinkEnabled;
 
         if (!autoAddAvailable) {
             return;
@@ -289,7 +283,6 @@ export const useProtonMeetIntegration = ({
         model.conferenceProvider,
         isDuplicating,
         isAutoAddMeetingLinkEnabled,
-        isProtonMeetSettingEnabled,
     ]);
 
     const setupInProgress = useRef(false);
