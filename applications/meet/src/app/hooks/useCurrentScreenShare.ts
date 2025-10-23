@@ -9,7 +9,15 @@ import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { screenShareQuality } from '../qualityConstants';
 
-export function useCurrentScreenShare({ stopPiP, startPiP }: { stopPiP: () => void; startPiP: () => void }) {
+export function useCurrentScreenShare({
+    stopPiP,
+    startPiP,
+    preparePictureInPicture,
+}: {
+    stopPiP: () => void;
+    startPiP: () => void;
+    preparePictureInPicture: () => void;
+}) {
     const { localParticipant } = useLocalParticipant();
 
     const notifications = useNotifications();
@@ -39,6 +47,8 @@ export function useCurrentScreenShare({ stopPiP, startPiP }: { stopPiP: () => vo
 
                 return;
             }
+
+            preparePictureInPicture();
 
             // In Safari we need to start PiP before setting the screen share to not lose user gesture
             if (isSafari()) {

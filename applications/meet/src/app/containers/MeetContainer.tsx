@@ -38,6 +38,7 @@ interface MeetContainerProps {
     setChatMessages: React.Dispatch<React.SetStateAction<MeetChatMessage[]>>;
     pipSetup: (throttle: boolean) => void;
     pipCleanup: () => void;
+    preparePictureInPicture: () => void;
 }
 
 export const MeetContainer = ({
@@ -62,6 +63,7 @@ export const MeetContainer = ({
     setChatMessages,
     pipSetup,
     pipCleanup,
+    preparePictureInPicture,
 }: MeetContainerProps) => {
     const [quality, setQuality] = useState<VideoQuality>(VideoQuality.HIGH);
     const [page, setPage] = useState(0);
@@ -90,7 +92,7 @@ export const MeetContainer = ({
         stopScreenShare,
         screenShareParticipant,
         screenShareTrack,
-    } = useCurrentScreenShare({ stopPiP, startPiP });
+    } = useCurrentScreenShare({ stopPiP, startPiP, preparePictureInPicture });
 
     useEffect(() => {
         if (isSafari()) {
@@ -144,6 +146,7 @@ export const MeetContainer = ({
                     isDisconnected,
                     startPiP,
                     stopPiP,
+                    preparePictureInPicture,
                 }}
             >
                 <UIStateProvider instantMeeting={instantMeeting}>
