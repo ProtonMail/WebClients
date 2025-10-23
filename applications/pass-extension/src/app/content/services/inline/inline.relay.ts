@@ -34,6 +34,8 @@ export const createInlineRelay = ({
 
     const onDropdownOpened: FrameMessageHandler<WorkerMessageType.INLINE_DROPDOWN_OPENED> = withContext(
         (ctx, { payload }) => {
+            /** Only handle dropdown opens for this frame (payload.passive = false).
+             * Parent frames handle passive opens via `inline.listeners.ts` */
             if (!(payload.type === 'result' && !payload.passive)) return;
 
             const { fieldId, formId } = payload;
@@ -45,8 +47,9 @@ export const createInlineRelay = ({
             const close = () => dropdown.close({ type: 'field', field });
             const autoclose = handleAutoClose(dropdown, field);
 
-            /** Intercept scroll events in sub-frames. It is too costly to try to reposition
-             * any injected UI elements in the top-frame via messaging. */
+            /** Sub-frame scroll handling: close dropdown immediately instead of
+             * expensive cross-frame repositioning. Top-frame UI elements cannot
+             * be efficiently repositioned via messaging. */
             const scrollParent = form.scrollParent;
             const scrollOptions = { capture: true, once: true, passive: true } as const;
 

@@ -18,6 +18,8 @@ export interface FieldTracker {
     detach: () => void;
 }
 
+/** Sends `AUTOFILL_FILTER` message to dropdown for real-time item filtering.
+ * 250ms throttle with trailing edge prevents excessive messaging during typing. */
 const syncAutofillFilter = throttle(
     withContext<(startsWith: string) => void>((ctx, startsWith) => {
         ctx?.service.inline.dropdown.sendMessage({
@@ -29,7 +31,7 @@ const syncAutofillFilter = throttle(
     { trailing: true }
 );
 
-/* trigger the submit handler on keydown enter */
+/* Trigger the submit handler on keydown enter */
 const handleOnEnter =
     (onSubmit: () => void) =>
     ({ key }: KeyboardEvent) =>
@@ -39,20 +41,19 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
     const listeners = createListenerStore();
     const state: FieldTrackerState = { focusRequest: null };
 
+    /** Handles field focus: attaches icon and conditionally opens dropdown.
+     * Uses requestAnimationFrame for DOM stability during focus transitions.
+     * Only opens dropdown if field wasn't previously autofilled. */
     const onFocus = onNextTick(
         withContext<(evt: FocusEvent) => void>((ctx) => {
             if (state.focusRequest) cancelAnimationFrame(state.focusRequest);
 
             const { action } = field;
-            if (!ctx || !action) return;
-
-            if (field.actionPrevented) return;
+            if (!ctx || !action || field.actionPrevented) return;
 
             const req = requestAnimationFrame(() => {
                 ctx.service.inline.icon.attach(field);
 
-                /** NOTE: auto-open dropdown if field was not
-                 * previously autofilled [to be determined] */
                 if (!field.autofilled) {
                     ctx.service.inline.dropdown.open({
                         type: 'field',
@@ -67,14 +68,15 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
         })
     );
 
-    /** This should be called on next tick: `document.activeElement` isn't synchronously
-     * updated during the blur event handler. Avoids detaching the icon if the blur event
-     * was triggered because of the dropdown gaining focus when attached to this field.
-     * Avoid triggering if field action is prevented during an autofill request. */
+    /** Handles field blur with dropdown focus state coordination.
+     * Uses `onNextTick` because `document.activeElement` updates asynchronously during blur.
+     * Queries `dropdown.getState()` to determine if focus has moved to dropdown (preventing premature
+     * cleanup). Only detaches icon and closes dropdown when both field and dropdown are unfocused.
+     * Skips cleanup during `autofill.processing` to prevent interrupting autofill sequences. */
     const onBlur = onNextTick(
         withContext(async (ctx) => {
-            if (!ctx || field.actionPrevented) return;
             if (state.focusRequest) cancelAnimationFrame(state.focusRequest);
+            if (!ctx || field.actionPrevented || ctx.service.autofill.processing) return;
 
             const { focused, attachedField, visible } = await ctx.service.inline.dropdown.getState();
             const dropdownFocused = visible && focused && field.matches(attachedField);
@@ -87,8 +89,9 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
         })
     );
 
-    /* on input change : close the dropdown if it was visible
-     * and update the field's handle tracked value */
+    /** Handles input changes: closes dropdown for non-filterable fields or updates filter.
+     * Non-filterable fields: closes dropdown immediately (user typing manually).
+     * Filterable fields: sends filter updates to update dropdown results */
     const onInput = withContext<(evt: Event) => void>((ctx) => {
         const { action } = field;
         const { value } = field.element;
@@ -101,7 +104,7 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
         field.setValue(value);
     });
 
-    /* when the type attribute of a field changes : detach it from
+    /* When the type attribute of a field changes : detach it from
      * the tracked form and re-trigger the detection */
     const onFieldAttributeChange: MutationCallback = withContext<MutationCallback>((ctx, mutations) => {
         if ([FieldType.PASSWORD_CURRENT, FieldType.PASSWORD_NEW].includes(field.fieldType)) return;
