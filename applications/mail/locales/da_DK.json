@@ -552,6 +552,9 @@
       "Explore ${ VPN_APP_NAME }": [
         "Opdag ${ VPN_APP_NAME }"
       ],
+      "Explore other plans": [
+        "Udforsk andre abonnementer"
+      ],
       "Export": [
         "Eksportér"
       ],
@@ -1975,15 +1978,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "1 user": [
-        "1 bruger"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 brugere"
-      ],
       "Premium Password Manager": [
         "Premium adgangskodeadministrator"
       ]
@@ -2008,38 +2002,14 @@
       "${ storageSize } storage": [
         "${ storageSize } lagerplads"
       ],
-      "1 user": [
-        "1 bruger"
-      ],
-      "10 email addresses": [
-        "10 e-mailadresser"
-      ],
-      "2 users": [
-        "2 brugere"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 brugere"
-      ],
-      "Ad-blocker and malware protection": [
-        "Annonceblokering og beskyttelse mod malware"
-      ],
       "Advanced account protection": [
         "Avanceret kontobeskyttelse"
-      ],
-      "High speed streaming": [
-        "Streaming ved høj hastighed"
       ],
       "One-time payment, lifetime deal": [
         "Engangsbetaling, livstidsaftale"
       ],
       "Online document editor": [
         "Online dokumenteditor"
-      ],
-      "Private photo backup": [
-        "Privat sikkerhedskopiering af fotos"
       ],
       "Unlimited folders, labels and filters": [
         "Ubegrænsede mapper, etiketter og filtre"
@@ -2049,12 +2019,6 @@
       ],
       "Use your own email domain": [
         "Brug dit eget e-mail-domæne"
-      ],
-      "Version history": [
-        "Versionshistorik"
-      ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -2063,18 +2027,12 @@
       ]
     },
     "BF2024: Tooltip": {
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Få adgang til indhold på streamingtjenester, herunder Netflix, Disney+, Prime Video og mere, hvor som helst."
-      ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Beskyt logins på alle dine enheder. Inkluderer ubegrænsede hide-my-email-aliasser, deling, integreret 2FA, ${ DARK_WEB_MONITORING_NAME } og mere."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Beskyt dine e-mails og din tidsplan med end-to-end-kryptering. Inkluderer ${ addresses } e-mailadresse, understøttelse af brugerdefinerede e-maildomæner, ubegrænsede hide-my-email-aliasser og mere.",
         "Beskyt dine e-mails og din tidsplan med end-to-end-kryptering. Inkluderer ${ addresses } e-mailadresser, understøttelse af brugerdefinerede e-maildomæner, ubegrænsede hide-my-email-aliasser og mere."
-      ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Det specialdesignede NetShield beskytter dine enheder og sætter farten i vejret på din browsing ved at blokere annoncer, trackere og malware."
       ]
     },
     "Billing cycle option": {
@@ -12609,9 +12567,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "1 user": [
-        "1 bruger"
-      ],
       "3 TB": [
         "3 TB"
       ],
