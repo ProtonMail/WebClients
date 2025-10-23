@@ -25,7 +25,10 @@ function InnerSelect(props: Ariakit.SelectProps) {
   if (!value) {
     throw new Error('Unexpected missing value in FontSelect renderLabel')
   }
-  const label = value === DEFAULT_VALUE ? renderDefaultLabel() : FONT_LABEL_BY_VALUE[value as FontValue]
+  let label = value === DEFAULT_VALUE ? renderDefaultLabel() : FONT_LABEL_BY_VALUE[value as FontValue]
+  if (!label) {
+    label = value as string
+  }
   return <Ariakit.Select {...props}>{label}</Ariakit.Select>
 }
 
