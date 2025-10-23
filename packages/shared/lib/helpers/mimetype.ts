@@ -67,11 +67,11 @@ const isAVIFSupported = () => {
 const isHEICSupported = () => {
     const os = getOS();
     const { name, version } = getBrowser();
-    return (
+    return Boolean(
         ['mac os', 'ios'].includes(os.name.toLowerCase()) &&
-        ['Safari', 'Mobile Safari'].includes(name || '') &&
-        version &&
-        new Version(version).isGreaterThanOrEqual('17')
+            ['Safari', 'Mobile Safari'].includes(name || '') &&
+            version &&
+            new Version(version).isGreaterThanOrEqual('17')
     );
 };
 
@@ -114,7 +114,8 @@ export const isSupportedImage = (mimeType: string) =>
 
 export const isSVG = (mimeType: string) => mimeType === SupportedMimeTypes.svg;
 
-export const isHEIC = (mimeType: string) => mimeType === SupportedMimeTypes.heic;
+export const isHEIC = (mimeType: string) =>
+    mimeType === SupportedMimeTypes.heic || mimeType === SupportedMimeTypes.heif;
 
 export const isICS = (mimeType: string) =>
     mimeType.startsWith(MIME_TYPES.ICS) || mimeType.includes(MIME_TYPES.APPLICATION_ICS);
@@ -137,9 +138,15 @@ export const isPDF = (mimeType: string) =>
     mimeType === SupportedMimeTypes.pdf ||
     // Some e-mail clients will use this legacy value
     mimeType === 'application/x-pdf';
-export const isComicBook = (mimeType: string) => mimeType === 'application/x-cbz' || mimeType === 'application/x-cbr';
-export const isCompatibleCBZ = (mimeType: string, filename: string) =>
-    isComicBook(mimeType) && filename.endsWith('cbz'); // browser mime type detection is not great for CBZ (sometimes flagged as 'application/x-cbr') so we need to also check end of file name
+export const isComicBook = (mimeType: string) =>
+    mimeType === 'application/x-cbz' ||
+    mimeType === 'application/x-cbr' ||
+    mimeType === 'application/vnd.comicbook+zip';
+export const isCompatibleCBZ = (mimeType: string, filename: string) => {
+    const isCBZFile = filename.endsWith('cbz');
+    // browser mime type detection is not great for CBZ (sometimes flagged as 'application/x-cbr') so we need to also check end of file name
+    return (isComicBook(mimeType) && isCBZFile) || (mimeType === 'application/zip' && isCBZFile);
+};
 
 /**
  * Whether a given mimetype can be converted to a Proton Docs document.
@@ -227,7 +234,8 @@ export const getRAWMimeTypeFromName = (name: string): string | undefined => {
 
     const extension = getFileExtension(name);
     const lowerExt = (extension || '').toLowerCase();
-    return Object.keys(RAWMimeTypes).find((type) => lowerExt === type);
+    const matchingKey = Object.keys(RAWMimeTypes).find((key) => lowerExt === key);
+    return matchingKey ? RAWMimeTypes[matchingKey as keyof typeof RAWMimeTypes] : undefined;
 };
 
 export const isRAWThumbnailExtractionSupported = (mimeType: string, extension: string | undefined): boolean => {
@@ -244,3 +252,19 @@ export const isRAWThumbnailExtractionSupported = (mimeType: string, extension: s
 
 export const isIWAD = (mimeType: string): boolean =>
     ['application/x-doom', 'application/x-doom-wad'].includes(mimeType);
+
+/**
+ * Returns true for image formats that can be rendered natively by browsers
+ * and support direct thumbnail generation without conversion.
+ * Excludes formats that require specialized handlers (SVG, RAW).
+ * HEIC is included on Safari 17+ (macOS/iOS) where it's natively supported.
+ */
+export const isNativeSupportedImage = (mimeType: string) => {
+    if (isSVG(mimeType) || isRAWPhoto(mimeType)) {
+        return false;
+    }
+    if (isHEIC(mimeType)) {
+        return isHEICSupported();
+    }
+    return isSupportedImage(mimeType);
+};

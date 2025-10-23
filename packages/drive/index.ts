@@ -32,6 +32,9 @@ export {
 
 export { generateNodeUid } from '@protontech/drive-sdk';
 
+export { generateThumbnail } from './lib/thumbnails/thumbnailGenerator';
+export type { ThumbnailResult } from './lib/thumbnails/utils';
+
 /* Type export */
 export type {
     Device,
