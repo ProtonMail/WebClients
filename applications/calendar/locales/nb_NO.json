@@ -237,11 +237,17 @@
       "Create": [
         "Opprett"
       ],
+      "Create a new bookings page": [
+        "Opprett en ny bestillingsside"
+      ],
       "Create a new contact group": [
         "Opprett en ny kontaktgruppe"
       ],
       "Create and copy alias": [
         "Opprett og kopier alias"
+      ],
+      "Create booking page": [
+        "Opprett bestillingsside"
       ],
       "Create calendar": [
         "Opprett kalender"
@@ -346,6 +352,9 @@
       ],
       "Expand video conferencing widget": [
         "Utvid widget for videokonferanser"
+      ],
+      "Explore other plans": [
+        "Utforsk andre planer"
       ],
       "Export": [
         "Eksport"
@@ -811,6 +820,9 @@
       ],
       "Submit": [
         "Send inn"
+      ],
+      "Subscribe now": [
+        "Abonner nå"
       ],
       "Switch or add account": [
         "Bytt eller legg til konto"
@@ -1279,15 +1291,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "1 user": [
-        "1 bruker"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 brukere"
-      ],
       "Premium Password Manager": [
         "Premium passordbehandler"
       ]
@@ -1312,35 +1315,14 @@
       "${ storageSize } storage": [
         "${ storageSize } lagringsplass"
       ],
-      "1 TB total": [
-        "1 TB totalt"
-      ],
-      "1 user": [
-        "1 bruker"
-      ],
       "1 user account": [
         "1 brukerkonto"
       ],
-      "10 email addresses": [
-        "10 e-postadresser"
-      ],
-      "2 users": [
-        "2 brukere"
-      ],
-      "3 TB": [
-        "3 TB"
+      "200 GB storage: 40x your current plan": [
+        "200 GB lagringsplass: 40x din nåværende plan"
       ],
       "6 user accounts": [
         "6 brukerkontoer"
-      ],
-      "6 users": [
-        "6 brukere"
-      ],
-      "8500+ servers across 110+ countries": [
-        "8500+ tjenere i 110+ land"
-      ],
-      "Ad-blocker and malware protection": [
-        "Annonseblokkering og skadevarebeskyttelse"
       ],
       "Admin panel to manage your family": [
         "Administrasjonspanel for å administrere familien din"
@@ -1351,9 +1333,6 @@
       "Easily add or remove users": [
         "Enkelt legg til eller fjern brukere"
       ],
-      "High speed streaming": [
-        "Strømming med høy hastighet"
-      ],
       "One-time payment, lifetime deal": [
         "Engangsbetaling, livstidsavtale"
       ],
@@ -1363,14 +1342,8 @@
       "Password health alerts": [
         "Varsler for passordhelse"
       ],
-      "Private photo backup": [
-        "Privat sikkerhetskopiering av bilder"
-      ],
-      "Protect 10 devices at a time": [
-        "Beskytt 10 enheter om gangen"
-      ],
-      "Secure file storage & sharing": [
-        "Sikker fillagring og -deling"
+      "Recover previous file versions": [
+        "Gjenopprett tidligere filversjoner"
       ],
       "Unlimited folders, labels and filters": [
         "Ubegrenset antall mapper, etiketter og filtre"
@@ -1380,17 +1353,14 @@
       ],
       "Use your own email domain": [
         "Bruk ditt eget e-postdomene"
-      ],
-      "Version history": [
-        "Versjonshistorikk"
-      ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Faktureres til ${ amount } én gang"
+      ],
+      "forever": [
+        "for alltid"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Fornyes etter 1 måned til ${ regularAmount }."
@@ -1399,9 +1369,6 @@
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
         "Få tilgang til blokkert innhold og surf privat. Inkluderer 8 500+ tjenere i 110+ land, 10 enheter, høyhastighetsstrømming, annonseblokkering og beskyttelse mot skadelig programvare, VPN Accelerator og mer."
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Få tilgang til innhold på strømmetjenester inkludert Netflix, Disney+, Prime Video og mer fra hvor som helst."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Sikre pålogginger på alle dine enheter. Inkluderer ubegrenset antall hide-my-email-aliaser, deling, integrert 2FA, ${ DARK_WEB_MONITORING_NAME } og mer."
@@ -1422,9 +1389,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Sikre filene dine med kryptert skylagring. Inkluderer dokumentredigering på nett, sikkerhetskopiering av bilder, versjonshistorikk, kryptert fildeling og mer."
-      ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Spesialdesignet NetShield beskytter enheten din og øker hastigheten på surfingen din ved å blokkere annonser, sporere og skadelig programvare."
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagringsplass deles mellom alle ${ BRAND_NAME }-tjenestene."
@@ -1461,6 +1425,9 @@
       ],
       "Application problem": [
         "Applikasjonsproblem"
+      ],
+      "Black Friday": [
+        "Black Friday"
       ],
       "Bridge problem": [
         "Problem med Bridge"
@@ -3262,6 +3229,39 @@
         "Legg til kalender"
       ]
     },
+    "Duo offer": {
+      "/month": [
+        "/måned"
+      ],
+      "1 TB of storage to share": [
+        "1 TB med lagringsplass å dele"
+      ],
+      "2 user accounts": [
+        "2 brukerkontoer"
+      ],
+      "All premium features from your current plan": [
+        "Alle premiumfunksjoner fra din nåværende plan"
+      ],
+      "Only": [
+        "Kun"
+      ]
+    },
+    "Duo offer: Link": {
+      "Double your storage": [
+        "Doble lagringsplassen din"
+      ],
+      "Share your plan": [
+        "Del planen din"
+      ]
+    },
+    "Duo offer: Title": {
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Doble lagringsplassen din med ${ BRAND_NAME } Duo"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "Del fordelene med planen din med ${ BRAND_NAME } Duo"
+      ]
+    },
     "Duplicate event button tooltip": {
       "Duplicate event": [
         "Dupliser hendelse"
@@ -4370,6 +4370,12 @@
       ]
     },
     "Feature": {
+      "Encrypted cloud storage for files, photos and documents": [
+        "Kryptert skylagring for filer, bilder og dokumenter"
+      ],
+      "More premium features": [
+        "Flere premiumfunksjoner"
+      ],
       "Unlimited hide-my-email aliases": [
         "Ubegrenset antall hide-my-email-aliaser"
       ]
@@ -5020,6 +5026,9 @@
       "30-day money-back guarantee.": [
         "30 dagers tilbakebetalingsgaranti."
       ],
+      "A booking slot cannot be added in the past.": [
+        "En bestillingsplass kan ikke legges til i fortiden."
+      ],
       "A cancellation email will be sent to removed participants.": [
         "En kansellerings-e-post vil bli sendt til fjernede deltakere."
       ],
@@ -5173,6 +5182,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Sjekker kontakt ${ progress } av ${ max }..."
       ],
+      "Choose a plan that works best for you.": [
+        "Velg en plan som fungerer best for deg."
+      ],
       "Clear data": [
         "Tøm data"
       ],
@@ -5199,6 +5211,9 @@
       ],
       "Contact unassigned from group ${ contactGroupName }": [
         "Kontakt fjernet fra gruppe ${ contactGroupName }"
+      ],
+      "Continue": [
+        "Fortsett"
       ],
       "Copy the link to clipboard": [
         "Kopier koblingen til utklippstavlen"
@@ -5925,6 +5940,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Oppgrader nå for å få premiumfunksjoner, produkter og lagringsplass til spesialpris."
       ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "Oppgrader for å beholde ${ planTitle } fordelene dine."
+      ],
       "Uppercase and lowercase letters": [
         "Store og små bokstaver"
       ],
@@ -6577,6 +6595,9 @@
       "Don't show this again": [
         "Ikke vis dette igjen"
       ],
+      "Duration": [
+        "Varighet"
+      ],
       "e.g., Amazon, eBay, Etsy": [
         "f.eks. Amazon, eBay, Etsy"
       ],
@@ -6863,6 +6884,9 @@
       "Time zone": [
         "Tidssone"
       ],
+      "Title": [
+        "Tittel"
+      ],
       "To: ${ toEmail }": [
         "Til: ${ toEmail }"
       ],
@@ -6997,6 +7021,9 @@
     "Link": {
       "Add a gift code": [
         "Legg til gavekode"
+      ],
+      "Bookings pages": [
+        "Bestillingssider"
       ],
       "Calendars": [
         "Kalendere"
@@ -7197,6 +7224,9 @@
       ],
       "Re:": [
         "Sv:"
+      ],
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "Din gratis prøveperiode er over. ${ nonAutoRenewalAction }"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Prøveperioden er avsluttet. Tilgang til kontoen din vil snart bli deaktivert. ${ action }"
@@ -8548,11 +8578,17 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }-tilbud utløper i dag!"
       ],
+      "Don't show this again": [
+        "Ikke vis dette igjen"
+      ],
       "Don’t show this again": [
         "Ikke vis dette igjen"
       ],
       "Don’t show this offer again": [
         "Ikke vis dette tilbudet igjen"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Skaff deg ${ BRAND_NAME } Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "Skaff deg ${ BRAND_NAME } Unlimited"
@@ -9406,8 +9442,23 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } per verving"
       ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Hvis du avbryter før denne datoen,** vil du bli **nedgradert** til ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } når prøveperioden avsluttes."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Hvis du ikke abonnerer,** blir du **nedgradert** til ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Hvis du ikke avbryter,** starter hele planen din, og du får **${ referrerRewardAmount }** i kreditter."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Hvis du abonnerer før denne datoen,** får du **${ referrerRewardAmount }** i kreditter."
+      ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Tjen opptil ${ maxRewardAmount } i kreditt. Du får ${ referrerRewardAmount } når personen du inviterer, abonnerer på en ${ BRAND_NAME }-plan."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Kos deg gratis med **${ planTitle }** frem til **${ textDate }**."
       ],
       "Friend joined": [
         "Venn ble med",
@@ -9423,8 +9474,14 @@
       "Invited friends": [
         "Inviterte venner"
       ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Siste sjanse til å utforske alle de kraftige funksjonene som **${ planTitle }** har å tilby."
+      ],
       "More sharing options": [
         "Flere delingsalternativer"
+      ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "Når det fulle abonnementet ditt starter, kan du fortsatt kansellere innen 30 dager og få en forholdsmessig refusjon."
       ],
       "Refer friends": [
         "Verv venner"
@@ -9434,6 +9491,13 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Du kan få opptil **${ maxRewardAmount }** i kreditt."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Du har **${ daysRemaining } dag igjen** til å utforske alle de kraftige funksjonene som **${ planTitle }** har å tilby.",
+        "Du har **${ daysRemaining } dager igjen** til å utforske alle de kraftige funksjonene som **${ planTitle }** har å tilby."
+      ],
+      "your subscription": [
+        "abonnementet ditt"
       ]
     },
     "Reload event button tooltip": {
@@ -9839,9 +9903,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "1 user": [
-        "1 bruker"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -11019,6 +11080,9 @@
       "Birthday": [
         "Bursdag"
       ],
+      "Booking page": [
+        "Bestillingsside"
+      ],
       "Calendar": [
         "Kalender"
       ],
@@ -11141,6 +11205,9 @@
       "Does not repeat": [
         "Gjentas ikke"
       ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Doble lagringsplassen din med ${ BRAND_NAME } Duo"
+      ],
       "Downgrade account": [
         "Nedgrader kontoen"
       ],
@@ -11222,6 +11289,9 @@
       "Exporting contacts": [
         "Eksporterer kontakter"
       ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Få **${ referralInfo.uiData.refereeRewardAmount }** i kreditter med ${ planTitle }"
+      ],
       "Get more from your VPN": [
         "Får mer ut av ditt VPN"
       ],
@@ -11254,6 +11324,9 @@
       ],
       "How does it work?": [
         "Hvordan fungerer det?"
+      ],
+      "How your free trial works": [
+        "Hvordan din gratis prøveperiode fungerer"
       ],
       "Human verification": [
         "Menneskelig verifisering"
@@ -11528,6 +11601,9 @@
       ],
       "Upgrade to ${ planName }": [
         "Oppgrader til ${ planName }"
+      ],
+      "Upgrade to keep your premium benefits.": [
+        "Oppgrader for å beholde premiumfordelene dine."
       ],
       "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
         "Oppgrader produktiviteten din for ${ formattedPrice } med ${ planName }"
@@ -11910,6 +11986,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Prøveperioden avsluttes ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Prøveperioden avsluttes ${ textDate }. Du blir ikke belastet hvis du avbryter før ${ textDate }. ${ action }"
       ]
     },
     "Warning in modal to accept calendar invitation; Description": {
