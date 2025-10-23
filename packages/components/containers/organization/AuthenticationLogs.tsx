@@ -40,7 +40,7 @@ import {
 } from '../b2bDashboard/ActivityMonitor/helpers';
 import { getLocalTimeStringFromDate, getSearchType } from '../b2bDashboard/Pass/helpers';
 import B2BAuthLogsTable from '../logs/B2BAuthLogsTable';
-import { convertEnhancedMembersToContactEmails } from './groups/NewGroupMemberInput';
+import { convertEnhancedMembersToContactEmails } from './groups/helpers';
 import useAuthLogsDateFilter from './useAuthLogsFilter';
 import useOrgAuthLogs from './useOrgAuthLogs';
 
