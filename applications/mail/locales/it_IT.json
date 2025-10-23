@@ -570,6 +570,9 @@
       "Explore ${ VPN_APP_NAME }": [
         "Scopri ${ VPN_APP_NAME }"
       ],
+      "Explore other plans": [
+        "Esplora gli altri piani"
+      ],
       "Export": [
         "Esporta"
       ],
@@ -1441,6 +1444,9 @@
       "Submit": [
         "Invia"
       ],
+      "Subscribe now": [
+        "Abbonati ora"
+      ],
       "Switch or add account": [
         "Cambia o aggiungi account"
       ],
@@ -2052,15 +2058,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "1 user": [
-        "1 utente"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 utenti"
-      ],
       "Premium Password Manager": [
         "Gestore di password premium"
       ]
@@ -2085,35 +2082,14 @@
       "${ storageSize } storage": [
         "${ storageSize } di spazio d'archiviazione"
       ],
-      "1 TB total": [
-        "1 TB"
-      ],
-      "1 user": [
-        "1 utente"
-      ],
       "1 user account": [
         "1 account utente"
       ],
-      "10 email addresses": [
-        "10 indirizzi email"
-      ],
-      "2 users": [
-        "2 utenti"
-      ],
-      "3 TB": [
-        "3 TB"
+      "200 GB storage: 40x your current plan": [
+        "200 GB di archiviazione: 40 volte il tuo piano attuale"
       ],
       "6 user accounts": [
         "6 account utente"
-      ],
-      "6 users": [
-        "6 utenti"
-      ],
-      "8500+ servers across 110+ countries": [
-        "Oltre 8500 server in più di 110 paesi"
-      ],
-      "Ad-blocker and malware protection": [
-        "Blocco degli annunci e protezione da malware"
       ],
       "Admin panel to manage your family": [
         "Pannello di amministrazione per gestire la tua famiglia"
@@ -2124,9 +2100,6 @@
       "Easily add or remove users": [
         "Aggiungi o rimuovi utenti facilmente"
       ],
-      "High speed streaming": [
-        "Streaming ad alta velocità"
-      ],
       "One-time payment, lifetime deal": [
         "Pagamento una tantum, promo per sempre"
       ],
@@ -2136,14 +2109,8 @@
       "Password health alerts": [
         "Avvisi sullo stato di integrità delle password"
       ],
-      "Private photo backup": [
-        "Backup privato delle foto"
-      ],
-      "Protect 10 devices at a time": [
-        "Proteggi 10 dispositivi alla volta"
-      ],
-      "Secure file storage & sharing": [
-        "Archiviazione e condivisione sicura dei file"
+      "Recover previous file versions": [
+        "Recupera versioni precedenti del file"
       ],
       "Unlimited folders, labels and filters": [
         "Cartelle, etichette e filtri illimitati"
@@ -2153,17 +2120,14 @@
       ],
       "Use your own email domain": [
         "Usa il tuo dominio di posta personalizzato"
-      ],
-      "Version history": [
-        "Cronologia delle versioni"
-      ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Addebito di ${ amount } una volta"
+      ],
+      "forever": [
+        "per sempre"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Si rinnova dopo 1 mese a ${ regularAmount }."
@@ -2172,9 +2136,6 @@
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
         "Accedi ai contenuti bloccati e naviga in privato. Include oltre 8.500 server in più di 110 paesi, 10 dispositivi, streaming ad alta velocità, ad-blocker, protezione da malware, VPN Accelerator e molto altro."
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Accedi ai contenuti di servizi di streaming come Netflix, Disney+, Prime Video e molti altri, ovunque ti trovi."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Accessi sicuri su tutti i dispositivi. Include alias hide-my-email illimitati, funzionalità di condivisione, 2FA integrata, ${ DARK_WEB_MONITORING_NAME } e molto altro."
@@ -2195,9 +2156,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Proteggi i file con l'archiviazione cloud crittografata. Include l'editor di documenti online, il backup delle foto, la cronologia delle versioni, la condivisione di file crittografata e molto altro."
-      ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield è progettato appositamente per proteggere i dispositivi e accelerare la navigazione bloccando annunci, tracker e malware."
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lo spazio di archiviazione è condiviso tra tutti i servizi ${ BRAND_NAME }."
@@ -2234,6 +2192,9 @@
       ],
       "Application problem": [
         "Problema con l'applicazione"
+      ],
+      "Black Friday": [
+        "Black Friday"
       ],
       "Bridge problem": [
         "Problema con Bridge"
@@ -4335,6 +4296,39 @@
         "Supporto prioritario"
       ]
     },
+    "Duo offer": {
+      "/month": [
+        "/ mese"
+      ],
+      "1 TB of storage to share": [
+        "1 TB di archiviazione da condividere"
+      ],
+      "2 user accounts": [
+        "2 account utente"
+      ],
+      "All premium features from your current plan": [
+        "Tutte le funzionalità premium del tuo piano attuale"
+      ],
+      "Only": [
+        "Solo"
+      ]
+    },
+    "Duo offer: Link": {
+      "Double your storage": [
+        "Raddoppia il tuo spazio"
+      ],
+      "Share your plan": [
+        "Condividi il tuo piano"
+      ]
+    },
+    "Duo offer: Title": {
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Raddoppia la tua archiviazione con ${ BRAND_NAME } Duo"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "Condividi i benefici del tuo piano con ${ BRAND_NAME } Duo"
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "I campi di testo sono opzionali. Le informazioni inserite in questo modulo verranno mostrate solo sulle fatture future e non su quelle esistenti."
@@ -5514,6 +5508,12 @@
       ]
     },
     "Feature": {
+      "Encrypted cloud storage for files, photos and documents": [
+        "Archiviazione cloud crittografata per foto e documenti"
+      ],
+      "More premium features": [
+        "Altre  funzionalità premium"
+      ],
       "Unlimited hide-my-email aliases": [
         "Alias Hide-my-email illimitati"
       ]
@@ -6922,6 +6922,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Controllo contatto ${ progress } di ${ max }..."
       ],
+      "Choose a plan that works best for you.": [
+        "Scegli un piano che funziona meglio per te."
+      ],
       "Clear browser data": [
         "Cancella i dati del browser"
       ],
@@ -6963,6 +6966,9 @@
       ],
       "Contact unassigned from group ${ contactGroupName }": [
         "Contatto non assegnato al gruppo ${ contactGroupName }"
+      ],
+      "Continue": [
+        "Continua"
       ],
       "Copied to clipboard": [
         "Copiato negli appunti"
@@ -8397,6 +8403,9 @@
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Effettua l'upgrade per creare più cartelle, filtri e indirizzi."
+      ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "Effettua l'upgrade per mantenere i tuoi ${ planTitle } vantaggi."
       ],
       "Upgrade to level up your privacy.": [
         "Effettua l'upgrade per aumentare il livello della tua privacy."
@@ -10351,6 +10360,9 @@
       "Re:": [
         "R:"
       ],
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "La tua prova gratuita termina tra ${ nonAutoRenewalAction }."
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "La tua prova gratuita è terminata. L'accesso al tuo profilo sarà presto disabilitato. ${ action }"
       ]
@@ -11558,11 +11570,17 @@
       "${ pricingTitle } offer expires today!": [
         "L'offerta ${ pricingTitle } scade oggi!"
       ],
+      "Don't show this again": [
+        "Non mostrare più"
+      ],
       "Don’t show this again": [
         "Non mostrare più"
       ],
       "Don’t show this offer again": [
         "Non mostrare più questa offerta"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Ottieni ${ BRAND_NAME } Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "Ottieni ${ BRAND_NAME } Unlimited"
@@ -12702,8 +12720,23 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } per ogni affiliazione"
       ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Se annulli prima di questa data,** ti verrà **eseguito il downgrade** al ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } quando termina la prova."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Se non ti abboni,** ti verrà **eseguito il downgrade** al ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Se non annulli,** inizierà il tuo piano completo e riceverai **${ referrerRewardAmount }** in crediti."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Se ti abboni prima di questa data,** riceverai **${ referrerRewardAmount }** in crediti."
+      ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Guadagna fino a ${ maxRewardAmount } in credito. Riceverai ${ referrerRewardAmount } quando la persona che inviti si abbona a un piano ${ BRAND_NAME }."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Goditi **${ planTitle }** gratuitamente fino al **${ textDate }**."
       ],
       "Friend joined": [
         "Amico associato",
@@ -12719,8 +12752,14 @@
       "Invited friends": [
         "Amici invitati"
       ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Ultima possibilità per esplorare tutte le potenti funzionalità che **${ planTitle }** ha da offrire."
+      ],
       "More sharing options": [
         "Più opzioni di condivisione"
+      ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "Una volta che il tuo abbonamento completo inizia, puoi ancora annullare entro 30 giorni e ottenere un rimborso proporzionale."
       ],
       "Refer friends": [
         "Segnala amici"
@@ -12730,6 +12769,13 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Puoi guadagnare fino a **${ maxRewardAmount }** in credito."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Ti rimane **${ daysRemaining } giorno** per esplorare tutte le potenti funzionalità che **${ planTitle }** ha da offrire.",
+        "Ti restano **${ daysRemaining } giorni** per esplorare tutte le potenti funzionalità che **${ planTitle }** ha da offrire."
+      ],
+      "your subscription": [
+        "il tuo abbonamento"
       ]
     },
     "Remaining days before the message expire": {
@@ -13259,9 +13305,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "1 user": [
-        "1 utente"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -14882,6 +14925,9 @@
       "Don't give spam a chance": [
         "Non dare una possibilità allo spam"
       ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Raddoppia la tua archiviazione con ${ BRAND_NAME } Duo"
+      ],
       "Downgrade account": [
         "Effettua il downgrade dell'account"
       ],
@@ -14969,6 +15015,9 @@
       "Forward": [
         "Inoltra"
       ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Ricevi **${ referralInfo.uiData.refereeRewardAmount }** in crediti con ${ planTitle }"
+      ],
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "Ottieni accesso completo a ${ CALENDAR_APP_NAME }"
       ],
@@ -15007,6 +15056,9 @@
       ],
       "How to update your email address": [
         "Come aggiornare il tuo indirizzo email"
+      ],
+      "How your free trial works": [
+        "Come funziona la tua prova gratuita"
       ],
       "Human verification": [
         "Verifica umana"
@@ -15513,6 +15565,9 @@
       "Upgrade to ${ planName }": [
         "Effettua l'upgrade a ${ planName }"
       ],
+      "Upgrade to keep your premium benefits.": [
+        "Effettua l'upgrade per mantenere i tuoi vantaggi premium."
+      ],
       "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
         "Effettua l\"upgrade per la tua produttività per ${ formattedPrice } con ${ planName }"
       ],
@@ -15905,6 +15960,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "La tua prova gratuita termina il ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "La tua prova finirà il ${ textDate }. Non ti verrà addebitato alcun costo se annulli prima del ${ textDate }. ${ action }"
       ]
     },
     "WeekDay": {

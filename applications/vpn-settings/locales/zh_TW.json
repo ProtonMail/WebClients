@@ -1292,15 +1292,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "1 user": [
-        "1 位使用者"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 位使用者"
-      ],
       "Premium Password Manager": [
         "進階版密碼管理器"
       ]
@@ -1349,41 +1340,17 @@
       "${ storageSize } storage": [
         "${ storageSize } 儲存空間"
       ],
-      "1 user": [
-        "1 位使用者"
-      ],
       "1 user account": [
         "1 使用者帳號"
       ],
-      "10 email addresses": [
-        "10 個電子信箱"
-      ],
-      "2 users": [
-        "2 位使用者"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
       "6 user accounts": [
         "6 位使用者帳號"
-      ],
-      "6 users": [
-        "6 位使用者"
-      ],
-      "8500+ servers across 110+ countries": [
-        "超過 8500 臺伺服器，遍布於 110 個以上的國家"
-      ],
-      "Ad-blocker and malware protection": [
-        "廣告攔截器及惡意軟體防護"
       ],
       "Advanced account protection": [
         "進階的帳號保護"
       ],
       "Easily add or remove users": [
         "輕鬆新增或移除使用者"
-      ],
-      "High speed streaming": [
-        "高速串流"
       ],
       "One-time payment, lifetime deal": [
         "一次付款，終身方案"
@@ -1394,20 +1361,8 @@
       "Password health alerts": [
         "密碼堅固性警示"
       ],
-      "Private photo backup": [
-        "私人照片備份"
-      ],
-      "Protect 10 devices at a time": [
-        "同時保護 10 台裝置"
-      ],
       "Unlimited folders, labels and filters": [
         "資料夾、標籤與篩選器無上限"
-      ],
-      "Version history": [
-        "版本歷史紀錄"
-      ],
-      "VPN Accelerator": [
-        "VPN 加速器"
       ]
     },
     "BF2024: Offers": {
@@ -1422,9 +1377,6 @@
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
         "暢遊網路，保護隱私。提供 110 多個國家 8,500 多台伺服器、10 個裝置、高速串流、廣告阻擋和惡意軟體防護、VPN 加速器等功能。"
       ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "在世界各地暢享串流服務的影音內容，包含 Netflix、Disney+、Prime Video 等平台。"
-      ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "於全部裝置安全登入。包和無限hide-my-email別名，共享，整合雙重驗證，${ DARK_WEB_MONITORING_NAME }及更多。"
       ],
@@ -1433,9 +1385,6 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "透過端對端加密保護電子郵件及行事曆。包含15個電子郵件地址,支援自訂電子郵件網域,${ BRAND_NAME }Scribe 撰寫工具，無限hide-my-email別名及更多"
-      ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "精心設計的 NetShield 保護您的裝置並攔截讓您變慢的廣告、追蹤程式與惡意軟體。"
       ]
     },
     "Billing cycle": {
@@ -1485,6 +1434,9 @@
       ],
       "Application problem": [
         "應用程式問題"
+      ],
+      "Black Friday": [
+        "黑色星期五"
       ],
       "Bridge problem": [
         "Bridge 問題"
@@ -3037,6 +2989,33 @@
       ],
       "Priority support": [
         "優先支援"
+      ]
+    },
+    "Duo offer": {
+      "/month": [
+        "/月"
+      ],
+      "1 TB of storage to share": [
+        "共享 1 TB 儲存空間"
+      ],
+      "2 user accounts": [
+        "2 位使用者帳號"
+      ],
+      "Only": [
+        "僅"
+      ]
+    },
+    "Duo offer: Link": {
+      "Double your storage": [
+        "加倍您的儲存空間"
+      ],
+      "Share your plan": [
+        "共享您的方案"
+      ]
+    },
+    "Duo offer: Title": {
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "透過 ${ BRAND_NAME } Duo 將您的儲存空間加倍"
       ]
     },
     "edm": {
@@ -9106,11 +9085,17 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }優惠今日過期!"
       ],
+      "Don't show this again": [
+        "不再顯示此內容"
+      ],
       "Don’t show this again": [
         "不再顯示此內容"
       ],
       "Don’t show this offer again": [
         "不再顯示此優惠"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "取得${ BRAND_NAME }Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "取得 ${ BRAND_NAME } 無限版"
@@ -10602,9 +10587,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "1 user": [
-        "1 位使用者"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -12176,6 +12158,9 @@
       ],
       "Domain names": [
         "網域名稱"
+      ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "透過 ${ BRAND_NAME } Duo 將您的儲存空間加倍"
       ],
       "Downgrade account": [
         "降級帳號"

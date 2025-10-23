@@ -1492,15 +1492,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "1 user": [
-        "1 usuário"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 usuários"
-      ],
       "Premium Password Manager": [
         "Gerenciador de senha premium"
       ]
@@ -1556,35 +1547,11 @@
       "${ storageSize } storage": [
         "${ storageSize } armazenamento"
       ],
-      "1 TB total": [
-        "1 TB no total"
-      ],
-      "1 user": [
-        "1 usuário"
-      ],
       "1 user account": [
         "1 conta de usuário"
       ],
-      "10 email addresses": [
-        "10 endereços de e-mail"
-      ],
-      "2 users": [
-        "2 usuários"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
       "6 user accounts": [
         "6 contas de usuário"
-      ],
-      "6 users": [
-        "6 usuários"
-      ],
-      "8500+ servers across 110+ countries": [
-        "Mais de 8.500 servidores em mais de 110 países"
-      ],
-      "Ad-blocker and malware protection": [
-        "Bloqueador de anúncios e proteção contra malware"
       ],
       "Admin panel to manage your family": [
         "Painel do administrador para gerenciar sua família"
@@ -1595,9 +1562,6 @@
       "Easily add or remove users": [
         "Adicione ou remova usuários facilmente"
       ],
-      "High speed streaming": [
-        "Streaming de alta velocidade"
-      ],
       "One-time payment, lifetime deal": [
         "Pagamento único, "
       ],
@@ -1607,15 +1571,6 @@
       "Password health alerts": [
         "Alertas de integridade da senha"
       ],
-      "Private photo backup": [
-        "Backup de fotos privadas"
-      ],
-      "Protect 10 devices at a time": [
-        "Proteja 10 dispositivos por vez"
-      ],
-      "Secure file storage & sharing": [
-        "Armazenamento e compartilhamento de arquivos seguros"
-      ],
       "Unlimited folders, labels and filters": [
         "Pastas, marcadores e filtros ilimitados"
       ],
@@ -1624,12 +1579,6 @@
       ],
       "Use your own email domain": [
         "Use o seu próprio domínio de e-mail"
-      ],
-      "Version history": [
-        "Histórico de versões"
-      ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -1643,9 +1592,6 @@
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
         "Acesse conteúdo bloqueado e navegue privadamente. Inclui mais de 8.500 servidores em mais de 110 países, 10 dispositivos, alta velocidade de streaming, bloqueador de anúncios, proteção contra malware, VPN Accelerator e muito mais."
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Acesse conteúdo em serviços de streaming, incluindo Netflix, Disney+, Prime Video e muito mais, de qualquer lugar."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Logins seguros em todos os seus dispositivos. Inclui aliases hide-my-email ilimitados, compartilhamento, A2F integrado, ${ DARK_WEB_MONITORING_NAME } e muito mais."
@@ -1666,9 +1612,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Proteja seus arquivos com armazenamento em nuvem criptografado. Inclui editor de documento on-line, histórico de versões, compartilhamento de arquivo criptografado e muito mais."
-      ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Especialmente projetado, o NetShield protege os dispositivos e acelera sua navegação ao bloquear anúncios, rastreadores e malware."
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "O espaço de armazenamento é compartilhado entre todos os serviços da ${ BRAND_NAME }."
@@ -1779,6 +1722,9 @@
       ],
       "Application problem": [
         "Problema no aplicativo"
+      ],
+      "Black Friday": [
+        "Black Friday"
       ],
       "Bridge problem": [
         "Problema de bridge"
@@ -3451,8 +3397,27 @@
       "2 user accounts": [
         "2 contas de usuário"
       ],
+      "All premium features from your current plan": [
+        "Todos os recursos premium do seu plano atual"
+      ],
       "Only": [
         "Somente"
+      ]
+    },
+    "Duo offer: Link": {
+      "Double your storage": [
+        "Dobre seu armazenamento"
+      ],
+      "Share your plan": [
+        "Compartilhe seu plano"
+      ]
+    },
+    "Duo offer: Title": {
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Dobre seu armazenamento com ${ BRAND_NAME } Duo"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "Compartilhe os benefícios do seu plano com ${ BRAND_NAME } Duo"
       ]
     },
     "Easy switch": {
@@ -4651,8 +4616,14 @@
       "Continue": [
         "Continuar"
       ],
+      "Encrypted cloud storage for files, photos and documents": [
+        "Armazenamento em nuvem criptografado para arquivos, fotos e documentos"
+      ],
       "Fastest VPN servers": [
         "Servidores de VPN mais rápidos"
+      ],
+      "More premium features": [
+        "Recursos premium adicionais"
       ],
       "Remove": [
         "Remover"
@@ -5876,6 +5847,9 @@
       "Change your password": [
         "Alterar sua senha"
       ],
+      "Choose a plan that works best for you.": [
+        "Escolha um plano que funcione melhor para você."
+      ],
       "Choose an Entity ID to continue.": [
         "Escolha um ID de Entidade para continuar."
       ],
@@ -5899,6 +5873,9 @@
       ],
       "Connection data will be available in around 1 hour.": [
         "Os dados de conexão estarão disponíveis em cerca de uma hora."
+      ],
+      "Continue": [
+        "Continuar"
       ],
       "Continue to allow **${ affiliationsText }** from **${ organizationValue.Name }** to join your ${ BRAND_NAME } organization.": [
         "Continue para permitir que **${ affiliationsText }** da **${ organizationValue.Name }** se juntem à sua organização ${ BRAND_NAME }."
@@ -7247,6 +7224,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Faça upgrade agora para obter recursos premium, produtos e armazenamento por um preço especial"
+      ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "Faça upgrade para manter seus benefícios ${ planTitle }."
       ],
       "Upgrade to Professional or a higher plan to unlock": [
         "Faça upgrade para Professional ou um plano superior para desbloquear"
@@ -9076,6 +9056,9 @@
       ],
       "View user sign-in, recovery and security events.": [
         "Ver informações de login, recuperação e segurança do usuário."
+      ],
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "Sua avaliação gratuita terminou. ${ nonAutoRenewalAction }"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Sua avaliação gratuita terminou. O acesso a sua será desativada em breve. ${ action }"
@@ -11601,6 +11584,9 @@
       "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Última oportunidade para explorar todos os recursos avançados que **${ planTitle }** tem para oferecer."
       ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "Assim que sua assinatura completa começar, você ainda pode cancelar em até 30 dias e receber um reembolso proporcional."
+      ],
       "Refer friends": [
         "Indicar amigos"
       ],
@@ -12404,9 +12390,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "1 user": [
-        "1 usuário"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -14176,6 +14159,9 @@
       "Domain names": [
         "Nome do domínio"
       ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Dobre seu armazenamento com ${ BRAND_NAME } Duo"
+      ],
       "Downgrade account": [
         "Fazer downgrade da conta"
       ],
@@ -14299,6 +14285,9 @@
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Obtenha o ${ vpnPlus } para acessar todos os servidores"
+      ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Receba **${ referralInfo.uiData.refereeRewardAmount }** em créditos com ${ planTitle }"
       ],
       "Get complete privacy coverage": [
         "Obtenha a cobertura completa de privacidade"
@@ -14661,6 +14650,9 @@
       ],
       "Upgrade to ${ planName }": [
         "Faça upgrade para ${ planName }"
+      ],
+      "Upgrade to keep your premium benefits.": [
+        "Faça upgrade para manter seus benefícios premium."
       ],
       "Upgrade your network protection with dedicated servers": [
         "Atualize sua proteção de rede com servidores dedicados"
@@ -15555,6 +15547,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Sua avaliação gratuita termina em ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Sua avaliação terminará em ${ textDate }. Você não será cobrado se cancelar antes de ${ textDate }. ${ action }"
       ]
     },
     "Warning for domain modal": {

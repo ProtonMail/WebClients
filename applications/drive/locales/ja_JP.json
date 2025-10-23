@@ -438,6 +438,9 @@
       "Expand folder": [
         "フォルダーを展開"
       ],
+      "Explore other plans": [
+        "その他のプランを表示"
+      ],
       "Export": [
         "エクスポート"
       ],
@@ -1029,6 +1032,9 @@
       "Submit report": [
         "レポートを送信"
       ],
+      "Subscribe now": [
+        "今すぐ登録"
+      ],
       "Switch or add account": [
         "アカウントを切り替え・追加"
       ],
@@ -1445,15 +1451,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "1 user": [
-        "1 ユーザー"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 ユーザー"
-      ],
       "Premium Password Manager": [
         "プレミアムパスワードマネージャー"
       ]
@@ -1478,35 +1475,11 @@
       "${ storageSize } storage": [
         "${ storageSize } ストレージ"
       ],
-      "1 TB total": [
-        "合計 1 TB"
-      ],
-      "1 user": [
-        "1 ユーザー"
-      ],
       "1 user account": [
         "1 ユーザーアカウント"
       ],
-      "10 email addresses": [
-        "10個のメールアドレス"
-      ],
-      "2 users": [
-        "2 ユーザー"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
       "6 user accounts": [
         "6 ユーザーアカウント"
-      ],
-      "6 users": [
-        "6 ユーザー"
-      ],
-      "8500+ servers across 110+ countries": [
-        "110 か国以上、8500 台以上のサーバー"
-      ],
-      "Ad-blocker and malware protection": [
-        "広告ブロックとマルウェア保護"
       ],
       "Admin panel to manage your family": [
         "家族を管理するための管理者パネル"
@@ -1517,9 +1490,6 @@
       "Easily add or remove users": [
         "簡単にユーザーを追加または削除できます"
       ],
-      "High speed streaming": [
-        "高速ストリーミング"
-      ],
       "One-time payment, lifetime deal": [
         "一度きりの支払いで、一生涯のアクセス"
       ],
@@ -1529,15 +1499,6 @@
       "Password health alerts": [
         "パスワードの健全性アラート"
       ],
-      "Private photo backup": [
-        "プライベート写真バックアップ"
-      ],
-      "Protect 10 devices at a time": [
-        "一度に 10 台のデバイスを保護"
-      ],
-      "Secure file storage & sharing": [
-        "安全なファイルストレージと共有"
-      ],
       "Unlimited folders, labels and filters": [
         "無制限のフォルダー、ラベル、フィルター"
       ],
@@ -1546,12 +1507,6 @@
       ],
       "Use your own email domain": [
         "独自メールドメインを使用する"
-      ],
-      "Version history": [
-        "バージョン履歴"
-      ],
-      "VPN Accelerator": [
-        "VPN アクセラレーター"
       ]
     },
     "BF2024: Offers": {
@@ -1565,9 +1520,6 @@
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
         "ブロックされたコンテンツにアクセスし、プライベートに参照します。110 以上の国、10 以上のデバイス、高速ストリーミング、広告ブロッカー、マルウェア保護、VPN Acceleratorなど、8,500 以上のサーバーが含まれています。"
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Netflix、Disney+、Prime Videoをはじめとする各種ストリーミングサービスのコンテンツに、どこからでもアクセスできます。"
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "すべてのデバイスでセキュアなログイン。無制限のhide-my-email エイリアス、共有、統合2FA、 ${ DARK_WEB_MONITORING_NAME } などが含まれています。"
@@ -1586,9 +1538,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "暗号化されたクラウドストレージでファイルの安全性を保ちましょう。オンライン文書エディタ、写真のバックアップ、バージョン履歴、暗号化済みファイル共有などが含まれています。"
-      ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "特別に設計されたNetShieldは、デバイスを保護し、広告、トラッカー、マルウェアをブロックしてブラウジングを高速化します。"
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "ストレージ容量はすべての ${ BRAND_NAME } サービスで共有されています。"
@@ -3110,6 +3059,23 @@
       ],
       "Priority support": [
         "優先サポート"
+      ]
+    },
+    "Duo offer": {
+      "/month": [
+        "/ 月"
+      ],
+      "1 TB of storage to share": [
+        "1 TBのストレージを共有"
+      ],
+      "2 user accounts": [
+        "2 ユーザーアカウント"
+      ],
+      "All premium features from your current plan": [
+        "現在のプランのすべてのプレミアム機能"
+      ],
+      "Only": [
+        "のみ"
       ]
     },
     "Edit billing address form note": {
@@ -9048,11 +9014,17 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } オファーの有効期限は今日までです！"
       ],
+      "Don't show this again": [
+        "次回から表示しない"
+      ],
       "Don’t show this again": [
         "次回から表示しない"
       ],
       "Don’t show this offer again": [
         "今後このオファーを表示しない"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "${ BRAND_NAME } Duoを入手"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "${ BRAND_NAME } Unlimitedを入手"
@@ -9975,8 +9947,23 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } 紹介ごとに"
       ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**この日付より前にキャンセルされた場合**、トライアル終了時にお客様は${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }に**ダウングレードされます**。"
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**ご登録がない場合**、お客様は${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }に**ダウングレードされます**。"
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**キャンセルしない場合**、お客様のフルプランが開始され、お客様は**${ referrerRewardAmount }**のクレジットを獲得できます。"
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**この日までに登録**すると、お客様は**${ referrerRewardAmount }**のクレジットを獲得できます。"
+      ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "最大${ maxRewardAmount }のクレジットを獲得できます。お客様が招待された方が${ BRAND_NAME }のプランに登録されますと、お客様は${ referrerRewardAmount }を受け取ることができます。"
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "**${ textDate }** まで、**${ planTitle }** を無料でお楽しみいただけます。"
       ],
       "Friend joined": [
         "友達が参加しました"
@@ -9990,6 +9977,9 @@
       "Invited friends": [
         "招待済みの友達"
       ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "**${ planTitle }**が提供するすべての強力な機能をお試しいただける最後の機会です。"
+      ],
       "More sharing options": [
         "その他の共有オプション"
       ],
@@ -10001,6 +9991,12 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "最大**${ maxRewardAmount }**分のクレジットを獲得できます。"
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "**${ planTitle }**が提供するすべての強力な機能をお試しいただける期間は、残り**${ daysRemaining }日**です。"
+      ],
+      "your subscription": [
+        "あなたのサブスクリプション"
       ]
     },
     "Safety review": {
@@ -10318,9 +10314,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "1 user": [
-        "1 ユーザー"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -11632,6 +11625,9 @@
       "Discard changes?": [
         "変更を破棄しますか?"
       ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "${ BRAND_NAME } Duo でストレージを2倍に"
+      ],
       "Downgrade account": [
         "アカウントのダウングレード"
       ],
@@ -11769,6 +11765,9 @@
       ],
       "How does it work?": [
         "どのように動作しますか?"
+      ],
+      "How your free trial works": [
+        "無料トライアルについて"
       ],
       "Human verification": [
         "人間であることの検証"

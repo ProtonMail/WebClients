@@ -57,9 +57,6 @@
       "Add contact": [
         "Додати контакт"
       ],
-      "Add credit / debit card": [
-        "Додати кредитну / платіжну картку"
-      ],
       "Add email": [
         "Додати е-пошту"
       ],
@@ -213,14 +210,8 @@
       "Create and copy alias": [
         "Створити й копіювати псевдонім"
       ],
-      "Create folder": [
-        "Створити теку"
-      ],
       "Create new folder": [
         "Створити нову теку"
-      ],
-      "Current plan": [
-        "Поточний тарифний план"
       ],
       "Customize": [
         "Налаштувати"
@@ -233,9 +224,6 @@
       ],
       "Decline invite": [
         "Відхилити запрошення"
-      ],
-      "Decrease": [
-        "Зменшити"
       ],
       "Delete": [
         "Видалити"
@@ -300,9 +288,6 @@
       "Edit sign-in details": [
         "Змінити дані входу"
       ],
-      "Edit subscription": [
-        "Керувати передплатою"
-      ],
       "Email settings": [
         "Налаштування е-пошти"
       ],
@@ -338,9 +323,6 @@
       ],
       "Get ${ planOrAppName }": [
         "Отримати ${ planOrAppName }"
-      ],
-      "Get in touch": [
-        "Зв'яжіться з нами"
       ],
       "Get the apps": [
         "Отримати програми"
@@ -405,17 +387,11 @@
       "Import from Outlook": [
         "Імпортувати з Outlook"
       ],
-      "Increase": [
-        "Збільшити"
-      ],
       "Keep my subscription": [
         "Зберегти передплату"
       ],
       "Learn more": [
         "Докладніше"
-      ],
-      "Let's talk": [
-        "Поговорімо"
       ],
       "Load": [
         "Завантажити"
@@ -501,12 +477,6 @@
       "Open navigation": [
         "Відкрити панель навігації"
       ],
-      "Pay": [
-        "Сплатити"
-      ],
-      "Pay ${ price } now": [
-        "Сплатити ${ price } зараз"
-      ],
       "PDF (.pdf)": [
         "PDF (.pdf)"
       ],
@@ -557,9 +527,6 @@
       ],
       "Remove file": [
         "Вилучити файл"
-      ],
-      "Remove gift code": [
-        "Вилучити подарунковий код"
       ],
       "Rename": [
         "Перейменувати"
@@ -633,12 +600,6 @@
       "Select all": [
         "Вибрати все"
       ],
-      "Select billing cycle ${ billingText }": [
-        "Вибрати платіжний цикл ${ billingText }"
-      ],
-      "Select country": [
-        "Обрати країну"
-      ],
       "Set recovery phrase": [
         "Встановити фразу відновлення"
       ],
@@ -693,9 +654,6 @@
       "Switch or add account": [
         "Змінити або додати обліковий запис"
       ],
-      "Take a tour": [
-        "Показати знайомство"
-      ],
       "Take out of trash": [
         "Вийняти зі смітника"
       ],
@@ -744,12 +702,6 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Використовуйте ${ VPN_SHORT_APP_NAME } для приватності даних"
       ],
-      "Use a different card": [
-        "Використати іншу картку"
-      ],
-      "Use a different payment method": [
-        "Використати інший спосіб оплати"
-      ],
       "Use authentication code": [
         "Використати код підтвердження"
       ],
@@ -776,9 +728,6 @@
       ],
       "Web page (.html)": [
         "Вебсторінка (.html)"
-      ],
-      "What do I get?": [
-        "Що я отримую?"
       ],
       "Word count": [
         "Кількість слів"
@@ -825,18 +774,6 @@
         "${ ips } сервери",
         "${ ips } серверів",
         "${ ips } серверів"
-      ],
-      "${ price } per dedicated server": [
-        "${ price } за виділений сервер"
-      ],
-      "${ price } per domain": [
-        "${ price } за домен"
-      ],
-      "${ price } per seat": [
-        "${ price } за ліцензію"
-      ],
-      "${ price } per user": [
-        "${ price } за користувача"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } ліцензія",
@@ -933,11 +870,6 @@
         "Програми ${ BRAND_NAME }"
       ]
     },
-    "Assistant toggle": {
-      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
-        "Вдоскональте рівень продуктивності електронної пошти. Дозвольте ${ BRAND_NAME } Scribe допомогти вам писати, відповідати й рецензувати ваші листи."
-      ]
-    },
     "Attached ics file error": {
       "Empty ICS file": [
         "Порожній файл ICS"
@@ -967,15 +899,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "1 user": [
-        "1 користувач"
-      ],
-      "3 TB": [
-        "3 ТБ"
-      ],
-      "6 users": [
-        "6 користувачів"
-      ],
       "Premium Password Manager": [
         "Premium Менеджер паролів"
       ]
@@ -997,29 +920,8 @@
       "${ storageSize } storage": [
         "${ storageSize } сховища"
       ],
-      "1 user": [
-        "1 користувач"
-      ],
-      "10 email addresses": [
-        "10 адрес електронної пошти"
-      ],
-      "2 users": [
-        "2 користувачі"
-      ],
-      "3 TB": [
-        "3 ТБ"
-      ],
-      "6 users": [
-        "6 користувачів"
-      ],
-      "Ad-blocker and malware protection": [
-        "Блокування реклами й захист від зловмисних програм"
-      ],
       "Advanced account protection": [
         "Розширений захист облікового запису"
-      ],
-      "High speed streaming": [
-        "Високошвидкісна потокова трансляція"
       ],
       "One-time payment, lifetime deal": [
         "Одноразовий платіж, довічна пропозиція"
@@ -1032,12 +934,6 @@
       ],
       "Use your own email domain": [
         "Використовуйте свій власний домен електронної пошти"
-      ],
-      "Version history": [
-        "Історія версій"
-      ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -1046,9 +942,6 @@
       ]
     },
     "BF2024: Tooltip": {
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Отримуйте доступ до сервісів потокової трансляції, зокрема Netflix, Disney+, Prime Video тощо, з будь-якої точки світу."
-      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адресу електронної пошти, підтримку власних доменів електронної пошти, помічника з написання ${ BRAND_NAME } Scribe, необмежену кількість псевдонімів Hide-my-email та інші можливості.",
         "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адреси електронної пошти, підтримку власних доменів електронної пошти, помічника з написання ${ BRAND_NAME } Scribe, необмежену кількість псевдонімів Hide-my-email та інші можливості.",
@@ -1060,29 +953,6 @@
         "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адреси електронної пошти, підтримку власних доменів електронної пошти, необмежену кількість псевдонімів Hide-my-email та інші можливості.",
         "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адрес електронної пошти, підтримку власних доменів електронної пошти, необмежену кількість псевдонімів Hide-my-email та інші можливості.",
         "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адрес електронної пошти, підтримку власних доменів електронної пошти, необмежену кількість псевдонімів Hide-my-email та інші можливості."
-      ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Функцію NetShield, яка блокує рекламу, стеження і зловмисні програми, розроблено спеціально для захисту ваших пристроїв та прискорення роботи в Інтернеті."
-      ]
-    },
-    "Billing cycle option": {
-      "1 month": [
-        "1 місяць"
-      ],
-      "12 months": [
-        "12 місяців"
-      ],
-      "Annually": [
-        "Щороку"
-      ],
-      "Lifetime": [
-        "Довічно"
-      ],
-      "Monthly": [
-        "Щомісяця"
-      ],
-      "Two-year": [
-        "Два роки"
       ]
     },
     "Browser": {
@@ -1168,9 +1038,6 @@
       ]
     },
     "Button": {
-      "Close": [
-        "Закрити"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Продовжити за допомогою ${ MAIL_APP_NAME }."
       ],
@@ -1180,14 +1047,8 @@
       "Continue your subscription": [
         "Поновіть свою передплату"
       ],
-      "Create label": [
-        "Створити мітку"
-      ],
       "Maybe later": [
         "Можливо пізніше"
-      ],
-      "Take a tour": [
-        "Показати знайомство"
       ]
     },
     "Cancellation upsell": {
@@ -1240,15 +1101,6 @@
         "${ users } користувачі",
         "${ users } користувачів",
         "${ users } користувача"
-      ],
-      "Total": [
-        "Усього"
-      ],
-      "Total for ${ n } month": [
-        "Всього за ${ n } місяць",
-        "Всього за ${ n } місяці",
-        "Всього за ${ n } місяців",
-        "Всього за ${ n } місяці"
       ]
     },
     "Collapsible tooltip": {
@@ -2253,14 +2105,6 @@
         "За ${ VPN_APP_NAME }"
       ]
     },
-    "Cycle": {
-      "/month": [
-        "/місяць"
-      ],
-      "/user per month": [
-        "/користувач на місяць"
-      ]
-    },
     "Default display name vcard": {
       "Unknown": [
         "Невідомо"
@@ -2556,12 +2400,6 @@
       "Already a member of this share": [
         "Вже є учасником цього спільного доступу"
       ],
-      "Amount above the maximum.": [
-        "Сума перевищує обмеження."
-      ],
-      "Amount below minimum (${ minimumAmount }).": [
-        "Сума нижче допустимої (${ minimumAmount })."
-      ],
       "An error occurred while attempting to convert the document. Please try again.": [
         "Виникла помилка при спробі перетворення документа. Спробуйте ще раз."
       ],
@@ -2594,9 +2432,6 @@
       ],
       "Cannot export this contact": [
         "Неможливо експортувати цей контакт"
-      ],
-      "Checkout expired, please try again": [
-        "Час оформлення минув, повторіть спробу"
       ],
       "Contact could not be saved": [
         "Не вдалося зберегти контакт"
@@ -2636,9 +2471,6 @@
       ],
       "Enter 6 digits": [
         "Введіть 6 цифр"
-      ],
-      "Error connecting to the Bitcoin API.": [
-        "Помилка підключення до Bitcoin API."
       ],
       "Error decrypting a computer": [
         "Помилка розшифрування комп'ютера"
@@ -2691,29 +2523,11 @@
       "Incorrect username": [
         "Неправильне ім'я користувача"
       ],
-      "Invalid ${ name } code": [
-        "Недійсний код ${ name }"
-      ],
-      "Invalid card number": [
-        "Недійсний номер картки"
-      ],
-      "Invalid code": [
-        "Недійсний код"
-      ],
       "Invalid email address": [
         "Недійсна адреса електронної пошти"
       ],
-      "Invalid expiration date": [
-        "Недійсний термін дії картки"
-      ],
-      "Invalid IBAN": [
-        "Невірний IBAN"
-      ],
       "Invalid name": [
         "Неприпустиме ім'я"
-      ],
-      "Invalid postal code": [
-        "Недійсний поштовий індекс"
       ],
       "Invalid public key file": [
         "Недійсний файл відкритого ключа"
@@ -2784,32 +2598,8 @@
       "Passwords do not match": [
         "Паролі відрізняються"
       ],
-      "Payment process canceled": [
-        "Обробку платежу скасовано"
-      ],
-      "Payment process consumed": [
-        "Обробку платежу завершено"
-      ],
-      "Payment process failed": [
-        "Не вдалося обробити платіж"
-      ],
-      "Payment process not supported": [
-        "Обробка платежу не підтримується"
-      ],
       "Photos upload is temporarily disabled. Please try again later": [
         "Вивантаження фотографій тимчасово вимкнено. Повторіть спробу пізніше"
-      ],
-      "Please enter a valid postal code": [
-        "Будь ласка, введіть коректний поштовий індекс"
-      ],
-      "Please enter a valid ZIP code": [
-        "Будь ласка, введіть дійсний поштовий індекс"
-      ],
-      "Please enter postal code": [
-        "Будь ласка, введіть поштовий індекс"
-      ],
-      "Please enter ZIP code": [
-        "Введіть дійсний поштовий індекс"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Виправте вказану проблему, щоб продовжити.",
@@ -2826,26 +2616,14 @@
       "Please select a state": [
         "Виберіть регіон"
       ],
-      "Please select billing country": [
-        "Будь ласка, виберіть країну для виставлення рахунку"
-      ],
-      "Please select billing state": [
-        "Будь ласка, виберіть штат для виставлення рахунку"
-      ],
       "Port is required": [
         "Порт обов'язковий"
-      ],
-      "Postal code is required": [
-        "Необхідно вказати поштовий індекс"
       ],
       "Primary address key is not decrypted": [
         "Ключ основної адреси не розшифрований"
       ],
       "Primary address key is not decrypted.": [
         "Ключ основної адреси не розшифрований."
-      ],
-      "Process aborted": [
-        "Процес перервано"
       ],
       "Removed duplicate invitee: ${ joinedInvitee }": [
         "Видалено дублікат запрошення: ${ joinedInvitee }",
@@ -2892,14 +2670,8 @@
       "status page": [
         "сторінку стану"
       ],
-      "Tab closed": [
-        "Вкладку закрито"
-      ],
       "The address might be misspelled": [
         "Ймовірно, адреса неправильна"
-      ],
-      "The amount due has changed. Please try again.": [
-        "Сума до оплати змінилася. Спробуйте ще раз."
       ],
       "The document you are trying to convert is too large. This may occur if the document has a large number of images or other media. Please try again with a smaller document.": [
         "Документ, який ви намагаєтеся перетворити, занадто великий. Це може статися, якщо документ містить велику кількість зображень або інших мультимедійних даних. Спробуйте ще раз із меншим документом."
@@ -2927,9 +2699,6 @@
       ],
       "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
         "Останнє оновлення, яке ви зробили в документі, або занадто велике, або перевищує загальний ліміт розміру документа. Редагування тимчасово вимкнено. Ваші зміни не будуть збережені. Експортуйте копію документа та перезавантажте сторінку."
-      ],
-      "The minimum amount of credit that can be added is ${ price }": [
-        "Найменша сума, яку можна додати — ${ price }"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "Нову версію оригінального файлу ще не вивантажено. Спробуйте знову пізніше"
@@ -2981,9 +2750,6 @@
       ],
       "Unknown error": [
         "Невідома помилка"
-      ],
-      "Unknown payment token status": [
-        "Невідомий стан платіжного токена"
       ],
       "Update Too Large": [
         "Оновлення занадто велике"
@@ -3932,9 +3698,6 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Довічна угода ${ PASS_SHORT_APP_NAME } не має ціни поновлення, це одноразовий платіж за довічний доступ до ${ PASS_SHORT_APP_NAME }. Ціна та дата поновлення підписки ${ planTitle } залишаються незмінними."
       ],
-      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
-        "${ plan.Title } вимагає щонайменше 1 виділений сервер вартістю ${ serverPricePerMonth }"
-      ],
       "${ planName } expires in ${ daysLeft } day.": [
         "${ planName } завершиться за ${ daysLeft } день.",
         "${ planName } завершиться за ${ daysLeft } дні.",
@@ -3983,9 +3746,6 @@
         "${ selectedFoldersCountLocalized } вибраних міток",
         "${ selectedFoldersCountLocalized } вибраних міток"
       ],
-      "${ storage } storage": [
-        "${ storage } сховища"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } контакт успішно оновлений.",
         "${ updated } контакти успішно оновлені.",
@@ -4001,9 +3761,6 @@
         "(${ memberCount } учасників)",
         "(${ memberCount } учасників)"
       ],
-      "(${ serverPrice }/month)": [
-        "(${ serverPrice } / місяць)"
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } додаткового сховища"
       ],
@@ -4012,9 +3769,6 @@
         "+${ organization.BonusVPN } з'єднання для ${ VPN_APP_NAME } (дозволяє приєднати більше пристроїв до VPN)",
         "+${ organization.BonusVPN } з'єднань для ${ VPN_APP_NAME } (дозволяє приєднати більше пристроїв до VPN)",
         "+${ organization.BonusVPN } з'єднань для ${ VPN_APP_NAME } (дозволяє приєднати більше пристроїв до VPN)"
-      ],
-      "30-day money-back guarantee.": [
-        "Гарантія повернення грошей протягом 30 днів."
       ],
       "A number will be added to the filename": [
         "Число буде додано до назви файлу"
@@ -4025,29 +3779,17 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Один номер телефону можна використати для підтвердження лише одного облікового запису ${ BRAND_NAME }"
       ],
-      "A user is an account associated with a single username, mailbox, and person": [
-        "Користувач — це обліковий запис, пов'язаний з певним іменем користувача, поштовою скринькою та людиною"
-      ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
         "VPN шифрує ваше з’єднання та приховує вашу IP-адресу, що значно ускладнює відстеження або моніторинг вашої активності в Інтернеті."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Доступ до облікового запису обмежений через несплачені рахунки. Будь ласка, зверніться до свого адміністратора."
       ],
-      "Account successfully updated": [
-        "Обліковий запис успішно оновлено"
-      ],
       "Ad targeting": [
         "Націлювання реклами"
       ],
-      "Address copied to clipboard": [
-        "Адресу скопійовано до буфера обміну"
-      ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Перевірка адреси з довіреними ключами увімкнена для цієї адреси. Щоб мати змогу надсилати на цю адресу, спочатку зробіть довіреними відкриті ключі, які можна використовувати для надсилання."
-      ],
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Помічник на основі ШІ допоможе вам швидко та без зайвих зусиль створювати кращі листи."
       ],
       "All (${ totalFoldersCount } folder)": [
         "Усі (${ totalFoldersCount } тека)",
@@ -4066,15 +3808,6 @@
         "Будуть імпортовані всі ваші контакти, але не більше ${ MAX_CONTACTS_PER_USER }.",
         "Будуть імпортовані всі ваші контакти, але не більше ${ MAX_CONTACTS_PER_USER }.",
         "Будуть імпортовані всі ваші контакти, але не більше ${ MAX_CONTACTS_PER_USER }."
-      ],
-      "American Express SafeKey logo": [
-        "Логотип American Express SafeKey"
-      ],
-      "Amount above maximum (${ amount }).": [
-        "Сума перевищує максимум (${ amount })."
-      ],
-      "Amount below minimum (${ amount }).": [
-        "Сума нижче найменшої (${ amount })."
       ],
       "an anonymous user": [
         "анонімний користувач"
@@ -4103,17 +3836,8 @@
       "Attention required": [
         "Потребує уваги"
       ],
-      "Awaiting transaction": [
-        "Очікування транзакції"
-      ],
-      "Balance from your previous subscription": [
-        "Баланс після вашої попередньої передплати"
-      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перш ніж запитувати новий код підтвердження, перевірте теку зі спамом та перевірте, чи правильно вказано адресу ${ strong }."
-      ],
-      "Billing cycle: ${ text }": [
-        "Платіжний цикл: ${ text }"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Повернувшись на безплатний тарифний план, ви остаточно втратите ці переваги, навіть якщо в майбутньому поновите передплату."
@@ -4181,12 +3905,6 @@
       "Create a new contact group": [
         "Створити нову групу контактів"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Створення захищеної хмари для ${ value } учасника",
-        "Створення захищеної хмари для ${ value } учасників",
-        "Створення захищеної хмари для ${ value } учасників",
-        "Створення захищеної хмари для ${ value } учасників"
-      ],
       "Create in": [
         "Створити у"
       ],
@@ -4205,35 +3923,17 @@
       "Creating new document...": [
         "Створення нового документа..."
       ],
-      "Credit for the unused portion of your previous plan subscription": [
-        "Кредит на невикористану частину попередньої передплати тарифного плану"
-      ],
       "Current plan": [
         "Поточний план"
       ],
       "Current version": [
         "Поточна версія"
       ],
-      "Custom email domains": [
-        "Власні домени електронної пошти"
-      ],
-      "Dedicated servers": [
-        "Виділені сервери"
-      ],
-      "default email address": [
-        "адреса електронної пошти за замовчуванням"
-      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Цифровий підпис перевірено. Цей файл безпечно вивантажено користувачем ${ emailAddress }."
       ],
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Цифровий підпис перевірено. Цю теку безпечно вивантажено користувачем ${ emailAddress }."
-      ],
-      "Discover new features unlocked and start using them right away!": [
-        "Відкрийте для себе нові функції, які стали доступними, та почніть користуватися ними просто зараз!"
-      ],
-      "Discover ProtectBuy logo": [
-        "Логотип Discover ProtectBuy"
       ],
       "Display word count": [
         "Показувати кількість слів"
@@ -4247,9 +3947,6 @@
       "Document owner has the password": [
         "Власник документа має пароль"
       ],
-      "Don’t see anything? Remember to turn off pop-up blockers.": [
-        "Нічого не відбувається? Перевірте, чи не увімкнено блокування спливних вікон."
-      ],
       "Downgrade": [
         "Перейти на нижчий тарифний план"
       ],
@@ -4261,9 +3958,6 @@
       ],
       "Download was canceled": [
         "Завантаження скасовано"
-      ],
-      "Download your favorite app today and take privacy with you everywhere you go.": [
-        "Завантажте свою улюблену програму й отримайте приватність з собою всюди."
       ],
       "Drop file here to upload": [
         "Перетягніть файл сюди, щоб вивантажити"
@@ -4282,9 +3976,6 @@
       ],
       "email": [
         "е-пошта"
-      ],
-      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
-        "Розміщення доменів електронної пошти доступне лише для доменів, якими ви володієте. Реєстрація доменів наразі недоступна у ${ BRAND_NAME }. Ви можете розмістити електронну пошту для доменів, придбаних у будь-якого реєстратора."
       ],
       "Emails are automatically signed": [
         "Електронні листи підписуються автоматично"
@@ -4324,9 +4015,6 @@
       ],
       "Everything in ${ planOrAppName }": [
         "Усе в ${ planOrAppName }"
-      ],
-      "Expired": [
-        "Протерміновано"
       ],
       "Failed to generate a secure link. The reason is: ${ error }": [
         "Не вдалося згенерувати безпечне посилання. Причина: ${ error }"
@@ -4427,9 +4115,6 @@
       "In restrictive countries": [
         "У країнах із обмеженнями"
       ],
-      "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
-        "Наступним кроком ви зможете внести депозит за допомогою адреси Bitcoin."
-      ],
       "Inherited from parent folder": [
         "Успадковано від теки вищого рівня"
       ],
@@ -4447,9 +4132,6 @@
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Схоже, що ви нещодавно намагалися завантажити ${ uploadName }. Якщо не вдалося завантажити, ${ replaceFile }. Якщо завантаження досі триває, заміна файлу скасує поточне завантаження."
-      ],
-      "JCB logo": [
-        "Логотип JCB"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Просто підтвердьте свій вибір, а ми зробимо решту."
@@ -4511,9 +4193,6 @@
       "Making a copy...": [
         "Створення копії..."
       ],
-      "Mastercard SecureCode logo": [
-        "Логотип Mastercard SecureCode"
-      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Максимум ${ MAX_SHARED_URL_PASSWORD_LENGTH } символ",
         "Максимум ${ MAX_SHARED_URL_PASSWORD_LENGTH } символи",
@@ -4531,9 +4210,6 @@
       ],
       "Merged": [
         "Об'єднано"
-      ],
-      "Messages to all your email addresses will go to your inbox.": [
-        "Повідомлення на всі ваші адреси електронної пошти потраплятимуть у вашу поштову скриньку."
       ],
       "Monitor accounts": [
         "Моніторинг облікових записів"
@@ -4556,9 +4232,6 @@
       "No group found": [
         "Групу не знайдено"
       ],
-      "No payment is required at this time.": [
-        "Наразі платіж не вимагається."
-      ],
       "No results found": [
         "Результатів не знайдено"
       ],
@@ -4573,9 +4246,6 @@
       ],
       "Not connected": [
         "Не під’єднано"
-      ],
-      "Number of dedicated servers in the organization": [
-        "Кількість виділених серверів у організації"
       ],
       "Numbers": [
         "Числа"
@@ -4595,9 +4265,6 @@
       "Opening...": [
         "Відкриття..."
       ],
-      "Organization size": [
-        "Розмір організації"
-      ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Пріоритетом наших сповіщень є безпека. Якщо ви не впізнаєте жодної з порушених даних, ви можете сміливо ігнорувати це повідомлення."
       ],
@@ -4610,9 +4277,6 @@
       "Password copied to clipboard": [
         "Пароль скопійовано до буфера обміну"
       ],
-      "Payments are protected with TLS encryption and Swiss privacy laws.": [
-        "Платежі та приватність захищені TLS-шифруванням та швейцарським законодавством."
-      ],
       "Pending invitations": [
         "Черга запрошень"
       ],
@@ -4624,12 +4288,6 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME автоматично надсилає повідомлення, використовуючи поточний режим написання."
-      ],
-      "Please authenticate your card in the verification tab.": [
-        "Підтвердьте свою картку у відповідній вкладці."
-      ],
-      "Please authenticate your payment in the verification tab.": [
-        "Підтвердьте платіж у відповідній вкладці."
       ],
       "Please enter the password to decrypt and view content.": [
         "Введіть пароль, щоб розшифрувати та переглянути вміст."
@@ -4664,12 +4322,6 @@
       "Please try again in a few moments": [
         "Будь ласка, спробуйте знову за хвильку"
       ],
-      "Please try again using a different payment method, or contact your bank.": [
-        "Повторіть спробу, скориставшись іншим способом оплати, або зверніться до свого банку."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Будь ласка, спробуйте ще раз, використайте інший спосіб оплати, або зв'яжіться з PayPal для отримання допомоги."
-      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Зачекайте, поки ми перевіряємо контакти, які можуть бути повторно підписані з використанням основного ключа шифрування."
       ],
@@ -4681,9 +4333,6 @@
       ],
       "Preparing link to folder": [
         "Підготовка посилання на теку"
-      ],
-      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
-        "Ціна включає усі повторювані знижки та чинні купони вашого облікового запису."
       ],
       "Primary": [
         "Основний"
@@ -4705,9 +4354,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Оновлення сторінки чи ${ link } автоматично розв'яже більшість проблем."
-      ],
-      "Registering your subscription…": [
-        "Реєстрація передплати…"
       ],
       "Restored version to": [
         "Відновлено версію до"
@@ -4733,9 +4379,6 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар згідно з кількістю календарів, доступною у вашому тарифному плані."
       ],
-      "SEPA payments are not available at the moment. Please try again later.": [
-        "Платежі SEPA наразі недоступні. Спробуйте пізніше."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Сервери недоступні. Спробуйте знову за кілька хвилин"
       ],
@@ -4747,9 +4390,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Встановлення PGP дозволяє вам надсилати наскрізно зашифровані повідомлення користувачам за межами ${ BRAND_NAME }, які використовують PGP-сумісну службу."
-      ],
-      "Setting up your new address…": [
-        "Налаштування вашої нової адреси…"
       ],
       "Settings update failed": [
         "Не вдалося оновити налаштування"
@@ -4781,12 +4421,6 @@
       "Something went wrong": [
         "Виникла проблема"
       ],
-      "Start sharing it with contacts and use it for online services.": [
-        "Почніть ділитися ним з контактами та використовуйте його для онлайн-сервісів."
-      ],
-      "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
-        "Відправте депозит за вказаною адресою або скануйте QR-код. Після підтвердження ваш депозит буде врахований у вашому рахунку."
-      ],
       "Subscription auto-renews every month.": [
         "Передплата автоматично поновлюється щомісяця."
       ],
@@ -4814,9 +4448,6 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Власник цієї адреси вимкнув наскрізне шифрування. Щоб мати можливість надсилати зашифровані листи на цю адресу, він повинен повторно ввімкнути шифрування."
       ],
-      "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
-        "Під час підтвердження відкриється нова вкладка браузера. Будь ласка, вимкніть будь-які активні засоби блокування спливних вікон."
-      ],
       "This action will delete the link and revoke access for all users.": [
         "Ця дія видалить посилання і відкличе доступ для всіх користувачів."
       ],
@@ -4825,9 +4456,6 @@
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Цей документ має велику активність. Деякі функції можуть бути тимчасово недоступними."
-      ],
-      "This is now your ${ defaultEmailAddress } for sending new messages.": [
-        "Тепер це ваша ${ defaultEmailAddress } для надсилання нових повідомлень."
       ],
       "This item already exists in your library": [
         "Цей елемент вже існує у вашій бібліотеці"
@@ -4859,9 +4487,6 @@
       "This will upload a new version of the folder": [
         "Це вивантажить нову версію теки"
       ],
-      "To complete your payment, please send ${ btcAmountBold } to the address below.": [
-        "Щоб завершити платіж, надішліть ${ btcAmountBold } на вказану нижче адресу."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "З метою протидії спаму та зловживанням, будь ласка, підтвердьте, що ви людина."
       ],
@@ -4876,18 +4501,6 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Для використання перевірки адреси ви повинні зробити довіреним один чи декілька доступних відкритих ключів, включаючи той, який ви хочете використовувати для надсилання. Це запобігає підроблюванню ключів шифрування."
-      ],
-      "Total email addresses": [
-        "Усього адрес електронної пошти"
-      ],
-      "Total storage": [
-        "Усього сховища"
-      ],
-      "Total supported domains": [
-        "Усього підтримуваних доменів"
-      ],
-      "Total VPN connections": [
-        "Усього VPN-з'єднань"
       ],
       "Transfer canceled for file \"${ name }\"": [
         "Передавання скасовано для файлу \"${ name }\""
@@ -4925,23 +4538,11 @@
       "username": [
         "ім'я користувача"
       ],
-      "Users": [
-        "Користувачі"
-      ],
-      "Verification may take a few minutes.": [
-        "Перевірка може тривати декілька хвилин."
-      ],
-      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "Під час перевірки відкриється нова вкладка. Будь ласка, вимкніть всі блокувальники вмісту. З вас не стягуватиметься плата. Невелика сума, що зніметься з вашої картки під час перевірки, негайно повернеться."
-      ],
       "Version number successfully copied to clipboard": [
         "Номер версії успішно скопійовано до буфера обміну"
       ],
       "View only": [
         "Лише перегляд"
-      ],
-      "Visa Secure logo": [
-        "Логотип Visa Secure"
       ],
       "VPN IP": [
         "VPN IP"
@@ -4949,26 +4550,11 @@
       "Warning": [
         "Попередження"
       ],
-      "We couldn’t process your payment.": [
-        "Не вдається обробити ваш платіж."
-      ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Ми не можемо підтвердити, що ${ emailAddress } вивантажив ${ fileName }."
       ],
       "We couldn’t verify who uploaded ${ fileName }.": [
         "Нам не вдалося перевірити хто вивантажив ${ fileName }."
-      ],
-      "We need to authenticate your payment method with your bank.": [
-        "Потрібно підтвердити вказаний спосіб оплати у вашому банку."
-      ],
-      "We need to authenticate your payment with your bank.": [
-        "Потрібно підтвердити оплату у вашому банку."
-      ],
-      "We use 3-D Secure to protect your payments": [
-        "Ми використовуємо 3-D Secure для захисту ваших платежів"
-      ],
-      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Ми перенаправимо вас на PayPal на новій вкладці браузера для завершення цієї транзакції. Якщо ви користуєтесь блокувальниками вмісту, вимкніть їх перед продовженням."
       ],
       "We'll email you once import is complete.": [
         "Ми надішлемо вам електронного листа після завершення імпорту."
@@ -5030,9 +4616,6 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Ви також можете об'єднати імпортовані календарі з наявними календарями ${ BRAND_NAME }."
       ],
-      "You can change this anytime in ${ settingsLink }.": [
-        "Ви можете змінити це будь-коли в ${ settingsLink }."
-      ],
       "You can check the progress ${ importProgressLink }.": [
         "Перебіг виконання можна переглянути ${ importProgressLink }."
       ],
@@ -5063,15 +4646,6 @@
       "You cannot undo this action.": [
         "Цю дію не можна скасувати."
       ],
-      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
-        "У вас є пробний період передплати ${ planTitle }. Якщо ви бажаєте продовжити передплату після пробного періоду, будь ласка, додайте спосіб оплати."
-      ],
-      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
-        "У вас є пробний період передплати ${ planTitle }. Наразі оплата не вимагається. Передплату буде автоматично поновлено після завершення пробного періоду."
-      ],
-      "You may be redirected to your bank’s website.": [
-        "Ви можете бути перенаправлені до вебсайту вашого банку."
-      ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Для можливості переходу на тарифний план нижчого рівня ви повинні вилучити будь-яких додаткових користувачів ${ MAIL_APP_NAME }, адреси та власні домени."
       ],
@@ -5080,9 +4654,6 @@
       ],
       "You will lose all unsaved changes.": [
         "Ви втратите всі незбережені зміни."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Вас невдовзі буде перенаправлено до PayPal для підтвердження платежу."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Ви досягли максимальної кількості адрес у групах контактів:"
@@ -5167,9 +4738,6 @@
       ]
     },
     "info": {
-      "Optional": [
-        "Необов'язково"
-      ],
       "Selected color:": [
         "Вибраний колір:"
       ]
@@ -5248,17 +4816,8 @@
       "${ BRAND_NAME } username": [
         "Ім'я користувача ${ BRAND_NAME }"
       ],
-      "${ n } month": [
-        "${ n } місяць",
-        "${ n } місяці",
-        "${ n } місяців",
-        "${ n } місяця"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Тимчасово недоступно. Повторіть спробу пізніше.)"
-      ],
-      "Account holder": [
-        "Власник облікового запису"
       ],
       "Add email address": [
         "Додати адресу е-пошти"
@@ -5268,12 +4827,6 @@
       ],
       "Add to group": [
         "Додати до групи"
-      ],
-      "Address": [
-        "Адреса"
-      ],
-      "Anderson": [
-        "Андерсон"
       ],
       "Anyone on the Internet with the link can view": [
         "Переглядати можуть всі, хто має посилання"
@@ -5302,20 +4855,11 @@
       "Beta Access": [
         "Бета-доступ"
       ],
-      "Billing cycle": [
-        "Платіжний цикл"
-      ],
       "Browser": [
         "Браузер"
       ],
       "Browser version": [
         "Версія браузера"
-      ],
-      "BTC address": [
-        "BTC адреса"
-      ],
-      "BTC amount": [
-        "Сума в BTC"
       ],
       "Calendar": [
         "Календар"
@@ -5325,18 +4869,6 @@
       ],
       "Cancel download": [
         "Скасувати завантаження"
-      ],
-      "Card details": [
-        "Подробиці картки"
-      ],
-      "Card holder": [
-        "Власник картки"
-      ],
-      "Card number": [
-        "Номер картки"
-      ],
-      "Cash": [
-        "Готівка"
       ],
       "Category": [
         "Категорія"
@@ -5349,12 +4881,6 @@
       ],
       "Colors": [
         "Кольори"
-      ],
-      "Company": [
-        "Компанія"
-      ],
-      "Company name": [
-        "Назва компанії"
       ],
       "Confirm password": [
         "Підтвердити пароль"
@@ -5376,9 +4902,6 @@
       ],
       "Country": [
         "Країна"
-      ],
-      "Credits": [
-        "Кредити"
       ],
       "Delete": [
         "Видалити"
@@ -5440,17 +4963,11 @@
       "Erase this link and remove everyone with access": [
         "Стерти це посилання і вилучити доступ для всіх"
       ],
-      "Expires": [
-        "Термін дії"
-      ],
       "Extended address": [
         "Додаткова адреса"
       ],
       "File": [
         "Файл"
-      ],
-      "First name": [
-        "Ім'я"
       ],
       "Folder location": [
         "Розташування теки"
@@ -5469,9 +4986,6 @@
       ],
       "I understand the risk": [
         "Я розумію ризик"
-      ],
-      "IBAN": [
-        "IBAN"
       ],
       "Ignore": [
         "Ігнорувати"
@@ -5517,9 +5031,6 @@
       ],
       "Last month only": [
         "Лише останній місяць"
-      ],
-      "Last name": [
-        "Прізвище"
       ],
       "Log in or sign up ": [
         "Увійти або зареєструватися "
@@ -5575,15 +5086,6 @@
       "Password": [
         "Пароль"
       ],
-      "Payer": [
-        "Платник"
-      ],
-      "Payment details": [
-        "Подробиці платежу"
-      ],
-      "Payment method": [
-        "Спосіб оплати"
-      ],
       "PGP scheme": [
         "PGP-схема"
       ],
@@ -5598,9 +5100,6 @@
       ],
       "Postal code": [
         "Поштовий індекс"
-      ],
-      "Proration": [
-        "Розподілення"
       ],
       "Public keys": [
         "Відкриті ключі"
@@ -5623,9 +5122,6 @@
       "Reveal password": [
         "Показати пароль"
       ],
-      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
-        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
-      ],
       "Set expiration date": [
         "Вказати термін дії"
       ],
@@ -5644,12 +5140,6 @@
       "Skip folder": [
         "Пропустити теку"
       ],
-      "Start date": [
-        "Дата початку"
-      ],
-      "State": [
-        "Стан"
-      ],
       "Stop sharing": [
         "Припинити спільний доступ"
       ],
@@ -5659,9 +5149,6 @@
       "Strong": [
         "Надійний"
       ],
-      "Subscription options": [
-        "Опції передплати"
-      ],
       "Sync with system": [
         "Синхронізувати з системою"
       ],
@@ -5670,9 +5157,6 @@
       ],
       "Theme": [
         "Тема"
-      ],
-      "Thomas": [
-        "Томас"
       ],
       "To: ${ toEmail }": [
         "Кому: ${ toEmail }"
@@ -5718,9 +5202,6 @@
       ],
       "Your password (admin)": [
         "Новий пароль (адмін)"
-      ],
-      "ZIP code": [
-        "Поштовий індекс"
       ]
     },
     "Label for contact group color": {
@@ -5731,14 +5212,6 @@
     "Label for contact group name": {
       "Name": [
         "Назва"
-      ]
-    },
-    "Label, credit card": {
-      "Postal code": [
-        "Поштовий індекс"
-      ],
-      "ZIP code": [
-        "Поштовий індекс"
       ]
     },
     "Label/folder modal": {
@@ -5780,17 +5253,11 @@
       ]
     },
     "Link": {
-      "Add a gift code": [
-        "Додати подарунковий код"
-      ],
       "clearing your browser cache": [
         "очищення кешу браузера"
       ],
       "How to enable ${ PROTON_SENTINEL_NAME }": [
         "Як увімкнути ${ PROTON_SENTINEL_NAME }"
-      ],
-      "How to pay with Bitcoin?": [
-        "Як оплатити за допомогою Bitcoin?"
       ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "Як використовувати ${ DARK_WEB_MONITORING_NAME }"
@@ -5806,9 +5273,6 @@
       ],
       "Request an invite": [
         "Запитати запрошення"
-      ],
-      "settings": [
-        "налаштування"
       ],
       "Types of recovery methods": [
         "Типи способів відновлення"
@@ -5905,12 +5369,6 @@
     "mail_signup_2024: Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "Помічник з написання ${ BRAND_NAME } Scribe"
-      ],
-      "Add ${ BRAND_NAME } Scribe writing assistant": [
-        "Додати помічника з написання ${ BRAND_NAME } Scribe"
-      ],
-      "for ${ price }": [
-        "за ${ price }"
       ]
     },
     "Message": {
@@ -6699,9 +6157,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand }, що закінчується на ${ last4 }"
-      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Розширена мережева безпека та управління доступом за допомогою спеціальних захищених мережевих шлюзів"
       ],
@@ -6789,9 +6244,6 @@
       ],
       "Downgrade account?": [
         "Понизити обліковий запис?"
-      ],
-      "Review subscription and pay": [
-        "Перегляньте передплату й сплатіть"
       ],
       "Switch plans?": [
         "Змінити тарифний план?"
@@ -7450,11 +6902,6 @@
         "Безпечний спільний доступ до сховища"
       ]
     },
-    "pass_signup_2023: Title": {
-      "${ upsellPlanTitle } plan": [
-        "Тарифний план ${ upsellPlanTitle }"
-      ]
-    },
     "pass_signup_2024: Info": {
       "${ n } user account": [
         "${ n } обліковий запис користувача",
@@ -7521,108 +6968,12 @@
         "Для виконання цієї операції вам потрібен доступ до ключа організації."
       ]
     },
-    "Payment method option": {
-      "Bank transfer": [
-        "Банківський переказ"
-      ],
-      "Credit/debit card": [
-        "Банківська картка"
-      ],
-      "New credit/debit card": [
-        "Нова кредитна/платіжна картка"
-      ]
-    },
-    "Payment.Sepa.Action": {
-      "Use company name": [
-        "Використати назву компанії"
-      ],
-      "Use personal name": [
-        "Використати особисте ім'я"
-      ]
-    },
     "Payments": {
-      "Billing Country": [
-        "Країна платника"
-      ],
-      "Card number": [
-        "Номер картки"
-      ],
-      "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
-        "Наразі автоматичне продовження підписки вимкнено. Якщо ви зміните підписку зараз, автоматичне поновлення буде знову ввімкнено."
-      ],
-      "CVC": [
-        "CVC"
-      ],
-      "Got it": [
-        "Зрозуміло"
-      ],
-      "I'm purchasing as a business": [
-        "Я купую це, як бізнес"
-      ],
-      "MM/YY": [
-        "ММ/РР"
-      ],
-      "More plans are available in other currencies": [
-        "Більше планів доступно в інших валютах"
-      ],
-      "Please reactivate your subscription first to decrease the number of add-ons.": [
-        "Будь ласка, спочатку активуйте свою підписку, щоб зменшити кількість доповнень."
-      ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Поновлюється за ціною ${ renewPriceStr }, скасувати можна будь-коли."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Спеціальна ціна зі знижкою ${ priceWithDiscount } діє протягом першого місяця. Потім вона буде автоматично поновлюватися за ціною ${ renewPriceStr } щомісяця. Ви можете скасувати її в будь-який момент."
-      ],
-      "This number will be shown on all future invoices": [
-        "Цей номер відображатиметься в усіх майбутніх рахунках"
-      ],
-      "Timeout exceeded": [
-        "Перевищено час очікування"
-      ]
-    },
-    "Payments.Error": {
-      "Invalid card number": [
-        "Недійсний номер картки"
-      ],
-      "Invalid expiration date": [
-        "Недійсний термін дії картки"
-      ],
-      "Invalid security code": [
-        "Неправильний код безпеки"
-      ],
-      "Something went wrong. Please try again later.": [
-        "Щось пішло не так. Будь ласка, спробуйте ще раз пізніше."
-      ],
-      "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
-        "Ми не можемо підтвердити ваш спосіб оплати. Будь ласка, оберіть інший спосіб оплати або спробуйте ще раз."
-      ],
-      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
-        "Вашу картку відхилено. Спробуйте скористатися іншою картою або зверніться до свого банку, щоб авторизувати платіж."
-      ]
-    },
-    "Payments.plan_name": {
-      "Free": [
-        "Free"
-      ]
-    },
-    "Payments.Sepa": {
-      "Street address, postal code, and city": [
-        "Вулиця, поштовий код та місто"
-      ]
-    },
-    "Payments.VAT number name": {
-      "ABN": [
-        "ABN"
-      ],
-      "Business Number": [
-        "Бізнес-номер"
-      ],
-      "EIN": [
-        "EIN"
-      ],
-      "VAT number": [
-        "Номер платника ПДВ"
       ]
     },
     "PGP key encryption warning": {
@@ -7659,14 +7010,8 @@
       "A way to contact you": [
         "Спосіб зв'язку з вами"
       ],
-      "Anderson": [
-        "Андерсон"
-      ],
       "Choose password": [
         "Оберіть пароль"
-      ],
-      "Company name": [
-        "Назва компанії"
       ],
       "E.g., ": [
         "Наприклад, "
@@ -7682,9 +7027,6 @@
       ],
       "First name": [
         "Ім'я"
-      ],
-      "Gift code": [
-        "Подарунковий код"
       ],
       "Group name": [
         "Назва групи"
@@ -7713,9 +7055,6 @@
       "Please describe the problem and include any error messages": [
         "Опишіть проблему та додайте повідомлення про помилку"
       ],
-      "Postal code": [
-        "Поштовий індекс"
-      ],
       "Search for group name": [
         "Шукати назву групи"
       ],
@@ -7731,9 +7070,6 @@
       "Select a reason": [
         "Оберіть причину"
       ],
-      "Select state": [
-        "Оберіть країну"
-      ],
       "Set date": [
         "Встановити дату"
       ],
@@ -7742,35 +7078,11 @@
       ],
       "Start typing an email address": [
         "Почніть вводити адресу е-пошти"
-      ],
-      "Thomas": [
-        "Томас"
-      ],
-      "VAT number": [
-        "Номер платника ПДВ"
-      ],
-      "ZIP code": [
-        "Поштовий індекс"
       ]
     },
     "Placeholder for contact group name": {
       "Name": [
         "Назва"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "зверніться"
-      ]
-    },
-    "plus_block": {
-      "Upgrade to ${ upsellPlanTitle }": [
-        "Покращити до ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Безплатно"
       ]
     },
     "Progress bar description": {
@@ -8223,9 +7535,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "1 user": [
-        "1 користувач"
-      ],
       "3 TB": [
         "3 ТБ"
       ],
@@ -8237,9 +7546,6 @@
       ],
       "High speed VPN": [
         "Високошвидкісна VPN"
-      ],
-      "Highest VPN speed": [
-        "Найвища швидкість VPN"
       ],
       "Premium ${ appName1 }": [
         "Преміум ${ appName1 }"
@@ -8255,9 +7561,6 @@
       ],
       "Secure cloud storage": [
         "Безпечне хмарне сховище"
-      ],
-      "Secure streaming": [
-        "Захищена потокова трансляція"
       ],
       "Support online privacy": [
         "Підтримка онлайн-приватності"
@@ -8500,17 +7803,6 @@
         "Ви втратите доступ до необмеженої кількості даних входу і нотаток, необмеженої кількості псевдонімів для hide-my-email, 20 сховищ, а також до пріоритетної підтримки."
       ]
     },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Сплачується кожні 2 роки"
-      ],
-      "Billed monthly": [
-        "Сплачується щомісяця"
-      ],
-      "Billed yearly": [
-        "Сплачується щороку"
-      ]
-    },
     "Subscription attribute": {
       "${ n } free VPN connection per user": [
         "${ n } безплатне VPN-з'єднання на користувача",
@@ -8569,16 +7861,6 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "Підписка буде знижена до нижчого рівня в кінці розрахункового циклу."
-      ]
-    },
-    "Subscription length": {
-      "Lifetime": [
-        "Довічно"
-      ]
-    },
-    "Subscription price": {
-      "For ${ totalPrice }": [
-        "За ${ totalPrice }"
       ]
     },
     "subscription reminder": {
@@ -8648,37 +7930,6 @@
         "Пріоритетна підтримка"
       ]
     },
-    "Subscription renewal state": {
-      "Are you sure?": [
-        "Ви впевнені?"
-      ],
-      "Auto-pay is disabled": [
-        "Автоплатіж вимкнено"
-      ],
-      "Auto-pay is enabled": [
-        "Автоплатіж увімкнено"
-      ],
-      "Disable": [
-        "Вимкнути"
-      ],
-      "Enable auto-pay support": [
-        "Увімкнути підтримку автоматичного платежу"
-      ],
-      "Keep auto-pay": [
-        "Залишити автовідтворення"
-      ],
-      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
-        "Наша система більше не стягуватиме плату з використанням цього способу оплати, але ваша передплата все одно поновиться в кінці платіжного періоду. Якщо ви хочете перейти на тарифний план нижчого рівня чи змінити передплату, вам доведеться зробити це власноруч до завершення платіжного періоду. Крім того, якщо ви забудете виконати платіж вручну, а автоматична оплата буде вимкнена для всіх способів оплати, ми можемо автоматично перевести вас на тарифний план нижчого рівня, що призведе до втрати доступу до багатьох функцій."
-      ],
-      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "Наша система більше не стягуватиме плату з використанням цього способу оплати, але вашу передплату все одно потрібно поновити в кінці платіжного періоду. Якщо ви хочете перейти на тарифний план нижчого рівня чи змінити передплату, вам доведеться зробити це власноруч до завершення платіжного періоду. Ми не можемо автоматично перевести вас на тарифний план нижчого рівня, оскільки ви перевищили обмеження безплатного сховища або використовуєте інші платні функції, і ми не можемо автоматично видаляти ваші файли, електронні листи та інші дані. Якщо ви вимкнете автоматичний платіж, обов'язково сплатіть достатню суму для продовження передплати до завершення платіжного періоду, щоб уникнути вимкнення облікового запису."
-      ]
-    },
-    "Subscription saving": {
-      "Save ${ priceString }": [
-        "Заощадьте ${ priceString }"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } контакти має ідентичний вигляд.",
@@ -8719,9 +7970,6 @@
       "Contacts deleted": [
         "Контакти видалено"
       ],
-      "Copied to clipboard": [
-        "Скопійовано до буфера обміну"
-      ],
       "Email address copied to clipboard": [
         "Адресу е-пошти скопійовано до буфера обміну"
       ],
@@ -8736,12 +7984,6 @@
       ],
       "Last modified aliases stored in your oldest vault": [
         "Останні змінені псевдоніми зберігаються у вашому найстарішому сховищі"
-      ],
-      "Payment method added": [
-        "Спосіб оплати додано"
-      ],
-      "Payment method updated": [
-        "Спосіб сплати оновлено"
       ],
       "Phone number copied to clipboard": [
         "Номер телефону скопійовано до буфера обміну"
@@ -8779,14 +8021,6 @@
         "/користувач на місяць"
       ]
     },
-    "Suffix for price": {
-      "per month": [
-        "на місяць"
-      ],
-      "per user per month": [
-        "за користувача на місяць"
-      ]
-    },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
         "Створюйте надійні дані для входу на всіх своїх пристроях з необмеженою кількістю псевдонімів, 20 сховищами, інтегрованою 2FA, автозаповненням кредитних карток та іншими можливостями."
@@ -8799,17 +8033,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Безпечно зберігайте свої файли у зашифрованому хмарному сховищі з історією версій, спільним доступом та іншими можливостями."
-      ]
-    },
-    "Tab subscription modal": {
-      "For businesses": [
-        "Професійний"
-      ],
-      "For families": [
-        "Сімейний"
-      ],
-      "For individuals": [
-        "Особистий"
       ]
     },
     "Table header": {
@@ -8952,9 +8175,6 @@
       "Add contact group name": [
         "Додати назву групи контактів"
       ],
-      "Add credit/debit card": [
-        "Додати кредитну/платіжну картку"
-      ],
       "Add to ${ groupCount } group": [
         "Додати до ${ groupCount } групи",
         "Додати до ${ groupCount } груп",
@@ -8973,17 +8193,8 @@
       "All settings": [
         "Усі налаштування"
       ],
-      "Amount due": [
-        "До сплати"
-      ],
-      "Apply gift code": [
-        "Застосувати подарунковий код"
-      ],
       "Are you sure?": [
         "Ви впевнені?"
-      ],
-      "Billing cycle": [
-        "Платіжний цикл"
       ],
       "Birthday": [
         "День народження"
@@ -9002,9 +8213,6 @@
       ],
       "Cannot load link": [
         "Не вдалося завантажити посилання"
-      ],
-      "Card verification": [
-        "Перевірка картки"
       ],
       "Change password": [
         "Змінити пароль"
@@ -9032,9 +8240,6 @@
       ],
       "Continue with partial import?": [
         "Продовжити частковий імпорт?"
-      ],
-      "Coupon": [
-        "Купон"
       ],
       "Create a new folder": [
         "Створити нову теку"
@@ -9144,9 +8349,6 @@
       "Edit contact group": [
         "Редагувати групу контактів"
       ],
-      "Edit credit/debit card": [
-        "Редагувати кредитну/платіжну картку"
-      ],
       "Edit email settings": [
         "Редагування налаштувань електронної пошти"
       ],
@@ -9171,9 +8373,6 @@
       "Enter your password": [
         "Введіть свій пароль"
       ],
-      "Error": [
-        "Помилка"
-      ],
       "Error Syncing": [
         "Помилка синхронізації"
       ],
@@ -9182,9 +8381,6 @@
       ],
       "Get the apps": [
         "Отримати програми"
-      ],
-      "Gift": [
-        "Подарунок"
       ],
       "Groups": [
         "Групи"
@@ -9255,9 +8451,6 @@
       "Need more aliases?": [
         "Потрібно більше псевдонімів?"
       ],
-      "Network error": [
-        "Помилка мережі"
-      ],
       "Next": [
         "Далі"
       ],
@@ -9288,15 +8481,6 @@
       "Other names": [
         "Інші імена"
       ],
-      "Payment failed": [
-        "Не вдалося оплатити"
-      ],
-      "Payment verification": [
-        "Перевірка платежу"
-      ],
-      "PayPal verification failed": [
-        "Не вдалося пройти перевірку PayPal"
-      ],
       "Performance might be affected": [
         "Може знизитися швидкодія"
       ],
@@ -9309,17 +8493,11 @@
       "Previous": [
         "Назад"
       ],
-      "Processing...": [
-        "Триває обробка..."
-      ],
       "Re-sign all contacts": [
         "Повторно підписати всі контакти"
       ],
       "Re-signing contacts": [
         "Повторне підписання контактів"
-      ],
-      "Recommended": [
-        "Рекомендовано"
       ],
       "Recommended actions": [
         "Рекомендовані дії"
@@ -9341,9 +8519,6 @@
       ],
       "Security center": [
         "Центр безпеки"
-      ],
-      "Select a plan": [
-        "Оберіть тарифний план"
       ],
       "Select action to take on contact group": [
         "Виберіть дію для групи контактів"
@@ -9396,9 +8571,6 @@
       "Subscription canceled": [
         "Передплату скасовано"
       ],
-      "Summary": [
-        "Підсумок"
-      ],
       "The link either does not exist or has expired": [
         "Посилання або не існує або не чинне"
       ],
@@ -9414,9 +8586,6 @@
       "Untitled document ${ date }": [
         "Документ без назви ${ date }"
       ],
-      "Upgrade complete!": [
-        "Оновлення завершено!"
-      ],
       "Upgrade to ${ planName }": [
         "Покращити до ${ planName }"
       ],
@@ -9425,15 +8594,6 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Використовуйте ${ VPN_SHORT_APP_NAME } для приватності даних"
-      ],
-      "Verification failed": [
-        "Не вдалося виконати перевірку"
-      ],
-      "Verifying your card...": [
-        "Ваша картка перевіряється..."
-      ],
-      "Verifying your payment...": [
-        "Триває перевірка платежу..."
       ],
       "VPN explained": [
         "VPN — простими словами"
@@ -9461,12 +8621,6 @@
       ],
       "Your exposed information": [
         "Ваша викрита інформація"
-      ],
-      "Your plan": [
-        "Ваш тарифний план"
-      ],
-      "Your shorter address is now ready": [
-        "Ваша коротша адреса готова"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -9514,9 +8668,6 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail автоматично присвоює категорії деяким електронним листам, як-от \"Соцмережі\" або \"Реклама\". Ви можете вибрати, куди імпортувати такі листи."
       ],
-      "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Якщо ви придбали подарунковий код або отримали його від нашої служби підтримки, ви можете ввести його тут."
-      ],
       "Load image": [
         "Завантажити зображення"
       ],
@@ -9540,9 +8691,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Імпортування розпочнеться з найновіших повідомлень."
-      ],
-      "The new subscription cycle starts on ${ formattedTime }": [
-        "Новий цикл передплати розпочинається з ${ formattedTime }"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Вивантажте відкритий ключ, щоб увімкнути надсилання наскрізно зашифрованих листів на цю адресу"

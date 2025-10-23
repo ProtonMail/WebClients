@@ -56,6 +56,9 @@
       "Advanced options": [
         "Opsi lanjutan"
       ],
+      "Allow access": [
+        "Izinkan akses"
+      ],
       "and": [
         "dan"
       ],
@@ -244,6 +247,9 @@
       ],
       "Dismiss": [
         "Abaikan"
+      ],
+      "Do not show again": [
+        "Jangan tampilkan lagi"
       ],
       "Do not show again when I press": [
         "Jangan tampilkan lagi pada saat saya menekan"
@@ -720,6 +726,11 @@
         "Lebarkan"
       ]
     },
+    "Confirm": {
+      "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
+        "Apakah Anda ingin papan klip Anda dibersihkan secara otomatis setelah ${ timeoutDurationHumanReadable }?"
+      ]
+    },
     "Description": {
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } tersedia dengan paket berbayar. Tingkatkan akun Anda untuk memperoleh akses ke fitur ini dengan segera."
@@ -1037,6 +1048,9 @@
       "Importing items failed": [
         "Item gagal diimpor"
       ],
+      "In order to continue, ${ PASS_APP_NAME } requires these extension permissions: ${ permissionsJSX }": [
+        "Untuk melanjutkan, ${ PASS_APP_NAME } membutuhkan izin ekstensi berikut: ${ permissionsJSX }"
+      ],
       "Inactive secure links could not be removed.": [
         "Tautan aman yang tidak aktif tidak dapat dihapus."
       ],
@@ -1075,6 +1089,12 @@
       ],
       "Passphrase is incorrect": [
         "Frasa sandi salah"
+      ],
+      "Permission denied for ${ domainsJSX } website access.": [
+        "Izin untuk akses situs web ${ domainsJSX } ditolak."
+      ],
+      "Permission denied for website access.": [
+        "Izin untuk akses situs web ditolak."
       ],
       "PIN codes do not match": [
         "Kode PIN tidak sesuai"
@@ -1348,6 +1368,9 @@
       "Access successfully confirmed": [
         "Akses berhasil dikonfirmasi"
       ],
+      "access to ${ domains }.": [
+        "akses ke ${ domains }."
+      ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Akses ke ${ PASS_APP_NAME } akan selalu memerlukan kata sandi ${ BRAND_NAME } Anda."
       ],
@@ -1500,6 +1523,9 @@
       ],
       "Copied to clipboard": [
         "Disalin ke papan klip"
+      ],
+      "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
+        "Disalin ke papan klip (kedaluwarsa dalam ${ timeoutDurationHumanReadable })"
       ],
       "Coupon successfully applied!": [
         "Kupon berhasil diterapkan!"
@@ -1801,6 +1827,9 @@
       "Moving items to trash": [
         "Memindahkan item ke sampah"
       ],
+      "Navigate to your browser's extension settings and enable site permissions for ${ PASS_SHORT_APP_NAME }.": [
+        "Tuju pengaturan ekstensi browser Anda dan aktifkan izin situs untuk ${ PASS_SHORT_APP_NAME }."
+      ],
       "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
         "Perlu untuk mengirim email kepada seseorang, namun tidak ingin mereka sampai melihat alamat email Anda? Siapkan alias kontak."
       ],
@@ -1972,8 +2001,17 @@
       "Please follow the steps below to set up your domain.": [
         "Silakan ikuti langkah-langkah di bawah ini untuk mengatur domain Anda."
       ],
+      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
+        "Silakan biarkan ${ PASS_APP_NAME } tetap terbuka agar papan klip dapat dibersihkan secara otomatis."
+      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Mohon biarkan jendela ini terbuka selagi data Anda diimpor. Proses ini dapat memakan waktu sejenak."
+      ],
+      "Please keep your browser open so the clipboard can be automatically cleared.": [
+        "Silakan biarkan browser Anda tetap terbuka agar papan klip dapat dibersihkan secara otomatis."
+      ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "Silakan pastikan jendela yang sebelumnya aktif adalah jendela di mana Anda ingin mengisi otomatis, dan kursor Anda telah terfokus pada kolom entri masuk."
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Mohon diperhatikan bahwa setelah dihapus, alias ini tidak akan lagi dapat dipulihkan. Apakah Anda ingin sekadar menonaktifkan alias ini?"
@@ -2349,6 +2387,9 @@
       ],
       "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
         "Tergantung dari sistem yang Anda gunakan, Anda mungkin akan perlu untuk menerima permintaan izin dan menyalakan ulang aplikasi."
+      ],
+      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+        "Anda mungkin akan perlu untuk memberikan izin aksesibilitas kepada ${ PASS_APP_NAME }."
       ],
       "You need a vault with edit permission before you can import items.": [
         "Anda butuh brankas dengan izin penyuntingan sebelum Anda dapat mengimpor item."
@@ -3640,6 +3681,11 @@
         "Anda dapat menutup jendela ini setelah menyimpan berkas."
       ]
     },
+    "Permission": {
+      "Will require a permission from your browser": [
+        "Akan membutuhkan izin dari browser Anda"
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "Tambah kunci rahasia 2FA"
@@ -3938,6 +3984,9 @@
       ],
       "Change your lock method": [
         "Ubah metode penguncian Anda"
+      ],
+      "Clear clipboard": [
+        "Bersihkan papan klip"
       ],
       "Confirm extra password": [
         "Konfirmasi kata sandi tambahan"
@@ -4422,6 +4471,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "Kata sandi tambahan harus mengandung setidaknya 8 karakter"
+      ],
+      "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
+        "Berikan akses ke papan klip untuk mengaktifkan pembersihan otomatis kata sandi dan data yang disalin."
       ],
       "Invalid alias prefix": [
         "Awalan alias tidak valid"

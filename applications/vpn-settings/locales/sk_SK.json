@@ -1504,15 +1504,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "1 user": [
-        "1 používateľ"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 používateľov"
-      ],
       "Premium Password Manager": [
         "Prémiový správca hesiel"
       ]
@@ -1570,35 +1561,14 @@
       "${ storageSize } storage": [
         "${ storageSize } úložisko"
       ],
-      "1 TB total": [
-        "1 TB celkom"
-      ],
-      "1 user": [
-        "1 používateľ"
-      ],
       "1 user account": [
         "1 používateľský účet"
       ],
-      "10 email addresses": [
-        "10 emailových adries"
-      ],
-      "2 users": [
-        "2 používatelia"
-      ],
-      "3 TB": [
-        "3 TB"
+      "200 GB storage: 40x your current plan": [
+        "200 GB úložisko: 40x váš súčasný plán"
       ],
       "6 user accounts": [
         "6 používateľských účtov"
-      ],
-      "6 users": [
-        "6 používateľov"
-      ],
-      "8500+ servers across 110+ countries": [
-        "8500+ serverov v 110+ krajinách"
-      ],
-      "Ad-blocker and malware protection": [
-        "Blokovač reklám a ochrana pred malvérom"
       ],
       "Admin panel to manage your family": [
         "Panel správcu pre správu vašej rodiny"
@@ -1609,9 +1579,6 @@
       "Easily add or remove users": [
         "Jednoduché pridanie alebo odstránenie používateľov"
       ],
-      "High speed streaming": [
-        "Vysokorýchlostné streamovanie"
-      ],
       "One-time payment, lifetime deal": [
         "Jednorazová platba, doživotný prístup"
       ],
@@ -1621,14 +1588,8 @@
       "Password health alerts": [
         "Upozornenia na zdravie hesla"
       ],
-      "Private photo backup": [
-        "Súkromná záloha fotografií"
-      ],
-      "Protect 10 devices at a time": [
-        "Chráňte 10 zariadení súčasne"
-      ],
-      "Secure file storage & sharing": [
-        "Zabezpečené úložisko a zdieľanie súborov"
+      "Recover previous file versions": [
+        "Obnovte predchádzajúce verzie súborov"
       ],
       "Unlimited folders, labels and filters": [
         "Neobmedzený počet priečinkov, štítkov a filtrov"
@@ -1638,17 +1599,14 @@
       ],
       "Use your own email domain": [
         "Používajte vlastnú emailovú doménu"
-      ],
-      "Version history": [
-        "História verzií"
-      ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Účtovaná suma ${ amount } jednorazovo"
+      ],
+      "forever": [
+        "navždy"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Obnoví sa po 1 mesiaci za ${ regularAmount }."
@@ -1657,9 +1615,6 @@
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
         "Prístup k zablokovanému obsahu a súkromné prehliadanie. Zahŕňa viac ako 8 500 serverov vo viac ako 110 krajinách, 10 zariadení, vysokorýchlostné streamovanie, blokovanie reklám a ochranu pred malvérom, VPN Accelerator a ďalšie."
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Získajte prístup k obsahu na streamovacích službách vrátane Netflix, Disney+, Prime Video a ďalších odkiaľkoľvek."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Zabezpečené prihlasovanie na všetkých zariadeniach. Zahŕňa neobmedzený počet hide-my-email aliasov, zdieľanie, integrované 2FA, ${ DARK_WEB_MONITORING_NAME } a ďalšie funkcie."
@@ -1684,9 +1639,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa online editor dokumentov, zálohu fotografií, históriu verzií, zdieľanie zašifrovaných súborov a ďalšie."
-      ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Špeciálne navrhnutý NetShield chráni vaše zariadenia a zrýchľuje vaše prehliadanie tým, že blokuje reklamy, sledovače a malvér."
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Úložný priestor je zdieľaný medzi všetkými službami ${ BRAND_NAME }."
@@ -1799,6 +1751,9 @@
       ],
       "Application problem": [
         "Problém aplikácie"
+      ],
+      "Black Friday": [
+        "Black Friday"
       ],
       "Bridge problem": [
         "Problém s aplikáciou Bridge"
@@ -3469,6 +3424,39 @@
         "Prioritná podpora"
       ]
     },
+    "Duo offer": {
+      "/month": [
+        "/mesiac"
+      ],
+      "1 TB of storage to share": [
+        "1 TB úložiska na zdieľanie"
+      ],
+      "2 user accounts": [
+        "2 používateľské účty"
+      ],
+      "All premium features from your current plan": [
+        "Všetky prémiové funkcie z vášho aktuálneho plánu"
+      ],
+      "Only": [
+        "Iba"
+      ]
+    },
+    "Duo offer: Link": {
+      "Double your storage": [
+        "Zdvojnásobte svoje úložisko"
+      ],
+      "Share your plan": [
+        "Zdieľajte váš plán"
+      ]
+    },
+    "Duo offer: Title": {
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Zdvojnásobte svoje úložisko s ${ BRAND_NAME } Duo"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "Zdieľajte výhody vášho plánu s ${ BRAND_NAME } Duo"
+      ]
+    },
     "Easy switch": {
       "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
         "Na preposielanie emailov z ${ MAX_SYNC_PAID_USER } účtu prejdite na ${ planName }.",
@@ -4691,8 +4679,14 @@
       "Continue": [
         "Pokračovať"
       ],
+      "Encrypted cloud storage for files, photos and documents": [
+        "Šifrované cloudové úložisko na súbory, fotografie a dokumenty"
+      ],
       "Fastest VPN servers": [
         "Najrýchlejšie VPN servery"
+      ],
+      "More premium features": [
+        "Viac prémiových funkcií"
       ],
       "Remove": [
         "Odstrániť"
@@ -6014,6 +6008,9 @@
       "Change your password": [
         "Zmeňte si heslo"
       ],
+      "Choose a plan that works best for you.": [
+        "Vyberte si plán, ktorý vám najviac vyhovuje."
+      ],
       "Choose an Entity ID to continue.": [
         "Pre pokračovanie vyberte ID subjektu."
       ],
@@ -6037,6 +6034,9 @@
       ],
       "Connection data will be available in around 1 hour.": [
         "Údaje o pripojení budú k dispozícii približne o 1 hodinu."
+      ],
+      "Continue": [
+        "Pokračovať"
       ],
       "Continue to allow **${ affiliationsText }** from **${ organizationValue.Name }** to join your ${ BRAND_NAME } organization.": [
         "Pokračujte pre povolenie **${ affiliationsText }** z **${ organizationValue.Name }** na pripojenie k vašej organizácii ${ BRAND_NAME }."
@@ -7414,6 +7414,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navýšte teraz a získajte prémiové funkcie, produkty a úložisko za špeciálnu cenu"
+      ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "Zvýšte si úroveň, aby ste si zachovali svoje ${ planTitle } výhody."
       ],
       "Upgrade to Professional or a higher plan to unlock": [
         "Zvýšiť úroveň na Professional alebo vyšší plán na odomknutie"
@@ -9289,6 +9292,9 @@
       "View user sign-in, recovery and security events.": [
         "Zobraziť udalosti prihlásenia, obnovenia a bezpečnosti používateľa."
       ],
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "Vaša bezplatná skúšobná verzia skončila. ${ nonAutoRenewalAction }"
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Vaša bezplatná skúšobná verzia sa skončila. Prístup k vášmu účtu bude čoskoro deaktivovaný. ${ action }"
       ]
@@ -10543,11 +10549,17 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } ponuka končí dnes!"
       ],
+      "Don't show this again": [
+        "Nabudúce nezobrazovať"
+      ],
       "Don’t show this again": [
         "Nabudúce nezobrazovať"
       ],
       "Don’t show this offer again": [
         "Túto ponuku už nezobrazovať"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Získajte ${ BRAND_NAME } Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "Získajte ${ BRAND_NAME } Unlimited"
@@ -11754,6 +11766,9 @@
       "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Posledná šanca vyskúšať všetky pokročilé funkcie, ktoré ponúka **${ planTitle }**."
       ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "Po začatí platnosti predplatného môžete do 30 dní predplatné zrušiť a získať pomernú refundáciu."
+      ],
       "Refer friends": [
         "Odporučiť priateľov"
       ],
@@ -12598,9 +12613,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "1 user": [
-        "1 používateľ"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -14448,6 +14460,9 @@
       "Domain names": [
         "Názvy domén"
       ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Zdvojnásobte svoje úložisko s ${ BRAND_NAME } Duo"
+      ],
       "Downgrade account": [
         "Znížiť úroveň účtu"
       ],
@@ -14573,6 +14588,9 @@
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Získajte ${ vpnPlus } pre prístup ku všetkým serverom"
+      ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Získajte **${ referralInfo.uiData.refereeRewardAmount }** v kreditoch s ${ planTitle }"
       ],
       "Get complete privacy coverage": [
         "Získajte kompletnú ochranu súkromia"
@@ -14939,6 +14957,9 @@
       ],
       "Upgrade to ${ planName }": [
         "Navýšiť na ${ planName }"
+      ],
+      "Upgrade to keep your premium benefits.": [
+        "Zvýšte si úroveň, aby ste si zachovali svoje prémiové výhody."
       ],
       "Upgrade your network protection with dedicated servers": [
         "Vylepšite ochranu vašej siete pomocou dedikovaných serverov"
@@ -15856,6 +15877,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Bezplatná skúšobná verzia končí ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Vaše skúšobné obdobie skončí dňa ${ textDate }. Ak ho zrušíte pred ${ textDate }, nebudú vám účtované žiadne poplatky. ${ action }"
       ]
     },
     "Warning for domain modal": {
