@@ -238,11 +238,17 @@
       "Create": [
         "Creare"
       ],
+      "Create a new bookings page": [
+        "Creare pagină nouă de programare"
+      ],
       "Create a new contact group": [
         "Creare grup de contacte"
       ],
       "Create and copy alias": [
         "Creare și copiere alias"
+      ],
+      "Create booking page": [
+        "Creare pagină de rezervări"
       ],
       "Create calendar": [
         "Creare calendar"
@@ -349,6 +355,9 @@
       ],
       "Expand video conferencing widget": [
         "Extindere instrument pentru videoconferințe"
+      ],
+      "Explore other plans": [
+        "Explorare alte planuri"
       ],
       "Export": [
         "Exportare"
@@ -814,6 +823,9 @@
       ],
       "Submit": [
         "Trimitere"
+      ],
+      "Subscribe now": [
+        "Abonați-vă acum"
       ],
       "Switch or add account": [
         "Schimbare sau adăugare cont"
@@ -1289,15 +1301,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "1 user": [
-        "Un utilizator"
-      ],
-      "3 TB": [
-        "3 TiB"
-      ],
-      "6 users": [
-        "6 utilizatori"
-      ],
       "Premium Password Manager": [
         "Manager de parole premium"
       ]
@@ -1322,35 +1325,14 @@
       "${ storageSize } storage": [
         "${ storageSize } spațiu de stocare"
       ],
-      "1 TB total": [
-        "1 TiB total"
-      ],
-      "1 user": [
-        "Un utilizator"
-      ],
       "1 user account": [
         "Un cont de utilizator"
       ],
-      "10 email addresses": [
-        "10 adrese de e-mail"
-      ],
-      "2 users": [
-        "Doi utilizatori"
-      ],
-      "3 TB": [
-        "3 TiB"
+      "200 GB storage: 40x your current plan": [
+        "200 GiB stocare: de 40 de ori planul actual"
       ],
       "6 user accounts": [
         "6 conturi de utilizator"
-      ],
-      "6 users": [
-        "6 utilizatori"
-      ],
-      "8500+ servers across 110+ countries": [
-        "Peste 8.500 de servere în peste 110 de țări"
-      ],
-      "Ad-blocker and malware protection": [
-        "Protecție programe malițioase și blocare reclame"
       ],
       "Admin panel to manage your family": [
         "Panou de administrare pentru gestionarea familiei"
@@ -1361,9 +1343,6 @@
       "Easily add or remove users": [
         "Adăugare și eliminare ușoară utilizatori"
       ],
-      "High speed streaming": [
-        "Transmisii în flux de mare viteză"
-      ],
       "One-time payment, lifetime deal": [
         "O singură plată, ofertă pe viață"
       ],
@@ -1373,14 +1352,8 @@
       "Password health alerts": [
         "Alerte stare parole"
       ],
-      "Private photo backup": [
-        "Conservare fotografii private"
-      ],
-      "Protect 10 devices at a time": [
-        "Protejare 10 dispozitive simultan"
-      ],
-      "Secure file storage & sharing": [
-        "Stocare și partajare securizată fișiere"
+      "Recover previous file versions": [
+        "Recuperați versiunile anterioare ale fișierelor"
       ],
       "Unlimited folders, labels and filters": [
         "Foldere, etichete și filtre nelimitate"
@@ -1390,17 +1363,14 @@
       ],
       "Use your own email domain": [
         "Utilizați propriul domeniu de e-mail"
-      ],
-      "Version history": [
-        "Istoric versiuni fișiere"
-      ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Facturat cu ${ amount } o singură dată"
+      ],
+      "forever": [
+        "permanent"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Se reînnoiește lunar cu ${ regularAmount }."
@@ -1409,9 +1379,6 @@
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
         "Accesați conținutul blocat și navigați în mod privat. Include peste 8.500 de servere în peste 110 țări, 10 dispozitive simultan, transmisii în flux la viteză maximă, blocare reclame și protecție malware, accelerator VPN și altele."
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Accesați de oriunde conținutul serviciilor de transmisii în flux, inclusiv Netflix, Disney +, Prime Video și altele."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Autentificări securizate pe toate dispozitivele. Include aliasuri hide-my-email nelimitate, partajare, A2F integrată, ${ DARK_WEB_MONITORING_NAME } și altele."
@@ -1434,9 +1401,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Securizați-vă fișierele cu stocare criptată în cloud. Include editor de documente online, conservare pentru fotografii, istoricul versiunilor, partajarea fișierelor criptate și multe altele."
-      ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield special conceput să vă protejeze dispozitivele și să vă accelereze navigarea prin blocarea reclamelor, monitorizării și a programelor malițioase."
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Spațiul de stocare este partajat între toate serviciile ${ BRAND_NAME }."
@@ -1473,6 +1437,9 @@
       ],
       "Application problem": [
         "Problemă aplicație"
+      ],
+      "Black Friday": [
+        "Vinerea Neagră"
       ],
       "Bridge problem": [
         "Problemă „Bridge”"
@@ -3284,6 +3251,39 @@
         "Adăugare calendar"
       ]
     },
+    "Duo offer": {
+      "/month": [
+        "/lună"
+      ],
+      "1 TB of storage to share": [
+        "1 TiB de stocare pentru partajare"
+      ],
+      "2 user accounts": [
+        "2 conturi de utilizator"
+      ],
+      "All premium features from your current plan": [
+        "Toate funcțiile premium din planul curent"
+      ],
+      "Only": [
+        "Doar"
+      ]
+    },
+    "Duo offer: Link": {
+      "Double your storage": [
+        "Dublați-vă spațiul de stocare"
+      ],
+      "Share your plan": [
+        "Partajați-vă planul"
+      ]
+    },
+    "Duo offer: Title": {
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Dublați-vă spațiul de stocare cu ${ BRAND_NAME } Duo"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "Partajați beneficiile planului cu ${ BRAND_NAME } Duo"
+      ]
+    },
     "Duplicate event button tooltip": {
       "Duplicate event": [
         "Duplicare eveniment"
@@ -4407,6 +4407,12 @@
       ]
     },
     "Feature": {
+      "Encrypted cloud storage for files, photos and documents": [
+        "Stocare în cloud criptată pentru fișiere, fotografii și documente."
+      ],
+      "More premium features": [
+        "Mai multe funcții premium"
+      ],
       "Unlimited hide-my-email aliases": [
         "Aliasuri hide-my-email nelimitate"
       ]
@@ -5089,6 +5095,9 @@
       "30-day money-back guarantee.": [
         "Garanția returnării banilor în 30 de zile."
       ],
+      "A booking slot cannot be added in the past.": [
+        "Un interval de rezervare nu poate fi adăugat în trecut."
+      ],
       "A cancellation email will be sent to removed participants.": [
         "Un e-mail de anulare va fi trimis participanților eliminați."
       ],
@@ -5245,6 +5254,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Se verifică contactul ${ progress } din ${ max }..."
       ],
+      "Choose a plan that works best for you.": [
+        "Alegeți un plan care vi se potrivește cel mai bine."
+      ],
       "Clear data": [
         "Ștergere date"
       ],
@@ -5271,6 +5283,9 @@
       ],
       "Contact unassigned from group ${ contactGroupName }": [
         "Contactul a fost eliminat din grupul ${ contactGroupName }."
+      ],
+      "Continue": [
+        "Continuare"
       ],
       "Copy the link to clipboard": [
         "Copiați legătura în memorie"
@@ -6005,6 +6020,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Modernizați acum contul pentru a accesa funcții premium, produse și stocare la un preț special."
       ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "Îmbunătățiți contul pentru a vă menține beneficiile din ${ planTitle }."
+      ],
       "Uppercase and lowercase letters": [
         "Litere mari și mici"
       ],
@@ -6666,6 +6684,9 @@
       "Don't show this again": [
         "Nu mai arăta asta"
       ],
+      "Duration": [
+        "Durata"
+      ],
       "e.g., Amazon, eBay, Etsy": [
         "ex. Amazon, eBay, Etsy"
       ],
@@ -6953,6 +6974,9 @@
       "Time zone": [
         "Fus orar"
       ],
+      "Title": [
+        "Titlu"
+      ],
       "To: ${ toEmail }": [
         "Către: ${ toEmail }"
       ],
@@ -7087,6 +7111,9 @@
     "Link": {
       "Add a gift code": [
         "Adăugare cod cadou"
+      ],
+      "Bookings pages": [
+        "Pagini de rezervare"
       ],
       "Calendars": [
         "Calendare"
@@ -7292,6 +7319,9 @@
       ],
       "Re:": [
         "Rs:"
+      ],
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "Perioada de probare gratuită s-a încheiat. ${ nonAutoRenewalAction }"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Perioada de probare a expirat. Accesul la cont va fi dezactivat în curând. ${ action }"
@@ -8694,11 +8724,17 @@
       "${ pricingTitle } offer expires today!": [
         "Oferta cu ${ pricingTitle } expiră astăzi!"
       ],
+      "Don't show this again": [
+        "Nu mai arăta asta"
+      ],
       "Don’t show this again": [
         "Nu mai arăta asta"
       ],
       "Don’t show this offer again": [
         "Nu mai arăta această ofertă"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Luați ${ BRAND_NAME } Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "Obțineți ${ BRAND_NAME } Unlimited"
@@ -9564,8 +9600,23 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } per recomandare"
       ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Dacă anulați înainte de această dată**, contul va fi **retrogradat** la ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } când se termină perioada de probare."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Dacă nu vă abonați**, contul va fi **retrogradat** la ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Dacă nu anulați,** planul complet va începe și veți primi **${ referrerRewardAmount }** în credite."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Dacă vă abonați înainte de această dată**, veți primi **${ referrerRewardAmount }** în credite."
+      ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Câștigați până la ${ maxRewardAmount } în credite. Veți primi ${ referrerRewardAmount } atunci când persoana pe care o invitați se abonează la un plan ${ BRAND_NAME }."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Bucurați-vă de **${ planTitle }** gratuit până la **${ textDate }**."
       ],
       "Friend joined": [
         "Persoană alăturată",
@@ -9583,8 +9634,14 @@
       "Invited friends": [
         "Persoane invitate"
       ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Ultima șansă de a explora toate funcțiile puternice pe care le oferă **${ planTitle }**."
+      ],
       "More sharing options": [
         "Mai multe opțiuni de partajare"
+      ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "După ce începe abonamentul complet, încă puteți anula în termen de 30 de zile și puteți obține o rambursare proporțională."
       ],
       "Refer friends": [
         "Recomandați persoane"
@@ -9594,6 +9651,14 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Puteți obține până la **${ maxRewardAmount }** în credite."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Mai aveți **${ daysRemaining } zi** pentru a explora toate funcțiile puternice pe care le oferă **${ planTitle }**.",
+        "Mai aveți **${ daysRemaining } zile** pentru a explora toate funcțiile puternice pe care vi le oferă **${ planTitle }**.",
+        "Mai aveți **${ daysRemaining } de zile** pentru a explora toate funcțiile puternice pe care **${ planTitle }** le are de oferit."
+      ],
+      "your subscription": [
+        "abonament personal"
       ]
     },
     "Reload event button tooltip": {
@@ -10015,9 +10080,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "1 user": [
-        "Un utilizator"
-      ],
       "3 TB": [
         "3 TiB"
       ],
@@ -11224,6 +11286,9 @@
       "Birthday": [
         "Data nașterii"
       ],
+      "Booking page": [
+        "Pagina de rezervare"
+      ],
       "Calendar": [
         "Calendar"
       ],
@@ -11348,6 +11413,9 @@
       "Does not repeat": [
         "Nu se repetă"
       ],
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Dublați-vă spațiul de stocare cu ${ BRAND_NAME } Duo"
+      ],
       "Downgrade account": [
         "Retrogradare cont"
       ],
@@ -11429,6 +11497,9 @@
       "Exporting contacts": [
         "Exportare contacte"
       ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Obțineți **${ referralInfo.uiData.refereeRewardAmount }** în credite cu ${ planTitle }"
+      ],
       "Get more from your VPN": [
         "Obțineți mai mult de la VPN"
       ],
@@ -11461,6 +11532,9 @@
       ],
       "How does it work?": [
         "Cum funcționează?"
+      ],
+      "How your free trial works": [
+        "Cum funcționează probarea gratuită"
       ],
       "Human verification": [
         "Verificare persoană"
@@ -11736,6 +11810,9 @@
       ],
       "Upgrade to ${ planName }": [
         "Treceți la ${ planName }"
+      ],
+      "Upgrade to keep your premium benefits.": [
+        "Îmbunătățiți contul pentru a vă menține beneficiile premium."
       ],
       "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
         "Modernizați-vă productivitatea cu ${ formattedPrice } cu ${ planName }"
@@ -12132,6 +12209,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Perioada de probare se încheie în curând la ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Perioada de probare se va încheia la ${ textDate }. Nu vă vom taxa dacă anulați înainte de ${ textDate }. ${ action }"
       ]
     },
     "Warning in modal to accept calendar invitation; Description": {

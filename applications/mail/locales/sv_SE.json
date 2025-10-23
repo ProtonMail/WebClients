@@ -570,6 +570,9 @@
       "Explore ${ VPN_APP_NAME }": [
         "Utforska ${ VPN_APP_NAME }"
       ],
+      "Explore other plans": [
+        "Utforska andra paket"
+      ],
       "Export": [
         "Exportera"
       ],
@@ -1441,6 +1444,9 @@
       "Submit": [
         "Skicka"
       ],
+      "Subscribe now": [
+        "Prenumerera nu"
+      ],
       "Switch or add account": [
         "Byt eller lägg till konto"
       ],
@@ -2049,15 +2055,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "1 user": [
-        "1 användare"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 användare"
-      ],
       "Premium Password Manager": [
         "Premium lösenordshanterare"
       ]
@@ -2082,35 +2079,11 @@
       "${ storageSize } storage": [
         "${ storageSize } lagringsutrymme"
       ],
-      "1 TB total": [
-        "1 TB totalt"
-      ],
-      "1 user": [
-        "1 användare"
-      ],
       "1 user account": [
         "1 användarkonto"
       ],
-      "10 email addresses": [
-        "10 e-postadresser"
-      ],
-      "2 users": [
-        "2 användare"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
       "6 user accounts": [
         "6 användarkonton"
-      ],
-      "6 users": [
-        "6 användare"
-      ],
-      "8500+ servers across 110+ countries": [
-        "8 500+ servrar i 110+ länder"
-      ],
-      "Ad-blocker and malware protection": [
-        "Annonsblockerare och skydd mot skadlig kod"
       ],
       "Admin panel to manage your family": [
         "Adminpanel för att hantera din familj"
@@ -2121,9 +2094,6 @@
       "Easily add or remove users": [
         "Lägg till eller ta bort användare enkelt"
       ],
-      "High speed streaming": [
-        "Höghastighetsstreaming"
-      ],
       "One-time payment, lifetime deal": [
         "Engångsbetalning, livstidserbjudande"
       ],
@@ -2133,15 +2103,6 @@
       "Password health alerts": [
         "Aviseringar om lösenordshälsa"
       ],
-      "Private photo backup": [
-        "Privat säkerhetskopiering av foton"
-      ],
-      "Protect 10 devices at a time": [
-        "Skydda 10 enheter åt gången"
-      ],
-      "Secure file storage & sharing": [
-        "Säker fillagring och delning"
-      ],
       "Unlimited folders, labels and filters": [
         "Obegränsat antal mappar, etiketter och filter"
       ],
@@ -2150,12 +2111,6 @@
       ],
       "Use your own email domain": [
         "Använd din egen e-postdomän"
-      ],
-      "Version history": [
-        "Versionshistorik"
-      ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -2169,9 +2124,6 @@
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
         "Få åtkomst till blockerat innehåll och surfa privat. Inkluderar 8 500+ servrar i över 110 länder, 10 enheter, höghastighetsstreaming, annonsblockerare och skydd mot skadlig kod, VPN Accelerator och mer."
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Få åtkomst till innehåll på streamingtjänster inklusive Netflix, Disney+, Prime Video och mer var som helst."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Säkra inloggningar på alla dina enheter. Inkluderar obegränsat antal hide-my-email-alias, delning, integrerad 2FA, ${ DARK_WEB_MONITORING_NAME } och mer."
@@ -2192,9 +2144,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Säkra dina filer med krypterad molnlagring. Inkluderar online dokumentredigerare, säkerhetskopiering av foto, versionshistorik, krypterad fildelning och mer."
-      ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Specialdesignade NetShield skyddar dina enheter och snabbar upp din surfning genom att blockera annonser, spårare och skadlig kod."
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagringsutrymme delas mellan alla ${ BRAND_NAME }-tjänster."
@@ -2231,6 +2180,9 @@
       ],
       "Application problem": [
         "Problem med applikation"
+      ],
+      "Black Friday": [
+        "Black Friday"
       ],
       "Bridge problem": [
         "Problem med Bridge"
@@ -4340,6 +4292,19 @@
         "Endast"
       ]
     },
+    "Duo offer: Link": {
+      "Double your storage": [
+        "Dubbla ditt lagringsutrymme"
+      ],
+      "Share your plan": [
+        "Dela ditt paket"
+      ]
+    },
+    "Duo offer: Title": {
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Dubbla ditt lagringsutrymme med ${ BRAND_NAME } Duo"
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Textfält är valfria. Informationen du anger i detta formulär kommer endast att visas på fakturor som utfärdas i framtiden och kommer inte att påverka befintliga fakturor."
@@ -5519,6 +5484,12 @@
       ]
     },
     "Feature": {
+      "Encrypted cloud storage for files, photos and documents": [
+        "Krypterad molnlagring för filer, foton och dokument"
+      ],
+      "More premium features": [
+        "Fler premiumfunktioner"
+      ],
       "Unlimited hide-my-email aliases": [
         "Obegränsat antal hide-my-email-alias"
       ]
@@ -6924,6 +6895,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Kontrollerar kontakt ${ progress } av ${ max }..."
       ],
+      "Choose a plan that works best for you.": [
+        "Välj ett paket som passar dig bäst."
+      ],
       "Clear browser data": [
         "Rensa webbläsardata"
       ],
@@ -6965,6 +6939,9 @@
       ],
       "Contact unassigned from group ${ contactGroupName }": [
         "Tilldelning borttagen för kontakt från grupp ${ contactGroupName }"
+      ],
+      "Continue": [
+        "Fortsätt"
       ],
       "Copied to clipboard": [
         "Kopierat till urklipp"
@@ -12593,8 +12570,23 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } per hänvisning"
       ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Om du avbryter före detta datum** kommer du att **nedgraderas** till ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } när provperioden slutar."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Om du inte prenumererar** kommer du att **nedgraderas** till ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Om du inte avbryter** kommer ditt fullständiga paket att starta och du får **${ referrerRewardAmount }** i krediter."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Om du prenumererar före detta datum** får du **${ referrerRewardAmount }** i krediter."
+      ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Tjäna upp till ${ maxRewardAmount } i kredit. Du får ${ referrerRewardAmount } när personen du bjuder in prenumererar på ett ${ BRAND_NAME }-paket."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Njut av **${ planTitle }** gratis fram till **${ textDate }**."
       ],
       "Friend joined": [
         "Vän gick med",
@@ -12610,6 +12602,9 @@
       "Invited friends": [
         "Inbjudna vänner"
       ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Sista chansen att utforska alla kraftfulla funktioner som **${ planTitle }** har att erbjuda."
+      ],
       "More sharing options": [
         "Fler delningsalternativ"
       ],
@@ -12621,6 +12616,13 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Du kan få upp till **${ maxRewardAmount }** i kredit."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Du har **${ daysRemaining } dag kvar** att utforska alla kraftfulla funktioner som **${ planTitle }** har att erbjuda.",
+        "Du har **${ daysRemaining } dagar kvar** för att utforska alla kraftfulla funktioner som **${ planTitle }** har att erbjuda."
+      ],
+      "your subscription": [
+        "din prenumeration"
       ]
     },
     "Remaining days before the message expire": {
@@ -13145,9 +13147,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "1 user": [
-        "1 användare"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -14858,6 +14857,9 @@
       "Forward": [
         "Vidarebefordrad"
       ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Få **${ referralInfo.uiData.refereeRewardAmount }** i krediter med ${ planTitle }"
+      ],
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "Skaffa full åtkomst till ${ CALENDAR_APP_NAME }"
       ],
@@ -14896,6 +14898,9 @@
       ],
       "How to update your email address": [
         "Hur man uppdaterar din e-postadress"
+      ],
+      "How your free trial works": [
+        "Hur din gratis provperiod fungerar"
       ],
       "Human verification": [
         "Mänsklig verifiering"
@@ -15401,6 +15406,9 @@
       ],
       "Upgrade to ${ planName }": [
         "Uppgradera till ${ planName }"
+      ],
+      "Upgrade to keep your premium benefits.": [
+        "Uppgradera för att behålla dina premiumförmåner."
       ],
       "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
         "Uppgradera din produktivitet för ${ formattedPrice } med ${ planName }"
