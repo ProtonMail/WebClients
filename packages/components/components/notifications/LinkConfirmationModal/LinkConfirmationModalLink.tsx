@@ -2,8 +2,6 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
 import Copy from '@proton/components/components/button/Copy';
-import Checkbox from '@proton/components/components/input/Checkbox';
-import Label from '@proton/components/components/label/Label';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -11,12 +9,9 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 interface Props {
     link: string;
     isPunnyCoded: boolean;
-    value: boolean;
-    onToggle: () => void;
-    isOutside: boolean;
 }
 
-const LinkConfirmationModalLink = ({ link, isPunnyCoded, value, onToggle, isOutside = false }: Props) => {
+const LinkConfirmationModalLink = ({ link, isPunnyCoded }: Props) => {
     const { createNotification } = useNotifications();
     const handleCopy = () => {
         createNotification({
@@ -55,13 +50,6 @@ const LinkConfirmationModalLink = ({ link, isPunnyCoded, value, onToggle, isOuts
                         {c('Info').t`Learn more`}
                     </Href>
                 </p>
-            )}
-
-            {!isOutside && (
-                <Label className="flex">
-                    <Checkbox checked={value} onChange={onToggle} className="mr-2" />
-                    {c('Label').t`Don't ask again`}
-                </Label>
             )}
         </>
     );
