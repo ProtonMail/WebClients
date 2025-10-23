@@ -1504,15 +1504,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "1 user": [
-        "1 uživatel"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 uživatelů"
-      ],
       "Premium Password Manager": [
         "Prémiový správce hesel"
       ]
@@ -1570,35 +1561,14 @@
       "${ storageSize } storage": [
         "${ storageSize } úložiště"
       ],
-      "1 TB total": [
-        "1 TB celkem"
-      ],
-      "1 user": [
-        "1 uživatel"
-      ],
       "1 user account": [
         "1 uživatelský účet"
       ],
-      "10 email addresses": [
-        "10 e-mailových adres"
-      ],
-      "2 users": [
-        "2 uživatelé"
-      ],
-      "3 TB": [
-        "3 TB"
+      "200 GB storage: 40x your current plan": [
+        "200 GB prostoru: 40x váš současný tarif"
       ],
       "6 user accounts": [
         "6 uživatelských účtů"
-      ],
-      "6 users": [
-        "6 uživatelů"
-      ],
-      "8500+ servers across 110+ countries": [
-        "Více než 8500 serverů ve více než 110 zemích"
-      ],
-      "Ad-blocker and malware protection": [
-        "Blokování reklam a ochrana před malware"
       ],
       "Admin panel to manage your family": [
         "Panel správce pro správu rodiny"
@@ -1609,9 +1579,6 @@
       "Easily add or remove users": [
         "Snadné přidávání a odebírání uživatelů"
       ],
-      "High speed streaming": [
-        "Vysokorychlostní streamování"
-      ],
       "One-time payment, lifetime deal": [
         "Jednorázová platba, doživotní přístup"
       ],
@@ -1621,14 +1588,8 @@
       "Password health alerts": [
         "Upozornění na sílu hesla"
       ],
-      "Private photo backup": [
-        "Soukromé zálohování fotek"
-      ],
-      "Protect 10 devices at a time": [
-        "Chraňte 10 zařízení současně"
-      ],
-      "Secure file storage & sharing": [
-        "Bezpečné ukládání souborů a sdílení"
+      "Recover previous file versions": [
+        "Obnova předchozích verzí souborů"
       ],
       "Unlimited folders, labels and filters": [
         "Neomezený počet složek, štítků a filtrů"
@@ -1638,17 +1599,14 @@
       ],
       "Use your own email domain": [
         "Použijte svou vlastní e-mailovou doménu"
-      ],
-      "Version history": [
-        "Historie verzí"
-      ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Účtováno ${ amount } jednorázově"
+      ],
+      "forever": [
+        "navždy"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Obnovuje se po 1 měsíci za ${ regularAmount }."
@@ -1657,9 +1615,6 @@
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
         "Přístup k blokovanému obsahu a soukromé procházení internetu. K dispozici je více než 8500 serverů ve více než 110 zemích, možnost připojit až 10 zařízení, vysokorychlostní streamování, blokování reklam a ochrana před malware, VPN Accelerator a další."
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Přístup k obsahu streamovacích služeb, včetně Netflix, Disney+, Prime Video a dalších, odkudkoli."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Bezpečené přihlašování na všech zařízeních. Obsahuje neomezený počet aliasů hide-my-email, sdílení, integrované 2FA, Sledování ${ DARK_WEB_MONITORING_NAME } a další funkce."
@@ -1684,9 +1639,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Obsahuje online editor dokumentů, zálohování fotografií, historii verzí souborů, šifrované sdílení souborů a další funkce."
-      ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield chrání vaše zařízení a zrychluje prohlížení tím, že blokuje reklamy, sledovací prvky a malware."
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Úložný prostor je sdílen mezi všemi službami ${ BRAND_NAME }."
@@ -1799,6 +1751,9 @@
       ],
       "Application problem": [
         "Problém s aplikací"
+      ],
+      "Black Friday": [
+        "Black Friday"
       ],
       "Bridge problem": [
         "Problém s aplikací Bridge"
@@ -3471,10 +3426,10 @@
     },
     "Duo offer": {
       "/month": [
-        "/měsíčně"
+        "/měsíc"
       ],
       "1 TB of storage to share": [
-        "1 TB úložiště k sdílení"
+        "1 TB prostoru ke sdílení"
       ],
       "2 user accounts": [
         "2 uživatelské účty"
@@ -3484,6 +3439,22 @@
       ],
       "Only": [
         "Pouze"
+      ]
+    },
+    "Duo offer: Link": {
+      "Double your storage": [
+        "Zdvojnásobte své úložiště"
+      ],
+      "Share your plan": [
+        "Sdílejte svůj tarif"
+      ]
+    },
+    "Duo offer: Title": {
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Zdvojnásobte své úložiště s ${ BRAND_NAME } Duo"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "Sdílejte výhody svého tarifu s ${ BRAND_NAME } Duo"
       ]
     },
     "Easy switch": {
@@ -4708,8 +4679,14 @@
       "Continue": [
         "Pokračovat"
       ],
+      "Encrypted cloud storage for files, photos and documents": [
+        "Šifrované cloudové úložiště pro soubory, fotky a dokumenty"
+      ],
       "Fastest VPN servers": [
         "Nejrychlejší servery VPN"
+      ],
+      "More premium features": [
+        "Další prémiové funkce"
       ],
       "Remove": [
         "Odebrat"
@@ -6031,6 +6008,9 @@
       "Change your password": [
         "Změňte své heslo"
       ],
+      "Choose a plan that works best for you.": [
+        "Vyberte tarif, který vám nejlépe vyhovuje."
+      ],
       "Choose an Entity ID to continue.": [
         "Pro pokračování vyberte ID subjektu."
       ],
@@ -6054,6 +6034,9 @@
       ],
       "Connection data will be available in around 1 hour.": [
         "Údaje o připojení budou k dispozici přibližně za 1 hodinu."
+      ],
+      "Continue": [
+        "Pokračovat"
       ],
       "Continue to allow **${ affiliationsText }** from **${ organizationValue.Name }** to join your ${ BRAND_NAME } organization.": [
         "Pokračujte v povolení **${ affiliationsText }** z **${ organizationValue.Name }** k připojení k vaší organizaci ${ BRAND_NAME }."
@@ -7434,6 +7417,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navyšte tarif nyní a získejte tím prémiové funkce, produkty a úložiště za speciální cenu"
+      ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "Navyšte tarif a zachovejte si své výhody ${ planTitle }."
       ],
       "Upgrade to Professional or a higher plan to unlock": [
         "Navyšte na tarif Professional nebo vyšší, abyste odemkli"
@@ -9312,6 +9298,9 @@
       "View user sign-in, recovery and security events.": [
         "Zobrazit události přihlášení, obnovení a zabezpečení uživatele."
       ],
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "Bezplatná zkušební verze skončila. ${ nonAutoRenewalAction }"
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Vaše bezplatná zkušební verze skončila. Přístup k vašemu účtu bude brzy deaktivován. ${ action }"
       ]
@@ -10570,7 +10559,7 @@
         "Tuto nabídku již nezobrazovat"
       ],
       "Get ${ BRAND_NAME } Duo": [
-        "Získat ${ BRAND_NAME } Duo"
+        "Získejte ${ BRAND_NAME } Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "Získejte ${ BRAND_NAME } Unlimited"
@@ -11801,6 +11790,9 @@
       "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Poslední šance prozkoumat všechny výkonné funkce, které **${ planTitle }** nabízí."
       ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "Po zahájení plného předplatného jej můžete stále do 30 dnů zrušit a získat poměrnou částku zpět."
+      ],
       "Refer friends": [
         "Doporučte přátele"
       ],
@@ -12645,9 +12637,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "1 user": [
-        "1 uživatel"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -14618,6 +14607,9 @@
       "Get ${ vpnPlus } to access all servers": [
         "Získejte ${ vpnPlus } pro přístup ke všem serverům"
       ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Získejte **${ referralInfo.uiData.refereeRewardAmount }** v kreditech s ${ planTitle }"
+      ],
       "Get complete privacy coverage": [
         "Získejte kompletní ochranu soukromí"
       ],
@@ -14983,6 +14975,9 @@
       ],
       "Upgrade to ${ planName }": [
         "Navýšit na ${ planName }"
+      ],
+      "Upgrade to keep your premium benefits.": [
+        "Navyšte tarif a zachovejte si své prémiové výhody"
       ],
       "Upgrade your network protection with dedicated servers": [
         "Vylepšete ochranu své sítě pomocí dedikovaných serverů"
@@ -15923,6 +15918,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Bezplatná zkušební verze končí ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Vaše zkušební verze skončí ${ textDate }. Pokud ji zrušíte před ${ textDate }, nebudou vám účtovány žádné poplatky. ${ action }"
       ]
     },
     "Warning for domain modal": {
