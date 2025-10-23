@@ -14,8 +14,8 @@ import { UnlimitedToDuoMessageType } from './interface';
 const getTips = (): UnlimitedToDuoTipProps[] => [
     {
         type: UnlimitedToDuoMessageType.DoubleYourStorage,
-        cta: c('Duo offer: Link').t`Double your storage`,
-        spotlightTitle: c('Duo offer: Title').t`Double your storage with ${BRAND_NAME} Duo`,
+        cta: c('Duo offer: Link').t`Get 4x more storage`,
+        spotlightTitle: c('Duo offer: Title').t`Get 4x more storage with ${BRAND_NAME} Duo`,
         features: featureListStorageUpgrade,
     },
     {
