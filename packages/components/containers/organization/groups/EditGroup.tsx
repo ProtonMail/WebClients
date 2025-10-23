@@ -21,8 +21,7 @@ import { useLoading } from '@proton/hooks';
 import { ADDRESS_TYPE, KEY_FLAG } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type { EnhancedMember, Group } from '@proton/shared/lib/interfaces';
-import { GROUP_MEMBER_TYPE } from '@proton/shared/lib/interfaces';
-import { GroupPermissions } from '@proton/shared/lib/interfaces';
+import { GROUP_MEMBER_TYPE, GroupPermissions } from '@proton/shared/lib/interfaces';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
 
 import DiscardGroupChangesPrompt from './DiscardGroupChangesPrompt';
@@ -114,6 +113,19 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
 
     const changeDetected = dirty || !!newGroupMembers.length;
 
+    const onCancel = () => {
+        if (changeDetected) {
+            setDiscardChangesModal(true);
+        } else {
+            actions.onDiscardChanges();
+        }
+    };
+    const onSave = () => {
+        if (isValid) {
+            void withLoading(actions.onSaveGroup(newEmailsToAdd));
+        }
+    };
+
     useTriggerDiscardModal(() => {
         if (changeDetected) {
             setDiscardChangesModal(true);
@@ -142,16 +154,31 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
     useEffect(() => {
         if (hideMail && uiState === 'new') {
             const suggestedLocalPart = getAddressSuggestedLocalPart(formValues.name, organization?.Name, hideMail);
-            setFieldValue('address', suggestedLocalPart);
+            void setFieldValue('address', suggestedLocalPart);
         }
     }, [formValues.name]);
+
+    const filterOutListedMembers = (newMembers: NewGroupMember[]) => {
+        const exisitingEmails = new Set([
+            ...groupMembers?.map((member) => member?.Email),
+            ...newGroupMembers.map((newMember) => newMember.Address),
+        ]);
+        const newMembersToAdd = newMembers.filter((member) => !exisitingEmails.has(member.Address));
+        if (newMembersToAdd.length === 0) {
+            createNotification({ text: c('Info').t`All members have been added.` });
+            return [];
+        }
+        return newMembersToAdd;
+    };
 
     const handleAddNewMembers = async (newMembers: NewGroupMember[]) => {
         const willDisableE2ee = newMembers.some((member) => member.GroupMemberType !== GROUP_MEMBER_TYPE.INTERNAL);
         if (willDisableE2ee && !e2eeWillBeDisabled) {
             setWillDisableE2eeModal(true);
         }
-        setNewGroupMembers((prev) => [...prev, ...newMembers]);
+        const newMembersToAdd = filterOutListedMembers(newMembers);
+
+        setNewGroupMembers((prev) => [...prev, ...newMembersToAdd]);
     };
 
     const handleWillDisableE2ee = () => {
@@ -165,33 +192,22 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
     };
 
     const handleAddAllOrganizationMembers = async () => {
-        const exisitingEmails = new Set([
-            ...groupMembers?.map((member) => member?.Email),
-            ...newGroupMembers.map((newMember) => newMember.Address),
-        ]);
+        const groupMembers = Object.keys(memberAddressMap).map((email) => {
+            const isExternal = emailIsExternalMap[email];
+            const hasKeys = !!memberAddressMap[email];
 
-        const newMembersToAdd = Object.keys(memberAddressMap)
-            .filter((email) => !exisitingEmails.has(email))
-            .map((email) => {
-                const isExternal = emailIsExternalMap[email];
-                const hasKeys = !!memberAddressMap[email];
+            let GroupMemberType = GROUP_MEMBER_TYPE.INTERNAL;
+            if (isExternal) {
+                GroupMemberType = hasKeys ? GROUP_MEMBER_TYPE.INTERNAL_TYPE_EXTERNAL : GROUP_MEMBER_TYPE.EXTERNAL;
+            }
 
-                let GroupMemberType = GROUP_MEMBER_TYPE.INTERNAL;
-                if (isExternal) {
-                    GroupMemberType = hasKeys ? GROUP_MEMBER_TYPE.INTERNAL_TYPE_EXTERNAL : GROUP_MEMBER_TYPE.EXTERNAL;
-                }
-
-                return {
-                    Name: email,
-                    Address: email,
-                    GroupMemberType,
-                };
-            });
-
-        if (newMembersToAdd.length === 0) {
-            createNotification({ text: c('Info').t`All members have been added.` });
-            return;
-        }
+            return {
+                Name: email,
+                Address: email,
+                GroupMemberType,
+            };
+        });
+        const newMembersToAdd = filterOutListedMembers(groupMembers);
 
         const willDisableE2ee = newMembersToAdd.some((member) => member.GroupMemberType !== GROUP_MEMBER_TYPE.INTERNAL);
         if (willDisableE2ee && !e2eeWillBeDisabled) {
@@ -207,36 +223,20 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                 header={
                     <PanelHeader
                         className="flex justify-space-between"
-                        actions={(() => {
-                            return [
-                                <Button
-                                    color="weak"
-                                    key="button-cancel"
-                                    onClick={() => {
-                                        if (changeDetected) {
-                                            setDiscardChangesModal(true);
-                                        } else {
-                                            actions.onDiscardChanges();
-                                        }
-                                    }}
-                                >
-                                    {c('Action').t`Cancel`}
-                                </Button>,
-                                <Button
-                                    color="norm"
-                                    key="button-save"
-                                    disabled={!changeDetected || hasErrors}
-                                    loading={loading}
-                                    onClick={() => {
-                                        if (isValid) {
-                                            void withLoading(actions.onSaveGroup(newEmailsToAdd));
-                                        }
-                                    }}
-                                >
-                                    {c('Action').t`Save`}
-                                </Button>,
-                            ];
-                        })()}
+                        actions={[
+                            <Button color="weak" key="button-cancel" onClick={onCancel}>
+                                {c('Action').t`Cancel`}
+                            </Button>,
+                            <Button
+                                color="norm"
+                                key="button-save"
+                                disabled={!changeDetected || hasErrors}
+                                loading={loading}
+                                onClick={onSave}
+                            >
+                                {c('Action').t`Save`}
+                            </Button>,
+                        ]}
                     />
                 }
             >
@@ -263,15 +263,13 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                                     placeholder={c('placeholder').t`Add a group name`}
                                     autoFocus={uiState === 'new' ? true : undefined}
                                     value={formValues.name}
-                                    onValue={(name: string) => {
-                                        setFieldValue('name', name);
-                                    }}
+                                    onValue={(name: string) => setFieldValue('name', name)}
                                     onBlur={() => {
                                         const hasName = formValues.name !== '';
                                         const hasAddress = formValues.address !== '';
                                         if (hasName && !hasAddress) {
                                             const suggestedLocalPart = getAddressSuggestedLocalPart(formValues.name);
-                                            setFieldValue('address', suggestedLocalPart);
+                                            void setFieldValue('address', suggestedLocalPart);
                                         }
                                     }}
                                     error={errors.name}
@@ -287,9 +285,7 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                                     name="description"
                                     placeholder={c('placeholder').t`e.g. distribution list for marketing team`}
                                     value={formValues.description}
-                                    onValue={(description: string) => {
-                                        setFieldValue('description', description);
-                                    }}
+                                    onValue={(description: string) => setFieldValue('description', description)}
                                 />
                             </InputFieldStacked>
                         </InputFieldStackedGroup>
@@ -307,9 +303,7 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                                                 ? formValues.address
                                                 : formValues.address.substring(0, formValues.address.indexOf('@'))
                                         }
-                                        onValue={(address: string) => {
-                                            setFieldValue('address', address);
-                                        }}
+                                        onValue={(address: string) => setFieldValue('address', address)}
                                         error={errors.address}
                                         disabled={uiState === 'edit'} // disable until BE supports address change
                                         suffix={(() => {
@@ -339,9 +333,7 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                                         name="permissions"
                                         placeholder={c('placeholder').t`Members`}
                                         value={formValues.permissions}
-                                        onValue={(permissions: any) => {
-                                            setFieldValue('permissions', permissions);
-                                        }}
+                                        onValue={(permissions: any) => setFieldValue('permissions', permissions)}
                                     >
                                         <Option
                                             title={c('option').t`Everyone`}
@@ -369,16 +361,14 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                 />
                 <div className="mt-3 flex flex-column gap-3">
                     <div className="flex flex-column gap-3">
-                        {sortedNewGroupMembers.map((member) => {
-                            return (
-                                <NewGroupMemberItem
-                                    member={member}
-                                    handleRemoveNewMember={handleRemoveNewGroupMember}
-                                    submitting={loading}
-                                    key={member.Address}
-                                />
-                            );
-                        })}
+                        {sortedNewGroupMembers.map((member) => (
+                            <NewGroupMemberItem
+                                key={member.Address}
+                                member={member}
+                                handleRemoveNewMember={handleRemoveNewGroupMember}
+                                submitting={loading}
+                            />
+                        ))}
                     </div>
                     <GroupMemberList
                         addressToMemberMap={addressToMemberMap}
