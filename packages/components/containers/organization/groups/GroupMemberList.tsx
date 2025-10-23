@@ -65,10 +65,10 @@ const GroupMemberList = ({
                         const memberName = member?.Name ?? '';
                         return (
                             <GroupMemberItem
+                                key={memberData.ID}
+                                group={group}
                                 groupMember={memberData}
                                 memberName={memberName}
-                                group={group}
-                                key={memberData.ID}
                                 canOnlyDelete={canOnlyDelete}
                                 canChangeVisibility={canChangeVisibility}
                             />
