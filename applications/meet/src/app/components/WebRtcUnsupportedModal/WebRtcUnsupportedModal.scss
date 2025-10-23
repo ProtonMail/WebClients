@@ -1,0 +1,35 @@
+.web-rtc-unsupported-modal-backdrop {
+	backdrop-filter: blur(10px);
+}
+
+.close-web-rtc-unsupported-modal-button {
+	color: var(--text-norm);
+	background-color: var(--interaction-weak);
+
+	&:hover,
+	&:focus {
+		color: var(--text-norm);
+		background-color: var(--interaction-weak-major-1);
+	}
+}
+
+.web-rtc-unsupported-modal,
+.web-rtc-unsupported-modal-firefox {
+	box-shadow: none !important;
+	inline-size: 24.5rem !important;
+	border-radius: 1.5rem !important;
+}
+
+.web-rtc-unsupported-modal {
+	block-size: 28rem !important;
+}
+
+.web-rtc-unsupported-modal-firefox {
+	block-size: 35.5rem !important;
+}
+
+.web-rtc-unsupported-modal-content {
+	padding-block-start: 2rem;
+	text-align: center;
+	justify-content: center;
+}

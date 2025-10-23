@@ -11,6 +11,7 @@ import { useCreateInstantMeeting } from '@proton/meet/hooks/useCreateInstantMeet
 import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
+import { isWebRtcSupported } from '@proton/shared/lib/helpers/isWebRtcSupported';
 import { CustomPasswordState } from '@proton/shared/lib/interfaces/Meet';
 import { message as sanitizeMessage } from '@proton/shared/lib/sanitize/purify';
 
@@ -18,6 +19,7 @@ import { ConnectionLostModal } from '../../components/ConnectionLostModal/Connec
 import { MeetingLockedModal } from '../../components/MeetingLockedModal/MeetingLockedModal';
 import { PasswordPrompt } from '../../components/PasswordPrompt/PasswordPrompt';
 import { PiPPreviewVideo } from '../../components/PiPPreviewVideo/PiPPreviewVideo';
+import { WebRtcUnsupportedModal } from '../../components/WebRtcUnsupportedModal/WebRtcUnsupportedModal';
 import { MEETING_LOCKED_ERROR_CODE } from '../../constants';
 import { MLSContext } from '../../contexts/MLSContext';
 import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
@@ -70,6 +72,7 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
     const [password, setPassword] = useState('');
     const [invalidPassphrase, setInvalidPassphrase] = useState(false);
     const [isMeetingLockedModalOpen, setIsMeetingLockedModalOpen] = useState(false);
+    const [isWebRtcUnsupportedModalOpen, setIsWebRtcUnsupportedModalOpen] = useState(false);
 
     const { getRoomName, initHandshake, token, urlPassword, getAccessDetails } = useMeetingSetup();
 
@@ -183,6 +186,7 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
                 case MeetCoreErrorEnum.MlsGroupError:
                 case MeetCoreErrorEnum.HttpClientError:
                 default:
+                    /* eslint-disable no-console */
                     console.error(error);
                     throw new Error(c('Error').t`Failed to join meeting. Please try again later.`);
             }
@@ -320,6 +324,13 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
         setIsMeetingLockedModalOpen(true);
     };
 
+    const handleWebRtcUnsupported = () => {
+        if (!isWebRtcSupported()) {
+            setIsWebRtcUnsupportedModalOpen(true);
+            throw new Error('Your browser does not support WebRTC');
+        }
+    };
+
     const handleJoin = async (displayName: string, meetingToken: string = token) => {
         setDisplayName(displayName);
 
@@ -327,6 +338,7 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
             try {
                 await getParticipants(meetingToken);
             } catch (error) {
+                /* eslint-disable no-console */
                 console.error(error);
             } finally {
                 setInitialisedParticipantNameMap(true);
@@ -390,6 +402,8 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
     };
 
     const joinInstantMeeting = async (displayName: string) => {
+        handleWebRtcUnsupported();
+
         if (joinBlockedRef.current) {
             return;
         }
@@ -438,6 +452,8 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
     };
 
     const joinMeeting = async (displayName: string, meetingToken: string = token) => {
+        handleWebRtcUnsupported();
+
         if (joinBlockedRef.current) {
             return;
         }
@@ -511,7 +527,7 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
         void room.disconnect();
         resetParticipantNameMap();
         void wasmApp?.leaveMeeting();
-        stopPiP();
+        void stopPiP();
         mlsSetupDone.current = false; // need to set mls again after leave meeting
         startHealthCheck.current = false;
 
@@ -626,6 +642,9 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
                         initialisedParticipantNameMap={initialisedParticipantNameMap}
                         participantNameMap={participantNameMap}
                     />
+                )}
+                {isWebRtcUnsupportedModalOpen && (
+                    <WebRtcUnsupportedModal onClose={() => setIsWebRtcUnsupportedModalOpen(false)} />
                 )}
                 {connectionLost && <ConnectionLostModal onClose={() => setConnectionLost(false)} />}
                 {joinedRoom && !!canvas && isPipActive && isFirefox() ? (
