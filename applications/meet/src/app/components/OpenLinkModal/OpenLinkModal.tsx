@@ -13,6 +13,7 @@ interface OpenLinkModalProps {
 
 export const OpenLinkModal = ({ link, onClose }: OpenLinkModalProps) => {
     const handleClick = () => {
+        onClose();
         const otherWindow = window.open();
         if (otherWindow) {
             otherWindow.location.href = link;
