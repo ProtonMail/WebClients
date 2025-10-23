@@ -49,7 +49,7 @@ export const deleteSync = (syncId: String) => ({
 });
 
 export const disconnectBYOEAddress = (addressID: string, SignedKeyList: SignedKeyList) => ({
-    url: `/mail/v4/byoe-addresses/${addressID}/disconnection`,
+    url: `mail/v4/byoe-addresses/${addressID}/disconnection`,
     method: 'PUT',
     data: {
         SignedKeyList,
@@ -57,7 +57,7 @@ export const disconnectBYOEAddress = (addressID: string, SignedKeyList: SignedKe
 });
 
 export const reconnectBYOEAddress = (addressID: string, SignedKeyList: SignedKeyList) => ({
-    url: `/mail/v4/byoe-addresses/${addressID}/reconnection`,
+    url: `mail/v4/byoe-addresses/${addressID}/reconnection`,
     method: 'PUT',
     data: {
         SignedKeyList,
