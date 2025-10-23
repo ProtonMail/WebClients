@@ -30,15 +30,18 @@ const LinkConfirmationModalLink = ({ link, isPunnyCoded, value, onToggle, isOuts
 
     return (
         <>
-            {`${description}`}
-            <span className="text-bold text-break pl-1">{link}</span>
-            <Copy
-                className="ml-2"
-                size="small"
-                tooltipText={c('Info').t`Copy the link to clipboard`}
-                value={link}
-                onCopy={handleCopy}
-            />
+            <p className="mb-2">{description}</p>
+
+            <div className="flex flex-nowrap gap-2 mb-3">
+                <p className="text-break text-semibold m-0">{link}</p>
+                <Copy
+                    className="ml-2 shrink-0 h-fit-content"
+                    size="small"
+                    tooltipText={c('Info').t`Copy the link to clipboard`}
+                    value={link}
+                    onCopy={handleCopy}
+                />
+            </div>
 
             {isPunnyCoded && (
                 <p className="my-2">
