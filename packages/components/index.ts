@@ -838,7 +838,7 @@ export { default as useRelocalizeText } from './hooks/useRelocalizeText';
 export { default as useSearchParamsEffect } from './hooks/useSearchParamsEffect';
 export { useIsSessionRecoveryAvailable } from './hooks/useSessionRecovery';
 export { default as useShowThemeSelection } from './hooks/useShowThemeSelection';
-export { useMultiSortedList, default as useSortedList } from './hooks/useSortedList';
+export { useMultiSortedList, default as useSortedList, useSortedListAsync } from './hooks/useSortedList';
 export type { SortConfig } from './hooks/useSortedList';
 export { default as useSpotlightOnFeature } from './hooks/useSpotlightOnFeature';
 export { default as useSubscribedCalendars } from './hooks/useSubscribedCalendars';
