@@ -17,6 +17,8 @@ import { rtlSanitize } from '@proton/shared/lib/helpers/string';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { CONFIRM_LINK } from '@proton/shared/lib/mail/mailSettings';
 
+import Checkbox from '../../input/Checkbox';
+import Label from '../../label/Label';
 import LinkConfirmationModalLink from './LinkConfirmationModalLink';
 import LinkConfirmationModalPhishing from './LinkConfirmationModalPhishing';
 
@@ -75,17 +77,24 @@ const LinkConfirmationModal = ({
                         value={understandRisk}
                     />
                 ) : (
-                    <LinkConfirmationModalLink
-                        value={dontAskAgain}
-                        isOutside={isOutside}
-                        isPunnyCoded={isPunnyCodeLink}
-                        link={linkToShow}
-                        onToggle={() => setDontAskAgain(!dontAskAgain)}
-                    />
+                    <LinkConfirmationModalLink isPunnyCoded={isPunnyCodeLink} link={linkToShow} />
                 )}
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>
+                <div className="flex flex-nowrap flex-row-reverse gap-2 items-center sm:flex-row">
+                    <Button onClick={rest.onClose} className="grow">{c('Action').t`Cancel`}</Button>
+                    {/* We show the checkbox only if the link is not a phishing attempt */}
+                    {!isPhishingAttempt && !isOutside && (
+                        <Label className="flex pt-0 w-fit-content">
+                            <Checkbox
+                                checked={dontAskAgain}
+                                onChange={() => setDontAskAgain(!dontAskAgain)}
+                                className="mr-2"
+                            />
+                            {c('Label').t`Don't ask again`}
+                        </Label>
+                    )}
+                </div>
                 {/* translator: this string is only for blind people, it will be vocalized: confirm opening of link https://link.com */}
                 <Button
                     autoFocus
