@@ -80,14 +80,6 @@ jest.mock('@proton/meet/utils/cryptoUtils', () => ({
     encryptMeetingName: jest.fn().mockResolvedValue('encrypted-title'),
 }));
 
-jest.mock('@proton/account/organization/hooks', () => ({
-    useOrganization: jest.fn().mockReturnValue([
-        {
-            Settings: { MeetVideoConferencingEnabled: true },
-        },
-    ]),
-}));
-
 const mockModel = {
     title: 'Test Meeting',
     attendees: [],

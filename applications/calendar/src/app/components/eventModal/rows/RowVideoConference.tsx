@@ -52,7 +52,6 @@ export const RowVideoConference = ({
     const isMeetVideoConferenceEnabled = useFlag('NewScheduleOption');
 
     const isZoomSettingEnabled = organization?.Settings.VideoConferencingEnabled;
-    const isProtonMeetSettingEnabled = organization?.Settings.MeetVideoConferencingEnabled;
 
     const { spotlightContent, shouldShowSotlight, onDisplayed, onClose } = useVideoConferenceSpotlight({
         isEventCreation: isCreateEvent,
@@ -106,19 +105,18 @@ export const RowVideoConference = ({
     const zoomIntegrationLoading = zoomIntegration.loadingConfig || zoomIntegration.oauthTokenLoading;
 
     const videoConferenceProviderDetails = [
-        isMeetVideoConferenceEnabled &&
-            isProtonMeetSettingEnabled && {
-                id: VIDEO_CONFERENCE_PROVIDER.PROTON_MEET,
-                onClick: protonMeetIntegration.createVideoConferenceMeeting,
-                buttonContent: c('Label').t`Add ${MEET_APP_NAME} conferencing`,
-                itemContent: (
-                    <>
-                        <ProtonLogo className="mr-2" variant="glyph-only" size={4} /> {MEET_APP_NAME}
-                    </>
-                ),
-                disabled: false,
-                loading: false,
-            },
+        isMeetVideoConferenceEnabled && {
+            id: VIDEO_CONFERENCE_PROVIDER.PROTON_MEET,
+            onClick: protonMeetIntegration.createVideoConferenceMeeting,
+            buttonContent: c('Label').t`Add ${MEET_APP_NAME} conferencing`,
+            itemContent: (
+                <>
+                    <ProtonLogo className="mr-2" variant="glyph-only" size={4} /> {MEET_APP_NAME}
+                </>
+            ),
+            disabled: false,
+            loading: false,
+        },
         shouldShowZoom && {
             id: VIDEO_CONFERENCE_PROVIDER.ZOOM,
             onClick: zoomIntegration.handleClick,
