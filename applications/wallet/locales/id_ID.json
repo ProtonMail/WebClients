@@ -497,17 +497,26 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Setelah uji coba ini berakhir pada ${ formattedDate }, paket Anda akan menjadi langganan berbayar yang diperbarui secara otomatis setiap ${ renewCycle } bulan. Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ formattedDate }."
+      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Setelah masa uji coba ini berakhir pada ${ formattedDate }, paket Anda akan menjadi langganan berbayar yang diperbarui secara otomatis secara bulanan. Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Anda dapat memiliki hingga ${ TRIAL_MAX_DEDICATED_IPS } server khusus selama masa uji coba."
       ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Anda dapat memiliki hingga ${ TRIAL_MAX_LUMO_SEATS } kuota ${ LUMO_SHORT_APP_NAME } selama masa uji coba."
+      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Anda dapat memiliki hingga ${ TRIAL_MAX_SCRIBE_SEATS } kuota Scribe selama masa uji coba."
       ],
       "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
         "Anda dapat memiliki hingga ${ TRIAL_MAX_USERS } pengguna selama masa uji coba."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Anda tidak dapat menambahkan domain khusus selama masa uji coba."
       ],
       "You have reached the trial limit.": [
         "Anda telah mencapai batas uji coba Anda."
@@ -1011,11 +1020,26 @@
       "Basic chat history": [
         "Riwayat percakapan dasar"
       ],
+      "Full chat history with search": [
+        "Riwayat percakapan utuh dengan fitur pencarian"
+      ],
+      "Large file upload support": [
+        "Dukungan untuk unggahan berkas besar"
+      ],
+      "Limited daily chats": [
+        "Percakapan harian dalam jumlah yang terbatas"
+      ],
       "Limited favorites": [
         "Favorit dalam jumlah yang terbatas"
       ],
       "Unlimited daily chats": [
         "Tanpa batasan jumlah percakapan harian"
+      ],
+      "Unlimited favorites for quick access": [
+        "Tanpa batasan jumlah favorit untuk akses yang cepat"
+      ],
+      "Upload and query multiple large files": [
+        "Unggah dan kuerikan beberapa berkas besar sekaligus"
       ],
       "Upload and query small files": [
         "Unggah dan kuerikan berkas kecil"
@@ -1025,8 +1049,14 @@
       ]
     },
     "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } merupakan AI berorientasi privasi yang membantu Anda untuk menyelesaikan lebih banyak hal sembari menjaga keamanan data Anda. Dapatkan potensi maksimal dari AI ini dan nikmati akses dini ke berbagai fitur baru pada saat fitur ini dirilis."
+      ],
       "Add ${ LUMO_APP_NAME }": [
         "Tambah ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Percakapan berkecepatan tinggi dan berbagai fitur AI mutakhir."
       ]
     },
     "color": {
@@ -3831,7 +3861,7 @@
         "Keamanan jaringan dan pengelolaan akses tingkat lanjut dengan Gateway khusus yang aman"
       ],
       "Advanced protection for teams that goes beyond industry standards.": [
-        "Perlindungan tingkat lanjut untuk tim yang melampaui standar industri."
+        "Perlindungan mutakhir untuk tim yang melampaui standar industri."
       ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Seluruh aplikasi ${ BRAND_NAME } dan berbagai fitur premium di dalamnya"
@@ -4269,7 +4299,7 @@
         "Panel admin untuk mengelola pengguna dan langganan"
       ],
       "Advanced account protection": [
-        "Perlindungan akun bertingkat lanjut"
+        "Perlindungan akun mutakhir"
       ],
       "Team policies": [
         "Kebijakan tim"
@@ -4369,6 +4399,9 @@
       "More plans are available in other currencies": [
         "Lebih banyak paket tersedia pada mata uang lainnya"
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Metode pembayaran dibutuhkan bagi langganan untuk dapat diaktifkan setelah masa uji coba berakhir."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Silakan aktifkan kembali langganan Anda terlebih dahulu untuk menurunkan jumlah pengaya."
       ],
@@ -4380,6 +4413,9 @@
       ],
       "Taxes": [
         "Pajak"
+      ],
+      "terms and conditions": [
+        "syarat dan ketentuan"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Kupon ini valid untuk ${ couponRedemptions } kali pembaruan."
@@ -4396,8 +4432,14 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Setelahnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } setiap ${ renewalLength } bulan. Anda dapat membatalkan langganan Anda kapan saja."
       ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Tindakan ini akan memperpanjang langganan yang telah ada. Anda hanya akan ditagih untuk item yang baru ditambahkan dan sisa waktu siklus tagihan Anda saat ini. Tanggal pembaruan langganan Anda tidak akan berubah."
+      ],
       "This number will be shown on all future invoices": [
         "Nomor ini akan ditampilkan pada seluruh faktur yang akan datang"
+      ],
+      "This offer is not available with your current plan.": [
+        "Penawaran ini tidak tersedia dengan paket Anda saat ini."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Metode pembayaran ini akan menjadi metode bawaan baru Anda untuk segala perpanjangan yang dilakukan ke depannya."
@@ -4410,6 +4452,9 @@
       ],
       "VAT number": [
         "Nomor PPN"
+      ],
+      "You already have a subscription to this plan.": [
+        "Anda telah memiliki langganan untuk paket ini."
       ],
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Anda telah memiliki langganan untuk paket ini. Anda dapat mengubah langganan Anda pada ${ subscriptionPlatform }."
