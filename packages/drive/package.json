@@ -6,7 +6,8 @@
     "scripts": {
         "check-types": "tsc",
         "lint": "eslint --quiet",
-        "test": "jest"
+        "test": "jest",
+        "test:ci": "jest --coverage --runInBand --ci"
     },
     "dependencies": {
         "@protontech/drive-sdk": "^0.5.1",
