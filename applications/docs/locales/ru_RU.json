@@ -66,9 +66,6 @@
       "Add contact": [
         "Добавить контакт"
       ],
-      "Add credit / debit card": [
-        "Добавить кредитную / дебетовую карту"
-      ],
       "Add email": [
         "Добавить электронну почту"
       ],
@@ -243,17 +240,11 @@
       "Create and copy alias": [
         "Создать и скопировать псевдоним"
       ],
-      "Create folder": [
-        "Создать папку"
-      ],
       "Create new folder": [
         "Создать новую папку"
       ],
       "Create new password": [
         "Создать новый пароль"
-      ],
-      "Current plan": [
-        "Текущий тариф"
       ],
       "Customize": [
         "Настроить"
@@ -269,9 +260,6 @@
       ],
       "Decline invite": [
         "Отклонить приглашение"
-      ],
-      "Decrease": [
-        "Уменьшить"
       ],
       "Delete": [
         "Удалить"
@@ -339,9 +327,6 @@
       "Edit sign-in details": [
         "Изменить информацию о входе в систему"
       ],
-      "Edit subscription": [
-        "Изменить подписку"
-      ],
       "Email settings": [
         "Настройки электронной почты"
       ],
@@ -377,9 +362,6 @@
       ],
       "Get ${ planOrAppName }": [
         "Получить ${ planOrAppName }"
-      ],
-      "Get in touch": [
-        "Связаться с нами"
       ],
       "Get the apps": [
         "Получить приложения"
@@ -453,17 +435,11 @@
       "Import from Outlook": [
         "Импортировать из Outlook"
       ],
-      "Increase": [
-        "Увеличить"
-      ],
       "Keep my subscription": [
         "Сохранить подписку"
       ],
       "Learn more": [
         "Подробнее"
-      ],
-      "Let's talk": [
-        "Свяжитесь с нами"
       ],
       "Load": [
         "Загрузить"
@@ -561,12 +537,6 @@
       "Open navigation": [
         "Открыть панель навигации"
       ],
-      "Pay": [
-        "Оплатить"
-      ],
-      "Pay ${ price } now": [
-        "Оплатите ${ price } сейчас"
-      ],
       "PDF (.pdf)": [
         "PDF (.pdf)"
       ],
@@ -620,9 +590,6 @@
       ],
       "Remove file": [
         "Удалить файл"
-      ],
-      "Remove gift code": [
-        "Удалить подарочный код"
       ],
       "Rename": [
         "Переименовать"
@@ -702,12 +669,6 @@
       "Select all": [
         "Выделить все"
       ],
-      "Select billing cycle ${ billingText }": [
-        "Выбрать платежный цикл ${ billingText }"
-      ],
-      "Select country": [
-        "Выбрать страну"
-      ],
       "Set recovery methods": [
         "Установить методы восстановления"
       ],
@@ -774,9 +735,6 @@
       "Switch or add account": [
         "Переключить или добавить аккаунт"
       ],
-      "Take a tour": [
-        "Ознакомительный тур"
-      ],
       "Take out of trash": [
         "Извлечь из Корзины"
       ],
@@ -837,12 +795,6 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Используйте ${ VPN_SHORT_APP_NAME } для обеспечения конфиденциальности данных"
       ],
-      "Use a different card": [
-        "Использовать другую карту"
-      ],
-      "Use a different payment method": [
-        "Использовать другой способ оплаты"
-      ],
       "Use authentication code": [
         "Использовать код аутентификации"
       ],
@@ -869,9 +821,6 @@
       ],
       "Web page (.html)": [
         "Веб-страница (.html)"
-      ],
-      "What do I get?": [
-        "Что я получу?"
       ],
       "Word count": [
         "Количество слов"
@@ -918,18 +867,6 @@
         "${ ips } сервера",
         "${ ips } серверов",
         "${ ips } серверов"
-      ],
-      "${ price } per dedicated server": [
-        "${ price } за выделенный сервер"
-      ],
-      "${ price } per domain": [
-        "${ price } за домен"
-      ],
-      "${ price } per seat": [
-        "${ price } за лицензию"
-      ],
-      "${ price } per user": [
-        "${ price } за пользователя"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } место помощника по написанию",
@@ -1026,11 +963,6 @@
         "Приложения ${ BRAND_NAME }"
       ]
     },
-    "Assistant toggle": {
-      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
-        "Поднимите производительность электронной почты на новый уровень. Пусть ${ BRAND_NAME } Scribe поможет вам в написании, ответах и корректировке писем."
-      ]
-    },
     "Attached ics file error": {
       "Empty ICS file": [
         "Пустой файл ICS"
@@ -1051,23 +983,6 @@
         "Событие не поддерживается"
       ]
     },
-    "b2b_trials_2025_Info": {
-      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
-        "Вам доступно до ${ TRIAL_MAX_DEDICATED_IPS } выделенных серверов в течение пробного периода."
-      ],
-      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
-        "Вам доступно до ${ TRIAL_MAX_SCRIBE_SEATS } мест Scribe в течение пробного периода."
-      ],
-      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
-        "Вам доступно до ${ TRIAL_MAX_USERS } пользователей в течение пробного периода."
-      ],
-      "You cannot add custom domains during the trial period.": [
-        "Вы не можете добавлять пользовательские домены в течение пробного периода."
-      ],
-      "You have reached the trial limit.": [
-        "Вы достигли лимита пробного периода."
-      ]
-    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Отменить подписку"
@@ -1077,15 +992,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "1 user": [
-        "1 пользователь"
-      ],
-      "3 TB": [
-        "3 ТБ"
-      ],
-      "6 users": [
-        "6 пользователей"
-      ],
       "Premium Password Manager": [
         "Платная версия менеджера паролей"
       ]
@@ -1110,35 +1016,11 @@
       "${ storageSize } storage": [
         "${ storageSize } хранилища"
       ],
-      "1 TB total": [
-        "1 ТБ всего"
-      ],
-      "1 user": [
-        "1 пользователь"
-      ],
       "1 user account": [
         "1 аккаунт пользователя"
       ],
-      "10 email addresses": [
-        "10 адресов электронной почты"
-      ],
-      "2 users": [
-        "2 пользователя"
-      ],
-      "3 TB": [
-        "3 ТБ"
-      ],
       "6 user accounts": [
         "6 аккаунтов пользователя"
-      ],
-      "6 users": [
-        "6 пользователей"
-      ],
-      "8500+ servers across 110+ countries": [
-        "Более 8500 серверов в 110 странах"
-      ],
-      "Ad-blocker and malware protection": [
-        "Блокировщик рекламы и защита от вредоносных программ"
       ],
       "Admin panel to manage your family": [
         "Панель администратора для управления вашей семьей"
@@ -1149,9 +1031,6 @@
       "Easily add or remove users": [
         "Легко добавлять или удалять участников"
       ],
-      "High speed streaming": [
-        "Высокоскоростной стриминг"
-      ],
       "One-time payment, lifetime deal": [
         "Единовременная оплата, пожизненное предложение"
       ],
@@ -1161,15 +1040,6 @@
       "Password health alerts": [
         "Оповещения о надёжности пароля"
       ],
-      "Private photo backup": [
-        "Конфиденциальное резервное копирование фото"
-      ],
-      "Protect 10 devices at a time": [
-        "Защитите 10 устройств за раз"
-      ],
-      "Secure file storage & sharing": [
-        "Безопасное хранение и обмен файлами"
-      ],
       "Unlimited folders, labels and filters": [
         "Неограниченное количество папок, ярлыков и фильтров"
       ],
@@ -1178,12 +1048,6 @@
       ],
       "Use your own email domain": [
         "Используйте свой собственный домен электронной почты"
-      ],
-      "Version history": [
-        "История версий"
-      ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -1194,9 +1058,6 @@
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
         "Сохраняйте конфиденциальность в Интернете и получайте доступ к заблокированному контенту. Мы предлагаем свыше 8500 серверов более чем в 110 странах, 10 устройств, высокоскоростной стриминг, блокировщик рекламы и защиту от вредоносных программ, VPN Accelerator и многое другое."
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Получайте доступ к содержимому на службах трансляций, включая Netflix, Disney+, Prime Video и других, отовсюду."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Защитите логины на всех ваших устройствах, включая неограниченное число псевдонимов hide-my-email, совместное пользование, интегрированную двухфакторную аутентификацию, ${ DARK_WEB_MONITORING_NAME } и многое другое."
@@ -1219,31 +1080,8 @@
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Защитите свои файлы с помощью зашифрованного облачного хранилища. Включает онлайн-редактор документов, резервное копирование фотографий, историю версий, зашифрованный обмен файлами и многое другое."
       ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Специально разработанная функция NetShield защищает ваше устройство и ускоряет загрузку страниц, блокируя рекламу, трекеры и вредоносные программы."
-      ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Объём хранилища распределяется между всеми приложениями ${ BRAND_NAME }."
-      ]
-    },
-    "Billing cycle option": {
-      "1 month": [
-        "1 месяц"
-      ],
-      "12 months": [
-        "12 месяцев"
-      ],
-      "Annually": [
-        "Ежегодно"
-      ],
-      "Lifetime": [
-        "Пожизненная"
-      ],
-      "Monthly": [
-        "Ежемесячно"
-      ],
-      "Two-year": [
-        "Каждые 2 года"
       ]
     },
     "Browser": {
@@ -1329,9 +1167,6 @@
       ]
     },
     "Button": {
-      "Close": [
-        "Закрыть"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Продолжить, используя ${ MAIL_APP_NAME }."
       ],
@@ -1341,23 +1176,8 @@
       "Continue your subscription": [
         "Продолжить подписку"
       ],
-      "Create label": [
-        "Создать ярлык"
-      ],
-      "Discover and set up features": [
-        "Настройте функции"
-      ],
       "Maybe later": [
         "Может быть позже"
-      ],
-      "Remind me later": [
-        "Напомнить позже"
-      ],
-      "Set up other features": [
-        "Настроить другие функции"
-      ],
-      "Take a tour": [
-        "Ознакомительный тур"
       ]
     },
     "Cancellation upsell": {
@@ -1410,15 +1230,6 @@
         "${ users } пользователя",
         "${ users } пользователей",
         "${ users } пользователей"
-      ],
-      "Total": [
-        "Итого"
-      ],
-      "Total for ${ n } month": [
-        "Итого за ${ n } месяц",
-        "Итого за ${ n } месяца",
-        "Итого за ${ n } месяцев",
-        "Итого за ${ n } месяцев"
       ]
     },
     "Collapsible tooltip": {
@@ -1427,14 +1238,6 @@
       ],
       "Expand": [
         "Развернуть"
-      ]
-    },
-    "collider_2025: Info": {
-      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
-        "${ LUMO_APP_NAME } — это искусственный интеллект, ориентированный на конфиденциальность, который помогает вам выполнять больше задач, сохраняя ваши данные в безопасности. Раскройте его полный потенциал и наслаждайтесь ранним доступом к новым функциям по мере их появления."
-      ],
-      "Add ${ LUMO_APP_NAME }": [
-        "Добавить приложение ${ LUMO_APP_NAME }"
       ]
     },
     "color": {
@@ -2431,14 +2234,6 @@
         "За ${ VPN_APP_NAME }"
       ]
     },
-    "Cycle": {
-      "/month": [
-        "/месяц"
-      ],
-      "/user per month": [
-        "/за пользователя в месяц"
-      ]
-    },
     "Default display name vcard": {
       "Unknown": [
         "Неизвестный"
@@ -2684,14 +2479,6 @@
         "Приоритетная поддержка"
       ]
     },
-    "Edit billing address form note": {
-      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
-        "Текстовые поля являются необязательными. Информация, которую вы предоставите в этой форме, будет отображаться только в счетах, выставляемых в будущем, и не повлияет на существующие счета."
-      ],
-      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
-        "Текстовые поля являются необязательными. Информация, которую вы предоставите в этой форме, изменит только выбранный вами счет-фактуру, но не ваши будущие данные о счете-фактуре."
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } было отменено."
@@ -2802,12 +2589,6 @@
       "Already a member of this share": [
         "Уже участник этого общего ресурса"
       ],
-      "Amount above the maximum.": [
-        "Сумма выше допустимого максимума."
-      ],
-      "Amount below minimum (${ minimumAmount }).": [
-        "Сумма ниже допустимого минимума (${ minimumAmount })."
-      ],
       "An error occurred while attempting to convert the document. Please try again.": [
         "При попытке преобразовать документ произошла ошибка. Попробуйте еще раз."
       ],
@@ -2841,9 +2622,6 @@
       "Cannot export this contact": [
         "Не удается экспортировать этот контакт"
       ],
-      "Checkout expired, please try again": [
-        "Срок оформления истек, пожалуйста, попробуйте снова"
-      ],
       "Contact could not be saved": [
         "Невозможно сохранить контакт"
       ],
@@ -2874,9 +2652,6 @@
       "Domain not available, try again later": [
         "Домен недоступен, повторите попытку позже"
       ],
-      "Editing billing address is not available at the moment. Please try again later.": [
-        "Изменение платежного адреса в данный момент недоступно. Повторите попытку позже."
-      ],
       "Email address is required": [
         "Нужно указать адрес электронной почты"
       ],
@@ -2885,9 +2660,6 @@
       ],
       "Enter 6 digits": [
         "Введите 6 цифр"
-      ],
-      "Error connecting to the Bitcoin API.": [
-        "Ошибка при подключении к API Биткоин."
       ],
       "Error decrypting a computer": [
         "Ошибка расшифровки компьютера"
@@ -2943,29 +2715,11 @@
       "Incorrect username": [
         "Некорректное имя пользователя"
       ],
-      "Invalid ${ name } code": [
-        "Недействительный код ${ name }"
-      ],
-      "Invalid card number": [
-        "Недействительный номер карты"
-      ],
-      "Invalid code": [
-        "Недействительный код"
-      ],
       "Invalid email address": [
         "Недействительный адрес электронной почты"
       ],
-      "Invalid expiration date": [
-        "Недействительный срок действия"
-      ],
-      "Invalid IBAN": [
-        "Неверный IBAN"
-      ],
       "Invalid name": [
         "Недопустимое имя"
-      ],
-      "Invalid postal code": [
-        "Недействительный почтовый индекс"
       ],
       "Invalid public key file": [
         "Недействительный файл открытого ключа"
@@ -3033,18 +2787,6 @@
       "Passwords do not match": [
         "Пароли не совпадают"
       ],
-      "Payment process canceled": [
-        "Процесс оплаты отменён"
-      ],
-      "Payment process consumed": [
-        "Процесс оплаты завершен"
-      ],
-      "Payment process failed": [
-        "Сбой в процессе оплаты"
-      ],
-      "Payment process not supported": [
-        "Процесс оплаты не поддерживается"
-      ],
       "Photos upload is temporarily disabled. Please try again later": [
         "Загрузка фотографий временно отключена. Повторите попытку позже"
       ],
@@ -3063,12 +2805,6 @@
       "Please select a state": [
         "Выберите штат"
       ],
-      "Please select billing country": [
-        "Пожалуйста, выберите страну выставления счета"
-      ],
-      "Please select billing state": [
-        "Пожалуйста, выберите государство выставления счета"
-      ],
       "Port is required": [
         "Нужно указать порт"
       ],
@@ -3077,9 +2813,6 @@
       ],
       "Primary address key is not decrypted.": [
         "Основной ключ адреса не расшифрован."
-      ],
-      "Process aborted": [
-        "Процесс прерван"
       ],
       "Removed duplicate invitee: ${ joinedInvitee }": [
         "Удален повторяющийся приглашенный: ${ joinedInvitee }",
@@ -3126,14 +2859,8 @@
       "status page": [
         "страница статуса"
       ],
-      "Tab closed": [
-        "Вкладка закрыта"
-      ],
       "The address might be misspelled": [
         "Возможно, адрес указан неверно"
-      ],
-      "The amount due has changed. Please try again.": [
-        "Сумма оплаты изменилась. Пожалуйста, попробуйте еще раз."
       ],
       "The document you are trying to convert is too large. This may occur if the document has a large number of images or other media. Please try again with a smaller document.": [
         "Документ, который вы пытаетесь преобразовать, слишком большой. Это может произойти, если в документе много изображений или других материалов. Попробуйте еще раз с меньшим документом."
@@ -3161,9 +2888,6 @@
       ],
       "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
         "Последнее обновление, внесенное в документ, либо слишком велико, либо превысит общий размер документа. Редактирование было временно отключено. Ваши изменения не будут сохранены. Экспортируйте копию документа и перезагрузите страницу."
-      ],
-      "The minimum amount of credit that can be added is ${ price }": [
-        "Минимальная сумма кредита, которая может быть добавлена, составляет ${ price }"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "Новая версия исходного файла еще не загружена, пожалуйста, повторите попытку позже"
@@ -3219,9 +2943,6 @@
       "Unknown error": [
         "Неизвестная ошибка"
       ],
-      "Unknown payment token status": [
-        "Неизвестный статус платежного токена"
-      ],
       "Update Too Large": [
         "Обновление слишком большое"
       ],
@@ -3257,9 +2978,6 @@
       ],
       "Your import will not be processed.": [
         "Импорт не будет обработан."
-      ],
-      "ZIP code is required": [
-        "Необходимо указать почтовый индекс"
       ]
     },
     "Error importing calendar": {
@@ -4184,9 +3902,6 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "У пожизненного предложения ${ PASS_SHORT_APP_NAME } нет платы за продление, это однократная оплата за пожизненный доступ к ${ PASS_SHORT_APP_NAME }. Ваша стоимость и дата продления подписки ${ planTitle } остаются неизменными."
       ],
-      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
-        "${ plan.Title } требует минимум 1 выделенный сервер ${ serverPricePerMonth }"
-      ],
       "${ planName } expires in ${ daysLeft } day.": [
         "Срок действия ${ planName } истекает через ${ daysLeft } день.",
         "Срок действия ${ planName } истекает через ${ daysLeft } дня.",
@@ -4195,9 +3910,6 @@
       ],
       "${ planName } expires today.": [
         "Срок действия ${ planName } истекает сегодня."
-      ],
-      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
-        "${ PROTON_SENTINEL_NAME } защищает вашу учётную запись посредством специального наблюдения за подозрительной активностью."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "Найдена ${ providerFoldersNumLocalized } папка",
@@ -4241,9 +3953,6 @@
         "Выбрано ${ selectedFoldersCountLocalized } ярлыков",
         "Выбрано ${ selectedFoldersCountLocalized } ярлыков"
       ],
-      "${ storage } storage": [
-        "${ storage } хранилище"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } контакт успешно обновлен.",
         "${ updated } контакта успешно обновлено.",
@@ -4262,9 +3971,6 @@
         "(${ memberCount } участников)",
         "(${ memberCount } участника)"
       ],
-      "(${ serverPrice }/month)": [
-        "(${ serverPrice } в месяц)"
-      ],
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**Автоподключение**: Открывает и подключается к VPN, как только вы включаете устройство."
       ],
@@ -4280,9 +3986,6 @@
         "+${ organization.BonusVPN } подключений для ${ VPN_APP_NAME } (позволяет подключить больше устройств к VPN)",
         "+${ organization.BonusVPN } подключений для ${ VPN_APP_NAME } (позволяет подключить больше устройств к VPN)"
       ],
-      "30-day money-back guarantee.": [
-        "30-дневная гарантия возврата денег."
-      ],
       "A number will be added to the filename": [
         "К имени файла будет добавлен номер"
       ],
@@ -4294,9 +3997,6 @@
       ],
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "Безопасное подключение необходимо при удаленной работе. VPN защищает данные компании от киберугроз и сохраняет приватность вашей работы."
-      ],
-      "A user is an account associated with a single username, mailbox, and person": [
-        "Пользователь – это учетная запись, связанная с одним именем пользователя, почтовым ящиком и лицом"
       ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
         "VPN шифрует ваше подключение и скрывает ваш адрес IP, что значительно затрудняет отслеживание и контроль вашего просмотра веб-страниц."
@@ -4313,23 +4013,14 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Доступ к учётной записи ограничен из-за неоплаченных счетов. Пожалуйста, обратитесь к вашему администратору."
       ],
-      "Account successfully updated": [
-        "Учётная запись успешно обновлена"
-      ],
       "Ad targeting": [
         "Нацеливание рекламы"
-      ],
-      "Address copied to clipboard": [
-        "Адрес скопирован в буфер обмена"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Проверка адреса доверяемыми ключами для этого адреса включена. Чтобы получить возможность отправки на этот адрес, сначала включите режим доверия публичным ключам, которые можно применять для отправки."
       ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Рекламодатели отслеживают ваш просмотр веб-страниц, чтобы показывать целевую рекламу. ${ VPN_APP_NAME } блокирует трекеры и рекламу, делая ваше подключение быстрее и улучшая работу в Интернете."
-      ],
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Помощник с искусственным интеллектом поможет вам быстро и без усилий создавать лучшие электронные письма."
       ],
       "All (${ totalFoldersCount } folder)": [
         "Всё (${ totalFoldersCount } папка)",
@@ -4348,15 +4039,6 @@
         "Все ваши контакты будут импортированы, до лимита ${ MAX_CONTACTS_PER_USER }",
         "Все ваши контакты будут импортированы, до лимита ${ MAX_CONTACTS_PER_USER }",
         "Все ваши контакты будут импортированы, до лимита ${ MAX_CONTACTS_PER_USER }"
-      ],
-      "American Express SafeKey logo": [
-        "Логотип American Express SafeKey"
-      ],
-      "Amount above maximum (${ amount }).": [
-        "Сумма выше максимальной (${ amount })."
-      ],
-      "Amount below minimum (${ amount }).": [
-        "Сумма ниже допустимого минимума (${ amount })."
       ],
       "an anonymous user": [
         "анонимный пользователь"
@@ -4388,17 +4070,8 @@
       "Attention required": [
         "Требуется внимание"
       ],
-      "Awaiting transaction": [
-        "В ожидании транзакции"
-      ],
-      "Balance from your previous subscription": [
-        "Баланс с прошлой подписки"
-      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Прежде чем запросить новый код подтверждения, проверьте свою папку спама и убедитесь, что ${ strong } - это корректный адрес."
-      ],
-      "Billing cycle: ${ text }": [
-        "Платежный цикл: ${ text }"
       ],
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
         "Перенесите ваши сообщения, контакты и календари в ${ BRAND_NAME }."
@@ -4472,12 +4145,6 @@
       "Create a new contact group": [
         "Создать новую группу контактов"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Создать безопасное облако для ${ value } участника",
-        "Создать безопасное облако для ${ value } участников",
-        "Создать безопасное облако для ${ value } участников",
-        "Создать безопасное облако для ${ value } участников"
-      ],
       "Create an end-to-end encrypted document.": [
         "Создайте документ, зашифрованный сквозным методом."
       ],
@@ -4499,41 +4166,17 @@
       "Creating new document...": [
         "Создание нового документа..."
       ],
-      "Credit for the unused portion of your previous plan subscription": [
-        "Остаток на счете для неиспользованной части подписки на предыдущий тариф"
-      ],
       "Current plan": [
         "Текущий тариф"
       ],
       "Current version": [
         "Текущая версия"
       ],
-      "Custom email domains": [
-        "Пользовательские домены электронной почты"
-      ],
-      "Dedicated servers": [
-        "Выделенные серверы"
-      ],
-      "Dedicated VPN servers": [
-        "Выделенные VPN-серверы"
-      ],
-      "default email address": [
-        "адрес эл. почты по умолчанию"
-      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "ЭЦП проверена. Этот файл был безопасно загружен ${ emailAddress }."
       ],
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "ЭЦП проверена. Эта папка была безопасно загружена ${ emailAddress }."
-      ],
-      "Discover new features unlocked and start using them right away!": [
-        "Откройте для себя новые доступные функции и начните использовать их прямо сейчас!"
-      ],
-      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
-        "Откройте для себя новые функции, доступные с ${ planTitle }, и начните использовать их прямо сейчас!"
-      ],
-      "Discover ProtectBuy logo": [
-        "Логотип Discover ProtectBuy"
       ],
       "Display word count": [
         "Показывать количество слов"
@@ -4547,9 +4190,6 @@
       "Document owner has the password": [
         "Пароль находится у владельца документа"
       ],
-      "Don’t see anything? Remember to turn off pop-up blockers.": [
-        "Ничего не видно? Не забудьте отключить блокировку всплывающих окон."
-      ],
       "Downgrade": [
         "Перейти на более дешёвую версию"
       ],
@@ -4561,9 +4201,6 @@
       ],
       "Download was canceled": [
         "Скачивание отменено"
-      ],
-      "Download your favorite app today and take privacy with you everywhere you go.": [
-        "Скачайте ваше любимое приложение сегодня и конфиденциальность будет с вами, куда бы вы ни пошли."
       ],
       "Drop file here to upload": [
         "Переместите файл сюда, чтобы скачать"
@@ -4583,17 +4220,8 @@
       "email": [
         "электронная почта"
       ],
-      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
-        "Хостинг электронной почты доступен только для доменов, которыми вы уже владеете. Регистрация доменов через ${ BRAND_NAME } в настоящее время недоступна. Вы можете разместить электронную почту для доменов, зарегистрированных у любого регистратора доменов."
-      ],
       "Emails are automatically signed": [
         "Электронные письма подписываются автоматически"
-      ],
-      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
-        "Письма, перемещённые в Корзину и Спам более 30 дней назад, будут автоматически очищены."
-      ],
-      "Enabling auto-deletion…": [
-        "Включение автоудаления…"
       ],
       "End-to-end encrypted": [
         "Зашифровано сквозным методом"
@@ -4630,9 +4258,6 @@
       ],
       "Everything in ${ planOrAppName }": [
         "Все в ${ planOrAppName }"
-      ],
-      "Expired": [
-        "Истёкший"
       ],
       "Failed to generate a secure link. The reason is: ${ error }": [
         "Не удалось сгенерировать защищенную ссылку. Причина: ${ error }"
@@ -4742,9 +4367,6 @@
       "In restrictive countries": [
         "В странах, где действуют ограничения"
       ],
-      "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
-        "На следующем шаге вы сможете отправить депозит, используя адрес Bitcoin."
-      ],
       "Inherited from parent folder": [
         "Унаследовано от родительской папки"
       ],
@@ -4768,9 +4390,6 @@
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Лучше всего использовать VPN постоянно. А вот когда угрозы кибербезопасности могут быть самыми высокими:"
-      ],
-      "JCB logo": [
-        "Логотип JCB"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Просто подтвердите свой выбор, а остальное мы сделаем сами."
@@ -4835,9 +4454,6 @@
       "Making a copy...": [
         "Создание копии..."
       ],
-      "Mastercard SecureCode logo": [
-        "Логотип Mastercard SecureCode"
-      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Максимум ${ MAX_SHARED_URL_PASSWORD_LENGTH } символ",
         "Максимум ${ MAX_SHARED_URL_PASSWORD_LENGTH } символа",
@@ -4855,9 +4471,6 @@
       ],
       "Merged": [
         "Объединённые"
-      ],
-      "Messages to all your email addresses will go to your inbox.": [
-        "Сообщения на все ваши адреса электронной почты окажутся во Входящих."
       ],
       "Monitor accounts": [
         "Отслеживать аккаунты"
@@ -4883,9 +4496,6 @@
       "No group found": [
         "Группа не найдена"
       ],
-      "No payment is required at this time.": [
-        "В данный момент оплата не требуется."
-      ],
       "No recent documents match your search.": [
         "Нет недавних документов, соответствующих вашему поиску."
       ],
@@ -4903,9 +4513,6 @@
       ],
       "Not connected": [
         "Нет подключения"
-      ],
-      "Number of dedicated servers in the organization": [
-        "Количество выделенных серверов в организации"
       ],
       "Numbers": [
         "Цифры"
@@ -4934,12 +4541,6 @@
       "Opening...": [
         "Открывается..."
       ],
-      "or discover other features:": [
-        "или откройте для себя другие возможности:"
-      ],
-      "Organization size": [
-        "Размер организации"
-      ],
       "Other accounts": [
         "Другие аккаунты"
       ],
@@ -4958,9 +4559,6 @@
       "Password must have:": [
         "Пароль должен содержать:"
       ],
-      "Payments are protected with TLS encryption and Swiss privacy laws.": [
-        "Платежи защищены шифрованием TLS и швейцарскими законами о частной жизни."
-      ],
       "Pending invitations": [
         "Ожидающие приглашения"
       ],
@@ -4973,20 +4571,11 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME автоматически отправляет сообщение, используя текущий режим редактора писем."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Пожалуйста, подтвердите данные карты во вкладке проверки."
-      ],
-      "Please authenticate your payment in the verification tab.": [
-        "Пожалуйста, подтвердите платёж во вкладке проверки."
-      ],
       "Please enter the password to decrypt and view content.": [
         "Для расшифровки и просмотра содержимого введите пароль."
       ],
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "Пожалуйста, экспортируйте копию текущих изменений из главного меню и перезагрузите страницу."
-      ],
-      "Please fill in all required fields.": [
-        "Заполните все обязательные поля."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Пожалуйста, обратите внимание, что адреса, назначенные этим группам, НЕ будут удалены."
@@ -5015,12 +4604,6 @@
       "Please try again in a few moments": [
         "Пожалуйста, попробуйте еще раз чуть позже"
       ],
-      "Please try again using a different payment method, or contact your bank.": [
-        "Пожалуйста, попробуйте другой способ оплаты или свяжитесь с вашим банком."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Пожалуйста, попробуйте еще раз, используйте другой способ оплаты или обратитесь в PayPal для получения помощи."
-      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Пожалуйста, подождите, пока мы ищем контакты, которые можно повторно подписать с помощью основного ключа шифрования."
       ],
@@ -5032,9 +4615,6 @@
       ],
       "Preparing link to folder": [
         "Подготовка ссылки на папку"
-      ],
-      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
-        "Стоимость указана с учетом всех применимых циклических скидок и не истекших купонов, сохраненных в вашем аккаунте."
       ],
       "Primary": [
         "Основной"
@@ -5059,9 +4639,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решит большую часть проблем."
-      ],
-      "Registering your subscription…": [
-        "Регистрация вашей подписки…"
       ],
       "Restored version to": [
         "Версия восстановлена до"
@@ -5090,9 +4667,6 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Выберите, какие календари импортировать. Новый календарь будет создан для каждого импортированного календаря с учётом числа календарей, доступных в вашем тарифе."
       ],
-      "SEPA payments are not available at the moment. Please try again later.": [
-        "SEPA-платежи сейчас недоступны. Пожалуйста, попробуйте позже."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недоступны. Попробуйте снова через несколько минут"
       ],
@@ -5102,14 +4676,8 @@
       "Set up your organization": [
         "Настройка организации"
       ],
-      "Setting up ${ feature }…": [
-        "Установка ${ feature }…"
-      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Настройка PGP позволяет отправлять электронную почту со сквозным шифрованием пользователю не-${ BRAND_NAME } сервиса, который использует службу, совместимую с PGP."
-      ],
-      "Setting up your new address…": [
-        "Настройка вашего нового адреса…"
       ],
       "Settings update failed": [
         "Ошибка при обновлении настроек"
@@ -5147,14 +4715,8 @@
       "Something went wrong": [
         "Что-то пошло не так"
       ],
-      "Start sharing it with contacts and use it for online services.": [
-        "Начните делиться им с контактами и использовать его для онлайн-сервисов."
-      ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Оставайтесь на связи без усилий, включив следующие настройки VPN:"
-      ],
-      "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
-        "Отправьте депозит, используя указанный адрес, или отсканируйте QR-код. Ваш депозит будет отражен в вашем аккаунте после подтверждения."
       ],
       "Subscription auto-renews every ${ cycle } month.": [
         "Подписка обновляется каждый ${ cycle } месяц.",
@@ -5176,9 +4738,6 @@
       ],
       "Temporarily unavailable. Please check back later.": [
         "Временно недоступно. Пожалуйста, проверьте позже."
-      ],
-      "Thank you for subscribing. Secure browsing starts now.": [
-        "Спасибо за подписку. Защищенный просмотр веб-страниц начинается сейчас."
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Акаунт может иметь новый ключ или могли быть взломаны следующие элементы: ${ items }. Открывайте только в том случае, если вы им доверяете."
@@ -5207,9 +4766,6 @@
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
         "Похоже, что введенный вами URL был скопирован из Slack неправильно. При копировании длинных ссылок из Slack нажмите на ссылке правой кнопкой мыши, затем выберите «Копировать ссылку», а не копируйте усеченный текст URL напрямую."
       ],
-      "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
-        "Процесс проверки откроется в новой вкладке. Пожалуйста, отключите блокировку всплывающих окон."
-      ],
       "There are no documents in the trash.": [
         "В Корзине документов нет."
       ],
@@ -5230,9 +4786,6 @@
       ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Это название или псевдоним для вашей организации, который будут видеть ваши пользователи. Вы можете изменить его в любое время."
-      ],
-      "This is now your ${ defaultEmailAddress } for sending new messages.": [
-        "Теперь это ваш ${ defaultEmailAddress } для отправки новых сообщений."
       ],
       "This item already exists in your library": [
         "Этот элемент уже существует в вашей библиотеке"
@@ -5279,9 +4832,6 @@
       "This will upload a new version of the folder": [
         "Будет загружена новая версия папки"
       ],
-      "To complete your payment, please send ${ btcAmountBold } to the address below.": [
-        "Для завершения оплаты, пожалуйста, отправьте ${ btcAmountBold } на адрес ниже."
-      ],
       "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
         "Чтобы скачать файлы ${ DOCS_APP_NAME }, откройте их в ${ DOCS_APP_NAME } и экспортируйте их."
       ],
@@ -5299,18 +4849,6 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Чтобы использовать проверку адреса, вы должны доверять одному или нескольким из доступных публичных ключей, включая тот, который вы хотите использовать для отправки. Это предотвращает подделку ключей шифрования."
-      ],
-      "Total email addresses": [
-        "Всего адресов электронной почты"
-      ],
-      "Total storage": [
-        "Общий объем хранилища"
-      ],
-      "Total supported domains": [
-        "Всего поддерживаемых доменов"
-      ],
-      "Total VPN connections": [
-        "Всего подключений к VPN"
       ],
       "Tracking": [
         "Отслеживание"
@@ -5357,23 +4895,11 @@
       "username": [
         "имя пользователя"
       ],
-      "Users": [
-        "Пользователи"
-      ],
-      "Verification may take a few minutes.": [
-        "Проверка может занять несколько минут."
-      ],
-      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "Проверка будет происходить в новой вкладке. Отключите блокировщики всплывающих окон. Мы не будем снимать ваши средства. Любая сумма, используемая для проверки вашей карты, будет немедленно возвращена."
-      ],
       "Version number successfully copied to clipboard": [
         "Номер версии скопирован в буфер обмена"
       ],
       "View only": [
         "Режим просмотра"
-      ],
-      "Visa Secure logo": [
-        "Логотип Visa Secure"
       ],
       "VPN IP": [
         "IP VPN"
@@ -5381,26 +4907,11 @@
       "Warning": [
         "Предупреждение"
       ],
-      "We couldn’t process your payment.": [
-        "Нам не удалось обработать ваш платёж."
-      ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Мы не смогли проверить, что ${ emailAddress } загрузил ${ fileName }."
       ],
       "We couldn’t verify who uploaded ${ fileName }.": [
         "Мы не смогли проверить, кто загрузил ${ fileName }."
-      ],
-      "We need to authenticate your payment method with your bank.": [
-        "Нам нужно подтвердить ваш способ оплаты в вашем банке."
-      ],
-      "We need to authenticate your payment with your bank.": [
-        "Нам нужно подтвердить ваш платёж в вашем банке."
-      ],
-      "We use 3-D Secure to protect your payments": [
-        "Мы используем 3-D Secure для защиты ваших платежей"
-      ],
-      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Для завершения транзакции мы откроем новую вкладку браузера и перенаправим вас на сайт PayPal. Если вы используете блокировщики всплывающих окон, то отключите их перед тем, как продолжить."
       ],
       "We'll email you once import is complete.": [
         "Мы отправим вам электронное письмо после завершения импорта."
@@ -5468,9 +4979,6 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Вы также можете объединить импортированные календари с существующими календарями ${ BRAND_NAME }."
       ],
-      "You can change this anytime in ${ settingsLink }.": [
-        "Вы можете изменить это в любой момент в ${ settingsLink }."
-      ],
       "You can check the progress ${ importProgressLink }.": [
         "Вы можете проверить ход выполнения ${ importProgressLink }."
       ],
@@ -5504,18 +5012,6 @@
       "You don't have access": [
         "У вас нет доступа"
       ],
-      "You get notified if your password or other data was leaked from a third-party service.": [
-        "Получайте уведомления об утечках ваших паролей или других данных из сторонних сервисов."
-      ],
-      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
-        "У вас пробная подписка на ${ planTitle }. Если вы хотите продолжить подписку после пробного периода, добавьте способ оплаты."
-      ],
-      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
-        "У вас пробная подписка на ${ planTitle }. В данный момент оплата не требуется. Ваша подписка будет автоматически продлена по окончании пробного периода."
-      ],
-      "You may be redirected to your bank’s website.": [
-        "Вы можете быть перенаправлены на сайт вашего банка."
-      ],
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "Возможно, у вас нет необходимых разрешений для просмотра с помощью выбранного аккаунта. Попробуйте использовать другой аккаунт или свяжитесь с владельцем для получения доступа."
       ],
@@ -5527,9 +5023,6 @@
       ],
       "You will lose all unsaved changes.": [
         "Вы потеряете все несохраненные изменения."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Скоро вы будете перенаправлены на сайт PayPal для подтверждения вашего платежа."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Затем каждый ${ renewCycle } месяц вам будет выставляться счет на ${ renewAmountStr }.",
@@ -5650,19 +5143,8 @@
       ]
     },
     "info": {
-      "Optional": [
-        "Дополнительно"
-      ],
       "Selected color:": [
         "Выбранный цвет"
-      ]
-    },
-    "Info for cash payment method": {
-      "How to send a cash payment?": [
-        "Как отправить оплату наличными?"
-      ],
-      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
-        "Найдите инструкции в статье: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -5742,17 +5224,8 @@
       "${ BRAND_NAME } username": [
         "имя пользователя ${ BRAND_NAME }"
       ],
-      "${ n } month": [
-        "${ n } месяц",
-        "${ n } месяца",
-        "${ n } месяцев",
-        "${ n } месяцев"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Временно недоступно. Проверьте позже.)"
-      ],
-      "Account holder": [
-        "Владелец счёта"
       ],
       "Add email address": [
         "Добавить адрес эл. почты"
@@ -5762,12 +5235,6 @@
       ],
       "Add to group": [
         "Добавить в группу"
-      ],
-      "Address": [
-        "Адрес"
-      ],
-      "Anderson": [
-        "Андерсон"
       ],
       "Anyone on the Internet with the link can edit": [
         "Любой пользователь, имеющий ссылку, может редактировать"
@@ -5799,20 +5266,11 @@
       "Beta Access": [
         "Доступ к бета-версии"
       ],
-      "Billing cycle": [
-        "Платежный цикл"
-      ],
       "Browser": [
         "Браузер"
       ],
       "Browser version": [
         "Версия браузера"
-      ],
-      "BTC address": [
-        "Адрес BTC"
-      ],
-      "BTC amount": [
-        "Сумма BTC"
       ],
       "Calendar": [
         "Календарь"
@@ -5822,18 +5280,6 @@
       ],
       "Cancel download": [
         "Отменить скачивание"
-      ],
-      "Card details": [
-        "Данные карты"
-      ],
-      "Card holder": [
-        "Владелец карты"
-      ],
-      "Card number": [
-        "Номер карты"
-      ],
-      "Cash": [
-        "Наличные"
       ],
       "Category": [
         "Категория"
@@ -5846,12 +5292,6 @@
       ],
       "Colors": [
         "Цвета"
-      ],
-      "Company": [
-        "Компания"
-      ],
-      "Company name": [
-        "Название компании"
       ],
       "Confirm password": [
         "Подтвердить пароль"
@@ -5873,9 +5313,6 @@
       ],
       "Country": [
         "Страна"
-      ],
-      "Credits": [
-        "Кредиты"
       ],
       "Delete": [
         "Удалить"
@@ -5937,17 +5374,11 @@
       "Erase this link and remove everyone with access": [
         "Стереть эту ссылку и удалить всех, кто имеет к ней доступ"
       ],
-      "Expires": [
-        "Срок действия"
-      ],
       "Extended address": [
         "Расширенный адрес"
       ],
       "File": [
         "Файл"
-      ],
-      "First name": [
-        "Имя"
       ],
       "Folder location": [
         "Размещение папки"
@@ -5966,9 +5397,6 @@
       ],
       "I understand the risk": [
         "Я понимаю риск"
-      ],
-      "IBAN": [
-        "IBAN"
       ],
       "Ignore": [
         "Игнорировать"
@@ -6014,9 +5442,6 @@
       ],
       "Last month only": [
         "Только за последний месяц"
-      ],
-      "Last name": [
-        "Фамилия"
       ],
       "Log in or sign up ": [
         "Войти или зарегистрироваться "
@@ -6078,15 +5503,6 @@
       "Password strength": [
         "Надежность пароля"
       ],
-      "Payer": [
-        "Плательщик"
-      ],
-      "Payment details": [
-        "Информация о платеже"
-      ],
-      "Payment method": [
-        "Способ оплаты"
-      ],
       "PGP scheme": [
         "Схема PGP"
       ],
@@ -6101,9 +5517,6 @@
       ],
       "Postal code": [
         "Почтовый индекс"
-      ],
-      "Proration": [
-        "Пропорциональное распределение"
       ],
       "Public keys": [
         "Открытые ключи"
@@ -6126,9 +5539,6 @@
       "Reveal password": [
         "Показать пароль"
       ],
-      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
-        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
-      ],
       "Set expiration date": [
         "Задать срок действия"
       ],
@@ -6147,12 +5557,6 @@
       "Skip folder": [
         "Пропустить папку"
       ],
-      "Start date": [
-        "Дата начала"
-      ],
-      "State": [
-        "Состояние"
-      ],
       "Stop sharing": [
         "Прекратить доступ"
       ],
@@ -6165,9 +5569,6 @@
       "Strong password": [
         "Надежный пароль"
       ],
-      "Subscription options": [
-        "Параметры подписки"
-      ],
       "Sync with system": [
         "Синхронизировать с системой"
       ],
@@ -6176,9 +5577,6 @@
       ],
       "Theme": [
         "Тема"
-      ],
-      "Thomas": [
-        "Томас"
       ],
       "To: ${ toEmail }": [
         "Кому: ${ toEmail }"
@@ -6230,9 +5628,6 @@
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
-      ],
-      "ZIP code": [
-        "Почтовый индекс"
       ]
     },
     "Label for contact group color": {
@@ -6243,14 +5638,6 @@
     "Label for contact group name": {
       "Name": [
         "Имя"
-      ]
-    },
-    "Label, credit card": {
-      "Postal code": [
-        "Почтовый индекс"
-      ],
-      "ZIP code": [
-        "Индекс"
       ]
     },
     "Label/folder modal": {
@@ -6292,9 +5679,6 @@
       ]
     },
     "Link": {
-      "Add a gift code": [
-        "Добавить подарочный код"
-      ],
       "clearing your browser cache": [
         "очистка кеша браузера"
       ],
@@ -6315,9 +5699,6 @@
       ],
       "How to migrate to ${ BRAND_NAME }": [
         "Как перенести данные в ${ BRAND_NAME }"
-      ],
-      "How to pay with Bitcoin?": [
-        "Как оплатить с помощью Bitcoin?"
       ],
       "How to set up ${ VPN_APP_NAME }": [
         "Как настроить ${ VPN_APP_NAME }"
@@ -6360,9 +5741,6 @@
       ],
       "Request an invite": [
         "Запросить приглашение"
-      ],
-      "settings": [
-        "настройки"
       ],
       "Types of recovery methods": [
         "Типы способов восстановления"
@@ -6463,14 +5841,8 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Помощник по написанию ${ BRAND_NAME } Scribe"
       ],
-      "Add ${ BRAND_NAME } Scribe writing assistant": [
-        "Добавить помощника по написанию ${ BRAND_NAME } Scribe"
-      ],
       "Add-on with free trial": [
         "Дополнение с бесплатным пробным периодом"
-      ],
-      "for ${ price }": [
-        "за ${ price }"
       ]
     },
     "Message": {
@@ -7262,9 +6634,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand }, заканчивающаяся на ${ last4 }"
-      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Используйте продвинутую систему сетевой безопасности и управляйте доступом с помощью выделенных защищённых шлюзов"
       ],
@@ -7361,9 +6730,6 @@
       ],
       "Downgrade account?": [
         "Перейти на более дешевую версию аккаунта?"
-      ],
-      "Review subscription and pay": [
-        "Выберите подписку и оплатите"
       ],
       "Switch plans?": [
         "Сменить тариф?"
@@ -8094,11 +7460,6 @@
         "Неограниченное количество имен пользователей, заметок, кредитных карт и многое другое"
       ]
     },
-    "pass_signup_2023: Title": {
-      "${ upsellPlanTitle } plan": [
-        "тариф ${ upsellPlanTitle }"
-      ]
-    },
     "pass_signup_2024: Info": {
       "${ n } user account": [
         "${ n } аккаунт пользователя",
@@ -8168,56 +7529,7 @@
         "Для выполнения этой операции вам необходим доступ к ключу организации."
       ]
     },
-    "Payment method option": {
-      "Apple Pay": [
-        "Apple Pay"
-      ],
-      "Bank transfer": [
-        "Банковский перевод"
-      ],
-      "Credit/debit card": [
-        "Кредитная/дебетовая карта"
-      ],
-      "New credit/debit card": [
-        "Новая кредитная/дебетовая карта"
-      ]
-    },
-    "Payment.Sepa.Action": {
-      "Use company name": [
-        "Использовать имя компании"
-      ],
-      "Use personal name": [
-        "Использовать личное имя"
-      ]
-    },
     "Payments": {
-      "Billing Country": [
-        "Страна плательщика"
-      ],
-      "Card number": [
-        "Номер карты"
-      ],
-      "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
-        "В настоящее время автоматическое продление подписки отключено. Если вы измените подписку сейчас, то автоматическое продление будет снова включено."
-      ],
-      "CVC": [
-        "CVC-код"
-      ],
-      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
-        "В течение этого времени вы не сможете изменить или отменить свою подписку. Дождитесь завершения оплаты, прежде чем пытаться внести какие-либо изменения. Благодарим вас за терпение."
-      ],
-      "Got it": [
-        "Понятно"
-      ],
-      "MM/YY": [
-        "ММ/ГГ"
-      ],
-      "More plans are available in other currencies": [
-        "Другие тарифы доступны в других валютах"
-      ],
-      "Please reactivate your subscription first to decrease the number of add-ons.": [
-        "Сначала повторно активируйте подписку, чтобы уменьшить количество дополнений."
-      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Цены продления могут быть изменены в соответствии с ${ termsAndConditionsLink }."
       ],
@@ -8250,50 +7562,6 @@
         "Тогда он будет автоматически продлен по цене ${ renewPriceStr } на ${ renewalLength } месяца. Вы можете отменить его в любое время.",
         "Тогда он будет автоматически продлен по цене ${ renewPriceStr } на ${ renewalLength } месяцев. Вы можете отменить его в любое время.",
         "Тогда он будет автоматически продлен по цене ${ renewPriceStr } на ${ renewalLength } месяцев. Вы можете отменить его в любое время."
-      ],
-      "Timeout exceeded": [
-        "Превышено время ожидания"
-      ],
-      "Your payment is still being processed": [
-        "Ваш платёж все еще обрабатывается"
-      ]
-    },
-    "Payments.Error": {
-      "Invalid card number": [
-        "Неверный номер карты"
-      ],
-      "Invalid expiration date": [
-        "Неверный срок годности"
-      ],
-      "Invalid security code": [
-        "Недействительный код безопасности"
-      ],
-      "Something went wrong. Please try again later.": [
-        "Что-то пошло не так. Повторите попытку позже."
-      ],
-      "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
-        "Мы не можем проверить подлинность вашего способа оплаты. Выберите другой способ оплаты или попробуйте еще раз."
-      ],
-      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
-        "Ваша карта отклонена. Пожалуйста, попробуйте другую карту или свяжитесь с вашим банком для авторизации транзакции."
-      ]
-    },
-    "Payments.plan_name": {
-      "Free": [
-        "Free"
-      ]
-    },
-    "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Подтверждая этот платеж, вы уполномочиваете ${ BRAND_NAME } и Stripe, нашего поставщика платежных услуг, дать указание вашему банку списать средства с вашего счета. Вы можете получить деньги обратно в течение 8 недель с момента списания, в соответствии с условиями вашего договора с банком."
-      ],
-      "Street address, postal code, and city": [
-        "Адрес улицы, почтовый индекс и город"
-      ]
-    },
-    "Payments.VAT number name": {
-      "VAT number": [
-        "Номер плательщика НДС"
       ]
     },
     "PGP key encryption warning": {
@@ -8330,17 +7598,8 @@
       "A way to contact you": [
         "Способ связаться с вами"
       ],
-      "Anderson": [
-        "Андерсон"
-      ],
-      "Anytown": [
-        "Любой город"
-      ],
       "Choose password": [
         "Выбрать пароль"
-      ],
-      "Company name": [
-        "Название компании"
       ],
       "E.g., ": [
         "Например, "
@@ -8357,9 +7616,6 @@
       "First name": [
         "Имя"
       ],
-      "Gift code": [
-        "Подарочный код"
-      ],
       "Group name": [
         "Название группы"
       ],
@@ -8368,9 +7624,6 @@
       ],
       "Last name": [
         "Фамилия"
-      ],
-      "Main street 12": [
-        "Мейн стрит 12"
       ],
       "Message": [
         "Сообщение"
@@ -8390,9 +7643,6 @@
       "Please describe the problem and include any error messages": [
         "Пожалуйста, опишите проблему и добавьте все возникавшие сообщения об ошибках"
       ],
-      "Postal code": [
-        "Почтовый индекс"
-      ],
       "Search for group name": [
         "Поиск по названию группы"
       ],
@@ -8408,9 +7658,6 @@
       "Select a reason": [
         "Выберите причину"
       ],
-      "Select state": [
-        "Выберите область"
-      ],
       "Set date": [
         "Установить дату"
       ],
@@ -8420,37 +7667,13 @@
       "Start typing an email address": [
         "Начните вводить адрес эл. почты"
       ],
-      "Thomas": [
-        "Томас"
-      ],
-      "VAT number": [
-        "Номер плательщика НДС"
-      ],
       "Your organization name": [
         "Название вашей организации"
-      ],
-      "ZIP code": [
-        "Почтовый индекс"
       ]
     },
     "Placeholder for contact group name": {
       "Name": [
         "Имя"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "свяжитесь"
-      ]
-    },
-    "plus_block": {
-      "Upgrade to ${ upsellPlanTitle }": [
-        "Улучшить до ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Бесплатно"
       ]
     },
     "Progress bar description": {
@@ -9080,9 +8303,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "1 user": [
-        "1 пользователь"
-      ],
       "3 TB": [
         "3 ТБ"
       ],
@@ -9094,9 +8314,6 @@
       ],
       "High speed VPN": [
         "Высокоскоростной VPN"
-      ],
-      "Highest VPN speed": [
-        "Высочайшая скорость VPN"
       ],
       "Premium ${ appName1 }": [
         "Платная версия ${ appName1 }"
@@ -9112,9 +8329,6 @@
       ],
       "Secure cloud storage": [
         "Безопасное облачное хранилище"
-      ],
-      "Secure streaming": [
-        "Защищенный стриминг"
       ],
       "Support online privacy": [
         "Обеспечьте свою конфиденциальность в Интернете"
@@ -9374,17 +8588,6 @@
         "Вы потеряете доступ к неограниченному количеству логинов и заметок, неограниченному количеству псевдонимов hide-my-email, 20 хранилищам, а также к приоритетной поддержке."
       ]
     },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Оплата каждые 2 года"
-      ],
-      "Billed monthly": [
-        "Ежемесячная оплата"
-      ],
-      "Billed yearly": [
-        "Ежегодная оплата"
-      ]
-    },
     "Subscription attribute": {
       "${ n } free VPN connection per user": [
         "${ n } бесплатное подключение к VPN на пользователя",
@@ -9443,16 +8646,6 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "Подписка будет понижена в конце платежного периода."
-      ]
-    },
-    "Subscription length": {
-      "Lifetime": [
-        "Пожизненная"
-      ]
-    },
-    "Subscription price": {
-      "For ${ totalPrice }": [
-        "За ${ totalPrice }"
       ]
     },
     "subscription reminder": {
@@ -9522,37 +8715,6 @@
         "Приоритетная поддержка"
       ]
     },
-    "Subscription renewal state": {
-      "Are you sure?": [
-        "Вы уверены?"
-      ],
-      "Auto-pay is disabled": [
-        "Автоматические платежи отключены"
-      ],
-      "Auto-pay is enabled": [
-        "Автоматические платежи включены"
-      ],
-      "Disable": [
-        "Отключить"
-      ],
-      "Enable auto-pay support": [
-        "Включить поддержку автоматических платежей"
-      ],
-      "Keep auto-pay": [
-        "Оставить автоплатёж"
-      ],
-      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
-        "Наша система больше не будет автоматически списывать платежи, используя этот способ оплаты, но ваша подписка по-прежнему будет обновляться в конце платёжного цикла. Если вы хотите изменить подписку или понизить её уровень, вам по-прежнему необходимо сделать это самостоятельно до окончания платёжного периода. Кроме того, если вы забудете произвести платёж вручную, и автоматический платёж будет отключен для всех способов оплаты, мы можем перевести ваш аккаунт на более дешёвую подписку, что приведёт к потере многих функций."
-      ],
-      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "Наша система больше не будет автоматически списывать платежи, используя этот способ оплаты, но ваша подписка по-прежнему будет обновляться в конце платёжного цикла. Если вы хотите изменить подписку или понизить её уровень, вам по-прежнему необходимо сделать это самостоятельно до окончания платёжного периода. Мы не можем автоматически понизить ваш уровень подписки, так как если вы превшаете лимит бесплатного хранилища или используете платные функции, мы не можем автоматически удалить файлы, электронные письма или другие данные. Если вы отключите автоматический платёж, не забудьте оплатить следующий счёт по подписке до даты окончания, чтобы избежать блокировки аккаунта."
-      ]
-    },
-    "Subscription saving": {
-      "Save ${ priceString }": [
-        "Сэкономьте ${ priceString }"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } контакт выглядит одинаково.",
@@ -9568,9 +8730,6 @@
       ],
       "Alias saved and copied": [
         "Псевдоним сохранён и скопирован"
-      ],
-      "Billing details updated": [
-        "Информация о платеже обновлена"
       ],
       "Canceling import": [
         "Отмена импорта"
@@ -9596,9 +8755,6 @@
       "Contacts deleted": [
         "Контакты удалены"
       ],
-      "Copied to clipboard": [
-        "Скопировано в буфер обмена"
-      ],
       "Email address copied to clipboard": [
         "Адрес скопирован в буфер обмена"
       ],
@@ -9613,12 +8769,6 @@
       ],
       "Last modified aliases stored in your oldest vault": [
         "Последние измененные псевдонимы хранятся в вашем самом старом хранилище"
-      ],
-      "Payment method added": [
-        "Способ оплаты добавлен"
-      ],
-      "Payment method updated": [
-        "Способ оплаты обновлён"
       ],
       "Phone number copied to clipboard": [
         "Номер телефона скопирован в буфер обмена"
@@ -9656,14 +8806,6 @@
         "/за пользователя в месяц"
       ]
     },
-    "Suffix for price": {
-      "per month": [
-        "в месяц"
-      ],
-      "per user per month": [
-        "на пользователя в месяц"
-      ]
-    },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
         "Создавайте надежные данные для входа на всех устройствах. Вам будут доступны неограниченное количество псевдонимов, 20 хранилищ, встроенная двухфакторная аутентификация, автозаполнение данных кредитной карты и многое другое."
@@ -9676,17 +8818,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Защитите свои материалы при помощи зашифрованного облачного хранилища. Вам будут доступны история версий, зашифрованный обмен файлами и многое другое."
-      ]
-    },
-    "Tab subscription modal": {
-      "For businesses": [
-        "Для предприятий"
-      ],
-      "For families": [
-        "Для семьи"
-      ],
-      "For individuals": [
-        "Для частных лиц"
       ]
     },
     "Table header": {
@@ -9820,9 +8951,6 @@
         "${ emailsCount } адресов электронной почты",
         "${ emailsCount } адресов электронной почты"
       ],
-      "${ feature } is now active": [
-        "${ feature } теперь активна"
-      ],
       "Account recovery": [
         "Восстановление аккаунта"
       ],
@@ -9834,9 +8962,6 @@
       ],
       "Add contact group name": [
         "Добавление имени для группы контактов"
-      ],
-      "Add credit/debit card": [
-        "Добавить кредитную/дебетовую карту"
       ],
       "Add to ${ groupCount } group": [
         "Добавление в ${ groupCount } группу",
@@ -9856,20 +8981,8 @@
       "All settings": [
         "Все настройки"
       ],
-      "Amount due": [
-        "К оплате"
-      ],
-      "Apply gift code": [
-        "Применить подарочный код"
-      ],
       "Are you sure?": [
         "Вы уверены?"
-      ],
-      "Auto-deletion is active": [
-        "Автоматическое удаление включено"
-      ],
-      "Billing cycle": [
-        "Период оплаты"
       ],
       "Birthday": [
         "День рождения"
@@ -9888,9 +9001,6 @@
       ],
       "Cannot load link": [
         "Не удалось загрузить ссылку"
-      ],
-      "Card verification": [
-        "Проверка карты"
       ],
       "Change password": [
         "Изменить пароль"
@@ -9927,9 +9037,6 @@
       ],
       "Continue with partial import?": [
         "Продолжить частичный импорт?"
-      ],
-      "Coupon": [
-        "Купон"
       ],
       "Create a new folder": [
         "Создать новую папку"
@@ -10036,17 +9143,11 @@
       "Duplicate folder found": [
         "Найден дубликат папки"
       ],
-      "Edit billing address": [
-        "Изменить платежный адрес"
-      ],
       "Edit contact": [
         "Изменение контакта"
       ],
       "Edit contact group": [
         "Изменение группы контактов"
-      ],
-      "Edit credit/debit card": [
-        "Изменить кредитную/дебетовую карту"
       ],
       "Edit email settings": [
         "Изменить настройки электронной почты"
@@ -10078,9 +9179,6 @@
       "Enter your password": [
         "Введите свой пароль"
       ],
-      "Error": [
-        "Ошибка"
-      ],
       "Error Syncing": [
         "Ошибка синхронизации"
       ],
@@ -10092,9 +9190,6 @@
       ],
       "Get the apps": [
         "Получить приложения"
-      ],
-      "Gift": [
-        "Подарок"
       ],
       "Groups": [
         "Группы"
@@ -10180,9 +9275,6 @@
       "Need to share more files with edit access?": [
         "Нужно предоставить доступ с правом редактирования к другим файлам?"
       ],
-      "Network error": [
-        "Ошибка сети"
-      ],
       "Next": [
         "Далее"
       ],
@@ -10219,15 +9311,6 @@
       "Other names": [
         "Другие названия"
       ],
-      "Payment failed": [
-        "Сбой платежа"
-      ],
-      "Payment verification": [
-        "Проверка платежа"
-      ],
-      "PayPal verification failed": [
-        "Сбой проверки PayPal"
-      ],
       "Performance might be affected": [
         "Это может отразиться на производительности"
       ],
@@ -10243,17 +9326,11 @@
       "Private browsing vs VPN": [
         "Приватный просмотр по сравнению с VPN"
       ],
-      "Processing...": [
-        "Обработка…"
-      ],
       "Re-sign all contacts": [
         "Переподписать все контакты"
       ],
       "Re-signing contacts": [
         "Переподписание контактов"
-      ],
-      "Recommended": [
-        "Рекомендуется"
       ],
       "Recommended actions": [
         "Рекомендуемые действия"
@@ -10275,9 +9352,6 @@
       ],
       "Security center": [
         "Центр безопасности"
-      ],
-      "Select a plan": [
-        "Выбор тарифа"
       ],
       "Select action to take on contact group": [
         "Выберите действие для группы контактов"
@@ -10342,9 +9416,6 @@
       "Subscription canceled": [
         "Подписка отменена"
       ],
-      "Summary": [
-        "Сводка"
-      ],
       "The link either does not exist or has expired": [
         "Ссылка не существует или просрочена"
       ],
@@ -10366,9 +9437,6 @@
       "Untitled spreadsheet ${ date }": [
         "Электронная таблица без названия ${ date }"
       ],
-      "Upgrade complete!": [
-        "Улучшение выполнено!"
-      ],
       "Upgrade to ${ planName }": [
         "Улучшить на ${ planName }"
       ],
@@ -10380,15 +9448,6 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Используйте ${ VPN_SHORT_APP_NAME } для обеспечения конфиденциальности данных"
-      ],
-      "Verification failed": [
-        "Проверка не удалась"
-      ],
-      "Verifying your card...": [
-        "Проверяем вашу карту..."
-      ],
-      "Verifying your payment...": [
-        "Проверяем ваш платёж..."
       ],
       "VPN explained": [
         "Что такое VPN"
@@ -10414,9 +9473,6 @@
       "When is it most important to use a VPN?": [
         "Когда важнее всего использовать VPN?"
       ],
-      "You can now create unlimited folders and labels": [
-        "Теперь вы можете создавать неограниченное количество папок и ярлыков."
-      ],
       "You have no folders yet": [
         "У вас пока что нет папок"
       ],
@@ -10434,12 +9490,6 @@
       ],
       "Your exposed information": [
         "Ваша раскрытая информация"
-      ],
-      "Your plan": [
-        "Ваш тариф"
-      ],
-      "Your shorter address is now ready": [
-        "Ваш укороченный адрес готов"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -10487,9 +9537,6 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail автоматически категоризирует некоторые эл. письма, такие как уведомления соцсетей и рекламу. Вы можете выбрать, куда импортировать эти письма."
       ],
-      "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Если вы купили подарочный код или получили его от нашей службы поддержки, вы можете ввести его здесь."
-      ],
       "Load image": [
         "Загрузить изображение"
       ],
@@ -10516,9 +9563,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Импорт начнётся с самых последних сообщений."
-      ],
-      "The new subscription cycle starts on ${ formattedTime }": [
-        "Новый цикл подписки начинается ${ formattedTime }"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Зашифрованные пароли остаются в безопасности, пока их не расшифруют, даже если они находятся в открытом доступе."
