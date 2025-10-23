@@ -14,9 +14,8 @@ import noop from '@proton/utils/noop';
 import type { DropdownHandler } from './dropdown.abstract';
 
 export const createDropdownRelayHandler = (): DropdownHandler => {
-    /** NOTE: an async queue is used to process field events in a predictable
-     * order. As some events are processed asynchronously via messaging, this
-     * ensures the the top and sub-frame states remain in sync */
+    /** Async queue ensures predictable event processing order for cross-frame messaging.
+     * Prevents race conditions between sub-frame field events and top-frame dropdown state. */
     const queue = createAsyncQueue();
     const listeners = createListenerStore();
 
@@ -38,8 +37,8 @@ export const createDropdownRelayHandler = (): DropdownHandler => {
             const formId = req.field.getFormHandle().formId;
 
             const origin = (() => {
-                /** IFrames with `about:blank` src inherit the origin of the parent document.
-                 * TODO: Consider using the parent frame's resolved origin for these cases. */
+                /** IFrames with `about:blank` inherit parent document origin.
+                 * TODO: Use parent frame's resolved origin for these edge cases. */
                 const url = ctx?.getExtensionContext()?.url;
                 if (url) return req.action === DropdownAction.AUTOFILL_CC ? resolveDomain(url) : resolveSubdomain(url);
             })();
@@ -101,9 +100,8 @@ export const createDropdownRelayHandler = (): DropdownHandler => {
         sendMessage: noop,
 
         getState: async () => {
-            /** In the `InlineRelayService` we have no way of getting the dropdown's
-             * state to decide if we detach the field icon or not. As such relay the
-             * blur event via messaging and let the top-frame decide */
+            /** Sub-frames cannot access dropdown state directly, so relay state requests
+             * to top-frame for icon and dropdown management decisions in sub-frames. */
             const res = await queue.push(() =>
                 sendMessage(
                     contentScriptMessage({

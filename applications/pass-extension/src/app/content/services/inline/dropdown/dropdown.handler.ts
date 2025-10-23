@@ -25,7 +25,7 @@ export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler
 
             const didAnchorChange = !attachedAnchor || willDropdownAnchorChange(attachedAnchor, payload);
 
-            /** Close if anchor changed or user clicked icon to toggle dropdown */
+            /** Auto-close conditions: anchor changed OR user clicked icon (autofocused=false) */
             const autoclose = visible && (didAnchorChange || !autofocused);
             if (autoclose) dropdown.close();
 
@@ -41,10 +41,10 @@ export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler
                 const scrollParent = form?.scrollParent;
                 const scrollOptions = { capture: true, once: true, passive: true } as const;
 
-                /** Register event listeners to auto-close dropdown on various UI interactions.
-                 * - resize/scroll: close immediately on layout changes
-                 * - focus: close on tab switching
-                 * - blur: conditionally close only if dropdown lost focus */
+                /** Auto-close listeners for dropdown lifecycle:
+                 * - resize/scroll: immediate close on layout changes
+                 * - popstate/hashchange/beforeunload: close on navigation
+                 * - focus/blur: conditional close (see: `dropdown.utils.ts`) */
                 listeners.addListener(window, 'resize', close, { once: true, passive: true });
                 listeners.addListener(window, 'scroll', close, scrollOptions);
                 listeners.addListener(window, 'popstate', close);
@@ -74,8 +74,8 @@ export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler
                 }
             })();
 
-            /* If a field is passed as a parameter, only close the
-             * dropdown if it is currently attached to this element. */
+            /** Only close dropdown if no target specified OR target matches current anchor.
+             * Prevents closing dropdown when triggered by unrelated field events. */
             if (!target || activeAnchor) {
                 listeners.removeAll();
                 registry.dropdown?.close();

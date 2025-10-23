@@ -19,9 +19,10 @@ import { omit } from '@proton/shared/lib/helpers/object';
 import type { DropdownHandler } from './dropdown.abstract';
 import type { DropdownActions, DropdownAnchor, DropdownRequest } from './dropdown.app';
 
-/** Handles field cleanup when dropdown closes, preventing race conditions.
- * Uses actionTrap to block interactions during transitions and nextTick
- * to ensure DOM state has settled before focus/icon operations. */
+/** Handles field cleanup when dropdown closes with race condition prevention.
+ * - If `!refocus`: blocks field interactions for 1ms to prevent transition conflicts
+ * - Uses nextTick for DOM stability before focus/icon operations
+ * - Conditionally detaches icon only if field is not currently active */
 export const handleOnClosed = (field: FieldHandle, refocus: boolean) => {
     if (!refocus) field.preventAction(1);
     nextTick(() => {
@@ -30,6 +31,10 @@ export const handleOnClosed = (field: FieldHandle, refocus: boolean) => {
     });
 };
 
+/** Auto-close prevention handler for focus/blur events:
+ * - Autofill sequences (ctx.service.autofill.processing = true)
+ * - Dropdown focus transitions (getState().focused = true)
+ * - Uses onNextTick to ensure DOM state has settled before evaluation. */
 export const handleAutoClose = (dropdown: DropdownHandler, field?: FieldHandle) =>
     onNextTick(
         withContext<() => void>(async (ctx) => {
@@ -53,9 +58,9 @@ export const handleBackdrop = (getField: () => Maybe<FieldHandle>, effect: () =>
     if (!target || !excluded.includes(target)) effect();
 };
 
-/** Depending on the autofill action type, origin should be adapted.
- * In the case of CC autofill, we apply loose domain checking to support
- * cross-frame autofilling on different subdomain for the same tld.*/
+/** Resolves origin based on autofill action requirements:
+ * - CC autofill: uses domain for loose cross-frame matching across subdomains
+ * - Other actions: uses subdomain for strict origin matching */
 export const resolveDropdownOrigin = (request: DropdownRequest, url: ParsedUrl): MaybeNull<string> => {
     const domain = resolveDomain(url);
     const subdomain = resolveSubdomain(url);
@@ -68,9 +73,10 @@ export const resolveDropdownOrigin = (request: DropdownRequest, url: ParsedUrl):
     }
 };
 
-/** Processes a dropdown request to create a usable payload for the injected dropdown.
- * Returns undefined to cancel if the request is invalid. For login/identity autofill
- * triggered by a focus event, ensures a valid item count exists before proceeding. */
+/** Prepares dropdown payload with authorization and item count validation.
+ * Returns `undefined` to cancel invalid requests. For focus-triggered login/identity
+ * autofill, validates `item count > 0` before proceeding. Waits for client status
+ * resolution after unlock requests for proper refocus. */
 export const prepareDropdownAction = withContext<(request: DropdownRequest) => Promise<Maybe<DropdownActions>>>(
     async (ctx, request) => {
         if (!ctx) return;

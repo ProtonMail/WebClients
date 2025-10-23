@@ -25,7 +25,9 @@ import noop from '@proton/utils/noop';
 export const createPassiveInlineListeners = (channel: FrameMessageBroker) => {
     const listeners = createListenerStore();
 
-    /** Start passively listening to scroll/focus events as soon as a dropdown is opened. */
+    /** Handles dropdown opens from child frames where payload.passive = true.
+     * Intermediate frames in the frame chain register listeners to intercept auto-closing
+     * events that the dropdown frame cannot detect (parent frame scroll/focus changes). */
     const onDropdownOpened: FrameMessageHandler<WorkerMessageType.INLINE_DROPDOWN_OPENED> = ({ payload }) => {
         if (payload.type === 'result' && payload.passive) {
             const { fieldFrameId, fieldId, formId } = payload;
