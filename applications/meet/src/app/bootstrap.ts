@@ -22,7 +22,9 @@ import {
 } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getAppVersionStr } from '@proton/shared/lib/fetch/headers';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import { createUnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 import { appMode } from '@proton/shared/lib/webpack.constants';
@@ -40,7 +42,13 @@ const initializeWasmApp = async (
 ): Promise<App> => {
     await init();
 
-    const persistedSession = getPersistedSession(authentication.localID);
+    let persistedSession = getPersistedSession(authentication.localID);
+
+    if (!persistedSession && isElectronApp && authentication.localID) {
+        await wait(300);
+        persistedSession = getPersistedSession(authentication.localID);
+    }
+
     const userID = persistedSession?.UserID ?? '';
     const uid = authentication.UID ?? '';
 
