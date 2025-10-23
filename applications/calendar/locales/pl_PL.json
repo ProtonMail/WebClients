@@ -350,6 +350,9 @@
       "Expand video conferencing widget": [
         "Rozwiń widżet wideokonferencji"
       ],
+      "Explore other plans": [
+        "Pokaż inne plany"
+      ],
       "Export": [
         "Eksportuj"
       ],
@@ -1275,15 +1278,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "1 user": [
-        "1 użytkownik"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 użytkowników"
-      ],
       "Premium Password Manager": [
         "Menedżer haseł w wersji premium"
       ]
@@ -1308,35 +1302,11 @@
       "${ storageSize } storage": [
         "${ storageSize } przestrzeni dyskowej"
       ],
-      "1 TB total": [
-        "1 TB przestrzeni dyskowej"
-      ],
-      "1 user": [
-        "1 użytkownik"
-      ],
       "1 user account": [
         "1 konto użytkownika"
       ],
-      "10 email addresses": [
-        "10 adresów e-mail"
-      ],
-      "2 users": [
-        "2 użytkowników"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
       "6 user accounts": [
         "6 kont użytkowników"
-      ],
-      "6 users": [
-        "6 użytkowników"
-      ],
-      "8500+ servers across 110+ countries": [
-        "Ponad 8500 serwerów w ponad 110 krajach"
-      ],
-      "Ad-blocker and malware protection": [
-        "Blokada reklam i ochrona przed złośliwym oprogramowaniem"
       ],
       "Admin panel to manage your family": [
         "Panel administratora do zarządzania Twoją rodziną"
@@ -1347,9 +1317,6 @@
       "Easily add or remove users": [
         "Łatwo dodawaj lub usuwaj użytkowników"
       ],
-      "High speed streaming": [
-        "Szybki streaming"
-      ],
       "One-time payment, lifetime deal": [
         "Płatność jednorazowa, dożywotni dostęp"
       ],
@@ -1359,15 +1326,6 @@
       "Password health alerts": [
         "Alerty dotyczące jakości haseł"
       ],
-      "Private photo backup": [
-        "Prywatna kopia zapasowa zdjęć"
-      ],
-      "Protect 10 devices at a time": [
-        "Ochrona 10 urządzeń jednocześnie"
-      ],
-      "Secure file storage & sharing": [
-        "Bezpieczne przechowywanie i udostępnianie plików"
-      ],
       "Unlimited folders, labels and filters": [
         "Nieograniczona liczba folderów, etykiet i filtrów"
       ],
@@ -1376,12 +1334,6 @@
       ],
       "Use your own email domain": [
         "Użyj własnej domeny"
-      ],
-      "Version history": [
-        "Historia wersji"
-      ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -1395,9 +1347,6 @@
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
         "Uzyskaj dostęp do zablokowanych treści i przeglądaj prywatnie. Obejmuje ponad 8500 serwerów w ponad 110 krajach, 10 urządzeń, szybki streaming, blokadę reklam oraz ochronę przed złośliwym oprogramowaniem, VPN Accelerator i wiele więcej."
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Uzyskaj dostęp do treści w usługach streamingowych, w tym Netflix, Disney+, Prime Video i nie tylko, z dowolnego miejsca."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów hide-my-email, udostępnianie, zintegrowaną aplikację uwierzytelniającą, ${ DARK_WEB_MONITORING_NAME } i wiele więcej."
@@ -1422,9 +1371,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Zabezpiecz pliki dzięki zaszyfrowanej przestrzeni dyskowej w chmurze. Obejmuje edytor dokumentów online, kopię zapasową zdjęć, historię wersji, zaszyfrowane udostępnianie plików i wiele więcej."
-      ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Specjalnie zaprojektowana funkcja NetShield chroni Twoje urządzenia oraz przyśpiesza przeglądanie Internetu poprzez blokowanie reklam, elementów śledzących i złośliwego oprogramowania."
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Przestrzeń dyskowa jest dzielona pomiędzy wszystkimi usługami ${ BRAND_NAME }."
@@ -6613,6 +6559,9 @@
       "Don't show this again": [
         "Nie pokazuj ponownie"
       ],
+      "Duration": [
+        "Czas trwania"
+      ],
       "e.g., Amazon, eBay, Etsy": [
         "np. Amazon, eBay, Etsy"
       ],
@@ -6888,6 +6837,9 @@
       ],
       "Time zone": [
         "Strefa czasowa"
+      ],
+      "Title": [
+        "Tytuł"
       ],
       "To: ${ toEmail }": [
         "Do: ${ toEmail }"
@@ -9995,9 +9947,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "1 user": [
-        "1 użytkownik"
-      ],
       "3 TB": [
         "3 TB"
       ],

@@ -246,6 +246,9 @@
       "Create and copy alias": [
         "Créer et copier l'alias"
       ],
+      "Create booking page": [
+        "Créer une page de réservation"
+      ],
       "Create calendar": [
         "Créer un calendrier"
       ],
@@ -349,6 +352,9 @@
       ],
       "Expand video conferencing widget": [
         "Développer le widget de vidéoconférence"
+      ],
+      "Explore other plans": [
+        "Découvrez les autres abonnements"
       ],
       "Export": [
         "Exporter"
@@ -814,6 +820,9 @@
       ],
       "Submit": [
         "Envoyer"
+      ],
+      "Subscribe now": [
+        "S'abonner maintenant"
       ],
       "Switch or add account": [
         "Basculer vers ou ajouter un compte"
@@ -1282,15 +1291,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "1 user": [
-        "1 utilisateur"
-      ],
-      "3 TB": [
-        "3 To"
-      ],
-      "6 users": [
-        "6 utilisateurs"
-      ],
       "Premium Password Manager": [
         "Gestionnaire de mots de passe version premium"
       ]
@@ -1315,35 +1315,14 @@
       "${ storageSize } storage": [
         "${ storageSize } d'espace de stockage"
       ],
-      "1 TB total": [
-        "1 To au total"
-      ],
-      "1 user": [
-        "1 utilisateur"
-      ],
       "1 user account": [
         "1 compte utilisateur"
       ],
-      "10 email addresses": [
-        "10 adresses e-mail"
-      ],
-      "2 users": [
-        "2 utilisateurs"
-      ],
-      "3 TB": [
-        "3 To"
+      "200 GB storage: 40x your current plan": [
+        "200 Go d'espace de stockage : 40x votre abonnement actuel"
       ],
       "6 user accounts": [
         "6 comptes utilisateur"
-      ],
-      "6 users": [
-        "6 utilisateurs"
-      ],
-      "8500+ servers across 110+ countries": [
-        "Plus de 8 500 serveurs dans plus de 110 pays"
-      ],
-      "Ad-blocker and malware protection": [
-        "Bloqueur de publicité et protection contre les logiciels malveillants"
       ],
       "Admin panel to manage your family": [
         "Panneau d'administration pour gérer votre famille"
@@ -1354,9 +1333,6 @@
       "Easily add or remove users": [
         "Ajoutez ou retirez facilement des utilisateurs"
       ],
-      "High speed streaming": [
-        "Streaming ultra rapide"
-      ],
       "One-time payment, lifetime deal": [
         "Paiement unique, offre à vie"
       ],
@@ -1366,14 +1342,8 @@
       "Password health alerts": [
         "Alertes de sécurité des mots de passe"
       ],
-      "Private photo backup": [
-        "Sauvegarde de photos privée"
-      ],
-      "Protect 10 devices at a time": [
-        "Protégez 10 appareils en même temps"
-      ],
-      "Secure file storage & sharing": [
-        "Stockage de fichiers sécurisé et partage de liens"
+      "Recover previous file versions": [
+        "Récupérez les versions précédentes de vos fichiers"
       ],
       "Unlimited folders, labels and filters": [
         "Nombre illimité de dossiers, labels et filtres"
@@ -1383,17 +1353,14 @@
       ],
       "Use your own email domain": [
         "Utilisez vos propres domaines de messagerie"
-      ],
-      "Version history": [
-        "Historique des versions"
-      ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Facturé ${ amount } en une fois"
+      ],
+      "forever": [
+        "pour toujours"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Renouvellement après 1 mois à ${ regularAmount }"
@@ -1402,9 +1369,6 @@
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
         "Accès à des contenus bloqués et navigation en toute confidentialité. Comprend plus de 8 500 serveurs dans plus de 110 pays, 10 appareils, streaming à haute vitesse, bloqueur de publicités et protection contre les logiciels malveillants, VPN Accelerator et bien plus encore."
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Accédez aux contenus des services de streaming, dont Netflix, Disney+, Prime Video et plus encore, où que vous soyez."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Connexions sécurisées sur tous vos appareils. Comprend un nombre d'alias « hide-my-email » illimité, la fonction de partage, l’intégration de l'authentification A2F, ${ DARK_WEB_MONITORING_NAME } et plus encore."
@@ -1425,9 +1389,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Protégez vos fichiers avec un stockage cloud chiffré. Comprend un éditeur de documents en ligne, une sauvegarde de vos photos, un historique des versions, la fonction de partage de fichiers chiffrés et plus encore."
-      ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "La fonctionnalité NetShield est spécialement conçue pour protéger vos appareils et accélérer votre navigation en bloquant les publicités, les traqueurs et les logiciels malveillants."
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "L'espace de stockage est partagé entre tous les services ${ BRAND_NAME }."
@@ -1464,6 +1425,9 @@
       ],
       "Application problem": [
         "Problème d'application"
+      ],
+      "Black Friday": [
+        "Black Friday"
       ],
       "Bridge problem": [
         "Problème avec Bridge"
@@ -3282,6 +3246,22 @@
         "Seulement"
       ]
     },
+    "Duo offer: Link": {
+      "Double your storage": [
+        "Doublez votre espace de stockage"
+      ],
+      "Share your plan": [
+        "Partagez votre abonnement"
+      ]
+    },
+    "Duo offer: Title": {
+      "Double your storage with ${ BRAND_NAME } Duo": [
+        "Doublez votre espace de stockage avec ${ BRAND_NAME } Duo"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "Partagez les avantages de votre abonnement avec ${ BRAND_NAME } Duo"
+      ]
+    },
     "Duplicate event button tooltip": {
       "Duplicate event": [
         "Dupliquer l'événement"
@@ -4390,6 +4370,12 @@
       ]
     },
     "Feature": {
+      "Encrypted cloud storage for files, photos and documents": [
+        "Stockage cloud chiffré pour vos fichiers, photos et documents"
+      ],
+      "More premium features": [
+        " Fonctionnalités premium en plus"
+      ],
       "Unlimited hide-my-email aliases": [
         "Nombre illimité d'alias « hide-my-email »"
       ]
@@ -5040,6 +5026,9 @@
       "30-day money-back guarantee.": [
         "Garantie satisfait ou remboursé pendant 30 jours"
       ],
+      "A booking slot cannot be added in the past.": [
+        "Un créneau de réservation dans le passé ne peut pas être ajouté dans le passé."
+      ],
       "A cancellation email will be sent to removed participants.": [
         "Un message d’annulation sera envoyé aux participants retirés."
       ],
@@ -5193,6 +5182,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Vérification des contacts en cours : ${ progress } de ${ max }"
       ],
+      "Choose a plan that works best for you.": [
+        "Choisissez l'abonnement qui vous convient le mieux."
+      ],
       "Clear data": [
         "Effacer les données"
       ],
@@ -5219,6 +5211,9 @@
       ],
       "Contact unassigned from group ${ contactGroupName }": [
         "Le contact a été retiré du groupe « ${ contactGroupName } »."
+      ],
+      "Continue": [
+        "Continuer"
       ],
       "Copy the link to clipboard": [
         "Copier le lien dans le presse-papiers"
@@ -5945,6 +5940,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Passez à la version supérieure pour profiter de fonctionnalités, de produits et d'espace de stockage premium à un tarif avantageux."
       ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "Passez à la version supérieure pour conserver vos avantages de ${ planTitle }."
+      ],
       "Uppercase and lowercase letters": [
         "Lettres majuscules et minuscules"
       ],
@@ -6597,6 +6595,9 @@
       "Don't show this again": [
         "Ne plus afficher"
       ],
+      "Duration": [
+        "Durée"
+      ],
       "e.g., Amazon, eBay, Etsy": [
         "par exemple Amazon, eBay ou Etsy"
       ],
@@ -6882,6 +6883,9 @@
       ],
       "Time zone": [
         "Fuseau horaire"
+      ],
+      "Title": [
+        "Titre"
       ],
       "To: ${ toEmail }": [
         "À : ${ toEmail }"
@@ -7220,6 +7224,9 @@
       ],
       "Re:": [
         "Re :"
+      ],
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "Votre essai gratuit est terminé. ${ nonAutoRenewalAction }"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Votre essai gratuit est terminé. L'accès à votre compte sera bientôt désactivé. ${ action }"
@@ -9525,8 +9532,23 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } par parrainage"
       ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Si vous annulez avant cette date,** vous serez **passé à un abonnement inférieur** à ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } lorsque la version d'essai prendra fin."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Si vous ne vous abonnez pas,** vous serez **passé à un abonnement inférieur** à ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Si vous n'annulez pas,** votre abonnement complet commencera et vous recevrez **${ referrerRewardAmount }** en crédits."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Si vous vous abonnez avant cette date,** vous recevrez **${ referrerRewardAmount }** en crédits."
+      ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Gagnez jusqu'à ${ maxRewardAmount } en crédit. Vous recevrez ${ referrerRewardAmount } lorsque la personne que vous invitez s'abonnera à un abonnement ${ BRAND_NAME }."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Profitez de **${ planTitle }** gratuitement jusqu'au **${ textDate }**."
       ],
       "Friend joined": [
         "Un ami a rejoint",
@@ -9542,8 +9564,14 @@
       "Invited friends": [
         "Amis invités"
       ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Dernière chance d'explorer toutes les puissantes fonctionnalités qu'offre **${ planTitle }**."
+      ],
       "More sharing options": [
         "Plus d’options de partage"
+      ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "Une fois que votre abonnement commence, vous pouvez toujours annuler dans les 30 jours et obtenir un remboursement proportionnel."
       ],
       "Refer friends": [
         "Parrainer des amis"
@@ -9553,6 +9581,13 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Vous pouvez obtenir jusqu'à **${ maxRewardAmount }** en crédits."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Il vous reste **${ daysRemaining } jour** pour explorer toutes les puissantes fonctionnalités qu'offre **${ planTitle }**.",
+        "Il vous reste **${ daysRemaining } jours** pour explorer toutes les puissantes fonctionnalités qu'offre **${ planTitle }**."
+      ],
+      "your subscription": [
+        "votre abonnement"
       ]
     },
     "Reload event button tooltip": {
@@ -9958,9 +9993,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "1 user": [
-        "1 utilisateur"
-      ],
       "3 TB": [
         "3 To"
       ],
@@ -11138,6 +11170,9 @@
       "Birthday": [
         "Date de naissance"
       ],
+      "Booking page": [
+        "Page de réservation"
+      ],
       "Calendar": [
         "Calendrier"
       ],
@@ -11344,6 +11379,9 @@
       "Exporting contacts": [
         "Exportation des contacts"
       ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Obtenez **${ referralInfo.uiData.refereeRewardAmount }** en crédits avec ${ planTitle }"
+      ],
       "Get more from your VPN": [
         "Tirez le meilleur parti de votre VPN"
       ],
@@ -11376,6 +11414,9 @@
       ],
       "How does it work?": [
         "Comment ça marche ?"
+      ],
+      "How your free trial works": [
+        "Comment fonctionne votre essai gratuit"
       ],
       "Human verification": [
         "Vérification que vous n'êtes pas un robot"
@@ -11650,6 +11691,9 @@
       ],
       "Upgrade to ${ planName }": [
         "Mise à niveau vers ${ planName }"
+      ],
+      "Upgrade to keep your premium benefits.": [
+        "Passez à la version supérieure pour conserver vos avantages premium."
       ],
       "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
         "Améliorez votre productivité pour ${ formattedPrice } avec ${ planName }"
@@ -12032,6 +12076,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Votre essai gratuit se termine le ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Votre version d'essai se terminera le ${ textDate }. Vous ne serez pas facturé si vous annulez avant le ${ textDate }. ${ action }"
       ]
     },
     "Warning in modal to accept calendar invitation; Description": {

@@ -839,17 +839,6 @@
         "Novo"
       ]
     },
-    "bf2023: Deal details": {
-      "1 user": [
-        "1 korisnik"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 korisnika"
-      ]
-    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "Povrat novca do 30 dana"
@@ -859,35 +848,11 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktop aplikacija"
       ],
-      "1 user": [
-        "1 korisnik"
-      ],
-      "10 email addresses": [
-        "10 adrese e-pošte"
-      ],
-      "2 users": [
-        "2 korisnika"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 korisnika"
-      ],
-      "Ad-blocker and malware protection": [
-        "Blokator oglasa i zaštita od zlonamjernih programa"
-      ],
       "One-time payment, lifetime deal": [
         "Jednokratno plaćanje, doživotna ponuda"
       ],
       "Online document editor": [
         "Online uređivač dokumenata"
-      ],
-      "Version history": [
-        "Povijest verzija"
-      ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
       ]
     },
     "Billing cycle option": {
@@ -4301,6 +4266,9 @@
       "Don't show this again": [
         "Ne prikazuj ponovno"
       ],
+      "Duration": [
+        "Trajanje"
+      ],
       "Email": [
         "E-pošta"
       ],
@@ -4515,6 +4483,9 @@
       ],
       "Time zone": [
         "Vremenska zona"
+      ],
+      "Title": [
+        "Naslov"
       ],
       "To: ${ toEmail }": [
         "Za: ${ toEmail }"
@@ -5948,6 +5919,14 @@
         "Službeno"
       ]
     },
+    "Referral": {
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Ako se pretplatite prije ovog datuma,** dobit žete **${ referrerRewardAmount }** u kreditima."
+      ],
+      "your subscription": [
+        "Vaša pretplata"
+      ]
+    },
     "Security Center": {
       "All aliases": [
         "Svi pseudonimi"
@@ -6154,9 +6133,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "1 user": [
-        "1 korisnik"
-      ],
       "3 TB": [
         "3 TB"
       ],
