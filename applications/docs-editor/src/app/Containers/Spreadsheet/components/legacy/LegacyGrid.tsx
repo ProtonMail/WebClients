@@ -1,12 +1,13 @@
 import type { CanvasGridMethods } from '@rowsncolumns/spreadsheet'
 import { CanvasGrid } from '@rowsncolumns/spreadsheet'
 import type { ProtonSheetsState } from '../../state'
-import { onlyImplementedFunctionDescriptions as functionDescriptions } from '../../constants'
+import { GRID_THEME_PROPS, FUNCTION_DESCRIPTIONS } from '../../constants'
 import { ChartComponent } from '@rowsncolumns/charts'
 import { isDevOrBlack } from '@proton/utils/env'
 import { useEffect, useRef } from 'react'
 import { useUI } from '../../ui-store'
 import { CellTooltip } from '../misc/CellTooltip'
+import { LegacyContextMenu } from './LegacyContextMenu'
 
 export type LegacyGridProps = {
   state: ProtonSheetsState
@@ -62,14 +63,13 @@ const exposeCanvasGrid = (instance: CanvasGridMethods | null, state: ProtonSheet
 export function LegacyGrid({ state, isReadonly, users, userName }: LegacyGridProps) {
   const canvasGridRef = useRef<CanvasGridMethods | null>(null)
 
-  // Use useEffect to ensure API is exposed as soon as possible
   useEffect(() => {
     exposeCanvasGrid(canvasGridRef.current, state)
-  }, [state]) // Re-run when state changes
+  }, [state])
 
   return (
     <CanvasGrid
-      {...state.spreadsheetColors}
+      {...GRID_THEME_PROPS}
       ref={(instance) => {
         canvasGridRef.current = instance
         exposeCanvasGrid(instance, state)
@@ -96,7 +96,7 @@ export function LegacyGrid({ state, isReadonly, users, userName }: LegacyGridPro
       tables={state.tables}
       protectedRanges={state.protectedRanges}
       bandedRanges={state.bandedRanges}
-      functionDescriptions={functionDescriptions}
+      functionDescriptions={FUNCTION_DESCRIPTIONS}
       getSheetName={state.getSheetName}
       getSheetId={state.getSheetId}
       getCellData={state.getCellData}
@@ -180,6 +180,7 @@ export function LegacyGrid({ state, isReadonly, users, userName }: LegacyGridPro
       readonly={isReadonly}
       getEffectiveFormat={state.getEffectiveFormat}
       CellTooltip={CellTooltip}
+      ContextMenu={LegacyContextMenu}
     />
   )
 }

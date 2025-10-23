@@ -32,11 +32,11 @@ import omit from 'lodash/omit'
 import clsx from '@proton/utils/clsx'
 import { createStringifier } from '../../stringifier'
 import { forwardRef, Fragment, useState, useMemo, useEffect } from 'react'
-import { bucket_color } from '../icons'
+import * as Icons from '../icons'
 import { SidebarDialog, SidebarDialogHeader } from './SidebarDialog'
 import { produce } from 'immer'
 import { useForm } from 'react-hook-form'
-import { onlyImplementedFunctionDescriptions as functionDescriptions } from '../../constants'
+import { FUNCTION_DESCRIPTIONS } from '../../constants'
 import { useEvent } from '../utils'
 import { FormGroup, FormLabel, NativeSelect } from './shared'
 
@@ -260,7 +260,7 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                             required
                             placeholder="Enter a formula"
                             autoFocus
-                            functionDescriptions={functionDescriptions}
+                            functionDescriptions={FUNCTION_DESCRIPTIONS}
                             className="mb-0 w-full"
                           />
                         </div>
@@ -362,7 +362,7 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
 
                     <Ariakit.PopoverProvider>
                       <Ariakit.PopoverDisclosure render={<FormatButton />}>
-                        <Icon data={bucket_color} />
+                        <Icon data={Icons.bucketColor} />
                       </Ariakit.PopoverDisclosure>
 
                       <Atoms.DropdownPopover className="p-2" render={<Ariakit.Popover />}>
@@ -429,7 +429,7 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                         <Ariakit.PopoverDisclosure
                           render={<FormatButton className="ring-[1px] ring-inset ring-[#EAE7E4]" />}
                         >
-                          <Icon data={bucket_color} />
+                          <Icon data={Icons.bucketColor} />
                         </Ariakit.PopoverDisclosure>
 
                         <Atoms.DropdownPopover className="p-2" render={<Ariakit.Popover />}>
@@ -487,7 +487,7 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                         <Ariakit.PopoverDisclosure
                           render={<FormatButton className="ring-[1px] ring-inset ring-[#EAE7E4]" />}
                         >
-                          <Icon data={bucket_color} />
+                          <Icon data={Icons.bucketColor} />
                         </Ariakit.PopoverDisclosure>
 
                         <Atoms.DropdownPopover className="p-2" render={<Ariakit.Popover />}>
@@ -542,7 +542,7 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                         <Ariakit.PopoverDisclosure
                           render={<FormatButton className="ring-[1px] ring-inset ring-[#EAE7E4]" />}
                         >
-                          <Icon data={bucket_color} />
+                          <Icon data={Icons.bucketColor} />
                         </Ariakit.PopoverDisclosure>
 
                         <Atoms.DropdownPopover className="p-2" render={<Ariakit.Popover />}>

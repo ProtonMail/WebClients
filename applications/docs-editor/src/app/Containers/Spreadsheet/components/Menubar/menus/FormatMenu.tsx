@@ -8,6 +8,7 @@ import { NumberFormatsMenu } from '../../shared/NumberFormatsMenu'
 import { FONT_SIZE_DEFAULT, FONT_SIZE_SUGGESTIONS } from '../../../constants'
 import { useUI } from '../../../ui-store'
 import { getWrappingIcon } from '../../utils'
+import { MergeMenuItems } from '../../shared/MergeMenuItems'
 
 const { s } = createStringifier(strings)
 
@@ -298,14 +299,14 @@ function FontSizeSubmenu() {
 function MergeCellsSubmenu() {
   return (
     <Ariakit.MenuProvider>
-      <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.merge} />} disabled={useUI((ui) => ui.info.isReadonly)}>
-        {s('Merge cells')} (unimplemented)
+      <UI.SubMenuButton
+        leadingIconSlot={<UI.Icon data={Icons.merge} />}
+        disabled={useUI((ui) => !ui.format.merge.menu.enabled || ui.info.isReadonly)}
+      >
+        {s('Merge cells')}
       </UI.SubMenuButton>
       <UI.SubMenu>
-        <UI.MenuItem disabled={useUI((ui) => ui.info.isReadonly)}>{s('Merge all')}</UI.MenuItem>
-        <UI.MenuItem disabled={useUI((ui) => ui.info.isReadonly)}>{s('Merge vertically')}</UI.MenuItem>
-        <UI.MenuItem disabled={useUI((ui) => ui.info.isReadonly)}>{s('Merge horizontally')}</UI.MenuItem>
-        <UI.MenuItem disabled={useUI((ui) => ui.info.isReadonly)}>{s('Unmerge')}</UI.MenuItem>
+        <MergeMenuItems />
       </UI.SubMenu>
     </Ariakit.MenuProvider>
   )
@@ -375,11 +376,7 @@ function strings() {
     Wrap: c('sheets_2025:Spreadsheet editor menubar format menu (wrapping)').t`Wrap`,
     Clip: c('sheets_2025:Spreadsheet editor menubar format menu (wrapping)').t`Clip`,
     'Font size': c('sheets_2025:Spreadsheet editor menubar format menu').t`Font size`,
-    'Merge cells': c('sheets_2025:Spreadsheet editor menubar format menu').t`Merge cells`,
-    'Merge all': c('sheets_2025:Spreadsheet editor menubar format menu (merge cells)').t`Merge all`,
-    'Merge vertically': c('sheets_2025:Spreadsheet editor menubar format menu (merge cells)').t`Merge vertically`,
-    'Merge horizontally': c('sheets_2025:Spreadsheet editor menubar format menu (merge cells)').t`Merge horizontally`,
-    Unmerge: c('sheets_2025:Spreadsheet editor menubar format menu (merge cells)').t`Unmerge`,
+    'Merge cells': c('sheets_2025:Spreadsheet editor cell merge options').t`Merge cells`,
     'Conditional formatting': c('sheets_2025:Spreadsheet editor menubar format menu').t`Conditional formatting`,
     Clear: c('sheets_2025:Spreadsheet editor menubar format menu').t`Clear`,
     'Clear formatting': c('sheets_2025:Spreadsheet editor menubar format menu').t`Clear formatting`,

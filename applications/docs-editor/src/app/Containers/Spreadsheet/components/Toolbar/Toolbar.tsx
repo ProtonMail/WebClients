@@ -8,6 +8,7 @@ import { FontSizeControls } from './FontSizeControls'
 import { NumberFormatsMenu } from '../shared/NumberFormatsMenu'
 import { ZoomCombobox } from './ZoomCombobox'
 import * as T from './primitives'
+import * as UI from '../ui'
 import { useUI } from '../../ui-store'
 import { createComponent } from '../utils'
 import { FormulaBar } from './FormulaBar'
@@ -15,7 +16,6 @@ import {
   BorderSelectorContent,
   ColorSelector,
   getStringifiedColor,
-  MergeCellsSelector,
   TextHorizontalAlignSelectorContent,
   TextVerticalAlignSelectorContent,
   TextWrapSelectorContent,
@@ -23,6 +23,8 @@ import {
 import * as Ariakit from '@ariakit/react'
 import type { IconData } from '../ui'
 import type { IconName } from '@proton/icons'
+import { InsertFormulaMenu } from '../shared/InsertFormulaMenu'
+import { MergeMenuItems } from '../shared/MergeMenuItems'
 
 export interface ToolbarProps extends ComponentPropsWithRef<'div'> {}
 
@@ -85,11 +87,11 @@ function ToolbarGroups() {
         <TextWrap />
       </T.Group>
       <T.Group groupId="insert">
-        <Link />
-        {/* TODO: functions */}
-        {/* TODO: create a filter */}
+        <InsertLink />
+        <InsertFunction />
+        <CreateFilter />
         {/* TODO: insert image */}
-        <Note />
+        <InsertNote />
       </T.Group>
     </>
   )
@@ -181,7 +183,7 @@ function FormatAsCurrency() {
 function FormatAsPercent() {
   return (
     <T.Item
-      legacyIconName="percent"
+      icon={Icons.percentageLight}
       onClick={useUI.$.format.pattern.percent.set}
       disabled={useUI((ui) => ui.info.isReadonly)}
     >
@@ -308,7 +310,7 @@ function FillColor() {
     <Ariakit.PopoverProvider store={popover}>
       <Ariakit.PopoverDisclosure
         render={
-          <T.Item icon={Icons.bucket_color} dropdownIndicator disabled={useUI((ui) => ui.info.isReadonly)}>
+          <T.Item icon={Icons.bucketColor} dropdownIndicator disabled={useUI((ui) => ui.info.isReadonly)}>
             {s('Fill color')}
           </T.Item>
         }
@@ -351,15 +353,32 @@ function BorderSelector() {
 }
 
 function MergeCells() {
+  const isUnmerge = useUI((ui) => ui.format.merge.menu.defaultAction === 'unmerge')
+  const mergeAll = useUI.$.format.merge.all
+  const unmerge = useUI.$.format.merge.unmerge
   return (
-    <MergeCellsSelector
-      activeCell={useUI((ui) => ui.legacy.activeCell)}
-      selections={useUI((ui) => ui.legacy.selections)}
-      sheetId={useUI((ui) => ui.legacy.activeSheetId)}
-      merges={useUI((ui) => ui.legacy.merges)}
-      onMerge={useUI.$.legacy.onMergeCells}
-      onUnMerge={useUI.$.legacy.onUnMergeCells}
-    />
+    <div className="flex">
+      <T.Item
+        icon={Icons.merge}
+        disabled={useUI((ui) => !ui.format.merge.menu.enabled || ui.info.isReadonly)}
+        pressed={isUnmerge}
+        onClick={useUI.$.withFocusGrid(isUnmerge ? unmerge : mergeAll)}
+      >
+        {isUnmerge ? s('Unmerge cells') : s('Merge cells')}
+      </T.Item>
+      <Ariakit.MenuProvider>
+        <Ariakit.MenuButton
+          render={
+            <T.Item legacyIconName="chevron-down-filled" className="w-[1rem] !px-0">
+              {s('Select merge type')}
+            </T.Item>
+          }
+        />
+        <UI.Menu unmountOnHide>
+          <MergeMenuItems />
+        </UI.Menu>
+      </Ariakit.MenuProvider>
+    </div>
   )
 }
 
@@ -492,7 +511,7 @@ function TextWrap() {
   )
 }
 
-function Link() {
+function InsertLink() {
   return (
     <T.Item legacyIconName="link" onClick={useUI.$.insert.link} disabled={useUI((ui) => ui.info.isReadonly)}>
       {s('Insert link')}
@@ -500,7 +519,32 @@ function Link() {
   )
 }
 
-function Note() {
+function InsertFunction() {
+  return (
+    <InsertFormulaMenu
+      renderMenuButton={
+        <T.Item icon={Icons.sigma} disabled={useUI((ui) => ui.info.isReadonly)}>
+          {s('Insert function')}
+        </T.Item>
+      }
+    />
+  )
+}
+
+function CreateFilter() {
+  return (
+    <T.Item
+      // TODO: need a different icon for "remove filter"
+      legacyIconName={useUI((ui) => ui.data.hasFilter) ? 'broom' : 'broom'}
+      onClick={useUI.$.data.toggleFilter}
+      disabled={useUI((ui) => ui.info.isReadonly)}
+    >
+      {useUI((ui) => ui.data.hasFilter) ? s('Remove filter') : s('Create a filter')}
+    </T.Item>
+  )
+}
+
+function InsertNote() {
   return (
     // TODO: icon needs to be note-with-text but we don't have it yet
     <T.Item legacyIconName="note" onClick={useUI.$.insert.note} disabled={useUI((ui) => ui.info.isReadonly)}>
@@ -538,10 +582,15 @@ function strings() {
     'Fill color': c('sheets_2025:Spreadsheet editor toolbar').t`Fill color`,
     Border: c('sheets_2025:Spreadsheet editor toolbar').t`Border`,
     'Merge cells': c('sheets_2025:Spreadsheet editor toolbar').t`Merge cells`,
+    'Unmerge cells': c('sheets_2025:Spreadsheet editor toolbar').t`Unmerge cells`,
+    'Select merge type': c('sheets_2025:Spreadsheet editor toolbar').t`Select merge type`,
     'Horizontal align': c('sheets_2025:Spreadsheet editor toolbar').t`Horizontal align`,
     'Vertical align': c('sheets_2025:Spreadsheet editor toolbar').t`Vertical align`,
     'Text wrapping': c('sheets_2025:Spreadsheet editor toolbar').t`Text wrapping`,
     'Insert link': c('sheets_2025:Spreadsheet editor toolbar').t`Insert link`,
+    'Insert function': c('sheets_2025:Spreadsheet editor toolbar').t`Insert function`,
+    'Create a filter': c('sheets_2025:Spreadsheet editor toolbar').t`Create a filter`,
+    'Remove filter': c('sheets_2025:Spreadsheet editor toolbar').t`Remove filter`,
     'Insert note': c('sheets_2025:Spreadsheet editor toolbar').t`Insert note`,
     Chart: c('sheets_2025:Spreadsheet editor toolbar').t`Chart`,
     'Insert chart': c('sheets_2025:Spreadsheet editor toolbar').t`Insert chart`,

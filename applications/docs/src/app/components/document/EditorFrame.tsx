@@ -155,7 +155,7 @@ export function EditorFrame({ onFrameReady, documentType = 'doc', systemMode, lo
       style={{ width: '100%', height: '100%' }}
       ref={setIframe}
       sandbox={SANDBOX_OPTIONS}
-      allow="clipboard-write"
+      allow="clipboard-write; clipboard-read"
       data-testid={`editor-frame-${systemMode}`}
     ></iframe>
   )
