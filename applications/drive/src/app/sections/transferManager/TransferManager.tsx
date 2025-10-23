@@ -1,13 +1,33 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
+import { useShallow } from 'zustand/react/shallow';
 
+import { useUploadConflictModal } from '../../modals/UploadConflictModal';
+import { useUploadQueueStore } from '../../zustand/upload/uploadQueue.store';
 import { TransferManagerHeader } from './transferManagerHeader/transferManagerHeader';
 import { useTransferManagerState } from './useTransferManagerState';
 
 export const TransferManager = () => {
     const { items } = useTransferManagerState();
     const [isMinimized, setMinimized] = useState(false);
+    const { pendingConflict } = useUploadQueueStore(
+        useShallow((state) => ({
+            pendingConflict: state.getFirstPendingConflict(),
+        }))
+    );
+
+    const [uploadConflictModal, showUploadConflictModal] = useUploadConflictModal();
+    useEffect(() => {
+        if (pendingConflict) {
+            showUploadConflictModal({
+                name: pendingConflict.name,
+                nodeType: pendingConflict.nodeType,
+                conflictType: pendingConflict.conflictType,
+                onResolve: pendingConflict.resolve,
+            });
+        }
+    }, [pendingConflict, showUploadConflictModal]);
 
     const toggleMinimize = () => {
         setMinimized((value) => !value);
@@ -28,6 +48,7 @@ export const TransferManager = () => {
                     ))}
                 </div>
             )}
+            {uploadConflictModal}
         </section>
     );
 };

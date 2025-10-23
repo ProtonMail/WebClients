@@ -7,8 +7,7 @@ import {
     type DownloadItem,
     useDownloadManagerStore,
 } from '../../zustand/download/downloadManager.store';
-import type { UploadUIItem } from '../../zustand/upload/uploadUI.store';
-import { useUploadUIStore } from '../../zustand/upload/uploadUI.store';
+import { type UploadItem, useUploadQueueStore } from '../../zustand/upload/uploadQueue.store';
 
 type TransferType = 'empty' | 'downloading' | 'uploading' | 'both';
 
@@ -47,11 +46,11 @@ const mapDownload = ({
 
 const mapUpload = ({
     uploadId,
-    name,
-    status,
-    uploadedBytes,
-    clearTextExpectedSize,
-}: UploadUIItem): TransferManagerEntry => ({
+    item: { name, status, uploadedBytes, clearTextExpectedSize },
+}: {
+    uploadId: string;
+    item: UploadItem;
+}): TransferManagerEntry => ({
     type: 'upload',
     id: uploadId,
     name,
@@ -62,7 +61,7 @@ const mapUpload = ({
 
 export const useTransferManagerState = () => {
     const downloadQueue = useDownloadManagerStore(useShallow((state) => state.getQueue()));
-    const uploadQueue = useUploadUIStore(useShallow((state) => state.getAll()));
+    const uploadQueue = useUploadQueueStore(useShallow((state) => state.getQueue()));
 
     return useMemo(() => {
         const downloads = downloadQueue.map(mapDownload);
