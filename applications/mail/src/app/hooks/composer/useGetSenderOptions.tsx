@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { Icon, Option, SettingsLink } from '@proton/components';
+import { Option, SettingsLink } from '@proton/components';
+import { IcChevronDownFilled } from '@proton/icons';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces';
@@ -25,7 +26,7 @@ const useGetSenderOptions = (message: MessageState) => {
             >
                 <span className="inline-flex flex-nowrap flex-row items-center max-w-full">
                     <span className="text-ellipsis">{address.Email}</span>
-                    <Icon name="chevron-down-filled" className="select--inline-caret-option shrink-0 ml-2" />
+                    <IcChevronDownFilled className="select--inline-caret-option shrink-0 ml-2" />
                 </span>
             </Option>
         );

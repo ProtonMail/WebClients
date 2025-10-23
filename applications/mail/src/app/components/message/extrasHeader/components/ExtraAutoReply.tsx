@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Banner, Href } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { IcRobot } from '@proton/icons';
 import type { MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { isAutoReply } from '@proton/shared/lib/mail/messages';
@@ -23,7 +23,7 @@ const ExtraAutoReply = ({ message }: Props) => {
                 <Href href={getKnowledgeBaseUrl('/auto-reply')} className="inline-block">{c('Info')
                     .t`Learn more`}</Href>
             }
-            icon={<Icon name="robot" />}
+            icon={<IcRobot />}
         >
             {c('Info').t`This message is automatically generated as a response to a previous message.`}
         </Banner>

@@ -4,7 +4,7 @@ import { forwardRef } from 'react';
 import { c } from 'ttag';
 
 import { Kbd, Tooltip } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { IcArrowsFromCenter, IcArrowsToCenter, IcCrossBig, IcDots, IcLowDash } from '@proton/icons';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { isSafari as checkIsSafari, metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
@@ -133,8 +133,7 @@ const ComposerTitleBar = ({
                 aria-level={1}
                 id={`composer-title-${composerID}`}
             >
-                <Icon
-                    name="dots"
+                <IcDots
                     className="my-auto mr-2 shrink-0"
                     alt={
                         // translator: this string is for blind user: it will be vocalized in blind navigation context: "Composer: " <title of the message>
@@ -153,7 +152,7 @@ const ComposerTitleBar = ({
                 dataTestId="composer:minimize-button"
                 ref={minimizeButtonRef}
             >
-                <Icon name="low-dash" alt={title} className="m-auto" />
+                <IcLowDash alt={title} className="m-auto" />
             </TitleBarButton>
             <TitleBarButton
                 title={titleMaximize}
@@ -164,10 +163,10 @@ const ComposerTitleBar = ({
                 }}
                 dataTestId="composer:maximize-button"
             >
-                <Icon name={maximized ? 'arrows-to-center' : 'arrows-from-center'} alt={title} className="m-auto" />
+                {maximized ? <IcArrowsToCenter alt={title} className="m-auto" /> : <IcArrowsFromCenter alt={title} className="m-auto" />}
             </TitleBarButton>
             <TitleBarButton title={titleClose} onClick={onClose} dataTestId="composer:close-button">
-                <Icon name="cross-big" alt={title} className="m-auto" />
+                <IcCrossBig alt={title} className="m-auto" />
             </TitleBarButton>
         </header>
     );

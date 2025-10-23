@@ -1,5 +1,5 @@
 import { Button } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { IcArrowDown } from '@proton/icons';
 
 import { getNUnreadMessagesText } from 'proton-mail/helpers/text';
 
@@ -31,7 +31,7 @@ const UnreadMessages = ({ messagesIDs, onClick }: Props) => {
                 onClick={handleClick}
                 data-testid="conversation-view:view-new-unread-message"
             >
-                <span>{text}</span> <Icon name="arrow-down" className="ml-2" />
+                <span>{text}</span> <IcArrowDown className="ml-2" />
             </Button>
         </span>
     );

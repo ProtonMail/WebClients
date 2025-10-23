@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Banner, Button, ButtonLike } from '@proton/atoms';
-import { ButtonGroup, Icon, SettingsLink } from '@proton/components';
+import { ButtonGroup, SettingsLink } from '@proton/components';
+import { IcExclamationTriangleFilled } from '@proton/icons';
 import type { MessageErrors, MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 
@@ -60,7 +61,7 @@ const ExtraErrors = ({ message }: Props) => {
                     <Banner
                         key={errorType}
                         variant="norm-outline"
-                        icon={<Icon name="exclamation-triangle-filled" className="color-danger" />}
+                        icon={<IcExclamationTriangleFilled className="color-danger" />}
                         action={
                             showReload || showKeysLink ? (
                                 <ButtonGroup>

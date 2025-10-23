@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms';
-import { Checkbox, DropdownMenu, DropdownMenuButton, Icon } from '@proton/components';
+import { Checkbox, DropdownMenu, DropdownMenuButton } from '@proton/components';
+import { IcCheckmarkTriple, IcEnvelopeDot, IcEnvelopeOpen, IcStar, IcStarFilled } from '@proton/icons';
 
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
@@ -87,7 +88,7 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
                                 onClick={handleAll(true)}
                                 data-testid="toolbar:select-all"
                             >
-                                <Icon name="checkmark-triple" className="mr-2" />
+                                <IcCheckmarkTriple className="mr-2" />
                                 {c('Action').t`Select All`}
                             </DropdownMenuButton>
                             <DropdownMenuButton
@@ -95,7 +96,7 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
                                 onClick={handleRead(true)}
                                 data-testid="toolbar:all-read"
                             >
-                                <Icon name="envelope-open" className="mr-2" />
+                                <IcEnvelopeOpen className="mr-2" />
                                 {c('Action').t`All Read`}
                             </DropdownMenuButton>
                             <DropdownMenuButton
@@ -103,7 +104,7 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
                                 onClick={handleRead(false)}
                                 data-testid="toolbar:all-unread"
                             >
-                                <Icon name="envelope-dot" className="mr-2" />
+                                <IcEnvelopeDot className="mr-2" />
                                 {c('Action').t`All Unread`}
                             </DropdownMenuButton>
                             <DropdownMenuButton
@@ -111,7 +112,7 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
                                 onClick={handleStarred(true)}
                                 data-testid="toolbar:all-starred"
                             >
-                                <Icon name="star-filled" className="mr-2" />
+                                <IcStarFilled className="mr-2" />
                                 {c('Action').t`All Starred`}
                             </DropdownMenuButton>
                             <DropdownMenuButton
@@ -119,7 +120,7 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
                                 onClick={handleStarred(false)}
                                 data-testid="toolbar:all-unstarred"
                             >
-                                <Icon name="star" className="mr-2" />
+                                <IcStar className="mr-2" />
                                 {c('Action').t`All Unstarred`}
                             </DropdownMenuButton>
                         </DropdownMenu>

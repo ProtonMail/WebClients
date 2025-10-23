@@ -2,7 +2,8 @@ import type { ReactNode } from 'react';
 import { memo, useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { FloatingButton, Icon, PrivateHeader, UserDropdown, useActiveBreakpoint } from '@proton/components';
+import { FloatingButton, PrivateHeader, UserDropdown, useActiveBreakpoint } from '@proton/components';
+import { IcPen } from '@proton/icons';
 import { useFolders, useLabels } from '@proton/mail';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
@@ -81,7 +82,7 @@ const MailHeader = ({ labelID, elementID, selectedIDs = [], toolbar, settingsBut
                         data-testid="compose-floating-button"
                         onClick={() => onCompose({ type: ComposeTypes.newMessage, action: MESSAGE_ACTIONS.NEW })}
                     >
-                        <Icon size={6} name="pen" className="m-auto" />
+                        <IcPen size={6}  className="m-auto" />
                     </FloatingButton>
                 }
             />

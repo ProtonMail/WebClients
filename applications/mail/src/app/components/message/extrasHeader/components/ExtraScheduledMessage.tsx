@@ -5,7 +5,8 @@ import { isToday, isTomorrow } from 'date-fns';
 import { c } from 'ttag';
 
 import { Banner, Button } from '@proton/atoms';
-import { Icon, Prompt, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
+import { Prompt, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
+import { IcPaperPlaneClock } from '@proton/icons';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { cancelSend } from '@proton/shared/lib/api/messages';
@@ -123,7 +124,7 @@ const ExtraScheduledMessage = ({ message }: Props) => {
         <Banner
             data-testid="message:schedule-banner"
             variant="info"
-            icon={<Icon name="paper-plane-clock" />}
+            icon={<IcPaperPlaneClock />}
             action={
                 !isScheduleSentShortly ? (
                     <Button

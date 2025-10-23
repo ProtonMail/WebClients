@@ -5,7 +5,8 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import type { ContactEditProps } from '@proton/components';
-import { DropdownMenuButton, Icon, useModalState, usePopperAnchor } from '@proton/components';
+import { DropdownMenuButton, useModalState, usePopperAnchor } from '@proton/components';
+import { IcCircleSlash, IcEnvelopeMagnifyingGlass, IcPenSquare, IcUser, IcUserPlus } from '@proton/icons';
 import type { PublicKeyReference } from '@proton/crypto';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { getHumanLabelID } from '@proton/mail/helpers/location';
@@ -168,7 +169,7 @@ const MailRecipientItemSingle = ({
                 onClick={handleCompose}
                 data-testid="recipient:new-message"
             >
-                <Icon name="pen-square" className="mr-2" />
+                <IcPenSquare className="mr-2" />
                 <span className="flex-1 my-auto">{c('Action').t`New message`}</span>
             </DropdownMenuButton>
             {ContactID ? (
@@ -177,7 +178,7 @@ const MailRecipientItemSingle = ({
                     onClick={handleClickContact}
                     data-testid="recipient:view-contact-details"
                 >
-                    <Icon name="user" className="mr-2" />
+                    <IcUser className="mr-2" />
                     <span className="flex-1 my-auto">{c('Action').t`View contact details`}</span>
                 </DropdownMenuButton>
             ) : (
@@ -186,7 +187,7 @@ const MailRecipientItemSingle = ({
                     onClick={handleClickContact}
                     data-testid="recipient:create-new-contact"
                 >
-                    <Icon name="user-plus" className="mr-2" />
+                    <IcUserPlus className="mr-2" />
                     <span className="flex-1 my-auto">{c('Action').t`Create new contact`}</span>
                 </DropdownMenuButton>
             )}
@@ -195,7 +196,7 @@ const MailRecipientItemSingle = ({
                 onClick={handleClickSearch}
                 data-testid="recipient:search-messages"
             >
-                <Icon name="envelope-magnifying-glass" className="mr-2" />
+                <IcEnvelopeMagnifyingGlass className="mr-2" />
                 <span className="flex-1 my-auto">
                     {isRecipient ? c('Action').t`Messages to this recipient` : c('Action').t`Messages from this sender`}
                 </span>
@@ -206,7 +207,7 @@ const MailRecipientItemSingle = ({
                     onClick={handleClickBlockSender}
                     data-testid="block-sender:button"
                 >
-                    <Icon name="circle-slash" className="mr-2" />
+                    <IcCircleSlash className="mr-2" />
                     <span className="flex-1 my-auto">{c('Action').t`Block messages from this sender`}</span>
                 </DropdownMenuButton>
             )}
@@ -216,7 +217,7 @@ const MailRecipientItemSingle = ({
                     onClick={handleClickTrust}
                     data-testid="recipient:show-trust-public-key"
                 >
-                    <Icon name="user" className="mr-2" />
+                    <IcUser className="mr-2" />
                     <span className="flex-1 my-auto">{c('Action').t`Trust public key`}</span>
                 </DropdownMenuButton>
             )}

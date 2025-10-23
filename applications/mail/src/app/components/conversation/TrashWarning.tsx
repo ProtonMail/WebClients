@@ -1,10 +1,11 @@
-import { forwardRef } from 'react';
 import * as React from 'react';
+import { forwardRef } from 'react';
 
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms';
-import { Icon, useHotkeys } from '@proton/components';
+import { useHotkeys } from '@proton/components';
+import { IcTrash } from '@proton/icons';
 
 interface Props {
     inTrash: boolean;
@@ -42,7 +43,7 @@ const TrashWarning = ({ inTrash, filter, onToggle }: Props, ref: React.Ref<HTMLD
             data-shortcut-target="trash-warning"
         >
             <div className="flex flex-nowrap items-center">
-                <Icon name="trash" className="mr-4 shrink-0" />
+                <IcTrash className="mr-4 shrink-0" />
                 <span>
                     {inTrash
                         ? c('Info').t`This conversation contains non-trashed messages.`

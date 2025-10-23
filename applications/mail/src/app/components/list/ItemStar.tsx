@@ -3,8 +3,8 @@ import type { MouseEvent } from 'react';
 import { c } from 'ttag';
 
 import { Kbd, Tooltip } from '@proton/atoms';
-import Icon from '@proton/components/components/icon/Icon';
 import { useLoading } from '@proton/hooks';
+import { IcStar, IcStarFilled } from '@proton/icons';
 import type { IconSize } from '@proton/icons/types';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -95,7 +95,7 @@ const ItemStar = ({ element, size, labelID, sourceAction }: Props) => {
                 onClick={handleClick}
                 aria-pressed={isStarred}
             >
-                <Icon size={size} name={isStarred ? 'star-filled' : 'star'} />
+                {isStarred ? <IcStarFilled size={size} /> : <IcStar size={size} />}
                 <span className="sr-only">{buttonTxt}</span>
             </button>
         </Tooltip>

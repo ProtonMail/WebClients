@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Banner, Button, Tooltip } from '@proton/atoms';
-import { Icon, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/components';
+import { IcHourglass } from '@proton/icons';
 import { FeatureCode, useFeature } from '@proton/features';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 
@@ -47,7 +48,7 @@ const ExtraExpirationSelfDestruction = ({ message }: Props) => {
         <Banner
             data-testid="expiration-banner"
             variant={expiresInLessThan24Hours ? 'danger' : 'info-outline'}
-            icon={<Icon name="hourglass" />}
+            icon={<IcHourglass />}
             action={
                 canExpire ? (
                     <Tooltip title={c('Cancel expiration of the message').t`Cancel expiration`}>

@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { InlineLinkButton } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { IcMagnifier } from '@proton/icons';
 import { sendSlowSearchReport } from '@proton/encrypted-search';
 import clsx from '@proton/utils/clsx';
 
@@ -42,7 +42,7 @@ const EsSlowBanner = ({ className }: Props) => {
     return (
         <div className={clsx(['rounded mx-2 px-4 py-2 flex flex-nowrap mb-2', className])}>
             <div className="shrink-0">
-                <Icon name="magnifier" className="mr-2" />
+                <IcMagnifier className="mr-2" />
             </div>
             <div className="flex-1 pl-1">
                 {

@@ -3,7 +3,8 @@ import { useHistory } from 'react-router';
 import { c } from 'ttag';
 
 import { Button, Tooltip } from '@proton/atoms';
-import { Icon, Loader } from '@proton/components';
+import { Loader } from '@proton/components';
+import { IcArrowUpAndLeftBig } from '@proton/icons';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import clsx from '@proton/utils/clsx';
 
@@ -39,7 +40,7 @@ const EOMessageHeader = ({ message, messageLoaded, id, numberOfReplies }: Props)
             disabled={!canReply}
             data-testid="eoreply:button"
         >
-            <Icon name="arrow-up-and-left-big" className="rtl:mirror mr-2" alt={c('Title').t`Reply`} />
+            <IcArrowUpAndLeftBig className="rtl:mirror mr-2" alt={c('Title').t`Reply`} />
             <span>{c('Action').t`Reply securely`}</span>
         </Button>
     );

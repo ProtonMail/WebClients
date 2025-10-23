@@ -3,7 +3,8 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { Button, VerticalStep, VerticalSteps } from '@proton/atoms';
-import { Icon, type ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
+import { type ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
+import { IcInfoCircle } from '@proton/icons';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 const UpdateMailAddressModal = (props: ModalProps) => {
@@ -44,7 +45,7 @@ const UpdateMailAddressModal = (props: ModalProps) => {
                 </VerticalSteps>
                 <p className="flex flex-row flex-nowrap items-center border rounded-xl border-weak p-3">
                     <span className="shrink-0 color-primary">
-                        <Icon name="info-circle" size={4.5} />
+                        <IcInfoCircle size={4.5} />
                     </span>
                     <span className="flex-1 ml-3 text-sm color-weak">{c('Info')
                         .t`Remember to update this in your password manager or wherever you keep your account and login information.`}</span>

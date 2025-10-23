@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { IcCrossBig } from '@proton/icons';
 
 interface InnerModalModalCloseButtonProps {
     onClose?: () => void;
@@ -20,7 +20,7 @@ const InnerModalModalCloseButton = ({ closeTextModal, onClose }: InnerModalModal
             title={closeText}
             onClick={onClose}
         >
-            <Icon className="inner-modal-close-icon" name="cross-big" alt={closeText} />
+            <IcCrossBig className="inner-modal-close-icon"  alt={closeText} />
         </Button>
     );
 };

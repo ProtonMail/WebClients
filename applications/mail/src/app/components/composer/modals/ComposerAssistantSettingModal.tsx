@@ -5,7 +5,8 @@ import { c, msgid } from 'ttag';
 import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button, Href } from '@proton/atoms';
-import { Icon, useApi, useNotifications, useSpotlightOnFeature } from '@proton/components';
+import { useApi, useNotifications, useSpotlightOnFeature } from '@proton/components';
+import { IcCheckmark } from '@proton/icons';
 import useAssistantSubscriptionStatus, {
     ASSISTANT_TRIAL_TIME_DAYS,
 } from '@proton/components/hooks/assistant/useAssistantSubscriptionStatus';
@@ -164,7 +165,7 @@ const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal,
                             inputValue === AI_ASSISTANT_ACCESS.CLIENT_ONLY ? 'color-primary' : 'visibility-hidden'
                         )}
                     >
-                        <Icon name="checkmark" />
+                        <IcCheckmark />
                     </span>
                 </Button>
                 <Button
@@ -193,7 +194,7 @@ const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal,
                             inputValue === AI_ASSISTANT_ACCESS.SERVER_ONLY ? 'color-primary' : 'visibility-hidden'
                         )}
                     >
-                        <Icon name="checkmark" />
+                        <IcCheckmark />
                     </span>
                 </Button>
             </div>

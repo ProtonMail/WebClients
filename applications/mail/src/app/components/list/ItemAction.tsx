@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { IcArrowUpAndLeftBig, IcArrowsUpAndLeftBig } from '@proton/icons';
 import clsx from '@proton/utils/clsx';
 
 import { isElementMessage } from '../../helpers/elements';
@@ -25,17 +25,17 @@ const ItemAction = ({ element, className }: Props) => {
         <div className={clsx(['flex flex-nowrap', className])}>
             {!!element.IsReplied && (
                 <Tooltip title={c('Alt').t`Replied to`}>
-                    <Icon name="arrow-up-and-left-big" alt={c('Alt').t`Replied to`} className="shrink-0 mr-1" />
+                    <IcArrowUpAndLeftBig alt={c('Alt').t`Replied to`} className="shrink-0 mr-1" />
                 </Tooltip>
             )}
             {!!element.IsRepliedAll && (
                 <Tooltip title={c('Alt').t`Replied to all`}>
-                    <Icon name="arrows-up-and-left-big" alt={c('Alt').t`Replied to all`} className="shrink-0 mr-1" />
+                    <IcArrowsUpAndLeftBig alt={c('Alt').t`Replied to all`} className="shrink-0 mr-1" />
                 </Tooltip>
             )}
             {!!element.IsForwarded && (
                 <Tooltip title={c('Alt').t`Forwarded`}>
-                    <Icon name="arrow-up-and-left-big" alt={c('Alt').t`Forwarded`} className="mirror shrink-0 mr-1" />
+                    <IcArrowUpAndLeftBig alt={c('Alt').t`Forwarded`} className="mirror shrink-0 mr-1" />
                 </Tooltip>
             )}
         </div>
