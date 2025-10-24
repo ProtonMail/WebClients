@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 import { MeetingType } from '@proton/shared/lib/interfaces/Meet';
 
 import type { CreateMeetingParams } from '../types/types';
@@ -30,7 +32,7 @@ export const useCreateInstantMeeting = () => {
         const { response, passwordBase } = await saveMeeting({
             params: {
                 ...params,
-                meetingName: 'Secure meeting',
+                meetingName: isGuest ? c('Info').t`Free meeting` : c('Info').t`Secure meeting`,
                 customPassword: '',
                 startTime: null,
                 endTime: null,

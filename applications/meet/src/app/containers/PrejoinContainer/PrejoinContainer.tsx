@@ -1,13 +1,13 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 
 import useFlag from '@proton/unleash/useFlag';
+import clsx from '@proton/utils/clsx';
 
 import { DeviceSettings } from '../../components/DeviceSettings/DeviceSettings';
 import { JoiningRoomLoader } from '../../components/JoiningRoomLoader';
 import { PageHeader } from '../../components/PageHeader/PageHeader';
 import { PreJoinDetails } from '../../components/PreJoinDetails/PreJoinDetails';
 import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
-import { defaultDisplayNameHooks } from '../../hooks/useDefaultDisplayName';
 import { LoadingState } from '../../types';
 
 import './PrejoinContainer.scss';
@@ -23,6 +23,9 @@ interface PrejoinContainerProps {
     instantMeeting: boolean;
     initialisedParticipantNameMap: boolean;
     participantNameMap: Record<string, string>;
+    displayName: string;
+    setDisplayName: (displayName: string) => void;
+    isInstantJoin: boolean;
 }
 
 export const PrejoinContainer = ({
@@ -36,6 +39,9 @@ export const PrejoinContainer = ({
     instantMeeting = false,
     initialisedParticipantNameMap,
     participantNameMap,
+    displayName,
+    setDisplayName,
+    isInstantJoin,
 }: PrejoinContainerProps) => {
     const isScheduleInAdvanceEnabled = useFlag('ScheduleInAdvance');
 
@@ -55,14 +61,6 @@ export const PrejoinContainer = ({
         setInitialAudioState,
         switchActiveDevice,
     } = useMediaManagementContext();
-
-    const useDefaultDisplayName = guestMode
-        ? defaultDisplayNameHooks.unauthenticated
-        : defaultDisplayNameHooks.authenticated;
-
-    const defaultDisplayName = useDefaultDisplayName();
-
-    const [displayName, setDisplayName] = useState(defaultDisplayName);
 
     const participantColorIndex = useRef(Math.ceil(6 * Math.random()));
 
@@ -94,31 +92,38 @@ export const PrejoinContainer = ({
                     isScheduleInAdvanceEnabled={isScheduleInAdvanceEnabled}
                     guestMode={guestMode}
                     showAppSwitcher={false}
+                    isInstantJoin={isInstantJoin}
                 />
             </div>
             <div className="prejoin-container flex flex-column md:flex-row flex-nowrap w-full md:items-center md:justify-center">
                 <div
-                    className="prejoin-container-content w-full md:w-custom flex flex-column flex-nowrap lg:flex-row gap-2 *:min-size-auto md:items-center px-2 md:px-4"
+                    className={clsx(
+                        'prejoin-container-content w-full md:w-custom flex flex-column flex-nowrap lg:flex-row gap-2 *:min-size-auto md:items-center px-2 md:px-4',
+                        isInstantJoin && 'justify-center'
+                    )}
                     style={{ '--md-w-custom': '71rem' }}
                 >
-                    <DeviceSettings
-                        isCameraEnabled={initialCameraState}
-                        isMicrophoneEnabled={initialAudioState}
-                        onCameraToggle={() => setInitialCameraState(!initialCameraState)}
-                        onMicrophoneToggle={() => setInitialAudioState(!initialAudioState)}
-                        cameras={cameras}
-                        microphones={microphones}
-                        speakers={speakers}
-                        selectedCameraId={currentSelectedCamera}
-                        selectedMicrophoneId={currentSelectedMicrophone}
-                        selectedAudioOutputDeviceId={currentSelectedAudioOutputDevice}
-                        onCameraChange={handleCameraChange}
-                        onMicrophoneChange={handleMicrophoneChange}
-                        onAudioOutputDeviceChange={handleAudioOutputDeviceChange}
-                        displayName={displayName}
-                        colorIndex={participantColorIndex.current}
-                        isLoading={isLoading}
-                    />
+                    {!isInstantJoin && (
+                        <DeviceSettings
+                            isCameraEnabled={initialCameraState}
+                            isMicrophoneEnabled={initialAudioState}
+                            onCameraToggle={() => setInitialCameraState(!initialCameraState)}
+                            onMicrophoneToggle={() => setInitialAudioState(!initialAudioState)}
+                            cameras={cameras}
+                            microphones={microphones}
+                            speakers={speakers}
+                            selectedCameraId={currentSelectedCamera}
+                            selectedMicrophoneId={currentSelectedMicrophone}
+                            selectedAudioOutputDeviceId={currentSelectedAudioOutputDevice}
+                            onCameraChange={handleCameraChange}
+                            onMicrophoneChange={handleMicrophoneChange}
+                            onAudioOutputDeviceChange={handleAudioOutputDeviceChange}
+                            displayName={displayName}
+                            colorIndex={participantColorIndex.current}
+                            isLoading={isLoading}
+                        />
+                    )}
+
                     {isLoading ? (
                         <>
                             {loadingState === LoadingState.JoiningInProgress && (
