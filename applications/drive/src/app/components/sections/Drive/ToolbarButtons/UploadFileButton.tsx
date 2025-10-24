@@ -11,7 +11,7 @@ const UploadFileButton = () => {
         inputRef: fileInput,
         handleClick,
         handleChange,
-    } = useFileUploadInput(activeFolder.shareId, activeFolder.linkId);
+    } = useFileUploadInput(activeFolder.volumeId, activeFolder.shareId, activeFolder.linkId);
 
     return (
         <>

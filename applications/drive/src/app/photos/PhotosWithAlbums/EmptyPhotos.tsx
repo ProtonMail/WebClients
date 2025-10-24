@@ -15,12 +15,13 @@ import { DriveEmptyView } from '../../components/layout/DriveEmptyView';
 import { useFileUploadInput } from '../../store';
 
 interface EmptyPhotosProps {
+    volumeId: string;
     shareId: string;
     linkId: string;
 }
 
-export const EmptyPhotos: FC<EmptyPhotosProps> = ({ shareId, linkId }) => {
-    const { inputRef: fileInput, handleClick, handleChange } = useFileUploadInput(shareId, linkId, true);
+export const EmptyPhotos: FC<EmptyPhotosProps> = ({ volumeId, shareId, linkId }) => {
+    const { inputRef: fileInput, handleClick, handleChange } = useFileUploadInput(volumeId, shareId, linkId, true);
 
     return (
         <DriveEmptyView

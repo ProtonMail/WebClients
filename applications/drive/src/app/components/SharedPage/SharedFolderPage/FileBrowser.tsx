@@ -31,6 +31,7 @@ interface Props {
     sortParams?: SortParams<SortField>;
     setSorting?: (params: SortParams<SortField>) => void;
     canWrite: boolean;
+    volumeId: string;
     linkId: string;
 }
 
@@ -43,6 +44,7 @@ export function SharedFileBrowser({
     onItemOpen,
     openInDocs,
     canWrite,
+    volumeId,
     linkId,
 }: Props) {
     const { viewportWidth } = useActiveBreakpoint();
@@ -90,7 +92,7 @@ export function SharedFileBrowser({
     return (
         <div className={classname}>
             {isListEmpty ? (
-                <SharedFolderPageEmptyView token={token} linkId={linkId} />
+                <SharedFolderPageEmptyView volumeId={volumeId} token={token} linkId={linkId} />
             ) : (
                 <>
                     <DrivePublicContextMenu

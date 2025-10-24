@@ -292,11 +292,13 @@ export default function SharedFolder({
                 <UploadDragDrop
                     shareId={token}
                     parentLinkId={linkId}
+                    volumeId={rootLink.volumeId}
                     className="flex flex-column flex-nowrap flex-1"
                     disabled={viewOnly}
                 >
                     <SharedFileBrowser
                         {...folderView}
+                        volumeId={rootLink.volumeId}
                         onItemOpen={onItemOpen}
                         openInDocs={openInDocs}
                         items={fileBrowserItems}

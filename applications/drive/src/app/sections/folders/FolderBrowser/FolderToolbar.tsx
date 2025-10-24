@@ -4,11 +4,10 @@ import { Vr } from '@proton/atoms';
 import { Toolbar, useActiveBreakpoint } from '@proton/components';
 import { MemberRole } from '@proton/drive/index';
 import { getDevice } from '@proton/shared/lib/helpers/browser';
-import useFlag from '@proton/unleash/useFlag';
 
 import { useSelection } from '../../../components/FileBrowser';
 import useIsEditEnabled from '../../../components/sections/useIsEditEnabled';
-import { useDebug } from '../../../hooks/drive/useDebug';
+import { useFlagsDriveSDKTransfer } from '../../../flags/useFlagsDriveSDKTransfer';
 import { DownloadManager } from '../../../managers/download/DownloadManager';
 import { ActionsDropdown } from '../buttons/ActionsDropdown';
 import { CreateNewDocumentButton } from '../buttons/CreateNewDocumentButton';
@@ -42,8 +41,7 @@ interface Props {
 
 export const FolderToolbar = ({ volumeId, shareId, linkId, showOptionsForNoSelection = true }: Props) => {
     const isDesktop = !getDevice()?.type;
-    const debug = useDebug();
-    const useSDKDownload = useFlag('DriveWebSDKDownload');
+    const isSDKTransferEnabled = useFlagsDriveSDKTransfer({ isForPhotos: false });
     const { viewportWidth } = useActiveBreakpoint();
     const selectionControls = useSelection();
     const isEditEnabled = useIsEditEnabled();
@@ -67,7 +65,6 @@ export const FolderToolbar = ({ volumeId, shareId, linkId, showOptionsForNoSelec
             showLinkSharingModal,
             showFileSharingModal,
         },
-        uploadSdkFile: { sdkFileInputRef, sdkHandleFileClick, sdkHandleFileChange },
         uploadFile: { fileInputRef, handleFileClick, handleFileChange },
         uploadFolder: { folderInputRef, handleFolderClick, handleFolderChange },
         modals,
@@ -102,7 +99,6 @@ export const FolderToolbar = ({ volumeId, shareId, linkId, showOptionsForNoSelec
                             <Vr />
                             {isDesktop && <UploadFolderButton type="toolbar" onClick={handleFolderClick} />}
                             <UploadFileButton type="toolbar" onClick={handleFileClick} />
-                            {debug && <UploadFileButton type="toolbar" onClick={sdkHandleFileClick} />}
                             <Vr />
                         </>
                     ) : null}
@@ -115,7 +111,7 @@ export const FolderToolbar = ({ volumeId, shareId, linkId, showOptionsForNoSelec
 
         return (
             <>
-                {useSDKDownload && (
+                {isSDKTransferEnabled && (
                     <DownloadButton
                         type="toolbar"
                         selectedItems={selectedItems}
@@ -168,7 +164,6 @@ export const FolderToolbar = ({ volumeId, shareId, linkId, showOptionsForNoSelec
                 <LayoutToolbarButton />
             </span>
             <input multiple type="file" ref={fileInputRef} className="hidden" onChange={handleFileChange} />
-            <input multiple type="file" ref={sdkFileInputRef} className="hidden" onChange={sdkHandleFileChange} />
             <input type="file" ref={folderInputRef} className="hidden" onChange={handleFolderChange} />
             {modals.renameModal}
             {modals.moveModal}
