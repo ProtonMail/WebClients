@@ -148,7 +148,15 @@ export const MenuDropdown: FC = () => {
 
                     <hr className="my-2 mx-4" aria-hidden="true" />
 
-                    <Submenu icon="mobile" label={c('Action').t`Get mobile apps`} items={download} />
+                    <Submenu
+                        icon="mobile"
+                        label={
+                            // translator: if the translated text is longer than the english text,
+                            // please simply translate as "Get apps" because UI space is limited.
+                            c('Action').t`Get mobile and desktop apps`
+                        }
+                        items={download}
+                    />
                     <Submenu icon="user" label={c('Action').t`Account`} items={accountMenuItems} />
                 </DropdownMenu>
             </Dropdown>
