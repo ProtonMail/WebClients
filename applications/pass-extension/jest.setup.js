@@ -21,8 +21,7 @@ jest.mock('@proton/pass/lib/core/ui.proxy');
 jest.mock('loglevel');
 
 /* JSDom does not include webcrypto */
-const crypto = require('crypto').webcrypto;
-global.crypto.subtle = crypto.subtle;
+global.crypto.subtle = require('crypto').webcrypto.subtle;
 global.VERSION = '0.0.1';
 
 /**  JSDom has an inconsistent `postMessage` implementation:
