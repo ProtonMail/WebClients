@@ -10,8 +10,8 @@ import {
     unwrapKey,
     wrapKey,
 } from '@proton/crypto/lib/subtle/aesGcm';
-import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils';
 import { computeSHA256 } from '@proton/crypto/lib/subtle/hash';
+import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 import { type AdString, type Base64, type EncryptedData, isOldEncryptedData } from '../types';
@@ -46,15 +46,14 @@ export async function encryptUint8Array(
 }
 
 export async function cryptoKeyToBase64(key: CryptoKey): Promise<Base64> {
-    const exportedKey = await cryptoKeyToBytes(key);
+    const exportedKey = await exportKey(key);
     return uint8ArrayToBase64String(exportedKey);
 }
 
-export async function cryptoKeyToBytes(key: CryptoKey): Promise<Uint8Array<ArrayBuffer>> {
-    return exportKey(key);
-}
-
-export async function bytesToAesGcmCryptoKey(bytes: Uint8Array<ArrayBuffer>, extractable?: boolean): Promise<AesGcmCryptoKey> {
+export async function bytesToAesGcmCryptoKey(
+    bytes: Uint8Array<ArrayBuffer>,
+    extractable?: boolean
+): Promise<AesGcmCryptoKey> {
     if (bytes.length !== 32) {
         throw new Error('Unexpected AES-GCM key size');
     }
@@ -150,7 +149,10 @@ export async function deriveDataEncryptionKey(spaceKeyBytes: Uint8Array<ArrayBuf
     };
 }
 
-export async function wrapAesKey(keyToWrap: AesGcmCryptoKey, { wrappingKey }: AesKwCryptoKey): Promise<Uint8Array<ArrayBuffer>> {
+export async function wrapAesKey(
+    keyToWrap: AesGcmCryptoKey,
+    { wrappingKey }: AesKwCryptoKey
+): Promise<Uint8Array<ArrayBuffer>> {
     const wrappedBytes = await wrapKey(keyToWrap.encryptKey, wrappingKey);
     return wrappedBytes;
 }
