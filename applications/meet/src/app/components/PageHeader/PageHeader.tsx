@@ -18,9 +18,15 @@ interface PageHeaderProps {
     isScheduleInAdvanceEnabled: boolean;
     guestMode: boolean;
     showAppSwitcher?: boolean;
+    isInstantJoin?: boolean;
 }
 
-export const PageHeader = ({ isScheduleInAdvanceEnabled, guestMode, showAppSwitcher = true }: PageHeaderProps) => {
+export const PageHeader = ({
+    isScheduleInAdvanceEnabled,
+    guestMode,
+    showAppSwitcher = true,
+    isInstantJoin = false,
+}: PageHeaderProps) => {
     const history = useHistory();
 
     const handleSignIn = (returnUrl: string) =>
@@ -44,7 +50,7 @@ export const PageHeader = ({ isScheduleInAdvanceEnabled, guestMode, showAppSwitc
 
     const buttons = (
         <div className="flex flex-nowrap gap-2 items-center w-custom" style={{ '--w-custom': 'fit-content' }}>
-            {showAppSwitcher && (
+            {showAppSwitcher && !isInstantJoin && (
                 <>
                     {guestMode ? (
                         <UnAuthenticatedAppsDropdown app={APPS.PROTONMEET} />
@@ -80,27 +86,31 @@ export const PageHeader = ({ isScheduleInAdvanceEnabled, guestMode, showAppSwitc
                 <div className="hidden md:inline-block w-fit-content">{buttons}</div>
             </div>
 
-            <div className="flex flex-nowrap gap-2 items-center">
-                {isScheduleInAdvanceEnabled && (
-                    <Button
-                        className="action-button rounded-full hidden md:block"
-                        onClick={() => (guestMode ? handleSignIn('admin/create') : history.replace('/admin/create'))}
-                        size="large"
-                    >
-                        {c('Action').t`Schedule meeting`}
-                    </Button>
-                )}
-                <div className="md:hidden w-custom" style={{ '--w-custom': 'fit-content' }}>
-                    {buttons}
+            {!isInstantJoin && (
+                <div className="flex flex-nowrap gap-2 items-center">
+                    {isScheduleInAdvanceEnabled && (
+                        <Button
+                            className="action-button rounded-full hidden md:block"
+                            onClick={() =>
+                                guestMode ? handleSignIn('admin/create') : history.replace('/admin/create')
+                            }
+                            size="large"
+                        >
+                            {c('Action').t`Schedule meeting`}
+                        </Button>
+                    )}
+                    <div className="md:hidden w-custom" style={{ '--w-custom': 'fit-content' }}>
+                        {buttons}
+                    </div>
+                    {guestMode ? (
+                        <Button className="action-button rounded-full" onClick={handleSignInClick} size="large">
+                            {c('Action').t`Sign in`}
+                        </Button>
+                    ) : (
+                        <UserDropdown app={APPS.PROTONMEET} />
+                    )}
                 </div>
-                {guestMode ? (
-                    <Button className="action-button rounded-full" onClick={handleSignInClick} size="large">
-                        {c('Action').t`Sign in`}
-                    </Button>
-                ) : (
-                    <UserDropdown app={APPS.PROTONMEET} />
-                )}
-            </div>
+            )}
         </div>
     );
 };

@@ -1,10 +1,9 @@
 .copy-button-norm {
-	background-color: var(--interaction-norm) !important;
+	background-color: var(--interaction-norm-minor-2) !important;
 
 	&:hover,
 	&:focus-within {
-		background-color: var(--interaction-norm-major-1) !important;
-		color: var(--text-invert) !important;
+		background-color: var(--interaction-norm-minor-1) !important;
 	}
 }
 

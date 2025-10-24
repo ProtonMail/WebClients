@@ -24,8 +24,7 @@ export const CopyButton = ({ text, isPrimary = false, className, title = 'link' 
             className={clsx(
                 'mx-auto w-full rounded-full border-none py-4 flex justify-center items-center gap-1',
                 isPrimary ? 'copy-button-norm' : 'copy-button-weak',
-                className,
-                isPrimary && 'color-invert'
+                className
             )}
             size="large"
             onClick={async () => {
