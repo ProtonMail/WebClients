@@ -3,7 +3,12 @@ import { useParams } from 'react-router-dom-v5-compat';
 
 import type { MaybeNode } from '@proton/drive';
 import { useDrive } from '@proton/drive';
-import { type Diagnostic, type DiagnosticResult, useDriveDiagnostics } from '@proton/drive/diagnostic';
+import {
+    type Diagnostic,
+    type DiagnosticResult,
+    type ExcpectedTreeNode,
+    useDriveDiagnostics,
+} from '@proton/drive/diagnostic';
 
 import config from '../../config';
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
@@ -101,6 +106,7 @@ export const useDiagnosticsState = () => {
         node?: MaybeNode;
         verifyContent?: boolean;
         verifyThumbnails?: boolean;
+        expectedStructure?: ExcpectedTreeNode;
     }): void => {
         if (!diagnostics) {
             return;

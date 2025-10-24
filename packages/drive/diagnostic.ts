@@ -13,6 +13,7 @@ import { useHttpClient } from './lib/useHttpClient';
 import { useSrpModule } from './lib/useSrpModule';
 
 export { type Diagnostic, type DiagnosticResult } from '@protontech/drive-sdk/dist/diagnostic';
+export { type ExcpectedTreeNode } from '@protontech/drive-sdk/dist/diagnostic/interface';
 
 export function useDriveDiagnostics() {
     const [appVersionHeaders, setAppVersionHeaders] = useState<[string, string][]>();
