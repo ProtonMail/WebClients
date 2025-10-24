@@ -46,7 +46,7 @@ export const PrimaryButton = ({ collapsed, onCreateEvent }: Props) => {
     return (
         <ButtonGroup color="norm" shape="solid" size="large" className="w-full">
             <PrimaryAction collapsed={collapsed} onCreateEvent={onCreateEvent} group />
-            <BookingSidebarAction />
+            <BookingSidebarAction onCreateEvent={onCreateEvent} />
         </ButtonGroup>
     );
 };
