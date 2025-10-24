@@ -1,7 +1,8 @@
-import type { Coords } from '@proton/pass/types';
+import type { Coords } from 'proton-pass-extension/types/inline';
+
 import { createStyleParser, getOffsetLeft, getOffsetTop } from '@proton/pass/utils/dom/computed-styles';
 
-export const debugPosition = (top: number, left: number, width: number, height: number) => {
+export const debugPosition = (left: number, top: number, width: number, height: number) => {
     const div = document.createElement('div');
     div.classList.add('protonpass-debug');
     div.style.width = `${width}px`;

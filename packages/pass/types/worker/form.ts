@@ -39,5 +39,3 @@ export type FormEntry<T extends FormEntryStatus = FormEntryStatus> = FormEntryBa
 };
 
 export type AutosaveFormEntry<T extends FormEntryStatus = FormEntryStatus> = WithAutosavePrompt<FormEntry<T>>;
-
-export type Coords = { top: number; left: number };

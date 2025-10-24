@@ -11,6 +11,8 @@ import type {
     DropdownOpenDTO,
     DropdownOpenedDTO,
     DropdownStateDTO,
+    IconShiftRequest,
+    IconShiftResult,
 } from 'proton-pass-extension/types/inline';
 import type { Action } from 'redux';
 
@@ -133,6 +135,7 @@ export enum WorkerMessageType {
     INLINE_DROPDOWN_OPEN = 'INLINE_DROPDOWN_OPEN',
     INLINE_DROPDOWN_OPENED = 'INLINE_DROPDOWN_OPENED',
     INLINE_DROPDOWN_STATE = 'INLINE_DROPDOWN_STATE',
+    INLINE_ICON_SHIFT = 'INLINE_ICON_SHIFT',
 
     FRAME_QUERY = 'FRAME_QUERY',
     FRAME_VISIBILITY = 'FRAME_VISIBILITY',
@@ -226,6 +229,7 @@ export type InlineDropdownCloseMessage = WithPayload<WorkerMessageType.INLINE_DR
 export type InlineDropdownOpenedMessage = WithPayload<WorkerMessageType.INLINE_DROPDOWN_OPENED, DropdownOpenedDTO>;
 export type InlineDropdownOpenMessage = WithPayload<WorkerMessageType.INLINE_DROPDOWN_OPEN, DropdownOpenDTO>;
 export type InlineDropdownStateMessage = { type: WorkerMessageType.INLINE_DROPDOWN_STATE };
+export type InlineIconShiftMessage = WithPayload<WorkerMessageType.INLINE_ICON_SHIFT, IconShiftRequest>;
 
 export type LoadContentScriptMessage = { type: WorkerMessageType.LOAD_CONTENT_SCRIPT };
 export type LocaleUpdatedMessage = WithPayload<WorkerMessageType.LOCALE_UPDATED, { locale: string }>;
@@ -309,6 +313,7 @@ export type WorkerMessage =
     | InlineDropdownOpenMessage
     | InlineDropdownOpenedMessage
     | InlineDropdownStateMessage
+    | InlineIconShiftMessage
     | FrameQueryMessage
     | FrameVisibilityMessage
     | LoadContentScriptMessage
@@ -376,6 +381,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.FRAME_QUERY]: FrameQueryResult;
     [WorkerMessageType.FRAME_VISIBILITY]: FrameCheckResult;
     [WorkerMessageType.INLINE_DROPDOWN_STATE]: DropdownStateDTO;
+    [WorkerMessageType.INLINE_ICON_SHIFT]: IconShiftResult;
     [WorkerMessageType.FORM_ENTRY_COMMIT]: { submission: MaybeNull<AutosaveFormEntry> };
     [WorkerMessageType.FORM_ENTRY_REQUEST]: { submission: MaybeNull<AutosaveFormEntry> };
     [WorkerMessageType.FORM_ENTRY_STAGE]: { submission: MaybeNull<AutosaveFormEntry> };

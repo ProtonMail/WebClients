@@ -26,7 +26,7 @@ export const createInlineService = ({
     const registry = createInlineRegistry(elements);
     const dropdown = createDropdownHandler(registry);
     const notification = createNotificationHandler(registry);
-    const icon = createIconRegistry(dropdown, elements.control);
+    const icon = createIconRegistry({ channel, dropdown, tag: elements.control });
 
     const onDropdownOpen: FrameMessageHandler<WorkerMessageType.INLINE_DROPDOWN_OPEN> = ({ payload }) => {
         if (payload.type === 'request') return;

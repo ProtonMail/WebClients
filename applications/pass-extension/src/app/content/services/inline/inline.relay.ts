@@ -30,7 +30,7 @@ export const createInlineRelay = ({
     const passiveListeners = createPassiveInlineListeners(channel);
     const dropdown = createDropdownRelayHandler();
     const notification = createNotificationRelayHandler();
-    const icon = createIconRegistry(dropdown, elements.control);
+    const icon = createIconRegistry({ channel, dropdown, tag: elements.control });
 
     const onDropdownOpened: FrameMessageHandler<WorkerMessageType.INLINE_DROPDOWN_OPENED> = withContext(
         (ctx, { payload }) => {
