@@ -6,9 +6,10 @@ import {
 } from 'proton-pass-extension/app/content/constants.static';
 import type { ProtonPassControl } from 'proton-pass-extension/app/content/services/inline/custom-elements/ProtonPassControl';
 import ProtonPassControlStyles from 'proton-pass-extension/app/content/services/inline/custom-elements/ProtonPassControl.raw.scss';
+import type { Coords } from 'proton-pass-extension/types/inline';
 
+import type { MaybeNull } from '@proton/pass/types';
 import {
-    type StyleParser,
     createStyleParser,
     getComputedHeight,
     pixelEncoder,
@@ -26,42 +27,62 @@ type IconElement = {
     control: ProtonPassControl;
 };
 
-type IconElementRefs = IconElement & {
+export type IconElementRefs = IconElement & {
     parent: HTMLElement | ShadowRoot;
     input: HTMLInputElement;
     anchor: HTMLElement;
 };
 
-type IconInjectionOptions = {
-    getInputStyle: StyleParser;
-    getAnchorStyle: StyleParser;
+export type IconStyles = {
+    input: { paddingRight: number };
+    icon: {
+        top: number;
+        right: number;
+        size: number;
+        fontSize: number;
+        overlay: Coords & {
+            radius: number;
+            dx: number;
+            pr: number;
+        };
+    };
 };
 
-/* input styles we may override */
-type InputInitialStyles = { ['padding-right']?: string };
+type FieldOverrides = { ['padding-right']?: string };
+
+const FLICKER_TRESHOLD = 2;
+const OVERLAY_OFFSET = 1;
 
 /** Calculates the maximum horizontal shift required for injected elements.
  * Determines the optimal positioning to avoid overlap with existing elements */
-const getOverlayShift = (options: {
+export const computeIconShift = (options: {
+    /** X coordinate of the icon's intended center position */
     x: number;
+    /** Y coordinate of the icon's intended center position */
     y: number;
+    /** Radius of the circular icon (half of icon size) */
+    radius: number;
+    /** Maximum width of the input field - limits shift to 50% of this value */
+    maxWidth: number;
+    /** Bounding container element (form field wrapper or input itself) */
     anchor: HTMLElement;
-    input: HTMLElement;
-    parent: HTMLElement | ShadowRoot;
+    /** The input element we're positioning relative to */
+    target: HTMLElement;
+    /** Container for filtering (optional) */
+    parent?: HTMLElement | ShadowRoot;
 }): number => {
     const restore: { el: HTMLElement; pointerEvents: string }[] = [];
 
     try {
-        const { x, y, parent, input, anchor } = options;
-        const maxWidth = anchor.offsetWidth;
-        const maxShift = maxWidth * 0.5; /* Maximum allowed shift */
+        const { x, y, maxWidth, target, anchor, parent } = options;
+        const maxShift = options.maxWidth * 0.5; /* Maximum allowed shift */
 
         if (Number.isNaN(x) || Number.isNaN(y)) return 0;
 
         /** Prepass: `document.elementsFromPoint` will exclude elements that are
          * set to `pointer-events: none`. These may be part of the shift we want
          * to resolve. Set them to `auto` temporarily and restore */
-        getNthParent(anchor, isInputElement(anchor) ? 2 : 1)
+        getNthParent(anchor, isInputElement(anchor) ? 2 : 0)
             .querySelectorAll('*')
             .forEach((el) => {
                 if (isHTMLElement(el)) {
@@ -78,7 +99,7 @@ const getOverlayShift = (options: {
          * becomes standard. Right now, some browsers return only the shadow root elements
          * present at that location. Other browsers include elements outside of the shadow DOM,
          * from the shadow DOM element in the topmost layer to the document root node. */
-        const overlays = document.elementsFromPoint(x, y);
+        const overlays = document.elementsFromPoint(x + OVERLAY_OFFSET, y + OVERLAY_OFFSET);
         let maxDx: number = 0;
 
         const skip = new Set();
@@ -86,10 +107,10 @@ const getOverlayShift = (options: {
         for (const el of overlays) {
             if (skip.has(el)) continue;
             if (el.classList.contains('protonpass-debug')) continue;
-            if (el === input || el === anchor) break; /* Stop at target elements */
+            if (el === target || el === anchor) break; /* Stop at target elements */
             if (!isHTMLElement(el)) continue; /* Skip non-HTMLElements */
             if (el.tagName.startsWith('PROTONPASS')) continue; /* Skip injected pass elements */
-            if (!parent.contains(el)) continue; /* Skip elements outside parent element (form) */
+            if (parent && !parent.contains(el)) continue; /* Skip elements outside parent element (form) */
             if (el.matches('svg *')) continue; /* Skip SVG subtrees */
 
             /** Skip large text elements. NOTE: The `isHTMLElement` check is loose in order to
@@ -111,7 +132,7 @@ const getOverlayShift = (options: {
             }
 
             const { left } = el.getBoundingClientRect();
-            const dx = Math.max(0, x - left);
+            const dx = Math.max(0, x + options.radius - left);
             if (dx > maxDx && dx < maxShift) maxDx = dx;
         }
 
@@ -123,17 +144,28 @@ const getOverlayShift = (options: {
     }
 };
 
+/** Avoids re-applying styles if we don't reach a repositioning
+ * threshold which would create flickering issues */
+export const hasIconInjectionStylesChanged = (a?: MaybeNull<IconStyles>, b?: MaybeNull<IconStyles>) => {
+    if (!(a && b)) return true;
+    if (Math.abs(a.icon.right - b.icon.right) > FLICKER_TRESHOLD) return true;
+    if (Math.abs(a.icon.top - b.icon.top) > FLICKER_TRESHOLD) return true;
+    return false;
+};
+
 /* Force re-render/re-paint of the input element
  * before computing the icon injection styles in
  * order to avoid certain browser rendering optimisations
  * which cause incorrect DOMRect / styles to be resolved.
  * ie: check amazon sign-in page without repaint to
  * reproduce issue */
-const computeIconInjectionStyles = (
-    { anchor, input, control, parent }: Omit<IconElementRefs, 'icon'>,
-    { getInputStyle, getAnchorStyle: getBoxStyle }: IconInjectionOptions
-) => {
+export const computeIconInjectionStyles = (options: Omit<IconElementRefs, 'icon'>): IconStyles => {
+    const { anchor, input, control, parent } = options;
+
     repaint(input, control);
+
+    const getInputStyle = createStyleParser(input);
+    const getAnchorStyle = createStyleParser(anchor);
 
     const { right: inputRight, top: inputTop, height: inputHeight } = input.getBoundingClientRect();
     const { right: anchorRight, top: boxTop, height: boxMaxHeight } = anchor.getBoundingClientRect();
@@ -146,27 +178,25 @@ const computeIconInjectionStyles = (
      * without offsets in order to correctly position icon
      * if bounding element has some padding-top/border-top */
     const boxed = anchor !== input;
-    const { value: boxHeight, offset: boxOffset } = getComputedHeight(getBoxStyle, boxed ? 'inner' : 'outer');
+    const { value: boxHeight, offset: boxOffset } = getComputedHeight(getAnchorStyle, boxed ? 'inner' : 'outer');
 
     const size = Math.max(Math.min(boxMaxHeight - ICON_PADDING, ICON_MAX_HEIGHT), ICON_MIN_HEIGHT);
+    const radius = size / 2;
     const pl = getInputStyle('padding-left', pixelParser);
     const pr = getInputStyle('padding-right', pixelParser);
 
     const iconPaddingLeft = size / 5; /* dynamic "responsive" padding */
     const iconPaddingRight = Math.max(Math.min(pl, pr) / 1.5, iconPaddingLeft);
 
+    const overlayX = maxRight - (iconPaddingRight + radius);
+    const overlayY = inputTop + inputHeight / 2;
+    const maxWidth = anchor.offsetWidth;
+
     /* look for any overlayed elements if we were to inject
      * the icon on the right hand-side of the input element
      * accounting for icon size and padding  */
-    let overlayDx = getOverlayShift({
-        x: maxRight - (iconPaddingRight + size / 2),
-        y: inputTop + inputHeight / 2,
-        anchor,
-        input,
-        parent,
-    });
-
-    overlayDx = overlayDx !== 0 ? overlayDx + iconPaddingLeft + size / 2 : 0;
+    let overlayDx = computeIconShift({ x: overlayX, y: overlayY, maxWidth, radius, anchor, target: input, parent });
+    overlayDx = overlayDx !== 0 ? overlayDx + iconPaddingLeft : 0;
 
     /* Compute the new input padding :
      * Take into account the input element's current padding as it
@@ -185,19 +215,24 @@ const computeIconInjectionStyles = (
     const right = controlRight - maxRight + iconPaddingRight + overlayDx;
 
     return {
-        input: {
-            paddingRight: pixelEncoder(newPaddingRight),
-        },
+        input: { paddingRight: newPaddingRight },
         icon: {
-            top: pixelEncoder(top),
-            right: pixelEncoder(right),
-            size: pixelEncoder(size),
+            top,
+            right,
+            size,
             fontSize: size / 2.5,
+            overlay: {
+                left: overlayX + overlayDx,
+                top: overlayY,
+                radius,
+                dx: overlayDx,
+                pr: iconPaddingRight,
+            },
         },
     };
 };
 
-export const getInputInitialStyles = (el: HTMLElement): InputInitialStyles => {
+export const getInputInitialStyles = (el: HTMLElement): FieldOverrides => {
     const initialStyles = el.getAttribute(INPUT_BASE_STYLES_ATTR);
     return initialStyles ? JSON.parse(initialStyles) : {};
 };
@@ -220,10 +255,7 @@ export const cleanupInjectionStyles = ({ control, input }: Pick<IconElementRefs,
     cleanupInputInjectedStyles(input);
 };
 
-const applyIconInjectionStyles = (refs: IconElementRefs, options: IconInjectionOptions) => {
-    const { icon, input } = refs;
-    const styles = computeIconInjectionStyles(refs, options);
-
+export const applyIconInjectionStyles = ({ icon, input }: IconElementRefs, styles: IconStyles) => {
     /* Handle a specific scenario where input has transitions or
      * animations set, which could affect width change detection
      * and repositioning triggers. To avoid unwanted side-effects
@@ -236,18 +268,18 @@ const applyIconInjectionStyles = (refs: IconElementRefs, options: IconInjectionO
     /* Get the width of the input element before applying the injection styles */
     const widthBefore = input.getBoundingClientRect().width;
 
-    icon.style.top = styles.icon.top;
-    icon.style.right = styles.icon.right;
-    icon.style.width = styles.icon.size;
-    icon.style.height = styles.icon.size;
-    icon.style.setProperty(`--control-lineheight`, styles.icon.size);
+    icon.style.top = pixelEncoder(styles.icon.top);
+    icon.style.right = pixelEncoder(styles.icon.right);
+    icon.style.width = pixelEncoder(styles.icon.size);
+    icon.style.height = pixelEncoder(styles.icon.size);
+    icon.style.setProperty(`--control-lineheight`, pixelEncoder(styles.icon.size));
     icon.style.setProperty(`--control-fontsize`, pixelEncoder(styles.icon.fontSize));
 
     /* Store the original input styles to handle potential clean-up
      * on extension updates or code hot-reload. */
     input.setAttribute(INPUT_BASE_STYLES_ATTR, JSON.stringify({ 'padding-right': input.style.paddingRight }));
 
-    input.style.setProperty('padding-right', styles.input.paddingRight, 'important');
+    input.style.setProperty('padding-right', pixelEncoder(styles.input.paddingRight), 'important');
     const widthAfter = input.getBoundingClientRect().width;
 
     /* If the input width has increased due to padding, remove the override
@@ -263,19 +295,6 @@ const applyIconInjectionStyles = (refs: IconElementRefs, options: IconInjectionO
     requestAnimationFrame(() => {
         input.style.setProperty('transition', transition);
         input.style.setProperty('animation', animation);
-    });
-};
-
-/* The injection styles application is a two pass process :
- * - First correctly position the control element by computing
- *   its possible margin left offset + max width
- * - Use the re-renderer control element for positioning the icon
- * + Pre-compute shared styles and DOMRects between two passes */
-export const applyInjectionStyles = (refs: IconElementRefs) => {
-    cleanupInputInjectedStyles(refs.input);
-    applyIconInjectionStyles(refs, {
-        getInputStyle: createStyleParser(refs.input),
-        getAnchorStyle: createStyleParser(refs.anchor),
     });
 };
 

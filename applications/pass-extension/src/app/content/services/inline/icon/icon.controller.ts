@@ -6,18 +6,28 @@ import {
 } from 'proton-pass-extension/app/content/constants.runtime';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
+import { getFrameAttributes } from 'proton-pass-extension/app/content/utils/frame';
+import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { FieldType, FormType } from '@proton/pass/fathom/labels';
 import { clientDisabled, clientLocked } from '@proton/pass/lib/client';
 import type { AppStatus, MaybeNull } from '@proton/pass/types';
 import { animatePositionChange } from '@proton/pass/utils/dom/position';
 import { isInputElement } from '@proton/pass/utils/dom/predicates';
-import { safeCall } from '@proton/pass/utils/fp/safe-call';
+import { safeAsyncCall, safeCall } from '@proton/pass/utils/fp/safe-call';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import noop from '@proton/utils/noop';
 
-import { applyInjectionStyles, cleanupInjectionStyles, createIcon } from './icon.utils';
+import type { IconStyles } from './icon.utils';
+import {
+    applyIconInjectionStyles,
+    cleanupInjectionStyles,
+    computeIconInjectionStyles,
+    createIcon,
+    hasIconInjectionStylesChanged,
+} from './icon.utils';
 
 type IconControllerOptions = {
     field: FieldHandle;
@@ -34,6 +44,12 @@ export interface IconController {
     sync: () => void;
 }
 
+export type IconState = {
+    ready: boolean;
+    ctrl: MaybeNull<AbortController>;
+    styles: MaybeNull<IconStyles>;
+};
+
 export const createIconController = (options: IconControllerOptions): MaybeNull<IconController> => {
     const { field, tag } = options;
     const input = field.element;
@@ -41,7 +57,7 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
 
     if (!isInputElement(input)) return null;
 
-    let ready = false;
+    const state: IconState = { ready: false, ctrl: null, styles: null };
 
     const parent = (() => {
         /** TBD: instead of injecting the icon next to the anchor (either the input element
@@ -57,11 +73,7 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
 
     const anchor = field.getAnchor({ reflow: false });
     const { icon, control } = createIcon({ parent, zIndex, tag });
-
-    anchor.connect();
-
     const listeners = createListenerStore();
-    const repositioning = { request: -1, animate: -1 };
 
     const setStatus = (status: AppStatus) => {
         const iconUrl = (() => {
@@ -100,38 +112,74 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
         }
     });
 
-    /* `reposition` is debounced and wrapped in a `requestAnimationFrame`
-     * for performance reasons. If form is detached, we must cancel the
-     * ongoing repositioning */
-    const cancelReposition = () => {
-        cancelAnimationFrame(repositioning.request);
-        cancelAnimationFrame(repositioning.animate);
-    };
+    const checkParentCollision = safeAsyncCall(
+        withContext<(styles: IconStyles, ctrl: AbortController) => Promise<void>>(async (ctx, styles, ctrl) => {
+            if (!ctx || ctx.mainFrame || ctrl.signal.aborted) return;
 
-    const reposition = (reflow: boolean = false) => {
-        cancelReposition();
+            const frameAttributes = getFrameAttributes();
+            const maxWidth = field.getAnchor().element.offsetWidth;
+            const { top, left, radius } = styles.icon.overlay;
+
+            await sendMessage
+                .onSuccess(
+                    contentScriptMessage({
+                        type: WorkerMessageType.INLINE_ICON_SHIFT,
+                        payload: { type: 'request', top, left, radius, frameAttributes, maxWidth },
+                    }),
+                    ({ dx }) => {
+                        if (ctrl.signal.aborted) return;
+
+                        if (dx > 0) {
+                            const delta = Math.abs(dx - styles.icon.overlay.dx);
+                            styles.icon.right += delta + styles.icon.overlay.pr;
+                        }
+                    }
+                )
+                .catch(noop);
+        })
+    );
+
+    const reposition = withContext<(reflow?: boolean) => void>((ctx, reflow = false) => {
+        state.ctrl?.abort();
+        if (!ctx) return;
 
         const anchor = field.getAnchor({ reflow });
+        const ctrl = new AbortController();
+        state.ctrl = ctrl;
 
-        repositioning.request = requestAnimationFrame(async () => {
-            /* Wait for anchor animations to complete before repositioning */
+        let raf = requestAnimationFrame(async () => {
+            /** Wait for anchor animations to complete before repositioning
+             * FIXME: at this point we could check the parent frame for any
+             * overlaying elements at the icon position */
             await waitUntil(() => !anchor.animating, 25, 1_000).catch(() => noop);
 
-            if (!ready) {
-                ready = true;
-                icon.classList.add('visible');
-            }
+            if (ctrl.signal.aborted) return;
+
+            const refs = { icon, control, input, anchor: anchor.element, parent };
 
             animatePositionChange({
-                onAnimate: (request) => (repositioning.animate = request),
-                get: () => input.getBoundingClientRect(),
-                set: () => {
-                    cleanupInjectionStyles({ input, control });
-                    applyInjectionStyles({ icon, control, input, anchor: anchor.element, parent });
+                onAnimate: (request) => (raf = request),
+                onComplete: async () => {
+                    cleanupInjectionStyles(refs);
+                    const styles = computeIconInjectionStyles(refs);
+                    if (!ctx.mainFrame) await checkParentCollision(styles, ctrl);
+                    if (ctrl.signal.aborted) return;
+
+                    /** Only apply if there's a non-negliable change */
+                    if (hasIconInjectionStylesChanged(state.styles, styles)) {
+                        applyIconInjectionStyles(refs, styles);
+                        state.styles = styles;
+                    }
+
+                    state.ready = true;
+                    icon.classList.add('visible');
                 },
+                get: () => input.getBoundingClientRect(),
             });
         });
-    };
+
+        ctrl.signal.addEventListener('abort', () => cancelAnimationFrame(raf));
+    });
 
     const onPointerDown = (evt: PointerEvent) => {
         icon.setPointerCapture(evt.pointerId);
@@ -148,7 +196,11 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
     };
 
     const detach = safeCall(() => {
-        ready = false;
+        state.ctrl?.abort();
+        state.ctrl = null;
+        state.ready = false;
+        state.styles = null;
+
         options.onDetach();
 
         field.getAnchor().disconnect();
@@ -158,18 +210,17 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
         control.remove();
 
         listeners.removeAll();
-        cancelReposition();
         cleanupInjectionStyles({ input, control });
     });
 
-    /* repositioning the icon can happen either :
-     * · on window resize
-     * · on form resize (handled in `FormHandles`)
-     * · on new elements added to the field box (ie: icons) */
+    /** Icon repositioning triggers:
+     * - window resize events
+     * - form container resize (handled by FormHandles)
+     * - DOM changes in field container (error messages, tooltips, other icons) */
     const target = anchor.element === input ? input.parentElement! : anchor.element;
 
-    /** Pointer capturing events are preferred to handle cases where icon
-     * repositioning during interaction could generate unintended clicks */
+    /** Uses pointer capture to prevent unintended clicks during icon repositioning.
+     * Captures on pointerdown, releases on pointerup to handle repositioning mid-interaction. */
     listeners.addListener(icon, 'pointerdown', onPointerDown);
     listeners.addListener(icon, 'pointerup', onPointerUp);
     listeners.addListener(window, 'resize', () => reposition(false));
@@ -178,11 +229,9 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
     listeners.addObserver(
         target,
         () => {
-            /* if the subtree changes we may be dealing with error messages,
-             * tooltips or even icon indicators appearing : in this case we
-             * should revalidate the input field's bounding box as it we may
-             * have resolved an element which is no longer a correct fit for
-             * injection */
+            /** DOM mutations may affect field layout (error messages, tooltips, icons).
+             * Revalidate anchor element positioning with reflow=true to ensure
+             * icon remains correctly positioned relative to potentially changed boundaries. */
             reposition(true);
         },
         { childList: true, subtree: true }
@@ -190,6 +239,7 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
 
     /* fire reposition & sync on initial
      * icon handle creation */
+    anchor.connect();
     sync();
     reposition(true);
 

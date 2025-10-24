@@ -1,6 +1,7 @@
 import type { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
+import type { Coords } from 'proton-pass-extension/types/inline';
 
-import type { Coords, MaybeNull, Result } from '@proton/pass/types';
+import type { MaybeNull, Result } from '@proton/pass/types';
 
 export type FrameAttributes = {
     src?: string;

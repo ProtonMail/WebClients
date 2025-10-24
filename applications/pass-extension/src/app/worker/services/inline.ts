@@ -1,15 +1,15 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
-import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
+import { backgroundMessage, sendTabMessage } from 'proton-pass-extension/lib/message/send-message';
 import type { FrameData, FrameID, Frames } from 'proton-pass-extension/lib/utils/frames';
 import { getFramePath, getTabFrames } from 'proton-pass-extension/lib/utils/frames';
 import type { FrameAttributes, FrameQueryResponse, FrameQueryResult } from 'proton-pass-extension/types/frames';
-import type { DropdownStateDTO } from 'proton-pass-extension/types/inline';
+import type { Coords, DropdownStateDTO } from 'proton-pass-extension/types/inline';
 import type { FrameQueryMessage, InlineDropdownStateMessage } from 'proton-pass-extension/types/messages';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Runtime } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
-import type { Coords, MaybeNull, TabId } from '@proton/pass/types';
+import type { MaybeNull, TabId } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
 type CurrentFrame = { frame: FrameData; frameAttributes: FrameAttributes; coords: Coords };
@@ -233,6 +233,24 @@ export const createInlineService = () => {
             }
 
             return true;
+        })
+    );
+
+    WorkerMessageBroker.registerMessage(
+        WorkerMessageType.INLINE_ICON_SHIFT,
+        withSender(async ({ payload }, tabId, frameId) => {
+            if (frameId === 0) return { dx: 0 };
+
+            const frame = await browser.webNavigation.getFrame({ frameId, tabId });
+            if (!frame) return { dx: 0 };
+
+            return sendTabMessage(
+                backgroundMessage({
+                    type: WorkerMessageType.INLINE_ICON_SHIFT,
+                    payload: { ...payload, type: 'result', frameId },
+                }),
+                { tabId, frameId: frame.parentFrameId }
+            );
         })
     );
 

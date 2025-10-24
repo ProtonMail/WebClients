@@ -13,11 +13,12 @@ import { InlinePortMessageType } from 'proton-pass-extension/app/content/service
 import type { PopoverController } from 'proton-pass-extension/app/content/services/inline/inline.popover';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import type { WithAutofillOrigin } from 'proton-pass-extension/types/autofill';
+import type { Coords } from 'proton-pass-extension/types/inline';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { clientSessionLocked } from '@proton/pass/lib/client';
 import type { PasswordAutosuggestOptions } from '@proton/pass/lib/password/types';
-import type { Coords, MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types';
 import { createStyleParser, getComputedHeight } from '@proton/pass/utils/dom/computed-styles';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import noop from '@proton/utils/noop';

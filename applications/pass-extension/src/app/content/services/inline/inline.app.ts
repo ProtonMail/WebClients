@@ -6,11 +6,12 @@ import {
     portForwardingMessage,
     sendMessage,
 } from 'proton-pass-extension/lib/message/send-message';
+import type { Coords } from 'proton-pass-extension/types/inline';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Runtime } from 'webextension-polyfill';
 
 import { MODEL_VERSION } from '@proton/pass/constants';
-import type { Coords, Maybe, MaybeNull } from '@proton/pass/types';
+import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import type { Dimensions, Rect } from '@proton/pass/types/utils/dom';
 import { pixelEncoder } from '@proton/pass/utils/dom/computed-styles';

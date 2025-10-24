@@ -3,13 +3,15 @@ import type { Rect } from '@proton/pass/types/utils/dom';
 const REFRESH_RATE = 1000 / 24;
 
 export const animatePositionChange = (options: {
+    /** Resolve the bounding client rect for comparison */
     get: () => Partial<Rect>;
-    set: (rect: Partial<Rect>) => void;
+    set?: (rect: Partial<Rect>) => void;
+    onComplete?: () => void;
     onAnimate: (request: number) => void;
 }): void => {
     const current = options.get();
     let { top, left, right, bottom } = current;
-    options.set(current);
+    options.set?.(current);
     let updatedAt = 0;
 
     const check = () =>
@@ -20,13 +22,13 @@ export const animatePositionChange = (options: {
                     const next = options.get();
                     const { top: nTop, left: nLeft, right: nRight, bottom: nBottom } = next;
                     if (nTop !== top || nLeft !== left || nRight !== right || nBottom !== bottom) {
-                        options.set(next);
+                        options.set?.(next);
                         top = nTop;
                         left = nLeft;
                         right = nRight;
                         bottom = nBottom;
                         check();
-                    }
+                    } else options.onComplete?.();
                 } else check();
             })
         );
