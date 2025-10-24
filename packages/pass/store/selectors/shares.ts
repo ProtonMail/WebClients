@@ -46,7 +46,8 @@ export const createVisibilityFilterSelector = <T extends { shareId: string }>(fi
 
 export const selectItemShares = createSelector([selectAllShares], (s) => s.filter(isItemShare));
 export const selectWritableShares = createSelector([selectAllShares], (v) => v.filter(isShareWritable));
-export const selectWritableVaults = createSelector([selectAllVaults], (v) => v.filter(isWritableVault));
+export const selectVisibleWritableShares = createSelector([selectVisibleShares], (v) => v.filter(isShareWritable));
+export const selectWritableVaults = createSelector([selectAllShares], (v) => v.filter(isWritableVault));
 export const selectOwnedVaults = createSelector([selectAllVaults], (v) => v.filter(isOwnVault));
 export const selectNonOwnedVaults = createSelector([selectAllVaults], (v) => v.filter(not(isOwnVault)));
 export const selectOwnWritableVaults = createSelector([selectAllVaults], (v) => v.filter(isOwnWritableVault));
