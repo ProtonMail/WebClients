@@ -1,6 +1,7 @@
 import { ThumbnailType } from '@protontech/drive-sdk';
 import type { Context } from '@sentry/types';
 
+import metrics from '@proton/metrics';
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import { isIos, isSafari } from '@proton/shared/lib/helpers/browser';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
@@ -47,6 +48,10 @@ function reportThumbnailError(thumbnailError: ThumbnailError): void {
     };
 
     traceError(thumbnailError, context);
+
+    if (thumbnailError instanceof ThumbnailSizeError) {
+        metrics.drive_warnings_total.increment({ warning: 'cannot_create_small_enough_thumbnail' });
+    }
 }
 
 async function processThumbnail(
