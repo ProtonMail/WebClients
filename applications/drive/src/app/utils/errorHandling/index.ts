@@ -1,5 +1,6 @@
 import type { ScopeContext } from '@sentry/types';
 
+import metrics from '@proton/metrics/index';
 import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import { isProduction, traceError } from '@proton/shared/lib/helpers/sentry';
@@ -8,6 +9,7 @@ import { UserAvailabilityTypes } from '../metrics/types/userSuccessMetricsTypes'
 import { userSuccessMetrics } from '../metrics/userSuccessMetrics';
 import type { EnrichedError } from './EnrichedError';
 import { isEnrichedError } from './EnrichedError';
+import { RefreshError } from './RefreshError';
 import { isValidationError } from './ValidationError';
 
 const IGNORED_ERRORS = ['AbortError', 'TransferCancel', 'OfflineError'];
@@ -45,6 +47,13 @@ const hasSentryMessage = (error: unknown): error is Error & { sentryMessage: str
  */
 export function sendErrorReport(error: Error | EnrichedError | unknown, additionalContext?: Partial<ScopeContext>) {
     if (isIgnoredErrorForReporting(error)) {
+        return;
+    }
+
+    // RefreshError is used in legacy upload when there is issue with the upload web worker.
+    // The error has no additional context and we want this to be reported to metrics for observability.
+    if (error instanceof RefreshError) {
+        metrics.drive_warnings_total.increment({ warning: 'app_outdated' });
         return;
     }
 
