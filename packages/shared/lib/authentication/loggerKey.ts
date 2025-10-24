@@ -1,4 +1,5 @@
 import { type AesGcmCryptoKey, deriveKey as deriveAesGcmKey } from '@proton/crypto/lib/subtle/aesGcm';
+import { computeSHA256 } from '@proton/crypto/lib/subtle/hash';
 import { stringToUtf8Array } from '@proton/crypto/lib/utils';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
@@ -38,9 +39,7 @@ export const generateLoggerKey = async (authentication: AuthenticationStore): Pr
         // We run a key derivation step (HKDF) to get a new AES-GCM key bound to the UID
         deriveAesGcmKey(clientKeyBytes, salt, HKDF_INFO),
         // Not using the CryptoProxy since the logger might be initialized earlier on.
-        crypto.subtle
-            .digest('SHA-256', mergeUint8Arrays([HKDF_INFO, salt]))
-            .then((bytes) => uint8ArrayToBase64String(new Uint8Array(bytes))),
+        computeSHA256(mergeUint8Arrays([HKDF_INFO, salt])).then(uint8ArrayToBase64String),
     ]);
 
     return {
