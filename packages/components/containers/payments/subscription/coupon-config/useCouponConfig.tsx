@@ -1,6 +1,8 @@
 import type { ReactNode } from 'react';
 
 import { anniversary11Config } from './anniverary11';
+import { bf2025Config } from './bf2025';
+import { hasAlikeCoupon } from './helpers';
 import {
     type CouponConfig,
     type CouponConfigProps,
@@ -13,12 +15,14 @@ import {
 import { monthlyNudgeConfig } from './monthlyNudge';
 import { tldrNewsletterConfig } from './tldrNewsletter';
 
-const couponConfig: CouponConfig[] = [monthlyNudgeConfig, anniversary11Config, tldrNewsletterConfig];
+const couponConfig: CouponConfig[] = [monthlyNudgeConfig, anniversary11Config, tldrNewsletterConfig, bf2025Config];
 
 export type CouponConfigRendered = Omit<CouponConfig, 'amountDueMessage' | 'cyclePriceCompare' | 'cycleTitle'> & {
     renderAmountDueMessage?: () => ReactNode;
     renderCyclePriceCompare?: (params: CyclePriceCompareFirstParam) => CyclePriceCompareReturnType;
     renderCycleTitle?: (params: CycleTitleFirstParam) => CycleTitleReturnType;
+    renderShowMigrationDiscountLossWarning?: () => boolean;
+    renderPayCTA?: () => string;
 };
 
 /**
@@ -41,7 +45,7 @@ export const useCouponConfig = (config: CouponConfigProps): CouponConfigRendered
         return;
     }
 
-    const { cyclePriceCompare, cycleTitle, amountDueMessage } = matchingConfig;
+    const { cyclePriceCompare, cycleTitle, amountDueMessage, payCTA } = matchingConfig;
 
     return {
         ...matchingConfig,
@@ -51,5 +55,15 @@ export const useCouponConfig = (config: CouponConfigProps): CouponConfigRendered
         renderCyclePriceCompare: cyclePriceCompare ? (params) => cyclePriceCompare(params, config) : undefined,
 
         renderCycleTitle: cycleTitle ? (params) => cycleTitle(params, config) : undefined,
+
+        renderShowMigrationDiscountLossWarning: () => {
+            if (!matchingConfig.showMigrationDiscountLossWarning) {
+                return false;
+            }
+
+            return hasAlikeCoupon(matchingConfig, config.checkResult.Coupon);
+        },
+
+        renderPayCTA: payCTA ? () => payCTA(config) : undefined,
     };
 };

@@ -13,8 +13,6 @@ import {
     SkeletonLoader,
     Toggle,
     getCheckoutRenewNoticeTextFromCheckResult,
-    isBlackFridayPeriod as getIsBlackFridayPeriod,
-    isCyberWeekPeriod as getIsCyberWeekPeriod,
     useApi,
     useModalState,
 } from '@proton/components';
@@ -54,7 +52,7 @@ import {
     SubscriptionMode,
     TRIAL_DURATION_DAYS,
     getCheckout,
-    getHas2024OfferCoupon,
+    getHas2025OfferCoupon,
     getOptimisticCheckResult,
     getPaymentsVersion,
     getPlanFromPlanIDs,
@@ -138,7 +136,7 @@ const getPlanTitle = (selected: string, trial?: boolean) => {
     if (trial) {
         // translator: full sentence is, for example, "Try Proton Business Suite free for 14 days"
         const freeForNDays = (
-            <span className="color-success" key="eslint-autofix-F5288F">{c('b2b_trials_2025_Info')
+            <span className="color-success" key="free-for-n-days">{c('b2b_trials_2025_Info')
                 .t`free for ${TRIAL_DURATION_DAYS} days`}</span>
         );
         // translator: full sentence is, for example, "Try Proton Business Suite free for 14 days"
@@ -186,7 +184,6 @@ const Step1 = ({
     mode,
     selectedPlan,
     cycleData,
-    isVpn2024Deal,
     isB2bPlan,
     background,
     onComplete,
@@ -206,7 +203,6 @@ const Step1 = ({
     mode: 'signup' | 'pricing' | 'vpn-pass-promotion';
     selectedPlan: StrictPlan;
     cycleData: { cycles: Cycle[]; upsellCycle: Cycle };
-    isVpn2024Deal: boolean;
     isB2bPlan: boolean;
     background?: Background;
     upsellShortPlan: ReturnType<typeof getUpsellShortPlan> | undefined;
@@ -688,7 +684,7 @@ const Step1 = ({
         checkResult: options.checkResult,
     });
 
-    const iconColorClassName = background === 'bf2023' ? 'color-norm' : 'color-primary';
+    const iconColorClassName = background === 'bf2025' ? 'color-norm' : 'color-primary';
     const features = [
         {
             left: <Icon size={6} className={iconColorClassName} name="code" />,
@@ -732,7 +728,7 @@ const Step1 = ({
     });
 
     const upsellToCycle = (() => {
-        if (options.plan.Name === PLANS.BUNDLE && getHas2024OfferCoupon(options.checkResult.Coupon?.Code)) {
+        if (options.plan.Name === PLANS.BUNDLE && getHas2025OfferCoupon(options.checkResult.Coupon?.Code)) {
             return;
         }
         if (options.cycle === CYCLE.MONTHLY) {
@@ -824,18 +820,10 @@ const Step1 = ({
         }
     };
 
-    const vpnSubscriptionMapping = getSubscriptionMapping({
-        subscriptionDataCycleMapping: model.subscriptionDataCycleMapping,
-        planName: PLANS.VPN2024,
-        planIDs: { [PLANS.VPN2024]: 1 },
-    });
+    const isBlackFriday = getHas2025OfferCoupon(options.checkResult.Coupon?.Code);
 
-    const isBlackFriday =
-        getHas2024OfferCoupon(vpnSubscriptionMapping?.[CYCLE.FIFTEEN]?.checkResult.Coupon?.Code) ||
-        getHas2024OfferCoupon(options.checkResult.Coupon?.Code);
-
-    const isCyberWeekPeriod = getIsCyberWeekPeriod();
-    const isBlackFridayPeriod = getIsBlackFridayPeriod();
+    // const isCyberWeekPeriod = getIsCyberWeekPeriod();
+    // const isBlackFridayPeriod = getIsBlackFridayPeriod();
 
     const showRenewalNotice = !hasSelectedFree;
     const renewalNotice = showRenewalNotice && (
@@ -931,13 +919,13 @@ const Step1 = ({
                     currency={options.currency}
                     cycle={toggleUpsell?.from || options.cycle}
                     onChange={() => {
-                        handleUpsellVPNPassBundle();
+                        void handleUpsellVPNPassBundle();
                     }}
                 />
             );
         }
 
-        if (getHas2024OfferCoupon(options.checkResult.Coupon?.Code) && options.cycle === CYCLE.MONTHLY) {
+        if (getHas2025OfferCoupon(options.checkResult.Coupon?.Code) && options.cycle === CYCLE.MONTHLY) {
             return null;
         }
         const toCycle = toggleUpsell?.to || upsellToCycle;
@@ -1037,7 +1025,7 @@ const Step1 = ({
             className={className}
             bottomRight={
                 <SignupSupportDropdown
-                    isDarkBg={['dark', 'bf2023'].includes(background as any) && !viewportWidth.xsmall}
+                    isDarkBg={['dark', 'bf2025'].includes(background as any) && !viewportWidth.xsmall}
                 />
             }
             background={background}
@@ -1047,7 +1035,7 @@ const Step1 = ({
                 <div className="signup-v1-header mb-4 mt-4 md:mt-0 text-center">
                     <h1 className="m-0 large-font lg:px-4 text-semibold">
                         {(() => {
-                            if (mode === 'vpn-pass-promotion' || isVpn2024Deal) {
+                            if (mode === 'vpn-pass-promotion') {
                                 return c('Header').t`Save big on the best ${VPN_APP_NAME} deals`;
                             }
 
@@ -1056,14 +1044,15 @@ const Step1 = ({
                             }
 
                             if (isBlackFriday) {
-                                if (isBlackFridayPeriod) {
-                                    return c('bf2023: header')
-                                        .t`Save with Black Friday deals on a high-speed Swiss VPN`;
-                                }
-                                if (isCyberWeekPeriod) {
-                                    return c('bf2023: header').t`Save with Cyber Week deals on a high-speed Swiss VPN`;
-                                }
-                                return c('bf2023: header').t`Save with End of Year deals on a high-speed Swiss VPN`;
+                                // if (isBlackFridayPeriod) {
+                                //     return c('bf2023: header')
+                                //         .t`Save with Black Friday deals on a high-speed Swiss VPN`;
+                                // }
+                                // if (isCyberWeekPeriod) {
+                                //     return c('bf2023: header').t`Save with Cyber Week deals on a high-speed Swiss VPN`;
+                                // }
+                                // return c('bf2023: header').t`Save with End of Year deals on a high-speed Swiss VPN`;
+                                return c('bf2023: header').t`Save with Black Friday deals on a high-speed Swiss VPN`;
                             }
 
                             if (mode === 'pricing') {
@@ -1078,7 +1067,7 @@ const Step1 = ({
                     <div
                         className={clsx(
                             'flex flex-nowrap md:gap-8 gap-3',
-                            background === 'bf2023' ? 'color-norm' : 'color-weak'
+                            background === 'bf2025' ? 'color-norm' : 'color-weak'
                         )}
                     >
                         {features.map(({ left, text }, i, arr) => {
@@ -1114,18 +1103,19 @@ const Step1 = ({
                         <BoxHeader
                             step={showStepLabel ? step++ : undefined}
                             title={(() => {
-                                if (isVpn2024Deal || upsellToVPNPassBundle) {
+                                if (upsellToVPNPassBundle) {
                                     return c('Header').t`Select your deal`;
                                 }
 
                                 if (isBlackFriday) {
-                                    if (isBlackFridayPeriod) {
-                                        return c('bf2023: header').t`Select your Black Friday offer`;
-                                    }
-                                    if (isCyberWeekPeriod) {
-                                        return c('bf2023: header').t`Select your Cyber Week offer`;
-                                    }
-                                    return c('bf2023: header').t`Select your End of Year offer`;
+                                    // if (isBlackFridayPeriod) {
+                                    //     return c('bf2023: header').t`Select your Black Friday offer`;
+                                    // }
+                                    // if (isCyberWeekPeriod) {
+                                    //     return c('bf2023: header').t`Select your Cyber Week offer`;
+                                    // }
+                                    // return c('bf2023: header').t`Select your End of Year offer`;
+                                    return c('bf2023: header').t`Select your Black Friday offer`;
                                 }
                                 return c('Header').t`Select your pricing plan`;
                             })()}

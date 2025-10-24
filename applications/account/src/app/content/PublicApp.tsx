@@ -24,7 +24,6 @@ import PublicAppSetup from '@proton/components/containers/publicAppSetup/PublicA
 import useApi from '@proton/components/hooks/useApi';
 import { initMainHost } from '@proton/cross-storage/lib';
 import useInstance from '@proton/hooks/useInstance';
-import { getHas2024OfferCoupon } from '@proton/payments';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import createApi from '@proton/shared/lib/api/createApi';
 import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -353,8 +352,6 @@ const BasePublicApp = ({ sessions }: { sessions: ReturnType<typeof bootstrapApp>
     const clientType = getClientType(maybePreAppIntent);
     const setupVPN = true; /* True until apps have been deployed to support key-less accounts*/
 
-    const hasBFCoupon = getHas2024OfferCoupon(searchParams.get('coupon')?.toUpperCase());
-
     const theme = getThemeFromLocation(location, searchParams);
     const loader = theme ? (
         <UnAuthenticated theme={theme.themeType}>
@@ -661,7 +658,6 @@ const BasePublicApp = ({ sessions }: { sessions: ReturnType<typeof bootstrapApp>
                                             >
                                                 <SingleSignupSwitchContainer
                                                     initialSessionsLength={sessions.initialSessionsLengthBool}
-                                                    hasBFCoupon={hasBFCoupon}
                                                     maybePreAppIntent={maybePreAppIntent}
                                                     initialSearchParams={initialSearchParams}
                                                     paths={paths}

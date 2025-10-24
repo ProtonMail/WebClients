@@ -16,6 +16,7 @@ import {
     getOptimisticCheckResult,
 } from '@proton/payments';
 import clsx from '@proton/utils/clsx';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { useCouponConfig } from '../coupon-config/useCouponConfig';
 import { getDiscountPrice, getShortBillingText } from '../helpers';
@@ -51,6 +52,7 @@ export interface Props {
     faded?: boolean;
     additionalCheckResults: SubscriptionCheckResponse[] | undefined;
     allowedCycles: CYCLE[];
+    checkResult: SubscriptionCheckResponse | undefined;
 }
 
 const SubscriptionCycleSelector = ({
@@ -65,10 +67,11 @@ const SubscriptionCycleSelector = ({
     faded,
     additionalCheckResults = [],
     allowedCycles,
+    checkResult: checkResultProp,
 }: Props) => {
     const calculateCheckout = (cycle: CYCLE): PaymentsCheckout => {
         const checkResult =
-            additionalCheckResults.find((it) => it.Cycle === cycle) ??
+            [...additionalCheckResults, checkResultProp].filter(isTruthy).find((it) => it.Cycle === cycle) ??
             getOptimisticCheckResult({
                 planIDs,
                 plansMap,

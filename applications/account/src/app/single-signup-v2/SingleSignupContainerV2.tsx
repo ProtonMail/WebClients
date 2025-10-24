@@ -28,6 +28,7 @@ import {
     PAYMENT_METHOD_TYPES,
     PLANS,
     getBillingAddressFromPaymentStatus,
+    getHas2025OfferCoupon,
     getPlanIDs,
     getPlanNameFromIDs,
     getPlansMap,
@@ -1219,7 +1220,7 @@ const SingleSignupContainerV2 = ({
                 <UnlockModal
                     {...unlockModalProps}
                     title={c('pass_signup_2023: Title').jt`More ${BRAND_NAME} services.${br}One easy subscription.`}
-                    dark={theme.dark}
+                    dark={getHas2025OfferCoupon(signupParameters.coupon) ? false : theme.dark}
                     currentPlan={model.upsell.currentPlan}
                     appName={shortProductAppName}
                     subscriptionData={model.subscriptionData}

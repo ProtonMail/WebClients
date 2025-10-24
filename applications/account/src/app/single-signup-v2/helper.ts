@@ -23,15 +23,15 @@ import {
     type SubscriptionCheckResponse,
     type SubscriptionPlan,
     getFreeCheckResult,
-    getHas2024OfferCoupon,
+    getHas2025OfferCoupon,
     getHasPlusPlan,
-    getIsB2BAudienceFromPlan,
     getIsPlanTransitionForbidden,
     getNormalCycleFromCustomCycle,
     getOptimisticCheckResult,
     getPaymentMethods,
     getPlan,
     getPlanFromPlanIDs,
+    getPlanNameFromIDs,
     getPrice,
     getSubscription,
     hasPlanIDs,
@@ -247,8 +247,6 @@ const getUpsell = ({
     toApp: APP_NAMES;
     user: User | undefined;
 }): Upsell => {
-    const hasMonthlyCycle = subscription?.Cycle === CYCLE.MONTHLY;
-
     const noUpsell = getDefaultUpsellData({ plansMap, currentPlan, toApp });
 
     // TODO: WalletEA
@@ -259,12 +257,17 @@ const getUpsell = ({
     const getBlackFridayUpsellData = ({
         plan,
         cycle = CYCLE.YEARLY,
-        coupon = COUPON_CODES.BLACK_FRIDAY_2024,
+        coupon: couponProp,
     }: {
         plan: Plan;
         cycle?: CYCLE;
         coupon?: string;
     }) => {
+        const bf25bundlePlans = [PLANS.BUNDLE, PLANS.DUO, PLANS.FAMILY] as (PLANS | ADDON_NAMES)[];
+        const isBundlePlan = bf25bundlePlans.includes(plan.Name);
+
+        const defaultCoupon = isBundlePlan ? COUPON_CODES.BLACK_FRIDAY_2025_BUNDLE : COUPON_CODES.BLACK_FRIDAY_2025;
+
         return {
             ...noUpsell,
             plan,
@@ -273,7 +276,7 @@ const getUpsell = ({
                     [plan.Name]: 1,
                 },
                 cycle,
-                coupon,
+                coupon: couponProp ?? defaultCoupon,
             },
             mode: UpsellTypes.UPSELL,
         };
@@ -300,40 +303,8 @@ const getUpsell = ({
             return getUpsellData(planParameters.plan.Name);
         }
 
-        if (
-            isLifetimePlanSelected(options.planIDs ?? {}) &&
-            !getIsB2BAudienceFromPlan(currentPlan.Name) &&
-            ![PLANS.PASS_FAMILY].includes(currentPlan.Name as PLANS)
-        ) {
-            return getBlackFridayUpsellData({ plan: getSafePlan(plansMap, PLANS.PASS_LIFETIME) });
-        }
-
-        if (getHas2024OfferCoupon(options.coupon)) {
+        if (getHas2025OfferCoupon(options.coupon)) {
             if (getHasPlusPlan(currentPlan.Name)) {
-                if (currentPlan.Name === PLANS.PASS) {
-                    if (
-                        options.cycle === CYCLE.YEARLY &&
-                        hasSelectedPlan(planParameters.plan, [PLANS.PASS_FAMILY, PLANS.BUNDLE, PLANS.DUO, PLANS.FAMILY])
-                    ) {
-                        return getBlackFridayUpsellData({ plan: planParameters.plan });
-                    }
-                    const plan = getSafePlan(plansMap, PLANS.PASS_FAMILY);
-                    return getBlackFridayUpsellData({ plan });
-                }
-
-                if (currentPlan.Name === PLANS.VPN2024 && hasMonthlyCycle) {
-                    if (
-                        (options.cycle === CYCLE.YEARLY || options.cycle === CYCLE.TWO_YEARS) &&
-                        hasSelectedPlan(planParameters.plan, [PLANS.VPN2024])
-                    ) {
-                        return getBlackFridayUpsellData({
-                            plan: planParameters.plan,
-                            cycle: options.cycle,
-                            coupon: options.coupon,
-                        });
-                    }
-                }
-
                 const isValidBundleDuoFamilyFromPlus =
                     options.cycle === CYCLE.YEARLY &&
                     hasSelectedPlan(planParameters.plan, [PLANS.BUNDLE, PLANS.DUO, PLANS.FAMILY]);
@@ -346,29 +317,17 @@ const getUpsell = ({
             }
 
             if (currentPlan.Name === PLANS.BUNDLE) {
-                if (
-                    subscription?.CouponCode === COUPON_CODES.DEGOOGLE &&
-                    hasMonthlyCycle &&
-                    options.cycle === CYCLE.YEARLY &&
-                    hasSelectedPlan(planParameters.plan, [PLANS.BUNDLE])
-                ) {
-                    return getBlackFridayUpsellData({ plan: planParameters.plan });
-                }
                 if (options.cycle === CYCLE.YEARLY && hasSelectedPlan(planParameters.plan, [PLANS.DUO, PLANS.FAMILY])) {
                     return getBlackFridayUpsellData({ plan: planParameters.plan });
                 }
                 return getBlackFridayUpsellData({ plan: getSafePlan(plansMap, PLANS.DUO) });
             }
 
-            if (currentPlan.Name === PLANS.PASS_FAMILY || currentPlan.Name === PLANS.DUO) {
+            if (currentPlan.Name === PLANS.DUO) {
                 if (options.cycle === CYCLE.YEARLY && hasSelectedPlan(planParameters.plan, [PLANS.FAMILY])) {
                     return getBlackFridayUpsellData({ plan: planParameters.plan });
                 }
                 return getBlackFridayUpsellData({ plan: getSafePlan(plansMap, PLANS.FAMILY) });
-            }
-
-            if (getIsProductB2BPlan(currentPlan.Name) && !getIsBundleB2BPlan(planParameters.plan.Name)) {
-                return getUpsellData(PLANS.BUNDLE_PRO_2024);
             }
         } else {
             if (audience === Audience.B2B) {
@@ -537,6 +496,31 @@ export const getUpdatedPlanIDs = ({
     }
 };
 
+const replaceBf2025LumoAddonCoupon = ({
+    user,
+    subscription,
+    planIDs,
+    selectedCoupon,
+}: {
+    user: User | undefined;
+    subscription: Subscription | undefined;
+    planIDs: PlanIDs | undefined;
+    selectedCoupon: string | undefined;
+}) => {
+    const selectedPlan = getPlanNameFromIDs(planIDs ?? {});
+
+    if (
+        user &&
+        getHas2025OfferCoupon(selectedCoupon) &&
+        getHas2025OfferCoupon(subscription?.CouponCode) &&
+        selectedPlan === PLANS.LUMO
+    ) {
+        return COUPON_CODES.BLACK_FRIDAY_2025_LUMOADDON;
+    }
+
+    return selectedCoupon;
+};
+
 export const getUserInfo = async ({
     api,
     audience,
@@ -606,6 +590,13 @@ export const getUserInfo = async ({
         state.subscribed ? getOrganization({ api }) : undefined,
     ]);
 
+    options.coupon = replaceBf2025LumoAddonCoupon({
+        user,
+        subscription,
+        planIDs: options.planIDs,
+        selectedCoupon: options.coupon,
+    });
+
     const currentPlan = (() => {
         const plan = getPlan(subscription);
         if (plan) {
@@ -652,7 +643,7 @@ export const getUserInfo = async ({
         subscription,
         cycle,
         currency: options.currency,
-        coupon: subscription.CouponCode || options.coupon,
+        coupon: options.coupon || subscription.CouponCode || undefined,
     };
 
     if (upsell.plan) {
