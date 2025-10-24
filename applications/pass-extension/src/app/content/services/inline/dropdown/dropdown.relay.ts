@@ -56,7 +56,7 @@ export const createDropdownRelayHandler = (): DropdownHandler => {
                     contentScriptMessage({
                         type: WorkerMessageType.INLINE_DROPDOWN_OPEN,
                         payload: {
-                            type: 'request',
+                            type: 'initial',
                             action: req.action,
                             autofocused: req.autofocused,
                             frameAttributes: getFrameAttributes(),

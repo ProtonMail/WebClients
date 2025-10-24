@@ -29,7 +29,7 @@ export const createPassiveInlineListeners = (channel: FrameMessageBroker) => {
      * Intermediate frames in the frame chain register listeners to intercept auto-closing
      * events that the dropdown frame cannot detect (parent frame scroll/focus changes). */
     const onDropdownOpened: FrameMessageHandler<WorkerMessageType.INLINE_DROPDOWN_OPENED> = ({ payload }) => {
-        if (payload.type === 'result' && payload.passive) {
+        if (payload.type === 'relay' && payload.passive) {
             const { fieldFrameId, fieldId, formId } = payload;
 
             const close = () => {

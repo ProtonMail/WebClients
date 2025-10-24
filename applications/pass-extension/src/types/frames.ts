@@ -44,5 +44,5 @@ export type FrameField = {
 
 /** Relayed messages are most of the time forwarded to the service-worker
  * and re-dispatched to the relevant frameId. This allows having different
- * types if data needs to be transformed before re-dispatching */
-export type FrameRelay<T, Result = {}> = T & ({ type: 'request' } | ({ type: 'result' } & Result));
+ * types if data needs to be transformed before relaying */
+export type FrameRelay<T, Relayed = {}> = T & ({ type: 'initial' } | ({ type: 'relay' } & Relayed));

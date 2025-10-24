@@ -98,7 +98,7 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
                 contentScriptMessage({
                     type: WorkerMessageType.INLINE_DROPDOWN_OPENED,
                     payload: {
-                        type: 'request',
+                        type: 'initial',
                         fieldFrameId,
                         formId,
                         fieldId,
@@ -124,7 +124,7 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
                     contentScriptMessage({
                         type: WorkerMessageType.INLINE_DROPDOWN_CLOSED,
                         payload: {
-                            type: 'request',
+                            type: 'initial',
                             refocus,
                             fieldFrameId,
                             formId,

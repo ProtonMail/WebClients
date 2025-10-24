@@ -35,7 +35,7 @@ export const createIconRegistry = ({ channel, dropdown, tag }: IconRegistryOptio
     /** Handles icon position shift when elements overlay in the parent frame that the sub-frame
      * can't catch (eg: payment fields that need icon repositioning due to overlapping elements) */
     const onIconShift: FrameMessageHandler<WorkerMessageType.INLINE_ICON_SHIFT> = ({ payload }, sendResponse) => {
-        if (payload.type === 'result') {
+        if (payload.type === 'relay') {
             const target = getFrameElement(payload.frameId, payload.frameAttributes);
 
             if (target) {
