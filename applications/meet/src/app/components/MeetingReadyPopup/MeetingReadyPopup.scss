@@ -10,27 +10,19 @@
 }
 
 .meeting-ready-popup {
-	border-radius: 1.5rem;
 	z-index: 1000;
+	padding-block-start: 4rem !important;
 }
 
 .meeting-ready-popup-meeting-link {
-	margin-block: 1rem 2.5rem;
-}
-
-.meeting-ready-popup-meeting-link-text {
-	word-break: break-all;
+	text-decoration: none !important;
 }
 
 .copy-meeting-link-button {
-	background-color: var(--interaction-weak);
+	background-color: var(--interaction-norm-minor-2);
 
 	&:hover,
 	&:focus {
-		background-color: var(--interaction-weak-major-1) !important;
+		background-color: var(--interaction-norm-minor-1) !important;
 	}
-}
-
-.meeting-ready-popup-title {
-	margin-block: 2rem;
 }
