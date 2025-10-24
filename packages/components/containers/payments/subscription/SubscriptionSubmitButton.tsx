@@ -2,8 +2,7 @@ import type { PropsWithChildren } from 'react';
 
 import { c } from 'ttag';
 
-import { Banner } from '@proton/atoms/Banner/Banner';
-import { BannerVariants } from '@proton/atoms/Banner/Banner';
+import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
@@ -16,13 +15,15 @@ import {
     type SubscriptionCheckForbiddenReason,
     type SubscriptionCheckResponse,
     SubscriptionMode,
+    hasMigrationDiscount,
     isTrial,
 } from '@proton/payments';
-import { EditCardModal, PayButton, type TaxCountryHook } from '@proton/payments/ui';
+import { EditCardModal, InclusiveVatText, PayButton, type TaxCountryHook } from '@proton/payments/ui';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { getSubscriptionManagerName } from './InAppPurchaseModal';
 import type { SUBSCRIPTION_STEPS } from './constants';
+import type { CouponConfigRendered } from './coupon-config/useCouponConfig';
 
 type Props = {
     className?: string;
@@ -37,11 +38,12 @@ type Props = {
     hasPaymentMethod: boolean;
     taxCountry: TaxCountryHook;
     paymentFacade: PaymentFacade;
+    couponConfig?: CouponConfigRendered;
 };
 
-const InfoBanner = ({ children }: PropsWithChildren) => {
+const InfoBanner = ({ children, variant }: PropsWithChildren & { variant?: BannerVariants }) => {
     return (
-        <Banner className="mt-2 mb-4" variant={BannerVariants.INFO}>
+        <Banner className="mt-2 mb-4" variant={variant ?? BannerVariants.INFO}>
             {children}
         </Banner>
     );
@@ -59,6 +61,7 @@ const SubscriptionSubmitButton = ({
     subscription,
     taxCountry,
     paymentFacade,
+    couponConfig,
 }: Props) => {
     const [creditCardModalProps, setCreditCardModalOpen, renderCreditCardModal] = useModalState();
     const { APP_NAME } = useConfig();
@@ -155,7 +158,7 @@ const SubscriptionSubmitButton = ({
 
             const price = getSimplePriceString(currency, amountDue);
             return {
-                children: c('Action').t`Pay ${price} now`,
+                children: couponConfig?.renderPayCTA?.() ?? c('Action').t`Pay ${price} now`,
             };
         }
 
@@ -170,18 +173,28 @@ const SubscriptionSubmitButton = ({
         };
     })();
 
+    const discountLossWarning =
+        hasMigrationDiscount(subscription) && couponConfig?.renderShowMigrationDiscountLossWarning?.() ? (
+            <InfoBanner variant={BannerVariants.WARNING}>{c('Payments')
+                .t`Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.`}</InfoBanner>
+        ) : null;
+
     return (
-        <PayButton
-            color="norm"
-            taxCountry={taxCountry}
-            paymentFacade={paymentFacade}
-            className={className}
-            loading={loading}
-            disabled={disabled}
-            type="submit"
-            data-testid="confirm"
-            {...payButtonProps}
-        />
+        <>
+            <PayButton
+                color="norm"
+                taxCountry={taxCountry}
+                paymentFacade={paymentFacade}
+                className={className}
+                loading={loading}
+                disabled={disabled}
+                type="submit"
+                data-testid="confirm"
+                {...payButtonProps}
+            />
+            <InclusiveVatText checkResult={checkResult} className="text-sm color-weak text-center mt-1" />
+            {discountLossWarning}
+        </>
     );
 };
 

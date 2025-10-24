@@ -4,6 +4,7 @@ import { type FreePlanDefault, PLANS, type PlansMap } from '@proton/payments';
 import {
     BRAND_NAME,
     CALENDAR_SHORT_APP_NAME,
+    DARK_WEB_MONITORING_NAME,
     DRIVE_APP_NAME,
     DRIVE_SHORT_APP_NAME,
     DUO_MAX_USERS,
@@ -169,6 +170,14 @@ export const getPassMonitor = (included: boolean = false): PlanCardFeatureDefini
         text: getPassMonitorText(),
         included: included,
         icon: 'shield',
+    };
+};
+
+export const getPassDarkWebMonitoring = (): PlanCardFeatureDefinition => {
+    return {
+        included: true,
+        text: DARK_WEB_MONITORING_NAME,
+        icon: 'lock',
     };
 };
 

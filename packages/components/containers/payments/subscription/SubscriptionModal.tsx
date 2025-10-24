@@ -20,7 +20,7 @@ import {
     fixPlanIDs,
     fixPlanName,
     getAvailableSubscriptionActions,
-    getHas2024OfferCoupon,
+    getHas2025OfferCoupon,
 } from '@proton/payments';
 import { TelemetryMailDrivePostSignupOneDollarEvents } from '@proton/shared/lib/api/telemetry';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
@@ -164,7 +164,7 @@ const SubscriptionModal = forwardRef<SubscriptionModalFowardedRefProps, Props>(
 
         let blurBackdrop = true;
         let rootClassName: string | undefined;
-        if (getHas2024OfferCoupon(rest.coupon)) {
+        if (getHas2025OfferCoupon(rest.coupon)) {
             blurBackdrop = false;
             if (app === APPS.PROTONVPN_SETTINGS) {
                 rootClassName = 'subscription-modal-bf-bg subscription-modal--vpn-bg';

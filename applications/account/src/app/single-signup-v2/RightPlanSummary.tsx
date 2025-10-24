@@ -5,7 +5,14 @@ import { c } from 'ttag';
 import { getDealDurationText } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
-import type { CYCLE, Currency, Cycle, PaymentsCheckout } from '@proton/payments';
+import {
+    type CYCLE,
+    type Currency,
+    type Cycle,
+    type PaymentsCheckout,
+    hasLumoAddonFromPlanIDs,
+} from '@proton/payments';
+import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -41,18 +48,22 @@ const RightPlanSummary = ({
     mode,
     isTrial,
 }: Props) => {
-    const { title, logo, features = [], isLifetime } = summaryPlan ?? {};
+    const { title: planTitle, logo, features = [], isLifetime } = summaryPlan ?? {};
+
+    const hasLumo = hasLumoAddonFromPlanIDs(checkout?.planIDs ?? {});
+
+    const displayTitle = hasLumo ? c('Payments').t`${planTitle} + ${LUMO_SHORT_APP_NAME}` : planTitle;
 
     return (
         <div className={clsx('w-full p-6', className)}>
             <div className="text-rg text-bold mb-4">{c('Info').t`Summary`}</div>
             <div className="flex gap-2 flex-nowrap mb-4 items-center">
-                <div className="border rounded-lg p-2 right-summary-logo" title={title}>
+                <div className="border rounded-lg p-2 right-summary-logo" title={displayTitle}>
                     {logo}
                 </div>
                 <div className="flex-1">
                     <div className="flex gap-2">
-                        <div className="text-rg text-bold flex-1">{title}</div>
+                        <div className="text-rg text-bold flex-1">{displayTitle}</div>
                         {mode !== 'addons' && <div className="text-rg text-bold">{price}</div>}
                     </div>
                     <div className="flex flex-1 items-center gap-1 text-sm">
