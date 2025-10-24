@@ -2,13 +2,14 @@ import { useEffect, useRef, useState } from 'react';
 
 import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
 import { BackgroundBlur, type BackgroundProcessorOptions } from '@livekit/track-processors';
-import type { LocalParticipant } from '@proton-meet/livekit-client';
+import type { LocalParticipant, LocalTrackPublication } from '@proton-meet/livekit-client';
 import { ConnectionState, Track } from '@proton-meet/livekit-client';
 
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import debounce from '@proton/utils/debounce';
 
 import type { SwitchActiveDevice } from '../types';
+import { getPersistedBackgroundBlur, persistBackgroundBlur } from '../utils/backgroundBlurPersistance';
 
 const backgroundProcessorOptions: BackgroundProcessorOptions = {
     assetPaths: {
@@ -52,12 +53,13 @@ export const useVideoToggle = (
     const { isCameraEnabled, localParticipant } = useLocalParticipant();
 
     const [facingMode, setFacingMode] = useState<'environment' | 'user'>('user');
-    const [backgroundBlur, setBackgroundBlur] = useState(false);
+    const [backgroundBlur, setBackgroundBlur] = useState(getPersistedBackgroundBlur());
     const [isBackgroundBlurSupported, setIsBackgroundBlurSupported] = useState(true);
 
     const toggleInProgress = useRef(false);
 
     const prevEnabled = useRef<boolean | null>(null);
+    const preventAutoApplyingBlur = useRef(false);
 
     useEffect(() => {
         const initialize = async () => {
@@ -146,6 +148,16 @@ export const useVideoToggle = (
         }
     };
 
+    const turnOnBackgroundBlur = async () => {
+        if (!isBackgroundBlurSupported || !backgroundBlurProcessorInstance) {
+            return;
+        }
+
+        const currentVideoTrack = getCurrentVideoTrack();
+
+        await currentVideoTrack?.setProcessor(backgroundBlurProcessorInstance);
+    };
+
     const toggleBackgroundBlur = async () => {
         if (!isBackgroundBlurSupported || !backgroundBlurProcessorInstance) {
             return;
@@ -160,10 +172,51 @@ export const useVideoToggle = (
                 await currentVideoTrack?.setProcessor(backgroundBlurProcessorInstance);
             }
             setBackgroundBlur((prevEnableBlur) => !prevEnableBlur);
+            persistBackgroundBlur(!backgroundBlur);
         } catch (error) {
             return;
         }
     };
+
+    useEffect(() => {
+        const preventApplyingBlur = () => {
+            if (!initialCameraState) {
+                preventAutoApplyingBlur.current = true;
+            }
+        };
+
+        room.on(ConnectionState.Connected, preventApplyingBlur);
+        room.on(ConnectionState.Disconnected, () => {
+            preventAutoApplyingBlur.current = false;
+        });
+
+        return () => {
+            room.off(ConnectionState.Connected, preventApplyingBlur);
+            room.off(ConnectionState.Disconnected, () => {
+                preventAutoApplyingBlur.current = false;
+            });
+        };
+    }, [initialCameraState]);
+
+    useEffect(() => {
+        const handleTrackPublished = (publication: LocalTrackPublication) => {
+            if (
+                publication.kind === Track.Kind.Video &&
+                publication.source === Track.Source.Camera &&
+                backgroundBlur &&
+                !preventAutoApplyingBlur.current
+            ) {
+                preventAutoApplyingBlur.current = true;
+                void turnOnBackgroundBlur();
+            }
+        };
+
+        localParticipant.on('localTrackPublished', handleTrackPublished);
+
+        return () => {
+            localParticipant.off('localTrackPublished', handleTrackPublished);
+        };
+    }, [localParticipant, backgroundBlur]);
 
     // Too frequent toggling can freeze the page completely
     const debouncedToggleBackgroundBlur = debounce(toggleBackgroundBlur, 500, { leading: true });
