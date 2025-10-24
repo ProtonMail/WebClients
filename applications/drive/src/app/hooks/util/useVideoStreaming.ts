@@ -2,6 +2,7 @@ import { type SyntheticEvent, useCallback, useEffect, useMemo, useRef, useState 
 
 import { v4 as uuidv4 } from 'uuid';
 
+import metrics from '@proton/metrics/index';
 import { isVideo } from '@proton/shared/lib/helpers/mimetype';
 
 import { initDownloadSW } from '../../store/_downloads/fileSaver/download';
@@ -17,6 +18,8 @@ type UseVideoStreamingProps = {
 };
 const FIRST_BLOCK_TIMEOUT = 30000; // 30 seconds for first block to be downloaded
 const SW_READY_TIMEOUT = 15 * 1000; // 15 seconds for SW to register
+
+class ServiceWorkerTimeoutError extends Error {}
 
 export const useVideoStreaming = ({ mimeType, videoData, downloadSlice }: UseVideoStreamingProps) => {
     const [streamId] = useState<string>(() => uuidv4());
@@ -39,7 +42,12 @@ export const useVideoStreaming = ({ mimeType, videoData, downloadSlice }: UseVid
                 },
             });
         }
-        sendErrorReport(videoError);
+        // The error doesn't have additional context and we want this to be reported to metrics for observability.
+        if (error instanceof ServiceWorkerTimeoutError) {
+            metrics.drive_warnings_total.increment({ warning: 'cannot_init_sw' });
+        } else {
+            sendErrorReport(videoError);
+        }
         if (swTimeoutRef.current) {
             clearTimeout(swTimeoutRef.current);
             swTimeoutRef.current = null;
@@ -70,7 +78,7 @@ export const useVideoStreaming = ({ mimeType, videoData, downloadSlice }: UseVid
         }
 
         swTimeoutRef.current = setTimeout(() => {
-            handleBrokenVideo(new Error('Service Worker timeout: not ready within 15 seconds'));
+            handleBrokenVideo(new ServiceWorkerTimeoutError('Service Worker timeout: not ready within 15 seconds'));
         }, SW_READY_TIMEOUT);
 
         void navigator.serviceWorker.ready
@@ -109,7 +117,7 @@ export const useVideoStreaming = ({ mimeType, videoData, downloadSlice }: UseVid
             }
 
             const port = event.ports[0];
-            const indices = data.indices!;
+            const indices = data.indices || [];
 
             if (!firstBlockRequestedRef.current) {
                 firstBlockRequestedRef.current = true;
