@@ -1,5 +1,6 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
+import metrics from '@proton/metrics';
 import { isVideo } from '@proton/shared/lib/helpers/mimetype';
 
 import { initDownloadSW } from '../../store/_downloads/fileSaver/download';
@@ -17,6 +18,12 @@ const mockedSendErrorReport = jest.mocked(sendErrorReport);
 
 jest.mock('uuid', () => ({
     v4: jest.fn(() => 'test-uuid-123'),
+}));
+
+jest.mock('@proton/metrics', () => ({
+    drive_warnings_total: {
+        increment: jest.fn(),
+    },
 }));
 
 jest.useFakeTimers();
@@ -107,9 +114,8 @@ describe('useVideoStreaming', () => {
             jest.advanceTimersByTime(15000);
         });
 
-        expect(mockedSendErrorReport).toHaveBeenCalledWith(
-            new Error('Service Worker timeout: not ready within 15 seconds')
-        );
+        expect(mockedSendErrorReport).not.toHaveBeenCalled();
+        expect(metrics.drive_warnings_total.increment).toHaveBeenCalledWith({ warning: 'cannot_init_sw' });
         expect(result.current).toBeUndefined();
     });
 

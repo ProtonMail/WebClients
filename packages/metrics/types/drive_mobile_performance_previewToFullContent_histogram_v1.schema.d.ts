@@ -12,7 +12,8 @@ export interface HttpsProtonMeDriveMobilePerformancePreviewToFullContentHistogra
   Labels: {
     pageType: "my_files" | "computers" | "photos" | "shared_by_me" | "shared_with_me" | "trash";
     fileType: "photo" | "video" | "protonDoc" | "protonSheet" | "other";
-    loadType: "first" | "subsequent";
+    appLoadType: "first" | "subsequent";
+    dataSource: "remote" | "local";
   };
   Value: number;
 }

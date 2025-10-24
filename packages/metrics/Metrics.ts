@@ -51,6 +51,7 @@ import type { HttpsProtonMeDriveMobilePerformancePreviewToThumbnailHistogramV1Sc
 import type { HttpsProtonMeDriveMobilePerformanceTabToFirstItemHistogramV1SchemaJson } from './types/drive_mobile_performance_tabToFirstItem_histogram_v1.schema';
 import type { HttpsProtonMeDrivePhotosTransferToPhotoStreamHistogramV1SchemaJson } from './types/drive_photos_transfer_to_photo_stream_histogram_v1.schema';
 import type { HttpsProtonMeDriveSdkApiRetrySucceededTotalV1SchemaJson } from './types/drive_sdk_api_retry_succeeded_total_v1.schema';
+import type { HttpsProtonMeDriveSdkDebounceTotalV1SchemaJson } from './types/drive_sdk_debounce_total_v1.schema';
 import type { HttpsProtonMeDriveSdkDownloadErroringUsersTotalV1SchemaJson } from './types/drive_sdk_download_erroring_users_total_v1.schema';
 import type { HttpsProtonMeDriveSdkDownloadErrorsFileSizeHistogramV1SchemaJson } from './types/drive_sdk_download_errors_file_size_histogram_v1.schema';
 import type { HttpsProtonMeDriveSdkDownloadErrorsTotalV1SchemaJson } from './types/drive_sdk_download_errors_total_v1.schema';
@@ -175,6 +176,7 @@ import type { HttpsProtonMeWebDrivePerformanceDomcontentloadedHistogramV1SchemaJ
 import type { HttpsProtonMeWebDrivePerformanceLoadHistogramV1SchemaJson } from './types/web_drive_performance_load_histogram_v1.schema';
 import type { HttpsProtonMeWebDrivePublicShareLoadErrorTotalV1SchemaJson } from './types/web_drive_public_share_load_error_total_v1.schema';
 import type { HttpsProtonMeWebDrivePublicShareLoadSuccessTotalV1SchemaJson } from './types/web_drive_public_share_load_success_total_v1.schema';
+import type { HttpsProtonMeWebDriveWarningsTotalV1SchemaJson } from './types/web_drive_warnings_total_v1.schema';
 import type { EmailContentRenderTime } from './types/web_mail_performance_email_content_render_time_histogram_v1.schema';
 import type { EmailContentRenderTimeSeconds } from './types/web_mail_performance_email_content_render_time_second_histogram_v1.schema';
 import type { EmailListDisplayTime } from './types/web_mail_performance_email_list_display_time_histogram_v1.schema';
@@ -266,6 +268,8 @@ class Metrics extends MetricsBase {
     public drive_photos_transfer_to_photo_stream_histogram: Histogram<HttpsProtonMeDrivePhotosTransferToPhotoStreamHistogramV1SchemaJson>;
 
     public drive_sdk_api_retry_succeeded_total: Counter<HttpsProtonMeDriveSdkApiRetrySucceededTotalV1SchemaJson>;
+
+    public drive_sdk_debounce_total: Counter<HttpsProtonMeDriveSdkDebounceTotalV1SchemaJson>;
 
     public drive_sdk_download_erroring_users_total: Counter<HttpsProtonMeDriveSdkDownloadErroringUsersTotalV1SchemaJson>;
 
@@ -515,6 +519,8 @@ class Metrics extends MetricsBase {
 
     public drive_public_share_load_success_total: Counter<HttpsProtonMeWebDrivePublicShareLoadSuccessTotalV1SchemaJson>;
 
+    public drive_warnings_total: Counter<HttpsProtonMeWebDriveWarningsTotalV1SchemaJson>;
+
     public mail_performance_email_content_render_time_histogram: Histogram<EmailContentRenderTime>;
 
     public mail_performance_email_content_render_time_second_histogram: Histogram<EmailContentRenderTimeSeconds>;
@@ -756,6 +762,11 @@ class Metrics extends MetricsBase {
 
         this.drive_sdk_api_retry_succeeded_total = new Counter<HttpsProtonMeDriveSdkApiRetrySucceededTotalV1SchemaJson>(
             { name: 'drive_sdk_api_retry_succeeded_total', version: 1 },
+            this.requestService
+        );
+
+        this.drive_sdk_debounce_total = new Counter<HttpsProtonMeDriveSdkDebounceTotalV1SchemaJson>(
+            { name: 'drive_sdk_debounce_total', version: 1 },
             this.requestService
         );
 
@@ -1420,6 +1431,11 @@ class Metrics extends MetricsBase {
                 { name: 'web_drive_public_share_load_success_total', version: 1 },
                 this.requestService
             );
+
+        this.drive_warnings_total = new Counter<HttpsProtonMeWebDriveWarningsTotalV1SchemaJson>(
+            { name: 'web_drive_warnings_total', version: 1 },
+            this.requestService
+        );
 
         this.mail_performance_email_content_render_time_histogram = new Histogram<EmailContentRenderTime>(
             { name: 'web_mail_performance_email_content_render_time_histogram', version: 1 },
