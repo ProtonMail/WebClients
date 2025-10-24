@@ -4,12 +4,12 @@ import { FeatureCode } from '@proton/features';
 import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
 
 import Layout from '../../components/blackFriday/Layout';
-import { getVPNFeatures } from '../../helpers/offerCopies';
+import { getMailPlusInboxFeatures } from '../../helpers/offerCopies';
 import type { OfferConfig } from '../../interface';
 
-export const blackFriday2025VPNPlusYearly2Config: OfferConfig = {
-    ID: 'black-friday-2025-vpn-plus-yearly2',
-    featureCode: FeatureCode.OfferBlackFriday2025VPNPlusYearly2,
+export const blackFriday2025InboxPlusYearlyExperiment2Config: OfferConfig = {
+    ID: 'black-friday-2025-inbox-plus-yearly-experiment2',
+    featureCode: FeatureCode.OfferBlackFriday2025InboxPlusYearlyExperiment2,
     canBeDisabled: true,
     topButton: {
         shape: 'ghost',
@@ -23,17 +23,17 @@ export const blackFriday2025VPNPlusYearly2Config: OfferConfig = {
     hideDealPriceInfos: true,
     deals: [
         {
-            ref: 'proton_bf_25_vpn_12m2_web',
-            dealName: PLAN_NAMES[PLANS.VPN2024],
+            ref: 'proton_bf_25_mail_12m2_web',
+            dealName: PLAN_NAMES[PLANS.MAIL],
             planIDs: {
-                [PLANS.VPN2024]: 1,
+                [PLANS.MAIL]: 1,
             },
             cycle: CYCLE.TWO_YEARS,
             popular: 1,
             buttonSize: 'large',
-            couponCode: COUPON_CODES.BLACK_FRIDAY_2025,
-            features: getVPNFeatures,
-            sentenceSaveType: 'switch-two-year',
+            couponCode: COUPON_CODES.BLACK_FRIDAY_2025_TWOYEAR,
+            features: getMailPlusInboxFeatures,
+            sentenceSaveType: 'limited-time-deal',
         },
     ],
     layout: Layout,

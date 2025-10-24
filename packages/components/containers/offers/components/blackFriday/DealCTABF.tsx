@@ -2,10 +2,11 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 
+import type { OfferProps } from '../../interface';
 import { useDealContext } from '../shared/deal/DealContext';
 
-const DealCTABF = () => {
-    const { deal, onSelectDeal, offer, currency } = useDealContext();
+const DealCTABF = ({ currency, offer }: OfferProps) => {
+    const { deal, onSelectDeal } = useDealContext();
     const { popular, buttonSize } = deal;
 
     return (

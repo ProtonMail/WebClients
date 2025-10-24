@@ -9,6 +9,7 @@ import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 
+import { BF_EXPERIMENT_GROUP_VALUES } from '../../helpers/experimentHelpers';
 import hasEligibileCurrencyForBF from '../../helpers/hasEligibileCurrencyForBF';
 import isSubscriptionCheckAllowed from '../../helpers/isSubscriptionCheckAllowed';
 import OfferSubscription from '../../helpers/offerSubscription';
@@ -21,17 +22,32 @@ interface Props {
     offerConfig: OfferConfig;
     lastSubscriptionEnd?: number;
     preferredCurrency: Currency;
+    userInExperiment?: number;
 }
 
-const isEligible = ({ subscription, protonConfig, user, offerConfig, preferredCurrency }: Props) => {
+const isEligible = ({
+    subscription,
+    protonConfig,
+    user,
+    offerConfig,
+    preferredCurrency,
+    userInExperiment = 0,
+}: Props) => {
     const parentApp = getAppFromPathnameSafe(window.location.pathname);
     const hasValidApp =
-        protonConfig?.APP_NAME === APPS.PROTONDRIVE ||
-        (protonConfig?.APP_NAME === APPS.PROTONACCOUNT && parentApp === APPS.PROTONDRIVE);
+        (protonConfig.APP_NAME === APPS.PROTONACCOUNT && parentApp === APPS.PROTONMAIL) ||
+        (protonConfig.APP_NAME === APPS.PROTONACCOUNT && parentApp === APPS.PROTONCALENDAR) ||
+        protonConfig.APP_NAME === APPS.PROTONCALENDAR ||
+        protonConfig.APP_NAME === APPS.PROTONMAIL;
     const { canPay, isDelinquent, isPaid } = user;
     const isExternal = isManagedExternally(subscription);
 
     const isPreferredCurrencyEligible = hasEligibileCurrencyForBF(preferredCurrency);
+
+    // this offer is only for group A
+    if (userInExperiment !== BF_EXPERIMENT_GROUP_VALUES.GROUP_CONTROL_VALUE) {
+        return false;
+    }
 
     // delinquent, can't pay, has intentional scheduled modification, external subscription
     if (isDelinquent || !canPay || hasIntentionalScheduledModification(subscription) || isExternal) {
@@ -48,12 +64,27 @@ const isEligible = ({ subscription, protonConfig, user, offerConfig, preferredCu
 
         if (isPaid) {
             const canModifySubscription = canModify(subscription);
-            const hasDriveMonthly =
-                (offerSubscription.hasDrive() || offerSubscription.hasDrive1TB()) &&
-                offerSubscription.hasMonthlyCycle();
+            const hasMailYearlyOrFifteen =
+                offerSubscription.hasMail() &&
+                (offerSubscription.hasYearlyCycle() || offerSubscription.hasFifteenMonthsCycle());
+
+            const hasOtherPlanAndNotMail =
+                (offerSubscription.hasDrive() ||
+                    offerSubscription.hasDrive1TB() ||
+                    offerSubscription.hasVPN2024() ||
+                    offerSubscription.hasDeprecatedVPN() ||
+                    offerSubscription.hasVPNPassBundle() ||
+                    offerSubscription.hasPass()) &&
+                (offerSubscription.hasYearlyCycle() || offerSubscription.hasFifteenMonthsCycle()) &&
+                !offerSubscription.hasMail();
 
             // Is on the correct app, has the correct currency, has the correct plan, and can modify the subscription
-            return hasValidApp && isPreferredCurrencyEligible && hasDriveMonthly && canModifySubscription;
+            return (
+                hasValidApp &&
+                isPreferredCurrencyEligible &&
+                (hasMailYearlyOrFifteen || hasOtherPlanAndNotMail) &&
+                canModifySubscription
+            );
         }
     }
 
