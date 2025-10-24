@@ -4,12 +4,12 @@ import { FeatureCode } from '@proton/features';
 import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
 
 import Layout from '../../components/blackFriday/Layout';
-import { getMailPlusInboxFeatures } from '../../helpers/offerCopies';
+import { getUnlimitedInboxFeatures } from '../../helpers/offerCopies';
 import type { OfferConfig } from '../../interface';
 
-export const blackFriday2025InboxPlusMonthly2Config: OfferConfig = {
-    ID: 'black-friday-2025-inbox-plus-monthly2',
-    featureCode: FeatureCode.OfferBlackFriday2025InboxPlusMonthly2,
+export const blackFriday2025VPNPlusYearlyExperimentConfig: OfferConfig = {
+    ID: 'black-friday-2025-vpn-plus-yearly-experiment',
+    featureCode: FeatureCode.OfferBlackFriday2025VPNPlusYearlyExperiment,
     canBeDisabled: true,
     topButton: {
         shape: 'ghost',
@@ -23,16 +23,16 @@ export const blackFriday2025InboxPlusMonthly2Config: OfferConfig = {
     hideDealPriceInfos: true,
     deals: [
         {
-            ref: 'proton_bf_25_mail_1m2_web',
-            dealName: PLAN_NAMES[PLANS.MAIL],
+            ref: 'proton_bf_25_vpn_12m_web',
+            dealName: PLAN_NAMES[PLANS.BUNDLE],
             planIDs: {
-                [PLANS.MAIL]: 1,
+                [PLANS.BUNDLE]: 1,
             },
             cycle: CYCLE.YEARLY,
             popular: 1,
             buttonSize: 'large',
-            couponCode: COUPON_CODES.BLACK_FRIDAY_2025,
-            features: getMailPlusInboxFeatures,
+            couponCode: COUPON_CODES.BLACK_FRIDAY_2025_BUNDLE,
+            features: getUnlimitedInboxFeatures,
         },
     ],
     layout: Layout,

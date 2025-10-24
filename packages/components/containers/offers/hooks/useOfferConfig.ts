@@ -19,8 +19,6 @@ import { blackFriday2025DriveFreeMonthlyConfig } from '../operations/blackFriday
 import { useBlackFriday2025DriveFreeMonthly } from '../operations/blackFriday2025DriveFreeMonthly/useOffer';
 import { blackFriday2025DriveFreeYearlyConfig } from '../operations/blackFriday2025DriveFreeYearly/configuration';
 import { useBlackFriday2025DriveFreeYearly } from '../operations/blackFriday2025DriveFreeYearly/useOffer';
-import { blackFriday2025DrivePlusMonthly2Config } from '../operations/blackFriday2025DrivePlusMonthly2/configuration';
-import { useBlackFriday2025DrivePlusMonthly2 } from '../operations/blackFriday2025DrivePlusMonthly2/useOffer';
 import { blackFriday2025DrivePlusMonthlyConfig } from '../operations/blackFriday2025DrivePlusMonthly/configuration';
 import { useBlackFriday2025DrivePlusMonthly } from '../operations/blackFriday2025DrivePlusMonthly/useOffer';
 import { blackFriday2025DrivePlusYearlyConfig } from '../operations/blackFriday2025DrivePlusYearly/configuration';
@@ -33,14 +31,14 @@ import { blackFriday2025InboxFreeMonthlyConfig } from '../operations/blackFriday
 import { useBlackFriday2025InboxFreeMonthly } from '../operations/blackFriday2025InboxFreeMonthly/useOffer';
 import { blackFriday2025InboxFreeYearlyConfig } from '../operations/blackFriday2025InboxFreeYearly/configuration';
 import { useBlackFriday2025InboxFreeYearly } from '../operations/blackFriday2025InboxFreeYearly/useOffer';
-import { blackFriday2025InboxPlusMonthly2Config } from '../operations/blackFriday2025InboxPlusMonthly2/configuration';
-import { useBlackFriday2025InboxPlusMonthly2 } from '../operations/blackFriday2025InboxPlusMonthly2/useOffer';
 import { blackFriday2025InboxPlusMonthlyConfig } from '../operations/blackFriday2025InboxPlusMonthly/configuration';
 import { useBlackFriday2025InboxPlusMonthly } from '../operations/blackFriday2025InboxPlusMonthly/useOffer';
-import { blackFriday2025InboxPlusYearly2Config } from '../operations/blackFriday2025InboxPlusYearly2/configuration';
-import { useBlackFriday2025InboxPlusYearly2 } from '../operations/blackFriday2025InboxPlusYearly2/useOffer';
 import { blackFriday2025InboxPlusYearlyConfig } from '../operations/blackFriday2025InboxPlusYearly/configuration';
 import { useBlackFriday2025InboxPlusYearly } from '../operations/blackFriday2025InboxPlusYearly/useOffer';
+import { blackFriday2025InboxPlusYearlyExperiment2Config } from '../operations/blackFriday2025InboxPlusYearlyExperiment2/configuration';
+import { useBlackFriday2025InboxPlusYearlyExperiment2 } from '../operations/blackFriday2025InboxPlusYearlyExperiment2/useOffer';
+import { blackFriday2025InboxPlusYearlyExperimentConfig } from '../operations/blackFriday2025InboxPlusYearlyExperiment/configuration';
+import { useBlackFriday2025InboxPlusYearlyExperiment } from '../operations/blackFriday2025InboxPlusYearlyExperiment/useOffer';
 import { blackFriday2025LumoFreeYearlyConfig } from '../operations/blackFriday2025LumoFreeYearly/configuration';
 import { useBlackFriday2025LumoFreeYearly } from '../operations/blackFriday2025LumoFreeYearly/useOffer';
 import { blackFriday2025LumoPlusMonthlyConfig } from '../operations/blackFriday2025LumoPlusMonthly/configuration';
@@ -67,10 +65,12 @@ import { blackFriday2025VPNPlusMonthlyConfig } from '../operations/blackFriday20
 import { useBlackFriday2025VPNPlusMonthly } from '../operations/blackFriday2025VPNPlusMonthly/useOffer';
 import { blackFriday2025VPNPlusTwoYearConfig } from '../operations/blackFriday2025VPNPlusTwoYear/configuration';
 import { useBlackFriday2025VPNPlusTwoYear } from '../operations/blackFriday2025VPNPlusTwoYear/useOffer';
-import { blackFriday2025VPNPlusYearly2Config } from '../operations/blackFriday2025VPNPlusYearly2/configuration';
-import { useBlackFriday2025VPNPlusYearly2 } from '../operations/blackFriday2025VPNPlusYearly2/useOffer';
 import { blackFriday2025VPNPlusYearlyConfig } from '../operations/blackFriday2025VPNPlusYearly/configuration';
 import { useBlackFriday2025VPNPlusYearly } from '../operations/blackFriday2025VPNPlusYearly/useOffer';
+import { blackFriday2025VPNPlusYearlyExperiment2Config } from '../operations/blackFriday2025VPNPlusYearlyExperiment2/configuration';
+import { useBlackFriday2025VPNPlusYearlyExperiment2 } from '../operations/blackFriday2025VPNPlusYearlyExperiment2/useOffer';
+import { blackFriday2025VPNPlusYearlyExperimentConfig } from '../operations/blackFriday2025VPNPlusYearlyExperiment/configuration';
+import { useBlackFriday2025VPNPlusYearlyExperiment } from '../operations/blackFriday2025VPNPlusYearlyExperiment/useOffer';
 import { goUnlimited2022Config } from '../operations/goUnlimited2022/configuration';
 import { useGoUnlimited2022 } from '../operations/goUnlimited2022/useOffer';
 import { mailTrial2023Config } from '../operations/mailTrial2023/configuration';
@@ -82,9 +82,9 @@ const configs: Record<OfferId, OfferConfig> = {
     'black-friday-2025-inbox-free-yearly': blackFriday2025InboxFreeYearlyConfig,
     'black-friday-2025-inbox-free-monthly': blackFriday2025InboxFreeMonthlyConfig,
     'black-friday-2025-inbox-plus-monthly': blackFriday2025InboxPlusMonthlyConfig,
-    'black-friday-2025-inbox-plus-monthly2': blackFriday2025InboxPlusMonthly2Config,
     'black-friday-2025-inbox-plus-yearly': blackFriday2025InboxPlusYearlyConfig,
-    'black-friday-2025-inbox-plus-yearly2': blackFriday2025InboxPlusYearly2Config,
+    'black-friday-2025-inbox-plus-yearly-experiment': blackFriday2025InboxPlusYearlyExperimentConfig,
+    'black-friday-2025-inbox-plus-yearly-experiment2': blackFriday2025InboxPlusYearlyExperiment2Config,
     'black-friday-2025-unlimited': blackFriday2025UnlimitedConfig,
     'black-friday-2025-duo': blackFriday2025DuoConfig,
     'black-friday-2025-family-monthly': blackFriday2025FamilyMonthlyConfig,
@@ -93,12 +93,12 @@ const configs: Record<OfferId, OfferConfig> = {
     'black-friday-2025-vpn-plus-monthly': blackFriday2025VPNPlusMonthlyConfig,
     'black-friday-2025-vpn-plus-monthly2': blackFriday2025VPNPlusMonthly2Config,
     'black-friday-2025-vpn-plus-yearly': blackFriday2025VPNPlusYearlyConfig,
-    'black-friday-2025-vpn-plus-yearly2': blackFriday2025VPNPlusYearly2Config,
+    'black-friday-2025-vpn-plus-yearly-experiment': blackFriday2025VPNPlusYearlyExperimentConfig,
+    'black-friday-2025-vpn-plus-yearly-experiment2': blackFriday2025VPNPlusYearlyExperiment2Config,
     'black-friday-2025-vpn-plus-two-year': blackFriday2025VPNPlusTwoYearConfig,
     'black-friday-2025-drive-free-yearly': blackFriday2025DriveFreeYearlyConfig,
     'black-friday-2025-drive-free-monthly': blackFriday2025DriveFreeMonthlyConfig,
     'black-friday-2025-drive-plus-monthly': blackFriday2025DrivePlusMonthlyConfig,
-    'black-friday-2025-drive-plus-monthly2': blackFriday2025DrivePlusMonthly2Config,
     'black-friday-2025-drive-plus-yearly': blackFriday2025DrivePlusYearlyConfig,
     'black-friday-2025-pass-free-yearly': blackFriday2025PassFreeYearlyConfig,
     'black-friday-2025-pass-free-monthly': blackFriday2025PassFreeMonthlyConfig,
@@ -128,9 +128,9 @@ const useOfferConfig = (): [OfferConfig | undefined, boolean] => {
     const blackFriday2025InboxFreeYearly = useBlackFriday2025InboxFreeYearly();
     const blackFriday2025InboxFreeMonthly = useBlackFriday2025InboxFreeMonthly();
     const blackFriday2025InboxPlusMonthly = useBlackFriday2025InboxPlusMonthly();
-    const blackFriday2025InboxPlusMonthly2 = useBlackFriday2025InboxPlusMonthly2();
     const blackFriday2025InboxPlusYearly = useBlackFriday2025InboxPlusYearly();
-    const blackFriday2025InboxPlusYearly2 = useBlackFriday2025InboxPlusYearly2();
+    const blackFriday2025InboxPlusYearlyExperiment = useBlackFriday2025InboxPlusYearlyExperiment();
+    const blackFriday2025InboxPlusYearlyExperiment2 = useBlackFriday2025InboxPlusYearlyExperiment2();
     const blackFriday2025Unlimited = useBlackFriday2025Unlimited();
     const blackFriday2025Duo = useBlackFriday2025Duo();
     const blackFriday2025FamilyMonthly = useBlackFriday2025FamilyMonthly();
@@ -140,13 +140,13 @@ const useOfferConfig = (): [OfferConfig | undefined, boolean] => {
     const blackFriday2025VPNPlusMonthly = useBlackFriday2025VPNPlusMonthly();
     const blackFriday2025VPNPlusMonthly2 = useBlackFriday2025VPNPlusMonthly2();
     const blackFriday2025VPNPlusYearly = useBlackFriday2025VPNPlusYearly();
-    const blackFriday2025VPNPlusYearly2 = useBlackFriday2025VPNPlusYearly2();
+    const blackFriday2025VPNPlusYearlyExperiment = useBlackFriday2025VPNPlusYearlyExperiment();
+    const blackFriday2025VPNPlusYearlyExperiment2 = useBlackFriday2025VPNPlusYearlyExperiment2();
     const blackFriday2025VPNPlusTwoYear = useBlackFriday2025VPNPlusTwoYear();
 
     const blackFriday2025DriveFreeYearly = useBlackFriday2025DriveFreeYearly();
     const blackFriday2025DriveFreeMonthly = useBlackFriday2025DriveFreeMonthly();
     const blackFriday2025DrivePlusMonthly = useBlackFriday2025DrivePlusMonthly();
-    const blackFriday2025DrivePlusMonthly2 = useBlackFriday2025DrivePlusMonthly2();
     const blackFriday2025DrivePlusYearly = useBlackFriday2025DrivePlusYearly();
 
     const blackFriday2025PassFreeYearly = useBlackFriday2025PassFreeYearly();
@@ -174,28 +174,32 @@ const useOfferConfig = (): [OfferConfig | undefined, boolean] => {
 
     // Offer order matters
     const allOffers: Operation[] = [
-        blackFriday2025InboxFreeYearly,
-        blackFriday2025InboxFreeMonthly,
-        blackFriday2025InboxPlusMonthly,
-        blackFriday2025InboxPlusMonthly2,
-        blackFriday2025InboxPlusYearly,
-        blackFriday2025InboxPlusYearly2,
+        // Main offers
         blackFriday2025Unlimited,
         blackFriday2025Duo,
         blackFriday2025FamilyMonthly,
+
+        // Experiments will take priority on others
+        blackFriday2025InboxPlusYearlyExperiment,
+        blackFriday2025InboxPlusYearlyExperiment2,
+        blackFriday2025VPNPlusYearlyExperiment,
+        blackFriday2025VPNPlusYearlyExperiment2,
+
+        blackFriday2025InboxFreeYearly,
+        blackFriday2025InboxFreeMonthly,
+        blackFriday2025InboxPlusMonthly,
+        blackFriday2025InboxPlusYearly,
 
         blackFriday2025VPNFreeYearly,
         blackFriday2025VPNFreeMonthly,
         blackFriday2025VPNPlusMonthly,
         blackFriday2025VPNPlusMonthly2,
         blackFriday2025VPNPlusYearly,
-        blackFriday2025VPNPlusYearly2,
         blackFriday2025VPNPlusTwoYear,
 
         blackFriday2025DriveFreeYearly,
         blackFriday2025DriveFreeMonthly,
         blackFriday2025DrivePlusMonthly,
-        blackFriday2025DrivePlusMonthly2,
         blackFriday2025DrivePlusYearly,
 
         blackFriday2025PassFreeYearly,

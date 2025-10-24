@@ -15,6 +15,7 @@ import {
     hasPass,
     hasPassFamily,
     hasVPN2024,
+    hasVPNPassBundle,
     isManagedExternally,
 } from '@proton/payments';
 
@@ -106,6 +107,14 @@ class OfferSubscription {
         }
 
         return hasPassFamily(this.subscription);
+    }
+
+    hasVPNPassBundle() {
+        if (this.upcomingSubscription) {
+            return hasVPNPassBundle(this.upcomingSubscription);
+        }
+
+        return hasVPNPassBundle(this.subscription);
     }
 
     hasMail() {
