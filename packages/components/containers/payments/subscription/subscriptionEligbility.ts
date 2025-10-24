@@ -6,7 +6,7 @@ import {
     type Plan,
     type PlansMap,
     type Subscription,
-    getHas2024OfferCoupon,
+    getHas2025OfferCoupon,
     getIsB2BAudienceFromSubscription,
     getPlan,
     isForbiddenModification,
@@ -56,11 +56,11 @@ const getSafePlan = (plansMap: PlansMap, planName: PLANS | ADDON_NAMES) => {
 const getUpsellOffer = ({
     plan: planName,
     plansMap,
-    discount = 50,
+    discount,
 }: {
     plan: PLANS;
     plansMap: PlansMap;
-    discount?: number;
+    discount: number;
 }): Eligibility => {
     const plan = getSafePlan(plansMap, planName);
     return {
@@ -69,7 +69,7 @@ const getUpsellOffer = ({
         planCombination: {
             plan,
             cycle: CYCLE.YEARLY,
-            coupon: COUPON_CODES.BLACK_FRIDAY_2024,
+            coupon: COUPON_CODES.BLACK_FRIDAY_2025_BUNDLE,
         },
     };
 };
@@ -112,7 +112,7 @@ export const getEligibility = ({
 
     const okResult = (): Eligibility => ({ type: 'pass-through' });
 
-    if (getHas2024OfferCoupon(offer.coupon)) {
+    if (getHas2025OfferCoupon(offer.coupon)) {
         if (
             eligibleBlackFridayConfigs.some((config) => {
                 return config.deals.some((deal) => {
@@ -151,7 +151,7 @@ export const getEligibility = ({
             // Plus plan or free -> bundle, duo, family OK
             {
                 latest: {
-                    plan: [PLANS.FREE, PLANS.VPN, PLANS.VPN2024, PLANS.MAIL, PLANS.PASS, PLANS.DRIVE],
+                    plan: [PLANS.FREE, PLANS.VPN, PLANS.VPN2024, PLANS.MAIL, PLANS.PASS, PLANS.DRIVE, PLANS.LUMO],
                     cycles: [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
                 },
                 target: {
@@ -191,25 +191,16 @@ export const getEligibility = ({
                     cycles: [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
                 },
                 target: true,
-                result: () => getUpsellOffer({ plan: PLANS.DUO, plansMap, discount: 40 }),
+                result: () => getUpsellOffer({ plan: PLANS.DUO, plansMap, discount: 50 }),
             },
             // Plus plan -> anything else upsell to bundle
             {
                 latest: {
-                    plan: [PLANS.VPN, PLANS.VPN2024, PLANS.MAIL, PLANS.PASS, PLANS.DRIVE],
+                    plan: [PLANS.VPN, PLANS.VPN2024, PLANS.MAIL, PLANS.PASS, PLANS.DRIVE, PLANS.LUMO],
                     cycles: [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
                 },
                 target: true,
                 result: () => getUpsellOffer({ plan: PLANS.BUNDLE, plansMap, discount: 50 }),
-            },
-            // Pass -> anything else upsell to Pass family
-            {
-                latest: {
-                    plan: [PLANS.PASS],
-                    cycles: [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
-                },
-                target: true,
-                result: () => getUpsellOffer({ plan: PLANS.PASS_FAMILY, plansMap, discount: 50 }),
             },
             // Pass family & duo -> anything else upsell to family
             {
@@ -218,7 +209,7 @@ export const getEligibility = ({
                     cycles: [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
                 },
                 target: true,
-                result: () => getUpsellOffer({ plan: PLANS.FAMILY, plansMap, discount: 40 }),
+                result: () => getUpsellOffer({ plan: PLANS.FAMILY, plansMap, discount: 50 }),
             },
         ];
 

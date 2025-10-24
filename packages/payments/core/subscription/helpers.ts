@@ -97,21 +97,6 @@ export function getSubscriptionPlanTitles(
     ];
 }
 
-const blackFriday2024Discounts: Set<string> = new Set([
-    COUPON_CODES.BLACK_FRIDAY_2024,
-    COUPON_CODES.BLACK_FRIDAY_2024_MONTH,
-    COUPON_CODES.BLACK_FRIDAY_2024_PCMAG,
-    COUPON_CODES.BLACK_FRIDAY_2024_HB,
-    COUPON_CODES.BLACK_FRIDAY_2024_VPNLIGHTNING,
-    COUPON_CODES.BLACK_FRIDAY_2024_PASS_LIFE,
-]);
-export const getHas2024OfferCoupon = (coupon: string | undefined | null): boolean => {
-    if (!coupon) {
-        return false;
-    }
-    return blackFriday2024Discounts.has(coupon?.toUpperCase());
-};
-
 const blackFriday2025Discounts: Set<string> = new Set([
     COUPON_CODES.BLACK_FRIDAY_2025,
     COUPON_CODES.BLACK_FRIDAY_2025_MONTH,

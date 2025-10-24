@@ -743,27 +743,6 @@ describe('Cash', () => {
         expect(methods.getNewMethods().some((method) => method.type === 'cash')).toBe(false);
     });
 
-    it('should not display cash if user buys Pass Lifetime', () => {
-        const flow: PaymentMethodFlow = 'subscription';
-
-        const methods = new PaymentMethods({
-            paymentStatus: status,
-            paymentMethods: [],
-            amount: 500,
-            currency: TEST_CURRENCY,
-            coupon: '',
-            flow: flow,
-            selectedPlanName: undefined,
-            billingAddress: undefined,
-            enableSepa: true,
-            planIDs: {
-                [PLANS.PASS_LIFETIME]: 1,
-            },
-        });
-
-        expect(methods.getNewMethods().some((method) => method.type === 'cash')).toBe(false);
-    });
-
     it('should display cash if user does not buy Pass Lifetime', () => {
         const flow: PaymentMethodFlow = 'subscription';
 

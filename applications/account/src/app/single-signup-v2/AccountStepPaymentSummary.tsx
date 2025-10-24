@@ -15,7 +15,7 @@ import {
     TaxInclusive,
     formatTax,
     getCheckout,
-    getHas2024OfferCoupon,
+    getHas2025OfferCoupon,
     getIsB2BAudienceFromPlan,
     getOptimisticCheckout,
 } from '@proton/payments';
@@ -56,7 +56,7 @@ const TrialSummary = ({
     });
 
     const trialEndDate = addDays(new Date(), TRIAL_DURATION_DAYS);
-    const formattedDate = <Time key="eslint-autofix-D89FEF">{getUnixTime(trialEndDate)}</Time>;
+    const formattedDate = <Time key="trial-end-date">{getUnixTime(trialEndDate)}</Time>;
 
     return (
         <>
@@ -125,7 +125,7 @@ const AccountStepPaymentSummary = ({
 
     const proration = subscriptionData.checkResult?.Proration ?? 0;
     const credits = subscriptionData.checkResult?.Credit ?? 0;
-    const isBFOffer = getHas2024OfferCoupon(subscriptionData.checkResult?.Coupon?.Code);
+    const isBFOffer = getHas2025OfferCoupon(subscriptionData.checkResult?.Coupon?.Code);
     const couponDiscount = isBFOffer || couponConfig?.hidden ? 0 : currentCheckout.couponDiscount || 0;
 
     const isPorkbun = subscriptionData.checkResult.Coupon?.Code === COUPON_CODES.PORKBUN;

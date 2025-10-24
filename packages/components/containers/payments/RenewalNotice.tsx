@@ -177,6 +177,8 @@ const getRenewNoticeTextForLimitedCoupons = ({
 
     const renewPriceStr = getSimplePriceString(currency, renewPrice);
 
+    const isCustomBilling = checkout.checkResult.SubscriptionMode === SubscriptionMode.CustomBillings;
+
     if (couponRedemptions === 1) {
         if (short) {
             return appendTermsAndConditionsLink(c('Payments').jt`Renews at ${renewPriceStr}, cancel anytime.`, app, {
@@ -185,6 +187,14 @@ const getRenewNoticeTextForLimitedCoupons = ({
         }
 
         if (subscriptionLength === CYCLE.MONTHLY) {
+            if (isCustomBilling) {
+                return appendTermsAndConditionsLink(
+                    c('Payments')
+                        .t`The specially discounted price is valid for the first month. Then it will automatically be renewed at ${renewPriceStr} every month. You can cancel at any time.`,
+                    app
+                );
+            }
+
             return appendTermsAndConditionsLink(
                 c('Payments')
                     .t`The specially discounted price of ${priceWithDiscount} is valid for the first month. Then it will automatically be renewed at ${renewPriceStr} every month. You can cancel at any time.`,
@@ -192,11 +202,23 @@ const getRenewNoticeTextForLimitedCoupons = ({
             );
         }
 
-        const one = c('Payments').ngettext(
-            msgid`The specially discounted price of ${priceWithDiscount} is valid for the first ${subscriptionLength} month.`,
-            `The specially discounted price of ${priceWithDiscount} is valid for the first ${subscriptionLength} months.`,
-            subscriptionLength
-        );
+        // Todo: do not display the first price when there is a coupon (1 or many redemptions) and subscription mode is custom billing
+
+        const one = (() => {
+            if (isCustomBilling) {
+                return c('Payments').ngettext(
+                    msgid`The specially discounted price is valid for the first ${subscriptionLength} month.`,
+                    `The specially discounted price is valid for the first ${subscriptionLength} months.`,
+                    subscriptionLength
+                );
+            }
+
+            return c('Payments').ngettext(
+                msgid`The specially discounted price of ${priceWithDiscount} is valid for the first ${subscriptionLength} month.`,
+                `The specially discounted price of ${priceWithDiscount} is valid for the first ${subscriptionLength} months.`,
+                subscriptionLength
+            );
+        })();
 
         const two = c('Payments').ngettext(
             msgid`Then it will automatically be renewed at ${renewPriceStr} for ${renewalLength} month. You can cancel at any time.`,
@@ -208,6 +230,17 @@ const getRenewNoticeTextForLimitedCoupons = ({
     }
 
     if (subscriptionLength === CYCLE.MONTHLY) {
+        if (isCustomBilling) {
+            return appendTermsAndConditionsLink(
+                c('Payments').ngettext(
+                    msgid`The specially discounted price is valid for the first month. The coupon is valid for ${couponRedemptions} renewal. Then it will automatically be renewed at ${renewPriceStr} for 1 month. You can cancel at any time.`,
+                    `The specially discounted price is valid for the first month. The coupon is valid for ${couponRedemptions} renewals. Then it will automatically be renewed at ${renewPriceStr} for 1 month. You can cancel at any time.`,
+                    couponRedemptions
+                ),
+                app
+            );
+        }
+
         return appendTermsAndConditionsLink(
             c('Payments').ngettext(
                 msgid`The specially discounted price of ${priceWithDiscount} is valid for the first month. The coupon is valid for ${couponRedemptions} renewal. Then it will automatically be renewed at ${renewPriceStr} for 1 month. You can cancel at any time.`,
@@ -218,11 +251,21 @@ const getRenewNoticeTextForLimitedCoupons = ({
         );
     }
 
-    const one = c('Payments').ngettext(
-        msgid`The specially discounted price of ${priceWithDiscount} is valid for the first ${subscriptionLength} month.`,
-        `The specially discounted price of ${priceWithDiscount} is valid for the first ${subscriptionLength} months.`,
-        subscriptionLength
-    );
+    const one = (() => {
+        if (isCustomBilling) {
+            return c('Payments').ngettext(
+                msgid`The specially discounted price is valid for the first ${subscriptionLength} month.`,
+                `The specially discounted price is valid for the first ${subscriptionLength} months.`,
+                subscriptionLength
+            );
+        }
+
+        return c('Payments').ngettext(
+            msgid`The specially discounted price of ${priceWithDiscount} is valid for the first ${subscriptionLength} month.`,
+            `The specially discounted price of ${priceWithDiscount} is valid for the first ${subscriptionLength} months.`,
+            subscriptionLength
+        );
+    })();
 
     const two = c('Payments').ngettext(
         msgid`The coupon is valid for ${couponRedemptions} renewal.`,

@@ -15,7 +15,6 @@ import type { MetaTags } from '../useMetaTags';
 import type { Paths } from './helper';
 
 interface Props {
-    hasBFCoupon: boolean;
     maybePreAppIntent: APP_NAMES | undefined;
     searchParams: URLSearchParams;
     initialSearchParams?: URLSearchParams;

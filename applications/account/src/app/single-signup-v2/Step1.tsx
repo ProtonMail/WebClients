@@ -41,7 +41,7 @@ import {
     type SubscriptionPlan,
     getCheckout,
     getFallbackCurrency,
-    getHas2024OfferCoupon,
+    getHas2025OfferCoupon,
     getOptimisticCheckResult,
     getOptimisticCheckout,
     getPlanFromPlanIDs,
@@ -809,10 +809,10 @@ const Step1 = ({
             return wrap('hourglass', textLaunchOffer);
         }
 
-        const has2024OfferCoupon = getHas2024OfferCoupon(options.checkResult.Coupon?.Code);
+        const hasBFCoupon = getHas2025OfferCoupon(options.checkResult.Coupon?.Code);
 
         // Using real coupon to show the correct discount percentage
-        if (has2024OfferCoupon) {
+        if (hasBFCoupon) {
             const discount = checkout.discountPercent;
             return wrap(
                 'bag-percent',

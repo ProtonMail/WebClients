@@ -45,7 +45,7 @@ const Layout = ({
         <div
             className={clsx(
                 'flex *:min-size-auto flex-nowrap flex-column h-full overflow-auto relative signup-v2-wrapper',
-                theme.background === 'bf' && 'signup-v2-bg--bf2023',
+                theme.background === 'bf' && 'signup-v2-bg--bf2025',
                 theme.background === 'b2b' && 'signup-v2-bg--b2b',
                 theme.layout.className,
                 !theme.background && 'signup-v2-bg',
