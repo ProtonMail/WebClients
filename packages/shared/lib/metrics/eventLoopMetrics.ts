@@ -48,6 +48,8 @@ const getApiFailuresBucket = (count: number): '0' | '1' | '2' | '3' | '4' | '5+'
     return String(count) as '0' | '1' | '2' | '3' | '4';
 };
 
+const SAMPLING_PERCENT = 5;
+
 /**
  * Utility class to track event loop processing timing
  */
@@ -56,13 +58,22 @@ class EventLoopTimingTracker {
     private v6ProcessingTime?: number;
     private v5LastRequestTime?: number;
     private v6LastRequestTime?: { [loopType: string]: number };
+    private samplingPercent: number;
 
     // For testing: allow injecting a time function
     // Using Date.now() instead of performance.now() for cross-environment compatibility and testability
     private timeProvider: () => number = () => Date.now();
 
+    constructor(samplingPercent: number = SAMPLING_PERCENT) {
+        this.samplingPercent = samplingPercent;
+    }
+
     private getNow(): number {
         return this.timeProvider();
+    }
+
+    private shouldSample(): boolean {
+        return Math.random() * 100 <= Math.min(this.samplingPercent, 100);
     }
 
     /**
@@ -71,6 +82,13 @@ class EventLoopTimingTracker {
      */
     setTimeProvider(provider: () => number): void {
         this.timeProvider = provider;
+    }
+
+    /**
+     * Set sampling percent for testing
+     */
+    setSamplingPercent(percent: number): void {
+        this.samplingPercent = percent;
     }
 
     startV5Processing(): void {
@@ -150,6 +168,10 @@ class EventLoopTimingTracker {
     }
 
     private sendEventLoopV6Metrics(data: EventLoopV6TimingData): void {
+        if (!this.shouldSample()) {
+            return;
+        }
+
         const processingTimeSeconds = data.processingTimeMs / 1000;
 
         const labels = {
@@ -167,6 +189,10 @@ class EventLoopTimingTracker {
     }
 
     private sendEventLoopV5Metrics(data: EventLoopV5TimingData): void {
+        if (!this.shouldSample()) {
+            return;
+        }
+
         const processingTimeSeconds = data.processingTimeMs / 1000;
 
         const labels = {
