@@ -61,6 +61,8 @@ export class MetricHandler {
     onEvent(metric: MetricRecord<MetricEvent>): void {
         if (metric.event.eventName === 'apiRetrySucceeded') {
             this.onApiRetrySucceeded(metric.event);
+        } else if (metric.event.eventName === 'debounceLongWait') {
+            this.onDebounceLongWait();
         } else if (metric.event.eventName === 'upload') {
             this.onUpload(metric.event);
         } else if (metric.event.eventName === 'download') {
@@ -101,6 +103,10 @@ export class MetricHandler {
                 failedAttempts: metric.failedAttempts,
             },
         });
+    }
+
+    private onDebounceLongWait() {
+        metrics.drive_sdk_debounce_total.increment({});
     }
 
     private onUpload(metric: MetricUploadEvent) {
