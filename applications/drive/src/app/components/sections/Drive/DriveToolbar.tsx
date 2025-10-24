@@ -6,7 +6,6 @@ import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissi
 import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { getDevice } from '@proton/shared/lib/helpers/browser';
 
-import { useDebug } from '../../../hooks/drive/useDebug';
 import { type DecryptedLink, useActions, useDocumentActions } from '../../../store';
 import { useDriveDocsFeatureFlag, useIsSheetsEnabled } from '../../../store/_documents';
 import { useSelection } from '../../FileBrowser';
@@ -33,7 +32,6 @@ import {
 } from './ToolbarButtons';
 import { CreateNewDocumentButton } from './ToolbarButtons/CreateNewDocumentButton';
 import { CreateNewSheetButton } from './ToolbarButtons/CreateNewSheetButton';
-import UploadSdkFileButton from './ToolbarButtons/UploadSdkFileButton';
 
 interface Props {
     volumeId: string;
@@ -60,20 +58,19 @@ const DriveToolbar = ({
 }: Props) => {
     const isDesktop = !getDevice()?.type;
     const { viewportWidth } = useActiveBreakpoint();
-    const selectionControls = useSelection()!;
+    const selectionControls = useSelection();
     const isEditEnabled = useIsEditEnabled();
     const { createFolder, trashLinks, renameLink } = useActions();
     const { createDocument } = useDocumentActions();
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
     const isSheetsEnabled = useIsSheetsEnabled();
-    const debug = useDebug();
 
     const isEditor = useMemo(() => getCanWrite(permissions), [permissions]);
     const isAdmin = useMemo(() => getCanAdmin(permissions), [permissions]);
 
     const selectedItems = useMemo(
-        () => getSelectedItems(items, selectionControls!.selectedItemIds),
-        [items, selectionControls!.selectedItemIds]
+        () => getSelectedItems(items, selectionControls?.selectedItemIds || []),
+        [items, selectionControls?.selectedItemIds]
     );
 
     const shouldShowShareButton =
@@ -109,7 +106,6 @@ const DriveToolbar = ({
                             <Vr />
                             {isDesktop && <UploadFolderButton />}
                             <UploadFileButton />
-                            {debug && <UploadSdkFileButton />}
                             <Vr />
                         </>
                     ) : null}

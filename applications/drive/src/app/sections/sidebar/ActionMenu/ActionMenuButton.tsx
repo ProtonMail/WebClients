@@ -38,12 +38,12 @@ export const ActionMenuButton = ({ disabled, className, collapsed }: PropsWithCh
         inputRef: fileInput,
         handleClick: fileClick,
         handleChange: fileChange,
-    } = useFileUploadInput(activeFolder.shareId, activeFolder.linkId);
+    } = useFileUploadInput(activeFolder.volumeId, activeFolder.shareId, activeFolder.linkId);
     const {
         inputRef: folderInput,
         handleClick: folderClick,
         handleChange: folderChange,
-    } = useFolderUploadInput(activeFolder.shareId, activeFolder.linkId);
+    } = useFolderUploadInput(activeFolder.volumeId, activeFolder.shareId, activeFolder.linkId);
     const [createFolderModal, showCreateFolderModal] = useCreateFolderModal();
     const { createDocument } = useDocumentActions();
     const { isDocsEnabled } = useDriveDocsFeatureFlag();

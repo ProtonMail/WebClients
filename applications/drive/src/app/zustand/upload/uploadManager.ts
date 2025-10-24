@@ -218,44 +218,29 @@ class UploadManager {
         });
     }
 
-    // TOOD: Add scheduler logic
-    async uploadFiles(files: File[], parentUid: string): Promise<void> {
-        const uploadQueueStore = useUploadQueueStore.getState();
-        const batchId = generateUID();
-
-        if (!this.sdkEventsDisposer && uploadQueueStore.queue.size === 0) {
-            this.subscribeToSDKEvents();
-        }
-
-        for (const file of files) {
-            const uploadId = uploadQueueStore.addUploadItem({
-                name: file.name,
-                uploadedBytes: 0, // TODO: Probably we can prevent having to pass the 0 at the beggining
-                clearTextExpectedSize: file.size,
-                status: UploadStatus.Pending,
-                batchId,
-            });
-
-            void startUpload(
-                file,
-                parentUid,
-                (event) => this.onChangeCallback(uploadId, parentUid, event),
-                (name, nodeType, conflictType) => this.resolveConflict(uploadId, name, nodeType, conflictType)
-            );
-        }
-    }
-
-    async uploadFolder(files: File[] | FileList, parentUid: string): Promise<void> {
+    async upload(files: File[] | FileList, parentUid: string): Promise<void> {
         const uploadQueueStore = useUploadQueueStore.getState();
 
         const batchId = generateUID();
 
         if (!this.sdkEventsDisposer && uploadQueueStore.queue.size === 0) {
             this.subscribeToSDKEvents();
+        }
+
+        const filesArray = Array.from(files);
+        const hasStructure = hasFolderStructure(filesArray);
+
+        if (!hasStructure) {
+            const flatStructure: FolderStructureWithUids = {
+                nodeUid: parentUid,
+                files: filesArray,
+                subfolders: new Map(),
+            };
+            this.uploadFilesFromFolderStructure(flatStructure, parentUid, batchId);
+            return;
         }
 
         const structure = buildFolderStructure(files);
-
         const folderStructureWithUids = await this.createFolderStructure(structure, parentUid, batchId);
 
         if (folderStructureWithUids === null) {
@@ -265,7 +250,7 @@ class UploadManager {
         this.uploadFilesFromFolderStructure(folderStructureWithUids, parentUid, batchId);
     }
 
-    async uploadFileDrop(items: DataTransferItemList, parentUid: string) {
+    async uploadDrop(items: DataTransferItemList, parentUid: string) {
         const uploadQueueStore = useUploadQueueStore.getState();
 
         if (uploadQueueStore.hasPendingConflicts()) {
@@ -275,16 +260,11 @@ class UploadManager {
         }
 
         const files = await processDroppedItems(items);
-
-        if (hasFolderStructure(files)) {
-            await this.uploadFolder(files, parentUid);
-        } else {
-            await this.uploadFiles(files, parentUid);
-        }
+        await this.upload(files, parentUid);
     }
 
     private uploadFilesFromFolderStructure(
-        folderStructure: { nodeUid: string; files: File[]; subfolders: Map<string, any> },
+        folderStructure: FolderStructureWithUids,
         rootParentUid: string,
         batchId: string
     ): void {
