@@ -9,7 +9,11 @@ import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import { hasUserIdentifier, matchesLoginPassword, matchesLoginURL } from '@proton/pass/lib/items/item.predicates';
 import { intoLoginItemPreview } from '@proton/pass/lib/items/item.utils';
 import { itemCreate, itemEdit } from '@proton/pass/store/actions';
-import { selectAutosaveCandidate, selectNonOptimisticItem, selectWritableShares } from '@proton/pass/store/selectors';
+import {
+    selectAutosaveCandidate,
+    selectNonOptimisticItem,
+    selectVisibleWritableShares,
+} from '@proton/pass/store/selectors';
 import type { AutosavePrompt, FormEntry } from '@proton/pass/types';
 import { AutosaveMode } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -28,7 +32,7 @@ export const createAutoSaveService = () => {
 
         const { userIdentifier, password } = data;
         const state = ctx.service.store.getState();
-        const writableShareIds = selectWritableShares(state).map(prop('shareId'));
+        const writableShareIds = selectVisibleWritableShares(state).map(prop('shareId'));
 
         if (type === 'register') {
             /** For registration forms, search for matching entries in the
