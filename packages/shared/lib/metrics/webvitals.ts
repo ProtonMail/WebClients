@@ -20,6 +20,8 @@ import metrics from '@proton/metrics';
 
 import { captureMessage } from '../helpers/sentry';
 
+const SAMPLING_PERCENT = 5;
+
 /*
  * Make sure you run this only once per react application
  * Ideally you can run it before doing ReactDOM.render()
@@ -54,7 +56,18 @@ const hasURLFragment = (url?: string): boolean => {
  * The raw details are also available and can be used for further investigate. A fully fledge documentation is written here in Confluence at /wiki/spaces/DRV/pages/97944663/Web+Vitals
  * Interesting Read: https://web.dev/articles/debug-performance-in-the-field
  */
-export const reportWebVitals = (context: 'public' | 'private' = 'private') => {
+export const reportWebVitals = (
+    context: 'public' | 'private' = 'private',
+    samplingPercent: number = SAMPLING_PERCENT
+) => {
+    const shouldSample = () => {
+        return Math.random() * 100 <= Math.min(samplingPercent, 100);
+    };
+
+    if (!shouldSample()) {
+        return;
+    }
+
     const reportMetric = (metric: CLSMetric | INPMetric | LCPMetric) => {
         metrics.core_webvitals_total.increment({
             type: metric.name,
