@@ -2,6 +2,7 @@ import {
     decryptData,
     deriveKey,
     encryptData,
+    exportKey,
     generateKey as generateAesGcmKeyBytes,
     generateWrappingKey as generateAesWrapKeyBytes,
     importKey as importAesGcmKey,
@@ -45,15 +46,12 @@ export async function encryptUint8Array(
 }
 
 export async function cryptoKeyToBase64(key: CryptoKey): Promise<Base64> {
-    const exportedKey = await crypto.subtle.exportKey('raw', key);
-    const keyBuffer = new Uint8Array(exportedKey);
-    return uint8ArrayToBase64String(keyBuffer);
+    const exportedKey = await cryptoKeyToBytes(key);
+    return uint8ArrayToBase64String(exportedKey);
 }
 
 export async function cryptoKeyToBytes(key: CryptoKey): Promise<Uint8Array<ArrayBuffer>> {
-    const exportedKey = await crypto.subtle.exportKey('raw', key);
-    const keyBuffer = new Uint8Array(exportedKey);
-    return keyBuffer;
+    return exportKey(key);
 }
 
 export async function bytesToAesGcmCryptoKey(bytes: Uint8Array<ArrayBuffer>, extractable?: boolean): Promise<AesGcmCryptoKey> {

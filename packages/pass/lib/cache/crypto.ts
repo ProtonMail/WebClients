@@ -1,5 +1,5 @@
 import { ARGON2_PARAMS, CryptoProxy } from '@proton/crypto/lib';
-import { deriveKey } from '@proton/crypto/lib/subtle/aesGcm';
+import { type AesGcmCryptoKey, deriveKey, exportKey } from '@proton/crypto/lib/subtle/aesGcm';
 import { encryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
 import { type Maybe, PassEncryptionTag } from '@proton/pass/types';
@@ -36,7 +36,7 @@ export const getCacheEncryptionKey = async (
     keyPassword: string,
     salt: Uint8Array<ArrayBuffer>,
     sessionLockToken: Maybe<string>
-): Promise<CryptoKey> => {
+): Promise<AesGcmCryptoKey> => {
     // We run a key derivation step (HKDF) to achieve domain separation (preventing the encrypted data to be
     // decrypted outside of the booting context) and to better protect the password in case of e.g.
     // future GCM key-recovery attacks.
@@ -68,8 +68,8 @@ export const getOfflineKeyDerivation = async (
 ): Promise<Uint8Array<ArrayBuffer>> => CryptoProxy.computeArgon2({ params, password: loginPassword, salt });
 
 /** Encrypts the raw cache key with the offline key */
-export const encryptOfflineCacheKey = async (cacheKey: CryptoKey, offlineKD: Uint8Array<ArrayBuffer>): Promise<Uint8Array<ArrayBuffer>> => {
-    const rawCacheKey = await crypto.subtle.exportKey('raw', cacheKey);
+export const encryptOfflineCacheKey = async (cacheKey: AesGcmCryptoKey, offlineKD: Uint8Array<ArrayBuffer>): Promise<Uint8Array<ArrayBuffer>> => {
+    const rawCacheKey = await exportKey(cacheKey);
     const offlineKey = await importSymmetricKey(offlineKD);
 
     return encryptData(offlineKey, new Uint8Array(rawCacheKey), PassEncryptionTag.Offline);

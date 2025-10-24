@@ -15,7 +15,7 @@ import logger from 'proton-authenticator/lib/logger';
 import { service } from 'proton-authenticator/lib/wasm/service';
 import { c } from 'ttag';
 
-import { ENCRYPTION_ALGORITHM } from '@proton/crypto/lib/subtle/aesGcm';
+import { importKey as importAesGcmKey, exportKey as exportAesGcmKey } from '@proton/crypto/lib/subtle/aesGcm';
 import type { MaybeNull } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
@@ -43,7 +43,7 @@ export const migrateLegacyKeys = async (legacyKeys: LegacyRemoteKey[]): Promise<
                     /** Legacy local encryption key was stored as
                      * a `LegacyStoredRemoteKey` prior to v4 */
                     if (!userKeyId || id === 'local') return null;
-                    const rawKey = await crypto.subtle.exportKey('raw', remoteKey.key);
+                    const rawKey = await exportAesGcmKey(remoteKey.key);
                     const encodedKey = uint8ArrayToBase64String(new Uint8Array(rawKey));
                     return { id, userKeyId, encodedKey };
                 } catch {
@@ -62,8 +62,7 @@ export const downgradeToLegacyKeys = async (keys: RemoteKey[]): Promise<LegacyRe
                 try {
                     const { id, userKeyId, encodedKey } = legacyKey;
                     const bytes = base64StringToUint8Array(encodedKey);
-                    const usages = ['encrypt', 'decrypt'] as const;
-                    const key = await crypto.subtle.importKey('raw', bytes, ENCRYPTION_ALGORITHM, true, usages);
+                    const key = await importAesGcmKey(bytes, { extractable: true });
 
                     return { id, userKeyId, key };
                 } catch {

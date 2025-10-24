@@ -2,6 +2,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { CryptoProxy } from '@proton/crypto';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
+import { exportKey } from '@proton/crypto/lib/subtle/aesGcm';
 
 import { LUMO_GPG_PUB_KEY_PROD_2 } from '../../../keys';
 import type { AesGcmCryptoKey, Base64, EncryptedTurn, RequestId, Turn } from './types';
@@ -69,8 +70,7 @@ export async function encryptString(
  * Convert CryptoKey to bytes for transmission
  */
 export async function cryptoKeyToBytes(key: CryptoKey): Promise<Uint8Array<ArrayBuffer>> {
-    const exported = await crypto.subtle.exportKey('raw', key);
-    return new Uint8Array(exported);
+    return exportKey(key);
 }
 
 /**
