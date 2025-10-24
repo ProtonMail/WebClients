@@ -3,7 +3,7 @@ import useConfig from '@proton/components/hooks/useConfig';
 import { FeatureCode, useFeature } from '@proton/features';
 
 import type { PostSubscriptionOneDollarOfferState } from '../PostSignupOneDollar/interface';
-import type { OfferHookReturnValue } from '../common/interface';
+import type { OfferHookReturnValue } from '../common/helpers/interface';
 import { getIsUserEligibleForSubscriptionReminder } from './mailSubscriptionReminderHelper';
 
 export const useMailSubscriptionReminder = (): OfferHookReturnValue => {

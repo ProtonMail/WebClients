@@ -1,7 +1,7 @@
 import Icon from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
 
-import type { TopNavbarOfferConfig } from '../interface';
+import type { TopNavbarOfferConfig } from '../helpers/interface';
 
 export interface ListProps {
     className?: string;
