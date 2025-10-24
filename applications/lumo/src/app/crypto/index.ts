@@ -10,6 +10,7 @@ import {
     wrapKey,
 } from '@proton/crypto/lib/subtle/aesGcm';
 import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils';
+import { computeSHA256 } from '@proton/crypto/lib/subtle/hash';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 import { type AdString, type Base64, type EncryptedData, isOldEncryptedData } from '../types';
@@ -176,7 +177,7 @@ export async function unwrapAesKey(
 
 export async function computeSha256AsBase64(input: string, urlSafe: boolean = false): Promise<Base64> {
     const data = stringToUtf8Array(input);
-    const hashBytes = new Uint8Array(await crypto.subtle.digest('SHA-256', data));
+    const hashBytes = await computeSHA256(data);
     let hashString = uint8ArrayToBase64String(hashBytes);
     if (urlSafe) {
         hashString = hashString.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
