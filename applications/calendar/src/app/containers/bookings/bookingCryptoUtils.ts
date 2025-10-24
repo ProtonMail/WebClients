@@ -1,5 +1,5 @@
 import { CryptoProxy, type PublicKeyReference, type SessionKey } from '@proton/crypto';
-import { deriveKey, generateKey } from '@proton/crypto/lib/subtle/aesGcm';
+import { deriveKey, exportKey, generateKey } from '@proton/crypto/lib/subtle/aesGcm';
 import {
     base64StringToUint8Array,
     base64URLStringToUint8Array,
@@ -112,7 +112,7 @@ export const deriveBookingKeyPassword = async (
         }
     );
 
-    const bookingKeyBytes = await crypto.subtle.exportKey('raw', bookingKey);
+    const bookingKeyBytes = await exportKey(bookingKey);
     return new Uint8Array(bookingKeyBytes);
 };
 
@@ -130,7 +130,7 @@ export const deriveBookingUid = async (bookingSecretBytes: Uint8Array<ArrayBuffe
             extractable: true,
         }
     );
-    const bookingUidBytes = await crypto.subtle.exportKey('raw', bookingUidKey);
+    const bookingUidBytes = await exportKey(bookingUidKey);
     return new Uint8Array(bookingUidBytes);
 };
 
