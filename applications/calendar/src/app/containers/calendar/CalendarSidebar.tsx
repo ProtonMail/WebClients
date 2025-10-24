@@ -13,7 +13,6 @@ import {
     SidebarDrawerItems,
     SidebarLogo,
     SidebarNav,
-    SidebarPrimaryButton,
     useActiveBreakpoint,
     useApi,
     useLocalState,
@@ -32,10 +31,10 @@ import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
 
-import { ProtonMeetSpotlightWrapper } from './ProtonMeetSpotlightWrapper';
 import { Bookings } from './sidebar/Bookings';
 import { MyCalendars } from './sidebar/MyCalendars';
 import { OtherCalendars } from './sidebar/OtherCalendars';
+import { PrimaryButton } from './sidebar/PrimaryButton';
 
 export interface CalendarSidebarProps {
     calendars: VisualCalendar[];
@@ -99,30 +98,6 @@ const CalendarSidebar = ({
         ...unknownCalendars,
     ]);
 
-    const primaryAction = (
-        <Tooltip title={collapsed ? c('Action').t`New event` : null}>
-            <ProtonMeetSpotlightWrapper>
-                <SidebarPrimaryButton
-                    data-testid="calendar-view:new-event-button"
-                    disabled={!onCreateEvent}
-                    onClick={() => {
-                        onCreateEvent?.();
-                    }}
-                    className={clsx(
-                        'hidden md:flex items-center justify-center flex-nowrap gap-2',
-                        collapsed && 'px-0'
-                    )}
-                >
-                    {collapsed ? (
-                        <Icon name="plus" className="flex mx-auto my-0.5" alt={c('Action').t`New event`} />
-                    ) : (
-                        <span className="text-ellipsis">{c('Action').t`New event`}</span>
-                    )}
-                </SidebarPrimaryButton>
-            </ProtonMeetSpotlightWrapper>
-        </Tooltip>
-    );
-
     const displayContactsInHeader = useDisplayContactsWidget();
 
     const logo = <SidebarLogo collapsed={collapsed} to="/" app={APPS.PROTONCALENDAR} />;
@@ -134,7 +109,7 @@ const CalendarSidebar = ({
             logo={logo}
             expanded={expanded}
             onToggleExpand={onToggleExpand}
-            primary={primaryAction}
+            primary={<PrimaryButton collapsed={collapsed} onCreateEvent={onCreateEvent} />}
             version={<AppVersion />}
             showStorage={showSideBar}
             collapsed={collapsed}
