@@ -2,6 +2,10 @@ import { c } from 'ttag';
 
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS_CONFIGURATION, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import {
+    getInboxDesktopIsSnapPackage,
+    getInboxDesktopSnapPackageRevision,
+} from '@proton/shared/lib/desktop/snapHelpers';
 import { getAllAppVersions } from '@proton/shared/lib/desktop/version';
 import { getBrowser, getDevice, getOS } from '@proton/shared/lib/helpers/browser';
 import { electronAppVersion, isElectronMail } from '@proton/shared/lib/helpers/desktop';
@@ -49,6 +53,8 @@ export const getReportInfo = () => {
     const browser = getBrowser();
     const device = getDevice();
     const os = getEnhancedOSInfo();
+    const isSnap = getInboxDesktopIsSnapPackage();
+    const snapRevision = getInboxDesktopSnapPackageRevision();
 
     const extendedElectronVersion: string = isElectronMail
         ? getAllAppVersions()
@@ -59,12 +65,21 @@ export const getReportInfo = () => {
             ? c('Browser').t`${MAIL_APP_NAME} Desktop application`
             : browser.name;
 
+    const browserVersion = (() => {
+        if (isElectronMail) {
+            return isSnap ? `${extendedElectronVersion} / SR (${snapRevision})` : extendedElectronVersion;
+        }
+        return browser.version || '';
+    })();
+
+    const osName = isSnap ? `${os.name} / Snap` : os.name;
+
     return {
-        OS: os.name,
+        OS: osName,
         OSVersion: os.version || '',
         OSArtificial: os.artificial,
         Browser,
-        BrowserVersion: isElectronMail ? extendedElectronVersion : browser.version,
+        BrowserVersion: browserVersion,
         Resolution: `${window.innerHeight} x ${window.innerWidth}`,
         DeviceName: device.vendor,
         DeviceModel: device.model,
