@@ -1,7 +1,11 @@
 import { c } from 'ttag';
 
 import { AppsLogos, PassLogo } from '@proton/components';
-import { getPassKeys, getPassMonitor } from '@proton/components/containers/payments/features/highlights';
+import {
+    getPassDarkWebMonitoring,
+    getPassKeys,
+    getPassMonitor,
+} from '@proton/components/containers/payments/features/highlights';
 import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import {
     get2FAAuthenticator,
@@ -10,6 +14,7 @@ import {
     getAdvancedAliasFeatures,
     getDevices,
     getDevicesAndAliases,
+    getFileAttachments,
     getLoginsAndNotes,
     getLoginsAndNotesText,
     getPassMonitorText,
@@ -72,6 +77,7 @@ import {
     getDeviceSyncBenefit,
     getGenericFeatures,
     getJoinString,
+    getSwissPrivacyLawsBenefit,
     getTeamKnowsEncryptionBenefit,
     getUnlimitedPasswordsBenefit,
     getWorksOnAllDevicesBenefit,
@@ -91,7 +97,7 @@ const getPassBenefitsTitle = (plan: PLANS | undefined) => {
         return getBenefits(BRAND_NAME);
     }
 
-    return getBenefits(PASS_APP_NAME);
+    return c('Signup: Info').t`The only password manager with:`;
 };
 
 const getUserAccountsBenefit = (): BenefitItem => {
@@ -174,35 +180,35 @@ const getEncryptionBenefit = (): BenefitItem => {
     };
 };
 
-const getCustomDomainForAliasesBenefit = (): BenefitItem => {
-    return {
-        key: `custom-domain-for-aliases`,
-        text: c('pass_signup_2024: Info').t`Your custom domain for aliases`,
-        icon: {
-            name: 'brand-simple-login',
-        },
-    };
-};
+// const getCustomDomainForAliasesBenefit = (): BenefitItem => {
+//     return {
+//         key: `custom-domain-for-aliases`,
+//         text: c('pass_signup_2024: Info').t`Your custom domain for aliases`,
+//         icon: {
+//             name: 'brand-simple-login',
+//         },
+//     };
+// };
 
-const getAdditionalMailboxesForAliasesBenefit = (): BenefitItem => {
-    return {
-        key: `additional-mailboxes-for-aliases`,
-        text: c('pass_signup_2024: Info').t`Additional mailboxes for aliases`,
-        icon: {
-            name: 'envelope',
-        },
-    };
-};
+// const getAdditionalMailboxesForAliasesBenefit = (): BenefitItem => {
+//     return {
+//         key: `additional-mailboxes-for-aliases`,
+//         text: c('pass_signup_2024: Info').t`Additional mailboxes for aliases`,
+//         icon: {
+//             name: 'envelope',
+//         },
+//     };
+// };
 
-const getFileAttachmentsBenefit = (): BenefitItem => {
-    return {
-        key: `file-attachments`,
-        text: c('pass_signup_2024: Info').t`File attachments (coming soon)`,
-        icon: {
-            name: 'file-pdf',
-        },
-    };
-};
+// const getFileAttachmentsBenefit = (): BenefitItem => {
+//     return {
+//         key: `file-attachments`,
+//         text: c('pass_signup_2024: Info').t`File attachments (up to 10GB)`,
+//         icon: {
+//             name: 'file-pdf',
+//         },
+//     };
+// };
 
 export const getUnlimitedLoginsAndNotesBenefit = (): BenefitItem => {
     return {
@@ -324,6 +330,26 @@ const getAdvancedAccountProtectionBenefit = (): BenefitItem => {
     };
 };
 
+export const getAppsPassIncludedBenefit = (): BenefitItem => {
+    return {
+        key: `apps-pass-included`,
+        text: c('Signup: Info').t`Mail, calendar, file storage, and VPN included`,
+        icon: {
+            name: 'grid-2',
+        },
+    };
+};
+
+export const getAdvancedSecurityFeaturesBenefit = (): BenefitItem => {
+    return {
+        key: 'advanced-security-features',
+        text: c('Signup: Info').t`Advanced security features by ${BRAND_NAME}`,
+        icon: {
+            name: 'shield' as const,
+        },
+    };
+};
+
 export const getPassBenefits = (
     plan: PLANS | undefined,
     audience: Audience | undefined,
@@ -377,18 +403,11 @@ export const getPassBenefits = (
 
     if (isPaidPass) {
         return [
-            getWorksOnAllDevicesBenefit(),
-            getUnlimitedLoginsAndNotesBenefit(),
-            getHideMyEmailAliasesBenefit(),
-            get2FABenefit(),
-            getSecureVaultSharingBenefit(),
-            getPassMonitorBenefit(),
-            getPasskeysBenefit(),
-            getEncryptionBenefit(),
-            getCustomDomainForAliasesBenefit(),
-            getAdditionalMailboxesForAliasesBenefit(),
-            getFileAttachmentsBenefit(),
             getAdvancedAliasBenefit(),
+            getSecureVaultSharingBenefit(),
+            getSwissPrivacyLawsBenefit(),
+            getAppsPassIncludedBenefit(),
+            getAdvancedSecurityFeaturesBenefit(),
         ];
     }
 
@@ -414,14 +433,12 @@ export const getCustomPassFeatures = ({ isLifetime }: { isLifetime?: boolean } =
                   included: true,
               }
             : null,
-        isLifetime ? null : getPassUsers(1),
-        getDevicesAndAliases(),
-        get2FAAuthenticator(true),
-        getSecureVaultSharing(true),
         getLoginsAndNotes('paid'),
-        getAdvancedAliasFeatures(true),
+        get2FAAuthenticator(true),
+        getDevicesAndAliases(),
         getPassKeys(true),
-        getPassMonitor(true),
+        getPassDarkWebMonitoring(),
+        getFileAttachments(),
     ].filter(isTruthy);
 };
 

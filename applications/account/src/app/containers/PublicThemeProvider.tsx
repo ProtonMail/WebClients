@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import { createContext, useContext } from 'react';
 
 import type { Breakpoints } from '@proton/components';
-import { getHas2024OfferCoupon } from '@proton/payments';
+import { getHas2025OfferCoupon } from '@proton/payments';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { ThemeTypes } from '@proton/shared/lib/themes/constants';
@@ -42,10 +42,10 @@ export const getPublicTheme = (
     viewportWidth: Breakpoints['viewportWidth'],
     signupParameters: SignupParameters2
 ): PublicTheme => {
-    const darkTheme = getHas2024OfferCoupon(signupParameters.coupon);
+    const darkTheme = getHas2025OfferCoupon(signupParameters.coupon);
     if (darkTheme) {
         return {
-            type: ThemeTypes.Carbon,
+            type: ThemeTypes.Storefront,
             background: 'bf',
             intent: toApp,
             dark: true,

@@ -9,13 +9,12 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import Icon from '@proton/components/components/icon/Icon';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { setUsedBfOffer } from '@proton/components/containers/offers/bfOffer';
 import PlusToPlusUpsell from '@proton/components/containers/payments/subscription/PlusToPlusUpsell';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import useHandler from '@proton/components/hooks/useHandler';
+import { useHandler } from '@proton/components/hooks/useHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
@@ -55,7 +54,7 @@ import {
     getBillingAddressFromPaymentStatus,
     getCheckoutModifiers,
     getFreeCheckResult,
-    getHas2024OfferCoupon,
+    getHas2025OfferCoupon,
     getIsB2BAudienceFromPlan,
     getIsB2BAudienceFromSubscription,
     getIsCustomCycle,
@@ -79,7 +78,6 @@ import {
     switchPlan,
 } from '@proton/payments';
 import {
-    InclusiveVatText,
     PaymentsContextProvider,
     computeOptimisticSubscriptionMode,
     useIsB2BTrial,
@@ -300,8 +298,6 @@ const SubscriptionContainerInner = ({
     allowedAddonTypes,
     paymentStatus,
 }: SubscriptionContainerProps) => {
-    const lumoAddonEnabled = canAddLumoAddon(subscription);
-
     const defaultMaximumCycle = getMaximumCycleForApp(app);
     const maximumCycle = maybeMaximumCycle ?? defaultMaximumCycle;
 
@@ -412,11 +408,16 @@ const SubscriptionContainerInner = ({
         return model;
     });
 
-    const [checkResult, setCheckResult] = useState<SubscriptionCheckResponse>(
+    const [checkResult, setCheckResult] = useState<EnrichedCheckResponse>(
         getFreeCheckResult(model.currency, model.cycle)
     );
 
     const couponConfig = useCouponConfig({ checkResult, planIDs: model.planIDs, plansMap: plansMapRef.current });
+    const lumoAddonEnabled =
+        canAddLumoAddon(subscription) &&
+        !couponConfig?.hideLumoAddonBanner &&
+        //  Hides the Lumo Banner during loading
+        !getHas2025OfferCoupon(maybeCoupon);
 
     const [selectedProductPlans, setSelectedProductPlans] = useState(
         defaultSelectedProductPlans ||
@@ -521,12 +522,6 @@ const SubscriptionContainerInner = ({
                     // eslint-disable-next-line @typescript-eslint/no-use-before-define
                     vatNumber: vatNumber.vatNumber,
                 });
-
-                if (codes.some((code) => getHas2024OfferCoupon(code))) {
-                    setUsedBfOffer(true);
-                } else {
-                    setUsedBfOffer(false);
-                }
 
                 // eslint-disable-next-line @typescript-eslint/no-use-before-define
                 paymentFacade.telemetry.reportPaymentSuccess(paymentProcessorType);
@@ -1112,7 +1107,7 @@ const SubscriptionContainerInner = ({
             delete withoutGift.gift;
             return withLoadingGift(check(withoutGift));
         }
-        if (getHas2024OfferCoupon(gift.trim().toUpperCase())) {
+        if (getHas2025OfferCoupon(gift.trim().toUpperCase())) {
             createNotification({ text: c('Error').t`Invalid code`, type: 'error' });
             return;
         }
@@ -1183,27 +1178,25 @@ const SubscriptionContainerInner = ({
     const hasPaymentMethod = !!paymentFacade.methods.savedMethods?.length;
 
     const subscriptionCheckoutSubmit = (
-        <>
-            <SubscriptionSubmitButton
-                currency={model.currency}
-                onDone={onSubscribed}
-                step={model.step}
-                loading={
-                    subscribing ||
-                    paymentFacade.bitcoinInhouse.bitcoinLoading ||
-                    paymentFacade.bitcoinChargebee.bitcoinLoading
-                }
-                checkResult={checkResult}
-                className="w-full"
-                disabled={isFreeUserWithFreePlanSelected}
-                paymentForbiddenReason={model.paymentForbiddenReason}
-                subscription={subscription}
-                hasPaymentMethod={hasPaymentMethod}
-                taxCountry={taxCountry}
-                paymentFacade={paymentFacade}
-            />
-            <InclusiveVatText checkResult={checkResult} className="text-sm color-weak text-center mt-1" />
-        </>
+        <SubscriptionSubmitButton
+            currency={model.currency}
+            onDone={onSubscribed}
+            step={model.step}
+            loading={
+                subscribing ||
+                paymentFacade.bitcoinInhouse.bitcoinLoading ||
+                paymentFacade.bitcoinChargebee.bitcoinLoading
+            }
+            checkResult={checkResult}
+            className="w-full"
+            disabled={isFreeUserWithFreePlanSelected}
+            paymentForbiddenReason={model.paymentForbiddenReason}
+            subscription={subscription}
+            hasPaymentMethod={hasPaymentMethod}
+            taxCountry={taxCountry}
+            paymentFacade={paymentFacade}
+            couponConfig={couponConfig}
+        />
     );
 
     const gift = !model.paymentForbiddenReason.forbidden && !couponConfig?.hidden && (
@@ -1216,18 +1209,16 @@ const SubscriptionContainerInner = ({
                     </Tooltip>
                 </div>
             )}
-            {!getHas2024OfferCoupon(couponCode) && (
-                <PaymentGiftCode
-                    giftCodeRef={giftCodeRef}
-                    key={
-                        /* Reset the toggle state when a coupon code gets applied */
-                        couponCode
-                    }
-                    giftCode={model.gift}
-                    onApply={handleGift}
-                    loading={loadingGift}
-                />
-            )}
+            <PaymentGiftCode
+                giftCodeRef={giftCodeRef}
+                key={
+                    /* Reset the toggle state when a coupon code gets applied */
+                    couponCode
+                }
+                giftCode={model.gift}
+                onApply={handleGift}
+                loading={loadingGift}
+            />
         </>
     );
 
@@ -1353,6 +1344,7 @@ const SubscriptionContainerInner = ({
                                                     additionalCheckResults={additionalCheckResults}
                                                     loading={loadingCheck || initialLoading}
                                                     allowedCycles={computeAllowedCycles(model.planIDs)}
+                                                    checkResult={checkResult}
                                                 />
                                             )}
                                         </div>
@@ -1464,13 +1456,13 @@ const SubscriptionContainerInner = ({
                     }}
                 />
             )}
-            {calendarDowngradeModal((props) => {
+            {calendarDowngradeModal(({ onResolve, onReject, ...modalProps }) => {
                 return (
                     <CalendarDowngradeModal
+                        {...modalProps}
                         isDowngrade={false}
-                        {...props}
-                        onConfirm={props.onResolve}
-                        onClose={props.onReject}
+                        onConfirm={onResolve}
+                        onClose={onReject}
                     />
                 );
             })}

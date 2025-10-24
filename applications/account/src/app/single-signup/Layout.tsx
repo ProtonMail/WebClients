@@ -21,7 +21,7 @@ import LayoutHeader from '../single-signup-v2/LayoutHeader';
 
 import './Layout.scss';
 
-export type Background = 'dark' | 'bf2023';
+export type Background = 'dark' | 'bf2025';
 
 export interface Props {
     children: ReactNode;
@@ -53,7 +53,7 @@ const Layout = ({
     const { APP_NAME } = useConfig();
     const { viewportWidth } = useActiveBreakpoint();
 
-    const isDarkBg = ['bf2023', 'dark'].includes(background as any);
+    const isDarkBg = ['bf2025', 'dark'].includes(background as any);
     const protonLogo = isB2bPlan ? (
         <>
             <ProtonForBusinessLogo className="proton-for-business-logo" />
@@ -81,8 +81,8 @@ const Layout = ({
                 'flex *:min-size-auto flex-nowrap flex-column h-full overflow-auto relative',
                 background === 'dark'
                     ? 'signup-v1-bg--dark'
-                    : background === 'bf2023'
-                      ? 'signup-v1-bg--bf2023'
+                    : background === 'bf2025'
+                      ? 'signup-v1-bg--bf2025'
                       : 'signup-v1-bg',
                 className
             )}

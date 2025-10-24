@@ -30,6 +30,12 @@ export type CouponConfig = {
      * to display some custom promotion messages. If not specified then this component isn't present at all.
      */
     amountDueMessage?: (props: CouponConfigRequiredProps) => ReactNode;
+
+    /**
+     * Replaces the text on the payment confirmation button.
+     */
+    payCTA?: (props: CouponConfigRequiredProps) => string;
+
     /**
      * You can override the subscription modal subtitle with this function.
      */
@@ -40,6 +46,12 @@ export type CouponConfig = {
      * but the primary idea was returning the <Price> component from it.
      */
     cyclePriceCompare?: (params: { cycle: CYCLE; suffix?: string }, config: CouponConfigRequiredProps) => ReactNode;
+
+    /**
+     * Where to put the new element: before or after the original one. By default it's after.
+     */
+    cyclePriceComparePosition?: 'before' | 'after';
+
     /**
      * You can override the cycle title with this function. It can change the usual "1 month" or "12 months" title to
      * something else.
@@ -50,6 +62,17 @@ export type CouponConfig = {
      * If set, this will limit the cycles that are available in the cycle selector.
      */
     availableCycles?: CYCLE[];
+
+    /**
+     * If user has a migration coupon then they will lose it if they accept the new deal. If this property is set to
+     * true then a warning will be displayed to the user.
+     */
+    showMigrationDiscountLossWarning?: boolean;
+
+    /**
+     * If set to true then the Lumo addon banner will not be displayed.
+     */
+    hideLumoAddonBanner?: boolean;
 };
 
 export type CyclePriceCompareFirstParam = Parameters<NonNullable<CouponConfig['cyclePriceCompare']>>[0];

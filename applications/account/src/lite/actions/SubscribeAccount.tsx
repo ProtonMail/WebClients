@@ -31,7 +31,7 @@ import {
     type PaymentStatus,
     fixPlanName,
     getAvailableSubscriptionActions,
-    getHas2024OfferCoupon,
+    getHas2025OfferCoupon,
     getPlan,
     getUpgradedPlan,
     getValidCycle,
@@ -168,12 +168,8 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader, layout, childOv
     const coupon = searchParams.get('coupon') || undefined;
 
     const currencyParam = searchParams.get('currency')?.toUpperCase();
-    let parsedCurrency =
+    const parsedCurrency =
         currencyParam && CURRENCIES.includes(currencyParam as any) ? (currencyParam as Currency) : undefined;
-
-    if (getHas2024OfferCoupon(coupon) && parsedCurrency === 'BRL') {
-        parsedCurrency = 'USD';
-    }
 
     const maybePlanName = fixPlanName(searchParams.get('plan'), 'LiteApp') || '';
     const plan =
@@ -187,34 +183,34 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader, layout, childOv
     const { bgClassName, logo } = (() => {
         if ([PLANS.VPN2024].includes(plan as any)) {
             return {
-                bgClassName: 'subscribe-account--vpn-bg',
+                bgClassName: 'subscribe-account--bf-bg subscribe-account--vpn-bg',
                 logo: <Logo className="subscribe-account-logo" appName={APPS.PROTONVPN_SETTINGS} />,
             };
         }
 
         if ([PLANS.DRIVE, PLANS.DRIVE_PRO].includes(plan as any)) {
             return {
-                bgClassName: 'subscribe-account--drive-bg',
+                bgClassName: 'subscribe-account--bf-bg subscribe-account--drive-bg',
                 logo: <Logo className="subscribe-account-logo" appName={APPS.PROTONDRIVE} />,
             };
         }
 
         if ([PLANS.PASS, PLANS.PASS_PRO, PLANS.PASS_BUSINESS].includes(plan as any)) {
             return {
-                bgClassName: 'subscribe-account--pass-bg',
+                bgClassName: 'subscribe-account--bf-bg subscribe-account--pass-bg',
                 logo: <Logo className="subscribe-account-logo" appName={APPS.PROTONPASS} />,
             };
         }
 
         if ([PLANS.MAIL, PLANS.MAIL_PRO].includes(plan as any)) {
             return {
-                bgClassName: 'subscribe-account--mail-bg',
+                bgClassName: 'subscribe-account--bf-bg subscribe-account--mail-bg',
                 logo: <Logo className="subscribe-account-logo" appName={APPS.PROTONMAIL} />,
             };
         }
 
         return {
-            bgClassName: 'subscribe-account--mail-bg',
+            bgClassName: 'subscribe-account--bf-bg subscribe-account--mail-bg',
             logo: (
                 <>
                     <ProtonLogo color="brand" className="block sm:hidden" />
@@ -327,100 +323,110 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader, layout, childOv
                         {logo}
                     </div>
                     <div className="flex justify-center">
-                        {childOverride ? (
-                            <LiteBox>{childOverride}</LiteBox>
-                        ) : type === SubscribeType.Subscribed || type === SubscribeType.Closed ? (
-                            <LiteBox>
-                                <SubscribeAccountDone type={type} />
-                            </LiteBox>
-                        ) : (
-                            <SubscriptionContainer
-                                topRef={topRef}
-                                app={app}
-                                subscription={subscription}
-                                plans={plans}
-                                freePlan={freePlan}
-                                organization={organization}
-                                step={step}
-                                cycle={parsedCycle}
-                                minimumCycle={parsedMinimumCycle}
-                                currency={parsedCurrency}
-                                plan={plan}
-                                coupon={coupon}
-                                disablePlanSelection={disablePlanSelectionValue}
-                                disableCycleSelector={disableCycleSelectorValue}
-                                disableThanksStep
-                                onSubscribed={handleSuccess}
-                                onUnsubscribed={handleSuccess}
-                                onCancel={handleClose}
-                                paymentStatus={paymentStatus}
-                                onCheck={(data) => {
-                                    // If the initial check completes, it's handled by the container itself
-                                    if (data.model.initialCheckComplete) {
-                                        return;
-                                    }
+                        {(() => {
+                            if (childOverride) {
+                                return <LiteBox>{childOverride}</LiteBox>;
+                            }
 
-                                    const offerUnavailableError = {
-                                        title: c('bf2023: Title').t`Offer unavailable`,
-                                        message: c('Payments')
-                                            .t`Sorry, this offer is not available with your current plan.`,
-                                        error: '',
-                                    };
+                            if (type === SubscribeType.Subscribed || type === SubscribeType.Closed) {
+                                return (
+                                    <LiteBox>
+                                        <SubscribeAccountDone type={type} />
+                                    </LiteBox>
+                                );
+                            }
 
-                                    if (data.type === 'success') {
-                                        if (
-                                            // Ignore visionary since it doesn't require a BF coupon
-                                            !data.model.planIDs[PLANS.VISIONARY] &&
-                                            // Tried to apply the BF coupon, but the API responded without it.
-                                            getHas2024OfferCoupon(coupon?.toUpperCase()) &&
-                                            !getHas2024OfferCoupon(data.result.Coupon?.Code)
-                                        ) {
-                                            setError(offerUnavailableError);
+                            return (
+                                <SubscriptionContainer
+                                    topRef={topRef}
+                                    app={app}
+                                    subscription={subscription}
+                                    plans={plans}
+                                    freePlan={freePlan}
+                                    organization={organization}
+                                    step={step}
+                                    cycle={parsedCycle}
+                                    minimumCycle={parsedMinimumCycle}
+                                    currency={parsedCurrency}
+                                    plan={plan}
+                                    coupon={coupon}
+                                    disablePlanSelection={disablePlanSelectionValue}
+                                    disableCycleSelector={disableCycleSelectorValue}
+                                    disableThanksStep
+                                    onSubscribed={handleSuccess}
+                                    onUnsubscribed={handleSuccess}
+                                    onCancel={handleClose}
+                                    paymentStatus={paymentStatus}
+                                    onCheck={(data) => {
+                                        // If the initial check completes, it's handled by the container itself
+                                        if (data.model.initialCheckComplete) {
+                                            return;
                                         }
-                                        return;
-                                    }
 
-                                    if (data.type === 'error') {
-                                        const message = getApiErrorMessage(data.error);
-
-                                        let defaultError = {
+                                        const offerUnavailableError = {
                                             title: c('bf2023: Title').t`Offer unavailable`,
-                                            message: message || 'Unknown error',
+                                            message: c('Payments')
+                                                .t`Sorry, this offer is not available with your current plan.`,
                                             error: '',
                                         };
 
-                                        const { status } = getApiError(data.error);
-                                        // Getting a 400 means the user's current subscription is not compatible with the new plan, so we assume it's an offer
-                                        if (status === HTTP_STATUS_CODE.BAD_REQUEST) {
-                                            defaultError = {
-                                                ...offerUnavailableError,
-                                                error: defaultError.message,
-                                            };
+                                        if (data.type === 'success') {
+                                            if (
+                                                // Ignore visionary since it doesn't require a BF coupon
+                                                !data.model.planIDs[PLANS.VISIONARY] &&
+                                                // Tried to apply the BF coupon, but the API responded without it.
+                                                getHas2025OfferCoupon(coupon?.toUpperCase()) &&
+                                                !getHas2025OfferCoupon(data.result.Coupon?.Code)
+                                            ) {
+                                                setError(offerUnavailableError);
+                                            }
+                                            return;
                                         }
 
-                                        setError(defaultError);
-                                    }
-                                }}
-                                metrics={{
-                                    source: 'lite-subscribe',
-                                }}
-                                render={({ onSubmit, title, content, footer, step }) => {
-                                    return (
-                                        <LiteBox maxWidth={step === SUBSCRIPTION_STEPS.PLAN_SELECTION ? 72 : undefined}>
-                                            <SubscribeAccountHeader
-                                                user={user}
-                                                title={title}
-                                                onClose={hideClose ? undefined : handleClose}
-                                            />
-                                            <form onSubmit={onSubmit}>
-                                                <div>{content}</div>
-                                                {footer && <div className="mt-8">{footer}</div>}
-                                            </form>
-                                        </LiteBox>
-                                    );
-                                }}
-                            />
-                        )}
+                                        if (data.type === 'error') {
+                                            const message = getApiErrorMessage(data.error);
+
+                                            let defaultError = {
+                                                title: c('bf2023: Title').t`Offer unavailable`,
+                                                message: message || 'Unknown error',
+                                                error: '',
+                                            };
+
+                                            const { status } = getApiError(data.error);
+                                            // Getting a 400 means the user's current subscription is not compatible with the new plan, so we assume it's an offer
+                                            if (status === HTTP_STATUS_CODE.BAD_REQUEST) {
+                                                defaultError = {
+                                                    ...offerUnavailableError,
+                                                    error: defaultError.message,
+                                                };
+                                            }
+
+                                            setError(defaultError);
+                                        }
+                                    }}
+                                    metrics={{
+                                        source: 'lite-subscribe',
+                                    }}
+                                    render={({ onSubmit, title, content, footer, step }) => {
+                                        return (
+                                            <LiteBox
+                                                maxWidth={step === SUBSCRIPTION_STEPS.PLAN_SELECTION ? 72 : undefined}
+                                            >
+                                                <SubscribeAccountHeader
+                                                    user={user}
+                                                    title={title}
+                                                    onClose={hideClose ? undefined : handleClose}
+                                                />
+                                                <form onSubmit={onSubmit}>
+                                                    <div>{content}</div>
+                                                    {footer && <div className="mt-8">{footer}</div>}
+                                                </form>
+                                            </LiteBox>
+                                        );
+                                    }}
+                                />
+                            );
+                        })()}
                     </div>
                 </div>
 
