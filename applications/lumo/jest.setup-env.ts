@@ -37,9 +37,8 @@ jest.mock('@proton/pass/lib/core/ui.proxy');
 jest.mock('@proton/pass/lib/crypto/utils/worker');
 
 // JSDom does not include webcrypto
-const crypto = require('crypto').webcrypto;
-// @ts-ignore
-global.crypto.subtle = crypto.subtle;
+// @ts-expect-error
+global.crypto.subtle = require('crypto').webcrypto.subtle;
 
 expect.extend({
     async toMatchResponse(received, expected) {

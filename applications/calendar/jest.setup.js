@@ -16,8 +16,7 @@ window.ResizeObserver = jest.fn().mockImplementation(() => ({
 HTMLCanvasElement.prototype.getContext = jest.fn();
 
 // JSDom does not include a full implementation of webcrypto
-const crypto = require('crypto').webcrypto;
-global.crypto.subtle = crypto.subtle;
+global.crypto.subtle = require('crypto').webcrypto.subtle;
 
 jest.mock('@proton/shared/lib/i18n/dateFnLocales', () => ({
     __esModule: true,
