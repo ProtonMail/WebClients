@@ -1,12 +1,13 @@
 import type { IDBPDatabase } from 'idb';
 import { deleteDB, openDB } from 'idb';
 
+import type { ESCiphertext } from '@proton/crypto/lib/subtle/ad-hoc/encryptedSearch';
 import { detectStorageCapabilities } from '@proton/shared/lib/helpers/browser';
 import noop from '@proton/utils/noop';
 
 import { INDEXEDDB_VERSION, STORING_OUTCOME } from '../constants';
 import { ciphertextSize, esSentryReport, isTimepointSmaller, removeESFlags } from '../esHelpers';
-import type { AesGcmCiphertext, EncryptedItemWithInfo, EncryptedMetadataItem, EncryptedSearchDB } from '../models';
+import type { EncryptedItemWithInfo, EncryptedMetadataItem, EncryptedSearchDB } from '../models';
 import { updateSize } from './configObjectStore';
 import { getOldestID, getOldestInfo } from './metadata';
 
@@ -126,9 +127,9 @@ const deleteOldestItem = async (ID: string, esDB: IDBPDatabase<EncryptedSearchDB
 };
 
 /**
- * Return whether an item fetched from either the metadata table or the content table is of type AesGcmCiphertext
+ * Return whether an item fetched from either the metadata table or the content table is of type ESCiphertext
  */
-const discriminateItem = (item: EncryptedMetadataItem | AesGcmCiphertext): item is AesGcmCiphertext =>
+const discriminateItem = (item: EncryptedMetadataItem | ESCiphertext): item is ESCiphertext =>
     Object.hasOwn(item, 'iv');
 
 /**
@@ -157,7 +158,7 @@ export const safelyWriteToIDBConditionally = async (
     esDB: IDBPDatabase<EncryptedSearchDB>,
     inputStoringOutcome?: STORING_OUTCOME
 ): Promise<STORING_OUTCOME> => {
-    const valueToStore: EncryptedMetadataItem | AesGcmCiphertext =
+    const valueToStore: EncryptedMetadataItem | ESCiphertext =
         storeName === 'metadata'
             ? { aesGcmCiphertext: value.aesGcmCiphertext, timepoint: value.timepoint }
             : value.aesGcmCiphertext;

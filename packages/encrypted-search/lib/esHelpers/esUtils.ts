@@ -1,9 +1,10 @@
+import { type ESCiphertext, type IndexKey, encryptItem } from '@proton/crypto/lib/subtle/ad-hoc/encryptedSearch';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { removeItem } from '@proton/shared/lib/helpers/storage';
 import type { AddressEvent } from '@proton/shared/lib/interfaces';
 
 import { APOSTROPHES_REGEXP, DIACRITICS_REGEXP, QUOTES_REGEXP } from '../constants';
-import type { AesGcmCiphertext, ESTimepoint, GetItemInfo } from '../models';
+import type { ESTimepoint, GetItemInfo } from '../models';
 
 /**
  * Remove all ES blobs in local storage related to a user
@@ -68,13 +69,13 @@ export const isObjectEmpty = (object: Object) => JSON.stringify(object) === '{}'
 /**
  * Size in bytes of a ciphertext
  */
-export const ciphertextSize = (ciphertext: AesGcmCiphertext | undefined) =>
+export const ciphertextSize = (ciphertext: ESCiphertext | undefined) =>
     !ciphertext ? 0 : ciphertext.iv.length + ciphertext.ciphertext.byteLength;
 
 /**
  * Size in bytes of a batch of ciphertexts
  */
-export const ciphertextBatchSize = (ciphertextBatch: (AesGcmCiphertext | undefined)[]) =>
+export const ciphertextBatchSize = (ciphertextBatch: (ESCiphertext | undefined)[]) =>
     ciphertextBatch.reduce((p, c) => p + ciphertextSize(c), 0);
 
 /**
@@ -111,4 +112,12 @@ export const hasReactivatedKey = ({
     return (
         !!AddressEvents && AddressEvents.filter(({ Action }) => Action === EVENT_ACTIONS.UPDATE).length === numAddresses
     );
+};
+
+/**
+ * Create the encrypted object to store in IndexedDB
+ */
+export const serializeAndEncryptItem = (indexKey: IndexKey, itemToStore: object) => {
+    const serializedItem = new TextEncoder().encode(JSON.stringify(itemToStore));
+    return encryptItem(indexKey, serializedItem);
 };

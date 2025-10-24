@@ -1,17 +1,22 @@
 import type { IDBPDatabase } from 'idb';
 
 import { CryptoProxy } from '@proton/crypto';
+import {
+    type ESCiphertext,
+    type GeneratedIndexKey,
+    type IndexKey,
+    generateIndexKey,
+    importIndexKey,
+} from '@proton/crypto/lib/subtle/ad-hoc/encryptedSearch';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import isTruthy from '@proton/utils/isTruthy';
 
 import {
-    AesKeyGenParams,
     ES_BACKGROUND_CONCURRENT,
     ES_MAX_CONCURRENT,
     ES_MAX_PARALLEL_ITEMS,
     INDEXING_STATUS,
-    KeyUsages,
     STORING_OUTCOME,
     TIMESTAMP_TYPE,
     defaultESProgress,
@@ -33,7 +38,6 @@ import {
     writeAllEvents,
 } from '../esIDB';
 import type {
-    AesGcmCiphertext,
     ESCache,
     ESItemInfo,
     ESProgress,
@@ -47,7 +51,7 @@ import type {
 } from '../models';
 import { esErrorReport, esSentryReport } from './esAPI';
 import { sizeOfESItem } from './esCache';
-import { isObjectEmpty } from './esUtils';
+import { isObjectEmpty, serializeAndEncryptItem } from './esUtils';
 
 /**
  * Execute the initial steps of a new metadata indexing, i.e. generating an index key and the DB itself
@@ -60,10 +64,10 @@ export const initializeEncryptedSearch = async (
     totalItems: number
 ) => {
     let esDB: IDBPDatabase<EncryptedSearchDB>;
-    let indexKey: CryptoKey;
+    let generatedIndexKey: GeneratedIndexKey;
     try {
         esDB = await createESDB(userID);
-        indexKey = await crypto.subtle.generateKey(AesKeyGenParams, true, KeyUsages);
+        generatedIndexKey = await generateIndexKey();
     } catch (error: any) {
         // In case IndexedDB cannot be initialised, or something is wrong with the index key,
         // we still want to continue the indexing process without any permanent
@@ -75,9 +79,8 @@ export const initializeEncryptedSearch = async (
     // is kept in binary form since IndexedDB allows this format
     const userKeysList = await getUserKeys();
     const primaryUserKey = userKeysList[0];
-    const keyToEncrypt = await crypto.subtle.exportKey('jwk', indexKey);
     const { message: encryptedKey } = await CryptoProxy.encryptMessage({
-        textData: JSON.stringify(keyToEncrypt),
+        textData: JSON.stringify(generatedIndexKey.exportedJsonKey),
         encryptionKeys: [primaryUserKey.publicKey],
         signingKeys: [primaryUserKey.privateKey],
     });
@@ -93,7 +96,7 @@ export const initializeEncryptedSearch = async (
     await writeAllEvents(userID, previousEventIDs);
     await metadataIndexingProgress.write(userID, initialProgress);
 
-    return { indexKey, esDB };
+    return { indexKey: generatedIndexKey.indexKey, esDB };
 };
 
 /**
@@ -109,19 +112,8 @@ export const decryptIndexKey = async (getUserKeys: GetUserKeys, encryptedKey: st
 
     const { data: decryptedKey } = decryptionResult;
 
-    const importedKey = await crypto.subtle.importKey(
-        'jwk',
-        JSON.parse(decryptedKey),
-        { name: AesKeyGenParams.name },
-        true,
-        KeyUsages
-    );
-
-    if ((importedKey as CryptoKey).algorithm) {
-        return importedKey;
-    }
-
-    throw new Error('Importing key failed');
+    const importedKey = await importIndexKey(JSON.parse(decryptedKey));
+    return importedKey;
 };
 
 /**
@@ -141,32 +133,13 @@ export const getIndexKey = async (getUserKeys: GetUserKeys, userID: string) => {
 };
 
 /**
- * Create the encrypted object to store in IndexedDB
- */
-export const encryptItem = async (itemToStore: Object, indexKey: CryptoKey): Promise<AesGcmCiphertext> => {
-    const itemToEncrypt = JSON.stringify(itemToStore);
-    const textEncoder = new TextEncoder();
-
-    const iv = new Uint8Array(12);
-    crypto.getRandomValues(iv);
-
-    const ciphertext = await crypto.subtle.encrypt(
-        { iv, name: AesKeyGenParams.name },
-        indexKey,
-        textEncoder.encode(itemToEncrypt)
-    );
-
-    return { ciphertext, iv };
-};
-
-/**
  * Store one batch of items metadata to IndexedDB
  */
 export const storeItemsMetadata = async <ESItemMetadata extends Object>(
     userID: string,
     resultMetadata: ESItemMetadata[],
     esSupported: boolean,
-    indexKey: CryptoKey | undefined,
+    indexKey: IndexKey | undefined,
     getItemInfo: GetItemInfo<ESItemMetadata>,
     esCacheRef?: React.MutableRefObject<ESCache<ESItemMetadata, unknown>>
 ) => {
@@ -179,7 +152,7 @@ export const storeItemsMetadata = async <ESItemMetadata extends Object>(
             resultMetadata.map(async (itemToStore) => ({
                 ID: getItemInfo(itemToStore).ID,
                 timepoint: getItemInfo(itemToStore).timepoint,
-                aesGcmCiphertext: await encryptItem(itemToStore, indexKey),
+                aesGcmCiphertext: await serializeAndEncryptItem(indexKey, itemToStore),
             }))
         );
 
@@ -212,7 +185,7 @@ export const buildMetadataDB = async <ESItemMetadata extends Object>({
 }: {
     userID: string;
     esSupported: boolean;
-    indexKey: CryptoKey | undefined;
+    indexKey: IndexKey | undefined;
     esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, unknown>>;
     queryItemsMetadata: InternalESCallbacks<ESItemMetadata, unknown>['queryItemsMetadata'];
     getItemInfo: GetItemInfo<ESItemMetadata>;
@@ -292,7 +265,7 @@ export const buildMetadataDB = async <ESItemMetadata extends Object>({
  */
 export const buildContentDB = async <ESItemContent>(
     userID: string,
-    indexKey: CryptoKey,
+    indexKey: IndexKey,
     abortIndexingRef: React.MutableRefObject<AbortController>,
     recordProgress: (progress: number) => void,
     fetchESItemContent: Required<InternalESCallbacks<unknown, unknown, ESItemContent>>['fetchESItemContent'],
@@ -314,7 +287,7 @@ export const buildContentDB = async <ESItemContent>(
     ): Promise<{
         ID: string;
         timepoint: ESTimepoint;
-        aesGcmCiphertext?: AesGcmCiphertext;
+        aesGcmCiphertext?: ESCiphertext;
     }> => {
         // In case any other parallel executions of this function fails, abortFetching
         // is triggered such that all others stop as well
@@ -349,7 +322,7 @@ export const buildContentDB = async <ESItemContent>(
                 return { ID, timepoint };
             }
 
-            const aesGcmCiphertext = await encryptItem(itemToStore, indexKey);
+            const aesGcmCiphertext = await serializeAndEncryptItem(indexKey, itemToStore);
             recordProgress(++counter);
             return { ID, timepoint, aesGcmCiphertext };
         } catch (error) {
@@ -489,7 +462,7 @@ export const buildContentDB = async <ESItemContent>(
  */
 export const retryContentIndexing = async <ESItemMetadata, ESSearchParameters, ESItemContent>(
     userID: string,
-    indexKey: CryptoKey,
+    indexKey: IndexKey,
     esCallbacks: InternalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>,
     abortIndexingRef: React.MutableRefObject<AbortController>
 ) => {

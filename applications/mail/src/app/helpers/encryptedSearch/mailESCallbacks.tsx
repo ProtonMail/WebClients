@@ -18,13 +18,13 @@ import {
     apiHelper,
     buildContentDB,
     checkVersionedESDB,
-    encryptItem,
     esSentryReport,
     executeContentOperations,
     metadataIndexingProgress,
     readLastEvent,
     readMetadataItem,
     readNumContent,
+    serializeAndEncryptItem,
     testKeywords,
 } from '@proton/encrypted-search';
 import type { NormalizedSearchParams } from '@proton/encrypted-search/lib/models/mail';
@@ -359,13 +359,10 @@ export const getESCallbacks = ({
                                         : decryptedBody
                                     : undefined;
 
-                            const aesGcmCiphertext = await encryptItem(
-                                {
-                                    decryptedBody: cleanDecryptedBody,
-                                    decryptedSubject,
-                                },
-                                indexKey
-                            );
+                            const aesGcmCiphertext = await serializeAndEncryptItem(indexKey, {
+                                decryptedBody: cleanDecryptedBody,
+                                decryptedSubject,
+                            });
                             const timepoint: ESTimepoint = [Time, Order];
                             return { ID: messageID, timepoint, aesGcmCiphertext };
                         }
