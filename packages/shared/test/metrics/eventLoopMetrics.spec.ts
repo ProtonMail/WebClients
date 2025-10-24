@@ -16,6 +16,8 @@ describe('EventLoopTimingTracker', () => {
         mockTime = 0;
         // Use our own time provider for testing
         (eventLoopTimingTracker as any).setTimeProvider(() => mockTime);
+        // Set sampling to 100% for testing
+        (eventLoopTimingTracker as any).setSamplingPercent(100);
     });
 
     afterEach(() => {
