@@ -33,12 +33,12 @@ export function DriveEmptyViewFreeUpload() {
         inputRef: fileInput,
         handleClick: fileClick,
         handleChange: fileChange,
-    } = useFileUploadInput(activeFolder.shareId, activeFolder.linkId);
+    } = useFileUploadInput(activeFolder.volumeId, activeFolder.shareId, activeFolder.linkId);
     const {
         inputRef: folderInput,
         handleClick: folderClick,
         handleChange: folderChange,
-    } = useFolderUploadInput(activeFolder.shareId, activeFolder.linkId);
+    } = useFolderUploadInput(activeFolder.volumeId, activeFolder.shareId, activeFolder.linkId);
 
     const freeUploadLength = <FreeUploadLength key="freeUploadLength" />;
 

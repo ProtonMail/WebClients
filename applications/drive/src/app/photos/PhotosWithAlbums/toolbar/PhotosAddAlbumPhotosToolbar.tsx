@@ -8,6 +8,7 @@ import type { OnFileSkippedSuccessCallbackData, OnFileUploadSuccessCallbackData 
 import { PhotosUploadButton } from './PhotosUploadButton';
 
 export interface PhotosAddAlbumPhotosToolbarProps {
+    volumeId: string;
     shareId: string;
     linkId: string;
     selectedCount: number;
@@ -18,6 +19,7 @@ export interface PhotosAddAlbumPhotosToolbarProps {
 }
 
 export const PhotosAddAlbumPhotosToolbar = ({
+    volumeId,
     shareId,
     linkId,
     selectedCount,
@@ -34,6 +36,7 @@ export const PhotosAddAlbumPhotosToolbar = ({
                     onStartUpload={onStartUpload}
                     onFileUpload={onFileUpload}
                     onFileSkipped={onFileSkipped}
+                    volumeId={volumeId}
                     shareId={shareId}
                     linkId={linkId}
                     type="toolbar"
