@@ -63,7 +63,7 @@ const DealsBF = (props: OfferProps) => {
                         </div>
                         <DealPrice />
                         <DealSaveSentence sentence={deal.sentence} sentenceSaveType={deal.sentenceSaveType} />
-                        <DealCTABF2024 />
+                        <DealCTABF2024 {...props} />
                         <DealGuarantee />
                         <div
                             className={clsx(

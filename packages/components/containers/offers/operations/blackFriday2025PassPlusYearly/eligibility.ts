@@ -9,7 +9,7 @@ import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 
-import hasEligibileCurrencyForBF from '../../helpers/hasEligibileCurrencyForBF';
+import { hasEligibileCurrencyForPassBF } from '../../helpers/hasEligibileCurrencyForBF';
 import isSubscriptionCheckAllowed from '../../helpers/isSubscriptionCheckAllowed';
 import OfferSubscription from '../../helpers/offerSubscription';
 import type { OfferConfig } from '../../interface';
@@ -32,7 +32,7 @@ const isEligible = ({ subscription, protonConfig, user, offerConfig, preferredCu
     const { canPay, isDelinquent, isPaid } = user;
     const isExternal = isManagedExternally(subscription);
 
-    const isPreferredCurrencyEligible = hasEligibileCurrencyForBF(preferredCurrency);
+    const isPreferredCurrencyEligible = hasEligibileCurrencyForPassBF(preferredCurrency);
 
     // delinquent, can't pay, has intentional scheduled modification, external subscription
     if (isDelinquent || !canPay || hasIntentionalScheduledModification(subscription) || isExternal) {
@@ -54,7 +54,12 @@ const isEligible = ({ subscription, protonConfig, user, offerConfig, preferredCu
                 (offerSubscription.hasYearlyCycle() || offerSubscription.hasFifteenMonthsCycle());
 
             const hasOtherPlanAndNotPass =
-                (offerSubscription.hasDrive() || offerSubscription.hasVPN2024() || offerSubscription.hasMail()) &&
+                (offerSubscription.hasDrive() ||
+                    offerSubscription.hasDrive1TB() ||
+                    offerSubscription.hasVPN2024() ||
+                    offerSubscription.hasDeprecatedVPN() ||
+                    offerSubscription.hasVPNPassBundle() ||
+                    offerSubscription.hasMail()) &&
                 offerSubscription.hasYearlyCycle() &&
                 !offerSubscription.hasPass();
 

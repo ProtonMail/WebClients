@@ -9,6 +9,7 @@ import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 
+import { BF_EXPERIMENT_GROUP_VALUES } from '../../helpers/experimentHelpers';
 import hasEligibileCurrencyForBF from '../../helpers/hasEligibileCurrencyForBF';
 import isSubscriptionCheckAllowed from '../../helpers/isSubscriptionCheckAllowed';
 import OfferSubscription from '../../helpers/offerSubscription';
@@ -21,9 +22,17 @@ interface Props {
     offerConfig: OfferConfig;
     lastSubscriptionEnd?: number;
     preferredCurrency: Currency;
+    userInExperiment?: number;
 }
 
-const isEligible = ({ subscription, protonConfig, user, offerConfig, preferredCurrency }: Props) => {
+const isEligible = ({
+    subscription,
+    protonConfig,
+    user,
+    offerConfig,
+    preferredCurrency,
+    userInExperiment = 0,
+}: Props) => {
     const parentApp = getAppFromPathnameSafe(window.location.pathname);
     const hasValidApp =
         (protonConfig.APP_NAME === APPS.PROTONACCOUNT && parentApp === APPS.PROTONMAIL) ||
@@ -40,6 +49,11 @@ const isEligible = ({ subscription, protonConfig, user, offerConfig, preferredCu
         return false;
     }
 
+    // this offer is only for group B
+    if (userInExperiment !== BF_EXPERIMENT_GROUP_VALUES.GROUP_TEST_VALUE) {
+        return false;
+    }
+
     if (subscription) {
         const offerSubscription = new OfferSubscription(subscription);
 
@@ -50,10 +64,12 @@ const isEligible = ({ subscription, protonConfig, user, offerConfig, preferredCu
 
         if (isPaid) {
             const canModifySubscription = canModify(subscription);
-            const hasMailMonthly = offerSubscription.hasMail() && offerSubscription.hasMonthlyCycle();
+            const hasMailYearlyOrFifteen =
+                offerSubscription.hasMail() &&
+                (offerSubscription.hasYearlyCycle() || offerSubscription.hasFifteenMonthsCycle());
 
             // Is on the correct app, has the correct currency, has the correct plan, and can modify the subscription
-            return hasValidApp && isPreferredCurrencyEligible && hasMailMonthly && canModifySubscription;
+            return hasValidApp && isPreferredCurrencyEligible && hasMailYearlyOrFifteen && canModifySubscription;
         }
     }
 

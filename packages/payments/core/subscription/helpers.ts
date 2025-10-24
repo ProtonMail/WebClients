@@ -105,6 +105,7 @@ const blackFriday2025Discounts: Set<string> = new Set([
     COUPON_CODES.BLACK_FRIDAY_2025_LUMOADDON,
     COUPON_CODES.BLACK_FRIDAY_2025_DEALPD,
     COUPON_CODES.BLACK_FRIDAY_2025_DEALVM,
+    COUPON_CODES.BLACK_FRIDAY_2025_TWOYEAR,
 ]);
 export const getHas2025OfferCoupon = (coupon: string | undefined | null): boolean => {
     if (!coupon) {
