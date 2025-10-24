@@ -14,6 +14,6 @@ export type VPNSignupMode = 'signup' | 'pricing' | 'vpn-pass-promotion';
 
 export interface VPNSignupModel extends SignupModelV2 {
     cycleData: CycleData;
-    signupType: 'vpn2024' | 'default';
+    signupType: 'default';
     mode: VPNSignupMode;
 }

@@ -321,6 +321,14 @@ export const getPasswordManager = (): PlanCardFeatureDefinition => {
     };
 };
 
+export const getFileAttachments = (): PlanCardFeatureDefinition => {
+    return {
+        text: c('pass_signup_2024: Info').t`File attachments (up to 10GB)`,
+        icon: 'file-pdf',
+        included: true,
+    };
+};
+
 export const getActivityLogText = () => {
     return c('pass_signup_2024: Info').t`Activity log`;
 };

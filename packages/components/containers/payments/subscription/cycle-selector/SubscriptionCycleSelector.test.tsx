@@ -20,6 +20,7 @@ beforeEach(() => {
         plansMap: PLANS_MAP,
         additionalCheckResults: [],
         allowedCycles: [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
+        checkResult: undefined,
     };
 });
 

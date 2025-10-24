@@ -25,19 +25,7 @@
 		}
 	}
 
-	&-bg--pass {
-		--bf-highlight: rgb(249 164 159 / 0.4);
-	}
-
-	&-bg--mail {
-		--bf-highlight: rgb(109 74 255 / 0.35);
-	}
-
-	&-bg--drive {
-		--bf-highlight: rgb(255 98 192 / 0.35);
-	}
-
-	&-bg--bf2023 {
+	&-bg--bf2025 {
 		.card-plan {
 			// fix for recommended pill on top of plans
 			--card-background: var(--background-weak);
@@ -55,7 +43,7 @@
 
 		@include media('>xsmall') {
 			background:
-				radial-gradient(37.39% 37.39% at 50.8% 0%, var(--bf-highlight, rgb(109 74 255 / 0.35)) 0%, rgb(0 0 0 / 0) 100%),
+				radial-gradient(37.39% 37.39% at 50.8% 0%, rgb(90 62 207 / 0.6) 0%, rgb(0 0 0 / 0) 100%),
 				#191927;
 		}
 	}
