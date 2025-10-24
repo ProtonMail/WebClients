@@ -50,14 +50,20 @@ const isEligible = ({ subscription, protonConfig, user, offerConfig, preferredCu
         if (isPaid) {
             const canModifySubscription = canModify(subscription);
             const hasVPNYearlyOrFifteen =
-                (offerSubscription.hasVPN2024() || offerSubscription.hasDeprecatedVPN()) &&
+                (offerSubscription.hasVPN2024() ||
+                    offerSubscription.hasDeprecatedVPN() ||
+                    offerSubscription.hasVPNPassBundle()) &&
                 (offerSubscription.hasYearlyCycle() || offerSubscription.hasFifteenMonthsCycle());
 
             const hasOtherPlanAndNotVPN =
-                (offerSubscription.hasDrive() || offerSubscription.hasMail() || offerSubscription.hasPass()) &&
+                (offerSubscription.hasDrive() ||
+                    offerSubscription.hasDrive1TB() ||
+                    offerSubscription.hasMail() ||
+                    offerSubscription.hasPass()) &&
                 offerSubscription.hasYearlyCycle() &&
                 !offerSubscription.hasVPN2024() &&
-                !offerSubscription.hasDeprecatedVPN();
+                !offerSubscription.hasDeprecatedVPN() &&
+                !offerSubscription.hasVPNPassBundle();
 
             // Is on the correct app, has the correct currency, has the correct plan, and can modify the subscription
             return (

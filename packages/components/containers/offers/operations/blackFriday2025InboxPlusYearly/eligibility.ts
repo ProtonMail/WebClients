@@ -55,8 +55,13 @@ const isEligible = ({ subscription, protonConfig, user, offerConfig, preferredCu
                 (offerSubscription.hasYearlyCycle() || offerSubscription.hasFifteenMonthsCycle());
 
             const hasOtherPlanAndNotMail =
-                (offerSubscription.hasDrive() || offerSubscription.hasVPN2024() || offerSubscription.hasPass()) &&
-                offerSubscription.hasYearlyCycle() &&
+                (offerSubscription.hasDrive() ||
+                    offerSubscription.hasDrive1TB() ||
+                    offerSubscription.hasVPN2024() ||
+                    offerSubscription.hasDeprecatedVPN() ||
+                    offerSubscription.hasVPNPassBundle() ||
+                    offerSubscription.hasPass()) &&
+                (offerSubscription.hasYearlyCycle() || offerSubscription.hasFifteenMonthsCycle()) &&
                 !offerSubscription.hasMail();
 
             // Is on the correct app, has the correct currency, has the correct plan, and can modify the subscription
