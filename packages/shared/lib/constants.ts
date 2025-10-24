@@ -749,6 +749,7 @@ export enum CALENDAR_UPSELL_PATHS {
     SHARE_CAL = 'share-cal',
     MAX_CAL = 'max-cal',
     COLOR_PER_EVENT = 'color-per-event',
+    BOOKING_PAGE = 'booking-page',
 }
 
 export enum DRIVE_UPSELL_PATHS {
