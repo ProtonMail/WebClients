@@ -1,4 +1,4 @@
-import type { AesGcmCiphertext } from '@proton/encrypted-search';
+import type { ESCiphertext } from '@proton/encrypted-search';
 import { apiHelper } from '@proton/encrypted-search';
 import { toText } from '@proton/mail/helpers/parserHtml';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
@@ -190,7 +190,7 @@ export const fetchMessage = async (
     }
 };
 
-export const prepareCiphertext = (itemToStore: ESMessage, aesGcmCiphertext: AesGcmCiphertext) => {
+export const prepareCiphertext = (itemToStore: ESMessage, aesGcmCiphertext: ESCiphertext) => {
     const { ID, Time, Order, LabelIDs } = itemToStore;
     return {
         ID,

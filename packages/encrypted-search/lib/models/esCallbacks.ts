@@ -1,3 +1,5 @@
+import type { IndexKey } from '@proton/crypto/lib/subtle/ad-hoc/encryptedSearch';
+
 import type { GetItemInfo } from './esFunctions';
 import type { RecordProgress } from './esIndexing';
 import type { CachedItem, ESEvent, ESStatusBooleans, EventsObject } from './interfaces';
@@ -156,7 +158,7 @@ export interface OptionalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemC
      * @param ID The ID of the item being deleted
      * @param indexKey The symmetric key to decrypt the item's metadata
      */
-    onContentDeletion: (ID: string, indexKey: CryptoKey) => Promise<void>;
+    onContentDeletion: (ID: string, indexKey: IndexKey) => Promise<void>;
 
     /**
      * Send the API request to fetch the item and return it decrypted. If fetching fails, return undefined.
@@ -175,7 +177,7 @@ export interface OptionalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemC
      */
     correctDecryptionErrors: (
         userID: string,
-        indexKey: CryptoKey,
+        indexKey: IndexKey,
         abortIndexingRef: React.MutableRefObject<AbortController>,
         esStatus: ESStatusBooleans,
         recordProgress: RecordProgress

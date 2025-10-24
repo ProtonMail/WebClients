@@ -1,10 +1,10 @@
+import { type ESCiphertext, type IndexKey, decryptItem } from '@proton/crypto/lib/subtle/ad-hoc/encryptedSearch';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { AesKeyGenParams, ES_EXTRA_RESULTS_LIMIT, ES_MAX_ITEMS_PER_BATCH } from '../constants';
+import { ES_EXTRA_RESULTS_LIMIT, ES_MAX_ITEMS_PER_BATCH } from '../constants';
 import { readContentBatch, readMetadataBatch, readSortedIDs } from '../esIDB';
 import type {
-    AesGcmCiphertext,
     CachedItem,
     ESCache,
     ESItem,
@@ -112,20 +112,16 @@ export const applySearch = <ESItemMetadata, ESItemContent, ESSearchParameters>(
  * Decrypt encrypted object from IndexedDB
  */
 export const decryptFromDB = async <Plaintext>(
-    aesGcmCiphertext: AesGcmCiphertext,
-    indexKey: CryptoKey,
+    aesGcmCiphertext: ESCiphertext,
+    indexKey: IndexKey,
     source: 'uncachedSearch' | 'cacheIDB' | 'readMetadataItem' | 'readContentItem' | 'searchUndecryptedElements'
 ): Promise<Plaintext> => {
     try {
         const textDecoder = new TextDecoder();
 
-        const decryptedMessage: ArrayBuffer = await crypto.subtle.decrypt(
-            { iv: aesGcmCiphertext.iv, name: AesKeyGenParams.name },
-            indexKey,
-            aesGcmCiphertext.ciphertext
-        );
+        const serializedItem = await decryptItem(indexKey, aesGcmCiphertext);
 
-        const decodedText = textDecoder.decode(new Uint8Array(decryptedMessage));
+        const decodedText = textDecoder.decode(serializedItem);
 
         try {
             return JSON.parse(decodedText);
@@ -154,7 +150,7 @@ export const decryptFromDB = async <Plaintext>(
  */
 export const uncachedSearch = async <ESItemMetadata, ESItemContent, ESSearchParameters>(
     userID: string,
-    indexKey: CryptoKey,
+    indexKey: IndexKey,
     esSearchParams: ESSearchParameters,
     esCallbacks: InternalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>,
     lastTimePoint: ESTimepoint | undefined,
@@ -314,7 +310,7 @@ const checkCacheTimespan = <ESItemMetadata, ESItemContent>(
 export const hybridSearch = async <ESItemMetadata, ESItemContent, ESSearchParameters>(
     esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, ESItemContent>>,
     esSearchParams: ESSearchParameters,
-    cachedIndexKey: CryptoKey | undefined,
+    cachedIndexKey: IndexKey | undefined,
     getUserKeys: GetUserKeys,
     userID: string,
     setResultsList: (Elements: ESItem<ESItemMetadata, ESItemContent>[]) => void,
