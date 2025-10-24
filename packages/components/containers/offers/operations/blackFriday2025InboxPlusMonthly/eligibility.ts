@@ -53,7 +53,12 @@ const isEligible = ({ subscription, protonConfig, user, offerConfig, preferredCu
             const hasMailMonthly = offerSubscription.hasMail() && offerSubscription.hasMonthlyCycle();
 
             const hasOtherPlanAndNotMail =
-                (offerSubscription.hasDrive() || offerSubscription.hasVPN2024() || offerSubscription.hasPass()) &&
+                (offerSubscription.hasDrive() ||
+                    offerSubscription.hasDrive1TB() ||
+                    offerSubscription.hasVPN2024() ||
+                    offerSubscription.hasDeprecatedVPN() ||
+                    offerSubscription.hasPass() ||
+                    offerSubscription.hasVPNPassBundle()) &&
                 offerSubscription.hasMonthlyCycle() &&
                 !offerSubscription.hasMail();
 
