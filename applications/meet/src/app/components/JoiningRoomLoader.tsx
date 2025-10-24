@@ -10,7 +10,7 @@ interface JoiningRoomLoaderProps {
 export const JoiningRoomLoader = ({ participantCount, participantsLoaded }: JoiningRoomLoaderProps) => {
     const joiningRoomTitles: { heading: (participantCount?: number) => string; description: string }[] = [
         {
-            heading: () => c('Title').t`Securing meeting...`,
+            heading: () => c('Title').t`Protecting meeting with end-to-end encryption...`,
             description: c('Description')
                 .t`Setting up group end-to-end encryption with advanced Messaging Layer Security (MLS) 
 `,

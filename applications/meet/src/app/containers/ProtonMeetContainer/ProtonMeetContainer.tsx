@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 
 import type { ExternalE2EEKeyProvider, Room } from '@proton-meet/livekit-client';
 import { ConnectionStateInfo, type GroupKeyInfo, MeetCoreErrorEnum } from '@proton-meet/proton-meet-core';
@@ -26,6 +26,7 @@ import { useMediaManagementContext } from '../../contexts/MediaManagementContext
 import { useWasmApp } from '../../contexts/WasmContext';
 import type { SRPHandshakeInfo } from '../../hooks/srp/useMeetSrp';
 import { useMeetingSetup } from '../../hooks/srp/useMeetingSetup';
+import { defaultDisplayNameHooks } from '../../hooks/useDefaultDisplayName';
 import { useDependencySetup } from '../../hooks/useDependencySetup';
 import { useLockMeeting } from '../../hooks/useLockMeeting';
 import { useParticipantNameMap } from '../../hooks/useParticipantNameMap';
@@ -54,6 +55,12 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
 
     useDependencySetup(guestMode);
 
+    const location = useLocation();
+    const searchParams = new URLSearchParams(location.search);
+    const instantJoinParam = searchParams.get('instantJoin');
+
+    const [isInstantJoin, setIsInstantJoin] = useState(instantJoinParam === 'true');
+
     const { initializeDevices } = useMediaManagementContext();
 
     const { createNotification } = useNotifications();
@@ -80,7 +87,12 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
 
     const instantMeetingRef = useRef(!token);
 
-    const [displayName, setDisplayName] = useState('');
+    const useDefaultDisplayName = guestMode
+        ? defaultDisplayNameHooks.unauthenticated
+        : defaultDisplayNameHooks.authenticated;
+    const defaultDisplayName = useDefaultDisplayName();
+
+    const [displayName, setDisplayName] = useState(defaultDisplayName);
 
     const [joiningInProgress, setJoiningInProgress] = useState(false);
     const [joinedRoom, setJoinedRoom] = useState(false);
@@ -585,6 +597,18 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
         }
     }, [getParticipants, token, participantNameMap, joinedRoom]);
 
+    const handleInstantJoin = async () => {
+        if (isInstantJoin) {
+            await joinInstantMeeting(displayName);
+        }
+
+        setIsInstantJoin(false);
+    };
+
+    useEffect(() => {
+        void handleInstantJoin();
+    }, []);
+
     if (decryptionReadinessStatus === MeetingDecryptionReadinessStatus.UNINITIALIZED) {
         return null;
     }
@@ -643,6 +667,9 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
                         instantMeeting={instantMeetingRef.current}
                         initialisedParticipantNameMap={initialisedParticipantNameMap}
                         participantNameMap={participantNameMap}
+                        displayName={displayName}
+                        setDisplayName={setDisplayName}
+                        isInstantJoin={isInstantJoin}
                     />
                 )}
                 {isWebRtcUnsupportedModalOpen && (
