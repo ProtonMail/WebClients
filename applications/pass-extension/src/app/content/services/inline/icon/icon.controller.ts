@@ -124,7 +124,7 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
                 .onSuccess(
                     contentScriptMessage({
                         type: WorkerMessageType.INLINE_ICON_SHIFT,
-                        payload: { type: 'request', top, left, radius, frameAttributes, maxWidth },
+                        payload: { type: 'initial', top, left, radius, frameAttributes, maxWidth },
                     }),
                     ({ dx }) => {
                         if (ctrl.signal.aborted) return;

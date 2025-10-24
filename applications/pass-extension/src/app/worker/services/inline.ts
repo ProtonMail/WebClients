@@ -158,7 +158,7 @@ export const createInlineService = () => {
                             type: WorkerMessageType.INLINE_DROPDOWN_CLOSED,
                             payload: {
                                 ...payload,
-                                type: 'result',
+                                type: 'relay',
                                 passive: frameId !== payload.fieldFrameId,
                             },
                         }),
@@ -191,7 +191,7 @@ export const createInlineService = () => {
                         type: WorkerMessageType.INLINE_DROPDOWN_OPEN,
                         payload: {
                             ...payload,
-                            type: 'result',
+                            type: 'relay',
                             coords: result.coords,
                             frameId: result.frame.frameId,
                             fieldFrameId: frameId,
@@ -223,7 +223,7 @@ export const createInlineService = () => {
                             type: WorkerMessageType.INLINE_DROPDOWN_OPENED,
                             payload: {
                                 ...payload,
-                                type: 'result',
+                                type: 'relay',
                                 passive: frameId !== payload.fieldFrameId,
                             },
                         }),
@@ -247,7 +247,7 @@ export const createInlineService = () => {
             return sendTabMessage(
                 backgroundMessage({
                     type: WorkerMessageType.INLINE_ICON_SHIFT,
-                    payload: { ...payload, type: 'result', frameId },
+                    payload: { ...payload, type: 'relay', frameId },
                 }),
                 { tabId, frameId: frame.parentFrameId }
             );

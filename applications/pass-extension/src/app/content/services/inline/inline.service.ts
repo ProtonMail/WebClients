@@ -29,7 +29,7 @@ export const createInlineService = ({
     const icon = createIconRegistry({ channel, dropdown, tag: elements.control });
 
     const onDropdownOpen: FrameMessageHandler<WorkerMessageType.INLINE_DROPDOWN_OPEN> = ({ payload }) => {
-        if (payload.type === 'request') return;
+        if (payload.type !== 'relay') return;
 
         const { autofocused, coords, frameId, action, frameAttributes, fieldFrameId, field, origin } = payload;
         const root = registry.root;

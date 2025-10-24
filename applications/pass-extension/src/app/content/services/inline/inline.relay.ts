@@ -36,7 +36,7 @@ export const createInlineRelay = ({
         (ctx, { payload }) => {
             /** Only handle dropdown opens for this frame (payload.passive = false).
              * Parent frames handle passive opens via `inline.listeners.ts` */
-            if (!(payload.type === 'result' && !payload.passive)) return;
+            if (!(payload.type === 'relay' && !payload.passive)) return;
 
             const { fieldId, formId } = payload;
             const form = ctx?.service.formManager.getFormById(formId);
@@ -63,7 +63,7 @@ export const createInlineRelay = ({
 
     const onDropdownClosed: FrameMessageHandler<WorkerMessageType.INLINE_DROPDOWN_CLOSED> = withContext(
         (ctx, { payload }) => {
-            if (!(payload.type === 'result' && !payload.passive)) return;
+            if (!(payload.type === 'relay' && !payload.passive)) return;
 
             dropdown.listeners.removeAll();
 
