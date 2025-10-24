@@ -28,7 +28,6 @@ import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { selectLockEnabled, selectOrganizationVaultCreationDisabled } from '@proton/pass/store/selectors';
 import { withTap } from '@proton/pass/utils/fp/pipe';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import noop from '@proton/utils/noop';
 
 import { AppMenuButton, VaultMenuButton } from './MenuButtons';
 
@@ -58,25 +57,7 @@ export const MenuDropdown: FC = () => {
 
     const vaultCreationDisabled = useSelector(selectOrganizationVaultCreationDisabled);
 
-    const { advanced, download } = useMenuItems(
-        useMemo(
-            () => ({
-                onAction: appMenu.close,
-                extra: {
-                    advanced: !popup?.expanded
-                        ? [
-                              {
-                                  icon: 'arrow-within-square',
-                                  label: c('Action').t`Open in a window`,
-                                  onClick: withAppMenuClose(popup?.expand ?? noop),
-                              },
-                          ]
-                        : [],
-                },
-            }),
-            [appMenu.close]
-        )
-    );
+    const { advanced, download } = useMenuItems(useMemo(() => ({ onAction: appMenu.close }), [appMenu.close]));
 
     const accountMenuItems: MenuItem[] = useMemo(
         () => [
@@ -127,6 +108,15 @@ export const MenuDropdown: FC = () => {
                         className="pt-1.5 pb-1.5"
                     />
 
+                    {!popup?.expanded && (
+                        <DropdownMenuButton
+                            onClick={withAppMenuClose(() => popup?.expand?.())}
+                            label={c('Label').t`Larger window`}
+                            icon="arrow-within-square"
+                            className="pt-1.5 pb-1.5"
+                        />
+                    )}
+
                     {canLock && (
                         <DropdownMenuButton
                             onClick={withAppMenuClose(lock)}
@@ -136,13 +126,6 @@ export const MenuDropdown: FC = () => {
                             className="pt-1.5 pb-1.5"
                         />
                     )}
-
-                    <DropdownMenuButton
-                        onClick={withAppMenuClose(() => onLink(getPassWebUrl(API_URL)))}
-                        label={c('Action').t`Open web app`}
-                        icon="arrow-within-square"
-                        className="pt-1.5 pb-1.5"
-                    />
 
                     <Submenu icon="notepad-checklist" label={c('Action').t`Advanced`} items={advanced} />
 
