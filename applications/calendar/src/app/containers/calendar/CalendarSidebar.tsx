@@ -31,6 +31,7 @@ import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
 
+import { ProtonMeetSpotlightWrapper } from './ProtonMeetSpotlightWrapper';
 import { Bookings } from './sidebar/Bookings';
 import { MyCalendars } from './sidebar/MyCalendars';
 import { OtherCalendars } from './sidebar/OtherCalendars';
@@ -109,7 +110,11 @@ const CalendarSidebar = ({
             logo={logo}
             expanded={expanded}
             onToggleExpand={onToggleExpand}
-            primary={<PrimaryButton collapsed={collapsed} onCreateEvent={onCreateEvent} />}
+            primary={
+                <ProtonMeetSpotlightWrapper>
+                    <PrimaryButton collapsed={collapsed} onCreateEvent={onCreateEvent} />
+                </ProtonMeetSpotlightWrapper>
+            }
             version={<AppVersion />}
             showStorage={showSideBar}
             collapsed={collapsed}
