@@ -14,6 +14,7 @@ import {
 } from '../../../store';
 
 interface PhotosUploadButtonProps {
+    volumeId: string;
     shareId: string;
     linkId: string;
     onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
@@ -24,6 +25,7 @@ interface PhotosUploadButtonProps {
     isAlbumUpload?: boolean;
 }
 export const PhotosUploadButton: FC<PhotosUploadButtonProps> = ({
+    volumeId,
     shareId,
     linkId,
     onFileUpload,
@@ -33,7 +35,7 @@ export const PhotosUploadButton: FC<PhotosUploadButtonProps> = ({
     isAddAlbumPhotosView,
     isAlbumUpload,
 }) => {
-    const { inputRef: fileInput, handleClick, handleChange } = useFileUploadInput(shareId, linkId, true);
+    const { inputRef: fileInput, handleClick, handleChange } = useFileUploadInput(volumeId, shareId, linkId, true);
 
     const { viewportWidth } = useActiveBreakpoint();
 
@@ -55,7 +57,7 @@ export const PhotosUploadButton: FC<PhotosUploadButtonProps> = ({
                 className="hidden"
                 onChange={(e) => {
                     onStartUpload?.();
-                    handleChange(e, onFileUpload, onFileSkipped);
+                    void handleChange(e, onFileUpload, onFileSkipped);
                 }}
                 accept={PHOTOS_ACCEPTED_INPUT}
             />

@@ -645,7 +645,7 @@ export const PhotosLayout = () => {
         };
     }, [initializePhotosView]);
 
-    if (!previewShareId || !uploadLinkId || !currentPageType || !shareId || !linkId) {
+    if (!previewShareId || !uploadLinkId || !currentPageType || !shareId || !linkId || !volumeId) {
         return <Loader />;
     }
 
@@ -655,6 +655,7 @@ export const PhotosLayout = () => {
             isForPhotos={true}
             shareId={albumShareId || shareId}
             parentLinkId={uploadLinkId}
+            volumeId={volumeId}
             onFileUpload={(file: OnFileUploadSuccessCallbackData) => onPhotoUploadedToAlbum(album, file)}
             onFileSkipped={(file: OnFileUploadSuccessCallbackData) => onPhotoUploadedToAlbum(album, file)}
             onDrop={currentPageType === AlbumsPageTypes.ALBUMSADDPHOTOS ? handleRedirectToAlbum : undefined}
@@ -740,6 +741,7 @@ export const PhotosLayout = () => {
                 }
                 toolbar={
                     <Toolbar
+                        volumeId={volumeId}
                         currentPageType={currentPageType}
                         previewShareId={previewShareId}
                         uploadLinkId={uploadLinkId}

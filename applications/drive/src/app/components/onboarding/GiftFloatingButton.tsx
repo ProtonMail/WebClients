@@ -219,7 +219,7 @@ function WelcomeActions({
         inputRef: fileInput,
         handleClick,
         handleChange: handleFileChange,
-    } = useFileUploadInput(activeFolder.shareId, activeFolder.linkId);
+    } = useFileUploadInput(activeFolder.volumeId, activeFolder.shareId, activeFolder.linkId);
     const { getLocalID } = useAuthentication();
 
     return (
@@ -231,7 +231,7 @@ function WelcomeActions({
                 ref={fileInput}
                 className="hidden"
                 onChange={(e) => {
-                    handleFileChange(e);
+                    void handleFileChange(e);
                     onActionDone();
                 }}
             />

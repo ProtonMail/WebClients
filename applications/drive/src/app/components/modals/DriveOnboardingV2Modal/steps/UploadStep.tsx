@@ -20,6 +20,7 @@ export const UploadStep = ({ onNext }: OnboardingProps) => {
     const { handleDrop } = useFileDrop({
         shareId: activeFolder.shareId,
         parentLinkId: activeFolder.linkId,
+        volumeId: activeFolder.volumeId,
         onFileUpload: () => countActionWithTelemetry(Actions.OnboardingV2UploadFile),
         onFolderUpload: () => countActionWithTelemetry(Actions.OnboardingV2UploadFolder),
     });
@@ -83,12 +84,12 @@ export const UploadStepButtons = ({ onNext }: OnboardingProps) => {
         inputRef: fileInput,
         handleClick: fileClick,
         handleChange: fileChange,
-    } = useFileUploadInput(activeFolder.shareId, activeFolder.linkId);
+    } = useFileUploadInput(activeFolder.volumeId, activeFolder.shareId, activeFolder.linkId);
     const {
         inputRef: folderInput,
         handleClick: folderClick,
         handleChange: folderChange,
-    } = useFolderUploadInput(activeFolder.shareId, activeFolder.linkId);
+    } = useFolderUploadInput(activeFolder.volumeId, activeFolder.shareId, activeFolder.linkId);
 
     return (
         <div className="w-full flex justify-space-between">
@@ -99,7 +100,7 @@ export const UploadStepButtons = ({ onNext }: OnboardingProps) => {
                 className="hidden"
                 onChange={(e) => {
                     void countActionWithTelemetry(Actions.OnboardingV2UploadFile);
-                    fileChange(e);
+                    void fileChange(e);
                     onNext();
                 }}
             />
@@ -109,7 +110,7 @@ export const UploadStepButtons = ({ onNext }: OnboardingProps) => {
                 className="hidden"
                 onChange={(e) => {
                     void countActionWithTelemetry(Actions.OnboardingV2UploadFolder);
-                    folderChange(e);
+                    void folderChange(e);
                     onNext();
                 }}
             />
