@@ -9,6 +9,7 @@ import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 
+import { BF_EXPERIMENT_GROUP_VALUES } from '../../helpers/experimentHelpers';
 import hasEligibileCurrencyForBF from '../../helpers/hasEligibileCurrencyForBF';
 import isSubscriptionCheckAllowed from '../../helpers/isSubscriptionCheckAllowed';
 import OfferSubscription from '../../helpers/offerSubscription';
@@ -21,13 +22,22 @@ interface Props {
     offerConfig: OfferConfig;
     lastSubscriptionEnd?: number;
     preferredCurrency: Currency;
+    userInExperiment?: number;
 }
 
-const isEligible = ({ subscription, protonConfig, user, offerConfig, preferredCurrency }: Props) => {
+const isEligible = ({
+    subscription,
+    protonConfig,
+    user,
+    offerConfig,
+    preferredCurrency,
+    userInExperiment = 0,
+}: Props) => {
     const parentApp = getAppFromPathnameSafe(window.location.pathname);
     const hasValidApp =
         (protonConfig?.APP_NAME === APPS.PROTONACCOUNT && parentApp === APPS.PROTONVPN_SETTINGS) ||
         protonConfig.APP_NAME === APPS.PROTONVPN_SETTINGS;
+
     const { canPay, isDelinquent, isPaid } = user;
     const isExternal = isManagedExternally(subscription);
 
@@ -35,6 +45,11 @@ const isEligible = ({ subscription, protonConfig, user, offerConfig, preferredCu
 
     // delinquent, can't pay, has intentional scheduled modification, external subscription
     if (isDelinquent || !canPay || hasIntentionalScheduledModification(subscription) || isExternal) {
+        return false;
+    }
+
+    // this offer is only for group A
+    if (userInExperiment !== BF_EXPERIMENT_GROUP_VALUES.GROUP_CONTROL_VALUE) {
         return false;
     }
 
@@ -49,11 +64,28 @@ const isEligible = ({ subscription, protonConfig, user, offerConfig, preferredCu
         if (isPaid) {
             const canModifySubscription = canModify(subscription);
             const hasVPNYearlyOrFifteen =
-                (offerSubscription.hasVPN2024() || offerSubscription.hasDeprecatedVPN()) &&
+                (offerSubscription.hasVPN2024() ||
+                    offerSubscription.hasDeprecatedVPN() ||
+                    offerSubscription.hasVPNPassBundle()) &&
                 (offerSubscription.hasYearlyCycle() || offerSubscription.hasFifteenMonthsCycle());
 
+            const hasOtherPlanAndNotVPN =
+                (offerSubscription.hasDrive() ||
+                    offerSubscription.hasDrive1TB() ||
+                    offerSubscription.hasMail() ||
+                    offerSubscription.hasPass()) &&
+                offerSubscription.hasYearlyCycle() &&
+                !offerSubscription.hasVPN2024() &&
+                !offerSubscription.hasDeprecatedVPN() &&
+                !offerSubscription.hasVPNPassBundle();
+
             // Is on the correct app, has the correct currency, has the correct plan, and can modify the subscription
-            return hasValidApp && isPreferredCurrencyEligible && hasVPNYearlyOrFifteen && canModifySubscription;
+            return (
+                hasValidApp &&
+                isPreferredCurrencyEligible &&
+                (hasVPNYearlyOrFifteen || hasOtherPlanAndNotVPN) &&
+                canModifySubscription
+            );
         }
     }
 
