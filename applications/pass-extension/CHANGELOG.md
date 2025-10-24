@@ -1,8 +1,16 @@
+### Version 1.32.11
+
+- Improve in-app notifications
+- Fix upsell/login redirects from content-script injections
+- Improve host permission detection with minimal check on login [chrome|firefox]
+
 ### Version 1.32.10
 
 - Remove theme onboarding modal (defaults to OS theme)
 - Fix secure-links shared view not de-duplicating items
 - Fix voided/unhandled browser API rejections
+- Fix pass extension intercepting domain image requests from web-app [firefox]
+- Improve host permission detection with minimal check on login [safari]
 
 ### Version 1.32.9
 
