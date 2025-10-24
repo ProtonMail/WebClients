@@ -53,6 +53,21 @@ pub mod clipboard {
     pub async fn read() -> napi::Result<String> {
         Clipboard::read().map_err(|e| napi::Error::from_reason(e.to_string()))
     }
+
+    #[napi]
+    #[cfg_attr(not(target_os = "linux"), allow(unused_variables))]
+    /// This function is only defined on Linux and used for autotype. Noop on other platforms
+    pub async fn write_text_linux_without_wait(text: String, sensitive: bool) -> napi::Result<()> {
+        #[cfg(target_os = "linux")]
+        {
+            Clipboard::write_linux_without_wait(&text, sensitive).map_err(|e| napi::Error::from_reason(e.to_string()))
+        }
+
+        #[cfg(not(target_os = "linux"))]
+        {
+            Ok(())
+        }
+    }
 }
 
 #[napi]
