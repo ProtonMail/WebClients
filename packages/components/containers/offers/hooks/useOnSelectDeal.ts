@@ -32,6 +32,7 @@ const useSelectDeal = (callback?: () => void) => {
         if (hasSubscriptionModal && hasInAppPayment && !loadingSubscriptionModal && plan) {
             const subscriptionParams: OpenCallbackProps = {
                 plan,
+                currency,
                 coupon: deal.couponCode,
                 cycle: deal.cycle,
                 maximumCycle: deal.cycle,

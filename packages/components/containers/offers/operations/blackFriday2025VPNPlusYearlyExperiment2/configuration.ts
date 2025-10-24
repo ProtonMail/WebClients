@@ -4,12 +4,12 @@ import { FeatureCode } from '@proton/features';
 import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
 
 import Layout from '../../components/blackFriday/Layout';
-import { getDriveFeatures } from '../../helpers/offerCopies';
+import { getVPNFeatures } from '../../helpers/offerCopies';
 import type { OfferConfig } from '../../interface';
 
-export const blackFriday2025DrivePlusMonthly2Config: OfferConfig = {
-    ID: 'black-friday-2025-drive-plus-monthly2',
-    featureCode: FeatureCode.OfferBlackFriday2025InboxPlusMonthly2,
+export const blackFriday2025VPNPlusYearlyExperiment2Config: OfferConfig = {
+    ID: 'black-friday-2025-vpn-plus-yearly-experiment2',
+    featureCode: FeatureCode.OfferBlackFriday2025VPNPlusYearlyExperiment2,
     canBeDisabled: true,
     topButton: {
         shape: 'ghost',
@@ -23,17 +23,17 @@ export const blackFriday2025DrivePlusMonthly2Config: OfferConfig = {
     hideDealPriceInfos: true,
     deals: [
         {
-            ref: 'proton_bf_25_drive_1m2_web',
-            dealName: PLAN_NAMES[PLANS.DRIVE],
+            ref: 'proton_bf_25_vpn_12m2_web',
+            dealName: PLAN_NAMES[PLANS.VPN2024],
             planIDs: {
-                [PLANS.DRIVE]: 1,
+                [PLANS.VPN2024]: 1,
             },
-            cycle: CYCLE.YEARLY,
+            cycle: CYCLE.TWO_YEARS,
             popular: 1,
             buttonSize: 'large',
-            couponCode: COUPON_CODES.BLACK_FRIDAY_2025,
-            features: getDriveFeatures,
-            sentenceSaveType: 'switch-yearly',
+            couponCode: COUPON_CODES.BLACK_FRIDAY_2025_TWOYEAR,
+            features: getVPNFeatures,
+            sentenceSaveType: 'switch-two-year',
         },
     ],
     layout: Layout,
