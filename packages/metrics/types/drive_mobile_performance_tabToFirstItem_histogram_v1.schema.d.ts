@@ -11,7 +11,8 @@
 export interface HttpsProtonMeDriveMobilePerformanceTabToFirstItemHistogramV1SchemaJson {
   Labels: {
     pageType: "my_files" | "computers" | "photos" | "shared_by_me" | "shared_with_me" | "trash";
-    loadType: "first" | "subsequent";
+    appLoadType: "first" | "subsequent";
+    dataSource: "remote" | "local";
   };
   Value: number;
 }
