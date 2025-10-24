@@ -17,4 +17,6 @@ export declare namespace biometric {
 export declare namespace clipboard {
     export function writeText(text: string, sensitive: boolean): Promise<void>;
     export function read(): Promise<string>;
+    /** This function is only defined on Linux and used for autotype. Noop on other platforms */
+    export function writeTextLinuxWithoutWait(text: string, sensitive: boolean): Promise<void>;
 }
