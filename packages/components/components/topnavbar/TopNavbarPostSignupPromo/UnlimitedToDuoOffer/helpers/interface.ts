@@ -1,4 +1,4 @@
-import type { TipProps, TopNavbarOfferConfig } from '../../common/interface';
+import type { TipProps, TopNavbarOfferConfig } from '../../common/helpers/interface';
 
 export type SUPPORTED_PRODUCTS = 'mail' | 'drive';
 

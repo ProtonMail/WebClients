@@ -6,7 +6,6 @@ import {
     checkAppIsValid,
     checkCycleIsValid,
     checkPlanIsValid,
-    checkTimeSubscribedIsValid,
     checksAllPass,
     hasNoScheduledSubscription,
     hasSubscription,
@@ -15,26 +14,26 @@ import {
     userCanPay,
     userNotDelinquent,
 } from '../../common/helpers/eligibilityChecks';
-import { POST_SIGNUP_GO_UNLIMITED_ACCOUNT_AGE } from './interface';
 
-interface EligiblityProps {
+interface EligibilityProps {
     user: UserModel;
     subscription?: Subscription;
     protonConfig: ProtonConfig;
     parentApp?: (typeof APPS)[keyof typeof APPS];
 }
 
-export const getIsEligible = ({ user, subscription, protonConfig, parentApp }: EligiblityProps) => {
+// TODO: add eligiblity based on account age and next login. Next ticket.
+
+export const getIsEligible = ({ user, subscription, protonConfig, parentApp }: EligibilityProps) => {
     return checksAllPass(
-        hasSubscription(subscription),
-        isWebSubscription(subscription),
-        hasNoScheduledSubscription(subscription),
         userCanPay(user),
         userNotDelinquent(user),
         noPassLifetime(user),
-        checkAppIsValid([APPS.PROTONMAIL, APPS.PROTONCALENDAR, APPS.PROTONDRIVE], protonConfig, parentApp),
-        checkPlanIsValid([PLANS.MAIL, PLANS.DRIVE], subscription),
+        hasSubscription(subscription),
+        isWebSubscription(subscription),
+        hasNoScheduledSubscription(subscription),
+        checkAppIsValid([APPS.PROTONMAIL, APPS.PROTONDRIVE], protonConfig, parentApp),
         checkCycleIsValid([CYCLE.YEARLY, CYCLE.TWO_YEARS], subscription),
-        checkTimeSubscribedIsValid(POST_SIGNUP_GO_UNLIMITED_ACCOUNT_AGE, subscription)
+        checkPlanIsValid([PLANS.BUNDLE], subscription)
     );
 };
