@@ -1,3 +1,11 @@
+### Version 1.32.11
+
+- Improve in-app notifications
+
+### Version 1.32.10
+
+- Fix secure-links shared view not de-duplicating items
+
 ### Version 1.32.7
 
 - [Gradual rollout] Support hiding/showing vaults
