@@ -1,4 +1,4 @@
-import type { TipProps, TopNavbarOfferConfig } from '../../common/interface';
+import type { TipProps, TopNavbarOfferConfig } from '../../common/helpers/interface';
 
 export const POST_SIGNUP_GO_UNLIMITED_ACCOUNT_AGE = 7;
 export const POST_SIGNUP_GO_UNLIMITED_DURATION = 30;

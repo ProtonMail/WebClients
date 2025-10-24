@@ -17,7 +17,7 @@ import { MailPostSignupOneDollar } from './PostSignupOneDollar/MailPostSignupOne
 import { useMailPostSignupOneDollar } from './PostSignupOneDollar/MailPostSignupOneDollar/useMailPostSignupOneDollar';
 import { UnlimitedToDuoOffer } from './UnlimitedToDuoOffer/UnlimitedToDuoOffer';
 import { useUnlimitedToDuoOffer } from './UnlimitedToDuoOffer/hooks/useUnlimitedToDuoOffer';
-import type { OfferHookReturnValue } from './common/interface';
+import type { OfferHookReturnValue } from './common/helpers/interface';
 
 interface Props {
     app: APP_NAMES;
