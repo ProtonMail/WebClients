@@ -253,14 +253,15 @@ export const createInlineApp = <A>({
      * sending action data. This process may be triggered automatically on page load
      * when autofill detection occurs. */
     const open = safeAsyncCall(async (action: A, prepare?: () => Promise<boolean>) => {
+        const ctrl = new AbortController();
         state.ctrl?.abort();
-        state.ctrl = new AbortController();
+        state.ctrl = ctrl;
 
         await ensureReady();
-        if (state.ctrl.signal.aborted) return;
+        if (ctrl.signal.aborted) return;
 
         const proceed = prepare ? await prepare() : true;
-        if (!proceed || state.ctrl.signal.aborted || state.visible) return;
+        if (!proceed || ctrl.signal.aborted || state.visible) return;
 
         popover.open();
         state.action = action;
