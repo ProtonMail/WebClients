@@ -4,8 +4,11 @@ import { useEffect, useRef } from 'react';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
+import { generateNodeUid } from '@proton/drive';
 
+import { useFlagsDriveSDKTransfer } from '../../flags/useFlagsDriveSDKTransfer';
 import { logError } from '../../utils/errorHandling';
+import { uploadManager } from '../../zustand/upload/uploadManager';
 import { useUploadProvider } from './UploadProvider';
 import type {
     OnFileSkippedSuccessCallbackData,
@@ -15,17 +18,24 @@ import type {
     UploadFileList,
 } from './interface';
 
-export function useFileUploadInput(shareId: string, linkId: string, isForPhotos: boolean = false) {
-    return useUploadInput(shareId, linkId, false, isForPhotos);
+export function useFileUploadInput(volumeId: string, shareId: string, linkId: string, isForPhotos: boolean = false) {
+    return useUploadInput(volumeId, shareId, linkId, false, isForPhotos);
 }
 
-export function useFolderUploadInput(shareId: string, linkId: string, isForPhotos: boolean = false) {
-    return useUploadInput(shareId, linkId, true, isForPhotos);
+export function useFolderUploadInput(volumeId: string, shareId: string, linkId: string, isForPhotos: boolean = false) {
+    return useUploadInput(volumeId, shareId, linkId, true, isForPhotos);
 }
 
-function useUploadInput(shareId: string, linkId: string, forFolders?: boolean, isForPhotos?: boolean) {
+function useUploadInput(
+    volumeId: string,
+    shareId: string,
+    linkId: string,
+    forFolders?: boolean,
+    isForPhotos?: boolean
+) {
     const { uploadFiles } = useUploadProvider();
     const { createNotification } = useNotifications();
+    const isSDKTransferEnabled = useFlagsDriveSDKTransfer({ isForPhotos });
 
     const inputRef = useRef<HTMLInputElement>(null);
 
@@ -91,6 +101,11 @@ function useUploadInput(shareId: string, linkId: string, forFolders?: boolean, i
         const { files } = e.target;
         if (!shareId || !linkId || !files) {
             return;
+        }
+
+        if (isSDKTransferEnabled) {
+            const parentUid = generateNodeUid(volumeId, linkId);
+            return uploadManager.upload(files, parentUid);
         }
 
         let filesToUpload = getItemsToUpload(files);

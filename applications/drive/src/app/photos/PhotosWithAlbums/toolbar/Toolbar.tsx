@@ -12,6 +12,7 @@ import { PhotosAddAlbumPhotosToolbar } from './PhotosAddAlbumPhotosToolbar';
 import { PhotosWithAlbumsToolbar } from './PhotosWithAlbumsToolbar';
 
 interface ToolbarProps {
+    volumeId: string;
     currentPageType: AlbumsPageTypes;
     previewShareId: string;
     uploadLinkId: string;
@@ -46,6 +47,7 @@ interface ToolbarProps {
 }
 
 export const Toolbar = ({
+    volumeId,
     currentPageType,
     previewShareId,
     uploadLinkId,
@@ -80,6 +82,7 @@ export const Toolbar = ({
         case AlbumsPageTypes.ALBUMS:
             return (
                 <PhotosWithAlbumsToolbar
+                    volumeId={volumeId}
                     shareId={previewShareId}
                     linkId={uploadLinkId}
                     data={albums}
@@ -93,6 +96,7 @@ export const Toolbar = ({
         case AlbumsPageTypes.ALBUMSADDPHOTOS:
             return (
                 <PhotosAddAlbumPhotosToolbar
+                    volumeId={volumeId}
                     shareId={previewShareId}
                     linkId={uploadLinkId}
                     selectedCount={selectedCount}
@@ -105,6 +109,7 @@ export const Toolbar = ({
         default:
             return (
                 <PhotosWithAlbumsToolbar
+                    volumeId={volumeId}
                     shareId={previewShareId}
                     linkId={uploadLinkId}
                     album={album}

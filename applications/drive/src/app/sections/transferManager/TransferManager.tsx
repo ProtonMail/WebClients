@@ -37,6 +37,10 @@ export const TransferManager = () => {
         // TBI
     };
 
+    if (!items.length) {
+        return null;
+    }
+
     return (
         <section aria-label={c('Label').t`File transfer overview`}>
             <TransferManagerHeader toggleMinimize={toggleMinimize} isMinimized={isMinimized} onClose={onClose} />
@@ -44,7 +48,9 @@ export const TransferManager = () => {
             {!isMinimized && (
                 <div>
                     {items.map((item) => (
-                        <div>{item.name}</div>
+                        <div key={item.id}>
+                            <span>{item.name}</span> - <span>{item.status}</span>
+                        </div>
                     ))}
                 </div>
             )}

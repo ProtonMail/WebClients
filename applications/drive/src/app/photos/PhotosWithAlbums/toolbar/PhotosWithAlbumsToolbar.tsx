@@ -72,6 +72,7 @@ interface AlbumGalleryDropdownButtonProps {
     showUploadButton: boolean;
     showDeleteAlbumButton: boolean;
     showLeaveAlbumButton: boolean;
+    volumeId: string;
     shareId: string;
     linkId: string;
 }
@@ -87,6 +88,7 @@ const AlbumGalleryDropdownButton = ({
     onAddAlbumPhotos,
     onFileUpload,
     onFileSkipped,
+    volumeId,
     shareId,
     linkId,
 }: AlbumGalleryDropdownButtonProps) => {
@@ -121,6 +123,7 @@ const AlbumGalleryDropdownButton = ({
                     )}
                     {showUploadButton && (
                         <PhotosUploadButton
+                            volumeId={volumeId}
                             shareId={shareId}
                             linkId={linkId}
                             onFileUpload={onFileUpload}
@@ -253,6 +256,7 @@ const ToolbarRightActionsAlbums = ({ createAlbumModal }: ToolbarRightActionsAlbu
 
 interface ToolbarRightActionsGalleryProps {
     uploadDisabled: boolean;
+    volumeId: string;
     shareId: string;
     linkId: string;
     onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
@@ -272,17 +276,23 @@ interface ToolbarRightActionsAlbumGalleryProps extends ToolbarRightActionsGaller
 
 const ToolbarRightActionsGallery = ({
     uploadDisabled,
+    volumeId,
     shareId,
     linkId,
     onFileUpload,
 }: ToolbarRightActionsGalleryProps) => {
     return (
-        <>{!uploadDisabled && <PhotosUploadButton shareId={shareId} linkId={linkId} onFileUpload={onFileUpload} />}</>
+        <>
+            {!uploadDisabled && (
+                <PhotosUploadButton volumeId={volumeId} shareId={shareId} linkId={linkId} onFileUpload={onFileUpload} />
+            )}
+        </>
     );
 };
 
 const ToolbarRightActionsAlbumGallery = ({
     uploadDisabled,
+    volumeId,
     shareId,
     linkId,
     onFileUpload,
@@ -351,6 +361,7 @@ const ToolbarRightActionsAlbumGallery = ({
             )}
             {!showIconOnly && !showAddAlbumsButton && showUploadButton && (
                 <PhotosUploadButton
+                    volumeId={volumeId}
                     shareId={shareId}
                     linkId={linkId}
                     onFileUpload={onFileUpload}
@@ -398,6 +409,7 @@ const ToolbarRightActionsAlbumGallery = ({
                 onFileUpload={onFileUpload}
                 onFileSkipped={onFileSkipped}
                 onAddAlbumPhotos={onAddAlbumPhotos}
+                volumeId={volumeId}
                 shareId={shareId}
                 linkId={linkId}
                 showUploadButton={showIconOnly && !showAddAlbumsButton && showUploadButton}
@@ -436,6 +448,7 @@ const SelectionDropdownButton = ({ children }: SelectionDropdownButtonProps) => 
 };
 
 interface PhotosWithAlbumToolbarProps {
+    volumeId: string;
     shareId: string;
     linkId: string; // the upload folder link ID (either root or inside a share album)
     rootLinkId?: string;
@@ -463,6 +476,7 @@ interface PhotosWithAlbumToolbarProps {
 }
 
 export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
+    volumeId,
     shareId,
     linkId,
     rootLinkId,
@@ -525,7 +539,12 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
         <Toolbar className="py-1 px-2 toolbar--heavy toolbar--in-container toolbar--no-bg">
             <div className="gap-2 flex items-center">
                 {tabSelection === AlbumsPageTypes.GALLERY && !hasSelection && (
-                    <ToolbarRightActionsGallery uploadDisabled={uploadDisabled} shareId={shareId} linkId={linkId} />
+                    <ToolbarRightActionsGallery
+                        volumeId={volumeId}
+                        uploadDisabled={uploadDisabled}
+                        shareId={shareId}
+                        linkId={linkId}
+                    />
                 )}
                 {tabSelection === AlbumsPageTypes.ALBUMS && !driveAlbumsDisabled && (
                     <ToolbarRightActionsAlbums createAlbumModal={createAlbumModal} />
@@ -540,6 +559,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                     onAddAlbumPhotos && (
                         <ToolbarRightActionsAlbumGallery
                             uploadDisabled={uploadDisabled}
+                            volumeId={volumeId}
                             shareId={shareId}
                             linkId={linkId}
                             requestDownload={requestDownload}

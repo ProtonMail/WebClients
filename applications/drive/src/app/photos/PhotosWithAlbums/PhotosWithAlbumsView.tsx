@@ -28,6 +28,7 @@ export const PhotosWithAlbumsView = () => {
     const {
         albumPhotos,
 
+        volumeId,
         shareId,
         linkId,
         photos,
@@ -87,7 +88,7 @@ export const PhotosWithAlbumsView = () => {
     );
 
     // We want to show the view in case they are more page to load, we can start to show what we already have
-    if (!shareId || !linkId || (isPhotosLoading && photos.length === 0)) {
+    if (!volumeId || !shareId || !linkId || (isPhotosLoading && photos.length === 0)) {
         return <Loader />;
     }
     const isSelectedTagEmtpy = !isPhotosEmpty && photos.length === 0;
@@ -106,7 +107,7 @@ export const PhotosWithAlbumsView = () => {
                 </div>
             )}
 
-            {isPhotosEmpty && <EmptyPhotos shareId={shareId} linkId={linkId} />}
+            {isPhotosEmpty && <EmptyPhotos volumeId={volumeId} shareId={shareId} linkId={linkId} />}
             {isSelectedTagEmtpy && <EmptyTagView tag={selectedTags[0]} />}
             {!isPhotosEmpty && !isSelectedTagEmtpy && (
                 <PhotosGrid
