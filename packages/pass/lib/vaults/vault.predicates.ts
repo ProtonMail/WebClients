@@ -3,14 +3,18 @@ import type { ShareItem } from '@proton/pass/store/reducers';
 import { type Share, ShareRole, ShareType } from '@proton/pass/types';
 import { and, not } from '@proton/pass/utils/fp/predicates';
 
-export const isActiveVault = <T extends Share>({ targetType, shareId }: T) =>
-    targetType === ShareType.Vault && PassCrypto.canOpenShare(shareId);
+export const isActiveVault = <T extends Share>(share: T): share is T & Share<ShareType.Vault> =>
+    share.targetType === ShareType.Vault && PassCrypto.canOpenShare(share.shareId);
 
-export const isWritableVault = <T extends Share>({ targetType, shareRoleId }: T) =>
-    targetType === ShareType.Vault && shareRoleId !== ShareRole.READ;
+export const isWritableVault = <T extends Share>(share: T): share is T & Share<ShareType.Vault> =>
+    share.targetType === ShareType.Vault && share.shareRoleId !== ShareRole.READ;
 
-export const isOwnVault = <T extends Share>({ targetType, owner }: T) => targetType === ShareType.Vault && owner;
-export const isSharedVault = <T extends Share>({ targetType, shared }: T) => targetType === ShareType.Vault && shared;
+export const isOwnVault = <T extends Share>(share: T): share is T & Share<ShareType.Vault> =>
+    share.targetType === ShareType.Vault && share.owner;
+
+export const isSharedVault = <T extends Share>(share: T): share is T & Share<ShareType.Vault> =>
+    share.targetType === ShareType.Vault && share.shared;
+
 export const hasNewUserInvitesReady = (vault: ShareItem<ShareType.Vault>) => vault.newUserInvitesReady > 0;
 export const isOwnReadonlyVault = and(not(isWritableVault), isOwnVault);
 export const isOwnWritableVault = and(isWritableVault, isOwnVault);
