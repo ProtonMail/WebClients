@@ -31,7 +31,7 @@ import type {
     SavedPaymentMethodExternal,
 } from './interface';
 import { getIsB2BAudienceFromPlan } from './plan/helpers';
-import { getHas2024OfferCoupon } from './subscription/helpers';
+import { getHas2025OfferCoupon } from './subscription/helpers';
 import type { Subscription } from './subscription/interface';
 import { isFreeSubscription } from './type-guards';
 
@@ -417,7 +417,7 @@ export class PaymentMethods {
         return (
             this.paymentStatus.VendorStates.Cash &&
             !isSignupFlow(this.flow) &&
-            !this.isBF2024Offer() &&
+            !this.isBF2025Offer() &&
             !this.coupon &&
             !this.isTrial
         );
@@ -441,7 +441,7 @@ export class PaymentMethods {
         return (
             flowSupportsDirectDebit &&
             billingCountrySupportsSEPA &&
-            !this.isBF2024Offer() &&
+            !this.isBF2025Offer() &&
             // separate flag for B2C plans
             (this.isB2BPlan() || this.enableSepaB2C) &&
             !this.isTrial
@@ -550,8 +550,8 @@ export class PaymentMethods {
         return !!this.planIDs?.[PLANS.PASS_LIFETIME];
     }
 
-    private isBF2024Offer() {
-        return getHas2024OfferCoupon(this.coupon) || this.buysPassLifetime();
+    private isBF2025Offer() {
+        return getHas2025OfferCoupon(this.coupon);
     }
 }
 

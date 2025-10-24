@@ -21,6 +21,7 @@ import {
     type Plan,
     type PlanIDs,
     type Subscription,
+    SubscriptionMode,
     TaxInclusive,
     formatTax,
     getCheckout,
@@ -169,18 +170,13 @@ const SubscriptionCheckout = ({
 
     const displayRenewNotice = isPaidPlanSelected && paymentNeeded;
 
-    const discountBadgeElement = !trial && (
-        <Badge
-            type="success"
-            tooltip={c('Info')
-                .t`Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.`}
-            className="ml-2 text-semibold"
-        >
-            -{checkout.discountPercent}%
-        </Badge>
-    );
-
     const tax = formatTax(checkResult);
+
+    const showDiscountBadge =
+        !loading &&
+        checkout.discountPercent !== 0 &&
+        checkResult.SubscriptionMode !== SubscriptionMode.CustomBillings &&
+        !trial;
 
     return (
         <Checkout
@@ -208,7 +204,16 @@ const SubscriptionCheckout = ({
             <div className="mb-4 flex flex-column">
                 <div className="min-h-custom" style={{ '--min-h-custom': '1.5rem' }}>
                     <strong className="mb-1">{isFreePlanSelected ? c('Payments.plan_name').t`Free` : planTitle}</strong>
-                    {checkout.discountPercent !== 0 && !loading && !couponConfig?.hidden && discountBadgeElement}
+                    {showDiscountBadge ? (
+                        <Badge
+                            type="success"
+                            tooltip={c('Info')
+                                .t`Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.`}
+                            className="ml-2 text-semibold"
+                        >
+                            -{checkout.discountPercent}%
+                        </Badge>
+                    ) : null}
                 </div>
 
                 <div className="min-h-custom" style={{ '--min-h-custom': '1.25rem' }}>
@@ -224,12 +229,7 @@ const SubscriptionCheckout = ({
 
                 return (
                     <CheckoutRow
-                        title={
-                            <>
-                                {usersTitle}
-                                {noAddonsAndCouponIsHidden ? discountBadgeElement : null}
-                            </>
-                        }
+                        title={usersTitle}
                         amount={noAddonsAndCouponIsHidden ? withDiscountPerMonth : membersPerMonth}
                         currency={currency}
                         suffix={perMonthSuffix}

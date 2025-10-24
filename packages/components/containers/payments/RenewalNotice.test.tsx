@@ -873,6 +873,385 @@ describe('terms and Conditions link', () => {
     });
 });
 
+describe('Custom Billing', () => {
+    beforeEach(() => {
+        jest.useFakeTimers();
+        jest.setSystemTime(new Date(2023, 10, 1));
+    });
+
+    afterEach(() => {
+        jest.useRealTimers();
+    });
+
+    describe('Regular renewal notice', () => {
+        it('should use subscription period end date for custom billing', () => {
+            const subscription: Subscription = {
+                PeriodEnd: +new Date(2024, 5, 15) / 1000, // June 15, 2024
+            } as any;
+
+            const { container } = render(
+                <RenewalNotice
+                    {...getProps({
+                        checkResult: {
+                            Amount: 499,
+                            AmountDue: 499,
+                            Proration: 0,
+                            CouponDiscount: 0,
+                            Gift: 0,
+                            Credit: 0,
+                            Coupon: null,
+                            Cycle: CYCLE.MONTHLY,
+                            TaxInclusive: 1,
+                            Taxes: [],
+                            Currency: 'CHF',
+                            SubscriptionMode: SubscriptionMode.CustomBillings,
+                            BaseRenewAmount: null,
+                            RenewCycle: null,
+                            PeriodEnd: +new Date(2024, 5, 15) / 1000,
+                        },
+                    })}
+                    cycle={CYCLE.MONTHLY}
+                    isCustomBilling={true}
+                    subscription={subscription}
+                />
+            );
+
+            expect(container).toHaveTextContent(
+                'Subscription auto-renews every month. Your next billing date is June 15th, 2024. Renewal pricing subject to change according to terms and conditions.'
+            );
+        });
+
+        it('should use subscription period end date for custom billing with yearly cycle', () => {
+            const subscription: Subscription = {
+                PeriodEnd: +new Date(2024, 11, 31) / 1000, // December 31, 2024
+            } as any;
+
+            const { container } = render(
+                <RenewalNotice
+                    {...getProps({
+                        checkResult: {
+                            Amount: 4788,
+                            AmountDue: 4788,
+                            Proration: 0,
+                            CouponDiscount: 0,
+                            Gift: 0,
+                            Credit: 0,
+                            Coupon: null,
+                            Cycle: CYCLE.YEARLY,
+                            TaxInclusive: 1,
+                            Taxes: [],
+                            Currency: 'CHF',
+                            SubscriptionMode: SubscriptionMode.CustomBillings,
+                            BaseRenewAmount: null,
+                            RenewCycle: null,
+                            PeriodEnd: +new Date(2024, 11, 31) / 1000,
+                        },
+                    })}
+                    cycle={CYCLE.YEARLY}
+                    isCustomBilling={true}
+                    subscription={subscription}
+                />
+            );
+
+            expect(container).toHaveTextContent(
+                'Subscription auto-renews every 12 months. Your next billing date is December 31st, 2024. Renewal pricing subject to change according to terms and conditions.'
+            );
+        });
+    });
+
+    describe('With coupons - one-time redemption', () => {
+        it('should render custom billing coupon notice for monthly cycle without showing discounted price', () => {
+            const subscription: Subscription = {
+                PeriodEnd: +new Date(2024, 2, 15) / 1000, // March 15, 2024
+            } as any;
+
+            const { container } = render(
+                <RenewalNotice
+                    {...getProps({
+                        planIDs: { [PLANS.MAIL]: 1 },
+                        checkResult: {
+                            Amount: 499,
+                            AmountDue: 100,
+                            Proration: 0,
+                            CouponDiscount: -399,
+                            Gift: 0,
+                            Credit: 0,
+                            Coupon: {
+                                Code: 'CUSTOM-BILLING-COUPON',
+                                Description: 'Custom billing coupon',
+                                MaximumRedemptionsPerUser: 1,
+                            },
+                            Cycle: CYCLE.MONTHLY,
+                            TaxInclusive: 1,
+                            Taxes: [],
+                            Currency: 'CHF',
+                            SubscriptionMode: SubscriptionMode.CustomBillings,
+                            BaseRenewAmount: null,
+                            RenewCycle: null,
+                            PeriodEnd: +new Date(2024, 2, 15) / 1000,
+                        },
+                    })}
+                    cycle={CYCLE.MONTHLY}
+                    isCustomBilling={true}
+                    subscription={subscription}
+                />
+            );
+
+            expect(container).toHaveTextContent(
+                'The specially discounted price is valid for the first month. Then it will automatically be renewed at CHF 4.99 every month. You can cancel at any time. Renewal pricing subject to change according to terms and conditions.'
+            );
+        });
+
+        it('should render custom billing coupon notice for yearly cycle without showing discounted price', () => {
+            const subscription: Subscription = {
+                PeriodEnd: +new Date(2024, 8, 30) / 1000, // September 30, 2024
+            } as any;
+
+            const { container } = render(
+                <RenewalNotice
+                    {...getProps({
+                        planIDs: { [PLANS.MAIL]: 1 },
+                        checkResult: {
+                            Amount: 4788,
+                            AmountDue: 2000,
+                            Proration: 0,
+                            CouponDiscount: -2788,
+                            Gift: 0,
+                            Credit: 0,
+                            Coupon: {
+                                Code: 'YEARLY-CUSTOM-BILLING',
+                                Description: 'Yearly custom billing coupon',
+                                MaximumRedemptionsPerUser: 1,
+                            },
+                            Cycle: CYCLE.YEARLY,
+                            TaxInclusive: 1,
+                            Taxes: [],
+                            Currency: 'CHF',
+                            SubscriptionMode: SubscriptionMode.CustomBillings,
+                            BaseRenewAmount: null,
+                            RenewCycle: null,
+                            PeriodEnd: +new Date(2024, 8, 30) / 1000,
+                        },
+                    })}
+                    cycle={CYCLE.YEARLY}
+                    isCustomBilling={true}
+                    subscription={subscription}
+                />
+            );
+
+            expect(container).toHaveTextContent(
+                'The specially discounted price is valid for the first 12 months. Then it will automatically be renewed at CHF 47.88 for 12 months. You can cancel at any time. Renewal pricing subject to change according to terms and conditions.'
+            );
+        });
+
+        it('should render short custom billing coupon notice without terms and conditions', () => {
+            const subscription: Subscription = {
+                PeriodEnd: +new Date(2024, 1, 28) / 1000, // February 28, 2024
+            } as any;
+
+            const { container } = render(
+                <RenewalNotice
+                    {...getProps({
+                        planIDs: { [PLANS.MAIL]: 1 },
+                        checkResult: {
+                            Amount: 499,
+                            AmountDue: 250,
+                            Proration: 0,
+                            CouponDiscount: -249,
+                            Gift: 0,
+                            Credit: 0,
+                            Coupon: {
+                                Code: 'SHORT-CUSTOM-BILLING',
+                                Description: 'Short custom billing coupon',
+                                MaximumRedemptionsPerUser: 1,
+                            },
+                            Cycle: CYCLE.MONTHLY,
+                            TaxInclusive: 1,
+                            Taxes: [],
+                            Currency: 'CHF',
+                            SubscriptionMode: SubscriptionMode.CustomBillings,
+                            BaseRenewAmount: null,
+                            RenewCycle: null,
+                            PeriodEnd: +new Date(2024, 1, 28) / 1000,
+                        },
+                    })}
+                    cycle={CYCLE.MONTHLY}
+                    isCustomBilling={true}
+                    subscription={subscription}
+                    short
+                />
+            );
+
+            expect(container).toHaveTextContent('Renews at CHF 4.99, cancel anytime.');
+            expect(container).not.toHaveTextContent('terms and conditions');
+        });
+    });
+
+    describe('With coupons - multiple redemptions', () => {
+        it('should render custom billing multiple redemptions coupon notice for monthly cycle', () => {
+            const subscription: Subscription = {
+                PeriodEnd: +new Date(2024, 3, 10) / 1000, // April 10, 2024
+            } as any;
+
+            const { container } = render(
+                <RenewalNotice
+                    {...getProps({
+                        planIDs: { [PLANS.MAIL]: 1 },
+                        checkResult: {
+                            Amount: 499,
+                            AmountDue: 100,
+                            Proration: 0,
+                            CouponDiscount: -399,
+                            Gift: 0,
+                            Credit: 0,
+                            Coupon: {
+                                Code: 'MULTI-CUSTOM-BILLING',
+                                Description: 'Multi redemption custom billing',
+                                MaximumRedemptionsPerUser: 3,
+                            },
+                            Cycle: CYCLE.MONTHLY,
+                            TaxInclusive: 1,
+                            Taxes: [],
+                            Currency: 'CHF',
+                            SubscriptionMode: SubscriptionMode.CustomBillings,
+                            BaseRenewAmount: null,
+                            RenewCycle: null,
+                            PeriodEnd: +new Date(2024, 3, 10) / 1000,
+                        },
+                    })}
+                    cycle={CYCLE.MONTHLY}
+                    isCustomBilling={true}
+                    subscription={subscription}
+                />
+            );
+
+            expect(container).toHaveTextContent(
+                'The specially discounted price is valid for the first month. The coupon is valid for 3 renewals. Then it will automatically be renewed at CHF 4.99 for 1 month. You can cancel at any time. Renewal pricing subject to change according to terms and conditions.'
+            );
+        });
+
+        it('should render custom billing multiple redemptions coupon notice for yearly cycle', () => {
+            const subscription: Subscription = {
+                PeriodEnd: +new Date(2024, 6, 20) / 1000, // July 20, 2024
+            } as any;
+
+            const { container } = render(
+                <RenewalNotice
+                    {...getProps({
+                        planIDs: { [PLANS.MAIL]: 1 },
+                        checkResult: {
+                            Amount: 4788,
+                            AmountDue: 2000,
+                            Proration: 0,
+                            CouponDiscount: -2788,
+                            Gift: 0,
+                            Credit: 0,
+                            Coupon: {
+                                Code: 'MULTI-YEARLY-CUSTOM',
+                                Description: 'Multi yearly custom billing',
+                                MaximumRedemptionsPerUser: 2,
+                            },
+                            Cycle: CYCLE.YEARLY,
+                            TaxInclusive: 1,
+                            Taxes: [],
+                            Currency: 'CHF',
+                            SubscriptionMode: SubscriptionMode.CustomBillings,
+                            BaseRenewAmount: null,
+                            RenewCycle: null,
+                            PeriodEnd: +new Date(2024, 6, 20) / 1000,
+                        },
+                    })}
+                    cycle={CYCLE.YEARLY}
+                    isCustomBilling={true}
+                    subscription={subscription}
+                />
+            );
+
+            expect(container).toHaveTextContent(
+                'The specially discounted price is valid for the first 12 months. The coupon is valid for 2 renewals. Then it will automatically be renewed at CHF 47.88 for 12 months. You can cancel at any time. Renewal pricing subject to change according to terms and conditions.'
+            );
+        });
+    });
+
+    describe('From check result', () => {
+        it('should render custom billing notice from check result', () => {
+            const { container } = render(
+                <RenewalNoticeFromCheck
+                    checkResult={{
+                        Amount: 499,
+                        AmountDue: 499,
+                        Proration: 0,
+                        CouponDiscount: 0,
+                        Gift: 0,
+                        Credit: 0,
+                        Coupon: null,
+                        Cycle: CYCLE.MONTHLY,
+                        TaxInclusive: 1,
+                        Taxes: [],
+                        Currency: 'CHF',
+                        SubscriptionMode: SubscriptionMode.CustomBillings,
+                        BaseRenewAmount: null,
+                        RenewCycle: null,
+                        PeriodEnd: +new Date(2024, 4, 25) / 1000, // May 25, 2024
+                    }}
+                    plansMap={getDefaultPlansMap()}
+                    planIDs={{ [PLANS.MAIL]: 1 }}
+                    subscription={
+                        {
+                            PeriodEnd: +new Date(2024, 4, 25) / 1000,
+                        } as any
+                    }
+                    app={APPS.PROTONMAIL}
+                />
+            );
+
+            expect(container).toHaveTextContent(
+                'Subscription auto-renews every month. Your next billing date is May 25th, 2024. Renewal pricing subject to change according to terms and conditions.'
+            );
+        });
+
+        it('should render custom billing notice with coupon from check result', () => {
+            const { container } = render(
+                <RenewalNoticeFromCheck
+                    checkResult={{
+                        Amount: 4788,
+                        AmountDue: 2000,
+                        Proration: 0,
+                        CouponDiscount: -2788,
+                        Gift: 0,
+                        Credit: 0,
+                        Coupon: {
+                            Code: 'CUSTOM-CHECK-RESULT',
+                            Description: 'Custom billing from check result',
+                            MaximumRedemptionsPerUser: 1,
+                        },
+                        Cycle: CYCLE.YEARLY,
+                        TaxInclusive: 1,
+                        Taxes: [],
+                        Currency: 'CHF',
+                        SubscriptionMode: SubscriptionMode.CustomBillings,
+                        BaseRenewAmount: null,
+                        RenewCycle: null,
+                        PeriodEnd: +new Date(2024, 9, 15) / 1000, // October 15, 2024
+                    }}
+                    plansMap={getDefaultPlansMap()}
+                    planIDs={{ [PLANS.MAIL]: 1 }}
+                    subscription={
+                        {
+                            PeriodEnd: +new Date(2024, 9, 15) / 1000,
+                        } as any
+                    }
+                    app={APPS.PROTONMAIL}
+                />
+            );
+
+            expect(container).toHaveTextContent(
+                'The specially discounted price is valid for the first 12 months. Then it will automatically be renewed at CHF 47.88 for 12 months. You can cancel at any time. Renewal pricing subject to change according to terms and conditions.'
+            );
+        });
+    });
+});
+
 describe('getPassLifetimeRenewNoticeText', () => {
     it('should show basic lifetime message when no subscription exists', () => {
         const { container } = render(

@@ -282,6 +282,7 @@ const PaymentStep = ({
                             // coupon syncing here
                             additionalCheckResults={undefined}
                             allowedCycles={allowedCycles}
+                            checkResult={subscriptionData.checkResult}
                         />
                     )}
                     <ExclusiveVatText

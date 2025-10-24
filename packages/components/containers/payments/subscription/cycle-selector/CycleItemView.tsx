@@ -20,8 +20,15 @@ const CycleItemView = ({
         couponConfig?.renderCycleTitle?.({ cycle: checkout.cycle }) ??
         getShortBillingText(checkout.cycle, checkout.planIDs);
 
+    const cyclePriceComparePosition = couponConfig?.cyclePriceComparePosition ?? 'after';
+    const cyclePriceCompareElement = couponConfig?.renderCyclePriceCompare?.({
+        cycle: checkout.cycle,
+        suffix: checkout.monthlySuffix,
+    });
+
     const pricePerMonth = (
         <>
+            {cyclePriceComparePosition === 'before' && cyclePriceCompareElement}
             <Price
                 currency={checkout.currency}
                 suffix={checkout.monthlySuffix}
@@ -29,10 +36,7 @@ const CycleItemView = ({
             >
                 {checkout.viewPricePerMonth}
             </Price>
-            {couponConfig?.renderCyclePriceCompare?.({
-                cycle: checkout.cycle,
-                suffix: checkout.monthlySuffix,
-            })}
+            {cyclePriceComparePosition === 'after' && cyclePriceCompareElement}
         </>
     );
 

@@ -12,7 +12,7 @@ import {
     PLANS,
     type Plan,
     fixPlanName,
-    getHas2024OfferCoupon,
+    getHas2025OfferCoupon,
     getPlanByName,
     getPlanMaxIPs,
     getSupportedAddons,
@@ -174,7 +174,7 @@ export const getSignupSearchParams = (
 export type SignupParameters = ReturnType<typeof getSignupSearchParams>;
 
 export const getThemeFromLocation = (location: Location, searchParams: URLSearchParams) => {
-    const hasBFCoupon = getHas2024OfferCoupon(searchParams.get('coupon')?.toUpperCase());
+    const hasBFCoupon = getHas2025OfferCoupon(searchParams.get('coupon')?.toUpperCase());
     const hasVisionary = searchParams.get('plan')?.toLowerCase() === PLANS.VISIONARY;
     if (location.pathname.includes('signup') && (hasBFCoupon || hasVisionary)) {
         return { themeType: ThemeTypes.Carbon, className: '' };

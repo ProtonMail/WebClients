@@ -12,7 +12,7 @@ import {
     useConfig,
     useErrorHandler,
 } from '@proton/components';
-import { getIsVPNPassPromotion, getIsVpn2024Deal } from '@proton/components/containers/payments/subscription/helpers';
+import { getIsVPNPassPromotion } from '@proton/components/containers/payments/subscription/helpers';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
@@ -27,7 +27,7 @@ import {
     type Plan,
     SubscriptionMode,
     getBillingAddressFromPaymentStatus,
-    getHas2024OfferCoupon,
+    getHas2025OfferCoupon,
     getIsVpnB2BPlan,
     getPlanFromPlanIDs,
     getPlanIDs,
@@ -54,7 +54,7 @@ import unique from '@proton/utils/unique';
 
 import { cachedPlans, cachedPlansMap } from '../defaultPlans';
 import { getOptimisticDomains } from '../signup/helper';
-import { type SignupCacheResult, SignupType, type SubscriptionData } from '../signup/interfaces';
+import { type SignupCacheResult, SignupType } from '../signup/interfaces';
 import { getPlanIDsFromParams, getSignupSearchParams } from '../signup/searchParams';
 import {
     getSubscriptionMetricsData,
@@ -286,8 +286,8 @@ const SingleSignupContainer = ({
             return 'dark';
         }
 
-        if (getHas2024OfferCoupon(signupParameters.coupon)) {
-            return 'bf2023';
+        if (getHas2025OfferCoupon(signupParameters.coupon)) {
+            return 'bf2025';
         }
     })();
 
@@ -404,16 +404,6 @@ const SingleSignupContainer = ({
         };
     };
 
-    const getSignupType = (
-        selectedPlan: Plan,
-        subscriptionData: SubscriptionData | undefined,
-        coupon: string | undefined
-    ) => {
-        return getIsVpn2024Deal(selectedPlan.Name as PLANS, subscriptionData?.checkResult.Coupon?.Code || coupon)
-            ? 'vpn2024'
-            : 'default';
-    };
-
     const updatePlans = async (currency: Currency) => {
         const plansResult = await getPlans({ api: silentApi });
         const plans = plansResult.plans;
@@ -424,12 +414,11 @@ const SingleSignupContainer = ({
             plans: plans,
         });
 
-        const { plansMap, subscriptionData, cycleData, subscriptionDataCycleMapping, coupon, selectedPlan } =
-            await checkPlans({
-                plans,
-                preferredCurrency,
-                withModel: true,
-            });
+        const { plansMap, subscriptionData, cycleData, subscriptionDataCycleMapping } = await checkPlans({
+            plans,
+            preferredCurrency,
+            withModel: true,
+        });
 
         updateMode(preferredCurrency);
 
@@ -439,7 +428,7 @@ const SingleSignupContainer = ({
             subscriptionData,
             cycleData,
             subscriptionDataCycleMapping,
-            signupType: getSignupType(selectedPlan, subscriptionData, coupon),
+            signupType: 'default' as const,
         });
     };
 
@@ -474,12 +463,11 @@ const SingleSignupContainer = ({
             const mode = getSignupMode(signupParameters.coupon, preferredCurrency);
             setModelDiff({ mode });
 
-            const { plansMap, subscriptionData, cycleData, subscriptionDataCycleMapping, coupon, selectedPlan } =
-                await checkPlans({
-                    plans,
-                    preferredCurrency,
-                    billingAddress: getBillingAddressFromPaymentStatus(paymentStatus),
-                });
+            const { plansMap, subscriptionData, cycleData, subscriptionDataCycleMapping } = await checkPlans({
+                plans,
+                preferredCurrency,
+                billingAddress: getBillingAddressFromPaymentStatus(paymentStatus),
+            });
 
             sendSignupLoadTelemetry({
                 planIDs: subscriptionData.planIDs,
@@ -498,7 +486,7 @@ const SingleSignupContainer = ({
                 subscriptionData,
                 subscriptionDataCycleMapping,
                 cycleData,
-                signupType: getSignupType(selectedPlan, subscriptionData, coupon),
+                signupType: 'default' as const,
                 loadingDependencies: false,
             });
         };
@@ -635,7 +623,6 @@ const SingleSignupContainer = ({
                             defaultEmail={signupParameters.email}
                             selectedPlan={selectedPlan}
                             cycleData={model.cycleData}
-                            isVpn2024Deal={model.signupType === 'vpn2024'}
                             isB2bPlan={isB2bPlan}
                             background={background}
                             upsellShortPlan={upsellShortPlan}
@@ -708,7 +695,6 @@ const SingleSignupContainer = ({
                             defaultEmail={signupParameters.email}
                             selectedPlan={selectedPlan}
                             cycleData={model.cycleData}
-                            isVpn2024Deal={model.signupType === 'vpn2024'}
                             isB2bPlan={isB2bPlan}
                             background={background}
                             upsellShortPlan={upsellShortPlan}
