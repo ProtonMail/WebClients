@@ -3,6 +3,7 @@ import { useCallback } from 'react';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
+import { generateNodeUid } from '@proton/drive';
 import { DS_STORE } from '@proton/shared/lib/drive/constants';
 import {
     getFileExtension,
@@ -11,6 +12,7 @@ import {
     isVideo,
 } from '@proton/shared/lib/helpers/mimetype';
 
+import { useFlagsDriveSDKTransfer } from '../../flags/useFlagsDriveSDKTransfer';
 import { mimeTypeFromFile, useUpload } from '../../store/_uploads';
 import type {
     OnFileSkippedSuccessCallbackData,
@@ -19,6 +21,7 @@ import type {
     UploadFileList,
 } from '../../store/_uploads/interface';
 import { isTransferCancelError } from '../../utils/transfer';
+import { uploadManager } from '../../zustand/upload/uploadManager';
 
 declare global {
     interface DataTransferItem {
@@ -43,17 +46,19 @@ export const useFileDrop = ({
     onFileUpload,
     onFolderUpload,
     onFileSkipped,
+    volumeId,
 }: {
     isForPhotos?: boolean;
     shareId: string;
     parentLinkId: string;
+    volumeId: string;
     onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
     onFolderUpload?: (folder: OnFolderUploadSuccessCallbackData) => void;
     onFileSkipped?: (folder: OnFileSkippedSuccessCallbackData) => void;
 }) => {
     const { createNotification } = useNotifications();
     const { uploadFiles } = useUpload();
-
+    const isSDKTransferEnabled = useFlagsDriveSDKTransfer({ isForPhotos });
     const handleDrop = useCallback(
         async (e: React.DragEvent<HTMLDivElement>) => {
             e.preventDefault();
@@ -64,6 +69,11 @@ export const useFileDrop = ({
             }
 
             const filesToUpload: UploadFileList = [];
+
+            if (isSDKTransferEnabled) {
+                const parentUid = generateNodeUid(volumeId, parentLinkId);
+                return uploadManager.uploadDrop(items, parentUid);
+            }
 
             let unSupportedFiles = false;
 

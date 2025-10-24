@@ -10,22 +10,23 @@ import { usePublicShareStore } from '../../../zustand/public/public-share.store'
 import { DriveEmptyView } from '../../layout/DriveEmptyView';
 
 interface EmptyPlaceholderProps {
+    volumeId: string;
     token: string;
     linkId: string;
 }
 
-export const SharedFolderPageEmptyView = ({ token, linkId }: EmptyPlaceholderProps) => {
+export const SharedFolderPageEmptyView = ({ volumeId, token, linkId }: EmptyPlaceholderProps) => {
     const {
         inputRef: fileInput,
         handleClick: handleFileClick,
         handleChange: handleFileChange,
-    } = useFileUploadInput(token, linkId);
+    } = useFileUploadInput(volumeId, token, linkId);
 
     const {
         inputRef: folerInput,
         handleClick: handleFolderClick,
         handleChange: handleFolderChange,
-    } = useFolderUploadInput(token, linkId);
+    } = useFolderUploadInput(volumeId, token, linkId);
     const { viewOnly } = usePublicShareStore((state) => ({ viewOnly: state.viewOnly }));
     return (
         <div className={clsx(!viewOnly && 'border-2 border-dashed rounded border-norm mb-5 h-full')}>

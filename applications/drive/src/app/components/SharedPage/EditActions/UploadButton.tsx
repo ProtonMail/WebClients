@@ -6,21 +6,22 @@ import { Dropdown, DropdownMenu, DropdownMenuButton, Icon, usePopperAnchor } fro
 import { useFileUploadInput, useFolderUploadInput } from '../../../store';
 
 interface UploadFileButtonProps {
+    volumeId: string;
     token: string;
     linkId: string;
 }
-export const UploadButton = ({ token, linkId }: UploadFileButtonProps) => {
+export const UploadButton = ({ volumeId, token, linkId }: UploadFileButtonProps) => {
     const {
         inputRef: fileInput,
         handleClick: handleFileClick,
         handleChange: handleFileChange,
-    } = useFileUploadInput(token, linkId);
+    } = useFileUploadInput(volumeId, token, linkId);
 
     const {
         inputRef: folerInput,
         handleClick: handleFolderClick,
         handleChange: handleFolderChange,
-    } = useFolderUploadInput(token, linkId);
+    } = useFolderUploadInput(volumeId, token, linkId);
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     return (

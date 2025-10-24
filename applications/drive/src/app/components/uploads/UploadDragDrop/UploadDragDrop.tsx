@@ -18,6 +18,7 @@ interface UploadDragDropProps {
     children: ReactNode;
     shareId: string;
     parentLinkId: string;
+    volumeId: string;
     className?: string;
     disabled?: boolean;
     isForPhotos?: boolean;
@@ -32,6 +33,7 @@ const UploadDragDrop = ({
     className,
     disabled,
     shareId,
+    volumeId,
     parentLinkId,
     onFileUpload,
     onFileSkipped,
@@ -42,6 +44,7 @@ const UploadDragDrop = ({
     const { handleDrop } = useFileDrop({
         isForPhotos,
         shareId,
+        volumeId,
         parentLinkId,
         onFileUpload,
         onFolderUpload,

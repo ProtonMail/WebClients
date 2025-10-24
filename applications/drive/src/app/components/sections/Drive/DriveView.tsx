@@ -66,6 +66,7 @@ export function DriveViewDeprecated() {
                 <UploadDragDrop
                     shareId={activeFolder.shareId}
                     parentLinkId={activeFolder.linkId}
+                    volumeId={activeFolder.volumeId}
                     className="flex flex-column flex-nowrap flex-1"
                     disabled={folderView.isActiveLinkReadOnly}
                 >
