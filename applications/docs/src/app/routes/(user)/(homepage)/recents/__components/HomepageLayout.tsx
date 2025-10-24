@@ -31,7 +31,7 @@ import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { DocsQuickSettings } from '~/components/DocsQuickSettings'
 import type { DocumentAction } from '@proton/drive-store'
 import { c } from 'ttag'
-import { Button, ButtonLike, Input, Tooltip } from '@proton/atoms'
+import { Button, Input, Tooltip } from '@proton/atoms'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import './HomepageLayout.css'
 import type { HomepageViewState } from '../__utils/homepage-view'
@@ -44,6 +44,9 @@ import { IS_REFRESH_ENABLED, IS_FAVORITES_ENABLED } from '../__utils/features'
 import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 import { useApplication } from '~/utils/application-context'
 import { goToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag'
+import * as Ariakit from '@ariakit/react'
+import { COLOR_BY_TYPE, ICON_BY_TYPE } from './HomepageContent/shared'
+import { Menu, MenuItem } from '@proton/docs-shared/components/ui/ui'
 
 const REFRESH_AFTER_NEW_DOCUMENT = 10000 // ms
 
@@ -228,39 +231,50 @@ function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
   const isSheetsEnabled = useIsSheetsEnabled()
 
   const newDocumentButton = (
-    <>
-      <ButtonLike
-        as="a"
-        href={getAppHref('/doc', APPS.PROTONDOCS, getLocalID())}
-        target="_blank"
-        color="norm"
-        size="large"
-        shape="solid"
-        onClick={() => {
-          application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.document_created)
-          setTimeout(updateRecentDocuments, REFRESH_AFTER_NEW_DOCUMENT)
-        }}
-        className="flex items-center justify-center gap-2 !bg-[--docs-blue-color]"
-      >
-        {c('Action').t`New document`}
-      </ButtonLike>
-      {isSheetsEnabled && (
-        <>
-          <div className="my-2" />
-          <ButtonLike
-            as="a"
-            href={getAppHref('/sheet', APPS.PROTONDOCS, getLocalID())}
-            target="_blank"
-            color="norm"
-            size="large"
-            shape="solid"
-            className="flex items-center justify-center gap-2 !bg-[--docs-blue-color]"
+    <Ariakit.MenuProvider>
+      <Ariakit.MenuButton className="flex w-full items-center justify-center gap-2 rounded-[0.5rem] !bg-[--docs-blue-color] px-4 py-2.5 text-[#fff]">
+        <Icon name="plus" />
+        New
+      </Ariakit.MenuButton>
+      <Menu className="w-[--popover-anchor-width] [&_a]:hover:text-[--text-norm]">
+        <MenuItem
+          className="no-underline"
+          leadingIconSlot={
+            <Icon
+              name={ICON_BY_TYPE.document}
+              size={5}
+              className="shrink-0 text-[--icon-color]"
+              style={{ '--icon-color': COLOR_BY_TYPE.document }}
+            />
+          }
+          // eslint-disable-next-line jsx-a11y/control-has-associated-label, jsx-a11y/anchor-has-content
+          render={<a href={getAppHref('/doc', APPS.PROTONDOCS, getLocalID())} target="_blank" />}
+          onClick={() => {
+            application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.document_created)
+            setTimeout(updateRecentDocuments, REFRESH_AFTER_NEW_DOCUMENT)
+          }}
+        >
+          {c('Action').t`New document`}
+        </MenuItem>
+        {isSheetsEnabled && (
+          <MenuItem
+            className="no-underline"
+            leadingIconSlot={
+              <Icon
+                name={ICON_BY_TYPE.spreadsheet}
+                size={5}
+                className="shrink-0 text-[--icon-color]"
+                style={{ '--icon-color': COLOR_BY_TYPE.spreadsheet }}
+              />
+            }
+            // eslint-disable-next-line jsx-a11y/control-has-associated-label, jsx-a11y/anchor-has-content
+            render={<a href={getAppHref('/sheet', APPS.PROTONDOCS, getLocalID())} target="_blank" />}
           >
             {c('sheets_2025:Action').t`New spreadsheet`}
-          </ButtonLike>
-        </>
-      )}
-    </>
+          </MenuItem>
+        )}
+      </Menu>
+    </Ariakit.MenuProvider>
   )
 
   return (
