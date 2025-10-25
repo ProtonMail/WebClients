@@ -50,11 +50,14 @@ export const useTrashNotifications = () => {
                 )
         );
 
-        showAggregatedErrorNotification(Object.values(failureItems), (errors) => {
-            return errors.length === 1
-                ? errors[0].error
-                : `${failureItems.length} items failed to be deleted from trash`;
-        });
+        showAggregatedErrorNotification(
+            Object.values(failureItems).map((failureItem) => failureItem.error),
+            (errors) => {
+                return errors.length === 1
+                    ? errors[0].error
+                    : `${failureItems.length} items failed to be deleted from trash`;
+            }
+        );
     };
 
     const createDeleteConfirmModal = (items: { name: string; uid: string }[], onConfirm: () => Promise<unknown>) => {
