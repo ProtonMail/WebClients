@@ -157,7 +157,7 @@ export function getFromBefore2024(timestamp?: number) {
         return 'unknown';
     }
     const date = fromUnixTime(timestamp);
-    if (date.getFullYear() < 2024) {
+    if (date.getUTCFullYear() < 2024) {
         return 'yes';
     }
     return 'no';
