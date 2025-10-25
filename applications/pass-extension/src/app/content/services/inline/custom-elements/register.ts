@@ -6,23 +6,26 @@ import browser from '@proton/pass/lib/globals/browser';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 
-import { ProtonPassControl } from './ProtonPassControl';
-import { ProtonPassRoot } from './ProtonPassRoot';
+import { getControlTagName } from './ProtonPassControl';
+import { getRootTagName } from './ProtonPassRoot';
 
-export type CustomElementsRegister = () => Promise<PassElementsConfig>;
-
-/** Due to Firefox's limitations in supporting custom elements with content-scripts
- * without disrupting interaction with the injected web page, we employ a workaround :
- * We inject `elements.js` via a script tag to prevent custom elements registration
- * in a privileged realm. Monitor these issues for potential resolution:
+/** Firefox versions <128 had limitations in supporting custom elements with content-scripts
+ * without disrupting interaction with the injected web page. For these versions, we employ
+ * a workaround by injecting `elements.js` via a script tag to prevent custom elements
+ * registration in a privileged realm. Firefox ≥128 supports MAIN world execution natively.
+ * Historical issues that led to this workaround:
  * - https://bugzilla.mozilla.org/show_bug.cgi?id=1492002
  * - https://bugzilla.mozilla.org/show_bug.cgi?id=1836269
  *
  * See: `applications/pass-extension/src/app/worker/services/injection.ts` for injection
- * specifics. For Chromium builds, `elements.js` will be injected in the MAIN world to
- * effectively register the custom elements in a non-isolated realm. */
-export const registerCustomElements: CustomElementsRegister = async () => {
-    if (BUILD_TARGET === 'firefox') {
+ * specifics. For browsers supporting MAIN world injection (Chrome, Safari, Firefox ≥128),
+ * `elements.js` will be injected directly. For older Firefox versions, falls back to
+ * script injection technique to register custom elements in a non-isolated realm. */
+export const registerCustomElements = async (): Promise<PassElementsConfig> => {
+    const result = await sendMessage(contentScriptMessage({ type: WorkerMessageType.REGISTER_ELEMENTS }));
+    if (result.type === 'error') throw new Error('Custom elements registration failure');
+
+    if (BUILD_TARGET === 'firefox' && result.scriptFallback) {
         await new Promise<void>((resolve, reject) => {
             const listeners = createListenerStore();
 
@@ -38,12 +41,17 @@ export const registerCustomElements: CustomElementsRegister = async () => {
             listeners.addListener(script, 'error', () => reject(destroy()));
             (document.head || document.documentElement).appendChild(script);
         });
+
+        await sendMessage(
+            contentScriptMessage({
+                type: WorkerMessageType.REGISTER_ELEMENTS_FALLBACK,
+                payload: result,
+            })
+        );
     }
 
-    const result = await sendMessage(contentScriptMessage({ type: WorkerMessageType.REGISTER_ELEMENTS }));
-    if (result.type === 'error') throw new Error('Custom elements registration failure');
+    const root = getRootTagName(result.hash);
+    const control = getControlTagName(result.hash);
 
-    const root = ProtonPassRoot.getTagName(result.hash);
-    const control = ProtonPassControl.getTagName(result.hash);
     return { root, control };
 };

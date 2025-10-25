@@ -179,3 +179,10 @@ export const createMessageBroker = (options: MessageBrokerOptions) => {
         },
     };
 };
+
+export const withSender =
+    <T, R>(fn: (message: T, tabId: number, frameId: number) => R) =>
+    (message: T, sender: Runtime.MessageSender) => {
+        if (!(sender.tab?.id && sender.frameId !== undefined)) throw new Error('Invalid sender');
+        return fn(message, sender.tab.id, sender.frameId);
+    };

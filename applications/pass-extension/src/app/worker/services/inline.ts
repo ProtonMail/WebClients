@@ -1,4 +1,5 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
+import { withSender } from 'proton-pass-extension/lib/message/message-broker';
 import { backgroundMessage, sendTabMessage } from 'proton-pass-extension/lib/message/send-message';
 import type { FrameData, FrameID, Frames } from 'proton-pass-extension/lib/utils/frames';
 import { getFramePath, getTabFrames } from 'proton-pass-extension/lib/utils/frames';
@@ -6,20 +7,12 @@ import type { FrameAttributes, FrameQueryResponse, FrameQueryResult } from 'prot
 import type { Coords, DropdownStateDTO } from 'proton-pass-extension/types/inline';
 import type { FrameQueryMessage, InlineDropdownStateMessage } from 'proton-pass-extension/types/messages';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-import type { Runtime } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
 import type { MaybeNull, TabId } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
 type CurrentFrame = { frame: FrameData; frameAttributes: FrameAttributes; coords: Coords };
-
-const withSender =
-    <T, R>(fn: (message: T, tabId: number, frameId: number) => R) =>
-    (message: T, sender: Runtime.MessageSender) => {
-        if (!(sender.tab?.id && sender.frameId !== undefined)) throw new Error();
-        return fn(message, sender.tab.id, sender.frameId);
-    };
 
 /**
  * Cross-frame autofill positioning service for nested iframe scenarios.
