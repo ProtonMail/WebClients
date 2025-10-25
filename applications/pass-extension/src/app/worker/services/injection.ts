@@ -1,9 +1,12 @@
 import { captureMessage as sentryCaptureMessage } from '@sentry/browser';
+import { isFirefoxMainWorldInjectionSupported } from 'proton-pass-extension/app/content/firefox/version';
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
+import { withSender } from 'proton-pass-extension/lib/message/message-broker';
 import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
+import type { FrameID } from 'proton-pass-extension/lib/utils/frames';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-import type { Runtime, Scripting } from 'webextension-polyfill';
+import type { Runtime } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
 import { selectFeatureFlag } from '@proton/pass/store/selectors';
@@ -68,43 +71,54 @@ export const createContentScriptService = () => {
         }
     };
 
+    const registerElements = async (hash: string, tabId: TabId, frameId: FrameID) => {
+        await browser.scripting.executeScript({
+            target: { tabId, frameIds: [frameId] },
+            world: 'MAIN',
+            args: [hash, frameId === 0],
+            func: (hash: string, mainFrame: boolean) => {
+                /** In Firefox, content scripts need to use `window.wrappedJSObject`
+                 * to see the "expando" properties defined on the global object */
+                const self = window?.wrappedJSObject ?? window;
+                self.registerPassElements?.(hash, mainFrame);
+            },
+        });
+
+        return true;
+    };
+
     /** Define the tag names for custom elements upon each `REGISTER_ELEMENTS`
      * request. This ensures that each tab can re-register these elements if a
      * content-script is re-injected due to events like extension updates or hot
      * -reloads. This re-registration is necessary because custom elements cannot
      * be updated once defined. A random tag name is used to avoid collisions.*/
-    WorkerMessageBroker.registerMessage(WorkerMessageType.REGISTER_ELEMENTS, async (_, { tab, frameId }) => {
-        const hash = uniqueId(4);
+    WorkerMessageBroker.registerMessage(
+        WorkerMessageType.REGISTER_ELEMENTS,
+        withSender(async (_, tabId, frameId) => {
+            const hash = uniqueId(4);
+            let scriptFallback = false;
 
-        const scriptConfig: Scripting.ScriptInjection = {
-            target: { tabId: tab?.id! },
-            world: (BUILD_TARGET === 'chrome' || BUILD_TARGET === 'safari' ? 'MAIN' : undefined) as any,
-        };
+            /** Chrome and Safari support MAIN world injection. Firefox versions ≥128 also support
+             * MAIN world injection. For older Firefox versions that isolate custom elements from
+             * this realm (causing unintended side effects), we fall back to the script injection
+             * technique. See `content/services/inline/custom-elements/register.ts` for details */
+            if (BUILD_TARGET !== 'firefox' || (await isFirefoxMainWorldInjectionSupported())) {
+                await browser.scripting.executeScript({
+                    target: { tabId, frameIds: [frameId] },
+                    world: 'MAIN',
+                    files: ['elements.js'],
+                });
+                await registerElements(hash, tabId, frameId);
+            } else scriptFallback = true;
 
-        if (frameId !== undefined) scriptConfig.target.frameIds = [frameId];
-        else scriptConfig.target.allFrames = false;
+            return { hash, scriptFallback };
+        })
+    );
 
-        if (BUILD_TARGET === 'chrome' || BUILD_TARGET === 'safari') {
-            /** In Chrome, we can directly register custom elements via injection in the MAIN
-             * world. Firefox isolates custom elements from this realm, which can have unintended
-             * side effects in page-scripts. For Firefox, we leverage the injected script trick.
-             * See `applications/pass-extension/src/app/content/client.ts` for details */
-            await browser.scripting.executeScript({ ...scriptConfig, files: ['elements.js'] });
-        }
-
-        await browser.scripting.executeScript({
-            ...scriptConfig,
-            args: [hash],
-            func: (hash: string) => {
-                /** In Firefox, content scripts need to use `window.wrappedJSObject`
-                 * to see the "expando" properties defined on the global object */
-                const self = window?.wrappedJSObject ?? window;
-                self.registerPassElements?.(hash);
-            },
-        });
-
-        return { hash };
-    });
+    WorkerMessageBroker.registerMessage(
+        WorkerMessageType.REGISTER_ELEMENTS_FALLBACK,
+        withSender(async ({ payload }, tabId, frameId) => registerElements(payload.hash, tabId, frameId))
+    );
 
     const loadContentScript = withTabEffect(
         withContext((ctx, tabId, frameId) => {

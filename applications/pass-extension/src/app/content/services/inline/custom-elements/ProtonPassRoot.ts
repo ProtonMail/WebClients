@@ -2,8 +2,10 @@ import { PASS_ROOT_REMOVED_EVENT } from 'proton-pass-extension/app/content/const
 
 import { PASS_ELEMENT_ROLE, ProtonPassElement } from './ProtonPassElement';
 
+export const getRootTagName = (hash: string) => `protonpass-root-${hash}`;
+
 export class ProtonPassRoot extends ProtonPassElement {
-    static getTagName = (hash: string) => `protonpass-root-${hash}`;
+    static getTagName = getRootTagName;
 
     disconnectedCallback() {
         super.disconnectedCallback();

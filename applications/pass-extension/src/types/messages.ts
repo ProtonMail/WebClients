@@ -160,6 +160,7 @@ export enum WorkerMessageType {
     PORT_FORWARDING_MESSAGE = 'PORT_FORWARDING',
     PORT_UNAUTHORIZED = 'PORT_UNAUTHORIZED',
     REGISTER_ELEMENTS = 'REGISTER_ELEMENTS',
+    REGISTER_ELEMENTS_FALLBACK = 'REGISTER_ELEMENTS_FALLBACK',
     RESOLVE_EXTENSION_KEY = 'RESOLVE_EXTENSION_KEY',
     RESOLVE_USER = 'RESOLVE_USER',
     SENTRY_CS_EVENT = 'SENTRY_CS_EVENT',
@@ -250,6 +251,7 @@ export type PingMessage = { type: WorkerMessageType.PING };
 export type PopupInitMessage = WithPayload<WorkerMessageType.POPUP_INIT, { tabId: TabId }>;
 export type PortUnauthorizedMessage = { type: WorkerMessageType.PORT_UNAUTHORIZED };
 export type RegisterElementsMessage = { type: WorkerMessageType.REGISTER_ELEMENTS };
+export type RegisterElementsLegacyMessage = WithPayload<WorkerMessageType.REGISTER_ELEMENTS_FALLBACK, { hash: string }>;
 export type ResolveExtensionKeyMessage = { type: WorkerMessageType.RESOLVE_EXTENSION_KEY };
 export type ResolveUserDataMessage = { type: WorkerMessageType.RESOLVE_USER };
 export type SentryCSEventMessage = WithPayload<WorkerMessageType.SENTRY_CS_EVENT, { message: string; data: any }>;
@@ -336,6 +338,7 @@ export type WorkerMessage =
     | PortFrameForwardingMessage
     | PortUnauthorizedMessage
     | RegisterElementsMessage
+    | RegisterElementsLegacyMessage
     | ResolveExtensionKeyMessage
     | ResolveUserDataMessage
     | SentryCSEventMessage
@@ -395,7 +398,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.PASSKEY_INTERCEPT]: { intercept: boolean };
     [WorkerMessageType.PASSKEY_QUERY]: { passkeys: SelectedPasskey[] };
     [WorkerMessageType.POPUP_INIT]: PopupInitialState;
-    [WorkerMessageType.REGISTER_ELEMENTS]: { hash: string };
+    [WorkerMessageType.REGISTER_ELEMENTS]: { hash: string; scriptFallback: boolean };
     [WorkerMessageType.RESOLVE_EXTENSION_KEY]: { key: string };
     [WorkerMessageType.RESOLVE_USER]: { user: MaybeNull<User> };
     [WorkerMessageType.SPOTLIGHT_CHECK]: { enabled: boolean };

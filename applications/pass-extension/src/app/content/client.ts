@@ -21,10 +21,10 @@ import { createClientController } from './services/client/client.controller';
 import { registerCustomElements } from './services/inline/custom-elements/register';
 
 (async () => {
-    const elements = await registerCustomElements();
     const mainFrame = isMainFrame();
     const scriptId = uniqueId(16);
-
+    const elements = await registerCustomElements();
     const controller = createClientController({ elements, mainFrame, scriptId, clientFactory });
+
     return controller.init();
 })().catch(noop);
