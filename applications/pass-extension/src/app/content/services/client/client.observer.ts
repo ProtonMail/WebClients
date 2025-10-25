@@ -4,8 +4,8 @@ import {
     isAddedNodeOfInterest,
     isNodeOfInterest,
     isParentOfInterest,
+    isProcessableInput,
     isRemovedNodeOfInterest,
-    isUnprocessedInput,
 } from 'proton-pass-extension/app/content/services/detector/detector.utils';
 
 import {
@@ -182,19 +182,22 @@ export const createClientObserver = (): ClientObserver => {
     const onFocusIn = ({ target }: Event) => {
         if (target && isHTMLElement(target)) {
             const trigger = (() => {
-                if (isUnprocessedInput(target)) return true;
+                if (isProcessableInput(target)) return true;
 
                 /** Custom elements may encapsulate the actual active
                  * input element within their shadow DOM */
                 if (isCustomElementWithShadowRoot(target)) {
                     const active = getActiveElement(target.shadowRoot);
-                    return active && isHTMLElement(active) && isUnprocessedInput(active);
+                    return active && isHTMLElement(active) && isProcessableInput(active);
                 }
 
                 return false;
             })();
 
-            if (trigger) void pubsub.publish('FocusIn');
+            if (trigger) {
+                onNewField(target); /** Form may have been flagged as hidden */
+                void pubsub.publish('FocusIn');
+            }
         }
     };
 
