@@ -107,7 +107,10 @@ export const createFieldHandles = ({ element, fieldType, getFormHandle }: Create
         tracker: null,
 
         get actionPrevented() {
-            return actionPrevented(element);
+            return (
+                actionPrevented(element) ||
+                withContext<() => boolean>((ctx) => ctx?.service.autofill.processing ?? false)()
+            );
         },
 
         getFormHandle,

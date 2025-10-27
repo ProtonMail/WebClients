@@ -110,11 +110,10 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
 
     const onClose = (options: InlineCloseOptions) => {
         const target = anchor.current;
-        const refocus = options.refocus ?? false;
 
         switch (target?.type) {
             case 'field': {
-                handleOnClosed(target.field, refocus);
+                handleOnClosed(target.field, options);
                 break;
             }
 
@@ -124,8 +123,8 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
                     contentScriptMessage({
                         type: WorkerMessageType.INLINE_DROPDOWN_CLOSED,
                         payload: {
+                            ...options,
                             type: 'initial',
-                            refocus,
                             fieldFrameId,
                             formId,
                             fieldId,
@@ -236,7 +235,7 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
                 case 'creditCard':
                     await sendMessage.onSuccess(
                         contentScriptMessage({ type: WorkerMessageType.AUTOFILL_CC, payload }),
-                        () => iframe.close({ refocus: true })
+                        () => iframe.close({ refocus: true, preventAction: true })
                     );
             }
         },
@@ -258,13 +257,9 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
 
         open: (request) => {
             iframe
-                .open(request.action, async () => {
+                .open(request.action, async (ctrl) => {
                     const payload = await prepareDropdownAction(request).catch(noop);
-
-                    if (!payload) {
-                        anchor.current = null;
-                        return false;
-                    }
+                    if (ctrl.signal.aborted || !payload) return false;
 
                     anchor.current =
                         request.type === 'field'
