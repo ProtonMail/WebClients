@@ -14,6 +14,7 @@ import {
     isElectronOnWindows as isWindows,
 } from '@proton/shared/lib/helpers/desktop';
 import { useFlag } from '@proton/unleash';
+import clsx from '@proton/utils/clsx';
 
 import TopBanner from '../topBanners/TopBanner';
 import { openLinkInBrowser } from './openExternalLink';
@@ -76,19 +77,27 @@ const DownloadButton = ({ link }: { link: string }) => {
     );
 };
 
-const DisplayTopBanner = ({ displayTopBanner, link }: { displayTopBanner: boolean; link?: string }) => {
+const DisplayTopBanner = ({
+    displayTopBanner,
+    link,
+    className,
+}: {
+    displayTopBanner: boolean;
+    link?: string;
+    className?: string;
+}) => {
     if (!link || !displayTopBanner) {
         return null;
     }
 
     const downloadUpdate = <DownloadButton link={link} key="eslint-autofix-7A3D3F" />;
     return (
-        <TopBanner className="bg-info">{c('Action')
+        <TopBanner className={clsx('bg-info', className)}>{c('Action')
             .jt`Important update available. To continue to use the app, please update to the latest version. ${downloadUpdate}`}</TopBanner>
     );
 };
 
-export const InboxDesktopOutdatedAppTopBanner = () => {
+export const InboxDesktopOutdatedAppTopBanner = ({ className }: { className?: string }) => {
     const version = electronAppVersion;
     const { windowsApp, macosApp, linuxApp, isSnapPackage, loading } = useInboxDesktopVersion();
     const isUpdateBannerDisabled = useFlag('InboxDesktopManualUpdateBannerDisabled');
@@ -104,16 +113,19 @@ export const InboxDesktopOutdatedAppTopBanner = () => {
     return (
         <>
             <DisplayTopBanner
+                className={className}
                 displayTopBanner={displayMac}
                 link={macosApp?.File?.[0].Url}
                 key="download-update-macos"
             />
             <DisplayTopBanner
+                className={className}
                 displayTopBanner={displayWindows}
                 link={windowsApp?.File?.[0].Url}
                 key="download-update-windows"
             />
             <DisplayTopBanner
+                className={className}
                 displayTopBanner={displayLinux}
                 link={getAppHref('/get-the-apps#proton-mail-desktop-apps', APPS.PROTONACCOUNT)}
                 key="download-update-linux"

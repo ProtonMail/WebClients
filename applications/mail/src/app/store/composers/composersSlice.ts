@@ -10,6 +10,7 @@ import type { Composer, ComposerID, ComposersState } from './composerTypes';
 
 export const composersInitialState: ComposersState = {
     composers: {},
+    hasFocusedComposer: false,
 };
 
 const name = 'composers';
@@ -51,6 +52,9 @@ const composersSlice = createSlice({
 
             state.composers[action.payload].isMinimized = false;
             state.composers[action.payload].isMaximized = nextMaximizeValue;
+        },
+        setHasFocusedComposer(state, action: PayloadAction<boolean>) {
+            state.hasFocusedComposer = action.payload;
         },
     },
     extraReducers: (builder) => {

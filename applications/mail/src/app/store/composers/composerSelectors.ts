@@ -5,6 +5,7 @@ import type { ComposerID } from './composerTypes';
 
 const composers = (state: MailState) => state.composers.composers;
 const composerID = (_: MailState, ID: ComposerID) => ID;
+const hasFocusedComposer = (state: MailState) => state.composers.hasFocusedComposer;
 
 export const selectComposersCount = createSelector([composers], (composers) => Object.values(composers).length);
 
@@ -14,3 +15,5 @@ export const selectOpenedComposersIds = createSelector([composers], (composers) 
 });
 
 export const selectComposer = createSelector([composers, composerID], (composers, id) => composers[id]);
+
+export const selectHasFocusedComposer = createSelector([hasFocusedComposer], (hasFocused) => hasFocused);
