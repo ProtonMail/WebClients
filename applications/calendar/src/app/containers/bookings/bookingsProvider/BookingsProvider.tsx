@@ -56,6 +56,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
 
     const [formData, setFormData] = useState<BookingFormData>({
         title: '',
+        description: '',
         selectedCalendar: null,
         duration: scheduleOptions[0].value,
         timezone: calendarUserSettings?.PrimaryTimezone,
@@ -147,6 +148,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     const resetBookingState = () => {
         setFormData({
             title: '',
+            description: '',
             selectedCalendar: null,
             duration: scheduleOptions[0].value,
             timezone: calendarUserSettings?.PrimaryTimezone,
