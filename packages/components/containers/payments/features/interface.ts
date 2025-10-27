@@ -43,6 +43,7 @@ export interface PlanCardFeature {
         [PLANS.VPN_PRO]: PlanCardFeatureDefinition | null;
         [PLANS.VPN_BUSINESS]: PlanCardFeatureDefinition | null;
         [PLANS.LUMO]: PlanCardFeatureDefinition | null;
+        [PLANS.LUMO_BUSINESS]: PlanCardFeatureDefinition | null;
         [PLANS.VISIONARY]: PlanCardFeatureDefinition | null;
     };
 }
@@ -61,29 +62,7 @@ export interface ShortPlan {
     label: string;
     description: string;
     title: string;
-    plan:
-        | PLANS.FREE
-        | PLANS.BUNDLE
-        | PLANS.MAIL
-        | PLANS.DRIVE
-        | PLANS.DRIVE_1TB
-        | PLANS.DRIVE_BUSINESS
-        | PLANS.PASS
-        | PLANS.PASS_LIFETIME
-        | PLANS.PASS_PRO
-        | PLANS.PASS_FAMILY
-        | PLANS.PASS_BUSINESS
-        | PLANS.BUNDLE_PRO
-        | PLANS.BUNDLE_PRO_2024
-        | PLANS.MAIL_PRO
-        | PLANS.MAIL_BUSINESS
-        | PLANS.VPN2024
-        | PLANS.VISIONARY
-        | PLANS.FAMILY
-        | PLANS.DUO
-        | PLANS.VPN_PRO
-        | PLANS.VPN_BUSINESS
-        | PLANS.LUMO;
+    plan: PLANS;
     cta: string;
     features: PlanCardFeatureDefinition[];
 }

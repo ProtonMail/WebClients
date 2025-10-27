@@ -6,7 +6,7 @@ import {
     type Subscription,
     getHasVpnB2BPlan,
     hasCancellablePlan,
-    hasLumoPlan,
+    hasLumo,
     isCancellableOnlyViaSupport,
     isManagedExternally,
 } from '@proton/payments';
@@ -43,7 +43,7 @@ export const getRoutes = ({ user, subscription, showVPNDashboard, showVPNDashboa
                     text: c('Title').t`Your plan`,
                     invisibleTitle: true,
                     id: 'YourPlanV2',
-                    available: !((user.isFree || hasLumoPlan(subscription)) && showVPNDashboardVariant === 'B'),
+                    available: !((user.isFree || hasLumo(subscription)) && showVPNDashboardVariant === 'B'),
                 },
                 {
                     text: c('Title').t`Upgrade your privacy`,

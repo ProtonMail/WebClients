@@ -7,12 +7,12 @@ import { type FreeSubscription, PLANS, PLAN_NAMES, type Subscription, hasBundle 
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
-import type { Upsell } from '../helpers';
+import { type Upsell, type UpsellWithPlan, isUpsellWithPlan } from '../helpers';
 import UpsellPanelV2 from './UpsellPanelV2';
 import SaveLabel from './components/SaveLabel';
 import UpsellPrice from './components/UpsellPrice';
 
-const getDefaultCta = (upsell: Upsell) => {
+const getDefaultCta = (upsell: UpsellWithPlan) => {
     const label = c('new_plans: Action').t`Upgrade`;
 
     return {
@@ -43,10 +43,10 @@ const UpsellPanelsV2 = ({ upsells, subscription }: Props) => {
     return (
         <>
             {upsells.map((upsell) => {
-                const defaultCta = upsell.ignoreDefaultCta ? null : getDefaultCta(upsell);
+                const defaultCta = isUpsellWithPlan(upsell) ? getDefaultCta(upsell) : null;
                 const ctas = [defaultCta, ...upsell.otherCtas].filter(isTruthy);
 
-                if (!upsell.price) {
+                if (!isUpsellWithPlan(upsell)) {
                     return null;
                 }
 

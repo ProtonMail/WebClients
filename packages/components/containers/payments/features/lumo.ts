@@ -1,8 +1,18 @@
 import { c } from 'ttag';
 
 import { PLANS } from '@proton/payments';
+import { LUMO_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
+
+export const getLumoAppFeature = (): PlanCardFeatureDefinition => {
+    return {
+        text: LUMO_APP_NAME,
+        included: true,
+        // icon: 'brand-proton-lumo',
+        tooltip: c('tooltip').t`${LUMO_APP_NAME}: AI assistant that respects your privacy`,
+    };
+};
 
 export const getUnlimitedChatsText = () => {
     return c('collider_2025: feature').t`Unlimited daily chats`;
@@ -126,6 +136,7 @@ export const getLumoFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: getDailyChats('limited'),
                 [PLANS.VPN_BUSINESS]: getDailyChats('limited'),
                 [PLANS.LUMO]: getDailyChats('unlimited'),
+                [PLANS.LUMO_BUSINESS]: getDailyChats('unlimited'),
                 [PLANS.VISIONARY]: getDailyChats('unlimited'),
             },
         },
@@ -153,6 +164,7 @@ export const getLumoFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: getWebSearchAccess(),
                 [PLANS.VPN_BUSINESS]: getWebSearchAccess(),
                 [PLANS.LUMO]: getWebSearchAccess(),
+                [PLANS.LUMO_BUSINESS]: getWebSearchAccess(),
                 [PLANS.VISIONARY]: getWebSearchAccess(),
             },
         },
@@ -180,6 +192,7 @@ export const getLumoFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: getChatHistory('basic'),
                 [PLANS.VPN_BUSINESS]: getChatHistory('basic'),
                 [PLANS.LUMO]: getChatHistory('full'),
+                [PLANS.LUMO_BUSINESS]: getChatHistory('full'),
                 [PLANS.VISIONARY]: getChatHistory('full'),
             },
         },
@@ -207,6 +220,7 @@ export const getLumoFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: getFavourites('limited'),
                 [PLANS.VPN_BUSINESS]: getFavourites('limited'),
                 [PLANS.LUMO]: getFavourites('unlimited'),
+                [PLANS.LUMO_BUSINESS]: getFavourites('unlimited'),
                 [PLANS.VISIONARY]: getFavourites('unlimited'),
             },
         },
@@ -234,6 +248,7 @@ export const getLumoFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: getUploadAndQuery('small'),
                 [PLANS.VPN_BUSINESS]: getUploadAndQuery('small'),
                 [PLANS.LUMO]: getUploadAndQuery('large'),
+                [PLANS.LUMO_BUSINESS]: getUploadAndQuery('large'),
                 [PLANS.VISIONARY]: getUploadAndQuery('large'),
             },
         },
@@ -261,6 +276,7 @@ export const getLumoFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: getAccessToAdvancedAI(false),
                 [PLANS.VPN_BUSINESS]: getAccessToAdvancedAI(false),
                 [PLANS.LUMO]: getAccessToAdvancedAI(true),
+                [PLANS.LUMO_BUSINESS]: getAccessToAdvancedAI(true),
                 [PLANS.VISIONARY]: getAccessToAdvancedAI(true),
             },
         },

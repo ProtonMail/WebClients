@@ -7,7 +7,7 @@ import SkeletonLoader, {
 import noop from '@proton/utils/noop';
 
 import type { PaymentsCheckout } from '../../core/checkout';
-import { getPlanNameFromIDs, isLifetimePlanSelected } from '../../core/plan/helpers';
+import { getIsVpnB2BPlan, getPlanNameFromIDs, isLifetimePlanSelected } from '../../core/plan/helpers';
 import { type PlanToCheck, getPlanToCheck, usePaymentsPreloaded } from '../context/PaymentContext';
 
 export type Props = {
@@ -60,7 +60,17 @@ export const OfferPrice = ({
 
     const value: number = (() => {
         const isLifetime = isLifetimePlanSelected(planToCheck.planIDs);
-        const priceProp: keyof PaymentsCheckout = isLifetime ? 'withDiscountPerCycle' : 'withDiscountOneMemberPerMonth';
+
+        const planName = getPlanNameFromIDs(planToCheck.planIDs);
+
+        let priceProp: keyof PaymentsCheckout;
+        if (isLifetime) {
+            priceProp = 'withDiscountPerCycle';
+        } else if (planName && getIsVpnB2BPlan(planName)) {
+            priceProp = 'withDiscountOneMemberPerMonth';
+        } else {
+            priceProp = 'withDiscountPerMonth';
+        }
 
         if (price) {
             return price.uiData[priceProp];

@@ -100,6 +100,7 @@ enum PaymentsFlag {
     TransactionsView = 'TransactionsView',
     VatId = 'VatId',
     PaymentsZipCodeValidation = 'PaymentsZipCodeValidation',
+    LumoB2B = 'LumoB2B',
 }
 
 enum CalendarFeatureFlag {

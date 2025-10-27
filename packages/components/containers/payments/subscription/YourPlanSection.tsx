@@ -12,7 +12,7 @@ import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymen
 import useLoad from '@proton/components/hooks/useLoad';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
-import { FREE_PLAN, getCanSubscriptionAccessDuoPlan, getHasVpnB2BPlan, hasLumoPlan, isTrial } from '@proton/payments';
+import { FREE_PLAN, getCanSubscriptionAccessDuoPlan, getHasVpnB2BPlan, hasLumo, isTrial } from '@proton/payments';
 import { PaymentsContextProvider } from '@proton/payments/ui';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
@@ -86,7 +86,7 @@ const YourPlanSectionInner = ({ app }: Props) => {
         !isVpnB2b &&
         !isWalletEA &&
         shouldRenderSubscription &&
-        !hasLumoPlan(subscription) &&
+        !hasLumo(subscription) &&
         !(isTrial(subscription) && isReferralExpansionEnabled);
     // Usage panel is displayed for members of B2B plans except VPN B2B
     const shouldRenderUsagePanel =

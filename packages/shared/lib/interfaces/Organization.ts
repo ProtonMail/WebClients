@@ -4,6 +4,7 @@ import type {
     ORGANIZATION_POLICY_ENFORCED,
     ORGANIZATION_STATE,
     ORGANIZATION_TWOFA_SETTING,
+    OrganizationPlanFlag,
     SETTINGS_PROTON_SENTINEL_STATE,
 } from '@proton/shared/lib/constants';
 
@@ -62,6 +63,7 @@ export interface Organization {
     Permissions: number;
     State: ORGANIZATION_STATE;
     IsBusiness: boolean;
+    PlanFlags: OrganizationPlanFlag;
 }
 
 export interface OrganizationIdentityOutput {

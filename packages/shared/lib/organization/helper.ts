@@ -23,6 +23,8 @@ export const isOrganizationDuo = (organization?: Organization) => organization?.
 export const isOrganizationFamily = (organization?: Organization) => organization?.PlanName === PLANS.FAMILY;
 export const isOrganizationPassFamily = (organization?: Organization) => organization?.PlanName === PLANS.PASS_FAMILY;
 export const isOrganizationVisionary = (organization?: Organization) => organization?.PlanName === PLANS.VISIONARY;
+export const isOrganizationLumoBusiness = (organization?: Organization) =>
+    organization?.PlanName === PLANS.LUMO_BUSINESS;
 
 export const getOrganizationDenomination = (organization?: Organization) => {
     if (
@@ -47,6 +49,7 @@ export const isOrganizationB2B = (organization?: Organization) => {
         PLANS.VPN_BUSINESS,
         PLANS.BUNDLE_PRO,
         PLANS.BUNDLE_PRO_2024,
+        PLANS.LUMO_BUSINESS,
     ].includes(organization?.PlanName as PLANS);
 };
 

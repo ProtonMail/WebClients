@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from 'react';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
-import type { Upsell } from '@proton/components/containers/payments/subscription/helpers';
+import { type Upsell, isUpsellWithPlan } from '@proton/components/containers/payments/subscription/helpers';
 import { PaymentsContextProvider } from '@proton/payments/ui';
 import {
     type APP_NAMES,
@@ -51,9 +51,7 @@ const BaseUpsellOutgoingEmergencyContactAction = ({ app }: Props) => {
         feature: SHARED_UPSELL_PATHS.EMERGENCY_ACCESS,
     });
 
-    const upsellPlan = upsell?.plan;
-
-    if (!upsellPlan) {
+    if (!upsell || !isUpsellWithPlan(upsell)) {
         return null;
     }
 
@@ -73,7 +71,7 @@ const BaseUpsellOutgoingEmergencyContactAction = ({ app }: Props) => {
                         modal.onClose();
                         openSubscriptionModal({
                             step,
-                            plan: upsellPlan,
+                            plan: upsell.plan,
                             cycle: upsell.cycle,
                             metrics: { source: 'upsells' },
                             upsellRef,

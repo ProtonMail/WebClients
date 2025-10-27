@@ -77,6 +77,7 @@ export const buildUser = (value?: Partial<UserModel>): UserModel => {
         hasPaidVpn: false,
         hasPaidDrive: false,
         hasPaidPass: false,
+        hasPaidLumo: false,
         hasPassLifetime: false,
         canPay: true,
         accessType: AccessType.Self,
