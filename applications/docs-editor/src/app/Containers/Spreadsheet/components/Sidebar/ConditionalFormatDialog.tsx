@@ -410,19 +410,20 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                       </NativeSelect>
                     </div>
 
-                    <div className="grow basis-0">
-                      <label
-                        aria-label="formula"
-                        className="flex h-[36px] grow items-center gap-0.5 rounded-lg border border-[#ADABA8] px-3 has-[:disabled]:border-none has-[:disabled]:bg-[#F5F4F2]"
-                      >
-                        <input
-                          value={gradientRule?.minpoint?.value ?? ''}
-                          onChange={(event) => form.setValue('gradientRule.minpoint.value', event.target.value)}
-                          className="h-full grow truncate text-sm !outline-none"
-                          disabled={!gradientRule?.minpoint?.type || gradientRule?.minpoint?.type === 'MIN'}
-                        />
-                      </label>
-                    </div>
+                    {gradientRule?.minpoint?.type === 'NUMBER' ? (
+                      <div className="grow basis-0">
+                        <label
+                          aria-label="formula"
+                          className="flex h-[36px] grow items-center gap-0.5 rounded-lg border border-[#ADABA8] px-3 has-[:disabled]:border-none has-[:disabled]:bg-[#F5F4F2]"
+                        >
+                          <input
+                            value={gradientRule?.minpoint?.value ?? ''}
+                            onChange={(event) => form.setValue('gradientRule.minpoint.value', event.target.value)}
+                            className="h-full grow truncate text-sm !outline-none"
+                          />
+                        </label>
+                      </div>
+                    ) : null}
 
                     <div className="shrink-0">
                       <Ariakit.PopoverProvider>
@@ -465,22 +466,20 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                       </NativeSelect>
                     </div>
 
-                    <div className="grow basis-0">
-                      <label
-                        aria-label="formula"
-                        className="flex h-[36px] grow items-center gap-0.5 rounded-lg border border-[#ADABA8] px-3 has-[:disabled]:border-none has-[:disabled]:bg-[#F5F4F2]"
-                      >
-                        <input
-                          value={gradientRule?.midpoint?.value ?? ''}
-                          onChange={(event) => form.setValue('gradientRule.midpoint.value', event.target.value)}
-                          className="h-full grow truncate text-sm !outline-none"
-                          disabled={
-                            !gradientRule?.midpoint?.type ||
-                            gradientRule?.midpoint?.type === (CONDTION_NONE as InterpolationPoint['type'])
-                          }
-                        />
-                      </label>
-                    </div>
+                    {gradientRule?.midpoint?.type === 'NUMBER' ? (
+                      <div className="grow basis-0">
+                        <label
+                          aria-label="formula"
+                          className="flex h-[36px] grow items-center gap-0.5 rounded-lg border border-[#ADABA8] px-3 has-[:disabled]:border-none has-[:disabled]:bg-[#F5F4F2]"
+                        >
+                          <input
+                            value={gradientRule?.midpoint?.value ?? ''}
+                            onChange={(event) => form.setValue('gradientRule.midpoint.value', event.target.value)}
+                            className="h-full grow truncate text-sm !outline-none"
+                          />
+                        </label>
+                      </div>
+                    ) : null}
 
                     <div className="shrink-0">
                       <Ariakit.PopoverProvider>
@@ -523,19 +522,20 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                       </NativeSelect>
                     </div>
 
-                    <div className="grow basis-0">
-                      <label
-                        aria-label="formula"
-                        className="flex h-[36px] grow items-center gap-0.5 rounded-lg border border-[#ADABA8] px-3 has-[:disabled]:border-none has-[:disabled]:bg-[#F5F4F2]"
-                      >
-                        <input
-                          value={gradientRule?.maxpoint?.value ?? ''}
-                          onChange={(event) => form.setValue('gradientRule.maxpoint.value', event.target.value)}
-                          className="h-full grow truncate text-sm !outline-none"
-                          disabled={!gradientRule?.maxpoint?.type || gradientRule?.maxpoint?.type === 'MAX'}
-                        />
-                      </label>
-                    </div>
+                    {gradientRule?.maxpoint?.type === 'NUMBER' ? (
+                      <div className="grow basis-0">
+                        <label
+                          aria-label="formula"
+                          className="flex h-[36px] grow items-center gap-0.5 rounded-lg border border-[#ADABA8] px-3 has-[:disabled]:border-none has-[:disabled]:bg-[#F5F4F2]"
+                        >
+                          <input
+                            value={gradientRule?.maxpoint?.value ?? ''}
+                            onChange={(event) => form.setValue('gradientRule.maxpoint.value', event.target.value)}
+                            className="h-full grow truncate text-sm !outline-none"
+                          />
+                        </label>
+                      </div>
+                    ) : null}
 
                     <div className="shrink-0">
                       <Ariakit.PopoverProvider>
