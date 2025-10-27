@@ -26,6 +26,7 @@ function InnerSelect(props: Ariakit.SelectProps) {
     throw new Error('Unexpected missing value in FontSelect renderLabel')
   }
   let label = value === DEFAULT_VALUE ? renderDefaultLabel() : FONT_LABEL_BY_VALUE[value as FontValue]
+  // @TODO: At some point we should have a normalization that converts the value to a valid font family.
   if (!label) {
     label = value as string
   }
@@ -58,7 +59,7 @@ function SelectPopover() {
         <UI.SelectItem value={DEFAULT_VALUE}>{renderDefaultLabel()}</UI.SelectItem>
       </UI.SelectGroup>
       <UI.SelectGroup>
-        {FONTS.map(({ value, label }) => (
+        {FONTS.map(({ value, label = value }) => (
           <UI.SelectItem key={value} value={value} disabled={disabled}>
             {label}
           </UI.SelectItem>

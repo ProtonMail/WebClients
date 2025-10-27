@@ -27,6 +27,7 @@ import { useEvent } from './components/utils'
 import { useNotifications } from '@proton/components'
 import { c } from 'ttag'
 import { LoadedFontFamilies, loadFont } from './font-state'
+import debounce from '@proton/utils/debounce'
 
 // local state
 // -----------
@@ -246,23 +247,27 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
     }
   }, [localState.cellXfs, redrawGrid, onRequestFonts])
 
+  const debouncedHandleFontLoaded = useMemo(
+    () =>
+      debounce(() => {
+        requestAnimationFrame(() => {
+          const grid = getGridRef?.()
+          if (!grid) {
+            return
+          }
+          grid.clearCache()
+          grid.redrawGrid()
+        })
+      }, 150),
+    [getGridRef],
+  )
   useEffect(() => {
     const abortController = new AbortController()
-    const handleFontLoaded = () => {
-      requestAnimationFrame(() => {
-        const grid = getGridRef?.()
-        if (!grid) {
-          return
-        }
-        grid.clearCache()
-        grid.redrawGrid()
-      })
-    }
-    document.addEventListener('fontloaded', handleFontLoaded, { signal: abortController.signal })
+    document.addEventListener('fontloaded', debouncedHandleFontLoaded, { signal: abortController.signal })
     return () => {
       abortController.abort()
     }
-  }, [getGridRef])
+  }, [debouncedHandleFontLoaded])
 
   const { getEffectiveFormat } = spreadsheetState
   const { activeSheetId, activeCell } = spreadsheetState
