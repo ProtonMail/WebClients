@@ -1,15 +1,18 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { usePlans } from '@proton/account/plans/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { FeatureCode } from '@proton/features/interface';
+import useFeature from '@proton/features/useFeature';
 import { CYCLE, DEFAULT_CURRENCY, PLANS, getPlanByName } from '@proton/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { featureListAdditionalUser, featureListStorageUpgrade } from './features';
-import type { UnlimitedToDuoOfferConfig, UnlimitedToDuoTipProps } from './interface';
+import type { UnlimitedToDuoOfferConfig, UnlimitedToDuoRotationState, UnlimitedToDuoTipProps } from './interface';
 import { UnlimitedToDuoMessageType } from './interface';
+import { calculateRotationUpdate } from './tipRotationLogic';
 
 const getTips = (): UnlimitedToDuoTipProps[] => [
     {
@@ -29,6 +32,13 @@ const getTips = (): UnlimitedToDuoTipProps[] => [
 export const useUnlimitedToDuoConfig = (): UnlimitedToDuoOfferConfig => {
     const [user] = useUser();
     const [plansResults] = usePlans();
+    const {
+        feature: unlimitedToDuoRotationState,
+        update,
+        loading: loadingRotationState,
+    } = useFeature<UnlimitedToDuoRotationState>(FeatureCode.UnlimitedToDuoRotationState);
+
+    const [selectedTipIndex, setSelectedTipIndex] = useState(0);
 
     const currency = user?.Currency || DEFAULT_CURRENCY;
     const duoPlan = getPlanByName(plansResults?.plans ?? [], PLANS.DUO, currency);
@@ -36,9 +46,30 @@ export const useUnlimitedToDuoConfig = (): UnlimitedToDuoOfferConfig => {
 
     const tips = useMemo(() => getTips(), []);
 
-    const currentMonthIndex = new Date().getMonth() + 1;
-    const monthlyRotatedTipIndex = currentMonthIndex % 2;
-    const selectedTip = tips[monthlyRotatedTipIndex];
+    const updateRotationState = (): void => {
+        if (!unlimitedToDuoRotationState?.Value) {
+            return;
+        }
+
+        const result = calculateRotationUpdate(
+            unlimitedToDuoRotationState.Value.rotationDate,
+            unlimitedToDuoRotationState.Value.tipIndex,
+            tips.length
+        );
+
+        if (result) {
+            setSelectedTipIndex(result.tipIndex);
+            void update(result);
+        }
+    };
+
+    useEffect(() => {
+        if (!loadingRotationState) {
+            updateRotationState();
+        }
+    }, [loadingRotationState]);
+
+    const selectedTip = tips[selectedTipIndex];
 
     return {
         type: selectedTip.type,
@@ -52,6 +83,6 @@ export const useUnlimitedToDuoConfig = (): UnlimitedToDuoOfferConfig => {
             gradient: false,
             icon: 'lightbulb',
         },
-        loading: false,
+        loading: loadingRotationState ?? true,
     };
 };

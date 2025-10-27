@@ -169,6 +169,7 @@ export enum FeatureCode {
 
     // Unlimited to Duo permanent offer
     HideUnlimitedToDuoPermanentOffer = 'HideUnlimitedToDuoPermanentOffer',
+    UnlimitedToDuoRotationState = 'UnlimitedToDuoRotationState',
 
     // Meet
     NewScheduleOptionSpotlight = 'NewScheduleOptionSpotlight',
