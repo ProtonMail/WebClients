@@ -1,4 +1,4 @@
-import type { ReactElement } from 'react';
+import { Fragment, type ReactElement } from 'react';
 
 import type { IconName } from 'packages/icons';
 import { c, msgid } from 'ttag';
@@ -459,7 +459,7 @@ export const getDealDurationText = (cycle: CYCLE | undefined) => {
 };
 
 export const getDealDuration = (cycle: CYCLE): ReactElement | null => {
-    return <>{getDealDurationText(cycle)}</>;
+    return <Fragment key={`deal-duration-${cycle}`}>{getDealDurationText(cycle)}</Fragment>;
 };
 
 export const getRenewDescription = (
