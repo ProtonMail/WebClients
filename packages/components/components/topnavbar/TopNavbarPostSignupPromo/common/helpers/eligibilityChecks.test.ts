@@ -1,6 +1,16 @@
-import { ADDON_NAMES, CYCLE, PLANS, type Subscription, SubscriptionPlatform } from '@proton/payments';
+import { addDays } from 'date-fns';
+
+import {
+    ADDON_NAMES,
+    CYCLE,
+    FREE_SUBSCRIPTION,
+    PLANS,
+    type Subscription,
+    SubscriptionPlatform,
+} from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
+import { buildSubscription } from '@proton/testing/builders';
 
 import {
     checkAppIsValid,
@@ -38,27 +48,35 @@ describe('eligibilityChecker helpers', () => {
         Flags: { ...baseUser.Flags, 'pass-lifetime': true },
     };
 
-    const validSubscription: Subscription = {
-        External: SubscriptionPlatform.Default,
-        Plans: [{ Name: PLANS.MAIL }],
-        Cycle: CYCLE.YEARLY,
-        CreateTime: Math.floor(Date.now() / 1000),
-    } as Subscription;
+    const validSubscription = buildSubscription(
+        {
+            planName: PLANS.MAIL,
+            cycle: CYCLE.YEARLY,
+            currency: 'USD',
+        },
+        {
+            CreateTime: Math.floor(Date.now() / 1000),
+        }
+    );
 
-    const subscriptionWithUpcoming: Subscription = {
+    const subscriptionWithUpcoming = {
         ...validSubscription,
-        UpcomingSubscription: {},
-    } as Subscription;
+        UpcomingSubscription: buildSubscription({
+            planName: PLANS.MAIL,
+            cycle: CYCLE.YEARLY,
+            currency: 'USD',
+        }),
+    };
 
     const externalAndroid: Subscription = {
         ...validSubscription,
         External: SubscriptionPlatform.Android,
-    } as Subscription;
+    };
 
     const externalIOS: Subscription = {
         ...validSubscription,
         External: SubscriptionPlatform.iOS,
-    } as Subscription;
+    };
 
     const validProtonConfig: ProtonConfig = {
         API_URL: '',
@@ -91,6 +109,9 @@ describe('eligibilityChecker helpers', () => {
         it('returns false if subscription is undefined', () => {
             expect(hasSubscription(undefined)).toBe(false);
         });
+        it('returns false if FREE_SUBSCRIPTION is provided (free subscriptions are not considered)', () => {
+            expect(hasSubscription(FREE_SUBSCRIPTION)).toBe(false);
+        });
     });
 
     describe('isWebSubscription', () => {
@@ -106,6 +127,9 @@ describe('eligibilityChecker helpers', () => {
         it('returns false if subscription is undefined', () => {
             expect(isWebSubscription(undefined)).toBe(false);
         });
+        it('returns true if FREE_SUBSCRIPTION is provided (not managed externally)', () => {
+            expect(isWebSubscription(FREE_SUBSCRIPTION)).toBe(true);
+        });
     });
 
     describe('hasNoScheduledSubscription', () => {
@@ -117,6 +141,9 @@ describe('eligibilityChecker helpers', () => {
         });
         it('returns true if subscription is undefined', () => {
             expect(hasNoScheduledSubscription(undefined)).toBe(true);
+        });
+        it('returns true if FREE_SUBSCRIPTION is provided (UpcomingSubscription is undefined)', () => {
+            expect(hasNoScheduledSubscription(FREE_SUBSCRIPTION)).toBe(true);
         });
     });
 
@@ -173,7 +200,7 @@ describe('eligibilityChecker helpers', () => {
 
     describe('checkCycleIsValid', () => {
         function makeSub(cycle: number) {
-            return { ...validSubscription, Cycle: cycle } as Subscription;
+            return { ...validSubscription, Cycle: cycle };
         }
 
         it('returns true if yearly and subscription has yearly', () => {
@@ -191,40 +218,43 @@ describe('eligibilityChecker helpers', () => {
         it('returns false if subscription is undefined', () => {
             expect(checkCycleIsValid([CYCLE.YEARLY], undefined)).toBe(false);
         });
+        it('returns false if FREE_SUBSCRIPTION is provided', () => {
+            expect(checkCycleIsValid([CYCLE.YEARLY], FREE_SUBSCRIPTION)).toBe(false);
+        });
     });
 
     describe('checkPlanIsValid', () => {
-        function makeSubWithPlans(plans: string[]) {
-            return { ...validSubscription, Plans: plans.map((Name) => ({ Name })) } as Subscription;
-        }
-
         it('returns true if mail option and mail plan', () => {
-            expect(checkPlanIsValid([PLANS.MAIL], makeSubWithPlans([PLANS.MAIL]))).toBe(true);
+            expect(checkPlanIsValid([PLANS.MAIL], buildSubscription(PLANS.MAIL))).toBe(true);
         });
         it('returns true if drive option and drive plan', () => {
-            expect(checkPlanIsValid([PLANS.DRIVE], makeSubWithPlans([PLANS.DRIVE]))).toBe(true);
-        });
-        it('returns false if matching plan is missing', () => {
-            expect(checkPlanIsValid([PLANS.MAIL], makeSubWithPlans([PLANS.DRIVE, PLANS.VPN2024]))).toBe(false);
+            expect(checkPlanIsValid([PLANS.DRIVE], buildSubscription(PLANS.DRIVE))).toBe(true);
         });
         it('returns false if subscription is undefined', () => {
             expect(checkPlanIsValid([PLANS.MAIL], undefined)).toBe(false);
         });
         it('returns false if subscription has an addon plan instead of a base plan', () => {
-            const subWithAddonPlan = {
-                ...validSubscription,
-                Plans: [{ Name: ADDON_NAMES.MEMBER_DRIVE_PRO }],
-            } as Subscription;
+            const subWithAddonPlan = buildSubscription({
+                planIDs: {
+                    [PLANS.DRIVE_PRO]: 1,
+                    [ADDON_NAMES.MEMBER_DRIVE_PRO]: 1,
+                },
+                cycle: CYCLE.YEARLY,
+                currency: 'USD',
+            });
+
             expect(checkPlanIsValid([PLANS.MAIL], subWithAddonPlan)).toBe(false);
+        });
+        it('returns false if FREE_SUBSCRIPTION is provided', () => {
+            expect(checkPlanIsValid([PLANS.MAIL], FREE_SUBSCRIPTION)).toBe(false);
         });
     });
 
     describe('checkTimeSubscribedIsValid', () => {
-        const setSubscriptionCreateTime = (daysAgo: number) =>
-            ({
-                ...validSubscription,
-                CreateTime: Math.floor((Date.now() - daysAgo * 24 * 60 * 60 * 1000) / 1000),
-            }) as Subscription;
+        const setSubscriptionCreateTime = (daysAgo: number) => ({
+            ...validSubscription,
+            CreateTime: addDays(new Date(), -daysAgo).getTime() / 1000,
+        });
 
         it('returns true if subscribed for the minimum number of days', () => {
             const sub = setSubscriptionCreateTime(10);
@@ -247,14 +277,18 @@ describe('eligibilityChecker helpers', () => {
 
         it('returns true when CreateTime is today and minDays is 0', () => {
             const now = Math.floor(Date.now() / 1000);
-            const sub = { ...validSubscription, CreateTime: now } as Subscription;
+            const sub = { ...validSubscription, CreateTime: now };
             expect(checkTimeSubscribedIsValid(0, sub)).toBe(true);
         });
 
         it('returns false when CreateTime is today and minDays is positive', () => {
             const now = Math.floor(Date.now() / 1000);
-            const sub = { ...validSubscription, CreateTime: now } as Subscription;
+            const sub = { ...validSubscription, CreateTime: now };
             expect(checkTimeSubscribedIsValid(1, sub)).toBe(false);
+        });
+
+        it('returns false if FREE_SUBSCRIPTION is provided', () => {
+            expect(checkTimeSubscribedIsValid(10, FREE_SUBSCRIPTION)).toBe(false);
         });
     });
 });
