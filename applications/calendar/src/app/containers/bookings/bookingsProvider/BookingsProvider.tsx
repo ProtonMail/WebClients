@@ -12,6 +12,8 @@ import { getVisualCalendar } from '@proton/shared/lib/calendar/calendar';
 import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eventDefaults';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
+import { useCalendarGlobalModals } from '../../GlobalModals/GlobalModalProvider';
+import { ModalType } from '../../GlobalModals/interface';
 import type { CalendarViewBusyEvent, CalendarViewEvent } from '../../calendar/interface';
 import { BOOKING_SLOT_ID, type BookingFormData, BookingState } from './interface';
 
@@ -37,6 +39,8 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     const [calendars = []] = useCalendars();
     const getCalendarSettings = useReadCalendarBootstrap();
     const [calendarUserSettings] = useCalendarUserSettings();
+
+    const { notify } = useCalendarGlobalModals();
 
     const { createNotification } = useNotifications();
 
@@ -130,8 +134,28 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         return event.uniqueId.startsWith(BOOKING_SLOT_ID);
     };
 
-    const submitForm = async () => {
+    const resetBookingState = () => {
         setBookingsState(BookingState.OFF);
+        setFormData({
+            title: '',
+            selectedCalendar: null,
+            duration: scheduleOptions[0].value,
+            timeZone: calendarUserSettings?.PrimaryTimezone,
+            bookingSlots: [],
+        });
+    };
+
+    const submitForm = async () => {
+        notify({
+            type: ModalType.BookingPageCreation,
+            value: {
+                // TODO change this with the proper booking link
+                bookingLink: 'booking link',
+                onClose: () => {
+                    resetBookingState();
+                },
+            },
+        });
     };
 
     const value: BookingsContextValue = {
