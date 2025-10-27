@@ -7,7 +7,6 @@ import { getFrameElement } from 'proton-pass-extension/app/content/utils/frame';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { clientNeedsSession, clientSessionLocked } from '@proton/pass/lib/client';
-import { isMainFrame } from '@proton/pass/utils/dom/is-main-frame';
 import noop from '@proton/utils/noop';
 
 import { createDropdownHandler } from './dropdown/dropdown.handler';
@@ -18,15 +17,16 @@ import { createNotificationHandler } from './notification/notification.handler';
 export const createInlineService = ({
     elements,
     controller,
+    mainFrame,
 }: ContentScriptContextFactoryOptions): AbstractInlineService => {
     /** NOTE: This should only be spawned in the top-frame */
-    if (!isMainFrame()) throw new Error('InlineService should only be created in top-frame');
+    if (!mainFrame) throw new Error('InlineService should only be created in top-frame');
 
     const { channel } = controller;
     const registry = createInlineRegistry(elements);
     const dropdown = createDropdownHandler(registry);
     const notification = createNotificationHandler(registry);
-    const icon = createIconRegistry({ channel, dropdown, tag: elements.control });
+    const icon = createIconRegistry({ channel, dropdown, tag: elements.control, mainFrame });
 
     const onDropdownOpen: FrameMessageHandler<WorkerMessageType.INLINE_DROPDOWN_OPEN> = ({ payload }) => {
         if (payload.type !== 'relay') return;

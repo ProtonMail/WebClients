@@ -153,6 +153,22 @@ export const hasIconInjectionStylesChanged = (a?: MaybeNull<IconStyles>, b?: May
     return false;
 };
 
+export const getInputInitialStyles = (el: HTMLElement): FieldOverrides => {
+    const initialStyles = el.getAttribute(INPUT_BASE_STYLES_ATTR);
+    return initialStyles ? JSON.parse(initialStyles) : {};
+};
+
+export const cleanupInputStyles = (input: HTMLInputElement) => {
+    Object.entries(getInputInitialStyles(input)).forEach(
+        ([prop, value]) =>
+            Boolean(value)
+                ? input.style.setProperty(prop, value) /* if has initial style -> reset */
+                : input.style.removeProperty(prop) /* else remove override */
+    );
+
+    input.removeAttribute(INPUT_BASE_STYLES_ATTR);
+};
+
 /* Force re-render/re-paint of the input element
  * before computing the icon injection styles in
  * order to avoid certain browser rendering optimisations
@@ -244,39 +260,7 @@ export const computeIconInjectionStyles = (options: Omit<IconElementRefs, 'icon'
     };
 };
 
-export const getInputInitialStyles = (el: HTMLElement): FieldOverrides => {
-    const initialStyles = el.getAttribute(INPUT_BASE_STYLES_ATTR);
-    return initialStyles ? JSON.parse(initialStyles) : {};
-};
-
-export const cleanupInputInjectedStyles = (input: HTMLInputElement) => {
-    Object.entries(getInputInitialStyles(input)).forEach(
-        ([prop, value]) =>
-            Boolean(value)
-                ? input.style.setProperty(prop, value) /* if has initial style -> reset */
-                : input.style.removeProperty(prop) /* else remove override */
-    );
-
-    input.removeAttribute(INPUT_BASE_STYLES_ATTR);
-};
-
-export const cleanupInjectionStyles = ({ control, input }: Pick<IconElementRefs, 'control' | 'input'>) => {
-    control.style.removeProperty('float');
-    control.style.removeProperty('max-width');
-    control.style.removeProperty('margin-left');
-    cleanupInputInjectedStyles(input);
-};
-
 export const applyIconInjectionStyles = ({ icon, input }: IconElementRefs, styles: IconStyles) => {
-    /* Handle a specific scenario where input has transitions or
-     * animations set, which could affect width change detection
-     * and repositioning triggers. To avoid unwanted side-effects
-     * when applying the injection style, temporarily disable these
-     * properties */
-    const { transition, animation } = input.style;
-    input.style.setProperty('transition', 'none');
-    input.style.setProperty('animation', 'none');
-
     /* Get the width of the input element before applying the injection styles */
     const widthBefore = input.getBoundingClientRect().width;
 
@@ -301,13 +285,6 @@ export const applyIconInjectionStyles = ({ icon, input }: IconElementRefs, style
         input.style.removeProperty('padding-right');
         input.style.setProperty('padding-right', input.style.paddingRight);
     }
-
-    /* Restore transition and animation properties in the next rendering frame
-     * to ensure they work as expected. */
-    requestAnimationFrame(() => {
-        input.style.setProperty('transition', transition);
-        input.style.setProperty('animation', animation);
-    });
 };
 
 export type CreateIconConfig = {

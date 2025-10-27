@@ -261,7 +261,6 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
      * on the full DOM as this may lead to too many detection triggers */
     const onFormResize = debounce(
         withContext((ctx) => {
-            formHandle.getFields().forEach((field) => field.icon?.reposition(true));
             const formParent = options.form.parentElement;
             const triggerDetection = formParent === null || hasProcessableFields(formParent);
             if (triggerDetection) void ctx?.service.formManager.detect({ reason: 'NewFormFieldsOnResize' });
