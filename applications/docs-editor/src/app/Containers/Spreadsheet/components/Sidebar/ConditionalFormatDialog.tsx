@@ -574,7 +574,7 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
           </div>
         </div>
 
-        <div className="mt-auto flex shrink-0 items-center justify-end gap-2 border-t-[0.5px] border-[#EAE7E4] py-2">
+        <div className="mt-auto flex shrink-0 items-center justify-end gap-2 border-t-[0.5px] border-[#EAE7E4] px-4 py-2">
           <button
             type="button"
             className="inline-flex h-[36px] items-center gap-1.5 rounded-lg border border-[#DEDBD9] px-4 text-[13px]"
