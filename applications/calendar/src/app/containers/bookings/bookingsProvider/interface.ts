@@ -14,6 +14,7 @@ export interface Slot {
 
 export interface BookingFormData {
     title: string;
+    description: string;
     selectedCalendar: string | null;
     duration: number;
     timezone: string | undefined;
