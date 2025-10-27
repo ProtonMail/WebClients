@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
 import { ButtonLike, Tooltip } from '@proton/atoms';
-import { CalendarLogo, DriveLogo, MailLogo, PassLogo, VpnLogo } from '@proton/components';
+import { CalendarLogo, DriveLogo, LumoLogo, MailLogo, PassLogo, VpnLogo } from '@proton/components';
 import { getCalendarAppFeature } from '@proton/components/containers/payments/features/calendar';
 import { getDriveAppFeature } from '@proton/components/containers/payments/features/drive';
+import { getLumoAppFeature } from '@proton/components/containers/payments/features/lumo';
 import { getMailAppFeature } from '@proton/components/containers/payments/features/mail';
 import { getPassAppFeature } from '@proton/components/containers/payments/features/pass';
 import { getVPNAppFeature } from '@proton/components/containers/payments/features/vpn';
@@ -13,6 +14,8 @@ import {
     CALENDAR_SHORT_APP_NAME,
     DRIVE_APP_NAME,
     DRIVE_SHORT_APP_NAME,
+    LUMO_APP_NAME,
+    LUMO_SHORT_APP_NAME,
     MAIL_APP_NAME,
     MAIL_SHORT_APP_NAME,
     PASS_APP_NAME,
@@ -22,13 +25,16 @@ import {
 } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
+import isTruthy from '@proton/utils/isTruthy';
 
 const LetsTalkSubSection = ({
     vpnServersCountData,
     signupParameters,
+    showLumoLogo = false,
 }: {
     vpnServersCountData: VPNServersCountData;
     signupParameters?: { trial?: boolean };
+    showLumoLogo?: boolean;
 }) => {
     const logoSize = 8;
     return (
@@ -86,16 +92,26 @@ const LetsTalkSubSection = ({
                         logo: <PassLogo variant="glyph-only" size={logoSize} />,
                         tooltip: getPassAppFeature().tooltip,
                     },
-                ].map(({ title, shortTitle, logo, tooltip }) => {
-                    return (
-                        <Tooltip key={title} title={tooltip} openDelay={0} closeDelay={0}>
-                            <div title={title}>
-                                <div>{logo}</div>
-                                <div className="color-weak text-xs">{shortTitle}</div>
-                            </div>
-                        </Tooltip>
-                    );
-                })}
+                    showLumoLogo && {
+                        app: APPS.PROTONLUMO,
+                        title: LUMO_APP_NAME,
+                        shortTitle: LUMO_SHORT_APP_NAME,
+                        logo: <LumoLogo variant="glyph-only" size={logoSize} />,
+                        tooltip: getLumoAppFeature().tooltip,
+                    },
+                ]
+
+                    .filter(isTruthy)
+                    .map(({ title, shortTitle, logo, tooltip }) => {
+                        return (
+                            <Tooltip key={title} title={tooltip} openDelay={0} closeDelay={0}>
+                                <div title={title}>
+                                    <div>{logo}</div>
+                                    <div className="color-weak text-xs">{shortTitle}</div>
+                                </div>
+                            </Tooltip>
+                        );
+                    })}
             </div>
         </div>
     );

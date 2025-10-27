@@ -10,7 +10,7 @@ import {
     hasDrive1TB,
     hasDuo,
     hasFamily,
-    hasLumoPlan,
+    hasLumo,
     hasMail,
     hasPass,
     hasPassFamily,
@@ -127,10 +127,10 @@ class OfferSubscription {
 
     hasLumo() {
         if (this.upcomingSubscription) {
-            return hasLumoPlan(this.upcomingSubscription);
+            return hasLumo(this.upcomingSubscription);
         }
 
-        return hasLumoPlan(this.subscription);
+        return hasLumo(this.subscription);
     }
 
     hasDeprecatedVPN() {

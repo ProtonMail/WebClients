@@ -6,7 +6,7 @@ import { PLANS, PLAN_NAMES, type Subscription, hasBundle } from '@proton/payment
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
-import type { Upsell } from '../helpers';
+import { type Upsell, type UpsellWithPlan, isUpsellWithPlan } from '../helpers';
 import UpsellPanel from './UpsellPanel';
 import UpsellPriceV1 from './components/UpsellPriceV1';
 
@@ -29,7 +29,7 @@ const UpsellPanels = ({ upsells, subscription }: Props) => {
     return (
         <>
             {upsells.map((upsell) => {
-                const getDefaultCta = (upsell: Upsell) => {
+                const getDefaultCta = (upsell: UpsellWithPlan) => {
                     const price = <UpsellPriceV1 key="offer-price" upsell={upsell} />;
 
                     let label: string | string[];
@@ -47,20 +47,20 @@ const UpsellPanels = ({ upsells, subscription }: Props) => {
                     };
                 };
 
-                const defaultCta = upsell.ignoreDefaultCta ? null : getDefaultCta(upsell);
+                const defaultCta = isUpsellWithPlan(upsell) ? getDefaultCta(upsell) : null;
                 const ctas = [defaultCta, ...upsell.otherCtas].filter(isTruthy);
 
                 return (
                     <UpsellPanel
-                        key={`upsell-${upsell.plan}`}
+                        key={`upsell-${upsell.planKey}`}
                         title={upsell.title}
                         features={upsell.features}
                         isRecommended={upsell.isRecommended}
                         ctas={ctas}
-                        plan={upsell.plan}
+                        plan={isUpsellWithPlan(upsell) ? upsell.plan : undefined}
                     >
                         {/* Warning when user is in Trial period for a plan */}
-                        {upsell.isTrialEnding ? (
+                        {isUpsellWithPlan(upsell) && upsell.isTrialEnding ? (
                             <>
                                 <h4>{c('new_plans: Info').jt`Your trial ends ${formattedPeriodEndDate}`}</h4>
                                 <div className="color-weak">

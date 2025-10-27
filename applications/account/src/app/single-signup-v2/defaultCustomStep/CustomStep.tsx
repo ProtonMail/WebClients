@@ -260,7 +260,9 @@ const CustomStep = ({
                             return handleNextStep();
                         }
 
-                        const b2bSettingsApp = [APPS.PROTONMAIL, APPS.PROTONVPN_SETTINGS].includes(product as any)
+                        const b2bSettingsApp = [APPS.PROTONMAIL, APPS.PROTONVPN_SETTINGS, APPS.PROTONLUMO].includes(
+                            product as any
+                        )
                             ? product
                             : APPS.PROTONMAIL;
 

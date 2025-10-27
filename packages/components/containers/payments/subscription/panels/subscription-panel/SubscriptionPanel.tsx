@@ -9,7 +9,6 @@ import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';
 import Time from '@proton/components/components/time/Time';
 import LearnMoreModal from '@proton/components/containers/topBanners/LearnMoreModal';
-import type { IconName } from '@proton/icons/types';
 import {
     Renew,
     type Subscription,
@@ -20,7 +19,8 @@ import {
     getSubscriptionPlanTitle,
     hasDeprecatedVPN,
     hasDriveBusiness,
-    hasLumoPlan,
+    hasLumo,
+    hasLumoBusiness,
     hasPass,
     hasPassFamily,
     hasVPN2024,
@@ -249,15 +249,46 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
         );
     };
 
+    const b2bUsersItem: Item | false = !!userText &&
+        (MaxMembers > 1 ||
+            getIsB2BAudienceFromSubscription(subscription) ||
+            upsells.some((upsell) => upsell.features.some((feature) => feature.icon === 'users'))) && {
+            icon: 'users' as const,
+            text: userText,
+        };
+
+    const lumoItem: Item | false = (() => {
+        if (MaxLumo <= 0 || !lumoText) {
+            return false;
+        }
+        const showGetMoreButton = MaxLumo !== MaxMembers;
+        const actionElement = showGetMoreButton ? <GetMoreButton metricsSource="upsells" /> : null;
+
+        return {
+            icon: 'speech-bubble',
+            text: lumoText,
+            actionElement,
+        };
+    })();
+
+    const scribeItem: Item | false = (() => {
+        if (MaxAI <= 0 || !writingAssistantText) {
+            return false;
+        }
+
+        const showGetMoreButton = MaxAI !== MaxMembers && getIsB2BAudienceFromSubscription(subscription);
+        const actionElement = showGetMoreButton ? <GetMoreButton metricsSource="upsells" /> : null;
+
+        return {
+            icon: 'pen-sparks',
+            text: writingAssistantText,
+            actionElement,
+        };
+    })();
+
     const getPassAppPassFamily = () => {
         const items: (Item | false)[] = [
-            !!userText &&
-                (MaxMembers > 1 ||
-                    getIsB2BAudienceFromSubscription(subscription) ||
-                    upsells.some((upsell) => upsell.features.some((feature) => feature.icon === 'users'))) && {
-                    icon: 'users',
-                    text: userText,
-                },
+            b2bUsersItem,
             getPassAdminPanel(),
             getLoginsAndNotes('paid'),
             getDevices(),
@@ -296,18 +327,27 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
         );
     };
 
-    const getDriveAppB2B = () => {
-        const items: (Item | false)[] = [
-            !!userText &&
-                (MaxMembers > 1 ||
-                    getIsB2BAudienceFromSubscription(subscription) ||
-                    upsells.some((upsell) => upsell.features.some((feature) => feature.icon === 'users'))) && {
-                    icon: 'users',
-                    text: userText,
-                },
-            getVersionHistory(365),
-            getBasicFeatures(),
+    const getLumoBusiness = () => {
+        const items = [
+            b2bUsersItem && {
+                ...b2bUsersItem,
+                actionElement: <GetMoreButton metricsSource="upsells" />,
+            },
+            lumoItem,
+            ...getLumoPlusFeatures(),
+            scribeItem,
         ];
+
+        return (
+            <StripedList alternate={alternate}>
+                {storageItem}
+                <SubscriptionItems user={user} items={items.filter(isTruthy)} />
+            </StripedList>
+        );
+    };
+
+    const getDriveAppB2B = () => {
+        const items: (Item | false)[] = [b2bUsersItem, getVersionHistory(365), getBasicFeatures()];
 
         return (
             <StripedList alternate={alternate}>
@@ -327,10 +367,8 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
 
         const items: Item[] = [
             {
-                icon: 'users' as IconName,
-                text: userText,
+                ...b2bUsersItem,
                 actionElement: getMoreButtonVpnUpsell,
-                dataTestId: 'users',
             },
             hasVpnBusiness(subscription) && {
                 icon: 'servers',
@@ -349,13 +387,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
 
     const getDefault = () => {
         const items: (Item | false)[] = [
-            !!userText &&
-                (MaxMembers > 1 ||
-                    getIsB2BAudienceFromSubscription(subscription) ||
-                    upsells.some((upsell) => upsell.features.some((feature) => feature.icon === 'users'))) && {
-                    icon: 'users',
-                    text: userText,
-                },
+            b2bUsersItem,
             {
                 icon: 'envelope',
                 text: addressText,
@@ -377,33 +409,8 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
             },
             getProtonPassFeature(user.hasPaidPass ? 'unlimited' : FREE_PASS_ALIASES),
             getIsSentinelPlan(organization?.PlanName) ? getSentinel(true) : false,
-            (() => {
-                if (MaxAI <= 0 || !writingAssistantText) {
-                    return false;
-                }
-
-                const showGetMoreButton = MaxAI !== MaxMembers && getIsB2BAudienceFromSubscription(subscription);
-                const actionElement = showGetMoreButton ? <GetMoreButton metricsSource="upsells" /> : null;
-
-                return {
-                    icon: 'pen-sparks',
-                    text: writingAssistantText,
-                    actionElement,
-                };
-            })(),
-            (() => {
-                if (MaxLumo <= 0 || !lumoText) {
-                    return false;
-                }
-                const showGetMoreButton = MaxLumo !== MaxMembers;
-                const actionElement = showGetMoreButton ? <GetMoreButton metricsSource="upsells" /> : null;
-
-                return {
-                    icon: 'speech-bubble',
-                    text: lumoText,
-                    actionElement,
-                };
-            })(),
+            scribeItem,
+            lumoItem,
         ];
 
         return (
@@ -460,7 +467,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
     const isWalletEA = app === APPS.PROTONWALLET && hasVisionary(subscription);
     // For the VPN B2B plan, we don't want to show the action buttons
     // The user can still open the subscription or customization flow using the other buttons, e.g. "Get more" users
-    const showActionButtons = !hasVpnB2BPlan && !isWalletEA;
+    const showActionButtons = !hasVpnB2BPlan && !isWalletEA && !hasLumoBusiness(subscription);
 
     return (
         <>
@@ -498,8 +505,11 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
                     if (getHasVpnB2BPlan(subscription)) {
                         return getVpnB2B();
                     }
-                    if (hasLumoPlan(subscription)) {
+                    if (hasLumo(subscription)) {
                         return getLumoPlus();
+                    }
+                    if (hasLumoBusiness(subscription)) {
+                        return getLumoBusiness();
                     }
                     if (user.isFree && app === APPS.PROTONLUMO) {
                         return getLumoFree();

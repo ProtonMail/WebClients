@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Icon from '@proton/components/components/icon/Icon';
 import ModalTwo, { type ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
 import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
-import type { Upsell } from '@proton/components/containers/payments/subscription/helpers';
+import type { UpsellWithPlan } from '@proton/components/containers/payments/subscription/helpers';
 import UpsellPriceV1 from '@proton/components/containers/payments/subscription/panels/components/UpsellPriceV1';
 
 import illustration from '../upsell-shield.svg';
@@ -14,7 +14,7 @@ import illustration from '../upsell-shield.svg';
 export interface EditOutgoingEmergencyContactModalProps
     extends Omit<ModalProps<'form'>, 'children' | 'buttons' | 'onSubmit'> {
     onUpgrade: (type: 'explore' | 'upgrade') => void;
-    upsell: Upsell;
+    upsell: UpsellWithPlan;
 }
 
 export const UpsellOutgoingEmergencyContactModal = ({
@@ -23,11 +23,8 @@ export const UpsellOutgoingEmergencyContactModal = ({
     ...rest
 }: EditOutgoingEmergencyContactModalProps) => {
     const planName = upsell.title;
-    if (!planName) {
-        return null;
-    }
 
-    const price = upsell.price ? <UpsellPriceV1 key="offer-price" upsell={upsell} /> : null;
+    const price = <UpsellPriceV1 key="offer-price" upsell={upsell} />;
     const title = c('emergency_access').t`Protect your legacy with emergency access`;
 
     const description = c('emergency_access').t`Included with ${planName}`;

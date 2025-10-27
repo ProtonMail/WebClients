@@ -138,6 +138,7 @@ export interface UserInfo {
     hasPaidVpn: boolean;
     hasPaidDrive: boolean;
     hasPaidPass: boolean;
+    hasPaidLumo: boolean;
     hasPassLifetime: boolean;
     canPay: boolean;
     accessType: AccessType;

@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
 import Price from '@proton/components/components/price/Price';
-import type { Upsell } from '@proton/components/containers/payments/subscription/helpers';
+import type { UpsellWithPlan } from '@proton/components/containers/payments/subscription/helpers';
 import { OfferPrice } from '@proton/payments/ui';
 
-const UpsellPrice = ({ upsell }: { upsell: Upsell }) => {
+const UpsellPrice = ({ upsell }: { upsell: UpsellWithPlan }) => {
     if (!upsell.price) {
         return null;
     }
@@ -17,9 +17,7 @@ const UpsellPrice = ({ upsell }: { upsell: Upsell }) => {
                 key="offer-price"
                 planToCheck={{
                     currency,
-                    planIDs: {
-                        [upsell.plan]: 1,
-                    },
+                    planIDs: upsell.planIDs,
                     cycle: upsell.cycle,
                 }}
                 suffix={c('new_plans: Plan frequency').t`/month`}

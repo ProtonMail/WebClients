@@ -194,6 +194,7 @@ const SingleSignupContainerV2 = ({
     const { APP_NAME } = useConfig();
     const visionarySignupEnabled = useFlag('VisionarySignup');
     const hasZipCodeValidation = useFlag('PaymentsZipCodeValidation');
+    const isLumoB2BEnabled = useFlag('LumoB2B');
 
     const history = useHistory();
     const location = useLocationWithoutLocale<{ invite?: InviteData }>();
@@ -204,6 +205,7 @@ const SingleSignupContainerV2 = ({
                 SSO_PATHS.MAIL_SIGNUP_B2B,
                 SSO_PATHS.DRIVE_SIGNUP_B2B,
                 SSO_PATHS.CALENDAR_SIGNUP_B2B,
+                SSO_PATHS.LUMO_SIGNUP_B2B,
                 SSO_PATHS.BUSINESS_SIGNUP,
             ].includes(location.pathname as any)
         ) {
@@ -279,6 +281,7 @@ const SingleSignupContainerV2 = ({
             theme,
             model: defaultSignupModel,
             vpnServersCountData: defaultSignupModel.vpnServersCountData,
+            isLumoB2BEnabled,
         });
 
         const planParameters = getPlanIDsFromParams(plans, 'CHF', signupParameters, signupConfiguration.defaults);
@@ -326,6 +329,7 @@ const SingleSignupContainerV2 = ({
         theme,
         model,
         vpnServersCountData,
+        isLumoB2BEnabled,
     });
     const {
         planCards,
@@ -392,6 +396,9 @@ const SingleSignupContainerV2 = ({
                 return 'business_signup';
             }
             if (toApp === APPS.PROTONLUMO) {
+                if (audience === Audience.B2B) {
+                    return 'lumo_signup_b2b';
+                }
                 return 'lumo_signup';
             }
             return 'generic_signup';
@@ -1434,7 +1441,12 @@ const SingleSignupContainerV2 = ({
                                         cache,
                                         api: silentApi,
                                         mode:
-                                            product === APPS.PROTONPASS || product === APPS.PROTONDRIVE ? 'ov' : 'cro',
+                                            // Forcing email address ownership verification for Pass, Drive, and Lumo
+                                            product === APPS.PROTONPASS ||
+                                            product === APPS.PROTONDRIVE ||
+                                            product === APPS.PROTONLUMO
+                                                ? 'ov'
+                                                : 'cro',
                                     });
                                     setModelDiff({
                                         subscriptionData: result.cache.subscriptionData,

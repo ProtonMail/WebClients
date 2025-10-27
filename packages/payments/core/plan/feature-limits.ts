@@ -4,11 +4,35 @@ import { isIpAddon, isLumoAddon, isMemberAddon, isScribeAddon } from './addons';
 import { isMultiUserPersonalPlan } from './helpers';
 import type { Plan, PlansMap } from './interface';
 
-export const getPlanMaxIPs = (plan: Plan) => {
-    if (plan.Name === PLANS.VPN_BUSINESS) {
-        return 1;
-    }
+const maxKeysByPlanOverrides: Partial<
+    Record<
+        PLANS | ADDON_NAMES,
+        {
+            [key in FeatureLimitKey]?: number;
+        }
+    >
+> = {
+    [PLANS.FREE]: {
+        MaxMembers: 0,
+    },
+    [PLANS.VPN_BUSINESS]: {
+        MaxIPs: 1,
+    },
+    [PLANS.LUMO_BUSINESS]: {
+        MaxLumo: 1,
+        MaxAI: 1,
+    },
+    [PLANS.LUMO]: {
+        MaxLumo: 1,
+        MaxAI: 1,
+    },
+};
 
+const getOverrideForPlan = (plan: Plan, key: FeatureLimitKey): number | null => {
+    return maxKeysByPlanOverrides[plan.Name]?.[key] ?? null;
+};
+
+export const getPlanMaxIPs = (plan: Plan) => {
     if (isIpAddon(plan.Name)) {
         return 1;
     }
@@ -21,10 +45,23 @@ export const getPlanMaxLumo = (plan: Plan) => {
 };
 
 const getPlanMaxAIs = (plan: Plan) => {
-    return isScribeAddon(plan.Name) ? 1 : 0;
+    return isScribeAddon(plan.Name) || isLumoAddon(plan.Name) ? 1 : 0;
+};
+
+const getPlanMaxMembers = (plan: Plan) => {
+    if (plan.Type === PLAN_TYPES.PLAN) {
+        return plan.MaxMembers || 1;
+    }
+
+    return isMemberAddon(plan.Name) ? 1 : 0;
 };
 
 export const getPlanFeatureLimit = (plan: Plan, key: FeatureLimitKey): number => {
+    const override = getOverrideForPlan(plan, key);
+    if (override !== null) {
+        return override;
+    }
+
     let result: number;
 
     if (key === 'MaxIPs') {
@@ -33,6 +70,8 @@ export const getPlanFeatureLimit = (plan: Plan, key: FeatureLimitKey): number =>
         result = getPlanMaxAIs(plan);
     } else if (key === 'MaxLumo') {
         result = getPlanMaxLumo(plan);
+    } else if (key === 'MaxMembers') {
+        result = getPlanMaxMembers(plan);
     } else {
         result = plan[key];
     }

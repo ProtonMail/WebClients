@@ -1,4 +1,4 @@
-import { ORGANIZATION_FLAGS, ORGANIZATION_TWOFA_SETTING } from '../constants';
+import { ORGANIZATION_FLAGS, ORGANIZATION_TWOFA_SETTING, OrganizationPlanFlag } from '../constants';
 import type { Organization } from '../interfaces';
 import { hasBit } from './bitset';
 
@@ -64,4 +64,8 @@ export const hasOrganizationSetup = (organization: Partial<Organization> = {}) =
 
 export const hasOrganizationSetupWithKeys = (organization: Partial<Organization> = {}) => {
     return Boolean(organization.RequiresKey && organization.HasKeys);
+};
+
+export const hasMailProduct = (organization: Partial<Organization> = {}) => {
+    return hasBit(Number(organization.PlanFlags), Number(OrganizationPlanFlag.Mail));
 };

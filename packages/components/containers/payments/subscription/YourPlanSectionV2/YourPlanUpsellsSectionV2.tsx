@@ -12,9 +12,19 @@ import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import type { TelemetryPaymentFlow } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import useLoading from '@proton/hooks/useLoading';
 import type { FreeSubscription, FullPlansMap } from '@proton/payments';
-import { CYCLE, type FreePlanDefault, type Subscription, getCanAccessFamilyPlans, hasLumoPlan } from '@proton/payments';
-import { FREE_PLAN } from '@proton/payments';
-import { hasBundle, hasDeprecatedVPN, hasDuo, hasFamily, hasVPN2024 } from '@proton/payments';
+import {
+    CYCLE,
+    FREE_PLAN,
+    type FreePlanDefault,
+    type Subscription,
+    getCanAccessFamilyPlans,
+    hasBundle,
+    hasDeprecatedVPN,
+    hasDuo,
+    hasFamily,
+    hasLumo,
+    hasVPN2024,
+} from '@proton/payments';
 import { PaymentsContextProvider, usePaymentsPreloaded } from '@proton/payments/ui';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import type { UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
@@ -23,7 +33,7 @@ import useVariant from '@proton/unleash/useVariant';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import type { Upsell } from '../helpers';
+import { type Upsell, isUpsellWithPlan } from '../helpers';
 import CurrentPlanInfoWithUpsellSection from './Upsells/CurrentPlanInfoSection';
 import DuoBanner from './Upsells/DuoBanner';
 import DuoBannerExtendSubscription, { useDuoBannerExtendSubscription } from './Upsells/DuoBannerExtendSubscription';
@@ -85,7 +95,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
     const hasDriveFree = isFree && app === APPS.PROTONDRIVE;
     const hasPassFree = isFree && app === APPS.PROTONPASS && !user.hasPassLifetime;
     const hasVPNFree = isFree && app === APPS.PROTONVPN_SETTINGS;
-    const hasLumo = hasLumoPlan(subscription);
+    const hasLumoPlus = hasLumo(subscription);
 
     // Allow 24 month plan but conditions might change again
     const userCanHave24MonthPlan = true;
@@ -115,7 +125,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
                     hasVPNFree ||
                     hasDriveFree ||
                     // We want to show the VPN upsells to users with Lumo plan since they migrate from the Lumo plan to having a Lumo addon
-                    hasLumo) &&
+                    hasLumoPlus) &&
                 showAVariant,
             upsells: [...vpnPlusFromFreeUpsells.upsells, ...unlimitedBannerGradientUpsells.upsells],
             element: (
@@ -137,7 +147,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
                     hasVPNFree ||
                     hasDriveFree ||
                     // We want to show the VPN upsells to users with Lumo plan since they migrate from the Lumo plan to having a Lumo addon
-                    hasLumo) &&
+                    hasLumoPlus) &&
                 showBVariant,
             upsells: [...vpnPlusFromFreeUpsells.upsells, ...unlimitedBannerGradientUpsells.upsells],
             element: (
@@ -317,7 +327,10 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
         }
 
         const promises =
-            upsellSection?.upsells?.map((upsell) => upsell?.initializeOfferPrice?.(payments)).filter(isTruthy) ?? [];
+            upsellSection?.upsells
+                ?.filter(isUpsellWithPlan)
+                .map((upsell) => upsell.initializeOfferPrice?.(payments))
+                .filter(isTruthy) ?? [];
 
         withLoading(Promise.all(promises)).catch(noop);
     }, [key, payments.hasEssentialData]);

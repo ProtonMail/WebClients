@@ -402,6 +402,7 @@ export const SSO_PATHS = {
     WALLET_SIGNUP: '/wallet/signup',
     WALLET_SIGN_IN: '/wallet',
     LUMO_SIGNUP: '/lumo/signup',
+    LUMO_SIGNUP_B2B: '/lumo/signup/business',
     LUMO_SIGN_IN: '/lumo',
     DESKTOP_SIGN_IN: '/desktop/login',
     MEET_SIGNUP: '/meet/signup',
@@ -642,6 +643,17 @@ export enum ORGANIZATION_FLAGS {
     PHONE_SUPPORT = 256,
     TO_MIGRATE_ORG_KEY = 1 << 9,
     DELETION_WHITELISTED = 1 << 11,
+}
+
+export enum OrganizationPlanFlag {
+    Mail = 1 << 0,
+    Drive = 1 << 1,
+    VPN = 1 << 2,
+    Pass = 1 << 3,
+    Wallet = 1 << 4,
+    // Skipping 1 << 5
+    Lumo = 1 << 6,
+    // Add more when/if needed
 }
 
 export enum ORGANIZATION_TWOFA_SETTING {

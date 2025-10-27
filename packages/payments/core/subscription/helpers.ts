@@ -207,7 +207,7 @@ export const hasDrivePro = (subscription: MaybeFreeSubscription) => hasSomePlan(
 export const hasDriveBusiness = (subscription: MaybeFreeSubscription) =>
     hasSomePlan(subscription, PLANS.DRIVE_BUSINESS);
 export const hasPass = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.PASS);
-export const hasLumoPlan = (subscription: MaybeFreeSubscription) => hasSomeAddonOrPlan(subscription, PLANS.LUMO);
+export const hasLumo = (subscription: MaybeFreeSubscription) => hasSomeAddonOrPlan(subscription, PLANS.LUMO);
 export const hasBundle = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.BUNDLE);
 export const hasBundlePro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.BUNDLE_PRO);
 export const hasBundlePro2024 = (subscription: MaybeFreeSubscription) =>
@@ -219,6 +219,7 @@ export const hasVpnBusiness = (subscription: MaybeFreeSubscription) => hasSomePl
 export const hasPassPro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.PASS_PRO);
 export const hasPassFamily = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.PASS_FAMILY);
 export const hasPassBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.PASS_BUSINESS);
+export const hasLumoBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.LUMO_BUSINESS);
 export const hasFree = (subscription: MaybeFreeSubscription) => (subscription?.Plans || []).length === 0;
 
 export const hasAnyBundlePro = (subscription: MaybeFreeSubscription) =>
@@ -286,12 +287,12 @@ export const hasLumoMobileSubscription = (subscription?: MaybeFreeSubscription) 
         return false;
     }
 
-    if (isManagedExternally(subscription) && hasLumoPlan(subscription)) {
+    if (isManagedExternally(subscription) && hasLumo(subscription)) {
         return true;
     }
 
     for (const secondarySubscription of subscription.SecondarySubscriptions ?? []) {
-        if (isManagedExternally(secondarySubscription) && hasLumoPlan(secondarySubscription)) {
+        if (isManagedExternally(secondarySubscription) && hasLumo(secondarySubscription)) {
             return true;
         }
     }
@@ -372,6 +373,7 @@ const externalMemberB2BPlans: Set<PLANS | ADDON_NAMES> = new Set([
     PLANS.DRIVE_BUSINESS,
     PLANS.PASS_PRO,
     PLANS.PASS_BUSINESS,
+    PLANS.LUMO_BUSINESS,
 ]);
 export const getHasExternalMemberCapableB2BPlan = (subscription: MaybeFreeSubscription) => {
     return subscription?.Plans?.some((plan) => externalMemberB2BPlans.has(plan.Name)) || false;
@@ -906,7 +908,7 @@ export function isSubscriptionCheckForbidden(
  * existing susbcription that has one of the plans listed in this function.
  */
 function isMobileMultiSubSupported(subscription: Subscription) {
-    return hasLumoPlan(subscription);
+    return hasLumo(subscription);
 }
 
 export function canModify(subscription: Subscription | FreeSubscription | null | undefined) {

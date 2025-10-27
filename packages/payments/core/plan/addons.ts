@@ -2,6 +2,7 @@ import { ADDON_NAMES, ADDON_PREFIXES, PLANS } from '../constants';
 import type { FreeSubscription, PlanIDs } from '../interface';
 import type { Subscription } from '../subscription/interface';
 import { isFreeSubscription } from '../type-guards';
+import { getPlanNameFromIDs } from './helpers';
 import type { Addon } from './interface';
 
 type AddonOrName = Addon | ADDON_NAMES | PLANS;
@@ -76,124 +77,32 @@ export const isLumoAddon: AddonGuard = (addonOrName): boolean => {
     return isAddonType(addonOrName, ADDON_PREFIXES.LUMO);
 };
 
+export const AddonGuardsMap: Record<ADDON_PREFIXES, AddonGuard> = {
+    [ADDON_PREFIXES.DOMAIN]: isDomainAddon,
+    [ADDON_PREFIXES.IP]: isIpAddon,
+    [ADDON_PREFIXES.MEMBER]: isMemberAddon,
+    [ADDON_PREFIXES.SCRIBE]: isScribeAddon,
+    [ADDON_PREFIXES.LUMO]: isLumoAddon,
+};
+
 export const hasLumoAddonFromPlanIDs = (planIDs: PlanIDs) => {
     return Object.keys(planIDs).some((key) => isLumoAddon(key as any));
 };
 
 export type SupportedAddons = Partial<Record<ADDON_NAMES, boolean>>;
 
-export function getSupportedB2CAddons(planIDs: PlanIDs): SupportedAddons {
-    const supported: SupportedAddons = {};
-
-    if (planIDs[PLANS.MAIL]) {
-        supported[ADDON_NAMES.LUMO_MAIL] = true;
-    }
-
-    if (planIDs[PLANS.DRIVE]) {
-        supported[ADDON_NAMES.LUMO_DRIVE] = true;
-    }
-
-    if (planIDs[PLANS.DRIVE_1TB]) {
-        supported[ADDON_NAMES.LUMO_DRIVE_1TB] = true;
-    }
-
-    if (planIDs[PLANS.PASS]) {
-        supported[ADDON_NAMES.LUMO_PASS] = true;
-    }
-
-    if (planIDs[PLANS.PASS_FAMILY]) {
-        supported[ADDON_NAMES.LUMO_PASS_FAMILY] = true;
-    }
-
-    if (planIDs[PLANS.VPN2024]) {
-        supported[ADDON_NAMES.LUMO_VPN2024] = true;
-    }
-
-    if (planIDs[PLANS.BUNDLE]) {
-        supported[ADDON_NAMES.LUMO_BUNDLE] = true;
-    }
-
-    if (planIDs[PLANS.FAMILY]) {
-        supported[ADDON_NAMES.LUMO_FAMILY] = true;
-    }
-
-    if (planIDs[PLANS.DUO]) {
-        supported[ADDON_NAMES.LUMO_DUO] = true;
-    }
-
-    return supported;
-}
-
-export function getSupportedB2BAddons(planIDs: PlanIDs): SupportedAddons {
-    const supported: SupportedAddons = {};
-
-    if (planIDs[PLANS.MAIL_PRO]) {
-        supported[ADDON_NAMES.MEMBER_MAIL_PRO] = true;
-        supported[ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO] = true;
-        supported[ADDON_NAMES.LUMO_MAIL_PRO] = true;
-    }
-
-    if (planIDs[PLANS.MAIL_BUSINESS]) {
-        supported[ADDON_NAMES.MEMBER_MAIL_BUSINESS] = true;
-        supported[ADDON_NAMES.MEMBER_SCRIBE_MAIL_BUSINESS] = true;
-        supported[ADDON_NAMES.LUMO_MAIL_BUSINESS] = true;
-    }
-
-    if (planIDs[PLANS.DRIVE_PRO]) {
-        supported[ADDON_NAMES.MEMBER_DRIVE_PRO] = true;
-        supported[ADDON_NAMES.LUMO_DRIVE_PRO] = true;
-    }
-
-    if (planIDs[PLANS.DRIVE_BUSINESS]) {
-        supported[ADDON_NAMES.MEMBER_DRIVE_BUSINESS] = true;
-        supported[ADDON_NAMES.LUMO_DRIVE_BUSINESS] = true;
-    }
-
-    if (planIDs[PLANS.BUNDLE_PRO]) {
-        supported[ADDON_NAMES.MEMBER_BUNDLE_PRO] = true;
-        supported[ADDON_NAMES.DOMAIN_BUNDLE_PRO] = true;
-        supported[ADDON_NAMES.IP_BUNDLE_PRO] = true;
-        supported[ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO] = true;
-        supported[ADDON_NAMES.LUMO_BUNDLE_PRO] = true;
-    }
-
-    if (planIDs[PLANS.BUNDLE_PRO_2024]) {
-        supported[ADDON_NAMES.MEMBER_BUNDLE_PRO_2024] = true;
-        supported[ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024] = true;
-        supported[ADDON_NAMES.IP_BUNDLE_PRO_2024] = true;
-        supported[ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO_2024] = true;
-        supported[ADDON_NAMES.LUMO_BUNDLE_PRO_2024] = true;
-    }
-
-    if (planIDs[PLANS.VPN_PRO]) {
-        supported[ADDON_NAMES.MEMBER_VPN_PRO] = true;
-        supported[ADDON_NAMES.LUMO_VPN_PRO] = true;
-    }
-
-    if (planIDs[PLANS.VPN_BUSINESS]) {
-        supported[ADDON_NAMES.MEMBER_VPN_BUSINESS] = true;
-        supported[ADDON_NAMES.IP_VPN_BUSINESS] = true;
-        supported[ADDON_NAMES.LUMO_VPN_BUSINESS] = true;
-    }
-
-    if (planIDs[PLANS.PASS_PRO]) {
-        supported[ADDON_NAMES.MEMBER_PASS_PRO] = true;
-        supported[ADDON_NAMES.LUMO_PASS_PRO] = true;
-    }
-
-    if (planIDs[PLANS.PASS_BUSINESS]) {
-        supported[ADDON_NAMES.MEMBER_PASS_BUSINESS] = true;
-        supported[ADDON_NAMES.LUMO_PASS_BUSINESS] = true;
-    }
-
-    return supported;
-}
-
 export const getSupportedAddons = (planIDs: PlanIDs): SupportedAddons => {
-    const supported: SupportedAddons = {
-        ...getSupportedB2CAddons(planIDs),
-        ...getSupportedB2BAddons(planIDs),
-    };
+    const planName = getPlanNameFromIDs(planIDs);
+    if (!planName) {
+        return {};
+    }
+
+    const supported: SupportedAddons = {};
+    for (const addon of Object.values(ADDON_NAMES)) {
+        if (addon.includes(planName)) {
+            supported[addon] = true;
+        }
+    }
 
     return supported;
 };
