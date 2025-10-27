@@ -179,10 +179,19 @@ const GeneralSettingsPanel = ({ isGuest, onClose }: { isGuest: boolean; onClose?
         </div>
     );
 };
-
+const getPlanName = (hasLumoSeat: boolean, isVisionary: boolean, hasLumoB2B: boolean) => {
+    if (hasLumoB2B) {
+        return c('collider_2025: Title').t`${LUMO_SHORT_APP_NAME} Business`;
+    }
+    if (hasLumoSeat || isVisionary) {
+        return c('collider_2025: Title').t`${LUMO_SHORT_APP_NAME} Plus`;
+    }
+    return;
+};
 const AccountSettingsPanel = () => {
     const [user] = useUser();
-    const { hasLumoSeat, isVisionary, hasLumoPlusAddon } = useLumoPlan();
+    const { hasLumoSeat, isVisionary, hasLumoB2B } = useLumoPlan();
+    const planName = getPlanName(hasLumoSeat, isVisionary, hasLumoB2B);
 
     return (
         <>
@@ -196,9 +205,9 @@ const AccountSettingsPanel = () => {
                     <div className="flex-1 flex flex-column gap-0 items-start">
                         <div className="flex flex-row items-center gap-3 mb-1">
                             <span className="text-bold text-lg color-norm">{user.DisplayName ?? user.Name}</span>
-                            {(hasLumoSeat || hasLumoPlusAddon || isVisionary) && (
+                            {planName && (
                                 <span className="inline-flex items-center py-1 px-2 text-xs rounded-full plan-name">
-                                    {c('collider_2025: Title').t`${LUMO_SHORT_APP_NAME} Plus`}
+                                    {planName}
                                 </span>
                             )}
 
@@ -219,7 +228,7 @@ const AccountSettingsPanel = () => {
 };
 
 const AccountSettingsPanelGuest = () => {
-    const createLink = <CreateFreeAccountLink key="eslint-autofix-5730D5" />;
+    const createLink = <CreateFreeAccountLink key="create-free-account-link" />;
     return (
         <>
             <LumoSettingsUpgradePanel isGuest />

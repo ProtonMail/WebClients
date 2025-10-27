@@ -9,6 +9,7 @@ import { addUpsellPath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/u
 
 import { LUMO_PLUS_FREE_PATH_TO_ACCOUNT, LUMO_UPGRADE_TRIGGER_CLASS } from '../../../constants';
 import { useLumoPlan } from '../../../hooks/useLumoPlan';
+import LumoLogoHeader from '../../header/LumoLogo';
 import GetLumoPlusGuestButton from '../GetLumoPlusGuestButton/GetLumoPlusGuestButton';
 import LumoCatPlusCollarInline from '../LumoCatPlusCollarInline';
 import LumoPlusLogoInline from '../LumoPlusLogoInline';
@@ -42,14 +43,8 @@ interface LumoSettingsUpgradePanelProps {
 }
 
 const LumoSettingsUpgradePanel = ({ isGuest = false }: LumoSettingsUpgradePanelProps) => {
-    const {
-        isOrgOrMultiUser,
-        hasLumoSeat,
-        hasLumoPlusAddon,
-        isVisionary,
-        canShowLumoUpsellB2BOrB2C,
-        canShowLumoUpsellFree,
-    } = useLumoPlan();
+    const { isOrgOrMultiUser, hasLumoSeat, isVisionary, canShowLumoUpsellB2BOrB2C, canShowLumoUpsellFree, hasLumoB2B } =
+        useLumoPlan();
     const { APP_NAME } = useConfig();
 
     // Create the same upgrade URL as used in LumoPlusUpsellModal
@@ -62,7 +57,7 @@ const LumoSettingsUpgradePanel = ({ isGuest = false }: LumoSettingsUpgradePanelP
     const upgradeUrl = addUpsellPath(LUMO_PLUS_FREE_PATH_TO_ACCOUNT, lumoPlusModalUpsellRef);
 
     // Check if user has Lumo Plus
-    const hasLumoPlus = hasLumoSeat || hasLumoPlusAddon || isVisionary;
+    const hasLumoPlus = hasLumoSeat || isVisionary || hasLumoB2B;
 
     // If user can't see upsells and doesn't have Plus, don't show anything
     if (!hasLumoPlus && !canShowLumoUpsellFree && !canShowLumoUpsellB2BOrB2C && !isGuest) {
@@ -138,11 +133,11 @@ const LumoSettingsUpgradePanel = ({ isGuest = false }: LumoSettingsUpgradePanelP
             <div className="flex flex-column flex-nowrap gap-4 flex-1 w-1/2">
                 {/* Header */}
                 <div className="flex items-center gap-2">
-                    <LumoPlusLogoInline height="20px" />
+                    {hasLumoB2B ? <LumoLogoHeader /> : <LumoPlusLogoInline height="20px" />}
                 </div>
 
                 {/* Subscription status message */}
-                {hasLumoPlus && (
+                {hasLumoPlus && !hasLumoB2B && (
                     <div className="flex flex-column gap-1">
                         <p className="text-sm m-0">
                             {isVisionary

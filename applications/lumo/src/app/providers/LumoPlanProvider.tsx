@@ -5,7 +5,7 @@ import { useMember } from '@proton/account/member/hook';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { hasLumoAddon, hasVisionary, isManagedExternally } from '@proton/payments';
+import { hasBundlePro2024, hasLumoAddon, hasLumoBusiness, hasVisionary, isManagedExternally } from '@proton/payments';
 import { isOrganization, isSuperAdmin } from '@proton/shared/lib/organization/helper';
 
 import { useIsGuest } from './IsGuestProvider';
@@ -13,7 +13,6 @@ import { useIsGuest } from './IsGuestProvider';
 // TODO: refactor guest vs authenticated components using useLumoPlan hook to use provider instead
 export interface LumoPlanData {
     hasLumoSeat: boolean;
-    hasLumoPlusAddon: boolean;
     isVisionary: boolean;
     canShowUpsell: boolean;
     canShowLumoUpsellFree: boolean;
@@ -21,6 +20,8 @@ export interface LumoPlanData {
     isOrgOrMultiUser: boolean;
     isOrgOrMultiAdmin: boolean;
     isLumoPlanLoading: boolean;
+    hasLumoB2B: boolean;
+    isB2BAudience: boolean;
 }
 
 const LumoPlanContext = createContext<LumoPlanData | null>(null);
@@ -29,7 +30,6 @@ const LumoPlanContext = createContext<LumoPlanData | null>(null);
 const GuestLumoPlanProvider = ({ children }: { children: ReactNode }) => {
     const guestDefaults: LumoPlanData = {
         hasLumoSeat: false,
-        hasLumoPlusAddon: false,
         isVisionary: false,
         canShowUpsell: false,
         canShowLumoUpsellFree: false,
@@ -37,6 +37,8 @@ const GuestLumoPlanProvider = ({ children }: { children: ReactNode }) => {
         isOrgOrMultiUser: false,
         isOrgOrMultiAdmin: false,
         isLumoPlanLoading: false,
+        hasLumoB2B: false,
+        isB2BAudience: true,
     };
 
     return <LumoPlanContext.Provider value={guestDefaults}>{children}</LumoPlanContext.Provider>;
@@ -55,7 +57,6 @@ const AuthenticatedLumoPlanProvider = ({ children }: { children: ReactNode }) =>
     if (isLoading || !user || !subscription) {
         const loadingDefaults: LumoPlanData = {
             hasLumoSeat: user?.NumLumo > 0, //return value as soon as possible to avoid logo flash
-            hasLumoPlusAddon: false,
             isVisionary: false,
             canShowUpsell: false,
             canShowLumoUpsellFree: false,
@@ -63,26 +64,31 @@ const AuthenticatedLumoPlanProvider = ({ children }: { children: ReactNode }) =>
             isOrgOrMultiUser: false,
             isOrgOrMultiAdmin: false,
             isLumoPlanLoading: true,
+            hasLumoB2B: false,
+            isB2BAudience: false,
         };
         return <LumoPlanContext.Provider value={loadingDefaults}>{children}</LumoPlanContext.Provider>;
     }
 
     const hasLumoSeat = user.NumLumo > 0;
-    const hasLumoPlusAddon = hasLumoAddon(subscription);
     const isVisionary = hasVisionary(subscription);
+
+    const hasLumoB2B =
+        hasLumoSeat &&
+        (hasLumoBusiness(subscription) || (hasLumoAddon(subscription) && hasBundlePro2024(subscription)));
 
     const canShowUpsell = !hasLumoSeat && user.canPay && !user.isDelinquent && !isManagedExternally(subscription);
     const canShowLumoUpsellFree = user.isFree && canShowUpsell;
     const canShowLumoUpsellB2BOrB2C = user.isPaid && canShowUpsell;
 
     const userIsSuperAdmin = member ? isSuperAdmin([member]) : false;
+    const isB2BAudience = canShowLumoUpsellFree || (user.isPaid && !isOrganization(organization));
 
     const isOrgOrMultiUser = organization ? isOrganization(organization) && !userIsSuperAdmin : false;
     const isOrgOrMultiAdmin = organization ? isOrganization(organization) && userIsSuperAdmin : false;
 
     const value: LumoPlanData = {
         hasLumoSeat,
-        hasLumoPlusAddon,
         isVisionary,
         canShowUpsell,
         canShowLumoUpsellFree,
@@ -90,6 +96,8 @@ const AuthenticatedLumoPlanProvider = ({ children }: { children: ReactNode }) =>
         isOrgOrMultiUser,
         isOrgOrMultiAdmin,
         isLumoPlanLoading: isLoading,
+        hasLumoB2B,
+        isB2BAudience,
     };
 
     return <LumoPlanContext.Provider value={value}>{children}</LumoPlanContext.Provider>;
