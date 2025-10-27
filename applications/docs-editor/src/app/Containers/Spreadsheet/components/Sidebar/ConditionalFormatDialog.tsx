@@ -118,11 +118,11 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
 
   const showFromValue = useMemo(() => {
     return shouldShowFromValue(booleanRule?.condition?.type ?? undefined)
-  }, [booleanRule?.condition.type])
+  }, [booleanRule?.condition?.type])
 
   const showToValue = useMemo(() => {
     return shouldShowToValue(booleanRule?.condition?.type ?? undefined)
-  }, [booleanRule?.condition.type])
+  }, [booleanRule?.condition?.type])
 
   const normalizeRuleData = useEvent((rule: ConditionalFormatRule) => {
     return omit(rule, selectedTab === TABS.SINGLE_COLOR ? 'gradientRule' : 'booleanRule')
@@ -250,7 +250,7 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                     </NativeSelect>
 
                     {showFromValue ? (
-                      booleanRule?.condition.type === 'CUSTOM_FORMULA' ? (
+                      booleanRule?.condition?.type === 'CUSTOM_FORMULA' ? (
                         <div className="flex items-center">
                           <FormulaInput
                             onChange={(value) => {

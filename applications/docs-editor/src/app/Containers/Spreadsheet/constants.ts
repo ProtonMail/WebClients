@@ -15,133 +15,102 @@ export const ZOOM_DEFAULT = 1 // scale
 export const ZOOM_MIN = 0.5 // scale
 export const ZOOM_MAX = 2 // scale
 
-export const FONTS = [
+export const FONTS: { value: string; label?: string }[] = [
   {
     value: 'Arial',
-    label: 'Arial',
   },
   {
     value: 'Calibri',
-    label: 'Calibri',
   },
   {
     value: 'Cambria',
-    label: 'Cambria',
   },
   {
     value: 'Caveat',
-    label: 'Caveat',
   },
   {
     value: 'Comfortaa',
-    label: 'Comfortaa',
   },
   {
     value: 'Comic Sans MS',
-    label: 'Comic Sans MS',
   },
   {
     value: 'Consolas',
-    label: 'Consolas',
   },
   {
     value: 'Corsiva',
-    label: 'Corsiva',
   },
   {
     value: 'Courier New',
-    label: 'Courier New',
   },
   {
     value: 'Droid Sans',
-    label: 'Droid Sans',
   },
   {
     value: 'Droid Serif',
-    label: 'Droid Serif',
   },
   {
     value: 'Georgia',
-    label: 'Georgia',
   },
   {
     value: 'Impact',
-    label: 'Impact',
   },
   {
     value: 'Lexend',
-    label: 'Lexend',
   },
   {
     value: 'Lobster',
-    label: 'Lobster',
   },
   {
     value: 'Lora',
-    label: 'Lora',
   },
   {
     value: 'Merriweather',
-    label: 'Merriweather',
   },
   {
     value: 'Montserrat',
-    label: 'Montserrat',
   },
   {
     value: 'Nunito',
-    label: 'Nunito',
   },
   {
     value: 'Oswald',
-    label: 'Oswald',
   },
   {
     value: 'Pacifico',
-    label: 'Pacifico',
   },
   {
     value: 'Proxima Nova',
-    label: 'Proxima Nova',
   },
   {
     value: 'Roboto',
-    label: 'Roboto',
   },
   {
     value: 'Roboto Mono',
-    label: 'Roboto Mono',
   },
   {
     value: 'Roboto Serif',
-    label: 'Roboto Serif',
   },
   {
     value: 'Source Sans 3',
-    label: 'Source Sans 3',
   },
   {
     value: 'Times New Roman',
-    label: 'Times New Roman',
   },
   {
     value: 'Trebuchet MS',
-    label: 'Trebuchet MS',
   },
   {
     value: 'Ubuntu',
-    label: 'Ubuntu',
   },
   {
     value: 'Verdana',
-    label: 'Verdana',
   },
 ]
 export type FontValue = (typeof FONTS)[number]['value']
-export const FONT_LABEL_BY_VALUE = Object.fromEntries(FONTS.map(({ value, label }) => [value, label])) as Record<
-  FontValue,
-  string
->
+export const FONT_LABEL_BY_VALUE = Object.fromEntries(
+  FONTS.map(({ value, label }) => [value, label ?? value]),
+) as Record<FontValue, string>
 // TODO: make sure this is synced with SpreadsheetTheme.primaryFontFamily
 export const FONT_FAMILY_DEFAULT = 'Arial' satisfies FontValue
 export const FONT_SIZE_SUGGESTIONS = [6, 7, 8, 9, 10, 11, 12, 14, 18, 24, 36] // pt
