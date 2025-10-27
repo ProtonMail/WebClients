@@ -1,6 +1,7 @@
 /* eslint-disable-next-line lodash/import-scope */
 import type { DebounceSettings } from 'lodash';
 
+import type { Callback } from '@proton/pass/types';
 import debounce from '@proton/utils/debounce';
 
 /** Creates a debounced function that accumulates parameters
@@ -41,4 +42,19 @@ export const debounceBuffer = <T, R>(
     fn.flush = debouncedFn.flush;
 
     return fn;
+};
+
+type SkipFirstFn<T extends Callback<any[], void>> = T & { reset: () => void };
+
+export const skipFirst = <T extends Callback<any[], void>>(fn: T): SkipFirstFn<T> => {
+    let called = false;
+
+    const callback = ((...args: Parameters<T>) => {
+        if (called) fn(...args);
+        else called = true;
+    }) as SkipFirstFn<T>;
+
+    callback.reset = () => (called = false);
+
+    return callback;
 };
