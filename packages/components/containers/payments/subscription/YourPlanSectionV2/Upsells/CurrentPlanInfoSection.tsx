@@ -27,6 +27,7 @@ import type { PlanCardFeatureDefinition } from '../../../features/interface';
 import { getFoldersAndLabelsFeature, getNAddressesFeature, getNDomainsFeature } from '../../../features/mail';
 import { PASS_PLUS_VAULTS, get2FAAuthenticator, getHideMyEmailAliases, getVaults } from '../../../features/pass';
 import { PlanCardFeatureList } from '../../PlanCardFeatures';
+import { isUpsellWithPlan } from '../../helpers';
 import UpsellPrice from '../../panels/components/UpsellPrice';
 import { CycleSelector } from '../CycleSelector';
 import { FreeVPNFeaturesB } from '../PlanFeatureSections';
@@ -337,7 +338,7 @@ const VPNPlanCard = ({
     serversCount: VPNServersCountData;
     selectedCycle: Cycle;
 }) => {
-    const vpnUpsell = vpnUpsells.find((upsell) => upsell.customCycle === selectedCycle);
+    const vpnUpsell = vpnUpsells.filter(isUpsellWithPlan).find((upsell) => upsell.customCycle === selectedCycle);
 
     if (!vpnUpsell || !vpnUpsell.price) {
         return null;
@@ -391,7 +392,7 @@ const BundlePlanCard = ({
     freePlan: FreePlanDefault;
     selectedCycle: Cycle;
 }) => {
-    const bundleUpsell = bundleUpsells.find((upsell) => upsell.customCycle === selectedCycle);
+    const bundleUpsell = bundleUpsells.filter(isUpsellWithPlan).find((upsell) => upsell.customCycle === selectedCycle);
 
     if (!bundleUpsell || !bundleUpsell.price) {
         return null;

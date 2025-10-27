@@ -22,6 +22,7 @@ export const getSignupConfiguration = ({
     vpnServersCountData,
     viewportWidth,
     theme,
+    isLumoB2BEnabled,
 }: {
     toApp?: APP_NAMES;
     model: SignupModelV2;
@@ -30,6 +31,7 @@ export const getSignupConfiguration = ({
     vpnServersCountData: VPNServersCountData;
     viewportWidth: any; // todo lazy
     theme: PublicTheme;
+    isLumoB2BEnabled: boolean;
 }) => {
     const planIDs = model.optimistic.planIDs || model.subscriptionData.planIDs;
     const plan = getPlanFromPlanIDs(model.plansMap, planIDs) || FREE_PLAN;
@@ -104,6 +106,13 @@ export const getSignupConfiguration = ({
     if (getIsLumoApp(toApp)) {
         return getLumoConfiguration({
             defaultPlan: signupParameters.defaultPlan,
+            plansMap: model.plansMap,
+            freePlan: model.freePlan,
+            audience,
+            planParameters: model.planParameters,
+            isLumoB2BEnabled,
+            vpnServersCountData,
+            signupParameters,
         });
     }
 

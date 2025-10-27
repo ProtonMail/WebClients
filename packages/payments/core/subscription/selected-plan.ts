@@ -1,9 +1,11 @@
+import isFunction from '@proton/utils/isFunction';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { ADDON_NAMES, CYCLE, DEFAULT_CURRENCY, PLANS } from '../constants';
+import { ADDON_NAMES, type ADDON_PREFIXES, CYCLE, DEFAULT_CURRENCY, PLANS } from '../constants';
 import type { Currency, FeatureLimitKey, FreeSubscription, PlanIDs } from '../interface';
 import {
     type AddonGuard,
+    AddonGuardsMap,
     getAddonType,
     getSupportedAddons,
     isAddonType,
@@ -25,6 +27,14 @@ import { FREE_PLAN } from './freePlans';
 import { getPlanIDs } from './helpers';
 import type { Subscription } from './interface';
 import { getPlansMap } from './plans-map-wrapper';
+
+type PresentAddonTypes = {
+    [ADDON_PREFIXES.DOMAIN]: boolean;
+    [ADDON_PREFIXES.IP]: boolean;
+    [ADDON_PREFIXES.MEMBER]: boolean;
+    [ADDON_PREFIXES.SCRIBE]: boolean;
+    [ADDON_PREFIXES.LUMO]: boolean;
+};
 
 export class SelectedPlan {
     private _planIDs: PlanIDs;
@@ -280,6 +290,14 @@ export class SelectedPlan {
         return this.getTotalUsers();
     }
 
+    getPresentAddonTypes(): PresentAddonTypes {
+        const addonPrefixes = this.getAddonNames().map(getAddonType).filter(isTruthy);
+        return addonPrefixes.reduce((acc, addonPrefix) => {
+            acc[addonPrefix] = true;
+            return acc;
+        }, {} as PresentAddonTypes);
+    }
+
     private capScribes(): SelectedPlan {
         const maxScribes = this.getMaxScribes();
         if (this.getTotalScribes() > maxScribes) {
@@ -326,7 +344,9 @@ export class SelectedPlan {
         return getPlanFeatureLimit(this.getPlan(), featureLimitKey);
     }
 
-    private getCountInAddons(guard: AddonGuard, featureLimitKey: FeatureLimitKey): number {
+    private getCountInAddons(guardOrPrexix: AddonGuard | ADDON_PREFIXES, featureLimitKey: FeatureLimitKey): number {
+        const guard = isFunction(guardOrPrexix) ? guardOrPrexix : AddonGuardsMap[guardOrPrexix];
+
         return this.getAddons(guard)
             .filter(isTruthy)
             .reduce((acc, addon) => {

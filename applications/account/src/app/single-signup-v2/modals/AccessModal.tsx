@@ -10,6 +10,8 @@ import {
     APPS,
     DRIVE_APP_NAME,
     DRIVE_SHORT_APP_NAME,
+    LUMO_APP_NAME,
+    LUMO_SHORT_APP_NAME,
     MAIL_APP_NAME,
     MAIL_SHORT_APP_NAME,
     PASS_APP_NAME,
@@ -47,6 +49,11 @@ const AccessModal = ({ app, onClose, onContinue, onSignOut, user, ...rest }: Pro
         if (app === APPS.PROTONWALLET) {
             return { svg: walletAccess, appName: WALLET_APP_NAME, shortName: WALLET_SHORT_APP_NAME };
         }
+
+        if (app === APPS.PROTONLUMO) {
+            return { appName: LUMO_APP_NAME, shortName: LUMO_SHORT_APP_NAME };
+        }
+
         throw new Error('unknown app');
     })();
 

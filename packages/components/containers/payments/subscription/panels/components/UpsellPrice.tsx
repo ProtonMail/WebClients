@@ -3,17 +3,13 @@ import { c } from 'ttag';
 import Price from '@proton/components/components/price/Price';
 import { OfferPrice } from '@proton/payments/ui';
 
-import type { Upsell } from '../../helpers';
+import type { UpsellWithPlan } from '../../helpers';
 
 interface UpsellPriceProps {
-    upsell: Upsell;
+    upsell: UpsellWithPlan;
 }
 
 const UpsellPrice = ({ upsell }: UpsellPriceProps) => {
-    if (!upsell.price) {
-        return null;
-    }
-
     const priceColorClassName = upsell.highlightPrice ? 'text-5xl color-primary' : 'text-5xl color-norm';
     const { value, currency } = upsell.price;
 

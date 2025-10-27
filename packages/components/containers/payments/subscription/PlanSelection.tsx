@@ -61,6 +61,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import { selectPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 import { Audience, type Organization, type UserModel, type VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { isFree } from '@proton/shared/lib/user/helpers';
+import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -224,10 +225,13 @@ export function useAccessiblePlans({
     currency,
     audience,
 }: AccessiblePlansHookProps) {
+    const isLumoB2BEnabled = useFlag('LumoB2B');
+
     const isVpnSettingsApp = app === APPS.PROTONVPN_SETTINGS;
     const isPassSettingsApp = app === APPS.PROTONPASS;
     const isDriveSettingsApp = app === APPS.PROTONDRIVE || app === APPS.PROTONDOCS;
     const isWalletSettingsApp = app === APPS.PROTONWALLET;
+    const isLumoSettingsApp = app === APPS.PROTONLUMO;
 
     const plansMap = getPlansMap(plans, currency, false);
 
@@ -329,6 +333,8 @@ export function useAccessiblePlans({
 
     const walletB2BPlans = filterPlans([plansMap[bundleProPlan]]);
 
+    const lumoB2BPlans = filterPlans([plansMap[PLANS.LUMO_BUSINESS]]);
+
     /**
      * The VPN B2B plans should be displayed only in the ProtonVPN Settings app (protonvpn.com).
      *
@@ -339,6 +345,7 @@ export function useAccessiblePlans({
     const isPassB2bPlans = isPassSettingsApp && passB2BPlans.length !== 0;
     const isDriveB2bPlans = isDriveSettingsApp && driveB2BPlans.length !== 0;
     const isWalletB2BPlans = isWalletSettingsApp && walletB2BPlans.length !== 0;
+    const isLumoB2BPlans = isLumoSettingsApp && lumoB2BPlans.length !== 0;
 
     const B2BPlans: (Plan | ShortPlanLike)[] = (() => {
         // In the realm of multi-subs, if user has any subscription managed exteranlly, we don't display the B2B plans
@@ -354,16 +361,18 @@ export function useAccessiblePlans({
             // Lifetime users shouldn't see Pass B2B plans
             if (!user.hasPassLifetime) {
                 return passB2BPlans;
+            } else {
+                return [];
             }
         } else if (isDriveB2bPlans) {
             return driveB2BPlans;
         } else if (isWalletB2BPlans) {
             return walletB2BPlans;
-        } else {
-            return filterPlans([plansMap[PLANS.MAIL_PRO], plansMap[PLANS.MAIL_BUSINESS], plansMap[bundleProPlan]]);
+        } else if (isLumoB2BPlans && isLumoB2BEnabled) {
+            return lumoB2BPlans;
         }
 
-        return [];
+        return filterPlans([plansMap[PLANS.MAIL_PRO], plansMap[PLANS.MAIL_BUSINESS], plansMap[bundleProPlan]]);
     })();
 
     const isPassLifetimeEligible =

@@ -6,6 +6,8 @@ import type { ButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
 import type { TelemetryPaymentFlow } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import useLoading from '@proton/hooks/useLoading';
 import {
+    ADDON_NAMES,
+    ADDON_PREFIXES,
     CYCLE,
     type Currency,
     type Cycle,
@@ -13,16 +15,20 @@ import {
     type FullPlansMap,
     PLANS,
     type Plan,
+    type PlanIDs,
+    type PlansMap,
+    SelectedPlan,
     type Subscription,
     getHasConsumerVpnPlan,
     getIsB2BAudienceFromPlan,
-    getPricePerCycle,
+    getPrice,
     hasBundle,
     hasDeprecatedVPN,
     hasDrive,
     hasDrive1TB,
     hasDriveBusiness,
     hasDuo,
+    hasLumoBusiness,
     hasMail,
     hasMailBusiness,
     hasMailPro,
@@ -33,6 +39,7 @@ import {
     hasVpnBusiness,
     hasVpnPro,
     isForbiddenModification,
+    isPlan,
     isTrial,
 } from '@proton/payments';
 import { type PreloadedPaymentsContextType, getPlanToCheck, usePaymentsPreloaded } from '@proton/payments/ui';
@@ -45,6 +52,7 @@ import {
     DUO_MAX_USERS,
     FAMILY_MAX_USERS,
     FREE_VPN_CONNECTIONS,
+    LUMO_SHORT_APP_NAME,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
@@ -63,7 +71,7 @@ import {
     getVersionHistory,
 } from '../../features/drive';
 import { getCustomBranding, getSentinel, getSupport, getUsersFeature } from '../../features/highlights';
-import type { PlanCardFeatureDefinition } from '../../features/interface';
+import type { PlanCardFeatureDefinition, ShortPlan } from '../../features/interface';
 import {
     getB2BNDomainsFeature,
     getNAddressesFeature,
@@ -137,8 +145,9 @@ interface Price {
     currency: Currency;
 }
 
-export interface Upsell {
-    plan?: PLANS;
+export interface UpsellWithPlan {
+    plan: PLANS;
+    planIDs: PlanIDs;
     /**
      * Unique key for React rednering.
      */
@@ -148,37 +157,41 @@ export interface Upsell {
     isRecommended?: boolean;
     highlightPrice?: boolean;
     features: UpsellFeature[];
-    /**
-     * If there is a fully custom plan, like VPN Enterprise, then there is no need for price.
-     * It can be used together with ignoreDefaultCta
-     */
-    price?: Price;
+    price: Price;
     onUpgrade: (cycle?: Cycle) => void;
     defaultCtaOverrides?: Partial<UpsellCta>;
     otherCtas: (UpsellCta | ReactNode)[];
     upsellRefLink?: string;
     isTrialEnding?: boolean;
-    /**
-     * The default CTA won't be rendered at all if this is true.
-     */
-    ignoreDefaultCta?: boolean;
     customCycle?: CYCLE;
     cycle?: CYCLE;
     initializeOfferPrice?: (paymentsContext: PreloadedPaymentsContextType) => Promise<unknown>;
 }
+
+type UpsellWithoutPlan = Pick<
+    UpsellWithPlan,
+    'planKey' | 'title' | 'description' | 'features' | 'otherCtas' | 'onUpgrade' | 'isRecommended'
+>;
+
+export function isUpsellWithPlan(upsell: Upsell): upsell is UpsellWithPlan {
+    return 'plan' in upsell;
+}
+
+export type Upsell = UpsellWithPlan | UpsellWithoutPlan;
 
 export type MaybeUpsell = Upsell | null;
 
 type GetUpsellArgs = {
     freePlan: FreePlanDefault;
     plan: PLANS;
-    plansMap: { [key in PLANS]: Plan };
+    addons?: PlanIDs;
+    plansMap: FullPlansMap;
     app: APP_NAMES;
     upsellPath: DASHBOARD_UPSELL_PATHS;
     serversCount: VPNServersCountData;
     customCycle?: CYCLE;
     telemetryFlow: TelemetryPaymentFlow;
-} & Partial<Upsell>;
+} & Partial<UpsellWithPlan>;
 
 export type GetPlanUpsellArgs = Omit<GetUpsellArgs, 'plan' | 'upsellPath' | 'otherCtas'> & {
     hasPaidMail?: boolean;
@@ -186,6 +199,7 @@ export type GetPlanUpsellArgs = Omit<GetUpsellArgs, 'plan' | 'upsellPath' | 'oth
     hasUsers?: boolean;
     hasDriveBusinessPlan?: boolean;
     openSubscriptionModal: OpenSubscriptionModalCallback;
+    addons?: PlanIDs;
 };
 
 const exploreAllPlansCTA = (openSubscriptionModal: OpenSubscriptionModalCallback): UpsellCta | ReactNode => {
@@ -203,6 +217,30 @@ const exploreAllPlansCTA = (openSubscriptionModal: OpenSubscriptionModalCallback
     };
 };
 
+export const getPlanTitleWithAddons = ({
+    planIDs,
+    plansMap,
+    cycle,
+    currency,
+    shortPlan,
+}: {
+    planIDs: PlanIDs;
+    plansMap: PlansMap;
+    cycle: Cycle;
+    currency: Currency;
+    shortPlan: ShortPlan | Plan;
+}) => {
+    const addonTypes = SelectedPlan.createNormalized(planIDs, plansMap, cycle, currency).getPresentAddonTypes();
+
+    const planTitle = isPlan(shortPlan) ? shortPlan.Title : shortPlan.title;
+
+    if (addonTypes[ADDON_PREFIXES.LUMO]) {
+        return `${planTitle} + ${LUMO_SHORT_APP_NAME}`;
+    }
+
+    return planTitle;
+};
+
 export const getUpsell = ({
     plan,
     plansMap,
@@ -211,8 +249,9 @@ export const getUpsell = ({
     freePlan,
     app,
     customCycle,
+    addons,
     ...upsellFields
-}: GetUpsellArgs) => {
+}: GetUpsellArgs): UpsellWithPlan | null => {
     const fullPlan = plansMap[plan];
     const shortPlan = getShortPlan(plan, plansMap, { vpnServers: serversCount, freePlan });
 
@@ -229,10 +268,12 @@ export const getUpsell = ({
 
     const currency = fullPlan.Currency;
 
+    const planIDs = { [plan]: 1, ...addons };
+
     const allowedCycles = getAllowedCycles({
         currency,
         plansMap,
-        planIDs: { [plan]: 1 },
+        planIDs,
         subscription: undefined,
     });
 
@@ -245,7 +286,7 @@ export const getUpsell = ({
     const cycle = allowedCycles.includes(preferredCycle) ? preferredCycle : allowedCycles[0];
 
     const initializeOfferPrice = async (paymentsContext: PreloadedPaymentsContextType) => {
-        const planToCheck = getPlanToCheck({ planIDs: { [plan]: 1 }, cycle, currency });
+        const planToCheck = getPlanToCheck({ planIDs, cycle, currency });
         if (!planToCheck.coupon) {
             return;
         }
@@ -253,17 +294,20 @@ export const getUpsell = ({
         return paymentsContext.checkMultiplePlans([planToCheck]);
     };
 
+    const title = upsellFields.isTrialEnding
+        ? c('new_plans: Title').t`${shortPlan.title} Trial`
+        : getPlanTitleWithAddons({ planIDs, plansMap, cycle, currency, shortPlan });
+
     return {
-        app,
         plan,
+        planIDs,
         planKey: plan,
-        title: upsellFields.isTrialEnding ? c('new_plans: Title').t`${shortPlan.title} Trial` : shortPlan.title,
+        title,
         description: shortPlan.description,
         upsellRefLink,
-        price: { value: (getPricePerCycle(fullPlan, cycle) || 0) / cycle, currency },
+        price: { value: getPrice(planIDs, cycle, plansMap) / cycle, currency },
         features: (upsellFields.features ?? shortPlan.features).filter((item) => isTruthy(item)),
         otherCtas: [],
-        currency,
         customCycle,
         cycle,
         ...upsellFields,
@@ -703,7 +747,7 @@ const getVpnBusinessUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetP
     });
 };
 
-const getVpnEnterpriseUpsell = (serversCount: VPNServersCountData): Upsell => {
+const getVpnEnterpriseUpsell = (serversCount: VPNServersCountData): UpsellWithoutPlan => {
     const vpnEnteriprisePlan = getVPNEnterprisePlan(serversCount);
 
     return {
@@ -711,7 +755,6 @@ const getVpnEnterpriseUpsell = (serversCount: VPNServersCountData): Upsell => {
         title: vpnEnteriprisePlan.title,
         description: vpnEnteriprisePlan.description,
         features: [getDedicatedServersVPNFeature(serversCount), getDedicatedAccountManagerVPNFeature()],
-        ignoreDefaultCta: true,
         otherCtas: [<VpnEnterpriseAction shape="outline" size="large" />],
         // because we have a custom CTA (<VpnEnterpriseAction />), the onUpgrade callback will never be used
         onUpgrade: noop,
@@ -757,8 +800,12 @@ export const resolveUpsellsToDisplay = ({
     telemetryFlow,
     ...rest
 }: ResolveUpsellsToDisplayProps) => {
+    if (!subscription) {
+        return [];
+    }
+
     const resolve = () => {
-        if (!canPay || !subscription) {
+        if (!canPay) {
             return [];
         }
 
@@ -854,6 +901,16 @@ export const resolveUpsellsToDisplay = ({
                 return [getVpnEnterpriseUpsell(serversCount), getBundleProUpsell({ ...upsellsPayload })].filter(
                     isTruthy
                 );
+
+            case hasLumoBusiness(subscription):
+                return [
+                    getBundleProUpsell({
+                        ...upsellsPayload,
+                        addons: { [ADDON_NAMES.LUMO_BUNDLE_PRO_2024]: 1 },
+                        description: c('lumo_signup_2025: Info')
+                            .t`Protect your entire business. Get ${LUMO_SHORT_APP_NAME} Professional with all ${BRAND_NAME} for Business apps and premium features.`,
+                    }),
+                ];
             default:
                 return [];
         }
@@ -861,7 +918,12 @@ export const resolveUpsellsToDisplay = ({
 
     const upsells = resolve()
         .filter((maybeUpsell): maybeUpsell is Upsell => isTruthy(maybeUpsell))
-        .filter((upsell) => !subscription || !upsell.plan || !isForbiddenModification(subscription, upsell.plan));
+
+        .filter(
+            (upsell) =>
+                // isUpsellWithPlan is here type-safety
+                !isUpsellWithPlan(upsell) || !isForbiddenModification(subscription, upsell.plan)
+        );
 
     return upsells;
 };
@@ -882,7 +944,11 @@ export const useUpsellsToDisplay = (
             return;
         }
 
-        const promises = upsells.map((upsell) => upsell?.initializeOfferPrice?.(payments)).filter(isTruthy);
+        const promises = upsells
+            .filter(isUpsellWithPlan)
+            .map((upsell) => upsell.initializeOfferPrice?.(payments))
+            .filter(isTruthy);
+
         withLoading(Promise.all(promises)).catch(noop);
     }, [key, payments.hasEssentialData]);
 

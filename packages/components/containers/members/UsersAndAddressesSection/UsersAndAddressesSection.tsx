@@ -72,7 +72,7 @@ import {
     ORGANIZATION_STATE,
 } from '@proton/shared/lib/constants';
 import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
-import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
+import { hasMailProduct, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getInitials, normalize } from '@proton/shared/lib/helpers/string';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Address, EnhancedMember, Member } from '@proton/shared/lib/interfaces';
@@ -730,11 +730,17 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                                                         {c('Users table: badge').t`Private`}
                                                                     </UserTableBadge>
                                                                 )}
-                                                            {member.NumAI > 0 && (
-                                                                <UserTableBadge type="weak">
-                                                                    {c('Users table: badge').t`Writing assistant`}
-                                                                </UserTableBadge>
-                                                            )}
+
+                                                            {member.NumAI > 0 &&
+                                                                // if the current organization doesn't have access to
+                                                                // Mail product then it doesn't make sense to show
+                                                                // Writing Assistant benefit. For example, this happens
+                                                                // to subusers of lumobiz2025 plan.
+                                                                hasMailProduct(organization) && (
+                                                                    <UserTableBadge type="weak">
+                                                                        {c('Users table: badge').t`Writing assistant`}
+                                                                    </UserTableBadge>
+                                                                )}
                                                             {member.NumLumo > 0 && (
                                                                 <UserTableBadge type="weak">
                                                                     {LUMO_SHORT_APP_NAME}

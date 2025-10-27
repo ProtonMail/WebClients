@@ -3,6 +3,7 @@ import { type ChangeEventHandler, type ReactNode, useState } from 'react';
 import { c } from 'ttag';
 
 import { organizationActions } from '@proton/account/organization';
+import { useOrganization } from '@proton/account/organization/hooks';
 import { useSamlSSO } from '@proton/account/samlSSO/hooks';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Logo from '@proton/components/components/logo/Logo';
@@ -28,6 +29,7 @@ import {
     VPN_APP_NAME,
     WALLET_APP_NAME,
 } from '@proton/shared/lib/constants';
+import { hasMailProduct } from '@proton/shared/lib/helpers/organization';
 import type { OrganizationSettingsAllowedProduct } from '@proton/shared/lib/interfaces';
 import { serializeAllowedProducts } from '@proton/shared/lib/organization/accessControl/serialization';
 
@@ -149,6 +151,7 @@ const AccessControlItem = ({
 const AccessControlSettingsSection = () => {
     const [samlSSO] = useSamlSSO();
     const hasSsoConfig = samlSSO && samlSSO.configs.length > 0;
+    const [organization] = useOrganization();
 
     return (
         <SettingsSectionWide>
@@ -157,16 +160,26 @@ const AccessControlSettingsSection = () => {
                     .t`Manage which ${BRAND_NAME} applications the members of your organization can access. If disabled, only administrators will have access.`}
             </SettingsParagraph>
             <SettingsSection className="flex flex-column gap-2">
-                <AccessControlItem
-                    title={
-                        // translator: Proton Mail and Proton Calendar
-                        c('Info').t`${MAIL_APP_NAME} and ${CALENDAR_APP_NAME}`
-                    }
-                    description={c('Info').t`Email and calendar, integrated with ${CONTACTS_APP_NAME}`}
-                    logo={<MailCalendarIcon size={8} />}
-                    targetProducts={[Product.Mail, Product.Calendar]}
-                    showSSOBadge={!appSupportsSSO(APPS.PROTONMAIL) && hasSsoConfig}
-                />
+                {
+                    // So I feel this is a hacky way, but can't suggest a better solution right now. Case: subusers of
+                    // Lumo B2B, VPN B2B, Pass B2B, Drive B2B don't have access to Mail. However without this conditions
+                    // admins would still see the toggle to enable/disable Mail for their subusers. We need a way to
+                    // check if _subusers_ of certain org have access to certain products, not just Mail. Perhaps the
+                    // proper way already exists. The best idea that I had is using Organization.PlanFlags, but I'm not
+                    // confident enough to use the same condition for the other toggles.
+                    hasMailProduct(organization) && (
+                        <AccessControlItem
+                            title={
+                                // translator: Proton Mail and Proton Calendar
+                                c('Info').t`${MAIL_APP_NAME} and ${CALENDAR_APP_NAME}`
+                            }
+                            description={c('Info').t`Email and calendar, integrated with ${CONTACTS_APP_NAME}`}
+                            logo={<MailCalendarIcon size={8} />}
+                            targetProducts={[Product.Mail, Product.Calendar]}
+                            showSSOBadge={!appSupportsSSO(APPS.PROTONMAIL) && hasSsoConfig}
+                        />
+                    )
+                }
 
                 <AccessControlItem
                     title={DRIVE_APP_NAME}

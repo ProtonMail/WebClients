@@ -338,6 +338,8 @@ const AccountStepPayment = ({
 
     const loadingPaymentsForm = model.loadingDependencies;
 
+    const showLumoCustomizer = app === APPS.PROTONLUMO;
+
     const paymentsForm = (
         <>
             <form
@@ -374,13 +376,14 @@ const AccountStepPayment = ({
                             selectedPlanIDs={planIDs}
                             onChangePlanIDs={(planIDs) => handleOptimistic({ planIDs })}
                             audience={isB2BPlan ? Audience.B2B : Audience.B2C}
-                            scribeAddonEnabled
-                            lumoAddonEnabled={
-                                /* TODO: Should this always be on? */
-                                app === APPS.PROTONLUMO
-                            }
                             showUsersTooltip
                             isTrialMode={signupParameters.trial}
+                            lumoAddonEnabled={showLumoCustomizer}
+                            scribeAddonEnabled={
+                                // To avoid convoluted signup UI, we don't show Scribe and Lumo customizers together.
+                                // Remember: Lumo already includes Scribe.
+                                !showLumoCustomizer
+                            }
                         />
                     );
                 })()}
