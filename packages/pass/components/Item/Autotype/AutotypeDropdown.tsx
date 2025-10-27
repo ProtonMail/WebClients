@@ -37,7 +37,17 @@ export const AutotypeDropdown: FC<AutotypeDropdownProps> = ({ actions }) => {
                 ref={anchorRef}
                 label={c('Action').t`Auto-type`}
                 icon="magic-wand"
-                extra={autotypeDiscoverySpotlight.open && <Badge type="info">{c('Label').t`New`}</Badge>}
+                extra={
+                    autotypeDiscoverySpotlight.open && (
+                        <Badge type={BUILD_TARGET === 'linux' ? 'warning' : 'info'}>
+                            {BUILD_TARGET === 'linux' ? (
+                                <span className="text-sm">{c('Label').t`Experimental`}</span>
+                            ) : (
+                                c('Label').t`New`
+                            )}
+                        </Badge>
+                    )
+                }
             />
 
             <Dropdown
