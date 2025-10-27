@@ -127,12 +127,9 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
                         payload: { type: 'initial', top, left, radius, frameAttributes, maxWidth },
                     }),
                     ({ dx }) => {
-                        if (ctrl.signal.aborted) return;
-
-                        if (dx > 0) {
-                            const delta = Math.abs(dx - styles.icon.overlay.dx);
-                            styles.icon.right += delta + styles.icon.overlay.pr;
-                        }
+                        if (ctrl.signal.aborted || dx <= 0) return;
+                        const delta = Math.abs(dx - styles.icon.overlay.dx);
+                        styles.icon.right += delta + styles.icon.overlay.gap;
                     }
                 )
                 .catch(noop);
