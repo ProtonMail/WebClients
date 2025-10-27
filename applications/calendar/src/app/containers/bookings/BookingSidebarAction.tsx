@@ -2,27 +2,19 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import { UpsellModal, useModalState } from '@proton/components';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
 import Icon from '@proton/components/components/icon/Icon';
-import { APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
-import bookingImg from '@proton/styles/assets/img/illustrations/new-upsells-img/booking_page.svg';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 
+import { UpsellBookings } from './UpsellBookings';
 import { useBookings } from './bookingsProvider/BookingsProvider';
 import { BookingState } from './bookingsProvider/interface';
 
 interface Props {
     onCreateEvent?: () => void;
 }
-
-const upsellRef = getUpsellRef({
-    app: APP_UPSELL_REF_PATH.CALENDAR_UPSELL_REF_PATH,
-    component: UPSELL_COMPONENT.MODAL,
-    feature: CALENDAR_UPSELL_PATHS.BOOKING_PAGE,
-});
 
 export const BookingSidebarAction = ({ onCreateEvent }: Props) => {
     const [user] = useUser();
@@ -60,16 +52,7 @@ export const BookingSidebarAction = ({ onCreateEvent }: Props) => {
                     </DropdownMenuButton>
                 </DropdownMenu>
             </SimpleDropdown>
-            {renderModal && (
-                <UpsellModal
-                    title={c('Title').t`Ready to automate your scheduling?`}
-                    description={c('Info')
-                        .t`Let others book time with you automatically. No back-and-forth emails. Share a link, and stay in control of your availability.`}
-                    modalProps={modalProps}
-                    illustration={bookingImg}
-                    upsellRef={upsellRef}
-                />
-            )}
+            {renderModal && <UpsellBookings {...modalProps} />}
         </>
     );
 };
