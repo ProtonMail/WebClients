@@ -40,6 +40,13 @@
 		}
 	}
 
+	.top-bar.ignore-drag,
+        .header.ignore-drag,
+        .sidebar-header.ignore-drag {
+		-webkit-app-region: no-drag;
+		user-select: initial;
+	}
+
 	.header,
 	.sidebar-header,
 	.top-bar,

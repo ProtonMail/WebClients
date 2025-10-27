@@ -10,6 +10,7 @@ import {
 import TopBanner from '@proton/components/containers/topBanners/TopBanner';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import clsx from '@proton/utils/clsx';
 
 import { freeTrialUpgradeClick } from '../openExternalLink';
 import useInboxFreeTrial from './useInboxFreeTrial';
@@ -43,7 +44,7 @@ const getTopBannerMessage = (daysDifference: number, endDate: Date) => {
     return undefined;
 };
 
-export const InboxDesktopFreeTrialTopBanner = () => {
+export const InboxDesktopFreeTrialTopBanner = ({ className }: { className?: string }) => {
     const { freeTrialDates, firstLogin, updateReminderFlag, displayReminder } = useInboxFreeTrial();
     const today = startOfDay(new Date());
 
@@ -73,7 +74,7 @@ export const InboxDesktopFreeTrialTopBanner = () => {
     };
 
     return (
-        <TopBanner onClose={handleClose} className="bg-info">
+        <TopBanner onClose={handleClose} className={clsx('bg-info', className)}>
             {message}
         </TopBanner>
     );

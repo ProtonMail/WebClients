@@ -5,11 +5,16 @@ import { c } from 'ttag';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getInboxDesktopInfo, invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
+import clsx from '@proton/utils/clsx';
 
 import TopBanner from '../../topBanners/TopBanner';
 import { useElectronDefaultApp } from './useElectronDefaultApp';
 
-export const InboxDesktopDefaultAppTopBanner = () => {
+interface Props {
+    className?: string;
+}
+
+export const InboxDesktopDefaultAppTopBanner = ({ className }: Props) => {
     const { enabled, isDefault, shouldCheck, triggerPrompt, Prompt } = useElectronDefaultApp();
     const [showBanner, setShowBanner] = useState(false);
 
@@ -32,7 +37,7 @@ export const InboxDesktopDefaultAppTopBanner = () => {
 
     return (
         <>
-            <TopBanner className="bg-info" onClose={onClose}>
+            <TopBanner className={clsx('bg-info', className)} onClose={onClose}>
                 {c('Info').t`Make ${MAIL_APP_NAME} your default email application.`}{' '}
                 <InlineLinkButton onClick={triggerPrompt}>{c('Action').t`Set as default`}</InlineLinkButton>
             </TopBanner>

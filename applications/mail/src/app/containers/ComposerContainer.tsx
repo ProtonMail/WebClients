@@ -66,6 +66,10 @@ const ComposerContainer = ({ children }: Props) => {
         }
     }, [composerIDs]);
 
+    useEffect(() => {
+        dispatch(composerActions.setHasFocusedComposer(!!focusedComposerID));
+    }, [focusedComposerID, dispatch]);
+
     useBeforeUnload(
         isComposerOpened
             ? c('Info').t`The data you have entered in the draft may not be saved if you leave the page.`

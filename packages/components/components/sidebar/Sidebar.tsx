@@ -142,6 +142,8 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
     collapsed?: boolean;
     navigationRef?: Ref<HTMLDivElement>;
     wavyMeter?: boolean;
+    /** Used exlusively on Mail for Desktop App. Indicates whether draggable areas should be disabled if composers are in focus.  */
+    hasComposerInFocus?: boolean;
 }
 
 const Sidebar = ({
@@ -162,6 +164,7 @@ const Sidebar = ({
     className,
     navigationRef,
     wavyMeter = false,
+    hasComposerInFocus = false,
     ...rest
 }: Props) => {
     const rootRef = useRef<HTMLDivElement>(null);
@@ -216,7 +219,14 @@ const Sidebar = ({
 
                 {isElectronOnMac && (
                     <div className="flex flex-column">
-                        <div className="sidebar-header flex justify-end px-4 py-3 z-1">{appsDropdown}</div>
+                        <div
+                            className={clsx(
+                                'sidebar-header flex justify-end px-4 py-3 z-1',
+                                hasComposerInFocus && 'ignore-drag'
+                            )}
+                        >
+                            {appsDropdown}
+                        </div>
                         {primary && <div className="px-4 pb-2">{primary}</div>}
                     </div>
                 )}

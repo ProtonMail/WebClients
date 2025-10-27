@@ -8,6 +8,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 
+import { selectHasFocusedComposer } from 'proton-mail/store/composers/composerSelectors';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 import { selectLayoutIsExpanded } from 'proton-mail/store/layout/layoutSliceSelectors';
 
@@ -31,6 +32,7 @@ const PrivateLayout = ({ children, labelID }: Props, ref: Ref<HTMLDivElement>) =
     const onCompose = useOnCompose();
     const onMailTo = useOnMailTo();
     const isSidebarExpanded = useMailSelector(selectLayoutIsExpanded);
+    const hasComposerInFocus = useMailSelector(selectHasFocusedComposer);
 
     const handleContactsCompose = async (emails: Recipient[], attachments: File[]) => {
         await onCompose({
@@ -50,7 +52,7 @@ const PrivateLayout = ({ children, labelID }: Props, ref: Ref<HTMLDivElement>) =
         <>
             {isElectronMail && (
                 <Suspense fallback="">
-                    <LazyInboxDesktopMailTop />
+                    <LazyInboxDesktopMailTop hasComposerInFocus={hasComposerInFocus} />
                 </Suspense>
             )}
             <TopBanners app={APPS.PROTONMAIL}>
