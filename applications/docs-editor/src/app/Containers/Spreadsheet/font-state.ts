@@ -13,7 +13,7 @@ export async function loadFont(font: string) {
   try {
     await loadFontCSS(url)
   } catch (error) {
-    console.error(`Error loading font CSS: ${url}.`)
+    console.warn(`Error loading font CSS: ${url}.`)
   }
 
   await document.fonts.ready
@@ -36,7 +36,7 @@ async function loadFontCSS(url: string) {
     link.onload = () => resolve(undefined)
     link.onerror = (e) => {
       reject(new Error(`Failed to load CSS: ${url}`))
-      console.error(e)
+      console.warn(e)
     }
     document.head.appendChild(link)
   })
