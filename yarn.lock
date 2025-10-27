@@ -9249,13 +9249,9 @@ __metadata:
   dependencies:
     "@manypkg/find-root": "npm:^3.1.0"
     "@manypkg/get-packages": "npm:^3.1.0"
-    "@proton/ci-tools": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
-    "@proton/gitlab": "workspace:^"
-    "@types/async-retry": "npm:^1.4.9"
     "@types/jest": "npm:^30.0.0"
     "@types/prompts": "npm:^2.4.9"
-    async-retry: "npm:^1.3.3"
     commander: "npm:^12.1.0"
     execa: "npm:^5.1.1"
     jest: "npm:^30.2.0"
@@ -9263,7 +9259,6 @@ __metadata:
     ts-jest: "npm:^29.4.4"
     ts-node: "npm:^10.9.2"
     tsx: "npm:^4.20.6"
-    yaml: "npm:^2.8.1"
   languageName: unknown
   linkType: soft
 
@@ -13343,15 +13338,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/async-retry@npm:^1.4.9":
-  version: 1.4.9
-  resolution: "@types/async-retry@npm:1.4.9"
-  dependencies:
-    "@types/retry": "npm:*"
-  checksum: 10c0/3365db78b03bbe9382c853db385794b2549ae146f3283bf9f03c8e8c3e3b3054fc21c24f596857f657a785a018ee6cb4ab47513f86ef5781b8cfb8d73c61cd24
-  languageName: node
-  linkType: hard
-
 "@types/async-stream-emitter@npm:*":
   version: 7.0.0
   resolution: "@types/async-stream-emitter@npm:7.0.0"
@@ -14419,13 +14405,6 @@ __metadata:
   dependencies:
     "@types/node": "npm:*"
   checksum: 10c0/a58ba341cb9e7d74f71810a88862da7b2a6fa42e2a1fc0ce40498f6ea1d44382f0640117057da779f74c47039f7166bf48fad02dc876f94e005c7afa50f5e129
-  languageName: node
-  linkType: hard
-
-"@types/retry@npm:*":
-  version: 0.12.5
-  resolution: "@types/retry@npm:0.12.5"
-  checksum: 10c0/eaaca483cc62f2f02c0b8486847ee70986ca7f97afd7363037247dbe3e98df8bd56a5b50d58b1e96768a5a1be0307010d86e9991bd458d72e8df88be471bd720
   languageName: node
   linkType: hard
 
