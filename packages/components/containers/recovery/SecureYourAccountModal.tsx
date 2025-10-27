@@ -3,7 +3,6 @@ import { useCallback } from 'react';
 import { c } from 'ttag';
 
 import { Button, InlineLinkButton } from '@proton/atoms';
-import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Modal, { type ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
@@ -11,6 +10,7 @@ import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useToggle from '@proton/components/hooks/useToggle';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import recoveryKitImg from '@proton/styles/assets/img/illustrations/recovery-kit.svg';
 
@@ -55,7 +55,7 @@ const SecureYourAccountModal = (props: Props) => {
                     </div>
                 </div>
                 <InlineLinkButton key="download-pdf-button" onClick={handleDownload} className="p-4 my-2">
-                    <Icon name="arrow-down-line" />
+                    <IcArrowDownLine />
                     {c('Secure Your Account').t`Download PDF (${size})`}
                 </InlineLinkButton>
                 <div className="mb-4">
