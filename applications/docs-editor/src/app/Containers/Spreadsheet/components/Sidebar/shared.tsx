@@ -67,10 +67,20 @@ export const FormLabel = createComponent(function FormLabel({ className, ...prop
   return <Ariakit.Role.label className={clsx('text-sm font-semibold', className)} {...props} />
 })
 
-export function FormRadioCircle() {
+export function FormRadioIcon() {
   return (
     <span className="flex size-5 items-center justify-center rounded-full border-[1px] border-[#ADABA8]">
       <span className="hidden size-2 rounded-full bg-[#6D4AFF] group-has-[[aria-checked='true']]:block aria-checked:block group-aria-checked:block" />
+    </span>
+  )
+}
+
+export function FormCheckmarkIcon() {
+  return (
+    <span className="flex size-5 items-center justify-center rounded border-[1px] border-[#ADABA8]">
+      <span className="mt-[-2px] hidden group-has-[[aria-checked='true']]:block aria-checked:block group-aria-checked:block">
+        <Icon legacyName="checkmark" />
+      </span>
     </span>
   )
 }
@@ -81,7 +91,23 @@ export const FormRadio = createComponent(function FormRadio({ children, classNam
       <Ariakit.VisuallyHidden>
         <Ariakit.Radio {...props} />
       </Ariakit.VisuallyHidden>
-      <FormRadioCircle />
+      <FormRadioIcon />
+      {children}
+    </label>
+  )
+})
+
+export const FormCheckbox = createComponent(function FormRadio({
+  children,
+  className,
+  ...props
+}: Ariakit.CheckboxProps) {
+  return (
+    <label className={clsx('group inline-flex select-none items-center gap-2 text-sm', className)}>
+      <Ariakit.VisuallyHidden>
+        <Ariakit.Checkbox {...props} />
+      </Ariakit.VisuallyHidden>
+      <FormCheckmarkIcon />
       {children}
     </label>
   )
