@@ -151,7 +151,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             value: {
                 // TODO change this with the proper booking link
                 bookingLink: 'booking link',
-                onConfirm: () => {
+                onClose: () => {
                     resetBookingState();
                 },
             },
