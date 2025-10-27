@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcBuildings } from '@proton/icons/icons/IcBuildings';
 import { getIsB2BAudienceFromPlan } from '@proton/payments';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
@@ -124,7 +124,7 @@ export const TopNavbarGetStartedButton = () => {
         shouldShowGetStartedButton && (
             <SpotlightMenuButton
                 initiallyOpen
-                buttonIcon={<Icon name="buildings" />}
+                buttonIcon={<IcBuildings/>}
                 buttonText={c('Title').t`Get started`}
                 items={getStartedItems}
                 header={

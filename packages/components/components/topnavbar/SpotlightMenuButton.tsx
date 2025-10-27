@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
 import { Button, ButtonLike } from '@proton/atoms';
-import Icon, { type IconName } from '@proton/components/components/icon/Icon';
+import Icon from '@proton/components/components/icon/Icon';
 import AppLink from '@proton/components/components/link/AppLink';
 import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import TopNavbarListItemButton, {
@@ -9,6 +9,10 @@ import TopNavbarListItemButton, {
 } from '@proton/components/components/topnavbar/TopNavbarListItemButton';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useToggle from '@proton/components/hooks/useToggle';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
+import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
 import ButtonGroup from '../button/ButtonGroup';
@@ -53,9 +57,8 @@ const DropdownItem = ({ item, onClick }: { item: DropdownDisplayItem; onClick: (
                         <br />
                         {item.description}
                     </div>
-                    <Icon
+                    <IcThreeDotsVertical
                         ref={anchorRef as any}
-                        name="three-dots-vertical"
                         size={6}
                         className="p-0.5 self-center shrink-0"
                     />
@@ -161,7 +164,7 @@ export const SpotlightMenuButton = ({
                                         <br />
                                         {item.description}
                                     </div>
-                                    <Icon name="chevron-right" size={6} className="self-center shrink-0" />
+                                    <IcChevronRight size={6} className="self-center shrink-0" />
                                 </div>
                             </ButtonLike>
                         );
@@ -191,7 +194,7 @@ export const SpotlightMenuButton = ({
                     title={dismissTitle}
                     className={clsx({ 'button-for-icon': viewportWidth['<=medium'] })}
                     onClick={onDismiss}
-                    icon={<Icon name="cross" className="m-0" />}
+                    icon={<IcCross className="m-0" />}
                 />
             </ButtonGroup>
         </Spotlight>
