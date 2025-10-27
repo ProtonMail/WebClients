@@ -1,4 +1,5 @@
 import type { Callback, Maybe } from '@proton/pass/types';
+import { skipFirst } from '@proton/pass/utils/fp/control';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import type { PubSub, Subscriber } from '@proton/pass/utils/pubsub/factory';
 import noop from '@proton/utils/noop';
@@ -100,17 +101,30 @@ export const createListenerStore = () => {
         return observer;
     };
 
-    const addResizeObserver = (target: Element, resizeCb: ResizeObserverCallback) => {
-        const observer = new ResizeObserver(resizeCb);
+    const addResizeObserver = (
+        target: Element,
+        resizeCb: ResizeObserverCallback,
+        options?: {
+            /** If `true` will skip first call when
+             * observation starts. Resets on disconnect */
+            passive: boolean;
+        }
+    ): ResizeObserver => {
+        const fn = options?.passive ? skipFirst(resizeCb) : resizeCb;
+
+        const observer = new ResizeObserver(fn);
         const disconnect = observer.disconnect;
 
         observer.disconnect = () => {
+            (fn as any)?.reset?.();
             cancelDebounce(resizeCb);
             disconnect.bind(observer)();
         };
 
         listeners.push({ kind: 'resizeObserver', observer });
         observer.observe(target);
+
+        return observer;
     };
 
     const addSubscriber = <T>(pubsub: PubSub<T>, subscriber: Subscriber<T>) => {
