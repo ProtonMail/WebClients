@@ -30,6 +30,7 @@ import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
+import { selectHasFocusedComposer } from 'proton-mail/store/composers/composerSelectors';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 
 import { useOnCompose } from '../../containers/ComposeProvider';
@@ -59,6 +60,8 @@ const MailSidebar = ({ labelID }: Props) => {
     const handleCompose = useCallback(() => {
         void onCompose({ type: ComposeTypes.newMessage, action: MESSAGE_ACTIONS.NEW });
     }, [onCompose]);
+
+    const hasComposerInFocus = useMailSelector(selectHasFocusedComposer);
 
     const logo = <SidebarLogo collapsed={collapsed} to="/inbox" app={APPS.PROTONMAIL} />;
 
@@ -95,6 +98,7 @@ const MailSidebar = ({ labelID }: Props) => {
             collapsed={collapsed}
             showStorage={showSideBar}
             navigationRef={navigationRef}
+            hasComposerInFocus={hasComposerInFocus}
         >
             <SidebarNav className="flex *:min-size-auto">
                 <MailSidebarList
