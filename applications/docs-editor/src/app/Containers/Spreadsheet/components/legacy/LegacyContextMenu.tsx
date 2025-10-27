@@ -38,6 +38,7 @@ import {
 } from '@rowsncolumns/ui'
 import { number2Alpha } from '@rowsncolumns/utils'
 import React, { useCallback, useMemo, useRef } from 'react'
+import type { SheetRange } from '@rowsncolumns/spreadsheet'
 import {
   BLANK_LABEL,
   type CanvasGridProps,
@@ -106,7 +107,7 @@ export type LegacyContextMenuProps = {
   onPaste?(pasteSpecialType?: PasteSpecialType): void
   onCut?(): void
   readonly?: boolean
-  onShowQuickEdit(value: boolean): void
+  onAddQuickEdit(range: SheetRange): void
   enableMagicFill?: boolean
 }
 
@@ -167,7 +168,7 @@ export function LegacyContextMenu({
   selectedRowHeadersIds,
   selectedColumnHeadersIds,
   readonly = false,
-  onShowQuickEdit,
+  onAddQuickEdit,
   enableMagicFill,
 }: LegacyContextMenuProps) {
   const isHeader = isColumnHeader || isRowHeader
@@ -355,7 +356,7 @@ export function LegacyContextMenu({
         {enableMagicFill ? (
           <>
             <DropdownMenuSeparator />
-            <DropdownMenuItem onClick={() => onShowQuickEdit(true)} disabled={readonly}>
+            <DropdownMenuItem onClick={() => onAddQuickEdit({ ...selection.range, sheetId })} disabled={readonly}>
               <DropdownLeftSlot>
                 <WandIcon />
               </DropdownLeftSlot>
