@@ -17,6 +17,7 @@ import { GuestChatDisclaimerModal } from '../components/GuestChatDisclaimerModal
 import GuestDisclaimer from '../components/GuestDisclaimer';
 import SettingsModal from '../components/SettingsModal/SettingsModal';
 import { ChatHistory } from '../sidepanel/ChatHistory';
+import ForBusinessSidebarButton from './ForBusinessSidebarButton';
 import LumoPlusUpsellSidebarButton from './LumoPlusUpsellSidebarButton';
 
 import './LumoSidebar.scss';
@@ -145,6 +146,7 @@ const SearchSection = ({
     return (
         <div className="search-section">
             <Tooltip title={isCollapsed ? c('collider_2025:Button').t`Search` : undefined} originalPlacement="right">
+                {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
                 <div className={clsx('search-container', isCollapsed && 'collapsed')} onClick={handleSearchClick}>
                     <div className="sidebar-item-icon">
                         <Icon name="magnifier" size={4} />
@@ -247,11 +249,16 @@ const LumoSidebarContent = () => {
                         showText={showText}
                     />
 
+                    <ForBusinessSidebarButton isSmallScreen={isSmallScreen} />
                     {/* Desktop-only toggle button */}
                     {!isSmallScreen && (
                         <SidebarItem
                             icon={isCollapsed ? 'chevron-right' : 'chevron-left'}
-                            label={isCollapsed ? c('collider_2025:Button').t`Show sidebar` : c('collider_2025:Button').t`Hide sidebar`}
+                            label={
+                                isCollapsed
+                                    ? c('collider_2025:Button').t`Show sidebar`
+                                    : c('collider_2025:Button').t`Hide sidebar`
+                            }
                             onClick={toggle}
                             showText={showText}
                         />
@@ -275,8 +282,8 @@ const LumoSidebar = () => {
     return (
         <>
             {/* Mobile backdrop */}
+            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
             {isOverlay && <div className="sidebar-backdrop" onClick={toggle}></div>}
-
             <div
                 className={clsx(
                     'sidebar h-full flex flex-nowrap flex-column no-print outline-none border-right border-top border-weak',
