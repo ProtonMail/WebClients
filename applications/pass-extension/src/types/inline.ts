@@ -1,4 +1,5 @@
 import type { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
+import type { InlineCloseOptions } from 'proton-pass-extension/app/content/services/inline/inline.messages';
 import type { FrameID } from 'proton-pass-extension/lib/utils/frames';
 import type { FrameAttributes, FrameField, FrameRelay } from 'proton-pass-extension/types/frames';
 
@@ -38,7 +39,7 @@ export type DropdownOpenDTO = FrameRelay<
 
 export type DropdownOpenedDTO = FrameRelay<Required<FrameField>, { passive: boolean }>;
 export type DropdownCloseDTO = { field?: FrameField };
-export type DropdownClosedDTO = FrameRelay<{ refocus: boolean } & Required<FrameField>, { passive: boolean }>;
+export type DropdownClosedDTO = FrameRelay<InlineCloseOptions & Required<FrameField>, { passive: boolean }>;
 
 export type IconShiftResult = { dx: number };
 export type IconShiftRequest = FrameRelay<

@@ -51,7 +51,7 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
             const { action } = field;
             if (!ctx || !action || field.actionPrevented) return;
 
-            const req = requestAnimationFrame(() => {
+            state.focusRequest = requestAnimationFrame(() => {
                 ctx.service.inline.icon.attach(field);
 
                 if (!field.autofilled) {
@@ -63,8 +63,6 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
                     });
                 }
             });
-
-            state.focusRequest = req;
         })
     );
 
@@ -76,7 +74,7 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
     const onBlur = onNextTick(
         withContext(async (ctx) => {
             if (state.focusRequest) cancelAnimationFrame(state.focusRequest);
-            if (!ctx || field.actionPrevented || ctx.service.autofill.processing) return;
+            if (!ctx || field.actionPrevented) return;
 
             const { focused, attachedField, visible } = await ctx.service.inline.dropdown.getState();
             const dropdownFocused = visible && focused && field.matches(attachedField);

@@ -75,7 +75,7 @@ export interface InlineApp<A> {
     destroy: () => void;
     getPosition: () => IFramePosition;
     init: (port: Runtime.Port, getPayload: () => IFrameInitPayload) => void;
-    open: (action: A, prepare?: () => Promise<boolean>) => Promise<void>;
+    open: (action: A, prepare?: (ctrl: AbortController) => Promise<boolean>) => Promise<void>;
     registerMessageHandler: <M extends InlineMessage['type']>(
         type: M,
         handler: InlinePortMessageHandler<M>,
@@ -253,7 +253,7 @@ export const createInlineApp = <A>({
      * Opening requires preparing the iframe and ensuring it's in a ready state before
      * sending action data. This process may be triggered automatically on page load
      * when autofill detection occurs. */
-    const open = safeAsyncCall(async (action: A, prepare?: () => Promise<boolean>) => {
+    const open = safeAsyncCall(async (action: A, prepare?: (ctrl: AbortController) => Promise<boolean>) => {
         const ctrl = new AbortController();
         state.ctrl?.abort();
         state.ctrl = ctrl;
@@ -261,7 +261,7 @@ export const createInlineApp = <A>({
         await ensureReady();
         if (ctrl.signal.aborted) return;
 
-        const proceed = prepare ? await prepare() : true;
+        const proceed = prepare ? await prepare(ctrl) : true;
         if (!proceed || ctrl.signal.aborted || state.visible) return;
 
         popover.open();

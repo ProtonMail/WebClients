@@ -236,7 +236,7 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
                 void handleAutofill(payload).then(sendResponse);
                 return true;
             case 'completed':
-                state.processing = false;
+                nextTick(() => (state.processing = false));
                 break;
         }
     };

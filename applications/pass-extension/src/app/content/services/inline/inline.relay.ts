@@ -71,7 +71,7 @@ export const createInlineRelay = ({
             const form = ctx?.service.formManager.getFormById(formId);
             const field = form?.getFieldById(fieldId);
 
-            if (field) handleOnClosed(field, payload.refocus);
+            if (field) handleOnClosed(field, payload);
         }
     );
 

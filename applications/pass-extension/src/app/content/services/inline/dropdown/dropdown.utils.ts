@@ -1,6 +1,7 @@
 import { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
+import type { InlineCloseOptions } from 'proton-pass-extension/app/content/services/inline/inline.messages';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
@@ -23,8 +24,8 @@ import type { DropdownActions, DropdownAnchor, DropdownRequest } from './dropdow
  * - If `!refocus`: blocks field interactions for 1ms to prevent transition conflicts
  * - Uses nextTick for DOM stability before focus/icon operations
  * - Conditionally detaches icon only if field is not currently active */
-export const handleOnClosed = (field: FieldHandle, refocus: boolean) => {
-    if (!refocus) field.preventAction(1);
+export const handleOnClosed = (field: FieldHandle, { refocus, preventAction }: InlineCloseOptions) => {
+    if (!refocus || preventAction) field.preventAction(1);
     nextTick(() => {
         if (refocus) field.focus();
         else if (!isActiveElement(field.element)) field.icon?.detach();

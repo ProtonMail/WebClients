@@ -53,7 +53,7 @@ type PasskeyRelayedMessages =
 
 export type IFramePosition = Partial<Rect>;
 export type IFrameEndpoint = 'notification' | 'dropdown';
-export type InlineCloseOptions = { discard?: boolean; refocus?: boolean };
+export type InlineCloseOptions = { discard?: boolean; refocus?: boolean; preventAction?: boolean };
 
 export type IFrameInitPayload = {
     domain: string;
