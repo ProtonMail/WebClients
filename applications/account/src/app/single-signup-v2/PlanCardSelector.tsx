@@ -241,7 +241,7 @@ const PlanCardViewSlot = ({
                     <div className="p-3 md:px-6 md:pb-6 md:pt-4 w-full">
                         <div className="flex items-start flex-column w-full">
                             <div className="w-full flex *:min-size-auto flex-row flex-nowrap gap-2 md:gap-3 items-center text-ellipsis">
-                                <strong className="text-xl md:text-2xl text-left text-wrap-balance" id={`${id}-text`}>
+                                <strong className="text-xl md:text-2xl text-left text-wrap" id={`${id}-text`}>
                                     {text}
                                 </strong>
                                 {interactive && selectable && (
@@ -384,7 +384,7 @@ export const PlanCardSelector = ({
                             billedText={c('pass_signup_2023: Info').t`Get in touch with our sales team`}
                             text={ENTERPRISE_PLAN_TITLE}
                             subline={planCard.subline}
-                            key={planCard.plan}
+                            key="enterprise"
                             dark={dark}
                             subsection={subsection}
                             interactive={planCard.interactive}
