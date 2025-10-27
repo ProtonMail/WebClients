@@ -8,8 +8,10 @@ import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { openLinkInBrowser } from '@proton/components/containers/desktop/openExternalLink';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import bookingImage from '@proton/styles/assets/img/calendar/booking_page_example.png';
 
 import { useCalendarGlobalModals } from './GlobalModalProvider';
@@ -48,9 +50,21 @@ export const GlobalBookingSuccess = () => {
         });
     };
 
+    if (!bookingPageCreationProps) {
+        return null;
+    }
+
+    // Clicking the link on the desktop app should open the browser and not load the page.
+    const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        if (isElectronMail) {
+            e.preventDefault();
+            openLinkInBrowser(bookingPageCreationProps.bookingLink);
+        }
+    };
+
     return (
         <>
-            {shouldRender && bookingPageCreationProps && (
+            {shouldRender && (
                 <Modal
                     {...modalProps}
                     onClose={() => {
@@ -63,6 +77,7 @@ export const GlobalBookingSuccess = () => {
                         <div className="flex flex-nowrap gap-2 items-center justify-space-between mb-4">
                             <Href
                                 href={bookingPageCreationProps.bookingLink}
+                                onClick={handleLinkClick}
                                 target="_blank"
                                 className="grow text-ellipsis"
                                 title={bookingPageCreationProps.bookingLink}
