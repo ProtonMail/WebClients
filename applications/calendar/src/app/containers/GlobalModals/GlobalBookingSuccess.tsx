@@ -35,7 +35,7 @@ export const GlobalBookingSuccess = () => {
     }, [subscribe, setOpen]);
 
     const handleConfirm = () => {
-        bookingPageCreationProps?.onConfirm();
+        bookingPageCreationProps?.onClose();
 
         setOpen(false);
         setBookingPageCreationProps(null);

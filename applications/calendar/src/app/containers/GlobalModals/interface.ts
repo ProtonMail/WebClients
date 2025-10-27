@@ -6,7 +6,7 @@ export interface BookingPageCreationModalPayload {
     type: ModalType.BookingPageCreation;
     value: {
         bookingLink: string;
-        onConfirm: () => void;
+        onClose: () => void;
     };
 }
 
