@@ -96,7 +96,7 @@ export const UnlimitedToDuoOffer = () => {
         }
     };
 
-    if (loadingSubscription || config.price === 0) {
+    if (loadingSubscription || config.loading || config.price === 0) {
         return null;
     }
 
