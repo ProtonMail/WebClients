@@ -33,8 +33,31 @@ const DEFAULT_WINDOW_BOUNDS = {
 
 const store = new Store<{ windowBounds: WindowBounds }>();
 
+const isValidBounds = (bounds: WindowBounds): bounds is WindowBounds => {
+    return (
+        bounds &&
+        typeof bounds.x === "number" &&
+        isFinite(bounds.x) &&
+        typeof bounds.y === "number" &&
+        isFinite(bounds.y) &&
+        typeof bounds.width === "number" &&
+        isFinite(bounds.width) &&
+        bounds.width > 0 &&
+        typeof bounds.height === "number" &&
+        isFinite(bounds.height) &&
+        bounds.height > 0 &&
+        typeof bounds.maximized == "boolean" &&
+        typeof bounds.zoom == "number" &&
+        isFinite(bounds.zoom) &&
+        ZOOM_FACTOR_LIST.includes(bounds.zoom)
+    );
+};
+
 export const getWindowBounds = (): WindowBounds => {
-    const windowBounds = store.get("windowBounds", DEFAULT_WINDOW_BOUNDS);
+    const storedBounds = store.get("windowBounds", DEFAULT_WINDOW_BOUNDS);
+
+    // INDA-498: Stored window bounds might be corrupted, we need a safeguard against this case.
+    const windowBounds = isValidBounds(storedBounds) ? storedBounds : { ...DEFAULT_WINDOW_BOUNDS };
 
     if (windowBounds.x === DEFAULT_WINDOW_BOUNDS.x || windowBounds.y === DEFAULT_WINDOW_BOUNDS.y) {
         const { workArea } = screen.getDisplayNearestPoint(screen.getCursorScreenPoint());
