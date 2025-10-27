@@ -7,6 +7,7 @@ import { Icon, SkeletonLoader } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { getShortPlan } from '@proton/components/containers/payments/features/plan';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
+import { getPlanTitleWithAddons } from '@proton/components/containers/payments/subscription/helpers';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import {
     CYCLE,
@@ -55,6 +56,7 @@ export const planCardFeatureProps = {
 
 interface RegularPlanCard {
     plan: PLANS;
+    addons?: PlanIDs;
     subsection: ReactNode;
     type: 'best' | 'standard';
     guarantee: boolean;
@@ -64,6 +66,7 @@ interface RegularPlanCard {
 
 interface NonInteractivePlanCard {
     plan?: never;
+    addons?: never;
     subsection: ReactNode;
     type: 'best' | 'standard';
     guarantee: boolean;
@@ -238,7 +241,7 @@ const PlanCardViewSlot = ({
                     <div className="p-3 md:px-6 md:pb-6 md:pt-4 w-full">
                         <div className="flex items-start flex-column w-full">
                             <div className="w-full flex *:min-size-auto flex-row flex-nowrap gap-2 md:gap-3 items-center text-ellipsis">
-                                <strong className="text-xl md:text-2xl text-ellipsis text-left" id={`${id}-text`}>
+                                <strong className="text-xl md:text-2xl text-left text-wrap-balance" id={`${id}-text`}>
                                     {text}
                                 </strong>
                                 {interactive && selectable && (
@@ -391,7 +394,7 @@ export const PlanCardSelector = ({
                 }
 
                 const isFreePlan = planCard.plan === PLANS.FREE;
-                const planIDs = isFreePlan ? {} : { [planCard.plan]: 1 };
+                const planIDs = isFreePlan ? {} : { [planCard.plan]: 1, ...planCard.addons };
                 const plan = getPlanFromPlanIDs(plansMap, planIDs);
                 const freePlanCurrency = Object.values(plansMap)[0]?.Currency ?? plan?.Currency ?? currency;
 
@@ -439,6 +442,14 @@ export const PlanCardSelector = ({
                     priceToDisplay.discountPercentage = checkout.discountPercent;
                 }
 
+                const planTitle = getPlanTitleWithAddons({
+                    planIDs,
+                    plansMap,
+                    cycle,
+                    currency,
+                    shortPlan: planFromCard,
+                });
+
                 return (
                     <PlanCardViewSlot
                         highlightPrice={highlight}
@@ -462,7 +473,7 @@ export const PlanCardSelector = ({
                             standardMonthlyPrice: priceToDisplay.standardMonthlyPrice,
                             currency: planCurrency,
                         })}
-                        text={planFromCard.Title}
+                        text={planTitle}
                         subline={planCard.subline}
                         billedText={billedText}
                         key={planCard.plan}

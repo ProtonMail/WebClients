@@ -543,7 +543,7 @@ export const getMailBusinessPlan = (plan: Plan): ShortPlan => {
 
 export const getBundleProPlan = (plan: Plan): ShortPlan => {
     return {
-        plan: plan.Name === PLANS.BUNDLE_PRO ? PLANS.BUNDLE_PRO : PLANS.BUNDLE_PRO_2024,
+        plan: PLANS.BUNDLE_PRO_2024,
         title: plan.Title,
         label: '',
         description: c('new_plans: info')
@@ -762,6 +762,17 @@ export const getLumoPlan = (plan: Plan): ShortPlan => {
     };
 };
 
+export const getLumoBusinessPlan = (plan: Plan): ShortPlan => {
+    return {
+        plan: PLANS.LUMO_BUSINESS,
+        title: plan.Title,
+        label: '',
+        description: c('collider_2025: Info').t`High-speed chats and advanced AI features.`,
+        cta: getCTA(plan.Title),
+        features: [],
+    };
+};
+
 /**
  * Takes a plans map, a plan and some options and returns short visual plan details
  *
@@ -833,6 +844,8 @@ export const getShortPlan = (
             return getPassBusinessPlan(planData);
         case PLANS.LUMO:
             return getLumoPlan(planData);
+        case PLANS.LUMO_BUSINESS:
+            return getLumoBusinessPlan(planData);
         default:
             return null;
     }

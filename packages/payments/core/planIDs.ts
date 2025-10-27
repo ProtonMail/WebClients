@@ -6,7 +6,7 @@ import { getSupportedAddons, isDomainAddon, isIpAddon, isLumoAddon, isMemberAddo
 import { getPlanFeatureLimit } from './plan/feature-limits';
 import { getPlanNameFromIDs } from './plan/helpers';
 import type { Plan, PlansMap } from './plan/interface';
-import { getPlanIDs, getSubscriptionsArray, hasLumoPlan, isManagedExternally } from './subscription/helpers';
+import { getPlanIDs, getSubscriptionsArray, hasLumo, isManagedExternally } from './subscription/helpers';
 import type { Subscription } from './subscription/interface';
 import { SelectedPlan } from './subscription/selected-plan';
 import { isFreeSubscription } from './type-guards';
@@ -108,6 +108,30 @@ function getNewPlanIDs({ newPlan, newPlanIDs: newPlanIDsParam }: SwitchPlanOptio
     return newPlanIDs;
 }
 
+function getAddonPriority(addonName: ADDON_NAMES): number {
+    // the lower the index of the addon type, the higher the priority.
+    const mapping = [isMemberAddon, isDomainAddon, isIpAddon, isLumoAddon, isScribeAddon] as const;
+    return mapping.findIndex((guard) => guard(addonName)) ?? mapping.length;
+}
+
+function getScribeSeatsCoveredByLumo(planIDs: PlanIDs, plans: Plan[]): number {
+    const lumoAddonEntry = (Object.entries(planIDs) as [ADDON_NAMES, number][]).find(([addonName]) =>
+        isLumoAddon(addonName)
+    );
+    if (!lumoAddonEntry) {
+        return 0;
+    }
+
+    const [lumoAddonName, lumoAddonQuantity] = lumoAddonEntry;
+
+    const lumoAddon = plans.find(({ Name }) => Name === lumoAddonName);
+    if (!lumoAddon) {
+        return 0;
+    }
+
+    return getPlanFeatureLimit(lumoAddon, 'MaxAI') * lumoAddonQuantity;
+}
+
 /**
  * Transfer addons from one plan to another. In different plans, addons have different names
  * and potentially different resource limits, so they must be converted manually using this function.
@@ -154,7 +178,7 @@ export const switchPlan = (options: SwitchPlanOptions): PlanIDs => {
     // we can remove addons from the resulting newPlanIDs instead of manipulating the dontTransferAddons set.
     {
         const multisubs = subscription && !isFreeSubscription(subscription) ? getSubscriptionsArray(subscription) : [];
-        const hasExternallyManagedLumo = multisubs.some((sub) => isManagedExternally(sub) && hasLumoPlan(sub));
+        const hasExternallyManagedLumo = multisubs.some((sub) => isManagedExternally(sub) && hasLumo(sub));
         if (hasExternallyManagedLumo) {
             dontTransferAddons.add('lumo');
         }
@@ -163,7 +187,10 @@ export const switchPlan = (options: SwitchPlanOptions): PlanIDs => {
     const supportedAddons = getSupportedAddons(newPlanIDs);
     const plan = plans.find(({ Name }) => Name === getPlanNameFromIDs(newPlanIDs));
 
-    const supportedAddonNames = Object.keys(supportedAddons) as ADDON_NAMES[];
+    const supportedAddonNames = (Object.keys(supportedAddons) as ADDON_NAMES[]).sort(
+        (a, b) => getAddonPriority(a) - getAddonPriority(b)
+    );
+
     // Transfer addons
     supportedAddonNames.forEach((addon) => {
         const quantity = currentPlanIDs[addon as keyof PlanIDs];
@@ -243,24 +270,41 @@ export const switchPlan = (options: SwitchPlanOptions): PlanIDs => {
         }
 
         if (isScribeAddon(addon) && plan && organization && !dontTransferAddons.has('scribe')) {
-            const gptAddon = plans.find(({ Name }) => Name === addon);
+            // It's possible to calculate the number of scribe seats already transfered by lumo addons (implicitely)
+            // only because we maintain strict priority of addons processing. Lumo is always processed before Scribe.
+            // We need to do this calculation, because addons that grant Lumo seats also grant Scribe seats.
+            const additionalScribeSeatsCoveredByLumo = !dontTransferAddons.has('lumo')
+                ? getScribeSeatsCoveredByLumo(newPlanIDs, plans) - getScribeSeatsCoveredByLumo(currentPlanIDs, plans)
+                : 0;
+
+            const scribeAddon = plans.find(({ Name }) => Name === addon);
             const diffAIs = (organization.UsedAI || 0) - getPlanFeatureLimit(plan, 'MaxAI');
 
-            if (gptAddon) {
-                const gptAddonsWithEnoughSeats =
-                    diffAIs > 0 && getPlanFeatureLimit(gptAddon, 'MaxAI')
-                        ? Math.ceil(diffAIs / getPlanFeatureLimit(gptAddon, 'MaxAI'))
+            if (scribeAddon) {
+                const scribeAddonsWithEnoughSeats =
+                    diffAIs > 0 && getPlanFeatureLimit(scribeAddon, 'MaxAI')
+                        ? Math.ceil(diffAIs / getPlanFeatureLimit(scribeAddon, 'MaxAI'))
                         : 0;
 
-                // let count all available GPT addons in the new planIDs selection
-                let gptAddons = 0;
+                // let count all available Scribe addons in the new planIDs selection
+                let scribeAddons = 0;
                 for (const addonName of Object.values(ADDON_NAMES)) {
                     if (isScribeAddon(addonName)) {
-                        gptAddons += currentPlanIDs[addonName] ?? 0;
+                        scribeAddons += currentPlanIDs[addonName] ?? 0;
                     }
                 }
 
-                newPlanIDs[addon] = Math.max(gptAddonsWithEnoughSeats, gptAddons);
+                // We would apply scribeSeatsRequired as the new value of scribe addon if it wouldn't be double
+                // controlled both by scribe and lumo addons. Similar to how other addons are transferred.
+                const scribeSeatsRequired = Math.max(scribeAddonsWithEnoughSeats, scribeAddons);
+
+                // But instead, we are transferring scribeSeatsRequired minus the number of scribe seats implicitly
+                // enabled by already present lumo addons.
+                //
+                // Note: in the future we might need to take into account the fact that lumo + scribe seats can't exceed
+                // the total number of members in the selected planIDs. I *think* that the current code strcture
+                // enforces this behavior, but I never formally validated it at time of writing this comment.
+                newPlanIDs[addon] = Math.max(scribeSeatsRequired - additionalScribeSeatsCoveredByLumo, 0);
             }
         }
 

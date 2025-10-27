@@ -81,6 +81,7 @@ const b2bPlans: Set<PLANS | ADDON_NAMES> = new Set([
     PLANS.VPN_BUSINESS,
     PLANS.PASS_PRO,
     PLANS.PASS_BUSINESS,
+    PLANS.LUMO_BUSINESS,
 ]);
 export const getIsB2BAudienceFromPlan = (planName: PLANS | ADDON_NAMES | undefined) => {
     if (!planName) {

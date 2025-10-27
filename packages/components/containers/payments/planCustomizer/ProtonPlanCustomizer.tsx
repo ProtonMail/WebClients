@@ -246,12 +246,22 @@ const AddonCustomizer = ({
             const scribeAddonKey = (Object.keys(supportedAddons) as ADDON_NAMES[]).find(isScribeAddon);
             const lumoAddonKey = (Object.keys(supportedAddons) as ADDON_NAMES[]).find(isLumoAddon);
 
+            // This section makes Scribe increase and decrease together with Members.
             if (isMemberAddon(addonName) && scribeAddonKey) {
                 const membersValue = value;
                 const scribeValue = selectedPlanIDs[scribeAddonKey];
-                const scribeConstrain = membersValue === scribeValue;
+                const scribeConstrain = membersValue === scribeValue && scribeAddonEnabled;
                 if (scribeConstrain) {
                     newPlanIDs = setQuantity(newPlanIDs, scribeAddonKey, newQuantity);
+                }
+
+                // But if Scribe can't be moved because it's not enabled, we try to move Lumo instead.
+                else if (!scribeAddonEnabled && lumoAddonEnabled && lumoAddonKey) {
+                    const lumoValue = selectedPlanIDs[lumoAddonKey];
+                    const lumoConstrain = membersValue === lumoValue;
+                    if (lumoConstrain) {
+                        newPlanIDs = setQuantity(newPlanIDs, lumoAddonKey, newQuantity);
+                    }
                 }
             }
 

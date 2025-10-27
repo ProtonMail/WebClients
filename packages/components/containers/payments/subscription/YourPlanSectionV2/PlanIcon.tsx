@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import LumoLogo from '@proton/components/components/logo/LumoLogo';
 import MailLogo from '@proton/components/components/logo/MailLogo';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
-import { type FreeSubscription, PLANS, type Subscription, hasLumoPlan, hasVpnBusiness } from '@proton/payments';
+import { type FreeSubscription, PLANS, type Subscription, hasLumo, hasVpnBusiness } from '@proton/payments';
 import {
     getHasConsumerVpnPlan,
     hasBundle,
@@ -59,7 +59,7 @@ export const PlanIcon = ({
             </LogoIconShape>
         );
     }
-    if (hasLumoPlan(subscription) || planName === PLANS.LUMO) {
+    if (hasLumo(subscription) || planName === PLANS.LUMO) {
         return (
             <LogoIconShape size={size}>
                 <LumoLogo variant="glyph-only" scale={size / 44} />

@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
-import { resolveUpsellsToDisplay } from '@proton/components/containers/payments/subscription/helpers';
+import { isUpsellWithPlan, resolveUpsellsToDisplay } from '@proton/components/containers/payments/subscription/helpers';
 import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
 import { getCanSubscriptionAccessDuoPlan, getPlansMap } from '@proton/payments';
 import { usePaymentsPreloaded } from '@proton/payments/ui';
@@ -42,7 +42,9 @@ export const useGetUpsell = () => {
             telemetryFlow: 'subscription',
             ...pick(user, ['canPay', 'isFree', 'hasPaidMail']),
         });
-        resolvedUpsell.initializeOfferPrice?.(payments).catch(noop);
+        if (isUpsellWithPlan(resolvedUpsell)) {
+            resolvedUpsell.initializeOfferPrice?.(payments).catch(noop);
+        }
         return resolvedUpsell;
     }, []);
 };

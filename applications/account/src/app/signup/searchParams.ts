@@ -186,6 +186,7 @@ export const getThemeFromLocation = (location: Location, searchParams: URLSearch
         location.pathname === SSO_PATHS.PASS_SIGNUP_B2B ||
         location.pathname === SSO_PATHS.MAIL_SIGNUP_B2B ||
         location.pathname === SSO_PATHS.DRIVE_SIGNUP_B2B ||
+        location.pathname === SSO_PATHS.LUMO_SIGNUP_B2B ||
         location.pathname === SSO_PATHS.BUSINESS_SIGNUP
     ) {
         return {

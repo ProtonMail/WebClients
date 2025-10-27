@@ -17,6 +17,7 @@ import {
     getDuoPlan,
     getEarlyAccessFeature,
     getFamilyPlan,
+    getLumoBusinessPlan,
     getLumoPlan,
     getMailBusinessPlan,
     getMailPlan,
@@ -272,7 +273,7 @@ export const getSummaryPlan = ({
         };
     }
 
-    if (plan && (plan?.Name === PLANS.BUNDLE_PRO || plan?.Name === PLANS.BUNDLE_PRO_2024)) {
+    if (plan && plan?.Name === PLANS.BUNDLE_PRO_2024) {
         const shortPlan = getBundleProPlan(plan);
         return {
             logo: (
@@ -312,6 +313,16 @@ export const getSummaryPlan = ({
             logo: <Logo appName={APPS.PROTONLUMO} variant="glyph-only" size={iconSize} />,
             ...shortPlan,
             plan,
+        };
+    }
+
+    if (plan && plan?.Name === PLANS.LUMO_BUSINESS) {
+        const shortPlan = getLumoBusinessPlan(plan);
+        return {
+            logo: <Logo appName={APPS.PROTONLUMO} variant="glyph-only" size={iconSize} />,
+            ...shortPlan,
+            plan,
+            features: [],
         };
     }
 };

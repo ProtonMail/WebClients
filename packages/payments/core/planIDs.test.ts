@@ -595,6 +595,56 @@ describe('switchPlan', () => {
             [PLANS.BUNDLE_PRO_2024]: 1,
         });
     });
+
+    it('should not transfer scribe addon when lumo is already transferred', () => {
+        expect(
+            switchPlan({
+                subscription: buildSubscription({
+                    [PLANS.LUMO_BUSINESS]: 1,
+                    [ADDON_NAMES.MEMBER_LUMO_BUSINESS]: 1,
+                }),
+                newPlan: PLANS.BUNDLE_PRO_2024,
+                organization: {
+                    ...MOCK_ORGANIZATION,
+                    UsedMembers: 1,
+                    AssignedSpace: 2671771648,
+                    UsedSpace: 0,
+                    UsedAddresses: 0,
+                    UsedVPN: 0,
+                    UsedCalendars: 0,
+                    UsedDomains: 0,
+                    UsedAI: 1,
+                    MaxLumo: 2,
+                },
+                plans: getLongTestPlans(),
+            })
+        ).toEqual({
+            [PLANS.BUNDLE_PRO_2024]: 1,
+            [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 1,
+            [ADDON_NAMES.LUMO_BUNDLE_PRO_2024]: 2,
+        });
+    });
+
+    it('should transfer from Scribe to Lumo addons', () => {
+        expect(
+            switchPlan({
+                subscription: buildSubscription({
+                    [PLANS.MAIL_BUSINESS]: 1,
+                    [ADDON_NAMES.MEMBER_MAIL_BUSINESS]: 1,
+                    [ADDON_NAMES.MEMBER_SCRIBE_MAIL_BUSINESS]: 2,
+                }),
+                newPlan: PLANS.LUMO_BUSINESS,
+                organization: {
+                    ...MOCK_ORGANIZATION,
+                    UsedAI: 2,
+                },
+                plans: getLongTestPlans(),
+            })
+        ).toEqual({
+            [PLANS.LUMO_BUSINESS]: 1,
+            [ADDON_NAMES.MEMBER_LUMO_BUSINESS]: 1,
+        });
+    });
 });
 
 describe('getPlanNameFromIDs', () => {

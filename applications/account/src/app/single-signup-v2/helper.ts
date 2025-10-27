@@ -54,6 +54,7 @@ import {
     canPay as getCanPay,
     isAdmin as getIsAdmin,
     hasPaidDrive,
+    hasPaidLumo,
     hasPaidMail,
     hasPaidPass,
     hasPaidWallet,
@@ -76,6 +77,7 @@ export const getIsProductB2BPlan = (plan: PLANS | ADDON_NAMES | undefined) => {
         PLANS.VPN_BUSINESS,
         PLANS.PASS_PRO,
         PLANS.PASS_BUSINESS,
+        PLANS.LUMO_BUSINESS,
     ];
     return proPlans.some((proPlan) => plan === proPlan);
 };
@@ -426,6 +428,10 @@ const hasAccess = ({
 
     if (toApp === APPS.PROTONWALLET) {
         return hasPaidWallet(user);
+    }
+
+    if (toApp === APPS.PROTONLUMO) {
+        return hasPaidLumo(user);
     }
 
     return false;

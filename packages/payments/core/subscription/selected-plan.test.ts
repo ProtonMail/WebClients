@@ -1,7 +1,7 @@
 import { buildSubscription } from '@proton/testing/builders';
 import { PLANS_MAP } from '@proton/testing/data';
 
-import { ADDON_NAMES, CYCLE, FREE_SUBSCRIPTION, PLANS } from '../constants';
+import { ADDON_NAMES, ADDON_PREFIXES, CYCLE, FREE_SUBSCRIPTION, PLANS } from '../constants';
 import { FREE_PLAN } from './freePlans';
 import { SelectedPlan } from './selected-plan';
 
@@ -648,6 +648,170 @@ describe('SelectedPlan', () => {
             expect(updatedPlan.getTotalMembers()).toBe(4);
             expect(updatedPlan.getTotalScribes()).toBe(1); // Scribes reduced to maintain balance
             expect(updatedPlan.getTotalLumos()).toBe(3);
+        });
+    });
+
+    describe('getPresentAddonTypes', () => {
+        it('should return empty object when no addons are present', () => {
+            const planIDs = {
+                [PLANS.MAIL_PRO]: 1,
+            };
+
+            const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+            const result = selectedPlan.getPresentAddonTypes();
+
+            expect(result).toEqual({});
+        });
+
+        it('should return only member addon type when only member addons are present', () => {
+            const planIDs = {
+                [PLANS.MAIL_PRO]: 1,
+                [ADDON_NAMES.MEMBER_MAIL_PRO]: 3,
+            };
+
+            const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+            const result = selectedPlan.getPresentAddonTypes();
+
+            expect(result).toEqual({
+                [ADDON_PREFIXES.MEMBER]: true,
+            });
+        });
+
+        it('should return only domain addon type when only domain addons are present', () => {
+            const planIDs = {
+                [PLANS.BUNDLE_PRO_2024]: 1,
+                [ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024]: 2,
+            };
+
+            const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+            const result = selectedPlan.getPresentAddonTypes();
+
+            expect(result).toEqual({
+                [ADDON_PREFIXES.DOMAIN]: true,
+            });
+        });
+
+        it('should return only IP addon type when only IP addons are present', () => {
+            const planIDs = {
+                [PLANS.VPN_BUSINESS]: 1,
+                [ADDON_NAMES.IP_VPN_BUSINESS]: 4,
+            };
+
+            const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+            const result = selectedPlan.getPresentAddonTypes();
+
+            expect(result).toEqual({
+                [ADDON_PREFIXES.IP]: true,
+            });
+        });
+
+        it('should return only scribe addon type when only scribe addons are present', () => {
+            const planIDs = {
+                [PLANS.MAIL_BUSINESS]: 1,
+                [ADDON_NAMES.MEMBER_SCRIBE_MAIL_BUSINESS]: 3,
+            };
+
+            const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+            const result = selectedPlan.getPresentAddonTypes();
+
+            expect(result).toEqual({
+                [ADDON_PREFIXES.SCRIBE]: true,
+            });
+        });
+
+        it('should return only lumo addon type when only lumo addons are present', () => {
+            const planIDs = {
+                [PLANS.MAIL_PRO]: 1,
+                [ADDON_NAMES.LUMO_MAIL_PRO]: 2,
+            };
+
+            const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+            const result = selectedPlan.getPresentAddonTypes();
+
+            expect(result).toEqual({
+                [ADDON_PREFIXES.LUMO]: true,
+            });
+        });
+
+        it('should return multiple addon types when different addon types are present', () => {
+            const planIDs = {
+                [PLANS.VPN_BUSINESS]: 1,
+                [ADDON_NAMES.MEMBER_VPN_BUSINESS]: 2,
+                [ADDON_NAMES.IP_VPN_BUSINESS]: 3,
+            };
+
+            const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+            const result = selectedPlan.getPresentAddonTypes();
+
+            expect(result).toEqual({
+                [ADDON_PREFIXES.MEMBER]: true,
+                [ADDON_PREFIXES.IP]: true,
+            });
+        });
+
+        it('should return all addon types when all addon types are present', () => {
+            const planIDs = {
+                [PLANS.BUNDLE_PRO_2024]: 1,
+                [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 2,
+                [ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024]: 1,
+                [ADDON_NAMES.IP_BUNDLE_PRO_2024]: 3,
+                [ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO_2024]: 1,
+                [ADDON_NAMES.LUMO_BUNDLE_PRO_2024]: 2,
+            };
+
+            const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+            const result = selectedPlan.getPresentAddonTypes();
+
+            expect(result).toEqual({
+                [ADDON_PREFIXES.MEMBER]: true,
+                [ADDON_PREFIXES.DOMAIN]: true,
+                [ADDON_PREFIXES.IP]: true,
+                [ADDON_PREFIXES.SCRIBE]: true,
+                [ADDON_PREFIXES.LUMO]: true,
+            });
+        });
+
+        it('should return the same addon type when multiple addons of the same type are present', () => {
+            const planIDs = {
+                [PLANS.MAIL_BUSINESS]: 1,
+                [ADDON_NAMES.MEMBER_MAIL_BUSINESS]: 3,
+                [ADDON_NAMES.MEMBER_SCRIBE_MAIL_BUSINESS]: 2,
+                [ADDON_NAMES.LUMO_MAIL_BUSINESS]: 1,
+            };
+
+            const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+            const result = selectedPlan.getPresentAddonTypes();
+
+            expect(result).toEqual({
+                [ADDON_PREFIXES.MEMBER]: true,
+                [ADDON_PREFIXES.SCRIBE]: true,
+                [ADDON_PREFIXES.LUMO]: true,
+            });
+        });
+
+        it('should work correctly with free plan (no addons)', () => {
+            const selectedPlan = SelectedPlan.createFromSubscription(FREE_SUBSCRIPTION, PLANS_MAP);
+            const result = selectedPlan.getPresentAddonTypes();
+
+            expect(result).toEqual({});
+        });
+
+        it('should work correctly with complex business plan setup', () => {
+            const planIDs = {
+                [PLANS.MAIL_BUSINESS]: 1,
+                [ADDON_NAMES.MEMBER_MAIL_BUSINESS]: 5,
+                [ADDON_NAMES.MEMBER_SCRIBE_MAIL_BUSINESS]: 3,
+                [ADDON_NAMES.LUMO_MAIL_BUSINESS]: 2,
+            };
+
+            const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+            const result = selectedPlan.getPresentAddonTypes();
+
+            expect(result).toEqual({
+                [ADDON_PREFIXES.MEMBER]: true,
+                [ADDON_PREFIXES.SCRIBE]: true,
+                [ADDON_PREFIXES.LUMO]: true,
+            });
         });
     });
 });

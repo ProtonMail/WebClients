@@ -607,7 +607,6 @@ describe('resolveUpsellsToDisplay', () => {
             });
 
             expect(upsell2).toMatchObject(vpnEnterpriseUpsell);
-            expect(upsell2.ignoreDefaultCta).toEqual(true);
             expect(upsell2.otherCtas).toHaveLength(1);
 
             upsell2.onUpgrade();
@@ -635,7 +634,6 @@ describe('resolveUpsellsToDisplay', () => {
 
             const upsell1 = upsells[0];
             expect(upsell1).toMatchObject(vpnEnterpriseUpsell);
-            expect(upsell1.ignoreDefaultCta).toEqual(true);
             expect(upsell1.otherCtas).toHaveLength(1);
 
             upsell1.onUpgrade();
