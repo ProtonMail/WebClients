@@ -3,6 +3,7 @@ import type { FC } from 'react';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
+import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
@@ -43,6 +44,12 @@ const ConfirmAutotypeCore: FC<ConfirmAutotypePropsCore> = ({
         <PassModal onClose={onClose} open size="medium">
             <ModalTwoHeader title={c('Title').t`Perform autotype?`} />
             <ModalTwoContent>
+                {BUILD_TARGET === 'linux' && (
+                    <Banner variant="info" className="mb-4">
+                        {c('Info')
+                            .t`This feature is currently experimental on Linux. Please ensure your system is up-to-date.`}
+                    </Banner>
+                )}
                 <div className="mb-2">{c('Info')
                     .t`Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.`}</div>
                 {BUILD_TARGET === 'darwin' && (

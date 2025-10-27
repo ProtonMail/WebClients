@@ -75,7 +75,9 @@ export const ItemViewPanel: FC<Props> = ({
 
     const autotypeEnabled = useFeatureFlag(PassFeature.PassDesktopAutotype);
     const autotypeDiscoverySpotlight = useSpotlightFor(SpotlightMessage.AUTOTYPE_DISCOVERY);
-    const signalQuickActions = autotypeEnabled && autotypeDiscoverySpotlight.open && type === 'login';
+    /** Autotype on Linux is considered experimental so we don't show the discovery dot */
+    const signalQuickActions =
+        BUILD_TARGET !== 'linux' && autotypeEnabled && autotypeDiscoverySpotlight.open && type === 'login';
 
     const monitorActions = itemState.canMonitor && (
         <DropdownMenuButton
