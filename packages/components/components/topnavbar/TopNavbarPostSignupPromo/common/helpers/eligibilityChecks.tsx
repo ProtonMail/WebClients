@@ -1,8 +1,8 @@
 import { differenceInDays, fromUnixTime } from 'date-fns';
 
 import OfferSubscription from '@proton/components/containers/offers/helpers/offerSubscription';
-import type { ADDON_NAMES, Cycle, PLANS } from '@proton/payments';
-import { type Subscription, isManagedExternally } from '@proton/payments';
+import type { Cycle, FreeSubscription, PLANS } from '@proton/payments';
+import { type Subscription, isFreeSubscription, isManagedExternally, isValidPlanName } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
@@ -16,15 +16,15 @@ import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
 
 export const checksAllPass = (...checks: boolean[]): boolean => checks.every(Boolean);
 
-export const hasSubscription = (subscription?: Subscription): boolean => {
-    return !!subscription;
+export const hasSubscription = (subscription?: Subscription | FreeSubscription): boolean => {
+    return !!subscription && !isFreeSubscription(subscription);
 };
 
-export const isWebSubscription = (subscription?: Subscription): boolean => {
+export const isWebSubscription = (subscription?: Subscription | FreeSubscription): boolean => {
     return subscription ? !isManagedExternally(subscription) : false;
 };
 
-export const hasNoScheduledSubscription = (subscription?: Subscription): boolean => {
+export const hasNoScheduledSubscription = (subscription?: Subscription | FreeSubscription): boolean => {
     return !subscription?.UpcomingSubscription;
 };
 
@@ -73,8 +73,8 @@ export const checkAppIsValid = (
  * @param {Subscription} subscription - The user's subscription to get there current cycle.
  * @returns {boolean} True if the user's subscribed cycle matches one of the cycles.
  */
-export const checkCycleIsValid = (cycles: Cycle[], subscription?: Subscription): boolean => {
-    if (!subscription) {
+export const checkCycleIsValid = (cycles: Cycle[], subscription?: Subscription | FreeSubscription): boolean => {
+    if (!subscription || isFreeSubscription(subscription)) {
         return false;
     }
 
@@ -91,9 +91,12 @@ export const checkCycleIsValid = (cycles: Cycle[], subscription?: Subscription):
  * @param {Subscription} [subscription] - The user's subscription to check.
  * @returns {boolean} True if any specified plan exists in the subscription, false otherwise.
  */
-export const checkPlanIsValid = (plans: (typeof PLANS)[keyof typeof PLANS][], subscription?: Subscription): boolean => {
-    function isPlanCheck(name: PLANS | ADDON_NAMES): name is PLANS {
-        return (name as PLANS) !== undefined;
+export const checkPlanIsValid = (
+    plans: (typeof PLANS)[keyof typeof PLANS][],
+    subscription?: Subscription | FreeSubscription
+): boolean => {
+    if (isFreeSubscription(subscription)) {
+        return false;
     }
 
     if (!subscription) {
@@ -103,7 +106,7 @@ export const checkPlanIsValid = (plans: (typeof PLANS)[keyof typeof PLANS][], su
     const offerSubscription = new OfferSubscription(subscription);
     const currentPlans = offerSubscription.subscription.Plans;
     for (const plan of currentPlans) {
-        if (isPlanCheck(plan.Name) && plans.includes(plan.Name)) {
+        if (isValidPlanName(plan.Name) && plans.includes(plan.Name)) {
             return true;
         }
     }
@@ -118,8 +121,11 @@ export const checkPlanIsValid = (plans: (typeof PLANS)[keyof typeof PLANS][], su
  * @param {Subscription} subscription - The user's subscription to check.
  * @returns {boolean} True if the user has been subscribed the minimum days or longer, false otherwise.
  */
-export const checkTimeSubscribedIsValid = (minDays: number, subscription?: Subscription): boolean => {
-    if (!subscription) {
+export const checkTimeSubscribedIsValid = (
+    minDays: number,
+    subscription?: Subscription | FreeSubscription
+): boolean => {
+    if (!subscription || isFreeSubscription(subscription)) {
         return false;
     }
 
