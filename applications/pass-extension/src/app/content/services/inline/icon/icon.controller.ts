@@ -13,23 +13,23 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { FieldType, FormType } from '@proton/pass/fathom/labels';
 import { clientDisabled, clientLocked } from '@proton/pass/lib/client';
 import type { AppStatus, MaybeNull } from '@proton/pass/types';
-import { animatePositionChange } from '@proton/pass/utils/dom/position';
+import { animatePositionChange, freezeAnimations, waitForTransitions } from '@proton/pass/utils/dom/animation';
 import { isInputElement } from '@proton/pass/utils/dom/predicates';
 import { safeAsyncCall, safeCall } from '@proton/pass/utils/fp/safe-call';
-import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import noop from '@proton/utils/noop';
 
 import type { IconStyles } from './icon.utils';
 import {
     applyIconInjectionStyles,
-    cleanupInjectionStyles,
+    cleanupInputStyles,
     computeIconInjectionStyles,
     createIcon,
     hasIconInjectionStylesChanged,
 } from './icon.utils';
 
 type IconControllerOptions = {
+    mainFrame: boolean;
     field: FieldHandle;
     /** `protonpass-control` custom element tag name */
     tag: string;
@@ -40,14 +40,18 @@ type IconControllerOptions = {
 export interface IconController {
     element: HTMLElement;
     detach: () => void;
-    reposition: (reflow: boolean) => void;
     sync: () => void;
 }
 
 export type IconState = {
-    ready: boolean;
-    ctrl: MaybeNull<AbortController>;
+    abortCtrl: MaybeNull<AbortController>;
+    container: HTMLElement;
+    containerObserver: MaybeNull<ResizeObserver>;
+    inputObserver: MaybeNull<ResizeObserver>;
+    repositionRaf: number;
+    repositionReflow: boolean;
     styles: MaybeNull<IconStyles>;
+    releaseTransitions: MaybeNull<() => void>;
 };
 
 export const createIconController = (options: IconControllerOptions): MaybeNull<IconController> => {
@@ -57,23 +61,36 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
 
     if (!isInputElement(input)) return null;
 
-    const state: IconState = { ready: false, ctrl: null, styles: null };
-
     const parent = (() => {
         /** TBD: instead of injecting the icon next to the anchor (either the input element
-         * or the resolved bounding element), prefer injecting in nearest detected form.
-         * Fallsback to document.body as a precaution. This should preserve z-index layering
-         * while avoiding interferences in websites sensitive to the DOM structure of their
-         * input fields (eg: some websites expect their input elements to always be the first
-         * child of a wrapper component - interfering with this could cause unintented crashes) */
+         * or the resolved bounding element), prefer injecting in the form's scroll child.
+         * This should preserve z-index layering while avoiding interferences in websites
+         * sensitive to the DOM structure of their input fields (eg: some websites expect
+         * their input elements to always be the first child of a wrapper component, interfering
+         * with this could cause unintented crashes) */
         const root = field.element.getRootNode();
         if (root instanceof ShadowRoot) return root;
         return field.getFormHandle().scrollChild;
     })();
 
+    const listeners = createListenerStore();
     const anchor = field.getAnchor({ reflow: false });
     const { icon, control } = createIcon({ parent, zIndex, tag });
-    const listeners = createListenerStore();
+
+    /** Container element for repositioning triggers. Best-case we
+     * just use the anchor element, else resolve the parent */
+    const getContainer = () => (anchor.element === input ? input.parentElement! : anchor.element);
+
+    const state: IconState = {
+        abortCtrl: null,
+        container: getContainer(),
+        containerObserver: null,
+        inputObserver: null,
+        repositionRaf: -1,
+        repositionReflow: false,
+        styles: null,
+        releaseTransitions: null,
+    };
 
     const setStatus = (status: AppStatus) => {
         const iconUrl = (() => {
@@ -136,47 +153,89 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
         })
     );
 
-    const reposition = withContext<(reflow?: boolean) => void>((ctx, reflow = false) => {
-        state.ctrl?.abort();
-        if (!ctx) return;
+    const reposition = (reflow: boolean) => {
+        /** Store reflow in case current request gets canceled */
+        state.repositionReflow = reflow || state.repositionReflow;
+        cancelAnimationFrame(state.repositionRaf);
 
-        const anchor = field.getAnchor({ reflow });
+        /** Dual cancellation strategy: RAF cancellation prevents future callbacks
+         * from executing, but if a RAF is already running and has reached async
+         * operations (waitUntil, checkParentCollision), AbortController signals
+         * these operations to bail out, preventing stale positioning attempts */
         const ctrl = new AbortController();
-        state.ctrl = ctrl;
+        state.abortCtrl?.abort();
+        state.abortCtrl = ctrl;
 
-        let raf = requestAnimationFrame(async () => {
-            /** Wait for anchor animations to complete before repositioning
-             * FIXME: at this point we could check the parent frame for any
-             * overlaying elements at the icon position */
-            await waitUntil(() => !anchor.animating, 25, 1_000).catch(() => noop);
+        state.repositionRaf = requestAnimationFrame(async () => {
+            const anchor = field.getAnchor({ reflow: state.repositionReflow });
+            const container = getContainer();
 
-            if (ctrl.signal.aborted) return;
+            if (container !== state.container) {
+                state.releaseTransitions?.();
+                state.container = container;
+            }
 
-            const refs = { icon, control, input, anchor: anchor.element, parent };
+            state.repositionReflow = false;
 
-            animatePositionChange({
-                onAnimate: (request) => (raf = request),
-                onComplete: async () => {
-                    cleanupInjectionStyles(refs);
-                    const styles = computeIconInjectionStyles(refs);
-                    if (!ctx.mainFrame) await checkParentCollision(styles, ctrl);
-                    if (ctrl.signal.aborted) return;
+            /** Wait for anchor animations to stabilize before repositioning.
+             * Computing the icon injection styles will mutate the input's
+             * inline styles which may interfere with ongoing transitions */
+            await waitForTransitions(state.container);
 
-                    /** Only apply if there's a non-negliable change */
-                    if (hasIconInjectionStylesChanged(state.styles, styles)) {
-                        applyIconInjectionStyles(refs, styles);
-                        state.styles = styles;
-                    }
+            if (!ctrl.signal.aborted) {
+                const refs = { icon, control, input, anchor: anchor.element, parent };
 
-                    state.ready = true;
-                    icon.classList.add('visible');
-                },
-                get: () => input.getBoundingClientRect(),
-            });
+                animatePositionChange({
+                    onAnimate: (raf) => (state.repositionRaf = raf),
+                    onComplete: async () => {
+                        /** Positioning the anchor will mutate the element styles,
+                         * to avoid cascading async resize events, pause the affected
+                         * ResizeObservers when computing/applying injection styles
+                         * and freeze the target elements to block any animations. */
+                        state.inputObserver?.disconnect();
+                        state.containerObserver?.disconnect();
+
+                        state.releaseTransitions =
+                            state.releaseTransitions ??
+                            (() => {
+                                const releaseContainer = freezeAnimations(state.container);
+                                const releaseInput = freezeAnimations(input);
+
+                                return () => {
+                                    releaseContainer();
+                                    releaseInput();
+                                    state.releaseTransitions = null;
+                                };
+                            })();
+
+                        const styles = computeIconInjectionStyles(refs);
+
+                        if (!options.mainFrame) await checkParentCollision(styles, ctrl);
+                        if (ctrl.signal.aborted) return;
+
+                        /** Only apply if there's a non-negligable change */
+                        state.styles = hasIconInjectionStylesChanged(state.styles, styles) ? styles : state.styles;
+                        if (state.styles) applyIconInjectionStyles(refs, state.styles);
+
+                        state.abortCtrl = null;
+                        icon.classList.add('visible');
+
+                        /** Wait for next frame after styles are applied while animations are frozen.
+                         * This ensures observers resume and transitions are released only after
+                         * the current positioning changes have been fully rendered */
+                        state.repositionRaf = requestAnimationFrame(() => {
+                            if (!ctrl.signal.aborted) {
+                                state.inputObserver?.observe(field.element);
+                                state.containerObserver?.observe(state.container);
+                                state.releaseTransitions?.();
+                            }
+                        });
+                    },
+                    get: () => input.getBoundingClientRect(),
+                });
+            }
         });
-
-        ctrl.signal.addEventListener('abort', () => cancelAnimationFrame(raf));
-    });
+    };
 
     const onPointerDown = (evt: PointerEvent) => {
         icon.setPointerCapture(evt.pointerId);
@@ -193,52 +252,47 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
     };
 
     const detach = safeCall(() => {
-        state.ctrl?.abort();
-        state.ctrl = null;
-        state.ready = false;
+        cancelAnimationFrame(state.repositionRaf);
+        state.abortCtrl?.abort();
+        state.abortCtrl = null;
         state.styles = null;
+        icon.classList.remove('visible');
+
+        listeners.removeAll();
+        state.containerObserver?.disconnect();
+        state.inputObserver?.disconnect();
+        state.releaseTransitions?.();
 
         options.onDetach();
 
-        field.getAnchor().disconnect();
         field.setIcon(null);
 
         icon.remove();
         control.remove();
 
-        listeners.removeAll();
-        cleanupInjectionStyles({ input, control });
+        cleanupInputStyles(input);
     });
-
-    /** Icon repositioning triggers:
-     * - window resize events
-     * - form container resize (handled by FormHandles)
-     * - DOM changes in field container (error messages, tooltips, other icons) */
-    const target = anchor.element === input ? input.parentElement! : anchor.element;
 
     /** Uses pointer capture to prevent unintended clicks during icon repositioning.
      * Captures on pointerdown, releases on pointerup to handle repositioning mid-interaction. */
     listeners.addListener(icon, 'pointerdown', onPointerDown);
     listeners.addListener(icon, 'pointerup', onPointerUp);
     listeners.addListener(window, 'resize', () => reposition(false));
-    listeners.addResizeObserver(target, () => reposition(false));
 
-    listeners.addObserver(
-        target,
-        () => {
-            /** DOM mutations may affect field layout (error messages, tooltips, icons).
-             * Revalidate anchor element positioning with reflow=true to ensure
-             * icon remains correctly positioned relative to potentially changed boundaries. */
-            reposition(true);
-        },
-        { childList: true, subtree: true }
-    );
+    /** DOM mutations may affect field layout (error messages, tooltips, icons).
+     * Revalidate anchor element positioning with reflow=true to ensure
+     * icon remains correctly positioned relative to potentially changed boundaries. */
+    listeners.addObserver(state.container, () => reposition(true), { childList: true, subtree: true });
+    listeners.addResizeObserver(field.getFormHandle().element, () => reposition(true));
 
-    /* fire reposition & sync on initial
-     * icon handle creation */
-    anchor.connect();
+    /** `passive` flag allows not firing resize observer callbacks
+     * when observation starts (avoids repositioning cascade). We
+     * observe both the input and the container for repositioning. */
+    state.inputObserver = listeners.addResizeObserver(field.element, () => reposition(false), { passive: true });
+    state.containerObserver = listeners.addResizeObserver(state.container, () => reposition(false), { passive: true });
+
     sync();
     reposition(true);
 
-    return { element: icon, sync, detach, reposition };
+    return { element: icon, sync, detach };
 };

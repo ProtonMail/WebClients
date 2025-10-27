@@ -9,7 +9,6 @@ import {
 import { createIconRegistry } from 'proton-pass-extension/app/content/services/inline/icon/icon.registry';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import { isMainFrame } from '@proton/pass/utils/dom/is-main-frame';
 import { cons } from '@proton/pass/utils/fp/lens';
 import noop from '@proton/utils/noop';
 
@@ -21,16 +20,17 @@ import { createNotificationRelayHandler } from './notification/notification.rela
 export const createInlineRelay = ({
     controller,
     elements,
+    mainFrame,
 }: ContentScriptContextFactoryOptions): AbstractInlineService => {
     /** NOTE: This should only be spawned in sub-frames */
-    if (isMainFrame()) throw new Error('InlineRelay should only be created in sub-frames');
+    if (mainFrame) throw new Error('InlineRelay should only be created in sub-frames');
 
     const { channel } = controller;
 
     const passiveListeners = createPassiveInlineListeners(channel);
     const dropdown = createDropdownRelayHandler();
     const notification = createNotificationRelayHandler();
-    const icon = createIconRegistry({ channel, dropdown, tag: elements.control });
+    const icon = createIconRegistry({ channel, dropdown, tag: elements.control, mainFrame });
 
     const onDropdownOpened: FrameMessageHandler<WorkerMessageType.INLINE_DROPDOWN_OPENED> = withContext(
         (ctx, { payload }) => {

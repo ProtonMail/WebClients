@@ -24,12 +24,13 @@ export interface IconRegistry {
 export type IconRegistryOptions = {
     channel: FrameMessageBroker;
     dropdown: DropdownHandler;
+    mainFrame: boolean;
     tag: string;
 };
 
 /** Icon registry ensures only one icon can be injected at a time.
  * We keep a reference on the field itself */
-export const createIconRegistry = ({ channel, dropdown, tag }: IconRegistryOptions): IconRegistry => {
+export const createIconRegistry = ({ channel, dropdown, mainFrame, tag }: IconRegistryOptions): IconRegistry => {
     const icon: IconRef = { current: null };
 
     /** Handles icon position shift when elements overlay in the parent frame that the sub-frame
@@ -39,17 +40,19 @@ export const createIconRegistry = ({ channel, dropdown, tag }: IconRegistryOptio
             const target = getFrameElement(payload.frameId, payload.frameAttributes);
 
             if (target) {
-                const rect = target.getBoundingClientRect();
-                const anchor = getNthParent(target, 2);
-                const parser = createStyleParser(target);
-                const pl = parser('padding-left', pixelParser);
-                const pt = parser('padding-top', pixelParser);
-                const x = payload.left + rect.left + pl;
-                const y = payload.top + rect.top + pt;
-                const { maxWidth, radius } = payload;
-                const dx = computeIconShift({ x, y, maxWidth, radius, target, anchor });
+                requestAnimationFrame(() => {
+                    const rect = target.getBoundingClientRect();
+                    const anchor = getNthParent(target, 2);
+                    const parser = createStyleParser(target);
+                    const pl = parser('padding-left', pixelParser);
+                    const pt = parser('padding-top', pixelParser);
+                    const x = payload.left + rect.left + pl;
+                    const y = payload.top + rect.top + pt;
+                    const { maxWidth, radius } = payload;
+                    const dx = computeIconShift({ x, y, maxWidth, radius, target, anchor });
+                    sendResponse({ dx });
+                });
 
-                sendResponse({ dx });
                 return true;
             }
         }
@@ -73,7 +76,9 @@ export const createIconRegistry = ({ channel, dropdown, tag }: IconRegistryOptio
                     }
                 };
 
-                icon.current = createIconController({ field, tag, onClick, onDetach: () => (icon.current = null) });
+                const onDetach = () => (icon.current = null);
+
+                icon.current = createIconController({ field, mainFrame, tag, onClick, onDetach });
                 if (icon.current) field.setIcon(icon.current);
             }
         },

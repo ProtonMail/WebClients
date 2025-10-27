@@ -119,7 +119,6 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
     listeners.addListener(field.element, 'blur', onBlur);
     listeners.addListener(field.element, 'focus', onFocus);
     listeners.addListener(field.element, 'input', onInput);
-    listeners.addResizeObserver(field.element, () => field.icon?.reposition(false));
     listeners.addObserver(field.element, onFieldAttributeChange, {
         attributeFilter: ['type'],
         attributeOldValue: true,
