@@ -43,7 +43,7 @@ export type IconStyles = {
         overlay: Coords & {
             radius: number;
             dx: number;
-            pr: number;
+            gap: number;
         };
     };
 };
@@ -161,58 +161,70 @@ export const hasIconInjectionStylesChanged = (a?: MaybeNull<IconStyles>, b?: May
  * reproduce issue */
 export const computeIconInjectionStyles = (options: Omit<IconElementRefs, 'icon'>): IconStyles => {
     const { anchor, input, control, parent } = options;
+    const boxed = anchor !== input;
+
+    cleanupInputStyles(input);
 
     repaint(input, control);
-
-    const getInputStyle = createStyleParser(input);
-    const getAnchorStyle = createStyleParser(anchor);
+    if (boxed) repaint(anchor);
 
     const { right: inputRight, top: inputTop, height: inputHeight } = input.getBoundingClientRect();
     const { right: anchorRight, top: boxTop, height: boxMaxHeight } = anchor.getBoundingClientRect();
     const { top: controlTop, right: controlRight } = control.getBoundingClientRect();
 
-    const maxRight = inputRight > anchorRight ? anchorRight : inputRight;
+    /** Get the rightmost edge between input and anchor elements.
+     * This becomes our baseline for icon positioning calculations */
+    const maxRight = Math.max(inputRight, anchorRight);
+
+    const getInputStyle = createStyleParser(input);
+    const getAnchorStyle = createStyleParser(anchor);
 
     /* If inputBox is not the input element in the case we
      * resolved a bounding element : compute inner height
      * without offsets in order to correctly position icon
      * if bounding element has some padding-top/border-top */
-    const boxed = anchor !== input;
     const { value: boxHeight, offset: boxOffset } = getComputedHeight(getAnchorStyle, boxed ? 'inner' : 'outer');
 
     const size = Math.max(Math.min(boxMaxHeight - ICON_PADDING, ICON_MAX_HEIGHT), ICON_MIN_HEIGHT);
     const radius = size / 2;
-    const pl = getInputStyle('padding-left', pixelParser);
-    const pr = getInputStyle('padding-right', pixelParser);
 
-    const iconPaddingLeft = size / 5; /* dynamic "responsive" padding */
-    const iconPaddingRight = Math.max(Math.min(pl, pr) / 1.5, iconPaddingLeft);
+    /** Extract existing padding-right to preserve visual spacing in layout.
+     * This helps maintain the field's original visual appearance when injecting */
+    const inputPr = getInputStyle('padding-right', pixelParser);
+    const inputPl = getInputStyle('padding-left', pixelParser);
+    const anchorPr = boxed ? getAnchorStyle('padding-right', pixelParser) : 0;
+    const anchorPl = boxed ? getAnchorStyle('padding-left', pixelParser) : 0;
+    const fieldPr = inputPr === 0 ? anchorPr : inputPr;
+    const fieldPl = inputPl === 0 ? anchorPl : inputPl;
 
-    const overlayX = maxRight - (iconPaddingRight + radius);
+    /** Icon gap tries to scale harmoniously with field's tightest constraint.
+     * Using min(left, right) prevents oversized gaps when one side has much larger padding */
+    const iconGap = Math.max(8, size / 5);
+    const iconGapLeft = iconGap;
+    const iconGapRight = Math.max(Math.min(fieldPl, fieldPr) / 1.5, iconGap);
+
+    const overlayX = maxRight - (iconGapRight + radius);
     const overlayY = inputTop + inputHeight / 2;
     const maxWidth = anchor.offsetWidth;
 
-    /* look for any overlayed elements if we were to inject
-     * the icon on the right hand-side of the input element
-     * accounting for icon size and padding  */
-    let overlayDx = computeIconShift({ x: overlayX, y: overlayY, maxWidth, radius, anchor, target: input, parent });
-    overlayDx = overlayDx !== 0 ? overlayDx + iconPaddingLeft : 0;
+    /* Look for any overlayed elements if we were to inject
+     * the icon on the right hand-side of the input element */
+    const overlayDx = computeIconShift({ x: overlayX, y: overlayY, maxWidth, radius, anchor, target: input, parent });
 
-    /* Compute the new input padding :
-     * Take into account the input element's current padding as it
-     * may already cover the necessary space to inject the icon without
-     * the need to mutate the input's padding style. Account for potential
-     * overlayed element offset */
-    const newPaddingRight = Math.max(pr, size + iconPaddingLeft + iconPaddingRight + overlayDx);
-
-    /* `mt` represents the vertical offset needed to align the
-     * center of the injected icon with the top-most part of
-     * the bounding box :
-     * mt = boxTop - boxOffset.top - controlTop - size / 2
-     * top = mt + boxHeight / 2 */
-
+    /** Calculate icon position relative to control element.
+     * Top: vertically center within the anchor box accounting for offsets
+     * Right: distance from control's right edge, including gaps and collision shifts */
     const top = boxTop - controlTop + boxOffset.top + (boxHeight - size) / 2;
-    const right = controlRight - maxRight + iconPaddingRight + overlayDx;
+    const right = controlRight - maxRight + iconGapRight + overlayDx;
+
+    /** Calculate minimum padding-right needed to prevent icon from overlapping text.
+     * If existing padding already provides enough space (considering collision shifts),
+     * preserve it. Otherwise, extend padding to accommodate icon + gaps. */
+    const newPaddingRight = (() => {
+        const overlayMinRight = anchorRight - (overlayDx + iconGapRight + size + iconGapLeft);
+        const inputMinRight = inputRight - inputPr;
+        return overlayMinRight >= inputMinRight ? inputPr : inputPr + (inputMinRight - overlayMinRight);
+    })();
 
     return {
         input: { paddingRight: newPaddingRight },
@@ -224,9 +236,9 @@ export const computeIconInjectionStyles = (options: Omit<IconElementRefs, 'icon'
             overlay: {
                 left: overlayX + overlayDx,
                 top: overlayY,
+                gap: iconGap,
                 radius,
                 dx: overlayDx,
-                pr: iconPaddingRight,
             },
         },
     };
