@@ -32,4 +32,5 @@ export type ComposerID = string;
 
 export interface ComposersState {
     composers: Record<ComposerID, Composer>;
+    hasFocusedComposer: boolean;
 }

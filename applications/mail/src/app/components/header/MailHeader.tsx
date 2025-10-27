@@ -8,7 +8,9 @@ import { useFolders, useLabels } from '@proton/mail';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { APPS } from '@proton/shared/lib/constants';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
+import { selectHasFocusedComposer } from 'proton-mail/store/composers/composerSelectors';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 
 import { useOnCompose } from '../../containers/ComposeProvider';
@@ -48,6 +50,9 @@ const MailHeader = ({ labelID, elementID, selectedIDs = [], toolbar, settingsBut
 
     const isColumn = isColumnMode(mailSettings);
 
+    const hasComposerInFocus = useMailSelector(selectHasFocusedComposer);
+    const shouldDragInElectronMailClassName = hasComposerInFocus && isElectronMail ? 'ignore-drag' : '';
+
     /** Search is displayed everytime except when we are on message view with row mode */
     const displaySearch = !(!isColumn && elementID);
 
@@ -55,6 +60,7 @@ const MailHeader = ({ labelID, elementID, selectedIDs = [], toolbar, settingsBut
         <>
             <PrivateHeader
                 app={APPS.PROTONMAIL}
+                className={shouldDragInElectronMailClassName}
                 userDropdown={<UserDropdown app={APPS.PROTONMAIL} />}
                 hideMenuButton={hideMenuButton}
                 hideUpsellButton={hideUpsellButton}
