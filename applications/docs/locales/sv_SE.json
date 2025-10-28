@@ -1117,6 +1117,9 @@
       "1 user account": [
         "1 användarkonto"
       ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB lagringsutrymme: 40x ditt nuvarande paket"
+      ],
       "6 user accounts": [
         "6 användarkonton"
       ],
@@ -1138,6 +1141,9 @@
       "Password health alerts": [
         "Aviseringar om lösenordshälsa"
       ],
+      "Recover previous file versions": [
+        "Återställ tidigare filversioner"
+      ],
       "Unlimited folders, labels and filters": [
         "Obegränsat antal mappar, etiketter och filter"
       ],
@@ -1151,6 +1157,9 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Fakturerad med ${ amount } en gång"
+      ],
+      "forever": [
+        "för alltid"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Förnyas efter 1 månad till ${ regularAmount }."
@@ -1182,6 +1191,87 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagringsutrymme delas mellan alla ${ BRAND_NAME }-tjänster."
+      ]
+    },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "Black Friday-rea"
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB datalagring"
+      ],
+      "3 TB data storage": [
+        "3 TB datalagring"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Åtkomst till 15 000+ servrar i 120+ länder"
+      ],
+      "Access advanced AI models": [
+        "Åtkomst till avancerade AI-modeller"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alla premiumfunktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blockera annonser, spårare och skadlig kod"
+      ],
+      "Built-in 2FA authenticator": [
+        "Inbyggd 2FA-autentiserare"
+      ],
+      "Connect 10 devices at once": [
+        "Anslut 10 enheter samtidigt"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Fullständig chatthistorik med enkel sökning och favoriter"
+      ],
+      "Individual accounts for 6 users": [
+        "Individuella konton för 6 användare"
+      ],
+      "Individual accounts for you and a partner": [
+        "Individuella konton för dig och en partner"
+      ],
+      "Stronger protection against cyber threats": [
+        "Starkare skydd mot cyberhot"
+      ],
+      "Unlimited daily chats": [
+        "Obegränsat antal dagliga chattar"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Hjälp dina nära och kära att gå med i integritetsrevolutionen med våra mest prisvärda paket, nu med 50 % rabatt!"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Gå med i integritetsrevolutionen med våra mest prisvärda paket, nu med 50 % rabatt!"
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "för ${ durationDeal }"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "Spara ${ savedAmount } med vårt mest prisvärda, tidsbegränsade erbjudande!"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "Byt till vår 2-årsplan och spara ${ savedAmount }!"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "Byt till vår årsplan och spara ${ savedAmount }!"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "Unna dina nära och kära ett komplett digitalt skydd."
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Specialdesignade NetShield skyddar dina enheter och snabbar upp din surfning genom att blockera annonser, spårare och skadlig kod."
       ]
     },
     "Browser": {
@@ -2635,16 +2725,19 @@
       ]
     },
     "Duo offer: Link": {
-      "Double your storage": [
-        "Dubbla ditt lagringsutrymme"
+      "Get 4x more storage": [
+        "Skaffa 4x mer lagringsutrymme"
       ],
       "Share your plan": [
         "Dela ditt paket"
       ]
     },
     "Duo offer: Title": {
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Dubbla ditt lagringsutrymme med ${ BRAND_NAME } Duo"
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "Skaffa 4x mer lagringsutrymme med ${ BRAND_NAME } Duo"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "Dela dina paketförmåner med ${ BRAND_NAME } Duo"
       ]
     },
     "Email body for invitation": {
@@ -5056,6 +5149,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Uppgradera nu för att få premiumfunktioner, produkter och lagringsutrymme till ett specialpris"
       ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "Uppgradera för att behålla dina ${ planTitle }-förmåner."
+      ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Att ladda upp hundratals filer på samma gång kan påverka prestandan."
       ],
@@ -6021,6 +6117,9 @@
       ]
     },
     "Message": {
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "Din gratis provperiod har slutat. ${ nonAutoRenewalAction }"
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Din gratis provperiod har avslutats. Åtkomst till ditt konto kommer snart att inaktiveras. ${ action }"
       ]
@@ -7724,6 +7823,9 @@
       "Advanced account protection": [
         "Avancerat kontoskydd"
       ],
+      "File attachments (up to 10GB)": [
+        "Filbilagor (upp till 10 GB)"
+      ],
       "Team policies": [
         "Policy för team"
       ]
@@ -8073,6 +8175,9 @@
       "More sharing options": [
         "Fler delningsalternativ"
       ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "När din fullständiga prenumeration startar kan du fortfarande avbryta inom 30 dagar och få en proportionell återbetalning."
+      ],
       "Refer friends": [
         "Hänvisa vänner"
       ],
@@ -8375,6 +8480,62 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Delad av ${ ownerName }"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Comma Separated Values (.csv)": [
+        "Kommaseparerade värden (.csv)"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
+      "New spreadsheet": [
+        "Nytt kalkylblad"
+      ],
+      "Rename spreadsheet": [
+        "Ändra namn på kalkylblad"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Tabbseparerade värden (.tsv)"
+      ]
+    },
+    "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Skapar nytt kalkylblad …"
+      ],
+      "Detect automatically": [
+        "Upptäck automatiskt"
+      ],
+      "Insert as new sheet": [
+        "Infoga som nytt blad"
+      ],
+      "Replace current sheet": [
+        "Ersätt nuvarande blad"
+      ],
+      "Replace data at selected cell": [
+        "Ersätt data i vald cell"
+      ],
+      "Select a CSV or TSV file to import": [
+        "Välj en CSV- eller TSV-fil att importera"
+      ]
+    },
+    "sheets_2025:Label": {
+      "Convert text to numbers, dates, and formulas": [
+        "Konvertera text till siffror, datum och formler"
+      ],
+      "Destination": [
+        "Destination"
+      ],
+      "Format": [
+        "Format"
+      ],
+      "Separator type": [
+        "Avgränsartyp"
+      ]
+    },
+    "sheets_2025:Title": {
+      "Import data": [
+        "Importera data"
       ]
     },
     "Signing preference for emails": {
@@ -9244,9 +9405,6 @@
       "Document verification failed": [
         "Dokumentverifiering misslyckades"
       ],
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Dubbla ditt lagringsutrymme med ${ BRAND_NAME } Duo"
-      ],
       "Downgrade account": [
         "Nedgradera konto"
       ],
@@ -9722,6 +9880,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: AI-assistent som respekterar din integritet"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Säkra inloggningar på alla dina enheter. Inkluderar obegränsade alias, delning, integrerad 2FA och mer."
       ]

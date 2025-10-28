@@ -1109,6 +1109,9 @@
       "1 user account": [
         "1개 사용자 계정"
       ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB 저장 공간: 현재 플랜의 40배에 해당"
+      ],
       "6 user accounts": [
         "6개 사용자 계정"
       ],
@@ -1130,6 +1133,9 @@
       "Password health alerts": [
         "비밀번호 건강도 알림"
       ],
+      "Recover previous file versions": [
+        "기존 파일 버전 복원"
+      ],
       "Unlimited folders, labels and filters": [
         "무제한 폴더, 라벨 및 필터"
       ],
@@ -1143,6 +1149,9 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "${ amount } 1회 청구"
+      ],
+      "forever": [
+        "평생"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "${ regularAmount }(으)로 1개월 후 갱신됩니다."
@@ -1174,6 +1183,87 @@
         "스토리지 공간은 모든 ${ BRAND_NAME } 서비스에 공유됩니다."
       ]
     },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "블랙프라이데이 세일"
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2TB 데이터 저장공간"
+      ],
+      "3 TB data storage": [
+        "3TB 데이터 저장공간"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "120개 이상 국가에서 15,000여개 이상의 서버에 액세스"
+      ],
+      "Access advanced AI models": [
+        "고급 AI 모델 액세스"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }의 모든 프리미엄 기능"
+      ],
+      "Block ads, trackers, and malware": [
+        "광고, 멀웨어 및 트래커 차단"
+      ],
+      "Built-in 2FA authenticator": [
+        "내장형 2단계 인증기"
+      ],
+      "Connect 10 devices at once": [
+        "한 번에 기기 10대 연결"
+      ],
+      "Full chat history with easy search and favorites": [
+        "간편한 검색 및 즐겨찾기 기능이 포함된 전체 채팅 기록"
+      ],
+      "Individual accounts for 6 users": [
+        "6인용 개별 계정"
+      ],
+      "Individual accounts for you and a partner": [
+        "귀하와 파트너를 위한 개별 계정"
+      ],
+      "Stronger protection against cyber threats": [
+        "사이버 위협에 대한 더욱 강력한 보호"
+      ],
+      "Unlimited daily chats": [
+        "무제한 일일 채팅"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "지금 50% 할인된 최고 가성비 번들로 소중한 사람들이 프라이버시 혁명에 참여하도록 도와주세요."
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "지금 50% 할인된 최고 가성비 번들로 프라이버시 혁명에 참여하세요!"
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "${ durationDeal }간"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "최고 가성비의 기간 한정 혜택으로 ${ savedAmount }를 절약하세요!"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "2년 플랜으로 전환하고 ${ savedAmount }를 절약하세요!"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "연간 플랜으로 전환하고 ${ savedAmount }를 절약하세요!"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "소속 그룹에 완벽한 디지털 보호를 제공하세요."
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "특별히 설계된 NetShield는 광고, 추적기 및 맬웨어를 차단하여 장치를 보호하고 브라우징 속도를 높입니다."
+      ]
+    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } 데스크탑 어플리케이션"
@@ -1185,6 +1275,9 @@
       ],
       "Application problem": [
         "앱 문제"
+      ],
+      "Black Friday": [
+        "블랙 프라이데이"
       ],
       "Bridge problem": [
         "Bridge 문제"
@@ -2612,6 +2705,39 @@
         "우선 지원"
       ]
     },
+    "Duo offer": {
+      "/month": [
+        "/월간"
+      ],
+      "1 TB of storage to share": [
+        "공유 가능한 1 TB 저장 공간"
+      ],
+      "2 user accounts": [
+        "2개 사용자 계정"
+      ],
+      "All premium features from your current plan": [
+        "현재 플랜의 모든 프리미엄 기능"
+      ],
+      "Only": [
+        "단"
+      ]
+    },
+    "Duo offer: Link": {
+      "Get 4x more storage": [
+        "4배 더 많은 저장공간 확보하기"
+      ],
+      "Share your plan": [
+        "내 플랜 공유"
+      ]
+    },
+    "Duo offer: Title": {
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "${ BRAND_NAME } Duo로 저장공간을 4 배로 늘리세요"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "${ BRAND_NAME } Duo로 플랜 혜택을 함께 누려보세요"
+      ]
+    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle }이(가) 취소되었습니다."
@@ -3479,6 +3605,12 @@
       ]
     },
     "Feature": {
+      "Encrypted cloud storage for files, photos and documents": [
+        "파일, 사진 및 문서에 대한 암호화된 클라우드 저장공간"
+      ],
+      "More premium features": [
+        "개 더 많은 프리미엄 기능들"
+      ],
       "Unlimited hide-my-email aliases": [
         "무제한 hide-my-email 별칭"
       ]
@@ -4170,6 +4302,9 @@
       "Checking signatures": [
         "서명 확인 중"
       ],
+      "Choose a plan that works best for you.": [
+        "당신에게 가장 적합한 플랜을 선택하세요."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "${ strong }(으)로 새 인증 코드를 보내려면 \"새 코드 요청\"을 클릭하세요. 이 전화번호가 잘못된 경우 \"수정\"을 클릭하여 수정하세요."
       ],
@@ -4184,6 +4319,9 @@
       ],
       "Contact unassigned from group ${ contactGroupName }": [
         "연락처가 ${ contactGroupName } 그룹에 할당 취소되었습니다"
+      ],
+      "Continue": [
+        "계속"
       ],
       "Converting document...": [
         "문서 변환 중..."
@@ -4958,6 +5096,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "지금 업그레이드하여 프리미엄 기능, 제품, 저장 공간을 특별한 가격에 이용하세요."
+      ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "${ planTitle } 플랜의 혜택을 놓치지 않기 위해 업그레이드하세요."
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "한 번에 수백 개의 파일을 업로드하면 성능에 영향을 미칠 수 있습니다."
@@ -5925,6 +6066,9 @@
       ]
     },
     "Message": {
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "무료 체험이 종료되었습니다. ${ nonAutoRenewalAction }"
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "무료 체험이 종료되었습니다. 계정 접근이 곧 비활성화 됩니다. ${ action }"
       ]
@@ -7297,11 +7441,17 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } 할인이 오늘 만료됩니다!"
       ],
+      "Don't show this again": [
+        "다시 보지 않기"
+      ],
       "Don’t show this again": [
         "다시 보지 않기"
       ],
       "Don’t show this offer again": [
         "이 제안을 다시 보지 않기"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "${ BRAND_NAME } Duo 플랜 받기"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "${ BRAND_NAME } Unlimited 구매"
@@ -7519,6 +7669,9 @@
       "Advanced account protection": [
         "고급 계정 보호"
       ],
+      "File attachments (up to 10GB)": [
+        "파일 첨부 (최대 10GB)"
+      ],
       "Team policies": [
         "팀 정책"
       ]
@@ -7587,6 +7740,15 @@
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "쿠폰이 ${ couponRedemptions }회 갱신까지 유효합니다."
+      ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "특별 할인 가격은 최초 ${ subscriptionLength }개월에 한해 유효합니다."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "특별 할인가가 첫 달에만 적용됩니다. 쿠폰은 ${ couponRedemptions }회 갱신까지 유효합니다. 이후에는 매월 ${ renewPriceStr }(으)로 1개월 동안 자동 갱신됩니다. 언제든지 취소할 수 있습니다."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "특별 할인가는 첫 달에만 유효합니다. 이후 매 달 ${ renewPriceStr }에 자동으로 갱신됩니다. 취소는 언제나 가능합니다."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "특별 할인 가격인 ${ priceWithDiscount }은(는) 최초 ${ subscriptionLength }개월에 한해 유효합니다."
@@ -7858,6 +8020,9 @@
       ],
       "More sharing options": [
         "공유 옵션 더보기"
+      ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "정식 구독이 시작된 후에도 30일 내에 구독 취소 시 사용량에 비례하여 환불 받을 수 있습니다."
       ],
       "Refer friends": [
         "친구 초대"
@@ -8149,6 +8314,62 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "${ ownerName }님이 공유함"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Comma Separated Values (.csv)": [
+        "Comma Separated Values (.csv)"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
+      "New spreadsheet": [
+        "새로운 스트레드시트"
+      ],
+      "Rename spreadsheet": [
+        "스프레드시트 이름 변경"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Tab Separated Values (.tsv)"
+      ]
+    },
+    "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "새로운 스프레드시트를 생성하는 중..."
+      ],
+      "Detect automatically": [
+        "자동 감지"
+      ],
+      "Insert as new sheet": [
+        "새 시트로 삽입"
+      ],
+      "Replace current sheet": [
+        "현재 시트 바꾸기"
+      ],
+      "Replace data at selected cell": [
+        "선택한 셀에서 데이터 바꾸기"
+      ],
+      "Select a CSV or TSV file to import": [
+        "불러올 CSV 또는 TSV 파일을 선택하세요"
+      ]
+    },
+    "sheets_2025:Label": {
+      "Convert text to numbers, dates, and formulas": [
+        "텍스트를 숫자, 날짜 및 수식으로 변환"
+      ],
+      "Destination": [
+        "대상"
+      ],
+      "Format": [
+        "양식"
+      ],
+      "Separator type": [
+        "구분자 유형"
+      ]
+    },
+    "sheets_2025:Title": {
+      "Import data": [
+        "데이터 불러오기"
       ]
     },
     "Signing preference for emails": {
@@ -9314,6 +9535,9 @@
       "Upgrade to ${ planName }": [
         "${ planName }으로 업그레이드"
       ],
+      "Upgrade to keep your premium benefits.": [
+        "프리미엄 기능 혜택을 놓치지 않기 위해 업그레이드하세요."
+      ],
       "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
         "${ planName }으로 생산성을 ${ formattedPrice }에 업그레이드하기"
       ],
@@ -9631,6 +9855,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "무료 체험이 ${ textDate } 에 종료됩니다. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "무료 체험이 ${ textDate }에 종료됩니다. ${ textDate } 이전에 취소시 요금이 청구되지 않습니다. ${ action }"
       ]
     }
   }
