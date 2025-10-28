@@ -18,6 +18,7 @@ export const hasPassLifetime = (user: User) => !!user.Flags?.['pass-lifetime'];
 export const hasPassViaSimpleLogin = (user: User) => !!user.Flags?.['pass-from-sl'];
 export const hasPaidPass = (user: User) =>
     hasBit(user.Subscribed, PRODUCT_BIT.PASS) || hasPassLifetime(user) || hasPassViaSimpleLogin(user);
+export const hasPassLifetimeOrViaSimpleLogin = (user: User) => hasPassLifetime(user) || hasPassViaSimpleLogin(user);
 export const hasPaidLumo = (user: User) => hasBit(user.Subscribed, PRODUCT_BIT.LUMO);
 export const isPaid = (user: User) => !!user.Subscribed;
 export const isPrivate = (user: User) => user.Private === 1;

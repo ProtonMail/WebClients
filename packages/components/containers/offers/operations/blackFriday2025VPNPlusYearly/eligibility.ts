@@ -8,6 +8,7 @@ import {
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
+import { hasPassLifetimeOrViaSimpleLogin } from '@proton/shared/lib/user/helpers';
 
 import hasEligibileCurrencyForBF from '../../helpers/hasEligibileCurrencyForBF';
 import isSubscriptionCheckAllowed from '../../helpers/isSubscriptionCheckAllowed';
@@ -31,11 +32,19 @@ const isEligible = ({ subscription, protonConfig, user, offerConfig, preferredCu
 
     const { canPay, isDelinquent, isPaid } = user;
     const isExternal = isManagedExternally(subscription);
+    const hasForbiddenPassSubscription = hasPassLifetimeOrViaSimpleLogin(user);
 
     const isPreferredCurrencyEligible = hasEligibileCurrencyForBF(preferredCurrency);
 
-    // delinquent, can't pay, has intentional scheduled modification, external subscription
-    if (isDelinquent || !canPay || hasIntentionalScheduledModification(subscription) || isExternal) {
+    // delinquent, can't pay, has intentional scheduled modification, external subscription, has forbidden pass
+    // subscription
+    if (
+        isDelinquent ||
+        !canPay ||
+        hasIntentionalScheduledModification(subscription) ||
+        isExternal ||
+        hasForbiddenPassSubscription
+    ) {
         return false;
     }
 
