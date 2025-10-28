@@ -11,6 +11,7 @@ import { InputFieldTwo, Option, SelectTwo } from '@proton/components/index';
 import type { IconName } from '@proton/icons';
 import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eventDefaults';
+import clsx from '@proton/utils/clsx';
 
 import { useBookings } from './bookingsProvider/BookingsProvider';
 import { BookingState } from './bookingsProvider/interface';
@@ -18,12 +19,17 @@ import { BookingState } from './bookingsProvider/interface';
 interface FormIconRowProps extends PropsWithChildren {
     title: string;
     hideBorder?: boolean;
+    narrowSection?: boolean;
     icon: IconName;
 }
 
-const FormIconRow = ({ title, icon, children, hideBorder = false }: FormIconRowProps) => {
+const FormIconRow = ({ title, icon, children, hideBorder = false, narrowSection = false }: FormIconRowProps) => {
     return (
-        <IconRow icon={icon} containerClassName="items-baseline" labelClassName="pt-0.5">
+        <IconRow
+            icon={icon}
+            containerClassName={clsx('items-baseline', narrowSection && 'pr-11')}
+            labelClassName="pt-0.5"
+        >
             <h2 className="text-sm text-semibold mb-2">{title}</h2>
             {children}
             {!hideBorder && <hr className="mt-5 mb-1 bg-weak" />}
@@ -73,11 +79,15 @@ export const Form = () => {
                 todo
             </FormIconRow>
 
-            <FormIconRow icon="map-pin" title={c('Info').t`Where will the appointment take place?`}>
+            <FormIconRow icon="map-pin" title={c('Info').t`Where will the appointment take place?`} narrowSection>
                 todo
             </FormIconRow>
 
-            <FormIconRow icon="calendar-grid" title={c('Info').t`In which calendar should bookings appear?`}>
+            <FormIconRow
+                icon="calendar-grid"
+                title={c('Info').t`In which calendar should bookings appear?`}
+                narrowSection
+            >
                 <InputFieldTwo
                     as={SelectTwo}
                     id="calendar-select"
@@ -86,14 +96,21 @@ export const Form = () => {
                         updateFormData('selectedCalendar', value);
                     }}
                     assistContainerClassName="hidden"
+                    className="w-fit-content"
                 >
                     {writeableCalendars.map((calendar) => (
-                        <Option key={calendar.ID} value={calendar.ID} title={calendar.Name} />
+                        <Option key={calendar.ID} value={calendar.ID} title={calendar.Name}>
+                            <span
+                                className="h-2 w-2 inline-block rounded-full mr-2"
+                                style={{ backgroundColor: calendar.Color }}
+                            />
+                            <span>{calendar.Name}</span>
+                        </Option>
                     ))}
                 </InputFieldTwo>
             </FormIconRow>
 
-            <FormIconRow icon="file-lines" title={c('Info').t`What should people know before booking?`}>
+            <FormIconRow icon="file-lines" title={c('Info').t`What should people know before booking?`} narrowSection>
                 <TextArea
                     id="booking-description"
                     placeholder={c('Placeholder').t`Add a booking page description`}
