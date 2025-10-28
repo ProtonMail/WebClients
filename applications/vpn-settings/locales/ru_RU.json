@@ -1317,20 +1317,8 @@
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "Скидки в Чёрную пятницу на высокоскоростной швейцарский VPN"
       ],
-      "Save with Cyber Week deals on a high-speed Swiss VPN": [
-        "Скидки в Кибернеделе на высокоскоростной швейцарский VPN"
-      ],
-      "Save with End of Year deals on a high-speed Swiss VPN": [
-        "Новогодние скидки на высокоскоростной швейцарский VPN"
-      ],
       "Select your Black Friday offer": [
         "Выберите предложение Черной пятницы"
-      ],
-      "Select your Cyber Week offer": [
-        "Выберите предложение Кибернедели"
-      ],
-      "Select your End of Year offer": [
-        "Выберите Новогоднее предложение"
       ]
     },
     "bf2023: info": {
@@ -1432,6 +1420,87 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Объём хранилища распределяется между всеми приложениями ${ BRAND_NAME }."
+      ]
+    },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "Распродажа «Чёрная пятница»"
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 ТБ для хранения данных"
+      ],
+      "3 TB data storage": [
+        "Хранилище на 3 ТБ"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Доступ к более чем 15 000 серверам в более чем 120 странах"
+      ],
+      "Access advanced AI models": [
+        "Доступ к расширенным моделям ИИ"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Все премиум-функции ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Block ads, trackers, and malware": [
+        "Блокируйте рекламу, трекеры и вредоносные программы"
+      ],
+      "Built-in 2FA authenticator": [
+        "Встроенная функция двухфакторной аутентификации"
+      ],
+      "Connect 10 devices at once": [
+        "Подключение 10 устройств одновременно"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Полная история чата с удобным поиском и избранным"
+      ],
+      "Individual accounts for 6 users": [
+        "Индивидуальные аккаунты для 6 пользователей"
+      ],
+      "Individual accounts for you and a partner": [
+        "Индивидуальные аккаунты для вас и партнёра"
+      ],
+      "Stronger protection against cyber threats": [
+        "Усиленная защита от киберугроз"
+      ],
+      "Unlimited daily chats": [
+        "Неограниченное количество ежедневных чатов"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Помогите своим близким присоединиться к революции в области конфиденциальности с нашими самыми выгодными комплектами, теперь со скидкой 50 %!"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Присоединяйтесь к революции в области конфиденциальности с нашими самыми выгодными комплектами, теперь со скидкой 50 %!"
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "за ${ durationDeal }"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "Экономьте ${ savedAmount } с нашим самым выгодным предложением с ограниченным сроком действия!"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "Перейдите на наш 2-летний план и сэкономьте ${ savedAmount }!"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "Перейдите на наш годовой план и сэкономьте ${ savedAmount }!"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "Подарите своим близким полную цифровую защиту."
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Специально разработанная функция NetShield защищает ваше устройство и ускоряет загрузку страниц, блокируя рекламу, трекеры и вредоносные программы."
       ]
     },
     "Billing cycle": {
@@ -10767,96 +10836,6 @@
       ],
       "Unknown": [
         "Неизвестное"
-      ]
-    },
-    "q3campaign_2025: Action": {
-      "END-OF-SUMMER SALE": [
-        "РАСПРОДАЖА В КОНЦЕ ЛЕТА"
-      ],
-      "Get the deal": [
-        "Воспользоваться предложением"
-      ]
-    },
-    "q3campaign_2025: Info": {
-      "${ discountPercent }% off": [
-        "-${ discountPercent } %"
-      ],
-      "${ normalPricePerMonth } /month": [
-        "${ normalPricePerMonth } /месяц"
-      ],
-      "/month": [
-        "/месяц"
-      ],
-      "1 TB data storage": [
-        "1 ТБ для хранения данных"
-      ],
-      "15 GB storage": [
-        "Хранилище 15 ГБ"
-      ],
-      "200 GB storage for files, photos & docs": [
-        "200 ГБ для хранения файлов, фотографий и документов"
-      ],
-      "3 TB data storage": [
-        "Хранилище на 3 ТБ"
-      ],
-      "500 GB storage": [
-        "500 ГБ хранилища"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Доступ к более чем 15 000 серверам в более чем 120 странах"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Все платные функции Mail, Pass, Drive, VPN и Calendar"
-      ],
-      "Built-in 2FA authenticator": [
-        "Встроенная функция двухфакторной аутентификации"
-      ],
-      "Connect 10 devices at once": [
-        "Подключение 10 устройств одновременно"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Скидки рассчитываются от стандартной ежемесячной цены. Ваша подписка будет продлена по стандартному годовому тарифу в конце платёжного цикла."
-      ],
-      "Enjoy the fastest VPN speeds": [
-        "Наслаждайтесь самой высокой скоростью VPN"
-      ],
-      "Individual accounts for 6 users": [
-        "Индивидуальные аккаунты для 6 пользователей"
-      ],
-      "Individual accounts for you and a partner": [
-        "Индивидуальные аккаунты для вас и партнёра"
-      ],
-      "Online document editor": [
-        "Онлайн-редактор документов"
-      ],
-      "Recover previous file versions": [
-        "Восстановление предыдущих версий файлов"
-      ],
-      "Save ${ totalSavings } and keep all your current features!": [
-        "Сэкономьте ${ totalSavings } и сохраните все ваши текущие функции!"
-      ],
-      "Secure link, vault & item sharing": [
-        "Защищённый общий доступ к ссылкам, хранилищам и элементам"
-      ],
-      "Stronger protection against cyber threats": [
-        "Усиленная защита от киберугроз"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "неограниченное количество папок, ярлыков и фильтров;"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Неограниченное количество псевдонимов hide-my-email"
-      ],
-      "Use your own email domain": [
-        "Используйте собственный домен электронной почты"
-      ]
-    },
-    "q3campaign_2025: Title": {
-      "End-of-summer sale": [
-        "Распродажа в конце лета"
-      ],
-      "for 12 months": [
-        "на 12 месяцев"
       ]
     },
     "Recovery Email": {

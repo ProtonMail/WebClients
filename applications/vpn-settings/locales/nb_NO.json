@@ -1500,20 +1500,8 @@
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "Spar penger med Black Friday-tilbud på et høyhastighets sveitsisk VPN"
       ],
-      "Save with Cyber Week deals on a high-speed Swiss VPN": [
-        "Spar penger med Cyber Week-tilbud på et høyhastighets sveitsisk VPN"
-      ],
-      "Save with End of Year deals on a high-speed Swiss VPN": [
-        "Spar penger med slutten av året-tilbud på et høyhastighets sveitsisk VPN"
-      ],
       "Select your Black Friday offer": [
         "Velg ditt Black Friday-tilbud"
-      ],
-      "Select your Cyber Week offer": [
-        "Velg ditt Cyber Week-tilbud"
-      ],
-      "Select your End of Year offer": [
-        "Velg ditt slutten av året-tilbud"
       ]
     },
     "bf2023: info": {
@@ -1624,6 +1612,35 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagringsplass deles mellom alle ${ BRAND_NAME }-tjenestene."
+      ]
+    },
+    "BF2025: Deal details": {
+      "Access 15,000+ servers in 120+ countries": [
+        "Tilgang til 15,000+ tjenere i 120+ land"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blokkér annonser, sporere og skadelig programvare"
+      ],
+      "Built-in 2FA authenticator": [
+        "Innebygget 2FA-autentisering"
+      ],
+      "Unlimited daily chats": [
+        "Ubegrenset antall daglige chatter"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "for ${ durationDeal }"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Spesialdesignet NetShield beskytter enheten din og øker hastigheten på surfingen din ved å blokkere annonser, sporere og skadelig programvare."
       ]
     },
     "Billing cycle": {
@@ -3414,16 +3431,16 @@
       ]
     },
     "Duo offer: Link": {
-      "Double your storage": [
-        "Doble lagringsplassen din"
+      "Get 4x more storage": [
+        "Skaff deg 4x mer lagringskapasitet"
       ],
       "Share your plan": [
         "Del planen din"
       ]
     },
     "Duo offer: Title": {
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Doble lagringsplassen din med ${ BRAND_NAME } Duo"
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "Få 4x mer lagring med ${ BRAND_NAME } Duo"
       ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
         "Del fordelene med planen din med ${ BRAND_NAME } Duo"
@@ -3703,6 +3720,9 @@
       ],
       "Error publishing changes": [
         "Feil ved publisering av endringer"
+      ],
+      "Failed to add group member": [
+        "Kunne ikke legge til gruppemedlem"
       ],
       "Failed to load the STL preview": [
         "Kan ikke laste inn STL-forhåndsvisningen"
@@ -7944,6 +7964,9 @@
       "Billing cycle": [
         "Faktureringssyklus"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Block": [
         "Blokker"
       ],
@@ -8162,6 +8185,9 @@
       ],
       "Gateway name": [
         "Navn på porttjener"
+      ],
+      "Get the deal": [
+        "Skaff deg tilbudet"
       ],
       "Gift code": [
         "Gavekode"
@@ -10185,9 +10211,6 @@
       ]
     },
     "Notification": {
-      "${ MEET_APP_NAME } video conferencing settings have been updated": [
-        "Videokonferanseinnstillinger for ${ MEET_APP_NAME } er oppdatert"
-      ],
       "${ reason } has been disabled": [
         "${ reason } er deaktivert"
       ],
@@ -10768,6 +10791,9 @@
       "Advanced account protection": [
         "Avansert kontobeskyttelse"
       ],
+      "File attachments (up to 10GB)": [
+        "Filvedlegg (opptil 10 GB)"
+      ],
       "Team policies": [
         "Retningslinjer for teamet"
       ]
@@ -10991,6 +11017,17 @@
         "Kupongen er gyldig for ${ couponRedemptions } fornyelse.",
         "Kupongen er gyldig for ${ couponRedemptions } fornyelser."
       ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "Den spesielle rabattprisen gjelder for den første måneden på ${ subscriptionLength }.",
+        "Den spesielt rabatterte prisen er gyldig de første ${ subscriptionLength } månedene."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Den spesielt rabatterte prisen er gyldig den første måneden. Kupongen er gyldig for ${ couponRedemptions } fornyelse. Deretter vil den automatisk bli fornyet til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst.",
+        "Den spesielt rabatterte prisen er gyldig den første måneden. Kupongen er gyldig for ${ couponRedemptions } fornyelser. Deretter vil den automatisk bli fornyet til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Den spesielt rabatterte prisen er gyldig den første måneden. Da blir den automatisk fornyet til ${ renewPriceStr } hver måned. Du kan avbryte når som helst."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig for den første ${ subscriptionLength } måneden.",
         "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig de første ${ subscriptionLength } månedene."
@@ -11044,6 +11081,9 @@
       ],
       "Your payment is still being processed": [
         "Betalingen din behandles fortsatt"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+        "Abonnementet ditt har for øyeblikket en eksisterende rabatt. Hvis du flytter til denne nye kampanjen, vil den eksisterende rabatten ikke lenger gjelde."
       ]
     },
     "Payments.Error": {
@@ -12233,6 +12273,11 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Delt av ${ ownerName }"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "Åpne i ${ appName }"
       ]
     },
     "Signup": {
@@ -14063,9 +14108,6 @@
       "Domain names": [
         "Domenenavn"
       ],
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Doble lagringsplassen din med ${ BRAND_NAME } Duo"
-      ],
       "Downgrade account": [
         "Nedgrader kontoen"
       ],
@@ -14602,9 +14644,6 @@
       ],
       "Verifying your payment...": [
         "Verifiserer betalingen din..."
-      ],
-      "Video conferencing with ${ MEET_APP_NAME }": [
-        "Videokonferanser med ${ MEET_APP_NAME }"
       ],
       "Video conferencing with Zoom": [
         "Videokonferanser med Zoom"
