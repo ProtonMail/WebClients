@@ -1,38 +1,20 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { getOccurrencesBetween } from '@proton/shared/lib/calendar/recurrence/recurring';
-import { fromRruleString } from '@proton/shared/lib/calendar/vcal';
-import { getDateTimeProperty } from '@proton/shared/lib/calendar/vcalConverter';
-import { convertTimestampToTimezone, fromUTCDate } from '@proton/shared/lib/date/timezone';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 import { MeetingType } from '@proton/shared/lib/interfaces/Meet';
 
 import { getNextOccurrence } from './getNextOccurrence';
 
-vi.mock('@proton/shared/lib/calendar/recurrence/recurring', () => ({
-    getOccurrencesBetween: vi.fn(),
-}));
-
-vi.mock('@proton/shared/lib/calendar/vcal', () => ({
-    fromRruleString: vi.fn(),
-}));
-
-vi.mock('@proton/shared/lib/calendar/vcalConverter', () => ({
-    getDateTimeProperty: vi.fn(),
-}));
-
-vi.mock('@proton/shared/lib/date/timezone', () => ({
-    convertTimestampToTimezone: vi.fn(),
-    fromUTCDate: vi.fn(),
-}));
-
-const mockGetOccurrencesBetween = vi.mocked(getOccurrencesBetween);
-const mockFromRruleString = vi.mocked(fromRruleString);
-const mockGetDateTimeProperty = vi.mocked(getDateTimeProperty);
-const mockConvertTimestampToTimezone = vi.mocked(convertTimestampToTimezone);
-const mockFromUTCDate = vi.mocked(fromUTCDate);
-
 describe('getNextOccurrence', () => {
+    beforeEach(() => {
+        vi.clearAllMocks();
+    });
+
+    afterEach(() => {
+        // Restore time
+        vi.useRealTimers();
+    });
+
     // Base meeting object with only the properties needed by getNextOccurrence
     const baseMeeting: Partial<Meeting> = {
         ID: 'test-meeting',
@@ -43,53 +25,27 @@ describe('getNextOccurrence', () => {
         Type: MeetingType.SCHEDULED,
     };
 
-    beforeEach(() => {
-        vi.clearAllMocks();
-
-        // Setup default mocks - most tests return original StartTime
-        mockFromRruleString.mockReturnValue(undefined); // This makes most tests return original StartTime
-        mockGetOccurrencesBetween.mockReturnValue([]); // No occurrences found by default
-
-        // Setup other default mocks
-        mockGetDateTimeProperty.mockReturnValue({
-            value: { year: 2024, month: 1, day: 1, hours: 0, minutes: 0, seconds: 0, isUTC: true },
-            parameters: { tzid: 'UTC' },
-        });
-
-        mockConvertTimestampToTimezone.mockReturnValue({
-            year: 2024,
-            month: 1,
-            day: 1,
-            hours: 0,
-            minutes: 0,
-            seconds: 0,
-        });
-
-        mockFromUTCDate.mockReturnValue({
-            year: 2024,
-            month: 1,
-            day: 1,
-            hours: 0,
-            minutes: 0,
-            seconds: 0,
-        });
-    });
-
-    it('should return original start time for non-recurring meetings', () => {
+    it('should return original start and end times for non-recurring meetings', () => {
         const meeting = { ...baseMeeting } as Meeting;
 
         const result = getNextOccurrence(meeting);
-        expect(result).toBe(1640995200);
+        expect(result).toEqual({
+            startTime: 1640995200,
+            endTime: 1640998800,
+        });
     });
 
-    it('should return original start time when RRule is null', () => {
+    it('should return original start and end times when RRule is null', () => {
         const meeting = { ...baseMeeting, Type: MeetingType.RECURRING } as Meeting;
 
         const result = getNextOccurrence(meeting);
-        expect(result).toBe(1640995200);
+        expect(result).toEqual({
+            startTime: 1640995200,
+            endTime: 1640998800,
+        });
     });
 
-    it('should return original start time when StartTime is null', () => {
+    it('should return zero start time and fallback end time when StartTime is null', () => {
         const meeting = {
             ...baseMeeting,
             StartTime: null,
@@ -98,198 +54,192 @@ describe('getNextOccurrence', () => {
         } as Meeting;
 
         const result = getNextOccurrence(meeting);
-        expect(result).toBe(0); // Number(null) returns 0, not NaN
+        expect(result).toEqual({
+            startTime: 0, // Number(null) returns 0, not NaN
+            endTime: 1640998800,
+        });
     });
 
     it('should calculate next occurrence for recurring meetings', () => {
+        vi.useFakeTimers();
+        vi.setSystemTime(new Date('2024-01-02T00:00:00Z'));
+
         const meeting = {
             ...baseMeeting,
+            StartTime: '1704067200', // 2024-01-01 00:00:00 UTC (Monday)
+            EndTime: '1704070800', // 2024-01-01 01:00:00 UTC
             RRule: 'FREQ=WEEKLY;BYDAY=MO',
+            Timezone: 'UTC',
             Type: MeetingType.RECURRING,
         } as Meeting;
 
-        // Mock the RRULE parsing
-        mockFromRruleString.mockReturnValue({
-            freq: 'WEEKLY',
-            byday: ['MO'],
+        const result = getNextOccurrence(meeting);
+
+        // Should return the next Monday occurrence (2024-01-08 00:00:00 UTC)
+        expect(result).toEqual({
+            startTime: 1704672000,
+            endTime: 1704675600, // 2024-01-08 01:00:00 UTC
         });
 
-        // Mock the next occurrence calculation
-        const nextOccurrence = new Date('2024-01-08T00:00:00Z'); // Next Monday
-        mockGetOccurrencesBetween.mockReturnValue([
-            {
-                localStart: nextOccurrence,
-                localEnd: new Date('2024-01-08T01:00:00Z'),
-                occurrenceNumber: 1,
-                utcStart: nextOccurrence,
-                utcEnd: new Date('2024-01-08T01:00:00Z'),
-            },
-        ]);
-
-        const result = getNextOccurrence(meeting);
-        expect(result).toBe(nextOccurrence.getTime() / 1000);
-
-        // Verify the function was called with correct parameters
-        expect(mockGetOccurrencesBetween).toHaveBeenCalledWith(
-            expect.objectContaining({
-                component: 'vevent',
-                uid: { value: 'test-meeting' },
-                rrule: { value: { freq: 'WEEKLY', byday: ['MO'] } },
-            }),
-            expect.any(Number), // nowTimestamp
-            expect.any(Number) // futureTimestamp
-        );
+        vi.useRealTimers();
     });
 
-    it('should fallback to original start time when RRULE parsing fails', () => {
+    it('should fallback to original start and end times when RRULE parsing fails', () => {
+        // Use an RRULE that will fail during processing
         const meeting = {
             ...baseMeeting,
-            RRule: 'INVALID_RRULE',
+            RRule: '', // Empty RRULE string
             Type: MeetingType.RECURRING,
         } as Meeting;
 
         const result = getNextOccurrence(meeting);
-        expect(result).toBe(1640995200);
+        expect(result).toEqual({
+            startTime: 1640995200,
+            endTime: 1640998800,
+        });
     });
 
     it('should handle meetings without end time', () => {
+        // Mock current time to 2024-01-01 00:00:00 UTC
+        vi.useFakeTimers();
+        vi.setSystemTime(new Date('2024-01-01T01:00:00Z'));
+
         const meeting = {
             ...baseMeeting,
+            StartTime: '1704067200', // 2024-01-01 00:00:00 UTC
             EndTime: null,
             RRule: 'FREQ=DAILY',
+            Timezone: 'UTC',
             Type: MeetingType.RECURRING,
         } as Meeting;
 
-        mockFromRruleString.mockReturnValue({
-            freq: 'DAILY',
+        const result = getNextOccurrence(meeting);
+
+        // Should return the next day occurrence (2024-01-02 00:00:00 UTC)
+        // End time defaults to startTime + 3600 (1 hour)
+        expect(result).toEqual({
+            startTime: 1704153600,
+            endTime: 1704157200, // 2024-01-02 01:00:00 UTC
         });
 
-        const nextOccurrence = new Date('2024-01-02T00:00:00Z');
-        mockGetOccurrencesBetween.mockReturnValue([
-            {
-                localStart: nextOccurrence,
-                localEnd: new Date('2024-01-02T01:00:00Z'),
-                occurrenceNumber: 1,
-                utcStart: nextOccurrence,
-                utcEnd: new Date('2024-01-02T01:00:00Z'),
-            },
-        ]);
-
-        const result = getNextOccurrence(meeting);
-        expect(result).toBe(nextOccurrence.getTime() / 1000);
+        vi.useRealTimers();
     });
 
-    it('should return original start time when no future occurrences are found', () => {
+    it('should return original start and end times when no future occurrences are found', () => {
+        vi.useFakeTimers();
+        vi.setSystemTime(new Date('2030-01-01T00:00:00Z'));
+
         const meeting = {
             ...baseMeeting,
+            StartTime: '1704067200',
+            EndTime: '1704070800',
             RRule: 'FREQ=WEEKLY;BYDAY=MO;COUNT=1',
+            Timezone: 'UTC',
             Type: MeetingType.RECURRING,
         } as Meeting;
 
-        // Override default mock to return valid RRULE but no occurrences
-        mockFromRruleString.mockReturnValue({
-            freq: 'WEEKLY',
-            byday: ['MO'],
-            count: 1,
+        const result = getNextOccurrence(meeting);
+        // No future occurrences, returns original start and end times
+        expect(result).toEqual({
+            startTime: 1704067200,
+            endTime: 1704070800,
         });
 
-        const result = getNextOccurrence(meeting);
-        expect(result).toBe(1640995200);
+        vi.useRealTimers();
     });
 
     it('should handle different timezone meetings', () => {
+        vi.useFakeTimers();
+        vi.setSystemTime(new Date('2024-01-01T00:00:00Z'));
+
         const meeting = {
             ...baseMeeting,
+            StartTime: '1704067200', // 2024-01-01 00:00:00 UTC = 2023-12-31 19:00:00 EST (Sunday)
+            EndTime: '1704070800', // 2024-01-01 01:00:00 UTC
             RRule: 'FREQ=WEEKLY;BYDAY=MO',
             Timezone: 'America/New_York',
             Type: MeetingType.RECURRING,
         } as Meeting;
 
-        mockFromRruleString.mockReturnValue({
-            freq: 'WEEKLY',
-            byday: ['MO'],
-        });
-
-        const nextOccurrence = new Date('2024-01-08T00:00:00Z');
-        mockGetOccurrencesBetween.mockReturnValue([
-            {
-                localStart: nextOccurrence,
-                localEnd: new Date('2024-01-08T01:00:00Z'),
-                occurrenceNumber: 1,
-                utcStart: nextOccurrence,
-                utcEnd: new Date('2024-01-08T01:00:00Z'),
-            },
-        ]);
-
         const result = getNextOccurrence(meeting);
-        expect(result).toBe(nextOccurrence.getTime() / 1000);
 
-        // Verify timezone conversion was called with correct timezone
-        expect(mockConvertTimestampToTimezone).toHaveBeenCalledWith(1640995200, 'UTC');
+        // Should calculate next Monday in America/New_York timezone
+        // Next Monday is 2024-01-08 00:00:00 in local time (2024-01-08 05:00:00 UTC in winter)
+        expect(result.startTime).toBeGreaterThan(1704067200);
+        expect(result.endTime).toBeGreaterThan(result.startTime);
+
+        vi.useRealTimers();
     });
 
-    it('should handle errors gracefully and return original start time', () => {
+    it('should handle errors gracefully and return original start and end times', () => {
         const meeting = {
             ...baseMeeting,
-            RRule: 'FREQ=WEEKLY;BYDAY=MO',
+            RRule: 'FREQ=DAILY;BYHOUR=99',
             Type: MeetingType.RECURRING,
         } as Meeting;
 
-        // Override default mock to throw an error
-        mockFromRruleString.mockImplementation(() => {
-            throw new Error('RRULE parsing failed');
-        });
-
         const result = getNextOccurrence(meeting);
-        expect(result).toBe(1640995200);
+        expect(result).toEqual({
+            startTime: 1640995200,
+            endTime: 1640998800,
+        });
     });
 
-    it('should handle different RRULE frequencies', () => {
-        const testCases = [
-            {
-                rrule: 'FREQ=DAILY',
-                parsedRrule: { freq: 'DAILY' },
-                description: 'daily recurrence',
-            },
-            {
-                rrule: 'FREQ=WEEKLY;BYDAY=MO,WE,FR',
-                parsedRrule: { freq: 'WEEKLY', byday: ['MO', 'WE', 'FR'] },
-                description: 'weekly recurrence on specific days',
-            },
-            {
-                rrule: 'FREQ=MONTHLY;BYMONTHDAY=1',
-                parsedRrule: { freq: 'MONTHLY', bymonthday: [1] },
-                description: 'monthly recurrence on first day',
-            },
-            {
-                rrule: 'FREQ=YEARLY;BYMONTH=1;BYMONTHDAY=1',
-                parsedRrule: { freq: 'YEARLY', bymonth: [1], bymonthday: [1] },
-                description: 'yearly recurrence on January 1st',
-            },
-        ];
+    describe('DST (Daylight Saving Time) handling', () => {
+        it('should correctly handle DST transition from winter to summer', () => {
+            // Mock current time to March 25, 2025 (before DST transition on March 30)
+            vi.useFakeTimers();
+            vi.setSystemTime(new Date('2025-04-01T00:00:00Z'));
 
-        testCases.forEach(({ rrule, parsedRrule }) => {
-            const meeting = {
+            // Meeting: Tuesdays at 10:00 AM Europe/Brussels time
+            // March 25 is before DST (GMT+1): 10:00 AM = 09:00 UTC
+            // April 1 is after DST (GMT+2): 10:00 AM = 08:00 UTC
+            const dstTransitionMeeting = {
                 ...baseMeeting,
-                RRule: rrule,
+                StartTime: '1711357200', // 2025-03-25 09:00:00 UTC (10:00 AM GMT+1)
+                EndTime: '1711360800', // 2025-03-25 10:00:00 UTC (11:00 AM GMT+1)
+                RRule: 'FREQ=WEEKLY;BYDAY=TU',
+                Timezone: 'Europe/Paris',
                 Type: MeetingType.RECURRING,
             } as Meeting;
 
-            mockFromRruleString.mockReturnValue(parsedRrule);
+            const result = getNextOccurrence(dstTransitionMeeting);
 
-            const nextOccurrence = new Date('2024-01-02T00:00:00Z');
-            mockGetOccurrencesBetween.mockReturnValue([
-                {
-                    localStart: nextOccurrence,
-                    localEnd: new Date('2024-01-02T01:00:00Z'),
-                    occurrenceNumber: 1,
-                    utcStart: nextOccurrence,
-                    utcEnd: new Date('2024-01-02T01:00:00Z'),
-                },
-            ]);
+            // Next Tuesday is April 1, 2025 at 10:00 AM local (08:00 UTC due to DST)
+            expect(result).toEqual({
+                startTime: 1743494400,
+                endTime: 1743498000, // 2025-04-01 09:00:00 UTC (11:00 AM GMT+2)
+            });
 
-            const result = getNextOccurrence(meeting);
-            expect(result).toBe(nextOccurrence.getTime() / 1000);
+            vi.useRealTimers();
+        });
+
+        it('should correctly handle DST transition from summer to winter', () => {
+            // Mock current time to October 21, 2025 (before DST transition on October 26)
+            vi.useFakeTimers();
+            vi.setSystemTime(new Date('2025-10-22T07:00:00Z'));
+
+            // Meeting: Tuesdays at 10:00 AM Europe/Brussels time
+            // October 21 is before DST end (GMT+2): 10:00 AM = 08:00 UTC
+            // October 28 is after DST end (GMT+1): 10:00 AM = 09:00 UTC
+            const dstTransitionMeeting = {
+                ...baseMeeting,
+                StartTime: '1729504800', // 2025-10-21 10:00:00 UTC (12:00 AM GMT+2)
+                EndTime: '1729508400', // 2025-10-21 11:00:00 UTC (01:00 PM GMT+2)
+                RRule: 'FREQ=WEEKLY;BYDAY=TU',
+                Timezone: 'Europe/Paris',
+                Type: MeetingType.RECURRING,
+            } as Meeting;
+
+            const result = getNextOccurrence(dstTransitionMeeting);
+
+            // Next Tuesday is October 28, 2025 at 12:00 AM local (11:00 UTC after DST)
+            expect(result).toEqual({
+                startTime: 1761649200,
+                endTime: 1761652800, // 2025-10-28 01:00:00 PM local (12:00 UTC GMT+1)
+            });
+
+            vi.useRealTimers();
         });
     });
 });

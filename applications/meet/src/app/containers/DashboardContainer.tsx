@@ -61,10 +61,14 @@ export const DashboardContainer = () => {
                         meeting.StartTime
                     );
                 })
-                .map((meeting) => ({
-                    ...meeting,
-                    adjustedStartTime: getNextOccurrence(meeting),
-                }))
+                .map((meeting) => {
+                    const occurrence = getNextOccurrence(meeting);
+                    return {
+                        ...meeting,
+                        adjustedStartTime: occurrence.startTime,
+                        adjustedEndTime: occurrence.endTime,
+                    };
+                })
                 .sort((a, b) => {
                     return a.adjustedStartTime - b.adjustedStartTime;
                 }),
