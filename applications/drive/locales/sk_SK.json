@@ -1125,9 +1125,6 @@
       "Upload file": [
         "Nahrať súbor"
       ],
-      "Upload file via SDK": [
-        "Nahrať súbor cez SDK"
-      ],
       "Upload files": [
         "Nahrať súbory"
       ],
@@ -1142,9 +1139,6 @@
       ],
       "Upload picture": [
         "Nahrať obrázok"
-      ],
-      "Upload SDK file": [
-        "Nahrať SDK súbor"
       ],
       "Use ${ label } theme": [
         "Použiť motív ${ label }"
@@ -1592,6 +1586,32 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Úložný priestor je zdieľaný medzi všetkými službami ${ BRAND_NAME }."
+      ]
+    },
+    "BF2025: Deal details": {
+      "Block ads, trackers, and malware": [
+        "Blokujte reklamy, sledovače a malvér"
+      ],
+      "Built-in 2FA authenticator": [
+        "Zabudovaný 2FA autentifikátor"
+      ],
+      "Unlimited daily chats": [
+        "Neobmedzené denné chaty"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "na ${ durationDeal }"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Špeciálne navrhnutý NetShield chráni vaše zariadenia a zrýchľuje vaše prehliadanie tým, že blokuje reklamy, sledovače a malvér."
       ]
     },
     "Billing cycle option": {
@@ -3139,16 +3159,16 @@
       ]
     },
     "Duo offer: Link": {
-      "Double your storage": [
-        "Zdvojnásobte svoje úložisko"
+      "Get 4x more storage": [
+        "Získajte 4x viac úložného priestoru"
       ],
       "Share your plan": [
         "Zdieľajte váš plán"
       ]
     },
     "Duo offer: Title": {
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Zdvojnásobte svoje úložisko s ${ BRAND_NAME } Duo"
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "Získajte 4x väčšie úložisko s ${ BRAND_NAME } Duo"
       ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
         "Zdieľajte výhody vášho plánu s ${ BRAND_NAME } Duo"
@@ -4943,6 +4963,9 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } obsahuje ${ BRAND_NAME } asistenta písania Scribe"
       ],
+      "${ normalizedProgress }% completed": [
+        "${ normalizedProgress }% dokončených"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Doživotná služba ${ PASS_SHORT_APP_NAME } nemá žiadnu cenu za obnovenie, je to jednorazová platba za doživotný prístup k ${ PASS_SHORT_APP_NAME }"
       ],
@@ -5687,6 +5710,9 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importujú sa vaše údaje z ${ fromEmail } do ${ toEmail }."
       ],
+      "In progress": [
+        "Prebieha"
+      ],
       "In restrictive countries": [
         "V krajinách s reštriktívnym režimom"
       ],
@@ -6428,6 +6454,12 @@
       "This will replace the existing file with the folder": [
         "Týmto sa existujúci súbor nahradí zvoleným priečinkom"
       ],
+      "This will replace the existing folder or file with the file": [
+        "Týmto sa nahradí existujúci priečinok alebo súbor súborom"
+      ],
+      "This will replace the existing folder or file with the folder": [
+        "Týmto sa nahradí existujúci priečinok alebo súbor priečinkom"
+      ],
       "This will replace the existing folder with the file": [
         "Týmto sa existujúci priečinok nahradí zvoleným súborom"
       ],
@@ -7113,6 +7145,9 @@
       "Billing cycle": [
         "Fakturačné obdobie"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Browser": [
         "Prehliadač"
       ],
@@ -7293,6 +7328,9 @@
       "File name": [
         "Názov súboru"
       ],
+      "File transfer overview": [
+        "Prehľad prenosu súborov"
+      ],
       "First name": [
         "Krstné meno"
       ],
@@ -7310,6 +7348,9 @@
       ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "Využiť ponuku"
       ],
       "Hide password": [
         "Skryť heslo"
@@ -7490,6 +7531,9 @@
       ],
       "Replace existing folder": [
         "Nahradiť existujúci priečinok"
+      ],
+      "Replace existing folder or file": [
+        "Nahradiť existujúci priečinok alebo súbor"
       ],
       "Reveal password": [
         "Odkryť heslo"
@@ -9933,6 +9977,9 @@
       "Advanced account protection": [
         "Pokročilá ochrana účtu"
       ],
+      "File attachments (up to 10GB)": [
+        "Súborové prílohy (až do 10 GB)"
+      ],
       "Team policies": [
         "Tímové zásady"
       ]
@@ -10075,6 +10122,21 @@
         "Kupón je možné použiť na ${ couponRedemptions } obnovení.",
         "Kupón je možné použiť na ${ couponRedemptions } obnovení."
       ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "Špeciálna zľavnená cena platí pre prvý ${ subscriptionLength } mesiac.",
+        "Špeciálna zľavnená cena platí pre prvé ${ subscriptionLength } mesiace.",
+        "Špeciálna zľavnená cena platí pre prvých ${ subscriptionLength } mesiacov.",
+        "Špeciálna zľavnená cena platí pre prvých ${ subscriptionLength } mesiacov."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Špeciálna zľava platí pre prvý mesiac. Kupón je platný pre ${ couponRedemptions } obnovenie. Potom dôjde k automatickej obnove za ${ renewPriceStr } na 1 mesiac. Zrušiť môžete kedykoľvek.",
+        "Špeciálna zľava platí pre prvý mesiac. Kupón je platný pre ${ couponRedemptions } obnovenia. Potom dôjde k automatickej obnove za ${ renewPriceStr } na 1 mesiac. Zrušiť môžete kedykoľvek.",
+        "Špeciálna zľava platí pre prvý mesiac. Kupón je platný pre ${ couponRedemptions } obnovení. Potom dôjde k automatickej obnove za ${ renewPriceStr } na 1 mesiac. Zrušiť môžete kedykoľvek.",
+        "Špeciálna zľava platí pre prvý mesiac. Kupón je platný pre ${ couponRedemptions } obnovení. Potom dôjde k automatickej obnove za ${ renewPriceStr } na 1 mesiac. Zrušiť môžete kedykoľvek."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Špeciálne zľavnená cena platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr }. Službu môžete kedykoľvek zrušiť."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Špeciálna zľavnená cena ${ priceWithDiscount } platí pre prvý ${ subscriptionLength } mesiac.",
         "Špeciálna zľavnená cena ${ priceWithDiscount } platí pre prvé ${ subscriptionLength } mesiace.",
@@ -10128,6 +10190,9 @@
       ],
       "Your payment is still being processed": [
         "Vaša platba sa stále spracováva"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+        "Vaše predplatné má v súčasnosti platnú zľavu. Prechodom na túto novú akciu sa existujúca zľava prestane uplatňovať."
       ]
     },
     "Payments.Error": {
@@ -10850,6 +10915,14 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Zdieľané vlastníkom ${ ownerName }"
+      ]
+    },
+    "sheets_2025:Action": {
+      "New spreadsheet": [
+        "Nová tabuľka"
+      ],
+      "Open in ${ appName }": [
+        "Otvoriť v ${ appName }"
       ]
     },
     "Signing preference for emails": {
@@ -12325,9 +12398,6 @@
       "Discard changes?": [
         "Zrušiť zmeny?"
       ],
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Zdvojnásobte svoje úložisko s ${ BRAND_NAME } Duo"
-      ],
       "Downgrade account": [
         "Znížiť úroveň účtu"
       ],
@@ -13144,6 +13214,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: AI asistent, ktorý rešpektuje vaše súkromie"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
       ]

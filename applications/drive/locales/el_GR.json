@@ -1115,9 +1115,6 @@
       "Upload file": [
         "Ανέβασμα αρχείου"
       ],
-      "Upload file via SDK": [
-        "Μεταφόρτωση αρχείου μέσω SDK"
-      ],
       "Upload files": [
         "Ανέβασμα αρχείων"
       ],
@@ -1132,9 +1129,6 @@
       ],
       "Upload picture": [
         "Ανέβασμα εικόνας"
-      ],
-      "Upload SDK file": [
-        "Μεταφόρτωση αρχείου SDK"
       ],
       "Use ${ label } theme": [
         "Χρήση ${ label } θέματος"
@@ -1566,6 +1560,32 @@
         "Ο χώρος αποθήκευσης μοιράζεται μεταξύ όλων των ${ BRAND_NAME } υπηρεσιών."
       ]
     },
+    "BF2025: Deal details": {
+      "Block ads, trackers, and malware": [
+        "Αποκλείστε διαφημίσεις, ιχνηλάτες και κακόβουλο λογισμικό"
+      ],
+      "Built-in 2FA authenticator": [
+        "Ενσωματωμένη εφαρμογή ταυτοποίησης 2FA"
+      ],
+      "Unlimited daily chats": [
+        "Απεριόριστες καθημερινές συνομιλίες"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "για ${ durationDeal }"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Το ειδικά σχεδιασμένο NetShield προστατεύει τις συσκευές σας και επιταχύνει την περιήγησή σας εμποδίζοντας διαφημίσεις, ιχνηλάτες και κακόβουλο λογισμικό."
+      ]
+    },
     "Billing cycle option": {
       "1 month": [
         "1 μήνας"
@@ -1746,7 +1766,7 @@
         "Κρυπτογραφημένη εφαρμογή διαχείρισης κωδικών πρόσβασης"
       ],
       "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
-        "Το βασικό, δωρεάν πλάνο μας με κρυπτογραφημένο ηλεκτρονικό ταχυδρομείο και αποθηκευτικό χώρο από άκρο σε άκρο. Δεν περιλαμβάνονται premium δυνατότητες."
+        "Το βασικό, δωρεάν πλάνο μας με διατερματικά κρυπτογραφημένο ηλεκτρονικό ταχυδρομείο και αποθηκευτικό χώρο. Δεν περιλαμβάνονται premium δυνατότητες."
       ],
       "Save ${ upsellSavings }": [
         "Εξοικονομίστε ${ upsellSavings }"
@@ -3107,16 +3127,16 @@
       ]
     },
     "Duo offer: Link": {
-      "Double your storage": [
-        "Διπλασιάστε τον αποθηκευτικό σας χώρο"
+      "Get 4x more storage": [
+        "Αποκτήστε 4x περισσότερο χώρο αποθήκευσης"
       ],
       "Share your plan": [
         "Κοινοποιήστε το πλάνο σας"
       ]
     },
     "Duo offer: Title": {
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Διπλασιάστε τον αποθηκευτικό σας χώρο με το ${ BRAND_NAME } Duo"
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "Αποκτήστε 4x περισσότερο χώρο αποθήκευσης με το ${ BRAND_NAME } Duo"
       ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
         "Μοιραστείτε τα οφέλη του πλάνου σας με το ${ BRAND_NAME } Duo"
@@ -3560,10 +3580,10 @@
         "Παρακαλούμε εισάγετε έναν έγκυρο Ταχυδρομικό Κώδικα."
       ],
       "Please enter postal code": [
-        "Παρακαλώ εισάγετε τον ταχυδρομικό κώδικα"
+        "Παρακαλούμε εισάγετε τον ταχυδρομικό κώδικα"
       ],
       "Please enter ZIP code": [
-        "Παρακαλώ εισάγετε τον ταχυδρομικό κώδικα"
+        "Παρακαλούμε εισάγετε τον ταχυδρομικό κώδικα"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Παρακαλούμε επιλύστε την τονισμένη διένεξη προς συνέχιση.",
@@ -4825,6 +4845,9 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } περιλαμβάνει τον ${ BRAND_NAME } Scribe βοηθό γραφής"
       ],
+      "${ normalizedProgress }% completed": [
+        "${ normalizedProgress }% ολοκληρώθηκε"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } Η προσφορά διάρκειας ζωής δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }."
       ],
@@ -5522,6 +5545,9 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Γίνεται εισαγωγή δεδομένων από ${ fromEmail } προς ${ toEmail }."
+      ],
+      "In progress": [
+        "Σε εξέλιξη"
       ],
       "In restrictive countries": [
         "Σε περιοριστικές χώρες"
@@ -6256,6 +6282,12 @@
       "This will replace the existing file with the folder": [
         "Αυτό θα αντικαταστήσει το υπάρχον αρχείο με το φάκελο"
       ],
+      "This will replace the existing folder or file with the file": [
+        "Αυτό θα αντικαταστήσει τον υπάρχοντα φάκελο ή το αρχείο με το αρχείο"
+      ],
+      "This will replace the existing folder or file with the folder": [
+        "Αυτό θα αντικαταστήσει τον υπάρχοντα φάκελο ή το αρχείο με το φάκελο"
+      ],
       "This will replace the existing folder with the file": [
         "Αυτό θα αντικαταστήσει τον υπάρχοντα φάκελο με το αρχείο"
       ],
@@ -6917,6 +6949,9 @@
       "Billing cycle": [
         "Κύκλος χρέωσης"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Browser": [
         "Πρόγραμμα περιήγησης"
       ],
@@ -7095,6 +7130,9 @@
       "File name": [
         "Όνομα αρχείου"
       ],
+      "File transfer overview": [
+        "Επισκόπηση μεταφοράς αρχείων"
+      ],
       "First name": [
         "Όνομα"
       ],
@@ -7112,6 +7150,9 @@
       ],
       "From: ${ fromEmail }": [
         "Από: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "Αποκτήστε την προσφορά"
       ],
       "Hide password": [
         "Απόκρυψη κωδικού πρόσβασης"
@@ -7292,6 +7333,9 @@
       ],
       "Replace existing folder": [
         "Αντικατάσταση υπάρχοντος φακέλου"
+      ],
+      "Replace existing folder or file": [
+        "Αντικατάσταση υπάρχοντος φακέλου ή αρχείου"
       ],
       "Reveal password": [
         "Εμφάνιση κωδικού"
@@ -9413,7 +9457,7 @@
         "Η κρυπτογράφηση γίνεται αυτόματα"
       ],
       "End-to-end encrypted storage for your files": [
-        "Χώρος αποθήκευσης για τα αρχεία σας, κρυπτογραφημένος από άκρο σε άκρο"
+        "Διατερματικά κρυπτογραφημένος χώρος αποθήκευσης για τα αρχεία σας"
       ],
       "Faster uploads for large or multiple files": [
         "Ταχύτερες μεταφορτώσεις για μεγάλα ή πολλαπλά αρχεία"
@@ -9467,7 +9511,7 @@
         "Οργανώστε αρχεία απευθείας από τον υπολογιστή σας"
       ],
       "Protect your financial documents, ID cards, project files, photos, and more with end-to-end encryption.": [
-        "Προστατέψτε τα οικονομικά έγγραφα, τις ταυτότητες, τα αρχεία πρότζεκτ, τις φωτογραφίες και πολλά άλλα με κρυπτογράφηση από άκρο σε άκρο."
+        "Προστατέψτε τα οικονομικά έγγραφα, τις ταυτότητες, τα αρχεία πρότζεκτ, τις φωτογραφίες και πολλά άλλα με διατερματική κρυπτογράφηση."
       ],
       "Scan the QR code to install the mobile app": [
         "Σαρώστε τον κωδικό QR για να εγκαταστήσετε την εφαρμογή για κινητά"
@@ -9500,7 +9544,7 @@
         "Συνεργαστείτε"
       ],
       "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
-        "Μόλις αποκτήσατε δωρεάν δεδομένα και ασφαλίσατε τα αρχεία σας με κρυπτογράφηση από άκρο σε άκρο － σε χρόνο ρεκόρ!"
+        "Μόλις αποκτήσατε δωρεάν δεδομένα και ασφαλίσατε τα αρχεία σας με διατερματική κρυπτογράφηση－ σε χρόνο ρεκόρ!"
       ],
       "Your storage limit won’t be affected": [
         "Το όριο αποθήκευσης σας δε θα επηρεαστεί."
@@ -9624,6 +9668,9 @@
       ],
       "Advanced account protection": [
         "Προηγμένη προστασία λογαριασμού"
+      ],
+      "File attachments (up to 10GB)": [
+        "Συνημμένα αρχεία (έως 10 GB)"
       ],
       "Team policies": [
         "Πολιτικές ομάδας"
@@ -9765,6 +9812,17 @@
         "Το κουπόνι ισχύει για ${ couponRedemptions } ανανέωση.",
         "Το κουπόνι ισχύει για ${ couponRedemptions } ανανεώσεις."
       ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "Η ειδικά μειωμένη τιμή ισχύει για τον πρώτο ${ subscriptionLength } μήνα.",
+        "Η ειδικά μειωμένη τιμή ισχύει για τους πρώτους ${ subscriptionLength } μήνες."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Η ειδικά μειωμένη τιμή ισχύει για τον πρώτο μήνα. Το κουπόνι ισχύει για ${ couponRedemptions } ανανέωση. Στη συνέχεια, θα ανανεώνεται αυτόματα με τιμή ${ renewPriceStr } για 1 μήνα. Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή.",
+        "Η ειδικά μειωμένη τιμή ισχύει για τον πρώτο μήνα. Το κουπόνι ισχύει για ${ couponRedemptions } ανανεώσεις. Στη συνέχεια, θα ανανεώνεται αυτόματα με τιμή ${ renewPriceStr } για 1 μήνα. Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Η ειδικά μειωμένη τιμή ισχύει για τον πρώτο μήνα. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ renewPriceStr } κάθε μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Η ειδικά μειωμένη τιμή του ${ priceWithDiscount } ισχύει για τον πρώτο ${ subscriptionLength } μήνα.",
         "Η ειδικά μειωμένη τιμή του ${ priceWithDiscount } ισχύει για τους πρώτους ${ subscriptionLength } μήνες."
@@ -9812,6 +9870,9 @@
       ],
       "Your payment is still being processed": [
         "Η πληρωμή σας βρίσκεται ακόμα υπό επεξεργασία"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+        "Η συνδρομή σας έχει ήδη μια υπάρχουσα έκπτωση. Η μετάβαση σε αυτή τη νέα προσφορά σημαίνει ότι η υπάρχουσα έκπτωση δε θα ισχύει πλέον."
       ]
     },
     "Payments.Error": {
@@ -10500,6 +10561,14 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Κοινοποιήθηκε από τον/την ${ ownerName }"
+      ]
+    },
+    "sheets_2025:Action": {
+      "New spreadsheet": [
+        "Νέο υπολογιστικό φύλλο"
+      ],
+      "Open in ${ appName }": [
+        "Άνοιγμα σε ${ appName }"
       ]
     },
     "Signing preference for emails": {
@@ -11893,9 +11962,6 @@
       "Discard changes?": [
         "Απόρριψη αλλαγών;"
       ],
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Διπλασιάστε τον αποθηκευτικό σας χώρο με το ${ BRAND_NAME } Duo"
-      ],
       "Downgrade account": [
         "Υποβάθμιση λογαριασμού"
       ],
@@ -12706,6 +12772,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: Βοηθός τεχνητής νοημοσύνης που σέβεται την ιδιωτικότητά σας"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, κοινή χρήση, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA) και πολλά άλλα."
       ]
