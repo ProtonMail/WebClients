@@ -23,7 +23,7 @@ export const getInfos = () => {
     return c('duoplan2024: Info').jt`Full access to all ${BRAND_NAME} products`;
 };
 export const getStorage = () => {
-    return c('duoplan2024: Info').t`1 TB storage`;
+    return c('duoplan2024: Info').t`2 TB storage`;
 };
 
 export const getCTAContent = (price: string | ReactNode) => {

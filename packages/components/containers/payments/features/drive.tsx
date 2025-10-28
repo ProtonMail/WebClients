@@ -79,9 +79,9 @@ export const getStorageFeature = (
     }
 
     let humanReadableSize = humanSize({ bytes, fraction: 0, unitOptions: { max: 'TB' } });
-    // The storage for Duo is actually not 1 TB, it's slightly less, so we hardcode it to 1TB
+    // The storage for Duo is actually not 2 TB, it's slightly less, so we hard-code it to 2TB
     if (options.duo) {
-        humanReadableSize = humanSize({ bytes: sizeUnits.TB, fraction: 0, unitOptions: { max: 'TB' } });
+        humanReadableSize = humanSize({ bytes: sizeUnits.TB * 2, fraction: 0, unitOptions: { max: 'TB' } });
     }
 
     const size = boldStorageSize ? <b key="bold-storage-size">{humanReadableSize}</b> : humanReadableSize;
@@ -277,7 +277,7 @@ export const getStorage = (plansMap: PlansMap, freePlan: FreePlanDefault): PlanC
                 subtext: true,
                 freePlan,
             }),
-            [PLANS.DUO]: getStorageFeature(plansMap[PLANS.DUO]?.MaxSpace ?? 1099511627776, {
+            [PLANS.DUO]: getStorageFeature(plansMap[PLANS.DUO]?.MaxSpace ?? 2199023255552, {
                 duo: true,
                 subtext: true,
                 freePlan,
