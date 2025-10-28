@@ -12,7 +12,6 @@ import type { IconName } from '@proton/icons';
 import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eventDefaults';
 
-import { BookingSlotsForm } from './bookingManagement/BookingSlotsForm';
 import { useBookings } from './bookingsProvider/BookingsProvider';
 import { BookingState } from './bookingsProvider/interface';
 
@@ -43,13 +42,15 @@ export const Form = () => {
             <FormIconRow icon="text-title" title={c('Info').t`Name your booking page`}>
                 <InputFieldTwo
                     id="booking-title"
-                    placeholder={c('Placeholder').t`Add title`}
+                    placeholder={c('Placeholder').t`Booking page title`}
                     value={formData.title}
                     onChange={(e) => updateFormData('title', e.target.value)}
                     maxLength={MAX_CHARS_API.TITLE}
                     assistContainerClassName="hidden"
+                    inputContainerClassName="text-xl text-semibold"
+                    inputClassName="px-0 pt-1 pb-0"
+                    unstyled
                     autoFocus
-                    bigger
                 />
             </FormIconRow>
 
@@ -69,7 +70,7 @@ export const Form = () => {
             </FormIconRow>
 
             <FormIconRow icon="calendar-checkmark" title={c('Info').t`When are you free?`}>
-                <BookingSlotsForm />
+                todo
             </FormIconRow>
 
             <FormIconRow icon="map-pin" title={c('Info').t`Where will the appointment take place?`}>
