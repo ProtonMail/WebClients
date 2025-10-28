@@ -806,6 +806,9 @@
       "These items remain at risk": [
         "Bu ögeler risk altında"
       ],
+      "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
+        "Bu kasalara erişilemeyecek ve içerikleri arama veya otomatik doldurma için kullanılamayacak."
+      ],
       "This account is vulnerable, visit the service and change your password.": [
         "Bu hesapta güvenlik açığı var. Hizmeti ziyaret edin ve parolanızı değiştirin."
       ],
@@ -3353,7 +3356,7 @@
         "İkinci parola"
       ],
       "Secret": [
-        "Parola"
+        "Gizli anahtar"
       ],
       "Secure links": [
         "Güvenli bağlantılar"
@@ -4289,8 +4292,8 @@
       "Get Started": [
         "Başlayalım"
       ],
-      "Hidden vaults won’t be visible during search and autofill.": [
-        "Gizli kasalar arama ve otomatik doldurma sırasında görüntülenmez."
+      "Hidden vaults": [
+        "Gizli kasalar"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email takma adları"
@@ -4556,6 +4559,9 @@
       ],
       "Vault shared with you": [
         "Sizinle bir kasa paylaşıldı"
+      ],
+      "Visible vaults": [
+        "Görülebilir kasalar"
       ],
       "Want to learn more?": [
         "Ayrıntılı bilgi almak ister misiniz?"

@@ -250,6 +250,12 @@
       "Dismiss": [
         "Afvis"
       ],
+      "Do not show again": [
+        "Vis ikke igen"
+      ],
+      "Do not show again when I press": [
+        "Vis ikke igen, når jeg trykker"
+      ],
       "Download this CSV template": [
         "Download denne CSV-skabelon"
       ],
@@ -432,6 +438,9 @@
       ],
       "Open navigation": [
         "Åbn navigation"
+      ],
+      "Organize vaults": [
+        "Organisér bokse"
       ],
       "Pass for Android": [
         "Pass til Android"
@@ -718,6 +727,11 @@
         "Udvid"
       ]
     },
+    "Confirm": {
+      "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
+        "Ønsker du, at din udklipsholder automatisk ryddes efter ${ timeoutDurationHumanReadable }?"
+      ]
+    },
     "Description": {
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } er tilgængeligt med et betalt abonnement. Opgradér for øjeblikkelig adgang."
@@ -791,6 +805,9 @@
       ],
       "These items remain at risk": [
         "Disse elementer er fortsat i farezonen"
+      ],
+      "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
+        "Disse bokse vil ikke være tilgængelige, og deres indhold vil ikke være tilgængeligt ved søgning eller autofyldning."
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Denne konto er sårbar, besøg tjenesten og skift din adgangskode."
@@ -1526,6 +1543,9 @@
       "Copied to clipboard": [
         "Kopieret til udklipsholder"
       ],
+      "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
+        "Kopieret til udklipsholder (udløber om ${ timeoutDurationHumanReadable })"
+      ],
       "Coupon successfully applied!": [
         "Kupon anvendt!"
       ],
@@ -1657,6 +1677,9 @@
       ],
       "Extra password successfully removed": [
         "Ekstra adgangskode fjernet"
+      ],
+      "Failed updating your vault organization": [
+        "Opdatering af din boks-organisering mislykkedes"
       ],
       "Fill in the CSV with your data": [
         "Udfyld CSV-filen med dine data"
@@ -1875,6 +1898,9 @@
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Online adgang til ${ PASS_APP_NAME } kræver en pinkode. Du bliver logget ud efter 3 mislykkede forsøg."
       ],
+      "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
+        "Åbn dine Safari-indstillinger for udvidelsen, og bekræft, at webstedstilladelser er aktiveret for ${ BRAND_NAME }-domæner"
+      ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Vores advarsler prioriterer sikkerhed. Hvis du ikke genkender nogen af de kompromitterede oplysninger, kan du roligt ignorere denne rapport."
       ],
@@ -2029,8 +2055,17 @@
       "Please follow the steps below to set up your domain.": [
         "Følg nedenstående trin for at oprette dit domæne."
       ],
+      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
+        "Hold venligst ${ PASS_APP_NAME } åben, så udklipsholderen automatisk kan ryddes."
+      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Hold dette vindue åbent, mens dine data importeres. Denne proces kan tage et par minutter."
+      ],
+      "Please keep your browser open so the clipboard can be automatically cleared.": [
+        "Hold venligst din browser åben, så udklipsholderen automatisk kan ryddes."
+      ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "Sørg venligst for, at det tidligere aktive vindue er der, hvor du ønsker at autoindtaste, og at din markør var fokuseret på login-feltet."
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Bemærk, at aliasset ikke kan gendannes, når først det er slettet. Måske vil du hellere deaktivere aliasset?"
@@ -2282,6 +2317,9 @@
       "Unverified": [
         "Ubekræftet"
       ],
+      "Updating vault organization...": [
+        "Opdaterer boks-organisering..."
+      ],
       "Upgrade Now to Unlock Premium Features": [
         "Opgradér nu for at låse op for premium-funktioner"
       ],
@@ -2308,6 +2346,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "Boksen \"${ share.content.name }\" blev fjernet"
+      ],
+      "Vault organization successfully updated": [
+        "Boks-organisering succesfuldt opdateret"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Boksdeling: ${ vaultMembersCount } medlem",
@@ -2379,6 +2420,12 @@
       "You may close this tab.": [
         "Du kan lukke denne fane."
       ],
+      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
+        "De skal muligvis acceptere en tilladelsesanmodning og kan være nødt til at genstarte applikationen, afhængigt af dit system."
+      ],
+      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+        "Det kan være nødvendigt at give tilgængelighedstilladelse til ${ PASS_APP_NAME }."
+      ],
       "You need a vault with edit permission before you can import items.": [
         "Du skal have en boks med rediger-tilladelse, før du kan importer elementer."
       ],
@@ -2423,6 +2470,14 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Din organisation kræver, at du sikrer din adgang til ${ PASS_APP_NAME }"
+      ]
+    },
+    "Keyboard key": {
+      "SHIFT": [
+        "SKIFT"
+      ],
+      "V": [
+        "V"
       ]
     },
     "Label": {
@@ -3779,6 +3834,11 @@
         "${ price }/måned"
       ]
     },
+    "Permission": {
+      "Will require a permission from your browser": [
+        "Vil kræve en tilladelse fra din browser"
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "Tilføj 2FA hemmelig nøgle"
@@ -4097,6 +4157,9 @@
       "Change your lock method": [
         "Skift din låsemetode"
       ],
+      "Clear clipboard": [
+        "Ryd udklipsholder"
+      ],
       "Confirm extra password": [
         "Bekræft ekstra adgangskode"
       ],
@@ -4209,6 +4272,9 @@
       "Get Started": [
         "Kom i gang"
       ],
+      "Hidden vaults": [
+        "Skjulte bokse"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliasser"
       ],
@@ -4319,6 +4385,9 @@
       "Open pagination": [
         "Åbn sidenummerering"
       ],
+      "Organize vaults": [
+        "Organisér bokse"
+      ],
       "Our welcome gift to you": [
         "Vores velkomstgave til dig"
       ],
@@ -4339,6 +4408,9 @@
       ],
       "Pending access to the shared data": [
         "Afventer adgang til de delte data"
+      ],
+      "Perform autotype?": [
+        "Udfør autoindtastning?"
       ],
       "Permanently remove all items?": [
         "Fjern alle elementer permanent?"
@@ -4468,6 +4540,9 @@
       "Vault shared with you": [
         "Boks delt med dig"
       ],
+      "Visible vaults": [
+        "Synlige bokse"
+      ],
       "Want to learn more?": [
         "Vil du vide mere?"
       ],
@@ -4507,6 +4582,11 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du er ved at slette ${ aliasCount } alias permanent.",
         "Du er ved at slette ${ aliasCount } aliasser permanent."
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "kopier"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -4646,6 +4726,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "Ekstra adgangskode skal have mindst 8 tegn"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Autoindtastning mislykkedes. Vær sikker på at ${ PASS_APP_NAME } har de nødvendige tilladelser og prøv igen (${ error })."
       ],
       "Failed to load breaches.": [
         "Kunne ikke indlæse databrud."
