@@ -1,0 +1,123 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=2; plural=(n != 1);",
+    "language": "es_ES"
+  },
+  "contexts": {
+    "Action": {
+      "Cancel": [
+        "Cancelar"
+      ],
+      "Close": [
+        "Cerrar"
+      ],
+      "Confirm": [
+        "Confirmar"
+      ],
+      "Create": [
+        "Crear"
+      ],
+      "Dismiss": [
+        "Descartar"
+      ],
+      "Refresh the page": [
+        "Actualizar la página"
+      ],
+      "Try again": [
+        "Inténtalo de nuevo"
+      ]
+    },
+    "Error": {
+      "Authentication error": [
+        "Error de autenticación"
+      ],
+      "Request timed out": [
+        "Tiempo de espera agotado"
+      ],
+      "Something went wrong": [
+        "Se ha producido un error."
+      ]
+    },
+    "Error message": {
+      "Please refresh the page or try again later.": [
+        "Vuelve a cargar la página o inténtalo de nuevo más tarde."
+      ],
+      "Something went wrong": [
+        "Se ha producido un error."
+      ]
+    },
+    "Info": {
+      "Identity confirmed": [
+        "Se ha confirmado la identidad."
+      ],
+      "Internet connection lost": [
+        "Se ha perdido la conexión a internet."
+      ],
+      "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
+        "Parece que ya habías iniciado sesión en ${ PASS_APP_NAME }. Si quieres iniciar sesión con una cuenta diferente, cierra previamente la sesión actual."
+      ],
+      "Loading": [
+        "Cargando"
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
+        "Más que un gestor de contraseñas, ${ PASS_APP_NAME } protege tu contraseña y tu dirección de correo personal a través de alias de correo electrónico. Se ha desarrollado con la misma tecnología detrás de ${ MAIL_APP_NAME }, tus datos están cifrados de extremo a extremo y sólo son accesibles por ti."
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "No se puede acceder a los servidores. Inténtalo de nuevo en unos minutos."
+      ],
+      "Session timed out": [
+        "El tiempo de la sesión ha expirado."
+      ],
+      "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
+        "El texto que intentas pegar es más largo que el máximo permitido de ${ maxLength } caracteres."
+      ],
+      "You have reached the maximum allowed length of ${ maxLength } characters.": [
+        "Has alcanzado el número máximo de ${ maxLength } caracteres."
+      ],
+      "You may close this tab.": [
+        "Puedes cerrar esta pestaña."
+      ]
+    },
+    "Label": {
+      "${ days } day": [
+        "${ days } día",
+        "${ days } días"
+      ],
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } horas"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuto",
+        "${ minutes } minutos"
+      ],
+      "${ months } month": [
+        "${ months } mes",
+        "${ months } meses"
+      ],
+      "${ years } year": [
+        "${ years } año",
+        "${ years } años"
+      ],
+      "Expired": [
+        "Expirado"
+      ],
+      "Hide password": [
+        "Ocultar contraseña"
+      ],
+      "Reveal password": [
+        "Mostrar contraseña"
+      ]
+    },
+    "Placeholder": {
+      "Password": [
+        "Contraseña"
+      ]
+    },
+    "Warning": {
+      "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
+        "No se puede iniciar sesión en ${ PASS_APP_NAME }. ${ additionalMessage }"
+      ]
+    }
+  }
+}

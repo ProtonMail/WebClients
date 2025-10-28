@@ -1,0 +1,123 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=2; plural=(n != 1);",
+    "language": "es_LA"
+  },
+  "contexts": {
+    "Action": {
+      "Cancel": [
+        "Cancelar"
+      ],
+      "Close": [
+        "Cerrar"
+      ],
+      "Confirm": [
+        "Confirmar"
+      ],
+      "Create": [
+        "Crear"
+      ],
+      "Dismiss": [
+        "Descartar"
+      ],
+      "Refresh the page": [
+        "Refrescar la página"
+      ],
+      "Try again": [
+        "Volver a intentar"
+      ]
+    },
+    "Error": {
+      "Authentication error": [
+        "Error de autenticación"
+      ],
+      "Request timed out": [
+        "Tiempo de espera agotado"
+      ],
+      "Something went wrong": [
+        "Ocurrió un error."
+      ]
+    },
+    "Error message": {
+      "Please refresh the page or try again later.": [
+        "Actualice la página o intente nuevamente."
+      ],
+      "Something went wrong": [
+        "Hubo un problema"
+      ]
+    },
+    "Info": {
+      "Identity confirmed": [
+        "Se confirmó la identidad."
+      ],
+      "Internet connection lost": [
+        "Sin conexión a Internet"
+      ],
+      "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
+        "Parece que ya había iniciado sesión en ${ PASS_APP_NAME }. Si quiere iniciar sesión con una cuenta diferente, cierre previamente la sesión actual."
+      ],
+      "Loading": [
+        "Cargando"
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
+        "Más que un gestor de contraseñas, ${ PASS_APP_NAME } protege la contraseña y la dirección de correo personal a través de alias de correo electrónico. Desarrollado por la misma tecnología detrás de ${ MAIL_APP_NAME }, los datos están cifrados de extremo a extremo y solo usted puede acceder a ellos."
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "No hay conexión con los servidores. Intente de nuevo en unos minutos."
+      ],
+      "Session timed out": [
+        "Sesión agotada"
+      ],
+      "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
+        "El texto que intenta pegar es más largo que el máximo permitido de ${ maxLength } caracteres."
+      ],
+      "You have reached the maximum allowed length of ${ maxLength } characters.": [
+        "Ha alcanzado el número máximo de ${ maxLength } caracteres."
+      ],
+      "You may close this tab.": [
+        "Puede cerrar esta pestaña."
+      ]
+    },
+    "Label": {
+      "${ days } day": [
+        "${ days } día",
+        "${ days } días"
+      ],
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } horas"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuto",
+        "${ minutes } minutos"
+      ],
+      "${ months } month": [
+        "${ months } mes",
+        "${ months } meses"
+      ],
+      "${ years } year": [
+        "${ years } año",
+        "${ years } años"
+      ],
+      "Expired": [
+        "Expirado"
+      ],
+      "Hide password": [
+        "Ocultar contraseña"
+      ],
+      "Reveal password": [
+        "Mostrar contraseña"
+      ]
+    },
+    "Placeholder": {
+      "Password": [
+        "Contraseña"
+      ]
+    },
+    "Warning": {
+      "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
+        "No se puede iniciar sesión en ${ PASS_APP_NAME }. ${ additionalMessage }"
+      ]
+    }
+  }
+}
