@@ -3118,6 +3118,9 @@
       "Billing cycle": [
         "Ciclu de facturare"
       ],
+      "Black Friday": [
+        "Vinerea Neagră"
+      ],
       "Browser": [
         "Navigator"
       ],
@@ -3201,6 +3204,9 @@
       ],
       "Folder location": [
         "Amplasare folder"
+      ],
+      "Get the deal": [
+        "Luați oferta"
       ],
       "Hide password": [
         "Ascundere parolă"
@@ -4404,6 +4410,9 @@
       "Advanced account protection": [
         "Protecție avansată a contului"
       ],
+      "File attachments (up to 10GB)": [
+        "Fișiere atașate (până la 10 GiB)"
+      ],
       "Team policies": [
         "Politicile echipei"
       ]
@@ -4525,6 +4534,19 @@
         "Număr de reînnoiri disponibile pentru acest cupon: ${ couponRedemptions }",
         "Număr de reînnoiri disponibile pentru acest cupon: ${ couponRedemptions }"
       ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "Prețul special redus este valabil pentru ${ subscriptionLength } lună.",
+        "Prețul redus special este valabil pentru primele ${ subscriptionLength } luni.",
+        "Prețul special redus este valabil pentru primele ${ subscriptionLength } de luni."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Prețul cu reducerea specială este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } reînnoire. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
+        "Prețul cu reducerea specială este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } reînnoiri. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
+        "Prețul cu reducerea specială este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } de reînnoiri. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Prețul cu reducerea specială este valabil pentru prima lună. Apoi va fi reînnoit automat cu ${ renewPriceStr } lunar. Puteți anula oricând."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Prețul redus special de ${ priceWithDiscount } este valid pentru ${ subscriptionLength } lună.",
         "Prețul redus special de ${ priceWithDiscount } este valid pentru primele ${ subscriptionLength } luni.",
@@ -4575,6 +4597,9 @@
       ],
       "Your payment is still being processed": [
         "Plata este încă în curs de procesare."
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+        "Abonamentul actual are în prezent o reducere existentă. Trecerea la această nouă promoție înseamnă că reducerea curentă nu va mai fi aplicată."
       ]
     },
     "Payments.Error": {

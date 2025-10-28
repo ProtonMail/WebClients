@@ -3140,6 +3140,9 @@
       "Billing cycle": [
         "Перыяд аплаты"
       ],
+      "Black Friday": [
+        "Чорная пятніца"
+      ],
       "Browser": [
         "Браўзер"
       ],
@@ -3223,6 +3226,9 @@
       ],
       "Folder location": [
         "Размяшчэнне папкі"
+      ],
+      "Get the deal": [
+        "Атрымаць прапанову"
       ],
       "Hide password": [
         "Схаваць пароль"
@@ -4454,6 +4460,9 @@
       "Advanced account protection": [
         "Пашыраная абарона ўліковага запісу"
       ],
+      "File attachments (up to 10GB)": [
+        "Далучаныя файлы (да 10 ГБ)"
+      ],
       "Team policies": [
         "Палітыка каманды"
       ]
@@ -4576,6 +4585,21 @@
         "Купон дзейнічае для ${ couponRedemptions } падаўжэнняў.",
         "Купон дзейнічае для ${ couponRedemptions } падаўжэнняў."
       ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першага ${ subscriptionLength } месяца.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першых ${ subscriptionLength } месяцаў.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першых ${ subscriptionLength } месяцаў.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першых ${ subscriptionLength } месяцаў."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэння. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за кожны месяц. Скасаваць можна ў любы момант."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першага ${ subscriptionLength } месяца.",
         "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першых ${ subscriptionLength } месяцаў.",
@@ -4629,6 +4653,9 @@
       ],
       "Your payment is still being processed": [
         "Ваш плацеж усё яшчэ апрацоўваецца"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+        "Ваша падпіска мае бягучую скідку. Пераход на гэту новую акцыю азначае, што ранейшая скідка больш не будзе ўжывацца."
       ]
     },
     "Payments.Error": {
@@ -4691,7 +4718,7 @@
         "Дадаць нумар прадпрыемства"
       ],
       "Add EIN": [
-        "Рэдагаваць ІНП"
+        "Рэдагаваць EIN"
       ],
       "Add VAT number": [
         "Дадаць нумар ПДВ"
@@ -5542,6 +5569,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: Памочнік ШІ, які паважае вашу прыватнасць"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
       ]

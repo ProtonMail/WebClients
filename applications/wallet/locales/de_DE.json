@@ -3096,6 +3096,9 @@
       "Billing cycle": [
         "Abrechnungszeitraum"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Browser": [
         "Browser"
       ],
@@ -3179,6 +3182,9 @@
       ],
       "Folder location": [
         "Pfad des Ordners"
+      ],
+      "Get the deal": [
+        "Zugreifen"
       ],
       "Hide password": [
         "Passwort ausblenden"
@@ -4354,6 +4360,9 @@
       "Advanced account protection": [
         "Erweiterter Kontoschutz"
       ],
+      "File attachments (up to 10GB)": [
+        "Dateianhänge (bis zu 10 GB)"
+      ],
       "Team policies": [
         "Gruppenrichtlinien"
       ]
@@ -4474,6 +4483,17 @@
         "Der Gutschein ist für ${ couponRedemptions } Verlängerung gültig.",
         "Der Gutschein ist für ${ couponRedemptions } Verlängerungen gültig."
       ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "Der speziell ermäßigte Preis ist für ${ subscriptionLength } Monat gültig.",
+        "Der speziell ermäßigte Preis ist für die ersten ${ subscriptionLength } Monate gültig."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis gilt für den ersten Monat. Der Gutschein kann für ${ couponRedemptions } Verlängerung eingelöst werden. Danach wird das Abonnement automatisch zum Preis von ${ renewPriceStr } für 1 Monat verlängert. Du kannst jederzeit kündigen.",
+        "Der speziell ermäßigte Preis gilt für den ersten Monat. Der Gutschein kann für ${ couponRedemptions } Verlängerungen eingelöst werden. Danach wird das Abonnement automatisch zum Preis von ${ renewPriceStr } für 1 Monat verlängert. Du kannst jederzeit kündigen."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ renewPriceStr } verlängert. Du kannst jederzeit kündigen."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für ${ subscriptionLength } Monat gültig.",
         "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für ${ subscriptionLength } Monate gültig."
@@ -4521,6 +4541,9 @@
       ],
       "Your payment is still being processed": [
         "Deine Zahlung ist noch in Bearbeitung."
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+        "Dein Abonnement hat derzeit einen bestehenden Rabatt. Der Wechsel zu dieser neuen Aktion bedeutet, dass der bestehende Rabatt nicht länger angewendet wird."
       ]
     },
     "Payments.Error": {
@@ -5414,6 +5437,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: KI-Assistent, der deine Privatsphäre respektiert"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
       ]
