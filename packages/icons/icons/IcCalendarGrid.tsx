@@ -33,8 +33,10 @@ export const IcCalendarGrid = ({ alt, title, size = 4, className = '', viewBox =
 
                 <path
                     fillRule="evenodd"
-                    d="M3 1.5v.67A3.001 3.001 0 0 0 1 5v7a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V5a3.001 3.001 0 0 0-2-2.83V1.5a.5.5 0 0 0-1 0V2H4v-.5a.5.5 0 0 0-1 0ZM4 3h8a2 2 0 0 1 2 2H2a2 2 0 0 1 2-2Zm6 3H6v2h4V6Zm0 3H6v2h4V9Zm1 2V9h3v2h-3Zm-1 1H6v2h4v-2Zm1 2v-2h3a2 2 0 0 1-2 2h-1Zm0-6V6h3v2h-3ZM2 6h3v2H2V6Zm0 3h3v2H2V9Zm0 3h3v2H4a2 2 0 0 1-2-2Z"
+                    d="M13 2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2 .5.5 0 0 1 0 1 1 1 0 0 0-1 1v2h12V4a1 1 0 0 0-1-1 .5.5 0 0 1 0-1ZM2 13a1 1 0 0 0 1 1h2v-3H2v2Zm4 1h4v-3H6v3Zm5 0h2a1 1 0 0 0 1-1v-2h-3v3Zm-9-4h3V7H2v3Zm4 0h4V7H6v3Zm5 0h3V7h-3v3Z"
+                    clipRule="evenodd"
                 ></path>
+                <path d="M4.5 1a.5.5 0 0 1 .5.5V3a.5.5 0 0 1-1 0V1.5a.5.5 0 0 1 .5-.5Zm7 0a.5.5 0 0 1 .5.5V3a.5.5 0 0 1-1 0V1.5a.5.5 0 0 1 .5-.5ZM10 2a.5.5 0 0 1 0 1H6a.5.5 0 0 1 0-1h4Z"></path>
             </svg>
             {alt ? <span className="sr-only">{alt}</span> : null}
         </>
