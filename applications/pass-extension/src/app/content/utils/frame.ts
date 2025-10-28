@@ -33,7 +33,7 @@ export const getFrameElement = (frameId: number, frameAttributes: FrameAttribute
      * properties are missing or multiple iframes have similar attributes. */
     const candidates = Array.from(iframes).reduce<FrameScore[]>((acc, iframe) => {
         let score = 0;
-        const { width, height, src, name, title } = frameAttributes;
+        const { width, height, src, name, title, ariaLabel } = frameAttributes;
 
         /** FIXME: this should support relative src's as well */
         const frameSrc = iframe.getAttribute('src');
@@ -41,10 +41,10 @@ export const getFrameElement = (frameId: number, frameAttributes: FrameAttribute
         const parser = createStyleParser(iframe);
         const frameWidth = getComputedWidth(parser, 'inner').value;
         const frameHeight = getComputedHeight(parser, 'inner').value;
-
         if (src !== undefined && frameSrc === src) score++;
         if (name !== undefined && iframe.name === name) score++;
         if (title !== undefined && iframe.title === title) score++;
+        if (ariaLabel !== undefined && iframe.ariaLabel === ariaLabel) score++;
         if (width !== undefined && Math.abs(frameWidth - width) <= 1) score++;
         if (height !== undefined && Math.abs(frameHeight - height) <= 1) score++;
 
@@ -65,11 +65,13 @@ export const getFrameAttributes = (): FrameAttributes => {
               name: window.name,
               width: doc.clientWidth,
               height: doc.clientHeight,
+              ariaLabel: document.querySelector('[aria-label]')?.ariaLabel ?? undefined,
               title:
                   document.title ||
                   document.head.title ||
                   document.head.getAttribute('title') ||
-                  document.head?.querySelector('title')?.textContent,
+                  document.head?.querySelector('title')?.textContent ||
+                  (document.querySelector('[title]')?.getAttribute('title') ?? undefined),
           };
 };
 
