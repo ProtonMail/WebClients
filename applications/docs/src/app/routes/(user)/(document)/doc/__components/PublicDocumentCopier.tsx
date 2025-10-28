@@ -5,20 +5,25 @@ import { c } from 'ttag'
 import { CircleLoader } from '@proton/atoms'
 import { APPS } from '@proton/shared/lib/constants'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
-import type { PublicDocumentPostMessageDataForCopying } from '~/components/document/public/utils'
-import type { PublicDocumentPostMessageEvent } from '~/components/document/public/utils'
+import type {
+  PublicDocumentPostMessageDataForCopying,
+  PublicDocumentPostMessageEvent,
+} from '~/components/document/public/utils'
+import { tmpConvertNewDocTypeToOld, type DocumentAction } from '@proton/drive-store/store/_documents/useOpenDocument'
 
 /**
  * A processing component that duplicates a document received from the tab opener. Once duplication completes,
  * the window will reroute to the new document.
  */
-export function PublicDocumentCopier() {
+export function PublicDocumentCopier({ openAction }: { openAction: DocumentAction | null }) {
   const application = useApplication()
 
   const performCopy = useCallback(
     async (name: string, yjsData: Uint8Array<ArrayBuffer>) => {
+      const documentType = tmpConvertNewDocTypeToOld(openAction?.type ?? 'doc')
+
       const duplicateDocument = application.duplicateDocumentUseCase
-      const result = await duplicateDocument.executePublic(name, yjsData)
+      const result = await duplicateDocument.executePublic(name, yjsData, documentType)
 
       if (result.isFailed()) {
         PostApplicationError(application.eventBus, {
@@ -29,13 +34,13 @@ export function PublicDocumentCopier() {
         const shell = result.getValue()
         void application.compatWrapper.getUserCompat().openDocumentWindow({
           ...shell,
-          type: 'doc',
+          type: openAction?.type ?? 'doc',
           mode: 'open',
           window: window,
         })
       }
     },
-    [application],
+    [application.compatWrapper, application.duplicateDocumentUseCase, application.eventBus, openAction?.type],
   )
 
   const handleMessage = useCallback(

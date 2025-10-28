@@ -1,7 +1,6 @@
-import type { DecryptedNode, DocumentNodeMeta, DriveCompat } from '@proton/drive-store'
+import type { DecryptedNode, DocumentNodeMeta, DriveCompat, NodeMeta } from '@proton/drive-store'
 import { Result } from '@proton/docs-shared'
 
-import type { NodeMeta } from '@proton/drive-store'
 import type { SeedInitialCommit } from './SeedInitialCommit'
 import type { GetDocumentMeta } from './GetDocumentMeta'
 import { getErrorString } from '../Util/GetErrorString'
@@ -17,7 +16,11 @@ export class DuplicateDocument {
   ) {}
 
   /** Execute for a private document */
-  async executePrivate(nodeMeta: NodeMeta, node: DecryptedNode, state: Uint8Array<ArrayBuffer>): Promise<Result<DocumentNodeMeta>> {
+  async executePrivate(
+    nodeMeta: NodeMeta,
+    node: DecryptedNode,
+    state: Uint8Array<ArrayBuffer>,
+  ): Promise<Result<DocumentNodeMeta>> {
     try {
       const node = await this.driveCompat.getNode(nodeMeta)
 
@@ -43,10 +46,14 @@ export class DuplicateDocument {
   }
 
   /** Execute for a public document */
-  async executePublic(originalName: string, state: Uint8Array<ArrayBuffer>): Promise<Result<DocumentNodeMeta>> {
+  async executePublic(
+    originalName: string,
+    state: Uint8Array<ArrayBuffer>,
+    documentType: DocumentType = 'doc',
+  ): Promise<Result<DocumentNodeMeta>> {
     try {
       const parentMeta: NodeMeta = await this.driveCompat.getMyFilesNodeMeta()
-      return await this.genericDuplicate(originalName, parentMeta, state)
+      return await this.genericDuplicate(originalName, parentMeta, state, documentType)
     } catch (error) {
       return Result.fail(getErrorString(error) ?? 'Failed to duplicate document')
     }
