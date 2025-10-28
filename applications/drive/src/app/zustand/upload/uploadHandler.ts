@@ -17,6 +17,7 @@ export enum UploadEventType {
     Complete = 'complete',
     ControllerReady = 'controllerReady',
     ConflictFound = 'conflictFound',
+    Skip = 'skip',
 }
 
 type ConflictFoundEvent = {
@@ -39,6 +40,7 @@ const legacyThumbnailAdapter = (thumbnails: ThumbnailInfo[]) =>
 
 export type UploadEvent =
     | ({ type: UploadEventType.Progress } & ProgressEvent)
+    | { type: UploadEventType.Skip }
     | ({ type: UploadEventType.Error } & ErrorEvent)
     | ({ type: UploadEventType.Complete } & CompleteEvent)
     | ({ type: UploadEventType.ControllerReady } & ControllerReadyEvent)
@@ -134,12 +136,6 @@ async function getUploaderForStrategy(
     throw new Error(`Unknown strategy: ${strategy}`);
 }
 
-/**
- *
- * TODO: List of things to improve
- * - Combine some logic to preveat repeating multiple time the same thing
- * - Use new thumbnail generation once available
- */
 export const startUpload = async (
     file: File,
     parentUid: string,
@@ -148,9 +144,9 @@ export const startUpload = async (
 ): Promise<void> => {
     const drive = getDrive();
     const abortController = new AbortController();
+    const { mediaInfo, mediaType } = await prepareMediaData(file);
 
     try {
-        const { mediaInfo, mediaType } = await prepareMediaData(file);
         const metadata = createUploadMetadata({
             mediaType,
             fileSize: file.size,
@@ -199,10 +195,12 @@ export const startUpload = async (
             );
 
             if (strategy === UploadConflictStrategy.Skip) {
+                onChange({
+                    type: UploadEventType.Skip,
+                });
                 return;
             }
 
-            const { mediaInfo, mediaType } = await prepareMediaData(file);
             const metadata = createUploadMetadata({
                 mediaType,
                 fileSize: file.size,
