@@ -780,6 +780,9 @@
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "Το SPF ${ WIKIPEDIA_LINK_SPF } είναι μια μέθοδος ελέγχου ταυτότητας ηλεκτρονικού ταχυδρομείου που έχει σχεδιαστεί για την ανίχνευση πλαστογράφησης διευθύνσεων αποστολέα κατά την παράδοση του μηνύματος ηλεκτρονικού ταχυδρομείου. Η ρύθμιση του SPF συνιστάται ιδιαίτερα για να μειώσετε την πιθανότητα τα μηνύματα ηλεκτρονικού ταχυδρομείου σας να καταλήξουν στον φάκελο ανεπιθύμητης αλληλογραφίας του παραλήπτη."
       ],
+      "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
+        "Αυτές οι κρύπτες δε θα είναι προσβάσιμες και το περιεχόμενό τους δε θα είναι διαθέσιμο για Αναζήτηση ή Αυτόματη Συμπλήρωση."
+      ],
       "This account is vulnerable, visit the service and change your password.": [
         "Αυτός ο λογαριασμός είναι ευάλωτος, επισκεφθείτε την υπηρεσία και αλλάξτε τον κωδικό πρόσβασής σας."
       ],
@@ -1839,6 +1842,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
+        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
       ],
       "Moving items": [
         "Μετακίνηση στοιχείων"
@@ -4152,8 +4159,8 @@
       "Grant permissions": [
         "Απαιτούμενα δικαιώματα"
       ],
-      "Hidden vaults won’t be visible during search and autofill.": [
-        "Οι κρυφές κρύπτες δεν είναι ορατές κατά την αναζήτηση και την αυτόματη συμπλήρωση"
+      "Hidden vaults": [
+        "Κρυμμένες κρύπτες"
       ],
       "Hide my email": [
         "Απόκρυψη της διεύθυνσης ηλεκτρονικού ταχυδρομείου μου"
@@ -4364,6 +4371,9 @@
       ],
       "Vault shared with you": [
         "Η κρύπτη που έχει κοινοποιηθεί σε εσάς"
+      ],
+      "Visible vaults": [
+        "Ορατές κρύπτες"
       ],
       "Weak password": [
         "Αδύναμος κωδικός πρόσβασης"

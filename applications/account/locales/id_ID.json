@@ -2224,20 +2224,8 @@
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "Dapatkan harga hemat untuk aplikasi VPN Swiss berkecepatan tinggi dengan penawaran Jumat Hitam"
       ],
-      "Save with Cyber Week deals on a high-speed Swiss VPN": [
-        "Dapatkan penawaran hemat Minggu Cyber untuk produk VPN Swiss berkecepatan tinggi"
-      ],
-      "Save with End of Year deals on a high-speed Swiss VPN": [
-        "Dapatkan penawaran hemat Akhir Tahun untuk produk VPN Swiss berkecepatan tinggi"
-      ],
       "Select your Black Friday offer": [
         "Pilih penawaran Jumat Hitam Anda"
-      ],
-      "Select your Cyber Week offer": [
-        "Pilih penawaran Minggu Cyber Anda"
-      ],
-      "Select your End of Year offer": [
-        "Pilih penawaran Akhir Tahun Anda"
       ]
     },
     "bf2023: Info": {
@@ -2359,6 +2347,32 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Ruang penyimpanan terbagi antar seluruh layanan ${ BRAND_NAME }."
+      ]
+    },
+    "BF2025: Deal details": {
+      "Block ads, trackers, and malware": [
+        "Blokir iklan, pelacak, dan malware"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autentikator 2FA terintegrasi"
+      ],
+      "Unlimited daily chats": [
+        "Tanpa batasan jumlah percakapan harian"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "Jumat Hitam"
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "untuk ${ durationDeal }"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Dirancang secara khusus, NetShield melindungi perangkat Anda dan mempercepat penjelajahan Anda dengan memblokir iklan, pelacak, dan perangkat lunak jahat."
       ]
     },
     "Billing cycle": {
@@ -2934,9 +2948,6 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Tambah ${ LUMO_APP_NAME }"
-      ],
-      "AI assistant that respects your privacy": [
-        "Asisten AI yang menghargai privasi Anda"
       ],
       "Basic chat history": [
         "Riwayat percakapan dasar"
@@ -4804,17 +4815,11 @@
       ]
     },
     "Duo offer: Link": {
-      "Double your storage": [
-        "Gandakan ruang penyimpanan Anda"
-      ],
       "Share your plan": [
         "Bagikan paket Anda"
       ]
     },
     "Duo offer: Title": {
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Gandakan ruang penyimpanan Anda dengan ${ BRAND_NAME } Duo"
-      ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
         "Bagikan keutamaan paket Anda dengan ${ BRAND_NAME } Duo"
       ]
@@ -13013,9 +13018,6 @@
       "Special characters": [
         "Karakter khusus"
       ],
-      "Special Offer: Get ${ PASS_SHORT_APP_NAME } Plus for ${ offerPrice }": [
-        "Penawaran Spesial: Dapatkan ${ PASS_SHORT_APP_NAME } Plus seharga ${ offerPrice }"
-      ],
       "Starred": [
         "Dibintangi"
       ],
@@ -13150,9 +13152,6 @@
       ],
       "Verify keys with Key Transparency": [
         "Verifikasi kunci dengan Key Transparency"
-      ],
-      "Video conferencing with ${ MEET_APP_NAME }": [
-        "Konferensi video dengan ${ MEET_APP_NAME }"
       ],
       "Video conferencing with Zoom": [
         "Pertemuan video dengan Zoom"
@@ -15314,9 +15313,6 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } dibuat"
       ],
-      "${ MEET_APP_NAME } video conferencing settings have been updated": [
-        "Pengaturan konferensi video ${ MEET_APP_NAME } telah diperbarui"
-      ],
       "${ reason } has been disabled": [
         "${ reason } telah dinonaktifkan"
       ],
@@ -16440,9 +16436,6 @@
       "Activity log": [
         "Log aktivitas"
       ],
-      "Additional mailboxes for aliases": [
-        "Kotak surat tambahan untuk alias"
-      ],
       "Admin panel to manage users and subscription": [
         "Panel admin untuk mengelola pengguna dan langganan"
       ],
@@ -16452,17 +16445,11 @@
       "Advanced alias features (powered by SimpleLogin)": [
         "Fitur alias lanjutan (diberdayakan oleh SimpleLogin)"
       ],
-      "File attachments (coming soon)": [
-        "Lampiran (segera hadir)"
-      ],
       "One-time payment, lifetime deal": [
         "Satu kali pembayaran, untuk selamanya"
       ],
       "Team policies": [
         "Kebijakan tim"
-      ],
-      "Your custom domain for aliases": [
-        "Domain khusus Anda untuk alias"
       ]
     },
     "PassFamilyPlan2024": {
@@ -18604,6 +18591,11 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Dibagikan oleh ${ ownerName }"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "Buka di ${ appName }"
       ]
     },
     "Signature verification error when joining calendar": {
@@ -21260,9 +21252,6 @@
       "Don't show again?": [
         "Jangan tampilkan lagi?"
       ],
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Gandakan ruang penyimpanan Anda dengan ${ BRAND_NAME } Duo"
-      ],
       "Downgrade account": [
         "Turunkan jenis akun"
       ],
@@ -22205,9 +22194,6 @@
       "Version history": [
         "Riwayat versi"
       ],
-      "Video conferencing with ${ MEET_APP_NAME }": [
-        "Konferensi video dengan ${ MEET_APP_NAME }"
-      ],
       "Video conferencing with Zoom": [
         "Konferensi video dengan Zoom"
       ],
@@ -22423,9 +22409,6 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Para admin dapat mengelola akun pengguna dan memberikan hak admin kepada pengguna lain. Hanya admin utama yang dapat menyunting paket organisasi."
-      ],
-      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "Memungkinkan tautan konferensi video ${ MEET_APP_NAME } untuk ditambahkan secara terpadu ke dalam undangan kalender Anda."
       ],
       "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
         "Memungkinkan tautan konferensi video Zoom untuk ditambahkan secara terpadu ke dalam undangan kalender Anda."

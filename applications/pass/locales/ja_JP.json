@@ -803,6 +803,9 @@
       "These items remain at risk": [
         "これらのアイテムは危険なままです"
       ],
+      "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
+        "これらの保管庫にはアクセスできなくなり、そのコンテンツは検索や自動入力では利用できなくなります。"
+      ],
       "This account is vulnerable, visit the service and change your password.": [
         "このアカウントは脆弱です。サービスにアクセスしてパスワードを変更してください。"
       ],
@@ -4238,8 +4241,8 @@
       "Get Started": [
         "利用開始"
       ],
-      "Hidden vaults won’t be visible during search and autofill.": [
-        "非表示の保管庫は、検索および自動入力中は表示されません。"
+      "Hidden vaults": [
+        "非表示の保管庫"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email エイリアス"
@@ -4501,6 +4504,9 @@
       ],
       "Vault shared with you": [
         "あなたと共有している保管庫"
+      ],
+      "Visible vaults": [
+        "閲覧可能な保管庫"
       ],
       "Want to learn more?": [
         "もっと詳しく知りたいですか?"

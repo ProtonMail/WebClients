@@ -1,0 +1,2159 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=2; plural=(n != 1);",
+    "language": "it_IT"
+  },
+  "contexts": {
+    "Action": {
+      "${ BRAND_NAME } shop": [
+        "Negozio di ${ BRAND_NAME }"
+      ],
+      "Add account": [
+        "Aggiungi un account"
+      ],
+      "Add another account": [
+        "Aggiungi un altro account"
+      ],
+      "Attach screenshot(s)": [
+        "Allega screenshot"
+      ],
+      "Authenticate": [
+        "Autentica"
+      ],
+      "Blur background": [
+        "Sfocatura dello sfondo"
+      ],
+      "Cancel": [
+        "Annulla"
+      ],
+      "Change password": [
+        "Cambia la password"
+      ],
+      "Chat with us": [
+        "Chatta con noi"
+      ],
+      "Close": [
+        "Chiudi"
+      ],
+      "Continue": [
+        "Continua"
+      ],
+      "Continue without camera": [
+        "Continua senza la webcam"
+      ],
+      "Continue without microphone": [
+        "Continua senza microfono"
+      ],
+      "Copied": [
+        "Copiato"
+      ],
+      "Copy ${ title }": [
+        "Copia ${ title }"
+      ],
+      "Copy address": [
+        "Copia l'indirizzo"
+      ],
+      "Copy invitation text": [
+        "Copia testo invito"
+      ],
+      "Copy link": [
+        "Copia link"
+      ],
+      "Delete": [
+        "Elimina"
+      ],
+      "Disable video": [
+        "Disabilita il video"
+      ],
+      "Dismiss": [
+        "Ignora"
+      ],
+      "Download logs": [
+        "Scarica i log"
+      ],
+      "Edit email address": [
+        "Modifica l'indirizzo email"
+      ],
+      "Edit phone number": [
+        "Modifica il numero di telefono"
+      ],
+      "Edit sign-in details": [
+        "Modifica i dettagli di accesso"
+      ],
+      "Enable video": [
+        "Abilita video"
+      ],
+      "Forgot password?": [
+        "Hai dimenticato la password?"
+      ],
+      "Get verification code": [
+        "Invia il codice di verifica"
+      ],
+      "Help and feedback": [
+        "Aiuto e feedback"
+      ],
+      "Help and resources": [
+        "Aiuto e risorse utili"
+      ],
+      "Hide advanced options": [
+        "Nascondi le opzioni avanzate"
+      ],
+      "Hide participants": [
+        "Nascondi i partecipanti"
+      ],
+      "Hide timezones": [
+        "Nascondi fusi orari"
+      ],
+      "Join meeting": [
+        "Unisciti alla riunione"
+      ],
+      "Kick out": [
+        "Espelli"
+      ],
+      "Leave meeting": [
+        "Lascia la riunione"
+      ],
+      "Lock meeting": [
+        "Blocca riunione"
+      ],
+      "More info: ${ safeTitle }": [
+        "Maggiori informazioni: ${ safeTitle }"
+      ],
+      "More options for accounts": [
+        "Altre opzioni per gli account"
+      ],
+      "Mute participant": [
+        "Silenzia partecipante"
+      ],
+      "Next month": [
+        "Mese successivo"
+      ],
+      "Next page": [
+        "Pagina successiva"
+      ],
+      "Noise filter": [
+        "Filtro Rumore"
+      ],
+      "OK": [
+        "OK"
+      ],
+      "Open link": [
+        "Apri link"
+      ],
+      "Previous month": [
+        "Mese precedente"
+      ],
+      "Previous page": [
+        "Pagina precedente"
+      ],
+      "Receive video": [
+        "Ricevi video"
+      ],
+      "Refer a friend": [
+        "Invita un amico"
+      ],
+      "Refresh link": [
+        "Aggiorna link"
+      ],
+      "Refresh the page": [
+        "Aggiorna la pagina"
+      ],
+      "Report a problem": [
+        "Segnala un problema"
+      ],
+      "Request a call": [
+        "Richiedi una chiamata"
+      ],
+      "Request a feature": [
+        "Richiedi una funzionalità"
+      ],
+      "Request new code": [
+        "Richiedi nuovo codice"
+      ],
+      "Resend code": [
+        "Reinvia il codice"
+      ],
+      "Schedule": [
+        "Pianifica"
+      ],
+      "Schedule meeting": [
+        "Programma una riunione"
+      ],
+      "Search countries": [
+        "Cerca tra i paesi"
+      ],
+      "Settings": [
+        "Consenti"
+      ],
+      "Share": [
+        "Condividi"
+      ],
+      "Show advanced options": [
+        "Mostra impostazioni avanzate"
+      ],
+      "Show participants": [
+        "Mostra i partecipanti"
+      ],
+      "Show timezones": [
+        "Mostra fusi orari"
+      ],
+      "Sign in": [
+        "Accedi"
+      ],
+      "Sign out": [
+        "Esci dall'account"
+      ],
+      "Sign out of all accounts": [
+        "Esci da tutti gli account"
+      ],
+      "Start": [
+        "Inizia"
+      ],
+      "Start meeting": [
+        "Inizia la riunione"
+      ],
+      "Stop incoming video": [
+        "Interrompi il video in arrivo"
+      ],
+      "Stop receiving video": [
+        "Interrompi la ricezione del video"
+      ],
+      "Submit": [
+        "Invia"
+      ],
+      "Switch or add account": [
+        "Cambia o aggiungi account"
+      ],
+      "Try another method": [
+        "Prova un altro metodo"
+      ],
+      "Use authentication code": [
+        "Usa il codice di autenticazione"
+      ],
+      "Use camera": [
+        "Usa la webcam"
+      ],
+      "Use recovery code": [
+        "Usa un codice di recupero"
+      ],
+      "Verify": [
+        "Verifica"
+      ],
+      "Verify account": [
+        "Verifica account"
+      ],
+      "View invoice": [
+        "Visualizza fattura"
+      ]
+    },
+    "Alt": {
+      "Blur background": [
+        "Sfocatura dello sfondo"
+      ],
+      "Chat": [
+        "Chat"
+      ],
+      "Go to dashboard": [
+        "Vai alla dashboard"
+      ],
+      "Lock meeting": [
+        "Blocca riunione"
+      ],
+      "Meeting details": [
+        "Dettagli della riunione"
+      ],
+      "Noise filter": [
+        "Filtro Rumore"
+      ],
+      "Open chat message search": [
+        "Apri la ricerca messaggi della chat"
+      ],
+      "Participants": [
+        "Partecipanti"
+      ],
+      "Rotate camera": [
+        "Ruota la webcam"
+      ],
+      "Rotate personal meeting link": [
+        "Reimposta link della riunione personale"
+      ],
+      "Settings": [
+        "Impostazioni"
+      ],
+      "Show passphrase": [
+        "Mostra frase d'accesso"
+      ],
+      "Stop incoming video": [
+        "Interrompi il video in arrivo"
+      ],
+      "Toggle camera": [
+        "Attiva/disattiva fotocamera"
+      ],
+      "Toggle chat": [
+        "Attiva/disattiva chat."
+      ],
+      "Toggle microphone": [
+        "Attiva/disattiva microfono"
+      ],
+      "Toggle participants": [
+        "Attiva/disattiva partecipanti"
+      ],
+      "Toggle screen share": [
+        "Alterna condivisione schermo"
+      ],
+      "Toggle settings": [
+        "Cambia le impostazioni"
+      ],
+      "Video settings": [
+        "Impostazioni video"
+      ]
+    },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "${ BRAND_NAME } applicazioni"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Applicazione desktop ${ MAIL_APP_NAME }"
+      ]
+    },
+    "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Problema con ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Application problem": [
+        "Problema con l'applicazione"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Bridge problem": [
+        "Problema con Bridge"
+      ],
+      "Calendar problem": [
+        "Problema con Calendar"
+      ],
+      "Connection problem": [
+        "Problema di connessione"
+      ],
+      "Contacts problem": [
+        "Problema con Contacts"
+      ],
+      "Custom domain problem": [
+        "Problema con un dominio personalizzato"
+      ],
+      "Docs problem": [
+        "Problema con Docs"
+      ],
+      "Drive problem": [
+        "Problema con Drive"
+      ],
+      "Feature request": [
+        "Richiedi una funzionalità"
+      ],
+      "Import / export problem": [
+        "Problema di importazione/esportazione"
+      ],
+      "Installation problem": [
+        "Problema d'installazione"
+      ],
+      "Mail problem": [
+        "Problema con Mail"
+      ],
+      "Manual setup problem": [
+        "Problema di configurazione manuale"
+      ],
+      "Meet problem": [
+        "Si è verificato un problema"
+      ],
+      "Other": [
+        "Altro"
+      ],
+      "Pass problem": [
+        "Problema con Pass"
+      ],
+      "Payments problem": [
+        "Problema con i pagamenti"
+      ],
+      "Sign in problem": [
+        "Problema di accesso"
+      ],
+      "Sign up problem": [
+        "Problema di registrazione"
+      ],
+      "Signup problem": [
+        "Problema di registrazione"
+      ],
+      "Slow speed problem": [
+        "Problema di bassa velocità"
+      ],
+      "Speed problem": [
+        "Problema di velocità"
+      ],
+      "Streaming problem": [
+        "Problema di streaming"
+      ],
+      "Update problem": [
+        "Problema con l'aggiornamento"
+      ],
+      "VPN problem": [
+        "Problema con VPN"
+      ],
+      "Website access problem": [
+        "Problema di accesso al sito web"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Comprimi"
+      ],
+      "Expand": [
+        "Espandi"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "carota"
+      ],
+      "cerise": [
+        "ciliegia"
+      ],
+      "cobalt": [
+        "cobalto"
+      ],
+      "copper": [
+        "rame"
+      ],
+      "enzian": [
+        "genziana"
+      ],
+      "fern": [
+        "felce"
+      ],
+      "forest": [
+        "foresta"
+      ],
+      "ocean": [
+        "oceano"
+      ],
+      "olive": [
+        "oliva"
+      ],
+      "pacific": [
+        "pacifico"
+      ],
+      "pickle": [
+        "cetriolo"
+      ],
+      "pine": [
+        "pino"
+      ],
+      "pink": [
+        "rosa"
+      ],
+      "plum": [
+        "prugna"
+      ],
+      "purple": [
+        "viola"
+      ],
+      "reef": [
+        "corallo"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "slateblue": [
+        "ardesia"
+      ],
+      "soil": [
+        "terra"
+      ],
+      "strawberry": [
+        "fragola"
+      ]
+    },
+    "Country name": {
+      "Abkhazia": [
+        "Abcasia"
+      ],
+      "Afghanistan": [
+        "Afghanistan"
+      ],
+      "Albania": [
+        "Albania"
+      ],
+      "Algeria": [
+        "Algeria"
+      ],
+      "American Samoa": [
+        "Samoa Americane"
+      ],
+      "Andorra": [
+        "Andorra"
+      ],
+      "Angola": [
+        "Angola"
+      ],
+      "Anguilla": [
+        "Anguilla"
+      ],
+      "Antarctica": [
+        "Antartide"
+      ],
+      "Antigua and Barbuda": [
+        "Antigua e Barbuda"
+      ],
+      "Argentina": [
+        "Argentina"
+      ],
+      "Armenia": [
+        "Armenia"
+      ],
+      "Aruba": [
+        "Aruba"
+      ],
+      "Ascension Island": [
+        "Isola dell'Ascensione"
+      ],
+      "Australia": [
+        "Australia"
+      ],
+      "Austria": [
+        "Austria"
+      ],
+      "Azerbaijan": [
+        "Azerbaigian"
+      ],
+      "Bahamas": [
+        "Bahamas"
+      ],
+      "Bahrain": [
+        "Bahrein"
+      ],
+      "Bangladesh": [
+        "Bangladesh"
+      ],
+      "Barbados": [
+        "Barbados"
+      ],
+      "Belarus": [
+        "Bielorussia"
+      ],
+      "Belgium": [
+        "Belgio"
+      ],
+      "Belize": [
+        "Belize"
+      ],
+      "Benin": [
+        "Benin"
+      ],
+      "Bermuda": [
+        "Bermuda"
+      ],
+      "Bhutan": [
+        "Bhutan"
+      ],
+      "Bolivia": [
+        "Bolivia"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Bonaire, Sint Eustatius e Saba"
+      ],
+      "Bosnia and Herzegovina": [
+        "Bosnia ed Erzegovina"
+      ],
+      "Botswana": [
+        "Botswana"
+      ],
+      "Bouvet Island": [
+        "Isola di Bouvet"
+      ],
+      "Brazil": [
+        "Brasile"
+      ],
+      "British Indian Ocean Territory": [
+        "Territori Britannici dell'Oceano Indiano"
+      ],
+      "Brunei Darussalam": [
+        "Sultanato del Brunei"
+      ],
+      "Bulgaria": [
+        "Bulgaria"
+      ],
+      "Burkina Faso": [
+        "Burkina Faso"
+      ],
+      "Burundi": [
+        "Burundi"
+      ],
+      "Cambodia": [
+        "Cambogia"
+      ],
+      "Cameroon": [
+        "Camerun"
+      ],
+      "Canada": [
+        "Canada"
+      ],
+      "Cape Verde": [
+        "Capo Verde"
+      ],
+      "Cayman Islands": [
+        "Isole Cayman"
+      ],
+      "Central African Republic": [
+        "Repubblica Centrafricana"
+      ],
+      "Chad": [
+        "Ciad"
+      ],
+      "Chile": [
+        "Cile"
+      ],
+      "China": [
+        "Cina"
+      ],
+      "Christmas Island": [
+        "Isola di Natale"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Isole Cocos (Keeling)"
+      ],
+      "Colombia": [
+        "Colombia"
+      ],
+      "Comoros": [
+        "Comore"
+      ],
+      "Congo": [
+        "Congo"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Repubblica democratica del Congo"
+      ],
+      "Cook Islands": [
+        "Isole Cook"
+      ],
+      "Costa Rica": [
+        "Costa Rica"
+      ],
+      "Croatia": [
+        "Croazia"
+      ],
+      "Cuba": [
+        "Cuba"
+      ],
+      "Curaçao": [
+        "Curaçao"
+      ],
+      "Cyprus": [
+        "Cipro"
+      ],
+      "Czech Republic": [
+        "Repubblica Ceca"
+      ],
+      "Côte d'Ivoire": [
+        "Costa d'Avorio"
+      ],
+      "Denmark": [
+        "Danimarca"
+      ],
+      "Djibouti": [
+        "Gibuti"
+      ],
+      "Dominica": [
+        "Dominica"
+      ],
+      "Dominican Republic": [
+        "Repubblica Dominicana"
+      ],
+      "Ecuador": [
+        "Ecuador"
+      ],
+      "Egypt": [
+        "Egitto"
+      ],
+      "El Salvador": [
+        "El Salvador"
+      ],
+      "Equatorial Guinea": [
+        "Guinea Equatoriale"
+      ],
+      "Eritrea": [
+        "Eritrea"
+      ],
+      "Estonia": [
+        "Estonia"
+      ],
+      "Eswatini": [
+        "eSwatini"
+      ],
+      "Ethiopia": [
+        "Etiopia"
+      ],
+      "Falkland Islands": [
+        "Isole Falkland"
+      ],
+      "Faroe Islands": [
+        "Isole Faroe"
+      ],
+      "Federated States of Micronesia": [
+        "Stati Federati di Micronesia"
+      ],
+      "Fiji": [
+        "Fiji"
+      ],
+      "Finland": [
+        "Finlandia"
+      ],
+      "France": [
+        "Francia"
+      ],
+      "French Guiana": [
+        "Guyana Francese"
+      ],
+      "French Polynesia": [
+        "Polinesia Francese"
+      ],
+      "French Southern Territories": [
+        "Territori australi francesi"
+      ],
+      "Gabon": [
+        "Gabon"
+      ],
+      "Gambia": [
+        "Gambia"
+      ],
+      "Georgia": [
+        "Georgia"
+      ],
+      "Germany": [
+        "Germania"
+      ],
+      "Ghana": [
+        "Ghana"
+      ],
+      "Gibraltar": [
+        "Gibilterra"
+      ],
+      "Greece": [
+        "Grecia"
+      ],
+      "Greenland": [
+        "Groenlandia"
+      ],
+      "Grenada": [
+        "Grenada"
+      ],
+      "Guadeloupe": [
+        "Guadalupe"
+      ],
+      "Guam": [
+        "Guam"
+      ],
+      "Guatemala": [
+        "Guatemala"
+      ],
+      "Guernsey": [
+        "Guernsey"
+      ],
+      "Guinea": [
+        "Guinea"
+      ],
+      "Guinea-Bissau": [
+        "Guinea-Bissau"
+      ],
+      "Guyana": [
+        "Guyana"
+      ],
+      "Haiti": [
+        "Haiti"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Isola Heard e Isole McDonald"
+      ],
+      "Holy See (Vatican City State)": [
+        "Città del Vaticano"
+      ],
+      "Honduras": [
+        "Honduras"
+      ],
+      "Hong Kong": [
+        "Hong Kong"
+      ],
+      "Hungary": [
+        "Ungheria"
+      ],
+      "Iceland": [
+        "Islanda"
+      ],
+      "India": [
+        "India"
+      ],
+      "Indonesia": [
+        "Indonesia"
+      ],
+      "International": [
+        "Internazionale"
+      ],
+      "Iran": [
+        "Iran"
+      ],
+      "Iraq": [
+        "Iraq"
+      ],
+      "Ireland": [
+        "Irlanda"
+      ],
+      "Isle of Man": [
+        "Isola di Man"
+      ],
+      "Israel": [
+        "Israele"
+      ],
+      "Italy": [
+        "Italia"
+      ],
+      "Jamaica": [
+        "Giamaica"
+      ],
+      "Japan": [
+        "Giappone"
+      ],
+      "Jersey": [
+        "Jersey"
+      ],
+      "Jordan": [
+        "Giordania"
+      ],
+      "Kazakhstan": [
+        "Kazakistan"
+      ],
+      "Kenya": [
+        "Kenya"
+      ],
+      "Kiribati": [
+        "Kiribati"
+      ],
+      "Kosovo": [
+        "Kosovo"
+      ],
+      "Kuwait": [
+        "Kuwait"
+      ],
+      "Kyrgyzstan": [
+        "Kirghizistan"
+      ],
+      "Laos": [
+        "Laos"
+      ],
+      "Latvia": [
+        "Lettonia"
+      ],
+      "Lebanon": [
+        "Libano"
+      ],
+      "Lesotho": [
+        "Lesoto"
+      ],
+      "Liberia": [
+        "Liberia"
+      ],
+      "Libya": [
+        "Libia"
+      ],
+      "Liechtenstein": [
+        "Liechtenstein"
+      ],
+      "Lithuania": [
+        "Lituania"
+      ],
+      "Luxembourg": [
+        "Lussemburgo"
+      ],
+      "Macao": [
+        "Macao"
+      ],
+      "Madagascar": [
+        "Madagascar"
+      ],
+      "Malawi": [
+        "Malawi"
+      ],
+      "Malaysia": [
+        "Malesia"
+      ],
+      "Maldives": [
+        "Maldive"
+      ],
+      "Mali": [
+        "Mali"
+      ],
+      "Malta": [
+        "Malta"
+      ],
+      "Marshall Islands": [
+        "Isole Marshall"
+      ],
+      "Martinique": [
+        "Martinica"
+      ],
+      "Mauritania": [
+        "Mauritania"
+      ],
+      "Mauritius": [
+        "Mauritius"
+      ],
+      "Mayotte": [
+        "Mayotte"
+      ],
+      "Mexico": [
+        "Messico"
+      ],
+      "Moldova": [
+        "Moldavia"
+      ],
+      "Monaco": [
+        "Monaco"
+      ],
+      "Mongolia": [
+        "Mongolia"
+      ],
+      "Montenegro": [
+        "Montenegro"
+      ],
+      "Montserrat": [
+        "Montserrat"
+      ],
+      "Morocco": [
+        "Marocco"
+      ],
+      "Mozambique": [
+        "Mozambico"
+      ],
+      "Myanmar": [
+        "Myanmar (Birmania)"
+      ],
+      "Namibia": [
+        "Namibia"
+      ],
+      "Nauru": [
+        "Nauru"
+      ],
+      "Nepal": [
+        "Nepal"
+      ],
+      "Netherlands": [
+        "Paesi Bassi"
+      ],
+      "New Caledonia": [
+        "Nuova Caledonia"
+      ],
+      "New Zealand": [
+        "Nuova Zelanda"
+      ],
+      "Nicaragua": [
+        "Nicaragua"
+      ],
+      "Niger": [
+        "Niger"
+      ],
+      "Nigeria": [
+        "Nigeria"
+      ],
+      "Niue": [
+        "Niue"
+      ],
+      "Norfolk Island": [
+        "Isola Norfolk"
+      ],
+      "North Korea": [
+        "Corea del Nord"
+      ],
+      "North Macedonia": [
+        "Macedonia del Nord"
+      ],
+      "Northern Mariana Islands": [
+        "Isole Marianne Settentrionali"
+      ],
+      "Norway": [
+        "Norvegia"
+      ],
+      "Oman": [
+        "Oman"
+      ],
+      "Pakistan": [
+        "Pakistan"
+      ],
+      "Palau": [
+        "Palau"
+      ],
+      "Palestine": [
+        "Palestina"
+      ],
+      "Panama": [
+        "Panama"
+      ],
+      "Papua New Guinea": [
+        "Papua Nuova Guinea"
+      ],
+      "Paraguay": [
+        "Paraguay"
+      ],
+      "Peru": [
+        "Perù"
+      ],
+      "Philippines": [
+        "Filippine"
+      ],
+      "Pitcairn": [
+        "Isole Pitcairn"
+      ],
+      "Poland": [
+        "Polonia"
+      ],
+      "Portugal": [
+        "Portogallo"
+      ],
+      "Puerto Rico": [
+        "Porto Rico"
+      ],
+      "Qatar": [
+        "Qatar"
+      ],
+      "Reunion": [
+        "Riunione"
+      ],
+      "Romania": [
+        "Romania"
+      ],
+      "Russia": [
+        "Russia"
+      ],
+      "Rwanda": [
+        "Ruanda"
+      ],
+      "Saint Barthélemy": [
+        "Saint Barthélemy"
+      ],
+      "Saint Helena": [
+        "Sant'Elena"
+      ],
+      "Saint Kitts and Nevis": [
+        "Saint Kitts e Nevis"
+      ],
+      "Saint Lucia": [
+        "Santa Lucia"
+      ],
+      "Saint Martin (French Part)": [
+        "Saint Martin (parte francese)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Saint Pierre e Miquelon"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Saint Vincent e Grenadines"
+      ],
+      "Samoa": [
+        "Samoa"
+      ],
+      "San Marino": [
+        "San Marino"
+      ],
+      "Sao Tome and Principe": [
+        "São Tomé e Príncipe"
+      ],
+      "Saudi Arabia": [
+        "Arabia Saudita"
+      ],
+      "Senegal": [
+        "Senegal"
+      ],
+      "Serbia": [
+        "Serbia"
+      ],
+      "Seychelles": [
+        "Seychelles"
+      ],
+      "Sierra Leone": [
+        "Sierra Leone"
+      ],
+      "Singapore": [
+        "Singapore"
+      ],
+      "Sint Maarten": [
+        "Sint Maarten"
+      ],
+      "Slovakia": [
+        "Slovacchia"
+      ],
+      "Slovenia": [
+        "Slovenia"
+      ],
+      "Solomon Islands": [
+        "Isole Salomone"
+      ],
+      "Somalia": [
+        "Somalia"
+      ],
+      "South Africa": [
+        "Sudafrica"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Georgia del Sud e Isole Sandwich Australi"
+      ],
+      "South Korea": [
+        "Corea del Sud"
+      ],
+      "South Ossetia": [
+        "Ossezia del Sud"
+      ],
+      "South Sudan": [
+        "Sudan Del Sud"
+      ],
+      "Spain": [
+        "Spagna"
+      ],
+      "Sri Lanka": [
+        "Sri Lanka"
+      ],
+      "Sudan": [
+        "Sudan"
+      ],
+      "Suriname": [
+        "Suriname"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Svalbard e Jan Mayen"
+      ],
+      "Sweden": [
+        "Svezia"
+      ],
+      "Switzerland": [
+        "Svizzera"
+      ],
+      "Syria": [
+        "Siria"
+      ],
+      "Taiwan": [
+        "Taiwan"
+      ],
+      "Tajikistan": [
+        "Tagikistan"
+      ],
+      "Tanzania": [
+        "Tanzania"
+      ],
+      "Thailand": [
+        "Thailandia"
+      ],
+      "Timor-Leste": [
+        "Timor Est"
+      ],
+      "Togo": [
+        "Togo"
+      ],
+      "Tokelau": [
+        "Tokelau"
+      ],
+      "Tonga": [
+        "Tonga"
+      ],
+      "Trinidad and Tobago": [
+        "Trinidad e Tobago"
+      ],
+      "Tristan da Cunha": [
+        "Tristano da Cunha"
+      ],
+      "Tunisia": [
+        "Tunisia"
+      ],
+      "Turkey": [
+        "Turchia"
+      ],
+      "Turkmenistan": [
+        "Turkmenistan"
+      ],
+      "Turks and Caicos Islands": [
+        "Isole Turks e Caicos"
+      ],
+      "Tuvalu": [
+        "Tuvalu"
+      ],
+      "Uganda": [
+        "Uganda"
+      ],
+      "Ukraine": [
+        "Ucraina"
+      ],
+      "United Arab Emirates": [
+        "Emirati Arabi Uniti"
+      ],
+      "United Kingdom": [
+        "Regno Unito"
+      ],
+      "United States": [
+        "Stati Uniti"
+      ],
+      "United States Minor Outlying Islands": [
+        "Isole minori esterne degli Stati Uniti d'America"
+      ],
+      "Uruguay": [
+        "Uruguay"
+      ],
+      "Uzbekistan": [
+        "Uzbekistan"
+      ],
+      "Vanuatu": [
+        "Vanuatu"
+      ],
+      "Venezuela": [
+        "Venezuela"
+      ],
+      "Vietnam": [
+        "Vietnam"
+      ],
+      "Virgin Islands, British": [
+        "Isole Vergini Britanniche"
+      ],
+      "Virgin Islands, U.S.": [
+        "Isole Vergini Americane."
+      ],
+      "Wallis and Futuna": [
+        "Wallis e Futuna"
+      ],
+      "Western Sahara": [
+        "Sahara Occidentale"
+      ],
+      "Yemen": [
+        "Yemen"
+      ],
+      "Zambia": [
+        "Zambia"
+      ],
+      "Zimbabwe": [
+        "Zimbabwe"
+      ],
+      "Åland Islands": [
+        "Isole Åland"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Fattura scaduta"
+      ]
+    },
+    "Description": {
+      "An always available meeting room for people you trust.": [
+        "Una sala riunioni sempre disponibile per le persone di cui ti fidi."
+      ],
+      "Plan meetings and send invites with ${ CALENDAR_APP_NAME }.": [
+        "Pianifica riunioni e invia inviti con ${ CALENDAR_APP_NAME }."
+      ],
+      "Rotating group encryption key for best security": [
+        "Rotazione della chiave crittografica del gruppo per la massima sicurezza"
+      ],
+      "Setting up group end-to-end encryption with advanced Messaging Layer Security (MLS)": [
+        "Configurazione della crittografia end-to-end di gruppo con Messaging Layer Security (MLS) avanzata"
+      ],
+      "Start a call immediately then share the link with others.": [
+        "Avvia una chiamata subito, poi condividi il link con gli altri."
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "Contatti sicuri"
+      ]
+    },
+    "Error": {
+      "Domain not available, try again later": [
+        "Dominio non disponibile, riprovare più tardi"
+      ],
+      "Email is not valid": [
+        "Indirizzo email non valido"
+      ],
+      "Enter 6 digits": [
+        "Inserisci il codice a 6 cifre"
+      ],
+      "Failed to create meeting": [
+        "Impossibile creare la riunione"
+      ],
+      "Failed to decrypt session key": [
+        "Decriptazione della chiave di sessione non riuscita"
+      ],
+      "Failed to get room name": [
+        "Impossibile ottenere il nome della stanza"
+      ],
+      "Failed to initialize handshake": [
+        "Impossibile inizializzare l'handshake\n"
+      ],
+      "Failed to join meeting. Please try again later": [
+        "Impossibile ottenere i dettagli, per favore riprova più tardi"
+      ],
+      "Failed to join meeting. Please try again later.": [
+        "Impossibile partecipare alla riunione. Per favore, riprova più tardi."
+      ],
+      "Failed to lock meeting": [
+        "Impossibile bloccare la riunione"
+      ],
+      "Failed to start screen share": [
+        "Impossibile avviare la condivisione dello schermo"
+      ],
+      "Failed to unlock meeting": [
+        "Impossibile sbloccare la riunione"
+      ],
+      "Incorrect username": [
+        "Username non corretto"
+      ],
+      "Invalid passphrase": [
+        "Frase d'accesso non valida"
+      ],
+      "Invalid verification code": [
+        "Codice di verifica non valido"
+      ],
+      "Not a valid number": [
+        "Numero non valido"
+      ],
+      "Passwords do not match": [
+        "Le password non corrispondono"
+      ],
+      "Request timed out": [
+        "Timeout della richiesta"
+      ],
+      "Screen share is not supported on mobile browsers": [
+        "La condivisione dello schermo non è supportata sui browser mobili"
+      ],
+      "Signature verification failed": [
+        "Verifica della firma non riuscita"
+      ],
+      "The email addresses do not match": [
+        "Gli indirizzi email non corrispondono."
+      ],
+      "The meeting link you are trying to access does not exist or may have been deleted.": [
+        "Il link alla riunione a cui stai cercando di accedere non esiste o potrebbe essere stato eliminato."
+      ],
+      "The meeting password is incorrect": [
+        "La password della riunione non è corretta"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Questo campo supera il numero massimo di ${ maximumLength } caratteri."
+      ],
+      "This field is required": [
+        "Campo necessario"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Questo campo richiede un minimo di ${ minimumLength } caratteri."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Prova ad usare solo lettere, numeri e _.-"
+      ],
+      "Unknown error": [
+        "Errore sconosciuto"
+      ],
+      "Username must begin with a letter or digit": [
+        "Il nome utente deve iniziare con una lettera o un numero."
+      ],
+      "Username must end with a letter or digit": [
+        "Il nome utente deve terminare con una lettera o un numero/"
+      ]
+    },
+    "Error message": {
+      "App currently unavailable": [
+        "App attualmente non disponibile"
+      ],
+      "Error: ${ errorMessage }": [
+        "Errore: ${ errorMessage }"
+      ],
+      "Oops, something went wrong": [
+        "Ops, si è verificato un errore"
+      ],
+      "Open in browser": [
+        "Apri nel browser"
+      ],
+      "Please refresh the page or try again later.": [
+        "Aggiorna la pagina o riprova più tardi."
+      ],
+      "Something went wrong": [
+        "Qualcosa è andato storto"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Per utilizzare ${ MAIL_APP_NAME } o ${ CALENDAR_APP_NAME }, passa alla versione web."
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Non è stato possibile caricare questa pagina. Aggiornar questa pagina o controlla la connessione internet."
+      ]
+    },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "Nessuna immagine selezionata"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Si è verificato un errore durante l'autenticazione con la tua chiave di sicurezza. Per favore riprova."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Inserisci una chiave di sicurezza collegata al tuo account ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Chiave di sicurezza"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Chiave di sicurezza"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Predefinito di sistema"
+      ],
+      "Theme font": [
+        "Carattere del tema"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Grande"
+      ],
+      "Medium (recommended)": [
+        "Medio (consigliato)"
+      ],
+      "Small": [
+        "Piccolo"
+      ],
+      "Very large": [
+        "Molto grande"
+      ],
+      "Very small": [
+        "Molto piccolo"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Account"
+      ],
+      "Apps": [
+        "Applicazioni"
+      ],
+      "Network": [
+        "Rete"
+      ],
+      "Other category": [
+        "Altre categorie"
+      ],
+      "Services": [
+        "Servizi"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "Email"
+      ],
+      "Manual": [
+        "Manuale"
+      ],
+      "No verification method available": [
+        "Nessun metodo di verifica disponibile"
+      ],
+      "SMS": [
+        "SMS"
+      ]
+    },
+    "Info": {
+      " and ": [
+        " e "
+      ],
+      "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
+        "${ MEET_APP_NAME } necessita di WebRTC per funzionare. Per favore, aggiorna il tuo browser o dispositivo a una versione che supporti WebRTC, prova un altro browser, o disattiva qualsiasi estensione che potrebbe bloccarlo."
+      ],
+      "${ user.DisplayName } has invited you to a ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME } meeting:": [
+        "${ user.DisplayName } ti ha invitato a una riunione di ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }:"
+      ],
+      "${ user.DisplayName }'s Meeting": [
+        "Riunione di ${ user.DisplayName }"
+      ],
+      "<Removed dangerous URL>": [
+        "<Removed dangerous URL>"
+      ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Ogni numero di telefono può essere utilizzato per verificare un unico account ${ BRAND_NAME }"
+      ],
+      "Anonymous ${ particle } ${ participantNumber }": [
+        "Anonimo ${ particle } ${ participantNumber }"
+      ],
+      "Are you sure you want to leave the meeting?": [
+        "Sei sicuro di voler lasciare la riunione?"
+      ],
+      "Attention required": [
+        "Attenzione"
+      ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Prima di richiedere un nuovo codice di verifica, controlla la tua cartella spam e verifica che ${ strong } sia l'indirizzo corretto."
+      ],
+      "camera": [
+        "webcam"
+      ],
+      "Check your system settings to make sure that a camera is available.": [
+        "Controlla le tue impostazioni di sistema per assicurarti che una fotocamera sia disponibile."
+      ],
+      "Check your system settings to make sure that a microphone is available.": [
+        "Controlla le tue impostazioni di sistema per assicurarti che una webcam sia disponibile."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Clicca \"Richiedi nuovo codice\" per ricevere un nuovo codice di verifica al ${ strong }. Se questo numero telefonico è incorretto, clicca su \"Modifica\" per correggerlo."
+      ],
+      "Connection lost": [
+        "Connessione persa"
+      ],
+      "Connection lost, please join meeting again": [
+        "Connessione persa, per favore, unisciti di nuovo alla riunione."
+      ],
+      "Copied to clipboard": [
+        "Copiato negli appunti"
+      ],
+      "Country code": [
+        "Codice nazione"
+      ],
+      "Custom combination": [
+        "Combinazione personalizzata"
+      ],
+      "Do you want people to ${ deviceContentType } you in the meeting?": [
+        "Vuoi che le persone ti ${ deviceContentType } nella riunione?"
+      ],
+      "Download current logs": [
+        "Scarica i log correnti"
+      ],
+      "Each code can only be used once": [
+        "Ogni codice può essere usato una sola volta."
+      ],
+      "Edit email address": [
+        "Modifica l'indirizzo email"
+      ],
+      "End-to-end encryption is active for screen share": [
+        "La crittografia end-to-end è attiva per la condivisione dello schermo."
+      ],
+      "Enter the code from your authenticator app": [
+        "Inserisci il codice dalla tua app di autenticazione."
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Inserisci il codice di verifica inviato a ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Inserisci il codice di verifica. Digita ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Inserisci la tua password (come amministratore dell'organizzazione)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Inserisci la tua password (come contatto attendibile)."
+      ],
+      "Every call, screen share, and chat is end-to-end encrypted to protect your most important connections.": [
+        "Ogni chiamata, condivisione schermo e chat è crittografato end-to-end per proteggere le tue connessioni più importanti."
+      ],
+      "Free meeting": [
+        "Incontro gratuito"
+      ],
+      "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
+        "Vai su about:config, cerca media.peerconnection.enabled e impostalo su true."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Se stai avendo problemi con la creazione del tuo account, chiedi un invito e ti risponderemo entro un giorno lavorativo."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Se non trovi l'email nella casella di posta, controlla la cartella spam."
+      ],
+      "Internet connection lost": [
+        "Connessione ad Internet interrotta"
+      ],
+      "is presenting": [
+        "sta presentando"
+      ],
+      "Joined": [
+        "Si è unito"
+      ],
+      "Learn more": [
+        "Scopri di più"
+      ],
+      "Loading": [
+        "Caricamento in corso"
+      ],
+      "Loading ${ appName }": [
+        "Caricamento di ${ appName } in corso"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Caricamento del calendario in corso. Verrai reindirizzato alla nostra piattaforma di pianificazione Calendly in una nuova scheda."
+      ],
+      "Loading...": [
+        "Caricamento in corso..."
+      ],
+      "Meeting created": [
+        "Riunione creata"
+      ],
+      "Meeting ID: ${ id }": [
+        "ID riunione: ${ id }"
+      ],
+      "Meeting locked. No new participants can join": [
+        "Riunione bloccata. Nessun nuovo partecipante può unirsi"
+      ],
+      "Meeting unlocked. Participants can join again.": [
+        "Riunione sbloccata. I partecipanti possono unirsi di nuovo."
+      ],
+      "Member": [
+        "Membro"
+      ],
+      "New": [
+        "Nuovo"
+      ],
+      "No ${ microphoneLinkButton }${ andString }${ cameraLinkButton } detected.": [
+        "Nessun ${ microphoneLinkButton }${ andString }${ cameraLinkButton } rilevato."
+      ],
+      "No camera detected.": [
+        "Nessuna webcam rilevata."
+      ],
+      "No microphone detected.": [
+        "Nessun microfono rilevato."
+      ],
+      "No results found": [
+        "Nessun risultato trovato"
+      ],
+      "No search results": [
+        "Nessun risultato di ricerca"
+      ],
+      "No speaker detected": [
+        "Nessun altoparlante rilevato"
+      ],
+      "Open external link": [
+        "Apri link esterno"
+      ],
+      "Other accounts": [
+        "Altri account"
+      ],
+      "Our end-to-end encrypted meetings protect privacy and empower truly free expression.": [
+        "Le nostre riunioni crittografate end-to-end proteggono la privacy e promuovono la vera libera espressione."
+      ],
+      "Permission denied": [
+        "Autorizzazione negata"
+      ],
+      "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
+        "Abilita l’accesso al tuo ${ microphoneLinkButton }${ andString }${ cameraLinkButton } per un’esperienza ottimale."
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Le informazioni di recupero rimarranno su questo dispositivo a meno che tu non decida di eliminarle."
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Aggiornare la pagina o ${ link } risolverà automaticamente la maggior parte dei problemi."
+      ],
+      "Secure meeting": [
+        "Riunione sicura"
+      ],
+      "Select a camera": [
+        "Seleziona una webcam"
+      ],
+      "Select a speaker": [
+        "Seleziona un altoparlante"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "I server sono irraggiungibili. Riprova tra qualche minuto"
+      ],
+      "Session timed out": [
+        "Sessione scaduta"
+      ],
+      "Share screen": [
+        "Condividi schermo"
+      ],
+      "Share the meeting invitation with others": [
+        "Condividi l'invito alla riunione con gli altri"
+      ],
+      "Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.": [
+        "Condividi questo link per invitare altri. Puoi anche trovarlo in qualsiasi momento cliccando sull'icona info nella barra degli strumenti."
+      ],
+      "This is an end-to-end encrypted chat with ephemeral messages. After you leave the call, you will not be able to access this chat.": [
+        "Questa è una chat crittografata end-to-end con messaggi effimeri. Dopo che lasci la chiamata, non potrai accedere a questa chat."
+      ],
+      "This meeting is locked. Please contact the host to join.": [
+        "Questa riunione è bloccata. Contatta l'organizzatore per partecipare."
+      ],
+      "This meeting is password protected": [
+        "Questa riunione è protetta da password"
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Verrai disconnesso da tutti gli account attualmente connessi."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "Completa la verifica umana. Questa è necessaria per contrastare spam e abusi."
+      ],
+      "Turn off camera": [
+        "Disattiva la webcam"
+      ],
+      "Turn off microphone": [
+        "Disattiva microfono"
+      ],
+      "Turn on camera": [
+        "Attiva la webcam"
+      ],
+      "Turn on microphone": [
+        "Attiva microfono"
+      ],
+      "We'll send a new verification code to ${ strong }": [
+        "Invieremo un nuovo codice di verifica a ${ strong }"
+      ],
+      "Week": [
+        "Settimana"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Quando imposti l'autenticazione a due fattori, forniamo codici di ripristino che puoi utilizzare per accedere se perdi l'accesso alla tua app di autenticazione."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Vuoi ricevere un nuovo codice di verifica o utilizzare un metodo alternativo?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Vuoi ricevere un nuovo codice di verifica?"
+      ],
+      "You can now return to the application to continue": [
+        "Ora puoi tornare all'applicazione per continuare"
+      ],
+      "You can still turn off your microphone and camera anytime in the meeting": [
+        "Puoi comunque disattivare il microfono e la webcam in qualsiasi momento durante la riunione"
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Trascorsi 28 giorni, le email non verranno più consegnate alla tua posta in arrivo, i tuoi link di condivisione di Drive verranno bloccati e non potrai caricare nuovi file. Per ripristinare il normale servizio, paga tutte le fatture scadute."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Le email non vengono più consegnate alla tua posta in arrivo. I tuoi link di condivisione di Drive non sono più attivi e non puoi caricare nuovi file. Per continuare ad usare il tuo account, paga tutte le fatture scadute."
+      ],
+      "Your always available meeting room, share it only with people you trust.": [
+        "La tua sala riunioni sempre disponibile, condividila solo con le persone di cui ti fidi."
+      ],
+      "Your browser or device isn’t supported": [
+        "Il tuo browser o dispositivo non è supportato"
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Questo indirizzo email verrà utilizzato esclusivamente per questa unica verifica."
+      ],
+      "Your meeting is ready": [
+        "La tua riunione è pronta"
+      ],
+      "Your personal link": [
+        "Il tuo link personale"
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Questo numero di telefono verrà utilizzato esclusivamente per questa unica verifica."
+      ],
+      "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
+        "Stai per aprire un link in una nuova scheda. Assicurati di fidarti del sito web prima di continuare."
+      ]
+    },
+    "Label": {
+      "${ BRAND_NAME } username": [
+        "Nome utente ${ BRAND_NAME }"
+      ],
+      "Attach screenshot(s)": [
+        "Allega screenshot"
+      ],
+      "Audio": [
+        "Audio"
+      ],
+      "Authenticator app": [
+        "App di autenticazione"
+      ],
+      "Browser": [
+        "Browser"
+      ],
+      "Browser version": [
+        "Versione del browser"
+      ],
+      "Category": [
+        "Categoria"
+      ],
+      "Code is 6 digits without spaces": [
+        "Codice a 6 cifre senza spazi"
+      ],
+      "Delete": [
+        "Elimina"
+      ],
+      "Delete recovery-related information.": [
+        "Elimina le informazioni di recupero."
+      ],
+      "Email address": [
+        "Indirizzo email"
+      ],
+      "Hide password": [
+        "Nascondi la password"
+      ],
+      "Include application logs in bug report": [
+        "Includi i log dell'applicazione nella segnalazione di bug"
+      ],
+      "Meeting ID": [
+        "ID meeting"
+      ],
+      "Operating system": [
+        "Sistema operativo"
+      ],
+      "Operating system version": [
+        "Versione del sistema operativo"
+      ],
+      "Passphrase": [
+        "Passphrase"
+      ],
+      "Password": [
+        "Password"
+      ],
+      "Phone number": [
+        "Numero di telefono"
+      ],
+      "Reveal password": [
+        "Mostra la password"
+      ],
+      "System information": [
+        "Informazioni sul sistema"
+      ],
+      "Verification code": [
+        "Codice di verifica"
+      ],
+      "What happened?": [
+        "Cos'è successo?"
+      ],
+      "Your password (admin)": [
+        "La tua password (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "La tua password (contatto attendibile)"
+      ]
+    },
+    "Link": {
+      "clearing your browser cache": [
+        "cancellare la cache del browser"
+      ],
+      "Learn more": [
+        "Scopri di più"
+      ],
+      "Request an invite": [
+        "Richiedi un invito"
+      ],
+      "What’s this?": [
+        "Cos'è questo?"
+      ]
+    },
+    "Meet": {
+      "Your browser or device software does not support ${ MEET_APP_NAME }. ${ MEET_APP_NAME } requires WebAssembly (Wasm) to run. Please update your browser or device to a version that supports Wasm, or try using a different browser.": [
+        "Il tuo browser o il software del tuo dispositivo non supporta ${ MEET_APP_NAME }. ${ MEET_APP_NAME } richiede WebAssembly (Wasm) per funzionare. Aggiorna il tuo browser o dispositivo a una versione che supporti Wasm, oppure prova a usare un browser diverso."
+      ]
+    },
+    "meet_2025": {
+      "Since you are the only participant in this meeting, the meeting will automatically close. Do you want to stay in this meeting?": [
+        "Dato che sei l'unico partecipante a questa riunione, la riunione si chiuderà automaticamente. Vuoi rimanere in questa riunione?"
+      ]
+    },
+    "meet_2025 Action": {
+      "Leave meeting": [
+        "Lascia la riunione"
+      ]
+    },
+    "meet_2025 Error": {
+      "Failed to start Picture-in-Picture": [
+        "Impossibile avviare la modalità Picture-in-Picture"
+      ]
+    },
+    "Notification": {
+      "Coming soon": [
+        "In arrivo"
+      ],
+      "Link copied to clipboard": [
+        "Link copiato negli appunti"
+      ],
+      "Successfully rotated your personal meeting": [
+        "Riunione personale ruotata con successo"
+      ],
+      "Your personal meeting link has been copied to the clipboard": [
+        "Il tuo link personale per la riunione è stato copiato negli appunti"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Alcune immagini non sono state caricate a causa di nomi di file duplicati nell'attuale selezione."
+      ]
+    },
+    "Placeholder": {
+      "A way to contact you": [
+        "Un modo per contattarti"
+      ],
+      "E.g., ": [
+        "Ad es "
+      ],
+      "Enter passphrase": [
+        "Inserisci la frase di accesso"
+      ],
+      "Enter secret passphrase": [
+        "Inserisci frase d'accesso segreta"
+      ],
+      "Find...": [
+        "Cerca..."
+      ],
+      "Password": [
+        "Password"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Descrivi il problema e includi eventuali messaggi di errore"
+      ],
+      "Select": [
+        "Seleziona"
+      ]
+    },
+    "Safety review": {
+      "Review account safety": [
+        "Controlla la sicurezza dell'account"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "L'accesso non è stato completato correttamente."
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "Nessun risultato trovato"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Disconnetti"
+      ],
+      "Stay signed in": [
+        "Rimani connesso"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } ora",
+        "${ gracePeriodHoursRemaining } ore"
+      ],
+      "${ passwordReset } is now available.": [
+        "La ${ passwordReset } è ora disponibile."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Se esci prima di reimpostare la password potresti perdere l'accesso al tuo account."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Se esci senza reimpostare la password potresti perdere l'accesso al tuo account."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Potrai reimpostare la tua password tra ${ boldTimeLeft }."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Reimpostazione della password"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Vuoi uscire dall'account senza reimpostare la password?"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Vai ai piani di abbonamento"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ]
+    },
+    "Spotlight": {
+      "Get up to ${ credits } in credits.": [
+        "Guadagna fino a ${ credits } in crediti."
+      ],
+      "Invite friends to ${ BRAND_NAME }": [
+        "Invita gli amici su ${ BRAND_NAME }"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Accedi"
+      ],
+      "Sign in to your organization": [
+        "Accedi alla tua organizzazione"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Verrai reindirizzato al tuo provider SSO di terze parti."
+      ]
+    },
+    "Success": {
+      "Code sent to ${ methodTo }": [
+        "Codice inviato a ${ methodTo }"
+      ],
+      "Email address copied to clipboard": [
+        "Indirizzo email copiato negli appunti"
+      ],
+      "Problem reported": [
+        "Problema segnalato"
+      ],
+      "Verification successful": [
+        "Verifica riuscita"
+      ]
+    },
+    "Title": {
+      "${ displayName }'s personal meeting": [
+        "Riunione personale di ${ displayName }"
+      ],
+      "Account restricted": [
+        "Account limitato"
+      ],
+      "Account temporarily locked": [
+        "Account temporaneamente bloccato"
+      ],
+      "Are you sure?": [
+        "Sei sicuro?"
+      ],
+      "Authenticator": [
+        "Autenticazione"
+      ],
+      "Chat": [
+        "Chat"
+      ],
+      "Date": [
+        "Data"
+      ],
+      "Enter your password": [
+        "Inserisci la tua password"
+      ],
+      "Help and feedback": [
+        "Aiuto e feedback"
+      ],
+      "Help center": [
+        "Centro assistenza"
+      ],
+      "Human verification": [
+        "Verifica umana"
+      ],
+      "Info": [
+        "Info"
+      ],
+      "Invalid verification code": [
+        "Codice di verifica non valido"
+      ],
+      "Invite link": [
+        "Link di invito"
+      ],
+      "Join meeting": [
+        "Unisciti alla riunione"
+      ],
+      "Joining meeting with ${ participantCount } other participants…": [
+        "Ti stai unendo alla riunione con ${ participantCount } altri partecipanti…"
+      ],
+      "Meeting details": [
+        "Dettagli della riunione"
+      ],
+      "Minicalendar": [
+        "Mini calendario"
+      ],
+      "Participants": [
+        "Partecipanti"
+      ],
+      "Passphrase": [
+        "Frase d'accesso"
+      ],
+      "Personal meeting": [
+        "Riunione personale"
+      ],
+      "Personal meeting link": [
+        "Link della riunione personale"
+      ],
+      "Protecting meeting with end-to-end encryption...": [
+        "Proteggendo la riunione con crittografia end-to-end..."
+      ],
+      "Report a problem": [
+        "Segnala un problema"
+      ],
+      "Request new code": [
+        "Richiedi nuovo codice"
+      ],
+      "Schedule a meeting": [
+        "Programma una riunione"
+      ],
+      "Schedule meeting": [
+        "Programma una riunione"
+      ],
+      "Secret Passphrase": [
+        "Frase d'accesso segreta"
+      ],
+      "Secure meeting": [
+        "Riunione sicura"
+      ],
+      "Settings": [
+        "Impostazioni"
+      ],
+      "Sign out": [
+        "Esci dall'account"
+      ],
+      "Start secure meeting": [
+        "Avvia riunione sicura"
+      ],
+      "Starting meeting as the first participant…": [
+        "Avvio della riunione come primo partecipante..."
+      ],
+      "Talk confidentially": [
+        "Parla in confidenza"
+      ],
+      "Time": [
+        "Ora"
+      ],
+      "Title": [
+        "Titolo"
+      ],
+      "Two-factor authentication": [
+        "Autenticazione a due fattori"
+      ],
+      "Upcoming meetings": [
+        "Prossime riunioni"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Oggi"
+      ]
+    },
+    "Tooltip": {
+      "Blur background": [
+        "Sfocatura dello sfondo"
+      ],
+      "Blur background is not supported on your browser": [
+        "La sfocatura dello sfondo non è supportata dal tuo browser"
+      ],
+      "Recurring meeting": [
+        "Riunione ricorrente"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "La password deve contenere almeno ${ MIN_PASSWORD_LENGTH } carattere",
+        "La password deve contenere almeno ${ MIN_PASSWORD_LENGTH } caratteri"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Prova un nome utente più corto (massimo ${ n } carattere)",
+        "Prova un nome utente più corto (massimo ${ n } caratteri)"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problema con Wallet"
+      ]
+    },
+    "Warning": {
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Le segnalazioni non sono crittografate end-to-end, non inviare alcuna informazione sensibile."
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        "Sfortunatamente, al momento non sei online. Per favore completa il modulo sotto per descrivere il problema, lo esamineremo e ti contatteremo quando quando saremo di nuovo online."
+      ]
+    }
+  }
+}

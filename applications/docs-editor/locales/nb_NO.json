@@ -684,6 +684,397 @@
         "Tekst"
       ]
     },
+    "sheets_2025:Action": {
+      "Insert image in cell": [
+        "Sett inn bilde i cellen"
+      ],
+      "Insert image over cells": [
+        "Sett inn bilde over celler"
+      ]
+    },
+    "sheets_2025:Color picker": {
+      "Reset": [
+        "Tilbakestill"
+      ]
+    },
+    "sheets_2025:Range selector menu": {
+      "Add new": [
+        "Legg til ny"
+      ]
+    },
+    "sheets_2025:Sheet context menu": {
+      "Change color": [
+        "Endre farge"
+      ],
+      "Delete": [
+        "Slett"
+      ],
+      "Duplicate": [
+        "Dupliser"
+      ],
+      "Rename": [
+        "Gi nytt navn"
+      ]
+    },
+    "sheets_2025:Sheet switcher": {
+      "Show": [
+        "Vis"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar data menu (sort submenu)": {
+      "(A to Z)": [
+        "(A til Å)"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar edit menu": {
+      "Copy": [
+        "Kopier"
+      ],
+      "Cut": [
+        "Klipp ut"
+      ],
+      "Paste": [
+        "Lim inn"
+      ],
+      "Redo": [
+        "Gjør om"
+      ],
+      "Undo": [
+        "Angre"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar file menu": {
+      "Comma Separated Values (.csv)": [
+        "Kommaseparerte verdier (.csv)"
+      ],
+      "Download": [
+        "Nedlastet"
+      ],
+      "Download logs": [
+        "Last ned logger"
+      ],
+      "Help": [
+        "Hjelp"
+      ],
+      "Import": [
+        "Importer"
+      ],
+      "Make a copy": [
+        "Lag en kopi"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
+      "Move to folder": [
+        "Flytt til mappe"
+      ],
+      "Move to trash": [
+        "Flytt til papirkurv"
+      ],
+      "New spreadsheet": [
+        "Nytt regneark"
+      ],
+      "Open ${ DRIVE_APP_NAME }": [
+        "Åpne ${ DRIVE_APP_NAME }"
+      ],
+      "Print": [
+        "Skriv ut"
+      ],
+      "See version history": [
+        "Se versjonshistorikk"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Tabulatorseparerte verdier (.tsv)"
+      ],
+      "View recent spreadsheets": [
+        "Vis nylige regneark"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar format menu": {
+      "Alignment": [
+        "Justering"
+      ],
+      "Bold": [
+        "Fet"
+      ],
+      "Clear": [
+        "Tøm"
+      ],
+      "Clear formatting": [
+        "Fjern formatering"
+      ],
+      "Font size": [
+        "Skriftstørrelse"
+      ],
+      "Italic": [
+        "Kursiv"
+      ],
+      "Number": [
+        "Tall"
+      ],
+      "Strikethrough": [
+        "Gjennomstrek"
+      ],
+      "Text": [
+        "Tekst"
+      ],
+      "Theme": [
+        "Tema"
+      ],
+      "Underline": [
+        "Understrek"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar format menu (alignment)": {
+      "Center": [
+        "Midtstill"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar insert menu": {
+      "Cells": [
+        "Celler"
+      ],
+      "Chart": [
+        "Diagram"
+      ],
+      "Checkbox": [
+        "Avmerkingsboks"
+      ],
+      "Columns": [
+        "Kolonner"
+      ],
+      "Function": [
+        "Funksjon"
+      ],
+      "Image": [
+        "Bilde"
+      ],
+      "Insert cells and shift down": [
+        "Sett inn celler og flytt ned"
+      ],
+      "Insert cells and shift right": [
+        "Sett inn celler og flytt til høyre"
+      ],
+      "Link": [
+        "Kobling"
+      ],
+      "Note": [
+        "Merk"
+      ],
+      "Rows": [
+        "Rader"
+      ],
+      "Sheet": [
+        "Ark"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar title": {
+      "Data": [
+        "Data"
+      ],
+      "Edit": [
+        "Rediger"
+      ],
+      "File": [
+        "Fil"
+      ],
+      "Format": [
+        "Format"
+      ],
+      "Insert": [
+        "Sett inn"
+      ],
+      "View": [
+        "Visning"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar view menu": {
+      "Show": [
+        "Vis"
+      ],
+      "Zoom": [
+        "Zoom"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor number formats menu": {
+      "$ US Dollar": [
+        "$ Amerikanske dollar"
+      ],
+      "Accounting": [
+        "Regnskap"
+      ],
+      "CN¥ Chinese Yuan": [
+        "CN¥ Kinesisk yuan"
+      ],
+      "Currency": [
+        "Valuta"
+      ],
+      "Currency rounded": [
+        "Valuta avrundet"
+      ],
+      "Date": [
+        "Dato"
+      ],
+      "Date time": [
+        "Dato og tid"
+      ],
+      "Duration": [
+        "Varighet"
+      ],
+      "Financial": [
+        "Finanser"
+      ],
+      "General": [
+        "Generelt"
+      ],
+      "Long date": [
+        "Langt datoformat"
+      ],
+      "More currency": [
+        "Flere valuta"
+      ],
+      "Number": [
+        "Tall"
+      ],
+      "Percent": [
+        "Prosent"
+      ],
+      "Plain text": [
+        "Ren tekst"
+      ],
+      "Scientific": [
+        "Vitenskapelig"
+      ],
+      "Time": [
+        "Tid"
+      ],
+      "£ Pound": [
+        "£ Pund"
+      ],
+      "¥ Yen": [
+        "¥ Yen"
+      ],
+      "€ Euro": [
+        "€ Euro"
+      ],
+      "₹ Rupee": [
+        "₹ Rupi"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor search dialog": {
+      "Close": [
+        "Lukk"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor toolbar": {
+      "Bold": [
+        "Fet"
+      ],
+      "Chart": [
+        "Diagram"
+      ],
+      "Clear formatting": [
+        "Fjern formatering"
+      ],
+      "Decrease decimal places": [
+        "Reduser antall desimaler"
+      ],
+      "Decrease font size": [
+        "Reduser skriftstørrelsen"
+      ],
+      "Default (${ defaultFont })": [
+        "Standard (${ defaultFont })"
+      ],
+      "Font": [
+        "Skrifttype"
+      ],
+      "Font size": [
+        "Skriftstørrelse"
+      ],
+      "Format as currency": [
+        "Formater som valuta"
+      ],
+      "Format as percent": [
+        "Formater som prosent"
+      ],
+      "Increase decimal places": [
+        "Øk antall desimaler"
+      ],
+      "Increase font size": [
+        "Øk skriftstørrelsen"
+      ],
+      "Insert link": [
+        "Sett inn kobling"
+      ],
+      "Italic": [
+        "Kursiv"
+      ],
+      "Merge cells": [
+        "Slå sammen celler"
+      ],
+      "More": [
+        "Mer"
+      ],
+      "More formats": [
+        "Flere formater"
+      ],
+      "Redo": [
+        "Gjør om"
+      ],
+      "Strikethrough": [
+        "Gjennomstrek"
+      ],
+      "Text color": [
+        "Tekstfarge"
+      ],
+      "Underline": [
+        "Understrek"
+      ],
+      "Undo": [
+        "Angre"
+      ],
+      "Zoom": [
+        "Zoom"
+      ]
+    },
+    "sheets_2025:Spreadsheet insert link dialog": {
+      "Apply": [
+        "Anvend"
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Insert link": [
+        "Sett inn kobling"
+      ],
+      "Paste link": [
+        "Lim inn kobling"
+      ]
+    },
+    "sheets_2025:Spreadsheet link tooltip": {
+      "Copy link": [
+        "Kopier kobling"
+      ],
+      "Edit link": [
+        "Rediger kobling"
+      ],
+      "Link copied to clipboard": [
+        "Kobling kopiert til utklippstavlen"
+      ],
+      "Remove link": [
+        "Fjern kobling"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar conditional format dialog close": {
+      "Close": [
+        "Lukk"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar conditional format dialog delete rule": {
+      "Delete rule": [
+        "Slett regel"
+      ]
+    },
     "Title": {
       "Delete comment": [
         "Slett kommentar"

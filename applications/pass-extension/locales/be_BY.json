@@ -786,6 +786,9 @@
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } - гэта спосаб аўтэнтыфікацыі электроннай пошты, які распрацаваны для выяўлення падробкі адраса адпраўніка падчас дастаўкі ліста. Настойліва рэкамендуецца наладзіць SPF, каб паменшыць верагоднасць з'яўлення вашых лістоў у папцы са спамам атрымальніка."
       ],
+      "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
+        "Гэтыя сховішчы не будуць даступныя, а іх змесціва не будзе даступна для пошуку або аўтазапаўнення."
+      ],
       "This account is vulnerable, visit the service and change your password.": [
         "Гэты ўліковы запіс з'яўляецца ўразлівым. Наведайце сэрвіс і змяніце пароль."
       ],
@@ -1889,6 +1892,12 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
       ],
       "Moving items": [
         "Перамяшчэнне элементаў"
@@ -4252,8 +4261,8 @@
       "Grant permissions": [
         "Даць дазволы"
       ],
-      "Hidden vaults won’t be visible during search and autofill.": [
-        "Схаваныя сховішчы не будуць бачны падчас пошуку і аўтазапаўненні."
+      "Hidden vaults": [
+        "Схаваныя сховішчы"
       ],
       "Hide my email": [
         "Схаваць маю электронную пошту"
@@ -4470,6 +4479,9 @@
       ],
       "Vault shared with you": [
         "Сховішча абагуленае з вамі"
+      ],
+      "Visible vaults": [
+        "Бачныя сховішчы"
       ],
       "Weak password": [
         "Ненадзейны пароль"

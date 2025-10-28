@@ -3096,6 +3096,9 @@
       "Billing cycle": [
         "Cicle de facturació"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Browser": [
         "Navegador"
       ],
@@ -3179,6 +3182,9 @@
       ],
       "Folder location": [
         "Ubicació de la carpeta"
+      ],
+      "Get the deal": [
+        "Aconseguiu l'oferta"
       ],
       "Hide password": [
         "Amaga la contrasenya"
@@ -4354,6 +4360,9 @@
       "Advanced account protection": [
         "Protecció avançada del compte"
       ],
+      "File attachments (up to 10GB)": [
+        "Fitxers adjunts (fins a 10 GB)"
+      ],
       "Team policies": [
         "Regles d'equip"
       ]
@@ -4474,6 +4483,17 @@
         "El cupó és vàlid per a ${ couponRedemptions } renovació.",
         "El cupó és vàlid per a ${ couponRedemptions } renovacions."
       ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "El preu amb descompte especial és vàlid durant el primer ${ subscriptionLength } mes.",
+        "El preu amb descompte especial és vàlid durant el primers ${ subscriptionLength } mesos."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "El preu amb descompte especial és vàlid durant el primer mes. El cupó és vàlid per a ${ couponRedemptions } renovació. Després, es renovarà automàticament per ${ renewPriceStr } durant 1 mes. Podreu cancel·lar-ho en qualsevol moment.",
+        "El preu amb descompte especial és vàlid durant el primer mes. El cupó és vàlid per a ${ couponRedemptions } renovacions. Després, es renovarà automàticament per ${ renewPriceStr } durant 1 mes. Podreu cancel·lar-ho en qualsevol moment."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "El preu amb descompte especial és vàlid durant el primer mes. Després, es renovarà automàticament per ${ renewPriceStr } cada mes. Podreu cancel·lar-ho en qualsevol moment."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer ${ subscriptionLength } mes.",
         "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant els primers ${ subscriptionLength } mesos."
@@ -4521,6 +4541,9 @@
       ],
       "Your payment is still being processed": [
         "Encara s'està processant el vostre pagament."
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+        "La vostra subscripció ja té un descompte. Passar a aquesta nova promoció significa que el descompte actual no s'aplicarà."
       ]
     },
     "Payments.Error": {
@@ -5414,6 +5437,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: l'assistent d'IA que respecta la vostra privacitat"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
       ]

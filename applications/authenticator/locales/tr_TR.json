@@ -1,0 +1,696 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=2; plural=(n > 1);",
+    "language": "tr_TR"
+  },
+  "contexts": {
+    "Action": {
+      "Animate code change": [
+        "Kod değişimi canlandırılsın"
+      ],
+      "Automatic backups": [
+        "Otomatik yedekleme"
+      ],
+      "Backup and reset": [
+        "Yedekle ve sıfırla"
+      ],
+      "Cancel": [
+        "İptal"
+      ],
+      "Close": [
+        "Kapat"
+      ],
+      "Confirm": [
+        "Onayla"
+      ],
+      "Confirm reset": [
+        "Sıfırlamayı onayla"
+      ],
+      "Copy ${ issuer } (${ name })": [
+        "${ issuer } (${ name }) kopyala"
+      ],
+      "Create": [
+        "Ekle"
+      ],
+      "Dismiss": [
+        "Yok say"
+      ],
+      "Export data without password": [
+        "Verileri parola olmadan dışa aktar"
+      ],
+      "Hide codes": [
+        "Kodları gizle"
+      ],
+      "Refresh the page": [
+        "Sayfayı yenile"
+      ],
+      "Reload app": [
+        "Uygulamayı yeniden yükle"
+      ],
+      "Try again": [
+        "Yeniden dene"
+      ],
+      "Use this password": [
+        "Bu parolayı kullan"
+      ]
+    },
+    "authenticator-2025:Action": {
+      "Change folder": [
+        "Klasörü değiştir"
+      ],
+      "Clear search": [
+        "Aramayı temizle"
+      ],
+      "Close": [
+        "Kapat"
+      ],
+      "Confirm": [
+        "Onayla"
+      ],
+      "Continue anyway": [
+        "Yine de ilerle"
+      ],
+      "Continue anyways": [
+        "Yine de ilerle"
+      ],
+      "Create a free account": [
+        "Ücretsiz hesap açın"
+      ],
+      "Create a new vault": [
+        "Yeni bir kasa oluştur"
+      ],
+      "Create new code": [
+        "Yeni kod oluştur"
+      ],
+      "Delete": [
+        "Sil"
+      ],
+      "Edit": [
+        "Düzenle"
+      ],
+      "Got it": [
+        "Anladım"
+      ],
+      "How to update ${ AUTHENTICATOR_APP_NAME } on Linux": [
+        "Linux üzerinde ${ AUTHENTICATOR_APP_NAME } nasıl güncellenir"
+      ],
+      "How to use ${ AUTHENTICATOR_SHORT_APP_NAME }": [
+        "${ AUTHENTICATOR_SHORT_APP_NAME } nasıl kullanılır"
+      ],
+      "Import": [
+        "İçe aktar"
+      ],
+      "Import codes": [
+        "Kodları içe aktar"
+      ],
+      "Need more help?": [
+        "Daha fazla yardım mı gerekiyor?"
+      ],
+      "Open settings": [
+        "Ayarları aç"
+      ],
+      "Please try again or reset to create a new one.": [
+        "Lütfen yeniden deneyin veya sıfırlayıp yeni bir tane oluşturun."
+      ],
+      "Please try again.": [
+        "Lütfen yeniden deneyin."
+      ],
+      "Remove previous backups": [
+        "Önceki yedekleri sil"
+      ],
+      "Report an issue": [
+        "Sorun bildireceğim"
+      ],
+      "Reset": [
+        "Sıfırla"
+      ],
+      "Save code": [
+        "Kodu kaydet"
+      ],
+      "Search": [
+        "Ara"
+      ],
+      "Secure now": [
+        "Şimdi koru"
+      ],
+      "Sign in": [
+        "Oturum aç"
+      ],
+      "Sync between devices": [
+        "Aygıtlar arası eşitleme"
+      ],
+      "Try again": [
+        "Yeniden dene"
+      ],
+      "Unlock": [
+        "Kilidi aç"
+      ],
+      "Unlock with biometrics": [
+        "Kilidi biyometrik ile aç"
+      ],
+      "Update and relaunch": [
+        "Güncelle ve yeniden başlat"
+      ]
+    },
+    "authenticator-2025:Description": {
+      "You will need this password to unlock ${ AUTHENTICATOR_APP_NAME } every time it restarts.": [
+        "${ AUTHENTICATOR_APP_NAME } her yeniden başlatıldığında bu parola sorulacak."
+      ],
+      "Your import file is protected by a password. Please enter the password to proceed.": [
+        "İçe aktarma dosyanız bir parola ile korunuyor. İlerlemek için lütfen parolayı yazın."
+      ]
+    },
+    "authenticator-2025:Error": {
+      "An unknown error occured. Please contact us to resolve this issue.": [
+        "Bilinmeyen bir sorun çıktı. Lütfen bu sorunu çözmek için bizimle görüşün."
+      ],
+      "Authentication canceled": [
+        "Kimlik doğrulaması iptal edildi"
+      ],
+      "Biometric authentication failure (Code: ${ code })": [
+        "Biyometrik kimlik doğrulanamadı (Kod: ${ code })"
+      ],
+      "Cannot generate secure storage key. You can try to create a password app lock instead": [
+        "Güvenli depolama anahtarı oluşturulamadı. Bunun yerine bir parola uygulama kilidi oluşturmayı deneyebilirsiniz"
+      ],
+      "Cannot use this folder. Please pick a folder in your user's home directory (${ home })": [
+        "Bu klasör kullanılamaz. Lütfen kullanıcınızın giriş klasöründeki (${ home }) bir klasörü seçin"
+      ],
+      "Codes from file \"${ filename }\" could not be imported": [
+        "Kodlar \"${ filename }\" dosyasından içe aktarılamadı"
+      ],
+      "Failed database migration. If the issue persists, please contact customer support.": [
+        "Veri tabanı aktarılamadı. Sorun sürerse, lütfen müşteri destek ekibi ile görüşün."
+      ],
+      "Failed to create export": [
+        "Dışa aktarım oluşturulamadı"
+      ],
+      "Failed to import due to wrong password. Please try again.": [
+        "Parola yanlış olduğundan içe aktarılamadı. Lütfen yeniden deneyin."
+      ],
+      "Failed to reorder items": [
+        "Ögelerin sıralaması değiştirilemedi"
+      ],
+      "Migration failed after updating ${ AUTHENTICATOR_APP_NAME }. You can try again, or backup your data and reset the app to continue.": [
+        "${ AUTHENTICATOR_APP_NAME } güncellendikten sonra aktarım tamamlanamadı. Yeniden deneyebilir ya da ilerlemek için verilerinizi yedekleyip uygulamayı sıfırlayabilirsiniz."
+      ],
+      "Passwords do not match": [
+        "Parola ile onayı aynı değil"
+      ],
+      "The app couldn’t access your storage key.": [
+        "Uygulama depolama alanı anahtarınıza erişemedi."
+      ],
+      "Unable to access your secure storage key due to a system issue.": [
+        "Sistem sorunu nedeniyle güvenli depolama alanı anahtarınıza erişilemedi"
+      ],
+      "We couldn't create your secure storage key due to a system limitation.": [
+        "Sistem sınırlaması nedeniyle güvenli depolama alanı anahtarınız oluşturulamadı."
+      ],
+      "We couldn't generate your secure storage key.": [
+        "Güvenli depolama alanı anahtarınızı oluşturamadık."
+      ],
+      "Your storage key appears to be damaged and can't be read.": [
+        "Depolama alanı anahtarınız okunamadı, bozulmuş gibi görünüyor."
+      ],
+      "Your storage key is missing and needs to be recreated.": [
+        "Depolama anahtarınız eksik ve yeniden oluşturulması gerekiyor."
+      ]
+    },
+    "authenticator-2025:Import": {
+      "${ count } item was skipped. HOTP isn’t currently supported.": [
+        "${ count } öge atlandı. HOTP şu anda desteklenmiyor.",
+        "${ count } öge atlandı. HOTP şu anda desteklenmiyor."
+      ],
+      "Imported ${ totalImports } code": [
+        "${ totalImports } kod içe aktarıldı",
+        "${ totalImports } kod içe aktarıldı"
+      ]
+    },
+    "authenticator-2025:Info": {
+      "Backup files will not be erased.": [
+        "Yedek dosyaları silinmeyecek."
+      ],
+      "Choose ${ plainTextBold }, this will create a txt file that you can use here.": [
+        "${ plainTextBold } seçin. Bu işlem burada kullanabileceğiniz bir txt dosyası oluşturur."
+      ],
+      "Choose ${ zipTextBold }, this will create a zip file that you can use here.": [
+        "${ zipTextBold } seçin. Bu işlem burada kullanabileceğiniz bir zip dosyası oluşturur."
+      ],
+      "Code added": [
+        "Kod eklendi"
+      ],
+      "Code added but could not be synced": [
+        "Kod eklendi ancak eşitlenemedi"
+      ],
+      "Code deleted": [
+        "Kod silindi"
+      ],
+      "Code edited": [
+        "Kod düzenlendi"
+      ],
+      "Code edited but could not be synced": [
+        "Kod düzenlendi ancak eşitlenemedi"
+      ],
+      "Code reordered but could not be synced": [
+        "Kodun sıralaması değiştirildi ancak eşitlenemedi"
+      ],
+      "Export created": [
+        "Dışa aktarma oluşturuldu"
+      ],
+      "Failed syncing local items to remote": [
+        "Yerel ögeler uzak ögeler ile eşitlenemedi"
+      ],
+      "Failed to add code.": [
+        "Kod eklenemedi."
+      ],
+      "Failed to edit code": [
+        "Kod düzenlenemedi"
+      ],
+      "Failed updating remote items": [
+        "Uzak ögeler güncellenemedi"
+      ],
+      "Importing codes from ${ paths.length } files...": [
+        "Kodlar ${ paths.length } dosyalarından içe aktarılıyor..."
+      ],
+      "Importing codes...": [
+        "Kodlar içe aktarılıyor..."
+      ],
+      "Last backup: ${ lastBackupDateDisplay }.": [
+        "Son yedekleme: ${ lastBackupDateDisplay }"
+      ],
+      "Lock updated": [
+        "Kilit güncellendi"
+      ],
+      "New version ${ latestVersion.version } is available": [
+        "${ latestVersion.version } sürümü yayınlanmış"
+      ],
+      "One-time code copied": [
+        "Tek kullanımlık kod kopyalandı"
+      ],
+      "Only the last ${ BACKUP_MAX_AMOUNT } daily backups are kept.": [
+        "Günlük yedeklerden yalnızca son ${ BACKUP_MAX_AMOUNT } tanesi saklanır."
+      ],
+      "Plain text": [
+        "Düz yazı"
+      ],
+      "Please go to ${ settingsPath }.": [
+        "Lütfen ${ settingsPath } bölümüne gidin."
+      ],
+      "Please import your data manually for now.": [
+        "Lütfen verilerinizi şimdi el ile içe aktarın."
+      ],
+      "Settings > 2FAS Backup > Export": [
+        "Ayarlar > 2FAS yedekleme > Dışa aktar"
+      ],
+      "Settings > Data > Export codes": [
+        "Ayarlar > Veriler > Kodları dışa aktar"
+      ],
+      "Settings > Export": [
+        "Ayarlar > Dışa aktar"
+      ],
+      "Settings > Import & Export > Export": [
+        "Ayarlar > İçe ve dışa aktar > Dışa aktar"
+      ],
+      "Settings > Transfer accounts > Export accounts": [
+        "Ayarlar > Hesapları aktarma > Hesapları dışa aktar"
+      ],
+      "Settings > Transfer accounts > Export accounts to file": [
+        "Ayarlar > Hesapları aktarma > Hesapları dosya olarak dışa aktar"
+      ],
+      "Sync disabled": [
+        "Eşitleme kapalı"
+      ],
+      "Sync enabled": [
+        "Eşitleme açık"
+      ],
+      "This will create a 2fas file that you can use here.": [
+        "Bu işlem burada kullanabileceğiniz bir 2fas dosyası oluşturur."
+      ],
+      "This will create a Json file that you can use here.": [
+        "Bu işlem burada kullanabileceğiniz bir JSON dosyası oluşturur."
+      ],
+      "This will create one or more QR codes that you can use here.": [
+        "Bu işlem burada kullanabileceğiniz bir ya da birkaç kare kod oluşturur."
+      ],
+      "Unfortunately, Authy doesn’t currently support exporting data from their app. Consider contacting Authy to request this feature.": [
+        "Ne yazık ki, Authy uygulaması henüz verilerin dışa aktarılmasını desteklemiyor. Bu özelliği istemek için Authy ile görüşün."
+      ],
+      "Unfortunately, Microsoft Authenticator doesn’t currently support exporting data from their app. Consider contacting Microsoft to request this feature.": [
+        "Ne yazık ki, Microsoft Authenticator henüz verilerin dışa aktarılmasını desteklemiyor. Bu özelliği istemek için Microsoft ile görüşün."
+      ],
+      "ZIP": [
+        "ZIP"
+      ]
+    },
+    "authenticator-2025:Label": {
+      "30 seconds": [
+        "30 saniye"
+      ],
+      "60 seconds": [
+        "60 saniye"
+      ],
+      "Account: ${ user.Email }": [
+        "Hesap: ${ user.Email }"
+      ],
+      "Add": [
+        "Ekle"
+      ],
+      "Advanced options": [
+        "Gelişmiş seçenekler"
+      ],
+      "Algorithm": [
+        "Algoritma"
+      ],
+      "App lock": [
+        "Uygulama kilidi"
+      ],
+      "Appearance": [
+        "Görünüm"
+      ],
+      "Automatic": [
+        "Otomatik"
+      ],
+      "Backup folder": [
+        "Yedek klasörü"
+      ],
+      "Backups": [
+        "Yedekler"
+      ],
+      "Biometrics": [
+        "Biyometrik"
+      ],
+      "Boxed": [
+        "Kutu içinde"
+      ],
+      "Dark": [
+        "Koyu"
+      ],
+      "Digit style": [
+        "Rakam biçemi"
+      ],
+      "Digits": [
+        "Rakam sayısı"
+      ],
+      "Discover ${ BRAND_NAME }": [
+        "${ BRAND_NAME } uygulamasını keşfedin"
+      ],
+      "Enabled, temporarily offline": [
+        "Açık, geçici olarak çevrim dışı"
+      ],
+      "Enter your password:": [
+        "Parolanızı yazın:"
+      ],
+      "Export": [
+        "Dışa aktar"
+      ],
+      "Import": [
+        "İçe aktar"
+      ],
+      "Issuer": [
+        "Veren kuruluş"
+      ],
+      "Light": [
+        "Açık"
+      ],
+      "Loading account data...": [
+        "Hesap verileri yükleniyor..."
+      ],
+      "Manage your data": [
+        "Verilerinizi yönetin"
+      ],
+      "None": [
+        "Hiçbiri"
+      ],
+      "Once deleted, this code cannot be recovered.": [
+        "Silindikten sonra bu kod geri alınamaz."
+      ],
+      "Password": [
+        "Parola"
+      ],
+      "Plain": [
+        "Düz"
+      ],
+      "Secret": [
+        "Gizli anahtar"
+      ],
+      "Secret key": [
+        "Gizli anahtar"
+      ],
+      "Security": [
+        "Güvenlik"
+      ],
+      "Support": [
+        "Destek"
+      ],
+      "Theme": [
+        "Tema"
+      ],
+      "Time interval": [
+        "Zaman aralığı"
+      ],
+      "Title": [
+        "Başlık"
+      ],
+      "Title, account, or label": [
+        "Başlık, hesap veya etiket"
+      ],
+      "Type": [
+        "Tür"
+      ],
+      "View logs": [
+        "Günlüğü görüntüle"
+      ]
+    },
+    "authenticator-2025:Reason": {
+      "disable lock": [
+        "kilidi kapat"
+      ],
+      "enable lock": [
+        "kilidi aç"
+      ]
+    },
+    "authenticator-2025:Title": {
+      "Confirm password": [
+        "Parola onayı"
+      ],
+      "Create password": [
+        "Parola oluştur"
+      ],
+      "Delete \"${ displayName }\"": [
+        "\"${ displayName }\" silinsin mi ?"
+      ],
+      "Edit code": [
+        "Kodu düzenle"
+      ],
+      "Encrypted backup is now available": [
+        "Şifrelenmiş yedek kullanılabilir"
+      ],
+      "Import codes from ${ provider }": [
+        "Kodları ${ provider } üzerinden içe aktar"
+      ],
+      "Log in": [
+        "Oturum aç"
+      ],
+      "New code": [
+        "Yeni kod"
+      ],
+      "No export available": [
+        "Kullanılabilecek bir dışa aktarma yok"
+      ],
+      "Protected file": [
+        "Korunan dosya"
+      ],
+      "Settings": [
+        "Ayarlar"
+      ],
+      "Sign up": [
+        "Hesap açın"
+      ],
+      "Storage key issue": [
+        "Depolama alanı anahtarı sorunu"
+      ],
+      "Unlock ${ AUTHENTICATOR_APP_NAME }": [
+        "${ AUTHENTICATOR_APP_NAME } kilidini aç"
+      ]
+    },
+    "authenticator-2025:Warning": {
+      "Automatic backup was disabled due to missing backup folder (${ backupDirectory })": [
+        "Yedekleme klasörü (${ backupDirectory }) eksik olduğundan otomatik yedekleme kapatıldı"
+      ],
+      "For enhanced security, un-encrypted automatic backup has been disabled. You can re-enable it in the Settings.": [
+        "Güvenliği artırmak için şifrelenmemiş otomatik yedekleme kapatıldı. Ayarlar menüsünden yeniden açabilirsiniz."
+      ],
+      "If you continue without setting up a secure storage key, your data will still be encrypted locally, but the key will be saved less securely.": [
+        "Güvenli bir depolama anahtarı ayarlamadan ilerlerseniz, verileriniz yine de yerel olarak şifrelenmiş olur, ancak anahtar daha az güvenli bir şekilde saklanır."
+      ],
+      "Nothing to import.": [
+        "İçe aktarılacak bir şey yok."
+      ],
+      "Resetting your storage key will erase any local data that hasn’t been synced.": [
+        "Depolama anahtarınızı sıfırlamak eşitlenmemiş tüm yerel verileri siler."
+      ],
+      "Wrong password. You have ${ remainingCount } attempt left, after that, your data will be erased.": [
+        "Parola yanlış. ${ remainingCount } deneme hakkınız kaldı. Bunlar bittiğinde verileriniz silinir.",
+        "Parola yanlış. ${ remainingCount } deneme hakkınız kaldı. Bunlar bittiğinde verileriniz silinir."
+      ],
+      "You have ${ backupsCount } previous backup on your device that can be removed.": [
+        "Aygıtınızda silinebilecek ${ backupsCount } önceki yedek bulunuyor.",
+        "Aygıtınızda silinebilecek ${ backupsCount } önceki yedek bulunuyor."
+      ],
+      "You have ${ remainingCount } attempt left - after that, your data will be erased.": [
+        "${ remainingCount } deneme hakkınız kaldı. Hakkınız bittiğinde verileriniz silinir.",
+        "${ remainingCount } deneme hakkınız kaldı. Hakkınız bittiğinde verileriniz silinir."
+      ],
+      "You have entered a wrong password.": [
+        "Yazdığınız parola yanlış."
+      ],
+      "Your data will be erased after 10 failed attempts.": [
+        "10 başarısız denemeden sonra verileriniz silinir."
+      ],
+      "Your local data is encrypted on-disk, but the encryption key is not securely stored on your system. For better protection, set up secure storage or create an app password.": [
+        "Yerel verileriniz diskte şifrelenmiş durumda ancak şifreleme anahtarı sisteminizde güvenli şekilde saklanmıyor. Daha iyi koruma için güvenli depolama alanını ayarlayın veya bir uygulama parolası oluşturun."
+      ]
+    },
+    "Error": {
+      "Authentication error": [
+        "Kimlik doğrulayıcı sorunu"
+      ],
+      "Request timed out": [
+        "İstek zaman aşımına uğradı"
+      ],
+      "Something went wrong": [
+        "Bir sorun çıktı"
+      ]
+    },
+    "Error message": {
+      "Please refresh the page or try again later.": [
+        "Lütfen sayfayı yenileyin ya da bir süre sonra yeniden deneyin."
+      ],
+      "Something went wrong": [
+        "Bir şeyler ters gitti"
+      ]
+    },
+    "Info": {
+      "A ${ BRAND_NAME } account is required to enable end-to-end encrypted sync between devices.": [
+        "Aygıtlar arasında uçtan uca şifrelenmiş eşitlemeyi açmak için bir ${ BRAND_NAME } hesabı gereklidir."
+      ],
+      "Identity confirmed": [
+        "Kimlik onaylandı"
+      ],
+      "Internet connection lost": [
+        "İnternet bağlantısı kesildi"
+      ],
+      "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
+        "Görünüşe göre ${ PASS_APP_NAME } uygulamasında zaten oturum açmışsınız. Farklı bir hesapla oturum açmaya çalışıyorsanız, lütfen önce eklentideki oturumunuzu kapatın."
+      ],
+      "Loading": [
+        "Yükleniyor"
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
+        "Bir parola yöneticisinden daha fazlası. ${ PASS_APP_NAME } parolalarınızı ve takma e-posta adresleri ile e-posta adresinizi korur. ${ MAIL_APP_NAME } ile aynı teknolojiyi kullandığından, verileriniz uçtan uca şifreleme ile korunur ve yalnızca sizin tarafınızdan erişilebilir."
+      ],
+      "Protect your accounts with an extra layer of security.": [
+        "Hesaplarınızı bir ek güvenlik katmanıyla koruyun."
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Sunuculara erişilemiyor. Lütfen birkaç dakika sonra yeniden deneyin"
+      ],
+      "Session timed out": [
+        "Oturum zaman aşımına uğradı"
+      ],
+      "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
+        "Yapıştırmaya çalıştığınız yazı izin verilen en fazla ${ maxLength } karakterden daha uzun."
+      ],
+      "You have reached the maximum allowed length of ${ maxLength } characters.": [
+        "İzin verilen en fazla ${ maxLength } karakter sayısına ulaştınız."
+      ],
+      "You may close this tab.": [
+        "Bu sekmeyi kapatabilirsiniz."
+      ]
+    },
+    "Label": {
+      "${ days } day": [
+        "${ days } gün",
+        "${ days } gün"
+      ],
+      "${ hours } hour": [
+        "${ hours } saat",
+        "${ hours } saat"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } dakika",
+        "${ minutes } dakika"
+      ],
+      "${ months } month": [
+        "${ months } ay",
+        "${ months } ay"
+      ],
+      "${ years } year": [
+        "${ years } yıl",
+        "${ years } yıl"
+      ],
+      "Expired": [
+        "Geçerlilik süresi dolmuş"
+      ],
+      "Hide password": [
+        "Parolayı gizle"
+      ],
+      "Next": [
+        "İlerle"
+      ],
+      "No entries matching your search": [
+        "Aramanıza uygun bir kayıt bulunamadı"
+      ],
+      "Reveal password": [
+        "Parolayı görüntüle"
+      ]
+    },
+    "Placeholder": {
+      "Confirm password": [
+        "Parola onayı"
+      ],
+      "Password": [
+        "Parola"
+      ]
+    },
+    "Title": {
+      "Confirm password": [
+        "Parola onayı"
+      ],
+      "Device sync": [
+        "Aygıt eşitleme"
+      ],
+      "No codes yet": [
+        "Henüz bir kod yok"
+      ],
+      "Set backup password": [
+        "Yedek parola ayarla"
+      ],
+      "Set export password": [
+        "Dışa aktarma parolası ayarla"
+      ]
+    },
+    "Validation": {
+      "Secret cannot be empty": [
+        "Gizli anahtar boş olamaz"
+      ],
+      "Title cannot be empty": [
+        "Başlık boş olamaz"
+      ]
+    },
+    "Warning": {
+      "Database cannot be backed up.": [
+        "Veri tabanı yedeklenemedi."
+      ],
+      "No backup location selected.": [
+        "Herhangi bir yedekleme konumu seçilmemiş."
+      ],
+      "This will create an unencrypted backup and reset the application to resolve the migration failure. You will need to import your data from the backup file after the reset completes. Delete the backup file once finished.": [
+        "Bu işlem şifrelenmemiş bir yedek oluşturacak ve aktarım sorununu çözmek için uygulamayı sıfırlayacak. Sıfırlama tamamlandıktan sonra verilerinizi yedek dosyasından geri yüklemeniz gerekecek. İşlem tamamlandığında yedek dosyasını silin."
+      ],
+      "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
+        "${ PASS_APP_NAME } oturumu açılamadı. ${ additionalMessage }"
+      ]
+    }
+  }
+}

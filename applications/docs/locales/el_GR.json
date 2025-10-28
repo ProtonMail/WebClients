@@ -1196,6 +1196,32 @@
         "Ο χώρος αποθήκευσης μοιράζεται μεταξύ όλων των ${ BRAND_NAME } υπηρεσιών."
       ]
     },
+    "BF2025: Deal details": {
+      "Block ads, trackers, and malware": [
+        "Αποκλείστε διαφημίσεις, ιχνηλάτες και κακόβουλο λογισμικό"
+      ],
+      "Built-in 2FA authenticator": [
+        "Ενσωματωμένη εφαρμογή ταυτοποίησης 2FA"
+      ],
+      "Unlimited daily chats": [
+        "Απεριόριστες καθημερινές συνομιλίες"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "για ${ durationDeal }"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Το ειδικά σχεδιασμένο NetShield προστατεύει τις συσκευές σας και επιταχύνει την περιήγησή σας εμποδίζοντας διαφημίσεις, ιχνηλάτες και κακόβουλο λογισμικό."
+      ]
+    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } Εφαρμογή Επιφάνειας Εργασίας"
@@ -1327,7 +1353,7 @@
         "Κρυπτογραφημένη εφαρμογή διαχείρισης κωδικών πρόσβασης"
       ],
       "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
-        "Το βασικό, δωρεάν πλάνο μας με κρυπτογραφημένο ηλεκτρονικό ταχυδρομείο και αποθηκευτικό χώρο από άκρο σε άκρο. Δεν περιλαμβάνονται premium δυνατότητες."
+        "Το βασικό, δωρεάν πλάνο μας με διατερματικά κρυπτογραφημένο ηλεκτρονικό ταχυδρομείο και αποθηκευτικό χώρο. Δεν περιλαμβάνονται premium δυνατότητες."
       ],
       "Save ${ upsellSavings }": [
         "Εξοικονομίστε ${ upsellSavings }"
@@ -2656,16 +2682,16 @@
       ]
     },
     "Duo offer: Link": {
-      "Double your storage": [
-        "Διπλασιάστε τον αποθηκευτικό σας χώρο"
+      "Get 4x more storage": [
+        "Αποκτήστε 4x περισσότερο χώρο αποθήκευσης"
       ],
       "Share your plan": [
         "Κοινοποιήστε το πλάνο σας"
       ]
     },
     "Duo offer: Title": {
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Διπλασιάστε τον αποθηκευτικό σας χώρο με το ${ BRAND_NAME } Duo"
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "Αποκτήστε 4x περισσότερο χώρο αποθήκευσης με το ${ BRAND_NAME } Duo"
       ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
         "Μοιραστείτε τα οφέλη του πλάνου σας με το ${ BRAND_NAME } Duo"
@@ -7707,6 +7733,9 @@
       "Advanced account protection": [
         "Προηγμένη προστασία λογαριασμού"
       ],
+      "File attachments (up to 10GB)": [
+        "Συνημμένα αρχεία (έως 10 GB)"
+      ],
       "Team policies": [
         "Πολιτικές ομάδας"
       ]
@@ -7776,6 +7805,17 @@
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Το κουπόνι ισχύει για ${ couponRedemptions } ανανέωση.",
         "Το κουπόνι ισχύει για ${ couponRedemptions } ανανεώσεις."
+      ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "Η ειδικά μειωμένη τιμή ισχύει για τον πρώτο ${ subscriptionLength } μήνα.",
+        "Η ειδικά μειωμένη τιμή ισχύει για τους πρώτους ${ subscriptionLength } μήνες."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Η ειδικά μειωμένη τιμή ισχύει για τον πρώτο μήνα. Το κουπόνι ισχύει για ${ couponRedemptions } ανανέωση. Στη συνέχεια, θα ανανεώνεται αυτόματα με τιμή ${ renewPriceStr } για 1 μήνα. Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή.",
+        "Η ειδικά μειωμένη τιμή ισχύει για τον πρώτο μήνα. Το κουπόνι ισχύει για ${ couponRedemptions } ανανεώσεις. Στη συνέχεια, θα ανανεώνεται αυτόματα με τιμή ${ renewPriceStr } για 1 μήνα. Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Η ειδικά μειωμένη τιμή ισχύει για τον πρώτο μήνα. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ renewPriceStr } κάθε μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Η ειδικά μειωμένη τιμή του ${ priceWithDiscount } ισχύει για τον πρώτο ${ subscriptionLength } μήνα.",
@@ -8361,6 +8401,62 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Κοινοποιήθηκε από τον/την ${ ownerName }"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Comma Separated Values (.csv)": [
+        "Comma Separated Values (.csv)"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
+      "New spreadsheet": [
+        "Νέο υπολογιστικό φύλλο"
+      ],
+      "Rename spreadsheet": [
+        "Μετονομασία υπολογιστικού φύλλου"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Tab Separated Values (.tsv)"
+      ]
+    },
+    "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Δημιουργία νέου υπολογιστικού φύλλου..."
+      ],
+      "Detect automatically": [
+        "Αυτόματος εντοπισμός"
+      ],
+      "Insert as new sheet": [
+        "Εισαγωγή ως νέο φύλλο"
+      ],
+      "Replace current sheet": [
+        "Αντικατάσταση τρέχοντος φύλλου"
+      ],
+      "Replace data at selected cell": [
+        "Αντικατάσταση δεδομένων στο επιλεγμένο κελί"
+      ],
+      "Select a CSV or TSV file to import": [
+        "Επιλέξτε ένα αρχείο CSV ή TSV για εισαγωγή"
+      ]
+    },
+    "sheets_2025:Label": {
+      "Convert text to numbers, dates, and formulas": [
+        "Μετατροπή κειμένου σε αριθμούς, ημερομηνίες και τύπους"
+      ],
+      "Destination": [
+        "Προορισμός"
+      ],
+      "Format": [
+        "Μορφή"
+      ],
+      "Separator type": [
+        "Τύπος διαχωριστικού"
+      ]
+    },
+    "sheets_2025:Title": {
+      "Import data": [
+        "Εισαγωγή δεδομένων"
       ]
     },
     "Signing preference for emails": {
@@ -9230,9 +9326,6 @@
       "Document verification failed": [
         "Η επαλήθευση εγγράφου απέτυχε"
       ],
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Διπλασιάστε τον αποθηκευτικό σας χώρο με το ${ BRAND_NAME } Duo"
-      ],
       "Downgrade account": [
         "Υποβάθμιση λογαριασμού"
       ],
@@ -9708,6 +9801,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: Βοηθός τεχνητής νοημοσύνης που σέβεται την ιδιωτικότητά σας"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, κοινή χρήση, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA) και πολλά άλλα."
       ]

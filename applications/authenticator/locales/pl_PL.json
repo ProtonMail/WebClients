@@ -1,0 +1,133 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);",
+    "language": "pl_PL"
+  },
+  "contexts": {
+    "Action": {
+      "Cancel": [
+        "Anuluj"
+      ],
+      "Close": [
+        "Zamknij"
+      ],
+      "Confirm": [
+        "Potwierdź"
+      ],
+      "Create": [
+        "Utwórz"
+      ],
+      "Dismiss": [
+        "Odrzuć"
+      ],
+      "Refresh the page": [
+        "Odśwież stronę"
+      ],
+      "Try again": [
+        "Spróbuj ponownie"
+      ]
+    },
+    "Error": {
+      "Authentication error": [
+        "Błąd uwierzytelniania"
+      ],
+      "Request timed out": [
+        "Upłynął limit czasu żądania"
+      ],
+      "Something went wrong": [
+        "Coś poszło nie tak"
+      ]
+    },
+    "Error message": {
+      "Please refresh the page or try again later.": [
+        "Odśwież stronę lub spróbuj ponownie później."
+      ],
+      "Something went wrong": [
+        "Coś poszło nie tak"
+      ]
+    },
+    "Info": {
+      "Identity confirmed": [
+        "Tożsamość została potwierdzona"
+      ],
+      "Internet connection lost": [
+        "Połączenie z Internetem zostało utracone"
+      ],
+      "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
+        "Zalogowano już do ${ PASS_APP_NAME }. Jeśli próbujesz zalogować się do innego konta, najpierw wyloguj się z rozszerzenia."
+      ],
+      "Loading": [
+        "Ładowanie"
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
+        "To więcej niż menedżer haseł. ${ PASS_APP_NAME } chroni Twoje hasło i osobisty adres e-mail za pomocą aliasów. Dzięki tej samej technologii, która stoi za pocztą ${ MAIL_APP_NAME }, Twoje dane są zaszyfrowane end-to-end i są dostępne tylko dla Ciebie."
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Serwery są nieosiągalne. Spróbuj ponownie za kilka minut"
+      ],
+      "Session timed out": [
+        "Upłynął limit czasu sesji"
+      ],
+      "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
+        "Tekst, który próbujesz wkleić, jest dłuższy niż maksymalna dozwolona liczba ${ maxLength } znaków."
+      ],
+      "You have reached the maximum allowed length of ${ maxLength } characters.": [
+        "Osiągnięto maksymalną liczbę ${ maxLength } znaków."
+      ],
+      "You may close this tab.": [
+        "Możesz zamknąć tę kartę."
+      ]
+    },
+    "Label": {
+      "${ days } day": [
+        "${ days } dzień",
+        "${ days } dni",
+        "${ days } dni",
+        "${ days } dnia"
+      ],
+      "${ hours } hour": [
+        "${ hours } godzina",
+        "${ hours } godziny",
+        "${ hours } godzin",
+        "${ hours } godziny"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuta",
+        "${ minutes } minuty",
+        "${ minutes } minut",
+        "${ minutes } minuty"
+      ],
+      "${ months } month": [
+        "${ months } miesiąc",
+        "${ months } miesiące",
+        "${ months } miesięcy",
+        "${ months } miesięca"
+      ],
+      "${ years } year": [
+        "${ years } rok",
+        "${ years } lata",
+        "${ years } lat",
+        "${ years } roku"
+      ],
+      "Expired": [
+        "Wygasł"
+      ],
+      "Hide password": [
+        "Ukryj hasło"
+      ],
+      "Reveal password": [
+        "Pokaż hasło"
+      ]
+    },
+    "Placeholder": {
+      "Password": [
+        "Hasło"
+      ]
+    },
+    "Warning": {
+      "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
+        "Nie można zalogować się do ${ PASS_APP_NAME }. ${ additionalMessage }"
+      ]
+    }
+  }
+}

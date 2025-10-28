@@ -1512,20 +1512,8 @@
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "Эканомце з прапановамі \"Чорнай пятніцы\" на высакахуткасным швейцарскім VPN"
       ],
-      "Save with Cyber Week deals on a high-speed Swiss VPN": [
-        "Эканомце з прапановамі \"Кібертыдня\" на высакахуткасным швейцарскім VPN"
-      ],
-      "Save with End of Year deals on a high-speed Swiss VPN": [
-        "Эканомце са спецыяльнай прапановай, якая прысвечана канцу года на высакахуткасным швейцарскім VPN"
-      ],
       "Select your Black Friday offer": [
         "Выберыце прапанову \"Чорнай пятніцы\""
-      ],
-      "Select your Cyber Week offer": [
-        "Выберыце прапанову \"Кібертыдзень\""
-      ],
-      "Select your End of Year offer": [
-        "Выберыце прапанову прысвечаную канцу года"
       ]
     },
     "bf2023: info": {
@@ -1564,6 +1552,9 @@
       "1 user account": [
         "1 уліковы запіс карыстальніка"
       ],
+      "200 GB storage: 40x your current plan": [
+        "200 ГБ сховішча: у 40 разоў больш за ваш бягучы тарыфны план"
+      ],
       "6 user accounts": [
         "6 уліковых запісаў карыстальнікаў"
       ],
@@ -1585,6 +1576,9 @@
       "Password health alerts": [
         "Папярэджанні якасці пароля"
       ],
+      "Recover previous file versions": [
+        "Аднаўленне папярэдніх версій файла"
+      ],
       "Unlimited folders, labels and filters": [
         "Неабмежаваная колькасць папак, метак і фільтраў"
       ],
@@ -1598,6 +1592,9 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Аплачваецца ${ amount } аднаразова"
+      ],
+      "forever": [
+        "назаўсёды"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Падоўжыцца пасля 1 месяца за ${ regularAmount }."
@@ -1633,6 +1630,32 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Прастора сховішча размеркавана паміж усімі сэрвісамі ${ BRAND_NAME }"
+      ]
+    },
+    "BF2025: Deal details": {
+      "Block ads, trackers, and malware": [
+        "Блакіроўка рэкламы, праграм сачэння і шкодных праграм"
+      ],
+      "Built-in 2FA authenticator": [
+        "Убудаваны аўтэнтыфікатар 2ФА"
+      ],
+      "Unlimited daily chats": [
+        "Неабмежаваная колькасць штодзённых чатаў"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "Чорная пятніца"
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "за ${ durationDeal }"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Адмыслова распрацаваная функцыя NetShield абароніць вашы прылады і паскорыць прагляд старонак пры дапамозе блакіравання рэкламы, праграм сачэння і шкодных праграм."
       ]
     },
     "Billing cycle": {
@@ -3433,19 +3456,19 @@
       ]
     },
     "Duo offer: Link": {
-      "Double your storage": [
-        "Падвойце сваё сховішча"
+      "Get 4x more storage": [
+        "Атрымайце ў 4 разы больш месца ў сховішчы"
       ],
       "Share your plan": [
-        "Абагуліце свой тарыфны план"
+        "Абагульвайце свой тарыфны план"
       ]
     },
     "Duo offer: Title": {
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Падвойце сваё сховішча з ${ BRAND_NAME } Duo"
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "Атрымайце ў 4 разы больш сховішча з ${ BRAND_NAME } Duo"
       ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
-        "Абагуліце свае перавагі тарыфнага плана з ${ BRAND_NAME } Duo"
+        "Абагульвайце свае перавагі тарыфнага плана з ${ BRAND_NAME } Duo"
       ]
     },
     "Easy switch": {
@@ -3730,6 +3753,9 @@
       ],
       "Error publishing changes": [
         "Памылка пры апублікаванні змен"
+      ],
+      "Failed to add group member": [
+        "Не ўдалося дадаць члена групы"
       ],
       "Failed to load the STL preview": [
         "Не ўдалося загрузіць папярэдні прагляд STL"
@@ -4150,7 +4176,7 @@
         "Ваш файл ${ formattedFilename } змяшчае больш за ${ MAX_IMPORT_EVENTS } падзей."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        "Ваш файл ${ formattedFilename } мае памылковы спосаб і яго немагчыма імпартаваць."
+        "Ваш файл ${ formattedFilename } мае памылковы спосаб і ён не можа быць імпартаваны."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "Ваш файл ${ formattedFilename } не змяшчае падзей для імпартавання."
@@ -4198,7 +4224,7 @@
     },
     "Error importing event": {
       "Bad format. Component cannot be read.": [
-        "Няправільны фармат. Немагчыма прачытаць кампанент."
+        "Няправільны фармат. Кампанент."
       ],
       "Calendar": [
         "Каляндар"
@@ -7407,7 +7433,7 @@
         "Палепшыце свой тарыфны план зараз, каб атрымаць прэміяльныя функцыі, прадукты, а таксама палепшыць сховішча па спецыяльнай цане"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
-        "Палепшыць падпіску, каб захаваць ${ planTitle } перавагі."
+        "Палепшыць тарыфны план, каб захаваць перавагі ${ planTitle }."
       ],
       "Upgrade to Professional or a higher plan to unlock": [
         "Палепшыце да Professional або больш высокага тарыфнага плана, каб разблакіраваць"
@@ -8144,6 +8170,9 @@
       "Billing cycle": [
         "Перыяд аплаты"
       ],
+      "Black Friday": [
+        "Чорная пятніца"
+      ],
       "Block": [
         "Заблакіраваныя адрасы"
       ],
@@ -8362,6 +8391,9 @@
       ],
       "Gateway name": [
         "Назва шлюза"
+      ],
+      "Get the deal": [
+        "Атрымаць прапанову"
       ],
       "Gift code": [
         "Падарункавы код"
@@ -9177,6 +9209,11 @@
         "Уключыць ${ reason }"
       ]
     },
+    "lumo_signup_2025: Info": {
+      "Protect your entire business. Get ${ LUMO_SHORT_APP_NAME } Professional with all ${ BRAND_NAME } for Business apps and premium features.": [
+        "Абараніце ўвесь свой бізнес. Атрымайце ${ LUMO_SHORT_APP_NAME } Professional з усімі ${ BRAND_NAME } праграмамі для бізнесу і прэміяльнымі функцыямі."
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Імпартаваць усе паведамленні з ${ itemsToImportCount } папкі і пазначыць іх як",
@@ -9278,7 +9315,7 @@
         "Паглядзець падзеі ўваходу, аднаўлення і бяспекі карыстальніка."
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
-        "Ваш бясплатны пробны перыяд завершыўся. ${ nonAutoRenewalAction }"
+        "Ваш бясплатны пробны перыяд завяршыўся. ${ nonAutoRenewalAction }"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ваш бясплатны пробны перыяд завяршыўся. Доступ да вашых уліковых запісаў будзе неўзабаве адключаны. ${ action }"
@@ -10452,9 +10489,6 @@
       ]
     },
     "Notification": {
-      "${ MEET_APP_NAME } video conferencing settings have been updated": [
-        "Налады відэаканферэнцыі ${ MEET_APP_NAME } абноўлены"
-      ],
       "${ reason } has been disabled": [
         "${ reason } быў адключаны"
       ],
@@ -11022,6 +11056,9 @@
       "Advanced account protection": [
         "Пашыраная абарона ўліковага запісу"
       ],
+      "File attachments (up to 10GB)": [
+        "Далучаныя файлы (да 10 ГБ)"
+      ],
       "Team policies": [
         "Палітыка каманды"
       ]
@@ -11250,6 +11287,21 @@
         "Купон дзейнічае для ${ couponRedemptions } падаўжэнняў.",
         "Купон дзейнічае для ${ couponRedemptions } падаўжэнняў."
       ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першага ${ subscriptionLength } месяца.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першых ${ subscriptionLength } месяцаў.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першых ${ subscriptionLength } месяцаў.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першых ${ subscriptionLength } месяцаў."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэння. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за кожны месяц. Скасаваць можна ў любы момант."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першага ${ subscriptionLength } месяца.",
         "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першых ${ subscriptionLength } месяцаў.",
@@ -11309,6 +11361,9 @@
       ],
       "Your payment is still being processed": [
         "Ваш плацеж усё яшчэ апрацоўваецца"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+        "Ваша падпіска мае бягучую скідку. Пераход на гэту новую акцыю азначае, што ранейшая скідка больш не будзе ўжывацца."
       ]
     },
     "Payments.Error": {
@@ -11371,7 +11426,7 @@
         "Дадаць нумар прадпрыемства"
       ],
       "Add EIN": [
-        "Рэдагаваць ІНП"
+        "Рэдагаваць EIN"
       ],
       "Add VAT number": [
         "Дадаць нумар ПДВ"
@@ -12540,6 +12595,11 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Абагулена ${ ownerName }"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "Адкрыць у ${ appName }"
       ]
     },
     "Signup": {
@@ -14454,9 +14514,6 @@
       "Domain names": [
         "Даменныя імёны"
       ],
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Падвойце сваё сховішча з ${ BRAND_NAME } Duo"
-      ],
       "Downgrade account": [
         "Панізіць уліковы запіс"
       ],
@@ -15000,9 +15057,6 @@
       "Verifying your payment...": [
         "Спраўджанне вашага плацяжу..."
       ],
-      "Video conferencing with ${ MEET_APP_NAME }": [
-        "Відэаканферэнцыя з ${ MEET_APP_NAME }"
-      ],
       "Video conferencing with Zoom": [
         "Відэаканферэнцыя з Zoom"
       ],
@@ -15241,6 +15295,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: Памочнік ШІ, які паважае вашу прыватнасць"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
       ],
@@ -15879,7 +15936,7 @@
         "Ваш бясплатны пробны перыяд завершыцца ${ textDate }. ${ action }"
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
-        "Ваш пробны перыяд скончыцца ${ textDate }. З вас не будзе спаганяцца плата, калі вы адмовіцеся да ${ textDate }. ${ action }"
+        "Ваш пробны перыяд завершыцца ${ textDate }. З вас не будзе спаганяцца плата, калі вы адмовіцеся да ${ textDate }. ${ action }"
       ]
     },
     "Warning for domain modal": {

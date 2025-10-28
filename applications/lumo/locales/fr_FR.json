@@ -1612,9 +1612,6 @@
       "About": [
         "À propos"
       ],
-      "By ${ BRAND_NAME }": [
-        "Par ${ BRAND_NAME }"
-      ],
       "Try ${ MAIL_APP_NAME }": [
         "Essayer ${ MAIL_APP_NAME }"
       ]
@@ -3869,6 +3866,9 @@
       "Billing cycle": [
         "Cycle de facturation"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Browser": [
         "Navigateur"
       ],
@@ -3949,6 +3949,9 @@
       ],
       "Folder location": [
         "Emplacement du dossier"
+      ],
+      "Get the deal": [
+        "Profitez de l'offre"
       ],
       "Hide password": [
         "Masquer le mot de passe"
@@ -5105,6 +5108,9 @@
       "Advanced account protection": [
         "Protection avancée des comptes"
       ],
+      "File attachments (up to 10GB)": [
+        "Fichiers joints (jusqu'à 10 Go)"
+      ],
       "Team policies": [
         "Règles d'équipe"
       ]
@@ -5225,6 +5231,17 @@
         "Le code cadeau est valide pour ${ couponRedemptions } renouvellement.",
         "Le code cadeau est valide pour ${ couponRedemptions } renouvellements."
       ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "Le tarif réduit spécial est valable pendant le premier ${ subscriptionLength } mois.",
+        "Le tarif réduit spécial est valable pendant les premiers ${ subscriptionLength } mois."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Le tarif exceptionnellement réduit est valable le premier mois. Le coupon est valide pour ${ couponRedemptions } renouvellement. Il sera ensuite automatiquement renouvelé à ${ renewPriceStr } pendant 1 mois. Vous pouvez annuler à tout moment.",
+        "Le tarif exceptionnellement réduit est valable le premier mois. Le coupon est valide pour ${ couponRedemptions } renouvellements. Il sera ensuite automatiquement renouvelé à ${ renewPriceStr } pendant 1 mois. Vous pouvez annuler à tout moment."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Le tarif exceptionnel s'applique le premier mois. Ensuite, l'abonnement sera automatiquement renouvelé au prix de ${ renewPriceStr } par mois. Vous pouvez résilier l'abonnement à tout moment."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Le tarif réduit spécial de ${ priceWithDiscount } est valable pendant le premier ${ subscriptionLength } mois.",
         "Le tarif réduit spécial de ${ priceWithDiscount } est valable pendant les premiers ${ subscriptionLength } mois."
@@ -5272,6 +5289,9 @@
       ],
       "Your payment is still being processed": [
         "Votre paiement est en cours de traitement."
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+        "Votre abonnement bénéficie actuellement d'une réduction existante. Le passage à cette nouvelle promotion signifie que la réduction existante ne sera plus appliquée."
       ]
     },
     "Payments.Error": {
@@ -6028,6 +6048,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME } : Assistant IA qui respecte votre vie privée"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME } : sécurisez vos identifiants de connexion sur tous vos appareils. Comprend un nombre illimité d'alias, le partage, l'authentification à deux facteurs (A2F) intégrée et bien d'autres fonctionnalités."
       ]

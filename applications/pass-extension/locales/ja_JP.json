@@ -777,6 +777,9 @@
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF${ WIKIPEDIA_LINK_SPF }は、メールの配信中に送信者アドレスの偽装を検出するために設計されたメール認証方法です。SPFの設定は、あなたのメールが受信者の迷惑メールフォルダに入る可能性を減らすために強く推奨されます。"
       ],
+      "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
+        "これらの保管庫にはアクセスできなくなり、そのコンテンツは検索や自動入力では利用できなくなります。"
+      ],
       "This account is vulnerable, visit the service and change your password.": [
         "このアカウントは脆弱です。サービスにアクセスしてパスワードを変更してください。"
       ],
@@ -1814,6 +1817,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
       ],
       "Moving items": [
         "アイテムの移動"
@@ -4102,8 +4108,8 @@
       "Grant permissions": [
         "権限を付与する"
       ],
-      "Hidden vaults won’t be visible during search and autofill.": [
-        "非表示の保管庫は、検索および自動入力中は表示されません。"
+      "Hidden vaults": [
+        "非表示の保管庫"
       ],
       "Hide my email": [
         "メールを非表示にする"
@@ -4311,6 +4317,9 @@
       ],
       "Vault shared with you": [
         "あなたと共有している保管庫"
+      ],
+      "Visible vaults": [
+        "閲覧可能な保管庫"
       ],
       "Weak password": [
         "弱いパスワード"

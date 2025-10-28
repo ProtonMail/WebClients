@@ -1494,20 +1494,8 @@
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "スイスの高速 VPN のブラック フライデー セールで節約しましょう"
       ],
-      "Save with Cyber Week deals on a high-speed Swiss VPN": [
-        "スイスの高速 VPN の Cyber Week セールで節約しましょう"
-      ],
-      "Save with End of Year deals on a high-speed Swiss VPN": [
-        "スイスの高速 VPN の年末セールで節約しましょう"
-      ],
       "Select your Black Friday offer": [
         "ブラック フライデー オファーを選択してください"
-      ],
-      "Select your Cyber Week offer": [
-        "サイバーウィークのオファーを選択してください"
-      ],
-      "Select your End of Year offer": [
-        "年末オファーを選択してください"
       ]
     },
     "bf2023: info": {
@@ -1543,6 +1531,9 @@
       "1 user account": [
         "1 ユーザーアカウント"
       ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB ストレージ：お客様の現在のプランの40倍"
+      ],
       "6 user accounts": [
         "6 ユーザーアカウント"
       ],
@@ -1564,6 +1555,9 @@
       "Password health alerts": [
         "パスワードの健全性アラート"
       ],
+      "Recover previous file versions": [
+        "以前のファイルを復元"
+      ],
       "Unlimited folders, labels and filters": [
         "無制限のフォルダー、ラベル、フィルター"
       ],
@@ -1577,6 +1571,9 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "一度に${ amount }が請求されます"
+      ],
+      "forever": [
+        "永久"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "${ regularAmount }で1ヶ月後に自動更新されます。"
@@ -1606,6 +1603,87 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "ストレージ容量はすべての ${ BRAND_NAME } サービスで共有されています。"
+      ]
+    },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "ブラックフライデーセール"
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2TBのデータストレージ"
+      ],
+      "3 TB data storage": [
+        "3TBのデータストレージ"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "120か国以上の15,000台以上のサーバーにアクセス"
+      ],
+      "Access advanced AI models": [
+        "高度なAIモデルへのアクセス"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、および${ CALENDAR_SHORT_APP_NAME }のすべてのプレミアム機能"
+      ],
+      "Block ads, trackers, and malware": [
+        "広告、トラッカー、マルウェアをブロック"
+      ],
+      "Built-in 2FA authenticator": [
+        "2要素認証システム内蔵"
+      ],
+      "Connect 10 devices at once": [
+        "10台のデバイスを同時接続"
+      ],
+      "Full chat history with easy search and favorites": [
+        "簡単な検索とお気に入り機能付きの完全なチャット履歴"
+      ],
+      "Individual accounts for 6 users": [
+        "6ユーザー分の個別アカウント"
+      ],
+      "Individual accounts for you and a partner": [
+        "お客様とパートナー用の個別アカウント"
+      ],
+      "Stronger protection against cyber threats": [
+        "サイバー脅威に対するより強力な保護"
+      ],
+      "Unlimited daily chats": [
+        "無制限の毎日のチャット"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "大切な人がプライバシー革命に参加できるようサポートしましょう。Protonで最もお得なセットが今なら50%オフ！"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "プライバシー革命に参加しましょう。Protonで最もお得なセットが今なら50%オフ！"
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "${ durationDeal } の場合"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "期間限定の最もお得なセールで、${ savedAmount }を節約！"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "2年プランに切り替えて、${ savedAmount }を節約！"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "年間プランに切り替えて、${ savedAmount }を節約！"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "大切な人たちに、完全なデジタル保護を。"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "特別に設計されたNetShieldは、デバイスを保護し、広告、トラッカー、マルウェアをブロックしてブラウジングを高速化します。"
       ]
     },
     "Billing cycle": {
@@ -1712,6 +1790,9 @@
       ],
       "Application problem": [
         "アプリケーションに関する問題"
+      ],
+      "Black Friday": [
+        "ブラックフライデー"
       ],
       "Bridge problem": [
         "Bridge に関する問題"
@@ -3387,6 +3468,22 @@
         "のみ"
       ]
     },
+    "Duo offer: Link": {
+      "Get 4x more storage": [
+        "4倍のストレージを獲得"
+      ],
+      "Share your plan": [
+        "プランを共有"
+      ]
+    },
+    "Duo offer: Title": {
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "${ BRAND_NAME } Duo でストレージを4倍に"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "${ BRAND_NAME } Duo とお客様のプラン特典を共有"
+      ]
+    },
     "Easy switch": {
       "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
         "最大${ MAX_SYNC_PAID_USER }個のアカウントからメールを転送するには、${ planName }にアップグレードしてください。"
@@ -3657,6 +3754,9 @@
       ],
       "Error publishing changes": [
         "変更の公開中にエラー"
+      ],
+      "Failed to add group member": [
+        "グループメンバーの追加に失敗しました"
       ],
       "Failed to load the STL preview": [
         "STLプレビューの読み込みに失敗しました"
@@ -4570,8 +4670,14 @@
       "Continue": [
         "続ける"
       ],
+      "Encrypted cloud storage for files, photos and documents": [
+        "ファイル、写真、文書のための暗号化済みクラウドストレージ"
+      ],
       "Fastest VPN servers": [
         "最速の VPN サーバー"
+      ],
+      "More premium features": [
+        "さらなるプレミアム機能"
       ],
       "Remove": [
         "削除"
@@ -5746,6 +5852,9 @@
       "Change your password": [
         "パスワードを変更"
       ],
+      "Choose a plan that works best for you.": [
+        "お客様に最適なプランをお選びください。"
+      ],
       "Choose an Entity ID to continue.": [
         "続行するにはエンティティIDを選択してください。"
       ],
@@ -5769,6 +5878,9 @@
       ],
       "Connection data will be available in around 1 hour.": [
         "接続データは約 1 時間後に利用可能になります"
+      ],
+      "Continue": [
+        "続ける"
       ],
       "Continue to allow **${ affiliationsText }** from **${ organizationValue.Name }** to join your ${ BRAND_NAME } organization.": [
         "続けて **${ organizationValue.Name }**からの**${ affiliationsText }**を ${ BRAND_NAME } 組織に参加させます。"
@@ -7099,6 +7211,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "今すぐアップグレードして、プレミアム機能、製品、ストレージを特別価格で手に入れよう"
       ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "${ planTitle }の特典を維持するには、アップグレードしてください。"
+      ],
       "Upgrade to Professional or a higher plan to unlock": [
         "アンロックするにはProfessionalもしくはより上位のプランにアップグレード"
       ],
@@ -7789,6 +7904,9 @@
       "Billing cycle": [
         "支払い間隔"
       ],
+      "Black Friday": [
+        "ブラックフライデー"
+      ],
       "Block": [
         "ブロック"
       ],
@@ -8007,6 +8125,9 @@
       ],
       "Gateway name": [
         "ゲートウェイ名"
+      ],
+      "Get the deal": [
+        "割引を入手"
       ],
       "Gift code": [
         "ギフトコード"
@@ -8900,6 +9021,9 @@
       ],
       "View user sign-in, recovery and security events.": [
         "ユーザーのサインイン、回復、セキュリティイベントを閲覧"
+      ],
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "お客様の無料トライアルは終了しました。${ nonAutoRenewalAction }"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "無料トライアルは終了しました。アカウントへのアクセスはまもなく無効になります。${ action }"
@@ -10001,9 +10125,6 @@
       ]
     },
     "Notification": {
-      "${ MEET_APP_NAME } video conferencing settings have been updated": [
-        "${ MEET_APP_NAME }ビデオ会議の設定が更新されました"
-      ],
       "${ reason } has been disabled": [
         "${ reason } が無効になりました"
       ],
@@ -10559,6 +10680,9 @@
       "Advanced account protection": [
         "高度なアカウント保護"
       ],
+      "File attachments (up to 10GB)": [
+        "添付ファイル (最大10GBまで)"
+      ],
       "Team policies": [
         "チームポリシー"
       ]
@@ -10781,6 +10905,15 @@
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "クーポンは ${ couponRedemptions } の更新で有効です。"
       ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "特別割引価格は最初の ${ subscriptionLength } ヶ月間有効です。"
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "特別割引価格は最初の月のみ有効です。クーポンは${ couponRedemptions }の更新で有効です。そのあとは 1 ヶ月${ renewPriceStr }で自動更新されます。いつでもキャンセル可能です。"
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "特別な割引価格は最初の月のみ有効です。その後、毎月${ renewPriceStr }で自動更新されます。いつでもキャンセル可能です。"
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "${ priceWithDiscount } の特別割引価格は最初の ${ subscriptionLength } ヶ月間有効です。"
       ],
@@ -10831,6 +10964,9 @@
       ],
       "Your payment is still being processed": [
         "お支払いが現在処理中です"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+        "お客様のサブスクリプションには現在、既存の割引が適用されています。この新しいプロモーションに移行すると、既存の割引は適用されなくなります。"
       ]
     },
     "Payments.Error": {
@@ -11281,6 +11417,9 @@
       ],
       "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
         "**${ planTitle }**が提供するすべての強力な機能をお試しいただける最後の機会です。"
+      ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "正規サブスクリプションが開始された後も、お客様は引き続き30日以内にキャンセルし、日割り計算での払い戻しを受けることができます。"
       ],
       "Refer friends": [
         "友達を招待"
@@ -11996,6 +12135,11 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "${ ownerName } による共有"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "${ appName } で開く"
       ]
     },
     "Signup": {
@@ -13787,9 +13931,6 @@
       "Domain names": [
         "ドメイン名"
       ],
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "${ BRAND_NAME } Duo でストレージを2倍に"
-      ],
       "Downgrade account": [
         "アカウントのダウングレード"
       ],
@@ -13912,6 +14053,9 @@
       ],
       "Get ${ vpnPlus } to access all servers": [
         "すべてのサーバーに接続するために ${ vpnPlus } を入手"
+      ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "**${ referralInfo.uiData.refereeRewardAmount }**分のクレジットを${ planTitle }で獲得"
       ],
       "Get complete privacy coverage": [
         "徹底したプライバシー保護を入手。"
@@ -14273,6 +14417,9 @@
       "Upgrade to ${ planName }": [
         "${ planName } へアップグレード"
       ],
+      "Upgrade to keep your premium benefits.": [
+        "プレミアム特典を維持するには、アップグレードしてください。"
+      ],
       "Upgrade your network protection with dedicated servers": [
         "専用サーバーでネットワークの保護を強化する"
       ],
@@ -14317,9 +14464,6 @@
       ],
       "Verifying your payment...": [
         "お支払いの確認..."
-      ],
-      "Video conferencing with ${ MEET_APP_NAME }": [
-        "${ MEET_APP_NAME } を利用したビデオ会議"
       ],
       "Video conferencing with Zoom": [
         "Zoomでのビデオ会議"
@@ -15144,6 +15288,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "無料トライアルは ${ textDate } に終了します。${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "お客様のトライアルは${ textDate }に終了します。${ textDate }までにキャンセルした場合、料金は請求されません。${ action }"
       ]
     },
     "Warning for domain modal": {

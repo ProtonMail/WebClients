@@ -221,6 +221,9 @@
       "Copy alias “${ name }”": [
         "Капіяваць псеўданім “${ name }”"
       ],
+      "Copy Booking link": [
+        "Скапіяваць спасылку на браніраванне"
+      ],
       "Copy email address": [
         "Скапіяваць адрас электроннай пошты"
       ],
@@ -239,11 +242,17 @@
       "Create": [
         "Стварыць"
       ],
+      "Create a booking page": [
+        "Стварыць старонку браніравання"
+      ],
       "Create a new bookings page": [
         "Стварыць новую старонку браніраванняў"
       ],
       "Create a new contact group": [
         "Стварыць новую групу кантактаў"
+      ],
+      "Create an event": [
+        "Стварыць сустрэчу"
       ],
       "Create and copy alias": [
         "Стварыць і скапіяваць псеўданім"
@@ -484,6 +493,9 @@
       ],
       "Increase": [
         "Павялічыць"
+      ],
+      "Join ${ CALENDAR_APP_NAME }": [
+        "Далучыцца да ${ CALENDAR_APP_NAME }"
       ],
       "Join calendar": [
         "Далучыцца да календара"
@@ -1338,6 +1350,9 @@
       "1 user account": [
         "1 уліковы запіс карыстальніка"
       ],
+      "200 GB storage: 40x your current plan": [
+        "200 ГБ сховішча: у 40 разоў больш за ваш бягучы тарыфны план"
+      ],
       "6 user accounts": [
         "6 уліковых запісаў карыстальнікаў"
       ],
@@ -1359,6 +1374,9 @@
       "Password health alerts": [
         "Папярэджанні якасці пароля"
       ],
+      "Recover previous file versions": [
+        "Аднаўленне папярэдніх версій файла"
+      ],
       "Unlimited folders, labels and filters": [
         "Неабмежаваная колькасць папак, метак і фільтраў"
       ],
@@ -1372,6 +1390,9 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Аплачваецца ${ amount } аднаразова"
+      ],
+      "forever": [
+        "назаўсёды"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Падоўжыцца пасля 1 месяца за ${ regularAmount }."
@@ -1407,6 +1428,32 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Прастора сховішча размеркавана паміж усімі сэрвісамі ${ BRAND_NAME }"
+      ]
+    },
+    "BF2025: Deal details": {
+      "Block ads, trackers, and malware": [
+        "Блакіроўка рэкламы, праграм сачэння і шкодных праграм"
+      ],
+      "Built-in 2FA authenticator": [
+        "Убудаваны аўтэнтыфікатар 2ФА"
+      ],
+      "Unlimited daily chats": [
+        "Неабмежаваная колькасць штодзённых чатаў"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "Чорная пятніца"
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "за ${ durationDeal }"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Адмыслова распрацаваная функцыя NetShield абароніць вашы прылады і паскорыць прагляд старонак пры дапамозе блакіравання рэкламы, праграм сачэння і шкодных праграм."
       ]
     },
     "Billing cycle option": {
@@ -3282,19 +3329,19 @@
       ]
     },
     "Duo offer: Link": {
-      "Double your storage": [
-        "Падвойце сваё сховішча"
+      "Get 4x more storage": [
+        "Атрымайце ў 4 разы больш месца ў сховішчы"
       ],
       "Share your plan": [
-        "Абагуліце свой тарыфны план"
+        "Абагульвайце свой тарыфны план"
       ]
     },
     "Duo offer: Title": {
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Падвойце сваё сховішча з ${ BRAND_NAME } Duo"
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "Атрымайце ў 4 разы больш сховішча з ${ BRAND_NAME } Duo"
       ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
-        "Абагуліце свае перавагі тарыфнага плана з ${ BRAND_NAME } Duo"
+        "Абагульвайце свае перавагі тарыфнага плана з ${ BRAND_NAME } Duo"
       ]
     },
     "Duplicate event button tooltip": {
@@ -3529,7 +3576,7 @@
         "Немагчыма ўключыць пошук змесціва ў гэтым браўзеры. Выйдзіце з рэжыму прыватнага прагляду або скарыстайцеся іншым браўзерам."
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
-        "Немагчыма ўключыць пошук па кантэксце. Перазапусціце праграму або ачысціце яе даныя."
+        "Пошук па кантэксце не можа быць уключаны. Перазапусціце праграму або ачысціце яе даныя."
       ],
       "Could not open created vault": [
         "Не ўдалося адкрыць створанае сховішча"
@@ -4026,7 +4073,7 @@
         "Ваш файл ${ formattedFilename } змяшчае больш за ${ MAX_IMPORT_EVENTS } падзей."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        "Ваш файл ${ formattedFilename } мае памылковы спосаб і яго немагчыма імпартаваць."
+        "Ваш файл ${ formattedFilename } мае памылковы спосаб і ён не можа быць імпартаваны."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "Ваш файл ${ formattedFilename } не змяшчае падзей для імпартавання."
@@ -4074,7 +4121,7 @@
     },
     "Error importing event": {
       "Bad format. Component cannot be read.": [
-        "Няправільны фармат. Немагчыма прачытаць кампанент."
+        "Няправільны фармат. Кампанент."
       ],
       "Calendar": [
         "Каляндар"
@@ -4984,6 +5031,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
       ],
+      "${ booking.duration } min duration": [
+        "працягласць ${ booking.duration } хв"
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe памочнік у напісанні"
       ],
@@ -5156,7 +5206,7 @@
         "Гарантыя вяртання грашовых сродкаў на працягу 30 дзён."
       ],
       "A booking slot cannot be added in the past.": [
-        "Час для браніравання нельга дадаць у мінулым."
+        "Час для браніравання не можа быць дададзены ў мінулым."
       ],
       "A cancellation email will be sent to removed participants.": [
         "Ліст пра скасаванне будзе адпраўлены выдаленым удзельнікам."
@@ -5286,6 +5336,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Перыяд аплаты: ${ text }"
+      ],
+      "Booking page example": [
+        "Прыклад старонкі браніравання"
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Павысце ідэнтычнасць сваёй арганізацыі і стварыце больш паслядоўны досвед працы ў інтэрнэце для сваіх карыстальнікаў."
@@ -5662,6 +5715,9 @@
       "Learn what to do ${ dataLeakedLink }": [
         "Даведайцеся, што рабіць ${ dataLeakedLink }"
       ],
+      "Let others book time with you automatically. No back-and-forth emails. Share a link, and stay in control of your availability.": [
+        "Дазвольце іншым аўтаматычна браніраваць час з вамі. Без лішняй перапіскі. Абагуліце спасылку і кантралюйце сваю даступнасць."
+      ],
       "Link copied to clipboard": [
         "Спасылка скапіявана ў буфер абмену"
       ],
@@ -5926,6 +5982,9 @@
       "Setting up your new address…": [
         "Наладжванне вашага новага адраса…"
       ],
+      "Share this page to let others book time in your calendar.": [
+        "Абагуліце гэту старонку, каб іншыя маглі забраніраваць час у вашым календары."
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Паколькі вы з'яўляецеся пастаянным карыстальнікам, мы дадалі ў ваш уліковы запіс дадатковыя функцыі."
       ],
@@ -5984,10 +6043,10 @@
         "Адбылася ўцечка скампраметаваных звестак са старонняга сэрвісу. Гэта не закранула звесткі вашага ўліковага запісу ${ BRAND_NAME }, бо яны зашыфраваны і знаходзяцца ў бяспецы. ${ learnMoreLink }"
       ],
       "The following participants cannot be notified about your changes:": [
-        "Наступныя ўдзельнікі не атрымалі апавяшчэнне аб вашых зменах:"
+        "Наступныя ўдзельнікі не змаглі атрымаць апавяшчэнне аб вашых зменах:"
       ],
       "The organizer cannot be notified that you decline the invitation:": [
-        "Немагчыма апавясціць арганізатара, што вы адхілілі запрашэнне:"
+        "Арганізатар не можа быць апавешчаны, бо вы адхілілі запрашэнне:"
       ],
       "The organizer cannot be notified that you want to change your answer:": [
         "Немагчыма апавясціць арганізатара, што вы хочаце змяніць свой адказ:"
@@ -6092,7 +6151,7 @@
         "Палепшыце свой тарыфны план зараз, каб атрымаць прэміяльныя функцыі, прадукты, а таксама палепшыць сховішча па спецыяльнай цане"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
-        "Палепшыць падпіску, каб захаваць ${ planTitle } перавагі."
+        "Палепшыць тарыфны план, каб захаваць перавагі ${ planTitle }."
       ],
       "Uppercase and lowercase letters": [
         "Маленькія і вялікія літары"
@@ -6120,6 +6179,9 @@
       ],
       "VPN IP": [
         "IP VPN"
+      ],
+      "Want to create your own booking page?": [
+        "Хочаце стварыць уласную старонку браніравання?"
       ],
       "Warning": [
         "Папярэджанне"
@@ -6665,6 +6727,9 @@
       "Billing cycle": [
         "Перыяд аплаты"
       ],
+      "Black Friday": [
+        "Чорная пятніца"
+      ],
       "Browser": [
         "Браўзер"
       ],
@@ -6829,6 +6894,9 @@
       ],
       "From: ${ fromEmail }": [
         "Ад: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "Атрымаць прапанову"
       ],
       "Hide password": [
         "Схаваць пароль"
@@ -7407,7 +7475,7 @@
         "Адказаць:"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
-        "Ваш бясплатны пробны перыяд завершыўся. ${ nonAutoRenewalAction }"
+        "Ваш бясплатны пробны перыяд завяршыўся. ${ nonAutoRenewalAction }"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ваш бясплатны пробны перыяд завяршыўся. Доступ да вашых уліковых запісаў будзе неўзабаве адключаны. ${ action }"
@@ -9189,6 +9257,9 @@
       "Advanced account protection": [
         "Пашыраная абарона ўліковага запісу"
       ],
+      "File attachments (up to 10GB)": [
+        "Далучаныя файлы (да 10 ГБ)"
+      ],
       "Team policies": [
         "Палітыка каманды"
       ]
@@ -9331,6 +9402,21 @@
         "Купон дзейнічае для ${ couponRedemptions } падаўжэнняў.",
         "Купон дзейнічае для ${ couponRedemptions } падаўжэнняў."
       ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першага ${ subscriptionLength } месяца.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першых ${ subscriptionLength } месяцаў.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першых ${ subscriptionLength } месяцаў.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першых ${ subscriptionLength } месяцаў."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэння. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за кожны месяц. Скасаваць можна ў любы момант."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першага ${ subscriptionLength } месяца.",
         "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першых ${ subscriptionLength } месяцаў.",
@@ -9384,6 +9470,9 @@
       ],
       "Your payment is still being processed": [
         "Ваш плацеж усё яшчэ апрацоўваецца"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+        "Ваша падпіска мае бягучую скідку. Пераход на гэту новую акцыю азначае, што ранейшая скідка больш не будзе ўжывацца."
       ]
     },
     "Payments.Error": {
@@ -9446,7 +9535,7 @@
         "Дадаць нумар прадпрыемства"
       ],
       "Add EIN": [
-        "Рэдагаваць ІНП"
+        "Рэдагаваць EIN"
       ],
       "Add VAT number": [
         "Дадаць нумар ПДВ"
@@ -11063,6 +11152,9 @@
       "Billing details updated": [
         "Плацежныя падрабязнасці абноўлены"
       ],
+      "Booking link copied to clipboard": [
+        "Спасылка на браніраванне скапіявана ў буфер абмену"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Каляндар дададзены. Сінхранізацыя можа заняць некалькі хвілін."
       ],
@@ -11612,9 +11704,6 @@
       "Does not repeat": [
         "Не паўтараецца"
       ],
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Падвойце сваё сховішча з ${ BRAND_NAME } Duo"
-      ],
       "Downgrade account": [
         "Панізіць уліковы запіс"
       ],
@@ -11826,7 +11915,7 @@
         "Іншыя імёны"
       ],
       "Participants cannot be notified": [
-        "Немагчыма апавясціць удзельнікаў"
+        "Удзельнікі не могуць быць апавешчаны"
       ],
       "Payment failed": [
         "Збой плацяжу"
@@ -11857,6 +11946,9 @@
       ],
       "Reactivate calendar keys": [
         "Паўторна актываваць ключы календара"
+      ],
+      "Ready to automate your scheduling?": [
+        "Гатовыя аўтаматызаваць расклад?"
       ],
       "Recommended": [
         "Рэкамендаваны"
@@ -11993,6 +12085,12 @@
       "Summary": [
         "Зводка"
       ],
+      "This booking page does not exist": [
+        "Такая старонка браніравання не існуе"
+      ],
+      "This booking page has expired": [
+        "Гэта старонка браніравання пратэрмінавана"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Уключэнне ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -12082,6 +12180,9 @@
       ],
       "Your account is protected": [
         "Ваш уліковы запіс абаронены"
+      ],
+      "Your booking page is ready": [
+        "Ваша старонка браніравання гатова"
       ],
       "Your calendar link": [
         "Ваша спасылка на каляндар"
@@ -12197,6 +12298,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: Памочнік ШІ, які паважае вашу прыватнасць"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
       ]
@@ -12425,7 +12529,7 @@
         "Ваш бясплатны пробны перыяд завершыцца ${ textDate }. ${ action }"
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
-        "Ваш пробны перыяд скончыцца ${ textDate }. З вас не будзе спаганяцца плата, калі вы адмовіцеся да ${ textDate }. ${ action }"
+        "Ваш пробны перыяд завершыцца ${ textDate }. З вас не будзе спаганяцца плата, калі вы адмовіцеся да ${ textDate }. ${ action }"
       ]
     },
     "Warning in modal to accept calendar invitation; Description": {

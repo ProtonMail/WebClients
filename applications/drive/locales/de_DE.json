@@ -1115,9 +1115,6 @@
       "Upload file": [
         "Datei hochladen"
       ],
-      "Upload file via SDK": [
-        "Datei über SDK hochladen"
-      ],
       "Upload files": [
         "Dateien hochladen"
       ],
@@ -1132,9 +1129,6 @@
       ],
       "Upload picture": [
         "Bild hochladen"
-      ],
-      "Upload SDK file": [
-        "SDK-Datei hochladen"
       ],
       "Use ${ label } theme": [
         "Farbschema „${ label }“ verwenden"
@@ -1564,6 +1558,87 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Der Speicherplatz wird von allen ${ BRAND_NAME }-Services gemeinsam genutzt."
+      ]
+    },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "Black-Friday-Aktion"
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB Datenspeicher"
+      ],
+      "3 TB data storage": [
+        "3 TB Datenspeicher"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Auf über 15.000 Server in mehr als 120 Ländern zugreifen"
+      ],
+      "Access advanced AI models": [
+        "Zugriff auf erweiterte KI-Modelle"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle Premium-Funktionen von ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blockiere Werbung, Tracker und Malware"
+      ],
+      "Built-in 2FA authenticator": [
+        "Integrierter 2FA-Authentifikator"
+      ],
+      "Connect 10 devices at once": [
+        "Verbinde 10 Geräte gleichzeitig"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Vollständiger Chatverlauf mit einfacher Suche und Favoriten"
+      ],
+      "Individual accounts for 6 users": [
+        "Eigene Konten für 6 Benutzer"
+      ],
+      "Individual accounts for you and a partner": [
+        "Eigene Konten für dich und einen Partner"
+      ],
+      "Stronger protection against cyber threats": [
+        "Stärkerer Schutz vor Cyber-Bedrohungen"
+      ],
+      "Unlimited daily chats": [
+        "Unbegrenzte tägliche Chats"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Hilf deinen Liebsten, sich der Privatsphäre-Revolution anzuschließen – mit unseren Vorteilspaketen, jetzt mit 50 % Rabatt!"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Schliesse dich der Privatsphäre-Revolution an mit unseren Vorteilspaketen – jetzt mit 50 % Rabatt!"
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "Für ${ durationDeal }"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "Spare ${ savedAmount } mit unserem preisgünstigsten, zeitlich begrenzten Angebot!"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "Wechsle zu unserem 2-Jahres-Abo und spare ${ savedAmount }!"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "Wechsle zu unserem Jahresabo und spare ${ savedAmount }!"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "Gönne deinen Liebsten vollständigen digitalen Schutz."
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Das speziell entwickelte NetShield schützt deine Geräte und beschleunigt das Surfen durch das Blockieren von Werbung, Trackern und Malware."
       ]
     },
     "Billing cycle option": {
@@ -3107,16 +3182,16 @@
       ]
     },
     "Duo offer: Link": {
-      "Double your storage": [
-        "Verdopple deinen Speicherplatz"
+      "Get 4x more storage": [
+        "Erhalte 4x mehr Speicherplatz"
       ],
       "Share your plan": [
         "Teile dein Abonnement"
       ]
     },
     "Duo offer: Title": {
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Verdopple deinen Speicherplatz mit ${ BRAND_NAME } Duo"
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "Erhalte 4x mehr Speicherplatz mit ${ BRAND_NAME } Duo"
       ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
         "Teile deine Abonnementsvorteile mit ${ BRAND_NAME } Duo"
@@ -4825,6 +4900,9 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } beinhaltet ${ BRAND_NAME } Scribe Schreibassistent"
       ],
+      "${ normalizedProgress }% completed": [
+        "${ normalizedProgress } % abgeschlossen"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Beim lebenslangen ${ PASS_SHORT_APP_NAME }-Angebot gibt es keinen Verlängerungspreis. Es ist eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }"
       ],
@@ -5522,6 +5600,9 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Deine Daten werden von ${ fromEmail } nach ${ toEmail } importiert."
+      ],
+      "In progress": [
+        "In Bearbeitung"
       ],
       "In restrictive countries": [
         "In restriktiven Ländern"
@@ -6256,6 +6337,12 @@
       "This will replace the existing file with the folder": [
         "Dadurch wird die vorhandene Datei durch den Ordner ersetzt."
       ],
+      "This will replace the existing folder or file with the file": [
+        "Dadurch wird der vorhandene Ordner oder die vorhandene Datei durch die hochgeladene Datei ersetzt."
+      ],
+      "This will replace the existing folder or file with the folder": [
+        "Dadurch wird der vorhandene Ordner oder die vorhandene Datei durch den hochgeladenen Ordner ersetzt."
+      ],
       "This will replace the existing folder with the file": [
         "Dadurch wird der vorhandene Ordner durch die Datei ersetzt."
       ],
@@ -6917,6 +7004,9 @@
       "Billing cycle": [
         "Abrechnungszeitraum"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Browser": [
         "Browser"
       ],
@@ -7095,6 +7185,9 @@
       "File name": [
         "Dateiname"
       ],
+      "File transfer overview": [
+        "Dateiübertragungsübersicht"
+      ],
       "First name": [
         "Vorname"
       ],
@@ -7112,6 +7205,9 @@
       ],
       "From: ${ fromEmail }": [
         "Von: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "Zugreifen"
       ],
       "Hide password": [
         "Passwort ausblenden"
@@ -7292,6 +7388,9 @@
       ],
       "Replace existing folder": [
         "Vorhandenen Ordner ersetzen"
+      ],
+      "Replace existing folder or file": [
+        "Vorhandenen Ordner oder vorhandene Datei ersetzen"
       ],
       "Reveal password": [
         "Passwort anzeigen"
@@ -9682,6 +9781,9 @@
       "Advanced account protection": [
         "Erweiterter Kontoschutz"
       ],
+      "File attachments (up to 10GB)": [
+        "Dateianhänge (bis zu 10 GB)"
+      ],
       "Team policies": [
         "Gruppenrichtlinien"
       ]
@@ -9822,6 +9924,17 @@
         "Der Gutschein ist für ${ couponRedemptions } Verlängerung gültig.",
         "Der Gutschein ist für ${ couponRedemptions } Verlängerungen gültig."
       ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "Der speziell ermäßigte Preis ist für ${ subscriptionLength } Monat gültig.",
+        "Der speziell ermäßigte Preis ist für die ersten ${ subscriptionLength } Monate gültig."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis gilt für den ersten Monat. Der Gutschein kann für ${ couponRedemptions } Verlängerung eingelöst werden. Danach wird das Abonnement automatisch zum Preis von ${ renewPriceStr } für 1 Monat verlängert. Du kannst jederzeit kündigen.",
+        "Der speziell ermäßigte Preis gilt für den ersten Monat. Der Gutschein kann für ${ couponRedemptions } Verlängerungen eingelöst werden. Danach wird das Abonnement automatisch zum Preis von ${ renewPriceStr } für 1 Monat verlängert. Du kannst jederzeit kündigen."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ renewPriceStr } verlängert. Du kannst jederzeit kündigen."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für ${ subscriptionLength } Monat gültig.",
         "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für ${ subscriptionLength } Monate gültig."
@@ -9869,6 +9982,9 @@
       ],
       "Your payment is still being processed": [
         "Deine Zahlung ist noch in Bearbeitung."
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+        "Dein Abonnement hat derzeit einen bestehenden Rabatt. Der Wechsel zu dieser neuen Aktion bedeutet, dass der bestehende Rabatt nicht länger angewendet wird."
       ]
     },
     "Payments.Error": {
@@ -10208,96 +10324,6 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Offizielle E-Mail von ${ BRAND_NAME }"
-      ]
-    },
-    "q3campaign_2025: Action": {
-      "END-OF-SUMMER SALE": [
-        "SOMMEREND-SALE"
-      ],
-      "Get the deal": [
-        "Jetzt zugreifen"
-      ]
-    },
-    "q3campaign_2025: Info": {
-      "${ discountPercent }% off": [
-        "-${ discountPercent } %"
-      ],
-      "${ normalPricePerMonth } /month": [
-        "${ normalPricePerMonth }/Monat"
-      ],
-      "/month": [
-        "/Monat"
-      ],
-      "1 TB data storage": [
-        "1 TB Datenspeicher"
-      ],
-      "15 GB storage": [
-        "15 GB Speicher"
-      ],
-      "200 GB storage for files, photos & docs": [
-        "200 GB Speicher für Dateien, Fotos und Dokumente"
-      ],
-      "3 TB data storage": [
-        "3 TB Datenspeicher"
-      ],
-      "500 GB storage": [
-        "500 GB Speicherplatz"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Auf über 15.000 Server in mehr als 120 Ländern zugreifen"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Alle Premium-Funktionen von Mail, Pass, Drive, VPN und Calendar"
-      ],
-      "Built-in 2FA authenticator": [
-        "Integrierter 2FA-Authentifikator"
-      ],
-      "Connect 10 devices at once": [
-        "Verbinde 10 Geräte gleichzeitig"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Die Rabatte basieren auf den monatlichen Standardpreisen. Dein Abonnement wird am Ende des Abrechnungszeitraums zum jährlichen Standardtarif verlängert."
-      ],
-      "Enjoy the fastest VPN speeds": [
-        "Genieße die schnellsten VPN-Geschwindigkeiten"
-      ],
-      "Individual accounts for 6 users": [
-        "Eigene Konten für 6 Benutzer"
-      ],
-      "Individual accounts for you and a partner": [
-        "Eigene Konten für dich und einen Partner"
-      ],
-      "Online document editor": [
-        "Editor für Onlinedokumente"
-      ],
-      "Recover previous file versions": [
-        "Vorherige Dateiversionen wiederherstellen"
-      ],
-      "Save ${ totalSavings } and keep all your current features!": [
-        "Spare ${ totalSavings } und behalte alle deine aktuellen Funktionen!"
-      ],
-      "Secure link, vault & item sharing": [
-        "Sicheres Teilen von Links, Tresoren und Einträgen"
-      ],
-      "Stronger protection against cyber threats": [
-        "Stärkerer Schutz vor Cyber-Bedrohungen"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Unbegrenzte Hide-my-email-Aliasse"
-      ],
-      "Use your own email domain": [
-        "Nutze deine eigene E-Mail-Domain"
-      ]
-    },
-    "q3campaign_2025: Title": {
-      "End-of-summer sale": [
-        "Sommer-Sale"
-      ],
-      "for 12 months": [
-        "für 12 Monate"
       ]
     },
     "Referral": {
@@ -12048,9 +12074,6 @@
       "Discard changes?": [
         "Änderungen verwerfen?"
       ],
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Verdopple deinen Speicher mit ${ BRAND_NAME } Duo"
-      ],
       "Downgrade account": [
         "Konto downgraden"
       ],
@@ -12861,6 +12884,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: KI-Assistent, der deine Privatsphäre respektiert"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
       ]

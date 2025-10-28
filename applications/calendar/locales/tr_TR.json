@@ -219,6 +219,9 @@
       "Copy alias “${ name }”": [
         "“${ name }” takma adını kopyala"
       ],
+      "Copy Booking link": [
+        "Rezervasyon bağlantısını kopyala"
+      ],
       "Copy email address": [
         "E-posta adresini kopyala"
       ],
@@ -237,11 +240,17 @@
       "Create": [
         "Ekle"
       ],
+      "Create a booking page": [
+        "Bir rezervasyon sayfası oluştur"
+      ],
       "Create a new bookings page": [
         "Yeni bir rezervasyon sayfası oluşturun"
       ],
       "Create a new contact group": [
         "Yeni bir kişi grubu ekle"
+      ],
+      "Create an event": [
+        "Etkinlik oluştur"
       ],
       "Create and copy alias": [
         "Takma ad ekle ve kopyala"
@@ -478,6 +487,9 @@
       ],
       "Increase": [
         "Artır"
+      ],
+      "Join ${ CALENDAR_APP_NAME }": [
+        "${ CALENDAR_APP_NAME } uygulamasına katılın"
       ],
       "Join calendar": [
         "Takvime katıl"
@@ -1319,7 +1331,7 @@
         "1 kullanıcı hesabı"
       ],
       "200 GB storage: 40x your current plan": [
-        "200 GB depolama alanı: mevcut tarifenizin 40 katı"
+        "200 GB depolama alanı: Geçerli tarifenizin 40 katı"
       ],
       "6 user accounts": [
         "6 kullanıcı hesabı"
@@ -1343,7 +1355,7 @@
         "Parola sağlığı uyarıları"
       ],
       "Recover previous file versions": [
-        "Önceki dosya sürümlerini kurtarın"
+        "Önceki dosya sürümlerini geri yükleyin"
       ],
       "Unlimited folders, labels and filters": [
         "Sınırsız sayıda klasör, etiket ve süzgeç"
@@ -1392,6 +1404,87 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Depolama alanı tüm ${ BRAND_NAME } hizmetleri arasında paylaşılır."
+      ]
+    },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "Black Friday İndirimi"
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB veri depolama alanı"
+      ],
+      "3 TB data storage": [
+        "3 TB veri depolama alanı"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "120'den fazla ülkede 15.000'den fazla sunucuya erişin"
+      ],
+      "Access advanced AI models": [
+        "Gelişmiş yapay zeka modellerine erişim"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } uygulamalarının tüm premium özellikleri"
+      ],
+      "Block ads, trackers, and malware": [
+        "Reklamları, izleyicileri ve kötü amaçlı yazılımları engelleyin"
+      ],
+      "Built-in 2FA authenticator": [
+        "Hazır iki adımlı kimlik doğrulayıcı"
+      ],
+      "Connect 10 devices at once": [
+        "Aynı anda 10 aygıta bağlanın"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Kolay arama ve sık kullanılanlar ile tam sohbet geçmişi"
+      ],
+      "Individual accounts for 6 users": [
+        "6 kullanıcı için bireysel hesaplar"
+      ],
+      "Individual accounts for you and a partner": [
+        "Siz ve bir partneriniz için bireysel hesaplar"
+      ],
+      "Stronger protection against cyber threats": [
+        "Siber tehditlere karşı daha güçlü koruma"
+      ],
+      "Unlimited daily chats": [
+        "Sınırsız günlük sohbet"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "Muhteşem Cuma"
+      ]
+    },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Sevdiklerinizin, şimdi %50 indirimli en avantajlı paketlerimizle gizlilik devrimine katılmasına yardımcı olun!"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Şimdi %50 indirimli, en avantajlı paketlerimizle gizlilik devrimine katılın!"
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "${ durationDeal } için"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "En avantajlı, sınırlı süreli fırsatımızla ${ savedAmount } tasarruf edin!"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "2 yıllık planımıza geçin ve ${ savedAmount } tasarruf edin!"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "Yıllık planımıza geçin ve ${ savedAmount } tasarruf edin!"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "Sevdiklerinize tam dijital koruma sağlayın."
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Özel olarak tasarlanmış NetShield aygıtlarınızı korur ve reklamları, etkinlik izleyicileri ve kötü amaçlı yazılımları engelleyerek gezinmenizi hızlandırır."
       ]
     },
     "Billing cycle option": {
@@ -3231,32 +3324,32 @@
     },
     "Duo offer": {
       "/month": [
-        "/aylık"
+        "/ay"
       ],
       "1 TB of storage to share": [
-        "Paylaşım için 1 TB depolama alanı"
+        "Paylaşılabilen 1 TB depolama alanı"
       ],
       "2 user accounts": [
         "2 kullanıcı hesabı"
       ],
       "All premium features from your current plan": [
-        "Mevcut tarifenizdeki tüm ücretli özellikler"
+        "Geçerli tarifenizdeki tüm ücretli özellikler"
       ],
       "Only": [
         "Yalnızca"
       ]
     },
     "Duo offer: Link": {
-      "Double your storage": [
-        "Depolama alanınızı iki katına çıkarın"
+      "Get 4x more storage": [
+        "4 kat daha fazla depolama alanı edinin"
       ],
       "Share your plan": [
         "Tarifenizi paylaşın"
       ]
     },
     "Duo offer: Title": {
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "${ BRAND_NAME } Duo ile depolama alanınızı iki katına çıkarın"
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "${ BRAND_NAME } Duo ile 4 kat daha fazla depolama alanı edinin"
       ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
         "${ BRAND_NAME } Duo ile tarifenizin avantajlarını paylaşın"
@@ -4374,7 +4467,7 @@
         "Dosyalar, fotoğraflar ve belgeler için şifrelenmiş bulut depolama alanı"
       ],
       "More premium features": [
-        "Daha fazla ücretli özellik"
+        "Diğer ücretli özellikler"
       ],
       "Unlimited hide-my-email aliases": [
         "Sınırsız sayıda hide-my-email takma adı"
@@ -4889,6 +4982,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
       ],
+      "${ booking.duration } min duration": [
+        "${ booking.duration } en az süre"
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe yazma yardımcısı"
       ],
@@ -5152,6 +5248,9 @@
       "Billing cycle: ${ text }": [
         "Faturalama dönemi: ${ text }"
       ],
+      "Booking page example": [
+        "Rezervasyon sayfası örneği"
+      ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Kuruluşunuzun marka kimliğini güçlendirerek kullanıcılarınız için daha tutarlı bir çevrim içi deneyim sunun."
       ],
@@ -5183,7 +5282,7 @@
         "Kişi denetleniyor ${ progress }/${ max }..."
       ],
       "Choose a plan that works best for you.": [
-        "Sizin için en uygun tarifeyi seçin."
+        "Size en uygun tarifeyi seçin."
       ],
       "Clear data": [
         "Verileri temizle"
@@ -5517,6 +5616,9 @@
       "Learn what to do ${ dataLeakedLink }": [
         "${ dataLeakedLink } ne yapacağınızı öğrenin"
       ],
+      "Let others book time with you automatically. No back-and-forth emails. Share a link, and stay in control of your availability.": [
+        "Başkalarının sizinle randevularını otomatik olarak ayarlamasını sağlayın. Karşılıklı e-posta yazışmalarına gerek kalmaz. Bir bağlantı paylaşın ve uygunluk durumunuzu kontrol edin."
+      ],
       "Link copied to clipboard": [
         "Bağlantı panoya kopyalandı"
       ],
@@ -5777,6 +5879,9 @@
       "Setting up your new address…": [
         "Yeni adresiniz ayarlanıyor…"
       ],
+      "Share this page to let others book time in your calendar.": [
+        "Başkalarının takviminizde rezervasyon alabilmesi için bu sayfayı paylaşın."
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda yeni özellikler eklendi."
       ],
@@ -5941,7 +6046,7 @@
         "Ücretli özellikleri, ürünleri ve depolama alanını özel bir ücret ile almak için tarifenizi şimdi yükseltin"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
-        "${ planTitle } avantajlarınızı korumak için yükseltin."
+        "${ planTitle } avantajlarınızı korumak için tarifenizi yükseltin."
       ],
       "Uppercase and lowercase letters": [
         "Büyük ve küçük harfler"
@@ -5969,6 +6074,9 @@
       ],
       "VPN IP": [
         "VPN IP adresi"
+      ],
+      "Want to create your own booking page?": [
+        "Kendi rezervasyon sayfanızı oluşturmak ister misiniz?"
       ],
       "Warning": [
         "Uyarı"
@@ -6496,6 +6604,9 @@
       "Billing cycle": [
         "Fatura dönemi"
       ],
+      "Black Friday": [
+        "Muhteşem Cuma"
+      ],
       "Browser": [
         "Tarayıcı"
       ],
@@ -6660,6 +6771,9 @@
       ],
       "From: ${ fromEmail }": [
         "Kimden: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "Tekliften yararlanın"
       ],
       "Hide password": [
         "Parolayı gizle"
@@ -7226,7 +7340,7 @@
         "Ynt:"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
-        "Ücretsiz tarifeniz sona erdi. ${ nonAutoRenewalAction }"
+        "Ücretsiz deneme süreniz sona erdi. ${ nonAutoRenewalAction }"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ücretsiz deneme süreniz doldu. Hesabınıza erişim yakında kapatılacak. ${ action }"
@@ -7819,7 +7933,7 @@
         "Kuruluş için iki adımlı doğrulama gereksin"
       ],
       "Router support": [
-        "Yöneltici desteği"
+        "Yönlendirici desteği"
       ],
       "Save time emailing": [
         "E-posta yazma süresini azaltın"
@@ -8251,7 +8365,7 @@
         "Kullanıcı parolalarını ve kullanıcıların iki adımlı doğrulama ayarlarını sıfırla"
       ],
       "Route your internet traffic through the Tor network with a single click": [
-        "İnternet trafiğinizi tek bir tıklamayla Tor ağı üzerinden yöneltin"
+        "İnternet trafiğinizi tek bir tıklamayla Tor ağı üzerinden geçirin"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
@@ -8896,6 +9010,9 @@
       "Advanced account protection": [
         "Gelişmiş hesap koruması"
       ],
+      "File attachments (up to 10GB)": [
+        "Ek dosyalar (10GB boyutuna kadar)"
+      ],
       "Team policies": [
         "Ekip ilkeleri"
       ]
@@ -9036,6 +9153,17 @@
         "Kupon ${ couponRedemptions } yenileme için geçerlidir.",
         "Kupon ${ couponRedemptions } yenileme için geçerlidir."
       ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "Özel indirimli fiyat yalnızca ilk ${ subscriptionLength } ay için geçerlidir.",
+        "Özel indirimli fiyat yalnızca ilk ${ subscriptionLength } ay için geçerlidir."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "İndirimli fiyat yalnızca ilk ay için geçerlidir. Kupon, ${ couponRedemptions } yenileme için geçerlidir. Sonrasında aylık ${ renewPriceStr } ile otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz.",
+        "İndirimli fiyat yalnızca ilk ay için geçerlidir. Kupon, ${ couponRedemptions } yenileme için geçerlidir. Sonrasında aylık ${ renewPriceStr } ile otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Özel indirimli fiyat yalnızca ilk ay için geçerlidir. Ardından her ay otomatik olarak ${ renewPriceStr } ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Özel indirimli ${ priceWithDiscount } fiyatı ilk ${ subscriptionLength } ay için geçerlidir.",
         "Özel indirimli ${ priceWithDiscount } fiyatı ilk ${ subscriptionLength } ay için geçerlidir."
@@ -9083,6 +9211,9 @@
       ],
       "Your payment is still being processed": [
         "Ödeme işleminiz sürüyor"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+        "Aboneliğinizde şu anda uygulanan bir indirim var. Yeni indirime geçmek bu indirimin artık uygulanmayacağı anlamına gelir."
       ]
     },
     "Payments.Error": {
@@ -9436,96 +9567,6 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "${ BRAND_NAME } tarafından gelen resmi e-posta"
-      ]
-    },
-    "q3campaign_2025: Action": {
-      "END-OF-SUMMER SALE": [
-        "YAZ SONU İNDİRİMİ"
-      ],
-      "Get the deal": [
-        "Tekliften yararlanın"
-      ]
-    },
-    "q3campaign_2025: Info": {
-      "${ discountPercent }% off": [
-        "-%${ discountPercent }"
-      ],
-      "${ normalPricePerMonth } /month": [
-        "${ normalPricePerMonth } /ay"
-      ],
-      "/month": [
-        "/ay"
-      ],
-      "1 TB data storage": [
-        "1 TB veri depolama alanı"
-      ],
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "200 GB storage for files, photos & docs": [
-        "Dosyalar, fotoğraflar ve belgeler için 200 GB depolama alanı"
-      ],
-      "3 TB data storage": [
-        "3 TB veri depolama alanı"
-      ],
-      "500 GB storage": [
-        "500 GB depolama alanı"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "120'den fazla ülkede 15.000'den fazla sunucuya erişin"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Mail, Pass, Drive, VPN ve Takvim'in tüm ücretli özellikleri"
-      ],
-      "Built-in 2FA authenticator": [
-        "Hazır iki adımlı kimlik doğrulayıcı"
-      ],
-      "Connect 10 devices at once": [
-        "Aynı anda 10 aygıta bağlanın"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "İndirimler standart aylık fiyatlandırmaya dayanmaktadır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret üzerinden yenilenir."
-      ],
-      "Enjoy the fastest VPN speeds": [
-        "En yüksek VPN hızlarının keyfini çıkarın"
-      ],
-      "Individual accounts for 6 users": [
-        "6 kullanıcı için bireysel hesaplar"
-      ],
-      "Individual accounts for you and a partner": [
-        "Siz ve bir partneriniz için bireysel hesaplar"
-      ],
-      "Online document editor": [
-        "Çevrim içi belge düzenleyici"
-      ],
-      "Recover previous file versions": [
-        "Önceki dosya sürümlerini geri yükleyin"
-      ],
-      "Save ${ totalSavings } and keep all your current features!": [
-        "${ totalSavings } tasarruf edin ve mevcut tüm özelliklerinizi koruyun!"
-      ],
-      "Secure link, vault & item sharing": [
-        "Güvenli bağlantı, kasa ve öge paylaşımı"
-      ],
-      "Stronger protection against cyber threats": [
-        "Siber tehditlere karşı daha güçlü koruma"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Sınırsız dosya, etiket ve filtre"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Sınırsız sayıda hide-my-email takma adı"
-      ],
-      "Use your own email domain": [
-        "Kendi e-posta etki alanınızı kullanın"
-      ]
-    },
-    "q3campaign_2025: Title": {
-      "End-of-summer sale": [
-        "Yaz Sonu İndirimi"
-      ],
-      "for 12 months": [
-        "12 aylığına"
       ]
     },
     "Referral": {
@@ -10778,6 +10819,9 @@
       "Billing details updated": [
         "Fatura bilgileri güncellendi"
       ],
+      "Booking link copied to clipboard": [
+        "Rezervasyon bağlantısı panoya kopyalandı"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Takvim eklendi. Eşitlenmesi birkaç dakika sürebilir."
       ],
@@ -11295,9 +11339,6 @@
       "Does not repeat": [
         "Yinelenmiyor"
       ],
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "${ BRAND_NAME } Duo ile depolama alanınızı iki katına çıkarın"
-      ],
       "Downgrade account": [
         "Hesap tarifesini düşür"
       ],
@@ -11539,6 +11580,9 @@
       "Reactivate calendar keys": [
         "Takvim anahtarlarını yeniden kullanıma al"
       ],
+      "Ready to automate your scheduling?": [
+        "Planlamanızı otomatikleştirmeye hazır mısınız?"
+      ],
       "Recommended": [
         "Önerilen"
       ],
@@ -11674,6 +11718,12 @@
       "Summary": [
         "Özet"
       ],
+      "This booking page does not exist": [
+        "Bu rezervasyon sayfası bulunamadı"
+      ],
+      "This booking page has expired": [
+        "Bu rezervasyon sayfasının geçerlilik süresi dolmuş"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } özelliğini açın"
       ],
@@ -11763,6 +11813,9 @@
       ],
       "Your account is protected": [
         "Hesabınız korunuyor"
+      ],
+      "Your booking page is ready": [
+        "Rezervasyon sayfanız hazır"
       ],
       "Your calendar link": [
         "Takvim bağlantınız"
@@ -11878,6 +11931,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: Gizliliğinize saygı duyan yapay zeka yardımcısı"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
       ]
@@ -12078,7 +12134,7 @@
         "Ücretsiz denemeniz ${ textDate } tarihinde sona erecek. ${ action }"
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
-        "Deneme tarifeniz ${ textDate } tarihinde sona erecektir. ${ textDate } tarihinden önce iptal etmeniz durumunda sizden ücret alınmayacaktır. ${ action }"
+        "Deneme süreniz ${ textDate } tarihinde sona erecek. ${ textDate } tarihinden önce iptal ederseniz sizden ücret alınmayacak. ${ action }"
       ]
     },
     "Warning in modal to accept calendar invitation; Description": {

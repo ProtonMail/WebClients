@@ -1711,20 +1711,8 @@
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "उच्च गति वाले स्विस VPN पर ब्लैक फ्राइडे के डील्स के साथ बचत करें"
       ],
-      "Save with Cyber Week deals on a high-speed Swiss VPN": [
-        "उच्च गति वाले स्विस VPN पर साइबर सप्ताह के डील्स के साथ बचत करें"
-      ],
-      "Save with End of Year deals on a high-speed Swiss VPN": [
-        "उच्च गति वाले स्विस VPN पर वर्ष के अंत के डील्स के साथ बचत करें"
-      ],
       "Select your Black Friday offer": [
         "अपना ब्लैक फ्राइडे ऑफर चुनें"
-      ],
-      "Select your Cyber Week offer": [
-        "अपना साइबर सप्ताह का ऑफ़र चुनें"
-      ],
-      "Select your End of Year offer": [
-        "अपना वर्ष के अंत का ऑफ़र चुनें"
       ]
     },
     "bf2023: Info": {
@@ -1769,6 +1757,16 @@
     "BF2024: Deal details": {
       "${ storageSize } storage": [
         "${ storageSize } स्टोरेज"
+      ]
+    },
+    "BF2025: Deal details": {
+      "Access 15,000+ servers in 120+ countries": [
+        "120+ देशो में 15,000+ सर्वर एक्सेस करें"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "Black Friday"
       ]
     },
     "Billing cycle": {
@@ -14916,6 +14914,11 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "${ ownerName } द्वारा साझा किया गया"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "${ appName } में खोलें"
       ]
     },
     "Signature verification error when joining calendar": {

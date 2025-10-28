@@ -1494,20 +1494,8 @@
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "빠른 속도의 스위스 기반 VPN을 블랙 프라이데이 할인으로 절약하여 누려보세요"
       ],
-      "Save with Cyber Week deals on a high-speed Swiss VPN": [
-        "고속 스위스 VPN을 사이버 위크로 알뜰하게 누리세요."
-      ],
-      "Save with End of Year deals on a high-speed Swiss VPN": [
-        "고속 스위스 VPN을 연말 할인으로 할인되게 누리세요."
-      ],
       "Select your Black Friday offer": [
         "나의 블랙 프라이데이 제안 선택"
-      ],
-      "Select your Cyber Week offer": [
-        "나의 사이버 위크 할인 선택"
-      ],
-      "Select your End of Year offer": [
-        "연말 할인 선택"
       ]
     },
     "bf2023: info": {
@@ -1543,6 +1531,9 @@
       "1 user account": [
         "1개 사용자 계정"
       ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB 저장 공간: 현재 플랜의 40배에 해당"
+      ],
       "6 user accounts": [
         "6개 사용자 계정"
       ],
@@ -1564,6 +1555,9 @@
       "Password health alerts": [
         "비밀번호 건강도 알림"
       ],
+      "Recover previous file versions": [
+        "기존 파일 버전 복원"
+      ],
       "Unlimited folders, labels and filters": [
         "무제한 폴더, 라벨 및 필터"
       ],
@@ -1577,6 +1571,9 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "${ amount } 1회 청구"
+      ],
+      "forever": [
+        "평생"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "${ regularAmount }(으)로 1개월 후 갱신됩니다."
@@ -1606,6 +1603,87 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "스토리지 공간은 모든 ${ BRAND_NAME } 서비스에 공유됩니다."
+      ]
+    },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "블랙프라이데이 세일"
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2TB 데이터 저장공간"
+      ],
+      "3 TB data storage": [
+        "3TB 데이터 저장공간"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "120개 이상 국가에서 15,000여개 이상의 서버에 액세스"
+      ],
+      "Access advanced AI models": [
+        "고급 AI 모델 액세스"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }의 모든 프리미엄 기능"
+      ],
+      "Block ads, trackers, and malware": [
+        "광고, 멀웨어 및 트래커 차단"
+      ],
+      "Built-in 2FA authenticator": [
+        "내장형 2단계 인증기"
+      ],
+      "Connect 10 devices at once": [
+        "한 번에 기기 10대 연결"
+      ],
+      "Full chat history with easy search and favorites": [
+        "간편한 검색 및 즐겨찾기 기능이 포함된 전체 채팅 기록"
+      ],
+      "Individual accounts for 6 users": [
+        "6인용 개별 계정"
+      ],
+      "Individual accounts for you and a partner": [
+        "귀하와 파트너를 위한 개별 계정"
+      ],
+      "Stronger protection against cyber threats": [
+        "사이버 위협에 대한 더욱 강력한 보호"
+      ],
+      "Unlimited daily chats": [
+        "무제한 일일 채팅"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "지금 50% 할인된 최고 가성비 번들로 소중한 사람들이 프라이버시 혁명에 참여하도록 도와주세요."
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "지금 50% 할인된 최고 가성비 번들로 프라이버시 혁명에 참여하세요!"
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "${ durationDeal }간"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "최고 가성비의 기간 한정 혜택으로 ${ savedAmount }를 절약하세요!"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "2년 플랜으로 전환하고 ${ savedAmount }를 절약하세요!"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "연간 플랜으로 전환하고 ${ savedAmount }를 절약하세요!"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "소속 그룹에 완벽한 디지털 보호를 제공하세요."
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "특별히 설계된 NetShield는 광고, 추적기 및 맬웨어를 차단하여 장치를 보호하고 브라우징 속도를 높입니다."
       ]
     },
     "Billing cycle": {
@@ -1655,6 +1733,9 @@
       "How safe is Telegram?": [
         "Telegram은 얼마나 안전할까요?"
       ],
+      "How to change your IP address on Windows": [
+        "Windows에서 내 IP 주소를 변경하는 방법"
+      ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "이 기사에서는 WiFi를 사용할 때 누가 인터넷 기록을 볼 수 있는지, 무엇을 볼 수 있는지, 왜 보는지에 대해 알아봅니다."
       ],
@@ -1688,6 +1769,9 @@
       "Watch your favorite movies and TV shows": [
         "선호하는 영화와 TV 쇼를 시청하세요"
       ],
+      "We discuss how to change the external and local IP addresses of your Windows device.": [
+        "Windows 기기 외부 및 로컬 IP 주소를 변경하는 방법을 논의합니다."
+      ],
       "Which VPN protocol is the best?": [
         "어떤 VPN 프로토콜이 가장 좋을까요?"
       ],
@@ -1706,6 +1790,9 @@
       ],
       "Application problem": [
         "앱 문제"
+      ],
+      "Black Friday": [
+        "블랙 프라이데이"
       ],
       "Bridge problem": [
         "Bridge 문제"
@@ -3364,6 +3451,39 @@
         "우선 지원"
       ]
     },
+    "Duo offer": {
+      "/month": [
+        "/월간"
+      ],
+      "1 TB of storage to share": [
+        "공유 가능한 1 TB 저장 공간"
+      ],
+      "2 user accounts": [
+        "2개 사용자 계정"
+      ],
+      "All premium features from your current plan": [
+        "현재 플랜의 모든 프리미엄 기능"
+      ],
+      "Only": [
+        "단"
+      ]
+    },
+    "Duo offer: Link": {
+      "Get 4x more storage": [
+        "4배 더 많은 저장공간 확보하기"
+      ],
+      "Share your plan": [
+        "내 플랜 공유"
+      ]
+    },
+    "Duo offer: Title": {
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "${ BRAND_NAME } Duo로 저장공간을 4 배로 늘리세요"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "${ BRAND_NAME } Duo로 플랜 혜택을 함께 누려보세요"
+      ]
+    },
     "Easy switch": {
       "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
         "최대 ${ MAX_SYNC_PAID_USER }개의 계정에서 이메일을 전달하려면, ${ planName }(으)로 업그레이드하세요."
@@ -3634,6 +3754,9 @@
       ],
       "Error publishing changes": [
         "변경 사항 게시 오류"
+      ],
+      "Failed to add group member": [
+        "그룹 구성원 추가 실패"
       ],
       "Failed to load the STL preview": [
         "STL 미리보기 불러오기 실패"
@@ -4547,8 +4670,14 @@
       "Continue": [
         "계속하기"
       ],
+      "Encrypted cloud storage for files, photos and documents": [
+        "파일, 사진 및 문서에 대한 암호화된 클라우드 저장공간"
+      ],
       "Fastest VPN servers": [
         "가장 빠른 VPN 서버"
+      ],
+      "More premium features": [
+        "개 더 많은 프리미엄 기능들"
       ],
       "Remove": [
         "삭제"
@@ -5651,6 +5780,9 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "이 도메인 ${ boldDomain }을(를) 정말 제거하시겠습니까?"
       ],
+      "Are you sure you want to revoke certificate **${ name }**": [
+        "인증서 **${ name }**을(를) 정말 취소하시겠습니까?"
+      ],
       "Ask your organization admin to setup Gateways.": [
         "게이트웨이를 설정하려면 조직 관리자에 문의하십시오."
       ],
@@ -5720,6 +5852,9 @@
       "Change your password": [
         "비밀번호를 변경하십시오"
       ],
+      "Choose a plan that works best for you.": [
+        "당신에게 가장 적합한 플랜을 선택하세요."
+      ],
       "Choose an Entity ID to continue.": [
         "계속하려면 Entity ID를 선택하세요."
       ],
@@ -5743,6 +5878,9 @@
       ],
       "Connection data will be available in around 1 hour.": [
         "연결 데이터가 한 시간 내에 사용 가능합니다."
+      ],
+      "Continue": [
+        "계속"
       ],
       "Continue to allow **${ affiliationsText }** from **${ organizationValue.Name }** to join your ${ BRAND_NAME } organization.": [
         "${ BRAND_NAME } 조직에 합류하기 위해 **${ organizationValue.Name }**(에)서 **${ affiliationsText }**을(를) 수락하여 계속하기"
@@ -7076,6 +7214,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "지금 업그레이드하여 프리미엄 기능, 제품, 저장 공간을 특별한 가격에 이용하세요."
       ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "${ planTitle } 플랜의 혜택을 놓치지 않기 위해 업그레이드하세요."
+      ],
       "Upgrade to Professional or a higher plan to unlock": [
         "Professional 또는 더 상위의 플랜으로 업그레이드하여"
       ],
@@ -7766,6 +7907,9 @@
       "Billing cycle": [
         "결제 주기"
       ],
+      "Black Friday": [
+        "블랙 프라이데이"
+      ],
       "Block": [
         "차단"
       ],
@@ -7985,6 +8129,9 @@
       "Gateway name": [
         "게이트웨이 이름"
       ],
+      "Get the deal": [
+        "특가로 구매"
+      ],
       "Gift code": [
         "기프트 코드"
       ],
@@ -8083,6 +8230,9 @@
       ],
       "Method for importing metadata": [
         "메타데이터를 불러올 방법"
+      ],
+      "Minimum ${ MIN_CHARS } characters": [
+        "최소 ${ MIN_CHARS }글자"
       ],
       "Minimum number of characters": [
         "최소 문자 수"
@@ -8877,6 +9027,9 @@
       ],
       "View user sign-in, recovery and security events.": [
         "로그인, 복구 및 보안 이벤트를 조회하세요."
+      ],
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "무료 체험이 종료되었습니다. ${ nonAutoRenewalAction }"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "무료 체험이 종료되었습니다. 계정 접근이 곧 비활성화 됩니다. ${ action }"
@@ -9978,9 +10131,6 @@
       ]
     },
     "Notification": {
-      "${ MEET_APP_NAME } video conferencing settings have been updated": [
-        "${ MEET_APP_NAME } 화상 회의 설정이 업데이트 되었습니다"
-      ],
       "${ reason } has been disabled": [
         "${ reason }이(가) 비활성화 되었습니다."
       ],
@@ -10072,11 +10222,17 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } 할인이 오늘 만료됩니다!"
       ],
+      "Don't show this again": [
+        "다시 보지 않기"
+      ],
       "Don’t show this again": [
         "다시 보지 않기"
       ],
       "Don’t show this offer again": [
         "이 제안을 다시 보지 않기"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "${ BRAND_NAME } Duo 플랜 받기"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "${ BRAND_NAME } Unlimited 구매"
@@ -10551,6 +10707,9 @@
       "Advanced account protection": [
         "고급 계정 보호"
       ],
+      "File attachments (up to 10GB)": [
+        "파일 첨부 (최대 10GB)"
+      ],
       "Team policies": [
         "팀 정책"
       ]
@@ -10773,6 +10932,15 @@
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "쿠폰이 ${ couponRedemptions }회 갱신까지 유효합니다."
       ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "특별 할인 가격은 최초 ${ subscriptionLength }개월에 한해 유효합니다."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "특별 할인가가 첫 달에만 적용됩니다. 쿠폰은 ${ couponRedemptions }회 갱신까지 유효합니다. 이후에는 매월 ${ renewPriceStr }(으)로 1개월 동안 자동 갱신됩니다. 언제든지 취소할 수 있습니다."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "특별 할인가는 첫 달에만 유효합니다. 이후 매 달 ${ renewPriceStr }에 자동으로 갱신됩니다. 취소는 언제나 가능합니다."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "특별 할인 가격인 ${ priceWithDiscount }은(는) 최초 ${ subscriptionLength }개월에 한해 유효합니다."
       ],
@@ -10823,6 +10991,9 @@
       ],
       "Your payment is still being processed": [
         "회원님의 결제가 아직 처리 중입니다"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+        "구독에 현재 기존 할인이 적용되어 있습니다. 이 새로운 프로모션으로 변경하시면 기존 할인이 더 이상 적용되지 않습니다."
       ]
     },
     "Payments.Error": {
@@ -11273,6 +11444,9 @@
       ],
       "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
         "**${ planTitle }**이(가) 제공하는 강력한 기능들을 탐색할 수 있는 마지막 기회"
+      ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "정식 구독이 시작된 후에도 30일 내에 구독 취소 시 사용량에 비례하여 환불 받을 수 있습니다."
       ],
       "Refer friends": [
         "친구 초대"
@@ -11988,6 +12162,11 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "${ ownerName }님이 공유함"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "${ appName }(에)서 열기"
       ]
     },
     "Signup": {
@@ -14109,6 +14288,9 @@
       "Restore administrator privileges": [
         "관리자 권한 복구"
       ],
+      "Revoke certificate?": [
+        "인증서를 취소합니까?"
+      ],
       "SAML authentication": [
         "SAML 인증"
       ],
@@ -14259,6 +14441,9 @@
       "Upgrade to ${ planName }": [
         "${ planName }으로 업그레이드"
       ],
+      "Upgrade to keep your premium benefits.": [
+        "프리미엄 기능 혜택을 놓치지 않기 위해 업그레이드하세요."
+      ],
       "Upgrade your network protection with dedicated servers": [
         "전용 서버로 네트워크 보호를 업그레이드하세요"
       ],
@@ -14303,9 +14488,6 @@
       ],
       "Verifying your payment...": [
         "결제 수단을 인증하는 중..."
-      ],
-      "Video conferencing with ${ MEET_APP_NAME }": [
-        "${ MEET_APP_NAME }(으)로 화상 회의"
       ],
       "Video conferencing with Zoom": [
         "Zoom 화상 회의"
@@ -15153,6 +15335,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "무료 체험이 ${ textDate } 에 종료됩니다. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "무료 체험이 ${ textDate }에 종료됩니다. ${ textDate } 이전에 취소시 요금이 청구되지 않습니다. ${ action }"
       ]
     },
     "Warning for domain modal": {

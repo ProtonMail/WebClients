@@ -1974,6 +1974,87 @@
         "透過端對端加密保護電子郵件及行事曆。包含15個電子郵件地址,支援自訂電子郵件網域,${ BRAND_NAME }Scribe 撰寫工具，無限hide-my-email別名及更多"
       ]
     },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "黑色星期五特賣"
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB 資料儲存空間"
+      ],
+      "3 TB data storage": [
+        "3 TB 資料儲存空間"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "存取 15,000+ 個伺服器，分布於 120+ 個國家"
+      ],
+      "Access advanced AI models": [
+        "存取進階 AI 模型"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME } 的所有進階功能"
+      ],
+      "Block ads, trackers, and malware": [
+        "封鎖廣告、追蹤程式和惡意軟體"
+      ],
+      "Built-in 2FA authenticator": [
+        "內建雙重驗證驗證器"
+      ],
+      "Connect 10 devices at once": [
+        "可同時連接 10 部裝置"
+      ],
+      "Full chat history with easy search and favorites": [
+        "完整的聊天記錄，具備輕鬆搜尋和我的最愛功能"
+      ],
+      "Individual accounts for 6 users": [
+        "供 6 位使用者使用的個人帳戶"
+      ],
+      "Individual accounts for you and a partner": [
+        "供您與一位夥伴使用的個人帳戶"
+      ],
+      "Stronger protection against cyber threats": [
+        "更強大的保護，抵禦網路威脅"
+      ],
+      "Unlimited daily chats": [
+        "無限每日聊天"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "黑色星期五"
+      ]
+    },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "幫助您的摯愛加入隱私革命，選購我們最超值的組合包，現正 5 折優惠！"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "加入隱私革命，選購我們最超值的組合包，現正 5 折優惠！"
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "為期 ${ durationDeal }"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "選購我們最超值的限時優惠，節省 ${ savedAmount }！"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "改用我們的 2 年方案，節省 ${ savedAmount }！"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "改用我們的年度方案，節省 ${ savedAmount }！"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "為您的團隊提供完整的數位保護。"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "精心設計的 NetShield 保護您的裝置並攔截讓您變慢的廣告、追蹤程式與惡意軟體。"
+      ]
+    },
     "Billing cycle option": {
       "1 month": [
         "1 個月"
@@ -2201,7 +2282,7 @@
         "${ participantName } 已接受此事件其中一次的邀請。"
       ],
       "${ participantName } had accepted an invitation to this event.": [
-        "${ participantName } 已接受此事件的邀請。"
+        "${ participantName } 已接受此活動的邀請。"
       ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } 已接受您的邀請，並就此事件其中一次提議新的時間。回答與提議均已過時。"
@@ -4047,16 +4128,8 @@
       ]
     },
     "Duo offer: Link": {
-      "Double your storage": [
-        "加倍您的儲存空間"
-      ],
       "Share your plan": [
         "共享您的方案"
-      ]
-    },
-    "Duo offer: Title": {
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "透過 ${ BRAND_NAME } Duo 將您的儲存空間加倍"
       ]
     },
     "Email body for invitation": {
@@ -4132,7 +4205,7 @@
         "活動現在開始"
       ],
       "Event starts in ${ minutesUntilEvent } minute": [
-        "活動將於 ${ minutesUntilEvent } 分鐘內開始"
+        "活動將於 ${ minutesUntilEvent } 分鐘後開始"
       ],
       "Event starts tomorrow": [
         "活動於明天開始"
@@ -11641,10 +11714,10 @@
     },
     "Referral": {
       "Friend joined": [
-        "已加入的朋友"
+        "已加入的親友"
       ],
       "Friend subscribed": [
-        "已訂閱的朋友"
+        "已訂閱的親友"
       ]
     },
     "Remaining days before the message expire": {
@@ -12037,6 +12110,11 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "由 ${ ownerName } 分享"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "於 ${ appName } 開啟"
       ]
     },
     "Signature verification warning": {
@@ -12887,10 +12965,10 @@
         "${ elementsCount } 則往來對話已標記未讀。"
       ],
       "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
-        "${ elementsCount } 篇對話已移動到 ${ labelName }，並將寄件人加入至您的非垃圾郵件清單。"
+        "${ elementsCount } 則往來對話已移至 ${ labelName }，並將寄件者加入至您的非垃圾郵件清單。"
       ],
       "${ elementsCount } conversation moved to ${ labelName }.": [
-        "${ elementsCount } 往來對話已移至 ${ labelName }."
+        "${ elementsCount } 則往來對話已移至 ${ labelName }."
       ],
       "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
         "${ elementsCount } 則對話已被移至垃圾郵件，寄件者已被列入您的垃圾郵件清單。"
@@ -12920,10 +12998,10 @@
         "${ elementsCount } 封郵件標記為未讀。"
       ],
       "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
-        "${ elementsCount } 封郵件已移動到 ${ labelName }，並將寄件人加入至您的非垃圾郵件清單。"
+        "${ elementsCount } 封郵件移至 ${ labelName }，寄件者加入至您的非垃圾郵件清單。"
       ],
       "${ elementsCount } message moved to ${ labelName }.": [
-        "${ elementsCount } 訊息已移至 ${ labelName }."
+        "${ elementsCount } 則訊息已移至 ${ labelName }。"
       ],
       "${ elementsCount } message moved to spam and sender added to your spam list.": [
         "${ elementsCount } 則訊息已移至垃圾郵件，寄件者已加入垃圾郵件清單。"
@@ -13604,9 +13682,6 @@
       "Don't give spam a chance": [
         "垃圾郵件別拜託、拜拜就好"
       ],
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "透過 ${ BRAND_NAME } Duo 將您的儲存空間加倍"
-      ],
       "Downgrade account": [
         "降級帳號"
       ],
@@ -13758,7 +13833,7 @@
         "套用標籤"
       ],
       "Label message as": [
-        "將郵件加上標籤"
+        "郵件加上的標籤為"
       ],
       "Label options": [
         "標籤選項"

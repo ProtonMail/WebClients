@@ -219,6 +219,9 @@
       "Copy alias “${ name }”": [
         "ფსევდონიმის \"${ name }\" კოპირება"
       ],
+      "Copy Booking link": [
+        "დაჯავშნის ბმულის კოპირება"
+      ],
       "Copy email address": [
         "ელფოსტის მისამართის კოპირება"
       ],
@@ -237,11 +240,23 @@
       "Create": [
         "შექმნა"
       ],
+      "Create a booking page": [
+        "დაჯავშნის გვერდის შექმნა"
+      ],
+      "Create a new bookings page": [
+        "ახალი დაჯავშნის გვერდის შექმნა"
+      ],
       "Create a new contact group": [
         "კონტაქტების ახალი ჯგუფის შექმნა"
       ],
+      "Create an event": [
+        "მოვლენის შექმნა"
+      ],
       "Create and copy alias": [
         "ფსევდონიმის შექმნა და კოპირება"
+      ],
+      "Create booking page": [
+        "დაჯავშნის გვერდის შექმნა"
       ],
       "Create calendar": [
         "კალენდრის შექმნა"
@@ -472,6 +487,9 @@
       ],
       "Increase": [
         "გაგრძელება"
+      ],
+      "Join ${ CALENDAR_APP_NAME }": [
+        "${ CALENDAR_APP_NAME }-ზე შესვლა"
       ],
       "Join calendar": [
         "კალენდარზე მიერთება"
@@ -1091,6 +1109,9 @@
       "Add unlimited credit cards": [
         "დაამატეთ განუსაზღვრელი რაოდენობის საკრედიტო ბარათი"
       ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "${ BRAND_NAME } Mail, Pass, VPN, Drive და Calendar-ის ყველა ფასიანი ფუნქცია"
+      ],
       "Block ads, trackers, and malware": [
         "რეკლამის, ტრეკერებისა და მავნე პროგრამების დაბლოკვა"
       ],
@@ -1291,6 +1312,9 @@
       "1 user account": [
         "1 მომხმარებლის ანგარიში"
       ],
+      "200 GB storage: 40x your current plan": [
+        "200 გბ საცავი: 40-ჯერ მეტი მიმდინარე სატარიფო გეგმაზე"
+      ],
       "6 user accounts": [
         "6 მომხმარებლის ანგარიში"
       ],
@@ -1312,6 +1336,9 @@
       "Password health alerts": [
         "პაროლის სიმთელის გაფრთხილებები"
       ],
+      "Recover previous file versions": [
+        "წინა ფაილის ვერსიების აღდგენა"
+      ],
       "Unlimited folders, labels and filters": [
         "ულიმიტო საქაღალდეები, ჭდეები და ფილტრები"
       ],
@@ -1325,6 +1352,9 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "გადაიხადეთ ${ amount } ერთხელ"
+      ],
+      "forever": [
+        "სამუდამოდ"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "განახლდება 1 თვეში ფასად ${ regularAmount }."
@@ -1358,6 +1388,35 @@
         "საცავის სივრცე გაზიარებულია ყველა ${ BRAND_NAME }-ის სერვისებს შორის."
       ]
     },
+    "BF2025: Deal details": {
+      "Access 15,000+ servers in 120+ countries": [
+        "წვდომა 15,000+ სერვერთან 120+ ქვეყანაში"
+      ],
+      "Block ads, trackers, and malware": [
+        "რეკლამის, ტრეკერებისა და მავნე პროგრამების დაბლოკვა"
+      ],
+      "Built-in 2FA authenticator": [
+        "ჩაშენებული 2FA ავთენტიკატორი"
+      ],
+      "Unlimited daily chats": [
+        "შეუზღუდავი ყოველდღიური ჩატები"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "${ durationDeal }-სთვის"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield-ი იცავს თქვენს მოწყობილობებს და აჩქარებს ინტერნეტში მუშაობას რეკლამების, ტრეკერების და არასასურველი პროგრამების დაბლოკვით."
+      ]
+    },
     "Billing cycle option": {
       "1 month": [
         "1 თვე"
@@ -1389,6 +1448,9 @@
       ],
       "Application problem": [
         "აპლიკაციის პრობლემა"
+      ],
+      "Black Friday": [
+        "შავი პარასკევი"
       ],
       "Bridge problem": [
         "ხიდის პრობლემა"
@@ -3172,6 +3234,39 @@
         "კალენდრის დამატება"
       ]
     },
+    "Duo offer": {
+      "/month": [
+        "/თვეში"
+      ],
+      "1 TB of storage to share": [
+        "1ტბ საცავი გასაზიარებლად"
+      ],
+      "2 user accounts": [
+        "2 მომხმარებლის ანგარიში"
+      ],
+      "All premium features from your current plan": [
+        "ყველა ფასიანი თვისება თქვენი მიმდინარე სატარიფო გეგმიდან"
+      ],
+      "Only": [
+        "მხოლოდ"
+      ]
+    },
+    "Duo offer: Link": {
+      "Get 4x more storage": [
+        "მიიღეთ 4-ჯერ მეტი საცავი"
+      ],
+      "Share your plan": [
+        "გააზიარეთ თქვენი სატარიფო გეგმა"
+      ]
+    },
+    "Duo offer: Title": {
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "მიიღეთ 4x მეტი საცავი ${ BRAND_NAME } Duo-ით"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "გააზიარეთ თქვენი სატარიფო გეგმის უპირატესობები ${ BRAND_NAME } Duo-ისთან ერთად"
+      ]
+    },
     "Duplicate event button tooltip": {
       "Duplicate event": [
         "მოვლენის დუბლირება"
@@ -4266,6 +4361,12 @@
       ]
     },
     "Feature": {
+      "Encrypted cloud storage for files, photos and documents": [
+        "დაშიფრული ღრუბლოვანი საცავი ფაილებისთვის, ფოტოებისა და დოკუმენტებისთვის"
+      ],
+      "More premium features": [
+        "მეტი ფასიანი ფუნქცია"
+      ],
       "Unlimited hide-my-email aliases": [
         "განუსაზღვრელი რაოდენობის მეტსახელი Hide-my-email-სთვის"
       ]
@@ -4779,6 +4880,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }-ს ესაჭიროება თქვენი წვდომა ${ enableDesktopNotifications }-ზე."
       ],
+      "${ booking.duration } min duration": [
+        "${ booking.duration } წთ ხანგრძლივობა"
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe წერის დამხმარე"
       ],
@@ -4885,6 +4989,9 @@
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill switch**: აჩერებს მონაცემების გაჟონვას თქვენი ინტერნეტის დაბლოკვით, თუ VPN გაითიშება."
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**ნაბიჯი 1:** მოიწვიეთ თქვენი მეგობრები ${ BRAND_NAME }-ზე თქვენი რეფერალი ბმულით."
+      ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
         "**ნაბიჯი 2:** თქვენი მეგობრები მიიღებენ 2 კვირას უფასოდ თავიანთ სატარიფო გეგმაზე."
       ],
@@ -4897,6 +5004,9 @@
       ],
       "30-day money-back guarantee.": [
         "30 დღიანი გარანტირებული ფულის დაბრუნება."
+      ],
+      "A booking slot cannot be added in the past.": [
+        "ჩავშნის დრო წარსულში ვერ იქნება."
       ],
       "A cancellation email will be sent to removed participants.": [
         "გაუქმების ელფოსტა გადაეგზავნება ამოღებულ მონაწილეებს."
@@ -5003,6 +5113,9 @@
       "Billing cycle: ${ text }": [
         "გადახდის ციკლი: ${ text }"
       ],
+      "Booking page example": [
+        "ჯავშნის გვერდის მაგალითი"
+      ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "გააძლიერეთ თქვენი ორგანიზაციის ბრენდინგი და შეექმენით უფრო ერთგვაროვანი გამოცდილება თქვენი მომხმარებლებისთვის."
       ],
@@ -5033,6 +5146,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "მოწმდება ${ progress }-ე კონტაქტი ${ max }-დან..."
       ],
+      "Choose a plan that works best for you.": [
+        "აირჩიეთ სატარიფო გეგმა, რომელიც საუკეთესოდ შეგესაბამებათ."
+      ],
       "Clear data": [
         "მონაცემების გასუფთავება"
       ],
@@ -5059,6 +5175,9 @@
       ],
       "Contact unassigned from group ${ contactGroupName }": [
         "კონტაქტი მოხსნილია ჯგუფიდან ${ contactGroupName }"
+      ],
+      "Continue": [
+        "გაგრძელება"
       ],
       "Copy the link to clipboard": [
         "ბმულის ბაფერში კოპირება"
@@ -5604,6 +5723,9 @@
       "Setting up your new address…": [
         "თქვენი ახალი მისამართის მორგება…"
       ],
+      "Share this page to let others book time in your calendar.": [
+        "გააზიარეთ ეს გვერდი, რომ საშუალება მისცეთ სხვებს, დაჯავშნონ დრო თქვენს კალენდარში."
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "რადგან თქვენ ერთგული მომხმარებელი ბრძანდებით, ანგარიშისთვის დამატებითი თვისებებია ხელმისაწვდომი."
       ],
@@ -5746,6 +5868,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "განაახლეთ ახლავე, რომ მიიღოთ პრემიუმ ფუნქციები, პროდუქტები და საცავი სპეციალურ ფასად"
       ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "ასწიეთ სატარიფო გეგმა ${ planTitle }-ის ფუნქციების შესანარჩუნებლად."
+      ],
       "Uppercase and lowercase letters": [
         "დიდი და პატარა ასოები"
       ],
@@ -5772,6 +5897,9 @@
       ],
       "VPN IP": [
         "VPN IP"
+      ],
+      "Want to create your own booking page?": [
+        "გნებავთ საკუთარი დაჯავშნის გვერდის შექმნა?"
       ],
       "Warning": [
         "გაფრთხილება"
@@ -6287,6 +6415,9 @@
       "Billing cycle": [
         "გადახდის პერიოდი"
       ],
+      "Black Friday": [
+        "შავი პარასკევი"
+      ],
       "Browser": [
         "ბრაუზერი"
       ],
@@ -6451,6 +6582,9 @@
       ],
       "From: ${ fromEmail }": [
         "გამომგზავნელი: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "ფასდაკლების მიღება"
       ],
       "Hide password": [
         "პაროლის დამალვა"
@@ -6813,6 +6947,9 @@
       "Add a gift code": [
         "ჩასვით სასაჩუქრე კოდი"
       ],
+      "Bookings pages": [
+        "დაჯავშნის გვერდები"
+      ],
       "Calendars": [
         "კალენდრები"
       ],
@@ -7006,6 +7143,9 @@
       ],
       "Re:": [
         "პას:"
+      ],
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "თქვენი უფასო სატესტო ვერსია დასრულდა. ${ nonAutoRenewalAction }"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "თქვენს უფასო სატესტო ვერსიას ვადა გაუვიდა. მალე ანგარიშთან წვდომა გაგეთიშებათ. ${ action }"
@@ -7809,6 +7949,9 @@
       "Protect sensitive business information and collaborate securely.": [
         "დაიცავით კონფიდენციალური კომპანიის ინფორმაცია და იმუშავეთ ერთად უსაფრთხოდ."
       ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "დაიცავით თქვენი ოჯახი ${ plusTitle }-ის ფასიანი ფუნქციებით 6 მომხმარებლისთვის."
+      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "დაიცავით თქვენი ოჯახის კონფიდენციალობა ყველა ${ BRAND_NAME }-ის სერვისის ერთად."
       ],
@@ -8348,11 +8491,17 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }-ის შემოთავაზების ვადა დღეს იწურება!"
       ],
+      "Don't show this again": [
+        "აღარ მაჩვენო"
+      ],
       "Don’t show this again": [
         "აღარ მაჩვენოთ ეს"
       ],
       "Don’t show this offer again": [
         "აღარ მაჩვენო ეს შემოთავაზება"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "მიიღეთ ${ BRAND_NAME } Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "მიიღეთ ${ BRAND_NAME } Unlimited"
@@ -8659,6 +8808,9 @@
       ],
       "Advanced account protection": [
         "დამატებითი ანგარიშის დაცვა"
+      ],
+      "File attachments (up to 10GB)": [
+        "მიმაგრებული ფაილები (10გბ-მდე)"
       ],
       "Team policies": [
         "გუნდის პოლიტიკა"
@@ -10388,6 +10540,9 @@
       "Billing details updated": [
         "გადახდის დეტალები განახლდა"
       ],
+      "Booking link copied to clipboard": [
+        "დაჯავშნის ბმული დაკოპირდა ბუფერში"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "კალენდარი დაემატა. სინქრონიზაციას რამდენიმე წუთი შეიძლება დასჭირდეს."
       ],
@@ -10780,6 +10935,9 @@
       "Birthday": [
         "დაბადების დღე"
       ],
+      "Booking page": [
+        "დაჯავშნის გვერდი"
+      ],
       "Calendar": [
         "კალენდარი"
       ],
@@ -11140,6 +11298,9 @@
       "Reactivate calendar keys": [
         "კალენდრის გასაღებების რეაქტივაცია"
       ],
+      "Ready to automate your scheduling?": [
+        "მზად ბრძანდებით დაგეგმვის ავტომატიზაციისთვის?"
+      ],
       "Recommended": [
         "რეკომენდებულია"
       ],
@@ -11275,6 +11436,12 @@
       "Summary": [
         "შეჯამება"
       ],
+      "This booking page does not exist": [
+        "ეს დაჯავშნის გვერდი არ არსებობს"
+      ],
+      "This booking page has expired": [
+        "ამ დაჯავშნის გვერდის ვადა ამოწურულია"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME }-ის ჩართვა"
       ],
@@ -11292,6 +11459,9 @@
       ],
       "Upgrade to ${ planName }": [
         "სატარიფო გეგმის განახლება: ${ planName }"
+      ],
+      "Upgrade to keep your premium benefits.": [
+        "ასწიეთ სატარიფო გეგმა ფასიანი ფუნქციების შესანარჩუნებლად."
       ],
       "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
         "ასწიეთ თქვენი პროდუქტიულობა ${ formattedPrice }-ისთვის ${ planName }-ით"
@@ -11361,6 +11531,9 @@
       ],
       "Your account is protected": [
         "თქვენი ანგარიში დაცულია"
+      ],
+      "Your booking page is ready": [
+        "თქვენი დაჯავშნის გვერდი მზადაა"
       ],
       "Your calendar link": [
         "თქვენი კალენდრის ბმული"
@@ -11476,6 +11649,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: ხი დამხმარე, რომელიც პატივს სცემს თქვენს კონფიდენციალობას"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს და სხვ."
       ]
