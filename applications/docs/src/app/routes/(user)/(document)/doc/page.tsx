@@ -245,7 +245,7 @@ function Content({
   }
 
   if (openAction?.mode === 'copy-public') {
-    return <PublicDocumentCopier />
+    return <PublicDocumentCopier openAction={openAction} />
   }
 
   /** Waiting for redirection */
