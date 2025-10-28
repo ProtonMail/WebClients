@@ -780,6 +780,9 @@
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } è un metodo di autenticazione email progettato per rilevare la falsificazione degli indirizzi del mittente durante la consegna dell'email. Si consiglia vivamente di impostare SPF per ridurre la possibilità che le email finiscano nella cartella Spam del destinatario."
       ],
+      "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
+        "Queste cartelle non saranno accessibili e il loro contenuto non sarà disponibile per la ricerca o il riempimento automatico."
+      ],
       "This account is vulnerable, visit the service and change your password.": [
         "Questo account è vulnerabile, visita il servizio e cambia la password."
       ],
@@ -1841,7 +1844,8 @@
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri."
+        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
+        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
       ],
       "Moving items": [
         "Spostamento degli elementi"
@@ -4155,8 +4159,8 @@
       "Grant permissions": [
         "Concedi autorizzazioni"
       ],
-      "Hidden vaults won’t be visible during search and autofill.": [
-        "Le casseforti nascoste non saranno visibili durante la ricerca e la compilazione automatica."
+      "Hidden vaults": [
+        "Cartella nascosta"
       ],
       "Hide my email": [
         "Nascondi la mia email"
@@ -4367,6 +4371,9 @@
       ],
       "Vault shared with you": [
         "Cassaforte condivisa con te"
+      ],
+      "Visible vaults": [
+        "Cartella visibile"
       ],
       "Weak password": [
         "Password debole"

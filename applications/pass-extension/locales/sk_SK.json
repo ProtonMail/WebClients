@@ -786,6 +786,9 @@
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } je metóda overovania elektronickej pošty určená na zisťovanie falšovania adries odosielateľov počas doručovania emailov. Nastavenie SPF sa dôrazne odporúča, aby ste znížili pravdepodobnosť, že vaše emaily skončia v priečinku nevyžiadanej pošty príjemcu."
       ],
+      "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
+        "Tieto trezory nebudú dostupné a ich obsah nebude k dispozícii pre Hľadanie alebo Automatické dopĺňanie."
+      ],
       "This account is vulnerable, visit the service and change your password.": [
         "Tento účet je zraniteľný. Navštívte službu a zmeňte si heslo."
       ],
@@ -1889,6 +1892,12 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
       ],
       "Moving items": [
         "Presúvanie položiek"
@@ -4252,8 +4261,8 @@
       "Grant permissions": [
         "Udeliť oprávnenia"
       ],
-      "Hidden vaults won’t be visible during search and autofill.": [
-        "Skryté trezory nebudú viditeľné počas vyhľadávania a automatického dopĺňania."
+      "Hidden vaults": [
+        "Skryté trezory"
       ],
       "Hide my email": [
         "Skryť môj email"
@@ -4470,6 +4479,9 @@
       ],
       "Vault shared with you": [
         "Trezor zdieľaný s vami"
+      ],
+      "Visible vaults": [
+        "Viditeľné trezory"
       ],
       "Weak password": [
         "Slabé heslo"
