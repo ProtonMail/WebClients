@@ -237,11 +237,17 @@
       "Create": [
         "Opprett"
       ],
+      "Create a booking page": [
+        "Opprett en bestillingsside"
+      ],
       "Create a new bookings page": [
         "Opprett en ny bestillingsside"
       ],
       "Create a new contact group": [
         "Opprett en ny kontaktgruppe"
+      ],
+      "Create an event": [
+        "Opprett en hendelse"
       ],
       "Create and copy alias": [
         "Opprett og kopier alias"
@@ -478,6 +484,9 @@
       ],
       "Increase": [
         "Øk"
+      ],
+      "Join ${ CALENDAR_APP_NAME }": [
+        "Bli med ${ CALENDAR_APP_NAME }"
       ],
       "Join calendar": [
         "Bli med i kalender"
@@ -1392,6 +1401,35 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagringsplass deles mellom alle ${ BRAND_NAME }-tjenestene."
+      ]
+    },
+    "BF2025: Deal details": {
+      "Access 15,000+ servers in 120+ countries": [
+        "Tilgang til 15,000+ tjenere i 120+ land"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blokkér annonser, sporere og skadelig programvare"
+      ],
+      "Built-in 2FA authenticator": [
+        "Innebygget 2FA-autentisering"
+      ],
+      "Unlimited daily chats": [
+        "Ubegrenset antall daglige chatter"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "for ${ durationDeal }"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Spesialdesignet NetShield beskytter enheten din og øker hastigheten på surfingen din ved å blokkere annonser, sporere og skadelig programvare."
       ]
     },
     "Billing cycle option": {
@@ -3247,16 +3285,16 @@
       ]
     },
     "Duo offer: Link": {
-      "Double your storage": [
-        "Doble lagringsplassen din"
+      "Get 4x more storage": [
+        "Skaff deg 4x mer lagringskapasitet"
       ],
       "Share your plan": [
         "Del planen din"
       ]
     },
     "Duo offer: Title": {
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Doble lagringsplassen din med ${ BRAND_NAME } Duo"
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "Få 4x mer lagring med ${ BRAND_NAME } Duo"
       ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
         "Del fordelene med planen din med ${ BRAND_NAME } Duo"
@@ -4889,6 +4927,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } trenger din tillatelse til å ${ enableDesktopNotifications }."
       ],
+      "${ booking.duration } min duration": [
+        "${ booking.duration } min. varighet"
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skriveassistent"
       ],
@@ -5517,6 +5558,9 @@
       "Learn what to do ${ dataLeakedLink }": [
         "Finn ut hva du kan gjøre ${ dataLeakedLink }"
       ],
+      "Let others book time with you automatically. No back-and-forth emails. Share a link, and stay in control of your availability.": [
+        "La andre bestille tid med deg automatisk. Ingen frem-og-tilbake e-poster. Del en kobling, og behold kontrollen over tilgjengeligheten din."
+      ],
       "Link copied to clipboard": [
         "Kobling kopiert til utklippstavlen"
       ],
@@ -5969,6 +6013,9 @@
       ],
       "VPN IP": [
         "VPN-IP"
+      ],
+      "Want to create your own booking page?": [
+        "Vil du opprette din egen bestillingsside?"
       ],
       "Warning": [
         "Advarsel"
@@ -6496,6 +6543,9 @@
       "Billing cycle": [
         "Faktureringssyklus"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Browser": [
         "Nettleser"
       ],
@@ -6660,6 +6710,9 @@
       ],
       "From: ${ fromEmail }": [
         "Fra: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "Skaff deg tilbudet"
       ],
       "Hide password": [
         "Skjul passord"
@@ -8896,6 +8949,9 @@
       "Advanced account protection": [
         "Avansert kontobeskyttelse"
       ],
+      "File attachments (up to 10GB)": [
+        "Filvedlegg (opptil 10 GB)"
+      ],
       "Team policies": [
         "Retningslinjer for teamet"
       ]
@@ -9036,6 +9092,17 @@
         "Kupongen er gyldig for ${ couponRedemptions } fornyelse.",
         "Kupongen er gyldig for ${ couponRedemptions } fornyelser."
       ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "Den spesielle rabattprisen gjelder for den første måneden på ${ subscriptionLength }.",
+        "Den spesielt rabatterte prisen er gyldig de første ${ subscriptionLength } månedene."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Den spesielt rabatterte prisen er gyldig den første måneden. Kupongen er gyldig for ${ couponRedemptions } fornyelse. Deretter vil den automatisk bli fornyet til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst.",
+        "Den spesielt rabatterte prisen er gyldig den første måneden. Kupongen er gyldig for ${ couponRedemptions } fornyelser. Deretter vil den automatisk bli fornyet til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Den spesielt rabatterte prisen er gyldig den første måneden. Da blir den automatisk fornyet til ${ renewPriceStr } hver måned. Du kan avbryte når som helst."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig for den første ${ subscriptionLength } måneden.",
         "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig de første ${ subscriptionLength } månedene."
@@ -9083,6 +9150,9 @@
       ],
       "Your payment is still being processed": [
         "Betalingen din behandles fortsatt"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+        "Abonnementet ditt har for øyeblikket en eksisterende rabatt. Hvis du flytter til denne nye kampanjen, vil den eksisterende rabatten ikke lenger gjelde."
       ]
     },
     "Payments.Error": {
@@ -11205,9 +11275,6 @@
       "Does not repeat": [
         "Gjentas ikke"
       ],
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Doble lagringsplassen din med ${ BRAND_NAME } Duo"
-      ],
       "Downgrade account": [
         "Nedgrader kontoen"
       ],
@@ -11449,6 +11516,9 @@
       "Reactivate calendar keys": [
         "Aktiver kalendernøkler på nytt"
       ],
+      "Ready to automate your scheduling?": [
+        "Klar til å automatisere planleggingen din?"
+      ],
       "Recommended": [
         "Anbefalt"
       ],
@@ -11583,6 +11653,12 @@
       ],
       "Summary": [
         "Sammendrag"
+      ],
+      "This booking page does not exist": [
+        "Denne bestillingssiden finnes ikke"
+      ],
+      "This booking page has expired": [
+        "Denne bestillingssiden er utløpt"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Slå på ${ DARK_WEB_MONITORING_NAME }"
