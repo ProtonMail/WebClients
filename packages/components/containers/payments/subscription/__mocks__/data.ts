@@ -216,7 +216,7 @@ export const duoUpsell = {
     upsellRefLink: 'upsell_mail-button-duo-dashboard_settings',
     features: [
         {
-            text: ['', '1 TB', ' storage'],
+            text: ['', '2 TB', ' storage'],
             tooltip: 'Storage space is shared across Proton Mail, Proton Calendar, Proton Drive, and Proton Pass',
             included: true,
             highlight: false,
