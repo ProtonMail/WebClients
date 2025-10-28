@@ -16,17 +16,24 @@ import { Trash } from './Trash';
 export const TrashView = () => {
     useAppTitle(c('Title').t`Trash`);
     const { activeShareId, setDefaultRoot } = useActiveShare();
-    useEffect(setDefaultRoot, []);
+    useEffect(setDefaultRoot, [setDefaultRoot]);
 
     const trashView = useTrashNodes();
 
+    const loadTrashNodes = trashView.loadTrashNodes;
+    const populateTrashNodesFromLegacy = trashView.populateTrashNodesFromLegacy;
+
     useEffect(() => {
         const abortController = new AbortController();
-        trashView.populateTrashNodes(abortController);
+        void loadTrashNodes(abortController.signal);
         return () => {
             abortController.abort();
         };
-    }, [trashView.populateTrashNodes]);
+    }, [loadTrashNodes]);
+
+    useEffect(() => {
+        populateTrashNodesFromLegacy();
+    }, [populateTrashNodesFromLegacy]);
 
     return (
         <FileBrowserStateProvider

@@ -34,9 +34,8 @@ export const useTrashNodes = () => {
     const { createTrashRestoreNotification, createTrashDeleteNotification, createEmptyTrashNotificationSuccess } =
         useTrashNotifications();
     const { items: legacyNodes, isLoading: isLegacyLoading } = useLegacyTrashNodes();
-    const { trashNodes, isLoading, setLoading, setNodes, removeNodes, clearAllNodes } = useTrashStore(
+    const { isLoading, trashNodes, setNodes, removeNodes, clearAllNodes } = useTrashStore(
         useShallow((state) => ({
-            setLoading: state.setLoading,
             setNodes: state.setNodes,
             trashNodes: state.trashNodes,
             removeNodes: state.removeNodes,
@@ -46,33 +45,41 @@ export const useTrashNodes = () => {
     );
     const { sortedList, sortParams, setSorting } = useSortingWithDefault(Object.values(trashNodes), DEFAULT_SORT);
 
-    const populateNodesFromSDK = useCallback(
+    const loadTrashNodes = useCallback(
         async (abortSignal: AbortSignal) => {
-            setLoading(true);
-            const defaultShare = await getDefaultShare();
-            let shownErrorNotification = false;
-            for await (const trashNode of drive.iterateTrashedNodes(abortSignal)) {
-                try {
-                    const mappedNode = await mapNodeToLegacyItem(trashNode, defaultShare.shareId, drive);
-                    setNodes({
-                        [mappedNode.uid]: mappedNode,
-                    });
-                } catch (e) {
-                    handleError(e, { showNotification: !shownErrorNotification });
-                    shownErrorNotification = true;
+            const { setLoading, isLoading } = useTrashStore.getState();
+            try {
+                if (isLoading) {
+                    return;
                 }
+                setLoading(true);
+                const defaultShare = await getDefaultShare();
+                let shownErrorNotification = false;
+                for await (const trashNode of drive.iterateTrashedNodes(abortSignal)) {
+                    try {
+                        const mappedNode = await mapNodeToLegacyItem(trashNode, defaultShare.shareId, drive);
+                        setNodes({
+                            [mappedNode.uid]: mappedNode,
+                        });
+                    } catch (e) {
+                        handleError(e, { showNotification: !shownErrorNotification });
+                        shownErrorNotification = true;
+                    }
+                }
+            } catch (e) {
+                handleError(e);
+            } finally {
+                setLoading(false);
             }
-            setLoading(false);
         },
-        [getDefaultShare, drive, handleError, setLoading, setNodes]
+        [getDefaultShare, drive, handleError, setNodes]
     );
 
     /**
      * TODO:SDK
      * @todo this is only needed while the sdk doesn't return photos
      */
-    const populateNodesFromLegacy = useCallback(async () => {
-        setLoading(true);
+    const populateTrashNodesFromLegacy = useCallback(() => {
         const missingNodes = legacyNodes.reduce((acc, node) => {
             const uid = generateNodeUid(node.volumeId, node.linkId);
             return {
@@ -88,11 +95,10 @@ export const useTrashNodes = () => {
         }, {});
 
         setNodes(missingNodes);
-        setLoading(false);
-    }, [legacyNodes, setLoading, setNodes]);
+    }, [legacyNodes, setNodes]);
 
     const restoreNodes = async (selectedNodes: { uid: string; name: string }[]) => {
-        setLoading(true);
+        const { setLoading } = useTrashStore.getState();
         const uids = selectedNodes.map((t) => t.uid);
         const itemMap = new Map(selectedNodes.map((t) => [t.uid, t]));
         const allNodes = selectedNodes.map(({ uid }) => trashNodes[uid]);
@@ -150,14 +156,6 @@ export const useTrashNodes = () => {
         }
     };
 
-    const populateTrashNodes = useCallback(
-        (abortController: AbortController) => {
-            void populateNodesFromSDK(abortController.signal).catch(handleError);
-            void populateNodesFromLegacy().catch(handleError);
-        },
-        [populateNodesFromSDK, populateNodesFromLegacy, handleError]
-    );
-
     return {
         trashNodes: sortedList,
         isLoading: isLoading || isLegacyLoading,
@@ -166,6 +164,7 @@ export const useTrashNodes = () => {
         sortParams,
         setSorting,
         emptyTrash,
-        populateTrashNodes,
+        loadTrashNodes,
+        populateTrashNodesFromLegacy,
     };
 };
