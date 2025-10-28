@@ -7,6 +7,7 @@ import { handleSdkError } from '../../utils/errorHandling/useSdkErrorHandler';
 import { UploadConflictStrategy, UploadConflictType } from './types';
 import { useUploadControllerStore } from './uploadController.store';
 import { type UploadEvent, UploadEventType, startUpload } from './uploadHandler';
+import type { UploadStatusKeys } from './uploadQueue.store';
 import { UploadStatus, useUploadQueueStore } from './uploadQueue.store';
 import { type FolderNode, buildFolderStructure } from './utils/buildFolderStructure';
 import { hasFolderStructure } from './utils/hasFolderStructure';
@@ -384,13 +385,10 @@ class UploadManager {
     }
 
     private checkAndUnsubscribeIfQueueEmpty(): void {
+        const terminalStatus: UploadStatusKeys[] = [UploadStatus.Finished, UploadStatus.Failed, UploadStatus.Cancelled];
+
         const uploadQueueStore = useUploadQueueStore.getState();
-        const activeUploads = uploadQueueStore
-            .getQueue()
-            .filter(
-                ({ item }) =>
-                    ![UploadStatus.Finished, UploadStatus.Failed, UploadStatus.Cancelled].includes(item.status)
-            );
+        const activeUploads = uploadQueueStore.getQueue().filter(({ item }) => !terminalStatus.includes(item.status));
 
         if (activeUploads.length === 0 && this.sdkEventsDisposer) {
             this.unsubscribeFromSDKEvents();

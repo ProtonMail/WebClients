@@ -7,15 +7,18 @@ import generateUID from '@proton/utils/generateUID';
 import { BaseTransferStatus } from '../download/downloadManager.store';
 import type { UploadConflictStrategy, UploadConflictType } from './types';
 
-export enum UploadStatus {
-    InProgress = BaseTransferStatus.InProgress,
-    Failed = BaseTransferStatus.Failed,
-    PausedServer = BaseTransferStatus.PausedServer,
-    Finished = BaseTransferStatus.Finished,
-    Pending = BaseTransferStatus.Pending,
-    Cancelled = BaseTransferStatus.Cancelled,
-    ConflictFound = 'conflictFound',
-}
+export const UploadStatus = {
+    InProgress: BaseTransferStatus.InProgress,
+    Failed: BaseTransferStatus.Failed,
+    PausedServer: BaseTransferStatus.PausedServer,
+    Finished: BaseTransferStatus.Finished,
+    Pending: BaseTransferStatus.Pending,
+    Cancelled: BaseTransferStatus.Cancelled,
+    ConflictFound: 'conflictFound',
+} as const;
+
+type UploadStatusMap = typeof UploadStatus;
+export type UploadStatusKeys = UploadStatusMap[keyof UploadStatusMap];
 
 type BaseUploadItem = {
     name: string;
@@ -24,10 +27,11 @@ type BaseUploadItem = {
     thumbnailUrl?: string;
     speedBytesPerSecond?: number;
     batchId: string;
+    status: UploadStatusKeys;
 };
 
 export type UploadItemConflict = BaseUploadItem & {
-    status: UploadStatus.ConflictFound;
+    status: UploadStatusMap['ConflictFound'];
     conflictType: UploadConflictType;
     nodeType: NodeType;
     resolve: (strategy: UploadConflictStrategy, applyToAll?: boolean) => void;
@@ -36,12 +40,12 @@ export type UploadItemConflict = BaseUploadItem & {
 export type UploadItem =
     | (BaseUploadItem &
           (
-              | { status: UploadStatus.Pending }
-              | { status: UploadStatus.InProgress }
-              | { status: UploadStatus.PausedServer }
-              | { status: UploadStatus.Failed; error: Error }
-              | { status: UploadStatus.Cancelled }
-              | { status: UploadStatus.Finished }
+              | { status: UploadStatusMap['Pending'] }
+              | { status: UploadStatusMap['InProgress'] }
+              | { status: UploadStatusMap['PausedServer'] }
+              | { status: UploadStatusMap['Failed']; error: Error }
+              | { status: UploadStatusMap['Cancelled'] }
+              | { status: UploadStatusMap['Finished'] }
           ))
     | UploadItemConflict;
 

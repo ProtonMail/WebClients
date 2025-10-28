@@ -3,30 +3,32 @@ import { devtools } from 'zustand/middleware';
 
 import generateUID from '@proton/utils/generateUID';
 
-// Maybe find a new home for this enum since it's shared between download/upload
-export enum BaseTransferStatus {
-    InProgress = 'inProgress',
-    Failed = 'failed',
-    Paused = 'paused',
-    PausedServer = 'pausedServer',
-    Finished = 'finished',
-    Pending = 'pending',
-    Cancelled = 'cancelled',
-}
+// TODO: Maybe find a new home for this const since it's shared between download/upload
+export const BaseTransferStatus = {
+    InProgress: 'inProgress',
+    Failed: 'failed',
+    Paused: 'paused',
+    PausedServer: 'pausedServer',
+    Finished: 'finished',
+    Pending: 'pending',
+    Cancelled: 'cancelled',
+} as const;
 
-export enum DownloadStatus {
-    InProgress = BaseTransferStatus.InProgress,
-    Failed = BaseTransferStatus.Failed,
-    Paused = BaseTransferStatus.Paused,
-    PausedServer = BaseTransferStatus.PausedServer,
+export const DownloadStatus = {
+    InProgress: BaseTransferStatus.InProgress,
+    Failed: BaseTransferStatus.Failed,
+    Paused: BaseTransferStatus.Paused,
+    PausedServer: BaseTransferStatus.PausedServer,
     // During Finalizing the SDK has finished, we're saving the file
-    Finalizing = 'finalizing',
+    Finalizing: 'finalizing',
     // The savePromise has finished and the file is downloaded
-    Finished = BaseTransferStatus.Finished,
+    Finished: BaseTransferStatus.Finished,
     // Download waiting to start in queue
-    Pending = BaseTransferStatus.Pending,
-    Cancelled = BaseTransferStatus.Cancelled,
-}
+    Pending: BaseTransferStatus.Pending,
+    Cancelled: BaseTransferStatus.Cancelled,
+} as const;
+
+type DownloadStatusKeys = (typeof DownloadStatus)[keyof typeof DownloadStatus];
 
 export enum MalawareDownloadResolution {
     CancelDownload = 'CancelDownload',
@@ -42,7 +44,7 @@ export type DownloadItem = {
     thumbnailUrl?: string;
     error?: Error | unknown;
     speedBytesPerSecond?: number;
-    status: DownloadStatus;
+    status: DownloadStatusKeys;
     nodeUids: string[];
     downloadedBytes: number;
     malawareDetected?: Record<string, MalawareStatus>;
