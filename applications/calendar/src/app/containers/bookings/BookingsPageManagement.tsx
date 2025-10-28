@@ -12,19 +12,22 @@ import type { IconName } from '@proton/icons';
 import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eventDefaults';
 
+import { BookingSlotsForm } from './bookingManagement/BookingSlotsForm';
 import { useBookings } from './bookingsProvider/BookingsProvider';
 import { BookingState } from './bookingsProvider/interface';
 
 interface FormIconRowProps extends PropsWithChildren {
     title: string;
+    hideBorder?: boolean;
     icon: IconName;
 }
 
-const FormIconRow = ({ title, icon, children }: FormIconRowProps) => {
+const FormIconRow = ({ title, icon, children, hideBorder = false }: FormIconRowProps) => {
     return (
         <IconRow icon={icon} containerClassName="items-baseline" labelClassName="pt-0.5">
             <h2 className="text-sm text-semibold mb-2">{title}</h2>
             {children}
+            {!hideBorder && <hr className="mt-5 mb-1 bg-weak" />}
         </IconRow>
     );
 };
@@ -46,6 +49,7 @@ export const Form = () => {
                     maxLength={MAX_CHARS_API.TITLE}
                     assistContainerClassName="hidden"
                     autoFocus
+                    bigger
                 />
             </FormIconRow>
 
@@ -65,7 +69,7 @@ export const Form = () => {
             </FormIconRow>
 
             <FormIconRow icon="calendar-checkmark" title={c('Info').t`When are you free?`}>
-                todo
+                <BookingSlotsForm />
             </FormIconRow>
 
             <FormIconRow icon="map-pin" title={c('Info').t`Where will the appointment take place?`}>
@@ -99,7 +103,7 @@ export const Form = () => {
                 />
             </FormIconRow>
 
-            <FormIconRow icon="shield" title={c('Info').t`Protect this page with a password?`}>
+            <FormIconRow icon="shield" title={c('Info').t`Protect this page with a password?`} hideBorder>
                 todo
             </FormIconRow>
 
