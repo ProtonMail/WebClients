@@ -780,6 +780,9 @@
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF }, e-posta teslimi sırasında sahte gönderici adreslerini bulmak için tasarlanmış bir e-posta kimlik doğrulama yöntemidir. E-postalarınızın alıcının İstenmeyen klasörüne düşme olasılığını azaltmak için SPF kullanılması şiddetle önerilir."
       ],
+      "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
+        "Bu kasalara erişilemeyecek ve içerikleri arama veya otomatik doldurma için kullanılamayacak."
+      ],
       "This account is vulnerable, visit the service and change your password.": [
         "Bu hesapta güvenlik açığı var. Hizmeti ziyaret edin ve parolanızı değiştirin."
       ],
@@ -1841,7 +1844,8 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
+        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -3304,7 +3308,7 @@
         "İkinci parola"
       ],
       "Secret": [
-        "Parola"
+        "Gizli anahtar"
       ],
       "Secure links": [
         "Güvenli bağlantılar"
@@ -4155,8 +4159,8 @@
       "Grant permissions": [
         "İzinleri ver"
       ],
-      "Hidden vaults won’t be visible during search and autofill.": [
-        "Gizli kasalar arama ve otomatik doldurma sırasında görüntülenmez."
+      "Hidden vaults": [
+        "Gizli kasalar"
       ],
       "Hide my email": [
         "Hide my email"
@@ -4367,6 +4371,9 @@
       ],
       "Vault shared with you": [
         "Sizinle bir kasa paylaşıldı"
+      ],
+      "Visible vaults": [
+        "Görülebilir kasalar"
       ],
       "Weak password": [
         "Parola zayıf"

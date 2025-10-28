@@ -780,6 +780,9 @@
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "O SPF ${ WIKIPEDIA_LINK_SPF } é um método de autenticação de e-mail desenvolvido para detectar endereços de remetente falsos durante a entrega do e-mail. A configuração do SPF é altamente recomendada para reduzir a chance de seus e-mails acabarem na pasta de Spam do destinatário."
       ],
+      "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
+        "Esses cofres não estarão acessíveis e o conteúdo deles não estará disponível para pesquisa ou preenchimento automático."
+      ],
       "This account is vulnerable, visit the service and change your password.": [
         "Esta conta está vulnerável, visite o serviço e altere sua senha."
       ],
@@ -1841,7 +1844,8 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro."
+        "Movendo um item para outro cofre apagará seu link seguro.",
+        "Movendo item para outro cofre apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"
@@ -4155,8 +4159,8 @@
       "Grant permissions": [
         "Conceder permissões"
       ],
-      "Hidden vaults won’t be visible during search and autofill.": [
-        "Cofres ocultos não serão visíveis durante a pesquisa e o preenchimento automático."
+      "Hidden vaults": [
+        "Cofres ocultos"
       ],
       "Hide my email": [
         "Ocultar meu e-mail"
@@ -4367,6 +4371,9 @@
       ],
       "Vault shared with you": [
         "Cofre compartilhado com você"
+      ],
+      "Visible vaults": [
+        "Cofres visíveis"
       ],
       "Weak password": [
         "Senha fraca"

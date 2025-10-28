@@ -777,6 +777,9 @@
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } 는 이메일 전달 중 위조 발신자 주소를 감지하도록 설계된 이메일 인증 방식입니다. 이메일이 수신자의 스팸 폴더로 전송되는 가능성을 줄이기 위해 SPF를 설정하는 것이 좋습니다."
       ],
+      "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
+        "이 금고는 접근할 수 없으며, 해당 콘텐츠는 검색 또는 자동완성에서 사용할 수 없습니다."
+      ],
       "This account is vulnerable, visit the service and change your password.": [
         "이 계정은 취약합니다. 서비스를 방문하여 비밀번호를 변경하십시오."
       ],
@@ -1813,7 +1816,7 @@
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
+        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -4102,8 +4105,8 @@
       "Grant permissions": [
         "권한 부여"
       ],
-      "Hidden vaults won’t be visible during search and autofill.": [
-        "숨겨진 금고는 검색과 자동 완성에서 표시되지 않습니다."
+      "Hidden vaults": [
+        "숨겨진 금고"
       ],
       "Hide my email": [
         "내 이메일 숨기기"
@@ -4311,6 +4314,9 @@
       ],
       "Vault shared with you": [
         "나와 공유된 금고"
+      ],
+      "Visible vaults": [
+        "표시되는 금고"
       ],
       "Weak password": [
         "약한 비밀번호"

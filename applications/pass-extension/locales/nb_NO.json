@@ -780,6 +780,9 @@
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } er en e-postautentiseringsmetode utviklet for å oppdage forfalskede avsenderadresser under levering av e-posten. Det anbefales sterkt å sette opp SPF for å redusere sjansen for at e-postene dine havner i mottakerens søppelpostmappe."
       ],
+      "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
+        "Disse hvelvene vil ikke være tilgjengelige, og innholdet i dem vil ikke være tilgjengelig for søk eller automatisk utfylling."
+      ],
       "This account is vulnerable, visit the service and change your password.": [
         "Denne kontoen er sårbar, besøk tjenesten og endre passordet ditt."
       ],
@@ -1839,6 +1842,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
+        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -4152,8 +4159,8 @@
       "Grant permissions": [
         "Gi tillatelser"
       ],
-      "Hidden vaults won’t be visible during search and autofill.": [
-        "Skjulte hvelv vil ikke være synlige under søk og automatisk utfylling."
+      "Hidden vaults": [
+        "Skjulte hvelv"
       ],
       "Hide my email": [
         "Skjul e-postadressen min"
@@ -4364,6 +4371,9 @@
       ],
       "Vault shared with you": [
         "Hvelv delt med deg"
+      ],
+      "Visible vaults": [
+        "Synlige hvelv"
       ],
       "Weak password": [
         "Svakt passord"

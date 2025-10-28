@@ -780,6 +780,9 @@
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "La norme SPF ${ WIKIPEDIA_LINK_SPF } est une méthode d'authentification des e-mails conçue pour détecter les adresses d'expéditeur falsifiées lors de la livraison de l'e-mail. La configuration de SPF est fortement recommandée pour réduire le risque que vos e-mails se retrouvent dans le dossier indésirables/spam du destinataire."
       ],
+      "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
+        "Ces coffres-forts ne seront pas accessibles et leur contenu ne sera pas disponible pour la recherche ou le remplissage automatique."
+      ],
       "This account is vulnerable, visit the service and change your password.": [
         "Ce compte est vulnérable. Rendez-vous sur le service et changez votre mot de passe."
       ],
@@ -1841,7 +1844,8 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
+        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -4155,8 +4159,8 @@
       "Grant permissions": [
         "Accordez les autorisations"
       ],
-      "Hidden vaults won’t be visible during search and autofill.": [
-        "Les coffres-forts cachés ne seront pas visibles lors de la recherche et du remplissage automatique."
+      "Hidden vaults": [
+        "Coffres-forts cachés"
       ],
       "Hide my email": [
         "Masquer mon e-mail"
@@ -4367,6 +4371,9 @@
       ],
       "Vault shared with you": [
         "Coffre-fort partagé avec vous"
+      ],
+      "Visible vaults": [
+        "Coffres-forts visibles"
       ],
       "Weak password": [
         "Mot de passe faible"

@@ -780,6 +780,9 @@
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "La norma SPF ${ WIKIPEDIA_LINK_SPF } és un mètode d'autenticació de correu electrònic dissenyat per detectar adreces de remitents falsificades durant l'enviament del correu electrònic. Es recomana configurar SPF per reduir la possibilitat que els vostres correus electrònics acabin a la carpeta de correu brossa del destinatari."
       ],
+      "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
+        "Aquestes caixes fortes no seran accessibles i el seu contingut no estarà disponible per a cerca o emplenament automàtic."
+      ],
       "This account is vulnerable, visit the service and change your password.": [
         "Aquest compte és vulnerable, visiteu el servei i canvieu la contrasenya."
       ],
@@ -1841,7 +1844,8 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
+        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -4155,8 +4159,8 @@
       "Grant permissions": [
         "Concediu permisos"
       ],
-      "Hidden vaults won’t be visible during search and autofill.": [
-        "Les caixes fortes ocultes no seran visibles durant la cerca i l'emplenament automàtic."
+      "Hidden vaults": [
+        "Caixes fortes ocultes"
       ],
       "Hide my email": [
         "Amaga el correu electrònic"
@@ -4367,6 +4371,9 @@
       ],
       "Vault shared with you": [
         "Caixa forta compartida amb vosaltres"
+      ],
+      "Visible vaults": [
+        "Caixes fortes visibles"
       ],
       "Weak password": [
         "Contrasenya feble"
