@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import type { Feature } from '@proton/components/containers/offers/interface';
 
 const getStorageFeature = () => {
-    return { name: c('Duo offer').t`1 TB of storage to share` };
+    return { name: c('Duo offer').t`2 TB of storage to share` };
 };
 
 const getTwoUsersFeature = () => {
