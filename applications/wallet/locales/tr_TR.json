@@ -3096,6 +3096,9 @@
       "Billing cycle": [
         "Fatura dönemi"
       ],
+      "Black Friday": [
+        "Muhteşem Cuma"
+      ],
       "Browser": [
         "Tarayıcı"
       ],
@@ -3179,6 +3182,9 @@
       ],
       "Folder location": [
         "Klasör konumu"
+      ],
+      "Get the deal": [
+        "Tekliften yararlanın"
       ],
       "Hide password": [
         "Parolayı gizle"
@@ -3757,7 +3763,7 @@
         "Kuruluş için iki adımlı doğrulama gereksin"
       ],
       "Router support": [
-        "Yöneltici desteği"
+        "Yönlendirici desteği"
       ],
       "Schedule and snooze emails for any time": [
         "İletileri istediğiniz zamana planlayın veya erteleyin"
@@ -4158,7 +4164,7 @@
         "Kullanıcı parolalarını ve kullanıcıların iki adımlı doğrulama ayarlarını sıfırla"
       ],
       "Route your internet traffic through the Tor network with a single click": [
-        "İnternet trafiğinizi tek bir tıklamayla Tor ağı üzerinden yöneltin"
+        "İnternet trafiğinizi tek bir tıklamayla Tor ağı üzerinden geçirin"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
@@ -4354,6 +4360,9 @@
       "Advanced account protection": [
         "Gelişmiş hesap koruması"
       ],
+      "File attachments (up to 10GB)": [
+        "Ek dosyalar (10GB boyutuna kadar)"
+      ],
       "Team policies": [
         "Ekip ilkeleri"
       ]
@@ -4474,6 +4483,17 @@
         "Kupon ${ couponRedemptions } yenileme için geçerlidir.",
         "Kupon ${ couponRedemptions } yenileme için geçerlidir."
       ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "Özel indirimli fiyat yalnızca ilk ${ subscriptionLength } ay için geçerlidir.",
+        "Özel indirimli fiyat yalnızca ilk ${ subscriptionLength } ay için geçerlidir."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "İndirimli fiyat yalnızca ilk ay için geçerlidir. Kupon, ${ couponRedemptions } yenileme için geçerlidir. Sonrasında aylık ${ renewPriceStr } ile otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz.",
+        "İndirimli fiyat yalnızca ilk ay için geçerlidir. Kupon, ${ couponRedemptions } yenileme için geçerlidir. Sonrasında aylık ${ renewPriceStr } ile otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Özel indirimli fiyat yalnızca ilk ay için geçerlidir. Ardından her ay otomatik olarak ${ renewPriceStr } ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Özel indirimli ${ priceWithDiscount } fiyatı ilk ${ subscriptionLength } ay için geçerlidir.",
         "Özel indirimli ${ priceWithDiscount } fiyatı ilk ${ subscriptionLength } ay için geçerlidir."
@@ -4521,6 +4541,9 @@
       ],
       "Your payment is still being processed": [
         "Ödeme işleminiz sürüyor"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+        "Aboneliğinizde şu anda uygulanan bir indirim var. Yeni indirime geçmek bu indirimin artık uygulanmayacağı anlamına gelir."
       ]
     },
     "Payments.Error": {
@@ -5414,6 +5437,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: Gizliliğinize saygı duyan yapay zeka yardımcısı"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
       ]

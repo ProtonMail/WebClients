@@ -1174,6 +1174,32 @@
         "Ruang penyimpanan terbagi antar seluruh layanan ${ BRAND_NAME }."
       ]
     },
+    "BF2025: Deal details": {
+      "Block ads, trackers, and malware": [
+        "Blokir iklan, pelacak, dan malware"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autentikator 2FA terintegrasi"
+      ],
+      "Unlimited daily chats": [
+        "Tanpa batasan jumlah percakapan harian"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "Jumat Hitam"
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "untuk ${ durationDeal }"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Dirancang secara khusus, NetShield melindungi perangkat Anda dan mempercepat penjelajahan Anda dengan memblokir iklan, pelacak, dan perangkat lunak jahat."
+      ]
+    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "Aplikasi Desktop ${ MAIL_APP_NAME }"
@@ -2630,17 +2656,11 @@
       ]
     },
     "Duo offer: Link": {
-      "Double your storage": [
-        "Gandakan ruang penyimpanan Anda"
-      ],
       "Share your plan": [
         "Bagikan paket Anda"
       ]
     },
     "Duo offer: Title": {
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Gandakan ruang penyimpanan Anda dengan ${ BRAND_NAME } Duo"
-      ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
         "Bagikan keutamaan paket Anda dengan ${ BRAND_NAME } Duo"
       ]
@@ -8268,6 +8288,59 @@
         "Dibagikan oleh ${ ownerName }"
       ]
     },
+    "sheets_2025:Action": {
+      "Comma Separated Values (.csv)": [
+        "Comma Separated Values (.csv)"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
+      "New spreadsheet": [
+        "Lembar kerja baru"
+      ],
+      "Rename spreadsheet": [
+        "Ubah nama lembar kerja"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Tab Separated Values (.tsv)"
+      ]
+    },
+    "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Membuat lembar kerja baru..."
+      ],
+      "Detect automatically": [
+        "Deteksi otomatis"
+      ],
+      "Insert as new sheet": [
+        "Sisipkan sebagai sheet baru"
+      ],
+      "Replace current sheet": [
+        "Ganti sheet saat ini"
+      ],
+      "Replace data at selected cell": [
+        "Ganti data pada sel yang dipilih"
+      ],
+      "Select a CSV or TSV file to import": [
+        "Pilih berkas CSV atau TSV untuk diimpor"
+      ]
+    },
+    "sheets_2025:Label": {
+      "Convert text to numbers, dates, and formulas": [
+        "Konversikan teks sebagai angka, tanggal, dan rumus"
+      ],
+      "Format": [
+        "Format"
+      ],
+      "Separator type": [
+        "Jenis pemisah"
+      ]
+    },
+    "sheets_2025:Title": {
+      "Import data": [
+        "Impor data"
+      ]
+    },
     "Signing preference for emails": {
       "Don't sign": [
         "Jangan tandatangani"
@@ -9103,9 +9176,6 @@
       ],
       "Document verification failed": [
         "Verifikasi dokumen gagal"
-      ],
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Gandakan ruang penyimpanan Anda dengan ${ BRAND_NAME } Duo"
       ],
       "Downgrade account": [
         "Turunkan jenis akun"

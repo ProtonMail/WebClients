@@ -1209,6 +1209,87 @@
         "Spațiul de stocare este partajat între toate serviciile ${ BRAND_NAME }."
       ]
     },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "Reduceri de Black Friday"
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB spațiu de stocare a datelor"
+      ],
+      "3 TB data storage": [
+        "3 TB spațiu de stocare a datelor"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Accesați peste 15.000 de servere în peste 120 de țări"
+      ],
+      "Access advanced AI models": [
+        "Accesați modele AI avansate"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Toate funcțiile premium ale ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blocare reclame, urmăritori și programe malițioase"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autentificator A2F încorporat"
+      ],
+      "Connect 10 devices at once": [
+        "Conectați 10 dispozitive simultan"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Istoric complet al chatului cu căutare ușoară și favorite"
+      ],
+      "Individual accounts for 6 users": [
+        "Conturi individuale pentru 6 utilizatori"
+      ],
+      "Individual accounts for you and a partner": [
+        "Conturi individuale pentru dvs. și un partener"
+      ],
+      "Stronger protection against cyber threats": [
+        "Protecție mai puternică împotriva amenințărilor cibernetice"
+      ],
+      "Unlimited daily chats": [
+        "Conversații zilnice nelimitate"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "Vinerea Neagră"
+      ]
+    },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Ajutați-i pe cei dragi să se alăture revoluției confidențialității cu pachetele noastre cu cea mai bună valoare, acum cu 50% reducere!"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Alăturați-vă revoluției confidențialității cu pachetele noastre cu cea mai bună valoare, acum cu 50% reducere!"
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "cu ${ durationDeal }"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "Economisiți ${ savedAmount } cu oferta noastră cu cea mai bună valoare, pe timp limitat!"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "Treceți la planul nostru pe 2 ani și economisiți ${ savedAmount }!"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "Treceți la planul nostru anual și economisiți ${ savedAmount }!"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "Oferiți-le celor dragi protecție digitală completă."
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield special conceput să vă protejeze dispozitivele și să vă accelereze navigarea prin blocarea reclamelor, monitorizării și a programelor malițioase."
+      ]
+    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "Aplicați ${ MAIL_APP_NAME } Desktop"
@@ -2670,16 +2751,16 @@
       ]
     },
     "Duo offer: Link": {
-      "Double your storage": [
-        "Dublați-vă spațiul de stocare"
+      "Get 4x more storage": [
+        "Obțineți de 4 ori mai mult spațiu"
       ],
       "Share your plan": [
         "Partajați-vă planul"
       ]
     },
     "Duo offer: Title": {
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Dublați-vă spațiul de stocare cu ${ BRAND_NAME } Duo"
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "Obțineți de 4 ori mai multă spațiu cu ${ BRAND_NAME } Duo"
       ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
         "Partajați beneficiile planului cu ${ BRAND_NAME } Duo"
@@ -7826,6 +7907,9 @@
       "Advanced account protection": [
         "Protecție avansată a contului"
       ],
+      "File attachments (up to 10GB)": [
+        "Fișiere atașate (până la 10 GiB)"
+      ],
       "Team policies": [
         "Politicile echipei"
       ]
@@ -7896,6 +7980,19 @@
         "Număr de reînnoiri disponibile pentru acest cupon: ${ couponRedemptions }",
         "Număr de reînnoiri disponibile pentru acest cupon: ${ couponRedemptions }",
         "Număr de reînnoiri disponibile pentru acest cupon: ${ couponRedemptions }"
+      ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "Prețul special redus este valabil pentru ${ subscriptionLength } lună.",
+        "Prețul redus special este valabil pentru primele ${ subscriptionLength } luni.",
+        "Prețul special redus este valabil pentru primele ${ subscriptionLength } de luni."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Prețul cu reducerea specială este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } reînnoire. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
+        "Prețul cu reducerea specială este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } reînnoiri. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
+        "Prețul cu reducerea specială este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } de reînnoiri. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Prețul cu reducerea specială este valabil pentru prima lună. Apoi va fi reînnoit automat cu ${ renewPriceStr } lunar. Puteți anula oricând."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Prețul redus special de ${ priceWithDiscount } este valid pentru ${ subscriptionLength } lună.",
@@ -8501,6 +8598,62 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Partajat de ${ ownerName }"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Comma Separated Values (.csv)": [
+        "Valori separate prin virgulă (.csv)"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
+      "New spreadsheet": [
+        "Registru de lucru nou"
+      ],
+      "Rename spreadsheet": [
+        "Redenumire registru de lucru"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Valori separate prin tab (.tsv)"
+      ]
+    },
+    "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Se creează un registru de lucru nou..."
+      ],
+      "Detect automatically": [
+        "Detectare automată"
+      ],
+      "Insert as new sheet": [
+        "Inserare ca foaie nouă"
+      ],
+      "Replace current sheet": [
+        "Înlocuire foaie curentă"
+      ],
+      "Replace data at selected cell": [
+        "Înlocuire date în celula selectată"
+      ],
+      "Select a CSV or TSV file to import": [
+        "Selectați un fișier CSV sau TSV pentru importare."
+      ]
+    },
+    "sheets_2025:Label": {
+      "Convert text to numbers, dates, and formulas": [
+        "Convertire text în numere, date și formule"
+      ],
+      "Destination": [
+        "Destinație"
+      ],
+      "Format": [
+        "Format"
+      ],
+      "Separator type": [
+        "Tip separator"
+      ]
+    },
+    "sheets_2025:Title": {
+      "Import data": [
+        "Importare date"
       ]
     },
     "Signing preference for emails": {
@@ -9400,9 +9553,6 @@
       ],
       "Document verification failed": [
         "Verificarea documentului a eșuat"
-      ],
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Dublați-vă spațiul de stocare cu ${ BRAND_NAME } Duo"
       ],
       "Downgrade account": [
         "Retrogradare cont"

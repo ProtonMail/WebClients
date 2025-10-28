@@ -2059,20 +2059,8 @@
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "使用瑞士高速VPN并享受黑色星期五优惠"
       ],
-      "Save with Cyber Week deals on a high-speed Swiss VPN": [
-        "使用瑞士高速VPN并享受 Cyber Week 优惠"
-      ],
-      "Save with End of Year deals on a high-speed Swiss VPN": [
-        "使用瑞士高速VPN并享受年终优惠"
-      ],
       "Select your Black Friday offer": [
         "选择您的黑色星期五优惠"
-      ],
-      "Select your Cyber Week offer": [
-        "选择您的 Cyber Week 优惠"
-      ],
-      "Select your End of Year offer": [
-        "选择您的年终优惠"
       ]
     },
     "bf2023: Info": {
@@ -2176,6 +2164,32 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "采用端到端加密技术守护您的邮件安全，并且支持自有域名、15 个邮箱地址、无限量的 hide-my-email 邮箱别名、${ BRAND_NAME } Scribe 写作助手等高级功能。"
+      ]
+    },
+    "BF2025: Deal details": {
+      "Block ads, trackers, and malware": [
+        "屏蔽广告、跟踪器和恶意软件"
+      ],
+      "Built-in 2FA authenticator": [
+        "内置 2FA 验证器"
+      ],
+      "Unlimited daily chats": [
+        "无限聊天次数"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "黑色星期五"
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "仅限 ${ durationDeal }"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "完善的 NetShield 机制能够屏蔽广告、追踪脚本和恶意软件，增强设备安全性，提升网络性能."
       ]
     },
     "Billing cycle": {
@@ -4514,17 +4528,11 @@
       ]
     },
     "Duo offer: Link": {
-      "Double your storage": [
-        "将您的存储空间翻倍"
-      ],
       "Share your plan": [
         "分享您的套餐"
       ]
     },
     "Duo offer: Title": {
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "使用 ${ BRAND_NAME } Duo 将您的存储空间翻倍"
-      ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
         "使用 ${ BRAND_NAME } Duo 分享您的套餐"
       ]
@@ -5280,6 +5288,9 @@
       ],
       "Expired": [
         "已失效"
+      ],
+      "Failed to add group member": [
+        "添加群组成员失败"
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "未能获取已登录的账户，请${ refresh }或稍后再试。"
@@ -15528,9 +15539,6 @@
       "Activity log": [
         "活动日志"
       ],
-      "Additional mailboxes for aliases": [
-        "用于别名的附加邮箱"
-      ],
       "Admin panel to manage users and subscription": [
         "管理用户和订阅的管理面板"
       ],
@@ -15540,17 +15548,11 @@
       "Advanced alias features (powered by SimpleLogin)": [
         "高级别名功能（由 SimpleLogin 提供）"
       ],
-      "File attachments (coming soon)": [
-        "文件附件（即将推出）"
-      ],
       "One-time payment, lifetime deal": [
         "一次性付款，终身有效"
       ],
       "Team policies": [
         "团队政策"
-      ],
-      "Your custom domain for aliases": [
-        "用于别名的自定义域名"
       ]
     },
     "PassFamilyPlan2024": {
@@ -17396,6 +17398,11 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "由 ${ ownerName } 共享"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "在 ${ appName } 中打开"
       ]
     },
     "Signature verification error when joining calendar": {
@@ -19955,9 +19962,6 @@
       ],
       "Don't show again?": [
         "不再显示？"
-      ],
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "使用 ${ BRAND_NAME } Duo 将您的存储空间翻倍"
       ],
       "Downgrade account": [
         "降级账户"

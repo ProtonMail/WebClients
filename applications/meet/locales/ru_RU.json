@@ -1,0 +1,1660 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);",
+    "language": "ru_RU"
+  },
+  "contexts": {
+    "Action": {
+      "${ BRAND_NAME } shop": [
+        "Магазин «${ BRAND_NAME }»"
+      ],
+      "Add account": [
+        "Добавить аккаунт"
+      ],
+      "Add another account": [
+        "Добавить другой аккаунт"
+      ],
+      "Attach screenshot(s)": [
+        "Вложить снимок(ки) экрана"
+      ],
+      "Authenticate": [
+        "Аутентификация"
+      ],
+      "Cancel": [
+        "Отменить"
+      ],
+      "Change password": [
+        "Изменить пароль"
+      ],
+      "Chat with us": [
+        "Поговорите с нами"
+      ],
+      "Close": [
+        "Закрыть"
+      ],
+      "Continue": [
+        "Продолжить"
+      ],
+      "Copy address": [
+        "Копировать адрес"
+      ],
+      "Copy link": [
+        "Копировать ссылку"
+      ],
+      "Delete": [
+        "Удалить"
+      ],
+      "Dismiss": [
+        "Отклонить"
+      ],
+      "Download logs": [
+        "Скачать журналы"
+      ],
+      "Edit email address": [
+        "Изменить адрес эл. почты"
+      ],
+      "Edit phone number": [
+        "Изменить номер телефона"
+      ],
+      "Edit sign-in details": [
+        "Изменить информацию о входе в систему"
+      ],
+      "Forgot password?": [
+        "Забыли пароль?"
+      ],
+      "Get verification code": [
+        "Получить проверочный код"
+      ],
+      "Help and feedback": [
+        "Помощь и обратная связь"
+      ],
+      "Help and resources": [
+        "Помощь и информация"
+      ],
+      "More info: ${ safeTitle }": [
+        "Больше информации: ${ safeTitle }"
+      ],
+      "More options for accounts": [
+        "Больше настроек для аккаунтов"
+      ],
+      "Next month": [
+        "Следующий месяц"
+      ],
+      "Next page": [
+        "Следующая страница"
+      ],
+      "OK": [
+        "OK"
+      ],
+      "Previous month": [
+        "Предыдущий месяц"
+      ],
+      "Previous page": [
+        "Предыдущая страница"
+      ],
+      "Refer a friend": [
+        "Порекомендуйте другу"
+      ],
+      "Refresh the page": [
+        "Обновить страницу"
+      ],
+      "Report a problem": [
+        "Сообщить о проблеме"
+      ],
+      "Request a call": [
+        "Запросить звонок"
+      ],
+      "Request a feature": [
+        "Запросить функцию"
+      ],
+      "Request new code": [
+        "Запросить новый код"
+      ],
+      "Resend code": [
+        "Повторно отправить код"
+      ],
+      "Search countries": [
+        "Поиск стран"
+      ],
+      "Settings": [
+        "Настройки"
+      ],
+      "Share": [
+        "Поделиться"
+      ],
+      "Show advanced options": [
+        "Показать дополнительные параметры"
+      ],
+      "Sign in": [
+        "Войти"
+      ],
+      "Sign out": [
+        "Выйти"
+      ],
+      "Sign out of all accounts": [
+        "Выйти из всех учётных записей"
+      ],
+      "Start": [
+        "Начать"
+      ],
+      "Submit": [
+        "Отправить"
+      ],
+      "Switch or add account": [
+        "Переключить или добавить аккаунт"
+      ],
+      "Try another method": [
+        "Попробуйте другой способ"
+      ],
+      "Use authentication code": [
+        "Использовать код аутентификации"
+      ],
+      "Use recovery code": [
+        "Использовать код восстановлени"
+      ],
+      "Verify": [
+        "Подтвердить"
+      ],
+      "Verify account": [
+        "Подтвердить аккаунт"
+      ],
+      "View invoice": [
+        "Посмотреть счет"
+      ]
+    },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "Приложения ${ BRAND_NAME }"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } для ПК"
+      ]
+    },
+    "Bug category": {
+      "Application problem": [
+        "Проблема в приложении"
+      ],
+      "Bridge problem": [
+        "Проблема Bridge"
+      ],
+      "Calendar problem": [
+        "Проблема календаря"
+      ],
+      "Connection problem": [
+        "Проблема с соединением"
+      ],
+      "Contacts problem": [
+        "Проблема контактов"
+      ],
+      "Custom domain problem": [
+        "Проблема своих доменов"
+      ],
+      "Docs problem": [
+        "Проблема с документами"
+      ],
+      "Drive problem": [
+        "Проблема Drive"
+      ],
+      "Feature request": [
+        "Запрос функционала"
+      ],
+      "Import / export problem": [
+        "Проблема импорта / экспорта"
+      ],
+      "Installation problem": [
+        "Проблема с установкой ПО"
+      ],
+      "Mail problem": [
+        "Проблема с почтой"
+      ],
+      "Manual setup problem": [
+        "Проблема при ручной установке"
+      ],
+      "Other": [
+        "Другая"
+      ],
+      "Pass problem": [
+        "Проблема с Proton Pass"
+      ],
+      "Payments problem": [
+        "Проблема с платежами"
+      ],
+      "Sign in problem": [
+        "Проблема со входом"
+      ],
+      "Sign up problem": [
+        "Проблема при регистрации"
+      ],
+      "Signup problem": [
+        "Проблема при регистрации"
+      ],
+      "Slow speed problem": [
+        "Проблема: низкая скорость соединения"
+      ],
+      "Speed problem": [
+        "Проблема со скоростью"
+      ],
+      "Streaming problem": [
+        "Проблема стриминга"
+      ],
+      "Update problem": [
+        "Проблема с обновлением"
+      ],
+      "VPN problem": [
+        "Проблема VPN"
+      ],
+      "Website access problem": [
+        "Проблема с доступом к сайту"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Свернуть"
+      ],
+      "Expand": [
+        "Развернуть"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "морковный"
+      ],
+      "cerise": [
+        "вишневый"
+      ],
+      "cobalt": [
+        "кобальтовый"
+      ],
+      "copper": [
+        "медный"
+      ],
+      "enzian": [
+        "горечавка"
+      ],
+      "fern": [
+        "папоротниковый"
+      ],
+      "forest": [
+        "лесной"
+      ],
+      "ocean": [
+        "океанический"
+      ],
+      "olive": [
+        "оливковый"
+      ],
+      "pacific": [
+        "тихоокеанский"
+      ],
+      "pickle": [
+        "огуречный"
+      ],
+      "pine": [
+        "сосновый"
+      ],
+      "pink": [
+        "розовый"
+      ],
+      "plum": [
+        "сливовый"
+      ],
+      "purple": [
+        "фиолетовый"
+      ],
+      "reef": [
+        "коралловый"
+      ],
+      "sahara": [
+        "сахара"
+      ],
+      "slateblue": [
+        "сланцево-синий"
+      ],
+      "soil": [
+        "землистый"
+      ],
+      "strawberry": [
+        "клубничный"
+      ]
+    },
+    "Country name": {
+      "Abkhazia": [
+        "Абхазия"
+      ],
+      "Afghanistan": [
+        "Афганистан"
+      ],
+      "Albania": [
+        "Албания"
+      ],
+      "Algeria": [
+        "Алжир"
+      ],
+      "American Samoa": [
+        "Американское Самоа"
+      ],
+      "Andorra": [
+        "Андорра"
+      ],
+      "Angola": [
+        "Ангола"
+      ],
+      "Anguilla": [
+        "Ангилья"
+      ],
+      "Antarctica": [
+        "Антарктида"
+      ],
+      "Antigua and Barbuda": [
+        "Антигуа и Барбуда"
+      ],
+      "Argentina": [
+        "Аргентина"
+      ],
+      "Armenia": [
+        "Армения"
+      ],
+      "Aruba": [
+        "Аруба"
+      ],
+      "Ascension Island": [
+        "Остров Вознесения"
+      ],
+      "Australia": [
+        "Австралия"
+      ],
+      "Austria": [
+        "Австрия"
+      ],
+      "Azerbaijan": [
+        "Азербайджан"
+      ],
+      "Bahamas": [
+        "Багамские острова"
+      ],
+      "Bahrain": [
+        "Бахрейн"
+      ],
+      "Bangladesh": [
+        "Бангладеш"
+      ],
+      "Barbados": [
+        "Барбадос"
+      ],
+      "Belarus": [
+        "Беларусь"
+      ],
+      "Belgium": [
+        "Бельгия"
+      ],
+      "Belize": [
+        "Белиз"
+      ],
+      "Benin": [
+        "Бенин"
+      ],
+      "Bermuda": [
+        "Бермуды"
+      ],
+      "Bhutan": [
+        "Бутан"
+      ],
+      "Bolivia": [
+        "Боливия"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Бонайре, Синт-Эстатиус и Саба"
+      ],
+      "Bosnia and Herzegovina": [
+        "Босния и Герцеговина"
+      ],
+      "Botswana": [
+        "Ботсвана"
+      ],
+      "Bouvet Island": [
+        "Остров Буве"
+      ],
+      "Brazil": [
+        "Бразилия"
+      ],
+      "British Indian Ocean Territory": [
+        "Британская территория в Индийском океане"
+      ],
+      "Brunei Darussalam": [
+        "Бруней-Даруссалам"
+      ],
+      "Bulgaria": [
+        "Болгария"
+      ],
+      "Burkina Faso": [
+        "Буркина-Фасо"
+      ],
+      "Burundi": [
+        "Бурунди"
+      ],
+      "Cambodia": [
+        "Камбоджа"
+      ],
+      "Cameroon": [
+        "Камерун"
+      ],
+      "Canada": [
+        "Канада"
+      ],
+      "Cape Verde": [
+        "Острова Зеленого Мыса"
+      ],
+      "Cayman Islands": [
+        "Каймановы острова"
+      ],
+      "Central African Republic": [
+        "Центральноафриканская Республика"
+      ],
+      "Chad": [
+        "Чад"
+      ],
+      "Chile": [
+        "Чили"
+      ],
+      "China": [
+        "Китай"
+      ],
+      "Christmas Island": [
+        "Остров Рождества"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Кокосовые (Килинговые) острова"
+      ],
+      "Colombia": [
+        "Колумбия"
+      ],
+      "Comoros": [
+        "Коморские острова"
+      ],
+      "Congo": [
+        "Конго"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Демократическая Республика Конго"
+      ],
+      "Cook Islands": [
+        "Острова Кука"
+      ],
+      "Costa Rica": [
+        "Коста-Рика"
+      ],
+      "Croatia": [
+        "Хорватия"
+      ],
+      "Cuba": [
+        "Куба"
+      ],
+      "Curaçao": [
+        "Кюрасао"
+      ],
+      "Cyprus": [
+        "Кипр"
+      ],
+      "Czech Republic": [
+        "Чешская Республика"
+      ],
+      "Côte d'Ivoire": [
+        "Берег Слоновой Кости"
+      ],
+      "Denmark": [
+        "Дания"
+      ],
+      "Djibouti": [
+        "Джибути"
+      ],
+      "Dominica": [
+        "Доминика"
+      ],
+      "Dominican Republic": [
+        "Доминиканская Республика"
+      ],
+      "Ecuador": [
+        "Эквадор"
+      ],
+      "Egypt": [
+        "Египет"
+      ],
+      "El Salvador": [
+        "Сальвадор"
+      ],
+      "Equatorial Guinea": [
+        "Экваториальная Гвинея"
+      ],
+      "Eritrea": [
+        "Эритрея"
+      ],
+      "Estonia": [
+        "Эстония"
+      ],
+      "Eswatini": [
+        "Эсватини"
+      ],
+      "Ethiopia": [
+        "Эфиопия"
+      ],
+      "Falkland Islands": [
+        "Фолклендские острова"
+      ],
+      "Faroe Islands": [
+        "Фарерские острова"
+      ],
+      "Federated States of Micronesia": [
+        "Федеративные Штаты Микронезии"
+      ],
+      "Fiji": [
+        "Фиджи"
+      ],
+      "Finland": [
+        "Финляндия"
+      ],
+      "France": [
+        "Франция"
+      ],
+      "French Guiana": [
+        "Французская Гвиана"
+      ],
+      "French Polynesia": [
+        "Французская Полинезия"
+      ],
+      "French Southern Territories": [
+        "Французские Южные территории"
+      ],
+      "Gabon": [
+        "Габон"
+      ],
+      "Gambia": [
+        "Гамбия"
+      ],
+      "Georgia": [
+        "Грузия"
+      ],
+      "Germany": [
+        "Германия"
+      ],
+      "Ghana": [
+        "Гана"
+      ],
+      "Gibraltar": [
+        "Гибралтар"
+      ],
+      "Greece": [
+        "Греция"
+      ],
+      "Greenland": [
+        "Гренландия"
+      ],
+      "Grenada": [
+        "Гренада"
+      ],
+      "Guadeloupe": [
+        "Гваделупа"
+      ],
+      "Guam": [
+        "Гуам"
+      ],
+      "Guatemala": [
+        "Гватемала"
+      ],
+      "Guernsey": [
+        "Гернси"
+      ],
+      "Guinea": [
+        "Гвинея"
+      ],
+      "Guinea-Bissau": [
+        "Гвинея-Бисау"
+      ],
+      "Guyana": [
+        "Гайана"
+      ],
+      "Haiti": [
+        "Гаити"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Остров Херд и острова Макдональд"
+      ],
+      "Holy See (Vatican City State)": [
+        "Святой Престол (Государство-Город Ватикан)"
+      ],
+      "Honduras": [
+        "Гондурас"
+      ],
+      "Hong Kong": [
+        "Гонконг"
+      ],
+      "Hungary": [
+        "Венгрия"
+      ],
+      "Iceland": [
+        "Исландия"
+      ],
+      "India": [
+        "Индия"
+      ],
+      "Indonesia": [
+        "Индонезия"
+      ],
+      "International": [
+        "Международный"
+      ],
+      "Iran": [
+        "Иран"
+      ],
+      "Iraq": [
+        "Ирак"
+      ],
+      "Ireland": [
+        "Ирландия"
+      ],
+      "Isle of Man": [
+        "Остров Мэн"
+      ],
+      "Israel": [
+        "Израиль"
+      ],
+      "Italy": [
+        "Италия"
+      ],
+      "Jamaica": [
+        "Ямайка"
+      ],
+      "Japan": [
+        "Япония"
+      ],
+      "Jersey": [
+        "Джерси"
+      ],
+      "Jordan": [
+        "Иордания"
+      ],
+      "Kazakhstan": [
+        "Казахстан"
+      ],
+      "Kenya": [
+        "Кения"
+      ],
+      "Kiribati": [
+        "Кирибати"
+      ],
+      "Kosovo": [
+        "Косово"
+      ],
+      "Kuwait": [
+        "Кувейт"
+      ],
+      "Kyrgyzstan": [
+        "Кыргызстан"
+      ],
+      "Laos": [
+        "Лаос"
+      ],
+      "Latvia": [
+        "Латвия"
+      ],
+      "Lebanon": [
+        "Ливан"
+      ],
+      "Lesotho": [
+        "Лесото"
+      ],
+      "Liberia": [
+        "Либерия"
+      ],
+      "Libya": [
+        "Ливия"
+      ],
+      "Liechtenstein": [
+        "Лихтенштейн"
+      ],
+      "Lithuania": [
+        "Литва"
+      ],
+      "Luxembourg": [
+        "Люксембург"
+      ],
+      "Macao": [
+        "Макао"
+      ],
+      "Madagascar": [
+        "Мадагаскар"
+      ],
+      "Malawi": [
+        "Малави"
+      ],
+      "Malaysia": [
+        "Малайзия"
+      ],
+      "Maldives": [
+        "Мальдивы"
+      ],
+      "Mali": [
+        "Мали"
+      ],
+      "Malta": [
+        "Мальта"
+      ],
+      "Marshall Islands": [
+        "Маршалловы Острова"
+      ],
+      "Martinique": [
+        "Мартиника"
+      ],
+      "Mauritania": [
+        "Мавритания"
+      ],
+      "Mauritius": [
+        "Маврикий"
+      ],
+      "Mayotte": [
+        "Майотта"
+      ],
+      "Mexico": [
+        "Мексика"
+      ],
+      "Moldova": [
+        "Молдавия"
+      ],
+      "Monaco": [
+        "Монако"
+      ],
+      "Mongolia": [
+        "Монголия"
+      ],
+      "Montenegro": [
+        "Черногория"
+      ],
+      "Montserrat": [
+        "Монтсеррат"
+      ],
+      "Morocco": [
+        "Марокко"
+      ],
+      "Mozambique": [
+        "Мозамбик"
+      ],
+      "Myanmar": [
+        "Мьянма"
+      ],
+      "Namibia": [
+        "Намибия"
+      ],
+      "Nauru": [
+        "Науру"
+      ],
+      "Nepal": [
+        "Непал"
+      ],
+      "Netherlands": [
+        "Нидерланды"
+      ],
+      "New Caledonia": [
+        "Новая Каледония"
+      ],
+      "New Zealand": [
+        "Новая Зеландия"
+      ],
+      "Nicaragua": [
+        "Никарагуа"
+      ],
+      "Niger": [
+        "Нигер"
+      ],
+      "Nigeria": [
+        "Нигерия"
+      ],
+      "Niue": [
+        "Ниуэ"
+      ],
+      "Norfolk Island": [
+        "Остров Норфолк"
+      ],
+      "North Korea": [
+        "Северная Корея"
+      ],
+      "North Macedonia": [
+        "Северная Македония"
+      ],
+      "Northern Mariana Islands": [
+        "Северные Марианские Острова"
+      ],
+      "Norway": [
+        "Норвегия"
+      ],
+      "Oman": [
+        "Оман"
+      ],
+      "Pakistan": [
+        "Пакистан"
+      ],
+      "Palau": [
+        "Палау"
+      ],
+      "Palestine": [
+        "Палестина"
+      ],
+      "Panama": [
+        "Панама"
+      ],
+      "Papua New Guinea": [
+        "Папуа-Новая Гвинея"
+      ],
+      "Paraguay": [
+        "Парагвай"
+      ],
+      "Peru": [
+        "Перу"
+      ],
+      "Philippines": [
+        "Филиппины"
+      ],
+      "Pitcairn": [
+        "Питкэрн"
+      ],
+      "Poland": [
+        "Польша"
+      ],
+      "Portugal": [
+        "Португалия"
+      ],
+      "Puerto Rico": [
+        "Пуэрто-Рико"
+      ],
+      "Qatar": [
+        "Катар"
+      ],
+      "Reunion": [
+        "Реюньон"
+      ],
+      "Romania": [
+        "Румыния"
+      ],
+      "Russia": [
+        "Россия"
+      ],
+      "Rwanda": [
+        "Руанда"
+      ],
+      "Saint Barthélemy": [
+        "Сен-Бартельми"
+      ],
+      "Saint Helena": [
+        "Остров Святой Елены"
+      ],
+      "Saint Kitts and Nevis": [
+        "Сент-Китс и Невис"
+      ],
+      "Saint Lucia": [
+        "Сент-Люсия"
+      ],
+      "Saint Martin (French Part)": [
+        "Сен-Мартен (французская часть)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Сен-Пьер и Микелон"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Сент-Винсент и Гренадины"
+      ],
+      "Samoa": [
+        "Самоа"
+      ],
+      "San Marino": [
+        "Сан-Марино"
+      ],
+      "Sao Tome and Principe": [
+        "Сан-Томе и Принсипи"
+      ],
+      "Saudi Arabia": [
+        "Саудовская Аравия"
+      ],
+      "Senegal": [
+        "Сенегал"
+      ],
+      "Serbia": [
+        "Сербия"
+      ],
+      "Seychelles": [
+        "Сейшелы"
+      ],
+      "Sierra Leone": [
+        "Сьерра-Леоне"
+      ],
+      "Singapore": [
+        "Сингапур"
+      ],
+      "Sint Maarten": [
+        "Сен-Мартен"
+      ],
+      "Slovakia": [
+        "Словакия"
+      ],
+      "Slovenia": [
+        "Словения"
+      ],
+      "Solomon Islands": [
+        "Соломоновы Острова"
+      ],
+      "Somalia": [
+        "Сомали"
+      ],
+      "South Africa": [
+        "Южная Африка"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Южная Георгия и Южные Сандвичевы острова"
+      ],
+      "South Korea": [
+        "Южная Корея"
+      ],
+      "South Ossetia": [
+        "Южная Осетия"
+      ],
+      "South Sudan": [
+        "Южный Судан"
+      ],
+      "Spain": [
+        "Испания"
+      ],
+      "Sri Lanka": [
+        "Шри-Ланка"
+      ],
+      "Sudan": [
+        "Судан"
+      ],
+      "Suriname": [
+        "Суринам"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Шпицберген и Ян-Майен"
+      ],
+      "Sweden": [
+        "Швеция"
+      ],
+      "Switzerland": [
+        "Швейцария"
+      ],
+      "Syria": [
+        "Сирия"
+      ],
+      "Taiwan": [
+        "Тайвань"
+      ],
+      "Tajikistan": [
+        "Таджикистан"
+      ],
+      "Tanzania": [
+        "Танзания"
+      ],
+      "Thailand": [
+        "Таиланд"
+      ],
+      "Timor-Leste": [
+        "Восточный Тимор"
+      ],
+      "Togo": [
+        "Того"
+      ],
+      "Tokelau": [
+        "Токелау"
+      ],
+      "Tonga": [
+        "Тонга"
+      ],
+      "Trinidad and Tobago": [
+        "Тринидад и Тобаго"
+      ],
+      "Tristan da Cunha": [
+        "Тристан да Кунья"
+      ],
+      "Tunisia": [
+        "Тунис"
+      ],
+      "Turkey": [
+        "Турция"
+      ],
+      "Turkmenistan": [
+        "Туркменистан"
+      ],
+      "Turks and Caicos Islands": [
+        "Острова Теркс и Кайкос"
+      ],
+      "Tuvalu": [
+        "Тувалу"
+      ],
+      "Uganda": [
+        "Уганда"
+      ],
+      "Ukraine": [
+        "Украина"
+      ],
+      "United Arab Emirates": [
+        "Объединённые Арабские Эмираты"
+      ],
+      "United Kingdom": [
+        "Великобритания"
+      ],
+      "United States": [
+        "Соединенные Штаты Америки"
+      ],
+      "United States Minor Outlying Islands": [
+        "Внешние малые острова США"
+      ],
+      "Uruguay": [
+        "Уругвай"
+      ],
+      "Uzbekistan": [
+        "Узбекистан"
+      ],
+      "Vanuatu": [
+        "Вануату"
+      ],
+      "Venezuela": [
+        "Венесуэла"
+      ],
+      "Vietnam": [
+        "Вьетнам"
+      ],
+      "Virgin Islands, British": [
+        "Британские Виргинские острова"
+      ],
+      "Virgin Islands, U.S.": [
+        "Американские Виргинские острова"
+      ],
+      "Wallis and Futuna": [
+        "Уоллис и Футуна"
+      ],
+      "Western Sahara": [
+        "Западная Сахара"
+      ],
+      "Yemen": [
+        "Йемен"
+      ],
+      "Zambia": [
+        "Замбия"
+      ],
+      "Zimbabwe": [
+        "Зимбабве"
+      ],
+      "Åland Islands": [
+        "Аландские острова"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Просроченный счёт"
+      ]
+    },
+    "Error": {
+      "Domain not available, try again later": [
+        "Домен недоступен, повторите попытку позже"
+      ],
+      "Email is not valid": [
+        "Эл. почта недействительна"
+      ],
+      "Enter 6 digits": [
+        "Введите 6 цифр"
+      ],
+      "Failed to create meeting": [
+        "Не удалось создать встречу"
+      ],
+      "Incorrect username": [
+        "Некорректное имя пользователя"
+      ],
+      "Invalid verification code": [
+        "Неверный код подтверждения"
+      ],
+      "Not a valid number": [
+        "Номер недействителен"
+      ],
+      "Passwords do not match": [
+        "Пароли не совпадают"
+      ],
+      "Request timed out": [
+        "Время запроса истекло"
+      ],
+      "Signature verification failed": [
+        "Проверка подписи не удалась"
+      ],
+      "The email addresses do not match": [
+        "Адреса электронной почты не совпадают"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Длина этого поля превысила максимальные ${ maximumLength } символов."
+      ],
+      "This field is required": [
+        "Это обязательное поле"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Минимальная длина для этого поля ${ minimumLength } символов."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Попробуйте, используя только буквы, цифры и _.-"
+      ],
+      "Unknown error": [
+        "Неизвестная ошибка"
+      ],
+      "Username must begin with a letter or digit": [
+        "Имя пользователя должно начинаться с буквы или цифры"
+      ],
+      "Username must end with a letter or digit": [
+        "Имя пользователя должно заканчиваться буквой или цифрой"
+      ]
+    },
+    "Error message": {
+      "App currently unavailable": [
+        "Приложение в настоящее время недоступно"
+      ],
+      "Error: ${ errorMessage }": [
+        "Ошибка: ${ errorMessage }"
+      ],
+      "Oops, something went wrong": [
+        "Хм. Что-то пошло не так"
+      ],
+      "Open in browser": [
+        "Открыть в браузере"
+      ],
+      "Please refresh the page or try again later.": [
+        "Обновите страницу или повторите попытку позже."
+      ],
+      "Something went wrong": [
+        "Что-то пошло не так"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Чтобы использовать ${ MAIL_APP_NAME } или ${ CALENDAR_APP_NAME }, переключитесь на веб-версию."
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Мы не смогли загрузить эту страницу. Пожалуйста, обновите страницу или проверьте подключение к Интернету."
+      ]
+    },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "Изображение не выбрано"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Произошла ошибка при аутентификации с помощью ключа безопасности. Попробуйте снова."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Вставьте ключ безопасности, привязанный к аккаунту ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Ключ безопасности"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Ключ безопасности"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Системный по умолчанию"
+      ],
+      "Theme font": [
+        "Шрифт темы"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Большой"
+      ],
+      "Medium (recommended)": [
+        "Средний (Рекомендуется)"
+      ],
+      "Small": [
+        "Маленький"
+      ],
+      "Very large": [
+        "Очень большой"
+      ],
+      "Very small": [
+        "Очень маленький"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Учётная запись"
+      ],
+      "Apps": [
+        "Приложения"
+      ],
+      "Network": [
+        "Сеть"
+      ],
+      "Other category": [
+        "Другая категория"
+      ],
+      "Services": [
+        "Службы"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "Эл. почта"
+      ],
+      "Manual": [
+        "Вручную"
+      ],
+      "No verification method available": [
+        "Нет доступных способов проверки"
+      ],
+      "SMS": [
+        "СМС"
+      ]
+    },
+    "Info": {
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Номер телефона может быть использован для подтверждения только одного аккаунта ${ BRAND_NAME }"
+      ],
+      "Attention required": [
+        "Требуется внимание"
+      ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Прежде чем запросить новый код подтверждения, проверьте свою папку спама и убедитесь, что ${ strong } - это корректный адрес."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Нажмите «Запросить новый код», и мы отправим новый проверочный код на ${ strong }. Если этот номер телефона неверный, выберите «Изменить» для обновления."
+      ],
+      "Copied to clipboard": [
+        "Скопировано в буфер обмена"
+      ],
+      "Country code": [
+        "Код страны"
+      ],
+      "Each code can only be used once": [
+        "Каждый код может быть использован только один раз"
+      ],
+      "Edit email address": [
+        "Изменить адрес электронной почты"
+      ],
+      "Enter the code from your authenticator app": [
+        "Введите код из приложения-аутентификатора"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Введите код подтверждения, отправленный на ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Введите код подтверждения. Цифра ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Введите свой пароль как администратора организации."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Если у вас возникли проблемы с созданием аккаунта, пожалуйста, запросите приглашение и мы ответим в течение одного рабочего дня."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Если сообщения нет в папке Входящие, проверьте, не попало ли оно в папку Спам."
+      ],
+      "Internet connection lost": [
+        "Подключение к Интернету потеряно"
+      ],
+      "Learn more": [
+        "Узнать больше"
+      ],
+      "Loading": [
+        "Загрузка"
+      ],
+      "Loading ${ appName }": [
+        "Загрузка ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Подождите пока загружается календарь. Вы будете перенаправлены на нашу платформу для составления расписаний Calendly в новой вкладке."
+      ],
+      "Loading...": [
+        "Загрузка..."
+      ],
+      "Member": [
+        "Член"
+      ],
+      "New": [
+        "Новый"
+      ],
+      "No results found": [
+        "Результаты не найдены"
+      ],
+      "Other accounts": [
+        "Другие аккаунты"
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Информация о восстановлении останется на этом устройстве, если вы не решите ее удалить."
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Обновление страницы или ${ link } автоматически решит большую часть проблем."
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Серверы недоступны. Попробуйте снова через несколько минут"
+      ],
+      "Session timed out": [
+        "Время сеанса истекло"
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "В результате вы выйдете из всех аккаунтов, в которые вы на данный момент вошли."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "Для предотвращения распространения спама и иных злоупотреблений нашим сервисом, нам нужно убедиться, что вы человек."
+      ],
+      "We'll send a new verification code to ${ strong }": [
+        "Мы отправим новый код подтверждения на ${ strong }"
+      ],
+      "Week": [
+        "Неделя"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "При настройке двухфакторной аутентификации, мы предоставляем коды восстановления для входа в аккаунт, если вы потеряете доступ к приложению аутентификатора."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Вы хотите получить новый проверочный код или использовать другой метод проверки?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Хотите ли вы получить новый код подтверждения?"
+      ],
+      "You can now return to the application to continue": [
+        "Теперь вы можете вернуться в приложение, чтобы продолжить"
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Ваш аккаунт ${ BRAND_NAME } в настоящее время приостановлен. По истечении 28 дней электронные письма больше не будут доставляться в ваш почтовый ящик, ссылки на общий доступ к Drive будут заблокированы, и вы не сможете загружать новые файлы. Чтобы возобновить нормальное обслуживание, пожалуйста, оплатите все просроченные счета."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Ваш аккаунт ${ BRAND_NAME } в настоящее время приостановлен. Письма больше не доставляются в ваш почтовый ящик. Ссылки на общий доступ к дискам больше не активны, и вы не можете загружать новые файлы. Чтобы продолжить пользоваться аккаунтом, пожалуйста, оплатите все просроченные счета."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Ваш адрес электронной почты будет использован только для этой разовой проверки."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Ваш номер телефона будет использоваться только для этой разовой проверки."
+      ]
+    },
+    "Label": {
+      "${ BRAND_NAME } username": [
+        "имя пользователя ${ BRAND_NAME }"
+      ],
+      "Attach screenshot(s)": [
+        "Вложить снимок(ки) экрана"
+      ],
+      "Authenticator app": [
+        "Приложение-аутентификатор"
+      ],
+      "Browser": [
+        "Браузер"
+      ],
+      "Browser version": [
+        "Версия браузера"
+      ],
+      "Category": [
+        "Категория"
+      ],
+      "Code is 6 digits without spaces": [
+        "Код состоит из 6 цифр без пробелов"
+      ],
+      "Delete": [
+        "Удалить"
+      ],
+      "Delete recovery-related information.": [
+        "Удалите информацию, связанную с восстановлением."
+      ],
+      "Email address": [
+        "Адрес эл. почты"
+      ],
+      "Hide password": [
+        "Скрыть пароль"
+      ],
+      "Operating system": [
+        "Операционная система"
+      ],
+      "Operating system version": [
+        "Версия операционной системы"
+      ],
+      "Passphrase": [
+        "Кодовая фраза"
+      ],
+      "Password": [
+        "Пароль"
+      ],
+      "Phone number": [
+        "Номер телефона"
+      ],
+      "Reveal password": [
+        "Показать пароль"
+      ],
+      "System information": [
+        "Сведения о системе"
+      ],
+      "Verification code": [
+        "Код подтверждения"
+      ],
+      "What happened?": [
+        "Что случилось?"
+      ],
+      "Your password (admin)": [
+        "Ваш пароль (admin)"
+      ]
+    },
+    "Link": {
+      "clearing your browser cache": [
+        "очистка кеша браузера"
+      ],
+      "Learn more": [
+        "Подробнее"
+      ],
+      "Request an invite": [
+        "Запросить приглашение"
+      ],
+      "What’s this?": [
+        "Что это такое?"
+      ]
+    },
+    "Notification": {
+      "Link copied to clipboard": [
+        "Ссылка скопирована в буфер обмена"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Некоторые изображения не были загружены из-за дублирования имён файлов в текущей выборке."
+      ]
+    },
+    "Placeholder": {
+      "A way to contact you": [
+        "Способ связаться с вами"
+      ],
+      "E.g., ": [
+        "Например, "
+      ],
+      "Password": [
+        "Пароль"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Пожалуйста, опишите проблему и добавьте все возникавшие сообщения об ошибках"
+      ],
+      "Select": [
+        "Выбрать"
+      ]
+    },
+    "Safety review": {
+      "Review account safety": [
+        "Проверьте безопасность аккаунта"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Вход не был успешно завершен."
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "Результаты не найдены"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Bыйти"
+      ],
+      "Stay signed in": [
+        "Оставаться в системе"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } час",
+        "${ gracePeriodHoursRemaining } часа",
+        "${ gracePeriodHoursRemaining } часов",
+        "${ gracePeriodHoursRemaining } часов"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } теперь доступен."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Если вы выйдете из системы до восстановления пароля, вы можете потерять доступ к своему аккаунту."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Если вы выйдете из системы, не восстановив пароль, вы можете потерять доступ к своему аккаунту."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Вы сможете восстановить пароль через ${ boldTimeLeft }."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Сброс пароля"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Выйти без восстановления пароля?"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Перейти к тарифам"
+      ],
+      "Upgrade": [
+        "Сменить тариф"
+      ]
+    },
+    "Spotlight": {
+      "Get up to ${ credits } in credits.": [
+        "Вы можете получить до ${ credits } в кредитах."
+      ],
+      "Invite friends to ${ BRAND_NAME }": [
+        "Пригласите друзей в ${ BRAND_NAME }"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Войти"
+      ],
+      "Sign in to your organization": [
+        "Войдите в свою организацию"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Вы будете перенаправлены на вашего стороннего провайдера SSO."
+      ]
+    },
+    "Success": {
+      "Code sent to ${ methodTo }": [
+        "Код отправлен на ${ methodTo }"
+      ],
+      "Email address copied to clipboard": [
+        "Адрес скопирован в буфер обмена"
+      ],
+      "Problem reported": [
+        "О проблеме сообщено"
+      ],
+      "Verification successful": [
+        "Проверка прошла успешно"
+      ]
+    },
+    "Title": {
+      "Account restricted": [
+        "Аккаунт ограничен"
+      ],
+      "Are you sure?": [
+        "Вы уверены?"
+      ],
+      "Date": [
+        "Дата"
+      ],
+      "Enter your password": [
+        "Введите пароль"
+      ],
+      "Help and feedback": [
+        "Помощь и обратная связь"
+      ],
+      "Help center": [
+        "Справочный центр"
+      ],
+      "Human verification": [
+        "Проверка \"Я не робот\""
+      ],
+      "Invalid verification code": [
+        "Неверный проверочный код"
+      ],
+      "Minicalendar": [
+        "Миникалендарь"
+      ],
+      "Report a problem": [
+        "Сообщить о проблеме"
+      ],
+      "Request new code": [
+        "Запросить новый код"
+      ],
+      "Settings": [
+        "Настройки"
+      ],
+      "Sign out": [
+        "Выйти"
+      ],
+      "Time": [
+        "Время"
+      ],
+      "Two-factor authentication": [
+        "Двухфакторная аутентификация"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Сегодня"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Пароль должен включать по меньшей мере ${ MIN_PASSWORD_LENGTH } символ",
+        "Пароль должен содержать хотя бы $${ MIN_PASSWORD_LENGTH } символов",
+        "Пароль должен содержать хотя бы $${ MIN_PASSWORD_LENGTH } символов",
+        "Пароль должен содержать хотя бы $${ MIN_PASSWORD_LENGTH } символов"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знак)",
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знака)",
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знаков)",
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знаков)"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Проблема с Wallet"
+      ]
+    },
+    "Warning": {
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Отчеты отправляются без сквозного шифрования. Пожалуйста, не указывайте никакой конфиденциальной информации."
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        "К сожалению, в данный момент мы не работаем в режиме онлайн. Пожалуйста, заполните форму ниже, чтобы описать вашу проблему, и мы рассмотрим ее и свяжемся с вами, когда будем онлайн."
+      ]
+    }
+  }
+}

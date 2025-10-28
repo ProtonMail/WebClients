@@ -1,0 +1,1680 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);",
+    "language": "pl_PL"
+  },
+  "contexts": {
+    "Action": {
+      "${ BRAND_NAME } shop": [
+        "Sklep ${ BRAND_NAME }"
+      ],
+      "Add account": [
+        "Dodaj konto"
+      ],
+      "Add another account": [
+        "Dodaj inne konto"
+      ],
+      "Attach screenshot(s)": [
+        "Dołącz zrzuty ekranu"
+      ],
+      "Authenticate": [
+        "Uwierzytelnij"
+      ],
+      "Cancel": [
+        "Anuluj"
+      ],
+      "Change password": [
+        "Zmień hasło"
+      ],
+      "Chat with us": [
+        "Czat z nami"
+      ],
+      "Close": [
+        "Zamknij"
+      ],
+      "Continue": [
+        "Kontynuuj"
+      ],
+      "Copy address": [
+        "Kopiuj adres"
+      ],
+      "Copy link": [
+        "Kopiuj link"
+      ],
+      "Delete": [
+        "Usuń"
+      ],
+      "Dismiss": [
+        "Odrzuć"
+      ],
+      "Download logs": [
+        "Pobierz logi"
+      ],
+      "Edit email address": [
+        "Edytuj adres e-mail"
+      ],
+      "Edit phone number": [
+        "Edytuj numer telefonu"
+      ],
+      "Edit sign-in details": [
+        "Edytuj szczegóły logowania"
+      ],
+      "Forgot password?": [
+        "Nie pamiętasz hasła?"
+      ],
+      "Get verification code": [
+        "Otrzymaj kod weryfikacyjny"
+      ],
+      "Help and feedback": [
+        "Pomoc i opinia"
+      ],
+      "Help and resources": [
+        "Pomoc i zasoby"
+      ],
+      "More info: ${ safeTitle }": [
+        "Więcej informacji: ${ safeTitle }"
+      ],
+      "More options for accounts": [
+        "Więcej opcji dla kont"
+      ],
+      "Next month": [
+        "Następny miesiąc"
+      ],
+      "Next page": [
+        "Następna strona"
+      ],
+      "OK": [
+        "OK"
+      ],
+      "Previous month": [
+        "Poprzedni miesiąc"
+      ],
+      "Previous page": [
+        "Poprzednia strona"
+      ],
+      "Refer a friend": [
+        "Poleć znajomemu"
+      ],
+      "Refresh the page": [
+        "Odśwież stronę"
+      ],
+      "Report a problem": [
+        "Zgłoś problem"
+      ],
+      "Request a call": [
+        "Poproś o rozmowę"
+      ],
+      "Request a feature": [
+        "Poproś o dodatkową funkcję"
+      ],
+      "Request new code": [
+        "Poproś o nowy kod"
+      ],
+      "Resend code": [
+        "Wyślij ponownie kod"
+      ],
+      "Search countries": [
+        "Szukaj krajów"
+      ],
+      "Settings": [
+        "Ustawienia"
+      ],
+      "Share": [
+        "Udostępnij"
+      ],
+      "Show advanced options": [
+        "Pokaż opcje zaawansowane"
+      ],
+      "Sign in": [
+        "Zaloguj się"
+      ],
+      "Sign out": [
+        "Wyloguj"
+      ],
+      "Sign out of all accounts": [
+        "Wyloguj się ze wszystkich kont"
+      ],
+      "Start": [
+        "Rozpocznij"
+      ],
+      "Submit": [
+        "Wyślij"
+      ],
+      "Switch or add account": [
+        "Przełącz lub dodaj konto"
+      ],
+      "Try another method": [
+        "Użyj innej metody"
+      ],
+      "Use authentication code": [
+        "Użyj kodu uwierzytelniającego"
+      ],
+      "Use recovery code": [
+        "Użyj kodu odzyskiwania"
+      ],
+      "Verify": [
+        "Zweryfikuj"
+      ],
+      "Verify account": [
+        "Zweryfikuj konto"
+      ],
+      "View invoice": [
+        "Pokaż fakturę"
+      ]
+    },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "Aplikacje ${ BRAND_NAME }"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Aplikacja desktopowa ${ MAIL_APP_NAME }"
+      ]
+    },
+    "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Problem z ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Application problem": [
+        "Problem z aplikacją"
+      ],
+      "Bridge problem": [
+        "Problem z aplikacją Bridge"
+      ],
+      "Calendar problem": [
+        "Problem z kalendarzem"
+      ],
+      "Connection problem": [
+        "Problem z połączeniem"
+      ],
+      "Contacts problem": [
+        "Problem z kontaktami"
+      ],
+      "Custom domain problem": [
+        "Problem z niestandardową domeną"
+      ],
+      "Docs problem": [
+        "Problem z dokumentami Docs"
+      ],
+      "Drive problem": [
+        "Problem z dyskiem"
+      ],
+      "Feature request": [
+        "Prośba o dodatkową funkcję"
+      ],
+      "Import / export problem": [
+        "Problem z importem / eksportem"
+      ],
+      "Installation problem": [
+        "Problem z instalacją"
+      ],
+      "Mail problem": [
+        "Problem z pocztą"
+      ],
+      "Manual setup problem": [
+        "Problem z konfiguracją"
+      ],
+      "Other": [
+        "Inna"
+      ],
+      "Pass problem": [
+        "Problem z menadżerem haseł"
+      ],
+      "Payments problem": [
+        "Problem z płatnościami"
+      ],
+      "Sign in problem": [
+        "Problem z logowaniem"
+      ],
+      "Sign up problem": [
+        "Problem z rejestracją"
+      ],
+      "Signup problem": [
+        "Problem z rejestracją"
+      ],
+      "Slow speed problem": [
+        "Problem z wolną prędkością"
+      ],
+      "Speed problem": [
+        "Problem z prędkością"
+      ],
+      "Streaming problem": [
+        "Problem ze streamingiem"
+      ],
+      "Update problem": [
+        "Problem z aktualizacją"
+      ],
+      "VPN problem": [
+        "Problem z usługą VPN"
+      ],
+      "Website access problem": [
+        "Problem z dostępem do strony"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Zwiń"
+      ],
+      "Expand": [
+        "Rozwiń"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "marchewkowy"
+      ],
+      "cerise": [
+        "wiśniowy"
+      ],
+      "cobalt": [
+        "kobaltowy"
+      ],
+      "copper": [
+        "miedziany"
+      ],
+      "enzian": [
+        "atramentowy"
+      ],
+      "fern": [
+        "paprotkowy"
+      ],
+      "forest": [
+        "leśny"
+      ],
+      "ocean": [
+        "morski"
+      ],
+      "olive": [
+        "oliwkowy"
+      ],
+      "pacific": [
+        "pacyficzny"
+      ],
+      "pickle": [
+        "khaki"
+      ],
+      "pine": [
+        "sosnowy"
+      ],
+      "pink": [
+        "różowy"
+      ],
+      "plum": [
+        "śliwkowy"
+      ],
+      "purple": [
+        "fioletowy"
+      ],
+      "reef": [
+        "rafa koralowa"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "slateblue": [
+        "slateblue"
+      ],
+      "soil": [
+        "ziemisty"
+      ],
+      "strawberry": [
+        "truskawkowy"
+      ]
+    },
+    "Country name": {
+      "Abkhazia": [
+        "Abchazja"
+      ],
+      "Afghanistan": [
+        "Afganistan"
+      ],
+      "Albania": [
+        "Albania"
+      ],
+      "Algeria": [
+        "Algieria"
+      ],
+      "American Samoa": [
+        "Samoa Amerykańskie"
+      ],
+      "Andorra": [
+        "Andora"
+      ],
+      "Angola": [
+        "Angola"
+      ],
+      "Anguilla": [
+        "Anguilla"
+      ],
+      "Antarctica": [
+        "Antarktyda"
+      ],
+      "Antigua and Barbuda": [
+        "Antigua i Barbuda"
+      ],
+      "Argentina": [
+        "Argentyna"
+      ],
+      "Armenia": [
+        "Armenia"
+      ],
+      "Aruba": [
+        "Aruba"
+      ],
+      "Ascension Island": [
+        "Wyspa Wniebowstąpienia"
+      ],
+      "Australia": [
+        "Australia"
+      ],
+      "Austria": [
+        "Austria"
+      ],
+      "Azerbaijan": [
+        "Azerbejdżan"
+      ],
+      "Bahamas": [
+        "Bahamy"
+      ],
+      "Bahrain": [
+        "Bahrajn"
+      ],
+      "Bangladesh": [
+        "Bangladesz"
+      ],
+      "Barbados": [
+        "Barbados"
+      ],
+      "Belarus": [
+        "Białoruś"
+      ],
+      "Belgium": [
+        "Belgia"
+      ],
+      "Belize": [
+        "Belize"
+      ],
+      "Benin": [
+        "Benin"
+      ],
+      "Bermuda": [
+        "Bermudy"
+      ],
+      "Bhutan": [
+        "Bhutan"
+      ],
+      "Bolivia": [
+        "Boliwia"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Holandia Karaibska"
+      ],
+      "Bosnia and Herzegovina": [
+        "Bośnia i Hercegowina"
+      ],
+      "Botswana": [
+        "Botswana"
+      ],
+      "Bouvet Island": [
+        "Wyspa Bouveta"
+      ],
+      "Brazil": [
+        "Brazylia"
+      ],
+      "British Indian Ocean Territory": [
+        "Brytyjskie Terytorium Oceanu Indyjskiego"
+      ],
+      "Brunei Darussalam": [
+        "Brunei"
+      ],
+      "Bulgaria": [
+        "Bułgaria"
+      ],
+      "Burkina Faso": [
+        "Burkina Faso"
+      ],
+      "Burundi": [
+        "Burundi"
+      ],
+      "Cambodia": [
+        "Kambodża"
+      ],
+      "Cameroon": [
+        "Kamerun"
+      ],
+      "Canada": [
+        "Kanada"
+      ],
+      "Cape Verde": [
+        "Wyspy Zielonego Przylądka"
+      ],
+      "Cayman Islands": [
+        "Kajmany"
+      ],
+      "Central African Republic": [
+        "Republika Środkowoafrykańska"
+      ],
+      "Chad": [
+        "Czad"
+      ],
+      "Chile": [
+        "Chile"
+      ],
+      "China": [
+        "Chiny"
+      ],
+      "Christmas Island": [
+        "Wyspa Bożego Narodzenia"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Wyspy Kokosowe"
+      ],
+      "Colombia": [
+        "Kolumbia"
+      ],
+      "Comoros": [
+        "Komory"
+      ],
+      "Congo": [
+        "Kongo"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Demokratyczna Republika Konga"
+      ],
+      "Cook Islands": [
+        "Wyspy Cooka"
+      ],
+      "Costa Rica": [
+        "Kostaryka"
+      ],
+      "Croatia": [
+        "Chorwacja"
+      ],
+      "Cuba": [
+        "Kuba"
+      ],
+      "Curaçao": [
+        "Curaçao"
+      ],
+      "Cyprus": [
+        "Cypr"
+      ],
+      "Czech Republic": [
+        "Czechy"
+      ],
+      "Côte d'Ivoire": [
+        "Wybrzeże Kości Słoniowej"
+      ],
+      "Denmark": [
+        "Dania"
+      ],
+      "Djibouti": [
+        "Dżibuti"
+      ],
+      "Dominica": [
+        "Dominika"
+      ],
+      "Dominican Republic": [
+        "Dominikana"
+      ],
+      "Ecuador": [
+        "Ekwador"
+      ],
+      "Egypt": [
+        "Egipt"
+      ],
+      "El Salvador": [
+        "Salwador"
+      ],
+      "Equatorial Guinea": [
+        "Gwinea Równikowa"
+      ],
+      "Eritrea": [
+        "Erytrea"
+      ],
+      "Estonia": [
+        "Estonia"
+      ],
+      "Eswatini": [
+        "Eswatini"
+      ],
+      "Ethiopia": [
+        "Etiopia"
+      ],
+      "Falkland Islands": [
+        "Falklandy"
+      ],
+      "Faroe Islands": [
+        "Wyspy Owcze"
+      ],
+      "Federated States of Micronesia": [
+        "Mikronezja"
+      ],
+      "Fiji": [
+        "Fidżi"
+      ],
+      "Finland": [
+        "Finlandia"
+      ],
+      "France": [
+        "Francja"
+      ],
+      "French Guiana": [
+        "Gujana Francuska"
+      ],
+      "French Polynesia": [
+        "Polinezja Francuska"
+      ],
+      "French Southern Territories": [
+        "Francuskie Terytoria Południowe i Antarktyczne"
+      ],
+      "Gabon": [
+        "Gabon"
+      ],
+      "Gambia": [
+        "Gambia"
+      ],
+      "Georgia": [
+        "Gruzja"
+      ],
+      "Germany": [
+        "Niemcy"
+      ],
+      "Ghana": [
+        "Ghana"
+      ],
+      "Gibraltar": [
+        "Gibraltar"
+      ],
+      "Greece": [
+        "Grecja"
+      ],
+      "Greenland": [
+        "Grenlandia"
+      ],
+      "Grenada": [
+        "Grenada"
+      ],
+      "Guadeloupe": [
+        "Gwadelupa"
+      ],
+      "Guam": [
+        "Guam"
+      ],
+      "Guatemala": [
+        "Gwatemala"
+      ],
+      "Guernsey": [
+        "Guernsey"
+      ],
+      "Guinea": [
+        "Gwinea"
+      ],
+      "Guinea-Bissau": [
+        "Gwinea Bissau"
+      ],
+      "Guyana": [
+        "Gujana"
+      ],
+      "Haiti": [
+        "Haiti"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Wyspy Heard i McDonalda"
+      ],
+      "Holy See (Vatican City State)": [
+        "Watykan"
+      ],
+      "Honduras": [
+        "Honduras"
+      ],
+      "Hong Kong": [
+        "Hongkong"
+      ],
+      "Hungary": [
+        "Węgry"
+      ],
+      "Iceland": [
+        "Islandia"
+      ],
+      "India": [
+        "Indie"
+      ],
+      "Indonesia": [
+        "Indonezja"
+      ],
+      "International": [
+        "Międzynarodowy"
+      ],
+      "Iran": [
+        "Iran"
+      ],
+      "Iraq": [
+        "Irak"
+      ],
+      "Ireland": [
+        "Irlandia"
+      ],
+      "Isle of Man": [
+        "Wyspa Man"
+      ],
+      "Israel": [
+        "Izrael"
+      ],
+      "Italy": [
+        "Włochy"
+      ],
+      "Jamaica": [
+        "Jamajka"
+      ],
+      "Japan": [
+        "Japonia"
+      ],
+      "Jersey": [
+        "Jersey"
+      ],
+      "Jordan": [
+        "Jordania"
+      ],
+      "Kazakhstan": [
+        "Kazachstan"
+      ],
+      "Kenya": [
+        "Kenia"
+      ],
+      "Kiribati": [
+        "Kiribati"
+      ],
+      "Kosovo": [
+        "Kosowo"
+      ],
+      "Kuwait": [
+        "Kuwejt"
+      ],
+      "Kyrgyzstan": [
+        "Kirgistan"
+      ],
+      "Laos": [
+        "Laos"
+      ],
+      "Latvia": [
+        "Łotwa"
+      ],
+      "Lebanon": [
+        "Liban"
+      ],
+      "Lesotho": [
+        "Lesotho"
+      ],
+      "Liberia": [
+        "Liberia"
+      ],
+      "Libya": [
+        "Libia"
+      ],
+      "Liechtenstein": [
+        "Liechtenstein"
+      ],
+      "Lithuania": [
+        "Litwa"
+      ],
+      "Luxembourg": [
+        "Luksemburg"
+      ],
+      "Macao": [
+        "Makau"
+      ],
+      "Madagascar": [
+        "Madagaskar"
+      ],
+      "Malawi": [
+        "Malawi"
+      ],
+      "Malaysia": [
+        "Malezja"
+      ],
+      "Maldives": [
+        "Malediwy"
+      ],
+      "Mali": [
+        "Mali"
+      ],
+      "Malta": [
+        "Malta"
+      ],
+      "Marshall Islands": [
+        "Wyspy Marshalla"
+      ],
+      "Martinique": [
+        "Martynika"
+      ],
+      "Mauritania": [
+        "Mauretania"
+      ],
+      "Mauritius": [
+        "Mauritius"
+      ],
+      "Mayotte": [
+        "Majotta"
+      ],
+      "Mexico": [
+        "Meksyk"
+      ],
+      "Moldova": [
+        "Mołdawia"
+      ],
+      "Monaco": [
+        "Monako"
+      ],
+      "Mongolia": [
+        "Mongolia"
+      ],
+      "Montenegro": [
+        "Czarnogóra"
+      ],
+      "Montserrat": [
+        "Montserrat"
+      ],
+      "Morocco": [
+        "Maroko"
+      ],
+      "Mozambique": [
+        "Mozambik"
+      ],
+      "Myanmar": [
+        "Mjanma"
+      ],
+      "Namibia": [
+        "Namibia"
+      ],
+      "Nauru": [
+        "Nauru"
+      ],
+      "Nepal": [
+        "Nepal"
+      ],
+      "Netherlands": [
+        "Holandia"
+      ],
+      "New Caledonia": [
+        "Nowa Kaledonia"
+      ],
+      "New Zealand": [
+        "Nowa Zelandia"
+      ],
+      "Nicaragua": [
+        "Nikaragua"
+      ],
+      "Niger": [
+        "Niger"
+      ],
+      "Nigeria": [
+        "Nigeria"
+      ],
+      "Niue": [
+        "Niue"
+      ],
+      "Norfolk Island": [
+        "Norfolk"
+      ],
+      "North Korea": [
+        "Korea Północna"
+      ],
+      "North Macedonia": [
+        "Macedonia Północna"
+      ],
+      "Northern Mariana Islands": [
+        "Mariany Północne"
+      ],
+      "Norway": [
+        "Norwegia"
+      ],
+      "Oman": [
+        "Oman"
+      ],
+      "Pakistan": [
+        "Pakistan"
+      ],
+      "Palau": [
+        "Palau"
+      ],
+      "Palestine": [
+        "Palestyna"
+      ],
+      "Panama": [
+        "Panama"
+      ],
+      "Papua New Guinea": [
+        "Papua-Nowa Gwinea"
+      ],
+      "Paraguay": [
+        "Paragwaj"
+      ],
+      "Peru": [
+        "Peru"
+      ],
+      "Philippines": [
+        "Filipiny"
+      ],
+      "Pitcairn": [
+        "Pitcairn"
+      ],
+      "Poland": [
+        "Polska"
+      ],
+      "Portugal": [
+        "Portugalia"
+      ],
+      "Puerto Rico": [
+        "Portoryko"
+      ],
+      "Qatar": [
+        "Katar"
+      ],
+      "Reunion": [
+        "Reunion"
+      ],
+      "Romania": [
+        "Rumunia"
+      ],
+      "Russia": [
+        "Rosja"
+      ],
+      "Rwanda": [
+        "Rwanda"
+      ],
+      "Saint Barthélemy": [
+        "Saint-Barthélemy"
+      ],
+      "Saint Helena": [
+        "Wyspa Świętej Heleny"
+      ],
+      "Saint Kitts and Nevis": [
+        "Saint Kitts i Nevis"
+      ],
+      "Saint Lucia": [
+        "Saint Lucia"
+      ],
+      "Saint Martin (French Part)": [
+        "Saint-Martin (Francja)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Saint-Pierre i Miquelon"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Saint Vincent i Grenadyny"
+      ],
+      "Samoa": [
+        "Samoa"
+      ],
+      "San Marino": [
+        "San Marino"
+      ],
+      "Sao Tome and Principe": [
+        "Wyspy Świętego Tomasza i Książęca"
+      ],
+      "Saudi Arabia": [
+        "Arabia Saudyjska"
+      ],
+      "Senegal": [
+        "Senegal"
+      ],
+      "Serbia": [
+        "Serbia"
+      ],
+      "Seychelles": [
+        "Seszele"
+      ],
+      "Sierra Leone": [
+        "Sierra Leone"
+      ],
+      "Singapore": [
+        "Singapur"
+      ],
+      "Sint Maarten": [
+        "Sint Maarten"
+      ],
+      "Slovakia": [
+        "Słowacja"
+      ],
+      "Slovenia": [
+        "Słowenia"
+      ],
+      "Solomon Islands": [
+        "Wyspy Salomona"
+      ],
+      "Somalia": [
+        "Somalia"
+      ],
+      "South Africa": [
+        "Południowa Afryka"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Georgia Południowa i Sandwich Południowy"
+      ],
+      "South Korea": [
+        "Korea Południowa"
+      ],
+      "South Ossetia": [
+        "Osetia Południowa"
+      ],
+      "South Sudan": [
+        "Sudan Południowy"
+      ],
+      "Spain": [
+        "Hiszpania"
+      ],
+      "Sri Lanka": [
+        "Sri Lanka"
+      ],
+      "Sudan": [
+        "Sudan"
+      ],
+      "Suriname": [
+        "Surinam"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Svalbard i Jan Mayen"
+      ],
+      "Sweden": [
+        "Szwecja"
+      ],
+      "Switzerland": [
+        "Szwajcaria"
+      ],
+      "Syria": [
+        "Syria"
+      ],
+      "Taiwan": [
+        "Tajwan"
+      ],
+      "Tajikistan": [
+        "Tadżykistan"
+      ],
+      "Tanzania": [
+        "Tanzania"
+      ],
+      "Thailand": [
+        "Tajlandia"
+      ],
+      "Timor-Leste": [
+        "Timor Wschodni"
+      ],
+      "Togo": [
+        "Togo"
+      ],
+      "Tokelau": [
+        "Tokelau"
+      ],
+      "Tonga": [
+        "Tonga"
+      ],
+      "Trinidad and Tobago": [
+        "Trynidad i Tobago"
+      ],
+      "Tristan da Cunha": [
+        "Tristan da Cunha"
+      ],
+      "Tunisia": [
+        "Tunezja"
+      ],
+      "Turkey": [
+        "Turcja"
+      ],
+      "Turkmenistan": [
+        "Turkmenistan"
+      ],
+      "Turks and Caicos Islands": [
+        "Turks i Caicos"
+      ],
+      "Tuvalu": [
+        "Tuvalu"
+      ],
+      "Uganda": [
+        "Uganda"
+      ],
+      "Ukraine": [
+        "Ukraina"
+      ],
+      "United Arab Emirates": [
+        "Zjednoczone Emiraty Arabskie"
+      ],
+      "United Kingdom": [
+        "Wielka Brytania"
+      ],
+      "United States": [
+        "Stany Zjednoczone"
+      ],
+      "United States Minor Outlying Islands": [
+        "Dalekie Wyspy Mniejsze Stanów Zjednoczonych"
+      ],
+      "Uruguay": [
+        "Urugwaj"
+      ],
+      "Uzbekistan": [
+        "Uzbekistan"
+      ],
+      "Vanuatu": [
+        "Vanuatu"
+      ],
+      "Venezuela": [
+        "Wenezuela"
+      ],
+      "Vietnam": [
+        "Wietnam"
+      ],
+      "Virgin Islands, British": [
+        "Brytyjskie Wyspy Dziewicze"
+      ],
+      "Virgin Islands, U.S.": [
+        "Wyspy Dziewicze Stanów Zjednoczonych"
+      ],
+      "Wallis and Futuna": [
+        "Wallis i Futuna"
+      ],
+      "Western Sahara": [
+        "Sahara Zachodnia"
+      ],
+      "Yemen": [
+        "Jemen"
+      ],
+      "Zambia": [
+        "Zambia"
+      ],
+      "Zimbabwe": [
+        "Zimbabwe"
+      ],
+      "Åland Islands": [
+        "Wyspy Alandzkie"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Zaległa faktura"
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "Zaufany kontakt"
+      ]
+    },
+    "Error": {
+      "Domain not available, try again later": [
+        "Domena nie jest dostępna. Spróbuj ponownie później"
+      ],
+      "Email is not valid": [
+        "Adres e-mail nie jest prawidłowy"
+      ],
+      "Enter 6 digits": [
+        "Wpisz 6 cyfr"
+      ],
+      "Failed to create meeting": [
+        "Nie udało się utworzyć spotkania"
+      ],
+      "Incorrect username": [
+        "Nazwa użytkownika jest nieprawidłowa"
+      ],
+      "Invalid verification code": [
+        "Kod weryfikacyjny jest nieprawidłowy"
+      ],
+      "Not a valid number": [
+        "Numer telefonu nie jest prawidłowy"
+      ],
+      "Passwords do not match": [
+        "Hasła nie pasują do siebie"
+      ],
+      "Request timed out": [
+        "Upłynął limit czasu żądania"
+      ],
+      "Signature verification failed": [
+        "Weryfikacja podpisu nie powiodła się"
+      ],
+      "The email addresses do not match": [
+        "Adresy e-mail nie pasują do siebie"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Pole przekracza maksymalną liczbą ${ maximumLength } znaków."
+      ],
+      "This field is required": [
+        "Pole jest wymagane"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Pole musi zawierać co najmniej ${ minimumLength } znaków."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Użyj tylko liter, cyfr i znaków _.-"
+      ],
+      "Unknown error": [
+        "Wystąpił nieznany błąd"
+      ],
+      "Username must begin with a letter or digit": [
+        "Nazwa użytkownika musi zaczynać się literą lub cyfrą"
+      ],
+      "Username must end with a letter or digit": [
+        "Nazwa użytkownika musi kończyć się literą lub cyfrą"
+      ]
+    },
+    "Error message": {
+      "App currently unavailable": [
+        "Aplikacja jest niedostępna"
+      ],
+      "Error: ${ errorMessage }": [
+        "Błąd: ${ errorMessage }"
+      ],
+      "Oops, something went wrong": [
+        "Ups, coś poszło nie tak"
+      ],
+      "Open in browser": [
+        "Otwórz w przeglądarce"
+      ],
+      "Please refresh the page or try again later.": [
+        "Odśwież stronę lub spróbuj ponownie później."
+      ],
+      "Something went wrong": [
+        "Coś poszło nie tak"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Otwórz przeglądarkę, aby korzystać z ${ MAIL_APP_NAME } i ${ CALENDAR_APP_NAME }."
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Nie możemy załadować strony. Odśwież stronę lub sprawdź swoje połączenie."
+      ]
+    },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "Nie wybrano obrazu"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Coś poszło nie tak z uwierzytelnianiem za pomocą klucza bezpieczeństwa. Spróbuj ponownie później."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Użyj klucza bezpieczeństwa powiązanego z kontem ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Klucz bezpieczeństwa"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Klucz bezpieczeństwa"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Domyślne ustawienia systemu"
+      ],
+      "Theme font": [
+        "Czcionka"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Duża"
+      ],
+      "Medium (recommended)": [
+        "Średnia (zalecana)"
+      ],
+      "Small": [
+        "Mała"
+      ],
+      "Very large": [
+        "Bardzo duża"
+      ],
+      "Very small": [
+        "Bardzo mała"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Konto"
+      ],
+      "Apps": [
+        "Aplikacje"
+      ],
+      "Network": [
+        "Sieć"
+      ],
+      "Other category": [
+        "Inna kategoria"
+      ],
+      "Services": [
+        "Usługi"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "Adres e-mail"
+      ],
+      "Manual": [
+        "Ręcznie"
+      ],
+      "No verification method available": [
+        "Brak dostępnych metod weryfikacji"
+      ],
+      "SMS": [
+        "SMS"
+      ]
+    },
+    "Info": {
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Numer telefonu może zostać użyty do weryfikacji tylko jednego konta ${ BRAND_NAME }"
+      ],
+      "Attention required": [
+        "Wymagana uwaga"
+      ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Przed poproszeniem o nowy kod weryfikacyjny, sprawdź folder spam i poprawność adresu ${ strong }."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Kliknij przycisk \"Poproś o nowy kod\", aby otrzymać nowy kod weryfikacyjny na numer telefonu ${ strong }. Jeśli numer jest nieprawidłowy, kliknij przycisk \"Edytuj\", aby go poprawić."
+      ],
+      "Copied to clipboard": [
+        "Skopiowano do schowka"
+      ],
+      "Country code": [
+        "Kod kraju"
+      ],
+      "Download current logs": [
+        "Pobierz logi"
+      ],
+      "Each code can only be used once": [
+        "Każdy kod może zostać użyty tylko jeden raz"
+      ],
+      "Edit email address": [
+        "Edytuj adres e-mail"
+      ],
+      "Enter the code from your authenticator app": [
+        "Wpisz kod z aplikacji uwierzytelniającej"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Wpisz kod weryfikacyjny wysłany do ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Wpisz kod weryfikacyjny. Cyfra nr ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Wpisz swoje hasło (jako administrator organizacji)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Wpisz swoje hasło (jako zaufany kontakt)."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Jeśli masz problem z utworzeniem konta, poproś o zaproszenie, a my odpowiemy w ciągu jednego dnia roboczego."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Jeśli nie widzisz wiadomości w skrzynce odbiorczej, sprawdź folder spam."
+      ],
+      "Internet connection lost": [
+        "Połączenie z Internetem zostało utracone"
+      ],
+      "Learn more": [
+        "Dowiedz się więcej"
+      ],
+      "Loading": [
+        "Ładowanie"
+      ],
+      "Loading ${ appName }": [
+        "Ładowanie ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Ładowanie kalendarza. Poczekaj chwilę. W nowej karcie otworzy się usługa Calendly."
+      ],
+      "Loading...": [
+        "Ładowanie..."
+      ],
+      "Member": [
+        "Użytkownik"
+      ],
+      "New": [
+        "Nowy"
+      ],
+      "No results found": [
+        "Nie znaleziono żadnych wyników"
+      ],
+      "Other accounts": [
+        "Inne konta"
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Informacje o odzyskiwaniu pozostaną na urządzeniu, chyba że usuniesz te dane."
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Serwery są nieosiągalne. Spróbuj ponownie za kilka minut"
+      ],
+      "Session timed out": [
+        "Upłynął limit czasu sesji"
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Ta czynność spowoduje wylogowanie ze wszystkich kont."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "Weryfikacja antyspamowa i nadużyć. Udowodnij, że jesteś człowiekiem."
+      ],
+      "We'll send a new verification code to ${ strong }": [
+        "Wyślemy nowy kod weryfikacyjny do ${ strong }"
+      ],
+      "Week": [
+        "Tydzień"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Po skonfigurowaniu uwierzytelniania dwustopniowego otrzymasz kody odzyskiwania, których możesz użyć do zalogowania się w przypadku utraty dostępu do aplikacji uwierzytelniającej."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Czy chcesz otrzymać nowy kod weryfikacyjny lub użyć innej metody weryfikacji?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Czy chcesz otrzymać nowy kod weryfikacyjny?"
+      ],
+      "You can now return to the application to continue": [
+        "Możesz wrócić do aplikacji, aby kontynuować"
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Konto ${ BRAND_NAME } zostało zawieszone. Za 28 dni wiadomości nie będą dostarczane do skrzynki odbiorczej. Linki dysku zostaną zablokowane, a możliwość przesyłania nowych plików zostanie wstrzymana. Aby wznowić działanie usługi, ureguluj zobowiązania."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Konto ${ BRAND_NAME } zostało zawieszone. Wiadomości nie są dostarczane do skrzynki odbiorczej. Linki dysku nie są aktywne, a możliwość przesyłania nowych plików została wstrzymana. Aby wznowić działanie konta, ureguluj zobowiązania."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Adres e-mail zostanie użyty tylko do jednorazowej weryfikacji."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Numer telefonu zostanie użyty tylko do jednorazowej weryfikacji."
+      ]
+    },
+    "Label": {
+      "${ BRAND_NAME } username": [
+        "Nazwa użytkownika ${ BRAND_NAME }"
+      ],
+      "Attach screenshot(s)": [
+        "Dołącz zrzuty ekranu"
+      ],
+      "Authenticator app": [
+        "Aplikacja uwierzytelniająca"
+      ],
+      "Browser": [
+        "Przeglądarka"
+      ],
+      "Browser version": [
+        "Wersja przeglądarki"
+      ],
+      "Category": [
+        "Kategoria"
+      ],
+      "Code is 6 digits without spaces": [
+        "Kod to 6 cyfr bez spacji"
+      ],
+      "Delete": [
+        "Usuń"
+      ],
+      "Delete recovery-related information.": [
+        "Usuń informacje o odzyskiwaniu."
+      ],
+      "Email address": [
+        "Adres e-mail"
+      ],
+      "Hide password": [
+        "Ukryj hasło"
+      ],
+      "Include application logs in bug report": [
+        "Dołącz logi aplikacji do raportu błędu"
+      ],
+      "Operating system": [
+        "System operacyjny"
+      ],
+      "Operating system version": [
+        "Wersja systemu operacyjnego"
+      ],
+      "Passphrase": [
+        "Hasło"
+      ],
+      "Password": [
+        "Hasło"
+      ],
+      "Phone number": [
+        "Numer telefonu"
+      ],
+      "Reveal password": [
+        "Pokaż hasło"
+      ],
+      "System information": [
+        "Informacje o systemie"
+      ],
+      "Verification code": [
+        "Kod weryfikacyjny"
+      ],
+      "What happened?": [
+        "Co się stało?"
+      ],
+      "Your password (admin)": [
+        "Twoje hasło (administratora)"
+      ],
+      "Your password (trusted contact)": [
+        "Twoje hasło (zaufany kontakt)"
+      ]
+    },
+    "Link": {
+      "clearing your browser cache": [
+        "wyczyszczenie pamięci podręcznej przeglądarki"
+      ],
+      "Learn more": [
+        "Dowiedz się więcej"
+      ],
+      "Request an invite": [
+        "Poproś o zaproszenie"
+      ],
+      "What’s this?": [
+        "Co to jest?"
+      ]
+    },
+    "Notification": {
+      "Link copied to clipboard": [
+        "Link został skopiowany do schowka"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Niektóre obrazy nie zostały przesłane z powodu powtarzających się nazw zaznaczonych plików."
+      ]
+    },
+    "Placeholder": {
+      "A way to contact you": [
+        "Preferowana metoda kontaktu"
+      ],
+      "E.g., ": [
+        "Np. "
+      ],
+      "Password": [
+        "Hasło"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Opisz problem i dołącz wszelkie informacje o błędach"
+      ],
+      "Select": [
+        "Wybierz"
+      ]
+    },
+    "Safety review": {
+      "Review account safety": [
+        "Sprawdź bezpieczeństwo konta"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Logowanie nie zostało zakończone."
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "Nie znaleziono żadnych wyników"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Wylogowanie"
+      ],
+      "Stay signed in": [
+        "Pozostań zalogowany"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } godzinę",
+        "${ gracePeriodHoursRemaining } godziny",
+        "${ gracePeriodHoursRemaining } godzin",
+        "${ gracePeriodHoursRemaining } godzin"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } jest dostępne."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Wylogowanie się przed zresetowaniem hasła może spowodować utratę dostępu do konta."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Wylogowanie się bez zresetowania hasła może spowodować utratę dostępu do konta."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Hasło będziesz mógł zresetować za ${ boldTimeLeft }."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Resetowanie hasła"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Wylogować się bez resetowania hasła?"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Przejdź do planów subskrypcji"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ]
+    },
+    "Spotlight": {
+      "Get up to ${ credits } in credits.": [
+        "Uzyskaj do ${ credits }."
+      ],
+      "Invite friends to ${ BRAND_NAME }": [
+        "Zaproś znajomych do usługi ${ BRAND_NAME }"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Zaloguj się"
+      ],
+      "Sign in to your organization": [
+        "Zaloguj się do organizacji"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Nastąpi przekierowanie do zewnętrznego dostawcy SSO."
+      ]
+    },
+    "Success": {
+      "Code sent to ${ methodTo }": [
+        "Kod został wysłany na ${ methodTo }"
+      ],
+      "Email address copied to clipboard": [
+        "Adres e-mail został skopiowany do schowka"
+      ],
+      "Problem reported": [
+        "Problem został zgłoszony"
+      ],
+      "Verification successful": [
+        "Weryfikacja powiodła się"
+      ]
+    },
+    "Title": {
+      "Account restricted": [
+        "Konto zostało ograniczone"
+      ],
+      "Are you sure?": [
+        "Czy na pewno?"
+      ],
+      "Date": [
+        "Data"
+      ],
+      "Enter your password": [
+        "Wpisz hasło"
+      ],
+      "Help and feedback": [
+        "Pomoc i opinia"
+      ],
+      "Help center": [
+        "Centrum pomocy"
+      ],
+      "Human verification": [
+        "Weryfikacja antyspamowa"
+      ],
+      "Invalid verification code": [
+        "Kod weryfikacyjny jest nieprawidłowy"
+      ],
+      "Minicalendar": [
+        "Minikalendarz"
+      ],
+      "Report a problem": [
+        "Zgłoś problem"
+      ],
+      "Request new code": [
+        "Poproś o nowy kod"
+      ],
+      "Settings": [
+        "Ustawienia"
+      ],
+      "Sign out": [
+        "Wyloguj"
+      ],
+      "Time": [
+        "Czas"
+      ],
+      "Two-factor authentication": [
+        "Uwierzytelnianie dwustopniowe"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Dzisiaj"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znak",
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaki",
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaków",
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaków"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znak)",
+        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znaki)",
+        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znaków)",
+        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znaków)"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problem z portfelem"
+      ]
+    },
+    "Warning": {
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Raporty nie są szyfrowane end-to-end. Nie wysyłaj żadnych poufnych informacji."
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        "Jesteśmy teraz niedostępni. Wypełnij formularz, na który odpowiemy, kiedy będziemy ponownie dostępni."
+      ]
+    }
+  }
+}

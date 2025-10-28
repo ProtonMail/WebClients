@@ -219,6 +219,9 @@
       "Copy alias “${ name }”": [
         "Copia l'alias “${ name }”"
       ],
+      "Copy Booking link": [
+        "Copia il link di prenotazione"
+      ],
       "Copy email address": [
         "Copia indirizzo email"
       ],
@@ -237,11 +240,17 @@
       "Create": [
         "Crea"
       ],
+      "Create a booking page": [
+        "Crea pagina di prenotazione"
+      ],
       "Create a new bookings page": [
         "Crea pagina di prenotazione"
       ],
       "Create a new contact group": [
         "Crea nuovo gruppo di contatti"
+      ],
+      "Create an event": [
+        "Crea un evento"
       ],
       "Create and copy alias": [
         "Crea e copia l'alias"
@@ -478,6 +487,9 @@
       ],
       "Increase": [
         "Aumenta"
+      ],
+      "Join ${ CALENDAR_APP_NAME }": [
+        "Entra in ${ CALENDAR_APP_NAME }"
       ],
       "Join calendar": [
         "Aderisci al calendario"
@@ -1392,6 +1404,87 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lo spazio di archiviazione è condiviso tra tutti i servizi ${ BRAND_NAME }."
+      ]
+    },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "Saldi del Black Friday"
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB di archiviazione dati"
+      ],
+      "3 TB data storage": [
+        "3 TB di archiviazione dati"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Accedi a oltre 15.000 server in oltre 120 Paesi"
+      ],
+      "Access advanced AI models": [
+        "Accedi a modelli di IA avanzati"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Tutte le funzionalità premium di ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blocca annunci, tracker e malware"
+      ],
+      "Built-in 2FA authenticator": [
+        "Strumento di autenticazione 2FA integrato"
+      ],
+      "Connect 10 devices at once": [
+        "Connetti 10 dispositivi contemporaneamente"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Cronologia chat completa con ricerca facile e preferiti"
+      ],
+      "Individual accounts for 6 users": [
+        "Account individuali per 6 utenti"
+      ],
+      "Individual accounts for you and a partner": [
+        "Account individuali per te e un'altra persona"
+      ],
+      "Stronger protection against cyber threats": [
+        "Protezione più efficace dalle minacce informatiche"
+      ],
+      "Unlimited daily chats": [
+        "Numero illimitato di chat al giorno"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Aiuta i tuoi cari a unirsi alla rivoluzione della privacy con i nostri pacchetti dal miglior rapporto qualità-prezzo, ora con il 50% di sconto."
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Unisciti alla rivoluzione della privacy con i nostri pacchetti dal miglior rapporto qualità-prezzo, ora con il 50% di sconto."
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "per ${ durationDeal }"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "Risparmia ${ savedAmount } con la nostra migliore offerta a tempo limitato!"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "Passa al nostro piano biennale e risparmia ${ savedAmount }!"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "Passa al nostro piano annuale e risparmia ${ savedAmount }!"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "Offri al tuo gruppo una protezione digitale completa."
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield è progettato appositamente per proteggere i dispositivi e accelerare la navigazione bloccando annunci, tracker e malware."
       ]
     },
     "Billing cycle option": {
@@ -3247,16 +3340,16 @@
       ]
     },
     "Duo offer: Link": {
-      "Double your storage": [
-        "Raddoppia il tuo spazio"
+      "Get 4x more storage": [
+        "Ottieni 4 volte più archiviazione"
       ],
       "Share your plan": [
         "Condividi il tuo piano"
       ]
     },
     "Duo offer: Title": {
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Raddoppia la tua archiviazione con ${ BRAND_NAME } Duo"
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "Ottieni 4 volte più archiviazione con ${ BRAND_NAME } Duo"
       ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
         "Condividi i benefici del tuo piano con ${ BRAND_NAME } Duo"
@@ -4889,6 +4982,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } ha bisogno della tua autorizzazione per ${ enableDesktopNotifications }."
       ],
+      "${ booking.duration } min duration": [
+        "durata di ${ booking.duration } min"
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistente alla scrittura ${ BRAND_NAME } Scribe"
       ],
@@ -5151,6 +5247,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Ciclo di fatturazione: ${ text }"
+      ],
+      "Booking page example": [
+        "Pagina prenotazione esempio"
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Rafforza l'identità della tua organizzazione e crea un'esperienza online più coerente per i tuoi utenti."
@@ -5517,6 +5616,9 @@
       "Learn what to do ${ dataLeakedLink }": [
         "Scopri cosa fare ${ dataLeakedLink }"
       ],
+      "Let others book time with you automatically. No back-and-forth emails. Share a link, and stay in control of your availability.": [
+        "Permetti agli altri di prenotare automaticamente del tempo con te. Niente email avanti e indietro. Condividi un link e rimani in controllo della tua disponibilità."
+      ],
       "Link copied to clipboard": [
         "Link copiato negli appunti"
       ],
@@ -5777,6 +5879,9 @@
       "Setting up your new address…": [
         "Configurazione del tuo nuovo indirizzo…"
       ],
+      "Share this page to let others book time in your calendar.": [
+        "Condividi questa pagina per far prenotare agli altri un appuntamento nel tuo calendario."
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dato che sei un utente fedele, il tuo account ha funzionalità aggiuntive abilitate."
       ],
@@ -5969,6 +6074,9 @@
       ],
       "VPN IP": [
         "IP della VPN"
+      ],
+      "Want to create your own booking page?": [
+        "Vuoi creare la tua pagina di prenotazione?"
       ],
       "Warning": [
         "Spazio esaurito"
@@ -6496,6 +6604,9 @@
       "Billing cycle": [
         "Ciclo di fatturazione"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Browser": [
         "Browser"
       ],
@@ -6660,6 +6771,9 @@
       ],
       "From: ${ fromEmail }": [
         "Da: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "Approfitta dell'offerta"
       ],
       "Hide password": [
         "Nascondi la password"
@@ -8901,6 +9015,9 @@
       "Advanced account protection": [
         "Protezione avanzata dell'account"
       ],
+      "File attachments (up to 10GB)": [
+        "Allegati di file (fino a 10 GB)"
+      ],
       "Team policies": [
         "Politiche del Team"
       ]
@@ -9041,6 +9158,17 @@
         "Il coupon è valido per ${ couponRedemptions } rinnovo.",
         "Il coupon è valido per ${ couponRedemptions } rinnovi."
       ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "Il prezzo con sconto speciale è valido per il primo ${ subscriptionLength } mese.",
+        "Il prezzo scontato è valido per i primi ${ subscriptionLength } mesi."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Il prezzo speciale scontato è valido per il primo mese. Il coupon è valido per ${ couponRedemptions } rinnovo. Successivamente verrà rinnovato automaticamente a ${ renewPriceStr } per 1 mese. Puoi annullare in qualsiasi momento.",
+        "Il prezzo scontato è valido per il primo mese. Il coupon è valido per ${ couponRedemptions } rinnovi. Successivamente verrà rinnovato automaticamente a ${ renewPriceStr } per 1 mese. Puoi annullare in qualsiasi momento."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Il prezzo scontato speciale è valido per il primo mese. Successivamente, verrà rinnovato automaticamente a ${ renewPriceStr } ogni mese. Puoi annullare in qualsiasi momento."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Il prezzo scontato di ${ priceWithDiscount } è valido per il primo ${ subscriptionLength } mese.",
         "Il prezzo scontato di ${ priceWithDiscount } è valido per i primi ${ subscriptionLength } mesi."
@@ -9088,6 +9216,9 @@
       ],
       "Your payment is still being processed": [
         "Il tuo pagamento è ancora in fase di elaborazione."
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+        "Il tuo abbonamento ha attualmente uno sconto esistente. Passare a questa nuova promozione significa che lo sconto esistente non sarà più applicato."
       ]
     },
     "Payments.Error": {
@@ -9441,96 +9572,6 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Email ufficiale da ${ BRAND_NAME }"
-      ]
-    },
-    "q3campaign_2025: Action": {
-      "END-OF-SUMMER SALE": [
-        "SCONTI DI FINE ESTATE"
-      ],
-      "Get the deal": [
-        "Ottieni l'offerta"
-      ]
-    },
-    "q3campaign_2025: Info": {
-      "${ discountPercent }% off": [
-        "-${ discountPercent }%"
-      ],
-      "${ normalPricePerMonth } /month": [
-        "${ normalPricePerMonth } al mese"
-      ],
-      "/month": [
-        "/mese"
-      ],
-      "1 TB data storage": [
-        "1 TB di archiviazione dati"
-      ],
-      "15 GB storage": [
-        "15 GB di archiviazione"
-      ],
-      "200 GB storage for files, photos & docs": [
-        "200 GB di archiviazione per file, foto e documenti"
-      ],
-      "3 TB data storage": [
-        "3 TB di archiviazione dati"
-      ],
-      "500 GB storage": [
-        "500 GB di archiviazione"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Accedi a oltre 15.000 server in oltre 120 Paesi"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Tutte le funzionalità premium di Mail, Pass, Drive, VPN e Calendar"
-      ],
-      "Built-in 2FA authenticator": [
-        "Strumento di autenticazione 2FA integrato"
-      ],
-      "Connect 10 devices at once": [
-        "Connetti 10 dispositivi contemporaneamente"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Gli sconti si basano sui prezzi mensili standard. Il tuo abbonamento si rinnoverà alla tariffa annuale standard al termine del ciclo di fatturazione."
-      ],
-      "Enjoy the fastest VPN speeds": [
-        "Goditi le velocità VPN più elevate"
-      ],
-      "Individual accounts for 6 users": [
-        "Account individuali per 6 utenti"
-      ],
-      "Individual accounts for you and a partner": [
-        "Account individuali per te e un'altra persona"
-      ],
-      "Online document editor": [
-        "Editor di documenti online"
-      ],
-      "Recover previous file versions": [
-        "Recupera le versioni precedenti dei file"
-      ],
-      "Save ${ totalSavings } and keep all your current features!": [
-        "Risparmia ${ totalSavings } e mantieni tutte le tue funzionalità attuali."
-      ],
-      "Secure link, vault & item sharing": [
-        "Condivisione sicura di link, casseforti ed elementi"
-      ],
-      "Stronger protection against cyber threats": [
-        "Protezione più efficace dalle minacce informatiche"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Cartelle, etichette e filtri illimitati"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Alias hide-my-email illimitati"
-      ],
-      "Use your own email domain": [
-        "Usa il tuo dominio email personale"
-      ]
-    },
-    "q3campaign_2025: Title": {
-      "End-of-summer sale": [
-        "Sconti di fine estate"
-      ],
-      "for 12 months": [
-        "per 12 mesi"
       ]
     },
     "Referral": {
@@ -10783,6 +10824,9 @@
       "Billing details updated": [
         "Informazioni di fatturazione aggiornati"
       ],
+      "Booking link copied to clipboard": [
+        "Link di prenotazione copiato negli appunti"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Calendario aggiunto. Potrebbe volerci qualche minuto per sincronizzarlo."
       ],
@@ -11300,9 +11344,6 @@
       "Does not repeat": [
         "Nessuna ripetizione"
       ],
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Raddoppia la tua archiviazione con ${ BRAND_NAME } Duo"
-      ],
       "Downgrade account": [
         "Effettua il downgrade dell'account"
       ],
@@ -11544,6 +11585,9 @@
       "Reactivate calendar keys": [
         "Riattiva le chiavi del calendario"
       ],
+      "Ready to automate your scheduling?": [
+        "Pronto ad automatizzare la tua pianificazione?"
+      ],
       "Recommended": [
         "Consigliato"
       ],
@@ -11679,6 +11723,12 @@
       "Summary": [
         "Riepilogo"
       ],
+      "This booking page does not exist": [
+        "Questo messaggio non esiste."
+      ],
+      "This booking page has expired": [
+        "Questa pagina di prenotazione è scaduta"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Attiva ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -11768,6 +11818,9 @@
       ],
       "Your account is protected": [
         "Il tuo account è protetto"
+      ],
+      "Your booking page is ready": [
+        "La tua pagina di prenotazione è pronta"
       ],
       "Your calendar link": [
         "Link del tuo calendario"
@@ -11883,6 +11936,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: Assistente AI che tutela la tua privacy"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Login sicuri su tutti i tuoi dispositivi. Include alias illimitati, condivisione, 2FA integrata e molto altro."
       ]

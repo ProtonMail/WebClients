@@ -2242,20 +2242,8 @@
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "Ušetrite so zľavami Black Friday na vysokorýchlostnú švajčiarsku sieť VPN"
       ],
-      "Save with Cyber Week deals on a high-speed Swiss VPN": [
-        "Ušetrite so Cyber Week zľavami na vysokorýchlostnú švajčiarsku sieť VPN"
-      ],
-      "Save with End of Year deals on a high-speed Swiss VPN": [
-        "Ušetrite s koncoročnou ponukou na vysokorýchlostnú švajčiarsku sieť VPN"
-      ],
       "Select your Black Friday offer": [
         "Vyberte si ponuku Black Friday"
-      ],
-      "Select your Cyber Week offer": [
-        "Vyberte si svoju Cyber Week ponuku"
-      ],
-      "Select your End of Year offer": [
-        "Vyberte si svoju koncoročnú ponuku"
       ]
     },
     "bf2023: Info": {
@@ -2395,6 +2383,32 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Úložný priestor je zdieľaný medzi všetkými službami ${ BRAND_NAME }."
+      ]
+    },
+    "BF2025: Deal details": {
+      "Block ads, trackers, and malware": [
+        "Blokujte reklamy, sledovače a malvér"
+      ],
+      "Built-in 2FA authenticator": [
+        "Zabudovaný 2FA autentifikátor"
+      ],
+      "Unlimited daily chats": [
+        "Neobmedzené denné chaty"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "na ${ durationDeal }"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Špeciálne navrhnutý NetShield chráni vaše zariadenia a zrýchľuje vaše prehliadanie tým, že blokuje reklamy, sledovače a malvér."
       ]
     },
     "Billing cycle": {
@@ -2986,11 +3000,14 @@
       "Add ${ LUMO_APP_NAME }": [
         "Pridať ${ LUMO_APP_NAME }"
       ],
-      "AI assistant that respects your privacy": [
-        "AI asistent, ktorý rešpektuje vaše súkromie"
+      "AI assistant that respects business confidentiality": [
+        "AI asistent, ktorý rešpektuje obchodné tajomstvo"
       ],
       "Basic chat history": [
         "Základná história chatu"
+      ],
+      "Compliance with data protection regulations": [
+        "Dodržiavanie predpisov o ochrane údajov"
       ],
       "Data never used for AI training": [
         "Údaje nikdy nepoužívané na trénovanie AI"
@@ -3027,6 +3044,9 @@
       ],
       "Web search access": [
         "Prístup k webovému vyhľadávaniu"
+      ],
+      "Zero-access encryption": [
+        "Šifrovanie s nulovým prístupom"
       ]
     },
     "collider_2025: Navigation": {
@@ -4876,16 +4896,16 @@
       ]
     },
     "Duo offer: Link": {
-      "Double your storage": [
-        "Zdvojnásobte svoje úložisko"
+      "Get 4x more storage": [
+        "Získajte 4x viac úložného priestoru"
       ],
       "Share your plan": [
         "Zdieľajte váš plán"
       ]
     },
     "Duo offer: Title": {
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Zdvojnásobte svoje úložisko s ${ BRAND_NAME } Duo"
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "Získajte 4x väčšie úložisko s ${ BRAND_NAME } Duo"
       ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
         "Zdieľajte výhody vášho plánu s ${ BRAND_NAME } Duo"
@@ -5894,6 +5914,9 @@
       ],
       "Expired": [
         "Platnosť vypršala"
+      ],
+      "Failed to add group member": [
+        "Nepodarilo sa pridať člena skupiny"
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Načítanie aktívnych relácií zlyhalo. Prosím ${ refresh } alebo to skúste neskôr."
@@ -12560,6 +12583,9 @@
       "Billing cycle": [
         "Fakturačné obdobie"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Block": [
         "Blokovať"
       ],
@@ -12925,6 +12951,9 @@
       ],
       "Get everything in Free, plus:": [
         "Získajte všetko, čo je vo verzii Free plus:"
+      ],
+      "Get the deal": [
+        "Využiť ponuku"
       ],
       "Gift code": [
         "Darčekový kód"
@@ -13418,8 +13447,8 @@
       "Special characters": [
         "Špeciálne znaky"
       ],
-      "Special Offer: Get ${ PASS_SHORT_APP_NAME } Plus for ${ offerPrice }": [
-        "Špeciálna ponuka: Získajte ${ PASS_SHORT_APP_NAME } Plus za ${ offerPrice }"
+      "Special Offer!": [
+        "Špeciálna ponuka!"
       ],
       "Starred": [
         "S hviezdičkou"
@@ -13555,9 +13584,6 @@
       ],
       "Verify keys with Key Transparency": [
         "Overenie kľúčov cez funkciu Transparentnosť kľúčov"
-      ],
-      "Video conferencing with ${ MEET_APP_NAME }": [
-        "Videokonferencie s ${ MEET_APP_NAME }"
       ],
       "Video conferencing with Zoom": [
         "Videokonferencie s aplikáciou Zoom"
@@ -14137,6 +14163,19 @@
       ],
       "Enable detailed events": [
         "Povoliť podrobné udalosti"
+      ]
+    },
+    "lumo_signup_2025: Info": {
+      "Protect your entire business. Get ${ LUMO_SHORT_APP_NAME } Professional with all ${ BRAND_NAME } for Business apps and premium features.": [
+        "Chráňte celé svoje podnikanie. Získajte ${ LUMO_SHORT_APP_NAME } Professional so všetkými aplikáciami ${ BRAND_NAME } for Business a prémiovými funkciami."
+      ]
+    },
+    "lumo_signup_2025: title": {
+      "For businesses": [
+        "Pre firmy"
+      ],
+      "For individuals": [
+        "Pre jednotlivcov"
       ]
     },
     "Mail import summary": {
@@ -15836,9 +15875,6 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } bol vytvorený"
       ],
-      "${ MEET_APP_NAME } video conferencing settings have been updated": [
-        "Nastavenia ${ MEET_APP_NAME } videokonferencií boli aktualizované."
-      ],
       "${ reason } has been disabled": [
         "${ reason } bol zakázaný"
       ],
@@ -16992,9 +17028,6 @@
       "Activity log": [
         "Záznam aktivity"
       ],
-      "Additional mailboxes for aliases": [
-        "Dodatočné poštové schránky pre aliasy"
-      ],
       "Admin panel to manage users and subscription": [
         "Panel správcu pre správu používateľov a predplatného"
       ],
@@ -17004,17 +17037,14 @@
       "Advanced alias features (powered by SimpleLogin)": [
         "Pokročilé funkcie aliasov (založené na SimpleLogin)"
       ],
-      "File attachments (coming soon)": [
-        "Súbory s prílohami (už čoskoro)"
+      "File attachments (up to 10GB)": [
+        "Súborové prílohy (až do 10 GB)"
       ],
       "One-time payment, lifetime deal": [
         "Jednorazová platba, doživotný prístup"
       ],
       "Team policies": [
         "Tímové zásady"
-      ],
-      "Your custom domain for aliases": [
-        "Vaša vlastná doména pre aliasy"
       ]
     },
     "PassFamilyPlan2024": {
@@ -17160,6 +17190,9 @@
       ]
     },
     "Payments": {
+      "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
+        "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Suma splatná po skončení skúšobnej prevádzky dňa ${ formattedDate }"
       ],
@@ -17238,6 +17271,21 @@
         "Kupón je možné použiť na ${ couponRedemptions } obnovení.",
         "Kupón je možné použiť na ${ couponRedemptions } obnovení."
       ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "Špeciálna zľavnená cena platí pre prvý ${ subscriptionLength } mesiac.",
+        "Špeciálna zľavnená cena platí pre prvé ${ subscriptionLength } mesiace.",
+        "Špeciálna zľavnená cena platí pre prvých ${ subscriptionLength } mesiacov.",
+        "Špeciálna zľavnená cena platí pre prvých ${ subscriptionLength } mesiacov."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Špeciálna zľava platí pre prvý mesiac. Kupón je platný pre ${ couponRedemptions } obnovenie. Potom dôjde k automatickej obnove za ${ renewPriceStr } na 1 mesiac. Zrušiť môžete kedykoľvek.",
+        "Špeciálna zľava platí pre prvý mesiac. Kupón je platný pre ${ couponRedemptions } obnovenia. Potom dôjde k automatickej obnove za ${ renewPriceStr } na 1 mesiac. Zrušiť môžete kedykoľvek.",
+        "Špeciálna zľava platí pre prvý mesiac. Kupón je platný pre ${ couponRedemptions } obnovení. Potom dôjde k automatickej obnove za ${ renewPriceStr } na 1 mesiac. Zrušiť môžete kedykoľvek.",
+        "Špeciálna zľava platí pre prvý mesiac. Kupón je platný pre ${ couponRedemptions } obnovení. Potom dôjde k automatickej obnove za ${ renewPriceStr } na 1 mesiac. Zrušiť môžete kedykoľvek."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Špeciálne zľavnená cena platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr }. Službu môžete kedykoľvek zrušiť."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Špeciálna zľavnená cena ${ priceWithDiscount } platí pre prvý ${ subscriptionLength } mesiac.",
         "Špeciálna zľavnená cena ${ priceWithDiscount } platí pre prvé ${ subscriptionLength } mesiace.",
@@ -17297,6 +17345,9 @@
       ],
       "Your payment is still being processed": [
         "Vaša platba sa stále spracováva"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+        "Vaše predplatné má v súčasnosti platnú zľavu. Prechodom na túto novú akciu sa existujúca zľava prestane uplatňovať."
       ]
     },
     "Payments.Error": {
@@ -19236,6 +19287,11 @@
         "Zdieľané vlastníkom ${ ownerName }"
       ]
     },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "Otvoriť v ${ appName }"
+      ]
+    },
     "Signature verification error when joining calendar": {
       "Signature verification error": [
         "Chyba overenia podpisu"
@@ -19693,6 +19749,9 @@
       "Advanced security features": [
         "Pokročilé bezpečnostné funkcie"
       ],
+      "Advanced security features by ${ BRAND_NAME }": [
+        "Pokročilé bezpečnostné funkcie od ${ BRAND_NAME }"
+      ],
       "Advanced sharing security": [
         "Pokročilú bezpečnosť zdieľania"
       ],
@@ -19732,6 +19791,9 @@
       "ISO 27001 certified": [
         "Certifikát ISO 27001"
       ],
+      "Mail, calendar, file storage, and VPN included": [
+        "Email, kalendár, úložisko súborov a VPN v cene"
+      ],
       "Open source and audited": [
         "Open source a auditovaný"
       ],
@@ -19752,6 +19814,9 @@
       ],
       "The only email service with:": [
         "Jediná emailová služba s:"
+      ],
+      "The only password manager with:": [
+        "Jediný správca hesiel, ktorý má:"
       ],
       "Unlimited passwords": [
         "Neobmedzené heslá"
@@ -22082,9 +22147,6 @@
       "Don't show again?": [
         "Viac nezobrazovať?"
       ],
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Zdvojnásobte svoje úložisko s ${ BRAND_NAME } Duo"
-      ],
       "Downgrade account": [
         "Znížiť úroveň účtu"
       ],
@@ -23036,9 +23098,6 @@
       "Version history": [
         "História verzií"
       ],
-      "Video conferencing with ${ MEET_APP_NAME }": [
-        "Videokonferencie s ${ MEET_APP_NAME }"
-      ],
       "Video conferencing with Zoom": [
         "Videokonferencie s aplikáciou Zoom"
       ],
@@ -23254,9 +23313,6 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Správcovia môžu spravovať používateľské účty a udeľovať oprávnenia správcu iným používateľom. Plán organizácie môže upravovať iba primárny správca."
-      ],
-      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "Umožňuje bezproblémové pridávanie odkazov na videokonferencie ${ MEET_APP_NAME } do pozvánok v kalendári."
       ],
       "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
         "Umožňuje bezproblémové pridávanie odkazov na videokonferencie Zoom do pozvánok v kalendári."
@@ -23500,6 +23556,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: AI asistent, ktorý rešpektuje vaše súkromie"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
       ],

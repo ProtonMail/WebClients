@@ -1145,6 +1145,9 @@
       "1 user account": [
         "1 уліковы запіс карыстальніка"
       ],
+      "200 GB storage: 40x your current plan": [
+        "200 ГБ сховішча: у 40 разоў больш за ваш бягучы тарыфны план"
+      ],
       "6 user accounts": [
         "6 уліковых запісаў карыстальнікаў"
       ],
@@ -1166,6 +1169,9 @@
       "Password health alerts": [
         "Папярэджанні якасці пароля"
       ],
+      "Recover previous file versions": [
+        "Аднаўленне папярэдніх версій файла"
+      ],
       "Unlimited folders, labels and filters": [
         "Неабмежаваная колькасць папак, метак і фільтраў"
       ],
@@ -1179,6 +1185,9 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Аплачваецца ${ amount } аднаразова"
+      ],
+      "forever": [
+        "назаўсёды"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Падоўжыцца пасля 1 месяца за ${ regularAmount }."
@@ -1214,6 +1223,32 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Прастора сховішча размеркавана паміж усімі сэрвісамі ${ BRAND_NAME }"
+      ]
+    },
+    "BF2025: Deal details": {
+      "Block ads, trackers, and malware": [
+        "Блакіроўка рэкламы, праграм сачэння і шкодных праграм"
+      ],
+      "Built-in 2FA authenticator": [
+        "Убудаваны аўтэнтыфікатар 2ФА"
+      ],
+      "Unlimited daily chats": [
+        "Неабмежаваная колькасць штодзённых чатаў"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "Чорная пятніца"
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "за ${ durationDeal }"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Адмыслова распрацаваная функцыя NetShield абароніць вашы прылады і паскорыць прагляд старонак пры дапамозе блакіравання рэкламы, праграм сачэння і шкодных праграм."
       ]
     },
     "Browser": {
@@ -2678,19 +2713,19 @@
       ]
     },
     "Duo offer: Link": {
-      "Double your storage": [
-        "Падвойце сваё сховішча"
+      "Get 4x more storage": [
+        "Атрымайце ў 4 разы больш месца ў сховішчы"
       ],
       "Share your plan": [
-        "Абагуліце свой тарыфны план"
+        "Абагульвайце свой тарыфны план"
       ]
     },
     "Duo offer: Title": {
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Падвойце сваё сховішча з ${ BRAND_NAME } Duo"
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "Атрымайце ў 4 разы больш сховішча з ${ BRAND_NAME } Duo"
       ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
-        "Абагуліце свае перавагі тарыфнага плана з ${ BRAND_NAME } Duo"
+        "Абагульвайце свае перавагі тарыфнага плана з ${ BRAND_NAME } Duo"
       ]
     },
     "Email body for invitation": {
@@ -3251,7 +3286,7 @@
         "Ваш файл ${ formattedFilename } змяшчае больш за ${ MAX_IMPORT_EVENTS } падзей."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        "Ваш файл ${ formattedFilename } мае памылковы спосаб і яго немагчыма імпартаваць."
+        "Ваш файл ${ formattedFilename } мае памылковы спосаб і ён не можа быць імпартаваны."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "Ваш файл ${ formattedFilename } не змяшчае падзей для імпартавання."
@@ -3299,7 +3334,7 @@
     },
     "Error importing event": {
       "Bad format. Component cannot be read.": [
-        "Няправільны фармат. Немагчыма прачытаць кампанент."
+        "Няправільны фармат. Кампанент."
       ],
       "Calendar": [
         "Каляндар"
@@ -5203,7 +5238,7 @@
         "Палепшыце свой тарыфны план зараз, каб атрымаць прэміяльныя функцыі, прадукты, а таксама палепшыць сховішча па спецыяльнай цане"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
-        "Палепшыць падпіску, каб захаваць ${ planTitle } перавагі."
+        "Палепшыць тарыфны план, каб захаваць перавагі ${ planTitle }."
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Запампоўванне сотняў файлаў адначасова можа паўплываць на прадукцыйнасць."
@@ -6205,7 +6240,7 @@
     },
     "Message": {
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
-        "Ваш бясплатны пробны перыяд завершыўся. ${ nonAutoRenewalAction }"
+        "Ваш бясплатны пробны перыяд завяршыўся. ${ nonAutoRenewalAction }"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ваш бясплатны пробны перыяд завяршыўся. Доступ да вашых уліковых запісаў будзе неўзабаве адключаны. ${ action }"
@@ -7990,6 +8025,9 @@
       "Advanced account protection": [
         "Пашыраная абарона ўліковага запісу"
       ],
+      "File attachments (up to 10GB)": [
+        "Далучаныя файлы (да 10 ГБ)"
+      ],
       "Team policies": [
         "Палітыка каманды"
       ]
@@ -8061,6 +8099,21 @@
         "Купон дзейнічае для ${ couponRedemptions } падаўжэнняў.",
         "Купон дзейнічае для ${ couponRedemptions } падаўжэнняў.",
         "Купон дзейнічае для ${ couponRedemptions } падаўжэнняў."
+      ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першага ${ subscriptionLength } месяца.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першых ${ subscriptionLength } месяцаў.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першых ${ subscriptionLength } месяцаў.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першых ${ subscriptionLength } месяцаў."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэння. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за кожны месяц. Скасаваць можна ў любы момант."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першага ${ subscriptionLength } месяца.",
@@ -8686,6 +8739,62 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Абагулена ${ ownerName }"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Comma Separated Values (.csv)": [
+        "Значэнні, раздзеленыя коскамі (.csv)"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
+      "New spreadsheet": [
+        "Новая электронная табліца"
+      ],
+      "Rename spreadsheet": [
+        "Перайменаваць электронную табліцу"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Значэнні, раздзеленыя ўкладкамі (.tsv)"
+      ]
+    },
+    "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Стварэнне новай табліцы..."
+      ],
+      "Detect automatically": [
+        "Выяўляць аўтаматычна"
+      ],
+      "Insert as new sheet": [
+        "Уставіць як новы аркуш"
+      ],
+      "Replace current sheet": [
+        "Замяніць бягучы аркуш"
+      ],
+      "Replace data at selected cell": [
+        "Замяніць даныя ў выбранай ячэйцы"
+      ],
+      "Select a CSV or TSV file to import": [
+        "Выберыце файл CSV або TSV для імпартавання"
+      ]
+    },
+    "sheets_2025:Label": {
+      "Convert text to numbers, dates, and formulas": [
+        "Пераўтварыць тэкст у лікі, даты і формулы"
+      ],
+      "Destination": [
+        "Прызначэнне"
+      ],
+      "Format": [
+        "Фармат"
+      ],
+      "Separator type": [
+        "Тып раздзяляльніка"
+      ]
+    },
+    "sheets_2025:Title": {
+      "Import data": [
+        "Імпартаваць даныя"
       ]
     },
     "Signing preference for emails": {
@@ -9617,9 +9726,6 @@
       "Document verification failed": [
         "Збой праверкі дакумента"
       ],
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Падвойце сваё сховішча з ${ BRAND_NAME } Duo"
-      ],
       "Downgrade account": [
         "Панізіць уліковы запіс"
       ],
@@ -10097,6 +10203,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: Памочнік ШІ, які паважае вашу прыватнасць"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
       ]
@@ -10320,7 +10429,7 @@
         "Ваш бясплатны пробны перыяд завершыцца ${ textDate }. ${ action }"
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
-        "Ваш пробны перыяд скончыцца ${ textDate }. З вас не будзе спаганяцца плата, калі вы адмовіцеся да ${ textDate }. ${ action }"
+        "Ваш пробны перыяд завершыцца ${ textDate }. З вас не будзе спаганяцца плата, калі вы адмовіцеся да ${ textDate }. ${ action }"
       ]
     }
   }

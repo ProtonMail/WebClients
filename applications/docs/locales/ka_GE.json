@@ -932,6 +932,9 @@
       "Add unlimited credit cards": [
         "დაამატეთ განუსაზღვრელი რაოდენობის საკრედიტო ბარათი"
       ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "${ BRAND_NAME } Mail, Pass, VPN, Drive და Calendar-ის ყველა ფასიანი ფუნქცია"
+      ],
       "Block ads, trackers, and malware": [
         "რეკლამის, ტრეკერებისა და მავნე პროგრამების დაბლოკვა"
       ],
@@ -1106,6 +1109,9 @@
       "1 user account": [
         "1 მომხმარებლის ანგარიში"
       ],
+      "200 GB storage: 40x your current plan": [
+        "200 გბ საცავი: 40-ჯერ მეტი მიმდინარე სატარიფო გეგმაზე"
+      ],
       "6 user accounts": [
         "6 მომხმარებლის ანგარიში"
       ],
@@ -1127,6 +1133,9 @@
       "Password health alerts": [
         "პაროლის სიმთელის გაფრთხილებები"
       ],
+      "Recover previous file versions": [
+        "წინა ფაილის ვერსიების აღდგენა"
+      ],
       "Unlimited folders, labels and filters": [
         "ულიმიტო საქაღალდეები, ჭდეები და ფილტრები"
       ],
@@ -1140,6 +1149,9 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "გადაიხადეთ ${ amount } ერთხელ"
+      ],
+      "forever": [
+        "სამუდამოდ"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "განახლდება 1 თვეში ფასად ${ regularAmount }."
@@ -1173,6 +1185,35 @@
         "საცავის სივრცე გაზიარებულია ყველა ${ BRAND_NAME }-ის სერვისებს შორის."
       ]
     },
+    "BF2025: Deal details": {
+      "Access 15,000+ servers in 120+ countries": [
+        "წვდომა 15,000+ სერვერთან 120+ ქვეყანაში"
+      ],
+      "Block ads, trackers, and malware": [
+        "რეკლამის, ტრეკერებისა და მავნე პროგრამების დაბლოკვა"
+      ],
+      "Built-in 2FA authenticator": [
+        "ჩაშენებული 2FA ავთენტიკატორი"
+      ],
+      "Unlimited daily chats": [
+        "შეუზღუდავი ყოველდღიური ჩატები"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "${ durationDeal }-სთვის"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield-ი იცავს თქვენს მოწყობილობებს და აჩქარებს ინტერნეტში მუშაობას რეკლამების, ტრეკერების და არასასურველი პროგრამების დაბლოკვით."
+      ]
+    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
@@ -1184,6 +1225,9 @@
       ],
       "Application problem": [
         "აპლიკაციის პრობლემა"
+      ],
+      "Black Friday": [
+        "შავი პარასკევი"
       ],
       "Bridge problem": [
         "ხიდის პრობლემა"
@@ -2597,6 +2641,39 @@
         "პრიორიტეტული მხარდაჭერა"
       ]
     },
+    "Duo offer": {
+      "/month": [
+        "/თვეში"
+      ],
+      "1 TB of storage to share": [
+        "1ტბ საცავი გასაზიარებლად"
+      ],
+      "2 user accounts": [
+        "2 მომხმარებლის ანგარიში"
+      ],
+      "All premium features from your current plan": [
+        "ყველა ფასიანი თვისება თქვენი მიმდინარე სატარიფო გეგმიდან"
+      ],
+      "Only": [
+        "მხოლოდ"
+      ]
+    },
+    "Duo offer: Link": {
+      "Get 4x more storage": [
+        "მიიღეთ 4-ჯერ მეტი საცავი"
+      ],
+      "Share your plan": [
+        "გააზიარეთ თქვენი სატარიფო გეგმა"
+      ]
+    },
+    "Duo offer: Title": {
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "მიიღეთ 4x მეტი საცავი ${ BRAND_NAME } Duo-ით"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "გააზიარეთ თქვენი სატარიფო გეგმის უპირატესობები ${ BRAND_NAME } Duo-ისთან ერთად"
+      ]
+    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } გაუქმდა."
@@ -3464,6 +3541,12 @@
       ]
     },
     "Feature": {
+      "Encrypted cloud storage for files, photos and documents": [
+        "დაშიფრული ღრუბლოვანი საცავი ფაილებისთვის, ფოტოებისა და დოკუმენტებისთვის"
+      ],
+      "More premium features": [
+        "მეტი ფასიანი ფუნქცია"
+      ],
       "Unlimited hide-my-email aliases": [
         "განუსაზღვრელი რაოდენობის მეტსახელი Hide-my-email-სთვის"
       ]
@@ -4049,6 +4132,9 @@
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill switch**: აჩერებს მონაცემების გაჟონვას თქვენი ინტერნეტის დაბლოკვით, თუ VPN გაითიშება."
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**ნაბიჯი 1:** მოიწვიეთ თქვენი მეგობრები ${ BRAND_NAME }-ზე თქვენი რეფერალი ბმულით."
+      ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
         "**ნაბიჯი 2:** თქვენი მეგობრები მიიღებენ 2 კვირას უფასოდ თავიანთ სატარიფო გეგმაზე."
       ],
@@ -4152,6 +4238,9 @@
       "Checking signatures": [
         "ხელმოწერების შემოწმება"
       ],
+      "Choose a plan that works best for you.": [
+        "აირჩიეთ სატარიფო გეგმა, რომელიც საუკეთესოდ შეგესაბამებათ."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "დააწკაპუნეთ \"ახალი კოდის გამოთხოვნაზე\" და თქვენ ${ strong }-ზე ახალი კოდი გამოგეგზავნებათ. თუ ტელეფონის ეს ნომერი არასწორია, ჩაასწორეთ ის."
       ],
@@ -4166,6 +4255,9 @@
       ],
       "Contact unassigned from group ${ contactGroupName }": [
         "კონტაქტი მოხსნილია ჯგუფიდან ${ contactGroupName }"
+      ],
+      "Continue": [
+        "გაგრძელება"
       ],
       "Converting document...": [
         "დოკუმენტის გადაყვანა..."
@@ -4793,6 +4885,9 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "ამ მისამართის მფლობელმა გამჭოლი დაშიფვრა გამორთო. იმისათვის, რომ შეგეძლოთ, ამ მისამართზე დაშიფრული შეტყობინებები გააგზავნოთ, მფლობელმა გამჭოლი დაშიფვრა თავიდან უნდა ჩართოს."
       ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "URL, რომელიც შეიყვანეთ, როგორც ჩანს, Slack-დან არასწორად დააკოპირეთ, როცა ბმულებს Slack-დან აკოპირებთ, დააწკაპუნეთ ზედ მარჯვენა ღილაკით და აირჩიეთ \"ბმულის კოპირება\". წინააღმდეგ შემთხვევაში ბმულის ტექსტი წაკვეთილ ვერსიას დააკოპირებთ."
+      ],
       "There are no documents in the trash.": [
         "ნაგვის ყუთში დოკუმენტები არაა."
       ],
@@ -4900,6 +4995,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "განაახლეთ ახლავე, რომ მიიღოთ პრემიუმ ფუნქციები, პროდუქტები და საცავი სპეციალურ ფასად"
+      ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "ასწიეთ სატარიფო გეგმა ${ planTitle }-ის ფუნქციების შესანარჩუნებლად."
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "ასობით ფაილის ერთდროულ ატვირთვამ შეიძლება, წარმადობაზე გავლენა იქონიოს."
@@ -5857,6 +5955,9 @@
       ]
     },
     "Message": {
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "თქვენი უფასო სატესტო ვერსია დასრულდა. ${ nonAutoRenewalAction }"
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "თქვენს უფასო სატესტო ვერსიას ვადა გაუვიდა. მალე ანგარიშთან წვდომა გაგეთიშებათ. ${ action }"
       ]
@@ -6666,6 +6767,9 @@
       "Protect sensitive business information and collaborate securely.": [
         "დაიცავით კონფიდენციალური კომპანიის ინფორმაცია და იმუშავეთ ერთად უსაფრთხოდ."
       ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "დაიცავით თქვენი ოჯახი ${ plusTitle }-ის ფასიანი ფუნქციებით 6 მომხმარებლისთვის."
+      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "დაიცავით თქვენი ოჯახის კონფიდენციალობა ყველა ${ BRAND_NAME }-ის სერვისის ერთად."
       ],
@@ -7263,11 +7367,17 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }-ის შემოთავაზების ვადა დღეს იწურება!"
       ],
+      "Don't show this again": [
+        "აღარ მაჩვენო"
+      ],
       "Don’t show this again": [
         "აღარ მაჩვენოთ ეს"
       ],
       "Don’t show this offer again": [
         "აღარ მაჩვენო ეს შემოთავაზება"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "მიიღეთ ${ BRAND_NAME } Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "მიიღეთ ${ BRAND_NAME } Unlimited"
@@ -7485,6 +7595,9 @@
       ],
       "Advanced account protection": [
         "დამატებითი ანგარიშის დაცვა"
+      ],
+      "File attachments (up to 10GB)": [
+        "მიმაგრებული ფაილები (10გბ-მდე)"
       ],
       "Team policies": [
         "გუნდის პოლიტიკა"
@@ -8103,6 +8216,62 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "გაზიარებულია ${ ownerName }-ის მიერ"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Comma Separated Values (.csv)": [
+        "მძიმით გამოყოფილი მნიშვნელობები (.csv)"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
+      "New spreadsheet": [
+        "ახალი ელცხრილი"
+      ],
+      "Rename spreadsheet": [
+        "ელცხრილის სახელის გადარქმევა"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "ტაბით გამოყოფილი მნიშვნელობები (.tsv)"
+      ]
+    },
+    "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "ახალი ელცხრილის შექმნა..."
+      ],
+      "Detect automatically": [
+        "ავტომატურად ამოცნობა"
+      ],
+      "Insert as new sheet": [
+        "ჩასმა ახალი ფურცლის სახით"
+      ],
+      "Replace current sheet": [
+        "მიმდინარე ფურცლის ჩანაცვლება"
+      ],
+      "Replace data at selected cell": [
+        "მონაცემების ჩანაცვლება მონიშნულ უჯრედთან"
+      ],
+      "Select a CSV or TSV file to import": [
+        "აირჩიეთ შემოსატანი CSV ან TSV ფაილი"
+      ]
+    },
+    "sheets_2025:Label": {
+      "Convert text to numbers, dates, and formulas": [
+        "გადაიყვანეთ ტექსტი რიცხვებში, თარიღებში და ფორმულებში"
+      ],
+      "Destination": [
+        "დანიშნულება"
+      ],
+      "Format": [
+        "ფორმატი"
+      ],
+      "Separator type": [
+        "გამყოფის ტიპი"
+      ]
+    },
+    "sheets_2025:Title": {
+      "Import data": [
+        "მონაცემების შემოტანა"
       ]
     },
     "Signing preference for emails": {
@@ -9300,6 +9469,9 @@
       "Upgrade to ${ planName }": [
         "სატარიფო გეგმის განახლება: ${ planName }"
       ],
+      "Upgrade to keep your premium benefits.": [
+        "ასწიეთ სატარიფო გეგმა ფასიანი ფუნქციების შესანარჩუნებლად."
+      ],
       "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
         "ასწიეთ თქვენი პროდუქტიულობა ${ formattedPrice }-ისთვის ${ planName }-ით"
       ],
@@ -9441,6 +9613,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: ხი დამხმარე, რომელიც პატივს სცემს თქვენს კონფიდენციალობას"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს და სხვ."
       ]

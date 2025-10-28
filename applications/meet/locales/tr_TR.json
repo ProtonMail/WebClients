@@ -1,0 +1,2309 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=2; plural=(n > 1);",
+    "language": "tr_TR"
+  },
+  "contexts": {
+    "Action": {
+      "${ BRAND_NAME } shop": [
+        "${ BRAND_NAME } mağazası"
+      ],
+      "Add account": [
+        "Hesap ekle"
+      ],
+      "Add another account": [
+        "Başka bir hesap ekle"
+      ],
+      "Attach screenshot(s)": [
+        "Ekran görüntüsü ekle"
+      ],
+      "Authenticate": [
+        "Kimliği doğrula"
+      ],
+      "Blur background": [
+        "Arka planı bulanıklaştır"
+      ],
+      "Cancel": [
+        "İptal"
+      ],
+      "Change password": [
+        "Parolayı değiştir"
+      ],
+      "Chat with us": [
+        "Bizimle canlı görüşün"
+      ],
+      "Close": [
+        "Kapat"
+      ],
+      "Continue": [
+        "İlerle"
+      ],
+      "Continue without camera": [
+        "Kamera olmadan ilerle"
+      ],
+      "Continue without microphone": [
+        "Mikrofon olmadan ilerle"
+      ],
+      "Copied": [
+        "Kopyalandı"
+      ],
+      "Copy ${ title }": [
+        "${ title } başlığını kopyala"
+      ],
+      "Copy address": [
+        "Adresi kopyala"
+      ],
+      "Copy invitation text": [
+        "Davet yazısını kopyala"
+      ],
+      "Copy link": [
+        "Bağlantıyı kopyala"
+      ],
+      "Create meeting": [
+        "Görüşme oluştur"
+      ],
+      "Delete": [
+        "Sil"
+      ],
+      "Disable video": [
+        "Görüntüyü kapat"
+      ],
+      "Dismiss": [
+        "Yok say"
+      ],
+      "Download logs": [
+        "Günlüğü indir"
+      ],
+      "Edit email address": [
+        "E-posta adresini düzenle"
+      ],
+      "Edit phone number": [
+        "Telefon numarasını düzenle"
+      ],
+      "Edit sign-in details": [
+        "Oturum açma bilgilerini düzenle"
+      ],
+      "Enable video": [
+        "Görünütüyü aç"
+      ],
+      "End meeting for all": [
+        "Görüşmeyi herkes için sonlandır"
+      ],
+      "Forgot password?": [
+        "Parolamı unuttum"
+      ],
+      "Get verification code": [
+        "Doğrulama kodu alın"
+      ],
+      "Help and feedback": [
+        "Yardım ve geri bildirim"
+      ],
+      "Help and resources": [
+        "Yardım ve kaynaklar"
+      ],
+      "Hide advanced options": [
+        "Gelişmiş seçenekleri gizle"
+      ],
+      "Hide participants": [
+        "Katılımcıları gizle"
+      ],
+      "Hide timezones": [
+        "Saat dilimlerini gizle"
+      ],
+      "Join": [
+        "Katıl"
+      ],
+      "Join meeting": [
+        "Görüşmeye katıl"
+      ],
+      "Kick out": [
+        "Çıkar"
+      ],
+      "Leave meeting": [
+        "Görüşmeden ayrıl"
+      ],
+      "Lock meeting": [
+        "Görüşmeyi kilitle"
+      ],
+      "More info: ${ safeTitle }": [
+        "Ayrıntılı bilgi: ${ safeTitle }"
+      ],
+      "More options for accounts": [
+        "Hesaplar için diğer seçenekler"
+      ],
+      "Mute participant": [
+        "Katılımcının sesini kapat"
+      ],
+      "Next month": [
+        "Sonraki ay"
+      ],
+      "Next page": [
+        "Sonraki sayfa"
+      ],
+      "Noise filter": [
+        "Gürültü süzgeci"
+      ],
+      "OK": [
+        "Tamam"
+      ],
+      "Open link": [
+        "Bağlantıyı aç"
+      ],
+      "Previous month": [
+        "Önceki ay"
+      ],
+      "Previous page": [
+        "Önceki sayfa"
+      ],
+      "Receive video": [
+        "Görüntüyü al"
+      ],
+      "Refer a friend": [
+        "Arkadaşınıza önerin"
+      ],
+      "Refresh link": [
+        "Bağlantıyı yenile"
+      ],
+      "Refresh the page": [
+        "Sayfayı yenile"
+      ],
+      "Report a problem": [
+        "Sorun bildirin"
+      ],
+      "Request a call": [
+        "Arama isteği gönder"
+      ],
+      "Request a feature": [
+        "Bir özellik istiyorum"
+      ],
+      "Request new code": [
+        "Yeni kod iste"
+      ],
+      "Resend code": [
+        "Kodu yeniden gönder"
+      ],
+      "Schedule": [
+        "Planlama"
+      ],
+      "Schedule meeting": [
+        "Görüşme planla"
+      ],
+      "Search countries": [
+        "Ülke ara"
+      ],
+      "Send an encrypted message": [
+        "Şifrelenmiş bir ileti gönderin"
+      ],
+      "Settings": [
+        "Ayarlar"
+      ],
+      "Share": [
+        "Paylaş"
+      ],
+      "Show advanced options": [
+        "Gelişmiş seçenekleri görüntüle"
+      ],
+      "Show participants": [
+        "Katılımcıları görüntüle"
+      ],
+      "Show timezones": [
+        "Saat dilimlerini görüntüle"
+      ],
+      "Sign in": [
+        "Oturum aç"
+      ],
+      "Sign out": [
+        "Oturumu kapat"
+      ],
+      "Sign out of all accounts": [
+        "Tüm hesapların oturumunu kapat"
+      ],
+      "Start": [
+        "Başlangıç"
+      ],
+      "Start meeting": [
+        "Görüşme başlat"
+      ],
+      "Stop incoming video": [
+        "Gelen görüntüyü kapat"
+      ],
+      "Stop presenting": [
+        "Sunumu durdur"
+      ],
+      "Stop receiving video": [
+        "Gelen görüntüyü kapat"
+      ],
+      "Submit": [
+        "Gönder"
+      ],
+      "Switch or add account": [
+        "Hesap değiştirin ya da ekleyin"
+      ],
+      "Try another method": [
+        "Başka bir yöntem deneyin"
+      ],
+      "Use authentication code": [
+        "Kimlik doğrulama kodunu kullanın"
+      ],
+      "Use camera": [
+        "Kamerayı aç"
+      ],
+      "Use microphone": [
+        "Mikrofonu aç"
+      ],
+      "Use recovery code": [
+        "Kurtarma kodunu kullanın"
+      ],
+      "Verify": [
+        "Doğrula"
+      ],
+      "Verify account": [
+        "Hesabı doğrula"
+      ],
+      "View invoice": [
+        "Faturayı görüntüle"
+      ]
+    },
+    "Alt": {
+      "Audio settings": [
+        "Ses ayarları"
+      ],
+      "Blur background": [
+        "Arka planı bulanıklaştır"
+      ],
+      "Chat": [
+        "Sohbet"
+      ],
+      "Close": [
+        "Kapat"
+      ],
+      "Close search": [
+        "Aramayı kapat"
+      ],
+      "Copy meeting link": [
+        "Görüşme bağlantısını kopyala"
+      ],
+      "Go to dashboard": [
+        "Panoya git"
+      ],
+      "Leave": [
+        "Ayrıl"
+      ],
+      "Leave Meeting": [
+        "Görüşmeden ayrıl"
+      ],
+      "Lock meeting": [
+        "Görüşmeyi kilitle"
+      ],
+      "Meeting details": [
+        "Görüşme ayrıntıları"
+      ],
+      "Noise filter": [
+        "Gürültü süzgeci"
+      ],
+      "Open chat message search": [
+        "Sohbet iletisi aramayı aç"
+      ],
+      "Open participants search": [
+        "Katılımcı aramayı aç"
+      ],
+      "Participant host control options": [
+        "Katılımcı sunucu denetimi seçenekleri"
+      ],
+      "Participants": [
+        "Katılımcılar"
+      ],
+      "Rotate camera": [
+        "Kamerayı döndür"
+      ],
+      "Rotate personal meeting link": [
+        "Kişisel görüşme bağlantısını değiştir"
+      ],
+      "Settings": [
+        "Ayarlar"
+      ],
+      "Show passphrase": [
+        "Parola ifadesini görüntüle"
+      ],
+      "Stop incoming video": [
+        "Gelen görüntüyü kapat"
+      ],
+      "Toggle camera": [
+        "Kamerayı aç/kapat"
+      ],
+      "Toggle chat": [
+        "Sohbeti aç/kapat"
+      ],
+      "Toggle meeting details": [
+        "Görüşme ayrıntılarını aç/kapat"
+      ],
+      "Toggle microphone": [
+        "Mikrofonu aç/kapat"
+      ],
+      "Toggle participants": [
+        "Katılımcıları aç/kapat"
+      ],
+      "Toggle screen share": [
+        "Ekran paylaşımını aç/kapat"
+      ],
+      "Toggle settings": [
+        "Ayarları aç/kapat"
+      ],
+      "Video settings": [
+        "Görüntü ayarları"
+      ]
+    },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "${ BRAND_NAME } uygulamaları"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } bilgisayar uygulaması"
+      ]
+    },
+    "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } sorunu"
+      ],
+      "Application problem": [
+        "Uygulama sorunu"
+      ],
+      "Black Friday": [
+        "Muhteşem Cuma"
+      ],
+      "Bridge problem": [
+        "Bridge sorunu"
+      ],
+      "Calendar problem": [
+        "Calendar sorunu"
+      ],
+      "Connection problem": [
+        "Bağlantı sorunu"
+      ],
+      "Contacts problem": [
+        "Contacts sorunu"
+      ],
+      "Custom domain problem": [
+        "Özel etki alanı sorunu"
+      ],
+      "Docs problem": [
+        "Docs sorunu"
+      ],
+      "Drive problem": [
+        "Drive sorunu"
+      ],
+      "Feature request": [
+        "Özellik isteği"
+      ],
+      "Import / export problem": [
+        "İçe / dışa aktarma sorunu"
+      ],
+      "Installation problem": [
+        "Kurulum sorunu"
+      ],
+      "Mail problem": [
+        "Mail sorunu"
+      ],
+      "Manual setup problem": [
+        "El ile kurulum sorunu"
+      ],
+      "Meet problem": [
+        "Meet sorunu"
+      ],
+      "Other": [
+        "Diğer"
+      ],
+      "Pass problem": [
+        "Parola sorunu"
+      ],
+      "Payments problem": [
+        "Ödeme sorunu"
+      ],
+      "Sign in problem": [
+        "Oturum açma sorunu"
+      ],
+      "Sign up problem": [
+        "Hesap açma sorunu"
+      ],
+      "Signup problem": [
+        "Hesap açma sorunu"
+      ],
+      "Slow speed problem": [
+        "Hız yavaşlığı sorunu"
+      ],
+      "Speed problem": [
+        "Hız sorunu"
+      ],
+      "Streaming problem": [
+        "Yayın akışı sorunu"
+      ],
+      "Update problem": [
+        "Güncelleme sorunu"
+      ],
+      "VPN problem": [
+        "VPN sorunu"
+      ],
+      "Website access problem": [
+        "Site erişim sorunu"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Daralt"
+      ],
+      "Expand": [
+        "Genişlet"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "havuç"
+      ],
+      "cerise": [
+        "kiraz"
+      ],
+      "cobalt": [
+        "kobalt"
+      ],
+      "copper": [
+        "bakır"
+      ],
+      "enzian": [
+        "kantaron"
+      ],
+      "fern": [
+        "eğrelti otu"
+      ],
+      "forest": [
+        "orman"
+      ],
+      "ocean": [
+        "okyanus"
+      ],
+      "olive": [
+        "zeytin"
+      ],
+      "pacific": [
+        "pasifik"
+      ],
+      "pickle": [
+        "salatalık"
+      ],
+      "pine": [
+        "çam"
+      ],
+      "pink": [
+        "pembe"
+      ],
+      "plum": [
+        "erik"
+      ],
+      "purple": [
+        "mor"
+      ],
+      "reef": [
+        "resif"
+      ],
+      "sahara": [
+        "çöl"
+      ],
+      "slateblue": [
+        "arduvaz mavisi"
+      ],
+      "soil": [
+        "toprak"
+      ],
+      "strawberry": [
+        "çilek"
+      ]
+    },
+    "Country name": {
+      "Abkhazia": [
+        "Abhazya"
+      ],
+      "Afghanistan": [
+        "Afganistan"
+      ],
+      "Albania": [
+        "Arnavutluk"
+      ],
+      "Algeria": [
+        "Cezayir"
+      ],
+      "American Samoa": [
+        "Amerikan Samoası"
+      ],
+      "Andorra": [
+        "Andora"
+      ],
+      "Angola": [
+        "Angola"
+      ],
+      "Anguilla": [
+        "Anguilla"
+      ],
+      "Antarctica": [
+        "Antarktika"
+      ],
+      "Antigua and Barbuda": [
+        "Antigua ve Barbuda"
+      ],
+      "Argentina": [
+        "Arjantin"
+      ],
+      "Armenia": [
+        "Ermenistan"
+      ],
+      "Aruba": [
+        "Aruba"
+      ],
+      "Ascension Island": [
+        "Ascension Adası"
+      ],
+      "Australia": [
+        "Avustralya"
+      ],
+      "Austria": [
+        "Avusturya"
+      ],
+      "Azerbaijan": [
+        "Azerbaycan"
+      ],
+      "Bahamas": [
+        "Bahamalar"
+      ],
+      "Bahrain": [
+        "Bahreyn"
+      ],
+      "Bangladesh": [
+        "Bangladeş"
+      ],
+      "Barbados": [
+        "Barbados"
+      ],
+      "Belarus": [
+        "Belarus"
+      ],
+      "Belgium": [
+        "Belçika"
+      ],
+      "Belize": [
+        "Belize"
+      ],
+      "Benin": [
+        "Benin"
+      ],
+      "Bermuda": [
+        "Bermuda"
+      ],
+      "Bhutan": [
+        "Butan"
+      ],
+      "Bolivia": [
+        "Bolivya"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Karayip Hollandası"
+      ],
+      "Bosnia and Herzegovina": [
+        "Bosna Hersek"
+      ],
+      "Botswana": [
+        "Botsvana"
+      ],
+      "Bouvet Island": [
+        "Bouvet Adası"
+      ],
+      "Brazil": [
+        "Brezilya"
+      ],
+      "British Indian Ocean Territory": [
+        "Britanya Hint Okyanusu Toprakları"
+      ],
+      "Brunei Darussalam": [
+        "Brunei Darussalam"
+      ],
+      "Bulgaria": [
+        "Bulgaristan"
+      ],
+      "Burkina Faso": [
+        "Burkina Faso"
+      ],
+      "Burundi": [
+        "Burundi"
+      ],
+      "Cambodia": [
+        "Kamboçya"
+      ],
+      "Cameroon": [
+        "Kamerun"
+      ],
+      "Canada": [
+        "Kanada"
+      ],
+      "Cape Verde": [
+        "Yeşil Burun Adaları"
+      ],
+      "Cayman Islands": [
+        "Cayman Adaları"
+      ],
+      "Central African Republic": [
+        "Orta Afrika Cumhuriyeti"
+      ],
+      "Chad": [
+        "Çad"
+      ],
+      "Chile": [
+        "Şili"
+      ],
+      "China": [
+        "Çin"
+      ],
+      "Christmas Island": [
+        "Christmas Adası"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Cocos (Keeling) Adaları"
+      ],
+      "Colombia": [
+        "Kolombiya"
+      ],
+      "Comoros": [
+        "Komorlar"
+      ],
+      "Congo": [
+        "Kongo"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Kongo, Demokratik Cumhuriyeti"
+      ],
+      "Cook Islands": [
+        "Cook Adaları"
+      ],
+      "Costa Rica": [
+        "Kosta Rika"
+      ],
+      "Croatia": [
+        "Hırvatistan"
+      ],
+      "Cuba": [
+        "Küba"
+      ],
+      "Curaçao": [
+        "Curaçao"
+      ],
+      "Cyprus": [
+        "Kıbrıs"
+      ],
+      "Czech Republic": [
+        "Çekya"
+      ],
+      "Côte d'Ivoire": [
+        "Fildişi Sahili"
+      ],
+      "Denmark": [
+        "Danimarka"
+      ],
+      "Djibouti": [
+        "Cibuti"
+      ],
+      "Dominica": [
+        "Dominika"
+      ],
+      "Dominican Republic": [
+        "Dominik Cumhuriyeti"
+      ],
+      "Ecuador": [
+        "Ekvador"
+      ],
+      "Egypt": [
+        "Mısır"
+      ],
+      "El Salvador": [
+        "El Salvador"
+      ],
+      "Equatorial Guinea": [
+        "Ekvator Ginesi"
+      ],
+      "Eritrea": [
+        "Eritre"
+      ],
+      "Estonia": [
+        "Estonya"
+      ],
+      "Eswatini": [
+        "Esvatini"
+      ],
+      "Ethiopia": [
+        "Etiyopya"
+      ],
+      "Falkland Islands": [
+        "Falkland Adaları"
+      ],
+      "Faroe Islands": [
+        "Faroe Adaları"
+      ],
+      "Federated States of Micronesia": [
+        "Mikronezya Federal Devletleri"
+      ],
+      "Fiji": [
+        "Fiji"
+      ],
+      "Finland": [
+        "Finlandiya"
+      ],
+      "France": [
+        "Fransa"
+      ],
+      "French Guiana": [
+        "Fransız Guyanası"
+      ],
+      "French Polynesia": [
+        "Fransız Polinezyası"
+      ],
+      "French Southern Territories": [
+        "Fransız Güney Toprakları"
+      ],
+      "Gabon": [
+        "Gabon"
+      ],
+      "Gambia": [
+        "Gambiya"
+      ],
+      "Georgia": [
+        "Gürcistan"
+      ],
+      "Germany": [
+        "Almanya"
+      ],
+      "Ghana": [
+        "Gana"
+      ],
+      "Gibraltar": [
+        "Cebelitarık"
+      ],
+      "Greece": [
+        "Yunanistan"
+      ],
+      "Greenland": [
+        "Grönland"
+      ],
+      "Grenada": [
+        "Grenada"
+      ],
+      "Guadeloupe": [
+        "Guadeloupe"
+      ],
+      "Guam": [
+        "Guam"
+      ],
+      "Guatemala": [
+        "Guatemala"
+      ],
+      "Guernsey": [
+        "Guernsey"
+      ],
+      "Guinea": [
+        "Gine"
+      ],
+      "Guinea-Bissau": [
+        "Gine-Bissau"
+      ],
+      "Guyana": [
+        "Guyana"
+      ],
+      "Haiti": [
+        "Haiti"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Heard Adası ve McDonald Adaları"
+      ],
+      "Holy See (Vatican City State)": [
+        "Vatikan"
+      ],
+      "Honduras": [
+        "Honduras"
+      ],
+      "Hong Kong": [
+        "Hong Kong"
+      ],
+      "Hungary": [
+        "Macaristan"
+      ],
+      "Iceland": [
+        "İzlanda"
+      ],
+      "India": [
+        "Hindistan"
+      ],
+      "Indonesia": [
+        "Endonezya"
+      ],
+      "International": [
+        "Uluslararası"
+      ],
+      "Iran": [
+        "İran"
+      ],
+      "Iraq": [
+        "Irak"
+      ],
+      "Ireland": [
+        "İrlanda"
+      ],
+      "Isle of Man": [
+        "Man Adası"
+      ],
+      "Israel": [
+        "İsrail"
+      ],
+      "Italy": [
+        "İtalya"
+      ],
+      "Jamaica": [
+        "Jamaika"
+      ],
+      "Japan": [
+        "Japonya"
+      ],
+      "Jersey": [
+        "Jersey"
+      ],
+      "Jordan": [
+        "Ürdün"
+      ],
+      "Kazakhstan": [
+        "Kazakistan"
+      ],
+      "Kenya": [
+        "Kenya"
+      ],
+      "Kiribati": [
+        "Kiribati"
+      ],
+      "Kosovo": [
+        "Kosova"
+      ],
+      "Kuwait": [
+        "Kuveyt"
+      ],
+      "Kyrgyzstan": [
+        "Kırgızistan"
+      ],
+      "Laos": [
+        "Laos"
+      ],
+      "Latvia": [
+        "Letonya"
+      ],
+      "Lebanon": [
+        "Lübnan"
+      ],
+      "Lesotho": [
+        "Lesotho"
+      ],
+      "Liberia": [
+        "Liberya"
+      ],
+      "Libya": [
+        "Libya"
+      ],
+      "Liechtenstein": [
+        "Lihtenştayn"
+      ],
+      "Lithuania": [
+        "Litvanya"
+      ],
+      "Luxembourg": [
+        "Lüksemburg"
+      ],
+      "Macao": [
+        "Makao"
+      ],
+      "Madagascar": [
+        "Madagaskar"
+      ],
+      "Malawi": [
+        "Malavi"
+      ],
+      "Malaysia": [
+        "Malezya"
+      ],
+      "Maldives": [
+        "Maldivler"
+      ],
+      "Mali": [
+        "Mali"
+      ],
+      "Malta": [
+        "Malta"
+      ],
+      "Marshall Islands": [
+        "Marshall Adaları"
+      ],
+      "Martinique": [
+        "Martinik"
+      ],
+      "Mauritania": [
+        "Moritanya"
+      ],
+      "Mauritius": [
+        "Mauritius"
+      ],
+      "Mayotte": [
+        "Mayotte"
+      ],
+      "Mexico": [
+        "Meksika"
+      ],
+      "Moldova": [
+        "Moldova"
+      ],
+      "Monaco": [
+        "Monako"
+      ],
+      "Mongolia": [
+        "Moğolistan"
+      ],
+      "Montenegro": [
+        "Karadağ"
+      ],
+      "Montserrat": [
+        "Montserrat"
+      ],
+      "Morocco": [
+        "Fas"
+      ],
+      "Mozambique": [
+        "Mozambik"
+      ],
+      "Myanmar": [
+        "Burma"
+      ],
+      "Namibia": [
+        "Namibya"
+      ],
+      "Nauru": [
+        "Nauru"
+      ],
+      "Nepal": [
+        "Nepal"
+      ],
+      "Netherlands": [
+        "Hollanda"
+      ],
+      "New Caledonia": [
+        "Yeni Kaledonya"
+      ],
+      "New Zealand": [
+        "Yeni Zelanda"
+      ],
+      "Nicaragua": [
+        "Nikaragua"
+      ],
+      "Niger": [
+        "Nijer"
+      ],
+      "Nigeria": [
+        "Nijerya"
+      ],
+      "Niue": [
+        "Niue"
+      ],
+      "Norfolk Island": [
+        "Norfolk Adası"
+      ],
+      "North Korea": [
+        "Kuzey Kore"
+      ],
+      "North Macedonia": [
+        "Kuzey Makedonya"
+      ],
+      "Northern Mariana Islands": [
+        "Kuzey Mariana Adaları"
+      ],
+      "Norway": [
+        "Norveç"
+      ],
+      "Oman": [
+        "Umman"
+      ],
+      "Pakistan": [
+        "Pakistan"
+      ],
+      "Palau": [
+        "Palau"
+      ],
+      "Palestine": [
+        "Filistin"
+      ],
+      "Panama": [
+        "Panama"
+      ],
+      "Papua New Guinea": [
+        "Papua Yeni Gine"
+      ],
+      "Paraguay": [
+        "Paraguay"
+      ],
+      "Peru": [
+        "Peru"
+      ],
+      "Philippines": [
+        "Filipinler"
+      ],
+      "Pitcairn": [
+        "Pitcairn"
+      ],
+      "Poland": [
+        "Polonya"
+      ],
+      "Portugal": [
+        "Portekiz"
+      ],
+      "Puerto Rico": [
+        "Porto Riko"
+      ],
+      "Qatar": [
+        "Katar"
+      ],
+      "Reunion": [
+        "Réunion"
+      ],
+      "Romania": [
+        "Romanya"
+      ],
+      "Russia": [
+        "Rusya"
+      ],
+      "Rwanda": [
+        "Ruanda"
+      ],
+      "Saint Barthélemy": [
+        "Saint Barthélemy"
+      ],
+      "Saint Helena": [
+        "Saint Helena"
+      ],
+      "Saint Kitts and Nevis": [
+        "Saint Kitts ve Nevis"
+      ],
+      "Saint Lucia": [
+        "Saint Lucia"
+      ],
+      "Saint Martin (French Part)": [
+        "Saint Martin (Fransız bölümü)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Saint Pierre ve Miquelon"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Saint Vincent ve Grenadinler"
+      ],
+      "Samoa": [
+        "Samoa"
+      ],
+      "San Marino": [
+        "San Marino"
+      ],
+      "Sao Tome and Principe": [
+        "Sao Tome ve Principe"
+      ],
+      "Saudi Arabia": [
+        "Suudi Arabistan"
+      ],
+      "Senegal": [
+        "Senegal"
+      ],
+      "Serbia": [
+        "Sırbistan"
+      ],
+      "Seychelles": [
+        "Seyşeller"
+      ],
+      "Sierra Leone": [
+        "Sierra Leone"
+      ],
+      "Singapore": [
+        "Singapur"
+      ],
+      "Sint Maarten": [
+        "Sint Maarten"
+      ],
+      "Slovakia": [
+        "Slovakya"
+      ],
+      "Slovenia": [
+        "Slovenya"
+      ],
+      "Solomon Islands": [
+        "Solomon Adaları"
+      ],
+      "Somalia": [
+        "Somali"
+      ],
+      "South Africa": [
+        "Güney Afrika"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Güney Georgia ve Güney Sandwich Adaları"
+      ],
+      "South Korea": [
+        "Güney Kore"
+      ],
+      "South Ossetia": [
+        "Güney Osetya"
+      ],
+      "South Sudan": [
+        "Güney Sudan"
+      ],
+      "Spain": [
+        "İspanya"
+      ],
+      "Sri Lanka": [
+        "Sri Lanka"
+      ],
+      "Sudan": [
+        "Sudan"
+      ],
+      "Suriname": [
+        "Surinam"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Svalbard ve Jan Mayen"
+      ],
+      "Sweden": [
+        "İsveç"
+      ],
+      "Switzerland": [
+        "İsviçre"
+      ],
+      "Syria": [
+        "Suriye"
+      ],
+      "Taiwan": [
+        "Tayvan"
+      ],
+      "Tajikistan": [
+        "Tacikistan"
+      ],
+      "Tanzania": [
+        "Tanzanya"
+      ],
+      "Thailand": [
+        "Tayland"
+      ],
+      "Timor-Leste": [
+        "Doğu Timor"
+      ],
+      "Togo": [
+        "Togo"
+      ],
+      "Tokelau": [
+        "Tokelau"
+      ],
+      "Tonga": [
+        "Tonga"
+      ],
+      "Trinidad and Tobago": [
+        "Trinidad ve Tobago"
+      ],
+      "Tristan da Cunha": [
+        "Tristan da Cunha"
+      ],
+      "Tunisia": [
+        "Tunus"
+      ],
+      "Turkey": [
+        "Türkiye"
+      ],
+      "Turkmenistan": [
+        "Türkmenistan"
+      ],
+      "Turks and Caicos Islands": [
+        "Turks ve Caicos Adaları"
+      ],
+      "Tuvalu": [
+        "Tuvalu"
+      ],
+      "Uganda": [
+        "Uganda"
+      ],
+      "Ukraine": [
+        "Ukrayna"
+      ],
+      "United Arab Emirates": [
+        "Birleşik Arap Emirlikleri"
+      ],
+      "United Kingdom": [
+        "Birleşik Krallık"
+      ],
+      "United States": [
+        "Birleşik Devletler"
+      ],
+      "United States Minor Outlying Islands": [
+        "Birleşik Devletler Küçük Dış Adaları"
+      ],
+      "Uruguay": [
+        "Uruguay"
+      ],
+      "Uzbekistan": [
+        "Özbekistan"
+      ],
+      "Vanuatu": [
+        "Vanuatu"
+      ],
+      "Venezuela": [
+        "Venezuela"
+      ],
+      "Vietnam": [
+        "Vietnam"
+      ],
+      "Virgin Islands, British": [
+        "Britanya Virjin Adaları"
+      ],
+      "Virgin Islands, U.S.": [
+        "Birleşik Devletler Virjin Adaları"
+      ],
+      "Wallis and Futuna": [
+        "Wallis ve Futuna"
+      ],
+      "Western Sahara": [
+        "Batı Sahra"
+      ],
+      "Yemen": [
+        "Yemen"
+      ],
+      "Zambia": [
+        "Zambiya"
+      ],
+      "Zimbabwe": [
+        "Zimbabve"
+      ],
+      "Åland Islands": [
+        "Aland Adaları"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Süresi geçmiş fatura"
+      ]
+    },
+    "Description": {
+      "An always available meeting room for people you trust.": [
+        "Güvendiğiniz kişilerin her zaman kullanabileceği bir görüşme odası."
+      ],
+      "Plan meetings and send invites with ${ CALENDAR_APP_NAME }.": [
+        "Görüşmeler planlayın ve ${ CALENDAR_APP_NAME } ile davet gönderin."
+      ],
+      "Rotating group encryption key for best security": [
+        "En iyi güvenliği sağlamak için grup şifreleme anahtarı değiştiriliyor"
+      ],
+      "Setting up group end-to-end encryption with advanced Messaging Layer Security (MLS)": [
+        "Gelişmiş ileti katmanı güvenliği (MLS) ile grup uçtan uca şifrelemesi ayarlanıyor"
+      ],
+      "Start a call immediately then share the link with others.": [
+        "Hemen bir çağrı başlatın ve ardından bağlantıyı başkalarıyla paylaşın."
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "Güvenilir kişi"
+      ]
+    },
+    "Error": {
+      "Domain not available, try again later": [
+        "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
+      ],
+      "Email is not valid": [
+        "E-posta geçersiz"
+      ],
+      "Enter 6 digits": [
+        "6 rakam yazın"
+      ],
+      "Failed to create meeting": [
+        "Görüşme oluşturulamadı"
+      ],
+      "Failed to create personal meeting, please refresh the page": [
+        "Kişisel görüşme oluşturulamadı, lütfen sayfayı yenileyin."
+      ],
+      "Failed to decrypt session key": [
+        "Oturum anahtarının şifresi çözülemedi"
+      ],
+      "Failed to get meeting info": [
+        "Görüşme bilgileri alınamadı"
+      ],
+      "Failed to get room name": [
+        "Oda adı alınamadı"
+      ],
+      "Failed to initialize handshake": [
+        "El sıkışma başlatılamadı"
+      ],
+      "Failed to join meeting. Please try again later": [
+        "Görüşmeye katılınamadı. Lütfen bir süre sonra yeniden deneyin"
+      ],
+      "Failed to join meeting. Please try again later.": [
+        "Görüşmeye katılınamadı. Lütfen bir süre sonra yeniden deneyin."
+      ],
+      "Failed to lock meeting": [
+        "Görüşme kilitlenemedi"
+      ],
+      "Failed to rotate personal meeting link": [
+        "Kişisel görüşme bağlantısı değiştirilemedi"
+      ],
+      "Failed to start screen share": [
+        "Ekran paylaşımı başlatılamadı"
+      ],
+      "Failed to unlock meeting": [
+        "Görüşmenin kilidi açılamadı"
+      ],
+      "Incorrect username": [
+        "Kullanıcı adı yanlış"
+      ],
+      "Invalid passphrase": [
+        "Parola ifadesi geçersiz"
+      ],
+      "Invalid verification code": [
+        "Doğrulama kodu geçersiz"
+      ],
+      "Not a valid number": [
+        "Numara geçerli değil"
+      ],
+      "Passwords do not match": [
+        "Parola ile onayı aynı değil"
+      ],
+      "Request timed out": [
+        "İstek zaman aşımına uğradı"
+      ],
+      "Screen share is not supported on mobile browsers": [
+        "Mobil tarayıcılar ekran paylaşımını desteklemiyor"
+      ],
+      "Signature verification failed": [
+        "İmza doğrulanamadı"
+      ],
+      "The email addresses do not match": [
+        "E-posta adresleri eşleşmiyor"
+      ],
+      "The meeting link you are trying to access does not exist or may have been deleted.": [
+        "Erişmeye çalıştığınız görüşme bağlantısı bulunamadı, silinmiş olabilir."
+      ],
+      "The meeting password is incorrect": [
+        "Görüşme parolası yanlış"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Bu alan için izin verilen en fazla ${ maximumLength } karakter uzunluğu aşıldı."
+      ],
+      "This field is required": [
+        "Bu alanın doldurulması zorunludur"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Bu alana en az ${ minimumLength } karakter yazılmalıdır."
+      ],
+      "This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.": [
+        "Bu toplantının sürümü eski. Sahibi onu sonlandırmalı ve Meet uygulamasının sürümünü güncelledikten sonra yeniden başlatmalı."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Yalnızca harfleri, rakamları ve _.- karakterlerini kullanmayı deneyin"
+      ],
+      "Unknown error": [
+        "Bilinmeyen sorun"
+      ],
+      "Username must begin with a letter or digit": [
+        "Kullanıcı adı bir harf ya da rakam ile başlamalı"
+      ],
+      "Username must end with a letter or digit": [
+        "Kullanıcı adı bir harf ya da rakam ile bitmeli"
+      ]
+    },
+    "Error message": {
+      "App currently unavailable": [
+        "Uygulama şu anda kullanılamıyor"
+      ],
+      "Error: ${ errorMessage }": [
+        "Hata: ${ errorMessage }"
+      ],
+      "Oops, something went wrong": [
+        "Bir şeyler ters gitti"
+      ],
+      "Open in browser": [
+        "Tarayıcıda aç"
+      ],
+      "Please refresh the page or try again later.": [
+        "Lütfen sayfayı yenileyin ya da bir süre sonra yeniden deneyin."
+      ],
+      "Something went wrong": [
+        "Bir şeyler ters gitti"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "${ MAIL_APP_NAME } ya da ${ CALENDAR_APP_NAME } kullanmak için internet uygulamasına geçin."
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Bu sayfa yüklenemedi. Lütfen sayfayı yenileyin veya internet bağlantınızı denetleyin."
+      ]
+    },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "Herhangi bir görsel seçilmemiş"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Güvenlik anahtarı ile kimlik doğrulaması yapılırken bir sorun çıktı. Lütfen yeniden deneyin."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "${ BRAND_NAME } hesabınızla ilişkilendirilmiş güvenlik anahtarını takın."
+      ],
+      "Security key": [
+        "Güvenlik anahtarı"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Güvenlik anahtarı"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Sistem varsayılanı"
+      ],
+      "Theme font": [
+        "Tema yazı tipi"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Büyük"
+      ],
+      "Medium (recommended)": [
+        "Orta (önerilen)"
+      ],
+      "Small": [
+        "Küçük"
+      ],
+      "Very large": [
+        "Çok büyük"
+      ],
+      "Very small": [
+        "Çok küçük"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Hesap"
+      ],
+      "Apps": [
+        "Uygulamalar"
+      ],
+      "Network": [
+        "Ağ"
+      ],
+      "Other category": [
+        "Diğer kategori"
+      ],
+      "Services": [
+        "Hizmetler"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "Güvenlik kodu"
+      ],
+      "Email": [
+        "E-posta"
+      ],
+      "Manual": [
+        "El ile"
+      ],
+      "No verification method available": [
+        "Kullanılabilecek bir doğrulama yöntemi yok"
+      ],
+      "SMS": [
+        "Kısa mesaj"
+      ]
+    },
+    "Info": {
+      " and ": [
+        " ve "
+      ],
+      "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
+        "${ MEET_APP_NAME } uygulamasının çalışması için WebRTC gereklidir. Lütfen tarayıcınızı veya aygıtınızı WebRTC hizmetini destekleyen bir sürüme güncelleyin, farklı bir tarayıcı kullanmayı deneyin veya hizmeti engelleyebilecek tüm eklentileri kapatın."
+      ],
+      "${ user.DisplayName } has invited you to a ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME } meeting:": [
+        "${ user.DisplayName } sizi bir ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME } görüşmesine davet etti:"
+      ],
+      "${ user.DisplayName } has invited you to a ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME } meeting:\n\n${ time }\n\n${ meetingLink }\n\nMeeting ID: ${ id }": [
+        "${ user.DisplayName } sizi bir ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME } görüşmesine davet etti:\n\n${ time }\n\n${ meetingLink }\n\nGörüşme kimliği: ${ id }"
+      ],
+      "${ user.DisplayName }'s Meeting": [
+        "${ user.DisplayName } görüşmesi"
+      ],
+      "(you)": [
+        "(siz)"
+      ],
+      "<Removed dangerous URL>": [
+        "<Removed dangerous URL>"
+      ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Bir telefon numarası yalnızca bir ${ BRAND_NAME } hesabını doğrulamak için kullanılabilir"
+      ],
+      "Anonymous ${ particle } ${ participantNumber }": [
+        "${ particle } ${ participantNumber } anonim"
+      ],
+      "Are you sure you want to leave the meeting?": [
+        "Görüşmeden ayrılmak istediğinize emin misiniz?"
+      ],
+      "Attention required": [
+        "İlgilenmeniz gerekiyor"
+      ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Yeni bir doğrulama kodu istemeden önce İstenmeyen kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
+      ],
+      "camera": [
+        "kamera"
+      ],
+      "Chat with everyone": [
+        "Herkesle sohbet edin"
+      ],
+      "Check your system settings to make sure that a camera is available.": [
+        "Kullanılabilecek bir kamera olduğundan emin olmak için sistem ayarlarınızı denetleyin."
+      ],
+      "Check your system settings to make sure that a microphone is available.": [
+        "Kullanılabilecek bir mikrofon olduğundan emin olmak için sistem ayarlarınızı denetleyin."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" üzerine tıklayın."
+      ],
+      "Coming soon": [
+        "Çok yakında"
+      ],
+      "Connection lost": [
+        "Bağlantı kesildi"
+      ],
+      "Connection lost, please join meeting again": [
+        "Bağlantı kesildi. Lütfen görüşmeye yeniden katılın"
+      ],
+      "Copied to clipboard": [
+        "Panoya kopyalandı"
+      ],
+      "Country code": [
+        "Ülke kodu"
+      ],
+      "Custom combination": [
+        "Özel kombinasyon"
+      ],
+      "Do you want people to ${ deviceContentType } you in the meeting?": [
+        "Görüşmede insanların sizinle ${ deviceContentType } yapmasını ister misiniz?"
+      ],
+      "Download current logs": [
+        "Güncel günlükleri indir"
+      ],
+      "Each code can only be used once": [
+        "Her kod yalnızca bir kez kullanılabilir"
+      ],
+      "Edit email address": [
+        "E-posta adresini düzenle"
+      ],
+      "End-to-end encryption is active for audio and video.": [
+        "Ses ve görüntü uçtan uca şifreleme ile korunuyor."
+      ],
+      "End-to-end encryption is active for screen share": [
+        "Ekran paylaşımı uçtan uca şifreleme ile korunuyor"
+      ],
+      "End-to-end encryption is active for this chat.": [
+        "Bu sohbet uçtan uca şifreleniyor."
+      ],
+      "Enter the code from your authenticator app": [
+        "Kimlik doğrulama uygulamanızdan alacağınız kodu yazın"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Doğrulama kodunu yazın. Rakam ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Kendi parolanızı yazın (güvenilen kişi olarak)."
+      ],
+      "Every call, screen share, and chat is end-to-end encrypted to protect your most important connections.": [
+        "Önemli bağlantılarınızı korumak için her arama, ekran paylaşımı ve sohbet, uçtan uca şifrelenir."
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite—remember to share it with your guests separately.": [
+        "Ek güvenlik sağlamak için bir parola belirleyebilirsiniz. Bu parola takvim davetine eklenmez. Konuklarınızla başka bir yolla paylaşmayı unutmayın."
+      ],
+      "Free meeting": [
+        "Serbest görüşme"
+      ],
+      "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
+        "about:config adresine gidin, media.peerconnection.enabled değerini bulun ve \"true\" olarak ayarlayın."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "E-postayı Gelen kutunuzda göremezseniz, İstenmeyen kutusuna bakmayı unutmayın."
+      ],
+      "If you’re using Firefox, make sure PeerConnection is enabled.": [
+        "Firefox kullanıyorsanız, PeerConnection özelliğinin açık olduğundan emin olun."
+      ],
+      "Internet connection lost": [
+        "İnternet bağlantısı kesildi"
+      ],
+      "Invitation preview": [
+        "Davet ön izlemesi"
+      ],
+      "is presenting": [
+        "sunum yapıyor"
+      ],
+      "Joined": [
+        "Katıldı"
+      ],
+      "Learn more": [
+        "Ayrıntılı bilgi alın"
+      ],
+      "Left": [
+        "Ayrıldı"
+      ],
+      "Loading": [
+        "Yükleniyor"
+      ],
+      "Loading ${ appName }": [
+        "${ appName } yükleniyor"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Takvim yüklenirken lütfen bekleyin. Yeni bir sekmede zamanlama platformumuz Calendly açılacak."
+      ],
+      "Loading...": [
+        "Yükleniyor..."
+      ],
+      "Meeting created": [
+        "Görüşme oluşturuldu"
+      ],
+      "Meeting ID: ${ id }": [
+        "Görüşme kimliği: ${ id }"
+      ],
+      "Meeting link": [
+        "Görüşme bağlantısı"
+      ],
+      "Meeting locked. No new participants can join": [
+        "Görüşme kilitlendi. Artık yeni kişiler katılamaz"
+      ],
+      "Meeting unlocked. Participants can join again.": [
+        "Görüşmenin kilidi açıldı. Katılımcılar yine katılabilir"
+      ],
+      "Member": [
+        "Üye"
+      ],
+      "microphone": [
+        "mikrofon"
+      ],
+      "New": [
+        "Yeni"
+      ],
+      "No ${ microphoneLinkButton }${ andString }${ cameraLinkButton } detected.": [
+        "${ microphoneLinkButton }${ andString }${ cameraLinkButton } bulunamadı."
+      ],
+      "No camera detected": [
+        "Bir kamera bulunamadı"
+      ],
+      "No camera detected.": [
+        "Bir kamera bulunamadı."
+      ],
+      "No microphone detected": [
+        "Bir mikrofon bulunamadı"
+      ],
+      "No microphone detected.": [
+        "Bir mikrofon bulunamadı."
+      ],
+      "No results found": [
+        "Herhangi bir sonuç bulunamadı"
+      ],
+      "No search results": [
+        "Aramada bir sonuç bulunamadı"
+      ],
+      "No speaker detected": [
+        "Bir hoparlör bulunamadı"
+      ],
+      "Open external link": [
+        "Dış bağlantıyı aç"
+      ],
+      "Other accounts": [
+        "Diğer hesaplar"
+      ],
+      "Our end-to-end encrypted meetings protect privacy and empower truly free expression.": [
+        "Uçtan uca şifrelenmiş görüşmelerimiz gizliliği korur ve gerçek anlamda ifade özgürlüğü sağlar."
+      ],
+      "Permission denied": [
+        "İzin verilmedi"
+      ],
+      "Permissions not given.": [
+        "İzinler verilmemiş."
+      ],
+      "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
+        "En iyi deneyim için lütfen ${ microphoneLinkButton }${ andString }${ cameraLinkButton } için erişim izinlerini verin."
+      ],
+      "Please enter the passphrase to decrypt and view this meeting": [
+        "Lütfen bu görüşmeyi görüntülemek ve şifresini çözmek için parolayı yazın"
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Siz silmeyi seçmedikçe kurtarma bilgileri bu aygıt üzerinde kalacak."
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Sayfayı yenilemek ya da ${ link } çoğu sorunu otomatik olarak çözer."
+      ],
+      "Secure meeting": [
+        "Güvenli görüşme"
+      ],
+      "Select a camera": [
+        "Bir kamera seçin"
+      ],
+      "Select a microphone": [
+        "Bir mikrofon seçin"
+      ],
+      "Select a speaker": [
+        "Hoparlör seçin"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Sunuculara erişilemiyor. Lütfen birkaç dakika sonra yeniden deneyin"
+      ],
+      "Session timed out": [
+        "Oturum zaman aşımına uğradı"
+      ],
+      "Share screen": [
+        "Ekran paylaşımı"
+      ],
+      "Share the meeting invitation with others": [
+        "Görüşme davetini başkalarıyla paylaşın"
+      ],
+      "Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.": [
+        "Başkalarını davet etmek için bu bağlantıyı paylaşın. Bağlantıyı istediğiniz zaman araç çubuğundaki bilgiler simgesine tıklayarak görebilirsiniz."
+      ],
+      "Stop sharing your screen": [
+        "Ekran paylaşımını durdur"
+      ],
+      "This is an end-to-end encrypted chat with ephemeral messages. After you leave the call, you will not be able to access this chat.": [
+        "Bu sohbet uçtan uca şifrelenmiştir ve iletiler geçicidir. Görüşmeden ayrıldıktan sonra bu sohbete yeniden erişemezsiniz."
+      ],
+      "This meeting is locked. Please contact the host to join.": [
+        "Bu görüşme kilitlenmiş. Katılmak için lütfen sahibi ile görüşün."
+      ],
+      "This meeting is password protected": [
+        "Bu görüşme parola ile korunuyor"
+      ],
+      "This meeting is protected by end-to-end encryption with Messaging Layer Security (MLS).": [
+        "Bu görüşme ileti katmanı güvenliği (MLS) kullanan uçtan uca şifrelemeyle korunuyor."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Bu işlem, şu anda oturum açmış olduğunuz tüm hesap oturumlarını kapatır."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
+      ],
+      "Turn off camera": [
+        "Kamerayı kapat"
+      ],
+      "Turn off microphone": [
+        "Mikrofonu kapat"
+      ],
+      "Turn on camera": [
+        "Kamerayı aç"
+      ],
+      "Turn on microphone": [
+        "Mikrofonu aç"
+      ],
+      "We'll send a new verification code to ${ strong }": [
+        "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
+      ],
+      "Week": [
+        "Hafta"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Yeni bir doğrulama kodu almak ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Yeni bir doğrulama kodu almak ister misiniz?"
+      ],
+      "You can now return to the application to continue": [
+        "İlerlemek için uygulamaya dönebilirsiniz"
+      ],
+      "You can still turn off your microphone and camera anytime in the meeting": [
+        "Görüşmede mikrofonunuzu ve kameranızı istediğiniz zaman kapatabilirsiniz"
+      ],
+      "You've been invited to join a secure meeting. Confirm your name and click below to enter.": [
+        "Güvenli bir görüşmeye davet edildiniz. Adınızı onaylayın ve katılmak için aşağıya tıklayın."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "${ BRAND_NAME } hesabınız şu anda askıya alınmış. 28 gün sonra e-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hizmeti normal şekilde kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "${ BRAND_NAME } hesabınız şu anda askıya alınmış. E-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hesabınızı kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
+      ],
+      "Your always available meeting room, share it only with people you trust.": [
+        "Her zaman kullanabileceğiniz görüşme odanız, yalnızca güvendiğiniz kişilerle paylaşın."
+      ],
+      "Your browser or device isn’t supported": [
+        "Tarayıcınız veya aygıtınız desteklenmiyor"
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "E-posta adresiniz yalnızca bu tek seferlik doğrulama için kullanılacak."
+      ],
+      "Your meeting is ready": [
+        "Görüşmeniz hazır"
+      ],
+      "Your personal link": [
+        "Kişisel bağlantınız"
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
+      ],
+      "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
+        "Bir bağlantıyı yeni bir sekmede açmak üzeresiniz. İlerlemeden önce siteye güvendiğinizden emin olun."
+      ]
+    },
+    "Label": {
+      "${ BRAND_NAME } username": [
+        "${ BRAND_NAME } kullanıcı adı"
+      ],
+      "Attach screenshot(s)": [
+        "Ekran görüntüsü ekle"
+      ],
+      "Audio": [
+        "Ses"
+      ],
+      "Authenticator app": [
+        "Kimlik doğrulama uygulaması"
+      ],
+      "Browser": [
+        "Tarayıcı"
+      ],
+      "Browser version": [
+        "Tarayıcı sürümü"
+      ],
+      "Category": [
+        "Kategori"
+      ],
+      "Code is 6 digits without spaces": [
+        "Doğrulama kodu boşluk içermeyen 6 rakamdan oluşur"
+      ],
+      "Delete": [
+        "Sil"
+      ],
+      "Delete recovery-related information.": [
+        "Kurtarma ile ilgili bilgileri sil."
+      ],
+      "Email address": [
+        "E-posta adresi"
+      ],
+      "Hide password": [
+        "Parolayı gizle"
+      ],
+      "Include application logs in bug report": [
+        "Uygulama günlükleri sorun bildirimine eklensin"
+      ],
+      "Meeting ID": [
+        "Görüşme kimliği"
+      ],
+      "Operating system": [
+        "İşletim sistemi"
+      ],
+      "Operating system version": [
+        "İşletim sistemi sürümü"
+      ],
+      "Passphrase": [
+        "Parola ifadesi"
+      ],
+      "Password": [
+        "Parola"
+      ],
+      "Phone number": [
+        "Telefon numarası"
+      ],
+      "Reveal password": [
+        "Parolayı görüntüle"
+      ],
+      "System information": [
+        "Sistem bilgileri"
+      ],
+      "Verification code": [
+        "Doğrulama kodu"
+      ],
+      "Video": [
+        "Görüntü"
+      ],
+      "What happened?": [
+        "Ne oldu?"
+      ],
+      "Your name": [
+        "Adınız"
+      ],
+      "Your password (admin)": [
+        "Parolanız (yönetici)"
+      ],
+      "Your password (trusted contact)": [
+        "Parolanız (güvenilen kişi)"
+      ]
+    },
+    "Link": {
+      "clearing your browser cache": [
+        "tarayıcınızın ön belleğini temizlemek"
+      ],
+      "Learn more": [
+        "Ayrıntılı bilgi alın"
+      ],
+      "Request an invite": [
+        "Davet iste"
+      ],
+      "What’s this?": [
+        "Bu nedir?"
+      ]
+    },
+    "Meet": {
+      "Your browser or device software does not support ${ MEET_APP_NAME }. ${ MEET_APP_NAME } requires WebAssembly (Wasm) to run. Please update your browser or device to a version that supports Wasm, or try using a different browser.": [
+        "Tarayıcınız veya aygıt yazılımınız ${ MEET_APP_NAME } uygulamasını desteklemiyor. ${ MEET_APP_NAME } uygulamasının çalışması için WebAssembly (Wasm) gereklidir. Lütfen tarayıcınızı veya aygıtınızı Wasm hizmetini destekleyen bir sürüme güncelleyin veya farklı bir tarayıcı kullanmayı deneyin."
+      ]
+    },
+    "meet_2025": {
+      "Since you are the only participant in this meeting, the meeting will automatically close. Do you want to stay in this meeting?": [
+        "Bu görüşme, tek katılımcısı siz olduğunuz için otomatik olarak kapatılacak. Bu görüşmede kalmak istiyor musunuz?"
+      ]
+    },
+    "meet_2025 Action": {
+      "Leave meeting": [
+        "Görüşmeden ayrıl"
+      ],
+      "Stay in the meeting": [
+        "Görüşmede kal"
+      ]
+    },
+    "meet_2025 Error": {
+      "Failed to start Picture-in-Picture": [
+        "Resim içinde resim başlatılamadı"
+      ]
+    },
+    "Notification": {
+      "Coming soon": [
+        "Çok yakında"
+      ],
+      "Copied to clipboard": [
+        "Panoya kopyalandı"
+      ],
+      "Link copied to clipboard": [
+        "Bağlantı panoya kopyalandı"
+      ],
+      "Successfully rotated your personal meeting": [
+        "Kişisel görüşme bağlantınız değiştirildi"
+      ],
+      "Your personal meeting link has been copied to the clipboard": [
+        "Kişisel görüşme bağlantınız panoya kopyalandı"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Bazı görseller, geçerli seçimdeki yinelenen dosya adları nedeniyle yüklenmedi."
+      ]
+    },
+    "Placeholder": {
+      "A way to contact you": [
+        "Sizinle iletişim kurmak için bir yol"
+      ],
+      "E.g., ": [
+        "Örneğin, "
+      ],
+      "Enter meeting title": [
+        "Görüşme başlığını yazın"
+      ],
+      "Enter passphrase": [
+        "Parola ifadesini yazın"
+      ],
+      "Enter secret passphrase": [
+        "Gizli parola ifadesini yazın"
+      ],
+      "Enter time": [
+        "Zamanı yazın"
+      ],
+      "Find...": [
+        "Bul..."
+      ],
+      "Loading...": [
+        "Yükleniyor..."
+      ],
+      "Password": [
+        "Parola"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Lütfen sorunu açıklayın ve varsa hata iletisini ekleyin"
+      ],
+      "Select": [
+        "Seçin"
+      ],
+      "Type an encrypted message...": [
+        "Şifrelenmiş bir ileti yazın..."
+      ],
+      "Type your name": [
+        "Adınızı yazın"
+      ]
+    },
+    "Safety review": {
+      "Review account safety": [
+        "Hesap güvenliğini gözden geçirin"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Oturum açılamadı."
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "Herhangi bir sonuç bulunamadı"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Oturumu kapat"
+      ],
+      "Stay signed in": [
+        "Oturum açık kalsın"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } saat",
+        "${ gracePeriodHoursRemaining } saat"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } işlemi yapılabilir."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Parolanızı sıfırlamadan önce oturumunuzu kapattıysanız, hesabınıza erişimi kaybedebilirsiniz."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Parolanızı sıfırlamadan oturumunuzu kapattıysanız, hesabınıza erişimi kaybedebilirsiniz."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Parolanızı ${ boldTimeLeft } içinde sıfırlayabilirsiniz."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Parola sıfırlama"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Parolayı sıfırlamadan oturum kapatılsın mı?"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Abonelik tarifelerini görüntüle"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ]
+    },
+    "Spotlight": {
+      "Get up to ${ credits } in credits.": [
+        "${ credits } tutarına kadar kredi kazanın."
+      ],
+      "Invite friends to ${ BRAND_NAME }": [
+        "Arkadaşlarınızı ${ BRAND_NAME } kullanmaya davet edin"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Oturum aç"
+      ],
+      "Sign in to your organization": [
+        "Kuruluşunuzda oturum açın"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Tek oturum açma hizmeti sağlayıcınıza yönlendirileceksiniz."
+      ]
+    },
+    "Success": {
+      "Code sent to ${ methodTo }": [
+        "Kod ${ methodTo } alıcısına gönderildi"
+      ],
+      "Email address copied to clipboard": [
+        "E-posta adresi panoya kopyalandı"
+      ],
+      "Problem reported": [
+        "Sorun bildirildi"
+      ],
+      "Verification successful": [
+        "Doğrulandı"
+      ]
+    },
+    "Title": {
+      "${ displayName }'s personal meeting": [
+        "${ displayName } kişisinin kişisel görüşmesi"
+      ],
+      "Account restricted": [
+        "Hesap kısıtlandı"
+      ],
+      "Account temporarily locked": [
+        "Hesap geçici olarak kilitlendi"
+      ],
+      "Are you sure?": [
+        "Emin misiniz?"
+      ],
+      "Authenticator": [
+        "Kimlik doğrulayıcı"
+      ],
+      "Chat": [
+        "Sohbet"
+      ],
+      "Date": [
+        "Tarih"
+      ],
+      "Enter your password": [
+        "Parolanızı yazın"
+      ],
+      "Epoch": [
+        "Epoch"
+      ],
+      "Help and feedback": [
+        "Yardım ve geri bildirim"
+      ],
+      "Help center": [
+        "Yardım merkezi"
+      ],
+      "Human verification": [
+        "İnsan olduğunuzu doğrulayın"
+      ],
+      "Info": [
+        "Bilgiler"
+      ],
+      "Invalid verification code": [
+        "Doğrulama kodu geçersiz"
+      ],
+      "Invite link": [
+        "Davet bağlantısı"
+      ],
+      "Join meeting": [
+        "Görüşmeye katıl"
+      ],
+      "Joining meeting with ${ participantCount } other participants…": [
+        "${ participantCount } diğer kişiyle görüşmeye katılınıyor…"
+      ],
+      "Meeting details": [
+        "Görüşme ayrıntıları"
+      ],
+      "Minicalendar": [
+        "Mini takvim"
+      ],
+      "MLS state": [
+        "MLS durumu"
+      ],
+      "Participants": [
+        "Katılımcılar"
+      ],
+      "Passphrase": [
+        "Parola ifadesi"
+      ],
+      "Personal meeting": [
+        "Kişisel görüşme"
+      ],
+      "Personal meeting link": [
+        "Kişisel görüşme bağlantısı"
+      ],
+      "Protecting meeting with end-to-end encryption...": [
+        "Görüşme uçtan uca şifrelemeyle korunuyor..."
+      ],
+      "Report a problem": [
+        "Sorun bildirin"
+      ],
+      "Request new code": [
+        "Yeni kod iste"
+      ],
+      "Schedule a meeting": [
+        "Görüşme planlayın"
+      ],
+      "Schedule meeting": [
+        "Görüşme planla"
+      ],
+      "Secret Passphrase": [
+        "Gizli parola ifadesi"
+      ],
+      "Secure meeting": [
+        "Güvenli görüşme"
+      ],
+      "Settings": [
+        "Ayarlar"
+      ],
+      "Sign out": [
+        "Oturumu kapat"
+      ],
+      "Start secure meeting": [
+        "Güvenli görüşme başlat"
+      ],
+      "Starting meeting as the first participant…": [
+        "Görüşme ilk katılımcı olarak başlatılıyor…"
+      ],
+      "Talk confidentially": [
+        "Gizliliğinizi koruyarak konuşun"
+      ],
+      "Time": [
+        "Zaman"
+      ],
+      "Title": [
+        "Başlık"
+      ],
+      "Two-factor authentication": [
+        "İki adımlı doğrulama"
+      ],
+      "Upcoming meetings": [
+        "Yaklaşan görüşmeler"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Bugün"
+      ]
+    },
+    "Tooltip": {
+      "Blur background": [
+        "Arka planı bulanıklaştır"
+      ],
+      "Blur background is not supported on your browser": [
+        "Tarayıcınız arka plan bulanıklaştırmayı desteklemiyor"
+      ],
+      "Recurring meeting": [
+        "Yinelenen görüşme"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır",
+        "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)",
+        "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Wallet sorunu"
+      ]
+    },
+    "Warning": {
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        "Ne yazık ki, şu anca çevrim içi değiliz. Lütfen sorununuzu aktarmak için aşağıdaki formu doldurun. Yeniden çevrim içi olduğumuzda inceleyip size geri döneceğiz."
+      ]
+    }
+  }
+}

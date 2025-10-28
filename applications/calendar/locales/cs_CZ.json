@@ -239,17 +239,23 @@
       "Create": [
         "Vytvořit"
       ],
+      "Create a booking page": [
+        "Vytvořit rezervační stránku"
+      ],
       "Create a new bookings page": [
         "Vytvořit novou stránku rezervací"
       ],
       "Create a new contact group": [
         "Vytvořit novou skupinu kontaktů"
       ],
+      "Create an event": [
+        "Vytvořit událost"
+      ],
       "Create and copy alias": [
         "Vytvořit a kopírovat alias"
       ],
       "Create booking page": [
-        "Vytvořit stránku rezervace"
+        "Vytvořit rezervační stránku"
       ],
       "Create calendar": [
         "Vytvořit kalendář"
@@ -484,6 +490,9 @@
       ],
       "Increase": [
         "Zvýšit"
+      ],
+      "Join ${ CALENDAR_APP_NAME }": [
+        "Připojit se k ${ CALENDAR_APP_NAME }"
       ],
       "Join calendar": [
         "Připojit ke kalendáři"
@@ -1416,6 +1425,87 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Úložný prostor je sdílen mezi všemi službami ${ BRAND_NAME }."
+      ]
+    },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "Výprodej Black Friday"
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB datové úložiště"
+      ],
+      "3 TB data storage": [
+        "3 TB datové úložiště"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Přístup k 15 000+ serverům ve 120+ zemích"
+      ],
+      "Access advanced AI models": [
+        "Přístup k pokročilým modelům AI"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všechny prémiové funkce ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blokování reklam, sledovacích prvků a malwaru"
+      ],
+      "Built-in 2FA authenticator": [
+        "Vestavěné 2FA ověřování"
+      ],
+      "Connect 10 devices at once": [
+        "Připojte 10 zařízení najednou"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Plná historie chatu s jednoduchým vyhledáváním a oblíbenými položkami"
+      ],
+      "Individual accounts for 6 users": [
+        "Individuální účty pro 6 uživatelů"
+      ],
+      "Individual accounts for you and a partner": [
+        "Individuální účty pro vás a partnera"
+      ],
+      "Stronger protection against cyber threats": [
+        "Silnější ochrana proti kybernetickým hrozbám"
+      ],
+      "Unlimited daily chats": [
+        "Neomezený denní limit konverzací"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Pomozte svým blízkým připojit se k revoluci v oblasti soukromí s našimi nejvýhodnějšími balíčky, nyní s 50% slevou!"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Připojte se k revoluci v oblasti soukromí s našimi nejvýhodnějšími balíčky, nyní s 50% slevou!"
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "na ${ durationDeal }"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "Ušetřete ${ savedAmount } s naší nejvýhodnější, časově omezenou nabídkou!"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "Přejděte na náš dvouletý tarif a ušetřete ${ savedAmount }!"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "Přejděte na náš roční tarif a ušetřete ${ savedAmount }!"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "Dopřejte svým blízkým kompletní digitální ochranu."
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield chrání vaše zařízení a zrychluje prohlížení tím, že blokuje reklamy, sledovací prvky a malware."
       ]
     },
     "Billing cycle option": {
@@ -3291,16 +3381,16 @@
       ]
     },
     "Duo offer: Link": {
-      "Double your storage": [
-        "Zdvojnásobte své úložiště"
+      "Get 4x more storage": [
+        "Získat 4x více prostoru"
       ],
       "Share your plan": [
         "Sdílejte svůj tarif"
       ]
     },
     "Duo offer: Title": {
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Zdvojnásobte své úložiště s ${ BRAND_NAME } Duo"
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "Získejte 4x více prostoru s ${ BRAND_NAME } Duo"
       ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
         "Sdílejte výhody svého tarifu s ${ BRAND_NAME } Duo"
@@ -4993,6 +5083,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
       ],
+      "${ booking.duration } min duration": [
+        "${ booking.duration } min. doba trvání"
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistent psaní ${ BRAND_NAME } Scribe"
       ],
@@ -5165,7 +5258,7 @@
         "30denní záruka vrácení peněz."
       ],
       "A booking slot cannot be added in the past.": [
-        "Rezervační termín nelze přidat do minulosti"
+        "Rezervační termín nelze přidat do minulosti."
       ],
       "A cancellation email will be sent to removed participants.": [
         "Odebraným účastníkům bude zaslán e-mail o zrušení účasti."
@@ -5671,6 +5764,9 @@
       "Learn what to do ${ dataLeakedLink }": [
         "Zjistěte, co dělat, ${ dataLeakedLink }"
       ],
+      "Let others book time with you automatically. No back-and-forth emails. Share a link, and stay in control of your availability.": [
+        "Umožněte ostatním automaticky si s vámi zarezervovat čas. Žádné zdlouhavé e-maily. Sdílejte odkaz a mějte kontrolu nad svou dostupností."
+      ],
       "Link copied to clipboard": [
         "Odkaz zkopírován do schránky"
       ],
@@ -6129,6 +6225,9 @@
       ],
       "VPN IP": [
         "VPN IP"
+      ],
+      "Want to create your own booking page?": [
+        "Chcete si vytvořit vlastní rezervační stránku?"
       ],
       "Warning": [
         "Varování"
@@ -6674,6 +6773,9 @@
       "Billing cycle": [
         "Fakturační období"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Browser": [
         "Prohlížeč"
       ],
@@ -6838,6 +6940,9 @@
       ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "Využít nabídku"
       ],
       "Hide password": [
         "Skrýt heslo"
@@ -9198,6 +9303,9 @@
       "Advanced account protection": [
         "Pokročilá ochrana účtu"
       ],
+      "File attachments (up to 10GB)": [
+        "Přílohy souborů (až 10 GB)"
+      ],
       "Team policies": [
         "Týmové zásady"
       ]
@@ -9340,6 +9448,21 @@
         "Kupón je platný pro ${ couponRedemptions } obnovení.",
         "Kupón je platný pro ${ couponRedemptions } obnovení."
       ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "Speciální zvýhodněná cena platí pro první ${ subscriptionLength } měsíc.",
+        "Speciální zvýhodněná cena platí pro první ${ subscriptionLength } měsíce.",
+        "Speciální zvýhodněná cena platí pro prvních ${ subscriptionLength } měsíců.",
+        "Speciální zvýhodněná cena platí pro prvních ${ subscriptionLength } měsíců."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Speciální zvýhodněná cena platí první měsíc. Kupón je platný pro ${ couponRedemptions } obnovení. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Předplatné můžete kdykoli zrušit.",
+        "Speciální zvýhodněná cena platí první měsíc. Kupón je platný pro ${ couponRedemptions } obnovení. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Předplatné můžete kdykoli zrušit.",
+        "Speciální zvýhodněná cena platí první měsíc. Kupón je platný pro ${ couponRedemptions } obnovení. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Předplatné můžete kdykoli zrušit.",
+        "Speciální zvýhodněná cena platí první měsíc. Kupón je platný pro ${ couponRedemptions } obnovení. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Předplatné můžete kdykoli zrušit."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Speciální zvýhodněná cena platí první měsíc. Poté dojde každý měsíc k automatickému obnovení za ${ renewPriceStr }. Předplatné můžete kdykoli zrušit."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Speciální zvýhodněná cena ${ priceWithDiscount } platí pro první ${ subscriptionLength } měsíc.",
         "Speciální zvýhodněná cena ${ priceWithDiscount } platí pro první ${ subscriptionLength } měsíce.",
@@ -9393,6 +9516,9 @@
       ],
       "Your payment is still being processed": [
         "Vaše platba se stále zpracovává"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+        "Vaše předplatné má v současné době slevu. Přechodem na tuto novou akci bude stávající sleva zrušena."
       ]
     },
     "Payments.Error": {
@@ -11621,9 +11747,6 @@
       "Does not repeat": [
         "Neopakovat"
       ],
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Zdvojnásobte své úložiště s ${ BRAND_NAME } Duo"
-      ],
       "Downgrade account": [
         "Snížit úroveň účtu"
       ],
@@ -11867,6 +11990,9 @@
       "Reactivate calendar keys": [
         "Znovu aktivovat klíče kalendáře"
       ],
+      "Ready to automate your scheduling?": [
+        "Jste připraveni automatizovat své plánování?"
+      ],
       "Recommended": [
         "Doporučeno"
       ],
@@ -12002,6 +12128,12 @@
       "Summary": [
         "Shrnutí"
       ],
+      "This booking page does not exist": [
+        "Tato rezervační stránka neexistuje"
+      ],
+      "This booking page has expired": [
+        "Tato rezervační stránka vypršela"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Zapnout ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -12021,7 +12153,7 @@
         "Navýšit na ${ planName }"
       ],
       "Upgrade to keep your premium benefits.": [
-        "Navyšte tarif a zachovejte si své prémiové výhody"
+        "Navyšte tarif pro zachování prémiových výhod."
       ],
       "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
         "Vylepšete svou produktivitu jen za ${ formattedPrice } s ${ planName }"

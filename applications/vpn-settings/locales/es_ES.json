@@ -1497,20 +1497,8 @@
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "Aprovecha el Black Friday para contratar una VPN suiza de alta velocidad al mejor precio"
       ],
-      "Save with Cyber Week deals on a high-speed Swiss VPN": [
-        "Aprovecha la Cyber Week para contratar una VPN suiza de alta velocidad al mejor precio"
-      ],
-      "Save with End of Year deals on a high-speed Swiss VPN": [
-        "Aprovecha las ofertas de fin de año para contratar una VPN suiza de alta velocidad al mejor precio"
-      ],
       "Select your Black Friday offer": [
         "Selecciona tu oferta de Black Friday"
-      ],
-      "Select your Cyber Week offer": [
-        "Selecciona tu oferta de Cyber Week"
-      ],
-      "Select your End of Year offer": [
-        "Selecciona tu oferta de fin de año"
       ]
     },
     "bf2023: info": {
@@ -1612,6 +1600,87 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "El espacio de almacenamiento se distribuye entre todos los servicios de ${ BRAND_NAME }."
+      ]
+    },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "Rebajas de Black Friday"
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB de almacenamiento de datos"
+      ],
+      "3 TB data storage": [
+        "3 TB de almacenamiento de datos"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Acceso a más de 15 000 servidores en más de 120 países"
+      ],
+      "Access advanced AI models": [
+        "Acceso a modelos de IA avanzados"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Todas las funciones prémium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Block ads, trackers, and malware": [
+        "Bloquea anuncios, rastreadores y malware"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autenticador de 2FA integrado"
+      ],
+      "Connect 10 devices at once": [
+        "Conecta 10 dispositivos a la vez"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Historial de chat completo con búsqueda fácil y favoritos"
+      ],
+      "Individual accounts for 6 users": [
+        "Cuentas individuales para 6 usuarios"
+      ],
+      "Individual accounts for you and a partner": [
+        "Cuentas individuales para ti y otra persona"
+      ],
+      "Stronger protection against cyber threats": [
+        "Mayor protección contra las ciberamenazas"
+      ],
+      "Unlimited daily chats": [
+        "Chats diarios ilimitados"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "¡Ayuda a tus seres queridos a unirse a la revolución de la privacidad con nuestros paquetes de mejor valor, ahora con un 50 % de descuento!"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "¡Únete a la revolución de la privacidad con nuestros paquetes de mejor valor, ahora con un 50 % de descuento!"
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "durante ${ durationDeal }"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "¡Ahorra ${ savedAmount } con nuestra mejor oferta por tiempo limitado!"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "¡Pásate a nuestro plan de 2 años y ahorra ${ savedAmount }!"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "¡Pásate a nuestro plan anual y ahorra ${ savedAmount }!"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "Regala a los tuyos una protección digital completa."
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "La tecnología NetShield tiene como fin proteger tus dispositivos y que puedas navegar mucho más rápido bloqueando anuncios, rastreadores y malware."
       ]
     },
     "Billing cycle": {
@@ -3398,6 +3467,16 @@
         "Solamente"
       ]
     },
+    "Duo offer: Link": {
+      "Get 4x more storage": [
+        "Obtén 4 veces más almacenamiento"
+      ]
+    },
+    "Duo offer: Title": {
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "Obtén 4 veces más almacenamiento con ${ BRAND_NAME } Duo"
+      ]
+    },
     "Easy switch": {
       "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
         "Para reenviar correos electrónicos de hasta ${ MAX_SYNC_PAID_USER } cuenta, mejora a ${ planName }.",
@@ -3672,6 +3751,9 @@
       ],
       "Error publishing changes": [
         "Error al publicar los cambios"
+      ],
+      "Failed to add group member": [
+        "No se pudo añadir miembro al grupo"
       ],
       "Failed to load the STL preview": [
         "Error al cargar la vista previa STL"
@@ -8921,6 +9003,11 @@
         "Activar ${ reason }"
       ]
     },
+    "lumo_signup_2025: Info": {
+      "Protect your entire business. Get ${ LUMO_SHORT_APP_NAME } Professional with all ${ BRAND_NAME } for Business apps and premium features.": [
+        "Protege todo tu negocio. Obtén ${ LUMO_SHORT_APP_NAME } Profesional con todas las aplicaciones ${ BRAND_NAME } para Empresas y funciones prémium."
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Importar todos los mensajes de ${ itemsToImportCount } carpeta y etiquetarlos como",
@@ -10147,9 +10234,6 @@
       ]
     },
     "Notification": {
-      "${ MEET_APP_NAME } video conferencing settings have been updated": [
-        "Se han actualizado los ajustes de videoconferencia de ${ MEET_APP_NAME }"
-      ],
       "${ reason } has been disabled": [
         "Se ha desactivado ${ reason }."
       ],
@@ -11339,96 +11423,6 @@
       ],
       "Unknown": [
         "Desconocido"
-      ]
-    },
-    "q3campaign_2025: Action": {
-      "END-OF-SUMMER SALE": [
-        "OFERTA DE FINAL DE VERANO"
-      ],
-      "Get the deal": [
-        "Aprovecha la oferta"
-      ]
-    },
-    "q3campaign_2025: Info": {
-      "${ discountPercent }% off": [
-        "-${ discountPercent }%"
-      ],
-      "${ normalPricePerMonth } /month": [
-        "${ normalPricePerMonth } /mes"
-      ],
-      "/month": [
-        "/mes"
-      ],
-      "1 TB data storage": [
-        "1 TB de almacenamiento de datos"
-      ],
-      "15 GB storage": [
-        "15 GB de espacio de almacenamiento"
-      ],
-      "200 GB storage for files, photos & docs": [
-        "200 GB de almacenamiento para archivos, fotos y documentos"
-      ],
-      "3 TB data storage": [
-        "3 TB de almacenamiento de datos"
-      ],
-      "500 GB storage": [
-        "500 GB de almacenamiento"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Acceso a más de 15 000 servidores en más de 120 países"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Todas las funciones prémium de Mail, Pass, Drive, VPN y Calendar"
-      ],
-      "Built-in 2FA authenticator": [
-        "Autenticador de 2FA integrado"
-      ],
-      "Connect 10 devices at once": [
-        "Conecta 10 dispositivos a la vez"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Los descuentos se basan en el precio mensual estándar. Tu suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
-      ],
-      "Enjoy the fastest VPN speeds": [
-        "Disfruta de las velocidades de VPN más rápidas"
-      ],
-      "Individual accounts for 6 users": [
-        "Cuentas individuales para 6 usuarios"
-      ],
-      "Individual accounts for you and a partner": [
-        "Cuentas individuales para ti y otra persona"
-      ],
-      "Online document editor": [
-        "Editor de documentos online"
-      ],
-      "Recover previous file versions": [
-        "Recupera las versiones previas de los archivos"
-      ],
-      "Save ${ totalSavings } and keep all your current features!": [
-        "¡Ahorra ${ totalSavings } y conserva todas tus funciones actuales!"
-      ],
-      "Secure link, vault & item sharing": [
-        "Uso compartido seguro de enlaces, cajas fuertes y elementos"
-      ],
-      "Stronger protection against cyber threats": [
-        "Mayor protección contra las ciberamenazas"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Carpetas, etiquetas y filtros ilimitados"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Número ilimitado de alias de hide-my-email"
-      ],
-      "Use your own email domain": [
-        "Usa tu propio dominio de correo electrónico"
-      ]
-    },
-    "q3campaign_2025: Title": {
-      "End-of-summer sale": [
-        "Oferta de final de verano"
-      ],
-      "for 12 months": [
-        "durante 12 meses"
       ]
     },
     "Recovery Email": {
@@ -14094,9 +14088,6 @@
       "Domain names": [
         "Nombres de dominio"
       ],
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Duplica tu almacenamiento con ${ BRAND_NAME } Duo"
-      ],
       "Downgrade account": [
         "Pasar a un plan inferior"
       ],
@@ -14631,9 +14622,6 @@
       "Verifying your payment...": [
         "Verificando tu pago..."
       ],
-      "Video conferencing with ${ MEET_APP_NAME }": [
-        "Videoconferencias con ${ MEET_APP_NAME }"
-      ],
       "Video conferencing with Zoom": [
         "Videoconferencia por Zoom"
       ],
@@ -14872,6 +14860,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: Asistente de IA que respeta tu privacidad"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Inicio de sesión seguro en todos tus dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
       ],

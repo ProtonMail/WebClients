@@ -691,6 +691,163 @@
         "Вставить изображение поверх ячеек"
       ]
     },
+    "sheets_2025:Color picker": {
+      "Add custom color": [
+        "Добавить пользовательский цвет"
+      ],
+      "Color picker tool": [
+        "Инструмент выбора цвета"
+      ],
+      "No recent colors": [
+        "Нет недавних цветов"
+      ],
+      "Recent colors": [
+        "Недавние цвета"
+      ],
+      "Reset": [
+        "Сбросить"
+      ],
+      "Standard colors": [
+        "Стандартные цвета"
+      ],
+      "Theme colors (Office)": [
+        "Цвета темы (Office)"
+      ]
+    },
+    "sheets_2025:Range selector menu": {
+      "Add new": [
+        "Добавить новый"
+      ],
+      "Named ranges": [
+        "Именованные диапазоны"
+      ],
+      "Sheets": [
+        "Листы"
+      ],
+      "Tables": [
+        "Таблицы"
+      ]
+    },
+    "sheets_2025:Sheet context menu": {
+      "Change color": [
+        "Изменить цвет"
+      ],
+      "Delete": [
+        "Удалить"
+      ],
+      "Duplicate": [
+        "Дублировать"
+      ],
+      "Hide sheet": [
+        "Скрыть лист"
+      ],
+      "Lock sheet": [
+        "Защитить лист"
+      ],
+      "Move left": [
+        "Переместить влево"
+      ],
+      "Move right": [
+        "Переместить вправо"
+      ],
+      "Rename": [
+        "Переименовать"
+      ],
+      "Unlock sheet": [
+        "Снять защиту с листа"
+      ]
+    },
+    "sheets_2025:Sheet switcher": {
+      "Hidden sheets": [
+        "Скрытые листы"
+      ],
+      "No sheets available": [
+        "Нет доступных листов"
+      ],
+      "Show": [
+        "Показать"
+      ],
+      "Visible sheets": [
+        "Видимые листы"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor": {
+      "Cannot delete all columns": [
+        "Невозможно удалить все столбцы"
+      ],
+      "Cannot delete all rows": [
+        "Невозможно удалить все строки"
+      ],
+      "Find in sheet": [
+        "Найти на листе"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar data menu": {
+      "Create a filter": [
+        "Создать фильтр"
+      ],
+      "Data validation": [
+        "Проверка данных"
+      ],
+      "Protect range": [
+        "Защитить диапазон"
+      ],
+      "Remove filter": [
+        "Удалить фильтр"
+      ],
+      "Sort sheet": [
+        "Сортировать лист"
+      ],
+      "Unlock range": [
+        "Разблокировать диапазон"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar data menu (sort submenu)": {
+      "(A to Z)": [
+        "(От А до Я)"
+      ],
+      "(Z to A)": [
+        "(От Я до А)"
+      ],
+      "column ${ columnLetter }": [
+        "столбцу ${ columnLetter }"
+      ],
+      "Sort sheet by": [
+        "Сортировать лист по"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar edit menu": {
+      "Copy": [
+        "Копировать"
+      ],
+      "Cut": [
+        "Вырезать"
+      ],
+      "Find": [
+        "Найти"
+      ],
+      "Formatting only": [
+        "Только форматирование"
+      ],
+      "Paste": [
+        "Вставить"
+      ],
+      "Paste special": [
+        "Специальная вставка"
+      ],
+      "Redo": [
+        "Повторить"
+      ],
+      "Transposed": [
+        "Транспонировать"
+      ],
+      "Undo": [
+        "Отменить"
+      ],
+      "Values only": [
+        "Только значения"
+      ]
+    },
     "sheets_2025:Spreadsheet editor menubar file menu": {
       "Comma Separated Values (.csv)": [
         "Значения, разделённые запятыми (.csv)"
@@ -738,6 +895,87 @@
         "Просмотреть недавние электронные таблицы"
       ]
     },
+    "sheets_2025:Spreadsheet editor menubar format menu": {
+      "Alignment": [
+        "Выравнивание"
+      ],
+      "Bold": [
+        "Полужирный"
+      ],
+      "Cell styles": [
+        "Стили ячеек"
+      ],
+      "Clear": [
+        "Очистить"
+      ],
+      "Clear content": [
+        "Очистить содержимое"
+      ],
+      "Clear formatting": [
+        "Очистить форматирование"
+      ],
+      "Conditional formatting": [
+        "Условное форматирование"
+      ],
+      "Font size": [
+        "Размер шрифта"
+      ],
+      "Italic": [
+        "Курсив"
+      ],
+      "Number": [
+        "Числовой"
+      ],
+      "Strikethrough": [
+        "Зачеркивание"
+      ],
+      "Table formatting": [
+        "Форматирование таблицы"
+      ],
+      "Text": [
+        "Текст"
+      ],
+      "Theme": [
+        "Тема"
+      ],
+      "Underline": [
+        "Подчёркнутый"
+      ],
+      "Wrapping": [
+        "Перенос текста"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar format menu (alignment)": {
+      "Bottom": [
+        "Внизу"
+      ],
+      "Center": [
+        "Центрировать"
+      ],
+      "Left": [
+        "По левому краю"
+      ],
+      "Middle": [
+        "Посередине"
+      ],
+      "Right": [
+        "По правому краю"
+      ],
+      "Top": [
+        "Сверху"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar format menu (wrapping)": {
+      "Clip": [
+        "Обрезать"
+      ],
+      "Overflow": [
+        "Переполнение"
+      ],
+      "Wrap": [
+        "Перенос"
+      ]
+    },
     "sheets_2025:Spreadsheet editor menubar insert menu": {
       "Cells": [
         "Ячейки"
@@ -745,26 +983,29 @@
       "Chart": [
         "Диаграмма"
       ],
+      "Checkbox": [
+        "Флажок"
+      ],
       "Columns": [
         "Столбцы"
       ],
-      "Insert 1 column left": [
-        "Вставить 1 столбец слева"
+      "Dropdown": [
+        "Раскрывающийся список"
       ],
-      "Insert 1 column right": [
-        "Вставить 1 столбец справа"
+      "Function": [
+        "Функция"
       ],
-      "Insert 1 row above": [
-        "Вставить 1 строку выше"
-      ],
-      "Insert 1 row below": [
-        "Вставить 1 строку ниже"
+      "Image": [
+        "Изображение"
       ],
       "Insert cells and shift down": [
         "Вставить ячейки и сдвинуть вниз"
       ],
       "Insert cells and shift right": [
         "Вставить ячейки и сдвинуть вправо"
+      ],
+      "Link": [
+        "Ссылка"
       ],
       "Note": [
         "Заметка"
@@ -777,16 +1018,138 @@
       ]
     },
     "sheets_2025:Spreadsheet editor menubar title": {
+      "Data": [
+        "Данные"
+      ],
+      "Edit": [
+        "Изменить"
+      ],
       "File": [
         "Файл"
       ],
+      "Format": [
+        "Форматировать"
+      ],
       "Insert": [
         "Вставить"
+      ],
+      "View": [
+        "Вид"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar view menu": {
+      "Formula bar": [
+        "Строка формул"
+      ],
+      "Freeze": [
+        "Закрепить"
+      ],
+      "Gridlines": [
+        "Линии сетки"
+      ],
+      "Show": [
+        "Показать"
+      ],
+      "Zoom": [
+        "Приблизить"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar view menu (freeze submenu)": {
+      "column ${ columnLetter }": [
+        "столбца ${ columnLetter }"
+      ],
+      "row ${ rowNumber }": [
+        "строки ${ rowNumber }"
+      ],
+      "Up to": [
+        "До"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor number formats menu": {
+      "$ US Dollar": [
+        "$ Доллар США"
+      ],
+      "Accounting": [
+        "Бухгалтерия"
+      ],
+      "CN¥ Chinese Yuan": [
+        "CN¥ Китайский юань"
+      ],
+      "Currency": [
+        "Валюта"
+      ],
+      "Currency rounded": [
+        "Округленная валюта"
+      ],
+      "Date": [
+        "Дата"
+      ],
+      "Date time": [
+        "Дата и время"
+      ],
+      "Duration": [
+        "Продолжительность"
+      ],
+      "Financial": [
+        "Финансовый"
+      ],
+      "General": [
+        "Общие вопросы"
+      ],
+      "Long date": [
+        "Полная дата"
+      ],
+      "More currency": [
+        "Другие валюты"
+      ],
+      "Number": [
+        "Числовой"
+      ],
+      "Percent": [
+        "Процентный"
+      ],
+      "Plain text": [
+        "Простой текст"
+      ],
+      "Scientific": [
+        "Научный"
+      ],
+      "Time": [
+        "Время"
+      ],
+      "£ Pound": [
+        "£ Фунт"
+      ],
+      "¥ Yen": [
+        "¥ Иена"
+      ],
+      "€ Euro": [
+        "€ Евро"
+      ],
+      "₹ Rupee": [
+        "₹ Рупия"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor search dialog": {
+      "Close": [
+        "Закрыть"
+      ],
+      "Go to next": [
+        "Следующее"
+      ],
+      "Go to previous": [
+        "Предыдущее"
       ]
     },
     "sheets_2025:Spreadsheet editor toolbar": {
       "Bold": [
         "Полужирный"
+      ],
+      "Border": [
+        "Границы"
+      ],
+      "Chart": [
+        "Диаграмма"
       ],
       "Clear formatting": [
         "Очистить форматирование"
@@ -800,11 +1163,26 @@
       "Default (${ defaultFont })": [
         "По умолчанию (${ defaultFont })"
       ],
+      "Fill color": [
+        "Цвет заливки"
+      ],
+      "Find": [
+        "Найти"
+      ],
+      "Font": [
+        "Шрифт"
+      ],
+      "Font size": [
+        "Размер шрифта"
+      ],
       "Format as currency": [
         "Форматировать как валюту"
       ],
       "Format as percent": [
         "Форматировать как процент"
+      ],
+      "Horizontal align": [
+        "Горизонтальное выравнивание"
       ],
       "Increase decimal places": [
         "Увеличить количество знаков после запятой"
@@ -812,11 +1190,29 @@
       "Increase font size": [
         "Увеличить размер шрифта"
       ],
+      "Insert chart": [
+        "Вставить диаграмму"
+      ],
+      "Insert link": [
+        "Вставить ссылку"
+      ],
+      "Insert note": [
+        "Вставить примечание"
+      ],
       "Italic": [
         "Курсив"
       ],
+      "Merge cells": [
+        "Объединить ячейки"
+      ],
+      "More": [
+        "Еще"
+      ],
       "More formats": [
         "Другие форматы"
+      ],
+      "Paint format": [
+        "Формат по образцу"
       ],
       "Redo": [
         "Повторить"
@@ -824,11 +1220,74 @@
       "Strikethrough": [
         "Зачеркивание"
       ],
+      "Text color": [
+        "Цвет текста"
+      ],
+      "Text wrapping": [
+        "Перенос текста"
+      ],
       "Underline": [
         "Подчёркнутый"
       ],
       "Undo": [
         "Отменить"
+      ],
+      "Vertical align": [
+        "Вертикальное выравнивание"
+      ],
+      "Zoom": [
+        "Приблизить"
+      ]
+    },
+    "sheets_2025:Spreadsheet insert link dialog": {
+      "Apply": [
+        "Применить"
+      ],
+      "Cancel": [
+        "Отмена"
+      ],
+      "Insert link": [
+        "Вставить ссылку"
+      ],
+      "Paste link": [
+        "Вставить ссылку"
+      ]
+    },
+    "sheets_2025:Spreadsheet link tooltip": {
+      "Copy link": [
+        "Скопировать ссылку"
+      ],
+      "Edit link": [
+        "Изменить ссылку"
+      ],
+      "Link copied to clipboard": [
+        "Ссылка скопирована в буфер обмена"
+      ],
+      "Link removed": [
+        "Ссылка удалена"
+      ],
+      "Remove link": [
+        "Удалить ссылку"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar conditional format dialog close": {
+      "Close": [
+        "Закрыть"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar conditional format dialog delete range": {
+      "Delete range": [
+        "Удалить диапазон"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar conditional format dialog delete rule": {
+      "Delete rule": [
+        "Удалить правило"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar named ranges dialog delete range": {
+      "Delete named range": [
+        "Удалить именованный диапазон"
       ]
     },
     "Title": {

@@ -1512,20 +1512,8 @@
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "Ušetřete na vysokorychlostní švýcarské VPN s nabídkami Black Friday"
       ],
-      "Save with Cyber Week deals on a high-speed Swiss VPN": [
-        "Ušetřete díky nabídkám Cyber Week na vysokorychlostní švýcarské VPN"
-      ],
-      "Save with End of Year deals on a high-speed Swiss VPN": [
-        "Ušetřete díky nabídkám End of Year na vysokorychlostní švýcarské VPN"
-      ],
       "Select your Black Friday offer": [
         "Vyberte si nabídku Black Friday"
-      ],
-      "Select your Cyber Week offer": [
-        "Vyberte si nabídku Cyber Week"
-      ],
-      "Select your End of Year offer": [
-        "Vyberte si nabídku na End of Year"
       ]
     },
     "bf2023: info": {
@@ -1642,6 +1630,87 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Úložný prostor je sdílen mezi všemi službami ${ BRAND_NAME }."
+      ]
+    },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "Výprodej Black Friday"
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB datové úložiště"
+      ],
+      "3 TB data storage": [
+        "3 TB datové úložiště"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Přístup k 15 000+ serverům ve 120+ zemích"
+      ],
+      "Access advanced AI models": [
+        "Přístup k pokročilým modelům AI"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všechny prémiové funkce ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blokování reklam, sledovacích prvků a malwaru"
+      ],
+      "Built-in 2FA authenticator": [
+        "Vestavěné 2FA ověřování"
+      ],
+      "Connect 10 devices at once": [
+        "Připojte 10 zařízení najednou"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Plná historie chatu s jednoduchým vyhledáváním a oblíbenými položkami"
+      ],
+      "Individual accounts for 6 users": [
+        "Individuální účty pro 6 uživatelů"
+      ],
+      "Individual accounts for you and a partner": [
+        "Individuální účty pro vás a partnera"
+      ],
+      "Stronger protection against cyber threats": [
+        "Silnější ochrana proti kybernetickým hrozbám"
+      ],
+      "Unlimited daily chats": [
+        "Neomezený denní limit konverzací"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Pomozte svým blízkým připojit se k revoluci v oblasti soukromí s našimi nejvýhodnějšími balíčky, nyní s 50% slevou!"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Připojte se k revoluci v oblasti soukromí s našimi nejvýhodnějšími balíčky, nyní s 50% slevou!"
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "na ${ durationDeal }"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "Ušetřete ${ savedAmount } s naší nejvýhodnější, časově omezenou nabídkou!"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "Přejděte na náš dvouletý tarif a ušetřete ${ savedAmount }!"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "Přejděte na náš roční tarif a ušetřete ${ savedAmount }!"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "Dopřejte svým blízkým kompletní digitální ochranu."
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield chrání vaše zařízení a zrychluje prohlížení tím, že blokuje reklamy, sledovací prvky a malware."
       ]
     },
     "Billing cycle": {
@@ -3442,16 +3511,16 @@
       ]
     },
     "Duo offer: Link": {
-      "Double your storage": [
-        "Zdvojnásobte své úložiště"
+      "Get 4x more storage": [
+        "Získat 4x více prostoru"
       ],
       "Share your plan": [
         "Sdílejte svůj tarif"
       ]
     },
     "Duo offer: Title": {
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Zdvojnásobte své úložiště s ${ BRAND_NAME } Duo"
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "Získejte 4x více prostoru s ${ BRAND_NAME } Duo"
       ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
         "Sdílejte výhody svého tarifu s ${ BRAND_NAME } Duo"
@@ -3739,6 +3808,9 @@
       ],
       "Error publishing changes": [
         "Chyba zveřejňování změn"
+      ],
+      "Failed to add group member": [
+        "Přidání člena skupiny selhalo"
       ],
       "Failed to load the STL preview": [
         "Načtení náhledu STL selhalo"
@@ -8162,6 +8234,9 @@
       "Billing cycle": [
         "Fakturační období"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Block": [
         "Blokovat"
       ],
@@ -8380,6 +8455,9 @@
       ],
       "Gateway name": [
         "Název brány"
+      ],
+      "Get the deal": [
+        "Využít nabídku"
       ],
       "Gift code": [
         "Dárkový kód"
@@ -10455,9 +10533,6 @@
       ]
     },
     "Notification": {
-      "${ MEET_APP_NAME } video conferencing settings have been updated": [
-        "Nastavení videokonference ${ MEET_APP_NAME } byla aktualizována"
-      ],
       "${ reason } has been disabled": [
         "${ reason } byl deaktivován"
       ],
@@ -11046,6 +11121,9 @@
       "Advanced account protection": [
         "Pokročilá ochrana účtu"
       ],
+      "File attachments (up to 10GB)": [
+        "Přílohy souborů (až 10 GB)"
+      ],
       "Team policies": [
         "Týmové zásady"
       ]
@@ -11274,6 +11352,21 @@
         "Kupón je platný pro ${ couponRedemptions } obnovení.",
         "Kupón je platný pro ${ couponRedemptions } obnovení."
       ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "Speciální zvýhodněná cena platí pro první ${ subscriptionLength } měsíc.",
+        "Speciální zvýhodněná cena platí pro první ${ subscriptionLength } měsíce.",
+        "Speciální zvýhodněná cena platí pro prvních ${ subscriptionLength } měsíců.",
+        "Speciální zvýhodněná cena platí pro prvních ${ subscriptionLength } měsíců."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Speciální zvýhodněná cena platí první měsíc. Kupón je platný pro ${ couponRedemptions } obnovení. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Předplatné můžete kdykoli zrušit.",
+        "Speciální zvýhodněná cena platí první měsíc. Kupón je platný pro ${ couponRedemptions } obnovení. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Předplatné můžete kdykoli zrušit.",
+        "Speciální zvýhodněná cena platí první měsíc. Kupón je platný pro ${ couponRedemptions } obnovení. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Předplatné můžete kdykoli zrušit.",
+        "Speciální zvýhodněná cena platí první měsíc. Kupón je platný pro ${ couponRedemptions } obnovení. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Předplatné můžete kdykoli zrušit."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Speciální zvýhodněná cena platí první měsíc. Poté dojde každý měsíc k automatickému obnovení za ${ renewPriceStr }. Předplatné můžete kdykoli zrušit."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Speciální zvýhodněná cena ${ priceWithDiscount } platí pro první ${ subscriptionLength } měsíc.",
         "Speciální zvýhodněná cena ${ priceWithDiscount } platí pro první ${ subscriptionLength } měsíce.",
@@ -11333,6 +11426,9 @@
       ],
       "Your payment is still being processed": [
         "Vaše platba se stále zpracovává"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+        "Vaše předplatné má v současné době slevu. Přechodem na tuto novou akci bude stávající sleva zrušena."
       ]
     },
     "Payments.Error": {
@@ -12564,6 +12660,11 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Sdílel/a ${ ownerName }"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "Otevřít v ${ appName }"
       ]
     },
     "Signup": {
@@ -14478,9 +14579,6 @@
       "Domain names": [
         "Názvy domén"
       ],
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Zdvojnásobte své úložiště s ${ BRAND_NAME } Duo"
-      ],
       "Downgrade account": [
         "Downgrade účtu"
       ],
@@ -14977,7 +15075,7 @@
         "Navýšit na ${ planName }"
       ],
       "Upgrade to keep your premium benefits.": [
-        "Navyšte tarif a zachovejte si své prémiové výhody"
+        "Navyšte tarif pro zachování prémiových výhod."
       ],
       "Upgrade your network protection with dedicated servers": [
         "Vylepšete ochranu své sítě pomocí dedikovaných serverů"
@@ -15023,9 +15121,6 @@
       ],
       "Verifying your payment...": [
         "Ověřování vaší platby..."
-      ],
-      "Video conferencing with ${ MEET_APP_NAME }": [
-        "Videokonference pomocí ${ MEET_APP_NAME }"
       ],
       "Video conferencing with Zoom": [
         "Videokonference s aplikací Zoom"

@@ -1259,6 +1259,9 @@
       "Add unlimited credit cards": [
         "დაამატეთ განუსაზღვრელი რაოდენობის საკრედიტო ბარათი"
       ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "${ BRAND_NAME } Mail, Pass, VPN, Drive და Calendar-ის ყველა ფასიანი ფუნქცია"
+      ],
       "Block ads, trackers, and malware": [
         "რეკლამის, ტრეკერებისა და მავნე პროგრამების დაბლოკვა"
       ],
@@ -1476,20 +1479,8 @@
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "დაზოგეთ შავი პარასკევის ფასდაკლებებით ჩქაროსნულ VPN-ზე"
       ],
-      "Save with Cyber Week deals on a high-speed Swiss VPN": [
-        "დაზოგეთ კიბერკვირის ფასდაკლებებით ჩქაროსნულ VPN-ზე"
-      ],
-      "Save with End of Year deals on a high-speed Swiss VPN": [
-        "დაზოგეთ წლის ბოლოს ფასდაკლებებით ჩქაროსნულ VPN-ზე"
-      ],
       "Select your Black Friday offer": [
         "აირჩიეთ თქვენი შავი პარასკევის შეთავაზება"
-      ],
-      "Select your Cyber Week offer": [
-        "აირჩით თქვენი კიბერკვირის შეთავაზება"
-      ],
-      "Select your End of Year offer": [
-        "აირჩიეთ წლის ბოლოს შეთავაზება"
       ]
     },
     "bf2023: info": {
@@ -1526,6 +1517,9 @@
       "1 user account": [
         "1 მომხმარებლის ანგარიში"
       ],
+      "200 GB storage: 40x your current plan": [
+        "200 გბ საცავი: 40-ჯერ მეტი მიმდინარე სატარიფო გეგმაზე"
+      ],
       "6 user accounts": [
         "6 მომხმარებლის ანგარიში"
       ],
@@ -1547,6 +1541,9 @@
       "Password health alerts": [
         "პაროლის სიმთელის გაფრთხილებები"
       ],
+      "Recover previous file versions": [
+        "წინა ფაილის ვერსიების აღდგენა"
+      ],
       "Unlimited folders, labels and filters": [
         "ულიმიტო საქაღალდეები, ჭდეები და ფილტრები"
       ],
@@ -1560,6 +1557,9 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "გადაიხადეთ ${ amount } ერთხელ"
+      ],
+      "forever": [
+        "სამუდამოდ"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "განახლდება 1 თვეში ფასად ${ regularAmount }."
@@ -1591,6 +1591,35 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "საცავის სივრცე გაზიარებულია ყველა ${ BRAND_NAME }-ის სერვისებს შორის."
+      ]
+    },
+    "BF2025: Deal details": {
+      "Access 15,000+ servers in 120+ countries": [
+        "წვდომა 15,000+ სერვერთან 120+ ქვეყანაში"
+      ],
+      "Block ads, trackers, and malware": [
+        "რეკლამის, ტრეკერებისა და მავნე პროგრამების დაბლოკვა"
+      ],
+      "Built-in 2FA authenticator": [
+        "ჩაშენებული 2FA ავთენტიკატორი"
+      ],
+      "Unlimited daily chats": [
+        "შეუზღუდავი ყოველდღიური ჩატები"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "${ durationDeal }-სთვის"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield-ი იცავს თქვენს მოწყობილობებს და აჩქარებს ინტერნეტში მუშაობას რეკლამების, ტრეკერების და არასასურველი პროგრამების დაბლოკვით."
       ]
     },
     "Billing cycle": {
@@ -1686,6 +1715,9 @@
       ],
       "Application problem": [
         "აპლიკაციის პრობლემა"
+      ],
+      "Black Friday": [
+        "შავი პარასკევი"
       ],
       "Bridge problem": [
         "ხიდის პრობლემა"
@@ -3330,6 +3362,39 @@
         "პრიორიტეტული მხარდაჭერა"
       ]
     },
+    "Duo offer": {
+      "/month": [
+        "/თვეში"
+      ],
+      "1 TB of storage to share": [
+        "1ტბ საცავი გასაზიარებლად"
+      ],
+      "2 user accounts": [
+        "2 მომხმარებლის ანგარიში"
+      ],
+      "All premium features from your current plan": [
+        "ყველა ფასიანი თვისება თქვენი მიმდინარე სატარიფო გეგმიდან"
+      ],
+      "Only": [
+        "მხოლოდ"
+      ]
+    },
+    "Duo offer: Link": {
+      "Get 4x more storage": [
+        "მიიღეთ 4-ჯერ მეტი საცავი"
+      ],
+      "Share your plan": [
+        "გააზიარეთ თქვენი სატარიფო გეგმა"
+      ]
+    },
+    "Duo offer: Title": {
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "მიიღეთ 4x მეტი საცავი ${ BRAND_NAME } Duo-ით"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "გააზიარეთ თქვენი სატარიფო გეგმის უპირატესობები ${ BRAND_NAME } Duo-ისთან ერთად"
+      ]
+    },
     "Easy switch": {
       "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
         "ელფოსტების გადასაგზავნად ${ MAX_SYNC_PAID_USER }-მდე ანგარიშიდან, ასწიეთ სატარიფო გეგმა ${ planName }-ზე.",
@@ -3584,6 +3649,9 @@
       ],
       "Error publishing changes": [
         "ცვლილებების გამოცემის შეცდომა"
+      ],
+      "Failed to add group member": [
+        "ჯგუფის წევრის დამატება ჩავარდა"
       ],
       "Failed to load the STL preview": [
         "STL მინიატურის ჩატვირთვა ჩავარდა"
@@ -4503,8 +4571,14 @@
       "Continue": [
         "გაგრძელება"
       ],
+      "Encrypted cloud storage for files, photos and documents": [
+        "დაშიფრული ღრუბლოვანი საცავი ფაილებისთვის, ფოტოებისა და დოკუმენტებისთვის"
+      ],
       "Fastest VPN servers": [
         "ყველაზე სწრაფი VPN სერვერები"
+      ],
+      "More premium features": [
+        "მეტი ფასიანი ფუნქცია"
       ],
       "Remove": [
         "წაშლა"
@@ -5367,6 +5441,9 @@
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } დამატებითი ანგარიშის დაცვის პროგრამაა, რომელიც რთულ AI სისტემებს ეყრდნობა და გვყავს სპეციალისტები, რომლებიც მუხლჩაუხრელად მუშაობენ, რათა თქვენი უსაფრთხოება არასასურველი პირებისგან დაიცვან."
       ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } დამატებითი ანგარიშის დაცვის პროგრამაა, რომელიც რთულ AI სისტემებს ეყრდნობა და გვყავს სპეციალისტები, რომლებიც მუხლჩაუხრელად მუშაობენ, რათა თქვენი ორგანიზაციის უსაფრთხოება არასასურველი პირებისგან დაიცვან."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } იცავს თქვენს ანგარიშს საეჭვო აქტივობების გამოყოფილი მონიტორინგით."
       ],
@@ -5456,6 +5533,12 @@
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**მიიღეთ ${ BRAND_NAME }-ის მისამართი** ${ BRAND_NAME_TWO }-ის ყველა სერვისის, ${ MAIL_SHORT_APP_NAME }-ის და ${ CALENDAR_SHORT_APP_NAME }-ის ჩათვლით, გამოსაყენებლად."
+      ],
+      "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
+        "**შემოიტანეთ თქვენი არსებული კოდები** სხვა 2FA აპებიდან, მაგალითად Google Authenticator"
+      ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**ნაბიჯი 1:** მოიწვიეთ თქვენი მეგობრები ${ BRAND_NAME }-ზე თქვენი რეფერალი ბმულით."
       ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
         "**ნაბიჯი 2:** თქვენი მეგობრები მიიღებენ 2 კვირას უფასოდ თავიანთ სატარიფო გეგმაზე."
@@ -5631,6 +5714,9 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, წაშალოთ დომენი ${ boldDomain }?"
       ],
+      "Are you sure you want to revoke certificate **${ name }**": [
+        "მართლა გნებავთ, გააუქმოთ სერტიფიკატი **${ name }**"
+      ],
       "Ask your organization admin to setup Gateways.": [
         "სთხოვეთ ორგანიზაციის ადმინისტრატორს, რაუტერები დააყენოს."
       ],
@@ -5697,6 +5783,9 @@
       "Change your password": [
         "შეცვალეთ თქვენი პაროლი"
       ],
+      "Choose a plan that works best for you.": [
+        "აირჩიეთ სატარიფო გეგმა, რომელიც საუკეთესოდ შეგესაბამებათ."
+      ],
       "Choose an Entity ID to continue.": [
         "გასაგრძელებლად აირჩიეთ ობიექტის ID."
       ],
@@ -5720,6 +5809,9 @@
       ],
       "Connection data will be available in around 1 hour.": [
         "მიერთების მონაცემები დაახლოებით 1 საათში იქნება ხელმისაწვდომი"
+      ],
+      "Continue": [
+        "გაგრძელება"
       ],
       "Continue to allow **${ affiliationsText }** from **${ organizationValue.Name }** to join your ${ BRAND_NAME } organization.": [
         "გააგრძელეთ, რომ დაუშვათ **${ affiliationsText }** **${ organizationValue.Name }**-დან, შეუერთდეს თქვენს ორგანიზაციას ${ BRAND_NAME }."
@@ -7021,6 +7113,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "განაახლეთ ახლავე, რომ მიიღოთ პრემიუმ ფუნქციები, პროდუქტები და საცავი სპეციალურ ფასად"
       ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "ასწიეთ სატარიფო გეგმა ${ planTitle }-ის ფუნქციების შესანარჩუნებლად."
+      ],
       "Upgrade to Professional or a higher plan to unlock": [
         "განბლოკვისთვის ასწიეთ სატარიფო გეგმა Professional-ზე, ან უფრო მაღლა"
       ],
@@ -7695,6 +7790,9 @@
       "Billing cycle": [
         "გადახდის პერიოდი"
       ],
+      "Black Friday": [
+        "შავი პარასკევი"
+      ],
       "Block": [
         "დაბლოკილი მისამართები"
       ],
@@ -7913,6 +8011,9 @@
       ],
       "Gateway name": [
         "რაუტერის სახელი"
+      ],
+      "Get the deal": [
+        "ფასდაკლების მიღება"
       ],
       "Gift code": [
         "სასაჩუქრე კოდი"
@@ -8805,6 +8906,9 @@
       "View user sign-in, recovery and security events.": [
         "ნახეთ მომხმარებლის შესვლები, აღდგენის და უსაფრთხოების მოვლენები."
       ],
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "თქვენი უფასო სატესტო ვერსია დასრულდა. ${ nonAutoRenewalAction }"
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "თქვენს უფასო სატესტო ვერსიას ვადა გაუვიდა. მალე ანგარიშთან წვდომა გაგეთიშებათ. ${ action }"
       ]
@@ -9459,6 +9563,9 @@
       "Protect sensitive business information and collaborate securely.": [
         "დაიცავით კონფიდენციალური კომპანიის ინფორმაცია და იმუშავეთ ერთად უსაფრთხოდ."
       ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "დაიცავით თქვენი ოჯახი ${ plusTitle }-ის ფასიანი ფუნქციებით 6 მომხმარებლისთვის."
+      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "დაიცავით თქვენი ოჯახის კონფიდენციალობა ყველა ${ BRAND_NAME }-ის სერვისის ერთად."
       ],
@@ -9915,9 +10022,6 @@
       ]
     },
     "Notification": {
-      "${ MEET_APP_NAME } video conferencing settings have been updated": [
-        "${ MEET_APP_NAME }-ის ვიდეოკონფერენციის პარამეტრები განახლდა"
-      ],
       "${ reason } has been disabled": [
         "${ reason } გაითიშა"
       ],
@@ -10009,11 +10113,17 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }-ის შემოთავაზების ვადა დღეს იწურება!"
       ],
+      "Don't show this again": [
+        "აღარ მაჩვენო"
+      ],
       "Don’t show this again": [
         "აღარ მაჩვენოთ ეს"
       ],
       "Don’t show this offer again": [
         "აღარ მაჩვენო ეს შემოთავაზება"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "მიიღეთ ${ BRAND_NAME } Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "მიიღეთ ${ BRAND_NAME } Unlimited"
@@ -10470,6 +10580,9 @@
       ],
       "Advanced account protection": [
         "დამატებითი ანგარიშის დაცვა"
+      ],
+      "File attachments (up to 10GB)": [
+        "მიმაგრებული ფაილები (10გბ-მდე)"
       ],
       "Team policies": [
         "გუნდის პოლიტიკა"
@@ -11875,6 +11988,11 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "გაზიარებულია ${ ownerName }-ის მიერ"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "${ appName }-ში გახსნა"
       ]
     },
     "Signup": {
@@ -14029,6 +14147,9 @@
       "Restore administrator privileges": [
         "ადმინისტრატორის პრივილეგიების აღდგენა"
       ],
+      "Revoke certificate?": [
+        "გავაუქმო სერტიფიკატი?"
+      ],
       "SAML authentication": [
         "SAML ავთენტიკაცია"
       ],
@@ -14180,6 +14301,9 @@
       "Upgrade to ${ planName }": [
         "სატარიფო გეგმის განახლება: ${ planName }"
       ],
+      "Upgrade to keep your premium benefits.": [
+        "ასწიეთ სატარიფო გეგმა ფასიანი ფუნქციების შესანარჩუნებლად."
+      ],
       "Upgrade your network protection with dedicated servers": [
         "ასწიეთ თქვენი ქსელის დაცვის დონე გამოყოფილი სერვერებით"
       ],
@@ -14224,9 +14348,6 @@
       ],
       "Verifying your payment...": [
         "თქვენი გადახდის გადამოწმება..."
-      ],
-      "Video conferencing with ${ MEET_APP_NAME }": [
-        "ვიდეოკონფერენცია ${ MEET_APP_NAME }-ისთან ერთად"
       ],
       "Video conferencing with Zoom": [
         "ვიდეოკონფერენციები Zoom-ით"
@@ -14428,6 +14549,9 @@
       "This can be caused by a password reset or the user not logging in yet.": [
         "ეს, შეიძლება, პაროლის ჩამოყრამ გამოიწვიოს, ან მომხმარებელი ჯერ არ შესულა."
       ],
+      "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
+        "ეს ელფოსტის მისამართი, მხოლოდ, თქვენს ${ BRAND_NAME }-ის ანგარიშში შესასვლელად შეგიძლიათ, გამოიყენოთ."
+      ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "ეს ელფოსტის მისამართი ნაჩვენები იქნება ყველა ორგანიზაციის წევრისთვის, როცა ანგარიშის მართვის ოპერაციებს განახორციელებთ."
       ],
@@ -14457,6 +14581,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: ხი დამხმარე, რომელიც პატივს სცემს თქვენს კონფიდენციალობას"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს და სხვ."
       ],
@@ -14652,6 +14779,12 @@
       ],
       "Did you know?": [
         "იცოდით?"
+      ],
+      "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
+        "დაიცავით თქვენი ორგანიზაცია მონაცემების გაჟონვისგან ${ VPN_APP_NAME } for Business-ით."
+      ],
+      "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
+        "შეუზრუდავი კონფიდენციალობა თქვენი საყვარელი ადამიანისთვის. მხოლოდ ${ priceString }/თვეში."
       ]
     },
     "upsell panel": {

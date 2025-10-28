@@ -1,0 +1,123 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=2; plural=(n != 1);",
+    "language": "nl_NL"
+  },
+  "contexts": {
+    "Action": {
+      "Cancel": [
+        "Annuleren"
+      ],
+      "Close": [
+        "Sluiten"
+      ],
+      "Confirm": [
+        "Bevestigen"
+      ],
+      "Create": [
+        "Aanmaken"
+      ],
+      "Dismiss": [
+        "Negeren"
+      ],
+      "Refresh the page": [
+        "Pagina vernieuwen"
+      ],
+      "Try again": [
+        "Opnieuw proberen"
+      ]
+    },
+    "Error": {
+      "Authentication error": [
+        "Authenticatiefout"
+      ],
+      "Request timed out": [
+        "Reactietijd verzoek overschreden"
+      ],
+      "Something went wrong": [
+        "Er is iets fout gegaan."
+      ]
+    },
+    "Error message": {
+      "Please refresh the page or try again later.": [
+        "Ververs de pagina of probeer het later opnieuw."
+      ],
+      "Something went wrong": [
+        "Er is iets fout gegaan"
+      ]
+    },
+    "Info": {
+      "Identity confirmed": [
+        "Identiteit bevestigd"
+      ],
+      "Internet connection lost": [
+        "Internetverbinding verbroken"
+      ],
+      "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
+        "Het lijkt erop dat u al bent aangemeld bij ${ PASS_APP_NAME }. Als u probeert in te loggen met een ander account, log dan eerst uit bij de extensie."
+      ],
+      "Loading": [
+        "Laden"
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
+        "${ PASS_APP_NAME } is meer dan een wachtwoordbeheerder en beschermt uw wachtwoord en uw persoonlijke e-mailadres via e-mailaliassen. Aangedreven door dezelfde technologie achter ${ MAIL_APP_NAME }, zijn je gegevens end-to-end versleuteld en alleen toegankelijk voor jou."
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "De servers zijn onbereikbaar, probeer het over enkele minuten opnieuw"
+      ],
+      "Session timed out": [
+        "Sessie verlopen"
+      ],
+      "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
+        "De tekst die u probeert te plakken is langer dan de maximaal toegelaten lengte van ${ maxLength } tekens."
+      ],
+      "You have reached the maximum allowed length of ${ maxLength } characters.": [
+        "U hebt de maximaal toegestane lengte van ${ maxLength } tekens bereikt."
+      ],
+      "You may close this tab.": [
+        "U kunt dit tabblad nu sluiten."
+      ]
+    },
+    "Label": {
+      "${ days } day": [
+        "${ days } dag",
+        "${ days } dagen"
+      ],
+      "${ hours } hour": [
+        "${ hours } uur",
+        "${ hours } uren"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuut",
+        "${ minutes } minuten"
+      ],
+      "${ months } month": [
+        "${ months } maand",
+        "${ months } maanden"
+      ],
+      "${ years } year": [
+        "${ years } jaar",
+        "${ years } jaren"
+      ],
+      "Expired": [
+        "Verlopen"
+      ],
+      "Hide password": [
+        "Wachtwoord verbergen"
+      ],
+      "Reveal password": [
+        "Wachtwoord tonen"
+      ]
+    },
+    "Placeholder": {
+      "Password": [
+        "Wachtwoord"
+      ]
+    },
+    "Warning": {
+      "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
+        "Kan niet inloggen bij ${ PASS_APP_NAME }. ${ additionalMessage }"
+      ]
+    }
+  }
+}
