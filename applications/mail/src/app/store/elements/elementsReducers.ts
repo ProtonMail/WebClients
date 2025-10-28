@@ -2,7 +2,6 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Draft } from 'immer';
 
 import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
@@ -13,7 +12,14 @@ import isTruthy from '@proton/utils/isTruthy';
 import range from '@proton/utils/range';
 import unique from '@proton/utils/unique';
 
-import { getElementContextIdentifier, isElementMessage, parseLabelIDsInEvent } from '../../helpers/elements';
+import {
+    filterElementsInState,
+    getElementContextIdentifier,
+    getSearchParameters,
+    isElementMessage,
+    parseElementContextIdentifier,
+    parseLabelIDsInEvent,
+} from '../../helpers/elements';
 import type { Conversation } from '../../models/conversation';
 import type { Element } from '../../models/element';
 import {
@@ -842,18 +848,19 @@ export const markNewsletterElementsAsReadPending = (
     });
 };
 
+/**
+ * Update all the context of the store to reflect the change that was just made
+ * To do so, we get the store before and after the action. We use the length difference of the two list to compute the new total count.
+ */
 const updateTotal = ({
     state,
-    affectedElementsNumber,
-    destinationLabelID,
-    sourceLabelID,
+    elementsBeforeAction,
 }: {
     state: Draft<ElementsState>;
-    affectedElementsNumber: number;
-    destinationLabelID: string;
-    sourceLabelID: string;
+    elementsBeforeAction: Element[];
 }) => {
-    const contextParams = {
+    const currentContextIdentifier = getElementContextIdentifier({
+        labelID: state.params.labelID,
         conversationMode: state.params.conversationMode,
         filter: state.params.filter,
         sort: state.params.sort,
@@ -863,42 +870,43 @@ const updateTotal = ({
         begin: state.params.search?.begin,
         end: state.params.search?.end,
         keyword: state.params.search?.keyword,
-    };
-
-    let sourceContextIdentifier: string | undefined;
-    if (sourceLabelID) {
-        sourceContextIdentifier = getElementContextIdentifier({
-            labelID: sourceLabelID,
-            ...contextParams,
-        });
-    }
-
-    const destinationContextIdentifier = getElementContextIdentifier({
-        labelID: destinationLabelID,
-        ...contextParams,
     });
-
-    const almostAllMailIdentifier = getElementContextIdentifier({
-        labelID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
-        ...contextParams,
-    });
+    const elements = Object.values(state.elements);
 
     Object.keys(state.total).forEach((contextIdentifier) => {
-        const contextValue = state.total[contextIdentifier];
-
-        // We decrease the total of almost all mail when destination is trash or spam
-        if (
-            (destinationLabelID === MAILBOX_LABEL_IDS.TRASH || destinationLabelID === MAILBOX_LABEL_IDS.SPAM) &&
-            contextIdentifier === almostAllMailIdentifier
-        ) {
-            state.total[contextIdentifier] = safeDecreaseCount(contextValue, affectedElementsNumber);
+        const context = parseElementContextIdentifier(contextIdentifier);
+        if (!context) {
+            return;
         }
 
-        if (contextIdentifier === sourceContextIdentifier) {
-            state.total[contextIdentifier] = safeDecreaseCount(contextValue, affectedElementsNumber);
-        } else if (contextIdentifier === destinationContextIdentifier) {
-            state.total[contextIdentifier] = safeIncreaseCount(contextValue, affectedElementsNumber);
-        }
+        // Local filtering of state before change for the current context
+        const beforeChangeFiltered = filterElementsInState({
+            elements: elementsBeforeAction,
+            bypassFilter: currentContextIdentifier === contextIdentifier ? state.bypassFilter : [],
+            labelID: context.labelID,
+            filter: context.filter || {},
+            conversationMode: context.conversationMode,
+            search: getSearchParameters(context),
+            newsletterSubscriptionID: context.newsletterSubscriptionID,
+            disabledCategoriesIDs: [],
+        });
+
+        // Local filtering of state after change for the current context
+        const filteredElements = filterElementsInState({
+            elements,
+            bypassFilter: currentContextIdentifier === contextIdentifier ? state.bypassFilter : [],
+            labelID: context.labelID,
+            filter: context.filter || {},
+            conversationMode: context.conversationMode,
+            search: getSearchParameters(context),
+            newsletterSubscriptionID: context.newsletterSubscriptionID,
+            disabledCategoriesIDs: [],
+        });
+
+        const totalBefore = state.total[contextIdentifier] || 0;
+
+        // The new total is the current total minus the difference between the number of elements before and after filtering
+        state.total[contextIdentifier] = totalBefore - (beforeChangeFiltered.length - filteredElements.length);
     });
 };
 
@@ -919,6 +927,7 @@ export const labelMessagesPending = (
     >
 ) => {
     const { elements, sourceLabelID, destinationLabelID, labels, folders } = action.meta.arg;
+    const elementsBeforeAction = structuredClone(Object.values(state.elements));
 
     elements.forEach((element) => {
         // Update conversation first because we need to have the initial state of the element
@@ -944,7 +953,7 @@ export const labelMessagesPending = (
         applyLabelToMessage(elementState, destinationLabelID, folders, labels);
     });
 
-    updateTotal({ state, affectedElementsNumber: elements.length, destinationLabelID, sourceLabelID });
+    updateTotal({ state, elementsBeforeAction });
 };
 
 export const unlabelMessagesPending = (
@@ -963,7 +972,8 @@ export const unlabelMessagesPending = (
         }
     >
 ) => {
-    const { elements, sourceLabelID, destinationLabelID, labels } = action.meta.arg;
+    const { elements, destinationLabelID, labels } = action.meta.arg;
+    const elementsBeforeAction = structuredClone(Object.values(state.elements));
 
     elements.forEach((element) => {
         const conversationElementState = state.elements[element.ConversationID] as Conversation;
@@ -981,7 +991,7 @@ export const unlabelMessagesPending = (
         removeLabelFromMessage(elementState, destinationLabelID, labels);
     });
 
-    updateTotal({ state, affectedElementsNumber: elements.length, destinationLabelID, sourceLabelID });
+    updateTotal({ state, elementsBeforeAction });
 };
 
 export const labelMessagesRejected = (
@@ -1023,6 +1033,7 @@ export const labelConversationsPending = (
     >
 ) => {
     const { conversations, sourceLabelID, destinationLabelID, labels, folders } = action.meta.arg;
+    const elementsBeforeAction = structuredClone(Object.values(state.elements));
 
     conversations.forEach((conversation) => {
         const conversationState = state.elements[conversation.ID] as Conversation;
@@ -1042,7 +1053,7 @@ export const labelConversationsPending = (
         });
     });
 
-    updateTotal({ state, affectedElementsNumber: conversations.length, destinationLabelID, sourceLabelID });
+    updateTotal({ state, elementsBeforeAction });
 };
 
 export const unlabelConversationsPending = (
@@ -1061,7 +1072,8 @@ export const unlabelConversationsPending = (
         }
     >
 ) => {
-    const { conversations, sourceLabelID, destinationLabelID, labels } = action.meta.arg;
+    const { conversations, destinationLabelID, labels } = action.meta.arg;
+    const elementsBeforeAction = structuredClone(Object.values(state.elements));
 
     conversations.forEach((conversation) => {
         const conversationState = state.elements[conversation.ID] as Conversation;
@@ -1081,5 +1093,5 @@ export const unlabelConversationsPending = (
         });
     });
 
-    updateTotal({ state, affectedElementsNumber: conversations.length, sourceLabelID, destinationLabelID });
+    updateTotal({ state, elementsBeforeAction });
 };
