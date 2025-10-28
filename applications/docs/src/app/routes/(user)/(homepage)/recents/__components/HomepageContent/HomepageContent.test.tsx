@@ -186,6 +186,7 @@ describe('HomepageContent', () => {
           updateRenamedDocumentInCache: jest.fn as any,
           isRecentsUpdating: false,
           state,
+          type: undefined,
         }}
       >
         {children}

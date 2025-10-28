@@ -13,7 +13,11 @@ import { useContactEmails } from '@proton/mail/store/contactEmails/hooks'
 import { VolumeTypeForEvents } from '@proton/drive-store/store/_volumes'
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts'
 import { getOwnerName } from './get-owner-name'
-import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype'
+import {
+  isProtonDocsDocument,
+  isProtonDocsSpreadsheet,
+  type ProtonDocumentType,
+} from '@proton/shared/lib/helpers/mimetype'
 
 // constants
 // ---------
@@ -74,6 +78,7 @@ export type HomepageViewValue = {
   updateRecentDocuments: () => Promise<void>
   updateRenamedDocumentInCache: (uniqueId: string, name: string) => Promise<void>
   isRecentsUpdating: boolean
+  type: ProtonDocumentType | undefined
 }
 
 export const HomepageViewContext = createContext<HomepageViewValue | undefined>(undefined)
@@ -91,7 +96,7 @@ export function HomepageViewProvider({ children }: HomepageViewProviderProps) {
 
   const [search, setSearch] = useSearch()
   const [recentsSort, setRecentsSort] = useRecentsSort()
-
+  const [type] = useType()
   const {
     recentDocuments,
     updateRecentDocuments,
@@ -99,7 +104,7 @@ export function HomepageViewProvider({ children }: HomepageViewProviderProps) {
     isLoading: isRecentsLoading,
     isUpdating: isRecentsUpdating,
     isInitial: isRecentsInitial,
-  } = useRecentDocuments({ search })
+  } = useRecentDocuments({ search, type })
   const { trashedDocuments, isLoading: isTrashedLoading } = useTrashedDocuments()
 
   const state = useHomepageViewState({
@@ -122,8 +127,9 @@ export function HomepageViewProvider({ children }: HomepageViewProviderProps) {
       updateRecentDocuments,
       updateRenamedDocumentInCache,
       isRecentsUpdating,
+      type,
     }),
-    [isRecentsUpdating, setRecentsSort, setSearch, state, updateRecentDocuments, updateRenamedDocumentInCache],
+    [isRecentsUpdating, setRecentsSort, setSearch, state, type, updateRecentDocuments, updateRenamedDocumentInCache],
   )
 
   return <HomepageViewContext.Provider value={value}>{children}</HomepageViewContext.Provider>
@@ -306,24 +312,36 @@ function useSearch() {
   return useQueryState<string | undefined>('q', undefined)
 }
 
+function useType() {
+  return useQueryState<ProtonDocumentType | undefined>('type', undefined)
+}
+
 // recent documents
 // ----------------
 
-export function filterDocuments(items?: RecentDocumentsItem[], search?: string) {
-  if (!items || items.length === 0 || !search) {
+export function filterDocuments(items?: RecentDocumentsItem[], search?: string, type?: ProtonDocumentType) {
+  if (!items || items.length === 0) {
     return items || []
   }
 
-  let outputItems = items
-
-  if (search) {
-    outputItems = outputItems.filter((data) => data.name.toLowerCase().includes(search.toLowerCase()))
+  if (!search && !type) {
+    return items
   }
 
+  const outputItems = items.filter((data) => {
+    let isValid = true
+    if (search) {
+      isValid = data.name.toLowerCase().includes(search.toLowerCase())
+    }
+    if (type) {
+      isValid = data.type === type
+    }
+    return isValid
+  })
   return outputItems
 }
 
-function useRecentDocuments({ search }: { search?: string }) {
+function useRecentDocuments({ search, type }: { search?: string; type?: ProtonDocumentType }) {
   const { recentDocumentsService, logger } = useApplication()
   const store = recentDocumentsService.state
 
@@ -347,7 +365,7 @@ function useRecentDocuments({ search }: { search?: string }) {
     }
   }, [items.length, logger, state])
 
-  const filteredItems = useMemo(() => filterDocuments(items, search), [items, search])
+  const filteredItems = useMemo(() => filterDocuments(items, search, type), [items, search, type])
 
   const updateRecentDocuments = useEvent(() => recentDocumentsService.fetch())
   const updateRenamedDocumentInCache = useEvent((uniqueId: string, name: string) =>
