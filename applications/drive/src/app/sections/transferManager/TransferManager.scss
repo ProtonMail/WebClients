@@ -5,7 +5,8 @@
 	position: fixed;
 	inset-block-end: 1.5rem;
 	inset-inline-end: 1.5rem;
-	inline-size: 500px;
+	inline-size: auto;
+	max-inline-size: 34rem;
 	max-block-size: calc(100vh - 3rem);
 	display: flex;
 	flex-direction: column;
@@ -18,7 +19,6 @@
 
 	@include media('<=small') {
 		inset-inline: 1rem;
-		inline-size: auto;
 		max-inline-size: calc(100vw - 2rem);
 	}
 }

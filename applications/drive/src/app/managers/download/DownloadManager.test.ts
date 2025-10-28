@@ -231,6 +231,7 @@ describe('DownloadManager', () => {
             completion: jest.fn(() => controllerCompletion.promise),
         };
         const fileDownloader = {
+            getClaimedSizeInBytes: jest.fn(() => node.storageSize),
             downloadToStream: jest.fn((_writable: unknown, onProgress: (bytes: number) => void) => {
                 onProgress(64);
                 return controller;
@@ -263,6 +264,9 @@ describe('DownloadManager', () => {
 
         const activeDownloads = Reflect.get(manager, 'activeDownloads') as Map<string, unknown>;
         expect(activeDownloads.has('download-1')).toBe(true);
+        expect(storeMockState.updateDownloadItem).toHaveBeenCalledWith('download-1', {
+            storageSize: node.storageSize,
+        });
 
         expect(storeMockState.updateDownloadItem).toHaveBeenCalledWith('download-1', {
             status: DownloadStatus.InProgress,
