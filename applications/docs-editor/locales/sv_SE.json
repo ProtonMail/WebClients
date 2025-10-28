@@ -684,6 +684,604 @@
         "Text"
       ]
     },
+    "sheets_2025:Action": {
+      "Insert image in cell": [
+        "Infoga bild i cell"
+      ],
+      "Insert image over cells": [
+        "Infoga bild över celler"
+      ]
+    },
+    "sheets_2025:Color picker": {
+      "Add custom color": [
+        "Lägg till anpassad färg"
+      ],
+      "Color picker tool": [
+        "Färgväljarverktyg"
+      ],
+      "No recent colors": [
+        "Inga senaste färger"
+      ],
+      "Recent colors": [
+        "Senaste färger"
+      ],
+      "Reset": [
+        "Återställ"
+      ],
+      "Standard colors": [
+        "Standardfärger"
+      ],
+      "Theme colors (Office)": [
+        "Temafärger (Office)"
+      ]
+    },
+    "sheets_2025:Range selector menu": {
+      "Add new": [
+        "Lägg till ny"
+      ],
+      "Named ranges": [
+        "Namngivna områden"
+      ],
+      "Sheets": [
+        "Blad"
+      ],
+      "Tables": [
+        "Tabeller"
+      ]
+    },
+    "sheets_2025:Sheet context menu": {
+      "Change color": [
+        "Ändra färg"
+      ],
+      "Delete": [
+        "Ta bort"
+      ],
+      "Duplicate": [
+        "Duplicera"
+      ],
+      "Hide sheet": [
+        "Dölj blad"
+      ],
+      "Lock sheet": [
+        "Lås blad"
+      ],
+      "Move left": [
+        "Flytta åt vänster"
+      ],
+      "Move right": [
+        "Flytta åt höger"
+      ],
+      "Rename": [
+        "Byt namn"
+      ],
+      "Unlock sheet": [
+        "Lås upp blad"
+      ]
+    },
+    "sheets_2025:Sheet switcher": {
+      "Hidden sheets": [
+        "Dolda blad"
+      ],
+      "No sheets available": [
+        "Inga blad tillgängliga"
+      ],
+      "Show": [
+        "Visa"
+      ],
+      "Visible sheets": [
+        "Synliga blad"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor": {
+      "Cannot delete all columns": [
+        "Kan inte ta bort alla kolumner"
+      ],
+      "Cannot delete all rows": [
+        "Kan inte ta bort alla rader"
+      ],
+      "Find in sheet": [
+        "Sök i blad"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar data menu": {
+      "Create a filter": [
+        "Skapa ett filter"
+      ],
+      "Data validation": [
+        "Datavalidering"
+      ],
+      "Protect range": [
+        "Skydda område"
+      ],
+      "Remove filter": [
+        "Ta bort filter"
+      ],
+      "Sort sheet": [
+        "Sortera blad"
+      ],
+      "Unlock range": [
+        "Lås upp område"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar data menu (sort submenu)": {
+      "(A to Z)": [
+        "(A till Ö)"
+      ],
+      "(Z to A)": [
+        "(Z till A)"
+      ],
+      "Sort sheet by": [
+        "Sortera blad efter"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar edit menu": {
+      "Copy": [
+        "Kopiera"
+      ],
+      "Cut": [
+        "Klipp ut"
+      ],
+      "Find": [
+        "Sök"
+      ],
+      "Formatting only": [
+        "Endast formatering"
+      ],
+      "Paste": [
+        "Klistra in"
+      ],
+      "Paste special": [
+        "Klistra in special"
+      ],
+      "Redo": [
+        "Gör om"
+      ],
+      "Transposed": [
+        "Transponerat"
+      ],
+      "Undo": [
+        "Ångra"
+      ],
+      "Values only": [
+        "Endast värden"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar file menu": {
+      "Comma Separated Values (.csv)": [
+        "Kommaseparerade värden (.csv)"
+      ],
+      "Download": [
+        "Nedladdat"
+      ],
+      "Download logs": [
+        "Ladda ner loggar"
+      ],
+      "Help": [
+        "Hjälp"
+      ],
+      "Import": [
+        "Importera"
+      ],
+      "Make a copy": [
+        "Göra en kopia"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
+      "Move to folder": [
+        "Flytta till mapp"
+      ],
+      "Move to trash": [
+        "Flytta till papperskorg"
+      ],
+      "New spreadsheet": [
+        "Nytt kalkylblad"
+      ],
+      "Open ${ DRIVE_APP_NAME }": [
+        "Öppna ${ DRIVE_APP_NAME }"
+      ],
+      "Print": [
+        "Skriv ut"
+      ],
+      "See version history": [
+        "Se versionshistorik"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Tabbseparerade värden (.tsv)"
+      ],
+      "View recent spreadsheets": [
+        "Visa senaste kalkylblad"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar format menu": {
+      "Alignment": [
+        "Justering"
+      ],
+      "Bold": [
+        "Fet"
+      ],
+      "Cell styles": [
+        "Cellformat"
+      ],
+      "Clear": [
+        "Rensa"
+      ],
+      "Clear content": [
+        "Rensa innehåll"
+      ],
+      "Clear formatting": [
+        "Rensa formatering"
+      ],
+      "Conditional formatting": [
+        "Villkorsstyrd formatering"
+      ],
+      "Font size": [
+        "Textstorlek"
+      ],
+      "Italic": [
+        "Kursiv"
+      ],
+      "Number": [
+        "Nummer"
+      ],
+      "Strikethrough": [
+        "Linje igenom"
+      ],
+      "Table formatting": [
+        "Tabellformatering"
+      ],
+      "Text": [
+        "Text"
+      ],
+      "Theme": [
+        "Tema"
+      ],
+      "Underline": [
+        "Understreck"
+      ],
+      "Wrapping": [
+        "Radbrytning"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar format menu (alignment)": {
+      "Bottom": [
+        "Nederkant"
+      ],
+      "Center": [
+        "Centrera"
+      ],
+      "Left": [
+        "Vänster"
+      ],
+      "Middle": [
+        "Mitten"
+      ],
+      "Right": [
+        "Höger"
+      ],
+      "Top": [
+        "Överkant"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar format menu (wrapping)": {
+      "Clip": [
+        "Klipp"
+      ],
+      "Overflow": [
+        "Överflöde"
+      ],
+      "Wrap": [
+        "Radbryt"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar insert menu": {
+      "Cells": [
+        "Celler"
+      ],
+      "Chart": [
+        "Diagram"
+      ],
+      "Checkbox": [
+        "Kryssruta"
+      ],
+      "Columns": [
+        "Kolumner"
+      ],
+      "Dropdown": [
+        "Listruta"
+      ],
+      "Function": [
+        "Funktion"
+      ],
+      "Image": [
+        "Bild"
+      ],
+      "Insert cells and shift down": [
+        "Infoga celler och flytta ner"
+      ],
+      "Insert cells and shift right": [
+        "Infoga celler och flytta höger"
+      ],
+      "Link": [
+        "Länk"
+      ],
+      "Note": [
+        "Anteckning"
+      ],
+      "Rows": [
+        "Rader"
+      ],
+      "Sheet": [
+        "Blad"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar title": {
+      "Data": [
+        "Data"
+      ],
+      "Edit": [
+        "Redigera"
+      ],
+      "File": [
+        "Fil"
+      ],
+      "Format": [
+        "Format"
+      ],
+      "Insert": [
+        "Infoga"
+      ],
+      "View": [
+        "Visa"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar view menu": {
+      "Formula bar": [
+        "Formelfält"
+      ],
+      "Freeze": [
+        "Lås"
+      ],
+      "Gridlines": [
+        "Stödlinjer"
+      ],
+      "Show": [
+        "Visa"
+      ],
+      "Zoom": [
+        "Zooma"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar view menu (freeze submenu)": {
+      "Up to": [
+        "Upp till"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor number formats menu": {
+      "$ US Dollar": [
+        "$ Amerikansk dollar"
+      ],
+      "Accounting": [
+        "Redovisning"
+      ],
+      "CN¥ Chinese Yuan": [
+        "CN¥ Kinesiska yuan"
+      ],
+      "Currency": [
+        "Valuta"
+      ],
+      "Currency rounded": [
+        "Avrundad valuta"
+      ],
+      "Date": [
+        "Datum"
+      ],
+      "Date time": [
+        "Datum och tid"
+      ],
+      "Duration": [
+        "Varaktighet"
+      ],
+      "Financial": [
+        "Finansiell"
+      ],
+      "General": [
+        "Allmänt"
+      ],
+      "Long date": [
+        "Långt datum"
+      ],
+      "More currency": [
+        "Mer valuta"
+      ],
+      "Number": [
+        "Nummer"
+      ],
+      "Percent": [
+        "Procent"
+      ],
+      "Plain text": [
+        "Oformaterad text"
+      ],
+      "Scientific": [
+        "Vetenskaplig"
+      ],
+      "Time": [
+        "Tid"
+      ],
+      "£ Pound": [
+        "£ Pund"
+      ],
+      "¥ Yen": [
+        "¥ Yen"
+      ],
+      "€ Euro": [
+        "€ Euro"
+      ],
+      "₹ Rupee": [
+        "₹ Rupie"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor search dialog": {
+      "Close": [
+        "Stäng"
+      ],
+      "Go to next": [
+        "Gå till nästa"
+      ],
+      "Go to previous": [
+        "Gå till föregående"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor toolbar": {
+      "Bold": [
+        "Fet"
+      ],
+      "Border": [
+        "Kantlinje"
+      ],
+      "Chart": [
+        "Diagram"
+      ],
+      "Clear formatting": [
+        "Rensa formatering"
+      ],
+      "Decrease decimal places": [
+        "Minska antalet decimaler"
+      ],
+      "Decrease font size": [
+        "Minska textstorlek"
+      ],
+      "Default (${ defaultFont })": [
+        "Standard (${ defaultFont })"
+      ],
+      "Fill color": [
+        "Fyllnadsfärg"
+      ],
+      "Find": [
+        "Sök"
+      ],
+      "Font": [
+        "Typsnitt"
+      ],
+      "Font size": [
+        "Textstorlek"
+      ],
+      "Format as currency": [
+        "Formatera som valuta"
+      ],
+      "Format as percent": [
+        "Formatera som procent"
+      ],
+      "Horizontal align": [
+        "Vågrät justering"
+      ],
+      "Increase decimal places": [
+        "Öka antalet decimaler"
+      ],
+      "Increase font size": [
+        "Öka textstorlek"
+      ],
+      "Insert chart": [
+        "Infoga diagram"
+      ],
+      "Insert link": [
+        "Infoga länk"
+      ],
+      "Insert note": [
+        "Infoga anteckning"
+      ],
+      "Italic": [
+        "Kursiv"
+      ],
+      "Merge cells": [
+        "Sammanfoga celler"
+      ],
+      "More": [
+        "Mer"
+      ],
+      "More formats": [
+        "Fler format"
+      ],
+      "Paint format": [
+        "Hämta format"
+      ],
+      "Redo": [
+        "Gör om"
+      ],
+      "Strikethrough": [
+        "Linje igenom"
+      ],
+      "Text color": [
+        "Textfärg"
+      ],
+      "Text wrapping": [
+        "Radbrytning"
+      ],
+      "Underline": [
+        "Understreck"
+      ],
+      "Undo": [
+        "Ångra"
+      ],
+      "Vertical align": [
+        "Lodrät justering"
+      ],
+      "Zoom": [
+        "Zooma"
+      ]
+    },
+    "sheets_2025:Spreadsheet insert link dialog": {
+      "Apply": [
+        "Verkställ"
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Insert link": [
+        "Infoga länk"
+      ],
+      "Paste link": [
+        "Klistra in länk"
+      ]
+    },
+    "sheets_2025:Spreadsheet link tooltip": {
+      "Copy link": [
+        "Kopiera länk"
+      ],
+      "Edit link": [
+        "Redigera länk"
+      ],
+      "Link copied to clipboard": [
+        "Länk kopierad till urklipp"
+      ],
+      "Link removed": [
+        "Länk borttagen"
+      ],
+      "Remove link": [
+        "Ta bort länk"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar conditional format dialog close": {
+      "Close": [
+        "Stäng"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar conditional format dialog delete range": {
+      "Delete range": [
+        "Ta bort område"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar conditional format dialog delete rule": {
+      "Delete rule": [
+        "Ta bort regel"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar named ranges dialog delete range": {
+      "Delete named range": [
+        "Ta bort namngivet område"
+      ]
+    },
     "Title": {
       "Delete comment": [
         "Ta bort kommentar"

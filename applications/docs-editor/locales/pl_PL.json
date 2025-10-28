@@ -694,6 +694,163 @@
         "Wstaw obraz nad komórkami"
       ]
     },
+    "sheets_2025:Color picker": {
+      "Add custom color": [
+        "Dodaj kolor niestandardowy"
+      ],
+      "Color picker tool": [
+        "Narzędzie próbnika kolorów"
+      ],
+      "No recent colors": [
+        "Brak ostatnich kolorów"
+      ],
+      "Recent colors": [
+        "Ostatnie kolory"
+      ],
+      "Reset": [
+        "Resetuj"
+      ],
+      "Standard colors": [
+        "Kolory standardowe"
+      ],
+      "Theme colors (Office)": [
+        "Kolory motywu (Office)"
+      ]
+    },
+    "sheets_2025:Range selector menu": {
+      "Add new": [
+        "Dodaj nowy"
+      ],
+      "Named ranges": [
+        "Nazwane zakresy"
+      ],
+      "Sheets": [
+        "Arkusze"
+      ],
+      "Tables": [
+        "Tabele"
+      ]
+    },
+    "sheets_2025:Sheet context menu": {
+      "Change color": [
+        "Zmień kolor"
+      ],
+      "Delete": [
+        "Usuń"
+      ],
+      "Duplicate": [
+        "Duplikat"
+      ],
+      "Hide sheet": [
+        "Ukryj arkusz"
+      ],
+      "Lock sheet": [
+        "Zablokuj arkusz"
+      ],
+      "Move left": [
+        "Przesuń w lewo"
+      ],
+      "Move right": [
+        "Przesuń w prawo"
+      ],
+      "Rename": [
+        "Zmień nazwę"
+      ],
+      "Unlock sheet": [
+        "Odblokuj arkusz"
+      ]
+    },
+    "sheets_2025:Sheet switcher": {
+      "Hidden sheets": [
+        "Ukryte arkusze"
+      ],
+      "No sheets available": [
+        "Brak dostępnych arkuszy"
+      ],
+      "Show": [
+        "Pokaż"
+      ],
+      "Visible sheets": [
+        "Widoczne arkusze"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor": {
+      "Cannot delete all columns": [
+        "Nie można usunąć wszystkich kolumn"
+      ],
+      "Cannot delete all rows": [
+        "Nie można usunąć wszystkich wierszy"
+      ],
+      "Find in sheet": [
+        "Znajdź w arkuszu"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar data menu": {
+      "Create a filter": [
+        "Utwórz filtr"
+      ],
+      "Data validation": [
+        "Weryfikacja danych"
+      ],
+      "Protect range": [
+        "Chroń zakres"
+      ],
+      "Remove filter": [
+        "Usuń filtr"
+      ],
+      "Sort sheet": [
+        "Sortuj arkusz"
+      ],
+      "Unlock range": [
+        "Odblokuj zakres"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar data menu (sort submenu)": {
+      "(A to Z)": [
+        "(Od A do Z)"
+      ],
+      "(Z to A)": [
+        "(Od Z do A)"
+      ],
+      "column ${ columnLetter }": [
+        "kolumna ${ columnLetter }"
+      ],
+      "Sort sheet by": [
+        "Sortuj arkusz według"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar edit menu": {
+      "Copy": [
+        "Kopiuj"
+      ],
+      "Cut": [
+        "Wytnij"
+      ],
+      "Find": [
+        "Znajdź"
+      ],
+      "Formatting only": [
+        "Tylko formatowanie"
+      ],
+      "Paste": [
+        "Wklej"
+      ],
+      "Paste special": [
+        "Wklej specjalnie"
+      ],
+      "Redo": [
+        "Ponów"
+      ],
+      "Transposed": [
+        "Transponowane"
+      ],
+      "Undo": [
+        "Cofnij"
+      ],
+      "Values only": [
+        "Tylko wartości"
+      ]
+    },
     "sheets_2025:Spreadsheet editor menubar file menu": {
       "Comma Separated Values (.csv)": [
         "Wartości rozdzielone przecinkami (.csv)"
@@ -741,6 +898,87 @@
         "Wyświetl ostatnie arkusze kalkulacyjne"
       ]
     },
+    "sheets_2025:Spreadsheet editor menubar format menu": {
+      "Alignment": [
+        "Wyrównanie"
+      ],
+      "Bold": [
+        "Pogrubienie"
+      ],
+      "Cell styles": [
+        "Style komórek"
+      ],
+      "Clear": [
+        "Wyczyść"
+      ],
+      "Clear content": [
+        "Wyczyść zawartość"
+      ],
+      "Clear formatting": [
+        "Wyczyść formatowanie"
+      ],
+      "Conditional formatting": [
+        "Formatowanie warunkowe"
+      ],
+      "Font size": [
+        "Rozmiar czcionki"
+      ],
+      "Italic": [
+        "Kursywa"
+      ],
+      "Number": [
+        "Liczba"
+      ],
+      "Strikethrough": [
+        "Przekreślenie"
+      ],
+      "Table formatting": [
+        "Formatowanie tabeli"
+      ],
+      "Text": [
+        "Tekst"
+      ],
+      "Theme": [
+        "Motyw"
+      ],
+      "Underline": [
+        "Podkreślenie"
+      ],
+      "Wrapping": [
+        "Zawijanie"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar format menu (alignment)": {
+      "Bottom": [
+        "Dół"
+      ],
+      "Center": [
+        "Wyśrodkuj"
+      ],
+      "Left": [
+        "Do lewej"
+      ],
+      "Middle": [
+        "Do środka"
+      ],
+      "Right": [
+        "Do prawej"
+      ],
+      "Top": [
+        "Góra"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar format menu (wrapping)": {
+      "Clip": [
+        "Przytnij"
+      ],
+      "Overflow": [
+        "Przepełnienie"
+      ],
+      "Wrap": [
+        "Zawijaj"
+      ]
+    },
     "sheets_2025:Spreadsheet editor menubar insert menu": {
       "Cells": [
         "Komórki"
@@ -748,26 +986,29 @@
       "Chart": [
         "Wykres"
       ],
+      "Checkbox": [
+        "Pole wyboru"
+      ],
       "Columns": [
         "Kolumny"
       ],
-      "Insert 1 column left": [
-        "Wstaw 1 kolumnę z lewej"
+      "Dropdown": [
+        "Lista rozwijana"
       ],
-      "Insert 1 column right": [
-        "Wstaw 1 kolumnę z prawej"
+      "Function": [
+        "Funkcja"
       ],
-      "Insert 1 row above": [
-        "Wstaw 1 wiersz powyżej"
-      ],
-      "Insert 1 row below": [
-        "Wstaw 1 wiersz poniżej"
+      "Image": [
+        "Obraz"
       ],
       "Insert cells and shift down": [
         "Wstaw komórki i przesuń w dół"
       ],
       "Insert cells and shift right": [
         "Wstaw komórki i przesuń w prawo"
+      ],
+      "Link": [
+        "Link"
       ],
       "Note": [
         "Notatka"
@@ -780,16 +1021,138 @@
       ]
     },
     "sheets_2025:Spreadsheet editor menubar title": {
+      "Data": [
+        "Dane"
+      ],
+      "Edit": [
+        "Edytuj"
+      ],
       "File": [
         "Plik"
       ],
+      "Format": [
+        "Format"
+      ],
       "Insert": [
         "Wstaw"
+      ],
+      "View": [
+        "Widok"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar view menu": {
+      "Formula bar": [
+        "Pasek formuły"
+      ],
+      "Freeze": [
+        "Zablokuj"
+      ],
+      "Gridlines": [
+        "Linie siatki"
+      ],
+      "Show": [
+        "Pokaż"
+      ],
+      "Zoom": [
+        "Powiększenie"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar view menu (freeze submenu)": {
+      "column ${ columnLetter }": [
+        "kolumna ${ columnLetter }"
+      ],
+      "row ${ rowNumber }": [
+        "wiersz ${ rowNumber }"
+      ],
+      "Up to": [
+        "Do"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor number formats menu": {
+      "$ US Dollar": [
+        "$ Dolar amerykański"
+      ],
+      "Accounting": [
+        "Księgowość"
+      ],
+      "CN¥ Chinese Yuan": [
+        "CN¥ Juan chiński"
+      ],
+      "Currency": [
+        "Waluta"
+      ],
+      "Currency rounded": [
+        "Waluta zaokrąglona"
+      ],
+      "Date": [
+        "Data"
+      ],
+      "Date time": [
+        "Data i czas"
+      ],
+      "Duration": [
+        "Czas trwania"
+      ],
+      "Financial": [
+        "Finansowy"
+      ],
+      "General": [
+        "Ogólne"
+      ],
+      "Long date": [
+        "Długa data"
+      ],
+      "More currency": [
+        "Więcej walut"
+      ],
+      "Number": [
+        "Liczba"
+      ],
+      "Percent": [
+        "Procent"
+      ],
+      "Plain text": [
+        "Zwykły tekst"
+      ],
+      "Scientific": [
+        "Naukowy"
+      ],
+      "Time": [
+        "Czas"
+      ],
+      "£ Pound": [
+        "£ Funt"
+      ],
+      "¥ Yen": [
+        "¥ Jen"
+      ],
+      "€ Euro": [
+        "€ Euro"
+      ],
+      "₹ Rupee": [
+        "₹ Rupia"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor search dialog": {
+      "Close": [
+        "Zamknij"
+      ],
+      "Go to next": [
+        "Przejdź do następnego"
+      ],
+      "Go to previous": [
+        "Przejdź do poprzedniego"
       ]
     },
     "sheets_2025:Spreadsheet editor toolbar": {
       "Bold": [
         "Pogrubienie"
+      ],
+      "Border": [
+        "Obramowanie"
+      ],
+      "Chart": [
+        "Wykres"
       ],
       "Clear formatting": [
         "Wyczyść formatowanie"
@@ -803,11 +1166,26 @@
       "Default (${ defaultFont })": [
         "Domyślny (${ defaultFont })"
       ],
+      "Fill color": [
+        "Kolor wypełnienia"
+      ],
+      "Find": [
+        "Znajdź"
+      ],
+      "Font": [
+        "Czcionka"
+      ],
+      "Font size": [
+        "Rozmiar czcionki"
+      ],
       "Format as currency": [
         "Sformatuj jako walutę"
       ],
       "Format as percent": [
         "Sformatuj jako procent"
+      ],
+      "Horizontal align": [
+        "Wyrównanie w poziomie"
       ],
       "Increase decimal places": [
         "Zwiększ miejsca dziesiętne"
@@ -815,11 +1193,29 @@
       "Increase font size": [
         "Zwiększ rozmiar czcionki"
       ],
+      "Insert chart": [
+        "Wstaw wykres"
+      ],
+      "Insert link": [
+        "Wstaw link"
+      ],
+      "Insert note": [
+        "Wstaw notatkę"
+      ],
       "Italic": [
         "Kursywa"
       ],
+      "Merge cells": [
+        "Scal komórki"
+      ],
+      "More": [
+        "Więcej"
+      ],
       "More formats": [
         "Więcej formatów"
+      ],
+      "Paint format": [
+        "Malarz formatów"
       ],
       "Redo": [
         "Ponów"
@@ -827,11 +1223,74 @@
       "Strikethrough": [
         "Przekreślenie"
       ],
+      "Text color": [
+        "Kolor tekstu"
+      ],
+      "Text wrapping": [
+        "Zawijanie tekstu"
+      ],
       "Underline": [
         "Podkreślenie"
       ],
       "Undo": [
         "Cofnij"
+      ],
+      "Vertical align": [
+        "Wyrównanie w pionie"
+      ],
+      "Zoom": [
+        "Powiększenie"
+      ]
+    },
+    "sheets_2025:Spreadsheet insert link dialog": {
+      "Apply": [
+        "Zastosuj"
+      ],
+      "Cancel": [
+        "Anuluj"
+      ],
+      "Insert link": [
+        "Wstaw link"
+      ],
+      "Paste link": [
+        "Wklej link"
+      ]
+    },
+    "sheets_2025:Spreadsheet link tooltip": {
+      "Copy link": [
+        "Kopiuj link"
+      ],
+      "Edit link": [
+        "Edytuj link"
+      ],
+      "Link copied to clipboard": [
+        "Link został skopiowany do schowka"
+      ],
+      "Link removed": [
+        "Link usunięty"
+      ],
+      "Remove link": [
+        "Usuń link"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar conditional format dialog close": {
+      "Close": [
+        "Zamknij"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar conditional format dialog delete range": {
+      "Delete range": [
+        "Usuń zakres"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar conditional format dialog delete rule": {
+      "Delete rule": [
+        "Usuń regułę"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar named ranges dialog delete range": {
+      "Delete named range": [
+        "Usuń nazwany zakres"
       ]
     },
     "Title": {
