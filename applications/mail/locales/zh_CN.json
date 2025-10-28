@@ -2055,6 +2055,32 @@
         "采用端到端加密技术守护您的邮件安全，并且支持自有域名、15 个邮箱地址、无限量的 hide-my-email 邮箱别名、${ BRAND_NAME } Scribe 写作助手等高级功能。"
       ]
     },
+    "BF2025: Deal details": {
+      "Block ads, trackers, and malware": [
+        "屏蔽广告、跟踪器和恶意软件"
+      ],
+      "Built-in 2FA authenticator": [
+        "内置 2FA 验证器"
+      ],
+      "Unlimited daily chats": [
+        "无限聊天次数"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "黑色星期五"
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "仅限 ${ durationDeal }"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "完善的 NetShield 机制能够屏蔽广告、追踪脚本和恶意软件，增强设备安全性，提升网络性能."
+      ]
+    },
     "Billing cycle option": {
       "1 month": [
         "1 个月"
@@ -4156,17 +4182,11 @@
       ]
     },
     "Duo offer: Link": {
-      "Double your storage": [
-        "将您的存储空间翻倍"
-      ],
       "Share your plan": [
         "分享您的套餐"
       ]
     },
     "Duo offer: Title": {
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "使用 ${ BRAND_NAME } Duo 将您的存储空间翻倍"
-      ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
         "使用 ${ BRAND_NAME } Duo 分享您的套餐"
       ]
@@ -12404,6 +12424,11 @@
         "由 ${ ownerName } 共享"
       ]
     },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "在 ${ appName } 中打开"
+      ]
+    },
     "Signature verification warning": {
       "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
         "PGP 加密邮件，发件人验证失败：${ verificationErrorsMessage }"
@@ -14016,9 +14041,6 @@
       ],
       "Don't give spam a chance": [
         "不要给垃圾邮件留下可乘之机"
-      ],
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "使用 ${ BRAND_NAME } Duo 将您的存储空间翻倍"
       ],
       "Downgrade account": [
         "降级账户"
