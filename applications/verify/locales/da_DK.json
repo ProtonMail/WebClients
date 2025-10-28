@@ -1055,6 +1055,9 @@
       "Enter your own password (as organization admin).": [
         "Indtast din egen adgangskode (som organisationsadministrator)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Indtast din egen adgangskode (som betroet kontakt)."
+      ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
         "For yderligere information og for at fjerne begrænsninger, log ind på ${ mailLink }."
       ],
@@ -1149,6 +1152,9 @@
       ],
       "Your password (admin)": [
         "Din adgangskode (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Din adgangskode (betroet kontakt)"
       ]
     },
     "Link": {
@@ -1227,6 +1233,9 @@
       "${ size } storage per user": [
         "${ size } lagerplads pr. bruger"
       ],
+      "1 TB secure storage": [
+        "1 TB sikker lagerplads"
+      ],
       "10 email addresses/aliases": [
         "10 e-mailadresser/aliasser"
       ],
@@ -1244,6 +1253,9 @@
       ],
       "Advanced account protection": [
         "Avanceret kontobeskyttelse"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Alle ${ BRAND_NAME }-produkter og funktioner"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alle grundlæggende ${ BRAND_NAME }-tjenester (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -1296,6 +1308,9 @@
       "End-to-end encryption": [
         "End-to-end kryptering"
       ],
+      "Generate emails with a prompt": [
+        "Generér e-mails med en besked"
+      ],
       "HTML signatures": [
         "HTML signatur"
       ],
@@ -1310,6 +1325,9 @@
       ],
       "Private photo backup": [
         "Privat sikkerhedskopiering af fotos"
+      ],
+      "Proofread and refine your emails": [
+        "Korrekturlæs og finpuds dine e-mails"
       ],
       "Quickly craft replies": [
         "Skriv hurtigt svar"
@@ -1331,6 +1349,9 @@
       ],
       "SMTP submission": [
         "SMTP-indsendelse"
+      ],
+      "Support for up to 2 users": [
+        "Support for op til 2 brugere"
       ],
       "Sync and backup all your files across devices": [
         "Synkronisér og sikkerhedskopiér alle dine filer mellem enheder"
@@ -1477,6 +1498,11 @@
         "Adgangskode"
       ]
     },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premium-funktioner fra ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "Indlogningen var ikke gennemført."
@@ -1520,6 +1546,9 @@
     "Title": {
       "Account restricted": [
         "Konto begrænset:"
+      ],
+      "Account temporarily locked": [
+        "Konto midlertidigt låst"
       ],
       "Enter your password": [
         "Indtast din adgangskode"
