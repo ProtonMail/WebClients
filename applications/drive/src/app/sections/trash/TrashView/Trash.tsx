@@ -4,13 +4,15 @@ import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { useActiveBreakpoint } from '@proton/components';
+import { NodeType } from '@proton/drive';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 import isTruthy from '@proton/utils/isTruthy';
 
 import FileBrowser, { Cells, GridHeader, useItemContextMenu, useSelection } from '../../../components/FileBrowser';
 import type { BrowserItemId, ListViewHeaderItem } from '../../../components/FileBrowser/interface';
 import { GridViewItemWithThumbnail } from '../../../components/GridViewItemWithThumbnail';
-import { DeletedCell, LocationCell, NameCell, SizeCell } from '../../../components/sections/FileBrowser/contentCells';
+import { NameCell } from '../../../components/cells/NameCell';
+import { DeletedCell, LocationCell, SizeCell } from '../../../components/sections/FileBrowser/contentCells';
 import headerItems from '../../../components/sections/FileBrowser/headerCells';
 import { translateSortField } from '../../../components/sections/SortDropdown';
 import { useBatchThumbnailLoader } from '../../../hooks/drive/useBatchThumbnailLoader';
@@ -33,15 +35,31 @@ interface Props {
 
 const { CheckboxCell, ContextMenuCell } = Cells;
 
+const NameCellWithThumbnail = ({ item }: { item: LegacyItem }) => {
+    const thumbnail = useThumbnailStore((state) =>
+        item.thumbnailId ? state.getThumbnail(item.thumbnailId) : undefined
+    );
+    return (
+        <NameCell
+            name={item.name}
+            mediaType={item.mimeType}
+            type={item.isFile ? NodeType.File : NodeType.Folder}
+            thumbnailUrl={thumbnail?.sdUrl}
+            isInvitation={false}
+            haveSignatureIssues={undefined}
+        />
+    );
+};
+
 const largeScreenCells: React.FC<{ item: LegacyItem }>[] = [
     CheckboxCell,
-    NameCell,
+    NameCellWithThumbnail,
     LocationCell,
     DeletedCell,
     SizeCell,
     ContextMenuCell,
 ];
-const smallScreenCells = [CheckboxCell, NameCell, LocationCell, SizeCell, ContextMenuCell];
+const smallScreenCells = [CheckboxCell, NameCellWithThumbnail, LocationCell, SizeCell, ContextMenuCell];
 
 const headerItemsLargeScreen: ListViewHeaderItem[] = [
     headerItems.checkbox,
