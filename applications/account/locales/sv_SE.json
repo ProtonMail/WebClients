@@ -2215,20 +2215,8 @@
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "Spara med Black Friday-erbjudanden på ett snabbt schweiziskt VPN"
       ],
-      "Save with Cyber Week deals on a high-speed Swiss VPN": [
-        "Spara med Cyber ​​Week-erbjudanden på ett schweiziskt VPN med hög hastighet"
-      ],
-      "Save with End of Year deals on a high-speed Swiss VPN": [
-        "Spara med årsslutserbjudanden på ett schweiziskt VPN med hög hastighet"
-      ],
       "Select your Black Friday offer": [
         "Välj ditt Black Friday-erbjudande"
-      ],
-      "Select your Cyber Week offer": [
-        "Välj ditt Cyber Week-erbjudande"
-      ],
-      "Select your End of Year offer": [
-        "Välj ditt årsslutserbjudande"
       ]
     },
     "bf2023: Info": {
@@ -2288,6 +2276,9 @@
       "1 user account": [
         "1 användarkonto"
       ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB lagringsutrymme: 40x ditt nuvarande paket"
+      ],
       "6 user accounts": [
         "6 användarkonton"
       ],
@@ -2309,6 +2300,9 @@
       "Password health alerts": [
         "Aviseringar om lösenordshälsa"
       ],
+      "Recover previous file versions": [
+        "Återställ tidigare filversioner"
+      ],
       "Unlimited folders, labels and filters": [
         "Obegränsat antal mappar, etiketter och filter"
       ],
@@ -2322,6 +2316,9 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Fakturerad med ${ amount } en gång"
+      ],
+      "forever": [
+        "för alltid"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Förnyas efter 1 månad till ${ regularAmount }."
@@ -2353,6 +2350,87 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagringsutrymme delas mellan alla ${ BRAND_NAME }-tjänster."
+      ]
+    },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "Black Friday-rea"
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB datalagring"
+      ],
+      "3 TB data storage": [
+        "3 TB datalagring"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Åtkomst till 15 000+ servrar i 120+ länder"
+      ],
+      "Access advanced AI models": [
+        "Åtkomst till avancerade AI-modeller"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alla premiumfunktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blockera annonser, spårare och skadlig kod"
+      ],
+      "Built-in 2FA authenticator": [
+        "Inbyggd 2FA-autentiserare"
+      ],
+      "Connect 10 devices at once": [
+        "Anslut 10 enheter samtidigt"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Fullständig chatthistorik med enkel sökning och favoriter"
+      ],
+      "Individual accounts for 6 users": [
+        "Individuella konton för 6 användare"
+      ],
+      "Individual accounts for you and a partner": [
+        "Individuella konton för dig och en partner"
+      ],
+      "Stronger protection against cyber threats": [
+        "Starkare skydd mot cyberhot"
+      ],
+      "Unlimited daily chats": [
+        "Obegränsat antal dagliga chattar"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Hjälp dina nära och kära att gå med i integritetsrevolutionen med våra mest prisvärda paket, nu med 50 % rabatt!"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Gå med i integritetsrevolutionen med våra mest prisvärda paket, nu med 50 % rabatt!"
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "för ${ durationDeal }"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "Spara ${ savedAmount } med vårt mest prisvärda, tidsbegränsade erbjudande!"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "Byt till vår 2-årsplan och spara ${ savedAmount }!"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "Byt till vår årsplan och spara ${ savedAmount }!"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "Unna dina nära och kära ett komplett digitalt skydd."
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Specialdesignade NetShield skyddar dina enheter och snabbar upp din surfning genom att blockera annonser, spårare och skadlig kod."
       ]
     },
     "Billing cycle": {
@@ -2926,9 +3004,6 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Lägg till ${ LUMO_APP_NAME }"
-      ],
-      "AI assistant that respects your privacy": [
-        "AI-assistent som respekterar din integritet"
       ],
       "Basic chat history": [
         "Grundläggande chatthistorik"
@@ -4794,16 +4869,19 @@
       ]
     },
     "Duo offer: Link": {
-      "Double your storage": [
-        "Dubbla ditt lagringsutrymme"
+      "Get 4x more storage": [
+        "Skaffa 4x mer lagringsutrymme"
       ],
       "Share your plan": [
         "Dela ditt paket"
       ]
     },
     "Duo offer: Title": {
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Dubbla ditt lagringsutrymme med ${ BRAND_NAME } Duo"
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "Skaffa 4x mer lagringsutrymme med ${ BRAND_NAME } Duo"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "Dela dina paketförmåner med ${ BRAND_NAME } Duo"
       ]
     },
     "Duration": {
@@ -5768,6 +5846,9 @@
       ],
       "Expired": [
         "Löpt ut"
+      ],
+      "Failed to add group member": [
+        "Misslyckades att lägga till gruppmedlem"
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Misslyckades att hämta aktiva sessioner. ${ refresh } eller försök igen senare."
@@ -10792,6 +10873,9 @@
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Uppgradera för att lägga till en kortare @pm.me-adress till ditt konto som är lättare att dela. Det står för “${ MAIL_APP_NAME } me“ eller “Private Message me“."
       ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "Uppgradera för att behålla dina ${ planTitle }-förmåner."
+      ],
       "Upgrade to Professional or a higher plan to unlock": [
         "Uppgradera till Professional eller ett högre paket för att låsa upp"
       ],
@@ -12199,6 +12283,9 @@
       "Billing cycle": [
         "Faktureringsperiod"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Block": [
         "Blockera"
       ],
@@ -12564,6 +12651,9 @@
       ],
       "Get everything in Free, plus:": [
         "Få allt i Free, plus:"
+      ],
+      "Get the deal": [
+        "Ta del av erbjudandet"
       ],
       "Gift code": [
         "Presentkod"
@@ -13055,8 +13145,8 @@
       "Special characters": [
         "Specialtecken"
       ],
-      "Special Offer: Get ${ PASS_SHORT_APP_NAME } Plus for ${ offerPrice }": [
-        "Specialerbjudande: Få ${ PASS_SHORT_APP_NAME } Plus för ${ offerPrice }"
+      "Special Offer!": [
+        "Specialerbjudande!"
       ],
       "Starred": [
         "Stjärnmärkt"
@@ -13192,9 +13282,6 @@
       ],
       "Verify keys with Key Transparency": [
         "Verifiera nycklar med Key Transparency"
-      ],
-      "Video conferencing with ${ MEET_APP_NAME }": [
-        "Videokonferens med ${ MEET_APP_NAME }"
       ],
       "Video conferencing with Zoom": [
         "Videokonferenser med Zoom"
@@ -13769,6 +13856,14 @@
         "Aktivera detaljerade händelser"
       ]
     },
+    "lumo_signup_2025: title": {
+      "For businesses": [
+        "För företag"
+      ],
+      "For individuals": [
+        "För individer"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Importera alla meddelanden från ${ itemsToImportCount } mapp och märk dem som",
@@ -13933,6 +14028,9 @@
       ],
       "View user sign-in, recovery and security events.": [
         "Visa användarinloggning, återställning och säkerhetshändelser."
+      ],
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "Din gratis provperiod har slutat. ${ nonAutoRenewalAction }"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Din gratis provperiod har avslutats. Åtkomst till ditt konto kommer snart att inaktiveras. ${ action }"
@@ -15395,9 +15493,6 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } skapat"
       ],
-      "${ MEET_APP_NAME } video conferencing settings have been updated": [
-        "Inställningar för ${ MEET_APP_NAME }-videokonferenser har uppdaterats"
-      ],
       "${ reason } has been disabled": [
         "${ reason } har inaktiverats"
       ],
@@ -16549,9 +16644,6 @@
       "Activity log": [
         "Aktivitetslogg"
       ],
-      "Additional mailboxes for aliases": [
-        "Ytterligare brevlådor för alias"
-      ],
       "Admin panel to manage users and subscription": [
         "Administratörspanel för att hantera användare och prenumeration"
       ],
@@ -16561,17 +16653,14 @@
       "Advanced alias features (powered by SimpleLogin)": [
         "Avancerade funktioner för alias (drivs av SimpleLogin)"
       ],
-      "File attachments (coming soon)": [
-        "Filbilagor (kommer snart)"
+      "File attachments (up to 10GB)": [
+        "Filbilagor (upp till 10 GB)"
       ],
       "One-time payment, lifetime deal": [
         "Engångsbetalning, livstidserbjudande"
       ],
       "Team policies": [
         "Policy för team"
-      ],
-      "Your custom domain for aliases": [
-        "Din anpassade domän för alias"
       ]
     },
     "PassFamilyPlan2024": {
@@ -16723,6 +16812,9 @@
       ]
     },
     "Payments": {
+      "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
+        "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Belopp att betala efter provperioden den ${ formattedDate }"
       ],
@@ -17444,6 +17536,9 @@
       ],
       "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Sista chansen att utforska alla kraftfulla funktioner som **${ planTitle }** har att erbjuda."
+      ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "När din fullständiga prenumeration startar kan du fortfarande avbryta inom 30 dagar och få en proportionell återbetalning."
       ],
       "Refer friends": [
         "Hänvisa vänner"
@@ -18639,6 +18734,11 @@
         "Delad av ${ ownerName }"
       ]
     },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "Öppna i ${ appName }"
+      ]
+    },
     "Signature verification error when joining calendar": {
       "Signature verification error": [
         "Fel vid signaturverifiering"
@@ -19109,6 +19209,9 @@
       "ISO 27001 certified": [
         "ISO 27001-certifierat"
       ],
+      "Mail, calendar, file storage, and VPN included": [
+        "E-post, kalender, fillagringsutrymme och VPN inkluderat"
+      ],
       "Open source and audited": [
         "Öppen källkod och granskad"
       ],
@@ -19129,6 +19232,9 @@
       ],
       "The only email service with:": [
         "Den enda e-posttjänsten med:"
+      ],
+      "The only password manager with:": [
+        "Den enda lösenordshanteraren med:"
       ],
       "Unlimited passwords": [
         "Obegränsat antal lösenord"
@@ -21357,9 +21463,6 @@
       "Don't show again?": [
         "Visa inte igen?"
       ],
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Dubbla ditt lagringsutrymme med ${ BRAND_NAME } Duo"
-      ],
       "Downgrade account": [
         "Nedgradera konto"
       ],
@@ -22308,9 +22411,6 @@
       "Version history": [
         "Versionshistorik"
       ],
-      "Video conferencing with ${ MEET_APP_NAME }": [
-        "Videokonferens med ${ MEET_APP_NAME }"
-      ],
       "Video conferencing with Zoom": [
         "Videokonferenser med Zoom"
       ],
@@ -22529,9 +22629,6 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Administratörer kan hantera användarkonton och ge administratörsrättigheter till andra användare. Endast den primära administratören kan redigera paketet för organisationen."
-      ],
-      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "Gör det möjligt att sömlöst lägga till ${ MEET_APP_NAME }-videokonferenslänkar till dina kalenderinbjudningar."
       ],
       "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
         "Gör det möjligt att sömlöst lägga till Zoom-videokonferenslänkar till dina kalenderinbjudningar."
@@ -22769,6 +22866,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: AI-assistent som respekterar din integritet"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Säkra inloggningar på alla dina enheter. Inkluderar obegränsade alias, delning, integrerad 2FA och mer."
       ],

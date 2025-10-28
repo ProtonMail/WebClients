@@ -2230,20 +2230,8 @@
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "Spar penger med Black Friday-tilbud på et høyhastighets sveitsisk VPN"
       ],
-      "Save with Cyber Week deals on a high-speed Swiss VPN": [
-        "Spar penger med Cyber Week-tilbud på et høyhastighets sveitsisk VPN"
-      ],
-      "Save with End of Year deals on a high-speed Swiss VPN": [
-        "Spar penger med slutten av året-tilbud på et høyhastighets sveitsisk VPN"
-      ],
       "Select your Black Friday offer": [
         "Velg ditt Black Friday-tilbud"
-      ],
-      "Select your Cyber Week offer": [
-        "Velg ditt Cyber Week-tilbud"
-      ],
-      "Select your End of Year offer": [
-        "Velg ditt slutten av året-tilbud"
       ]
     },
     "bf2023: Info": {
@@ -2377,6 +2365,35 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagringsplass deles mellom alle ${ BRAND_NAME }-tjenestene."
+      ]
+    },
+    "BF2025: Deal details": {
+      "Access 15,000+ servers in 120+ countries": [
+        "Tilgang til 15,000+ tjenere i 120+ land"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blokkér annonser, sporere og skadelig programvare"
+      ],
+      "Built-in 2FA authenticator": [
+        "Innebygget 2FA-autentisering"
+      ],
+      "Unlimited daily chats": [
+        "Ubegrenset antall daglige chatter"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "for ${ durationDeal }"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Spesialdesignet NetShield beskytter enheten din og øker hastigheten på surfingen din ved å blokkere annonser, sporere og skadelig programvare."
       ]
     },
     "Billing cycle": {
@@ -2959,9 +2976,6 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Legg til ${ LUMO_APP_NAME }"
-      ],
-      "AI assistant that respects your privacy": [
-        "KI-assistent som respekterer personvernet ditt"
       ],
       "Basic chat history": [
         "Grunnleggende chatlogg"
@@ -4836,16 +4850,16 @@
       ]
     },
     "Duo offer: Link": {
-      "Double your storage": [
-        "Doble lagringsplassen din"
+      "Get 4x more storage": [
+        "Skaff deg 4x mer lagringskapasitet"
       ],
       "Share your plan": [
         "Del planen din"
       ]
     },
     "Duo offer: Title": {
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Doble lagringsplassen din med ${ BRAND_NAME } Duo"
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "Få 4x mer lagring med ${ BRAND_NAME } Duo"
       ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
         "Del fordelene med planen din med ${ BRAND_NAME } Duo"
@@ -5832,6 +5846,9 @@
       ],
       "Expired": [
         "Utløpt"
+      ],
+      "Failed to add group member": [
+        "Kunne ikke legge til gruppemedlem"
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Kunne ikke finne aktive økter. ${ refresh } eller prøv igjen senere."
@@ -12303,6 +12320,9 @@
       "Billing cycle": [
         "Faktureringssyklus"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Block": [
         "Blokkér"
       ],
@@ -12668,6 +12688,9 @@
       ],
       "Get everything in Free, plus:": [
         "Få alt i Free, pluss:"
+      ],
+      "Get the deal": [
+        "Skaff deg tilbudet"
       ],
       "Gift code": [
         "Gavekode"
@@ -13159,8 +13182,8 @@
       "Special characters": [
         "Spesialtegn"
       ],
-      "Special Offer: Get ${ PASS_SHORT_APP_NAME } Plus for ${ offerPrice }": [
-        "Spesialtilbud: få ${ PASS_SHORT_APP_NAME } Plus for ${ offerPrice }"
+      "Special Offer!": [
+        "Spesialtilbud!"
       ],
       "Starred": [
         "Stjernemerket"
@@ -13296,9 +13319,6 @@
       ],
       "Verify keys with Key Transparency": [
         "Verifiser nøkler med Key Transparency"
-      ],
-      "Video conferencing with ${ MEET_APP_NAME }": [
-        "Videokonferanser med ${ MEET_APP_NAME }"
       ],
       "Video conferencing with Zoom": [
         "Videokonferanser med Zoom"
@@ -15502,9 +15522,6 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } opprettet"
       ],
-      "${ MEET_APP_NAME } video conferencing settings have been updated": [
-        "Videokonferanseinnstillinger for ${ MEET_APP_NAME } er oppdatert"
-      ],
       "${ reason } has been disabled": [
         "${ reason } er deaktivert"
       ],
@@ -16659,9 +16676,6 @@
       "Activity log": [
         "Aktivitetslogg"
       ],
-      "Additional mailboxes for aliases": [
-        "Ytterligere postbokser for aliaser"
-      ],
       "Admin panel to manage users and subscription": [
         "Administrasjonspanel for å administrere brukere og abonnement"
       ],
@@ -16671,17 +16685,14 @@
       "Advanced alias features (powered by SimpleLogin)": [
         "Avanserte aliasfunksjoner (drevet av SimpleLogin)"
       ],
-      "File attachments (coming soon)": [
-        "Filvedlegg (kommer snart)"
+      "File attachments (up to 10GB)": [
+        "Filvedlegg (opptil 10 GB)"
       ],
       "One-time payment, lifetime deal": [
         "Engangsbetaling, livstidsavtale"
       ],
       "Team policies": [
         "Retningslinjer for teamet"
-      ],
-      "Your custom domain for aliases": [
-        "Ditt standard domene for aliaser"
       ]
     },
     "PassFamilyPlan2024": {
@@ -16827,6 +16838,9 @@
       ]
     },
     "Payments": {
+      "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
+        "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Beløp som forfaller etter prøveperioden på ${ formattedDate }"
       ],
@@ -16903,6 +16917,17 @@
         "Kupongen er gyldig for ${ couponRedemptions } fornyelse.",
         "Kupongen er gyldig for ${ couponRedemptions } fornyelser."
       ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "Den spesielle rabattprisen gjelder for den første måneden på ${ subscriptionLength }.",
+        "Den spesielt rabatterte prisen er gyldig de første ${ subscriptionLength } månedene."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Den spesielt rabatterte prisen er gyldig den første måneden. Kupongen er gyldig for ${ couponRedemptions } fornyelse. Deretter vil den automatisk bli fornyet til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst.",
+        "Den spesielt rabatterte prisen er gyldig den første måneden. Kupongen er gyldig for ${ couponRedemptions } fornyelser. Deretter vil den automatisk bli fornyet til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Den spesielt rabatterte prisen er gyldig den første måneden. Da blir den automatisk fornyet til ${ renewPriceStr } hver måned. Du kan avbryte når som helst."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig for den første ${ subscriptionLength } måneden.",
         "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig de første ${ subscriptionLength } månedene."
@@ -16956,6 +16981,9 @@
       ],
       "Your payment is still being processed": [
         "Betalingen din behandles fortsatt"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+        "Abonnementet ditt har for øyeblikket en eksisterende rabatt. Hvis du flytter til denne nye kampanjen, vil den eksisterende rabatten ikke lenger gjelde."
       ]
     },
     "Payments.Error": {
@@ -18851,6 +18879,11 @@
         "Delt av ${ ownerName }"
       ]
     },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "Åpne i ${ appName }"
+      ]
+    },
     "Signature verification error when joining calendar": {
       "Signature verification error": [
         "Feil ved signaturbekreftelse"
@@ -19282,6 +19315,9 @@
       "Advanced security features": [
         "Avanserte sikkerhetsfunksjoner"
       ],
+      "Advanced security features by ${ BRAND_NAME }": [
+        "Avanserte sikkerhetsfunksjoner fra ${ BRAND_NAME }"
+      ],
       "Advanced sharing security": [
         "Avansert delingssikkerhet"
       ],
@@ -19321,6 +19357,9 @@
       "ISO 27001 certified": [
         "ISO 27001-sertifisert"
       ],
+      "Mail, calendar, file storage, and VPN included": [
+        "E-post, kalender, fillagring og VPN inkludert"
+      ],
       "Open source and audited": [
         "Åpen kildekode og overvåket"
       ],
@@ -19341,6 +19380,9 @@
       ],
       "The only email service with:": [
         "Den eneste e-posttjenesten med:"
+      ],
+      "The only password manager with:": [
+        "Den eneste passordbehandleren med:"
       ],
       "Unlimited passwords": [
         "Ubegrenset antall passord"
@@ -21569,9 +21611,6 @@
       "Don't show again?": [
         "Ikke vis igjen?"
       ],
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Doble lagringsplassen din med ${ BRAND_NAME } Duo"
-      ],
       "Downgrade account": [
         "Nedgrader kontoen"
       ],
@@ -22517,9 +22556,6 @@
       "Version history": [
         "Versjonshistorikk"
       ],
-      "Video conferencing with ${ MEET_APP_NAME }": [
-        "Videokonferanser med ${ MEET_APP_NAME }"
-      ],
       "Video conferencing with Zoom": [
         "Videokonferanser med Zoom"
       ],
@@ -22735,9 +22771,6 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Administratorer kan administrere brukerkontoer og gi administratorrettigheter til andre brukere. Bare den primære administratoren kan redigere planen for organisasjonen."
-      ],
-      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "Gjør det mulig å sømløst legge til ${ MEET_APP_NAME }-videokonferansekoblinger i kalenderinvitasjonene dine."
       ],
       "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
         "Gjør det mulig å sømløst legge til Zoom-videokonferansekoblinger i kalenderinvitasjonene dine."
