@@ -224,7 +224,7 @@ function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
   const { getLocalID } = useAuthentication()
   const isRecents = useRouteMatch(HOMEPAGE_RECENTS_PATH)
   const history = useHistory()
-  const { updateRecentDocuments, isRecentsUpdating } = useHomepageView()
+  const { updateRecentDocuments, isRecentsUpdating, type } = useHomepageView()
   const { createNotification } = useNotifications()
   const { APP_VERSION } = useConfig()
   const appVersion = getAppVersion(APP_VERSION)
@@ -293,6 +293,40 @@ function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
     >
       <div className="px-3 pb-3 pt-2 small:hidden">{newDocumentButton}</div>
       <SidebarNav>
+        <div className="flex items-center justify-between px-3 py-2">
+          <div className="px-3 !text-xs text-[--text-hint]">Recents</div>
+          {IS_REFRESH_ENABLED ? (
+            <Tooltip title={c('Info').t`Update recent documents`}>
+              <Button
+                aria-label={c('Info').t`Update recent documents`}
+                icon
+                size="small"
+                shape="ghost"
+                className="-mr-1"
+                disabled={isRecentsUpdating}
+                onClick={async (e) => {
+                  e.stopPropagation()
+                  e.preventDefault()
+                  if (!isRecents) {
+                    history.push('/recents')
+                  }
+                  await updateRecentDocuments()
+                  createNotification({
+                    text: c('Notification').t`Recent documents updated`,
+                    expiration: NOTIFICATION_DEFAULT_EXPIRATION_TIME,
+                  })
+                  setExpanded(false)
+                }}
+              >
+                <Icon
+                  data-updating={isRecentsUpdating ? '' : undefined}
+                  className="data-[updating]:animate-spin"
+                  name="arrow-rotate-right"
+                />
+              </Button>
+            </Tooltip>
+          ) : null}
+        </div>
         <SidebarList>
           <SidebarListItem onClick={() => setExpanded(false)}>
             <SidebarListItemLink
@@ -301,44 +335,60 @@ function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
               data-updating={isRecentsUpdating ? '' : undefined}
               className="flex items-center justify-between"
               activeClassName="!font-semibold"
+              isActive={(match) => Boolean(match?.isExact && !type)}
             >
               <span className="flex items-center gap-2">
                 <Icon name="house" />
-                <span>{c('Info').t`Recents`}</span>
+                <span>{c('Info').t`All`}</span>
               </span>
-              {IS_REFRESH_ENABLED ? (
-                <Tooltip title={c('Info').t`Update recent documents`}>
-                  <Button
-                    aria-label={c('Info').t`Update recent documents`}
-                    icon
-                    size="small"
-                    shape="ghost"
-                    className="-mr-1"
-                    disabled={isRecentsUpdating}
-                    onClick={async (e) => {
-                      e.stopPropagation()
-                      e.preventDefault()
-                      if (!isRecents) {
-                        history.push('/recents')
-                      }
-                      await updateRecentDocuments()
-                      createNotification({
-                        text: c('Notification').t`Recent documents updated`,
-                        expiration: NOTIFICATION_DEFAULT_EXPIRATION_TIME,
-                      })
-                      setExpanded(false)
-                    }}
-                  >
-                    <Icon
-                      data-updating={isRecentsUpdating ? '' : undefined}
-                      className="data-[updating]:animate-spin"
-                      name="arrow-rotate-right"
-                    />
-                  </Button>
-                </Tooltip>
-              ) : null}
             </SidebarListItemLink>
           </SidebarListItem>
+          {isSheetsEnabled && (
+            <>
+              <SidebarListItem onClick={() => setExpanded(false)}>
+                <SidebarListItemLink
+                  to="/recents?type=document"
+                  exact={true}
+                  data-updating={isRecentsUpdating ? '' : undefined}
+                  className="flex items-center justify-between"
+                  activeClassName="!font-semibold"
+                  isActive={(match) => Boolean(match?.isExact && type === 'document')}
+                >
+                  <span className="flex items-center gap-2">
+                    <Icon
+                      name={ICON_BY_TYPE.document}
+                      className="shrink-0 text-[--icon-color]"
+                      style={{ '--icon-color': COLOR_BY_TYPE.document }}
+                    />
+                    <span>{c('Info').t`Documents`}</span>
+                  </span>
+                </SidebarListItemLink>
+              </SidebarListItem>
+              <SidebarListItem onClick={() => setExpanded(false)}>
+                <SidebarListItemLink
+                  to="/recents?type=spreadsheet"
+                  exact={true}
+                  data-updating={isRecentsUpdating ? '' : undefined}
+                  className="flex items-center justify-between"
+                  activeClassName="!font-semibold"
+                  isActive={(match) => Boolean(match?.isExact && type === 'spreadsheet')}
+                >
+                  <span className="flex items-center gap-2">
+                    <Icon
+                      name={ICON_BY_TYPE.spreadsheet}
+                      className="shrink-0 text-[--icon-color]"
+                      style={{ '--icon-color': COLOR_BY_TYPE.spreadsheet }}
+                    />
+                    <span>{c('Info').t`Spreadsheets`}</span>
+                  </span>
+                </SidebarListItemLink>
+              </SidebarListItem>
+              <li className="px-6">
+                <hr className="my-3 h-px bg-[#EAE7E4]" />
+              </li>
+            </>
+          )}
+
           {IS_FAVORITES_ENABLED && (
             <SidebarListItem onClick={() => setExpanded(false)}>
               <SidebarListItemLink to="/favorites" exact={true} activeClassName="!font-semibold">
