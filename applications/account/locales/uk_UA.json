@@ -1771,20 +1771,8 @@
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "Заощаджуйте з пропозиціями до дня Чорної П'ятниці на високошвидкісній швейцарській VPN"
       ],
-      "Save with Cyber Week deals on a high-speed Swiss VPN": [
-        "Заощаджуйте з пропозиціями Кібертижня на високошвидкісній швейцарській VPN"
-      ],
-      "Save with End of Year deals on a high-speed Swiss VPN": [
-        "Заощаджуйте з пропозиціями кінця року на високошвидкісній швейцарській VPN"
-      ],
       "Select your Black Friday offer": [
         "Оберіть свою пропозицію до дня Чорної П'ятниці"
-      ],
-      "Select your Cyber Week offer": [
-        "Оберіть свою пропозицію Кібертижня"
-      ],
-      "Select your End of Year offer": [
-        "Оберіть свою пропозицію Кінця року"
       ]
     },
     "bf2023: Info": {
@@ -1873,6 +1861,26 @@
         "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адреси електронної пошти, підтримку власних доменів електронної пошти, необмежену кількість псевдонімів Hide-my-email та інші можливості.",
         "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адрес електронної пошти, підтримку власних доменів електронної пошти, необмежену кількість псевдонімів Hide-my-email та інші можливості.",
         "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адрес електронної пошти, підтримку власних доменів електронної пошти, необмежену кількість псевдонімів Hide-my-email та інші можливості."
+      ]
+    },
+    "BF2025: Deal details": {
+      "Block ads, trackers, and malware": [
+        "Блокування реклами, трекерів і шкідливих програм"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "за ${ durationDeal }"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Функцію NetShield, яка блокує рекламу, стеження і зловмисні програми, розроблено спеціально для захисту ваших пристроїв та прискорення роботи в Інтернеті."
       ]
     },
     "Billing cycle": {
@@ -15970,6 +15978,11 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Надано спільний доступ від ${ ownerName }"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "Відкрити в ${ appName }"
       ]
     },
     "Signature verification error when joining calendar": {

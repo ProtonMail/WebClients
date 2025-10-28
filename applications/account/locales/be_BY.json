@@ -2242,20 +2242,8 @@
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "Эканомце з прапановамі \"Чорнай пятніцы\" на высакахуткасным швейцарскім VPN"
       ],
-      "Save with Cyber Week deals on a high-speed Swiss VPN": [
-        "Эканомце з прапановамі \"Кібертыдня\" на высакахуткасным швейцарскім VPN"
-      ],
-      "Save with End of Year deals on a high-speed Swiss VPN": [
-        "Эканомце са спецыяльнай прапановай, якая прысвечана канцу года на высакахуткасным швейцарскім VPN"
-      ],
       "Select your Black Friday offer": [
         "Выберыце прапанову \"Чорнай пятніцы\""
-      ],
-      "Select your Cyber Week offer": [
-        "Выберыце прапанову \"Кібертыдзень\""
-      ],
-      "Select your End of Year offer": [
-        "Выберыце прапанову прысвечаную канцу года"
       ]
     },
     "bf2023: Info": {
@@ -2317,6 +2305,9 @@
       "1 user account": [
         "1 уліковы запіс карыстальніка"
       ],
+      "200 GB storage: 40x your current plan": [
+        "200 ГБ сховішча: у 40 разоў больш за ваш бягучы тарыфны план"
+      ],
       "6 user accounts": [
         "6 уліковых запісаў карыстальнікаў"
       ],
@@ -2338,6 +2329,9 @@
       "Password health alerts": [
         "Папярэджанні якасці пароля"
       ],
+      "Recover previous file versions": [
+        "Аднаўленне папярэдніх версій файла"
+      ],
       "Unlimited folders, labels and filters": [
         "Неабмежаваная колькасць папак, метак і фільтраў"
       ],
@@ -2351,6 +2345,9 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Аплачваецца ${ amount } аднаразова"
+      ],
+      "forever": [
+        "назаўсёды"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Падоўжыцца пасля 1 месяца за ${ regularAmount }."
@@ -2386,6 +2383,32 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Прастора сховішча размеркавана паміж усімі сэрвісамі ${ BRAND_NAME }"
+      ]
+    },
+    "BF2025: Deal details": {
+      "Block ads, trackers, and malware": [
+        "Блакіроўка рэкламы, праграм сачэння і шкодных праграм"
+      ],
+      "Built-in 2FA authenticator": [
+        "Убудаваны аўтэнтыфікатар 2ФА"
+      ],
+      "Unlimited daily chats": [
+        "Неабмежаваная колькасць штодзённых чатаў"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "Чорная пятніца"
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "за ${ durationDeal }"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Адмыслова распрацаваная функцыя NetShield абароніць вашы прылады і паскорыць прагляд старонак пры дапамозе блакіравання рэкламы, праграм сачэння і шкодных праграм."
       ]
     },
     "Billing cycle": {
@@ -2977,11 +3000,14 @@
       "Add ${ LUMO_APP_NAME }": [
         "Дадайце праграму ${ LUMO_APP_NAME }"
       ],
-      "AI assistant that respects your privacy": [
-        "Памочнік ШІ, які паважае вашу прыватнасць"
+      "AI assistant that respects business confidentiality": [
+        "Памочнік ШІ, які паважае канфідэнцыяльнасць бізнесу"
       ],
       "Basic chat history": [
         "Базавая гісторыя чата"
+      ],
+      "Compliance with data protection regulations": [
+        "Адпаведнасць прававым нормам па абароне даных"
       ],
       "Data never used for AI training": [
         "Даныя ніколі не выкарыстоўваюцца для навучання ШІ"
@@ -3018,6 +3044,9 @@
       ],
       "Web search access": [
         "Доступ да пошуку ў інтэрнэце"
+      ],
+      "Zero-access encryption": [
+        "Шыфраванне з нулявым доступам"
       ]
     },
     "collider_2025: Navigation": {
@@ -4867,19 +4896,19 @@
       ]
     },
     "Duo offer: Link": {
-      "Double your storage": [
-        "Падвойце сваё сховішча"
+      "Get 4x more storage": [
+        "Атрымайце ў 4 разы больш месца ў сховішчы"
       ],
       "Share your plan": [
-        "Абагуліце свой тарыфны план"
+        "Абагульвайце свой тарыфны план"
       ]
     },
     "Duo offer: Title": {
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Падвойце сваё сховішча з ${ BRAND_NAME } Duo"
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "Атрымайце ў 4 разы больш сховішча з ${ BRAND_NAME } Duo"
       ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
-        "Абагуліце свае перавагі тарыфнага плана з ${ BRAND_NAME } Duo"
+        "Абагульвайце свае перавагі тарыфнага плана з ${ BRAND_NAME } Duo"
       ]
     },
     "Duration": {
@@ -5886,6 +5915,9 @@
       "Expired": [
         "Пратэрмінавана"
       ],
+      "Failed to add group member": [
+        "Не ўдалося дадаць члена групы"
+      ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Не ўдалося атрымаць актыўныя сеансы. ${ refresh } або паспрабуйце яшчэ раз пазней."
       ],
@@ -6410,7 +6442,7 @@
         "Ваш файл ${ formattedFilename } змяшчае больш за ${ MAX_IMPORT_EVENTS } падзей."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        "Ваш файл ${ formattedFilename } мае памылковы спосаб і яго немагчыма імпартаваць."
+        "Ваш файл ${ formattedFilename } мае памылковы спосаб і ён не можа быць імпартаваны."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "Ваш файл ${ formattedFilename } не змяшчае падзей для імпартавання."
@@ -6458,7 +6490,7 @@
     },
     "Error importing event": {
       "Bad format. Component cannot be read.": [
-        "Няправільны фармат. Немагчыма прачытаць кампанент."
+        "Няправільны фармат. Кампанент."
       ],
       "Calendar": [
         "Каляндар"
@@ -11080,7 +11112,7 @@
         "Палепшыце свой тарыфны план, каб дадаць кароткі адрас @pm да свайго ўліковага запісу, якім лёгка дзяліцца з астатнімі. Ён абазначае “${ MAIL_APP_NAME } me” або “Private Message me”."
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
-        "Палепшыць падпіску, каб захаваць ${ planTitle } перавагі."
+        "Палепшыць тарыфны план, каб захаваць перавагі ${ planTitle }."
       ],
       "Upgrade to Professional or a higher plan to unlock": [
         "Палепшыце да Professional або больш высокага тарыфнага плана, каб разблакіраваць"
@@ -12551,6 +12583,9 @@
       "Billing cycle": [
         "Перыяд аплаты"
       ],
+      "Black Friday": [
+        "Чорная пятніца"
+      ],
       "Block": [
         "Заблакіраваць"
       ],
@@ -12916,6 +12951,9 @@
       ],
       "Get everything in Free, plus:": [
         "Атрымайце ўсё ў бясплатнай версіі, а таксама:"
+      ],
+      "Get the deal": [
+        "Атрымаць прапанову"
       ],
       "Gift code": [
         "Падарункавы код"
@@ -13409,8 +13447,8 @@
       "Special characters": [
         "Спецыяльныя сімвалы"
       ],
-      "Special Offer: Get ${ PASS_SHORT_APP_NAME } Plus for ${ offerPrice }": [
-        "Спецыяльная прапанова: атрымайце ${ PASS_SHORT_APP_NAME } Plus за ${ offerPrice }"
+      "Special Offer!": [
+        "Спецыяльная прапанова!"
       ],
       "Starred": [
         "З зорачкай"
@@ -13546,9 +13584,6 @@
       ],
       "Verify keys with Key Transparency": [
         "Спраўджанне ключоў пры дапамозе Key Transparency"
-      ],
-      "Video conferencing with ${ MEET_APP_NAME }": [
-        "Відэаканферэнцыя з ${ MEET_APP_NAME }"
       ],
       "Video conferencing with Zoom": [
         "Відэаканферэнцыя з Zoom"
@@ -14130,6 +14165,19 @@
         "Уключыць падрабязныя падзеі"
       ]
     },
+    "lumo_signup_2025: Info": {
+      "Protect your entire business. Get ${ LUMO_SHORT_APP_NAME } Professional with all ${ BRAND_NAME } for Business apps and premium features.": [
+        "Абараніце ўвесь свой бізнес. Атрымайце ${ LUMO_SHORT_APP_NAME } Professional з усімі ${ BRAND_NAME } праграмамі для бізнесу і прэміяльнымі функцыямі."
+      ]
+    },
+    "lumo_signup_2025: title": {
+      "For businesses": [
+        "Для бізнесу"
+      ],
+      "For individuals": [
+        "Для асабістага карыстання"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Імпартаваць усе паведамленні з ${ itemsToImportCount } папкі і пазначыць іх як",
@@ -14308,7 +14356,7 @@
         "Паглядзець падзеі ўваходу, аднаўлення і бяспекі карыстальніка."
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
-        "Ваш бясплатны пробны перыяд завершыўся. ${ nonAutoRenewalAction }"
+        "Ваш бясплатны пробны перыяд завяршыўся. ${ nonAutoRenewalAction }"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ваш бясплатны пробны перыяд завяршыўся. Доступ да вашых уліковых запісаў будзе неўзабаве адключаны. ${ action }"
@@ -15827,9 +15875,6 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } створаны"
       ],
-      "${ MEET_APP_NAME } video conferencing settings have been updated": [
-        "Налады відэаканферэнцыі ${ MEET_APP_NAME } абноўлены"
-      ],
       "${ reason } has been disabled": [
         "${ reason } быў адключаны"
       ],
@@ -16983,9 +17028,6 @@
       "Activity log": [
         "Журнал актыўнасці"
       ],
-      "Additional mailboxes for aliases": [
-        "Дадатковыя паштовыя скрыні для псеўданімаў"
-      ],
       "Admin panel to manage users and subscription": [
         "Панэль адміністратара для кіравання карыстальнікамі і падпіскай"
       ],
@@ -16995,17 +17037,14 @@
       "Advanced alias features (powered by SimpleLogin)": [
         "Пашыраныя функцыі псеўданіма (на платформе SimpleLogin)"
       ],
-      "File attachments (coming soon)": [
-        "Далучаныя файлы (неўзабаве з'явіцца)"
+      "File attachments (up to 10GB)": [
+        "Далучаныя файлы (да 10 ГБ)"
       ],
       "One-time payment, lifetime deal": [
         "Аднаразовая аплата, пажыццёвы доступ"
       ],
       "Team policies": [
         "Палітыка каманды"
-      ],
-      "Your custom domain for aliases": [
-        "Ваш карыстальніцкі дамен для псеўданімаў"
       ]
     },
     "PassFamilyPlan2024": {
@@ -17151,6 +17190,9 @@
       ]
     },
     "Payments": {
+      "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
+        "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Сума да аплаты пасля пробнага перыяду на ${ formattedDate }"
       ],
@@ -17229,6 +17271,21 @@
         "Купон дзейнічае для ${ couponRedemptions } падаўжэнняў.",
         "Купон дзейнічае для ${ couponRedemptions } падаўжэнняў."
       ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першага ${ subscriptionLength } месяца.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першых ${ subscriptionLength } месяцаў.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першых ${ subscriptionLength } месяцаў.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першых ${ subscriptionLength } месяцаў."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэння. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за кожны месяц. Скасаваць можна ў любы момант."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першага ${ subscriptionLength } месяца.",
         "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першых ${ subscriptionLength } месяцаў.",
@@ -17288,6 +17345,9 @@
       ],
       "Your payment is still being processed": [
         "Ваш плацеж усё яшчэ апрацоўваецца"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+        "Ваша падпіска мае бягучую скідку. Пераход на гэту новую акцыю азначае, што ранейшая скідка больш не будзе ўжывацца."
       ]
     },
     "Payments.Error": {
@@ -17350,7 +17410,7 @@
         "Дадаць нумар прадпрыемства"
       ],
       "Add EIN": [
-        "Рэдагаваць ІНП"
+        "Рэдагаваць EIN"
       ],
       "Add VAT number": [
         "Дадаць нумар ПДВ"
@@ -19227,6 +19287,11 @@
         "Абагулена ${ ownerName }"
       ]
     },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "Адкрыць у ${ appName }"
+      ]
+    },
     "Signature verification error when joining calendar": {
       "Signature verification error": [
         "Памылка праверкі подпісу"
@@ -19684,6 +19749,9 @@
       "Advanced security features": [
         "Пашыраныя функцыі бяспекі"
       ],
+      "Advanced security features by ${ BRAND_NAME }": [
+        "Пашыраныя функцыі бяспекі ад ${ BRAND_NAME }"
+      ],
       "Advanced sharing security": [
         "Дадатковая бяспека пры абагульванні"
       ],
@@ -19723,6 +19791,9 @@
       "ISO 27001 certified": [
         "Сертыфікавана згодна са стандартам ISO 27001"
       ],
+      "Mail, calendar, file storage, and VPN included": [
+        "Уключае пошту, каляндар, сховішча файлаў і VPN"
+      ],
       "Open source and audited": [
         "Адкрыты зыходны код і аўдыт"
       ],
@@ -19743,6 +19814,9 @@
       ],
       "The only email service with:": [
         "Адзіны сэрвіс электроннай пошты з:"
+      ],
+      "The only password manager with:": [
+        "Адзіны менеджар пароляў з:"
       ],
       "Unlimited passwords": [
         "Неабмежаваная колькасць пароляў"
@@ -22073,9 +22147,6 @@
       "Don't show again?": [
         "Больш не паказваць?"
       ],
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Падвойце сваё сховішча з ${ BRAND_NAME } Duo"
-      ],
       "Downgrade account": [
         "Панізіць уліковы запіс"
       ],
@@ -23027,9 +23098,6 @@
       "Version history": [
         "Гісторыя версій"
       ],
-      "Video conferencing with ${ MEET_APP_NAME }": [
-        "Відэаканферэнцыя з ${ MEET_APP_NAME }"
-      ],
       "Video conferencing with Zoom": [
         "Відэаканферэнцыя з Zoom"
       ],
@@ -23245,9 +23313,6 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Адміністратары могуць кіраваць уліковымі запісамі карыстальнікаў і даваць правы адміністратара іншым карыстальнікам. Толькі асноўны адміністратар можа рэдагаваць тарыфны план арганізацыі."
-      ],
-      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "Дазваляе бесперашкодна дадаваць спасылкі на відэаканферэнцый ${ MEET_APP_NAME } у запрашэнні вашага календара."
       ],
       "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
         "Дазваляе бесперашкодна дадаваць спасылкі на відэаканферэнцый Zoom у запрашэнні вашага календара."
@@ -23491,6 +23556,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: Памочнік ШІ, які паважае вашу прыватнасць"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
       ],
@@ -24323,7 +24391,7 @@
         "Ваша фраза аднаўлення састарэла. Яна не зможа аднавіць новыя даныя, калі вы зноў скінеце свой пароль."
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
-        "Ваш пробны перыяд скончыцца ${ textDate }. З вас не будзе спаганяцца плата, калі вы адмовіцеся да ${ textDate }. ${ action }"
+        "Ваш пробны перыяд завершыцца ${ textDate }. З вас не будзе спаганяцца плата, калі вы адмовіцеся да ${ textDate }. ${ action }"
       ]
     },
     "Warning for domain modal": {
