@@ -176,7 +176,7 @@ const SubscriptionSubmitButton = ({
     const discountLossWarning =
         hasMigrationDiscount(subscription) && couponConfig?.renderShowMigrationDiscountLossWarning?.() ? (
             <InfoBanner variant={BannerVariants.WARNING}>{c('Payments')
-                .t`Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.`}</InfoBanner>
+                .t`Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.`}</InfoBanner>
         ) : null;
 
     return (
