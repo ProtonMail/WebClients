@@ -355,6 +355,8 @@ export function DocumentTitleDropdown({
     openRecentSpreadsheets,
   ])
 
+  const canRename = documentState.getProperty('userRole').canRename()
+
   if (isSpreadsheet) {
     const input = (
       <Ariakit.TooltipProvider>
@@ -363,7 +365,7 @@ export function DocumentTitleDropdown({
             <input
               type="text"
               className={clsx(
-                'text-ellipsis rounded-[4px] px-1 py-1.5 [border:1px_solid_transparent] focus:border-[#6D4AFF] focus-visible:outline-none hover:[&:not(:focus)]:bg-[#C2C1C033]',
+                'text-ellipsis rounded-[4px] px-1 py-1.5 [border:1px_solid_transparent] focus-visible:outline-none enabled:focus:border-[#6D4AFF] enabled:hover:[&:not(:focus)]:bg-[#C2C1C033]',
                 SupportsFieldSizing
                   ? 'ml-2 mr-1.5 min-w-4 [field-sizing:content]'
                   : 'w-auto max-w-full [grid-area:1_/_2]',
@@ -386,6 +388,7 @@ export function DocumentTitleDropdown({
               ref={renameInputRef}
               data-testid="sheet-name-input"
               size={SupportsFieldSizing ? undefined : 1} // required to make sure the input will shrink to fit the content when `field-sizing` is not supported
+              disabled={!canRename}
             />
           }
         ></Ariakit.TooltipAnchor>
@@ -479,7 +482,7 @@ export function DocumentTitleDropdown({
         }}
       >
         <DropdownMenu>
-          {user && documentState.getProperty('userRole').canRename() && (
+          {user && canRename && (
             <DropdownMenuButton
               className="flex items-center text-left"
               onClick={() => setIsRenaming((renaming) => !renaming)}
