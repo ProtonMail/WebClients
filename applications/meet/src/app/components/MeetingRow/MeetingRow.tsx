@@ -19,7 +19,7 @@ import { getNextOccurrence } from '../../utils/getNextOccurrence';
 import './MeetingRow.scss';
 
 interface MeetingRowProps {
-    meeting: Meeting & { adjustedStartTime?: number };
+    meeting: Meeting & { adjustedStartTime?: number; adjustedEndTime?: number };
     index: number;
 }
 
@@ -34,9 +34,12 @@ export const MeetingRow = ({ meeting, index }: MeetingRowProps) => {
 
     const { month, day, startTime, endTime } = useMemo(() => {
         // Use the pre-calculated adjusted time if available, otherwise calculate it
-        const nextOccurrenceTime = meeting.adjustedStartTime ?? getNextOccurrence(meeting);
-        const startDate = new Date(1000 * nextOccurrenceTime);
-        const endDate = meeting.EndTime ? new Date(1000 * Number(meeting.EndTime)) : null;
+        const occurrence =
+            !!meeting.adjustedStartTime && !!meeting.adjustedEndTime
+                ? { startTime: meeting.adjustedStartTime, endTime: meeting.adjustedEndTime }
+                : getNextOccurrence(meeting);
+        const startDate = new Date(1000 * occurrence.startTime);
+        const endDate = new Date(1000 * occurrence.endTime);
 
         const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
@@ -67,7 +70,7 @@ export const MeetingRow = ({ meeting, index }: MeetingRowProps) => {
         });
 
         return { month, day, startTime, endTime };
-    }, [meeting.adjustedStartTime, meeting.EndTime]);
+    }, [meeting.adjustedStartTime, meeting.adjustedEndTime, meeting.EndTime]);
 
     const meetingLink = getMeetingLink(meeting.MeetingLinkName, meeting.Password?.split(PASSWORD_SEPARATOR)[0] ?? '');
 
