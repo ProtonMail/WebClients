@@ -1,0 +1,1683 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=2; plural=(n != 1);",
+    "language": "nl_NL"
+  },
+  "contexts": {
+    "Action": {
+      "${ BRAND_NAME } shop": [
+        "${ BRAND_NAME } winkel"
+      ],
+      "Add account": [
+        "Account toevoegen"
+      ],
+      "Add another account": [
+        "Voeg een account toe"
+      ],
+      "Attach screenshot(s)": [
+        "Schermafdruk(ken) toevoegen"
+      ],
+      "Authenticate": [
+        "Authenticeren"
+      ],
+      "Cancel": [
+        "Annuleren"
+      ],
+      "Change password": [
+        "Wachtwoord wijzigen"
+      ],
+      "Chat with us": [
+        "Chat met ons"
+      ],
+      "Close": [
+        "Sluiten"
+      ],
+      "Continue": [
+        "Doorgaan"
+      ],
+      "Copy address": [
+        "Adres kopiëren"
+      ],
+      "Copy link": [
+        "Link kopiëren"
+      ],
+      "Delete": [
+        "Verwijderen"
+      ],
+      "Dismiss": [
+        "Negeren"
+      ],
+      "Download logs": [
+        "Logboeken downloaden"
+      ],
+      "Edit email address": [
+        "Wijzig e-mailadres"
+      ],
+      "Edit phone number": [
+        "Wijzig telefoonnummer"
+      ],
+      "Edit sign-in details": [
+        "Bewerk aanmeldgegevens"
+      ],
+      "Forgot password?": [
+        "Wachtwoord vergeten?"
+      ],
+      "Get verification code": [
+        "Krijg verificatie code"
+      ],
+      "Help and feedback": [
+        "Hulp en feedback"
+      ],
+      "Help and resources": [
+        "Hulp en bronnen"
+      ],
+      "More info: ${ safeTitle }": [
+        "Meer informatie: ${ safeTitle }"
+      ],
+      "More options for accounts": [
+        "Meer opties voor accounts"
+      ],
+      "Next month": [
+        "Volgende maand"
+      ],
+      "Next page": [
+        "Volgende pagina"
+      ],
+      "OK": [
+        "OK"
+      ],
+      "Previous month": [
+        "Vorige maand"
+      ],
+      "Previous page": [
+        "Vorige pagina"
+      ],
+      "Refer a friend": [
+        "Verwijs een vriend door"
+      ],
+      "Refresh the page": [
+        "Pagina vernieuwen"
+      ],
+      "Report a problem": [
+        "Meld een probleem"
+      ],
+      "Request a call": [
+        "Telefoongesprek aanvragen"
+      ],
+      "Request a feature": [
+        "Vraag een functie aan"
+      ],
+      "Request new code": [
+        "Nieuwe code aanvragen"
+      ],
+      "Resend code": [
+        "Verstuur code opnieuw"
+      ],
+      "Search countries": [
+        "Zoek landen"
+      ],
+      "Settings": [
+        "Instellingen"
+      ],
+      "Share": [
+        "Delen"
+      ],
+      "Show advanced options": [
+        "Geavanceerde opties weergeven"
+      ],
+      "Sign in": [
+        "Inloggen"
+      ],
+      "Sign out": [
+        "Uitloggen"
+      ],
+      "Sign out of all accounts": [
+        "Alle accounts uitloggen"
+      ],
+      "Start": [
+        "Start"
+      ],
+      "Submit": [
+        "Versturen"
+      ],
+      "Switch or add account": [
+        "Account toevoegen of wisselen"
+      ],
+      "Try another method": [
+        "Andere methode proberen"
+      ],
+      "Use authentication code": [
+        "Authenticatiecode gebruiken"
+      ],
+      "Use recovery code": [
+        "Herstelcode gebruiken"
+      ],
+      "Verify": [
+        "Verifiëren"
+      ],
+      "Verify account": [
+        "Verifieer account"
+      ],
+      "View invoice": [
+        "Factuur bekijken"
+      ]
+    },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "${ BRAND_NAME }-applicaties"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } desktop-app"
+      ]
+    },
+    "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } probleem"
+      ],
+      "Application problem": [
+        "Applicatieprobleem"
+      ],
+      "Bridge problem": [
+        "Probleem met Bridge"
+      ],
+      "Calendar problem": [
+        "Probleem met agenda"
+      ],
+      "Connection problem": [
+        "Verbindingsprobleem"
+      ],
+      "Contacts problem": [
+        "Probleem met contacten"
+      ],
+      "Custom domain problem": [
+        "Probleem met eigen domeinnaam"
+      ],
+      "Docs problem": [
+        "Probleem met Docs"
+      ],
+      "Drive problem": [
+        "Probleem met Drive"
+      ],
+      "Feature request": [
+        "Feature-verzoek"
+      ],
+      "Import / export problem": [
+        "Probleem met importeren / exporteren"
+      ],
+      "Installation problem": [
+        "Installatieprobleem"
+      ],
+      "Mail problem": [
+        "E-mailproblemen"
+      ],
+      "Manual setup problem": [
+        "Probleem met eigen setup"
+      ],
+      "Meet problem": [
+        "Meet probleem"
+      ],
+      "Other": [
+        "Anders"
+      ],
+      "Pass problem": [
+        "Probleem met Pass"
+      ],
+      "Payments problem": [
+        "Probleem met betalingen"
+      ],
+      "Sign in problem": [
+        "Inlogprobleem"
+      ],
+      "Sign up problem": [
+        "Aanmeldprobleem"
+      ],
+      "Signup problem": [
+        "Aanmeldprobleem"
+      ],
+      "Slow speed problem": [
+        "Snelheidsprobleem"
+      ],
+      "Speed problem": [
+        "Snelheidsprobleem"
+      ],
+      "Streaming problem": [
+        "Streamingproblemen"
+      ],
+      "Update problem": [
+        "Updateprobleem"
+      ],
+      "VPN problem": [
+        "VPN-probleem"
+      ],
+      "Website access problem": [
+        "Probleem met toegang tot website"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Inklappen"
+      ],
+      "Expand": [
+        "Uitvouwen"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "wortel"
+      ],
+      "cerise": [
+        "kers"
+      ],
+      "cobalt": [
+        "kobalt"
+      ],
+      "copper": [
+        "koper"
+      ],
+      "enzian": [
+        "gentiaan"
+      ],
+      "fern": [
+        "varen"
+      ],
+      "forest": [
+        "bos"
+      ],
+      "ocean": [
+        "oceaan"
+      ],
+      "olive": [
+        "olijf"
+      ],
+      "pacific": [
+        "stille oceaan"
+      ],
+      "pickle": [
+        "augurk"
+      ],
+      "pine": [
+        "den"
+      ],
+      "pink": [
+        "roze"
+      ],
+      "plum": [
+        "pruim"
+      ],
+      "purple": [
+        "paars"
+      ],
+      "reef": [
+        "rif"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "slateblue": [
+        "leisteenblauw"
+      ],
+      "soil": [
+        "aarde"
+      ],
+      "strawberry": [
+        "aardbei"
+      ]
+    },
+    "Country name": {
+      "Abkhazia": [
+        "Abchazië"
+      ],
+      "Afghanistan": [
+        "Afghanistan"
+      ],
+      "Albania": [
+        "Albanië"
+      ],
+      "Algeria": [
+        "Algerije"
+      ],
+      "American Samoa": [
+        "Amerikaans Samoa"
+      ],
+      "Andorra": [
+        "Andorra"
+      ],
+      "Angola": [
+        "Angola"
+      ],
+      "Anguilla": [
+        "Anguilla"
+      ],
+      "Antarctica": [
+        "Antarctica"
+      ],
+      "Antigua and Barbuda": [
+        "Antigua en Barbuda"
+      ],
+      "Argentina": [
+        "Argentinië"
+      ],
+      "Armenia": [
+        "Armenië"
+      ],
+      "Aruba": [
+        "Aruba"
+      ],
+      "Ascension Island": [
+        "Ascension"
+      ],
+      "Australia": [
+        "Australië"
+      ],
+      "Austria": [
+        "Oostenrijk"
+      ],
+      "Azerbaijan": [
+        "Azerbeidzjan"
+      ],
+      "Bahamas": [
+        "Bahama's"
+      ],
+      "Bahrain": [
+        "Bahrain"
+      ],
+      "Bangladesh": [
+        "Bangladesh"
+      ],
+      "Barbados": [
+        "Barbados"
+      ],
+      "Belarus": [
+        "Wit-Rusland"
+      ],
+      "Belgium": [
+        "België"
+      ],
+      "Belize": [
+        "Belize"
+      ],
+      "Benin": [
+        "Benin"
+      ],
+      "Bermuda": [
+        "Bermuda"
+      ],
+      "Bhutan": [
+        "Bhutan"
+      ],
+      "Bolivia": [
+        "Bolivia"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Bonaire, Sint Eustatius en Saba"
+      ],
+      "Bosnia and Herzegovina": [
+        "Bosnië en Herzegovina"
+      ],
+      "Botswana": [
+        "Botswana"
+      ],
+      "Bouvet Island": [
+        "Bouvet Eiland"
+      ],
+      "Brazil": [
+        "Brazilië"
+      ],
+      "British Indian Ocean Territory": [
+        "Brits Indische Oceaan Territorium"
+      ],
+      "Brunei Darussalam": [
+        "Brunei Darussalam"
+      ],
+      "Bulgaria": [
+        "Bulgarije"
+      ],
+      "Burkina Faso": [
+        "Burkina Faso"
+      ],
+      "Burundi": [
+        "Boeroendi"
+      ],
+      "Cambodia": [
+        "Cambodja"
+      ],
+      "Cameroon": [
+        "Kameroen"
+      ],
+      "Canada": [
+        "Canada"
+      ],
+      "Cape Verde": [
+        "Kaapverdië"
+      ],
+      "Cayman Islands": [
+        "Kaaiman Eilanden"
+      ],
+      "Central African Republic": [
+        "Centraal Afrikaanse Republiek"
+      ],
+      "Chad": [
+        "Tsjaad"
+      ],
+      "Chile": [
+        "Chili"
+      ],
+      "China": [
+        "China"
+      ],
+      "Christmas Island": [
+        "Kersteiland"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Cocoseilanden"
+      ],
+      "Colombia": [
+        "Colombia"
+      ],
+      "Comoros": [
+        "Comoren"
+      ],
+      "Congo": [
+        "Congo"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Congo, Democratische Republiek"
+      ],
+      "Cook Islands": [
+        "Cook Eilanden"
+      ],
+      "Costa Rica": [
+        "Costa Rica"
+      ],
+      "Croatia": [
+        "Kroatië"
+      ],
+      "Cuba": [
+        "Cuba"
+      ],
+      "Curaçao": [
+        "Curaçao"
+      ],
+      "Cyprus": [
+        "Cyprus"
+      ],
+      "Czech Republic": [
+        "Tsjechië"
+      ],
+      "Côte d'Ivoire": [
+        "Ivoorkust"
+      ],
+      "Denmark": [
+        "Denemarken"
+      ],
+      "Djibouti": [
+        "Djibouti"
+      ],
+      "Dominica": [
+        "Dominica"
+      ],
+      "Dominican Republic": [
+        "Dominicaanse Republiek"
+      ],
+      "Ecuador": [
+        "Ecuador"
+      ],
+      "Egypt": [
+        "Egypte"
+      ],
+      "El Salvador": [
+        "El Salvador"
+      ],
+      "Equatorial Guinea": [
+        "Equatoriaal Guinea"
+      ],
+      "Eritrea": [
+        "Eritrea"
+      ],
+      "Estonia": [
+        "Estland"
+      ],
+      "Eswatini": [
+        "Swaziland"
+      ],
+      "Ethiopia": [
+        "Ethiopië"
+      ],
+      "Falkland Islands": [
+        "Falklandeilanden"
+      ],
+      "Faroe Islands": [
+        "Faeröer Eilanden"
+      ],
+      "Federated States of Micronesia": [
+        "Federale Staten van Micronesië"
+      ],
+      "Fiji": [
+        "Fiji"
+      ],
+      "Finland": [
+        "Finland"
+      ],
+      "France": [
+        "Frankrijk"
+      ],
+      "French Guiana": [
+        "Franse Guinee"
+      ],
+      "French Polynesia": [
+        "Frans-Polynesië"
+      ],
+      "French Southern Territories": [
+        "Franse Zuidelijke en Antarctische Gebieden"
+      ],
+      "Gabon": [
+        "Gabon"
+      ],
+      "Gambia": [
+        "Gambia"
+      ],
+      "Georgia": [
+        "Georgië"
+      ],
+      "Germany": [
+        "Duitsland"
+      ],
+      "Ghana": [
+        "Ghana"
+      ],
+      "Gibraltar": [
+        "Gibraltar"
+      ],
+      "Greece": [
+        "Griekenland"
+      ],
+      "Greenland": [
+        "Groenland"
+      ],
+      "Grenada": [
+        "Grenada"
+      ],
+      "Guadeloupe": [
+        "Guadeloupe"
+      ],
+      "Guam": [
+        "Guam"
+      ],
+      "Guatemala": [
+        "Guatemala"
+      ],
+      "Guernsey": [
+        "Guernsey"
+      ],
+      "Guinea": [
+        "Guinee"
+      ],
+      "Guinea-Bissau": [
+        "Guinee-Bissau"
+      ],
+      "Guyana": [
+        "Guyana"
+      ],
+      "Haiti": [
+        "Haïti"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Heard- en MacDonaldeilanden"
+      ],
+      "Holy See (Vatican City State)": [
+        "Heilige Stoel (Vaticaanstad)"
+      ],
+      "Honduras": [
+        "Honduras"
+      ],
+      "Hong Kong": [
+        "Hong Kong"
+      ],
+      "Hungary": [
+        "Hongarije"
+      ],
+      "Iceland": [
+        "IJsland"
+      ],
+      "India": [
+        "India"
+      ],
+      "Indonesia": [
+        "Indonesië"
+      ],
+      "International": [
+        "Internationaal"
+      ],
+      "Iran": [
+        "Iran"
+      ],
+      "Iraq": [
+        "Irak"
+      ],
+      "Ireland": [
+        "Ierland"
+      ],
+      "Isle of Man": [
+        "Isle of Man"
+      ],
+      "Israel": [
+        "Israël"
+      ],
+      "Italy": [
+        "Italië"
+      ],
+      "Jamaica": [
+        "Jamaica"
+      ],
+      "Japan": [
+        "Japan"
+      ],
+      "Jersey": [
+        "Jersey"
+      ],
+      "Jordan": [
+        "Jordanië"
+      ],
+      "Kazakhstan": [
+        "Kazachstan"
+      ],
+      "Kenya": [
+        "Kenia"
+      ],
+      "Kiribati": [
+        "Kiribati"
+      ],
+      "Kosovo": [
+        "Kosovo"
+      ],
+      "Kuwait": [
+        "Koeweit"
+      ],
+      "Kyrgyzstan": [
+        "Kirgizië"
+      ],
+      "Laos": [
+        "Laos"
+      ],
+      "Latvia": [
+        "Letland"
+      ],
+      "Lebanon": [
+        "Libanon"
+      ],
+      "Lesotho": [
+        "Lesotho"
+      ],
+      "Liberia": [
+        "Liberia"
+      ],
+      "Libya": [
+        "Libië"
+      ],
+      "Liechtenstein": [
+        "Liechtenstein"
+      ],
+      "Lithuania": [
+        "Litouwen"
+      ],
+      "Luxembourg": [
+        "Luxemburg"
+      ],
+      "Macao": [
+        "Macau"
+      ],
+      "Madagascar": [
+        "Madagaskar"
+      ],
+      "Malawi": [
+        "Malawi"
+      ],
+      "Malaysia": [
+        "Maleisië"
+      ],
+      "Maldives": [
+        "Malediven"
+      ],
+      "Mali": [
+        "Mali"
+      ],
+      "Malta": [
+        "Malta"
+      ],
+      "Marshall Islands": [
+        "Marshall Eilanden"
+      ],
+      "Martinique": [
+        "Martinique"
+      ],
+      "Mauritania": [
+        "Mauritanië"
+      ],
+      "Mauritius": [
+        "Mauritius"
+      ],
+      "Mayotte": [
+        "Mayotte"
+      ],
+      "Mexico": [
+        "Mexico"
+      ],
+      "Moldova": [
+        "Moldavië"
+      ],
+      "Monaco": [
+        "Monaco"
+      ],
+      "Mongolia": [
+        "Mongolië"
+      ],
+      "Montenegro": [
+        "Montenegro"
+      ],
+      "Montserrat": [
+        "Montserrat"
+      ],
+      "Morocco": [
+        "Marokko"
+      ],
+      "Mozambique": [
+        "Mozambique"
+      ],
+      "Myanmar": [
+        "Myanmar"
+      ],
+      "Namibia": [
+        "Namibië"
+      ],
+      "Nauru": [
+        "Nauru"
+      ],
+      "Nepal": [
+        "Nepal"
+      ],
+      "Netherlands": [
+        "Nederland"
+      ],
+      "New Caledonia": [
+        "Nieuw-Caledonië"
+      ],
+      "New Zealand": [
+        "Nieuw-Zeeland"
+      ],
+      "Nicaragua": [
+        "Nicaragua"
+      ],
+      "Niger": [
+        "Niger"
+      ],
+      "Nigeria": [
+        "Nigeria"
+      ],
+      "Niue": [
+        "Niue"
+      ],
+      "Norfolk Island": [
+        "Norfolk eiland"
+      ],
+      "North Korea": [
+        "Noord-Korea"
+      ],
+      "North Macedonia": [
+        "Noord-Macedonië"
+      ],
+      "Northern Mariana Islands": [
+        "Noordelijke Marianen"
+      ],
+      "Norway": [
+        "Noorwegen"
+      ],
+      "Oman": [
+        "Oman"
+      ],
+      "Pakistan": [
+        "Pakistan"
+      ],
+      "Palau": [
+        "Palau"
+      ],
+      "Palestine": [
+        "Palestina"
+      ],
+      "Panama": [
+        "Panama"
+      ],
+      "Papua New Guinea": [
+        "Papoea-Nieuw-Guinea"
+      ],
+      "Paraguay": [
+        "Paraguay"
+      ],
+      "Peru": [
+        "Peru"
+      ],
+      "Philippines": [
+        "Filipijnen"
+      ],
+      "Pitcairn": [
+        "Pitcairneilanden"
+      ],
+      "Poland": [
+        "Polen"
+      ],
+      "Portugal": [
+        "Portugal"
+      ],
+      "Puerto Rico": [
+        "Puerto Rico"
+      ],
+      "Qatar": [
+        "Qatar"
+      ],
+      "Reunion": [
+        "Réunion"
+      ],
+      "Romania": [
+        "Roemenië"
+      ],
+      "Russia": [
+        "Rusland"
+      ],
+      "Rwanda": [
+        "Rwanda"
+      ],
+      "Saint Barthélemy": [
+        "Sint-Bartholomeus"
+      ],
+      "Saint Helena": [
+        "Sint-Helena"
+      ],
+      "Saint Kitts and Nevis": [
+        "Saint Kitts en Nevis"
+      ],
+      "Saint Lucia": [
+        "Saint Lucia"
+      ],
+      "Saint Martin (French Part)": [
+        "Sint Maarten (Frans deel)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Saint-Pierre en Miquelon"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Saint Vincent en de Grenadines"
+      ],
+      "Samoa": [
+        "Samoa"
+      ],
+      "San Marino": [
+        "San Marino"
+      ],
+      "Sao Tome and Principe": [
+        "Sao Tomé en Principe"
+      ],
+      "Saudi Arabia": [
+        "Saudi-Arabië"
+      ],
+      "Senegal": [
+        "Senegal"
+      ],
+      "Serbia": [
+        "Servië"
+      ],
+      "Seychelles": [
+        "Seychellen"
+      ],
+      "Sierra Leone": [
+        "Sierra Leone"
+      ],
+      "Singapore": [
+        "Singapore"
+      ],
+      "Sint Maarten": [
+        "Sint-Maarten"
+      ],
+      "Slovakia": [
+        "Slowakije"
+      ],
+      "Slovenia": [
+        "Slovenië"
+      ],
+      "Solomon Islands": [
+        "Salomonseilanden"
+      ],
+      "Somalia": [
+        "Somalië"
+      ],
+      "South Africa": [
+        "Zuid-Afrika"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Zuid-Georgië en de Zuidelijke Sandwicheilanden"
+      ],
+      "South Korea": [
+        "Zuid-Korea"
+      ],
+      "South Ossetia": [
+        "Zuid-Ossetië"
+      ],
+      "South Sudan": [
+        "Zuid-Soedan"
+      ],
+      "Spain": [
+        "Spanje"
+      ],
+      "Sri Lanka": [
+        "Sri Lanka"
+      ],
+      "Sudan": [
+        "Soedan"
+      ],
+      "Suriname": [
+        "Suriname"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Spitsbergen en Jan Mayen"
+      ],
+      "Sweden": [
+        "Zweden"
+      ],
+      "Switzerland": [
+        "Zwitserland"
+      ],
+      "Syria": [
+        "Syrië"
+      ],
+      "Taiwan": [
+        "Taiwan"
+      ],
+      "Tajikistan": [
+        "Tadjikistan"
+      ],
+      "Tanzania": [
+        "Tanzania"
+      ],
+      "Thailand": [
+        "Thailand"
+      ],
+      "Timor-Leste": [
+        "Oost-Timor"
+      ],
+      "Togo": [
+        "Togo"
+      ],
+      "Tokelau": [
+        "Tokelau"
+      ],
+      "Tonga": [
+        "Tonga"
+      ],
+      "Trinidad and Tobago": [
+        "Trinidad en Tobago"
+      ],
+      "Tristan da Cunha": [
+        "Tristan da Cunha"
+      ],
+      "Tunisia": [
+        "Tunesië"
+      ],
+      "Turkey": [
+        "Turkije"
+      ],
+      "Turkmenistan": [
+        "Turkmenistan"
+      ],
+      "Turks and Caicos Islands": [
+        "De Turks- en Caicoseilanden"
+      ],
+      "Tuvalu": [
+        "Tuvalu"
+      ],
+      "Uganda": [
+        "Oeganda"
+      ],
+      "Ukraine": [
+        "Oekraïne"
+      ],
+      "United Arab Emirates": [
+        "Verenigde Arabische Emiraten"
+      ],
+      "United Kingdom": [
+        "Verenigd Koninkrijk"
+      ],
+      "United States": [
+        "Verenigde Staten"
+      ],
+      "United States Minor Outlying Islands": [
+        "Amerikaanse ondergeschikte afgelegen eilanden"
+      ],
+      "Uruguay": [
+        "Uruguay"
+      ],
+      "Uzbekistan": [
+        "Oezbekistan"
+      ],
+      "Vanuatu": [
+        "Vanuatu"
+      ],
+      "Venezuela": [
+        "Venezuela"
+      ],
+      "Vietnam": [
+        "Vietnam"
+      ],
+      "Virgin Islands, British": [
+        "Maagdeneilanden, Verenigd Koninkrijk"
+      ],
+      "Virgin Islands, U.S.": [
+        "Maagdeneilanden, Verenigde Staten."
+      ],
+      "Wallis and Futuna": [
+        "Wallis en Futuna"
+      ],
+      "Western Sahara": [
+        "Westelijke Sahara"
+      ],
+      "Yemen": [
+        "Jemen"
+      ],
+      "Zambia": [
+        "Zambia"
+      ],
+      "Zimbabwe": [
+        "Zimbabwe"
+      ],
+      "Åland Islands": [
+        "Aland Eilanden"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Onbetaalde factuur"
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "Vertrouwd contact"
+      ]
+    },
+    "Error": {
+      "Domain not available, try again later": [
+        "Domein niet beschikbaar, probeer het later opnieuw"
+      ],
+      "Email is not valid": [
+        "E-mailadres is ongeldig"
+      ],
+      "Enter 6 digits": [
+        "Voer 6 cijfers in"
+      ],
+      "Failed to create meeting": [
+        "Maken van vergadering is mislukt"
+      ],
+      "Incorrect username": [
+        "Onjuiste gebruikersnaam"
+      ],
+      "Invalid verification code": [
+        "De ingevoerde code is ongeldig"
+      ],
+      "Not a valid number": [
+        "Geen geldig getal"
+      ],
+      "Passwords do not match": [
+        "Wachtwoorden komen niet overeen"
+      ],
+      "Request timed out": [
+        "Reactietijd verzoek overschreden"
+      ],
+      "Signature verification failed": [
+        "Controle van handtekening mislukt"
+      ],
+      "The email addresses do not match": [
+        "De e-mailadressen komen niet overeen"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Dit veld overschrijdt het maximum ${ maximumLength } tekens."
+      ],
+      "This field is required": [
+        "Dit veld is vereist"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Dit veld vereist een minimum van ${ minimumLength } tekens."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Probeer enkel letters, nummers en _.- te gebruiken"
+      ],
+      "Unknown error": [
+        "Onbekende fout"
+      ],
+      "Username must begin with a letter or digit": [
+        "Gebruikersnaam moet met een letter of cijfer beginnen"
+      ],
+      "Username must end with a letter or digit": [
+        "Gebruikersnaam moet met een letter of cijfer eindigen"
+      ]
+    },
+    "Error message": {
+      "App currently unavailable": [
+        "App momenteel niet beschikbaar"
+      ],
+      "Error: ${ errorMessage }": [
+        "Fout: ${ errorMessage }"
+      ],
+      "Oops, something went wrong": [
+        "Oeps, er is iets misgegaan"
+      ],
+      "Open in browser": [
+        "Openen in de browser"
+      ],
+      "Please refresh the page or try again later.": [
+        "Ververs de pagina of probeer het later opnieuw."
+      ],
+      "Something went wrong": [
+        "Er is iets fout gegaan"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Om ${ MAIL_APP_NAME } of ${ CALENDAR_APP_NAME } te gebruiken, wissel naar de webversie."
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "We konden deze pagina niet laden. Ververs de pagina of controleer uw internetverbinding."
+      ]
+    },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "Geen afbeelding geselecteerd"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Er is iets fout gegaan bij het verifiëren van uw beveiligingssleutel. Probeer het opnieuw."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Voeg een beveiligingssleutel in die gekoppeld is aan uw ${ BRAND_NAME } account."
+      ],
+      "Security key": [
+        "Beveiligingssleutel"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Beveiligingssleutel"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Systeem standaard"
+      ],
+      "Theme font": [
+        "Thema lettertype"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Groot"
+      ],
+      "Medium (recommended)": [
+        "Gemiddeld (aanbevolen)"
+      ],
+      "Small": [
+        "Klein"
+      ],
+      "Very large": [
+        "Zeer groot"
+      ],
+      "Very small": [
+        "Zeer klein"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Account"
+      ],
+      "Apps": [
+        "Apps"
+      ],
+      "Network": [
+        "Netwerk"
+      ],
+      "Other category": [
+        "Andere categorie"
+      ],
+      "Services": [
+        "Diensten"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "E-mailadres"
+      ],
+      "Manual": [
+        "Handmatig"
+      ],
+      "No verification method available": [
+        "Geen verificatiemethode beschikbaar"
+      ],
+      "SMS": [
+        "SMS"
+      ]
+    },
+    "Info": {
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Een telefoonnummer kan gebruikt worden ter verificatie van één ${ BRAND_NAME } account"
+      ],
+      "Attention required": [
+        "Aandacht vereist"
+      ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Controleer uw spammap en of ${ strong } het correcte e-mailadres is voordat u een nieuwe verificatiecode aanvraagt."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
+      ],
+      "Copied to clipboard": [
+        "Gekopieerd naar het klembord"
+      ],
+      "Country code": [
+        "Landcode"
+      ],
+      "Download current logs": [
+        "Huidige logboeken downloaden"
+      ],
+      "Each code can only be used once": [
+        "Elke code kan maar één keer gebruikt worden"
+      ],
+      "Edit email address": [
+        "Wijzig e-mailadres"
+      ],
+      "Enter the code from your authenticator app": [
+        "Voer de code van uw authenticatie app in"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Vul de verificatiecode in die naar ${ destinationText } verzonden is."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Voer verificatiecode in. Cijfer ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Voer uw eigen wachtwoord in (als organisatiebeheerder)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Voer uw eigen wachtwoord in (als vertrouwd contact)."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
+      ],
+      "Internet connection lost": [
+        "Internetverbinding verbroken"
+      ],
+      "Learn more": [
+        "Meer informatie"
+      ],
+      "Loading": [
+        "Laden"
+      ],
+      "Loading ${ appName }": [
+        "${ appName } laden"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Laden van kalender, gelieve te wachten. U wordt automatisch doorverwezen naar onze agendaplanner Calendly in een nieuw tabblad."
+      ],
+      "Loading...": [
+        "Laden..."
+      ],
+      "Member": [
+        "Lid"
+      ],
+      "New": [
+        "Nieuw"
+      ],
+      "No results found": [
+        "Geen resultaten gevonden"
+      ],
+      "Other accounts": [
+        "Andere accounts"
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Herstelinformatie blijft op dit toestel behalve wanneer u kiest om het te verwijderen."
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "De pagina vernieuwen of ${ link } zal de meeste problemen vanzelf oplossen."
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "De servers zijn onbereikbaar, probeer het over enkele minuten opnieuw"
+      ],
+      "Session timed out": [
+        "Sessie verlopen"
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Dit zal u uitloggen uit alle accounts die momenteel zijn ingelogd."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
+      ],
+      "We'll send a new verification code to ${ strong }": [
+        "We verzenden een nieuwe verificatiecode naar ${ strong }"
+      ],
+      "Week": [
+        "Week"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw authenticatie app."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode kiezen?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Wil u graag een nieuwe verificatiecode ontvangen?"
+      ],
+      "You can now return to the application to continue": [
+        "U kunt nu teruggaan naar het programma om door te gaan"
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Uw ${ BRAND_NAME } account is momenteel opgeschort. Na 28 dagen zullen e-mails niet meer afgeleverd worden in uw postvak-in, de deelkoppelingen van uw Drive zullen worden geblokkeerd, en u zal geen nieuwe bestanden meer kunnen opladen. Om normale diensten te hervatten dient u alle achterstallige facturen te betalen."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Uw ${ BRAND_NAME }-account is momenteel geblokkeerd. E-mails worden niet langer geleverd in uw inbox. Uw gedeelde Drive-links zijn niet langer actief en u kan geen nieuwe bestanden uploaden. Om uw account te blijven gebruiken dient u de achterstallige facturen te betalen."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
+      ]
+    },
+    "Label": {
+      "${ BRAND_NAME } username": [
+        "${ BRAND_NAME } gebruikersnaam"
+      ],
+      "Attach screenshot(s)": [
+        "Schermafbeelding(en) toevoegen"
+      ],
+      "Authenticator app": [
+        "Authenticatie app"
+      ],
+      "Browser": [
+        "Browser"
+      ],
+      "Browser version": [
+        "Browserversie"
+      ],
+      "Category": [
+        "Categorie"
+      ],
+      "Code is 6 digits without spaces": [
+        "Code is 6 cijfers zonder spaties"
+      ],
+      "Delete": [
+        "Verwijderen"
+      ],
+      "Delete recovery-related information.": [
+        "Verwijder herstel-gerelateerde informatie."
+      ],
+      "Email address": [
+        "E-mailadres"
+      ],
+      "Hide password": [
+        "Wachtwoord verbergen"
+      ],
+      "Include application logs in bug report": [
+        "Applicatie logs toevoegen aan het foutenrapport"
+      ],
+      "Operating system": [
+        "Besturingssysteem"
+      ],
+      "Operating system version": [
+        "Versie van besturingssysteem"
+      ],
+      "Passphrase": [
+        "Wachtzin"
+      ],
+      "Password": [
+        "Wachtwoord"
+      ],
+      "Phone number": [
+        "Telefoonnummer"
+      ],
+      "Reveal password": [
+        "Wachtwoord tonen"
+      ],
+      "System information": [
+        "Systeeminformatie"
+      ],
+      "Verification code": [
+        "Verificatiecode"
+      ],
+      "What happened?": [
+        "Wat is er gebeurd?"
+      ],
+      "Your password (admin)": [
+        "Uw wachtwoord (beheerder)"
+      ],
+      "Your password (trusted contact)": [
+        "Uw wachtwoord (vertrouwd contact)"
+      ]
+    },
+    "Link": {
+      "clearing your browser cache": [
+        "browsercache legen"
+      ],
+      "Learn more": [
+        "Meer informatie"
+      ],
+      "Request an invite": [
+        "Uitnodiging aanvragen"
+      ],
+      "What’s this?": [
+        "Wat is dit?"
+      ]
+    },
+    "Notification": {
+      "Link copied to clipboard": [
+        "Link gekopieerd naar klembord"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Sommige afbeeldingen zijn niet geüpload vanwege dubbele bestandsnamen in de huidige selectie."
+      ]
+    },
+    "Placeholder": {
+      "A way to contact you": [
+        "Een manier om u te contacteren"
+      ],
+      "E.g., ": [
+        "Bijv., "
+      ],
+      "Enter passphrase": [
+        "Voer wachtwoordzin in"
+      ],
+      "Password": [
+        "Wachtwoord"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Beschrijf het probleem alstublieft en vermeld ook eventuele foutmeldingen"
+      ],
+      "Select": [
+        "Selecteer"
+      ]
+    },
+    "Safety review": {
+      "Review account safety": [
+        "Controleer de veiligheid van uw account"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Inloggen is niet gelukt."
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "Geen resultaten gevonden"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Afmelden"
+      ],
+      "Stay signed in": [
+        "Blijf ingelogd"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } uur",
+        "${ gracePeriodHoursRemaining } uren"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } is nu beschikbaar"
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Als u uitlogt voordat u uw wachtwoord reset, kan u de toegang tot uw account verliezen."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Als u uitlogt zonder uw wachtwoord te resetten, kan u de toegang tot uw account verliezen."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "U kan uw wachtwoord resetten in ${ boldTimeLeft }."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Wachtwoordreset"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Uitloggen zonder wachtwoord reset?"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Naar abonnementen"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ]
+    },
+    "Spotlight": {
+      "Get up to ${ credits } in credits.": [
+        "Krijg tot wel ${ credits } als krediet."
+      ],
+      "Invite friends to ${ BRAND_NAME }": [
+        "Nodig vrienden uit voor ${ BRAND_NAME }"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Inloggen"
+      ],
+      "Sign in to your organization": [
+        "Aanmelden bij uw organisatie"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "U wordt doorgestuurd naar uw derde partij SSO-provider."
+      ]
+    },
+    "Success": {
+      "Code sent to ${ methodTo }": [
+        "Code verzonden naar ${ methodTo }"
+      ],
+      "Email address copied to clipboard": [
+        "E-mailadres gekopieerd naar het klembord"
+      ],
+      "Problem reported": [
+        "Probleem gerapporteerd"
+      ],
+      "Verification successful": [
+        "Verificatie gelukt"
+      ]
+    },
+    "Title": {
+      "Account restricted": [
+        "Account beperkt"
+      ],
+      "Account temporarily locked": [
+        "Account tijdelijk geblokkeerd"
+      ],
+      "Are you sure?": [
+        "Weet u het zeker?"
+      ],
+      "Date": [
+        "Datum"
+      ],
+      "Enter your password": [
+        "Voer uw wachtwoord in"
+      ],
+      "Help and feedback": [
+        "Hulp en feedback"
+      ],
+      "Help center": [
+        "Helpcentrum"
+      ],
+      "Human verification": [
+        "Persoonsverificatie"
+      ],
+      "Invalid verification code": [
+        "De ingevoerde code is ongeldig"
+      ],
+      "Minicalendar": [
+        "Mini-agenda"
+      ],
+      "Report a problem": [
+        "Meld een probleem"
+      ],
+      "Request new code": [
+        "Nieuwe code aanvragen"
+      ],
+      "Settings": [
+        "Instellingen"
+      ],
+      "Sign out": [
+        "Uitloggen"
+      ],
+      "Time": [
+        "Tijd"
+      ],
+      "Two-factor authentication": [
+        "Tweestapsverificatie"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Vandaag"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } teken bevatten",
+        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } tekens bevatten"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Probeer een kortere gebruikersnaam (maximum ${ n } teken)",
+        "Probeer een kortere gebruikersnaam (maximum ${ n } tekens)"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Probleem met Wallet"
+      ]
+    },
+    "Warning": {
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        "Helaas zijn wij op dit moment niet online. Beschrijf uw probleem in onderstaand formulier en we kijken ernaar en nemen contact met u op zodra we weer online zijn."
+      ]
+    }
+  }
+}
