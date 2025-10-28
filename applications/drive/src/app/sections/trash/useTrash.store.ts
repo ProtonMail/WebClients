@@ -14,8 +14,10 @@ interface TrashStore {
     setNodes: (trashNodes: Record<string, LegacyItem>) => void;
     removeNodes: (nodeIds: string[]) => void;
     isLoading: boolean;
+    isLegacyLoading: boolean;
     hasEverLoaded: boolean;
     setLoading: (loading: boolean) => void;
+    setLegacyLoading: (loading: boolean) => void;
     setHasEverLoaded: () => void;
     checkAndSetHasEverLoaded: () => void;
     eventSubscriptions: (() => void)[] | null;
@@ -27,6 +29,7 @@ interface TrashStore {
 export const useTrashStore = create<TrashStore>((set, get) => ({
     trashNodes: {},
     isLoading: false,
+    isLegacyLoading: false,
     hasEverLoaded: false,
     eventSubscriptions: null,
     activeContexts: new Set<string>(),
@@ -44,10 +47,14 @@ export const useTrashStore = create<TrashStore>((set, get) => ({
         set({ isLoading });
         get().checkAndSetHasEverLoaded();
     },
+    setLegacyLoading: (isLegacyLoading: boolean) => {
+        set({ isLegacyLoading });
+        get().checkAndSetHasEverLoaded();
+    },
     setHasEverLoaded: () => set({ hasEverLoaded: true }),
     checkAndSetHasEverLoaded: () => {
         const state = get();
-        if (!state.isLoading && !state.hasEverLoaded) {
+        if (!state.isLoading && !state.isLegacyLoading && !state.hasEverLoaded) {
             state.setHasEverLoaded();
         }
     },
