@@ -1,5 +1,7 @@
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
+import { useFlagsDriveSDKTransfer } from '../../../flags/useFlagsDriveSDKTransfer';
+import { DownloadManager } from '../../../managers/download/DownloadManager';
 import { useDownload } from '../../../store';
 import { useDocumentActions } from '../../../store/_documents';
 import type { LegacyItem } from '../../../utils/sdk/mapNodeToLegacyItem';
@@ -11,6 +13,8 @@ type Props = {
 export const useDownloadActions = ({ selectedItems }: Props) => {
     const { download } = useDownload();
     const { downloadDocument } = useDocumentActions();
+    const dm = DownloadManager.getInstance();
+    const isSDKTransferEnabled = useFlagsDriveSDKTransfer({ isForPhotos: false });
 
     const downloadItems = () => {
         // Document downloads are handled in two ways:
@@ -44,6 +48,6 @@ export const useDownloadActions = ({ selectedItems }: Props) => {
     };
 
     return {
-        downloadItems,
+        downloadItems: isSDKTransferEnabled ? () => dm.download(selectedItems) : downloadItems,
     };
 };

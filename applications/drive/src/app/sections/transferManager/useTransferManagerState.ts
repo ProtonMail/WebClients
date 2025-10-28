@@ -19,15 +19,19 @@ export enum TransferManagerStatus {
     Finished = 'Finished',
 }
 
-// TODO: we need to add the transfer speed in bytes from the stores
-export type TransferManagerEntry = {
-    type: 'download' | 'upload';
+type TransferManagerBaseEntry<Type extends 'download' | 'upload', Status> = {
+    type: Type;
     id: string;
     name: string;
-    status: string;
+    status: Status;
     transferredBytes: number;
     storageSize: number;
 };
+
+// TODO: we need to add the transfer speed in bytes from the stores
+export type TransferManagerEntry =
+    | TransferManagerBaseEntry<'download', DownloadItem['status']>
+    | TransferManagerBaseEntry<'upload', UploadItem['status']>;
 
 const mapDownload = ({
     downloadId,
@@ -55,8 +59,8 @@ const mapUpload = ({
     id: uploadId,
     name,
     status,
-    transferredBytes: uploadedBytes, // TODO: replace with uploaded bytes when available
-    storageSize: clearTextExpectedSize, // TODO: replace with actual size when available
+    transferredBytes: uploadedBytes,
+    storageSize: clearTextExpectedSize,
 });
 
 export const useTransferManagerState = () => {
@@ -70,7 +74,7 @@ export const useTransferManagerState = () => {
         let status: TransferManagerStatus;
 
         // XXX: This is 4 loops on the same list but it's the most elegant way i can think of
-        // this list should be pretty short with slow updates so not a bottleneck
+        // there's a test to make sure it stays under 20ms with 10k elements
         const sumOfTransferredBytes = allTransfers.reduce((acc, transfer) => acc + transfer.transferredBytes, 0);
         const sumOfBytes = allTransfers.reduce((acc, transfer) => acc + transfer.storageSize, 0);
 

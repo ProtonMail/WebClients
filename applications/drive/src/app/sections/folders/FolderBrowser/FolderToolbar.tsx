@@ -7,8 +7,6 @@ import { getDevice } from '@proton/shared/lib/helpers/browser';
 
 import { useSelection } from '../../../components/FileBrowser';
 import useIsEditEnabled from '../../../components/sections/useIsEditEnabled';
-import { useFlagsDriveSDKTransfer } from '../../../flags/useFlagsDriveSDKTransfer';
-import { DownloadManager } from '../../../managers/download/DownloadManager';
 import { ActionsDropdown } from '../buttons/ActionsDropdown';
 import { CreateNewDocumentButton } from '../buttons/CreateNewDocumentButton';
 import { CreateNewFileButton } from '../buttons/CreateNewFileButton';
@@ -41,7 +39,6 @@ interface Props {
 
 export const FolderToolbar = ({ volumeId, shareId, linkId, showOptionsForNoSelection = true }: Props) => {
     const isDesktop = !getDevice()?.type;
-    const isSDKTransferEnabled = useFlagsDriveSDKTransfer({ isForPhotos: false });
     const { viewportWidth } = useActiveBreakpoint();
     const selectionControls = useSelection();
     const isEditEnabled = useIsEditEnabled();
@@ -75,7 +72,6 @@ export const FolderToolbar = ({ volumeId, shareId, linkId, showOptionsForNoSelec
     const shouldShowShareLinkButton = isAdmin && (selectedItems.length > 0 || permissions.canShareNode);
     const selectedItem = selectedItems.length === 1 ? selectedItems[0] : undefined;
     const { downloadItems } = useDownloadActions({ selectedItems });
-    const dm = DownloadManager.getInstance();
 
     const renderSelectionActions = () => {
         if (!selectedItems.length) {
@@ -111,13 +107,6 @@ export const FolderToolbar = ({ volumeId, shareId, linkId, showOptionsForNoSelec
 
         return (
             <>
-                {isSDKTransferEnabled && (
-                    <DownloadButton
-                        type="toolbar"
-                        selectedItems={selectedItems}
-                        onClick={() => dm.download(selectedItems)}
-                    />
-                )}
                 <PreviewButton selectedItems={selectedItems} type="toolbar" />
                 <OpenInDocsButton type="toolbar" selectedItems={selectedItems} />
                 <DownloadButton type="toolbar" selectedItems={selectedItems} onClick={downloadItems} />

@@ -17,6 +17,8 @@ import busy from '@proton/shared/lib/busy';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import clsx from '@proton/utils/clsx';
 
+import { useFlagsDriveSDKTransfer } from '../../flags/useFlagsDriveSDKTransfer';
+import { TransferManager } from '../../sections/transferManager/TransferManager';
 import { useTransfersView } from '../../store';
 import { isTransferFailed } from '../../utils/transfer';
 import Header from './Header';
@@ -71,7 +73,7 @@ const tabIndexToTransferGroup = {
 
 type TabIndices = keyof typeof tabIndexToTransferGroup;
 
-const TransferManager = ({
+const TransferManagerLegacy = ({
     downloads,
     uploads,
     stats,
@@ -346,13 +348,18 @@ const TransferManagerContainer = ({
 }) => {
     const { downloads, uploads, hasActiveTransfer, numberOfFailedTransfer, stats, clearAllTransfers } =
         useTransfersView();
+    const isSDKTransferEnabled = useFlagsDriveSDKTransfer({ isForPhotos: false });
 
     if (!downloads.length && !uploads.length) {
         return null;
     }
 
+    if (isSDKTransferEnabled) {
+        return <TransferManager />;
+    }
+
     return (
-        <TransferManager
+        <TransferManagerLegacy
             downloads={downloads}
             uploads={uploads}
             stats={stats}
