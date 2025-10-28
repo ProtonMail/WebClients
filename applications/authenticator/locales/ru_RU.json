@@ -1,0 +1,133 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);",
+    "language": "ru_RU"
+  },
+  "contexts": {
+    "Action": {
+      "Cancel": [
+        "Отменить"
+      ],
+      "Close": [
+        "Закрыть"
+      ],
+      "Confirm": [
+        "Подтвердить"
+      ],
+      "Create": [
+        "Создать"
+      ],
+      "Dismiss": [
+        "Отклонить"
+      ],
+      "Refresh the page": [
+        "Обновить страницу"
+      ],
+      "Try again": [
+        "Попробовать снова"
+      ]
+    },
+    "Error": {
+      "Authentication error": [
+        "Ошибка аутентификации"
+      ],
+      "Request timed out": [
+        "Время запроса истекло"
+      ],
+      "Something went wrong": [
+        "Что-то пошло не так"
+      ]
+    },
+    "Error message": {
+      "Please refresh the page or try again later.": [
+        "Обновите страницу или повторите попытку позже."
+      ],
+      "Something went wrong": [
+        "Что-то пошло не так"
+      ]
+    },
+    "Info": {
+      "Identity confirmed": [
+        "Личные данные подтверждены"
+      ],
+      "Internet connection lost": [
+        "Подключение к Интернету потеряно"
+      ],
+      "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
+        "Похоже, вы уже вошли в ${ PASS_APP_NAME }. Если ты пытаешься войти с другой учётной записью, пожалуйста, сначала выйдите из расширения."
+      ],
+      "Loading": [
+        "Загрузка"
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
+        "Более чем просто менеджер паролей, ${ PASS_APP_NAME } защищает ваш пароль и ваш личный адрес электронной почты с помощью псевдонимов электронной почты. Работая на технологии, лежащей в основе ${ MAIL_APP_NAME }, ваши данные защищены конечным шифрованием и доступны только вам."
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Серверы недоступны. Попробуйте снова через несколько минут"
+      ],
+      "Session timed out": [
+        "Время сеанса истекло"
+      ],
+      "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
+        "Текст, который вы пытаетесь вставить, длиннее разрешенного максимального количества символов ${ maxLength }."
+      ],
+      "You have reached the maximum allowed length of ${ maxLength } characters.": [
+        "Вы достигли максимально разрешенной длины в ${ maxLength } символов."
+      ],
+      "You may close this tab.": [
+        "Вы можете закрыть эту вкладку."
+      ]
+    },
+    "Label": {
+      "${ days } day": [
+        "${ days } день",
+        "${ days } дня",
+        "${ days } дней",
+        "${ days } дней"
+      ],
+      "${ hours } hour": [
+        "${ hours } час",
+        "${ hours } часа",
+        "${ hours } часов",
+        "${ hours } часов"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } минута",
+        "${ minutes } минуты",
+        "${ minutes } минут",
+        "${ minutes } минут"
+      ],
+      "${ months } month": [
+        "${ months } месяц",
+        "${ months } месяца",
+        "${ months } месяцев",
+        "${ months } месяцев"
+      ],
+      "${ years } year": [
+        "${ years } год",
+        "${ years } года",
+        "${ years } лет",
+        "${ years } лет"
+      ],
+      "Expired": [
+        "Истекло"
+      ],
+      "Hide password": [
+        "Скрыть пароль"
+      ],
+      "Reveal password": [
+        "Показать пароль"
+      ]
+    },
+    "Placeholder": {
+      "Password": [
+        "Пароль"
+      ]
+    },
+    "Warning": {
+      "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
+        "Не могу войти в ${ PASS_APP_NAME }. ${ additionalMessage }"
+      ]
+    }
+  }
+}
