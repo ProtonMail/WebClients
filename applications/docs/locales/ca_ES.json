@@ -1199,6 +1199,87 @@
         "L'espai d'emmagatzematge està compartit entre tots els serveis de ${ BRAND_NAME }."
       ]
     },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "Rebaixes del Black Friday"
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB d'emmagatzematge de dades"
+      ],
+      "3 TB data storage": [
+        "3 TB d'emmagatzematge de dades"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Accedeixi a més de 15.000 servidors en més de 120 països"
+      ],
+      "Access advanced AI models": [
+        "Accedeixi a models d'IA avançats"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Totes les funcions prèmium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Block ads, trackers, and malware": [
+        "Bloquegeu anuncis, rastrejadors i programari maliciós"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autenticador 2FA integrat"
+      ],
+      "Connect 10 devices at once": [
+        "Connecti 10 dispositius alhora"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Historial de xat complet amb cerca fàcil i favorits"
+      ],
+      "Individual accounts for 6 users": [
+        "Comptes individuals per a 6 usuaris"
+      ],
+      "Individual accounts for you and a partner": [
+        "Comptes individuals per a dues persones"
+      ],
+      "Stronger protection against cyber threats": [
+        "Protecció més forta contra les ciberamenaces"
+      ],
+      "Unlimited daily chats": [
+        "Xats diaris sense límits"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "Divendres negre"
+      ]
+    },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Ajudi els seus éssers estimats a unir-se a la revolució de la privadesa amb els nostres paquets de millor valor, ara amb un 50 % de descompte!"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Uneixi's a la revolució de la privadesa amb els nostres paquets de millor valor, ara amb un 50 % de descompte!"
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "durant ${ durationDeal }"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "Estalviï ${ savedAmount } amb la nostra millor oferta per temps limitat!"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "Canviï al nostre pla de 2 anys i estalviï ${ savedAmount }!"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "Canviï al nostre pla anual i estalviï ${ savedAmount }!"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "Regali als seus una protecció digital completa."
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield, dissenyat especialment, protegeix els vostres dispositius i accelera la navegació en bloquejar anuncis, rastrejadors i programari maliciós."
+      ]
+    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "Aplicació d'escriptori de ${ MAIL_APP_NAME }"
@@ -2659,16 +2740,16 @@
       ]
     },
     "Duo offer: Link": {
-      "Double your storage": [
-        "Dupliqueu el vostre emmagatzematge"
+      "Get 4x more storage": [
+        "Aconseguiu el quàdruple d'emmagatzematge"
       ],
       "Share your plan": [
         "Compartiu el vostre pla"
       ]
     },
     "Duo offer: Title": {
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Dupliqueu el vostre emmagatzematge amb ${ BRAND_NAME } Duo"
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "Aconseguiu el quàdruple d'emmagatzematge amb ${ BRAND_NAME } Duo"
       ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
         "Compartiu els avantatges del vostre pla amb ${ BRAND_NAME } Duo"
@@ -7767,6 +7848,9 @@
       "Advanced account protection": [
         "Protecció avançada del compte"
       ],
+      "File attachments (up to 10GB)": [
+        "Fitxers adjunts (fins a 10 GB)"
+      ],
       "Team policies": [
         "Regles d'equip"
       ]
@@ -7836,6 +7920,17 @@
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "El cupó és vàlid per a ${ couponRedemptions } renovació.",
         "El cupó és vàlid per a ${ couponRedemptions } renovacions."
+      ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "El preu amb descompte especial és vàlid durant el primer ${ subscriptionLength } mes.",
+        "El preu amb descompte especial és vàlid durant el primers ${ subscriptionLength } mesos."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "El preu amb descompte especial és vàlid durant el primer mes. El cupó és vàlid per a ${ couponRedemptions } renovació. Després, es renovarà automàticament per ${ renewPriceStr } durant 1 mes. Podreu cancel·lar-ho en qualsevol moment.",
+        "El preu amb descompte especial és vàlid durant el primer mes. El cupó és vàlid per a ${ couponRedemptions } renovacions. Després, es renovarà automàticament per ${ renewPriceStr } durant 1 mes. Podreu cancel·lar-ho en qualsevol moment."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "El preu amb descompte especial és vàlid durant el primer mes. Després, es renovarà automàticament per ${ renewPriceStr } cada mes. Podreu cancel·lar-ho en qualsevol moment."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer ${ subscriptionLength } mes.",
@@ -8421,6 +8516,62 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Compartit per ${ ownerName }"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Comma Separated Values (.csv)": [
+        "Valors separats per coma (.csv)"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
+      "New spreadsheet": [
+        "Crea un full de càlcul"
+      ],
+      "Rename spreadsheet": [
+        "Canvia el nom del full de càlcul"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Valors separats per pestanyes (.tsv)"
+      ]
+    },
+    "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "S'està creant el full de càlcul nou..."
+      ],
+      "Detect automatically": [
+        "Detecta automàticament"
+      ],
+      "Insert as new sheet": [
+        "Insereix com a full nou"
+      ],
+      "Replace current sheet": [
+        "Substitueix el full actual"
+      ],
+      "Replace data at selected cell": [
+        "Substitueix les dades a la cel·la seleccionada"
+      ],
+      "Select a CSV or TSV file to import": [
+        "Seleccioneu un fitxer CSV o TSV per importar-lo"
+      ]
+    },
+    "sheets_2025:Label": {
+      "Convert text to numbers, dates, and formulas": [
+        "Converteix text en números, dates i fórmules"
+      ],
+      "Destination": [
+        "Destinació"
+      ],
+      "Format": [
+        "Format"
+      ],
+      "Separator type": [
+        "Tipus de separador"
+      ]
+    },
+    "sheets_2025:Title": {
+      "Import data": [
+        "Importa dades"
       ]
     },
     "Signing preference for emails": {
@@ -9290,9 +9441,6 @@
       "Document verification failed": [
         "No s'ha pogut verificar el document."
       ],
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Dupliqueu el vostre emmagatzematge amb ${ BRAND_NAME } Duo"
-      ],
       "Downgrade account": [
         "Passa a un pla inferior"
       ],
@@ -9768,6 +9916,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: l'assistent d'IA que respecta la vostra privacitat"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
       ]

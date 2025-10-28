@@ -1019,6 +1019,87 @@
         "透過端對端加密保護電子郵件及行事曆。包含15個電子郵件地址,支援自訂電子郵件網域,${ BRAND_NAME }Scribe 撰寫工具，無限hide-my-email別名及更多"
       ]
     },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "黑色星期五特賣"
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB 資料儲存空間"
+      ],
+      "3 TB data storage": [
+        "3 TB 資料儲存空間"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "存取 15,000+ 個伺服器，分布於 120+ 個國家"
+      ],
+      "Access advanced AI models": [
+        "存取進階 AI 模型"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME } 的所有進階功能"
+      ],
+      "Block ads, trackers, and malware": [
+        "封鎖廣告、追蹤程式和惡意軟體"
+      ],
+      "Built-in 2FA authenticator": [
+        "內建雙重驗證驗證器"
+      ],
+      "Connect 10 devices at once": [
+        "可同時連接 10 部裝置"
+      ],
+      "Full chat history with easy search and favorites": [
+        "完整的聊天記錄，具備輕鬆搜尋和我的最愛功能"
+      ],
+      "Individual accounts for 6 users": [
+        "供 6 位使用者使用的個人帳戶"
+      ],
+      "Individual accounts for you and a partner": [
+        "供您與一位夥伴使用的個人帳戶"
+      ],
+      "Stronger protection against cyber threats": [
+        "更強大的保護，抵禦網路威脅"
+      ],
+      "Unlimited daily chats": [
+        "無限每日聊天"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "黑色星期五"
+      ]
+    },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "幫助您的摯愛加入隱私革命，選購我們最超值的組合包，現正 5 折優惠！"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "加入隱私革命，選購我們最超值的組合包，現正 5 折優惠！"
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "為期 ${ durationDeal }"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "選購我們最超值的限時優惠，節省 ${ savedAmount }！"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "改用我們的 2 年方案，節省 ${ savedAmount }！"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "改用我們的年度方案，節省 ${ savedAmount }！"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "為您的團隊提供完整的數位保護。"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "精心設計的 NetShield 保護您的裝置並攔截讓您變慢的廣告、追蹤程式與惡意軟體。"
+      ]
+    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME }桌面應用程式"
@@ -2406,16 +2487,8 @@
       ]
     },
     "Duo offer: Link": {
-      "Double your storage": [
-        "加倍您的儲存空間"
-      ],
       "Share your plan": [
         "共享您的方案"
-      ]
-    },
-    "Duo offer: Title": {
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "透過 ${ BRAND_NAME } Duo 將您的儲存空間加倍"
       ]
     },
     "Email body for invitation": {
@@ -7227,10 +7300,10 @@
     },
     "Referral": {
       "Friend joined": [
-        "已加入的朋友"
+        "已加入的親友"
       ],
       "Friend subscribed": [
-        "已訂閱的朋友"
+        "已訂閱的親友"
       ]
     },
     "Safety review": {
@@ -7497,6 +7570,62 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "由 ${ ownerName } 分享"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Comma Separated Values (.csv)": [
+        "逗號分隔值 (.csv)"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
+      "New spreadsheet": [
+        "新試算表"
+      ],
+      "Rename spreadsheet": [
+        "重新命名試算表"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Tab 分隔值 (.tsv)"
+      ]
+    },
+    "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "正在建立新試算表..."
+      ],
+      "Detect automatically": [
+        "自動偵測"
+      ],
+      "Insert as new sheet": [
+        "插入為新工作表"
+      ],
+      "Replace current sheet": [
+        "取代目前工作表"
+      ],
+      "Replace data at selected cell": [
+        "取代所選儲存格中的資料"
+      ],
+      "Select a CSV or TSV file to import": [
+        "選取要匯入的 CSV 或 TSV 檔案"
+      ]
+    },
+    "sheets_2025:Label": {
+      "Convert text to numbers, dates, and formulas": [
+        "將文字轉換為數字、日期和公式"
+      ],
+      "Destination": [
+        "目的地"
+      ],
+      "Format": [
+        "格式化"
+      ],
+      "Separator type": [
+        "分隔符號類型"
+      ]
+    },
+    "sheets_2025:Title": {
+      "Import data": [
+        "匯入資料"
       ]
     },
     "Signing preference for emails": {
@@ -8277,9 +8406,6 @@
       ],
       "Document verification failed": [
         "文件驗證失敗"
-      ],
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "透過 ${ BRAND_NAME } Duo 將您的儲存空間加倍"
       ],
       "Downgrade account": [
         "降級帳號"
