@@ -44,6 +44,10 @@ export function nodesStructureTraversal(nodes: DownloadableItem[], signal: Abort
                         archiveStorageSizeInBytes += node.activeRevision?.storageSize ?? 0;
                         enqueueForFetch(childEntry);
                     }
+                } else {
+                    const maybeNode = await drive.getNode(entry.uid);
+                    const { node } = getNodeEntity(maybeNode);
+                    archiveStorageSizeInBytes += node.activeRevision?.storageSize ?? 0;
                 }
                 if (pendingFetchTasks === 0) {
                     fetchQueue.close();
@@ -81,7 +85,7 @@ function createDownloadableItem(node: NodeEntity, parentPath: string[]): Downloa
 function normalizeDownloadableItem(item: DownloadableItem): DownloadableItem {
     return {
         ...item,
-        parentPath: item.parentPath ? [...item.parentPath] : [],
+        parentPath: item.parentPath ? item.parentPath : [],
         storageSize: item.storageSize ?? 0,
     };
 }

@@ -5,11 +5,16 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { useUploadConflictModal } from '../../modals/UploadConflictModal';
 import { useUploadQueueStore } from '../../zustand/upload/uploadQueue.store';
+import { TransferItem } from './transferItem/transferItem';
 import { TransferManagerHeader } from './transferManagerHeader/transferManagerHeader';
-import { useTransferManagerState } from './useTransferManagerState';
+import { useTransferManagerActions } from './useTransferManagerActions';
+import { TransferManagerStatus, useTransferManagerState } from './useTransferManagerState';
+
+import './TransferManager.scss';
 
 export const TransferManager = () => {
-    const { items } = useTransferManagerState();
+    const { items, status } = useTransferManagerState();
+    const { clearQueue } = useTransferManagerActions();
     const [isMinimized, setMinimized] = useState(false);
     const { pendingConflict } = useUploadQueueStore(
         useShallow((state) => ({
@@ -34,7 +39,10 @@ export const TransferManager = () => {
     };
 
     const onClose = () => {
-        // TBI
+        if (status !== TransferManagerStatus.InProgress) {
+            clearQueue();
+        }
+        // TBI request to cancell all transfers in progress with modal
     };
 
     if (!items.length) {
@@ -42,19 +50,19 @@ export const TransferManager = () => {
     }
 
     return (
-        <section aria-label={c('Label').t`File transfer overview`}>
-            <TransferManagerHeader toggleMinimize={toggleMinimize} isMinimized={isMinimized} onClose={onClose} />
+        <div className="transfer-manager-fixed-position">
+            <section aria-label={c('Label').t`File transfer overview`}>
+                <TransferManagerHeader toggleMinimize={toggleMinimize} isMinimized={isMinimized} onClose={onClose} />
 
-            {!isMinimized && (
-                <div>
-                    {items.map((item) => (
-                        <div key={item.id}>
-                            <span>{item.name}</span> - <span>{item.status}</span>
-                        </div>
-                    ))}
-                </div>
-            )}
-            {uploadConflictModal}
-        </section>
+                {!isMinimized && (
+                    <div className="mt-3 flex flex-column gap-2 px-4 pb-4">
+                        {items.map((item) => (
+                            <TransferItem key={item.id} entry={item} />
+                        ))}
+                    </div>
+                )}
+                {uploadConflictModal}
+            </section>
+        </div>
     );
 };

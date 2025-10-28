@@ -3,6 +3,7 @@ import { AbortError, SDKEvent, getDrive } from '@proton/drive/index';
 
 import fileSaver from '../../store/_downloads/fileSaver/fileSaver';
 import { loadCreateReadableStreamWrapper } from '../../utils/webStreamsPolyfill';
+import type { DownloadItem } from '../../zustand/download/downloadManager.store';
 import {
     DownloadStatus,
     MalawareDownloadResolution,
@@ -123,6 +124,8 @@ export class DownloadManager {
 
         try {
             fileDownloader = await drive.getFileDownloader(node.uid, abortController.signal);
+            const claimedSize = fileDownloader.getClaimedSizeInBytes();
+            updateDownloadItem(downloadId, { storageSize: claimedSize });
         } catch (error) {
             updateDownloadItem(downloadId, {
                 status: DownloadStatus.Failed,
@@ -204,7 +207,10 @@ export class DownloadManager {
         const { nodesQueue, totalEncryptedSizePromise } = nodesStructureTraversal(nodes, abortController.signal);
 
         // We can only know the full size of the archive after traversing all nodes
-        void totalEncryptedSizePromise.then((totalSize) => (archiveSizeInBytes = totalSize));
+        void totalEncryptedSizePromise.then((totalSize) => {
+            updateDownloadItem(downloadId, { storageSize: totalSize });
+            archiveSizeInBytes = totalSize;
+        });
         updateDownloadItem(downloadId, { status: DownloadStatus.InProgress });
 
         const updateProgress = (downloadedBytes: number) => {
@@ -350,7 +356,7 @@ export class DownloadManager {
         });
     }
 
-    private updateStatus(downloadIds: string[], status: DownloadStatus) {
+    private updateStatus(downloadIds: string[], status: DownloadItem['status']) {
         const { updateDownloadItem } = useDownloadManagerStore.getState();
         downloadIds.forEach((id) => updateDownloadItem(id, { status }));
     }
