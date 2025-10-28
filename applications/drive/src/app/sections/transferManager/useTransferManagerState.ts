@@ -2,12 +2,14 @@ import { useMemo } from 'react';
 
 import { useShallow } from 'zustand/react/shallow';
 
+import { NodeType } from '@proton/drive/index';
+
 import {
     BaseTransferStatus,
     type DownloadItem,
     useDownloadManagerStore,
 } from '../../zustand/download/downloadManager.store';
-import { type UploadItem, useUploadQueueStore } from '../../zustand/upload/uploadQueue.store';
+import { type UploadItem, UploadStatus, useUploadQueueStore } from '../../zustand/upload/uploadQueue.store';
 
 type TransferType = 'empty' | 'downloading' | 'uploading' | 'both';
 
@@ -19,19 +21,26 @@ export enum TransferManagerStatus {
     Finished = 'Finished',
 }
 
-type TransferManagerBaseEntry<Type extends 'download' | 'upload', Status> = {
-    type: Type;
+type TransferManagerBaseEntry = {
     id: string;
     name: string;
-    status: Status;
     transferredBytes: number;
+};
+
+type TransferManagerDownloadEntry = TransferManagerBaseEntry & {
+    type: 'download';
+    status: DownloadItem['status'] | BaseTransferStatus;
     storageSize: number;
 };
 
+type TransferManagerUploadEntry = TransferManagerBaseEntry & {
+    type: 'upload';
+    status: UploadItem['status'] | BaseTransferStatus;
+    clearTextSize: number;
+};
+
 // TODO: we need to add the transfer speed in bytes from the stores
-export type TransferManagerEntry =
-    | TransferManagerBaseEntry<'download', DownloadItem['status']>
-    | TransferManagerBaseEntry<'upload', UploadItem['status']>;
+export type TransferManagerEntry = TransferManagerDownloadEntry | TransferManagerUploadEntry;
 
 const mapDownload = ({
     downloadId,
@@ -39,7 +48,7 @@ const mapDownload = ({
     status,
     downloadedBytes,
     storageSize,
-}: DownloadItem): TransferManagerEntry => ({
+}: DownloadItem): TransferManagerDownloadEntry => ({
     type: 'download',
     id: downloadId,
     name,
@@ -48,19 +57,20 @@ const mapDownload = ({
     storageSize: storageSize ?? 0,
 });
 
-const mapUpload = ({
-    uploadId,
-    item: { name, status, uploadedBytes, clearTextExpectedSize },
-}: {
-    uploadId: string;
-    item: UploadItem;
-}): TransferManagerEntry => ({
+const getUploadTransferredBytes = (item: UploadItem): number => {
+    if (item.type === NodeType.File) {
+        return item.uploadedBytes;
+    }
+    return item.status === UploadStatus.Finished ? 100 : 0;
+};
+
+const mapUpload = ({ uploadId, item }: { uploadId: string; item: UploadItem }): TransferManagerUploadEntry => ({
     type: 'upload',
     id: uploadId,
-    name,
-    status,
-    transferredBytes: uploadedBytes,
-    storageSize: clearTextExpectedSize,
+    name: item.name,
+    status: item.status,
+    transferredBytes: getUploadTransferredBytes(item),
+    clearTextSize: item.type === NodeType.File ? item.clearTextExpectedSize : 0,
 });
 
 export const useTransferManagerState = () => {
@@ -76,7 +86,9 @@ export const useTransferManagerState = () => {
         // XXX: This is 4 loops on the same list but it's the most elegant way i can think of
         // there's a test to make sure it stays under 20ms with 10k elements
         const sumOfTransferredBytes = allTransfers.reduce((acc, transfer) => acc + transfer.transferredBytes, 0);
-        const sumOfBytes = allTransfers.reduce((acc, transfer) => acc + transfer.storageSize, 0);
+        const sumOfBytes = allTransfers.reduce((acc, transfer) => {
+            return acc + (transfer.type === 'download' ? transfer.storageSize : transfer.clearTextSize);
+        }, 0);
 
         if (allTransfers.length === 0) {
             status = TransferManagerStatus.Empty;
