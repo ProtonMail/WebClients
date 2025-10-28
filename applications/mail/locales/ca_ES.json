@@ -1100,7 +1100,7 @@
         "Llegeix el missatge"
       ],
       "Read receipt sent": [
-        "S\"ha enviat la confirmació de lectura."
+        "S'ha enviat la confirmació de lectura."
       ],
       "Recently read": [
         "Llegit recentment"
@@ -1973,7 +1973,7 @@
         "Ràpid i segur. No es guarden registres."
       ],
       "No logs are kept to protect your privacy. Faster processing.": [
-        "Per a un processament més ràpid, no es guardarà cap registre de protecció de la vostra privacitat."
+        "No es guarda cap registre per a protegir la vostra privacitat. El processament és més ràpid."
       ],
       "Run on ${ BRAND_NAME } servers": [
         "Executa-ho als servidors de ${ BRAND_NAME }"
@@ -2162,6 +2162,87 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "L'espai d'emmagatzematge està compartit entre tots els serveis de ${ BRAND_NAME }."
+      ]
+    },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "Rebaixes del Black Friday"
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB d'emmagatzematge de dades"
+      ],
+      "3 TB data storage": [
+        "3 TB d'emmagatzematge de dades"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Accedeixi a més de 15.000 servidors en més de 120 països"
+      ],
+      "Access advanced AI models": [
+        "Accedeixi a models d'IA avançats"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Totes les funcions prèmium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Block ads, trackers, and malware": [
+        "Bloquegeu anuncis, rastrejadors i programari maliciós"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autenticador 2FA integrat"
+      ],
+      "Connect 10 devices at once": [
+        "Connecti 10 dispositius alhora"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Historial de xat complet amb cerca fàcil i favorits"
+      ],
+      "Individual accounts for 6 users": [
+        "Comptes individuals per a 6 usuaris"
+      ],
+      "Individual accounts for you and a partner": [
+        "Comptes individuals per a dues persones"
+      ],
+      "Stronger protection against cyber threats": [
+        "Protecció més forta contra les ciberamenaces"
+      ],
+      "Unlimited daily chats": [
+        "Xats diaris sense límits"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "Divendres negre"
+      ]
+    },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Ajudi els seus éssers estimats a unir-se a la revolució de la privadesa amb els nostres paquets de millor valor, ara amb un 50 % de descompte!"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Uneixi's a la revolució de la privadesa amb els nostres paquets de millor valor, ara amb un 50 % de descompte!"
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "durant ${ durationDeal }"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "Estalviï ${ savedAmount } amb la nostra millor oferta per temps limitat!"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "Canviï al nostre pla de 2 anys i estalviï ${ savedAmount }!"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "Canviï al nostre pla anual i estalviï ${ savedAmount }!"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "Regali als seus una protecció digital completa."
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield, dissenyat especialment, protegeix els vostres dispositius i accelera la navegació en bloquejar anuncis, rastrejadors i programari maliciós."
       ]
     },
     "Billing cycle option": {
@@ -4317,16 +4398,16 @@
       ]
     },
     "Duo offer: Link": {
-      "Double your storage": [
-        "Dupliqueu el vostre emmagatzematge"
+      "Get 4x more storage": [
+        "Aconseguiu el quàdruple d'emmagatzematge"
       ],
       "Share your plan": [
         "Compartiu el vostre pla"
       ]
     },
     "Duo offer: Title": {
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Dupliqueu el vostre emmagatzematge amb ${ BRAND_NAME } Duo"
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "Aconseguiu el quàdruple d'emmagatzematge amb ${ BRAND_NAME } Duo"
       ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
         "Compartiu els avantatges del vostre pla amb ${ BRAND_NAME } Duo"
@@ -5944,7 +6025,7 @@
         "Carpetes personalitzades"
       ],
       "Default folders": [
-        "Carpetes per defecte"
+        "Carpetes predeterminades"
       ],
       "Labels": [
         "Etiquetes"
@@ -6237,7 +6318,7 @@
         "S'ha creat un esdeveniment del calendari"
       ],
       "Creating calendar event failed": [
-        "No s'ha pogut crear aquest esdeveniment del calendari."
+        "No s'ha pogut crear l'esdeveniment del calendari."
       ]
     },
     "Import instructions": {
@@ -7097,7 +7178,7 @@
         "Passar a un pla inferior finalitzarà qualsevol connexió als servidors de pagament de ${ VPN_APP_NAME }."
       ],
       "Download application logs for troubleshooting": [
-        "Descarregueu els registres de l'aplicació per la resolució de problemes"
+        "Descarregueu els registres de l'aplicació per a la resolució de problemes"
       ],
       "Download current logs": [
         "Descarrega els registres actuals"
@@ -7902,7 +7983,7 @@
         "Feu clic amb el botó dret per veure les opcions"
       ],
       "Sat, ${ formatTime }": [
-        "Dissabte a les ${ formatTime }"
+        "Ds., ${ formatTime }"
       ],
       "Saved at ${ dateString }": [
         "Desat el ${ dateString }"
@@ -9243,6 +9324,9 @@
       "Billing cycle": [
         "Cicle de facturació"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Blind Carbon Copy": [
         "Còpia oculta"
       ],
@@ -9455,6 +9539,9 @@
       ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "Aconseguiu l'oferta"
       ],
       "Go to Forums": [
         "Ves als fòrums"
@@ -11820,7 +11907,7 @@
         "El vostre domini ${ domain } i subscripció a ${ subscriptionName } ja estan disponibles."
       ],
       "Your domain and subscription are ready to use.": [
-        "El vostre domini i la subscripció estan a punt per utilitzar-los."
+        "El vostre domini i la subscripció ja es poden utilitzar."
       ]
     },
     "Onboarding Proton": {
@@ -12007,6 +12094,9 @@
       "Advanced account protection": [
         "Protecció avançada del compte"
       ],
+      "File attachments (up to 10GB)": [
+        "Fitxers adjunts (fins a 10 GB)"
+      ],
       "Team policies": [
         "Regles d'equip"
       ]
@@ -12147,6 +12237,17 @@
         "El cupó és vàlid per a ${ couponRedemptions } renovació.",
         "El cupó és vàlid per a ${ couponRedemptions } renovacions."
       ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "El preu amb descompte especial és vàlid durant el primer ${ subscriptionLength } mes.",
+        "El preu amb descompte especial és vàlid durant el primers ${ subscriptionLength } mesos."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "El preu amb descompte especial és vàlid durant el primer mes. El cupó és vàlid per a ${ couponRedemptions } renovació. Després, es renovarà automàticament per ${ renewPriceStr } durant 1 mes. Podreu cancel·lar-ho en qualsevol moment.",
+        "El preu amb descompte especial és vàlid durant el primer mes. El cupó és vàlid per a ${ couponRedemptions } renovacions. Després, es renovarà automàticament per ${ renewPriceStr } durant 1 mes. Podreu cancel·lar-ho en qualsevol moment."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "El preu amb descompte especial és vàlid durant el primer mes. Després, es renovarà automàticament per ${ renewPriceStr } cada mes. Podreu cancel·lar-ho en qualsevol moment."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer ${ subscriptionLength } mes.",
         "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant els primers ${ subscriptionLength } mesos."
@@ -12194,6 +12295,9 @@
       ],
       "Your payment is still being processed": [
         "Encara s'està processant el vostre pagament."
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+        "La vostra subscripció ja té un descompte. Passar a aquesta nova promoció significa que el descompte actual no s'aplicarà."
       ]
     },
     "Payments.Error": {
@@ -13103,6 +13207,11 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Compartit per ${ ownerName }"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "Obre al ${ appName }"
       ]
     },
     "Signature verification warning": {
@@ -14828,9 +14937,6 @@
       "Don't give spam a chance": [
         "No li doneu cap oportunitat al correu brossa."
       ],
-      "Double your storage with ${ BRAND_NAME } Duo": [
-        "Dupliqueu el vostre emmagatzematge amb ${ BRAND_NAME } Duo"
-      ],
       "Downgrade account": [
         "Passa a un pla inferior"
       ],
@@ -15658,6 +15764,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: l'assistent d'IA que respecta la vostra privacitat"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
       ]
