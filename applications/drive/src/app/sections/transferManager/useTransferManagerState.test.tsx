@@ -1,6 +1,8 @@
 import { act, renderHook } from '@testing-library/react';
 import { performance } from 'perf_hooks';
 
+import { NodeType } from '@proton/drive';
+
 import {
     type DownloadItem,
     DownloadStatus,
@@ -135,6 +137,8 @@ describe('useTransferManagerState', () => {
         expect(result.current.transferType).toBe('downloading');
         expect(result.current.status).toBe(TransferManagerStatus.InProgress);
         expect(result.current.progressPercentage).toBe(50);
+        expect(result.current.downloads[0].type).toBe('download');
+        expect(result.current.downloads[0].storageSize).toBe(100);
     });
 
     it('should return upload-only queue details', () => {
@@ -144,6 +148,7 @@ describe('useTransferManagerState', () => {
                 name: 'Upload only',
                 uploadedBytes: 75,
                 status: UploadStatus.InProgress,
+                type: NodeType.File,
             }),
         });
 
@@ -155,6 +160,42 @@ describe('useTransferManagerState', () => {
         expect(result.current.transferType).toBe('uploading');
         expect(result.current.status).toBe(TransferManagerStatus.InProgress);
         expect(result.current.progressPercentage).toBe(75);
+        expect(result.current.uploads[0].type).toBe('upload');
+        expect(result.current.uploads[0].clearTextSize).toBe(100);
+    });
+
+    it('should return 0 transferredBytes for pending folders', () => {
+        addUploadItems({
+            uploadId: 'upload-folder-1',
+            item: createUploadItem({
+                name: 'My Folder',
+                status: UploadStatus.Pending,
+                type: NodeType.Folder,
+            }),
+        });
+
+        const { result } = renderHook(() => useTransferManagerState());
+
+        expect(result.current.uploads).toHaveLength(1);
+        expect(result.current.uploads[0].transferredBytes).toBe(0);
+        expect(result.current.uploads[0].clearTextSize).toBe(0);
+    });
+
+    it('should return 100 transferredBytes for finished folders', () => {
+        addUploadItems({
+            uploadId: 'upload-folder-2',
+            item: createUploadItem({
+                name: 'My Folder',
+                status: UploadStatus.Finished,
+                type: NodeType.Folder,
+            }),
+        });
+
+        const { result } = renderHook(() => useTransferManagerState());
+
+        expect(result.current.uploads).toHaveLength(1);
+        expect(result.current.uploads[0].transferredBytes).toBe(100);
+        expect(result.current.uploads[0].clearTextSize).toBe(0);
     });
 
     it('should handle large queues without significant slowdown', () => {
