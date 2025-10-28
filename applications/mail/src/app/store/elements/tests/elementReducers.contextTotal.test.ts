@@ -147,11 +147,20 @@ describe('Update context Total', () => {
 
             testState.params.filter = {};
             testState.params.sort = { sort: 'Time', desc: true };
-            testState.params.conversationMode = false;
+            testState.params.conversationMode = true;
 
-            const inboxContext = generateElementContextIdentifier({ labelID: MAILBOX_LABEL_IDS.INBOX });
-            const archiveContext = generateElementContextIdentifier({ labelID: MAILBOX_LABEL_IDS.ARCHIVE });
-            const customContext = generateElementContextIdentifier({ labelID: CUSTOM_LABEL_ID1 });
+            const inboxContext = generateElementContextIdentifier({
+                labelID: MAILBOX_LABEL_IDS.INBOX,
+                conversationMode: true,
+            });
+            const archiveContext = generateElementContextIdentifier({
+                labelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                conversationMode: true,
+            });
+            const customContext = generateElementContextIdentifier({
+                labelID: CUSTOM_LABEL_ID1,
+                conversationMode: true,
+            });
 
             testState.total = {
                 [inboxContext]: 2,
@@ -297,11 +306,20 @@ describe('Update context Total', () => {
 
             testState.params.filter = {};
             testState.params.sort = { sort: 'Time', desc: true };
-            testState.params.conversationMode = false;
+            testState.params.conversationMode = true;
 
-            const inboxContext = generateElementContextIdentifier({ labelID: MAILBOX_LABEL_IDS.INBOX });
-            const archiveContext = generateElementContextIdentifier({ labelID: MAILBOX_LABEL_IDS.ARCHIVE });
-            const customContext = generateElementContextIdentifier({ labelID: CUSTOM_LABEL_ID1 });
+            const inboxContext = generateElementContextIdentifier({
+                labelID: MAILBOX_LABEL_IDS.INBOX,
+                conversationMode: true,
+            });
+            const archiveContext = generateElementContextIdentifier({
+                labelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                conversationMode: true,
+            });
+            const customContext = generateElementContextIdentifier({
+                labelID: CUSTOM_LABEL_ID1,
+                conversationMode: true,
+            });
 
             testState.total = {
                 [inboxContext]: 2,
@@ -326,7 +344,7 @@ describe('Update context Total', () => {
             const updatedTotal = testState.total;
             expect(updatedTotal).toEqual({
                 [inboxContext]: 1,
-                [archiveContext]: 3,
+                [archiveContext]: 2,
                 [customContext]: 1,
             });
         });
@@ -336,12 +354,6 @@ describe('Update context Total', () => {
                 conversationLabels: [
                     {
                         ID: MAILBOX_LABEL_IDS.INBOX,
-                        ContextNumMessages: 2,
-                        ContextNumUnread: 1,
-                        ContextNumAttachments: 1,
-                    },
-                    {
-                        ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
                         ContextNumMessages: 2,
                         ContextNumUnread: 1,
                         ContextNumAttachments: 1,
@@ -441,24 +453,35 @@ describe('Update context Total', () => {
 
             testState.params.filter = {};
             testState.params.sort = { sort: 'Time', desc: true };
-            testState.params.conversationMode = false;
+            testState.params.conversationMode = true;
 
-            const inboxContext = generateElementContextIdentifier({ labelID: MAILBOX_LABEL_IDS.INBOX });
-            const archiveContext = generateElementContextIdentifier({ labelID: MAILBOX_LABEL_IDS.ARCHIVE });
-            const customContext = generateElementContextIdentifier({ labelID: CUSTOM_LABEL_ID1 });
+            const inboxContext = generateElementContextIdentifier({
+                labelID: MAILBOX_LABEL_IDS.INBOX,
+                conversationMode: true,
+            });
+            const archiveContext = generateElementContextIdentifier({
+                labelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                conversationMode: true,
+            });
+            const customContext = generateElementContextIdentifier({
+                labelID: CUSTOM_LABEL_ID1,
+                conversationMode: true,
+            });
             const inboxUnreadOnContext = generateElementContextIdentifier({
                 labelID: MAILBOX_LABEL_IDS.INBOX,
+                conversationMode: true,
                 filter: { Unread: 1 },
             });
             const inboxUnreadOffContext = generateElementContextIdentifier({
                 labelID: MAILBOX_LABEL_IDS.INBOX,
+                conversationMode: true,
                 filter: { Unread: 0 },
             });
 
             testState.total = {
                 [inboxContext]: 2,
                 [inboxUnreadOnContext]: 1,
-                [inboxUnreadOffContext]: 2,
+                [inboxUnreadOffContext]: 1,
                 [archiveContext]: 2,
                 [customContext]: 1,
             };
@@ -480,7 +503,7 @@ describe('Update context Total', () => {
             const updatedTotal = testState.total;
             expect(updatedTotal).toEqual({
                 [inboxContext]: 1,
-                [inboxUnreadOnContext]: 1,
+                [inboxUnreadOnContext]: 0,
                 [inboxUnreadOffContext]: 1,
                 [archiveContext]: 3,
                 [customContext]: 1,
@@ -591,22 +614,37 @@ describe('Update context Total', () => {
 
             testState.params.filter = {};
             testState.params.sort = { sort: 'Time', desc: true };
-            testState.params.conversationMode = false;
+            testState.params.conversationMode = true;
 
-            const inboxContext = generateElementContextIdentifier({ labelID: MAILBOX_LABEL_IDS.INBOX });
-            const trashContext = generateElementContextIdentifier({ labelID: MAILBOX_LABEL_IDS.TRASH });
-            const starredContext = generateElementContextIdentifier({ labelID: MAILBOX_LABEL_IDS.STARRED });
+            const inboxContext = generateElementContextIdentifier({
+                labelID: MAILBOX_LABEL_IDS.INBOX,
+                conversationMode: true,
+            });
+            const trashContext = generateElementContextIdentifier({
+                labelID: MAILBOX_LABEL_IDS.TRASH,
+                conversationMode: true,
+            });
+            const starredContext = generateElementContextIdentifier({
+                labelID: MAILBOX_LABEL_IDS.STARRED,
+                conversationMode: true,
+            });
             const almostAllMailContext = generateElementContextIdentifier({
                 labelID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                conversationMode: true,
             });
             const allMailContext = generateElementContextIdentifier({
                 labelID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                conversationMode: true,
             });
             const allMailUnreadOnContext = generateElementContextIdentifier({
                 labelID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                conversationMode: true,
                 filter: { Unread: 1 },
             });
-            const customContext = generateElementContextIdentifier({ labelID: CUSTOM_LABEL_ID1 });
+            const customContext = generateElementContextIdentifier({
+                labelID: CUSTOM_LABEL_ID1,
+                conversationMode: true,
+            });
 
             testState.total = {
                 [inboxContext]: 2,
@@ -636,11 +674,11 @@ describe('Update context Total', () => {
             expect(updatedTotal).toEqual({
                 [inboxContext]: 1,
                 [trashContext]: 2,
-                [starredContext]: 1,
+                [starredContext]: 0,
                 [almostAllMailContext]: 1,
                 [allMailContext]: 3,
-                [allMailUnreadOnContext]: 1,
-                [customContext]: 1,
+                [allMailUnreadOnContext]: 0,
+                [customContext]: 0,
             });
         });
     });
@@ -741,8 +779,8 @@ describe('Update context Total', () => {
 
             const updatedTotal = testState.total;
             expect(updatedTotal).toEqual({
-                [inboxContext]: 1,
-                [customContext]: 2,
+                [inboxContext]: 2,
+                [customContext]: 1,
             });
         });
     });
@@ -869,7 +907,7 @@ describe('Update context Total', () => {
             testState.total = {
                 [inboxContext]: 2,
                 [inboxUnreadOnContext]: 1,
-                [inboxUnreadOffContext]: 2,
+                [inboxUnreadOffContext]: 1,
                 [archiveContext]: 1,
                 [customLabelContext]: 1,
             };
@@ -891,7 +929,7 @@ describe('Update context Total', () => {
             const updatedTotal = testState.total;
             expect(updatedTotal).toEqual({
                 [inboxContext]: 1,
-                [inboxUnreadOnContext]: 1,
+                [inboxUnreadOnContext]: 0,
                 [inboxUnreadOffContext]: 1,
                 [archiveContext]: 2,
                 [customLabelContext]: 1,
@@ -978,10 +1016,10 @@ describe('Update context Total', () => {
                 [inboxContext]: 1,
                 [almostAllMailContext]: 1,
                 [allMailContext]: 3,
-                [allMailUnreadOnContext]: 1,
+                [allMailUnreadOnContext]: 0,
                 [trashContext]: 2,
-                [starredContext]: 1,
-                [customLabelContext]: 1,
+                [starredContext]: 0,
+                [customLabelContext]: 0,
             });
         });
     });
@@ -1040,8 +1078,8 @@ describe('Update context Total', () => {
 
             const updatedTotal = testState.total;
             expect(updatedTotal).toEqual({
-                [inboxContext]: 1,
-                [customLabelContext]: 2,
+                [inboxContext]: 2,
+                [customLabelContext]: 0,
             });
         });
     });
