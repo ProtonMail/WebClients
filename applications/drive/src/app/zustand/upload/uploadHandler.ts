@@ -104,6 +104,7 @@ async function getUploaderForStrategy(
     drive: {
         getFileUploader: ProtonDriveClient['getFileUploader'];
         getFileRevisionUploader: ProtonDriveClient['getFileRevisionUploader'];
+        getAvailableName: ProtonDriveClient['getAvailableName'];
     },
     params: {
         strategy: UploadConflictStrategy.Rename | UploadConflictStrategy.Replace;
@@ -128,8 +129,7 @@ async function getUploaderForStrategy(
     }
 
     if (strategy === UploadConflictStrategy.Rename) {
-        const tempUploader = await drive.getFileUploader(parentUid, fileName, metadata, signal);
-        const availableName = await tempUploader.getAvailableName();
+        const availableName = await drive.getAvailableName(parentUid, fileName);
         return drive.getFileUploader(parentUid, availableName, metadata, signal);
     }
 
