@@ -854,10 +854,17 @@ export type PreloadedPaymentsContextType = Omit<PaymentsContextType, 'paymentSta
     subscription: Subscription | FreeSubscription;
 };
 
+export function isPaymentsPreloaded(payments: PaymentsContextType): payments is PreloadedPaymentsContextType {
+    return payments.hasEssentialData;
+}
+
 export const usePaymentsPreloaded = (): PreloadedPaymentsContextType => {
     const payments = usePaymentsInner();
     if (!payments.hasEssentialData) {
-        console.warn('Payments context did not preload the essential data.');
+        // eslint-disable-next-line no-console
+        console.warn(
+            'Payments context did not preload the essential data. Either call payments.initialize() first or use usePayments() instead of usePaymentsPreloaded().'
+        );
     }
 
     return payments as PreloadedPaymentsContextType;
