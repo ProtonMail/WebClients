@@ -570,6 +570,7 @@ const Step1B = ({
                 });
             }
         },
+        isTrial: signupTrial,
     });
 
     const taxCountry = useTaxCountry({
