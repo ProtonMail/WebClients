@@ -21,8 +21,8 @@ export const Form = () => {
         <form className="flex flex-column">
             <IconRow icon="earth" title={c('Label').t`Time zone`}>
                 <TimeZoneSelector
-                    onChange={(value) => updateFormData('timeZone', value)}
-                    timezone={formData.timeZone}
+                    onChange={(value) => updateFormData('timezone', value)}
+                    timezone={formData.timezone}
                 />
             </IconRow>
 
@@ -88,12 +88,13 @@ const Header = () => {
 };
 
 const Buttons = () => {
-    const { changeBookingState, submitForm } = useBookings();
+    const { changeBookingState, submitForm, loading } = useBookings();
 
     return (
         <div className="flex justify-center gap-6">
-            <Button onClick={() => changeBookingState(BookingState.OFF)}>{c('Action').t`Cancel`}</Button>
-            <Button className="grow" color="norm" type="submit" onClick={submitForm}>{c('Action')
+            <Button disabled={loading} onClick={() => changeBookingState(BookingState.OFF)}>{c('Action')
+                .t`Cancel`}</Button>
+            <Button loading={loading} className="grow" color="norm" type="submit" onClick={submitForm}>{c('Action')
                 .t`Create booking page`}</Button>
         </div>
     );

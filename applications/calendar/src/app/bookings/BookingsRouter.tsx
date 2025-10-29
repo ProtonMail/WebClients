@@ -23,7 +23,7 @@ export const BookingsRouter = () => {
     return (
         <BookingPageLayout>
             <Switch>
-                <Route path="/:bookingID" exact component={BookingDetails} />
+                <Route path="/" exact component={BookingDetails} />
                 <Route>
                     <NoMatch reason={Reason.notFound} />
                 </Route>
