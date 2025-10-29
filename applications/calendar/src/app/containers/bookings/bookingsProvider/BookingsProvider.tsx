@@ -4,7 +4,7 @@ import type { ReactNode } from 'react';
 import { addMinutes, isBefore } from 'date-fns';
 import { c } from 'ttag';
 
-import { useReadCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
+import { useCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
@@ -60,8 +60,8 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     const { notify } = useCalendarGlobalModals();
 
     const [calendars = []] = useCalendars();
-    const getCalendarSettings = useReadCalendarBootstrap();
     const [calendarUserSettings] = useCalendarUserSettings();
+    const [{ CalendarSettings } = {}] = useCalendarBootstrap(calendarUserSettings?.DefaultCalendarID || undefined);
 
     const getAddressKeysByUsage = useGetAddressKeysByUsage();
     const getCalendarKeys = useGetCalendarKeys();
@@ -79,18 +79,13 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
 
     // Used to set the default duration and selected calendar
     useEffect(() => {
-        if (formData.selectedCalendar !== null || !calendarUserSettings?.DefaultCalendarID) {
+        if (formData.selectedCalendar !== null || !CalendarSettings) {
             return;
         }
 
-        const calendarSettings = getCalendarSettings(calendarUserSettings.DefaultCalendarID);
-        if (!calendarSettings) {
-            return;
-        }
-
-        updateFormData('selectedCalendar', calendarUserSettings.DefaultCalendarID);
-        updateFormData('duration', calendarSettings.CalendarSettings.DefaultEventDuration);
-    }, [formData.selectedCalendar, calendarUserSettings?.DefaultCalendarID, getCalendarSettings]);
+        updateFormData('selectedCalendar', CalendarSettings.ID);
+        updateFormData('duration', CalendarSettings.DefaultEventDuration);
+    }, [formData.selectedCalendar, CalendarSettings]);
 
     const resetBookingState = () => {
         setFormData({
