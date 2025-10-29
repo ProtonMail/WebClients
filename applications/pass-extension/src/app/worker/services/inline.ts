@@ -10,6 +10,7 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import browser from '@proton/pass/lib/globals/browser';
 import type { MaybeNull, TabId } from '@proton/pass/types';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
 type CurrentFrame = { frame: FrameData; frameAttributes: FrameAttributes; coords: Coords };
@@ -33,18 +34,30 @@ export const createInlineService = () => {
     const queryFrame = async (
         tabId: TabId,
         data: FrameData,
-        frameAttributes: FrameAttributes
+        frameAttributes: FrameAttributes,
+        maxRetries: number = 1
     ): Promise<FrameQueryResult> => {
-        const { frameId, parent: parentFrameId } = data;
+        const frameId = data.frameId;
+        const parentFrameId = data.parent ?? 0;
 
-        return browser.tabs.sendMessage<FrameQueryMessage, FrameQueryResult>(
-            tabId,
-            backgroundMessage({
-                type: WorkerMessageType.FRAME_QUERY,
-                payload: { frameId, parentFrameId, frameAttributes },
-            }),
-            { frameId: parentFrameId ?? 0 }
-        );
+        try {
+            return await browser.tabs.sendMessage<FrameQueryMessage, FrameQueryResult>(
+                tabId,
+                backgroundMessage({
+                    type: WorkerMessageType.FRAME_QUERY,
+                    payload: { frameId, parentFrameId, frameAttributes },
+                }),
+                { frameId: parentFrameId }
+            );
+        } catch (err) {
+            if (maxRetries === 0) throw err;
+
+            /** Validate parent frame still exists and add small delay before
+             * retry to handle asynchronous content-script initialization. */
+            const validParent = !!(await browser.webNavigation.getFrame({ tabId, frameId: parentFrameId }).catch(noop));
+            if (validParent) return wait(100).then(() => queryFrame(tabId, data, frameAttributes, maxRetries - 1));
+            else throw err;
+        }
     };
 
     /** Coordinate accumulator: walks up frame hierarchy calculating position relative
