@@ -16,8 +16,8 @@ import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eventDefaults';
 
 import { FormIconRow, FormLocationOptionContent } from './BookingsFormComponents';
+import { getBookingLocationOption } from './bookingHelpers';
 import { useBookings } from './bookingsProvider/BookingsProvider';
-import { getBookingLocationOption } from './bookingsProvider/bookingsHelpers';
 import { BookingLocation, BookingState } from './bookingsProvider/interface';
 
 export const Form = () => {
