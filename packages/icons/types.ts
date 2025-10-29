@@ -125,6 +125,7 @@ export type IconName =
     | 'calendar-day'
     | 'calendar-checkmark'
     | 'calendar-grid'
+    | 'calendar-list-check'
     | 'calendar-month'
     | 'calendar-today'
     | 'calendar-row'
