@@ -27,8 +27,6 @@ export default defineConfig([
                 },
             ],
             'max-classes-per-file': 'off',
-            // TODO: Add the missing explicit deps and remove this rule
-            'import/no-extraneous-dependencies': 'off',
         },
     },
     {

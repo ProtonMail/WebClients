@@ -1,8 +1,5 @@
-import type { Result } from '@protontech/drive-sdk';
-import { RevisionState } from '@protontech/drive-sdk';
-
-import type { Author, MaybeNode, Revision } from '@proton/drive';
-import { MemberRole, NodeType } from '@proton/drive';
+import type { Author, MaybeNode, Result, Revision } from '@proton/drive';
+import { MemberRole, NodeType, RevisionState } from '@proton/drive';
 
 import { getAuthorshipStatus } from './authorship';
 
