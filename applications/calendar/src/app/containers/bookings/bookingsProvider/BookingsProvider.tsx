@@ -61,6 +61,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         duration: scheduleOptions[0].value,
         timezone: calendarUserSettings?.PrimaryTimezone,
         location: BookingLocation.MEET,
+        locationType: BookingLocation.MEET,
         bookingSlots: [],
     });
 
@@ -154,6 +155,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             duration: scheduleOptions[0].value,
             timezone: calendarUserSettings?.PrimaryTimezone,
             location: BookingLocation.MEET,
+            locationType: BookingLocation.MEET,
             bookingSlots: [],
         });
     };
