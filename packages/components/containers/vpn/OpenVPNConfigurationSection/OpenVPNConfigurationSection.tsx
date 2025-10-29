@@ -6,6 +6,7 @@ import { c, msgid } from 'ttag';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
 import Icon from '@proton/components/components/icon/Icon';
@@ -13,12 +14,13 @@ import Radio from '@proton/components/components/input/Radio';
 import RadioGroup from '@proton/components/components/input/RadioGroup';
 import Info from '@proton/components/components/link/Info';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import useUserVPN from '@proton/components/hooks/useUserVPN';
 import useVPNLogicals from '@proton/components/hooks/useVPNLogicals';
-import { PLANS } from '@proton/payments';
-import { type CountryOptions, getCountryOptions, getLocalizedCountryByAbbr } from '@proton/payments';
+import { type CountryOptions, PLANS, getCountryOptions, getLocalizedCountryByAbbr } from '@proton/payments';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { SORT_DIRECTION, VPN_APP_NAME, VPN_CONNECTIONS, VPN_HOSTNAME } from '@proton/shared/lib/constants';
 import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 import type { Logical } from '@proton/shared/lib/vpn/Logical';
@@ -49,6 +51,7 @@ interface Props {
     listOnly?: boolean;
     excludedCategories?: CATEGORY[];
     countryOptions?: CountryOptions;
+    showSearch?: boolean;
 }
 
 const OpenVPNConfigurationSection = ({
@@ -57,18 +60,24 @@ const OpenVPNConfigurationSection = ({
     selecting,
     listOnly = false,
     excludedCategories = [],
+    showSearch = true,
 }: Props) => {
     const [platform, setPlatform] = useState(PLATFORM.ANDROID);
     const [protocol, setProtocol] = useState(PROTOCOL.UDP);
     const [plansResult, loadingPlans] = usePlans();
     const plans = plansResult?.plans || [];
-    const { loading, result, fetch: fetchLogicals } = useVPNLogicals();
+    const { loading, result, fetch: fetchLogicals, search: searchLogical } = useVPNLogicals();
     const { result: vpnResult, loading: vpnLoading, fetch: fetchUserVPN } = useUserVPN();
     const [{ hasPaidVpn }] = useUser();
     const [userSettings] = useUserSettings();
     const userVPN = vpnResult?.VPN;
     const maxTier = userVPN?.MaxTier || 0;
     const [category, setCategory] = useState(CATEGORY.FREE);
+    const [lookupQuery, setLookupQuery] = useState('');
+    const [lookupResult, setLookupResult] = useState<Logical | null>(null);
+    const [lookupLoading, setLookupLoading] = useState(false);
+    const [lookupError, setLookupError] = useState<string | null>(null);
+    const [retryAfterTime, setRetryAfterTime] = useState<number | null>(null);
     const excludeCategoryMap = excludedCategories.reduce<{ [key in CATEGORY]?: boolean }>((map, excludedCategory) => {
         map[excludedCategory] = true;
         return map;
@@ -103,7 +112,7 @@ const OpenVPNConfigurationSection = ({
     const isUpgradeRequiredForCountries = !Object.keys(userVPN || {}).length || !hasPaidVpn;
 
     useEffect(() => {
-        fetchUserVPN(30_000);
+        void fetchUserVPN(30_000);
     }, [hasPaidVpn]);
 
     const secureCoreServers = useMemo(() => {
@@ -159,6 +168,75 @@ const OpenVPNConfigurationSection = ({
     useEffect(() => {
         void fetchLogicals(30_000);
     }, []);
+
+    const handleLookupServer = async () => {
+        if (!lookupQuery.trim()) {
+            return;
+        }
+
+        if (retryAfterTime && Date.now() < retryAfterTime) {
+            return;
+        }
+
+        setLookupLoading(true);
+        setLookupError(null);
+        setLookupResult(null);
+
+        try {
+            const logical = await searchLogical(lookupQuery.trim());
+
+            setLookupResult(logical);
+            setRetryAfterTime(null);
+        } catch (error: any) {
+            const { status } = getApiError(error);
+
+            if (status === 404) {
+                setLookupError(c('Error').t`Server not found`);
+            } else if (status === 429) {
+                const retryAfterHeader = error?.response?.headers?.get('retry-after');
+                const retryAfterSeconds = retryAfterHeader ? parseInt(retryAfterHeader, 10) : 60;
+                const retryTime = Date.now() + retryAfterSeconds * 1000;
+
+                setRetryAfterTime(retryTime);
+                setLookupError(c('Error').t`Too many requests. Please try again later`);
+            } else {
+                setLookupError(c('Error').t`Failed to lookup server. Please try again`);
+            }
+        } finally {
+            setLookupLoading(false);
+        }
+    };
+
+    const getLookupErrorMessage = () => {
+        if (retryAfterTime) {
+            const date = new Date(retryAfterTime).toLocaleString();
+
+            /** translator: ${date} is 29/10/2025 13:11:00 */
+            return c('Error').t`Too many requests. Please try again after ${date}`;
+        }
+
+        return lookupError;
+    };
+
+    useEffect(() => {
+        if (!retryAfterTime) {
+            return;
+        }
+
+        const timeUntilExpiry = retryAfterTime - Date.now();
+        if (timeUntilExpiry <= 0) {
+            setRetryAfterTime(null);
+            setLookupError(null);
+            return;
+        }
+
+        const timeout = setTimeout(() => {
+            setRetryAfterTime(null);
+            setLookupError(null);
+        }, timeUntilExpiry);
+
+        return () => clearTimeout(timeout);
+    }, [retryAfterTime]);
 
     const vpnPlan = plans?.find(({ Name }) => Name === PLANS.VPN2024);
     const plusVpnConnections = vpnPlan?.MaxVPN || VPN_CONNECTIONS;
@@ -361,66 +439,120 @@ const OpenVPNConfigurationSection = ({
                         />
                     </>
                 )}
-                {!listOnly && (
-                    <>
-                        {!loadingPlans && (userVPN?.PlanName === 'trial' || !hasPaidVpn) && vpnPlus && (
-                            <div className="border p-7 text-center">
-                                <h3 className="color-primary mt-0 mb-4">{
-                                    // translator: ${vpnPlus} is "VPN Plus" (taken from plan title)
-                                    c('Title').t`Get ${vpnPlus} to access all servers`
-                                }</h3>
-                                <ul className="unstyled inline-flex mt-0 mb-8 flex-column md:flex-row">
-                                    <li className="flex flex-nowrap items-center mr-4">
-                                        <Icon name="checkmark" className="color-success mr-2" />
-                                        <span className="text-bold">{c('Feature').t`Access to all countries`}</span>
-                                    </li>
-                                    <li className="flex flex-nowrap items-center mr-4">
-                                        <Icon name="checkmark" className="color-success mr-2" />
-                                        <span className="text-bold">{c('Feature').t`Secure Core servers`}</span>
-                                    </li>
-                                    <li className="flex flex-nowrap items-center mr-4">
-                                        <Icon name="checkmark" className="color-success mr-2" />
-                                        <span className="text-bold">{c('Feature').t`Fastest VPN servers`}</span>
-                                    </li>
-                                    <li className="flex flex-nowrap items-center mr-4">
-                                        <Icon name="checkmark" className="color-success mr-2" />
-                                        <span className="text-bold">{c('Feature').t`Torrenting support (P2P)`}</span>
-                                    </li>
-                                    <li className="flex flex-nowrap items-center mr-4">
-                                        <Icon name="checkmark" className="color-success mr-2" />
-                                        <span className="text-bold">
-                                            {c('Feature').ngettext(
-                                                msgid`Connection for up to ${plusVpnConnections} device`,
-                                                `Connection for up to ${plusVpnConnections} devices`,
-                                                plusVpnConnections
-                                            )}
-                                        </span>
-                                    </li>
-                                    <li className="flex flex-nowrap items-center ">
-                                        <Icon name="checkmark" className="color-success mr-2" />
-                                        <span className="text-bold mr-2">{c('Feature')
-                                            .t`Secure streaming support`}</span>
-                                        <Info
-                                            url="https://protonvpn.com/support/streaming-guide/"
-                                            title={c('VPN info')
-                                                .t`Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.`}
-                                        />
-                                    </li>
-                                </ul>
-                                <div>
-                                    <ButtonLike
-                                        as={SettingsLink}
-                                        color="norm"
-                                        path={`/dashboard?plan=${PLANS.VPN2024}`}
-                                    >
-                                        {getPlanOrAppNameText(vpnPlus)}
-                                    </ButtonLike>
-                                </div>
-                            </div>
-                        )}
-                    </>
-                )}
             </div>
+
+            {showSearch && (
+                <div className="mt-8">
+                    <h3 className="mb-2">{c('Title').t`Search for additional servers`}</h3>
+                    <p className="mb-4">
+                        {c('Info')
+                            .t`Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.`}
+                    </p>
+                    <div className="flex gap-2 items-end">
+                        <InputFieldTwo
+                            id="server-lookup"
+                            label={c('Label').t`Server name`}
+                            placeholder={c('Placeholder').t`e.g., AT#62`}
+                            value={lookupQuery}
+                            onValue={setLookupQuery}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter') {
+                                    e.preventDefault();
+                                    void handleLookupServer();
+                                }
+                            }}
+                        />
+                        <Button
+                            type="button"
+                            onClick={handleLookupServer}
+                            loading={lookupLoading}
+                            disabled={!lookupQuery.trim() || (retryAfterTime !== null && Date.now() < retryAfterTime)}
+                        >{c('Action').t`Search`}</Button>
+                    </div>
+
+                    {(lookupError || retryAfterTime) && (
+                        <div className="mt-4 color-danger">
+                            <Icon name="cross-circle" className="mr-2" />
+                            {getLookupErrorMessage()}
+                        </div>
+                    )}
+
+                    {lookupResult && (
+                        <div className="mt-4">
+                            <ConfigsTable
+                                category={CATEGORY.SERVER}
+                                platform={platform}
+                                protocol={protocol}
+                                servers={[
+                                    {
+                                        ...lookupResult,
+                                        country: getLocalizedCountryByAbbr(lookupResult.ExitCountry, countryOptions),
+                                        isUpgradeRequired: getIsUpgradeRequired(lookupResult),
+                                    },
+                                ]}
+                                onSelect={onSelect}
+                                selecting={selecting}
+                                countryOptions={countryOptions}
+                            />
+                        </div>
+                    )}
+                </div>
+            )}
+
+            {!listOnly && (
+                <>
+                    {!loadingPlans && (userVPN?.PlanName === 'trial' || !hasPaidVpn) && vpnPlus && (
+                        <div className="border p-7 text-center">
+                            <h3 className="color-primary mt-0 mb-4">{
+                                // translator: ${vpnPlus} is "VPN Plus" (taken from plan title)
+                                c('Title').t`Get ${vpnPlus} to access all servers`
+                            }</h3>
+                            <ul className="unstyled inline-flex mt-0 mb-8 flex-column md:flex-row">
+                                <li className="flex flex-nowrap items-center mr-4">
+                                    <Icon name="checkmark" className="color-success mr-2" />
+                                    <span className="text-bold">{c('Feature').t`Access to all countries`}</span>
+                                </li>
+                                <li className="flex flex-nowrap items-center mr-4">
+                                    <Icon name="checkmark" className="color-success mr-2" />
+                                    <span className="text-bold">{c('Feature').t`Secure Core servers`}</span>
+                                </li>
+                                <li className="flex flex-nowrap items-center mr-4">
+                                    <Icon name="checkmark" className="color-success mr-2" />
+                                    <span className="text-bold">{c('Feature').t`Fastest VPN servers`}</span>
+                                </li>
+                                <li className="flex flex-nowrap items-center mr-4">
+                                    <Icon name="checkmark" className="color-success mr-2" />
+                                    <span className="text-bold">{c('Feature').t`Torrenting support (P2P)`}</span>
+                                </li>
+                                <li className="flex flex-nowrap items-center mr-4">
+                                    <Icon name="checkmark" className="color-success mr-2" />
+                                    <span className="text-bold">
+                                        {c('Feature').ngettext(
+                                            msgid`Connection for up to ${plusVpnConnections} device`,
+                                            `Connection for up to ${plusVpnConnections} devices`,
+                                            plusVpnConnections
+                                        )}
+                                    </span>
+                                </li>
+                                <li className="flex flex-nowrap items-center ">
+                                    <Icon name="checkmark" className="color-success mr-2" />
+                                    <span className="text-bold mr-2">{c('Feature').t`Secure streaming support`}</span>
+                                    <Info
+                                        url="https://protonvpn.com/support/streaming-guide/"
+                                        title={c('VPN info')
+                                            .t`Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.`}
+                                    />
+                                </li>
+                            </ul>
+                            <div>
+                                <ButtonLike as={SettingsLink} color="norm" path={`/dashboard?plan=${PLANS.VPN2024}`}>
+                                    {getPlanOrAppNameText(vpnPlus)}
+                                </ButtonLike>
+                            </div>
+                        </div>
+                    )}
+                </>
+            )}
         </SettingsSectionWide>
     );
 };

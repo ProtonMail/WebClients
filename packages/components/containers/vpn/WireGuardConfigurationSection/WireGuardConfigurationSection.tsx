@@ -310,11 +310,6 @@ const WireGuardConfigurationSection = () => {
                 publicKey: uint8ArrayToBase64String(await getPublicKey(privateKey)),
             };
         } catch (e) {
-            console.warn(e);
-            console.info(
-                'Fallback to server-side generated key. Upgrade to a modern browser, to generate right from your device.'
-            );
-
             const { PrivateKey, PublicKey } = await api<KeyPair>(getKey());
 
             return { privateKey: unarmor(PrivateKey), publicKey: unarmor(PublicKey) };
@@ -622,8 +617,8 @@ const WireGuardConfigurationSection = () => {
     };
 
     useEffect(() => {
-        fetchUserVPN(30_000);
-        fetchLogicals(30_000);
+        void fetchUserVPN(30_000);
+        void fetchLogicals(30_000);
     }, [hasPaidVpn]);
 
     return (
@@ -689,10 +684,10 @@ const WireGuardConfigurationSection = () => {
                                             &nbsp;&nbsp;
                                             {expirationString}
                                             &nbsp;&nbsp;
-                                            {certificate.serialNumber ||
-                                            certificate.publicKeyFingerprint ||
-                                            certificate.publicKey ? (
-                                                removing[
+                                            {(certificate.serialNumber ||
+                                                certificate.publicKeyFingerprint ||
+                                                certificate.publicKey) &&
+                                                (removing[
                                                     certificate.publicKeyFingerprint ||
                                                         certificate.publicKey ||
                                                         certificate.id
@@ -715,10 +710,7 @@ const WireGuardConfigurationSection = () => {
                                                             alt={c('Action').t`Revoke`}
                                                         />
                                                     </button>
-                                                )
-                                            ) : (
-                                                ''
-                                            )}
+                                                ))}
                                         </div>
                                     </Row>
                                 </Summary>
@@ -884,6 +876,7 @@ const WireGuardConfigurationSection = () => {
                                     selecting={creating}
                                     listOnly={true}
                                     excludedCategories={[CATEGORY.COUNTRY]}
+                                    showSearch={true}
                                 />
                             </>
                         )}
