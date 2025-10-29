@@ -3,8 +3,9 @@ import React, { useState } from 'react';
 import { c } from 'ttag';
 
 import { Banner, Button, Card, CircleLoader } from '@proton/atoms';
-import { Icon, InputFieldTwo, Tabs, Toggle } from '@proton/components';
-import type { MaybeNode } from '@proton/drive/index';
+import { Icon, InputFieldTwo, Tabs, Toggle, FileInput } from '@proton/components';
+import type { MaybeNode } from '@proton/drive';
+import type { ExcpectedTreeNode } from '@proton/drive/diagnostic';
 
 import ModalContentLoader from '../../components/modals/ModalContentLoader';
 import { withHoc } from '../../hooks/withHoc';
@@ -16,7 +17,7 @@ type Props = {
     error?: unknown;
     results?: Results;
     currentNode?: MaybeNode;
-    runDiagnostics: (options: { node?: MaybeNode; verifyContent?: boolean; verifyThumbnails?: boolean }) => void;
+    runDiagnostics: (options: { node?: MaybeNode; verifyContent?: boolean; verifyThumbnails?: boolean, expectedStructure?: ExcpectedTreeNode }) => void;
 };
 
 export const Diagnostics = withHoc<{}, Props>(useDiagnosticsState, DiagnosticsView);
@@ -60,17 +61,20 @@ function DiagnosticsModalViewOptions({
     runDiagnostics,
 }: {
     currentNode?: MaybeNode;
-    runDiagnostics: (options: { node?: MaybeNode; verifyContent?: boolean; verifyThumbnails?: boolean }) => void;
+    runDiagnostics: (options: { node?: MaybeNode; verifyContent?: boolean; verifyThumbnails?: boolean; expectedStructure?: ExcpectedTreeNode }) => void;
 }) {
     const [onlyCurrentFolder, setOnlyCurrentFolder] = useState(false);
     const [verifyContent, setVerifyContent] = useState(false);
     const [verifyThumbnails, setVerifyThumbnails] = useState(false);
+    const [expectedStructure, setExpectedStructure] = useState<ExcpectedTreeNode | undefined>(undefined);
+    const [expectedStructureError, setExpectedStructureError] = useState<string | undefined>(undefined);
 
     const handleRun = () => {
         runDiagnostics({
             node: onlyCurrentFolder ? currentNode : undefined,
             verifyContent,
             verifyThumbnails,
+            expectedStructure,
         });
     };
 
@@ -97,7 +101,35 @@ function DiagnosticsModalViewOptions({
                 checked={verifyThumbnails}
                 onChange={() => setVerifyThumbnails(!verifyThumbnails)}
             />
-            <Button onClick={handleRun}>{c('Action').t`Run diagnostics`}</Button>
+            <InputFieldTwo
+                as={FileInput}
+                label={c('Option').t`Expected strcuture`}
+                onChange={(event) => {
+                    const file = event.target.files?.[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = (event) => {
+                            try {
+                                const expectedStructure = JSON.parse(event.target?.result as string) as ExcpectedTreeNode;
+                                setExpectedStructure(expectedStructure);
+                                setExpectedStructureError(undefined);
+                            } catch (error) {
+                                console.error(error);
+                                setExpectedStructureError(c('Error').t`Invalid JSON file`);
+                            }
+                        };
+                        reader.onerror = (event) => {
+                            console.error(event);
+                            setExpectedStructureError(c('Error').t`Error reading file`);
+                        };
+                        reader.readAsText(file);
+                    }
+                }}
+                children={c('Option').t`Select JSON file`}
+                error={expectedStructureError}
+                assistiveText={expectedStructure ? c('Error').t`Expected structure attached` : undefined}
+            />
+            <Button onClick={handleRun} className="mt-2">{c('Action').t`Run diagnostics`}</Button>
         </Card>
     );
 }
