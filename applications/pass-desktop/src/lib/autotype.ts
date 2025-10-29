@@ -61,7 +61,7 @@ export const setupIpcHandlers = (getWindow: () => MaybeNull<BrowserWindow>) => {
 
             for (let i = 0; i < fields.length; i++) {
                 const field = fields[i];
-                await clipboard.writeTextLinuxWithoutWait(field, true);
+                await clipboard.writeText(field, true, true);
                 // Waiting to avoid race conditions between clipboard and pasting
                 await wait(300);
                 autotype.paste();
@@ -69,7 +69,7 @@ export const setupIpcHandlers = (getWindow: () => MaybeNull<BrowserWindow>) => {
                 performAutotypeSeparator({ i, length: fields.length, enterAtTheEnd });
             }
 
-            await clipboard.writeTextLinuxWithoutWait(initialClipboardValue, true);
+            await clipboard.writeText(initialClipboardValue, true, true);
         } else {
             fields.forEach((field, i) => {
                 autotype.text(field);
