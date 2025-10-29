@@ -6,10 +6,10 @@ use anyhow::Result;
 mod clipboard_platform;
 
 pub trait ClipboardTrait {
-    fn write(text: &str, sensitive: bool) -> Result<(), anyhow::Error>;
+    /// The `immediate` flag is only used for linux targets where
+    /// we need more fine-grained control over the clipboard's lifecycle
+    fn write(text: &str, sensitive: bool, immediate: bool) -> Result<(), anyhow::Error>;
     fn read() -> Result<String, anyhow::Error>;
-    #[cfg(target_os = "linux")]
-    fn write_linux_without_wait(text: &str, sensitive: bool) -> Result<(), anyhow::Error>;
 }
 
 pub use clipboard_platform::*;
