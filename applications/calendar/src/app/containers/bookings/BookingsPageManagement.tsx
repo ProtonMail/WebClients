@@ -1,12 +1,8 @@
-import type { PropsWithChildren, ReactNode } from 'react';
-
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
 import Icon from '@proton/components/components/icon/Icon';
-import IconRow from '@proton/components/components/iconRow/IconRow';
-import MeetLogo from '@proton/components/components/logo/MeetLogo';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import Toggle from '@proton/components/components/toggle/Toggle';
@@ -16,65 +12,13 @@ import TextArea from '@proton/components/components/v2/input/TextArea';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useToggle from '@proton/components/hooks/useToggle';
 import { Copy } from '@proton/components/index';
-import type { IconName } from '@proton/icons';
 import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eventDefaults';
 
+import { FormIconRow, FormLocationOptionContent } from './BookingsFormComponents';
 import { useBookings } from './bookingsProvider/BookingsProvider';
 import { getBookingLocationOption } from './bookingsProvider/bookingsHelpers';
 import { BookingLocation, BookingState } from './bookingsProvider/interface';
-
-interface FormIconRowProps extends PropsWithChildren {
-    title: string;
-    hideBorder?: boolean;
-    narrowSection?: boolean;
-    suffix?: ReactNode;
-    icon: IconName;
-}
-
-const FormIconRow = ({ title, icon, children, hideBorder = false, suffix }: FormIconRowProps) => {
-    let titleNode = <h2 className="text-sm text-semibold mb-2">{title}</h2>;
-    if (suffix) {
-        titleNode = (
-            <div className="flex flex-nowrap items-center justify-space-between">
-                <h2 className="text-sm text-semibold mb-2">{title}</h2>
-                {suffix}
-            </div>
-        );
-    }
-
-    return (
-        <IconRow icon={icon} containerClassName="items-baseline" labelClassName="pt-0.5">
-            {titleNode}
-            {children}
-            {!hideBorder && <hr className="mt-5 mb-1 bg-weak" />}
-        </IconRow>
-    );
-};
-
-interface FormLocationOptionProps {
-    value: BookingLocation;
-    text: string;
-}
-
-const FormLocationOptionContent = ({ value, text }: FormLocationOptionProps) => {
-    let icon: ReactNode = null;
-    switch (value) {
-        case BookingLocation.MEET:
-            icon = <MeetLogo variant="glyph-only" size={4} />;
-            break;
-        case BookingLocation.IN_PERSON:
-            icon = <Icon name="map-pin" />;
-            break;
-    }
-
-    return (
-        <span className="flex items-center gap-2">
-            {icon}
-            {text}
-        </span>
-    );
-};
 
 export const Form = () => {
     const scheduleOptions = getCalendarEventDefaultDuration();
