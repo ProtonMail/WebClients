@@ -7,12 +7,18 @@ import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
 import Icon from '@proton/components/components/icon/Icon';
 import IconRow from '@proton/components/components/iconRow/IconRow';
 import MeetLogo from '@proton/components/components/logo/MeetLogo';
+import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+import Toggle from '@proton/components/components/toggle/Toggle';
+import { InputField } from '@proton/components/components/v2/field/InputField';
+import PasswordInput from '@proton/components/components/v2/input/PasswordInput';
 import TextArea from '@proton/components/components/v2/input/TextArea';
-import { InputFieldTwo, Option, SelectTwo } from '@proton/components/index';
+import useNotifications from '@proton/components/hooks/useNotifications';
+import useToggle from '@proton/components/hooks/useToggle';
+import { Copy } from '@proton/components/index';
 import type { IconName } from '@proton/icons';
 import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eventDefaults';
-import clsx from '@proton/utils/clsx';
 
 import { useBookings } from './bookingsProvider/BookingsProvider';
 import { getBookingLocationOption } from './bookingsProvider/bookingsHelpers';
@@ -22,17 +28,24 @@ interface FormIconRowProps extends PropsWithChildren {
     title: string;
     hideBorder?: boolean;
     narrowSection?: boolean;
+    suffix?: ReactNode;
     icon: IconName;
 }
 
-const FormIconRow = ({ title, icon, children, hideBorder = false, narrowSection = false }: FormIconRowProps) => {
+const FormIconRow = ({ title, icon, children, hideBorder = false, suffix }: FormIconRowProps) => {
+    let titleNode = <h2 className="text-sm text-semibold mb-2">{title}</h2>;
+    if (suffix) {
+        titleNode = (
+            <div className="flex flex-nowrap items-center justify-space-between">
+                <h2 className="text-sm text-semibold mb-2">{title}</h2>
+                {suffix}
+            </div>
+        );
+    }
+
     return (
-        <IconRow
-            icon={icon}
-            containerClassName={clsx('items-baseline', narrowSection && 'pr-11')}
-            labelClassName="pt-0.5"
-        >
-            <h2 className="text-sm text-semibold mb-2">{title}</h2>
+        <IconRow icon={icon} containerClassName="items-baseline" labelClassName="pt-0.5">
+            {titleNode}
             {children}
             {!hideBorder && <hr className="mt-5 mb-1 bg-weak" />}
         </IconRow>
@@ -69,12 +82,15 @@ export const Form = () => {
 
     const [writeableCalendars = []] = useWriteableCalendars();
 
+    const { state, toggle } = useToggle(false);
+    const { createNotification } = useNotifications();
+
     const { formData, updateFormData } = useBookings();
 
     return (
         <form className="flex flex-column">
             <FormIconRow icon="text-title" title={c('Info').t`Name your booking page`}>
-                <InputFieldTwo
+                <InputField
                     id="booking-title"
                     as={TextArea}
                     placeholder={c('Placeholder').t`Booking page title`}
@@ -109,8 +125,8 @@ export const Form = () => {
                 todo
             </FormIconRow>*/}
 
-            <FormIconRow icon="map-pin" title={c('Info').t`Where will the appointment take place?`} narrowSection>
-                <InputFieldTwo
+            <FormIconRow icon="map-pin" title={c('Info').t`Where will the appointment take place?`}>
+                <InputField
                     as={SelectTwo}
                     id="calendar-select"
                     value={formData.location}
@@ -125,15 +141,11 @@ export const Form = () => {
                             <FormLocationOptionContent value={option.value} text={option.text} />
                         </Option>
                     ))}
-                </InputFieldTwo>
+                </InputField>
             </FormIconRow>
 
-            <FormIconRow
-                icon="calendar-grid"
-                title={c('Info').t`In which calendar should bookings appear?`}
-                narrowSection
-            >
-                <InputFieldTwo
+            <FormIconRow icon="calendar-grid" title={c('Info').t`In which calendar should bookings appear?`}>
+                <InputField
                     as={SelectTwo}
                     id="calendar-select"
                     value={formData.selectedCalendar}
@@ -152,10 +164,10 @@ export const Form = () => {
                             <span>{calendar.Name}</span>
                         </Option>
                     ))}
-                </InputFieldTwo>
+                </InputField>
             </FormIconRow>
 
-            <FormIconRow icon="file-lines" title={c('Info').t`What should people know before booking?`} narrowSection>
+            <FormIconRow icon="file-lines" title={c('Info').t`What should people know before booking?`}>
                 <TextArea
                     id="booking-description"
                     placeholder={c('Placeholder').t`Add a booking page description`}
@@ -166,60 +178,33 @@ export const Form = () => {
                 />
             </FormIconRow>
 
-            {/*<FormIconRow icon="shield" title={c('Info').t`Protect this page with a password?`} hideBorder>
-                todo
-            </FormIconRow>*/}
-
-            <IconRow icon="earth" title={c('Label').t`Time zone`}>
-                <TimeZoneSelector
-                    onChange={(value) => updateFormData('timezone', value)}
-                    timezone={formData.timezone}
-                />
-            </IconRow>
-
-            <IconRow icon="text-align-left" title={c('Label').t`Title`}>
-                <InputFieldTwo
-                    id="booking-title"
-                    placeholder={c('Placeholder').t`Add title`}
-                    value={formData.title}
-                    onChange={(e) => updateFormData('title', e.target.value)}
-                    maxLength={MAX_CHARS_API.TITLE}
-                    assistContainerClassName="hidden"
-                    autoFocus
-                />
-            </IconRow>
-
-            <IconRow icon="clock" title={c('Label').t`Duration`}>
-                <InputFieldTwo
-                    as={SelectTwo}
-                    id="duration-select"
-                    value={formData.duration}
-                    onChange={({ value }: { value: any }) => {
-                        updateFormData('duration', value);
-                    }}
-                    assistContainerClassName="hidden"
-                >
-                    {scheduleOptions.map(({ value, text }) => (
-                        <Option key={value} value={value} title={text} />
-                    ))}
-                </InputFieldTwo>
-            </IconRow>
-
-            <IconRow icon="calendar-grid" title={c('Label').t`Calendar`}>
-                <InputFieldTwo
-                    as={SelectTwo}
-                    id="calendar-select"
-                    value={formData.selectedCalendar}
-                    onChange={({ value }: { value: any }) => {
-                        updateFormData('selectedCalendar', value);
-                    }}
-                    assistContainerClassName="hidden"
-                >
-                    {writeableCalendars.map((calendar) => (
-                        <Option key={calendar.ID} value={calendar.ID} title={calendar.Name} />
-                    ))}
-                </InputFieldTwo>
-            </IconRow>
+            <FormIconRow
+                icon="shield"
+                title={c('Info').t`Enable password protection`}
+                hideBorder
+                suffix={<Toggle checked={state} onChange={() => toggle()} />}
+            >
+                {state ? (
+                    <div className="mt-2 flex flex-nowrap gap-2">
+                        <PasswordInput
+                            id="booking-password"
+                            placeholder={c('Placeholder').t`Add password`}
+                            value={formData.password}
+                            maxLength={MAX_CHARS_API.TITLE} // 255 chars max to avoid unlimited password length
+                            onChange={(e) => updateFormData('password', e.target.value)}
+                            autoFocus
+                        />
+                        <Copy
+                            id="booking-password-copy"
+                            value={formData.password || ''}
+                            shape="ghost"
+                            onCopy={() => {
+                                createNotification({ text: c('Info').t`Password copied` });
+                            }}
+                        />
+                    </div>
+                ) : null}
+            </FormIconRow>
         </form>
     );
 };
