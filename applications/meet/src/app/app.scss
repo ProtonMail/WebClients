@@ -129,6 +129,10 @@ $profile-colors:
 	}
 }
 
+.notifications-container {
+	filter: none;
+}
+
 %notification-base {
 	color: var(--text-invert);
 	white-space: nowrap;
