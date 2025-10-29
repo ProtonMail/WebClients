@@ -571,6 +571,7 @@ const Step1 = ({
                 });
             }
         },
+        isTrial: signupTrial,
     });
 
     const taxCountry = useTaxCountry({

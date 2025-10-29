@@ -222,6 +222,7 @@ const AccountStepPayment = ({
                 });
             }
         },
+        isTrial: signupParameters.trial,
     });
 
     useEffect(
