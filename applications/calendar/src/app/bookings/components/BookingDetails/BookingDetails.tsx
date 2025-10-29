@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 import type { PublicBooking } from '../../interface';
 import { NoMatch, Reason } from '../NoMatch';
@@ -8,7 +8,9 @@ import { DetailsHeader } from './DetailsHeader';
 import { DetailsSlotPicking } from './DetailsSlotPicking';
 
 export const BookingDetails = () => {
-    const { bookingID } = useParams<{ bookingID: string }>();
+    const location = useLocation();
+    const bookingID = location.hash.substring(1);
+
     const [booking, setBooking] = useState<PublicBooking | null>(null);
 
     useEffect(() => {
