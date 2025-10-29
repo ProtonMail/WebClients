@@ -8,6 +8,7 @@ import type { MessageState, MessageStateWithData } from '@proton/mail/store/mess
 import { deleteMessages } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import useFlag from '@proton/unleash/useFlag';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
@@ -24,6 +25,7 @@ export const useCreateDraft = () => {
     const api = useApi();
     const dispatch = useMailDispatch();
     const { call } = useEventManager();
+    const shouldPreventEventLoopCallOnCompose = useFlag('PreventEventLoopCallOnCompose');
     const getMessageKeys = useGetMessageKeys();
     const { createNotification } = useNotifications();
 
@@ -31,7 +33,9 @@ export const useCreateDraft = () => {
         try {
             const newMessage = await createMessage(message, api, getMessageKeys);
             dispatch(draftSaved({ ID: message.localID, message: newMessage, draftFlags: message?.draftFlags }));
-            await call();
+            if(!shouldPreventEventLoopCallOnCompose){
+                await call();
+            }
         } catch (error: any) {
             if (!error.data) {
                 createNotification({ text: c('Error').t`Error while saving draft. Please try again.`, type: 'error' });
@@ -46,6 +50,7 @@ const useUpdateDraft = () => {
     const dispatch = useMailDispatch();
     const getMessage = useGetMessage();
     const { call } = useEventManager();
+    const shouldPreventEventLoopCallOnCompose = useFlag('PreventEventLoopCallOnCompose');
     const getMessageKeys = useGetMessageKeys();
     const { createNotification } = useNotifications();
 
@@ -60,7 +65,9 @@ const useUpdateDraft = () => {
             };
             const newMessage = await updateMessage(messageToSave, previousAddressID, api, getMessageKeys);
             dispatch(draftSaved({ ID: message.localID, message: newMessage }));
-            await call();
+            if(!shouldPreventEventLoopCallOnCompose){
+                await call();
+            }
         } catch (error: any) {
             if (!error.data) {
                 const errorMessage = c('Error').t`Error while saving draft. Please try again.`;

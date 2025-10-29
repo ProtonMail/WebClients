@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import type { Cancellable } from '@proton/components';
 import { getOnlineStatus, useEventManager, useHandler, useNotifications } from '@proton/components';
 import type { MessageState, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
+import useFlag from '@proton/unleash/useFlag';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
@@ -72,6 +73,7 @@ export const useSendHandler = ({
 }: UseSendHandlerParameters) => {
     const { createNotification, hideNotification } = useNotifications();
     const { call } = useEventManager();
+    const shouldPreventEventLoopCallOnCompose = useFlag('PreventEventLoopCallOnCompose');
     const dispatch = useMailDispatch();
     const getMessage = useGetMessage();
 
@@ -111,7 +113,9 @@ export const useSendHandler = ({
             // If there is anything new or pending, we have to make a last save
             if (!alreadySaved) {
                 await saveNow(inputMessage);
-                await call();
+                if(!shouldPreventEventLoopCallOnCompose){
+                    await call();
+                }
             }
 
             // Document is frequently reset in the state, keeping the one from the model
@@ -265,7 +269,9 @@ export const useSendHandler = ({
         } finally {
             const asyncFinally = async () => {
                 // Receive all updates about the current message before "releasing" it to prevent any flickering
-                await call();
+                if(!shouldPreventEventLoopCallOnCompose){
+                    await call();
+                }
                 // Whatever happens once the composer is closed, the sending flag is reset when finished
                 dispatch(endSending(localID));
 
