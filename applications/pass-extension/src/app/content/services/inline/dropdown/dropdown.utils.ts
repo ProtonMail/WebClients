@@ -27,7 +27,7 @@ import type { DropdownActions, DropdownAnchor, DropdownRequest } from './dropdow
 export const handleOnClosed = (field: FieldHandle, { refocus, preventAction }: InlineCloseOptions) => {
     if (!refocus || preventAction) field.preventAction(1);
     nextTick(() => {
-        if (refocus) field.focus();
+        if (refocus) field.focus({ preventAction });
         else if (!isActiveElement(field.element)) field.icon?.detach();
     });
 };

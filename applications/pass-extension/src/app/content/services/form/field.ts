@@ -19,7 +19,7 @@ import noop from '@proton/utils/noop';
 import { type FieldAnchor, createFieldAnchor } from './field.anchor';
 import type { FieldTracker } from './field.tracker';
 import { createFieldTracker } from './field.tracker';
-import { actionPrevented, actionTrap } from './field.utils';
+import { createElementTrap } from './field.utils';
 import type { FormHandle } from './form';
 import type { FormTracker } from './form.tracker';
 
@@ -94,6 +94,7 @@ const canProcessAction = withContext<(action: DropdownAction) => boolean>((ctx, 
 
 export const createFieldHandles = ({ element, fieldType, getFormHandle }: CreateFieldHandlesOptions): FieldHandle => {
     let anchor: MaybeNull<FieldAnchor> = null;
+    const actionTrap = createElementTrap(element, 'actionPrevented');
 
     const field: FieldHandle = {
         fieldId: uniqueId(8),
@@ -108,7 +109,7 @@ export const createFieldHandles = ({ element, fieldType, getFormHandle }: Create
 
         get actionPrevented() {
             return (
-                actionPrevented(element) ||
+                actionTrap.isTrapped() ||
                 withContext<() => boolean>((ctx) => ctx?.service.autofill.processing ?? false)()
             );
         },
@@ -138,11 +139,12 @@ export const createFieldHandles = ({ element, fieldType, getFormHandle }: Create
          * attached action effect : as there is no way to attach extra data to a focus event,
          * so we rely on adding custom properties on the field element itself */
         focus(options) {
-            const isFocusedField = isActiveElement(field.element);
             if (options?.preventAction) field.preventAction();
+
+            const isFocusedField = isActiveElement(field.element);
             field.element.focus({ preventScroll: true });
 
-            if (isFocusedField) {
+            if (isFocusedField && !options?.preventAction) {
                 const focusEvent = new FocusEvent('focus', {
                     bubbles: true,
                     cancelable: true,
@@ -194,6 +196,7 @@ export const createFieldHandles = ({ element, fieldType, getFormHandle }: Create
             field.tracker?.detach();
             field.tracker = null;
             field.icon?.detach();
+            actionTrap.release();
             anchor = null;
         },
 
@@ -203,7 +206,7 @@ export const createFieldHandles = ({ element, fieldType, getFormHandle }: Create
             return field.fieldId === fieldId && field.getFormHandle().formId === formId;
         },
 
-        preventAction: (duration = 250) => actionTrap(element, duration),
+        preventAction: (duration = 250) => actionTrap.trap(duration),
 
         sync: () => {
             /** If settings or feature flags have changed, this field's action may
