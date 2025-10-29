@@ -12,12 +12,14 @@ export const JSONFormatData = ({
     description,
     location,
     summary,
+    withProtonMeetLink,
 }: {
     description: string;
     location: string;
     summary: string;
+    withProtonMeetLink: boolean;
 }) => {
-    return JSON.stringify({ description, location, summary });
+    return JSON.stringify({ description, location, summary, withProtonMeetLink });
 };
 
 // The keys MUST be sorted alphabetically

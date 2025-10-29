@@ -23,7 +23,6 @@ export interface BookingFormData {
     selectedCalendar: string | null;
     duration: number;
     timezone: string | undefined;
-    location: BookingLocation;
     locationType: BookingLocation;
     location?: string;
     password?: string;
