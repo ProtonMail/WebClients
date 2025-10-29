@@ -93,11 +93,20 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
     };
 
     const setStatus = (status: AppStatus) => {
-        const iconUrl = (() => {
+        let iconUrl = (() => {
             if (clientLocked(status)) return LOCKED_ICON_SRC;
             if (clientDisabled(status)) return DISABLED_ICON_SRC;
             return ACTIVE_ICON_SRC;
         })();
+
+        /** Safari/WebKit bug: Extension resources loaded via `safari-extension://` URLs in
+         * shadow DOM contexts (particularly iframes) fail to repaint when toggling visibility.
+         * The compositor layer becomes stale despite successful resource loading. Cache-busting
+         * forces a fresh render pass. See: intermittent rendering on show/hide, but renders
+         * correctly after tab switches (which trigger full repaints). */
+        if (BUILD_TARGET === 'safari' && !options.mainFrame) {
+            iconUrl += `?v=${field.fieldId}-${+Date.now()}`;
+        }
 
         icon.style.setProperty('background-image', `url("${iconUrl}")`, 'important');
     };
