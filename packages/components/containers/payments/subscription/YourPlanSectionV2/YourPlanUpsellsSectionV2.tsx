@@ -25,7 +25,7 @@ import {
     hasLumo,
     hasVPN2024,
 } from '@proton/payments';
-import { PaymentsContextProvider, usePaymentsPreloaded } from '@proton/payments/ui';
+import { PaymentsContextProvider, isPaymentsPreloaded, usePayments } from '@proton/payments/ui';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import type { UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import type { VPNDashboardVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
@@ -317,12 +317,12 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
     ];
 
     const [loading, withLoading] = useLoading(true);
-    const payments = usePaymentsPreloaded();
+    const payments = usePayments();
 
     const upsellSection = upsellSections.find((upsell) => upsell.enabled) ?? null;
     const key = upsellSection?.upsells?.map((upsell) => upsell.planKey).join('-') ?? '';
     useEffect(() => {
-        if (!payments.hasEssentialData) {
+        if (!isPaymentsPreloaded(payments)) {
             return;
         }
 

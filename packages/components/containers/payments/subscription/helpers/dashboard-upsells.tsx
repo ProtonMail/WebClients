@@ -42,7 +42,12 @@ import {
     isPlan,
     isTrial,
 } from '@proton/payments';
-import { type PreloadedPaymentsContextType, getPlanToCheck, usePaymentsPreloaded } from '@proton/payments/ui';
+import {
+    type PreloadedPaymentsContextType,
+    getPlanToCheck,
+    isPaymentsPreloaded,
+    usePayments,
+} from '@proton/payments/ui';
 import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
@@ -934,13 +939,13 @@ export const useUpsellsToDisplay = (
     upsells: Upsell[];
     loading: boolean;
 } => {
-    const payments = usePaymentsPreloaded();
+    const payments = usePayments();
     const [loading, withLoading] = useLoading(true);
 
     const upsells = resolveUpsellsToDisplay(props);
     const key = upsells.map((upsell) => upsell.planKey).join('-');
     useEffect(() => {
-        if (!payments.hasEssentialData) {
+        if (!isPaymentsPreloaded(payments)) {
             return;
         }
 
