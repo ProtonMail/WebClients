@@ -24,5 +24,6 @@ export interface BookingFormData {
     duration: number;
     timezone: string | undefined;
     location: BookingLocation;
+    password?: string;
     bookingSlots: Slot[];
 }
