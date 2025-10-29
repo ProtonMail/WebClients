@@ -128,10 +128,10 @@ export const Form = () => {
             <FormIconRow icon="map-pin" title={c('Info').t`Where will the appointment take place?`}>
                 <InputField
                     as={SelectTwo}
-                    id="calendar-select"
-                    value={formData.location}
+                    id="location-select"
+                    value={formData.locationType}
                     onChange={({ value }: { value: any }) => {
-                        updateFormData('location', value);
+                        updateFormData('locationType', value);
                     }}
                     assistContainerClassName="hidden"
                     className="w-fit-content"
@@ -142,6 +142,19 @@ export const Form = () => {
                         </Option>
                     ))}
                 </InputField>
+
+                {formData.locationType === BookingLocation.IN_PERSON && (
+                    <InputField
+                        id="booking-location"
+                        className="mt-2"
+                        placeholder={c('Placeholder').t`Add location`}
+                        value={formData.location}
+                        onChange={(e) => updateFormData('location', e.target.value)}
+                        maxLength={MAX_CHARS_API.LOCATION}
+                        assistContainerClassName="hidden"
+                        autoFocus
+                    />
+                )}
             </FormIconRow>
 
             <FormIconRow icon="calendar-grid" title={c('Info').t`In which calendar should bookings appear?`}>
