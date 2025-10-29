@@ -224,6 +224,7 @@ export default defineConfig(
                         '**/postcss.config.{js,ts}',
                         '**/webpack.config.{js,ts}',
                         // Jest
+                        '**/__mocks__/**',
                         '**/__tests__/**',
                         '**/jest.config.{js,ts}',
                         '**/jest.setup.{js,ts}',
