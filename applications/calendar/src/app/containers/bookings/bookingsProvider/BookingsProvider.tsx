@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import type { ReactNode } from 'react';
 
 import { addMinutes, isBefore } from 'date-fns';
@@ -13,6 +13,7 @@ import { useApi, useNotifications } from '@proton/components/index';
 import { createBookingPage } from '@proton/shared/lib/api/calendarBookings';
 import { getVisualCalendar } from '@proton/shared/lib/calendar/calendar';
 import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eventDefaults';
+import { getTimezone } from '@proton/shared/lib/date/timezone';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import { useCalendarGlobalModals } from '../../GlobalModals/GlobalModalProvider';
@@ -34,11 +35,24 @@ interface BookingsContextValue {
     loading: boolean;
 }
 
+const getInitialBookingState = (): BookingFormData => {
+    const scheduleOptions = getCalendarEventDefaultDuration();
+    const localTimeZone = getTimezone();
+
+    return {
+        title: '',
+        description: '',
+        selectedCalendar: null,
+        locationType: BookingLocation.MEET,
+        duration: scheduleOptions[0].value,
+        timezone: localTimeZone,
+        bookingSlots: [],
+    };
+};
+
 const BookingsContext = createContext<BookingsContextValue | undefined>(undefined);
 
 export const BookingsProvider = ({ children }: { children: ReactNode }) => {
-    const scheduleOptions = getCalendarEventDefaultDuration();
-
     const [bookingsState, setBookingsState] = useState<BookingState>(BookingState.OFF);
     const [loading, setLoading] = useState(false);
 
@@ -54,14 +68,9 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
 
     const { createNotification } = useNotifications();
 
+    const defaultFormState = useMemo(() => getInitialBookingState(), []);
     const [formData, setFormData] = useState<BookingFormData>({
-        title: '',
-        description: '',
-        selectedCalendar: null,
-        duration: scheduleOptions[0].value,
-        timezone: calendarUserSettings?.PrimaryTimezone,
-        locationType: BookingLocation.MEET,
-        bookingSlots: [],
+        ...defaultFormState,
     });
 
     const updateFormData = (field: keyof BookingFormData, value: any) => {
@@ -83,12 +92,15 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         updateFormData('duration', calendarSettings.CalendarSettings.DefaultEventDuration);
     }, [formData.selectedCalendar, calendarUserSettings?.DefaultCalendarID, getCalendarSettings]);
 
+    const resetBookingState = () => {
+        setFormData({
+            ...defaultFormState,
+        });
+    };
+
     const changeBookingState = (state: BookingState) => {
         if (state === BookingState.OFF) {
-            setFormData((prevFormData) => ({
-                ...prevFormData,
-                bookingSlots: [],
-            }));
+            resetBookingState();
         }
 
         setBookingsState(state);
@@ -144,18 +156,6 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
 
     const isBookingSlotEvent = (event: CalendarViewEvent | CalendarViewBusyEvent): event is CalendarViewEvent => {
         return event.uniqueId.startsWith(BOOKING_SLOT_ID);
-    };
-
-    const resetBookingState = () => {
-        setFormData({
-            title: '',
-            description: '',
-            selectedCalendar: null,
-            duration: scheduleOptions[0].value,
-            timezone: calendarUserSettings?.PrimaryTimezone,
-            locationType: BookingLocation.MEET,
-            bookingSlots: [],
-        });
     };
 
     const submitForm = async () => {
