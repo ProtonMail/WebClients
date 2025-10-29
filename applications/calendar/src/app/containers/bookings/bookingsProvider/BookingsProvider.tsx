@@ -19,7 +19,7 @@ import { useCalendarGlobalModals } from '../../GlobalModals/GlobalModalProvider'
 import { ModalType } from '../../GlobalModals/interface';
 import type { CalendarViewBusyEvent, CalendarViewEvent } from '../../calendar/interface';
 import { encryptBookingPage } from '../bookingCryptoUtils';
-import { BOOKING_SLOT_ID, type BookingFormData, BookingState } from './interface';
+import { BOOKING_SLOT_ID, type BookingFormData, BookingLocation, BookingState } from './interface';
 
 interface BookingsContextValue {
     submitForm: () => Promise<void>;
@@ -60,6 +60,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         selectedCalendar: null,
         duration: scheduleOptions[0].value,
         timezone: calendarUserSettings?.PrimaryTimezone,
+        location: BookingLocation.MEET,
         bookingSlots: [],
     });
 
@@ -152,6 +153,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             selectedCalendar: null,
             duration: scheduleOptions[0].value,
             timezone: calendarUserSettings?.PrimaryTimezone,
+            location: BookingLocation.MEET,
             bookingSlots: [],
         });
     };

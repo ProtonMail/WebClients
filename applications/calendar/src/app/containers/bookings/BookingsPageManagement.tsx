@@ -1,4 +1,4 @@
-import type { PropsWithChildren } from 'react';
+import type { PropsWithChildren, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
@@ -6,6 +6,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
 import Icon from '@proton/components/components/icon/Icon';
 import IconRow from '@proton/components/components/iconRow/IconRow';
+import MeetLogo from '@proton/components/components/logo/MeetLogo';
 import TextArea from '@proton/components/components/v2/input/TextArea';
 import { InputFieldTwo, Option, SelectTwo } from '@proton/components/index';
 import type { IconName } from '@proton/icons';
@@ -14,7 +15,8 @@ import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eve
 import clsx from '@proton/utils/clsx';
 
 import { useBookings } from './bookingsProvider/BookingsProvider';
-import { BookingState } from './bookingsProvider/interface';
+import { getBookingLocationOption } from './bookingsProvider/bookingsHelpers';
+import { BookingLocation, BookingState } from './bookingsProvider/interface';
 
 interface FormIconRowProps extends PropsWithChildren {
     title: string;
@@ -37,8 +39,34 @@ const FormIconRow = ({ title, icon, children, hideBorder = false, narrowSection 
     );
 };
 
+interface FormLocationOptionProps {
+    value: BookingLocation;
+    text: string;
+}
+
+const FormLocationOptionContent = ({ value, text }: FormLocationOptionProps) => {
+    let icon: ReactNode = null;
+    switch (value) {
+        case BookingLocation.MEET:
+            icon = <MeetLogo variant="glyph-only" size={4} />;
+            break;
+        case BookingLocation.IN_PERSON:
+            icon = <Icon name="map-pin" />;
+            break;
+    }
+
+    return (
+        <span className="flex items-center gap-2">
+            {icon}
+            {text}
+        </span>
+    );
+};
+
 export const Form = () => {
     const scheduleOptions = getCalendarEventDefaultDuration();
+    const locationOptions = getBookingLocationOption();
+
     const [writeableCalendars = []] = useWriteableCalendars();
 
     const { formData, updateFormData } = useBookings();
@@ -64,14 +92,14 @@ export const Form = () => {
 
             <FormIconRow icon="clock" title={c('Info').t`How long should an appointment last?`}>
                 <div className="flex gap-1">
-                    {scheduleOptions.map(({ value, text }) => (
+                    {scheduleOptions.map((option) => (
                         <Button
-                            onClick={() => updateFormData('duration', value)}
-                            shape={formData.duration === value ? 'solid' : 'outline'}
+                            onClick={() => updateFormData('duration', option.value)}
+                            shape={formData.duration === option.value ? 'solid' : 'outline'}
                             color="weak"
                             pill
                         >
-                            {text}
+                            {option.text}
                         </Button>
                     ))}
                 </div>
@@ -81,9 +109,24 @@ export const Form = () => {
                 todo
             </FormIconRow>*/}
 
-            {/*<FormIconRow icon="map-pin" title={c('Info').t`Where will the appointment take place?`} narrowSection>
-                todo
-            </FormIconRow>*/}
+            <FormIconRow icon="map-pin" title={c('Info').t`Where will the appointment take place?`} narrowSection>
+                <InputFieldTwo
+                    as={SelectTwo}
+                    id="calendar-select"
+                    value={formData.location}
+                    onChange={({ value }: { value: any }) => {
+                        updateFormData('location', value);
+                    }}
+                    assistContainerClassName="hidden"
+                    className="w-fit-content"
+                >
+                    {locationOptions.map((option) => (
+                        <Option key={option.value} value={option.value} title={option.text}>
+                            <FormLocationOptionContent value={option.value} text={option.text} />
+                        </Option>
+                    ))}
+                </InputFieldTwo>
+            </FormIconRow>
 
             <FormIconRow
                 icon="calendar-grid"
@@ -119,7 +162,7 @@ export const Form = () => {
                     value={formData.description}
                     onChange={(e) => updateFormData('description', e.target.value)}
                     rows={2}
-                    maxLength={MAX_CHARS_API.CALENDAR_DESCRIPTION}
+                    maxLength={MAX_CHARS_API.EVENT_DESCRIPTION}
                 />
             </FormIconRow>
 
