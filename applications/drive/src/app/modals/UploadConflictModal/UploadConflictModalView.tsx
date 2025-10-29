@@ -94,7 +94,6 @@ export function UploadConflictModalView({
                 </Row>
                 <Row>
                     <Radio
-                        disabled={isFolder}
                         id={UploadConflictStrategy.Rename}
                         checked={strategy === UploadConflictStrategy.Rename}
                         onChange={() => {

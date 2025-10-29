@@ -253,6 +253,8 @@ class UploadManager {
     /**
      * Processes a single folder creation operation.
      * Handles conflict resolution and updates queue status.
+     * If the folder is renamed during conflict resolution, it returns early
+     * and allows the scheduler to retry the creation with the new name.
      *
      * @param folderId - The queue ID of the folder
      * @param folder - The folder creation item
@@ -272,6 +274,11 @@ class UploadManager {
                 folder.batchId,
                 folder.modificationTime
             );
+
+            const updatedItem = uploadQueueStore.getItem(folderId);
+            if (updatedItem?.status === UploadStatus.Pending) {
+                return;
+            }
 
             if (nodeUid === null) {
                 uploadQueueStore.updateQueueItem(folderId, { status: UploadStatus.Cancelled });
@@ -358,10 +365,12 @@ class UploadManager {
 
                 if (uploadQueueStore.batchStrategy && uploadQueueStore.activeConflictBatchId === batchId) {
                     return this.handleFolderConflictStrategy(
+                        folderId,
                         uploadQueueStore.batchStrategy,
                         folderName,
                         parentUid,
                         error.existingNodeUid,
+                        batchId,
                         modificationTime
                     );
                 }
@@ -391,10 +400,12 @@ class UploadManager {
                 }
 
                 return this.handleFolderConflictStrategy(
+                    folderId,
                     strategy,
                     folderName,
                     parentUid,
                     error.existingNodeUid,
+                    batchId,
                     modificationTime
                 );
             }
@@ -410,20 +421,31 @@ class UploadManager {
      * @param parentUid - The parent node UID
      * @param existingFolderUid - The UID of the existing folder with the same name
      * @param _modificationTime - Optional modification time (for future Rename implementation)
-     * @returns The folder UID to use, or null if skipped
+     * @returns The folder UID to use, or null if skipped/renamed (renamed folders will be retried)
      */
     private async handleFolderConflictStrategy(
+        folderId: string,
         strategy: string,
         folderName: string,
         parentUid: string,
         existingFolderUid: string,
-        // TODO: Will be used with Rename
-        _modificationTime?: Date
+        batchId: string,
+        modificationTime?: Date
     ): Promise<string | null> {
         if (strategy === UploadConflictStrategy.Replace) {
             return existingFolderUid;
         } else if (strategy === UploadConflictStrategy.Rename) {
-            throw new Error('Rename strategy for folders is not yet implemented');
+            const drive = getDrive();
+            const uploadQueueStore = useUploadQueueStore.getState();
+            const availableName = await drive.getAvailableName(parentUid, folderName);
+            uploadQueueStore.updateQueueItem(folderId, {
+                nodeType: NodeType.Folder,
+                name: availableName,
+                modificationTime,
+                status: UploadStatus.Pending,
+                nodeUid: undefined,
+            });
+            return null;
         } else if (strategy === UploadConflictStrategy.Skip) {
             // Skip this folder - return null to signal skip
             // All files in this folder will be skipped

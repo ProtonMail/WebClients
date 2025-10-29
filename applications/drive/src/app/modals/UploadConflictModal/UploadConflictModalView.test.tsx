@@ -59,21 +59,30 @@ describe('UploadConflictModalView', () => {
         expect(screen.getByText('Folder will not be uploaded')).toBeInTheDocument();
         expect(screen.getByText(/This will replace the existing folder or file with the folder/)).toBeInTheDocument();
         expect(screen.getByText('Apply to all duplicated folders')).toBeInTheDocument();
-
-        const renameRadio = screen.getByTestId(`strategy-${UploadConflictStrategy.Rename}`);
-        expect(renameRadio).toBeDisabled();
-    });
-
-    it('should enable rename option for files', () => {
-        render(<UploadConflictModalView {...defaultProps} />);
-
-        const renameRadio = screen.getByTestId(`strategy-${UploadConflictStrategy.Rename}`);
-        expect(renameRadio).not.toBeDisabled();
     });
 
     it('should default to Replace strategy and allow changing strategies', async () => {
         const user = userEvent.setup();
         render(<UploadConflictModalView {...defaultProps} />);
+
+        const skipRadio = screen.getByTestId(`strategy-${UploadConflictStrategy.Skip}`);
+        const renameRadio = screen.getByTestId(`strategy-${UploadConflictStrategy.Rename}`);
+        const replaceRadio = screen.getByTestId(`strategy-${UploadConflictStrategy.Replace}`);
+
+        expect(replaceRadio).toBeChecked();
+        expect(renameRadio).not.toBeChecked();
+        expect(skipRadio).not.toBeChecked();
+
+        await user.click(renameRadio);
+        expect(renameRadio).toBeChecked();
+
+        await user.click(skipRadio);
+        expect(skipRadio).toBeChecked();
+    });
+
+    it('should default to Replace strategy and allow changing strategies for folder', async () => {
+        const user = userEvent.setup();
+        render(<UploadConflictModalView {...defaultProps} nodeType={NodeType.Folder} name="test-folder" />);
 
         const skipRadio = screen.getByTestId(`strategy-${UploadConflictStrategy.Skip}`);
         const renameRadio = screen.getByTestId(`strategy-${UploadConflictStrategy.Rename}`);

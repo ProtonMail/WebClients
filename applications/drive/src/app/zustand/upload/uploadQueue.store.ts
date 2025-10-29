@@ -68,6 +68,8 @@ function isConflictItem(item: QueueEntry): item is UploadItemConflict {
 }
 
 type QueueItemUpdate = {
+    name?: string;
+    modificationTime?: Date;
     status?: UploadStatus;
     uploadedBytes?: number;
     speedBytesPerSecond?: number;
