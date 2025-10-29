@@ -25,6 +25,17 @@ const CLIPBOARD_OFFSCREEN_PATH = 'offscreen.html';
  * 3. Safari fallback: Native Swift bridge implementation */
 export const extensionClipboardApi: ClipboardApi = {
     read: async () => {
+        // Safari first as using navigator.clipboard from sw blocks the clipboard api
+        if (BUILD_TARGET === 'safari') {
+            try {
+                const res = await sendSafariMessage<string>({ readFromClipboard: {} });
+                if (res === undefined) throw new Error();
+                return res;
+            } catch {
+                logger.debug('[Clipboard] Failed to read using native Safari implementation');
+            }
+        }
+
         try {
             if (navigator && navigator.clipboard) return await navigator.clipboard.readText();
         } catch {
@@ -43,21 +54,20 @@ export const extensionClipboardApi: ClipboardApi = {
             }
         }
 
-        if (BUILD_TARGET === 'safari') {
-            try {
-                const res = await sendSafariMessage<string>({ readFromClipboard: {} });
-                if (res === undefined) throw new Error();
-                return res;
-            } catch {
-                logger.debug('[Clipboard] Failed to read using native Safari implementation');
-            }
-        }
-
         logger.error('[Clipboard] No clipboard read strategy worked');
         return '';
     },
 
     write: async (content) => {
+        // Safari first as using navigator.clipboard from sw blocks the clipboard api
+        if (BUILD_TARGET === 'safari') {
+            try {
+                return await sendSafariMessage({ writeToClipboard: { Content: content } }).then(noop);
+            } catch {
+                logger.debug('[Clipboard] Failed to write clipboard using native Safari implementation');
+            }
+        }
+
         try {
             if (navigator && navigator.clipboard) return await navigator.clipboard.writeText(content);
         } catch {
@@ -73,14 +83,6 @@ export const extensionClipboardApi: ClipboardApi = {
                 );
             } catch {
                 logger.debug('[Clipboard] Failed to write clipboard using offscreen document');
-            }
-        }
-
-        if (BUILD_TARGET === 'safari') {
-            try {
-                return await sendSafariMessage({ writeToClipboard: { Content: content } }).then(noop);
-            } catch {
-                logger.debug('[Clipboard] Failed to write clipboard using native Safari implementation');
             }
         }
 
