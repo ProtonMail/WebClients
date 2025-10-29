@@ -23,6 +23,7 @@ export { default as EditCardModal } from './containers/EditCardModal';
 export {
     computeOptimisticSubscriptionMode,
     getPlanToCheck,
+    isPaymentsPreloaded,
     PaymentsContextProvider,
     usePayments,
     usePaymentsInner,

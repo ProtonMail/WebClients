@@ -44,7 +44,16 @@ interface ButtonGroupProps extends Omit<ForwardedButtonGroupProps, 'onSelect' | 
 
 export type CycleSelectorProps = ButtonGroupProps | SelectProps | SelectTwoProps;
 
-const propsToOmit = ['onSelect', 'options', 'disabled', 'cycle', 'minimumCycle', 'maximumCycle'] as const;
+const propsToOmit = [
+    'onSelect',
+    'options',
+    'disabled',
+    'cycle',
+    'minimumCycle',
+    'maximumCycle',
+    'lifetimeSelected',
+    'additionalOptions',
+] satisfies readonly (keyof SharedProps)[];
 
 export function getRestrictedCycle(
     props: Pick<SharedProps, 'options' | 'cycle' | 'minimumCycle' | 'maximumCycle' | 'additionalOptions'>
