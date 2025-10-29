@@ -6,7 +6,8 @@ import { Button } from '@proton/atoms/Button/Button';
 import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
 import Icon from '@proton/components/components/icon/Icon';
 import IconRow from '@proton/components/components/iconRow/IconRow';
-import { InputFieldTwo, Option, SelectTwo, TimeZoneSelector } from '@proton/components/index';
+import TextArea from '@proton/components/components/v2/input/TextArea';
+import { InputFieldTwo, Option, SelectTwo } from '@proton/components/index';
 import type { IconName } from '@proton/icons';
 import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eventDefaults';
@@ -88,11 +89,13 @@ export const Form = () => {
             </FormIconRow>
 
             <FormIconRow icon="file-lines" title={c('Info').t`What should people know before booking?`}>
-                <InputFieldTwo
+                <TextArea
                     id="booking-description"
                     placeholder={c('Placeholder').t`Add a booking page description`}
                     value={formData.description}
                     onChange={(e) => updateFormData('description', e.target.value)}
+                    rows={2}
+                    maxLength={MAX_CHARS_API.CALENDAR_DESCRIPTION}
                 />
             </FormIconRow>
 
@@ -158,13 +161,9 @@ const Header = () => {
     const { changeBookingState } = useBookings();
 
     return (
-        <div className="flex items-center mb-6 justify-space-between">
-            <h2 className="text-bold text-lg">{c('Title').t`Booking page`}</h2>
-
-            <Button icon shape="ghost" onClick={() => changeBookingState(BookingState.OFF)}>
-                <Icon name="cross-big" />
-            </Button>
-        </div>
+        <Button icon shape="ghost" onClick={() => changeBookingState(BookingState.OFF)}>
+            <Icon name="cross-big" />
+        </Button>
     );
 };
 
