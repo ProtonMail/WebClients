@@ -57,7 +57,15 @@
             "https://*.protontech.ch/*"
         ]
     },
-    "permissions": ["activeTab", "alarms", "nativeMessaging", "scripting", "storage", "unlimitedStorage"],
+    "permissions": [
+        "activeTab",
+        "alarms",
+        "nativeMessaging",
+        "scripting",
+        "storage",
+        "unlimitedStorage",
+        "clipboardWrite"
+    ],
     "host_permissions": ["*://*/*"],
     "options_ui": {
         "page": "settings.html"
