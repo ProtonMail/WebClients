@@ -48,13 +48,15 @@ export const Form = () => {
             <FormIconRow icon="text-title" title={c('Info').t`Name your booking page`}>
                 <InputFieldTwo
                     id="booking-title"
+                    as={TextArea}
                     placeholder={c('Placeholder').t`Booking page title`}
                     value={formData.title}
                     onChange={(e) => updateFormData('title', e.target.value)}
                     maxLength={MAX_CHARS_API.TITLE}
                     assistContainerClassName="hidden"
                     inputContainerClassName="text-xl text-semibold"
-                    inputClassName="px-0 pt-1 pb-0"
+                    minRows={1}
+                    rows={2}
                     unstyled
                     autoFocus
                 />
@@ -75,13 +77,13 @@ export const Form = () => {
                 </div>
             </FormIconRow>
 
-            <FormIconRow icon="calendar-checkmark" title={c('Info').t`When are you free?`}>
+            {/*<FormIconRow icon="calendar-list-check" title={c('Info').t`When are you free?`}>
                 todo
-            </FormIconRow>
+            </FormIconRow>*/}
 
-            <FormIconRow icon="map-pin" title={c('Info').t`Where will the appointment take place?`} narrowSection>
+            {/*<FormIconRow icon="map-pin" title={c('Info').t`Where will the appointment take place?`} narrowSection>
                 todo
-            </FormIconRow>
+            </FormIconRow>*/}
 
             <FormIconRow
                 icon="calendar-grid"
@@ -121,9 +123,9 @@ export const Form = () => {
                 />
             </FormIconRow>
 
-            <FormIconRow icon="shield" title={c('Info').t`Protect this page with a password?`} hideBorder>
+            {/*<FormIconRow icon="shield" title={c('Info').t`Protect this page with a password?`} hideBorder>
                 todo
-            </FormIconRow>
+            </FormIconRow>*/}
 
             <IconRow icon="earth" title={c('Label').t`Time zone`}>
                 <TimeZoneSelector
@@ -193,10 +195,10 @@ const Buttons = () => {
     const { changeBookingState, submitForm, loading } = useBookings();
 
     return (
-        <div className="flex justify-center gap-6">
+        <div className="flex justify-space-between gap-6">
             <Button disabled={loading} onClick={() => changeBookingState(BookingState.OFF)}>{c('Action')
                 .t`Cancel`}</Button>
-            <Button loading={loading} className="grow" color="norm" type="submit" onClick={submitForm}>{c('Action')
+            <Button loading={loading} color="norm" type="submit" onClick={submitForm}>{c('Action')
                 .t`Create booking page`}</Button>
         </div>
     );

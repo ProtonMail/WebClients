@@ -15,7 +15,7 @@ export const BookingSidebar = () => {
                 </div>
             </Scroll>
 
-            <div className="px-6 py-4">
+            <div className="p-6">
                 <BookingManagement.Buttons />
             </div>
         </div>
