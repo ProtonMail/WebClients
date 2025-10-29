@@ -16,6 +16,6 @@ export interface BookingFormData {
     title: string;
     selectedCalendar: string | null;
     duration: number;
-    timeZone: string | undefined;
+    timezone: string | undefined;
     bookingSlots: Slot[];
 }
