@@ -60,6 +60,7 @@ export type {
     BookmarkOrUid,
     DriveEvent,
     UploadController,
+    Result,
 } from '@protontech/drive-sdk';
 
 /* Other export */
