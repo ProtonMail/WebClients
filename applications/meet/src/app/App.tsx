@@ -20,6 +20,8 @@ import meetTheme from './styles/meet.theme.css';
 
 const routes = ['join', 'admin/create', 'dashboard'];
 
+const landingPageRoute = '/start-free-meeting';
+
 const ComingSoonWrapper = ({ children }: { children: React.ReactNode }) => {
     const isJoin = window.location.pathname.includes('join'); // The /join path is both for instant meeting and joining a meeting
 
@@ -46,6 +48,14 @@ const RedirectWrapper = ({ children }: { children: React.ReactNode }) => {
     const location = useLocation();
 
     useEffect(() => {
+        if (location.pathname.includes(landingPageRoute)) {
+            if (isGuest) {
+                history.push('/join?instantJoin=true');
+            } else {
+                history.push('/dashboard');
+            }
+        }
+
         const userPattern = /\/u\/\d+/;
 
         if (isGuest && location.pathname.match(userPattern)) {
