@@ -2,6 +2,8 @@ import { useCallback, useRef, useState } from 'react';
 
 import { clsx } from 'clsx';
 
+import useFlag from '@proton/unleash/useFlag';
+
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import type { HandleSendMessage } from '../../hooks/useLumoActions';
 import { useGhostChat } from '../../providers/GhostChatProvider';
@@ -18,6 +20,8 @@ import LumoOnboarding from './MainContainer/Onboarding/LumoOnboarding';
 import TermsAndConditions from './MainContainer/TermsAndConditions';
 import { ComposerComponent } from './composer/ComposerComponent';
 
+import './MainContainer.scss';
+
 const MainContainer = ({
     handleSendMessage,
     isProcessingAttachment,
@@ -33,6 +37,7 @@ const MainContainer = ({
     const isGuest = useIsGuest();
     const [isEditorFocused, setIsEditorFocused] = useState(false);
     const [isEditorEmpty, setIsEditorEmpty] = useState(true);
+    const isLumoHalloweenEnabled = useFlag('LumoHalloween');
 
     // Files panel state
     const [openPanel, setOpenPanel] = useState<{
@@ -84,7 +89,7 @@ const MainContainer = ({
                 {!isSmallScreen && <NewGhostChatButton className="absolute top-0 right-0 mt-4 mr-4" />}
                 <div
                     className={clsx(
-                        'flex flex-column-reverse md:flex-row w-full flex-nowrap px-8 relative lumo-welcome-section',
+                        'lumo-welcome-section flex flex-column-reverse md:flex-row w-full flex-nowrap px-8 relative',
                         isSmallScreen && 'top-custom',
                         shouldShowWelcomeSection ? 'is-visible' : 'is-hidden'
                     )}
@@ -92,20 +97,26 @@ const MainContainer = ({
                         '--top-custom': isSmallScreen ? '-6rem' : undefined,
                     }}
                 >
-                    <div
-                        className="main-text-container flex-1 my-auto flex relative"
-                        // style={{ '--bottom-custom': '-1.1875rem' }}
-                    >
+                    <div className="main-text-container flex-1 my-auto flex relative">
                         <LumoMainText
                             isOnboardingCompleted={isOnboardingCompleted}
                             isSmallScreen={isSmallScreen}
                             isGhostMode={isGhostChatMode}
                         />
                     </div>
-                    <LumoCat isSmallScreen={isSmallScreen} isGhostChatMode={isGhostChatMode} />
+                    <LumoCat
+                        isSmallScreen={isSmallScreen}
+                        isGhostChatMode={isGhostChatMode}
+                        isLumoHalloweenEnabled={isLumoHalloweenEnabled}
+                    />
                 </div>
 
-                <div className="md:px-4 w-full" style={{ marginTop: '-1.1875rem' }}>
+                <div
+                    className={clsx('composer-container md:px-4 w-full', {
+                        'halloween-ghost': isLumoHalloweenEnabled && isGhostChatMode,
+                        'halloween-no-ghost': isLumoHalloweenEnabled && !isGhostChatMode,
+                    })}
+                >
                     <ComposerComponent
                         handleSendMessage={handleSendMessage}
                         isProcessingAttachment={isProcessingAttachment}
