@@ -3042,8 +3042,14 @@
       "Add ${ LUMO_APP_NAME }": [
         "Adăugare ${ LUMO_APP_NAME }"
       ],
+      "AI assistant that respects business confidentiality": [
+        "Asistent de IA care respectă confidențialitatea afacerii"
+      ],
       "Basic chat history": [
         "Istoric de bază conversații"
+      ],
+      "Compliance with data protection regulations": [
+        "Respectare reguli de protecție a datelor"
       ],
       "Data never used for AI training": [
         "Datele nu sunt utilizate niciodată pentru antrenarea IA"
@@ -3080,6 +3086,9 @@
       ],
       "Web search access": [
         "Acces la căutare pe internet"
+      ],
+      "Zero-access encryption": [
+        "Criptare cu acces zero"
       ]
     },
     "collider_2025: Navigation": {
@@ -4908,8 +4917,8 @@
       "/month": [
         "/lună"
       ],
-      "1 TB of storage to share": [
-        "1 TiB de stocare pentru partajare"
+      "2 TB of storage to share": [
+        "2 TiB de stocare pentru partajare"
       ],
       "2 user accounts": [
         "2 conturi de utilizator"
@@ -14084,6 +14093,19 @@
         "Activare evenimente detaliate"
       ]
     },
+    "lumo_signup_2025: Info": {
+      "Protect your entire business. Get ${ LUMO_SHORT_APP_NAME } Professional with all ${ BRAND_NAME } for Business apps and premium features.": [
+        "Protejați-vă întreaga afacere. Obțineți ${ LUMO_SHORT_APP_NAME } Professional cu toate aplicațiile ${ BRAND_NAME } for Business și funcțiile premium."
+      ]
+    },
+    "lumo_signup_2025: title": {
+      "For businesses": [
+        "Pentru firme"
+      ],
+      "For individuals": [
+        "Pentru persoane"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Importare toate mesajele dintr-un folder și etichetare cu",
@@ -17220,7 +17242,7 @@
       "Your payment is still being processed": [
         "Plata este încă în curs de procesare."
       ],
-      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonamentul actual are în prezent o reducere existentă. Trecerea la această nouă promoție înseamnă că reducerea curentă nu va mai fi aplicată."
       ]
     },
@@ -23341,6 +23363,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: Asistent de IA care vă respectă confidențialitatea"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Conectări securizate pe toate dispozitivele deținute. Include aliasuri nelimitate, partajare, A2F integrată și multe altele."
       ],
