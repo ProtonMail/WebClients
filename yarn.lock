@@ -37838,6 +37838,7 @@ __metadata:
     "@proton/redux-shared-store-types": "workspace:^"
     "@proton/redux-utilities": "workspace:^"
     "@proton/shared": "workspace:^"
+    "@proton/srp": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/testing": "workspace:^"
     "@proton/unleash": "workspace:^"
@@ -37870,6 +37871,7 @@ __metadata:
     tinycolor2: "npm:^1.6.0"
     ttag: "npm:^1.8.12"
     typescript: "npm:^5.9.3"
+    zustand: "npm:^5.0.8"
   languageName: unknown
   linkType: soft
 
@@ -48726,7 +48728,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zustand@npm:^5.0.7":
+"zustand@npm:^5.0.7, zustand@npm:^5.0.8":
   version: 5.0.8
   resolution: "zustand@npm:5.0.8"
   peerDependencies:

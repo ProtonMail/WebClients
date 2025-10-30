@@ -5,3 +5,15 @@ export const createBookingPage = (data: BookingPageCreationPayload) => ({
     method: 'POST',
     data,
 });
+
+export const queryPublicBookingPage = (
+    bookingUid: string,
+    { startTime, endTime }: { startTime: number; endTime: number }
+) => ({
+    url: `calendar/v1/booking/external/${bookingUid}`,
+    method: 'GET',
+    params: {
+        Start: startTime,
+        End: endTime,
+    },
+});

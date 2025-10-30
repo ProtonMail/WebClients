@@ -1,30 +1,45 @@
 import { c } from 'ttag';
+import { useShallow } from 'zustand/react/shallow';
 
 import Icon from '@proton/components/components/icon/Icon';
 
-import type { PublicBooking } from '../../interface';
+import { useBookingStore } from '../../booking.store';
 
-interface DetailsHeaderProps {
-    booking: PublicBooking;
-}
+export const DetailsHeader = () => {
+    const bookingDetails = useBookingStore(
+        useShallow((state) => {
+            if (!state.bookingDetails) {
+                return null;
+            }
+            return {
+                summary: state.bookingDetails.summary,
+                description: state.bookingDetails.description,
+                location: state.bookingDetails.location,
+                duration: state.bookingDetails.duration,
+                timezone: state.bookingDetails.timezone,
+            };
+        })
+    );
 
-export const DetailsHeader = ({ booking }: DetailsHeaderProps) => {
+    if (!bookingDetails) {
+        return null;
+    }
     return (
         <div className="mt-12">
-            <h1 className="mb-2 text-2xl text-bold">{booking.title}</h1>
-            <p className="color-weak m-0 mb-6">{booking.description}</p>
+            <h1 className="mb-2 text-2xl text-bold">{bookingDetails?.summary}</h1>
+            <p className="color-weak m-0 mb-6">{bookingDetails.description}</p>
             <div className="color-weak">
                 <div className="flex gap-3 items-center mb-2">
                     <Icon name="clock" />
-                    <span>{c('Info').t`${booking.duration} min duration`}</span>
+                    <span>{c('Info').t`${bookingDetails.duration} min duration`}</span>
                 </div>
                 <div className="flex gap-3 items-center mb-2">
                     <Icon name="map-pin" />
-                    <span>{booking.location}</span>
+                    <span>{bookingDetails.location}</span>
                 </div>
                 <div className="flex gap-3 items-center">
                     <Icon name="earth" />
-                    <span>{booking.timezone}</span>
+                    <span>{bookingDetails.timezone}</span>
                 </div>
             </div>
         </div>
