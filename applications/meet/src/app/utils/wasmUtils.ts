@@ -8,6 +8,9 @@ declare global {
         newGroupKeyEvent: {
             new_group_key_for: () => Promise<void>;
         };
+        livekitAdminChangeEvent: {
+            on_livekit_admin_changed: (room_id: string, new_admin_participant_uid: string) => Promise<void>;
+        };
     }
 }
 
@@ -25,6 +28,19 @@ export const setupWasmDependencies = ({ getGroupKeyInfo, onNewGroupKeyInfo }: Se
             if (groupKeyInfo) {
                 await onNewGroupKeyInfo(groupKeyInfo.key, groupKeyInfo.epoch);
             }
+        },
+    };
+};
+
+interface SetupLiveKitAdminChangeEventParameters {
+    onLiveKitAdminChanged: (roomId: string, newAdminParticipantUid: string) => Promise<void>;
+}
+
+export const setupLiveKitAdminChangeEvent = ({ onLiveKitAdminChanged }: SetupLiveKitAdminChangeEventParameters) => {
+    // Initialize window.livekitAdminChangeEvent
+    window.livekitAdminChangeEvent = {
+        on_livekit_admin_changed: async function (room_id: string, new_admin_participant_uid: string) {
+            await onLiveKitAdminChanged(room_id, new_admin_participant_uid);
         },
     };
 };
