@@ -986,6 +986,9 @@
       "Show advanced PGP settings": [
         "Mostrar ajustes PGP avanzados"
       ],
+      "Show location": [
+        "Mostrar ubicación"
+      ],
       "Show more": [
         "Mostrar más"
       ],
@@ -1484,6 +1487,9 @@
       "1 user account": [
         "1 cuenta de usuario"
       ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB de almacenamiento: 40 veces su plan actual"
+      ],
       "6 user accounts": [
         "6 cuentas de usuario"
       ],
@@ -1521,6 +1527,9 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Un solo pago de ${ amount }"
+      ],
+      "forever": [
+        "para siempre"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Se renueva después de 1 mes por ${ regularAmount }."
@@ -3162,8 +3171,8 @@
       "/month": [
         "/mes"
       ],
-      "1 TB of storage to share": [
-        "1 TB de almacenamiento para compartir"
+      "2 TB of storage to share": [
+        "2 TB de almacenamiento para compartir"
       ],
       "2 user accounts": [
         "2 cuentas de usuario"
@@ -3177,7 +3186,7 @@
     },
     "Duo offer: Link": {
       "Get 4x more storage": [
-        "Obtén 4 veces más almacenamiento"
+        "Obtener 4 veces más almacenamiento"
       ],
       "Share your plan": [
         "Comparta su plan"
@@ -3495,6 +3504,9 @@
       ],
       "Folder \"${ name }\" is already downloading": [
         "La carpeta \"${ name }\" ya se está descargando"
+      ],
+      "Folder creation failed": [
+        "Error al crear la carpeta"
       ],
       "Folder name cannot be empty.": [
         "El nombre de la carpeta no puede estar vacío."
@@ -3825,8 +3837,14 @@
       "Unknown payment token status": [
         "Estado del token de pago desconocido"
       ],
+      "Upload failed": [
+        "Error de carga"
+      ],
       "Upload for this folder is temporarily disabled": [
         "La carga para esta carpeta está desactivada temporalmente."
+      ],
+      "Upload not found": [
+        "Carga no encontrada"
       ],
       "Username must begin with a letter or digit": [
         "El nombre de usuario debe comenzar con una letra o dígito"
@@ -4894,6 +4912,9 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } incluye el asistente de escritura ${ BRAND_NAME } Scribe"
       ],
+      "${ normalizedProgress }% completed": [
+        "${ normalizedProgress }% completado"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "La oferta de por vida de ${ PASS_SHORT_APP_NAME } Plus no tiene precio de renovación. Es un pago único por el acceso de por vida a ${ PASS_SHORT_APP_NAME }."
       ],
@@ -5347,6 +5368,9 @@
       "Download current logs": [
         "Descargar registros actuales"
       ],
+      "Download Failed": [
+        "Error de descarga"
+      ],
       "Download of ${ downloadFileName } will be aborted": [
         "La descarga de ${ downloadFileName } será abortada"
       ],
@@ -5591,6 +5615,9 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importando los datos de ${ fromEmail } a ${ toEmail }."
+      ],
+      "In progress": [
+        "En curso"
       ],
       "In restrictive countries": [
         "En países con restricciones"
@@ -6325,6 +6352,12 @@
       "This will replace the existing file with the folder": [
         "Esto reemplazará el archivo existente con la carpeta"
       ],
+      "This will replace the existing folder or file with the file": [
+        "Esto reemplazará la carpeta o el archivo existentes con el archivo"
+      ],
+      "This will replace the existing folder or file with the folder": [
+        "Esto reemplazará la carpeta o el archivo existente con la carpeta"
+      ],
       "This will replace the existing folder with the file": [
         "Esto reemplazará la carpeta existente con el archivo"
       ],
@@ -6448,6 +6481,9 @@
       "upgrade your storage": [
         "mejorar el almacenamiento"
       ],
+      "Upload Failed": [
+        "Error de carga"
+      ],
       "Uploaded": [
         "Cargado"
       ],
@@ -6492,6 +6528,9 @@
       ],
       "VPN IP": [
         "IP de VPN"
+      ],
+      "Waiting": [
+        "Esperando"
       ],
       "Want to sync files faster?": [
         "¿Desea sincronizar archivos más rápido?"
@@ -7170,6 +7209,9 @@
       "File name": [
         "Nombre del archivo"
       ],
+      "File transfer overview": [
+        "Resumen de transferencia de archivos"
+      ],
       "First name": [
         "Nombre"
       ],
@@ -7187,6 +7229,9 @@
       ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "Obtener la oferta"
       ],
       "Hide password": [
         "Ocultar contraseña"
@@ -7367,6 +7412,9 @@
       ],
       "Replace existing folder": [
         "Reemplazar carpeta existente"
+      ],
+      "Replace existing folder or file": [
+        "Reemplazar la carpeta o el archivo existente"
       ],
       "Reveal password": [
         "Mostrar contraseña"
@@ -9757,6 +9805,9 @@
       "Advanced account protection": [
         "Protección de cuentas avanzada"
       ],
+      "File attachments (up to 10GB)": [
+        "Archivos adjuntos (hasta 10 GB)"
+      ],
       "Team policies": [
         "Políticas de equipo"
       ]
@@ -9897,6 +9948,10 @@
         "El cupón es válido por ${ couponRedemptions } renovación.",
         "El cupón es válido por ${ couponRedemptions } renovaciones."
       ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "El precio especial con descuento es válido para el primer (${ subscriptionLength }) mes",
+        "El precio especial con descuento es válido para los primeros ${ subscriptionLength } meses"
+      ],
       "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "El precio especial con descuento es válido para el primer mes. El cupón es válido para ${ couponRedemptions } renovación. Después se renovará automáticamente por ${ renewPriceStr } por 1 mes. Puede cancelarlo en cualquier momento.",
         "El precio especial con descuento es válido para el primer mes. El cupón es válido para ${ couponRedemptions } renovaciones. Después se renovará automáticamente por ${ renewPriceStr } por 1 mes. Puede cancelarlo en cualquier momento."
@@ -9952,7 +10007,7 @@
       "Your payment is still being processed": [
         "Su pago aún está siendo procesado"
       ],
-      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Su suscripción actualmente tiene un descuento. Cambiar a esta promoción nueva significa que el descuento existente ya no se aplicará."
       ]
     },

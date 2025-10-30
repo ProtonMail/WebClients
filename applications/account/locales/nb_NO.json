@@ -2977,8 +2977,14 @@
       "Add ${ LUMO_APP_NAME }": [
         "Legg til ${ LUMO_APP_NAME }"
       ],
+      "AI assistant that respects business confidentiality": [
+        "KI-assistent som respekterer forretningskonfidensialitet"
+      ],
       "Basic chat history": [
         "Grunnleggende chatlogg"
+      ],
+      "Compliance with data protection regulations": [
+        "Samsvar med databeskyttelsesforskrifter"
       ],
       "Data never used for AI training": [
         "Data blir aldri brukt til KI-trening"
@@ -3015,6 +3021,9 @@
       ],
       "Web search access": [
         "Tilgang til nettsøk"
+      ],
+      "Zero-access encryption": [
+        "Nulltilgangskryptering"
       ]
     },
     "collider_2025: Navigation": {
@@ -4836,8 +4845,8 @@
       "/month": [
         "/måned"
       ],
-      "1 TB of storage to share": [
-        "1 TB med lagringsplass å dele"
+      "2 TB of storage to share": [
+        "2 TB med lagringsplass å dele"
       ],
       "2 user accounts": [
         "2 brukerkontoer"
@@ -13899,6 +13908,19 @@
         "Aktiver detaljerte hendelser"
       ]
     },
+    "lumo_signup_2025: Info": {
+      "Protect your entire business. Get ${ LUMO_SHORT_APP_NAME } Professional with all ${ BRAND_NAME } for Business apps and premium features.": [
+        "Beskytt hele virksomheten din. Skaff deg ${ LUMO_SHORT_APP_NAME } Professional med alle ${ BRAND_NAME } for Business-apper og premiumfunksjoner."
+      ]
+    },
+    "lumo_signup_2025: title": {
+      "For businesses": [
+        "For virksomheter"
+      ],
+      "For individuals": [
+        "For enkeltpersoner"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Importer alle meldinger fra ${ itemsToImportCount } mappe og merk dem som.",
@@ -16982,7 +17004,7 @@
       "Your payment is still being processed": [
         "Betalingen din behandles fortsatt"
       ],
-      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonnementet ditt har for øyeblikket en eksisterende rabatt. Hvis du flytter til denne nye kampanjen, vil den eksisterende rabatten ikke lenger gjelde."
       ]
     },
@@ -23014,6 +23036,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: KI-assistent som respekterer personvernet ditt"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: sikre pålogginger på alle dine enheter. Inkluderer ubegrenset antall aliaser, deling, integrert 2FA og mer."
       ],

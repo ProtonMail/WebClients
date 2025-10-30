@@ -96,6 +96,9 @@
       "Add phone number": [
         "Tilføj telefonnummer"
       ],
+      "Add secret passphrase": [
+        "Tilføj hemmelig adgangssætning"
+      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Føj til ${ CALENDAR_APP_NAME }"
       ],
@@ -304,11 +307,17 @@
       "Continue import": [
         "Fortsæt import"
       ],
+      "Continue with categories": [
+        "Fortsæt med kategorier"
+      ],
       "Continue with Google": [
         "Fortsæt med Google"
       ],
       "Continue with Outlook": [
         "Fortsæt med Outlook"
+      ],
+      "Continue without categories": [
+        "Fortsæt uden kategorier"
       ],
       "Contract composer": [
         "Sammentræk skrivevinduet"
@@ -376,6 +385,9 @@
       "Customize": [
         "Tilpas"
       ],
+      "Customize categories": [
+        "Tilpas kategorier"
+      ],
       "Customize import": [
         "Tilpas import"
       ],
@@ -432,6 +444,9 @@
       "Disable alias": [
         "Deaktiver alias"
       ],
+      "Disable categories": [
+        "Deaktivér kategorier"
+      ],
       "Disabling alias": [
         "Deaktiverer alias"
       ],
@@ -482,6 +497,9 @@
       ],
       "Edit address": [
         "Redigér adresse"
+      ],
+      "Edit categories": [
+        "Redigér kategorier"
       ],
       "Edit draft": [
         "Redigér kladde"
@@ -757,8 +775,20 @@
       "Invite members": [
         "Invitér medlemmer"
       ],
+      "Is this private?": [
+        "Er dette privat?"
+      ],
       "Italic": [
         "Kursiv"
+      ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Deltag med ${ MEET_APP_NAME }"
+      ],
+      "Keep categories": [
+        "Behold kategorier"
+      ],
+      "Keep inbox as before": [
+        "Behold indbakken som før"
       ],
       "Keep my subscription": [
         "Bevar mit abonnement"
@@ -904,6 +934,9 @@
       "More search options": [
         "Flere søgemuligheder"
       ],
+      "Most frequent": [
+        "Mest hyppige"
+      ],
       "Most read": [
         "Mest læste"
       ],
@@ -1012,6 +1045,9 @@
       "Page ${ pageNumber }": [
         "Side ${ pageNumber }"
       ],
+      "Passphrase": [
+        "Adgangssætning"
+      ],
       "Pause": [
         "Pause"
       ],
@@ -1066,6 +1102,9 @@
       "Read receipt sent": [
         "Læsekvittering sendt"
       ],
+      "Recently read": [
+        "Læst for nyligt"
+      ],
       "Recently received": [
         "nyligt modtaget"
       ],
@@ -1116,6 +1155,9 @@
       ],
       "Remove this label": [
         "Fjern denne etiket"
+      ],
+      "Remove video conference": [
+        "Fjern videokonference"
       ],
       "Replace": [
         "Erstat"
@@ -1426,6 +1468,12 @@
       "Toggle Contacts app": [
         "Skift Kontakt-app"
       ],
+      "Toggle notifications": [
+        "Slå notifikationer til/fra"
+      ],
+      "Toggle referral": [
+        "Slå henvisning til/fra"
+      ],
       "Toggle security center app": [
         "Slå appen's Sikkerhedscenter til og fra"
       ],
@@ -1455,6 +1503,9 @@
       ],
       "Try another method": [
         "Prøv en anden metode"
+      ],
+      "Try categories": [
+        "Prøv kategorier"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Prøv at gemme igen. Det lykkedes ikke at gemme på grund af: ${ saveError }"
@@ -1506,6 +1557,9 @@
       ],
       "Update recovery phrase": [
         "Opdater gendannelsessætning"
+      ],
+      "Update secret passphrase": [
+        "Opdatér hemmelig adgangssætning"
       ],
       "Upgrade": [
         "Opgradér"
@@ -1964,6 +2018,32 @@
         "Afsenderbekræftelse bestået"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Efter prøveperioden udløber den ${ formattedDate }, vil det blive et betalt abonnement, der automatisk fornyes hver ${ renewCycle } måned. Du vil ikke blive opkrævet betaling, hvis du opsiger før den ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Efter prøveperioden udløber den ${ formattedDate }, vil det blive et betalt abonnement, der automatisk fornyes månedligt. Du vil ikke blive opkrævet betaling, hvis du opsiger før den ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Du kan have op til ${ TRIAL_MAX_DEDICATED_IPS } dedikeret server i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kan have op til ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-pladser i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Du kan have op til ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-pladser i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Du kan have op til ${ TRIAL_MAX_USERS } brugere i prøveperioden."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Du kan ikke tilføje brugerdefinerede domæner i prøveperioden."
+      ],
+      "You have reached the trial limit.": [
+        "Du har nået grænsen for prøveversionen."
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Opsig abonnement"
@@ -2005,6 +2085,9 @@
       "1 user account": [
         "1 brugerkonto"
       ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB lagerplads: 40x din nuværende plan"
+      ],
       "6 user accounts": [
         "6 brugerkonti"
       ],
@@ -2026,6 +2109,9 @@
       "Password health alerts": [
         "Adgangskode-sundhed advarsler"
       ],
+      "Recover previous file versions": [
+        "Gendan tidligere filversioner"
+      ],
       "Unlimited folders, labels and filters": [
         "Ubegrænsede mapper, etiketter og filtre"
       ],
@@ -2039,6 +2125,9 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Faktureret med ${ amount } én gang"
+      ],
+      "forever": [
+        "for evigt"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Fornyes efter 1 måned til ${ regularAmount }."
@@ -2185,6 +2274,9 @@
       "Application problem": [
         "Applikationsproblem"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Bridge problem": [
         "Bridge-problem"
       ],
@@ -2220,6 +2312,9 @@
       ],
       "Manual setup problem": [
         "Problem med manuel opsætning"
+      ],
+      "Meet problem": [
+        "Meet-problem"
       ],
       "Other": [
         "Andet"
@@ -2644,6 +2739,52 @@
       ],
       "Expand": [
         "Udvid"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Adgang til avancerede AI-modeller"
+      ],
+      "Basic chat history": [
+        "Grundlæggende chathistorik"
+      ],
+      "Full chat history with search": [
+        "Fuld chathistorik med søgning"
+      ],
+      "Large file upload support": [
+        "Understøtter upload af store filer"
+      ],
+      "Limited daily chats": [
+        "Begrænsede daglige chats"
+      ],
+      "Limited favorites": [
+        "Begrænsede favoritter"
+      ],
+      "Unlimited daily chats": [
+        "Ubegrænsede daglige chats"
+      ],
+      "Unlimited favorites for quick access": [
+        "Ubegrænsede favoritter til hurtig adgang"
+      ],
+      "Upload and query multiple large files": [
+        "Upload og forespørg flere store filer"
+      ],
+      "Upload and query small files": [
+        "Upload og forespørg små filer"
+      ],
+      "Web search access": [
+        "Adgang til websøgning"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } er en privatlivsfokuseret AI, der hjælper dig med at få mere fra hånden, samtidig med at dine data forbliver sikre. Frigør dets fulde potentiale, og få tidlig adgang til nye funktioner, efterhånden som de introduceres."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Tilføj ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Højhastighedschats og avancerede AI-funktioner."
       ]
     },
     "color": {
@@ -4236,6 +4377,39 @@
         "Prioriteret support"
       ]
     },
+    "Duo offer": {
+      "/month": [
+        "/måned"
+      ],
+      "2 TB of storage to share": [
+        "2 TB lagerplads til deling"
+      ],
+      "2 user accounts": [
+        "2 brugerkonti"
+      ],
+      "All premium features from your current plan": [
+        "Alle premium-funktioner fra dit nuværende abonnement"
+      ],
+      "Only": [
+        "Kun"
+      ]
+    },
+    "Duo offer: Link": {
+      "Get 4x more storage": [
+        "Få 4x mere lagerplads"
+      ],
+      "Share your plan": [
+        "Del dit abonnement"
+      ]
+    },
+    "Duo offer: Title": {
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "Få 4x mere lagerplads med ${ BRAND_NAME } Duo"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "Del dit abonnements fordele med ${ BRAND_NAME } Duo"
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Tekstfelter er valgfrie. De oplysninger, du angiver i denne formular, vil kun blive vist på fakturaer, der udstedes i fremtiden, og vil ikke påvirke eksisterende fakturaer."
@@ -4251,8 +4425,14 @@
       "All events in this series were updated.": [
         "Alle begivenheder i denne serie blev opdateret."
       ],
+      "DESCRIPTION:": [
+        "BESKRIVELSE:"
+      ],
       "Here's what changed:": [
         "Sådan har det ændret sig:"
+      ],
+      "LOCATION:": [
+        "PLACERING:"
       ],
       "NOTE:": [
         "NOTE:"
@@ -4265,6 +4445,15 @@
       ],
       "This event was updated.": [
         "Denne event blev opdateret."
+      ],
+      "TIME:": [
+        "TID:"
+      ],
+      "TITLE:": [
+        "TITEL:"
+      ],
+      "You are invited to": [
+        "Du er inviteret til"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4531,6 +4720,9 @@
       "Failed to open to contact": [
         "Kunne ikke oprette kontakten"
       ],
+      "Failed to update secret passphrase": [
+        "Det lykkedes ikke at opdatere hemmelig adgangssætning"
+      ],
       "Filter with this name already exists": [
         "Et filter med dette navn findes allerede"
       ],
@@ -4659,6 +4851,9 @@
       ],
       "Organization key is not decrypted": [
         "Organisationsnøgle er ikke dekrypteret"
+      ],
+      "Passphrase unavailable": [
+        "Adgangssætning ikke tilgængelig"
       ],
       "Password is required": [
         "Adgangskode er påkrævet."
@@ -4966,6 +5161,11 @@
         "Postnummer er påkrævet"
       ]
     },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Log venligst ind med den samme Gmail-adresse, som du oprindeligt har forbundet."
+      ]
+    },
     "Error adding participants to a calendar event": {
       "At most ${ maxAttendees } participant is allowed per invitation": [
         "Højst ${ maxAttendees } deltager er tilladt pr. invitation",
@@ -5118,6 +5318,9 @@
     "Error message": {
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "Aliasser kan ikke bruges, når en ekstra adgangskode er aktiveret i ${ PASS_APP_NAME }."
+      ],
+      "An error occurred with the categories": [
+        "Der opstod en fejl med kategorierne"
       ],
       "App currently unavailable": [
         "App ikke tilgængelig i øjeblikket"
@@ -5272,6 +5475,9 @@
       "customer support": [
         "kundeservice"
       ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Familieabonnementer understøtter i øjeblikket ikke eksterne konti. Opret en ${ BRAND_NAME }-adresse før du tilmelder dig. ${ link }"
+      ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Hvis du accepterer invitationen, overflytter vi dig fra dit nuværende abonnement og krediterer din konto med en eventuel restsaldo."
       ],
@@ -5374,6 +5580,12 @@
       ]
     },
     "Feature": {
+      "Encrypted cloud storage for files, photos and documents": [
+        "Krypteret sky-lagring til filer, billeder og dokumenter"
+      ],
+      "More premium features": [
+        "Flere premium-funktioner"
+      ],
       "Unlimited hide-my-email aliases": [
         "Ubegrænsede hide-my-email-aliasser"
       ]
@@ -5820,11 +6032,17 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Domain": [
+        "Domæne"
+      ],
       "Drawer": [
         "Sidepanel"
       ],
       "Hardware not compatible": [
         "Hardware ikke kompatibel"
+      ],
+      "Password ends with": [
+        "Adgangskode slutter med"
       ],
       "Report an issue": [
         "Rapporter et problem"
@@ -5843,6 +6061,9 @@
       ],
       "Tell us more": [
         "Fortæl os mere"
+      ],
+      "Username": [
+        "Brugernavn"
       ]
     },
     "Hint": {
@@ -6341,7 +6562,7 @@
       ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } besked kunne ikke flyttes.",
-        "${ messagesNotAuthorizedToMove } beskeder kunne ikke flyttes."
+        "${ messagesNotAuthorizedToMove } meddelelser kunne ikke flyttes."
       ],
       "${ n } unread conversation": [
         "${ n } ulæst samtale",
@@ -6484,6 +6705,21 @@
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill switch**: Stopper datalækager ved at blokere din internetadgang, hvis VPN-forbindelsen afbrydes uventet."
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Trin 1:** Inviter dine venner til ${ BRAND_NAME } med dit henvisningslink."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
+        "**Trin 2:** Dine venner får 2 uger gratis på deres valgte ${ BRAND_NAME }-abonnement."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Trin 2:** Dine venner får 2 uger gratis på deres abonnement."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**Trin 3:** Få ${ referrerRewardAmount } i kredit for hver ven, der opretter et abonnement."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Trin 3:** Få ${ referrerRewardAmount } i kredit for hver person, der opretter et abonnement."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus lagerplads"
       ],
@@ -6576,6 +6812,9 @@
       ],
       "All messages stored with this label will be permanently deleted.": [
         "Alle gemte beskeder med denne etikette vil blive permanent slettet."
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Alle beskeder vises i indbakken, og kategorifanerne og tags vil ikke længere være synlige. "
       ],
       "All your calendars are disabled.": [
         "Alle dine kalendere er deaktiveret."
@@ -6740,6 +6979,12 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Kan du ikke huske din adgangskode? Vi kan hjælpe dig med at rydde de krypterede data for alle kontakter krypteret med denne nøgle og i processen afvise advarslen."
       ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Kategorier fungerer ligesom spamfiltre. ${ MAIL_APP_NAME } læser aldrig dine e-mails eller deler dine data."
+      ],
+      "Categories work like spam filters. We only look for patterns in unencrypted header and technical data. We do not read email content, share your data, or infringe on your privacy.": [
+        "Kategorier fungerer som spamfiltre. Vi søger kun efter mønstre i ukrypterede overskrifts- og tekniske data. Vi læser ikke e-mail-indhold, deler ikke dine data eller krænker dit privatliv."
+      ],
       "Center": [
         "Centrér"
       ],
@@ -6748,6 +6993,9 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Tjekker kontakt ${ progress } af ${ max }..."
+      ],
+      "Choose a plan that works best for you.": [
+        "Vælg et abonnement, der passer bedst til dig."
       ],
       "Clear browser data": [
         "Ryd browserdata"
@@ -6790,6 +7038,9 @@
       ],
       "Contact unassigned from group ${ contactGroupName }": [
         "Kontakt fjernet fra gruppen ${ contactGroupName }"
+      ],
+      "Continue": [
+        "Forsæt"
       ],
       "Copied to clipboard": [
         "Kopieret til udklipsholder"
@@ -7093,6 +7344,9 @@
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "For at få adgang til e-mail når som helst og en optimeret mobiloplevelse kan du downloade vores ${ androidAppLink } eller ${ iosAppLink }."
       ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Som en ekstra sikkerhed kan du indstille en adgangssætning. Den vil ikke blive inkluderet i kalenderinvitationen—husk at dele den med dine gæster separat."
+      ],
       "For messages newer than ${ oldestDate }": [
         "For beskeder nyere end ${ oldestDate }"
       ],
@@ -7216,6 +7470,24 @@
       "Included for free with your plan": [
         "Inkluderet gratis i dit abonnement"
       ],
+      "Includes bills, receipts, orders, and bookings.": [
+        "Inkluderer regninger, kvitteringer, ordrer og bookinger."
+      ],
+      "Includes invoices, purchase orders, and payment confirmations.": [
+        "Inkluderer fakturaer, indkøbsordrer og betalingsbekræftelser."
+      ],
+      "Includes marketing emails and non-urgent app notifications.": [
+        "Inkluderer marketing-e-mails og ikke-presserende app-notifikationer."
+      ],
+      "Includes marketing emails like offers and product announcements.": [
+        "Inkluderer marketing-e-mails såsom tilbud og produktmeddelelser."
+      ],
+      "Includes news recaps and other non-promotional content. ": [
+        "Inkluderer nyhedsoversigter og andet ikke-salgsfremmende indhold. "
+      ],
+      "Includes updates from social networks and media-sharing sites.": [
+        "Inkluderer opdateringer fra sociale netværk og websteder til mediedeling."
+      ],
       "Inherited from parent folder": [
         "Nedarvet fra overordnet mappe"
       ],
@@ -7318,6 +7590,9 @@
       ],
       "Low Priority": [
         "Lav prioritet"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Gør ${ MAIL_APP_NAME } til din standard e-mail-applikation."
       ],
       "Manage your folders": [
         "Administrer dine mapper"
@@ -7959,6 +8234,9 @@
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Der er opstået en fejl med den underskrift, der bruges til at verificere kontaktoplysningerne, hvilket kan være resultatet af en nulstilling af adgangskoden."
       ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Disse samtaler opbevares her baseret på din organisations politik for dataopbevaring."
+      ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "De kan ikke spamme dig, hvis de ikke kender din e-mailadresse. Beskyt din indbakke med hide-my-email-aliasser."
       ],
@@ -8198,6 +8476,9 @@
       "Upgrade to create more folders, filters, and addresses.": [
         "Opgrader for at oprette flere foldere, filtre og adresser."
       ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "Opgradér for at beholde dine ${ planTitle }-fordele."
+      ],
       "Upgrade to level up your privacy.": [
         "Opgradér for at styrke beskyttelsen af dit privatliv."
       ],
@@ -8351,6 +8632,9 @@
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "Forbind dig til ${ VPN_APP_NAME }, når du rejser eller bruger offentlig WiFi, for at forhindre andre i at spore din onlineaktivitet eller stjæle dine data. Det er helt gratis."
       ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "Med nye e-mail-kategorier lander kun vigtige beskeder i din primære indbakke. Alt andet organiseres i kategorier."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vil du gerne modtage en ny bekræftelseskode eller bruge en alternativ bekræftelsesmetode?"
       ],
@@ -8374,6 +8658,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Du er ved at åbne din standardbrowser og besøge:"
+      ],
+      "You are currently signed in as ${ username }.": [
+        "Du er i øjeblikket logget ind som ${ username }."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Du bruger mere lagerplads end inkluderet i et ${ downgradedPlanName }-abonnement. Slet eller fjern data for at fortsætte nedgraderingen."
@@ -8444,7 +8731,7 @@
       ],
       "You have **${ count } message** stored in this folder": [
         "Du har **${ count } besked** gemt i denne mappe",
-        "Du har **${ count } beskeder** gemt i denne mappe"
+        "Du har **${ count } meddelelser** gemt i denne mappe"
       ],
       "You have **${ count } message** tagged with this label": [
         "Du har **${ count } besked** mærket med denne etikette",
@@ -8721,7 +9008,7 @@
       ],
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
         "Du har aktiveret adresseverifikation med betroede nøgler for denne e-mailadresse, men ingen aktive krypteringsnøgler er betroet.\nDu skal vælge en nøgle som betroet for at kunne sende en besked til denne e-mailadresse.",
-        "Du har aktiveret adresseverifikation med betroede nøgler for disse e-mailadresser, men ingen aktive krypteringsnøgler er betroet.\nDu skal vælge nøgler som betroet for at kunne sende en besked til disse e-mailadresser."
+        "Du har aktiveret adresseverifikation med betroede nøgler for disse e-mailadresser, men ingen aktive krypteringsnøgler er betroet.\nDu skal vælge nøgler som betroet for at kunne sende en meddelelse til disse e-mailadresser."
       ]
     },
     "Key validation warning": {
@@ -8929,6 +9216,14 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } brugernavn"
       ],
+      "${ count } unread conversation": [
+        "${ count } ulæst samtale",
+        "${ count } ulæste samtaler"
+      ],
+      "${ count } unread message": [
+        "${ count } ulæst besked",
+        "${ count } ulæste beskeder"
+      ],
       "${ n } month": [
         "${ n } måned",
         "${ n } måneder"
@@ -8953,6 +9248,9 @@
       ],
       "Add image URL": [
         "Tilføj billed-URL"
+      ],
+      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
+        "Tilføj eller fjern kategorier. Indstil eller slå notifikationer fra. Juster når som helst i ${ menuIcon }-menuen."
       ],
       "Add to group": [
         "Føj til gruppe"
@@ -9002,6 +9300,9 @@
       "Authenticator app": [
         "Godkendelsesapp"
       ],
+      "Automated confirmations and alerts": [
+        "Automatiske bekræftelser og advarsler"
+      ],
       "BCC": [
         "BCC"
       ],
@@ -9011,8 +9312,14 @@
       "Billing cycle": [
         "Faktureringsperiode"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Blind Carbon Copy": [
         "Blind karbonkopi"
+      ],
+      "Bookings, billings, and orders": [
+        "Bookinger, faktureringer og ordrer"
       ],
       "Browser": [
         "Browser"
@@ -9046,6 +9353,9 @@
       ],
       "Cash": [
         "Kontant"
+      ],
+      "Categories badge": [
+        "Kategorimærke"
       ],
       "Category": [
         "Kategori"
@@ -9110,6 +9420,9 @@
       "Date:": [
         "Dato:"
       ],
+      "Deals, offers, marketing emails": [
+        "Tilbud, rabatter, marketing-e-mails"
+      ],
       "Delete": [
         "Slet"
       ],
@@ -9121,6 +9434,9 @@
       ],
       "Did not follow instructions": [
         "Fulgte ikke instruktionerne"
+      ],
+      "Discussion board posts and threads": [
+        "Opslag og tråde på diskussionsforum"
       ],
       "Do you have any suggestions for our team?": [
         "Har du forslag til vores team?"
@@ -9211,6 +9527,36 @@
       ],
       "From: ${ fromEmail }": [
         "Fra: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "Tag imod tilbuddet"
+      ],
+      "Go to Forums": [
+        "Gå til Fora"
+      ],
+      "Go to Newsletters": [
+        "Gå til Nyhedsbreve"
+      ],
+      "Go to Primary": [
+        "Gå til primær"
+      ],
+      "Go to Promotions": [
+        "Gå til Kampagner"
+      ],
+      "Go to Social": [
+        "Gå til Socialt"
+      ],
+      "Go to Transactions": [
+        "Gå til transaktioner"
+      ],
+      "Go to Updates": [
+        "Gå til Opdateringer"
+      ],
+      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
+        "Hjælp os med at forbedre kategorierne ved at vælge den, der bedst passer til denne e-mail. Tak for din hjælp!"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Hjælp os med at forbedre den kommende e-mailkategorisering"
       ],
       "Hide password": [
         "Skjul adgangskode"
@@ -9341,6 +9687,15 @@
       "No label found": [
         "Ingen etikette fundet"
       ],
+      "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
+        "Slut med at gå glip af vigtige beskeder! Disse vises nu under ${ primaryCopy }. Alt andet er sorteret efter kategori, så de er nemme at finde og ikke roder i din indbakke."
+      ],
+      "No results found": [
+        "Ingen resultater fundet"
+      ],
+      "Non-promotional content and news": [
+        "Ikke-salgsfremmende indhold og nyheder"
+      ],
       "Not factually correct": [
         "Ikke faktuelt korrekt"
       ],
@@ -9379,6 +9734,9 @@
       ],
       "Participants": [
         "Deltagere"
+      ],
+      "Passphrase:": [
+        "Adgangssætning:"
       ],
       "Password": [
         "Adgangskode"
@@ -9437,8 +9795,14 @@
       "Remember my choice": [
         "Husk mit valg"
       ],
+      "Remove ${ MEET_APP_NAME } video conference": [
+        "Fjern ${ MEET_APP_NAME } videokonference"
+      ],
       "Remove metadata": [
         "Fjern metadata"
+      ],
+      "Remove Zoom video conference": [
+        "Fjern Zoom-videokonference"
       ],
       "Reveal password": [
         "Vis adgangskode"
@@ -9448,6 +9812,9 @@
       ],
       "Search in": [
         "Søg i"
+      ],
+      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
+        "Vælg de kategorier, der skal inkluderes, og aktivér notifikationer for at blive orienteret om nye e-mails i en kategori."
       ],
       "Send auto-reply": [
         "Send auto-svar"
@@ -9463,6 +9830,9 @@
       ],
       "Social": [
         "Social"
+      ],
+      "Social media updates and activity": [
+        "Opdateringer og aktivitet på sociale medier"
       ],
       "Starred": [
         "Stjernemarkeret"
@@ -9496,6 +9866,9 @@
       ],
       "System information": [
         "Systemoplysninger"
+      ],
+      "The category has been updated, thanks for your feedback!": [
+        "Kategorien er blevet opdateret, tak for din feedback!"
       ],
       "The filter is disabled. ${ enableButton }": [
         "Filteret er deaktiveret. ${ enableButton }"
@@ -9560,11 +9933,20 @@
       "Weak password": [
         "Svag adgangskode"
       ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "Vi forbedrer, hvordan e-mails kategoriseres. Din feedback hjælper med at gøre det mere intelligent og præcist."
+      ],
       "What happened?": [
         "Hvad skete der?"
       ],
       "What is your main reason for canceling or downgrading?": [
         "Hvad er årsagen til, at du har opsagt eller nedgraderet?"
+      ],
+      "Which category should this be recategorized under?": [
+        "Hvilken kategori skal dette omkategoriseres til?"
+      ],
+      "Why am I seeing this?": [
+        "Hvorfor ser jeg dette?"
       ],
       "With attachment": [
         "Med vedhæftning"
@@ -9732,6 +10114,9 @@
       ],
       "Create a new calendar to manage your invitations": [
         "Opret en ny kalender for at administrere dine invitationer"
+      ],
+      "Deleted": [
+        "Slettet"
       ],
       "Drafts": [
         "Kladder"
@@ -9967,6 +10352,9 @@
       "Learn more": [
         "Yderligere oplysninger"
       ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "For at fortsætte med at bruge ${ BRAND_NAME }, skal du venligst sikre dig, at dine premium-funktioner ikke længere er i brug, eller opgradere dit abonnement."
+      ],
       "upgrade for more storage": [
         "opgrader for at få mere lagerplads"
       ],
@@ -10049,6 +10437,9 @@
       ],
       "Re:": [
         "Sv:"
+      ],
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "Din gratis prøveperiode er udløbet. ${ nonAutoRenewalAction }"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Din gratis prøveperiode er afsluttet. Adgang til din konto vil snart blive deaktiveret. ${ action }"
@@ -10645,6 +11036,9 @@
       "Share files with no size limit": [
         "Del filer uden størrelsesbegrænsning"
       ],
+      "Short domain (@pm.me)": [
+        "Kort domæne (@pm.me)"
+      ],
       "Sign in as user": [
         "Log ind som bruger"
       ],
@@ -11200,6 +11594,9 @@
       "Passcode copied to clipboard": [
         "Adgangskode kopieret til udklipsholder"
       ],
+      "Passphrase copied to clipboard": [
+        "Adgangssætning kopieret til udklipsholder"
+      ],
       "Password has been set successfully": [
         "Adgangskode er blevet ændret"
       ],
@@ -11246,11 +11643,17 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } tilbud udløber i dag!"
       ],
+      "Don't show this again": [
+        "Vis ikke dette igen"
+      ],
       "Don’t show this again": [
         "Vis ikke dette igen"
       ],
       "Don’t show this offer again": [
         "Vis ikke dette tilbud igen"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Få ${ BRAND_NAME } Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "Få ${ BRAND_NAME } Unlimited"
@@ -11354,8 +11757,14 @@
       ]
     },
     "Onboarding List Placeholder": {
+      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
+        "Skift din e-mailadresse på populære tjenester nu, for at undgå at blive sporet og profileret. ${ learnMoreLink }"
+      ],
       "Finance": [
         "Finans"
+      ],
+      "Maybe later": [
+        "Måske senere"
       ],
       "Privacy for all your online accounts": [
         "Privatliv for alle dine online konti"
@@ -11673,6 +12082,9 @@
       "Advanced account protection": [
         "Avanceret kontobeskyttelse"
       ],
+      "File attachments (up to 10GB)": [
+        "Filvedhæftninger (op til 10 GB)"
+      ],
       "Team policies": [
         "Team-policer"
       ]
@@ -11716,6 +12128,9 @@
       "The organization key must be activated first.": [
         "Organisationsnøglen skal først aktiveres."
       ],
+      "You must delete all groups before generating a new organization key": [
+        "Du skal slette alle grupper, før du genererer en ny organisationsnøgle."
+      ],
       "You must privatize all users before generating a new organization key": [
         "Du skal privatisere alle brugere, før du genererer en ny organisationsnøgle"
       ],
@@ -11746,6 +12161,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Beløb, der skal betales efter prøveperioden den ${ formattedDate }"
+      ],
       "Billing Country": [
         "Faktura land"
       ],
@@ -11761,17 +12179,32 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Under denne periode vil du ikke kunne ændre eller annullere dit abonnement. Vent venligst indtil betalingen er gennemført før du forsøger at foretage ændringer. Tak for din tålmodighed."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Eksklusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Eksklusiv ${ taxRate }% moms: ${ taxAmount }"
+      ],
       "Got it": [
         "Forstået"
       ],
       "I'm purchasing as a business": [
         "Jeg køber som virksomhed"
       ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inklusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Inklusiv ${ taxRate }% moms: ${ taxAmount }"
+      ],
       "MM/YY": [
         "MM/ÅÅ"
       ],
       "More plans are available in other currencies": [
         "Flere abonnementer er tilgængelige i andre valutaer"
+      ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Betalingsmetode er påkrævet, for at abonnementet kan aktiveres, efter at prøveversionen udløber."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Genaktiver dit abonnement først for at reducere antallet af tilføjelser."
@@ -11782,9 +12215,26 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Fornyes til ${ renewPriceStr }, annuller når som helst."
       ],
+      "Taxes": [
+        "Moms"
+      ],
+      "terms and conditions": [
+        "vilkår og betingelser"
+      ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Kuponen er gyldig til ${ couponRedemptions } fornyelse",
         "Kuponen er gyldig til ${ couponRedemptions } fornyelser"
+      ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "Den særligt nedsatte pris gælder for den første måned på ${ subscriptionLength }.",
+        "Den særligt nedsatte pris gælder for de første ${ subscriptionLength } måneder."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Den særligt nedsatte pris er gyldig i den første måned. Kuponen er gyldig til ${ couponRedemptions } fornyelse. Deretter vil den automatisk blive fornyet til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst.",
+        "Den særligt nedsatte pris er gyldig i den første måned. Kuponen er gyldig til ${ couponRedemptions } fornyelser. Deretter vil den automatisk blive fornyet til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Den særligt nedsatte pris er gyldig i den første måned. Derefter fornys den automatisk til ${ renewPriceStr } hver måned. De kan opsige når som helst."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Den særlige udsalgspris på ${ priceWithDiscount } gælder for den første ${ subscriptionLength } måned.",
@@ -11801,8 +12251,14 @@
         "Så vil det automatisk blive fornyet for ${ renewPriceStr } for ${ renewalLength } måned. Du kan annullere det når som helst.",
         "Så vil det automatisk blive fornyet for ${ renewPriceStr } for ${ renewalLength } måneder. Du kan annullere det når som helst."
       ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Denne handling udvider det eksisterende abonnement. Du vil kun blive opkrævet for de nye tilføjelser og den resterende tid af den nuværende faktureringsperiode. Fornyelsesdatoen for dit abonnement vil ikke blive ændret."
+      ],
       "This number will be shown on all future invoices": [
         "Dette nummer vil blive vist på alle fremtidige fakturaer."
+      ],
+      "This offer is not available with your current plan.": [
+        "Dette tilbud er ikke tilgængeligt med dit nuværende abonnement."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Denne betalingsmetode bliver din nye standard for alle fremtidige fornyelser."
@@ -11810,11 +12266,26 @@
       "Timeout exceeded": [
         "Timeout overskredet"
       ],
+      "VAT": [
+        "Moms"
+      ],
+      "VAT number": [
+        "Momsnummer"
+      ],
+      "You already have a subscription to this plan.": [
+        "Du har allerede dette abonnement."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Du har allerede et abonnement på denne plan. Du kan ændre dit abonnement på ${ subscriptionPlatform }."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Din valuta er blevet ændret til euro (€), fordi SEPA-bankoverførsler kun understøtter betalinger i euro."
       ],
       "Your payment is still being processed": [
         "Din betaling behandles stadig"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "Dit abonnement har i øjeblikket en eksisterende rabat. Ved at skifte til denne nye kampagne vil den eksisterende rabat ikke længere blive anvendt."
       ]
     },
     "Payments.Error": {
@@ -11835,6 +12306,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Dit kort blev afvist. Prøv venligst et andet kort eller kontakt din bank for at godkende opkrævningen."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Kredit for den ubrugte del af dit tidligere abonnement"
+      ],
+      "Credits will be added to your balance": [
+        "Kreditter vil blive tilføjet til din saldo"
       ]
     },
     "Payments.plan_name": {
@@ -11862,8 +12341,32 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "Tilføj ABN"
+      ],
+      "Add Business Number": [
+        "Tilføj forretningsnummer"
+      ],
+      "Add EIN": [
+        "Tilføj EIN"
+      ],
+      "Add VAT number": [
+        "Tilføj momsnummer"
+      ],
       "Business Number": [
         "Forretningsnummer"
+      ],
+      "Edit ABN": [
+        "Redigér ABN"
+      ],
+      "Edit Business Number": [
+        "Redigér forretningsnummer"
+      ],
+      "Edit EIN": [
+        "Redigér EIN"
+      ],
+      "Edit VAT number": [
+        "Redigér momsnummer"
       ],
       "EIN": [
         "Momsnummer"
@@ -11926,6 +12429,9 @@
       ],
       "End date": [
         "Slutdato"
+      ],
+      "Enter passphrase": [
+        "Indtast adgangssætning"
       ],
       "Filter folders": [
         "Filtrér mapper"
@@ -12016,6 +12522,9 @@
       ],
       "Select a reason": [
         "Vælg en årsag"
+      ],
+      "Select country": [
+        "Vælg land"
       ],
       "Select state": [
         "Vælg stat"
@@ -12208,9 +12717,50 @@
       ]
     },
     "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } pr. henvisning"
+      ],
+      "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Optjen op til ${ maxRewardAmount } i kredit. Du får ${ referrerRewardAmount }, når den person, du inviterer, abonnerer på et ${ BRAND_NAME }-abonnement."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Nyd **${ planTitle }** gratis indtil **${ textDate }**."
+      ],
+      "Friend joined": [
+        "Ven tilmeldte sig",
+        "Venner tilmelde sig"
+      ],
+      "Friend subscribed": [
+        "En ven abonnerede",
+        "Venner abonnerede"
+      ],
+      "Invite friends. Get credits.": [
+        "Inviter venner. Få kreditter."
+      ],
+      "Invited friends": [
+        "Inviterede venner"
+      ],
+      "More sharing options": [
+        "Flere delingsmuligheder"
+      ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "Når dit fulde abonnement starter, kan du stadig opsige indenfor 30 dage og få en forholdsmæssig refusion."
+      ],
+      "Refer friends": [
+        "Henvis venner"
+      ],
+      "Start earning credits": [
+        "Begynd at optjene kreditter"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Du kan få op til **${ maxRewardAmount }** i kredit."
+      ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
-        "De har **${ daysRemaining } dag tilbage** til at udforske alle de kraftfulde funktioner, som **${ planTitle }** har at tilbyde.",
-        "De har **${ daysRemaining } dage tilbage** til at udforske alle de kraftfulde funktioner, som **${ planTitle }** har at tilbyde."
+        "Du har **${ daysRemaining } dag tilbage** til at udforske alle de kraftfulde funktioner, som **${ planTitle }** har at tilbyde.",
+        "Du har **${ daysRemaining } dage tilbage** til at udforske alle de kraftfulde funktioner, som **${ planTitle }** har at tilbyde."
+      ],
+      "your subscription": [
+        "Dit abonnement"
       ]
     },
     "Remaining days before the message expire": {
@@ -13626,7 +14176,7 @@
       ],
       "${ elementsCount } message removed from Starred.": [
         "${ elementsCount } besked fjernet fra Stjernemarkeret.",
-        "${ elementsCount } beskeder fjernet fra Stjernemarkeret."
+        "${ elementsCount } meddelelser fjernet fra Stjernemarkeret."
       ],
       "Address copied to clipboard": [
         "Adresse kopieret til udklipsholder"
@@ -13695,6 +14245,10 @@
       ],
       "Conversation removed from Starred.": [
         "Samtale fjernet fra Stjernemarkeret."
+      ],
+      "Conversation updated": [
+        "Samtale opdateret",
+        "Samtaler opdateret"
       ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Samtaler fra ${ sendersList } vil blive mærket som ${ labelsList }"
@@ -13771,6 +14325,10 @@
       "Message removed from Starred.": [
         "Besked fjernet fra Stjernemarkeret."
       ],
+      "Message updated": [
+        "Besked opdateret",
+        "Beskeder opdateret"
+      ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Beskeder fra ${ sendersList } vil blive mærket som ${ labelsList }"
       ],
@@ -13814,6 +14372,13 @@
       ],
       "Read receipt sent": [
         "Læsekvittering sendt"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "Omkategoriserede ${ elementsCount } meddelelse.",
+        "Omkategoriserede ${ elementsCount } beskeder."
+      ],
+      "Secret passphrase updated": [
+        "Hemmelig adgangssætning opdateret"
       ],
       "Self-destruction removed": [
         "Selvdestruktion fjernet"
@@ -14175,6 +14740,9 @@
       "Block sender": [
         "Bloker afsender"
       ],
+      "Built for privacy": [
+        "Bygget til privatliv"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Opsig abonnement på ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -14265,6 +14833,12 @@
       "Customize calendar import": [
         "Tilpas kalender-import"
       ],
+      "Customize categories": [
+        "Tilpas kategorier"
+      ],
+      "Customize categories to fit your needs": [
+        "Tilpas kategorier, så de passer til dine behov"
+      ],
       "Customize your mail import": [
         "Tilpas din mail-import"
       ],
@@ -14323,6 +14897,9 @@
       ],
       "Desktop": [
         "Desktop"
+      ],
+      "Disable categories?": [
+        "Deaktivér kategorier?"
       ],
       "Discover your subscription benefits": [
         "Opdag fordelene ved dit abonnement"
@@ -14402,6 +14979,9 @@
       "External encryption": [
         "Ekstern kryptering"
       ],
+      "Fewer distractions, more focus": [
+        "Færre forstyrrelser, mere fokus"
+      ],
       "Filter for more focus": [
         "Filtrér for mere fokus"
       ],
@@ -14416,6 +14996,9 @@
       ],
       "Forward": [
         "Videresend"
+      ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Få **${ referralInfo.uiData.refereeRewardAmount }** i kreditter med ${ planTitle }"
       ],
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "Få fuld adgang til ${ CALENDAR_APP_NAME }"
@@ -14456,6 +15039,9 @@
       "How to update your email address": [
         "Sådan opdaterer du din e-mailadresse"
       ],
+      "How your free trial works": [
+        "Sådan fungerer din gratis prøveperiode"
+      ],
       "Human verification": [
         "Menneskelig bekræftelse"
       ],
@@ -14493,11 +15079,18 @@
       "Insert contacts": [
         "Indsæt kontakter"
       ],
+      "Introducing email categories": [
+        "Introduktion til e-mail-kategorier"
+      ],
       "Invalid verification code": [
         "Ugyldig verifikationskode"
       ],
       "Label as": [
         "Mærk som"
+      ],
+      "Label message as": [
+        "Giv besked etiketten",
+        "Giv beskeder etiketten"
       ],
       "Label options": [
         "Etiketindstillinger"
@@ -14582,6 +15175,13 @@
       ],
       "Move all messages to trash": [
         "Flyt alle beskeder til papirkurven"
+      ],
+      "Move message to": [
+        "Flyt besked til",
+        "Flyt beskeder til"
+      ],
+      "Move messages to": [
+        "Flyt beskeder til"
       ],
       "Move to": [
         "Flyt til"
@@ -14751,6 +15351,9 @@
       "Recover data": [
         "Gendan data"
       ],
+      "Referral": [
+        "Henvisning"
+      ],
       "Remove from list?": [
         "Fjern fra listen?"
       ],
@@ -14847,6 +15450,9 @@
       "Share your calendar with your team": [
         "Del din kalender med dit team"
       ],
+      "Share your link": [
+        "Del dit link"
+      ],
       "Sign in and grant access": [
         "Log ind og giv adgang"
       ],
@@ -14941,6 +15547,9 @@
       "Upgrade to ${ planName }": [
         "Opgradér til ${ planName }"
       ],
+      "Upgrade to keep your premium benefits.": [
+        "Opgradér for at beholde dine premium-fordele."
+      ],
       "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
         "Opgrader din produktivitet for ${ formattedPrice } med ${ planName }"
       ],
@@ -15028,6 +15637,9 @@
       ],
       "Your subscriptions in one place": [
         "Dine abonnementer ét sted"
+      ],
+      "✨ Categories are coming!": [
+        "✨ Kategorier er på vej!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15125,6 +15737,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: En AI-assistent, der respekterer dit privatliv"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Sikre logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og meget mere."
       ]
@@ -15330,6 +15945,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Din gratis prøveperiode udløber den ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Din prøveperiode udløber den ${ textDate }. Du vil ikke blive opkrævet, hvis du opsiger før den ${ textDate }. ${ action }"
       ]
     },
     "WeekDay": {

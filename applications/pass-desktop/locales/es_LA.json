@@ -844,6 +844,9 @@
       "These items remain at risk": [
         "Estos elementos siguen en riesgo"
       ],
+      "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
+        "Estas bóvedas no serán accesibles y sus contenidos no estarán disponibles para búsqueda y completado automático."
+      ],
       "This account is vulnerable, visit the service and change your password.": [
         "Esta cuenta es vulnerable. Visite el servicio y cambie la contraseña."
       ],
@@ -1926,10 +1929,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
-        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo los elementos"
@@ -4436,6 +4435,9 @@
       "Get Started": [
         "Comenzar"
       ],
+      "Hidden vaults": [
+        "Bóvedas ocultas"
+      ],
       "Hide-my-email aliases": [
         "Alias de hide-my-email"
       ],
@@ -4700,6 +4702,9 @@
       ],
       "Vault shared with you": [
         "Bóveda compartida con usted"
+      ],
+      "Visible vaults": [
+        "Bóvedas visibles"
       ],
       "Want to learn more?": [
         "¿Desea saber más?"

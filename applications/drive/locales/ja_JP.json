@@ -981,6 +981,9 @@
       "Show advanced PGP settings": [
         "拡張 PGP 設定を表示"
       ],
+      "Show location": [
+        "場所を表示"
+      ],
       "Show more": [
         "さらに表示"
       ],
@@ -3152,9 +3155,6 @@
       "/month": [
         "/ 月"
       ],
-      "1 TB of storage to share": [
-        "1 TBのストレージを共有"
-      ],
       "2 user accounts": [
         "2 ユーザーアカウント"
       ],
@@ -5276,6 +5276,9 @@
       "Download current logs": [
         "現在のログをダウンロード"
       ],
+      "Download Failed": [
+        "ダウンロード失敗"
+      ],
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName }のダウンロードは中断されます"
       ],
@@ -6380,6 +6383,9 @@
       "upgrade your storage": [
         "ストレージをアップグレード"
       ],
+      "Upload Failed": [
+        "アップロードに失敗しました"
+      ],
       "Uploaded": [
         "アップロード完了"
       ],
@@ -6424,6 +6430,9 @@
       ],
       "VPN IP": [
         "VPN IP"
+      ],
+      "Waiting": [
+        "待機中"
       ],
       "Want to sync files faster?": [
         "ファイルをより速く同期したいですか?"
@@ -9765,9 +9774,6 @@
       ],
       "Your payment is still being processed": [
         "お支払いが現在処理中です"
-      ],
-      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
-        "お客様のサブスクリプションには現在、既存の割引が適用されています。この新しいプロモーションに移行すると、既存の割引は適用されなくなります。"
       ]
     },
     "Payments.Error": {
@@ -12606,6 +12612,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: お客様のプライバシーを尊重するAIアシスタント"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
       ]

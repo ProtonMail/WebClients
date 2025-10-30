@@ -981,6 +981,9 @@
       "Show advanced PGP settings": [
         "고급 PGP 설정 보기"
       ],
+      "Show location": [
+        "위치 표시"
+      ],
       "Show more": [
         "더보기"
       ],
@@ -3152,8 +3155,8 @@
       "/month": [
         "/월간"
       ],
-      "1 TB of storage to share": [
-        "공유 가능한 1 TB 저장 공간"
+      "2 TB of storage to share": [
+        "공유 가능한 2 TB 저장 공간"
       ],
       "2 user accounts": [
         "2개 사용자 계정"
@@ -3807,6 +3810,9 @@
       ],
       "Unknown payment token status": [
         "알 수 없는 결제 토큰 상태"
+      ],
+      "Upload failed": [
+        "업로드 실패"
       ],
       "Upload for this folder is temporarily disabled": [
         "이 폴더에 대한 업로드가 일시적으로 비활성화 되었습니다."
@@ -6380,6 +6386,9 @@
       "upgrade your storage": [
         "일 남았습니다"
       ],
+      "Upload Failed": [
+        "업로드 실패"
+      ],
       "Uploaded": [
         "업로드 완료"
       ],
@@ -6424,6 +6433,9 @@
       ],
       "VPN IP": [
         "VPN IP"
+      ],
+      "Waiting": [
+        "대기 중"
       ],
       "Want to sync files faster?": [
         "더 빠른 동기화를 원하세요?"
@@ -9766,8 +9778,8 @@
       "Your payment is still being processed": [
         "회원님의 결제가 아직 처리 중입니다"
       ],
-      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
-        "구독에 현재 기존 할인이 적용되어 있습니다. 이 새로운 프로모션으로 변경하시면 기존 할인이 더 이상 적용되지 않습니다."
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "구독에 현재 기존 할인이 적용되어 있습니다. 새로운 프로모션으로 변경하면 기존 할인이 더 이상 적용되지 않습니다."
       ]
     },
     "Payments.Error": {
@@ -12603,6 +12615,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: 당신의 프라이버시를 존중하는 AI 어시스턴트"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
       ]

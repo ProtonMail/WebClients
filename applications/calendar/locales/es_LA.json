@@ -219,6 +219,9 @@
       "Copy alias “${ name }”": [
         "Copiar el alias «${ name }»"
       ],
+      "Copy Booking link": [
+        "Copiar enlace de la reserva"
+      ],
       "Copy email address": [
         "Copiar dirección de correo"
       ],
@@ -237,14 +240,23 @@
       "Create": [
         "Crear"
       ],
+      "Create a booking page": [
+        "Crear una página de reservas"
+      ],
       "Create a new bookings page": [
         "Crear una página de reservas"
       ],
       "Create a new contact group": [
         "Crear un grupo de contactos nuevo"
       ],
+      "Create an event": [
+        "Crear un evento"
+      ],
       "Create and copy alias": [
         "Crear y copiar alias"
+      ],
+      "Create booking page": [
+        "Crear página de reservas"
       ],
       "Create calendar": [
         "Crear calendario"
@@ -475,6 +487,9 @@
       ],
       "Increase": [
         "Aumentar"
+      ],
+      "Join ${ CALENDAR_APP_NAME }": [
+        "Unirse a ${ CALENDAR_APP_NAME }"
       ],
       "Join calendar": [
         "Unirse al calendario"
@@ -1315,6 +1330,9 @@
       "1 user account": [
         "1 cuenta de usuario"
       ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB de almacenamiento: 40 veces su plan actual"
+      ],
       "6 user accounts": [
         "6 cuentas de usuario"
       ],
@@ -1352,6 +1370,9 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Un solo pago de ${ amount }"
+      ],
+      "forever": [
+        "para siempre"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Se renueva después de 1 mes por ${ regularAmount }."
@@ -3305,8 +3326,8 @@
       "/month": [
         "/mes"
       ],
-      "1 TB of storage to share": [
-        "1 TB de almacenamiento para compartir"
+      "2 TB of storage to share": [
+        "2 TB de almacenamiento para compartir"
       ],
       "2 user accounts": [
         "2 cuentas de usuario"
@@ -3320,7 +3341,7 @@
     },
     "Duo offer: Link": {
       "Get 4x more storage": [
-        "Obtén 4 veces más almacenamiento"
+        "Obtener 4 veces más almacenamiento"
       ],
       "Share your plan": [
         "Comparta su plan"
@@ -4961,6 +4982,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesita permiso para ${ enableDesktopNotifications }."
       ],
+      "${ booking.duration } min duration": [
+        "${ booking.duration } min de duración"
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistente de escritura ${ BRAND_NAME } Scribe"
       ],
@@ -5098,6 +5122,9 @@
       "30-day money-back guarantee.": [
         "30 días de garantía de devolución del dinero."
       ],
+      "A booking slot cannot be added in the past.": [
+        "No se puede añadir un espacio de reserva en el pasado."
+      ],
       "A cancellation email will be sent to removed participants.": [
         "Se enviará un correo de cancelación a los participantes eliminados."
       ],
@@ -5220,6 +5247,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Ciclo de facturación: ${ text }"
+      ],
+      "Booking page example": [
+        "Ejemplo de página de reservas"
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Impulse la identidad de marca de su organización y cree una experiencia en línea más consistente para sus usuarios."
@@ -5586,6 +5616,9 @@
       "Learn what to do ${ dataLeakedLink }": [
         "Aprenda qué hacer ${ dataLeakedLink }"
       ],
+      "Let others book time with you automatically. No back-and-forth emails. Share a link, and stay in control of your availability.": [
+        "Permita que otros reserven con usted automáticamente. Comparta un enlace y mantenga el control de su disponibilidad."
+      ],
       "Link copied to clipboard": [
         "Enlace copiado al portapapeles"
       ],
@@ -5846,6 +5879,9 @@
       "Setting up your new address…": [
         "Configurando su nueva dirección…"
       ],
+      "Share this page to let others book time in your calendar.": [
+        "Comparta esta página para permitir a otros reservar una hora en su calendario."
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como es un usuario leal, la cuenta tiene activadas funciones adicionales."
       ],
@@ -6038,6 +6074,9 @@
       ],
       "VPN IP": [
         "IP de VPN"
+      ],
+      "Want to create your own booking page?": [
+        "¿Desea crear su propia página de reservas?"
       ],
       "Warning": [
         "Advertencia"
@@ -6732,6 +6771,9 @@
       ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "Obtener la oferta"
       ],
       "Hide password": [
         "Ocultar contraseña"
@@ -8968,6 +9010,9 @@
       "Advanced account protection": [
         "Protección de cuentas avanzada"
       ],
+      "File attachments (up to 10GB)": [
+        "Archivos adjuntos (hasta 10 GB)"
+      ],
       "Team policies": [
         "Políticas de equipo"
       ]
@@ -9108,6 +9153,10 @@
         "El cupón es válido por ${ couponRedemptions } renovación.",
         "El cupón es válido por ${ couponRedemptions } renovaciones."
       ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "El precio especial con descuento es válido para el primer (${ subscriptionLength }) mes",
+        "El precio especial con descuento es válido para los primeros ${ subscriptionLength } meses"
+      ],
       "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "El precio especial con descuento es válido para el primer mes. El cupón es válido para ${ couponRedemptions } renovación. Después se renovará automáticamente por ${ renewPriceStr } por 1 mes. Puede cancelarlo en cualquier momento.",
         "El precio especial con descuento es válido para el primer mes. El cupón es válido para ${ couponRedemptions } renovaciones. Después se renovará automáticamente por ${ renewPriceStr } por 1 mes. Puede cancelarlo en cualquier momento."
@@ -9163,7 +9212,7 @@
       "Your payment is still being processed": [
         "Su pago aún está siendo procesado"
       ],
-      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Su suscripción actualmente tiene un descuento. Cambiar a esta promoción nueva significa que el descuento existente ya no se aplicará."
       ]
     },
@@ -10770,6 +10819,9 @@
       "Billing details updated": [
         "Detalles de facturación actualizados"
       ],
+      "Booking link copied to clipboard": [
+        "Enlace de la reserva copiado al portapapeles"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Calendario agregado. Puede tomar unos minutos en sincronizarse."
       ],
@@ -11162,6 +11214,9 @@
       "Birthday": [
         "Cumpleaños"
       ],
+      "Booking page": [
+        "Página de reservas"
+      ],
       "Calendar": [
         "Calendario"
       ],
@@ -11525,6 +11580,9 @@
       "Reactivate calendar keys": [
         "Reactivar claves del calendario"
       ],
+      "Ready to automate your scheduling?": [
+        "¿Listo para automatizar su programación?"
+      ],
       "Recommended": [
         "Recomendado"
       ],
@@ -11660,6 +11718,12 @@
       "Summary": [
         "Resumen"
       ],
+      "This booking page does not exist": [
+        "Esta página de reservas no existe"
+      ],
+      "This booking page has expired": [
+        "Esta página de reservas ha expirado"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Active ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -11749,6 +11813,9 @@
       ],
       "Your account is protected": [
         "La cuenta está protegida"
+      ],
+      "Your booking page is ready": [
+        "Su página de reservas está lista"
       ],
       "Your calendar link": [
         "Enlace a el calendario"

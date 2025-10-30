@@ -61,9 +61,6 @@
       "Cancel trial and pay": [
         "Zrušiť skúšobné obdobie a zaplatiť"
       ],
-      "Change password": [
-        "Zmeniť heslo"
-      ],
       "Chat with us": [
         "Komunikácia s nami"
       ],
@@ -133,15 +130,6 @@
       "Edit": [
         "Upraviť"
       ],
-      "Edit email address": [
-        "Upraviť emailovú adresu"
-      ],
-      "Edit phone number": [
-        "Upraviť telefónne číslo"
-      ],
-      "Edit sign-in details": [
-        "Upraviť prihlasovacie údaje"
-      ],
       "Edit subscription": [
         "Upraviť odber"
       ],
@@ -159,9 +147,6 @@
       ],
       "Get the apps": [
         "Stiahnť aplikácie"
-      ],
-      "Get verification code": [
-        "Odoslať overovací kód"
       ],
       "Go to ${ planOrAppName }": [
         "Prejsť do ${ planOrAppName }"
@@ -280,12 +265,6 @@
       "Request a feature": [
         "Požiadavka na funkciu"
       ],
-      "Request new code": [
-        "Vyžiadajte si nový kód"
-      ],
-      "Resend code": [
-        "Znovu odoslať kód"
-      ],
       "Save": [
         "Uložiť"
       ],
@@ -358,9 +337,6 @@
       "Try again": [
         "Skús znova"
       ],
-      "Try another method": [
-        "Skúsiť inú metódu"
-      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Zapnúť ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -405,9 +381,6 @@
       ],
       "Verify": [
         "Overiť"
-      ],
-      "Verify account": [
-        "Overiť účet"
       ],
       "View invoice": [
         "Zobraziť faktúru"
@@ -2213,9 +2186,6 @@
       "Email is not valid": [
         "Emailová adresa nie je platná"
       ],
-      "Enter 6 digits": [
-        "Zadajte 6 číslic"
-      ],
       "Error connecting to the Bitcoin API.": [
         "Chyba pri pripojovaní k Bitcoin API."
       ],
@@ -2242,9 +2212,6 @@
       ],
       "Invalid postal code": [
         "Neplatné smerovacie číslo"
-      ],
-      "Invalid verification code": [
-        "Nesprávny overovací kód"
       ],
       "Invalid ZIP code": [
         "Neplatné PSČ"
@@ -2571,23 +2538,6 @@
         "Služby"
       ]
     },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "Email"
-      ],
-      "Manual": [
-        "Ručne"
-      ],
-      "No verification method available": [
-        "Nie sú k dispozícii žiadne metódy overovania"
-      ],
-      "SMS": [
-        "SMS"
-      ]
-    },
     "Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe, asistent písania"
@@ -2631,9 +2581,6 @@
       "30-day money-back guarantee.": [
         "30-dňová záruka vrátenia peňazí."
       ],
-      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Telefónne číslo možno použiť iba na overenie jedného účtu ${ BRAND_NAME }"
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Používateľ je účet spojený s jedným používateľským menom, poštovou schránkou a osobou"
       ],
@@ -2667,9 +2614,6 @@
       "Balance from your previous subscription": [
         "Zostatok z vášho predchádzajúceho predplatného"
       ],
-      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Pred vyžiadaním nového overovacieho kódu skontrolujte priečinok spam a skontrolujte, či je adresa ${ strong } správna."
-      ],
       "Billing cycle: ${ text }": [
         "Fakturačné obdobie: ${ text }"
       ],
@@ -2678,9 +2622,6 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ak prejdete na bezplatnú verziu, natrvalo stratíte súčasné výhody a to i v budúcnosti, ak opäť upgradujte svoj účet na platenú verziu."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Kliknite na \"Požiadať o nový kód\" pre zaslanie nového overovacieho kódu na ${ strong }. Ak je toto telefónne číslo nesprávne, kliknite na tlačidlo \"Upraviť\" pre jeho opravu."
       ],
       "Country code": [
         "Kód krajiny"
@@ -2736,9 +2677,6 @@
       "Each code can only be used once": [
         "Každý kód je možné použiť iba raz"
       ],
-      "Edit email address": [
-        "Upraviť emailovú adresu"
-      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Emailový hosting je dostupný len pre domény, ktoré už vlastníte. Registrácia domény nie je momentálne dostupná prostredníctvom ${ BRAND_NAME }. Môžete hostiť email pre domény registrované u ktoréhokoľvek registrátora domén."
       ],
@@ -2750,9 +2688,6 @@
       ],
       "Enter the code from your authenticator app": [
         "Zadajte kód z vašej overovacej aplikácie"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "Zadajte overovací kód, ktorý bol odoslaný na ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Zadajte overovací kód. Číslice ${ digit }."
@@ -2769,14 +2704,8 @@
       "Expired": [
         "Platnosť vypršala"
       ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Ak máte problémy s vytvorením účtu, požiadajte prosím o pozvánku a my odpovieme do jedného pracovného dňa."
-      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Zrušením nebude vaše predplatné ${ planTitle } obnovené, keď uplynie dňa ${ expiryDate } jeho platnosť."
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "Ak email v priečinku doručenej pošty nenájdete, skontrolujte priečinok so spamom, prosím."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Ak znížite predplatné, stratíte prístup k plateným funkciám ${ MAIL_APP_NAME } a ${ VPN_APP_NAME }."
@@ -2934,9 +2863,6 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Na dokončenie platby pošlite ${ btcAmountBold } na nižšie uvedenú adresu."
       ],
-      "To fight spam and abuse, please verify you are human.": [
-        "Aby ste zamedzili spamu a obťažovaniu, potvrďte, že ste človek."
-      ],
       "Total email addresses": [
         "Všetky e-mailové adresy"
       ],
@@ -2982,20 +2908,11 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Na dokončenie tejto transakcie vás presmerujeme na PayPal v novej karte prehliadača. Ak používate blokovanie vyskakovacích okien, pred pokračovaním ho prosím vypnite."
       ],
-      "We'll send a new verification code to ${ strong }": [
-        "Na adresu ${ strong } pošleme nový overovací kód"
-      ],
       "Week": [
         "Týždeň"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Pri nastavení dvojstupňového overenia poskytujeme kódy na obnovenie, ktoré môžete použiť na prihlásenie, ak stratíte prístup k vašej overovacej aplikácii."
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Chcete získať nový overovací kód alebo použiť alternatívnu metódu overovania?"
-      ],
-      "Would you like to receive a new verification code?": [
-        "Chcete získať nový overovací kód?"
       ],
       "Writing assistant": [
         "Asistent písania"
@@ -3020,9 +2937,6 @@
         "Môžete mať až ${ MAX_CALENDARS_FREE } kalendáre. Pred zrušením odberu odstráňte odkazy na zdieľané kalendáre a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre.",
         "Môžete mať až ${ MAX_CALENDARS_FREE } kalendárov. Pred zrušením odberu odstráňte odkazy na zdieľané kalendáre a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre.",
         "Môžete mať až ${ MAX_CALENDARS_FREE } kalendárov. Pred zrušením odberu odstráňte odkazy na zdieľané kalendáre a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre."
-      ],
-      "You can now return to the application to continue": [
-        "Teraz sa môžete vrátiť do aplikácie a pokračovať"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Môžete zapnúť notifikácie, aby ste dostali upozornenie, keď vám do tohto priečinka prídu nové správy."
@@ -3063,17 +2977,11 @@
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Vaše ${ plan } predplatné bude nahradené predplatným ${ PASS_SHORT_APP_NAME } Lifetime. Zostávajúci zostatok vášho predplatného bude pripísaný na váš účet. Dohoda o ${ PASS_SHORT_APP_NAME } doživotnom predplatnom nemá žiadnu cenu za obnovenie, je to jednorazová platba za doživotný prístup k ${ PASS_SHORT_APP_NAME }."
       ],
-      "Your email will only be used for this one-time verification.": [
-        "Váš email bude použitý iba pre toto jednorazové overenie."
-      ],
       "Your next billing date is ${ renewalTime }.": [
         "Váš ďalší dátum fakturácie je ${ renewalTime }"
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Váš ďalší dátum fakturácie je ${ renewalTime }. Ak potrebujete okamžitú zmenu plánu, kontaktujte podporu, prosím."
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "Vaše telefónne číslo bude použité iba pre toto jednorazové overenie."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Vaše naplánované predplatné sa začína ${ renewalTime } a bude automaticky obnovené každý ${ cycle } mesiac.",
@@ -3172,9 +3080,6 @@
       ],
       "City": [
         "Mesto"
-      ],
-      "Code is 6 digits without spaces": [
-        "Kód je 6 čísiel bez medzier"
       ],
       "Colors": [
         "Farby"
@@ -3275,9 +3180,6 @@
       "Payment method": [
         "Spôsob platby"
       ],
-      "Phone number": [
-        "Telefónne číslo"
-      ],
       "Postal code": [
         "PSČ"
       ],
@@ -3313,9 +3215,6 @@
       ],
       "Thomas": [
         "Tomáš"
-      ],
-      "Verification code": [
-        "Overovací kód"
       ],
       "What happened?": [
         "Čo sa stalo?"
@@ -3417,9 +3316,6 @@
       ],
       "Learn more": [
         "Zistiť viac"
-      ],
-      "Request an invite": [
-        "Požiadať o pozvánku"
       ],
       "settings": [
         "nastavenia"
@@ -4654,7 +4550,7 @@
       "Your payment is still being processed": [
         "Vaša platba sa stále spracováva"
       ],
-      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Vaše predplatné má v súčasnosti platnú zľavu. Prechodom na túto novú akciu sa existujúca zľava prestane uplatňovať."
       ]
     },
@@ -5258,9 +5154,6 @@
       "Billing details updated": [
         "Fakturačné údaje aktualizované"
       ],
-      "Code sent to ${ methodTo }": [
-        "Kód zaslaný na ${ methodTo }"
-      ],
       "Copied to clipboard": [
         "Skopírované do schránky"
       ],
@@ -5278,9 +5171,6 @@
       ],
       "Signature copied to clipboard": [
         "Podpis skopírovaný do schránky"
-      ],
-      "Verification successful": [
-        "Overenie prebehlo úspešne"
       ],
       "You have successfully canceled your subscription.": [
         "Úspešne ste zrušili svoje predplatné."
@@ -5357,12 +5247,6 @@
     "Title": {
       "${ feature } is now active": [
         "${ feature } je teraz aktívna"
-      ],
-      "Account restricted": [
-        "Obmedzený účet"
-      ],
-      "Account temporarily locked": [
-        "Účet dočasne zablokovaný"
       ],
       "Add credit/debit card": [
         "Pridať platobnú kartu"
@@ -5460,14 +5344,8 @@
       "Help center": [
         "Centrum pomoci"
       ],
-      "Human verification": [
-        "Overenie, že nie ste robot"
-      ],
       "Import emails, calendars, contacts": [
         "Importovať emaily, kalendáre a kontakty"
-      ],
-      "Invalid verification code": [
-        "Nesprávny overovací kód"
       ],
       "Minicalendar": [
         "Minikalendár"
@@ -5492,9 +5370,6 @@
       ],
       "Report a problem": [
         "Nahlásiť problém"
-      ],
-      "Request new code": [
-        "Vyžiadať nový kód"
       ],
       "Select a plan": [
         "Vyberte plán"
