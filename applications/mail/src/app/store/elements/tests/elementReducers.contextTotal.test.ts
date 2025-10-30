@@ -2,7 +2,6 @@ import type { Draft } from '@reduxjs/toolkit';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { getElementContextIdentifier } from 'proton-mail/helpers/elements';
 import type { ConversationLabel } from 'proton-mail/models/conversation';
 import type { ElementsState } from 'proton-mail/store/elements/elementsTypes';
 
@@ -18,6 +17,7 @@ import {
     MESSAGE_ID,
     customFolders,
     customLabels,
+    generateElementContextIdentifier,
     setupConversation,
     setupMessage,
 } from './elementsReducer.test.helpers';
@@ -145,25 +145,27 @@ describe('Update context Total', () => {
                 [inboxConversationID]: inputInboxConversation,
             };
 
+            testState.params.filter = {};
+            testState.params.sort = { sort: 'Time', desc: true };
+            testState.params.conversationMode = true;
+
+            const inboxContext = generateElementContextIdentifier({
+                labelID: MAILBOX_LABEL_IDS.INBOX,
+                conversationMode: true,
+            });
+            const archiveContext = generateElementContextIdentifier({
+                labelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                conversationMode: true,
+            });
+            const customContext = generateElementContextIdentifier({
+                labelID: CUSTOM_LABEL_ID1,
+                conversationMode: true,
+            });
+
             testState.total = {
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.INBOX,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: true,
-                })]: 2,
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: true,
-                })]: 1,
-                [getElementContextIdentifier({
-                    labelID: CUSTOM_LABEL_ID1,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: true,
-                })]: 1,
+                [inboxContext]: 2,
+                [archiveContext]: 1,
+                [customContext]: 1,
             };
 
             labelConversationsPending(testState, {
@@ -182,24 +184,9 @@ describe('Update context Total', () => {
 
             const updatedTotal = testState.total;
             expect(updatedTotal).toEqual({
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.INBOX,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: true,
-                })]: 1,
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: true,
-                })]: 2,
-                [getElementContextIdentifier({
-                    labelID: CUSTOM_LABEL_ID1,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: true,
-                })]: 1,
+                [inboxContext]: 1,
+                [archiveContext]: 2,
+                [customContext]: 1,
             });
         });
 
@@ -317,25 +304,27 @@ describe('Update context Total', () => {
                 [inboxConversationID]: inputInboxConversation,
             };
 
+            testState.params.filter = {};
+            testState.params.sort = { sort: 'Time', desc: true };
+            testState.params.conversationMode = true;
+
+            const inboxContext = generateElementContextIdentifier({
+                labelID: MAILBOX_LABEL_IDS.INBOX,
+                conversationMode: true,
+            });
+            const archiveContext = generateElementContextIdentifier({
+                labelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                conversationMode: true,
+            });
+            const customContext = generateElementContextIdentifier({
+                labelID: CUSTOM_LABEL_ID1,
+                conversationMode: true,
+            });
+
             testState.total = {
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.INBOX,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: true,
-                })]: 2,
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: true,
-                })]: 2,
-                [getElementContextIdentifier({
-                    labelID: CUSTOM_LABEL_ID1,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: true,
-                })]: 1,
+                [inboxContext]: 2,
+                [archiveContext]: 2,
+                [customContext]: 1,
             };
 
             labelConversationsPending(testState, {
@@ -354,24 +343,9 @@ describe('Update context Total', () => {
 
             const updatedTotal = testState.total;
             expect(updatedTotal).toEqual({
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.INBOX,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: true,
-                })]: 1,
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: true,
-                })]: 2,
-                [getElementContextIdentifier({
-                    labelID: CUSTOM_LABEL_ID1,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: true,
-                })]: 1,
+                [inboxContext]: 1,
+                [archiveContext]: 2,
+                [customContext]: 1,
             });
         });
 
@@ -380,12 +354,6 @@ describe('Update context Total', () => {
                 conversationLabels: [
                     {
                         ID: MAILBOX_LABEL_IDS.INBOX,
-                        ContextNumMessages: 2,
-                        ContextNumUnread: 1,
-                        ContextNumAttachments: 1,
-                    },
-                    {
-                        ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
                         ContextNumMessages: 2,
                         ContextNumUnread: 1,
                         ContextNumAttachments: 1,
@@ -483,37 +451,39 @@ describe('Update context Total', () => {
                 [inboxConversationID]: inputInboxConversation,
             };
 
+            testState.params.filter = {};
+            testState.params.sort = { sort: 'Time', desc: true };
+            testState.params.conversationMode = true;
+
+            const inboxContext = generateElementContextIdentifier({
+                labelID: MAILBOX_LABEL_IDS.INBOX,
+                conversationMode: true,
+            });
+            const archiveContext = generateElementContextIdentifier({
+                labelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                conversationMode: true,
+            });
+            const customContext = generateElementContextIdentifier({
+                labelID: CUSTOM_LABEL_ID1,
+                conversationMode: true,
+            });
+            const inboxUnreadOnContext = generateElementContextIdentifier({
+                labelID: MAILBOX_LABEL_IDS.INBOX,
+                conversationMode: true,
+                filter: { Unread: 1 },
+            });
+            const inboxUnreadOffContext = generateElementContextIdentifier({
+                labelID: MAILBOX_LABEL_IDS.INBOX,
+                conversationMode: true,
+                filter: { Unread: 0 },
+            });
+
             testState.total = {
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.INBOX,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: true,
-                })]: 2,
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.INBOX,
-                    filter: { Unread: 1 },
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: true,
-                })]: 1,
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.INBOX,
-                    filter: { Unread: 0 },
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: true,
-                })]: 1,
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: true,
-                })]: 2,
-                [getElementContextIdentifier({
-                    labelID: CUSTOM_LABEL_ID1,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: true,
-                })]: 1,
+                [inboxContext]: 2,
+                [inboxUnreadOnContext]: 1,
+                [inboxUnreadOffContext]: 1,
+                [archiveContext]: 2,
+                [customContext]: 1,
             };
 
             labelConversationsPending(testState, {
@@ -532,30 +502,11 @@ describe('Update context Total', () => {
 
             const updatedTotal = testState.total;
             expect(updatedTotal).toEqual({
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.INBOX,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: true,
-                })]: 1,
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.INBOX,
-                    filter: { Unread: 0 },
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: true,
-                })]: 1,
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: true,
-                })]: 2,
-                [getElementContextIdentifier({
-                    labelID: CUSTOM_LABEL_ID1,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: true,
-                })]: 1,
+                [inboxContext]: 1,
+                [inboxUnreadOnContext]: 0,
+                [inboxUnreadOffContext]: 1,
+                [archiveContext]: 3,
+                [customContext]: 1,
             });
         });
 
@@ -661,49 +612,48 @@ describe('Update context Total', () => {
                 [inboxConversationID]: inputInboxConversation,
             };
 
+            testState.params.filter = {};
+            testState.params.sort = { sort: 'Time', desc: true };
+            testState.params.conversationMode = true;
+
+            const inboxContext = generateElementContextIdentifier({
+                labelID: MAILBOX_LABEL_IDS.INBOX,
+                conversationMode: true,
+            });
+            const trashContext = generateElementContextIdentifier({
+                labelID: MAILBOX_LABEL_IDS.TRASH,
+                conversationMode: true,
+            });
+            const starredContext = generateElementContextIdentifier({
+                labelID: MAILBOX_LABEL_IDS.STARRED,
+                conversationMode: true,
+            });
+            const almostAllMailContext = generateElementContextIdentifier({
+                labelID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                conversationMode: true,
+            });
+            const allMailContext = generateElementContextIdentifier({
+                labelID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                conversationMode: true,
+            });
+            const allMailUnreadOnContext = generateElementContextIdentifier({
+                labelID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                conversationMode: true,
+                filter: { Unread: 1 },
+            });
+            const customContext = generateElementContextIdentifier({
+                labelID: CUSTOM_LABEL_ID1,
+                conversationMode: true,
+            });
+
             testState.total = {
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.INBOX,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: true,
-                })]: 2,
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.TRASH,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: true,
-                })]: 1,
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.STARRED,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: true,
-                })]: 1,
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: true,
-                })]: 2,
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.ALL_MAIL,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: true,
-                })]: 3,
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.ALL_MAIL,
-                    filter: { Unread: 1 },
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: true,
-                })]: 1,
-                [getElementContextIdentifier({
-                    labelID: CUSTOM_LABEL_ID1,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: true,
-                })]: 1,
+                [inboxContext]: 2,
+                [trashContext]: 1,
+                [starredContext]: 1,
+                [almostAllMailContext]: 2,
+                [allMailContext]: 3,
+                [allMailUnreadOnContext]: 1,
+                [customContext]: 1,
             };
 
             labelConversationsPending(testState, {
@@ -722,30 +672,13 @@ describe('Update context Total', () => {
 
             const updatedTotal = testState.total;
             expect(updatedTotal).toEqual({
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.INBOX,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: true,
-                })]: 1,
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.TRASH,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: true,
-                })]: 2,
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: true,
-                })]: 1,
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.ALL_MAIL,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: true,
-                })]: 3,
+                [inboxContext]: 1,
+                [trashContext]: 2,
+                [starredContext]: 0,
+                [almostAllMailContext]: 1,
+                [allMailContext]: 3,
+                [allMailUnreadOnContext]: 0,
+                [customContext]: 0,
             });
         });
     });
@@ -818,19 +751,16 @@ describe('Update context Total', () => {
                 [inboxConversationID]: inputInboxConversation,
             };
 
+            testState.params.filter = {};
+            testState.params.sort = { sort: 'Time', desc: true };
+            testState.params.conversationMode = false;
+
+            const inboxContext = generateElementContextIdentifier({ labelID: MAILBOX_LABEL_IDS.INBOX });
+            const customContext = generateElementContextIdentifier({ labelID: CUSTOM_LABEL_ID1 });
+
             testState.total = {
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.INBOX,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: true,
-                })]: 2,
-                [getElementContextIdentifier({
-                    labelID: CUSTOM_LABEL_ID1,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: true,
-                })]: 1,
+                [inboxContext]: 2,
+                [customContext]: 1,
             };
 
             unlabelConversationsPending(testState, {
@@ -840,6 +770,7 @@ describe('Update context Total', () => {
                     arg: {
                         conversations: [conversation],
                         destinationLabelID: CUSTOM_LABEL_ID1,
+                        sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -848,12 +779,8 @@ describe('Update context Total', () => {
 
             const updatedTotal = testState.total;
             expect(updatedTotal).toEqual({
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.INBOX,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: true,
-                })]: 2,
+                [inboxContext]: 2,
+                [customContext]: 1,
             });
         });
     });
@@ -892,29 +819,22 @@ describe('Update context Total', () => {
                 [inboxMessageID]: inputInboxMessage,
             };
 
+            testState.params.filter = {};
+            testState.params.sort = { sort: 'Time', desc: true };
+            testState.params.conversationMode = false;
+
+            const inboxContext = generateElementContextIdentifier({ labelID: MAILBOX_LABEL_IDS.INBOX });
+            const archiveContext = generateElementContextIdentifier({ labelID: MAILBOX_LABEL_IDS.ARCHIVE });
+            const customLabelContext = generateElementContextIdentifier({ labelID: CUSTOM_LABEL_ID1 });
+
             testState.total = {
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.INBOX,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: false,
-                })]: 2,
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: false,
-                })]: 1,
-                [getElementContextIdentifier({
-                    labelID: CUSTOM_LABEL_ID1,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: false,
-                })]: 1,
+                [inboxContext]: 2,
+                [archiveContext]: 1,
+                [customLabelContext]: 1,
             };
 
             labelMessagesPending(testState, {
-                type: 'mailbox/labelConversations',
+                type: 'mailbox/labelMessages',
                 payload: undefined,
                 meta: {
                     arg: {
@@ -929,24 +849,9 @@ describe('Update context Total', () => {
 
             const updatedTotal = testState.total;
             expect(updatedTotal).toEqual({
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.INBOX,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: false,
-                })]: 1,
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: false,
-                })]: 2,
-                [getElementContextIdentifier({
-                    labelID: CUSTOM_LABEL_ID1,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: false,
-                })]: 1,
+                [inboxContext]: 1,
+                [archiveContext]: 2,
+                [customLabelContext]: 1,
             });
         });
 
@@ -983,41 +888,32 @@ describe('Update context Total', () => {
                 [inboxMessageID]: inputInboxMessage,
             };
 
+            testState.params.filter = {};
+            testState.params.sort = { sort: 'Time', desc: true };
+            testState.params.conversationMode = false;
+
+            const inboxContext = generateElementContextIdentifier({ labelID: MAILBOX_LABEL_IDS.INBOX });
+            const archiveContext = generateElementContextIdentifier({ labelID: MAILBOX_LABEL_IDS.ARCHIVE });
+            const customLabelContext = generateElementContextIdentifier({ labelID: CUSTOM_LABEL_ID1 });
+            const inboxUnreadOnContext = generateElementContextIdentifier({
+                labelID: MAILBOX_LABEL_IDS.INBOX,
+                filter: { Unread: 1 },
+            });
+            const inboxUnreadOffContext = generateElementContextIdentifier({
+                labelID: MAILBOX_LABEL_IDS.INBOX,
+                filter: { Unread: 0 },
+            });
+
             testState.total = {
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.INBOX,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: false,
-                })]: 2,
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.INBOX,
-                    filter: { Unread: 1 },
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: false,
-                })]: 1,
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.INBOX,
-                    filter: { Unread: 0 },
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: false,
-                })]: 1,
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: false,
-                })]: 1,
-                [getElementContextIdentifier({
-                    labelID: CUSTOM_LABEL_ID1,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: false,
-                })]: 1,
+                [inboxContext]: 2,
+                [inboxUnreadOnContext]: 1,
+                [inboxUnreadOffContext]: 1,
+                [archiveContext]: 1,
+                [customLabelContext]: 1,
             };
 
             labelMessagesPending(testState, {
-                type: 'mailbox/labelConversations',
+                type: 'mailbox/labelMessages',
                 payload: undefined,
                 meta: {
                     arg: {
@@ -1032,30 +928,11 @@ describe('Update context Total', () => {
 
             const updatedTotal = testState.total;
             expect(updatedTotal).toEqual({
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.INBOX,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: false,
-                })]: 1,
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.INBOX,
-                    filter: { Unread: 0 },
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: false,
-                })]: 1,
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: false,
-                })]: 2,
-                [getElementContextIdentifier({
-                    labelID: CUSTOM_LABEL_ID1,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: false,
-                })]: 1,
+                [inboxContext]: 1,
+                [inboxUnreadOnContext]: 0,
+                [inboxUnreadOffContext]: 1,
+                [archiveContext]: 2,
+                [customLabelContext]: 1,
             });
         });
 
@@ -1093,53 +970,35 @@ describe('Update context Total', () => {
                 [inboxMessageID]: inputInboxMessage,
             };
 
+            testState.params.filter = {};
+            testState.params.sort = { sort: 'Time', desc: true };
+            testState.params.conversationMode = false;
+
+            const inboxContext = generateElementContextIdentifier({ labelID: MAILBOX_LABEL_IDS.INBOX });
+            const almostAllMailContext = generateElementContextIdentifier({
+                labelID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+            });
+            const allMailContext = generateElementContextIdentifier({ labelID: MAILBOX_LABEL_IDS.ALL_MAIL });
+            const trashContext = generateElementContextIdentifier({ labelID: MAILBOX_LABEL_IDS.TRASH });
+            const starredContext = generateElementContextIdentifier({ labelID: MAILBOX_LABEL_IDS.STARRED });
+            const customLabelContext = generateElementContextIdentifier({ labelID: CUSTOM_LABEL_ID1 });
+            const allMailUnreadOnContext = generateElementContextIdentifier({
+                labelID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                filter: { Unread: 1 },
+            });
+
             testState.total = {
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.INBOX,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: false,
-                })]: 2,
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: false,
-                })]: 2,
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.ALL_MAIL,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: false,
-                })]: 3,
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.ALL_MAIL,
-                    filter: { Unread: 1 },
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: false,
-                })]: 1,
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.TRASH,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: false,
-                })]: 1,
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.STARRED,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: false,
-                })]: 1,
-                [getElementContextIdentifier({
-                    labelID: CUSTOM_LABEL_ID1,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: false,
-                })]: 1,
+                [inboxContext]: 2,
+                [almostAllMailContext]: 2,
+                [allMailContext]: 3,
+                [allMailUnreadOnContext]: 1,
+                [trashContext]: 1,
+                [starredContext]: 1,
+                [customLabelContext]: 1,
             };
 
             labelMessagesPending(testState, {
-                type: 'mailbox/labelConversations',
+                type: 'mailbox/labelMessages',
                 payload: undefined,
                 meta: {
                     arg: {
@@ -1154,30 +1013,13 @@ describe('Update context Total', () => {
 
             const updatedTotal = testState.total;
             expect(updatedTotal).toEqual({
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.INBOX,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: false,
-                })]: 1,
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.ALL_MAIL,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: false,
-                })]: 3,
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: false,
-                })]: 1,
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.TRASH,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: false,
-                })]: 2,
+                [inboxContext]: 1,
+                [almostAllMailContext]: 1,
+                [allMailContext]: 3,
+                [allMailUnreadOnContext]: 0,
+                [trashContext]: 2,
+                [starredContext]: 0,
+                [customLabelContext]: 0,
             });
         });
     });
@@ -1208,27 +1050,25 @@ describe('Update context Total', () => {
                 [inboxMessageID]: inputInboxMessage,
             };
 
+            testState.params.filter = {};
+            testState.params.sort = { sort: 'Time', desc: true };
+            testState.params.conversationMode = false;
+
+            const inboxContext = generateElementContextIdentifier({ labelID: MAILBOX_LABEL_IDS.INBOX });
+            const customLabelContext = generateElementContextIdentifier({ labelID: CUSTOM_LABEL_ID1 });
+
             testState.total = {
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.INBOX,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: false,
-                })]: 2,
-                [getElementContextIdentifier({
-                    labelID: CUSTOM_LABEL_ID1,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: false,
-                })]: 1,
+                [inboxContext]: 2,
+                [customLabelContext]: 1,
             };
 
             unlabelMessagesPending(testState, {
-                type: 'mailbox/labelConversations',
+                type: 'mailbox/unlabelMessages',
                 payload: undefined,
                 meta: {
                     arg: {
                         elements: [message],
+                        sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                         destinationLabelID: CUSTOM_LABEL_ID1,
                         labels: customLabels,
                         folders: customFolders,
@@ -1238,12 +1078,8 @@ describe('Update context Total', () => {
 
             const updatedTotal = testState.total;
             expect(updatedTotal).toEqual({
-                [getElementContextIdentifier({
-                    labelID: MAILBOX_LABEL_IDS.INBOX,
-                    filter: {},
-                    sort: { sort: 'Time', desc: true },
-                    conversationMode: false,
-                })]: 2,
+                [inboxContext]: 2,
+                [customLabelContext]: 0,
             });
         });
     });
