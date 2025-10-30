@@ -114,13 +114,13 @@ export const createApi = ({ config, getAuth = getDynamicAuth, threshold }: ApiFa
                 /** If the server time isn't greater than the last seen
                  * server time value - then we may be dealing with a cached
                  * response. In such cases, avoid mutating API state */
+
                 if (sideEffects && serverTime.getTime() >= latestServerTime) {
+                    const broadcast = !state.get('online') || state.get('unreachable');
                     state.set('serverTime', updateServerTime(serverTime));
                     state.set('unreachable', false);
-                    state.set('online', (online) => {
-                        if (!online) pubsub.publish({ type: 'network', online: true });
-                        return true;
-                    });
+                    state.set('online', true);
+                    if (broadcast) pubsub.publish({ type: 'connectivity', online: true, unreachable: false });
                 }
 
                 return Promise.resolve(
@@ -147,21 +147,20 @@ export const createApi = ({ config, getAuth = getDynamicAuth, threshold }: ApiFa
                 const networkError = code === PassErrorCode.SERVICE_NETWORK_ERROR;
                 const missingScope = code === PassErrorCode.MISSING_SCOPE;
                 const restricted = isAccessRestricted(code, options.url);
-                const offline = getIsOfflineError(e) || networkError;
+                const online = !(getIsOfflineError(e) || networkError);
                 const unreachable = getIsUnreachableError(e);
                 const sessionLocked = e.name === 'LockedSession';
                 const sessionInactive = e.name === 'InactiveSession' || code === PassErrorCode.SRP_ERROR;
+                const broadcast = state.get('online') !== online || state.get('unreachable') !== unreachable;
 
+                if (serverTime) state.set('serverTime', updateServerTime(serverTime));
                 state.set('appVersionBad', e.name === 'AppVersionBadError');
                 state.set('sessionInactive', sessionInactive);
                 state.set('sessionLocked', sessionLocked);
                 state.set('unreachable', unreachable);
-                state.set('online', (online) => {
-                    if (online && offline) pubsub.publish({ type: 'network', online: false });
-                    return !offline;
-                });
+                state.set('online', online);
 
-                if (serverTime) state.set('serverTime', updateServerTime(serverTime));
+                if (broadcast) pubsub.publish({ type: 'connectivity', online, unreachable });
                 if (sessionLocked) pubsub.publish({ type: 'session', status: 'locked' });
                 if (sessionInactive) pubsub.publish({ type: 'session', status: 'inactive', silent });
                 if (restricted) pubsub.publish({ type: 'session', status: 'restricted', error });
@@ -196,8 +195,6 @@ export const createApi = ({ config, getAuth = getDynamicAuth, threshold }: ApiFa
         state.set('queued', []);
         state.set('serverTime', undefined);
         state.set('appVersionBad', false);
-        state.set('online', true);
-        state.set('unreachable', false);
         state.set('sessionInactive', false);
         state.set('sessionLocked', false);
 
