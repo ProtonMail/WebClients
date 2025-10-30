@@ -723,6 +723,14 @@
         "Cargar desde el dispositivo"
       ]
     },
+    "collider_2025: b2b": {
+      "By ${ BRAND_NAME }": [
+        "Por ${ BRAND_NAME }"
+      ],
+      "For Business": [
+        "Para Negocios"
+      ]
+    },
     "collider_2025: Button": {
       "Close": [
         "Cerrar"
@@ -1560,6 +1568,9 @@
       ]
     },
     "collider_2025: Title": {
+      "${ LUMO_SHORT_APP_NAME } Business": [
+        "${ LUMO_SHORT_APP_NAME } Business"
+      ],
       "${ LUMO_SHORT_APP_NAME } Plus": [
         "${ LUMO_SHORT_APP_NAME } Plus"
       ],
@@ -1611,6 +1622,12 @@
     "collider_2025: Top nav link": {
       "About": [
         "Acerca de"
+      ],
+      "For Business": [
+        "Para Negocios"
+      ],
+      "New": [
+        "Nuevo"
       ],
       "Try ${ MAIL_APP_NAME }": [
         "Probar ${ MAIL_APP_NAME }"
@@ -3950,6 +3967,9 @@
       "Folder location": [
         "Ubicación de la carpeta"
       ],
+      "Get the deal": [
+        "Obtener la oferta"
+      ],
       "Hide password": [
         "Ocultar contraseña"
       ],
@@ -5105,6 +5125,9 @@
       "Advanced account protection": [
         "Protección de cuentas avanzada"
       ],
+      "File attachments (up to 10GB)": [
+        "Archivos adjuntos (hasta 10 GB)"
+      ],
       "Team policies": [
         "Políticas de equipo"
       ]
@@ -5225,6 +5248,10 @@
         "El cupón es válido por ${ couponRedemptions } renovación.",
         "El cupón es válido por ${ couponRedemptions } renovaciones."
       ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "El precio especial con descuento es válido para el primer (${ subscriptionLength }) mes",
+        "El precio especial con descuento es válido para los primeros ${ subscriptionLength } meses"
+      ],
       "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "El precio especial con descuento es válido para el primer mes. El cupón es válido para ${ couponRedemptions } renovación. Después se renovará automáticamente por ${ renewPriceStr } por 1 mes. Puede cancelarlo en cualquier momento.",
         "El precio especial con descuento es válido para el primer mes. El cupón es válido para ${ couponRedemptions } renovaciones. Después se renovará automáticamente por ${ renewPriceStr } por 1 mes. Puede cancelarlo en cualquier momento."
@@ -5280,7 +5307,7 @@
       "Your payment is still being processed": [
         "Su pago aún está siendo procesado"
       ],
-      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Su suscripción actualmente tiene un descuento. Cambiar a esta promoción nueva significa que el descuento existente ya no se aplicará."
       ]
     },

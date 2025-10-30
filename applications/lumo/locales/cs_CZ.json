@@ -737,6 +737,14 @@
         "Nahrát ze zařízení"
       ]
     },
+    "collider_2025: b2b": {
+      "By ${ BRAND_NAME }": [
+        "Od ${ BRAND_NAME }"
+      ],
+      "For Business": [
+        "Pro firmy"
+      ]
+    },
     "collider_2025: Button": {
       "Close": [
         "Zavřít"
@@ -1574,6 +1582,9 @@
       ]
     },
     "collider_2025: Title": {
+      "${ LUMO_SHORT_APP_NAME } Business": [
+        "${ LUMO_SHORT_APP_NAME } Business"
+      ],
       "${ LUMO_SHORT_APP_NAME } Plus": [
         "${ LUMO_SHORT_APP_NAME } Plus"
       ],
@@ -1625,6 +1636,12 @@
     "collider_2025: Top nav link": {
       "About": [
         "Informace"
+      ],
+      "For Business": [
+        "Pro firmy"
+      ],
+      "New": [
+        "Nové"
       ],
       "Try ${ MAIL_APP_NAME }": [
         "Vyzkoušejte ${ MAIL_APP_NAME }"
@@ -5402,8 +5419,8 @@
       "Your payment is still being processed": [
         "Vaše platba se stále zpracovává"
       ],
-      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
-        "Vaše předplatné má v současné době slevu. Přechodem na tuto novou akci bude stávající sleva zrušena."
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "Vaše předplatné má v současné době platnou slevu. Přechodem na tuto novou akci bude stávající sleva zrušena."
       ]
     },
     "Payments.Error": {
@@ -6180,6 +6197,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: AI asistent, který respektuje vaše soukromí"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Bezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
       ]
