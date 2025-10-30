@@ -16,12 +16,13 @@ import { type ProxiedSettings, getInitialSettings } from '@proton/pass/store/red
 import { AppStatus } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
 import { CSContext } from './context';
 import type { CSContextState, ContentScriptContext } from './types';
-import { hasPauseCriteria } from './utils';
+import { DEFAULT_PAUSE_CRITERIAS, combinePauseCriteria, hasPauseCriteria } from './utils';
 
 export type ContentScriptContextFactoryOptions = {
     scriptId: string;
@@ -96,11 +97,12 @@ export const createContentScriptContext = (options: ContentScriptContextFactoryO
         getExtensionContext: () => ExtensionContext.read(),
         getFeatureFlags: () => featureFlags,
         getFeatures: () => {
-            const disallowed = settings.disallowedDomains ?? {};
-            const url = context.getExtensionContext()?.url;
-
+            const { disallowedDomains } = settings ?? {};
             const { autofill, autosuggest, autosave, passkeys } = settings;
-            const hasPause = hasPauseCriteria({ disallowedDomains: disallowed, url });
+            const { url, tabUrl } = context.getExtensionContext() ?? {};
+
+            const criterias = [url, tabUrl].filter(truthy).map((url) => hasPauseCriteria({ disallowedDomains, url }));
+            const hasPause = criterias.length > 0 ? criterias.reduce(combinePauseCriteria) : DEFAULT_PAUSE_CRITERIAS;
 
             return {
                 /** autofill can only be active if user has `autofill.login` or `autofill.identity` */
