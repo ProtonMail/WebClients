@@ -319,27 +319,30 @@ export const createActivationService = () => {
     /** If the `current` flag is passed : resolve the active tab for the
      * current window (ie when requesting the active tab for the popup).
      * Else parse the sender data (ie: content-script) */
-    const handleTabQuery: MessageHandlerCallback<WorkerMessageType.TAB_QUERY> = async (
+    const handleEndpointInit: MessageHandlerCallback<WorkerMessageType.ENDPOINT_INIT> = async (
         { payload },
         { tab, frameId }
     ) => {
-        if (payload.current) {
+        if (payload.popup) {
             const current = first(await browser.tabs.query({ active: true, currentWindow: true }));
             if (!(current && current?.id)) throw new Error('No active tabs');
-            return { tabId: current.id, url: parseUrl(current.url), senderTabId: tab?.id };
+            const url = parseUrl(current.url);
+            return { tabId: current.id, url, tabUrl: url, senderTabId: tab?.id };
         }
 
         if (!tab?.id) throw new Error('Invalid sender tab');
         const { id: tabId } = tab;
+        const tabUrl = parseUrl(tab.url);
 
         if (frameId !== undefined && frameId > 0) {
-            /** For sub-frames : resolve the iframe's document origin as the url  */
+            /** For sub-frames : resolve the iframe's document origin as the url */
             const result = await webNavigation.getFrame({ frameId, tabId });
             if (!result) throw new Error('Invalid sender frame');
-            return { tabId, url: parseUrl(result.url), senderTabId: tabId };
+            const frameUrl = parseUrl(result.url);
+            return { tabId, url: frameUrl, tabUrl, senderTabId: tabId };
         }
 
-        return { tabId, url: parseUrl(tab.url), senderTabId: tabId };
+        return { tabId, senderTabId: tabId, url: tabUrl, tabUrl };
     };
 
     browser.permissions.onAdded.addListener(checkPermissionsUpdate);
@@ -348,7 +351,7 @@ export const createActivationService = () => {
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.CLIENT_INIT, handleClientInit);
     WorkerMessageBroker.registerMessage(WorkerMessageType.POPUP_INIT, handlePopupInit);
-    WorkerMessageBroker.registerMessage(WorkerMessageType.TAB_QUERY, handleTabQuery);
+    WorkerMessageBroker.registerMessage(WorkerMessageType.ENDPOINT_INIT, handleEndpointInit);
     WorkerMessageBroker.registerMessage(WorkerMessageType.WORKER_RELOAD, reload);
     WorkerMessageBroker.registerMessage(WorkerMessageType.PING, () => Promise.resolve(true));
     WorkerMessageBroker.registerMessage(WorkerMessageType.RESOLVE_EXTENSION_KEY, () => ({ key: EXTENSION_KEY }));
