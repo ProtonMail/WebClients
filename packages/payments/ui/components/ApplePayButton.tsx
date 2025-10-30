@@ -28,8 +28,6 @@ const FakeApplePayButton = ({
         <ButtonLike
             className={applePayButtonClassName}
             color="norm"
-            // these styles have nothing to do with our theme (unfortunately).
-            // It mimicks the styles and border raidus of the Paypal button that comes directly from paypal's servers
             style={{ borderRadius: '4px' }}
             loading={loading}
             disabled={disabled}
@@ -42,13 +40,14 @@ export interface ApplePayButtonProps extends ChargebeeWrapperProps {
     disabled?: boolean;
     className?: string;
     formInvalid?: boolean;
+    loading?: boolean;
 }
 
-export const ApplePayButton = ({ formInvalid, ...props }: ApplePayButtonProps) => {
+export const ApplePayButton = ({ formInvalid, loading, ...props }: ApplePayButtonProps) => {
     const initializing = props.applePay.initializing;
     const disabled = props.disabled;
 
-    const renderFakeButton = initializing || disabled || formInvalid;
+    const renderFakeButton = initializing || disabled || formInvalid || loading;
     const fakeApplePayButton = useMemo(() => {
         const sharedProps = {
             className: clsx('w-full', props.className),
@@ -57,7 +56,7 @@ export const ApplePayButton = ({ formInvalid, ...props }: ApplePayButtonProps) =
         let button: ReactNode;
         if (disabled) {
             button = <FakeApplePayButton {...sharedProps} disabled={true} />;
-        } else if (initializing) {
+        } else if (initializing || loading) {
             button = <FakeApplePayButton {...sharedProps} loading={true} />;
         } else {
             button = <FakeApplePayButton {...sharedProps} />;

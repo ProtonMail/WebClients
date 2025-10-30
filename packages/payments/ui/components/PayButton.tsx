@@ -10,6 +10,7 @@ import type { PlainPaymentMethodType } from '../../core/interface';
 import type { TaxCountryHook } from '../hooks/useTaxCountry';
 import { ApplePayButton } from './ApplePayButton';
 import { ChargebeePaypalButton } from './ChargebeePaypalButton';
+import { GooglePayButton } from './GooglePayButton';
 
 type Props = {
     taxCountry: TaxCountryHook;
@@ -45,6 +46,7 @@ export const PayButton = ({
     const submitButton = (() => {
         const isChargebeePaypal = paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL;
         const isApplePay = paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.APPLE_PAY;
+        const isGooglePay = paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.GOOGLE_PAY;
         const submitButtonDisabled = !taxCountry.billingAddressValid || disabled;
 
         const className = clsx(submitButtonDisabled && 'cursor-not-allowed', classNameProp);
@@ -59,6 +61,7 @@ export const PayButton = ({
                     disabled={submitButtonDisabled}
                     className={chargebeeWrapperClassName}
                     formInvalid={formInvalid}
+                    loading={rest.loading}
                     width="100%"
                 />
             );
@@ -69,6 +72,17 @@ export const PayButton = ({
                     iframeHandles={paymentFacade.iframeHandles}
                     disabled={submitButtonDisabled}
                     formInvalid={formInvalid}
+                    loading={rest.loading}
+                />
+            );
+        } else if (isGooglePay) {
+            return (
+                <GooglePayButton
+                    googlePay={paymentFacade.googlePay}
+                    iframeHandles={paymentFacade.iframeHandles}
+                    disabled={submitButtonDisabled}
+                    formInvalid={formInvalid}
+                    loading={rest.loading}
                 />
             );
         } else {

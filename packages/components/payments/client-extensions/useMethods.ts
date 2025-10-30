@@ -54,6 +54,10 @@ const getIcon = (paymentMethod: SavedPaymentMethod): IconName | undefined => {
     if (paymentMethod.Type === PAYMENT_METHOD_TYPES.APPLE_PAY) {
         return 'brand-apple';
     }
+
+    if (paymentMethod.Type === PAYMENT_METHOD_TYPES.GOOGLE_PAY) {
+        return 'brand-google';
+    }
 };
 
 const NBSP_HTML = '\u00A0';
@@ -91,6 +95,10 @@ const getMethod = (paymentMethod: SavedPaymentMethod): string => {
             // translator: example "Apple Pay - card ending in 1234". Please do not translate brand "Apple Pay".
             return c('Payments.Saved payment method details')
                 .t`Apple Pay - card ending in ${paymentMethod.Details.Last4}`;
+        case PAYMENT_METHOD_TYPES.GOOGLE_PAY:
+            // translator: example "Google Pay - card ending in 1234". Please do not translate brand "Google Pay".
+            return c('Payments.Saved payment method details')
+                .t`Google Pay - card ending in ${paymentMethod.Details.Last4}`;
         default:
             return '';
     }
@@ -154,6 +162,12 @@ export function convertMethod(
         return {
             icon: 'brand-apple' as const,
             text: c('Payment method option').t`Apple Pay`,
+            ...method,
+        };
+    } else if (method.type === PAYMENT_METHOD_TYPES.GOOGLE_PAY) {
+        return {
+            icon: 'brand-google' as const,
+            text: c('Payment method option').t`Google Pay`,
             ...method,
         };
     }

@@ -1,25 +1,23 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { useGetPaymentStatus } from '@proton/account/paymentStatus/hooks';
-import type {
-    AvailablePaymentMethod,
-    BillingAddress,
-    PaymentMethodFlow,
-    PaymentMethodType,
-    PaymentMethods,
-    PaymentStatus,
-    PaymentsApi,
-    PlainPaymentMethodType,
-    PlanIDs,
-    SavedPaymentMethod,
-    SavedPaymentMethodExternal,
-    SavedPaymentMethodInternal,
-} from '@proton/payments';
 import {
     type ADDON_NAMES,
+    type AvailablePaymentMethod,
+    type BillingAddress,
     type Currency,
     PAYMENT_METHOD_TYPES,
     type PLANS,
+    type PaymentMethodFlow,
+    type PaymentMethodType,
+    type PaymentMethods,
+    type PaymentStatus,
+    type PaymentsApi,
+    type PlainPaymentMethodType,
+    type PlanIDs,
+    type SavedPaymentMethod,
+    type SavedPaymentMethodExternal,
+    type SavedPaymentMethodInternal,
     type Subscription,
     initializePaymentMethods,
     isExistingPaymentMethod,
@@ -47,6 +45,7 @@ export interface Props {
     planIDs?: PlanIDs;
     subscription?: Subscription;
     canUseApplePay?: boolean;
+    canUseGooglePay?: boolean;
     isTrial?: boolean;
 }
 
@@ -71,6 +70,7 @@ export type MethodsHook = {
     savedMethods: SavedPaymentMethod[] | undefined;
     isNewPaypal: boolean;
     isNewApplePay: boolean;
+    isNewGooglePay: boolean;
     isMethodTypeEnabled: (methodType: PlainPaymentMethodType) => boolean;
 };
 
@@ -98,6 +98,7 @@ export const useMethods = (
         planIDs,
         subscription,
         canUseApplePay,
+        canUseGooglePay,
         isTrial,
     }: Props,
     { api, isAuthenticated }: Dependencies
@@ -117,6 +118,7 @@ export const useMethods = (
         pendingSubscription?: Subscription;
         pendingPaymentStatus?: PaymentStatus;
         pendingCanUseApplePay?: boolean;
+        pendingCanUseGooglePay?: boolean;
         pendingIsTrial?: boolean;
     }>();
 
@@ -178,6 +180,7 @@ export const useMethods = (
                 planIDs,
                 subscription,
                 canUseApplePay,
+                canUseGooglePay,
                 isTrial,
             });
 
@@ -201,6 +204,7 @@ export const useMethods = (
                     pendingSubscription,
                     pendingPaymentStatus: pendingPaymentExtended,
                     pendingCanUseApplePay,
+                    pendingCanUseGooglePay,
                     pendingIsTrial,
                 } = pendingDataRef.current;
                 pendingDataRef.current = undefined;
@@ -259,6 +263,10 @@ export const useMethods = (
                     paymentMethodsRef.current.canUseApplePay = pendingCanUseApplePay;
                 }
 
+                if (pendingCanUseGooglePay !== undefined) {
+                    paymentMethodsRef.current.canUseGooglePay = pendingCanUseGooglePay;
+                }
+
                 if (pendingIsTrial !== undefined) {
                     paymentMethodsRef.current.isTrial = pendingIsTrial;
                 }
@@ -293,6 +301,7 @@ export const useMethods = (
                 pendingSubscription: subscription,
                 pendingPaymentStatus: paymentStatus,
                 pendingCanUseApplePay: canUseApplePay,
+                pendingCanUseGooglePay: canUseGooglePay,
                 pendingIsTrial: isTrial,
             };
             return;
@@ -310,13 +319,14 @@ export const useMethods = (
         paymentMethodsRef.current.planIDs = planIDs;
         paymentMethodsRef.current.subscription = subscription;
         paymentMethodsRef.current.canUseApplePay = !!canUseApplePay;
+        paymentMethodsRef.current.canUseGooglePay = !!canUseGooglePay;
         paymentMethodsRef.current.isTrial = !!isTrial;
         if (paymentStatus) {
             paymentMethodsRef.current.paymentStatus = paymentStatus;
             setStatus(paymentStatus);
         }
         updateMethods();
-    }, [amount, currency, coupon, flow, selectedPlanName, billingAddress, canUseApplePay, isTrial]);
+    }, [amount, currency, coupon, flow, selectedPlanName, billingAddress, canUseApplePay, canUseGooglePay, isTrial]);
 
     const { usedMethods, newMethods, allMethods, lastUsedMethod } = getComputedMethods();
 
@@ -387,6 +397,9 @@ export const useMethods = (
     const isNewApplePay =
         selectedMethod?.type === PAYMENT_METHOD_TYPES.APPLE_PAY && !isExistingPaymentMethod(selectedMethod?.value);
 
+    const isNewGooglePay =
+        selectedMethod?.type === PAYMENT_METHOD_TYPES.GOOGLE_PAY && !isExistingPaymentMethod(selectedMethod?.value);
+
     return {
         selectedMethod,
         savedInternalSelectedMethod,
@@ -403,6 +416,7 @@ export const useMethods = (
         savedMethods,
         isNewPaypal,
         isNewApplePay,
+        isNewGooglePay,
         isMethodTypeEnabled,
     };
 };

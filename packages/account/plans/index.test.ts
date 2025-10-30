@@ -52,6 +52,7 @@ describe('plans', () => {
             Paypal: true,
             Apple: true,
             Bitcoin: true,
+            Google: true,
         },
     };
 
