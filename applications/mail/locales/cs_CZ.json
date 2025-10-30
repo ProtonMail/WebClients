@@ -4426,8 +4426,8 @@
       "/month": [
         "/měsíc"
       ],
-      "1 TB of storage to share": [
-        "1 TB prostoru ke sdílení"
+      "2 TB of storage to share": [
+        "2 TB prostoru ke sdílení"
       ],
       "2 user accounts": [
         "2 uživatelské účty"
@@ -12676,8 +12676,8 @@
       "Your payment is still being processed": [
         "Vaše platba se stále zpracovává"
       ],
-      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
-        "Vaše předplatné má v současné době slevu. Přechodem na tuto novou akci bude stávající sleva zrušena."
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "Vaše předplatné má v současné době platnou slevu. Přechodem na tuto novou akci bude stávající sleva zrušena."
       ]
     },
     "Payments.Error": {
@@ -16336,6 +16336,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: AI asistent, který respektuje vaše soukromí"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Bezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
       ]
