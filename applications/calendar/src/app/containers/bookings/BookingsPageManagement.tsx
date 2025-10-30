@@ -78,7 +78,7 @@ export const Form = () => {
                         updateFormData('locationType', value);
                     }}
                     assistContainerClassName="hidden"
-                    className="w-fit-content"
+                    fullWidth={false}
                 >
                     {locationOptions.map((option) => (
                         <Option key={option.value} value={option.value} title={option.text}>
@@ -110,7 +110,7 @@ export const Form = () => {
                         updateFormData('selectedCalendar', value);
                     }}
                     assistContainerClassName="hidden"
-                    className="w-fit-content"
+                    fullWidth={false}
                 >
                     {writeableCalendars.map((calendar) => (
                         <Option key={calendar.ID} value={calendar.ID} title={calendar.Name}>
