@@ -1123,6 +1123,9 @@
       "1 user account": [
         "1 cuenta de usuario"
       ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB de almacenamiento: 40 veces su plan actual"
+      ],
       "6 user accounts": [
         "6 cuentas de usuario"
       ],
@@ -1160,6 +1163,9 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Un solo pago de ${ amount }"
+      ],
+      "forever": [
+        "para siempre"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Se renueva después de 1 mes por ${ regularAmount }."
@@ -2720,8 +2726,8 @@
       "/month": [
         "/mes"
       ],
-      "1 TB of storage to share": [
-        "1 TB de almacenamiento para compartir"
+      "2 TB of storage to share": [
+        "2 TB de almacenamiento para compartir"
       ],
       "2 user accounts": [
         "2 cuentas de usuario"
@@ -2735,7 +2741,7 @@
     },
     "Duo offer: Link": {
       "Get 4x more storage": [
-        "Obtén 4 veces más almacenamiento"
+        "Obtener 4 veces más almacenamiento"
       ],
       "Share your plan": [
         "Comparta su plan"
@@ -4283,6 +4289,9 @@
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Los anunciantes rastrean su navegación para mostrar anuncios específicos. ${ VPN_APP_NAME } bloquea rastreadores y anuncios, lo que hace que su conexión sea más rápida y mejora su experiencia en línea."
       ],
+      "All": [
+        "Todo"
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Todo (${ totalFoldersCount } carpeta)",
         "Todo (${ totalFoldersCount } carpetas)"
@@ -4451,6 +4460,9 @@
       ],
       "Document owner has the password": [
         "El propietario del documento tiene la contraseña"
+      ],
+      "Documents": [
+        "Documentos"
       ],
       "Downgrade": [
         "Pasar a un plan inferior"
@@ -4985,6 +4997,9 @@
       ],
       "Something went wrong": [
         "Algo salió mal"
+      ],
+      "Spreadsheets": [
+        "Hojas de cálculo"
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Manténgase en línea sin ningún esfuerzo al activar los siguientes ajustes VPN:"
@@ -7842,6 +7857,9 @@
       "Advanced account protection": [
         "Protección de cuentas avanzada"
       ],
+      "File attachments (up to 10GB)": [
+        "Archivos adjuntos (hasta 10 GB)"
+      ],
       "Team policies": [
         "Políticas de equipo"
       ]
@@ -7911,6 +7929,10 @@
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "El cupón es válido por ${ couponRedemptions } renovación.",
         "El cupón es válido por ${ couponRedemptions } renovaciones."
+      ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "El precio especial con descuento es válido para el primer (${ subscriptionLength }) mes",
+        "El precio especial con descuento es válido para los primeros ${ subscriptionLength } meses"
       ],
       "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "El precio especial con descuento es válido para el primer mes. El cupón es válido para ${ couponRedemptions } renovación. Después se renovará automáticamente por ${ renewPriceStr } por 1 mes. Puede cancelarlo en cualquier momento.",
