@@ -44,14 +44,12 @@ const initializeWasmApp = async (
     const userID = persistedSession?.UserID ?? '';
     const uid = authentication.UID ?? '';
 
-    const baseHostName = window.location.hostname.split('.').slice(1).join('.');
-    const mlsSubdomain = 'meet-mls';
     const env = `${window.location.origin}/api`;
     const userAgent = navigator.userAgent;
     const dbPath = '';
-    const wsHost = `${mlsSubdomain}.${baseHostName}`;
+    const host = `${window.location.hostname}/meet/api/`;
 
-    const appResult = await new App(env, appVersion, userAgent, dbPath, wsHost, userID ?? '', uid ?? '');
+    const appResult = await new App(env, appVersion, userAgent, dbPath, host, host, userID ?? '', uid ?? '');
 
     return appResult;
 };
