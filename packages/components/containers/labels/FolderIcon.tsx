@@ -9,7 +9,6 @@ interface Props extends Omit<IconProps, 'name'> {
     folder: FolderWithSubFolders;
     name?: IconName;
     alt?: string;
-    dataColor?: string;
 }
 
 const getIconName = (isParent: boolean, color?: string, name?: IconName) => {
@@ -24,11 +23,11 @@ const getIconName = (isParent: boolean, color?: string, name?: IconName) => {
     return iconName;
 };
 
-const FolderIcon = ({ folder, name, alt = folder.Name, dataColor, ...rest }: Props) => {
+const FolderIcon = ({ folder, name, alt = folder.Name, ...rest }: Props) => {
     const isParent = !!folder.subfolders?.length;
     const color = useFolderColor(folder);
 
-    return <Icon name={getIconName(isParent, color, name)} color={color} alt={alt} {...rest} data-color={dataColor} />;
+    return <Icon name={getIconName(isParent, color, name)} color={color} alt={alt} {...rest} />;
 };
 
 export default FolderIcon;

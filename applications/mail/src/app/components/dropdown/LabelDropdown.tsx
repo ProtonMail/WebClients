@@ -4,8 +4,17 @@ import { useEffect, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Checkbox, EditLabelModal, LabelsUpsellModal, Mark, useModalState } from '@proton/components';
-import { IcTagFilled } from '@proton/icons';
+import { Button, Tooltip } from '@proton/atoms';
+import {
+    Checkbox,
+    EditLabelModal,
+    Icon,
+    LabelsUpsellModal,
+    Mark,
+    SearchInput,
+    useActiveBreakpoint,
+    useModalState,
+} from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { useFolders, useLabels } from '@proton/mail';
 import { isCustomLabel } from '@proton/mail/helpers/location';
@@ -25,20 +34,14 @@ import { getLabelIDs } from '../../helpers/elements';
 import { getStandardFolders } from '../../helpers/labels';
 import { useApplyLabels } from '../../hooks/actions/label/useApplyLabels';
 import { useMoveToFolder } from '../../hooks/actions/move/useMoveToFolder';
+import { useCreateFilters } from '../../hooks/actions/useCreateFilters';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 import { useScrollToItem } from '../../hooks/useScrollToItem';
 import type { Element } from '../../models/element';
 import { folderLocation } from '../list/list-telemetry/listTelemetryHelper';
 import { SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
-import {
-    ButtonCreateNewItem,
-    MoveToContentWrapper,
-    MoveToDivider,
-    MoveToDropdownButtons,
-    MoveToFolderFooterWrapper,
-    MoveToPlaceholders,
-} from './MoveToComponents';
-import { MoveToSearchInput } from './MoveToSearchInput';
+
+import './LabelDropdown.scss';
 
 export const labelDropdownContentProps = { className: 'flex flex-column flex-nowrap items-stretch' };
 
@@ -47,6 +50,7 @@ enum LabelState {
     Off = 'Off',
     Indeterminate = 'Indeterminate',
 }
+const { On, Off, Indeterminate } = LabelState;
 
 type SelectionState = { [labelID: string]: LabelState };
 
@@ -63,9 +67,9 @@ export const getInitialState = (labels: Label[] = [], elements: Element[] = [], 
 
         labels.forEach(({ ID = '' }) => {
             if (isInsideCustomLabel && ID === labelID) {
-                result[ID] = LabelState.On;
+                result[ID] = On;
             } else {
-                result[ID] = LabelState.Indeterminate;
+                result[ID] = Indeterminate;
             }
         });
     } else {
@@ -82,22 +86,17 @@ export const getInitialState = (labels: Label[] = [], elements: Element[] = [], 
             const counts = elementsLabels.reduce<{ [state: string]: number }>(
                 (acc, elementLabels) => {
                     if (elementLabels[ID] === undefined) {
-                        acc[LabelState.Off] += 1;
+                        acc[Off] += 1;
                     } else if (elementLabels[ID]) {
-                        acc[LabelState.On] += 1;
+                        acc[On] += 1;
                     } else {
-                        acc[LabelState.Indeterminate] += 1;
+                        acc[Indeterminate] += 1;
                     }
                     return acc;
                 },
-                { [LabelState.On]: 0, [LabelState.Off]: 0, [LabelState.Indeterminate]: 0 }
+                { [On]: 0, [Off]: 0, [Indeterminate]: 0 }
             );
-            result[ID] =
-                counts[LabelState.Off] === elements.length
-                    ? LabelState.Off
-                    : counts[LabelState.On] === elements.length
-                      ? LabelState.On
-                      : LabelState.Indeterminate;
+            result[ID] = counts[Off] === elements.length ? Off : counts[On] === elements.length ? On : Indeterminate;
         });
     }
 
@@ -135,13 +134,13 @@ interface Props {
     onCheckAll?: (check: boolean) => void;
 }
 
-export const MoveToLabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll, onCheckAll }: Props) => {
+const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll, onCheckAll }: Props) => {
     const [uid] = useState(generateUID('label-dropdown'));
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
     const [user] = useUser();
     const [loading, withLoading] = useLoading();
-    const [search, setSearch] = useState('');
+    const [search, updateSearch] = useState('');
     const [containFocus, setContainFocus] = useState(true);
     const [lastChecked, setLastChecked] = useState(''); // Store ID of the last label ID checked
     const [alsoArchive, updateAlsoArchive] = useState(false);
@@ -149,12 +148,23 @@ export const MoveToLabelDropdown = ({ selectedIDs, labelID, onClose, onLock, sel
     const getElementsFromIDs = useGetElementsFromIDs();
     const { applyLabels, applyLabelsToAllModal } = useApplyLabels(setContainFocus);
     const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal } = useMoveToFolder(setContainFocus);
+    const { getSendersToFilter } = useCreateFilters();
     const { applyMultipleLocations, applyLocation, applyOptimisticLocationEnabled } = useApplyLocation();
+
+    const breakpoints = useActiveBreakpoint();
+
+    /*
+     * translator: Text displayed in a button to suggest the creation of a new label in the label dropdown
+     * This button is shown when the user search for a label which doesn't exist
+     * ${search} is a string containing the search the user made in the label dropdown
+     * Full sentence for reference: 'Create label "Dunder Mifflin"'
+     */
+    const createLabelButtonText = c('Title').t`Create label "${search}"`;
 
     const [editLabelProps, setEditLabelModalOpen, renderLabelModal] = useModalState();
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
-    const { scrollToItem, addRef } = useScrollToItem();
+    const { scrollToItem } = useScrollToItem();
 
     const initialState = useMemo(
         () => getInitialState(labels, getElementsFromIDs(selectedIDs), labelID, selectAll),
@@ -191,9 +201,20 @@ export const MoveToLabelDropdown = ({ selectedIDs, labelID, onClose, onLock, sel
         );
     }, [selectedIDs, initialState, selectedLabelIDs, selectAll, labels]);
 
+    // Always checkbox should be disabled when we don't find senders OR there are no labels checked (so no filter based on labels to create)
+    const alwaysCheckboxDisabled = useMemo(() => {
+        return !getSendersToFilter(getElementsFromIDs(selectedIDs)).length || checkedIDs.length < 1 || !!selectAll;
+    }, [getSendersToFilter, selectedIDs, changes, selectAll]);
+
+    const archiveCheckboxDisabled = !!selectAll;
+
     useEffect(() => {
-        onLock(!containFocus);
-    }, [containFocus]);
+        if (alwaysCheckboxDisabled && always) {
+            setAlways(false);
+        }
+    }, [alwaysCheckboxDisabled, always]);
+
+    useEffect(() => onLock(!containFocus), [containFocus]);
 
     if (!selectedIDs || !selectedIDs.length) {
         return null;
@@ -206,15 +227,19 @@ export const MoveToLabelDropdown = ({ selectedIDs, labelID, onClose, onLock, sel
     };
 
     // The dropdown is several times in the view, native html ids has to be different each time
+    const searchInputID = `${uid}-search`;
     const archiveCheckID = `${uid}-archive`;
     const alwaysCheckID = `${uid}-always`;
     const labelCheckID = (ID: string) => `${uid}-${ID}`;
-
+    const applyDisabled = getIsApplyDisabled(initialState, selectedLabelIDs, checkedIDs, always, alsoArchive);
+    const autoFocusSearch = !breakpoints.viewportWidth['<=small'];
+    const normSearch = normalize(search, true);
     const list = labels.filter(({ Name = '' }) => {
         if (!search) {
             return true;
         }
-        return normalize(Name, true).includes(normalize(search, true));
+        const normName = normalize(Name, true);
+        return normName.includes(normSearch);
     });
 
     const actualApplyLabels = async (changes: { [p: string]: boolean }) => {
@@ -261,6 +286,7 @@ export const MoveToLabelDropdown = ({ selectedIDs, labelID, onClose, onLock, sel
             }
         }
 
+        await Promise.all(promises);
         onClose();
     };
 
@@ -342,101 +368,134 @@ export const MoveToLabelDropdown = ({ selectedIDs, labelID, onClose, onLock, sel
         await withLoading(handleApply());
     };
 
-    const handleSearch = (changeEvent: React.ChangeEvent<HTMLInputElement>) => {
-        setSearch(changeEvent.target.value);
+    const handleApplyDirectly = async (labelID: string) => {
+        const updatedChanges = {
+            ...changes,
+            [labelID]: selectedLabelIDs[labelID] !== LabelState.On,
+        };
+
+        await actualApplyLabels(updatedChanges);
     };
 
     return (
         <form className="flex flex-column flex-nowrap justify-start items-stretch flex-auto" onSubmit={handleSubmit}>
-            <div className="shrink-0 mt-6 mx-6">
-                <MoveToSearchInput
-                    title={c('Title').t`Label as`}
-                    placeholder={c('Placeholder').t`Filter labels`}
+            <div className="flex shrink-0 justify-space-between items-center m-4 mb-0">
+                <span className="text-bold" tabIndex={-1}>
+                    {c('Label').t`Label as`}
+                </span>
+                <Tooltip title={c('Action').t`Create label`}>
+                    <Button
+                        icon
+                        color="norm"
+                        size="small"
+                        onClick={handleCreate}
+                        className="flex items-center"
+                        data-testid="label-dropdown:add-label"
+                        data-prevent-arrow-navigation
+                    >
+                        <Icon name="tag" alt={c('Action').t`Create label`} /> <span aria-hidden="true">+</span>
+                    </Button>
+                </Tooltip>
+            </div>
+            <div className="shrink-0 m-4 mb-0">
+                <SearchInput
                     value={search}
-                    onChange={handleSearch}
+                    onChange={updateSearch}
+                    id={searchInputID}
+                    placeholder={c('Placeholder').t`Filter labels`}
+                    autoFocus={autoFocusSearch}
+                    data-test-selector="label-dropdown:search-label"
+                    data-prevent-arrow-navigation
+                    data-testid="label-dropdown:search-input"
                 />
             </div>
-
-            <MoveToContentWrapper testid="label-dropdown-list">
-                {list.length === 0 ? (
-                    <MoveToPlaceholders emptyListCopy={c('Info').t`No label found`} search={search} />
-                ) : (
-                    <ul className="unstyled my-0 mb-4">
-                        {list.map((label, index) => (
-                            <li
-                                key={label.ID}
-                                ref={(el) => addRef(label.ID, el)}
-                                className={clsx(
-                                    'dropdown-item dropdown-item-button cursor-pointer w-full flex flex-nowrap items-center py-2 px-6',
-                                    index === 0 && 'mt-3'
-                                )}
+            <div className="label-dropdown-list overflow-auto mt-4 flex-auto" data-testid="label-dropdown-list">
+                <ul className="unstyled my-0">
+                    {list.map(({ ID = '', Name = '', Color = '' }) => (
+                        <li
+                            key={ID}
+                            className="dropdown-item dropdown-item-button relative cursor-pointer w-full flex flex-nowrap items-center py-2 px-4"
+                        >
+                            <Checkbox
+                                className="shrink-0 mr-2"
+                                id={labelCheckID(ID)}
+                                checked={selectedLabelIDs[ID] === LabelState.On}
+                                indeterminate={selectedLabelIDs[ID] === LabelState.Indeterminate}
+                                onChange={handleCheck(ID)}
+                                data-testid={`label-dropdown:label-checkbox-${Name}`}
+                            />
+                            <label
+                                htmlFor={labelCheckID(ID)}
+                                title={Name}
+                                className="flex flex-nowrap items-center flex-1"
+                                data-testid={`label-dropdown:label-${Name}`}
+                                onClick={() => handleApplyDirectly(ID)}
                             >
-                                <Checkbox
-                                    className="shrink-0 mr-4"
-                                    id={labelCheckID(label.ID)}
-                                    checked={selectedLabelIDs[label.ID] === LabelState.On}
-                                    indeterminate={selectedLabelIDs[label.ID] === LabelState.Indeterminate}
-                                    onChange={handleCheck(label.ID)}
-                                    data-testid={`label-dropdown:label-checkbox-${label.Name}`}
-                                />
-
-                                {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/click-events-have-key-events */}
-                                <label
-                                    htmlFor={labelCheckID(label.ID)}
-                                    title={label.Name}
-                                    className="flex flex-nowrap items-center flex-1"
-                                    data-testid={`label-dropdown:label-${label.Name}`}
-                                    onClick={() => handleCheck(label.ID)}
-                                >
-                                    <IcTagFilled size={4} color={label.Color} className="shrink-0 mr-2" />
-                                    <span className="text-ellipsis">
-                                        <Mark value={search}>{label.Name}</Mark>
-                                    </span>
-                                </label>
-                            </li>
-                        ))}
-                    </ul>
-                )}
-            </MoveToContentWrapper>
-
-            <MoveToDivider />
-            <ButtonCreateNewItem
-                onClick={handleCreate}
-                copy={c('Action').t`Create label`}
-                testid="move-to-create-label"
-            />
-
-            <MoveToDivider />
-            <MoveToFolderFooterWrapper>
+                                <Icon name="circle-filled" size={4} color={Color} className="shrink-0 relative mx-2" />
+                                <span className="text-ellipsis">
+                                    <Mark value={search}>{Name}</Mark>
+                                </span>
+                            </label>
+                        </li>
+                    ))}
+                    {list.length === 0 && !search && (
+                        <li key="empty" className="dropdown-item w-full py-2 px-4">
+                            {c('Info').t`No label found`}
+                        </li>
+                    )}
+                    {list.length === 0 && search && (
+                        <span className="flex w-full">
+                            <Button
+                                key="create-new-label"
+                                className="w-full mx-8 text-ellipsis"
+                                data-testid="label-dropdown:create-label-option"
+                                title={createLabelButtonText}
+                                onClick={handleCreate}
+                            >
+                                {createLabelButtonText}
+                            </Button>
+                        </span>
+                    )}
+                </ul>
+            </div>
+            <hr className="m-0 shrink-0" />
+            <div className={clsx(['px-4 mt-4 shrink-0', alwaysCheckboxDisabled && 'color-disabled'])}>
                 <Checkbox
                     id={alwaysCheckID}
                     checked={always}
+                    disabled={alwaysCheckboxDisabled}
                     onChange={({ target }) => setAlways(target.checked)}
                     data-testid="label-dropdown:always-move"
                     data-prevent-arrow-navigation
                 >
-                    {c('Label').t`Apply to future messages`}
+                    {c('Label').t`Always label sender's emails`}
                 </Checkbox>
-
+            </div>
+            <div className={clsx(['px-4 mt-4 shrink-0', archiveCheckboxDisabled && 'color-disabled'])}>
                 <Checkbox
                     id={archiveCheckID}
                     checked={alsoArchive}
+                    disabled={archiveCheckboxDisabled}
                     onChange={({ target }) => updateAlsoArchive(target.checked)}
                     data-testid="label-dropdown:also-archive"
                     data-prevent-arrow-navigation
-                    className="mt-4"
                 >
                     {c('Label').t`Also archive`}
                 </Checkbox>
-
-                <MoveToDropdownButtons
+            </div>
+            <div className="m-4 shrink-0">
+                <Button
+                    color="norm"
+                    className="w-full"
                     loading={loading}
-                    disabled={getIsApplyDisabled(initialState, selectedLabelIDs, checkedIDs, always, alsoArchive)}
-                    onClose={() => onClose()}
-                    ctaText={c('Action').t`Apply`}
-                />
-            </MoveToFolderFooterWrapper>
-
+                    disabled={applyDisabled}
+                    data-testid="label-dropdown:apply"
+                    data-prevent-arrow-navigation
+                    type="submit"
+                >
+                    {c('Action').t`Apply`}
+                </Button>
+            </div>
             {moveScheduledModal}
             {moveSnoozedModal}
             {moveToSpamModal}
@@ -462,3 +521,5 @@ export const MoveToLabelDropdown = ({ selectedIDs, labelID, onClose, onLock, sel
         </form>
     );
 };
+
+export default LabelDropdown;

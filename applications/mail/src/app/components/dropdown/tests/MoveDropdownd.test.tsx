@@ -7,12 +7,12 @@ import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Label } from '@proton/shared/lib/interfaces';
 
-import { addApiMock } from '../../helpers/test/api';
-import { minimalCache } from '../../helpers/test/cache';
-import { mailTestRender } from '../../helpers/test/render';
-import { initialize } from '../../store/messages/read/messagesReadActions';
-import { messageID } from '../message/tests/Message.test.helpers';
-import { MoveToFolderDropdown } from './MoveToFolderDropdown';
+import { addApiMock } from '../../../helpers/test/api';
+import { minimalCache } from '../../../helpers/test/cache';
+import { mailTestRender } from '../../../helpers/test/render';
+import { initialize } from '../../../store/messages/read/messagesReadActions';
+import { messageID } from '../../message/tests/Message.test.helpers';
+import MoveDropdown from '../MoveDropdown';
 
 const folder1Name = 'Folder1';
 const folder1ID = 'folder-1-id';
@@ -39,13 +39,13 @@ const getMessage = (labelIDs: string[] = []) => {
     } as MessageState;
 };
 
-describe('MoveToFolderDropdown', () => {
+describe('MoveDropdown', () => {
     const setup = async (labelIDs: string[] = []) => {
         minimalCache();
 
         const message = getMessage(labelIDs);
 
-        const view = await mailTestRender(<MoveToFolderDropdown {...props} />, {
+        const view = await mailTestRender(<MoveDropdown {...props} />, {
             preloadedState: {
                 categories: getModelState([
                     {
@@ -72,11 +72,12 @@ describe('MoveToFolderDropdown', () => {
     it("should display user's folders in the dropdowm", async () => {
         await setup();
 
-        const folders = (await screen.findAllByTestId(/move-to-button-/)) as HTMLButtonElement[];
+        const folders = (await screen.findAllByTestId(/label-dropdown:folder-radio-/)) as HTMLInputElement[];
 
         // Should contain default folders (Inbox, Archive, Spam, Trash) + custom folders
         expect(folders.length).toBe(6);
-
+        expect(folders[0].checked).toBe(false);
+        expect(folders[1].checked).toBe(false);
         screen.getAllByText(folder1Name);
         screen.getAllByText(folder2Name);
     });
@@ -87,20 +88,19 @@ describe('MoveToFolderDropdown', () => {
 
         await setup();
 
-        const buttonFolder1 = screen.getByTestId(`move-to-button-${folder1Name}`) as HTMLButtonElement;
+        const radio1 = screen.getByTestId(`label-dropdown:folder-radio-${folder1Name}`) as HTMLInputElement;
 
-        let selectedIcon = screen.queryByTestId(`move-to-selected-icon-${folder1Name}`);
-        expect(selectedIcon).not.toBeInTheDocument();
+        // Check the first radio
+        expect(radio1.checked).toBe(false);
 
         await act(async () => {
-            fireEvent.click(buttonFolder1);
+            fireEvent.click(radio1);
         });
 
-        selectedIcon = screen.queryByTestId(`move-to-selected-icon-${folder1Name}`);
-        expect(selectedIcon).toBeInTheDocument();
+        expect(radio1.checked).toBe(true);
 
         // Apply the label
-        const applyButton = screen.getByTestId('move-to-apply');
+        const applyButton = screen.getByTestId('move-dropdown:apply');
 
         await act(async () => {
             fireEvent.click(applyButton);
@@ -113,24 +113,50 @@ describe('MoveToFolderDropdown', () => {
     it('should create a folder from the button', async () => {
         await setup();
 
-        const searchInput = screen.getByTestId('move-to-search-input');
+        // Search for a label which does not exist
+        const searchInput = screen.getByTestId('folder-dropdown:search-folder');
+
         await act(async () => {
             fireEvent.change(searchInput, { target: { value: search } });
+            // input has a debounce, so we need to wait for the onChange
             await wait(300);
         });
 
-        const folders = screen.queryAllByTestId(/move-to-button-/);
-        expect(folders.length).toBe(0);
+        // No more option are displayed
+        const labels = screen.queryAllByTestId(/label-dropdown:folder-radio-/) as HTMLInputElement[];
+        expect(labels.length).toBe(0);
 
-        const createLabelButton = screen.getByTestId('move-to-no-results');
-        expect(createLabelButton).toBeInTheDocument();
+        // Click on the create label button
+        const createLabelButton = screen.getByTestId('folder-dropdown:add-folder');
+
+        fireEvent.click(createLabelButton);
+
+        // Get the modal content
+        const createLabelModal = screen.getByRole('dialog', { hidden: true });
+        const labelModalNameInput = getByTestIdDefault(createLabelModal, 'label/folder-modal:name') as HTMLInputElement;
+
+        // Input is filled with the previous search content
+        expect(labelModalNameInput.value).toEqual(search);
     });
 
     it('should create a folder from the option', async () => {
         await setup();
 
+        // Search for a label which does not exist
+        const searchInput = screen.getByTestId('folder-dropdown:search-folder');
+
+        await act(async () => {
+            fireEvent.change(searchInput, { target: { value: search } });
+            // input has a debounce, so we need to wait for the onChange
+            await wait(300);
+        });
+
+        // No more option are displayed
+        const labels = screen.queryAllByTestId(/label-dropdown:folder-radio-/) as HTMLInputElement[];
+        expect(labels.length).toBe(0);
+
         // Click on the create label option
-        const createLabelOption = screen.getByTestId('move-to-create-folder');
+        const createLabelOption = screen.getByTestId('folder-dropdown:create-folder-option');
 
         fireEvent.click(createLabelOption);
 
@@ -139,6 +165,6 @@ describe('MoveToFolderDropdown', () => {
         const labelModalNameInput = getByTestIdDefault(createLabelModal, 'label/folder-modal:name') as HTMLInputElement;
 
         // Input is filled with the previous search content
-        expect(labelModalNameInput.value).toEqual('');
+        expect(labelModalNameInput.value).toEqual(search);
     });
 });
