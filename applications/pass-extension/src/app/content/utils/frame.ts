@@ -106,13 +106,24 @@ export const getFrameVisibility = maxAgeMemoize(
     { maxAge: 1_000, cache: createWeakRefCache(identity) }
 );
 
-export const isSandboxedFrame = (): boolean => {
-    if (String(globalThis.origin).toLowerCase() === 'null' || globalThis.location.hostname === '') return true;
+/** Quick-checks if the current frame has a null origin and
+ * is likely sandboxed without `allow-same-origin` */
+export const isNullOriginFrame = (): boolean => {
+    return String(globalThis.origin).toLowerCase() === 'null' || globalThis.location.hostname === '';
+};
 
-    const sandbox = globalThis.frameElement?.getAttribute?.('sandbox');
-    if (sandbox === null || sandbox === undefined) return false;
-    if (sandbox === '') return true;
+/** Checks if an iframe is sandboxed without both allow-scripts and
+ * allow-same-origin. Requires the `HTMLIFrameElement` reference from
+ * the parent frame to avoid cross-origin errors */
+export const isSandboxedFrame = (frame: HTMLIFrameElement): boolean => {
+    try {
+        const sandbox = frame.getAttribute?.('sandbox');
+        if (sandbox === null || sandbox === undefined) return false;
+        if (sandbox === '') return true;
 
-    const tokens = new Set(sandbox.toLowerCase().split(' '));
-    return !['allow-scripts', 'allow-same-origin'].every((token) => tokens.has(token));
+        const tokens = new Set(sandbox.toLowerCase().split(' '));
+        return !['allow-scripts', 'allow-same-origin'].every((token) => tokens.has(token));
+    } catch {
+        return false;
+    }
 };

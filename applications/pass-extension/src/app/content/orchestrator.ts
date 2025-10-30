@@ -6,7 +6,7 @@
  * content-script when the frame becomes hidden, we can free up resources
  * on inactive tabs, further improving performance and minimizing the
  * impact on the user's experience */
-import { isSandboxedFrame } from 'proton-pass-extension/app/content/utils/frame';
+import { isNullOriginFrame } from 'proton-pass-extension/app/content/utils/frame';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import 'proton-pass-extension/lib/polyfills/shim';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
@@ -32,7 +32,7 @@ void (async () => {
         /* Prevent injection on non-HTML documents, for example XML files */
         if (!(document.ownerDocument || document)?.body) return;
         /** Sandboxed frames should not load the content-script */
-        if (isSandboxedFrame()) return;
+        if (isNullOriginFrame()) return;
 
         await waitForPageReady();
 
