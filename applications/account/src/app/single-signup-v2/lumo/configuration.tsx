@@ -365,6 +365,7 @@ export const getLumoConfiguration = ({
             if (audience === Audience.B2B) {
                 return {
                     plan: PLANS.BUNDLE_PRO_2024,
+                    addons: { [ADDON_NAMES.LUMO_BUNDLE_PRO_2024]: 1 },
                     cycle: CYCLE.YEARLY,
                 };
             }
