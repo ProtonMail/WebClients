@@ -16,9 +16,11 @@ interface Props {
 export const UnlimitedToDuoOfferContent = ({ config, onUpsellClick, onNeverShow }: Props) => {
     return (
         <section className="pt-6">
-            <UnlimitedToDuoOfferHeader config={config} />
+            <div className="flex justify-center">
+                <UnlimitedToDuoOfferHeader config={config} />
+            </div>
 
-            <div className="flex">
+            <div className="flex justify-center">
                 <p className="mt-2 mb-5 mx-auto inline-flex" style={{ color: 'var(--promotion-text-weak)' }}>
                     <Price
                         key="monthly-price"
