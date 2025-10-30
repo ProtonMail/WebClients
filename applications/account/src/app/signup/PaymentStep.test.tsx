@@ -30,6 +30,7 @@ beforeEach(() => {
             Apple: true,
             Cash: true,
             Bitcoin: true,
+            Google: true,
         },
         CountryCode: 'CH',
     };
@@ -139,6 +140,7 @@ beforeEach(() => {
                 Apple: true,
                 Cash: true,
                 Bitcoin: true,
+                Google: true,
             },
         },
     };

@@ -20,14 +20,17 @@ import { getAllowedCycles } from '@proton/components/containers/payments/subscri
 import { useCurrencies, usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
-import type { ExtendedTokenPayment, PaymentProcessorHook, PaymentStatus, TokenPayment } from '@proton/payments';
 import {
     CYCLE,
     type Currency,
     type Cycle,
+    type ExtendedTokenPayment,
     PAYMENT_METHOD_TYPES,
+    type PaymentProcessorHook,
+    type PaymentStatus,
     type Plan,
     type PlanIDs,
+    type TokenPayment,
     getIsB2BAudienceFromPlan,
     getIsConsumerVpnPlan,
     getIsCustomCycle,

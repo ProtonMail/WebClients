@@ -10,6 +10,7 @@ import {
     type ADDON_NAMES,
     MIN_APPLE_PAY_AMOUNT,
     MIN_BITCOIN_AMOUNT,
+    MIN_GOOGLE_PAY_AMOUNT,
     MIN_PAYPAL_AMOUNT_CHARGEBEE,
     MethodStorage,
     PAYMENT_METHOD_TYPES,
@@ -22,6 +23,7 @@ import type {
     FreeSubscription,
     PaymentMethodApplePay,
     PaymentMethodFlow,
+    PaymentMethodGooglePay,
     PaymentMethodSepa,
     PaymentStatus,
     PaymentsApi,
@@ -49,6 +51,10 @@ function isSavedPaymentMethodApplePay(obj: any): obj is PaymentMethodApplePay {
     return (obj.Type === 'applepay' || obj.Type === PAYMENT_METHOD_TYPES.APPLE_PAY) && !!obj.Details;
 }
 
+function isSavedPaymentMethodGooglePay(obj: any): obj is PaymentMethodGooglePay {
+    return (obj.Type === 'googlepay' || obj.Type === PAYMENT_METHOD_TYPES.GOOGLE_PAY) && !!obj.Details;
+}
+
 export function formatPaymentMethod(method: SavedPaymentMethod): SavedPaymentMethod {
     if (isSavedPaymentMethodSepa(method)) {
         return {
@@ -62,6 +68,13 @@ export function formatPaymentMethod(method: SavedPaymentMethod): SavedPaymentMet
             ...method,
             Type: PAYMENT_METHOD_TYPES.APPLE_PAY,
         } as PaymentMethodApplePay;
+    }
+
+    if (isSavedPaymentMethodGooglePay(method)) {
+        return {
+            ...method,
+            Type: PAYMENT_METHOD_TYPES.GOOGLE_PAY,
+        } as PaymentMethodGooglePay;
     }
 
     return method;
@@ -101,6 +114,7 @@ export interface PaymentMethodsParameters {
     planIDs?: PlanIDs;
     subscription?: Subscription | FreeSubscription;
     canUseApplePay?: boolean;
+    canUseGooglePay?: boolean;
     isTrial?: boolean;
 }
 
@@ -225,6 +239,8 @@ export class PaymentMethods {
 
     public canUseApplePay: boolean;
 
+    public canUseGooglePay: boolean;
+
     public isTrial: boolean;
 
     constructor({
@@ -242,6 +258,7 @@ export class PaymentMethods {
         planIDs,
         subscription,
         canUseApplePay,
+        canUseGooglePay,
         isTrial,
     }: PaymentMethodsParameters) {
         this._paymentStatus = paymentStatus;
@@ -259,6 +276,7 @@ export class PaymentMethods {
         this.planIDs = planIDs;
         this.subscription = subscription;
         this.canUseApplePay = !!canUseApplePay;
+        this.canUseGooglePay = !!canUseGooglePay;
         this.isTrial = !!isTrial;
     }
 
@@ -301,6 +319,9 @@ export class PaymentMethods {
                 const isExistingApplePay =
                     paymentMethod.Type === PAYMENT_METHOD_TYPES.APPLE_PAY && this.paymentStatus.VendorStates.Apple;
 
+                const isExistingGooglePay =
+                    paymentMethod.Type === PAYMENT_METHOD_TYPES.GOOGLE_PAY && this.paymentStatus.VendorStates.Google;
+
                 // Only Paypal and Card can be saved/used payment methods.
                 // E.g. it's not possible to make Bitcoin/Cash a saved payment method.
                 return (
@@ -309,7 +330,8 @@ export class PaymentMethods {
                     isExistingChargebeeCard ||
                     isExistingChargebeePaypal ||
                     isExistingChargebeeSepaDirectDebit ||
-                    isExistingApplePay
+                    isExistingApplePay ||
+                    isExistingGooglePay
                 );
             })
             .map((paymentMethod) => {
@@ -374,6 +396,10 @@ export class PaymentMethods {
                 available: this.isApplePayAvailable(),
                 type: PAYMENT_METHOD_TYPES.APPLE_PAY,
             },
+            {
+                available: this.isGooglePayAvailable(),
+                type: PAYMENT_METHOD_TYPES.GOOGLE_PAY,
+            },
         ]
             .filter(({ available }) => available)
             .map(({ type }) => ({ type, value: type, isSaved: false, isDefault: false }));
@@ -408,6 +434,8 @@ export class PaymentMethods {
                 return this.isChargebeePaypalAvailable();
             case PAYMENT_METHOD_TYPES.APPLE_PAY:
                 return this.isApplePayAvailable();
+            case PAYMENT_METHOD_TYPES.GOOGLE_PAY:
+                return this.isGooglePayAvailable();
             default:
                 return false;
         }
@@ -542,6 +570,30 @@ export class PaymentMethods {
         );
     }
 
+    private isGooglePayAvailable(): boolean {
+        const flows = [
+            'signup',
+            'signup-pass',
+            'signup-pass-upgrade',
+            'signup-wallet',
+            'signup-v2',
+            'signup-v2-upgrade',
+            'signup-vpn',
+            'subscription',
+        ] as PaymentMethodFlow[];
+        const isAllowedFlow = flows.includes(this.flow);
+
+        const isGooglePayAmountValid = this.amount >= MIN_GOOGLE_PAY_AMOUNT;
+
+        return (
+            this.paymentStatus.VendorStates.Google &&
+            isGooglePayAmountValid &&
+            isAllowedFlow &&
+            this.canUseGooglePay &&
+            !this.isTrial
+        );
+    }
+
     private isB2BPlan(): boolean {
         return this.selectedPlanName ? getIsB2BAudienceFromPlan(this.selectedPlanName) : false;
     }
@@ -583,6 +635,7 @@ export async function initializePaymentMethods({
     planIDs?: PlanIDs;
     subscription?: Subscription;
     canUseApplePay?: boolean;
+    canUseGooglePay?: boolean;
     isTrial?: boolean;
 }) {
     const paymentMethodStatusPromise = maybePaymentMethodStatus ?? paymentsApi.paymentStatus();

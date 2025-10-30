@@ -8,10 +8,11 @@ import {
     type ChargebeeCardPaymentProcessorState,
     type ChargebeeIframeEvents,
     type ChargebeeIframeHandles,
+    type PaymentProcessorHook,
+    type PaymentProcessorType,
     type PaymentStatus,
     type PaymentVerificatorV5,
 } from '@proton/payments';
-import type { PaymentProcessorHook, PaymentProcessorType } from '@proton/payments';
 import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 

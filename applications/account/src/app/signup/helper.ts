@@ -134,6 +134,7 @@ export const getOptimisticPaymentMethods = (): PaymentStatus => {
             Apple: false,
             Cash: false,
             Bitcoin: false,
+            Google: true,
         },
         CountryCode: DEFAULT_TAX_BILLING_ADDRESS.CountryCode,
         State: DEFAULT_TAX_BILLING_ADDRESS.State,

@@ -113,6 +113,7 @@ const defaultSetConfigurationEvent: SetConfigurationEvent = {
         invalidCardCvcMessage: 'Invalid card cvc',
     },
     renderMode: 'one-line',
+    themeType: 'light',
 };
 
 function sendEventToChargebee(event: any) {
@@ -581,7 +582,6 @@ describe('Direct Debit', () => {
                 },
             },
             expect.objectContaining({
-                challenge: expect.any(Function),
                 success: expect.any(Function),
                 error: expect.any(Function),
             })

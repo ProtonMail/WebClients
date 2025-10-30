@@ -37,7 +37,6 @@ const TestComponent = () => {
                 onThreeDsChallenge: jest.fn(),
                 onThreeDsSuccess: jest.fn(),
                 onThreeDsFailure: jest.fn(),
-                onCardVeririfcation3dsChallenge: jest.fn(),
                 onCardVeririfcationSuccess: jest.fn(),
                 onCardVeririfcationFailure: jest.fn(),
                 onUnhandledError: jest.fn(),
@@ -45,6 +44,10 @@ const TestComponent = () => {
                 onApplePayFailure: jest.fn(),
                 onApplePayClicked: jest.fn(),
                 onApplePayCancelled: jest.fn(),
+                onGooglePayAuthorized: jest.fn(),
+                onGooglePayFailure: jest.fn(),
+                onGooglePayClicked: jest.fn(),
+                onGooglePayCancelled: jest.fn(),
             },
             handles: {
                 submitDirectDebit: jest.fn(),
