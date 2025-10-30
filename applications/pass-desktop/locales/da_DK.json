@@ -1370,6 +1370,17 @@
         "Meget lille"
       ]
     },
+    "Header": {
+      "Domain": [
+        "Domæne"
+      ],
+      "Password ends with": [
+        "Adgangskode slutter med"
+      ],
+      "Username": [
+        "Brugernavn"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "\"${ payload.itemName }\" element blev afvist"
@@ -1918,10 +1929,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Flyttes et element til en anden boks, slettes dets sikre links.",
-        "Flyttes elementer til en anden boks, slettes deres sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -2494,7 +2501,7 @@
         "Du kan lukke denne fane."
       ],
       "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
-        "De skal muligvis acceptere en tilladelsesanmodning og kan være nødt til at genstarte applikationen, afhængigt af dit system."
+        "Du skal muligvis acceptere en tilladelsesanmodning og kan være nødt til at genstarte applikationen, afhængigt af dit system."
       ],
       "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
         "Det kan være nødvendigt at give tilgængelighedstilladelse til ${ PASS_APP_NAME }."
@@ -4125,6 +4132,9 @@
       ],
       "No, it wasn’t me": [
         "Nej, det var ikke mig"
+      ],
+      "Sign-in confirmed": [
+        "Login bekræftet"
       ],
       "Sign-in failed": [
         "Log-ind mislykkedes"
