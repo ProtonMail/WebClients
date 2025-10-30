@@ -25,6 +25,7 @@ import {
     getFrameParentVisibility,
     getFrameVisibility,
     isNegligableFrameRect,
+    isSandboxedFrame,
 } from 'proton-pass-extension/app/content/utils/frame';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { getNodePosition } from 'proton-pass-extension/lib/utils/dom';
@@ -64,6 +65,7 @@ const sendActivityProbe = () => sendMessage(contentScriptMessage({ type: WorkerM
 const onFrameQuery: FrameMessageHandler<WorkerMessageType.FRAME_QUERY> = ({ payload }, sendResponse) => {
     const target = getFrameElement(payload.frameId, payload.frameAttributes);
     if (!target) sendResponse({ ok: false });
+    else if (isSandboxedFrame(target)) sendResponse({ ok: false });
     else if (!getFrameVisibility(target)) sendResponse({ ok: false });
     else {
         sendResponse({
