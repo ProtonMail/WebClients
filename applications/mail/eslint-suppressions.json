@@ -6,7 +6,7 @@
     },
     "src/app/components/actions/MoveToLabelDropdown.tsx": {
         "react-hooks/exhaustive-deps": {
-            "count": 3
+            "count": 4
         }
     },
     "src/app/components/assistant/ComposerAssistant.tsx": {
@@ -117,6 +117,16 @@
     "src/app/components/dropdown/CustomFilterDropdown.tsx": {
         "react-hooks/exhaustive-deps": {
             "count": 2
+        }
+    },
+    "src/app/components/dropdown/MoveDropdown.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 2
+        }
+    },
+    "src/app/components/dropdown/LabelDropdown.tsx": {
+        "react-hooks/exhaustive-deps": {
+            "count": 4
         }
     },
     "src/app/components/eo/EORedirect.tsx": {
