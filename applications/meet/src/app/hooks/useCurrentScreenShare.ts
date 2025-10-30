@@ -58,6 +58,8 @@ export function useCurrentScreenShare({
             await room.localParticipant.setScreenShareEnabled(
                 true,
                 {
+                    audio: true,
+                    systemAudio: 'include',
                     resolution: {
                         width: screenShareQuality.resolution.width,
                         height: screenShareQuality.resolution.height,
