@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
-import { Hamburger, SettingsLink } from '@proton/components';
+import { Hamburger } from '@proton/components';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import useFlag from '@proton/unleash/useFlag';
 
@@ -62,13 +62,13 @@ export const HeaderWrapper = ({ children }: HeaderWrapperProps) => {
                             </li>
                             {showB2BSignUpLink && (
                                 <li className="pt-1 no-print">
-                                    <SettingsLink
-                                        path="/signup/business"
+                                    <Href
+                                        href="https://account.proton.me/lumo/signup/business"
                                         className="inline-flex py-3 px-4 color-weak text-no-decoration flex flex-row items-center gap-1"
                                     >
                                         {c('collider_2025: Top nav link').t`For Business`}
                                         <NewLabel />
-                                    </SettingsLink>
+                                    </Href>
                                 </li>
                             )}
                             {isGuest && (
