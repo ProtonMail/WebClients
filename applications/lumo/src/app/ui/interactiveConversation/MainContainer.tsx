@@ -1,6 +1,7 @@
 import { useCallback, useRef, useState } from 'react';
 
 import { clsx } from 'clsx';
+import { c } from 'ttag';
 
 import useFlag from '@proton/unleash/useFlag';
 
@@ -14,6 +15,7 @@ import { FilesManagementView } from '../components/Files';
 import { NewGhostChatButton } from '../components/NewGhostChatButton';
 import WhatsNew from '../components/WhatsNew/WhatsNew';
 import { HeaderWrapper } from '../header/HeaderWrapper';
+import PromptSuggestion from './MainContainer/PromptSuggestion';
 import LumoCat from './MainContainer/LumoCat';
 import LumoMainText from './MainContainer/LumoMainText';
 import LumoOnboarding from './MainContainer/Onboarding/LumoOnboarding';
@@ -38,6 +40,7 @@ const MainContainer = ({
     const [isEditorFocused, setIsEditorFocused] = useState(false);
     const [isEditorEmpty, setIsEditorEmpty] = useState(true);
     const isLumoHalloweenEnabled = useFlag('LumoHalloween');
+    const [promptSuggestion, setPromptSuggestion] = useState<string | undefined>(undefined);
 
     // Files panel state
     const [openPanel, setOpenPanel] = useState<{
@@ -66,6 +69,11 @@ const MainContainer = ({
 
     const handleClearFilter = useCallback(() => {
         setOpenPanel({ type: 'files', filterMessage: undefined, autoShowDriveBrowser: false });
+    }, []);
+
+    // Handler for prompt suggestion click
+    const handlePromptSuggestionClick = useCallback((prompt: string) => {
+        setPromptSuggestion(prompt);
     }, []);
 
     // Determine if lumo-welcome-section should be visible
@@ -97,12 +105,20 @@ const MainContainer = ({
                         '--top-custom': isSmallScreen ? '-6rem' : undefined,
                     }}
                 >
-                    <div className="main-text-container flex-1 my-auto flex relative">
+                    <div className="main-text-container flex-1 my-auto flex flex-column relative w-full">
                         <LumoMainText
                             isOnboardingCompleted={isOnboardingCompleted}
                             isSmallScreen={isSmallScreen}
                             isGhostMode={isGhostChatMode}
                         />
+                        {isLumoHalloweenEnabled && !isSmallScreen && (
+                            <PromptSuggestion
+                                prompt={c('collider_2025:Prompt').t`Where does Halloween come from?`}
+                                icon="🎃"
+                                onPromptClick={handlePromptSuggestionClick}
+                                isSmallScreen={isSmallScreen}
+                            />
+                        )}
                     </div>
                     <LumoCat
                         isSmallScreen={isSmallScreen}
@@ -110,6 +126,16 @@ const MainContainer = ({
                         isLumoHalloweenEnabled={isLumoHalloweenEnabled}
                     />
                 </div>
+
+                {isLumoHalloweenEnabled && isSmallScreen && isEditorEmpty && (
+                    <PromptSuggestion
+                        prompt={c('collider_2025:Prompt').t`Where does Halloween come from?`}
+                        icon="🎃"
+                        onPromptClick={handlePromptSuggestionClick}
+                        className={clsx("align-self-center")}
+                        isSmallScreen={isSmallScreen}
+                    />
+                )}
 
                 <div
                     className={clsx('composer-container md:px-4 w-full', {
@@ -128,7 +154,7 @@ const MainContainer = ({
                         onShowDriveBrowser={handleShowDriveBrowser}
                         isGuest={isGuest}
                         isSmallScreen={isSmallScreen}
-                        initialQuery={initialQuery}
+                        initialQuery={promptSuggestion || initialQuery}
                     />
                 </div>
                 <WhatsNew />
