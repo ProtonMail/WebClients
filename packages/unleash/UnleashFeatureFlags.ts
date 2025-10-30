@@ -231,6 +231,7 @@ enum MeetFeatureFlag {
     MeetEarlyAccessPublic = 'MeetEarlyAccessPublic',
     MeetErrorReporting = 'MeetErrorReporting',
     MeetPassphraseEnabled = 'MeetPassphraseEnabled',
+    MeetUpsell = 'MeetUpsell',
     PersonalMeetingRotation = 'PersonalMeetingRotation',
 }
 
