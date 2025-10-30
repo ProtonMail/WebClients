@@ -4,11 +4,11 @@ import { MemoryCache, ProtonDriveClient } from '@protontech/drive-sdk';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useLocalState } from '@proton/components';
-import { initOpenPGPCryptoModule } from '@proton/drive/lib/openPGPCryptoModule';
-import { initTelemetry } from '@proton/drive/lib/telemetry';
-import { useAccount } from '@proton/drive/lib/useAccount';
-import { useHttpClient } from '@proton/drive/lib/useHttpClient';
-import { useSrpModule } from '@proton/drive/lib/useSrpModule';
+import { initOpenPGPCryptoModule } from '@proton/drive/internal/openPGPCryptoModule';
+import { initTelemetry } from '@proton/drive/internal/telemetry';
+import { useAccount } from '@proton/drive/internal/useAccount';
+import { useHttpClient } from '@proton/drive/internal/useHttpClient';
+import { useSrpModule } from '@proton/drive/internal/useSrpModule';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 
 export interface DriveNode {
@@ -106,11 +106,11 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods {
         console.log('Clearing Drive SDK caches...');
         try {
             if (entitiesCacheRef.current && typeof entitiesCacheRef.current.clear === 'function') {
-                entitiesCacheRef.current.clear();
+                void entitiesCacheRef.current.clear();
                 console.log('Cleared entitiesCache');
             }
             if (cryptoCacheRef.current && typeof cryptoCacheRef.current.clear === 'function') {
-                cryptoCacheRef.current.clear();
+                void cryptoCacheRef.current.clear();
                 console.log('Cleared cryptoCache');
             }
         } catch (error) {
@@ -428,22 +428,22 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods {
 
     const navigateToFolder = useCallback(
         (folderId: string) => {
-            browseFolderChildren(folderId);
+            void browseFolderChildren(folderId);
         },
         [browseFolderChildren]
     );
 
     const navigateUp = useCallback(() => {
         if (state.currentFolder?.parentNodeId) {
-            browseFolderChildren(state.currentFolder.parentNodeId);
+            void browseFolderChildren(state.currentFolder.parentNodeId);
         } else {
-            browseFolderChildren(); // Go to root
+            void browseFolderChildren(); // Go to root
         }
     }, [state.currentFolder, browseFolderChildren]);
 
     useEffect(() => {
         if (!state.isInitialized && !state.isLoading && user) {
-            initializeDriveSDK();
+            void initializeDriveSDK();
         }
     }, [initializeDriveSDK, state.isInitialized, state.isLoading, user]);
 
