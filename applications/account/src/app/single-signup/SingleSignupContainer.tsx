@@ -687,6 +687,7 @@ const SingleSignupContainer = ({
                             upsellImg={<img src={vpnUpsellIllustration} alt={upsellShortPlan?.description || ''} />}
                             signupTrial={signupParameters.trial}
                             toAppName={toAppName}
+                            couponUrlParam={signupParameters.coupon}
                         />
                     ) : (
                         <Step1
@@ -758,6 +759,7 @@ const SingleSignupContainer = ({
                             onCurrencyChange={updatePlans}
                             hideFreePlan={signupParameters.hideFreePlan}
                             upsellImg={<img src={vpnUpsellIllustration} alt={upsellShortPlan?.description || ''} />}
+                            couponUrlParam={signupParameters.coupon}
                         />
                     ))}
                 {model.step === Steps.Loading && (
