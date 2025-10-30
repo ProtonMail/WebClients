@@ -7898,10 +7898,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@proton-meet/proton-meet-core@npm:0.3.3-9":
-  version: 0.3.3-9
-  resolution: "@proton-meet/proton-meet-core@npm:0.3.3-9"
-  checksum: 10c0/7b10035071b853802c928410f017d8bd21abde790f55f0249aa011a98973ddb47e88ffc0f872e97a430c642646e741b544e4ce4716023a8c6f9c99aaf32db3f7
+"@proton-meet/proton-meet-core@npm:0.3.4":
+  version: 0.3.4
+  resolution: "@proton-meet/proton-meet-core@npm:0.3.4"
+  checksum: 10c0/2d1bd5853cdb8019b9762f33ef6c6083bf7ad27fd99c8a5c0472f3ceca8e3f47599bbb194478106633886cd6a269c1e87d7024c3fc2e6f475589aedbb1c9b1fd
   languageName: node
   linkType: hard
 
@@ -38416,7 +38416,7 @@ __metadata:
     "@livekit/krisp-noise-filter": "npm:^0.3.4"
     "@livekit/track-processors": "npm:^0.6.1"
     "@proton-meet/livekit-client": "npm:2.15.10"
-    "@proton-meet/proton-meet-core": "npm:0.3.3-9"
+    "@proton-meet/proton-meet-core": "npm:0.3.4"
     "@proton/components": "workspace:packages/components"
     "@proton/cross-storage": "workspace:packages/cross-storage"
     "@proton/crypto": "workspace:packages/crypto"

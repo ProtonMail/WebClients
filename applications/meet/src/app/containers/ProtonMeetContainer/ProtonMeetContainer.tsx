@@ -34,7 +34,7 @@ import { usePictureInPicture } from '../../hooks/usePictureInPicture/usePictureI
 import { useWakeLock } from '../../hooks/useWakeLock';
 import type { MLSGroupState, MeetChatMessage } from '../../types';
 import { LoadingState } from '../../types';
-import { setupWasmDependencies } from '../../utils/wasmUtils';
+import { setupLiveKitAdminChangeEvent, setupWasmDependencies } from '../../utils/wasmUtils';
 import { MeetContainer } from '../MeetContainer';
 import { PrejoinContainer } from '../PrejoinContainer/PrejoinContainer';
 
@@ -161,11 +161,23 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
         }
     };
 
+    const onLiveKitAdminChanged = async (roomId: string, newAdminParticipantUid: string) => {
+        try {
+            // TODO: Implement logic for admin participant change
+        } catch (err) {
+            reportMeetError(
+                'Could not update admin participant uid: ' + newAdminParticipantUid + ' for room: ' + roomId,
+                err
+            );
+        }
+    };
+
     const handleMlsSetup = async (meetingLinkName: string, accessToken: string) => {
         if (!mlsSetupDone.current) {
             mlsSetupDone.current = true;
 
             setupWasmDependencies({ getGroupKeyInfo, onNewGroupKeyInfo });
+            setupLiveKitAdminChangeEvent({ onLiveKitAdminChanged });
         }
 
         if (!wasmApp) {
@@ -176,6 +188,7 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
             await wasmApp.joinMeetingWithAccessToken(accessToken, meetingLinkName);
 
             await wasmApp.setMlsGroupUpdateHandler();
+            await wasmApp.setLiveKitAdminChangeHandler();
 
             const groupKeyData = await wasmApp.getGroupKey();
 
