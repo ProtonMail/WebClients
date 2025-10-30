@@ -50,8 +50,8 @@ describe('generateThumbnail', () => {
         });
 
         const blob = new Blob(['test'], { type: 'image/jpeg' });
-        const { resultPromise } = generateThumbnail(blob, 'test.jpg', blob.size);
-        const result = await resultPromise;
+        const { thumbnailsPromise } = generateThumbnail(blob, 'test.jpg', blob.size);
+        const result = await thumbnailsPromise;
 
         expect(result.ok).toBe(true);
         expect(mockProcess).toHaveBeenCalledWith(
@@ -72,8 +72,8 @@ describe('generateThumbnail', () => {
         });
 
         const blob = new Blob(['test'], { type: 'image/jpeg' });
-        const { resultPromise } = generateThumbnail(blob, 'test.jpg', blob.size);
-        const result = await resultPromise;
+        const { thumbnailsPromise } = generateThumbnail(blob, 'test.jpg', blob.size);
+        const result = await thumbnailsPromise;
 
         expect(result.ok).toBe(true);
         expect(mockProcess).toHaveBeenCalledWith(
@@ -94,10 +94,10 @@ describe('generateThumbnail', () => {
         });
 
         const blob = new Blob(['test'], { type: 'image/jpeg' });
-        const { resultPromise } = generateThumbnail(blob, 'test.jpg', blob.size, {
+        const { thumbnailsPromise } = generateThumbnail(blob, 'test.jpg', blob.size, {
             debug: true,
         });
-        await resultPromise;
+        await thumbnailsPromise;
 
         expect(mockProcess).toHaveBeenCalledWith(
             blob,
@@ -114,8 +114,8 @@ describe('generateThumbnail', () => {
         mockProcess.mockRejectedValue(new NoHandlerError('image/unknown'));
 
         const blob = new Blob(['test'], { type: 'image/unknown' });
-        const { resultPromise } = generateThumbnail(blob, 'test.unknown', blob.size);
-        const result = await resultPromise;
+        const { thumbnailsPromise } = generateThumbnail(blob, 'test.unknown', blob.size);
+        const result = await thumbnailsPromise;
 
         expect(result.ok).toBe(false);
         // @ts-ignore

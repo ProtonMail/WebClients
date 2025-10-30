@@ -7,10 +7,10 @@ import { getClientID } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
 
-import { initOpenPGPCryptoModule } from './lib/openPGPCryptoModule';
-import { useAccount } from './lib/useAccount';
-import { useHttpClient } from './lib/useHttpClient';
-import { useSrpModule } from './lib/useSrpModule';
+import { initOpenPGPCryptoModule } from './internal/openPGPCryptoModule';
+import { useAccount } from './internal/useAccount';
+import { useHttpClient } from './internal/useHttpClient';
+import { useSrpModule } from './internal/useSrpModule';
 
 export { type Diagnostic, type DiagnosticResult } from '@protontech/drive-sdk/dist/diagnostic';
 export { type ExcpectedTreeNode } from '@protontech/drive-sdk/dist/diagnostic/interface';

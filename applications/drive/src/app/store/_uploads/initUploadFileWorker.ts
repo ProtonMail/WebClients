@@ -1,4 +1,5 @@
-import { type ThumbnailResult, ThumbnailType, generateThumbnail } from '@proton/drive';
+import { ThumbnailType } from '@proton/drive';
+import { type ThumbnailResult, generateThumbnail } from '@proton/drive/modules/thumbnails';
 import { getItem } from '@proton/shared/lib/helpers/storage';
 
 import { TransferCancel } from '../../components/TransferManager/transfer';
@@ -64,16 +65,14 @@ export function initUploadFileWorker(
     // upload starts, so we can generate thumbnail as fast as possible without
     // need to wait for creation of revision on API.
     let mimeTypePromise: Promise<string>;
-    let thumbnailResultPromise:
-        | Promise<{ ok: true; result: ThumbnailResult } | { ok: false; error: unknown }>
-        | undefined;
+    let thumbnailsPromise: Promise<{ ok: true; result: ThumbnailResult } | { ok: false; error: unknown }> | undefined;
 
     if (useNewThumbnailGeneration) {
         const thumbnailGeneration = generateThumbnail(file, file.name, file.size, {
             debug: Boolean(getItem('proton-drive-debug', 'false')),
         });
         mimeTypePromise = thumbnailGeneration.mimeTypePromise;
-        thumbnailResultPromise = thumbnailGeneration.resultPromise;
+        thumbnailsPromise = thumbnailGeneration.thumbnailsPromise;
     } else {
         mimeTypePromise = mimeTypeFromFile(file);
     }
@@ -87,9 +86,9 @@ export function initUploadFileWorker(
         // Worker has a slight overhead about 40 ms. Let's start generating
         // thumbnail a bit sooner.
         const mediaInfoPromise =
-            useNewThumbnailGeneration && thumbnailResultPromise
+            useNewThumbnailGeneration && thumbnailsPromise
                 ? (async () => {
-                      const thumbnailResult = await thumbnailResultPromise;
+                      const thumbnailResult = await thumbnailsPromise;
 
                       if (!thumbnailResult.ok || !thumbnailResult.result) {
                           return undefined;
