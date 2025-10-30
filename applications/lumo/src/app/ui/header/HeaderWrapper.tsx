@@ -5,9 +5,9 @@ import { c } from 'ttag';
 import { Href } from '@proton/atoms';
 import { Hamburger } from '@proton/components';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { isMobile } from '@proton/shared/lib/helpers/browser';
 import useFlag from '@proton/unleash/useFlag';
 
-// import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useLumoPlan } from '../../providers/LumoPlanProvider';
 import { useSidebar } from '../../providers/SidebarProvider';
@@ -36,7 +36,8 @@ export const HeaderWrapper = ({ children }: HeaderWrapperProps) => {
     const isLumoB2BEnabled = useFlag('LumoB2B');
     const { isLumoPlanLoading, isB2BAudience } = useLumoPlan();
 
-    const showB2BSignUpLink = isLumoB2BEnabled && !isLumoPlanLoading && isB2BAudience;
+    const isMobileDevice = isMobile();
+    const showB2BSignUpLink = isLumoB2BEnabled && !isLumoPlanLoading && isB2BAudience && !isMobileDevice;
 
     return (
         <>
@@ -71,7 +72,7 @@ export const HeaderWrapper = ({ children }: HeaderWrapperProps) => {
                                     </Href>
                                 </li>
                             )}
-                            {isGuest && (
+                            {isGuest && !isMobileDevice && (
                                 <li className="ml-auto hidden lg:inline-flex no-print">
                                     <Href
                                         href="https://proton.me/mail"
