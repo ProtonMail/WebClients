@@ -15,6 +15,13 @@
 .main-text-container {
 	container-type: inline-size;
 	container-name: maintext;
+	max-inline-size: 100%;
+
+	@include media('<=small') {
+		inline-size: 100%;
+		max-inline-size: 100%;
+		box-sizing: border-box;
+	}
 }
 
 .main-text {
