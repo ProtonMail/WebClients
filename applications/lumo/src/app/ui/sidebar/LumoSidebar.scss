@@ -331,7 +331,7 @@
 	// Mobile sidebar styling - white background and elegant drop shadow
 	.sidebar {
 		// White background for clean mobile appearance
-		background-color: white !important;
+		background-color: var(--background-norm) !important;
 
 		// Ensure sidebar is above backdrop and clickable
 		z-index: 100 !important;
