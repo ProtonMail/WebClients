@@ -8,7 +8,7 @@ export type UnlimitedToDuoOfferConfig = TopNavbarOfferConfig<UnlimitedToDuoMessa
 export type UnlimitedToDuoTipProps = TipProps<UnlimitedToDuoMessageType>;
 
 export enum UnlimitedToDuoMessageType {
-    DoubleYourStorage = 'double-your-storage',
+    GetFourTimesMoreStorage = 'get-four-times-more-storage',
     ShareYourPlan = 'share-your-plan',
 }
 
