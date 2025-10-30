@@ -6,6 +6,7 @@ import {
 } from 'proton-pass-extension/app/content/constants.runtime';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
+import { FIELD_ATTRS_FILTER } from 'proton-pass-extension/app/content/services/form/field.utils';
 import { getFrameAttributes } from 'proton-pass-extension/app/content/utils/frame';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
@@ -17,6 +18,7 @@ import { animatePositionChange, freezeAnimations, waitForTransitions } from '@pr
 import { isInputElement } from '@proton/pass/utils/dom/predicates';
 import { safeAsyncCall, safeCall } from '@proton/pass/utils/fp/safe-call';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
 import type { IconStyles } from './icon.utils';
@@ -68,7 +70,7 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
          * sensitive to the DOM structure of their input fields (eg: some websites expect
          * their input elements to always be the first child of a wrapper component, interfering
          * with this could cause unintented crashes) */
-        const root = field.element.getRootNode();
+        const root = input.getRootNode();
         if (root instanceof ShadowRoot) return root;
         return field.getFormHandle().scrollChild;
     })();
@@ -162,7 +164,7 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
         })
     );
 
-    const reposition = (reflow: boolean) => {
+    const reposition = (reflow: boolean, throttle?: number) => {
         /** Store reflow in case current request gets canceled */
         state.repositionReflow = reflow || state.repositionReflow;
         cancelAnimationFrame(state.repositionRaf);
@@ -186,6 +188,7 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
 
             state.repositionReflow = false;
 
+            if (throttle) await wait(throttle);
             /** Wait for anchor animations to stabilize before repositioning.
              * Computing the icon injection styles will mutate the input's
              * inline styles which may interfere with ongoing transitions */
@@ -234,7 +237,7 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
                          * the current positioning changes have been fully rendered */
                         state.repositionRaf = requestAnimationFrame(() => {
                             if (!ctrl.signal.aborted) {
-                                state.inputObserver?.observe(field.element);
+                                state.inputObserver?.observe(input);
                                 state.containerObserver?.observe(state.container);
                                 state.releaseTransitions?.();
                             }
@@ -292,12 +295,13 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
      * Revalidate anchor element positioning with reflow=true to ensure
      * icon remains correctly positioned relative to potentially changed boundaries. */
     listeners.addObserver(state.container, () => reposition(true), { childList: true, subtree: true });
+    listeners.addObserver(input, () => reposition(false, 50), FIELD_ATTRS_FILTER);
     listeners.addResizeObserver(field.getFormHandle().element, () => reposition(true));
 
     /** `passive` flag allows not firing resize observer callbacks
      * when observation starts (avoids repositioning cascade). We
      * observe both the input and the container for repositioning. */
-    state.inputObserver = listeners.addResizeObserver(field.element, () => reposition(false), { passive: true });
+    state.inputObserver = listeners.addResizeObserver(input, () => reposition(false), { passive: true });
     state.containerObserver = listeners.addResizeObserver(state.container, () => reposition(false), { passive: true });
 
     sync();

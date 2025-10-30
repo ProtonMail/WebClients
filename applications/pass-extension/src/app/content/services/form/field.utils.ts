@@ -53,3 +53,11 @@ export const createElementTrap = <K extends string>(element: HTMLElement, key: K
         },
     };
 };
+
+/** Observer configuration to watch for validation state changes
+ * that require repositioning injected elements. Monitors aria and
+ * data attributes commonly updated during form validation */
+export const FIELD_ATTRS_FILTER = {
+    attributes: true,
+    attributeFilter: ['aria-invalid', 'aria-describedby', 'aria-errormessage', 'data-invalid', 'data-error'],
+};
