@@ -1,7 +1,18 @@
 import { c } from 'ttag';
 
-import { DropdownMenu, DropdownMenuButton, DropdownSizeUnit, useModalState } from '@proton/components';
-import { IcArchiveBox, IcBell, IcCrossCircle, IcFire, IcFireSlash, IcFolderArrowIn, IcInbox, IcTag, IcThreeDotsHorizontal, IcTrash } from '@proton/icons';
+import { DropdownMenu, DropdownMenuButton, useModalState } from '@proton/components';
+import {
+    IcArchiveBox,
+    IcBell,
+    IcCrossCircle,
+    IcFire,
+    IcFireSlash,
+    IcFolderArrowIn,
+    IcInbox,
+    IcTag,
+    IcThreeDotsHorizontal,
+    IcTrash,
+} from '@proton/icons';
 import { labelIncludes } from '@proton/mail/helpers/location';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
@@ -16,8 +27,8 @@ import { canMoveAll } from '../../helpers/labels';
 import { useEmptyLabel } from '../../hooks/actions/useEmptyLabel';
 import useSnooze from '../../hooks/actions/useSnooze';
 import { useLabelActions } from '../../hooks/useLabelActions';
-import { MoveToFolderDropdown, moveDropdownContentProps } from '../actions/MoveToFolderDropdown';
-import { MoveToLabelDropdown, labelDropdownContentProps } from '../actions/MoveToLabelDropdown';
+import LabelDropdown, { labelDropdownContentProps } from '../dropdown/LabelDropdown';
+import MoveDropdown, { moveDropdownContentProps } from '../dropdown/MoveDropdown';
 import useListTelemetry, { ACTION_TYPE, SELECTED_RANGE, SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
 import SnoozeUpsellModal from '../list/snooze/components/SnoozeUpsellModal';
 import SnoozeToolbarDropdownStepWrapper, {
@@ -208,13 +219,8 @@ const MoreDropdown = ({
         ? [
               {
                   contentProps: moveDropdownContentProps,
-                  dropdownSize: {
-                      maxHeight: DropdownSizeUnit.Viewport,
-                      width: '19rem',
-                      maxWidth: DropdownSizeUnit.Viewport,
-                  },
                   render: ({ onClose, onLock }) => (
-                      <MoveToFolderDropdown
+                      <MoveDropdown
                           labelID={labelID}
                           selectedIDs={selectedIDs}
                           onClose={onClose}
@@ -227,13 +233,8 @@ const MoreDropdown = ({
               },
               {
                   contentProps: labelDropdownContentProps,
-                  dropdownSize: {
-                      maxHeight: DropdownSizeUnit.Viewport,
-                      width: '19rem',
-                      maxWidth: DropdownSizeUnit.Viewport,
-                  },
                   render: ({ onClose, onLock }) => (
-                      <MoveToLabelDropdown
+                      <LabelDropdown
                           labelID={labelID}
                           selectedIDs={selectedIDs}
                           onClose={onClose}
@@ -264,7 +265,7 @@ const MoreDropdown = ({
         <>
             <ToolbarDropdown
                 title={c('Action').t`More`}
-                content={<IcThreeDotsHorizontal className="toolbar-icon"  alt={c('Action').t`More`} />}
+                content={<IcThreeDotsHorizontal className="toolbar-icon" alt={c('Action').t`More`} />}
                 data-testid="toolbar:more-dropdown"
                 hasCaret={false}
                 additionalDropdowns={additionalDropdowns}
