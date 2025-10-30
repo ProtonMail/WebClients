@@ -7,9 +7,10 @@ export interface DurationOption {
 
 export const getCalendarEventDefaultDuration = (): DurationOption[] => {
     return [
-        { text: c('Duration').t`30 minutes`, value: 30 },
-        { text: c('Duration').t`60 minutes`, value: 60 },
-        { text: c('Duration').t`90 minutes`, value: 90 },
-        { text: c('Duration').t`120 minutes`, value: 120 },
+        { text: c('Duration').t`15m`, value: 15 },
+        { text: c('Duration').t`30m`, value: 30 },
+        { text: c('Duration').t`1h`, value: 60 },
+        { text: c('Duration').t`1.5h`, value: 90 },
+        { text: c('Duration').t`2h`, value: 120 },
     ];
 };

@@ -9,7 +9,7 @@ import type { DecryptedCalendarKey } from '@proton/shared/lib/interfaces/calenda
 import type { PrimaryAddressKeyForEncryption, PrimaryAddressKeysForSigning } from '@proton/shared/lib/keys';
 
 import { JSONFormatData, JSONFormatTextData, createBookingLink } from './bookingHelpers';
-import type { BookingFormData } from './bookingsProvider/interface';
+import { type BookingFormData, BookingLocation } from './bookingsProvider/interface';
 
 interface EncryptionParams {
     formData: BookingFormData;
@@ -25,7 +25,12 @@ const encryptBookingData = async (
     signingKeys: PrimaryAddressKeysForSigning
 ) => {
     const { message: encryptedContent } = await CryptoProxy.encryptMessage({
-        textData: JSONFormatData({ description: formData.title, location: formData.title, summary: formData.title }),
+        textData: JSONFormatData({
+            description: formData.description || '',
+            location: formData.location || '',
+            summary: formData.title,
+            withProtonMeetLink: formData.locationType === BookingLocation.MEET,
+        }),
         passwords: bookingKeyPassword,
         signingKeys: signingKeys,
         format: 'binary',
