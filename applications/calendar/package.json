@@ -45,6 +45,7 @@
         "@proton/redux-shared-store-types": "workspace:^",
         "@proton/redux-utilities": "workspace:^",
         "@proton/shared": "workspace:^",
+        "@proton/srp": "workspace:^",
         "@proton/styles": "workspace:^",
         "@proton/unleash": "workspace:^",
         "@proton/utils": "workspace:^",
@@ -61,7 +62,8 @@
         "react-router": "^5.3.4",
         "react-router-dom": "^5.3.4",
         "tinycolor2": "^1.6.0",
-        "ttag": "^1.8.12"
+        "ttag": "^1.8.12",
+        "zustand": "^5.0.8"
     },
     "devDependencies": {
         "@babel/preset-typescript": "^7.27.1",
