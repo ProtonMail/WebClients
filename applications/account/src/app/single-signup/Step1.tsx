@@ -9,7 +9,6 @@ import {
     type Breakpoints,
     CurrencySelector,
     Icon,
-    Price,
     SkeletonLoader,
     Toggle,
     getCheckoutRenewNoticeTextFromCheckResult,
@@ -595,12 +594,6 @@ const Step1 = ({
         taxCountry,
     });
 
-    const price = (
-        <Price key="price" currency={options.currency}>
-            {options.checkResult.AmountDue}
-        </Price>
-    );
-
     const upsellPlanName = upsellShortPlan?.title || '';
 
     const termsHref = (() => {
@@ -1083,22 +1076,6 @@ const Step1 = ({
                         })}
                     </div>
                 )}
-                {(() => {
-                    if (!actualCheckout.discountPercent) {
-                        return;
-                    }
-
-                    if (signupTrial) {
-                        return;
-                    }
-
-                    return (
-                        <DiscountBanner
-                            discountPercent={actualCheckout.discountPercent}
-                            selectedPlanTitle={selectedPlan.Title}
-                        />
-                    );
-                })()}
                 {showCycleAndSelectors && (
                     <Box className={`mt-8 w-full ${padding}`}>
                         <BoxHeader
@@ -1368,6 +1345,12 @@ const Step1 = ({
                                             startTrial={checkTrial}
                                             onCurrencyChange={handleChangeCurrency}
                                         />
+                                        {actualCheckout.discountPercent && !signupTrial ? (
+                                            <DiscountBanner
+                                                discountPercent={actualCheckout.discountPercent}
+                                                selectedPlanTitle={selectedPlan.Title}
+                                            />
+                                        ) : null}
                                         {(() => {
                                             if (loadingPaymentsForm) {
                                                 return;
@@ -1424,9 +1407,7 @@ const Step1 = ({
                                                         if (checkTrial) {
                                                             return c('Action').t`Try for free`;
                                                         }
-                                                        return options.checkResult.AmountDue > 0
-                                                            ? c('Action').jt`Pay ${price}`
-                                                            : c('Action').t`Confirm`;
+                                                        return c('Action').t`Get Deal`;
                                                     })()}
                                                 </PayButton>
                                             );
