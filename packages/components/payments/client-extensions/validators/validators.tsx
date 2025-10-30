@@ -344,7 +344,10 @@ export const useGooglePayDependencies = (
         onPaymentFailure: (method: PAYMENT_METHOD_TYPES.GOOGLE_PAY) => void;
     }
 ) => {
-    const canUseGooglePay = useFlag('GooglePay');
+    const googlePayEnabled = useFlag('GooglePay');
+    const isWhitelistedDomain = ['account.proton.me'].includes(window.location.hostname);
+    const canUseGooglePay = googlePayEnabled && isWhitelistedDomain;
+
     const { createNotification } = useNotifications();
     const modalIdRef = useRef<string | null>(null);
     const { createModal, removeModal } = useModals();
