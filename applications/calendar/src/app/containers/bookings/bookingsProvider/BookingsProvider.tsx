@@ -36,7 +36,7 @@ interface BookingsContextValue {
 }
 
 const getInitialBookingState = (): BookingFormData => {
-    const scheduleOptions = getCalendarEventDefaultDuration();
+    const scheduleOptions = getCalendarEventDefaultDuration({ includeShortDurations: true, shortLabels: true });
     const localTimeZone = getTimezone();
 
     return {

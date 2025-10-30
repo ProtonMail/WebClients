@@ -21,7 +21,7 @@ import { useBookings } from './bookingsProvider/BookingsProvider';
 import { BookingLocation, BookingState } from './bookingsProvider/interface';
 
 export const Form = () => {
-    const scheduleOptions = getCalendarEventDefaultDuration();
+    const scheduleOptions = getCalendarEventDefaultDuration({ includeShortDurations: true, shortLabels: true });
     const locationOptions = getBookingLocationOption();
 
     const [writeableCalendars = []] = useWriteableCalendars();
