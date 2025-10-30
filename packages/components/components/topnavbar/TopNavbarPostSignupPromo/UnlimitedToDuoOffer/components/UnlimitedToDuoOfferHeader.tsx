@@ -6,7 +6,7 @@ interface Props {
 
 export const UnlimitedToDuoOfferHeader = ({ config }: Props) => {
     return (
-        <header>
+        <header className="w-9/10">
             <h2 className="text-center text-xl text-bold">{config.title}</h2>
         </header>
     );
