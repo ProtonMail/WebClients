@@ -149,6 +149,7 @@ export enum SignupMode {
 
 export interface SignupDefaults {
     plan: PLANS;
+    addons?: PlanIDs;
     cycle: CYCLE;
 }
 
