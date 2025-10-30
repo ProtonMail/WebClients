@@ -1808,10 +1808,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
-      ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
       ],
@@ -1992,6 +1988,9 @@
       ],
       "Please follow the steps below to set up your domain.": [
         "მიჰყევით შემდეგ ნაბიჯებს ქვემოთ, რომ თქვენი დომენი მოირგოთ."
+      ],
+      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
+        "დატოვეთ ${ PASS_APP_NAME } ღია, ღომ ბუფერი ავტომატურად გასუფთავდეს."
       ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "დატოვეთ ეს ფანჯარა ღია, სანამ მონაცემების შემოტანა მიმდინარეობს. ამას რამდენიმე წუთი შეიძლება, დასჭირდეს."
@@ -4473,6 +4472,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "დამატებით პაროლი, სულ ცოტა, 8 სიმბოლოს უნდა შეიცავდეს"
+      ],
+      "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
+        "მიეცით წვდომა ბუფერთან, რომ მოხდეს დაკოპირებული პაროლებისა და მონაცემების ავტომატური გასუფთავება."
       ],
       "Invalid alias prefix": [
         "არასწორი ფსევდონიმის პრეფიქსი"
