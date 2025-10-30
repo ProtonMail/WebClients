@@ -4,8 +4,13 @@
 .connection-lost-modal {
 	backdrop-filter: blur(10px);
 
-	.reload-button:hover {
-		color: var(--text-invert);
+	.reload-button {
+		background-color: var(--signal-danger-major-3);
+
+		&:hover,
+		&:focus {
+			background-color: var(--signal-danger-minor-1);
+		}
 	}
 
 	.close-button {
