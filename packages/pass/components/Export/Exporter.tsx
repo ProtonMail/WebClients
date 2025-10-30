@@ -5,7 +5,7 @@ import { useFormik } from 'formik';
 import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
+import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { useCurrentPort, useCurrentTabID } from '@proton/pass/components/Core/PassCoreProvider';
 import { ExportForm } from '@proton/pass/components/Export/ExportForm';
 import { ProgressModal } from '@proton/pass/components/FileAttachments/ProgressModal';
@@ -39,7 +39,7 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
     const requestID = exportData.requestID({ tabId });
 
     const { createNotification } = useNotifications();
-    const online = useConnectivity();
+    const online = useOnline();
     const dispatch = useDispatch();
     const asyncDispatch = useAsyncRequestDispatch();
 

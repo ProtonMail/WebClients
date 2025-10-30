@@ -3,7 +3,7 @@ import type { FC } from 'react';
 import { c } from 'ttag';
 
 import RadioGroup from '@proton/components/components/input/RadioGroup';
-import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
+import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { LockTTLField } from '@proton/pass/components/Lock/LockTTLField';
 import { usePasswordTypeSwitch } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { PassPlusPromotionButton } from '@proton/pass/components/Upsell/PassPlusPromotionButton';
@@ -17,7 +17,7 @@ import clsx from '@proton/utils/clsx';
 type Props = { noTTL?: boolean };
 
 export const LockSetup: FC<Props> = ({ noTTL = false }) => {
-    const online = useConnectivity();
+    const online = useOnline();
     const { setLockMode, setLockTTL, lock, biometrics, password } = useLockSetup();
     const passwordTypeSwitch = usePasswordTypeSwitch();
     const prfFeatureFlag = useFeatureFlag(PassFeature.PassWebPrfUnlock);

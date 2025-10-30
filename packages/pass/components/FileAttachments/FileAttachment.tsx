@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import Icon from '@proton/components/components/icon/Icon';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
+import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { ClickableDiv } from '@proton/pass/components/Layout/Button/ClickableDiv';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
@@ -56,7 +56,7 @@ export const FileAttachment: FC<Props> = ({
     const { base, ext } = useMemo(() => getFileParts(filename), [filename]);
 
     const fileAttachmentsDisabled = useMatchUser({ paid: false, planDisplayName: ['Pass Essentials'] });
-    const online = useConnectivity();
+    const online = useOnline();
 
     const fileRename = useAsyncModalHandles<string, unknown>({ getInitialModalState: () => ({}) });
 

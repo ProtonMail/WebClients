@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import Checkbox from '@proton/components/components/input/Checkbox';
-import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
+import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import type { PasswordModalState } from '@proton/pass/components/Lock/PasswordModal';
 import { PasswordModal } from '@proton/pass/components/Lock/PasswordModal';
 import { usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
@@ -20,7 +20,7 @@ import clsx from '@proton/utils/clsx';
 import { SettingsPanel } from './SettingsPanel';
 
 export const ExtraPassword: FC = () => {
-    const online = useConnectivity();
+    const online = useOnline();
     const confirmPassword = usePasswordUnlock();
     const toggle = useRequest(extraPasswordToggle, { initial: true });
     const enabled = useSelector(selectExtraPasswordEnabled);

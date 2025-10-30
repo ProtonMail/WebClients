@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import Icon from '@proton/components/components/icon/Icon';
-import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
+import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { RadioGroupField } from '@proton/pass/components/Form/Field/RadioGroupField';
 import { ToggleField } from '@proton/pass/components/Form/Field/ToggleField';
 import { PasswordField } from '@proton/pass/components/Form/legacy/PasswordField';
@@ -23,7 +23,7 @@ import { truthy } from '@proton/pass/utils/fp/predicates';
 export type ExporterProps = { form: FormikContextType<ExportRequestOptions>; loading: boolean };
 
 export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
-    const online = useConnectivity();
+    const online = useOnline();
     const hasNonOwnedVaults = useSelector(selectNonOwnedVaults).length > 0;
     const usedStorage = useSelector(selectUserStorageUsed);
     const canUseStorage = useSelector(selectUserStorageAllowed);

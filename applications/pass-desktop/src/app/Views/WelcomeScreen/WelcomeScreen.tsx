@@ -13,7 +13,7 @@ import onboarding5 from '@proton/pass/assets/desktop-onboarding/onboarding-5.png
 import onboarding6 from '@proton/pass/assets/desktop-onboarding/onboarding-6.png';
 import onboarding7 from '@proton/pass/assets/desktop-onboarding/onboarding-7.png';
 import { Carousel, type CarouselItem } from '@proton/pass/components/Carousel/Carousel';
-import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
+import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { PassTextLogo } from '@proton/pass/components/Layout/Logo/PassTextLogo';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
@@ -24,7 +24,7 @@ import './WelcomeScreen.scss';
 
 export const WelcomeScreen: FC = () => {
     const authService = useAuthService();
-    const online = useConnectivity();
+    const online = useOnline();
     const { SSO_URL: host } = usePassConfig();
 
     const onRegister = () => {

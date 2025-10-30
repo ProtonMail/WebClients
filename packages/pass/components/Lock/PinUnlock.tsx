@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
+import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { PinCodeInput } from '@proton/pass/components/Lock/PinCodeInput';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { useRerender } from '@proton/pass/hooks/useRerender';
@@ -21,7 +21,7 @@ type Props = {
 };
 
 export const PinUnlock: FC<Props> = ({ offlineEnabled, onLoading, onOffline }) => {
-    const online = useConnectivity();
+    const online = useOnline();
     const { createNotification } = useNotifications();
 
     const [value, setValue] = useState('');

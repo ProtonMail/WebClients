@@ -7,7 +7,7 @@ import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButto
 import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
-import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
+import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { BottomBar } from '@proton/pass/components/Layout/Bar/BottomBar';
 import { clientOffline } from '@proton/pass/lib/client';
 import { offlineResume } from '@proton/pass/store/actions';
@@ -22,7 +22,7 @@ export const AppGuard: FC = () => {
     const state = useAppState();
     const authStore = useAuthStore();
 
-    const online = useConnectivity();
+    const online = useOnline();
     const updateAvailable = useServiceWorkerState()?.updateAvailable ?? false;
 
     useEffect(() => {
