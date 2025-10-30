@@ -73,6 +73,6 @@ export type ApiSessionEvent = 'inactive' | 'locked' | 'restricted' | 'missing-sc
 
 export type ApiSubscriptionEvent =
     | { type: 'error'; error: string; silent?: boolean }
-    | { type: 'network'; online: boolean }
+    | { type: 'connectivity'; online: boolean; unreachable: boolean }
     | { type: 'refresh'; data: RefreshSessionData }
     | { type: 'session'; status: ApiSessionEvent; error?: string; silent?: boolean };
