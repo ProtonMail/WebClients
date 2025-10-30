@@ -26,11 +26,10 @@ export const ConnectionLostModal = ({ onClose }: ConnectionLostModalProps) => {
 
                 <div className="w-full flex flex-column gap-2 mt-4">
                     <Button
-                        className="rounded-full color-invert reload-button py-4"
+                        className="rounded-full reload-button py-4 border-none"
                         onClick={() => window.location.reload()}
-                        color="norm"
                         size="large"
-                    >{c('Action').t`OK`}</Button>
+                    >{c('Action').t`Leave`}</Button>
 
                     <Button
                         className="rounded-full py-4 bg-weak close-button border-none"
@@ -38,7 +37,7 @@ export const ConnectionLostModal = ({ onClose }: ConnectionLostModalProps) => {
                         color="weak"
                         size="large"
                     >
-                        {c('Action').t`Close`}
+                        {c('Action').t`Stay in meeting`}
                     </Button>
                 </div>
             </ModalTwoContent>
