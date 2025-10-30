@@ -986,6 +986,9 @@
       "Show advanced PGP settings": [
         "Mostra impostazioni PGP avanzate"
       ],
+      "Show location": [
+        "Mostra posizione"
+      ],
       "Show more": [
         "Mostra di più"
       ],
@@ -3168,8 +3171,8 @@
       "/month": [
         "/ mese"
       ],
-      "1 TB of storage to share": [
-        "1 TB di archiviazione da condividere"
+      "2 TB of storage to share": [
+        "2 TB di archiviazione da condividere"
       ],
       "2 user accounts": [
         "2 account utente"
@@ -3433,6 +3436,12 @@
       "Error decrypting a computer": [
         "Errore durante la decriptografia di un computer"
       ],
+      "Error reading file": [
+        "Errore durante la lettura del file"
+      ],
+      "Expected structure attached": [
+        "Struttura attesa allegata"
+      ],
       "External accounts are not supported yet": [
         "Gli account esterni non sono ancora supportati"
       ],
@@ -3502,6 +3511,9 @@
       "Folder \"${ name }\" is already downloading": [
         "La cartella \"${ name }\" è già in fase di download"
       ],
+      "Folder creation failed": [
+        "Creazione della cartella non riuscita"
+      ],
       "Folder name cannot be empty.": [
         "Il nome della cartella non può essere vuoto."
       ],
@@ -3537,6 +3549,9 @@
       ],
       "Invalid IBAN": [
         "IBAN non valido"
+      ],
+      "Invalid JSON file": [
+        "File JSON non valido"
       ],
       "Invalid name": [
         "Nome non valido"
@@ -3831,8 +3846,14 @@
       "Unknown payment token status": [
         "Stato del token di pagamento sconosciuto"
       ],
+      "Upload failed": [
+        "Caricamento non riuscito"
+      ],
       "Upload for this folder is temporarily disabled": [
         "Il caricamento per questa cartella è temporaneamente disabilitato"
+      ],
+      "Upload not found": [
+        "Caricamento non trovato"
       ],
       "Username must begin with a letter or digit": [
         "Il nome utente deve iniziare con una lettera o un numero."
@@ -5356,6 +5377,9 @@
       "Download current logs": [
         "Scarica i log correnti"
       ],
+      "Download Failed": [
+        "Download non riuscito"
+      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Il download del file ${ downloadFileName } verrà interrotto"
       ],
@@ -6466,6 +6490,9 @@
       "upgrade your storage": [
         "aumentare il tuo spazio di archiviazione"
       ],
+      "Upload Failed": [
+        "Caricamento fallito"
+      ],
       "Uploaded": [
         "Caricato"
       ],
@@ -6510,6 +6537,9 @@
       ],
       "VPN IP": [
         "IP della VPN"
+      ],
+      "Waiting": [
+        "In attesa"
       ],
       "Want to sync files faster?": [
         "Vuoi sincronizzare i file più velocemente?"
@@ -9715,6 +9745,9 @@
       "Create new group": [
         "Crea nuovo gruppo"
       ],
+      "Expected strcuture": [
+        "Struttura attesa"
+      ],
       "Ignore group": [
         "Ignora gruppo"
       ],
@@ -9726,6 +9759,9 @@
       ],
       "Only current location: ${ name }": [
         "Solo posizione attuale: ${ name }"
+      ],
+      "Select JSON file": [
+        "Seleziona file JSON"
       ],
       "Verify content": [
         "Verifica contenuto"
@@ -9979,7 +10015,7 @@
       "Your payment is still being processed": [
         "Il tuo pagamento è ancora in fase di elaborazione."
       ],
-      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Il tuo abbonamento ha attualmente uno sconto esistente. Passare a questa nuova promozione significa che lo sconto esistente non sarà più applicato."
       ]
     },

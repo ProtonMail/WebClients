@@ -1538,6 +1538,9 @@
       "1 user account": [
         "1 cuenta de usuario"
       ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB de almacenamiento: 40 veces su plan actual"
+      ],
       "6 user accounts": [
         "6 cuentas de usuario"
       ],
@@ -1575,6 +1578,9 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Un solo pago de ${ amount }"
+      ],
+      "forever": [
+        "para siempre"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Se renueva después de 1 mes por ${ regularAmount }."
@@ -3463,8 +3469,8 @@
       "/month": [
         "/mes"
       ],
-      "1 TB of storage to share": [
-        "1 TB de almacenamiento para compartir"
+      "2 TB of storage to share": [
+        "2 TB de almacenamiento para compartir"
       ],
       "2 user accounts": [
         "2 cuentas de usuario"
@@ -3478,7 +3484,7 @@
     },
     "Duo offer: Link": {
       "Get 4x more storage": [
-        "Obtén 4 veces más almacenamiento"
+        "Obtener 4 veces más almacenamiento"
       ],
       "Share your plan": [
         "Comparta su plan"
@@ -3766,6 +3772,9 @@
       ],
       "Error publishing changes": [
         "Error al publicar los cambios"
+      ],
+      "Failed to add group member": [
+        "No se pudo añadir miembro al grupo"
       ],
       "Failed to load the STL preview": [
         "Error al cargar la vista previa de STL"
@@ -8226,6 +8235,9 @@
       "Gateway name": [
         "Nombre de la puerta de enlace"
       ],
+      "Get the deal": [
+        "Obtener la oferta"
+      ],
       "Gift code": [
         "Código de regalo"
       ],
@@ -9032,6 +9044,11 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Activar ${ reason }"
+      ]
+    },
+    "lumo_signup_2025: Info": {
+      "Protect your entire business. Get ${ LUMO_SHORT_APP_NAME } Professional with all ${ BRAND_NAME } for Business apps and premium features.": [
+        "Proteja todo su negocio. Obtenga ${ LUMO_SHORT_APP_NAME } Professional con todas las aplicaciones de ${ BRAND_NAME } for Business y funciones premium."
       ]
     },
     "Mail import summary": {
@@ -10819,6 +10836,9 @@
       "Advanced account protection": [
         "Protección de cuentas avanzada"
       ],
+      "File attachments (up to 10GB)": [
+        "Archivos adjuntos (hasta 10 GB)"
+      ],
       "Team policies": [
         "Políticas de equipo"
       ]
@@ -11045,6 +11065,10 @@
         "El cupón es válido por ${ couponRedemptions } renovación.",
         "El cupón es válido por ${ couponRedemptions } renovaciones."
       ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "El precio especial con descuento es válido para el primer (${ subscriptionLength }) mes",
+        "El precio especial con descuento es válido para los primeros ${ subscriptionLength } meses"
+      ],
       "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "El precio especial con descuento es válido para el primer mes. El cupón es válido para ${ couponRedemptions } renovación. Después se renovará automáticamente por ${ renewPriceStr } por 1 mes. Puede cancelarlo en cualquier momento.",
         "El precio especial con descuento es válido para el primer mes. El cupón es válido para ${ couponRedemptions } renovaciones. Después se renovará automáticamente por ${ renewPriceStr } por 1 mes. Puede cancelarlo en cualquier momento."
@@ -11106,7 +11130,7 @@
       "Your payment is still being processed": [
         "Su pago aún está siendo procesado"
       ],
-      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Su suscripción actualmente tiene un descuento. Cambiar a esta promoción nueva significa que el descuento existente ya no se aplicará."
       ]
     },

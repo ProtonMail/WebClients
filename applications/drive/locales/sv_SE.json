@@ -986,6 +986,9 @@
       "Show advanced PGP settings": [
         "Visa avancerade PGP-inställningar"
       ],
+      "Show location": [
+        "Visa plats"
+      ],
       "Show more": [
         "Visa mer"
       ],
@@ -3153,8 +3156,8 @@
       "/month": [
         "/månad"
       ],
-      "1 TB of storage to share": [
-        "1 TB lagringsutrymme att dela"
+      "2 TB of storage to share": [
+        "2 TB lagringsutrymme att dela"
       ],
       "2 user accounts": [
         "2 användarkonton"
@@ -3418,6 +3421,12 @@
       "Error decrypting a computer": [
         "Fel vid dekryptering av dator"
       ],
+      "Error reading file": [
+        "Fel vid läsning av fil"
+      ],
+      "Expected structure attached": [
+        "Förväntad struktur bifogad"
+      ],
       "External accounts are not supported yet": [
         "Externa konton stöds inte ännu"
       ],
@@ -3487,6 +3496,9 @@
       "Folder \"${ name }\" is already downloading": [
         "Mappen “${ name }“ laddas redan ner"
       ],
+      "Folder creation failed": [
+        "Misslyckades att skapa mapp"
+      ],
       "Folder name cannot be empty.": [
         "Mappnamn kan inte vara tomt."
       ],
@@ -3522,6 +3534,9 @@
       ],
       "Invalid IBAN": [
         "Ogiltigt IBAN"
+      ],
+      "Invalid JSON file": [
+        "Ogiltig JSON-fil"
       ],
       "Invalid name": [
         "Ogiltigt namn"
@@ -3813,8 +3828,14 @@
       "Unknown payment token status": [
         "Okänd status för betalningstoken"
       ],
+      "Upload failed": [
+        "Uppladdning misslyckades"
+      ],
       "Upload for this folder is temporarily disabled": [
         "Uppladdning för denna mapp är tillfälligt inaktiverad"
+      ],
+      "Upload not found": [
+        "Uppladdning hittades inte"
       ],
       "Username must begin with a letter or digit": [
         "Användarnamn måste börja med en bokstav eller siffra"
@@ -5329,6 +5350,9 @@
       "Download current logs": [
         "Ladda ner nuvarande loggar"
       ],
+      "Download Failed": [
+        "Nedladdning misslyckades"
+      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Nedladdning av ${ downloadFileName } kommer att avbrytas"
       ],
@@ -6439,6 +6463,9 @@
       "upgrade your storage": [
         "uppgradera ditt lagringsutrymme"
       ],
+      "Upload Failed": [
+        "Uppladdning misslyckades"
+      ],
       "Uploaded": [
         "Uppladdad"
       ],
@@ -6483,6 +6510,9 @@
       ],
       "VPN IP": [
         "VPN-IP"
+      ],
+      "Waiting": [
+        "Väntar"
       ],
       "Want to sync files faster?": [
         "Vill du synkronisera filer snabbare?"
@@ -9673,6 +9703,9 @@
       "Create new group": [
         "Skapa ny grupp"
       ],
+      "Expected strcuture": [
+        "Förväntad struktur"
+      ],
       "Ignore group": [
         "Ignorera grupp"
       ],
@@ -9684,6 +9717,9 @@
       ],
       "Only current location: ${ name }": [
         "Endast nuvarande plats: ${ name }"
+      ],
+      "Select JSON file": [
+        "Välj JSON-fil"
       ],
       "Verify content": [
         "Verifiera innehåll"

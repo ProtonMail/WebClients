@@ -2291,6 +2291,9 @@
       "1 user account": [
         "1 cuenta de usuario"
       ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB de almacenamiento: 40 veces su plan actual"
+      ],
       "6 user accounts": [
         "6 cuentas de usuario"
       ],
@@ -2328,6 +2331,9 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Un solo pago de ${ amount }"
+      ],
+      "forever": [
+        "para siempre"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Se renueva después de 1 mes por ${ regularAmount }."
@@ -3023,8 +3029,14 @@
       "Add ${ LUMO_APP_NAME }": [
         "Agregar ${ LUMO_APP_NAME }"
       ],
+      "AI assistant that respects business confidentiality": [
+        "Asistente de IA que respeta la confidencialidad empresarial"
+      ],
       "Basic chat history": [
         "Historial de chat básico"
+      ],
+      "Compliance with data protection regulations": [
+        "Cumplimiento con las normativas de protección de datos"
       ],
       "Data never used for AI training": [
         "Los datos nunca usados para entrenamiento de IA"
@@ -3061,6 +3073,9 @@
       ],
       "Web search access": [
         "Acceso a búsqueda web"
+      ],
+      "Zero-access encryption": [
+        "Cifrado de acceso cero"
       ]
     },
     "collider_2025: Navigation": {
@@ -4882,8 +4897,8 @@
       "/month": [
         "/mes"
       ],
-      "1 TB of storage to share": [
-        "1 TB de almacenamiento para compartir"
+      "2 TB of storage to share": [
+        "2 TB de almacenamiento para compartir"
       ],
       "2 user accounts": [
         "2 cuentas de usuario"
@@ -4897,7 +4912,7 @@
     },
     "Duo offer: Link": {
       "Get 4x more storage": [
-        "Obtén 4 veces más almacenamiento"
+        "Obtener 4 veces más almacenamiento"
       ],
       "Share your plan": [
         "Comparta su plan"
@@ -5892,6 +5907,9 @@
       ],
       "Expired": [
         "Expirado"
+      ],
+      "Failed to add group member": [
+        "No se pudo añadir miembro al grupo"
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Error al obtener las sesiones activas, ${ refresh } o intente nuevo más tarde."
@@ -12732,6 +12750,9 @@
       "Get everything in Free, plus:": [
         "Obtenga todo lo de Free, y:"
       ],
+      "Get the deal": [
+        "Obtener la oferta"
+      ],
       "Gift code": [
         "Código de regalo"
       ],
@@ -13221,6 +13242,9 @@
       ],
       "Special characters": [
         "Caracteres especiales"
+      ],
+      "Special Offer!": [
+        "¡Oferta especial!"
       ],
       "Starred": [
         "Destacados"
@@ -13931,6 +13955,19 @@
       ],
       "Enable detailed events": [
         "Activar eventos detallados"
+      ]
+    },
+    "lumo_signup_2025: Info": {
+      "Protect your entire business. Get ${ LUMO_SHORT_APP_NAME } Professional with all ${ BRAND_NAME } for Business apps and premium features.": [
+        "Proteja todo su negocio. Obtenga ${ LUMO_SHORT_APP_NAME } Professional con todas las aplicaciones de ${ BRAND_NAME } for Business y funciones premium."
+      ]
+    },
+    "lumo_signup_2025: title": {
+      "For businesses": [
+        "Para negocios"
+      ],
+      "For individuals": [
+        "Para personas"
       ]
     },
     "Mail import summary": {
@@ -16698,6 +16735,9 @@
       "Advanced alias features (powered by SimpleLogin)": [
         "Funciones de alias avanzadas (desarrollado por SimpleLogin)"
       ],
+      "File attachments (up to 10GB)": [
+        "Archivos adjuntos (hasta 10 GB)"
+      ],
       "One-time payment, lifetime deal": [
         "Un solo pago y una oferta de por vida"
       ],
@@ -16848,6 +16888,9 @@
       ]
     },
     "Payments": {
+      "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
+        "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Cantidad por pagar después de la prueba el ${ formattedDate }"
       ],
@@ -16924,6 +16967,10 @@
         "El cupón es válido por ${ couponRedemptions } renovación.",
         "El cupón es válido por ${ couponRedemptions } renovaciones."
       ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "El precio especial con descuento es válido para el primer (${ subscriptionLength }) mes",
+        "El precio especial con descuento es válido para los primeros ${ subscriptionLength } meses"
+      ],
       "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "El precio especial con descuento es válido para el primer mes. El cupón es válido para ${ couponRedemptions } renovación. Después se renovará automáticamente por ${ renewPriceStr } por 1 mes. Puede cancelarlo en cualquier momento.",
         "El precio especial con descuento es válido para el primer mes. El cupón es válido para ${ couponRedemptions } renovaciones. Después se renovará automáticamente por ${ renewPriceStr } por 1 mes. Puede cancelarlo en cualquier momento."
@@ -16985,7 +17032,7 @@
       "Your payment is still being processed": [
         "Su pago aún está siendo procesado"
       ],
-      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Su suscripción actualmente tiene un descuento. Cambiar a esta promoción nueva significa que el descuento existente ya no se aplicará."
       ]
     },
@@ -19318,6 +19365,9 @@
       "Advanced security features": [
         "Características de seguridad avanzadas"
       ],
+      "Advanced security features by ${ BRAND_NAME }": [
+        "Funciones de seguridad avanzadas por ${ BRAND_NAME }"
+      ],
       "Advanced sharing security": [
         "Protección avanzada cuando se comparten elementos"
       ],
@@ -19357,6 +19407,9 @@
       "ISO 27001 certified": [
         "Certificado ISO 27001"
       ],
+      "Mail, calendar, file storage, and VPN included": [
+        "Correo, calendario, gestor de contraseñas y VPN incluidos"
+      ],
       "Open source and audited": [
         "Código abierto y auditado"
       ],
@@ -19377,6 +19430,9 @@
       ],
       "The only email service with:": [
         "El único servicio de correo electrónico con:"
+      ],
+      "The only password manager with:": [
+        "El único gestor de contraseñas con:"
       ],
       "Unlimited passwords": [
         "Número ilimitado de contraseñas"

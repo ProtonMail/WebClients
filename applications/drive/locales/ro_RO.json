@@ -991,6 +991,9 @@
       "Show advanced PGP settings": [
         "Afișare setări PGP avansate"
       ],
+      "Show location": [
+        "Afișare loc"
+      ],
       "Show more": [
         "Afișare mai mult"
       ],
@@ -3184,8 +3187,8 @@
       "/month": [
         "/lună"
       ],
-      "1 TB of storage to share": [
-        "1 TiB de stocare pentru partajare"
+      "2 TB of storage to share": [
+        "2 TiB de stocare pentru partajare"
       ],
       "2 user accounts": [
         "2 conturi de utilizator"
@@ -3451,6 +3454,12 @@
       "Error decrypting a computer": [
         "Eroare decriptare un calculator."
       ],
+      "Error reading file": [
+        "Eroare la citirea fișierului."
+      ],
+      "Expected structure attached": [
+        "Structură așteptată atașată."
+      ],
       "External accounts are not supported yet": [
         "Conturile externe încă nu sunt acceptate."
       ],
@@ -3520,6 +3529,9 @@
       "Folder \"${ name }\" is already downloading": [
         "Folderul „${ name }” se descarcă deja"
       ],
+      "Folder creation failed": [
+        "Crearea folderului a eșuat."
+      ],
       "Folder name cannot be empty.": [
         "Numele folderului nu poate fi gol."
       ],
@@ -3555,6 +3567,9 @@
       ],
       "Invalid IBAN": [
         "Acest IBAN nu este valid."
+      ],
+      "Invalid JSON file": [
+        "Fișier JSON nevalid."
       ],
       "Invalid name": [
         "Nume nevalid"
@@ -3854,8 +3869,14 @@
       "Unknown payment token status": [
         "Stare necunoscută cod plată generat."
       ],
+      "Upload failed": [
+        "Încărcare eșuată."
+      ],
       "Upload for this folder is temporarily disabled": [
         "Încărcarea pentru acest folder este temporar dezactivată."
+      ],
+      "Upload not found": [
+        "Fișierul de încărcat nu a fost găsit."
       ],
       "Username must begin with a letter or digit": [
         "Numele de utilizator trebuie să înceapă cu o literă sau cifră."
@@ -5436,6 +5457,9 @@
       "Download current logs": [
         "Descărcare jurnale actuale"
       ],
+      "Download Failed": [
+        "Descărcare eșuată."
+      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Descărcarea fișierului ${ downloadFileName } va fi întreruptă."
       ],
@@ -6552,6 +6576,9 @@
       "upgrade your storage": [
         "măriți spațiul de stocare"
       ],
+      "Upload Failed": [
+        "Încărcare eșuată."
+      ],
       "Uploaded": [
         "Încărcat"
       ],
@@ -6596,6 +6623,9 @@
       ],
       "VPN IP": [
         "IP VPN"
+      ],
+      "Waiting": [
+        "În așteptare."
       ],
       "Want to sync files faster?": [
         "Doriți să sincronizați mai rapid fișierele?"
@@ -9815,6 +9845,9 @@
       "Create new group": [
         "Creare grup"
       ],
+      "Expected strcuture": [
+        "Structură așteptată"
+      ],
       "Ignore group": [
         "Ignorare grup"
       ],
@@ -9826,6 +9859,9 @@
       ],
       "Only current location: ${ name }": [
         "Doar poziția curentă: ${ name }"
+      ],
+      "Select JSON file": [
+        "Selectare fișier JSON"
       ],
       "Verify content": [
         "Verificare conținut"
@@ -10086,7 +10122,7 @@
       "Your payment is still being processed": [
         "Plata este încă în curs de procesare."
       ],
-      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonamentul actual are în prezent o reducere existentă. Trecerea la această nouă promoție înseamnă că reducerea curentă nu va mai fi aplicată."
       ]
     },
@@ -13048,6 +13084,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: Asistent de IA care vă respectă confidențialitatea"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Conectări securizate pe toate dispozitivele deținute. Include aliasuri nelimitate, partajare, A2F integrată și multe altele."
       ]

@@ -2136,6 +2136,9 @@
       "Try it free for ${ TRIAL_DURATION_DAYS } days": [
         "სცადეთ უფასოდ ${ TRIAL_DURATION_DAYS } დღით"
       ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "გამოსაცდელი პერიოდისას შეგიძლიათ ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-ის მომხმარებლის შექმნა."
+      ],
       "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
         "გამოსაცდელი პერიოდისას შეგიძლიათ ${ TRIAL_MAX_USERS } მომხმარებლის შექმნა."
       ],
@@ -4788,9 +4791,6 @@
       "/month": [
         "/თვეში"
       ],
-      "1 TB of storage to share": [
-        "1ტბ საცავი გასაზიარებლად"
-      ],
       "2 user accounts": [
         "2 მომხმარებლის ანგარიში"
       ],
@@ -5394,6 +5394,9 @@
       ],
       "${ user } will be able to use your account and change your data.": [
         "${ user }-ს ექნება უფლება, გამოიყენოს თქვენი ანგარიში და შეცვალოს თქვენი მონაცემები."
+      ],
+      "${ user } will not be able to access your account until the next emergency access.": [
+        "${ user }-ს თქვენს ანგარიშთან წვდომა არ ექნება შემდეგ სასწრაფო მოთხოვნამდე."
       ],
       "Access granted": [
         "წვდომა მონიჭებულია"
@@ -9289,6 +9292,9 @@
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "თუ გააუქმებთ, თქვენი გამოწერა ${ planTitle } არ განახლდება, როცა ვადა გაუვა თარიღზე ${ expiryDate }."
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "თუ აზრს შეიცვლით, გამოწერა ნებისმიერ დროს შეგიძლიათ, განაახლოთ. ვწუხვართ, რომ მიდიხართ!"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "თუ ვერ იპოვეთ ელფოსტა თქვენს საფოსტო ყუთში, გადაამოწმეთ სპამის საქაღალდეც."
@@ -16579,6 +16585,9 @@
       "Offer unavailable": [
         "შეთავაზება ხელმიუწვდომელია"
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "გადახდის მეთოდი აუცილებელია გამოწერის გასააქტიურებლად, როცა სატესტო პერიოდი ამოიწურება."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "ჯერ თავიდან გაააქტიურეთ გამოწერა, რომ შეამციროთ დამატებების რაოდენობა."
       ],
@@ -16603,6 +16612,10 @@
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "კუპონი გამოსადეგია ${ couponRedemptions }-ის განახლებისთვის.",
         "კუპონი გამოსადეგია ${ couponRedemptions }-ის განახლებისთვის."
+      ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "სპეციალურად დაკლებული ფასები ვარგისია პირველ ${ subscriptionLength } თვეში.",
+        "სპეციალურად დაკლებული ფასები ვარგისია პირველ ${ subscriptionLength } თვეში."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "სპეციალურად დაკლებული ფასები ${ priceWithDiscount }-მდე ვარგისია პირველი ${ subscriptionLength } თვეში.",
@@ -17505,8 +17518,14 @@
       ]
     },
     "Safety review": {
+      " **Disable recovery by phone** to prevent attackers from taking over your account.": [
+        " **გამორთეთ ტელეფონით აღდგენა**, რომ ხელი შეუშალოთ შემტევებს, თქვენი ანგარიში მოიპარონ."
+      ],
       " **Enable recovery by phone** to regain access to your account if you forget your password.": [
         " **ჩართეთ აღდგენა ტელეფონით**, რომ აღიდგინოთ წვდომა თქვენს ანგარიშთან, თუ პაროლი დაგავიწყდათ."
+      ],
+      "${ BRAND_NAME } will use this address to keep you updated on your account security.": [
+        "${ BRAND_NAME } გამოიყენებს ამ მისამართს, რომ ყოველთვის გქონდეთ ყველა განახლება თქვენი ანგარიშის უსაფრთხოებასთან დაკავშირებით."
       ],
       "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
         "${ BRAND_NAME } გამოიყენებს ან მისამართს, რომ გამოგიგზავნოთ ჩამოყრის კოდები ელფოსტით, თუ პაროლის ჩამოყრას გადაწყვეტთ."
@@ -18555,6 +18574,9 @@
       ],
       "Amount due now": [
         "ახლა გადასახდელი თანხა"
+      ],
+      "And get ${ referralInfo.uiData.refereeRewardAmount } in credits, if you subscribe.": [
+        "და მიიღეთ ${ referralInfo.uiData.refereeRewardAmount } კრედიტებში, თუ გამოიწერთ."
       ],
       "Billing Cycle": [
         "ბილინგის ციკლი"
@@ -21381,6 +21403,9 @@
       "Get ${ vpnPlus } to access all servers": [
         "ყველა სერვერთან წვდომისთვის შეიძინეთ ${ vpnPlus }"
       ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "მიიღეთ **${ referralInfo.uiData.refereeRewardAmount }** კრედიტებში ${ planTitle }-ისთან ერთად"
+      ],
       "Get complete privacy coverage": [
         "მიიღეთ სრული კონფიდენციალობის დაფარვა"
       ],
@@ -22309,6 +22334,9 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "ადმინებს შეუძლიათ მომხმარებლის ანგარიშებს მართვა და სხვა მომხმარებლებისთვის ადმინის პრივილეგიების მიცემა. ორგანიზაციის სატარიფო გეგმის ჩასწორება, მხოლოდ, ძირითად ადმინს შეუძლია."
+      ],
+      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
+        "საშუალებას გაძლევთ, თქვენი კალენდრის მოსაწვევებში Zoom-ის ვიდეოკონფერენციების ბმულები უპრობლემოდ ჩაამატოთ."
       ],
       "Any protection applied to suspicious activity": [
         "ნებისმიერი დაცვა, რომელიც საეჭვო აქტივობაზე გადატარდება"

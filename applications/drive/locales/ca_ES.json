@@ -986,6 +986,9 @@
       "Show advanced PGP settings": [
         "Mostra la configuració avançada del PGP"
       ],
+      "Show location": [
+        "Mostrar la ubicació"
+      ],
       "Show more": [
         "Mostrar més"
       ],
@@ -3168,8 +3171,8 @@
       "/month": [
         "/mes"
       ],
-      "1 TB of storage to share": [
-        "1 TB d'emmagatzematge per compartir"
+      "2 TB of storage to share": [
+        "2 TB d'emmagatzematge per compartir"
       ],
       "2 user accounts": [
         "2 comptes d'usuari"
@@ -3433,6 +3436,12 @@
       "Error decrypting a computer": [
         "S'ha produït un error en desxifrar un ordinador"
       ],
+      "Error reading file": [
+        "Hi ha hagut un error en llegir el fitxer"
+      ],
+      "Expected structure attached": [
+        "Estructura esperada adjunta"
+      ],
       "External accounts are not supported yet": [
         "Els comptes externs encara no estan suportats"
       ],
@@ -3502,6 +3511,9 @@
       "Folder \"${ name }\" is already downloading": [
         "La carpeta «${ name }»  ja s'està descarregant"
       ],
+      "Folder creation failed": [
+        "No s'ha pogut crear la carpeta"
+      ],
       "Folder name cannot be empty.": [
         "El nom de la carpeta no pot estar buit."
       ],
@@ -3537,6 +3549,9 @@
       ],
       "Invalid IBAN": [
         "L'IBAN no és vàlid."
+      ],
+      "Invalid JSON file": [
+        "Fitxer JSON invàlid"
       ],
       "Invalid name": [
         "Nom no vàlid"
@@ -3831,8 +3846,14 @@
       "Unknown payment token status": [
         "Estat del token de pagament desconegut"
       ],
+      "Upload failed": [
+        "No s'ha pogut carregar"
+      ],
       "Upload for this folder is temporarily disabled": [
         "La càrrega d'aquesta carpeta està temporalment desactivada"
+      ],
+      "Upload not found": [
+        "No s'ha trobat el fitxer a carregar"
       ],
       "Username must begin with a letter or digit": [
         "El nom d'usuari ha de començar amb una lletra o un dígit."
@@ -5356,6 +5377,9 @@
       "Download current logs": [
         "Descarrega els registres actuals"
       ],
+      "Download Failed": [
+        "La descàrrega ha fallat"
+      ],
       "Download of ${ downloadFileName } will be aborted": [
         "La descàrrega de ${ downloadFileName } serà cancel·lada"
       ],
@@ -6466,6 +6490,9 @@
       "upgrade your storage": [
         "millorar el vostre emmagatzematge"
       ],
+      "Upload Failed": [
+        "La càrrega ha fallat"
+      ],
       "Uploaded": [
         "Carregat"
       ],
@@ -6510,6 +6537,9 @@
       ],
       "VPN IP": [
         "IP de VPN"
+      ],
+      "Waiting": [
+        "Esperant"
       ],
       "Want to sync files faster?": [
         "Voleu sincronitzar fitxers més ràpidament?"
@@ -9722,6 +9752,9 @@
       "Create new group": [
         "Crea un grup nou"
       ],
+      "Expected strcuture": [
+        "Estructura esperada"
+      ],
       "Ignore group": [
         "Ignorar grup"
       ],
@@ -9733,6 +9766,9 @@
       ],
       "Only current location: ${ name }": [
         "Només la ubicació actual: ${ name }"
+      ],
+      "Select JSON file": [
+        "Seleccioneu un fitxer JSON"
       ],
       "Verify content": [
         "Verifiqueu el contingut"
@@ -9986,8 +10022,8 @@
       "Your payment is still being processed": [
         "Encara s'està processant el vostre pagament."
       ],
-      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
-        "La vostra subscripció ja té un descompte. Passar a aquesta nova promoció significa que el descompte actual no s'aplicarà."
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "La vostra subscripció ja té un descompte aplicat. Canviar a aquesta nova promoció implica que el descompte actual ja no s'aplicarà."
       ]
     },
     "Payments.Error": {

@@ -723,6 +723,14 @@
         "Importer depuis un appareil"
       ]
     },
+    "collider_2025: b2b": {
+      "By ${ BRAND_NAME }": [
+        "Par ${ BRAND_NAME }"
+      ],
+      "For Business": [
+        "Pour les entreprises"
+      ]
+    },
     "collider_2025: Button": {
       "Close": [
         "Fermer"
@@ -1560,6 +1568,9 @@
       ]
     },
     "collider_2025: Title": {
+      "${ LUMO_SHORT_APP_NAME } Business": [
+        "${ LUMO_SHORT_APP_NAME } Business"
+      ],
       "${ LUMO_SHORT_APP_NAME } Plus": [
         "${ LUMO_SHORT_APP_NAME } Plus"
       ],
@@ -1611,6 +1622,12 @@
     "collider_2025: Top nav link": {
       "About": [
         "À propos"
+      ],
+      "For Business": [
+        "Pour les entreprises"
+      ],
+      "New": [
+        "Nouveau"
       ],
       "Try ${ MAIL_APP_NAME }": [
         "Essayer ${ MAIL_APP_NAME }"
@@ -5289,9 +5306,6 @@
       ],
       "Your payment is still being processed": [
         "Votre paiement est en cours de traitement."
-      ],
-      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
-        "Votre abonnement bénéficie actuellement d'une réduction existante. Le passage à cette nouvelle promotion signifie que la réduction existante ne sera plus appliquée."
       ]
     },
     "Payments.Error": {

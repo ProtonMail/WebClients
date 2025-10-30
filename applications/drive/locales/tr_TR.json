@@ -986,6 +986,9 @@
       "Show advanced PGP settings": [
         "Gelişmiş PGP ayarlarını görüntüle"
       ],
+      "Show location": [
+        "Konumu görüntüle"
+      ],
       "Show more": [
         "Daha fazla görüntüle"
       ],
@@ -3168,8 +3171,8 @@
       "/month": [
         "/ay"
       ],
-      "1 TB of storage to share": [
-        "Paylaşılabilen 1 TB depolama alanı"
+      "2 TB of storage to share": [
+        "Paylaşılabilen 2 TB depolama alanı"
       ],
       "2 user accounts": [
         "2 kullanıcı hesabı"
@@ -3502,6 +3505,9 @@
       "Folder \"${ name }\" is already downloading": [
         "\"${ name }\" klasörü zaten indiriliyor"
       ],
+      "Folder creation failed": [
+        "Klasör oluşturulamadı"
+      ],
       "Folder name cannot be empty.": [
         "Klasör adı boş olamaz."
       ],
@@ -3831,8 +3837,14 @@
       "Unknown payment token status": [
         "Ödeme kodu durumu bilinmiyor"
       ],
+      "Upload failed": [
+        "Yüklenemedi"
+      ],
       "Upload for this folder is temporarily disabled": [
         "Bu klasöre yüklemeler geçici olarak yapılamıyor"
+      ],
+      "Upload not found": [
+        "Yükleme bulunamadı"
       ],
       "Username must begin with a letter or digit": [
         "Kullanıcı adı bir harf ya da rakam ile başlamalı"
@@ -5356,6 +5368,9 @@
       "Download current logs": [
         "Güncel günlükleri indir"
       ],
+      "Download Failed": [
+        "İndirilemedi"
+      ],
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName } dosyasının indirilmesinden vazgeçilecek"
       ],
@@ -6466,6 +6481,9 @@
       "upgrade your storage": [
         "depolama alanınızı yükseltin"
       ],
+      "Upload Failed": [
+        "Yüklenemedi"
+      ],
       "Uploaded": [
         "Yüklendi"
       ],
@@ -6510,6 +6528,9 @@
       ],
       "VPN IP": [
         "VPN IP adresi"
+      ],
+      "Waiting": [
+        "Bekliyor"
       ],
       "Want to sync files faster?": [
         "Dosyaları daha hızlı eşitlemek ister misiniz?"
@@ -7958,7 +7979,7 @@
         "OpenDocument sunum belgesi"
       ],
       "OpenDocument spreadsheet document": [
-        "OpenDocument çalışma sayfası belgesi"
+        "OpenDocument hesap sayfası belgesi"
       ],
       "OpenDocument text document": [
         "OpenDocument yazı belgesi"
@@ -9926,7 +9947,7 @@
       "Your payment is still being processed": [
         "Ödeme işleminiz sürüyor"
       ],
-      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Aboneliğinizde şu anda uygulanan bir indirim var. Yeni indirime geçmek bu indirimin artık uygulanmayacağı anlamına gelir."
       ]
     },

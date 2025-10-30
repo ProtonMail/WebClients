@@ -780,6 +780,9 @@
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "La norma SPF ${ WIKIPEDIA_LINK_SPF } es un método de autenticación de correo electrónico diseñado para detectar direcciones de remitentes falsificadas durante la entrega del correo electrónico. Se recomienda encarecidamente configurar SPF para reducir la posibilidad de que sus correos electrónicos terminen en la carpeta de spam del destinatario."
       ],
+      "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
+        "Estas bóvedas no serán accesibles y sus contenidos no estarán disponibles para búsqueda y completado automático."
+      ],
       "This account is vulnerable, visit the service and change your password.": [
         "Esta cuenta es vulnerable. Visite el servicio y cambie la contraseña."
       ],
@@ -1841,8 +1844,7 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
-        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo los elementos"
@@ -4156,6 +4158,9 @@
       "Grant permissions": [
         "Conceder permisos"
       ],
+      "Hidden vaults": [
+        "Bóvedas ocultas"
+      ],
       "Hide my email": [
         "Ocultar mi correo electrónico"
       ],
@@ -4365,6 +4370,9 @@
       ],
       "Vault shared with you": [
         "Bóveda compartida con usted"
+      ],
+      "Visible vaults": [
+        "Bóvedas visibles"
       ],
       "Weak password": [
         "Contraseña débil"

@@ -986,6 +986,9 @@
       "Show advanced PGP settings": [
         "Εμφάνιση προηγμένων ρυθμίσεων PGP"
       ],
+      "Show location": [
+        "Εμφάνιση τοποθεσίας"
+      ],
       "Show more": [
         "Εμφάνιση περισσότερων"
       ],
@@ -3113,8 +3116,8 @@
       "/month": [
         "/μήνα"
       ],
-      "1 TB of storage to share": [
-        "1 TB αποθηκευτικού χώρου για κοινή χρήση"
+      "2 TB of storage to share": [
+        "2 TB αποθηκευτικού χώρου για κοινή χρήση"
       ],
       "2 user accounts": [
         "2 λογαριασμοί χρηστών"
@@ -3447,6 +3450,9 @@
       "Folder \"${ name }\" is already downloading": [
         "Ο φάκελος \"${ name }\" κατεβαίνει ήδη"
       ],
+      "Folder creation failed": [
+        "Η δημιουργία του φακέλου απέτυχε"
+      ],
       "Folder name cannot be empty.": [
         "Το όνομα φακέλου δεν γίνεται να είναι κενό."
       ],
@@ -3776,8 +3782,14 @@
       "Unknown payment token status": [
         "Άγνωστη κατάσταση πληρωμής"
       ],
+      "Upload failed": [
+        "Αποτυχία μεταφόρτωσης"
+      ],
       "Upload for this folder is temporarily disabled": [
         "Η μεταφόρτωση για αυτόν τον φάκελο είναι προσωρινά απενεργοποιημένη"
+      ],
+      "Upload not found": [
+        "Η μεταφόρτωση δε βρέθηκε"
       ],
       "Username must begin with a letter or digit": [
         "Το όνομα χρήστη πρέπει να ξεκινά με ένα γράμμα ή ένα ψηφίο"
@@ -5301,6 +5313,9 @@
       "Download current logs": [
         "Λήψη τρεχόντων αρχείων καταγραφής"
       ],
+      "Download Failed": [
+        "Η λήψη απέτυχε"
+      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Η λήψη του ${ downloadFileName } θα ματαιωθεί"
       ],
@@ -6411,6 +6426,9 @@
       "upgrade your storage": [
         "να αναβαθμίσετε τον αποθηκευτικό σας χώρο"
       ],
+      "Upload Failed": [
+        "Αποτυχία Μεταφόρτωσης"
+      ],
       "Uploaded": [
         "Ανέβηκε"
       ],
@@ -6455,6 +6473,9 @@
       ],
       "VPN IP": [
         "VPN IP"
+      ],
+      "Waiting": [
+        "Σε αναμονή"
       ],
       "Want to sync files faster?": [
         "Θέλετε να συγχρονίσετε αρχεία πιο γρήγορα;"
@@ -9871,7 +9892,7 @@
       "Your payment is still being processed": [
         "Η πληρωμή σας βρίσκεται ακόμα υπό επεξεργασία"
       ],
-      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Η συνδρομή σας έχει ήδη μια υπάρχουσα έκπτωση. Η μετάβαση σε αυτή τη νέα προσφορά σημαίνει ότι η υπάρχουσα έκπτωση δε θα ισχύει πλέον."
       ]
     },

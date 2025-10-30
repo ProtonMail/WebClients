@@ -61,9 +61,6 @@
       "Cancel trial and pay": [
         "Deneme süresini iptal et ve öde"
       ],
-      "Change password": [
-        "Parolayı değiştir"
-      ],
       "Chat with us": [
         "Bizimle canlı görüşün"
       ],
@@ -133,15 +130,6 @@
       "Edit": [
         "Düzenle"
       ],
-      "Edit email address": [
-        "E-posta adresini düzenle"
-      ],
-      "Edit phone number": [
-        "Telefon numarasını düzenle"
-      ],
-      "Edit sign-in details": [
-        "Oturum açma bilgilerini düzenle"
-      ],
       "Edit subscription": [
         "Aboneliği düzenle"
       ],
@@ -159,9 +147,6 @@
       ],
       "Get the apps": [
         "Uygulamaları edinin"
-      ],
-      "Get verification code": [
-        "Doğrulama kodu alın"
       ],
       "Go to ${ planOrAppName }": [
         "${ planOrAppName } uygulamasına git"
@@ -280,12 +265,6 @@
       "Request a feature": [
         "Bir özellik istiyorum"
       ],
-      "Request new code": [
-        "Yeni kod iste"
-      ],
-      "Resend code": [
-        "Kodu yeniden gönder"
-      ],
       "Save": [
         "Kaydet"
       ],
@@ -358,9 +337,6 @@
       "Try again": [
         "Yeniden dene"
       ],
-      "Try another method": [
-        "Başka bir yöntem deneyin"
-      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } özelliğini açın"
       ],
@@ -405,9 +381,6 @@
       ],
       "Verify": [
         "Doğrula"
-      ],
-      "Verify account": [
-        "Hesabı doğrula"
       ],
       "View invoice": [
         "Faturayı görüntüle"
@@ -2199,9 +2172,6 @@
       "Email is not valid": [
         "E-posta geçersiz"
       ],
-      "Enter 6 digits": [
-        "6 rakam yazın"
-      ],
       "Error connecting to the Bitcoin API.": [
         "Bitcoin API yazılımı ile bağlantı kurulurken sorun çıktı."
       ],
@@ -2228,9 +2198,6 @@
       ],
       "Invalid postal code": [
         "Posta kodu geçersiz"
-      ],
-      "Invalid verification code": [
-        "Doğrulama kodu geçersiz"
       ],
       "Invalid ZIP code": [
         "Posta kodu geçersiz"
@@ -2545,23 +2512,6 @@
         "Hizmetler"
       ]
     },
-    "Human verification method": {
-      "CAPTCHA": [
-        "Güvenlik kodu"
-      ],
-      "Email": [
-        "E-posta"
-      ],
-      "Manual": [
-        "El ile"
-      ],
-      "No verification method available": [
-        "Kullanılabilecek bir doğrulama yöntemi yok"
-      ],
-      "SMS": [
-        "Kısa mesaj"
-      ]
-    },
     "Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe yazma yardımcısı"
@@ -2601,9 +2551,6 @@
       "30-day money-back guarantee.": [
         "30 gün içinde ücreti geri ödeme garantisi."
       ],
-      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Bir telefon numarası yalnızca bir ${ BRAND_NAME } hesabını doğrulamak için kullanılabilir"
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Bir kullanıcı, tek bir kullanıcı adı, e-posta kutusu ya da kişi ile ilişkili olan bir hesaptır"
       ],
@@ -2637,9 +2584,6 @@
       "Balance from your previous subscription": [
         "Önceki aboneliğinizden kalan tutar"
       ],
-      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Yeni bir doğrulama kodu istemeden önce İstenmeyen kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
-      ],
       "Billing cycle: ${ text }": [
         "Faturalama dönemi: ${ text }"
       ],
@@ -2648,9 +2592,6 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ücretsiz bir tarifeye geçtiğinizde, gelecekte yeniden ücretli tarifeye geçseniz bile bu ek faydaları kalıcı olarak kaybedersiniz."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" üzerine tıklayın."
       ],
       "Country code": [
         "Ülke kodu"
@@ -2704,9 +2645,6 @@
       "Each code can only be used once": [
         "Her kod yalnızca bir kez kullanılabilir"
       ],
-      "Edit email address": [
-        "E-posta adresini düzenle"
-      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-posta barındırmasını yalnızca sahibi olduğunuz etki alanları için kullanabilirsiniz. ${ BRAND_NAME } etki alanı kaydı yapmaz. Herhangi bir etki alanı kayıt kuruluşundan satın aldığınız etki alanlarının e-posta adreslerini barındırabilirsiniz."
       ],
@@ -2718,9 +2656,6 @@
       ],
       "Enter the code from your authenticator app": [
         "Kimlik doğrulama uygulamanızdan alacağınız kodu yazın"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Doğrulama kodunu yazın. Rakam ${ digit }."
@@ -2737,14 +2672,8 @@
       "Expired": [
         "Geçerlilik süresi dolmuş"
       ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
-      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "İptal ederseniz, ${ planTitle } aboneliğiniz ${ expiryDate } tarihinde sona erdiğinde yenilenmeyecek."
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "E-postayı Gelen kutunuzda göremezseniz, İstenmeyen kutusuna bakmayı unutmayın."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Tarifenizi düşürdüğünüzde, ücretli ${ MAIL_APP_NAME } ve ${ VPN_APP_NAME } özelliklerini kullanamayacaksınız."
@@ -2900,9 +2829,6 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Ödemenizi tamamlamak için aşağıdaki adrese ${ btcAmountBold } gönderin."
       ],
-      "To fight spam and abuse, please verify you are human.": [
-        "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
-      ],
       "Total email addresses": [
         "Toplam e-posta adresi"
       ],
@@ -2948,20 +2874,11 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Bu işlemi tamamlamanız için yeni bir tarayıcı sekmesi açarak sizi PayPal sitesine yönlendireceğiz. İşlemi tamamlamak için, varsa açılır pencere engelleyicilerinizi kapatın."
       ],
-      "We'll send a new verification code to ${ strong }": [
-        "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
-      ],
       "Week": [
         "Hafta"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Yeni bir doğrulama kodu almak ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
-      ],
-      "Would you like to receive a new verification code?": [
-        "Yeni bir doğrulama kodu almak ister misiniz?"
       ],
       "Writing assistant": [
         "Yazma yardımcısı"
@@ -2982,9 +2899,6 @@
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
         "${ MAX_CALENDARS_FREE } tane takvim tutabilirsiniz. Aboneliğinizi iptal etmeden önce lütfen paylaşılan takvim bağlantılarını ve takvimlerinizi paylaştığınız tüm ${ BRAND_NAME } kullanıcılarını kaldırın.",
         "${ MAX_CALENDARS_FREE } tane takvim tutabilirsiniz. Aboneliğinizi iptal etmeden önce lütfen paylaşılan takvim bağlantılarını ve takvimlerinizi paylaştığınız tüm ${ BRAND_NAME } kullanıcılarını kaldırın."
-      ],
-      "You can now return to the application to continue": [
-        "İlerlemek için uygulamaya dönebilirsiniz"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Bu klasöre yeni e-posta iletileri geldiğinde uyarı almak için bildirimleri açabilirsiniz."
@@ -3023,17 +2937,11 @@
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ plan } aboneliğiniz ${ PASS_SHORT_APP_NAME } Lifetime aboneliğiyle değiştirilecek. Aboneliğinizin kalan tutarı hesabınıza eklenecek. ${ PASS_SHORT_APP_NAME } Lifetime fırsatının yenileme fiyatı yoktur, ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik ödeme yapılır."
       ],
-      "Your email will only be used for this one-time verification.": [
-        "E-posta adresiniz yalnızca bu tek seferlik doğrulama için kullanılacak."
-      ],
       "Your next billing date is ${ renewalTime }.": [
         "Sonraki fatura zamanınız ${ renewalTime }."
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Bir sonraki fatura tarihiniz ${ renewalTime }. Tarifenizi hemen değiştirmeniz gerekiyorsa lütfen destek ekibi ile görüşün."
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak ve her ${ cycle } ayda bir otomatik olarak yenilenecek.",
@@ -3128,9 +3036,6 @@
       ],
       "City": [
         "İl"
-      ],
-      "Code is 6 digits without spaces": [
-        "Doğrulama kodu boşluk içermeyen 6 rakamdan oluşur"
       ],
       "Colors": [
         "Renkler"
@@ -3231,9 +3136,6 @@
       "Payment method": [
         "Ödeme yöntemi"
       ],
-      "Phone number": [
-        "Telefon numarası"
-      ],
       "Postal code": [
         "Posta kodu"
       ],
@@ -3269,9 +3171,6 @@
       ],
       "Thomas": [
         "Ali"
-      ],
-      "Verification code": [
-        "Doğrulama kodu"
       ],
       "What happened?": [
         "Ne oldu?"
@@ -3373,9 +3272,6 @@
       ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
-      ],
-      "Request an invite": [
-        "Davet iste"
       ],
       "settings": [
         "ayarlar"
@@ -4542,7 +4438,7 @@
       "Your payment is still being processed": [
         "Ödeme işleminiz sürüyor"
       ],
-      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Aboneliğinizde şu anda uygulanan bir indirim var. Yeni indirime geçmek bu indirimin artık uygulanmayacağı anlamına gelir."
       ]
     },
@@ -5126,9 +5022,6 @@
       "Billing details updated": [
         "Fatura bilgileri güncellendi"
       ],
-      "Code sent to ${ methodTo }": [
-        "Kod ${ methodTo } alıcısına gönderildi"
-      ],
       "Copied to clipboard": [
         "Panoya kopyalandı"
       ],
@@ -5146,9 +5039,6 @@
       ],
       "Signature copied to clipboard": [
         "İmza panoya kopyalandı"
-      ],
-      "Verification successful": [
-        "Doğrulandı"
       ],
       "You have successfully canceled your subscription.": [
         "Aboneliğinizi iptal ettiniz."
@@ -5225,12 +5115,6 @@
     "Title": {
       "${ feature } is now active": [
         "${ feature } etkinleştirildi"
-      ],
-      "Account restricted": [
-        "Hesap kısıtlandı"
-      ],
-      "Account temporarily locked": [
-        "Hesap geçici olarak kilitlendi"
       ],
       "Add credit/debit card": [
         "Kredi ya da banka kartı ekle"
@@ -5328,14 +5212,8 @@
       "Help center": [
         "Yardım merkezi"
       ],
-      "Human verification": [
-        "İnsan olduğunuzu doğrulayın"
-      ],
       "Import emails, calendars, contacts": [
         "E-postaları, takvimleri, kişileri içe aktarın"
-      ],
-      "Invalid verification code": [
-        "Doğrulama kodu geçersiz"
       ],
       "Minicalendar": [
         "Mini takvim"
@@ -5360,9 +5238,6 @@
       ],
       "Report a problem": [
         "Sorun bildirin"
-      ],
-      "Request new code": [
-        "Yeni kod iste"
       ],
       "Select a plan": [
         "Bir tarife seçin"
