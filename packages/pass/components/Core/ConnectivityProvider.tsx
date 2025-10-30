@@ -1,5 +1,5 @@
 import type { FC, PropsWithChildren } from 'react';
-import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -7,11 +7,15 @@ import type { BottomBarProps } from '@proton/pass/components/Layout/Bar/BottomBa
 import { BottomBar } from '@proton/pass/components/Layout/Bar/BottomBar';
 import { useNavigatorOnline } from '@proton/pass/hooks/useNavigatorOnline';
 import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
-import type { ApiSubscriptionEvent, MaybeNull } from '@proton/pass/types';
+import {
+    ConnectivityStatus,
+    getConnectivityRetryTimeout,
+    intoConnectivityStatus,
+} from '@proton/pass/lib/api/connectivity';
+import type { ApiSubscriptionEvent, Maybe, MaybeNull } from '@proton/pass/types';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import type { PubSub } from '@proton/pass/utils/pubsub/factory';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import debounce from '@proton/utils/debounce';
 import noop from '@proton/utils/noop';
 
 import { usePassCore } from './PassCoreProvider';
@@ -22,8 +26,8 @@ type Props = {
 };
 
 type ConnectivityState = {
-    online: boolean;
-    check: () => Promise<void>;
+    status: ConnectivityStatus;
+    check: () => Promise<ConnectivityStatus>;
 };
 
 const ConnectivityContext = createContext<MaybeNull<ConnectivityState>>(null);
@@ -31,30 +35,34 @@ const ConnectivityContext = createContext<MaybeNull<ConnectivityState>>(null);
 export const ConnectivityProvider: FC<PropsWithChildren<Props>> = ({ children, onPing, subscribe }) => {
     const { getApiState } = usePassCore();
     const navigatorOnline = useNavigatorOnline();
-    const [apiOnline, setApiOnline] = useState(navigatorOnline);
-    const online = apiOnline && navigatorOnline;
+    const [status, setStatus] = useState(ConnectivityStatus[navigatorOnline ? 'ONLINE' : 'OFFLINE']);
+    const online = status === ConnectivityStatus.ONLINE && navigatorOnline;
+    const retryCount = useRef<number>(0);
 
     const checkApiOnline = useCallback(
-        asyncLock(() =>
-            Promise.resolve(onPing?.())
+        asyncLock((): Promise<ConnectivityStatus> => {
+            retryCount.current++;
+            return Promise.resolve(onPing?.())
                 .catch(noop)
                 .then(async () => {
-                    const apiState = await getApiState?.();
-                    setApiOnline(apiState?.online ?? navigator.onLine);
-                    return wait(50); /* ensure refs are synced */
-                })
-        ),
+                    const nextStatus = await (async (): Promise<ConnectivityStatus> => {
+                        if (!getApiState) return ConnectivityStatus[navigator.onLine ? 'ONLINE' : 'OFFLINE'];
+                        return intoConnectivityStatus(await getApiState());
+                    })();
+
+                    setStatus(nextStatus);
+                    await wait(50); /* ensure refs are synced */
+                    return nextStatus;
+                });
+        }),
         []
     );
-
-    /* Debounce to avoid showing the offline message unnecessarily e.g. during a page refresh */
-    const debouncedSetApiOnline = useCallback(debounce(setApiOnline, 2_000), []);
 
     useEffect(
         () =>
             subscribe?.((event) => {
-                if (event.type === 'network') {
-                    debouncedSetApiOnline(event.online);
+                if (event.type === 'connectivity') {
+                    setStatus(intoConnectivityStatus(event));
                 }
             }),
         []
@@ -66,29 +74,37 @@ export const ConnectivityProvider: FC<PropsWithChildren<Props>> = ({ children, o
 
     useEffect(() => {
         if (!online) {
-            void checkApiOnline();
-            const handle = setInterval(checkApiOnline, 5_000);
-            return () => clearInterval(handle);
-        }
+            let timer: Maybe<NodeJS.Timeout>;
+
+            const checkWithRetry = () =>
+                checkApiOnline().then((next) => {
+                    if (next !== ConnectivityStatus.ONLINE) {
+                        const ms = getConnectivityRetryTimeout(next, retryCount.current);
+                        timer = setTimeout(checkWithRetry, ms);
+                    }
+                });
+
+            void checkWithRetry();
+            return () => clearTimeout(timer);
+        } else retryCount.current = 0;
     }, [online]);
 
-    const ctx = useMemo(() => ({ check: checkApiOnline, online }), [online]);
+    const ctx = useMemo(() => ({ check: checkApiOnline, status }), [status]);
 
     return <ConnectivityContext.Provider value={ctx}>{children}</ConnectivityContext.Provider>;
 };
 
-export const useConnectivity = () => useContext(ConnectivityContext)?.online ?? true;
-export const useCheckConnectivity = () => useContext(ConnectivityContext)?.check;
-
-export const useConnectivityRef = () => {
-    const online = useConnectivity();
-    return useStatefulRef(online);
+export const useOnline = () => {
+    const ctx = useContext(ConnectivityContext);
+    return ctx ? ctx.status === ConnectivityStatus.ONLINE : true;
 };
 
-export const useConnectivityBar = (propsFactory: (online: boolean) => BottomBarProps) => {
-    const online = useConnectivity();
-    const props = propsFactory(online);
+export const useCheckConnectivity = () => useContext(ConnectivityContext)?.check;
+export const useOnlineRef = () => useStatefulRef(useOnline());
 
+export const useConnectivityBar = (propsFactory: (status: ConnectivityStatus) => BottomBarProps) => {
+    const status = useContext(ConnectivityContext)?.status ?? ConnectivityStatus.ONLINE;
+    const props = propsFactory(status);
     return (
         <BottomBar
             {...props}
