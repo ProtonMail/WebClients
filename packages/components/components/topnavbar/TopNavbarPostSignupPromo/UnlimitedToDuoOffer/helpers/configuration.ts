@@ -38,7 +38,7 @@ export const useUnlimitedToDuoConfig = (): UnlimitedToDuoOfferConfig => {
         loading: loadingRotationState,
     } = useFeature<UnlimitedToDuoRotationState>(FeatureCode.UnlimitedToDuoRotationState);
 
-    const [selectedTipIndex, setSelectedTipIndex] = useState(0);
+    const [selectedTipIndex, setSelectedTipIndex] = useState(unlimitedToDuoRotationState?.Value.tipIndex ?? 0);
 
     const currency = user?.Currency || DEFAULT_CURRENCY;
     const duoPlan = getPlanByName(plansResults?.plans ?? [], PLANS.DUO, currency);
@@ -61,6 +61,7 @@ export const useUnlimitedToDuoConfig = (): UnlimitedToDuoOfferConfig => {
             setSelectedTipIndex(result.tipIndex);
             void update(result);
         }
+        setSelectedTipIndex(unlimitedToDuoRotationState.Value.tipIndex);
     };
 
     useEffect(() => {
