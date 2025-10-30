@@ -996,6 +996,9 @@
       "Show advanced PGP settings": [
         "Паказаць дадатковыя налады PGP"
       ],
+      "Show location": [
+        "Паказваць месцазнаходжанне"
+      ],
       "Show more": [
         "Паказаць больш"
       ],
@@ -3145,8 +3148,8 @@
       "/month": [
         "/месяц"
       ],
-      "1 TB of storage to share": [
-        "1 ТБ сховішча для абагульвання"
+      "2 TB of storage to share": [
+        "2 ТБ сховішча для абагульвання"
       ],
       "2 user accounts": [
         "2 уліковых запісаў карыстальнікаў"
@@ -3482,6 +3485,9 @@
       ],
       "Folder \"${ name }\" is already downloading": [
         "Папка \"${ name }\" ужо спампоўваецца"
+      ],
+      "Folder creation failed": [
+        "Збой стварэння папкі"
       ],
       "Folder name cannot be empty.": [
         "Назва папкі не можа быць пустой."
@@ -3822,8 +3828,14 @@
       "Unknown payment token status": [
         "Невядомы статус плацежнага токена"
       ],
+      "Upload failed": [
+        "Збой запампоўвання"
+      ],
       "Upload for this folder is temporarily disabled": [
         "Запампоўванне для гэтай папкі часова адключана"
+      ],
+      "Upload not found": [
+        "Загрузка не знойдзена"
       ],
       "Username must begin with a letter or digit": [
         "Імя карыстальніка павінна пачынацца з літары або лічбы"
@@ -5461,6 +5473,9 @@
       "Download current logs": [
         "Спампоўванне бягучых журналаў"
       ],
+      "Download Failed": [
+        "Не ўдалося спампаваць"
+      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Спампоўванне файла ${ downloadFileName } было перарвана"
       ],
@@ -6583,6 +6598,9 @@
       "upgrade your storage": [
         "палепшыце сваё сховішча"
       ],
+      "Upload Failed": [
+        "Не ўдалося запампаваць"
+      ],
       "Uploaded": [
         "Запампавана"
       ],
@@ -6627,6 +6645,9 @@
       ],
       "VPN IP": [
         "IP VPN"
+      ],
+      "Waiting": [
+        "Чакайце"
       ],
       "Want to sync files faster?": [
         "Хочаце сінхранізаваць файлы хутчэй?"
@@ -10242,7 +10263,7 @@
       "Your payment is still being processed": [
         "Ваш плацеж усё яшчэ апрацоўваецца"
       ],
-      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Ваша падпіска мае бягучую скідку. Пераход на гэту новую акцыю азначае, што ранейшая скідка больш не будзе ўжывацца."
       ]
     },

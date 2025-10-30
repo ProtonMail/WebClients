@@ -986,6 +986,9 @@
       "Show advanced PGP settings": [
         "Erweiterte PGP-Einstellungen anzeigen"
       ],
+      "Show location": [
+        "Ort anzeigen"
+      ],
       "Show more": [
         "Mehr anzeigen"
       ],
@@ -3168,8 +3171,8 @@
       "/month": [
         "/ Monat"
       ],
-      "1 TB of storage to share": [
-        "1 TB Speicher zum Teilen"
+      "2 TB of storage to share": [
+        "2 TB Speicher zum Teilen"
       ],
       "2 user accounts": [
         "2 Benutzerkonten"
@@ -3502,6 +3505,9 @@
       "Folder \"${ name }\" is already downloading": [
         "Der Ordner „${ name }“ wird bereits heruntergeladen"
       ],
+      "Folder creation failed": [
+        "Fehler beim Erstellen des Ordners."
+      ],
       "Folder name cannot be empty.": [
         "Name des Ordners kann nicht leer sein."
       ],
@@ -3831,8 +3837,14 @@
       "Unknown payment token status": [
         "Unbekannter Status des Zahlungstoken"
       ],
+      "Upload failed": [
+        "Hochladen fehlgeschlagen"
+      ],
       "Upload for this folder is temporarily disabled": [
         "Für diesen Ordner ist das Hochladen vorübergehend deaktiviert."
+      ],
+      "Upload not found": [
+        "Upload nicht gefunden"
       ],
       "Username must begin with a letter or digit": [
         "Der Benutzername muss mit einem Buchstaben oder einer Ziffer beginnen."
@@ -5356,6 +5368,9 @@
       "Download current logs": [
         "Aktuelle Protokolle herunterladen"
       ],
+      "Download Failed": [
+        "Download fehlgeschlagen"
+      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Der Download von ${ downloadFileName } wird abgebrochen"
       ],
@@ -6466,6 +6481,9 @@
       "upgrade your storage": [
         "deinen Speicherplatz zu upgraden."
       ],
+      "Upload Failed": [
+        "Upload fehlgeschlagen"
+      ],
       "Uploaded": [
         "Hochgeladen"
       ],
@@ -6510,6 +6528,9 @@
       ],
       "VPN IP": [
         "VPN-IP"
+      ],
+      "Waiting": [
+        "Warte"
       ],
       "Want to sync files faster?": [
         "Möchtest du Dateien schneller synchronisieren?"
@@ -9983,7 +10004,7 @@
       "Your payment is still being processed": [
         "Deine Zahlung ist noch in Bearbeitung."
       ],
-      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Dein Abonnement hat derzeit einen bestehenden Rabatt. Der Wechsel zu dieser neuen Aktion bedeutet, dass der bestehende Rabatt nicht länger angewendet wird."
       ]
     },

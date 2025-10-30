@@ -996,6 +996,9 @@
       "Show advanced PGP settings": [
         "Zobraziť pokročilé nastavenia PGO"
       ],
+      "Show location": [
+        "Zobraziť umiestnenie"
+      ],
       "Show more": [
         "Zobraziť viac"
       ],
@@ -3145,8 +3148,8 @@
       "/month": [
         "/mesiac"
       ],
-      "1 TB of storage to share": [
-        "1 TB úložiska na zdieľanie"
+      "2 TB of storage to share": [
+        "2 TB úložiska na zdieľanie"
       ],
       "2 user accounts": [
         "2 používateľské účty"
@@ -3414,6 +3417,12 @@
       "Error decrypting a computer": [
         "Chyba pri dešifrovaní počítača"
       ],
+      "Error reading file": [
+        "Chyba pri čítaní súboru"
+      ],
+      "Expected structure attached": [
+        "Očakávaná štruktúra priložená"
+      ],
       "External accounts are not supported yet": [
         "Externé účty zatiaľ nie sú podporované"
       ],
@@ -3483,6 +3492,9 @@
       "Folder \"${ name }\" is already downloading": [
         "Priečinok „${ name }“ sa už sťahuje"
       ],
+      "Folder creation failed": [
+        "Vytvorenie priečinka zlyhalo"
+      ],
       "Folder name cannot be empty.": [
         "Názov priečinka nesmie byť prázdny."
       ],
@@ -3518,6 +3530,9 @@
       ],
       "Invalid IBAN": [
         "Neplatný IBAN"
+      ],
+      "Invalid JSON file": [
+        "Neplatný JSON súbor"
       ],
       "Invalid name": [
         "Neplatné meno"
@@ -3822,8 +3837,14 @@
       "Unknown payment token status": [
         "Neznámy stav platobného tokenu"
       ],
+      "Upload failed": [
+        "Nahrávanie zlyhalo"
+      ],
       "Upload for this folder is temporarily disabled": [
         "Nahrávanie do tohto priečinka je dočasne deaktivované"
+      ],
+      "Upload not found": [
+        "Nahrávanie nebolo nájdené"
       ],
       "Username must begin with a letter or digit": [
         "Používateľské meno musí začínať písmenom alebo číslom"
@@ -5461,6 +5482,9 @@
       "Download current logs": [
         "Stiahnuť aktuálne záznamy"
       ],
+      "Download Failed": [
+        "Sťahovanie zlyhalo"
+      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Preberanie súboru ${ downloadFileName } bude prerušené"
       ],
@@ -6583,6 +6607,9 @@
       "upgrade your storage": [
         "upgradujte svoje úložisko"
       ],
+      "Upload Failed": [
+        "Nahrávanie zlyhalo"
+      ],
       "Uploaded": [
         "Nahrané"
       ],
@@ -6627,6 +6654,9 @@
       ],
       "VPN IP": [
         "IP VPN"
+      ],
+      "Waiting": [
+        "Čaká sa"
       ],
       "Want to sync files faster?": [
         "Chcete synchronizovať súbory rýchlejšie?"
@@ -9913,6 +9943,9 @@
       "Create new group": [
         "Vytvoriť novú skupinu"
       ],
+      "Expected strcuture": [
+        "Očakávaná štruktúra"
+      ],
       "Ignore group": [
         "Ignorovať skupinu"
       ],
@@ -9924,6 +9957,9 @@
       ],
       "Only current location: ${ name }": [
         "Iba aktuálna poloha: ${ name }"
+      ],
+      "Select JSON file": [
+        "Vybrať JSON súbor"
       ],
       "Verify content": [
         "Overiť obsah"
@@ -10191,7 +10227,7 @@
       "Your payment is still being processed": [
         "Vaša platba sa stále spracováva"
       ],
-      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Vaše predplatné má v súčasnosti platnú zľavu. Prechodom na túto novú akciu sa existujúca zľava prestane uplatňovať."
       ]
     },

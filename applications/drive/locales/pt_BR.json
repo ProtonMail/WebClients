@@ -986,6 +986,9 @@
       "Show advanced PGP settings": [
         "Mostrar configurações PGP avançadas"
       ],
+      "Show location": [
+        "Mostrar localização"
+      ],
       "Show more": [
         "Mostrar mais"
       ],
@@ -3168,8 +3171,8 @@
       "/month": [
         "/mês"
       ],
-      "1 TB of storage to share": [
-        "1 TB de armazenamento para compartilhar"
+      "2 TB of storage to share": [
+        "2 TB de armazenamento para compartilhar"
       ],
       "2 user accounts": [
         "2 contas de usuário"
@@ -3433,6 +3436,9 @@
       "Error decrypting a computer": [
         "Erro ao descriptografar o computador"
       ],
+      "Error reading file": [
+        "Erro ao ler arquivo"
+      ],
       "External accounts are not supported yet": [
         "Contas externas não são suportadas ainda."
       ],
@@ -3502,6 +3508,9 @@
       "Folder \"${ name }\" is already downloading": [
         "A pasta \"${ name }\" já está sendo baixada"
       ],
+      "Folder creation failed": [
+        "Falha na criação da pasta"
+      ],
       "Folder name cannot be empty.": [
         "O nome da pasta não pode ser vazio."
       ],
@@ -3537,6 +3546,9 @@
       ],
       "Invalid IBAN": [
         "IBAN inválido"
+      ],
+      "Invalid JSON file": [
+        "O arquivo JSON não é válido."
       ],
       "Invalid name": [
         "O nome não é válido."
@@ -3831,8 +3843,14 @@
       "Unknown payment token status": [
         "Status da token de pagamento desconhecido"
       ],
+      "Upload failed": [
+        "Falha no envio"
+      ],
       "Upload for this folder is temporarily disabled": [
         "O envio para essa pasta está temporariamente desativado"
+      ],
+      "Upload not found": [
+        "Envio não encontrado"
       ],
       "Username must begin with a letter or digit": [
         "O nome de usuário deve começar com uma letra ou dígito"
@@ -5356,6 +5374,9 @@
       "Download current logs": [
         "Baixar os registros atuais"
       ],
+      "Download Failed": [
+        "Falha no download"
+      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Download de ${ downloadFileName } será abortado"
       ],
@@ -6466,6 +6487,9 @@
       "upgrade your storage": [
         "faça upgrade de seu armazenamento"
       ],
+      "Upload Failed": [
+        "Falha no envio"
+      ],
       "Uploaded": [
         "Enviado"
       ],
@@ -6510,6 +6534,9 @@
       ],
       "VPN IP": [
         "IP da VPN"
+      ],
+      "Waiting": [
+        "Aguarde"
       ],
       "Want to sync files faster?": [
         "Quer sincronizar arquivos mais rapidamente?"
@@ -9733,6 +9760,9 @@
       "Only current location: ${ name }": [
         "Única localização atual: ${ name }"
       ],
+      "Select JSON file": [
+        "Selecionar arquivo JSON"
+      ],
       "Verify content": [
         "Verificar conteúdo"
       ],
@@ -9991,7 +10021,7 @@
       "Your payment is still being processed": [
         "Seu pagamento ainda está sendo processado"
       ],
-      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Sua assinatura atualmente tem um desconto existente. Mudar para esta nova promoção significa que o desconto atual não será mais aplicado."
       ]
     },
