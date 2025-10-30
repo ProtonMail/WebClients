@@ -36,24 +36,21 @@ export const MoveToTreeView = ({ treeView, selectedFolder, handleSelectFolder, s
                                 fullWidth
                                 shape={selectedFolder?.ID === folder.ID ? 'solid' : 'ghost'}
                                 color={selectedFolder?.ID === folder.ID ? 'weak' : undefined}
-                                className="text-left rounded-none px-6"
+                                className="text-left"
                                 onClick={() => handleSelectFolder(folder)}
                                 aria-pressed={selectedFolder?.ID === folder.ID}
                                 data-testid={`move-to-button-${folder.Name}`}
                             >
                                 <div data-level={folder.level} className="flex">
-                                    <FolderIcon
-                                        folder={folder}
-                                        name={folder.icon}
-                                        dataColor={folder?.folderIconProps?.color}
-                                        className={clsx('shrink-0 mr-2 mt-0.5', folder?.folderIconProps?.className)}
-                                    />
+                                    <FolderIcon folder={folder} name={folder.icon} className="shrink-0 mr-2 mt-0.5" />
                                     <span className="text-ellipsis flex-1" title={folder.Name}>
                                         {folder.Name}
                                     </span>
                                     {selectedFolder?.ID === folder.ID && (
-                                        <IcCheckmarkStrong data-testid={`move-to-selected-icon-${folder.Name}`}
-                                            className="color-primary shrink-0 mt-0.5" />
+                                        <IcCheckmarkStrong
+                                            data-testid={`move-to-selected-icon-${folder.Name}`}
+                                            className="color-primary shrink-0 mt-0.5"
+                                        />
                                     )}
                                 </div>
                             </Button>

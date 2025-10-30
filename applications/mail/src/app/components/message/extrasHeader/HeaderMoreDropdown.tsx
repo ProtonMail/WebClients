@@ -7,10 +7,42 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { Button, Kbd, Tooltip } from '@proton/atoms';
 import type { ContactEditProps } from '@proton/components';
-import { ButtonGroup, DropdownMenu, DropdownMenuButton, DropdownSizeUnit, useActiveBreakpoint, useApi, useModalState, useNotifications } from '@proton/components';
+import {
+    ButtonGroup,
+    DropdownMenu,
+    DropdownMenuButton,
+    DropdownSizeUnit,
+    useActiveBreakpoint,
+    useApi,
+    useModalState,
+    useNotifications,
+} from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
-import { IcArchiveBox, IcArrowUpFromSquare, IcCode, IcCrossCircle, IcEnvelopeDot, IcEyeSlash, IcFilter, IcFire, IcFireSlash, IcFolderArrowIn, IcHook, IcHourglass, IcInbox, IcListBullets, IcPrinter, IcStar, IcStarSlash, IcTag, IcThreeDotsHorizontal, IcTrash, IcWindowImage, IcWindowTerminal } from '@proton/icons';
+import {
+    IcArchiveBox,
+    IcArrowUpFromSquare,
+    IcCode,
+    IcCrossCircle,
+    IcEnvelopeDot,
+    IcEyeSlash,
+    IcFilter,
+    IcFire,
+    IcFireSlash,
+    IcFolderArrowIn,
+    IcHook,
+    IcHourglass,
+    IcInbox,
+    IcListBullets,
+    IcPrinter,
+    IcStar,
+    IcStarSlash,
+    IcTag,
+    IcThreeDotsHorizontal,
+    IcTrash,
+    IcWindowImage,
+    IcWindowTerminal,
+} from '@proton/icons';
 import { useFolders } from '@proton/mail';
 import { getCurrentFolderID } from '@proton/mail/helpers/location';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
@@ -49,9 +81,9 @@ import type { Element } from '../../../models/element';
 import { updateAttachment } from '../../../store/attachments/attachmentsActions';
 import type { DecryptedAttachment } from '../../../store/attachments/attachmentsTypes';
 import { expireMessages } from '../../../store/messages/expire/messagesExpireActions';
-import { MoveToFolderDropdown, moveDropdownContentProps } from '../../actions/MoveToFolderDropdown';
-import { MoveToLabelDropdown, labelDropdownContentProps } from '../../actions/MoveToLabelDropdown';
 import CustomFilterDropdown from '../../dropdown/CustomFilterDropdown';
+import LabelDropdown, { labelDropdownContentProps } from '../../dropdown/LabelDropdown';
+import MoveDropdown, { moveDropdownContentProps } from '../../dropdown/MoveDropdown';
 import CustomExpirationModal from '../modals/CustomExpirationModal';
 import MessageDetailsModal from '../modals/MessageDetailsModal';
 import MessageHeadersModal from '../modals/MessageHeadersModal';
@@ -250,13 +282,8 @@ const HeaderMoreDropdown = ({
         ? [
               {
                   contentProps: moveDropdownContentProps,
-                  dropdownSize: {
-                      maxHeight: DropdownSizeUnit.Viewport,
-                      width: '19rem',
-                      maxWidth: DropdownSizeUnit.Viewport,
-                  },
                   render: ({ onClose, onLock }) => (
-                      <MoveToFolderDropdown
+                      <MoveDropdown
                           labelID={fromFolderID}
                           selectedIDs={selectedIDs}
                           onClose={onClose}
@@ -267,18 +294,8 @@ const HeaderMoreDropdown = ({
               },
               {
                   contentProps: labelDropdownContentProps,
-                  dropdownSize: {
-                      maxHeight: DropdownSizeUnit.Viewport,
-                      width: '19rem',
-                      maxWidth: DropdownSizeUnit.Viewport,
-                  },
                   render: ({ onClose, onLock }) => (
-                      <MoveToLabelDropdown
-                          labelID={labelID}
-                          selectedIDs={selectedIDs}
-                          onClose={onClose}
-                          onLock={onLock}
-                      />
+                      <LabelDropdown labelID={labelID} selectedIDs={selectedIDs} onClose={onClose} onLock={onLock} />
                   ),
               },
               {
@@ -420,7 +437,7 @@ const HeaderMoreDropdown = ({
                         {{
                             contentProps: moveDropdownContentProps,
                             render: ({ onClose, onLock }) => (
-                                <MoveToFolderDropdown
+                                <MoveDropdown
                                     labelID={fromFolderID}
                                     selectedIDs={selectedIDs}
                                     onClose={onClose}
@@ -447,7 +464,7 @@ const HeaderMoreDropdown = ({
                         {{
                             contentProps: labelDropdownContentProps,
                             render: ({ onClose, onLock }) => (
-                                <MoveToLabelDropdown
+                                <LabelDropdown
                                     labelID={labelID}
                                     selectedIDs={selectedIDs}
                                     onClose={onClose}
