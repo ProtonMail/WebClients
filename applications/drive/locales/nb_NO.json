@@ -986,6 +986,9 @@
       "Show advanced PGP settings": [
         "Vis avanserte PGP-innstillinger"
       ],
+      "Show location": [
+        "Vis plassering"
+      ],
       "Show more": [
         "Vis mer"
       ],
@@ -3116,8 +3119,8 @@
       "/month": [
         "/måned"
       ],
-      "1 TB of storage to share": [
-        "1 TB med lagringsplass å dele"
+      "2 TB of storage to share": [
+        "2 TB med lagringsplass å dele"
       ],
       "2 user accounts": [
         "2 brukerkontoer"
@@ -3450,6 +3453,9 @@
       "Folder \"${ name }\" is already downloading": [
         "Mappe \"${ name }\" lastes allerede ned"
       ],
+      "Folder creation failed": [
+        "Opprettelse av mappe mislyktes"
+      ],
       "Folder name cannot be empty.": [
         "Mappenavn kan ikke være tomt."
       ],
@@ -3779,8 +3785,14 @@
       "Unknown payment token status": [
         "Ukjent status for betalingstoken"
       ],
+      "Upload failed": [
+        "Opplasting mislyktes"
+      ],
       "Upload for this folder is temporarily disabled": [
         "Opplasting for denne mappen er midlertidig deaktivert"
+      ],
+      "Upload not found": [
+        "Opplasting ikke funnet"
       ],
       "Username must begin with a letter or digit": [
         "Brukernavn må begynne med en bokstav eller ett tall"
@@ -5304,6 +5316,9 @@
       "Download current logs": [
         "Last ned gjeldende logger"
       ],
+      "Download Failed": [
+        "Nedlasting mislyktes"
+      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Nedlasting av ${ downloadFileName } vil bli avbrutt"
       ],
@@ -6414,6 +6429,9 @@
       "upgrade your storage": [
         "oppgrader lagringsplassen din"
       ],
+      "Upload Failed": [
+        "Opplasting mislyktes"
+      ],
       "Uploaded": [
         "Lastet opp"
       ],
@@ -6458,6 +6476,9 @@
       ],
       "VPN IP": [
         "VPN-IP"
+      ],
+      "Waiting": [
+        "Venter"
       ],
       "Want to sync files faster?": [
         "Ønsker du å synkronisere filer raskere?"
@@ -7134,7 +7155,7 @@
         "Filnavn"
       ],
       "File transfer overview": [
-        "Filoverføringsoversikt"
+        "Oversikt over filoverføring"
       ],
       "First name": [
         "Fornavn"
@@ -9931,7 +9952,7 @@
       "Your payment is still being processed": [
         "Betalingen din behandles fortsatt"
       ],
-      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonnementet ditt har for øyeblikket en eksisterende rabatt. Hvis du flytter til denne nye kampanjen, vil den eksisterende rabatten ikke lenger gjelde."
       ]
     },
@@ -12832,6 +12853,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: KI-assistent som respekterer personvernet ditt"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: sikre pålogginger på alle dine enheter. Inkluderer ubegrenset antall aliaser, deling, integrert 2FA og mer."
       ]

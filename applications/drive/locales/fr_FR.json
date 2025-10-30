@@ -986,6 +986,9 @@
       "Show advanced PGP settings": [
         "Afficher les paramètres PGP avancés"
       ],
+      "Show location": [
+        "Afficher l'emplacement"
+      ],
       "Show more": [
         "Afficher plus"
       ],
@@ -3167,9 +3170,6 @@
     "Duo offer": {
       "/month": [
         "/mois"
-      ],
-      "1 TB of storage to share": [
-        "1 To d'espace de stockage à partager"
       ],
       "2 user accounts": [
         "2 comptes utilisateur"
@@ -5356,6 +5356,9 @@
       "Download current logs": [
         "Télécharger les journaux actuels"
       ],
+      "Download Failed": [
+        "Le téléchargement n'a pas abouti."
+      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Le téléchargement de ${ downloadFileName } sera annulé."
       ],
@@ -6466,6 +6469,9 @@
       "upgrade your storage": [
         "augmenter votre capacité de stockage."
       ],
+      "Upload Failed": [
+        "L'importation n'a pas abouti."
+      ],
       "Uploaded": [
         "Importé"
       ],
@@ -6510,6 +6516,9 @@
       ],
       "VPN IP": [
         "Adresse IP du VPN"
+      ],
+      "Waiting": [
+        "En attente"
       ],
       "Want to sync files faster?": [
         "Vous voulez synchroniser vos fichiers plus rapidement ?"
@@ -9985,9 +9994,6 @@
       ],
       "Your payment is still being processed": [
         "Votre paiement est en cours de traitement."
-      ],
-      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
-        "Votre abonnement bénéficie actuellement d'une réduction existante. Le passage à cette nouvelle promotion signifie que la réduction existante ne sera plus appliquée."
       ]
     },
     "Payments.Error": {

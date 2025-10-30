@@ -996,6 +996,9 @@
       "Show advanced PGP settings": [
         "Zobrazit pokročilé nastavení PGP"
       ],
+      "Show location": [
+        "Zobrazit polohu"
+      ],
       "Show more": [
         "Zobrazit více"
       ],
@@ -3200,8 +3203,8 @@
       "/month": [
         "/měsíc"
       ],
-      "1 TB of storage to share": [
-        "1 TB prostoru ke sdílení"
+      "2 TB of storage to share": [
+        "2 TB prostoru ke sdílení"
       ],
       "2 user accounts": [
         "2 uživatelské účty"
@@ -3537,6 +3540,9 @@
       ],
       "Folder \"${ name }\" is already downloading": [
         "Složka \"${ name }\" se již stahuje"
+      ],
+      "Folder creation failed": [
+        "Vytvoření složky selhalo"
       ],
       "Folder name cannot be empty.": [
         "Název složky nesmí být prázdný."
@@ -3877,8 +3883,14 @@
       "Unknown payment token status": [
         "Neznámý stav platebního tokenu"
       ],
+      "Upload failed": [
+        "Nahrávání selhalo"
+      ],
       "Upload for this folder is temporarily disabled": [
         "Nahrávání pro tuto složku je dočasně zakázáno"
+      ],
+      "Upload not found": [
+        "Nahrávání nenalezeno"
       ],
       "Username must begin with a letter or digit": [
         "Uživatelské jméno musí začínat písmenem nebo číslicí"
@@ -5516,6 +5528,9 @@
       "Download current logs": [
         "Stáhnout aktuální logy"
       ],
+      "Download Failed": [
+        "Stahování selhalo"
+      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Stahování ${ downloadFileName } bude zrušeno"
       ],
@@ -6638,6 +6653,9 @@
       "upgrade your storage": [
         "navyšte své úložiště"
       ],
+      "Upload Failed": [
+        "Nahrávání selhalo"
+      ],
       "Uploaded": [
         "Nahrané"
       ],
@@ -6682,6 +6700,9 @@
       ],
       "VPN IP": [
         "VPN IP"
+      ],
+      "Waiting": [
+        "Čekání"
       ],
       "Want to sync files faster?": [
         "Chcete synchronizovat soubory rychleji?"
@@ -10246,8 +10267,8 @@
       "Your payment is still being processed": [
         "Vaše platba se stále zpracovává"
       ],
-      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
-        "Vaše předplatné má v současné době slevu. Přechodem na tuto novou akci bude stávající sleva zrušena."
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "Vaše předplatné má v současné době platnou slevu. Přechodem na tuto novou akci bude stávající sleva zrušena."
       ]
     },
     "Payments.Error": {
@@ -13269,6 +13290,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: AI asistent, který respektuje vaše soukromí"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Bezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
       ]
