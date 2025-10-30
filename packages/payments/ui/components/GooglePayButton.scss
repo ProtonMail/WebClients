@@ -1,0 +1,17 @@
+.google-pay-button {
+	border-radius: 4px;
+	cursor: pointer;
+	block-size: 40px;
+	min-block-size: 40px;
+	padding-block: 12px 10px;
+	padding-inline: 24px;
+	border: 1px solid #757575;
+	inline-size: 100%;
+
+	--button-default-background-color: black;
+	--button-hover-background-color: #3c4043;
+	--button-active-background-color: #3c4043;
+	--button-default-text-color: white;
+	--button-hover-text-color: white;
+	--button-active-text-color: white;
+}

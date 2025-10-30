@@ -10,6 +10,7 @@ export const statusDefaultResponse: PaymentStatus = {
         Apple: true,
         Cash: true,
         Bitcoin: true,
+        Google: true,
     },
 };
 

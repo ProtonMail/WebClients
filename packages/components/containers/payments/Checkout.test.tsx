@@ -33,6 +33,7 @@ beforeEach(() => {
             isNewPaypal: false,
             isMethodTypeEnabled: jest.fn(),
             isNewApplePay: false,
+            isNewGooglePay: false,
         } as MethodsHook,
     };
 });

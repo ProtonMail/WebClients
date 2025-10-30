@@ -159,6 +159,7 @@ describe('SubscriptionContainer', () => {
                     Bitcoin: true,
                     Apple: true,
                     Paypal: true,
+                    Google: true,
                 },
             },
         };

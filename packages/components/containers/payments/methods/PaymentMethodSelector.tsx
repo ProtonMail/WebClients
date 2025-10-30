@@ -7,9 +7,11 @@ import Radio from '@proton/components/components/input/Radio';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import type { ViewPaymentMethod } from '@proton/components/payments/client-extensions';
+import type { IconName } from '@proton/icons/types';
 import { PAYMENT_METHOD_TYPES, type PaymentMethodType } from '@proton/payments';
 import americanExpressSafekeySvg from '@proton/styles/assets/img/bank-icons/amex-safekey-colored.svg';
 import discoverProtectBuySvg from '@proton/styles/assets/img/bank-icons/discover-protectbuy-colored.svg';
+import googlePayMarkSvg from '@proton/styles/assets/img/bank-icons/google-pay-mark.svg';
 import jcbLogoSvg from '@proton/styles/assets/img/bank-icons/jcb-logo.png';
 import mastercardSecurecodeSvg from '@proton/styles/assets/img/bank-icons/mastercard-securecode-colored.svg';
 import verifiedByVisaSvg from '@proton/styles/assets/img/bank-icons/visa-secure-colored.svg';
@@ -24,6 +26,34 @@ interface Props {
     narrow?: boolean;
     showCardIcons?: boolean;
 }
+
+const PaymentMethodIcon = ({
+    icon,
+    className,
+    type,
+}: {
+    icon?: IconName;
+    className?: string;
+    type: PaymentMethodType;
+}) => {
+    if (type === PAYMENT_METHOD_TYPES.GOOGLE_PAY) {
+        return (
+            <span className="mr-2 w-custom" style={{ '--w-custom': '2.5rem' }}>
+                <img
+                    src={googlePayMarkSvg}
+                    alt={c('Info').t`Google Pay mark`}
+                    style={{ maxHeight: '1.25rem', marginTop: '-0.15625rem' }}
+                />
+            </span>
+        );
+    }
+
+    if (!icon) {
+        return null;
+    }
+
+    return <Icon className={className} name={icon} />;
+};
 
 const PaymentMethodSelector = ({
     method,
@@ -50,7 +80,7 @@ const PaymentMethodSelector = ({
     if (showRadioButtons) {
         return (
             <>
-                {options.map(({ text, value, icon }) => {
+                {options.map(({ text, value, icon, type }) => {
                     return (
                         <label
                             htmlFor={value}
@@ -60,7 +90,7 @@ const PaymentMethodSelector = ({
                                 lastUsedMethod?.value === value && 'border-bottom',
                             ])}
                         >
-                            <span className="flex items-center">
+                            <span className="flex items-center flex-nowrap">
                                 <Radio
                                     className="mr-2"
                                     id={value}
@@ -69,8 +99,8 @@ const PaymentMethodSelector = ({
                                     onChange={() => onChange(value)}
                                     data-testid={`payment-method-${value}`}
                                 />
-                                {icon && <Icon className="mr-2" name={icon} />}
-                                <span className="text-cut">{text}</span>
+                                {<PaymentMethodIcon icon={icon} type={type} className="mr-2" />}
+                                <span className="text-cut text-nowrap">{text}</span>
                             </span>
 
                             {
@@ -136,7 +166,11 @@ const PaymentMethodSelector = ({
                         data-testid={`payment-method-${option.value}`}
                     >
                         <span className="inline-flex max-w-full flex-nowrap justify-start">
-                            {option.icon && <Icon className="mr-2 my-auto shrink-0" name={option.icon} />}
+                            <PaymentMethodIcon
+                                icon={option.icon}
+                                type={option.type}
+                                className="mr-2 my-auto shrink-0"
+                            />
                             <span className="text-ellipsis">{option.text}</span>
                         </span>
                     </Option>

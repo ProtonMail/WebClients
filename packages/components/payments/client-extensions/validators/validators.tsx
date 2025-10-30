@@ -2,14 +2,17 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { getCanMakePaymentsWithActiveCard } from '@proton/chargebee/lib';
 import Loader from '@proton/components/components/loader/Loader';
 import useModals from '@proton/components/hooks/useModals';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import {
+    type ApplePayModalHandles,
     type CardPayment,
+    type ChargebeeIframeHandles,
     type ChargebeePaypalModalHandles,
+    type GooglePayModalHandles,
     PAYMENT_METHOD_TYPES,
     type PaymentVerificator,
     type PaymentVerificatorV5,
@@ -18,11 +21,12 @@ import {
     ensureTokenChargeableV5,
     toV5PaymentToken,
 } from '@proton/payments';
-import type { ApplePayModalHandles, ChargebeeIframeHandles } from '@proton/payments';
 import { getChargebeeErrorMessage } from '@proton/payments/ui';
 import type { Api } from '@proton/shared/lib/interfaces';
+import useFlag from '@proton/unleash/useFlag';
+import isTruthy from '@proton/utils/isTruthy';
 
-import ModalTwo from '../../../components/modalTwo/Modal';
+import ModalTwo, { type ModalOwnProps } from '../../../components/modalTwo/Modal';
 import ModalTwoContent from '../../../components/modalTwo/ModalContent';
 import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
@@ -112,22 +116,35 @@ export const getDefaultVerifyPaypal = (createModal: (modal: JSX.Element) => void
 };
 
 export const useChargebeeCardVerifyPayment = (api: Api): PaymentVerificatorV5 => {
-    const { createModal } = useModals();
+    const { createModal, removeModal } = useModals();
     const { createNotification } = useNotifications();
+    const modalIdRef = useRef<string | null>(null);
 
     async function verifyChargebee({
         token,
         events,
         addCardMode,
+        abortController: cancelledByCaller,
+        onCancelled,
+        onError,
     }: PaymentVerificatorV5Params): Promise<V5PaymentToken> {
         const tokenPaymentMethod = await new Promise<V5PaymentToken>((resolve, reject) => {
-            const abort = new AbortController();
-            const dependencies = {
-                api,
-                signal: abort.signal,
-            };
+            const cancelledByUser = new AbortController();
 
-            const run = () => ensureTokenChargeableV5(token, events, dependencies, defaultTranslations);
+            const cancelledByAnything = AbortSignal.any(
+                [cancelledByUser.signal, cancelledByCaller?.signal].filter(isTruthy)
+            );
+
+            const run = () =>
+                ensureTokenChargeableV5({
+                    token,
+                    events,
+                    api,
+                    signal: cancelledByAnything,
+                    translations: defaultTranslations,
+                    onCancelled,
+                    onError,
+                });
 
             if (token.authorized) {
                 run()
@@ -142,17 +159,28 @@ export const useChargebeeCardVerifyPayment = (api: Api): PaymentVerificatorV5 =>
                 return;
             }
 
-            createModal(
+            modalIdRef.current = createModal(
                 <PaymentVerificationModal
                     isAddCard={addCardMode}
                     onSubmit={() => resolve(token)}
-                    onClose={reject}
+                    onClose={(reason) => {
+                        reject();
+                        if (reason === 'cancelled') {
+                            onCancelled?.();
+                        }
+                    }}
                     onProcess={() => ({
                         promise: run(),
-                        abort,
+                        abort: cancelledByUser,
                     })}
                 />
             );
+
+            cancelledByCaller?.signal.addEventListener('abort', () => {
+                if (modalIdRef.current) {
+                    removeModal(modalIdRef.current);
+                }
+            });
         });
 
         return tokenPaymentMethod;
@@ -161,12 +189,30 @@ export const useChargebeeCardVerifyPayment = (api: Api): PaymentVerificatorV5 =>
     return verifyChargebee;
 };
 
-export const ChargebeePaypalValidationModal = (props: { onClose: () => void }) => {
+export const PendingValidationModal = ({
+    type,
+    ...props
+}: Omit<ModalOwnProps, 'children'> & {
+    type: 'chargebee-paypal' | 'google-pay';
+}) => {
+    const [hasClose, setHasClose] = useState(false);
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            setHasClose(true);
+        }, 10000);
+        return () => clearTimeout(timeout);
+    }, []);
+
+    const redirectionWarningText =
+        type === 'chargebee-paypal'
+            ? c('Payments').t`You will soon be redirected to PayPal to verify your payment.`
+            : c('Payments').t`You will soon be redirected to verify your payment.`;
+
     return (
         <ModalTwo {...props}>
-            <ModalTwoHeader title={c('Title').t`Verifying your payment...`} />
+            <ModalTwoHeader title={c('Title').t`Verifying your payment...`} hasClose={hasClose} />
             <ModalTwoContent>
-                <p>{c('Info').t`You will soon be redirected to PayPal to verify your payment.`}</p>
+                <p>{redirectionWarningText}</p>
                 <Loader />
                 <p>{c('Info').t`Don’t see anything? Remember to turn off pop-up blockers.`}</p>
             </ModalTwoContent>
@@ -210,7 +256,7 @@ export function useChargebeePaypalHandles({
             hideModal();
         }
 
-        const id = createModal(<ChargebeePaypalValidationModal onClose={() => hideModal()} />);
+        const id = createModal(<PendingValidationModal type="chargebee-paypal" onClose={() => hideModal()} />);
         modalIdRef.current = id;
     };
 
@@ -286,4 +332,68 @@ export const useApplePayDependencies = (
     };
 
     return { canUseApplePay, applePayModalHandles };
+};
+
+export const useGooglePayDependencies = (
+    chargebeeHandles: ChargebeeIframeHandles,
+    {
+        onPaymentAttempt,
+        onPaymentFailure,
+    }: {
+        onPaymentAttempt: (method: PAYMENT_METHOD_TYPES.GOOGLE_PAY) => void;
+        onPaymentFailure: (method: PAYMENT_METHOD_TYPES.GOOGLE_PAY) => void;
+    }
+) => {
+    const canUseGooglePay = useFlag('GooglePay');
+    const { createNotification } = useNotifications();
+    const modalIdRef = useRef<string | null>(null);
+    const { createModal, removeModal } = useModals();
+    const showErrorRef = useRef(true);
+
+    const hideModal = (error?: any) => {
+        if (error && showErrorRef.current) {
+            showErrorRef.current = false;
+            createNotification({ text: getChargebeeErrorMessage(error), type: 'error' });
+        }
+
+        if (!modalIdRef.current) {
+            return;
+        }
+
+        removeModal(modalIdRef.current);
+        modalIdRef.current = null;
+    };
+
+    const showModal = () => {
+        if (modalIdRef.current) {
+            hideModal();
+        }
+
+        const id = createModal(<PendingValidationModal type="google-pay" onClose={() => hideModal()} />);
+        modalIdRef.current = id;
+    };
+
+    const googlePayModalHandles: GooglePayModalHandles = {
+        onAuthorize: () => {
+            hideModal();
+        },
+        onClick: () => {
+            onPaymentAttempt(PAYMENT_METHOD_TYPES.GOOGLE_PAY);
+            showModal();
+            showErrorRef.current = true;
+        },
+        onFailure: (error?: any) => {
+            onPaymentFailure(PAYMENT_METHOD_TYPES.GOOGLE_PAY);
+            hideModal(error);
+        },
+        onCancel: () => {
+            hideModal();
+        },
+        on3DSChallenge: () => {
+            hideModal();
+        },
+        onInitialize: () => {},
+    };
+
+    return { canUseGooglePay, googlePayModalHandles };
 };

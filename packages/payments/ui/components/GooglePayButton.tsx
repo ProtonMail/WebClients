@@ -1,15 +1,16 @@
 import { type ReactNode, useMemo } from 'react';
 
 import { ButtonLike } from '@proton/atoms';
+import googlePayGreySvg from '@proton/styles/assets/img/bank-icons/dark-gpay.svg';
 import clsx from '@proton/utils/clsx';
 
-import type { ApplePayProcessorHook } from '../../core/payment-processors/useApplePay';
+import type { GooglePayProcessorHook } from '../../core/payment-processors/useGooglePay';
 import { ChargebeeIframe } from './ChargebeeIframe';
 import type { ChargebeeWrapperProps } from './ChargebeeWrapper';
 
-import './ApplePayButton.scss';
+import './GooglePayButton.scss';
 
-const FakeApplePayButton = ({
+const FakeGooglePayButton = ({
     className,
     loading,
     disabled,
@@ -18,48 +19,50 @@ const FakeApplePayButton = ({
     loading?: boolean;
     disabled?: boolean;
 }) => {
-    const applePayButtonClassName = clsx([
-        'apple-pay-button apple-pay-button-black',
-        disabled && 'apple-pay-button--disabled',
+    const googlePayButtonClassName = clsx([
+        'google-pay-button google-pay-button-black',
+        disabled && 'google-pay-button--disabled',
         className,
     ]);
 
     return (
         <ButtonLike
-            className={applePayButtonClassName}
+            className={googlePayButtonClassName}
             color="norm"
-            style={{ borderRadius: '4px' }}
             loading={loading}
             disabled={disabled}
-        />
+            data-testid="fake-google-pay-button"
+        >
+            <img src={googlePayGreySvg} alt="Google Pay" style={{ marginTop: '-6px' }} width="43" />
+        </ButtonLike>
     );
 };
 
-export interface ApplePayButtonProps extends ChargebeeWrapperProps {
-    applePay: ApplePayProcessorHook;
+export interface GooglePayButtonProps extends ChargebeeWrapperProps {
+    googlePay: GooglePayProcessorHook;
     disabled?: boolean;
     className?: string;
     formInvalid?: boolean;
     loading?: boolean;
 }
 
-export const ApplePayButton = ({ formInvalid, loading, ...props }: ApplePayButtonProps) => {
-    const initializing = props.applePay.initializing;
+export const GooglePayButton = ({ formInvalid, loading, ...props }: GooglePayButtonProps) => {
+    const initializing = props.googlePay.initializing;
     const disabled = props.disabled;
 
     const renderFakeButton = initializing || disabled || formInvalid || loading;
-    const fakeApplePayButton = useMemo(() => {
+    const fakeGooglePayButton = useMemo(() => {
         const sharedProps = {
             className: clsx('w-full', props.className),
         };
 
         let button: ReactNode;
         if (disabled) {
-            button = <FakeApplePayButton {...sharedProps} disabled={true} />;
+            button = <FakeGooglePayButton {...sharedProps} disabled={true} />;
         } else if (initializing || loading) {
-            button = <FakeApplePayButton {...sharedProps} loading={true} />;
+            button = <FakeGooglePayButton {...sharedProps} loading={true} />;
         } else {
-            button = <FakeApplePayButton {...sharedProps} />;
+            button = <FakeGooglePayButton {...sharedProps} />;
         }
 
         if (renderFakeButton) {
@@ -69,9 +72,9 @@ export const ApplePayButton = ({ formInvalid, loading, ...props }: ApplePayButto
 
     return (
         <div className="relative">
-            {fakeApplePayButton}
+            {fakeGooglePayButton}
             <div className={clsx('flex flex-column', renderFakeButton && 'visibility-hidden absolute')}>
-                <ChargebeeIframe type="apple-pay" {...props} />
+                <ChargebeeIframe type="google-pay" {...props} />
             </div>
         </div>
     );

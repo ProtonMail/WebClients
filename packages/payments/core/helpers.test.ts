@@ -507,6 +507,7 @@ describe('payments core helpers', () => {
                     InApp: false,
                     Paypal: true,
                     Cash: true,
+                    Google: true,
                 },
             };
 
