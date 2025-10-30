@@ -40,6 +40,7 @@ import type {
     AutosaveFormEntry,
     AutosaveRequest,
     ClientEndpoint,
+    EndpointContext,
     FileTransferErrorDTO,
     FileTransferWriteDTO,
     FormCredentials,
@@ -56,7 +57,6 @@ import type {
     SelectedItem,
     SpotlightMessage,
     TabId,
-    TabInfo,
     UniqueItem,
 } from '@proton/pass/types';
 import type { ForkPayload } from '@proton/pass/types/api/fork';
@@ -114,10 +114,11 @@ export enum WorkerMessageType {
     AUTOSUGGEST_PASSWORD = 'AUTOSUGGEST_PASSWORD',
     B2B_EVENT = 'B2B_EVENT',
     CLIENT_INIT = 'CLIENT_INIT',
+    CLIPBOARD_AUTOCLEAR = 'CLIPBOARD_AUTOCLEAR',
     CLIPBOARD_OFFSCREEN_READ = 'CLIPBOARD_OFFSCREEN_READ',
     CLIPBOARD_OFFSCREEN_WRITE = 'CLIPBOARD_OFFSCREEN_WRITE',
-    CLIPBOARD_AUTOCLEAR = 'CLIPBOARD_AUTOCLEAR',
     DEBUG = 'DEBUG',
+    ENDPOINT_INIT = 'ENDPOINT_INIT',
     FEATURE_FLAGS_UPDATE = 'FEATURE_FLAGS_UPDATE',
     FETCH_ABORT = 'FETCH_ABORT',
     FETCH_DOMAINIMAGE = 'FETCH_DOMAINIMAGE',
@@ -169,7 +170,6 @@ export enum WorkerMessageType {
     SPOTLIGHT_CHECK = 'SPOTLIGHT_CHECK',
     SPOTLIGHT_REQUEST = 'SPOTLIGHT_REQUEST',
     STORE_DISPATCH = 'STORE_DISPATCH',
-    TAB_QUERY = 'TAB_QUERY',
     TELEMETRY_EVENT = 'TELEMETRY_EVENT',
     UNLOAD_CONTENT_SCRIPT = 'UNLOAD_CONTENT_SCRIPT',
     UPDATE_AVAILABLE = 'UPDATE_AVAILABLE',
@@ -209,6 +209,7 @@ export type ClipboardReadMessage = { type: WorkerMessageType.CLIPBOARD_OFFSCREEN
 export type ClipboardWriteMessage = WithPayload<WorkerMessageType.CLIPBOARD_OFFSCREEN_WRITE, ClipboardWriteDTO>;
 export type ClipboardAutoClearMessage = WithPayload<WorkerMessageType.CLIPBOARD_AUTOCLEAR, ClipboardAutoClearDTO>;
 export type DebugMessage = WithPayload<WorkerMessageType.DEBUG, { debug: string }>;
+export type EndpointInitMessage = WithPayload<WorkerMessageType.ENDPOINT_INIT, { popup?: boolean }>;
 export type FeatureFlagsUpdateMessage = WithPayload<WorkerMessageType.FEATURE_FLAGS_UPDATE, FeatureFlagState>;
 export type FetchAbortMessage = WithPayload<WorkerMessageType.FETCH_ABORT, { requestId: string }>;
 export type FetchDomainImageMessage = WithPayload<WorkerMessageType.FETCH_DOMAINIMAGE, { url: string }>;
@@ -250,8 +251,8 @@ export type PermissionsUpdateMessage = WithPayload<WorkerMessageType.PERMISSIONS
 export type PingMessage = { type: WorkerMessageType.PING };
 export type PopupInitMessage = WithPayload<WorkerMessageType.POPUP_INIT, { tabId: TabId }>;
 export type PortUnauthorizedMessage = { type: WorkerMessageType.PORT_UNAUTHORIZED };
-export type RegisterElementsMessage = { type: WorkerMessageType.REGISTER_ELEMENTS };
 export type RegisterElementsLegacyMessage = WithPayload<WorkerMessageType.REGISTER_ELEMENTS_FALLBACK, { hash: string }>;
+export type RegisterElementsMessage = { type: WorkerMessageType.REGISTER_ELEMENTS };
 export type ResolveExtensionKeyMessage = { type: WorkerMessageType.RESOLVE_EXTENSION_KEY };
 export type ResolveUserDataMessage = { type: WorkerMessageType.RESOLVE_USER };
 export type SentryCSEventMessage = WithPayload<WorkerMessageType.SENTRY_CS_EVENT, { message: string; data: any }>;
@@ -260,7 +261,6 @@ export type SpotlightAckMessage = WithPayload<WorkerMessageType.SPOTLIGHT_ACK, {
 export type SpotlightCheckMessage = WithPayload<WorkerMessageType.SPOTLIGHT_CHECK, { message: SpotlightMessage }>;
 export type SpotlightRequestMessage = { type: WorkerMessageType.SPOTLIGHT_REQUEST };
 export type StoreActionMessage = WithPayload<WorkerMessageType.STORE_DISPATCH, { action: Action }>;
-export type TabQueryMessage = WithPayload<WorkerMessageType.TAB_QUERY, { current?: boolean }>;
 export type TelemetryEventMessage = WithPayload<WorkerMessageType.TELEMETRY_EVENT, TelemetryEventDTO>;
 export type UnloadContentScriptMessage = { type: WorkerMessageType.UNLOAD_CONTENT_SCRIPT };
 export type UpdateAvailableMessage = { type: WorkerMessageType.UPDATE_AVAILABLE };
@@ -299,25 +299,26 @@ export type WorkerMessage =
     | ClipboardWriteMessage
     | ClipboardAutoClearMessage
     | DebugMessage
+    | EndpointInitMessage
     | FeatureFlagsUpdateMessage
     | FetchAbortMessage
     | FetchDomainImageMessage
+    | FileTransferErrorMessage
+    | FileTransferWriteMessage
     | FormEntryCommitMessage
     | FormEntryRequestMessage
     | FormEntryStageMessage
     | FormEntryStashMessage
     | FormStatusMessage
-    | FileTransferWriteMessage
-    | FileTransferErrorMessage
+    | FrameQueryMessage
+    | FrameVisibilityMessage
     | InlineDropdownAttachMessage
     | InlineDropdownClosedMessage
     | InlineDropdownCloseMessage
-    | InlineDropdownOpenMessage
     | InlineDropdownOpenedMessage
+    | InlineDropdownOpenMessage
     | InlineDropdownStateMessage
     | InlineIconShiftMessage
-    | FrameQueryMessage
-    | FrameVisibilityMessage
     | LoadContentScriptMessage
     | LocaleUpdatedMessage
     | LogEventMessage
@@ -337,8 +338,8 @@ export type WorkerMessage =
     | PopupInitMessage
     | PortFrameForwardingMessage
     | PortUnauthorizedMessage
-    | RegisterElementsMessage
     | RegisterElementsLegacyMessage
+    | RegisterElementsMessage
     | ResolveExtensionKeyMessage
     | ResolveUserDataMessage
     | SentryCSEventMessage
@@ -347,7 +348,6 @@ export type WorkerMessage =
     | SpotlightCheckMessage
     | SpotlightRequestMessage
     | StoreActionMessage
-    | TabQueryMessage
     | TelemetryEventMessage
     | UnloadContentScriptMessage
     | UpdateAvailableMessage
@@ -370,24 +370,25 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.AUTH_PULL_FORK]: Result<PullForkResponse>;
     [WorkerMessageType.AUTH_UNLOCK]: Result;
     [WorkerMessageType.AUTOFILL_CC_QUERY]: AutofillCCResult;
-    [WorkerMessageType.AUTOFILL_IDENTITY_QUERY]: AutofillIdentityResult;
     [WorkerMessageType.AUTOFILL_CHECK_FORM]: { hasLoginForm: boolean };
+    [WorkerMessageType.AUTOFILL_IDENTITY_QUERY]: AutofillIdentityResult;
     [WorkerMessageType.AUTOFILL_IDENTITY]: ItemContent<'identity'>;
     [WorkerMessageType.AUTOFILL_LOGIN_QUERY]: AutofillLoginResult;
-    [WorkerMessageType.AUTOFILL_REQUEST]: AutofillResult;
     [WorkerMessageType.AUTOFILL_LOGIN]: FormCredentials;
     [WorkerMessageType.AUTOFILL_OTP_CHECK]: { shouldPrompt: false } | ({ shouldPrompt: true } & LoginItemPreview);
+    [WorkerMessageType.AUTOFILL_REQUEST]: AutofillResult;
     [WorkerMessageType.AUTOSUGGEST_PASSWORD]: PasswordAutosuggestOptions;
     [WorkerMessageType.CLIENT_INIT]: { state: AppState; settings: ProxiedSettings; features: FeatureFlagState };
     [WorkerMessageType.CLIPBOARD_OFFSCREEN_READ]: { content: string };
+    [WorkerMessageType.ENDPOINT_INIT]: EndpointContext;
     [WorkerMessageType.FETCH_DOMAINIMAGE]: { result: Maybe<string> };
+    [WorkerMessageType.FORM_ENTRY_COMMIT]: { submission: MaybeNull<AutosaveFormEntry> };
+    [WorkerMessageType.FORM_ENTRY_REQUEST]: { submission: MaybeNull<AutosaveFormEntry> };
+    [WorkerMessageType.FORM_ENTRY_STAGE]: { submission: MaybeNull<AutosaveFormEntry> };
     [WorkerMessageType.FRAME_QUERY]: FrameQueryResult;
     [WorkerMessageType.FRAME_VISIBILITY]: FrameCheckResult;
     [WorkerMessageType.INLINE_DROPDOWN_STATE]: DropdownStateDTO;
     [WorkerMessageType.INLINE_ICON_SHIFT]: IconShiftResult;
-    [WorkerMessageType.FORM_ENTRY_COMMIT]: { submission: MaybeNull<AutosaveFormEntry> };
-    [WorkerMessageType.FORM_ENTRY_REQUEST]: { submission: MaybeNull<AutosaveFormEntry> };
-    [WorkerMessageType.FORM_ENTRY_STAGE]: { submission: MaybeNull<AutosaveFormEntry> };
     [WorkerMessageType.LOG_REQUEST]: { logs: string[] };
     [WorkerMessageType.MONITOR_2FAS]: { result: UniqueItem[] };
     [WorkerMessageType.MONITOR_WEAK_PASSWORDS]: { result: UniqueItem[] };
@@ -403,7 +404,6 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.RESOLVE_USER]: { user: MaybeNull<User> };
     [WorkerMessageType.SPOTLIGHT_CHECK]: { enabled: boolean };
     [WorkerMessageType.SPOTLIGHT_REQUEST]: { message: MaybeNull<SpotlightMessage> };
-    [WorkerMessageType.TAB_QUERY]: TabInfo;
     [WorkerMessageType.VAULTS_QUERY]: { vaults: VaultShareItem[]; defaultShareId: ShareId };
     [WorkerMessageType.WEBSITE_RULES_REQUEST]: { rules: MaybeNull<DetectionRulesMatch> };
 };

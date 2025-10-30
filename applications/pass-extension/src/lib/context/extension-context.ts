@@ -4,7 +4,7 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Runtime } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
-import type { ClientEndpoint, MaybeNull, TabId } from '@proton/pass/types';
+import type { ClientEndpoint, EndpointContext, MaybeNull, TabId } from '@proton/pass/types';
 import { contextHandlerFactory } from '@proton/pass/utils/context';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
@@ -25,6 +25,7 @@ export type ExtensionContextType = {
     senderTabId: TabId;
     port: Runtime.Port;
     url: MaybeNull<ParsedUrl>;
+    tabUrl: MaybeNull<ParsedUrl>;
     destroy: () => void;
 };
 
@@ -43,28 +44,23 @@ export type ExtensionContextOptions = {
 export const ExtensionContext = contextHandlerFactory<ExtensionContextType>('extension');
 
 export const setupExtensionContext = async (options: ExtensionContextOptions): Promise<ExtensionContextType> => {
-    const message = resolveMessageFactory(options.endpoint);
-    const logCtx = `Context::Extension::${options.endpoint}`;
+    const { endpoint } = options;
+    const message = resolveMessageFactory(endpoint);
+    const logCtx = `Context::Extension::${endpoint}`;
 
     try {
-        const {
-            tabId = 0,
-            senderTabId = 0,
-            url = null,
-        } = await sendMessage.on(
-            message({
-                type: WorkerMessageType.TAB_QUERY,
-                payload: { current: options.endpoint === 'popup' },
-            }),
-            (res) => {
-                if (res.type === 'error') return { tabId: 0, url: null, senderTabId: 0 };
+        const res = await sendMessage.on(
+            message({ type: WorkerMessageType.ENDPOINT_INIT, payload: { popup: endpoint === 'popup' } }),
+            (res): Partial<EndpointContext> => {
+                if (res.type === 'error') return { tabId: 0, senderTabId: 0 };
                 return res;
             }
         );
 
+        const { tabId = 0, senderTabId = 0, url = null, tabUrl = null } = res;
         /** Generate a unique port name by combining the endpoint and sender tab ID.
          * This ensures requests are properly associated with their originating tab context */
-        const name = generatePortName(options.endpoint, senderTabId);
+        const name = generatePortName(endpoint, senderTabId);
         const port = browser.runtime.connect(browser.runtime.id, { name });
 
         logger.info(`[${logCtx}] tabId resolved & port opened`);
@@ -102,7 +98,7 @@ export const setupExtensionContext = async (options: ExtensionContextOptions): P
 
         port.onDisconnect.addListener(onPortDisconnect);
 
-        return ExtensionContext.set({ endpoint: options.endpoint, port, tabId, senderTabId, url, destroy });
+        return ExtensionContext.set({ endpoint, port, senderTabId, tabId, tabUrl, url, destroy });
     } catch (error) {
         logger.info(`[${logCtx}] fatal error`, error);
 
