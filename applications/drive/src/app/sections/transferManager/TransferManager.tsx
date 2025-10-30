@@ -5,8 +5,8 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { useUploadConflictModal } from '../../modals/UploadConflictModal';
 import { useUploadQueueStore } from '../../zustand/upload/uploadQueue.store';
-import { TransferItem } from './transferItem/transferItem';
 import { TransferManagerHeader } from './transferManagerHeader/transferManagerHeader';
+import { TransferManagerList } from './transferManagerList/transferManagerList';
 import { useTransferManagerActions } from './useTransferManagerActions';
 import { TransferManagerStatus, useTransferManagerState } from './useTransferManagerState';
 
@@ -50,15 +50,13 @@ export const TransferManager = () => {
     }
 
     return (
-        <div className="transfer-manager-fixed-position">
+        <div id="transfer-manager" className="transfer-manager-fixed-position">
             <section aria-label={c('Label').t`File transfer overview`}>
                 <TransferManagerHeader toggleMinimize={toggleMinimize} isMinimized={isMinimized} onClose={onClose} />
 
                 {!isMinimized && (
-                    <div className="mt-3 flex flex-column gap-2 px-4 pb-4">
-                        {items.map((item) => (
-                            <TransferItem key={item.id} entry={item} />
-                        ))}
+                    <div className="mt-3" data-testid="drive-transfers-manager:list">
+                        <TransferManagerList items={items} />
                     </div>
                 )}
                 {uploadConflictModal}

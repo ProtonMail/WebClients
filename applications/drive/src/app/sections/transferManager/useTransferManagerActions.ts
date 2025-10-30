@@ -1,9 +1,19 @@
+import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
+import { useConfirmActionModal } from '@proton/components/index';
+import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
+
+import { DownloadManager } from '../../managers/download/DownloadManager';
 import { useDownloadManagerStore } from '../../zustand/download/downloadManager.store';
+import { uploadManager } from '../../zustand/upload/uploadManager';
 import { useUploadQueueStore } from '../../zustand/upload/uploadQueue.store';
+import type { TransferManagerEntry } from './useTransferManagerState';
 
 export const useTransferManagerActions = () => {
+    const downloadManager = DownloadManager.getInstance();
+    const [confirmModal, showConfirmModal] = useConfirmActionModal();
+
     const { clearDownloads } = useDownloadManagerStore(
         useShallow((state) => {
             return {
@@ -24,7 +34,50 @@ export const useTransferManagerActions = () => {
         clearUploads();
     };
 
+    const cancelTransfer = (entry: TransferManagerEntry) => {
+        if (entry.type === 'download') {
+            downloadManager.cancel([entry.id]);
+        }
+        if (entry.type === 'upload') {
+            uploadManager.cancelUpload(entry.id);
+        }
+    };
+
+    const retryTransfer = (entry: TransferManagerEntry) => {
+        if (entry.type === 'download') {
+            downloadManager.retry([entry.id]);
+        }
+        if (entry.type === 'upload') {
+            console.warn('TBI: retry logic', entry);
+        }
+    };
+
+    const cancelAll = (entries: TransferManagerEntry[]) => {
+        const title = c('Title').t`Cancel all uploads?`;
+        const message = c('Info')
+            .t`This will cancel any remaining uploads. Cancelled files won't be saved in ${DRIVE_APP_NAME}.`;
+        const submitText = c('Action').t`Cancel uploads`;
+        const cancelText = c('Action').t`Go back`;
+
+        void showConfirmModal({
+            title,
+            submitText,
+            cancelText,
+            message,
+            // needs to be async because that's required by ConfirmModal.onSubmit
+            onSubmit: async () => {
+                for (const entry of entries) {
+                    cancelTransfer(entry);
+                }
+            },
+        });
+    };
+
     return {
         clearQueue,
+        cancelTransfer,
+        retryTransfer,
+        cancelAll,
+        confirmModal,
     };
 };

@@ -6,9 +6,8 @@ import { shortHumanSize } from '@proton/shared/lib/helpers/humanSize';
 
 import { BaseTransferStatus, DownloadStatus } from '../../../zustand/download/downloadManager.store';
 import { UploadStatus } from '../../../zustand/upload/uploadQueue.store';
+import { useTransferManagerActions } from '../useTransferManagerActions';
 import type { TransferManagerEntry } from '../useTransferManagerState';
-
-import './transferItem.scss';
 
 type Props = {
     entry: TransferManagerEntry;
@@ -52,37 +51,60 @@ const getItemIconByStatus = (entry: TransferManagerEntry) => {
 };
 
 export const TransferItem = ({ entry }: Props) => {
-    const showLocationText = c('Action').t`Show location`;
+    // const showLocationText = c('Action').t`Show location`;
     const totalSize = entry.type === 'download' ? entry.storageSize : entry.clearTextSize;
     const transferredTotal = `${shortHumanSize(entry.transferredBytes)} / ${shortHumanSize(totalSize)}`;
+    const { cancelTransfer, retryTransfer } = useTransferManagerActions();
 
     return (
-        <div className="tm-list-item bg-norm">
-            <div className="tm-list-item__icon">{getItemIconByStatus(entry)}</div>
-            <div className="tm-list-item__info">
-                <span className="tm-list-item__title text-ellipsis text-nowrap text-rg">{entry.name}</span>
-                <div className="tm-list-item__meta">
+        <div
+            className="bg-norm flex w-full gap-1 items-center p-2 h-full min-h-custom"
+            style={{ '--min-h-custom': '3.3rem' }}
+            data-testid="transfer-item-row"
+        >
+            <div className="mr-1 w-custom flex justify-center" style={{ '--w-custom': '1.5rem' }}>
+                {getItemIconByStatus(entry)}
+            </div>
+            <div className="flex-1 max-w-full text-ellipsis ">
+                <span className="text-nowrap text-rg">{entry.name}</span>
+                <div className="gap-1 flex">
                     <span className="text-sm color-weak">{getStatusLabel(entry)}</span>
                     <span aria-hidden="true" className="text-sm text-weak">
                         &middot;
                     </span>
-                    {entry.status === BaseTransferStatus.Finished && (
+                    {/* TBI for upload only */}
+                    {/* {entry.status === BaseTransferStatus.Finished && (
                         <span className="text-ellipsis text-nowrap text-sm color-weak">{showLocationText}</span>
-                    )}
+                    )} */}
                     {entry.status !== BaseTransferStatus.Finished && (
                         <span className="text-ellipsis text-nowrap text-sm color-weak">{transferredTotal}</span>
                     )}
                 </div>
             </div>
-            <div className="tm-list-item__actions">
-                {entry.status === BaseTransferStatus.Finished && (
+            <div className="w-1/6">
+                {entry.status == BaseTransferStatus.Finished && (
                     <Button color="weak" shape="solid">
                         {c('Action').t`Share`}
                     </Button>
                 )}
                 {entry.status === BaseTransferStatus.InProgress && (
-                    <Button color="weak" shape="outline">
+                    <Button
+                        color="weak"
+                        shape="outline"
+                        onClick={() => cancelTransfer(entry)}
+                        data-testid="drive-transfers-manager:item-controls-cancel"
+                    >
                         {c('Action').t`Cancel`}
+                    </Button>
+                )}
+                {(entry.status === BaseTransferStatus.Failed || entry.status === BaseTransferStatus.Cancelled) && (
+                    <Button
+                        color="weak"
+                        shape="outline"
+                        onClick={() => retryTransfer(entry)}
+                        data-testid="drive-transfers-manager:item-controls-restart"
+                    >
+                        {c('Action').t`Retry`}
                     </Button>
                 )}
             </div>
