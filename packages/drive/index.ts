@@ -11,14 +11,14 @@ import { getClientID } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
 
-import { LatestEventIdProvider } from './lib/latestEventIdProvider';
-import { initOpenPGPCryptoModule } from './lib/openPGPCryptoModule';
-import { proxyDriveClientWithEventTracking } from './lib/proxyDriveClientWithEventTracking';
-import type { UserPlan } from './lib/telemetry';
-import { initTelemetry } from './lib/telemetry';
-import { useAccount } from './lib/useAccount';
-import { useHttpClient } from './lib/useHttpClient';
-import { useSrpModule } from './lib/useSrpModule';
+import { LatestEventIdProvider } from './internal/latestEventIdProvider';
+import { initOpenPGPCryptoModule } from './internal/openPGPCryptoModule';
+import { proxyDriveClientWithEventTracking } from './internal/proxyDriveClientWithEventTracking';
+import type { UserPlan } from './internal/telemetry';
+import { initTelemetry } from './internal/telemetry';
+import { useAccount } from './internal/useAccount';
+import { useHttpClient } from './internal/useHttpClient';
+import { useSrpModule } from './internal/useSrpModule';
 
 export {
     /** @deprecated only for transition to sdk */
@@ -32,9 +32,6 @@ export {
 } from '@protontech/drive-sdk/dist/internal/uids';
 
 export { generateNodeUid } from '@protontech/drive-sdk';
-
-export { generateThumbnail } from './lib/thumbnails/thumbnailGenerator';
-export type { ThumbnailResult } from './lib/thumbnails/utils';
 
 /* Type export */
 export type {

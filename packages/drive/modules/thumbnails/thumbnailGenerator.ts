@@ -117,6 +117,31 @@ async function processThumbnail(
     }
 }
 
+/**
+ * Generates thumbnails for a given file.
+ *
+ * The generator will try to detect the MIME type of the file and use
+ * the appropriate handler to generate the thumbnails. The detected MIME type
+ * is returned in the `mimeTypePromise` promise for caller to use as well.
+ *
+ * The thumbnails are generated in the `thumbnailsPromise` promise. The result
+ * is either a success with the `ThumbnailResult` or a failure with the error.
+ *
+ * The result can include no, one or two thumbnails, depending on the file
+ * type and size. For example, for a small image, only one thumbnail will be
+ * generated, while for a large or not-widely-supported image, two thumbnails
+ * including HD preview (that is then used for fallback preview on clients that
+ * don't support the original image format) will be generated.
+ *
+ * @param content - The file content to generate thumbnails from.
+ * @param fileName - The name of the file (helps to detect the MIME type).
+ * @param fileSize - The size of the file (helps to determine what thumbnails to
+ *   generate).
+ * @param options - The options for the thumbnail generation, such as debug mode.
+ * @returns An object containing `mimeTypePromise` (detected MIME type) and
+ *   `thumbnailsPromise` (resolved thumbnail generation result).
+ * @throws `ThumbnailError` if the thumbnail generation fails.
+ */
 export function generateThumbnail(
     content: Blob,
     fileName: string,
@@ -126,14 +151,14 @@ export function generateThumbnail(
     } = {}
 ): {
     mimeTypePromise: Promise<string>;
-    resultPromise: Promise<{ ok: true; result: ThumbnailResult } | { ok: false; error: unknown }>;
+    thumbnailsPromise: Promise<{ ok: true; result: ThumbnailResult } | { ok: false; error: unknown }>;
 } {
     const thumbnailMimeType = isIosDevice || isSafariDevice ? SupportedMimeTypes.jpg : SupportedMimeTypes.webp;
     const thumbnailTypes = [ThumbnailType.Type1, ThumbnailType.Type2];
 
     const mimeTypePromise = mimeTypeFromFile({ type: content.type, name: fileName });
 
-    const resultPromise = processThumbnail(
+    const thumbnailsPromise = processThumbnail(
         content,
         fileName,
         fileSize,
@@ -143,5 +168,5 @@ export function generateThumbnail(
         mimeTypePromise
     );
 
-    return { mimeTypePromise, resultPromise };
+    return { mimeTypePromise, thumbnailsPromise };
 }
