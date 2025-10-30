@@ -5,8 +5,8 @@
 	position: fixed;
 	inset-block-end: 1.5rem;
 	inset-inline-end: 1.5rem;
-	inline-size: auto;
-	max-inline-size: 34rem;
+	inline-size: var(--tm-width, 500px);
+	max-inline-size: var(--tm-width, 500px);
 	max-block-size: calc(100vh - 3rem);
 	display: flex;
 	flex-direction: column;
@@ -19,6 +19,15 @@
 
 	@include media('<=small') {
 		inset-inline: 1rem;
+		inline-size: calc(100vw - 2rem);
 		max-inline-size: calc(100vw - 2rem);
+	}
+}
+
+.tm-progress {
+	background-color: var(--background-strong);
+
+	&::-webkit-progress-bar {
+		background-color: var(--background-strong);
 	}
 }
