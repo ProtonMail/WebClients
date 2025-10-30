@@ -221,6 +221,9 @@
       "Copy alias “${ name }”": [
         "Kopírovat alias \"${ name }\""
       ],
+      "Copy Booking link": [
+        "Kopírovat rezervační odkaz"
+      ],
       "Copy email address": [
         "Kopírovat e-mailovou adresu"
       ],
@@ -3367,8 +3370,8 @@
       "/month": [
         "/měsíc"
       ],
-      "1 TB of storage to share": [
-        "1 TB prostoru ke sdílení"
+      "2 TB of storage to share": [
+        "2 TB prostoru ke sdílení"
       ],
       "2 user accounts": [
         "2 uživatelské účty"
@@ -5389,6 +5392,9 @@
       "Billing cycle: ${ text }": [
         "Fakturační cyklus: ${ text }"
       ],
+      "Booking page example": [
+        "Příklad rezervační stránky"
+      ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Zlepšete identitu značky své organizace a vytvořte konzistentnější online prostředí pro své uživatele."
       ],
@@ -6030,6 +6036,9 @@
       ],
       "Setting up your new address…": [
         "Nastavování nové adresy…"
+      ],
+      "Share this page to let others book time in your calendar.": [
+        "Sdílejte tuto stránku, aby si ostatní mohli rezervovat termín ve vašem kalendáři."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhledem k tomu, že jste věrný uživatel, má Váš účet povolené další funkce."
@@ -9517,8 +9526,8 @@
       "Your payment is still being processed": [
         "Vaše platba se stále zpracovává"
       ],
-      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
-        "Vaše předplatné má v současné době slevu. Přechodem na tuto novou akci bude stávající sleva zrušena."
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "Vaše předplatné má v současné době platnou slevu. Přechodem na tuto novou akci bude stávající sleva zrušena."
       ]
     },
     "Payments.Error": {
@@ -11198,6 +11207,9 @@
       "Billing details updated": [
         "Fakturační údaje aktualizovány"
       ],
+      "Booking link copied to clipboard": [
+        "Rezervační odkaz zkopírován do schránky"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Kalendář je vytvořen. Synchronizace zabere pár minut."
       ],
@@ -12224,6 +12236,9 @@
       "Your account is protected": [
         "Váš účet je chráněn"
       ],
+      "Your booking page is ready": [
+        "Vaše rezervační stránka je připravena"
+      ],
       "Your calendar link": [
         "URL adresa kalendáře"
       ],
@@ -12338,6 +12353,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: AI asistent, který respektuje vaše soukromí"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Bezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
       ]
