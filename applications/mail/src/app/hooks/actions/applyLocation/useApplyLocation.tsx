@@ -147,6 +147,7 @@ export const useApplyLocation = () => {
             return dispatch(
                 unlabelConversations({
                     conversations: elements as Conversation[],
+                    sourceLabelID,
                     destinationLabelID,
                     showSuccessNotification,
                     labels,

@@ -404,11 +404,19 @@ export const getElementContextIdentifier = (contextFilter: ContextIdentifier) =>
         !!contextFilter.begin ||
         !!contextFilter.end;
 
-    const contextForIdentifier = isSearchQuery
-        ? { ...contextFilter, newsletterSubscriptionID: undefined }
-        : contextFilter;
-
-    return JSON.stringify(contextForIdentifier, Object.keys(contextForIdentifier).sort());
+    return JSON.stringify({
+        labelID: contextFilter.labelID,
+        conversationMode: contextFilter.conversationMode,
+        filter: contextFilter.filter,
+        sort: contextFilter.sort,
+        from: contextFilter.from,
+        to: contextFilter.to,
+        address: contextFilter.address,
+        begin: contextFilter.begin,
+        end: contextFilter.end,
+        keyword: contextFilter.keyword,
+        newsletterSubscriptionID: isSearchQuery ? undefined : contextFilter.newsletterSubscriptionID,
+    });
 };
 
 export const parseElementContextIdentifier = (contextIdentifier: string): ContextIdentifier | null => {

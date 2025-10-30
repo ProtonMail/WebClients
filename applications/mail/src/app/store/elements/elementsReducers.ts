@@ -848,7 +848,17 @@ export const markNewsletterElementsAsReadPending = (
     });
 };
 
-const updateTotal = (state: Draft<ElementsState>) => {
+/**
+ * Update all the context of the store to reflect the change that was just made
+ * To do so, we get the store before and after the action. We use the length difference of the two list to compute the new total count.
+ */
+const updateTotal = ({
+    state,
+    elementsBeforeAction,
+}: {
+    state: Draft<ElementsState>;
+    elementsBeforeAction: Element[];
+}) => {
     const currentContextIdentifier = getElementContextIdentifier({
         labelID: state.params.labelID,
         conversationMode: state.params.conversationMode,
@@ -865,25 +875,38 @@ const updateTotal = (state: Draft<ElementsState>) => {
 
     Object.keys(state.total).forEach((contextIdentifier) => {
         const context = parseElementContextIdentifier(contextIdentifier);
-
-        if (context) {
-            const filteredElements = filterElementsInState({
-                elements,
-                bypassFilter: currentContextIdentifier === contextIdentifier ? state.bypassFilter : [],
-                labelID: context.labelID,
-                filter: context.filter || {},
-                conversationMode: context.conversationMode,
-                search: getSearchParameters(context),
-                newsletterSubscriptionID: context.newsletterSubscriptionID,
-                disabledCategoriesIDs: [],
-            });
-
-            if (filteredElements.length > 0) {
-                state.total[contextIdentifier] = filteredElements.length;
-            } else {
-                delete state.total[contextIdentifier];
-            }
+        if (!context) {
+            return;
         }
+
+        // Local filtering of state before change for the current context
+        const beforeChangeFiltered = filterElementsInState({
+            elements: elementsBeforeAction,
+            bypassFilter: currentContextIdentifier === contextIdentifier ? state.bypassFilter : [],
+            labelID: context.labelID,
+            filter: context.filter || {},
+            conversationMode: context.conversationMode,
+            search: getSearchParameters(context),
+            newsletterSubscriptionID: context.newsletterSubscriptionID,
+            disabledCategoriesIDs: [],
+        });
+
+        // Local filtering of state after change for the current context
+        const filteredElements = filterElementsInState({
+            elements,
+            bypassFilter: currentContextIdentifier === contextIdentifier ? state.bypassFilter : [],
+            labelID: context.labelID,
+            filter: context.filter || {},
+            conversationMode: context.conversationMode,
+            search: getSearchParameters(context),
+            newsletterSubscriptionID: context.newsletterSubscriptionID,
+            disabledCategoriesIDs: [],
+        });
+
+        const totalBefore = state.total[contextIdentifier] || 0;
+
+        // The new total is the current total minus the difference between the number of elements before and after filtering
+        state.total[contextIdentifier] = totalBefore - (beforeChangeFiltered.length - filteredElements.length);
     });
 };
 
@@ -904,6 +927,7 @@ export const labelMessagesPending = (
     >
 ) => {
     const { elements, sourceLabelID, destinationLabelID, labels, folders } = action.meta.arg;
+    const elementsBeforeAction = structuredClone(Object.values(state.elements));
 
     elements.forEach((element) => {
         // Update conversation first because we need to have the initial state of the element
@@ -929,7 +953,7 @@ export const labelMessagesPending = (
         applyLabelToMessage(elementState, destinationLabelID, folders, labels);
     });
 
-    updateTotal(state);
+    updateTotal({ state, elementsBeforeAction });
 };
 
 export const unlabelMessagesPending = (
@@ -937,10 +961,19 @@ export const unlabelMessagesPending = (
     action: PayloadAction<
         undefined,
         string,
-        { arg: { elements: MessageMetadata[]; destinationLabelID: string; labels: Label[]; folders: Folder[] } }
+        {
+            arg: {
+                elements: MessageMetadata[];
+                sourceLabelID: string;
+                destinationLabelID: string;
+                labels: Label[];
+                folders: Folder[];
+            };
+        }
     >
 ) => {
     const { elements, destinationLabelID, labels } = action.meta.arg;
+    const elementsBeforeAction = structuredClone(Object.values(state.elements));
 
     elements.forEach((element) => {
         const conversationElementState = state.elements[element.ConversationID] as Conversation;
@@ -958,7 +991,7 @@ export const unlabelMessagesPending = (
         removeLabelFromMessage(elementState, destinationLabelID, labels);
     });
 
-    updateTotal(state);
+    updateTotal({ state, elementsBeforeAction });
 };
 
 export const labelMessagesRejected = (
@@ -1000,6 +1033,7 @@ export const labelConversationsPending = (
     >
 ) => {
     const { conversations, sourceLabelID, destinationLabelID, labels, folders } = action.meta.arg;
+    const elementsBeforeAction = structuredClone(Object.values(state.elements));
 
     conversations.forEach((conversation) => {
         const conversationState = state.elements[conversation.ID] as Conversation;
@@ -1019,7 +1053,7 @@ export const labelConversationsPending = (
         });
     });
 
-    updateTotal(state);
+    updateTotal({ state, elementsBeforeAction });
 };
 
 export const unlabelConversationsPending = (
@@ -1027,10 +1061,19 @@ export const unlabelConversationsPending = (
     action: PayloadAction<
         undefined,
         string,
-        { arg: { conversations: Conversation[]; destinationLabelID: string; labels: Label[]; folders: Folder[] } }
+        {
+            arg: {
+                conversations: Conversation[];
+                sourceLabelID: string;
+                destinationLabelID: string;
+                labels: Label[];
+                folders: Folder[];
+            };
+        }
     >
 ) => {
     const { conversations, destinationLabelID, labels } = action.meta.arg;
+    const elementsBeforeAction = structuredClone(Object.values(state.elements));
 
     conversations.forEach((conversation) => {
         const conversationState = state.elements[conversation.ID] as Conversation;
@@ -1050,5 +1093,5 @@ export const unlabelConversationsPending = (
         });
     });
 
-    updateTotal(state);
+    updateTotal({ state, elementsBeforeAction });
 };

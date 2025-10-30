@@ -1,6 +1,8 @@
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import type { Attachment, Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Filter, Sort } from '@proton/shared/lib/mail/search';
 
+import { getElementContextIdentifier } from 'proton-mail/helpers/elements';
 import type { Conversation, ConversationLabel } from 'proton-mail/models/conversation';
 
 export const CUSTOM_LABEL_ID1 = 'custom-label-1';
@@ -102,4 +104,31 @@ export const expectMessagesLabelsSameArray = (array1?: string[], array2?: string
     const array2Sorted = array2.sort();
 
     expect(array1Sorted).toEqual(array2Sorted);
+};
+
+/**
+ * Generate the context that can be used, for example, for total computation
+ * @param labelID
+ * @param conversationMode, default false
+ * @param filter, default {}
+ * @param sort, default { sort: 'Time', desc: true }
+ * @returns the string context
+ */
+export const generateElementContextIdentifier = ({
+    labelID,
+    conversationMode = false,
+    filter = {},
+    sort = { sort: 'Time', desc: true },
+}: {
+    labelID: string;
+    conversationMode?: boolean;
+    filter?: Filter;
+    sort?: Sort;
+}) => {
+    return getElementContextIdentifier({
+        labelID,
+        conversationMode,
+        filter,
+        sort,
+    });
 };
