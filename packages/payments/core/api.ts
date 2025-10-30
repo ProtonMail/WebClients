@@ -484,12 +484,19 @@ export type CreatePaymentIntentApplePayData = AmountAndCurrency & {
     };
 };
 
+export type CreatePaymentIntentGooglePayData = AmountAndCurrency & {
+    Payment: {
+        Type: PAYMENT_METHOD_TYPES.GOOGLE_PAY;
+    };
+};
+
 export type CreatePaymentIntentData =
     | CreatePaymentIntentPaypalData
     | CreatePaymentIntentCardData
     | CreatePaymentIntentSavedCardData
     | CreatePaymentIntentDirectDebitData
-    | CreatePaymentIntentApplePayData;
+    | CreatePaymentIntentApplePayData
+    | CreatePaymentIntentGooglePayData;
 
 export const createPaymentIntentV5 = (data: CreatePaymentIntentData) => ({
     url: `payments/v5/tokens`,
@@ -503,7 +510,7 @@ export type BackendPaymentIntent = {
     Amount: number;
     GatewayAccountID: string;
     ExpiresAt: number;
-    PaymentMethodType: 'card' | 'paypal' | 'apple_pay';
+    PaymentMethodType: 'card' | 'paypal' | 'apple_pay' | 'google_pay';
     CreatedAt: number;
     ModifiedAt: number;
     UpdatedAt: number;

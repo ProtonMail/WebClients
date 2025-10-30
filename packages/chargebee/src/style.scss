@@ -224,4 +224,13 @@ $input-border-size: 1;
 	display: none !important;
 }
 
+#gpay-button-online-api-id {
+	inline-size: 100%;
+
+	// max-inline-size: 320px;
+	display: block;
+	margin-block: 0;
+	margin-inline: auto;
+}
+
 /* purgecss end ignore */

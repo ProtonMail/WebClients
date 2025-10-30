@@ -159,7 +159,7 @@ export const ensureTokenChargeable = (
 
 export function waitFor3ds(events: ChargebeeIframeEvents, tab: Window | null) {
     const removeEventListeners: RemoveEventListener[] = [];
-    const threeDsChallengeSuccess = new Promise((resolve, reject) => {
+    const threeDsChallengePromise = new Promise((resolve, reject) => {
         const listenerSuccess = events.onThreeDsSuccess((data) => {
             resolve(data);
         });
@@ -182,10 +182,22 @@ export function waitFor3ds(events: ChargebeeIframeEvents, tab: Window | null) {
             })
         );
 
+        const listenerGooglePaySuccess = events.onGooglePayAuthorized((data) => {
+            resolve(data.paymentIntent);
+        });
+
+        const listenerGooglePayError = events.onGooglePayFailure(() =>
+            reject({
+                threeDsFailure: true,
+            })
+        );
+
         removeEventListeners.push(listenerSuccess);
         removeEventListeners.push(listenerError);
         removeEventListeners.push(listenerSavedSuccess);
         removeEventListeners.push(listenerSavedError);
+        removeEventListeners.push(listenerGooglePaySuccess);
+        removeEventListeners.push(listenerGooglePayError);
 
         const interval = setInterval(() => {
             if (tab?.closed) {
@@ -195,24 +207,30 @@ export function waitFor3ds(events: ChargebeeIframeEvents, tab: Window | null) {
         }, 1000);
     });
 
-    return threeDsChallengeSuccess.finally(() => {
+    return threeDsChallengePromise.finally(() => {
         removeEventListeners.forEach((removeEventListener) => removeEventListener());
     });
 }
 
-export const ensureTokenChargeableV5 = async (
-    token: ChargebeeFetchedPaymentToken,
-    events: ChargebeeIframeEvents,
-    {
-        api,
-        signal,
-    }: {
-        api: Api;
-        signal: AbortSignal;
-    },
-    translations: EnsureTokenChargeableTranslations,
-    delayListening = DELAY_LISTENING
-) => {
+export const ensureTokenChargeableV5 = async ({
+    token,
+    events,
+    api,
+    signal,
+    translations,
+    delayListening = DELAY_LISTENING,
+    onCancelled,
+    onError,
+}: {
+    token: ChargebeeFetchedPaymentToken;
+    events: ChargebeeIframeEvents;
+    api: Api;
+    signal: AbortSignal;
+    translations: EnsureTokenChargeableTranslations;
+    delayListening?: number;
+    onCancelled?: () => void;
+    onError?: (error: any) => void;
+}) => {
     let tab: Window | null = null;
     if (!token.authorized) {
         tab = window.open(token.approvalUrl);
@@ -235,6 +253,7 @@ export const ensureTokenChargeableV5 = async (
         const abort = () => {
             reset();
             closeTab();
+            onCancelled?.();
             reject(new Error(translations.processAbortedError));
         };
 
@@ -257,7 +276,9 @@ export const ensureTokenChargeableV5 = async (
                 } catch (err: any) {
                     const error: any = new Error(err);
                     error.tryAgain = true;
-                    return reject(error);
+                    onError?.(error);
+                    reject(error);
+                    return;
                 }
             }
 
@@ -269,6 +290,7 @@ export const ensureTokenChargeableV5 = async (
             .catch((error) => {
                 if (error?.threeDsFailure) {
                     reject();
+                    onError?.(error);
                 }
             })
             .finally(() => {

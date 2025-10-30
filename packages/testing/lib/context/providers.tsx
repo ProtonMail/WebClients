@@ -164,6 +164,7 @@ export const getPreloadedState = (
             Apple: true,
             Cash: true,
             Bitcoin: true,
+            Google: true,
         },
     }),
     organization: getOrganizationState(),
