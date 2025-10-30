@@ -36,6 +36,7 @@ export enum TelemetryMeasurementGroups {
     passNudge = 'mail.web.pass_nudge',
     mailNewsletterSubscriptions = 'mail.web.newsletter_subscriptions',
     unlimitedOffer2025 = 'any.web.unlimited_offer_2025',
+    unlimitedToDuoOffer = 'any.web.unlimited_to_duo_offer',
     /** Setting it to any even if mail only ATM. We will expand it to other apps soon */
     securityCenter = 'any.web.security_center',
     vpnDrawer = 'any.web.vpn_drawer',
@@ -375,6 +376,14 @@ export enum TelemetryUnlimitedOffer2025 {
     clickHideOffer = 'click_hide_offer',
 }
 
+export enum TelemetryUnlimitedToDuoOffer {
+    clickUpsellButton = 'click_upsell_button',
+    clickTopNavbar = 'click_top_navbar',
+    userSubscribed = 'user_subscribed',
+    closeOffer = 'close_offer',
+    clickHideOffer = 'click_hide_offer',
+}
+
 export type TelemetryEvents =
     | TelemetrySubscriptionModalEvents
     | TelemetryMailTrial2024UpsellModal
@@ -416,7 +425,8 @@ export type TelemetryEvents =
     | TelemetryPassNudgeEvents
     | TelemetryMailNewsletterSubscriptions
     | TelemetryUnlimitedOffer2025
-    | TelemetryAlwaysOnUpsellEvents;
+    | TelemetryAlwaysOnUpsellEvents
+    | TelemetryUnlimitedToDuoOffer;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;
