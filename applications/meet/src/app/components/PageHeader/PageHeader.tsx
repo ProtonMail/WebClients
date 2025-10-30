@@ -12,6 +12,8 @@ import { APPS } from '@proton/shared/lib/constants';
 import logo from '@proton/styles/assets/img/meet/logo-with-name.png';
 import clsx from '@proton/utils/clsx';
 
+import { UpgradeButton } from '../UpgradeButton/UpgradeButton';
+
 import './PageHeader.scss';
 
 interface PageHeaderProps {
@@ -102,6 +104,7 @@ export const PageHeader = ({
                     <div className="md:hidden w-custom" style={{ '--w-custom': 'fit-content' }}>
                         {buttons}
                     </div>
+                    <UpgradeButton />
                     {guestMode ? (
                         <Button className="action-button rounded-full" onClick={handleSignInClick} size="large">
                             {c('Action').t`Sign in`}
