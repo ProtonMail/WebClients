@@ -61,9 +61,6 @@
       "Cancel trial and pay": [
         "Annuleer proefversie en betaal"
       ],
-      "Change password": [
-        "Wachtwoord wijzigen"
-      ],
       "Chat with us": [
         "Chat met ons"
       ],
@@ -133,15 +130,6 @@
       "Edit": [
         "Bewerken"
       ],
-      "Edit email address": [
-        "Wijzig e-mailadres"
-      ],
-      "Edit phone number": [
-        "Wijzig telefoonnummer"
-      ],
-      "Edit sign-in details": [
-        "Bewerk aanmeldgegevens"
-      ],
       "Edit subscription": [
         "Wijzig abonnement"
       ],
@@ -159,9 +147,6 @@
       ],
       "Get the apps": [
         "De apps downloaden"
-      ],
-      "Get verification code": [
-        "Krijg verificatie code"
       ],
       "Go to ${ planOrAppName }": [
         "Ga naar ${ planOrAppName }"
@@ -280,12 +265,6 @@
       "Request a feature": [
         "Vraag een functie aan"
       ],
-      "Request new code": [
-        "Nieuwe code aanvragen"
-      ],
-      "Resend code": [
-        "Verstuur code opnieuw"
-      ],
       "Save": [
         "Opslaan"
       ],
@@ -358,9 +337,6 @@
       "Try again": [
         "Opnieuw proberen"
       ],
-      "Try another method": [
-        "Andere methode proberen"
-      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } inschakelen"
       ],
@@ -405,9 +381,6 @@
       ],
       "Verify": [
         "Verifiëren"
-      ],
-      "Verify account": [
-        "Verifieer account"
       ],
       "View invoice": [
         "Factuur bekijken"
@@ -2187,9 +2160,6 @@
       "Email is not valid": [
         "E-mailadres is ongeldig"
       ],
-      "Enter 6 digits": [
-        "Voer 6 cijfers in"
-      ],
       "Error connecting to the Bitcoin API.": [
         "Fout bij het verbinden met de Bitcoin API."
       ],
@@ -2216,9 +2186,6 @@
       ],
       "Invalid postal code": [
         "Ongeldige postcode"
-      ],
-      "Invalid verification code": [
-        "De ingevoerde code is ongeldig"
       ],
       "Invalid ZIP code": [
         "Ongeldige postcode"
@@ -2533,23 +2500,6 @@
         "Diensten"
       ]
     },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "E-mailadres"
-      ],
-      "Manual": [
-        "Handmatig"
-      ],
-      "No verification method available": [
-        "Geen verificatiemethode beschikbaar"
-      ],
-      "SMS": [
-        "SMS"
-      ]
-    },
     "Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Schrijfassistent"
@@ -2589,9 +2539,6 @@
       "30-day money-back guarantee.": [
         "30-dagen geld terug garantie."
       ],
-      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Een telefoonnummer kan gebruikt worden ter verificatie van één ${ BRAND_NAME } account"
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Een gebruiker is een account geassocieerd met een enkele gebruikersnaam, mailbox en persoon"
       ],
@@ -2625,9 +2572,6 @@
       "Balance from your previous subscription": [
         "Balans van uw vorige abonnement"
       ],
-      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Controleer uw spammap en of ${ strong } het correcte e-mailadres is voordat u een nieuwe verificatiecode aanvraagt."
-      ],
       "Billing cycle: ${ text }": [
         "Facturatiefrequentie: ${ text }"
       ],
@@ -2636,9 +2580,6 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Door het downgraden naar een gratis abonnement verliest u deze voordelen, zelfs als u in de toekomst opnieuw upgrade."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
       ],
       "Country code": [
         "Landcode"
@@ -2692,9 +2633,6 @@
       "Each code can only be used once": [
         "Elke code kan maar één keer gebruikt worden"
       ],
-      "Edit email address": [
-        "Wijzig e-mailadres"
-      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-mailhosting is enkel beschikbaar voor domeinen die u al bezit. Domeinregistratie is momenteel niet beschikbaar via ${ BRAND_NAME }. U kan e-mails hosten voor domeinen geregistreerd bij elke domeinregistrar."
       ],
@@ -2706,9 +2644,6 @@
       ],
       "Enter the code from your authenticator app": [
         "Voer de code van uw authenticatie app in"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "Vul de verificatiecode in die naar ${ destinationText } verzonden is."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Voer verificatiecode in. Cijfer ${ digit }."
@@ -2725,14 +2660,8 @@
       "Expired": [
         "Verlopen"
       ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
-      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Als u opzegt, zal uw ${ planTitle }-abonnement niet verlengen wanneer het verloopt op ${ expiryDate }."
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Als u doorgaat met de downgrade, verliest u toegang tot betaalde functies van ${ MAIL_APP_NAME } en ${ VPN_APP_NAME }."
@@ -2888,9 +2817,6 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Stuur ${ btcAmountBold } naar het onderstaande adres om uw betaling te voltooien."
       ],
-      "To fight spam and abuse, please verify you are human.": [
-        "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
-      ],
       "Total email addresses": [
         "Totaal e-mailadressen"
       ],
@@ -2936,20 +2862,11 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "We verwijzen u naar PayPal in een nieuw browsertabblad om de transactie te voltooien. Als u een pop-up blocker gebruikt, schakel deze dan uit alvorens door te gaan."
       ],
-      "We'll send a new verification code to ${ strong }": [
-        "We verzenden een nieuwe verificatiecode naar ${ strong }"
-      ],
       "Week": [
         "Week"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw authenticatie app."
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode kiezen?"
-      ],
-      "Would you like to receive a new verification code?": [
-        "Wil u graag een nieuwe verificatiecode ontvangen?"
       ],
       "Writing assistant": [
         "Schrijfassistent"
@@ -2970,9 +2887,6 @@
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
         "U kan tot ${ MAX_CALENDARS_FREE } agenda behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw abonnement annuleert.",
         "U kan tot ${ MAX_CALENDARS_FREE } agenda's behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw abonnement annuleert."
-      ],
-      "You can now return to the application to continue": [
-        "U kunt nu teruggaan naar het programma om door te gaan"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "U kunt meldingen inschakelen om meldingen te krijgen wanneer nieuwe e-mailberichten in deze map binnenkomen."
@@ -3011,17 +2925,11 @@
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Uw ${ plan }-abonnement zal worden vervangen door ${ PASS_SHORT_APP_NAME } Lifetime. Het resterende saldo van uw abonnement zal aan uw account worden toegevoegd. ${ PASS_SHORT_APP_NAME } levenslange deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslange toegang tot ${ PASS_SHORT_APP_NAME }."
       ],
-      "Your email will only be used for this one-time verification.": [
-        "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
-      ],
       "Your next billing date is ${ renewalTime }.": [
         "Uw volgende facturatiedatum is ${ renewalTime }."
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Uw volgende factuurdatum is ${ renewalTime }. Neem contact op met support als u een onmiddellijke abonnementswijziging nodig heeft."
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Uw gepland abonnement begint op ${ renewalTime } en wordt elke ${ cycle } maand automatisch vernieuwd.",
@@ -3113,9 +3021,6 @@
       ],
       "City": [
         "Stad"
-      ],
-      "Code is 6 digits without spaces": [
-        "Code is 6 cijfers zonder spaties"
       ],
       "Colors": [
         "Kleuren"
@@ -3213,9 +3118,6 @@
       "Payment method": [
         "Betalingsmethode"
       ],
-      "Phone number": [
-        "Telefoonnummer"
-      ],
       "Postal code": [
         "Postcode"
       ],
@@ -3251,9 +3153,6 @@
       ],
       "Thomas": [
         "Thomas"
-      ],
-      "Verification code": [
-        "Verificatiecode"
       ],
       "What happened?": [
         "Wat is er gebeurd?"
@@ -3355,9 +3254,6 @@
       ],
       "Learn more": [
         "Meer informatie"
-      ],
-      "Request an invite": [
-        "Uitnodiging aanvragen"
       ],
       "settings": [
         "instellingen"
@@ -5064,9 +4960,6 @@
       "Billing details updated": [
         "Factuurgegevens bijgewerkt"
       ],
-      "Code sent to ${ methodTo }": [
-        "Code verzonden naar ${ methodTo }"
-      ],
       "Copied to clipboard": [
         "Gekopieerd naar het klembord"
       ],
@@ -5084,9 +4977,6 @@
       ],
       "Signature copied to clipboard": [
         "Handtekening gekopieerd naar klembord"
-      ],
-      "Verification successful": [
-        "Verificatie gelukt"
       ],
       "You have successfully canceled your subscription.": [
         "U heeft uw abonnement succesvol geannuleerd."
@@ -5163,12 +5053,6 @@
     "Title": {
       "${ feature } is now active": [
         "${ feature } is nu actief"
-      ],
-      "Account restricted": [
-        "Account beperkt"
-      ],
-      "Account temporarily locked": [
-        "Account tijdelijk geblokkeerd"
       ],
       "Add credit/debit card": [
         "Krediet/debietkaart toevoegen"
@@ -5266,14 +5150,8 @@
       "Help center": [
         "Helpcentrum"
       ],
-      "Human verification": [
-        "Persoonsverificatie"
-      ],
       "Import emails, calendars, contacts": [
         "Importeer e-mails, agenda's, contacten"
-      ],
-      "Invalid verification code": [
-        "De ingevoerde code is ongeldig"
       ],
       "Minicalendar": [
         "Mini-agenda"
@@ -5298,9 +5176,6 @@
       ],
       "Report a problem": [
         "Meld een probleem"
-      ],
-      "Request new code": [
-        "Nieuwe code aanvragen"
       ],
       "Select a plan": [
         "Selecteer een abonnement"

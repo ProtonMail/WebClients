@@ -49,9 +49,6 @@
       "Cancel subscription": [
         "Отменить подписку"
       ],
-      "Change password": [
-        "Изменить пароль"
-      ],
       "Chat with us": [
         "Поговорите с нами"
       ],
@@ -121,15 +118,6 @@
       "Edit": [
         "Изменить"
       ],
-      "Edit email address": [
-        "Изменить адрес эл. почты"
-      ],
-      "Edit phone number": [
-        "Изменить номер телефона"
-      ],
-      "Edit sign-in details": [
-        "Изменить информацию о входе в систему"
-      ],
       "Edit subscription": [
         "Изменить подписку"
       ],
@@ -147,9 +135,6 @@
       ],
       "Get the apps": [
         "Получить приложения"
-      ],
-      "Get verification code": [
-        "Получить проверочный код"
       ],
       "Go to ${ planOrAppName }": [
         "Перейти на ${ planOrAppName }"
@@ -262,12 +247,6 @@
       "Request a feature": [
         "Запросить функцию"
       ],
-      "Request new code": [
-        "Запросить новый код"
-      ],
-      "Resend code": [
-        "Повторно отправить код"
-      ],
       "Save": [
         "Сохранить"
       ],
@@ -337,9 +316,6 @@
       "Try again": [
         "Попробовать снова"
       ],
-      "Try another method": [
-        "Попробуйте другой способ"
-      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Включить ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -384,9 +360,6 @@
       ],
       "Verify": [
         "Подтвердить"
-      ],
-      "Verify account": [
-        "Подтвердить аккаунт"
       ],
       "View invoice": [
         "Посмотреть счет"
@@ -2122,9 +2095,6 @@
       "Email is not valid": [
         "Эл. почта недействительна"
       ],
-      "Enter 6 digits": [
-        "Введите 6 цифр"
-      ],
       "Error connecting to the Bitcoin API.": [
         "Ошибка при подключении к API Биткоин."
       ],
@@ -2151,9 +2121,6 @@
       ],
       "Invalid postal code": [
         "Недействительный почтовый индекс"
-      ],
-      "Invalid verification code": [
-        "Неверный код подтверждения"
       ],
       "Not a valid number": [
         "Номер недействителен"
@@ -2462,23 +2429,6 @@
         "Службы"
       ]
     },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "Эл. почта"
-      ],
-      "Manual": [
-        "Вручную"
-      ],
-      "No verification method available": [
-        "Нет доступных способов проверки"
-      ],
-      "SMS": [
-        "СМС"
-      ]
-    },
     "Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "Помощник по написанию ${ BRAND_NAME } Scribe"
@@ -2519,9 +2469,6 @@
       "30-day money-back guarantee.": [
         "30-дневная гарантия возврата денег."
       ],
-      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Номер телефона может быть использован для подтверждения только одного аккаунта ${ BRAND_NAME }"
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Пользователь – это учетная запись, связанная с одним именем пользователя, почтовым ящиком и лицом"
       ],
@@ -2552,9 +2499,6 @@
       "Balance from your previous subscription": [
         "Баланс с прошлой подписки"
       ],
-      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Прежде чем запросить новый код подтверждения, проверьте свою папку спама и убедитесь, что ${ strong } - это корректный адрес."
-      ],
       "Billing cycle: ${ text }": [
         "Платежный цикл: ${ text }"
       ],
@@ -2563,9 +2507,6 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Перейдя на бесплатный тарифный план, вы навсегда потеряете эти преимущества, даже если в будущем вы снова улучшите его."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Нажмите «Запросить новый код», и мы отправим новый проверочный код на ${ strong }. Если этот номер телефона неверный, выберите «Изменить» для обновления."
       ],
       "Country code": [
         "Код страны"
@@ -2618,9 +2559,6 @@
       "Each code can only be used once": [
         "Каждый код может быть использован только один раз"
       ],
-      "Edit email address": [
-        "Изменить адрес электронной почты"
-      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Хостинг электронной почты доступен только для доменов, которыми вы уже владеете. Регистрация доменов через ${ BRAND_NAME } в настоящее время недоступна. Вы можете разместить электронную почту для доменов, зарегистрированных у любого регистратора доменов."
       ],
@@ -2632,9 +2570,6 @@
       ],
       "Enter the code from your authenticator app": [
         "Введите код из приложения-аутентификатора"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "Введите код подтверждения, отправленный на ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Введите код подтверждения. Цифра ${ digit }."
@@ -2648,14 +2583,8 @@
       "Expired": [
         "Истёкший"
       ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Если у вас возникли проблемы с созданием аккаунта, пожалуйста, запросите приглашение и мы ответим в течение одного рабочего дня."
-      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Если вы отмените, ваша подписка ${ planTitle } не будет продлена после истечения её срока действия ${ expiryDate }."
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "Если сообщения нет в папке Входящие, проверьте, не попало ли оно в папку Спам."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Если вы продолжите переход на более дешевую версию, то вы потеряете доступ к ${ MAIL_APP_NAME } и платным функциям ${ VPN_APP_NAME }."
@@ -2810,9 +2739,6 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Для завершения оплаты, пожалуйста, отправьте ${ btcAmountBold } на адрес ниже."
       ],
-      "To fight spam and abuse, please verify you are human.": [
-        "Для предотвращения распространения спама и иных злоупотреблений нашим сервисом, нам нужно убедиться, что вы человек."
-      ],
       "Total email addresses": [
         "Всего адресов электронной почты"
       ],
@@ -2858,20 +2784,11 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завершения транзакции мы откроем новую вкладку браузера и перенаправим вас на сайт PayPal. Если вы используете блокировщики всплывающих окон, то отключите их перед тем, как продолжить."
       ],
-      "We'll send a new verification code to ${ strong }": [
-        "Мы отправим новый код подтверждения на ${ strong }"
-      ],
       "Week": [
         "Неделя"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "При настройке двухфакторной аутентификации, мы предоставляем коды восстановления для входа в аккаунт, если вы потеряете доступ к приложению аутентификатора."
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Вы хотите получить новый проверочный код или использовать другой метод проверки?"
-      ],
-      "Would you like to receive a new verification code?": [
-        "Хотите ли вы получить новый код подтверждения?"
       ],
       "Writing assistant": [
         "Помощник по написанию"
@@ -2896,9 +2813,6 @@
         "Вы можете вести до ${ MAX_CALENDARS_FREE } календарей. Удалите ссылки на общие календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились своими календарями, прежде чем отменить подписку.",
         "Вы можете вести до ${ MAX_CALENDARS_FREE } календарей. Удалите ссылки на общие календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились своими календарями, прежде чем отменить подписку.",
         "Вы можете вести до ${ MAX_CALENDARS_FREE } календарей. Удалите ссылки на общие календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились своими календарями, прежде чем отменить подписку."
-      ],
-      "You can now return to the application to continue": [
-        "Теперь вы можете вернуться в приложение, чтобы продолжить"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Вы можете включить уведомления, чтобы получать оповещения при появлении новых сообщений электронной почты в этой папке."
@@ -2939,17 +2853,11 @@
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Ваша подписка ${ plan } будет заменена на пожизненный ${ PASS_SHORT_APP_NAME } . Остаток средств вашей подписки будет добавлен в вашу учетную запись. ${ PASS_SHORT_APP_NAME } действует без платы за продление, это единократная оплата за пожизненный доступ к ${ PASS_SHORT_APP_NAME }."
       ],
-      "Your email will only be used for this one-time verification.": [
-        "Ваш адрес электронной почты будет использован только для этой разовой проверки."
-      ],
       "Your next billing date is ${ renewalTime }.": [
         "Следующая дата выставления счета - ${ renewalTime }."
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Ваша следующая дата платежа: ${ renewalTime }. Обратитесь в службу поддержки, если вам требуется немедленное изменение тарифа."
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "Ваш номер телефона будет использоваться только для этой разовой проверки."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Ваш планируемый тариф начинает действовать с ${ renewalTime } и будет автоматически обновляться каждый ${ cycle } месяц.",
@@ -3042,9 +2950,6 @@
       ],
       "City": [
         "Город"
-      ],
-      "Code is 6 digits without spaces": [
-        "Код состоит из 6 цифр без пробелов"
       ],
       "Colors": [
         "Цвета"
@@ -3139,9 +3044,6 @@
       "Payment method": [
         "Способ оплаты"
       ],
-      "Phone number": [
-        "Номер телефона"
-      ],
       "Postal code": [
         "Почтовый индекс"
       ],
@@ -3177,9 +3079,6 @@
       ],
       "Thomas": [
         "Томас"
-      ],
-      "Verification code": [
-        "Код подтверждения"
       ],
       "What happened?": [
         "Что случилось?"
@@ -3278,9 +3177,6 @@
       ],
       "Learn more": [
         "Подробнее"
-      ],
-      "Request an invite": [
-        "Запросить приглашение"
       ],
       "settings": [
         "настройки"
@@ -4933,9 +4829,6 @@
       "Billing details updated": [
         "Информация о платеже обновлена"
       ],
-      "Code sent to ${ methodTo }": [
-        "Код отправлен на ${ methodTo }"
-      ],
       "Copied to clipboard": [
         "Скопировано в буфер обмена"
       ],
@@ -4953,9 +4846,6 @@
       ],
       "Signature copied to clipboard": [
         "Подпись скопирована в буфер обмена"
-      ],
-      "Verification successful": [
-        "Проверка прошла успешно"
       ],
       "You have successfully canceled your subscription.": [
         "Вы успешно отменили свою подписку"
@@ -5026,9 +4916,6 @@
     "Title": {
       "${ feature } is now active": [
         "${ feature } теперь активна"
-      ],
-      "Account restricted": [
-        "Аккаунт ограничен"
       ],
       "Add credit/debit card": [
         "Добавить кредитную/дебетовую карту"
@@ -5126,14 +5013,8 @@
       "Help center": [
         "Справочный центр"
       ],
-      "Human verification": [
-        "Проверка \"Я не робот\""
-      ],
       "Import emails, calendars, contacts": [
         "Импорт электронных писем, календарей и контактов"
-      ],
-      "Invalid verification code": [
-        "Неверный проверочный код"
       ],
       "Minicalendar": [
         "Миникалендарь"
@@ -5158,9 +5039,6 @@
       ],
       "Report a problem": [
         "Сообщить о проблеме"
-      ],
-      "Request new code": [
-        "Запросить новый код"
       ],
       "Select a plan": [
         "Выбор тарифа"
