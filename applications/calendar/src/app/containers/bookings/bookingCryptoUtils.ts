@@ -97,7 +97,7 @@ export const deriveBookingKeyPassword = async (
     calendarID: string,
     secretBytes: Uint8Array<ArrayBuffer>,
     salt: Uint8Array<ArrayBuffer>
-): Promise<string> => {
+) => {
     const bookingKey = await deriveKey(
         secretBytes,
         salt,
@@ -108,7 +108,7 @@ export const deriveBookingKeyPassword = async (
     );
 
     const bookingKeyBytes = await crypto.subtle.exportKey('raw', bookingKey);
-    return uint8ArrayToBase64String(new Uint8Array(bookingKeyBytes));
+    return new Uint8Array(bookingKeyBytes);
 };
 
 export const deriveBookingUid = async (secretBytes: Uint8Array<ArrayBuffer>) => {
@@ -121,7 +121,7 @@ export const deriveBookingUid = async (secretBytes: Uint8Array<ArrayBuffer>) => 
         }
     );
     const bookingUidBytes = await crypto.subtle.exportKey('raw', bookingUidKey);
-    return uint8ArrayToBase64String(new Uint8Array(bookingUidBytes));
+    return new Uint8Array(bookingUidBytes);
 };
 
 export const encryptBookingPage = async ({
@@ -136,8 +136,8 @@ export const encryptBookingPage = async ({
     const salt = crypto.getRandomValues(new Uint8Array(32));
     const secretBytes = generateKey();
 
-    const bookingKeyPassword = await deriveBookingKeyPassword(calendarID, secretBytes, salt);
-    const bookingUid = await deriveBookingUid(secretBytes);
+    const bookingKeyPassword = uint8ArrayToBase64String(await deriveBookingKeyPassword(calendarID, secretBytes, salt));
+    const bookingUid = uint8ArrayToBase64String(await deriveBookingUid(secretBytes));
 
     const calendarPublicKeys = calendarKeys.map(({ publicKey }) => publicKey);
     const Slots: BookingPageSlotsPayload[] = await encryptBookingSlots(
