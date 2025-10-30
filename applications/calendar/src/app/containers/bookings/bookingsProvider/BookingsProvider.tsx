@@ -41,7 +41,6 @@ const getInitialBookingState = (): BookingFormData => {
 
     return {
         title: '',
-        description: '',
         selectedCalendar: null,
         locationType: BookingLocation.MEET,
         duration: scheduleOptions[0].value,
