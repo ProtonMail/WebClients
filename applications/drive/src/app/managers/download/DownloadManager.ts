@@ -31,6 +31,8 @@ export class DownloadManager {
     private hasListeners;
     private scheduler: DownloadScheduler;
     private readonly activeDownloads = new Map<string, ActiveDownload>();
+    private requestedDownloads = new Map<string, DownloadableItem[]>();
+
     constructor() {
         this.hasListeners = false;
         this.scheduler = new DownloadScheduler();
@@ -91,11 +93,8 @@ export class DownloadManager {
                 status: DownloadStatus.Pending,
                 nodeUids: [node.uid],
             });
-
-            this.scheduler.scheduleDownload({
-                nodes: [node],
-                start: () => this.startSingleFileDownload(node, downloadId),
-            });
+            this.requestedDownloads.set(downloadId, nodes);
+            void this.scheduleSingleFileDownload(downloadId, node);
         } else {
             const archiveName = this.getArchiveName(nodes);
             const downloadId = addDownloadItem({
@@ -105,11 +104,19 @@ export class DownloadManager {
                 status: DownloadStatus.Pending,
                 nodeUids: nodes.map(({ uid }) => uid),
             });
+            this.requestedDownloads.set(downloadId, nodes);
 
             // While the single file can be immediately queued and scheduled, the archive first needs to be traversed
             // then one by one all "discovered" files get scheduled for download
-            this.startArchiveDownload(nodes, downloadId);
+            this.scheduleArchiveDownload(downloadId, nodes);
         }
+    }
+
+    private async scheduleSingleFileDownload(downloadId: string, node: DownloadableItem) {
+        this.scheduler.scheduleDownload({
+            nodes: [node],
+            start: () => this.startSingleFileDownload(node, downloadId),
+        });
     }
 
     private async startSingleFileDownload(
@@ -195,7 +202,7 @@ export class DownloadManager {
         return { completion: completionPromise };
     }
 
-    private startArchiveDownload(nodes: DownloadableItem[], downloadId: string): void {
+    private scheduleArchiveDownload(downloadId: string, nodes: DownloadableItem[]): void {
         const { updateDownloadItem, getQueueItem } = useDownloadManagerStore.getState();
         const queueItem = getQueueItem(downloadId);
         const archiveName = queueItem?.name ?? this.getArchiveName(nodes);
@@ -250,9 +257,7 @@ export class DownloadManager {
             log
         );
 
-        const combinedCompletion = Promise.all([totalEncryptedSizePromise, archivePromise, savePromise]).catch((e) => {
-            console.warn('Archive creation failed', e);
-        });
+        const combinedCompletion = Promise.all([totalEncryptedSizePromise, archivePromise, savePromise]);
 
         const controllerProxy: DownloadController = {
             pause: () => trackerController.pause(),
@@ -338,6 +343,22 @@ export class DownloadManager {
             if (storeItem && activeDownload) {
                 void this.stopDownload(downloadIds);
                 this.updateStatus(downloadIds, DownloadStatus.Cancelled);
+            }
+        });
+    }
+
+    retry(downloadIds: string[] = []) {
+        const { getQueueItem } = useDownloadManagerStore.getState();
+        downloadIds.forEach((id) => {
+            const storeItem = getQueueItem(id);
+            const requestedDownload = this.requestedDownloads.get(id);
+            if (storeItem && requestedDownload) {
+                if (requestedDownload.length === 1) {
+                    void this.scheduleSingleFileDownload(id, requestedDownload[0]);
+                }
+                if (requestedDownload.length > 1) {
+                    void this.scheduleArchiveDownload(id, requestedDownload);
+                }
             }
         });
     }

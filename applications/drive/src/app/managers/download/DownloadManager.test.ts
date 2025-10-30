@@ -317,6 +317,79 @@ describe('DownloadManager', () => {
         });
     });
 
+    it('should reuse existing queue items when retrying a single download', async () => {
+        const manager = DownloadManager.getInstance();
+        const schedulerInstance = getSchedulerInstance();
+
+        const node: DownloadableItem = {
+            uid: 'file-retry',
+            name: 'retry-me.txt',
+            isFile: true,
+            storageSize: 256,
+        };
+
+        storeMockState.addDownloadItem.mockReturnValue('download-retry');
+
+        await manager.download([node]);
+
+        expect(storeMockState.addDownloadItem).toHaveBeenCalledTimes(1);
+        expect(schedulerInstance.scheduleDownload).toHaveBeenCalledTimes(1);
+
+        schedulerInstance.scheduleDownload.mockClear();
+        storeMockState.addDownloadItem.mockClear();
+        storeMockState.getQueueItem.mockReturnValue({ status: DownloadStatus.Failed });
+
+        manager.retry(['download-retry']);
+
+        expect(storeMockState.addDownloadItem).not.toHaveBeenCalled();
+        expect(schedulerInstance.scheduleDownload).toHaveBeenCalledTimes(1);
+        const retriedTask = schedulerInstance.scheduleDownload.mock.calls[0][0];
+        expect(retriedTask.nodes).toEqual([node]);
+    });
+
+    it('should reuse existing queue items when retrying an archive download', async () => {
+        const manager = DownloadManager.getInstance();
+
+        const nodes: DownloadableItem[] = [
+            { uid: 'file-a', name: 'a.txt', isFile: true, storageSize: 100 },
+            { uid: 'file-b', name: 'b.txt', isFile: true, storageSize: 200 },
+        ];
+
+        storeMockState.addDownloadItem.mockReturnValue('archive-retry');
+        storeMockState.getQueueItem.mockReturnValue({ status: DownloadStatus.Failed });
+        storeMockState.getQueueItem.mockReturnValueOnce(undefined);
+
+        const iteratorMock = jest.fn().mockReturnValue(createEmptyAsyncGenerator<DownloadableItem>());
+        nodesStructureTraversalMock.mockReturnValue({
+            nodesQueue: { iterator: iteratorMock },
+            totalEncryptedSizePromise: Promise.resolve(0),
+        });
+
+        fileSaverSaveAsFileMock.mockResolvedValue(undefined);
+        archiveGeneratorTracker.setFactory(() => ({
+            stream: 'archive-stream',
+            writeLinks: jest.fn().mockResolvedValue(undefined),
+            cancel: jest.fn(),
+        }));
+
+        await manager.download(nodes);
+
+        expect(storeMockState.addDownloadItem).toHaveBeenCalledTimes(1);
+        expect(nodesStructureTraversalMock).toHaveBeenCalledTimes(1);
+        expect(nodesStructureTraversalMock.mock.calls[0][0]).toEqual(nodes);
+        expect(archiveStreamGeneratorTracker.instances).toHaveLength(1);
+
+        manager.retry(['archive-retry']);
+        await flushAsync();
+
+        expect(storeMockState.addDownloadItem).toHaveBeenCalledTimes(1);
+        expect(nodesStructureTraversalMock).toHaveBeenCalledTimes(2);
+        expect(nodesStructureTraversalMock.mock.calls[1][0]).toEqual(nodes);
+        expect(archiveStreamGeneratorTracker.instances).toHaveLength(2);
+
+        archiveGeneratorTracker.restoreFactory();
+    });
+
     it('should start archive downloads for multiple nodes and finalize on completion', async () => {
         const manager = DownloadManager.getInstance();
 
