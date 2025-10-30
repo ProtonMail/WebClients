@@ -1,7 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import type { PublicBooking } from '../../interface';
+import { useShallow } from 'zustand/react/shallow';
+
+import { Loader } from '@proton/components/index';
+
+import { useBookingStore } from '../../booking.store';
+import { usePublicBookingLoader } from '../../usePublicBookingLoader';
 import { NoMatch, Reason } from '../NoMatch';
 import { DetailsFooter } from './DetailsFooter';
 import { DetailsHeader } from './DetailsHeader';
@@ -9,37 +14,38 @@ import { DetailsSlotPicking } from './DetailsSlotPicking';
 
 export const BookingDetails = () => {
     const location = useLocation();
-    const bookingID = location.hash.substring(1);
-
-    const [booking, setBooking] = useState<PublicBooking | null>(null);
+    const bookingSecret = location.hash.substring(1);
+    const { loadPublicBooking } = usePublicBookingLoader();
+    const { isLoading, hasLoaded, isEmpty } = useBookingStore(
+        useShallow((state) => ({
+            isLoading: state.isLoading,
+            hasLoaded: state.hasLoaded,
+            isEmpty: !state.bookingDetails,
+        }))
+    );
 
     useEffect(() => {
-        if (!bookingID) {
+        if (!bookingSecret) {
             return;
         }
+        void loadPublicBooking(bookingSecret);
+    }, [loadPublicBooking, bookingSecret]);
 
-        setBooking({
-            id: bookingID,
-            title: '[Title] Meeting with Eric Norbert',
-            description: 'Description e.g. Meeting goal is to decide how to move forward with the controlling tool',
-            duration: 60,
-            location: 'Zoom',
-            timezone: 'GMT+1 • Europe/Zurich',
-        });
-    }, [bookingID]);
-
-    if (!bookingID) {
+    if (!bookingSecret) {
         return <NoMatch reason={Reason.notFound} />;
     }
 
-    // TODO change this to a loader while the booking is being fetched
-    if (!booking) {
-        return null;
+    if (!isLoading && hasLoaded && isEmpty) {
+        return <NoMatch reason={Reason.notFound} />;
+    }
+
+    if (!hasLoaded && isLoading) {
+        return <Loader />;
     }
 
     return (
         <div className="mt-12">
-            <DetailsHeader booking={booking} />
+            <DetailsHeader />
             <DetailsSlotPicking />
             <DetailsFooter />
         </div>
