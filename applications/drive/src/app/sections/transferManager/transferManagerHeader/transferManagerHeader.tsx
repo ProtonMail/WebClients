@@ -7,6 +7,7 @@ import clsx from '@proton/utils/clsx';
 import { ProgressBarStatus } from '../../../components/TransferManager/ProgressBar';
 import { CloseButton } from '../buttons/closeButton';
 import { MinimizeButton } from '../buttons/minimizeButton';
+import { useTransferManagerActions } from '../useTransferManagerActions';
 import { TransferManagerStatus, useTransferManagerState } from '../useTransferManagerState';
 
 const PROGRESS_STATUS_BY_TRANSFER: Record<TransferManagerStatus, ProgressBarStatus> = {
@@ -27,7 +28,8 @@ type Props = {
 };
 
 export const TransferManagerHeader = ({ isMinimized, toggleMinimize, onClose }: Props) => {
-    const { progressPercentage, status } = useTransferManagerState();
+    const { progressPercentage, status, items } = useTransferManagerState();
+    const { cancelAll, confirmModal } = useTransferManagerActions();
     const normalizedProgress = Math.min(100, Math.max(0, Math.round(progressPercentage)));
     const headerText = c('Info').t`In progress`;
     const progressText = c('Info').t`${normalizedProgress}% completed`;
@@ -35,7 +37,10 @@ export const TransferManagerHeader = ({ isMinimized, toggleMinimize, onClose }: 
     const pbStatus = getProgressBarStatus(status);
 
     return (
-        <div className="flex w-full flex-column rounded-t-lg bg-weak px-4 py-4">
+        <div
+            className="flex w-full flex-column rounded-t-lg bg-weak px-4 py-4"
+            data-testid="drive-transfers-manager:header"
+        >
             <div className="flex flex-wrap items-start gap-3">
                 <div className="flex min-w-0 flex-1 flex-column gap-1">
                     <div className="text-semibold">{headerText}</div>
@@ -43,7 +48,13 @@ export const TransferManagerHeader = ({ isMinimized, toggleMinimize, onClose }: 
                 </div>
                 <div className="flex items-center gap-2">
                     {status === TransferManagerStatus.InProgress && (
-                        <Button type="button" shape="outline" color="weak" onClick={onClose}>
+                        <Button
+                            type="button"
+                            shape="outline"
+                            color="weak"
+                            onClick={() => cancelAll(items)}
+                            data-testid="drive-transfers-manager:header-controls-cancel"
+                        >
                             {cancelText}
                         </Button>
                     )}
@@ -53,11 +64,12 @@ export const TransferManagerHeader = ({ isMinimized, toggleMinimize, onClose }: 
             </div>
             <div className="mt-3">
                 <Progress
-                    className={clsx(['transfers-manager-list-item-progress', `progress-bar--${pbStatus}`])}
+                    className={clsx([`progress-bar--${pbStatus}`, 'tm-progress'])}
                     value={normalizedProgress}
                     max={100}
                 />
             </div>
+            {confirmModal}
         </div>
     );
 };
