@@ -7,17 +7,20 @@ describe('booking helpers', () => {
                 description: 'description',
                 location: 'location',
                 summary: 'summary',
+                withProtonMeetLink: true,
             });
             const formattedTwo = JSONFormatData({
                 description: 'description',
                 summary: 'summary',
                 location: 'location',
+                withProtonMeetLink: true,
             });
 
             const formattedThree = JSONFormatData({
                 summary: 'summary',
                 description: 'description',
                 location: 'location',
+                withProtonMeetLink: true,
             });
 
             expect(formattedOne).toEqual(formattedTwo);

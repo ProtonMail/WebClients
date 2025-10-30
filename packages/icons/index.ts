@@ -106,6 +106,7 @@ export { IcCalendarCells } from './icons/IcCalendarCells';
 export { IcCalendarDay } from './icons/IcCalendarDay';
 export { IcCalendarCheckmark } from './icons/IcCalendarCheckmark';
 export { IcCalendarGrid } from './icons/IcCalendarGrid';
+export { IcCalendarListCheck } from './icons/IcCalendarListCheck';
 export { IcCalendarMonth } from './icons/IcCalendarMonth';
 export { IcCalendarToday } from './icons/IcCalendarToday';
 export { IcCalendarRow } from './icons/IcCalendarRow';
