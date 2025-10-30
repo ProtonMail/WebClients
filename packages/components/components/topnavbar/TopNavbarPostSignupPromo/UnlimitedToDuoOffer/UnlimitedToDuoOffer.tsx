@@ -12,6 +12,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
+import { TelemetryUnlimitedToDuoOffer } from '@proton/shared/lib/api/telemetry';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, APPS_WITH_IN_APP_PAYMENTS, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
@@ -19,6 +20,7 @@ import { getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/
 import { SpotlightWithPromo } from '../common/SpotlightWithPromo';
 import { UnlimitedToDuoOfferContent } from './components/UnlimitedToDuoOfferContent';
 import { useUnlimitedToDuoConfig } from './helpers/configuration';
+import { useUnlimitedToDuoOfferTelemetry } from './hooks/useUnlimitedToDuoOfferTelemetry';
 
 const duoOfferUpsellConfig = {
     step: SUBSCRIPTION_STEPS.CHECKOUT,
@@ -37,8 +39,9 @@ export const UnlimitedToDuoOffer = () => {
     const goToSettings = useSettingsLink();
     const { createNotification } = useNotifications();
     const [user] = useUser();
-    const config = useUnlimitedToDuoConfig();
+    const spotlightConfig = useUnlimitedToDuoConfig();
     const { update } = useFeature(FeatureCode.HideUnlimitedToDuoPermanentOffer);
+    const { sendTelemetryReportUnlimitedToDuo } = useUnlimitedToDuoOfferTelemetry();
 
     const parentApp = getAppFromPathnameSafe(window.location.pathname);
 
@@ -50,10 +53,19 @@ export const UnlimitedToDuoOffer = () => {
     });
 
     const handleClose = () => {
+        sendTelemetryReportUnlimitedToDuo({
+            event: TelemetryUnlimitedToDuoOffer.closeOffer,
+            dimensions: { messageType: spotlightConfig.type },
+        });
         setSpotlightState(false);
     };
 
     const handleHideOffer = () => {
+        sendTelemetryReportUnlimitedToDuo({
+            event: TelemetryUnlimitedToDuoOffer.clickHideOffer,
+            dimensions: { messageType: spotlightConfig.type },
+        });
+
         createNotification({
             text: c('Offer').t`This offer won't be shown again.`,
         });
@@ -80,6 +92,12 @@ export const UnlimitedToDuoOffer = () => {
             disablePlanSelection: true,
             ...duoOfferUpsellConfig,
             upsellRef,
+            onSubscribed: () => {
+                sendTelemetryReportUnlimitedToDuo({
+                    event: TelemetryUnlimitedToDuoOffer.userSubscribed,
+                    dimensions: { messageType: spotlightConfig.type },
+                });
+            },
             metrics: {
                 source: 'upsells',
             },
@@ -89,6 +107,11 @@ export const UnlimitedToDuoOffer = () => {
     const handleUpsellClick = () => {
         handleClose();
 
+        sendTelemetryReportUnlimitedToDuo({
+            event: TelemetryUnlimitedToDuoOffer.clickUpsellButton,
+            dimensions: { messageType: spotlightConfig.type },
+        });
+
         if (APPS_WITH_IN_APP_PAYMENTS.has(app) && app !== APPS.PROTONACCOUNT) {
             upsellInApp();
         } else {
@@ -96,7 +119,7 @@ export const UnlimitedToDuoOffer = () => {
         }
     };
 
-    if (loadingSubscription || config.loading || config.price === 0) {
+    if (loadingSubscription || spotlightConfig.loading || spotlightConfig.price === 0) {
         return null;
     }
 
@@ -104,16 +127,26 @@ export const UnlimitedToDuoOffer = () => {
         <SpotlightWithPromo
             promoOnClick={() => {
                 setSpotlightState(true);
+                sendTelemetryReportUnlimitedToDuo({
+                    event: TelemetryUnlimitedToDuoOffer.clickTopNavbar,
+                    dimensions: { messageType: spotlightConfig.type },
+                });
             }}
-            promoIconName={config.topButton?.icon}
-            promoChildren={config.topButton?.title}
+            promoIconName={spotlightConfig.topButton?.icon}
+            promoChildren={spotlightConfig.topButton?.title}
             promoColor="norm"
             spotlightShow={spotlightState}
-            spotlightOnClose={handleClose}
+            spotlightOnClose={() => {
+                sendTelemetryReportUnlimitedToDuo({
+                    event: TelemetryUnlimitedToDuoOffer.closeOffer,
+                    dimensions: { messageType: spotlightConfig.type },
+                });
+                handleClose();
+            }}
             spotlightInnerClassName="spotlight-inner--center"
             spotlightContent={
                 <UnlimitedToDuoOfferContent
-                    config={config}
+                    config={spotlightConfig}
                     onUpsellClick={handleUpsellClick}
                     onNeverShow={handleHideOffer}
                 />
