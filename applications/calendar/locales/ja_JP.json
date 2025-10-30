@@ -218,6 +218,9 @@
       "Copy alias “${ name }”": [
         "エイリアス「${ name }」をコピー"
       ],
+      "Copy Booking link": [
+        "予約リンクをコピー"
+      ],
       "Copy email address": [
         "メールアドレスをコピー"
       ],
@@ -3301,9 +3304,6 @@
       "/month": [
         "/ 月"
       ],
-      "1 TB of storage to share": [
-        "1 TBのストレージを共有"
-      ],
       "2 user accounts": [
         "2 ユーザーアカウント"
       ],
@@ -5173,6 +5173,9 @@
       "Billing cycle: ${ text }": [
         "支払いサイクル: ${ text }"
       ],
+      "Booking page example": [
+        "予約ページの例"
+      ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "御社のイメージ力を強め、ユーザーにより一貫したオンラインサービスを提供しましょう。"
       ],
@@ -5793,6 +5796,9 @@
       ],
       "Setting up your new address…": [
         "新しいアドレスを設定中…"
+      ],
+      "Share this page to let others book time in your calendar.": [
+        "このページを共有すると、他のお客様がお客様のカレンダーで時間を予約できるようになります。"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "あなたは忠実なユーザーですので、あなたのアカウントには追加機能が有効になっています。"
@@ -9045,9 +9051,6 @@
       ],
       "Your payment is still being processed": [
         "お支払いが現在処理中です"
-      ],
-      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
-        "お客様のサブスクリプションには現在、既存の割引が適用されています。この新しいプロモーションに移行すると、既存の割引は適用されなくなります。"
       ]
     },
     "Payments.Error": {
@@ -10616,6 +10619,9 @@
       "Billing details updated": [
         "請求の詳細が更新されました"
       ],
+      "Booking link copied to clipboard": [
+        "予約リンクがクリップボードにコピーされました"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "カレンダーが追加されました。同期には数分かかることがあります。"
       ],
@@ -11591,6 +11597,9 @@
       "Your account is protected": [
         "あなたのアカウントは保護されています"
       ],
+      "Your booking page is ready": [
+        "予約ページの準備ができました"
+      ],
       "Your calendar link": [
         "カレンダーのリンク"
       ],
@@ -11705,6 +11714,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: お客様のプライバシーを尊重するAIアシスタント"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
       ]

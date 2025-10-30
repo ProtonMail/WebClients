@@ -220,6 +220,9 @@
       "Copy alias “${ name }”": [
         "Copiază aliasul „${ name }”"
       ],
+      "Copy Booking link": [
+        "Copiere legătură web rezervare"
+      ],
       "Copy email address": [
         "Copiere adresă e-mail"
       ],
@@ -3345,8 +3348,8 @@
       "/month": [
         "/lună"
       ],
-      "1 TB of storage to share": [
-        "1 TiB de stocare pentru partajare"
+      "2 TB of storage to share": [
+        "2 TiB de stocare pentru partajare"
       ],
       "2 user accounts": [
         "2 conturi de utilizator"
@@ -5317,6 +5320,9 @@
       "Billing cycle: ${ text }": [
         "Ciclu facturare: ${ text }"
       ],
+      "Booking page example": [
+        "Pagină exemplu de rezervare"
+      ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Îmbunătățiți-vă identitatea de brand a organizației proprii și creați o experiență online mai consistentă pentru utilizatorii acesteia."
       ],
@@ -5951,6 +5957,9 @@
       ],
       "Setting up your new address…": [
         "Vi se configurează noile adrese…"
+      ],
+      "Share this page to let others book time in your calendar.": [
+        "Partajați această pagină pentru a le permite altora să-și rezerve timp în calendarul dvs."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Deoarece sunteți un utilizator loial, contul are funcții adiționale activate."
@@ -9360,7 +9369,7 @@
       "Your payment is still being processed": [
         "Plata este încă în curs de procesare."
       ],
-      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonamentul actual are în prezent o reducere existentă. Trecerea la această nouă promoție înseamnă că reducerea curentă nu va mai fi aplicată."
       ]
     },
@@ -11004,6 +11013,9 @@
       "Billing details updated": [
         "Detaliile de facturare s-au actualizat"
       ],
+      "Booking link copied to clipboard": [
+        "Legătura de rezervare s-a copiat în memorie."
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Calendarul a fost adăugat. Sincronizarea ar putea dura câteva minute."
       ],
@@ -12013,6 +12025,9 @@
       "Your account is protected": [
         "Contul este protejat"
       ],
+      "Your booking page is ready": [
+        "Pagina de rezervare este gata."
+      ],
       "Your calendar link": [
         "legătură web calendar"
       ],
@@ -12127,6 +12142,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: Asistent de IA care vă respectă confidențialitatea"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Conectări securizate pe toate dispozitivele deținute. Include aliasuri nelimitate, partajare, A2F integrată și multe altele."
       ]
