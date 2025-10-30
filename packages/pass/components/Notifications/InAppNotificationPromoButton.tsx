@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
+import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassThemeMode } from '@proton/pass/components/Layout/Theme/ThemeProvider';
 import { InAppNotificationPromoModal } from '@proton/pass/components/Notifications/InAppNotificationPromoModal';
 import { WithInAppNotification } from '@proton/pass/components/Notifications/WithInAppNotification';
@@ -19,7 +19,7 @@ export const InAppNotificationPromoButton = WithInAppNotification(
         const theme = usePassThemeMode();
         const { viewportWidth } = useActiveBreakpoint();
         const onboardingPrompt = useOnboarding().isActive;
-        const online = useConnectivity();
+        const online = useOnline();
 
         const { promoContents } = notification;
         const { backgroundImageUrl, contentImageUrl } = promoContents?.[theme] ?? {};

@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
-import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
+import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { useRerender } from '@proton/pass/hooks/useRerender';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
@@ -21,7 +21,7 @@ type Props = { extraPassword: boolean; offlineEnabled?: boolean };
 
 export const PasswordUnlock: FC<Props> = ({ extraPassword, offlineEnabled }) => {
     const { createNotification } = useNotifications();
-    const online = useConnectivity();
+    const online = useOnline();
     const authStore = useAuthStore();
     const history = useHistory();
     const passwordUnlock = useRequest(unlock, { initial: true });

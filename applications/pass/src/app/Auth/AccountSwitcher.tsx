@@ -8,7 +8,7 @@ import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import Icon from '@proton/components/components/icon/Icon';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { UserPanel } from '@proton/pass/components/Account/UserPanel';
-import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
+import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { useRerender } from '@proton/pass/hooks/useRerender';
@@ -56,7 +56,7 @@ type AccountSwitcherTooltipProps = AccountSwitcherProps & { children: (props: Po
 export const AccountSwitcherTooltip: FC<AccountSwitcherTooltipProps> = ({ children, sessions }) => {
     const { SSO_URL } = usePassConfig();
     const authService = useAuthService();
-    const online = useConnectivity();
+    const online = useOnline();
 
     const dropdown = usePopperAnchor<HTMLButtonElement>();
     const [key, rerender] = useRerender();

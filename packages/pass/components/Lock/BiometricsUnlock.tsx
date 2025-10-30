@@ -7,7 +7,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import Icon from '@proton/components/components/icon/Icon';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
-import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
+import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import type { AuthRouteState } from '@proton/pass/components/Navigation/routing';
 import { useRequest } from '@proton/pass/hooks/useRequest';
@@ -26,7 +26,7 @@ type Props = { offlineEnabled?: boolean };
 export const BiometricsUnlock: FC<Props> = ({ offlineEnabled }) => {
     const { createNotification } = useNotifications();
 
-    const online = useConnectivity();
+    const online = useOnline();
     const authStore = useAuthStore();
     const history = useHistory<MaybeNull<AuthRouteState>>();
 

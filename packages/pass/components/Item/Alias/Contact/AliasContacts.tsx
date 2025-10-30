@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import Icon from '@proton/components/components/icon/Icon';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
+import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { AliasContactsProvider } from '@proton/pass/components/Item/Alias/Contact/AliasContactsProvider';
 import type { SelectedItem } from '@proton/pass/types';
@@ -13,7 +13,7 @@ import { AliasContactsView } from './AliasContactsView';
 
 export const AliasContacts: FC<SelectedItem> = ({ shareId, itemId }) => {
     const [viewContacts, openViewContactSidebar] = useModalState();
-    const online = useConnectivity();
+    const online = useOnline();
 
     return (
         <AliasContactsProvider shareId={shareId} itemId={itemId}>
