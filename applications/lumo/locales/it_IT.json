@@ -723,6 +723,14 @@
         "Carica dal dispositivo"
       ]
     },
+    "collider_2025: b2b": {
+      "By ${ BRAND_NAME }": [
+        "Di ${ BRAND_NAME }"
+      ],
+      "For Business": [
+        "Per il Business"
+      ]
+    },
     "collider_2025: Button": {
       "Close": [
         "Chiudi"
@@ -1560,6 +1568,9 @@
       ]
     },
     "collider_2025: Title": {
+      "${ LUMO_SHORT_APP_NAME } Business": [
+        "${ LUMO_SHORT_APP_NAME } Business"
+      ],
       "${ LUMO_SHORT_APP_NAME } Plus": [
         "${ LUMO_SHORT_APP_NAME } Plus"
       ],
@@ -1611,6 +1622,12 @@
     "collider_2025: Top nav link": {
       "About": [
         "Informazioni"
+      ],
+      "For Business": [
+        "Per il Business"
+      ],
+      "New": [
+        "Nuovo"
       ],
       "Try ${ MAIL_APP_NAME }": [
         "Prova ${ MAIL_APP_NAME }"
@@ -5295,7 +5312,7 @@
       "Your payment is still being processed": [
         "Il tuo pagamento è ancora in fase di elaborazione."
       ],
-      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Il tuo abbonamento ha attualmente uno sconto esistente. Passare a questa nuova promozione significa che lo sconto esistente non sarà più applicato."
       ]
     },
