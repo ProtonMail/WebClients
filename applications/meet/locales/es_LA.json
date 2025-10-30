@@ -35,6 +35,12 @@
       "Continue": [
         "Continuar"
       ],
+      "Continue without camera": [
+        "Continuar sin cámara"
+      ],
+      "Continue without microphone": [
+        "Continuar sin micrófono"
+      ],
       "Copy address": [
         "Copiar la dirección"
       ],
@@ -43,6 +49,9 @@
       ],
       "Delete": [
         "Eliminar"
+      ],
+      "Disable video": [
+        "Apagar el video"
       ],
       "Dismiss": [
         "Descartar"
@@ -70,6 +79,9 @@
       ],
       "Help and resources": [
         "Ayuda y recursos"
+      ],
+      "Lock meeting": [
+        "Bloquear reunión"
       ],
       "More info: ${ safeTitle }": [
         "Más información: ${ safeTitle }"
@@ -125,6 +137,9 @@
       "Show advanced options": [
         "Mostrar las opciones avanzadas"
       ],
+      "Show timezones": [
+        "Mostrar zonas horarias"
+      ],
       "Sign in": [
         "Iniciar sesión"
       ],
@@ -136,6 +151,9 @@
       ],
       "Start": [
         "Iniciar"
+      ],
+      "Start meeting": [
+        "Comenzar la reunión"
       ],
       "Submit": [
         "Enviar"
@@ -160,6 +178,14 @@
       ],
       "View invoice": [
         "Ver la factura"
+      ]
+    },
+    "Alt": {
+      "Lock meeting": [
+        "Bloquear reunión"
+      ],
+      "Show passphrase": [
+        "Mostrar frase de contraseña"
       ]
     },
     "Apps dropdown": {
@@ -1100,6 +1126,11 @@
         "Factura atrasada"
       ]
     },
+    "Description": {
+      "Start a call immediately then share the link with others.": [
+        "Comenzar una llamada de inmediato y luego compartir el enlace con otros."
+      ]
+    },
     "emergency_access": {
       "Trusted contact": [
         "Contacto de confianza"
@@ -1121,6 +1152,9 @@
       "Failed to decrypt session key": [
         "Error al descifrar la clave de sesión"
       ],
+      "Failed to start screen share": [
+        "Error al comenzar compartir la pantalla"
+      ],
       "Incorrect username": [
         "Nombre de usuario incorrecto"
       ],
@@ -1141,6 +1175,12 @@
       ],
       "The email addresses do not match": [
         "Las direcciónes de correo electrónico no son las mismas"
+      ],
+      "The meeting link you are trying to access does not exist or may have been deleted.": [
+        "El enlace de reunión al que intenta acceder no existe o ha sido eliminado."
+      ],
+      "The meeting password is incorrect": [
+        "La contraseña de la reunión es incorrecta"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Este campo excede el máximo de ${ maximumLength } caracteres."
@@ -1276,11 +1316,17 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un número telefónico solo puede usarse para verificar una cuenta de ${ BRAND_NAME }"
       ],
+      "Anonymous ${ particle } ${ participantNumber }": [
+        "Anónimo ${ particle } ${ participantNumber }"
+      ],
       "Attention required": [
         "Atención requerida"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de solicitar un código de verificación nuevo, revise la carpeta de spam y verifique que ${ strong } sea la dirección correcta."
+      ],
+      "Check your system settings to make sure that a camera is available.": [
+        "Verifique los ajustes del sistema y asegúrese que una cámara está disponible."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Haga clic en \"Solicitar código nuevo\" para que se envíe un código de verificación nuevo a ${ strong }. Si este número telefónico es incorrecto, haga clic en \"Editar\" para corregirlo."
@@ -1299,6 +1345,9 @@
       ],
       "Edit email address": [
         "Editar dirección de correo"
+      ],
+      "End-to-end encryption is active for screen share": [
+        "El cifrado de extremo a extremo está activo para compartir pantalla"
       ],
       "Enter the code from your authenticator app": [
         "Ingrese el código de la aplicación de autenticación."
@@ -1324,6 +1373,9 @@
       "Internet connection lost": [
         "Sin conexión a Internet"
       ],
+      "Joined": [
+        "Unido"
+      ],
       "Learn more": [
         "Más información"
       ],
@@ -1345,6 +1397,9 @@
       "New": [
         "Nuevo"
       ],
+      "No microphone detected.": [
+        "Ningún micrófono detectado."
+      ],
       "No results found": [
         "No se encontraron resultados"
       ],
@@ -1363,11 +1418,29 @@
       "Session timed out": [
         "Sesión agotada"
       ],
+      "Share screen": [
+        "Compartir pantalla"
+      ],
+      "This is an end-to-end encrypted chat with ephemeral messages. After you leave the call, you will not be able to access this chat.": [
+        "Este es un chat cifrado de extremo a extremo con mensajes efímeros. Después de abandonar la llamada, no podrá acceder a este chat."
+      ],
+      "This meeting is locked. Please contact the host to join.": [
+        "Esta reunión está bloqueada. Contacte con el anfitrión para unirse."
+      ],
       "This will sign you out of all accounts currently logged in.": [
         "Esto cerrará la sesión de todas las cuentas con la sesión activa."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifique que es humano."
+      ],
+      "Turn off camera": [
+        "Apagar la cámara"
+      ],
+      "Turn off microphone": [
+        "Apagar el micrófono"
+      ],
+      "Turn on camera": [
+        "Encender la cámara"
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos un código de verificación nuevo a ${ strong }"
@@ -1392,6 +1465,9 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "La cuenta de ${ BRAND_NAME } está suspendida. No recibirá correos en el buzón. Los enlaces compartidos de Drive ya no están activos y no podrá cargar archivos nuevos. Para continuar usando la cuenta, pague cualquier factura pendiente."
+      ],
+      "Your browser or device isn’t supported": [
+        "Su navegador o dispositivo no está soportado"
       ],
       "Your email will only be used for this one-time verification.": [
         "El correo electrónico sólo se usará para esta verificación única."
@@ -1436,6 +1512,9 @@
       ],
       "Include application logs in bug report": [
         "Incluir registros de la aplicación en el informe de errores"
+      ],
+      "Meeting ID": [
+        "ID de la reunión"
       ],
       "Operating system": [
         "Sistema operativo"
@@ -1485,7 +1564,15 @@
         "¿Qué es esto?"
       ]
     },
+    "meet_2025": {
+      "Since you are the only participant in this meeting, the meeting will automatically close. Do you want to stay in this meeting?": [
+        "Como solo usted está de participante, la reunión se cerrará automáticamente. ¿Desea mantenerse en esta reunión?"
+      ]
+    },
     "Notification": {
+      "Coming soon": [
+        "Próximamente"
+      ],
       "Link copied to clipboard": [
         "Enlace copiado al portapapeles"
       ]
@@ -1638,6 +1725,9 @@
       "Minicalendar": [
         "Minicalendario"
       ],
+      "Protecting meeting with end-to-end encryption...": [
+        "Protegiendo la reunión con cifrado de extremo a extremo..."
+      ],
       "Report a problem": [
         "Reportar un problema"
       ],
@@ -1655,11 +1745,19 @@
       ],
       "Two-factor authentication": [
         "Autenticación de dos factores"
+      ],
+      "Upcoming meetings": [
+        "Próximas reuniones"
       ]
     },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Hoy"
+      ]
+    },
+    "Tooltip": {
+      "Blur background is not supported on your browser": [
+        "El fondo difuminado no está soportado por su navegador"
       ]
     },
     "Validation": {
