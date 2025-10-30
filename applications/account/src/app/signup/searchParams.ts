@@ -209,7 +209,7 @@ export const getPlanIDsFromParams = (
         ips?: number;
         users?: number;
     },
-    defaults: { plan: PLANS }
+    defaults: Pick<SignupDefaults, 'plan' | 'addons'>
 ): PlanParameters => {
     const freePlanIDs = {};
 
@@ -217,7 +217,7 @@ export const getPlanIDsFromParams = (
         defaults.plan === FREE_PLAN.Name
             ? FREE_PLAN
             : (getPlanByName(plans, defaults.plan, currency, undefined, false) ?? FREE_PLAN);
-    const defaultPlanIDs = planToPlanIDs(defaultPlan);
+    const defaultPlanIDs = { ...planToPlanIDs(defaultPlan), ...defaults.addons };
 
     const defaultResponse = {
         planIDs: defaultPlanIDs,
@@ -239,7 +239,17 @@ export const getPlanIDsFromParams = (
         return defaultResponse;
     }
 
-    const planIDs = { [plan.Name]: 1 };
+    const preSelectedPlanIDs = { [plan.Name]: 1 };
+    const planIDs =
+        // if the default plan has addons and if user selected the default plan via URL parameters, then we want to
+        // automatically transfer the default addons if there are any
+        plan.Name === defaultPlan.Name
+            ? {
+                  ...preSelectedPlanIDs,
+                  ...defaults.addons,
+              }
+            : preSelectedPlanIDs;
+
     const supportedAddons = getSupportedAddons(planIDs);
 
     if (signupParameters.users !== undefined) {
