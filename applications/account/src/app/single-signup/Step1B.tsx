@@ -194,6 +194,7 @@ const Step1B = ({
     currencyUrlParam,
     signupTrial,
     toAppName,
+    couponUrlParam,
 }: {
     activeBreakpoint: Breakpoints;
     defaultEmail?: string;
@@ -218,6 +219,7 @@ const Step1B = ({
     currencyUrlParam?: Currency;
     signupTrial: boolean; // true iff trial detected through signupParameters (thus the signup prefix)
     toAppName: string;
+    couponUrlParam: string | undefined;
 }) => {
     const [upsellModalProps, setUpsellModal, renderUpsellModal] = useModalState();
     const normalApi = useApi();
@@ -922,7 +924,7 @@ const Step1B = ({
             );
         }
 
-        if (getHas2025OfferCoupon(options.checkResult.Coupon?.Code) && options.cycle === CYCLE.MONTHLY) {
+        if (getHas2025OfferCoupon(options.checkResult.Coupon?.Code) || getHas2025OfferCoupon(couponUrlParam)) {
             return null;
         }
         const toCycle = toggleUpsell?.to || upsellToCycle;
