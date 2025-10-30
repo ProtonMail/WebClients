@@ -3455,9 +3455,6 @@
       "/month": [
         "/ 月"
       ],
-      "1 TB of storage to share": [
-        "1 TBのストレージを共有"
-      ],
       "2 user accounts": [
         "2 ユーザーアカウント"
       ],
@@ -8934,6 +8931,11 @@
         "${ reason } を有効にする"
       ]
     },
+    "lumo_signup_2025: Info": {
+      "Protect your entire business. Get ${ LUMO_SHORT_APP_NAME } Professional with all ${ BRAND_NAME } for Business apps and premium features.": [
+        "お客様のビジネス全体を保護します。すべての${ BRAND_NAME } for Businessのアプリとプレミアムな機能を備えた${ LUMO_SHORT_APP_NAME } Professionalをご利用ください。"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "${ itemsToImportCount } フォルダーからすべてのメッセージをインポートし、それらを次のようにラベル付けします"
@@ -10964,9 +10966,6 @@
       ],
       "Your payment is still being processed": [
         "お支払いが現在処理中です"
-      ],
-      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
-        "お客様のサブスクリプションには現在、既存の割引が適用されています。この新しいプロモーションに移行すると、既存の割引は適用されなくなります。"
       ]
     },
     "Payments.Error": {
@@ -14703,6 +14702,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: お客様のプライバシーを尊重するAIアシスタント"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
       ],
