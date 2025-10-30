@@ -58,9 +58,6 @@
       "Cancel subscription": [
         "Előfizetés lemondása"
       ],
-      "Change password": [
-        "Jelszó módosítása"
-      ],
       "Chat with us": [
         "Beszélgetés indítása"
       ],
@@ -130,15 +127,6 @@
       "Edit": [
         "Szerkesztés"
       ],
-      "Edit email address": [
-        "E-mail cím módosítása"
-      ],
-      "Edit phone number": [
-        "Telefonszám módosítása"
-      ],
-      "Edit sign-in details": [
-        "Bejelentkezési adatok szerkesztése"
-      ],
       "Edit subscription": [
         "Előfizetés szerkesztése"
       ],
@@ -156,9 +144,6 @@
       ],
       "Get the apps": [
         "Alkalmazások letöltése"
-      ],
-      "Get verification code": [
-        "Ellenőrző kód küldése"
       ],
       "Go to ${ planOrAppName }": [
         "Nyissa meg a ${ planOrAppName } alkalmazást"
@@ -277,12 +262,6 @@
       "Request a feature": [
         "Funkció ajánlása"
       ],
-      "Request new code": [
-        "Új kód kérése"
-      ],
-      "Resend code": [
-        "Kód újraküldése"
-      ],
       "Save": [
         "Mentés"
       ],
@@ -355,9 +334,6 @@
       "Try again": [
         "Próbálja újra"
       ],
-      "Try another method": [
-        "Másik módszer"
-      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } bekapcsolása"
       ],
@@ -402,9 +378,6 @@
       ],
       "Verify": [
         "Ellenőrzés"
-      ],
-      "Verify account": [
-        "Fiók ellenőrzése"
       ],
       "View invoice": [
         "Számla megtekintése"
@@ -2103,9 +2076,6 @@
       "Email is not valid": [
         "Érvénytelen e-mail cím"
       ],
-      "Enter 6 digits": [
-        "6 számjegyet írjon be"
-      ],
       "Error connecting to the Bitcoin API.": [
         "Hiba a Bitcoin API-ra csatlakozás közben."
       ],
@@ -2132,9 +2102,6 @@
       ],
       "Invalid postal code": [
         "Érvénytelen irányítószám"
-      ],
-      "Invalid verification code": [
-        "Érvénytelen ellenőrző kód"
       ],
       "Not a valid number": [
         "Érvénytelen szám"
@@ -2431,23 +2398,6 @@
         "Szolgáltatások"
       ]
     },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "E-mail"
-      ],
-      "Manual": [
-        "Kézi"
-      ],
-      "No verification method available": [
-        "Nincs elérhető ellenőrzési módszer"
-      ],
-      "SMS": [
-        "SMS"
-      ]
-    },
     "Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe írási segéd"
@@ -2484,9 +2434,6 @@
       "30-day money-back guarantee.": [
         "30 napos pénz-visszafizetési garancia."
       ],
-      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Egy telefonszám csak egy ${ BRAND_NAME } fiók ellenőrzéséhez használható"
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "A felhasználó egy fiókot jelent, amely egyetlen felhasználói nevet, e-mail fiókot és személyt takar"
       ],
@@ -2520,9 +2467,6 @@
       "Balance from your previous subscription": [
         "Egyenlege az előző előfizetéséből"
       ],
-      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Mielőtt új megerősítő kódot igényelne, kérjük tekintse meg a spam mappát illetve bizonyosodjon meg arról, hogy ${ strong } a megfelelő cím."
-      ],
       "Billing cycle: ${ text }": [
         "Számlázási ciklus: ${ text }"
       ],
@@ -2531,9 +2475,6 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Az ingyenes verzióra való váltás során véglegesen elveszti a következő előnyeit, még akkor is, ha később ismét előfizetéses szolgáltatásra vált."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Kattintson az \"Új kód kérése\" gombra, hogy a ${ strong } számra új ellenőrzési kódot küldjünk. Ha hibás ez a szám, kattintson a Szerkesztés gombra."
       ],
       "Country code": [
         "Országkód"
@@ -2581,9 +2522,6 @@
       "Each code can only be used once": [
         "Minden kódot csak egyszer lehet felhasználni"
       ],
-      "Edit email address": [
-        "E-mail cím szerkesztése"
-      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Az e-mail szolgáltatás olyan domain nevekre lehetséges, amelyek már a tulajdonában vannak. A ${ BRAND_NAME } jelenleg nem biztosít domain név regisztrációt. Bármilyen regisztrátornál regisztrált domain nevet használhat."
       ],
@@ -2595,9 +2533,6 @@
       ],
       "Enter the code from your authenticator app": [
         "Írja be a kódot a hitelesítő alkalmazásból"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "Írja be a ${ destinationText } címre küldött ellenőrző kódot."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Írja be az ellenőrző kódot. ${ digit } számjegy."
@@ -2611,14 +2546,8 @@
       "Expired": [
         "Lejárt"
       ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Ha problémába ütközik a fiók létrehozásakor, kérjen egy meghívót és egy munkanapon belül segítséget nyújtunk."
-      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Ha lemondja, ${ planTitle } előfizetése nem újul meg, amikor lejár a következő napon: ${ expiryDate }."
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "Ha nem találja az e-mailt a beérkező leveleknél, ellenőrizze a Levélszemét közt."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Ha folytatja a lemondást, elveszíti a hozzáférést a ${ MAIL_APP_NAME } és ${ VPN_APP_NAME } fizetett szolgáltatásaihoz."
@@ -2771,9 +2700,6 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "A befizetés befejezéséhez, kérjük küldjön ${ btcAmountBold }-t az alábbi címre."
       ],
-      "To fight spam and abuse, please verify you are human.": [
-        "A visszaélések és a levélszemét megakadályozására kérjük bizonyítsa, hogy nem robot."
-      ],
       "Total email addresses": [
         "Összes e-mail cím"
       ],
@@ -2819,20 +2745,11 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "A tranzakció befejezéséhez átirányítjuk a PayPalhoz egy új böngészőfülön. Kérjük engedélyezze a felugró ablakokat."
       ],
-      "We'll send a new verification code to ${ strong }": [
-        "Küldünk egy új ellenőrzési kódot ide: ${ strong }"
-      ],
       "Week": [
         "Hét"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Amikor engedélyezi a kétlépcsős azonosítást, biztosítunk helyreállítási kódokat is, amelyekkel akkor is bejelentkezhet, ha nem fér hozzá a hitelesítő alkalmazásához."
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Új ellenőrző kódot kér, vagy megpróbál egy másik ellenőrzési módszert?"
-      ],
-      "Would you like to receive a new verification code?": [
-        "Szeretne kapni egy új ellenőrzési kódot?"
       ],
       "Writing assistant": [
         "Írási segéd"
@@ -2853,9 +2770,6 @@
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
         "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. Az előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat és a ${ BRAND_NAME } felhasználókat akivel megosztotta a naptárait.",
         "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. Az előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat és a ${ BRAND_NAME } felhasználókat akivel megosztotta a naptárait."
-      ],
-      "You can now return to the application to continue": [
-        "Most már visszatérhet az applikációba és fojtathatja"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Bekapcsolhatja az értesítéseket az ebbe a mappába érkező új üzenetekhez."
@@ -2891,17 +2805,11 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Az Ön ${ BRAND_NAME } fiókja átmenetileg felfüggesztésre került. Az e-mailek nem kerülnek kézbesítésre, a Drive megosztások inaktívak és nem tölthet fel új fájlokat. A fiók további használatához kérjük rendezze elmaradt számláit."
       ],
-      "Your email will only be used for this one-time verification.": [
-        "Az e-mail csak erre az egyszeri ellenőrzésre lesz felhasználva."
-      ],
       "Your next billing date is ${ renewalTime }.": [
         "A következő számlázási időpont: ${ renewalTime }."
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "A következő számlázási dátum ${ renewalTime }. Kérjük, vegye fel a kapcsolatot az ügyfélszolgálattal, ha azonnali csomagváltásra van szüksége."
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "A telefonszám csak erre az egyszeri ellenőrzésre lesz felhasználva."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Az ütemezett csomagja ${ renewalTime } időpontban indul, és ${ cycle } havonta automatikusan megújul.",
@@ -2990,9 +2898,6 @@
       ],
       "City": [
         "Település"
-      ],
-      "Code is 6 digits without spaces": [
-        "A kód hatjegyű, szóközök nélkül"
       ],
       "Colors": [
         "Színek"
@@ -3087,9 +2992,6 @@
       "Payment method": [
         "Fizetési mód"
       ],
-      "Phone number": [
-        "Telefonszám"
-      ],
       "Postal code": [
         "Irányítószám"
       ],
@@ -3125,9 +3027,6 @@
       ],
       "Thomas": [
         "Tamás"
-      ],
-      "Verification code": [
-        "Ellenőrző kód"
       ],
       "What happened?": [
         "Mi történt?"
@@ -3226,9 +3125,6 @@
       ],
       "Learn more": [
         "További információk"
-      ],
-      "Request an invite": [
-        "Meghívó kérése"
       ],
       "settings": [
         "beállítások"
@@ -4830,9 +4726,6 @@
       "Billing details updated": [
         "Számlázási adatok frissítve"
       ],
-      "Code sent to ${ methodTo }": [
-        "Kód elküldve: ${ methodTo }"
-      ],
       "Copied to clipboard": [
         "Vágólapra másolva"
       ],
@@ -4850,9 +4743,6 @@
       ],
       "Signature copied to clipboard": [
         "Az aláírás a vágólapra másolva"
-      ],
-      "Verification successful": [
-        "Sikeres ellenőrzés"
       ],
       "You have successfully canceled your subscription.": [
         "Sikeresen lemondta az előfizetését."
@@ -4923,9 +4813,6 @@
     "Title": {
       "${ feature } is now active": [
         "A(z) ${ feature } mostantól aktív"
-      ],
-      "Account restricted": [
-        "Fiók korlátozva"
       ],
       "Add credit/debit card": [
         "Bankkártya hozzáadása"
@@ -5023,14 +4910,8 @@
       "Help center": [
         "Súgóközpont"
       ],
-      "Human verification": [
-        "Robot ellenőrzés"
-      ],
       "Import emails, calendars, contacts": [
         "E-mailek, naptárak, névjegyek importálása"
-      ],
-      "Invalid verification code": [
-        "Érvénytelen ellenőrző kód"
       ],
       "Minicalendar": [
         "Mini naptár"
@@ -5055,9 +4936,6 @@
       ],
       "Report a problem": [
         "Probléma jelentése"
-      ],
-      "Request new code": [
-        "Új kód kérése"
       ],
       "Select a plan": [
         "Csomag kiválasztása"

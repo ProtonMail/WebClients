@@ -61,9 +61,6 @@
       "Cancel trial and pay": [
         "Скасаваць пробны перыяд і купіць падпіску"
       ],
-      "Change password": [
-        "Змяніць пароль"
-      ],
       "Chat with us": [
         "Чат з намі"
       ],
@@ -133,15 +130,6 @@
       "Edit": [
         "Рэдагаваць"
       ],
-      "Edit email address": [
-        "Рэдагаваць адрас электроннай пошты"
-      ],
-      "Edit phone number": [
-        "Рэдагаваць нумар тэлефона"
-      ],
-      "Edit sign-in details": [
-        "Рэдагаваць падрабязнасці ўваходу"
-      ],
       "Edit subscription": [
         "Рэдагаваць падпіску"
       ],
@@ -159,9 +147,6 @@
       ],
       "Get the apps": [
         "Атрымаць праграмы"
-      ],
-      "Get verification code": [
-        "Атрымаць праверачны код"
       ],
       "Go to ${ planOrAppName }": [
         "Перайсці ў ${ planOrAppName }"
@@ -280,12 +265,6 @@
       "Request a feature": [
         "Запытаць функцыю"
       ],
-      "Request new code": [
-        "Запытаць новы код"
-      ],
-      "Resend code": [
-        "Адправіць код яшчэ раз"
-      ],
       "Save": [
         "Захаваць"
       ],
@@ -358,9 +337,6 @@
       "Try again": [
         "Паспрабуйце яшчэ раз"
       ],
-      "Try another method": [
-        "Паспрабуйце іншы спосаб"
-      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Уключыць ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -405,9 +381,6 @@
       ],
       "Verify": [
         "Спраўдзіць"
-      ],
-      "Verify account": [
-        "Спраўдзіць уліковы запіс"
       ],
       "View invoice": [
         "Паглядзець рахунак"
@@ -2213,9 +2186,6 @@
       "Email is not valid": [
         "Несапраўдная электронная пошта"
       ],
-      "Enter 6 digits": [
-        "Увядзіце 6 лічбаў"
-      ],
       "Error connecting to the Bitcoin API.": [
         "Памылка падключэння да Bitcoin API."
       ],
@@ -2242,9 +2212,6 @@
       ],
       "Invalid postal code": [
         "Памылковы паштовы індэкс"
-      ],
-      "Invalid verification code": [
-        "Памылковы праверачны код"
       ],
       "Invalid ZIP code": [
         "Памылковы паштовы індэкс"
@@ -2571,23 +2538,6 @@
         "Сэрвісы"
       ]
     },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "Электронная пошта"
-      ],
-      "Manual": [
-        "Уручную"
-      ],
-      "No verification method available": [
-        "Няма даступных спосабаў праверкі"
-      ],
-      "SMS": [
-        "SMS"
-      ]
-    },
     "Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe памочнік у напісанні"
@@ -2631,9 +2581,6 @@
       "30-day money-back guarantee.": [
         "Гарантыя вяртання грашовых сродкаў на працягу 30 дзён."
       ],
-      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Нумар тэлефона можа быць выкарыстаны для спраўджання аднаго ўліковага запісу ${ BRAND_NAME }"
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Карыстальнік - гэта ўліковы запіс, які звязаны з асобным імем карыстальніка, паштовай скрыняй і асобай"
       ],
@@ -2667,9 +2614,6 @@
       "Balance from your previous subscription": [
         "Баланс з вашай папярэдняй падпіскі"
       ],
-      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Перад запытам новага праверачнага кода праверце папку са спамам, а таксама ці правільна ўказаны адрас ${ strong }."
-      ],
       "Billing cycle: ${ text }": [
         "Перыяд аплаты: ${ text }"
       ],
@@ -2678,9 +2622,6 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Пры пераходзе на бясплатны тарыфны план вы незваротна страціце гэтыя перавагі, нават калі ў будучыні зноў пяройдзеце на яго."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Націсніце \"Запытаць новы код\", каб атрымаць новы праверачны код на ${ strong }. Калі нумар тэлефона з'яўляецца няправільным, то неабходна націснуць \"Рэдагаваць\" для яго выпраўлення."
       ],
       "Country code": [
         "Код краіны"
@@ -2736,9 +2677,6 @@
       "Each code can only be used once": [
         "Кожны код можа выкарыстоўвацца толькі адзін раз"
       ],
-      "Edit email address": [
-        "Рэдагаваць адрас электроннай пошты"
-      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Служба электроннай пошты даступна толькі для даменаў, якімі вы ўжо валодаеце. Рэгістрацыя даменаў праз ${ BRAND_NAME } зараз недаступна. Вы можаце размясціць электронную пошту для даменаў, якія зарэгістраваны іншымі рэгістратарамі даменаў."
       ],
@@ -2750,9 +2688,6 @@
       ],
       "Enter the code from your authenticator app": [
         "Увядзіце код з вашай праграмы аўтэнтыфікацыі"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "Увядзіце код спраўджання, які быў адпраўлены на ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Увядзіце праверачны код. Лічба ${ digit }."
@@ -2769,14 +2704,8 @@
       "Expired": [
         "Пратэрмінавана"
       ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Калі ў вас узніклі праблемы са стварэннем уліковага запісу, запытайце запрашэнне і мы адкажам на працягу аднаго працоўнага дня."
-      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Калі вы скасуеце, ваша падпіска ${ planTitle } не будзе падоўжана пасля завяршэння тэрміну яе дзеяння ${ expiryDate }."
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "Калі паведамлення няма ў папцы з уваходнымі лістамі, то магчыма, што яно трапіла ў папку са спамам."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Калі вы працягніце паніжэнне свайго тарыфнага плана, то страціце доступ да платных функцый ${ MAIL_APP_NAME } і ${ VPN_APP_NAME }."
@@ -2934,9 +2863,6 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Каб завяршыць плацеж, адпраўце ${ btcAmountBold } на пазначаны ніжэй адрас."
       ],
-      "To fight spam and abuse, please verify you are human.": [
-        "У мэтах барацьбы са спамам і іншымі злоўжываннямі, нам неабходна пераканацца, што вы чалавек."
-      ],
       "Total email addresses": [
         "Колькасць адрасоў электроннай пошты"
       ],
@@ -2982,20 +2908,11 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на сайт PayPal. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
       ],
-      "We'll send a new verification code to ${ strong }": [
-        "Мы адправім новы праверачны код на ${ strong }"
-      ],
       "Week": [
         "Тыдзень"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Вы атрымаеце коды аднаўлення падчас наладжвання двухфактарнай аўтэнтыфікацыі. Імі можна будзе скарыстацца для ўваходу пры страце доступу да праграмы аўтэнтыфікацыі."
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Ці хочаце вы атрымаць новы праверачны код або скарыстацца альтэрнатыўным спосабам праверкі?"
-      ],
-      "Would you like to receive a new verification code?": [
-        "Ці хочаце вы атрымаць новы праверачны код?"
       ],
       "Writing assistant": [
         "Памочнік у напісанні"
@@ -3020,9 +2937,6 @@
         "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску.",
         "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску.",
         "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску."
-      ],
-      "You can now return to the application to continue": [
-        "Цяпер вы можаце вярнуцца да праграмы, каб працягнуць"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Вы можаце ўключыць апавяшчэнні, каб атрымліваць абвесткі пра новыя паведамленні электроннай пошты ў гэтай папцы."
@@ -3063,17 +2977,11 @@
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Ваша падпіска ${ plan } будзе заменена на пажыццёвую падпіску ${ PASS_SHORT_APP_NAME }. Рэшта балансу вашай падпіскі будзе дададзена на ваш уліковы запіс. Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. За пажыццёвы доступ да ${ PASS_SHORT_APP_NAME } уносіцца аднаразовая плата."
       ],
-      "Your email will only be used for this one-time verification.": [
-        "Ваша электронная пошта будзе выкарыстана толькі для гэтай аднаразовай праверкі."
-      ],
       "Your next billing date is ${ renewalTime }.": [
         "Наступная дата спагнання грашовых сродкаў адбудзецца ${ renewalTime }."
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Наступная дата спагнання адбудзецца ${ renewalTime }. Звяжыцеся са службай падтрымкі, калі вы запатрабавалі неадкладную змену тарыфнага плана."
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "Ваш нумар тэлефона будзе выкарыстаны толькі для бягучай аднаразовай праверкі."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Ваш запланаваны тарыфны план пачынаецца ${ renewalTime } і будзе аўтаматычна падаўжацца кожны ${ cycle } месяц.",
@@ -3172,9 +3080,6 @@
       ],
       "City": [
         "Горад"
-      ],
-      "Code is 6 digits without spaces": [
-        "Код складаецца з 6 лічбаў без прабелаў"
       ],
       "Colors": [
         "Колеры"
@@ -3275,9 +3180,6 @@
       "Payment method": [
         "Спосаб аплаты"
       ],
-      "Phone number": [
-        "Нумар тэлефона"
-      ],
       "Postal code": [
         "Паштовы індэкс"
       ],
@@ -3313,9 +3215,6 @@
       ],
       "Thomas": [
         "Янка"
-      ],
-      "Verification code": [
-        "Код спраўджання"
       ],
       "What happened?": [
         "Што здарылася?"
@@ -3417,9 +3316,6 @@
       ],
       "Learn more": [
         "Даведацца больш"
-      ],
-      "Request an invite": [
-        "Запытаць запрашэнне"
       ],
       "settings": [
         "налады"
@@ -4654,7 +4550,7 @@
       "Your payment is still being processed": [
         "Ваш плацеж усё яшчэ апрацоўваецца"
       ],
-      "Your subscription currently has an existing discount. Moving to this new promotion means that the exiting discount will no longer be applied.": [
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Ваша падпіска мае бягучую скідку. Пераход на гэту новую акцыю азначае, што ранейшая скідка больш не будзе ўжывацца."
       ]
     },
@@ -5258,9 +5154,6 @@
       "Billing details updated": [
         "Плацежныя падрабязнасці абноўлены"
       ],
-      "Code sent to ${ methodTo }": [
-        "Код адпраўлены на ${ methodTo }"
-      ],
       "Copied to clipboard": [
         "Скапіявана ў буфер абмену"
       ],
@@ -5278,9 +5171,6 @@
       ],
       "Signature copied to clipboard": [
         "Подпіс скапіяваны ў буфер абмену"
-      ],
-      "Verification successful": [
-        "Праверка паспяхова выканана"
       ],
       "You have successfully canceled your subscription.": [
         "Вы паспяхова скасавалі сваю падпіску."
@@ -5357,12 +5247,6 @@
     "Title": {
       "${ feature } is now active": [
         "${ feature } цяпер у актыўным стане"
-      ],
-      "Account restricted": [
-        "Уліковы запіс абмежаваны"
-      ],
-      "Account temporarily locked": [
-        "Уліковы запіс часова заблакіраваны"
       ],
       "Add credit/debit card": [
         "Дадаць крэдытную/плацежную картку"
@@ -5460,14 +5344,8 @@
       "Help center": [
         "Даведачны цэнтр"
       ],
-      "Human verification": [
-        "Антыспамавая праверка"
-      ],
       "Import emails, calendars, contacts": [
         "Імпартаванне лістоў, календароў, кантактаў"
-      ],
-      "Invalid verification code": [
-        "Памылковы праверачны код"
       ],
       "Minicalendar": [
         "Мінікаляндар"
@@ -5492,9 +5370,6 @@
       ],
       "Report a problem": [
         "Паведаміць аб праблеме"
-      ],
-      "Request new code": [
-        "Запытаць новы код"
       ],
       "Select a plan": [
         "Выбар тарыфнага плана"
