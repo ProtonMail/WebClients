@@ -265,25 +265,6 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
         };
     }, []);
 
-    useEffect(() => {
-        const intervalId = setInterval(async () => {
-            if (wasmApp && startHealthCheck.current) {
-                try {
-                    const groupKeyData = await wasmApp.getGroupKey();
-                    const isKeyChanged = groupKeyData.key !== currentKeyRef.current;
-                    if (isKeyChanged) {
-                        await onNewGroupKeyInfo(groupKeyData.key, groupKeyData.epoch);
-                        currentKeyRef.current = groupKeyData.key;
-                    }
-                } catch (error) {
-                    reportMeetError('Failed to check groupKey', error);
-                }
-            }
-        }, 3000);
-
-        return () => clearInterval(intervalId);
-    }, []);
-
     const submitPassword = async () => {
         try {
             setInvalidPassphrase(false);
