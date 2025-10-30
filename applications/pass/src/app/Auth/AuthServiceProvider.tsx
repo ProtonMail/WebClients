@@ -9,7 +9,7 @@ import { createAuthService } from 'proton-pass-web/lib/auth';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useInstance from '@proton/hooks/useInstance';
 import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
-import { useCheckConnectivity, useConnectivityRef } from '@proton/pass/components/Core/ConnectivityProvider';
+import { useCheckConnectivity, useOnlineRef } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { UnlockProvider } from '@proton/pass/components/Lock/UnlockProvider';
 import { useNavigationActions } from '@proton/pass/components/Navigation/NavigationActions';
@@ -44,7 +44,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
     const sw = useServiceWorker();
     const history = useHistory<MaybeNull<AuthRouteState>>();
     const config = usePassConfig();
-    const online = useConnectivityRef();
+    const online = useOnlineRef();
     const authSwitch = useAuthSwitch();
     const checkConnectivity = useCheckConnectivity();
     const enhance = useNotificationEnhancer();
