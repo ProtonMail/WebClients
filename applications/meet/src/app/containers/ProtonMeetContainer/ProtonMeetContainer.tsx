@@ -196,7 +196,6 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
                             .t`This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.`
                     );
                 case MeetCoreErrorEnum.MaxRetriesReached:
-                case MeetCoreErrorEnum.MlsGroupError:
                 case MeetCoreErrorEnum.HttpClientError:
                 default:
                     // eslint-disable-next-line no-console
