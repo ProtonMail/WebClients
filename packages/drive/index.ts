@@ -2,7 +2,7 @@ import { useCallback, useState } from 'react';
 
 import { MemoryCache, ProtonDriveClient, VERSION } from '@protontech/drive-sdk';
 import { ProtonDrivePhotosClient } from '@protontech/drive-sdk/dist/protonDrivePhotosClient';
-import type { MemoryLogHandler } from '@protontech/drive-sdk/dist/telemetry';
+import type { LogHandler } from '@protontech/drive-sdk/dist/telemetry';
 // TODO: Remove that when sdk will be transpile with bun
 import 'core-js/actual/array/from-async';
 
@@ -19,6 +19,7 @@ import { initTelemetry } from './internal/telemetry';
 import { useAccount } from './internal/useAccount';
 import { useHttpClient } from './internal/useHttpClient';
 import { useSrpModule } from './internal/useSrpModule';
+import { Logging } from './modules/logging';
 
 export {
     /** @deprecated only for transition to sdk */
@@ -90,7 +91,7 @@ let photosLatestEventIdProvider: LatestEventIdProvider;
 let photosSingleton: ProtonDrivePhotosClient;
 let photosEntitiesCacheSingleton: MemoryCache<string> | undefined;
 
-let memoryLogHandlerSingleton: MemoryLogHandler | undefined;
+let loggingSingleton: (LogHandler & { getLogs: () => string[] }) | undefined;
 
 /** @deprecated only for transition to sdk */
 
@@ -118,9 +119,15 @@ export function useDrive() {
      * @param options.appName Pass from your app config. Example "proton-drive".
      * @param options.appVersion Pass from your app config. Example "5.0.0".
      * @param options.userPlan Should be "paid" for any paid user, "free" for not paid, and "anonymous" for public access. Keep "unknown" or unset if not known.
+     * @param options.logging A custom logging handler to use instead of the default one. Useful for combining SDK logs with the application logging system.
      */
     const init = useCallback(
-        (options: { appName: APP_NAMES; appVersion: string; userPlan?: UserPlan }) => {
+        (options: {
+            appName: APP_NAMES;
+            appVersion: string;
+            userPlan?: UserPlan;
+            logging?: LogHandler & { getLogs: () => string[] };
+        }) => {
             // eslint-disable-next-line no-console
             console.debug(`[drive] Configuring ProtonDriveClient ${VERSION}`, options);
 
@@ -132,7 +139,8 @@ export function useDrive() {
                 Object.entries(getAppVersionHeaders(getClientID(options.appName), options.appVersion))
             );
 
-            const { telemetry, memoryLogHandler } = initTelemetry(options.userPlan, debug);
+            loggingSingleton = options.logging || new Logging();
+            const telemetry = initTelemetry(options.userPlan, loggingSingleton, debug);
 
             driveLatestEventIdProvider = new LatestEventIdProvider();
             const driveEntitiesCache = new MemoryCache<string>();
@@ -169,8 +177,6 @@ export function useDrive() {
             });
             photosSingleton = proxyDriveClientWithEventTracking(photosClient, photosLatestEventIdProvider);
             photosEntitiesCacheSingleton = photosEntitiesCache;
-
-            memoryLogHandlerSingleton = memoryLogHandler;
         },
         [setAppVersionHeaders, debug, httpClient, account, openPGPCryptoModule]
     );
@@ -199,7 +205,7 @@ export function useDrive() {
          * Set `proton-drive-debug` local state to `true` to enable debug logs.
          */
         getLogs: useCallback(() => {
-            return memoryLogHandlerSingleton?.getLogs() || [];
+            return loggingSingleton?.getLogs() || [];
         }, []),
         /** @deprecated only for transition to sdk */
         unsafeRemoveNodeFromCache: useCallback(async (nodeUid: string) => {

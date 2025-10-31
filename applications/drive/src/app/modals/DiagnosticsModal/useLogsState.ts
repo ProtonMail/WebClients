@@ -1,5 +1,4 @@
-import { useDrive } from '@proton/drive';
-
+import { logging } from '../../modules/logging';
 import { downloadLogs } from '../../utils/downloadLogs';
 
 export type Log = {
@@ -10,9 +9,7 @@ export type Log = {
 };
 
 export const useLogsState = () => {
-    const { getLogs } = useDrive();
-
-    const unparsedLogs = getLogs() || [];
+    const unparsedLogs = logging.getLogs() || [];
 
     const parsedLogs = unparsedLogs.map((log) => JSON.parse(log));
 
@@ -26,7 +23,7 @@ export const useLogsState = () => {
     return {
         logs,
         downloadLogs: () => {
-            downloadLogs(getLogs());
+            downloadLogs(logging.getLogs());
         },
     };
 };

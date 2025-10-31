@@ -9,6 +9,7 @@ import { initTelemetry } from '@proton/drive/internal/telemetry';
 import { useAccount } from '@proton/drive/internal/useAccount';
 import { useHttpClient } from '@proton/drive/internal/useHttpClient';
 import { useSrpModule } from '@proton/drive/internal/useSrpModule';
+import { Logging } from '@proton/drive/modules/logging';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 
 export interface DriveNode {
@@ -75,7 +76,7 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods {
             cryptoCacheRef.current = new MemoryCache();
 
             const userPlan = isPaid(user) ? 'paid' : 'free';
-            const { telemetry } = initTelemetry(userPlan, debug);
+            const telemetry = initTelemetry(userPlan, new Logging(), debug);
 
             // Create our own ProtonDriveClient instance with controllable caches
             driveClientRef.current = new ProtonDriveClient({
