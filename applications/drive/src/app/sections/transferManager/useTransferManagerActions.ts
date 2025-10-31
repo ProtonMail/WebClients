@@ -2,12 +2,14 @@ import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { useConfirmActionModal } from '@proton/components/index';
-import { splitNodeUid } from '@proton/drive/index';
+import { NodeType, splitNodeUid, useDrive } from '@proton/drive/index';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useActiveShare } from '../../hooks/drive/useActiveShare';
+import useDriveNavigation from '../../hooks/drive/useNavigate';
 import { DownloadManager } from '../../managers/download/DownloadManager';
 import { useSharingModal } from '../../modals/SharingModal/SharingModal';
+import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { useDownloadManagerStore } from '../../zustand/download/downloadManager.store';
 import { uploadManager } from '../../zustand/upload/uploadManager';
 import { useUploadQueueStore } from '../../zustand/upload/uploadQueue.store';
@@ -19,6 +21,8 @@ export const useTransferManagerActions = () => {
     const [sharingModal, showSharingModal] = useSharingModal();
     const { getUploadItem } = useUploadQueueStore(useShallow((state) => ({ getUploadItem: state.getItem })));
     const { activeFolder } = useActiveShare();
+    const { navigateToLink } = useDriveNavigation();
+    const { drive } = useDrive();
     const { clearDownloads } = useDownloadManagerStore(
         useShallow((state) => {
             return {
@@ -90,6 +94,26 @@ export const useTransferManagerActions = () => {
         }
     };
 
+    const goToLocation = async (entry: TransferManagerEntry) => {
+        const uploadedItem = getUploadItem(entry.id);
+        if (!uploadedItem?.nodeUid) {
+            return;
+        }
+        if (uploadedItem.type === NodeType.Folder) {
+            const { nodeId } = splitNodeUid(uploadedItem.nodeUid);
+            navigateToLink(activeFolder.shareId, nodeId, false);
+        }
+
+        if (uploadedItem.type === NodeType.File) {
+            const maybeNode = await drive.getNode(uploadedItem.nodeUid);
+            const { node } = getNodeEntity(maybeNode);
+            if (node.parentUid) {
+                const { nodeId } = splitNodeUid(node.parentUid);
+                navigateToLink(activeFolder.shareId, nodeId, false);
+            }
+        }
+    };
+
     return {
         clearQueue,
         cancelTransfer,
@@ -98,5 +122,6 @@ export const useTransferManagerActions = () => {
         cancelAll,
         confirmModal,
         sharingModal,
+        goToLocation,
     };
 };
