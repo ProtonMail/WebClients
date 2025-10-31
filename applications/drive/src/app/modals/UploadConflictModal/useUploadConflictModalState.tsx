@@ -22,6 +22,7 @@ export const useUploadConflictModalState = ({
 }: UseUploadConflictModalProps): UploadConflictModalViewProps & ModalStateProps => {
     const handleCancelAll = () => {
         onResolve(UploadConflictStrategy.Skip, true);
+        onClose?.();
     };
 
     return {
