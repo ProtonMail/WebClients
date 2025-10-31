@@ -8,6 +8,7 @@ import type { ProtonSheetsState } from '../../state'
 import { SidebarContext, type SidebarContextValue, type SidebarDialogStore } from './shared'
 import { DataValidationDialog } from './DataValidationDialog'
 import { NamedRangeEditorDialog } from './NamedRangeEditorDialog'
+import { CellFormatDialog } from './CellFormatDialog'
 
 function SidebarContainer(props: PropsWithChildren) {
   const [dialogs, setDialogs] = useState<SidebarDialogStore[]>([])
@@ -116,6 +117,17 @@ export function Sidebar({ state }: SidebarProps) {
         onUpdateNamedRange={state.onUpdateNamedRange}
         onDeleteNamedRange={state.onDeleteNamedRange}
         onRequestDefineNamedRange={state.onRequestDefineNamedRange}
+      />
+      <CellFormatDialog
+        sheetId={state.activeSheetId}
+        activeCell={state.activeCell}
+        selections={state.selections}
+        onChangeFormatting={state.onChangeFormatting}
+        cellFormat={state.currentCellFormat}
+        getEffectiveValue={state.getEffectiveValue}
+        onMergeCells={state.onMergeCells}
+        theme={state.theme}
+        onChangeBorder={state.onChangeBorder}
       />
     </SidebarContainer>
   )
