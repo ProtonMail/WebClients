@@ -6,11 +6,11 @@ import { SubscriptionModalProvider, useConfig } from '@proton/components';
 
 import { ConversationProvider } from '../../providers/ConversationProvider';
 import { IsGuestProvider } from '../../providers/IsGuestProvider';
-import LumoCommonProvider from '../../providers/LumoCommonProvider';
 import { LumoPlanProvider } from '../../providers/LumoPlanProvider';
 import { OnboardingProvider } from '../../providers/OnboardingProvider';
 import { PrivateHeader } from '../../ui/header/PrivateHeader';
 import { InteractiveConversationComponent } from '../../ui/interactiveConversation/InteractiveConversationComponent';
+import { LumoUpsellModalProvider } from '../../ui/upsells/providers/LumoUpsellModalProvider';
 import { InnerApp } from '../InnerApp';
 
 export interface RouteParams {
@@ -24,7 +24,6 @@ const PrivateInteractiveConvoComponent = () => {
 };
 
 export const RouterContainer = () => {
-    const [user] = useUser();
     const { APP_NAME } = useConfig();
 
     return (
@@ -33,18 +32,18 @@ export const RouterContainer = () => {
                 <ConversationProvider>
                     <IsGuestProvider isGuest={false}>
                         <LumoPlanProvider>
-                            <Router>
-                                <Switch>
-                                    <Route path="/u/:sessionId">
-                                        <LumoCommonProvider user={user}>
+                            <LumoUpsellModalProvider>
+                                <Router>
+                                    <Switch>
+                                        <Route path="/u/:sessionId">
                                             <InnerApp
                                                 headerComponent={PrivateHeader}
                                                 conversationComponent={PrivateInteractiveConvoComponent}
                                             />
-                                        </LumoCommonProvider>
-                                    </Route>
-                                </Switch>
-                            </Router>
+                                        </Route>
+                                    </Switch>
+                                </Router>
+                            </LumoUpsellModalProvider>
                         </LumoPlanProvider>
                     </IsGuestProvider>
                 </ConversationProvider>

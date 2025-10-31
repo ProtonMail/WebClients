@@ -10,7 +10,6 @@ import { useTierErrors } from '../../../hooks/useTierErrors';
 import useTipTapEditor from '../../../hooks/useTipTapEditor';
 import { useDragArea } from '../../../providers/DragAreaProvider';
 import { useGhostChat } from '../../../providers/GhostChatProvider';
-import { useLumoPlan } from '../../../providers/LumoPlanProvider';
 import { useWebSearch } from '../../../providers/WebSearchProvider';
 import { useLumoSelector } from '../../../redux/hooks';
 import { selectProvisionalAttachments } from '../../../redux/selectors';
@@ -39,8 +38,8 @@ export type ComposerComponentProps = {
     messageChain?: Message[]; // Optional for MainContainer (no conversation yet)
     handleOpenFiles?: () => void; // Optional for MainContainer (no files management needed)
     onShowDriveBrowser?: () => void; // Optional for Drive browser functionality
-    isGuest?: boolean; // For showing disclaimer in guest mode
-    isSmallScreen?: boolean; // For mobile-specific disclaimer positioning
+    canShowLegalDisclaimer?: boolean;
+    canShowLumoUpsellToggle?: boolean;
     initialQuery?: string; // Initial query to populate and auto-execute
 };
 
@@ -57,8 +56,8 @@ export const ComposerComponent = ({
     messageChain = [], // Default to empty array for MainContainer
     handleOpenFiles,
     onShowDriveBrowser,
-    isGuest,
-    isSmallScreen,
+    canShowLegalDisclaimer,
+    canShowLumoUpsellToggle,
     initialQuery,
 }: ComposerComponentProps) => {
     const { isDragging: isDraggingOverScreen } = useDragArea();
@@ -70,7 +69,6 @@ export const ComposerComponent = ({
     const [fileToView, setFileToView] = useState<Attachment | null>(null);
     const [showUploadMenu, setShowUploadMenu] = useState(false);
     const { isGhostChatMode } = useGhostChat();
-    const { canShowLumoUpsellFree } = useLumoPlan();
 
     // Get all relevant attachments for context calculations
     const allRelevantAttachments = useAllRelevantAttachments(messageChain, provisionalAttachments);
@@ -148,21 +146,21 @@ export const ComposerComponent = ({
     // Handle initial query from URL parameter
     const hasExecutedInitialQuery = useRef(false);
     const lastExecutedQuery = useRef<string | null>(null);
-    
+
     useEffect(() => {
         // Reset execution flag if initialQuery changes to a new value
         if (initialQuery !== lastExecutedQuery.current) {
             hasExecutedInitialQuery.current = false;
             lastExecutedQuery.current = initialQuery || null;
         }
-        
+
         if (initialQuery && editor && !hasExecutedInitialQuery.current && !isProcessingAttachment) {
             // Set the content in the editor
             editor.commands.setContent(initialQuery);
-            
+
             // Mark as executed to prevent re-execution
             hasExecutedInitialQuery.current = true;
-            
+
             // Wait a tick for the editor to update, then submit
             setTimeout(() => {
                 void sendGenerateMessage(editor);
@@ -170,9 +168,7 @@ export const ComposerComponent = ({
         }
     }, [initialQuery, editor, isProcessingAttachment, sendGenerateMessage]);
 
-    const canShowLegalDisclaimer = isGuest && isSmallScreen && !isEditorFocused && isEditorEmpty;
-
-    const canShowLumoUpsellToggle = (isGuest || canShowLumoUpsellFree) && !isSmallScreen;
+    const showLegalDisclaimer = canShowLegalDisclaimer && !isEditorFocused && isEditorEmpty;
 
     return (
         <>
@@ -190,7 +186,7 @@ export const ComposerComponent = ({
                     <h2 className="sr-only">{c('collider_2025: Info').t`Ask anything to ${LUMO_SHORT_APP_NAME}`}</h2>
 
                     {/* Legal disclaimer - only shown in guest mode on mobile when editor is focused */}
-                    {canShowLegalDisclaimer && <GuestDisclaimer />}
+                    {showLegalDisclaimer && <GuestDisclaimer />}
 
                     <div
                         className={clsx(

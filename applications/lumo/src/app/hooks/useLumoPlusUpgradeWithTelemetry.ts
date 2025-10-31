@@ -10,10 +10,9 @@ import { sendUpgradeButtonClickedEvent } from '../util/telemetry';
 
 interface Props {
     feature: UPSELL_FEATURE;
-    buttonType?: string;
 }
 
-const useLumoPlusUpgradeWithTelemetry = ({ feature, buttonType }: Props) => {
+const useLumoPlusUpgradeWithTelemetry = ({ feature }: Props) => {
     const { APP_NAME } = useConfig();
     const lumoPlusUpsellModal = useModalStateObject();
 
@@ -26,12 +25,12 @@ const useLumoPlusUpgradeWithTelemetry = ({ feature, buttonType }: Props) => {
     const openModalWithTelemetry = useCallback(() => {
         sendUpgradeButtonClickedEvent({
             feature,
-            buttonType,
+            // buttonType,
             to: 'modal',
         });
 
         lumoPlusUpsellModal.openModal(true);
-    }, [feature, buttonType, lumoPlusUpsellModal]);
+    }, [feature, lumoPlusUpsellModal]);
 
     return {
         upsellRef,

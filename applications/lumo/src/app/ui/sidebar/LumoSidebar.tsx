@@ -17,8 +17,8 @@ import { GuestChatDisclaimerModal } from '../components/GuestChatDisclaimerModal
 import GuestDisclaimer from '../components/GuestDisclaimer';
 import SettingsModal from '../components/SettingsModal/SettingsModal';
 import { ChatHistory } from '../sidepanel/ChatHistory';
+import { LumoSidebarUpsell } from '../upsells/composed/LumoSidebarUpsell';
 import ForBusinessSidebarButton from './ForBusinessSidebarButton';
-import LumoPlusUpsellSidebarButton from './LumoPlusUpsellSidebarButton';
 
 import './LumoSidebar.scss';
 
@@ -233,7 +233,7 @@ const LumoSidebarContent = () => {
 
                 {/* Bottom Section */}
                 <div className="sidebar-section sidebar-bottom">
-                    <LumoPlusUpsellSidebarButton collapsed={isCollapsed} />
+                    <LumoSidebarUpsell collapsed={isCollapsed} />
 
                     <SidebarItem
                         icon="question-circle"

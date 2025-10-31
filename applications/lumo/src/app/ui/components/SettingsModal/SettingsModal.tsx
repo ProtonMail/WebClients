@@ -14,16 +14,17 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 import lumoAvatarNeutral from '@proton/styles/assets/img/lumo/lumo-avatar-neutral.svg';
 import useFlag from '@proton/unleash/useFlag';
 
-import { useLumoCommon } from '../../../hooks/useLumoCommon';
 import { useLumoPlan } from '../../../hooks/useLumoPlan';
+import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { useLumoTheme } from '../../../providers/LumoThemeProvider';
 import { getInitials } from '../../../util/username';
+import { LumoSettingsPanelUpsell } from '../../upsells/composed/LumoSettingsPanelUpsell';
 import CreateFreeAccountLink from '../CreateFreeAccountLink/CreateFreeAccountLink';
 import { LumoLogoThemeAware } from '../LumoLogoThemeAware';
 import LumoThemeButton from '../LumoThemeButton';
 import { SignInLinkButton } from '../SignInLink';
 import DeleteAllButton from './DeleteAllButton';
-import LumoSettingsUpgradePanel from './LumoSettingsUpgradePanel';
+import { PaidSubscriptionPanel } from './PaidSubscriptionPanel';
 import PersonalizationPanel from './PersonalizationPanel';
 
 import './SettingsModal.scss';
@@ -190,7 +191,7 @@ const getPlanName = (hasLumoSeat: boolean, isVisionary: boolean, hasLumoB2B: boo
 };
 const AccountSettingsPanel = () => {
     const [user] = useUser();
-    const { hasLumoSeat, isVisionary, hasLumoB2B } = useLumoPlan();
+    const { hasLumoSeat, isVisionary, hasLumoB2B, hasLumoPlus } = useLumoPlan();
     const planName = getPlanName(hasLumoSeat, isVisionary, hasLumoB2B);
 
     return (
@@ -222,7 +223,7 @@ const AccountSettingsPanel = () => {
                     <Icon name="chevron-right" className="color-weak shrink-0 mt-2" size={4} />
                 </ButtonLike>
             </div>
-            <LumoSettingsUpgradePanel />
+            {hasLumoPlus ? <PaidSubscriptionPanel /> : <LumoSettingsPanelUpsell />}
         </>
     );
 };
@@ -231,7 +232,7 @@ const AccountSettingsPanelGuest = () => {
     const createLink = <CreateFreeAccountLink key="create-free-account-link" />;
     return (
         <>
-            <LumoSettingsUpgradePanel isGuest />
+            <LumoSettingsPanelUpsell />
             <SettingsSectionItem
                 icon="user"
                 text={c('collider_2025: Title').t`Guest`}
@@ -252,7 +253,7 @@ interface SettingsModalProps extends ModalOwnProps {
 
 const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModalProps) => {
     const [activePanel, setActivePanel] = useState(initialPanel);
-    const { isGuest } = useLumoCommon();
+    const isGuest = useIsGuest();
     const closeModal = modalProps.onClose;
 
     return (
