@@ -1,9 +1,4 @@
-import {
-  CellFormatEditor,
-  CellFormatEditorDialog,
-  DeleteSheetConfirmation,
-  TableEditor,
-} from '@rowsncolumns/spreadsheet-state'
+import { DeleteSheetConfirmation, TableEditor } from '@rowsncolumns/spreadsheet-state'
 import type { ProtonSheetsState } from '../../state'
 import { ChartEditor, ChartEditorDialog } from '@rowsncolumns/charts'
 import { SheetSearch } from './SheetSearch'
@@ -38,19 +33,6 @@ export function Dialogs({ state }: DialogsProps) {
         totalResults={state.searchState.totalResults}
         searchQuery={state.searchState.searchQuery}
       />
-      <CellFormatEditorDialog>
-        <CellFormatEditor
-          sheetId={state.activeSheetId}
-          activeCell={state.activeCell}
-          selections={state.selections}
-          onChangeFormatting={state.onChangeFormatting}
-          cellFormat={state.currentCellFormat}
-          getEffectiveValue={state.getEffectiveValue}
-          onMergeCells={state.onMergeCells}
-          theme={state.theme}
-          onChangeBorder={state.onChangeBorder}
-        />
-      </CellFormatEditorDialog>
       <InsertLinkDialog />
     </>
   )
