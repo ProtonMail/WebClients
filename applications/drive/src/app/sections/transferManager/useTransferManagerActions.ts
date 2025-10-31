@@ -2,9 +2,12 @@ import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { useConfirmActionModal } from '@proton/components/index';
+import { splitNodeUid } from '@proton/drive/index';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
+import { useActiveShare } from '../../hooks/drive/useActiveShare';
 import { DownloadManager } from '../../managers/download/DownloadManager';
+import { useSharingModal } from '../../modals/SharingModal/SharingModal';
 import { useDownloadManagerStore } from '../../zustand/download/downloadManager.store';
 import { uploadManager } from '../../zustand/upload/uploadManager';
 import { useUploadQueueStore } from '../../zustand/upload/uploadQueue.store';
@@ -13,7 +16,9 @@ import type { TransferManagerEntry } from './useTransferManagerState';
 export const useTransferManagerActions = () => {
     const downloadManager = DownloadManager.getInstance();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
-
+    const [sharingModal, showSharingModal] = useSharingModal();
+    const { getUploadItem } = useUploadQueueStore(useShallow((state) => ({ getUploadItem: state.getItem })));
+    const { activeFolder } = useActiveShare();
     const { clearDownloads } = useDownloadManagerStore(
         useShallow((state) => {
             return {
@@ -73,11 +78,25 @@ export const useTransferManagerActions = () => {
         });
     };
 
+    const share = async (entry: TransferManagerEntry) => {
+        const uploadedItem = getUploadItem(entry.id);
+        if (uploadedItem && uploadedItem.nodeUid) {
+            const { nodeId, volumeId } = splitNodeUid(uploadedItem.nodeUid);
+            showSharingModal({
+                volumeId: volumeId,
+                linkId: nodeId,
+                shareId: activeFolder.shareId,
+            });
+        }
+    };
+
     return {
         clearQueue,
         cancelTransfer,
         retryTransfer,
+        share,
         cancelAll,
         confirmModal,
+        sharingModal,
     };
 };

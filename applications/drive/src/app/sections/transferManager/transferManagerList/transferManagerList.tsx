@@ -6,6 +6,7 @@ import { useActiveBreakpoint, useElementRect } from '@proton/components';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 
 import { TransferItem } from '../transferItem/transferItem';
+import { useTransferManagerActions } from '../useTransferManagerActions';
 import type { TransferManagerEntry } from '../useTransferManagerState';
 
 const TRANSFER_MANAGER_WIDTH_PX = 500;
@@ -15,17 +16,18 @@ const TRANSFER_MANAGER_MAX_VISIBLE_ROWS_SMALL = 3;
 
 type RowData = {
     items: TransferManagerEntry[];
+    share: (entry: TransferManagerEntry) => void;
 };
 
 const TransferListRow = memo(({ index, style, data }: ListChildComponentProps<RowData>) => {
-    const { items } = data;
+    const { items, share } = data;
     const reversedIndex = items.length - 1 - index;
     const entry = items[reversedIndex];
     // TODO: add conditional styling depending on some special cases like malaware detection
 
     return (
         <div style={style}>
-            <TransferItem entry={entry} />
+            <TransferItem entry={entry} onShare={() => share(entry)} />
         </div>
     );
 });
@@ -40,7 +42,7 @@ export const TransferManagerList = ({ items }: TransferManagerListProps) => {
     const listContainerRef = useRef<HTMLDivElement>(null);
     const rect = useElementRect(listContainerRef);
     const { viewportWidth } = useActiveBreakpoint();
-
+    const { share, sharingModal } = useTransferManagerActions();
     const rootSize = rootFontSize();
     const rowHeightPx = TRANSFER_MANAGER_ROW_HEIGHT_REM * rootSize;
     const itemSize = rowHeightPx;
@@ -62,7 +64,7 @@ export const TransferManagerList = ({ items }: TransferManagerListProps) => {
                     <FixedSizeList
                         height={listHeight}
                         itemCount={items.length}
-                        itemData={{ items }}
+                        itemData={{ items, share }}
                         itemSize={itemSize}
                         width={listWidth}
                         itemKey={(index, { items }) => items[items.length - 1 - index]?.id ?? index}
@@ -71,6 +73,7 @@ export const TransferManagerList = ({ items }: TransferManagerListProps) => {
                     </FixedSizeList>
                 )}
             </div>
+            {sharingModal}
         </div>
     );
 };

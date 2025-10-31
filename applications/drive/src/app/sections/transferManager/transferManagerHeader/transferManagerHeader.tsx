@@ -5,6 +5,7 @@ import { Progress } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { ProgressBarStatus } from '../../../components/TransferManager/ProgressBar';
+import { BaseTransferStatus } from '../../../zustand/download/downloadManager.store';
 import { CloseButton } from '../buttons/closeButton';
 import { MinimizeButton } from '../buttons/minimizeButton';
 import { useTransferManagerActions } from '../useTransferManagerActions';
@@ -35,6 +36,8 @@ export const TransferManagerHeader = ({ isMinimized, toggleMinimize, onClose }: 
     const progressText = c('Info').t`${normalizedProgress}% completed`;
     const cancelText = c('Action').t`Cancel all`;
     const pbStatus = getProgressBarStatus(status);
+    const completedItems = items.filter((item) => item.status === BaseTransferStatus.Finished);
+    const completedText = c('Info').t`${completedItems.length} of ${items.length} transfers completed`;
 
     return (
         <div
@@ -44,7 +47,12 @@ export const TransferManagerHeader = ({ isMinimized, toggleMinimize, onClose }: 
             <div className="flex flex-wrap items-start gap-3">
                 <div className="flex min-w-0 flex-1 flex-column gap-1">
                     <div className="text-semibold">{headerText}</div>
-                    <div className="color-weak text-sm">{progressText}</div>
+                    {status === TransferManagerStatus.InProgress && (
+                        <div className="color-weak text-sm">{progressText}</div>
+                    )}
+                    {status !== TransferManagerStatus.InProgress && status !== TransferManagerStatus.Empty && (
+                        <div className="color-weak text-sm">{completedText}</div>
+                    )}
                 </div>
                 <div className="flex items-center gap-2">
                     {status === TransferManagerStatus.InProgress && (
@@ -62,7 +70,7 @@ export const TransferManagerHeader = ({ isMinimized, toggleMinimize, onClose }: 
                     {status !== TransferManagerStatus.InProgress && <CloseButton onClick={onClose} />}
                 </div>
             </div>
-            <div className="mt-3">
+            <div>
                 <Progress
                     className={clsx([`progress-bar--${pbStatus}`, 'tm-progress'])}
                     value={normalizedProgress}
