@@ -1,8 +1,6 @@
 import type { FC, PropsWithChildren } from 'react';
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 
-import { c } from 'ttag';
-
 import type { BottomBarProps } from '@proton/pass/components/Layout/Bar/BottomBar';
 import { BottomBar } from '@proton/pass/components/Layout/Bar/BottomBar';
 import { useNavigatorOnline } from '@proton/pass/hooks/useNavigatorOnline';
@@ -10,6 +8,7 @@ import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
 import {
     ConnectivityStatus,
     getConnectivityRetryTimeout,
+    getConnectivityWarning,
     intoConnectivityStatus,
 } from '@proton/pass/lib/api/connectivity';
 import type { ApiSubscriptionEvent, Maybe, MaybeNull } from '@proton/pass/types';
@@ -98,17 +97,12 @@ export const useOnline = () => {
     const ctx = useContext(ConnectivityContext);
     return ctx ? ctx.status === ConnectivityStatus.ONLINE : true;
 };
-
+export const useConnectivity = () => useContext(ConnectivityContext)?.status ?? ConnectivityStatus.ONLINE;
 export const useCheckConnectivity = () => useContext(ConnectivityContext)?.check;
 export const useOnlineRef = () => useStatefulRef(useOnline());
 
 export const useConnectivityBar = (propsFactory: (status: ConnectivityStatus) => BottomBarProps) => {
-    const status = useContext(ConnectivityContext)?.status ?? ConnectivityStatus.ONLINE;
-    const props = propsFactory(status);
-    return (
-        <BottomBar
-            {...props}
-            text={props.text ?? c('Info').t`Internet connection lost. Please check your device's connectivity.`}
-        />
-    );
+    const connectivity = useConnectivity();
+    const props = propsFactory(connectivity);
+    return <BottomBar {...props} text={props.text ?? getConnectivityWarning(connectivity)} />;
 };

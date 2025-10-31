@@ -59,7 +59,7 @@ const Main: FC = () => {
     const toggle = useCallback(() => set((prev) => !prev), []);
 
     const connectivityBar = useConnectivityBar((connectivity) => ({
-        className: connectivity === ConnectivityStatus.OFFLINE ? 'bg-danger' : 'bg-weak border-top',
+        className: offline ? 'bg-weak border-top' : 'bg-danger',
         hidden: connectivity === ConnectivityStatus.ONLINE && !offline,
         text: offline ? (
             <div className="flex items-center gap-2">
