@@ -1,0 +1,17 @@
+@use 'sass:math';
+@import '~@proton/styles/scss/lib';
+
+.chat-history-upsell {
+	--upgrade-color-stop-1: #734afd;
+	--upgrade-color-stop-2: #d94fd3;
+	--upgrade-background-color: #ffffff0d;
+
+	// position: absolute;
+	inset-block-end: 8px;
+	background:
+		linear-gradient(var(--upgrade-background-color), var(--upgrade-background-color)) padding-box,
+		linear-gradient(var(--background-norm), var(--background-norm)) padding-box,
+		linear-gradient(to bottom, var(--upgrade-color-stop-1), var(--upgrade-color-stop-2)) border-box;
+	color: var(--text-norm);
+	border: 1px solid transparent;
+}

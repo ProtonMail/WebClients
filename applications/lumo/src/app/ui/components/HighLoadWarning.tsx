@@ -21,9 +21,9 @@ const CONFIG = {
 };
 
 const AuthenticatedHighLoadWarningMessage = () => {
-    const { hasLumoSeat } = useLumoPlan();
+    const { hasLumoPlus } = useLumoPlan();
 
-    if (hasLumoSeat) {
+    if (hasLumoPlus) {
         return c('collider_2025: Warning')
             .jt`We're experiencing high traffic right now, but as a ${LUMO_SHORT_APP_NAME} Plus customer, you're in the fast lane. We're prioritizing your requests as always.`;
     }
@@ -68,7 +68,7 @@ const HighLoadWarning = () => {
         return () => clearInterval(interval);
     }, [checkAndShowBanner]);
 
-    const signInLink = <SignInLink className="py-0 color-inherit" key="eslint-autofix-C8320B" />;
+    const signInLink = <SignInLink className="py-0 color-inherit" key="sign-in-link" />;
 
     if (!showBanner) {
         return null;

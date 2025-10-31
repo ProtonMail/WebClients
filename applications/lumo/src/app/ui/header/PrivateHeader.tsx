@@ -1,12 +1,10 @@
-import React from 'react';
-
 import { AppsDropdown, UserDropdown } from '@proton/components';
 import { APPS, LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import useFlag from '@proton/unleash/useFlag';
 
 import { InvitesButton } from '../components/InvitesButton/InvitesButton';
+import LumoNavbarUpsell from '../upsells/composed/LumoNavbarUpsell';
 import { HeaderWrapper } from './HeaderWrapper';
-import LumoUpgradeButton from './LumoUpgradeButton';
 
 const { PROTONLUMO } = APPS;
 
@@ -16,7 +14,7 @@ export const PrivateHeader = () => {
     return (
         <HeaderWrapper>
             {isLumoEarlyAccessEnabled && <InvitesButton />}
-            <LumoUpgradeButton feature={LUMO_UPSELL_PATHS.TOP_NAVIGATION_BAR} buttonComponent="promotion-button" />
+            <LumoNavbarUpsell feature={LUMO_UPSELL_PATHS.TOP_NAVIGATION_BAR} />
             <AppsDropdown app={PROTONLUMO} />
             <UserDropdown app={PROTONLUMO} />
         </HeaderWrapper>

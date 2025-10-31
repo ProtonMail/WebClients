@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react';
 import { createContext, useCallback, useContext, useEffect, useState } from 'react';
 
-import { useLumoCommon } from '../hooks/useLumoCommon';
 import { useTierErrors } from '../hooks/useTierErrors';
+import { useLumoPlan } from './LumoPlanProvider';
 
 const STORAGE_KEY = 'lumo_guest';
 const GUEST_QUESTION_LIMIT = 25;
@@ -51,7 +51,7 @@ interface Props {
 }
 
 export const GuestTrackingProvider = ({ children }: Props) => {
-    const { lumoUserType, isGuest } = useLumoCommon();
+    const { lumoUserType, isGuest } = useLumoPlan();
     const { addTierError, tierErrors } = useTierErrors();
 
     const [tracking, setTracking] = useState<GuestQuestionTracking>(loadFromLocalStorage);

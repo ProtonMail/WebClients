@@ -64,6 +64,18 @@
 				border: 0;
 			}
 		}
+
+		&#{&}.lumo-bf2025-promotion {
+			&,
+			&:hover,
+			&:focus {
+				background: linear-gradient(7.46deg, #ffac2e 4.37%, #dd5dcc 42.93%, #1ba3fd 106.9%, #5325a2 147.64%);
+
+				--text-norm: white;
+
+				border: 0;
+			}
+		}
 	}
 
 	&--pinkblue {
