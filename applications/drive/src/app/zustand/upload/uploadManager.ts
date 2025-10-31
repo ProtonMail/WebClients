@@ -506,6 +506,7 @@ class UploadManager {
                 });
                 uploadQueueStore.updateQueueItem(uploadId, {
                     status: UploadStatus.Finished,
+                    nodeUid: event.nodeUid,
                 });
                 controllerStore.removeController(uploadId);
                 this.checkAndUnsubscribeIfQueueEmpty();

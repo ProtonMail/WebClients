@@ -24,6 +24,7 @@ export type BaseUploadItem = {
     status: UploadStatus;
     batchId: string;
     error?: Error;
+    nodeUid?: string;
 };
 
 export type FileUploadItem = BaseUploadItem & {
@@ -39,7 +40,6 @@ export type FileUploadItem = BaseUploadItem & {
 export type FolderCreationItem = BaseUploadItem & {
     type: NodeType.Folder;
     parentUid: string;
-    nodeUid?: string;
     modificationTime?: Date;
 };
 

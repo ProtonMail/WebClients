@@ -11,6 +11,7 @@ import type { TransferManagerEntry } from '../useTransferManagerState';
 
 type Props = {
     entry: TransferManagerEntry;
+    onShare: () => void;
 };
 
 const getStatusLabel = (entry: TransferManagerEntry): string | undefined => {
@@ -51,7 +52,7 @@ const getItemIconByStatus = (entry: TransferManagerEntry) => {
     return null;
 };
 
-export const TransferItem = ({ entry }: Props) => {
+export const TransferItem = ({ entry, onShare }: Props) => {
     // const showLocationText = c('Action').t`Show location`;
     const totalSize = entry.type === 'download' ? entry.storageSize : entry.clearTextSize;
     const transferredTotal = `${shortHumanSize(entry.transferredBytes)} / ${shortHumanSize(totalSize)}`;
@@ -70,21 +71,24 @@ export const TransferItem = ({ entry }: Props) => {
                 <span className="text-nowrap text-rg">{entry.name}</span>
                 <div className="gap-1 flex">
                     <span className="text-sm color-weak">{getStatusLabel(entry)}</span>
-                    <span aria-hidden="true" className="text-sm text-weak">
-                        &middot;
-                    </span>
+
                     {/* TBI for upload only */}
                     {/* {entry.status === BaseTransferStatus.Finished && (
                         <span className="text-ellipsis text-nowrap text-sm color-weak">{showLocationText}</span>
                     )} */}
                     {entry.status !== BaseTransferStatus.Finished && (
-                        <span className="text-ellipsis text-nowrap text-sm color-weak">{transferredTotal}</span>
+                        <>
+                            <span aria-hidden="true" className="text-sm text-weak">
+                                &middot;
+                            </span>
+                            <span className="text-ellipsis text-nowrap text-sm color-weak">{transferredTotal}</span>
+                        </>
                     )}
                 </div>
             </div>
             <div className="w-1/6">
                 {entry.status == BaseTransferStatus.Finished && (
-                    <Button color="weak" shape="solid">
+                    <Button color="weak" shape="solid" onClick={onShare}>
                         {c('Action').t`Share`}
                     </Button>
                 )}
