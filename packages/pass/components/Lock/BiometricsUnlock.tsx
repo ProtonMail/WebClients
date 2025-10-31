@@ -1,4 +1,4 @@
-import { type FC, useCallback, useEffect } from 'react';
+import { type FC, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -10,6 +10,7 @@ import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import type { AuthRouteState } from '@proton/pass/components/Navigation/routing';
+import { useUnlockGuard } from '@proton/pass/hooks/auth/useUnlockGuard';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { useRerender } from '@proton/pass/hooks/useRerender';
 import { useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
@@ -17,7 +18,6 @@ import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { unlock } from '@proton/pass/store/actions';
 import type { MaybeNull } from '@proton/pass/types';
 import { getBasename } from '@proton/shared/lib/authentication/pathnameHelper';
-import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { isMac } from '@proton/shared/lib/helpers/browser';
 import noop from '@proton/utils/noop';
 
@@ -49,19 +49,7 @@ export const BiometricsUnlock: FC<Props> = ({ offlineEnabled }) => {
         biometricsUnlock.dispatch({ mode: LockMode.BIOMETRICS, secret });
     }, []);
 
-    useEffect(() => {
-        if (!online) {
-            rerender();
-
-            if (offlineEnabled === false) {
-                createNotification({
-                    type: 'error',
-                    text: c('Error')
-                        .t`You're currently offline. Please resume connectivity in order to unlock ${PASS_SHORT_APP_NAME}.`,
-                });
-            }
-        }
-    }, [online, offlineEnabled]);
+    useUnlockGuard({ offlineEnabled, onOffline: rerender });
 
     useVisibleEffect(
         (visible) => {

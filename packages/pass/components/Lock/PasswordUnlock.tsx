@@ -1,11 +1,11 @@
-import { type FC, useCallback, useEffect } from 'react';
+import { type FC, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
+import { useUnlockGuard } from '@proton/pass/hooks/auth/useUnlockGuard';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { useRerender } from '@proton/pass/hooks/useRerender';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
@@ -13,14 +13,12 @@ import type { PasswordCredentials } from '@proton/pass/lib/auth/password';
 import { validateCurrentPassword, validateExtraPassword } from '@proton/pass/lib/validation/auth';
 import { unlock } from '@proton/pass/store/actions';
 import { getBasename } from '@proton/shared/lib/authentication/pathnameHelper';
-import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { PasswordForm } from './PasswordForm';
 
 type Props = { extraPassword: boolean; offlineEnabled?: boolean };
 
 export const PasswordUnlock: FC<Props> = ({ extraPassword, offlineEnabled }) => {
-    const { createNotification } = useNotifications();
     const online = useOnline();
     const authStore = useAuthStore();
     const history = useHistory();
@@ -37,19 +35,7 @@ export const PasswordUnlock: FC<Props> = ({ extraPassword, offlineEnabled }) => 
         passwordUnlock.dispatch({ mode: LockMode.PASSWORD, secret: password });
     }, []);
 
-    useEffect(() => {
-        if (!online) {
-            rerender();
-
-            if (offlineEnabled === false) {
-                createNotification({
-                    type: 'error',
-                    text: c('Error')
-                        .t`You're currently offline. Please resume connectivity in order to unlock ${PASS_SHORT_APP_NAME}.`,
-                });
-            }
-        }
-    }, [online, offlineEnabled]);
+    useUnlockGuard({ offlineEnabled, onOffline: rerender });
 
     return (
         <PasswordForm
