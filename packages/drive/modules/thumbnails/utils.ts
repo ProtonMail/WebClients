@@ -13,8 +13,8 @@ import type { PerformanceTracker } from './performanceTracker';
 import { CanvasError, EncodingError, ThumbnailSizeError, wrapError } from './thumbnailError';
 
 export interface ThumbnailInfo {
-    thumbnailData: Uint8Array<ArrayBuffer>;
-    thumbnailType: ThumbnailType;
+    thumbnail: Uint8Array<ArrayBuffer>;
+    type: ThumbnailType;
 }
 
 export type ThumbnailResult =
@@ -228,8 +228,8 @@ export async function generateThumbnailFromCanvas(options: {
         }
 
         return {
-            thumbnailType,
-            thumbnailData: new Uint8Array<ArrayBuffer>(arrayBuffer),
+            type: thumbnailType,
+            thumbnail: new Uint8Array<ArrayBuffer>(arrayBuffer),
         };
     } finally {
         canvas.width = 0;
