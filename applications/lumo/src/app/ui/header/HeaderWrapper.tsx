@@ -5,12 +5,12 @@ import { c } from 'ttag';
 import { Href } from '@proton/atoms';
 import { Hamburger } from '@proton/components';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import { isMobile } from '@proton/shared/lib/helpers/browser';
 import useFlag from '@proton/unleash/useFlag';
 
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useLumoPlan } from '../../providers/LumoPlanProvider';
 import { useSidebar } from '../../providers/SidebarProvider';
+import { getIsMobileDevice } from '../../util/device';
 import { NewLabel } from '../components/NewLabel';
 import LumoLogoHeader from './LumoLogo';
 
@@ -36,7 +36,7 @@ export const HeaderWrapper = ({ children }: HeaderWrapperProps) => {
     const isLumoB2BEnabled = useFlag('LumoB2B');
     const { isLumoPlanLoading, isB2BAudience } = useLumoPlan();
 
-    const isMobileDevice = isMobile();
+    const isMobileDevice = getIsMobileDevice();
     const showB2BSignUpLink = isLumoB2BEnabled && !isLumoPlanLoading && isB2BAudience && !isMobileDevice;
 
     return (
