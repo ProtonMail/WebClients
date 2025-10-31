@@ -1,0 +1,14 @@
+@import '~@proton/styles/scss/lib';
+
+.offer-monthly-price-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.offer-cta {
+	--color-promo: #fbbf24;
+}
+
+.offer-modal .offer-wrapper {
+	flex-direction: row;
+}

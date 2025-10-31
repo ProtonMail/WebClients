@@ -1,1 +1,1 @@
-export { default as PromotionButton } from './PromotionButton';
+export { default as PromotionButton, type PromotionButtonProps } from './PromotionButton';

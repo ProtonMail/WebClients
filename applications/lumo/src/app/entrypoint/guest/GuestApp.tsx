@@ -30,7 +30,6 @@ import locales from '../../locales';
 import { ConversationProvider } from '../../providers/ConversationProvider';
 import { GuestTrackingProvider } from '../../providers/GuestTrackingProvider';
 import { IsGuestProvider } from '../../providers/IsGuestProvider';
-import LumoCommonProvider from '../../providers/LumoCommonProvider';
 import { LumoPlanProvider } from '../../providers/LumoPlanProvider';
 import { LumoThemeProvider } from '../../providers/LumoThemeProvider';
 import { OnboardingProvider } from '../../providers/OnboardingProvider';
@@ -41,6 +40,7 @@ import { extraThunkArguments } from '../../redux/thunk';
 import ProtectGuestRouteGuard from '../../ui/components/ProtectGuestRouteGuard/ProtectGuestRouteGuard';
 import { PublicHeader } from '../../ui/header/PublicHeader';
 import { InteractiveConversationComponent } from '../../ui/interactiveConversation/InteractiveConversationComponent';
+import { LumoUpsellModalProvider } from '../../ui/upsells/providers/LumoUpsellModalProvider';
 import { initializeConsoleOverride } from '../../util/logging';
 import { lumoTelemetryConfig } from '../../util/telemetryConfig';
 import { InnerApp } from '../InnerApp';
@@ -103,14 +103,14 @@ const BasePublicApp = () => {
             <Router>
                 <Switch>
                     <Route path="/guest">
-                        <LumoCommonProvider user={undefined}>
-                            <GuestTrackingProvider>
+                        <GuestTrackingProvider>
+                            <LumoUpsellModalProvider>
                                 <InnerApp
                                     headerComponent={PublicHeader}
                                     conversationComponent={InteractiveConversationComponent}
                                 />
-                            </GuestTrackingProvider>
-                        </LumoCommonProvider>
+                            </LumoUpsellModalProvider>
+                        </GuestTrackingProvider>
                     </Route>
                 </Switch>
             </Router>
