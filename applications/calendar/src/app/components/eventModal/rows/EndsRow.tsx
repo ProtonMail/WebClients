@@ -59,7 +59,7 @@ const EndsRow = ({ frequencyModel, start, displayWeekNumbers, weekStartsOn, erro
     const options = [
         {
             value: END_TYPE.NEVER,
-            label: c('Custom frequency option').t`Don't end`,
+            label: c('Custom frequency option').t`Doesn't end`,
         },
         {
             value: END_TYPE.UNTIL,
