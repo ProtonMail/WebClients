@@ -70,12 +70,10 @@ const PaymentMethodSelector = ({
     }
 
     const hasSavedPaymentMethod = options.find((it) => it.isSaved);
-    const hasApplePay = options.some(({ type }) => type === PAYMENT_METHOD_TYPES.APPLE_PAY);
-    const hasSEPA = options.some(({ type }) => type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT);
     const showRadioButtons =
         (options.length <= 2 && !forceDropdown) ||
         // if user already has a saved payment method, we don't need to show all the payment methods at once
-        ((hasApplePay || hasSEPA) && !hasSavedPaymentMethod);
+        !hasSavedPaymentMethod;
 
     if (showRadioButtons) {
         return (
