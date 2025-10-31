@@ -31,5 +31,5 @@ export const isElectronPass = isElectronApp && /ProtonPass/i.test(ua.ua);
  * The version of the application is injected in the user-agent by Electron Forge.
  * This method works if the version uses the following format: `x.y.z`.
  */
-export const electronAppVersion = ua.ua.match(/((ProtonMail|ProtonPass)\/)(?<version>([0-9][.]).{3})/i)?.groups
-    ?.version;
+export const electronAppVersion = ua.ua.match(/((ProtonMail|ProtonPass)\/)(?<version>[0-9]\.[0-9]{1,2}\.[0-9]{1,2})/i)
+    ?.groups?.version;
