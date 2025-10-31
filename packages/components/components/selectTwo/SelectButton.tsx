@@ -17,6 +17,7 @@ interface SelectButtonProps extends Omit<ComponentPropsWithRef<'button'>, 'value
     noCaret?: boolean;
     caretIconName?: IconName;
     caretClassName?: string;
+    fullWidth?: boolean;
 }
 
 const SelectButton = forwardRef<HTMLButtonElement, SelectButtonProps>(
@@ -32,6 +33,7 @@ const SelectButton = forwardRef<HTMLButtonElement, SelectButtonProps>(
             noCaret,
             caretIconName,
             caretClassName,
+            fullWidth = true,
             ...rest
         },
         ref
@@ -62,7 +64,8 @@ const SelectButton = forwardRef<HTMLButtonElement, SelectButtonProps>(
                     !unstyled && 'select field',
                     unstyled && 'select-unstyled',
                     isOpen && 'select--open',
-                    'outline-none w-full flex justify-space-between items-center flex-nowrap *:pointer-events-none',
+                    'outline-none flex justify-space-between items-center flex-nowrap *:pointer-events-none',
+                    fullWidth && 'w-full',
                     className,
                 ])}
                 {...rest}

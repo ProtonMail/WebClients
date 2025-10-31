@@ -46,6 +46,7 @@ export interface SelectTwoProps<V> extends SelectProps<V> {
     noDropdownCaret?: boolean;
     dropdownClassName?: string;
     offset?: number;
+    fullWidth?: boolean;
 }
 
 const defaultSize = { width: DropdownSizeUnit.Anchor, maxWidth: DropdownSizeUnit.Viewport } as const;
@@ -73,6 +74,7 @@ const SelectTwo = <V extends any>({
     caretClassName,
     dropdownClassName,
     offset = 4,
+    fullWidth,
     ...rest
 }: SelectTwoProps<V>) => {
     const anchorRef = useRef<HTMLButtonElement | null>(null);
@@ -206,6 +208,7 @@ const SelectTwo = <V extends any>({
                 caretClassName={caretClassName}
                 aria-label={ariaLabel}
                 ref={anchorRef}
+                fullWidth={fullWidth}
                 {...rest}
             >
                 {renderSelected?.(value) ?? (
