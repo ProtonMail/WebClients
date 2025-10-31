@@ -5,6 +5,7 @@ export const LUMO_UPGRADE_TRIGGER_CLASS = 'lumo-upgrade-trigger';
 
 export const LUMO_PLUS_UPGRADE_PATH = '/dashboard?addon=lumo';
 export const LUMO_PLUS_FREE_PATH_TO_ACCOUNT = '/dashboard?plan=lumo2024';
+export const LUMO_SIGNUP_PATH = '/signup';
 
 // File upload limits
 export const MAX_FILE_SIZE = 100 * 1024 * 1024; // 100MB in bytes

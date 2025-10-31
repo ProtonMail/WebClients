@@ -5,6 +5,8 @@ import { c } from 'ttag';
 
 import useFlag from '@proton/unleash/useFlag';
 
+import { LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
+
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import type { HandleSendMessage } from '../../hooks/useLumoActions';
 import { useGhostChat } from '../../providers/GhostChatProvider';
@@ -15,6 +17,7 @@ import { FilesManagementView } from '../components/Files';
 import { NewGhostChatButton } from '../components/NewGhostChatButton';
 import WhatsNew from '../components/WhatsNew/WhatsNew';
 import { HeaderWrapper } from '../header/HeaderWrapper';
+import LumoNavbarUpsell from '../upsells/composed/LumoNavbarUpsell';
 import PromptSuggestion from './MainContainer/PromptSuggestion';
 import LumoCat from './MainContainer/LumoCat';
 import LumoMainText from './MainContainer/LumoMainText';
@@ -84,6 +87,7 @@ const MainContainer = ({
         <>
             {isSmallScreen && (
                 <HeaderWrapper>
+                    <LumoNavbarUpsell feature={LUMO_UPSELL_PATHS.TOP_NAVIGATION_BAR} onlyShowOffers={true} />
                     <NewGhostChatButton />
                 </HeaderWrapper>
             )}
@@ -152,8 +156,8 @@ const MainContainer = ({
                         setIsEditorEmpty={setIsEditorEmpty}
                         handleOpenFiles={handleOpenFiles}
                         onShowDriveBrowser={handleShowDriveBrowser}
-                        isGuest={isGuest}
-                        isSmallScreen={isSmallScreen}
+                        canShowLegalDisclaimer={isGuest && isSmallScreen}
+                        canShowLumoUpsellToggle={true}
                         initialQuery={promptSuggestion || initialQuery}
                     />
                 </div>

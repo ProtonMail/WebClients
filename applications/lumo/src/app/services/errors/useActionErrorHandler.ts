@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 
 import { useErrorHandler as useProtonErrorHandler } from '@proton/components';
 
-import { useLumoCommon } from '../../hooks/useLumoCommon';
+import { useLumoPlan } from '../../providers/LumoPlanProvider';
 import { useLumoDispatch } from '../../redux/hooks';
 import { type ErrorContext, LUMO_API_ERRORS } from '../../types-api';
 import { analyzeError } from './errorAnalyzer';
@@ -11,7 +11,7 @@ import { handleGenerationError, handleTierError } from './errorHandling';
 export const useActionErrorHandler = () => {
     const dispatch = useLumoDispatch();
     const handleError = useProtonErrorHandler();
-    const { lumoUserType } = useLumoCommon();
+    const { lumoUserType } = useLumoPlan();
 
     const handleActionError = useCallback(
         (error: any, context: ErrorContext) => {

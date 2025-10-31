@@ -114,12 +114,12 @@
 	// Mobile tab content should be constrained and scrollable
 	.mobile-tab-content {
 		overflow: hidden;
-		min-height: 0;
-		
+		min-block-size: 0;
+
 		// Only apply height constraints to personalization panel specifically
 		.personalization-panel {
-			height: 100%;
-			max-height: 100%;
+			block-size: 100%;
+			max-block-size: 100%;
 			overflow: hidden;
 		}
 	}
@@ -320,10 +320,6 @@
 
 	p {
 		color: var(--settings-modal-upsell-text) !important;
-	}
-
-	.color-weak {
-		color: rgb(255 255 255 / 0.8) !important;
 	}
 
 	.color-success {

@@ -18,16 +18,16 @@ export const sendNewMessageDataEvent = (
 
 export const sendUpgradeButtonClickedEvent = ({
     feature,
-    buttonType,
+    // buttonType,
     to,
 }: {
     feature: string;
-    buttonType?: string;
+    // buttonType?: string;
     to?: string;
 }) => {
     telemetry.sendCustomEvent('lumo-upgrade-button-clicked', {
         feature,
-        buttonType,
+        // buttonType,
         to,
     });
 };

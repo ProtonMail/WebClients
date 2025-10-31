@@ -5,18 +5,17 @@ import { c } from 'ttag';
 import { Scroll } from '@proton/atoms';
 import { Icon } from '@proton/components';
 
-import { useLumoCommon } from '../../hooks/useLumoCommon';
+import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { useConversation } from '../../providers/ConversationProvider';
 import { useGhostChat } from '../../providers/GhostChatProvider';
+import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useSidebar } from '../../providers/SidebarProvider';
 import { useLumoSelector } from '../../redux/hooks';
 import { selectConversations } from '../../redux/selectors';
 import { sortByDate } from '../../util/date';
 import ChatHistorySkeleton from '../components/ChatHistorySkeleton';
-import {
-    ChatHistoryFreeUserUpsell,
-    ChatHistoryGuestUserUpsell,
-} from '../components/ChatHistoryUpsell.tsx/ChatHistoryUpsell';
+import { ChatHistoryGuestUserUpsell } from '../components/ChatHistoryUpsell.tsx/ChatHistoryUpsell';
+import { LumoChatHistoryUpsell } from '../upsells/composed/LumoChatHistoryUpsell';
 import RecentChatsList from './RecentChatsList';
 import { categorizeConversations, searchConversations } from './helpers';
 
@@ -50,10 +49,11 @@ const getVisibleConversations = (
     return Object.values(conversationMap).filter((conversation) => !conversation.ghost);
 };
 
-export const ChatHistory = ({ refInputSearch, onItemClick, searchInput = '' }: Props) => {
+export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
     const conversationMap = useLumoSelector(selectConversations);
     const { conversationId } = useConversation(); //switch to using react-router-dom parameters
-    const { isGuest, isLumoPaid } = useLumoCommon();
+    const isGuest = useIsGuest();
+    const { hasLumoPlus } = useLumoPlan();
     const { isGhostChatMode } = useGhostChat();
     const { isSmallScreen } = useSidebar();
 
@@ -157,23 +157,23 @@ export const ChatHistory = ({ refInputSearch, onItemClick, searchInput = '' }: P
                         <h4 className="block color-weak text-sm mt-4 mb-2 ml-3">
                             {c('collider_2025:Title').t`Last 30 days`}
                         </h4>
-                        {isLumoPaid ? (
+                        {hasLumoPlus ? (
                             <RecentChatsList
                                 conversations={lastMonth}
                                 selectedConversationId={conversationId}
                                 onItemClick={onItemClick}
                             />
                         ) : (
-                            // <ChatHistoryUpsell userType={lumoUserType} />
-                            <ChatHistoryFreeUserUpsell />
+                            <LumoChatHistoryUpsell />
                         )}
                     </>
                 )}
                 {/* Only show earlier chats for paid users */}
-                {isLumoPaid && earlier.length > 0 && (
+                {hasLumoPlus && earlier.length > 0 && (
                     <>
                         <h4 className="block color-weak text-sm mt-4 mb-2 ml-2">{c('collider_2025:Title')
                             .t`Earlier`}</h4>
+
                         <RecentChatsList
                             conversations={earlier}
                             selectedConversationId={conversationId}

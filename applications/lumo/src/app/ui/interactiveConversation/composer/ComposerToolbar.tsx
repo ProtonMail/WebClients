@@ -4,13 +4,13 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon } from '@proton/components';
 import { IcGlobe, IcMicrophone, IcPaperClip } from '@proton/icons';
 import useFlag from '@proton/unleash/useFlag';
 
 import { useWebSearch } from '../../../providers/WebSearchProvider';
 import { getAcceptAttributeString } from '../../../util/filetypes';
-import LumoPlusToggle from './LumoPlusToggle';
+import PressEnterToReturn from '../../components/PressEnterToReturn';
+import LumoComposerToggleUpsell from '../../upsells/composed/LumoComposerToggleUpsell';
 import { UploadMenu } from './UploadMenu';
 
 export interface ComposerToolbarProps {
@@ -19,16 +19,15 @@ export interface ComposerToolbarProps {
     handleFileInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     handleOpenFileDialog: () => void;
     handleBrowseDrive: () => void;
+    hasAttachments: boolean;
 
     // Upload menu state
     showUploadMenu: boolean;
     setShowUploadMenu: (show: boolean) => void;
     handleUploadButtonClick: () => void;
 
-    hasAttachments: boolean;
-
-    // UI state props
-    canShowLumoUpsellToggle: boolean;
+    //UI props
+    canShowLumoUpsellToggle?: boolean;
 }
 
 export const ComposerToolbar = ({
@@ -45,12 +44,6 @@ export const ComposerToolbar = ({
     const { isWebSearchButtonToggled, handleWebSearchButtonClick } = useWebSearch();
     const uploadButtonRef = useRef<HTMLButtonElement>(null);
     const isLumoToolingEnabled = useFlag('LumoTooling');
-
-    const shiftEnterBoldText = (
-        <kbd
-            key={c('collider_2025: Characteristic Title').t`Enter`} // only there to prevent a react warning
-        >{c('collider_2025: Characteristic Title').t`Enter`}</kbd>
-    );
 
     return (
         <div className="flex flex-row flex-nowrap items-center justify-space-between w-full mt-1">
@@ -109,17 +102,11 @@ export const ComposerToolbar = ({
             <div className="flex flex-row flex-nowrap items-center gap-2 mr-2">
                 {canShowLumoUpsellToggle ? (
                     <div className="flex flex-row">
-                        <LumoPlusToggle />
+                        <LumoComposerToggleUpsell />
                     </div>
                 ) : (
-                    <div className="hidden md:flex flex-row flex-nowrap gap-2 color-hint prompt-entry-hint">
-                        <Icon name="arrow-left-and-down" />
-                        <span className="text-xs">
-                            {c('collider_2025: Info').jt`Press ${shiftEnterBoldText} to ask`}
-                        </span>
-                    </div>
+                    <PressEnterToReturn />
                 )}
-
                 <div className={clsx('flex flex-row flex-nowrap gap-2 color-hint hidden')} id="voice-entry-mobile">
                     <Button
                         icon

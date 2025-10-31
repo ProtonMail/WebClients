@@ -2,14 +2,15 @@ import React, { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import {Banner, Button, ButtonLike, Tooltip} from '@proton/atoms';
-import {Icon, InputFieldTwo, SettingsLink, TextAreaTwo} from '@proton/components';
+import { Banner, Button, ButtonLike, Tooltip } from '@proton/atoms';
+import { Icon, InputFieldTwo, SettingsLink, TextAreaTwo } from '@proton/components';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
-import { useLumoCommon } from '../../../hooks/useLumoCommon';
 import { useLumoUserSettings } from '../../../hooks/useLumoUserSettings';
+import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
-import { safeLogger } from '../../../util/safeLogger';
+import type { LumoUserSettings } from '../../../redux/slices/lumoUserSettings';
+import { saveLumoUserSettingsToRemote } from '../../../redux/slices/lumoUserSettingsThunks';
 import {
     AVAILABLE_TRAITS,
     type PersonalizationSettings,
@@ -18,8 +19,7 @@ import {
     toggleTrait,
     updatePersonalizationSettings,
 } from '../../../redux/slices/personalization';
-import { saveLumoUserSettingsToRemote } from '../../../redux/slices/lumoUserSettingsThunks';
-import type { LumoUserSettings } from '../../../redux/slices/lumoUserSettings';
+import { safeLogger } from '../../../util/safeLogger';
 
 import './PersonalizationPanel.scss';
 
@@ -72,14 +72,14 @@ const getContextPlaceholders = () => [
 const PersonalizationPanel = () => {
     const dispatch = useLumoDispatch();
     const personalization = useLumoSelector((state) => state.personalization);
-    const { isGuest } = useLumoCommon();
+    const isGuest = useIsGuest();
 
     // Safely get user settings with error handling
     let userSettings;
     try {
         const userSettingsHook = useLumoUserSettings();
         userSettings = userSettingsHook.lumoUserSettings;
-    } catch (error) {
+    } catch {
         // Redux not available yet, this is expected during initial load
         userSettings = null;
     }
@@ -254,16 +254,16 @@ const PersonalizationPanel = () => {
         try {
             // First update the Redux state
             dispatch(savePersonalizationSettings(personalization));
-            
+
             // Get the current user settings and update it with personalization
             const updatedUserSettings: LumoUserSettings = {
                 theme: (userSettings as any)?.theme || 'auto',
-                personalization
+                personalization,
             };
-            
+
             // Directly save to remote API and wait for completion
             await dispatch(saveLumoUserSettingsToRemote(updatedUserSettings)).unwrap();
-            
+
             setLastSavedPersonalization({ ...personalization });
         } catch (error) {
             safeLogger.error('PersonalizationPanel: Failed to save personalization:', error);
@@ -275,39 +275,29 @@ const PersonalizationPanel = () => {
     return (
         <div className="personalization-panel">
             <div className="personalization-content">
-
                 {isGuest ? (
                     // Guest user: Show sign-in prompt
                     <div className="text-center py-6">
-                        <Icon name="sliders" className="mb-4" size={6}/>
-                        
+                        <Icon name="sliders" className="mb-4" size={6} />
+
                         <h3 className="text-bold mb-2">
                             {c('collider_2025: Personalization').t`Personalize your ${LUMO_SHORT_APP_NAME} experience`}
                         </h3>
-                        
+
                         <p className="color-weak mb-4 px-4">
                             {c('collider_2025: Personalization')
                                 .t`Sign in or create a free account to customize how ${LUMO_SHORT_APP_NAME} interacts with you. Set your preferences, communication style, and more.`}
                         </p>
 
-                        <div className="flex flex-column items-center gap-2 max-w-custom mx-auto" style={{ '--max-w-custom': '20rem' }}>
-                            <ButtonLike
-                                as={SettingsLink}
-                                color="norm"
-                                shape="solid"
-                                path="/signup"
-                                className="w-full"
-                            >
+                        <div
+                            className="flex flex-column items-center gap-2 max-w-custom mx-auto"
+                            style={{ '--max-w-custom': '20rem' }}
+                        >
+                            <ButtonLike as={SettingsLink} color="norm" shape="solid" path="/signup" className="w-full">
                                 {c('collider_2025: Link').t`Create a free account`}
                             </ButtonLike>
 
-                            <ButtonLike
-                                as={SettingsLink}
-                                path=""
-                                shape="outline"
-                                color="weak"
-                                className="w-full"
-                            >
+                            <ButtonLike as={SettingsLink} path="" shape="outline" color="weak" className="w-full">
                                 {c('collider_2025: Link').t`Sign in`}
                             </ButtonLike>
                         </div>
@@ -320,114 +310,117 @@ const PersonalizationPanel = () => {
                 ) : (
                     // Authenticated user: Show personalization form
                     <>
-                        <Banner className={"mt-0 mb-4"}>
+                        <Banner className={'mt-0 mb-4'}>
                             {c('Info').t`This information is zero-access encrypted.`}
                         </Banner>
 
                         <div className="flex flex-column gap-3">
-                    {/* Nickname */}
-                    <div className="personalization-field">
-                        <InputFieldTwo
-                            label={c('Label').t`What should ${LUMO_SHORT_APP_NAME} call you?`}
-                            placeholder={nicknamePlaceholders[placeholderIndices.nickname]}
-                            value={personalization.nickname}
-                            assistContainerClassName="hidden"
-                            onChange={(e) => handleInputChange('nickname', e.target.value)}
-                        />
-                    </div>
+                            {/* Nickname */}
+                            <div className="personalization-field">
+                                <InputFieldTwo
+                                    label={c('Label').t`What should ${LUMO_SHORT_APP_NAME} call you?`}
+                                    placeholder={nicknamePlaceholders[placeholderIndices.nickname]}
+                                    value={personalization.nickname}
+                                    assistContainerClassName="hidden"
+                                    onChange={(e) => handleInputChange('nickname', e.target.value)}
+                                />
+                            </div>
 
-                    {/* Job/Role */}
-                    <div className="personalization-field mt-2">
-                        <InputFieldTwo
-                            label={c('Label').t`What do you do?`}
-                            placeholder={jobPlaceholders[placeholderIndices.job]}
-                            value={personalization.jobRole}
-                            assistContainerClassName="hidden"
-                            onChange={(e) => handleInputChange('jobRole', e.target.value)}
-                        />
-                    </div>
+                            {/* Job/Role */}
+                            <div className="personalization-field mt-2">
+                                <InputFieldTwo
+                                    label={c('Label').t`What do you do?`}
+                                    placeholder={jobPlaceholders[placeholderIndices.job]}
+                                    value={personalization.jobRole}
+                                    assistContainerClassName="hidden"
+                                    onChange={(e) => handleInputChange('jobRole', e.target.value)}
+                                />
+                            </div>
 
-                    {/* Additional Context */}
-                    <div className="personalization-field mt-2">
-                        <div className="flex flex-column gap-2">
-                            <InputFieldTwo
-                                as={TextAreaTwo}
-                                label={c('Label').t`Anything else ${LUMO_SHORT_APP_NAME} should know about you?`}
-                                placeholder={contextPlaceholders[placeholderIndices.context]}
-                                value={personalization.additionalContext}
-                                assistContainerClassName="hidden"
-                                onChange={(e) => handleInputChange('additionalContext', e.target.value)}
-                                rows={4}
-                            />
-                        </div>
-                    </div>
+                            {/* Additional Context */}
+                            <div className="personalization-field mt-2">
+                                <div className="flex flex-column gap-2">
+                                    <InputFieldTwo
+                                        as={TextAreaTwo}
+                                        label={c('Label')
+                                            .t`Anything else ${LUMO_SHORT_APP_NAME} should know about you?`}
+                                        placeholder={contextPlaceholders[placeholderIndices.context]}
+                                        value={personalization.additionalContext}
+                                        assistContainerClassName="hidden"
+                                        onChange={(e) => handleInputChange('additionalContext', e.target.value)}
+                                        rows={4}
+                                    />
+                                </div>
+                            </div>
 
-                    {/* Traits */}
-                    <div className="personalization-field mt-2">
-                        {/* Lumo Traits Text Area - shows selected traits */}
-                        <InputFieldTwo
-                            as={TextAreaTwo}
-                            label={c('Label').t`How should ${LUMO_SHORT_APP_NAME} behave?`}
-                            placeholder={c('Placeholder').t`Selected traits will appear here automatically`}
-                            value={personalization.lumoTraits}
-                            assistContainerClassName="hidden"
-                            onChange={(e) => handleInputChange('lumoTraits', e.target.value)}
-                            rows={5}
-                        />
+                            {/* Traits */}
+                            <div className="personalization-field mt-2">
+                                {/* Lumo Traits Text Area - shows selected traits */}
+                                <InputFieldTwo
+                                    as={TextAreaTwo}
+                                    label={c('Label').t`How should ${LUMO_SHORT_APP_NAME} behave?`}
+                                    placeholder={c('Placeholder').t`Selected traits will appear here automatically`}
+                                    value={personalization.lumoTraits}
+                                    assistContainerClassName="hidden"
+                                    onChange={(e) => handleInputChange('lumoTraits', e.target.value)}
+                                    rows={5}
+                                />
 
-                        {/* Trait Pills - only show unselected traits */}
-                        <div className="trait-pills flex flex-wrap gap-1 mb-2">
-                            {AVAILABLE_TRAITS.filter((trait) => !personalization.traits.includes(trait.id)).map(
-                                (trait) => (
-                                    <Tooltip key={trait.id} title={trait.description}>
-                                        <Button
-                                            size="small"
-                                            shape="outline"
-                                            color="weak"
-                                            className="trait-pill"
-                                            onClick={() => handleTraitToggle(trait.id)}
+                                {/* Trait Pills - only show unselected traits */}
+                                <div className="trait-pills flex flex-wrap gap-1 mb-2">
+                                    {AVAILABLE_TRAITS.filter((trait) => !personalization.traits.includes(trait.id)).map(
+                                        (trait) => (
+                                            <Tooltip key={trait.id} title={trait.description}>
+                                                <Button
+                                                    size="small"
+                                                    shape="outline"
+                                                    color="weak"
+                                                    className="trait-pill"
+                                                    onClick={() => handleTraitToggle(trait.id)}
+                                                >
+                                                    <Icon name="plus" size={3} className="mr-1" />
+                                                    {trait.label}
+                                                </Button>
+                                            </Tooltip>
+                                        )
+                                    )}
+
+                                    {/* Show message when all traits are selected */}
+                                    {AVAILABLE_TRAITS.length === personalization.traits.length && (
+                                        <div className="text-sm color-weak italic">All traits have been selected</div>
+                                    )}
+
+                                    {/* Reset traits button - only show if traits are selected */}
+                                    {personalization.traits.length > 0 && (
+                                        <Tooltip
+                                            title={c('Tooltip').t`Clear all selected traits and restore trait buttons`}
                                         >
-                                            <Icon name="plus" size={3} className="mr-1" />
-                                            {trait.label}
-                                        </Button>
-                                    </Tooltip>
-                                )
-                            )}
-
-                            {/* Show message when all traits are selected */}
-                            {AVAILABLE_TRAITS.length === personalization.traits.length && (
-                                <div className="text-sm color-weak italic">All traits have been selected</div>
-                            )}
-
-                            {/* Reset traits button - only show if traits are selected */}
-                            {personalization.traits.length > 0 && (
-                                <Tooltip title={c('Tooltip').t`Clear all selected traits and restore trait buttons`}>
-                                    <Button
-                                        size="small"
-                                        shape="ghost"
-                                        color="weak"
-                                        className="trait-reset"
-                                        onClick={() => {
-                                            setHasUserInteracted(true);
-                                            dispatch(
-                                                updatePersonalizationSettings({
-                                                    traits: [],
-                                                    lumoTraits: '',
-                                                })
-                                            );
-                                        }}
-                                    >
-                                        <Icon name="arrow-rotate-right" size={3} />
-                                    </Button>
-                                </Tooltip>
-                            )}
+                                            <Button
+                                                size="small"
+                                                shape="ghost"
+                                                color="weak"
+                                                className="trait-reset"
+                                                onClick={() => {
+                                                    setHasUserInteracted(true);
+                                                    dispatch(
+                                                        updatePersonalizationSettings({
+                                                            traits: [],
+                                                            lumoTraits: '',
+                                                        })
+                                                    );
+                                                }}
+                                            >
+                                                <Icon name="arrow-rotate-right" size={3} />
+                                            </Button>
+                                        </Tooltip>
+                                    )}
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
                     </>
                 )}
             </div>
-            
+
             {/* Fixed Footer - only show for authenticated users */}
             {!isGuest && (
                 <div className="personalization-footer flex items-center">
