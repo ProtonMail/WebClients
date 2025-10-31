@@ -112,3 +112,100 @@ export const FormCheckbox = createComponent(function FormRadio({
     </label>
   )
 })
+
+export const Input = createComponent(function Input(props: ComponentPropsWithRef<'input'>) {
+  return (
+    <input
+      {...props}
+      className={clsx(
+        'h-[36px] text-ellipsis rounded-lg border border-[#ADABA8] px-3 !outline-none',
+        'transition focus-visible:border-[#6D4AFF] focus-visible:ring-[3px] focus-visible:ring-[#6D4AFF33]',
+        props.className,
+      )}
+    />
+  )
+})
+
+export const Select = createComponent(function Select({ children, ...props }: Ariakit.SelectProps) {
+  return (
+    <Ariakit.Select
+      {...props}
+      className={clsx(
+        'flex h-[36px] min-w-0 items-center gap-2 rounded-lg border border-[#ADABA8] pl-3 text-left text-sm !outline-none',
+        'transition focus-visible:border-[#6D4AFF] focus-visible:ring-[3px] focus-visible:ring-[#6D4AFF33]',
+        props.className,
+      )}
+    >
+      {children}
+      <span className="pointer-events-none ml-auto flex shrink-0 items-center pr-2">
+        <Icon className="shrink-0" legacyName="chevron-down-filled" />
+      </span>
+    </Ariakit.Select>
+  )
+})
+
+export const SelectPopover = createComponent(function (props: Ariakit.SelectPopoverProps) {
+  return (
+    <Ariakit.SelectPopover
+      gutter={4}
+      {...props}
+      className={clsx(
+        'rounded-lg bg-[white] shadow-[0px_8px_24px_rgba(0,0,0,.16)] !outline-none ring-1 ring-[black]/10',
+        'isolate z-[1] max-h-[min(var(--popover-available-height,440px),440px)] min-w-[140px] overflow-y-auto overscroll-y-contain',
+        props.className,
+      )}
+    />
+  )
+})
+
+export const SelectItem = createComponent(function SelectItem(props: Ariakit.SelectItemProps) {
+  return (
+    <Ariakit.SelectItem
+      {...props}
+      className={clsx(
+        'flex h-[36px] cursor-pointer items-center gap-2 px-4 text-sm text-[#281D1B] !outline-none data-[active-item]:bg-[black]/5',
+        props.className,
+      )}
+    />
+  )
+})
+
+export const Menu = createComponent(function Menu(props: Ariakit.MenuProps) {
+  return (
+    <Ariakit.Menu
+      gutter={4}
+      {...props}
+      className={clsx(
+        'rounded-lg bg-[white] shadow-[0px_8px_24px_rgba(0,0,0,.16)] !outline-none ring-1 ring-[black]/10',
+        'isolate z-[1] max-h-[min(var(--popover-available-height,440px),440px)] overflow-y-auto overscroll-y-contain',
+        props.className,
+      )}
+    />
+  )
+})
+
+export const MenuItem = createComponent(function MenuItem(props: Ariakit.MenuItemProps) {
+  return (
+    <Ariakit.MenuItem
+      {...props}
+      className={clsx(
+        'flex h-[36px] cursor-pointer items-center gap-2 px-4 text-sm text-[#281D1B] !outline-none aria-disabled:opacity-50 data-[active-item]:bg-[black]/5',
+        props.className,
+      )}
+    />
+  )
+})
+
+export const ToggleButton = createComponent(function ToggleButton(props: Ariakit.CheckboxProps) {
+  return (
+    <Ariakit.Checkbox
+      render={<Ariakit.Button />}
+      {...props}
+      className={clsx(
+        'inline-flex h-[36px] items-center gap-2 rounded-lg border border-[#ADABA8] px-3 text-sm text-[#0C0C14] hover:bg-[black]/[0.03] aria-checked:bg-[#C2C0BE59] aria-disabled:opacity-50',
+        '!outline-none transition focus-visible:border-[#6D4AFF] focus-visible:ring-[3px] focus-visible:ring-[#6D4AFF33]',
+        props.className,
+      )}
+    />
+  )
+})
