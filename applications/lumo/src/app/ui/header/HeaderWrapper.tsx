@@ -8,7 +8,6 @@ import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import useFlag from '@proton/unleash/useFlag';
 
 import { useIsGuest } from '../../providers/IsGuestProvider';
-import { useLumoPlan } from '../../providers/LumoPlanProvider';
 import { useSidebar } from '../../providers/SidebarProvider';
 import { getIsMobileDevice } from '../../util/device';
 import { NewLabel } from '../components/NewLabel';
@@ -34,10 +33,9 @@ export const HeaderWrapper = ({ children }: HeaderWrapperProps) => {
     const { isVisible: isSideMenuOpen, toggle: toggleSideMenu } = useSidebar();
     const { isSmallScreen } = useSidebar();
     const isLumoB2BEnabled = useFlag('LumoB2B');
-    const { isLumoPlanLoading, isB2BAudience } = useLumoPlan();
 
     const isMobileDevice = getIsMobileDevice();
-    const showB2BSignUpLink = isLumoB2BEnabled && !isLumoPlanLoading && isB2BAudience && !isMobileDevice;
+    const showB2BSignUpLink = isLumoB2BEnabled && !isMobileDevice;
 
     return (
         <>
@@ -64,7 +62,7 @@ export const HeaderWrapper = ({ children }: HeaderWrapperProps) => {
                             {showB2BSignUpLink && (
                                 <li className="pt-1 no-print">
                                     <Href
-                                        href="https://account.proton.me/lumo/signup/business"
+                                        href="https://lumo.proton.me/business"
                                         className="inline-flex py-3 px-4 color-weak text-no-decoration flex flex-row items-center gap-1"
                                     >
                                         {c('collider_2025: Top nav link').t`For Business`}
