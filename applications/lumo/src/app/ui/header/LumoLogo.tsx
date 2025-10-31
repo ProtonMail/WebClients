@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import lumoBusinessLogoDark from '@proton/styles/assets/img/lumo/lumo-business-logo-dark.svg';
 import lumoBusinessLogo from '@proton/styles/assets/img/lumo/lumo-business-logo.svg';
-import lumoLogoDark from '@proton/styles/assets/img/lumo/lumo-logo-V3-dark.svg';
-import lumoLogo from '@proton/styles/assets/img/lumo/lumo-logo-V3.svg';
+import lumoLogoDark from '@proton/styles/assets/img/lumo/lumo-logo-v4-dark.svg';
+import lumoLogo from '@proton/styles/assets/img/lumo/lumo-logo-v4.svg';
 import useFlag from '@proton/unleash/useFlag';
 
 import { useGuestChatHandler } from '../../hooks/useGuestChatHandler';
