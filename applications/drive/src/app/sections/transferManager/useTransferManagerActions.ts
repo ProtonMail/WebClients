@@ -48,7 +48,7 @@ export const useTransferManagerActions = () => {
             downloadManager.retry([entry.id]);
         }
         if (entry.type === 'upload') {
-            console.warn('TBI: retry logic', entry);
+            uploadManager.retryUpload(entry.id);
         }
     };
 

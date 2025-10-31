@@ -93,10 +93,10 @@ export function initUploadFileWorker(
                       if (!thumbnailResult.ok || !thumbnailResult.result) {
                           return undefined;
                       }
-                      const legacyThumbnails = thumbnailResult.result.thumbnails?.map((thumbnail) => {
+                      const legacyThumbnails = thumbnailResult.result.thumbnails?.map(({ thumbnail, type }) => {
                           return {
-                              thumbnailData: thumbnail.thumbnailData,
-                              thumbnailType: mapNewThumbnailTypeToLegacy(thumbnail.thumbnailType),
+                              thumbnailData: thumbnail,
+                              thumbnailType: mapNewThumbnailTypeToLegacy(type),
                           };
                       });
                       return {
