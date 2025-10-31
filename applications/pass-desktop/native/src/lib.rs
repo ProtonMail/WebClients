@@ -45,8 +45,8 @@ pub mod clipboard {
     use super::clipboards::*;
 
     #[napi]
-    pub async fn write_text(text: String, sensitive: bool, immediate: bool) -> napi::Result<()> {
-        Clipboard::write(&text, sensitive, immediate).map_err(|e| napi::Error::from_reason(e.to_string()))
+    pub async fn write_text(text: String, sensitive: bool) -> napi::Result<()> {
+        Clipboard::write(&text, sensitive).map_err(|e| napi::Error::from_reason(e.to_string()))
     }
 
     #[napi]
