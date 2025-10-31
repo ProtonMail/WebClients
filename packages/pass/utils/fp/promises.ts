@@ -95,16 +95,16 @@ export const asyncQueue = <F extends (...args: any[]) => Promise<any>>(fn: F, op
 
 export type CancelablePromise<T> = Promise<T> & { cancel: () => void };
 
-export const cancelable = <T>(promise: Promise<T>, canceled: boolean = false) => {
-    const cancelablePromise = new Promise(async (resolve, reject) => {
-        const result = await promise;
-        return canceled ? reject() : resolve(result);
-    }) as CancelablePromise<T>;
-
-    cancelablePromise.cancel = () => (canceled = true);
-
-    return cancelablePromise;
-};
+export const cancelable = <T>(job: () => Promise<T>, canceled: boolean = false) => ({
+    run: () =>
+        new Promise<T>(async (resolve, reject) => {
+            const result = await job();
+            return canceled ? reject() : resolve(result);
+        }),
+    cancel: () => {
+        canceled = true;
+    },
+});
 
 /** Processes array items sequentially through an async function */
 export const seq = async <T, R>(items: T[], job: (item: T) => MaybePromise<R>): Promise<R[]> => {
