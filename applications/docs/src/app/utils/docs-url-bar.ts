@@ -7,14 +7,15 @@ import { getAppHref } from '@proton/shared/lib/apps/helper'
 import type { DocumentType, RedirectAction } from '@proton/drive-store/store/_documents'
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper'
 import { useLocation } from 'react-router-dom-v5-compat'
-import { useIsSheetsEnabled } from './misc'
 
-export function useDocsUrlBar({ isDocsEnabled = true }: { isDocsEnabled?: boolean } = {}) {
+export function useDocsUrlBar({
+  isDocsEnabled = true,
+  isSheetsEnabled = false,
+}: { isDocsEnabled?: boolean; isSheetsEnabled?: boolean } = {}) {
   const { getLocalID } = useAuthentication()
 
   const { pathname, search } = useLocation()
   const searchParams = useMemo(() => new URLSearchParams(search), [search])
-  const isSheetsEnabled = useIsSheetsEnabled()
   const [openAction, setOpenAction] = useState<DocumentAction | null>(
     parseOpenAction(searchParams, pathname, isSheetsEnabled),
   )
