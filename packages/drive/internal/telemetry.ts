@@ -8,28 +8,17 @@ import type {
     MetricVerificationErrorEvent,
     MetricVolumeEventsSubscriptionsChangedEvent,
 } from '@protontech/drive-sdk';
-import type { MetricRecord } from '@protontech/drive-sdk/dist/telemetry';
-import {
-    ConsoleLogHandler,
-    LogFilter,
-    LogLevel,
-    MemoryLogHandler,
-    Telemetry,
-} from '@protontech/drive-sdk/dist/telemetry';
+import type { LogHandler, MetricRecord } from '@protontech/drive-sdk/dist/telemetry';
+import { LogFilter, LogLevel, Telemetry } from '@protontech/drive-sdk/dist/telemetry';
 
 import metrics from '@proton/metrics';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-
-import { SentryLogHandler } from './logHandlers/sentryLogHandler';
 
 export type UserPlan = 'free' | 'paid' | 'anonymous' | 'unknown';
 
 const REPORT_ERRORING_USERS_INTERVAL = 5 * 60 * 1000; // 5 minutes
 
-export function initTelemetry(userPlan: UserPlan = 'unknown', debug = false) {
-    const memoryLogHandler = new MemoryLogHandler();
-    const sentryLogHandler = new SentryLogHandler();
-
+export function initTelemetry(userPlan: UserPlan = 'unknown', logHandler: LogHandler, debug = false) {
     const telemetry = new Telemetry({
         logFilter: new LogFilter({
             globalLevel: debug ? LogLevel.DEBUG : LogLevel.INFO,
@@ -37,14 +26,11 @@ export function initTelemetry(userPlan: UserPlan = 'unknown', debug = false) {
                 api: debug ? LogLevel.DEBUG : LogLevel.WARNING,
             },
         }),
-        logHandlers: [new ConsoleLogHandler(), memoryLogHandler, sentryLogHandler],
+        logHandlers: [logHandler],
         metricHandlers: [new MetricHandler(userPlan)],
     });
 
-    return {
-        telemetry,
-        memoryLogHandler,
-    };
+    return telemetry;
 }
 
 export class MetricHandler {
