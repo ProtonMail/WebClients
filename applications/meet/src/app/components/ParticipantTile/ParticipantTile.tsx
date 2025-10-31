@@ -61,7 +61,8 @@ export const ParticipantTile = ({ participant, viewSize = 'large' }: Participant
         !!cameraVideoPublication &&
         !!cameraVideoPublication.track &&
         !cameraVideoPublication.isMuted &&
-        ((!disableVideos && !participantsWithDisabledVideos.includes(participant.identity)) || participant.isLocal);
+        ((!disableVideos && !participantsWithDisabledVideos.includes(participant.identity)) ||
+            participant.identity === localParticipant.identity);
 
     const isSpeaking = useDebouncedSpeakingStatus(participant);
 
