@@ -101,7 +101,7 @@ const LumoMainText = ({ isOnboardingCompleted, isSmallScreen, isGhostMode }: Lum
         return (
             <div className="mx-auto md:mx-0">
                 <h1 className={textClassName}>{displayText}</h1>
-                <p className={clsx('color-weak text-lg md:text-xl', isSmallScreen && 'text-center')}>
+                <p className={clsx('color-weak text-lg md:text-xl mt-2 mb-0', isSmallScreen && 'text-center')}>
                     {c('collider_2025:Title').t`This chat disappears when you close it and is never saved.`}
                 </p>
             </div>
