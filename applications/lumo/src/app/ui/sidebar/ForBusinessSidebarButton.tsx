@@ -1,27 +1,23 @@
-import React from 'react';
-
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import useFlag from '@proton/unleash/useFlag';
 
-import { useLumoPlan } from '../../providers/LumoPlanProvider';
 import { getIsMobileDevice } from '../../util/device';
 import { NewLabel } from '../components/NewLabel';
 
 const LumoB2BUpsellLink = ({ isSmallScreen }: { isSmallScreen: boolean }) => {
     const isLumoB2BEnabled = useFlag('LumoB2B');
-    const { isLumoPlanLoading, hasLumoB2B, isB2BAudience } = useLumoPlan();
 
     const isMobileDevice = getIsMobileDevice();
 
-    if (!isLumoB2BEnabled || hasLumoB2B || isLumoPlanLoading || !isSmallScreen || isMobileDevice || !isB2BAudience) {
+    if (!isLumoB2BEnabled || !isSmallScreen || isMobileDevice) {
         return null;
     }
     return (
         <Href
-            href="https://account.proton.me/lumo/signup/business"
+            href="https://lumo.proton.me/business"
             className="sidebar-item color-norm flex flex-row items-center flex-nowrap"
         >
             <div className="sidebar-item-icon">
