@@ -147,9 +147,8 @@ const AuthenticatedLumoPlanProvider = ({ children }: { children: ReactNode }) =>
     const showLumoUpsellB2B = !hasLumoPlus && hasOrganization && userCanPay;
     const showTalkToAdminLumoUpsell = hasOrganization && isMember(user);
     const hasLumoAndCanManageSubscription = hasLumoPlus && canPay(user);
-    const isB2BAudience = showLumoUpsellFree || (user.isPaid && !isOrganization(organization));
+    const isB2BAudience = !hasLumoB2B && userCanPay;
     const userIsMember = isMember(user);
-    console.log('debug: user is member', userIsMember);
 
     const value: LumoPlanData = {
         // Basic user classification
