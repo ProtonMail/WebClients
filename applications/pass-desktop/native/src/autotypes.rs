@@ -1,6 +1,8 @@
 #[cfg(target_os = "linux")]
 use crate::clipboards::{Clipboard, ClipboardTrait};
 use anyhow::{Error, Result};
+#[cfg(target_os = "linux")]
+use arboard::SetExtLinux;
 use enigo::{
     Direction::{Click, Press, Release},
     Enigo, Key, Keyboard, Settings,
@@ -65,16 +67,23 @@ impl Autotype {
         Related issue: https://github.com/enigo-rs/enigo/issues/404. */
         #[cfg(target_os = "linux")]
         {
-            // Save current clipboard value to restore it after autotype is done
-            let initial_clipboard_value = Clipboard::read()?;
+            Clipboard::chain(|clipboard| {
+                // Save current clipboard value to restore it after autotype is done
+                let initial_clipboard_value = clipboard.get_text()?;
 
-            for (idx, field) in fields.iter().enumerate() {
-                Clipboard::write(field, true, true)?;
-                self.paste()?;
-                self.perform_separator(idx, fields_len, enter_at_the_end)?;
-            }
+                for (idx, field) in fields.iter().enumerate() {
+                    clipboard.set().exclude_from_history().text(field)?;
+                    self.paste()?;
+                    self.perform_separator(idx, fields_len, enter_at_the_end)?;
+                }
 
-            Clipboard::write(&initial_clipboard_value, true, true)?;
+                clipboard
+                    .set()
+                    .exclude_from_history()
+                    .wait()
+                    .text(initial_clipboard_value)?;
+                Ok(())
+            })?;
         }
 
         #[cfg(not(target_os = "linux"))]

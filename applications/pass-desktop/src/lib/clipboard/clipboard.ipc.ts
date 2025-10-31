@@ -12,5 +12,5 @@ declare module 'proton-pass-desktop/lib/ipc' {
 
 export const setupIpcHandlers = () => {
     setupIpcHandler('clipboard:read', () => clipboardNative.read());
-    setupIpcHandler('clipboard:write', (_event, text) => clipboardNative.writeText(text, true, false).catch(noop));
+    setupIpcHandler('clipboard:write', (_event, text) => clipboardNative.writeText(text, true).catch(noop));
 };
