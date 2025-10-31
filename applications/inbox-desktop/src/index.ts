@@ -23,11 +23,12 @@ import { handleStartupMailto, handleAppReadyMailto } from "./utils/protocol/mail
 import { handleDeepLink, handleStartupDeepLink } from "./utils/protocol/deep_links";
 import { checkDefaultProtocols } from "./utils/protocol/default";
 import { initializeSentry } from "./utils/sentry";
-import { startFeatureCheck, setRequestPermission, extendAppVersionHeader } from "./utils/session";
+import { setRequestPermission, extendAppVersionHeader } from "./utils/session";
 import { captureTopLevelRejection, captureUncaughtErrors } from "./utils/log/captureUncaughtErrors";
 import { logInitialAppInfo } from "./utils/log/logInitialAppInfo";
 import metrics from "./utils/metrics";
 import { measureRequestTime } from "./utils/log/measureRequestTime";
+import { initializeFeatureFlagManager } from "./utils/flags/manager";
 
 (async function () {
     initializeLog();
@@ -143,7 +144,7 @@ import { measureRequestTime } from "./utils/log/measureRequestTime";
         bringWindowToFront();
     });
 
-    startFeatureCheck();
+    initializeFeatureFlagManager();
     setRequestPermission();
     extendAppVersionHeader();
 })().catch(captureTopLevelRejection);
