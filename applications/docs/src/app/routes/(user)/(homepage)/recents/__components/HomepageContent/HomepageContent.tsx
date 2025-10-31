@@ -1,23 +1,18 @@
-import { ButtonLike, CircleLoader } from '@proton/atoms'
+import { CircleLoader } from '@proton/atoms'
 import type { TableVariant } from './DocumentsTable'
 import { DocumentsTable } from './DocumentsTable'
 import { InvitesTable } from './InvitesTable'
 import { ContextMenuProvider } from './DocContextMenu/context'
-import { getAppHref } from '@proton/shared/lib/apps/helper'
-import { APPS } from '@proton/shared/lib/constants'
-import { Icon, useAuthentication } from '@proton/components'
+import { Icon } from '@proton/components'
 import { c } from 'ttag'
 import { useHomepageView } from '../../__utils/homepage-view'
 import { useEffect } from 'react'
 import { ContentSheet } from './shared'
-import { useIsSheetsEnabled } from '~/utils/misc'
 import emptyStateRecentsImage from './empty-state-recents.svg'
 import emptyStateImage from './empty-state.svg'
 import clsx from '@proton/utils/clsx'
-import { useApplication } from '~/utils/application-context'
-import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
-
-const REFRESH_AFTER_NEW_DOCUMENT = 10000 // ms
+import * as Ariakit from '@ariakit/react'
+import { NewDocumentMenu } from './NewDocumentMenu'
 
 export function HomepageContent() {
   return (
@@ -119,11 +114,6 @@ function getEmptyStateText(variant: EmptyStateVariant): string {
 }
 
 function EmptyState({ variant }: EmptyStateProps) {
-  const application = useApplication()
-  const { getLocalID } = useAuthentication()
-  const isSheetsEnabled = useIsSheetsEnabled()
-  const { updateRecentDocuments } = useHomepageView()
-
   return (
     <ContentSheet isBottom className="flex shrink-0 grow items-center justify-center">
       <div className="flex flex-col items-center gap-6 p-8">
@@ -136,42 +126,15 @@ function EmptyState({ variant }: EmptyStateProps) {
         <p className="text-bold m-0 mb-1 max-w-[25rem] text-center text-2xl">{getEmptyStateText(variant)}</p>
         <div className="flex justify-center">
           {variant === 'recents' ? (
-            <ButtonLike
-              as="a"
-              href={getAppHref('/doc', APPS.PROTONDOCS, getLocalID())}
-              target="_blank"
-              color="norm"
-              size="large"
-              shape="solid"
-              onClick={() => {
-                application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.document_created)
-                setTimeout(updateRecentDocuments, REFRESH_AFTER_NEW_DOCUMENT)
-              }}
-              style={{ backgroundColor: 'var(--docs-blue-color)' }}
-              className="flex items-center justify-center gap-2"
-            >
-              <Icon name="brand-proton-docs" />
-              {c('Action').t`New document`}
-            </ButtonLike>
+            <Ariakit.MenuProvider placement="top">
+              <Ariakit.MenuButton className="flex items-center justify-center gap-2 rounded-[0.5rem] !bg-[--docs-blue-color] px-4 py-2.5 text-[#fff]">
+                <Icon name="plus" />
+                New
+              </Ariakit.MenuButton>
+              <NewDocumentMenu />
+            </Ariakit.MenuProvider>
           ) : null}
         </div>
-        {variant === 'recents' && isSheetsEnabled ? (
-          <div className="flex justify-center">
-            <ButtonLike
-              as="a"
-              href={getAppHref('/sheet', APPS.PROTONDOCS, getLocalID())}
-              target="_blank"
-              color="norm"
-              size="large"
-              shape="solid"
-              style={{ backgroundColor: 'var(--docs-blue-color)' }}
-              className="flex items-center justify-center gap-2"
-            >
-              <Icon name="plus" />
-              {c('sheets_2025:Action').t`New spreadsheet`}
-            </ButtonLike>
-          </div>
-        ) : null}
       </div>
     </ContentSheet>
   )
