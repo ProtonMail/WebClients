@@ -4,17 +4,19 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import { Icon } from '@proton/components';
-import { isMobile } from '@proton/shared/lib/helpers/browser';
 import useFlag from '@proton/unleash/useFlag';
 
 import { useLumoPlan } from '../../providers/LumoPlanProvider';
+import { getIsMobileDevice } from '../../util/device';
 import { NewLabel } from '../components/NewLabel';
 
 const LumoB2BUpsellLink = ({ isSmallScreen }: { isSmallScreen: boolean }) => {
     const isLumoB2BEnabled = useFlag('LumoB2B');
     const { isLumoPlanLoading, hasLumoB2B, isB2BAudience } = useLumoPlan();
 
-    if (!isLumoB2BEnabled || hasLumoB2B || isLumoPlanLoading || !isSmallScreen || isMobile() || !isB2BAudience) {
+    const isMobileDevice = getIsMobileDevice();
+
+    if (!isLumoB2BEnabled || hasLumoB2B || isLumoPlanLoading || !isSmallScreen || isMobileDevice || !isB2BAudience) {
         return null;
     }
     return (
