@@ -10,7 +10,7 @@ import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { OnboardingLockSetup } from '@proton/pass/components/Onboarding/OnboardingLockSetup';
 import type { WithSpotlightRenderProps } from '@proton/pass/components/Spotlight/WithSpotlight';
-import { useLockSetup } from '@proton/pass/hooks/useLockSetup';
+import { useLockSetup } from '@proton/pass/hooks/auth/useLockSetup';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 
 import './OnboardingModal.scss';

@@ -4,8 +4,8 @@ import { Card } from '@proton/atoms/Card/Card';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
+import { useLockAutoSubmit } from '@proton/pass/hooks/auth/useLockAutoSubmit';
 import type { AsyncModalState } from '@proton/pass/hooks/useAsyncModalHandles';
-import { useSessionLockPinSubmitEffect } from '@proton/pass/hooks/useSessionLockPinSubmitEffect';
 
 import { PinCodeInput } from './PinCodeInput';
 
@@ -18,7 +18,7 @@ type Props = AsyncModalState<PinUnlockModalState> & {
 
 export const PinUnlockModal: FC<Props> = ({ title, assistiveText, loading, onSubmit, ...modalProps }) => {
     const [value, setValue] = useState<string>('');
-    useSessionLockPinSubmitEffect(value, { onSubmit });
+    useLockAutoSubmit(value, { onSubmit });
 
     useEffect(() => {
         if (!modalProps.open) setValue('');
