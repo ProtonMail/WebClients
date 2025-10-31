@@ -22,6 +22,7 @@ import {
     toV5PaymentToken,
 } from '@proton/payments';
 import { getChargebeeErrorMessage } from '@proton/payments/ui';
+import { isProduction } from '@proton/shared/lib/helpers/sentry';
 import type { Api } from '@proton/shared/lib/interfaces';
 import useFlag from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
@@ -345,7 +346,8 @@ export const useGooglePayDependencies = (
     }
 ) => {
     const googlePayEnabled = useFlag('GooglePay');
-    const isWhitelistedDomain = ['account.proton.me'].includes(window.location.hostname);
+    const isWhitelistedDomain =
+        ['account.proton.me'].includes(window.location.hostname) || !isProduction(window.location.hostname);
     const canUseGooglePay = googlePayEnabled && isWhitelistedDomain;
 
     const { createNotification } = useNotifications();
