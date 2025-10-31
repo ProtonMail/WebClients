@@ -2,14 +2,13 @@ import {
     NodeType,
     NodeWithSameNameExistsValidationError,
     type ProtonDriveClient,
-    ThumbnailType,
     type UploadController,
     getDrive,
 } from '@proton/drive';
+import { generateThumbnail } from '@proton/drive/modules/thumbnails';
+import { getItem } from '@proton/shared/lib/helpers/storage';
 
-import { ThumbnailType as LegacyThumbnailType, type ThumbnailInfo, getMediaInfo } from '../../store/_uploads/media';
 import { UploadConflictStrategy, UploadConflictType } from './types';
-import { mediaTypeFromFile } from './utils/mediaTypeParser';
 
 export enum UploadEventType {
     Progress = 'progress',
@@ -30,14 +29,6 @@ type ErrorEvent = { error: unknown };
 type CompleteEvent = { nodeUid: string };
 type ControllerReadyEvent = { controller: UploadController; abortController: AbortController };
 
-const legacyThumbnailAdapter = (thumbnails: ThumbnailInfo[]) =>
-    thumbnails.map(({ thumbnailType, thumbnailData }) => {
-        return {
-            type: thumbnailType === LegacyThumbnailType.PREVIEW ? ThumbnailType.Type1 : ThumbnailType.Type2,
-            thumbnail: thumbnailData,
-        };
-    });
-
 export type UploadEvent =
     | ({ type: UploadEventType.Progress } & ProgressEvent)
     | { type: UploadEventType.Skip }
@@ -46,56 +37,44 @@ export type UploadEvent =
     | ({ type: UploadEventType.ControllerReady } & ControllerReadyEvent)
     | ({ type: UploadEventType.ConflictFound } & ConflictFoundEvent);
 
-interface MediaData {
-    mediaInfo: Awaited<ReturnType<typeof getMediaInfo>>;
-    mediaType: string;
-}
-
 interface UploadMetadata {
     mediaType: string;
     expectedSize: number;
     overrideExistingDraftByOtherClient?: boolean;
     modificationTime?: Date;
-    additionalMetadata?: {
-        width: number;
-        height: number;
-        duration?: number;
+    additionalMetadata: {
+        media: {
+            width?: number;
+            height?: number;
+            duration?: number;
+        };
     };
-}
-
-async function prepareMediaData(file: File): Promise<MediaData> {
-    const mediaTypePromise = mediaTypeFromFile(file);
-    const mediaInfo = await getMediaInfo(mediaTypePromise, file);
-    const mediaType = await mediaTypePromise;
-    return { mediaInfo, mediaType };
 }
 
 function createUploadMetadata(params: {
     mediaType: string;
     fileSize: number;
     modificationTime?: Date;
-    mediaInfo?: MediaData['mediaInfo'];
+    mediaInfo?: {
+        width?: number;
+        height?: number;
+        duration?: number;
+    };
 }): UploadMetadata {
     const { mediaType, fileSize, modificationTime, mediaInfo } = params;
 
     const metadata: UploadMetadata = {
         mediaType,
         expectedSize: fileSize,
+        additionalMetadata: {
+            media: {
+                width: mediaInfo?.width,
+                height: mediaInfo?.height,
+                duration: mediaInfo?.duration,
+            },
+        },
+        modificationTime,
     };
-
-    if (modificationTime) {
-        metadata.modificationTime = modificationTime;
-    }
-
-    if (mediaInfo && mediaInfo.width !== undefined && mediaInfo.height !== undefined) {
-        metadata.additionalMetadata = {
-            width: mediaInfo.width,
-            height: mediaInfo.height,
-        };
-        if (mediaInfo.duration !== undefined) {
-            metadata.additionalMetadata.duration = mediaInfo.duration;
-        }
-    }
 
     return metadata;
 }
@@ -144,11 +123,20 @@ export const startUpload = async (
 ): Promise<void> => {
     const drive = getDrive();
     const abortController = new AbortController();
-    const { mediaInfo, mediaType } = await prepareMediaData(file);
-
+    const { mimeTypePromise, thumbnailsPromise } = generateThumbnail(file, file.name, file.size, {
+        debug: Boolean(getItem('proton-drive-debug', 'false')),
+    });
+    const thumbnailsResult = await thumbnailsPromise;
+    const mediaInfo = thumbnailsResult.ok
+        ? {
+              duration: thumbnailsResult.result?.duration,
+              width: thumbnailsResult.result?.width,
+              height: thumbnailsResult.result?.height,
+          }
+        : undefined;
     try {
         const metadata = createUploadMetadata({
-            mediaType,
+            mediaType: await mimeTypePromise,
             fileSize: file.size,
             modificationTime: new Date(file.lastModified),
             mediaInfo,
@@ -157,7 +145,7 @@ export const startUpload = async (
         const fileUploader = await drive.getFileUploader(parentUid, file.name, metadata, abortController.signal);
         const uploadController = await fileUploader.uploadFromFile(
             file,
-            mediaInfo?.thumbnails ? legacyThumbnailAdapter(mediaInfo.thumbnails) : [],
+            thumbnailsResult.ok && thumbnailsResult.result?.thumbnails ? thumbnailsResult.result?.thumbnails : [],
             (uploadedBytes: number) => {
                 onChange({
                     type: UploadEventType.Progress,
@@ -202,7 +190,7 @@ export const startUpload = async (
             }
 
             const metadata = createUploadMetadata({
-                mediaType,
+                mediaType: await mimeTypePromise,
                 fileSize: file.size,
             });
 
@@ -218,7 +206,7 @@ export const startUpload = async (
 
             const uploadController = await fileUploader.uploadFromFile(
                 file,
-                mediaInfo?.thumbnails ? legacyThumbnailAdapter(mediaInfo.thumbnails) : [],
+                thumbnailsResult.ok && thumbnailsResult.result?.thumbnails ? thumbnailsResult.result?.thumbnails : [],
                 (uploadedBytes: number) => {
                     onChange({
                         type: UploadEventType.Progress,

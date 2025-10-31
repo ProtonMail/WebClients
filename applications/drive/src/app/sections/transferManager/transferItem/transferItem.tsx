@@ -25,7 +25,8 @@ const getStatusLabel = (entry: TransferManagerEntry): string | undefined => {
         [BaseTransferStatus.PausedServer]: undefined,
         [UploadStatus.ConflictFound]: undefined,
         [UploadStatus.ParentCancelled]: undefined,
-        [UploadStatus.Skipped]: undefined,
+        // TODO: Probably we do not want skipped but cancelled of the item. Makes more sense but need update on uploadManager
+        [UploadStatus.Skipped]: c('Info').t`Skipped`,
         [DownloadStatus.Finalizing]: undefined,
     };
     return labels[entry.status];
