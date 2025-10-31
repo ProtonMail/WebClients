@@ -6,10 +6,10 @@ import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { PinCodeInput } from '@proton/pass/components/Lock/PinCodeInput';
+import { useLockAutoSubmit } from '@proton/pass/hooks/auth/useLockAutoSubmit';
 import { useUnlockGuard } from '@proton/pass/hooks/auth/useUnlockGuard';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { useRerender } from '@proton/pass/hooks/useRerender';
-import { useSessionLockPinSubmitEffect } from '@proton/pass/hooks/useSessionLockPinSubmitEffect';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { unlock } from '@proton/pass/store/actions';
 
@@ -35,7 +35,7 @@ export const PinUnlock: FC<Props> = ({ offlineEnabled, onLoading, onOffline }) =
     const onSubmit = (secret: string) => sessionUnlock.dispatch({ mode: LockMode.SESSION, secret });
 
     useUnlockGuard({ offlineEnabled, onOffline: () => setValue('') });
-    useSessionLockPinSubmitEffect(value, { onSubmit });
+    useLockAutoSubmit(value, { onSubmit });
     useEffect(() => onLoading?.(sessionUnlock.loading), [sessionUnlock.loading]);
 
     return (

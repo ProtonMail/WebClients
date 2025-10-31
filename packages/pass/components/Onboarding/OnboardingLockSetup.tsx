@@ -9,7 +9,7 @@ import type { IconName } from '@proton/icons/types';
 import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { LockTTLField } from '@proton/pass/components/Lock/LockTTLField';
 import { PassPlusPromotionButton } from '@proton/pass/components/Upsell/PassPlusPromotionButton';
-import { useLockSetup } from '@proton/pass/hooks/useLockSetup';
+import { useLockSetup } from '@proton/pass/hooks/auth/useLockSetup';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { isMac } from '@proton/shared/lib/helpers/browser';
