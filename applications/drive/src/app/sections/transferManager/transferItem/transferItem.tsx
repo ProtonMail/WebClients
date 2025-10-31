@@ -53,10 +53,10 @@ const getItemIconByStatus = (entry: TransferManagerEntry) => {
 };
 
 export const TransferItem = ({ entry, onShare }: Props) => {
-    // const showLocationText = c('Action').t`Show location`;
+    const showLocationText = c('Action').t`Show location`;
     const totalSize = entry.type === 'download' ? entry.storageSize : entry.clearTextSize;
     const transferredTotal = `${shortHumanSize(entry.transferredBytes)} / ${shortHumanSize(totalSize)}`;
-    const { cancelTransfer, retryTransfer } = useTransferManagerActions();
+    const { cancelTransfer, retryTransfer, goToLocation } = useTransferManagerActions();
 
     return (
         <div
@@ -69,13 +69,25 @@ export const TransferItem = ({ entry, onShare }: Props) => {
             </div>
             <div className="flex-1 max-w-full text-ellipsis ">
                 <span className="text-nowrap text-rg">{entry.name}</span>
-                <div className="gap-1 flex">
+                <div className="gap-1 flex items-center">
                     <span className="text-sm color-weak">{getStatusLabel(entry)}</span>
 
-                    {/* TBI for upload only */}
-                    {/* {entry.status === BaseTransferStatus.Finished && (
-                        <span className="text-ellipsis text-nowrap text-sm color-weak">{showLocationText}</span>
-                    )} */}
+                    {entry.type === 'upload' && entry.status === BaseTransferStatus.Finished && (
+                        <>
+                            <span aria-hidden="true" className="text-sm text-weak">
+                                &middot;
+                            </span>
+                            <Button
+                                color="weak"
+                                shape="underline"
+                                size="small"
+                                className="text-sm text-weak"
+                                onClick={() => goToLocation(entry)}
+                            >
+                                {showLocationText}
+                            </Button>
+                        </>
+                    )}
                     {entry.status !== BaseTransferStatus.Finished && (
                         <>
                             <span aria-hidden="true" className="text-sm text-weak">
