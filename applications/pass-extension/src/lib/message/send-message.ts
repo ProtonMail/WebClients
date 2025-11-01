@@ -11,7 +11,7 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Tabs } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
-import type { ClientEndpoint, TabId } from '@proton/pass/types';
+import type { ClientEndpoint, Maybe, TabId } from '@proton/pass/types';
 
 export class MessageVersionMismatchError extends Error {
     name = 'MessageVersionMismatchError';
@@ -62,7 +62,7 @@ export const sendMessage = async <T extends WorkerMessageWithSender>(
 export const sendTabMessage = async <T extends WorkerMessageWithSender>(
     message: T,
     { tabId, ...options }: { tabId: TabId } & Partial<Tabs.SendMessageOptionsType>
-): Promise<WorkerMessageResponse<T['type']>> => {
+): Promise<Maybe<WorkerMessageResponse<T['type']>>> => {
     const res = await browser.tabs.sendMessage<T, WorkerMessageResponse<T['type']>>(tabId, message, options);
     return res;
 };

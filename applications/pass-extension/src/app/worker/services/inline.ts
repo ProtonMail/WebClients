@@ -250,13 +250,16 @@ export const createInlineService = () => {
             const frame = await browser.webNavigation.getFrame({ frameId, tabId });
             if (!frame) return { dx: 0 };
 
-            return sendTabMessage(
+            const res = await sendTabMessage(
                 backgroundMessage({
                     type: WorkerMessageType.INLINE_ICON_SHIFT,
                     payload: { ...payload, type: 'relay', frameId },
                 }),
                 { tabId, frameId: frame.parentFrameId }
             );
+
+            if (!res) throw new Error('No responder');
+            return res;
         })
     );
 
