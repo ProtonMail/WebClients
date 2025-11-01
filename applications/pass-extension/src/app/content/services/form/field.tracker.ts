@@ -2,8 +2,8 @@ import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
 
 import { FieldType } from '@proton/pass/fathom/labels';
-import type { MaybeNull } from '@proton/pass/types';
 import { isActiveElement } from '@proton/pass/utils/dom/active-element';
+import { createRAFController } from '@proton/pass/utils/dom/raf';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { onNextTick } from '@proton/pass/utils/time/next-tick';
@@ -11,8 +11,6 @@ import throttle from '@proton/utils/throttle';
 
 import type { FieldHandle } from './field';
 import type { FormTracker } from './form.tracker';
-
-export type FieldTrackerState = { focusRequest: MaybeNull<number> };
 
 export interface FieldTracker {
     detach: () => void;
@@ -39,53 +37,55 @@ const handleOnEnter =
 
 export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker): FieldTracker => {
     const listeners = createListenerStore();
-    const state: FieldTrackerState = { focusRequest: null };
+    const raf = createRAFController();
 
     /** Handles field focus: attaches icon and conditionally opens dropdown.
      * Uses requestAnimationFrame for DOM stability during focus transitions.
      * Only opens dropdown if field wasn't previously autofilled. */
-    const onFocus = onNextTick(
-        withContext<(evt: FocusEvent) => void>((ctx) => {
-            if (state.focusRequest) cancelAnimationFrame(state.focusRequest);
+    const onFocus = withContext<(evt: FocusEvent) => void>((ctx) => {
+        raf.cancel();
+        const { action } = field;
+        if (!ctx || !action || field.actionPrevented) return;
 
-            const { action } = field;
-            if (!ctx || !action || field.actionPrevented) return;
+        raf.request(() => {
+            ctx.service.inline.icon.attach(field);
 
-            state.focusRequest = requestAnimationFrame(() => {
-                ctx.service.inline.icon.attach(field);
-
-                if (!field.autofilled) {
-                    ctx.service.inline.dropdown.open({
-                        type: 'field',
-                        action: action.type,
-                        autofocused: true,
-                        field,
-                    });
-                }
-            });
-        })
-    );
+            if (!field.autofilled) {
+                ctx.service.inline.dropdown.open({
+                    type: 'field',
+                    action: action.type,
+                    autofocused: true,
+                    field,
+                });
+            }
+        });
+    });
 
     /** Handles field blur with dropdown focus state coordination.
      * Uses `onNextTick` because `document.activeElement` updates asynchronously during blur.
      * Queries `dropdown.getState()` to determine if focus has moved to dropdown (preventing premature
      * cleanup). Only detaches icon and closes dropdown when both field and dropdown are unfocused.
      * Skips cleanup during `autofill.processing` to prevent interrupting autofill sequences. */
-    const onBlur = onNextTick(
-        withContext(async (ctx) => {
-            if (state.focusRequest) cancelAnimationFrame(state.focusRequest);
-            if (!ctx || field.actionPrevented) return;
+    const onBlur = withContext((ctx) => {
+        raf.cancel();
 
-            const { focused, attachedField, visible } = await ctx.service.inline.dropdown.getState();
-            const dropdownFocused = visible && focused && field.matches(attachedField);
-            const fieldBlurred = !(document.hasFocus() && isActiveElement(field.element));
+        if (!ctx || field.actionPrevented) return;
 
-            if (!dropdownFocused && fieldBlurred) {
-                field.icon?.detach();
-                ctx.service.inline.dropdown.close({ type: 'field', field });
-            }
-        })
-    );
+        raf.request(
+            onNextTick(async (handle: number) => {
+                const { focused, attachedField, visible } = await ctx.service.inline.dropdown.getState();
+                const dropdownFocused = visible && focused && field.matches(attachedField);
+                const fieldBlurred = !(document.hasFocus() && isActiveElement(field.element));
+
+                if (handle !== raf.handle) return;
+
+                if (!dropdownFocused && fieldBlurred) {
+                    field.icon?.detach();
+                    ctx.service.inline.dropdown.close({ type: 'field', field });
+                }
+            })
+        );
+    });
 
     /** Handles input changes: closes dropdown for non-filterable fields or updates filter.
      * Non-filterable fields: closes dropdown immediately (user typing manually).
@@ -133,7 +133,7 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
     return {
         detach: () => {
             listeners.removeAll();
-            if (state.focusRequest) cancelAnimationFrame(state.focusRequest);
+            raf.cancel();
         },
     };
 };

@@ -13,7 +13,6 @@ import type { MaybeNull } from '@proton/pass/types';
 import { isActiveElement } from '@proton/pass/utils/dom/active-element';
 import { isInputElement } from '@proton/pass/utils/dom/predicates';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import { nextTick } from '@proton/pass/utils/time/next-tick';
 import noop from '@proton/utils/noop';
 
 import { type FieldAnchor, createFieldAnchor } from './field.anchor';
@@ -140,6 +139,7 @@ export const createFieldHandles = ({ element, fieldType, getFormHandle }: Create
          * so we rely on adding custom properties on the field element itself */
         focus(options) {
             if (options?.preventAction) field.preventAction();
+            else actionTrap.release();
 
             const isFocusedField = isActiveElement(field.element);
             field.element.focus({ preventScroll: true });
@@ -160,10 +160,9 @@ export const createFieldHandles = ({ element, fieldType, getFormHandle }: Create
                 .getVisibility()
                 .then(async (visible) => {
                     if (visible) {
-                        const release = field.preventAction();
+                        field.preventAction();
                         await createAutofill(element)(value, options);
                         field.autofilled = options?.type ?? field.fieldType;
-                        nextTick(release);
                     }
                 })
                 .catch(noop),
