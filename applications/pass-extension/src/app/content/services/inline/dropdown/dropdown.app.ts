@@ -233,9 +233,11 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
         async ({ payload }) => {
             switch (payload.type) {
                 case 'creditCard':
-                    await sendMessage.onSuccess(
-                        contentScriptMessage({ type: WorkerMessageType.AUTOFILL_CC, payload }),
-                        () => iframe.close({ refocus: true, preventAction: true })
+                    await sendMessage(
+                        contentScriptMessage({
+                            type: WorkerMessageType.AUTOFILL_CC,
+                            payload,
+                        })
                     );
             }
         },

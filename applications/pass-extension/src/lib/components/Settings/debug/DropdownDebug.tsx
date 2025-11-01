@@ -25,6 +25,8 @@ export const DropdownDebug: FC = () => {
                             origin: 'proton.me',
                             frameId: 0,
                             startsWith: '',
+                            fieldId: '',
+                            formId: '',
                         }}
                     />
                 </MockIFrameApp>
@@ -36,6 +38,8 @@ export const DropdownDebug: FC = () => {
                             origin: 'proton.me',
                             frameId: 0,
                             startsWith: '',
+                            fieldId: '',
+                            formId: '',
                         }}
                     />
                 </MockIFrameApp>
@@ -47,6 +51,8 @@ export const DropdownDebug: FC = () => {
                             origin: 'proton.me',
                             frameId: 0,
                             startsWith: '',
+                            fieldId: '',
+                            formId: '',
                         }}
                     />
                 </MockIFrameApp>
@@ -58,6 +64,8 @@ export const DropdownDebug: FC = () => {
                             origin: 'proton.me',
                             frameId: 0,
                             startsWith: '',
+                            fieldId: '',
+                            formId: '',
                         }}
                     />
                 </MockIFrameApp>
@@ -69,6 +77,8 @@ export const DropdownDebug: FC = () => {
                             origin: 'proton.me',
                             frameId: 0,
                             startsWith: '',
+                            fieldId: '',
+                            formId: '',
                         }}
                     />
                 </MockIFrameApp>
@@ -82,6 +92,8 @@ export const DropdownDebug: FC = () => {
                             frameId: 0,
                             copy: false,
                             policy: null,
+                            fieldId: '',
+                            formId: '',
                         }}
                     />
                 </MockIFrameApp>
@@ -93,6 +105,8 @@ export const DropdownDebug: FC = () => {
                             origin: 'proton.me',
                             frameId: 0,
                             prefix: 'secret',
+                            fieldId: '',
+                            formId: '',
                         }}
                     />
                 </MockIFrameApp>

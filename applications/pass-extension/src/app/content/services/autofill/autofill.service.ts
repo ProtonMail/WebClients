@@ -227,21 +227,25 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
         }
     );
 
-    const onAutofillRequest: FrameMessageHandler<WorkerMessageType.AUTOFILL_REQUEST> = ({ payload }, sendResponse) => {
-        switch (payload.status) {
-            case 'start':
-                state.processing = true;
-                break;
-            case 'fill':
-                void handleAutofill(payload).then(sendResponse);
-                return true;
-            case 'completed':
-                nextTick(() => (state.processing = false));
-                break;
+    const onAutofillRequest: FrameMessageHandler<WorkerMessageType.AUTOFILL_SEQUENCE> = withContext(
+        (ctx, { payload }, sendResponse) => {
+            switch (payload.status) {
+                case 'start':
+                    state.processing = true;
+                    break;
+                case 'fill':
+                    void handleAutofill(payload).then(sendResponse);
+                    return true;
+                case 'completed':
+                    const { formId, fieldId } = payload.refocus;
+                    ctx?.service.formManager.getFormById(formId)?.getFieldById(fieldId)?.focus({ preventAction: true });
+                    nextTick(() => (state.processing = false));
+                    break;
+            }
         }
-    };
+    );
 
-    controller.channel.register(WorkerMessageType.AUTOFILL_REQUEST, onAutofillRequest);
+    controller.channel.register(WorkerMessageType.AUTOFILL_SEQUENCE, onAutofillRequest);
 
     return {
         get processing() {
@@ -259,7 +263,7 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
         getIdentitiesCount,
         sync,
         destroy: () => {
-            controller.channel.unregister(WorkerMessageType.AUTOFILL_REQUEST, onAutofillRequest);
+            controller.channel.unregister(WorkerMessageType.AUTOFILL_SEQUENCE, onAutofillRequest);
         },
     };
 };
