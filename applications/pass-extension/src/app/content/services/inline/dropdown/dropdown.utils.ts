@@ -12,7 +12,7 @@ import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { isActiveElement } from '@proton/pass/utils/dom/active-element';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
-import { nextTick, onNextTick } from '@proton/pass/utils/time/next-tick';
+import { DOM_SETTLE_MS, nextTick } from '@proton/pass/utils/time/next-tick';
 import type { ParsedUrl } from '@proton/pass/utils/url/types';
 import { resolveDomain, resolveSubdomain } from '@proton/pass/utils/url/utils';
 import { omit } from '@proton/shared/lib/helpers/object';
@@ -20,30 +20,45 @@ import { omit } from '@proton/shared/lib/helpers/object';
 import type { DropdownHandler } from './dropdown.abstract';
 import type { DropdownActions, DropdownAnchor, DropdownRequest } from './dropdown.app';
 
-/** Handles field cleanup when dropdown closes with race condition prevention.
- * - If `!refocus`: blocks field interactions for 1ms to prevent transition conflicts
- * - Uses nextTick for DOM stability before focus/icon operations
- * - Conditionally detaches icon only if field is not currently active */
+/** Handles field cleanup when dropdown closes, preventing race conditions.
+ *
+ * refocus=true: Immediately re-focus field to re-open dropdown (e.g., after unlock)
+ * refocus=false: Clean up by detaching icon if field is inactive and no preventAction set
+ *
+ * `preventAction` temporarily blocks field interactions for DOM_SETTLE_MS (~42ms) to
+ * prevent conflicting side-effects during close/focus transitions. This timing covers
+ * async cross-frame messaging and ensures clean state transitions (see `handleAutoClose`).
+ *
+ * `nextTick` defers operations until DOM has stabilized. */
 export const handleOnClosed = (field: FieldHandle, { refocus, preventAction }: InlineCloseOptions) => {
-    if (!refocus || preventAction) field.preventAction(1);
+    if (!refocus || preventAction) field.preventAction(DOM_SETTLE_MS);
     nextTick(() => {
         if (refocus) field.focus({ preventAction });
-        else if (!isActiveElement(field.element)) field.icon?.detach();
+        else if (!preventAction && !isActiveElement(field.element)) field.icon?.detach();
     });
 };
 
-/** Auto-close prevention handler for focus/blur events:
- * - Autofill sequences (ctx.service.autofill.processing = true)
- * - Dropdown focus transitions (getState().focused = true)
- * - Uses onNextTick to ensure DOM state has settled before evaluation. */
-export const handleAutoClose = (dropdown: DropdownHandler, field?: FieldHandle) =>
-    onNextTick(
-        withContext<() => void>(async (ctx) => {
-            const autofilling = ctx?.service.autofill.processing ?? false;
-            const dropdownFocused = (await dropdown.getState()).focused;
-            if (!(autofilling || dropdownFocused)) dropdown.close(field ? { type: 'field', field } : undefined);
-        })
-    );
+/** Returns event handler that auto-closes dropdown on focus/blur events.
+ *
+ * `preventAction` blocks field interactions immediately because window focus/blur events
+ * trigger BEFORE field events in cross-frame scenarios. When a sub-frame field is
+ * re-focused, the window focus handler triggers first, preventing unwanted field
+ * side-effects when user refocuses field after interacting with dropdown cross-frame.
+ *
+ * `nextTick` evaluates close conditions after DOM settles:
+ * - Preserves dropdown if it acquired focus during the focus change
+ * - Detaches icon and closes if document lost focus
+ * - Otherwise closes dropdown normally */
+export const handleAutoClose = (dropdown: DropdownHandler, field?: FieldHandle) => {
+    return (_: Event) => {
+        field?.preventAction(DOM_SETTLE_MS);
+        nextTick(async () => {
+            if ((await dropdown.getState()).focused) return;
+            if (!document.hasFocus()) field?.icon?.detach();
+            dropdown.close(field ? { type: 'field', field } : undefined);
+        });
+    };
+};
 
 export const handleBackdrop = (getField: () => Maybe<FieldHandle>, effect: () => void) => (evt: Event) => {
     const target = evt.target as MaybeNull<HTMLElement>;

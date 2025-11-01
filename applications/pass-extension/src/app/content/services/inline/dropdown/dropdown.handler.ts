@@ -30,14 +30,17 @@ export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler
             if (autoclose) dropdown.close();
 
             if (didAnchorChange) {
-                const form = payload.type === 'field' ? payload.field.getFormHandle() : undefined;
+                const field = payload.type === 'field' ? payload.field : undefined;
+                const form = field?.getFormHandle();
                 const layer = form?.element;
 
                 const close = () => dropdown.close();
-                const autoclose = handleAutoClose(dropdown);
+                const autoclose = handleAutoClose(dropdown, field);
 
-                registry.attachDropdown(layer)?.open(payload);
+                const app = registry.attachDropdown(layer);
+                if (!app) return;
 
+                app.open(payload);
                 const scrollParent = form?.scrollParent;
                 const scrollOptions = { capture: true, once: true, passive: true } as const;
 
@@ -54,6 +57,9 @@ export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler
                 listeners.addListener(window, 'blur', autoclose);
                 listeners.addListener(window, 'mousedown', handleBackdrop(getAnchorField, close));
                 listeners.addListener(scrollParent, 'scroll', close, scrollOptions);
+
+                /** Dropdown app may be closed from within its internal lifecycle */
+                listeners.addSubscriber(app.subscribe((e) => e.type === 'close' && listeners.removeAll()));
             }
         },
 
