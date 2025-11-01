@@ -31,7 +31,8 @@ import noop from '@proton/utils/noop';
 
 type Props = Extract<DropdownActions, { action: DropdownAction.AUTOFILL_CC }>;
 
-export const AutofillCC: FC<Props> = ({ origin, frameId }) => {
+export const AutofillCC: FC<Props> = (payload) => {
+    const { origin } = payload;
     const { visible } = useIFrameAppState();
     const controller = useIFrameAppController();
     const [state, setState] = useMountedState<MaybeNull<AutofillCCResult>>(null);
@@ -96,12 +97,18 @@ export const AutofillCC: FC<Props> = ({ origin, frameId }) => {
                                         icon: 'credit-card',
                                         customIcon: getCreditCardIcon(cardType),
                                     }}
-                                    onClick={withBlurTrap(() =>
+                                    onClick={withBlurTrap(() => {
                                         controller.forwardMessage({
                                             type: InlinePortMessageType.AUTOFILL_ACTION,
-                                            payload: { shareId, itemId, origin, frameId, type: 'creditCard' },
-                                        })
-                                    )}
+                                            payload: {
+                                                ...payload,
+                                                itemId,
+                                                shareId,
+                                                type: 'creditCard',
+                                            },
+                                        });
+                                        controller.close({ preventAction: true });
+                                    })}
                                     subTheme={SubTheme.LIME}
                                 />
                             ))

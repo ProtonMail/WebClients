@@ -88,41 +88,41 @@ export const prepareDropdownAction = withContext<(request: DropdownRequest) => P
 
         const { action, autofocused } = request;
         const { authorized } = ctx.getState();
-
         if (autofocused && !authorized) return;
 
         const url = ctx.getExtensionContext()?.url;
         const origin = url ? resolveDropdownOrigin(request, url) : null;
-        const frameId = request.type === 'frame' ? request.fieldFrameId : 0;
-
         if (!origin) return;
+
+        const frameId = request.type === 'frame' ? request.fieldFrameId : 0;
+        const fieldId = request.type === 'frame' ? request.fieldId : request.field.fieldId;
+        const formId = request.type === 'frame' ? request.formId : request.field.getFormHandle().formId;
+        const base = { origin, frameId, fieldId, formId } as const;
 
         switch (action) {
             case DropdownAction.AUTOFILL_CC: {
                 if (autofocused && !(await ctx.service.autofill.getCreditCardsCount())) return;
-                if (!authorized) return { action, origin, frameId };
-                return { action, origin, frameId };
+                return { action, ...base };
             }
 
             case DropdownAction.AUTOFILL_IDENTITY: {
                 if (autofocused && !(await ctx.service.autofill.getIdentitiesCount())) return;
-                if (!authorized) return { action, origin: '', frameId };
-                return { action, origin, frameId };
+                return { action, ...base };
             }
 
             case DropdownAction.AUTOFILL_LOGIN: {
                 if (autofocused && !(await ctx.service.autofill.getCredentialsCount())) return;
-                if (!authorized) return { action, origin: '', startsWith: '', frameId };
-                return { action, origin, startsWith: '', frameId };
+                if (!authorized) return { action, ...base, origin: '', startsWith: '' };
+                return { action, ...base, startsWith: '' };
             }
             case DropdownAction.AUTOSUGGEST_ALIAS: {
                 if (!url?.displayName) throw new Error();
-                return { action, origin, frameId, prefix: deriveAliasPrefix(url.displayName) };
+                return { action, prefix: deriveAliasPrefix(url.displayName), ...base };
             }
             case DropdownAction.AUTOSUGGEST_PASSWORD: {
                 return sendMessage.on(contentScriptMessage({ type: WorkerMessageType.AUTOSUGGEST_PASSWORD }), (res) => {
                     if (res.type === 'error') throw new Error(res.error);
-                    return { action, origin, frameId, ...omit(res, ['type']) };
+                    return { action, ...omit(res, ['type']), ...base };
                 });
             }
         }

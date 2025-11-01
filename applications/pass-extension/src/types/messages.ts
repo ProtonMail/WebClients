@@ -100,15 +100,15 @@ export enum WorkerMessageType {
     AUTH_INIT = 'AUTH_INIT',
     AUTH_PULL_FORK = 'AUTH_PULL_FORK',
     AUTH_UNLOCK = 'AUTH_UNLOCK',
-    AUTOFILL_CHECK_FORM = 'AUTOFILL_CHECK_FORM',
     AUTOFILL_CC = 'AUTOFILL_CC',
     AUTOFILL_CC_QUERY = 'AUTOFILL_CC_QUERY',
-    AUTOFILL_REQUEST = 'AUTOFILL_REQUEST',
+    AUTOFILL_CHECK_FORM = 'AUTOFILL_CHECK_FORM',
     AUTOFILL_IDENTITY = 'AUTOFILL_IDENTITY',
     AUTOFILL_IDENTITY_QUERY = 'AUTOFILL_IDENTITY_QUERY',
     AUTOFILL_LOGIN = 'AUTOFILL_LOGIN',
     AUTOFILL_LOGIN_QUERY = 'AUTOFILL_LOGIN_QUERY',
     AUTOFILL_OTP_CHECK = 'AUTOFILL_OTP_CHECK',
+    AUTOFILL_SEQUENCE = 'AUTOFILL_SEQUENCE',
     AUTOFILL_SYNC = 'AUTOFILL_SYNC',
     AUTOSAVE_REQUEST = 'AUTOSAVE_REQUEST',
     AUTOSUGGEST_PASSWORD = 'AUTOSUGGEST_PASSWORD',
@@ -184,26 +184,30 @@ export type AccountAuthExtMessage = { type: WorkerMessageType.ACCOUNT_EXTENSION 
 export type AccountForkMessage = WithPayload<WorkerMessageType.ACCOUNT_FORK, ForkPayload>;
 export type AccountPassOnboardingMessage = { type: WorkerMessageType.ACCOUNT_ONBOARDING };
 export type AccountProbeMessage = { type: WorkerMessageType.ACCOUNT_PROBE };
+
 export type AliasCreateMessage = WithPayload<WorkerMessageType.ALIAS_CREATE, AliasCreateRequest>;
 export type AliasOptionsMessage = { type: WorkerMessageType.ALIAS_OPTIONS };
+
 export type AuthCheckMessage = WithPayload<WorkerMessageType.AUTH_CHECK, { immediate?: boolean }>;
 export type AuthConfirmPasswordMessage = WithPayload<WorkerMessageType.AUTH_CONFIRM_PASSWORD, { password: string }>;
 export type AuthInitMessage = { type: WorkerMessageType.AUTH_INIT; options: AuthOptions };
 export type AuthPullForkMessage = WithPayload<WorkerMessageType.AUTH_PULL_FORK, { selector: string }>;
 export type AuthUnlockMessage = WithPayload<WorkerMessageType.AUTH_UNLOCK, UnlockDTO>;
-export type AutofillCheckFormMessage = { type: WorkerMessageType.AUTOFILL_CHECK_FORM };
 export type AutofillCCMessage = WithPayload<WorkerMessageType.AUTOFILL_CC, AutofillItem>;
+
 export type AutofillCCQueryMessage = { type: WorkerMessageType.AUTOFILL_CC_QUERY };
-export type AutofillRequestMessage = WithPayload<WorkerMessageType.AUTOFILL_REQUEST, AutofillRequest>;
+export type AutofillCheckFormMessage = { type: WorkerMessageType.AUTOFILL_CHECK_FORM };
 export type AutofillIdentityMessage = WithPayload<WorkerMessageType.AUTOFILL_IDENTITY, SelectedItem>;
 export type AutofillIdentityQueryMessage = { type: WorkerMessageType.AUTOFILL_IDENTITY_QUERY };
 export type AutofillLoginMessage = WithPayload<WorkerMessageType.AUTOFILL_LOGIN, SelectedItem>;
 export type AutofillLoginQueryMessage = WithPayload<WorkerMessageType.AUTOFILL_LOGIN_QUERY, AutofillOptions>;
 export type AutofillOTPCheckMessage = { type: WorkerMessageType.AUTOFILL_OTP_CHECK };
 export type AutofillPasswordOptionsMessage = { type: WorkerMessageType.AUTOSUGGEST_PASSWORD };
+export type AutofillSequenceMessage = WithPayload<WorkerMessageType.AUTOFILL_SEQUENCE, AutofillRequest>;
 export type AutofillSyncMessage = { type: WorkerMessageType.AUTOFILL_SYNC };
 export type AutoSaveRequestMessage = WithPayload<WorkerMessageType.AUTOSAVE_REQUEST, AutosaveRequest>;
 export type B2BEventMessage = WithPayload<WorkerMessageType.B2B_EVENT, { event: B2BEvent }>;
+
 export type ClientInitMessage = WithPayload<WorkerMessageType.CLIENT_INIT, { tabId: TabId }>;
 export type ClipboardReadMessage = { type: WorkerMessageType.CLIPBOARD_OFFSCREEN_READ };
 export type ClipboardWriteMessage = WithPayload<WorkerMessageType.CLIPBOARD_OFFSCREEN_WRITE, ClipboardWriteDTO>;
@@ -213,6 +217,7 @@ export type EndpointInitMessage = WithPayload<WorkerMessageType.ENDPOINT_INIT, {
 export type FeatureFlagsUpdateMessage = WithPayload<WorkerMessageType.FEATURE_FLAGS_UPDATE, FeatureFlagState>;
 export type FetchAbortMessage = WithPayload<WorkerMessageType.FETCH_ABORT, { requestId: string }>;
 export type FetchDomainImageMessage = WithPayload<WorkerMessageType.FETCH_DOMAINIMAGE, { url: string }>;
+
 export type FormEntryCommitMessage = WithPayload<WorkerMessageType.FORM_ENTRY_COMMIT, { reason: string }>;
 export type FormEntryRequestMessage = { type: WorkerMessageType.FORM_ENTRY_REQUEST };
 export type FormEntryStageMessage = WithPayload<WorkerMessageType.FORM_ENTRY_STAGE, FormSubmitPayload>;
@@ -281,23 +286,23 @@ export type WorkerMessage =
     | AuthInitMessage
     | AuthPullForkMessage
     | AuthUnlockMessage
-    | AutofillCheckFormMessage
     | AutofillCCMessage
     | AutofillCCQueryMessage
-    | AutofillRequestMessage
+    | AutofillCheckFormMessage
     | AutofillIdentityMessage
     | AutofillIdentityQueryMessage
     | AutofillLoginMessage
     | AutofillLoginQueryMessage
     | AutofillOTPCheckMessage
     | AutofillPasswordOptionsMessage
+    | AutofillSequenceMessage
     | AutofillSyncMessage
     | AutoSaveRequestMessage
     | B2BEventMessage
     | ClientInitMessage
+    | ClipboardAutoClearMessage
     | ClipboardReadMessage
     | ClipboardWriteMessage
-    | ClipboardAutoClearMessage
     | DebugMessage
     | EndpointInitMessage
     | FeatureFlagsUpdateMessage
@@ -376,7 +381,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.AUTOFILL_LOGIN_QUERY]: AutofillLoginResult;
     [WorkerMessageType.AUTOFILL_LOGIN]: FormCredentials;
     [WorkerMessageType.AUTOFILL_OTP_CHECK]: { shouldPrompt: false } | ({ shouldPrompt: true } & LoginItemPreview);
-    [WorkerMessageType.AUTOFILL_REQUEST]: AutofillResult;
+    [WorkerMessageType.AUTOFILL_SEQUENCE]: AutofillResult;
     [WorkerMessageType.AUTOSUGGEST_PASSWORD]: PasswordAutosuggestOptions;
     [WorkerMessageType.CLIENT_INIT]: { state: AppState; settings: ProxiedSettings; features: FeatureFlagState };
     [WorkerMessageType.CLIPBOARD_OFFSCREEN_READ]: { content: string };
