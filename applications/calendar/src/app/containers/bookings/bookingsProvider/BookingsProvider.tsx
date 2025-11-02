@@ -215,6 +215,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
                     bookingLink,
                     onClose: () => {
                         resetBookingState();
+                        setBookingsState(BookingState.OFF);
                     },
                 },
             });
