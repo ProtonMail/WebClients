@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Href } from '@proton/atoms';
-import Icon from '@proton/components/components/icon/Icon';
+import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
 import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
@@ -36,7 +36,7 @@ export const GlobalBookingSuccess = () => {
         return unsubscribe;
     }, [subscribe, setOpen]);
 
-    const handleConfirm = () => {
+    const handleClose = () => {
         bookingPageCreationProps?.onClose();
 
         setOpen(false);
@@ -68,29 +68,35 @@ export const GlobalBookingSuccess = () => {
                 <Modal
                     {...modalProps}
                     onClose={() => {
-                        handleConfirm();
+                        handleClose();
                     }}
+                    size="xsmall"
                 >
-                    <ModalHeader title={c('Title').t`Your booking page is ready`} />
+                    <ModalHeader />
                     <ModalContent>
-                        <p>{c('Info').t`Share this page to let others book time in your calendar.`}</p>
-                        <div className="flex flex-nowrap gap-2 items-center justify-space-between mb-4">
+                        <h2 className="mb-2 text-bold text-center text-lg">{c('Title')
+                            .t`Your booking page is ready`}</h2>
+                        <p className="color-weak m-0 mb-6 text-center">{c('Info')
+                            .t`Share this page to let others book time in your calendar. You can manage it anytime in the sidebar under Booking pages.`}</p>
+                        <img className="mb-6" src={bookingImage} alt={c('Info').t`Booking page example`} />
+                        <div className="mb-6 text-center text-ellipsis">
                             <Href
                                 href={bookingPageCreationProps.bookingLink}
                                 onClick={handleLinkClick}
                                 target="_blank"
-                                className="grow text-ellipsis"
                                 title={bookingPageCreationProps.bookingLink}
                             >
                                 {bookingPageCreationProps.bookingLink}
                             </Href>
-                            <Button icon size="small" className="shrink-0" onClick={handleCopyURLClick}>
-                                <Icon name="squares" alt={c('Action').t`Copy Booking link`} />
-                            </Button>
                         </div>
-                        <div className="border rounded-lg pt-3 px-3">
-                            <img height={242} width={391} src={bookingImage} alt={c('Info').t`Booking page example`} />
-                        </div>
+
+                        <Button
+                            fullWidth
+                            onClick={() => {
+                                handleCopyURLClick();
+                                handleClose();
+                            }}
+                        >{c('Action').t`Copy link and close`}</Button>
                     </ModalContent>
                 </Modal>
             )}
