@@ -14,9 +14,10 @@ import { BookingState } from './bookingsProvider/interface';
 
 interface Props {
     onCreateEvent?: () => void;
+    disabled?: boolean;
 }
 
-export const BookingSidebarAction = ({ onCreateEvent }: Props) => {
+export const BookingSidebarAction = ({ onCreateEvent, disabled }: Props) => {
     const [user] = useUser();
     const { changeBookingState } = useBookings();
 
@@ -33,7 +34,15 @@ export const BookingSidebarAction = ({ onCreateEvent }: Props) => {
 
     return (
         <>
-            <SimpleDropdown as={Button} size="large" originalPlacement="bottom-end" color="norm" icon group>
+            <SimpleDropdown
+                disabled={disabled}
+                as={Button}
+                size="large"
+                originalPlacement="bottom-end"
+                color="norm"
+                icon
+                group
+            >
                 <DropdownMenu className="my-2">
                     <DropdownMenuButton onClick={onCreateEvent}>
                         <div className="flex gap-2 items-center">
