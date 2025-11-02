@@ -150,6 +150,7 @@ export const Form = () => {
                         updateFormData('selectedCalendar', value);
                     }}
                     assistContainerClassName="hidden"
+                    className="max-w-full"
                     fullWidth={false}
                 >
                     {writeableCalendars.map((calendar) => (
