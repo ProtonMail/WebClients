@@ -102,6 +102,12 @@ export const validateFormData = (data: BookingFormData): BookingFormValidation |
         };
     }
 
+    if (data.title.trim().length === 0) {
+        return {
+            type: 'warning',
+        };
+    }
+
     if (data.bookingSlots.length === 0) {
         return {
             type: 'warning',
