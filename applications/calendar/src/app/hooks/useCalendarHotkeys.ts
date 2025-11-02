@@ -4,7 +4,6 @@ import { type HotkeyTuple, useHotkeys } from '@proton/components';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 import { isBusy } from '@proton/shared/lib/shortcuts/calendar';
-import useFlag from '@proton/unleash/useFlag';
 
 interface Props {
     showCommander: (state: boolean) => void;
@@ -35,14 +34,13 @@ const useCalendarHotkeys = ({
     elementRef,
     isDrawerApp,
 }: Props) => {
-    const isCalendarHotkeysEnabled = useFlag('CalendarHotkeys');
     const [mailSettings] = useMailSettings();
     const shortcutHandlers: HotkeyTuple[] = useMemo(
         () => [
             [
                 [KeyboardKey.N],
                 (e) => {
-                    if (isCalendarHotkeysEnabled && mailSettings.Shortcuts && !isBusy(e) && !isDrawerApp) {
+                    if (mailSettings.Shortcuts && !isBusy(e) && !isDrawerApp) {
                         e.preventDefault();
                         createEvent();
                     }
@@ -51,7 +49,7 @@ const useCalendarHotkeys = ({
             [
                 [KeyboardKey.T],
                 (e) => {
-                    if (isCalendarHotkeysEnabled && mailSettings.Shortcuts && !isBusy(e) && !isDrawerApp) {
+                    if (mailSettings.Shortcuts && !isBusy(e) && !isDrawerApp) {
                         e.preventDefault();
                         goToToday();
                     }
@@ -60,7 +58,7 @@ const useCalendarHotkeys = ({
             [
                 [KeyboardKey.One],
                 (e) => {
-                    if (isCalendarHotkeysEnabled && mailSettings.Shortcuts && !isBusy(e) && !isDrawerApp) {
+                    if (mailSettings.Shortcuts && !isBusy(e) && !isDrawerApp) {
                         e.preventDefault();
                         showDayView();
                     }
@@ -69,7 +67,7 @@ const useCalendarHotkeys = ({
             [
                 [KeyboardKey.Two],
                 (e) => {
-                    if (isCalendarHotkeysEnabled && mailSettings.Shortcuts && !isBusy(e) && !isDrawerApp) {
+                    if (mailSettings.Shortcuts && !isBusy(e) && !isDrawerApp) {
                         e.preventDefault();
                         showWeekView();
                     }
@@ -78,7 +76,7 @@ const useCalendarHotkeys = ({
             [
                 [KeyboardKey.Three],
                 (e) => {
-                    if (isCalendarHotkeysEnabled && mailSettings.Shortcuts && !isBusy(e) && !isDrawerApp) {
+                    if (mailSettings.Shortcuts && !isBusy(e) && !isDrawerApp) {
                         e.preventDefault();
                         showMonthView();
                     }
@@ -87,7 +85,7 @@ const useCalendarHotkeys = ({
             [
                 [KeyboardKey.ArrowRight],
                 (e) => {
-                    if (isCalendarHotkeysEnabled && mailSettings.Shortcuts && !isBusy(e) && !isDrawerApp) {
+                    if (mailSettings.Shortcuts && !isBusy(e) && !isDrawerApp) {
                         e.preventDefault();
                         goToNextView();
                     }
@@ -96,7 +94,7 @@ const useCalendarHotkeys = ({
             [
                 [KeyboardKey.ArrowLeft],
                 (e) => {
-                    if (isCalendarHotkeysEnabled && mailSettings.Shortcuts && !isBusy(e) && !isDrawerApp) {
+                    if (mailSettings.Shortcuts && !isBusy(e) && !isDrawerApp) {
                         e.preventDefault();
                         goToPreviousView();
                     }
@@ -114,7 +112,7 @@ const useCalendarHotkeys = ({
             [
                 [KeyboardKey.Slash],
                 (e) => {
-                    if (isCalendarHotkeysEnabled && mailSettings.Shortcuts && !isBusy(e) && !isDrawerApp) {
+                    if (mailSettings.Shortcuts && !isBusy(e) && !isDrawerApp) {
                         e.preventDefault();
                         focusSearchBar();
                     }
@@ -123,7 +121,7 @@ const useCalendarHotkeys = ({
             [
                 [KeyboardKey.QuestionMark],
                 (e) => {
-                    if (isCalendarHotkeysEnabled && !isBusy(e) && !isDrawerApp) {
+                    if (!isBusy(e) && !isDrawerApp) {
                         e.preventDefault();
                         openShortcutModal();
                     }

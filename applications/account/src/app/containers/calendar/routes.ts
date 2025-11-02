@@ -13,7 +13,6 @@ interface Props {
     user: UserModel;
     isZoomIntegrationEnabled: boolean;
     isProtonMeetIntegrationEnabled: boolean;
-    isCalendarHotkeysEnabled: boolean;
     organization?: Organization;
 }
 
@@ -27,7 +26,6 @@ export const getCalendarAppRoutes = ({
     organization,
     isZoomIntegrationEnabled,
     isProtonMeetIntegrationEnabled,
-    isCalendarHotkeysEnabled,
 }: Props) => {
     const isB2BAudience = getIsB2BAudienceFromPlan(organization?.PlanName);
     const isFamilyOrg = !!organization && getOrganizationDenomination(organization) === 'familyGroup';
@@ -81,7 +79,6 @@ export const getCalendarAppRoutes = ({
                     {
                         text: c('Title').t`Other preferences`,
                         id: CALENDAR_SETTINGS_SECTION_ID.OTHER_PREFERENCES,
-                        available: isCalendarHotkeysEnabled,
                     },
                 ],
             },

@@ -31,7 +31,6 @@ import { useLoading } from '@proton/hooks';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { DEFAULT_CALENDAR_USER_SETTINGS } from '@proton/shared/lib/calendar/calendar';
 import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
-import useFlag from '@proton/unleash/useFlag';
 
 import NukeSearchIndexButton from '../../containers/calendar/confirmationModals/NukeSearchIndexButton';
 
@@ -43,7 +42,6 @@ const CalendarQuickSettings = ({ onBackFromSearch }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
-    const isCalendarHotkeysEnabled = useFlag('CalendarHotkeys');
     const [calendarShortcutsProps, setCalendarShortcutsModalOpen, renderCalendarShortcutsModal] = useModalState();
 
     const [calendarUserSettings = DEFAULT_CALENDAR_USER_SETTINGS, loadingCalendarUserSettings] =
@@ -160,27 +158,25 @@ const CalendarQuickSettings = ({ onBackFromSearch }: Props) => {
                 )}
             </DrawerAppSection>
 
-            {isCalendarHotkeysEnabled ? (
-                <DrawerAppSection>
-                    <QuickSettingsSectionRow
-                        label={c('Label').t`Keyboard shortcuts`}
-                        labelInfo={
-                            <Info
-                                title={c('Info').t`Open shortcut cheat sheet`}
-                                onClick={() => setCalendarShortcutsModalOpen(true)}
-                                data-testid="calendar-quick-settings:keyboard-shortcuts-info"
-                            />
-                        }
-                        labelProps={{ htmlFor: 'toggle-shortcuts' }}
-                        action={
-                            <ShortcutsToggle
-                                id="toggle-shortcuts"
-                                data-testid="calendar-quick-settings:keyboard-shortcuts-toggle"
-                            />
-                        }
-                    />
-                </DrawerAppSection>
-            ) : null}
+            <DrawerAppSection>
+                <QuickSettingsSectionRow
+                    label={c('Label').t`Keyboard shortcuts`}
+                    labelInfo={
+                        <Info
+                            title={c('Info').t`Open shortcut cheat sheet`}
+                            onClick={() => setCalendarShortcutsModalOpen(true)}
+                            data-testid="calendar-quick-settings:keyboard-shortcuts-info"
+                        />
+                    }
+                    labelProps={{ htmlFor: 'toggle-shortcuts' }}
+                    action={
+                        <ShortcutsToggle
+                            id="toggle-shortcuts"
+                            data-testid="calendar-quick-settings:keyboard-shortcuts-toggle"
+                        />
+                    }
+                />
+            </DrawerAppSection>
 
             <DefaultQuickSettings />
 

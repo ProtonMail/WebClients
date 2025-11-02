@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { CalendarShortcutsModal, Commander, type CommanderItemInterface, useModalState } from '@proton/components';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import type { AttendeeModel } from '@proton/shared/lib/interfaces/calendar';
-import useFlag from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import useCalendarHotkeys from '../../hooks/useCalendarHotkeys';
@@ -30,8 +29,6 @@ const CalendarShortcutsAndCommander = ({
     onCreateEvent,
 }: Props) => {
     const documentRef = useRef<Document>(document);
-    const isCommanderAvailable = useFlag('CalendarCommander');
-    const isCalendarHotkeysEnabled = useFlag('CalendarHotkeys');
     const [commanderModalProps, showCommander, commanderRender] = useModalState();
     const [shortcutModalProps, showShortcutModal, shortcutModalRender] = useModalState();
 
@@ -78,7 +75,7 @@ const CalendarShortcutsAndCommander = ({
                     action: () => {
                         onCreateEvent();
                     },
-                    shortcuts: isCalendarHotkeysEnabled ? ['N'] : undefined,
+                    shortcuts: ['N'],
                 },
                 {
                     icon: 'calendar-today',
@@ -87,7 +84,7 @@ const CalendarShortcutsAndCommander = ({
                     action: () => {
                         onClickToday();
                     },
-                    shortcuts: isCalendarHotkeysEnabled ? ['T'] : undefined,
+                    shortcuts: ['T'],
                 },
                 {
                     icon: 'calendar-day',
@@ -96,7 +93,7 @@ const CalendarShortcutsAndCommander = ({
                     action: () => {
                         onChangeView(VIEWS.DAY);
                     },
-                    shortcuts: isCalendarHotkeysEnabled ? ['1'] : undefined,
+                    shortcuts: ['1'],
                 },
                 {
                     icon: 'calendar-week',
@@ -105,7 +102,7 @@ const CalendarShortcutsAndCommander = ({
                     action: () => {
                         onChangeView(VIEWS.WEEK);
                     },
-                    shortcuts: isCalendarHotkeysEnabled ? ['2'] : undefined,
+                    shortcuts: ['2'],
                 },
                 {
                     icon: 'calendar-month',
@@ -114,7 +111,7 @@ const CalendarShortcutsAndCommander = ({
                     action: () => {
                         onChangeView(VIEWS.MONTH);
                     },
-                    shortcuts: isCalendarHotkeysEnabled ? ['3'] : undefined,
+                    shortcuts: ['3'],
                 },
                 {
                     icon: 'arrow-right',
@@ -123,7 +120,7 @@ const CalendarShortcutsAndCommander = ({
                     action: () => {
                         onClickNextView();
                     },
-                    shortcuts: isCalendarHotkeysEnabled ? ['→'] : undefined,
+                    shortcuts: ['→'],
                 },
                 {
                     icon: 'arrow-left',
@@ -132,7 +129,7 @@ const CalendarShortcutsAndCommander = ({
                     action: () => {
                         onClickPreviousView();
                     },
-                    shortcuts: isCalendarHotkeysEnabled ? ['←'] : undefined,
+                    shortcuts: ['←'],
                 },
                 {
                     icon: 'magnifier',
@@ -141,7 +138,7 @@ const CalendarShortcutsAndCommander = ({
                     action: () => {
                         onClickSearch();
                     },
-                    shortcuts: isCalendarHotkeysEnabled ? ['/'] : undefined,
+                    shortcuts: ['/'],
                 },
             ].filter(isTruthy) as CommanderItemInterface[],
         [onClickNextView, onClickPreviousView, onClickToday, onChangeView]
@@ -149,9 +146,7 @@ const CalendarShortcutsAndCommander = ({
 
     return (
         <>
-            {isCommanderAvailable && commanderRender ? (
-                <Commander list={commanderList} {...commanderModalProps} />
-            ) : null}
+            {commanderRender ? <Commander list={commanderList} {...commanderModalProps} /> : null}
             {shortcutModalRender ? <CalendarShortcutsModal {...shortcutModalProps} /> : null}
         </>
     );

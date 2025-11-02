@@ -164,7 +164,6 @@ const MainContainer = () => {
     const isScribeAdminSettingFeatureEnabled = useFlag('ScribeAdminSetting');
     const isZoomIntegrationEnabled = useFlag('ZoomIntegration');
     const isProtonMeetIntegrationEnabled = useFlag('NewScheduleOption');
-    const isCalendarHotkeysEnabled = useFlag('CalendarHotkeys');
     const canB2BHidePhotos = useFlag('DriveB2BPhotosUpload');
     const isSharedServerFeatureEnabled = useFlag('SharedServerFeature');
     const isCryptoPostQuantumOptInEnabled =
@@ -237,7 +236,6 @@ const MainContainer = () => {
         isProtonMeetIntegrationEnabled,
         isSharedServerFeatureEnabled,
         isCryptoPostQuantumOptInEnabled,
-        isCalendarHotkeysEnabled,
         isPasswordPolicyEnabled,
         isB2BTrial,
         isReferralExpansionEnabled,
