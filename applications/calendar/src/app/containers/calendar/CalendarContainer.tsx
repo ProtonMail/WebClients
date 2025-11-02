@@ -290,6 +290,10 @@ const CalendarContainer = ({
 
     const view = (() => {
         if (isBookingActive) {
+            // We want to reset the custom range if present to have the week view
+            if (customRange) {
+                setCustom({ range: undefined });
+            }
             return VIEWS.WEEK;
         }
 
