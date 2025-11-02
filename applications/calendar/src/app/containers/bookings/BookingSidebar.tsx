@@ -9,7 +9,7 @@ export const BookingSidebar = () => {
                 <BookingManagement.Header />
             </div>
 
-            <Scroll className="flex-1">
+            <Scroll className="flex-1 w-full">
                 <div className="px-6 py-4">
                     <BookingManagement.Form />
                 </div>
