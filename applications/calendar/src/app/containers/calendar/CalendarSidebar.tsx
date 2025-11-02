@@ -138,7 +138,7 @@ const CalendarSidebar = ({
                                 headerRef={headerRef}
                                 loadingSubscribedCalendars={loadingSubscribedCalendars}
                             />
-                            <Bookings headerRef={headerRef} />
+                            <Bookings headerRef={headerRef} disabled={!onCreateEvent} />
                         </div>
                         {displayContactsInHeader && <SidebarDrawerItems toggleHeaderDropdown={onToggleExpand} />}
                     </>
