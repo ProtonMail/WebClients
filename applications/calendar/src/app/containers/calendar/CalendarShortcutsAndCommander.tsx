@@ -8,6 +8,7 @@ import type { AttendeeModel } from '@proton/shared/lib/interfaces/calendar';
 import isTruthy from '@proton/utils/isTruthy';
 
 import useCalendarHotkeys from '../../hooks/useCalendarHotkeys';
+import { useBookings } from '../bookings/bookingsProvider/BookingsProvider';
 
 interface Props {
     onClickToday: () => void;
@@ -31,6 +32,8 @@ const CalendarShortcutsAndCommander = ({
     const documentRef = useRef<Document>(document);
     const [commanderModalProps, showCommander, commanderRender] = useModalState();
     const [shortcutModalProps, showShortcutModal, shortcutModalRender] = useModalState();
+
+    const { isBookingActive } = useBookings();
 
     useCalendarHotkeys({
         isDrawerApp,
@@ -146,7 +149,7 @@ const CalendarShortcutsAndCommander = ({
 
     return (
         <>
-            {commanderRender ? <Commander list={commanderList} {...commanderModalProps} /> : null}
+            {commanderRender && !isBookingActive ? <Commander list={commanderList} {...commanderModalProps} /> : null}
             {shortcutModalRender ? <CalendarShortcutsModal {...shortcutModalProps} /> : null}
         </>
     );
