@@ -127,8 +127,12 @@ export const createListenerStore = () => {
         return observer;
     };
 
-    const addSubscriber = <T>(pubsub: PubSub<T>, subscriber: Subscriber<T>) => {
+    const addPubsubListener = <T>(pubsub: PubSub<T>, subscriber: Subscriber<T>) => {
         const unsubscribe = pubsub.subscribe(subscriber);
+        listeners.push({ kind: 'pubsub', unsubscribe });
+    };
+
+    const addSubscriber = (unsubscribe: () => void) => {
         listeners.push({ kind: 'pubsub', unsubscribe });
     };
 
@@ -153,6 +157,7 @@ export const createListenerStore = () => {
         addListener,
         addObserver,
         addResizeObserver,
+        addPubsubListener,
         addSubscriber,
         removeAll,
     };
