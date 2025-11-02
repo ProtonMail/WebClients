@@ -18,7 +18,6 @@ import { InputField } from '@proton/components/components/v2/field/InputField';
 import PasswordInput from '@proton/components/components/v2/input/PasswordInput';
 import TextArea from '@proton/components/components/v2/input/TextArea';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import useToggle from '@proton/components/hooks/useToggle';
 import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eventDefaults';
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -69,10 +68,8 @@ export const Form = () => {
 
     const [writeableCalendars = []] = useWriteableCalendars({ canBeDisabled: false, canBeShared: false });
 
-    const { state, toggle } = useToggle(false);
-    const { createNotification } = useNotifications();
-
     const { formData, updateFormData } = useBookings();
+    const { createNotification } = useNotifications();
 
     return (
         <form className="flex flex-column">
@@ -182,9 +179,14 @@ export const Form = () => {
                 icon="shield"
                 title={c('Info').t`Enable password protection`}
                 hideBorder
-                suffix={<Toggle checked={state} onChange={() => toggle()} />}
+                suffix={
+                    <Toggle
+                        checked={formData.requiresPassword}
+                        onChange={() => updateFormData('requiresPassword', !formData.requiresPassword)}
+                    />
+                }
             >
-                {state ? (
+                {formData.requiresPassword ? (
                     <div className="mt-2 flex flex-nowrap gap-2">
                         <PasswordInput
                             id="booking-password"
