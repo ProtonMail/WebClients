@@ -44,6 +44,7 @@ const getInitialBookingState = (): BookingFormData => {
         duration: scheduleOptions[0].value,
         timezone: localTimeZone,
         bookingSlots: [],
+        requiresPassword: false,
     };
 };
 

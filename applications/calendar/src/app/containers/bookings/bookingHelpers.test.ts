@@ -125,6 +125,7 @@ describe('booking helpers', () => {
             locationType: BookingLocation.MEET,
             duration: 60,
             timezone: 'Europe/Zurich',
+            requiresPassword: false,
             bookingSlots: [
                 {
                     id: '10',
@@ -144,6 +145,22 @@ describe('booking helpers', () => {
 
         it('should return warning if no title', () => {
             const result = validateFormData({ ...validForm, title: '' });
+
+            expect(result).toEqual({
+                type: 'warning',
+            });
+        });
+
+        it('should return false if the password is required but not defined', () => {
+            const result = validateFormData({ ...validForm, requiresPassword: true });
+
+            expect(result).toEqual({
+                type: 'warning',
+            });
+        });
+
+        it('should return false if the password is required but only composed of spaces', () => {
+            const result = validateFormData({ ...validForm, requiresPassword: true, password: ' ' });
 
             expect(result).toEqual({
                 type: 'warning',

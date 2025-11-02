@@ -33,6 +33,7 @@ export interface BookingFormData {
     timezone: string | undefined;
     locationType: BookingLocation;
     location?: string;
+    requiresPassword: boolean;
     password?: string;
     bookingSlots: Slot[];
 }

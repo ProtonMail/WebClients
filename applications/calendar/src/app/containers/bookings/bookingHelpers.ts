@@ -102,6 +102,12 @@ export const validateFormData = (data: BookingFormData): BookingFormValidation |
         };
     }
 
+    if (data.requiresPassword && (!data.password || data.password?.trim().length === 0)) {
+        return {
+            type: 'warning',
+        };
+    }
+
     if (data.title.trim().length === 0) {
         return {
             type: 'warning',
