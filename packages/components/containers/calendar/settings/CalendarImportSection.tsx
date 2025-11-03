@@ -23,8 +23,7 @@ interface Props {
     user: UserModel;
 }
 
-const CalendarImportSection = ({ calendars, initialCalendar, user }: Props) => {
-    const { hasNonDelinquentScope } = user;
+const CalendarImportSection = ({ calendars, initialCalendar }: Props) => {
     const isImporterInMaintenance = useFlag('MaintenanceImporter');
 
     const activeWritableCalendars = getWritableCalendars(getProbablyActiveCalendars(calendars));
@@ -45,7 +44,7 @@ const CalendarImportSection = ({ calendars, initialCalendar, user }: Props) => {
                 />
             )}
 
-            {hasNonDelinquentScope && !hasActiveCalendars ? (
+            {!hasActiveCalendars ? (
                 <Alert className="mb-4" type="warning">
                     {c('Info').t`You need to have an active personal calendar to import your events from ICS.`}
                 </Alert>
@@ -71,12 +70,7 @@ const CalendarImportSection = ({ calendars, initialCalendar, user }: Props) => {
                 </EasySwitchProvider>
             )}
 
-            <Button
-                color="norm"
-                className="mb-2"
-                onClick={handleManualImport}
-                disabled={!hasNonDelinquentScope || !hasActiveCalendars}
-            >
+            <Button color="norm" className="mb-2" onClick={handleManualImport} disabled={!hasActiveCalendars}>
                 {c('Action').t`Import from ICS`}
             </Button>
         </SettingsSection>

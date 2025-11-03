@@ -11,7 +11,6 @@ import TableBody from '@proton/components/components/table/TableBody';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableRow from '@proton/components/components/table/TableRow';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import type { UserModel } from '@proton/shared/lib/interfaces';
 import type { CalendarLink } from '@proton/shared/lib/interfaces/calendar';
 import { ACCESS_LEVEL } from '@proton/shared/lib/interfaces/calendar';
 import type { Nullable, SimpleMap } from '@proton/shared/lib/interfaces/utils';
@@ -24,10 +23,9 @@ interface Props {
     onCopyLink: (link: string, e: MouseEvent<HTMLButtonElement>) => void;
     onDelete: ({ calendarID, urlID }: { calendarID: string; urlID: string }) => void;
     isLoadingMap: SimpleMap<boolean>;
-    user: UserModel;
 }
 
-const LinkTable = ({ links, onCopyLink, onDelete, onEdit, isLoadingMap, user }: Props) => {
+const LinkTable = ({ links, onCopyLink, onDelete, onEdit, isLoadingMap }: Props) => {
     if (!links.length) {
         return null;
     }
@@ -47,11 +45,11 @@ const LinkTable = ({ links, onCopyLink, onDelete, onEdit, isLoadingMap, user }: 
                 <TableBody>
                     {links.map(({ CalendarID, CalendarUrlID, AccessLevel: accessLevel, link, purpose, CreateTime }) => {
                         const list = [
-                            user.hasNonDelinquentScope && {
+                            {
                                 text: c('Action').t`Copy link`,
                                 onClick: (e: MouseEvent<HTMLButtonElement>) => onCopyLink(link, e),
                             },
-                            user.hasNonDelinquentScope && {
+                            {
                                 text: purpose ? c('Action').t`Edit label` : c('Action').t`Add label`,
                                 onClick: () => onEdit({ calendarID: CalendarID, urlID: CalendarUrlID, purpose }),
                             },

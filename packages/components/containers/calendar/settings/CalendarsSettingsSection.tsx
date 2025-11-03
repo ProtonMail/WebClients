@@ -52,7 +52,7 @@ const CalendarsSettingsSection = ({
         calendars,
         !user.hasPaidMail
     );
-    const canAddCalendar = user.hasNonDelinquentScope && getActiveAddresses(addresses).length > 0;
+    const canAddCalendar = getActiveAddresses(addresses).length > 0;
 
     if (loadingCalendarInvitations) {
         return <PrivateMainAreaLoading />;

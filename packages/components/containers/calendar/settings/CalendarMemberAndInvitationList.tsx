@@ -20,7 +20,6 @@ interface MemberAndInvitationListProps {
     members: CalendarMember[];
     invitations: CalendarMemberInvitation[];
     calendarID: string;
-    canEdit: boolean;
     onDeleteMember: (id: string) => Promise<void>;
     onDeleteInvitation: (id: string, isDeclined: boolean) => Promise<void>;
 }
@@ -29,7 +28,6 @@ const CalendarMemberAndInvitationList = ({
     members,
     invitations,
     calendarID,
-    canEdit,
     onDeleteMember,
     onDeleteInvitation,
 }: MemberAndInvitationListProps) => {
@@ -95,7 +93,6 @@ const CalendarMemberAndInvitationList = ({
                                 permissions={Permissions}
                                 displayPermissions={displayPermissions}
                                 displayStatus={displayStatus}
-                                canEdit={canEdit}
                                 onDelete={() => onDeleteMember(ID)}
                                 onPermissionsUpdate={async (newPermissions) => {
                                     await api(updateMemberPermission(calendarID, ID, { Permissions: newPermissions }));
@@ -128,7 +125,6 @@ const CalendarMemberAndInvitationList = ({
                                 status={Status}
                                 displayPermissions={displayPermissions}
                                 displayStatus={displayStatus}
-                                canEdit={canEdit}
                                 onDelete={() => onDeleteInvitation(CalendarInvitationID, isDeclined)}
                                 onPermissionsUpdate={async (newPermissions) => {
                                     await api(

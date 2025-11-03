@@ -72,20 +72,8 @@ describe('ConnectGmailButton', () => {
         );
     });
 
-    it('should render a disabled button if user is loading', () => {
-        mockUseUser.mockReturnValue([{ hasNonDelinquentScope: true }, true]);
-        render(<ConnectGmailButton showIcon />);
-        expect(screen.getByTestId('ProviderButton:googleCardForward')).toBeDisabled();
-    });
-
-    it('should render a disabled button if user is delinquent', () => {
-        mockUseUser.mockReturnValue([{ hasNonDelinquentScope: false }, false]);
-        render(<ConnectGmailButton showIcon />);
-        expect(screen.getByTestId('ProviderButton:googleCardForward')).toBeDisabled();
-    });
-
     it('should render a disabled button if feature is in maintenance', () => {
-        mockUseUser.mockReturnValue([{ hasNonDelinquentScope: true }, false]);
+        mockUseUser.mockReturnValue([{}, false]);
         mockUseSetupGmailBYOEAddress.mockReturnValue({
             hasAccessToBYOE: false,
             isInMaintenance: true,
@@ -97,7 +85,7 @@ describe('ConnectGmailButton', () => {
     });
 
     it('should open sync modal when clicked and user has quota left', () => {
-        mockUseUser.mockReturnValue([{ hasNonDelinquentScope: true }, false]);
+        mockUseUser.mockReturnValue([{}, false]);
         render(
             <ModalsProvider>
                 <ConnectGmailButton showIcon />
@@ -108,7 +96,7 @@ describe('ConnectGmailButton', () => {
     });
 
     it('should open upsell modal when user is free and has a sync', () => {
-        mockUseUser.mockReturnValue([{ hasNonDelinquentScope: true }, false]);
+        mockUseUser.mockReturnValue([{}, false]);
         mockUseBYOEAddressesCount.mockReturnValue({
             byoeAddresses: [],
             activeBYOEAddresses: [],
@@ -126,10 +114,7 @@ describe('ConnectGmailButton', () => {
     });
 
     it('should open limit modal when user has reached sync limit', () => {
-        mockUseUser.mockReturnValue([
-            { hasNonDelinquentScope: true, Subscribed: PRODUCT_BIT.MAIL, Flags: { 'has-a-byoe-address': true } },
-            false,
-        ]);
+        mockUseUser.mockReturnValue([{ Subscribed: PRODUCT_BIT.MAIL, Flags: { 'has-a-byoe-address': true } }, false]);
         mockUseBYOEAddressesCount.mockReturnValue({
             byoeAddresses: [],
             activeBYOEAddresses: [],
@@ -147,10 +132,7 @@ describe('ConnectGmailButton', () => {
     });
 
     it('should open limit modal when user has reached BYOE limit', () => {
-        mockUseUser.mockReturnValue([
-            { hasNonDelinquentScope: true, Subscribed: PRODUCT_BIT.MAIL, Flags: { 'has-a-byoe-address': true } },
-            false,
-        ]);
+        mockUseUser.mockReturnValue([{ Subscribed: PRODUCT_BIT.MAIL, Flags: { 'has-a-byoe-address': true } }, false]);
         mockUseBYOEAddressesCount.mockReturnValue({
             byoeAddresses: [
                 { ID: 'address1', Flags: ADDRESS_FLAGS.BYOE } as Address,
@@ -182,7 +164,6 @@ describe('ConnectGmailButton', () => {
     it('should open limit modal when user has reached BYOE limit and deleted syncs', () => {
         mockUseUser.mockReturnValue([
             {
-                hasNonDelinquentScope: true,
                 Subscribed: PRODUCT_BIT.MAIL,
                 Flags: { 'has-a-byoe-address': true },
                 isPaid: true,

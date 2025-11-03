@@ -45,8 +45,6 @@ export enum UNPAID_STATE {
     NOT_UNPAID = 0,
     AVAILABLE = 1,
     OVERDUE = 2,
-    DELINQUENT = 3,
-    NO_RECEIVE = 4,
 }
 
 export interface User {
@@ -133,7 +131,6 @@ export interface UserInfo {
      */
     isSelf: boolean;
     isDelinquent: boolean;
-    hasNonDelinquentScope: boolean;
     hasPaidMail: boolean;
     hasPaidVpn: boolean;
     hasPaidDrive: boolean;

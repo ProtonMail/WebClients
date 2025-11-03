@@ -4,7 +4,6 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import AccessTypeTopBanner from './AccessTypeTopBanner';
 import BadAppVersionBanner from './BadAppVersionBanner';
-import DelinquentTopBanner from './DelinquentTopBanner';
 import DesktopNotificationTopBanner from './DesktopNotificationTopBanner';
 import OnlineTopBanner from './OnlineTopBanner';
 import PendingInvitationTopBanner from './PendingInvitationTopBanner';
@@ -13,6 +12,7 @@ import StorageLimitTopBanner from './StorageLimitTopBanner';
 import SubscriptionEndsBanner from './SubscriptionEndsBanner';
 import TimeOutOfSyncTopBanner from './TimeOutOfSyncTopBanner';
 import TrialTopBanner from './TrialTopBanner';
+import UnpaidInvoiceTopBanner from './UnpaidInvoiceTopBanner';
 
 interface Props {
     app: APP_NAMES;
@@ -22,7 +22,7 @@ interface Props {
 const TopBanners = ({ children, app }: Props) => {
     return (
         <>
-            <DelinquentTopBanner />
+            <UnpaidInvoiceTopBanner />
             <TrialTopBanner app={app} />
             <OnlineTopBanner />
             <TimeOutOfSyncTopBanner />
