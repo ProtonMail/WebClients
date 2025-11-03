@@ -1,4 +1,4 @@
-import { lazy, useState } from 'react';
+import { Suspense, lazy, useState } from 'react';
 import { Router } from 'react-router-dom';
 import { CompatRouter } from 'react-router-dom-v5-compat';
 
@@ -120,7 +120,9 @@ const App = () => {
                                                                     state.initialDriveUserSettings
                                                                 }
                                                             >
-                                                                <MainContainerLazy />
+                                                                <Suspense fallback={<LoaderPage />}>
+                                                                    <MainContainerLazy />
+                                                                </Suspense>
                                                             </UserSettingsProvider>
                                                         </StandardPrivateApp>
                                                     </ErrorBoundary>
