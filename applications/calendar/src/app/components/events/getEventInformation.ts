@@ -5,10 +5,11 @@ import type { EventModelReadView } from '@proton/shared/lib/interfaces/calendar'
 
 import getIsTemporaryViewEvent from '../../containers/calendar/getIsTemporaryViewEvent';
 import type { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
+import { getEventReadResult } from '../../store/events/eventsCache';
 
 const getEventInformation = (calendarViewEvent: CalendarViewEvent, model: EventModelReadView, hasPaidMail: boolean) => {
-    const { calendarData, eventReadResult, eventData } = calendarViewEvent.data;
-
+    const { calendarData, eventData } = calendarViewEvent.data;
+    const eventReadResult = getEventReadResult(calendarViewEvent.uniqueId);
     const isTemporaryEvent = getIsTemporaryViewEvent(calendarViewEvent);
     const tmpData = isTemporaryEvent ? (calendarViewEvent as CalendarViewEventTemporaryEvent).tmpData : undefined;
     const isEventReadLoading = !isTemporaryEvent && !eventReadResult;
