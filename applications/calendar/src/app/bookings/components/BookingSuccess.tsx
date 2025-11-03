@@ -1,0 +1,86 @@
+import type { ReactNode } from 'react';
+
+import { format } from 'date-fns';
+import { c } from 'ttag';
+
+import { Icon } from '@proton/components/index';
+import { IcCheckmarkCircle, type IconName } from '@proton/icons';
+import { dateLocale } from '@proton/shared/lib/i18n';
+
+import { useBookingStore } from '../booking.store';
+import { NoMatch, Reason } from './NoMatch';
+
+interface BookingSuccessItemProps {
+    icon: IconName;
+    title: string;
+    data: ReactNode | string;
+}
+
+const BookingSuccessItem = ({ icon, title, data }: BookingSuccessItemProps) => {
+    return (
+        <div className="flex gap-3">
+            <div
+                className="rounded-full bg-weak flex items-center justify-center w-custom h-custom"
+                style={{ '--w-custom': '2.5rem', '--h-custom': '2.5rem' }}
+            >
+                <Icon name={icon} size={5} />
+            </div>
+            <div>
+                <h2 className="m-0 text-semibold text-rg">{title}</h2>
+                <p className="m-0">{data}</p>
+            </div>
+        </div>
+    );
+};
+
+export const BookingSuccess = () => {
+    const bookingDetails = useBookingStore((state) => state.bookingDetails);
+    const bookingSlotDetails = useBookingStore((state) => state.bookingSlotDetails);
+
+    if (!bookingDetails || !bookingSlotDetails) {
+        return <NoMatch reason={Reason.notFound} />;
+    }
+
+    const timeData = `${format(bookingSlotDetails.startTime, 'HH:mm', { locale: dateLocale })} - ${format(bookingSlotDetails.endTime, 'HH:mm', { locale: dateLocale })}`;
+
+    return (
+        <div className="container">
+            <div className="mt-8 bg-hint p-12 rounded-xl">
+                <div className="text-center mb-6">
+                    <IcCheckmarkCircle size={10} className="color-success mb-2" />
+                    <h1 className="text-bold text-4xl mb-2">{c('Title').t`Your booking is confirmed`}</h1>
+                    <p className="m-0">{c('Description').t`You’ll get a secure email with the details shortly.`}</p>
+                </div>
+                <hr />
+                <div className="flex gap-4 justify-center">
+                    <div className="flex flex-column gap-4">
+                        <BookingSuccessItem
+                            title={c('Title').t`Host`}
+                            icon="user-circle"
+                            data={bookingDetails.inviterDisplayName}
+                        />
+                        <BookingSuccessItem
+                            title={c('Title').t`Location`}
+                            icon="map-pin"
+                            data={bookingDetails.location}
+                        />
+                        <BookingSuccessItem
+                            title={c('Title').t`Time zone`}
+                            icon="globe"
+                            data={bookingDetails.timezone}
+                        />
+                    </div>
+
+                    <div className="flex flex-column gap-4">
+                        <BookingSuccessItem
+                            title={c('Title').t`Date`}
+                            icon="calendar-grid"
+                            data={format(bookingSlotDetails.startTime, 'MMMM d, yyyy', { locale: dateLocale })}
+                        />
+                        <BookingSuccessItem title={c('Title').t`Time`} icon="clock" data={timeData} />
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};

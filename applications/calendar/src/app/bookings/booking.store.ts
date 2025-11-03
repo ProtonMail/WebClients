@@ -35,8 +35,14 @@ export type BookingDetails = {
     inviterEmail: string;
 };
 
+export type BookingSlotDetails = {
+    startTime: Date;
+    endTime: Date;
+};
+
 interface BookingStore {
     bookingDetails: BookingDetails | null;
+    bookingSlotDetails: BookingSlotDetails | null;
     timeslots: Map<string, BookingDaySlots>;
     isLoading: boolean;
     hasLoaded: boolean;
@@ -46,6 +52,8 @@ interface BookingStore {
     setLoading: (loading: boolean) => void;
     setBookingDetails: (details: BookingDetails) => void;
     getBookingDetails: () => BookingDetails | null;
+    setBookingSlotDetails: (details: BookingSlotDetails) => void;
+    getBookingSlotDetails: () => BookingSlotDetails | null;
     setTimeslots: (timeslots: BookingTimeslot[]) => void;
     getTimeslotsByDate: (date: Date) => BookingTimeslotWithDate[];
     getAllTimeslots: () => BookingTimeslotWithDate[];
@@ -106,6 +114,7 @@ const groupTimeslotsByDate = (timeslots: BookingTimeslot[]): Map<string, Booking
 
 export const useBookingStore = create<BookingStore>((set, get) => ({
     bookingDetails: null,
+    bookingSlotDetails: null,
     timeslots: new Map(),
     isLoading: false,
     hasLoaded: false,
@@ -125,6 +134,14 @@ export const useBookingStore = create<BookingStore>((set, get) => ({
 
     getBookingDetails: () => {
         return get().bookingDetails;
+    },
+
+    setBookingSlotDetails: (details: BookingSlotDetails) => {
+        set({ bookingSlotDetails: details });
+    },
+
+    getBookingSlotDetails: () => {
+        return get().bookingSlotDetails;
     },
 
     setTimeslots: (timeslots: BookingTimeslot[]) => {
@@ -181,6 +198,7 @@ export const useBookingStore = create<BookingStore>((set, get) => ({
 
     clear: () => {
         set({
+            bookingSlotDetails: null,
             bookingDetails: null,
             timeslots: new Map(),
             isLoading: false,
