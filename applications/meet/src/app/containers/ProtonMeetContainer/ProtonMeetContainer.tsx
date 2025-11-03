@@ -135,6 +135,16 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
 
     const notifications = useNotifications();
 
+    const reportMLSRelatedError = (key: string | undefined, epoch: bigint | undefined) => {
+        if (!key) {
+            reportMeetError('Key is undefined', { epoch });
+        }
+
+        if (!epoch) {
+            reportMeetError('Epoch is undefined', {});
+        }
+    };
+
     const getGroupKeyInfo = async () => {
         try {
             const newGroupKeyInfo = (await wasmApp?.getGroupKey()) as GroupKeyInfo;
@@ -153,7 +163,10 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
 
     const onNewGroupKeyInfo = async (key: string, epoch: bigint) => {
         try {
+            reportMLSRelatedError(key, epoch);
+
             await keyProviderRef.current?.setKey(key, epoch);
+
             const displayCode = await wasmApp?.getGroupDisplayCode();
             setMlsGroupState({ displayCode: displayCode?.full_code || null, epoch: epoch });
         } catch (err) {
@@ -360,6 +373,8 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
             accessTokenRef.current = accessToken;
 
             const { key: groupKey, epoch } = (await handleMlsSetup(meetingToken, accessToken)) || {};
+
+            reportMLSRelatedError(groupKey, epoch);
 
             await keyProvider.setKey(groupKey as string, epoch);
 
