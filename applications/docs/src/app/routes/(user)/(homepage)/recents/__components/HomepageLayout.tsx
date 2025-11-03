@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from 'react'
+import { useMemo, useState, type ReactNode } from 'react'
 
 import {
   AppsDropdown,
@@ -47,6 +47,7 @@ import { goToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag'
 import * as Ariakit from '@ariakit/react'
 import { COLOR_BY_TYPE, ICON_BY_TYPE } from './HomepageContent/shared'
 import { NewDocumentMenu } from './HomepageContent/NewDocumentMenu'
+import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 
 const USER_DROPDOWN_OVERRIDES =
   '[&_.user-dropdown-displayName]:font-[0.8571428571em] [&_.user-dropdown-displayName]:leading-[1.2] [&_.user-initials]:!leading-[1.0714rem]'
@@ -87,7 +88,7 @@ type HeaderProps = {
 
 function Header({ isHeaderExpanded, toggleHeaderExpanded }: HeaderProps) {
   const { viewportWidth } = useActiveBreakpoint()
-  const { state, setSearch } = useHomepageView()
+  const { state, type, setSearch } = useHomepageView()
   const searchValue = state.view === 'search' || state.view === 'search-empty' ? state.query : undefined
 
   return (
@@ -105,12 +106,14 @@ function Header({ isHeaderExpanded, toggleHeaderExpanded }: HeaderProps) {
             <MobileSearch
               className="mobile-search-hack small:!hidden"
               value={searchValue}
-              onChange={(value) => setSearch(value, true)}
+              onChange={(value) => setSearch(value, false)}
+              type={type}
             />
             <Search
               className="!hidden ps-1 small:!flex"
               value={searchValue}
-              onChange={(value) => setSearch(value, true)}
+              onChange={(value) => setSearch(value, false)}
+              type={type}
             />
           </>
         }
@@ -122,9 +125,14 @@ function Header({ isHeaderExpanded, toggleHeaderExpanded }: HeaderProps) {
 // search
 // ------
 
-type SearchProps = { value: string | undefined; onChange: (value: string | undefined) => void; className?: string }
+type SearchProps = {
+  value: string | undefined
+  onChange: (value: string | undefined) => void
+  type: ProtonDocumentType | undefined
+  className?: string
+}
 
-function Search({ value, onChange, className }: SearchProps) {
+function Search({ value, onChange, type, className }: SearchProps) {
   const isRecentsRoute = useRouteMatch(HOMEPAGE_RECENTS_PATH)
   const history = useHistory()
   const handleChange = useEvent((value: string | undefined) => {
@@ -134,6 +142,17 @@ function Search({ value, onChange, className }: SearchProps) {
     }
     onChange(value)
   })
+  const placeholder = useMemo(() => {
+    if (type) {
+      switch (type) {
+        case 'document':
+          return c('Action').t`Search recent documents`
+        case 'spreadsheet':
+          return c('Action').t`Search recent spreadsheets`
+      }
+    }
+    return c('Action').t`Search recents`
+  }, [type])
   return (
     <div className={className}>
       <Input
@@ -151,13 +170,13 @@ function Search({ value, onChange, className }: SearchProps) {
         }
         value={value ?? ''}
         onChange={(e) => handleChange(e.target.value)}
-        placeholder={c('Action').t`Search recent documents`}
+        placeholder={placeholder}
       />
     </div>
   )
 }
 
-function MobileSearch({ value, onChange, className }: SearchProps) {
+function MobileSearch({ value, onChange, type, className }: SearchProps) {
   const isRecentsRoute = useRouteMatch(HOMEPAGE_RECENTS_PATH)
   const history = useHistory()
   const handleChange = useEvent((value: string | undefined) => {
@@ -169,6 +188,17 @@ function MobileSearch({ value, onChange, className }: SearchProps) {
   })
   const [isActive, setActive] = useState(false)
   const isInput = (value && value.length > 0) || isActive
+  const placeholder = useMemo(() => {
+    if (type) {
+      switch (type) {
+        case 'document':
+          return c('Action').t`Search recent documents`
+        case 'spreadsheet':
+          return c('Action').t`Search recent spreadsheets`
+      }
+    }
+    return c('Action').t`Search recents`
+  }, [type])
   return (
     <div className={clsx('flex grow items-center gap-2', className)}>
       {isInput ? (
@@ -194,14 +224,14 @@ function MobileSearch({ value, onChange, className }: SearchProps) {
           }
           value={value ?? ''}
           onChange={(e) => handleChange(e.target.value)}
-          placeholder={c('Action').t`Search recent documents`}
+          placeholder={placeholder}
         />
       ) : (
         <>
           <div className="grow font-[.875rem] font-semibold">
             {isRecentsRoute ? c('Info').t`Recents` : c('Info').t`Trash`}
           </div>
-          <Tooltip title={c('Action').t`Search recent documents`}>
+          <Tooltip title={placeholder}>
             <Button size="medium" icon shape="outline" color="weak" onClick={() => setActive(true)}>
               <Icon name="magnifier" size={4} />
             </Button>
@@ -291,7 +321,11 @@ function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
         <SidebarList>
           <SidebarListItem onClick={() => setExpanded(false)}>
             <SidebarListItemLink
-              to="/recents"
+              to={(location) => {
+                const search = new URLSearchParams(location.search)
+                search.delete('type')
+                return { ...location, pathname: '/recents', search: search.toString() }
+              }}
               exact={true}
               data-updating={isRecentsUpdating ? '' : undefined}
               className="flex items-center justify-between"
@@ -308,7 +342,11 @@ function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
             <>
               <SidebarListItem onClick={() => setExpanded(false)}>
                 <SidebarListItemLink
-                  to="/recents?type=document"
+                  to={(location) => {
+                    const search = new URLSearchParams(location.search)
+                    search.set('type', 'document')
+                    return { ...location, pathname: '/recents', search: search.toString() }
+                  }}
                   exact={true}
                   data-updating={isRecentsUpdating ? '' : undefined}
                   className="flex items-center justify-between"
@@ -327,7 +365,11 @@ function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
               </SidebarListItem>
               <SidebarListItem onClick={() => setExpanded(false)}>
                 <SidebarListItemLink
-                  to="/recents?type=spreadsheet"
+                  to={(location) => {
+                    const search = new URLSearchParams(location.search)
+                    search.set('type', 'spreadsheet')
+                    return { ...location, pathname: '/recents', search: search.toString() }
+                  }}
                   exact={true}
                   data-updating={isRecentsUpdating ? '' : undefined}
                   className="flex items-center justify-between"
