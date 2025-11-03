@@ -144,6 +144,7 @@ const useDayGridEventLayout = (
                 maxRows,
             };
         });
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-D564B0
     }, [rows, events, numberOfRows]);
 };
 

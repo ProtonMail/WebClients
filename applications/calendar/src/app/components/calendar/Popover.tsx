@@ -134,6 +134,7 @@ const Popover = ({
                 left: Math.round(style.left),
             },
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-14C97A
     }, [popoverEl, targetEl, containerEl, containerRect, popoverRect, targetRect]);
 
     if (value && containerEl && isOpen) {

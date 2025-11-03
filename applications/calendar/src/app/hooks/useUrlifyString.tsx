@@ -17,5 +17,6 @@ export const useUrlifyString = ({ text, urlifyOptions }: Props) => {
         const urlified = urlify(text, urlifyOptions);
         const escaped = escapeInvalidHtmlTags(urlified);
         return restrictedCalendarSanitize(escaped);
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-62B59A
     }, [text]);
 };

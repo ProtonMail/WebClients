@@ -68,6 +68,7 @@ const PartDayRegularEvent = ({
         const timeStart = formatTime(start);
         const timeEnd = formatTime(end);
         return `${timeStart} - ${timeEnd}`;
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-CBCFEA
     }, [start, end]);
     const shouldHideTime = isEventReadLoading || (eventPartDuration < 50 * MINUTE && titleString);
 

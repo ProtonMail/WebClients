@@ -29,6 +29,7 @@ export const useOpenCalendarEvents = ({ onChangeDate, tzid, setEventTargetAction
 
             onChangeDate(startOfDay(fakeUTCDate));
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-A81023
         [tzid, setEventTargetAction]
     );
 
@@ -46,6 +47,7 @@ export const useOpenCalendarEvents = ({ onChangeDate, tzid, setEventTargetAction
                 preventPopover,
             });
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-D3AB2C
         [setEventTargetAction, onChangeDate, tzid, navigateToEvent]
     );
 
@@ -70,6 +72,7 @@ export const useOpenCalendarEvents = ({ onChangeDate, tzid, setEventTargetAction
                 preventPopover,
             });
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-352734
         [setEventTargetAction, onChangeDate, navigateToEvent]
     );
 

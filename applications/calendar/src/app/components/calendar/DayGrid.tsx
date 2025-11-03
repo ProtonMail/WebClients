@@ -66,6 +66,7 @@ const DayGrid = ({
 
     const rows = useMemo(() => {
         return chunk(eachDayOfInterval(start, end), daysInWeek);
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-305117
     }, [+start, +end]);
 
     const eventsPerRows = useDayGridEventLayout(rows, events, numberOfRows, dayEventHeight);
@@ -74,6 +75,7 @@ const DayGrid = ({
         const { height: firstRowHeight = 100 } = firstRowRect || {};
         const newNumberOfRows = Math.max(Math.floor(firstRowHeight / dayEventHeight), 1);
         setNumberOfRows(newNumberOfRows - 1);
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-2F656D
     }, [firstRowRect, dateRange]);
 
     const handleMouseDownRef = useRef<(e: MouseEvent) => void>();
@@ -125,6 +127,7 @@ const DayGrid = ({
         containerRef.current?.addEventListener('keydown', handleKeyDown, true);
         return () => {
             document.removeEventListener('mousedown', listener, true);
+            // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-EA3B67
             containerRef.current?.removeEventListener('keydown', handleKeyDown, true);
         };
     }, [isInteractionEnabled]);

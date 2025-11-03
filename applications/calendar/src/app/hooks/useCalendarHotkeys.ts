@@ -132,6 +132,7 @@ const useCalendarHotkeys = ({
                 },
             ],
         ],
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-807C29
         [
             goToToday,
             goToNextView,

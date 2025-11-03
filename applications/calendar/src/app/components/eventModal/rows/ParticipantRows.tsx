@@ -29,6 +29,7 @@ const ParticipantRows = ({
     const dispatch = useCalendarDispatch();
     const busyAttendeeHighlighted = useRef<string | undefined>(undefined);
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-CFB33E
     const onChangeHighlight = useCallback(
         debounce(() => {
             dispatch(busySlotsActions.setHighlightedAttendee(busyAttendeeHighlighted.current));

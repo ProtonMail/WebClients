@@ -23,6 +23,7 @@ interface Props {
 const RepeatOnRow = ({ frequencyModel, start, weekStartsOn, onChange, displayStacked = false }: Props) => {
     const [weekdaysLong, weekdaysAbbreviations] = useMemo(() => {
         return ['cccc', 'cccccc'].map((format) => getFormattedWeekdays(format, { locale: dateLocale }));
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-CBCA7E
     }, [dateLocale]);
     const currentDay = start.date.getDay();
 

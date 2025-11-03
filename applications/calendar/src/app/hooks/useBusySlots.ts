@@ -37,6 +37,7 @@ const useBusySlots = ({ temporaryEvent, dateRange, tzid, view }: Props) => {
 
     useEffect(() => {
         updateMetadata();
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-58D67C
     }, [view, dateRange[0], dateRange[1], tzid]);
 
     useEffect(() => {
@@ -61,6 +62,7 @@ const useBusySlots = ({ temporaryEvent, dateRange, tzid, view }: Props) => {
             dispatch(busySlotsActions.reset());
             preventFetchRef.current = false;
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-30255C
     }, [temporaryEvent?.tmpData.attendees.join(',')]);
 
     return preventFetchRef;

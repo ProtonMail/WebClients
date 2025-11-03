@@ -46,6 +46,7 @@ const useCalendarSearchHotkeys = ({ elementRef, onNext, onPrevious, onBackFromSe
                 },
             ],
         ],
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-88B086
         [Shortcuts, onNext, onPrevious]
     );
 

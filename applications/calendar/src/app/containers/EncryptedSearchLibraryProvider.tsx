@@ -109,6 +109,7 @@ const EncryptedSearchLibraryProvider = ({ calendarIDs, hasReactivatedCalendarsRe
                 return esLibraryFunctions.handleEvent(esEvent);
             }
         );
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-E65FA7
     }, [esLibraryFunctions, esCallbacks, getCalendarEventRaw]);
 
     // Calendars loop
@@ -131,6 +132,7 @@ const EncryptedSearchLibraryProvider = ({ calendarIDs, hasReactivatedCalendarsRe
 
             return esLibraryFunctions.handleEvent(esEvent);
         });
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-397023
     }, [calendarIDs, esLibraryFunctions, esCallbacks, cachedIndexKey]);
 
     useEffect(() => {
@@ -150,6 +152,7 @@ const EncryptedSearchLibraryProvider = ({ calendarIDs, hasReactivatedCalendarsRe
         };
 
         void initializeLibrary();
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-B0806C
     }, [isConfigFromESDBLoaded]);
 
     useEffect(
@@ -170,6 +173,7 @@ const EncryptedSearchLibraryProvider = ({ calendarIDs, hasReactivatedCalendarsRe
             void computeRecurrenceIDsMap();
         },
         // getting the cache is a heavy operation; with these dependencies it should be run just once per app lifecycle
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-8086A7
         [isLibraryInitialized, esEnabled]
     );
 

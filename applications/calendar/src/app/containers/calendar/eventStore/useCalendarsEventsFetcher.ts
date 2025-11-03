@@ -159,6 +159,7 @@ const useCalendarsEventsFetcher = ({
             }
         });
         void withLoading(currentPromise).then(prefetchDateRanges);
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-EE2950
     }, [calendars, initialDateRange.toString()]);
 
     return {

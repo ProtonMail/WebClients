@@ -38,6 +38,7 @@ export const useCalendarsAlarmsEventListeners = (
                 cacheRef.current.rerender?.();
             }
         });
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-C2930F
     }, []);
 
     // subscribe to calendar event loop
@@ -124,6 +125,7 @@ export const useCalendarsAlarmsEventListeners = (
                 cacheRef.current.rerender?.();
             }
         });
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-6C5055
     }, [calendarIDs]);
 };
 

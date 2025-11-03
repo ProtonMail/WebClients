@@ -138,6 +138,7 @@ const CreateEventPopover = ({
         if (isBusySlotsAvailable) {
             dispatch(busySlotsActions.setDisplay(true));
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-C9A32F
     }, []);
 
     useEffect(() => {
@@ -162,6 +163,7 @@ const CreateEventPopover = ({
                 debounce(() => setOffset((prevState) => ({ ...prevState, y: boundedOffset })), 50)();
             }
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-C6BA55
     }, [formRect?.top]);
 
     useEffect(() => {
@@ -183,6 +185,7 @@ const CreateEventPopover = ({
             document.removeEventListener('mouseup', debouncedStopDragging);
             document.removeEventListener('mouseleave', debouncedStopDragging);
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-01B666
     }, [isDraggingDisabled, isDragging]);
 
     return (
