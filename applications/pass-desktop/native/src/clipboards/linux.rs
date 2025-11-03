@@ -4,11 +4,10 @@ use arboard::SetExtLinux;
 
 pub struct Clipboard {}
 
-impl ClipboardTrait<arboard::Clipboard> for Clipboard {
+impl ClipboardTrait for Clipboard {
     fn read() -> Result<String, anyhow::Error> {
-        arboard::Clipboard::new()?
-            .get_text()
-            .map_err(|e| anyhow::anyhow!("Clipboard read error: {}", e))
+        let mut clipboard = arboard::Clipboard::new()?;
+        clipboard.get_text().map_err(|e| e.into())
     }
 
     fn write(text: &str, sensitive: bool) -> Result<(), anyhow::Error> {
@@ -26,10 +25,5 @@ impl ClipboardTrait<arboard::Clipboard> for Clipboard {
             Ok(())
         });
         Ok(())
-    }
-
-    fn chain(func: impl FnOnce(&mut arboard::Clipboard) -> Result<(), anyhow::Error>) -> Result<(), anyhow::Error> {
-        let mut clipboard = arboard::Clipboard::new()?;
-        func(&mut clipboard)
     }
 }
