@@ -1,11 +1,16 @@
+import { format, fromUnixTime } from 'date-fns';
 import { create } from 'zustand';
+
+import { dateLocale } from '@proton/shared/lib/i18n';
 
 export type BookingTimeslot = {
     id: string;
     startTime: number;
     endTime: number;
     timezone: string;
-    rrule: string | undefined;
+    rrule?: string;
+    bookingKeyPacket: string;
+    detachedSignature: string;
 };
 
 export type BookingTimeslotWithDate = BookingTimeslot & {
@@ -18,12 +23,16 @@ export type BookingDaySlots = {
 };
 
 export type BookingDetails = {
+    calendarId: string;
     bookingUid: string;
     summary: string;
     description: string;
     location: string;
     duration: number | undefined;
     timezone: string | undefined;
+    bookingKeySalt: string;
+    inviterDisplayName: string;
+    inviterEmail: string;
 };
 
 interface BookingStore {
@@ -31,6 +40,8 @@ interface BookingStore {
     timeslots: Map<string, BookingDaySlots>;
     isLoading: boolean;
     hasLoaded: boolean;
+    selectedDate: Date;
+    selectedTimezone: string;
 
     setLoading: (loading: boolean) => void;
     setBookingDetails: (details: BookingDetails) => void;
@@ -39,14 +50,26 @@ interface BookingStore {
     getTimeslotsByDate: (date: Date) => BookingTimeslotWithDate[];
     getAllTimeslots: () => BookingTimeslotWithDate[];
     getAllDaySlots: () => BookingDaySlots[];
+    getDaysWithSlots: () => Set<string>;
+    setSelectedDate: (date: Date) => void;
+    getSelectedDate: () => Date;
+    setSelectedTimezone: (timezone: string) => void;
+    getSelectedTimezone: () => string;
     clear: () => void;
 }
 
 /**
- * Converts a timestamp to YYYY-MM-DD string
+ * Converts a Date object to YYYY-MM-DD string in local timezone
+ */
+const getLocalDateKey = (date: Date): string => {
+    return format(date, 'yyyy-MM-dd', { locale: dateLocale });
+};
+
+/**
+ * Converts a timestamp to YYYY-MM-DD string in local timezone
  */
 const getDateKey = (timestamp: number): string => {
-    return new Date(timestamp * 1000).toISOString().split('T')[0];
+    return format(fromUnixTime(timestamp), 'yyyy-MM-dd', { locale: dateLocale });
 };
 
 /**
@@ -86,6 +109,8 @@ export const useBookingStore = create<BookingStore>((set, get) => ({
     timeslots: new Map(),
     isLoading: false,
     hasLoaded: false,
+    selectedDate: new Date(),
+    selectedTimezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
 
     setLoading: (loading: boolean) => {
         set({ isLoading: loading });
@@ -104,11 +129,18 @@ export const useBookingStore = create<BookingStore>((set, get) => ({
 
     setTimeslots: (timeslots: BookingTimeslot[]) => {
         const grouped = groupTimeslotsByDate(timeslots);
-        set({ timeslots: grouped });
+        const currentTimeslots = get().timeslots;
+        const mergedTimeslots = new Map(currentTimeslots);
+
+        grouped.forEach((value, key) => {
+            mergedTimeslots.set(key, value);
+        });
+
+        set({ timeslots: mergedTimeslots });
     },
 
     getTimeslotsByDate: (date: Date) => {
-        const dateKey = date.toISOString().split('T')[0];
+        const dateKey = getLocalDateKey(date);
         const daySlots = get().timeslots.get(dateKey);
         return daySlots?.timeslots || [];
     },
@@ -127,12 +159,34 @@ export const useBookingStore = create<BookingStore>((set, get) => ({
         });
     },
 
+    getDaysWithSlots: () => {
+        return new Set(get().timeslots.keys());
+    },
+
+    setSelectedDate: (date: Date) => {
+        set({ selectedDate: date });
+    },
+
+    getSelectedDate: () => {
+        return get().selectedDate;
+    },
+
+    setSelectedTimezone: (timezone: string) => {
+        set({ selectedTimezone: timezone });
+    },
+
+    getSelectedTimezone: () => {
+        return get().selectedTimezone;
+    },
+
     clear: () => {
         set({
             bookingDetails: null,
             timeslots: new Map(),
             isLoading: false,
             hasLoaded: false,
+            selectedDate: new Date(),
+            selectedTimezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
         });
     },
 }));

@@ -1,0 +1,9 @@
+.booking-day-with-slots {
+	&::before {
+		background-color: var(--interaction-norm-minor-1);
+	}
+
+	&:hover::before {
+		background-color: var(--interaction-norm-minor-2);
+	}
+}

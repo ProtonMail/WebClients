@@ -1,6 +1,11 @@
-import { CryptoProxy, type PublicKeyReference } from '@proton/crypto';
+import { CryptoProxy, type PublicKeyReference, type SessionKey } from '@proton/crypto';
 import { deriveKey, generateKey } from '@proton/crypto/lib/subtle/aesGcm';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
+import {
+    base64StringToUint8Array,
+    base64URLStringToUint8Array,
+    uint8ArrayToBase64String,
+    uint8ArrayToPaddedBase64URLString,
+} from '@proton/shared/lib/helpers/encoding';
 import type {
     BookingPageCreationPayload,
     BookingPageSlotsPayload,
@@ -34,7 +39,7 @@ const encryptBookingData = async (
         passwords: bookingKeyPassword,
         signingKeys: signingKeys,
         format: 'binary',
-        signatureContext: { critical: true, value: `bookly.content.${bookingUid}` },
+        signatureContext: { critical: true, value: `bookings.content.${bookingUid}` },
     });
 
     return encryptedContent;
@@ -76,7 +81,7 @@ const encryptBookingSlots = async (
             signingKeys,
             detached: true,
             format: 'binary',
-            signatureContext: { critical: true, value: `bookly.slot.${bookingUid}` },
+            signatureContext: { critical: true, value: `bookings.slot.${bookingUid}` },
         });
 
         Slots.push({
@@ -101,7 +106,7 @@ export const deriveBookingKeyPassword = async (
     const bookingKey = await deriveKey(
         secretBytes,
         salt,
-        new TextEncoder().encode(`bookly.booking_key.${calendarID}`),
+        new TextEncoder().encode(`bookings.booking_key.${calendarID}`),
         {
             extractable: true,
         }
@@ -111,17 +116,60 @@ export const deriveBookingKeyPassword = async (
     return new Uint8Array(bookingKeyBytes);
 };
 
-export const deriveBookingUid = async (secretBytes: Uint8Array<ArrayBuffer>) => {
+/**
+ * Derives the booking UID bytes from the booking secret bytes
+ * @param bookingSecretBytes - The raw secret bytes (NOT base64url encoded)
+ * @returns Raw booking UID bytes (NOT base64url encoded)
+ */
+export const deriveBookingUid = async (bookingSecretBytes: Uint8Array<ArrayBuffer>) => {
     const bookingUidKey = await deriveKey(
-        secretBytes,
+        bookingSecretBytes,
         new Uint8Array(),
-        new TextEncoder().encode('bookly.booking_id'),
+        new TextEncoder().encode('bookings.booking_id'),
         {
             extractable: true,
         }
     );
     const bookingUidBytes = await crypto.subtle.exportKey('raw', bookingUidKey);
     return new Uint8Array(bookingUidBytes);
+};
+
+/**
+ * Extracts and derives the booking UID in base64url format from the booking secret
+ * @param bookingSecretBase64Url - The booking secret in base64url format (from URL hash)
+ * @returns The booking UID in base64url format (for API calls)
+ */
+export const extractBookingUidFromSecret = async (bookingSecretBase64Url: string): Promise<string> => {
+    const bookingSecretBytes = base64URLStringToUint8Array(bookingSecretBase64Url);
+    return uint8ArrayToPaddedBase64URLString(await deriveBookingUid(bookingSecretBytes));
+};
+
+/**
+ * Decrypts the booking session key using the booking secret
+ * @param bookingSecretBase64Url - The booking secret in base64url format (from URL hash)
+ * @param bookingKeySalt - The salt in base64 format (from API)
+ * @param calendarId - The calendar ID
+ * @param bookingKeyPacket - The encrypted session key packet in base64 format (from API)
+ * @returns The decrypted session key
+ */
+export const decryptBookingSessionKey = async (
+    bookingSecretBase64Url: string,
+    bookingKeySalt: string,
+    calendarId: string,
+    bookingKeyPacket: string
+): Promise<SessionKey | undefined> => {
+    const bookingSecretBytes = base64URLStringToUint8Array(bookingSecretBase64Url);
+    const saltBytes = base64StringToUint8Array(bookingKeySalt);
+    const bookingKeyPassword = uint8ArrayToBase64String(
+        await deriveBookingKeyPassword(calendarId, bookingSecretBytes, saltBytes)
+    );
+
+    const bookingKeyPacketBytes = base64StringToUint8Array(bookingKeyPacket);
+
+    return CryptoProxy.decryptSessionKey({
+        binaryMessage: bookingKeyPacketBytes,
+        passwords: [bookingKeyPassword],
+    });
 };
 
 export const encryptBookingPage = async ({
@@ -156,7 +204,7 @@ export const encryptBookingPage = async ({
         signingKeys: signingKeys,
         format: 'binary',
         signatureContext: {
-            value: `bookly.secret.${calendarID}`,
+            value: `bookings.secret.${calendarID}`,
             critical: true,
         },
     });
