@@ -53,6 +53,7 @@ import {
     getIsCalendarProbablyActive,
     getIsCalendarWritable,
     getIsOwnedCalendar,
+    getVisualCalendar,
 } from '@proton/shared/lib/calendar/calendar';
 import {
     ATTENDEE_COMMENT_ENCRYPTION_TYPE,
@@ -164,7 +165,9 @@ import { getCurrentPartstat } from '../../store/events/eventsCache';
 import { pendingUniqueIdsSelector, selectIsTmpEventSaving } from '../../store/events/eventsSelectors';
 import { type CalendarViewEventStore, eventsActions } from '../../store/events/eventsSlice';
 import { useCalendarDispatch, useCalendarSelector } from '../../store/hooks';
+import { convertSlotToCalendarViewEvents } from '../bookings/bookingHelpers';
 import { useBookings } from '../bookings/bookingsProvider/BookingsProvider';
+import { TEMPORARY_BOOKING_SLOT } from '../bookings/bookingsProvider/interface';
 import CalendarView from './CalendarView';
 import { EscapeTryBlockError } from './EscapeTryBlockError';
 import CloseConfirmationModal from './confirmationModals/CloseConfirmation';
@@ -450,7 +453,7 @@ const InteractiveCalendarView = ({
         setEventTargetAction,
     });
 
-    const { isBookingActive, addBookingSlot, removeBookingSlot, convertSlotToCalendarViewEvents } = useBookings();
+    const { isBookingActive, addBookingRange, bookingRange, removeBookingRange } = useBookings();
 
     // Handle events coming from outside if calendar app is open in the drawer
     useOpenEventsFromMail({
@@ -496,13 +499,14 @@ const InteractiveCalendarView = ({
     useBeforeUnload(isInTemporaryBlocking ? c('Alert').t`By leaving now, you will lose your event.` : '');
 
     const sortedEvents = useMemo(() => {
-        if (isBookingActive) {
-            const booklyCalendarEvents = convertSlotToCalendarViewEvents(createEventCalendar);
+        if (isBookingActive && createEventCalendar) {
+            const calendarData = getVisualCalendar(createEventCalendar);
+            const booklyCalendarEvents = convertSlotToCalendarViewEvents(calendarData, bookingRange);
             return sortEvents(booklyCalendarEvents);
         }
 
         return sortEvents(events.concat());
-    }, [events, isBookingActive, convertSlotToCalendarViewEvents, createEventCalendar]);
+    }, [events, isBookingActive, bookingRange, createEventCalendar]);
 
     const isProcessing = useCallback(
         (uniqueId: string) => {
@@ -778,7 +782,7 @@ const InteractiveCalendarView = ({
 
             return (mouseUpAction: MouseUpAction) => {
                 if (isBookingActive) {
-                    removeBookingSlot(event.uniqueId);
+                    removeBookingRange(event.uniqueId);
                     return;
                 }
 
@@ -914,12 +918,6 @@ const InteractiveCalendarView = ({
                     idx,
                 } = payload;
 
-                // We want to create a booking slot unless it's a all day event
-                if (isBookingActive && !isFromAllDay && ACTIONS.CREATE_MOVE_UP) {
-                    addBookingSlot(start);
-                    return;
-                }
-
                 const isBeforeMinBoundary = start < MINIMUM_DATE_UTC;
                 const isAfterMaxBoundary = end > MAXIMUM_DATE_UTC;
                 const isOutOfBounds = isBeforeMinBoundary || isAfterMaxBoundary;
@@ -956,9 +954,25 @@ const InteractiveCalendarView = ({
                 newTemporaryEvent = getTemporaryEvent(newTemporaryEvent, newTemporaryModel, tzid);
 
                 if (action === ACTIONS.CREATE_MOVE) {
+                    // Change the ID to have a specific style when dragging and creating a booking page
+                    if (isBookingActive) {
+                        setInteractiveData({
+                            temporaryEvent: {
+                                ...newTemporaryEvent,
+                                uniqueId: TEMPORARY_BOOKING_SLOT + newTemporaryEvent.uniqueId,
+                            },
+                        });
+                        return;
+                    }
                     setInteractiveData({ temporaryEvent: newTemporaryEvent });
                 }
                 if (action === ACTIONS.CREATE_UP || action === ACTIONS.CREATE_MOVE_UP) {
+                    if (isBookingActive) {
+                        addBookingRange({ start: normalizedStart, end: normalizedEnd, timezone: tzid });
+                        setInteractiveData(undefined);
+                        return;
+                    }
+
                     setInteractiveData({
                         temporaryEvent: newTemporaryEvent,
                         targetEventData: { uniqueId: newTemporaryEvent.uniqueId, idx, type },
