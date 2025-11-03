@@ -21,13 +21,13 @@
 	border-inline-end-color: var(--alt-border-color, var(--color-alt));
 	border-block-start-color: var(--alt-border-color, var(--color-alt));
 	border-block-end-color: var(--alt-border-color, var(--color-alt));
-	border-block-start-width: 1px;
-	border-block-end-width: 1px;
-	border-inline-start-width: 5px;
-	border-inline-end-width: 1px;
+	border-block-start-width: var(--alt-border-width, 1px);
+	border-block-end-width: var(--alt-border-width, 1px);
+	border-inline-start-width: var(--alt-border-width, 5px);
+	border-inline-end-width: var(--alt-border-width, 1px);
 	padding-block: em(2);
 	padding-inline: em(3);
-	border-radius: var(--border-radius-sm);
+	border-radius: var(--alt-border-radius, var(--border-radius-sm));
 	background-color: var(--color-main);
 	color: var(--foreground);
 	cursor: pointer;
