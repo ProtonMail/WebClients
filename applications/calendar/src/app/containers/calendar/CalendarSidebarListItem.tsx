@@ -162,9 +162,7 @@ const CalendarSidebarListItem = ({
                                         <DropdownMenuButton
                                             className="text-left"
                                             onClick={() => {
-                                                if (user.hasNonDelinquentScope) {
-                                                    onOpenImportCalendarModal(calendar);
-                                                }
+                                                onOpenImportCalendarModal(calendar);
                                             }}
                                         >
                                             {c('Action').t`Import events`}

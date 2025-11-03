@@ -388,7 +388,6 @@ export { default as VerifyCodeForm } from './containers/api/humanVerification/Ve
 export { default as UnauthenticatedApiChallenge } from './containers/api/UnauthenticatedApiChallenge';
 export { default as UnauthenticatedApiProvider } from './containers/api/UnauthenticatedApiProvider';
 export { default as AppsDropdown, UnAuthenticatedAppsDropdown } from './containers/app/AppsDropdown';
-export { default as DelinquentContainer } from './containers/app/DelinquentContainer';
 export { default as EmptyViewContainer } from './containers/app/EmptyViewContainer';
 export { default as ErrorBoundary } from './containers/app/ErrorBoundary';
 export type {
@@ -748,7 +747,7 @@ export { default as useSyncIframeStyles } from './containers/themes/useSyncIfram
 export { default as useThemeQueryParameter } from './containers/themes/useThemeQueryParameter';
 export { ThirdPartySection } from './containers/thirdParty/ThirdPartySection';
 export { default as BadAppVersionBanner } from './containers/topBanners/BadAppVersionBanner';
-export { default as DelinquentTopBanner } from './containers/topBanners/DelinquentTopBanner';
+export { default as UnpaidInvoiceTopBanner } from './containers/topBanners/UnpaidInvoiceTopBanner';
 export { default as OnlineTopBanner } from './containers/topBanners/OnlineTopBanner';
 export { default as PublicTopBanners } from './containers/topBanners/PublicTopBanners';
 export { default as StorageLimitTopBanner } from './containers/topBanners/StorageLimitTopBanner';

@@ -5,7 +5,6 @@ import { Router } from 'react-router-dom';
 import {
     ApiProvider,
     AuthenticationProvider,
-    DelinquentContainer,
     DrawerProvider,
     ErrorBoundary,
     EventManagerProvider,
@@ -64,11 +63,11 @@ const AuthApp = () => {
                     return;
                 }
 
-                const { scopes, user, userSettings, MainContainer, store } = result;
+                const { user, userSettings, MainContainer, store } = result;
 
                 setState({
                     store,
-                    MainContainer: scopes.delinquent ? DelinquentContainer : MainContainer,
+                    MainContainer,
                     showDrawerSidebar: userSettings.HideSidePanel === DRAWER_VISIBILITY.SHOW,
                     initialUser: user,
                 });

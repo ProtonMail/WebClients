@@ -121,7 +121,7 @@ const CalendarSubpage = ({
                 setLoadingShareData(false);
             };
 
-            Promise.all([loadBootstrap(), loadMembersAndInvitations()]);
+            void Promise.all([loadBootstrap(), loadMembersAndInvitations()]);
         },
         // re-load bootstrap only if calendar changes. Do not listen to dynamic changes
         [calendar]
@@ -169,13 +169,9 @@ const CalendarSubpage = ({
                     holidaysCalendars={holidaysCalendars}
                     defaultCalendar={defaultCalendar}
                     onEdit={reRender}
-                    canEdit={user.hasNonDelinquentScope}
+                    canEdit={true}
                 />
-                <CalendarEventDefaultsSection
-                    calendar={calendar}
-                    bootstrap={bootstrap}
-                    canEdit={user.hasNonDelinquentScope}
-                />
+                <CalendarEventDefaultsSection calendar={calendar} bootstrap={bootstrap} canEdit={true} />
                 {isOwner && isPersonalCalendar && addresses && (
                     <CalendarShareSection
                         calendar={calendar}
@@ -183,7 +179,6 @@ const CalendarSubpage = ({
                         user={user}
                         subscription={subscription}
                         isLoading={loadingShareData}
-                        canShare={user.hasNonDelinquentScope}
                         members={members}
                         invitations={invitations}
                         setInvitations={setInvitations}

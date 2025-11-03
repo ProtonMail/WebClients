@@ -25,7 +25,6 @@ import {
 } from '@proton/shared/lib/api/events';
 import { getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getClientID } from '@proton/shared/lib/apps/helper';
-import { requiresNonDelinquent } from '@proton/shared/lib/authentication/apps';
 import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
 import createAuthenticationStore from '@proton/shared/lib/authentication/createAuthenticationStore';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
@@ -67,7 +66,6 @@ import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import type { Api, Environment, ProtonConfig, User, UserSettings } from '@proton/shared/lib/interfaces';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { telemetry } from '@proton/shared/lib/telemetry';
-import { getHasNonDelinquentScope } from '@proton/shared/lib/user/helpers';
 import { EVENTS, UnleashClient, createCustomFetch, getUnleashConfig } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
@@ -447,26 +445,11 @@ export const loadLocales = ({
     return loadLocalesI18n({ locale: userSettings.Locale, locales, userSettings });
 };
 
-export const initUser = ({
-    appName,
-    user,
-    userSettings,
-}: {
-    appName: APP_NAMES;
-    user: User;
-    userSettings: UserSettings;
-}) => {
+export const initUser = ({ userSettings }: { appName: APP_NAMES; user: User; userSettings: UserSettings }) => {
     setSentryEnabled(!!userSettings.CrashReports);
     setMetricsEnabled(!!userSettings.Telemetry);
 
     metrics.setReportMetrics(!!userSettings.Telemetry);
-
-    const hasNonDelinquentRequirement = requiresNonDelinquent.includes(appName);
-    const hasNonDelinquentScope = getHasNonDelinquentScope(user);
-
-    return {
-        delinquent: hasNonDelinquentRequirement && !hasNonDelinquentScope,
-    };
 };
 
 const initEarlyAccess = ({

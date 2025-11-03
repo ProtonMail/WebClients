@@ -6,7 +6,6 @@ import {
     ApiProvider,
     AuthenticationProvider,
     CalendarModelEventManagerProvider,
-    DelinquentContainer,
     DrawerProvider,
     ErrorBoundary,
     EventManagerProvider,
@@ -43,9 +42,9 @@ const App = () => {
     useEffectOnce(() => {
         void (async () => {
             try {
-                const { MainContainer, scopes, userSettings, store } = await bootstrapApp({ config });
+                const { MainContainer, userSettings, store } = await bootstrapApp({ config });
                 setState({
-                    MainContainer: scopes.delinquent ? DelinquentContainer : MainContainer,
+                    MainContainer,
                     store,
                     showDrawerSidebar: userSettings.HideSidePanel === DRAWER_VISIBILITY.SHOW,
                 });

@@ -4,7 +4,6 @@ import { fireEvent, render, screen } from '@testing-library/react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { createMemoryHistory } from 'history';
 
-import { useUser } from '@proton/account/user/hooks';
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 import { CALENDAR_FLAGS, CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
@@ -12,7 +11,7 @@ import {
     getCalendarHasSubscriptionParameters,
     getCalendarIsNotSyncedInfo,
 } from '@proton/shared/lib/calendar/subscribe/helpers';
-import type { Address, UserModel } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { mockUseAuthentication } from '@proton/testing/lib/mockUseAuthentication';
 
@@ -67,8 +66,8 @@ jest.mock('@proton/shared/lib/calendar/calendar', () => ({
 
 jest.mock('@proton/account/user/hooks', () => ({
     __esModule: true,
-    useUser: jest.fn(() => [{ hasPaidMail: true, hasNonDelinquentScope: true }, false]),
-    useGetUser: jest.fn(() => [{ hasPaidMail: true, hasNonDelinquentScope: true }, false]),
+    useUser: jest.fn(() => [{ hasPaidMail: true }, false]),
+    useGetUser: jest.fn(() => [{ hasPaidMail: true }, false]),
 }));
 
 jest.mock('@proton/components/hooks/useConfig', () => ({
@@ -101,7 +100,6 @@ jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
     loadCryptoWorker: jest.fn(),
 }));
 
-const mockedUseUser = useUser as jest.Mock<ReturnType<typeof useUser>>;
 const mockedGetCalendarHasSubscriptionParameters = getCalendarHasSubscriptionParameters as unknown as jest.Mock<
     ReturnType<typeof getCalendarHasSubscriptionParameters>
 >;
@@ -364,18 +362,6 @@ describe('CalendarSidebarListItems', () => {
         expect(screen.getByText(/Share/)).toBeInTheDocument();
         expect(screen.getByText(/More options/)).toBeInTheDocument();
         expect(getImportButton()).not.toBeInTheDocument();
-    });
-
-    it(`does not open the import modal when user has a delinquent scope`, async () => {
-        mockedUseUser.mockImplementation(() => [{ hasNonDelinquentScope: false } as UserModel, false]);
-
-        render(renderComponent());
-
-        fireEvent.click(screen.getAllByRole('button')[0]);
-
-        fireEvent.click(getImportButton());
-
-        expect(getImportModal()).not.toBeInTheDocument();
     });
 
     it('displays the correct dropdown items for subscribed calendars', () => {

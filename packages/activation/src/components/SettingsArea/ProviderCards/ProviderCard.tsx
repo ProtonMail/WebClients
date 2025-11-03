@@ -3,7 +3,6 @@ import { useLocation } from 'react-router-dom';
 import type { Location } from 'history';
 import { c } from 'ttag';
 
-import { useUser } from '@proton/account/user/hooks';
 import {
     EASY_SWITCH_SEARCH_SOURCES,
     EASY_SWITCH_SOURCES,
@@ -36,9 +35,6 @@ const getEasySwitchSource = (app: APP_NAMES, location: Location) => {
 const ProviderCard = ({ app }: { app: APP_NAMES }) => {
     const location = useLocation();
     const dispatch = useEasySwitchDispatch();
-    const [user, loadingUser] = useUser();
-    const isLoading = loadingUser;
-    const disabled = isLoading || !user.hasNonDelinquentScope;
 
     const easySwitchFeature = useFeature(FeatureCode.EasySwitch);
     const source = getEasySwitchSource(app, location);
@@ -63,7 +59,6 @@ const ProviderCard = ({ app }: { app: APP_NAMES }) => {
                     loading={easySwitchFeature.loading}
                     provider={ImportProvider.GOOGLE}
                     onClick={handleGoogleClick}
-                    disabled={disabled}
                     className="mb-2 inline-flex items-center justify-center"
                     data-testid="ProviderButton:googleCard"
                 />
@@ -71,7 +66,6 @@ const ProviderCard = ({ app }: { app: APP_NAMES }) => {
                 <ProviderButton
                     provider={ImportProvider.YAHOO}
                     onClick={() => dispatch(startImapDraft({ provider: ImportProvider.YAHOO }))}
-                    disabled={disabled}
                     className="mb-2 inline-flex items-center justify-center"
                     data-testid="ProviderButton:yahooCard"
                 />
@@ -87,7 +81,6 @@ const ProviderCard = ({ app }: { app: APP_NAMES }) => {
                             })
                         )
                     }
-                    disabled={disabled}
                     className="mb-2 inline-flex items-center justify-center"
                     data-testid="ProviderButton:outlookCard"
                 />
@@ -95,7 +88,6 @@ const ProviderCard = ({ app }: { app: APP_NAMES }) => {
                 <ProviderButton
                     provider={ImportProvider.DEFAULT}
                     onClick={() => dispatch(startImapDraft({ provider: ImportProvider.DEFAULT }))}
-                    disabled={disabled}
                     className="mb-4 inline-flex items-center justify-center"
                     data-testid="ProviderButton:imapCard"
                 />

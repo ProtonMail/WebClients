@@ -631,7 +631,6 @@ export const user = {
     isPrivate: true,
     isSelf: true,
     isDelinquent: false,
-    hasNonDelinquentScope: true,
     hasPaidMail: true,
     hasPaidVpn: true,
     canPay: true,

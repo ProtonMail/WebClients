@@ -20,7 +20,7 @@ import { generateEncryptedPurpose, transformLinksFromAPI } from '@proton/shared/
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { SimpleMap, UserModel } from '@proton/shared/lib/interfaces';
+import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import type { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
 import type { ACCESS_LEVEL, CalendarLink, CalendarUrl, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import type { Nullable } from '@proton/shared/lib/interfaces/utils';
@@ -47,12 +47,10 @@ type ModalsMap = {
 
 interface Props extends ComponentPropsWithoutRef<'div'> {
     calendar: VisualCalendar;
-    user: UserModel;
-    canShare: boolean;
     noTitle?: boolean;
 }
 
-const CalendarShareUrlSection = ({ calendar, user, canShare, noTitle }: Props) => {
+const CalendarShareUrlSection = ({ calendar, noTitle }: Props) => {
     const [links, setLinks] = useState<CalendarLink[]>([]);
     const [isLoadingLinks, withLoadingLinks] = useLoading();
     const [isLoadingMap, setIsLoadingMap] = useState<Partial<SimpleMap<boolean>>>({});
@@ -178,7 +176,6 @@ const CalendarShareUrlSection = ({ calendar, user, canShare, noTitle }: Props) =
                 <Button
                     onClick={() => updateModal('shareLinkModal', { isOpen: true })}
                     color="norm"
-                    disabled={!canShare}
                     aria-label={c('Action').t`Create a link to share with anyone outside ${BRAND_NAME}`}
                 >
                     {c('Action').t`Create link`}
@@ -289,7 +286,6 @@ const CalendarShareUrlSection = ({ calendar, user, canShare, noTitle }: Props) =
                     onCopyLink={handleCopyLink}
                     onEdit={handleEdit}
                     onDelete={handleDelete}
-                    user={user}
                 />
             )}
         </>

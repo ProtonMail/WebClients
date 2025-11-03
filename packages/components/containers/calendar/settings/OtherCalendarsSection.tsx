@@ -212,7 +212,6 @@ const OtherCalendarsSection = ({
             <CalendarsSection
                 calendars={subscribedCalendars}
                 addresses={addresses}
-                user={user}
                 nameHeader={c('Header; Table with list of calendars arranged by type').t`Subscribed`}
                 onEdit={handleEdit}
                 onDelete={handleDelete}
@@ -232,11 +231,9 @@ const OtherCalendarsSection = ({
                 nameHeader={c('Header; Table with list of calendars arranged by type').t`Holidays`}
                 calendars={holidaysCalendars}
                 addresses={addresses}
-                user={user}
                 data-testid="holidays-calendars-section"
             />
             <SharedCalendarsSection
-                user={user}
                 addresses={addresses}
                 calendars={sharedCalendars}
                 calendarInvitations={calendarInvitations}
@@ -245,7 +242,6 @@ const OtherCalendarsSection = ({
             <CalendarsSection
                 calendars={unknownCalendars}
                 addresses={addresses}
-                user={user}
                 nameHeader={c('Header; Table with list of calendars arranged by type').t`Other`}
                 onEdit={handleEdit}
                 onDelete={handleDelete}
