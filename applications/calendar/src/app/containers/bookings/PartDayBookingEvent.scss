@@ -1,0 +1,60 @@
+.booking-cell {
+	background-color: transparent;
+	background-repeat: repeat-y;
+	background-position: top left;
+
+	&--duration-15 {
+		background-image: linear-gradient(
+			180deg,
+			var(--booking-duration-color) 0,
+			var(--booking-duration-color) 12px,
+			transparent 12px,
+			transparent 16px
+		);
+		background-size: 100% 16px;
+	}
+
+	&--duration-30 {
+		background-image: linear-gradient(
+			180deg,
+			var(--booking-duration-color) 0,
+			var(--booking-duration-color) 20px,
+			transparent 20px,
+			transparent 24px
+		);
+		background-size: 100% 24px;
+	}
+
+	&--duration-60 {
+		background-image: linear-gradient(
+			180deg,
+			var(--booking-duration-color) 0,
+			var(--booking-duration-color) 36px,
+			transparent 36px,
+			transparent 40px
+		);
+		background-size: 100% 40px;
+	}
+
+	&--duration-90 {
+		background-image: linear-gradient(
+			180deg,
+			var(--booking-duration-color) 0,
+			var(--booking-duration-color) 52px,
+			transparent 52px,
+			transparent 56px
+		);
+		background-size: 100% 56px;
+	}
+
+	&--duration-120 {
+		background-image: linear-gradient(
+			180deg,
+			var(--booking-duration-color) 0,
+			var(--booking-duration-color) 68px,
+			transparent 68px,
+			transparent 72px
+		);
+		background-size: 100% 72px;
+	}
+}

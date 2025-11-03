@@ -19,12 +19,15 @@ export const getEventStyle = (backgroundColor = '', style: CSSProperties = {}) =
 };
 
 export const getBookingSlotStyle = (backgroundColor = '', style: CSSProperties = {}): CSSProperties => {
-    const [, alt] = genAccentShades(tinycolor(backgroundColor)).map((c) => c.toHexString());
+    const [base, alt] = genAccentShades(tinycolor(backgroundColor)).map((c) => c.toHexString());
 
     return {
         ...style,
         '--color-alt': alt,
-        '--color-main': 'var(--background-norm)',
-        '--alt-border-color': 'var(--border-norm)',
+        '--alt-inline-start-width': '1px',
+        '--color-main': 'transparent',
+        '--alt-border-width': '2px',
+        '--alt-border-radius': '1em',
+        '--booking-cell-background': base,
     };
 };
