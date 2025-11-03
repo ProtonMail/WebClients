@@ -2,6 +2,8 @@ import { DropdownAction } from 'proton-pass-extension/app/content/constants.runt
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { AutofillOptions } from 'proton-pass-extension/app/content/services/autofill/autofill.utils';
 import { createAutofill } from 'proton-pass-extension/app/content/services/autofill/autofill.utils';
+import type { InteractivityController } from 'proton-pass-extension/app/content/services/form/field.interactivity';
+import { createInteractivityController } from 'proton-pass-extension/app/content/services/form/field.interactivity';
 import type { IconController } from 'proton-pass-extension/app/content/services/inline/icon/icon.controller';
 import { getFrameParentVisibility } from 'proton-pass-extension/app/content/utils/frame';
 import type { FrameField } from 'proton-pass-extension/types/frames';
@@ -48,12 +50,15 @@ export interface FieldHandle {
     fieldType: FieldType;
     /** optional `IconHandle` if attached */
     icon: MaybeNull<IconController>;
+    /** InteractivityController exposed for autofill sequences */
+    interactivity: InteractivityController;
     /** optional form section index */
     sectionIndex?: number;
     /** optional identity field sub-type */
     identityType?: IdentityFieldType;
     /** flag indicating event listeners have been registered */
     tracked: boolean;
+    /** Attached field tracker instance */
     tracker: MaybeNull<FieldTracker>;
     /** input value - updated on change */
     value: string;
@@ -94,6 +99,7 @@ const canProcessAction = withContext<(action: DropdownAction) => boolean>((ctx, 
 export const createFieldHandles = ({ element, fieldType, getFormHandle }: CreateFieldHandlesOptions): FieldHandle => {
     let anchor: MaybeNull<FieldAnchor> = null;
     const actionTrap = createElementTrap(element, 'actionPrevented');
+    const interactivity = createInteractivityController(element);
 
     const field: FieldHandle = {
         fieldId: uniqueId(8),
@@ -105,6 +111,7 @@ export const createFieldHandles = ({ element, fieldType, getFormHandle }: Create
         autofilled: null,
         tracked: false,
         tracker: null,
+        interactivity,
 
         get actionPrevented() {
             return (
@@ -196,6 +203,7 @@ export const createFieldHandles = ({ element, fieldType, getFormHandle }: Create
             field.tracker = null;
             field.icon?.detach();
             actionTrap.release();
+            interactivity.unlock();
             anchor = null;
         },
 
