@@ -12,7 +12,6 @@ import Summary from '../../../components/container/Summary';
 import CityNumber from './CityNumber';
 import ConfigsTable, { CATEGORY, P2PIcon, TorIcon } from './ConfigsTable';
 import Country from './Country';
-import ServerNumber from './ServerNumber';
 import type { EnhancedLogical } from './interface';
 import { isP2PEnabled, isSecureCoreEnabled, isTorEnabled } from './utils';
 
@@ -71,15 +70,12 @@ const ServerConfigs = ({ servers, category, onSelect, selecting, countryOptions,
                     >
                         <Summary>
                             <div className="ml-2 flex flex-nowrap items-center">
-                                <div className={clsx([category === CATEGORY.SERVER ? 'w-1/3' : ''])}>
+                                <div className={clsx([category === CATEGORY.SERVER ? 'w-1/2' : ''])}>
                                     <Country server={server} countryOptions={countryOptions} />
                                 </div>
                                 {category === CATEGORY.SERVER && (
                                     <>
-                                        <div className="w-1/3">
-                                            <ServerNumber group={group} />
-                                        </div>
-                                        <div className="w-1/3 flex justify-space-between">
+                                        <div className="w-1/2 flex justify-space-between">
                                             <CityNumber group={group} />
                                             <div className={clsx(['flex'])}>
                                                 {group.some(({ Features }) => isP2PEnabled(Features)) ? (
