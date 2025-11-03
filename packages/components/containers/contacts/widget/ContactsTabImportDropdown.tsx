@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import { useUser } from '@proton/account/user/hooks';
 import { EasySwitchOauthImportButton } from '@proton/activation/index';
 import type { EasySwitchFeatureFlag } from '@proton/activation/src/interface';
 import { EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '@proton/activation/src/interface';
@@ -18,7 +17,6 @@ interface Props {
 }
 
 const ContactsTabImportDropdown = ({ onImport }: Props) => {
-    const [{ hasNonDelinquentScope }, loadingUser] = useUser();
     const { anchorRef, isOpen, close, toggle } = usePopperAnchor<HTMLButtonElement>();
     const easySwitchFeature = useFeature<EasySwitchFeatureFlag>(FeatureCode.EasySwitch);
     const isImporterInMaintenance = useFlag('MaintenanceImporter');
@@ -30,7 +28,7 @@ const ContactsTabImportDropdown = ({ onImport }: Props) => {
                 onClick={toggle}
                 ref={anchorRef}
                 hasCaret
-                loading={loadingUser || easySwitchFeature.loading}
+                loading={easySwitchFeature.loading}
                 data-testid="contacts:import-dropdown"
                 aria-expanded={isOpen}
             >
@@ -65,7 +63,6 @@ const ContactsTabImportDropdown = ({ onImport }: Props) => {
                         data-testid="contacts:import-contacts"
                         title={c('Action').t`Import from .csv or vCard`}
                         onClick={onImport}
-                        disabled={!hasNonDelinquentScope}
                     >
                         <Icon name="card-identity" className="mr-2" alt={c('Action').t`Import from .csv or vCard`} />
                         <span className="flex-1 my-auto">{c('Action').t`Import from .csv or vCard`}</span>

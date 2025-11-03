@@ -243,7 +243,6 @@ const MyCalendarsSection = ({
             <CalendarsSection
                 calendars={myCalendars}
                 addresses={addresses}
-                user={user}
                 defaultCalendarID={defaultCalendar?.ID}
                 onSetDefault={handleSetDefaultCalendar}
                 onEdit={handleEditCalendar}

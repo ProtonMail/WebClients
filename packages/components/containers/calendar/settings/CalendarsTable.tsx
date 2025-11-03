@@ -18,7 +18,7 @@ import { getCalendarStatusBadges } from '@proton/shared/lib/calendar/badges';
 import { getCalendarSubpagePath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { Address, UserModel } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces';
 import type { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
 
@@ -29,7 +29,6 @@ interface Props {
     calendars: (VisualCalendar | SubscribedCalendar)[];
     defaultCalendarID?: string;
     addresses: Address[];
-    user: UserModel;
     onSetDefault?: (id: string) => Promise<void>;
     nameHeader?: string;
 }
@@ -38,11 +37,9 @@ const CalendarsTable = ({
     calendars,
     defaultCalendarID,
     addresses,
-    user,
     onSetDefault,
     nameHeader: inputNameHeader,
 }: Props) => {
-    const { hasNonDelinquentScope } = user;
     const [isLoading, setIsLoading] = useState<string>();
 
     const hasSingleAddress = addresses.length === 1;
@@ -113,24 +110,20 @@ const CalendarsTable = ({
                             </TableCell>
                             <TableCell>
                                 <div className="inline-flex flex-nowrap items-center">
-                                    {!isSubscribed &&
-                                        !isDisabled &&
-                                        !isDefault &&
-                                        hasNonDelinquentScope &&
-                                        onSetDefault && (
-                                            <Button
-                                                disabled={!!isLoading}
-                                                loading={isLoading === ID}
-                                                onClick={async () => {
-                                                    setIsLoading(ID);
-                                                    await onSetDefault(ID);
-                                                    setIsLoading(undefined);
-                                                }}
-                                                size="small"
-                                                shape="outline"
-                                                className="mr-2"
-                                            >{c('Action').t`Set as default`}</Button>
-                                        )}
+                                    {!isSubscribed && !isDisabled && !isDefault && onSetDefault && (
+                                        <Button
+                                            disabled={!!isLoading}
+                                            loading={isLoading === ID}
+                                            onClick={async () => {
+                                                setIsLoading(ID);
+                                                await onSetDefault(ID);
+                                                setIsLoading(undefined);
+                                            }}
+                                            size="small"
+                                            shape="outline"
+                                            className="mr-2"
+                                        >{c('Action').t`Set as default`}</Button>
+                                    )}
                                     <Tooltip title={c('Calendar table settings button tooltip').t`Open settings`}>
                                         <ButtonLike
                                             as={SettingsLink}

@@ -5,7 +5,6 @@ import { createMemoryHistory } from 'history';
 
 import { CacheProvider } from '@proton/components/containers/cache/Provider';
 import createCache from '@proton/shared/lib/helpers/cache';
-import type { UserModel } from '@proton/shared/lib/interfaces';
 import { generateSimpleCalendar } from '@proton/testing/lib/builders';
 import { mockUseAuthentication } from '@proton/testing/lib/mockUseAuthentication';
 
@@ -54,7 +53,6 @@ function renderComponent(props?: Partial<CalendarsSectionProps>) {
         calendars: [],
         children: null,
         // defaultCalendarID?: string,
-        user: { hasPaidMail: false } as UserModel,
         // loading?: boolean,
         // onSetDefault?: (id: string) => Promise<void>,
         onEdit: jest.fn(),

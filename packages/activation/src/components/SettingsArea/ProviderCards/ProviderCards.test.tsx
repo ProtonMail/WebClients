@@ -18,7 +18,6 @@ const defaultUseUser = [
         isPrivate: true,
         isSelf: true,
         isDelinquent: true,
-        hasNonDelinquentScope: true,
         hasPaidMail: true,
         hasPaidVpn: true,
         canPay: true,
@@ -330,37 +329,5 @@ describe('Provider cards process testing', () => {
 
         await waitFor(() => screen.getByTestId('Instruction:yahooContactInstructions'));
         fireEvent.click(screen.getByTestId('Instruction:close'));
-    });
-
-    it('Should disable all cards if user is delinquent', () => {
-        mockUseUser.mockReturnValue([{ hasNonDelinquentScope: false }, false]);
-
-        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} />);
-
-        const google = screen.getByTestId('ProviderButton:googleCard');
-        const yahoo = screen.getByTestId('ProviderButton:yahooCard');
-        const outlook = screen.getByTestId('ProviderButton:outlookCard');
-        const imap = screen.getByTestId('ProviderButton:imapCard');
-
-        expect(google).toBeDisabled();
-        expect(yahoo).toBeDisabled();
-        expect(outlook).toBeDisabled();
-        expect(imap).toBeDisabled();
-    });
-
-    it('Should disable all cards while user is loading', () => {
-        mockUseUser.mockReturnValue([{ hasNonDelinquentScope: true }, true]);
-
-        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} />);
-
-        const google = screen.getByTestId('ProviderButton:googleCard');
-        const yahoo = screen.getByTestId('ProviderButton:yahooCard');
-        const outlook = screen.getByTestId('ProviderButton:outlookCard');
-        const imap = screen.getByTestId('ProviderButton:imapCard');
-
-        expect(google).toBeDisabled();
-        expect(yahoo).toBeDisabled();
-        expect(outlook).toBeDisabled();
-        expect(imap).toBeDisabled();
     });
 });

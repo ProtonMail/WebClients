@@ -1,6 +1,6 @@
 import type { AppIntent, AuthSession } from '@proton/components/containers/login/interface';
 import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { getAppHref, getInvoicesPathname } from '@proton/shared/lib/apps/helper';
+import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { getToApp } from '@proton/shared/lib/authentication/apps';
@@ -10,7 +10,7 @@ import { getReturnUrl } from '@proton/shared/lib/authentication/returnUrl';
 import { APPS, type APP_NAMES, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { joinPaths } from '@proton/shared/lib/helpers/url';
-import { type Api, UNPAID_STATE } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 import { getEncryptedSetupBlob, getRequiresAddressSetup } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
@@ -207,19 +207,6 @@ export const getLoginResult = async ({
         const blob =
             loginPassword && clientKey ? await getEncryptedSetupBlob(clientKey, loginPassword).catch(noop) : undefined;
         return getSetupAddressLoginResult({ app: toApp, session, blob });
-    }
-
-    // Upon login, if user is delinquent, the fork is aborted and the user is redirected to invoices
-    if (user.Delinquent >= UNPAID_STATE.DELINQUENT) {
-        const path = joinPaths(getSlugFromApp(toApp), getInvoicesPathname());
-        const url = new URL(getAppHref(path, APPS.PROTONACCOUNT, session.data.localID));
-        return {
-            type: 'done',
-            payload: {
-                session,
-                url,
-            },
-        };
     }
 
     if (forkState?.type === SSOType.OAuth && !appIntent?.app) {

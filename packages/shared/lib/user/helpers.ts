@@ -6,7 +6,6 @@ import { PRODUCT_BIT, USER_ROLES } from '../constants';
 import { hasBit } from '../helpers/bitset';
 import { decodeBase64URL } from '../helpers/encoding';
 import type { User, UserInfo, UserModel } from '../interfaces';
-import { UNPAID_STATE } from '../interfaces';
 
 const { ADMIN_ROLE, MEMBER_ROLE, FREE_ROLE } = USER_ROLES;
 
@@ -28,7 +27,6 @@ export const isAdminOrLoginAsAdmin = (user: UserModel) => user.isAdmin || user.a
 export const isMember = (user: User) => user.Role === MEMBER_ROLE;
 export const isSelf = (user: User) => !user.OrganizationPrivateKey && !user.Flags?.['delegated-access'];
 export const isDelinquent = (user: User) => !!user.Delinquent;
-export const getHasNonDelinquentScope = (user: User) => user.Delinquent < UNPAID_STATE.DELINQUENT;
 export const canPay = (user: User) => [ADMIN_ROLE, FREE_ROLE].includes(user.Role);
 
 export const getInfo = (User: User): UserInfo => {
@@ -40,7 +38,6 @@ export const getInfo = (User: User): UserInfo => {
         isPrivate: isPrivate(User),
         isSelf: isSelf(User),
         isDelinquent: isDelinquent(User),
-        hasNonDelinquentScope: getHasNonDelinquentScope(User),
         hasPaidMail: hasPaidMail(User),
         hasPaidVpn: hasPaidVpn(User),
         hasPaidDrive: hasPaidDrive(User),

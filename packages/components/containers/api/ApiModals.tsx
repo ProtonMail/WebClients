@@ -1,19 +1,17 @@
 import { Suspense, lazy, useEffect, useState } from 'react';
 
 import type {
-    ApiUserRestrictedEvent,
     ApiListenerCallback,
     ApiMissingScopeEvent,
+    ApiUserRestrictedEvent,
     ApiVerificationEvent,
     ApiWithListener,
 } from '@proton/shared/lib/api/createApi';
 import { queryUnlock } from '@proton/shared/lib/api/user';
-import { UNPAID_STATE } from '@proton/shared/lib/interfaces';
 import remove from '@proton/utils/remove';
 import replace from '@proton/utils/replace';
 
 import type { ApiModalPayload } from './ApiModals.interface';
-// Should not be lazily imported, it's already imported early in DelinquentContainer
 import DelinquentModal from './DelinquentModal';
 
 const HumanVerificationModal = lazy(
@@ -103,8 +101,6 @@ const ApiProvider = ({ api }: { api: ApiWithListener }) => {
                 <Suspense fallback={null}>
                     <DelinquentModal
                         open={delinquent.open}
-                        // When the API returns a nondelinquent scope the user is in the NO_RECEIVE variant
-                        delinquent={UNPAID_STATE.NO_RECEIVE}
                         onClose={() => {
                             delinquent.payload.error.cancel = true;
                             delinquent.payload.reject(delinquent.payload.error);

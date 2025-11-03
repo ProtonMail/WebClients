@@ -61,7 +61,6 @@ interface CalendarMemberRowProps {
     status: MEMBER_INVITATION_STATUS;
     displayPermissions: boolean;
     displayStatus: boolean;
-    canEdit: boolean;
     onPermissionsUpdate: (newPermissions: number) => Promise<void>;
     onDelete: () => Promise<void>;
 }
@@ -74,7 +73,6 @@ const CalendarMemberRow = ({
     status,
     displayPermissions,
     displayStatus,
-    canEdit,
     onPermissionsUpdate,
     onDelete,
 }: CalendarMemberRowProps) => {
@@ -93,12 +91,7 @@ const CalendarMemberRow = ({
     const isStatusRejected = status === MEMBER_INVITATION_STATUS.REJECTED;
 
     const permissionsSelect = (
-        <SelectTwo
-            loading={isLoadingPermissionsUpdate}
-            value={perms}
-            disabled={!canEdit}
-            onChange={handleChangePermissions}
-        >
+        <SelectTwo loading={isLoadingPermissionsUpdate} value={perms} onChange={handleChangePermissions}>
             {availablePermissions.map(([value, label]) => (
                 <Option key={value} value={+value} title={label} />
             ))}

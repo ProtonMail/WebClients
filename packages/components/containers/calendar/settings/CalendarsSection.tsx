@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-import type { Address, UserModel } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces';
 import type { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import CalendarsTable from './CalendarsTable';
@@ -10,7 +10,6 @@ export interface CalendarsSectionProps {
     calendars: (VisualCalendar | SubscribedCalendar)[];
     defaultCalendarID?: string;
     addresses: Address[];
-    user: UserModel;
     children?: ReactNode;
     onSetDefault?: (id: string) => Promise<void>;
     onEdit?: (calendar: VisualCalendar) => void;
@@ -22,7 +21,6 @@ const CalendarsSection = ({
     calendars,
     defaultCalendarID,
     addresses,
-    user,
     children,
     onEdit,
     onSetDefault,
@@ -42,7 +40,6 @@ const CalendarsSection = ({
                         calendars={calendars}
                         defaultCalendarID={defaultCalendarID}
                         addresses={addresses}
-                        user={user}
                         onSetDefault={onSetDefault}
                     />
                 </>

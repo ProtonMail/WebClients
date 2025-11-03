@@ -19,7 +19,6 @@ import { c } from 'ttag';
 import {
     ApiProvider,
     AuthenticationProvider,
-    DelinquentContainer,
     ErrorBoundary,
     EventManagerProvider,
     LoaderPage,
@@ -66,14 +65,14 @@ const AppInner = () => {
     useEffectOnce(() => {
         void (async () => {
             try {
-                const { scopes, userSettings, MainContainer, store } = await lazyBootstrapApp({
+                const { userSettings, MainContainer, store } = await lazyBootstrapApp({
                     config,
                     notificationsManager,
                 });
 
                 setState({
                     store,
-                    MainContainer: scopes.delinquent ? DelinquentContainer : MainContainer,
+                    MainContainer,
                     showDrawerSidebar: userSettings.HideSidePanel === DRAWER_VISIBILITY.SHOW,
                 });
             } catch (error: any) {

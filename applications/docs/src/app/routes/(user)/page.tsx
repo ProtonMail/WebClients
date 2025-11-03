@@ -10,7 +10,6 @@ import {
   type NotificationsContextValue,
   ApiProvider,
   AuthenticationProvider,
-  DelinquentContainer,
   DrawerProvider,
   ErrorBoundary,
   EventManagerProvider,
@@ -29,15 +28,15 @@ import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error'
 import type { UserModel } from '@proton/shared/lib/interfaces'
 import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces'
 
-import { bootstrapApp } from './__utils/bootstrap'
+import { UserSettingsProvider } from '@proton/drive-store/store'
+import type { APP_NAMES } from '@proton/shared/lib/constants'
+import type { AvailabilityReport } from '@proton/utils/availability'
+import { Availability, AvailabilityTypes } from '@proton/utils/availability'
 import config from '~/config'
 import type { DocsStore } from '~/redux-store/store'
 import { extraThunkArguments } from '~/redux-store/thunk'
-import type { AvailabilityReport } from '@proton/utils/availability'
-import { Availability, AvailabilityTypes } from '@proton/utils/availability'
-import type { APP_NAMES } from '@proton/shared/lib/constants'
-import { UserSettingsProvider } from '@proton/drive-store/store'
 import { useSheetsFavicon } from '../../hooks/useSheetsFavicon'
+import { bootstrapApp } from './__utils/bootstrap'
 
 /**
  * The entry point for the user (authenticated) application.
@@ -105,13 +104,13 @@ function useAppState() {
           })
         })
 
-        const { scopes, user, userSettings, MainContainer, store } = await bootstrapApp({
+        const { user, userSettings, MainContainer, store } = await bootstrapApp({
           config,
         })
 
         setState({
           store,
-          MainContainer: scopes.delinquent ? DelinquentContainer : MainContainer,
+          MainContainer,
           showDrawerSidebar: userSettings.HideSidePanel === DRAWER_VISIBILITY.SHOW,
           initialUser: user,
         })

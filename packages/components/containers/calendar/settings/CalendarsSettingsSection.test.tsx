@@ -124,7 +124,7 @@ describe('My calendars section', () => {
 
     describe('for a Mail free user', () => {
         it('allows the user to create both personal and other calendars if under the limit', () => {
-            const user = { isFree: false, hasPaidMail: false, hasNonDelinquentScope: true } as UserModel;
+            const user = { isFree: false, hasPaidMail: false } as UserModel;
 
             const myCalendars: VisualCalendar[] = [];
             const sharedCalendars: VisualCalendar[] = [];
@@ -146,7 +146,7 @@ describe('My calendars section', () => {
         });
 
         it('displays the limit reached message in both "My calendars" and "Other calendars" section when the user reaches the calendar limit with personal owned calendars', () => {
-            const user = { isFree: false, hasPaidMail: false, hasNonDelinquentScope: true } as UserModel;
+            const user = { isFree: false, hasPaidMail: false } as UserModel;
 
             const myCalendars = generateOwnedPersonalCalendars(MAX_CALENDARS_FREE);
             const sharedCalendars: VisualCalendar[] = [];
@@ -167,7 +167,7 @@ describe('My calendars section', () => {
         });
 
         it('displays the limit reached message only in "Other calendars" section when the user reached the calendar limit with shared and subscribed calendars (only possible for pre-plans-migration users), and allows creation of owned personal calendars', () => {
-            const user = { isFree: false, hasPaidMail: false, hasNonDelinquentScope: true } as UserModel;
+            const user = { isFree: false, hasPaidMail: false } as UserModel;
 
             const myCalendars: VisualCalendar[] = [];
             const sharedCalendars = generateSharedCalendars(MAX_CALENDARS_FREE - 2);
@@ -187,7 +187,7 @@ describe('My calendars section', () => {
         });
 
         it('prevents user from creating MAX_CALENDARS_FREE other calendars by displaying limit reached message', () => {
-            const user = { isFree: false, hasPaidMail: false, hasNonDelinquentScope: true } as UserModel;
+            const user = { isFree: false, hasPaidMail: false } as UserModel;
 
             const myCalendars: VisualCalendar[] = [];
             const sharedCalendars = generateSharedCalendars(1);
@@ -209,7 +209,7 @@ describe('My calendars section', () => {
         });
 
         it('prevents user without active addresses from creating personal or other calendars', () => {
-            const user = { isFree: true, hasPaidMail: false, hasNonDelinquentScope: true } as UserModel;
+            const user = { isFree: true, hasPaidMail: false } as UserModel;
             const addresses = [
                 {
                     ...addressBuilder(),
@@ -245,40 +245,11 @@ describe('My calendars section', () => {
             expect(addHolidaysCalendarButton).toBeInTheDocument();
             expect(addHolidaysCalendarButton).toBeDisabled();
         });
-
-        it('prevents delinquent user from creating personal or other calendars', () => {
-            const user = { isFree: true, hasPaidMail: false, hasNonDelinquentScope: false } as UserModel;
-
-            const myCalendars = generateOwnedPersonalCalendars(0);
-            const sharedCalendars = generateSharedCalendars(0);
-            const subscribedCalendars = generateSubscribedCalendars(0);
-            const calendars = [...myCalendars, ...sharedCalendars, ...subscribedCalendars];
-
-            renderComponent({
-                user,
-                calendars,
-                myCalendars,
-                sharedCalendars,
-                subscribedCalendars,
-            });
-
-            const createCalendarButton = screen.getByText(createCalendarText);
-            const addCalendarButton = screen.getByText(addCalendarText);
-            const addHolidaysCalendarButton = screen.getByText(addHolidaysCalendarText);
-
-            expect(screen.queryAllByText(limitReachedPaidText)).toHaveLength(0);
-            expect(createCalendarButton).toBeInTheDocument();
-            expect(createCalendarButton).toBeDisabled();
-            expect(addCalendarButton).toBeInTheDocument();
-            expect(addCalendarButton).toBeDisabled();
-            expect(addHolidaysCalendarButton).toBeInTheDocument();
-            expect(addHolidaysCalendarButton).toBeDisabled();
-        });
     });
 
     describe('for a Mail paid user', () => {
         it('allows the user to create both personal and other calendars if under the limit', () => {
-            const user = { isFree: false, hasPaidMail: true, hasNonDelinquentScope: true } as UserModel;
+            const user = { isFree: false, hasPaidMail: true } as UserModel;
 
             const myCalendars = generateOwnedPersonalCalendars(7);
             const sharedCalendars = generateSharedCalendars(4);
@@ -300,7 +271,7 @@ describe('My calendars section', () => {
         });
 
         it('displays the limit reached message in both "My calendars" and "Other calendars" section when the user reaches the calendar limit with personal owned calendars', () => {
-            const user = { isFree: false, hasPaidMail: true, hasNonDelinquentScope: true } as UserModel;
+            const user = { isFree: false, hasPaidMail: true } as UserModel;
 
             const myCalendars = generateOwnedPersonalCalendars(MAX_CALENDARS_PAID);
             const sharedCalendars: VisualCalendar[] = [];
@@ -322,7 +293,7 @@ describe('My calendars section', () => {
         });
 
         it('prevents user from creating MAX_CALENDARS_PAID other calendars by display limit reached message', () => {
-            const user = { isFree: false, hasPaidMail: true, hasNonDelinquentScope: true } as UserModel;
+            const user = { isFree: false, hasPaidMail: true } as UserModel;
 
             const myCalendars: VisualCalendar[] = [];
             const sharedCalendars = generateSharedCalendars(MAX_CALENDARS_PAID - 2);
@@ -344,7 +315,7 @@ describe('My calendars section', () => {
         });
 
         it('prevents user without active addresses from creating personal or other calendars', () => {
-            const user = { isFree: false, hasPaidMail: true, hasNonDelinquentScope: true } as UserModel;
+            const user = { isFree: false, hasPaidMail: true } as UserModel;
             const addresses = [
                 {
                     ...addressBuilder(),
@@ -380,40 +351,11 @@ describe('My calendars section', () => {
             expect(addHolidaysCalendarButton).toBeInTheDocument();
             expect(addHolidaysCalendarButton).toBeDisabled();
         });
-
-        it('prevents delinquent user from creating personal or other calendars', () => {
-            const user = { isFree: false, hasPaidMail: true, hasNonDelinquentScope: false } as UserModel;
-
-            const myCalendars = generateOwnedPersonalCalendars(1);
-            const sharedCalendars = generateSharedCalendars(1);
-            const subscribedCalendars = generateSubscribedCalendars(1);
-            const calendars = [...myCalendars, ...sharedCalendars, ...subscribedCalendars];
-
-            renderComponent({
-                user,
-                calendars,
-                myCalendars,
-                sharedCalendars,
-                subscribedCalendars,
-            });
-
-            const createCalendarButton = screen.getByText(createCalendarText);
-            const addCalendarButton = screen.getByText(addCalendarText);
-            const addHolidaysCalendarButton = screen.getByText(addHolidaysCalendarText);
-
-            expect(screen.queryAllByText(limitReachedPaidText)).toHaveLength(0);
-            expect(createCalendarButton).toBeInTheDocument();
-            expect(createCalendarButton).toBeDisabled();
-            expect(addCalendarButton).toBeInTheDocument();
-            expect(addCalendarButton).toBeDisabled();
-            expect(addHolidaysCalendarButton).toBeInTheDocument();
-            expect(addHolidaysCalendarButton).toBeDisabled();
-        });
     });
 
     describe("displays user's calendars", () => {
         it('in their respective sections', async () => {
-            const user = { isFree: false, hasPaidMail: true, hasNonDelinquentScope: true } as UserModel;
+            const user = { isFree: false, hasPaidMail: true } as UserModel;
 
             const myCalendars = generateOwnedPersonalCalendars(2, [{ name: 'Calendar 1' }, { name: 'Calendar 2' }]);
             const subscribedCalendars = generateSubscribedCalendars(2, [

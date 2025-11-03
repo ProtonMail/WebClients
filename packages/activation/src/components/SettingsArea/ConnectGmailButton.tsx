@@ -37,7 +37,7 @@ const ConnectGmailButton = ({
         useModalState();
     const [upsellForwardingModalProps, setUpsellForwardingModalOpen, renderUpsellForwardingModal] = useModalState();
 
-    const disabled = loadingUser || loadingAddresses || !user.hasNonDelinquentScope || isInMaintenance;
+    const disabled = loadingUser || loadingAddresses || isInMaintenance;
 
     const handleCloseForwardingModal = (hasError?: boolean) => {
         if (!hasError) {

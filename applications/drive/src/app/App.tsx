@@ -1,5 +1,4 @@
-import { Suspense, useState } from 'react';
-import { lazy } from 'react';
+import { lazy, useState } from 'react';
 import { Router } from 'react-router-dom';
 import { CompatRouter } from 'react-router-dom-v5-compat';
 
@@ -34,17 +33,6 @@ import { getWebpackChunkFailedToLoadError } from './utils/errorHandling/WebpackC
 import { logPerformanceMarker } from './utils/performance';
 import { Features, measureFeaturePerformance } from './utils/telemetry';
 
-const DelinquentContainerLazy = lazy(() =>
-    import(/* webpackChunkName: "DelinquentContainer" */ '@proton/components/containers/app/DelinquentContainer').catch(
-        (e) => {
-            const report = getWebpackChunkFailedToLoadError(e, 'DelinquentContainer');
-            console.warn(report);
-            sendErrorReport(report);
-            return Promise.reject(report);
-        }
-    )
-);
-
 const MainContainerLazy = lazy(() =>
     import(
         /* webpackChunkName: "MainContainer" */
@@ -66,13 +54,11 @@ const defaultState: {
     error?: { message: string } | undefined;
     showDrawerSidebar?: boolean;
     store?: DriveStore;
-    delinquent?: boolean;
 } = {
     initialUser: undefined,
     initialDriveUserSettings: undefined,
     error: undefined,
     showDrawerSidebar: false,
-    delinquent: undefined,
 };
 
 const App = () => {
@@ -82,14 +68,13 @@ const App = () => {
         (async () => {
             try {
                 feature.start();
-                const { store, scopes, user, userSettings, driveUserSettings } = await bootstrapApp({
+                const { store, user, userSettings, driveUserSettings } = await bootstrapApp({
                     config,
                 });
                 // we have to pass the new api now it's extended by the bootstrap
                 feature.end(undefined, extraThunkArguments.api);
 
                 setState({
-                    delinquent: scopes.delinquent,
                     showDrawerSidebar: userSettings.HideSidePanel === DRAWER_VISIBILITY.SHOW,
                     initialDriveUserSettings: driveUserSettings,
                     initialUser: user,
@@ -135,16 +120,7 @@ const App = () => {
                                                                     state.initialDriveUserSettings
                                                                 }
                                                             >
-                                                                {typeof state.delinquent !== 'undefined' && (
-                                                                    <Suspense fallback={<LoaderPage />}>
-                                                                        {state.delinquent === false && (
-                                                                            <MainContainerLazy />
-                                                                        )}
-                                                                        {state.delinquent === true && (
-                                                                            <DelinquentContainerLazy />
-                                                                        )}
-                                                                    </Suspense>
-                                                                )}
+                                                                <MainContainerLazy />
                                                             </UserSettingsProvider>
                                                         </StandardPrivateApp>
                                                     </ErrorBoundary>

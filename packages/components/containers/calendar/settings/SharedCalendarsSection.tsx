@@ -42,7 +42,7 @@ import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 import { getIsAddressDisabled } from '@proton/shared/lib/helpers/address';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { Address, UserModel } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces';
 import type { CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 const SharedCalendarRow = ({ calendar, displayEmail }: { calendar: VisualCalendar; displayEmail: boolean }) => {
@@ -111,7 +111,6 @@ const SharedCalendarRow = ({ calendar, displayEmail }: { calendar: VisualCalenda
 };
 
 const InvitationRow = ({
-    user,
     invitation,
     onAccept,
     onDecline,
@@ -119,7 +118,6 @@ const InvitationRow = ({
     canAddCalendars,
     displayEmail,
 }: {
-    user: UserModel;
     invitation: CalendarMemberInvitation;
     onAccept: (invitation: CalendarMemberInvitation) => Promise<void>;
     onDecline: (invitationID: CalendarMemberInvitation) => Promise<void>;
@@ -145,8 +143,7 @@ const InvitationRow = ({
     const handleAccept = () => withLoadingAccept(onAccept(invitation));
     const handleDecline = () => withLoadingDecline(onDecline(invitation));
 
-    const isAcceptButtonDisabled = isInvitedAddressDisabled || !canAddCalendars || !user.hasNonDelinquentScope;
-    const isDeclineButtonDisabled = !user.hasNonDelinquentScope;
+    const isAcceptButtonDisabled = isInvitedAddressDisabled || !canAddCalendars;
 
     // TODO: Unify table styles with CalendarsTable.tsx
     return (
@@ -181,7 +178,7 @@ const InvitationRow = ({
                         <Button loading={loadingAccept} disabled={isAcceptButtonDisabled} onClick={handleAccept}>
                             {c('Action; accept invitation to share calendar').t`Accept`}
                         </Button>
-                        <Button loading={loadingDecline} disabled={isDeclineButtonDisabled} onClick={handleDecline}>
+                        <Button loading={loadingDecline} onClick={handleDecline}>
                             {c('Action; decline invitation to share calendar').t`Decline`}
                         </Button>
                     </ButtonGroup>
@@ -192,14 +189,13 @@ const InvitationRow = ({
 };
 
 interface Props {
-    user: UserModel;
     addresses: Address[];
     calendars: VisualCalendar[];
     calendarInvitations: CalendarMemberInvitation[];
     canAddCalendars: boolean;
 }
 
-const SharedCalendarsSection = ({ user, addresses, calendars = [], calendarInvitations, canAddCalendars }: Props) => {
+const SharedCalendarsSection = ({ addresses, calendars = [], calendarInvitations, canAddCalendars }: Props) => {
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const [
@@ -294,7 +290,6 @@ const SharedCalendarsSection = ({ user, addresses, calendars = [], calendarInvit
                             return (
                                 <InvitationRow
                                     key={invitation.CalendarInvitationID}
-                                    user={user}
                                     invitation={invitation}
                                     onAccept={handleAccept}
                                     onDecline={handleDecline}
