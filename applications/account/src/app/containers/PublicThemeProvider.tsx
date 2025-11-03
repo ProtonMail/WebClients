@@ -40,9 +40,11 @@ export const getPublicTheme = (
     toApp: APP_NAMES | undefined,
     audience: Audience,
     viewportWidth: Breakpoints['viewportWidth'],
-    signupParameters: SignupParameters2
+    signupParameters: SignupParameters2,
+    searchParams?: URLSearchParams
 ): PublicTheme => {
-    const darkTheme = getHas2025OfferCoupon(signupParameters.coupon);
+    const darkTheme =
+        getHas2025OfferCoupon(signupParameters.coupon) || (searchParams && searchParams.get('theme') === 'dark');
     if (darkTheme) {
         return {
             type: ThemeTypes.Storefront,

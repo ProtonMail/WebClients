@@ -176,7 +176,8 @@ export type SignupParameters = ReturnType<typeof getSignupSearchParams>;
 export const getThemeFromLocation = (location: Location, searchParams: URLSearchParams) => {
     const hasBFCoupon = getHas2025OfferCoupon(searchParams.get('coupon')?.toUpperCase());
     const hasVisionary = searchParams.get('plan')?.toLowerCase() === PLANS.VISIONARY;
-    if (location.pathname.includes('signup') && (hasBFCoupon || hasVisionary)) {
+    const hasDarkTheme = searchParams.get('theme') === 'dark';
+    if (location.pathname.includes('signup') && (hasBFCoupon || hasVisionary || hasDarkTheme)) {
         return { themeType: ThemeTypes.Carbon, className: '' };
     }
     if (location.pathname === SSO_PATHS.PASS_SIGNUP || location.pathname === SSO_PATHS.MAIL_SIGNUP) {
