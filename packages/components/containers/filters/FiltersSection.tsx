@@ -1,6 +1,4 @@
 import { useEffect, useState } from 'react';
-import type { ContainerGetter, SortEndHandler } from 'react-sortable-hoc';
-import { arrayMove } from 'react-sortable-hoc';
 
 import { c } from 'ttag';
 
@@ -16,6 +14,7 @@ import { useFilters } from '@proton/mail/store/filters/hooks';
 import { CacheType } from '@proton/redux-utilities';
 import { applyFilters, updateFilterOrder } from '@proton/shared/lib/api/filters';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import move from '@proton/utils/move';
 
 import ActionsFilterToolbar from './ActionsFilterToolbar';
 import FilterSortableList from './FilterSortableList';
@@ -45,11 +44,9 @@ function FiltersSection() {
         setFilters(filters);
     }, [filters]);
 
-    const getScrollContainer: ContainerGetter = () => document.querySelector('.main-area') as HTMLElement;
-
-    const onSortEnd: SortEndHandler = async ({ oldIndex, newIndex }) => {
+    const onSortEnd = async ({ oldIndex, newIndex }: { oldIndex: number; newIndex: number }) => {
         try {
-            const nextFilters: Filter[] = arrayMove(list, oldIndex, newIndex);
+            const nextFilters = move(list, oldIndex, newIndex);
             setFilters(nextFilters);
 
             const filterIds = nextFilters.map(({ ID }) => ID);
@@ -66,12 +63,7 @@ function FiltersSection() {
         }
 
         return list.length ? (
-            <FilterSortableList
-                getContainer={getScrollContainer}
-                items={list}
-                onSortEnd={onSortEnd}
-                onApplyFilter={handleApplyFilter}
-            />
+            <FilterSortableList items={list} onSortEnd={onSortEnd} onApplyFilter={handleApplyFilter} />
         ) : null;
     };
 
