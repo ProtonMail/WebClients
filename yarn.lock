@@ -9168,7 +9168,9 @@ __metadata:
   resolution: "@proton/test-tags-mr@workspace:utilities/test-tags-mr"
   dependencies:
     "@proton/ci-tools": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
     "@types/jest": "npm:^30.0.0"
+    eslint: "npm:^9.37.0"
     jest: "npm:^30.2.0"
     ts-jest: "npm:^29.4.4"
     ts-node: "npm:^10.9.2"
