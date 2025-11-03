@@ -110,6 +110,7 @@ const Layout = ({
         <div
             className={clsx(
                 'flex *:min-size-auto flex-nowrap flex-column h-full overflow-auto relative sign-layout-bg',
+                theme.information.dark && 'sign-layout-bg--dark',
                 layoutClassName
             )}
         >
