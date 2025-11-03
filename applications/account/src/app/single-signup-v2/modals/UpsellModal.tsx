@@ -140,17 +140,31 @@ const UpsellModal = ({
                     {checkout && (
                         <div className="color-weak mb-4">
                             {(() => {
-                                const discount = `${checkout.discountPercent}%`;
+                                const discountPercentString = `${checkout.discountPercent}%`;
                                 if (relativePrice) {
+                                    if (checkout.discountPercent !== 0) {
+                                        return getBoldFormattedText(
+                                            c('pass_signup_2023: Info')
+                                                .t`But you can get ${discountPercentString} off by upgrading to **${upsellPlanTitle}** — it’s just ${relativePrice} extra per month.`
+                                        );
+                                    } else {
+                                        return getBoldFormattedText(
+                                            c('pass_signup_2023: Info')
+                                                .t`But you can upgrade to **${upsellPlanTitle}** — it’s just ${relativePrice} extra per month.`
+                                        );
+                                    }
+                                }
+
+                                if (checkout.discountPercent !== 0) {
                                     return getBoldFormattedText(
                                         c('pass_signup_2023: Info')
-                                            .t`But you can get ${discount} off by upgrading to **${upsellPlanTitle}** — it’s just ${relativePrice} extra per month.`
+                                            .t`But you can get ${discountPercentString} off by upgrading to **${upsellPlanTitle}**.`
+                                    );
+                                } else {
+                                    return getBoldFormattedText(
+                                        c('pass_signup_2023: Info').t`But you can upgrade to **${upsellPlanTitle}**.`
                                     );
                                 }
-                                return getBoldFormattedText(
-                                    c('pass_signup_2023: Info')
-                                        .t`But you can get ${discount} off by upgrading to **${upsellPlanTitle}**.`
-                                );
                             })()}
                         </div>
                     )}
