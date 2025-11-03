@@ -5,6 +5,7 @@ import { useDetailsModal } from '../../../components/modals/DetailsModal';
 import { useFilesDetailsModal } from '../../../components/modals/FilesDetailsModal';
 import { useRevisionsModal } from '../../../components/modals/RevisionsModal/RevisionsModal';
 import { useFileSharingModal } from '../../../components/modals/SelectLinkToShareModal/SelectLinkToShareModal';
+import { useCopyItemsModal } from '../../../modals/CopyItemsModal/CopyItemsModal';
 import { useCreateFolderModal } from '../../../modals/CreateFolderModal';
 import { useMoveItemsModal } from '../../../modals/MoveItemsModal';
 import { useRenameModal } from '../../../modals/RenameModal';
@@ -48,6 +49,7 @@ export const useFolderActions = ({ selectedItems, shareId, linkId, volumeId }: P
     const [revisionsModal, showRevisionsModal] = useRevisionsModal();
     const [renameModal, showRenameModal] = useRenameModal();
     const [moveModal, showMoveModal] = useMoveItemsModal();
+    const { copyModal, showCopyItemsModal } = useCopyItemsModal();
 
     const createFolder = () => showCreateFolderModal({ parentFolderUid: uid });
 
@@ -60,6 +62,8 @@ export const useFolderActions = ({ selectedItems, shareId, linkId, volumeId }: P
     };
 
     const moveAction = (shareId: string) => showMoveModal({ shareId, selectedItems });
+
+    const copyAction = () => showCopyItemsModal(selectedItems);
 
     const renameAction = () => {
         const item = selectedItems[0];
@@ -127,6 +131,7 @@ export const useFolderActions = ({ selectedItems, shareId, linkId, volumeId }: P
             showDetailsModal: showDetails,
             showRenameModal: renameAction,
             showMoveModal: moveAction,
+            showCopyModal: copyAction,
             showCreateFolderModal: createFolder,
             showFileSharingModal: createShare,
             showCreateFileModal,
@@ -146,6 +151,7 @@ export const useFolderActions = ({ selectedItems, shareId, linkId, volumeId }: P
             revisionsModal,
             renameModal,
             moveModal,
+            copyModal,
         },
     };
 };

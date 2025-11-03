@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import { MemberRole, useDrive } from '@proton/drive';
+import useFlag from '@proton/unleash/useFlag';
 
 import { useDriveDocsFeatureFlag, useIsSheetsEnabled } from '../../store/_documents';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
@@ -19,6 +20,7 @@ export function useFolder() {
     const { handleError } = useSdkErrorHandler();
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
     const isSheetsEnabled = useIsSheetsEnabled();
+    const copyFeatureEnabled = useFlag('DriveWebSDKCopy');
     const { createNotification } = useNotifications();
 
     const handleFolderError = useCallback(
@@ -76,6 +78,7 @@ export function useFolder() {
                     canCreateSheets: isSheetsEnabled && canEdit && !isDeviceFolder,
                     canShareNode: isAdmin && !isDeviceRoot && !isRoot,
                     canMove: canEdit,
+                    canCopy: copyFeatureEnabled,
                     canRename: canEdit,
                     canTrash,
                 });
@@ -110,7 +113,7 @@ export function useFolder() {
                 setIsLoading(false);
             }
         },
-        [createNotification, drive, handleError, handleFolderError, isDocsEnabled, isSheetsEnabled]
+        [copyFeatureEnabled, createNotification, drive, handleError, handleFolderError, isDocsEnabled, isSheetsEnabled]
     );
 
     return {
