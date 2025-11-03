@@ -33,6 +33,7 @@ const ItemSenders = ({ element, conversationMode, loading, unread, displayRecipi
 
     const sendersAsRecipientOrGroup = useMemo(() => {
         return getRecipientsOrGroups(senders);
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-C8EA9B
     }, [senders]);
 
     const recipientsAddresses = useMemo(() => {

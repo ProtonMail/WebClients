@@ -42,6 +42,7 @@ const LocationFieldDropdown = ({ value, onChange }: Props) => {
             };
         });
         setOptions(nextOptions as ItemsGroup);
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-AA810A
     }, [search]);
 
     return (

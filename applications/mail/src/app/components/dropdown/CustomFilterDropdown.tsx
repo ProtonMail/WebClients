@@ -43,6 +43,7 @@ const CustomFilterDropdown = ({ message, onClose, onLock }: Props) => {
     const [filterModalProps, setFilterModalOpen, renderFilterModal] = useModalState();
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-5F1D86
     useEffect(() => onLock(!containFocus), [containFocus]);
 
     const [filtersState, setFiltersState] = useState<FiltersState>({
@@ -143,6 +144,7 @@ const CustomFilterDropdown = ({ message, onClose, onLock }: Props) => {
         };
 
         return filter;
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-AB282D
     }, [filtersState]);
 
     const handleNext = () => {

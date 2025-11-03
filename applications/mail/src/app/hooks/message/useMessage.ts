@@ -13,11 +13,13 @@ import { useGetElementsFromIDs } from '../mailbox/useElements';
 
 export const useGetLocalID = () => {
     const store = useMailStore();
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-3CD77B
     return useCallback((ID: string) => localID(store.getState(), { ID }), []);
 };
 
 export const useGetMessage = () => {
     const store = useMailStore();
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-422E9C
     return useCallback((ID: string) => messageByID(store.getState(), { ID }), []);
 };
 
@@ -25,6 +27,7 @@ export const useGetAllMessages = () => {
     const store = useMailStore();
     return useCallback(() => {
         return allMessages(store.getState());
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-B335AA
     }, []);
 };
 
@@ -79,6 +82,7 @@ export const useMessage: UseMessage = (inputLocalID: string, conversationID = ''
     // Update message state and listen to cache for updates on the current message
     useEffect(() => {
         setMessage(initMessage());
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-AE4BBD
     }, [inputLocalID]); // The hook can be re-used for a different message
 
     useEffect(() => {

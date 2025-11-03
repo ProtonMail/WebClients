@@ -166,6 +166,7 @@ export const usePermanentDeleteSelection = (labelID: string) => {
     }, [selectedIDs]);
     const elements = useMemo(() => {
         return getElementsFromIDs(selectedIDs);
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-A43801
     }, [selectedIDs]);
 
     // If the selected item is a conversation, it may contain more than one message.

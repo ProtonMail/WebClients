@@ -102,6 +102,7 @@ const SendingMessageNotification = ({ manager, scheduledAt }: SendingMessageNoti
                 }
             }
         });
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-94B93B
     }, []);
 
     if (state === SendingStep.sent) {

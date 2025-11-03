@@ -68,6 +68,7 @@ const MailboxListItems = ({
         if (elements.length >= 5 && displayState === CHECKLIST_DISPLAY_TYPE.FULL) {
             changeChecklistDisplay(CHECKLIST_DISPLAY_TYPE.REDUCED);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-A1D418
     }, [elements]);
 
     if (elements.length === 0) {

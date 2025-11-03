@@ -180,6 +180,7 @@ const EditorWrapper = ({
         });
 
         setCIDs([...cids, cid]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-77AEFC
     }, []);
 
     const handleRemoveEmbedded = useCallback(async (attachment: Attachment) => {
@@ -231,6 +232,7 @@ const EditorWrapper = ({
             };
             onReady(externalActions);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-72691C
     }, [editorReady, documentReady, isPlainText]);
 
     // Once the editor initialized, we do an initial change to align the model with the editor
@@ -238,6 +240,7 @@ const EditorWrapper = ({
         if (documentReady && (isPlainText || (editorReady && blockquoteSaved !== undefined))) {
             onChangeContent(handleGetContent(), false, true);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-A5C052
     }, [documentReady, isPlainText, editorReady, blockquoteSaved !== undefined]);
 
     // Handle input considering blockquote
@@ -263,6 +266,7 @@ const EditorWrapper = ({
                 onChange({ data: { RightToLeft: change.rightToLeft } });
             }
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-944D0C
         [onChange, message]
     );
 
@@ -276,6 +280,7 @@ const EditorWrapper = ({
                 updateCursor: false,
             });
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-863A3F
     }, [blockquoteSaved]);
 
     useEffect(() => {
@@ -283,6 +288,7 @@ const EditorWrapper = ({
         if (!disabled) {
             editorActionsRef.current?.focus();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-63B1A1
     }, [editorMetadata.blockquoteExpanded, blockquoteSaved, isPlainText]);
 
     const { openEmojiPickerRef, toolbarConfig, setToolbarConfig, modalLink, modalImage, modalDefaultFont } = useToolbar(

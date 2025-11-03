@@ -61,6 +61,7 @@ const useChecklist = () => {
                 unsubscribe();
             }
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-FD403E
     }, [userSettings, checklistType]);
 
     return { checklist, loading, checklistType };

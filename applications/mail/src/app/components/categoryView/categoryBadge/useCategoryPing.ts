@@ -38,5 +38,6 @@ export const useCategoryPing = () => {
             void silentApi(badgePing());
             setItem(CATEGORY_TIME_PING, new Date().toISOString());
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-64429C
     }, []);
 };

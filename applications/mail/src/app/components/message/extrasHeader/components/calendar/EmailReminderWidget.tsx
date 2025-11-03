@@ -8,10 +8,17 @@ import { useAddresses, useGetAddresses } from '@proton/account/addresses/hooks';
 import { Banner, ButtonLike, Href } from '@proton/atoms';
 import { useVideoConferencingWidget } from '@proton/calendar';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
-import { AppLink, CalendarEventDateHeader, IconRow, useApi, useGetCalendarEventRaw, useNotifications } from '@proton/components';
-import { IcArrowWithinSquare, IcKey } from '@proton/icons';
+import {
+    AppLink,
+    CalendarEventDateHeader,
+    IconRow,
+    useApi,
+    useGetCalendarEventRaw,
+    useNotifications,
+} from '@proton/components';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import useIsMounted from '@proton/hooks/useIsMounted';
+import { IcArrowWithinSquare, IcKey } from '@proton/icons';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageErrors } from '@proton/mail/store/messages/messagesTypes';
@@ -94,6 +101,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
             setLoadedWidget('');
             setRefreshCount((count) => count + 1);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-1FEA3D
     }, []);
 
     const messageHasDecryptionError = !!errors?.decryption?.length;
@@ -298,6 +306,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                 }
             }
         })();
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-0CB565
     }, [calendarIdHeader, eventIdHeader, messageHasDecryptionError, message.ID, refreshCount]);
 
     const sanitizedAndUrlifiedLocation = useMemo(() => {

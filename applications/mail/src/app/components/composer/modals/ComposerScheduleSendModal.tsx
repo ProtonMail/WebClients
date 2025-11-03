@@ -63,6 +63,7 @@ const ComposerScheduleSendModal = ({ message, onClose, onSubmit }: Props) => {
 
     useEffect(() => {
         dispatch(updateScheduled({ ID: message.localID, scheduledAt: getUnixTime(scheduleDateTime) }));
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-0770BA
     }, [scheduleDateTime]);
 
     const handleSubmit = () => {

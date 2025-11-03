@@ -34,6 +34,7 @@ export const useSelectAll = ({ labelID }: Props) => {
 
     const locationCount = useMemo(() => {
         return getLocationElementsCount(labelID, conversationCounts || [], messageCounts || [], isConversation);
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-CFA412
     }, [conversationCounts, messageCounts, labelID]);
 
     const getBannerText = useCallback(() => {

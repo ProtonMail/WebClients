@@ -112,6 +112,7 @@ export const NewsletterSubscriptionView = ({
             sendNewslettersViewVisit(!!(feature && !feature?.Value));
             hasSentPageView.current = true;
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-FE8E1A
     }, [feature?.Value, isDomBusy]);
 
     useEffect(() => {
@@ -122,6 +123,7 @@ export const NewsletterSubscriptionView = ({
                 dispatch(setParams({ newsletterSubscriptionID: activeSubscription.ID, conversationMode: false }));
             });
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-A7A3D4
     }, [activeSubscription?.ID, params.newsletterSubscriptionID]);
 
     // The view is not available on mobile, we want to make sure to avoid showing it to users

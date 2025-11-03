@@ -68,7 +68,9 @@ const ToolbarDropdown = ({
         setAdditionalOpen(undefined);
     };
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-FC78C8
     useImperativeHandle(externalToggleRef, () => toggle, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-23F99C
     useImperativeHandle(externalCloseRef, () => close, []);
 
     return (

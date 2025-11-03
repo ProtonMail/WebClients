@@ -47,6 +47,7 @@ const useEncryptedSearchList = (isSearch: boolean, loading: boolean, page: numbe
             clearTimeout(esTimer);
             setESTimerExpired(() => false);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-BFFE2C
     }, [isESLoading]);
 
     useEffect(() => {
@@ -67,6 +68,7 @@ const useEncryptedSearchList = (isSearch: boolean, loading: boolean, page: numbe
         return () => {
             clearInterval(interval);
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-860367
     }, [esEnabled]);
 
     return {

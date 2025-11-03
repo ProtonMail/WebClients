@@ -24,6 +24,7 @@ const ExtraDecryptedSubject = ({ message }: Props) => {
             }
             return <span>{decryptedSubject}</span>;
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-3294F5
     }, [message.decryption?.decryptedSubject, highlightSubject]);
 
     if (message.data.Subject !== '...' || !subjectElement) {

@@ -36,6 +36,7 @@ const MailHeader = ({ labelID, elementID, selectedIDs = [], toolbar, settingsBut
     const [mailSettings] = useMailSettings();
     const dispatch = useMailDispatch();
     const expanded = useMailSelector(selectLayoutIsExpanded);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-A7EB47
     const onToggleExpand = useCallback(() => dispatch(layoutActions.toggleSidebarExpand()), []);
 
     const breakpoints = useActiveBreakpoint();
@@ -88,7 +89,7 @@ const MailHeader = ({ labelID, elementID, selectedIDs = [], toolbar, settingsBut
                         data-testid="compose-floating-button"
                         onClick={() => onCompose({ type: ComposeTypes.newMessage, action: MESSAGE_ACTIONS.NEW })}
                     >
-                        <IcPen size={6}  className="m-auto" />
+                        <IcPen size={6} className="m-auto" />
                     </FloatingButton>
                 }
             />

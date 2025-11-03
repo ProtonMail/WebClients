@@ -62,6 +62,7 @@ const TipBox = ({ tips, isDismissed, setIsDismissed }: Props) => {
         sendCloseButtonClickedReport(randomOption.action);
     };
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-CF1C2D
     useEffect(() => sendTipDisplayedReport(randomOption.action), [randomOption]);
 
     if (isDismissed) {
@@ -90,7 +91,7 @@ const TipBox = ({ tips, isDismissed, setIsDismissed }: Props) => {
                         className="close-button absolute top-0 right-0 bg-norm z-up border border-weak shadow-norm rounded-full flex items-center justify-center group-hover:opacity-100 interactive"
                         onClick={onCancel}
                     >
-                        <IcCross className="color-hint"  size={4} alt={c('Action').t`Close`} />
+                        <IcCross className="color-hint" size={4} alt={c('Action').t`Close`} />
                     </button>
                 </Tooltip>
             )}

@@ -44,6 +44,7 @@ export const MailSidebarCollapsedButton = ({ type, onClick, title }: Props) => {
 
             return false;
         });
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-007432
     }, [folders, labels, type, isConversationMode]);
 
     return (

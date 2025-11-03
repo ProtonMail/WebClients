@@ -67,6 +67,7 @@ const AddressInput = ({ id, anchorRef, onChange, value, dataTestId, placeholder,
         if (value !== search) {
             setSearch(value || '');
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-D6B418
     }, [value]);
 
     return (

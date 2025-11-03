@@ -168,6 +168,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll, onChe
 
     const initialState = useMemo(
         () => getInitialState(labels, getElementsFromIDs(selectedIDs), labelID, selectAll),
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-58EE19
         [selectedIDs, labels, labelID, selectAll]
     );
 
@@ -199,11 +200,13 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll, onChe
             },
             {} as { [labelID: string]: boolean }
         );
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-3A4FA0
     }, [selectedIDs, initialState, selectedLabelIDs, selectAll, labels]);
 
     // Always checkbox should be disabled when we don't find senders OR there are no labels checked (so no filter based on labels to create)
     const alwaysCheckboxDisabled = useMemo(() => {
         return !getSendersToFilter(getElementsFromIDs(selectedIDs)).length || checkedIDs.length < 1 || !!selectAll;
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-6EFABB
     }, [getSendersToFilter, selectedIDs, changes, selectAll]);
 
     const archiveCheckboxDisabled = !!selectAll;
@@ -214,6 +217,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll, onChe
         }
     }, [alwaysCheckboxDisabled, always]);
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-177A2F
     useEffect(() => onLock(!containFocus), [containFocus]);
 
     if (!selectedIDs || !selectedIDs.length) {

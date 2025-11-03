@@ -94,6 +94,7 @@ export const useMarkAllAs = () => {
 
             dispatch(layoutActions.setSelectAll(false));
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-6BC3C2
         [canUseOptimistic]
     );
 

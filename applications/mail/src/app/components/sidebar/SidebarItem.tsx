@@ -183,6 +183,7 @@ const SidebarItem = ({
                 }
             }
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-1E6B59
         [applyLabels, dragFilter, checkAllRef, currentLabelID, getElementsFromIDs, isFolder, labelID, selectAll]
     );
 

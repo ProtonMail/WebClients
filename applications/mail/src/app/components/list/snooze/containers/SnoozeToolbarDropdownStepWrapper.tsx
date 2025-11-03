@@ -25,6 +25,7 @@ interface Props {
 const SnoozeToolbarDropdownStepWrapper = ({ onClose, onLock, selectedIDs, displayUpsellModal }: Props) => {
     const [{ hasPaidMail }] = useUser();
     const getElementsFromIDs = useGetElementsFromIDs();
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-071073
     const elements = useMemo(() => getElementsFromIDs(selectedIDs), [selectedIDs]);
 
     const { canUnsnooze, snooze, handleCustomClick, snoozeState, unsnooze, handleClose } = useSnooze();

@@ -23,6 +23,7 @@ const PageContainer = () => {
         };
 
         void initStore();
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-FD7908
     }, []);
 
     return (

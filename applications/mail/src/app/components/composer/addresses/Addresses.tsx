@@ -59,6 +59,7 @@ const Addresses = ({ messageSendInfo, disabled, addressesBlurRef, addressesFocus
             setEditor(true);
             setTimeout(() => inputFocusRefs.to.current(), 100);
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-5D91B1
     }, [composer?.recipients?.CCList, composer?.recipients?.BCCList]);
 
     const handleFocus = () => {

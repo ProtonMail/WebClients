@@ -85,10 +85,12 @@ const RecipientItemLayout = ({
     const canHighlightLabel = !!label && highlightData && (esStatus.esEnabled || isLabelRecipientAddress);
     const highlightedLabel = useMemo(
         () => (canHighlightLabel ? highlightNode(label, highlightMetadata) : label),
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-8E883D
         [label, highlightData]
     );
     const highlightedAddress = useMemo(
         () => (!!address && highlightData ? highlightNode(address, highlightMetadata) : address),
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-374618
         [address, highlightData]
     );
 

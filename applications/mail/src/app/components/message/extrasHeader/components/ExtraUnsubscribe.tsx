@@ -4,9 +4,22 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { Banner, Button, Href } from '@proton/atoms';
-import { Field, Label, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Prompt, Row, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
-import { IcEnvelope } from '@proton/icons';
+import {
+    Field,
+    Label,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+    Prompt,
+    Row,
+    useApi,
+    useEventManager,
+    useModalState,
+    useNotifications,
+} from '@proton/components';
 import { useLoading } from '@proton/hooks';
+import { IcEnvelope } from '@proton/icons';
 import type {
     MessageStateWithData,
     MessageWithOptionalBody,
@@ -58,6 +71,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
     const [unsubscribeModalProps, setUnsubscribeModalOpen, renderUnsubscribeModal] = useModalState();
     const [unsubscribedModalProps, setUnsubscribedModalOpen, renderUnsubscribedModal] = useModalState();
     const [passAliasesModalProps, setPassAliasesModalOpen, renderPassAliasesModal] = useModalState();
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-C4F463
     const unsubscribeMethods = message.UnsubscribeMethods || {};
     const hasUnsubscribeMethods = useMemo(() => !!Object.keys(unsubscribeMethods).length, [unsubscribeMethods]);
     const isSimpleLoginAlias = hasSimpleLoginSender(message);
@@ -90,6 +104,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
         }
 
         return c('Action').t`Unsubscribe`;
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-707A4B
     }, [loading, message]);
 
     // We don't want to show the unsubscribe button in the newsletter subscriptions view

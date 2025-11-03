@@ -93,6 +93,7 @@ const ContactResignModal = ({
         };
 
         void Promise.all(contacts.map(({ contactID }) => getContactFingerprintsByEmailMap(contactID)));
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-CB91C0
     }, []);
 
     const handleSubmit = async () => {

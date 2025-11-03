@@ -18,27 +18,32 @@ import {
 
 export const useGetEOMessage = () => {
     const store = useEOMailStore();
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-165D4A
     return useCallback(() => eoMessageSelector(store.getState()), []);
 };
 
 export const useGetEOToken = () => {
     const store = useEOMailStore();
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-81493A
     return useCallback(() => eoTokenSelector(store.getState()), []);
 };
 
 export const useGetEODecryptedToken = () => {
     const store = useEOMailStore();
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-E4E79E
     return useCallback(() => eoDecryptedTokenSelector(store.getState()), []);
 };
 
 export const useGetEOMessageState = () => {
     const store = useEOMailStore();
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-2AD91D
     return useCallback(() => eoMessageStateSelector(store.getState()), []);
 };
 
 export const useGetEOPassword = () => {
     const store = useEOMailStore();
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-50F34F
     return useCallback(() => passwordSelector(store.getState()), []);
 };
 
@@ -84,6 +89,7 @@ export const useLoadEOMessage = ({ id, setSessionStorage }: Props) => {
         } else if (!id) {
             dispatch(initEncryptedToken());
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-8CD49C
     }, [encryptedToken, isStoreInitialized]);
 
     return {

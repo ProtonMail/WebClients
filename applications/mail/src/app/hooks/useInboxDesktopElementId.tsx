@@ -37,6 +37,7 @@ const useInboxDesktopElementId = ({ isSearch }: { isSearch: boolean }) => {
         } catch (e: any) {
             console.error(e);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-87993B
     }, [location.hash, isSearch, history]);
 };
 

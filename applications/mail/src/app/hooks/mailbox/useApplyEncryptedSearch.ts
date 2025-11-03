@@ -150,5 +150,6 @@ export const useApplyEncryptedSearch = ({
             dispatch(updatePage(parseSearchParams(history.location, categoriesView.disabledCategoriesIDs).page));
             void encryptedSearch(setEncryptedSearchResults, messagesToLoadMoreES);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-C75F36
     }, [shouldLoadElements, messagesToLoadMoreES, search]);
 };

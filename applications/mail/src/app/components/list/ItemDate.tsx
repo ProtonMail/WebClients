@@ -59,6 +59,7 @@ const ItemDate = ({ element, labelID, className, mode = 'simple', useTooltip = f
             const intervalID = setInterval(update, REFRESH_DATE_INTERVAL);
             return () => clearInterval(intervalID);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-D7CDEF
     }, [element, mode, labelID]);
 
     // Displays the orange date when the element has a snooze label

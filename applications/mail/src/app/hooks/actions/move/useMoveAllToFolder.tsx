@@ -149,6 +149,7 @@ export const useMoveAllToFolder = (setContainFocus?: Dispatch<SetStateAction<boo
 
             dispatch(layoutActions.setSelectAll(false));
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-5F94FC
         [canUseOptimistic]
     );
 
@@ -176,6 +177,7 @@ export const useMoveAllToFolder = (setContainFocus?: Dispatch<SetStateAction<boo
                 telemetryEvent,
             });
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-469BDA
         [canUseOptimistic, folders, labels]
     );
 

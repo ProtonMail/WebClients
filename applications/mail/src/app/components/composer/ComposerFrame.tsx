@@ -42,9 +42,11 @@ const ComposerFrame = ({ index, count, focus, onFocus, onClose: inputOnClose, co
 
     const toggleMinimizeComposer = useCallback(() => {
         dispatch(composerActions.toggleMinimizeComposer(composerID));
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-D334D9
     }, [composerID]);
     const toggleMaximizeComposer = useCallback(() => {
         dispatch(composerActions.toggleMaximizeComposer(composerID));
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-C04556
     }, [composerID]);
 
     const composerDimension = getComposerDimension();
@@ -98,6 +100,7 @@ const ComposerFrame = ({ index, count, focus, onFocus, onClose: inputOnClose, co
         if (!isMaximized && shouldMaximized) {
             toggleMaximizeComposer();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-2E99B1
     }, [windowHeight]);
 
     const handleClose: MouseEventHandler<HTMLButtonElement> = (e) => {

@@ -39,6 +39,7 @@ const PassAliasTipCTA = ({ ctaText }: Props) => {
         );
 
         return getAppHref(`?${search.toString()}`, APPS.PROTONPASS, authentication?.getLocalID?.());
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-EA552C
     }, []);
 
     const passAliasesUpsellModal = useModalStateObject();

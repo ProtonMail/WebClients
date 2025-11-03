@@ -35,6 +35,7 @@ const AttachmentsButton = (
         if (attachmentTriggerRef) {
             attachmentTriggerRef.current = triggerAttachment;
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-71B888
     }, []);
 
     return (

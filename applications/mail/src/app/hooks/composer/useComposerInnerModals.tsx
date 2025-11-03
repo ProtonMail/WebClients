@@ -39,6 +39,7 @@ export const useComposerInnerModals = ({ pendingFiles, handleCancelAddAttachment
         if (innerModal === ComposerInnerModalStates.InsertImage && (!pendingFiles || pendingFiles.length === 0)) {
             setInnerModal(ComposerInnerModalStates.None);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-57D312
     }, [pendingFiles]);
 
     const handlePassword = () => {

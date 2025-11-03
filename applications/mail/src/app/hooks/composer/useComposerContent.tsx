@@ -100,6 +100,7 @@ export const useComposerContent = (args: EditorArgs) => {
     const messageID = useMemo(() => {
         const composer = selectComposer(store.getState(), args.composerID);
         return composer.messageID;
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-EA3EFC
     }, []);
 
     // Indicates that the composer is in its initial opening
@@ -207,6 +208,7 @@ export const useComposerContent = (args: EditorArgs) => {
             }
         };
         void initDraft();
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-379FF2
     }, [
         pendingSave.isPending,
         syncedMessage.localID,
@@ -243,6 +245,7 @@ export const useComposerContent = (args: EditorArgs) => {
                 });
             }
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-4DDA0C
     }, [pendingSave.isPending, syncedMessage.data?.ID]);
 
     const handleLoadImages = async () => {
@@ -319,6 +322,7 @@ export const useComposerContent = (args: EditorArgs) => {
             setModelMessage(newModelMessage);
             void reloadSendInfo(messageSendInfo, newModelMessage);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-3F3928
     }, [
         pendingSave.isPending,
         syncedMessage.localID,
@@ -348,6 +352,7 @@ export const useComposerContent = (args: EditorArgs) => {
                 clearTimeout(timeoutRef.current);
             }
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-E35FC4
     }, [opening, isFocused]);
 
     const handleChange: MessageChange = useHandler((update, shouldReloadSendInfo) => {
@@ -501,6 +506,7 @@ export const useComposerContent = (args: EditorArgs) => {
         if (editorReady && syncedMessage.messageDocument?.initialized && !attachmentToUpload) {
             setOpening(false);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-E1A782
     }, [editorReady, syncedMessage.data, syncedMessage.messageDocument?.initialized]);
 
     /**
@@ -521,6 +527,7 @@ export const useComposerContent = (args: EditorArgs) => {
         if (modelMessage.messageDocument?.initialized) {
             void handleVerify();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-C3E761
     }, [modelMessage.messageDocument?.initialized]);
 
     const handleDiscard = async (hasChanges = true) => {

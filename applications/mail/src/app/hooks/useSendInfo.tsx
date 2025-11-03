@@ -60,6 +60,7 @@ export const useMessageSendInfo = (message: MessageState) => {
             mapSendInfo,
             setMapSendInfo: safeSetMapSendInfo,
         }),
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-1A7E26
         [message, mapSendInfo]
     );
 
@@ -196,6 +197,7 @@ export const useUpdateRecipientSendInfo = (
         };
 
         void updateRecipientIcon();
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-B0BE58
     }, [emailAddress, contactsMap, ktActivation]);
 
     return { handleRemove, askForKeyPinningModal, contactResignModal };
@@ -366,6 +368,7 @@ export const useUpdateGroupSendInfo = (
         return () => {
             abortController.abort();
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-7B6EAE
     }, [ktActivation]);
 
     return { handleRemove, askForKeyPinningModal, contactResignModal };

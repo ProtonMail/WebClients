@@ -76,6 +76,7 @@ export const useDownload = () => {
                 );
             }
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-8645E0
         [api]
     );
 
@@ -90,6 +91,7 @@ export const useDownload = () => {
             await generateDownload(download);
             return download.verificationStatus;
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-636072
         [api]
     );
 
@@ -109,6 +111,7 @@ export const useDownload = () => {
                 type: blob.type,
             };
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-436A5C
         []
     );
 
@@ -167,6 +170,7 @@ export const useDownloadAll = () => {
 
             await generateDownloadAll(message.data, list);
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-691CF2
         [api]
     );
 
@@ -222,6 +226,7 @@ export const usePreview = () => {
 
             return download;
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-4791B4
         [api]
     );
 

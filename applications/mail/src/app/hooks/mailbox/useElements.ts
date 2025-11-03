@@ -175,6 +175,7 @@ export const useElements: UseElements = ({
 
     const labelIDs = useMemo(() => {
         return [...labels, ...folders].map(({ ID }: Label) => ID);
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-C6E240
     }, [labels.length, folders.length]);
 
     useEffect(() => {
@@ -244,6 +245,7 @@ export const useElements: UseElements = ({
                 })
             );
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-577287
     }, [location.pathname, location.hash, mailSettings.ViewMode, labelIDs]);
 
     // Reset the element state when receiving a setting update for page size or conversation mode
@@ -269,6 +271,7 @@ export const useElements: UseElements = ({
                 },
             })
         );
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-22F1BA
     }, [mailSettings.PageSize]);
 
     // Main effect watching all inputs and responsible to trigger actions on the state
@@ -302,6 +305,7 @@ export const useElements: UseElements = ({
         if (shouldUpdatePage && messagesToLoadMoreES === 0) {
             dispatch(updatePage(page));
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-BF6F86
     }, [
         shouldLoadElements,
         shouldUpdatePage,
@@ -328,6 +332,7 @@ export const useElements: UseElements = ({
                 onPage(count - 1);
             }
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-F8CFDD
     }, [page, partialESSearch, expectingEmpty, loadedEmpty, dynamicTotal]);
 
     useEffect(() => {
@@ -366,6 +371,7 @@ export const useElements: UseElements = ({
                 })
             );
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-3D8BC7
     }, [stateInconsistency]);
 
     // Keep track of previous esEnabled status
@@ -393,6 +399,7 @@ export const useGetElementByID = () => {
 
     return useCallback((elementID: string): Element | undefined => {
         return store.getState().elements.elements[elementID];
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-F896EA
     }, []);
 };
 
@@ -417,6 +424,7 @@ export const useGetElementsFromIDs = () => {
                 return messageFromMessageState?.data || conversationFromConversationState?.Conversation;
             })
             .filter(isTruthy);
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-256B9D
     }, []);
 };
 
@@ -436,5 +444,6 @@ export const useGetMessagesOrElementsFromIDs = () => {
                 return messageFromMessageState?.data || state.elements.elements[ID];
             })
             .filter(isTruthy);
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-19BDED
     }, []);
 };

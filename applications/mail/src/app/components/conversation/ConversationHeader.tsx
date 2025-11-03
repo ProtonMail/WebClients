@@ -31,6 +31,7 @@ const ConversationHeader = ({ className, loading, element, showBackButton = fals
             ) : (
                 <span>{element?.Subject}</span>
             ),
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-CBE081
         [element, highlightSubject]
     );
 
