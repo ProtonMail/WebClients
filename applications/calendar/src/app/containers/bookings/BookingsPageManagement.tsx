@@ -67,7 +67,7 @@ export const Form = () => {
     const scheduleOptions = getCalendarEventDefaultDuration({ includeShortDurations: true, shortLabels: true });
     const locationOptions = getBookingLocationOption();
 
-    const [writeableCalendars = []] = useWriteableCalendars();
+    const [writeableCalendars = []] = useWriteableCalendars({ canBeDisabled: false, canBeShared: false });
 
     const { state, toggle } = useToggle(false);
     const { createNotification } = useNotifications();
