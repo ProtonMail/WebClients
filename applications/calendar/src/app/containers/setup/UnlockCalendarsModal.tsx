@@ -89,6 +89,7 @@ const UnlockCalendarsModal = ({
                 onDone();
             });
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-C13AE2
     }, []);
 
     const handleError = () => window.location.reload();

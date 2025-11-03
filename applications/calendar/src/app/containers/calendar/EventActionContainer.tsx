@@ -120,6 +120,7 @@ const EventActionContainer = ({ tzid, drawerView, addresses, calendars, setEvent
         };
 
         void run();
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-5B30BF
     }, []);
 
     return <LoaderPage />;

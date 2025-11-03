@@ -123,6 +123,7 @@ const CalendarSearchProvider = ({ children }: Props) => {
                 setHasSearchedCounter((c) => c + 1);
             })
         );
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-A260C9
     }, [renderCounter, isLibraryInitialized, keyword]);
 
     const value = {

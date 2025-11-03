@@ -63,9 +63,11 @@ const useCalendarsEvents = ({
             }
         };
         return () => {
+            // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-CAC7FF
             calendarsEventsCacheRef.current.rerender = undefined;
             isActive = false;
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-04115C
     }, []);
 
     const eventsResults = useMemo(
@@ -76,13 +78,16 @@ const useCalendarsEvents = ({
                 dateRange: utcDateRange,
                 tzid,
             }),
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-D7816B
         [rerender, isLoading, tzid, requestedCalendars, utcDateRange]
     );
 
-    useEffect(() => setCalendarEvents(events), [events, eventsResults]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-E7CFBF
+    useMemo(() => setCalendarEvents(events), [events, eventsResults]);
 
     useEffect(() => {
         dispatch(eventsActions.synchronizeEvents(eventsResults));
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-22E7F5
     }, [eventsResults]);
 
     return [events, isLoading, prefetchCalendarEvents];

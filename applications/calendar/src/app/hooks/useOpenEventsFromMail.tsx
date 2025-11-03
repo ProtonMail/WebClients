@@ -79,6 +79,7 @@ export const useOpenEventsFromMail = ({ calendars, addresses, onChangeDate, tzid
                     break;
             }
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-F64852
         [calendars, addresses, goToEvent, goToOccurrence]
     );
 

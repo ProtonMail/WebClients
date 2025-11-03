@@ -82,6 +82,7 @@ const useCalendarsAlarms = (
             unmounted = true;
             clearTimeout(timeoutHandle);
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-168322
     }, [calendarIDs]);
 
     return useMemo(() => {
@@ -94,6 +95,7 @@ const useCalendarsAlarms = (
             .sort((a, b) => {
                 return a.Occurrence - b.Occurrence;
             });
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-CBF807
     }, [forceRefresh, calendarIDs]);
 };
 

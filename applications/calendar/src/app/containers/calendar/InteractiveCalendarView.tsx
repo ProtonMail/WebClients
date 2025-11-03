@@ -428,6 +428,7 @@ const InteractiveCalendarView = ({
             }
         });
         return result;
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-757AAE
     }, [contacts]);
 
     const readCalendarBootstrap = useReadCalendarBootstrap();
@@ -476,6 +477,7 @@ const InteractiveCalendarView = ({
             timeGridViewRef.current?.scrollToTime(eventTargetAction.startInTzid);
         },
         // omitting dateRange on purpose as we only want a re-render on eventTargetAction changes
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-AC3FB3
         [eventTargetAction]
     );
 
@@ -494,6 +496,7 @@ const InteractiveCalendarView = ({
 
     useEffect(() => {
         onInteraction?.(!!temporaryEvent);
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-5CCEDD
     }, [!!temporaryEvent]);
 
     useBeforeUnload(isInTemporaryBlocking ? c('Alert').t`By leaving now, you will lose your event.` : '');
@@ -1252,6 +1255,7 @@ const InteractiveCalendarView = ({
         if (isSearchView) {
             resetInteractiveData();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-A0D7C2
     }, [isSearchView]);
 
     const handleCloseMorePopover = resetInteractiveData;
@@ -2075,6 +2079,7 @@ const InteractiveCalendarView = ({
             return;
         }
         return sortedEventsWithTemporary.find(({ uniqueId }) => uniqueId === targetEventData.uniqueId);
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-DBB752
     }, [targetEventData, temporaryEvent, sortedEventsWithTemporary, searchData]);
 
     useEffect(() => {
@@ -2112,15 +2117,18 @@ const InteractiveCalendarView = ({
         document.addEventListener(ADVANCED_SEARCH_OVERLAY_OPEN_EVENT, resetInteractiveData);
 
         return () => {
+            // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-038FEB
             containerRef.current?.removeEventListener('click', handler);
             document.removeEventListener(ADVANCED_SEARCH_OVERLAY_OPEN_EVENT, resetInteractiveData);
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-4AD512
     }, [containerRef]);
 
     const formatDate = useCallback(
         (utcDate: Date) => {
             return format(utcDate, 'PP', { locale: dateLocale });
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-F1D048
         [dateLocale]
     );
 
@@ -2128,11 +2136,13 @@ const InteractiveCalendarView = ({
         (utcDate: Date) => {
             return formatShortTime(utcDate, userSettings);
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-223356
         [dateLocale, view]
     );
 
     const [weekdays, weekdaysSingle] = useMemo(() => {
         return ['ccc', 'ccccc'].map((format) => getFormattedWeekdays(format, { locale: dateLocale }));
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-6360A3
     }, [dateLocale]);
 
     const targetMoreEvents = useMemo(() => {

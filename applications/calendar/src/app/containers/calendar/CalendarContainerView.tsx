@@ -207,6 +207,7 @@ const CalendarContainerView = ({
             }
             onChangeDate(localToUtcDate(newDate));
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-F70EF1
         [showIframeMiniCalendar]
     );
 
@@ -382,6 +383,7 @@ const CalendarContainerView = ({
 
     useEffect(() => {
         setExpand(false);
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-33632C
     }, [window.location.pathname]);
 
     const top = !isDrawerApp && (

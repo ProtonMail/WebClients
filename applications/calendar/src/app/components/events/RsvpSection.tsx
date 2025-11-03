@@ -162,6 +162,7 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
                 Status: userPartstat,
             }));
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-4627C9
     }, [userPartstat]);
 
     useEffect(() => {
@@ -172,6 +173,7 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
                 Comment: userComment,
             }));
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-92C9B9
     }, [userComment]);
 
     // Rely on userComment instead of model.Comment to avoid line jump
