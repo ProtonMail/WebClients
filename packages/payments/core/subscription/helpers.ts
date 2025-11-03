@@ -336,7 +336,7 @@ export const getCanSubscriptionAccessPassFamilyPlan = (subscription?: MaybeFreeS
     );
 };
 
-export const getIsB2BAudienceFromSubscription = (subscription: Subscription | undefined) => {
+export const getIsB2BAudienceFromSubscription = (subscription: Subscription | FreeSubscription | undefined) => {
     return !!subscription?.Plans?.some(({ Name }) => getIsB2BAudienceFromPlan(Name));
 };
 
