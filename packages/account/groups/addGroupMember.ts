@@ -4,22 +4,14 @@ import { CryptoProxy, type PrivateKeyReference, type PublicKeyReference } from '
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { addGroupMember as addGroupMemberApi } from '@proton/shared/lib/api/groups';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { getAllPublicKeys } from '@proton/shared/lib/api/keys';
 import { MEMBER_PRIVATE, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
 import { getIsEncryptionDisabled } from '@proton/shared/lib/helpers/address';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import type {
-    Address,
-    Api,
-    ApiKeysConfig,
-    CachedOrganizationKey,
-    EnhancedMember,
-    GetAllPublicKeysResponse,
-} from '@proton/shared/lib/interfaces';
+import type { Address, ApiKeysConfig, CachedOrganizationKey, EnhancedMember } from '@proton/shared/lib/interfaces';
 import { GroupMemberType } from '@proton/shared/lib/interfaces';
 import { getAddressKeyToken, getDecryptedUserKeys, getEmailFromKey, splitKeys } from '@proton/shared/lib/keys';
 import { getInternalParameters, getInternalParametersPrivate } from '@proton/shared/lib/keys/forward/forward';
-import noop from '@proton/utils/noop';
+import { getGroupMemberPublicKeys } from '@proton/shared/lib/keys/groupKeys';
 
 import type { AddressesState } from '../addresses';
 import { replaceMemberAddressTokensIfNeeded } from '../addresses/replaceAddressToken';
@@ -39,57 +31,6 @@ const signMemberEmail = async (memberEmail: string, groupKey: PrivateKeyReferenc
         signatureContext: { critical: true, value: 'account.key-token.address' },
         detached: true,
     });
-};
-
-const getPublicKeys = async ({
-    api,
-    memberEmail,
-    getMemberPublicKeys,
-}: {
-    api: Api;
-    memberEmail: string;
-    getMemberPublicKeys: (email: string) => Promise<ApiKeysConfig>;
-}): Promise<{
-    forwardeeKeysConfig: ApiKeysConfig;
-    forwardeeArmoredPrimaryPublicKey: string | undefined;
-}> => {
-    const [forwardeeKeysConfig, forwardeeAddressKeysResult] = await Promise.all([
-        getMemberPublicKeys(memberEmail).catch(noop),
-        // note: we might be able to remove the getter below, by changing getMemberPublicKeys
-        // to also return keys for internal type external; or using a different function,
-        // but there is no time for that
-        api<GetAllPublicKeysResponse>(
-            getAllPublicKeys({
-                Email: memberEmail,
-                InternalOnly: 1,
-            })
-        ).catch(noop),
-    ]);
-    let forwardeeAddressKeys;
-    if (forwardeeAddressKeysResult !== undefined) {
-        forwardeeAddressKeys = forwardeeAddressKeysResult.Address.Keys;
-    }
-
-    if (forwardeeKeysConfig === undefined) {
-        throw new Error('Member public keys are undefined');
-    }
-
-    if (forwardeeKeysConfig.isCatchAll) {
-        throw new Error('This address cannot be used as group member');
-    }
-
-    let forwardeeArmoredPrimaryPublicKey;
-    if (forwardeeAddressKeys !== undefined) {
-        const forwardeePublicKeys = [
-            ...forwardeeKeysConfig.publicKeys.map((v) => v.armoredKey),
-            ...forwardeeAddressKeys.map((v: { PublicKey: string }) => v.PublicKey),
-        ];
-        forwardeeArmoredPrimaryPublicKey = forwardeePublicKeys[0];
-    }
-    return {
-        forwardeeKeysConfig,
-        forwardeeArmoredPrimaryPublicKey,
-    };
 };
 
 // Returns true for external addresses (e.g. pedro@gmail.com)
@@ -217,7 +158,7 @@ export const addGroupMemberThunk = ({
             dispatch(organizationKeyThunk()),
         ]);
 
-        const { forwardeeKeysConfig, forwardeeArmoredPrimaryPublicKey } = await getPublicKeys({
+        const { forwardeeKeysConfig, forwardeeArmoredPrimaryPublicKey } = await getGroupMemberPublicKeys({
             api,
             memberEmail: email,
             getMemberPublicKeys,

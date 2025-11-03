@@ -2,13 +2,15 @@ import { type PrivateKeyReference, toPublicKeyReference } from '@proton/crypto';
 import { getDefaultKeyFlags } from '@proton/shared/lib/keys/keyFlags';
 import noop from '@proton/utils/noop';
 
-import { createGroupAddressKeyRoute } from '../api/keys';
+import { createGroupAddressKeyRoute, getAllPublicKeys } from '../api/keys';
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '../constants';
 import type {
     Address,
     Api,
+    ApiKeysConfig,
     CachedOrganizationKey,
     DecryptedAddressKey,
+    GetAllPublicKeysResponse,
     Key,
     KeyGenConfig,
     KeyTransparencyVerify,
@@ -94,4 +96,48 @@ export const getDecryptedGroupAddressKey = async (
     }
 
     return undefined;
+};
+
+export const getGroupMemberPublicKeys = async ({
+    api,
+    memberEmail,
+    getMemberPublicKeys,
+}: {
+    api: Api;
+    memberEmail: string;
+    getMemberPublicKeys: (email: string) => Promise<ApiKeysConfig>;
+}): Promise<{
+    forwardeeKeysConfig: ApiKeysConfig;
+    forwardeeArmoredPrimaryPublicKey: string | undefined;
+}> => {
+    const [forwardeeKeysConfig, forwardeeAddressKeysResult] = await Promise.all([
+        getMemberPublicKeys(memberEmail).catch(noop),
+        // note: we might be able to remove the getter below, by changing getMemberPublicKeys
+        // to also return keys for internal type external; or using a different function,
+        // but there is no time for that
+        api<GetAllPublicKeysResponse>(
+            getAllPublicKeys({
+                Email: memberEmail,
+                InternalOnly: 1,
+            })
+        ).catch(noop),
+    ]);
+
+    if (!forwardeeKeysConfig) {
+        throw new Error('Member public keys are undefined');
+    }
+
+    if (forwardeeKeysConfig.isCatchAll) {
+        throw new Error('This address cannot be used as group member');
+    }
+
+    const allPublicKeys = [
+        ...forwardeeKeysConfig.publicKeys.map((v) => v.armoredKey),
+        ...(forwardeeAddressKeysResult?.Address.Keys.map((v: { PublicKey: string }) => v.PublicKey) ?? []),
+    ];
+
+    return {
+        forwardeeKeysConfig,
+        forwardeeArmoredPrimaryPublicKey: allPublicKeys[0],
+    };
 };
