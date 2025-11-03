@@ -27,7 +27,7 @@ import { getIsPassApp, getIsVPNApp } from '@proton/shared/lib/authentication/app
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { isElectronPass } from '@proton/shared/lib/helpers/desktop';
+import { isElectronApp, isElectronPass } from '@proton/shared/lib/helpers/desktop';
 
 import type { Paths } from '../content/helper';
 import Text from '../public/Text';
@@ -45,6 +45,14 @@ import Testflight from './Testflight';
 import TwoFactorStep from './TwoFactorStep';
 import UnlockForm from './UnlockForm';
 import SSOLogin from './sso/SSOLogin';
+import { useLoginTheme } from './useLoginTheme';
+
+export enum RememberMode {
+    VisibleDisabled = 0, // default
+    Enable = 1,
+    Hide = 2,
+    HideEnable = 3,
+}
 
 export interface Props {
     defaultUsername?: string;
@@ -54,7 +62,7 @@ export interface Props {
     toApp?: APP_NAMES;
     showContinueTo?: boolean;
     onBack?: () => void;
-    hasRemember?: boolean;
+    remember?: RememberMode;
     setupVPN: boolean;
     paths: Paths;
     productParam: ProductParam;
@@ -96,7 +104,7 @@ const LoginContainer = ({
     showContinueTo,
     productParam,
     setupVPN,
-    hasRemember = true,
+    remember = RememberMode.VisibleDisabled,
     paths,
     modal,
     render = defaultRender,
@@ -120,6 +128,20 @@ const LoginContainer = ({
     const loginFormRef = useRef<LoginFormRef>();
     const searchParams = new URLSearchParams(location.search);
     const isPorkbun = searchParams.get('partner') === 'porkbun';
+
+    const rememberParam = searchParams.get('remember');
+    const rememberConfig = (() => {
+        if (isElectronApp) {
+            return RememberMode.HideEnable;
+        }
+        if (rememberParam) {
+            const numericValue = parseInt(rememberParam, 10);
+            if (!isNaN(numericValue) && numericValue in RememberMode) {
+                return numericValue as RememberMode;
+            }
+        }
+        return remember;
+    })();
 
     useMetaTags(metaTags);
 
@@ -238,6 +260,8 @@ const LoginContainer = ({
         step,
     };
 
+    useLoginTheme();
+
     if (isElectronDisabled) {
         return <ElectronBlockedContainer />;
     }
@@ -285,7 +309,7 @@ const LoginContainer = ({
                                     productParam={productParam}
                                     paths={paths}
                                     defaultUsername={previousUsernameRef.current}
-                                    hasRemember={hasRemember && !isElectronPass}
+                                    remember={rememberConfig}
                                     authTypeData={authTypeData}
                                     externalRedirect={externalRedirect}
                                     onChangeAuthTypeData={setAuthTypeData}

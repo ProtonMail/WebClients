@@ -3,7 +3,7 @@ import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 
 import type { Paths } from '../content/helper';
-import LoginContainer from '../login/LoginContainer';
+import LoginContainer, { RememberMode } from '../login/LoginContainer';
 
 interface Props extends ModalProps {
     onLogin: OnLoginCallback;
@@ -24,7 +24,7 @@ const LoginModal = ({ productParam, paths, onLogin, onStartAuth, defaultUsername
                 setupVPN={true}
                 paths={paths}
                 modal
-                hasRemember={false}
+                remember={RememberMode.Hide}
                 onStartAuth={onStartAuth}
                 render={(data) => {
                     return (

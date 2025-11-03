@@ -36,7 +36,6 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
-import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Api, Unwrap } from '@proton/shared/lib/interfaces';
@@ -45,6 +44,7 @@ import noop from '@proton/utils/noop';
 import type { Paths } from '../content/helper';
 import SupportDropdown from '../public/SupportDropdown';
 import { defaultPersistentKey } from '../public/helper';
+import { RememberMode } from './LoginContainer';
 import SignupButton from './SignupButton';
 
 export interface LoginFormRef {
@@ -77,7 +77,7 @@ interface Props {
         };
     };
     defaultUsername?: string;
-    hasRemember?: boolean;
+    remember?: RememberMode;
     paths: Paths;
     toApp?: APP_NAMES;
     productParam?: ProductParam;
@@ -122,7 +122,7 @@ const LoginForm = ({
     onStartAuth,
     defaultUsername = '',
     signInText = c('Action').t`Sign in`,
-    hasRemember,
+    remember = RememberMode.VisibleDisabled,
     productParam,
     externalSSO,
     paths,
@@ -136,7 +136,9 @@ const LoginForm = ({
     const [password, setPassword] = useState('');
     const [errorMsg, setErrorMsg] = useState<string | null>(null);
     const [maybePersistent, setPersistent] = useLocalState(false, defaultPersistentKey);
-    const persistent = isElectronApp ? true : maybePersistent;
+    const persistent =
+        remember === RememberMode.Enable || remember === RememberMode.HideEnable ? true : maybePersistent;
+    const showRememberCheckbox = remember === RememberMode.VisibleDisabled || remember === RememberMode.Enable;
     const { createNotification } = useNotifications();
 
     const usernameRef = useRef<HTMLInputElement>(null);
@@ -399,8 +401,7 @@ const LoginForm = ({
             externalSSOState?.abortController.abort();
         };
     }, []);
-
-    const checkboxEl = hasRemember && !isElectronApp && (
+    const checkboxEl = showRememberCheckbox && (
         <div className="flex flex-row items-start">
             <Checkbox
                 id="staySignedIn"
