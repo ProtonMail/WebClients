@@ -5,6 +5,7 @@ import { getIsB2BAudienceFromPlan } from '@proton/payments';
 import { CALENDAR_SETTINGS_ROUTE, CALENDAR_SETTINGS_SECTION_ID } from '@proton/shared/lib/calendar/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import type { Organization, UserModel } from '@proton/shared/lib/interfaces';
 import { getOrganizationDenomination, isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
 
@@ -45,6 +46,7 @@ export const getCalendarAppRoutes = ({
         header: CALENDAR_APP_NAME,
         routes: {
             desktop: <SectionConfig>{
+                available: !isElectronMail,
                 text: c('Title').t`Get the apps`,
                 to: CALENDAR_SETTINGS_ROUTE.GET_APPS,
                 icon: 'arrow-down-line',

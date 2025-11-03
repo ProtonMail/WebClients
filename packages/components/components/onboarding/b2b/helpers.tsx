@@ -26,6 +26,7 @@ import {
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { DRIVE_DOWNLOAD_URL } from '@proton/shared/lib/drive/constants';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import twoFAImg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-2fa.svg';
 import appsImg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-apps.svg';
@@ -524,8 +525,8 @@ export const getSections = (app: APP_NAMES, parentApp?: APP_NAMES): B2BFeaturesS
     const mailSection: B2BFeaturesSection = {
         title: MAIL_APP_NAME,
         featuresList: [
-            // Do not show get the apps in mail section if calendar
-            canShowGetTheAppsInMail && 'get-the-apps',
+            // Do not show get the apps in mail section if calendar or desktop app
+            !isElectronMail && canShowGetTheAppsInMail && 'get-the-apps',
             'imap-smtp',
             'user-groups',
             'email-forwarding',
@@ -535,8 +536,8 @@ export const getSections = (app: APP_NAMES, parentApp?: APP_NAMES): B2BFeaturesS
     const calendarSection: B2BFeaturesSection = {
         title: CALENDAR_APP_NAME,
         featuresList: [
-            // Do not show get the apps in calendar section if mail
-            !canShowGetTheAppsInMail && 'get-the-apps',
+            // Do not show get the apps in calendar section if mail or desktop app
+            !isElectronMail && !canShowGetTheAppsInMail && 'get-the-apps',
             'calendar-sharing',
             'calendar-zoom',
         ].filter(isTruthy) as B2BFeaturesID[],
