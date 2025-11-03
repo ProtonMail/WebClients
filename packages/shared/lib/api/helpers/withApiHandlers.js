@@ -1,7 +1,6 @@
 import { OFFLINE_RETRY_ATTEMPTS_MAX, OFFLINE_RETRY_DELAY, RETRY_ATTEMPTS_MAX, RETRY_DELAY_MAX } from '../../constants';
 import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '../../errors';
 import {
-    getDeviceVerificationHeaders,
     getUIDHeaderValue,
     getVerificationHeaders,
     withUIDHeaders,
@@ -10,7 +9,6 @@ import { getDateHeader } from '../../fetch/helpers';
 import { wait } from '../../helpers/promise';
 import { setRefreshCookies } from '../auth';
 import { getApiError, getApiErrorMessage } from './apiErrorHelper';
-import { createDeviceHandlers } from './deviceVerificationHandler';
 import { AppVersionBadError, InactiveSessionError } from './errors';
 import { createRefreshHandlers, getIsRefreshFailure, refresh } from './refreshHandlers';
 import { retryHandler } from './retryHandler';
@@ -25,8 +23,6 @@ export default ({ call, onMissingScopes, onVerification, onUserRestricted }) => 
     const refreshHandler = createRefreshHandlers((UID) => {
         return refresh(() => call(withUIDHeaders(UID, setRefreshCookies())), 1, RETRY_ATTEMPTS_MAX);
     });
-
-    const deviceVerificationHandler = createDeviceHandlers();
 
     let UID;
 
@@ -158,28 +154,6 @@ export default ({ call, onMissingScopes, onVerification, onUserRestricted }) => 
                     };
 
                     return onVerification({ token: captchaToken, methods, onVerify, title, error: e });
-                }
-
-                const ignoreDeviceVerification =
-                    Array.isArray(ignoreHandler) &&
-                    ignoreHandler.includes(API_CUSTOM_ERROR_CODES.DEVICE_VERIFICATION_REQUIRED);
-                if (code === API_CUSTOM_ERROR_CODES.DEVICE_VERIFICATION_REQUIRED && !ignoreDeviceVerification) {
-                    const { Details: { ChallengeType: challengeType, ChallengePayload: challengePayload } = {} } =
-                        e.data || {};
-                    const requestUID = getUIDHeaderValue(headers) ?? UID;
-                    return deviceVerificationHandler(requestUID, challengeType, challengePayload)
-                        .then((result) => {
-                            return call({
-                                ...options,
-                                headers: {
-                                    ...options.headers,
-                                    ...getDeviceVerificationHeaders(result),
-                                },
-                            });
-                        })
-                        .catch((error) => {
-                            throw error;
-                        });
                 }
 
                 const ignoreUserRestrictedState =

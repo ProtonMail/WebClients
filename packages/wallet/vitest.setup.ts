@@ -14,11 +14,3 @@ vi.mock('@proton/shared/lib/i18n/dateFnLocales', () => ({
     __esModule: true,
     enUSLocale: undefined,
 }));
-
-vi.mock('@proton/shared/lib/pow/wasmWorkerWrapper.ts', () => ({
-    __esModule: true,
-}));
-
-vi.mock('@proton/shared/lib/pow/pbkdfWorkerWrapper.ts', () => ({
-    __esModule: true,
-}));

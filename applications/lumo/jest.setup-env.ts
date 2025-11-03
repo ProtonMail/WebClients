@@ -31,13 +31,6 @@ jest.mock('@proton/shared/lib/i18n/dateFnLocales', () => ({
     __esModule: true,
 }));
 
-jest.mock('@proton/shared/lib/pow/wasmWorkerWrapper.ts', () => ({
-    __esModule: true,
-}));
-
-jest.mock('@proton/shared/lib/pow/pbkdfWorkerWrapper.ts', () => ({
-    __esModule: true,
-}));
 
 jest.mock('loglevel');
 jest.mock('@proton/pass/lib/core/ui.proxy');
