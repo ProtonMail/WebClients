@@ -25,6 +25,7 @@ export interface Props {
     min?: Date;
     max?: Date;
     formatDay: (a1: Date) => string;
+    getDayClassName?: (a1: Date) => string;
     numberOfDays: number;
     numberOfWeeks: number;
     cellRef?: Ref<HTMLLIElement>;
@@ -36,6 +37,7 @@ const MonthDays = ({
     onSelectDateRange,
     dateRange,
     formatDay,
+    getDayClassName,
     now,
     min,
     max,
@@ -108,6 +110,7 @@ const MonthDays = ({
     const [rangeStart, rangeEnd] = temporaryDateRange || dateRange || [];
 
     return (
+        // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/click-events-have-key-events
         <ul
             className="minicalendar-monthdays unstyled m-0 text-center"
             style={style}
@@ -136,6 +139,7 @@ const MonthDays = ({
                     (isInterval && rangeEnd && isSameDay(rangeEnd, dayDate)) ||
                     (!rangeEnd && isIntervalBoundStart);
 
+                const customClassName = getDayClassName?.(dayDate);
                 const className = clsx([
                     'minicalendar-day *:pointer-events-none',
                     !isActiveMonth && 'minicalendar-day--out-of-month',
@@ -143,6 +147,7 @@ const MonthDays = ({
                     isIntervalBoundStart && 'minicalendar-day--range-bound-start',
                     isIntervalBoundEnd && 'minicalendar-day--range-bound-end',
                     selectedDate && isSameDay(selectedDate, dayDate) && 'minicalendar-day--selected',
+                    customClassName,
                 ]);
 
                 return (

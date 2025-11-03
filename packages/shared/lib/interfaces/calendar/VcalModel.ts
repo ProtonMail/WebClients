@@ -290,6 +290,7 @@ export interface VcalVeventComponent {
     'x-pm-proton-reply'?: VcalBooleanProperty;
     'x-pm-session-key'?: VcalStringProperty;
     'x-pm-shared-event-id'?: VcalStringProperty;
+    'x-pm-BookingUID'?: VcalStringProperty;
     'x-yahoo-yid'?: VcalStringProperty;
     'x-yahoo-user-status'?: VcalStringProperty;
     'x-pm-conference-id'?: VcalStringProperyWithParams;

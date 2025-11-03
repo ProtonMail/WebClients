@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
+import { Loader } from '@proton/components';
 import { useFlag } from '@proton/unleash';
 
 import { BookingDetails } from './components/BookingDetails/BookingDetails';
@@ -17,7 +18,7 @@ export const BookingsRouter = () => {
     }, [isEnabled]);
 
     if (!isEnabled) {
-        return null;
+        return <Loader />;
     }
 
     return (
