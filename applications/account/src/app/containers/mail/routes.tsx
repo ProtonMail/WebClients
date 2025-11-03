@@ -5,6 +5,7 @@ import type { SidebarConfig } from '@proton/components';
 import { getMailRouteTitles } from '@proton/components/containers/account/constants/settingsRouteTitles';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { ADDRESS_TYPE, APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Address, Organization, UserModel } from '@proton/shared/lib/interfaces';
@@ -49,6 +50,7 @@ export const getMailAppRoutes = ({
         header: MAIL_APP_NAME,
         routes: {
             desktop: {
+                available: !isElectronMail,
                 text: mailRouteTitles.desktop,
                 to: '/get-the-apps',
                 icon: 'arrow-down-line',
