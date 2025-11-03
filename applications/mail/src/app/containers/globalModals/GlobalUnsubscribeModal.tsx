@@ -58,8 +58,13 @@ export const GlobalUnsubscribeModal = () => {
                         >{c('Action').t`Move to spam and unsubscribe`}</Button>,
                         <Button onClick={() => handleConfirm(SPAM_ACTION.JustSpam)}>{c('Action')
                             .t`Move to spam`}</Button>,
-                        <Button data-testid="cancel-button" onClick={() => setOpen(false)}>{c('Action')
-                            .t`Cancel`}</Button>,
+                        <Button
+                            data-testid="cancel-button"
+                            onClick={() => {
+                                setChecked(false);
+                                setOpen(false);
+                            }}
+                        >{c('Action').t`Cancel`}</Button>,
                     ]}
                     {...modalProps}
                 >
