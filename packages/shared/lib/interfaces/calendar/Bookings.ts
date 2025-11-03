@@ -34,5 +34,19 @@ export interface ExternalBookingPagePayload {
     EncryptedContent: string;
     Duration: number | null;
     Timezone: string | null;
+    DisplayName: string;
+    Email: string;
     AvailableSlots: ExternalBookingPageSlotsPayload[];
+}
+
+export interface BookingSlotConfirmationPayload {
+    ContentPart: string;
+    TimePart: string;
+    AttendeeData: string;
+    AttendeeToken: string;
+    EmailData: {
+        Name: string;
+        Email: string;
+        Ics: string;
+    };
 }

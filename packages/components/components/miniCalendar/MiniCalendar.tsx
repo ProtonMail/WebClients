@@ -36,7 +36,10 @@ export interface Props {
     weekdaysShort?: string[];
     onSelectDate?: (a1: Date) => void;
     onSelectDateRange?: (a1: DateTuple, resetRange?: boolean) => void;
+    onMonthChange?: (a1: Date) => void;
+    onDisplayedDaysChange?: (days: Date[]) => void;
     formatDay?: (a1: Date) => string;
+    getDayClassName?: (a1: Date) => string;
     weekStartsOn?: WeekStartsOn;
     numberOfDays?: number;
     fixedSize?: boolean;
@@ -54,7 +57,10 @@ const MiniCalendar = ({
     dateRange,
     onSelectDate,
     onSelectDateRange,
+    onMonthChange,
+    onDisplayedDaysChange,
     formatDay = (date) => date.toString(),
+    getDayClassName,
     weekStartsOn = 1,
     weekdaysLong = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
     weekdaysShort = ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
@@ -119,6 +125,10 @@ const MiniCalendar = ({
         return getDaysInMonth(activeDate, { weekStartsOn, weeks: numberOfWeeks - 1 });
     }, [activeDate, weekStartsOn, numberOfWeeks]);
 
+    useEffect(() => {
+        onDisplayedDaysChange?.(days);
+    }, [days, onDisplayedDaysChange]);
+
     const monthLabel = useMemo(() => {
         return `${months[activeDate.getMonth()]} ${activeDate.getFullYear()}`;
     }, [activeDate, months]);
@@ -134,6 +144,7 @@ const MiniCalendar = ({
         }
 
         setTemporaryDate(newDate);
+        onMonthChange?.(newDate);
     };
 
     const handleClickWeekNumber =
@@ -157,6 +168,7 @@ const MiniCalendar = ({
     const handleMouseDown = preventLeaveFocus ? (e: FormEvent<HTMLElement>) => e.preventDefault() : undefined;
 
     return (
+        // eslint-disable-next-line jsx-a11y/no-static-element-interactions
         <div className="minicalendar" onMouseDown={handleMouseDown} aria-label={monthLabel}>
             <h2 className="sr-only">{c('Title').t`Minicalendar`}</h2>
             <div className="flex items-center flex-nowrap p-3 pt-1">
@@ -251,6 +263,7 @@ const MiniCalendar = ({
                     numberOfDays={numberOfDays}
                     days={days}
                     formatDay={formatDay}
+                    getDayClassName={getDayClassName}
                     dateRange={dateRange}
                     onSelectDate={onSelectDate}
                     onSelectDateRange={onSelectDateRange}
