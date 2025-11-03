@@ -4,10 +4,13 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useSortableListItem } from '@proton/components/components/dnd/SortableListItem';
 import type { DropdownActionProps } from '@proton/components/components/dropdown/DropdownActions';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import OrderableTableRow from '@proton/components/components/orderableTable/OrderableTableRow';
+import { Handle } from '@proton/components/components/table/Handle';
+import TableCell from '@proton/components/components/table/TableCell';
+import TableRow from '@proton/components/components/table/TableRow';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import FiltersUpsellModal from '@proton/components/components/upsell/modals/FiltersUpsellModal';
 import { useDispatch } from '@proton/components/containers/filters/useDispatch';
@@ -16,6 +19,8 @@ import { useLoading } from '@proton/hooks';
 import { deleteFilter, enableFilter } from '@proton/mail/store/filters/actions';
 import { FILTER_STATUS } from '@proton/shared/lib/constants';
 import { hasReachedFiltersLimit } from '@proton/shared/lib/helpers/filters';
+import clsx from '@proton/utils/clsx';
+import noop from '@proton/utils/noop';
 
 import FilterWarningModal from './FilterWarningModal';
 import type { Filter } from './interfaces';
@@ -27,11 +32,11 @@ import { isSieve } from './utils';
 interface Props {
     filter: Filter;
     filters: Filter[];
-    index: number;
     onApplyFilter: (filterID: string) => void;
 }
 
-function FilterItemRow({ filter, filters, index, onApplyFilter, ...rest }: Props) {
+function FilterItemRow({ filter, filters, onApplyFilter }: Props) {
+    const { isDragging, style, listeners, setNodeRef, attributes } = useSortableListItem({ id: filter.ID });
     const [user] = useUser();
     const [loading, withLoading] = useLoading();
     const dispatch = useDispatch();
@@ -97,15 +102,17 @@ function FilterItemRow({ filter, filters, index, onApplyFilter, ...rest }: Props
         if (Status === FILTER_STATUS.DISABLED && hasReachedFiltersLimit(user, filters)) {
             handleUpsellModalDisplay(true);
         } else {
-            withLoading(handleChangeStatus(e));
+            withLoading(handleChangeStatus(e)).catch(noop);
         }
     };
 
     return (
         <>
-            <OrderableTableRow
-                index={index}
-                cells={[
+            <TableRow ref={setNodeRef} style={style} className={clsx(isDragging && 'table-row--dragging')}>
+                <TableCell {...attributes} {...listeners}>
+                    <Handle />
+                </TableCell>
+                <TableCell>
                     <div key="name" className="text-ellipsis max-w-full" title={Name}>
                         <Toggle
                             id={`item-${ID}`}
@@ -115,11 +122,12 @@ function FilterItemRow({ filter, filters, index, onApplyFilter, ...rest }: Props
                             className="mr-2 align-bottom inline-flex"
                         />
                         {Name}
-                    </div>,
-                    <DropdownActions key="dropdown" size="small" list={list} />,
-                ]}
-                {...rest}
-            />
+                    </div>
+                </TableCell>
+                <TableCell>
+                    <DropdownActions key="dropdown" size="small" list={list} />
+                </TableCell>
+            </TableRow>
             {renderFilterModal && <FilterModal {...filterModalProps} filter={filter} />}
             {renderAdvancedFilterModal && <AdvancedFilterModal {...advancedFilterModalProps} filter={filter} />}
             {renderDeleteFilterModal && (

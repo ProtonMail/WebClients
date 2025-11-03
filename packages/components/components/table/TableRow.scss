@@ -1,0 +1,13 @@
+@use 'sass:map';
+@import '~@proton/styles/scss/lib';
+
+.table-row {
+	&--dragging {
+		position: relative;
+		z-index: map.get($z-indexes, 'modals');
+		color: var(--text-norm);
+		background: var(--background-norm);
+		border-radius: var(--border-radius-lg) !important;
+		box-shadow: var(--shadow-lifted);
+	}
+}
