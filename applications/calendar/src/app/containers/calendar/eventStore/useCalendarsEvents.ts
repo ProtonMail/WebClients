@@ -10,7 +10,6 @@ import { useCalendarDispatch, useCalendarSelector } from '../../../store/hooks';
 import type { CalendarViewEvent } from '../interface';
 import { getCalendarEvents } from './getCalendarEvents';
 import type { CalendarsEventsCache } from './interface';
-import { useEventsPrefetch } from './prefetching/useEventsPrefetch';
 import useCalendarsEventsFetcher from './useCalendarsEventsFetcher';
 import useCalendarsEventsReader from './useCalendarsEventsReader';
 
@@ -47,6 +46,7 @@ const useCalendarsEvents = ({
 
     const { isLoading, prefetchCalendarEvents } = useCalendarsEventsFetcher({
         calendars: requestedCalendars,
+        setCalendarEvents,
         calendarsEventsCacheRef: calendarsEventsCacheRef,
         getOpenedMailEvents,
         initialDateRange: utcDateRange,
@@ -68,8 +68,6 @@ const useCalendarsEvents = ({
         };
     }, []);
 
-    useEventsPrefetch({ initialDateRange: utcDateRange, isLoading, prefetchCalendarEvents, tzid });
-
     const eventsResults = useMemo(
         () =>
             getCalendarEvents({
@@ -81,7 +79,7 @@ const useCalendarsEvents = ({
         [rerender, isLoading, tzid, requestedCalendars, utcDateRange]
     );
 
-    useMemo(() => setCalendarEvents(events), [events, eventsResults]);
+    useEffect(() => setCalendarEvents(events), [events, eventsResults]);
 
     useEffect(() => {
         dispatch(eventsActions.synchronizeEvents(eventsResults));

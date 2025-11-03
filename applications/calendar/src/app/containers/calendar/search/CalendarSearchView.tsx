@@ -18,6 +18,7 @@ import unique from '@proton/utils/unique';
 
 import useCalendarSearchHotkeys from '../../../hooks/useCalendarSearchHotkeys';
 import type { OpenedMailEvent } from '../../../hooks/useGetOpenedMailEvents';
+import { setEventReadResult } from '../../../store/events/eventsCache';
 import getCalendarEventsCache from '../eventStore/cache/getCalendarEventsCache';
 import upsertCalendarApiEventWithoutBlob from '../eventStore/cache/upsertCalendarApiEventWithoutBlobs';
 import type { CalendarsEventsCache, EventReadResult } from '../eventStore/interface';
@@ -147,6 +148,9 @@ const CalendarSearchView = ({
             eventReadResult,
         }: { calendarViewEvent: CalendarViewEvent; eventReadResult: EventReadResult }
     ) => {
+        // Add event read result in events cache
+        setEventReadResult(calendarViewEvent.uniqueId, eventReadResult);
+
         setInteractiveData({
             searchData: {
                 ...calendarViewEvent,

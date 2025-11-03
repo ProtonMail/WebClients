@@ -194,10 +194,6 @@ const setEventRecordPromise = ({
             getOpenedMailEvents,
         })
             .then((calendarEvent) => {
-                // getEventAndUpsert is already clearing these. Repeating here for safety
-                eventRecord.eventReadResult = undefined;
-                eventRecord.eventPromise = undefined;
-
                 if (forceDecryption) {
                     // we go through a second iteration of setEventRecordPromise, but with a calendarEvent in the record
                     // so that event decryption is forced
@@ -235,13 +231,10 @@ const setEventRecordPromise = ({
         }),
     ])
         .then(([eventDecrypted]) => {
-            return eventDecrypted;
-        })
-        .then((result) => {
-            eventRecord.eventReadResult = { result };
+            eventRecord.eventReadResult = { result: eventDecrypted };
             eventRecord.eventPromise = undefined;
 
-            return { result };
+            return { result: eventDecrypted };
         })
         .catch(onError);
 
