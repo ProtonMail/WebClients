@@ -16,11 +16,12 @@ import { useBookingsAvailability } from '../../bookings/useBookingsAvailability'
 
 interface Props {
     headerRef: React.RefObject<HTMLDivElement>;
+    disabled: boolean;
 }
 
 // TODO have an empty state placeholder
 // TODO handle the state of the plus button
-export const Bookings = ({ headerRef }: Props) => {
+export const Bookings = ({ headerRef, disabled }: Props) => {
     const [displayBookings, setDisplayBookings] = useState(true);
     const [user] = useUser();
     const [modalProps, setModalOpen, renderModal] = useModalState();
@@ -53,6 +54,7 @@ export const Bookings = ({ headerRef }: Props) => {
                         <Tooltip title={c('Action').t`Create a new bookings page`}>
                             <button
                                 type="button"
+                                disabled={disabled}
                                 className="flex navigation-link-header-group-control shrink-0"
                                 onClick={handleCreate}
                                 data-testid="navigation-link:create-bookings-page"

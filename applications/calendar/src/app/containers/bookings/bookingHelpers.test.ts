@@ -1,6 +1,7 @@
 import { addHours } from 'date-fns';
 
-import { JSONFormatData, JSONFormatTextData, generateSlotsFromRange } from './bookingHelpers';
+import { JSONFormatData, JSONFormatTextData, generateSlotsFromRange, validateFormData } from './bookingHelpers';
+import { type BookingFormData, BookingLocation } from './bookingsProvider/interface';
 
 describe('booking helpers', () => {
     describe('generateSlotsFromRange', () => {
@@ -114,6 +115,72 @@ describe('booking helpers', () => {
             expect(formattedOne).toEqual(formattedTwo);
             expect(formattedOne).toEqual(formattedThree);
             expect(formattedOne).toEqual(formattedFour);
+        });
+    });
+
+    describe('validateFormData', () => {
+        const validForm: BookingFormData = {
+            title: 'Page title',
+            selectedCalendar: null,
+            locationType: BookingLocation.MEET,
+            duration: 60,
+            timezone: 'Europe/Zurich',
+            requiresPassword: false,
+            bookingSlots: [
+                {
+                    id: '10',
+                    rangeID: 'rangeID',
+                    start: new Date(),
+                    end: new Date(),
+                    timezone: 'Europe/Zurich',
+                },
+            ],
+        };
+
+        it('should return true if the form is valid', () => {
+            const result = validateFormData(validForm);
+
+            expect(result).toEqual(undefined);
+        });
+
+        it('should return warning if no title', () => {
+            const result = validateFormData({ ...validForm, title: '' });
+
+            expect(result).toEqual({
+                type: 'warning',
+            });
+        });
+
+        it('should return false if the password is required but not defined', () => {
+            const result = validateFormData({ ...validForm, requiresPassword: true });
+
+            expect(result).toEqual({
+                type: 'warning',
+            });
+        });
+
+        it('should return false if the password is required but only composed of spaces', () => {
+            const result = validateFormData({ ...validForm, requiresPassword: true, password: ' ' });
+
+            expect(result).toEqual({
+                type: 'warning',
+            });
+        });
+
+        it('should return warning if title only has spaces title', () => {
+            const result = validateFormData({ ...validForm, title: '  ' });
+
+            expect(result).toEqual({
+                type: 'warning',
+            });
+        });
+
+        it('should return error if no booking slot', () => {
+            const result = validateFormData({ ...validForm, bookingSlots: [] });
+
+            expect(result).toEqual({
+                type: 'warning',
+            });
         });
     });
 });
