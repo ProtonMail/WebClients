@@ -317,7 +317,7 @@ export type {
     StrictPlan,
     SubscriptionPlan,
 } from './core/plan/interface';
-export { getPlanFromIDs, hasFreePlanIDs, hasPlanIDs, setQuantity, switchPlan } from './core/planIDs';
+export { getPlanFromIDs, hasFreePlanIDs, hasPlanIDs, setQuantity, switchPlan, getAddonsFromIDs } from './core/planIDs';
 export {
     getIpPricePerMonth,
     getPrice,

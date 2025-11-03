@@ -9,7 +9,7 @@ import type { Plan, PlansMap } from './plan/interface';
 import { getPlanIDs, getSubscriptionsArray, hasLumo, isManagedExternally } from './subscription/helpers';
 import type { Subscription } from './subscription/interface';
 import { SelectedPlan } from './subscription/selected-plan';
-import { isFreeSubscription } from './type-guards';
+import { isFreeSubscription, isValidPlanName } from './type-guards';
 
 export const hasPlanIDs = (planIDs: PlanIDs) => Object.values(planIDs).some((quantity) => quantity > 0);
 export const hasFreePlanIDs = (planIDs: PlanIDs) => !hasPlanIDs(planIDs) || Boolean(planIDs[PLANS.FREE]);
@@ -312,13 +312,22 @@ export const switchPlan = (options: SwitchPlanOptions): PlanIDs => {
             const lumoAddon = plans.find(({ Name }) => Name === addon);
 
             if (lumoAddon) {
-                newPlanIDs[addon] = getLumoWithEnoughSeats({
-                    planIDs: currentPlanIDs,
-                    lumoAddon,
-                    organization,
-                    toPlan: plan,
-                    plans,
-                });
+                const lumoSeatsRequiredByUser = newPlanIDs[addon] ?? 0;
+                // if user requested a Lumo seat, then we will check if their current org already has _Scribe_ seats.
+                // If yes, we will replaces Scribes with Lumo.
+                const lumoSeatsRequiredByOrg = lumoSeatsRequiredByUser >= 1 ? organization.UsedAI : 0;
+
+                newPlanIDs[addon] = Math.max(
+                    lumoSeatsRequiredByUser,
+                    lumoSeatsRequiredByOrg,
+                    getLumoWithEnoughSeats({
+                        planIDs: currentPlanIDs,
+                        lumoAddon,
+                        organization,
+                        toPlan: plan,
+                        plans,
+                    })
+                );
             }
         }
 
@@ -371,4 +380,14 @@ export function planIDsPositiveDifference(oldPlanIDs: PlanIDs, newPlanIDs: PlanI
     }
 
     return increasedPlanIDs;
+}
+
+export function getAddonsFromIDs(planIDs: PlanIDs): PlanIDs {
+    const addonIDs = { ...planIDs };
+    Object.keys(addonIDs)
+        .filter((it) => isValidPlanName(it))
+        .forEach((it) => {
+            delete addonIDs[it as keyof PlanIDs];
+        });
+    return addonIDs;
 }
