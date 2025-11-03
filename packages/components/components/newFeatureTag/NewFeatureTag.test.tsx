@@ -32,6 +32,7 @@ describe('NewFeatureTag component', () => {
     it('NewFeatureTag should be always shown by default', () => {
         // Friday, December 1, 2023 9:00:00 AM
         const endDate = new Date('2023-12-1T09:00:00');
+        //@ts-expect-error TODO: Argument of type undefined is not assignable to parameter of type string.
         mockedGetItem.mockReturnValue(undefined);
         const { rerender } = render(<NewFeatureTag featureKey={featureKey} className="ml-10" endDate={endDate} />);
 
