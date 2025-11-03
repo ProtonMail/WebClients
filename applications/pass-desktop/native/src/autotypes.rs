@@ -73,7 +73,7 @@ impl Autotype {
         {
             Clipboard::chain(|clipboard| {
                 // Save current clipboard value to restore it after autotype is done
-                let initial_clipboard_value = clipboard.get_text()?;
+                let initial_clipboard_value = clipboard.get_text().unwrap_or_default();
 
                 for (idx, field) in fields.iter().enumerate() {
                     clipboard.set().exclude_from_history().text(field)?;
