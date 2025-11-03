@@ -67,12 +67,6 @@ export const getVerificationHeaders = (
     };
 };
 
-export const getDeviceVerificationHeaders = (challengeB64: string) => {
-    return {
-        'X-PM-DV': challengeB64,
-    };
-};
-
 export const getOwnershipVerificationHeaders = (value: 'lax') => {
     return {
         'X-PM-OV': value,

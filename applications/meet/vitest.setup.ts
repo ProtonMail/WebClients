@@ -59,14 +59,6 @@ vi.mock('@proton/shared/lib/i18n/dateFnLocales', () => ({
     enUSLocale: { code: 'en-US' },
 }));
 
-vi.mock('@proton/shared/lib/pow/wasmWorkerWrapper.ts', () => ({
-    __esModule: true,
-}));
-
-vi.mock('@proton/shared/lib/pow/pbkdfWorkerWrapper.ts', () => ({
-    __esModule: true,
-}));
-
 vi.mock('@proton/components/components/input/TelInput', () => ({
     __esModule: true,
     default: () => null,
