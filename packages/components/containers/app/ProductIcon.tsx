@@ -9,9 +9,10 @@ const NEW_BADGE_APPS: APP_NAMES[] = [APPS.PROTONLUMO, APPS.PROTONMEET, APPS.PROT
 interface ProductIconProps {
     appToLinkTo: APP_NAMES;
     current?: boolean;
+    hideName?: boolean;
 }
 
-const ProductIcon = ({ appToLinkTo, current }: ProductIconProps) => {
+const ProductIcon = ({ appToLinkTo, current, hideName }: ProductIconProps) => {
     const appToLinkToName =
         appToLinkTo === APPS.PROTONLUMO ? `${getAppShortName(appToLinkTo)} AI` : getAppShortName(appToLinkTo);
 
@@ -28,15 +29,17 @@ const ProductIcon = ({ appToLinkTo, current }: ProductIconProps) => {
                     </span>
                 ) : null}
             </div>
-            <span
-                className={clsx(
-                    'block text-center text-sm mt-1 apps-dropdown-app-name',
-                    current ? 'color-norm text-semibold' : 'color-weak'
-                )}
-                aria-hidden
-            >
-                {appToLinkToName}
-            </span>
+            {!hideName && (
+                <span
+                    className={clsx(
+                        'block text-center text-sm mt-1 apps-dropdown-app-name',
+                        current ? 'color-norm text-semibold' : 'color-weak'
+                    )}
+                    aria-hidden
+                >
+                    {appToLinkToName}
+                </span>
+            )}
         </>
     );
 };

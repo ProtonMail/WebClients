@@ -180,7 +180,18 @@ export const getStoreWrapper = ({
 }) => {
     const store = setupStore({
         preloadedState: {
-            user: getModelState({ UsedSpace: 10, MaxSpace: 100, Flags: {} } as UserModel),
+            user: getModelState({
+                UsedSpace: 10,
+                MaxSpace: 100,
+                Flags: {},
+                ProductUsedSpace: {
+                    Drive: 1,
+                    Mail: 10,
+                    Calendar: 0,
+                    Contact: 0,
+                    Pass: 0,
+                },
+            } as UserModel),
             addresses: getModelState([]),
             addressKeys: {},
             userKeys: getModelState([{ publicKey: {}, privateKey: {} } as DecryptedKey]),
