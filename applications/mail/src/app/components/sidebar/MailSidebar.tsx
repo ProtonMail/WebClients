@@ -39,6 +39,7 @@ import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { layoutActions } from '../../store/layout/layoutSlice';
 import { selectLayoutIsExpanded } from '../../store/layout/layoutSliceSelectors';
 import OnboardingChecklistSidebar from '../onboarding/checklist/sidebar/OnboardingChecklistSidebar';
+import { DriveSpotlight } from './DriveSpotlight';
 import MailSidebarList from './MailSidebarList';
 import MailSidebarPrimaryButton from './MailSidebarPrimaryButton';
 
@@ -49,7 +50,7 @@ interface Props {
 const MailSidebar = ({ labelID }: Props) => {
     const api = useApi();
     const [user] = useUser();
-    const [showSideBar, setshowSideBar] = useLocalState(true, `${user.ID}-${APPS.PROTONMAIL}-left-nav-opened`);
+    const [showSideBar, setShowSideBar] = useLocalState(true, `${user.ID}-${APPS.PROTONMAIL}-left-nav-opened`);
     const { viewportWidth } = useActiveBreakpoint();
     const collapsed = !showSideBar && !viewportWidth['<=small'];
 
@@ -74,7 +75,7 @@ const MailSidebar = ({ labelID }: Props) => {
             application: APPS.PROTONMAIL,
             sourceEvent,
         });
-        setshowSideBar(!showSideBar);
+        setShowSideBar(!showSideBar);
     };
 
     const navigationRef = useRef<HTMLDivElement>(null);
@@ -86,7 +87,11 @@ const MailSidebar = ({ labelID }: Props) => {
     return (
         <Sidebar
             app={APPS.PROTONMAIL}
-            appsDropdown={<AppsDropdown app={APPS.PROTONMAIL} />}
+            appsDropdown={
+                <DriveSpotlight>
+                    <AppsDropdown app={APPS.PROTONMAIL} />
+                </DriveSpotlight>
+            }
             expanded={expanded}
             onToggleExpand={() => {
                 dispatch(layoutActions.toggleSidebarExpand());

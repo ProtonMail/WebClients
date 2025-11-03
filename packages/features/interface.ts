@@ -45,6 +45,7 @@ export enum FeatureCode {
     ComposerAssistantTrialStartDate = 'ComposerAssistantTrialStartDate',
     DismissedRecoverDataCard = 'DismissedRecoverDataCard',
     DriveSearchSpotlight = 'DriveSearchSpotlight',
+    DriveSpotlightInMail = 'DriveSpotlightInMail',
     ESAutomaticBackgroundIndexing = 'ESAutomaticBackgroundIndexing',
     ESUserInterface = 'ESUserInterface',
     EarlyAccessScope = 'EarlyAccess',
