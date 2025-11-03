@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 
-import { c } from 'ttag';
+import { fromUnixTime } from 'date-fns';
 
-import { useApi, useNotifications } from '@proton/components';
+import { useApi } from '@proton/components';
 import { confirmBookingSlot } from '@proton/shared/lib/api/calendarBookings';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
@@ -19,9 +19,11 @@ interface AttendeeInfo {
 
 export const useExternalBookingActions = () => {
     const api = useApi();
-    const { createNotification } = useNotifications();
     const location = useLocation();
     const bookingDetails = useBookingStore((state) => state.bookingDetails);
+    const setBookingSlotDetails = useBookingStore((state) => state.setBookingSlotDetails);
+
+    const history = useHistory();
 
     const bookingSecretBase64Url = location.hash.substring(1);
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -60,10 +62,14 @@ export const useExternalBookingActions = () => {
                 })
             );
 
-            createNotification({
-                type: 'success',
-                text: c('Notification').t`Successfully booked this timeslot`,
+            const startTimeDate = fromUnixTime(timeslot.startTime);
+            const endTimeDate = fromUnixTime(timeslot.endTime);
+
+            setBookingSlotDetails({
+                startTime: startTimeDate,
+                endTime: endTimeDate,
             });
+            history.push('/success');
         } catch (error: unknown) {
             traceError(error);
             throw error;
