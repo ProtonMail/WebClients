@@ -4,7 +4,6 @@ import { type HotkeyTuple, useHotkeys } from '@proton/components';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 import { isBusy } from '@proton/shared/lib/shortcuts/calendar';
-import useFlag from '@proton/unleash/useFlag';
 
 interface Props {
     elementRef: RefObject<HTMLDivElement | Document>;
@@ -14,7 +13,6 @@ interface Props {
 }
 
 const useCalendarSearchHotkeys = ({ elementRef, onNext, onPrevious, onBackFromSearch }: Props) => {
-    const isCalendarHotkeysEnabled = useFlag('CalendarHotkeys');
     const [mailSettings] = useMailSettings();
     const { Shortcuts } = mailSettings || {};
 
@@ -23,7 +21,7 @@ const useCalendarSearchHotkeys = ({ elementRef, onNext, onPrevious, onBackFromSe
             [
                 [KeyboardKey.ArrowRight],
                 (e) => {
-                    if (isCalendarHotkeysEnabled && Shortcuts && !isBusy(e)) {
+                    if (Shortcuts && !isBusy(e)) {
                         e.preventDefault();
                         onNext();
                     }
@@ -32,7 +30,7 @@ const useCalendarSearchHotkeys = ({ elementRef, onNext, onPrevious, onBackFromSe
             [
                 [KeyboardKey.ArrowLeft],
                 (e) => {
-                    if (isCalendarHotkeysEnabled && Shortcuts && !isBusy(e)) {
+                    if (Shortcuts && !isBusy(e)) {
                         e.preventDefault();
                         onPrevious();
                     }
@@ -41,7 +39,7 @@ const useCalendarSearchHotkeys = ({ elementRef, onNext, onPrevious, onBackFromSe
             [
                 [KeyboardKey.Escape],
                 (e) => {
-                    if (isCalendarHotkeysEnabled && !isBusy(e)) {
+                    if (!isBusy(e)) {
                         e.preventDefault();
                         onBackFromSearch();
                     }
