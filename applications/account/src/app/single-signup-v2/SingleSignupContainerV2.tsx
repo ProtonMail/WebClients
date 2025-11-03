@@ -262,7 +262,7 @@ const SingleSignupContainerV2 = ({
         });
     });
 
-    const theme = getPublicTheme(toApp, audience, viewportWidth, signupParameters);
+    const theme = getPublicTheme(toApp, audience, viewportWidth, signupParameters, initialSearchParams);
     // true iff trial detected through signupParameters (thus the signup prefix)
     const signupTrial = !!(signupParameters.trial && audience === Audience.B2B);
 
