@@ -80,7 +80,7 @@ function useStats(transfers: Transfer[], getTransferProgresses: () => TransferPr
         };
 
         const getStats = (transferId: string): TransferStats => ({
-            progress: Math.min(statsHistory[0]?.stats[transferId]?.progress || 0, 100),
+            progress: statsHistory[0]?.stats[transferId]?.progress || 0,
             averageSpeed: calculateAverageSpeed(transferId),
         });
 
