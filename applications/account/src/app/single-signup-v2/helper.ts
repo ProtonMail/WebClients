@@ -1,4 +1,5 @@
 import { getAutoCoupon } from '@proton/components/containers/payments/subscription/helpers';
+import { canBuyPassLifetime } from '@proton/components/containers/payments/subscription/subscriptionEligbility';
 import {
     type ADDON_NAMES,
     type BillingAddress,
@@ -344,6 +345,13 @@ const getUpsell = ({
                 }
                 return noUpsell;
             } else {
+                if (
+                    hasSelectedPlan(planParameters.plan, [PLANS.PASS_LIFETIME]) &&
+                    canBuyPassLifetime(user, subscription)
+                ) {
+                    return getUpsellData();
+                }
+
                 if (getHasPlusPlan(currentPlan.Name)) {
                     if (
                         hasSelectedPlan(planParameters.plan, [PLANS.PASS_FAMILY, PLANS.BUNDLE, PLANS.DUO, PLANS.FAMILY])
