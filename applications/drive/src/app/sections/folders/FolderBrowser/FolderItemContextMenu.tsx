@@ -1,13 +1,14 @@
 import { useShallow } from 'zustand/react/shallow';
 
 import { ContextSeparator } from '@proton/components';
-import { MemberRole } from '@proton/drive/index';
+import { MemberRole } from '@proton/drive';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import type { ContextMenuProps } from '../../../components/FileBrowser';
 import { ItemContextMenu } from '../../../components/sections/ContextMenu/ItemContextMenu';
 import { useOpenInDocs } from '../../../store/_documents';
 import type { LegacyItem } from '../../../utils/sdk/mapNodeToLegacyItem';
+import { CopyButton } from '../buttons/CopyButton';
 import { CopyLinkContextButton } from '../buttons/CopyLinkContextButton';
 import { DetailsButton } from '../buttons/DetailsButton';
 import { DownloadButton } from '../buttons/DownloadButton';
@@ -61,6 +62,7 @@ export function FolderItemContextMenu({
             showDetailsModal,
             showRevisionsModal,
             showRenameModal,
+            showCopyModal,
             showMoveModal,
             showLinkSharingModal,
             getPublicLinkInfo,
@@ -88,6 +90,7 @@ export function FolderItemContextMenu({
                         onClick={() => showMoveModal(shareId)}
                     />
                 ) : null}
+                {permissions.canCopy && <CopyButton type="context" close={close} onClick={showCopyModal} />}
                 {permissions.canRename && isOnlyOneItem && (
                     <RenameButton
                         type="context"
@@ -117,6 +120,7 @@ export function FolderItemContextMenu({
             {modals.revisionsModal}
             {modals.renameModal}
             {modals.moveModal}
+            {modals.copyModal}
         </>
     );
 }

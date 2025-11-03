@@ -35,6 +35,9 @@ type HandleErrorOptions = {
     showNotification?: boolean;
 };
 
+/**
+ * It DOES NOT show any notification to the user.
+ */
 export const handleSdkError = (
     error: Error | unknown,
     { fallbackMessage = '', extra = {} }: Omit<HandleErrorOptions, 'showNotification'> = {}
@@ -67,6 +70,9 @@ export const handleSdkError = (
     return { errorToHandle, message };
 };
 
+/**
+ * It DOES show notification to the user.
+ */
 export const useSdkErrorHandler = () => {
     const { createNotification } = useNotifications();
 

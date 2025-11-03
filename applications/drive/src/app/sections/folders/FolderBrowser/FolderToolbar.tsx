@@ -8,6 +8,7 @@ import { getDevice } from '@proton/shared/lib/helpers/browser';
 import { useSelection } from '../../../components/FileBrowser';
 import useIsEditEnabled from '../../../components/sections/useIsEditEnabled';
 import { ActionsDropdown } from '../buttons/ActionsDropdown';
+import { CopyButton } from '../buttons/CopyButton';
 import { CreateNewDocumentButton } from '../buttons/CreateNewDocumentButton';
 import { CreateNewFileButton } from '../buttons/CreateNewFileButton';
 import { CreateNewFolderButton } from '../buttons/CreateNewFolderButton';
@@ -54,6 +55,7 @@ export const FolderToolbar = ({ volumeId, shareId, linkId, showOptionsForNoSelec
         actions: {
             showRenameModal,
             showMoveModal,
+            showCopyModal,
             showCreateFileModal,
             showCreateFolderModal,
             createNewDocument,
@@ -128,6 +130,7 @@ export const FolderToolbar = ({ volumeId, shareId, linkId, showOptionsForNoSelec
                                 onClick={() => showMoveModal(shareId)}
                             />
                         )}
+                        {permissions.canCopy && <CopyButton type="toolbar" onClick={showCopyModal} />}
                         {permissions.canRename && (
                             <RenameButton selectedItems={selectedItems} type="toolbar" onClick={showRenameModal} />
                         )}
@@ -156,6 +159,7 @@ export const FolderToolbar = ({ volumeId, shareId, linkId, showOptionsForNoSelec
             <input type="file" ref={folderInputRef} className="hidden" onChange={handleFolderChange} />
             {modals.renameModal}
             {modals.moveModal}
+            {modals.copyModal}
             {modals.createFileModal}
             {modals.createFolderModal}
             {modals.detailsModal}
