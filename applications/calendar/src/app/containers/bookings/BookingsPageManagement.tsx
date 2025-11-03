@@ -3,21 +3,12 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
-import {
-    Collapsible,
-    CollapsibleContent,
-    CollapsibleHeader,
-    CollapsibleHeaderIconButton,
-    Copy,
-} from '@proton/components';
+import { Collapsible, CollapsibleContent, CollapsibleHeader, CollapsibleHeaderIconButton } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import Toggle from '@proton/components/components/toggle/Toggle';
 import { InputField } from '@proton/components/components/v2/field/InputField';
-import PasswordInput from '@proton/components/components/v2/input/PasswordInput';
 import TextArea from '@proton/components/components/v2/input/TextArea';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eventDefaults';
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -69,7 +60,6 @@ export const Form = () => {
     const [writeableCalendars = []] = useWriteableCalendars({ canBeDisabled: false, canBeShared: false });
 
     const { formData, updateFormData } = useBookings();
-    const { createNotification } = useNotifications();
 
     return (
         <form className="flex flex-column">
@@ -174,39 +164,6 @@ export const Form = () => {
                     rows={2}
                     maxLength={MAX_CHARS_API.EVENT_DESCRIPTION}
                 />
-            </FormIconRow>
-
-            <FormIconRow
-                icon="shield"
-                title={c('Info').t`Enable password protection`}
-                hideBorder
-                suffix={
-                    <Toggle
-                        checked={formData.requiresPassword}
-                        onChange={() => updateFormData('requiresPassword', !formData.requiresPassword)}
-                    />
-                }
-            >
-                {formData.requiresPassword ? (
-                    <div className="mt-2 flex flex-nowrap gap-2">
-                        <PasswordInput
-                            id="booking-password"
-                            placeholder={c('Placeholder').t`Add password`}
-                            value={formData.password}
-                            maxLength={MAX_CHARS_API.TITLE} // 255 chars max to avoid unlimited password length
-                            onChange={(e) => updateFormData('password', e.target.value)}
-                            autoFocus
-                        />
-                        <Copy
-                            id="booking-password-copy"
-                            value={formData.password || ''}
-                            shape="ghost"
-                            onCopy={() => {
-                                createNotification({ text: c('Info').t`Password copied` });
-                            }}
-                        />
-                    </div>
-                ) : null}
             </FormIconRow>
         </form>
     );

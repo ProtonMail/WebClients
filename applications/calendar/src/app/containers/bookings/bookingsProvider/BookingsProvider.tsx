@@ -7,10 +7,12 @@ import { c } from 'ttag';
 import { useCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
-import { useCalendars } from '@proton/calendar/calendars/hooks';
+import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
+import useApi from '@proton/components/hooks/useApi';
 import { useGetAddressKeysByUsage } from '@proton/components/hooks/useGetAddressKeysByUsage';
-import { useApi, useNotifications } from '@proton/components/index';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { createBookingPage } from '@proton/shared/lib/api/calendarBookings';
+import { getPreferredActiveWritableCalendar } from '@proton/shared/lib/calendar/calendar';
 import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eventDefaults';
 import { getTimezone } from '@proton/shared/lib/date/timezone';
 
@@ -44,7 +46,6 @@ const getInitialBookingState = (): BookingFormData => {
         duration: scheduleOptions[0].value,
         timezone: localTimeZone,
         bookingSlots: [],
-        requiresPassword: false,
     };
 };
 
@@ -59,9 +60,14 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     const api = useApi();
     const { notify } = useCalendarGlobalModals();
 
-    const [calendars = []] = useCalendars();
+    const [writeableCalendars = []] = useWriteableCalendars();
     const [calendarUserSettings] = useCalendarUserSettings();
-    const [{ CalendarSettings } = {}] = useCalendarBootstrap(calendarUserSettings?.DefaultCalendarID || undefined);
+
+    const preferredWritableCal = getPreferredActiveWritableCalendar(
+        writeableCalendars,
+        calendarUserSettings?.DefaultCalendarID
+    );
+    const [{ CalendarSettings } = {}] = useCalendarBootstrap(preferredWritableCal?.ID || undefined);
 
     const getAddressKeysByUsage = useGetAddressKeysByUsage();
     const getCalendarKeys = useGetCalendarKeys();
@@ -73,18 +79,29 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
 
     const { createNotification } = useNotifications();
 
-    // Used to set the default duration and selected calendar
     useEffect(() => {
-        if (formData.selectedCalendar !== null || !CalendarSettings) {
+        if (formData.selectedCalendar !== null) {
             return;
         }
 
-        setFormData((prev) => ({
-            ...prev,
-            selectedCalendar: CalendarSettings.ID,
-            duration: CalendarSettings.DefaultEventDuration,
-        }));
-    }, [formData.selectedCalendar, CalendarSettings]);
+        // If the user has no preferred writable calendar we set the first writable calendar as default
+        if (!preferredWritableCal) {
+            setFormData((prev) => ({
+                ...prev,
+                selectedCalendar: writeableCalendars?.[0]?.ID,
+            }));
+            return;
+        }
+
+        // Otherwise, we set the preferred writable calendar as default
+        if (CalendarSettings && preferredWritableCal) {
+            setFormData((prev) => ({
+                ...prev,
+                selectedCalendar: preferredWritableCal.ID,
+                duration: CalendarSettings.DefaultEventDuration,
+            }));
+        }
+    }, [formData.selectedCalendar, CalendarSettings, writeableCalendars, preferredWritableCal]);
 
     const recomputeBookingSlots = (newDuration: number) => {
         const newSlots: Slot[] = [];
@@ -178,7 +195,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     const submitForm = async () => {
         try {
             setLoading(true);
-            const selectedCalendar = calendars.find((cal) => cal.ID === formData.selectedCalendar);
+            const selectedCalendar = writeableCalendars.find((cal) => cal.ID === formData.selectedCalendar);
 
             if (!selectedCalendar) {
                 return;
