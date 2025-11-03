@@ -1,12 +1,11 @@
 import { useMemo } from 'react';
 
-import { format } from 'date-fns';
-
-import { dateLocale } from '@proton/shared/lib/i18n';
-
 import { type PartDayEventProps, PartDayEventView } from '../../components/events/PartDayEvent';
 import type { CalendarViewEvent } from '../../containers/calendar/interface';
 import { getBookingSlotStyle } from '../../helpers/color';
+import { useBookings } from './bookingsProvider/BookingsProvider';
+
+import './PartDayBookingEvent.scss';
 
 interface PartDayBusyEventProps
     extends Pick<
@@ -20,12 +19,11 @@ export const PartDayBookingEvent = ({
     size,
     style,
     event,
-    isSelected,
     isBeforeNow,
     eventRef,
     eventPartDuration,
 }: PartDayBusyEventProps) => {
-    const timeString = `${format(event.start, 'HH:mm', { locale: dateLocale })} - ${format(event.end, 'HH:mm', { locale: dateLocale })}`;
+    const { formData } = useBookings();
 
     const eventStyle = useMemo(() => {
         return getBookingSlotStyle(event.data.calendarData.Color, style);
@@ -38,17 +36,18 @@ export const PartDayBookingEvent = ({
                 ...eventStyle,
             }}
             isPast={isBeforeNow}
-            isSelected={isSelected}
+            isSelected={false}
             ref={eventRef}
             isLoaded
-            title={timeString}
             eventPartDuration={eventPartDuration}
         >
-            <div data-testid="calendar-day-week-view:part-day-event" className="calendar-eventcell-title">
-                <div className="flex flex-nowrap items-center">
-                    <span className="text-ellipsis flex-shrink color-weak" title={timeString}>{timeString}</span>
-                </div>
-            </div>
+            <div
+                data-testid="calendar-day-week-view:part-day-event"
+                className={`booking-cell h-full w-full rounded-sm booking-cell--duration-${formData.duration}`}
+                style={{
+                    '--booking-duration-color': eventStyle['--booking-cell-background'] || '',
+                }}
+            ></div>
         </PartDayEventView>
     );
 };

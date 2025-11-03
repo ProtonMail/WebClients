@@ -1,7 +1,15 @@
+import { format } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
+import {
+    Collapsible,
+    CollapsibleContent,
+    CollapsibleHeader,
+    CollapsibleHeaderIconButton,
+    Copy,
+} from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
@@ -11,14 +19,49 @@ import PasswordInput from '@proton/components/components/v2/input/PasswordInput'
 import TextArea from '@proton/components/components/v2/input/TextArea';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useToggle from '@proton/components/hooks/useToggle';
-import { Copy } from '@proton/components/index';
 import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eventDefaults';
+import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { FormIconRow, FormLocationOptionContent } from './BookingsFormComponents';
-import { getBookingLocationOption } from './bookingHelpers';
+import { getBookingLocationOption, validateFormData } from './bookingHelpers';
 import { useBookings } from './bookingsProvider/BookingsProvider';
+import type { Slot } from './bookingsProvider/interface';
 import { BookingLocation, BookingState } from './bookingsProvider/interface';
+
+// TODO remove this, only used for testing
+const TmpBookingSlots = ({ slots }: { slots: Slot[] }) => {
+    const slotsGroupedByDay = Object.groupBy(slots, (slot) => slot.start.toDateString());
+
+    return (
+        <Collapsible>
+            <CollapsibleHeader
+                suffix={
+                    <CollapsibleHeaderIconButton>
+                        <Icon name="chevron-down" />
+                    </CollapsibleHeaderIconButton>
+                }
+            >
+                Total of {slots.length} slots
+            </CollapsibleHeader>
+            <CollapsibleContent>
+                {Object.entries(slotsGroupedByDay).map(([date, slots]) => (
+                    <div key={date}>
+                        <p className="font-semibold mt-2 m-0">
+                            {date}, contains {slots?.length} slots
+                        </p>
+                        {slots?.map((slot) => (
+                            <p className="m-0 text-sm color-weak" key={slot.id}>
+                                From {format(slot.start, 'hh:mm', { locale: dateLocale })}, to{' '}
+                                {format(slot.end, 'hh:mm', { locale: dateLocale })}
+                            </p>
+                        ))}
+                    </div>
+                ))}
+            </CollapsibleContent>
+        </Collapsible>
+    );
+};
 
 export const Form = () => {
     const scheduleOptions = getCalendarEventDefaultDuration({ includeShortDurations: true, shortLabels: true });
@@ -65,9 +108,9 @@ export const Form = () => {
                 </div>
             </FormIconRow>
 
-            {/*<FormIconRow icon="calendar-list-check" title={c('Info').t`When are you free?`}>
-                todo
-            </FormIconRow>*/}
+            <FormIconRow icon="calendar-list-check" title={c('Info').t`When are you free?`}>
+                <TmpBookingSlots slots={formData.bookingSlots} />
+            </FormIconRow>
 
             <FormIconRow icon="map-pin" title={c('Info').t`Where will the appointment take place?`}>
                 <InputField
@@ -177,15 +220,22 @@ const Header = () => {
 };
 
 const Buttons = () => {
-    const { changeBookingState, submitForm, loading } = useBookings();
+    const { changeBookingState, submitForm, formData, loading } = useBookings();
+
+    const validation = validateFormData(formData);
+    const isError = validation && validation.type === 'error';
 
     return (
-        <div className="flex justify-space-between gap-6">
-            <Button disabled={loading} onClick={() => changeBookingState(BookingState.OFF)}>{c('Action')
-                .t`Cancel`}</Button>
-            <Button loading={loading} color="norm" type="submit" onClick={submitForm}>{c('Action')
-                .t`Create booking page`}</Button>
-        </div>
+        <>
+            {isError ? <p className="color-danger text-sm text-right m-0 mb-2">{validation.message}</p> : null}
+            <div className="flex justify-space-between gap-6">
+                <Button disabled={loading} onClick={() => changeBookingState(BookingState.OFF)}>{c('Action')
+                    .t`Cancel`}</Button>
+                <Button disabled={!!validation} loading={loading} color="norm" type="submit" onClick={submitForm}>{c(
+                    'Action'
+                ).t`Create booking page`}</Button>
+            </div>
+        </>
     );
 };
 
