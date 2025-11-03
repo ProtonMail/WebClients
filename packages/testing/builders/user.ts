@@ -72,7 +72,6 @@ export const buildUser = (value?: Partial<UserModel>): UserModel => {
         isPrivate: true,
         isSelf: true,
         isDelinquent: false,
-        hasNonDelinquentScope: true,
         hasPaidMail: true,
         hasPaidVpn: false,
         hasPaidDrive: false,

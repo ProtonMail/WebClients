@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import { useUser } from '@proton/account/user/hooks';
 import type { EASY_SWITCH_SOURCES, EasySwitchFeatureFlag, ImportType } from '@proton/activation/src/interface';
 import { ImportProvider } from '@proton/activation/src/interface';
 import { startOauthDraft } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
@@ -21,17 +20,22 @@ interface Props {
     isDropdownButton?: boolean;
 }
 
-const OAuthImportButton = ({ className, provider, defaultCheckedTypes, displayOn, source, onClick, isDropdownButton }: Props) => {
-    const [user, userLoading] = useUser();
-    const isDelinquent = !user.hasNonDelinquentScope;
-
+const OAuthImportButton = ({
+    className,
+    provider,
+    defaultCheckedTypes,
+    displayOn,
+    source,
+    onClick,
+    isDropdownButton,
+}: Props) => {
     const dispatch = useEasySwitchDispatch();
 
     const easySwitchFeature = useFeature<EasySwitchFeatureFlag>(FeatureCode.EasySwitch);
     const easySwitchFeatureLoading = easySwitchFeature.loading;
     const easySwitchFeatureValue = easySwitchFeature.feature?.Value;
 
-    const disabled = easySwitchFeatureLoading || userLoading || isDelinquent || !easySwitchFeatureValue?.[displayOn];
+    const disabled = easySwitchFeatureLoading || !easySwitchFeatureValue?.[displayOn];
 
     const handleClick = () => {
         dispatch(

@@ -59,7 +59,6 @@ interface CalendarShareSectionProps {
     user: UserModel;
     subscription?: Subscription;
     isLoading: boolean;
-    canShare: boolean;
     invitations: CalendarMemberInvitation[];
     members: CalendarMember[];
     setMembers: Dispatch<SetStateAction<CalendarMember[]>>;
@@ -72,7 +71,6 @@ const CalendarShareSection = ({
     user,
     subscription,
     isLoading,
-    canShare,
     invitations,
     members,
     setInvitations,
@@ -148,7 +146,7 @@ const CalendarShareSection = ({
                                 {!isMaximumMembersReached && (
                                     <Button
                                         onClick={handleShare}
-                                        disabled={isLoading || !canShare || isMaximumMembersReached}
+                                        disabled={isLoading || isMaximumMembersReached}
                                         color="norm"
                                         aria-label={sectionTitle}
                                     >
@@ -161,12 +159,11 @@ const CalendarShareSection = ({
                                 members={members}
                                 invitations={invitations}
                                 calendarID={calendar.ID}
-                                canEdit={canShare}
                                 onDeleteInvitation={handleDeleteInvitation}
                                 onDeleteMember={handleDeleteMember}
                             />
                         </div>
-                        <CalendarShareUrlSection calendar={calendar} user={user} canShare={canShare} />
+                        <CalendarShareUrlSection calendar={calendar} />
                     </>
                 )}
                 {!hasPaidMail && (
