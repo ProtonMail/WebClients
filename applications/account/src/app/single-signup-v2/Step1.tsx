@@ -745,13 +745,10 @@ const Step1 = ({
     }, [isPorkbunPayment, selectedPlan.Name, model.plansMap, model.subscriptionDataCycleMapping, options.cycle]);
 
     const offerBanner = (() => {
-        if (model.loadingDependencies) {
-            return <SkeletonLoader width="36em" height="2.4rem" index={0} className="mt-4 max-w-full" />;
-        }
+        const skeletonLoader = <SkeletonLoader width="36em" height="2.4rem" index={0} className="mt-4 max-w-full" />;
 
-        if (isPorkbunPayment) {
-            // Don't show any offers for Porkbun
-            return;
+        if (model.loadingDependencies) {
+            return skeletonLoader;
         }
 
         const wrap = (iconName: IconName | null, textLaunchOffer: ReactNode) => {
@@ -809,11 +806,19 @@ const Step1 = ({
             return wrap('hourglass', textLaunchOffer);
         }
 
-        const hasBFCoupon = getHas2025OfferCoupon(options.checkResult.Coupon?.Code);
+        const hasBFCoupon =
+            getHas2025OfferCoupon(options.checkResult.Coupon?.Code) || getHas2025OfferCoupon(signupParameters.coupon);
 
         // Using real coupon to show the correct discount percentage
         if (hasBFCoupon) {
-            const discount = checkout.discountPercent;
+            // prevent blinking while loading another subscription/check result
+            const modelCheckout = getCheckout({
+                planIDs: subscriptionCheckOptions.planIDs,
+                plansMap: model.plansMap,
+                checkResult: subscriptionCheckOptions.checkResult,
+            });
+
+            const discount = modelCheckout.discountPercent;
             return wrap(
                 'bag-percent',
                 c('pass_signup_2023: Info').jt`Your ${discount}% Black Friday discount has been applied`
@@ -841,8 +846,14 @@ const Step1 = ({
             return <span className="text-center">{lifetimeText}</span>;
         }
 
-        if (!hasPlanSelector || model.upsell.mode === UpsellTypes.UPSELL) {
-            return null;
+        if (
+            !hasPlanSelector ||
+            model.upsell.mode === UpsellTypes.UPSELL ||
+            !checkout.discountPercent ||
+            isPorkbunPayment ||
+            signupTrial
+        ) {
+            return;
         }
 
         const passBizYearlyCycle = model.subscriptionDataCycleMapping[PLANS.PASS_BUSINESS]?.[CYCLE.YEARLY];
@@ -867,7 +878,7 @@ const Step1 = ({
             return wrap('hourglass', textLaunchOffer);
         }
 
-        return null;
+        return <DiscountBanner discountPercent={checkout.discountPercent} selectedPlanTitle={selectedPlan.Title} />;
     })();
 
     return (
@@ -911,35 +922,6 @@ const Step1 = ({
                 )}
 
                 {offerBanner}
-
-                {(() => {
-                    if (offerBanner) {
-                        return null;
-                    }
-
-                    if (!checkout.discountPercent) {
-                        return;
-                    }
-
-                    if (isPorkbunPayment) {
-                        return;
-                    }
-
-                    if (signupTrial) {
-                        return;
-                    }
-
-                    if (model.loadingDependencies) {
-                        return <SkeletonLoader width="36em" height="2.5rem" index={0} className="mt-4 max-w-full" />;
-                    }
-
-                    return (
-                        <DiscountBanner
-                            discountPercent={checkout.discountPercent}
-                            selectedPlanTitle={selectedPlan.Title}
-                        />
-                    );
-                })()}
 
                 {hasPlanSelector && (
                     <>

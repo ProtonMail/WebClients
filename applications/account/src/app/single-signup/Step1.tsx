@@ -816,7 +816,8 @@ const Step1 = ({
         }
     };
 
-    const isBlackFriday = getHas2025OfferCoupon(options.checkResult.Coupon?.Code);
+    const isBlackFriday =
+        getHas2025OfferCoupon(options.checkResult.Coupon?.Code) || getHas2025OfferCoupon(couponUrlParam);
 
     // const isCyberWeekPeriod = getIsCyberWeekPeriod();
     // const isBlackFridayPeriod = getIsBlackFridayPeriod();
@@ -1347,10 +1348,13 @@ const Step1 = ({
                                             startTrial={checkTrial}
                                             onCurrencyChange={handleChangeCurrency}
                                         />
-                                        {actualCheckout.discountPercent && !signupTrial ? (
+                                        {actualCheckout.discountPercent &&
+                                        !signupTrial &&
+                                        !model.loadingDependencies ? (
                                             <DiscountBanner
                                                 discountPercent={actualCheckout.discountPercent}
                                                 selectedPlanTitle={selectedPlan.Title}
+                                                className="mb-2"
                                             />
                                         ) : null}
                                         {(() => {
