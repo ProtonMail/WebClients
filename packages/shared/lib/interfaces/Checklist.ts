@@ -1,4 +1,5 @@
 export interface ChecklistApiResponse {
+    Completed?: boolean;
     Code: number;
     Items: ChecklistKey[];
     CreatedAt: number;
