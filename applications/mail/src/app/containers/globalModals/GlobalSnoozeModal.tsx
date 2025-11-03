@@ -47,8 +47,13 @@ export const GlobalSnoozeModal = () => {
                     buttons={[
                         <Button color="norm" onClick={handleConfirm} data-testid="confirm-button">{c('Action')
                             .t`OK`}</Button>,
-                        <Button data-testid="cancel-button" onClick={() => setOpen(false)}>{c('Action')
-                            .t`Cancel`}</Button>,
+                        <Button
+                            data-testid="cancel-button"
+                            onClick={() => {
+                                setChecked(false);
+                                setOpen(false);
+                            }}
+                        >{c('Action').t`Cancel`}</Button>,
                     ]}
                     {...modalProps}
                 >
