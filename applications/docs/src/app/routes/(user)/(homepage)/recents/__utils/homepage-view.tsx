@@ -332,6 +332,9 @@ export function filterDocuments(items?: RecentDocumentsItem[], search?: string, 
     let isValid = true
     if (search) {
       isValid = data.name.toLowerCase().includes(search.toLowerCase())
+      if (!isValid) {
+        return false
+      }
     }
     if (type) {
       isValid = data.type === type
