@@ -41,6 +41,7 @@ export const defaultUpsell: Upsell = {
     currentPlan: undefined,
     unlockPlan: undefined,
     plan: undefined,
+    addons: undefined,
     subscriptionOptions: {},
 };
 export const defaultSignupModel: SignupModelV2 = {
