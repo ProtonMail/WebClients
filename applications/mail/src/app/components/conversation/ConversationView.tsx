@@ -129,6 +129,7 @@ const ConversationView = ({
         if (!loadingMessages && !messageID) {
             expandMessage(findMessageToExpand(labelID, sortedMessages)?.ID);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-E96AF1
     }, [conversationID, messageID, loadingMessages]);
 
     // Open the message in URL
@@ -136,10 +137,12 @@ const ConversationView = ({
         if (!loadingMessages && messageID && !isDraft(messageInUrl)) {
             expandMessage(messageID, true);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-18D063
     }, [conversationID, messageID, loadingMessages, messageInUrl]);
 
     useEffect(() => {
         setFilter(DEFAULT_FILTER_VALUE);
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-CA9EBE
     }, [inputConversationID]);
 
     // Mark conversation as read when opened and reminded (snooze feature)
@@ -154,6 +157,7 @@ const ConversationView = ({
                 silent: true,
             });
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-30ECB6
     }, [conversation]);
 
     const handleClickUnreadNotification = (messageID: string) => {
@@ -172,6 +176,7 @@ const ConversationView = ({
                 trashWarningRef.current?.parentElement?.focus();
             }
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-7225C9
     }, [onlyTrashInConversation, conversationID, columnLayout]);
 
     return showConversationError ? (

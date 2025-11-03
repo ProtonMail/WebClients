@@ -11,6 +11,7 @@ const useScrollToTop = (ref: RefObject<HTMLElement>, dependencies: DependencyLis
 
     useEffect(() => {
         scrollTop();
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-852D6B
     }, dependencies);
 };
 

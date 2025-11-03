@@ -181,6 +181,7 @@ export const RouterLabelContainer = ({
                 }
             }
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-D39BF9
         [selectedIDs, elementID, labelID, folders, handleBack, selectAll]
     );
 

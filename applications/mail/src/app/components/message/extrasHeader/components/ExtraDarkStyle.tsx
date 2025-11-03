@@ -26,6 +26,7 @@ const ExtraDarkStyle = ({ message }: Props) => {
         if (showBanner) {
             void sendMetricsReport(api, METRICS_LOG.DARK_STYLES, 'update_dark_styles', { action: 'apply_dark_styles' });
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-9945CF
     }, [showBanner]);
 
     if (!showBanner) {

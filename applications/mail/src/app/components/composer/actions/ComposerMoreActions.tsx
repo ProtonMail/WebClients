@@ -62,6 +62,7 @@ const ComposerMoreActions = ({
                 onChange={onChange}
             />
         ),
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-CB37E4
         [message.data, onChangeFlag]
     );
 
@@ -77,8 +78,7 @@ const ComposerMoreActions = ({
             titleTooltip={titleMoreOptions}
             className="button button-medium button-ghost-weak button-for-icon composer-more-dropdown"
             content={
-                <IcThreeDotsHorizontal alt={titleMoreOptions}
-                    className={clsx([dotsInColor && 'color-primary'])} />
+                <IcThreeDotsHorizontal alt={titleMoreOptions} className={clsx([dotsInColor && 'color-primary'])} />
             }
         >
             {toolbarExtension}

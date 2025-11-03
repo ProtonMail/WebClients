@@ -55,6 +55,7 @@ const MailUpsellBanner = ({ needToShowUpsellBanner, columnMode, onClose }: Props
         } catch (e: any) {
             console.error(e);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-00B44D
     }, []);
 
     useEffect(() => {
@@ -62,6 +63,7 @@ const MailUpsellBanner = ({ needToShowUpsellBanner, columnMode, onClose }: Props
         return () => {
             needToShowUpsellBanner.current = false;
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-A4C558
     }, []);
 
     return (

@@ -79,6 +79,7 @@ const SearchOverlay = ({
         if (sameAnchorWidth) {
             anchorRectRef.current = anchorRef.current?.getBoundingClientRect();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-9D3905
     }, [isOpen]);
 
     const [isClosing, isClosed, setIsClosed] = useIsClosing(isOpen);

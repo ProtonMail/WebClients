@@ -79,6 +79,7 @@ const ComposerAssistantToolbar = ({
         return () => {
             assistantRefManager.container.delete(assistantID);
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-79D4DF
     }, []);
 
     const handleCancelGeneration = async () => {

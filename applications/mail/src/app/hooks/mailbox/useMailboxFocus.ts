@@ -108,6 +108,7 @@ export const useMailboxFocus = ({
         if (element && document.activeElement !== element) {
             element.focus();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-F2A06B
     }, [focusID]);
 
     const saveNewState = useCallback(({ elementIDs, page, filter, sort, labelID }: MailboxFocusContext) => {
@@ -164,6 +165,7 @@ export const useMailboxFocus = ({
             }
             saveNewState({ elementIDs, page, filter, sort, labelID });
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-CA6255
     }, [elementIDs, page, filter, sort, showList, labelID, isComposerOpened, loading, focusID]);
 
     useEffect(() => {
@@ -171,6 +173,7 @@ export const useMailboxFocus = ({
             return;
         }
         focusElement();
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-1EB736
     }, [focusID]);
 
     return {

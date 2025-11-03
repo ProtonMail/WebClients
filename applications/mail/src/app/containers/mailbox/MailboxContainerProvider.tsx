@@ -52,6 +52,7 @@ export const MailboxContainerContextProvider = ({ children, isResizing, containe
             containerEl.removeEventListener('scroll', onScroll);
             setContainerScrollTop(0);
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-60916B
     }, [elementID]);
 
     return (

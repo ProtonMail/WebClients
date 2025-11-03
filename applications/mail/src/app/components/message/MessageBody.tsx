@@ -75,6 +75,7 @@ const MessageBody = ({
             plain
                 ? [message.messageDocument?.plainText as string, '']
                 : locateBlockquote(message.messageDocument?.document),
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-6B18F7
         [message.messageDocument?.document?.innerHTML, message.messageDocument?.plainText, plain]
     );
 
@@ -90,6 +91,7 @@ const MessageBody = ({
     const showBlockquote = forceBlockquote || originalMessageMode;
     const highlightedContent = useMemo(
         () => (!!content && highlightBody ? highlightString(content, true) : content),
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-E4F9FB
         [content, highlightBody]
     );
     const highlightedBlockquote = useMemo(
@@ -97,6 +99,7 @@ const MessageBody = ({
             !!blockquote && highlightBody
                 ? highlightString(blockquote, !highlightedContent.includes('data-auto-scroll'))
                 : blockquote,
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-9F9647
         [blockquote, highlightBody]
     );
     const showBlockquoteResults = highlightedBlockquote !== blockquote;
@@ -113,6 +116,7 @@ const MessageBody = ({
         if (!loadingMode && !decryptingMode && onMessageReady) {
             setTimeout(onMessageReady);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-16DDBD
     }, [loadingMode, decryptingMode, message.data?.ID]);
 
     const handleContentLoaded = (iframeRootDivElement: HTMLDivElement) => {

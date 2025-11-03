@@ -24,6 +24,7 @@ const useGetRandomTip = (tipMessages: TipData[]) => {
         return randomOption;
     };
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-317EBD
     const randomOption = useMemo(() => getRandomOption(), [labelID]);
 
     return {

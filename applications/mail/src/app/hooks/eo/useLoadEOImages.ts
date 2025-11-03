@@ -35,6 +35,7 @@ export const useLoadEORemoteImages = (mailSettings: MailSettings) => {
             mailSettings,
             handleLoadEORemoteImages
         );
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-7229B3
     }, []);
 };
 
@@ -72,5 +73,6 @@ export const useLoadEOEmbeddedImages = (id: string) => {
             EO_DEFAULT_MAILSETTINGS,
             handleLoadEOEmbeddedImages
         );
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-126EDE
     }, []);
 };

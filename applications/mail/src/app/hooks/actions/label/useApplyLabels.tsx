@@ -53,6 +53,7 @@ export const useApplyLabels = (setContainFocus?: Dispatch<SetStateAction<boolean
                 });
             }
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-B62139
         [applyLabelsToAll, applyLabelsToSelection]
     );
 

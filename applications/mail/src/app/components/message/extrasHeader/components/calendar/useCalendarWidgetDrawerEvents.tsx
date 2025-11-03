@@ -74,6 +74,7 @@ const useCalendarWidgetDrawerEvents = ({ messageID, calendarEvent, refresh }: Pr
                 APPS.PROTONCALENDAR
             );
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-5E42E6
     }, [messageID, calendarEvent]);
 };
 

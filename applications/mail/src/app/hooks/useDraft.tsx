@@ -41,6 +41,7 @@ export const useDraftVerifications = () => {
                 }
             }
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-AB16AB
         [getUser, getAddresses]
     );
 
@@ -78,6 +79,7 @@ export const useDraft = () => {
             cache.set(CACHE_KEY, message);
         };
         void run();
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-C7DF9A
     }, [cache, addresses, mailSettings]);
 
     const createDraft = useCallback(
@@ -106,6 +108,7 @@ export const useDraft = () => {
             dispatch(createDraftAction(message));
             return message.localID;
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-217C17
         [cache, getMailSettings, getAddresses, draftVerifications]
     );
 

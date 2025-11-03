@@ -92,6 +92,7 @@ const MoveDropdown = ({
 
     const { scrollToItem } = useScrollToItem();
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-038687
     useEffect(() => onLock(!containFocus), [containFocus]);
 
     const { list: treeview } = useMailFolderTreeView();
@@ -122,6 +123,7 @@ const MoveDropdown = ({
 
     const alwaysCheckboxDisabled = useMemo(() => {
         return !getSendersToFilter(elements).length || !selectedFolder || !!selectAll;
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-BDE05D
     }, [getSendersToFilter, elements, selectAll]);
 
     const list = treeview

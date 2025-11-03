@@ -12,6 +12,7 @@ export const useLoadMessage = (inputMessage: MessageWithOptionalBody) => {
 
     return useCallback(async () => {
         void dispatch(load({ ID: inputMessage.ID }));
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-8D9B23
     }, [inputMessage]);
 };
 
@@ -22,5 +23,6 @@ export const useReloadMessage = (localID: string) => {
     return useCallback(async () => {
         dispatch(reload({ ID: localID }));
         await initializeMessage(localID);
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-DEDC30
     }, [localID]);
 };

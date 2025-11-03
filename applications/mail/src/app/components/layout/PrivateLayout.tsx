@@ -46,6 +46,7 @@ const PrivateLayout = ({ children, labelID }: Props, ref: Ref<HTMLDivElement>) =
         if (isSidebarExpanded) {
             dispatch(layoutActions.setSidebarExpanded(false));
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-CB42D1
     }, [location.pathname, location.hash]);
 
     const top = (

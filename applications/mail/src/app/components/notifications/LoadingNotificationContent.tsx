@@ -13,6 +13,7 @@ const LoadingNotificationContent = ({ loadingText, loadedText, promise }: Props)
 
     useEffect(() => {
         void withLoading(promise);
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-0168A9
     }, [promise]);
 
     if (loading) {

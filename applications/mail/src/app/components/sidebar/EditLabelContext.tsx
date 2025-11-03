@@ -73,6 +73,7 @@ export const LabelActionsContextProvider = ({ children }: { children: React.Reac
     const resetContextAndCloseModal = useCallback(() => {
         dispatch({ type: 'reset' });
         modalProps.onClose();
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-DFB7C6
     }, []);
 
     const contextProviderValue = useMemo(
@@ -90,6 +91,7 @@ export const LabelActionsContextProvider = ({ children }: { children: React.Reac
                 openModal(true);
             },
         }),
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-89CA2B
         []
     );
 

@@ -37,6 +37,7 @@ const SimplePublicKeyTable = ({ contact }: Props) => {
             setExpirationDate(time);
         };
         void withLoading(getExpirationTime());
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-49E568
     }, []);
 
     const fingerprintCell = (

@@ -59,16 +59,19 @@ const MailSearch = ({ labelID, location, columnMode }: Props) => {
         if (!isOpen) {
             closeDropdown();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-5BA92D
     }, [isOpen]);
 
     useEffect(() => {
         if (dropdownOpened) {
             open();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-D67056
     }, [dropdownOpened]);
 
     useEffect(() => {
         setSearchInputValue(searchParams?.keyword || '');
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-A14646
     }, [location]);
 
     useClickMailContent(() => {

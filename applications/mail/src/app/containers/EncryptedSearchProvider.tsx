@@ -219,6 +219,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         if (dbExists && contentIndexingDone) {
             void run();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-EFF153
     }, [esStatus.contentIndexingDone]);
 
     /**
@@ -236,12 +237,14 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 }));
             }
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-C90011
     }, [isSearch]);
 
     useEffect(() => {
         if (isIDBSupported) {
             void initializeESMail();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-617FCE
     }, [isIDBSupported]);
 
     const esFunctions = {

@@ -24,6 +24,7 @@ export const useWelcomeFlag = (deps: DependencyList) => {
         } else {
             setWelcomeFlag(false);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-3C4B65
     }, deps);
 
     return welcomeFlag;

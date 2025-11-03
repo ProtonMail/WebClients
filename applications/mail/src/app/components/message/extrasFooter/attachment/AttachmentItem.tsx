@@ -73,6 +73,7 @@ const AttachmentItem = ({
                 }
             });
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-0DC85B
     }, []);
 
     const nameRaw = `${attachment ? attachment.Name || '' : pendingUpload?.file.name || ''}`;

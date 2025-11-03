@@ -157,6 +157,7 @@ const useInviteButtons = ({
                 return false;
             }
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-57A2AD
         [veventApi, veventIcs, attendee, organizer, config, onEmailSuccess, onEmailError]
     );
 
@@ -175,6 +176,7 @@ const useInviteButtons = ({
                 return false;
             }
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-59F45F
         [veventApi, veventIcs, attendee, api, calendarData]
     );
 
@@ -201,6 +203,7 @@ const useInviteButtons = ({
                 onCreateEventError(partstat, isProtonInvite, error);
             }
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-C49705
         [veventIcs, attendee, api, getCanonicalEmailsMap, calendarData, pmData, overwrite]
     );
 
@@ -230,6 +233,7 @@ const useInviteButtons = ({
                 onUpdateEventError(partstat, timestamp, isProtonInvite, error);
             }
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-9AA2B5
         [veventApi, veventIcs, attendee, api, calendarData, singleEditData]
     );
 
@@ -313,6 +317,7 @@ const useInviteButtons = ({
                 onSuccess(result);
             }
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-10AD8E
         [sendReplyEmail, createCalendarEvent, updateCalendarEvent, reinviteEventID, pmData, reencryptionData]
     );
 

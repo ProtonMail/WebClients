@@ -90,6 +90,7 @@ export const useApplyLabelsToAll = (setContainFocus?: Dispatch<SetStateAction<bo
 
             dispatch(layoutActions.setSelectAll(false));
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-A4D480
         [canUseOptimistic]
     );
 
