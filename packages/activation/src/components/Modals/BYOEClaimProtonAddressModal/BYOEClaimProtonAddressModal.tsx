@@ -163,11 +163,11 @@ const BYOEClaimProtonAddressModal = ({
                 <h1 className="text-center text-bold text-2xl">{title}</h1>
                 <p className="text-center color-weak">{description}</p>
 
-                <InputFieldStacked classname="mb-2">
+                <InputFieldStacked classname="mb-2 relative">
                     <InputFieldTwo
                         type="text"
-                        label={c('Label').t`Username`}
-                        className="rounded-none"
+                        label={<span className="expand-click-area">{c('Label').t`Username`}</span>}
+                        inputClassName="rounded-none"
                         autoFocus
                         unstyled
                         disabled={loadingAddressData}
