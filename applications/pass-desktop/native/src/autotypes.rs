@@ -7,6 +7,10 @@ use enigo::{
     Direction::{Click, Press, Release},
     Enigo, Key, Keyboard, Settings,
 };
+#[cfg(target_os = "linux")]
+use std::thread;
+#[cfg(target_os = "linux")]
+use std::time::Duration;
 
 pub struct Autotype {
     enigo: Enigo,
@@ -74,14 +78,25 @@ impl Autotype {
                 for (idx, field) in fields.iter().enumerate() {
                     clipboard.set().exclude_from_history().text(field)?;
                     self.paste()?;
+                    // Waiting to avoid race conditions between clipboard and pasting on slow PC
+                    thread::sleep(Duration::from_millis(100));
                     self.perform_separator(idx, fields_len, enter_at_the_end)?;
                 }
 
-                clipboard
-                    .set()
-                    .exclude_from_history()
-                    .wait()
-                    .text(initial_clipboard_value)?;
+                /* Restore clipboard in background thread to avoid blocking.
+                wait() is needed to keep the value in clipboard after the app quits
+                (see https://github.com/1Password/arboard#clipboard-ownership),
+                but it blocks the app until another process uses the clipboard */
+                std::thread::spawn(move || -> Result<()> {
+                    let mut clipboard = arboard::Clipboard::new()?;
+                    clipboard
+                        .set()
+                        .exclude_from_history()
+                        .wait()
+                        .text(initial_clipboard_value)?;
+                    Ok(())
+                });
+
                 Ok(())
             })?;
         }
