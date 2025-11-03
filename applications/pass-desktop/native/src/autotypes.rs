@@ -1,5 +1,3 @@
-#[cfg(target_os = "linux")]
-use crate::clipboards::{Clipboard, ClipboardTrait};
 use anyhow::{Error, Result};
 #[cfg(target_os = "linux")]
 use arboard::SetExtLinux;
@@ -71,34 +69,30 @@ impl Autotype {
         Related issue: https://github.com/enigo-rs/enigo/issues/404. */
         #[cfg(target_os = "linux")]
         {
-            Clipboard::chain(|clipboard| {
-                // Save current clipboard value to restore it after autotype is done
-                let initial_clipboard_value = clipboard.get_text().unwrap_or_default();
+            let mut clipboard = arboard::Clipboard::new()?;
+            // Save current clipboard value to restore it after autotype is done
+            let initial_clipboard_value = clipboard.get_text().unwrap_or_default();
 
-                for (idx, field) in fields.iter().enumerate() {
-                    clipboard.set().exclude_from_history().text(field)?;
-                    self.paste()?;
-                    // Waiting to avoid race conditions between clipboard and pasting on slow PC
-                    thread::sleep(Duration::from_millis(100));
-                    self.perform_separator(idx, fields_len, enter_at_the_end)?;
-                }
+            for (idx, field) in fields.iter().enumerate() {
+                clipboard.set().exclude_from_history().text(field)?;
+                self.paste()?;
+                // Waiting to avoid race conditions between clipboard and pasting on slow PC
+                thread::sleep(Duration::from_millis(100));
+                self.perform_separator(idx, fields_len, enter_at_the_end)?;
+            }
 
-                /* Restore clipboard in background thread to avoid blocking.
-                wait() is needed to keep the value in clipboard after the app quits
-                (see https://github.com/1Password/arboard#clipboard-ownership),
-                but it blocks the app until another process uses the clipboard */
-                std::thread::spawn(move || -> Result<()> {
-                    let mut clipboard = arboard::Clipboard::new()?;
-                    clipboard
-                        .set()
-                        .exclude_from_history()
-                        .wait()
-                        .text(initial_clipboard_value)?;
-                    Ok(())
-                });
-
+            /* Restore clipboard in background thread to avoid blocking.
+            wait() is needed to keep the value in clipboard after the app quits
+            (see https://github.com/1Password/arboard#clipboard-ownership),
+            but it blocks the app until another process uses the clipboard */
+            std::thread::spawn(move || -> Result<()> {
+                clipboard
+                    .set()
+                    .exclude_from_history()
+                    .wait()
+                    .text(initial_clipboard_value)?;
                 Ok(())
-            })?;
+            });
         }
 
         #[cfg(not(target_os = "linux"))]
