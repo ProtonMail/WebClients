@@ -147,6 +147,7 @@ enum DriveFeatureFlag {
     // SDK Migration
     DriveWebSDKRenameModal = 'DriveWebSDKRenameModal',
     DriveWebSDKMoveItemsModal = 'DriveWebSDKMoveItemsModal',
+    DriveWebSDKCopy = 'DriveWebSDKCopy',
     DriveWebSDKCreateFolderModal = 'DriveWebSDKCreateFolderModal',
     DriveWebSDKSharingModal = 'DriveWebSDKSharingModal',
     DriveWebSDKDevices = 'DriveWebSDKDevices',

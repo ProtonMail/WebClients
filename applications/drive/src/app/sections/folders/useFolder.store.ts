@@ -42,6 +42,7 @@ type FolderPermissions = {
     canCreateSheets: boolean;
     canShareNode: boolean;
     canMove: boolean;
+    canCopy: boolean;
     canRename: boolean;
     canTrash: boolean;
 };
@@ -91,6 +92,7 @@ const initialState: FolderState = {
         canCreateSheets: false,
         canShareNode: false,
         canMove: false,
+        canCopy: false,
         canRename: false,
         canTrash: false,
     },
