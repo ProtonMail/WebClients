@@ -150,6 +150,11 @@ const AccountStepPaymentSummary = ({
     const loading = loadingPaymentDetails || initialLoading;
     const loaderNode = <SkeletonLoader width="4em" index={0} />;
 
+    const asteriskPosition: 'full-price' | 'final-amount' =
+        // If it's custom billing then it means that user already has a subscription and buys an addon for it. That's why we
+        // want to show asterisk next to the full price instead of the final amount - because that will be the renewal amount.
+        options.checkResult.SubscriptionMode === SubscriptionMode.CustomBillings ? 'full-price' : 'final-amount';
+
     const priceBreakdown = (() => {
         const getPrice = (price: number) => {
             return <Price currency={subscriptionData.currency}>{price}</Price>;
@@ -169,7 +174,10 @@ const AccountStepPaymentSummary = ({
                                         <Price currency={subscriptionData.currency}>
                                             {currentCheckout.withDiscountPerCycle}
                                         </Price>
-                                        {!showAmountDue && showRenewalNotice && '*'}
+                                        {!showAmountDue &&
+                                            showRenewalNotice &&
+                                            asteriskPosition === 'final-amount' &&
+                                            '*'}
                                     </>
                                 )}
                             </>
@@ -182,7 +190,7 @@ const AccountStepPaymentSummary = ({
                                 {showAmountDue
                                     ? getPrice(currentCheckout.regularAmountPerCycle)
                                     : getPrice(currentCheckout.amountDue)}
-                                {!showAmountDue && showRenewalNotice && '*'}
+                                {!showAmountDue && showRenewalNotice && asteriskPosition === 'final-amount' && '*'}
                             </>
                         ),
                     bold: true,
@@ -271,14 +279,18 @@ const AccountStepPaymentSummary = ({
                 cycle={options.cycle}
                 summaryPlan={summaryPlan}
                 price={
-                    initialLoading
-                        ? loaderNode
-                        : getSimplePriceString(
-                              options.currency,
-                              isTrial
-                                  ? (options.checkResult.BaseRenewAmount ?? 0)
-                                  : currentCheckout.withDiscountPerMonth
-                          )
+                    initialLoading ? (
+                        loaderNode
+                    ) : (
+                        <>
+                            <Price currency={options.currency}>
+                                {isTrial
+                                    ? (options.checkResult.BaseRenewAmount ?? 0)
+                                    : currentCheckout.withDiscountPerMonth}
+                            </Price>
+                            {asteriskPosition === 'full-price' && '*'}
+                        </>
+                    )
                 }
                 regularPrice={
                     initialLoading
@@ -335,7 +347,7 @@ const AccountStepPaymentSummary = ({
                                             <Price currency={subscriptionData.currency}>
                                                 {options.checkResult.AmountDue}
                                             </Price>
-                                            {!isTrial && '*'}
+                                            {!isTrial && asteriskPosition === 'final-amount' && '*'}
                                         </>
                                     )}
                                 </span>
