@@ -5,6 +5,8 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 import { isBusy } from '@proton/shared/lib/shortcuts/calendar';
 
+import { useBookings } from '../containers/bookings/bookingsProvider/BookingsProvider';
+
 interface Props {
     showCommander: (state: boolean) => void;
     createEvent: () => void;
@@ -35,12 +37,14 @@ const useCalendarHotkeys = ({
     isDrawerApp,
 }: Props) => {
     const [mailSettings] = useMailSettings();
+    const { isBookingActive } = useBookings();
+
     const shortcutHandlers: HotkeyTuple[] = useMemo(
         () => [
             [
                 [KeyboardKey.N],
                 (e) => {
-                    if (mailSettings.Shortcuts && !isBusy(e) && !isDrawerApp) {
+                    if (!isBookingActive && mailSettings.Shortcuts && !isBusy(e) && !isDrawerApp) {
                         e.preventDefault();
                         createEvent();
                     }
@@ -67,7 +71,7 @@ const useCalendarHotkeys = ({
             [
                 [KeyboardKey.Two],
                 (e) => {
-                    if (mailSettings.Shortcuts && !isBusy(e) && !isDrawerApp) {
+                    if (!isBookingActive && mailSettings.Shortcuts && !isBusy(e) && !isDrawerApp) {
                         e.preventDefault();
                         showWeekView();
                     }
@@ -76,7 +80,7 @@ const useCalendarHotkeys = ({
             [
                 [KeyboardKey.Three],
                 (e) => {
-                    if (mailSettings.Shortcuts && !isBusy(e) && !isDrawerApp) {
+                    if (!isBookingActive && mailSettings.Shortcuts && !isBusy(e) && !isDrawerApp) {
                         e.preventDefault();
                         showMonthView();
                     }
@@ -103,7 +107,7 @@ const useCalendarHotkeys = ({
             [
                 [KeyboardKey.Meta, KeyboardKey.K],
                 (e) => {
-                    if (!isBusy(e) && !isDrawerApp) {
+                    if (!isBookingActive && !isBusy(e) && !isDrawerApp) {
                         e.preventDefault();
                         showCommander(true);
                     }
@@ -112,7 +116,7 @@ const useCalendarHotkeys = ({
             [
                 [KeyboardKey.Slash],
                 (e) => {
-                    if (mailSettings.Shortcuts && !isBusy(e) && !isDrawerApp) {
+                    if (!isBookingActive && mailSettings.Shortcuts && !isBusy(e) && !isDrawerApp) {
                         e.preventDefault();
                         focusSearchBar();
                     }
@@ -121,7 +125,7 @@ const useCalendarHotkeys = ({
             [
                 [KeyboardKey.QuestionMark],
                 (e) => {
-                    if (!isBusy(e) && !isDrawerApp) {
+                    if (!isBookingActive && !isBusy(e) && !isDrawerApp) {
                         e.preventDefault();
                         openShortcutModal();
                     }

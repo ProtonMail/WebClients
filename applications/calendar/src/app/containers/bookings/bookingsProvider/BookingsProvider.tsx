@@ -44,6 +44,7 @@ const getInitialBookingState = (): BookingFormData => {
         duration: scheduleOptions[0].value,
         timezone: localTimeZone,
         bookingSlots: [],
+        requiresPassword: false,
     };
 };
 
@@ -215,6 +216,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
                     bookingLink,
                     onClose: () => {
                         resetBookingState();
+                        setBookingsState(BookingState.OFF);
                     },
                 },
             });
