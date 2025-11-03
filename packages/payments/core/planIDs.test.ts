@@ -7,6 +7,7 @@ import type { PlanIDs } from './interface';
 import { getPlanNameFromIDs } from './plan/helpers';
 import {
     clearPlanIDs,
+    getAddonsFromIDs,
     getPlanFromIDs,
     hasPlanIDs,
     planIDsPositiveDifference,
@@ -645,6 +646,44 @@ describe('switchPlan', () => {
             [ADDON_NAMES.MEMBER_LUMO_BUSINESS]: 1,
         });
     });
+
+    it('should transfer the new addons', () => {
+        expect(
+            switchPlan({
+                subscription: buildSubscription(PLANS.FAMILY),
+                newPlanIDs: {
+                    [PLANS.BUNDLE_PRO_2024]: 1,
+                    [ADDON_NAMES.LUMO_BUNDLE_PRO_2024]: 1,
+                },
+                organization: {
+                    ...MOCK_ORGANIZATION,
+                    UsedAI: 1,
+                },
+                plans: getLongTestPlans(),
+            })
+        ).toEqual({
+            [PLANS.BUNDLE_PRO_2024]: 1,
+            [ADDON_NAMES.LUMO_BUNDLE_PRO_2024]: 1,
+        });
+
+        expect(
+            switchPlan({
+                subscription: buildSubscription(PLANS.FAMILY),
+                newPlanIDs: {
+                    [PLANS.BUNDLE_PRO_2024]: 1,
+                    [ADDON_NAMES.LUMO_BUNDLE_PRO_2024]: 1,
+                },
+                organization: {
+                    ...MOCK_ORGANIZATION,
+                    UsedAI: 2,
+                },
+                plans: getLongTestPlans(),
+            })
+        ).toEqual({
+            [PLANS.BUNDLE_PRO_2024]: 1,
+            [ADDON_NAMES.LUMO_BUNDLE_PRO_2024]: 2,
+        });
+    });
 });
 
 describe('getPlanNameFromIDs', () => {
@@ -767,5 +806,19 @@ describe('planIDsPositiveDifference', () => {
         const planIDs = { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_MAIL_PRO]: 2 };
         const newPlanIDs = { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_MAIL_PRO]: 1 };
         expect(planIDsPositiveDifference(planIDs, newPlanIDs)).toEqual({});
+    });
+});
+
+describe('getAddonsFromIDs', () => {
+    it('should return the correct addons from planIDs', () => {
+        const planIDs: PlanIDs = { [PLANS.BUNDLE_PRO_2024]: 1, [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 1 };
+        const result = getAddonsFromIDs(planIDs);
+        expect(result).toEqual({ [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 1 });
+    });
+
+    it('should return empty object if there are no addons', () => {
+        const planIDs: PlanIDs = { [PLANS.BUNDLE_PRO_2024]: 1 };
+        const result = getAddonsFromIDs(planIDs);
+        expect(result).toEqual({});
     });
 });
