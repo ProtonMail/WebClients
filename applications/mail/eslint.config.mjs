@@ -9,8 +9,7 @@ export default defineConfig([
             'no-console': 'off',
             'no-nested-ternary': 'off',
             '@typescript-eslint/no-misused-promises': 'off',
-            // TODO: Fix exhaustiveness of deps then enable this rule
-            'react-hooks/exhaustive-deps': 'off',
+            'react-hooks/exhaustive-deps': 'error',
             'no-restricted-syntax': [
                 'error',
                 {
