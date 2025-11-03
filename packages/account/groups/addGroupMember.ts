@@ -4,7 +4,7 @@ import { CryptoProxy, type PrivateKeyReference, type PublicKeyReference } from '
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { addGroupMember as addGroupMemberApi } from '@proton/shared/lib/api/groups';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { MEMBER_PRIVATE, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
+import { ADDRESS_STATUS, MEMBER_PRIVATE, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
 import { getIsEncryptionDisabled } from '@proton/shared/lib/helpers/address';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import type { Address, ApiKeysConfig, CachedOrganizationKey, EnhancedMember } from '@proton/shared/lib/interfaces';
@@ -166,7 +166,11 @@ export const addGroupMemberThunk = ({
 
         const canonicalEmail = canonicalizeInternalEmail(email);
         const member = members.find((member) =>
-            member.Addresses?.some((address) => canonicalizeInternalEmail(address.Email) === canonicalEmail)
+            member.Addresses?.some(
+                (address) =>
+                    address.Status === ADDRESS_STATUS.STATUS_ENABLED &&
+                    canonicalizeInternalEmail(address.Email) === canonicalEmail
+            )
         );
 
         const forwarderKey = await dispatch(getGroupKey({ groupAddress }));
