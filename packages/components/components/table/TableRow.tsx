@@ -1,8 +1,10 @@
 import type { HTMLAttributes, ReactNode } from 'react';
 import { forwardRef } from 'react';
 
-import Cell from './Cell';
+import { Cell } from './Cell';
 import TableCell from './TableCell';
+
+import './TableRow.scss';
 
 interface Props extends HTMLAttributes<HTMLTableRowElement> {
     labels?: ReactNode[];
@@ -16,7 +18,10 @@ const TableRow = forwardRef<HTMLTableRowElement, Props>(({ labels = [], cells = 
             {children ||
                 cells.map((cell, index) => (
                     <TableCell
-                        key={index.toString()}
+                        key={
+                            /* eslint-disable-next-line react/no-array-index-key */
+                            index.toString()
+                        }
                         label={labels[index]}
                         colSpan={cell instanceof Cell ? cell.colSpan : undefined}
                         rowSpan={cell instanceof Cell ? cell.rowSpan : undefined}
