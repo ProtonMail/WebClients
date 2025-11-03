@@ -819,7 +819,8 @@ const Step1B = ({
         }
     };
 
-    const isBlackFriday = getHas2025OfferCoupon(options.checkResult.Coupon?.Code);
+    const isBlackFriday =
+        getHas2025OfferCoupon(options.checkResult.Coupon?.Code) || getHas2025OfferCoupon(couponUrlParam);
 
     // const isCyberWeekPeriod = getIsCyberWeekPeriod();
     // const isBlackFridayPeriod = getIsBlackFridayPeriod();
@@ -1175,18 +1176,20 @@ const Step1B = ({
                     </div>
                 )}
                 {(() => {
-                    if (!actualCheckout.discountPercent) {
+                    if (!actualCheckout.discountPercent || checkTrial) {
                         return;
                     }
 
-                    if (checkTrial) {
-                        return;
+                    const sharedClasses = 'mb-2';
+                    if (model.loadingDependencies) {
+                        return <SkeletonLoader height="2.5rem" width="30rem" className={sharedClasses} />;
                     }
 
                     return (
                         <DiscountBanner
                             discountPercent={actualCheckout.discountPercent}
                             selectedPlanTitle={selectedPlan.Title}
+                            className={sharedClasses}
                         />
                     );
                 })()}
