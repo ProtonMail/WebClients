@@ -22,6 +22,7 @@ import {
     type Subscription,
     type SubscriptionCheckResponse,
     type SubscriptionPlan,
+    getAddonsFromIDs,
     getFreeCheckResult,
     getHas2025OfferCoupon,
     getHasPlusPlan,
@@ -210,6 +211,7 @@ const getDefaultUpsellData = ({
 }) => {
     return {
         plan: undefined,
+        addons: undefined,
         unlockPlan: plansMap[getUnlockPlanName(toApp)],
         currentPlan,
         mode: UpsellTypes.PLANS,
@@ -218,12 +220,16 @@ const getDefaultUpsellData = ({
 };
 
 const getUpsellDataHelper = (
-    plan: PLANS | ADDON_NAMES | undefined,
+    planIDs: PlanIDs | undefined,
     plansMap: PlansMap,
     defaultUpsellData: ReturnType<typeof getDefaultUpsellData>
 ) => {
+    const plan = planIDs ? getPlanNameFromIDs(planIDs) : undefined;
+    const addons = getAddonsFromIDs(planIDs ?? {});
+
     return {
         ...defaultUpsellData,
+        addons: Object.keys(addons).length > 0 ? addons : undefined,
         plan: plan ? plansMap[plan] : undefined,
         mode: UpsellTypes.UPSELL,
     };
@@ -284,8 +290,8 @@ const getUpsell = ({
         };
     };
 
-    const getUpsellData = (plan: PLANS | ADDON_NAMES) => {
-        return getUpsellDataHelper(plan, plansMap, noUpsell);
+    const getUpsellData = (planIDs: PlanIDs = planParameters.planIDs) => {
+        return getUpsellDataHelper(planIDs, plansMap, noUpsell);
     };
 
     if (user && hasPassLifetime(user) && isLifetimePlanSelected(options.planIDs ?? {})) {
@@ -302,7 +308,7 @@ const getUpsell = ({
         }
 
         if (planParameters.plan.Name === PLANS.VISIONARY) {
-            return getUpsellData(planParameters.plan.Name);
+            return getUpsellData();
         }
 
         if (getHas2025OfferCoupon(options.coupon)) {
@@ -334,7 +340,7 @@ const getUpsell = ({
         } else {
             if (audience === Audience.B2B) {
                 if (getIsProductB2BPlan(planParameters.plan.Name) || getIsBundleB2BPlan(planParameters.plan.Name)) {
-                    return getUpsellData(planParameters.plan.Name);
+                    return getUpsellData();
                 }
                 return noUpsell;
             } else {
@@ -342,27 +348,27 @@ const getUpsell = ({
                     if (
                         hasSelectedPlan(planParameters.plan, [PLANS.PASS_FAMILY, PLANS.BUNDLE, PLANS.DUO, PLANS.FAMILY])
                     ) {
-                        return getUpsellData(planParameters.plan.Name);
+                        return getUpsellData();
                     }
-                    return getUpsellData(PLANS.BUNDLE);
+                    return getUpsellData({ [PLANS.BUNDLE]: 1 });
                 }
 
                 if (currentPlan.Name === PLANS.BUNDLE) {
                     if (hasSelectedPlan(planParameters.plan, [PLANS.DUO, PLANS.FAMILY])) {
-                        return getUpsellData(planParameters.plan.Name);
+                        return getUpsellData();
                     }
-                    return getUpsellData(PLANS.DUO);
+                    return getUpsellData({ [PLANS.DUO]: 1 });
                 }
 
                 if (currentPlan.Name === PLANS.PASS_FAMILY || currentPlan.Name === PLANS.DUO) {
                     if (hasSelectedPlan(planParameters.plan, [PLANS.DUO, PLANS.FAMILY])) {
-                        return getUpsellData(planParameters.plan.Name);
+                        return getUpsellData();
                     }
-                    return getUpsellData(PLANS.FAMILY);
+                    return getUpsellData({ [PLANS.FAMILY]: 1 });
                 }
 
                 if (getIsProductB2BPlan(currentPlan.Name) && !getIsBundleB2BPlan(planParameters.plan.Name)) {
-                    return getUpsellData(PLANS.BUNDLE_PRO_2024);
+                    return getUpsellData({ [PLANS.BUNDLE_PRO_2024]: 1 });
                 }
             }
         }
@@ -484,7 +490,7 @@ export const getUpdatedPlanIDs = ({
 
     if (planTransitionForbidden?.type === 'plus-to-plus') {
         const upsell = getUpsellDataHelper(
-            PLANS.BUNDLE,
+            { [PLANS.BUNDLE]: 1 },
             plansMap,
             getDefaultUpsellData({
                 plansMap,
@@ -658,7 +664,10 @@ export const getUserInfo = async ({
             ...upsell.subscriptionOptions,
             planIDs: switchPlan({
                 subscription,
-                newPlan: upsell.plan.Name,
+                newPlanIDs: {
+                    [upsell.plan.Name]: 1,
+                    ...upsell.addons,
+                },
                 organization,
                 plans,
             }),

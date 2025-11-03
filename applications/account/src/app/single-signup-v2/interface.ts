@@ -135,6 +135,7 @@ export interface Options {
 export interface Upsell {
     mode: UpsellTypes;
     plan: Plan | undefined;
+    addons: PlanIDs | undefined;
     unlockPlan: Plan | undefined;
     currentPlan: SubscriptionPlan | undefined;
     subscriptionOptions: Partial<Options>;
