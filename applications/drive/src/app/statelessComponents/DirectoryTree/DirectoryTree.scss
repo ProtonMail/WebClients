@@ -1,0 +1,11 @@
+// Creates background on hover
+// Can't be done with normal CSS because parent element visually indent the component
+.directory-tree-node:hover::before {
+	content: '';
+	position: absolute;
+	inset-inline-start: 0;
+	inline-size: 100%;
+	block-size: 2.25rem;
+	background: var(--background-weak);
+	z-index: -2;
+}
