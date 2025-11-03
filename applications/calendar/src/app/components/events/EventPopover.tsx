@@ -43,6 +43,7 @@ import { getIsCalendarAppInDrawer } from '../../helpers/views';
 import { useSendCalendarInviteTelemetry } from '../../hooks/useSendCalendarInviteTelemetry';
 import type { InviteActions } from '../../interfaces/Invite';
 import { INVITE_ACTION_TYPES } from '../../interfaces/Invite';
+import { getEventReadResult } from '../../store/events/eventsCache';
 import PopoverContainer from './PopoverContainer';
 import PopoverEventContent from './PopoverEventContent';
 import PopoverFooter from './PopoverFooter';
@@ -119,7 +120,8 @@ const EventPopover = ({
     const [loadingRefresh, withLoadingRefresh] = useLoading();
 
     const targetEventData = targetEvent?.data || {};
-    const { eventReadResult, eventData, calendarData, eventRecurrence } = targetEventData;
+    const { eventData, calendarData, eventRecurrence } = targetEventData;
+    const eventReadResult = getEventReadResult(targetEvent.uniqueId);
     const [calendarBootstrap] = useCalendarBootstrap(calendarData.ID);
     const [{ veventComponent }] = eventReadResult?.result || [{}];
     const isCalendarDisabled = getIsCalendarDisabled(calendarData);
