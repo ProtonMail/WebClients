@@ -40,15 +40,7 @@ export type HydrationResult = { fromCache: boolean; version?: string };
  * boolean flag indicating wether hydration happened from cache or not. */
 export function* hydrate(
     config: HydrateCacheOptions,
-    {
-        getCache,
-        getAuthService,
-        getAuthStore,
-        getSettings,
-        getConfig,
-        onBeforeHydrate,
-        onSettingsUpdated,
-    }: RootSagaOptions
+    { getCache, getAuthService, getAuthStore, getSettings, getConfig, onBeforeHydrate, onSettingsUpdated }: RootSagaOptions
 ): Generator<any, HydrationResult> {
     try {
         const authStore = getAuthStore();
@@ -62,9 +54,7 @@ export function* hydrate(
             ? yield decryptCache(cacheKey, encryptedCache).catch((err) => (allowFailure ? undefined : throwError(err)))
             : undefined;
 
-        const cachedState = cache?.state
-            ? migrate(cache.state, { from: encryptedCache.version, to: getConfig().APP_VERSION })
-            : undefined;
+        const cachedState = cache?.state ? migrate(cache.state, { from: encryptedCache.version, to: getConfig().APP_VERSION }) : undefined;
 
         const cachedUser = cachedState?.user;
         const snapshot = cache?.snapshot;
@@ -107,7 +97,10 @@ export function* hydrate(
             if (autofill.login === undefined) autofill.login = autofillEnabled;
             if (autofill.identity === undefined) autofill.identity = autofillEnabled;
             if (autofill.twofa === undefined) autofill.twofa = autofill.login;
-            if (autofill.cc === undefined) autofill.cc = userState.features.PassCreditCardWebAutofill ?? false;
+
+            /** Auto-enable CC when feature flag is enabled */
+            if (!userState.features.PassCreditCardWebAutofill && autofill.cc) autofill.cc = undefined;
+            else if (autofill.cc === undefined) autofill.cc = true;
         }
 
         /** Activate offline mode by default for paid users who
@@ -125,9 +118,7 @@ export function* hydrate(
         const incoming = { user: userState, settings, organization };
         const currentState: State = yield select();
 
-        const prev = cachedState
-            ? config.merge(currentState, partialMerge(cachedState, incoming))
-            : partialMerge(currentState, incoming);
+        const prev = cachedState ? config.merge(currentState, partialMerge(cachedState, incoming)) : partialMerge(currentState, incoming);
 
         const next: State = yield (onBeforeHydrate ?? identity)(prev, fromCache);
 
