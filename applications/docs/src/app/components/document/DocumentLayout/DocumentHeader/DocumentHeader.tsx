@@ -227,7 +227,7 @@ function DocsHeaderForDocument({
 function ViewOnlyPill() {
   return (
     <PopoverPill
-      alignment="center"
+      placement="bottom"
       title={
         <div className="flex gap-2" data-testid="changes-info-e2e-encrypted">
           <Icon name="eye" className="h-6 w-6 fill-current" />
