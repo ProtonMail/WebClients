@@ -6,6 +6,7 @@ import { useFlag } from '@proton/unleash';
 
 import { BookingDetails } from './components/BookingDetails/BookingDetails';
 import { BookingPageLayout } from './components/BookingPageLaout';
+import { BookingSuccess } from './components/BookingSuccess';
 import { NoMatch, Reason } from './components/NoMatch';
 
 export const BookingsRouter = () => {
@@ -25,6 +26,7 @@ export const BookingsRouter = () => {
         <BookingPageLayout>
             <Switch>
                 <Route path="/" exact component={BookingDetails} />
+                <Route path="/success" exact component={BookingSuccess} />
                 <Route>
                     <NoMatch reason={Reason.notFound} />
                 </Route>
