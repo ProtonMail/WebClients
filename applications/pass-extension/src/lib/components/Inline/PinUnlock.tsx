@@ -1,4 +1,4 @@
-import type { FC, ReactNode } from 'react';
+import { type FC, type ForwardRefRenderFunction, type ReactNode, forwardRef } from 'react';
 
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { PinCodeInput } from '@proton/pass/components/Lock/PinCodeInput';
@@ -10,12 +10,12 @@ import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { clientSessionLocked } from '@proton/pass/lib/client';
 import type { MaybeNull } from '@proton/pass/types';
 
-import { useIFrameAppState } from './IFrameApp';
+export type Props = { header?: ReactNode; onUnlock?: () => void; autoFocus?: boolean };
 
-export type Props = { header?: ReactNode; onUnlock?: () => void };
-
-export const PinUnlock: FC<Props> = ({ header, onUnlock }) => {
-    const { visible } = useIFrameAppState();
+const PinUnlockRender: ForwardRefRenderFunction<HTMLInputElement, Props> = (
+    { autoFocus, header, onUnlock },
+    focusRef
+) => {
     const [value, setValue] = useMountedState<string>('');
     const [loading, setLoading] = useMountedState<boolean>(false);
     const [error, setError] = useMountedState<MaybeNull<string>>(null);
@@ -44,11 +44,20 @@ export const PinUnlock: FC<Props> = ({ header, onUnlock }) => {
     return (
         <div className="flex-auto px-4 py-3">
             {header}
-            <PinCodeInput key={key} loading={loading} value={value} onValue={setValue} autoFocus={visible} />
+            <PinCodeInput
+                key={key}
+                loading={loading}
+                value={value}
+                onValue={setValue}
+                autoFocus={autoFocus}
+                ref={focusRef}
+            />
             {error && <div className="text-center text-sm color-danger mt-3">{error}</div>}
         </div>
     );
 };
+
+export const PinUnlock = forwardRef(PinUnlockRender);
 
 export const WithPinUnlock: FC<Props & { children: (locked: boolean, input: ReactNode) => ReactNode }> = ({
     children,

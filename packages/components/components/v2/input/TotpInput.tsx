@@ -173,7 +173,11 @@ const TotpInput: ForwardRefRenderFunction<HTMLInputElement, TotpInputProps> = (
                             ref={(ref) => {
                                 refArray.current[i] = ref;
                                 if (focusRef && focusIndex === i) {
-                                    (focusRef as MutableRefObject<HTMLInputElement | null>).current = ref;
+                                    if (typeof focusRef === 'function') {
+                                        focusRef(ref);
+                                    } else {
+                                        (focusRef as MutableRefObject<HTMLInputElement | null>).current = ref;
+                                    }
                                 }
                             }}
                             value={value}
