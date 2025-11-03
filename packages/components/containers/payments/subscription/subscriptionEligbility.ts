@@ -2,6 +2,7 @@ import {
     type ADDON_NAMES,
     COUPON_CODES,
     CYCLE,
+    type FreeSubscription,
     PLANS,
     type Plan,
     type PlansMap,
@@ -13,7 +14,8 @@ import {
     isFreeSubscription,
     isPlanEnabled,
 } from '@proton/payments';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { User, UserModel } from '@proton/shared/lib/interfaces';
+import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
 
 import type { OfferConfig } from '../../offers/interface';
 
@@ -88,6 +90,19 @@ interface Combination {
     result: () => Eligibility;
 }
 
+export const canBuyPassLifetime = (
+    user: User | undefined,
+    subscription: Subscription | FreeSubscription | undefined
+) => {
+    const currentPlan = getPlan(subscription);
+
+    return (
+        !getIsB2BAudienceFromSubscription(subscription) &&
+        ![PLANS.PASS_FAMILY].includes(currentPlan?.Name as PLANS) &&
+        (!user || !hasPassLifetime(user))
+    );
+};
+
 export const getEligibility = ({
     user,
     offer,
@@ -96,7 +111,7 @@ export const getEligibility = ({
     eligibleBlackFridayConfigs,
 }: {
     user: UserModel;
-    subscription: Subscription | undefined;
+    subscription: Subscription | FreeSubscription | undefined;
     offer: { plan: Plan; cycle: CYCLE; coupon?: string };
     plansMap: PlansMap;
     eligibleBlackFridayConfigs: OfferConfig[];
@@ -104,8 +119,6 @@ export const getEligibility = ({
     if (!user.canPay) {
         return { type: 'sub-user' };
     }
-
-    const currentPlan = getPlan(subscription);
 
     const latest = subscription?.UpcomingSubscription ?? subscription;
     const latestPlan = latest ? getPlan(latest) : undefined;
@@ -236,10 +249,7 @@ export const getEligibility = ({
     }
 
     if (offer.plan.Name === PLANS.PASS_LIFETIME) {
-        const isEligibilePlan =
-            !getIsB2BAudienceFromSubscription(subscription) &&
-            ![PLANS.PASS_FAMILY].includes(currentPlan?.Name as PLANS) &&
-            !user.hasPassLifetime;
+        const isEligibilePlan = canBuyPassLifetime(user, subscription);
 
         if (isEligibilePlan) {
             return okResult();
