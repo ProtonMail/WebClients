@@ -1,6 +1,16 @@
-import { addHours } from 'date-fns';
+import { addHours, isFriday, isMonday, isWeekend } from 'date-fns';
 
-import { JSONFormatData, JSONFormatTextData, generateSlotsFromRange, validateFormData } from './bookingHelpers';
+import type { UserSettings } from '@proton/shared/lib/interfaces';
+import { SETTINGS_WEEK_START } from '@proton/shared/lib/interfaces';
+
+import {
+    JSONFormatData,
+    JSONFormatTextData,
+    generateDefaultBookingRange,
+    generateSlotsFromRange,
+    validateFormData,
+} from './bookingHelpers';
+import type { BookingRange } from './bookingsProvider/interface';
 import { type BookingFormData, BookingLocation } from './bookingsProvider/interface';
 
 describe('booking helpers', () => {
@@ -164,6 +174,54 @@ describe('booking helpers', () => {
             expect(result).toEqual({
                 type: 'warning',
             });
+        });
+    });
+
+    describe('generateDefaultBookingRange', () => {
+        beforeEach(() => {
+            jest.useFakeTimers();
+            // This is a Thursday
+            jest.setSystemTime(new Date('2026-01-15T10:30:00Z'));
+        });
+
+        afterEach(() => {
+            jest.useRealTimers();
+        });
+
+        const checks = (res: BookingRange[]) => {
+            // Five elements each representing a day of the work week
+            expect(res.length).toBe(5);
+
+            // First element should be a Monday
+            expect(res[0].start).toEqual(new Date('2026-01-12T08:00:00Z'));
+            expect(res[0].end).toEqual(new Date('2026-01-12T16:00:00Z'));
+            expect(isMonday(res[0].start)).toBe(true);
+
+            // Last element should be a Friday
+            expect(res[4].start).toEqual(new Date('2026-01-16T08:00:00Z'));
+            expect(res[4].end).toEqual(new Date('2026-01-16T16:00:00Z'));
+            expect(isFriday(res[4].start)).toBe(true);
+
+            // No weekend elements
+            expect(res.every((b) => !isWeekend(b.start))).toBe(true);
+        };
+
+        it('should return the correct range when week starts on Monday', () => {
+            const userSettings = { WeekStart: SETTINGS_WEEK_START.MONDAY } as UserSettings;
+            const res = generateDefaultBookingRange(userSettings, 'Europe/Zurich');
+            checks(res);
+        });
+
+        it('should return the correct range when week starts on Saturday', () => {
+            const userSettings = { WeekStart: SETTINGS_WEEK_START.SATURDAY } as UserSettings;
+            const res = generateDefaultBookingRange(userSettings, 'Europe/Zurich');
+            checks(res);
+        });
+
+        it('should return the correct range when week starts on Sunday', () => {
+            const userSettings = { WeekStart: SETTINGS_WEEK_START.SUNDAY } as UserSettings;
+            const res = generateDefaultBookingRange(userSettings, 'Europe/Zurich');
+            checks(res);
         });
     });
 });
