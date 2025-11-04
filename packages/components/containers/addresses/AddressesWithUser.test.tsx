@@ -7,7 +7,7 @@ import { orderAddresses } from '@proton/account/addresses/actions';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import OrderableTable from '@proton/components/components/orderableTable/OrderableTable';
+import { SortableList } from '@proton/components/components/dnd/SortableList';
 import useAddressFlags from '@proton/components/hooks/useAddressFlags';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -41,9 +41,9 @@ const mockedUseDispatch = useDispatch as jest.MockedFunction<typeof useDispatch>
 
 jest.mock('@proton/shared/lib/helpers/upsell.ts', () => ({ __esModule: true, getUpsellRef: () => '' }));
 
-jest.mock('@proton/components/components/orderableTable/OrderableTable');
-const ActualOrderableTable = jest.requireActual('@proton/components/components/orderableTable/OrderableTable').default;
-const mockedOrderableTable = OrderableTable as jest.MockedFunction<typeof OrderableTable>;
+jest.mock('@proton/components/components/dnd/SortableList');
+const ActualSortableList = jest.requireActual('@proton/components/components/dnd/SortableList').SortableList;
+const mockedSortableList = SortableList as jest.MockedFunction<typeof SortableList>;
 
 jest.mock('@proton/account/addresses/hooks');
 const mockedUseAddresses = useAddresses as jest.MockedFunction<typeof useAddresses>;
@@ -121,7 +121,7 @@ describe('addresses with user', () => {
     ] as Address[];
 
     mockedUseAddresses.mockReturnValue([addresses, false]);
-    mockedOrderableTable.mockImplementation(ActualOrderableTable);
+    mockedSortableList.mockImplementation(ActualSortableList);
     mockedUseNotifications.mockReturnValue({} as any);
     mockedUseUser.mockReturnValue([user] as any);
     mockedUseAddressesKeys.mockReturnValue([{}] as any);
@@ -163,10 +163,10 @@ describe('addresses with user', () => {
         const setup = () => {
             const createNotification = jest.fn();
             mockedUseNotifications.mockReturnValue({ createNotification } as any);
-            let onSortEnd: ComponentPropsWithoutRef<typeof OrderableTable>['onSortEnd'];
-            mockedOrderableTable.mockImplementation((props) => {
+            let onSortEnd: ComponentPropsWithoutRef<typeof SortableList>['onSortEnd'];
+            mockedSortableList.mockImplementation((props) => {
                 onSortEnd = props.onSortEnd;
-                return <ActualOrderableTable {...props} />;
+                return <ActualSortableList {...props} />;
             });
             const handleSortEnd: typeof onSortEnd = (...args) => {
                 onSortEnd?.(...args);
@@ -178,7 +178,7 @@ describe('addresses with user', () => {
             const { onSortEnd, createNotification } = setup();
             const { container } = render(<AddressesWithUser user={user} allowAddressDeletion={false} />);
 
-            onSortEnd({ newIndex: 0, oldIndex: 2 } as any, {} as any);
+            onSortEnd({ newIndex: 0, oldIndex: 2 });
             expect(createNotification).toHaveBeenCalledWith({
                 type: 'error',
                 text: 'An external address cannot be default',
@@ -190,7 +190,7 @@ describe('addresses with user', () => {
             const { onSortEnd, createNotification } = setup();
             const { container } = render(<AddressesWithUser user={user} allowAddressDeletion={false} />);
 
-            onSortEnd({ newIndex: 0, oldIndex: 3 } as any, {} as any);
+            onSortEnd({ newIndex: 0, oldIndex: 3 });
             expect(createNotification).toHaveBeenCalledWith({
                 type: 'error',
                 text: 'A disabled address cannot be default',
