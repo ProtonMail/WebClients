@@ -1719,8 +1719,8 @@
         "${ price } per gebruiker"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } ${ LUMO_APP_NAME } zitplaats",
-        "${ seats } ${ LUMO_APP_NAME } zitplaatsen"
+        "${ seats } ${ LUMO_APP_NAME } plaats",
+        "${ seats } ${ LUMO_APP_NAME } plaatsen"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } plaats voor schrijfassistent",
@@ -2385,7 +2385,7 @@
         "${ participantName } vroeg om de laatste afspraakupdates."
       ],
       "${ participantName } asked for the latest updates to an event which does not exist anymore. You have no calendars.": [
-        "${ participantName } vroeg om de laatste updates voor een afspraak die niet meer bestaat. U hebt geen kalenders."
+        "${ participantName } vroeg om de laatste updates voor een afspraak die niet meer bestaat. U heeft geen agenda's."
       ],
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
         "${ participantName } vroeg om de laatste updates voor een afspraak die niet meer bestaat in uw agenda."
@@ -2475,7 +2475,7 @@
         "${ participantName } had een nieuwe tijd voorgesteld voor één herhaling van deze afspraak. Dit voorstel is verouderd."
       ],
       "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date. The event does not exist in your calendar anymore.": [
-        "${ participantName } had een nieuwe tijd voorgesteld voor één herhaling van deze gebeurtenis. Dit voorstel is verouderd. De afspraak bestaat niet meer in uw kalender."
+        "${ participantName } had een nieuwe tijd voorgesteld voor één herhaling van deze gebeurtenis. Dit voorstel is verouderd. De afspraak bestaat niet meer in uw agenda."
       ],
       "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date. You have no calendars.": [
         "${ participantName } had een nieuwe tijd voorgesteld voor één herhaling van deze gebeurtenis. Dit voorstel is verouderd. U heeft geen agenda's."
@@ -2574,7 +2574,7 @@
         "Dit nieuwe tijdsvoorstel komt niet overeen met uw uitnodigingsdetails. Controleer de uitnodigingsdetails in uw agenda."
       ],
       "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "Deze reactie komt niet overeen met uw uitnodigingsgegevens. Controleer de uitnodigingsgegevens in uw agenda."
+        "Dit antwoord komt niet overeen met uw uitnodigingsgegevens. Controleer de uitnodigingsgegevens in uw agenda."
       ],
       "This response is out of date.": [
         "Dit antwoord is achterhaald."
@@ -4613,7 +4613,7 @@
         "Fout in de volgende voorwaarden"
       ],
       "Error while saving draft. Please try again.": [
-        "Fout bij het opslaan van concept. Gelieve opnieuw te proberen."
+        "Fout bij het opslaan van concept. Probeer opnieuw."
       ],
       "Error while sending the message. Message is not sent.": [
         "Fout tijdens het versturen van het bericht. Bericht is niet verzonden."
@@ -4622,7 +4622,7 @@
         "Fout tijdens het uploaden van bijlagen. Bericht is niet verzonden."
       ],
       "Failed to encrypt attachment. Please try again.": [
-        "Fout tijdens het versleutelen van de bijlage. Probeer alstublieft opnieuw."
+        "Fout tijdens het versleutelen van de bijlage. Probeer opnieuw."
       ],
       "Failed to load the STL preview": [
         "Fout bij het laden van de STL-preview"
@@ -5429,7 +5429,7 @@
         "U heeft onbetaalde facturen. Betaal deze voordat u zich aansluit bij een Family-abonnement"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "U bent uitgenodigd om uw ${ BRAND_NAME } account te linken aan dit familieplan en samen te genieten van de premium functies van ${ brandOrAppName }."
+        "U bent uitgenodigd om uw ${ BRAND_NAME } account te linken aan dit familieplan en samen te genieten van de premiumfuncties van ${ brandOrAppName }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Uw account heeft meer e-mailadressen dan is toegestaan in dit abonnement. ${ addressSettingsLink }"
@@ -5465,7 +5465,7 @@
         "Uw gezin configureren"
       ],
       "Set up your family account": [
-        "Stel je familie account in"
+        "Stel uw familieaccount in"
       ]
     },
     "familyOffer_2023:Title": {
@@ -6605,7 +6605,7 @@
         "**Automatisch Verbinden**: Opent en verbindt met VPN zodra u uw apparaat aan zet."
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
-        "**Kill switch**: Stop datalekken door uw internet te blokkeren als uw VPN-verbinding onverwachts stopt."
+        "**IP-beveiliging**: Stop datalekken door uw internet te blokkeren als uw VPN-verbinding onverwachts stopt."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Stap 1:** Nodig uw vrienden uit voor ${ BRAND_NAME } met uw verwijzingssnelkoppeling."
@@ -6649,9 +6649,6 @@
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Toegang tot 6 500+ hoge snelheid servers op maximaal 10 apparaten om uw surfgegevens veilig te houden. Beschikbaar op ${ ios }, ${ android }, ${ appleTV }en ${ desktop }."
-      ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Toegang tot dit account is beperkt vanwege onbetaalde facturen. Neem contact op met uw beheerder."
       ],
       "Account successfully updated": [
         "Account succesvol bijgewerkt"
@@ -6894,7 +6891,7 @@
         "Het wissen van browsergegevens deactiveert ook het zoeken naar berichteninhoud op dit toestel. Alle berichten zullen opnieuw moeten worden gedownload om erin te kunnen zoeken."
       ],
       "Clears browser data (including downloaded messages, …)": [
-        "Wist browsergegevens (inclusief gedownloade berichten, …)"
+        "Wist browsergegevens (inclusief gedownloade berichten…)"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
@@ -6995,7 +6992,7 @@
         "Dedicated servers"
       ],
       "Dedicated VPN servers": [
-        "Dedicated VPN-servers"
+        "Specifieke VPN-servers"
       ],
       "default email address": [
         "standaard e-mailadres"
@@ -7774,7 +7771,7 @@
         "E-mail afdrukken"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
-        "Privé browsen (of \"incognito\" modus) is alleen handig om uw activiteit verborgen te houden op uw apparaat. Het stopt je browser om geschiedenis en cookies op te slaan, maar het maakt je niet onzichtbaar. Uw ISP, netwerkbeheerder en de websites die u bezoekt kunnen nog steeds zien wat u online doet."
+        "Privé browsen (of \"incognito\" modus) is alleen handig om uw activiteit verborgen te houden op uw apparaat. Het stopt uw browser om geschiedenis en cookies op te slaan, maar het maakt u niet onzichtbaar. Uw ISP, netwerkbeheerder en de websites die u bezoekt kunnen nog steeds zien wat u online doet."
       ],
       "Proofread selection": [
         "Selectie proeflezen"
@@ -8669,20 +8666,11 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Uw ${ BRAND_NAME } account is momenteel opgeschort. Na 28 dagen zullen e-mails niet meer afgeleverd worden in uw postvak-in, de deelkoppelingen van uw Drive zullen worden geblokkeerd, en u zal geen nieuwe bestanden meer kunnen opladen. Om normale diensten te hervatten dient u alle achterstallige facturen te betalen."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Uw ${ BRAND_NAME }-account is momenteel geblokkeerd. E-mails worden niet langer geleverd in uw inbox. Uw gedeelde Drive-links zijn niet langer actief en u kan geen nieuwe bestanden uploaden. Om uw account te blijven gebruiken dient u de achterstallige facturen te betalen."
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Uw ${ plan }-abonnement zal worden vervangen door ${ PASS_SHORT_APP_NAME } Lifetime. Het resterende saldo van uw abonnement zal aan uw account worden toegevoegd. ${ PASS_SHORT_APP_NAME } levenslange deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslange toegang tot ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Uw account heeft minstens één onbetaalde factuur. Uw toegang wordt binnenkort beperkt. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Uw account heeft minstens één achterstallige factuur. Uw account is beperkt en alle diensten zijn nu geblokkeerd tot betaling. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Uw account heeft minstens één achterstallige factuur. Uw account is beperkt. Verdere niet-betaling zal leiden tot het blokkeren van uw e-mails een deel-links. ${ payInvoiceLink }"
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Uw browser ondersteunt de schrijfassistent niet. Probeer het uit te voeren op servers."
@@ -9524,9 +9512,6 @@
       "No label found": [
         "Geen label gevonden"
       ],
-      "No results found": [
-        "Geen resultaten gevonden"
-      ],
       "Non-promotional content and news": [
         "Niet-promotionele inhoud en nieuws"
       ],
@@ -9882,7 +9867,7 @@
         "Nieuwsbrieven of adressenlijsten waarvan u zich afmeldt, verschijnen hier."
       ],
       "You don't have any active newsletters or mailing list subscriptions.": [
-        "U hebt geen actieve nieuwsbrieven of adressenlijst abonnementen."
+        "U heeft geen actieve nieuwsbrieven of adressenlijst abonnementen."
       ],
       "You don't have any newsletters or mailing list subscriptions.": [
         "U hebt geen nieuwsbrieven of adressenlijst abonnementen."
@@ -10058,7 +10043,7 @@
         "Schakel het adres gekoppeld aan deze kalender opnieuw in om uw uitnodiging te beheren."
       ],
       "Re-enable the address linked to this calendar to update your invitation.": [
-        "Schakel het adres gekoppeld aan deze kalender opnieuw in om uw uitnodiging bij te werken."
+        "Schakel het adres gekoppeld aan deze agenda opnieuw in om uw uitnodiging bij te werken."
       ],
       "Reactivate now": [
         "Heractiveren"
@@ -13737,10 +13722,10 @@
         "Jaarlijkse gratis opslagbonussen"
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "U hebt nog ${ expiryDate } te gaan op uw ${ planName }-abonnement. We zullen het tegoed voor de resterende tijd toevoegen aan uw ${ BRAND_NAME } Account. Zorg ervoor dat u de limieten van het gratis abonnement niet overschrijdt voordat u deze annuleert. ${ learnMoreLink }"
+        "U heeft nog ${ expiryDate } te gaan op uw ${ planName }-abonnement. We zullen het tegoed voor de resterende tijd toevoegen aan uw ${ BRAND_NAME } Account. Zorg ervoor dat u de limieten van het gratis abonnement niet overschrijdt voordat u deze annuleert. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
-        "Uw ${ planName }abonnement houdt niet alleen uw bedrijfsgegevens en communicatie veilig. Het ondersteunt uw compliancedoelstellingen, zorgt ervoor dat uw bedrijf erbovenuit springt en het houdt uw team verbonden."
+        "Uw ${ planName }-abonnement houdt niet alleen uw bedrijfsgegevens en communicatie veilig. Het ondersteunt uw compliancedoelstellingen, zorgt ervoor dat uw bedrijf erbovenuit springt en het houdt uw team verbonden."
       ],
       "Your own short @pm.me email alias": [
         "Uw eigen korte @pm.me e-mailalias"
@@ -14879,9 +14864,6 @@
       ],
       "Move all messages to trash": [
         "Alle berichten naar prullenbak verplaatsen"
-      ],
-      "Move messages to": [
-        "Verplaats berichten naar"
       ],
       "Move to": [
         "Verplaatsen naar"

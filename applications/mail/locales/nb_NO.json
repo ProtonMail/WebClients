@@ -2161,15 +2161,47 @@
         "Lagringsplass deles mellom alle ${ BRAND_NAME }-tjenestene."
       ]
     },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "Black Friday-salg"
+      ]
+    },
     "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB lagringsplass"
+      ],
+      "3 TB data storage": [
+        "3 TB lagringsplass"
+      ],
       "Access 15,000+ servers in 120+ countries": [
         "Tilgang til 15,000+ tjenere i 120+ land"
+      ],
+      "Access advanced AI models": [
+        "Tilgang til avanserte KI-modeller"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premiumfunksjoner fra ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
         "Blokkér annonser, sporere og skadelig programvare"
       ],
       "Built-in 2FA authenticator": [
         "Innebygget 2FA-autentisering"
+      ],
+      "Connect 10 devices at once": [
+        "Koble til 10 enheter samtidig"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Full chatlogg med enkelt søk og favoritter"
+      ],
+      "Individual accounts for 6 users": [
+        "Individuelle kontoer for 6 brukere"
+      ],
+      "Individual accounts for you and a partner": [
+        "Individuelle kontoer for deg og en partner"
+      ],
+      "Stronger protection against cyber threats": [
+        "Sterkere beskyttelse mot cybertrusler"
       ],
       "Unlimited daily chats": [
         "Ubegrenset antall daglige chatter"
@@ -2180,9 +2212,29 @@
         "Black Friday"
       ]
     },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Hjelp dine kjære med å bli med på personvernrevolusjonen med våre mest prisgunstige pakker, nå med 50 % rabatt!"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Bli med på personvernrevolusjonen med våre mest prisgunstige pakker, nå med 50 % rabatt!"
+      ]
+    },
     "BF2025: Offers": {
       "for ${ durationDeal }": [
         "for ${ durationDeal }"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "Spar ${ savedAmount } med vårt mest prisgunstige tidsbegrensede tilbud!"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "Bytt til vår 2-års plan og spar ${ savedAmount }!"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "Bytt til vår årsplan og spar ${ savedAmount }!"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "Gi dine kjære fullstendig digital beskyttelse."
       ]
     },
     "BF2025: Tooltip": {
@@ -6711,9 +6763,6 @@
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Få tilgang til 6,500+ høyhastighetstjenere på opptil 10 enheter for å holde nettleserdataene dine trygge. Tilgjengelig på ${ ios }, ${ android }, ${ appleTV } og ${ desktop }."
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Kontotilgang begrenset på grunn av ubetalte fakturaer. Kontakt systemansvarlig."
-      ],
       "Account successfully updated": [
         "Konto oppdatert"
       ],
@@ -7331,6 +7380,9 @@
       ],
       "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
         "Gi innkommende fakturaer en fargekodet etikett, for eksempel “${ suggestedLabelName }“. Når de er betalt, endre etiketten til “${ suggestedPaidLabelName }“."
+      ],
+      "Google Pay mark": [
+        "Google Pay-merke"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Myndigheter og Internett-leverandører kan overvåke nettaktiviteten din. Ved å skjule din virkelige IP og kryptere aktiviteten din blir surfingen privat."
@@ -8772,20 +8824,11 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "${ BRAND_NAME }-kontoen din er for øyeblikket suspendert. Etter 28 dager blir ikke e-poster lenger levert til innboksen din, dine Drive-delekoblinger blir blokkert, og du kan ikke laste opp nye filer. For å gjenoppta normal tjeneste, betal eventuelle forfalte fakturaer."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "${ BRAND_NAME }-kontoen din er for øyeblikket suspendert. E-poster blir ikke lenger levert til innboksen din. Drive-delekoblingene dine er ikke lenger aktive, og du kan ikke laste opp nye filer. For å fortsette å bruke kontoen din, betal eventuelle forfalte fakturaer."
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Ditt ${ plan }-abonnement vil bli erstattet med ${ PASS_SHORT_APP_NAME } Lifetime. Den gjenværende saldoen på abonnementet ditt vil bli lagt til kontoen din. ${ PASS_SHORT_APP_NAME } Lifetime har ingen fornyelsespris, det er en engangsbetaling for livstidstilgang til ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Kontoen din har minst en forfalt faktura. Din tilgang vil snart bli begrenset. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Kontoen din har minst én forfalt faktura. Kontoen din er begrenset, og alle tjenester er nå sperret til betaling er mottatt. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Kontoen din har minst én forfalt faktura. Kontoen din er begrenset. Fortsatt manglende betaling vil blokkere e-postene dine og delingskoblinger. ${ payInvoiceLink }"
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Nettleseren din støtter ikke skriveassistenten. Prøv å kjøre den på tjenere."
@@ -9227,6 +9270,12 @@
       "Also archive": [
         "Arkiver i tillegg"
       ],
+      "Always label sender's emails": [
+        "Merk alltid avsenderens e-poster"
+      ],
+      "Always move sender's emails": [
+        "Alltid flytt avsenders e-poster"
+      ],
       "AND": [
         "OG"
       ],
@@ -9605,6 +9654,9 @@
       "Move ${ sidebarElementName }": [
         "Flytt ${ sidebarElementName }"
       ],
+      "Move messages to": [
+        "Flytt meldinger til"
+      ],
       "Move to": [
         "Flytt til"
       ],
@@ -9646,9 +9698,6 @@
       ],
       "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
         "Slutt på å gå glipp av viktige meldinger! Disse vises nå under ${ primaryCopy }. Alt annet er sortert etter kategori, slik at de er enkle å finne og ikke roter til innboksen din."
-      ],
-      "No results found": [
-        "Ingen resultater funnet"
       ],
       "Non-promotional content and news": [
         "Ikke-salgsfremmende innhold og nyheter"
@@ -12105,6 +12154,9 @@
       "Credit/debit card": [
         "Kreditt-/debetkort"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Nytt kreditt-/debetkort"
       ]
@@ -12183,7 +12235,7 @@
         "Kupongen er gyldig for ${ couponRedemptions } fornyelser."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
-        "Den spesielle rabattprisen gjelder for den første måneden på ${ subscriptionLength }.",
+        "Den spesielle rabattprisen gjelder for den første måneden av ${ subscriptionLength }.",
         "Den spesielt rabatterte prisen er gyldig de første ${ subscriptionLength } månedene."
       ],
       "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
@@ -12235,6 +12287,12 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Du har allerede et abonnement på denne planen. Du kan endre abonnementet ditt på ${ subscriptionPlatform }."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Du vil snart bli omdirigert til PayPal for å bekrefte betalingen."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Du vil snart bli omdirigert for å bekrefte betalingen din."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Din valuta har blitt endret til euro (€) fordi SEPA-bankoverføringer bare støtter betalinger i euro."
       ],
@@ -12265,6 +12323,11 @@
         "Kortet ditt ble avslått. Forsøk et annet kort eller kontakt banken din for å autorisere belastingen."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Noe gikk galt. Google Pay-verifiseringen mislyktes."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Kreditt for den ubrukte delen av ditt forrige planabonnement"
@@ -12284,6 +12347,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Bankoverføring - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - kort som slutter på ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -14790,6 +14856,12 @@
       "Create contact": [
         "Opprett kontakt"
       ],
+      "Create folder \"${ search }\"": [
+        "Opprett mappe \"${ search }\""
+      ],
+      "Create label \"${ search }\"": [
+        "Opprett etikett \"${ search }\""
+      ],
       "Create new group": [
         "Opprett ny gruppe"
       ],
@@ -15060,10 +15132,6 @@
       "Label as": [
         "Merk som"
       ],
-      "Label message as": [
-        "Merk melding som",
-        "Merk meldinger som"
-      ],
       "Label options": [
         "Alternativer for etikett"
       ],
@@ -15147,13 +15215,6 @@
       ],
       "Move all messages to trash": [
         "Flytt alle meldingene til papirkurven"
-      ],
-      "Move message to": [
-        "Flytt melding til",
-        "Flytt meldinger til"
-      ],
-      "Move messages to": [
-        "Flytt meldinger til"
       ],
       "Move to": [
         "Flytt til"

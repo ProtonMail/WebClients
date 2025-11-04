@@ -6667,9 +6667,6 @@
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "최대 10개의 기기에서 6,500개 이상의 고속 서버에 접근하여 브라우징 데이터를 안전하게 보호하세요. ${ ios }, ${ android }, ${ appleTV }, 그리고 ${ desktop }에서 사용할 수 있습니다."
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "요금 미납으로 인해 계정 액세스가 제한되었습니다. 관리자에게 문의하세요."
-      ],
       "Account successfully updated": [
         "계정을 성공적으로 업그레이드 했습니다."
       ],
@@ -7272,6 +7269,9 @@
       ],
       "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
         "들어오는 청구서에 \"${ suggestedLabelName }\"와(과) 같은 색으로 구분된 라벨을 사용해 보세요. 청구서 처리가 완료되었다면, 라벨을 \"${ suggestedPaidLabelName }\"(으)로 바꿔보세요."
+      ],
+      "Google Pay mark": [
+        "Google Pay 표시"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "정부와 ISP가 사용자의 온라인 활동을 모니터링할 수 있습니다. 실제 IP를 숨기고 활동을 암호화함으로서 브라우징이 비공개화 됩니다."
@@ -8689,20 +8689,11 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "고객님의 ${ BRAND_NAME } 계정이 정지되었습니다. 28일 뒤, 받은 편지함으로 이메일이 더 이상 전달되지 않으며, Drive 공유 링크가 잠기며, 더 이상 새로운 파일을 업로드 할 수 없습니다. 서비스를 계속 사용하려면, 기한이 지난 청구서를 결제해주세요."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "고객님의 ${ BRAND_NAME } 계정이 정지되었습니다. 이메일이 더 이상 받은 편지함으로 전송되지 않으며, Drive 공유 링크가 더 이상 활성화되지 않으며, 새로운 파일을 업로드 할 수도 없습니다. 계정 사용을 계속하려면, 기한이 지난 청구서를 결제해주세요."
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ plan } 구독이 ${ PASS_SHORT_APP_NAME } 평생 플랜으로 대체됩니다. 구독의 잔여분이 사용자의 계정에 추가됩니다. ${ PASS_SHORT_APP_NAME } 평생 혜택은 갱신가격이 존재하지 않으며, ${ PASS_SHORT_APP_NAME }에 평생 접근할 수 있는 일회성 결제입니다."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "계정에 기한이 지난 청구서가 하나 이상 있습니다. 회원님의 계정 접근이 곧 제한됩니다. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "회원님의 계정에 적어도 하나의 연체된 결제가 있습니다. 회원님의 계정이 제한되어 있으며, 지금 결제할 때까지 모든 서비스가 차단됩니다. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "회원님의 계정에 적어도 하나의 연체된 결제가 있습니다. 회원님의 계정이 제한된 상태입니다. 지속적인 미지불이 이메일과 공유 링크를 차단시킬 수 있습니다. ${ payInvoiceLink }"
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "브라우저가 글쓰기 도우미를 지원하지 않습니다. 서버에서 실행해 보세요."
@@ -9134,6 +9125,12 @@
       "Also archive": [
         "보관함 포함"
       ],
+      "Always label sender's emails": [
+        "항상 발신자의 이메일에 라벨 지정"
+      ],
+      "Always move sender's emails": [
+        "항상 보낸 사람 이메일 이동"
+      ],
       "AND": [
         "및"
       ],
@@ -9512,6 +9509,9 @@
       "Move ${ sidebarElementName }": [
         "${ sidebarElementName } 이동"
       ],
+      "Move messages to": [
+        "다음 위치로 메시지 이동:"
+      ],
       "Move to": [
         "다음으로 이동"
       ],
@@ -9553,9 +9553,6 @@
       ],
       "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
         "중요한 메시지를 더 이상 놓치지 마세요! 중요한 메시지가 이제 ${ primaryCopy } 아래에 표시돼요. 다른 모든 메시지는 카테고리별로 정렬되어 찾기 쉬우면서도 받은 편지함을 어지럽히지 않게 되었어요."
-      ],
-      "No results found": [
-        "결과를 찾을 수 없습니다"
       ],
       "Non-promotional content and news": [
         "홍보성 없는 콘텐츠 및 뉴스"
@@ -11976,6 +11973,9 @@
       "Credit/debit card": [
         "신용/체크카드"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "신용/체크카드 추가"
       ]
@@ -12100,6 +12100,12 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "이미 이 플랜을 구독하고 있습니다. 구독은 ${ subscriptionPlatform }에서 변경할 수 있습니다."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "결제를 인증하기 위해 곧 PayPal로 이동됩니다."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "결제를 인증하기 위해 곧 리디렉션됩니다."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "SEPA 은행 송금이 유로화 결제만 지원하여 사용자의 통화가 유로화(€)로 변경되었습니다."
       ],
@@ -12130,6 +12136,11 @@
         "사용자의 카드가 거절되었습니다. 다른 카드로 시도하거나 은행사에 문의해 주세요."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "문제가 발생했습니다. Google Pay 인증에 실패했습니다."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "이전 플랜 구독으로 사용하지 않은 부분에 대한 크레딧"
@@ -12149,6 +12160,9 @@
       ],
       "Bank transfer - ${ details }": [
         "은행 송금 - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - 번호가 ${ paymentMethod.Details.Last4 }(으)로 끝나는 카드"
       ]
     },
     "Payments.Sepa": {
@@ -14569,6 +14583,12 @@
       "Create contact": [
         "연락처 추가"
       ],
+      "Create folder \"${ search }\"": [
+        "\"${ search }\" 폴더 생성"
+      ],
+      "Create label \"${ search }\"": [
+        "\"${ search }\" 라벨 생성"
+      ],
       "Create new group": [
         "새 그룹 만들기"
       ],
@@ -14743,6 +14763,9 @@
       "Forward": [
         "앞으로"
       ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "${ planTitle }(으)로 크레딧으로 **${ referralInfo.uiData.refereeRewardAmount }** 받기"
+      ],
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME }의 모든 기능 이용하기"
       ],
@@ -14830,9 +14853,6 @@
       "Label as": [
         "라벨 추가"
       ],
-      "Label message as": [
-        "메시지에 다음으로 라벨 지정"
-      ],
       "Label options": [
         "라벨 옵션"
       ],
@@ -14916,12 +14936,6 @@
       ],
       "Move all messages to trash": [
         "모든 메시지를 휴지통으로 이동"
-      ],
-      "Move message to": [
-        "다음 위치로 메시지 이동:"
-      ],
-      "Move messages to": [
-        "다음 위치로 메시지 이동:"
       ],
       "Move to": [
         "다음으로 이동"

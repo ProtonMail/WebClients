@@ -2190,12 +2190,47 @@
         "Úložný priestor je zdieľaný medzi všetkými službami ${ BRAND_NAME }."
       ]
     },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "Black Friday zľavy"
+      ]
+    },
     "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB dátového úložiska"
+      ],
+      "3 TB data storage": [
+        "3 TB dátového úložiska"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Pristupujte k 15 000+ serverom v 120+ krajinách"
+      ],
+      "Access advanced AI models": [
+        "Prístup k pokročilým modelom umelej inteligencie"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všetky prémiové funkcie ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Block ads, trackers, and malware": [
         "Blokujte reklamy, sledovače a malvér"
       ],
       "Built-in 2FA authenticator": [
         "Zabudovaný 2FA autentifikátor"
+      ],
+      "Connect 10 devices at once": [
+        "Pripojte 10 zariadení súčasne"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Úplná história chatu s jednoduchým vyhľadávaním a obľúbenými položkami"
+      ],
+      "Individual accounts for 6 users": [
+        "Individuálne účty pre 6 používateľov"
+      ],
+      "Individual accounts for you and a partner": [
+        "Individuálne účty pre vás a partnera"
+      ],
+      "Stronger protection against cyber threats": [
+        "Silnejšia ochrana proti kybernetickým hrozbám"
       ],
       "Unlimited daily chats": [
         "Neobmedzené denné chaty"
@@ -2206,9 +2241,29 @@
         "Black Friday"
       ]
     },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Pomôžte svojim blízkym pripojiť sa k revolúcii súkromia s našimi najvýhodnejšími balíčkami, teraz so zľavou 50 %!"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Pripojte sa k revolúcii súkromia s našimi najvýhodnejšími balíčkami, teraz so zľavou 50 %!"
+      ]
+    },
     "BF2025: Offers": {
       "for ${ durationDeal }": [
         "na ${ durationDeal }"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "Ušetrite ${ savedAmount } s našou najvýhodnejšou ponukou na obmedzený čas!"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "Prejdite na náš 2-ročný plán a ušetrite ${ savedAmount }!"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "Prejdite na náš ročný plán a ušetrite ${ savedAmount }!"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "Doprajte svojmu kmeňu kompletnú digitálnu ochranu."
       ]
     },
     "BF2025: Tooltip": {
@@ -6909,9 +6964,6 @@
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Pristupujte k viac ako 6500 vysokorýchlostným serverom až na 10 zariadeniach, aby boli vaše údaje pri prehliadaní v bezpečí. K dispozícii na ${ ios }, ${ android }, ${ appleTV } a ${ desktop }."
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Z dôvodu nezaplatených faktúr bol prístup k účtu obmedzený. Kontaktujte správcu Vášho účtu."
-      ],
       "Account successfully updated": [
         "Účet bol úspešne aktualizovaný"
       ],
@@ -7559,6 +7611,9 @@
       ],
       "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
         "Prichádzajúce faktúry označte farebným štítkom, napríklad “${ suggestedLabelName }“. Po ich zaplatení zmeňte štítok na “${ suggestedPaidLabelName }“."
+      ],
+      "Google Pay mark": [
+        "Google Pay mark"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Vlády a poskytovatelia internetových služieb môžu monitorovať vašu online aktivitu. Skrytím vašej skutočnej IP adresy a šifrovaním vašej aktivity sa vaše prehliadanie stane súkromným."
@@ -9048,20 +9103,11 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Váš účet ${ BRAND_NAME } je momentálne pozastavený. Po 28 dňoch vám už nebudú do schránky doručované emaily, odkazy na zdieľanie na Disku budú zablokované a nebudete môcť nahrávať nové súbory. Ak chcete obnoviť normálnu prevádzku, uhraďte všetky faktúry po splatnosti."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Váš účet ${ BRAND_NAME } je momentálne pozastavený. Emaily už nie sú doručované do vašej schránky. Vaše odkazy na zdieľanie na Disku už nie sú aktívne a nemôžete nahrávať nové súbory. Ak chcete svoj účet naďalej používať, uhraďte všetky faktúry po splatnosti."
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Vaše ${ plan } predplatné bude nahradené predplatným ${ PASS_SHORT_APP_NAME } Lifetime. Zostávajúci zostatok vášho predplatného bude pripísaný na váš účet. Dohoda o ${ PASS_SHORT_APP_NAME } doživotnom predplatnom nemá žiadnu cenu za obnovenie, je to jednorazová platba za doživotný prístup k ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Váš účet má aspoň jednu faktúru po splatnosti. Váš prístup bude čoskoro obmedzený. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Váš účet má aspoň jednu faktúru po splatnosti. Váš účet je obmedzený a všetky služby sú teraz až do zaplatenia zablokované. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Váš účet má aspoň jednu faktúru po splatnosti. Váš účet je obmedzený. Pokračujúce neplatenie zablokuje vaše emaily a odkazy na zdieľanie. ${ payInvoiceLink }"
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Váš prehliadač nepodporuje asistenta písania. Skúste ho spustiť na serveroch."
@@ -9523,6 +9569,12 @@
       "Also archive": [
         "Taktiež archivovať"
       ],
+      "Always label sender's emails": [
+        "Vždy označiť emaily odosielateľa"
+      ],
+      "Always move sender's emails": [
+        "Vždy presunúť emaily odosielateľa"
+      ],
       "AND": [
         "A"
       ],
@@ -9901,6 +9953,9 @@
       "Move ${ sidebarElementName }": [
         "Presunúť ${ sidebarElementName }"
       ],
+      "Move messages to": [
+        "Presunúť správy do"
+      ],
       "Move to": [
         "Presunúť do"
       ],
@@ -9942,9 +9997,6 @@
       ],
       "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
         "Už vám neuniknú žiadne dôležité správy! Teraz sa zobrazujú pod ${ primaryCopy }. Všetko ostatné je roztriedené podľa kategórií, takže sa dajú ľahko nájsť a nezapĺňajú vašu doručenú poštu."
-      ],
-      "No results found": [
-        "Neboli nájdené žiadne výsledky"
       ],
       "Non-promotional content and news": [
         "Nepropagačný obsah a správy"
@@ -12473,6 +12525,9 @@
       "Credit/debit card": [
         "Platobná karta"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Nová platobná karta"
       ]
@@ -12615,6 +12670,12 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Tento plán už máte predplatený. Predplatné môžete zmeniť na ${ subscriptionPlatform }."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Za účelom overenia platby dôjde o chvíľu k presmerovaniu na PayPal."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Za účelom overenia platby dôjde o chvíľu k presmerovaniu."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Vaša mena bola zmenená na eurá (€), pretože SEPA bankové prevody podporujú platby len v eurách."
       ],
@@ -12645,6 +12706,11 @@
         "Vaša karta bola zamietnutá. Skúste použiť inú kartu alebo kontaktujte svoju banku a autorizujte platbu."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Niečo sa pokazilo. Overenie Google Pay zlyhalo."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit za nevyužitú časť vášho predchádzajúceho predplatného plánu"
@@ -12664,6 +12730,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Bankový prevod – ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - karta končiaca na ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -15342,6 +15411,12 @@
       "Create contact": [
         "Vytvoriť kontakt"
       ],
+      "Create folder \"${ search }\"": [
+        "Vytvoriť priečinok „${ search }“"
+      ],
+      "Create label \"${ search }\"": [
+        "Vytvoriť štítok „${ search }“"
+      ],
       "Create new group": [
         "Vytvoriť novú skupinu"
       ],
@@ -15624,12 +15699,6 @@
       "Label as": [
         "Označiť ako"
       ],
-      "Label message as": [
-        "Označiť správu ako",
-        "Označiť správy ako",
-        "Označiť správy ako",
-        "Označiť správy ako"
-      ],
       "Label options": [
         "Možnosti štítku"
       ],
@@ -15713,15 +15782,6 @@
       ],
       "Move all messages to trash": [
         "Presunúť všetky správy do koša"
-      ],
-      "Move message to": [
-        "Presunúť správu do",
-        "Presunúť správy do",
-        "Presunúť správy do",
-        "Presunúť správy do"
-      ],
-      "Move messages to": [
-        "Presunúť správy do"
       ],
       "Move to": [
         "Presunúť do"

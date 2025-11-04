@@ -151,7 +151,7 @@
         "Далучыць здымак(-і) экрана"
       ],
       "Attachment": [
-        "Далучэнне"
+        "Далучыць"
       ],
       "Attention required": [
         "Патрабуецца ўвага"
@@ -2190,12 +2190,47 @@
         "Прастора сховішча размеркавана паміж усімі сэрвісамі ${ BRAND_NAME }"
       ]
     },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "Распродаж з нагоды \"Чорнай пятніцы\""
+      ]
+    },
     "BF2025: Deal details": {
+      "2 TB data storage": [
+        "Сховішча даных памерам у 2 ТБ"
+      ],
+      "3 TB data storage": [
+        "Сховішча даных памерам у 3 ТБ"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Доступ да 15 000+ сервераў у 120+ краінах"
+      ],
+      "Access advanced AI models": [
+        "Доступ да перадавых мадэляў ШІ"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Усе прэміяльныя функцыі ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Block ads, trackers, and malware": [
         "Блакіроўка рэкламы, праграм сачэння і шкодных праграм"
       ],
       "Built-in 2FA authenticator": [
         "Убудаваны аўтэнтыфікатар 2ФА"
+      ],
+      "Connect 10 devices at once": [
+        "Падключыце 10 прылад адначасова"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Поўная гісторыя чатаў з простым пошукам і абранымі"
+      ],
+      "Individual accounts for 6 users": [
+        "Індывідуальныя ўліковыя запісы для 6 карыстальнікаў"
+      ],
+      "Individual accounts for you and a partner": [
+        "Індывідуальныя ўліковыя запісы для вас і партнёра"
+      ],
+      "Stronger protection against cyber threats": [
+        "Больш моцная абарона ад кіберпагроз"
       ],
       "Unlimited daily chats": [
         "Неабмежаваная колькасць штодзённых чатаў"
@@ -2206,9 +2241,29 @@
         "Чорная пятніца"
       ]
     },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Дапамажыце сваім блізкім далучыцца да рэвалюцыі прыватнасці з нашымі самымі выгаднымі камплектамі, зараз са зніжкай 50%!"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Далучайцеся да рэвалюцыі прыватнасці з нашымі самымі выгаднымі камплектамі, зараз са зніжкай 50%!"
+      ]
+    },
     "BF2025: Offers": {
       "for ${ durationDeal }": [
         "за ${ durationDeal }"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "Зэканомце ${ savedAmount } з нашай самай выгаднай абмежаванай па часе прапановай!"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "Пераключыцеся на наш 2-гадовы тарыфны план і зэканомце ${ savedAmount }!"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "Пераключыцеся на наш гадавы тарыфны план і зэканомце ${ savedAmount }!"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "Абараніце сваё плямя поўнай лічбавай абаронай."
       ]
     },
     "BF2025: Tooltip": {
@@ -4071,10 +4126,10 @@
     },
     "Density mode": {
       "Comfortable": [
-        "Камфортны"
+        "Камфортная"
       ],
       "Compact": [
-        "Кампактны"
+        "Кампактная"
       ]
     },
     "Description": {
@@ -4596,7 +4651,7 @@
         "Адбылася памылка пры загрузцы параметраў псеўданіма"
       ],
       "An error occurred while saving your alias": [
-        "Адбылася памылка пры вашага псеўданіма"
+        "Адбылася памылка пры захаванні вашага псеўданіма"
       ],
       "Attachments are limited to ${ readableAttachmentMaxSize }": [
         "Далучэнні абмежаваныя да ${ readableAttachmentMaxSize }"
@@ -4839,7 +4894,7 @@
         "Не знойдзена лістоў для імпартавання - уліковы запіс не мае ўваходных"
       ],
       "No external key retrieved for user is valid for sending": [
-        "Ніводны з атрыманых знешніх ключоў для карыстальніка не падыходзіць для адпраўкі"
+        "Ніводны знешніх ключоў, які атрыманы для карыстальніка, не падыходзіць для адпраўкі"
       ],
       "No valid address found": [
         "Не знойдзена сапраўдных адрасоў"
@@ -5085,7 +5140,7 @@
         "Адбылася памылка падчас экспартавання кантактаў vCard"
       ],
       "This action cannot be performed": [
-        "Гэта дзеянне не можа быць выканана"
+        "Гэта дзеянне немагчыма выканаць"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Гэта поле перавышае максімальную колькасць сімвалаў (максімум: ${ maximumLength })."
@@ -5172,7 +5227,7 @@
         "Вашы лісты не могуць быць расшыфраваны з прычыны нядаўняга скідання пароля. Калі вы памятаеце свой папярэдні пароль, то можна ${ reActivateKeyLink } для атрымання доступу да сваіх паведамленняў. ${ learnMoreLink }"
       ],
       "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
-        "Вашы лісты не могуць быць расшыфраваны. Прычынай гэтаму можа быць нядаўняе скіданне пароля. ${ learnMoreLink }"
+        "Вашы лісты немагчыма расшыфраваць. Прычынай гэтаму можа быць нядаўняе скіданне пароля. ${ learnMoreLink }"
       ],
       "Your import will not be processed.": [
         "Ваша імпартаванне не будзе апрацавана."
@@ -5202,7 +5257,7 @@
         "Чарнавікі не могуць быць перамешчаны ва Уваходныя"
       ],
       "Drafts cannot be moved to Spam": [
-        "Чарнавікі не могуць быць перамешчаны ў папку са спамам"
+        "Немагчыма перамясціць чарнавікі ў папку са спамам"
       ],
       "Sent messages cannot be moved to Inbox": [
         "Адпраўленыя паведамленні не могуць быць перамешчаны ў папку Уваходныя"
@@ -5211,7 +5266,7 @@
         "Адпраўленыя паведамленні не могуць быць перамешчаны ў папку са спамам"
       ],
       "This action cannot be performed": [
-        "Гэта дзеянне не можа быць выканана"
+        "Гэта дзеянне немагчыма выканаць"
       ]
     },
     "Error importing calendar": {
@@ -6909,9 +6964,6 @@
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Атрымайце доступ да больш чым 6500 высакахуткасных сервераў з магчымасцю падключэння да 10 прылад, каб захаваць свае даныя прыгляду ў бяспецы. Праграмы даступны для ${ ios }, ${ android }, ${ appleTV } і ${ desktop }."
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Доступ да ўліковага запісу абмежаваны з прычыны неаплачаных рахункаў. Звярніцеся да вашага адміністратара."
-      ],
       "Account successfully updated": [
         "Уліковы запіс паспяхова абноўлены"
       ],
@@ -7559,6 +7611,9 @@
       ],
       "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
         "Давайце сваім уваходным рахункам маркіраваныя колерам меткі такія як “${ suggestedLabelName }“. Змяніце метку на “${ suggestedPaidLabelName }“ пасля правядзення аплаты."
+      ],
+      "Google Pay mark": [
+        "Пазнака Google Pay"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Урады і пастаўшчыкі паслуг інтэрнэту могуць сачыць за тым, якія сайты вы наведваеце. Ваш прагляд вэб-старонак у інтэрнэце становіцца прыватным дзякуючы хаванню вашага рэальнага IP-адраса і шыфраванню."
@@ -9048,20 +9103,11 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Ваш уліковы запіс ${ BRAND_NAME } у цяперашні час прыпынены. На 29 дзень лісты больш не будуць трапляць у вашу паштовую скрыню, а абагуленыя спасылкі на воблачным дыску будуць заблакіраваны, і вы больш не зможаце запампоўваць новыя файлы. Для ўзнаўлення звычайнага абслугоўвання, аплаціце ўсе неаплачаныя рахункі."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Ваш уліковы запіс ${ BRAND_NAME } у цяперашні час прыпынены. Лісты больш не будуць дастаўляцца ў вашу паштовую скрыню. Абагуленыя спасылкі на воблачным дыску больш не дзейнічаюць і вы не можаце запампоўваць новыя файлы. Для аднаўлення звычайнага абслугоўвання, аплаціце ўсе неаплачаныя рахункі."
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Ваша падпіска ${ plan } будзе заменена на пажыццёвую падпіску ${ PASS_SHORT_APP_NAME }. Рэшта балансу вашай падпіскі будзе дададзена на ваш уліковы запіс. Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. За пажыццёвы доступ да ${ PASS_SHORT_APP_NAME } уносіцца аднаразовая плата."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Ваш доступ неўзабаве будзе абмежаваны. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Доступ да яго абмежаваны і ўсе сэрвісы ў ім заблакіраваны да паступлення аплаты. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Доступ да яго абмежаваны. Далейшая неаплата прывядзе да блакіроўкі лістоў і абагуленых спасылак.${ payInvoiceLink }"
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Ваш браўзер не падтрымлівае памочніка ў напісанні. Паспрабуйце запусціць яго на серверы."
@@ -9523,6 +9569,12 @@
       "Also archive": [
         "Таксама архіваваць"
       ],
+      "Always label sender's emails": [
+        "Заўсёды пазначаць лісты адпраўніка"
+      ],
+      "Always move sender's emails": [
+        "Заўсёды перамяшчаць лісты адпраўніка"
+      ],
       "AND": [
         "І"
       ],
@@ -9901,6 +9953,9 @@
       "Move ${ sidebarElementName }": [
         "Перамясціць ${ sidebarElementName }"
       ],
+      "Move messages to": [
+        "Перамясціць паведамленні ў"
+      ],
       "Move to": [
         "Перамясціць у"
       ],
@@ -9942,9 +9997,6 @@
       ],
       "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
         "Цяпер вы больш не прапусціце важныя паведамленні! Цяпер яны адлюстроўваюцца ў раздзеле ${ primaryCopy }. Усё астатняе адсартавана па катэгорыях, таму іх лёгка знайсці і яны не захламляюць вашу паштовую скрыню."
-      ],
-      "No results found": [
-        "Нічога не знойдзена"
       ],
       "Non-promotional content and news": [
         "Нерэкламны змесціва і навіны"
@@ -12473,6 +12525,9 @@
       "Credit/debit card": [
         "Банкаўская картка"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Новая банкаўская картка"
       ]
@@ -12615,6 +12670,12 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "У вас ужо ёсць падпіска на гэты тарыфны план. Вы можаце змяніць сваю падпіску на ${ subscriptionPlatform }."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для спраўджання плацяжу."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Неўзабаве вы будзеце перанакіраваны для спраўджання вашага плацяжу."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Ваша валюта была зменена на еўра (€), таму што банкаўскія пераводы SEPA падтрымліваюць толькі плацяжы ў еўра."
       ],
@@ -12645,6 +12706,11 @@
         "Ваша картка адхілена. Паспрабуйце іншую картку або звяжыцеся з вашым банкам для аўтарызацыі плацяжу."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Нешта пайшло не так. Збой праверкі Google Pay."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Крэдыты для нявыкарыстанай часткі вашага папярэдняга тарыфнага плана падпіскі"
@@ -12664,6 +12730,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Банкаўскі перавод - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay — картка, якая заканчваецца на ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -13292,7 +13361,7 @@
         "Выяўлены памылкі. Ваш ліст не можа быць адпраўлены на любы з уведзеных адрасоў электроннай пошты з прычыны:"
       ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
-        "Выяўлены некаторыя памылкі. Ваш ліст не можа быць адпраўлены на любы з уведзеных адрасоў электроннай пошты з прычыны:"
+        "Выяўлены некаторыя памылкі. Ваш ліст немагчыма адправіць на любы з уведзеных адрасоў электроннай пошты з прычыны:"
       ]
     },
     "Send email with warnings": {
@@ -15342,6 +15411,12 @@
       "Create contact": [
         "Стварэнне кантакту"
       ],
+      "Create folder \"${ search }\"": [
+        "Стварыць папку \"${ search }\""
+      ],
+      "Create label \"${ search }\"": [
+        "Стварэнне меткі \"${ search }\""
+      ],
       "Create new group": [
         "Стварэнне новай групы"
       ],
@@ -15624,12 +15699,6 @@
       "Label as": [
         "Пазначыць як"
       ],
-      "Label message as": [
-        "Пазначыць паведамленне як",
-        "Пазначыць паведамленні як",
-        "Пазначыць паведамленні як",
-        "Пазначыць паведамленні як"
-      ],
       "Label options": [
         "Параметры меткі"
       ],
@@ -15713,15 +15782,6 @@
       ],
       "Move all messages to trash": [
         "Перамясціць усе паведамленні ў сметніцу"
-      ],
-      "Move message to": [
-        "Перамясціць паведамленне ў",
-        "Перамясціць паведамленні ў",
-        "Перамясціць паведамленні ў",
-        "Перамясціць паведамленні ў"
-      ],
-      "Move messages to": [
-        "Перамясціць паведамленні ў"
       ],
       "Move to": [
         "Перамясціць у"
@@ -16282,7 +16342,7 @@
     },
     "tooltip": {
       "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
-        "${ LUMO_APP_NAME }: Памочнік ШІ, які паважае вашу прыватнасць"
+        "${ LUMO_APP_NAME }: памочнік ШІ, які паважае вашу прыватнасць"
       ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
