@@ -21,12 +21,7 @@ const SortableListItem = ({ label }: { label: Label }) => {
     const { Name, Color } = label;
 
     return (
-        <TableRow
-            data-testid="folders/labels:item-type:label"
-            ref={setNodeRef}
-            style={style}
-            className={clsx(isDragging && 'table-row--dragging')}
-        >
+        <TableRow data-testid="folders/labels:item-type:label" ref={setNodeRef} style={style} dragging={isDragging}>
             <TableCell {...attributes} {...listeners}>
                 <Handle />
             </TableCell>
@@ -55,7 +50,7 @@ const LabelSortableList = ({ items, onSortEnd }: Props) => {
 
     return (
         <Scroll className={clsx('overflow-hidden', items.length > 17 && 'h-custom')} style={{ '--h-custom': '50rem' }}>
-            <Table responsive="cards" className="border-none simple-table--has-actions border-collapse mt-4">
+            <Table responsive="cards" hasActions className="border-none border-collapse mt-4">
                 <caption className="sr-only">{c('Settings/labels').t`Labels/Folders`}</caption>
                 <TableHeader>
                     <tr>

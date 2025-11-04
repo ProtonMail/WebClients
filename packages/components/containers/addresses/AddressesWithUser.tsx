@@ -12,16 +12,21 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Alert from '@proton/components/components/alert/Alert';
+import { SortableList } from '@proton/components/components/dnd/SortableList';
+import { useSortableListItem } from '@proton/components/components/dnd/SortableListItem';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import OrderableTable from '@proton/components/components/orderableTable/OrderableTable';
-import OrderableTableBody from '@proton/components/components/orderableTable/OrderableTableBody';
-import OrderableTableHeader from '@proton/components/components/orderableTable/OrderableTableHeader';
-import OrderableTableRow from '@proton/components/components/orderableTable/OrderableTableRow';
+import { Handle } from '@proton/components/components/table/Handle';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableCell from '@proton/components/components/table/TableCell';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableRow from '@proton/components/components/table/TableRow';
 import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
 import UpsellModal from '@proton/components/components/upsell/UpsellModal/UpsellModal';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import { usePostSubscriptionTourTelemetry } from '@proton/components/hooks/mail/usePostSubscriptionTourTelemetry';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { IcArrowsCross } from '@proton/icons/icons/IcArrowsCross';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { TelemetryPostSubscriptionTourEvents } from '@proton/shared/lib/api/telemetry';
 import {
@@ -45,7 +50,7 @@ import move from '@proton/utils/move';
 import AddressActions from './AddressActions';
 import AddressStatus from './AddressStatus';
 import ExternalAddressInfo from './ExternalAddressInfo';
-import { getPermissions, getStatus } from './helper';
+import { type AddressPermissions, type AddressStatuses, getPermissions, getStatus } from './helper';
 
 interface Props {
     user: UserModel;
@@ -62,6 +67,85 @@ const upsellRef = getUpsellRef({
     feature: MAIL_UPSELL_PATHS.UNLIMITED_ADDRESSES,
     isSettings: true,
 });
+
+const SortableListItem = ({
+    address,
+    member,
+    user,
+    addressPermissions,
+    addressStatuses,
+    index,
+    savingIndex,
+    allowAddressDeletion,
+    onClickEmail,
+    onSetDefault,
+    disableSort,
+}: {
+    address: Address;
+    index: number;
+    savingIndex: number | undefined;
+    user: UserModel;
+    member: Member | undefined;
+    allowAddressDeletion: boolean;
+    onClickEmail: (email: string) => void;
+    onSetDefault: () => Promise<void>;
+    addressPermissions: AddressPermissions;
+    addressStatuses: AddressStatuses;
+    disableSort?: boolean;
+}) => {
+    const { isDragging, style, listeners, setNodeRef, attributes } = useSortableListItem({
+        id: address.ID,
+        disabled: disableSort
+            ? {
+                  draggable: false,
+                  /* droppable allows a nicer UX when dragging another item on top of a disabled item */
+                  droppable: true,
+              }
+            : undefined,
+    });
+
+    return (
+        <TableRow ref={setNodeRef} style={style} dragging={isDragging}>
+            {disableSort ? (
+                <TableCell> </TableCell>
+            ) : (
+                <TableCell {...attributes} {...listeners}>
+                    <Handle />
+                </TableCell>
+            )}
+            <TableCell>
+                <Tooltip title={address.Email}>
+                    <button
+                        key={0}
+                        type="button"
+                        className="user-select text-ellipsis w-auto max-w-full text-left"
+                        data-testid="users-and-addresses-table:address"
+                        onClick={() => onClickEmail(address.Email)}
+                    >
+                        <div>{address.Email}</div>
+                        <ExternalAddressInfo address={address} />
+                    </button>
+                </Tooltip>
+            </TableCell>
+            <TableCell>
+                <AddressStatus key={1} {...addressStatuses} />
+            </TableCell>
+            <TableCell>
+                <AddressActions
+                    key={2}
+                    address={address}
+                    member={member}
+                    user={user}
+                    onSetDefault={onSetDefault}
+                    savingIndex={savingIndex}
+                    addressIndex={index}
+                    permissions={addressPermissions}
+                    allowAddressDeletion={allowAddressDeletion}
+                />
+            </TableCell>
+        </TableRow>
+    );
+};
 
 const AddressesUser = ({
     user,
@@ -145,13 +229,13 @@ const AddressesUser = ({
         [list, addresses]
     );
 
-    const setDefaultAddress = useCallback(
+    const getSetDefaultAddress = useCallback(
         (addressOldIndex: number) => {
             return async () => {
                 await handleSortEnd({ oldIndex: addressOldIndex, newIndex: 0 });
             };
         },
-        [list, addresses]
+        [handleSortEnd]
     );
 
     if (!loadingAddresses && !addresses?.length) {
@@ -162,6 +246,9 @@ const AddressesUser = ({
         textToClipboard(email);
         createNotification({ type: 'success', text: c('Success').t`Email address copied to clipboard` });
     };
+
+    const disabledSortItems = new Set(addresses?.filter((address) => getIsNonDefault(address)).map((item) => item.ID));
+    const itemIds = addresses?.map((item) => item.ID).filter((id) => !disabledSortItems.has(id)) ?? [];
 
     return (
         <>
@@ -207,65 +294,47 @@ const AddressesUser = ({
                 </div>
             )}
 
-            <OrderableTable
-                onSortEnd={handleSortEnd}
-                className="simple-table--has-actions mt-4"
-                helperClassname="simple-table--has-actions"
-            >
-                <OrderableTableHeader
-                    cells={[
-                        c('Header for addresses table').t`Address`,
-                        c('Header for addresses table').t`Status`,
-                        c('Header for addresses table').t`Actions`,
-                    ]}
-                />
-                <OrderableTableBody colSpan={3} loading={loadingAddresses}>
-                    {list &&
-                        list.map((address, i) => {
-                            const addressStatuses = getStatus(address, i);
+            <Table className="mt-4" hasActions responsive="cards">
+                <TableHeader>
+                    <tr>
+                        <th scope="col" className="w-custom" style={{ '--w-custom': '5%' }}>
+                            <IcArrowsCross alt={c('Header for addresses table').t`Drag to reorder`} />
+                        </th>
+                        <th scope="col">{c('Header for addresses table').t`Address`}</th>
+                        <th scope="col">{c('Header for addresses table').t`Status`}</th>
+                        <th scope="col">{c('Header for addresses table').t`Actions`}</th>
+                    </tr>
+                </TableHeader>
+                <TableBody colSpan={4} loading={loadingAddresses}>
+                    <SortableList onSortEnd={handleSortEnd} items={itemIds}>
+                        {list.map((address, index) => {
                             return (
-                                <OrderableTableRow
-                                    disableSort={getIsNonDefault(address)}
-                                    key={i}
-                                    index={i}
-                                    cells={[
-                                        <Tooltip title={address.Email}>
-                                            <button
-                                                key={0}
-                                                type="button"
-                                                className="user-select text-ellipsis w-auto max-w-full text-left"
-                                                data-testid="users-and-addresses-table:address"
-                                                onClick={() => handleCopyEmail(address.Email)}
-                                            >
-                                                <div>{address.Email}</div>
-                                                <ExternalAddressInfo address={address} />
-                                            </button>
-                                        </Tooltip>,
-                                        <AddressStatus key={1} {...addressStatuses} />,
-                                        <AddressActions
-                                            key={2}
-                                            address={address}
-                                            member={member}
-                                            user={user}
-                                            onSetDefault={setDefaultAddress(i)}
-                                            savingIndex={savingIndex}
-                                            addressIndex={i}
-                                            permissions={getPermissions({
-                                                addressIndex: i,
-                                                member,
-                                                address,
-                                                addresses: list,
-                                                user,
-                                                organizationKey,
-                                            })}
-                                            allowAddressDeletion={allowAddressDeletion}
-                                        />,
-                                    ]}
+                                <SortableListItem
+                                    key={address.ID}
+                                    address={address}
+                                    user={user}
+                                    member={member}
+                                    index={index}
+                                    onClickEmail={handleCopyEmail}
+                                    onSetDefault={getSetDefaultAddress(index)}
+                                    savingIndex={savingIndex}
+                                    disableSort={disabledSortItems.has(address.ID)}
+                                    allowAddressDeletion={allowAddressDeletion}
+                                    addressStatuses={getStatus(address, index)}
+                                    addressPermissions={getPermissions({
+                                        addressIndex: index,
+                                        member,
+                                        address,
+                                        addresses: list,
+                                        user,
+                                        organizationKey,
+                                    })}
                                 />
                             );
                         })}
-                </OrderableTableBody>
-            </OrderableTable>
+                    </SortableList>
+                </TableBody>
+            </Table>
 
             {renderUpsellModal && (
                 <UpsellModal
