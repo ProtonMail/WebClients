@@ -295,7 +295,7 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                                     <InputFieldTwo
                                         label={c('Label').t`Group address`}
                                         unstyled
-                                        className="rounded-none"
+                                        inputClassName="rounded-none"
                                         name="address"
                                         placeholder={c('placeholder').t`e.g. marketing`}
                                         value={

@@ -16,7 +16,7 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import InputField from '@proton/components/components/v2/field/InputField';
+import { InputField } from '@proton/components/components/v2/field/InputField';
 import TextArea from '@proton/components/components/v2/input/TextArea';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useIsMounted from '@proton/hooks/useIsMounted';
@@ -92,6 +92,7 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit, passAliasesURL }: Props) 
                     setLoadingData(false);
                 }
             } catch (e) {
+                // eslint-disable-next-line no-console
                 console.error(e);
                 traceInitiativeError('drawer-security-center', e);
                 createNotification({
@@ -145,7 +146,7 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit, passAliasesURL }: Props) 
                                 type="text"
                                 label={c('Label').t`Alias title`}
                                 value={formValues.name}
-                                className="text-bold rounded-none"
+                                inputClassName="text-bold rounded-none"
                                 placeholder={c('Label').t`e.g., Amazon, eBay, Etsy`}
                                 autoFocus
                                 unstyled
