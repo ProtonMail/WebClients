@@ -2,6 +2,19 @@ import { getUIDHeaderValue, withAuthHeaders, withUIDHeaders } from '@proton/shar
 
 import type { Api } from '../../interfaces';
 
+/**
+ * @description Use `useSilentApi` hook if using the method in a React component.
+ * This function is not stable and could result in infinite render loops.
+ *
+ * @example
+ * ```tsx
+ * // ❌ Don't use this
+ * const silentApi = getSilentApi(api);
+ *
+ * // ✅ Use this instead
+ * const silentApi = useSilentApi();
+ * ```
+ */
 export const getSilentApi = (api: Api) => {
     return <T>(config: any) => api<T>({ ...config, silence: true });
 };
