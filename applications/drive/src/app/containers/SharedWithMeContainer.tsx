@@ -3,9 +3,6 @@ import { Navigate, Route, Routes } from 'react-router-dom-v5-compat';
 
 import { useShallow } from 'zustand/react/shallow';
 
-import useFlag from '@proton/unleash/useFlag';
-
-import { SharedWithMeViewDeprecated } from '../components/sections/SharedWithMe/SharedWithMeView';
 import { SharedWithMeView } from '../sections/sharedWith/SharedWithMeView';
 import { useInvitationsLoader } from '../sections/sharedWith/loaders/useInvitationsLoader';
 import { useLegacyLoader } from '../sections/sharedWith/loaders/useLegacyLoader';
@@ -13,10 +10,6 @@ import { useSharedWithMeNodesLoader } from '../sections/sharedWith/loaders/useSh
 import { useSharedWithMeListingStore } from '../zustand/sections/sharedWithMeListing.store';
 
 const SharedWithMeContainer = () => {
-    const shouldUseSDK = useFlag('DriveWebSDKSharedWithMe');
-
-    const SharedWithMeComponent = shouldUseSDK ? SharedWithMeView : SharedWithMeViewDeprecated;
-
     const { subscribeToEvents, unsubscribeToEvents } = useSharedWithMeListingStore(
         useShallow((state) => ({
             subscribeToEvents: state.subscribeToEvents,
@@ -29,9 +22,6 @@ const SharedWithMeContainer = () => {
     const { loadLegacySharedWithMeAlbums, loadLegacyInvitations } = useLegacyLoader();
 
     useEffect(() => {
-        if (!shouldUseSDK) {
-            return;
-        }
         const abortController = new AbortController();
         void subscribeToEvents('sharedWithMeContainer', {
             onRefreshSharedWithMe: async () => {
@@ -48,7 +38,6 @@ const SharedWithMeContainer = () => {
             void unsubscribeToEvents('sharedWithMeContainer');
         };
     }, [
-        shouldUseSDK,
         subscribeToEvents,
         unsubscribeToEvents,
         loadInvitations,
@@ -58,7 +47,7 @@ const SharedWithMeContainer = () => {
     ]);
     return (
         <Routes>
-            <Route path="" element={<SharedWithMeComponent />} />
+            <Route path="" element={<SharedWithMeView />} />
             <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
     );

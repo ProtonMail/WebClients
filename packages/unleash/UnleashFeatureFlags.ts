@@ -145,19 +145,11 @@ enum DriveFeatureFlag {
     // TODO: Convert to Kill-Switch once launched and tested
     DriveWebVideoStreaming = 'DriveWebVideoStreaming',
     // SDK Migration
-    DriveWebSDKRenameModal = 'DriveWebSDKRenameModal',
-    DriveWebSDKMoveItemsModal = 'DriveWebSDKMoveItemsModal',
-    DriveWebSDKCopy = 'DriveWebSDKCopy',
-    DriveWebSDKCreateFolderModal = 'DriveWebSDKCreateFolderModal',
-    DriveWebSDKSharingModal = 'DriveWebSDKSharingModal',
-    DriveWebSDKDevices = 'DriveWebSDKDevices',
-    DriveWebSDKTrash = 'DriveWebSDKTrash',
-    DriveWebSDKFileDetailsModal = 'DriveWebSDKFileDetailsModal',
     DriveWebSDKFolders = 'DriveWebSDKFolders',
-    DriveWebSDKSharedByMe = 'DriveWebSDKSharedByMe',
     DriveWebSDKSharedWithMe = 'DriveWebSDKSharedWithMe',
     DriveWebSDKSidebar = 'DriveWebSDKSidebar',
     DriveWebSDKTransfer = 'DriveWebSDKTransfer',
+    DriveWebSDKCopy = 'DriveWebSDKCopy',
     // Video Preview
     DriveWebVideoAutoPlay = 'DriveWebVideoAutoPlay',
     // Thumbnail Generation

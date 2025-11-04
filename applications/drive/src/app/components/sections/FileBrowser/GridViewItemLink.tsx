@@ -4,11 +4,8 @@ import { FileIcon } from '@proton/components';
 import { isCompatibleCBZ } from '@proton/shared/lib/helpers/mimetype';
 import clsx from '@proton/utils/clsx';
 
-import SignatureIcon from '../../SignatureIcon';
-import type { DriveItem } from '../Drive/Drive';
-import type { SharedLinkItem } from '../SharedLinks/SharedLinks';
-import type { SharedWithMeItem } from '../SharedWithMe/SharedWithMe';
-import type { TrashItem } from '../Trash/Trash';
+import { DeprecatedSignatureIcon as SignatureIcon } from '../../SignatureIcon';
+import type { DriveItem, SharedLinkItem, SharedWithMeItem, TrashItem } from '../interface';
 import GridViewItemBase from './GridViewItem';
 import { getLinkIconText } from './utils';
 
