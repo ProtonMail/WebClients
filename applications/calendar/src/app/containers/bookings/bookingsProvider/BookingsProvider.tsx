@@ -19,7 +19,12 @@ import { getTimezone } from '@proton/shared/lib/date/timezone';
 import { useCalendarGlobalModals } from '../../GlobalModals/GlobalModalProvider';
 import { ModalType } from '../../GlobalModals/interface';
 import { encryptBookingPage } from '../bookingCryptoUtils';
-import { generateBookingRangeID, generateDefaultBookingRange, generateSlotsFromRange } from '../bookingHelpers';
+import {
+    generateBookingRangeID,
+    generateDefaultBookingRange,
+    generateSlotsFromRange,
+    hasAlreadyARangeForDay,
+} from '../bookingHelpers';
 import type { BookingRange, Slot } from './interface';
 import { type BookingFormData, BookingLocation, BookingState, DEFAULT_EVENT_DURATION } from './interface';
 
@@ -32,6 +37,7 @@ interface BookingsContextValue {
     loading: boolean;
     bookingRange: BookingRange[] | null;
     addBookingRange: (data: Omit<BookingRange, 'id'>) => void;
+    updateBookingRange: (id: string, start: Date, end: Date) => void;
     removeBookingRange: (id: string) => void;
 }
 
@@ -136,6 +142,42 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         setFormData(newFormData);
     };
 
+    const updateBookingRange = (oldRangeId: string, start: Date, end: Date) => {
+        const range = bookingRange?.find((range) => range.id === oldRangeId);
+        if (!range || !bookingRange) {
+            throw new Error(`Booking range with id ${oldRangeId} not found or no bookingRange`);
+        }
+
+        // If a range already exist this day we show an error
+        if (hasAlreadyARangeForDay(bookingRange, oldRangeId, start)) {
+            createNotification({ text: c('Info').t`Booking overlaps with an existing booking.` });
+            return;
+        }
+
+        const newRangeId = generateBookingRangeID(start, end);
+
+        const newBookingRange = bookingRange
+            .map((range) => (range.id === oldRangeId ? { ...range, id: newRangeId, start, end } : range))
+            .sort((a, b) => a.start.getTime() - b.start.getTime());
+
+        const newSlots = generateSlotsFromRange({
+            rangeID: newRangeId,
+            start,
+            end,
+            duration: formData.duration,
+            timezone: range.timezone,
+        });
+
+        const newFormData = formData;
+        newFormData.bookingSlots = [
+            ...formData.bookingSlots.filter((slot) => slot.rangeID !== oldRangeId),
+            ...newSlots,
+        ];
+
+        setBookingRange(newBookingRange);
+        setFormData(newFormData);
+    };
+
     const removeBookingRange = (id: string) => {
         setBookingRange((prev) => prev?.filter((range) => range.id !== id) || null);
         setFormData((prev) => ({
@@ -170,16 +212,20 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             }
         }
 
-        // Create booking slots that fits inside the booking range and store them in the formData
-        const slots = generateSlotsFromRange({
+        const newBookingRange = [...(bookingRange || []), { ...data, id: dataId }];
+        const newSlots = generateSlotsFromRange({
             rangeID: dataId,
             start: data.start,
             end: data.end,
             duration: formData.duration,
             timezone: data.timezone,
         });
-        setFormData((prev) => ({ ...prev, bookingSlots: [...prev.bookingSlots, ...slots] }));
-        setBookingRange((prev) => [...(prev || []), { ...data, id: dataId }]);
+
+        const newFormData = formData;
+        formData.bookingSlots = [...formData.bookingSlots, ...newSlots];
+
+        setBookingRange(newBookingRange);
+        setFormData(newFormData);
     };
 
     const changeBookingState = (state: BookingState) => {
@@ -254,6 +300,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         // Range management
         bookingRange,
         addBookingRange,
+        updateBookingRange,
         removeBookingRange,
     };
 

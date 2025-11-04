@@ -4,7 +4,7 @@ import { BookingManagement } from './BookingsPageManagement';
 
 export const BookingSidebar = () => {
     return (
-        <div className="flex flex-column w-full sm:w-custom" style={{ '--sm-w-custom': '25rem' }}>
+        <div className="flex flex-column w-full sm:w-custom" style={{ '--sm-w-custom': '25.5rem' }}>
             <div className="p-3 self-end">
                 <BookingManagement.Header />
             </div>

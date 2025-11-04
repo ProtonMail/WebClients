@@ -1,4 +1,4 @@
-import { addMinutes, eachDayOfInterval, endOfWeek, isBefore, isWeekend, set, startOfWeek } from 'date-fns';
+import { addMinutes, eachDayOfInterval, endOfWeek, isBefore, isSameDay, isWeekend, set, startOfWeek } from 'date-fns';
 import { c } from 'ttag';
 
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
@@ -178,4 +178,8 @@ export const generateDefaultBookingRange = (userSettings: UserSettings, timezone
                 timezone,
             };
         });
+};
+
+export const hasAlreadyARangeForDay = (bookings: BookingRange[], oldRangeId: string, start: Date): boolean => {
+    return bookings.some((booking) => booking.id !== oldRangeId && isSameDay(booking.start, start));
 };
