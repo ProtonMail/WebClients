@@ -186,6 +186,9 @@
       "Confirm": [
         "Onayla"
       ],
+      "Confirm booking": [
+        "Rezervasyonu onayla"
+      ],
       "Confirm opening of link ${ linkToShow }": [
         "${ linkToShow } bağlantısını açmayı onaylayın"
       ],
@@ -218,9 +221,6 @@
       ],
       "Copy alias “${ name }”": [
         "“${ name }” takma adını kopyala"
-      ],
-      "Copy Booking link": [
-        "Rezervasyon bağlantısını kopyala"
       ],
       "Copy email address": [
         "E-posta adresini kopyala"
@@ -2939,7 +2939,7 @@
       ]
     },
     "Custom frequency option": {
-      "Don't end": [
+      "Doesn't end": [
         "Bitmesin"
       ],
       "End after": [
@@ -3361,11 +3361,29 @@
       ]
     },
     "Duration": {
+      "1.5h": [
+        "1.5s"
+      ],
       "120 minutes": [
         "120 dakika"
       ],
+      "15 minutes": [
+        "15 dakika"
+      ],
+      "15m": [
+        "15dk"
+      ],
+      "1h": [
+        "1s"
+      ],
+      "2h": [
+        "2s"
+      ],
       "30 minutes": [
         "30 dakika"
+      ],
+      "30m": [
+        "30dk"
       ],
       "60 minutes": [
         "60 dakika"
@@ -4982,8 +5000,8 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
       ],
-      "${ booking.duration } min duration": [
-        "${ booking.duration } en az süre"
+      "${ bookingDetails.duration } min duration": [
+        "${ bookingDetails.duration } en az süre"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe yazma yardımcısı"
@@ -5122,9 +5140,6 @@
       "30-day money-back guarantee.": [
         "30 gün içinde ücreti geri ödeme garantisi."
       ],
-      "A booking slot cannot be added in the past.": [
-        "Geçmişe bir rezervasyon kanalı eklenemez."
-      ],
       "A cancellation email will be sent to removed participants.": [
         "Kaldırılan katılımcılara bir iptal bildirimi e-postası gönderilecek."
       ],
@@ -5151,9 +5166,6 @@
       ],
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "Bir VPN, aygıtınız ile internet arasında güvenli bir tüneldir. Konumunuzu ve etkinliklerinizi İnternet hizmeti sağlayıcınızdan (İSS) ve ziyaret ettiğiniz sitelerden gizler."
-      ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Ödenmemiş faturalar nedeniyle hesap erişimi kısıtlandı. Lütfen yöneticinizle görüşün."
       ],
       "Account successfully updated": [
         "Hesap güncellendi"
@@ -5247,6 +5259,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Faturalama dönemi: ${ text }"
+      ],
+      "Booking already exists.": [
+        "Rezervasyon zaten var"
       ],
       "Booking page example": [
         "Rezervasyon sayfası örneği"
@@ -5507,6 +5522,9 @@
       "Geoblocking": [
         "Coğrafi engelleme"
       ],
+      "Google Pay mark": [
+        "Google Pay işareti"
+      ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Hükümetler ve internet hizmeti sağlayıcılar çevrim içi etkinliğinizi izleyebilir. Gezinme gizliliğinizi korumak için gerçek IP adresiniz gizlenir ve etkinliğiniz şifrelenir."
       ],
@@ -5515,6 +5533,9 @@
       ],
       "High Priority": [
         "Yüksek öncelik"
+      ],
+      "How long should an appointment last?": [
+        "Randevu ne kadar sürmeli?"
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Klavye kısayolları etkinleştirilmişse, hızlı işlemler yapmak veya farklı görünümlere geçmek için aşağıdaki tuşları kullanabilirsiniz. ${ metaKey } + K her zaman kullanılabilir."
@@ -5564,6 +5585,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Bir sonraki adımda, bir Bitcoin adresi kullanarak ön ödemenizi yapabilirsiniz."
+      ],
+      "In which calendar should bookings appear?": [
+        "Rezervasyonlar hangi takvimde görünsün?"
       ],
       "Indexing events: ${ current }/${ total }": [
         "Etkinlikler dizine ekleniyor: ${ current }/${ total }"
@@ -5669,6 +5693,9 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Çoğu herkese açık Wi-Fi ağı güvenlidir. Ancak bazılarında güvenlik açıkları vardır ve sizi siber tehditlerle karşı karşıya bırakır. Bir VPN, trafiğinizi şifreleyerek sizi korur."
+      ],
+      "Name your booking page": [
+        "Rezervasyon sayfanıza bir ad verin"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Yeni klasörünüzü adlandırın ve içine eklemek istediğiniz üst klasörü seçin. Herhangi bir üst klasör seçmezseniz, yeni klasör bir üst düzey klasör olur."
@@ -5878,9 +5905,6 @@
       ],
       "Setting up your new address…": [
         "Yeni adresiniz ayarlanıyor…"
-      ],
-      "Share this page to let others book time in your calendar.": [
-        "Başkalarının takviminizde rezervasyon yapabilmesi için bu sayfayı paylaşın."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda yeni özellikler eklendi."
@@ -6111,6 +6135,9 @@
       "Week and month views only apply to desktop.": [
         "Haftalık ve aylık görünümler yalnızca bilgisayar uygulamasında kullanılabilir."
       ],
+      "What should people know before booking?": [
+        "İnsanlar rezervasyon yapmadan önce nelere dikkat etmeliler?"
+      ],
       "When working remotely": [
         "Uzaktan çalışırken"
       ],
@@ -6119,6 +6146,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
+      ],
+      "Where will the appointment take place?": [
+        "Randevu nerede gerçekleşecek?"
       ],
       "Which event would you like to delete?": [
         "Hangi etkinliği silmek istiyorsunuz?"
@@ -6273,20 +6303,11 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "${ BRAND_NAME } hesabınız şu anda askıya alınmış. 28 gün sonra e-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hizmeti normal şekilde kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "${ BRAND_NAME } hesabınız şu anda askıya alınmış. E-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hesabınızı kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ plan } aboneliğiniz ${ PASS_SHORT_APP_NAME } Lifetime aboneliğiyle değiştirilecek. Aboneliğinizin kalan tutarı hesabınıza eklenecek. ${ PASS_SHORT_APP_NAME } Lifetime fırsatının yenileme fiyatı yoktur, ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik ödeme yapılır."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Hesabınızda süresi geçmiş en az bir fatura var. Erişiminiz yakında kısıtlanacak. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Hesabınızda süresi geçmiş en az bir fatura var. Hesabınıza erişiminiz kısıtlandı ve ödeme yapılana kadar tüm hizmetler engellendi. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Hesabınızda süresi geçmiş en az bir fatura var. Hesabınıza erişim kısıtlandı. Ödeme yapmazsanız e-postalarınız ve paylaşım bağlantılarınız engellenecek. ${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "Adresiniz kullanımdan kaldırılmış. Etkinlik katılımcılarına bir iptal bildirimi e-postası gönderilemeyecek. Yine de bu dizideki tüm etkinlikleri silmek ister misiniz?"
@@ -6706,9 +6727,6 @@
       "Don't show this again": [
         "Bu bir daha görüntülenmesin"
       ],
-      "Duration": [
-        "Süre"
-      ],
       "e.g., Amazon, eBay, Etsy": [
         "örneğin, Amazon, eBay, Etsy"
       ],
@@ -6998,9 +7016,6 @@
       "Time zone": [
         "Saat dilimi"
       ],
-      "Title": [
-        "Başlık"
-      ],
       "To: ${ toEmail }": [
         "Kime: ${ toEmail }"
       ],
@@ -7264,6 +7279,11 @@
       ],
       "Your import is starting": [
         "İçe aktarma işleminize başlanıyor"
+      ]
+    },
+    "Location": {
+      "In person": [
+        "Bizzat"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -9076,6 +9096,9 @@
       "Credit/debit card": [
         "Kredi ya da banka kartı"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Yeni kredi ya da banka kartı"
       ]
@@ -9206,6 +9229,12 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Bu tarifeye zaten bir aboneliğiniz var. Aboneliğinizi ${ subscriptionPlatform } üzerinden değiştirebilirsiniz."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Birazdan ödemenizi doğrulamak için PayPal sitesine yönlendirileceksiniz."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Birazdan ödemenizi doğrulamak için yönlendirileceksiniz."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "SEPA banka havaleleri yalnızca avro ödemelerini desteklediği için para biriminiz avroya (€) dönüştürüldü."
       ],
@@ -9236,6 +9265,11 @@
         "Kartınız reddedildi. Lütfen ödemeyi onaylamak için başka bir kart deneyin ya da bankanızla görüşün."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Bir sorun çıktı. Google Pay doğrulaması tamamlanamadı."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Önceki abonelik tarifenizin kullanılmayan bölümünden kalan kredi"
@@ -9255,6 +9289,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Banka havalesi - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - ${ paymentMethod.Details.Last4 } ile biten kart"
       ]
     },
     "Payments.Sepa": {
@@ -9337,6 +9374,9 @@
       "A way to contact you": [
         "Sizinle iletişim kurmak için bir yol"
       ],
+      "Add a booking page description": [
+        "Bir rezervasyon sayfası açıklaması ekleyin"
+      ],
       "Add a calendar description": [
         "Bir takvim açıklaması ekleyin"
       ],
@@ -9360,6 +9400,9 @@
       ],
       "Anytown": [
         "İl"
+      ],
+      "Booking page title": [
+        "Rezervasyon sayfası başlığı"
       ],
       "Company name": [
         "Kuruluş adı"
@@ -11214,9 +11257,6 @@
       "Birthday": [
         "Doğum günü"
       ],
-      "Booking page": [
-        "Rezervasyon sayfası"
-      ],
       "Calendar": [
         "Takvim"
       ],
@@ -11309,6 +11349,9 @@
       ],
       "Data recovery": [
         "Veri kurtarma"
+      ],
+      "Date": [
+        "Tarih"
       ],
       "Day theme": [
         "Gündüz teması"
@@ -11489,6 +11532,9 @@
       ],
       "Link confirmation": [
         "Bağlantı onayı"
+      ],
+      "Location": [
+        "Konum"
       ],
       "Make a secure connection your default": [
         "Bağlantınızın her zaman güvenli olmasını sağlayın"
@@ -11723,6 +11769,12 @@
       ],
       "This booking page has expired": [
         "Bu rezervasyon sayfasının geçerlilik süresi dolmuş"
+      ],
+      "Time": [
+        "Zaman"
+      ],
+      "Time zone": [
+        "Saat dilimi"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } özelliğini açın"

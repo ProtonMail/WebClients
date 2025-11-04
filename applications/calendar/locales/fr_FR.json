@@ -186,6 +186,9 @@
       "Confirm": [
         "Confirmer"
       ],
+      "Confirm booking": [
+        "Confirmer la réservation"
+      ],
       "Confirm opening of link ${ linkToShow }": [
         "Confirmer l'ouverture du lien ${ linkToShow }"
       ],
@@ -219,9 +222,6 @@
       "Copy alias “${ name }”": [
         "Copier l'alias « ${ name } »"
       ],
-      "Copy Booking link": [
-        "Copier le lien de réservation"
-      ],
       "Copy email address": [
         "Copier l’adresse e-mail"
       ],
@@ -230,6 +230,9 @@
       ],
       "Copy link": [
         "Copier le lien"
+      ],
+      "Copy link and close": [
+        "Copier le lien et fermer"
       ],
       "Copy password": [
         "Copier le mot de passe"
@@ -2939,8 +2942,8 @@
       ]
     },
     "Custom frequency option": {
-      "Don't end": [
-        "Sans fin"
+      "Doesn't end": [
+        "Sans date de fin"
       ],
       "End after": [
         "Se termine après"
@@ -3326,6 +3329,9 @@
       "/month": [
         "/mois"
       ],
+      "2 TB of storage to share": [
+        "2 To d'espace de stockage à partager"
+      ],
       "2 user accounts": [
         "2 comptes utilisateur"
       ],
@@ -3358,11 +3364,29 @@
       ]
     },
     "Duration": {
+      "1.5h": [
+        "1,5 h"
+      ],
       "120 minutes": [
         "120 minutes"
       ],
+      "15 minutes": [
+        "15 minutes"
+      ],
+      "15m": [
+        "15 min"
+      ],
+      "1h": [
+        "1h"
+      ],
+      "2h": [
+        "2h"
+      ],
       "30 minutes": [
         "30 minutes"
+      ],
+      "30m": [
+        "30 min"
       ],
       "60 minutes": [
         "60 minutes"
@@ -3578,6 +3602,9 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "La recherche dans le contenu n'a pas pu être activée. Nous vous invitons à redémarrer l'application ou à effacer les données."
       ],
+      "Content verification failed": [
+        "La vérification du contenu n'a pas abouti."
+      ],
       "Could not open created vault": [
         "Le coffre-fort créé n'a pas pu être ouvert."
       ],
@@ -3748,6 +3775,9 @@
       ],
       "Name required": [
         "Le nom est nécessaire."
+      ],
+      "No booking page data received": [
+        "Aucune donnée de page de réservation reçue"
       ],
       "No calendars found to import": [
         "Aucun calendrier n'a été trouvé pour l'importation."
@@ -4558,6 +4588,11 @@
         "Très petit"
       ]
     },
+    "Form": {
+      "Your contact info": [
+        "Vos coordonnées"
+      ]
+    },
     "Google Meet": {
       "Join Google Meet": [
         "Rejoindre Google Meet"
@@ -4979,8 +5014,8 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } a besoin de votre autorisation pour ${ enableDesktopNotifications }."
       ],
-      "${ booking.duration } min duration": [
-        "${ booking.duration } min de durée"
+      "${ bookingDetails.duration } min duration": [
+        "${ bookingDetails.duration } min de durée"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistant d'écriture ${ BRAND_NAME } Scribe"
@@ -5119,9 +5154,6 @@
       "30-day money-back guarantee.": [
         "Garantie satisfait ou remboursé pendant 30 jours"
       ],
-      "A booking slot cannot be added in the past.": [
-        "Un créneau de réservation dans le passé ne peut pas être ajouté dans le passé."
-      ],
       "A cancellation email will be sent to removed participants.": [
         "Un message d’annulation sera envoyé aux participants retirés."
       ],
@@ -5148,9 +5180,6 @@
       ],
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "Un VPN est un tunnel sécurisé entre votre appareil et internet. Il masque votre emplacement et vos activités à votre fournisseur d'accès à internet (FAI) et aux sites internet que vous consultez."
-      ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "L'accès au compte est restreint en raison de factures en retard. Veuillez contacter votre administrateur."
       ],
       "Account successfully updated": [
         "Le compte a été mis à jour."
@@ -5244,6 +5273,15 @@
       ],
       "Billing cycle: ${ text }": [
         "Cycle de facturation : ${ text }"
+      ],
+      "Booking already exists.": [
+        "La réservation existe déjà."
+      ],
+      "Booking cannot be added in the past.": [
+        "Une réservation ne peut pas être ajoutée dans le passé."
+      ],
+      "Booking overlaps with an existing booking.": [
+        "La réservation chevauche une réservation existante."
       ],
       "Booking page example": [
         "Exemple de page de réservation"
@@ -5504,6 +5542,9 @@
       "Geoblocking": [
         "Géoblocage"
       ],
+      "Google Pay mark": [
+        "Marquer Google Pay"
+      ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Les gouvernements et les FAI peuvent surveiller vos activités en ligne. En masquant votre véritable IP et en chiffrant vos activités, votre navigation devient privée."
       ],
@@ -5512,6 +5553,9 @@
       ],
       "High Priority": [
         "Priorité élevée"
+      ],
+      "How long should an appointment last?": [
+        "Combien de temps un rendez-vous doit-il durer ?"
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Si les raccourcis clavier sont activés, vous pouvez utiliser les touches suivantes pour des actions rapides ou pour accéder à différentes vues. Le raccourci ${ metaKey } + K est toujours activé."
@@ -5561,6 +5605,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "À l'étape suivante, vous pourrez effectuer un versement à l'aide d'une adresse Bitcoin."
+      ],
+      "In which calendar should bookings appear?": [
+        "Dans quel calendrier les réservations doivent-elles apparaître ?"
       ],
       "Indexing events: ${ current }/${ total }": [
         "Indexation des événements : ${ current } sur ${ total }"
@@ -5667,11 +5714,17 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "La plupart des réseaux wifi publics sont sûrs, mais certains manquent de sécurité, vous exposant ainsi aux cybermenaces. Un VPN chiffre votre trafic pour vous protéger."
       ],
+      "Name your booking page": [
+        "Nommez votre page de réservation"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nommez votre nouveau dossier et sélectionnez éventuellement un dossier dans lequel vous voulez en faire un sous-dossier. Si vous ne sélectionnez aucun dossier, votre nouveau dossier sera créé comme un dossier de premier niveau."
       ],
       "New": [
         "Nouveau"
+      ],
+      "No available slots for this day": [
+        "Aucun créneau disponible pour ce jour"
       ],
       "No contacts added yet": [
         "Aucun contact n'a encore été ajouté."
@@ -5875,9 +5928,6 @@
       ],
       "Setting up your new address…": [
         "Configuration de votre nouvelle adresse…"
-      ],
-      "Share this page to let others book time in your calendar.": [
-        "Partagez cette page pour permettre à d'autres de réserver du temps dans votre calendrier."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Votre compte bénéficie de fonctionnalités supplémentaires parce que vous êtes un utilisateur fidèle."
@@ -6108,6 +6158,12 @@
       "Week and month views only apply to desktop.": [
         "Les vues de type semaine et mois s'appliquent à la version de bureau (grand écran)."
       ],
+      "What should people know before booking?": [
+        "Que faut-il savoir avant de réserver ?"
+      ],
+      "When are you free?": [
+        "Quand êtes-vous libre ?"
+      ],
       "When working remotely": [
         "Lorsque vous travaillez à distance"
       ],
@@ -6116,6 +6172,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quand vous configurez l'authentification à deux facteurs, nous fournissons des codes de récupération que vous pouvez utiliser pour vous connecter si vous perdez l'accès à votre application d'authentification."
+      ],
+      "Where will the appointment take place?": [
+        "Où aura lieu le rendez-vous ?"
       ],
       "Which event would you like to delete?": [
         "Quel événement voulez-vous supprimer ?"
@@ -6270,20 +6329,11 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Votre compte ${ BRAND_NAME } est suspendu. Au bout de 28 jours, les messages ne seront plus envoyés dans votre boite de réception, vos liens de partage Drive seront bloqués et vous ne pourrez plus télécharger de nouveaux fichiers. Pour retrouver un service normal, nous vous invitons à régler toutes les factures en retard."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Votre compte ${ BRAND_NAME } est suspendu. Les messages ne sont plus envoyés dans votre boite de réception. Vos liens de partage Drive ne sont plus actifs et vous ne pouvez pas télécharger de nouveaux fichiers. Pour continuer à utiliser votre compte, nous vous invitons à payer toutes les factures en retard."
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Votre abonnement ${ plan } sera remplacé par l'abonnement ${ PASS_SHORT_APP_NAME } Lifetime. Le solde restant sera ajouté à votre compte. L'abonnement ${ PASS_SHORT_APP_NAME } Lifetime n'a pas de prix de renouvellement : il s'agit d'un paiement unique pour un accès à vie à ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Votre compte a au moins une facture en retard. Votre accès sera bientôt restreint. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Votre compte ayant au moins une facture en retard, il est restreint et tous les services sont bloqués jusqu'au paiement. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Votre compte ayant au moins une facture en retard, il est restreint. Vos messages et liens de partage seront bloqués en cas de non-paiement. ${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "Votre adresse est désactivée. Un message d’annulation ne peut donc pas être envoyé aux participants. Voulez-vous quand même supprimer tous les événements de cette série ?"
@@ -6703,9 +6753,6 @@
       "Don't show this again": [
         "Ne plus afficher"
       ],
-      "Duration": [
-        "Durée"
-      ],
       "e.g., Amazon, eBay, Etsy": [
         "par exemple Amazon, eBay ou Etsy"
       ],
@@ -6995,9 +7042,6 @@
       "Time zone": [
         "Fuseau horaire"
       ],
-      "Title": [
-        "Titre"
-      ],
       "To: ${ toEmail }": [
         "À : ${ toEmail }"
       ],
@@ -7261,6 +7305,11 @@
       ],
       "Your import is starting": [
         "Votre importation commence."
+      ]
+    },
+    "Location": {
+      "In person": [
+        "En présentiel"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -9073,6 +9122,9 @@
       "Credit/debit card": [
         "Carte de paiement"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Nouvelle carte de paiement"
       ]
@@ -9203,11 +9255,20 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Vous avez déjà un abonnement. Vous pouvez modifier votre abonnement sur ${ subscriptionPlatform }."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Vous serez bientôt redirigé vers PayPal pour vérifier votre paiement."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Vous serez bientôt redirigé vers PayPal pour vérifier votre paiement."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Votre devise a été changée en euros (€) car les virements bancaires SEPA prennent uniquement en charge les paiements en euros."
       ],
       "Your payment is still being processed": [
         "Votre paiement est en cours de traitement."
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "Votre abonnement bénéficie actuellement d'une réduction existante. Le passage à cette nouvelle promotion signifie que la réduction existante ne sera plus appliquée."
       ]
     },
     "Payments.Error": {
@@ -9230,6 +9291,11 @@
         "Votre carte a été refusée. Veuillez essayer une autre carte ou contactez votre banque pour autoriser le prélèvement."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Une erreur s'est produite. La vérification Google Pay n'a pas abouti."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Crédit pour la période non utilisée de votre abonnement précédent"
@@ -9249,6 +9315,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Virement bancaire - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - carte se terminant par les chiffres ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -9331,6 +9400,9 @@
       "A way to contact you": [
         "Un moyen de vous contacter"
       ],
+      "Add a booking page description": [
+        "Ajouter une description à la page de réservation"
+      ],
       "Add a calendar description": [
         "Ajouter une description au calendrier"
       ],
@@ -9354,6 +9426,9 @@
       ],
       "Anytown": [
         "Boisclair"
+      ],
+      "Booking page title": [
+        "Titre de la page de réservation"
       ],
       "Company name": [
         "Nom de l'entreprise"
@@ -11208,9 +11283,6 @@
       "Birthday": [
         "Date de naissance"
       ],
-      "Booking page": [
-        "Page de réservation"
-      ],
       "Calendar": [
         "Calendrier"
       ],
@@ -11303,6 +11375,9 @@
       ],
       "Data recovery": [
         "Récupération de données"
+      ],
+      "Date": [
+        "Date"
       ],
       "Day theme": [
         "Thème jour"
@@ -11444,6 +11519,9 @@
       "High security for your account": [
         "Une sécurité renforcée pour votre compte"
       ],
+      "Host": [
+        "Hôte"
+      ],
       "How does it all work?": [
         "Comment est-ce que tout cela fonctionne ?"
       ],
@@ -11483,6 +11561,9 @@
       ],
       "Link confirmation": [
         "Confirmation du lien"
+      ],
+      "Location": [
+        "Emplacement"
       ],
       "Make a secure connection your default": [
         "Optez par défaut pour une connexion sécurisée"
@@ -11718,6 +11799,12 @@
       "This booking page has expired": [
         "Cette page de réservation a expiré"
       ],
+      "Time": [
+        "Heure"
+      ],
+      "Time zone": [
+        "Fuseau horaire"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Activer ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -11807,6 +11894,9 @@
       ],
       "Your account is protected": [
         "Votre compte est protégé."
+      ],
+      "Your booking is confirmed": [
+        "Votre réservation est confirmée"
       ],
       "Your booking page is ready": [
         "Votre page de réservation est prête."

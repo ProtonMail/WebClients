@@ -185,6 +185,9 @@
       "Confirm": [
         "確認"
       ],
+      "Confirm booking": [
+        "予約の確認"
+      ],
       "Confirm opening of link ${ linkToShow }": [
         "リンク ${ linkToShow } を確認"
       ],
@@ -217,9 +220,6 @@
       ],
       "Copy alias “${ name }”": [
         "エイリアス「${ name }」をコピー"
-      ],
-      "Copy Booking link": [
-        "予約リンクをコピー"
       ],
       "Copy email address": [
         "メールアドレスをコピー"
@@ -2922,7 +2922,7 @@
       ]
     },
     "Custom frequency option": {
-      "Don't end": [
+      "Doesn't end": [
         "終了しない"
       ],
       "End after": [
@@ -3304,6 +3304,9 @@
       "/month": [
         "/ 月"
       ],
+      "2 TB of storage to share": [
+        "2 TBのストレージを共有"
+      ],
       "2 user accounts": [
         "2 ユーザーアカウント"
       ],
@@ -3336,10 +3339,28 @@
       ]
     },
     "Duration": {
+      "1.5h": [
+        "1.5時間"
+      ],
       "120 minutes": [
         "120分"
       ],
+      "15 minutes": [
+        "15 分"
+      ],
+      "15m": [
+        "15分"
+      ],
+      "1h": [
+        "1時間"
+      ],
+      "2h": [
+        "2時間"
+      ],
       "30 minutes": [
+        "30分"
+      ],
+      "30m": [
         "30分"
       ],
       "60 minutes": [
@@ -3552,6 +3573,9 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "コンテンツ検索を有効にできません。アプリケーションを再起動するか、データを消去してください。"
       ],
+      "Content verification failed": [
+        "コンテンツの検証に失敗しました。"
+      ],
       "Could not open created vault": [
         "作成された保管庫を開けませんでした"
       ],
@@ -3719,6 +3743,9 @@
       ],
       "Name required": [
         "名前は必須です"
+      ],
+      "No booking page data received": [
+        "予約ページのデータを受信できませんでした"
       ],
       "No calendars found to import": [
         "インポートするカレンダーが見つかりません"
@@ -4515,6 +4542,11 @@
         "極小"
       ]
     },
+    "Form": {
+      "Your contact info": [
+        "お客様の連絡先情報"
+      ]
+    },
     "Google Meet": {
       "Join Google Meet": [
         "Google Meet に参加"
@@ -4927,8 +4959,8 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
       ],
-      "${ booking.duration } min duration": [
-        "${ booking.duration } 分間"
+      "${ bookingDetails.duration } min duration": [
+        "${ bookingDetails.duration } 分間"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 執筆アシスタント"
@@ -5050,9 +5082,6 @@
       "30-day money-back guarantee.": [
         "30日間の返金保証。"
       ],
-      "A booking slot cannot be added in the past.": [
-        "過去の日時に予約枠を追加することはできません。"
-      ],
       "A cancellation email will be sent to removed participants.": [
         "削除を行った参加者にはキャンセルメールが送信されます。"
       ],
@@ -5079,9 +5108,6 @@
       ],
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "VPNは、あなたのデバイスとインターネットを繋ぐ安全なトンネルのようなものです。インターネットサービスプロバイダ(ISP)及び利用したウェブサイトから、位置情報と活動情報を隠します。"
-      ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "未払いの請求があるためアクセスが制限されています。管理者に問い合わせてください。"
       ],
       "Account successfully updated": [
         "アカウントが正常に更新されました。"
@@ -5172,6 +5198,15 @@
       ],
       "Billing cycle: ${ text }": [
         "支払いサイクル: ${ text }"
+      ],
+      "Booking already exists.": [
+        "予約は既に存在します。"
+      ],
+      "Booking cannot be added in the past.": [
+        "過去に予約を追加することはできません。"
+      ],
+      "Booking overlaps with an existing booking.": [
+        "予約が既存の予約と重複しています。"
       ],
       "Booking page example": [
         "予約ページの例"
@@ -5428,6 +5463,9 @@
       "Geoblocking": [
         "地域制限"
       ],
+      "Google Pay mark": [
+        "Google Pay マーク"
+      ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "政府とISPも、あなたのオンライン上の活動を監視することができます。IPアドレスを隠し、活動内容を暗号化することで、お客様のブラウジングはプライベートになります。"
       ],
@@ -5436,6 +5474,9 @@
       ],
       "High Priority": [
         "優先度：高"
+      ],
+      "How long should an appointment last?": [
+        "予約時間はどのくらいに設定しますか？"
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "キーボードショートカットが有効になっている場合は、次のキーを使用してクイックアクションを実行したり、別のビューにジャンプすることができます。 ${ metaKey } + K は常に有効です。"
@@ -5484,6 +5525,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "次のステップでは、Bitcoin アドレスを使用してデポジットを送信することができます。"
+      ],
+      "In which calendar should bookings appear?": [
+        "どのカレンダーに予約を表示しますか？"
       ],
       "Indexing events: ${ current }/${ total }": [
         "イベントのインデックスを作成します： ${ current }/${ total }"
@@ -5590,11 +5634,17 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "ほとんどの公共のWiFiネットワークは安全ですが、一部はセキュリティ対策が不十分であり、あなたをサイバー攻撃の危険に晒してしまいます。VPNはトラフィックを暗号化することにより、あなたを保護します。"
       ],
+      "Name your booking page": [
+        "予約ページに名前を付けてください"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "新しいフォルダーの名前と、親フォルダーを選択してください。最上位のフォルダーを作成したい場合は、親フォルダーを選択しないでください。"
       ],
       "New": [
         "新規"
+      ],
+      "No available slots for this day": [
+        "この日に利用可能な空きがありません"
       ],
       "No contacts added yet": [
         "まだ連絡先が追加されていません"
@@ -5796,9 +5846,6 @@
       ],
       "Setting up your new address…": [
         "新しいアドレスを設定中…"
-      ],
-      "Share this page to let others book time in your calendar.": [
-        "このページを共有すると、他のお客様がお客様のカレンダーで時間を予約できるようになります。"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "あなたは忠実なユーザーですので、あなたのアカウントには追加機能が有効になっています。"
@@ -6028,6 +6075,12 @@
       "Week and month views only apply to desktop.": [
         "週と月のビューはデスクトップにのみ適用されます。"
       ],
+      "What should people know before booking?": [
+        "予約前に知っておくべきことは何ですか？"
+      ],
+      "When are you free?": [
+        "いつご都合がよろしいでしょうか？"
+      ],
       "When working remotely": [
         "リモートワーク時には"
       ],
@@ -6036,6 +6089,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "2要素認証を設定した時、認証アプリにアクセスできなくなってしまった場合にサインインに使用できる回復用コードを提供します。"
+      ],
+      "Where will the appointment take place?": [
+        "ご予定はどこで行われますか？"
       ],
       "Which event would you like to delete?": [
         "どの予定を削除しますか？"
@@ -6124,6 +6180,9 @@
       "You cannot undo this action.": [
         "この操作は取り消すことができません。"
       ],
+      "You can’t have more than ${ MAX_BOOKING_SLOTS } booking slots on a page.": [
+        "1ページに設定できる予約枠は${ MAX_BOOKING_SLOTS }件までです。"
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "他社のサービスからパスワードやその他のデータが漏洩した場合に通知を受け取ります。"
       ],
@@ -6187,20 +6246,11 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "あなたの ${ BRAND_NAME } アカウントは、現在停止されています。28 日が経過すると、メールが受信トレイに届かなくなり、Drive の共有リンクがブロックされ、新しいファイルをアップロードできなくなります。通常のサービスを再開するには、未払いの請求をお支払いください。"
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "あなたの ${ BRAND_NAME } アカウントは、現在停止されています。メールが受信トレイに届かなくなりました。Drive の共有リンクが無効になり、新しいファイルをアップロードできません。アカウントの使用を継続するには、未払いの請求をお支払いください。"
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ plan } サブスクリプションは ${ PASS_SHORT_APP_NAME } Lifetime に置き換えられます。サブスクリプションの残高は、お客様のアカウントに追加されます。${ PASS_SHORT_APP_NAME } Lifetimeプランには更新価格はなく、1度の支払いで${ PASS_SHORT_APP_NAME } への生涯アクセスが得られます。"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "アカウントに少なくとも1つの期限切れの請求書があるため、アクセスが制限されます。${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "お客様のアカウントには1つ以上期限が過ぎている請求書があります。お支払いを確認できるまで全てのサービスにおいて制限が課されます。 ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "あなたのアカウントには未払いの請求があり、アカウントが制限されています。このまま支払いが行われなければ、メールやリンクの共有がブロックされます。${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "あなたのアドレスは無効になってます。取り消しメールは予定の参加者に送信されません。一連のすべての予定を削除しますか？"
@@ -6614,9 +6664,6 @@
       "Don't show this again": [
         "次回から表示しない"
       ],
-      "Duration": [
-        "期間"
-      ],
       "e.g., Amazon, eBay, Etsy": [
         "Amazon、eBay、Etsyなど"
       ],
@@ -6905,9 +6952,6 @@
       "Time zone": [
         "タイムゾーン"
       ],
-      "Title": [
-        "タイトル"
-      ],
       "To: ${ toEmail }": [
         "宛先: ${ toEmail }"
       ],
@@ -7170,6 +7214,11 @@
       ],
       "Your import is starting": [
         "インポートが開始しました"
+      ]
+    },
+    "Location": {
+      "In person": [
+        "対面"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -8922,6 +8971,9 @@
       "Credit/debit card": [
         "クレジット/デビット カード"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "新しいクレジットカード/デビットカード"
       ]
@@ -9046,11 +9098,20 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "お客様は既にこのプランのサブスクリプションを契約済みです。${ subscriptionPlatform }でサブスクリプションを変更できます。"
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "支払いの検証のため、まもなく PayPal のサイトへリダイレクトされます。"
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "支払いの検証のため、まもなくリダイレクトされます。"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "お客様の通貨はユーロ (€) に変更されました。これは、SEPA銀行振込がユーロ建ての支払いのみをサポートしているためです。"
       ],
       "Your payment is still being processed": [
         "お支払いが現在処理中です"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "お客様のサブスクリプションには現在、既存の割引が適用されています。この新しいプロモーションに移行すると、既存の割引は適用されなくなります。"
       ]
     },
     "Payments.Error": {
@@ -9073,6 +9134,11 @@
         "あなたのカードは拒否されました。 別のカードを試すか、銀行に問い合わせて請求を承認してください。"
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "何か問題が発生しました。Google Payの認証に失敗しました。"
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "以前のサブスクリプションプランの未使用分のクレジット"
@@ -9092,6 +9158,9 @@
       ],
       "Bank transfer - ${ details }": [
         "銀行振込 - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - 末尾が${ paymentMethod.Details.Last4 }のカード"
       ]
     },
     "Payments.Sepa": {
@@ -9174,6 +9243,9 @@
       "A way to contact you": [
         "連絡手段"
       ],
+      "Add a booking page description": [
+        "予約ページの説明を追加"
+      ],
       "Add a calendar description": [
         "カレンダーの詳細を入力..."
       ],
@@ -9197,6 +9269,9 @@
       ],
       "Anytown": [
         "どこにでもある都市"
+      ],
+      "Booking page title": [
+        "予約ページタイトル"
       ],
       "Company name": [
         "会社名"
@@ -11000,9 +11075,6 @@
       "Birthday": [
         "誕生日"
       ],
-      "Booking page": [
-        "予約ページ"
-      ],
       "Calendar": [
         "カレンダー"
       ],
@@ -11095,6 +11167,9 @@
       ],
       "Data recovery": [
         "データの回復"
+      ],
+      "Date": [
+        "日付"
       ],
       "Day theme": [
         "昼間のテーマ"
@@ -11272,6 +11347,9 @@
       ],
       "Link confirmation": [
         "リンクの確認"
+      ],
+      "Location": [
+        "場所"
       ],
       "Make a secure connection your default": [
         "安全な接続を標準設定にする"
@@ -11506,6 +11584,12 @@
       ],
       "This booking page has expired": [
         "この予約ページは有効期限切れです"
+      ],
+      "Time": [
+        "時間"
+      ],
+      "Time zone": [
+        "タイムゾーン"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } をオンにする"
