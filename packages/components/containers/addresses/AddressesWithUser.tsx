@@ -167,7 +167,8 @@ const AddressesUser = ({
         useModalState();
     const { byoeAddressesAvailableCount, maxBYOEAddresses } = useBYOEAddressesCounts();
 
-    const isBYOEOnlyAccount = getIsBYOEOnlyAccount(addresses);
+    const showClaimProtonAddressButton =
+        getIsBYOEOnlyAccount(addresses) && user.isFree && getIsBYOEOnlyAccount(addresses);
 
     useEffect(() => {
         if (addresses) {
@@ -264,19 +265,22 @@ const AddressesUser = ({
 
             {(!user.hasPaidMail || hasAccessToBYOE) && (
                 <div className="mb-4 flex gap-6 self-start items-start">
-                    {!user.hasPaidMail && (
-                        <>
+                    {!user.hasPaidMail && !showClaimProtonAddressButton && (
+                        <div>
                             <MailUpsellButton
                                 onClick={() => handleUpsellModalDisplay(true)}
                                 text={c('Action').t`Get more addresses`}
                             />
-
-                            {isBYOEOnlyAccount && user.isFree && getIsBYOEOnlyAccount(addresses) && (
-                                <Button onClick={() => setClaimProtonAddressModalOpen(true)}>
-                                    {c('Action').t`Claim ${BRAND_NAME} address`}
-                                </Button>
-                            )}
-                        </>
+                            <p className="color-weak text-sm my-2">{c('Label').t`0 of 1 email address available`}</p>
+                        </div>
+                    )}
+                    {!user.hasPaidMail && showClaimProtonAddressButton && (
+                        <div>
+                            <Button onClick={() => setClaimProtonAddressModalOpen(true)}>
+                                {c('Action').t`Claim ${BRAND_NAME} address`}
+                            </Button>
+                            <p className="color-weak text-sm my-2">{c('Label').t`1 of 1 email address available`}</p>
+                        </div>
                     )}
 
                     {hasAccessToBYOE && (
