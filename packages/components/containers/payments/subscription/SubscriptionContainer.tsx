@@ -112,6 +112,7 @@ import { RenewalEnableNote } from './RenewalEnableNote';
 import SubscriptionSubmitButton from './SubscriptionSubmitButton';
 import { useCancelSubscriptionFlow } from './cancelSubscription/useCancelSubscriptionFlow';
 import { SUBSCRIPTION_STEPS } from './constants';
+import { isCSCoupon } from './coupon-config/helpers';
 import { useCouponConfig } from './coupon-config/useCouponConfig';
 import SubscriptionCheckoutCycleItem from './cycle-selector/SubscriptionCheckoutCycleItem';
 import SubscriptionCycleSelector from './cycle-selector/SubscriptionCycleSelector';
@@ -1111,7 +1112,9 @@ const SubscriptionContainerInner = ({
             delete withoutGift.gift;
             return withLoadingGift(check(withoutGift));
         }
-        if (getHas2025OfferCoupon(gift.trim().toUpperCase())) {
+
+        const uppercaseCoupon = gift.trim().toUpperCase();
+        if (getHas2025OfferCoupon(uppercaseCoupon) && !isCSCoupon(uppercaseCoupon)) {
             createNotification({ text: c('Error').t`Invalid code`, type: 'error' });
             return;
         }

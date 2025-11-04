@@ -14,7 +14,7 @@ export const blackFriday2025InboxPlusYearlyExperimentConfig: OfferConfig = {
     topButton: {
         shape: 'ghost',
         variant: 'bf-2025-wave2',
-        icon: 'gift',
+        icon: 'bolt-filled',
         iconSize: 4,
         gradient: false,
         // translator: translate "Black Friday" only if it's problematic in your language (offensive/unknown/etc.), keep translation as short as possible, like "Black Friday Offer"
