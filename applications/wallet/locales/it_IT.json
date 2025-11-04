@@ -61,6 +61,9 @@
       "Cancel trial and pay": [
         "Annulla la prova e paga"
       ],
+      "Change password": [
+        "Cambia la password"
+      ],
       "Chat with us": [
         "Chatta con noi"
       ],
@@ -130,6 +133,15 @@
       "Edit": [
         "Modifica"
       ],
+      "Edit email address": [
+        "Modifica l'indirizzo email"
+      ],
+      "Edit phone number": [
+        "Modifica il numero di telefono"
+      ],
+      "Edit sign-in details": [
+        "Modifica i dettagli di accesso"
+      ],
       "Edit subscription": [
         "Modifica abbonamento"
       ],
@@ -147,6 +159,9 @@
       ],
       "Get the apps": [
         "Ottieni le app"
+      ],
+      "Get verification code": [
+        "Invia il codice di verifica"
       ],
       "Go to ${ planOrAppName }": [
         "Vai a ${ planOrAppName }"
@@ -265,6 +280,12 @@
       "Request a feature": [
         "Richiedi una funzionalità"
       ],
+      "Request new code": [
+        "Richiedi nuovo codice"
+      ],
+      "Resend code": [
+        "Reinvia il codice"
+      ],
       "Save": [
         "Salva"
       ],
@@ -337,6 +358,9 @@
       "Try again": [
         "Riprova"
       ],
+      "Try another method": [
+        "Prova un altro metodo"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Attiva ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -381,6 +405,9 @@
       ],
       "Verify": [
         "Verifica"
+      ],
+      "Verify account": [
+        "Verifica account"
       ],
       "View invoice": [
         "Visualizza fattura"
@@ -2172,6 +2199,9 @@
       "Email is not valid": [
         "Indirizzo email non valido"
       ],
+      "Enter 6 digits": [
+        "Inserisci il codice a 6 cifre"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Errore di connessione alle API di Bitcoin."
       ],
@@ -2198,6 +2228,9 @@
       ],
       "Invalid postal code": [
         "Codice postale non valido"
+      ],
+      "Invalid verification code": [
+        "Codice di verifica non valido"
       ],
       "Invalid ZIP code": [
         "CAP non valido"
@@ -2512,6 +2545,23 @@
         "Servizi"
       ]
     },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "Email"
+      ],
+      "Manual": [
+        "Manuale"
+      ],
+      "No verification method available": [
+        "Nessun metodo di verifica disponibile"
+      ],
+      "SMS": [
+        "SMS"
+      ]
+    },
     "Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistente alla scrittura ${ BRAND_NAME } Scribe"
@@ -2551,6 +2601,9 @@
       "30-day money-back guarantee.": [
         "Garanzia di rimborso entro 30 giorni"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Ogni numero di telefono può essere utilizzato per verificare un unico account ${ BRAND_NAME }"
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Un utente è un account associato a un unico nome utente, una sola casella di posta e una sola persona"
       ],
@@ -2584,6 +2637,9 @@
       "Balance from your previous subscription": [
         "Saldo del tuo abbonamento precedente"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Prima di richiedere un nuovo codice di verifica, controlla la tua cartella spam e verifica che ${ strong } sia l'indirizzo corretto."
+      ],
       "Billing cycle: ${ text }": [
         "Ciclo di fatturazione: ${ text }"
       ],
@@ -2592,6 +2648,9 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Declassando ad un piano gratuito, perderai definitivamente questi benefici, anche se in futuro effettuerai un nuovo upgrade."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Clicca \"Richiedi nuovo codice\" per ricevere un nuovo codice di verifica al ${ strong }. Se questo numero telefonico è incorretto, clicca su \"Modifica\" per correggerlo."
       ],
       "Country code": [
         "Codice nazione"
@@ -2645,6 +2704,9 @@
       "Each code can only be used once": [
         "Ogni codice può essere usato una sola volta."
       ],
+      "Edit email address": [
+        "Modifica l'indirizzo email"
+      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "L'hosting di posta elettronica è disponibile solo per i domini che già possiedi. La registrazione del dominio non è attualmente disponibile tramite ${ BRAND_NAME }. Puoi ospitare email per domini registrati su qualsiasi registrar di domini."
       ],
@@ -2656,6 +2718,9 @@
       ],
       "Enter the code from your authenticator app": [
         "Inserisci il codice dalla tua app di autenticazione."
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Inserisci il codice di verifica inviato a ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Inserisci il codice di verifica. Digita ${ digit }."
@@ -2672,8 +2737,17 @@
       "Expired": [
         "Scaduto"
       ],
+      "Google Pay mark": [
+        "Marchio Google Pay"
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Se stai avendo problemi con la creazione del tuo account, chiedi un invito e ti risponderemo entro un giorno lavorativo."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Se annulli, il tuo abbonamento ${ planTitle } non verrà rinnovato alla scadenza del ${ expiryDate }."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Se non trovi l'email nella casella di posta, controlla la cartella spam."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Se procedi con il downgrade, perderai l'accesso alle funzionalità a pagamento di ${ MAIL_APP_NAME } e ${ VPN_APP_NAME }."
@@ -2829,6 +2903,9 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Per completare il pagamento, per favore invia ${ btcAmountBold } all'indirizzo sottostante."
       ],
+      "To fight spam and abuse, please verify you are human.": [
+        "Completa la verifica umana. Questa è necessaria per contrastare spam e abusi."
+      ],
       "Total email addresses": [
         "Totale indirizzi email"
       ],
@@ -2874,11 +2951,20 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Sarai reindirizzato su PayPal in una nuova scheda del browser per completare questa transazione. Se utilizzi un blocco pop-up, disattivalo per continuare."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Invieremo un nuovo codice di verifica a ${ strong }"
+      ],
       "Week": [
         "Settimana"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quando imposti l'autenticazione a due fattori, forniamo codici di ripristino che puoi utilizzare per accedere se perdi l'accesso alla tua app di autenticazione."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Vuoi ricevere un nuovo codice di verifica o utilizzare un metodo alternativo?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Vuoi ricevere un nuovo codice di verifica?"
       ],
       "Writing assistant": [
         "Assistente alla scrittura"
@@ -2899,6 +2985,9 @@
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
         "Puoi avere fino a ${ MAX_CALENDARS_FREE } calendario. Rimuovi i link ai calendari condivisi e qualsiasi utente di ${ BRAND_NAME } con cui hai condiviso i tuoi calendari prima di annullare l'abbonamento.",
         "Puoi avere fino a ${ MAX_CALENDARS_FREE } calendari. Rimuovi i link ai calendari condivisi e qualsiasi utente di ${ BRAND_NAME } con cui hai condiviso i tuoi calendari prima di annullare l'abbonamento."
+      ],
+      "You can now return to the application to continue": [
+        "Ora puoi tornare all'applicazione per continuare"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puoi attivare le notifiche per ricevere avvisi quando arrivano nuovi messaggi email in questa cartella."
@@ -2931,17 +3020,20 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Trascorsi 28 giorni, le email non verranno più consegnate alla tua posta in arrivo, i tuoi link di condivisione di Drive verranno bloccati e non potrai caricare nuovi file. Per ripristinare il normale servizio, paga tutte le fatture scadute."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Le email non vengono più consegnate alla tua posta in arrivo. I tuoi link di condivisione di Drive non sono più attivi e non puoi caricare nuovi file. Per continuare ad usare il tuo account, paga tutte le fatture scadute."
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Il tuo abbonamento a ${ plan } verrà sostituito con ${ PASS_SHORT_APP_NAME } a vita. Il saldo rimanente del tuo abbonamento verrà aggiunto al tuo account. L'offerta a vita di ${ PASS_SHORT_APP_NAME } non ha prezzo di rinnovo, è un pagamento una tantum per l'accesso illimitato a ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Questo indirizzo email verrà utilizzato esclusivamente per questa unica verifica."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "La tua prossima data di fatturazione è il ${ renewalTime }."
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "La tua prossima data di fatturazione è ${ renewalTime }. Contatta il supporto se hai bisogno di un cambio di piano immediato."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Questo numero di telefono verrà utilizzato esclusivamente per questa unica verifica."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Il tuo piano programmato inizia il ${ renewalTime } e si rinnoverà automaticamente ogni ${ cycle } mese.",
@@ -3036,6 +3128,9 @@
       ],
       "City": [
         "Città"
+      ],
+      "Code is 6 digits without spaces": [
+        "Codice a 6 cifre senza spazi"
       ],
       "Colors": [
         "Colori"
@@ -3136,6 +3231,9 @@
       "Payment method": [
         "Metodo di pagamento"
       ],
+      "Phone number": [
+        "Numero di telefono"
+      ],
       "Postal code": [
         "Codice postale"
       ],
@@ -3171,6 +3269,9 @@
       ],
       "Thomas": [
         "Mario"
+      ],
+      "Verification code": [
+        "Codice di verifica"
       ],
       "What happened?": [
         "Cos'è successo?"
@@ -3272,6 +3373,9 @@
       ],
       "Learn more": [
         "Scopri di più"
+      ],
+      "Request an invite": [
+        "Richiedi un invito"
       ],
       "settings": [
         "impostazioni"
@@ -4307,6 +4411,9 @@
       "Credit/debit card": [
         "Carta di credito/debito"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Nuova carta di credito/debito"
       ]
@@ -4437,6 +4544,12 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Hai già un abbonamento a questo piano. Puoi cambiare il tuo abbonamento su ${ subscriptionPlatform }."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Sarai presto reindirizzato a PayPal per verificare il pagamento."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Sarai presto reindirizzato per verificare il pagamento."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "La tua valuta è stata cambiata in euro (€) perché i bonifici bancari SEPA supportano solo pagamenti in euro."
       ],
@@ -4467,6 +4580,11 @@
         "La tua carta è stata rifiutata. Prova con una carta diversa o contatta la tua banca per autorizzare l'addebito."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Qualcosa è andato storto. La verifica di Google Pay non è riuscita."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Credito per la parte non usata del tuo precedente abbonamento"
@@ -4486,6 +4604,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Bonifico bancario - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - carta che termina con ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -5027,6 +5148,9 @@
       "Billing details updated": [
         "Informazioni di fatturazione aggiornati"
       ],
+      "Code sent to ${ methodTo }": [
+        "Codice inviato a ${ methodTo }"
+      ],
       "Copied to clipboard": [
         "Copiato negli appunti"
       ],
@@ -5044,6 +5168,9 @@
       ],
       "Signature copied to clipboard": [
         "Firma copiata negli appunti"
+      ],
+      "Verification successful": [
+        "Verifica riuscita"
       ],
       "You have successfully canceled your subscription.": [
         "Hai annullato l'abbonamento con successo."
@@ -5120,6 +5247,12 @@
     "Title": {
       "${ feature } is now active": [
         "${ feature } è adesso attivo"
+      ],
+      "Account restricted": [
+        "Account limitato"
+      ],
+      "Account temporarily locked": [
+        "Account temporaneamente bloccato"
       ],
       "Add credit/debit card": [
         "Aggiungi carta di credito/debito"
@@ -5217,8 +5350,14 @@
       "Help center": [
         "Centro assistenza"
       ],
+      "Human verification": [
+        "Verifica umana"
+      ],
       "Import emails, calendars, contacts": [
         "Importa email, calendari, contatti"
+      ],
+      "Invalid verification code": [
+        "Codice di verifica non valido"
       ],
       "Minicalendar": [
         "Mini calendario"
@@ -5243,6 +5382,9 @@
       ],
       "Report a problem": [
         "Segnala un problema"
+      ],
+      "Request new code": [
+        "Richiedi nuovo codice"
       ],
       "Select a plan": [
         "Seleziona un piano"

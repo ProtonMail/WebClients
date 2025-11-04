@@ -49,6 +49,9 @@
       "Cancel trial and pay": [
         "取消試用並付款"
       ],
+      "Change password": [
+        "變更密碼"
+      ],
       "Chat with us": [
         "與我們往來對話"
       ],
@@ -115,6 +118,15 @@
       "Edit": [
         "編輯"
       ],
+      "Edit email address": [
+        "編輯電郵位址"
+      ],
+      "Edit phone number": [
+        "編輯手機號碼"
+      ],
+      "Edit sign-in details": [
+        "編輯登入詳細資訊"
+      ],
       "Edit subscription": [
         "更換授權約期"
       ],
@@ -132,6 +144,9 @@
       ],
       "Get the apps": [
         "取得應用程式"
+      ],
+      "Get verification code": [
+        "取得驗證碼"
       ],
       "Go to ${ planOrAppName }": [
         "前往 ${ planOrAppName }"
@@ -238,6 +253,12 @@
       "Request a feature": [
         "提出新功能建議"
       ],
+      "Request new code": [
+        "重新傳送驗證碼"
+      ],
+      "Resend code": [
+        "重新傳送驗證碼"
+      ],
       "Save": [
         "儲存"
       ],
@@ -301,6 +322,9 @@
       "Try again": [
         "再試一次"
       ],
+      "Try another method": [
+        "嘗試其它驗證方式"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "啟用${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -342,6 +366,9 @@
       ],
       "Verify": [
         "驗證"
+      ],
+      "Verify account": [
+        "驗證帳號"
       ],
       "View invoice": [
         "查看帳單"
@@ -1820,6 +1847,9 @@
       "Email is not valid": [
         "電郵無效"
       ],
+      "Enter 6 digits": [
+        "請輸入 6 位驗證碼"
+      ],
       "Error connecting to the Bitcoin API.": [
         "連線到比特幣 API 時發生錯誤。"
       ],
@@ -1846,6 +1876,9 @@
       ],
       "Invalid postal code": [
         "郵遞區號無效"
+      ],
+      "Invalid verification code": [
+        "驗證碼無效"
       ],
       "Invalid ZIP code": [
         "無效的郵遞區號"
@@ -2137,6 +2170,23 @@
         "服務"
       ]
     },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA 驗證碼"
+      ],
+      "Email": [
+        "電郵"
+      ],
+      "Manual": [
+        "手動"
+      ],
+      "No verification method available": [
+        "沒有可用的驗證方法"
+      ],
+      "SMS": [
+        "簡訊"
+      ]
+    },
     "Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME }訂閱撰寫扳手"
@@ -2174,6 +2224,9 @@
       "30-day money-back guarantee.": [
         "30天退款保證。"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "電話號碼僅能用於驗證一組 ${ BRAND_NAME } 帳號"
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "一位使用者意味著一個帳號與單一使用者名稱、信箱及個人對應"
       ],
@@ -2204,6 +2257,9 @@
       "Balance from your previous subscription": [
         "您先前訂購授權的餘額"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "在申請一組新的驗證碼之前，請檢查您的垃圾郵件資料夾以及 ${ strong } 的位址正確無誤。"
+      ],
       "Billing cycle: ${ text }": [
         "繳款單週期：${ text }"
       ],
@@ -2212,6 +2268,9 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "一旦降級至免費方案，您將永久失去這些優惠，即便您日後再次升級也是如此。"
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "按一下「重新傳送驗證碼」向 ${ strong } 傳送新的驗證碼。如此手機號碼不正確，請按一下「編輯」作出修正。"
       ],
       "Country code": [
         "國家代碼"
@@ -2264,6 +2323,9 @@
       "Each code can only be used once": [
         "每組驗證代碼只能使用一次"
       ],
+      "Edit email address": [
+        "編輯電子郵件位址"
+      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "電郵網域名稱託管服務，僅適用於您已擁有的網域名稱。 ${ BRAND_NAME } 現階段並未提供網域名稱註冊服務。 您的託管服務，可使用任何網域註冊商已註冊的名稱。"
       ],
@@ -2275,6 +2337,9 @@
       ],
       "Enter the code from your authenticator app": [
         "輸入驗證應用程式中的驗證代碼"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "驗證碼已傳送至 ${ destinationText }，請在下方輸入。"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "輸入驗證代碼。正在按下 ${ digit } 。"
@@ -2288,8 +2353,14 @@
       "Expired": [
         "已過期"
       ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "若您在創建帳號時遇上問題，請聯絡我們。我們將會於一個工作天內處理您的申請。"
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "如果您還是決定取消，現有 ${ planTitle } 授權將不再自動續購，到期日為 ${ expiryDate }"
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "若您在收件匣中找不到該電郵，請查看「垃圾郵件」資料夾。"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "若您仍然選擇降級，你將會失去 ${ MAIL_APP_NAME } 與 ${ VPN_APP_NAME } 的付費功能。"
@@ -2432,6 +2503,9 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "欲完成您的繳款，請傳送 ${ btcAmountBold } 至以下位址。"
       ],
+      "To fight spam and abuse, please verify you are human.": [
+        "為防止垃圾郵件及濫用行為，請驗證您是真人。"
+      ],
       "Total email addresses": [
         "可使用的電郵位址總數"
       ],
@@ -2477,11 +2551,20 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "我們將在瀏覽器的新索引標籤中重新導向到 PayPal 以完成此交易。若您有使用任何彈出式視窗攔截程式，請先停用，然後才繼續。"
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "我們將會向 ${ strong } 傳送新的驗證碼"
+      ],
       "Week": [
         "週"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "設定兩步驟驗證後提供一組復原代碼，無法使用驗證器應用程式時可用復原代碼登入。"
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "您想要接收新的驗證碼，還是更換驗證方式？"
+      ],
+      "Would you like to receive a new verification code?": [
+        "您想要收到新的驗證碼嗎？"
       ],
       "Writing assistant": [
         "撰寫幫手"
@@ -2500,6 +2583,9 @@
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
         "您可保留最多 ${ MAX_CALENDARS_FREE } 個行事曆。請先移除已分享的行事曆連結以及任何與其分享行事曆的 ${ BRAND_NAME } 使用者，然後才取消您的訂閱。"
+      ],
+      "You can now return to the application to continue": [
+        "您現在可以返回應用程式並繼續"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以啟用通知功能，以便在新的電郵訊息送達此資料夾時收到通知。"
@@ -2531,14 +2617,17 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "已凍結您的 ${ BRAND_NAME } 帳號 。 28 日後，收件匣停收電郵，磁碟機共享連結失效，您無法再上載新檔案。 如欲恢復正常服務，請支付所有逾期繳款單。"
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "已凍結您的 ${ BRAND_NAME } 帳號 。 收件匣停收電郵，磁碟機共享連結失效，您無法再上載新檔案。 如欲正常使用服務，請支付所有逾期繳款單。"
+      "Your email will only be used for this one-time verification.": [
+        "您的電郵只會用於此一次性驗證。"
       ],
       "Your next billing date is ${ renewalTime }.": [
         "您的下一個結算日期為${ renewalTime }。"
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "您下一個收費日為${ renewalTime }。若您需要立即變更方案請聯繫客服。"
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "您的手機號碼只會用於此一次性驗證。"
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "您的方案開始於${ renewalTime }及於${ cycle }月重新開始。"
@@ -2625,6 +2714,9 @@
       ],
       "City": [
         "縣市"
+      ],
+      "Code is 6 digits without spaces": [
+        "驗證碼為六位數且無空格"
       ],
       "Colors": [
         "色彩"
@@ -2722,6 +2814,9 @@
       "Payment method": [
         "付款方式"
       ],
+      "Phone number": [
+        "手機號碼"
+      ],
       "Postal code": [
         "郵遞區號"
       ],
@@ -2754,6 +2849,9 @@
       ],
       "Thomas": [
         "湯姆斯"
+      ],
+      "Verification code": [
+        "驗證碼"
       ],
       "What happened?": [
         "發生了甚麼問題？"
@@ -2825,6 +2923,9 @@
       ],
       "Learn more": [
         "瞭解詳情"
+      ],
+      "Request an invite": [
+        "需求邀請"
       ],
       "settings": [
         "設定"
@@ -4325,6 +4426,9 @@
       "Billing details updated": [
         "帳單詳情已更新"
       ],
+      "Code sent to ${ methodTo }": [
+        "驗證碼已發送至 ${ methodTo }"
+      ],
       "Copied to clipboard": [
         "已複製到剪貼簿"
       ],
@@ -4339,6 +4443,9 @@
       ],
       "Problem reported": [
         "以回報問題"
+      ],
+      "Verification successful": [
+        "驗證成功"
       ],
       "You have successfully canceled your subscription.": [
         "您已完成取消訂購授權。"
@@ -4391,6 +4498,9 @@
     "Title": {
       "${ feature } is now active": [
         "${ feature }現在為起用狀態"
+      ],
+      "Account restricted": [
+        "帳號已受限制"
       ],
       "Add credit/debit card": [
         "加入信用卡/扣帳卡"
@@ -4473,6 +4583,12 @@
       "Help center": [
         "說明中心"
       ],
+      "Human verification": [
+        "真人身分驗證"
+      ],
+      "Invalid verification code": [
+        "驗證碼無效"
+      ],
       "Minicalendar": [
         "小型行事曆"
       ],
@@ -4496,6 +4612,9 @@
       ],
       "Report a problem": [
         "回報問題"
+      ],
+      "Request new code": [
+        "重新傳送驗證碼"
       ],
       "Select a plan": [
         "請選擇一個方案"

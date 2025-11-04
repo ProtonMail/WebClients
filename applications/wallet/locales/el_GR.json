@@ -61,6 +61,9 @@
       "Cancel trial and pay": [
         "Ακύρωση δοκιμής και πληρωμή"
       ],
+      "Change password": [
+        "Αλλαγή κωδικού πρόσβασης"
+      ],
       "Chat with us": [
         "Επικοινωνήστε μαζί μας"
       ],
@@ -130,6 +133,15 @@
       "Edit": [
         "Επεξεργασία"
       ],
+      "Edit email address": [
+        "Επεξεργασία διεύθυνσης ηλ. ταχυδρομείου"
+      ],
+      "Edit phone number": [
+        "Επεξεργασία αριθμού τηλεφώνου"
+      ],
+      "Edit sign-in details": [
+        "Επεξεργασία στοιχείων εισόδου"
+      ],
       "Edit subscription": [
         "Επεξεργασία συνδρομής"
       ],
@@ -147,6 +159,9 @@
       ],
       "Get the apps": [
         "Αποκτήστε τις εφαρμογές"
+      ],
+      "Get verification code": [
+        "Απόκτηση κωδικού επαλήθευσης"
       ],
       "Go to ${ planOrAppName }": [
         "Πηγαίνετε στο ${ planOrAppName }"
@@ -265,6 +280,12 @@
       "Request a feature": [
         "Ζητήστε μια δυνατότητα"
       ],
+      "Request new code": [
+        "Ζητήστε νέο κωδικό"
+      ],
+      "Resend code": [
+        "Επαναποστολή κωδικού"
+      ],
       "Save": [
         "Αποθήκευση"
       ],
@@ -311,7 +332,7 @@
         "Εμφάνιση περισσότερων"
       ],
       "Show more benefits": [
-        "Εμφάνιση περισσότερων οφελών"
+        "Εμφάνιση περισσότερων προνομίων"
       ],
       "Show QRCode": [
         "Εμφάνιση QRCode"
@@ -336,6 +357,9 @@
       ],
       "Try again": [
         "Δοκιμάστε ξανά"
+      ],
+      "Try another method": [
+        "Δοκιμάστε μια άλλη μέθοδο"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Ενεργοποίηση ${ DARK_WEB_MONITORING_NAME }"
@@ -381,6 +405,9 @@
       ],
       "Verify": [
         "Επαλήθευση"
+      ],
+      "Verify account": [
+        "Επαλήθευση λογαριασμού"
       ],
       "View invoice": [
         "Προβολή τιμολογίου"
@@ -2172,6 +2199,9 @@
       "Email is not valid": [
         "Η διεύθυνση email δεν είναι έγκυρη"
       ],
+      "Enter 6 digits": [
+        "Εισάγετε 6 ψηφία"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Πρόβλημα σύνδεσης με το Bitcoin API."
       ],
@@ -2198,6 +2228,9 @@
       ],
       "Invalid postal code": [
         "Μη έγκυρος ταχυδρομικός κώδικας"
+      ],
+      "Invalid verification code": [
+        "Μη έγκυρος κωδικός επαλήθευσης"
       ],
       "Invalid ZIP code": [
         "Μη έγκυρος Ταχυδρομικός Κωδικός"
@@ -2512,6 +2545,23 @@
         "Υπηρεσίες"
       ]
     },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "Email"
+      ],
+      "Manual": [
+        "Χειροκίνητα"
+      ],
+      "No verification method available": [
+        "Δεν υπάρχει διαθέσιμη μέθοδος επαλήθευσης"
+      ],
+      "SMS": [
+        "SMS"
+      ]
+    },
     "Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe βοηθός γραφής"
@@ -2551,6 +2601,9 @@
       "30-day money-back guarantee.": [
         "Εγγύηση επιστροφής χρημάτων εντός 30 ημερών."
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Ένας αριθμός τηλεφώνου μπορεί να χρησιμοποιηθεί μόνο για την επαλήθευση ενός λογαριασμού ${ BRAND_NAME }"
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Χρήστης νοείται ένας λογαριασμός συσχετισμένος με μοναδικό όνομα χρήστη, θυρίδα και πρόσωπο"
       ],
@@ -2584,6 +2637,9 @@
       "Balance from your previous subscription": [
         "Υπόλοιπο από την προηγούμενη συνδρομή σας"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Πριν αιτηθείτε νέο κωδικό επαλήθευσης, ελέγξτε τον φάκελό σας Ενοχλητικά και ότι η ${ strong } είναι η σωστή διεύθυνση."
+      ],
       "Billing cycle: ${ text }": [
         "Κύκλος χρέωσης: ${ text }"
       ],
@@ -2592,6 +2648,9 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Με την υποβάθμιση σε ένα Δωρεάν Λογαριασμό, θα χάσετε μόνιμα αυτά τα οφέλη, ακόμη και αν αναβαθμίσετε ξανά στο μέλλον."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Κάντε κλικ στην επιλογή \"Αίτηση νέου κωδικού\" για να σταλεί ένας νέος κωδικός επαλήθευσης στο ${ strong }. Εάν αυτός ο αριθμός τηλεφώνου είναι εσφαλμένος, κάντε κλικ στο \"Επεξεργασία\" για να τον διορθώσετε."
       ],
       "Country code": [
         "Κωδικός χώρας"
@@ -2645,6 +2704,9 @@
       "Each code can only be used once": [
         "Κάθε κωδικός μπορεί να χρησιμοποιηθεί μόνο μια φορά"
       ],
+      "Edit email address": [
+        "Επεξεργασία ηλεκτρονικής διεύθυνσης"
+      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Η φιλοξενία email είναι διαθέσιμη μόνο για τους υπάρχοντες τομείς που κατέχετε. Η εγγραφή τομέων δεν είναι προσωρινά διαθέσιμη μέσω ${ BRAND_NAME }. Μπορείτε να φιλοξενήσετε email για τομείς εγγεγραμμένους σε οιουδήποτε ληξίαρχο τομέων."
       ],
@@ -2656,6 +2718,9 @@
       ],
       "Enter the code from your authenticator app": [
         "Πληκτρολογήστε τον κωδικό από την εφαρμογή ταυτοποίησης"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Εισάγετε τον κωδικό επαλήθευσης που εστάλη στο ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Εισάγετε τον κωδικό επιβεβαίωσης. Ψηφίο ${ digit }."
@@ -2672,8 +2737,17 @@
       "Expired": [
         "Ληγμένο"
       ],
+      "Google Pay mark": [
+        "Σήμα Google Pay"
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Αν αντιμετωπίζετε προβλήματα με τη δημιουργία του λογαριασμού σας, ζητήστε μια πρόσκληση και θα απαντήσουμε εντός μίας εργάσιμης ημέρας."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Εάν ακυρώσετε, η συνδρομή σας ${ planTitle } δε θα ανανεωθεί όταν λήξει στις ${ expiryDate }."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Αν δε βρείτε το μήνυμα στα Εισερχόμενα, παρακαλούμε ελέγξτε τον φάκελο Ενοχλητικά."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Αν προχωρήσετε με την υποβάθμιση, θα χάσετε πρόσβαση στα χαρακτηριστικά επί πληρωμή των ${ MAIL_APP_NAME } και ${ VPN_APP_NAME }."
@@ -2829,6 +2903,9 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Για να ολοκληρώσετε την πληρωμή σας, στείλτε ${ btcAmountBold } στην παρακάτω διεύθυνση."
       ],
+      "To fight spam and abuse, please verify you are human.": [
+        "Για την καταπολέμηση ενοχλήσεων και καταχρήσεων, παρακαλούμε επαληθεύστε ότι είστε άνθρωπος."
+      ],
       "Total email addresses": [
         "Σύνολο διευθύνσεων ηλεκτρονικού ταχυδρομείου"
       ],
@@ -2874,11 +2951,20 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Θα σας ανακατευθύνουμε στο PayPal, σε μια νέα καρτέλα προγράμματος περιήγησης, για να ολοκληρώσετε αυτήν τη συναλλαγή. Εάν έχετε ενεργοποιημένο τον αποκλεισμό αναδυόμενων παραθύρων, παρακαλώ απενεργοποιήστε τον για να συνεχίσετε."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Θα στείλουμε νέο κωδικό επαλήθευσης στο ${ strong }"
+      ],
       "Week": [
         "Εβδομάδα"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Όταν ρυθμίσετε τον έλεγχο ταυτοποίησης δύο παραγόντων, σας παρέχουμε κωδικούς ανάκτησης τους οποίους μπορείτε να χρησιμοποιήσετε για να συνδεθείτε σε περίπτωση που χάσετε την πρόσβαση στην εφαρμογή ταυτοποίησης σας."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Θέλετε να λάβετε έναν νέο κωδικό επαλήθευσης ή να χρησιμοποιήσετε μια εναλλακτική μέθοδο επαλήθευσης;"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Θα θέλατε να λάβετε νέο κωδικό επαλήθευσης;"
       ],
       "Writing assistant": [
         "Βοηθός γραφής"
@@ -2899,6 +2985,9 @@
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
         "Μπορείτε να διατηρήσετε έως και ${ MAX_CALENDARS_FREE } ημερολόγιο. Καταργήστε τους κοινόχρηστους συνδέσμους ημερολογίου και οποιονδήποτε ${ BRAND_NAME } χρήστη με τον οποίο μοιραστήκατε τα ημερολόγιά σας πριν ακυρώσετε τη συνδρομή σας.",
         "Μπορείτε να διατηρήσετε έως και ${ MAX_CALENDARS_FREE } ημερολόγια. Καταργήστε τους κοινόχρηστους συνδέσμους ημερολογίου και οποιονδήποτε ${ BRAND_NAME } χρήστη με τον οποίο μοιραστήκατε τα ημερολόγιά σας πριν ακυρώσετε τη συνδρομή σας."
+      ],
+      "You can now return to the application to continue": [
+        "Τώρα μπορείτε να επιστρέψετε στην εφαρμογή για να συνεχίσετε"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Μπορείτε να ενεργοποιήσετε τις ειδοποιήσεις, για να λαμβάνετε ειδοποιήσεις όταν φτάνουν νέα email σε αυτόν το φάκελο."
@@ -2931,17 +3020,20 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Οι υπηρεσίες του ${ BRAND_NAME } λογαριασμού σας μόλις έχουν ανασταλεί. Μετά από 28 ημέρες, δεν θα μπορείτε να λάβετε μηνύματα στα εισερχόμενα, οι Drive σύνδεσμοι θα αποκλειστούν, και δεν θα μπορείτε να ανεβάσετε καινούργια αρχεία. Για να συνεχίσετε ομαλά τις υπηρεσίες σας, παρακαλούμε να πληρώσετε τυχόν ληξιπρόθεσμα τιμολόγια."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Οι υπηρεσίες του ${ BRAND_NAME } λογαριασμού σας μόλις έχουν ανασταλεί. Δεν μπορείτε πλέον να λάβετε μηνύματα στα εισερχόμενα σας. Οι σύνδεσμοι στο Drive έχουν απενεργοποιηθεί, και δεν μπορείτε να ανεβάσετε νέα αρχεία. Για να συνεχίσετε τις υπηρεσίες του λογαριασμού σας, παρακαλούμε να πληρώσετε τυχόν ληξιπρόθεσμα τιμολόγια."
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Η συνδρομή σας ${ plan } θα αντικατασταθεί με ${ PASS_SHORT_APP_NAME } διάρκειας ζωής. Το υπόλοιπο της συνδρομής σας θα προστεθεί στον λογαριασμό σας. Η προσφορά ${ PASS_SHORT_APP_NAME } διάρκειας ζωής δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Το email σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Η επόμενη ημερομηνία χρέωσης είναι ${ renewalTime }."
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Η επόμενη ημερομηνία χρέωσης είναι ${ renewalTime }. Παρακαλούμε επικοινωνήστε με την υποστήριξη εάν χρειάζεστε άμεση αλλαγή πλάνου."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Ο αριθμός τηλεφώνου σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Το προγραμματισμένο πλάνο σας ξεκινά από ${ renewalTime } και θα ανανεώνεται αυτόματα κάθε ${ cycle } μήνα.",
@@ -3036,6 +3128,9 @@
       ],
       "City": [
         "Πόλη"
+      ],
+      "Code is 6 digits without spaces": [
+        "Ο κωδικός είναι 6 ψηφία χωρίς κενά"
       ],
       "Colors": [
         "Χρώματα"
@@ -3136,6 +3231,9 @@
       "Payment method": [
         "Μέθοδος πληρωμής"
       ],
+      "Phone number": [
+        "Αριθμός τηλεφώνου"
+      ],
       "Postal code": [
         "Ταχυδρομικός κώδικας"
       ],
@@ -3171,6 +3269,9 @@
       ],
       "Thomas": [
         "Thomas"
+      ],
+      "Verification code": [
+        "Κωδικός επαλήθευσης"
       ],
       "What happened?": [
         "Τι συνέβη;"
@@ -3272,6 +3373,9 @@
       ],
       "Learn more": [
         "Μάθετε περισσότερα"
+      ],
+      "Request an invite": [
+        "Ζητήστε μια πρόσκληση"
       ],
       "settings": [
         "ρυθμίσεις"
@@ -4302,6 +4406,9 @@
       "Credit/debit card": [
         "Πιστωτική/χρεωστική κάρτα"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Νέα πιστωτική/χρεωστική κάρτα"
       ]
@@ -4432,6 +4539,12 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Έχετε ήδη συνδρομή σε αυτό το πλάνο. Μπορείτε να αλλάξετε τη συνδρομή σας στο ${ subscriptionPlatform }."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Θα ανακατευθυνθείτε σύντομα στο Paypal, για να επαληθεύσετε την πληρωμή σας."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Θα ανακατευθυνθείτε σύντομα, για να επαληθεύσετε την πληρωμή σας."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Το νόμισμά σας άλλαξε σε ευρώ (€) επειδή οι τραπεζικές μεταφορές SEPA υποστηρίζουν μόνο πληρωμές σε ευρώ."
       ],
@@ -4462,6 +4575,11 @@
         "Η κάρτα σας απορρίφθηκε. Παρακαλούμε δοκιμάστε μια διαφορετική κάρτα ή επικοινωνήστε με την τράπεζα σας για να εγκρίνετε τη χρέωση."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Κάτι πήγε στραβά. Η επαλήθευση του Google Pay απέτυχε."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Πίστωση του μη καταναλωμένου υπολοίπου της συνδρομής σας στο προηγούμενο πλάνο"
@@ -4481,6 +4599,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Τραπεζική μεταφορά - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - κάρτα που λήγει σε ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -5022,6 +5143,9 @@
       "Billing details updated": [
         "Τα στοιχεία χρέωσης ενημερώθηκαν"
       ],
+      "Code sent to ${ methodTo }": [
+        "Ο κωδικός στάλθηκε στο ${ methodTo }"
+      ],
       "Copied to clipboard": [
         "Αντιγράφηκε στο πρόχειρο"
       ],
@@ -5039,6 +5163,9 @@
       ],
       "Signature copied to clipboard": [
         "Η υπογραφή αντιγράφηκε στο πρόχειρο"
+      ],
+      "Verification successful": [
+        "Επιτυχία επαλήθευσης"
       ],
       "You have successfully canceled your subscription.": [
         "Ακυρώσατε επιτυχώς τη συνδρομή σας."
@@ -5115,6 +5242,12 @@
     "Title": {
       "${ feature } is now active": [
         "Το ${ feature } είναι πλέον ενεργό"
+      ],
+      "Account restricted": [
+        "Ο λογαριασμός περιορίστηκε"
+      ],
+      "Account temporarily locked": [
+        "Ο λογαριασμός έχει κλειδωθεί προσωρινά"
       ],
       "Add credit/debit card": [
         "Προσθήκη πιστωτικής/χρεωστικής κάρτας"
@@ -5212,8 +5345,14 @@
       "Help center": [
         "Κέντρο βοήθειας"
       ],
+      "Human verification": [
+        "Ανθρώπινη Επαλήθευση"
+      ],
       "Import emails, calendars, contacts": [
         "Εισαγωγή ηλεκτρονικών διευθύνσεων, ημερολογίων, επαφών"
+      ],
+      "Invalid verification code": [
+        "Μη έγκυρος κωδικός επαλήθευσης"
       ],
       "Minicalendar": [
         "Μίνι ημερολόγιο"
@@ -5238,6 +5377,9 @@
       ],
       "Report a problem": [
         "Αναφορά προβλήματος"
+      ],
+      "Request new code": [
+        "Αίτηση νέου κωδικού"
       ],
       "Select a plan": [
         "Επιλέξτε ένα πλάνο"
