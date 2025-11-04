@@ -16,7 +16,6 @@ import {
 } from '@proton/components';
 import { useDrive } from '@proton/drive/index';
 import { useLoading } from '@proton/hooks';
-import useFlag from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import { CreateFolderModal } from '../../modals/CreateFolderModal';
@@ -118,10 +117,9 @@ const CreateFolderModalDeprecated = ({
 // Force legacy is used in the case the modal is opened from MoveToFolderModalDeprecated
 // To prevent issues, we load the legacy for both
 export const useCreateFolderModal = ({ forceLegacy = false }: { forceLegacy: boolean } = { forceLegacy: false }) => {
-    const useSDKModal = useFlag('DriveWebSDKCreateFolderModal');
     const isPublic = getIsPublicContext();
     const { drive } = useDrive();
-    const shouldUseSDK = useSDKModal && !isPublic;
+    const shouldUseSDK = !isPublic;
 
     const [modal, showModal] = useModalTwoStatic(
         shouldUseSDK && !forceLegacy ? CreateFolderModal : CreateFolderModalDeprecated

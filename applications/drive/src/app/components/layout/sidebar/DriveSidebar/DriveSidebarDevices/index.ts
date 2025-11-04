@@ -1,1 +1,0 @@
-export { DriveSidebarDevicesDeprecated } from './SidebarDevices';

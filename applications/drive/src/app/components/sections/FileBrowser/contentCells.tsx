@@ -8,12 +8,8 @@ import clsx from '@proton/utils/clsx';
 import { useInvitationsActions, useLinkPath } from '../../../store';
 import { formatAccessCount } from '../../../utils/formatters';
 import { Cells } from '../../FileBrowser';
-import SignatureIcon from '../../SignatureIcon';
-import type { DeviceItem } from '../Devices/Devices';
-import type { DriveItem } from '../Drive/Drive';
-import type { SharedLinkItem } from '../SharedLinks/SharedLinks';
-import type { SharedWithMeItem } from '../SharedWithMe/SharedWithMe';
-import type { TrashItem } from '../Trash/Trash';
+import { DeprecatedSignatureIcon as SignatureIcon } from '../../SignatureIcon';
+import type { DeviceItem, DriveItem, SharedLinkItem, SharedWithMeItem, TrashItem } from '../interface';
 import { ShareIcon } from './ShareIcon';
 import { getDeviceIconText, getLinkIconText } from './utils';
 
