@@ -1,7 +1,7 @@
 import type { Nullable } from '@proton/shared/lib/interfaces';
 
 import type { CheckSubscriptionData, ProrationMode } from '../api';
-import type { Currency, Cycle } from '../interface';
+import type { Currency, Cycle, PlanIDs } from '../interface';
 import type { BasePlansMap, Plan, SubscriptionPlan } from '../plan/interface';
 import type { Renew, SubscriptionMode, SubscriptionPlatform, TaxInclusive } from './constants';
 
@@ -50,11 +50,19 @@ export interface Subscription {
     SecondarySubscriptions?: Subscription[];
 }
 
-export type Coupon = Nullable<{
+type CouponBase = {
     Code: string;
     Description: string;
     MaximumRedemptionsPerUser: number | null;
-}>;
+};
+
+export type Coupon = Nullable<CouponBase>;
+
+export type EnrichedCoupon = Nullable<
+    CouponBase & {
+        Targets?: PlanIDs;
+    }
+>;
 
 export interface SubscriptionCheckResponse {
     /**
@@ -76,7 +84,7 @@ export interface SubscriptionCheckResponse {
      * Coupon discount. The amount is in cents.
      */
     CouponDiscount?: number;
-    Coupon: Coupon;
+    Coupon: EnrichedCoupon;
     /**
      * In case of custom billings, the property will show the discount when user adds an addon mid-cycle. This property
      * is kind of "proration for custom billings". The amount is in cents.
