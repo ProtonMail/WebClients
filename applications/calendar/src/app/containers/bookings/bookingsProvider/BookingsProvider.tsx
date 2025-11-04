@@ -4,6 +4,7 @@ import type { ReactNode } from 'react';
 import { areIntervalsOverlapping, isBefore } from 'date-fns';
 import { c } from 'ttag';
 
+import { useUserSettings } from '@proton/account/index';
 import { useCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
@@ -19,9 +20,9 @@ import { getTimezone } from '@proton/shared/lib/date/timezone';
 import { useCalendarGlobalModals } from '../../GlobalModals/GlobalModalProvider';
 import { ModalType } from '../../GlobalModals/interface';
 import { encryptBookingPage } from '../bookingCryptoUtils';
-import { generateSlotsFromRange } from '../bookingHelpers';
+import { generateBookingRangeID, generateDefaultBookingRange, generateSlotsFromRange } from '../bookingHelpers';
 import type { BookingRange, Slot } from './interface';
-import { BOOKING_SLOT_ID, type BookingFormData, BookingLocation, BookingState } from './interface';
+import { type BookingFormData, BookingLocation, BookingState } from './interface';
 
 interface BookingsContextValue {
     submitForm: () => Promise<void>;
@@ -55,7 +56,8 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     const [bookingsState, setBookingsState] = useState<BookingState>(BookingState.OFF);
     const [loading, setLoading] = useState(false);
 
-    const [bookingRange, setBookingRange] = useState<BookingRange[]>([]);
+    const [userSettings] = useUserSettings();
+    const [bookingRange, setBookingRange] = useState<BookingRange[] | null>(null);
 
     const api = useApi();
     const { notify } = useCalendarGlobalModals();
@@ -103,9 +105,28 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         }
     }, [formData.selectedCalendar, CalendarSettings, writeableCalendars, preferredWritableCal]);
 
+    const setInitialFormState = () => {
+        // TODO update the timezone for when we set the form here
+        const bookingRange = generateDefaultBookingRange(userSettings, '');
+        const bookingSlots = bookingRange
+            .map((range) =>
+                generateSlotsFromRange({
+                    rangeID: range.id,
+                    start: range.start,
+                    end: range.end,
+                    duration: formData.duration,
+                    timezone: range.timezone,
+                })
+            )
+            .flat();
+
+        setBookingRange(bookingRange);
+        setFormData((prev) => ({ ...prev, bookingSlots }));
+    };
+
     const recomputeBookingSlots = (newDuration: number) => {
         const newSlots: Slot[] = [];
-        bookingRange.forEach((range) => {
+        bookingRange?.forEach((range) => {
             const slots = generateSlotsFromRange({
                 rangeID: range.id,
                 start: range.start,
@@ -137,7 +158,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     };
 
     const removeBookingRange = (id: string) => {
-        setBookingRange((prev) => prev.filter((range) => range.id !== id));
+        setBookingRange((prev) => prev?.filter((range) => range.id !== id) || null);
         setFormData((prev) => ({
             ...prev,
             // Remove all the slots associated with the removed range
@@ -151,12 +172,10 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             return;
         }
 
-        const dataStartTime = data.start.getTime();
-        const dataEndTime = data.end.getTime();
         // We store the start and end time of the range for quick comparsion
-        const dataId = `${BOOKING_SLOT_ID}-${dataStartTime}-${dataEndTime}`;
+        const dataId = generateBookingRangeID(data.start, data.end);
 
-        for (const range of bookingRange) {
+        for (const range of bookingRange || []) {
             if (range.id === dataId) {
                 createNotification({
                     text: c('Info').t`Booking already exists.`,
@@ -181,12 +200,14 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             timezone: data.timezone,
         });
         setFormData((prev) => ({ ...prev, bookingSlots: [...prev.bookingSlots, ...slots] }));
-        setBookingRange((prev) => [...prev, { ...data, id: dataId }]);
+        setBookingRange((prev) => [...(prev || []), { ...data, id: dataId }]);
     };
 
     const changeBookingState = (state: BookingState) => {
         if (state === BookingState.OFF) {
             resetBookingState();
+        } else if (state === BookingState.CREATE_NEW) {
+            setInitialFormState();
         }
 
         setBookingsState(state);
