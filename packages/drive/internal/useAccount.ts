@@ -86,7 +86,10 @@ export function useAccount(): ProtonDriveAccount {
             silence: [API_CUSTOM_ERROR_CODES.KEY_GET_ADDRESS_MISSING, API_CUSTOM_ERROR_CODES.KEY_GET_DOMAIN_EXTERNAL],
         }).catch((e) => {
             // We should not failed on missing address
-            if (e?.data?.Code === API_CUSTOM_ERROR_CODES.KEY_GET_ADDRESS_MISSING) {
+            if (
+                e?.data?.Code === API_CUSTOM_ERROR_CODES.KEY_GET_ADDRESS_MISSING ||
+                e?.data?.Code === API_CUSTOM_ERROR_CODES.KEY_GET_DOMAIN_EXTERNAL
+            ) {
                 return { Address: { Keys: [] }, Unverified: undefined };
             }
             throw e;
