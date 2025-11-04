@@ -12,6 +12,6 @@ export const getActiveElement = (start: Document | ShadowRoot = document): Maybe
 };
 
 export const isActiveElement = (target?: HTMLElement): boolean => {
-    if (!target) return false;
+    if (!(target && document.hasFocus())) return false;
     return target === getActiveElement();
 };
