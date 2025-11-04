@@ -144,6 +144,9 @@
       "Cancel upload": [
         "アップロードをキャンセル"
       ],
+      "Cancel uploads": [
+        "アップロードをキャンセル"
+      ],
       "Change": [
         "変更"
       ],
@@ -611,6 +614,9 @@
       ],
       "Loading link": [
         "リンクを読み込み中"
+      ],
+      "Make a copy": [
+        "複製"
       ],
       "Manage advanced account protections": [
         "高度なアカウント保護を管理"
@@ -3155,6 +3161,9 @@
       "/month": [
         "/ 月"
       ],
+      "2 TB of storage to share": [
+        "2 TBのストレージを共有"
+      ],
       "2 user accounts": [
         "2 ユーザーアカウント"
       ],
@@ -3415,6 +3424,12 @@
       "Error decrypting a computer": [
         "コンピュータの復号化エラー"
       ],
+      "Error reading file": [
+        "ファイルの読み込み中にエラーが発生しました"
+      ],
+      "Expected structure attached": [
+        "期待される構造が添付されています"
+      ],
       "External accounts are not supported yet": [
         "外部のアカウントはまだサポートされていません"
       ],
@@ -3484,6 +3499,9 @@
       "Folder \"${ name }\" is already downloading": [
         "フォルダー「${ name }」はすでにダウンロード中です"
       ],
+      "Folder creation failed": [
+        "フォルダの作成に失敗しました"
+      ],
       "Folder name cannot be empty.": [
         "フォルダー名は空欄にできません。"
       ],
@@ -3519,6 +3537,9 @@
       ],
       "Invalid IBAN": [
         "IBANが無効"
+      ],
+      "Invalid JSON file": [
+        "無効な JSON ファイルです"
       ],
       "Invalid name": [
         "無効な名前です"
@@ -3808,8 +3829,14 @@
       "Unknown payment token status": [
         "支払いトークンの状態が不明です。"
       ],
+      "Upload failed": [
+        "アップロードに失敗しました"
+      ],
       "Upload for this folder is temporarily disabled": [
         "このフォルダのアップロードは一時的に無効です"
+      ],
+      "Upload not found": [
+        "アップロードが見つかりません"
       ],
       "Username must begin with a letter or digit": [
         "ユーザー名は英字か数字で始めなければいけません"
@@ -4787,6 +4814,9 @@
       "${ canceledCount } canceled": [
         "キャンセル ${ canceledCount } 件"
       ],
+      "${ completedItems.length } of ${ items.length } transfers completed": [
+        "${ completedItems.length } 件中 ${ items.length } 件の転送が完了しました"
+      ],
       "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } 件の連絡先に複数のメールアドレスが含まれています。"
       ],
@@ -4969,9 +4999,6 @@
       ],
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "VPNは、あなたのデバイスとインターネットを繋ぐ安全なトンネルのようなものです。インターネットサービスプロバイダ(ISP)及び利用したウェブサイトから、位置情報と活動情報を隠します。"
-      ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "未払いの請求があるためアクセスが制限されています。管理者に問い合わせてください。"
       ],
       "Account successfully updated": [
         "アカウントが正常に更新されました。"
@@ -5464,6 +5491,9 @@
       ],
       "Go to \"My files\" and upload some files first.": [
         "「マイファイル」に移動し、ファイルをアップロードしてください。"
+      ],
+      "Google Pay mark": [
+        "Google Pay マーク"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "政府とISPも、あなたのオンライン上の活動を監視することができます。IPアドレスを隠し、活動内容を暗号化することで、お客様のブラウジングはプライベートになります。"
@@ -6239,6 +6269,9 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "この固有のコードは、ウェブサイトやプロバイダ(ISP)が、位置情報や閲覧履歴をお客様のデバイスと紐づけるのに利用します。"
       ],
+      "This will cancel any remaining uploads. Cancelled files won't be saved in ${ DRIVE_APP_NAME }.": [
+        "残りのアップロードはすべてキャンセルされます。キャンセルされたファイルは${ DRIVE_APP_NAME }に保存されません。"
+      ],
       "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
         "これはアルバムのみを削除します。あなたの写真はタイムラインに残ります。この操作は元に戻せません。"
       ],
@@ -6635,20 +6668,11 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "あなたの ${ BRAND_NAME } アカウントは、現在停止されています。28 日が経過すると、メールが受信トレイに届かなくなり、Drive の共有リンクがブロックされ、新しいファイルをアップロードできなくなります。通常のサービスを再開するには、未払いの請求をお支払いください。"
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "あなたの ${ BRAND_NAME } アカウントは、現在停止されています。メールが受信トレイに届かなくなりました。Drive の共有リンクが無効になり、新しいファイルをアップロードできません。アカウントの使用を継続するには、未払いの請求をお支払いください。"
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ plan } サブスクリプションは ${ PASS_SHORT_APP_NAME } Lifetime に置き換えられます。サブスクリプションの残高は、お客様のアカウントに追加されます。${ PASS_SHORT_APP_NAME } Lifetimeプランには更新価格はなく、1度の支払いで${ PASS_SHORT_APP_NAME } への生涯アクセスが得られます。"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "アカウントに少なくとも1つの期限切れの請求書があるため、アクセスが制限されます。${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "お客様のアカウントには1つ以上期限が過ぎている請求書があります。お支払いを確認できるまで全てのサービスにおいて制限が課されます。 ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "あなたのアカウントには未払いの請求があり、アカウントが制限されています。このまま支払いが行われなければ、メールやリンクの共有がブロックされます。${ payInvoiceLink }"
       ],
       "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
         "現在ご利用のブラウザは、大容量ファイルまたは複数ファイルのダウンロードをサポートしていません。スムーズなアップロードとダウンロードのために、デスクトップアプリをダウンロードしてください。"
@@ -9518,6 +9542,9 @@
       "Create new group": [
         "新しいグループを作成"
       ],
+      "Expected strcuture": [
+        "期待される構造"
+      ],
       "Ignore group": [
         "グループを無視"
       ],
@@ -9529,6 +9556,9 @@
       ],
       "Only current location: ${ name }": [
         "現在地のみ: ${ name }"
+      ],
+      "Select JSON file": [
+        "JSONファイルを選択"
       ],
       "Verify content": [
         "コンテンツを検証"
@@ -9644,6 +9674,9 @@
       ],
       "Credit/debit card": [
         "クレジット/デビット カード"
+      ],
+      "Google Pay": [
+        "Google Pay"
       ],
       "New credit/debit card": [
         "新しいクレジットカード/デビットカード"
@@ -9769,11 +9802,20 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "お客様は既にこのプランのサブスクリプションを契約済みです。${ subscriptionPlatform }でサブスクリプションを変更できます。"
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "支払いの検証のため、まもなく PayPal のサイトへリダイレクトされます。"
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "支払いの検証のため、まもなくリダイレクトされます。"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "お客様の通貨はユーロ (€) に変更されました。これは、SEPA銀行振込がユーロ建ての支払いのみをサポートしているためです。"
       ],
       "Your payment is still being processed": [
         "お支払いが現在処理中です"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "お客様のサブスクリプションには現在、既存の割引が適用されています。この新しいプロモーションに移行すると、既存の割引は適用されなくなります。"
       ]
     },
     "Payments.Error": {
@@ -9796,6 +9838,11 @@
         "あなたのカードは拒否されました。 別のカードを試すか、銀行に問い合わせて請求を承認してください。"
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "何か問題が発生しました。Google Payの認証に失敗しました。"
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "以前のサブスクリプションプランの未使用分のクレジット"
@@ -9815,6 +9862,9 @@
       ],
       "Bank transfer - ${ details }": [
         "銀行振込 - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - 末尾が${ paymentMethod.Details.Last4 }のカード"
       ]
     },
     "Payments.Sepa": {
@@ -11630,6 +11680,9 @@
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME } サブスクリプションをキャンセル"
+      ],
+      "Cancel all uploads?": [
+        "すべてのアップロードをキャンセルしますか？"
       ],
       "Cancel subscription?": [
         "サブスクリプションをキャンセルしますか?"

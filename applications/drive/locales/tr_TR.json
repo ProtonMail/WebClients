@@ -147,6 +147,9 @@
       "Cancel upload": [
         "Yüklemeyi iptal et"
       ],
+      "Cancel uploads": [
+        "Yüklemeleri iptal et"
+      ],
       "Change": [
         "Değiştir"
       ],
@@ -616,6 +619,9 @@
       ],
       "Loading link": [
         "Bağlantı yükleniyor"
+      ],
+      "Make a copy": [
+        "Kopya oluştur"
       ],
       "Manage advanced account protections": [
         "Gelişmiş hesap korumalarını yönetin"
@@ -3436,6 +3442,12 @@
       "Error decrypting a computer": [
         "Bir bilgisayarın şifresi çözülürken sorun çıktı"
       ],
+      "Error reading file": [
+        "Dosya okunurken sorun çıktı"
+      ],
+      "Expected structure attached": [
+        "Beklenen yapı eklendi"
+      ],
       "External accounts are not supported yet": [
         "Dış hesaplar henüz desteklenmiyor"
       ],
@@ -3543,6 +3555,9 @@
       ],
       "Invalid IBAN": [
         "IBAN geçersiz"
+      ],
+      "Invalid JSON file": [
+        "JSON dosyası geçersiz"
       ],
       "Invalid name": [
         "Ad geçersiz"
@@ -4848,6 +4863,9 @@
         "${ canceledCount } öge iptal edildi",
         "${ canceledCount } öge iptal edildi"
       ],
+      "${ completedItems.length } of ${ items.length } transfers completed": [
+        "${ completedItems.length } / ${ items.length } aktarım tamamlandı"
+      ],
       "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } kişinin birkaç e-posta adresi var.",
         "${ contactCount } kişinin birkaç e-posta adresi var."
@@ -5055,9 +5073,6 @@
       ],
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "Bir VPN, aygıtınız ile internet arasında güvenli bir tüneldir. Konumunuzu ve etkinliklerinizi İnternet hizmeti sağlayıcınızdan (İSS) ve ziyaret ettiğiniz sitelerden gizler."
-      ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Ödenmemiş faturalar nedeniyle hesap erişimi kısıtlandı. Lütfen yöneticinizle görüşün."
       ],
       "Account successfully updated": [
         "Hesap güncellendi"
@@ -5557,6 +5572,9 @@
       ],
       "Go to \"My files\" and upload some files first.": [
         "Önce \"Dosyalarım\" klasörüne gidip bazı dosyalar yükleyin."
+      ],
+      "Google Pay mark": [
+        "Google Pay işareti"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Hükümetler ve internet hizmeti sağlayıcılar çevrim içi etkinliğinizi izleyebilir. Gezinme gizliliğinizi korumak için gerçek IP adresiniz gizlenir ve etkinliğiniz şifrelenir."
@@ -6337,6 +6355,9 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Bu benzersiz kod, siteler ve internet hizmeti sağlayıcıları tarafından konumunuzu ve tarama geçmişinizi aygıtınızla ilişkilendirmek için kullanılabilir."
       ],
+      "This will cancel any remaining uploads. Cancelled files won't be saved in ${ DRIVE_APP_NAME }.": [
+        "Bu işlem kalan tüm yüklemeleri iptal edecek. İptal edilen dosyalar ${ DRIVE_APP_NAME } üzerine kaydedilmeyecek."
+      ],
       "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
         "Bu işlem yalnızca albümü siler. Fotoğraflarınız zaman akışınızda kalır. Bu işlem geri alınamaz."
       ],
@@ -6739,20 +6760,11 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "${ BRAND_NAME } hesabınız şu anda askıya alınmış. 28 gün sonra e-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hizmeti normal şekilde kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "${ BRAND_NAME } hesabınız şu anda askıya alınmış. E-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hesabınızı kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ plan } aboneliğiniz ${ PASS_SHORT_APP_NAME } Lifetime aboneliğiyle değiştirilecek. Aboneliğinizin kalan tutarı hesabınıza eklenecek. ${ PASS_SHORT_APP_NAME } Lifetime fırsatının yenileme fiyatı yoktur, ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik ödeme yapılır."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Hesabınızda süresi geçmiş en az bir fatura var. Erişiminiz yakında kısıtlanacak. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Hesabınızda süresi geçmiş en az bir fatura var. Hesabınıza erişiminiz kısıtlandı ve ödeme yapılana kadar tüm hizmetler engellendi. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Hesabınızda süresi geçmiş en az bir fatura var. Hesabınıza erişim kısıtlandı. Ödeme yapmazsanız e-postalarınız ve paylaşım bağlantılarınız engellenecek. ${ payInvoiceLink }"
       ],
       "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
         "Geçerli tarayıcınız büyük dosyaların/birden fazla dosyanın indirilmesini desteklemiyor. Yükleme ve indirme işlemlerinde kesinti olmaması için bilgisayar uygulamasını indirin."
@@ -9683,6 +9695,9 @@
       "Create new group": [
         "Yeni grup ekle"
       ],
+      "Expected strcuture": [
+        "Beklenen yapı"
+      ],
       "Ignore group": [
         "Grubu yok say"
       ],
@@ -9694,6 +9709,9 @@
       ],
       "Only current location: ${ name }": [
         "Yalnızca geçerli konum: ${ name }"
+      ],
+      "Select JSON file": [
+        "JSON dosyasını seçin"
       ],
       "Verify content": [
         "İçeriği doğrula"
@@ -9810,6 +9828,9 @@
       ],
       "Credit/debit card": [
         "Kredi ya da banka kartı"
+      ],
+      "Google Pay": [
+        "Google Pay"
       ],
       "New credit/debit card": [
         "Yeni kredi ya da banka kartı"
@@ -9941,6 +9962,12 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Bu tarifeye zaten bir aboneliğiniz var. Aboneliğinizi ${ subscriptionPlatform } üzerinden değiştirebilirsiniz."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Birazdan ödemenizi doğrulamak için PayPal sitesine yönlendirileceksiniz."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Birazdan ödemenizi doğrulamak için yönlendirileceksiniz."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "SEPA banka havaleleri yalnızca avro ödemelerini desteklediği için para biriminiz avroya (€) dönüştürüldü."
       ],
@@ -9971,6 +9998,11 @@
         "Kartınız reddedildi. Lütfen ödemeyi onaylamak için başka bir kart deneyin ya da bankanızla görüşün."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Bir sorun çıktı. Google Pay doğrulaması tamamlanamadı."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Önceki abonelik tarifenizin kullanılmayan bölümünden kalan kredi"
@@ -9990,6 +10022,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Banka havalesi - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - ${ paymentMethod.Details.Last4 } ile biten kart"
       ]
     },
     "Payments.Sepa": {
@@ -11860,6 +11895,9 @@
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME } aboneliğinizi iptal edin"
+      ],
+      "Cancel all uploads?": [
+        "Tüm yüklemeler iptal edilsin mi?"
       ],
       "Cancel subscription?": [
         "Abonelik iptal edilsin mi?"

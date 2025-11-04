@@ -147,6 +147,9 @@
       "Cancel upload": [
         "Ακύρωση ανεβάσματος"
       ],
+      "Cancel uploads": [
+        "Ακύρωση μεταφορτώσεων"
+      ],
       "Change": [
         "Αλλαγή"
       ],
@@ -248,6 +251,9 @@
       ],
       "Continue with Outlook": [
         "Συνεχίστε με Outlook"
+      ],
+      "Copy": [
+        "Αντιγραφή"
       ],
       "Copy address": [
         "Αντιγραφή διεύθυνσης"
@@ -616,6 +622,9 @@
       ],
       "Loading link": [
         "Φόρτωση συνδέσμου"
+      ],
+      "Make a copy": [
+        "Κάντε ένα αντίγραφο"
       ],
       "Manage advanced account protections": [
         "Διαχείριση προηγμένων προστασιών λογαριασμού"
@@ -993,7 +1002,7 @@
         "Εμφάνιση περισσότερων"
       ],
       "Show more benefits": [
-        "Εμφάνιση περισσότερων οφελών"
+        "Εμφάνιση περισσότερων προνομίων"
       ],
       "Show more download options": [
         "Εμφάνιση περισσότερων επιλογών λήψης"
@@ -1563,12 +1572,47 @@
         "Ο χώρος αποθήκευσης μοιράζεται μεταξύ όλων των ${ BRAND_NAME } υπηρεσιών."
       ]
     },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "Προσφορά Black Friday"
+      ]
+    },
     "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB αποθηκευτικού χώρου"
+      ],
+      "3 TB data storage": [
+        "3 TB αποθηκευτικού χώρου"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Πρόσβαση σε 15.000+ διακομιστές σε 120+ χώρες"
+      ],
+      "Access advanced AI models": [
+        "Πρόσβαση σε προηγμένα μοντέλα Τεχνητής Νοημοσύνης"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Όλα τα premium χαρακτηριστικά των ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Block ads, trackers, and malware": [
         "Αποκλείστε διαφημίσεις, ιχνηλάτες και κακόβουλο λογισμικό"
       ],
       "Built-in 2FA authenticator": [
         "Ενσωματωμένη εφαρμογή ταυτοποίησης 2FA"
+      ],
+      "Connect 10 devices at once": [
+        "Συνδέστε 10 συσκευές ταυτόχρονα"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Πλήρες ιστορικό συνομιλίας με εύκολη αναζήτηση και αγαπημένα"
+      ],
+      "Individual accounts for 6 users": [
+        "Ατομικοί λογαριασμοί για 6 χρήστες"
+      ],
+      "Individual accounts for you and a partner": [
+        "Ατομικοί λογαριασμοί για εσάς και έναν σύντροφο"
+      ],
+      "Stronger protection against cyber threats": [
+        "Ισχυρότερη προστασία από κυβερνοαπειλές"
       ],
       "Unlimited daily chats": [
         "Απεριόριστες καθημερινές συνομιλίες"
@@ -1579,9 +1623,29 @@
         "Black Friday"
       ]
     },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Βοηθήστε τα αγαπημένα σας πρόσωπα να συμμετάσχουν στην επανάσταση της ιδιωτικότητας με τα πακέτα μας με την καλύτερη σχέση ποιότητας-τιμής, τώρα με έκπτωση 50%!"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Συμμετάσχετε στην επανάσταση της ιδιωτικότητας με τα πακέτα μας με την καλύτερη σχέση ποιότητας-τιμής, τώρα με έκπτωση 50%!"
+      ]
+    },
     "BF2025: Offers": {
       "for ${ durationDeal }": [
         "για ${ durationDeal }"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "Εξοικονομήστε ${ savedAmount } με την καλύτερη προσφορά περιορισμένου χρόνου!"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "Μεταβείτε στο διετές πλάνο μας και εξοικονομήστε ${ savedAmount }!"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "Μεταβείτε στο ετήσιο πλάνο μας και εξοικονομήστε ${ savedAmount }!"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "Προσφέρετε στην ομάδα σας πλήρη ψηφιακή προστασία."
       ]
     },
     "BF2025: Tooltip": {
@@ -3316,6 +3380,9 @@
       "Cannot export this contact": [
         "Δεν είναι δυνατή η εξαγωγή αυτής της επαφής"
       ],
+      "Cannot load \"My files\" root folder": [
+        "Δεν είναι δυνατή η φόρτωση του ριζικού φακέλου \"Τα αρχεία μου\""
+      ],
       "Checkout expired, please try again": [
         "Η ταμειακή διαδικασία εξέπνευσε, παρακαλούμε δοκιμάστε ξανά"
       ],
@@ -3380,6 +3447,18 @@
       ],
       "Error decrypting a computer": [
         "Σφάλμα κατά την αποκρυπτογράφηση ενός υπολογιστή"
+      ],
+      "Error reading file": [
+        "Σφάλμα κατά την ανάγνωση αρχείου"
+      ],
+      "Expanding non-existent directory tree item": [
+        "Επέκταση ανύπαρκτου στοιχείου δέντρου καταλόγων"
+      ],
+      "Expanding non-expandable directory tree item": [
+        "Επέκταση μη επεκτάσιμου στοιχείου δέντρου καταλόγων"
+      ],
+      "Expected structure attached": [
+        "Επισυνάπτεται η αναμενόμενη δομή"
       ],
       "External accounts are not supported yet": [
         "Οι εξωτερικοί λογαριασμοί δεν υποστηρίζονται ακόμα"
@@ -3488,6 +3567,9 @@
       ],
       "Invalid IBAN": [
         "Μη έγκυρο IBAN"
+      ],
+      "Invalid JSON file": [
+        "Μη έγκυρο αρχείο JSON"
       ],
       "Invalid name": [
         "Μη έγκυρο όνομα"
@@ -4152,7 +4234,7 @@
         "Εάν αποδεχτείτε την πρόσκληση, θα σας αλλάξουμε από το τρέχον πλάνο σας και θα πιστώσουμε στον λογαριασμό σας τυχόν υπόλοιπο."
       ],
       "Invited by: ${ inviteEmail }": [
-        "Προσκλήθηκε από: ${ inviteEmail }"
+        "Πρόσκληση από: ${ inviteEmail }"
       ],
       "Lifetime accounts cannot join a family plan.": [
         "Οι λογαριασμοί εφ' όρου ζωής δεν μπορούν να συμμετάσχουν σε οικογενειακό πλάνο."
@@ -4793,6 +4875,9 @@
         "${ canceledCount } ακυρώθηκε",
         "${ canceledCount } ακυρώθηκαν"
       ],
+      "${ completedItems.length } of ${ items.length } transfers completed": [
+        "${ completedItems.length } από ${ items.length } μεταφορές ολοκληρώθηκαν"
+      ],
       "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } επαφή περιέχει πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου.",
         "${ contactCount } επαφές περιέχουν πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου."
@@ -5000,9 +5085,6 @@
       ],
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "Ένα VPN είναι μια ασφαλής σήραγγα μεταξύ της συσκευής σας και του διαδικτύου. Αποκρύπτει την τοποθεσία και τη δραστηριότητά σας από τον πάροχο υπηρεσιών διαδικτύου (ISP) και τους ιστότοπους που επισκέπτεστε."
-      ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Η πρόσβαση σε λογαριασμό περιορίζεται λόγω απλήρωτων τιμολογίων. Επικοινωνήστε με το διαχειριστή σας."
       ],
       "Account successfully updated": [
         "Ο λογαριασμός ενημερώθηκε επιτυχώς"
@@ -5503,6 +5585,9 @@
       "Go to \"My files\" and upload some files first.": [
         "Πηγαίνετε στο \"Τα αρχεία μου\" και ανεβάστε πρώτα μερικά αρχεία."
       ],
+      "Google Pay mark": [
+        "Σήμα Google Pay"
+      ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Οι κυβερνήσεις και οι ISP μπορούν να παρακολουθούν τη δραστηριότητά σας στο διαδίκτυο. Κρύβοντας την πραγματική σας IP και κρυπτογραφώντας τη δραστηριότητά σας, η περιήγησή σας γίνεται ιδιωτική."
       ],
@@ -5605,6 +5690,9 @@
       ],
       "It's better to have:": [
         "Είναι καλύτερα να έχετε:"
+      ],
+      "It's not possible to copy the folder to itself": [
+        "Δεν είναι δυνατή η αντιγραφή του φακέλου στον εαυτό του."
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "Τα στοιχεία στα Διαγραμμένα θα παραμείνουν εδώ μέχρι να τα διαγράψετε οριστικά"
@@ -6046,6 +6134,9 @@
       "Search Enabled": [
         "Αναζήτηση Ενεργοποιημένη"
       ],
+      "Select a folder to copy to.": [
+        "Επιλέξτε ένα φάκελο στον οποίο θέλετε να αντιγράψετε."
+      ],
       "Select a folder to move to.": [
         "Επιλέξτε έναν φάκελο στον οποίο θέλετε να μετακινήσετε τα δεδομένα."
       ],
@@ -6281,6 +6372,9 @@
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Αυτός ο μοναδικός κωδικός μπορεί να χρησιμοποιηθεί από ιστότοπους και ISP (internet service providers) για τη σύνδεση της τοποθεσίας και του ιστορικού περιήγησής σας με τη συσκευή σας."
+      ],
+      "This will cancel any remaining uploads. Cancelled files won't be saved in ${ DRIVE_APP_NAME }.": [
+        "Αυτό θα ακυρώσει τυχόν εναπομείναντα αρχεία προς μεταφόρτωση. Τα ακυρωμένα αρχεία δε θα αποθηκευτούν στο ${ DRIVE_APP_NAME }."
       ],
       "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
         "Αυτό θα διαγράψει μόνο το άλμπουμ. Οι φωτογραφίες σας θα παραμείνουν στο χρονολόγιό σας. Αυτή η ενέργεια δεν μπορεί να αναιρεθεί."
@@ -6684,20 +6778,11 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Οι υπηρεσίες του ${ BRAND_NAME } λογαριασμού σας μόλις έχουν ανασταλεί. Μετά από 28 ημέρες, δεν θα μπορείτε να λάβετε μηνύματα στα εισερχόμενα, οι Drive σύνδεσμοι θα αποκλειστούν, και δεν θα μπορείτε να ανεβάσετε καινούργια αρχεία. Για να συνεχίσετε ομαλά τις υπηρεσίες σας, παρακαλούμε να πληρώσετε τυχόν ληξιπρόθεσμα τιμολόγια."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Οι υπηρεσίες του ${ BRAND_NAME } λογαριασμού σας μόλις έχουν ανασταλεί. Δεν μπορείτε πλέον να λάβετε μηνύματα στα εισερχόμενα σας. Οι σύνδεσμοι στο Drive έχουν απενεργοποιηθεί, και δεν μπορείτε να ανεβάσετε νέα αρχεία. Για να συνεχίσετε τις υπηρεσίες του λογαριασμού σας, παρακαλούμε να πληρώσετε τυχόν ληξιπρόθεσμα τιμολόγια."
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Η συνδρομή σας ${ plan } θα αντικατασταθεί με ${ PASS_SHORT_APP_NAME } διάρκειας ζωής. Το υπόλοιπο της συνδρομής σας θα προστεθεί στον λογαριασμό σας. Η προσφορά ${ PASS_SHORT_APP_NAME } διάρκειας ζωής δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Η πρόσβαση σας σύντομα θα περιοριστεί. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Ο λογαριασμός σας έχει περιοριστεί, και όλες οι υπηρεσίες βρίσκονται σε φραγή έως ότου πραγματοποιηθεί η πληρωμή. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο και τέθηκε σε περιορισμό. Η συνεχής αποφυγή πληρωμών θα οδηγήσει σε φραγή εισερχόμενων μηνυμάτων και κοινοποίησης συνδέσμων. ${ payInvoiceLink }"
       ],
       "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
         "Το τρέχον πρόγραμμα περιήγησής σας δεν υποστηρίζει τη λήψη μεγάλων αρχείων/πολλαπλών αρχείων. Κατεβάστε την εφαρμογή επιφάνειας εργασίας για απρόσκοπτες μεταφορτώσεις και λήψεις."
@@ -8979,6 +9064,9 @@
       "\"${ name }\" saved successfully": [
         "Το \"${ name }\" αποθηκεύτηκε με επιτυχία"
       ],
+      "\"${ name }\" successfully copied": [
+        "\"${ name }\" αντιγράφηκε επιτυχώς"
+      ],
       "\"${ name }\" successfully moved": [
         "Επιτυχής μετακίνηση του \"${ name }\""
       ],
@@ -8991,6 +9079,10 @@
       "${ count } item failed to be decrypted": [
         "${ count } αντικείμενο απέτυχε να αποκρυπτογραφηθεί",
         "${ count } αντικείμενα απέτυχαν να αποκρυπτογραφηθούν"
+      ],
+      "${ errors.length } item failed to be copied": [
+        "${ errors.length } στοιχείο απέτυχε να αντιγραφεί",
+        "${ errors.length } στοιχεία απέτυχαν να αντιγραφούν"
       ],
       "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
         "${ nbFailures } φωτογραφία δεν μπορεί να καταργηθεί από το \"${ albumLink.name }\"",
@@ -9043,6 +9135,10 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } στοιχείο επαναφέρθηκε από τα Διαγραμμένα",
         "${ numberOfItems } στοιχεία επαναφέρθηκαν από τα Διαγραμμένα"
+      ],
+      "${ numberOfItems } item successfully copied": [
+        "${ numberOfItems } στοιχείο αντιγράφηκε επιτυχώς",
+        "${ numberOfItems } στοιχεία αντιγράφηκαν επιτυχώς"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } στοιχείο μετακινήθηκε επιτυχώς",
@@ -9628,6 +9724,9 @@
       "Create new group": [
         "Δημιουργία νέας ομάδας"
       ],
+      "Expected strcuture": [
+        "Αναμενόμενη δομή"
+      ],
       "Ignore group": [
         "Παράβλεψη ομάδας"
       ],
@@ -9639,6 +9738,9 @@
       ],
       "Only current location: ${ name }": [
         "Μόνο η τρέχουσα τοποθεσία: ${ name }"
+      ],
+      "Select JSON file": [
+        "Επιλέξτε αρχείο JSON"
       ],
       "Verify content": [
         "Επαλήθευση περιεχομένου"
@@ -9755,6 +9857,9 @@
       ],
       "Credit/debit card": [
         "Πιστωτική/χρεωστική κάρτα"
+      ],
+      "Google Pay": [
+        "Google Pay"
       ],
       "New credit/debit card": [
         "Νέα πιστωτική/χρεωστική κάρτα"
@@ -9886,6 +9991,12 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Έχετε ήδη συνδρομή σε αυτό το πλάνο. Μπορείτε να αλλάξετε τη συνδρομή σας στο ${ subscriptionPlatform }."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Θα ανακατευθυνθείτε σύντομα στο Paypal, για να επαληθεύσετε την πληρωμή σας."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Θα ανακατευθυνθείτε σύντομα, για να επαληθεύσετε την πληρωμή σας."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Το νόμισμά σας άλλαξε σε ευρώ (€) επειδή οι τραπεζικές μεταφορές SEPA υποστηρίζουν μόνο πληρωμές σε ευρώ."
       ],
@@ -9916,6 +10027,11 @@
         "Η κάρτα σας απορρίφθηκε. Παρακαλούμε δοκιμάστε μια διαφορετική κάρτα ή επικοινωνήστε με την τράπεζα σας για να εγκρίνετε τη χρέωση."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Κάτι πήγε στραβά. Η επαλήθευση του Google Pay απέτυχε."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Πίστωση του μη καταναλωμένου υπολοίπου της συνδρομής σας στο προηγούμενο πλάνο"
@@ -9935,6 +10051,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Τραπεζική μεταφορά - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - κάρτα που λήγει σε ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -11806,6 +11925,9 @@
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Ακύρωση συνδρομής ${ MAIL_SHORT_APP_NAME }"
       ],
+      "Cancel all uploads?": [
+        "Ακύρωση όλων των μεταφορτώσεων;"
+      ],
       "Cancel subscription?": [
         "Ακύρωση συνδρομής;"
       ],
@@ -12179,6 +12301,9 @@
       ],
       "Logs": [
         "Αρχεία καταγραφής"
+      ],
+      "Make a copy": [
+        "Κάντε ένα αντίγραφο"
       ],
       "Make a secure connection your default": [
         "Ορισμός ασφαλούς σύνδεσης ως προεπιλογής"

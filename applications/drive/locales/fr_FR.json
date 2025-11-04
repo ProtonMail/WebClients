@@ -147,6 +147,9 @@
       "Cancel upload": [
         "Annuler le chargement"
       ],
+      "Cancel uploads": [
+        "Annuler les importations"
+      ],
       "Change": [
         "Modifier"
       ],
@@ -248,6 +251,9 @@
       ],
       "Continue with Outlook": [
         "Continuer avec Outlook"
+      ],
+      "Copy": [
+        "Copier"
       ],
       "Copy address": [
         "Copier l'adresse"
@@ -616,6 +622,9 @@
       ],
       "Loading link": [
         "Chargement du lien"
+      ],
+      "Make a copy": [
+        "Faire une copie"
       ],
       "Manage advanced account protections": [
         "Gérer les protections avancées du compte"
@@ -3171,6 +3180,9 @@
       "/month": [
         "/mois"
       ],
+      "2 TB of storage to share": [
+        "2 To d'espace de stockage à partager"
+      ],
       "2 user accounts": [
         "2 comptes utilisateur"
       ],
@@ -3433,6 +3445,12 @@
       "Error decrypting a computer": [
         "Une erreur s'est produite lors du déchiffrement d'un ordinateur."
       ],
+      "Error reading file": [
+        "Erreur lors de la lecture du fichier"
+      ],
+      "Expected structure attached": [
+        "La structure attendue a été jointe"
+      ],
       "External accounts are not supported yet": [
         "Les comptes externes ne sont pas encore pris en charge."
       ],
@@ -3502,6 +3520,9 @@
       "Folder \"${ name }\" is already downloading": [
         "Le dossier « ${ name } » est déjà en cours de téléchargement."
       ],
+      "Folder creation failed": [
+        "La création du dossier n'a pas abouti."
+      ],
       "Folder name cannot be empty.": [
         "Le nom de dossier ne peut pas être vide."
       ],
@@ -3537,6 +3558,9 @@
       ],
       "Invalid IBAN": [
         "Cet IBAN n'est pas valide."
+      ],
+      "Invalid JSON file": [
+        "Le fichier JSON n'est pas valide."
       ],
       "Invalid name": [
         "Le nom n'est pas valide."
@@ -3831,8 +3855,14 @@
       "Unknown payment token status": [
         "Le statut du jeton de paiement est inconnu."
       ],
+      "Upload failed": [
+        "L'importation n'a pas abouti."
+      ],
       "Upload for this folder is temporarily disabled": [
         "L'importation de ce dossier a été temporairement désactivée."
+      ],
+      "Upload not found": [
+        "L'importation n'a pas été trouvée"
       ],
       "Username must begin with a letter or digit": [
         "Le nom d'utilisateur doit commencer par une lettre ou un chiffre."
@@ -4836,6 +4866,9 @@
         "${ canceledCount } annulé",
         "${ canceledCount } annulés"
       ],
+      "${ completedItems.length } of ${ items.length } transfers completed": [
+        "${ completedItems.length } sur ${ items.length } transferts terminés"
+      ],
       "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } contact a plusieurs adresses e-mail.",
         "${ contactCount } contacts ont plusieurs adresses e-mail."
@@ -5043,9 +5076,6 @@
       ],
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "Un VPN est un tunnel sécurisé entre votre appareil et internet. Il masque votre emplacement et vos activités à votre fournisseur d'accès à internet (FAI) et aux sites internet que vous consultez."
-      ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "L'accès au compte est restreint en raison de factures en retard. Veuillez contacter votre administrateur."
       ],
       "Account successfully updated": [
         "Le compte a été mis à jour."
@@ -5545,6 +5575,9 @@
       ],
       "Go to \"My files\" and upload some files first.": [
         "Allez dans Mes fichiers et commencez à charger des fichiers."
+      ],
+      "Google Pay mark": [
+        "Marquer Google Pay"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Les gouvernements et les FAI peuvent surveiller vos activités en ligne. En masquant votre véritable IP et en chiffrant vos activités, votre navigation devient privée."
@@ -6325,6 +6358,9 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Ce code unique peut être utilisé par les sites web et les FAI (Fournisseurs d'accès internet) pour lier votre emplacement et votre historique de navigation à votre appareil."
       ],
+      "This will cancel any remaining uploads. Cancelled files won't be saved in ${ DRIVE_APP_NAME }.": [
+        "Ceci annulera tous les imports restants. Les fichiers annulés ne seront pas enregistrés dans ${ DRIVE_APP_NAME }."
+      ],
       "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
         "Cette action supprimera uniquement l'album. Vos photos resteront dans votre fil d’actualité. Cette action ne peut être annulée."
       ],
@@ -6727,20 +6763,11 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Votre compte ${ BRAND_NAME } est suspendu. Au bout de 28 jours, les messages ne seront plus envoyés dans votre boite de réception, vos liens de partage Drive seront bloqués et vous ne pourrez plus télécharger de nouveaux fichiers. Pour retrouver un service normal, nous vous invitons à régler toutes les factures en retard."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Votre compte ${ BRAND_NAME } est suspendu. Les messages ne sont plus envoyés dans votre boite de réception. Vos liens de partage Drive ne sont plus actifs et vous ne pouvez pas télécharger de nouveaux fichiers. Pour continuer à utiliser votre compte, nous vous invitons à payer toutes les factures en retard."
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Votre abonnement ${ plan } sera remplacé par l'abonnement ${ PASS_SHORT_APP_NAME } Lifetime. Le solde restant sera ajouté à votre compte. L'abonnement ${ PASS_SHORT_APP_NAME } Lifetime n'a pas de prix de renouvellement : il s'agit d'un paiement unique pour un accès à vie à ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Votre compte a au moins une facture en retard. Votre accès sera bientôt restreint. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Votre compte ayant au moins une facture en retard, il est restreint et tous les services sont bloqués jusqu'au paiement. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Votre compte ayant au moins une facture en retard, il est restreint. Vos messages et liens de partage seront bloqués en cas de non-paiement. ${ payInvoiceLink }"
       ],
       "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
         "Votre navigateur actuel ne prend pas en charge le téléchargement de fichiers volumineux/multiples. Téléchargez l'application de bureau pour des importations et des téléchargements fluides."
@@ -9731,6 +9758,9 @@
       "Create new group": [
         "Créer un nouveau groupe"
       ],
+      "Expected strcuture": [
+        "Structure attendue"
+      ],
       "Ignore group": [
         "Ignorer le groupe"
       ],
@@ -9742,6 +9772,9 @@
       ],
       "Only current location: ${ name }": [
         "Uniquement l'emplacement actuel : ${ name }"
+      ],
+      "Select JSON file": [
+        "Sélectionnez un fichier JSON"
       ],
       "Verify content": [
         "Vérifier le contenu"
@@ -9858,6 +9891,9 @@
       ],
       "Credit/debit card": [
         "Carte de paiement"
+      ],
+      "Google Pay": [
+        "Google Pay"
       ],
       "New credit/debit card": [
         "Nouvelle carte de paiement"
@@ -9989,11 +10025,20 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Vous avez déjà un abonnement. Vous pouvez modifier votre abonnement sur ${ subscriptionPlatform }."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Vous serez bientôt redirigé vers PayPal pour vérifier votre paiement."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Vous serez bientôt redirigé vers PayPal pour vérifier votre paiement."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Votre devise a été changée en euros (€) car les virements bancaires SEPA prennent uniquement en charge les paiements en euros."
       ],
       "Your payment is still being processed": [
         "Votre paiement est en cours de traitement."
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "Votre abonnement bénéficie actuellement d'une réduction existante. Le passage à cette nouvelle promotion signifie que la réduction existante ne sera plus appliquée."
       ]
     },
     "Payments.Error": {
@@ -10016,6 +10061,11 @@
         "Votre carte a été refusée. Veuillez essayer une autre carte ou contactez votre banque pour autoriser le prélèvement."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Une erreur s'est produite. La vérification Google Pay n'a pas abouti."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Crédit pour la période non utilisée de votre abonnement précédent"
@@ -10035,6 +10085,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Virement bancaire - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - carte se terminant par les chiffres ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -11906,6 +11959,9 @@
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Annuler l'abonnement ${ MAIL_SHORT_APP_NAME }"
       ],
+      "Cancel all uploads?": [
+        "Annuler toutes les importations ?"
+      ],
       "Cancel subscription?": [
         "Annuler l'abonnement ?"
       ],
@@ -12279,6 +12335,9 @@
       ],
       "Logs": [
         "Journaux"
+      ],
+      "Make a copy": [
+        "Faire une copie"
       ],
       "Make a secure connection your default": [
         "Optez par défaut pour une connexion sécurisée"

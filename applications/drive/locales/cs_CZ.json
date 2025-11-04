@@ -153,6 +153,9 @@
       "Cancel upload": [
         "Zrušit nahrávání"
       ],
+      "Cancel uploads": [
+        "Zrušit nahrávání"
+      ],
       "Change": [
         "Změnit"
       ],
@@ -254,6 +257,9 @@
       ],
       "Continue with Outlook": [
         "Pokračovat skrze Outlook"
+      ],
+      "Copy": [
+        "Kopírovat"
       ],
       "Copy address": [
         "Kopírovat adresu"
@@ -627,6 +633,9 @@
       "Loading link": [
         "Načítání odkazu"
       ],
+      "Make a copy": [
+        "Vytvořit kopii"
+      ],
       "Manage advanced account protections": [
         "Spravovat pokročilé ochrany účtu"
       ],
@@ -997,7 +1006,7 @@
         "Zobrazit pokročilé nastavení PGP"
       ],
       "Show location": [
-        "Zobrazit polohu"
+        "Zobrazit umístění"
       ],
       "Show more": [
         "Zobrazit více"
@@ -3403,6 +3412,9 @@
       "Cannot export this contact": [
         "Nelze exportovat tento kontakt"
       ],
+      "Cannot load \"My files\" root folder": [
+        "Nelze načíst kořenovou složku \"Moje soubory\""
+      ],
       "Checkout expired, please try again": [
         "Objednávka vypršela, zkuste to prosím znovu"
       ],
@@ -3471,6 +3483,18 @@
       ],
       "Error decrypting a computer": [
         "Chyba při dešifrování počítače"
+      ],
+      "Error reading file": [
+        "Chyba při čtení souboru"
+      ],
+      "Expanding non-existent directory tree item": [
+        "Rozbalení neexistující položky adresářového stromu"
+      ],
+      "Expanding non-expandable directory tree item": [
+        "Rozbalování nerozbalitelné položky stromové struktury adresáře"
+      ],
+      "Expected structure attached": [
+        "Očekávaná struktura připojena"
       ],
       "External accounts are not supported yet": [
         "Externí účty nejsou zatím podporovány"
@@ -3579,6 +3603,9 @@
       ],
       "Invalid IBAN": [
         "Neplatný IBAN"
+      ],
+      "Invalid JSON file": [
+        "Neplatný soubor JSON"
       ],
       "Invalid name": [
         "Neplatný název"
@@ -4946,6 +4973,9 @@
         "${ canceledCount } zrušených",
         "${ canceledCount } zrušených"
       ],
+      "${ completedItems.length } of ${ items.length } transfers completed": [
+        "${ completedItems.length } z(e) ${ items.length } přenosů dokončeno"
+      ],
       "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } kontakt obsahuje více e-mailových adres.",
         "${ contactCount } kontakty obsahují více e-mailových adres.",
@@ -5203,9 +5233,6 @@
       ],
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "VPN je zabezpečený tunel mezi vaším zařízením a internetem. Skrývá vaši polohu a aktivitu před poskytovatelem internetových služeb (ISP) a navštívenými webovými stránkami."
-      ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Z důvodu nezaplacených faktur byl přístup k účtu omezen. Kontaktujte správce vašeho účtu."
       ],
       "Account successfully updated": [
         "Účet byl úspěšně aktualizován"
@@ -5720,6 +5747,9 @@
       "Go to \"My files\" and upload some files first.": [
         "Jděte na \"Moje Soubory\" a nahrajte nejdříve soubory."
       ],
+      "Google Pay mark": [
+        "Značka Google Pay"
+      ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Vlády a poskytovatelé internetových služeb mohou sledovat vaši online aktivitu. Skrytím vaší skutečné IP adresy a šifrováním vaší aktivity se vaše prohlížení stane soukromým."
       ],
@@ -5824,6 +5854,9 @@
       ],
       "It's better to have:": [
         "Je lepší mít:"
+      ],
+      "It's not possible to copy the folder to itself": [
+        "Není možné zkopírovat složku do sebe samé"
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "Položky zůstanou v koši, dokud je trvale nesmažete"
@@ -6269,6 +6302,9 @@
       "Search Enabled": [
         "Vyhledávání Zapnuto"
       ],
+      "Select a folder to copy to.": [
+        "Vyberte složku, do které chcete kopírovat."
+      ],
       "Select a folder to move to.": [
         "Vyberte složku, do níž chcete přesunout."
       ],
@@ -6508,6 +6544,9 @@
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Tento jedinečný kód mohou webové stránky a ISP (poskytovatelé internetových služeb) použít k propojení vaší polohy a historie procházení s vaším zařízením."
+      ],
+      "This will cancel any remaining uploads. Cancelled files won't be saved in ${ DRIVE_APP_NAME }.": [
+        "Tím se zruší všechna nahrávání. Zrušené soubory nebudou uloženy v ${ DRIVE_APP_NAME }."
       ],
       "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
         "Tím se smaže pouze album. Vaše fotky zůstanou na časové ose. Tuto akci nelze vzít zpět."
@@ -6923,20 +6962,11 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Váš účet ${ BRAND_NAME } je momentálně pozastaven. Po 28 dnech vám již nebudou do schránky doručovány e-maily, odkazy na sdílení na Disku budou zablokovány a nebudete moci nahrávat nové soubory. Chcete-li obnovit normální provoz, zaplaťte všechny faktury po splatnosti."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Váš účet ${ BRAND_NAME } je momentálně pozastaven. E-maily již nejsou doručovány do vaší schránky. Vaše odkazy na sdílení na Disku již nejsou aktivní a nemůžete nahrávat nové soubory. Chcete-li svůj účet nadále používat, zaplaťte všechny faktury po splatnosti."
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Vaše předplatné ${ plan } bude nahrazeno doživotním předplatným ${ PASS_SHORT_APP_NAME }. Zbývající část předplatného bude připsána na váš účet. Doživotní nabídka ${ PASS_SHORT_APP_NAME } nemá cenu za obnovení, jedná se o jednorázovou platbu za doživotní přístup k ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Váš účet má alespoň jednu fakturu po splatnosti. Váš přístup bude brzy omezen. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Váš účet má alespoň jednu fakturu po splatnosti. Váš účet je omezen a všechny služby jsou nyní až do zaplacení zablokovány. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Váš účet má alespoň jednu fakturu po splatnosti. Váš účet je omezen. Pokračující neplacení zablokuje vaše e-maily a odkazy pro sdílení. ${ payInvoiceLink }"
       ],
       "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
         "Váš aktuální prohlížeč nepodporuje stahování velkých souborů/více souborů. Stáhněte si aplikaci pro stolní počítače pro bezproblémové nahrávání a stahování."
@@ -9273,7 +9303,7 @@
         "\"${ name }\" se nepodařilo smazat"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
-        "\"${ name }\" se nepodařilo trvale odstranit z koše"
+        "\"${ name }\" se nepodařilo trvale smazat z koše"
       ],
       "\"${ name }\" failed to be moved": [
         "\"${ name }\" se nepodařilo přesunout"
@@ -9296,6 +9326,9 @@
       "\"${ name }\" saved successfully": [
         "\"${ name }\" úspěšně uloženo"
       ],
+      "\"${ name }\" successfully copied": [
+        "\"${ name }\" úspěšně zkopírováno"
+      ],
       "\"${ name }\" successfully moved": [
         "\"${ name }\" úspěšně přesunuto"
       ],
@@ -9310,6 +9343,12 @@
         "${ count } položky se nepodařilo dešifrovat",
         "${ count } položek se nepodařilo dešifrovat",
         "${ count } položek se nepodařilo dešifrovat"
+      ],
+      "${ errors.length } item failed to be copied": [
+        "${ errors.length } položku se nepodařilo zkopírovat",
+        "${ errors.length } položky se nepodařilo zkopírovat",
+        "${ errors.length } položek se nepodařilo zkopírovat",
+        "${ errors.length } položek se nepodařilo zkopírovat"
       ],
       "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
         "${ nbFailures } fotku se nepodařilo odebrat z ${ albumLink.name }\"",
@@ -9388,6 +9427,12 @@
         "${ numberOfItems } položky obnoveny z koše",
         "${ numberOfItems } položek obnoveno z koše",
         "${ numberOfItems } položek obnoveno z koše"
+      ],
+      "${ numberOfItems } item successfully copied": [
+        "${ numberOfItems } položka úspěšně zkopírována",
+        "${ numberOfItems } položky úspěšně zkopírovány",
+        "${ numberOfItems } položek úspěšně zkopírováno",
+        "${ numberOfItems } položek úspěšně zkopírováno"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } položka úspěšně přesunuta",
@@ -9989,6 +10034,9 @@
       "Create new group": [
         "Vytvořit novou skupinu"
       ],
+      "Expected strcuture": [
+        "Očekávaná struktura"
+      ],
       "Ignore group": [
         "Ignorovat skupinu"
       ],
@@ -10000,6 +10048,9 @@
       ],
       "Only current location: ${ name }": [
         "Pouze aktuální umístění: ${ name }"
+      ],
+      "Select JSON file": [
+        "Vybrerte soubor JSON"
       ],
       "Verify content": [
         "Ověřit obsah"
@@ -10118,6 +10169,9 @@
       ],
       "Credit/debit card": [
         "Kreditní/debetní karta"
+      ],
+      "Google Pay": [
+        "Google Pay"
       ],
       "New credit/debit card": [
         "Nová kreditní/debetní karta"
@@ -10261,6 +10315,12 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Již máte předplatné tohoto tarifu. Můžete si změnit své předplatné na ${ subscriptionPlatform }."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Za účelem ověření platby budete přesměrováni na PayPal."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Za účelem ověření platby budete přesměrováni."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Vaše měna byla změněna na euro (€), protože bankovní převody SEPA podporují pouze platby v eurech."
       ],
@@ -10291,6 +10351,11 @@
         "Vaše karta byla zamítnuta. Zadejte prosím jinou kartu nebo kontaktujte svou banku pro autorizaci platby."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Něco se pokazilo. Ověření Google Pay selhalo."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit za nevyužitou část vašeho předchozího předplatného"
@@ -10310,6 +10375,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Bankovní převod - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - karta končící čísly ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -12291,6 +12359,9 @@
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Zrušit předplatné ${ MAIL_SHORT_APP_NAME }"
       ],
+      "Cancel all uploads?": [
+        "Zrušit všechna nahrávání?"
+      ],
       "Cancel subscription?": [
         "Zrušit předplatné?"
       ],
@@ -12674,6 +12745,9 @@
       ],
       "Logs": [
         "Logy"
+      ],
+      "Make a copy": [
+        "Vytvořit kopii"
       ],
       "Make a secure connection your default": [
         "Nastavte zabezpečené připojení jako výchozí"
