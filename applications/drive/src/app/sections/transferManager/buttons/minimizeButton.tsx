@@ -21,6 +21,7 @@ export const MinimizeButton = ({ onClick, isMinimized }: Props) => {
                 shape="ghost"
                 onClick={onClick}
                 aria-expanded={!isMinimized}
+                data-testid="drive-transfers-manager:minimize"
                 aria-controls="transfer-manager"
             >
                 <Icon className={clsx(['icon-size-4.5', isMinimized && 'rotateX-180'])} name="chevron-down" />
