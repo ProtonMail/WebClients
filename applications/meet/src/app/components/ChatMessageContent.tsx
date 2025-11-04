@@ -3,6 +3,9 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms';
+import { getHostname } from '@proton/components/helpers/url';
+import { PROTON_DOMAINS } from '@proton/shared/lib/constants';
+import { isSubDomain } from '@proton/shared/lib/helpers/url';
 
 import { OpenLinkModal } from './OpenLinkModal/OpenLinkModal';
 
@@ -33,6 +36,16 @@ export const ChatMessageContent = ({ message }: ChatMessageContentProps) => {
     const [currentLink, setCurrentLink] = useState<string | null>(null);
 
     const handleLinkClick = (link: string) => {
+        const hostName = getHostname(link);
+        if (PROTON_DOMAINS.some((domain) => isSubDomain(hostName, domain))) {
+            const otherWindow = window.open();
+            if (otherWindow) {
+                otherWindow.location.href = link;
+            }
+
+            return;
+        }
+
         setCurrentLink(link);
     };
 
