@@ -219,9 +219,6 @@
       "Copy alias “${ name }”": [
         "Kopier alias \"${ name }\""
       ],
-      "Copy Booking link": [
-        "Kopier bestillingskobling"
-      ],
       "Copy email address": [
         "Kopier e-postadresse"
       ],
@@ -1406,15 +1403,47 @@
         "Lagringsplass deles mellom alle ${ BRAND_NAME }-tjenestene."
       ]
     },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "Black Friday-salg"
+      ]
+    },
     "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB lagringsplass"
+      ],
+      "3 TB data storage": [
+        "3 TB lagringsplass"
+      ],
       "Access 15,000+ servers in 120+ countries": [
         "Tilgang til 15,000+ tjenere i 120+ land"
+      ],
+      "Access advanced AI models": [
+        "Tilgang til avanserte KI-modeller"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premiumfunksjoner fra ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
         "Blokkér annonser, sporere og skadelig programvare"
       ],
       "Built-in 2FA authenticator": [
         "Innebygget 2FA-autentisering"
+      ],
+      "Connect 10 devices at once": [
+        "Koble til 10 enheter samtidig"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Full chatlogg med enkelt søk og favoritter"
+      ],
+      "Individual accounts for 6 users": [
+        "Individuelle kontoer for 6 brukere"
+      ],
+      "Individual accounts for you and a partner": [
+        "Individuelle kontoer for deg og en partner"
+      ],
+      "Stronger protection against cyber threats": [
+        "Sterkere beskyttelse mot cybertrusler"
       ],
       "Unlimited daily chats": [
         "Ubegrenset antall daglige chatter"
@@ -1425,9 +1454,29 @@
         "Black Friday"
       ]
     },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Hjelp dine kjære med å bli med på personvernrevolusjonen med våre mest prisgunstige pakker, nå med 50 % rabatt!"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Bli med på personvernrevolusjonen med våre mest prisgunstige pakker, nå med 50 % rabatt!"
+      ]
+    },
     "BF2025: Offers": {
       "for ${ durationDeal }": [
         "for ${ durationDeal }"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "Spar ${ savedAmount } med vårt mest prisgunstige tidsbegrensede tilbud!"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "Bytt til vår 2-års plan og spar ${ savedAmount }!"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "Bytt til vår årsplan og spar ${ savedAmount }!"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "Gi dine kjære fullstendig digital beskyttelse."
       ]
     },
     "BF2025: Tooltip": {
@@ -2887,7 +2936,7 @@
       ]
     },
     "Custom frequency option": {
-      "Don't end": [
+      "Doesn't end": [
         "Avsluttes ikke"
       ],
       "End after": [
@@ -3309,10 +3358,28 @@
       ]
     },
     "Duration": {
+      "1.5h": [
+        "1,5 timer"
+      ],
       "120 minutes": [
         "120 minutter"
       ],
+      "15 minutes": [
+        "15 minutter"
+      ],
+      "15m": [
+        "15 minutter"
+      ],
+      "1h": [
+        "1 time"
+      ],
+      "2h": [
+        "2 timer"
+      ],
       "30 minutes": [
+        "30 minutter"
+      ],
+      "30m": [
         "30 minutter"
       ],
       "60 minutes": [
@@ -4930,8 +4997,8 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } trenger din tillatelse til å ${ enableDesktopNotifications }."
       ],
-      "${ booking.duration } min duration": [
-        "${ booking.duration } min. varighet"
+      "${ bookingDetails.duration } min duration": [
+        "${ bookingDetails.duration } min. varighet"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skriveassistent"
@@ -5070,9 +5137,6 @@
       "30-day money-back guarantee.": [
         "30 dagers tilbakebetalingsgaranti."
       ],
-      "A booking slot cannot be added in the past.": [
-        "En bestillingsplass kan ikke legges til i fortiden."
-      ],
       "A cancellation email will be sent to removed participants.": [
         "En kansellerings-e-post vil bli sendt til fjernede deltakere."
       ],
@@ -5099,9 +5163,6 @@
       ],
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "Et VPN er en sikker tunnel mellom enheten din og internett. Den skjuler posisjonen og aktiviteten din for internettleverandøren din (ISP) og nettstedene du besøker."
-      ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Kontotilgang begrenset på grunn av ubetalte fakturaer. Kontakt systemansvarlig."
       ],
       "Account successfully updated": [
         "Konto oppdatert"
@@ -5455,6 +5516,9 @@
       "Geoblocking": [
         "Geoblokkering"
       ],
+      "Google Pay mark": [
+        "Google Pay-merke"
+      ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Myndigheter og Internett-leverandører kan overvåke nettaktiviteten din. Ved å skjule din virkelige IP og kryptere aktiviteten din blir surfingen privat."
       ],
@@ -5463,6 +5527,9 @@
       ],
       "High Priority": [
         "Høy prioritet"
+      ],
+      "How long should an appointment last?": [
+        "Hvor lenge skal en avtale vare?"
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Hvis tastatursnarveier er aktivert, kan du bruke følgende taster for hurtighandlinger eller for å hoppe til forskjellige visninger. ${ metaKey } + K er alltid aktivert."
@@ -5512,6 +5579,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "I neste trinn, vil du kunne sende inn et innskudd ved å bruke en Bitcoin-adresse."
+      ],
+      "In which calendar should bookings appear?": [
+        "I hvilken kalender skal bestillinger vises?"
       ],
       "Indexing events: ${ current }/${ total }": [
         "Indekserer hendelser: ${ current }/${ total }"
@@ -5617,6 +5687,9 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "De fleste offentlige WiFi-nettverk er trygge, men noen mangler sikkerhet, noe som utsetter deg for cybertrusler. Et VPN krypterer trafikken din og holder deg beskyttet."
+      ],
+      "Name your booking page": [
+        "Navngi bestillingssiden din"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Gi den nye mappen et navn, og velg den overordnede mappen du vil legge den i. Hvis du ikke velger en overordnet mappe, opprettes denne nye mappen som en mappe på øverste nivå."
@@ -5826,9 +5899,6 @@
       ],
       "Setting up your new address…": [
         "Konfigurerer den nye adressen din…"
-      ],
-      "Share this page to let others book time in your calendar.": [
-        "Del denne siden for å la andre bestille tid i kalenderen din."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Siden du er en lojal bruker, har din konto tilleggsfunksjoner aktivert."
@@ -6059,6 +6129,9 @@
       "Week and month views only apply to desktop.": [
         "Uke- og månedsvisninger gjelder bare for skrivebordet."
       ],
+      "What should people know before booking?": [
+        "Hva bør folk vite før de bestiller?"
+      ],
       "When working remotely": [
         "Når du jobber eksternt"
       ],
@@ -6067,6 +6140,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Når du setter opp tofaktorautentisering, gir vi deg gjenopprettingskoder som du kan bruke til å logge på hvis du mister tilgangen til autentiseringsappen din."
+      ],
+      "Where will the appointment take place?": [
+        "Hvor vil avtalen finne sted?"
       ],
       "Which event would you like to delete?": [
         "Hvilken hendelse ønsker du å slette?"
@@ -6221,20 +6297,11 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "${ BRAND_NAME }-kontoen din er for øyeblikket suspendert. Etter 28 dager blir ikke e-poster lenger levert til innboksen din, dine Drive-delekoblinger blir blokkert, og du kan ikke laste opp nye filer. For å gjenoppta normal tjeneste, betal eventuelle forfalte fakturaer."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "${ BRAND_NAME }-kontoen din er for øyeblikket suspendert. E-poster blir ikke lenger levert til innboksen din. Drive-delekoblingene dine er ikke lenger aktive, og du kan ikke laste opp nye filer. For å fortsette å bruke kontoen din, betal eventuelle forfalte fakturaer."
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Ditt ${ plan }-abonnement vil bli erstattet med ${ PASS_SHORT_APP_NAME } Lifetime. Den gjenværende saldoen på abonnementet ditt vil bli lagt til kontoen din. ${ PASS_SHORT_APP_NAME } Lifetime har ingen fornyelsespris, det er en engangsbetaling for livstidstilgang til ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Kontoen din har minst en forfalt faktura. Din tilgang vil snart bli begrenset. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Kontoen din har minst én forfalt faktura. Kontoen din er begrenset, og alle tjenester er nå sperret til betaling er mottatt. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Kontoen din har minst én forfalt faktura. Kontoen din er begrenset. Fortsatt manglende betaling vil blokkere e-postene dine og delingskoblinger. ${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "Adressen din er deaktivert. En avlysnings-e-post kan ikke sendes til deltakerne på hendelsen. Vil du slette denne hendelsen likevel?"
@@ -6654,9 +6721,6 @@
       "Don't show this again": [
         "Ikke vis dette igjen"
       ],
-      "Duration": [
-        "Varighet"
-      ],
       "e.g., Amazon, eBay, Etsy": [
         "f.eks. Amazon, eBay, Etsy"
       ],
@@ -6946,9 +7010,6 @@
       "Time zone": [
         "Tidssone"
       ],
-      "Title": [
-        "Tittel"
-      ],
       "To: ${ toEmail }": [
         "Til: ${ toEmail }"
       ],
@@ -7212,6 +7273,11 @@
       ],
       "Your import is starting": [
         "Importen din starter"
+      ]
+    },
+    "Location": {
+      "In person": [
+        "Personlig"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -9024,6 +9090,9 @@
       "Credit/debit card": [
         "Kreditt-/debetkort"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Nytt kreditt-/debetkort"
       ]
@@ -9102,7 +9171,7 @@
         "Kupongen er gyldig for ${ couponRedemptions } fornyelser."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
-        "Den spesielle rabattprisen gjelder for den første måneden på ${ subscriptionLength }.",
+        "Den spesielle rabattprisen gjelder for den første måneden av ${ subscriptionLength }.",
         "Den spesielt rabatterte prisen er gyldig de første ${ subscriptionLength } månedene."
       ],
       "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
@@ -9154,6 +9223,12 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Du har allerede et abonnement på denne planen. Du kan endre abonnementet ditt på ${ subscriptionPlatform }."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Du vil snart bli omdirigert til PayPal for å bekrefte betalingen."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Du vil snart bli omdirigert for å bekrefte betalingen din."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Din valuta har blitt endret til euro (€) fordi SEPA-bankoverføringer bare støtter betalinger i euro."
       ],
@@ -9184,6 +9259,11 @@
         "Kortet ditt ble avslått. Forsøk et annet kort eller kontakt banken din for å autorisere belastingen."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Noe gikk galt. Google Pay-verifiseringen mislyktes."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Kreditt for den ubrukte delen av ditt forrige planabonnement"
@@ -9203,6 +9283,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Bankoverføring - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - kort som slutter på ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -9285,6 +9368,9 @@
       "A way to contact you": [
         "En måte å kontakte deg på"
       ],
+      "Add a booking page description": [
+        "Legg til en beskrivelse av bestillingssiden"
+      ],
       "Add a calendar description": [
         "Legg til en kalenderbeskrivelse"
       ],
@@ -9308,6 +9394,9 @@
       ],
       "Anytown": [
         "By"
+      ],
+      "Booking page title": [
+        "Tittel på bestillingsside"
       ],
       "Company name": [
         "Foretaksnavn"
@@ -11162,9 +11251,6 @@
       "Birthday": [
         "Bursdag"
       ],
-      "Booking page": [
-        "Bestillingsside"
-      ],
       "Calendar": [
         "Kalender"
       ],
@@ -11257,6 +11343,9 @@
       ],
       "Data recovery": [
         "Datagjenoppretting"
+      ],
+      "Date": [
+        "Dato"
       ],
       "Day theme": [
         "Dagtema"
@@ -11437,6 +11526,9 @@
       ],
       "Link confirmation": [
         "Bekreftelse av kobling"
+      ],
+      "Location": [
+        "Plassering"
       ],
       "Make a secure connection your default": [
         "Gjør en sikker tilkobling til standard"
@@ -11671,6 +11763,12 @@
       ],
       "This booking page has expired": [
         "Denne bestillingssiden er utløpt"
+      ],
+      "Time": [
+        "Tid"
+      ],
+      "Time zone": [
+        "Tidssone"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Slå på ${ DARK_WEB_MONITORING_NAME }"

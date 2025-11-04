@@ -186,6 +186,9 @@
       "Confirm": [
         "Επιβεβαίωση"
       ],
+      "Confirm booking": [
+        "Επιβεβαίωση κράτησης"
+      ],
       "Confirm opening of link ${ linkToShow }": [
         "Επιβεβαίωση ανοίγματος συνδέσμου ${ linkToShow }"
       ],
@@ -219,9 +222,6 @@
       "Copy alias “${ name }”": [
         "Αντιγραφή ψευδώνυμου “${ name }”"
       ],
-      "Copy Booking link": [
-        "Αντιγραφή συνδέσμου κράτησης"
-      ],
       "Copy email address": [
         "Αντιγραφή διεύθυνσης ηλεκτρονικού ταχυδρομείου"
       ],
@@ -230,6 +230,9 @@
       ],
       "Copy link": [
         "Αντιγραφή συνδέσμου"
+      ],
+      "Copy link and close": [
+        "Αντιγραφή συνδέσμου και κλείσιμο"
       ],
       "Copy password": [
         "Αντιγραφή κωδικού πρόσβασης"
@@ -798,7 +801,7 @@
         "Εμφάνιση περισσότερων"
       ],
       "Show more benefits": [
-        "Εμφάνιση περισσότερων οφελών"
+        "Εμφάνιση περισσότερων προνομίων"
       ],
       "Show navigation bar": [
         "Προβολή γραμμής περιήγησης"
@@ -1406,12 +1409,47 @@
         "Ο χώρος αποθήκευσης μοιράζεται μεταξύ όλων των ${ BRAND_NAME } υπηρεσιών."
       ]
     },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "Προσφορά Black Friday"
+      ]
+    },
     "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB αποθηκευτικού χώρου"
+      ],
+      "3 TB data storage": [
+        "3 TB αποθηκευτικού χώρου"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Πρόσβαση σε 15.000+ διακομιστές σε 120+ χώρες"
+      ],
+      "Access advanced AI models": [
+        "Πρόσβαση σε προηγμένα μοντέλα Τεχνητής Νοημοσύνης"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Όλα τα premium χαρακτηριστικά των ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Block ads, trackers, and malware": [
         "Αποκλείστε διαφημίσεις, ιχνηλάτες και κακόβουλο λογισμικό"
       ],
       "Built-in 2FA authenticator": [
         "Ενσωματωμένη εφαρμογή ταυτοποίησης 2FA"
+      ],
+      "Connect 10 devices at once": [
+        "Συνδέστε 10 συσκευές ταυτόχρονα"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Πλήρες ιστορικό συνομιλίας με εύκολη αναζήτηση και αγαπημένα"
+      ],
+      "Individual accounts for 6 users": [
+        "Ατομικοί λογαριασμοί για 6 χρήστες"
+      ],
+      "Individual accounts for you and a partner": [
+        "Ατομικοί λογαριασμοί για εσάς και έναν σύντροφο"
+      ],
+      "Stronger protection against cyber threats": [
+        "Ισχυρότερη προστασία από κυβερνοαπειλές"
       ],
       "Unlimited daily chats": [
         "Απεριόριστες καθημερινές συνομιλίες"
@@ -1422,9 +1460,29 @@
         "Black Friday"
       ]
     },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Βοηθήστε τα αγαπημένα σας πρόσωπα να συμμετάσχουν στην επανάσταση της ιδιωτικότητας με τα πακέτα μας με την καλύτερη σχέση ποιότητας-τιμής, τώρα με έκπτωση 50%!"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Συμμετάσχετε στην επανάσταση της ιδιωτικότητας με τα πακέτα μας με την καλύτερη σχέση ποιότητας-τιμής, τώρα με έκπτωση 50%!"
+      ]
+    },
     "BF2025: Offers": {
       "for ${ durationDeal }": [
         "για ${ durationDeal }"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "Εξοικονομήστε ${ savedAmount } με την καλύτερη προσφορά περιορισμένου χρόνου!"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "Μεταβείτε στο διετές πλάνο μας και εξοικονομήστε ${ savedAmount }!"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "Μεταβείτε στο ετήσιο πλάνο μας και εξοικονομήστε ${ savedAmount }!"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "Προσφέρετε στην ομάδα σας πλήρη ψηφιακή προστασία."
       ]
     },
     "BF2025: Tooltip": {
@@ -2884,8 +2942,8 @@
       ]
     },
     "Custom frequency option": {
-      "Don't end": [
-        "Χωρίς τέλος"
+      "Doesn't end": [
+        "Δεν τελειώνει"
       ],
       "End after": [
         "Τέλος μετά"
@@ -3146,6 +3204,9 @@
       "Your account and data recovery methods are set.": [
         "Οι μέθοδοι ανάκτησης του λογαριασμού και των δεδομένων σας έχουν οριστεί."
       ],
+      "You’ll get a secure email with the details shortly.": [
+        "Σύντομα θα λάβετε ένα ασφαλές μήνυμα ηλεκτρονικού ταχυδρομείου με τις λεπτομέρειες."
+      ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Έχετε ήδη δημιουργήσει 10 ψευδώνυμα. Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ BRAND_NAME } Unlimited."
       ]
@@ -3306,11 +3367,29 @@
       ]
     },
     "Duration": {
+      "1.5h": [
+        "1,5 ώρα"
+      ],
       "120 minutes": [
         "120 λεπτά"
       ],
+      "15 minutes": [
+        "15 λεπτά"
+      ],
+      "15m": [
+        "15λ"
+      ],
+      "1h": [
+        "1ώρα"
+      ],
+      "2h": [
+        "2ώρες"
+      ],
       "30 minutes": [
         "30 λεπτά"
+      ],
+      "30m": [
+        "30λ"
       ],
       "60 minutes": [
         "60 λεπτά"
@@ -3526,6 +3605,9 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Δεν είναι δυνατή η ενεργοποίηση της αναζήτησης περιεχομένου. Επανεκκινήστε την εφαρμογή ή διαγράψτε δεδομένα."
       ],
+      "Content verification failed": [
+        "Η επαλήθευση του περιεχομένου απέτυχε"
+      ],
       "Could not open created vault": [
         "Δεν ήταν δυνατό το άνοιγμα της δημιουργημένης κρύπτης"
       ],
@@ -3696,6 +3778,9 @@
       ],
       "Name required": [
         "Απαιτείται όνομα"
+      ],
+      "No booking page data received": [
+        "Δεν ελήφθησαν δεδομένα σελίδας κράτησης"
       ],
       "No calendars found to import": [
         "Δεν βρέθηκαν ημερολόγια προς εισαγωγή."
@@ -4313,7 +4398,7 @@
         "Εάν αποδεχτείτε την πρόσκληση, θα σας αλλάξουμε από το τρέχον πλάνο σας και θα πιστώσουμε στον λογαριασμό σας τυχόν υπόλοιπο."
       ],
       "Invited by: ${ inviteEmail }": [
-        "Προσκλήθηκε από: ${ inviteEmail }"
+        "Πρόσκληση από: ${ inviteEmail }"
       ],
       "Lifetime accounts cannot join a family plan.": [
         "Οι λογαριασμοί εφ' όρου ζωής δεν μπορούν να συμμετάσχουν σε οικογενειακό πλάνο."
@@ -4504,6 +4589,11 @@
       ],
       "Very small": [
         "Πολύ μικρό"
+      ]
+    },
+    "Form": {
+      "Your contact info": [
+        "Τα στοιχεία επικοινωνίας σας"
       ]
     },
     "Google Meet": {
@@ -4927,8 +5017,8 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Το ${ appName } χρειάζεται την άδειά σας για ${ enableDesktopNotifications }."
       ],
-      "${ booking.duration } min duration": [
-        "${ booking.duration } λεπτά διάρκεια"
+      "${ bookingDetails.duration } min duration": [
+        "${ bookingDetails.duration } λεπτά διάρκεια"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe βοηθός γραφής"
@@ -5067,9 +5157,6 @@
       "30-day money-back guarantee.": [
         "Εγγύηση επιστροφής χρημάτων εντός 30 ημερών."
       ],
-      "A booking slot cannot be added in the past.": [
-        "Μια θέση κράτησης δεν μπορεί να προστεθεί στο παρελθόν."
-      ],
       "A cancellation email will be sent to removed participants.": [
         "Ένα email ακύρωσης θα σταλεί στους συμμετέχοντες που αφαιρούνται."
       ],
@@ -5096,9 +5183,6 @@
       ],
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "Ένα VPN είναι μια ασφαλής σήραγγα μεταξύ της συσκευής σας και του διαδικτύου. Αποκρύπτει την τοποθεσία και τη δραστηριότητά σας από τον πάροχο υπηρεσιών διαδικτύου (ISP) και τους ιστότοπους που επισκέπτεστε."
-      ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Η πρόσβαση σε λογαριασμό περιορίζεται λόγω απλήρωτων τιμολογίων. Επικοινωνήστε με το διαχειριστή σας."
       ],
       "Account successfully updated": [
         "Ο λογαριασμός ενημερώθηκε επιτυχώς"
@@ -5192,6 +5276,15 @@
       ],
       "Billing cycle: ${ text }": [
         "Κύκλος χρέωσης: ${ text }"
+      ],
+      "Booking already exists.": [
+        "Η κράτηση υπάρχει ήδη."
+      ],
+      "Booking cannot be added in the past.": [
+        "Η κράτηση δεν μπορεί να προστεθεί στο παρελθόν."
+      ],
+      "Booking overlaps with an existing booking.": [
+        "Η κράτηση επικαλύπτεται με μια υπάρχουσα κράτηση."
       ],
       "Booking page example": [
         "Παράδειγμα σελίδας κρατήσεων"
@@ -5452,6 +5545,9 @@
       "Geoblocking": [
         "Γεωγραφικός αποκλεισμός"
       ],
+      "Google Pay mark": [
+        "Σήμα Google Pay"
+      ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Οι κυβερνήσεις και οι ISP μπορούν να παρακολουθούν τη δραστηριότητά σας στο διαδίκτυο. Κρύβοντας την πραγματική σας IP και κρυπτογραφώντας τη δραστηριότητά σας, η περιήγησή σας γίνεται ιδιωτική."
       ],
@@ -5460,6 +5556,9 @@
       ],
       "High Priority": [
         "Υψηλή προτεραιότητα"
+      ],
+      "How long should an appointment last?": [
+        "Πόσο πρέπει να διαρκεί ένα ραντεβού;"
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Εάν είναι ενεργοποιημένες οι συντομεύσεις πληκτρολογίου, μπορείτε να χρησιμοποιήσετε τα ακόλουθα πλήκτρα για γρήγορες ενέργειες ή για να μεταβείτε σε διαφορετικές προβολές. Το ${ metaKey } + K είναι πάντα ενεργοποιημένο."
@@ -5509,6 +5608,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Στο επόμενο βήμα, θα μπορείτε να υποβάλετε μια κατάθεση χρησιμοποιώντας μια διεύθυνση Bitcoin."
+      ],
+      "In which calendar should bookings appear?": [
+        "Σε ποιο ημερολόγιο πρέπει να εμφανίζονται οι κρατήσεις;"
       ],
       "Indexing events: ${ current }/${ total }": [
         "Ενημέρωση ευρετηρίου με εκδηλώσεις: ${ current }/${ total }"
@@ -5615,11 +5717,17 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Τα περισσότερα δημόσια δίκτυα WiFi είναι ασφαλή, αλλά ορισμένα στερούνται ασφάλειας, εκθέτοντάς σας σε απειλές στον κυβερνοχώρο. Ένα VPN κρυπτογραφεί την κίνησή σας, διατηρώντας σας προστατευμένους."
       ],
+      "Name your booking page": [
+        "Ονομάστε τη σελίδα κράτησής σας"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Ονομάστε το νέο σας φάκελο και επιλέξτε τον γονικό φάκελο στον οποίο θέλετε να τον τοποθετήσετε. Εάν δεν επιλέξετε γονικό φάκελο, αυτός ο νέος φάκελος θα δημιουργηθεί ως φάκελος ανώτατου επιπέδου."
       ],
       "New": [
         "Νέο"
+      ],
+      "No available slots for this day": [
+        "Δεν υπάρχουν διαθέσιμες χρονοθυρίδες για αυτή την ημέρα"
       ],
       "No contacts added yet": [
         "Δεν έχουν προστεθεί επαφές ακόμα"
@@ -5824,8 +5932,8 @@
       "Setting up your new address…": [
         "Ρύθμιση της νέας διεύθυνσής σας…"
       ],
-      "Share this page to let others book time in your calendar.": [
-        "Κοινοποιήστε αυτή τη σελίδα για να επιτρέψετε σε άλλους να κλείσουν χρόνο στο ημερολόγιό σας."
+      "Share this page to let others book time in your calendar. You can manage it anytime in the sidebar under Booking pages.": [
+        "Μοιραστείτε αυτή τη σελίδα για να επιτρέψετε σε άλλους να κλείσουν ραντεβού στο ημερολόγιό σας. Μπορείτε να το διαχειριστείτε ανά πάσα στιγμή στην πλαϊνή στήλη, στην ενότητα Σελίδες Κρατήσεων."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Επειδή είστε πιστός χρήστης, ο λογαριασμός σας έχει ενεργοποιημένες πρόσθετες λειτουργίες."
@@ -6056,6 +6164,12 @@
       "Week and month views only apply to desktop.": [
         "Οι προβολές εβδομάδας και μήνα ισχύουν μόνο για την επιφάνεια εργασίας."
       ],
+      "What should people know before booking?": [
+        "Τι πρέπει να γνωρίζουν οι άνθρωποι πριν κάνουν κράτηση;"
+      ],
+      "When are you free?": [
+        "Πότε είστε ελεύθεροι;"
+      ],
       "When working remotely": [
         "Όταν εργάζεστε εξ αποστάσεως"
       ],
@@ -6064,6 +6178,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Όταν ρυθμίσετε τον έλεγχο ταυτοποίησης δύο παραγόντων, σας παρέχουμε κωδικούς ανάκτησης τους οποίους μπορείτε να χρησιμοποιήσετε για να συνδεθείτε σε περίπτωση που χάσετε την πρόσβαση στην εφαρμογή ταυτοποίησης σας."
+      ],
+      "Where will the appointment take place?": [
+        "Πού θα λάβει χώρα το ραντεβού;"
       ],
       "Which event would you like to delete?": [
         "Ποια εκδήλωση θα θέλατε να διαγράψετε;"
@@ -6154,6 +6271,9 @@
       "You cannot undo this action.": [
         "Δεν μπορείτε να αναιρέσετε αυτήν την ενέργεια."
       ],
+      "You can’t have more than ${ MAX_BOOKING_SLOTS } booking slots on a page.": [
+        "Δεν μπορείτε να έχετε περισσότερες από ${ MAX_BOOKING_SLOTS } χρονοθυρίδες σε μια σελίδα."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Λαμβάνετε ειδοποίηση εάν ο κωδικός πρόσβασής σας ή άλλα δεδομένα διέρρευσαν από υπηρεσία τρίτων."
       ],
@@ -6218,20 +6338,11 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Οι υπηρεσίες του ${ BRAND_NAME } λογαριασμού σας μόλις έχουν ανασταλεί. Μετά από 28 ημέρες, δεν θα μπορείτε να λάβετε μηνύματα στα εισερχόμενα, οι Drive σύνδεσμοι θα αποκλειστούν, και δεν θα μπορείτε να ανεβάσετε καινούργια αρχεία. Για να συνεχίσετε ομαλά τις υπηρεσίες σας, παρακαλούμε να πληρώσετε τυχόν ληξιπρόθεσμα τιμολόγια."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Οι υπηρεσίες του ${ BRAND_NAME } λογαριασμού σας μόλις έχουν ανασταλεί. Δεν μπορείτε πλέον να λάβετε μηνύματα στα εισερχόμενα σας. Οι σύνδεσμοι στο Drive έχουν απενεργοποιηθεί, και δεν μπορείτε να ανεβάσετε νέα αρχεία. Για να συνεχίσετε τις υπηρεσίες του λογαριασμού σας, παρακαλούμε να πληρώσετε τυχόν ληξιπρόθεσμα τιμολόγια."
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Η συνδρομή σας ${ plan } θα αντικατασταθεί με ${ PASS_SHORT_APP_NAME } διάρκειας ζωής. Το υπόλοιπο της συνδρομής σας θα προστεθεί στον λογαριασμό σας. Η προσφορά ${ PASS_SHORT_APP_NAME } διάρκειας ζωής δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Η πρόσβαση σας σύντομα θα περιοριστεί. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Ο λογαριασμός σας έχει περιοριστεί, και όλες οι υπηρεσίες βρίσκονται σε φραγή έως ότου πραγματοποιηθεί η πληρωμή. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο και τέθηκε σε περιορισμό. Η συνεχής αποφυγή πληρωμών θα οδηγήσει σε φραγή εισερχόμενων μηνυμάτων και κοινοποίησης συνδέσμων. ${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "Η διεύθυνσή σας είναι απενεργοποιημένη. Δεν μπορείτε να στείλετε email ακύρωσης στους συμμετέχοντες της εκδήλωσης. Θα θέλατε να διαγράψετε όλες τις εκδηλώσεις σε αυτήν τη σειρά ούτως ή άλλως;"
@@ -6651,9 +6762,6 @@
       "Don't show this again": [
         "Να μην εμφανιστεί ξανά"
       ],
-      "Duration": [
-        "Διάρκεια"
-      ],
       "e.g., Amazon, eBay, Etsy": [
         "π.χ., Amazon, eBay, Etsy"
       ],
@@ -6943,9 +7051,6 @@
       "Time zone": [
         "Ζώνη ώρας"
       ],
-      "Title": [
-        "Τίτλος"
-      ],
       "To: ${ toEmail }": [
         "Προς: ${ toEmail }"
       ],
@@ -7209,6 +7314,11 @@
       ],
       "Your import is starting": [
         "Η εισαγωγή σας εκκινεί"
+      ]
+    },
+    "Location": {
+      "In person": [
+        "Αυτοπροσώπως"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -9021,6 +9131,9 @@
       "Credit/debit card": [
         "Πιστωτική/χρεωστική κάρτα"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Νέα πιστωτική/χρεωστική κάρτα"
       ]
@@ -9151,6 +9264,12 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Έχετε ήδη συνδρομή σε αυτό το πλάνο. Μπορείτε να αλλάξετε τη συνδρομή σας στο ${ subscriptionPlatform }."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Θα ανακατευθυνθείτε σύντομα στο Paypal, για να επαληθεύσετε την πληρωμή σας."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Θα ανακατευθυνθείτε σύντομα, για να επαληθεύσετε την πληρωμή σας."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Το νόμισμά σας άλλαξε σε ευρώ (€) επειδή οι τραπεζικές μεταφορές SEPA υποστηρίζουν μόνο πληρωμές σε ευρώ."
       ],
@@ -9181,6 +9300,11 @@
         "Η κάρτα σας απορρίφθηκε. Παρακαλούμε δοκιμάστε μια διαφορετική κάρτα ή επικοινωνήστε με την τράπεζα σας για να εγκρίνετε τη χρέωση."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Κάτι πήγε στραβά. Η επαλήθευση του Google Pay απέτυχε."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Πίστωση του μη καταναλωμένου υπολοίπου της συνδρομής σας στο προηγούμενο πλάνο"
@@ -9200,6 +9324,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Τραπεζική μεταφορά - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - κάρτα που λήγει σε ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -9282,6 +9409,9 @@
       "A way to contact you": [
         "Ένας τρόπος να επικοινωνήσουμε μαζί σας"
       ],
+      "Add a booking page description": [
+        "Προσθήκη περιγραφής σελίδας κράτησης"
+      ],
       "Add a calendar description": [
         "Προσθέστε μια περιγραφή ημερολογίου"
       ],
@@ -9305,6 +9435,9 @@
       ],
       "Anytown": [
         "Αθήνα"
+      ],
+      "Booking page title": [
+        "Τίτλος σελίδας κρατήσεων"
       ],
       "Company name": [
         "Όνομα εταιρείας"
@@ -11159,9 +11292,6 @@
       "Birthday": [
         "Γενέθλια"
       ],
-      "Booking page": [
-        "Σελίδα κρατήσεων"
-      ],
       "Calendar": [
         "Ημερολόγιο"
       ],
@@ -11254,6 +11384,9 @@
       ],
       "Data recovery": [
         "Ανάκτηση δεδομένων"
+      ],
+      "Date": [
+        "Ημερομηνία"
       ],
       "Day theme": [
         "Ανοιχτό θέμα"
@@ -11395,6 +11528,9 @@
       "High security for your account": [
         "Υψηλή ασφάλεια για τον λογαριασμό σας"
       ],
+      "Host": [
+        "Διακομιστής"
+      ],
       "How does it all work?": [
         "Πώς λειτουργούν όλα;"
       ],
@@ -11434,6 +11570,9 @@
       ],
       "Link confirmation": [
         "Επιβεβαίωση συνδέσμου"
+      ],
+      "Location": [
+        "Τοποθεσία"
       ],
       "Make a secure connection your default": [
         "Ορισμός ασφαλούς σύνδεσης ως προεπιλογής"
@@ -11669,6 +11808,12 @@
       "This booking page has expired": [
         "Αυτή η σελίδα κράτησης έχει λήξει"
       ],
+      "Time": [
+        "Ώρα"
+      ],
+      "Time zone": [
+        "Ζωνη ωρας"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Ενεργοποίηση ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -11758,6 +11903,9 @@
       ],
       "Your account is protected": [
         "Ο λογαριασμός σας προστατεύεται"
+      ],
+      "Your booking is confirmed": [
+        "Η κράτησή σας επιβεβαιώθηκε"
       ],
       "Your booking page is ready": [
         "Η σελίδα κρατήσεών σας είναι έτοιμη"

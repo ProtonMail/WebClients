@@ -188,6 +188,9 @@
       "Confirm": [
         "Potvrdit"
       ],
+      "Confirm booking": [
+        "Potvrdit rezervaci"
+      ],
       "Confirm opening of link ${ linkToShow }": [
         "Potvrďte otevření odkazu ${ linkToShow }"
       ],
@@ -221,9 +224,6 @@
       "Copy alias “${ name }”": [
         "Kopírovat alias \"${ name }\""
       ],
-      "Copy Booking link": [
-        "Kopírovat rezervační odkaz"
-      ],
       "Copy email address": [
         "Kopírovat e-mailovou adresu"
       ],
@@ -232,6 +232,9 @@
       ],
       "Copy link": [
         "Kopírovat odkaz"
+      ],
+      "Copy link and close": [
+        "Kopírovat odkaz a zavřít"
       ],
       "Copy password": [
         "Kopírovat heslo"
@@ -2973,7 +2976,7 @@
       ]
     },
     "Custom frequency option": {
-      "Don't end": [
+      "Doesn't end": [
         "Neukončovat"
       ],
       "End after": [
@@ -3245,6 +3248,9 @@
       "Your account and data recovery methods are set.": [
         "Váš účet a metody obnovy dat jsou nastaveny."
       ],
+      "You’ll get a secure email with the details shortly.": [
+        "Brzy obdržíte zabezpečený e-mail s detaily."
+      ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vytvořili jste již 10 aliasů. Získejte neomezený počet aliasů a 500 GB úložného prostoru s ${ BRAND_NAME } Unlimited."
       ]
@@ -3405,11 +3411,29 @@
       ]
     },
     "Duration": {
+      "1.5h": [
+        "1.5h"
+      ],
       "120 minutes": [
         "120 minut"
       ],
+      "15 minutes": [
+        "15 minut"
+      ],
+      "15m": [
+        "15m"
+      ],
+      "1h": [
+        "1h"
+      ],
+      "2h": [
+        "2h"
+      ],
       "30 minutes": [
         "30 minut"
+      ],
+      "30m": [
+        "30m"
       ],
       "60 minutes": [
         "60 minut"
@@ -3633,6 +3657,9 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Vyhledávání obsahu nelze povolit. Restartujte aplikaci nebo smažte data."
       ],
+      "Content verification failed": [
+        "Ověření obsahu se nezdařilo"
+      ],
       "Could not open created vault": [
         "Nelze otevřít vytvořený trezor"
       ],
@@ -3809,6 +3836,9 @@
       ],
       "Name required": [
         "Název je povinný"
+      ],
+      "No booking page data received": [
+        "Nebyly přijaty žádné údaje ze stránky rezervace"
       ],
       "No calendars found to import": [
         "Nebyly nalezeny žádné kalendáře k importu"
@@ -4647,6 +4677,11 @@
         "Velmi malé"
       ]
     },
+    "Form": {
+      "Your contact info": [
+        "Vaše kontaktní údaje"
+      ]
+    },
     "Google Meet": {
       "Join Google Meet": [
         "Připojte se k Google Meet"
@@ -5086,8 +5121,8 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
       ],
-      "${ booking.duration } min duration": [
-        "${ booking.duration } min. doba trvání"
+      "${ bookingDetails.duration } min duration": [
+        "${ bookingDetails.duration } min. doba trvání"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistent psaní ${ BRAND_NAME } Scribe"
@@ -5260,9 +5295,6 @@
       "30-day money-back guarantee.": [
         "30denní záruka vrácení peněz."
       ],
-      "A booking slot cannot be added in the past.": [
-        "Rezervační termín nelze přidat do minulosti."
-      ],
       "A cancellation email will be sent to removed participants.": [
         "Odebraným účastníkům bude zaslán e-mail o zrušení účasti."
       ],
@@ -5289,9 +5321,6 @@
       ],
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "VPN je zabezpečený tunel mezi vaším zařízením a internetem. Skrývá vaši polohu a aktivitu před poskytovatelem internetových služeb (ISP) a navštívenými webovými stránkami."
-      ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Z důvodu nezaplacených faktur byl přístup k účtu omezen. Kontaktujte správce vašeho účtu."
       ],
       "Account successfully updated": [
         "Účet byl úspěšně aktualizován"
@@ -5391,6 +5420,15 @@
       ],
       "Billing cycle: ${ text }": [
         "Fakturační cyklus: ${ text }"
+      ],
+      "Booking already exists.": [
+        "Rezervace již existuje."
+      ],
+      "Booking cannot be added in the past.": [
+        "Rezervaci nelze přidat do minulosti."
+      ],
+      "Booking overlaps with an existing booking.": [
+        "Rezervace se překrývá s existující rezervací."
       ],
       "Booking page example": [
         "Příklad rezervační stránky"
@@ -5659,6 +5697,9 @@
       "Geoblocking": [
         "Zeměpisné blokování"
       ],
+      "Google Pay mark": [
+        "Značka Google Pay"
+      ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Vlády a poskytovatelé internetových služeb mohou sledovat vaši online aktivitu. Skrytím vaší skutečné IP adresy a šifrováním vaší aktivity se vaše prohlížení stane soukromým."
       ],
@@ -5667,6 +5708,9 @@
       ],
       "High Priority": [
         "Vysoká priorita"
+      ],
+      "How long should an appointment last?": [
+        "Jak dlouho by měla trvat schůzka?"
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Pokud jsou povoleny klávesové zkratky, můžete pro rychlé akce nebo pro přechod do různých zobrazení použít následující klávesy. Zkratka ${ metaKey } + K je vždy povolena."
@@ -5718,6 +5762,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "V dalším kroku budete moci odeslat vklad pomocí bitcoinové adresy."
+      ],
+      "In which calendar should bookings appear?": [
+        "V jakém kalendáři by se měly rezervace zobrazovat?"
       ],
       "Indexing events: ${ current }/${ total }": [
         "Indexování událostí: ${ current }/${ total }"
@@ -5824,11 +5871,17 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Většina veřejných sítí Wi-Fi je bezpečná, ale některé nejsou dostatečně zabezpečené a vystavují vás kybernetickým hrozbám. VPN šifruje váš provoz a chrání vás."
       ],
+      "Name your booking page": [
+        "Pojmenujte svou rezervační stránku"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Pojmenujte svou novou složku a vyberte nadřazenou složku, do které ji chcete vložit. Pokud nevyberete nadřazenou složku, bude nová složka vytvořena v kořenové složce."
       ],
       "New": [
         "Nově"
+      ],
+      "No available slots for this day": [
+        "Na tento den nejsou k dispozici žádné volné termíny."
       ],
       "No contacts added yet": [
         "Doposud nebyly přidány žádné kontakty"
@@ -6037,8 +6090,8 @@
       "Setting up your new address…": [
         "Nastavování nové adresy…"
       ],
-      "Share this page to let others book time in your calendar.": [
-        "Sdílejte tuto stránku, aby si ostatní mohli rezervovat termín ve vašem kalendáři."
+      "Share this page to let others book time in your calendar. You can manage it anytime in the sidebar under Booking pages.": [
+        "Sdílejte tuto stránku, aby si ostatní mohli rezervovat čas ve vašem kalendáři. Spravovat ji můžete kdykoli v postranním panelu pod položkou Rezervační stránky."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhledem k tomu, že jste věrný uživatel, má Váš účet povolené další funkce."
@@ -6271,6 +6324,12 @@
       "Week and month views only apply to desktop.": [
         "Zobrazení týdne a měsíce platí pouze pro desktop."
       ],
+      "What should people know before booking?": [
+        "Co by lidé měli vědět před rezervací?"
+      ],
+      "When are you free?": [
+        "Kdy máte volno?"
+      ],
       "When working remotely": [
         "Při práci na dálku"
       ],
@@ -6279,6 +6338,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Při nastavení dvoufázového ověřování poskytujeme kódy pro obnovení, které můžete použít k přihlášení, pokud ztratíte přístup k ověřovací aplikaci."
+      ],
+      "Where will the appointment take place?": [
+        "Kde se schůzka uskuteční?"
       ],
       "Which event would you like to delete?": [
         "Kterou událost chcete smazat?"
@@ -6373,6 +6435,9 @@
       "You cannot undo this action.": [
         "Tuto akci nemůžete vzít zpět."
       ],
+      "You can’t have more than ${ MAX_BOOKING_SLOTS } booking slots on a page.": [
+        "Na stránce nelze mít více než ${ MAX_BOOKING_SLOTS } rezervačních slotů."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Nechte se upozornit, pokud vaše heslo nebo jiná data uniknou ze služby třetí strany."
       ],
@@ -6439,20 +6504,11 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Váš účet ${ BRAND_NAME } je momentálně pozastaven. Po 28 dnech vám již nebudou do schránky doručovány e-maily, odkazy na sdílení na Disku budou zablokovány a nebudete moci nahrávat nové soubory. Chcete-li obnovit normální provoz, zaplaťte všechny faktury po splatnosti."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Váš účet ${ BRAND_NAME } je momentálně pozastaven. E-maily již nejsou doručovány do vaší schránky. Vaše odkazy na sdílení na Disku již nejsou aktivní a nemůžete nahrávat nové soubory. Chcete-li svůj účet nadále používat, zaplaťte všechny faktury po splatnosti."
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Vaše předplatné ${ plan } bude nahrazeno doživotním předplatným ${ PASS_SHORT_APP_NAME }. Zbývající část předplatného bude připsána na váš účet. Doživotní nabídka ${ PASS_SHORT_APP_NAME } nemá cenu za obnovení, jedná se o jednorázovou platbu za doživotní přístup k ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Váš účet má alespoň jednu fakturu po splatnosti. Váš přístup bude brzy omezen. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Váš účet má alespoň jednu fakturu po splatnosti. Váš účet je omezen a všechny služby jsou nyní až do zaplacení zablokovány. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Váš účet má alespoň jednu fakturu po splatnosti. Váš účet je omezen. Pokračující neplacení zablokuje vaše e-maily a odkazy pro sdílení. ${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "Vaše adresa je deaktivována. Účastníkům události nelze zaslat e-mail o zrušení. Chcete i přesto smazat všechny události této série?"
@@ -6884,9 +6940,6 @@
       "Don't show this again": [
         "Příště nezobrazovat"
       ],
-      "Duration": [
-        "Doba trvání"
-      ],
       "e.g., Amazon, eBay, Etsy": [
         "například Amazon, eBay, Etsy"
       ],
@@ -7178,9 +7231,6 @@
       "Time zone": [
         "Časové pásmo"
       ],
-      "Title": [
-        "Název"
-      ],
       "To: ${ toEmail }": [
         "Komu: ${ toEmail }"
       ],
@@ -7446,6 +7496,11 @@
       ],
       "Your import is starting": [
         "Váš import byl zahájen"
+      ]
+    },
+    "Location": {
+      "In person": [
+        "Osobní"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -9378,6 +9433,9 @@
       "Credit/debit card": [
         "Kreditní/debetní karta"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Nová kreditní/debetní karta"
       ]
@@ -9520,6 +9578,12 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Již máte předplatné tohoto tarifu. Můžete si změnit své předplatné na ${ subscriptionPlatform }."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Za účelem ověření platby budete přesměrováni na PayPal."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Za účelem ověření platby budete přesměrováni."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Vaše měna byla změněna na euro (€), protože bankovní převody SEPA podporují pouze platby v eurech."
       ],
@@ -9550,6 +9614,11 @@
         "Vaše karta byla zamítnuta. Zadejte prosím jinou kartu nebo kontaktujte svou banku pro autorizaci platby."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Něco se pokazilo. Ověření Google Pay selhalo."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit za nevyužitou část vašeho předchozího předplatného"
@@ -9569,6 +9638,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Bankovní převod - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - karta končící čísly ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -9651,6 +9723,9 @@
       "A way to contact you": [
         "Způsob, jak vás kontaktovat"
       ],
+      "Add a booking page description": [
+        "Přidejte popis rezervační stránky"
+      ],
       "Add a calendar description": [
         "Přidat popis kalendáře"
       ],
@@ -9674,6 +9749,9 @@
       ],
       "Anytown": [
         "Město"
+      ],
+      "Booking page title": [
+        "Název rezervační stránky"
       ],
       "Company name": [
         "Název společnosti"
@@ -11630,9 +11708,6 @@
       "Birthday": [
         "Narozeniny"
       ],
-      "Booking page": [
-        "Rezervační stránka"
-      ],
       "Calendar": [
         "Kalendář"
       ],
@@ -11725,6 +11800,9 @@
       ],
       "Data recovery": [
         "Obnovení dat"
+      ],
+      "Date": [
+        "Datum"
       ],
       "Day theme": [
         "Denní motiv"
@@ -11870,6 +11948,9 @@
       "High security for your account": [
         "Vysoké zabezpečení vašeho účtu"
       ],
+      "Host": [
+        "Hostitel"
+      ],
       "How does it all work?": [
         "Jak to všechno funguje?"
       ],
@@ -11911,6 +11992,9 @@
       ],
       "Link confirmation": [
         "Potvrzení před otevřením odkazu"
+      ],
+      "Location": [
+        "Umístění"
       ],
       "Make a secure connection your default": [
         "Nastavte zabezpečené připojení jako výchozí"
@@ -12146,6 +12230,12 @@
       "This booking page has expired": [
         "Tato rezervační stránka vypršela"
       ],
+      "Time": [
+        "Čas"
+      ],
+      "Time zone": [
+        "Časové pásmo"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Zapnout ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -12235,6 +12325,9 @@
       ],
       "Your account is protected": [
         "Váš účet je chráněn"
+      ],
+      "Your booking is confirmed": [
+        "Vaše rezervace je potvrzena"
       ],
       "Your booking page is ready": [
         "Vaše rezervační stránka je připravena"

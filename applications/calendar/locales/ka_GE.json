@@ -219,9 +219,6 @@
       "Copy alias “${ name }”": [
         "ფსევდონიმის \"${ name }\" კოპირება"
       ],
-      "Copy Booking link": [
-        "დაჯავშნის ბმულის კოპირება"
-      ],
       "Copy email address": [
         "ელფოსტის მისამართის კოპირება"
       ],
@@ -1391,15 +1388,47 @@
         "საცავის სივრცე გაზიარებულია ყველა ${ BRAND_NAME }-ის სერვისებს შორის."
       ]
     },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "შავი პარასკევი"
+      ]
+    },
     "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 ტბ მონაცემთა საცავი"
+      ],
+      "3 TB data storage": [
+        "3 ტბ მონაცემთა საცავი"
+      ],
       "Access 15,000+ servers in 120+ countries": [
         "წვდომა 15,000+ სერვერთან 120+ ქვეყანაში"
+      ],
+      "Access advanced AI models": [
+        "წვდომა განვითარებულ AI მოდელებთან"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "ყველა ფასიანი ფუნქცია ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } და ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
         "რეკლამის, ტრეკერებისა და მავნე პროგრამების დაბლოკვა"
       ],
       "Built-in 2FA authenticator": [
         "ჩაშენებული 2FA ავთენტიკატორი"
+      ],
+      "Connect 10 devices at once": [
+        "დააკავშირეთ 10 მოწყობილობა ერთდროულად"
+      ],
+      "Full chat history with easy search and favorites": [
+        "სრული ჩატის ისტორია მარტივი ძიებით და ფავორიტებით"
+      ],
+      "Individual accounts for 6 users": [
+        "ინდივიდუალური ანგარიშები 6 მომხმარებლისთვის"
+      ],
+      "Individual accounts for you and a partner": [
+        "ინდივიდუალური ანგარიშები თქვენთვის და პარტნიორისთვის"
+      ],
+      "Stronger protection against cyber threats": [
+        "უფრო ძლიერი დაცვა კიბერ საფრთხეებისგან"
       ],
       "Unlimited daily chats": [
         "შეუზღუდავი ყოველდღიური ჩატები"
@@ -1410,9 +1439,29 @@
         "Black Friday"
       ]
     },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "დაეხმარეთ თქვენს საყვარელ ადამიანებს შეუერთდნენ კონფიდენციალურობის რევოლუციას ჩვენი საუკეთესო ღირებულების პაკეტებით, ახლა 50%-იანი ფასდაკლებით!"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "შეუერთდით კონფიდენციალურობის რევოლუციას ჩვენი საუკეთესო ღირებულების პაკეტებით, ახლა 50%-იანი ფასდაკლებით!"
+      ]
+    },
     "BF2025: Offers": {
       "for ${ durationDeal }": [
         "${ durationDeal }-სთვის"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "დაზოგეთ ${ savedAmount } ჩვენი საუკეთესო ღირებულების, შეზღუდული დროის შეთავაზებით!"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "გადადით ჩვენს 2-წლიან გეგმაზე და დაზოგეთ ${ savedAmount }!"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "გადადით ჩვენს წლიურ გეგმაზე და დაზოგეთ ${ savedAmount }!"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "მიანიჭეთ თქვენს ახლობლებს სრული ციფრული დაცვა."
       ]
     },
     "BF2025: Tooltip": {
@@ -2866,7 +2915,7 @@
       ]
     },
     "Custom frequency option": {
-      "Don't end": [
+      "Doesn't end": [
         "არ დაასრულო"
       ],
       "End after": [
@@ -3241,6 +3290,9 @@
       "/month": [
         "/თვეში"
       ],
+      "2 TB of storage to share": [
+        "2ტბ საცავი გასაზიარებლად"
+      ],
       "2 user accounts": [
         "2 მომხმარებლის ანგარიში"
       ],
@@ -3273,11 +3325,29 @@
       ]
     },
     "Duration": {
+      "1.5h": [
+        "1.5სთ"
+      ],
       "120 minutes": [
         "120 წუთი"
       ],
+      "15 minutes": [
+        "15 წუთი"
+      ],
+      "15m": [
+        "15წთ"
+      ],
+      "1h": [
+        "1სთ"
+      ],
+      "2h": [
+        "2სთ"
+      ],
       "30 minutes": [
         "30 წუთი"
+      ],
+      "30m": [
+        "30წთ"
       ],
       "60 minutes": [
         "60 წუთი"
@@ -4880,8 +4950,8 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }-ს ესაჭიროება თქვენი წვდომა ${ enableDesktopNotifications }-ზე."
       ],
-      "${ booking.duration } min duration": [
-        "${ booking.duration } წთ ხანგრძლივობა"
+      "${ bookingDetails.duration } min duration": [
+        "${ bookingDetails.duration } წთ ხანგრძლივობა"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe წერის დამხმარე"
@@ -5008,9 +5078,6 @@
       "30-day money-back guarantee.": [
         "30 დღიანი გარანტირებული ფულის დაბრუნება."
       ],
-      "A booking slot cannot be added in the past.": [
-        "ჩავშნის დრო წარსულში ვერ იქნება."
-      ],
       "A cancellation email will be sent to removed participants.": [
         "გაუქმების ელფოსტა გადაეგზავნება ამოღებულ მონაწილეებს."
       ],
@@ -5025,9 +5092,6 @@
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "მომხმარებელი წარმოადგენს ანგარიშს, რომელსაც ერთადერთი მომხმარებლის სახელი, საფოსტო ყუთი და მფლობელი გააჩნია"
-      ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "ანგარიშთან წვდომა აკრძალულია გადაუხდელი ინვოისების გამო. დაუკავშირდით თქვენს ადმინისტრატორს."
       ],
       "Account successfully updated": [
         "ანგარში წარმატებით განახლდა"
@@ -5369,11 +5433,17 @@
       "Geoblocking": [
         "გეოდაბლოკვა"
       ],
+      "Google Pay mark": [
+        "Google Pay-ის ნიშანი"
+      ],
       "here": [
         "აქ"
       ],
       "High Priority": [
         "მაღალი პრიორიტეტი"
+      ],
+      "How long should an appointment last?": [
+        "რამდენ ხანს უნდა გაგრძელდეს შეხვედრა?"
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "თუ კლავიატურის მალსახმობები ჩართულია, შეგიძლიათ გამოიყენოთ შემდეგი ღილაკები სწრაფი ქმედებებისთვის ან სხვა ხედზე გადასართველად. ${ metaKey } + K ყოველთვის ჩართულია."
@@ -5423,6 +5493,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "შემდეგ ნაბიჯზე თქვენ საშუალება გექნებათ, დეპოზიტი ბიტკოინის მისამართით გადმოგვცეთ."
+      ],
+      "In which calendar should bookings appear?": [
+        "რომელ კალენდარში უნდა გამოჩნდეს ჯავშნები?"
       ],
       "Indexing events: ${ current }/${ total }": [
         "დაინდექსების მოვლენები: ${ current }/${ total }"
@@ -5522,6 +5595,9 @@
       ],
       "Monthly ${ onDayString }": [
         "ყოველ თვე, ${ onDayString }"
+      ],
+      "Name your booking page": [
+        "დაარქვით სახელი თქვენი დაჯავშნის გვერდს"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "შეიყვანეთ ახალი საქაღალდის სახელი და აირჩიეთ საქაღალდე, რომელშიც ის უნდა შეიქმნას. თუ არ აირჩევთ, ახალი საქაღალდე ყველაზე მაღალ დონეზე შეიქმნება."
@@ -5728,9 +5804,6 @@
       ],
       "Setting up your new address…": [
         "თქვენი ახალი მისამართის მორგება…"
-      ],
-      "Share this page to let others book time in your calendar.": [
-        "გააზიარეთ ეს გვერდი, რომ საშუალება მისცეთ სხვებს, დაჯავშნონ დრო თქვენს კალენდარში."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "რადგან თქვენ ერთგული მომხმარებელი ბრძანდებით, ანგარიშისთვის დამატებითი თვისებებია ხელმისაწვდომი."
@@ -5940,6 +6013,9 @@
       "Week and month views only apply to desktop.": [
         "კვირეული და თვიური ხედები, მხოლოდ, სამაგიდო კომპიუტერებზე ჩანს."
       ],
+      "What should people know before booking?": [
+        "რა უნდა იცოდეს ხალხმა შეხვედრის შესახებ?"
+      ],
       "When working remotely": [
         "დისტანციურად მუშაობისას"
       ],
@@ -5948,6 +6024,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "2FA-ის მორგებისას ჩვენ მოგაწოდებთ აღდგენის კოდებს, რომელიც შეგიძლიათ, გამოიყენოთ ანგარიშში შესასვლელად იმ შემთხვევაშიც კი, თუ თქვენს ავთენტიკატორ აპთან წვდომას დაკარგავთ."
+      ],
+      "Where will the appointment take place?": [
+        "სად მოხდება შეხვედრა?"
       ],
       "Which event would you like to delete?": [
         "რომელი მოვლენის წაშლა გნებავთ?"
@@ -6102,17 +6181,8 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "თქვენი ${ BRAND_NAME }-ის ანგარიში ამჟამად შეჩერებულია. 28 დღის შემდეგ ელფოსტებს ვეღარ მიიღებთ, დისკიდან გაზიარებული ბმულები დაიბლოკება და ახალ ფაილებს ვეღარ ატვირთავათ. ჩვენი სერვისების მოხმარების გასაგრძელებლად საჭიროა, გადაიხადოთ ყველა ვადაგადაცილებული ინვოისი."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "თქვენი ${ BRAND_NAME }-ის ანგარიში ამჟამად შეჩერებულია. ელფოსტებს ვეღარ მიიღებთ. თქვენი დისკიდან გაზიარებული ბმულები აქტიური აღარაა და ახალ ფაილებს ვეღარ ატვირთავთ. თქვენი ანგარიშის მოხმარების გასაგრძელებლად საჭიროა, ყველა გადაცილებული ინვოისი გადაიხადოთ."
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "თქვენს ანგარიშზე ყველაზე ცოტა ერთი გადაცილებული ინვოისია. წვდომა მალე შეიზღუდება. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "თქვენს ანგარიშზე, სულ ცოტა, ერთი გადაცილებული ინვოისია. თქვენი ანგარიში შეზღუდულია და გადახდამდე ყველა სერვისი დაბლოკილია. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "თქვენს ანგარიშზე, სულ ცოტა, ერთი გადაცილებული ინვოისია. გადაუხდელობის შემთხვევაში თქვენი გაზიარებული ბმულები და ელფოსტა დაიბლოკება. ${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "თქვენი მისამართი გამორთულია. გაუქმების ელფოსტის გაგზავნა შეუძლებელია მოვლენის მონაწილეებისთვის. მაინც გსურთ ამ სერიის ყველა მოვლენის წაშლა?"
@@ -6523,9 +6593,6 @@
       "Don't show this again": [
         "აღარ მაჩვენო"
       ],
-      "Duration": [
-        "ხანგრძლივობა"
-      ],
       "e.g., Amazon, eBay, Etsy": [
         "მაგ Amazon, eBay, Etsy"
       ],
@@ -6815,9 +6882,6 @@
       "Time zone": [
         "დროის სარტყელი"
       ],
-      "Title": [
-        "სათაური"
-      ],
       "To: ${ toEmail }": [
         "მიმღები: ${ toEmail }"
       ],
@@ -7081,6 +7145,11 @@
       ],
       "Your import is starting": [
         "შემოტანის დასაწყისი"
+      ]
+    },
+    "Location": {
+      "In person": [
+        "პირადად"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -8881,6 +8950,9 @@
       "Credit/debit card": [
         "საკრედიტო/სადებეტო ბარათი"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "ახალი საკრედიტო/სადებეტო ბარათი"
       ]
@@ -8991,6 +9063,12 @@
       "You already have a subscription to this plan.": [
         "თქვენ უკვე გაქვთ ეს სატარიფო გეგმა."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "გადახდის დასასრულებლად PayPal-ის ვებგვერდზე გადამისამართდებით."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "მალე გადაგამისამართებთ თქვენი გადახდის გადასამოწმებლად."
+      ],
       "Your payment is still being processed": [
         "თქვენი გადახდა ჯერ კიდევ მუშავდება"
       ]
@@ -9015,6 +9093,11 @@
         "ბარათი უარყოფილია. სცადეთ სხვა ბარათი, ან გადახდის ავტორიზაციისთვის დაუკავშირდით ბანკს."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "რაღაც ცუდი მოხდა. Google Play-ის გადამოწმება ჩავარდა."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "წინა გამოწერის დარჩენილი ნაწილის კრედიტი"
@@ -9034,6 +9117,9 @@
       ],
       "Bank transfer - ${ details }": [
         "საბანკო გადარიცხვა - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - ბარათის ვადა იწურება ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -9113,6 +9199,9 @@
       "A way to contact you": [
         "თქვენთან დაკავშირების საშუალება"
       ],
+      "Add a booking page description": [
+        "დაამატეთ დაჯავშნის გვერდის აღწერა"
+      ],
       "Add a calendar description": [
         "კალენდრის აღწერის დამატება"
       ],
@@ -9136,6 +9225,9 @@
       ],
       "Anytown": [
         "თბილისი"
+      ],
+      "Booking page title": [
+        "ჯავშნის გვერდის სათაური"
       ],
       "Company name": [
         "კომპანიის სახელი"
@@ -10948,9 +11040,6 @@
       "Birthday": [
         "დაბადების დღე"
       ],
-      "Booking page": [
-        "დაჯავშნის გვერდი"
-      ],
       "Calendar": [
         "კალენდარი"
       ],
@@ -11043,6 +11132,9 @@
       ],
       "Data recovery": [
         "მონაცემების აღდგენა"
+      ],
+      "Date": [
+        "თარიღი"
       ],
       "Day theme": [
         "დღის თემა"
@@ -11223,6 +11315,9 @@
       ],
       "Link confirmation": [
         "ბმულის დადასტურება"
+      ],
+      "Location": [
+        "მდებარეობა"
       ],
       "Make a secure connection your default": [
         "დაცული კავშირის გამოყენება ნაგულისხმევად"
@@ -11457,6 +11552,12 @@
       ],
       "This booking page has expired": [
         "ამ დაჯავშნის გვერდის ვადა ამოწურულია"
+      ],
+      "Time": [
+        "დრო"
+      ],
+      "Time zone": [
+        "დროის სარტყელი"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME }-ის ჩართვა"

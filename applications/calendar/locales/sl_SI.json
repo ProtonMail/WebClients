@@ -1255,9 +1255,50 @@
         "Prostor za shranjevanje si delijo vse aplikacije ${ BRAND_NAME }."
       ]
     },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "Črnopetkova razprodaja"
+      ]
+    },
     "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB shrambe podatkov"
+      ],
+      "3 TB data storage": [
+        "3 TB shrambe podatkov"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Dostop do več kot 15.000 strežnikov v več kot 120 državah"
+      ],
+      "Access advanced AI models": [
+        "Dostop do naprednih modelov umetne inteligence"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Vse premium funkcije ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } in ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Block ads, trackers, and malware": [
         "Blokiranje oglasov, sledilnikov in zlonamerne programske opreme"
+      ],
+      "Built-in 2FA authenticator": [
+        "Vgrajen overitelj 2FA"
+      ],
+      "Connect 10 devices at once": [
+        "Povežite 10 naprav hkrati"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Celotna zgodovina klepetov z enostavnim iskanjem in priljubljenimi"
+      ],
+      "Individual accounts for 6 users": [
+        "Posamezni računi za 6 uporabnikov"
+      ],
+      "Individual accounts for you and a partner": [
+        "Posamezni računi za vas in partnerja"
+      ],
+      "Stronger protection against cyber threats": [
+        "Močnejša zaščita pred kibernetskimi grožnjami"
+      ],
+      "Unlimited daily chats": [
+        "Neomejeno število dnevnih klepetov"
       ]
     },
     "BF2025: Heading alt": {
@@ -1265,9 +1306,29 @@
         "Black Friday"
       ]
     },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Pomagajte svojim bližnjim, da se pridružijo revoluciji zasebnosti z našimi najugodnejšimi paketi, zdaj s 50 % popusta!"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Pridružite se revoluciji zasebnosti z našimi najugodnejšimi paketi, zdaj s 50 % popusta!"
+      ]
+    },
     "BF2025: Offers": {
       "for ${ durationDeal }": [
         "za ${ durationDeal }"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "Prihranite ${ savedAmount } z našo najugodnejšo, časovno omejeno ponudbo!"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "Preklopite na naš dvoletni paket in prihranite ${ savedAmount }!"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "Preklopite na naš letni paket in prihranite ${ savedAmount }!"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "Poskrbite za svoje bližnje s popolno digitalno zaščito."
       ]
     },
     "BF2025: Tooltip": {
@@ -2673,9 +2734,6 @@
       ]
     },
     "Custom frequency option": {
-      "Don't end": [
-        "Ne konča"
-      ],
       "End after": [
         "Se konča po"
       ],
@@ -3039,20 +3097,6 @@
     "Duplicate event button tooltip": {
       "Duplicate event": [
         "Podvoji dogodek"
-      ]
-    },
-    "Duration": {
-      "120 minutes": [
-        "120 minut"
-      ],
-      "30 minutes": [
-        "30 minut"
-      ],
-      "60 minutes": [
-        "60 minut"
-      ],
-      "90 minutes": [
-        "90 minut"
       ]
     },
     "Edit event button tooltip": {
@@ -4800,9 +4844,6 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "VPN je varen tunel med vašo napravo in internetom. Skrije vašo lokacijo in dejavnost pred vašim ponudnikom internetnih storitev (ISP) in spletnimi stranmi, ki jih obiskujete."
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Zaradi neplačanih računov je dostop do računa omejen. Obrnite se na svojega skrbnika."
-      ],
       "Account successfully updated": [
         "Račun je uspešno posodobljen"
       ],
@@ -5874,17 +5915,8 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Vaš račun ${ BRAND_NAME } je trenutno suspendiran. Po 28 dneh e-poštni predal ne bo več prejemal sporočil, vaše povezave za skupno rabo na Disku bodo blokirane in ne boste mogli nalagati novih datotek. Za nadaljnje delovanje storitve plačajte morebitne zapadle račune."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Vaš račun ${ BRAND_NAME } je trenutno suspendiran. E-poštni predal ne prejema sporočil, vaše povezave za skupno rabo na Disku so deaktivirane in ne morete nalagati novih datotek. Za nadaljnjo uporabo storitve plačajte morebitne zapadle račune."
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Imate vsaj en neplačan račun. Vaš dostop bo kmalu omejen. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Vaš račun ima vsaj en zapadli dolg za račun. Vaš račun je omejen in vse storitve so zdaj blokirane, dokler ne plačate. ${ payInvoiceLink }."
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Vaš račun ima vsaj en zapadli dolg za račun. Vaš račun je omejen. Nadaljnje neplačilo bo blokiralo vašo e-pošto in deljenje povezav. ${ payInvoiceLink }."
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "Vaš naslov je onemogočen. Udeležencem dogodka ni mogoče poslati e-poštnega sporočila o preklicu. Ali želite vseeno izbrisati vse dogodke v tej seriji?"
@@ -6283,9 +6315,6 @@
       "Don't show this again": [
         "Ne prikazuj več"
       ],
-      "Duration": [
-        "Trajanje"
-      ],
       "e.g., Amazon, eBay, Etsy": [
         "npr. Amazon, eBay, Etsy"
       ],
@@ -6558,9 +6587,6 @@
       ],
       "Time zone": [
         "Časovni pas"
-      ],
-      "Title": [
-        "Naslov"
       ],
       "To: ${ toEmail }": [
         "Za: ${ toEmail }"
@@ -10685,6 +10711,9 @@
       "Data recovery": [
         "Obnovitev podatkov"
       ],
+      "Date": [
+        "Datum"
+      ],
       "Day theme": [
         "Dnevna tema"
       ],
@@ -10861,6 +10890,9 @@
       ],
       "Link confirmation": [
         "Potrditvena povezava"
+      ],
+      "Location": [
+        "Lokacija"
       ],
       "Make a secure connection your default": [
         "Nastavite varno povezavo kot privzeto"
@@ -11083,6 +11115,12 @@
       ],
       "Summary": [
         "Povzetek"
+      ],
+      "Time": [
+        "Čas"
+      ],
+      "Time zone": [
+        "Časovni pas"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Vklopi ${ DARK_WEB_MONITORING_NAME }"

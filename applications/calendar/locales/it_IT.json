@@ -219,9 +219,6 @@
       "Copy alias “${ name }”": [
         "Copia l'alias “${ name }”"
       ],
-      "Copy Booking link": [
-        "Copia il link di prenotazione"
-      ],
       "Copy email address": [
         "Copia indirizzo email"
       ],
@@ -2939,8 +2936,8 @@
       ]
     },
     "Custom frequency option": {
-      "Don't end": [
-        "Non termina"
+      "Doesn't end": [
+        "Senza data di fine"
       ],
       "End after": [
         "Termina dopo"
@@ -3361,11 +3358,26 @@
       ]
     },
     "Duration": {
+      "1.5h": [
+        "1,5h"
+      ],
       "120 minutes": [
         "120 minuti"
       ],
+      "15m": [
+        "15min"
+      ],
+      "1h": [
+        "1h"
+      ],
+      "2h": [
+        "2h"
+      ],
       "30 minutes": [
         "30 minuti"
+      ],
+      "30m": [
+        "30m"
       ],
       "60 minutes": [
         "60 minuti"
@@ -4982,8 +4994,8 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } ha bisogno della tua autorizzazione per ${ enableDesktopNotifications }."
       ],
-      "${ booking.duration } min duration": [
-        "durata di ${ booking.duration } min"
+      "${ bookingDetails.duration } min duration": [
+        "durata di ${ bookingDetails.duration } min"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistente alla scrittura ${ BRAND_NAME } Scribe"
@@ -5122,9 +5134,6 @@
       "30-day money-back guarantee.": [
         "Garanzia di rimborso entro 30 giorni"
       ],
-      "A booking slot cannot be added in the past.": [
-        "Non è possibile aggiungere una fascia oraria di prenotazione nel passato."
-      ],
       "A cancellation email will be sent to removed participants.": [
         "Una email di cancellazione verrà inviata ai partecipanti rimossi."
       ],
@@ -5151,9 +5160,6 @@
       ],
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "Una VPN è un tunnel sicuro tra il tuo dispositivo e Internet. Nasconde la tua posizione e attività al tuo provider di servizi Internet (ISP) e ai siti Web che visiti."
-      ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "A causa di fatture non pagate, l'accesso all'account è stato limitato. Per favore, contatta il tuo amministratore."
       ],
       "Account successfully updated": [
         "Account aggiornato con successo"
@@ -5507,6 +5513,9 @@
       "Geoblocking": [
         "Blocco geografico"
       ],
+      "Google Pay mark": [
+        "Marchio Google Pay"
+      ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "I governi e gli ISP possono monitorare la tua attività online. Nascondendo il tuo vero IP e crittografando la tua attività, la tua navigazione diventa privata."
       ],
@@ -5564,6 +5573,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Nel passaggio successivo, sarai in grado di inviare un deposito utilizzando un indirizzo Bitcoin."
+      ],
+      "In which calendar should bookings appear?": [
+        "In quale calendario dovrebbero comparire le prenotazioni?"
       ],
       "Indexing events: ${ current }/${ total }": [
         "Indicizzazione eventi: ${ current }/${ total }"
@@ -5879,9 +5891,6 @@
       "Setting up your new address…": [
         "Configurazione del tuo nuovo indirizzo…"
       ],
-      "Share this page to let others book time in your calendar.": [
-        "Condividi questa pagina per far prenotare agli altri un appuntamento nel tuo calendario."
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dato che sei un utente fedele, il tuo account ha funzionalità aggiuntive abilitate."
       ],
@@ -6111,6 +6120,9 @@
       "Week and month views only apply to desktop.": [
         "Le visualizzazioni settimanali e mensili si applicano solo al desktop."
       ],
+      "What should people know before booking?": [
+        "Cosa dovrebbero sapere le persone prima di prenotare?"
+      ],
       "When working remotely": [
         "Quando si lavora da remoto"
       ],
@@ -6119,6 +6131,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quando imposti l'autenticazione a due fattori, forniamo codici di ripristino che puoi utilizzare per accedere se perdi l'accesso alla tua app di autenticazione."
+      ],
+      "Where will the appointment take place?": [
+        "Dove si terrà l'appuntamento?"
       ],
       "Which event would you like to delete?": [
         "Quale evento vuoi eliminare?"
@@ -6273,20 +6288,11 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Trascorsi 28 giorni, le email non verranno più consegnate alla tua posta in arrivo, i tuoi link di condivisione di Drive verranno bloccati e non potrai caricare nuovi file. Per ripristinare il normale servizio, paga tutte le fatture scadute."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Le email non vengono più consegnate alla tua posta in arrivo. I tuoi link di condivisione di Drive non sono più attivi e non puoi caricare nuovi file. Per continuare ad usare il tuo account, paga tutte le fatture scadute."
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Il tuo abbonamento a ${ plan } verrà sostituito con ${ PASS_SHORT_APP_NAME } a vita. Il saldo rimanente del tuo abbonamento verrà aggiunto al tuo account. L'offerta a vita di ${ PASS_SHORT_APP_NAME } non ha prezzo di rinnovo, è un pagamento una tantum per l'accesso illimitato a ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Il tuo account ha una fattura scaduta. Il tuo accesso sarà presto limitato. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Il tuo account ha almeno una fattura scaduta. Il tuo account è limitato e tutti i servizi saranno bloccati fino al pagamento. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Il tuo account ha almeno una fattura scaduta. Il tuo account è limitato. Il mancato pagamento bloccherà le tue email e i link di condivisione. ${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "Il tuo indirizzo è disabilitato. Una email di cancellazione non può essere inviata ai partecipanti all'evento. Vuoi comunque eliminare tutti gli eventi di questa serie?"
@@ -6706,9 +6712,6 @@
       "Don't show this again": [
         "Non mostrare più"
       ],
-      "Duration": [
-        "Durata"
-      ],
       "e.g., Amazon, eBay, Etsy": [
         "Es. Amazon, eBay, Zalando"
       ],
@@ -6998,9 +7001,6 @@
       "Time zone": [
         "Fuso orario"
       ],
-      "Title": [
-        "Titolo"
-      ],
       "To: ${ toEmail }": [
         "A: ${ toEmail }"
       ],
@@ -7264,6 +7264,11 @@
       ],
       "Your import is starting": [
         "La tua importazione sta iniziando"
+      ]
+    },
+    "Location": {
+      "In person": [
+        "Di persona"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -9081,6 +9086,9 @@
       "Credit/debit card": [
         "Carta di credito/debito"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Nuova carta di credito/debito"
       ]
@@ -9211,6 +9219,12 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Hai già un abbonamento a questo piano. Puoi cambiare il tuo abbonamento su ${ subscriptionPlatform }."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Sarai presto reindirizzato a PayPal per verificare il pagamento."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Sarai presto reindirizzato per verificare il pagamento."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "La tua valuta è stata cambiata in euro (€) perché i bonifici bancari SEPA supportano solo pagamenti in euro."
       ],
@@ -9241,6 +9255,11 @@
         "La tua carta è stata rifiutata. Prova con una carta diversa o contatta la tua banca per autorizzare l'addebito."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Qualcosa è andato storto. La verifica di Google Pay non è riuscita."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Credito per la parte non usata del tuo precedente abbonamento"
@@ -9260,6 +9279,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Bonifico bancario - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - carta che termina con ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -11219,9 +11241,6 @@
       "Birthday": [
         "Compleanno"
       ],
-      "Booking page": [
-        "Pagina prenotazione"
-      ],
       "Calendar": [
         "Calendario"
       ],
@@ -11314,6 +11333,9 @@
       ],
       "Data recovery": [
         "Recupero dei dati"
+      ],
+      "Date": [
+        "Data"
       ],
       "Day theme": [
         "Tema giorno"
@@ -11494,6 +11516,9 @@
       ],
       "Link confirmation": [
         "Conferma il link"
+      ],
+      "Location": [
+        "Posizione"
       ],
       "Make a secure connection your default": [
         "Rendi la connessione sicura la tua connessione predefinita"
@@ -11728,6 +11753,12 @@
       ],
       "This booking page has expired": [
         "Questa pagina di prenotazione è scaduta"
+      ],
+      "Time": [
+        "Ora"
+      ],
+      "Time zone": [
+        "Fuso orario"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Attiva ${ DARK_WEB_MONITORING_NAME }"
