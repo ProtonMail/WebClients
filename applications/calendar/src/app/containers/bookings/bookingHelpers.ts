@@ -1,4 +1,4 @@
-import { addDays, addMinutes, endOfWeek, isBefore, isWeekend, set, startOfWeek } from 'date-fns';
+import { addMinutes, eachDayOfInterval, endOfWeek, isBefore, isWeekend, set, startOfWeek } from 'date-fns';
 import { c } from 'ttag';
 
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
@@ -155,35 +155,27 @@ export const generateBookingRangeID = (start: Date, end: Date) => {
     return `${BOOKING_SLOT_ID}-${start.getTime()}-${end.getTime()}`;
 };
 
+/**
+ * Returns an array of booking range going from 9am to 5pm on work days of the current week
+ */
 export const generateDefaultBookingRange = (userSettings: UserSettings, timezone: string): BookingRange[] => {
-    const now = set(new Date(), { minutes: 0, seconds: 0, milliseconds: 0 });
     const weekStartsOn = getWeekStartsOn({ WeekStart: userSettings.WeekStart });
-    const firstDayOfWeek = startOfWeek(now, { weekStartsOn });
-    const lastDayOfWeek = endOfWeek(now, { weekStartsOn });
 
-    const bookingRanges: BookingRange[] = [];
-    let currentDay = firstDayOfWeek;
+    return eachDayOfInterval({
+        start: startOfWeek(new Date(), { weekStartsOn }),
+        end: endOfWeek(new Date(), { weekStartsOn }),
+    })
+        .filter((day) => !isWeekend(day))
+        .map((day) => {
+            // The range starts from 9 AM and ends at 5 PM
+            const start = set(day, { hours: 9 });
+            const end = set(day, { hours: 17 });
 
-    while (currentDay < lastDayOfWeek) {
-        // We ignore weekends
-        if (isWeekend(currentDay)) {
-            currentDay = addDays(currentDay, 1);
-            continue;
-        }
-
-        const start = set(currentDay, { hours: 9 });
-        const end = set(currentDay, { hours: 17 });
-
-        const dataId = generateBookingRangeID(start, end);
-        bookingRanges.push({
-            id: dataId,
-            start,
-            end,
-            timezone,
+            return {
+                id: generateBookingRangeID(start, end),
+                start,
+                end,
+                timezone,
+            };
         });
-
-        currentDay = addDays(currentDay, 1);
-    }
-
-    return bookingRanges;
 };
