@@ -25,7 +25,7 @@ export const Basic = () => {
             <InputFieldTwo
                 type="text"
                 label="Title"
-                className="rounded-none"
+                inputClassName="rounded-none"
                 placeholder="e.g., Amazon, eBay, Etsy"
                 autoFocus
                 unstyled
@@ -40,7 +40,7 @@ export const BoldExample = () => {
             <InputFieldTwo
                 type="text"
                 label="Title"
-                className="text-bold rounded-none"
+                inputClassName="text-bold rounded-none"
                 placeholder="e.g., Amazon, eBay, Etsy"
                 autoFocus
                 unstyled
