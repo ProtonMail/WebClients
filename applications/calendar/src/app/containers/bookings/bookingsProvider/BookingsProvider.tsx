@@ -31,6 +31,7 @@ import { type BookingFormData, BookingLocation, BookingState, DEFAULT_EVENT_DURA
 interface BookingsContextValue {
     submitForm: () => Promise<void>;
     isBookingActive: boolean;
+    canCreateBooking: boolean;
     changeBookingState: (state: BookingState) => void;
     formData: BookingFormData;
     updateFormData: (field: keyof BookingFormData, value: any) => void;
@@ -291,6 +292,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     };
 
     const value: BookingsContextValue = {
+        canCreateBooking: writeableCalendars.length > 0,
         isBookingActive: bookingsState === BookingState.CREATE_NEW || bookingsState === BookingState.EDIT_EXISTING,
         changeBookingState,
         formData,

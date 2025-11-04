@@ -19,7 +19,7 @@ interface Props {
 
 export const BookingSidebarAction = ({ onCreateEvent, disabled }: Props) => {
     const [user] = useUser();
-    const { changeBookingState } = useBookings();
+    const { changeBookingState, canCreateBooking } = useBookings();
 
     const [modalProps, setModalOpen, renderModal] = useModalState();
 
@@ -50,7 +50,7 @@ export const BookingSidebarAction = ({ onCreateEvent, disabled }: Props) => {
                             {c('Action').t`Create an event`}
                         </div>
                     </DropdownMenuButton>
-                    <DropdownMenuButton onClick={handleBookingPage}>
+                    <DropdownMenuButton onClick={handleBookingPage} disabled={!canCreateBooking}>
                         <div className="flex gap-8 items-center">
                             <div className="flex gap-2 items-center">
                                 <Icon name="calendar-checkmark" />
