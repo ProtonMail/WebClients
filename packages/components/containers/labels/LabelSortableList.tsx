@@ -21,12 +21,7 @@ const SortableListItem = ({ label }: { label: Label }) => {
     const { Name, Color } = label;
 
     return (
-        <TableRow
-            data-testid="folders/labels:item-type:label"
-            ref={setNodeRef}
-            style={style}
-            className={clsx(isDragging && 'table-row--dragging')}
-        >
+        <TableRow data-testid="folders/labels:item-type:label" ref={setNodeRef} style={style} dragging={isDragging}>
             <TableCell {...attributes} {...listeners}>
                 <Handle />
             </TableCell>
