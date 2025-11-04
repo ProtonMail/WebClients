@@ -158,8 +158,10 @@ export const createFieldHandles = ({ element, fieldType, getFormHandle }: Create
                     relatedTarget: null,
                 });
 
-                return field.element.dispatchEvent(focusEvent);
+                field.element.dispatchEvent(focusEvent);
             }
+
+            field.icon?.reposition();
         },
 
         autofill: (value, options) =>
@@ -222,6 +224,9 @@ export const createFieldHandles = ({ element, fieldType, getFormHandle }: Create
                 field.action = null;
                 field.icon?.detach();
             }
+
+            if (!isActiveElement(field.element)) field.icon?.detach();
+            else field.icon?.reposition();
         },
     };
 
