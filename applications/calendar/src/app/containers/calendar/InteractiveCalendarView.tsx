@@ -884,6 +884,11 @@ const InteractiveCalendarView = ({
             const { type } = mouseDownAction.payload;
             const isFromAllDay = type === TYPE.DAYGRID;
 
+            // We cannot create all day event when the booking process is active
+            if (isBookingActive && isFromAllDay) {
+                return;
+            }
+
             if (isProcessing(TMP_UNIQUE_ID)) {
                 return;
             }
