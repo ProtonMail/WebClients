@@ -11,16 +11,16 @@ const FIRST_OF_DECEMBER = new Date(2025, 11, 1).valueOf();
 
 export function useDriveSpotlight(): boolean {
     const normalApi = useApi();
-    const silentApi = getSilentApi(normalApi);
 
     const [user] = useUser();
     const [driveChecklist, setDriveChecklist] = useState<ChecklistApiResponse>();
 
     useEffect(() => {
+        const silentApi = getSilentApi(normalApi);
         silentApi<ChecklistApiResponse>({ ...getDriveChecklist('get-started'), silence: true })
             .then(setDriveChecklist)
             .catch(noop);
-    }, [silentApi]);
+    }, [normalApi]);
 
     return FIRST_OF_DECEMBER > Date.now() && user.ProductUsedSpace.Drive === 0 && !!driveChecklist?.Completed;
 }
