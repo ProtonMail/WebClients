@@ -46,12 +46,18 @@ export const TransferManagerHeader = ({ isMinimized, toggleMinimize, onClose }: 
         >
             <div className="flex flex-wrap items-start gap-3">
                 <div className="flex min-w-0 flex-1 flex-column gap-1">
-                    <div className="text-semibold">{headerText}</div>
+                    <div className="text-semibold" data-testid="transfer-manager:header:status-text">
+                        {headerText}
+                    </div>
                     {status === TransferManagerStatus.InProgress && (
-                        <div className="color-weak text-sm">{progressText}</div>
+                        <div className="color-weak text-sm" data-testid="transfer-manager:header:status-text">
+                            {progressText}
+                        </div>
                     )}
                     {status !== TransferManagerStatus.InProgress && status !== TransferManagerStatus.Empty && (
-                        <div className="color-weak text-sm">{completedText}</div>
+                        <div className="color-weak text-sm" data-testid="transfer-manager:header:progress-text">
+                            {completedText}
+                        </div>
                     )}
                 </div>
                 <div className="flex items-center gap-2">

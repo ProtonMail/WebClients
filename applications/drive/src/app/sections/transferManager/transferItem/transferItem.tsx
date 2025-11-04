@@ -68,9 +68,13 @@ export const TransferItem = ({ entry, onShare }: Props) => {
                 {getItemIconByStatus(entry)}
             </div>
             <div className="flex-1 max-w-full text-ellipsis ">
-                <span className="text-nowrap text-rg">{entry.name}</span>
+                <span className="text-nowrap text-rg" data-testid="transfer-row:name">
+                    {entry.name}
+                </span>
                 <div className="gap-1 flex items-center">
-                    <span className="text-sm color-weak">{getStatusLabel(entry)}</span>
+                    <span className="text-sm color-weak" data-testid="transfer-row:status">
+                        {getStatusLabel(entry)}
+                    </span>
 
                     {entry.type === 'upload' && entry.status === BaseTransferStatus.Finished && (
                         <>
@@ -93,7 +97,12 @@ export const TransferItem = ({ entry, onShare }: Props) => {
                             <span aria-hidden="true" className="text-sm text-weak">
                                 &middot;
                             </span>
-                            <span className="text-ellipsis text-nowrap text-sm color-weak">{transferredTotal}</span>
+                            <span
+                                className="text-ellipsis text-nowrap text-sm color-weak"
+                                data-testid="transfer-row:transferred-data"
+                            >
+                                {transferredTotal}
+                            </span>
                         </>
                     )}
                 </div>
