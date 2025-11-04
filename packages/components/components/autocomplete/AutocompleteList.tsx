@@ -20,6 +20,10 @@ interface Props<V> {
      * In case we want to filter the number of items in the list for accessibility purposes
      */
     searchResultsCount?: number;
+    /**
+     * The number of hidden results that are not displayed in the list.
+     */
+    hiddenResultsCount?: number;
 }
 
 const AutocompleteList = <V,>({
@@ -30,6 +34,7 @@ const AutocompleteList = <V,>({
     highlightedIndex,
     anchorRef,
     searchResultsCount,
+    hiddenResultsCount,
 }: Props<V>) => {
     const items = Children.map(children, (child, index) => {
         return cloneElement(child, {
@@ -84,6 +89,15 @@ const AutocompleteList = <V,>({
                 <ul id={id} className="unstyled m-0 p-0" onMouseDown={handleListMouseDown}>
                     {items}
                 </ul>
+                {!!hiddenResultsCount && hiddenResultsCount > 0 && (
+                    <div className="text-xs text-left color-hint pl-4">
+                        {c('Autocomplete').ngettext(
+                            msgid`${hiddenResultsCount} more result not shown`,
+                            `${hiddenResultsCount} more results not shown`,
+                            hiddenResultsCount
+                        )}
+                    </div>
+                )}
             </Dropdown>
         </>
     );
