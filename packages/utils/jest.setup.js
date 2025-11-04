@@ -1,3 +1,2 @@
 // JSDom does not include a full implementation of webcrypto
-const crypto = require('crypto').webcrypto;
-global.crypto.subtle = crypto.subtle;
+global.crypto.subtle = require('crypto').webcrypto.subtle;

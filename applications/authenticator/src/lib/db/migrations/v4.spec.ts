@@ -1,7 +1,7 @@
 import { Dexie, type Transaction } from 'dexie';
 import type { Item } from 'proton-authenticator/lib/db/entities/items';
 
-import { ENCRYPTION_ALGORITHM, generateKey } from '@proton/crypto/lib/subtle/aesGcm';
+import { generateKey as generateAesGcmKey, importKey as importAesGcmKey } from '@proton/crypto/lib/subtle/aesGcm';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 import { V4_MIGRATION_BACK_UP_ID, backupForV4, migrateLegacyKeys, upgradeV4 } from './v4';
@@ -19,8 +19,7 @@ const createMockTransaction = (returns: { items: any; keys: any }) => {
     } as unknown as Transaction;
 };
 
-const createLegacyKey = (key: Uint8Array<ArrayBuffer>) =>
-    crypto.subtle.importKey('raw', key, ENCRYPTION_ALGORITHM, true, ['encrypt', 'decrypt']);
+const createLegacyKey = (key: Uint8Array<ArrayBuffer>) => importAesGcmKey(key, { extractable: true });
 
 const waitFor = jest.spyOn(Dexie, 'waitFor').mockImplementation((val) => Promise.resolve(val));
 
@@ -35,8 +34,8 @@ describe('v4 migration', () => {
         });
 
         test('migrates legacy keys successfully', async () => {
-            const key1 = generateKey();
-            const key2 = generateKey();
+            const key1 = generateAesGcmKey();
+            const key2 = generateAesGcmKey();
 
             const result = await migrateLegacyKeys([
                 { id: 'key1', userKeyId: 'user1', key: await createLegacyKey(key1) },
@@ -49,10 +48,10 @@ describe('v4 migration', () => {
         });
 
         test('filters out keys without userKeyId', async () => {
-            const key = generateKey();
+            const key = generateAesGcmKey();
 
             const result = await migrateLegacyKeys([
-                { id: 'local', userKeyId: '', key: await createLegacyKey(generateKey()) },
+                { id: 'local', userKeyId: '', key: await createLegacyKey(generateAesGcmKey()) },
                 { id: 'key', userKeyId: 'user', key: await createLegacyKey(key) },
             ]);
 
@@ -61,11 +60,12 @@ describe('v4 migration', () => {
         });
 
         test('handles export key errors', async () => {
+            // eslint-disable-next-line no-restricted-properties
             const mockExportKey = jest.spyOn(crypto.subtle, 'exportKey');
             mockExportKey.mockRejectedValueOnce(new Error('Export failed'));
 
-            const key1 = generateKey();
-            const key2 = generateKey();
+            const key1 = generateAesGcmKey();
+            const key2 = generateAesGcmKey();
 
             const result = await migrateLegacyKeys([
                 { id: 'key1', userKeyId: 'user1', key: await createLegacyKey(key1) },
@@ -90,7 +90,7 @@ describe('v4 migration', () => {
 
         test('creates backup with migrated data', async () => {
             const items = [{ id: 'item1', name: 'test' }] as unknown as Item[];
-            const key = generateKey();
+            const key = generateAesGcmKey();
             const keys = [{ id: 'key1', userKeyId: 'user1', key: await createLegacyKey(key) }];
 
             const result = await backupForV4(3, items, keys);
@@ -117,7 +117,7 @@ describe('v4 migration', () => {
 
         test('performs complete upgrade', async () => {
             const items = [{ id: 'item1' }];
-            const key = generateKey();
+            const key = generateAesGcmKey();
             const keys = [{ id: 'key1', userKeyId: 'user1', key: await createLegacyKey(key) }];
 
             const tx = createMockTransaction({ items, keys });

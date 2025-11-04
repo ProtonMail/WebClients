@@ -1,7 +1,11 @@
 import type { DBSchema } from 'idb';
 
+import type { ESCiphertext, IndexKey } from '@proton/crypto/lib/subtle/ad-hoc/encryptedSearch';
+
 import type { ES_SYNC_ACTIONS, INDEXING_STATUS, TIMESTAMP_TYPE } from '../constants';
 import type { ESSetResultsList } from './esFunctions';
+
+export { ESCiphertext };
 
 /**
  * Object to be stored locally to retry an API call
@@ -47,14 +51,6 @@ export interface EventsObject {
 }
 
 /**
- * Object containing the ciphertext of items as stored in IDB
- */
-export interface AesGcmCiphertext {
-    iv: Uint8Array<ArrayBuffer>;
-    ciphertext: ArrayBuffer;
-}
-
-/**
  * The type of keys in the temporal index of ESDB. The first number
  * is supposed to be a time coordinate, while the second one a
  * tie-breaker in case of equal time
@@ -76,7 +72,7 @@ export interface ESItemInfo {
  */
 export interface EncryptedItemWithInfo extends ESItemInfo {
     keepSize?: boolean;
-    aesGcmCiphertext: AesGcmCiphertext;
+    aesGcmCiphertext: ESCiphertext;
 }
 
 /**
@@ -135,7 +131,7 @@ export interface EncryptedSearchDB extends DBSchema {
         indexes: { temporal: 'timepoint' };
     };
     content: {
-        value: AesGcmCiphertext;
+        value: ESCiphertext;
         key: string;
     };
 }
@@ -252,6 +248,6 @@ export interface ESStatus<ESItemMetadata, ESItemContent, ESSearchParameters> ext
     setResultsList: ESSetResultsList<ESItemMetadata, ESItemContent>;
     lastTimePoint: ESTimepoint | undefined;
     previousESSearchParams: ESSearchParameters | undefined;
-    cachedIndexKey: CryptoKey | undefined;
+    cachedIndexKey: IndexKey | undefined;
     getCacheStatus: () => { isCacheReady: boolean; isCacheLimited: boolean };
 }

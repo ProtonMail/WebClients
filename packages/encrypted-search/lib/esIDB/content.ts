@@ -1,3 +1,5 @@
+import type { IndexKey } from '@proton/crypto/lib/subtle/ad-hoc/encryptedSearch';
+
 import { STORING_OUTCOME } from '../constants';
 import { ciphertextSize, decryptFromDB } from '../esHelpers';
 import type { EncryptedItemWithInfo } from '../models';
@@ -7,7 +9,7 @@ import { openESDB, safelyWriteToIDBConditionally } from './indexedDB';
 /**
  * Get a decrypted content item from IndexedDB
  */
-export const readContentItem = async <ESItemContent>(userID: string, itemID: string, indexKey: CryptoKey) => {
+export const readContentItem = async <ESItemContent>(userID: string, itemID: string, indexKey: IndexKey) => {
     const esDB = await openESDB(userID);
     if (!esDB) {
         return;

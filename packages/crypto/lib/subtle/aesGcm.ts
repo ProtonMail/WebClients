@@ -42,6 +42,17 @@ export const generateAndImportKey = (keyUsage: AesGcmKeyUsage[] = ['decrypt', 'e
 };
 
 /**
+ * Export key bytes from a key marked as `extractable`.
+ *
+ * ⚠️ Key export should be avoided: prefer using `generateKey` to obtain raw bytes to later import,
+ * to avoid needing an `extractable` CryptoKey reference.
+ */
+export const exportKey = async (key: CryptoKey) => {
+    const keyBuffer = await crypto.subtle.exportKey('raw', key);
+    return new Uint8Array(keyBuffer);
+};
+
+/**
  * Use HKDF to derive AES-GCM key material from some high-entropy secret.
  * NB: this is NOT designed to derive keys from relatively low-entropy inputs such as passwords.
  * @param highEntropySecret - input key material for HKDF
@@ -77,7 +88,11 @@ export const deriveKey = async (
  * @param data - data to encrypt
  * @param additionalData - additional data to authenticate
  */
-export const encryptData = async (key: AesGcmCryptoKey, data: Uint8Array<ArrayBuffer>, additionalData?: Uint8Array<ArrayBuffer>) => {
+export const encryptData = async (
+    key: AesGcmCryptoKey,
+    data: Uint8Array<ArrayBuffer>,
+    additionalData?: Uint8Array<ArrayBuffer>
+) => {
     const iv = crypto.getRandomValues(new Uint8Array(IV_LENGTH_BYTES));
     const ciphertext = await crypto.subtle.encrypt(
         { name: ENCRYPTION_ALGORITHM, iv, ...(additionalData !== undefined ? { additionalData } : undefined) },
@@ -121,7 +136,11 @@ export const decryptData = async (
  * @param additionalData - additional data to authenticate
  * @deprecated use `encryptData` instead; this helper is kept around for legacy use-cases only.
  */
-export const encryptDataWith16ByteIV = async (key: AesGcmCryptoKey, data: Uint8Array<ArrayBuffer>, additionalData?: Uint8Array<ArrayBuffer>) => {
+export const encryptDataWith16ByteIV = async (
+    key: AesGcmCryptoKey,
+    data: Uint8Array<ArrayBuffer>,
+    additionalData?: Uint8Array<ArrayBuffer>
+) => {
     const ivLength = 16;
     // A random 16-byte IV is non-standard, but it does not negatively affect the max number of encryptable messages using the same key,
     // nor does it increase the risk of nonce collision; see summary at https://crypto.stackexchange.com/a/80390.
@@ -157,7 +176,8 @@ export const importWrappingKey = async (
  * Generate wrapping key (bytes) for AES-KW, to be used with `wrapKey` and `unwrapKey`.
  * The key needs to be imported using `importWrappingKey` to used.
  */
-export const generateWrappingKey = (): Uint8Array<ArrayBuffer> => crypto.getRandomValues(new Uint8Array(KEY_LENGTH_BYTES));
+export const generateWrappingKey = (): Uint8Array<ArrayBuffer> =>
+    crypto.getRandomValues(new Uint8Array(KEY_LENGTH_BYTES));
 
 /**
  * Encrypt and export an AES-GCM key using the AES-KW algorithm
