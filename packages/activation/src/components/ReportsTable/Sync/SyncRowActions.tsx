@@ -14,6 +14,7 @@ import { FeatureCode, useFeature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
 
 import { getTokensByFeature } from '../../../api';
+import DisconnectBYOEModal from '../../Modals/DisconnectBYOEModal/DisconnectBYOEModal';
 
 interface Props {
     syncId: string;
@@ -27,6 +28,9 @@ const SyncRowActions = ({ syncId }: Props) => {
     const syncItem = useEasySwitchSelector((state) => selectSyncById(state, syncId));
 
     const [deleteModalProps, showDeleteModal, renderDeleteModal] = useModalState();
+    const [disconnectBYOEProps, setDisconnectBYOEOpen, renderDisconnectBYOEModal] = useModalState();
+
+    const addressWithSync = addresses.find((address) => address.Email === syncItem.account);
 
     const [loadingApiChange, withLoadingApiChange] = useLoading();
 
@@ -85,10 +89,18 @@ const SyncRowActions = ({ syncId }: Props) => {
         }
     };
 
+    const handleClickDelete = () => {
+        if (addressWithSync) {
+            setDisconnectBYOEOpen(true);
+        } else {
+            showDeleteModal(true);
+        }
+    };
+
     const getStoppedAction = () => {
         const deleteSyncButton = {
             text: c('account').t`Delete forward`,
-            onClick: () => showDeleteModal(true),
+            onClick: () => handleClickDelete(),
         };
 
         if (feature?.Value?.GoogleMailSync) {
@@ -109,7 +121,7 @@ const SyncRowActions = ({ syncId }: Props) => {
     const activeAction = [
         {
             text: c('account').t`Delete forward`,
-            onClick: () => showDeleteModal(true),
+            onClick: () => handleClickDelete(),
             'data-testid': 'ReportsTable:deleteForward',
             loading: loadingApiChange,
         },
@@ -146,6 +158,10 @@ const SyncRowActions = ({ syncId }: Props) => {
                         {c('account').t`You will stop the mail forwarding.`}
                     </Alert>
                 </Prompt>
+            )}
+
+            {renderDisconnectBYOEModal && addressWithSync && (
+                <DisconnectBYOEModal address={addressWithSync} {...disconnectBYOEProps} />
             )}
         </>
     );
