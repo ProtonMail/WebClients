@@ -8,8 +8,7 @@ import Autocomplete from '@proton/components/components/autocomplete/Autocomplet
 import Icon from '@proton/components/components/icon/Icon';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import type { RetentionRuleProduct } from '@proton/shared/lib/interfaces/RetentionRule';
-import type { RetentionRuleScopeType } from '@proton/shared/lib/interfaces/RetentionRule';
+import type { RetentionRuleProduct, RetentionRuleScopeType } from '@proton/shared/lib/interfaces/RetentionRule';
 
 import { PRODUCT_FILTER_OPTIONS } from './constants';
 import type { RetentionRuleScopeFormData } from './types';
@@ -69,6 +68,7 @@ const RetentionScopeItem = ({
                     options={getAutocompleteOptions(scope.entityType)}
                     getData={(option: AutocompleteOption) => option.label}
                     placeholder={c('retention_policy_2025_Placeholder').t`Enter value`}
+                    showHiddenResultsHint
                 />
             </div>
             <div className="shrink-0 w-custom" style={{ '--w-custom': '3em' }}>

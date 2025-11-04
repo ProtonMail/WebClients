@@ -42,7 +42,7 @@ export const useRetentionRuleScopeSuggestion = () => {
         return lookup[entityType].get(id) ?? id;
     };
 
-    const getScopeFieldLabel = (scopeType: RetentionRuleScopeType) => {
+    const getScopeFieldLabel = (scopeType: RetentionRuleScopeType): string => {
         if (scopeType === RetentionRuleScopeType.User) {
             return c('retention_policy_2025_Option').t`User`;
         }
