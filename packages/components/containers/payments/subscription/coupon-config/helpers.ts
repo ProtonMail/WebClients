@@ -19,3 +19,13 @@ export function hasAlikeCoupon(
 
     return coupons.some((couponStr) => coupon.Code.startsWith(couponStr));
 }
+
+export function isCSCoupon(coupon: Coupon | string | undefined) {
+    if (!coupon) {
+        return false;
+    }
+
+    const couponStr = typeof coupon === 'string' ? coupon : coupon.Code;
+
+    return couponStr.endsWith('CS');
+}
