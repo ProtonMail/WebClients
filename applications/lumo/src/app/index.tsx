@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
+import '@proton/polyfill';
+
 import AppGuard from './entrypoint/AppGuard';
 
 // import MSWController from './mocks/MSWController';
