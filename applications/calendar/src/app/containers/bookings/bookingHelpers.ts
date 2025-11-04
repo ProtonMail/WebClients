@@ -1,9 +1,11 @@
-import { addMinutes, isBefore } from 'date-fns';
+import { addDays, addMinutes, endOfWeek, isBefore, isWeekend, set, startOfWeek } from 'date-fns';
 import { c } from 'ttag';
 
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 import { uint8ArrayToPaddedBase64URLString } from '@proton/shared/lib/helpers/encoding';
+import type { UserSettings } from '@proton/shared/lib/interfaces';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 
 import type { CalendarViewBusyEvent, CalendarViewEvent } from '../calendar/interface';
 import type { BookingFormData, BookingFormValidation, BookingRange, Slot } from './bookingsProvider/interface';
@@ -147,4 +149,41 @@ export const JSONFormatTextData = ({
     Timezone: string;
 }) => {
     return JSON.stringify({ EndTime, RRule, StartTime, Timezone });
+};
+
+export const generateBookingRangeID = (start: Date, end: Date) => {
+    return `${BOOKING_SLOT_ID}-${start.getTime()}-${end.getTime()}`;
+};
+
+export const generateDefaultBookingRange = (userSettings: UserSettings, timezone: string): BookingRange[] => {
+    const now = set(new Date(), { minutes: 0, seconds: 0, milliseconds: 0 });
+    const weekStartsOn = getWeekStartsOn({ WeekStart: userSettings.WeekStart });
+    const firstDayOfWeek = startOfWeek(now, { weekStartsOn });
+    const lastDayOfWeek = endOfWeek(now, { weekStartsOn });
+
+    const bookingRanges: BookingRange[] = [];
+    let currentDay = firstDayOfWeek;
+
+    while (currentDay < lastDayOfWeek) {
+        // We ignore weekends
+        if (isWeekend(currentDay)) {
+            currentDay = addDays(currentDay, 1);
+            continue;
+        }
+
+        const start = set(currentDay, { hours: 9 });
+        const end = set(currentDay, { hours: 17 });
+
+        const dataId = generateBookingRangeID(start, end);
+        bookingRanges.push({
+            id: dataId,
+            start,
+            end,
+            timezone,
+        });
+
+        currentDay = addDays(currentDay, 1);
+    }
+
+    return bookingRanges;
 };
