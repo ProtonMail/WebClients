@@ -981,6 +981,9 @@
       "No": [
         "En"
       ],
+      "No thanks": [
+        "Ei kiitos"
+      ],
       "No, thanks": [
         "Ei kiitos"
       ],
@@ -1409,6 +1412,9 @@
       ],
       "Submit": [
         "Lähetä"
+      ],
+      "Subscribe now": [
+        "Tilaa nyt"
       ],
       "Support": [
         "Tuki"
@@ -2336,6 +2342,9 @@
       "Application problem": [
         "Sovellusongelma"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Bridge problem": [
         "Bridge-ongelma"
       ],
@@ -2371,6 +2380,9 @@
       ],
       "Manual setup problem": [
         "Manuaalisen määrityksen ongelma"
+      ],
+      "Meet problem": [
+        "Meet-ongelma"
       ],
       "Other": [
         "Muu"
@@ -2782,6 +2794,9 @@
     "collider_2025: Navigation": {
       "Back to conversations": [
         "Takaisin keskusteluihin"
+      ],
+      "Conversations": [
+        "Keskustelut"
       ]
     },
     "color": {
@@ -4573,12 +4588,35 @@
         "Ensisijainen tuki"
       ]
     },
+    "Duo offer": {
+      "Only": [
+        "Vain"
+      ]
+    },
     "Duration": {
+      "1.5h": [
+        "1,5 t"
+      ],
       "120 minutes": [
         "120 minuuttia"
       ],
+      "15 minutes": [
+        "15 minuuttia"
+      ],
+      "15m": [
+        "15 min"
+      ],
+      "1h": [
+        "1 t"
+      ],
+      "2h": [
+        "2 t"
+      ],
       "30 minutes": [
         "30 minuuttia"
+      ],
+      "30m": [
+        "30 min"
       ],
       "60 minutes": [
         "60 minuuttia"
@@ -4677,6 +4715,9 @@
       "All events in this series were updated.": [
         "Ketjun kaikki tapahtumakerrat päivitettiin."
       ],
+      "DESCRIPTION:": [
+        "KUVAUS:"
+      ],
       "Here's what changed:": [
         "Tehdyt muutokset:"
       ],
@@ -4691,6 +4732,9 @@
       ],
       "This event was updated.": [
         "Tapahtuma päivitettiin."
+      ],
+      "TIME:": [
+        "AIKA:"
       ]
     },
     "Email body for invitation (date part)": {
@@ -5651,6 +5695,9 @@
       ],
       "Request timed out": [
         "Pyyntö aikakatkaistiin"
+      ],
+      "Server not found": [
+        "Palvelinta ei löytynyt"
       ],
       "Session expired. Please refresh the page.": [
         "Istunto on vanhentunut. Päivitä sivu."
@@ -7916,9 +7963,6 @@
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Käytä salasanojasi ja suojaa verkkoidentiteettisi saumattomasti kaikilla laitteillasi. Lataa ja asenna tarvitsemasi ${ PASS_APP_NAME } -sovellukset ja laajennukset."
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Tiliä on rajoitettu maksamattomien laskujen vuoksi. Ole yhteydessä ylläpitoosi."
-      ],
       "account recovery and data recovery method": [
         "tilin ja tietojen palautustavat"
       ],
@@ -8270,6 +8314,9 @@
       ],
       "Connection data will be available in around 1 hour.": [
         "Yhteystiedot ovat saatavilla noin tunnin kuluttua."
+      ],
+      "Continue": [
+        "Jatka"
       ],
       "Continue to allow **${ affiliationsText }** from **${ organizationValue.Name }** to join your ${ BRAND_NAME } organization.": [
         "Jatka organisaation **${ organizationValue.Name }** jäsenen **${ affiliationsText }** liittymisen sallimista ${ BRAND_NAME }-organisaatioosi."
@@ -10645,9 +10692,6 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "${ BRAND_NAME }-tilisi on jäädytetty, ja 28 päivän kuluttua postilaatikkosi ei enää vastaanota viestejä ja Drive-jakolinkit sekä uusien tiedostojen tallennus estetään. Palauttaaksesi tilisi normaalin toiminnan, maksa maksamattomat laskut."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "${ BRAND_NAME }-tilisi on jäädytetty, eikä postilaatikkosi enää vastaanota viestejä ja Drive-jakolinkit sekä uusien tiedostojen tallennus estetään. Palauttaaksesi tilisi normaalin toiminnan, maksa maksamattomat laskut."
-      ],
       "Your ${ BRAND_NAME } password": [
         "Sinun ${ BRAND_NAME } -salasanasi"
       ],
@@ -10656,12 +10700,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Tililläsi on ainakin yksi erääntynyt lasku. Pääsyäsi rajoitetaan pian. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Tililläsi on ainakin yksi erääntynyt lasku. Tiliäsi on rajoitettu ja kaikki palvelut on nyt estetty kunnes maksu on suoritettu. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Tililläsi on ainakin yksi erääntynyt lasku ja sen toimintaa on rajoitettu. Jatkuvasta maksujen laiminlyönistä seuraa sähköpostiviestien ja jakolinkkien esto. ${ payInvoiceLink }"
       ],
       "Your account has been successfully updated": [
         "Tilisi on päivitetty"
@@ -11281,6 +11319,9 @@
       "10 minutes": [
         "10 minuutin kuluttua"
       ],
+      "10 VPN devices": [
+        "10 VPN-laitetta"
+      ],
       "15 minutes": [
         "15 minuutin kuluttua"
       ],
@@ -11295,6 +11336,12 @@
       ],
       "5 minutes": [
         "Viiden minuutin kuluttua"
+      ],
+      "500 GB Storage": [
+        "500 Gt tallennustilaa"
+      ],
+      "6 Pass Plus accounts": [
+        "Kuusi Pass Plus -tiliä"
       ],
       "Account holder": [
         "Tilinhaltija"
@@ -11469,6 +11516,9 @@
       ],
       "Billing cycle": [
         "Laskutusjakso"
+      ],
+      "Black Friday": [
+        "Black Friday"
       ],
       "Block": [
         "Estä"
@@ -11821,6 +11871,9 @@
       "Gateway name": [
         "Yhdyskäytävän nimi"
       ],
+      "Get the deal": [
+        "Hyödynnä tarjous"
+      ],
       "Gift code": [
         "Lahjakoodi"
       ],
@@ -11838,6 +11891,9 @@
       ],
       "Hide password": [
         "Piilota salasana"
+      ],
+      "Highest VPN speed": [
+        "Korkein VPN-nopeus"
       ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
         "Ymmärrän, että minun on lisättävä tämä sähköpostiosoite toiseen tiliin välittömästi, jotten menetä sitä pysyvästi."
@@ -12231,6 +12287,9 @@
       ],
       "Sequences": [
         "Merkkisarjat"
+      ],
+      "Server name": [
+        "Palvelimen nimi"
       ],
       "Share your referral link": [
         "Jaa suosittelulinkkisi"
@@ -15370,12 +15429,6 @@
       "Based in Switzerland, GDPR compliant": [
         "Sveitsissä sijaitseva, GDPR:ää noudattava"
       ],
-      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
-        "Mutta voit saada ${ discount } allennusta päivittämällä hintaan **${ upsellPlanTitle }** - se on vain ${ relativePrice } lisää kuukaudessa."
-      ],
-      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }**.": [
-        "Mutta voit saada ${ discount } allennusta päivittämällä hintaan **${ upsellPlanTitle }**."
-      ],
       "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Mutta voit avata **${ unlockPlanTitle }** -tilauksen ja lisää ${ BRAND_NAME }in palveluita päivittämällä **${ upsellPlanTitle }** -tilaukseen — vain ${ relativePrice } kuukausikorotuksella."
       ],
@@ -15732,6 +15785,9 @@
       ],
       "Credit/debit card": [
         "Maksukortti"
+      ],
+      "Google Pay": [
+        "Google Pay"
       ],
       "New credit/debit card": [
         "Uusi maksukortti"
@@ -20118,6 +20174,9 @@
       "For Linux": [
         "Linuxille"
       ],
+      "For macOS": [
+        "MacOS:lle"
+      ],
       "For Windows": [
         "Windowsille"
       ],
@@ -20352,6 +20411,9 @@
       ],
       "No account information was found in any data breaches": [
         "Tilitietoja ei löytynyt tietomurroista"
+      ],
+      "No events": [
+        "Ei tapahtumia"
       ],
       "No need to empty the trash": [
         "Roskia ei tarvitse tyhjentää"
@@ -21648,6 +21710,9 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "2FA"
+      ],
       "Administrators can't access the data of private users": [
         "Ylläpitäjillä ei ole pääsyä yksityisten käyttäjien tietoihin"
       ],

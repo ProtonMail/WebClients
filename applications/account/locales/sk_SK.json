@@ -753,6 +753,9 @@
       "Get a new encrypted email address": [
         "Získať novú šifrovanú emailovú adresu"
       ],
+      "Get Deal": [
+        "Získať ponuku"
+      ],
       "Get in touch": [
         "Skontaktovať sa"
       ],
@@ -2385,12 +2388,47 @@
         "Úložný priestor je zdieľaný medzi všetkými službami ${ BRAND_NAME }."
       ]
     },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "Black Friday zľavy"
+      ]
+    },
     "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB dátového úložiska"
+      ],
+      "3 TB data storage": [
+        "3 TB dátového úložiska"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Pristupujte k 15 000+ serverom v 120+ krajinách"
+      ],
+      "Access advanced AI models": [
+        "Prístup k pokročilým modelom umelej inteligencie"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všetky prémiové funkcie ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Block ads, trackers, and malware": [
         "Blokujte reklamy, sledovače a malvér"
       ],
       "Built-in 2FA authenticator": [
         "Zabudovaný 2FA autentifikátor"
+      ],
+      "Connect 10 devices at once": [
+        "Pripojte 10 zariadení súčasne"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Úplná história chatu s jednoduchým vyhľadávaním a obľúbenými položkami"
+      ],
+      "Individual accounts for 6 users": [
+        "Individuálne účty pre 6 používateľov"
+      ],
+      "Individual accounts for you and a partner": [
+        "Individuálne účty pre vás a partnera"
+      ],
+      "Stronger protection against cyber threats": [
+        "Silnejšia ochrana proti kybernetickým hrozbám"
       ],
       "Unlimited daily chats": [
         "Neobmedzené denné chaty"
@@ -2401,9 +2439,29 @@
         "Black Friday"
       ]
     },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Pomôžte svojim blízkym pripojiť sa k revolúcii súkromia s našimi najvýhodnejšími balíčkami, teraz so zľavou 50 %!"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Pripojte sa k revolúcii súkromia s našimi najvýhodnejšími balíčkami, teraz so zľavou 50 %!"
+      ]
+    },
     "BF2025: Offers": {
       "for ${ durationDeal }": [
         "na ${ durationDeal }"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "Ušetrite ${ savedAmount } s našou najvýhodnejšou ponukou na obmedzený čas!"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "Prejdite na náš 2-ročný plán a ušetrite ${ savedAmount }!"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "Prejdite na náš ročný plán a ušetrite ${ savedAmount }!"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "Doprajte svojmu kmeňu kompletnú digitálnu ochranu."
       ]
     },
     "BF2025: Tooltip": {
@@ -4912,11 +4970,29 @@
       ]
     },
     "Duration": {
+      "1.5h": [
+        "1,5h"
+      ],
       "120 minutes": [
         "120 minút"
       ],
+      "15 minutes": [
+        "15 minút"
+      ],
+      "15m": [
+        "15m"
+      ],
+      "1h": [
+        "1h"
+      ],
+      "2h": [
+        "2h"
+      ],
       "30 minutes": [
         "30 minút"
+      ],
+      "30m": [
+        "30m"
       ],
       "60 minutes": [
         "60 minút"
@@ -5927,6 +6003,9 @@
       "Failed to load the STL preview": [
         "Načítanie STL náhľadu zlyhalo"
       ],
+      "Failed to lookup server. Please try again": [
+        "Nepodarilo sa vyhľadať server. Skúste to znova, prosím."
+      ],
       "Failed to process the logo": [
         "Spracovanie loga zlyhalo"
       ],
@@ -6218,6 +6297,9 @@
       "Request timed out": [
         "Požiadavka časovo omeškaná"
       ],
+      "Server not found": [
+        "Server nebol nájdený"
+      ],
       "Session expired. Please refresh the page.": [
         "Platnosť relácie skončila. Obnovte stránku, prosím."
       ],
@@ -6322,6 +6404,12 @@
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Na vytvorenie nesúkromných ​​používateľských účtov a získanie prístupu k ich účtom, budete musieť obnoviť svoje oprávnenia správcu."
+      ],
+      "Too many requests. Please try again after ${ date }": [
+        "Príliš veľa požiadaviek. Skúste to znova po ${ date }, prosím."
+      ],
+      "Too many requests. Please try again later": [
+        "Príliš veľa požiadaviek. Skúste to neskôr znova, prosím."
       ],
       "Trusted keys are not valid for sending": [
         "Dôveryhodné kľúče nie sú použiteľné na odosielanie"
@@ -8648,9 +8736,6 @@
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Získajte prístup k svojim heslám a chráňte svoju online identitu bez problémov na všetkých svojich zariadeniach. Stiahnite si a nainštalujte príslušné aplikácie a rozšírenie ${ PASS_APP_NAME }."
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Z dôvodu nezaplatených faktúr bol prístup k účtu obmedzený. Kontaktujte správcu Vášho účtu."
-      ],
       "Account monitor": [
         "Monitor účtu"
       ],
@@ -9598,6 +9683,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Prejdite k vášmu poskytovateľovi identity, stiahnite metadáta SAML pre ${ appName } a importujte ich sem."
+      ],
+      "Google Pay mark": [
+        "Google Pay mark"
       ],
       "Got it": [
         "Rozumiem"
@@ -10640,6 +10728,9 @@
       "Some keys successfully reactivated": [
         "Niektoré kľúče boli úspešne reaktivované"
       ],
+      "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
+        "Niektoré servery sa nemusia zobrazovať v zozname vyššie. Vyhľadajte ich podľa názvu servera (napr. AT#62)."
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Zadajte doménu, ktorá sa môže overovať pomocou SAML SSO."
       ],
@@ -11657,9 +11748,6 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Váš účet ${ BRAND_NAME } je momentálne pozastavený. Po 28 dňoch vám už nebudú do schránky doručované emaily, odkazy na zdieľanie na Disku budú zablokované a nebudete môcť nahrávať nové súbory. Ak chcete obnoviť normálnu prevádzku, uhraďte všetky faktúry po splatnosti."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Váš účet ${ BRAND_NAME } je momentálne pozastavený. Emaily už nie sú doručované do vašej schránky. Vaše odkazy na zdieľanie na Disku už nie sú aktívne a nemôžete nahrávať nové súbory. Ak chcete svoj účet naďalej používať, uhraďte všetky faktúry po splatnosti."
-      ],
       "Your ${ BRAND_NAME } password": [
         "Vaše heslo ${ BRAND_NAME }"
       ],
@@ -11671,12 +11759,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Váš účet má aspoň jednu faktúru po splatnosti. Váš prístup bude čoskoro obmedzený. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Váš účet má aspoň jednu faktúru po splatnosti. Váš účet je obmedzený a všetky služby sú teraz až do zaplatenia zablokované. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Váš účet má aspoň jednu faktúru po splatnosti. Váš účet je obmedzený. Pokračujúce neplatenie zablokuje vaše emaily a odkazy na zdieľanie. ${ payInvoiceLink }"
       ],
       "Your account has been successfully updated": [
         "Váš účet bol úspešne aktualizovaný"
@@ -13392,6 +13474,9 @@
       ],
       "Sequences": [
         "Sekvencie"
+      ],
+      "Server name": [
+        "Názov servera"
       ],
       "Share your referral link": [
         "Zdieľajte váš odporúčací odkaz"
@@ -16806,12 +16891,6 @@
       "Based in Switzerland, GDPR compliant": [
         "So sídlom vo Švajčiarsku, v súlade s GDPR"
       ],
-      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
-        "Ale môžete získať zľavu ${ discount } prechodom na **${ upsellPlanTitle }** - je to len ${ relativePrice } mesačne navyše."
-      ],
-      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }**.": [
-        "Ale môžete získať zľavu ${ discount } prechodom na **${ upsellPlanTitle }**."
-      ],
       "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Ale môžete si odomknúť **${ unlockPlanTitle }** a ďalšie služby ${ BRAND_NAME } zvýšením úrovne na **${ upsellPlanTitle }** — je to len ${ relativePrice } mesačne navyše."
       ],
@@ -17177,6 +17256,9 @@
       "Credit/debit card": [
         "Platobná karta"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Nová platobná karta"
       ]
@@ -17340,6 +17422,12 @@
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Z vybraného spôsobu platby vám bude účtovaná suma ${ amountToCharge }."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Za účelom overenia platby dôjde o chvíľu k presmerovaniu na PayPal."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Za účelom overenia platby dôjde o chvíľu k presmerovaniu."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Vaša mena bola zmenená na eurá (€), pretože SEPA bankové prevody podporujú platby len v eurách."
       ],
@@ -17370,6 +17458,11 @@
         "Vaša karta bola zamietnutá. Skúste použiť inú kartu alebo kontaktujte svoju banku a autorizujte platbu."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Niečo sa pokazilo. Overenie Google Pay zlyhalo."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit za nevyužitú časť vášho predchádzajúceho predplatného plánu"
@@ -17389,6 +17482,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Bankový prevod – ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - karta končiaca na ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -17512,6 +17608,9 @@
       ],
       "E.g., ": [
         "Napr., "
+      ],
+      "e.g., AT#62": [
+        "napr. AT#62"
       ],
       "Email address": [
         "Emailová adresa"
@@ -18147,6 +18246,11 @@
       ],
       "Scopes cannot have the same value": [
         "Rozsahy nemôžu mať rovnakú hodnotu"
+      ]
+    },
+    "retention_policy_2025_Hint": {
+      "${ currentLength }/${ MAX_TITLE_LENGTH } characters": [
+        "${ currentLength }/${ MAX_TITLE_LENGTH } znakov"
       ]
     },
     "retention_policy_2025_Info": {
@@ -22785,6 +22889,9 @@
       ],
       "Schedule send:": [
         "Naplánovať odoslanie:"
+      ],
+      "Search for additional servers": [
+        "Hľadať ďalšie servery"
       ],
       "Secure email based in Switzerland": [
         "Bezpečný email so sídlom vo Švajčiarsku"
