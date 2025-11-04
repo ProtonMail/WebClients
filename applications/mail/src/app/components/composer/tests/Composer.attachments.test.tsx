@@ -220,7 +220,7 @@ describe('Composer attachments', () => {
         const sendButton = await screen.findByTestId('composer:send-button');
         await userEvent.click(sendButton);
 
-        await waitForNotification('Sending message...');
+        await waitForNotification('Sending message');
         resolveAttachment();
 
         await waitForSpyCall({ spy: updateSpy });

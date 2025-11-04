@@ -1813,7 +1813,7 @@ const InteractiveCalendarView = ({
             notificationId = createNotification({
                 text: (
                     <>
-                        {c('Info').ngettext(msgid`Saving event...`, `Saving events...`, count)} <CircleLoader />
+                        {c('Info').ngettext(msgid`Saving event`, `Saving events`, count)} <CircleLoader />
                     </>
                 ),
                 type: 'info',
