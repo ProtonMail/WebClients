@@ -1,19 +1,19 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import OrderableTable from '@proton/components/components/orderableTable/OrderableTable';
+import Table from '@proton/components/components/table/Table';
 import TableCell from '@proton/components/components/table/TableCell';
 import type { ContactFormatted } from '@proton/shared/lib/interfaces/contacts';
 
 import MergeTableBody from './MergeTableBody';
 
-import '@proton/components/components/orderableTable/OrderableTableHeader.scss';
-
 const MergeTableHeader = () => {
     return (
-        <thead className="orderableTableHeader">
+        <thead>
             <tr>
-                <TableCell type="header"> </TableCell>
+                <TableCell type="header" className="w-custom" style={{ '--w-custom': '5%' }}>
+                    {' '}
+                </TableCell>
                 <TableCell type="header">{c('TableHeader').t`Display name`}</TableCell>
                 <TableCell type="header" className="w-1/6">{c('TableHeader').t`First name`}</TableCell>
                 <TableCell type="header" className="w-1/6">{c('TableHeader').t`Last name`}</TableCell>
@@ -56,11 +56,7 @@ const MergeTable = ({
 
                 return (
                     <div key={`${group && group[0].Name}`} className="mb-8 flex flex-column items-center">
-                        <OrderableTable
-                            onSortEnd={onSortEnd(i)}
-                            className="mb-4"
-                            helperClass="z-modals bg-norm color-norm"
-                        >
+                        <Table className="mb-4" hasActions responsive="cards">
                             <MergeTableHeader />
                             <MergeTableBody
                                 contacts={group}
@@ -70,8 +66,9 @@ const MergeTable = ({
                                 onClickCheckbox={onClickCheckbox}
                                 onClickDetails={onClickDetails}
                                 onToggleDelete={onToggleDelete}
+                                onSortEnd={onSortEnd(i)}
                             />
-                        </OrderableTable>
+                        </Table>
                         <Button
                             className="aligcenter"
                             disabled={!beMergedIDs.length}
