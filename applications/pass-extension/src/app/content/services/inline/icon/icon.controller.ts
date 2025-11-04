@@ -42,6 +42,7 @@ type IconControllerOptions = {
 export interface IconController {
     element: HTMLElement;
     detach: () => void;
+    reposition: () => void;
     sync: () => void;
 }
 
@@ -307,5 +308,10 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
     sync();
     reposition(true);
 
-    return { element: icon, sync, detach };
+    return {
+        element: icon,
+        detach,
+        reposition: () => reposition(false),
+        sync,
+    };
 };
