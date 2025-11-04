@@ -617,6 +617,9 @@
       "Loading link": [
         "Caricamento del link in corso"
       ],
+      "Make a copy": [
+        "Fare una copia"
+      ],
       "Manage advanced account protections": [
         "Gestisci le protezioni avanzate dell'account"
       ],
@@ -985,9 +988,6 @@
       ],
       "Show advanced PGP settings": [
         "Mostra impostazioni PGP avanzate"
-      ],
-      "Show location": [
-        "Mostra posizione"
       ],
       "Show more": [
         "Mostra di più"
@@ -5065,9 +5065,6 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "Una VPN è un tunnel sicuro tra il tuo dispositivo e Internet. Nasconde la tua posizione e attività al tuo provider di servizi Internet (ISP) e ai siti Web che visiti."
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "A causa di fatture non pagate, l'accesso all'account è stato limitato. Per favore, contatta il tuo amministratore."
-      ],
       "Account successfully updated": [
         "Account aggiornato con successo"
       ],
@@ -5566,6 +5563,9 @@
       ],
       "Go to \"My files\" and upload some files first.": [
         "Vai a \"I miei file\" e carica dei file."
+      ],
+      "Google Pay mark": [
+        "Marchio Google Pay"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "I governi e gli ISP possono monitorare la tua attività online. Nascondendo il tuo vero IP e crittografando la tua attività, la tua navigazione diventa privata."
@@ -6748,20 +6748,11 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Trascorsi 28 giorni, le email non verranno più consegnate alla tua posta in arrivo, i tuoi link di condivisione di Drive verranno bloccati e non potrai caricare nuovi file. Per ripristinare il normale servizio, paga tutte le fatture scadute."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Le email non vengono più consegnate alla tua posta in arrivo. I tuoi link di condivisione di Drive non sono più attivi e non puoi caricare nuovi file. Per continuare ad usare il tuo account, paga tutte le fatture scadute."
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Il tuo abbonamento a ${ plan } verrà sostituito con ${ PASS_SHORT_APP_NAME } a vita. Il saldo rimanente del tuo abbonamento verrà aggiunto al tuo account. L'offerta a vita di ${ PASS_SHORT_APP_NAME } non ha prezzo di rinnovo, è un pagamento una tantum per l'accesso illimitato a ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Il tuo account ha una fattura scaduta. Il tuo accesso sarà presto limitato. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Il tuo account ha almeno una fattura scaduta. Il tuo account è limitato e tutti i servizi saranno bloccati fino al pagamento. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Il tuo account ha almeno una fattura scaduta. Il tuo account è limitato. Il mancato pagamento bloccherà le tue email e i link di condivisione. ${ payInvoiceLink }"
       ],
       "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
         "Il tuo browser attuale non supporta il download di file di grandi dimensioni o di più file contemporaneamente. Scarica l'app desktop per caricare e scaricare file senza interruzioni."
@@ -9879,6 +9870,9 @@
       "Credit/debit card": [
         "Carta di credito/debito"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Nuova carta di credito/debito"
       ]
@@ -10009,6 +10003,12 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Hai già un abbonamento a questo piano. Puoi cambiare il tuo abbonamento su ${ subscriptionPlatform }."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Sarai presto reindirizzato a PayPal per verificare il pagamento."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Sarai presto reindirizzato per verificare il pagamento."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "La tua valuta è stata cambiata in euro (€) perché i bonifici bancari SEPA supportano solo pagamenti in euro."
       ],
@@ -10039,6 +10039,11 @@
         "La tua carta è stata rifiutata. Prova con una carta diversa o contatta la tua banca per autorizzare l'addebito."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Qualcosa è andato storto. La verifica di Google Pay non è riuscita."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Credito per la parte non usata del tuo precedente abbonamento"
@@ -10058,6 +10063,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Bonifico bancario - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - carta che termina con ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {

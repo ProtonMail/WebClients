@@ -1185,15 +1185,47 @@
         "საცავის სივრცე გაზიარებულია ყველა ${ BRAND_NAME }-ის სერვისებს შორის."
       ]
     },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "შავი პარასკევი"
+      ]
+    },
     "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 ტბ მონაცემთა საცავი"
+      ],
+      "3 TB data storage": [
+        "3 ტბ მონაცემთა საცავი"
+      ],
       "Access 15,000+ servers in 120+ countries": [
         "წვდომა 15,000+ სერვერთან 120+ ქვეყანაში"
+      ],
+      "Access advanced AI models": [
+        "წვდომა განვითარებულ AI მოდელებთან"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "ყველა ფასიანი ფუნქცია ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } და ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
         "რეკლამის, ტრეკერებისა და მავნე პროგრამების დაბლოკვა"
       ],
       "Built-in 2FA authenticator": [
         "ჩაშენებული 2FA ავთენტიკატორი"
+      ],
+      "Connect 10 devices at once": [
+        "დააკავშირეთ 10 მოწყობილობა ერთდროულად"
+      ],
+      "Full chat history with easy search and favorites": [
+        "სრული ჩატის ისტორია მარტივი ძიებით და ფავორიტებით"
+      ],
+      "Individual accounts for 6 users": [
+        "ინდივიდუალური ანგარიშები 6 მომხმარებლისთვის"
+      ],
+      "Individual accounts for you and a partner": [
+        "ინდივიდუალური ანგარიშები თქვენთვის და პარტნიორისთვის"
+      ],
+      "Stronger protection against cyber threats": [
+        "უფრო ძლიერი დაცვა კიბერ საფრთხეებისგან"
       ],
       "Unlimited daily chats": [
         "შეუზღუდავი ყოველდღიური ჩატები"
@@ -1204,9 +1236,29 @@
         "Black Friday"
       ]
     },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "დაეხმარეთ თქვენს საყვარელ ადამიანებს შეუერთდნენ კონფიდენციალურობის რევოლუციას ჩვენი საუკეთესო ღირებულების პაკეტებით, ახლა 50%-იანი ფასდაკლებით!"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "შეუერთდით კონფიდენციალურობის რევოლუციას ჩვენი საუკეთესო ღირებულების პაკეტებით, ახლა 50%-იანი ფასდაკლებით!"
+      ]
+    },
     "BF2025: Offers": {
       "for ${ durationDeal }": [
         "${ durationDeal }-სთვის"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "დაზოგეთ ${ savedAmount } ჩვენი საუკეთესო ღირებულების, შეზღუდული დროის შეთავაზებით!"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "გადადით ჩვენს 2-წლიან გეგმაზე და დაზოგეთ ${ savedAmount }!"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "გადადით ჩვენს წლიურ გეგმაზე და დაზოგეთ ${ savedAmount }!"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "მიანიჭეთ თქვენს ახლობლებს სრული ციფრული დაცვა."
       ]
     },
     "BF2025: Tooltip": {
@@ -2644,6 +2696,9 @@
     "Duo offer": {
       "/month": [
         "/თვეში"
+      ],
+      "2 TB of storage to share": [
+        "2ტბ საცავი გასაზიარებლად"
       ],
       "2 user accounts": [
         "2 მომხმარებლის ანგარიში"
@@ -4157,14 +4212,14 @@
       "Accept/decline": [
         "მიღება/უარყოფა"
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "ანგარიშთან წვდომა აკრძალულია გადაუხდელი ინვოისების გამო. დაუკავშირდით თქვენს ადმინისტრატორს."
-      ],
       "Ad targeting": [
         "დამიზნებული რეკლამა"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "ამ მისამართისთვის ჩართულია მისამართის დადასტურება სანდო გასაღებებით. იმისათვის, რომ შეძლოთ ამ მისამართზე გაგზავნა, ჯერ ენდეთ საჯარო გასაღებებს, რომლებიც შეიძლება, გამოყენებულ იქნას გაგზავნისთვის."
+      ],
+      "All": [
+        "ყველა"
       ],
       "All (${ totalFoldersCount } folder)": [
         "ყველა (${ totalFoldersCount } საქაღალდე)",
@@ -4331,6 +4386,9 @@
       ],
       "Document owner has the password": [
         "პაროლი დოკუმენტის მფლობელს აქვს"
+      ],
+      "Documents": [
+        "დოკუმენტები"
       ],
       "Downgrade": [
         "ტარიფის ჩამოწევა"
@@ -4848,6 +4906,9 @@
       "Something went wrong": [
         "რაღაც არასწორად წავიდა"
       ],
+      "Spreadsheets": [
+        "ელცხრილები"
+      ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "დარჩით დაკავშირებული შემდეგი VPN-ის პარამეტრების ჩართვით:"
       ],
@@ -5158,17 +5219,8 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "თქვენი ${ BRAND_NAME }-ის ანგარიში ამჟამად შეჩერებულია. 28 დღის შემდეგ ელფოსტებს ვეღარ მიიღებთ, დისკიდან გაზიარებული ბმულები დაიბლოკება და ახალ ფაილებს ვეღარ ატვირთავათ. ჩვენი სერვისების მოხმარების გასაგრძელებლად საჭიროა, გადაიხადოთ ყველა ვადაგადაცილებული ინვოისი."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "თქვენი ${ BRAND_NAME }-ის ანგარიში ამჟამად შეჩერებულია. ელფოსტებს ვეღარ მიიღებთ. თქვენი დისკიდან გაზიარებული ბმულები აქტიური აღარაა და ახალ ფაილებს ვეღარ ატვირთავთ. თქვენი ანგარიშის მოხმარების გასაგრძელებლად საჭიროა, ყველა გადაცილებული ინვოისი გადაიხადოთ."
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "თქვენს ანგარიშზე ყველაზე ცოტა ერთი გადაცილებული ინვოისია. წვდომა მალე შეიზღუდება. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "თქვენს ანგარიშზე, სულ ცოტა, ერთი გადაცილებული ინვოისია. თქვენი ანგარიში შეზღუდულია და გადახდამდე ყველა სერვისი დაბლოკილია. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "თქვენს ანგარიშზე, სულ ცოტა, ერთი გადაცილებული ინვოისია. გადაუხდელობის შემთხვევაში თქვენი გაზიარებული ბმულები და ელფოსტა დაიბლოკება. ${ payInvoiceLink }"
       ],
       "Your browser's Print dialog will now open, where you can export your document to PDF.": [
         "ახლა გაიხსნება თქვენი ბრაუზერის ბეჭდვის დიალოგი, სადაც შეგიძლიათ, აირჩიოთ, რომ თქვენი დოკუმენტები PDF-ში იქნეს გატანილი."

@@ -443,6 +443,9 @@
       "Get a new encrypted email address": [
         "Získat novou šifrovanou e-mailovou adresu"
       ],
+      "Get Deal": [
+        "Získat nabídku"
+      ],
       "Get in touch": [
         "Kontaktujte nás"
       ],
@@ -3815,6 +3818,9 @@
       "Failed to load the STL preview": [
         "Načtení náhledu STL selhalo"
       ],
+      "Failed to lookup server. Please try again": [
+        "Vyhledání serveru selhalo. Zkuste to znovu."
+      ],
       "Failed to process the logo": [
         "Logo se nepodařilo zpracovat"
       ],
@@ -4058,6 +4064,9 @@
       "Request timed out": [
         "Vypršel časový limit žádosti"
       ],
+      "Server not found": [
+        "Server nenalezen"
+      ],
       "Signature verification failed": [
         "Ověření podpisu selhalo"
       ],
@@ -4138,6 +4147,12 @@
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Chcete-li vytvořit nesoukromé uživatelské účty a získat přístup k jejich účtům, budete muset obnovit svá oprávnění správce."
+      ],
+      "Too many requests. Please try again after ${ date }": [
+        "Příliš mnoho dotazů. Zkuste to znovu po ${ date }"
+      ],
+      "Too many requests. Please try again later": [
+        "Příliš mnoho dotazů. Zkuste to znovu později"
       ],
       "Try again later": [
         "Zkuste to znovu později"
@@ -5858,9 +5873,6 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Uživatelem je účet spojený s jedním uživatelským jménem, poštovní schránkou a osobou"
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Z důvodu nezaplacených faktur byl přístup k účtu omezen. Kontaktujte správce vašeho účtu."
-      ],
       "Account monitor": [
         "Monitor účtu"
       ],
@@ -6478,6 +6490,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Navštivte vašeho poskytovatele identity, stáhněte SAML metadata pro ${ appName } a importujte je sem."
+      ],
+      "Google Pay mark": [
+        "Značka Google Pay"
       ],
       "Got it": [
         "Rozumím"
@@ -7177,6 +7192,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhledem k tomu, že jste věrný uživatel, má Váš účet povolené další funkce."
+      ],
+      "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
+        "Některé servery se nemusí objevit v seznamu výše. Najděte je vyhledáním podle názvu serveru (např. AT#62)."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Určete doménu, která se smí ověřovat pomocí SAML SSO."
@@ -7883,9 +7901,6 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Váš účet ${ BRAND_NAME } je momentálně pozastaven. Po 28 dnech vám již nebudou do schránky doručovány e-maily, odkazy na sdílení na Disku budou zablokovány a nebudete moci nahrávat nové soubory. Chcete-li obnovit normální provoz, zaplaťte všechny faktury po splatnosti."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Váš účet ${ BRAND_NAME } je momentálně pozastaven. E-maily již nejsou doručovány do vaší schránky. Vaše odkazy na sdílení na Disku již nejsou aktivní a nemůžete nahrávat nové soubory. Chcete-li svůj účet nadále používat, zaplaťte všechny faktury po splatnosti."
-      ],
       "Your ${ BRAND_NAME } password": [
         "Vaše ${ BRAND_NAME } heslo"
       ],
@@ -7897,12 +7912,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Váš účet má alespoň jednu fakturu po splatnosti. Váš přístup bude brzy omezen. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Váš účet má alespoň jednu fakturu po splatnosti. Váš účet je omezen a všechny služby jsou nyní až do zaplacení zablokovány. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Váš účet má alespoň jednu fakturu po splatnosti. Váš účet je omezen. Pokračující neplacení zablokuje vaše e-maily a odkazy pro sdílení. ${ payInvoiceLink }"
       ],
       "Your account was successfully updated with this promotion": [
         "Váš účet byl úspěšně aktualizován pomocí této propagační akce"
@@ -8740,6 +8749,9 @@
       ],
       "Sequences": [
         "Sekvence"
+      ],
+      "Server name": [
+        "Název serveru"
       ],
       "Show ${ n } administrator": [
         "Zobrazit ${ n } správce",
@@ -11266,6 +11278,9 @@
       "Credit/debit card": [
         "Kreditní/debetní karta"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Nová kreditní/debetní karta"
       ],
@@ -11426,6 +11441,12 @@
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Z vybrané platební metody vám bude účtována částka ${ amountToCharge }."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Za účelem ověření platby budete přesměrováni na PayPal."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Za účelem ověření platby budete přesměrováni."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Vaše měna byla změněna na euro (€), protože bankovní převody SEPA podporují pouze platby v eurech."
       ],
@@ -11456,6 +11477,11 @@
         "Vaše karta byla zamítnuta. Zadejte prosím jinou kartu nebo kontaktujte svou banku pro autorizaci platby."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Něco se pokazilo. Ověření Google Pay selhalo."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit za nevyužitou část vašeho předchozího předplatného"
@@ -11475,6 +11501,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Bankovní převod - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - karta končící čísly ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -11582,6 +11611,9 @@
       ],
       "E.g., ": [
         "Např., "
+      ],
+      "e.g., AT#62": [
+        "např. AT#62"
       ],
       "End date": [
         "Datum ukončení"
@@ -12005,6 +12037,11 @@
       ],
       "Scopes cannot have the same value": [
         "Rozsahy nemohou mít stejnou hodnotu"
+      ]
+    },
+    "retention_policy_2025_Hint": {
+      "${ currentLength }/${ MAX_TITLE_LENGTH } characters": [
+        "${ currentLength }/${ MAX_TITLE_LENGTH } znaků"
       ]
     },
     "retention_policy_2025_Info": {
@@ -14928,6 +14965,9 @@
       ],
       "SAML authentication": [
         "Ověření SAML"
+      ],
+      "Search for additional servers": [
+        "Hledat další servery"
       ],
       "Security": [
         "Zabezpečení"

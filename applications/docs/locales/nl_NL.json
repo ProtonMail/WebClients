@@ -888,8 +888,8 @@
         "${ ips } servers"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } ${ LUMO_APP_NAME } zitplaats",
-        "${ seats } ${ LUMO_APP_NAME } zitplaatsen"
+        "${ seats } ${ LUMO_APP_NAME } plaats",
+        "${ seats } ${ LUMO_APP_NAME } plaatsen"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } plaats voor schrijfassistent",
@@ -3501,7 +3501,7 @@
         "U heeft onbetaalde facturen. Betaal deze voordat u zich aansluit bij een Family-abonnement"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "U bent uitgenodigd om uw ${ BRAND_NAME } account te linken aan dit familieplan en samen te genieten van de premium functies van ${ brandOrAppName }."
+        "U bent uitgenodigd om uw ${ BRAND_NAME } account te linken aan dit familieplan en samen te genieten van de premiumfuncties van ${ brandOrAppName }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Uw account heeft meer e-mailadressen dan is toegestaan in dit abonnement. ${ addressSettingsLink }"
@@ -4138,7 +4138,7 @@
         "**Automatisch Verbinden**: Opent en verbindt met VPN zodra u uw apparaat aan zet."
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
-        "**Kill switch**: Stop datalekken door uw internet te blokkeren als uw VPN-verbinding onverwachts stopt."
+        "**IP-beveiliging**: Stop datalekken door uw internet te blokkeren als uw VPN-verbinding onverwachts stopt."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Stap 1:** Nodig uw vrienden uit voor ${ BRAND_NAME } met uw verwijzingssnelkoppeling."
@@ -4179,9 +4179,6 @@
       ],
       "Accept/decline": [
         "Accepteren/weigeren"
-      ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Toegang tot dit account is beperkt vanwege onbetaalde facturen. Neem contact op met uw beheerder."
       ],
       "Ad targeting": [
         "Advertentie doelwit"
@@ -4794,7 +4791,7 @@
         "Primair"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
-        "Privé browsen (of \"incognito\" modus) is alleen handig om uw activiteit verborgen te houden op uw apparaat. Het stopt je browser om geschiedenis en cookies op te slaan, maar het maakt je niet onzichtbaar. Uw ISP, netwerkbeheerder en de websites die u bezoekt kunnen nog steeds zien wat u online doet."
+        "Privé browsen (of \"incognito\" modus) is alleen handig om uw activiteit verborgen te houden op uw apparaat. Het stopt uw browser om geschiedenis en cookies op te slaan, maar het maakt u niet onzichtbaar. Uw ISP, netwerkbeheerder en de websites die u bezoekt kunnen nog steeds zien wat u online doet."
       ],
       "Public documents are not yet enabled for your organization.": [
         "Openbare documenten zijn nog niet ingeschakeld voor uw organisatie."
@@ -5226,20 +5223,11 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Uw ${ BRAND_NAME } account is momenteel opgeschort. Na 28 dagen zullen e-mails niet meer afgeleverd worden in uw postvak-in, de deelkoppelingen van uw Drive zullen worden geblokkeerd, en u zal geen nieuwe bestanden meer kunnen opladen. Om normale diensten te hervatten dient u alle achterstallige facturen te betalen."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Uw ${ BRAND_NAME }-account is momenteel geblokkeerd. E-mails worden niet langer geleverd in uw inbox. Uw gedeelde Drive-links zijn niet langer actief en u kan geen nieuwe bestanden uploaden. Om uw account te blijven gebruiken dient u de achterstallige facturen te betalen."
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Uw ${ plan }-abonnement zal worden vervangen door ${ PASS_SHORT_APP_NAME } Lifetime. Het resterende saldo van uw abonnement zal aan uw account worden toegevoegd. ${ PASS_SHORT_APP_NAME } levenslange deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslange toegang tot ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Uw account heeft minstens één onbetaalde factuur. Uw toegang wordt binnenkort beperkt. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Uw account heeft minstens één achterstallige factuur. Uw account is beperkt en alle diensten zijn nu geblokkeerd tot betaling. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Uw account heeft minstens één achterstallige factuur. Uw account is beperkt. Verdere niet-betaling zal leiden tot het blokkeren van uw e-mails een deel-links. ${ payInvoiceLink }"
       ],
       "Your browser's Print dialog will now open, where you can export your document to PDF.": [
         "Uw browsers afdrukvenster wordt nu geopend, waar u uw document naar PDF kunt exporteren."

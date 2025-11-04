@@ -2002,12 +2002,50 @@
         "Tartsa biztonságban e-mailjeit és időbeosztását végpontok közti titkosítással. 15 e-mail címet, egyéni e-mail domain név támogatását, korlátlan számú hide-my-email e-mail álnevet és további lehetőségeket tartalmaz."
       ]
     },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "Black Friday Akció"
+      ]
+    },
     "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB adattárhely"
+      ],
+      "3 TB data storage": [
+        "3 TB adattárhely"
+      ],
       "Access 15,000+ servers in 120+ countries": [
         "15,000+ szerver elérése, 120+ országban"
       ],
+      "Access advanced AI models": [
+        "Hozzáférés a fejlett AI-modellekhez"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "A ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } és ${ CALENDAR_SHORT_APP_NAME } összes prémium funkciója"
+      ],
       "Block ads, trackers, and malware": [
         "Hirdetések, trackerek és rosszindulatú programok blokkolása"
+      ],
+      "Built-in 2FA authenticator": [
+        "Beépített Kétlépcsős hitelesítés"
+      ],
+      "Connect 10 devices at once": [
+        "Csatlakoztasson 10 eszközt egyszerre"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Teljes csevegési előzmények egyszerű kereséssel és kedvencekkel"
+      ],
+      "Individual accounts for 6 users": [
+        "Egyéni fiókok 6 felhasználó számára"
+      ],
+      "Individual accounts for you and a partner": [
+        "Egyéni fiókok Önnek és partnerének"
+      ],
+      "Stronger protection against cyber threats": [
+        "Erősebb védelem a kiberfenyegetések ellen"
+      ],
+      "Unlimited daily chats": [
+        "Korlátlan napi csevegés"
       ]
     },
     "BF2025: Heading alt": {
@@ -2015,9 +2053,34 @@
         "Black Friday"
       ]
     },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Segítsen szeretteinek csatlakozni az adatvédelmi forradalomhoz a legjobb ár-érték arányú Kombinált csomagjainkkal, most 50% kedvezménnyel!"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Csatlakozzon az adatvédelmi forradalomhoz a legjobb ár-érték arányú Kombinált csomagjainkkal, most 50% kedvezménnyel!"
+      ]
+    },
     "BF2025: Offers": {
       "for ${ durationDeal }": [
         "a következőhöz: ${ durationDeal }"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "Spóroljon ${ savedAmount } a legjobb ár-érték arányú, korlátozott ideig érvényes ajánlatunkkal!"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "Váltson 2 éves Csomagunkra, és spóroljon ${ savedAmount }!"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "Váltson éves Csomagunkra, és spóroljon ${ savedAmount }!"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "Kényeztesse családját teljes digitális védelemmel."
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "A speciálisan tervezett NetShield megvédi eszközeit, és felgyorsítja a böngészést a hirdetések, követők és rosszindulatú szoftverek blokkolásával."
       ]
     },
     "Billing cycle option": {
@@ -6341,9 +6404,6 @@
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Hozzáférés több mint 6500 nagy sebességű szerverhez akár 10 eszközzel, hogy biztonságban tartsa böngészési adatait. Elérhető ${ ios }, ${ android }, ${ appleTV } és ${ desktop } platformokon."
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "A fiók hozzáférése rendezetlen számla miatt korlátozva lett. Kérjük lépjen kapcsolatba az adminisztrátorral."
-      ],
       "Account successfully updated": [
         "A fiók sikeresen frissítve"
       ],
@@ -8315,17 +8375,8 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "A ${ BRAND_NAME } fiókja jelenleg fel van függesztve. 28 nap múlva az e-mailek nem fognak megérkezni a fiókjába, a Drive megosztások kikapcsolásra kerülnek, és nem lesz lehetősége új fájlokat feltölteni. A szolgáltatások rendes folytatásához rendezzen minden fennálló számlát."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Az Ön ${ BRAND_NAME } fiókja átmenetileg felfüggesztésre került. Az e-mailek nem kerülnek kézbesítésre, a Drive megosztások inaktívak és nem tölthet fel új fájlokat. A fiók további használatához kérjük rendezze elmaradt számláit."
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Lejárt számlatartozása van. Hozzáférése hamarosan korlátozásra kerül. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Önnek legalább egy lejárt számlatartozása van. Fiókját korlátoztuk és minden szolgáltatást felfüggesztettünk amíg nem rendezi tartozását. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Önnek legalább egy lejárt számlatartozása van, ezért fiókját korlátoztuk. Tájékoztatjuk, hogy amennyiben nem rendezi tartozását, a jövőben az e-mailek és a fájlmegosztások letiltásra kerülhetnek. Kérjük mielőbb rendezze tartozását: ${ payInvoiceLink }"
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Az Ön böngészője nem támogatja az írási asszisztenst. Pórbálja a mi szervereinken futtatni azt."
@@ -14140,10 +14191,6 @@
       "Label as": [
         "Címkézés"
       ],
-      "Label message as": [
-        "Üzenet megjelölése címkével:",
-        "Üzenetek megjelölése címkével:"
-      ],
       "Label options": [
         "Címke beállításai"
       ],
@@ -14227,10 +14274,6 @@
       ],
       "Move all messages to trash": [
         "Az összes üzenetet áthelyezése a Lomtárba"
-      ],
-      "Move message to": [
-        "Üzenet áthelyezése ide:",
-        "Üzenetek áthelyezése ide:"
       ],
       "Move to": [
         "Áthelyezés ide"

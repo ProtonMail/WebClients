@@ -221,6 +221,9 @@
       "Copy link": [
         "複製連結"
       ],
+      "Copy link and close": [
+        "複製連結並關閉"
+      ],
       "Copy password": [
         "複製密碼"
       ],
@@ -2745,9 +2748,6 @@
       ]
     },
     "Custom frequency option": {
-      "Don't end": [
-        "不要結束"
-      ],
       "End after": [
         "於結束後"
       ],
@@ -3097,20 +3097,6 @@
     "Duplicate event button tooltip": {
       "Duplicate event": [
         "再製事件"
-      ]
-    },
-    "Duration": {
-      "120 minutes": [
-        "120 分鐘"
-      ],
-      "30 minutes": [
-        "30 分鐘"
-      ],
-      "60 minutes": [
-        "60 分鐘"
-      ],
-      "90 minutes": [
-        "90 分鐘"
       ]
     },
     "Edit event button tooltip": {
@@ -4762,9 +4748,6 @@
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
         "VPN 會加密您的連線並隱藏您的 IP 位址，使任何人都更難追蹤或監控您的瀏覽。"
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "由於有帳單仍未繳付，因此帳號存取已受限制。請聯絡您的系統管理員。"
-      ],
       "Account successfully updated": [
         "帳號已成功更新"
       ],
@@ -5782,17 +5765,8 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "已凍結您的 ${ BRAND_NAME } 帳號 。 28 日後，收件匣停收電郵，磁碟機共享連結失效，您無法再上載新檔案。 如欲恢復正常服務，請支付所有逾期繳款單。"
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "已凍結您的 ${ BRAND_NAME } 帳號 。 收件匣停收電郵，磁碟機共享連結失效，您無法再上載新檔案。 如欲正常使用服務，請支付所有逾期繳款單。"
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "您的帳號至少有一張逾期帳單。您的存取將受限制。${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "您的帳號已有超過一期以上的逾期繳款單，因此造成帳號限制使用，等待您繳清帳款後，所有服務即恢復正常。 ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "您的帳號已有超過一期以上的逾期繳款單，因此帳號功能將受限。若持續未繳清款項，則將封鎖您的電郵和共享連結。 ${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "您的電郵位址已停用。取消函無法傳送給各事件參與者。您仍然要刪除此一系列中全部事件嗎？"
@@ -6170,9 +6144,6 @@
       "Don't show this again": [
         "不再顯示此內容"
       ],
-      "Duration": [
-        "期間"
-      ],
       "e.g., Amazon, eBay, Etsy": [
         "如 Amazon, eBay, Etsy"
       ],
@@ -6442,9 +6413,6 @@
       ],
       "Time zone": [
         "時區"
-      ],
-      "Title": [
-        "標題"
       ],
       "To: ${ toEmail }": [
         "收件者：${ toEmail }"
@@ -10281,6 +10249,9 @@
       "Data recovery": [
         "資料救援"
       ],
+      "Date": [
+        "日期"
+      ],
       "Day theme": [
         "日間布景主題"
       ],
@@ -10436,6 +10407,9 @@
       ],
       "Link confirmation": [
         "外部連結確認"
+      ],
+      "Location": [
+        "位置"
       ],
       "Merge contacts": [
         "合併通訊錄"
@@ -10647,6 +10621,12 @@
       "Summary": [
         "總結"
       ],
+      "Time": [
+        "時間"
+      ],
+      "Time zone": [
+        "時區"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "啟用${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -10712,6 +10692,9 @@
       ],
       "Your account is protected": [
         "你的帳號已被保護"
+      ],
+      "Your booking is confirmed": [
+        "你的預約已確認"
       ],
       "Your calendar link": [
         "您的行事曆連結"

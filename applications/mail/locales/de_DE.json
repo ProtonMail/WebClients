@@ -6763,9 +6763,6 @@
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Greife auf mehr als 6.500 Hochgeschwindigkeitsserver auf bis zu 10 Geräten zu, um deine Browsing-Daten zu schützen. Verfügbar für ${ ios }, ${ android }, ${ appleTV } und ${ desktop }."
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Der Zugriff auf dein Konto wurde aufgrund noch offener Rechnungen eingeschränkt. Bitte wende dich an deinen Administrator."
-      ],
       "Account successfully updated": [
         "Konto erfolgreich aktualisiert"
       ],
@@ -7383,6 +7380,9 @@
       ],
       "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
         "Gib eingehenden Rechnungen eine farblich gekennzeichnete Kategorie, z. B. „${ suggestedLabelName }“. Sobald sie bezahlt sind, ändere die Kategorie zu „${ suggestedPaidLabelName }“."
+      ],
+      "Google Pay mark": [
+        "Google Pay markieren"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Regierungen und Internetdienstanbieter können deine Online-Aktivitäten überwachen. Indem du deine echte IP-Adresse verbirgst und deine Aktivitäten verschlüsselst, wird dein Surfverhalten privat."
@@ -8614,6 +8614,9 @@
       "Week": [
         "Woche"
       ],
+      "We’ve upgraded your ${ DRIVE_APP_NAME } storage to 5GB. Keep your important files and photos encrypted.": [
+        "Wir haben deinen ${ DRIVE_APP_NAME } Speicher auf 5 GB upgradet. Halte deine wichtigen Dateien und Fotos verschlüsselt."
+      ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "Wann möchtest du, dass deine Nachricht automatisch aus dem Posteingang des Empfängers und aus deinem Gesendet-Ordner gelöscht wird?"
       ],
@@ -8824,20 +8827,11 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Dein ${ BRAND_NAME }-Konto ist derzeit gesperrt. Nach 28 Tagen werden keine E-Mails mehr an deinen Posteingang zugestellt, deine Drive-Freigabelinks werden blockiert, und du kannst keine neuen Dateien mehr hochladen. Um dein Konto wieder normal nutzen zu können, bezahle bitte alle überfälligen Rechnungen."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Dein ${ BRAND_NAME }-Konto ist derzeit gesperrt. E-Mails werden nicht mehr an deinen Posteingang zugestellt. Deine Drive-Freigabelinks sind nicht mehr aktiv und du kannst keine neuen Dateien hochladen. Um dein Konto weiterhin zu nutzen, bezahle bitte alle überfälligen Rechnungen."
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Dein ${ plan }-Abonnement wird durch ${ PASS_SHORT_APP_NAME } Lifetime ersetzt. Der verbleibende Restbetrag deines Abonnements wird deinem Konto gutgeschrieben. Der ${ PASS_SHORT_APP_NAME } Lifetime Deal hat keine Verlängerungskosten, es handelt sich um eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Dein Konto weist mindestens eine überfällige Rechnung auf. Dein Zugang wird in Kürze eingeschränkt. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Dein Konto hat mindestens eine überfällige Rechnung. Dein Konto ist eingeschränkt und alle Dienste sind nun bis zur Zahlung gesperrt. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Dein Konto hat mindestens eine überfällige Rechnung. Dein Konto ist eingeschränkt. Bei anhaltender Nichtbezahlung werden deine E-Mails und Freigabelinks gesperrt. ${ payInvoiceLink }"
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Dein Browser unterstützt den Schreibassistenten nicht. Versuche ihn auf Servern auszuführen."
@@ -9279,6 +9273,12 @@
       "Also archive": [
         "Auch archivieren"
       ],
+      "Always label sender's emails": [
+        "Nachrichten dieses Absenders immer kategorisieren"
+      ],
+      "Always move sender's emails": [
+        "Nachrichten dieses Absenders immer verschieben"
+      ],
       "AND": [
         "UND"
       ],
@@ -9657,6 +9657,9 @@
       "Move ${ sidebarElementName }": [
         "${ sidebarElementName } verschieben"
       ],
+      "Move messages to": [
+        "Nachrichten verschieben nach"
+      ],
       "Move to": [
         "Verschieben nach"
       ],
@@ -9698,9 +9701,6 @@
       ],
       "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
         "Verpasse nie wieder wichtige Nachrichten! Diese werden jetzt unter ${ primaryCopy } angezeigt. Alles andere ist nach Kategorie sortiert, sodass du es leicht findest und dein Posteingang nicht überfüllt wird."
-      ],
-      "No results found": [
-        "Keine Ergebnisse gefunden"
       ],
       "Non-promotional content and news": [
         "Werbefreie Inhalte und Neuigkeiten"
@@ -12157,6 +12157,9 @@
       "Credit/debit card": [
         "Kredit-/Debitkarte"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Neue Kredit-/Debitkarte"
       ]
@@ -12287,6 +12290,12 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Du hast dieses Abonnement bereits. Du kannst dein Abonnement auf ${ subscriptionPlatform } ändern."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Du wirst in Kürze zu PayPal weitergeleitet, um deine Zahlung zu bestätigen."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Du wirst in Kürze weitergeleitet, um deine Zahlung zu bestätigen."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Deine Währung wurde zu Euro (€) geändert, da SEPA-Banküberweisungen Zahlungen nur in Euro unterstützen."
       ],
@@ -12317,6 +12326,11 @@
         "Deine Karte wurde abgelehnt. Bitte versuche es mit einer anderen Karte oder wende dich an deine Bank, um die Belastung zu autorisieren."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Etwas ist schiefgelaufen. Die Google Pay-Verifizierung ist fehlgeschlagen."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Gutschrift für den ungenutzten Teil deines vorherigen Abonnements"
@@ -12336,6 +12350,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Banküberweisung - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - Karte endet mit ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -14842,6 +14859,12 @@
       "Create contact": [
         "Kontakt erstellen"
       ],
+      "Create folder \"${ search }\"": [
+        "Ordner „${ search }“ erstellen"
+      ],
+      "Create label \"${ search }\"": [
+        "Kategorie „${ search }“ erstellen"
+      ],
       "Create new group": [
         "Neue Gruppe erstellen"
       ],
@@ -15112,10 +15135,6 @@
       "Label as": [
         "Folgender Kategorie zuordnen"
       ],
-      "Label message as": [
-        "Nachricht kategorisieren als",
-        "Nachrichten kategorisieren als"
-      ],
       "Label options": [
         "Kategorieoptionen"
       ],
@@ -15199,13 +15218,6 @@
       ],
       "Move all messages to trash": [
         "Alle Nachrichten in den Papierkorb verschieben"
-      ],
-      "Move message to": [
-        "Nachricht verschieben nach",
-        "Nachrichten verschieben nach"
-      ],
-      "Move messages to": [
-        "Nachrichten verschieben nach"
       ],
       "Move to": [
         "Verschieben nach"

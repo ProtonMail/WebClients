@@ -4218,9 +4218,6 @@
       "Accept/decline": [
         "수락/거절"
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "요금 미납으로 인해 계정 액세스가 제한되었습니다. 관리자에게 문의하세요."
-      ],
       "Ad targeting": [
         "광고 트래킹"
       ],
@@ -4229,6 +4226,9 @@
       ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "광고주는 타겟 광고를 표시하기 위해 브라우징을 추적합니다. ${ VPN_APP_NAME }이 트래커와 광고를 차단하여 연결 속도를 증대시키고 온라인 경험을 개선합니다."
+      ],
+      "All": [
+        "전체"
       ],
       "All (${ totalFoldersCount } folder)": [
         "총 (${ totalFoldersCount } 개 폴더)"
@@ -4394,6 +4394,9 @@
       ],
       "Document owner has the password": [
         "문서 소유자가 비밀번호를 소유하고 있습니다."
+      ],
+      "Documents": [
+        "문서"
       ],
       "Downgrade": [
         "다운그레이드"
@@ -4926,6 +4929,9 @@
       "Something went wrong": [
         "문제가 발생했습니다"
       ],
+      "Spreadsheets": [
+        "스프레드시트"
+      ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "다음 VPN 설정을 활성화하여 손쉽게 연결 상태를 유지해 보세요:"
       ],
@@ -5262,20 +5268,11 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "고객님의 ${ BRAND_NAME } 계정이 정지되었습니다. 28일 뒤, 받은 편지함으로 이메일이 더 이상 전달되지 않으며, Drive 공유 링크가 잠기며, 더 이상 새로운 파일을 업로드 할 수 없습니다. 서비스를 계속 사용하려면, 기한이 지난 청구서를 결제해주세요."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "고객님의 ${ BRAND_NAME } 계정이 정지되었습니다. 이메일이 더 이상 받은 편지함으로 전송되지 않으며, Drive 공유 링크가 더 이상 활성화되지 않으며, 새로운 파일을 업로드 할 수도 없습니다. 계정 사용을 계속하려면, 기한이 지난 청구서를 결제해주세요."
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ plan } 구독이 ${ PASS_SHORT_APP_NAME } 평생 플랜으로 대체됩니다. 구독의 잔여분이 사용자의 계정에 추가됩니다. ${ PASS_SHORT_APP_NAME } 평생 혜택은 갱신가격이 존재하지 않으며, ${ PASS_SHORT_APP_NAME }에 평생 접근할 수 있는 일회성 결제입니다."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "계정에 기한이 지난 청구서가 하나 이상 있습니다. 회원님의 계정 접근이 곧 제한됩니다. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "회원님의 계정에 적어도 하나의 연체된 결제가 있습니다. 회원님의 계정이 제한되어 있으며, 지금 결제할 때까지 모든 서비스가 차단됩니다. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "회원님의 계정에 적어도 하나의 연체된 결제가 있습니다. 회원님의 계정이 제한된 상태입니다. 지속적인 미지불이 이메일과 공유 링크를 차단시킬 수 있습니다. ${ payInvoiceLink }"
       ],
       "Your browser's Print dialog will now open, where you can export your document to PDF.": [
         "사용자의 문서를 PDF로 내보낼 수 있는 브라우저의 출력 창이 열립니다."
@@ -9276,6 +9273,9 @@
       ],
       "Exporting contacts": [
         "연락처 내보내기"
+      ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "${ planTitle }(으)로 크레딧으로 **${ referralInfo.uiData.refereeRewardAmount }** 받기"
       ],
       "Get more from your VPN": [
         "VPN에 대해 더 알아보기"

@@ -753,6 +753,9 @@
       "Get a new encrypted email address": [
         "Obtener una dirección de correo cifrado nueva"
       ],
+      "Get Deal": [
+        "Obtener oferta"
+      ],
       "Get in touch": [
         "Contáctenos"
       ],
@@ -4927,11 +4930,29 @@
       ]
     },
     "Duration": {
+      "1.5h": [
+        "1,5h"
+      ],
       "120 minutes": [
         "120 minutos"
       ],
+      "15 minutes": [
+        "15 minutos"
+      ],
+      "15m": [
+        "15 min"
+      ],
+      "1h": [
+        "1 h"
+      ],
+      "2h": [
+        "2h"
+      ],
       "30 minutes": [
         "30 minutos"
+      ],
+      "30m": [
+        "30min"
       ],
       "60 minutes": [
         "60 minutos"
@@ -5920,6 +5941,9 @@
       "Failed to load the STL preview": [
         "Error al cargar la vista previa de STL"
       ],
+      "Failed to lookup server. Please try again": [
+        "Error al buscar el servidor. Intente de nuevo."
+      ],
       "Failed to process the logo": [
         "Error al procesar el logo"
       ],
@@ -6205,6 +6229,9 @@
       "Request timed out": [
         "Tiempo de espera agotado"
       ],
+      "Server not found": [
+        "Servidor no encontrado"
+      ],
       "Session expired. Please refresh the page.": [
         "La sesión ha expirado. Actualice la página."
       ],
@@ -6309,6 +6336,12 @@
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Necesita restaurar sus privilegios de administración para crear cuentas no privadas y acceder a las mismas."
+      ],
+      "Too many requests. Please try again after ${ date }": [
+        "Demasiadas solicitudes. Intente de nuevo después de ${ date }"
+      ],
+      "Too many requests. Please try again later": [
+        "Demasiadas solicitudes. Intente de nuevo más tarde."
       ],
       "Trusted keys are not valid for sending": [
         "Las claves confiadas no son válidas para enviar"
@@ -8536,9 +8569,6 @@
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Acceda a sus contraseñas y proteja sus identidades en línea sin problemas en todos los dispositivos. Descargue e instale las aplicaciones y extensiones de ${ PASS_APP_NAME } relevantes."
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Acceso restringido a la cuenta por falta de pago. Contacte con la administración."
-      ],
       "Account monitor": [
         "Monitoreo de la cuenta"
       ],
@@ -9462,6 +9492,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Vaya al proveedor de identidad, obtenga los metadatos de SAML para ${ appName } e impórtelos aquí."
+      ],
+      "Google Pay mark": [
+        "Marca de Google Pay"
       ],
       "Got it": [
         "Entendido"
@@ -10488,6 +10521,9 @@
       "Some keys successfully reactivated": [
         "Algunas claves fueron reactivadas."
       ],
+      "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
+        "Algunos servidores podrían no aparecer en la lista anterior. Búsquelos por el nombre del servidor (p. ej. AT#62)."
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Especifique el dominio que puede autenticarse con SAML SSO."
       ],
@@ -11473,9 +11509,6 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "La cuenta de ${ BRAND_NAME } está suspendida. Después de 28 días, no recibirá correos en el buzón, los enlaces compartidos de Drive serán bloqueados y no podrá cargar archivos nuevos. Para reanudar el servicio, pague cualquier factura pendiente."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "La cuenta de ${ BRAND_NAME } está suspendida. No recibirá correos en el buzón. Los enlaces compartidos de Drive ya no están activos y no podrá cargar archivos nuevos. Para continuar usando la cuenta, pague cualquier factura pendiente."
-      ],
       "Your ${ BRAND_NAME } password": [
         "La contraseña de ${ BRAND_NAME }"
       ],
@@ -11487,12 +11520,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "La cuenta tiene al menos una factura atrasada. Su acceso pronto será restringido. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "La cuenta tiene al menos una factura pendiente. La cuenta está restringida y todos los servicios están bloqueados hasta ser pagada. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "La cuenta tiene al menos una factura pendiente. La cuenta está restringida. El no pago continuo bloqueará los correos y enlaces compartidos. ${ payInvoiceLink }"
       ],
       "Your account has been successfully updated": [
         "La cuenta se actualizó."
@@ -13190,6 +13217,9 @@
       ],
       "Sequences": [
         "Secuencias"
+      ],
+      "Server name": [
+        "Nombre del servidor"
       ],
       "Share your referral link": [
         "Comparta su enlace de referidos"
@@ -16506,17 +16536,23 @@
       "Based in Switzerland, GDPR compliant": [
         "Con sede en Suiza y conforme al RGPD"
       ],
-      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
-        "Pero puede obtener ${ discount } de descuento al mejorar a **${ upsellPlanTitle }**, es solo ${ relativePrice } adicional al mes."
+      "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Pero puede obtener ${ discountPercentString } de descuento al mejorar a **${ upsellPlanTitle }**, por solo ${ relativePrice } adicionales al mes."
       ],
-      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }**.": [
-        "Pero puede obtener ${ discount } de descuento al mejorar a **${ upsellPlanTitle }**."
+      "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }**.": [
+        "Pero puede obtener ${ discountPercentString } de descuento al mejorar a **${ upsellPlanTitle }**."
       ],
       "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Pero puede desbloquear **${ unlockPlanTitle }** y más servicios de ${ BRAND_NAME } al actualizar el plan a **${ upsellPlanTitle }**, solo por ${ relativePrice } adicional al mes."
       ],
       "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Pero puede desbloquear **${ unlockPlanTitle }** y más servicios de ${ BRAND_NAME } al actualizar a **${ upsellPlanTitle }**."
+      ],
+      "But you can upgrade to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Pero puede mejorar a **${ upsellPlanTitle }**, por solo ${ relativePrice } adicionales al mes."
+      ],
+      "But you can upgrade to **${ upsellPlanTitle }**.": [
+        "Pero puede mejorar a **${ upsellPlanTitle }**."
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
         "Al continuar, acepta nuestros ${ termsAndConditionsLink } y ${ privacyPolicyLink }."
@@ -16875,6 +16911,9 @@
       "Credit/debit card": [
         "Tarjeta de crédito/débito"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Tarjeta de crédito/débito nueva"
       ]
@@ -17026,6 +17065,12 @@
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Se le cobrará ${ amountToCharge } de su método de pago seleccionado."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Pronto se le redirigirá a PayPal para verificar el pago."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Pronto se le redirigirá para verificar el pago."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Su moneda ha sido cambiada a euros (€) porque las transferencias bancarias SEPA solo admiten pagos en euros."
       ],
@@ -17056,6 +17101,11 @@
         "La tarjeta fue rechazada. Pruebe otra tarjeta o póngase en contacto con el banco para autorizar el cargo."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Algo salió mal. Falló la verificación de Google Pay."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito por la parte no usada de la suscripción al plan anterior"
@@ -17075,6 +17125,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Transferencia bancaria - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - tarjeta terminada en ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -17198,6 +17251,9 @@
       ],
       "E.g., ": [
         "Ej., "
+      ],
+      "e.g., AT#62": [
+        "p. ej., AT#62"
       ],
       "Email address": [
         "Dirección de correo"
@@ -17821,6 +17877,11 @@
       ],
       "Scopes cannot have the same value": [
         "Los ámbitos no pueden tener el mismo valor"
+      ]
+    },
+    "retention_policy_2025_Hint": {
+      "${ currentLength }/${ MAX_TITLE_LENGTH } characters": [
+        "${ currentLength }/${ MAX_TITLE_LENGTH } caracteres"
       ]
     },
     "retention_policy_2025_Info": {
@@ -22295,6 +22356,9 @@
       ],
       "Schedule send:": [
         "Programe el envío:"
+      ],
+      "Search for additional servers": [
+        "Buscar servidores adicionales"
       ],
       "Secure email based in Switzerland": [
         "Correo electrónico seguro con sede en Suiza"

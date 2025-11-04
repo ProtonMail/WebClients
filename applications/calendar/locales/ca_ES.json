@@ -186,6 +186,9 @@
       "Confirm": [
         "Confirma"
       ],
+      "Confirm booking": [
+        "Confirmeu la reserva"
+      ],
       "Confirm opening of link ${ linkToShow }": [
         "Confirmeu l'obertura de l'enllaç ${ linkToShow }"
       ],
@@ -219,9 +222,6 @@
       "Copy alias “${ name }”": [
         "Copia l'àlies «${ name }»"
       ],
-      "Copy Booking link": [
-        "Copieu l'enllaç de reserves"
-      ],
       "Copy email address": [
         "Copia l'adreça de correu electrònic"
       ],
@@ -230,6 +230,9 @@
       ],
       "Copy link": [
         "Copia l'enllaç"
+      ],
+      "Copy link and close": [
+        "Copieu l'enllaç i tanqueu"
       ],
       "Copy password": [
         "Copia la contrasenya"
@@ -2939,7 +2942,7 @@
       ]
     },
     "Custom frequency option": {
-      "Don't end": [
+      "Doesn't end": [
         "No finalitza"
       ],
       "End after": [
@@ -3201,6 +3204,9 @@
       "Your account and data recovery methods are set.": [
         "El compte i els mètodes de recuperació de dades estan definits."
       ],
+      "You’ll get a secure email with the details shortly.": [
+        "Aviat rebreu un correu segur amb els detalls."
+      ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ja heu creat 10 àlies. Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ BRAND_NAME } Unlimited."
       ]
@@ -3361,11 +3367,29 @@
       ]
     },
     "Duration": {
+      "1.5h": [
+        "1,5 h"
+      ],
       "120 minutes": [
         "120 minuts"
       ],
+      "15 minutes": [
+        "15 minuts"
+      ],
+      "15m": [
+        "15 min"
+      ],
+      "1h": [
+        "1 h"
+      ],
+      "2h": [
+        "2h"
+      ],
       "30 minutes": [
         "30 minuts"
+      ],
+      "30m": [
+        "30 min"
       ],
       "60 minutes": [
         "60 minuts"
@@ -3581,6 +3605,9 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "No es pot activar la cerca de contingut. Reinicieu l'aplicació o netegeu les dades."
       ],
+      "Content verification failed": [
+        "La verificació del contingut ha fallat"
+      ],
       "Could not open created vault": [
         "No s'ha pogut obrir la caixa forta creada"
       ],
@@ -3751,6 +3778,9 @@
       ],
       "Name required": [
         "Nom requerit"
+      ],
+      "No booking page data received": [
+        "No s'han rebut dades de la pàgina de reserves"
       ],
       "No calendars found to import": [
         "No s'ha trobat cap calendari per importar"
@@ -4561,6 +4591,11 @@
         "Molt petit"
       ]
     },
+    "Form": {
+      "Your contact info": [
+        "Les vostres dades de contacte"
+      ]
+    },
     "Google Meet": {
       "Join Google Meet": [
         "Uniu-vos al Google Meet"
@@ -4982,8 +5017,8 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
       ],
-      "${ booking.duration } min duration": [
-        "Durada de ${ booking.duration } min"
+      "${ bookingDetails.duration } min duration": [
+        "${ bookingDetails.duration } minuts de durada"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistent d'escriptura ${ BRAND_NAME } Scribe"
@@ -5122,9 +5157,6 @@
       "30-day money-back guarantee.": [
         "30 dies de garantia de reemborsament."
       ],
-      "A booking slot cannot be added in the past.": [
-        "No es pot afegir una franja de reserva en el passat."
-      ],
       "A cancellation email will be sent to removed participants.": [
         "Els participants esborrats rebran un correu electrònic de cancel·lació."
       ],
@@ -5151,9 +5183,6 @@
       ],
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "Una VPN és un túnel segur entre el vostre dispositiu i internet. Oculta la vostra ubicació i activitat al vostre proveïdor de serveis d'internet (ISP) i als llocs web que visiteu."
-      ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "L'accés al compte està restringit a causa de factures impagades. Contacteu amb el vostre administrador."
       ],
       "Account successfully updated": [
         "El compte s'ha actualitzat."
@@ -5247,6 +5276,15 @@
       ],
       "Billing cycle: ${ text }": [
         "Cicle de facturació: ${ text }"
+      ],
+      "Booking already exists.": [
+        "Aquesta reserva ja existeix."
+      ],
+      "Booking cannot be added in the past.": [
+        "No es poden afegir reserves en el passat."
+      ],
+      "Booking overlaps with an existing booking.": [
+        "La reserva es superposa amb una reserva existent."
       ],
       "Booking page example": [
         "Exemple de pàgina de reserves"
@@ -5507,6 +5545,9 @@
       "Geoblocking": [
         "Geobloqueig"
       ],
+      "Google Pay mark": [
+        "Marca de Google Pay"
+      ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Els governs i els ISP poden controlar la vostra activitat en línia. En amagar la vostra IP real i xifrar la vostra activitat, la vostra navegació esdevé privada."
       ],
@@ -5515,6 +5556,9 @@
       ],
       "High Priority": [
         "Alta prioritat"
+      ],
+      "How long should an appointment last?": [
+        "Quant ha de durar una cita?"
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Si les tecles de drecera estan activades, podeu utilitzar les tecles següents per a accions ràpides o per anar a diferents vistes. La tecla de drecera ${ metaKey } + K sempre està activada."
@@ -5564,6 +5608,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Al següent pas, podreu enviar un dipòsit utilitzant una adreça de Bitcoin."
+      ],
+      "In which calendar should bookings appear?": [
+        "En quin calendari han d'aparèixer les reserves?"
       ],
       "Indexing events: ${ current }/${ total }": [
         "S'estan indexant esdeveniments: ${ current }/${ total }"
@@ -5670,11 +5717,17 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "La majoria de les xarxes wifi públiques són segures, però algunes no tenen seguretat, la qual cosa us exposa a amenaces cibernètiques. Una VPN xifra el vostre trànsit, mantenint-vos protegit."
       ],
+      "Name your booking page": [
+        "Anomeneu la vostra pàgina de reserves"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Poseu un nom a la vostra nova carpeta i seleccioneu la carpeta principal a la qual vulgueu introduir-la. Si no seleccioneu una carpeta principal, aquesta nova carpeta es crearà com a carpeta de primer nivell."
       ],
       "New": [
         "Nova"
+      ],
+      "No available slots for this day": [
+        "No hi ha franges horàries disponibles per a aquest dia"
       ],
       "No contacts added yet": [
         "Encara no s'han afegit contactes"
@@ -5879,8 +5932,8 @@
       "Setting up your new address…": [
         "S'està configurant la vostra nova adreça…"
       ],
-      "Share this page to let others book time in your calendar.": [
-        "Compartiu aquesta pàgina perquè altres usuaris puguin reservar temps al vostre calendari."
+      "Share this page to let others book time in your calendar. You can manage it anytime in the sidebar under Booking pages.": [
+        "Compartiu aquesta pàgina perquè altres puguin reservar temps al vostre calendari. La podreu gestionar en qualsevol moment a la barra lateral sota Pàgines de reserves."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Com que sou un usuari fidel, el vostre compte té característiques addicionals activades."
@@ -6111,6 +6164,12 @@
       "Week and month views only apply to desktop.": [
         "Les visualitzacions de setmana i mes només s'apliquen a l'escriptori."
       ],
+      "What should people know before booking?": [
+        "Què s'hauria de saber abans de reservar?"
+      ],
+      "When are you free?": [
+        "Quan teniu disponibilitat?"
+      ],
       "When working remotely": [
         "Quan es treballa a distància"
       ],
@@ -6119,6 +6178,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quan configureu l’autenticació de doble factor, proporcionem codis de recuperació que podeu utilitzar per iniciar la sessió si perdeu l’accés a l’aplicació d'autenticació."
+      ],
+      "Where will the appointment take place?": [
+        "On tindrà lloc la cita?"
       ],
       "Which event would you like to delete?": [
         "Quin esdeveniment voleu eliminar?"
@@ -6209,6 +6271,9 @@
       "You cannot undo this action.": [
         "No pots desfer aquesta acció."
       ],
+      "You can’t have more than ${ MAX_BOOKING_SLOTS } booking slots on a page.": [
+        "No podeu tenir més de ${ MAX_BOOKING_SLOTS } franges de reserva en una pàgina"
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Rebeu una notificació si la vostra contrasenya o altres dades han estat filtrades des d'un servei de tercers."
       ],
@@ -6273,20 +6338,11 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "El vostre compte de ${ BRAND_NAME } actualment està suspès. Passats 28 dies, els correus electrònics deixaran de lliurar-se a la vostra safata d'entrada, els enllaços compartits de Drive es bloquejaran i no podreu carregar-hi fitxers nous. Per a restablir el servei normal, pagueu les factures vençudes."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "El vostre compte de ${ BRAND_NAME } actualment està suspès. Els correus electrònics ja no es lliuren a la vostra safata d'entrada. Els vostres enllaços compartits de Drive ja no estan actius i no podeu carregar-hi fitxers nous. Per a continuar utilitzant el vostre compte, pagueu les factures vençudes."
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "La vostra subscripció ${ plan } se substituirà per ${ PASS_SHORT_APP_NAME } Lifetime. El saldo restant s'afegirà al vostre compte. L'oferta de ${ PASS_SHORT_APP_NAME } no té cost de renovació, és un pagament únic per a accedir a ${ PASS_SHORT_APP_NAME } de per vida."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "El vostre compte té almenys una factura en retard. El vostre accés aviat quedarà restringit. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "El vostre compte té almenys una factura vençuda. El vostre compte està restringit i tots els serveis estan bloquejats fins que es faci el pagament. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "El vostre compte té almenys una factura vençuda. El vostre compte està restringit. La manca de pagament continuada us bloquejarà els correus electrònics i enllaços de compartició. ${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "La vostra adreça està desactivada. Els participants a l'esdeveniment no rebran cap correu electrònic de cancel·lació. Voleu esborrar tots els esdeveniments de la sèrie?"
@@ -6706,9 +6762,6 @@
       "Don't show this again": [
         "No ho tornis a mostrar"
       ],
-      "Duration": [
-        "Durada"
-      ],
       "e.g., Amazon, eBay, Etsy": [
         "per exemple, Amazon, eBay, Etsy"
       ],
@@ -6998,9 +7051,6 @@
       "Time zone": [
         "Zona horària"
       ],
-      "Title": [
-        "Títol"
-      ],
       "To: ${ toEmail }": [
         "Per a: ${ toEmail }"
       ],
@@ -7264,6 +7314,11 @@
       ],
       "Your import is starting": [
         "La importació s'està iniciant"
+      ]
+    },
+    "Location": {
+      "In person": [
+        "En persona"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -9076,6 +9131,9 @@
       "Credit/debit card": [
         "Targeta de crèdit/dèbit"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Nova targeta de crèdit/dèbit"
       ]
@@ -9206,6 +9264,12 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Ja teniu una subscripció a aquest pla. Podeu canviar-la a ${ subscriptionPlatform }."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Aviat se us redirigirà a PayPal per verificar el vostre pagament."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Aviat se us redirigirà per verificar el vostre pagament."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "La moneda s'ha canviat a euros (€) perquè les transferències bancàries SEPA només admeten pagaments en euros."
       ],
@@ -9236,6 +9300,11 @@
         "La vostra targeta s'ha rebutjat. Proveu una altra targeta o poseu-vos en contacte amb el vostre banc per autoritzar el cobrament."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Alguna cosa ha anat malament. La verificació de Google Pay ha fallat."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Crèdit per la part no utilitzada de la vostra subscripció al pla anterior"
@@ -9255,6 +9324,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Transferència bancària - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - targeta que acaba en ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -9337,6 +9409,9 @@
       "A way to contact you": [
         "Una manera de contactar amb tu"
       ],
+      "Add a booking page description": [
+        "Afegiu una descripció a la pàgina de reserves"
+      ],
       "Add a calendar description": [
         "Afegeix una descripció al calendari"
       ],
@@ -9360,6 +9435,9 @@
       ],
       "Anytown": [
         "Castellvent"
+      ],
+      "Booking page title": [
+        "Títol de la pàgina de reserves"
       ],
       "Company name": [
         "Nom de l'empresa"
@@ -11214,9 +11292,6 @@
       "Birthday": [
         "Aniversari"
       ],
-      "Booking page": [
-        "Pàgina de reserves"
-      ],
       "Calendar": [
         "Calendari"
       ],
@@ -11309,6 +11384,9 @@
       ],
       "Data recovery": [
         "Recuperació de dades"
+      ],
+      "Date": [
+        "Data"
       ],
       "Day theme": [
         "Tema de dia"
@@ -11450,6 +11528,9 @@
       "High security for your account": [
         "Seguretat alta per al vostre compte"
       ],
+      "Host": [
+        "Amfitrió"
+      ],
       "How does it all work?": [
         "Com funciona tot?"
       ],
@@ -11489,6 +11570,9 @@
       ],
       "Link confirmation": [
         "Confirmació d'enllaç"
+      ],
+      "Location": [
+        "Ubicació"
       ],
       "Make a secure connection your default": [
         "Feu d'una connexió segura l'opció predeterminada"
@@ -11724,6 +11808,12 @@
       "This booking page has expired": [
         "Aquesta pàgina de reserves ha caducat"
       ],
+      "Time": [
+        "Hora"
+      ],
+      "Time zone": [
+        "Zona horària"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Activeu ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -11813,6 +11903,9 @@
       ],
       "Your account is protected": [
         "El compte està protegit"
+      ],
+      "Your booking is confirmed": [
+        "La vostra reserva està confirmada"
       ],
       "Your booking page is ready": [
         "La vostra pàgina de reserves és a punt"

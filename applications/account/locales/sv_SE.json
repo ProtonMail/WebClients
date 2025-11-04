@@ -672,6 +672,9 @@
       "Enable multi-user support": [
         "Aktivera stöd för flera användare"
       ],
+      "Enable post-quantum protection": [
+        "Aktivera post-kvantumskydd"
+      ],
       "Encrypt and export": [
         "Kryptera och exportera"
       ],
@@ -3008,6 +3011,9 @@
       "Basic chat history": [
         "Grundläggande chatthistorik"
       ],
+      "Compliance with data protection regulations": [
+        "Efterlevnad av dataskyddsföreskrifter"
+      ],
       "Data never used for AI training": [
         "Data används aldrig för AI-träning"
       ],
@@ -4885,11 +4891,29 @@
       ]
     },
     "Duration": {
+      "1.5h": [
+        "1,5 tim."
+      ],
       "120 minutes": [
         "120 minuter"
       ],
+      "15 minutes": [
+        "15 minuter"
+      ],
+      "15m": [
+        "15 min."
+      ],
+      "1h": [
+        "1 tim."
+      ],
+      "2h": [
+        "2 tim."
+      ],
       "30 minutes": [
         "30 minuter"
+      ],
+      "30m": [
+        "30 min."
       ],
       "60 minutes": [
         "60 minuter"
@@ -5282,11 +5306,17 @@
       "For compatibility, a new encryption key will be generated for ${ boldForwarderEmail }.": [
         "För kompatibilitet kommer en ny krypteringsnyckel att genereras för ${ boldForwarderEmail }."
       ],
+      "For compatibility, post-quantum encryption has been be disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
+        "För kompatibilitet har post-kvantumkryptering inaktiverats och en ny krypteringsnyckel har genererats för ${ boldForwarderEmail }."
+      ],
       "For compatibility, post-quantum encryption has been disabled for ${ boldForwarderEmail }.": [
         "För kompatibilitet har postkvantkryptering inaktiveras för ${ boldForwarderEmail }."
       ],
       "For compatibility, post-quantum encryption will be disabled for ${ boldForwarderEmail }.": [
         "För kompatibilitet kommer postkvantkryptering att inaktiveras för ${ boldForwarderEmail }."
+      ],
+      "For compatibility, post-quantum encryption will be disabled, and a new encryption key will be generated for ${ boldForwarderEmail }.": [
+        "För kompatibilitet kommer post-kvantumkryptering att inaktiveras och en ny krypteringsnyckel kommer att genereras för ${ boldForwarderEmail }."
       ],
       "Forwardee is invited and needs to accept/reject the invitation or update": [
         "Mottagaren är inbjuden och måste acceptera/avvisa inbjudan eller uppdatera"
@@ -6144,6 +6174,9 @@
       "Request timed out": [
         "Förfrågan gjorde timeout"
       ],
+      "Server not found": [
+        "Server hittades inte"
+      ],
       "Session expired. Please refresh the page.": [
         "Session löpt ut. Uppdatera sidan."
       ],
@@ -6248,6 +6281,12 @@
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "För att skapa icke-privata användarkonton och komma åt deras konton måste du återställa dina administratörsrättigheter."
+      ],
+      "Too many requests. Please try again after ${ date }": [
+        "För många förfrågningar. Försök igen efter ${ date }"
+      ],
+      "Too many requests. Please try again later": [
+        "För många förfrågningar. Försök igen senare"
       ],
       "Trusted keys are not valid for sending": [
         "Betrodda nycklar är inte giltiga för att skicka"
@@ -8469,9 +8508,6 @@
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Kom åt dina lösenord och skydda dina onlineidentiteter sömlöst på alla dina enheter. Ladda ner och installera relevanta ${ PASS_APP_NAME }-appar och utökningar."
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Kontoåtkomst begränsad på grund av obetalda fakturor. Kontakta din administratör."
-      ],
       "Account monitor": [
         "Kontoövervakning"
       ],
@@ -8808,6 +8844,9 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Genom att nedgradera till ett gratiskonto kommer du permanent att förlora dessa fördelar, även om du uppgraderar igen i framtiden."
+      ],
+      "By enabling post-quantum protection, keys that are resistant against quantum computers will be generated for your account.": [
+        "Genom att aktivera post-kvantumskydd kommer nycklar som är resistenta mot kvantdatorer att genereras för ditt konto."
       ],
       "By leaving now, changes may not be saved": [
         "Genom att lämna nu kan ändringar inte sparas"
@@ -10415,6 +10454,9 @@
       "Some keys successfully reactivated": [
         "Några nycklar har återaktiverats"
       ],
+      "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
+        "Vissa servrar kanske inte visas i listan ovan. Sök efter servernamn (t.ex. AT#62) för att hitta dem."
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Ange den domän som tillåts autentisera med SAML SSO."
       ],
@@ -10476,6 +10518,9 @@
       ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "Support för övervakning av anpassade domäner och icke ${ BRAND_NAME }-e-postadresser kommer snart."
+      ],
+      "Support for post-quantum keys is enabled for your account.": [
+        "Stöd för post-kvantumnycklar är aktiverat för ditt konto."
       ],
       "support team": [
         "supportteam"
@@ -11390,9 +11435,6 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Ditt ${ BRAND_NAME }-konto är för närvarande avstängt. Efter 28 dagar kommer e-post inte längre att levereras till din inkorg, dina delade länkar från Drive kommer att blockeras och du kommer inte att kunna ladda upp nya filer. För att återuppta tjänsten som vanligt, betala eventuella förfallna fakturor."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Ditt ${ BRAND_NAME }-konto är för närvarande avstängt. E-post levereras inte längre till din inkorg. Dina delade länkar på Drive är inte längre aktiva och du kan inte ladda upp nya filer. För att fortsätta använda ditt konto, betala eventuella förfallna fakturor."
-      ],
       "Your ${ BRAND_NAME } password": [
         "Ditt ${ BRAND_NAME }-lösenord"
       ],
@@ -11401,12 +11443,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ditt konto har minst en försenad faktura. Din åtkomst kommer snart att begränsas. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Ditt konto har minst en förfallen faktura. Ditt konto är begränsat och alla tjänster är nu blockerade fram till betalning. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Ditt konto har minst en förfallen faktura. Ditt konto är begränsat. Fortsatt utebliven betalning kommer att blockera dina e-postmeddelanden och delningslänkar. ${ payInvoiceLink }"
       ],
       "Your account has been successfully updated": [
         "Ditt konto har uppdaterats"
@@ -13093,6 +13129,9 @@
       "Sequences": [
         "Sekvenser"
       ],
+      "Server name": [
+        "Servernamn"
+      ],
       "Share your referral link": [
         "Dela din hänvisningslänk"
       ],
@@ -13814,6 +13853,9 @@
       "Sign in blocked (due to abuse)": [
         "Inloggning blockerad (på grund av missbruk)"
       ],
+      "Sign in failure (mnemonic failed)": [
+        "Inloggning misslyckades (mnemonisk misslyckades)"
+      ],
       "Sign in failure (second factor failed)": [
         "Inloggning misslyckades (andra faktor misslyckades)"
       ],
@@ -13825,6 +13867,9 @@
       ],
       "Sign in success": [
         "Inloggning lyckades"
+      ],
+      "Sign in success (awaiting mnemonic)": [
+        "Inloggning lyckades (väntar på mnemonisk)"
       ],
       "Sign in success (awaiting second factor)": [
         "Inloggning lyckades (inväntar andra faktor)"
@@ -15823,6 +15868,9 @@
       "Continue": [
         "Fortsätt"
       ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Njut av gratis företagssäkerhetsfunktioner fram till ${ trialEndsOnFormatted }."
+      ],
       "help center": [
         "hjälpcenter"
       ],
@@ -16424,12 +16472,6 @@
       "Based in Switzerland, GDPR compliant": [
         "Baserad i Schweiz, GDPR-kompatibel"
       ],
-      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
-        "Men du kan få ${ discount } rabatt genom att uppgradera till **${ upsellPlanTitle }** — det är endast ${ relativePrice } extra per månad."
-      ],
-      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }**.": [
-        "Men du kan få ${ discount } rabatt genom att uppgradera till **${ upsellPlanTitle }**."
-      ],
       "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Men du kan låsa upp **${ unlockPlanTitle }** och fler ${ BRAND_NAME }-tjänster genom att uppgradera till **${ upsellPlanTitle }** – det kostar endast ${ relativePrice } extra per månad."
       ],
@@ -16796,6 +16838,9 @@
       "Credit/debit card": [
         "Kredit/betalkort"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Nytt kredit-/betalkort"
       ],
@@ -16933,6 +16978,12 @@
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Du kommer att debiteras ${ amountToCharge } från din valda betalningsmetod."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Du kommer snart att omdirigeras till PayPal för att verifiera din betalning."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Du kommer snart att omdirigeras för att verifiera din betalning."
+      ],
       "Your payment is still being processed": [
         "Din betalning håller fortfarande på att behandlas"
       ]
@@ -16957,6 +17008,11 @@
         "Ditt kort nekades Prova ett annat kort eller kontakta din bank för att auktorisera debiteringen."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Något gick fel. Google Pay-verifiering misslyckades."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit för den oanvända delen av din tidigare paketprenumeration"
@@ -16976,6 +17032,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Banköverföring - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - kort slutar på ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -17093,6 +17152,9 @@
       ],
       "E.g., ": [
         "T.ex., "
+      ],
+      "e.g., AT#62": [
+        "t.ex. AT#62"
       ],
       "Email address": [
         "E-postadress"
@@ -17307,6 +17369,16 @@
         "Uppgradera till ${ upsellPlanTitle }"
       ]
     },
+    "PQC account key generation": {
+      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum account and address keys failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
+        "Post-kvantumskydd har aktiverats på ditt konto, men vissa åtgärder lyckades inte: Genereringen av post-kvantumkonto- och adressnycklar misslyckades. Du kan manuellt generera dessa nycklar under inställningarna ${ encryptionAndKeysSettingsTitle }."
+      ]
+    },
+    "PQC adress key generation": {
+      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum address keys for one or more addresses failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
+        "Post-kvantumskydd har aktiverats på ditt konto, men vissa åtgärder lyckades inte: Genereringen av adressnycklar för post-kvantum för en eller flera adresser misslyckades. Du kan manuellt generera dessa nycklar under inställningarna ${ encryptionAndKeysSettingsTitle }."
+      ]
+    },
     "PQC compatibility warning": {
       "Please update **all your ${ BRAND_NAME } mobile apps** to the latest version.": [
         "Uppdatera **alla dina ${ BRAND_NAME }-mobilappar** till senaste versionen."
@@ -17320,11 +17392,33 @@
     "PQC optin": {
       "Enable and generate keys": [
         "Aktivera och generera nycklar"
+      ],
+      "Enable post-quantum protection": [
+        "Aktivera post-kvantumskydd"
+      ],
+      "Enable post-quantum protection?": [
+        "Aktivera post-kvantumskydd?"
+      ],
+      "Enabling post-quantum protection failed. Try again later.": [
+        "Aktivering av post-kvantumskydd misslyckades. Försök igen senare."
       ]
     },
     "pqc-optin: Action": {
       "Got it": [
         "Jag förstår"
+      ]
+    },
+    "pqc-optin: Info": {
+      "Post-quantum protection has been enabled on your account!": [
+        "Post-kvantumskydd har aktiverats på ditt konto!"
+      ]
+    },
+    "pqc-optin: Progress status": {
+      "Generating post-quantum account key": [
+        "Genererar post-kvantum kontonyckel"
+      ],
+      "Generating post-quantum address keys for each address": [
+        "Genererar adressnycklar för post-kvantum för varje adress."
       ]
     },
     "Price": {
@@ -17560,6 +17654,9 @@
     "Remark about a key type option": {
       "Classic": [
         "Klassisk"
+      ],
+      "Post-quantum": [
+        "Post-kvantum"
       ]
     },
     "Remove calendar section description": {
@@ -17625,6 +17722,9 @@
       "Confirm": [
         "Bekräfta"
       ],
+      "Create retention rule": [
+        "Skapa bevaranderegel"
+      ],
       "Create rule": [
         "Skapa regel"
       ],
@@ -17674,6 +17774,11 @@
         "Omfång kan inte ha samma värde"
       ]
     },
+    "retention_policy_2025_Hint": {
+      "${ currentLength }/${ MAX_TITLE_LENGTH } characters": [
+        "${ currentLength }/${ MAX_TITLE_LENGTH } tecken"
+      ]
+    },
     "retention_policy_2025_Info": {
       "${ n } day": [
         "${ n } dag",
@@ -17690,9 +17795,21 @@
       ],
       "Removes messages already deleted by users.": [
         "Tar redan bort meddelanden redan borttagna av användare."
+      ],
+      "Retention rule \"${ formData.name }\" updated successfully": [
+        "Bevaranderegel ”${ formData.name }” uppdaterad"
+      ],
+      "Retention rule \"${ payload.Name }\" created successfully": [
+        "Bevaranderegel ”${ payload.Name }” skapad"
+      ],
+      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
+        "Bevaranderegel ”${ retentionRule.Name }” borttagen"
       ]
     },
     "retention_policy_2025_Label": {
+      "After retention period expires": [
+        "Efter bevaranderegel löper ut"
+      ],
       "Applies to": [
         "Tillämpas på"
       ],
@@ -17705,6 +17822,9 @@
       ],
       "Keep messages forever": [
         "Behåll meddelanden för alltid"
+      ],
+      "Retention period": [
+        "Bevarandeperiod"
       ],
       "Rule title": [
         "Rubrikregel"
@@ -17759,6 +17879,28 @@
       ],
       "Applies to": [
         "Tillämpas på"
+      ],
+      "Retention period": [
+        "Bevarandeperiod"
+      ],
+      "Retention Rule": [
+        "Bevaranderegel"
+      ]
+    },
+    "retention_policy_2025_TableRow": {
+      "No retention policies found": [
+        "Inga bevarandepolicys hittades"
+      ]
+    },
+    "retention_policy_2025_Title": {
+      "Confirm retention rule?": [
+        "Bekräfta bevaranderegel?"
+      ],
+      "Create retention rule": [
+        "Skapa bevaranderegel"
+      ],
+      "Edit retention rule": [
+        "Redigera bevaranderegel"
       ]
     },
     "Role": {
@@ -21363,6 +21505,9 @@
       "Data recovery": [
         "Dataåterställning"
       ],
+      "Data retention": [
+        "Databevaring"
+      ],
       "Date": [
         "Datum"
       ],
@@ -21987,6 +22132,9 @@
       "Policies": [
         "Policyer"
       ],
+      "Post-quantum protection": [
+        "Post-kvantumskydd"
+      ],
       "Preview": [
         "Förhandsgranska"
       ],
@@ -22100,6 +22248,9 @@
       ],
       "Schedule send:": [
         "Schemalägg sändning:"
+      ],
+      "Search for additional servers": [
+        "Sök efter ytterligare servrar"
       ],
       "Secure email based in Switzerland": [
         "Säker e-post baserad i Schweiz"

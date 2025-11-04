@@ -1319,12 +1319,47 @@
         "采用端到端加密技术守护您的邮件安全，并且支持自有域名、15 个邮箱地址、无限量的 hide-my-email 邮箱别名、${ BRAND_NAME } Scribe 写作助手等高级功能。"
       ]
     },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "黑色星期五特惠"
+      ]
+    },
     "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB 数据存储空间"
+      ],
+      "3 TB data storage": [
+        "3 TB 数据存储空间"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "访问 120 多个国家/地区的 15,000 多个伺服器"
+      ],
+      "Access advanced AI models": [
+        "访问高级 AI 模型"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME } 的所有高级功能"
+      ],
       "Block ads, trackers, and malware": [
         "屏蔽广告、跟踪器和恶意软件"
       ],
       "Built-in 2FA authenticator": [
         "内置 2FA 验证器"
+      ],
+      "Connect 10 devices at once": [
+        "可同时连接 10 台设备"
+      ],
+      "Full chat history with easy search and favorites": [
+        "完整的聊天记录，方便搜索和收藏"
+      ],
+      "Individual accounts for 6 users": [
+        "为 6 位用户提供独立账户"
+      ],
+      "Individual accounts for you and a partner": [
+        "为您和伴侣提供独立账户"
+      ],
+      "Stronger protection against cyber threats": [
+        "更强大的网络威胁防护"
       ],
       "Unlimited daily chats": [
         "无限聊天次数"
@@ -1335,9 +1370,29 @@
         "黑色星期五"
       ]
     },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "帮助您所爱的人加入隐私革命，我们的超值套装现可享 50% 折扣！"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "加入隐私革命，我们的超值套装现可享 50% 折扣！"
+      ]
+    },
     "BF2025: Offers": {
       "for ${ durationDeal }": [
         "仅限 ${ durationDeal }"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "通过我们的超值限时优惠，节省 ${ savedAmount }！"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "切换到我们的 2 年套餐，节省 ${ savedAmount }！"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "切换到我们的年度套餐，节省 ${ savedAmount }！"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "为您的亲友提供全面的数字保护。"
       ]
     },
     "BF2025: Tooltip": {
@@ -2748,9 +2803,6 @@
       ]
     },
     "Custom frequency option": {
-      "Don't end": [
-        "不结束"
-      ],
       "End after": [
         "结束于"
       ],
@@ -3153,20 +3205,6 @@
     "Duplicate event button tooltip": {
       "Duplicate event": [
         "复制事件"
-      ]
-    },
-    "Duration": {
-      "120 minutes": [
-        "120 分钟"
-      ],
-      "30 minutes": [
-        "30 分钟"
-      ],
-      "60 minutes": [
-        "60 分钟"
-      ],
-      "90 minutes": [
-        "90 分钟"
       ]
     },
     "Edit billing address form note": {
@@ -4809,9 +4847,6 @@
       "30-day money-back guarantee.": [
         "30 天内可退款。"
       ],
-      "A booking slot cannot be added in the past.": [
-        "无法将预约时段添加到过去的时间。"
-      ],
       "A cancellation email will be sent to removed participants.": [
         "活动取消邮件将发送至已移除的参与者"
       ],
@@ -4838,9 +4873,6 @@
       ],
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "VPN 是您的设备与互联网之间的安全加密通道。它能隐藏您的位置和在线活动，避免被互联网服务提供商（ISP）及您访问的网站追踪。"
-      ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "账户因欠费已被限制使用，请联系机构管理员。"
       ],
       "Account successfully updated": [
         "账户已成功更新"
@@ -5916,20 +5948,11 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "您的 ${ BRAND_NAME } 账户已被停用，28 天后将无法收取新邮件，并且网盘分享链接将失效，新文件将无法上传。如需恢复账户正常功能，请付清逾期账单。"
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "您的 ${ BRAND_NAME } 账户已被停用，无法继续收取新邮件，并且网盘分享链接已全部失效，新文件也无法上传。如需恢复账户正常功能，请付清逾期账单。"
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "您的 ${ plan } 订阅将被替换为 ${ PASS_SHORT_APP_NAME } Lifetime。订阅的差价将计入您的账户。${ PASS_SHORT_APP_NAME } 终身优惠没有续订价格，只需一次性付款即可终身访问 ${ PASS_SHORT_APP_NAME }。"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "您的账户有逾期未支付的账单，很快将被限制使用。${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "您的账户有逾期未支付的账单，所有功能均已停用，续费后方可恢复。${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "您的账户有逾期未支付的账单，因此功能已受限。欠费时间过长将导致无法收取邮件，网盘分享链接也将失效。${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "您的地址被禁用，无法向活动参与者发送活动取消邮件。仍要删除该系列活动中的所有活动吗？"
@@ -6331,9 +6354,6 @@
       "Don't show this again": [
         "不再显示此内容"
       ],
-      "Duration": [
-        "时长"
-      ],
       "e.g., Amazon, eBay, Etsy": [
         "例如：Amazon, eBay, Etsy"
       ],
@@ -6612,9 +6632,6 @@
       ],
       "Time zone": [
         "时区"
-      ],
-      "Title": [
-        "标题"
       ],
       "To: ${ toEmail }": [
         "收件人：${ toEmail }"
@@ -10497,9 +10514,6 @@
       "Birthday": [
         "生日"
       ],
-      "Booking page": [
-        "预订页面"
-      ],
       "Calendar": [
         "日历"
       ],
@@ -10589,6 +10603,9 @@
       ],
       "Data recovery": [
         "数据恢复"
+      ],
+      "Date": [
+        "日期"
       ],
       "Day theme": [
         "日间模式"
@@ -10763,6 +10780,9 @@
       ],
       "Link confirmation": [
         "确认打开链接"
+      ],
+      "Location": [
+        "位置"
       ],
       "Make a secure connection your default": [
         "将安全连接设为默认首选"
@@ -10985,6 +11005,12 @@
       ],
       "Summary": [
         "概览"
+      ],
+      "Time": [
+        "时间"
+      ],
+      "Time zone": [
+        "时区"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "启用 ${ DARK_WEB_MONITORING_NAME }"

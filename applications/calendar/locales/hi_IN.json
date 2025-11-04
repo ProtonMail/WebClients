@@ -977,14 +977,85 @@
         "${ storageSize } स्टोरेज"
       ]
     },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "ब्लैक फ्राइडे सेल"
+      ]
+    },
     "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 टीबी डेटा स्टोरेज"
+      ],
+      "3 TB data storage": [
+        "3 टीबी डेटा स्टोरेज"
+      ],
       "Access 15,000+ servers in 120+ countries": [
         "120+ देशो में 15,000+ सर्वर एक्सेस करें"
+      ],
+      "Access advanced AI models": [
+        "उन्नत एआई मॉडल एक्सेस करें"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, और ${ CALENDAR_SHORT_APP_NAME } की सभी प्रीमियम खासियतें"
+      ],
+      "Block ads, trackers, and malware": [
+        "विज्ञापनों, ट्रैकर्स और मालवेयर को ब्लॉक करें"
+      ],
+      "Built-in 2FA authenticator": [
+        "बिल्ट-इन 2-एफए ऑथेंटिकेटर"
+      ],
+      "Connect 10 devices at once": [
+        "एक समय में 10 डिवाइस कनेक्ट करें"
+      ],
+      "Full chat history with easy search and favorites": [
+        "आसान खोज और पसंदीदा के साथ पूरी चैट हिस्ट्री"
+      ],
+      "Individual accounts for 6 users": [
+        "6 उपयोगकर्ताओं के लिए व्यक्तिगत खाते"
+      ],
+      "Individual accounts for you and a partner": [
+        "आपके और एक साथी के लिए व्यक्तिगत खाते"
+      ],
+      "Stronger protection against cyber threats": [
+        "साइबर खतरों के खिलाफ मजबूत सुरक्षा"
+      ],
+      "Unlimited daily chats": [
+        "असीमित दैनिक चैट"
       ]
     },
     "BF2025: Heading alt": {
       "Black Friday": [
         "Black Friday"
+      ]
+    },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "हमारे बेहतरीन-वैल्यू बंडल के साथ अपने प्रियजनों को निजता क्रांति में शामिल होने में मदद करें, अब 50% की छूट पर!"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "हमारे बेहतरीन-वैल्यू बंडल के साथ निजता क्रांति में शामिल हों, अब 50% की छूट पर!"
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "${ durationDeal } के लिए"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "हमारे बेहतरीन-वैल्यू, सीमित समय के डील के साथ ${ savedAmount } सहेजें!"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "हमारे 2 साल के प्लैन पर स्विच करें और ${ savedAmount } सहेजें!"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "हमारे वार्षिक प्लैन पर स्विच करें और ${ savedAmount } सहेजें!"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "अपने समूह को संपूर्ण डिजिटल सुरक्षा दें।"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "खास तौर पर डिज़ाइन किया गया NetShield विज्ञापनों, ट्रैकर्स और मालवेयर को ब्लॉक करके आपके डिवाइस की सुरक्षा करता है और आपकी ब्राउज़िंग को तेज़ करता है।"
       ]
     },
     "Billing cycle option": {
@@ -2285,9 +2356,6 @@
       ]
     },
     "Custom frequency option": {
-      "Don't end": [
-        "समाप्त न करें"
-      ],
       "End after": [
         "के बाद समाप्त करें"
       ],
@@ -2510,20 +2578,6 @@
     "Duplicate event button tooltip": {
       "Duplicate event": [
         "एक-जैसे इवेंट"
-      ]
-    },
-    "Duration": {
-      "120 minutes": [
-        "120 मिनट"
-      ],
-      "30 minutes": [
-        "30 मिनट"
-      ],
-      "60 minutes": [
-        "60 मिनट"
-      ],
-      "90 minutes": [
-        "90 मिनट"
       ]
     },
     "Edit billing address form note": {
@@ -3977,9 +4031,6 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "सिर्फ एक यूज़रनेम, मेलबॉक्स, और इंसान से जुड़े खाते को यूज़र कहते है।"
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "अवैतनिक चालान के कारण खाता पहुंच प्रतिबंधित है। कृपया अपने व्यवस्थापक से संपर्क करें।"
-      ],
       "Account successfully updated": [
         "खाता आधुनिकीकरण सफल हो गया है"
       ],
@@ -4869,17 +4920,8 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "आपका ${ BRAND_NAME } खाता वर्तमान में निलंबित है। 28 दिनों के बाद, ईमेल आपके इनबॉक्स में वितरित नहीं किए जाएंगे, आपके ड्राइव साझाकरण लिंक ब्लॉक कर दिए जाएंगे, और आप नई फ़ाइलें अपलोड नहीं कर पाएंगे। सामान्य सेवा फिर से शुरू करने के लिए, कृपया किसी अतिदेय चालान का भुगतान करें।"
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "आपका ${ BRAND_NAME } खाता वर्तमान में निलंबित है। ईमेल अब आपके इनबॉक्स में वितरित नहीं किए जा रहे हैं। आपके ड्राइव साझाकरण लिंक अब सक्रिय नहीं हैं, और आप नई फ़ाइलें अपलोड नहीं कर सकते। अपने खाते का उपयोग जारी रखने के लिए, कृपया किसी अतिदेय चालान का भुगतान करें।"
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "आपके खाते में कम से कम एक अतिदेय चालान है। जल्द ही आपकी पहुँच प्रतिबंधित हो जाएगी। ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "आपके खाते में कम से कम एक अतिदेय चालान है। आपका खाता प्रतिबंधित है, और भुगतान तक सभी सेवाएं अब अवरुद्ध हैं। ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "आपके खाते में कम से कम एक अतिदेय चालान है। आपका खाता प्रतिबंधित है। निरंतर भुगतान न करने पर आपके ईमेल और शेयरिंग लिंक ब्लॉक हो जाएंगे। ${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "आपका पता अक्षम है। इवेंट रद्द होने का ईमेल इवेंट प्रतिभागीयों को नहीं भेजा जा सकता। फिर भी इस सीरीज़ के सारे इवेंट मिटाएं?"
@@ -5218,9 +5260,6 @@
       "Don't show this again": [
         "फिर से न दिखाएं"
       ],
-      "Duration": [
-        "अवधि"
-      ],
       "Email": [
         "ईमेल"
       ],
@@ -5470,9 +5509,6 @@
       ],
       "Time zone": [
         "समय क्षेत्र"
-      ],
-      "Title": [
-        "टाइटल"
       ],
       "To: ${ toEmail }": [
         "को: ${ toEmail }"
@@ -8456,6 +8492,9 @@
       "Data recovery": [
         "डेटा पुनर्प्राप्ति"
       ],
+      "Date": [
+        "दिनांक"
+      ],
       "Day theme": [
         "दिन का थीम"
       ],
@@ -8590,6 +8629,9 @@
       ],
       "Link confirmation": [
         "लिंक की पुष्टि"
+      ],
+      "Location": [
+        "स्थान"
       ],
       "Merge contacts": [
         "संपर्क मर्ज करें"
@@ -8776,6 +8818,12 @@
       ],
       "Summary": [
         "सार"
+      ],
+      "Time": [
+        "समय"
+      ],
+      "Time zone": [
+        "समय क्षेत्र"
       ],
       "Two-factor authentication": [
         "दो तरीकों से प्रमाणीकरण"

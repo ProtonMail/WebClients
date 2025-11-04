@@ -61,6 +61,9 @@
       "Cancel trial and pay": [
         "Cancel·la la prova i paga"
       ],
+      "Change password": [
+        "Canvia la contrasenya"
+      ],
       "Chat with us": [
         "Xategeu amb nosaltres"
       ],
@@ -130,6 +133,15 @@
       "Edit": [
         "Edita"
       ],
+      "Edit email address": [
+        "Edita l'adreça de correu"
+      ],
+      "Edit phone number": [
+        "Edita el número de telèfon"
+      ],
+      "Edit sign-in details": [
+        "Edita detalls d'inici de sessió"
+      ],
       "Edit subscription": [
         "Edita la subscripció"
       ],
@@ -147,6 +159,9 @@
       ],
       "Get the apps": [
         "Obtén les aplicacions"
+      ],
+      "Get verification code": [
+        "Obtenir codi de verificació"
       ],
       "Go to ${ planOrAppName }": [
         "Aneu a ${ planOrAppName }"
@@ -265,6 +280,12 @@
       "Request a feature": [
         "Demaneu una nova característica"
       ],
+      "Request new code": [
+        "Demana un nou codi"
+      ],
+      "Resend code": [
+        "Reenvia el codi"
+      ],
       "Save": [
         "Desa"
       ],
@@ -337,6 +358,9 @@
       "Try again": [
         "Proveu de nou"
       ],
+      "Try another method": [
+        "Proveu amb un altre mètode"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Habilita ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -381,6 +405,9 @@
       ],
       "Verify": [
         "Verifica"
+      ],
+      "Verify account": [
+        "Verifiqueu el compte"
       ],
       "View invoice": [
         "Mostra la factura"
@@ -2172,6 +2199,9 @@
       "Email is not valid": [
         "El correu electrònic no és vàlid"
       ],
+      "Enter 6 digits": [
+        "Introduïu 6 dígits"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Error al connectar a l'API de Bitcoin."
       ],
@@ -2198,6 +2228,9 @@
       ],
       "Invalid postal code": [
         "Codi de país invàlid"
+      ],
+      "Invalid verification code": [
+        "El codi de verificació no és vàlid."
       ],
       "Invalid ZIP code": [
         "Aquest codi postal no és vàlid"
@@ -2512,6 +2545,23 @@
         "Serveis"
       ]
     },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "Correu electrònic"
+      ],
+      "Manual": [
+        "Manual"
+      ],
+      "No verification method available": [
+        "Cap mètode de verificació disponible"
+      ],
+      "SMS": [
+        "SMS"
+      ]
+    },
     "Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistent d'escriptura ${ BRAND_NAME } Scribe"
@@ -2551,6 +2601,9 @@
       "30-day money-back guarantee.": [
         "30 dies de garantia de reemborsament."
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Un número de telèfon només es pot utilitzar per verificar un sol compte de ${ BRAND_NAME }."
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Un usuari és un compte associat amb un sol nom d'usuari, una bústia de correu i una persona"
       ],
@@ -2584,6 +2637,9 @@
       "Balance from your previous subscription": [
         "Saldo de la vostra subscripció anterior"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Abans de sol·licitar un nou codi de verificació, reviseu la carpeta de correu brossa i si ${ strong } és l'adreça correcta."
+      ],
       "Billing cycle: ${ text }": [
         "Cicle de facturació: ${ text }"
       ],
@@ -2592,6 +2648,9 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Si baixeu a un pla gratuït, perdreu per sempre aquests avantatges, fins i tot si en tornareu a actualitzar."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Feu clic a \"Sol·licitar un nou codi\" per rebre un codi de verificació nou a ${ strong }. Si aquest número de telèfon és incorrecte, feu clic a \"Editar\" per corregir-lo."
       ],
       "Country code": [
         "Codi de país"
@@ -2645,6 +2704,9 @@
       "Each code can only be used once": [
         "Cada codi només es pot utilitzar una vegada"
       ],
+      "Edit email address": [
+        "Edita l'adreça de correu"
+      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "L'allotjament de correu electrònic només està disponible per als dominis que ja teniu. El registre de domini no està disponible actualment a través de ${ BRAND_NAME }. Podeu allotjar correu electrònic per a dominis registrats a qualsevol registrador de dominis."
       ],
@@ -2656,6 +2718,9 @@
       ],
       "Enter the code from your authenticator app": [
         "Introduïu el codi de la vostra aplicació d'autenticació."
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Introduïu el codi de verificació que s’ha enviat a ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Introduïu el codi de verificació. Dígit ${ digit }."
@@ -2672,8 +2737,17 @@
       "Expired": [
         "Caducat"
       ],
+      "Google Pay mark": [
+        "Marca de Google Pay"
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Si teniu problemes per crear el vostre compte, sol·liciteu una invitació i us respondrem en un dia laborable."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Si ho cancel·leu, la subscripció ${ planTitle } no es renovarà en caducar el ${ expiryDate }."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Si no trobeu el correu electrònic a la safata d'entrada, comproveu la vostra carpeta de correu brossa."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Si passeu a un pla inferior, perdreu l'accés a les funcions de pagament de ${ MAIL_APP_NAME } i ${ VPN_APP_NAME }."
@@ -2829,6 +2903,9 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Per a completar el pagament, envieu ${ btcAmountBold } a l'adreça següent."
       ],
+      "To fight spam and abuse, please verify you are human.": [
+        "Per lluitar contra el correu brossa i l'abús, verifiqueu que sou humà."
+      ],
       "Total email addresses": [
         "Adreces de correu totals"
       ],
@@ -2874,11 +2951,20 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Us redireccionarem a PayPal en una pestanya nova del navegador per completar aquesta transacció. Si utilitzeu bloquejadors emergents, inhabiliteu-los per continuar."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Enviarem un codi de verificació nou a ${ strong }"
+      ],
       "Week": [
         "Setmana"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quan configureu l’autenticació de doble factor, proporcionem codis de recuperació que podeu utilitzar per iniciar la sessió si perdeu l’accés a l’aplicació d'autenticació."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Voleu rebre un codi de verificació nou o utilitzar un mètode de verificació alternatiu?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Voleu rebre un codi de verificació nou?"
       ],
       "Writing assistant": [
         "Assistent d'escriptura"
@@ -2899,6 +2985,9 @@
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
         "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendari. Esborreu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit calendaris abans de cancel·lar la subscripció.",
         "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendaris. Esborreu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit calendaris abans de cancel·lar la subscripció."
+      ],
+      "You can now return to the application to continue": [
+        "Ara podeu tornar a l'aplicació per continuar."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Podeu activar les notificacions per obtenir alertes quan arribin missatges de correu electrònic nous en aquesta carpeta."
@@ -2931,17 +3020,20 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "El vostre compte de ${ BRAND_NAME } actualment està suspès. Passats 28 dies, els correus electrònics deixaran de lliurar-se a la vostra safata d'entrada, els enllaços compartits de Drive es bloquejaran i no podreu carregar-hi fitxers nous. Per a restablir el servei normal, pagueu les factures vençudes."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "El vostre compte de ${ BRAND_NAME } actualment està suspès. Els correus electrònics ja no es lliuren a la vostra safata d'entrada. Els vostres enllaços compartits de Drive ja no estan actius i no podeu carregar-hi fitxers nous. Per a continuar utilitzant el vostre compte, pagueu les factures vençudes."
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "La vostra subscripció ${ plan } se substituirà per ${ PASS_SHORT_APP_NAME } Lifetime. El saldo restant s'afegirà al vostre compte. L'oferta de ${ PASS_SHORT_APP_NAME } no té cost de renovació, és un pagament únic per a accedir a ${ PASS_SHORT_APP_NAME } de per vida."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "La pròxima data de facturació és ${ renewalTime }."
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "La pròxima data de facturació és el ${ renewalTime }. Poseu-vos en contacte amb el servei d'assistència si necessiteu un canvi de pla immediat."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "El vostre número de telèfon només s’utilitzarà per a aquesta única verificació."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "El vostre pla programat comença el ${ renewalTime } i es renovarà automàticament cada ${ cycle } mes.",
@@ -3036,6 +3128,9 @@
       ],
       "City": [
         "Ciutat"
+      ],
+      "Code is 6 digits without spaces": [
+        "El codi consta de 6 dígits sense espais"
       ],
       "Colors": [
         "Colors"
@@ -3136,6 +3231,9 @@
       "Payment method": [
         "Forma de pagament"
       ],
+      "Phone number": [
+        "Número de telèfon"
+      ],
       "Postal code": [
         "Codi postal"
       ],
@@ -3171,6 +3269,9 @@
       ],
       "Thomas": [
         "Adrià"
+      ],
+      "Verification code": [
+        "Codi de verificació"
       ],
       "What happened?": [
         "Què ha passat?"
@@ -3272,6 +3373,9 @@
       ],
       "Learn more": [
         "Més informació"
+      ],
+      "Request an invite": [
+        "Demana una invitació"
       ],
       "settings": [
         "preferències"
@@ -4302,6 +4406,9 @@
       "Credit/debit card": [
         "Targeta de crèdit/dèbit"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Nova targeta de crèdit/dèbit"
       ]
@@ -4432,6 +4539,12 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Ja teniu una subscripció a aquest pla. Podeu canviar-la a ${ subscriptionPlatform }."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Aviat se us redirigirà a PayPal per verificar el vostre pagament."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Aviat se us redirigirà per verificar el vostre pagament."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "La moneda s'ha canviat a euros (€) perquè les transferències bancàries SEPA només admeten pagaments en euros."
       ],
@@ -4462,6 +4575,11 @@
         "La vostra targeta s'ha rebutjat. Proveu una altra targeta o poseu-vos en contacte amb el vostre banc per autoritzar el cobrament."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Alguna cosa ha anat malament. La verificació de Google Pay ha fallat."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Crèdit per la part no utilitzada de la vostra subscripció al pla anterior"
@@ -4481,6 +4599,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Transferència bancària - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - targeta que acaba en ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -5022,6 +5143,9 @@
       "Billing details updated": [
         "S'han actualitzat els detalls de facturació."
       ],
+      "Code sent to ${ methodTo }": [
+        "Codi enviat a ${ methodTo }"
+      ],
       "Copied to clipboard": [
         "S'ha copiat al porta-retalls."
       ],
@@ -5039,6 +5163,9 @@
       ],
       "Signature copied to clipboard": [
         "S'ha copiat la signatura al porta-retalls."
+      ],
+      "Verification successful": [
+        "Èxit de verificació"
       ],
       "You have successfully canceled your subscription.": [
         "Heu cancel·lat la vostra subscripció."
@@ -5115,6 +5242,12 @@
     "Title": {
       "${ feature } is now active": [
         "La característica ${ feature } està ara activa."
+      ],
+      "Account restricted": [
+        "S'ha restringit el compte"
+      ],
+      "Account temporarily locked": [
+        "El compte s'ha bloquejat temporalment"
       ],
       "Add credit/debit card": [
         "Afegeix una targeta de crèdit/dèbit"
@@ -5212,8 +5345,14 @@
       "Help center": [
         "Centre d'ajuda"
       ],
+      "Human verification": [
+        "Verificació humana"
+      ],
       "Import emails, calendars, contacts": [
         "Importeu correus, calendaris i contactes"
+      ],
+      "Invalid verification code": [
+        "El codi de verificació no és vàlid."
       ],
       "Minicalendar": [
         "Minicalendari"
@@ -5238,6 +5377,9 @@
       ],
       "Report a problem": [
         "Notifica un problema"
+      ],
+      "Request new code": [
+        "Demana un codi nou"
       ],
       "Select a plan": [
         "Seleccioneu un pla"

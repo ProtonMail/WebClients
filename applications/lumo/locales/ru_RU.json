@@ -224,6 +224,9 @@
       "Search countries": [
         "Поиск стран"
       ],
+      "See plan features": [
+        "Посмотреть возможности тарифа"
+      ],
       "Select ${ planOrAppName }": [
         "Выбрать ${ planOrAppName }"
       ],
@@ -277,6 +280,12 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Включить ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "Upgrade": [
+        "Улучшить"
+      ],
+      "Upgrade now": [
+        "Улучшить сейчас"
       ],
       "Upload and share files": [
         "Загружайте и делитесь файлами"
@@ -353,6 +362,75 @@
         "${ users } пользователей"
       ]
     },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Воспользоваться предложением"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
+      "200 GB storage": [
+        "200 ГБ хранилища"
+      ],
+      "500 GB encrypted storage": [
+        "500 ГБ зашифрованного хранилища"
+      ],
+      "Encrypted password manager": [
+        "Зашифрованный менеджер паролей"
+      ],
+      "Online document editor": [
+        "Онлайн-редактор документов"
+      ],
+      "Protect up to 10 devices": [
+        "Защитите до 10 устройств"
+      ],
+      "Recover previous file versions": [
+        "Восстановить предыдущие версии файла"
+      ],
+      "Short @pm.me address": [
+        "Короткий адрес @pm.me"
+      ],
+      "Stream your favorite content": [
+        "Смотрите любимый контент"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Неограниченное количество папок, ярлыков и фильтров"
+      ],
+      "Use your own email domain": [
+        "Используйте свой собственный домен электронной почты"
+      ],
+      "years": [
+        "лет"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } месяц",
+        "${ n } месяца",
+        "${ n } месяцев",
+        "${ n } месяцев"
+      ],
+      "/ month": [
+        "/ месяц"
+      ],
+      "12 months": [
+        "12 месяцев"
+      ],
+      "15 months": [
+        "15 месяцев"
+      ],
+      "24 months": [
+        "24 месяца"
+      ],
+      "30 months": [
+        "30 месяцев"
+      ],
+      "for ${ durationDeal }": [
+        "за ${ durationDeal }"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Приложения ${ BRAND_NAME }"
@@ -393,12 +471,173 @@
         "Платная версия менеджера паролей"
       ]
     },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "Гарантия возврата средств в течение 30 дней"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Включает поддержку 1 пользовательского домена, 10 адресов электронной почты, 10 алиасов hide-my-email, совместный доступ к календарю и другие преимущества."
+      ]
+    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Приложение для настольных компьютеров ${ MAIL_APP_NAME }"
       ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } и ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } хранилища"
+      ],
+      "1 user account": [
+        "1 аккаунт пользователя"
+      ],
+      "6 user accounts": [
+        "6 аккаунтов пользователя"
+      ],
+      "Admin panel to manage your family": [
+        "Панель администратора для управления вашей семьей"
+      ],
+      "Advanced account protection": [
+        "Расширенная защита аккаунта"
+      ],
+      "Easily add or remove users": [
+        "Легко добавлять или удалять участников"
+      ],
+      "One-time payment, lifetime deal": [
+        "Единовременная оплата, пожизненное предложение"
+      ],
+      "Online document editor": [
+        "Онлайн-редактор документов"
+      ],
+      "Password health alerts": [
+        "Оповещения о надёжности пароля"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Неограниченное количество папок, ярлыков и фильтров"
+      ],
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Неограниченное количество имен пользователей, кредитных карт, псевдонимов hide-my-email и многое другое"
+      ],
       "Use your own email domain": [
         "Используйте свой собственный домен электронной почты"
+      ]
+    },
+    "BF2024: Offers": {
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Продлится через 1 месяц по цене ${ regularAmount }."
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Сохраняйте конфиденциальность в Интернете и получайте доступ к заблокированному контенту. Мы предлагаем свыше 8500 серверов более чем в 110 странах, 10 устройств, высокоскоростной стриминг, блокировщик рекламы и защиту от вредоносных программ, VPN Accelerator и многое другое."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Защитите логины на всех ваших устройствах, включая неограниченное число псевдонимов hide-my-email, совместное пользование, интегрированную двухфакторную аутентификацию, ${ DARK_WEB_MONITORING_NAME } и многое другое."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Защитите переписку и данные в календаре сквозным шифрованием. Вам также будут доступны такие преимущества, как собственные домены, ${ addresses } адрес электронной почты, поддержка пользовательских доменов, ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и многое другое.",
+        "Защитите переписку и данные в календаре сквозным шифрованием. Вам также будут доступны такие преимущества, как собственные домены, ${ addresses } адреса электронной почты, поддержка пользовательских доменов, ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и многое другое.",
+        "Защитите переписку и данные в календаре сквозным шифрованием. Вам также будут доступны такие преимущества, как собственные домены, ${ addresses } адреса электронной почты, поддержка пользовательских доменов, ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и многое другое.",
+        "Защитите переписку и данные в календаре сквозным шифрованием. Вам также будут доступны такие преимущества, как собственные домены, ${ addresses } адресов электронной почты, поддержка пользовательских доменов, ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и многое другое."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Защитите переписку и данные в календаре сквозным шифрованием. В комплекте — ${ addresses } адрес электронной почты, подключение ваших доменов, неограниченное количество псевдонимов hide-my-email и многое другое.",
+        "Защитите переписку и данные в календаре сквозным шифрованием. В комплекте — ${ addresses } адреса электронной почты, подключение ваших доменов, неограниченное количество псевдонимов hide-my-email и многое другое.",
+        "Защитите переписку и данные в календаре сквозным шифрованием. В комплекте — ${ addresses } адресов электронной почты, подключение ваших доменов, неограниченное количество псевдонимов hide-my-email и многое другое.",
+        "Защитите переписку и данные в календаре сквозным шифрованием. В комплекте — ${ addresses } адресов электронной почты, подключение ваших доменов, неограниченное количество псевдонимов hide-my-email и многое другое."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Защитите переписку и данные в календаре сквозным шифрованием. Вам доступны 15 адресов электронной почты, поддержка пользовательских доменов адреса электронной почты, помощник по написанию ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и не только."
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Защитите свои файлы с помощью зашифрованного облачного хранилища. Включает онлайн-редактор документов, резервное копирование фотографий, историю версий, зашифрованный обмен файлами и многое другое."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "Объём хранилища распределяется между всеми приложениями ${ BRAND_NAME }."
+      ]
+    },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "Распродажа «Чёрная пятница»"
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 ТБ для хранения данных"
+      ],
+      "3 TB data storage": [
+        "Хранилище на 3 ТБ"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Доступ к более чем 15 000 серверам в более чем 120 странах"
+      ],
+      "Access advanced AI models": [
+        "Доступ к расширенным моделям ИИ"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Все премиум-функции ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Block ads, trackers, and malware": [
+        "Блокируйте рекламу, трекеры и вредоносные программы"
+      ],
+      "Built-in 2FA authenticator": [
+        "Встроенная функция двухфакторной аутентификации"
+      ],
+      "Connect 10 devices at once": [
+        "Подключение 10 устройств одновременно"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Полная история чата с удобным поиском и избранным"
+      ],
+      "Individual accounts for 6 users": [
+        "Индивидуальные аккаунты для 6 пользователей"
+      ],
+      "Individual accounts for you and a partner": [
+        "Индивидуальные аккаунты для вас и партнёра"
+      ],
+      "Stronger protection against cyber threats": [
+        "Усиленная защита от киберугроз"
+      ],
+      "Unlimited daily chats": [
+        "Неограниченное количество ежедневных чатов"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Помогите своим близким присоединиться к революции в области конфиденциальности с нашими самыми выгодными комплектами, теперь со скидкой 50 %!"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Присоединяйтесь к революции в области конфиденциальности с нашими самыми выгодными комплектами, теперь со скидкой 50 %!"
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "за ${ durationDeal }"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "Экономьте ${ savedAmount } с нашим самым выгодным предложением с ограниченным сроком действия!"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "Перейдите на наш 2-летний план и сэкономьте ${ savedAmount }!"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "Перейдите на наш годовой план и сэкономьте ${ savedAmount }!"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "Подарите своим близким полную цифровую защиту."
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Специально разработанная функция NetShield защищает ваше устройство и ускоряет загрузку страниц, блокируя рекламу, трекеры и вредоносные программы."
       ]
     },
     "Billing cycle option": {
@@ -798,11 +1037,6 @@
         "Поиск в Интернете"
       ]
     },
-    "collider_2025: Guest Upsell": {
-      "Your chat history won't be saved. For extended chat history and other premium features, ": [
-        "Ваша история чата не будет сохранена. Для расширенной истории чата и других премиум-функций, "
-      ]
-    },
     "collider_2025: Header": {
       "Tell us more": [
         "Расскажи подробнее"
@@ -981,14 +1215,8 @@
       ]
     },
     "collider_2025: Link": {
-      " contact your admin": [
-        " обратитесь к администратору"
-      ],
       "add ${ LUMO_SHORT_APP_NAME } Plus": [
         "добавить ${ LUMO_SHORT_APP_NAME } Plus"
-      ],
-      "Add ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Добавить ${ LUMO_SHORT_APP_NAME } Plus"
       ],
       "Already have an account? ${ linkSignup }": [
         "У вас уже есть аккаунт? ${ linkSignup }"
@@ -999,9 +1227,6 @@
       "create a free account.": [
         "создать бесплатный аккаунт."
       ],
-      "Get ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Получить ${ LUMO_SHORT_APP_NAME } Plus"
-      ],
       "New chat": [
         "Новый чат"
       ],
@@ -1010,9 +1235,6 @@
       ],
       "Upgrade": [
         "Перейти"
-      ],
-      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Улучшить до ${ LUMO_SHORT_APP_NAME } Plus"
       ],
       "upgrade to ${ LUMO_SHORT_APP_NAME } Plus.": [
         "улучшить до ${ LUMO_SHORT_APP_NAME } Plus."
@@ -1077,11 +1299,6 @@
       ],
       "You're on the waitlist": [
         "Вы в списке ожидания"
-      ]
-    },
-    "collider_2025: Tooltip": {
-      "contact your admin to upgrade": [
-        "обратитесь к администратору для обновления"
       ]
     },
     "collider_2025: Top nav link": {
@@ -2286,6 +2503,14 @@
         "Вы подписаны на ${ PLAN_NAMES[PLANS.PASS] } по специальной цене ${ price } в год. Перейдя на бесплатный план, вы навсегда потеряете скидку, даже если вы улучшите снова в будущем."
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Подробная история версий"
+      ],
+      "Priority support": [
+        "Приоритетная поддержка"
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Текстовые поля являются необязательными. Информация, которую вы предоставите в этой форме, будет отображаться только в счетах, выставляемых в будущем, и не повлияет на существующие счета."
@@ -2462,6 +2687,21 @@
         "Изображение не выбрано"
       ]
     },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "Хранилище на 3 ТБ"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Общее хранилище для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME } доступно всем членам семьи."
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Up to 6 users": [
+        "До 6 пользователей"
+      ]
+    },
     "familyOffer_2023:Error": {
       "Family group not recognized. Try again.": [
         "Семейная группа не найдена. Попробуйте еще раз."
@@ -2492,6 +2732,17 @@
       ],
       "Delete organization?": [
         "Удалить организацию?"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Включает 2700 серверов в более чем 65 странах с возможностью подключения до 10 устройств, доступ к стриминговым платформам со всего мира, блокировщик рекламы и вредоносного ПО и другие преимущества."
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Включает поддержку 3 своих доменов, 90 адресов электронной почты, неограниченного количества псевдонимов hide-my-email, совместный доступ к календарю и другое."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Защитите свои материалы при помощи зашифрованного облачного хранилища. Используйте автоматическую синхронизацию, зашифрованный обмен файлами и многое другое."
       ]
     },
     "Feature": {
@@ -2967,6 +3218,9 @@
       "Total VPN connections": [
         "Всего подключений к VPN"
       ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Улучшить сейчас, чтобы получить платные функции, программное обеспечение и хранилище по специальной цене"
+      ],
       "User activated": [
         "Пользователь активирован"
       ],
@@ -3068,9 +3322,6 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Ваш аккаунт ${ BRAND_NAME } в настоящее время приостановлен. По истечении 28 дней электронные письма больше не будут доставляться в ваш почтовый ящик, ссылки на общий доступ к Drive будут заблокированы, и вы не сможете загружать новые файлы. Чтобы возобновить нормальное обслуживание, пожалуйста, оплатите все просроченные счета."
-      ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Ваш аккаунт ${ BRAND_NAME } в настоящее время приостановлен. Письма больше не доставляются в ваш почтовый ящик. Ссылки на общий доступ к дискам больше не активны, и вы не можете загружать новые файлы. Чтобы продолжить пользоваться аккаунтом, пожалуйста, оплатите все просроченные счета."
       ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Ваша подписка ${ plan } будет заменена на пожизненный ${ PASS_SHORT_APP_NAME } . Остаток средств вашей подписки будет добавлен в вашу учетную запись. ${ PASS_SHORT_APP_NAME } действует без платы за продление, это единократная оплата за пожизненный доступ к ${ PASS_SHORT_APP_NAME }."
@@ -4394,6 +4645,26 @@
         "Политики команды"
       ]
     },
+    "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Все платные функции. 6 пользователей. 1 простая подписка."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Счет выставляется ежегодно по цене ${ yearlyPrice }. Сэкономьте ${ yearlySavedPrice } с ${ passFamilyPlanName } (по сравнению с 6 индивидуальными подписками на ${ passPlusPlanName })."
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "Эксклюзивное предложение доступно только для ранних сторонников ${ PASS_APP_NAME }."
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "Получить за ${ monthlyPrice }"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "Представляем ${ passFamilyPlanName }"
+      ],
+      "Limited-time deal.": [
+        "Ограниченное по времени предложение."
+      ]
+    },
     "passwordless": {
       "Non-private users can be promoted to admin when they have setup keys": [
         "Нечастные пользователи могут быть переведены в разряд администраторов, если у них есть ключи настройки"
@@ -4688,7 +4959,58 @@
         "Доступ предоставил ${ ownerName }"
       ]
     },
+    "specialoffer: Action": {
+      "Close": [
+        "Закрыть"
+      ],
+      "Don't show this offer again": [
+        "Больше не показывать"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Перейти на Unlimited"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } день",
+        "${ days } дня",
+        "${ days } дней",
+        "${ days } дней"
+      ],
+      "${ hours } hour": [
+        "${ hours } час",
+        "${ hours } часа",
+        "${ hours } часов",
+        "${ hours } часов"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } минута",
+        "${ minutes } минуты",
+        "${ minutes } минут",
+        "${ minutes } минут"
+      ],
+      "${ seconds } second": [
+        "${ seconds } секунда",
+        "${ seconds } секунды",
+        "${ seconds } секунд",
+        "${ seconds } секунд"
+      ]
+    },
     "specialoffer: Deal details": {
+      "3 TB": [
+        "3 ТБ"
+      ],
+      "6 users": [
+        "6 пользователей"
+      ],
+      "All paid Mail and Calendar features": [
+        "Все платные функции Mail и Calendar"
+      ],
+      "High speed VPN": [
+        "Высокоскоростной VPN"
+      ],
       "Highest VPN speed": [
         "Высочайшая скорость VPN"
       ],
@@ -4701,8 +5023,25 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "Премиум ${ appName1 } и ${ appName2 } и ${ appName3 }"
       ],
+      "Premium early access": [
+        "Ранний доступ"
+      ],
+      "Secure cloud storage": [
+        "Безопасное облачное хранилище"
+      ],
       "Secure streaming": [
         "Защищенный стриминг"
+      ],
+      "Support online privacy": [
+        "Обеспечьте свою конфиденциальность в Интернете"
+      ]
+    },
+    "specialoffer: Footer": {
+      "The special offer is valid for the first 2 years.": [
+        "Специальное предложение действительно в течение первых 2 лет"
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Ваша подписка будет продлеваться каждый год по фиксированной цене."
       ]
     },
     "specialoffer: Link": {
@@ -4711,6 +5050,102 @@
       ],
       "Upgrade": [
         "Сменить тариф"
+      ]
+    },
+    "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } месяц",
+        "${ n } месяца",
+        "${ n } месяцев",
+        "${ n } месяцев"
+      ],
+      "/ month": [
+        "/ месяц"
+      ],
+      "1 year": [
+        "1 год"
+      ],
+      "15 months": [
+        "15 месяцев"
+      ],
+      "2 years": [
+        "2 года"
+      ],
+      "30 months": [
+        "30 месяцев"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "Оплата ${ amount } за 1 месяц."
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "Оплата ${ amount } за 12 месяцев."
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "Оплата ${ amount } за 15 месяцев."
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "Оплата ${ amount } за 24 месяца."
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "Оплата ${ amount } за 30 месяцев."
+      ],
+      "Get the deal": [
+        "Воспользоваться предложением"
+      ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Продлевается через 1 год по сниженной цене: ${ discountedAmount } вместо ${ regularAmount } (скидка ${ discount } %)"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Продлевается через 2 года по сниженной цене: ${ discountedAmount } вместо ${ regularAmount } (скидка ${ discount } %)"
+      ],
+      "Save ${ discount }%": [
+        "Сэкономьте ${ discount } %"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "Цена без скидки: ${ amount } за 1 месяц."
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "Цена без скидки: ${ amount } за 12 месяцев."
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "Цена без скидки: ${ amount } за 15 месяцев."
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "Цена без скидки: ${ amount } за 24 месяца."
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "Цена без скидки: ${ amount } за 30 месяцев."
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Специальное предложение действительно в течение первых 2 лет"
+      ]
+    },
+    "specialoffer: Title": {
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "Переходите на тариф ${ planName } и экономьте больше целых 2 года"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Сохраняйте конфиденциальность в Интернете и получайте доступ к заблокированному контенту. Включает 1700 серверов с высокой скоростью более чем в 60 странах, 10 VPN-подключений, доступ к стриминговым платформам со всего мира, блокировщик рекламы, функцию защиты от вредоносных программ и другие преимущества."
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Сохраняйте конфиденциальность в Интернете и получайте доступ к заблокированному контенту. Включает 1700 серверов с высокой скоростью более чем в 60 странах, 10 VPN-подключений, доступ к стриминговым платформам со всего мира, блокировщик рекламы, функцию защиты от вредоносных программ и другие преимущества."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Все наших платные сервисы с максимальными лимитами: 100 адресов электронной почты, поддержка 10 своих доменов и неограниченного числа псевдонимов hide-my-email, совместный доступ к календарю, зашифрованное облачное хранилище и обмен файлами, и другое."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Включает поддержку 3 своих доменов, 15 адресов электронной почты, неограниченного количества псевдонимов hide-my-email, совместный доступ к календарю и другие преимущества."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Идеально подходит семьям и небольшим командам. У каждого участника будут свои почтовый ящик и алиасы. Необходимо иметь свой домен."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Получайте платные версии всех сервисов, которые мы выпустим в будущем, а также ранний доступ ко всем новым функциям и продуктам без дополнительной платы."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Защитите свои материалы при помощи зашифрованного облачного хранилища. Используйте автоматическую синхронизацию, зашифрованный обмен файлами и многое другое."
       ]
     },
     "Spotlight": {
@@ -4986,6 +5421,20 @@
         "на пользователя в месяц"
       ]
     },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Создавайте надежные данные для входа на всех устройствах. Вам будут доступны неограниченное количество псевдонимов, 20 хранилищ, встроенная двухфакторная аутентификация, автозаполнение данных кредитной карты и многое другое."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Включает 2950 серверов в более чем 65 странах с возможностью подключения до 10 устройств, доступ к стриминговым платформам со всего мира, блокировщик рекламы и вредоносного ПО и другие преимущества."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Включает поддержку 1 пользовательского домена, 10 адресов электронной почты, 10 алиасов hide-my-email, совместный доступ к календарю и другие преимущества."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Защитите свои материалы при помощи зашифрованного облачного хранилища. Вам будут доступны история версий, зашифрованный обмен файлами и многое другое."
+      ]
+    },
     "Tab subscription modal": {
       "For businesses": [
         "Для предприятий"
@@ -5186,6 +5635,9 @@
       ],
       "You can now create unlimited folders and labels": [
         "Теперь вы можете создавать неограниченное количество папок и ярлыков."
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Ваша бесплатная пробная версия ${ planName } заканчивается ${ textDate }"
       ],
       "Your plan": [
         "Ваш тариф"

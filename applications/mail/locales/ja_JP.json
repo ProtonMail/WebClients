@@ -4360,6 +4360,9 @@
       "/month": [
         "/ 月"
       ],
+      "2 TB of storage to share": [
+        "2 TBのストレージを共有"
+      ],
       "2 user accounts": [
         "2 ユーザーアカウント"
       ],
@@ -6661,9 +6664,6 @@
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "最大 10 台のデバイスで 6,500 台以上の高速サーバーにアクセスし、ブラウジングデータを安全に保ちます。 ${ ios }、 ${ android }、 ${ appleTV }、 ${ desktop }で利用できます。"
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "未払いの請求があるためアクセスが制限されています。管理者に問い合わせてください。"
-      ],
       "Account successfully updated": [
         "アカウントが正常に更新されました。"
       ],
@@ -7266,6 +7266,9 @@
       ],
       "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
         "請求書には「${ suggestedLabelName }」のような色分けされたラベルを付け、支払いが完了したら、ラベルを「${ suggestedPaidLabelName }」に変更しましょう。"
+      ],
+      "Google Pay mark": [
+        "Google Pay マーク"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "政府とISPも、あなたのオンライン上の活動を監視することができます。IPアドレスを隠し、活動内容を暗号化することで、お客様のブラウジングはプライベートになります。"
@@ -8683,20 +8686,11 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "あなたの ${ BRAND_NAME } アカウントは、現在停止されています。28 日が経過すると、メールが受信トレイに届かなくなり、Drive の共有リンクがブロックされ、新しいファイルをアップロードできなくなります。通常のサービスを再開するには、未払いの請求をお支払いください。"
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "あなたの ${ BRAND_NAME } アカウントは、現在停止されています。メールが受信トレイに届かなくなりました。Drive の共有リンクが無効になり、新しいファイルをアップロードできません。アカウントの使用を継続するには、未払いの請求をお支払いください。"
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ plan } サブスクリプションは ${ PASS_SHORT_APP_NAME } Lifetime に置き換えられます。サブスクリプションの残高は、お客様のアカウントに追加されます。${ PASS_SHORT_APP_NAME } Lifetimeプランには更新価格はなく、1度の支払いで${ PASS_SHORT_APP_NAME } への生涯アクセスが得られます。"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "アカウントに少なくとも1つの期限切れの請求書があるため、アクセスが制限されます。${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "お客様のアカウントには1つ以上期限が過ぎている請求書があります。お支払いを確認できるまで全てのサービスにおいて制限が課されます。 ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "あなたのアカウントには未払いの請求があり、アカウントが制限されています。このまま支払いが行われなければ、メールやリンクの共有がブロックされます。${ payInvoiceLink }"
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "あなたのブラウザは執筆アシスタントをサポートしていません。サーバーでの実行をお試しください。"
@@ -9128,6 +9122,12 @@
       "Also archive": [
         "同時にアーカイブ"
       ],
+      "Always label sender's emails": [
+        "この差出人のメールを常にラベル付け"
+      ],
+      "Always move sender's emails": [
+        "この差出人のメールを常に移動"
+      ],
       "AND": [
         "かつ"
       ],
@@ -9506,6 +9506,9 @@
       "Move ${ sidebarElementName }": [
         "${ sidebarElementName } へ移動"
       ],
+      "Move messages to": [
+        "メッセージを移動"
+      ],
       "Move to": [
         "移動先"
       ],
@@ -9547,9 +9550,6 @@
       ],
       "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
         "重要なメッセージを見逃す心配はもうありません！ これらは${ primaryCopy }の下に表示されます。その他の項目はすべてカテゴリ別に整理されているため、簡単に見つけることができ、お客様の受信トレイを煩雑にすることもありません。"
-      ],
-      "No results found": [
-        "結果が見つかりません"
       ],
       "Non-promotional content and news": [
         "プロモーション以外のコンテンツおよびニュース"
@@ -11970,6 +11970,9 @@
       "Credit/debit card": [
         "クレジット/デビット カード"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "新しいクレジットカード/デビットカード"
       ]
@@ -12094,11 +12097,20 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "お客様は既にこのプランのサブスクリプションを契約済みです。${ subscriptionPlatform }でサブスクリプションを変更できます。"
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "支払いの検証のため、まもなく PayPal のサイトへリダイレクトされます。"
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "支払いの検証のため、まもなくリダイレクトされます。"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "お客様の通貨はユーロ (€) に変更されました。これは、SEPA銀行振込がユーロ建ての支払いのみをサポートしているためです。"
       ],
       "Your payment is still being processed": [
         "お支払いが現在処理中です"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "お客様のサブスクリプションには現在、既存の割引が適用されています。この新しいプロモーションに移行すると、既存の割引は適用されなくなります。"
       ]
     },
     "Payments.Error": {
@@ -12121,6 +12133,11 @@
         "あなたのカードは拒否されました。 別のカードを試すか、銀行に問い合わせて請求を承認してください。"
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "何か問題が発生しました。Google Payの認証に失敗しました。"
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "以前のサブスクリプションプランの未使用分のクレジット"
@@ -12140,6 +12157,9 @@
       ],
       "Bank transfer - ${ details }": [
         "銀行振込 - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - 末尾が${ paymentMethod.Details.Last4 }のカード"
       ]
     },
     "Payments.Sepa": {
@@ -14560,6 +14580,12 @@
       "Create contact": [
         "連絡先の作成"
       ],
+      "Create folder \"${ search }\"": [
+        "「${ search }」フォルダを作成"
+      ],
+      "Create label \"${ search }\"": [
+        "「${ search }」ラベルを作成"
+      ],
       "Create new group": [
         "新しいグループを作成"
       ],
@@ -14824,9 +14850,6 @@
       "Label as": [
         "ラベル付け"
       ],
-      "Label message as": [
-        "メッセージにラベル付け"
-      ],
       "Label options": [
         "ラベルオプション"
       ],
@@ -14910,12 +14933,6 @@
       ],
       "Move all messages to trash": [
         "すべてのメッセージをごみ箱へ移動"
-      ],
-      "Move message to": [
-        "メッセージを移動"
-      ],
-      "Move messages to": [
-        "メッセージを移動"
       ],
       "Move to": [
         "移動先"

@@ -507,6 +507,9 @@
       "Loading link": [
         "Завантаження посилання"
       ],
+      "Make a copy": [
+        "Зробити копію"
+      ],
       "Manage folders": [
         "Керувати теками"
       ],
@@ -1210,9 +1213,50 @@
         "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адрес електронної пошти, підтримку власних доменів електронної пошти, необмежену кількість псевдонімів Hide-my-email та інші можливості."
       ]
     },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "Розпродаж у Чорну П'ятницю"
+      ]
+    },
     "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 ТБ сховища даних"
+      ],
+      "3 TB data storage": [
+        "3 ТБ сховища даних"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Доступ до понад 15 000 серверів у понад 120 країнах"
+      ],
+      "Access advanced AI models": [
+        "Доступ до розширених моделей ШІ"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Усі преміум функції ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } та ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Block ads, trackers, and malware": [
         "Блокування реклами, трекерів і шкідливих програм"
+      ],
+      "Built-in 2FA authenticator": [
+        "Вбудований 2FA автентифікатор"
+      ],
+      "Connect 10 devices at once": [
+        "Підключіть 10 пристроїв одночасно"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Повна історія чатів зі зручним пошуком та обраним"
+      ],
+      "Individual accounts for 6 users": [
+        "Індивідуальні облікові записи для 6 користувачів"
+      ],
+      "Individual accounts for you and a partner": [
+        "Індивідуальні облікові записи для вас та партнера"
+      ],
+      "Stronger protection against cyber threats": [
+        "Сильніший захист від кіберзагроз"
+      ],
+      "Unlimited daily chats": [
+        "Необмежена кількість щоденних чатів"
       ]
     },
     "BF2025: Heading alt": {
@@ -1220,9 +1264,29 @@
         "Black Friday"
       ]
     },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Допоможіть своїм близьким приєднатися до революції приватності з нашими найвигіднішими наборами, зараз зі знижкою 50%!"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Приєднайтеся до революції приватності з нашими найвигіднішими наборами, зараз зі знижкою 50%!"
+      ]
+    },
     "BF2025: Offers": {
       "for ${ durationDeal }": [
         "за ${ durationDeal }"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "Заощаджуйте ${ savedAmount } з нашою найвигіднішою пропозицією обмеженого часу!"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "Перейдіть на наш 2-річний тарифний план та заощадьте ${ savedAmount }!"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "Перейдіть на наш річний тарифний план та заощадьте ${ savedAmount }!"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "Надайте своєму «племені» повний цифровий захист."
       ]
     },
     "BF2025: Tooltip": {
@@ -4335,9 +4399,6 @@
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
         "VPN шифрує ваше з’єднання та приховує вашу IP-адресу, що значно ускладнює відстеження або моніторинг вашої активності в Інтернеті."
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Доступ до облікового запису обмежений через несплачені рахунки. Будь ласка, зверніться до свого адміністратора."
-      ],
       "Account successfully updated": [
         "Обліковий запис успішно оновлено"
       ],
@@ -5727,17 +5788,8 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Ваш обліковий запис ${ BRAND_NAME } наразі призупинено. За 28 днів електронні листи перестануть надходити до вашої поштової скриньки, посилання на спільний доступ до Drive будуть заблоковані, і ви не зможете завантажувати нові файли. Щоб відновити звичайну роботу, будь ласка, сплатіть несплачені рахунки."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Ваш обліковий запис ${ BRAND_NAME } наразі призупинено. Електронні листи більше не доставляються до вашої поштової скриньки. Ваші посилання на спільний доступ до Drive більше не активні, і ви не можете завантажувати нові файли. Щоб продовжити користуватися обліковим записом, будь ласка, сплатіть несплачені рахунки."
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ваш обліковий запис має несплачені рахунки. Ваш доступ невдовзі буде обмежено. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Ваш обліковий запис має несплачені рахунки. У зв'язку з цим його роботу обмежено, а всі послуги наразі заблоковані, доки не буде проведено оплату. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Ваш обліковий запис має несплачені рахунки, тому його роботу обмежено. Подальша несплата призведе до блокування ваших електронних листів і посилань спільного доступу. ${ payInvoiceLink }"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Ваші дані для імпорту з ${ importedEmailAddressStrong } до облікового запису ${ BRAND_NAME } готові."

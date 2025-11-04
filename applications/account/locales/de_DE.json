@@ -753,6 +753,9 @@
       "Get a new encrypted email address": [
         "Erhalte eine neue verschlüsselte E-Mail-Adresse"
       ],
+      "Get Deal": [
+        "Angebot nutzen"
+      ],
       "Get in touch": [
         "Kontakt aufnehmen"
       ],
@@ -4927,11 +4930,29 @@
       ]
     },
     "Duration": {
+      "1.5h": [
+        "1,5 Std."
+      ],
       "120 minutes": [
         "120 Minuten"
       ],
+      "15 minutes": [
+        "15 Minuten"
+      ],
+      "15m": [
+        "15 Min."
+      ],
+      "1h": [
+        "1 Std."
+      ],
+      "2h": [
+        "2 Std."
+      ],
       "30 minutes": [
         "30 Minuten"
+      ],
+      "30m": [
+        "30 Min."
       ],
       "60 minutes": [
         "60 Minuten"
@@ -5920,6 +5941,9 @@
       "Failed to load the STL preview": [
         "Das Laden der STL-Vorschau ist fehlgeschlagen"
       ],
+      "Failed to lookup server. Please try again": [
+        "Der Server konnte nicht gefunden werden. Bitte versuche es erneut."
+      ],
       "Failed to process the logo": [
         "Fehler beim Verarbeiten des Logos"
       ],
@@ -6205,6 +6229,9 @@
       "Request timed out": [
         "Zeitüberschreitung bei der Anfrage"
       ],
+      "Server not found": [
+        "Server nicht gefunden"
+      ],
       "Session expired. Please refresh the page.": [
         "Die Sitzung ist abgelaufen. Bitte aktualisiere die Seite."
       ],
@@ -6309,6 +6336,12 @@
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Um nicht-private Benutzerkonten zu erstellen und auf ihre Konten zuzugreifen, musst du deine Administratorrechte wiederherstellen."
+      ],
+      "Too many requests. Please try again after ${ date }": [
+        "Zu viele Anfragen. Bitte versuche es nach dem ${ date } erneut."
+      ],
+      "Too many requests. Please try again later": [
+        "Zu viele Anfragen. Bitte versuche es später erneut."
       ],
       "Trusted keys are not valid for sending": [
         "Die vertrauenswürdigen Schlüssel sind für den Versand nicht gültig"
@@ -8533,9 +8566,6 @@
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Greife auf deine Passwörter zu und schütze deine Online-Identitäten nahtlos über deine Geräte hinweg. Lade die entsprechenden ${ PASS_APP_NAME } Apps und Erweiterungen herunter und installiere sie."
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Der Zugriff auf dein Konto wurde aufgrund noch offener Rechnungen eingeschränkt. Bitte wende dich an deinen Administrator."
-      ],
       "Account monitor": [
         "Kontoüberwachung"
       ],
@@ -9459,6 +9489,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Gehe zu deinem Identitätsanbieter, besorge die SAML-Metadaten für ${ appName } und importiere sie hier."
+      ],
+      "Google Pay mark": [
+        "Google Pay markieren"
       ],
       "Got it": [
         "Verstanden"
@@ -10485,6 +10518,9 @@
       "Some keys successfully reactivated": [
         "Einige Schlüssel wurden erfolgreich wiederhergestellt"
       ],
+      "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
+        "Einige Server erscheinen möglicherweise nicht in der obigen Liste. Suche nach Servernamen (z. B. AT#62), um sie zu finden."
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Gib die Domain an, die sich mit SAML SSO authentifizieren darf."
       ],
@@ -11470,9 +11506,6 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Dein ${ BRAND_NAME }-Konto ist derzeit gesperrt. Nach 28 Tagen werden keine E-Mails mehr an deinen Posteingang zugestellt, deine Drive-Freigabelinks werden blockiert, und du kannst keine neuen Dateien mehr hochladen. Um dein Konto wieder normal nutzen zu können, bezahle bitte alle überfälligen Rechnungen."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Dein ${ BRAND_NAME }-Konto ist derzeit gesperrt. E-Mails werden nicht mehr an deinen Posteingang zugestellt. Deine Drive-Freigabelinks sind nicht mehr aktiv und du kannst keine neuen Dateien hochladen. Um dein Konto weiterhin zu nutzen, bezahle bitte alle überfälligen Rechnungen."
-      ],
       "Your ${ BRAND_NAME } password": [
         "Dein ${ BRAND_NAME } Passwort"
       ],
@@ -11484,12 +11517,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Dein Konto weist mindestens eine überfällige Rechnung auf. Dein Zugang wird in Kürze eingeschränkt. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Dein Konto hat mindestens eine überfällige Rechnung. Dein Konto ist eingeschränkt und alle Dienste sind nun bis zur Zahlung gesperrt. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Dein Konto hat mindestens eine überfällige Rechnung. Dein Konto ist eingeschränkt. Bei anhaltender Nichtbezahlung werden deine E-Mails und Freigabelinks gesperrt. ${ payInvoiceLink }"
       ],
       "Your account has been successfully updated": [
         "Dein Konto wurde erfolgreich aktualisiert."
@@ -13187,6 +13214,9 @@
       ],
       "Sequences": [
         "Sequenzen"
+      ],
+      "Server name": [
+        "Servername"
       ],
       "Share your referral link": [
         "Teile deinen Empfehlungslink"
@@ -16503,17 +16533,23 @@
       "Based in Switzerland, GDPR compliant": [
         "Sitz in der Schweiz, DSGVO-konform"
       ],
-      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
-        "Aber du kannst ${ discount } Rabatt erhalten, wenn du auf **${ upsellPlanTitle }** upgradest — es kostet nur ${ relativePrice } extra pro Monat."
+      "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Aber du kannst ${ discountPercentString } Rabatt erhalten, wenn du auf **${ upsellPlanTitle }** upgradest — es kostet nur zusätzlich ${ relativePrice } pro Monat."
       ],
-      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }**.": [
-        "Aber du kannst ${ discount } Rabatt erhalten, wenn du auf **${ upsellPlanTitle }** upgradest."
+      "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }**.": [
+        "Aber du kannst ${ discountPercentString } Rabatt erhalten, wenn du auf **${ upsellPlanTitle }** upgradest."
       ],
       "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Aber du kannst **${ unlockPlanTitle }** und weitere ${ BRAND_NAME }-Dienste freischalten, indem du auf **${ upsellPlanTitle }** upgradest - es kostet nur ${ relativePrice } zusätzlich pro Monat."
       ],
       "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Aber du kannst **${ unlockPlanTitle }** und weitere ${ BRAND_NAME }-Dienste freischalten, indem du auf **${ upsellPlanTitle }** upgradest."
+      ],
+      "But you can upgrade to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Aber du kannst auf **${ upsellPlanTitle }** upgraden — es kostet nur zusätzlich ${ relativePrice } pro Monat."
+      ],
+      "But you can upgrade to **${ upsellPlanTitle }**.": [
+        "Aber du kannst auf **${ upsellPlanTitle }** upgraden."
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
         "Wenn du fortfährst, erklärst du dich mit unseren ${ termsAndConditionsLink } und ${ privacyPolicyLink } einverstanden."
@@ -16872,6 +16908,9 @@
       "Credit/debit card": [
         "Kredit-/Debitkarte"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Neue Kredit-/Debitkarte"
       ]
@@ -17023,6 +17062,12 @@
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Du wirst mit ${ amountToCharge } von der von dir gewählten Zahlungsmethode belastet."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Du wirst in Kürze zu PayPal weitergeleitet, um deine Zahlung zu bestätigen."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Du wirst in Kürze weitergeleitet, um deine Zahlung zu bestätigen."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Deine Währung wurde zu Euro (€) geändert, da SEPA-Banküberweisungen Zahlungen nur in Euro unterstützen."
       ],
@@ -17053,6 +17098,11 @@
         "Deine Karte wurde abgelehnt. Bitte versuche es mit einer anderen Karte oder wende dich an deine Bank, um die Belastung zu autorisieren."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Etwas ist schiefgelaufen. Die Google Pay-Verifizierung ist fehlgeschlagen."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Gutschrift für den ungenutzten Teil deines vorherigen Abonnements"
@@ -17072,6 +17122,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Banküberweisung - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - Karte endet mit ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -17195,6 +17248,9 @@
       ],
       "E.g., ": [
         "Z. B. "
+      ],
+      "e.g., AT#62": [
+        "z.B. AT#62"
       ],
       "Email address": [
         "E-Mail-Adresse"
@@ -17818,6 +17874,11 @@
       ],
       "Scopes cannot have the same value": [
         "Bereiche dürfen nicht denselben Wert haben"
+      ]
+    },
+    "retention_policy_2025_Hint": {
+      "${ currentLength }/${ MAX_TITLE_LENGTH } characters": [
+        "${ currentLength }/${ MAX_TITLE_LENGTH } Zeichen"
       ]
     },
     "retention_policy_2025_Info": {
@@ -22292,6 +22353,9 @@
       ],
       "Schedule send:": [
         "Senden planen:"
+      ],
+      "Search for additional servers": [
+        "Weitere Server suchen"
       ],
       "Secure email based in Switzerland": [
         "Sicherer E-Mail-Dienst aus der Schweiz"

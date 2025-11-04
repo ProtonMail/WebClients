@@ -242,6 +242,9 @@
       "Search countries": [
         "Vyhledat země"
       ],
+      "See plan features": [
+        "Zobrazit funkce tarifu"
+      ],
       "Select ${ planOrAppName }": [
         "Vybrat ${ planOrAppName }"
       ],
@@ -298,6 +301,12 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Zapnout ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "Upgrade": [
+        "Přejít na placený tarif"
+      ],
+      "Upgrade now": [
+        "Navýšit nyní"
       ],
       "Upload and share files": [
         "Nahrát a sdílet soubory"
@@ -380,6 +389,140 @@
         "${ users } uživatelů"
       ]
     },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Využít nabídku"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB úložiště"
+      ],
+      "200 GB storage": [
+        "200 GB prostoru"
+      ],
+      "500 GB encrypted storage": [
+        "500 GB šifrovaného úložiště"
+      ],
+      "Add unlimited credit cards": [
+        "Přidejte neomezený počet platebních karet"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Všechny prémiové funkce ${ BRAND_NAME } Mail, Pass, VPN, Drive a Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blokování reklam, sledovacích prvků a malware"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Slevy jsou založeny na standardních měsíčních cenách. Na konci fakturačního cyklu se vaše předplatné obnoví za standardní roční sazbu."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Zdvojnásobte své šifrované úložiště – získejte 1 TB pro všechna svá data"
+      ],
+      "Encrypted password manager": [
+        "Šifrovaný správce hesel"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Zde je exkluzivní dárek na oslavu naší společné cesty."
+      ],
+      "High speed streaming with VPN": [
+        "Vysokorychlostní streamování pomocí VPN"
+      ],
+      "of privacy": [
+        "soukromí"
+      ],
+      "Online document editor": [
+        "Online editor dokumentů"
+      ],
+      "Online privacy for up to 2 people": [
+        "Online soukromí až pro 2 osoby"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Online soukromí pro celou rodinu (až 6 uživatelů)"
+      ],
+      "Protect up to 10 devices": [
+        "Chraňte až 10 zařízení"
+      ],
+      "Recover previous file versions": [
+        "Obnova předchozích verzí souborů"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "S časově omezenou slevovou nabídkou ušetříte na prémiových funkcích Drive."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "S časově omezenou slevovou nabídkou ušetříte na prémiových funkcích Mail."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "S časově omezenou slevovou nabídkou ušetříte na prémiových funkcích Pass."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "S časově omezenou slevovou nabídkou ušetříte na prémiových funkcích VPN."
+      ],
+      "Save time with built-in 2FA": [
+        "Úspora času díky integrovanému 2FA"
+      ],
+      "Secure email with unlimited aliases": [
+        "Zabezpečený e-mail s neomezeným počtem aliasů"
+      ],
+      "Select any server": [
+        "Vyberte libovolný server"
+      ],
+      "Share passwords easily": [
+        "Snadné sdílení hesel"
+      ],
+      "Short @pm.me address": [
+        "Krátká adresa @pm.me"
+      ],
+      "Stream your favorite content": [
+        "Streamujte svůj oblíbený obsah"
+      ],
+      "thanks to you": [
+        "díky vám"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Ztrojnásobte své šifrované úložiště – získejte 3 TB pro všechna svá data"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Neomezený počet složek, štítků a filtrů"
+      ],
+      "Use your own email domain": [
+        "Použijte svou vlastní e-mailovou doménu"
+      ],
+      "years": [
+        "let"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Výroční nabídka"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } měsíc",
+        "${ n } měsíce",
+        "${ n } měsíců",
+        "${ n } měsíců"
+      ],
+      "/ month": [
+        "/ měsíc"
+      ],
+      "12 months": [
+        "12 měsíců"
+      ],
+      "15 months": [
+        "15 měsíců"
+      ],
+      "24 months": [
+        "24 měsíců"
+      ],
+      "30 months": [
+        "30 měsíců"
+      ],
+      "for ${ durationDeal }": [
+        "na ${ durationDeal }"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplikace ${ BRAND_NAME }"
@@ -429,12 +572,188 @@
         "Prémiový správce hesel"
       ]
     },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "30denní záruka vrácení peněz"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Obsahuje podporu 1 vlastní e-mailové domény, 10 e-mailových adres, 10 aliasů hide-my-email, sdílení kalendáře a další funkce."
+      ]
+    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktopová aplikace"
       ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } a ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } úložiště"
+      ],
+      "1 user account": [
+        "1 uživatelský účet"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB prostoru: 40x váš současný tarif"
+      ],
+      "6 user accounts": [
+        "6 uživatelských účtů"
+      ],
+      "Admin panel to manage your family": [
+        "Panel správce pro správu rodiny"
+      ],
+      "Advanced account protection": [
+        "Pokročilá ochrana účtu"
+      ],
+      "Easily add or remove users": [
+        "Snadné přidávání a odebírání uživatelů"
+      ],
+      "One-time payment, lifetime deal": [
+        "Jednorázová platba, doživotní přístup"
+      ],
+      "Online document editor": [
+        "Online editor dokumentů"
+      ],
+      "Password health alerts": [
+        "Upozornění na sílu hesla"
+      ],
+      "Recover previous file versions": [
+        "Obnova předchozích verzí souborů"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Neomezený počet složek, štítků a filtrů"
+      ],
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Neomezený počet přihlášení, platebních karet, aliasů hide-my-email a další"
+      ],
       "Use your own email domain": [
         "Použijte svou vlastní e-mailovou doménu"
+      ]
+    },
+    "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Účtováno ${ amount } jednorázově"
+      ],
+      "forever": [
+        "navždy"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Obnovuje se po 1 měsíci za ${ regularAmount }."
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Přístup k blokovanému obsahu a soukromé procházení internetu. K dispozici je více než 8500 serverů ve více než 110 zemích, možnost připojit až 10 zařízení, vysokorychlostní streamování, blokování reklam a ochrana před malware, VPN Accelerator a další."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Bezpečené přihlašování na všech zařízeních. Obsahuje neomezený počet aliasů hide-my-email, sdílení, integrované 2FA, Sledování ${ DARK_WEB_MONITORING_NAME } a další funkce."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailovou adresu, podporu pro vlastní e-mailové domény, asistenta psaní ${ BRAND_NAME } Scribe, neomezený počet aliasů hide-my-email a další.",
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailové adresy, podporu pro vlastní e-mailové domény, asistenta psaní ${ BRAND_NAME } Scribe, neomezený počet aliasů hide-my-email a další.",
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailových adres, podporu pro vlastní e-mailové domény, asistenta psaní ${ BRAND_NAME } Scribe, neomezený počet aliasů hide-my-email a další.",
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailových adres, podporu pro vlastní e-mailové domény, asistenta psaní ${ BRAND_NAME } Scribe, neomezený počet aliasů hide-my-email a další."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailovou adresu, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další.",
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailové adresy, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další.",
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailových adres, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další.",
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailových adres, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje 15 e-mailových adres, podporu pro vlastní e-mailové domény, asistenta psaní ${ BRAND_NAME } Scribe, neomezený počet aliasů hide-my-email a další."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje 15 e-mailových adres, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další."
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Obsahuje online editor dokumentů, zálohování fotografií, historii verzí souborů, šifrované sdílení souborů a další funkce."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "Úložný prostor je sdílen mezi všemi službami ${ BRAND_NAME }."
+      ]
+    },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "Výprodej Black Friday"
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB datové úložiště"
+      ],
+      "3 TB data storage": [
+        "3 TB datové úložiště"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Přístup k 15 000+ serverům ve 120+ zemích"
+      ],
+      "Access advanced AI models": [
+        "Přístup k pokročilým modelům AI"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všechny prémiové funkce ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blokování reklam, sledovacích prvků a malwaru"
+      ],
+      "Built-in 2FA authenticator": [
+        "Vestavěné 2FA ověřování"
+      ],
+      "Connect 10 devices at once": [
+        "Připojte 10 zařízení najednou"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Plná historie chatu s jednoduchým vyhledáváním a oblíbenými položkami"
+      ],
+      "Individual accounts for 6 users": [
+        "Individuální účty pro 6 uživatelů"
+      ],
+      "Individual accounts for you and a partner": [
+        "Individuální účty pro vás a partnera"
+      ],
+      "Stronger protection against cyber threats": [
+        "Silnější ochrana proti kybernetickým hrozbám"
+      ],
+      "Unlimited daily chats": [
+        "Neomezený denní limit konverzací"
+      ]
+    },
+    "BF2025: Heading alt": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Pomozte svým blízkým připojit se k revoluci v oblasti soukromí s našimi nejvýhodnějšími balíčky, nyní s 50% slevou!"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Připojte se k revoluci v oblasti soukromí s našimi nejvýhodnějšími balíčky, nyní s 50% slevou!"
+      ]
+    },
+    "BF2025: Offers": {
+      "for ${ durationDeal }": [
+        "na ${ durationDeal }"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "Ušetřete ${ savedAmount } s naší nejvýhodnější, časově omezenou nabídkou!"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "Přejděte na náš dvouletý tarif a ušetřete ${ savedAmount }!"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "Přejděte na náš roční tarif a ušetřete ${ savedAmount }!"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "Dopřejte svým blízkým kompletní digitální ochranu."
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield chrání vaše zařízení a zrychluje prohlížení tím, že blokuje reklamy, sledovací prvky a malware."
       ]
     },
     "Billing cycle option": {
@@ -723,9 +1042,6 @@
       ],
       "Try again": [
         "Zkusit znovu"
-      ],
-      "Upgrade": [
-        "Navýšit tarif"
       ],
       "Upload a file": [
         "Nahrát soubor"
@@ -1055,11 +1371,6 @@
         "Přihlaste se, abyste si uložili své konverzace a měli k nim přístup odkudkoli."
       ]
     },
-    "collider_2025: Guest Upsell": {
-      "Your chat history won't be saved. For extended chat history and other premium features, ": [
-        "Historie vašich konverzací nebude uložena. Pro rozšířenou historii konverzací a další prémiové funkce, "
-      ]
-    },
     "collider_2025: Header": {
       "Tell us more": [
         "Řekněte nám více"
@@ -1080,6 +1391,9 @@
       ],
       " of space": [
         " místa"
+      ],
+      " talk to your admin.": [
+        " kontaktujte svého správce."
       ],
       "${ DRIVE_SHORT_APP_NAME } storage not set up yet": [
         "${ DRIVE_SHORT_APP_NAME } úložiště ještě není nastaveno"
@@ -1279,12 +1593,6 @@
       "Table view": [
         "Tabulkové zobrazení"
       ],
-      "Talk to your admin for plan details": [
-        "Podrobnosti o plánu si vyžádejte u svého správce"
-      ],
-      "Talk to your admin to add ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Obraťte se na svého správce ohledně přidání ${ LUMO_SHORT_APP_NAME } Plus"
-      ],
       "There was an error processing this file. The content may not be readable or the file format might not be fully supported.": [
         "Při zpracování tohoto souboru došlo k chybě. Obsah nemusí být čitelný nebo formát souboru nemusí být plně podporován."
       ],
@@ -1450,14 +1758,8 @@
       ]
     },
     "collider_2025: Link": {
-      " contact your admin": [
-        "kontaktujte svého správce"
-      ],
       "add ${ LUMO_SHORT_APP_NAME } Plus": [
         "přidat ${ LUMO_SHORT_APP_NAME } Plus"
-      ],
-      "Add ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Přidat ${ LUMO_SHORT_APP_NAME } Plus"
       ],
       "Already have an account? ${ linkSignup }": [
         "Máte již účet? ${ linkSignup }"
@@ -1468,9 +1770,6 @@
       "create a free account.": [
         "vytvořit bezplatný účet."
       ],
-      "Get ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Získejte ${ LUMO_SHORT_APP_NAME } Plus"
-      ],
       "New chat": [
         "Nová konverzace"
       ],
@@ -1479,9 +1778,6 @@
       ],
       "Upgrade": [
         "Navýšení"
-      ],
-      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Navýšit na ${ LUMO_SHORT_APP_NAME } Plus"
       ],
       "upgrade to ${ LUMO_SHORT_APP_NAME } Plus.": [
         "navýšit na ${ LUMO_SHORT_APP_NAME } Plus."
@@ -1629,8 +1925,8 @@
       ]
     },
     "collider_2025: Tooltip": {
-      "contact your admin to upgrade": [
-        "kontaktujte svého správce pro navýšení"
+      "Contact your admin to upgrade": [
+        "Kontaktujte svého správce pro navýšení"
       ]
     },
     "collider_2025: Top nav link": {
@@ -1922,6 +2218,11 @@
       ],
       "Sign in required": [
         "Vyžadováno přihlášení"
+      ]
+    },
+    "collider_2025:Prompt": {
+      "Where does Halloween come from?": [
+        "Odkud pochází Halloween?"
       ]
     },
     "collider_2025:Title": {
@@ -3017,6 +3318,14 @@
         "Vaše předplatné ${ PLAN_NAMES[PLANS.PASS] } je za speciální cenu ${ price } ročně. Snížením na tarif Free trvale ztratíte slevu, a to i v případě, že v budoucnu opět navýšíte tarif."
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Rozšířená historie verzí"
+      ],
+      "Priority support": [
+        "Prioritní podpora"
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Textová pole jsou nepovinná. Informace, které uvedete v tomto formuláři, se objeví pouze na fakturách vystavených v budoucnu a nebudou mít vliv na stávající faktury."
@@ -3216,6 +3525,21 @@
         "Není vybrán žádný obrázek"
       ]
     },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3 TB celkového úložiště"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Úložný prostor je sdílen mezi členy rodiny v ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }."
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Up to 6 users": [
+        "Až 6 uživatelů"
+      ]
+    },
     "familyOffer_2023:Error": {
       "Family group not recognized. Try again.": [
         "Rodinná skupina nebyla rozpoznána. Zkuste to znovu."
@@ -3246,6 +3570,17 @@
       ],
       "Delete organization?": [
         "Smazat organizaci?"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Zahrnuje 2700 serverů v 65+ zemích, přípojení až 10 zařízení, přístup ke světovým streamovacím službám, blokování malware a reklam a další."
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Zahrnuje podporu 3 vlastních e-mailových domén, 90 e-mailových adres, neomezený počet aliasů Hide-my-email, sdílení kalendáře a další."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Zahrnuje automatickou synchronizaci, šifrované sdílení souborů a další funkce."
       ]
     },
     "Feature": {
@@ -3559,6 +3894,9 @@
       "Expired": [
         "Platnost vypršela"
       ],
+      "Google Pay mark": [
+        "Značka Google Pay"
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Pokud máte potíže s vytvořením účtu, požádejte prosím o pozvánku a my odpovíme do jednoho pracovního dne."
       ],
@@ -3739,6 +4077,9 @@
       "Total VPN connections": [
         "Celkem VPN připojení"
       ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Navyšte tarif nyní a získejte tím prémiové funkce, produkty a úložiště za speciální cenu"
+      ],
       "User activated": [
         "Uživatel aktivován"
       ],
@@ -3840,9 +4181,6 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Váš účet ${ BRAND_NAME } je momentálně pozastaven. Po 28 dnech vám již nebudou do schránky doručovány e-maily, odkazy na sdílení na Disku budou zablokovány a nebudete moci nahrávat nové soubory. Chcete-li obnovit normální provoz, zaplaťte všechny faktury po splatnosti."
-      ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Váš účet ${ BRAND_NAME } je momentálně pozastaven. E-maily již nejsou doručovány do vaší schránky. Vaše odkazy na sdílení na Disku již nejsou aktivní a nemůžete nahrávat nové soubory. Chcete-li svůj účet nadále používat, zaplaťte všechny faktury po splatnosti."
       ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Vaše předplatné ${ plan } bude nahrazeno doživotním předplatným ${ PASS_SHORT_APP_NAME }. Zbývající část předplatného bude připsána na váš účet. Doživotní nabídka ${ PASS_SHORT_APP_NAME } nemá cenu za obnovení, jedná se o jednorázovou platbu za doživotní přístup k ${ PASS_SHORT_APP_NAME }."
@@ -5232,6 +5570,26 @@
         "Týmové zásady"
       ]
     },
+    "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Všechny prémiové funkce. 6 uživatelů. 1 snadné předplatné."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Účtováno ročně za ${ yearlyPrice }. Ušetřete ${ yearlySavedPrice } s ${ passFamilyPlanName } (oproti 6 individuálním předplatným ${ passPlusPlanName })."
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "Exkluzivní nabídka dostupná pouze pro včasné podporovatele ${ PASS_APP_NAME }."
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "Získejte za ${ monthlyPrice }"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "Představujeme ${ passFamilyPlanName }"
+      ],
+      "Limited-time deal.": [
+        "Časově omezená nabídka."
+      ]
+    },
     "passwordless": {
       "Non-private users can be promoted to admin when they have setup keys": [
         "Nesoukromí uživatelé se mohou stát správci po tom, co si nastaví klíče"
@@ -5270,6 +5628,9 @@
       ],
       "Credit/debit card": [
         "Kreditní/debetní karta"
+      ],
+      "Google Pay": [
+        "Google Pay"
       ],
       "New credit/debit card": [
         "Nová kreditní/debetní karta"
@@ -5413,6 +5774,12 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Již máte předplatné tohoto tarifu. Můžete si změnit své předplatné na ${ subscriptionPlatform }."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Za účelem ověření platby budete přesměrováni na PayPal."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Za účelem ověření platby budete přesměrováni."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Vaše měna byla změněna na euro (€), protože bankovní převody SEPA podporují pouze platby v eurech."
       ],
@@ -5443,6 +5810,11 @@
         "Vaše karta byla zamítnuta. Zadejte prosím jinou kartu nebo kontaktujte svou banku pro autorizaci platby."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Něco se pokazilo. Ověření Google Pay selhalo."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit za nevyužitou část vašeho předchozího předplatného"
@@ -5462,6 +5834,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Bankovní převod - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - karta končící čísly ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -5670,7 +6045,58 @@
         "Sdílel/a ${ ownerName }"
       ]
     },
+    "specialoffer: Action": {
+      "Close": [
+        "Zavřít"
+      ],
+      "Don't show this offer again": [
+        "Tuto nabídku již nezobrazovat"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Přejít na Unlimited"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } den",
+        "${ days } dny",
+        "${ days } dnů",
+        "${ days } dnů"
+      ],
+      "${ hours } hour": [
+        "${ hours } hodina",
+        "${ hours } hodiny",
+        "${ hours } hodin",
+        "${ hours } hodin"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuta",
+        "${ minutes } minuty",
+        "${ minutes } minut",
+        "${ minutes } minut"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekunda",
+        "${ seconds } sekundy",
+        "${ seconds } sekund",
+        "${ seconds } sekund"
+      ]
+    },
     "specialoffer: Deal details": {
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 uživatelů"
+      ],
+      "All paid Mail and Calendar features": [
+        "Všechny placené Mail a Calendar funkce"
+      ],
+      "High speed VPN": [
+        "Vysokorychlostní VPN"
+      ],
       "Highest VPN speed": [
         "Nejvyšší rychlost VPN"
       ],
@@ -5683,8 +6109,25 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "Prémiové funkce ${ appName1 }, ${ appName2 } a ${ appName3 }"
       ],
+      "Premium early access": [
+        "Prémiový předběžný přístup"
+      ],
+      "Secure cloud storage": [
+        "Bezpečné cloudové úložiště"
+      ],
       "Secure streaming": [
         "Bezpečné streamování"
+      ],
+      "Support online privacy": [
+        "Podpořte online soukromí"
+      ]
+    },
+    "specialoffer: Footer": {
+      "The special offer is valid for the first 2 years.": [
+        "Speciální nabídka platí první 2 roky."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Vaše předplatné se bude každý rok obnovovat za stejnou cenu."
       ]
     },
     "specialoffer: Link": {
@@ -5693,6 +6136,102 @@
       ],
       "Upgrade": [
         "Navýšit"
+      ]
+    },
+    "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } měsíc",
+        "${ n } měsíce",
+        "${ n } měsíců",
+        "${ n } měsíců"
+      ],
+      "/ month": [
+        "/ měsíc"
+      ],
+      "1 year": [
+        "1 rok"
+      ],
+      "15 months": [
+        "15 měsíců"
+      ],
+      "2 years": [
+        "2 roky"
+      ],
+      "30 months": [
+        "30 měsíců"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "Účtováno ${ amount } za 1 měsíc"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "Účtováno ${ amount } za 12 měsíců"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "Účtováno ${ amount } za 15 měsíců"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "Účtováno ${ amount } za 24 měsíců"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "Účtováno ${ amount } za 30 měsíců"
+      ],
+      "Get the deal": [
+        "Využít nabídku"
+      ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Obnovení po 1 roce za zvýhodněnou cenu ${ discountedAmount } místo ${ regularAmount } (${ discount } % sleva)"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Obnovení po 2 letech za zvýhodněnou cenu ${ discountedAmount } místo ${ regularAmount } (${ discount } % sleva)"
+      ],
+      "Save ${ discount }%": [
+        "Ušetřete ${ discount } %"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "Standardní cena ${ amount } za 1 měsíc"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "Standardní cena ${ amount } za 12 měsíců"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "Standardní cena ${ amount } za 15 měsíců"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "Standardní cena ${ amount } za 24 měsíců"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "Standardní cena ${ amount } za 30 měsíců"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Speciální nabídka platí první 2 roky"
+      ]
+    },
+    "specialoffer: Title": {
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "Navyšte tarif a ušetřete více s 2 roky ${ planName }"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Přístup k blokovanému obsahu a soukromé prohlížení. Obsahuje 1700 serverů ve více než 60 zemích, nejvyšší rychlost VPN, 10 připojení VPN na uživatele, celosvětové streamovací služby, blokování malware a reklamy a další."
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Přístup k blokovanému obsahu a soukromé prohlížení. Obsahuje 1700 serverů ve více než 60 zemích, nejvyšší rychlost VPN, 10 připojení VPN, celosvětové streamovací služby, blokování malware a reklamy a další."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Všechny naše prémiové služby s nejvyššími limity: 100 e-mailových adres, podpora 10 vlastních domén, neomezený počet aliasů hide-my-email, sdílení kalendáře, šifrované cloudové úložiště a sdílení souborů a další."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Zahrnuje podporu 3 vlastních e-mailových domén, 15 e-mailových adres, neomezený počet aliasů Hide-my-email, sdílení kalendáře a další."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Ideální pro rodiny nebo malé týmy, každý může mít vlastní schránku a aliasy. Vyžaduje vlastní doménu."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Získejte zdarma placené verze všech nových služeb ochrany soukromí, které v budoucnu vydáme, včetně předběžného přístupu ke všem budoucím funkcím a produktům."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Zahrnuje automatickou synchronizaci, šifrované sdílení souborů a další funkce."
       ]
     },
     "Spotlight": {
@@ -5974,6 +6513,20 @@
         "za uživatele měsíčně"
       ]
     },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Vytvoření zabezpečených přihlašovacích údajů na všech zařízeních. Obsahuje neomezený počet aliasů, 20 trezorů, integrovanou funkci 2FA, automatické vyplňování kreditních karet a další funkce."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Zahrnuje 2950 serverů v 65+ zemích, přípojení až 10 zařízení, přístup ke světovým streamovacím službám, blokování malware a reklam a další."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Obsahuje podporu 1 vlastní e-mailové domény, 10 e-mailových adres, 10 aliasů hide-my-email, sdílení kalendáře a další funkce."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Obsahuje historii verzí souborů, šifrované sdílení souborů a další funkce."
+      ]
+    },
     "Tab subscription modal": {
       "For businesses": [
         "Pro firmy"
@@ -6177,6 +6730,9 @@
       ],
       "You can now create unlimited folders and labels": [
         "Nyní můžete vytvořit neomezený počet složek a štítků"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Vaše bezplatná zkušební verze ${ planName } skončí ${ textDate }"
       ],
       "Your plan": [
         "Váš tarif"

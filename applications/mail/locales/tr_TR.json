@@ -6766,9 +6766,6 @@
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "6.500 üzerinde yüksek hızlı sunucuya, en fazla 10 aygıttan erişim sağlayarak tarama verilerinizi güvende tutun. ${ ios }, ${ android }, ${ appleTV } ve ${ desktop } üzerinde kullanılabilir."
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Ödenmemiş faturalar nedeniyle hesap erişimi kısıtlandı. Lütfen yöneticinizle görüşün."
-      ],
       "Account successfully updated": [
         "Hesap güncellendi"
       ],
@@ -7386,6 +7383,9 @@
       ],
       "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
         "Gelen faturaları “${ suggestedLabelName }“ gibi bir ad ve renk ile kodlayarak etiketleyin. Ödeme yapıldıktan sonra etiketi “${ suggestedPaidLabelName }“ ile değiştirin."
+      ],
+      "Google Pay mark": [
+        "Google Pay işareti"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Hükümetler ve internet hizmeti sağlayıcılar çevrim içi etkinliğinizi izleyebilir. Gezinme gizliliğinizi korumak için gerçek IP adresiniz gizlenir ve etkinliğiniz şifrelenir."
@@ -8827,20 +8827,11 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "${ BRAND_NAME } hesabınız şu anda askıya alınmış. 28 gün sonra e-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hizmeti normal şekilde kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "${ BRAND_NAME } hesabınız şu anda askıya alınmış. E-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hesabınızı kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ plan } aboneliğiniz ${ PASS_SHORT_APP_NAME } Lifetime aboneliğiyle değiştirilecek. Aboneliğinizin kalan tutarı hesabınıza eklenecek. ${ PASS_SHORT_APP_NAME } Lifetime fırsatının yenileme fiyatı yoktur, ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik ödeme yapılır."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Hesabınızda süresi geçmiş en az bir fatura var. Erişiminiz yakında kısıtlanacak. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Hesabınızda süresi geçmiş en az bir fatura var. Hesabınıza erişiminiz kısıtlandı ve ödeme yapılana kadar tüm hizmetler engellendi. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Hesabınızda süresi geçmiş en az bir fatura var. Hesabınıza erişim kısıtlandı. Ödeme yapmazsanız e-postalarınız ve paylaşım bağlantılarınız engellenecek. ${ payInvoiceLink }"
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Tarayıcınız yazma yardımcısını desteklemiyor. Sunucular üzerinden çalıştırmayı deneyin."
@@ -9282,6 +9273,12 @@
       "Also archive": [
         "Ayrıca arşivlensin"
       ],
+      "Always label sender's emails": [
+        "Göndericinin e-postaları her zaman etiketlensin"
+      ],
+      "Always move sender's emails": [
+        "Göndericinin e-postaları her zaman taşınsın"
+      ],
       "AND": [
         "VE"
       ],
@@ -9660,6 +9657,9 @@
       "Move ${ sidebarElementName }": [
         "${ sidebarElementName } ögesini taşı"
       ],
+      "Move messages to": [
+        "İletileri şuraya taşı"
+      ],
       "Move to": [
         "Şuraya taşı"
       ],
@@ -9701,9 +9701,6 @@
       ],
       "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
         "Artık önemli iletileri kaçırmayacaksınız! Bunlar artık ${ primaryCopy } altında görüntüleniyor. Diğer her şey kategoriye göre sıralandığı için kolayca bulunabilir ve gelen kutunuzu dağıtmaz."
-      ],
-      "No results found": [
-        "Herhangi bir sonuç bulunamadı"
       ],
       "Non-promotional content and news": [
         "Fırsatlar dışındaki içerikler ve haberler"
@@ -12160,6 +12157,9 @@
       "Credit/debit card": [
         "Kredi ya da banka kartı"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Yeni kredi ya da banka kartı"
       ]
@@ -12290,6 +12290,12 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Bu tarifeye zaten bir aboneliğiniz var. Aboneliğinizi ${ subscriptionPlatform } üzerinden değiştirebilirsiniz."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Birazdan ödemenizi doğrulamak için PayPal sitesine yönlendirileceksiniz."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Birazdan ödemenizi doğrulamak için yönlendirileceksiniz."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "SEPA banka havaleleri yalnızca avro ödemelerini desteklediği için para biriminiz avroya (€) dönüştürüldü."
       ],
@@ -12320,6 +12326,11 @@
         "Kartınız reddedildi. Lütfen ödemeyi onaylamak için başka bir kart deneyin ya da bankanızla görüşün."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Bir sorun çıktı. Google Pay doğrulaması tamamlanamadı."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Önceki abonelik tarifenizin kullanılmayan bölümünden kalan kredi"
@@ -12339,6 +12350,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Banka havalesi - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - ${ paymentMethod.Details.Last4 } ile biten kart"
       ]
     },
     "Payments.Sepa": {
@@ -14845,6 +14859,12 @@
       "Create contact": [
         "Kişi ekle"
       ],
+      "Create folder \"${ search }\"": [
+        "\"${ search }\" klasörü ekle"
+      ],
+      "Create label \"${ search }\"": [
+        "\"${ search }\" etiketi ekle"
+      ],
       "Create new group": [
         "Yeni grup ekle"
       ],
@@ -15115,10 +15135,6 @@
       "Label as": [
         "Etiketle"
       ],
-      "Label message as": [
-        "İleti şu şekilde etiketlensin",
-        "İletiler şu şekilde etiketlensin"
-      ],
       "Label options": [
         "Etiket ayarları"
       ],
@@ -15202,13 +15218,6 @@
       ],
       "Move all messages to trash": [
         "Tüm iletileri çöpe at"
-      ],
-      "Move message to": [
-        "İletiyi şuraya taşı",
-        "İletileri şuraya taşı"
-      ],
-      "Move messages to": [
-        "İletileri şuraya taşı"
       ],
       "Move to": [
         "Taşı"
