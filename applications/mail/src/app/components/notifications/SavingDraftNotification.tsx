@@ -3,7 +3,7 @@ import { forwardRef, useImperativeHandle, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { InlineLinkButton } from '@proton/atoms';
+import { CircleLoader, InlineLinkButton } from '@proton/atoms';
 
 enum SavingStep {
     saving,
@@ -32,7 +32,11 @@ const SavingDraftNotification = ({ onDiscard }: Props, ref: Ref<SavingDraftNotif
         );
     }
 
-    return <>{c('Info').t`Saving draft…`}</>;
+    return (
+        <>
+            {c('Info').t`Saving draft`} <CircleLoader />
+        </>
+    );
 };
 
 export default forwardRef(SavingDraftNotification);

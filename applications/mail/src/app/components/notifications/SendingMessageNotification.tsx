@@ -125,7 +125,7 @@ const SendingMessageNotification = ({ manager, scheduledAt }: SendingMessageNoti
 
     return (
         <>
-            {scheduledAt ? c('Info').t`Scheduling message...` : c('Info').t`Sending message...`} <CircleLoader />
+            {scheduledAt ? c('Info').t`Scheduling message` : c('Info').t`Sending message`} <CircleLoader />
         </>
     );
 };
