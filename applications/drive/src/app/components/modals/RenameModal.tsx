@@ -17,7 +17,6 @@ import {
     useModalTwoStatic,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
-import useFlag from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import { RenameModal } from '../../modals/RenameModal';
@@ -126,12 +125,9 @@ const RenameModalDeprecated = ({
 };
 
 export const useRenameModal = () => {
-    const useSDKModal = useFlag('DriveWebSDKRenameModal');
     const isPublic = getIsPublicContext();
 
-    const [renameModal, showRenameModal] = useModalTwoStatic(
-        useSDKModal && !isPublic ? RenameModal : RenameModalDeprecated
-    );
+    const [renameModal, showRenameModal] = useModalTwoStatic(!isPublic ? RenameModal : RenameModalDeprecated);
 
     return [renameModal, showRenameModal] as const;
 };

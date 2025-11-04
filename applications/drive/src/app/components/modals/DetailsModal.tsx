@@ -20,14 +20,13 @@ import { VERIFICATION_STATUS } from '@proton/crypto';
 import type { Revision } from '@proton/drive';
 import { getNumAccessesTooltipMessage, getSizeTooltipMessage } from '@proton/shared/lib/drive/translations';
 import humanSize, { bytesSize } from '@proton/shared/lib/helpers/humanSize';
-import useFlag from '@proton/unleash/useFlag';
 
 import { FileDetailsModal } from '../../modals/DetailsModal';
-import { type SignatureIssues, useLinkPath } from '../../store';
-import { useLinkDetailsView } from '../../store';
+import type { useLinkPath } from '../../store';
+import { type SignatureIssues, useLinkDetailsView } from '../../store';
 import { usePublicSession } from '../../store/_api';
 import { useDownload } from '../../store/_downloads';
-import { type DecryptedLink, useLinksListing, usePublicLinksListing } from '../../store/_links';
+import { type DecryptedLink, usePublicLinksListing } from '../../store/_links';
 import { useLinkPathPublic } from '../../store/_views/useLinkPath';
 import { formatAccessCount } from '../../utils/formatters';
 import { Cells } from '../FileBrowser';
@@ -43,12 +42,6 @@ interface BaseDetailsModalProps {
     checkFirstBlockSignature: ReturnType<typeof useDownload>['checkFirstBlockSignature'];
     getPath: ReturnType<typeof useLinkPath>['getPath'] | ReturnType<typeof useLinkPathPublic>['getPath'];
     anonymousView?: boolean;
-    onClose?: () => void;
-}
-
-interface DetailsModalProps {
-    shareId: string;
-    linkId: string;
     onClose?: () => void;
 }
 
@@ -424,16 +417,6 @@ export function BaseDetailsModal({
     );
 }
 
-export function DetailsModalDeprecated(props: DetailsModalProps & ModalStateProps) {
-    const { loadChildren, getCachedChildren } = useLinksListing();
-    const { checkFirstBlockSignature } = useDownload({
-        loadChildren,
-        getCachedChildren,
-    });
-    const { getPath } = useLinkPath();
-    return <BaseDetailsModal getPath={getPath} checkFirstBlockSignature={checkFirstBlockSignature} {...props} />;
-}
-
 export function PublicDetailsModal({ token, ...props }: PublicDetailsModalProps & ModalStateProps) {
     const { loadChildren, getCachedChildren } = usePublicLinksListing();
     const { request, user } = usePublicSession();
@@ -466,8 +449,7 @@ function DetailsRow({ label, title, children, dataTestId }: RowProps) {
 }
 
 export const useDetailsModal = () => {
-    const useSDKModal = useFlag('DriveWebSDKFileDetailsModal');
-    return useModalTwoStatic(useSDKModal ? FileDetailsModal : DetailsModalDeprecated);
+    return useModalTwoStatic(FileDetailsModal);
 };
 
 export const usePublicDetailsModal = () => {
