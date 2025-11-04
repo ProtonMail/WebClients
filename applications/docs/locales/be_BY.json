@@ -1225,12 +1225,47 @@
         "Прастора сховішча размеркавана паміж усімі сэрвісамі ${ BRAND_NAME }"
       ]
     },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "Распродаж з нагоды \"Чорнай пятніцы\""
+      ]
+    },
     "BF2025: Deal details": {
+      "2 TB data storage": [
+        "Сховішча даных памерам у 2 ТБ"
+      ],
+      "3 TB data storage": [
+        "Сховішча даных памерам у 3 ТБ"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Доступ да 15 000+ сервераў у 120+ краінах"
+      ],
+      "Access advanced AI models": [
+        "Доступ да перадавых мадэляў ШІ"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Усе прэміяльныя функцыі ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Block ads, trackers, and malware": [
         "Блакіроўка рэкламы, праграм сачэння і шкодных праграм"
       ],
       "Built-in 2FA authenticator": [
         "Убудаваны аўтэнтыфікатар 2ФА"
+      ],
+      "Connect 10 devices at once": [
+        "Падключыце 10 прылад адначасова"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Поўная гісторыя чатаў з простым пошукам і абранымі"
+      ],
+      "Individual accounts for 6 users": [
+        "Індывідуальныя ўліковыя запісы для 6 карыстальнікаў"
+      ],
+      "Individual accounts for you and a partner": [
+        "Індывідуальныя ўліковыя запісы для вас і партнёра"
+      ],
+      "Stronger protection against cyber threats": [
+        "Больш моцная абарона ад кіберпагроз"
       ],
       "Unlimited daily chats": [
         "Неабмежаваная колькасць штодзённых чатаў"
@@ -1241,9 +1276,29 @@
         "Чорная пятніца"
       ]
     },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Дапамажыце сваім блізкім далучыцца да рэвалюцыі прыватнасці з нашымі самымі выгаднымі камплектамі, зараз са зніжкай 50%!"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Далучайцеся да рэвалюцыі прыватнасці з нашымі самымі выгаднымі камплектамі, зараз са зніжкай 50%!"
+      ]
+    },
     "BF2025: Offers": {
       "for ${ durationDeal }": [
         "за ${ durationDeal }"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "Зэканомце ${ savedAmount } з нашай самай выгаднай абмежаванай па часе прапановай!"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "Пераключыцеся на наш 2-гадовы тарыфны план і зэканомце ${ savedAmount }!"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "Пераключыцеся на наш гадавы тарыфны план і зэканомце ${ savedAmount }!"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "Абараніце сваё плямя поўнай лічбавай абаронай."
       ]
     },
     "BF2025: Tooltip": {
@@ -2877,7 +2932,7 @@
         "Адбылася памылка пры загрузцы параметраў псеўданіма"
       ],
       "An error occurred while saving your alias": [
-        "Адбылася памылка пры вашага псеўданіма"
+        "Адбылася памылка пры захаванні вашага псеўданіма"
       ],
       "Authentication canceled.": [
         "Аўтэнтыфікацыя скасавана."
@@ -4334,9 +4389,6 @@
       "Accept/decline": [
         "Прыняць/адхіліць"
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Доступ да ўліковага запісу абмежаваны з прычыны неаплачаных рахункаў. Звярніцеся да вашага адміністратара."
-      ],
       "Ad targeting": [
         "Мэтавая рэклама"
       ],
@@ -5420,20 +5472,11 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Ваш уліковы запіс ${ BRAND_NAME } у цяперашні час прыпынены. На 29 дзень лісты больш не будуць трапляць у вашу паштовую скрыню, а абагуленыя спасылкі на воблачным дыску будуць заблакіраваны, і вы больш не зможаце запампоўваць новыя файлы. Для ўзнаўлення звычайнага абслугоўвання, аплаціце ўсе неаплачаныя рахункі."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Ваш уліковы запіс ${ BRAND_NAME } у цяперашні час прыпынены. Лісты больш не будуць дастаўляцца ў вашу паштовую скрыню. Абагуленыя спасылкі на воблачным дыску больш не дзейнічаюць і вы не можаце запампоўваць новыя файлы. Для аднаўлення звычайнага абслугоўвання, аплаціце ўсе неаплачаныя рахункі."
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Ваша падпіска ${ plan } будзе заменена на пажыццёвую падпіску ${ PASS_SHORT_APP_NAME }. Рэшта балансу вашай падпіскі будзе дададзена на ваш уліковы запіс. Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. За пажыццёвы доступ да ${ PASS_SHORT_APP_NAME } уносіцца аднаразовая плата."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Ваш доступ неўзабаве будзе абмежаваны. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Доступ да яго абмежаваны і ўсе сэрвісы ў ім заблакіраваны да паступлення аплаты. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Доступ да яго абмежаваны. Далейшая неаплата прывядзе да блакіроўкі лістоў і абагуленых спасылак.${ payInvoiceLink }"
       ],
       "Your browser's Print dialog will now open, where you can export your document to PDF.": [
         "Дыялогавае акно друку вашага браўзера ў цяперашні час адкрыта. Туды вы можаце экспартаваць свае дакументы ў PDF."
@@ -10213,7 +10256,7 @@
     },
     "tooltip": {
       "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
-        "${ LUMO_APP_NAME }: Памочнік ШІ, які паважае вашу прыватнасць"
+        "${ LUMO_APP_NAME }: памочнік ШІ, які паважае вашу прыватнасць"
       ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."

@@ -1222,12 +1222,47 @@
         "Úložný priestor je zdieľaný medzi všetkými službami ${ BRAND_NAME }."
       ]
     },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "Black Friday zľavy"
+      ]
+    },
     "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB dátového úložiska"
+      ],
+      "3 TB data storage": [
+        "3 TB dátového úložiska"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Pristupujte k 15 000+ serverom v 120+ krajinách"
+      ],
+      "Access advanced AI models": [
+        "Prístup k pokročilým modelom umelej inteligencie"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všetky prémiové funkcie ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Block ads, trackers, and malware": [
         "Blokujte reklamy, sledovače a malvér"
       ],
       "Built-in 2FA authenticator": [
         "Zabudovaný 2FA autentifikátor"
+      ],
+      "Connect 10 devices at once": [
+        "Pripojte 10 zariadení súčasne"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Úplná história chatu s jednoduchým vyhľadávaním a obľúbenými položkami"
+      ],
+      "Individual accounts for 6 users": [
+        "Individuálne účty pre 6 používateľov"
+      ],
+      "Individual accounts for you and a partner": [
+        "Individuálne účty pre vás a partnera"
+      ],
+      "Stronger protection against cyber threats": [
+        "Silnejšia ochrana proti kybernetickým hrozbám"
       ],
       "Unlimited daily chats": [
         "Neobmedzené denné chaty"
@@ -1238,9 +1273,29 @@
         "Black Friday"
       ]
     },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Pomôžte svojim blízkym pripojiť sa k revolúcii súkromia s našimi najvýhodnejšími balíčkami, teraz so zľavou 50 %!"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Pripojte sa k revolúcii súkromia s našimi najvýhodnejšími balíčkami, teraz so zľavou 50 %!"
+      ]
+    },
     "BF2025: Offers": {
       "for ${ durationDeal }": [
         "na ${ durationDeal }"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "Ušetrite ${ savedAmount } s našou najvýhodnejšou ponukou na obmedzený čas!"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "Prejdite na náš 2-ročný plán a ušetrite ${ savedAmount }!"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "Prejdite na náš ročný plán a ušetrite ${ savedAmount }!"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "Doprajte svojmu kmeňu kompletnú digitálnu ochranu."
       ]
     },
     "BF2025: Tooltip": {
@@ -4331,9 +4386,6 @@
       "Accept/decline": [
         "Prijať/Odmietnuť"
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Z dôvodu nezaplatených faktúr bol prístup k účtu obmedzený. Kontaktujte správcu Vášho účtu."
-      ],
       "Ad targeting": [
         "Cielená reklama"
       ],
@@ -5417,20 +5469,11 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Váš účet ${ BRAND_NAME } je momentálne pozastavený. Po 28 dňoch vám už nebudú do schránky doručované emaily, odkazy na zdieľanie na Disku budú zablokované a nebudete môcť nahrávať nové súbory. Ak chcete obnoviť normálnu prevádzku, uhraďte všetky faktúry po splatnosti."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Váš účet ${ BRAND_NAME } je momentálne pozastavený. Emaily už nie sú doručované do vašej schránky. Vaše odkazy na zdieľanie na Disku už nie sú aktívne a nemôžete nahrávať nové súbory. Ak chcete svoj účet naďalej používať, uhraďte všetky faktúry po splatnosti."
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Vaše ${ plan } predplatné bude nahradené predplatným ${ PASS_SHORT_APP_NAME } Lifetime. Zostávajúci zostatok vášho predplatného bude pripísaný na váš účet. Dohoda o ${ PASS_SHORT_APP_NAME } doživotnom predplatnom nemá žiadnu cenu za obnovenie, je to jednorazová platba za doživotný prístup k ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Váš účet má aspoň jednu faktúru po splatnosti. Váš prístup bude čoskoro obmedzený. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Váš účet má aspoň jednu faktúru po splatnosti. Váš účet je obmedzený a všetky služby sú teraz až do zaplatenia zablokované. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Váš účet má aspoň jednu faktúru po splatnosti. Váš účet je obmedzený. Pokračujúce neplatenie zablokuje vaše emaily a odkazy na zdieľanie. ${ payInvoiceLink }"
       ],
       "Your browser's Print dialog will now open, where you can export your document to PDF.": [
         "V prehliadači sa teraz otvorí dialógové okno Tlač, v ktorom môžete dokument exportovať do formátu PDF."
