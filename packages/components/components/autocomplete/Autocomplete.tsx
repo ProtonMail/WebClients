@@ -35,6 +35,10 @@ export interface Props<T> extends Omit<InputProps, 'value' | 'onChange' | 'onSel
      * an input into the autocomplete input-field as a search.
      */
     searchMinLength?: number;
+    /**
+     * Determines whether to show a hint that there are more results than the limit.
+     */
+    showHiddenResultsHint?: boolean;
 }
 
 const Autocomplete = <T,>({
@@ -46,6 +50,7 @@ const Autocomplete = <T,>({
     limit = 20,
     searchMinLength = 0,
     getData,
+    showHiddenResultsHint = false,
     ...rest
 }: Props<T>) => {
     const inputRef = useRef<HTMLInputElement>(null);
@@ -70,6 +75,8 @@ const Autocomplete = <T,>({
         onClose();
     };
 
+    const extraResultsCount = options.length > limit ? options.length - limit : 0;
+
     return (
         <>
             <Input
@@ -90,7 +97,11 @@ const Autocomplete = <T,>({
                     }
                 }}
             />
-            <AutocompleteList anchorRef={containerRef.current ? containerRef : inputRef} {...suggestionProps}>
+            <AutocompleteList
+                anchorRef={containerRef.current ? containerRef : inputRef}
+                hiddenResultsCount={showHiddenResultsHint ? extraResultsCount : undefined}
+                {...suggestionProps}
+            >
                 {filteredOptions.map(({ chunks, text, option }, index) => {
                     return (
                         <Option
