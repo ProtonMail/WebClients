@@ -147,6 +147,9 @@
       "Cancel upload": [
         "Avbryt uppladdning"
       ],
+      "Cancel uploads": [
+        "Avbryt uppladdningar"
+      ],
       "Change": [
         "Ändra"
       ],
@@ -248,6 +251,9 @@
       ],
       "Continue with Outlook": [
         "Fortsätt med Outlook"
+      ],
+      "Copy": [
+        "Kopiera"
       ],
       "Copy address": [
         "Kopiera adress"
@@ -616,6 +622,9 @@
       ],
       "Loading link": [
         "Laddar länk"
+      ],
+      "Make a copy": [
+        "Göra en kopia"
       ],
       "Manage advanced account protections": [
         "Hantera avancerade kontoskydd"
@@ -4897,6 +4906,9 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inkluderar ${ BRAND_NAME } Scribe-skrivassistent"
       ],
+      "${ normalizedProgress }% completed": [
+        "${ normalizedProgress } % slutfört"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } livstidserbjudande har inget förnyelsepris, det är en engångsbetalning för åtkomst livet ut till ${ PASS_SHORT_APP_NAME }."
       ],
@@ -5037,9 +5049,6 @@
       ],
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "En VPN är en säker tunnel mellan din enhet och internet. Det döljer din plats och aktivitet från din internetleverantör (ISP) och de webbplatser du besöker."
-      ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Kontoåtkomst begränsad på grund av obetalda fakturor. Kontakta din administratör."
       ],
       "Account successfully updated": [
         "Kontot har uppdaterats"
@@ -6083,6 +6092,9 @@
       "Search Enabled": [
         "Sökning aktiverad"
       ],
+      "Select a folder to copy to.": [
+        "Välj en mapp att kopiera till."
+      ],
       "Select a folder to move to.": [
         "Välj en mapp att flytta till."
       ],
@@ -6318,6 +6330,9 @@
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Denna unika kod kan användas av webbplatser och ISP:er (internetleverantörer) för att koppla din plats och surfhistorik till din enhet"
+      ],
+      "This will cancel any remaining uploads. Cancelled files won't be saved in ${ DRIVE_APP_NAME }.": [
+        "Detta kommer avbryta alla återstående uppladdningar. Avbrutna filer kommer inte att sparas i ${ DRIVE_APP_NAME }."
       ],
       "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
         "Detta kommer endast ta bort albumet. Dina foton kommer finnas kvar på din tidslinje. Denna åtgärd kan inte ångras."
@@ -6712,17 +6727,8 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Ditt ${ BRAND_NAME }-konto är för närvarande avstängt. Efter 28 dagar kommer e-post inte längre att levereras till din inkorg, dina delade länkar från Drive kommer att blockeras och du kommer inte att kunna ladda upp nya filer. För att återuppta tjänsten som vanligt, betala eventuella förfallna fakturor."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Ditt ${ BRAND_NAME }-konto är för närvarande avstängt. E-post levereras inte längre till din inkorg. Dina delade länkar på Drive är inte längre aktiva och du kan inte ladda upp nya filer. För att fortsätta använda ditt konto, betala eventuella förfallna fakturor."
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ditt konto har minst en försenad faktura. Din åtkomst kommer snart att begränsas. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Ditt konto har minst en förfallen faktura. Ditt konto är begränsat och alla tjänster är nu blockerade fram till betalning. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Ditt konto har minst en förfallen faktura. Ditt konto är begränsat. Fortsatt utebliven betalning kommer att blockera dina e-postmeddelanden och delningslänkar. ${ payInvoiceLink }"
       ],
       "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
         "Din nuvarande webbläsare stöder inte nedladdning av stora filer/flera filer. Ladda ner appen för stationär dator för sömlösa uppladdningar och nedladdningar."
@@ -9665,6 +9671,9 @@
       "Continue": [
         "Fortsätt"
       ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Njut av gratis företagssäkerhetsfunktioner fram till ${ trialEndsOnFormatted }."
+      ],
       "help center": [
         "hjälpcenter"
       ],
@@ -9840,6 +9849,9 @@
       "Credit/debit card": [
         "Kredit/betalkort"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Nytt kredit-/betalkort"
       ],
@@ -9956,6 +9968,12 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Du har redan en prenumeration på detta paket. Du kan ändra din prenumeration på ${ subscriptionPlatform }."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Du kommer snart att omdirigeras till PayPal för att verifiera din betalning."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Du kommer snart att omdirigeras för att verifiera din betalning."
+      ],
       "Your payment is still being processed": [
         "Din betalning håller fortfarande på att behandlas"
       ]
@@ -9980,6 +9998,11 @@
         "Ditt kort nekades Prova ett annat kort eller kontakta din bank för att auktorisera debiteringen."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Något gick fel. Google Pay-verifiering misslyckades."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit för den oanvända delen av din tidigare paketprenumeration"
@@ -9999,6 +10022,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Banköverföring - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - kort slutar på ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -11864,6 +11890,9 @@
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Avsluta ${ MAIL_SHORT_APP_NAME }-prenumeration"
       ],
+      "Cancel all uploads?": [
+        "Avbryt alla uppladdningar?"
+      ],
       "Cancel subscription?": [
         "Avsluta prenumeration?"
       ],
@@ -12237,6 +12266,9 @@
       ],
       "Logs": [
         "Loggar"
+      ],
+      "Make a copy": [
+        "Göra en kopia"
       ],
       "Make a secure connection your default": [
         "Gör en säker anslutning din standard"

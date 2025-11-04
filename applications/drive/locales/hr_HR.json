@@ -369,6 +369,9 @@
       "Load image": [
         "Učitaj sliku"
       ],
+      "Make a copy": [
+        "Izradi kopiju"
+      ],
       "Manage folders": [
         "Upravljanje mapama"
       ],
@@ -874,12 +877,50 @@
         "Online uređivač dokumenata"
       ]
     },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "Black Friday rasprodaja"
+      ]
+    },
     "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB prostora za pohranu"
+      ],
+      "3 TB data storage": [
+        "3 TB prostora za pohranu"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Pristup 15,000+ poslužitelja u 120+ država"
+      ],
+      "Access advanced AI models": [
+        "Pristup naprednim AI modelima"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Sve premium značajke usluga ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Block ads, trackers, and malware": [
         "Blokirajte oglase, pratitelje i zlonamjerne programe"
       ],
       "Built-in 2FA authenticator": [
         "Ugrađeni 2FA autentifikator"
+      ],
+      "Connect 10 devices at once": [
+        "Povežite 10 uređaja istovremeno"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Potpuna povijest razgovora s jednostavnom pretragom i favoritima"
+      ],
+      "Individual accounts for 6 users": [
+        "Individualni korisnički računi za 6 korisnika"
+      ],
+      "Individual accounts for you and a partner": [
+        "Individualni korisnički računi za Vas i partnera"
+      ],
+      "Stronger protection against cyber threats": [
+        "Jača zaštita od kibernetičkih prijetnji"
+      ],
+      "Unlimited daily chats": [
+        "Neograničeni dnevni razgovori"
       ]
     },
     "BF2025: Heading alt": {
@@ -887,9 +928,34 @@
         "Black Friday"
       ]
     },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Pomozite svojim voljenima da se pridruže revoluciji privatnosti uz naše najpovoljnije pakete, sada uz 50% popusta!"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Pridružite se revoluciji privatnosti uz naše najpovoljnije pakete, sada uz 50% popusta!"
+      ]
+    },
     "BF2025: Offers": {
       "for ${ durationDeal }": [
         "za ${ durationDeal }"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "Uštedite ${ savedAmount } uz našu najpovoljniju ponudu s ograničenim vremenom!"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "Prijeđite na naš dvogodišnji plan i uštedite ${ savedAmount }!"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "Prijeđite na naš godišnji plan i uštedite ${ savedAmount }!"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "Osigurajte svom plemenu potpunu digitalnu zaštitu."
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Posebno dizajniran NetShield štiti Vaše uređaje i ubrzava Vaše pregledavanje blokiranjem oglasa, pratitelja i zlonamjernih programa."
       ]
     },
     "Billing cycle option": {
@@ -3043,9 +3109,6 @@
       "30-day money-back guarantee.": [
         "Povrat novca do 30 dana."
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Pristup računu je ograničen zbog neplaćenih faktura. Molimo kontaktirajte vašeg administratora."
-      ],
       "Account successfully updated": [
         "Račun je uspješno ažuriran"
       ],
@@ -3676,9 +3739,6 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Uskoro ćete biti preusmjereni na PayPal radi potvrde plaćanja."
-      ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Vaš ${ BRAND_NAME } korisnički račun je trenutno suspendiran. E-pošta se više ne isporučuje u vašu pristiglu poštu. Vaše poveznice za dijeljenje pogona više nisu aktivne i ne možete učitavati nove datoteke. Kako biste nastavili koristiti svoj korisnički račun, molimo vas da platite sve zakašnjele račune."
       ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Vaša ${ plan } pretplata bit će zamijenjena s ${ PASS_SHORT_APP_NAME } Lifetime. Preostali iznos vaše pretplate bit će dodan na vaš korisnički račun. ${ PASS_SHORT_APP_NAME } doživotna ponuda nema cijenu obnove, to je jednokratno plaćanje za doživotni pristup ${ PASS_SHORT_APP_NAME }."
