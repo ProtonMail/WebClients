@@ -19,7 +19,6 @@ import { useLoading } from '@proton/hooks';
 import { deleteFilter, enableFilter } from '@proton/mail/store/filters/actions';
 import { FILTER_STATUS } from '@proton/shared/lib/constants';
 import { hasReachedFiltersLimit } from '@proton/shared/lib/helpers/filters';
-import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import FilterWarningModal from './FilterWarningModal';
@@ -108,7 +107,7 @@ function FilterItemRow({ filter, filters, onApplyFilter }: Props) {
 
     return (
         <>
-            <TableRow ref={setNodeRef} style={style} className={clsx(isDragging && 'table-row--dragging')}>
+            <TableRow ref={setNodeRef} style={style} dragging={isDragging}>
                 <TableCell {...attributes} {...listeners}>
                     <Handle />
                 </TableCell>
