@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import Price from '@proton/components/components/price/Price';
-import { COUPON_CODES, getCheckout, getPlanNameFromIDs } from '@proton/payments';
+import { COUPON_CODES, getCheckout, getPlanNameFromIDs, hasLumoAddonFromPlanIDs } from '@proton/payments';
+import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { getShortBillingText } from '../helpers';
 import type { CouponConfig } from './interface';
@@ -40,7 +41,9 @@ export const bf2025Config: CouponConfig = {
                 return null;
             }
 
-            return plan.Title;
+            const withLumo = hasLumoAddonFromPlanIDs(planIDs);
+
+            return withLumo ? `${plan.Title} + ${LUMO_SHORT_APP_NAME}` : plan.Title;
         })();
 
         if (!planTitle) {

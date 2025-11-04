@@ -437,6 +437,7 @@ export {
     type SubscriptionCheckForbiddenReason,
     type SubscriptionCheckResponse,
     type Tax,
+    type EnrichedCoupon,
 } from './core/subscription/interface';
 export {
     getAvailableCycles,
