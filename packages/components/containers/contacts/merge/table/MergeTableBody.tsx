@@ -1,12 +1,11 @@
-import type { ComponentProps } from 'react';
-
-import OrderableTableBody from '@proton/components/components/orderableTable/OrderableTableBody';
+import { SortableList } from '@proton/components/components/dnd/SortableList';
+import TableBody from '@proton/components/components/table/TableBody';
 import type { ContactFormatted } from '@proton/shared/lib/interfaces/contacts';
 import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 
 import MergeTableBodyRow from './MergeTableBodyRow';
 
-interface Props extends Omit<ComponentProps<typeof OrderableTableBody>, 'colSpan'> {
+interface Props {
     contacts: ContactFormatted[];
     vcardContacts?: VCardContact[];
     highlightedID: string;
@@ -15,6 +14,7 @@ interface Props extends Omit<ComponentProps<typeof OrderableTableBody>, 'colSpan
     onClickCheckbox: (ID: string) => void;
     onClickDetails: (ID: string) => void;
     onToggleDelete: (ID: string) => void;
+    onSortEnd: ({ oldIndex, newIndex }: { oldIndex: number; newIndex: number }) => void;
 }
 
 const MergeTableBody = ({
@@ -25,25 +25,28 @@ const MergeTableBody = ({
     onClickCheckbox,
     onClickDetails,
     onToggleDelete,
+    onSortEnd,
     ...rest
 }: Props) => {
+    const itemIds = contacts.map((item) => item.ID);
     return (
-        <OrderableTableBody colSpan={4} {...rest} data-testid="merge-model:merge-table">
-            {contacts.map((Contact, i) => (
-                <MergeTableBodyRow
-                    index={i}
-                    key={Contact.ID}
-                    ID={Contact.ID}
-                    Contact={Contact}
-                    highlightedID={highlightedID}
-                    isChecked={isChecked}
-                    beDeleted={beDeleted}
-                    onClickCheckbox={onClickCheckbox}
-                    onClickDetails={onClickDetails}
-                    onToggleDelete={onToggleDelete}
-                />
-            ))}
-        </OrderableTableBody>
+        <TableBody {...rest} data-testid="merge-model:merge-table">
+            <SortableList items={itemIds} onSortEnd={onSortEnd}>
+                {contacts.map((Contact) => (
+                    <MergeTableBodyRow
+                        key={Contact.ID}
+                        ID={Contact.ID}
+                        Contact={Contact}
+                        highlightedID={highlightedID}
+                        isChecked={isChecked}
+                        beDeleted={beDeleted}
+                        onClickCheckbox={onClickCheckbox}
+                        onClickDetails={onClickDetails}
+                        onToggleDelete={onToggleDelete}
+                    />
+                ))}
+            </SortableList>
+        </TableBody>
     );
 };
 
