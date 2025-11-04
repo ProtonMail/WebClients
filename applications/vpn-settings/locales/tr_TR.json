@@ -443,6 +443,9 @@
       "Get a new encrypted email address": [
         "Yeni bir şifrelenmiş e-posta adresi edinin"
       ],
+      "Get Deal": [
+        "Fırsatı değerlendirin"
+      ],
       "Get in touch": [
         "Bizimle görüşün"
       ],
@@ -3779,6 +3782,9 @@
       "Failed to load the STL preview": [
         "STL ön izlemesi yüklenemedi"
       ],
+      "Failed to lookup server. Please try again": [
+        "Sunucu sorgulanamadı. Lütfen yeniden deneyin."
+      ],
       "Failed to process the logo": [
         "Logo işlenemedi"
       ],
@@ -4018,6 +4024,9 @@
       "Request timed out": [
         "İstek zaman aşımına uğradı"
       ],
+      "Server not found": [
+        "Sunucu bulunamadı"
+      ],
       "Signature verification failed": [
         "İmza doğrulanamadı"
       ],
@@ -4098,6 +4107,12 @@
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Korunmayan kullanıcı hesapları oluşturmak ve bu hesaplara erişmek için yönetici yetkilerinizi geri yüklemelisiniz."
+      ],
+      "Too many requests. Please try again after ${ date }": [
+        "Çok fazla sayıda istek alındı. Lütfen ${ date } tarihinden sonrası için yeniden deneyin"
+      ],
+      "Too many requests. Please try again later": [
+        "Çok fazla sayıda istek alındı. Lütfen bir süre sonra yeniden deneyin"
       ],
       "Try again later": [
         "Bir süre sonra yeniden deneyin"
@@ -5720,9 +5735,6 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Bir kullanıcı, tek bir kullanıcı adı, e-posta kutusu ya da kişi ile ilişkili olan bir hesaptır"
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Ödenmemiş faturalar nedeniyle hesap erişimi kısıtlandı. Lütfen yöneticinizle görüşün."
-      ],
       "Account monitor": [
         "Hesap izleyici"
       ],
@@ -6316,6 +6328,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Kimlik hizmeti sağlayıcınıza gidin, ${ appName } için SAML üst verileri alın ve buradan içe aktarın."
+      ],
+      "Google Pay mark": [
+        "Google Pay işareti"
       ],
       "Got it": [
         "Tamam"
@@ -7001,6 +7016,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda yeni özellikler eklendi."
       ],
+      "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
+        "Bazı sunucular yukarıdaki listede görünmeyebilir. Bu sunucuları bulmak için sunucu adına göre (AT#62 gibi) arama yapın."
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "SAML tek oturum açma ile kimlik doğrulamasına izin verilecek alanı belirtin."
       ],
@@ -7672,9 +7690,6 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "${ BRAND_NAME } hesabınız şu anda askıya alınmış. 28 gün sonra e-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hizmeti normal şekilde kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "${ BRAND_NAME } hesabınız şu anda askıya alınmış. E-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hesabınızı kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
-      ],
       "Your ${ BRAND_NAME } password": [
         "${ BRAND_NAME } parolanız"
       ],
@@ -7686,12 +7701,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Hesabınızda süresi geçmiş en az bir fatura var. Erişiminiz yakında kısıtlanacak. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Hesabınızda süresi geçmiş en az bir fatura var. Hesabınıza erişiminiz kısıtlandı ve ödeme yapılana kadar tüm hizmetler engellendi. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Hesabınızda süresi geçmiş en az bir fatura var. Hesabınıza erişim kısıtlandı. Ödeme yapmazsanız e-postalarınız ve paylaşım bağlantılarınız engellenecek. ${ payInvoiceLink }"
       ],
       "Your account was successfully updated with this promotion": [
         "Hesabınız bu fırsata göre güncellendi"
@@ -8515,6 +8524,9 @@
       ],
       "Sequences": [
         "Diziler"
+      ],
+      "Server name": [
+        "Sunucu adı"
       ],
       "Show ${ n } administrator": [
         "${ n } yöneticiyi görüntüle",
@@ -10953,6 +10965,9 @@
       "Credit/debit card": [
         "Kredi ya da banka kartı"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Yeni kredi ya da banka kartı"
       ]
@@ -11098,6 +11113,12 @@
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Seçilmiş ödeme yönteminizden ${ amountToCharge } ödeme alınacak."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Birazdan ödemenizi doğrulamak için PayPal sitesine yönlendirileceksiniz."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Birazdan ödemenizi doğrulamak için yönlendirileceksiniz."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "SEPA banka havaleleri yalnızca avro ödemelerini desteklediği için para biriminiz avroya (€) dönüştürüldü."
       ],
@@ -11128,6 +11149,11 @@
         "Kartınız reddedildi. Lütfen ödemeyi onaylamak için başka bir kart deneyin ya da bankanızla görüşün."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Bir sorun çıktı. Google Pay doğrulaması tamamlanamadı."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Önceki abonelik tarifenizin kullanılmayan bölümünden kalan kredi"
@@ -11147,6 +11173,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Banka havalesi - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - ${ paymentMethod.Details.Last4 } ile biten kart"
       ]
     },
     "Payments.Sepa": {
@@ -11254,6 +11283,9 @@
       ],
       "E.g., ": [
         "Örneğin, "
+      ],
+      "e.g., AT#62": [
+        "Örnek: AT#62"
       ],
       "End date": [
         "Bitiş tarihi"
@@ -11665,6 +11697,11 @@
       ],
       "Scopes cannot have the same value": [
         "Kapsamlar aynı değerde olamaz"
+      ]
+    },
+    "retention_policy_2025_Hint": {
+      "${ currentLength }/${ MAX_TITLE_LENGTH } characters": [
+        "${ currentLength }/${ MAX_TITLE_LENGTH } karakter"
       ]
     },
     "retention_policy_2025_Info": {
@@ -14462,6 +14499,9 @@
       ],
       "SAML authentication": [
         "SAML kimlik doğrulaması"
+      ],
+      "Search for additional servers": [
+        "Ek sunucuları arayın"
       ],
       "Security": [
         "Güvenlik"

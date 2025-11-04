@@ -440,6 +440,9 @@
       "Get a new encrypted email address": [
         "Obtener una nueva dirección de correo cifrada"
       ],
+      "Get Deal": [
+        "Consigue la oferta"
+      ],
       "Get in touch": [
         "Ponte en contacto"
       ],
@@ -3755,6 +3758,9 @@
       "Failed to load the STL preview": [
         "Error al cargar la vista previa STL"
       ],
+      "Failed to lookup server. Please try again": [
+        "No se pudo consultar el servidor. Inténtalo de nuevo"
+      ],
       "Failed to process the logo": [
         "Error al procesar el logo"
       ],
@@ -3994,6 +4000,9 @@
       "Request timed out": [
         "Tiempo de espera agotado"
       ],
+      "Server not found": [
+        "Servidor no encontrado"
+      ],
       "Signature verification failed": [
         "Error al verificar la firma"
       ],
@@ -4074,6 +4083,12 @@
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Necesitas restaurar tus privilegios de administración para crear cuentas no privadas y acceder a las mismas."
+      ],
+      "Too many requests. Please try again after ${ date }": [
+        "Demasiadas solicitudes. Vuelve a intentarlo después de ${ date }"
+      ],
+      "Too many requests. Please try again later": [
+        "Demasiadas solicitudes. Vuelve a intentarlo más tarde."
       ],
       "Try again later": [
         "Vuelve a intentarlo más tarde"
@@ -5696,9 +5711,6 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Un usuario es una cuenta asociada a un único nombre de usuario, bandeja de entrada y persona"
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "El acceso a la cuenta ha sido restringido debido a facturas impagadas. Contacta con tu administrador."
-      ],
       "Account monitor": [
         "Monitor de cuenta"
       ],
@@ -6977,6 +6989,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como eres un usuario leal, tu cuenta tiene activadas funciones adicionales."
       ],
+      "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
+        "Algunos servidores puede que no aparezcan en la lista anterior. Busca por nombre de servidor (ej., AT#62) para encontrarlos."
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Especifica el dominio que puede autenticarse con SAML SSO."
       ],
@@ -7649,9 +7664,6 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Tu cuenta ${ BRAND_NAME } está actualmente suspendida. Transcurridos 28 días, los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento serán bloqueados y no podrás cargar nuevos archivos. Para restablecer el servicio normal, tienes que pagar las facturas pendientes."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Tu cuenta ${ BRAND_NAME } está suspendida actualmente. Los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento están bloqueados y no puedes cargar nuevos archivos. Para continuar usando tu cuenta, tienes que pagar las facturas pendientes."
-      ],
       "Your ${ BRAND_NAME } password": [
         "Tu contraseña de ${ BRAND_NAME }"
       ],
@@ -7663,12 +7675,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Tu cuenta tiene al menos una factura atrasada. Tu acceso pronto será restringido. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Tu cuenta tiene al menos una factura vencida. Tu cuenta está restringida y todos los servicios están bloqueados hasta que realices el pago. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Tu cuenta tiene al menos una factura vencida. Tu cuenta está restringida. Las faltas de pago continuadas implicarán el bloqueo de tus correos y enlaces compartidos. ${ payInvoiceLink }"
       ],
       "Your account was successfully updated with this promotion": [
         "Se ha actualizado tu cuenta con esta promoción."
@@ -8479,6 +8485,9 @@
       ],
       "Sequences": [
         "Secuencias"
+      ],
+      "Server name": [
+        "Nombre del servidor"
       ],
       "Show ${ n } administrator": [
         "Mostrar ${ n } administrador",
@@ -10927,6 +10936,9 @@
       "Credit/debit card": [
         "Tarjeta de crédito/débito"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Nueva tarjeta de crédito/débito"
       ],
@@ -11052,6 +11064,12 @@
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Se te cobrará ${ amountToCharge } a tu método de pago seleccionado."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Pronto serás redirigido a PayPal para verificar tu pago."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Pronto serás redirigido para verificar tu pago."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Tu moneda ha sido cambiada a euros (€) porque las transferencias bancarias SEPA solo soportan pagos en euros."
       ],
@@ -11079,6 +11097,11 @@
         "Tu tarjeta ha sido rechazada. Por favor, prueba con una tarjeta diferente o contacta con tu banco para autorizar el cargo."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Se ha producido un error. Falló la verificación de Google Pay."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito por la parte no utilizada de tu suscripción al plan anterior"
@@ -11098,6 +11121,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Transferencia bancaria - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - tarjeta terminada en ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -11205,6 +11231,9 @@
       ],
       "E.g., ": [
         "P. ej., "
+      ],
+      "e.g., AT#62": [
+        "p. ej., AT#62"
       ],
       "End date": [
         "Fecha de fin"
@@ -11616,6 +11645,11 @@
       ],
       "Scopes cannot have the same value": [
         "Los contextos no pueden tener el mismo valor"
+      ]
+    },
+    "retention_policy_2025_Hint": {
+      "${ currentLength }/${ MAX_TITLE_LENGTH } characters": [
+        "${ currentLength }/${ MAX_TITLE_LENGTH } caracteres"
       ]
     },
     "retention_policy_2025_Info": {
@@ -14422,6 +14456,9 @@
       ],
       "SAML authentication": [
         "Autenticación SAML"
+      ],
+      "Search for additional servers": [
+        "Buscar servidores adicionales"
       ],
       "Security": [
         "Seguridad"

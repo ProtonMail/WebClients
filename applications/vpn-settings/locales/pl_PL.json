@@ -5654,9 +5654,6 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Użytkownikiem jest konto skojarzone z nazwą użytkownika, skrzynką pocztową lub osobą"
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Dostęp do konta został ograniczony z powodu niezapłaconych faktur. Skontaktuj się ze swoim administratorem."
-      ],
       "Account successfully updated": [
         "Konto zostało zaktualizowane"
       ],
@@ -7580,9 +7577,6 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Konto ${ BRAND_NAME } zostało zawieszone. Za 28 dni wiadomości nie będą dostarczane do skrzynki odbiorczej. Linki dysku zostaną zablokowane, a możliwość przesyłania nowych plików zostanie wstrzymana. Aby wznowić działanie usługi, ureguluj zobowiązania."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Konto ${ BRAND_NAME } zostało zawieszone. Wiadomości nie są dostarczane do skrzynki odbiorczej. Linki dysku nie są aktywne, a możliwość przesyłania nowych plików została wstrzymana. Aby wznowić działanie konta, ureguluj zobowiązania."
-      ],
       "Your ${ BRAND_NAME } password": [
         "Hasło ${ BRAND_NAME }"
       ],
@@ -7594,12 +7588,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Twoje konto posiada zaległe faktury. Dostęp do konta zostanie wkrótce ograniczony. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Dostęp do konta został ograniczony z powodu niezapłaconych faktur. Wszystkie usługi zostały zablokowane do czasu wykonania płatności. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Dostęp do konta został ograniczony z powodu niezapłaconych faktur. Dalszy brak płatności spowoduje zablokowanie dostarczania wiadomości i udostępnionych linków. ${ payInvoiceLink }"
       ],
       "Your account was successfully updated with this promotion": [
         "Konto zostało zaktualizowane z użyciem promocji"

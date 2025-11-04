@@ -443,6 +443,9 @@
       "Get a new encrypted email address": [
         "Атрымаць новы зашыфраваны адрас электроннай пошты"
       ],
+      "Get Deal": [
+        "Атрымаць прапанову"
+      ],
       "Get in touch": [
         "Звязацца з намі"
       ],
@@ -1632,12 +1635,47 @@
         "Прастора сховішча размеркавана паміж усімі сэрвісамі ${ BRAND_NAME }"
       ]
     },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "Распродаж з нагоды \"Чорнай пятніцы\""
+      ]
+    },
     "BF2025: Deal details": {
+      "2 TB data storage": [
+        "Сховішча даных памерам у 2 ТБ"
+      ],
+      "3 TB data storage": [
+        "Сховішча даных памерам у 3 ТБ"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Доступ да 15 000+ сервераў у 120+ краінах"
+      ],
+      "Access advanced AI models": [
+        "Доступ да перадавых мадэляў ШІ"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Усе прэміяльныя функцыі ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Block ads, trackers, and malware": [
         "Блакіроўка рэкламы, праграм сачэння і шкодных праграм"
       ],
       "Built-in 2FA authenticator": [
         "Убудаваны аўтэнтыфікатар 2ФА"
+      ],
+      "Connect 10 devices at once": [
+        "Падключыце 10 прылад адначасова"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Поўная гісторыя чатаў з простым пошукам і абранымі"
+      ],
+      "Individual accounts for 6 users": [
+        "Індывідуальныя ўліковыя запісы для 6 карыстальнікаў"
+      ],
+      "Individual accounts for you and a partner": [
+        "Індывідуальныя ўліковыя запісы для вас і партнёра"
+      ],
+      "Stronger protection against cyber threats": [
+        "Больш моцная абарона ад кіберпагроз"
       ],
       "Unlimited daily chats": [
         "Неабмежаваная колькасць штодзённых чатаў"
@@ -1648,9 +1686,29 @@
         "Чорная пятніца"
       ]
     },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Дапамажыце сваім блізкім далучыцца да рэвалюцыі прыватнасці з нашымі самымі выгаднымі камплектамі, зараз са зніжкай 50%!"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Далучайцеся да рэвалюцыі прыватнасці з нашымі самымі выгаднымі камплектамі, зараз са зніжкай 50%!"
+      ]
+    },
     "BF2025: Offers": {
       "for ${ durationDeal }": [
         "за ${ durationDeal }"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "Зэканомце ${ savedAmount } з нашай самай выгаднай абмежаванай па часе прапановай!"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "Пераключыцеся на наш 2-гадовы тарыфны план і зэканомце ${ savedAmount }!"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "Пераключыцеся на наш гадавы тарыфны план і зэканомце ${ savedAmount }!"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "Абараніце сваё плямя поўнай лічбавай абаронай."
       ]
     },
     "BF2025: Tooltip": {
@@ -3760,6 +3818,9 @@
       "Failed to load the STL preview": [
         "Не ўдалося загрузіць папярэдні прагляд STL"
       ],
+      "Failed to lookup server. Please try again": [
+        "Не ўдалося знайсці сервер. Паспрабуйце яшчэ раз"
+      ],
       "Failed to process the logo": [
         "Не ўдалося апрацаваць лагатып"
       ],
@@ -4003,6 +4064,9 @@
       "Request timed out": [
         "Перавышаны тэрмін чакання запыту"
       ],
+      "Server not found": [
+        "Сервер не знойдзены"
+      ],
       "Signature verification failed": [
         "Не ўдалося праверыць подпіс"
       ],
@@ -4083,6 +4147,12 @@
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Вам неабходна аднавіць прывілеі адміністратара, каб ствараць уліковыя запісы непрыватных карыстальнікаў і атрымліваць доступ да іх."
+      ],
+      "Too many requests. Please try again after ${ date }": [
+        "Занадта шмат запытаў. Паспрабуйце яшчэ раз пасля ${ date }"
+      ],
+      "Too many requests. Please try again later": [
+        "Занадта шмат запытаў. Паспрабуйце яшчэ раз пазней"
       ],
       "Try again later": [
         "Паспрабуйце яшчэ раз пазней"
@@ -5803,9 +5873,6 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Карыстальнік - гэта ўліковы запіс, які звязаны з асобным імем карыстальніка, паштовай скрыняй і асобай"
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Доступ да ўліковага запісу абмежаваны з прычыны неаплачаных рахункаў. Звярніцеся да вашага адміністратара."
-      ],
       "Account monitor": [
         "Назіранне за ўліковым запісам"
       ],
@@ -6245,7 +6312,7 @@
         "Спампуйце наш шаблон CSV, запоўніце падрабязнасці пра карыстальніка і запампуйце ваш запоўнены файл CSV для стварэння ўліковага запісу для гэтых карыстальнікаў."
       ],
       "Download the app and import existing codes.": [
-        "Спампаваць праграму і імпартаваць існуючыя коды."
+        "Спампуйце праграму і імпартуйце існуючыя коды."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Спампуйце вашу абраную праграму сёння і прыватнасць застанецца з вамі ў любым месцы."
@@ -6423,6 +6490,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Перайдзіце да свайго пастаўшчыка пасведчанняў, каб атрымаць метаданыя SAML для ${ appName } і імпартаваць іх сюды."
+      ],
+      "Google Pay mark": [
+        "Пазнака Google Pay"
       ],
       "Got it": [
         "Зразумела"
@@ -7119,6 +7189,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Паколькі вы з'яўляецеся пастаянным карыстальнікам, мы дадалі ў ваш уліковы запіс дадатковыя функцыі."
+      ],
+      "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
+        "Некаторыя серверы могуць не адлюстроўвацца ў спісе вышэй. Шукайце па назве сервера (напрыклад, AT#62), каб знайсці іх."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Пазначыць дамен, які можна выкарыстоўваць для аўтэнтыфікацыі з SAML SSO."
@@ -7819,9 +7892,6 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Ваш уліковы запіс ${ BRAND_NAME } у цяперашні час прыпынены. На 29 дзень лісты больш не будуць трапляць у вашу паштовую скрыню, а абагуленыя спасылкі на воблачным дыску будуць заблакіраваны, і вы больш не зможаце запампоўваць новыя файлы. Для ўзнаўлення звычайнага абслугоўвання, аплаціце ўсе неаплачаныя рахункі."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Ваш уліковы запіс ${ BRAND_NAME } у цяперашні час прыпынены. Лісты больш не будуць дастаўляцца ў вашу паштовую скрыню. Абагуленыя спасылкі на воблачным дыску больш не дзейнічаюць і вы не можаце запампоўваць новыя файлы. Для аднаўлення звычайнага абслугоўвання, аплаціце ўсе неаплачаныя рахункі."
-      ],
       "Your ${ BRAND_NAME } password": [
         "Ваш пароль ${ BRAND_NAME }"
       ],
@@ -7833,12 +7903,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Ваш доступ неўзабаве будзе абмежаваны. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Доступ да яго абмежаваны і ўсе сэрвісы ў ім заблакіраваны да паступлення аплаты. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Доступ да яго абмежаваны. Далейшая неаплата прывядзе да блакіроўкі лістоў і абагуленых спасылак.${ payInvoiceLink }"
       ],
       "Your account was successfully updated with this promotion": [
         "Ваш уліковы запіс паспяхова абноўлены з дапамогай гэтай рэкламнай акцыі"
@@ -8676,6 +8740,9 @@
       ],
       "Sequences": [
         "Паслядоўнасці"
+      ],
+      "Server name": [
+        "Назва сервера"
       ],
       "Show ${ n } administrator": [
         "Паказаць ${ n } адміністратара",
@@ -11196,6 +11263,9 @@
       "Credit/debit card": [
         "Банкаўская картка"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Новая банкаўская картка"
       ],
@@ -11356,6 +11426,12 @@
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "З вас будзе спагнана сума ў памеры ${ amountToCharge } са спосабу аплаты, які вы выбралі."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для спраўджання плацяжу."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Неўзабаве вы будзеце перанакіраваны для спраўджання вашага плацяжу."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Ваша валюта была зменена на еўра (€), таму што банкаўскія пераводы SEPA падтрымліваюць толькі плацяжы ў еўра."
       ],
@@ -11386,6 +11462,11 @@
         "Ваша картка адхілена. Паспрабуйце іншую картку або звяжыцеся з вашым банкам для аўтарызацыі плацяжу."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Нешта пайшло не так. Збой праверкі Google Pay."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Крэдыты для нявыкарыстанай часткі вашага папярэдняга тарыфнага плана падпіскі"
@@ -11405,6 +11486,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Банкаўскі перавод - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay — картка, якая заканчваецца на ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -11512,6 +11596,9 @@
       ],
       "E.g., ": [
         "Напрыклад, "
+      ],
+      "e.g., AT#62": [
+        "напрыклад, AT#62"
       ],
       "End date": [
         "Дата завяршэння"
@@ -11935,6 +12022,11 @@
       ],
       "Scopes cannot have the same value": [
         "Вобласці не могуць мець аднолькавыя значэнні"
+      ]
+    },
+    "retention_policy_2025_Hint": {
+      "${ currentLength }/${ MAX_TITLE_LENGTH } characters": [
+        "${ currentLength }/${ MAX_TITLE_LENGTH } сімв."
       ]
     },
     "retention_policy_2025_Info": {
@@ -14575,7 +14667,7 @@
         "Электронная пошта"
       ],
       "Email categories": [
-        "Катэгорыі электроннай пошты"
+        "Катэгорыі лістоў"
       ],
       "Email subscriptions": [
         "Падпіскі электроннай пошты"
@@ -14858,6 +14950,9 @@
       ],
       "SAML authentication": [
         "Аўтэнтыфікацыя SAML"
+      ],
+      "Search for additional servers": [
+        "Пошук дадатковых сервераў"
       ],
       "Security": [
         "Бяспека"
@@ -15296,7 +15391,7 @@
     },
     "tooltip": {
       "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
-        "${ LUMO_APP_NAME }: Памочнік ШІ, які паважае вашу прыватнасць"
+        "${ LUMO_APP_NAME }: памочнік ШІ, які паважае вашу прыватнасць"
       ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
