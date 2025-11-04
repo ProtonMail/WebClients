@@ -3006,7 +3006,7 @@
         "Criptografado com PGP"
       ],
       "PGP-encrypted to verified recipient": [
-        "PGP criptografado para destinatário verificado"
+        "Criptografado com PGP para destinatário verificado"
       ],
       "PGP-encrypted. ${ warningsText }": [
         "Criptografado de ponta a ponta. ${ warningsText }"
@@ -4827,7 +4827,7 @@
         "Erro de conexão: Verifique sua conexão com a internet e tente novamente."
       ],
       "No address with keys available to compose a message": [
-        "Sem endereços com chaves disponíveis para compor uma mensagem"
+        "Não há endereço com chaves disponíveis para compor uma mensagem"
       ],
       "No address with sending permissions": [
         "Nenhum endereço com permissões de envio"
@@ -4956,7 +4956,7 @@
         "Ocorreu um problema ao carregar o assistente de escrita no seu dispositivo. Tente novamente."
       ],
       "Problem unloading data not needed when the writing assistant is inactive": [
-        "Problema ao descarregar dados não necessários quando o assistente de escrita está inativo"
+        "Problema ao descarregar dados desnecessários quando o assistente de escrita está inativo"
       ],
       "Process aborted": [
         "Processo abortado"
@@ -5893,7 +5893,7 @@
         "Bloqueie remetentes indesejados"
       ],
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
-        "Parabéns por tornar seu e-mail ainda mais seguro, conveniente e relevante! Nós ampliamos seu armazenamento gratuito para 1 GB."
+        "Parabéns por tornar seu e-mail ainda mais seguro, prático e relevante! Aumentamos seu armazenamento gratuito para um total de 1 GB."
       ],
       "Change ${ strongText } to your ${ BRAND_NAME } address": [
         "Mude os ${ strongText } para o seu endereço ${ BRAND_NAME }"
@@ -6766,9 +6766,6 @@
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Acesse mais de 6.500 servidores de alta velocidade em até 10 dispositivos para manter seus dados de navegação seguros. Disponível em ${ ios }, ${ android }, ${ appleTV } e ${ desktop }."
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "O acesso à conta foi restringido devido a faturas não pagas. Entre em contato com o seu administrador."
-      ],
       "Account successfully updated": [
         "Conta atualizada"
       ],
@@ -7387,6 +7384,9 @@
       "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
         "Dê às contas recebidas um marcador com código de cores, como “${ suggestedLabelName }”. Depois que elas forem pagas, altere o marcador para “${ suggestedPaidLabelName }”."
       ],
+      "Google Pay mark": [
+        "Marca Google Pay"
+      ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Governos e provedores de internet (ISPs) podem monitorar sua atividade on-line. Ao ocultar seu IP real e criptografar sua atividade, sua navegação se torna privada."
       ],
@@ -7980,7 +7980,7 @@
         "Direita para esquerda"
       ],
       "Right-click for options": [
-        "Clique com o botão direito do mouse para mais opções"
+        "Clique com o botão direito para ver as opções."
       ],
       "Sat, ${ formatTime }": [
         "Sábado, ${ formatTime }"
@@ -8265,7 +8265,7 @@
         "Esta conversa contém mensagens que não estão na lixeira."
       ],
       "This conversation contains one or more expiring messages": [
-        "Esta conversa contém uma ou mais mensagens com expiração."
+        "Esta conversa contém uma ou mais mensagens com expiração"
       ],
       "This conversation contains trashed messages.": [
         "Esta conversa contém mensagens na lixeira."
@@ -8827,20 +8827,11 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Sua conta da ${ BRAND_NAME } está atualmente suspensa. Após 28 dias, os e-mails não serão mais entregues em sua caixa de entrada, seus links de compartilhamento de Drive serão bloqueados e você não poderá enviar novos arquivos. Para retomar o serviço normal, pague quaisquer faturas vencidas."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Sua conta da ${ BRAND_NAME } está suspensa no momento. Os e-mails não estão mais sendo entregues em sua caixa de entrada. Seus links de compartilhamento do Drive não estão mais ativos e você não pode enviar novos arquivos. Para continuar usando sua conta, pague as faturas vencidas."
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Sua assinatura do ${ plan } será substituída pela versão ${ PASS_SHORT_APP_NAME } Lifetime. O saldo restante da sua assinatura será adicionado à sua conta. A oferta vitalícia do ${ PASS_SHORT_APP_NAME } não tem preço de renovação, é um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Sua conta tem pelo menos uma fatura vencida. O seu acesso será restringido em breve. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Sua conta tem pelo menos uma fatura vencida. Sua conta está restrita e todos os serviços agora estão bloqueados até o pagamento. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Sua conta tem pelo menos uma fatura vencida. Sua conta é restrita. O não pagamento contínuo bloqueará seus e-mails e links de compartilhamento. ${ payInvoiceLink }"
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "O seu navegador não suporta o assistente de escrita. Tente executar nos servidores."
@@ -9282,6 +9273,12 @@
       "Also archive": [
         "Também arquivar"
       ],
+      "Always label sender's emails": [
+        "Sempre marcar os e-mails do remetente"
+      ],
+      "Always move sender's emails": [
+        "Sempre mover os e-mails do remetente"
+      ],
       "AND": [
         "E"
       ],
@@ -9660,6 +9657,9 @@
       "Move ${ sidebarElementName }": [
         "Mover ${ sidebarElementName }"
       ],
+      "Move messages to": [
+        "Mover mensagens para"
+      ],
       "Move to": [
         "Mover para"
       ],
@@ -9701,9 +9701,6 @@
       ],
       "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
         "Chega de perder mensagens importantes! Elas agora aparecem em ${ primaryCopy }. Todo o resto é classificado por categoria para que sejam fáceis de encontrar e não atrapalhe sua caixa de entrada."
-      ],
-      "No results found": [
-        "Nenhum resultado encontrado"
       ],
       "Non-promotional content and news": [
         "Conteúdo não promocional e notícias"
@@ -10066,7 +10063,7 @@
     },
     "Labels": {
       "Newsletters or mailing lists you unsubscribe from will show up here.": [
-        "Os boletins informativos ou listas de e-mails dos quais você cancelar a assinatura aparecerão aqui."
+        "Boletins informativos ou listas de e-mail das quais você se desinscreveu aparecerão aqui."
       ],
       "You don't have any active newsletters or mailing list subscriptions.": [
         "Você não tem nenhuma assinatura ativa de boletins ou de listas de e-mails."
@@ -12168,6 +12165,9 @@
       "Credit/debit card": [
         "Cartão de crédito/débito"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Novo cartão de crédito/débito"
       ],
@@ -12249,12 +12249,12 @@
         "O cupom é válido para ${ couponRedemptions } renovações."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
-        "O preço com desconto especial é válido para o primeiro ${ subscriptionLength } mês.",
+        "O preço com desconto especial é válido para ${ subscriptionLength } mês.",
         "O preço com desconto especial é valido para os primeiros ${ subscriptionLength } meses."
       ],
       "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "O preço com desconto especial é válido para o primeiro mês. O cupom é válido para renovação de ${ couponRedemptions }. Em seguida, ele será renovado automaticamente a ${ renewPriceStr } por 1 mês. Você pode cancelar a qualquer momento.",
-        "O preço com desconto especial de $ é válido para o primeiro mês. O cupom é válido para renovações de ${ couponRedemptions }. Em seguida, ele será renovado automaticamente a ${ renewPriceStr } por 1 mês. Você pode cancelar a qualquer momento."
+        "O preço com desconto especial é válido para o primeiro mês. O cupom é válido para ${ couponRedemptions } renovação. Após esse período, a assinatura será renovada automaticamente por ${ renewPriceStr } por mais 1 mês. Você pode cancelar a qualquer momento.",
+        "O preço com desconto especial é válido para o primeiro mês. O cupom é válido para ${ couponRedemptions } renovações. Após esse período, a assinatura será renovada automaticamente por ${ renewPriceStr } por mais 1 mês. Você pode cancelar a qualquer momento."
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "O preço com desconto especial é válido no primeiro mês. Em seguida, ele será renovado automaticamente pelo preço de ${ renewPriceStr } todo mês. Você pode cancelar a qualquer momento."
@@ -12301,6 +12301,12 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Você já assina este plano. Você pode mudar sua assinatura na ${ subscriptionPlatform }."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Em breve você será redirecionado para o PayPal para verificar seu pagamento."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Em breve você será redirecionado para verificar seu pagamento."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Sua moeda foi alterada para euros (€) porque transferências bancárias SEPA apenas suportam pagamentos em euros."
       ],
@@ -12331,6 +12337,11 @@
         "O seu cartão foi recusado. Tente um cartão diferente ou entre em contato com o seu banco para autorizar o pagamento."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Ocorreu um erro. A verificação do Google Pay falhou."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito pela parte não usada no plano anterior da sua assinatura"
@@ -12350,6 +12361,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Transferência bancária - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - cartão terminado em ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -14220,7 +14234,7 @@
         "O endereço foi copiado para a área de transferência"
       ],
       "Address verification disabled": [
-        "Verificação de endereço desativado"
+        "Verificação de endereço desativada"
       ],
       "Alias copied to clipboard": [
         "Alias copiado para a área de transferência"
@@ -14361,7 +14375,7 @@
         "Mensagem removida de ${ labelName }."
       ],
       "Message removed from Starred.": [
-        "Mensagem removida com estrela."
+        "Mensagem removida do marcador Com estrela."
       ],
       "Message updated": [
         "Mensagem atualizada",
@@ -14856,6 +14870,12 @@
       "Create contact": [
         "Criar contato"
       ],
+      "Create folder \"${ search }\"": [
+        "Criar pasta \"${ search }\""
+      ],
+      "Create label \"${ search }\"": [
+        "Criar o marcador \"${ search }\""
+      ],
       "Create new group": [
         "Criar um grupo"
       ],
@@ -15126,10 +15146,6 @@
       "Label as": [
         "Rotular como"
       ],
-      "Label message as": [
-        "Marcar mensagem como",
-        "Marcar mensagens como"
-      ],
       "Label options": [
         "Opções de marcador"
       ],
@@ -15213,13 +15229,6 @@
       ],
       "Move all messages to trash": [
         "Mover todas as mensagens para a lixeira"
-      ],
-      "Move message to": [
-        "Mover mensagem para",
-        "Mover mensagens para"
-      ],
-      "Move messages to": [
-        "Mover mensagens para"
       ],
       "Move to": [
         "Mover para"
@@ -15776,7 +15785,7 @@
     },
     "tooltip": {
       "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
-        "${ LUMO_APP_NAME }: Um assistente IA que respeita sua privacidade"
+        "${ LUMO_APP_NAME }: assistente de IA que respeita sua privacidade"
       ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Inícios de sessão seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
@@ -15985,7 +15994,7 @@
         "Sua avaliação gratuita termina em ${ textDate }. ${ action }"
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
-        "Sua avaliação terminará em ${ textDate }. Você não será cobrado se cancelar antes de ${ textDate }. ${ action }"
+        "Seu período de teste terminará em ${ textDate }. Você não será cobrado se cancelar antes de ${ textDate }. ${ action }"
       ]
     },
     "WeekDay": {
