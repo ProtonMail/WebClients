@@ -133,7 +133,7 @@ const OnboardingSetupOrgStep = ({ onNextStep, onChangeModalSize }: Props) => {
                             <InputFieldStacked icon="buildings" classname="mb-2">
                                 <InputFieldTwo
                                     id="organization-name"
-                                    className="rounded-none unstyled"
+                                    inputClassName="rounded-none unstyled"
                                     autoFocus
                                     label={c('Placeholder').t`Organization name`}
                                     placeholder={c('Placeholder').t`Your organization name`}
@@ -166,14 +166,14 @@ const OnboardingSetupOrgStep = ({ onNextStep, onChangeModalSize }: Props) => {
                     </ModalTwoFooter>
                 </>
             )}
-            {authModal((props) => {
+            {authModal(({ onReject, onResolve, ...props }) => {
                 return (
                     <AuthModal
                         {...props}
                         scope="password"
                         config={unlockPasswordChanges()}
-                        onCancel={props.onReject}
-                        onSuccess={props.onResolve}
+                        onCancel={onReject}
+                        onSuccess={onResolve}
                     />
                 );
             })}
