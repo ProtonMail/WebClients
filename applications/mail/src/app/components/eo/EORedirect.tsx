@@ -41,6 +41,7 @@ const EORedirect = ({ id, isStoreInitialized, messageState, children, setSession
             }
             void initialize();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-F8F4C8
     }, [isStoreInitialized, messageState?.messageDocument?.initialized, messageState]);
 
     useEffect(() => {
@@ -51,6 +52,7 @@ const EORedirect = ({ id, isStoreInitialized, messageState, children, setSession
         if (id && decryptedToken && password && isStoreInitialized && messageState === undefined) {
             void loadMessage(id);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-369FA0
     }, [decryptedToken, password, id, messageState, isStoreInitialized]);
 
     if (!id) {

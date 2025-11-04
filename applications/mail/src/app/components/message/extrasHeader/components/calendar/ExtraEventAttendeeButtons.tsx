@@ -116,6 +116,7 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message, reloadWidget }: P
                 );
             }
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-99D195
         [invitationApi, attendee, organizer, appInView]
     );
 

@@ -4,8 +4,8 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { InlineLinkButton } from '@proton/atoms';
-import { IcMagnifier } from '@proton/icons';
 import { sendSlowSearchReport } from '@proton/encrypted-search';
+import { IcMagnifier } from '@proton/icons';
 import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../../../containers/EncryptedSearchProvider';
@@ -20,6 +20,7 @@ const EsSlowBanner = ({ className }: Props) => {
 
     useMemo(() => {
         void sendSlowSearchReport(userID);
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-2EAF2D
     }, []);
 
     const dropdownButton = (

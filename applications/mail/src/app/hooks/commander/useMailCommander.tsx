@@ -124,6 +124,7 @@ export const useMailCommander = () => {
                 shortcuts: ['G', 'T'],
             },
         ],
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-474AD0
         []
     );
 

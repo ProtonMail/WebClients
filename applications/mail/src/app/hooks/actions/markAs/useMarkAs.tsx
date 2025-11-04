@@ -109,6 +109,7 @@ export const useMarkAs = () => {
                 numberMessage: numberSelectionElements(elements.length),
             });
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-4C749E
         [markAllAs]
     );
 

@@ -40,6 +40,7 @@ export const useCalendarCacheEventListener = (
                 cacheRef.current.rerender?.();
             }
         });
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-02087F
     }, []);
 
     // subscribe to calendar event loop
@@ -91,6 +92,7 @@ export const useCalendarCacheEventListener = (
                 cache.rerender?.();
             }
         });
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-36460B
     }, [calendarIDs]);
 };
 

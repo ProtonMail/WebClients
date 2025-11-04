@@ -36,6 +36,7 @@ export const useHasScroll = (ref: RefObject<HTMLElement>, dependencies: Dependen
             element.removeEventListener('resize', debouncedHandleResize);
             observer.disconnect();
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-EE5E95
     }, dependencies);
 
     return [hasVerticalScrollbar, hasHorizontalScrollbar];

@@ -75,6 +75,7 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
         if (message?.draftFlags && message.draftFlags.expiresIn) {
             setDate(message.draftFlags.expiresIn);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-34A1B0
     }, []);
 
     const minDate = startOfDay(currentDate);

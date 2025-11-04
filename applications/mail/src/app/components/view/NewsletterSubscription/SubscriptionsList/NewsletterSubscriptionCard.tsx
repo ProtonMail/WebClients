@@ -61,6 +61,7 @@ export const NewsletterSubscriptionCard = ({ subscription, isDeleting }: Props) 
                 clearTimeout(timeout);
             }
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-EDB9A0
     }, [isDeleting]);
 
     const handleCardClick = (subscription: NewsletterSubscription) => {

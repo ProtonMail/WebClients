@@ -148,6 +148,7 @@ export const useCompose = ({
                 returnFocusToElementRef.current = returnFocusTo;
             }
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-C5E0C1
         []
     );
 

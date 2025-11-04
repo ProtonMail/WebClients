@@ -113,6 +113,7 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
 
     const reduceFolderTreeview = useMemo(
         () => foldersTreeview.reduce((acc: string[], folder: FolderWithSubFolders) => treeviewReducer(acc, folder), []),
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-1942A8
         [foldersTreeview]
     );
 
@@ -182,6 +183,7 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
         ]
             .flat(1)
             .filter(isTruthy);
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-2FF225
     }, [
         reduceFolderTreeview,
         folders,

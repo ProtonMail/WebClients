@@ -58,6 +58,7 @@ export const useItemContextMenu = ({
             setSelectedElement(element);
             openContextMenu();
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-3996E7
         [checkedIDs]
     );
 

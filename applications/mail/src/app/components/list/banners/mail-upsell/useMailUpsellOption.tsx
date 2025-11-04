@@ -221,6 +221,7 @@ const useMailUpsellOption = ({ setMailShortcutsModalOpen, setThemesModalOpen }: 
                 ),
             },
         ],
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-D67E0E
         []
     ).filter(isTruthy);
 

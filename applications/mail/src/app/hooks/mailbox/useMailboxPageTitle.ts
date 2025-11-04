@@ -33,5 +33,6 @@ export const useMailboxPageTitle = (labelID: string) => {
 
         // We show the unread count in the title if not present in the favicon
         document.title = mailSettings.UnreadFavicon ? mainTitle : `${unreadString}${mainTitle}`;
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-EEF30C
     }, [labelID, mailSettings, user.Email, labels, folders, conversationCounts, messageCounts]);
 };

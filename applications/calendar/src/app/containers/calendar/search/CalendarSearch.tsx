@@ -35,6 +35,7 @@ const CalendarSearch = ({ containerRef, onSearch, onBackFromSearch }: Props) => 
 
     const isSearchEnabled = isEnabled !== false;
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-33D7F4
     const handleCloseSearch = (e: MouseEvent | TouchEvent) => {
         // Close the overlay
         close();
@@ -55,6 +56,7 @@ const CalendarSearch = ({ containerRef, onSearch, onBackFromSearch }: Props) => 
 
     useEffect(() => {
         void cacheIndexedDB();
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-A73122
     }, []);
 
     useEffect(() => {
@@ -64,6 +66,7 @@ const CalendarSearch = ({ containerRef, onSearch, onBackFromSearch }: Props) => 
         if (isOpen && isSearchEnabled) {
             close();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-CA8C11
     }, [isOpen, isSearchEnabled]);
 
     useEffect(() => {
@@ -78,6 +81,7 @@ const CalendarSearch = ({ containerRef, onSearch, onBackFromSearch }: Props) => 
                 return;
             }
             containerRef.current.removeEventListener('mousedown', handleCloseSearch);
+            // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-DC17E1
             containerRef.current.removeEventListener('touchstart', handleCloseSearch);
         };
     }, [containerRef, handleCloseSearch]);

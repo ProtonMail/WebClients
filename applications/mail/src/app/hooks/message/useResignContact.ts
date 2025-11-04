@@ -24,5 +24,6 @@ export const useResignContact = (localID: string) => {
         }
         const { isContactSignatureVerified } = await getEncryptionPreferences({ email: address });
         dispatch(resign({ ID: localID, isContactSignatureVerified }));
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-079492
     }, [localID]);
 };

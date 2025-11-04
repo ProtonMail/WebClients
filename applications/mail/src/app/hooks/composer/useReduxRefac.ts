@@ -70,6 +70,7 @@ const useReduxRefac = ({ composerID, modelMessage, handleChange, handleChangeCon
                 handleChange({ data: { [type]: storeRecipientType } });
             }
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-596C74
     }, [composer?.changesCount]);
 };
 

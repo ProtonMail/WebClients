@@ -85,6 +85,7 @@ const useComposerAssistantSelectedText = ({
         return () => {
             document.removeEventListener('mouseup', handleMouseUp);
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-BD0A20
     }, []);
 
     // Update selected text when selection in editor is changing,

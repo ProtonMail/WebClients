@@ -300,6 +300,7 @@ const useTips = () => {
                 action: TipActionType.DownloadProtonVPN,
             },
         ],
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-49AB53
         []
     );
 

@@ -22,6 +22,7 @@ export const GlobalScheduleModal = () => {
             }
         });
         return unsubscribe;
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-C9C0E4
     }, [subscribe]);
 
     const handleConfirm = () => {

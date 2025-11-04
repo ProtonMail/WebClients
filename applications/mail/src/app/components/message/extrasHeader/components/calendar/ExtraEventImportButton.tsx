@@ -50,6 +50,7 @@ const ExtraEventImportButton = ({ model, setModel }: Props) => {
             hideLink: false,
             updateAction: UPDATE_ACTION.NONE,
         });
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-063D29
     }, []);
 
     const handleError = useCallback(() => {
@@ -57,6 +58,7 @@ const ExtraEventImportButton = ({ model, setModel }: Props) => {
             type: 'error',
             text: c('Import ICS file from Mail').t`Creating calendar event failed`,
         });
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-67E7ED
     }, []);
 
     const handleAdd = async () => {

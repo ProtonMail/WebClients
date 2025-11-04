@@ -210,6 +210,7 @@ const useReadEvent = (
         };
 
         void mergeAndDecrypt();
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-F92F3B
     }, [targetEventData]);
 
     const notifications =

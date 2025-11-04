@@ -22,6 +22,7 @@ interface Props {
 
 const ExtraSnoozedMessage = ({ message }: Props) => {
     const getElementsFromIDs = useGetElementsFromIDs();
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-E3767C
     const elements = useMemo(() => getElementsFromIDs([message.data.ConversationID]), [message]);
 
     const [nowDate, setNowDate] = useState(() => Date.now());

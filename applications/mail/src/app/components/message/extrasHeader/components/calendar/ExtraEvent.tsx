@@ -104,6 +104,7 @@ const ExtraEvent = ({
         if (isMounted()) {
             setRetryCount((count) => count + 1);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-07CA3B
     }, []);
 
     const handleReloadWidget = () => {
@@ -309,6 +310,7 @@ const ExtraEvent = ({
         };
 
         void withLoading(initializeEventModel());
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-9070C2
     }, [retryCount]);
 
     if (loading) {

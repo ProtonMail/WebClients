@@ -134,6 +134,7 @@ const CalendarSearchView = ({
             tzid,
             date,
         });
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-903AB1
     }, [visibleItems, date]);
 
     useEffect(() => {
@@ -175,6 +176,7 @@ const CalendarSearchView = ({
         onEventRead: loadPopoverContent,
         rerender: noop,
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-F20CAB
     useEffect(() => setCalendarEvents(calendarViewEvents), [calendarViewEvents]);
 
     const { setOpenedSearchItem } = useCalendarSearch();
@@ -227,12 +229,14 @@ const CalendarSearchView = ({
             // trigger event reader
             setCalendarViewEvents([calendarViewEvent]);
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-795449
         [setTargetEventRef, setOpenedSearchItem, setCalendarViewEvents]
     );
 
     const maybeWithEmptyToday = useMemo(() => {
         const eventsGroupedByDay = groupItemsByDay(paginatedItems);
         return fillEmptyToday(eventsGroupedByDay, now);
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-E0D96F
     }, [paginatedItems]);
 
     useCalendarSearchHotkeys({

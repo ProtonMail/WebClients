@@ -21,8 +21,10 @@ export const useClickMailContent = (handler: (event: Event) => void) => {
 
         return () => {
             mailContentRef.current?.removeEventListener('mousedown', stableHandler);
+            // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-44599F
             mailContentRef.current?.removeEventListener('touchstart', stableHandler);
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-233B5C
     }, []);
 };
 

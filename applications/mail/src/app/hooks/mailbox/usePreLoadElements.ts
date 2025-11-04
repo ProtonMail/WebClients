@@ -66,6 +66,7 @@ const usePreLoadElements = ({ elements, labelID, loading }: Props) => {
         if (!loading && firstElements.length > 0 && isAllConversation) {
             void preload();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-34657E
     }, [firstElements.join(), labelID, loading]); // "firstElementIDs.join()" makes firstElementIDs dependency stable
 };
 

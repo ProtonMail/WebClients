@@ -33,7 +33,7 @@ export const useCreateDraft = () => {
         try {
             const newMessage = await createMessage(message, api, getMessageKeys);
             dispatch(draftSaved({ ID: message.localID, message: newMessage, draftFlags: message?.draftFlags }));
-            if(!shouldPreventEventLoopCallOnCompose){
+            if (!shouldPreventEventLoopCallOnCompose) {
                 await call();
             }
         } catch (error: any) {
@@ -42,6 +42,7 @@ export const useCreateDraft = () => {
             }
             throw error;
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-90DE62
     }, []);
 };
 
@@ -65,7 +66,7 @@ const useUpdateDraft = () => {
             };
             const newMessage = await updateMessage(messageToSave, previousAddressID, api, getMessageKeys);
             dispatch(draftSaved({ ID: message.localID, message: newMessage }));
-            if(!shouldPreventEventLoopCallOnCompose){
+            if (!shouldPreventEventLoopCallOnCompose) {
                 await call();
             }
         } catch (error: any) {
@@ -93,6 +94,7 @@ const useUpdateDraft = () => {
             });
             throw error;
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-D75EC9
     }, []);
 };
 
@@ -113,6 +115,7 @@ export const useSaveDraft = ({ onMessageAlreadySent }: UseUpdateDraftParameters 
         } else {
             await createDraft(message);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-F998BC
     }, []);
 };
 
@@ -159,6 +162,7 @@ export const useDeleteDraft = () => {
 
             await call();
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-4585AA
         [api, mailSettings]
     );
 };

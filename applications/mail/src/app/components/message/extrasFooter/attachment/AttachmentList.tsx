@@ -98,6 +98,7 @@ const AttachmentList = ({
         }
 
         setExpanded(pendingUploads.length > 0);
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-15220A
     }, [pendingUploads, attachments]);
 
     // We want to show the collapse button while uploading files. When all files are uploaded, we don't want to see it if attachments are embedded images only

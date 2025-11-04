@@ -34,6 +34,7 @@ const useOnboardingChecklist = () => {
             displayModal('storageReward', true);
             setRewardShowed(true);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-78C2E3
     }, [isChecklistFinished, areAllModalsClosed]);
 
     const handleDismiss = () => {

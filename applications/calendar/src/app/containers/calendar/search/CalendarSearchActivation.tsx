@@ -26,6 +26,7 @@ const CalendarSearchActivation = ({ onClose }: Props) => {
         if (!isMetadataIndexingPaused) {
             void enableEncryptedSearch({ notify: true });
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-6B7FE3
     }, [isLibraryInitialized, isMetadataIndexingPaused, isConfigFromESDBLoaded, esEnabled]);
 
     return (

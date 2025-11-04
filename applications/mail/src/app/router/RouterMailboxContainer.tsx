@@ -74,7 +74,9 @@ export const RouterMailboxContainer = () => {
     const location = useLocation();
     const urlPage = pageFromUrl(location);
     const searchParams = getSearchParams(location.hash);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-649484
     const sort = useMemo<Sort>(() => sortFromUrl(location, labelID), [searchParams.sort, labelID]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-C5320A
     const filter = useMemo<Filter>(() => filterFromUrl(location), [searchParams.filter]);
     useScrollToTop(scrollContainerRef as RefObject<HTMLElement>, [
         urlPage,

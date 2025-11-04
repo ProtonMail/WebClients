@@ -167,6 +167,7 @@ const CreateEventModal = ({
         if (isBusySlotsAvailable && isOpen) {
             dispatch(busySlotsActions.setDisplay(false));
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-8AF4A0
     }, [isOpen]);
 
     return (

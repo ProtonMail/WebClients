@@ -271,6 +271,7 @@ const EventPopover = ({
             weekStartsOn,
             locale: dateLocale,
         });
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-A359E4
     }, [veventComponent, tzid]);
 
     const commonContainerProps = {

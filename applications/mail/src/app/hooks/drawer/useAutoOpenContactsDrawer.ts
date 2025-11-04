@@ -14,6 +14,7 @@ const useAutoOpenContactsDrawer = () => {
         if (isContactSearchParams(location)) {
             setAppInView(DRAWER_NATIVE_APPS.CONTACTS);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-88D165
     }, []);
 };
 

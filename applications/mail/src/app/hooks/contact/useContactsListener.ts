@@ -82,9 +82,11 @@ export const useContactsListener = () => {
                 unsubscribe();
             }
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-B10D89
     }, [publicKeys]);
 
     useEffect(() => {
         dispatch(refresh({ contacts, contactGroups }));
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-DA6FE0
     }, [contacts, contactGroups]);
 };

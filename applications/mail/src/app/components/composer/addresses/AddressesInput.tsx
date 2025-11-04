@@ -71,12 +71,14 @@ const AddressesInput = ({
     const containerRef = useRef<HTMLDivElement>(null);
     const inputRef = useRef<HTMLInputElement>(null);
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-B8CAD3
     useEffect(() => setRecipientsOrGroups(getRecipientsOrGroups(recipients)), [recipients]);
 
     useEffect(() => {
         if (inputFocusRef) {
             inputFocusRef.current = inputRef.current?.focus.bind(inputRef.current) || noop;
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-FB3913
     }, []);
 
     const handleClick = (event: MouseEvent<HTMLDivElement>) => {
@@ -235,6 +237,7 @@ const AddressesInput = ({
         return () => {
             observer.disconnect();
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-B561EB
     }, []);
 
     return (

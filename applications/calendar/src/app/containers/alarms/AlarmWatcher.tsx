@@ -126,6 +126,7 @@ const AlarmWatcher = ({ alarms = [], tzid, calendarsEventsCacheRef }: Props) => 
                 window.clearTimeout(timeoutHandle);
             }
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-A50792
     }, [alarms, tzid, getCalendarEventRaw, hasSuspendedCounter]);
 
     return null;

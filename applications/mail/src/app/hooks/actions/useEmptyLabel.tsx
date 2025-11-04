@@ -24,6 +24,7 @@ export const useEmptyLabel = () => {
 
     const isLabel = useMemo(() => {
         return isCustomLabel(labelID, labels);
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-6A69C8
     }, [labelID]);
 
     const emptyLabel = useCallback(
@@ -48,6 +49,7 @@ export const useEmptyLabel = () => {
             }
             await call();
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-5423F3
         [labels, folders]
     );
 

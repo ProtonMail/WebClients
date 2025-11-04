@@ -5,8 +5,8 @@ import { c } from 'ttag';
 
 import { Button, Href, InlineLinkButton, Tooltip } from '@proton/atoms';
 import { ErrorZone, useModalStateObject } from '@proton/components';
-import { IcPauseFilled } from '@proton/icons';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
+import { IcPauseFilled } from '@proton/icons';
 import { useAssistant } from '@proton/llm/lib';
 import { ERROR_TYPE } from '@proton/shared/lib/assistant';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
@@ -72,6 +72,7 @@ const ComposerAssistantStatusText = ({ assistantID, prompt, composerAssistantIni
             isModelLoadingOnGPU || (isModelDownloading && !showDownloadState && !hasAssistantError) || isCheckingCache;
 
         return { showDownloadState, showInitializationState };
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-B86646
     }, [
         isModelDownloading,
         isModelLoadingOnGPU,
@@ -87,6 +88,7 @@ const ComposerAssistantStatusText = ({ assistantID, prompt, composerAssistantIni
         if (showDownloadState || showInitializationState) {
             composerAssistantInitialSetupSpotlightRef.current?.showSpotlight();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-F0A915
     }, [showDownloadState, showInitializationState]);
 
     return (

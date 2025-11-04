@@ -28,6 +28,7 @@ const useMailtoHash = ({ isSearch }: { isSearch: boolean }) => {
         } catch (e: any) {
             console.error(e);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-15BF8C
     }, [location.hash, isSearch]);
 };
 

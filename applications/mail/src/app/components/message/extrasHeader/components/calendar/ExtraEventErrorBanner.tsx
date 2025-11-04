@@ -31,6 +31,7 @@ export const ExtraEventErrorBanner = ({ error, onReload }: Props) => {
             api,
             hash: error.hashedIcs,
         });
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-D15D3D
     }, []);
 
     return (

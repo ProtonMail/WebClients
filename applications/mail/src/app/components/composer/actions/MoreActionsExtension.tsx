@@ -7,8 +7,8 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import type { EditorMetadata } from '@proton/components';
 import { DropdownMenuButton } from '@proton/components';
-import { IcCheckmark } from '@proton/icons';
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
+import { IcCheckmark } from '@proton/icons';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
@@ -84,6 +84,7 @@ const MoreActionsExtension = ({ message, onChangeFlag, editorActionsRef, editorM
                 }
             }
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-3A5CE2
         [onChange, message]
     );
 

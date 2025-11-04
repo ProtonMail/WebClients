@@ -167,6 +167,7 @@ export const useCreateFilters = () => {
         };
 
         return { getSendersToFilter, doCreateFilters, undoCreateFilters };
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-BF0229
     }, [filters, getSendersToFilter]);
 
     return { getSendersToFilter, getFilterActions };

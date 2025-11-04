@@ -155,6 +155,7 @@ const ComposerAssistant = ({
         if (error && error.errorType === ERROR_TYPE.GENERATION_HARMFUL) {
             handleResetToPreviousPrompt();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-9141B6
     }, [error]);
 
     // Set ref content used to reset assistant state when user is using escape shortcut
@@ -167,6 +168,7 @@ const ComposerAssistant = ({
             setPreviousGenerationResult('');
             cleanSpecificErrors();
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-122A6C
     }, [setPrompt, setPreviousGenerationResult]);
 
     const hasComposerContent = !!throttleHasComposerContent(getContentBeforeBlockquote);

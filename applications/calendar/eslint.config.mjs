@@ -6,8 +6,7 @@ export default defineConfig([
     defaultConfig,
     {
         rules: {
-            // TODO: Fix exhaustiveness of deps then enable this rule
-            'react-hooks/exhaustive-deps': 'off',
+            'react-hooks/exhaustive-deps': 'error',
             'no-restricted-syntax': [
                 'error',
                 {

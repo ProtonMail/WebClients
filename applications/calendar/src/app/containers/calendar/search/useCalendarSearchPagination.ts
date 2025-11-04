@@ -72,6 +72,7 @@ export const useCalendarSearchPagination = (
             );
         }
         setCurrentPage(getInitialPage(items, maxItemsPerPage));
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-FDAB62
     }, [items, date]);
 
     const paginatedItems = useMemo(

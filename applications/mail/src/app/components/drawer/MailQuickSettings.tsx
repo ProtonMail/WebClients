@@ -201,6 +201,7 @@ const MailQuickSettings = () => {
             : undefined;
 
         return [ktReminder].filter(isTruthy);
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-5FEDB2
     }, [showKT, keyTransparencyNotification]);
 
     const handleDisableAssistant = () => {

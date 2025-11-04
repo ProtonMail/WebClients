@@ -49,6 +49,7 @@ const useExpiration = (message: MessageState, autoDelete = false) => {
 
         const intervalID = window.setInterval(interval, MINUTE);
         return () => clearInterval(intervalID);
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-E5AD8E
     }, []);
 
     return { expirationMessage, expiresInLessThan24Hours, expirationDate };

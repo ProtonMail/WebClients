@@ -134,6 +134,7 @@ export const useVerifyMessage = (localID: string) => {
                 );
             }
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-FC5A54
         [localID, contactsMap]
     );
 };

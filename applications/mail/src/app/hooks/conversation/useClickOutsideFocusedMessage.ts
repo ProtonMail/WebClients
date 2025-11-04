@@ -35,6 +35,7 @@ const useClickOutsideFocusedMessage = (
         return () => {
             document.removeEventListener('click', clickCallback);
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-C13476
     }, [focusedMessageId]);
 };
 

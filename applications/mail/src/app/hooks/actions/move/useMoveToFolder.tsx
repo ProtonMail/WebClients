@@ -101,6 +101,7 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
                 });
             }
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-CF1EA2
         [moveAllToFolder, moveSelectionToFolder, folders, labels]
     );
 
