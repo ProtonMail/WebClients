@@ -12,7 +12,7 @@ import noop from '@proton/utils/noop';
 
 import { useSelection } from '../../components/FileBrowser';
 import type { DragMoveControls } from '../../components/FileBrowser/interface';
-import type { DriveItem } from '../../components/sections/Drive/Drive';
+import type { DriveItem } from '../../components/sections/interface';
 import { useActions } from '../../store';
 import type { LinkInfo } from '../../store/_actions/interface';
 import { getActionEventManager } from '../../utils/ActionEventManager/ActionEventManager';

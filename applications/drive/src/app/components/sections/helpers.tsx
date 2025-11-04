@@ -5,7 +5,7 @@ import { LinkURLType, SupportedMimeTypes } from '@proton/shared/lib/drive/consta
 import isTruthy from '@proton/utils/isTruthy';
 
 import type { DecryptedLink } from '../../store';
-import type { SharedWithMeItem } from './SharedWithMe/SharedWithMe';
+import type { SharedWithMeItem } from './interface';
 
 export const selectMessageForItemList = (
     isFiles: boolean[],

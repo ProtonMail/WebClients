@@ -4,7 +4,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
-import type { SharedWithMeItem } from '../../components/sections/SharedWithMe/SharedWithMe';
+import type { SharedWithMeItem } from '../../components/sections/interface';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { useDriveEventManager } from '../_events';
 import { useInvitationsListing } from '../_invitations/useInvitationsListing';

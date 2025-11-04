@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -8,11 +9,7 @@ import { stopPropagation } from '../../../utils/stopPropagation';
 import { useCheckbox, useItemContextMenu, useSelection } from '../../FileBrowser';
 import { SelectionState } from '../../FileBrowser/hooks/useSelectionControls';
 import { FileName } from '../../FileName';
-import type { DeviceItem } from '../Devices/Devices';
-import type { DriveItem } from '../Drive/Drive';
-import type { SharedLinkItem } from '../SharedLinks/SharedLinks';
-import type { SharedWithMeItem } from '../SharedWithMe/SharedWithMe';
-import type { TrashItem } from '../Trash/Trash';
+import type { DeviceItem, DriveItem, SharedLinkItem, SharedWithMeItem, TrashItem } from '../interface';
 
 const GridViewItemBase = ({
     IconComponent,
@@ -25,7 +22,7 @@ const GridViewItemBase = ({
     item: DriveItem | TrashItem | SharedLinkItem | DeviceItem | SharedWithMeItem;
     disableSelection?: boolean;
 }) => {
-    const selectionControls = useSelection()!;
+    const selectionControls = useSelection()!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
     const contextMenuControls = useItemContextMenu();
     const { handleCheckboxChange, handleCheckboxClick, handleCheckboxWrapperClick } = useCheckbox(item.id);
 

@@ -1,9 +1,6 @@
 import { useThumbnailStore } from '../zustand/thumbnails/thumbnails.store';
-import type { DriveItem } from './sections/Drive/Drive';
 import { GridViewItem } from './sections/FileBrowser/GridViewItemLink';
-import type { SharedLinkItem } from './sections/SharedLinks/SharedLinks';
-import type { SharedWithMeItem } from './sections/SharedWithMe/SharedWithMe';
-import type { TrashItem } from './sections/Trash/Trash';
+import type { DriveItem, SharedLinkItem, SharedWithMeItem, TrashItem } from './sections/interface';
 
 type GridItem = DriveItem | TrashItem | SharedLinkItem | SharedWithMeItem;
 

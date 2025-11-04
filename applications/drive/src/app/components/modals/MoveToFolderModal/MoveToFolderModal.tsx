@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { ModalTwo, useActiveBreakpoint, useModalTwoStatic } from '@proton/components';
 import { useLoading } from '@proton/hooks';
-import useFlag from '@proton/unleash/useFlag';
 
 import { MoveItemsModal } from '../../../modals/MoveItemsModal';
 import type { MoveItemsModalStateItem } from '../../../modals/MoveItemsModal/useMoveItemsModalState';
@@ -135,11 +134,10 @@ const MoveToFolderModalDeprecated = ({ shareId, selectedItems, onClose, ...modal
 };
 
 export const useMoveToFolderModal = () => {
-    const useSDKModal = useFlag('DriveWebSDKMoveItemsModal');
     const isPublic = getIsPublicContext();
 
     const [moveToFolderModal, showMoveToFolderModal] = useModalTwoStatic(
-        useSDKModal && !isPublic ? MoveItemsModal : MoveToFolderModalDeprecated
+        !isPublic ? MoveItemsModal : MoveToFolderModalDeprecated
     );
 
     const handleShowMoveToFolderModal = ({ shareId, selectedItems, ...rest }: Props) => {
