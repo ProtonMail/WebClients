@@ -672,6 +672,12 @@
       "Search recent documents": [
         "Rechercher les documents récents"
       ],
+      "Search recent spreadsheets": [
+        "Rechercher les feuilles de calcul récentes"
+      ],
+      "Search recents": [
+        "Rechercher dans les récents"
+      ],
       "See how": [
         "Voir comment faire"
       ],
@@ -2726,6 +2732,9 @@
       "/month": [
         "/mois"
       ],
+      "2 TB of storage to share": [
+        "2 To d'espace de stockage à partager"
+      ],
       "2 user accounts": [
         "2 comptes utilisateur"
       ],
@@ -4274,9 +4283,6 @@
       "Accept/decline": [
         "Accepter/refuser"
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "L'accès au compte est restreint en raison de factures en retard. Veuillez contacter votre administrateur."
-      ],
       "Ad targeting": [
         "Ciblage publicitaire"
       ],
@@ -4285,6 +4291,9 @@
       ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Les annonceurs suivent votre navigation pour afficher des publicités ciblées. ${ VPN_APP_NAME } bloque les traqueurs et les publicités, rendant votre connexion plus rapide et améliorant votre expérience en ligne."
+      ],
+      "All": [
+        "Tous"
       ],
       "All (${ totalFoldersCount } folder)": [
         "Tous (${ totalFoldersCount } dossier)",
@@ -4454,6 +4463,9 @@
       ],
       "Document owner has the password": [
         "Le propriétaire du document a le mot de passe."
+      ],
+      "Documents": [
+        "Documents"
       ],
       "Downgrade": [
         "Passer à un abonnement inférieur"
@@ -4989,6 +5001,9 @@
       "Something went wrong": [
         "Une erreur s'est produite."
       ],
+      "Spreadsheets": [
+        "Feuilles de calcul"
+      ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Restez connecté facilement en activant les paramètres VPN suivants :"
       ],
@@ -5329,20 +5344,11 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Votre compte ${ BRAND_NAME } est suspendu. Au bout de 28 jours, les messages ne seront plus envoyés dans votre boite de réception, vos liens de partage Drive seront bloqués et vous ne pourrez plus télécharger de nouveaux fichiers. Pour retrouver un service normal, nous vous invitons à régler toutes les factures en retard."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Votre compte ${ BRAND_NAME } est suspendu. Les messages ne sont plus envoyés dans votre boite de réception. Vos liens de partage Drive ne sont plus actifs et vous ne pouvez pas télécharger de nouveaux fichiers. Pour continuer à utiliser votre compte, nous vous invitons à payer toutes les factures en retard."
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Votre abonnement ${ plan } sera remplacé par l'abonnement ${ PASS_SHORT_APP_NAME } Lifetime. Le solde restant sera ajouté à votre compte. L'abonnement ${ PASS_SHORT_APP_NAME } Lifetime n'a pas de prix de renouvellement : il s'agit d'un paiement unique pour un accès à vie à ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Votre compte a au moins une facture en retard. Votre accès sera bientôt restreint. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Votre compte ayant au moins une facture en retard, il est restreint et tous les services sont bloqués jusqu'au paiement. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Votre compte ayant au moins une facture en retard, il est restreint. Vos messages et liens de partage seront bloqués en cas de non-paiement. ${ payInvoiceLink }"
       ],
       "Your browser's Print dialog will now open, where you can export your document to PDF.": [
         "La boîte de dialogue Imprimer de votre navigateur s'ouvre, vous permettant d'exporter votre document au format PDF."
