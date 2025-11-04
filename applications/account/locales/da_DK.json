@@ -4663,11 +4663,29 @@
       ]
     },
     "Duration": {
+      "1.5h": [
+        "1,5t"
+      ],
       "120 minutes": [
         "120 minutter"
       ],
+      "15 minutes": [
+        "15 minutter"
+      ],
+      "15m": [
+        "15m"
+      ],
+      "1h": [
+        "1t"
+      ],
+      "2h": [
+        "2t"
+      ],
       "30 minutes": [
         "30 minutter"
+      ],
+      "30m": [
+        "30m"
       ],
       "60 minutes": [
         "60 minutter"
@@ -4737,7 +4755,7 @@
         "For at få adgang til koden for den enhed, du ønsker at logge ind på, skal du trykke på knappen **Log ind med QR-kode** i hjælpemenuen på loginskærmen og derefter trykke på **Indtast nøgle manuelt**. "
       ],
       "You have successfully signed in to another device": [
-        "Du er logget succesfuldt ind på en anden enhed."
+        "Du er nu logget ind på en anden enhed."
       ]
     },
     "Email": {
@@ -5878,7 +5896,7 @@
     },
     "error": {
       "Please sign in with the same Gmail address you originally connected": [
-        "Log venligst ind med den samme Gmail-adresse, som du oprindeligt har forbundet."
+        "Log ind med den samme Gmail-adresse, som du oprindeligt har forbundet."
       ]
     },
     "Error importing calendar": {
@@ -7905,9 +7923,6 @@
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Tilgå dine adgangskoder og beskyt din online identitet problemfrit på tværs af dine enheder. Download og installer de relevante ${ PASS_APP_NAME } apps og udvidelser."
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Kontoadgang begrænset grundet manglende betaling. Kontakt din administrator."
-      ],
       "Account monitor": [
         "Kontoovervågning"
       ],
@@ -8735,6 +8750,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Gå til din identitetsudbyder, hent SAML-metadataene for ${ appName }, og importér dem her."
+      ],
+      "Google Pay mark": [
+        "Google Pay-mærke"
       ],
       "Got it": [
         "Forstået"
@@ -10569,9 +10587,6 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Din ${ BRAND_NAME }-konto er i øjeblikket suspenderet. Efter 28 dage vil e-mails ikke længere blive leveret til din indbakke, dine Drive-delingslinks vil blive blokeret, og du vil ikke længere kunne uploade nye filer. For at genoptage normal service skal du betale alle forfaldne fakturaer."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Din ${ BRAND_NAME }-konto er i øjeblikket suspenderet. Der leveres ikke længere e-mails til din indbakke. Dine Drive-links til deling er ikke længere aktive, og du kan ikke uploade nye filer. Hvis du fortsat vil bruge din konto, skal du betale eventuelle forfaldne fakturaer."
-      ],
       "Your ${ BRAND_NAME } password": [
         "Din adgangskode til ${ BRAND_NAME }"
       ],
@@ -10583,12 +10598,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Din konto har mindst én forfalden faktura. Din adgang vil snart blive begrænset. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Din konto har mindst én faktura, der er forfalden. Din konto er begrænset, og alle tjenester er nu blokeret, indtil du har betalt. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Din konto har mindst én faktura, der er forfalden. Din konto er begrænset. Fortsat manglende betaling vil blokere dine e-mails og delingslinks. ${ payInvoiceLink }"
       ],
       "Your account has been successfully updated": [
         "Din konto er blevet opdateret"
@@ -12808,7 +12817,7 @@
         "Yderligere oplysninger"
       ],
       "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
-        "For at fortsætte med at bruge ${ BRAND_NAME }, skal du venligst sikre dig, at dine premium-funktioner ikke længere er i brug, eller opgradere dit abonnement."
+        "For at fortsætte med at bruge ${ BRAND_NAME }, skal du sikre dig, at dine premium-funktioner ikke længere er i brug, eller opgradere dit abonnement."
       ],
       "upgrade for more storage": [
         "opgrader for at få mere lagerplads"
@@ -15386,12 +15395,6 @@
       "Based in Switzerland, GDPR compliant": [
         "Baseret i Schweiz, GDPR-kompatibelt"
       ],
-      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
-        "Men du kan få ${ discount } i rabat ved at opgradere til **${ upsellPlanTitle }** - det koster kun ${ relativePrice } ekstra pr. måned."
-      ],
-      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }**.": [
-        "Men du kan få ${ discount } i rabat ved at opgradere til **${ upsellPlanTitle }**."
-      ],
       "Creating your account": [
         "Opretter din konto"
       ],
@@ -15737,6 +15740,9 @@
       "Credit/debit card": [
         "Kredit/debetkort"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Nyt kredit/debetkort"
       ]
@@ -15879,6 +15885,12 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Du har allerede et abonnement på denne plan. Du kan ændre dit abonnement på ${ subscriptionPlatform }."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Du omdirigeres snart til PayPal for at bekræfte din betaling."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Du omdirigeres snart for at bekræfte din betaling."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Din valuta er blevet ændret til euro (€), fordi SEPA-bankoverførsler kun understøtter betalinger i euro."
       ],
@@ -15909,6 +15921,11 @@
         "Dit kort blev afvist. Prøv venligst et andet kort eller kontakt din bank for at godkende opkrævningen."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Noget gik galt. Google Pay-bekræftelse mislykkedes."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit for den ubrugte del af dit tidligere abonnement"
@@ -15928,6 +15945,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Bankoverførsel - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - kort, der slutter på ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -16896,7 +16916,7 @@
         "Et eller andet gik galt"
       ],
       "The email address **${ email }** already exists as a ${ BRAND_NAME } user. Please enter the email address of a user from your identity provider.": [
-        "E-mailadressen **${ email }** eksisterer allerede som en ${ BRAND_NAME }-bruger. Indtast venligst e-mailadressen til en bruger fra din identitetsudbyder."
+        "E-mailadressen **${ email }** eksisterer allerede som en ${ BRAND_NAME }-bruger. Indtast e-mailadressen til en bruger fra din identitetsudbyder."
       ]
     },
     "saml: Info": {

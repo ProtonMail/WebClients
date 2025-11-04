@@ -4687,20 +4687,6 @@
         "Priorytetowe wsparcie"
       ]
     },
-    "Duration": {
-      "120 minutes": [
-        "120 minut"
-      ],
-      "30 minutes": [
-        "30 minut"
-      ],
-      "60 minutes": [
-        "60 minut"
-      ],
-      "90 minutes": [
-        "90 minut"
-      ]
-    },
     "Easy switch": {
       "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
         "Ulepsz konto do planu ${ planName }, aby przekierować wiadomości z ${ MAX_SYNC_PAID_USER } adresu.",
@@ -8285,9 +8271,6 @@
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Uzyskaj dostęp do swoich haseł i chroń swoje tożsamości internetowe na wszystkich urządzeniach. Pobierz i zainstaluj odpowiednie aplikacje oraz rozszerzenia ${ PASS_APP_NAME }."
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Dostęp do konta został ograniczony z powodu niezapłaconych faktur. Skontaktuj się ze swoim administratorem."
-      ],
       "account recovery and data recovery method": [
         "metoda odzyskiwania konta i danych"
       ],
@@ -11177,9 +11160,6 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Konto ${ BRAND_NAME } zostało zawieszone. Za 28 dni wiadomości nie będą dostarczane do skrzynki odbiorczej. Linki dysku zostaną zablokowane, a możliwość przesyłania nowych plików zostanie wstrzymana. Aby wznowić działanie usługi, ureguluj zobowiązania."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Konto ${ BRAND_NAME } zostało zawieszone. Wiadomości nie są dostarczane do skrzynki odbiorczej. Linki dysku nie są aktywne, a możliwość przesyłania nowych plików została wstrzymana. Aby wznowić działanie konta, ureguluj zobowiązania."
-      ],
       "Your ${ BRAND_NAME } password": [
         "Hasło ${ BRAND_NAME }"
       ],
@@ -11191,12 +11171,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Twoje konto posiada zaległe faktury. Dostęp do konta zostanie wkrótce ograniczony. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Dostęp do konta został ograniczony z powodu niezapłaconych faktur. Wszystkie usługi zostały zablokowane do czasu wykonania płatności. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Dostęp do konta został ograniczony z powodu niezapłaconych faktur. Dalszy brak płatności spowoduje zablokowanie dostarczania wiadomości i udostępnionych linków. ${ payInvoiceLink }"
       ],
       "Your account has been successfully updated": [
         "Konto zostało zaktualizowane"
@@ -16130,12 +16104,6 @@
       ],
       "Based in Switzerland, GDPR compliant": [
         "Ulokowany w Szwajcarii, zgodny z RODO"
-      ],
-      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
-        "Ulepsz plan do wersji **${ upsellPlanTitle }** i uzyskaj ${ discount } zniżki. To tylko ${ relativePrice } miesięcznie więcej."
-      ],
-      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }**.": [
-        "Ulepsz plan do wersji **${ upsellPlanTitle }** i uzyskaj ${ discount } zniżki."
       ],
       "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Odblokuj plan **${ unlockPlanTitle }** i więcej usług ${ BRAND_NAME }, przechodząc do planu **${ upsellPlanTitle }**. To tylko ${ relativePrice } miesięcznie więcej."

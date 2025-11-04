@@ -1531,12 +1531,50 @@
         "Online uređivač dokumenata"
       ]
     },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "Black Friday rasprodaja"
+      ]
+    },
     "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB prostora za pohranu"
+      ],
+      "3 TB data storage": [
+        "3 TB prostora za pohranu"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Pristup 15,000+ poslužitelja u 120+ država"
+      ],
+      "Access advanced AI models": [
+        "Pristup naprednim AI modelima"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Sve premium značajke usluga ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Block ads, trackers, and malware": [
         "Blokirajte oglase, pratitelje i zlonamjerne programe"
       ],
       "Built-in 2FA authenticator": [
         "Ugrađeni 2FA autentifikator"
+      ],
+      "Connect 10 devices at once": [
+        "Povežite 10 uređaja istovremeno"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Potpuna povijest razgovora s jednostavnom pretragom i favoritima"
+      ],
+      "Individual accounts for 6 users": [
+        "Individualni korisnički računi za 6 korisnika"
+      ],
+      "Individual accounts for you and a partner": [
+        "Individualni korisnički računi za Vas i partnera"
+      ],
+      "Stronger protection against cyber threats": [
+        "Jača zaštita od kibernetičkih prijetnji"
+      ],
+      "Unlimited daily chats": [
+        "Neograničeni dnevni razgovori"
       ]
     },
     "BF2025: Heading alt": {
@@ -1544,9 +1582,34 @@
         "Black Friday"
       ]
     },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Pomozite svojim voljenima da se pridruže revoluciji privatnosti uz naše najpovoljnije pakete, sada uz 50% popusta!"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Pridružite se revoluciji privatnosti uz naše najpovoljnije pakete, sada uz 50% popusta!"
+      ]
+    },
     "BF2025: Offers": {
       "for ${ durationDeal }": [
         "za ${ durationDeal }"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "Uštedite ${ savedAmount } uz našu najpovoljniju ponudu s ograničenim vremenom!"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "Prijeđite na naš dvogodišnji plan i uštedite ${ savedAmount }!"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "Prijeđite na naš godišnji plan i uštedite ${ savedAmount }!"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "Osigurajte svom plemenu potpunu digitalnu zaštitu."
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Posebno dizajniran NetShield štiti Vaše uređaje i ubrzava Vaše pregledavanje blokiranjem oglasa, pratitelja i zlonamjernih programa."
       ]
     },
     "Billing cycle": {
@@ -3359,20 +3422,6 @@
     "driveplus2024: Deal details": {
       "Priority support": [
         "Prioritetna podrška"
-      ]
-    },
-    "Duration": {
-      "120 minutes": [
-        "120 minuta"
-      ],
-      "30 minutes": [
-        "30 minuta"
-      ],
-      "60 minutes": [
-        "60 minuta"
-      ],
-      "90 minutes": [
-        "90 minuta"
       ]
     },
     "Edit billing address form note": {
@@ -5580,9 +5629,6 @@
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Pristupite svojim lozinkama i zaštitite svoje online identitete bez prekida na svim svojim uređajima. Preuzmite i instalirajte odgovarajuće aplikacije i proširenja za ${ PASS_APP_NAME }."
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Pristup računu je ograničen zbog neplaćenih faktura. Molimo kontaktirajte vašeg administratora."
-      ],
       "Account monitor": [
         "Nadzor korisničkog računa"
       ],
@@ -7054,9 +7100,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Nećete moći oporaviti zaključane podatke koristeći svoje preuzete datoteke za oporavak. Ovo će također onemogućiti oporavak temeljen na uređaju."
-      ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Vaš ${ BRAND_NAME } korisnički račun je trenutno suspendiran. E-pošta se više ne isporučuje u vašu pristiglu poštu. Vaše poveznice za dijeljenje pogona više nisu aktivne i ne možete učitavati nove datoteke. Kako biste nastavili koristiti svoj korisnički račun, molimo vas da platite sve zakašnjele račune."
       ],
       "Your ${ BRAND_NAME } password": [
         "Vaša ${ BRAND_NAME } lozinka"
@@ -10417,9 +10460,6 @@
       ],
       "Based in Switzerland, GDPR compliant": [
         "Sa sjedištem u Švicarskoj, u skladu s GDPR-om"
-      ],
-      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
-        "Ali možete dobiti ${ discount } % popusta nadogradnjom na **${ upsellPlanTitle }** - to je samo ${ relativePrice } više mjesečno."
       ],
       "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Ali možete otključati **${ unlockPlanTitle }** i više ${ BRAND_NAME } usluga nadogradnjom na **${ upsellPlanTitle }** — to je samo ${ relativePrice } više mjesečno."

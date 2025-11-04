@@ -753,6 +753,9 @@
       "Get a new encrypted email address": [
         "새로운 암호화된 이메일 주소를 얻으세요"
       ],
+      "Get Deal": [
+        "혜택 받기"
+      ],
       "Get in touch": [
         "연락하기"
       ],
@@ -3016,8 +3019,14 @@
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME } 추가"
       ],
+      "AI assistant that respects business confidentiality": [
+        "업무 기밀성을 존중하는 인공지능 어시스턴트"
+      ],
       "Basic chat history": [
         "기본 채팅 기록"
+      ],
+      "Compliance with data protection regulations": [
+        "데이터 보호 규정 준수"
       ],
       "Data never used for AI training": [
         "대화 데이터가 AI학습에 절대 사용되지 않음"
@@ -3054,6 +3063,9 @@
       ],
       "Web search access": [
         "웹 검색 접근"
+      ],
+      "Zero-access encryption": [
+        "제로 엑세스 암호화"
       ]
     },
     "collider_2025: Navigation": {
@@ -4898,10 +4910,28 @@
       ]
     },
     "Duration": {
+      "1.5h": [
+        "1시간 30분"
+      ],
       "120 minutes": [
         "120분"
       ],
+      "15 minutes": [
+        "15분"
+      ],
+      "15m": [
+        "15분"
+      ],
+      "1h": [
+        "1시간"
+      ],
+      "2h": [
+        "2시간"
+      ],
       "30 minutes": [
+        "30분"
+      ],
+      "30m": [
         "30분"
       ],
       "60 minutes": [
@@ -5880,6 +5910,9 @@
       "Failed to load the STL preview": [
         "STL 미리보기 불러오기 실패"
       ],
+      "Failed to lookup server. Please try again": [
+        "서버 조회에 실패했습니다. 다시 시도해 주세요."
+      ],
       "Failed to process the logo": [
         "로고를 처리하지 못했습니다"
       ],
@@ -6162,6 +6195,9 @@
       "Request timed out": [
         "요청 시간이 초과되었습니다."
       ],
+      "Server not found": [
+        "서버를 찾을 수 없습니다"
+      ],
       "Session expired. Please refresh the page.": [
         "세션이 만료되었습니다. 페이지를 새로고침해 주세요."
       ],
@@ -6266,6 +6302,12 @@
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "개인이 아닌 사용자를 생성하거나 해당 계정에 접근하도록 하려면, 관리자 권한을 복원해야만 합니다."
+      ],
+      "Too many requests. Please try again after ${ date }": [
+        "요청이 너무 많습니다. ${ date } 이후에 다시 시도해 주십시오."
+      ],
+      "Too many requests. Please try again later": [
+        "요청이 너무 많습니다. 나중에 다시 시도하십시오."
       ],
       "Trusted keys are not valid for sending": [
         "인증된 키가 전송하기에 유효하지 않음"
@@ -8439,9 +8481,6 @@
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "사용자의 비밀번호에 접근하고 온라인 신원을 기기를 넘나들며 원활하게 보호하세요. ${ PASS_APP_NAME } 앱과 확장을 다운로드하고 설치하세요."
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "요금 미납으로 인해 계정 액세스가 제한되었습니다. 관리자에게 문의하세요."
-      ],
       "Account monitor": [
         "계정 모니터링"
       ],
@@ -9353,6 +9392,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "인증 제공자 페이지 이동 후, ${ appName }에 사용할 SAML 메타데이터를 받은 뒤 여기에 불러오세요."
+      ],
+      "Google Pay mark": [
+        "Google Pay 표시"
       ],
       "Got it": [
         "확인"
@@ -10374,6 +10416,9 @@
       "Some keys successfully reactivated": [
         "일부 키가 성공적으로 재활성화 되었습니다"
       ],
+      "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
+        "일부 서버는 목록에 나타나지 않을 수 있습니다. 서버 이름(예: AT#62)으로 검색하여 찾으십시오."
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "SAML SSO로 인증할 수 있는 도메인을 지정하십시오."
       ],
@@ -11343,9 +11388,6 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "고객님의 ${ BRAND_NAME } 계정이 정지되었습니다. 28일 뒤, 받은 편지함으로 이메일이 더 이상 전달되지 않으며, Drive 공유 링크가 잠기며, 더 이상 새로운 파일을 업로드 할 수 없습니다. 서비스를 계속 사용하려면, 기한이 지난 청구서를 결제해주세요."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "고객님의 ${ BRAND_NAME } 계정이 정지되었습니다. 이메일이 더 이상 받은 편지함으로 전송되지 않으며, Drive 공유 링크가 더 이상 활성화되지 않으며, 새로운 파일을 업로드 할 수도 없습니다. 계정 사용을 계속하려면, 기한이 지난 청구서를 결제해주세요."
-      ],
       "Your ${ BRAND_NAME } password": [
         "사용자의 ${ BRAND_NAME } 비밀번호"
       ],
@@ -11357,12 +11399,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "계정에 기한이 지난 청구서가 하나 이상 있습니다. 회원님의 계정 접근이 곧 제한됩니다. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "회원님의 계정에 적어도 하나의 연체된 결제가 있습니다. 회원님의 계정이 제한되어 있으며, 지금 결제할 때까지 모든 서비스가 차단됩니다. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "회원님의 계정에 적어도 하나의 연체된 결제가 있습니다. 회원님의 계정이 제한된 상태입니다. 지속적인 미지불이 이메일과 공유 링크를 차단시킬 수 있습니다. ${ payInvoiceLink }"
       ],
       "Your account has been successfully updated": [
         "계정이 정상적으로 수정되었습니다."
@@ -13052,6 +13088,9 @@
       "Sequences": [
         "시퀀스"
       ],
+      "Server name": [
+        "서버 이름"
+      ],
       "Share your referral link": [
         "추천인 링크 공유하기"
       ],
@@ -13816,6 +13855,19 @@
       ],
       "Enable detailed events": [
         "상세한 이벤트 기록 활성화"
+      ]
+    },
+    "lumo_signup_2025: Info": {
+      "Protect your entire business. Get ${ LUMO_SHORT_APP_NAME } Professional with all ${ BRAND_NAME } for Business apps and premium features.": [
+        "당신의 비즈니스를 보호하세요. 모든 ${ BRAND_NAME } for Business 앱과 premium 기능을 갖춘 ${ LUMO_SHORT_APP_NAME } Professional을(를) 이용하세요."
+      ]
+    },
+    "lumo_signup_2025: title": {
+      "For businesses": [
+        "기업용"
+      ],
+      "For individuals": [
+        "개인용"
       ]
     },
     "Mail import summary": {
@@ -16329,12 +16381,6 @@
       "Based in Switzerland, GDPR compliant": [
         "스위스에 본사를 둔 GDPR 준수"
       ],
-      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
-        "다만 **${ upsellPlanTitle }**으로 업그레이드 하여 ${ discount } 할인된 가로 사용할 수 있습니다. - 오직 ${ relativePrice } 당 개월만 추가하면 됩니다."
-      ],
-      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }**.": [
-        "다만 **${ upsellPlanTitle }**으로 업그레이드 하여 ${ discount } 할인된 가로 사용할 수 있습니다."
-      ],
       "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "다만, **${ upsellPlanTitle }**으로 업그레이드 하여 **${ unlockPlanTitle }**을(를) 잠금 해제하고 모든 ${ BRAND_NAME } 프리미엄 서비스를 잠금해제 할 수 있습니다. — 매달 ${ relativePrice } 추가 가격밖에 들지 않습니다."
       ],
@@ -16697,6 +16743,9 @@
       "Credit/debit card": [
         "신용/체크카드"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "신용/체크카드 추가"
       ]
@@ -16842,6 +16891,12 @@
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "선택된 결제 수단에서 ${ amountToCharge }이 청구됩니다."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "결제를 인증하기 위해 곧 PayPal로 이동됩니다."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "결제를 인증하기 위해 곧 리디렉션됩니다."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "SEPA 은행 송금이 유로화 결제만 지원하여 사용자의 통화가 유로화(€)로 변경되었습니다."
       ],
@@ -16872,6 +16927,11 @@
         "사용자의 카드가 거절되었습니다. 다른 카드로 시도하거나 은행사에 문의해 주세요."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "문제가 발생했습니다. Google Pay 인증에 실패했습니다."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "이전 플랜 구독으로 사용하지 않은 부분에 대한 크레딧"
@@ -16891,6 +16951,9 @@
       ],
       "Bank transfer - ${ details }": [
         "은행 송금 - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - 번호가 ${ paymentMethod.Details.Last4 }(으)로 끝나는 카드"
       ]
     },
     "Payments.Sepa": {
@@ -17014,6 +17077,9 @@
       ],
       "E.g., ": [
         "예, "
+      ],
+      "e.g., AT#62": [
+        "예: AT#62"
       ],
       "Email address": [
         "이메일 주소"
@@ -17631,6 +17697,11 @@
       ],
       "Scopes cannot have the same value": [
         "범위는 동일한 값을 가질 수 없습니다."
+      ]
+    },
+    "retention_policy_2025_Hint": {
+      "${ currentLength }/${ MAX_TITLE_LENGTH } characters": [
+        "${ currentLength }/${ MAX_TITLE_LENGTH } 자"
       ]
     },
     "retention_policy_2025_Info": {
@@ -19208,6 +19279,9 @@
       ],
       "The only email service with:": [
         "이메일"
+      ],
+      "The only password manager with:": [
+        "다음을 갖춘 유일한 비밀번호 관리자:"
       ],
       "Unlimited passwords": [
         "무제한 비밀번호 저장"
@@ -21607,6 +21681,9 @@
       "Get ${ vpnPlus } to access all servers": [
         "${ vpnPlus }를 얻어 모든 서버에 접근"
       ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "${ planTitle }(으)로 크레딧으로 **${ referralInfo.uiData.refereeRewardAmount }** 받기"
+      ],
       "Get complete privacy coverage": [
         "완전한 개인정보 보호 커버리지 받기"
       ],
@@ -22014,6 +22091,9 @@
       ],
       "Schedule send:": [
         "스케줄 발송:"
+      ],
+      "Search for additional servers": [
+        "추가 서버 검색"
       ],
       "Secure email based in Switzerland": [
         "스위스에 위치한 안전한 이메일"

@@ -1683,8 +1683,8 @@
         "${ price } per gebruiker"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } ${ LUMO_APP_NAME } zitplaats",
-        "${ seats } ${ LUMO_APP_NAME } zitplaatsen"
+        "${ seats } ${ LUMO_APP_NAME } plaats",
+        "${ seats } ${ LUMO_APP_NAME } plaatsen"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } plaats voor schrijfassistent",
@@ -4749,20 +4749,6 @@
         "Prioriteitsondersteuning"
       ]
     },
-    "Duration": {
-      "120 minutes": [
-        "120 minuten"
-      ],
-      "30 minutes": [
-        "30 minuten"
-      ],
-      "60 minutes": [
-        "60 minuten"
-      ],
-      "90 minutes": [
-        "90 minuten"
-      ]
-    },
     "Easy switch": {
       "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
         "Om e-mails door te sturen van maximaal ${ MAX_SYNC_PAID_USER } account, upgrade naar ${ planName }.",
@@ -6698,7 +6684,7 @@
         "U verliest toegang tot alle premium-functies van ${ plan }."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "U bent uitgenodigd om uw ${ BRAND_NAME } account te linken aan dit familieplan en samen te genieten van de premium functies van ${ brandOrAppName }."
+        "U bent uitgenodigd om uw ${ BRAND_NAME } account te linken aan dit familieplan en samen te genieten van de premiumfuncties van ${ brandOrAppName }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Uw account heeft meer e-mailadressen dan is toegestaan in dit abonnement. ${ addressSettingsLink }"
@@ -8277,9 +8263,6 @@
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Krijg toegang tot uw wachtwoorden en bescherm uw online-identiteiten naadloos tussen uw apparaten. Download en installeer de relevante ${ PASS_APP_NAME }-apps en extensies."
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Toegang tot dit account is beperkt vanwege onbetaalde facturen. Neem contact op met uw beheerder."
-      ],
       "Account monitor": [
         "Accountactiviteitenmonitor"
       ],
@@ -8780,7 +8763,7 @@
         "Toegewijde servers met toegewijde IP-adressen kunnen toegevoegd worden aan private gateways om nauwkeurige toegangscontrole mogelijk te maken."
       ],
       "Dedicated VPN servers": [
-        "Dedicated VPN-servers"
+        "Specifieke VPN-servers"
       ],
       "default email address": [
         "standaard e-mailadres"
@@ -11139,9 +11122,6 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Uw ${ BRAND_NAME } account is momenteel opgeschort. Na 28 dagen zullen e-mails niet meer afgeleverd worden in uw postvak-in, de deelkoppelingen van uw Drive zullen worden geblokkeerd, en u zal geen nieuwe bestanden meer kunnen opladen. Om normale diensten te hervatten dient u alle achterstallige facturen te betalen."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Uw ${ BRAND_NAME }-account is momenteel geblokkeerd. E-mails worden niet langer geleverd in uw inbox. Uw gedeelde Drive-links zijn niet langer actief en u kan geen nieuwe bestanden uploaden. Om uw account te blijven gebruiken dient u de achterstallige facturen te betalen."
-      ],
       "Your ${ BRAND_NAME } password": [
         "Uw wachtwoord voor ${ BRAND_NAME }"
       ],
@@ -11153,12 +11133,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Uw account heeft minstens één onbetaalde factuur. Uw toegang wordt binnenkort beperkt. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Uw account heeft minstens één achterstallige factuur. Uw account is beperkt en alle diensten zijn nu geblokkeerd tot betaling. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Uw account heeft minstens één achterstallige factuur. Uw account is beperkt. Verdere niet-betaling zal leiden tot het blokkeren van uw e-mails een deel-links. ${ payInvoiceLink }"
       ],
       "Your account has been successfully updated": [
         "Uw account is succesvol bijgewerkt"
@@ -16010,12 +15984,6 @@
       "Based in Switzerland, GDPR compliant": [
         "Gevestigd in Zwitserland, AVG compatibel"
       ],
-      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
-        "Maar u kunt ${ discount } korting krijgen door te upgraden naar **${ upsellPlanTitle }** — Het is slechts ${ relativePrice } extra per maand."
-      ],
-      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }**.": [
-        "Maar u kunt ${ discount } korting krijgen door te upgraden naar **${ upsellPlanTitle }**."
-      ],
       "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Maar u kunt **${ unlockPlanTitle }** en meer ${ BRAND_NAME }-diensten ontgrendelen door te upgraden naar **${ upsellPlanTitle }** — het is slechts ${ relativePrice } extra per maand."
       ],
@@ -19800,10 +19768,10 @@
         "U kunt blijven genieten van alle voordelen van uw huidige abonnement tot ${ boldedDate }."
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "U hebt nog ${ expiryDate } te gaan op uw ${ planName }-abonnement. We zullen het tegoed voor de resterende tijd toevoegen aan uw ${ BRAND_NAME } Account. Zorg ervoor dat u de limieten van het gratis abonnement niet overschrijdt voordat u deze annuleert. ${ learnMoreLink }"
+        "U heeft nog ${ expiryDate } te gaan op uw ${ planName }-abonnement. We zullen het tegoed voor de resterende tijd toevoegen aan uw ${ BRAND_NAME } Account. Zorg ervoor dat u de limieten van het gratis abonnement niet overschrijdt voordat u deze annuleert. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
-        "Uw ${ planName }abonnement houdt niet alleen uw bedrijfsgegevens en communicatie veilig. Het ondersteunt uw compliancedoelstellingen, zorgt ervoor dat uw bedrijf erbovenuit springt en het houdt uw team verbonden."
+        "Uw ${ planName }-abonnement houdt niet alleen uw bedrijfsgegevens en communicatie veilig. Het ondersteunt uw compliancedoelstellingen, zorgt ervoor dat uw bedrijf erbovenuit springt en het houdt uw team verbonden."
       ],
       "Your own short @pm.me email alias": [
         "Uw eigen korte @pm.me e-mailalias"

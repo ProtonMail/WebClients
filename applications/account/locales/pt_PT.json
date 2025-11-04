@@ -4540,20 +4540,6 @@
         "Apoio ao cliente prioritário"
       ]
     },
-    "Duration": {
-      "120 minutes": [
-        "120 minutos"
-      ],
-      "30 minutes": [
-        "30 minutos"
-      ],
-      "60 minutes": [
-        "60 minutos"
-      ],
-      "90 minutes": [
-        "90 minutos"
-      ]
-    },
     "Easy switch": {
       "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
         "Para encaminhar e-mails de até ${ MAX_SYNC_PAID_USER } conta, melhore para o ${ planName }.",
@@ -7796,9 +7782,6 @@
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Aceda às suas palavras-passe e proteja as suas identidades online de forma integrada nos seus dispositivos. Transfere e instale as aplicações e extensões ${ PASS_APP_NAME } relevantes."
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "O acesso à conta restringido devido a faturas por pagar. Contacte o administrador."
-      ],
       "account recovery and data recovery method": [
         "método de recuperação de conta e dados"
       ],
@@ -10556,9 +10539,6 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "A sua conta ${ BRAND_NAME } está atualmente suspensa. Após 28 dias, os e-mails deixarão de ser entregues na sua caixa de entrada, as ligações de partilha do Drive serão bloqueadas e não poderá carregar novos ficheiros. Para retomar o serviço normal, efetue o pagamento das faturas em atraso."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "A sua conta ${ BRAND_NAME } está suspensa de momento. Não receberá e-mails na sua caixa de entrada. As suas ligações de partilha do Drive estão inativas e não pode enviar novos ficheiros. Para continuar a utilizar a sua conta, efetue o pagamento das faturas em atraso."
-      ],
       "Your ${ BRAND_NAME } password": [
         "A sua palavra-passe do ${ BRAND_NAME }"
       ],
@@ -10570,12 +10550,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "A sua conta tem pelo menos uma fatura em atraso. O acesso em breve será restrito. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "A sua conta tem pelo menos uma fatura vencida. A sua conta está restrita e todos os serviços estão bloqueados até o pagamento. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "A sua conta tem pelo menos uma fatura vencida. A sua conta é restrita. O não pagamento regular bloqueará os seus e-mails e hiperligações de partilha. ${ payInvoiceLink }"
       ],
       "Your account has been successfully updated": [
         "A sua conta foi atualizada."
@@ -15341,12 +15315,6 @@
       ],
       "Based in Switzerland, GDPR compliant": [
         "Baseado na Suíça, em conformidade com o regulamento RGPD"
-      ],
-      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
-        "Mas pode obter ${ discount } de desconto ao melhorar o seu plano para o **${ upsellPlanTitle }** — é apenas ${ relativePrice } a mais por mês."
-      ],
-      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }**.": [
-        "Mas pode obter ${ discount }de desconto ao melhorar o seu plano para o **${ upsellPlanTitle }**."
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
         "Ao continuar, concorda com os nossos ${ termsAndConditionsLink } e ${ privacyPolicyLink }."
