@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 
+import AuthenticatorLogo from './AuthenticatorLogo';
 import CalendarLogo from './CalendarLogo';
 import DocsLogo from './DocsLogo';
 import DriveLogo from './DriveLogo';
@@ -25,6 +26,7 @@ const {
     PROTONWALLET,
     PROTONLUMO,
     PROTONMEET,
+    PROTONAUTHENTICATOR,
 } = APPS;
 
 export type { LogoVariant };
@@ -73,6 +75,10 @@ const Logo = ({ appName, fallback = null, ...rest }: LogoProps) => {
 
     if (appName === PROTONMEET) {
         return <MeetLogo {...rest} />;
+    }
+
+    if (appName === PROTONAUTHENTICATOR) {
+        return <AuthenticatorLogo {...rest} />;
     }
 
     return fallback;
