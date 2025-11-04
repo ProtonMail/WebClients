@@ -1,8 +1,10 @@
 import { set } from 'date-fns';
+import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import TimeInput from '@proton/components/components/input/TimeInput';
-import { DateInputTwo, Icon } from '@proton/components/index';
+import { DateInputTwo } from '@proton/components/index';
+import { IcPlus, IcTrash } from '@proton/icons';
 
 import { useBookings } from '../bookingsProvider/BookingsProvider';
 import type { BookingRange } from '../bookingsProvider/interface';
@@ -40,29 +42,39 @@ export const FormRangeList = () => {
             {bookingRange.map((range) => (
                 <div key={range.id} className="flex flex-nowrap gap-6 justify-space-between mb-0.5">
                     <div className="flex items-center gap-0.5">
+                        <label htmlFor={`range-date-input-${range.id}`} className="sr-only">{c('label')
+                            .t`Date of the booking range`}</label>
                         <DateInputTwo
-                            id="range-date-input"
+                            id={`range-date-input-${range.id}`}
                             value={range.start}
                             onChange={(value) => handleDateChange(range.id, range, value)}
                         />
+                        <label htmlFor={`range-start-input-${range.id}`} className="sr-only">{c('label')
+                            .t`Start time of the booking range`}</label>
                         <TimeInput
-                            id="range-start-time"
+                            id={`range-start-time-${range.id}`}
                             value={range.start}
                             onChange={(value) => handleTimeChange(range.id, value, range.end)}
                         />
                         -
+                        <label htmlFor={`range-end-time-${range.id}`} className="sr-only">{c('label')
+                            .t`End time of the booking range`}</label>
                         <TimeInput
-                            id="range-end-time"
+                            id={`range-end-time-${range.id}`}
                             value={range.end}
                             onChange={(value) => handleTimeChange(range.id, range.start, value)}
                         />
                     </div>
                     <div className="flex flex-nowrap shrink-0">
                         <Button icon shape="ghost">
-                            <Icon name="plus" className="color-primary" />
+                            <IcPlus
+                                name="plus"
+                                className="color-primary"
+                                alt={c('Action').t`Split current booking range`}
+                            />
                         </Button>
                         <Button icon shape="ghost" onClick={() => removeBookingRange(range.id)}>
-                            <Icon name="trash" className="color-weak" />
+                            <IcTrash className="color-weak" alt={c('Action').t`Remove the booking range`} />
                         </Button>
                     </div>
                 </div>
