@@ -3,7 +3,13 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
-import { Collapsible, CollapsibleContent, CollapsibleHeader, CollapsibleHeaderIconButton } from '@proton/components';
+import {
+    Collapsible,
+    CollapsibleContent,
+    CollapsibleHeader,
+    CollapsibleHeaderIconButton,
+    DropdownSizeUnit,
+} from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
@@ -142,14 +148,17 @@ export const Form = () => {
                     assistContainerClassName="hidden"
                     className="max-w-full"
                     fullWidth={false}
+                    size={{ width: DropdownSizeUnit.Static }}
                 >
                     {writeableCalendars.map((calendar) => (
                         <Option key={calendar.ID} value={calendar.ID} title={calendar.Name}>
-                            <span
-                                className="h-2 w-2 inline-block rounded-full mr-2"
-                                style={{ backgroundColor: calendar.Color }}
-                            />
-                            <span>{calendar.Name}</span>
+                            <div className="flex flex-nowrap items-center gap-2">
+                                <span
+                                    className="h-2 w-2 inline-block rounded-full items-center shrink-0"
+                                    style={{ backgroundColor: calendar.Color }}
+                                />
+                                <span className="grow text-ellipsis">{calendar.Name}</span>
+                            </div>
                         </Option>
                     ))}
                 </InputField>
