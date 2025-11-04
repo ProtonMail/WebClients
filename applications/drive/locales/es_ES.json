@@ -147,6 +147,9 @@
       "Cancel upload": [
         "Cancelar carga"
       ],
+      "Cancel uploads": [
+        "Cancelar subida"
+      ],
       "Change": [
         "Cambio"
       ],
@@ -616,6 +619,9 @@
       ],
       "Loading link": [
         "Cargando el enlace"
+      ],
+      "Make a copy": [
+        "Hacer una copia"
       ],
       "Manage advanced account protections": [
         "Administrar protecciones avanzadas de la cuenta"
@@ -3415,6 +3421,12 @@
       "Error decrypting a computer": [
         "Error al descifrar el ordenador"
       ],
+      "Error reading file": [
+        "Error al leer el archivo"
+      ],
+      "Expected structure attached": [
+        "Se adjunta la estructura esperada"
+      ],
       "External accounts are not supported yet": [
         "Las cuentas externas aún no son admitidas."
       ],
@@ -3519,6 +3531,9 @@
       ],
       "Invalid IBAN": [
         "El IBAN no es válido."
+      ],
+      "Invalid JSON file": [
+        "Archivo JSON no válido"
       ],
       "Invalid name": [
         "Nombre no válido"
@@ -5023,9 +5038,6 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "Una VPN es un túnel seguro entre tu dispositivo e internet. Oculta tu ubicación y tu actividad de tu proveedor de servicio de internet (PSI) y los sitios web que visitas."
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "El acceso a la cuenta ha sido restringido debido a facturas impagadas. Contacta con tu administrador."
-      ],
       "Account successfully updated": [
         "Cuenta actualizada"
       ],
@@ -6304,6 +6316,9 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Los sitios web y los ISP (proveedores de servicios de internet) pueden usar este código único para vincular tu ubicación e historial de navegación a tu dispositivo."
       ],
+      "This will cancel any remaining uploads. Cancelled files won't be saved in ${ DRIVE_APP_NAME }.": [
+        "Esto cancelará cualquier subida pendiente. Los archivos cancelados no se guardarán en ${ DRIVE_APP_NAME }."
+      ],
       "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
         "Esto solo eliminará el álbum. Tus fotos seguirán en tu cronología. Esta acción no se puede deshacer."
       ],
@@ -6706,20 +6721,11 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Tu cuenta ${ BRAND_NAME } está actualmente suspendida. Transcurridos 28 días, los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento serán bloqueados y no podrás cargar nuevos archivos. Para restablecer el servicio normal, tienes que pagar las facturas pendientes."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Tu cuenta ${ BRAND_NAME } está suspendida actualmente. Los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento están bloqueados y no puedes cargar nuevos archivos. Para continuar usando tu cuenta, tienes que pagar las facturas pendientes."
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Tu suscripción ${ plan } será reemplazada por ${ PASS_SHORT_APP_NAME } de por vida. El saldo restante de tu suscripción se añadirá a tu cuenta. La oferta de por vida de ${ PASS_SHORT_APP_NAME } no tiene precio de renovación. Es un pago único para acceder de por vida a ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Tu cuenta tiene al menos una factura atrasada. Tu acceso pronto será restringido. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Tu cuenta tiene al menos una factura vencida. Tu cuenta está restringida y todos los servicios están bloqueados hasta que realices el pago. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Tu cuenta tiene al menos una factura vencida. Tu cuenta está restringida. Las faltas de pago continuadas implicarán el bloqueo de tus correos y enlaces compartidos. ${ payInvoiceLink }"
       ],
       "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
         "Tu navegador actual no admite la descarga de archivos grandes/múltiples archivos. Descarga la aplicación de escritorio para cargas y descargas sin interrupciones."
@@ -9677,6 +9683,9 @@
       "Create new group": [
         "Crear grupo"
       ],
+      "Expected strcuture": [
+        "Estructura esperada"
+      ],
       "Ignore group": [
         "Ignorar grupo"
       ],
@@ -9688,6 +9697,9 @@
       ],
       "Only current location: ${ name }": [
         "Solo la ubicación actual: ${ name }"
+      ],
+      "Select JSON file": [
+        "Seleccionar archivo JSON"
       ],
       "Verify content": [
         "Verificar contenido"
@@ -9802,6 +9814,9 @@
       "Credit/debit card": [
         "Tarjeta de crédito/débito"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Nueva tarjeta de crédito/débito"
       ]
@@ -9909,6 +9924,12 @@
       "VAT number": [
         "Número de IVA"
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Pronto serás redirigido a PayPal para verificar tu pago."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Pronto serás redirigido para verificar tu pago."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Tu moneda ha sido cambiada a euros (€) porque las transferencias bancarias SEPA solo soportan pagos en euros."
       ],
@@ -9936,6 +9957,11 @@
         "Tu tarjeta ha sido rechazada. Prueba con una tarjeta diferente o contacta con tu banco para autorizar el cargo."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Se ha producido un error. Falló la verificación de Google Pay."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito por la parte no utilizada de tu suscripción al plan anterior"
@@ -9955,6 +9981,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Transferencia bancaria - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - tarjeta terminada en ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -11825,6 +11854,9 @@
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Cancelar la subscripción a ${ MAIL_SHORT_APP_NAME }"
+      ],
+      "Cancel all uploads?": [
+        "¿Cancelar todas las subidas?"
       ],
       "Cancel subscription?": [
         "¿Cancelar suscripción?"

@@ -753,6 +753,9 @@
       "Get a new encrypted email address": [
         "新しい暗号化メールアドレスを取得する"
       ],
+      "Get Deal": [
+        "特典を入手"
+      ],
       "Get in touch": [
         "連絡する"
       ],
@@ -4877,6 +4880,9 @@
       "/month": [
         "/ 月"
       ],
+      "2 TB of storage to share": [
+        "2 TBのストレージを共有"
+      ],
       "2 user accounts": [
         "2 ユーザーアカウント"
       ],
@@ -4904,10 +4910,28 @@
       ]
     },
     "Duration": {
+      "1.5h": [
+        "1.5時間"
+      ],
       "120 minutes": [
         "120分"
       ],
+      "15 minutes": [
+        "15 分"
+      ],
+      "15m": [
+        "15分"
+      ],
+      "1h": [
+        "1時間"
+      ],
+      "2h": [
+        "2時間"
+      ],
       "30 minutes": [
+        "30分"
+      ],
+      "30m": [
         "30分"
       ],
       "60 minutes": [
@@ -5886,6 +5910,9 @@
       "Failed to load the STL preview": [
         "STLプレビューの読み込みに失敗しました"
       ],
+      "Failed to lookup server. Please try again": [
+        "サーバーを検索できませんでした。もう一度やり直してください。"
+      ],
       "Failed to process the logo": [
         "ロゴの処理に失敗しました"
       ],
@@ -6168,6 +6195,9 @@
       "Request timed out": [
         "リクエストがタイムアウトしました"
       ],
+      "Server not found": [
+        "サーバーが見つかりません"
+      ],
       "Session expired. Please refresh the page.": [
         "セッションは有効期限切れです。ページを更新してください。"
       ],
@@ -6272,6 +6302,12 @@
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "非プライベート ユーザー アカウントを作成し、そのアカウントにアクセスするには、管理者権限を復元する必要があります。"
+      ],
+      "Too many requests. Please try again after ${ date }": [
+        "リクエストが多すぎます。${ date }以降に再度お試しください。"
+      ],
+      "Too many requests. Please try again later": [
+        "要求が多すぎます。後でもう一度やり直してください。"
       ],
       "Trusted keys are not valid for sending": [
         "信頼された鍵が送信に使用できません"
@@ -8445,9 +8481,6 @@
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "パスワードにアクセスし、デバイス間でシームレスにオンライン ID を保護します。 関連する ${ PASS_APP_NAME } アプリと拡張機能をダウンロードしてインストールします。"
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "未払いの請求があるためアクセスが制限されています。管理者に問い合わせてください。"
-      ],
       "Account monitor": [
         "アカウントモニター"
       ],
@@ -9359,6 +9392,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "ID プロバイダーに移動し、${ appName } の SAML メタデータを取得し、ここにインポートします。"
+      ],
+      "Google Pay mark": [
+        "Google Pay マーク"
       ],
       "Got it": [
         "分かりました"
@@ -10377,6 +10413,9 @@
       "Some keys successfully reactivated": [
         "いくつかの鍵は正常に再度アクティブになりました"
       ],
+      "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
+        "上記リストに表示されないサーバーがある場合があります。サーバー名 (例: AT#62) で検索して見つけてください。"
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "SAML SSO認証を許可するドメインを指定します。"
       ],
@@ -11346,9 +11385,6 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "あなたの ${ BRAND_NAME } アカウントは、現在停止されています。28 日が経過すると、メールが受信トレイに届かなくなり、Drive の共有リンクがブロックされ、新しいファイルをアップロードできなくなります。通常のサービスを再開するには、未払いの請求をお支払いください。"
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "あなたの ${ BRAND_NAME } アカウントは、現在停止されています。メールが受信トレイに届かなくなりました。Drive の共有リンクが無効になり、新しいファイルをアップロードできません。アカウントの使用を継続するには、未払いの請求をお支払いください。"
-      ],
       "Your ${ BRAND_NAME } password": [
         "あなたの ${ BRAND_NAME } パスワード"
       ],
@@ -11360,12 +11396,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "アカウントに少なくとも1つの期限切れの請求書があるため、アクセスが制限されます。${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "お客様のアカウントには1つ以上期限が過ぎている請求書があります。お支払いを確認できるまで全てのサービスにおいて制限が課されます。 ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "あなたのアカウントには未払いの請求があり、アカウントが制限されています。このまま支払いが行われなければ、メールやリンクの共有がブロックされます。${ payInvoiceLink }"
       ],
       "Your account has been successfully updated": [
         "アカウントは正常に更新されました"
@@ -13054,6 +13084,9 @@
       ],
       "Sequences": [
         "シーケンス"
+      ],
+      "Server name": [
+        "サーバー名"
       ],
       "Share your referral link": [
         "紹介リンクを共有"
@@ -16321,12 +16354,6 @@
       "Based in Switzerland, GDPR compliant": [
         "スイスに拠点を置き、GDPR に準拠"
       ],
-      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
-        "ただし、**${ upsellPlanTitle }** にアップグレードすると、${ discount } 割引を受けることができます。月額 ${ relativePrice } が追加されるだけです。"
-      ],
-      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }**.": [
-        "ただし、**${ upsellPlanTitle }** にアップグレードすると、${ discount } 割引を受けることができます。"
-      ],
       "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "ただし、**${ upsellPlanTitle }** にアップグレードすると、**${ unlockPlanTitle }** とすべてのプレミアム ${ BRAND_NAME } サービスのロックを解除できます。月額 ${ relativePrice } の追加料金がかかるだけです。"
       ],
@@ -16689,6 +16716,9 @@
       "Credit/debit card": [
         "クレジット/デビット カード"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "新しいクレジットカード/デビットカード"
       ]
@@ -16834,11 +16864,20 @@
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "選択した支払い方法により${ amountToCharge }がチャージされます。"
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "支払いの検証のため、まもなく PayPal のサイトへリダイレクトされます。"
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "支払いの検証のため、まもなくリダイレクトされます。"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "お客様の通貨はユーロ (€) に変更されました。これは、SEPA銀行振込がユーロ建ての支払いのみをサポートしているためです。"
       ],
       "Your payment is still being processed": [
         "お支払いが現在処理中です"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "お客様のサブスクリプションには現在、既存の割引が適用されています。この新しいプロモーションに移行すると、既存の割引は適用されなくなります。"
       ]
     },
     "Payments.Error": {
@@ -16861,6 +16900,11 @@
         "あなたのカードは拒否されました。 別のカードを試すか、銀行に問い合わせて請求を承認してください。"
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "何か問題が発生しました。Google Payの認証に失敗しました。"
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "以前のサブスクリプションプランの未使用分のクレジット"
@@ -16880,6 +16924,9 @@
       ],
       "Bank transfer - ${ details }": [
         "銀行振込 - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - 末尾が${ paymentMethod.Details.Last4 }のカード"
       ]
     },
     "Payments.Sepa": {
@@ -17003,6 +17050,9 @@
       ],
       "E.g., ": [
         "例: "
+      ],
+      "e.g., AT#62": [
+        "例: AT#62"
       ],
       "Email address": [
         "メールアドレス"
@@ -17620,6 +17670,11 @@
       ],
       "Scopes cannot have the same value": [
         "スコープは同じ値を持つことはできません"
+      ]
+    },
+    "retention_policy_2025_Hint": {
+      "${ currentLength }/${ MAX_TITLE_LENGTH } characters": [
+        "${ currentLength }/${ MAX_TITLE_LENGTH } 文字"
       ]
     },
     "retention_policy_2025_Info": {
@@ -22012,6 +22067,9 @@
       ],
       "Schedule send:": [
         "送信予約:"
+      ],
+      "Search for additional servers": [
+        "追加のサーバーを検索"
       ],
       "Secure email based in Switzerland": [
         "スイスに拠点を置くセキュアなメール"

@@ -1864,10 +1864,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Flyttes et element til en anden boks, slettes dets sikre links.",
-        "Flyttes elementer til en anden boks, slettes deres sikre links."
-      ],
       "Moving items": [
         "Flytter elementer"
       ],
@@ -2071,16 +2067,16 @@
         "Følg nedenstående trin for at oprette dit domæne."
       ],
       "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
-        "Hold venligst ${ PASS_APP_NAME } åben, så udklipsholderen automatisk kan ryddes."
+        "Hold ${ PASS_APP_NAME } åben, så udklipsholderen automatisk kan ryddes."
       ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Hold dette vindue åbent, mens dine data importeres. Denne proces kan tage et par minutter."
       ],
       "Please keep your browser open so the clipboard can be automatically cleared.": [
-        "Hold venligst din browser åben, så udklipsholderen automatisk kan ryddes."
+        "Hold din browser åben, så udklipsholderen automatisk kan ryddes."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
-        "Sørg venligst for, at det tidligere aktive vindue er der, hvor du ønsker at autoindtaste, og at din markør var fokuseret på login-feltet."
+        "Sørg for at det tidligere aktive vindue er hvor du ønsker at autoindtaste, og at din markør var fokuseret på login-feltet."
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Bemærk, at aliasset ikke kan gendannes, når først det er slettet. Måske vil du hellere deaktivere aliasset?"
@@ -2363,7 +2359,7 @@
         "Boksen \"${ share.content.name }\" blev fjernet"
       ],
       "Vault organization successfully updated": [
-        "Boks-organisering succesfuldt opdateret"
+        "Boks-organisering opdateret"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Boksdeling: ${ vaultMembersCount } medlem",

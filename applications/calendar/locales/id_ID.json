@@ -1370,12 +1370,47 @@
         "Ruang penyimpanan terbagi antar seluruh layanan ${ BRAND_NAME }."
       ]
     },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "Diskon Jumat Hitam"
+      ]
+    },
     "BF2025: Deal details": {
+      "2 TB data storage": [
+        "Penyimpanan data 2 TB"
+      ],
+      "3 TB data storage": [
+        "Penyimpanan data 3 TB"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Akses 15.000+ server di 120+ negara"
+      ],
+      "Access advanced AI models": [
+        "Akses model AI lanjutan"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Semua fitur premium dari ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, dan ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Block ads, trackers, and malware": [
         "Blokir iklan, pelacak, dan malware"
       ],
       "Built-in 2FA authenticator": [
         "Autentikator 2FA terintegrasi"
+      ],
+      "Connect 10 devices at once": [
+        "Sambungkan 10 perangkat sekaligus"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Riwayat chat lengkap dengan pencarian mudah dan favorit"
+      ],
+      "Individual accounts for 6 users": [
+        "Akun individual untuk 6 pengguna"
+      ],
+      "Individual accounts for you and a partner": [
+        "Akun individual untuk Anda dan pasangan"
+      ],
+      "Stronger protection against cyber threats": [
+        "Perlindungan lebih kuat terhadap ancaman siber"
       ],
       "Unlimited daily chats": [
         "Tanpa batasan jumlah percakapan harian"
@@ -1386,9 +1421,29 @@
         "Jumat Hitam"
       ]
     },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Bantu orang yang Anda cintai bergabung dengan revolusi privasi dengan bundel bernilai terbaik kami, kini diskon 50%!"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Bergabunglah dengan revolusi privasi dengan bundel bernilai terbaik kami, kini diskon 50%!"
+      ]
+    },
     "BF2025: Offers": {
       "for ${ durationDeal }": [
         "untuk ${ durationDeal }"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "Hemat ${ savedAmount } dengan penawaran bernilai terbaik kami yang terbatas!"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "Beralih ke paket 2 tahun kami dan hemat ${ savedAmount }!"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "Beralih ke paket tahunan kami dan hemat ${ savedAmount }!"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "Manjakan kelompok Anda dengan perlindungan digital lengkap."
       ]
     },
     "BF2025: Tooltip": {
@@ -2840,9 +2895,6 @@
       ]
     },
     "Custom frequency option": {
-      "Don't end": [
-        "Jangan akhiri"
-      ],
       "End after": [
         "Akhiri setelah"
       ],
@@ -3245,20 +3297,6 @@
     "Duplicate event button tooltip": {
       "Duplicate event": [
         "Gandakan acara"
-      ]
-    },
-    "Duration": {
-      "120 minutes": [
-        "120 menit"
-      ],
-      "30 minutes": [
-        "30 menit"
-      ],
-      "60 minutes": [
-        "60 menit"
-      ],
-      "90 minutes": [
-        "90 menit"
       ]
     },
     "Edit billing address form note": {
@@ -4986,9 +5024,6 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "VPN merupakan terowongan yang aman antara perangkat Anda dan jaringan internet. VPN menyembunyikan lokasi dan aktivitas Anda dari penyedia layanan internet (ISP) dan situs web yang Anda kunjungi."
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Akses akun dibatasi karena tagihan yang tertunggak. Silakan hubungi administrator Anda."
-      ],
       "Account successfully updated": [
         "Akun berhasil diperbarui"
       ],
@@ -6081,20 +6116,11 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Setelah 28 hari, email tidak akan lagi diantarkan ke kotak masuk Anda, tautan berbagi Drive Anda akan diblokir, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Email tidak akan lagi diantarkan ke kotak masuk Anda. Tautan berbagi Drive Anda telah dinonaktifkan, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Langganan ${ plan } Plus Anda akan digantikan dengan ${ PASS_SHORT_APP_NAME } Lifetime. Saldo sisa langganan Anda akan ditambahkan ke akun Anda. Penawaran ${ PASS_SHORT_APP_NAME } Lifetime ini tidak memiliki harga perpanjangan, karena sekalinya Anda membayar, Anda akan memperoleh akses seumur hidup ke ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Akses ke akun Anda akan segera dibatasi. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Oleh karenanya, akun Anda telah dibatasi dan seluruh layanan telah diblokir hingga Anda melunasi tagihan. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Oleh karenanya, akun Anda telah dibatasi. Kelalaian membayar yang terus-menerus akan membuat email dan tautan berbagi Anda diblokir. ${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "Alamat Anda sedang dinonaktifkan. Email pembatalan tidak akan dapat dikirim kepada para peserta acara. Apakah Anda tetap ingin menghapus seluruh acara yang terdapat pada rangkaian ini?"
@@ -6505,9 +6531,6 @@
       "Don't show this again": [
         "Jangan tampilkan lagi"
       ],
-      "Duration": [
-        "Durasi"
-      ],
       "e.g., Amazon, eBay, Etsy": [
         "mis. Amazon, eBay, Etsy"
       ],
@@ -6792,9 +6815,6 @@
       ],
       "Time zone": [
         "Zona waktu"
-      ],
-      "Title": [
-        "Judul"
       ],
       "To: ${ toEmail }": [
         "Kepada: ${ toEmail }"
@@ -10966,6 +10986,9 @@
       "Data recovery": [
         "Pemulihan data"
       ],
+      "Date": [
+        "Tanggal"
+      ],
       "Day theme": [
         "Tema siang"
       ],
@@ -11142,6 +11165,9 @@
       ],
       "Link confirmation": [
         "Konfirmasi tautan"
+      ],
+      "Location": [
+        "Lokasi"
       ],
       "Make a secure connection your default": [
         "Jadikan koneksi yang aman sebagai koneksi bawaan Anda"
@@ -11367,6 +11393,12 @@
       ],
       "Summary": [
         "Ikhtisar"
+      ],
+      "Time": [
+        "Waktu"
+      ],
+      "Time zone": [
+        "Zona waktu"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Aktifkan ${ DARK_WEB_MONITORING_NAME }"

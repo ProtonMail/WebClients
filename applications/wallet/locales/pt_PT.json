@@ -61,6 +61,9 @@
       "Cancel trial and pay": [
         "Cancelar o período de avaliação e pagar"
       ],
+      "Change password": [
+        "Alterar a palavra-passe"
+      ],
       "Chat with us": [
         "Converse connosco"
       ],
@@ -130,6 +133,15 @@
       "Edit": [
         "Editar"
       ],
+      "Edit email address": [
+        "Editar o endereço de e-mail"
+      ],
+      "Edit phone number": [
+        "Editar o número de telefone"
+      ],
+      "Edit sign-in details": [
+        "Editar detalhes do início de sessão"
+      ],
       "Edit subscription": [
         "Editar subscrição"
       ],
@@ -147,6 +159,9 @@
       ],
       "Get the apps": [
         "Obter as aplicações"
+      ],
+      "Get verification code": [
+        "Obter código de verificação"
       ],
       "Go to ${ planOrAppName }": [
         "Ir para ${ planOrAppName }"
@@ -265,6 +280,12 @@
       "Request a feature": [
         "Pedir uma funcionalidade"
       ],
+      "Request new code": [
+        "Pedir novo código"
+      ],
+      "Resend code": [
+        "Reenviar código"
+      ],
       "Save": [
         "Guardar"
       ],
@@ -337,6 +358,9 @@
       "Try again": [
         "Tentar novamente"
       ],
+      "Try another method": [
+        "Tentar outro método"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Ative o ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -381,6 +405,9 @@
       ],
       "Verify": [
         "Verificar"
+      ],
+      "Verify account": [
+        "Verificar conta"
       ],
       "View invoice": [
         "Ver fatura"
@@ -2086,6 +2113,9 @@
       "Email is not valid": [
         "O e-mail não é válido."
       ],
+      "Enter 6 digits": [
+        "Introduza 6 algarismos"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Erro ao ligar à API do Bitcoin."
       ],
@@ -2112,6 +2142,9 @@
       ],
       "Invalid postal code": [
         "O código postal é inválido."
+      ],
+      "Invalid verification code": [
+        "O código de verificação não é válido."
       ],
       "Invalid ZIP code": [
         "Código postal inválido"
@@ -2426,6 +2459,23 @@
         "Serviços"
       ]
     },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "Manual": [
+        "Manual"
+      ],
+      "No verification method available": [
+        "Nenhum método de verificação disponível"
+      ],
+      "SMS": [
+        "SMS"
+      ]
+    },
     "Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistente de escrita ${ BRAND_NAME } Scribe"
@@ -2465,6 +2515,9 @@
       "30-day money-back guarantee.": [
         "Garantia de devolução do dinheiro durante 30 dias"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Um número de telemóvel pode ser utilizado para verificar apenas uma conta ${ BRAND_NAME }"
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Um utilizador é uma conta associada com um único nome de utilizador, caixa de correio e pessoa."
       ],
@@ -2498,6 +2551,9 @@
       "Balance from your previous subscription": [
         "Saldo da sua subscrição anterior"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Antes de pedir um novo código de verificação, verifique a sua pasta de spam e verifique que ${ strong } é o endereço correto."
+      ],
       "Billing cycle: ${ text }": [
         "Ciclo de faturação: ${ text }"
       ],
@@ -2506,6 +2562,9 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ao regredir para um plano gratuito, perderá permanentemente estes benefícios, mesmo que venha a atualizar de novo no futuro."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Clique em \"Pedir novo código\" para receber um novo código de verificação em ${ strong }. Se o telefone estiver incorreto, clique em \"Editar\" para o corrigir."
       ],
       "Country code": [
         "Código de país"
@@ -2559,6 +2618,9 @@
       "Each code can only be used once": [
         "Cada código só pode ser utilizado uma vez."
       ],
+      "Edit email address": [
+        "Editar o endereço de e-mail"
+      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "O alojamento de e-mail está apenas disponível para domínios que já possui. O registo de domínio não está atualmente disponível através da ${ BRAND_NAME }. No entanto, pode alojar o e-mail para domínios registados em qualquer registador de domínios."
       ],
@@ -2570,6 +2632,9 @@
       ],
       "Enter the code from your authenticator app": [
         "Introduza o código da sua aplicação de autenticação."
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Introduza o código de verificação que foi enviado para ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Introduzir o código de verificação. Introduza ${ digit }."
@@ -2583,8 +2648,14 @@
       "Expired": [
         "Expirado"
       ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Se tiver problemas ao criar a conta, solicite um convite e responderemos dentro de um dia útil."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Se cancelar, a sua subscrição ${ planTitle } não será renovada quando expirar em ${ expiryDate }."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Se não encontrar o e-mail na sua caixa de entrada, verifique a pasta de spam."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Ao mudar para uma subscrição mais barata, perderá o acesso às funcionalidades pagas do ${ MAIL_APP_NAME } e ${ VPN_APP_NAME }."
@@ -2740,6 +2811,9 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Para completar o seu pagamento, envie ${ btcAmountBold } para o endereço abaixo."
       ],
+      "To fight spam and abuse, please verify you are human.": [
+        "Para combater o spam e abusos, confirme que é um ser humano."
+      ],
       "Total email addresses": [
         "Total de endereços de e-mail"
       ],
@@ -2785,11 +2859,20 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "A página será redirecionada para um novo separador PayPal no seu navegador, para concluir a transação. Se utiliza bloqueadores de janelas, desative-os."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Enviaremos um novo código de verificação para ${ strong }"
+      ],
       "Week": [
         "Semana"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Após a configuração da autenticação de dois fatores, serão fornecidos códigos de recuperação que poderá utilizar para se autenticar, no caso de perder o acesso à aplicação de autenticação."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Deseja receber um novo código de verificação ou utilizar um método de verificação alternativo?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Gostaria de receber um novo código de verificação?"
       ],
       "Writing assistant": [
         "Assistente de escrita"
@@ -2810,6 +2893,9 @@
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
         "Pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova as hiperligações dos calendários partilhados e qualquer ${ BRAND_NAME } utilizador com quem partilhou os seus calendários antes de cancelar a sua subscrição.",
         "Pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova as hiperligações dos calendários partilhados e qualquer ${ BRAND_NAME } utilizador com quem partilhou os seus calendários antes de cancelar a sua subscrição."
+      ],
+      "You can now return to the application to continue": [
+        "Pode agora voltar à aplicação e continuar."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Pode ativar as notificações para receber alertas quando novas mensagens chegarem a esta pasta."
@@ -2842,17 +2928,20 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "A sua conta ${ BRAND_NAME } está atualmente suspensa. Após 28 dias, os e-mails deixarão de ser entregues na sua caixa de entrada, as ligações de partilha do Drive serão bloqueadas e não poderá carregar novos ficheiros. Para retomar o serviço normal, efetue o pagamento das faturas em atraso."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "A sua conta ${ BRAND_NAME } está suspensa de momento. Não receberá e-mails na sua caixa de entrada. As suas ligações de partilha do Drive estão inativas e não pode enviar novos ficheiros. Para continuar a utilizar a sua conta, efetue o pagamento das faturas em atraso."
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "A sua subscrição do ${ plan } será substituída pela do ${ PASS_SHORT_APP_NAME } Lifetime. O saldo restante da sua subscrição será adicionado à sua conta. A oferta vitalícia do ${ PASS_SHORT_APP_NAME } não tem preço de renovação, sendo um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "O seu e-mail só será utilizado para esta verificação única."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "A data do próximo pagamento é ${ renewalTime }."
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "A sua próxima data de faturação é ${ renewalTime }. Contacte o suporte se precisar de uma alteração imediata no plano."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "O seu telefone só será utilizado para esta verificação única."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "O seu plano agendado começa a ${ renewalTime } e será renovado automaticamente a cada ${ cycle } mês.",
@@ -2944,6 +3033,9 @@
       ],
       "City": [
         "Cidade"
+      ],
+      "Code is 6 digits without spaces": [
+        "O código tem 6 dígitos sem espaços"
       ],
       "Colors": [
         "Cores"
@@ -3041,6 +3133,9 @@
       "Payment method": [
         "Método de pagamento"
       ],
+      "Phone number": [
+        "Número de telefone"
+      ],
       "Postal code": [
         "Código postal"
       ],
@@ -3076,6 +3171,9 @@
       ],
       "Thomas": [
         "Andrea"
+      ],
+      "Verification code": [
+        "Código de verificação"
       ],
       "What happened?": [
         "O que é que aconteceu?"
@@ -3174,6 +3272,9 @@
       ],
       "Learn more": [
         "Saiba mais"
+      ],
+      "Request an invite": [
+        "Pedir um convite"
       ],
       "settings": [
         "definições"
@@ -4822,6 +4923,9 @@
       "Billing details updated": [
         "Os detalhes de faturação forem atualizados."
       ],
+      "Code sent to ${ methodTo }": [
+        "Código enviado para ${ methodTo }"
+      ],
       "Copied to clipboard": [
         "Copiado para a área de transferência"
       ],
@@ -4839,6 +4943,9 @@
       ],
       "Signature copied to clipboard": [
         "A assinatura foi copiada para a área de transferência."
+      ],
+      "Verification successful": [
+        "A verificação é terminada."
       ],
       "You have successfully canceled your subscription.": [
         "A sua subscrição foi cancelada."
@@ -4915,6 +5022,9 @@
     "Title": {
       "${ feature } is now active": [
         "A funcionalidade ${ feature } agora está ativa."
+      ],
+      "Account restricted": [
+        "Conta restrita"
       ],
       "Add credit/debit card": [
         "Adicionar cartão de crédito/débito"
@@ -5012,8 +5122,14 @@
       "Help center": [
         "Centro de ajuda"
       ],
+      "Human verification": [
+        "Verificação humana"
+      ],
       "Import emails, calendars, contacts": [
         "Importar e-mails, calendários, contactos"
+      ],
+      "Invalid verification code": [
+        "O código de verificação não é válido."
       ],
       "Minicalendar": [
         "Minicalendário"
@@ -5038,6 +5154,9 @@
       ],
       "Report a problem": [
         "Relatar um problema"
+      ],
+      "Request new code": [
+        "Pedir novo código"
       ],
       "Select a plan": [
         "Selecione um plano"

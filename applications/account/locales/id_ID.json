@@ -2349,12 +2349,47 @@
         "Ruang penyimpanan terbagi antar seluruh layanan ${ BRAND_NAME }."
       ]
     },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "Diskon Jumat Hitam"
+      ]
+    },
     "BF2025: Deal details": {
+      "2 TB data storage": [
+        "Penyimpanan data 2 TB"
+      ],
+      "3 TB data storage": [
+        "Penyimpanan data 3 TB"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Akses 15.000+ server di 120+ negara"
+      ],
+      "Access advanced AI models": [
+        "Akses model AI lanjutan"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Semua fitur premium dari ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, dan ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Block ads, trackers, and malware": [
         "Blokir iklan, pelacak, dan malware"
       ],
       "Built-in 2FA authenticator": [
         "Autentikator 2FA terintegrasi"
+      ],
+      "Connect 10 devices at once": [
+        "Sambungkan 10 perangkat sekaligus"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Riwayat chat lengkap dengan pencarian mudah dan favorit"
+      ],
+      "Individual accounts for 6 users": [
+        "Akun individual untuk 6 pengguna"
+      ],
+      "Individual accounts for you and a partner": [
+        "Akun individual untuk Anda dan pasangan"
+      ],
+      "Stronger protection against cyber threats": [
+        "Perlindungan lebih kuat terhadap ancaman siber"
       ],
       "Unlimited daily chats": [
         "Tanpa batasan jumlah percakapan harian"
@@ -2365,9 +2400,29 @@
         "Jumat Hitam"
       ]
     },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Bantu orang yang Anda cintai bergabung dengan revolusi privasi dengan bundel bernilai terbaik kami, kini diskon 50%!"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Bergabunglah dengan revolusi privasi dengan bundel bernilai terbaik kami, kini diskon 50%!"
+      ]
+    },
     "BF2025: Offers": {
       "for ${ durationDeal }": [
         "untuk ${ durationDeal }"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "Hemat ${ savedAmount } dengan penawaran bernilai terbaik kami yang terbatas!"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "Beralih ke paket 2 tahun kami dan hemat ${ savedAmount }!"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "Beralih ke paket tahunan kami dan hemat ${ savedAmount }!"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "Manjakan kelompok Anda dengan perlindungan digital lengkap."
       ]
     },
     "BF2025: Tooltip": {
@@ -4819,20 +4874,6 @@
     "Duo offer: Title": {
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
         "Bagikan keutamaan paket Anda dengan ${ BRAND_NAME } Duo"
-      ]
-    },
-    "Duration": {
-      "120 minutes": [
-        "120 menit"
-      ],
-      "30 minutes": [
-        "30 menit"
-      ],
-      "60 minutes": [
-        "60 menit"
-      ],
-      "90 minutes": [
-        "90 menit"
       ]
     },
     "Easy switch": {
@@ -8360,9 +8401,6 @@
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Akses kata sandi Anda dan lindungi identitas online Anda pada seluruh perangkat Anda secara terpadu. Unduh dan pasang aplikasi dan ekstensi ${ PASS_APP_NAME } yang sesuai dengan kebutuhan Anda."
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Akses akun dibatasi karena tagihan yang tertunggak. Silakan hubungi administrator Anda."
-      ],
       "Account monitor": [
         "Monitor akun"
       ],
@@ -11261,9 +11299,6 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Setelah 28 hari, email tidak akan lagi diantarkan ke kotak masuk Anda, tautan berbagi Drive Anda akan diblokir, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Email tidak akan lagi diantarkan ke kotak masuk Anda. Tautan berbagi Drive Anda telah dinonaktifkan, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
-      ],
       "Your ${ BRAND_NAME } password": [
         "Kata sandi ${ BRAND_NAME } Anda"
       ],
@@ -11275,12 +11310,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Akses ke akun Anda akan segera dibatasi. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Oleh karenanya, akun Anda telah dibatasi dan seluruh layanan telah diblokir hingga Anda melunasi tagihan. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Oleh karenanya, akun Anda telah dibatasi. Kelalaian membayar yang terus-menerus akan membuat email dan tautan berbagi Anda diblokir. ${ payInvoiceLink }"
       ],
       "Your account has been successfully updated": [
         "Akun Anda berhasil diperbarui"
@@ -16213,12 +16242,6 @@
       ],
       "Based in Switzerland, GDPR compliant": [
         "Berbasis di Swiss dan tunduk terhadap GDPR"
-      ],
-      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
-        "Anda mendapat potongan ${ discount } dengan meningkatkannya ke **${ upsellPlanTitle }** — hanya menambah ${ relativePrice } per bulan."
-      ],
-      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }**.": [
-        "Anda mendapat potongan ${ discount } dengan meningkatkannya ke **${ upsellPlanTitle }**."
       ],
       "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Namun, Anda dapat mengakses **${ unlockPlanTitle }** dan lebih banyak layanan ${ BRAND_NAME } dengan meningkatkan ke **${ upsellPlanTitle }** — hanya dengan menambah ${ relativePrice } per bulannya."

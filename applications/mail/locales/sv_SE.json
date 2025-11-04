@@ -6751,9 +6751,6 @@
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Få åtkomst till 6 500+ höghastighetsservrar på upp till 10 enheter för att hålla din webbläsardata säker. Tillgängligt på ${ ios }, ${ android }, ${ appleTV } och ${ desktop }."
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Kontoåtkomst begränsad på grund av obetalda fakturor. Kontakta din administratör."
-      ],
       "Account successfully updated": [
         "Kontot har uppdaterats"
       ],
@@ -8800,17 +8797,8 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Ditt ${ BRAND_NAME }-konto är för närvarande avstängt. Efter 28 dagar kommer e-post inte längre att levereras till din inkorg, dina delade länkar från Drive kommer att blockeras och du kommer inte att kunna ladda upp nya filer. För att återuppta tjänsten som vanligt, betala eventuella förfallna fakturor."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Ditt ${ BRAND_NAME }-konto är för närvarande avstängt. E-post levereras inte längre till din inkorg. Dina delade länkar på Drive är inte längre aktiva och du kan inte ladda upp nya filer. För att fortsätta använda ditt konto, betala eventuella förfallna fakturor."
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ditt konto har minst en försenad faktura. Din åtkomst kommer snart att begränsas. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Ditt konto har minst en förfallen faktura. Ditt konto är begränsat och alla tjänster är nu blockerade fram till betalning. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Ditt konto har minst en förfallen faktura. Ditt konto är begränsat. Fortsatt utebliven betalning kommer att blockera dina e-postmeddelanden och delningslänkar. ${ payInvoiceLink }"
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Din webbläsare stöder inte skrivassistenten. Prova köra den på servrar."
@@ -9252,6 +9240,12 @@
       "Also archive": [
         "Arkivera också"
       ],
+      "Always label sender's emails": [
+        "Märk alltid avsändarens e-post"
+      ],
+      "Always move sender's emails": [
+        "Flytta alltid avsändarens e-post"
+      ],
       "AND": [
         "OCH"
       ],
@@ -9627,6 +9621,9 @@
       "Move ${ sidebarElementName }": [
         "Flytta ${ sidebarElementName }"
       ],
+      "Move messages to": [
+        "Flytta meddelanden till"
+      ],
       "Move to": [
         "Flytta till"
       ],
@@ -9668,9 +9665,6 @@
       ],
       "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
         "Inga fler missade viktiga meddelanden! Dessa visas nu under ${ primaryCopy }. Allt annat är sorterat efter kategori så att de är lätta att hitta och inte skräpar ner din inkorg."
-      ],
-      "No results found": [
-        "Inga resultat hittades"
       ],
       "Non-promotional content and news": [
         "Icke-kampanjinnehåll och nyheter"
@@ -11927,6 +11921,9 @@
       "Continue": [
         "Fortsätt"
       ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Njut av gratis företagssäkerhetsfunktioner fram till ${ trialEndsOnFormatted }."
+      ],
       "help center": [
         "hjälpcenter"
       ],
@@ -12132,6 +12129,9 @@
       "Credit/debit card": [
         "Kredit/betalkort"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Nytt kredit-/betalkort"
       ],
@@ -12248,6 +12248,12 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Du har redan en prenumeration på detta paket. Du kan ändra din prenumeration på ${ subscriptionPlatform }."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Du kommer snart att omdirigeras till PayPal för att verifiera din betalning."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Du kommer snart att omdirigeras för att verifiera din betalning."
+      ],
       "Your payment is still being processed": [
         "Din betalning håller fortfarande på att behandlas"
       ]
@@ -12272,6 +12278,11 @@
         "Ditt kort nekades Prova ett annat kort eller kontakta din bank för att auktorisera debiteringen."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Något gick fel. Google Pay-verifiering misslyckades."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit för den oanvända delen av din tidigare paketprenumeration"
@@ -12291,6 +12302,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Banköverföring - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - kort slutar på ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -14791,6 +14805,12 @@
       "Create contact": [
         "Skapa kontakt"
       ],
+      "Create folder \"${ search }\"": [
+        "Skapa mapp ”${ search }”"
+      ],
+      "Create label \"${ search }\"": [
+        "Skapa etikett ”${ search }”"
+      ],
       "Create new group": [
         "Skapa ny grupp"
       ],
@@ -15061,10 +15081,6 @@
       "Label as": [
         "Märk som"
       ],
-      "Label message as": [
-        "Märk meddelande som",
-        "Märk meddelanden som"
-      ],
       "Label options": [
         "Etikettalternativ"
       ],
@@ -15148,13 +15164,6 @@
       ],
       "Move all messages to trash": [
         "Flytta alla meddelanden till papperskorg"
-      ],
-      "Move message to": [
-        "Flytta meddelande till",
-        "Flytta meddelanden till"
-      ],
-      "Move messages to": [
-        "Flytta meddelanden till"
       ],
       "Move to": [
         "Flytta till"

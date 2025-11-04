@@ -186,6 +186,9 @@
       "Confirm": [
         "Bekräfta"
       ],
+      "Confirm booking": [
+        "Bekräfta bokning"
+      ],
       "Confirm opening of link ${ linkToShow }": [
         "Bekräfta öppnande av länken ${ linkToShow }"
       ],
@@ -219,9 +222,6 @@
       "Copy alias “${ name }”": [
         "Kopiera alias “${ name }“"
       ],
-      "Copy Booking link": [
-        "Kopiera bokningslänk"
-      ],
       "Copy email address": [
         "Kopiera e-postadress"
       ],
@@ -230,6 +230,9 @@
       ],
       "Copy link": [
         "Kopiera länk"
+      ],
+      "Copy link and close": [
+        "Kopiera länk och stäng"
       ],
       "Copy password": [
         "Kopiera lösenord"
@@ -2924,8 +2927,8 @@
       ]
     },
     "Custom frequency option": {
-      "Don't end": [
-        "Avsluta inte"
+      "Doesn't end": [
+        "Slutar inte"
       ],
       "End after": [
         "Slutar efter"
@@ -3346,11 +3349,29 @@
       ]
     },
     "Duration": {
+      "1.5h": [
+        "1,5 tim."
+      ],
       "120 minutes": [
         "120 minuter"
       ],
+      "15 minutes": [
+        "15 minuter"
+      ],
+      "15m": [
+        "15 min."
+      ],
+      "1h": [
+        "1 tim."
+      ],
+      "2h": [
+        "2 tim."
+      ],
       "30 minutes": [
         "30 minuter"
+      ],
+      "30m": [
+        "30 min."
       ],
       "60 minutes": [
         "60 minuter"
@@ -3565,6 +3586,9 @@
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Innehållssökning kan inte aktiveras. Starta om applikationen eller rensa data."
+      ],
+      "Content verification failed": [
+        "Innehållsverifiering misslyckades"
       ],
       "Could not open created vault": [
         "Kunde inte öppna skapat valv"
@@ -4546,6 +4570,11 @@
         "Väldigt liten"
       ]
     },
+    "Form": {
+      "Your contact info": [
+        "Din kontaktinformation"
+      ]
+    },
     "Google Meet": {
       "Join Google Meet": [
         "Gå med i Google Meet"
@@ -4967,8 +4996,8 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } behöver din tillåtelse för att ${ enableDesktopNotifications }."
       ],
-      "${ booking.duration } min duration": [
-        "${ booking.duration } min. varaktighet"
+      "${ bookingDetails.duration } min duration": [
+        "${ bookingDetails.duration } min. varaktighet"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skrivassistent"
@@ -5134,9 +5163,6 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "En VPN är en säker tunnel mellan din enhet och internet. Det döljer din plats och aktivitet från din internetleverantör (ISP) och de webbplatser du besöker."
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Kontoåtkomst begränsad på grund av obetalda fakturor. Kontakta din administratör."
-      ],
       "Account successfully updated": [
         "Kontot har uppdaterats"
       ],
@@ -5229,6 +5255,12 @@
       ],
       "Billing cycle: ${ text }": [
         "Faktureringsperiod: ${ text }"
+      ],
+      "Booking already exists.": [
+        "Bokning finns redan."
+      ],
+      "Booking overlaps with an existing booking.": [
+        "Bokning överlappar med en befintlig bokning."
       ],
       "Booking page example": [
         "Exempel på bokningssida"
@@ -5498,6 +5530,9 @@
       "High Priority": [
         "Hög prioritet"
       ],
+      "How long should an appointment last?": [
+        "Hur långt ska ett möte vara?"
+      ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Om tangentbordsgenvägar är aktiverade kan du använda följande tangenter för snabba åtgärder eller för att hoppa till olika vyer. ${ metaKey } + K är alltid aktiverat."
       ],
@@ -5546,6 +5581,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "I nästa steg kommer du kunna skicka in en insättning med en Bitcoin-adress."
+      ],
+      "In which calendar should bookings appear?": [
+        "I vilken kalender ska bokningar visas?"
       ],
       "Indexing events: ${ current }/${ total }": [
         "Indexerar händelser: ${ current }/${ total }"
@@ -5651,6 +5689,9 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "De flesta offentliga WiFi-nätverk är säkra, men vissa saknar säkerhet, vilket gör att du utsätts för cyberhot. Ett VPN krypterar din trafik och håller dig skyddad."
+      ],
+      "Name your booking page": [
+        "Namnge din bokningssida"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Namnge din nya mapp och välj den överordnade mapp du vill lägga den i. Om du inte väljer en överordnad mapp kommer denna nya mapp att skapas som en överordnad mapp."
@@ -5860,9 +5901,6 @@
       ],
       "Setting up your new address…": [
         "Ställer in din nya adress…"
-      ],
-      "Share this page to let others book time in your calendar.": [
-        "Dela denna sida så andra kan boka tid i din kalender."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du är en lojal användare har ditt konto ytterligare funktioner aktiverade."
@@ -6093,6 +6131,12 @@
       "Week and month views only apply to desktop.": [
         "Vecko- och månadsvyer tillämpas endast för stationära datorer."
       ],
+      "What should people know before booking?": [
+        "Vad bör folk veta innan de bokar?"
+      ],
+      "When are you free?": [
+        "När är du ledig?"
+      ],
       "When working remotely": [
         "När du arbetar på distans"
       ],
@@ -6101,6 +6145,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "När du ställer in tvåfaktorsautentisering tillhandahåller vi återställningskoder som du kan använda för att logga in om du förlorar åtkomsten till din autentiseringsapp."
+      ],
+      "Where will the appointment take place?": [
+        "Var kommer mötet att äga rum?"
       ],
       "Which event would you like to delete?": [
         "Vilken händelse vill du ta bort?"
@@ -6255,17 +6302,8 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Ditt ${ BRAND_NAME }-konto är för närvarande avstängt. Efter 28 dagar kommer e-post inte längre att levereras till din inkorg, dina delade länkar från Drive kommer att blockeras och du kommer inte att kunna ladda upp nya filer. För att återuppta tjänsten som vanligt, betala eventuella förfallna fakturor."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Ditt ${ BRAND_NAME }-konto är för närvarande avstängt. E-post levereras inte längre till din inkorg. Dina delade länkar på Drive är inte längre aktiva och du kan inte ladda upp nya filer. För att fortsätta använda ditt konto, betala eventuella förfallna fakturor."
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ditt konto har minst en försenad faktura. Din åtkomst kommer snart att begränsas. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Ditt konto har minst en förfallen faktura. Ditt konto är begränsat och alla tjänster är nu blockerade fram till betalning. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Ditt konto har minst en förfallen faktura. Ditt konto är begränsat. Fortsatt utebliven betalning kommer att blockera dina e-postmeddelanden och delningslänkar. ${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "Din adress är inaktiverad. Ett e-postmeddelande för avbokning av händelsen kan inte skickas till evenemangsdeltagarna. Vill du ändå ta bort alla händelser i denna serie?"
@@ -6685,9 +6723,6 @@
       "Don't show this again": [
         "Visa inte detta igen"
       ],
-      "Duration": [
-        "Varaktighet"
-      ],
       "e.g., Amazon, eBay, Etsy": [
         "t.ex. Amazon, eBay, Etsy"
       ],
@@ -6977,9 +7012,6 @@
       "Time zone": [
         "Tidszon"
       ],
-      "Title": [
-        "Rubrik"
-      ],
       "To: ${ toEmail }": [
         "Till: ${ toEmail }"
       ],
@@ -7243,6 +7275,11 @@
       ],
       "Your import is starting": [
         "Din import har startat"
+      ]
+    },
+    "Location": {
+      "In person": [
+        "Personligen"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -8841,6 +8878,9 @@
       "Continue": [
         "Fortsätt"
       ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Njut av gratis företagssäkerhetsfunktioner fram till ${ trialEndsOnFormatted }."
+      ],
       "help center": [
         "hjälpcenter"
       ],
@@ -9060,6 +9100,9 @@
       "Credit/debit card": [
         "Kredit/betalkort"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Nytt kredit-/betalkort"
       ],
@@ -9176,6 +9219,12 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Du har redan en prenumeration på detta paket. Du kan ändra din prenumeration på ${ subscriptionPlatform }."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Du kommer snart att omdirigeras till PayPal för att verifiera din betalning."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Du kommer snart att omdirigeras för att verifiera din betalning."
+      ],
       "Your payment is still being processed": [
         "Din betalning håller fortfarande på att behandlas"
       ]
@@ -9200,6 +9249,11 @@
         "Ditt kort nekades Prova ett annat kort eller kontakta din bank för att auktorisera debiteringen."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Något gick fel. Google Pay-verifiering misslyckades."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit för den oanvända delen av din tidigare paketprenumeration"
@@ -9219,6 +9273,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Banköverföring - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - kort slutar på ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -9295,6 +9352,9 @@
       "A way to contact you": [
         "Ett sätt att kontakta dig"
       ],
+      "Add a booking page description": [
+        "Lägg till en beskrivning av bokningssida"
+      ],
       "Add a calendar description": [
         "Lägg till en kalenderbeskrivning"
       ],
@@ -9318,6 +9378,9 @@
       ],
       "Anytown": [
         "Alingsås"
+      ],
+      "Booking page title": [
+        "Rubrik på bokningssida"
       ],
       "Company name": [
         "Företagsnamn"
@@ -11172,9 +11235,6 @@
       "Birthday": [
         "Födelsedag"
       ],
-      "Booking page": [
-        "Bokningssida"
-      ],
       "Calendar": [
         "Kalender"
       ],
@@ -11267,6 +11327,9 @@
       ],
       "Data recovery": [
         "Dataåterställning"
+      ],
+      "Date": [
+        "Datum"
       ],
       "Day theme": [
         "Dagstema"
@@ -11447,6 +11510,9 @@
       ],
       "Link confirmation": [
         "Länkbekräftelse"
+      ],
+      "Location": [
+        "Plats"
       ],
       "Make a secure connection your default": [
         "Gör en säker anslutning din standard"
@@ -11682,6 +11748,12 @@
       "This booking page has expired": [
         "Denna bokningssida har löpt ut"
       ],
+      "Time": [
+        "Tid"
+      ],
+      "Time zone": [
+        "Tidszon"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Slå på ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -11771,6 +11843,9 @@
       ],
       "Your account is protected": [
         "Ditt konto är skyddat"
+      ],
+      "Your booking is confirmed": [
+        "Din bokning är bekräftad"
       ],
       "Your booking page is ready": [
         "Din bokningssida är redo"

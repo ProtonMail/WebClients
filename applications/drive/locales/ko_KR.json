@@ -144,6 +144,9 @@
       "Cancel upload": [
         "업로드 취소"
       ],
+      "Cancel uploads": [
+        "업로드 취소"
+      ],
       "Change": [
         "변경"
       ],
@@ -611,6 +614,9 @@
       ],
       "Loading link": [
         "링크를 불러오는 중"
+      ],
+      "Make a copy": [
+        "복사본 만들기"
       ],
       "Manage advanced account protections": [
         "향상된 계정 보호 관리"
@@ -3418,6 +3424,12 @@
       "Error decrypting a computer": [
         "컴퓨터 복호화 중 오류"
       ],
+      "Error reading file": [
+        "파일 읽기 오류"
+      ],
+      "Expected structure attached": [
+        "예상 구조 첨부됨"
+      ],
       "External accounts are not supported yet": [
         "외부 계정은 아직 지원하지 않습니다"
       ],
@@ -3487,6 +3499,9 @@
       "Folder \"${ name }\" is already downloading": [
         "\"${ name }\" 폴더는 이미 다운로드 중입니다"
       ],
+      "Folder creation failed": [
+        "폴더 생성 실패"
+      ],
       "Folder name cannot be empty.": [
         "폴더 이름은 비워둘 수 없습니다."
       ],
@@ -3522,6 +3537,9 @@
       ],
       "Invalid IBAN": [
         "유효하지 않은 IBAN"
+      ],
+      "Invalid JSON file": [
+        "유효하지 않은 JSON 파일"
       ],
       "Invalid name": [
         "유효하지 않은 이름"
@@ -3816,6 +3834,9 @@
       ],
       "Upload for this folder is temporarily disabled": [
         "이 폴더에 대한 업로드가 일시적으로 비활성화 되었습니다."
+      ],
+      "Upload not found": [
+        "업로드를 찾을 수 없습니다"
       ],
       "Username must begin with a letter or digit": [
         "사용자명은 문자로 시작해야 합니다"
@@ -4793,6 +4814,9 @@
       "${ canceledCount } canceled": [
         "${ canceledCount }개 취소됨"
       ],
+      "${ completedItems.length } of ${ items.length } transfers completed": [
+        "${ items.length }개 중 ${ completedItems.length }개 전송 완료"
+      ],
       "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } 개 연락처가 여러 이메일 주소를 포함합니다."
       ],
@@ -4975,9 +4999,6 @@
       ],
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "VPN은 기기와 인터넷 사이의 안전한 터널입니다. 인터넷 서비스 공급자(ISP)와 방문하는 웹사이트로부터 사용자의 위치와 활동을 숨기죠."
-      ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "요금 미납으로 인해 계정 액세스가 제한되었습니다. 관리자에게 문의하세요."
       ],
       "Account successfully updated": [
         "계정을 성공적으로 업그레이드 했습니다."
@@ -5282,6 +5303,9 @@
       "Download current logs": [
         "현재 로그 다운로드"
       ],
+      "Download Failed": [
+        "다운로드 실패"
+      ],
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName }의 다운로드가 중단됩니다"
       ],
@@ -5467,6 +5491,9 @@
       ],
       "Go to \"My files\" and upload some files first.": [
         "먼저 \"내 파일\"로 이동하여 파일을 업로드해보세요."
+      ],
+      "Google Pay mark": [
+        "Google Pay 표시"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "정부와 ISP가 사용자의 온라인 활동을 모니터링할 수 있습니다. 실제 IP를 숨기고 활동을 암호화함으로서 브라우징이 비공개화 됩니다."
@@ -6242,6 +6269,9 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "이 고유 코드는 웹사이트와 ISP(인터넷 서비스 제공업체)에서 위치와 검색 기록을 기기에 연결하는 데 사용할 수 있습니다."
       ],
+      "This will cancel any remaining uploads. Cancelled files won't be saved in ${ DRIVE_APP_NAME }.": [
+        "남은 업로드가 취소됩니다. 취소된 파일은 ${ DRIVE_APP_NAME }에 저장되지 않습니다."
+      ],
       "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
         "사진이 앨범에 한하여 삭제됩니다. 사진이 여전히 타임라인에 유지됩니다. 이 작업을 실행 취소할 수 없습니다."
       ],
@@ -6638,20 +6668,11 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "고객님의 ${ BRAND_NAME } 계정이 정지되었습니다. 28일 뒤, 받은 편지함으로 이메일이 더 이상 전달되지 않으며, Drive 공유 링크가 잠기며, 더 이상 새로운 파일을 업로드 할 수 없습니다. 서비스를 계속 사용하려면, 기한이 지난 청구서를 결제해주세요."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "고객님의 ${ BRAND_NAME } 계정이 정지되었습니다. 이메일이 더 이상 받은 편지함으로 전송되지 않으며, Drive 공유 링크가 더 이상 활성화되지 않으며, 새로운 파일을 업로드 할 수도 없습니다. 계정 사용을 계속하려면, 기한이 지난 청구서를 결제해주세요."
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ plan } 구독이 ${ PASS_SHORT_APP_NAME } 평생 플랜으로 대체됩니다. 구독의 잔여분이 사용자의 계정에 추가됩니다. ${ PASS_SHORT_APP_NAME } 평생 혜택은 갱신가격이 존재하지 않으며, ${ PASS_SHORT_APP_NAME }에 평생 접근할 수 있는 일회성 결제입니다."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "계정에 기한이 지난 청구서가 하나 이상 있습니다. 회원님의 계정 접근이 곧 제한됩니다. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "회원님의 계정에 적어도 하나의 연체된 결제가 있습니다. 회원님의 계정이 제한되어 있으며, 지금 결제할 때까지 모든 서비스가 차단됩니다. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "회원님의 계정에 적어도 하나의 연체된 결제가 있습니다. 회원님의 계정이 제한된 상태입니다. 지속적인 미지불이 이메일과 공유 링크를 차단시킬 수 있습니다. ${ payInvoiceLink }"
       ],
       "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
         "현재 사용중인 브라우저는 대용량 파일/복수의 파일 다운로드를 지원하지 않습니다. 매끄러운 업로드 및 다운로드를 위해 데스크톱 앱을 내려받으세요."
@@ -9521,6 +9542,9 @@
       "Create new group": [
         "새 그룹 만들기"
       ],
+      "Expected strcuture": [
+        "예상 구조"
+      ],
       "Ignore group": [
         "그룹 무시"
       ],
@@ -9532,6 +9556,9 @@
       ],
       "Only current location: ${ name }": [
         "현재 위치만: ${ name }"
+      ],
+      "Select JSON file": [
+        "JSON 파일 선택"
       ],
       "Verify content": [
         "내용 확인"
@@ -9647,6 +9674,9 @@
       ],
       "Credit/debit card": [
         "신용/체크카드"
+      ],
+      "Google Pay": [
+        "Google Pay"
       ],
       "New credit/debit card": [
         "신용/체크카드 추가"
@@ -9772,6 +9802,12 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "이미 이 플랜을 구독하고 있습니다. 구독은 ${ subscriptionPlatform }에서 변경할 수 있습니다."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "결제를 인증하기 위해 곧 PayPal로 이동됩니다."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "결제를 인증하기 위해 곧 리디렉션됩니다."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "SEPA 은행 송금이 유로화 결제만 지원하여 사용자의 통화가 유로화(€)로 변경되었습니다."
       ],
@@ -9802,6 +9838,11 @@
         "사용자의 카드가 거절되었습니다. 다른 카드로 시도하거나 은행사에 문의해 주세요."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "문제가 발생했습니다. Google Pay 인증에 실패했습니다."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "이전 플랜 구독으로 사용하지 않은 부분에 대한 크레딧"
@@ -9821,6 +9862,9 @@
       ],
       "Bank transfer - ${ details }": [
         "은행 송금 - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - 번호가 ${ paymentMethod.Details.Last4 }(으)로 끝나는 카드"
       ]
     },
     "Payments.Sepa": {
@@ -11637,6 +11681,9 @@
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME } 구독 취소"
       ],
+      "Cancel all uploads?": [
+        "모든 업로드를 취소하시겠습니까?"
+      ],
       "Cancel subscription?": [
         "구독을 취소하시겠어요?"
       ],
@@ -11912,6 +11959,9 @@
       ],
       "Found ${ searchView.numberOfResults } result": [
         "${ searchView.numberOfResults }개 결과 찾음"
+      ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "${ planTitle }(으)로 크레딧으로 **${ referralInfo.uiData.refereeRewardAmount }** 받기"
       ],
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME }의 모든 기능 이용하기"

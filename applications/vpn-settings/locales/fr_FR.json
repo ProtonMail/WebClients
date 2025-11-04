@@ -443,6 +443,9 @@
       "Get a new encrypted email address": [
         "Obtenir une nouvelle adresse e-mail chiffrée"
       ],
+      "Get Deal": [
+        "Profitez de l'offre"
+      ],
       "Get in touch": [
         "Nous contacter"
       ],
@@ -3469,6 +3472,9 @@
       "/month": [
         "/mois"
       ],
+      "2 TB of storage to share": [
+        "2 To d'espace de stockage à partager"
+      ],
       "2 user accounts": [
         "2 comptes utilisateur"
       ],
@@ -3776,6 +3782,9 @@
       "Failed to load the STL preview": [
         "Le chargement de l’aperçu STL n'a pas abouti."
       ],
+      "Failed to lookup server. Please try again": [
+        "La recherche du serveur n'a pas abouti. Veuillez réessayer."
+      ],
       "Failed to process the logo": [
         "Le traitement du logo n'a pas abouti."
       ],
@@ -4015,6 +4024,9 @@
       "Request timed out": [
         "La requête a expiré."
       ],
+      "Server not found": [
+        "Le serveur n'a pas été trouvé."
+      ],
       "Signature verification failed": [
         "La signature n'a pas pu être vérifiée."
       ],
@@ -4095,6 +4107,12 @@
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Pour créer des comptes utilisateur non privés et accéder à leurs comptes, vous devez restaurer vos droits administrateur."
+      ],
+      "Too many requests. Please try again after ${ date }": [
+        "Le nombre de requêtes est trop important. Veuillez réessayer après le ${ date }"
+      ],
+      "Too many requests. Please try again later": [
+        "Le nombre de requêtes est trop important. Veuillez réessayer plus tard."
       ],
       "Try again later": [
         "Veuillez réessayer plus tard."
@@ -5717,9 +5735,6 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Un utilisateur est un compte associé à un seul nom d'utilisateur, une seule boite aux lettres et une seule personne."
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "L'accès au compte est restreint en raison de factures en retard. Veuillez contacter votre administrateur."
-      ],
       "Account monitor": [
         "Surveillance des comptes"
       ],
@@ -6313,6 +6328,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Accédez à votre fournisseur d'identité, récupérez les métadonnées SAML pour ${ appName } et importez-les ici."
+      ],
+      "Google Pay mark": [
+        "Marquer Google Pay"
       ],
       "Got it": [
         "J'ai compris"
@@ -6998,6 +7016,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Votre compte bénéficie de fonctionnalités supplémentaires parce que vous êtes un utilisateur fidèle."
       ],
+      "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
+        "Certains serveurs peuvent ne pas apparaître dans la liste ci-dessus. Recherchez-les par nom de serveur (par exemple, AT#62)."
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Indiquez le domaine autorisant l'authentification unique (SSO) SAML."
       ],
@@ -7673,9 +7694,6 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Votre compte ${ BRAND_NAME } est suspendu. Au bout de 28 jours, les messages ne seront plus envoyés dans votre boite de réception, vos liens de partage Drive seront bloqués et vous ne pourrez plus télécharger de nouveaux fichiers. Pour retrouver un service normal, nous vous invitons à régler toutes les factures en retard."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Votre compte ${ BRAND_NAME } est suspendu. Les messages ne sont plus envoyés dans votre boite de réception. Vos liens de partage Drive ne sont plus actifs et vous ne pouvez pas télécharger de nouveaux fichiers. Pour continuer à utiliser votre compte, nous vous invitons à payer toutes les factures en retard."
-      ],
       "Your ${ BRAND_NAME } password": [
         "Votre mot de passe ${ BRAND_NAME }"
       ],
@@ -7687,12 +7705,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Votre compte a au moins une facture en retard. Votre accès sera bientôt restreint. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Votre compte ayant au moins une facture en retard, il est restreint et tous les services sont bloqués jusqu'au paiement. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Votre compte ayant au moins une facture en retard, il est restreint. Vos messages et liens de partage seront bloqués en cas de non-paiement. ${ payInvoiceLink }"
       ],
       "Your account was successfully updated with this promotion": [
         "La promotion a été prise en compte et votre compte a été mis à jour."
@@ -8516,6 +8528,9 @@
       ],
       "Sequences": [
         "Séquences"
+      ],
+      "Server name": [
+        "Nom du serveur"
       ],
       "Show ${ n } administrator": [
         "Afficher ${ n } administrateur",
@@ -10973,6 +10988,9 @@
       "Credit/debit card": [
         "Carte de crédit/débit"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Nouvelle carte de paiement"
       ],
@@ -11121,11 +11139,20 @@
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Un montant de ${ amountToCharge } sera débité selon votre méthode de paiement sélectionnée."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Vous serez bientôt redirigé vers PayPal pour vérifier votre paiement."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Vous serez bientôt redirigé vers PayPal pour vérifier votre paiement."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Votre devise a été changée en euros (€) car les virements bancaires SEPA prennent uniquement en charge les paiements en euros."
       ],
       "Your payment is still being processed": [
         "Votre paiement est en cours de traitement."
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "Votre abonnement bénéficie actuellement d'une réduction existante. Le passage à cette nouvelle promotion signifie que la réduction existante ne sera plus appliquée."
       ]
     },
     "Payments.Error": {
@@ -11148,6 +11175,11 @@
         "Votre carte a été refusée. Veuillez essayer une autre carte ou contactez votre banque pour autoriser le prélèvement."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Une erreur s'est produite. La vérification Google Pay n'a pas abouti."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Crédit pour la période non utilisée de votre abonnement précédent"
@@ -11167,6 +11199,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Virement bancaire - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - carte se terminant par les chiffres ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -11274,6 +11309,9 @@
       ],
       "E.g., ": [
         "Par exemple, "
+      ],
+      "e.g., AT#62": [
+        "par exemple., AT#62"
       ],
       "End date": [
         "Date de fin"
@@ -11685,6 +11723,11 @@
       ],
       "Scopes cannot have the same value": [
         "Les zones ne peuvent avoir une valeur identique."
+      ]
+    },
+    "retention_policy_2025_Hint": {
+      "${ currentLength }/${ MAX_TITLE_LENGTH } characters": [
+        "${ currentLength }/${ MAX_TITLE_LENGTH } caractères"
       ]
     },
     "retention_policy_2025_Info": {
@@ -14494,6 +14537,9 @@
       ],
       "SAML authentication": [
         "Authentification SAML"
+      ],
+      "Search for additional servers": [
+        "Rechercher des serveurs supplémentaires"
       ],
       "Security": [
         "Sécurité"

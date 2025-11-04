@@ -753,6 +753,9 @@
       "Get a new encrypted email address": [
         "Obțineți o adresă de e-mail criptată"
       ],
+      "Get Deal": [
+        "Obțineți oferta"
+      ],
       "Get in touch": [
         "Contactați-ne"
       ],
@@ -4947,10 +4950,28 @@
       ]
     },
     "Duration": {
+      "1.5h": [
+        "1,5 h"
+      ],
       "120 minutes": [
         "120 de minute"
       ],
+      "15 minutes": [
+        "15 minute"
+      ],
+      "15m": [
+        "15 m"
+      ],
+      "1h": [
+        "1 h"
+      ],
+      "2h": [
+        "2 h"
+      ],
       "30 minutes": [
+        "30 de minute"
+      ],
+      "30m": [
         "30 de minute"
       ],
       "60 minutes": [
@@ -5951,6 +5972,9 @@
       "Failed to load the STL preview": [
         "Nu s-a putut încărca examinarea STL."
       ],
+      "Failed to lookup server. Please try again": [
+        "Eroare la interogarea serverului. Reîncercați."
+      ],
       "Failed to process the logo": [
         "Procesarea fișierului pentru logo a eșuat."
       ],
@@ -6239,6 +6263,9 @@
       "Request timed out": [
         "Solicitarea a expirat"
       ],
+      "Server not found": [
+        "Server negăsit"
+      ],
       "Session expired. Please refresh the page.": [
         "Sesiune expirată. Împrospătați pagina."
       ],
@@ -6343,6 +6370,12 @@
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Pentru a crea conturi de utilizator neprivate și pentru a le accesa, va trebui să vă restabiliți privilegiile de administrator."
+      ],
+      "Too many requests. Please try again after ${ date }": [
+        "Prea multe solicitări. Reîncercați după ${ date }."
+      ],
+      "Too many requests. Please try again later": [
+        "Prea multe solicitări. Reîncercați mai târziu."
       ],
       "Trusted keys are not valid for sending": [
         "Cheile de încredere nu sunt valide pentru trimitere"
@@ -8618,9 +8651,6 @@
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Accesați-vă parolele și protejați-vă identitățile online fără probleme pe toate dispozitivele. Descărcați și instalați aplicațiile și extensiile relevante ale ${ PASS_APP_NAME }."
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Accesul la cont a fost restricționat din cauza facturilor neplătite. Contactați-vă administratorul."
-      ],
       "Account monitor": [
         "Monitorizare cont"
       ],
@@ -9556,6 +9586,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Accesați furnizorul de identitate, obțineți metadatele SAML pentru ${ appName } și importați-le aici."
+      ],
+      "Google Pay mark": [
+        "Marcare Google Pay"
       ],
       "Got it": [
         "Am înțeles"
@@ -10593,6 +10626,9 @@
       "Some keys successfully reactivated": [
         "Unele chei au fost reactivate"
       ],
+      "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
+        "Unele servere s-ar putea să nu apară în lista de mai sus. Căutați după numele serverului (de exemplu, AT#62) pentru a le găsi."
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Specificați domeniul căruia i se permite autentificarea cu SAML SSO."
       ],
@@ -11594,9 +11630,6 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Acest cont ${ BRAND_NAME } este în prezent suspendat. După 28 de zile, nu veți mai putea primi mesaje, legăturile web de partajare din Drive vor fi blocate și nu veți mai putea încărca fișiere noi. Pentru repornirea serviciului, trebuie să plătiți toate facturile restante."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Acest cont ${ BRAND_NAME } este în prezent suspendat. Nu mai puteți primi mesaje. Legăturile de partajare din Drive nu mai sunt active și nu mai puteți încărca fișiere noi. Pentru putea să utilizați din nou contul, trebuie să plătiți toate facturile restante."
-      ],
       "Your ${ BRAND_NAME } password": [
         "Parola ${ BRAND_NAME }"
       ],
@@ -11608,12 +11641,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Acest cont are cel puțin o factură restantă. În curând accesul va fi restricționat. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Acest cont are cel puțin o factură scadentă. Contul este restricționat, iar toate serviciile sunt acum blocate până la plata datoriilor. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Acest cont are cel puțin o factură scadentă. Contul este restricționat. Neplata continuă va bloca mesajele și legăturile web partajate. ${ payInvoiceLink }"
       ],
       "Your account has been successfully updated": [
         "Contul a fost actualizat."
@@ -13320,6 +13347,9 @@
       ],
       "Sequences": [
         "Secvențe"
+      ],
+      "Server name": [
+        "Nume server"
       ],
       "Share your referral link": [
         "Partajați-vă legătura web de recomandare"
@@ -16709,12 +16739,6 @@
       "Based in Switzerland, GDPR compliant": [
         "Situată în Elveția, în conformitate cu RGPD"
       ],
-      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
-        "Dar puteți obține o reducere de ${ discount } trecând la **${ upsellPlanTitle }** — doar ${ relativePrice } în plus pe lună."
-      ],
-      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }**.": [
-        "Dar puteți obține o reducere ${ discount } trecând la **${ upsellPlanTitle }**."
-      ],
       "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Dar puteți debloca **${ unlockPlanTitle }** și mai multe servicii ${ BRAND_NAME } prin trecerea la **${ upsellPlanTitle }** — este doar ${ relativePrice } în plus pe lună."
       ],
@@ -17079,6 +17103,9 @@
       "Credit/debit card": [
         "Card de credit/debit"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Card nou de credit/debit"
       ]
@@ -17236,6 +17263,12 @@
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Vi se va retrage suma de ${ amountToCharge } folosind metoda de plată selectată."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Pentru verificarea plății se va deschide o filă către PayPal."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Pentru verificarea plății se va deschide o filă nouă."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Moneda a fost schimbată în euro (€) deoarece transferurile bancare SEPA acceptă doar plăți în euro."
       ],
@@ -17266,6 +17299,11 @@
         "Acest card a fost refuzat. Încercați un alt card sau contactați-vă banca pentru autorizarea plății."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "A apărut o problemă. Verificarea Google Pay a eșuat."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Credit pentru porțiunea neutilizată din abonamentul planului anterior."
@@ -17285,6 +17323,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Transfer bancar - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - card care se termină cu ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -17408,6 +17449,9 @@
       ],
       "E.g., ": [
         "Ex.: "
+      ],
+      "e.g., AT#62": [
+        "de ex., AT#62"
       ],
       "Email address": [
         "Adresă e-mail"
@@ -18037,6 +18081,11 @@
       ],
       "Scopes cannot have the same value": [
         "Domeniile de aplicare nu pot avea aceeași valoare."
+      ]
+    },
+    "retention_policy_2025_Hint": {
+      "${ currentLength }/${ MAX_TITLE_LENGTH } characters": [
+        "${ currentLength }/${ MAX_TITLE_LENGTH } caractere"
       ]
     },
     "retention_policy_2025_Info": {
@@ -22593,6 +22642,9 @@
       ],
       "Schedule send:": [
         "Programare trimitere:"
+      ],
+      "Search for additional servers": [
+        "Căutare servere suplimentare"
       ],
       "Secure email based in Switzerland": [
         "E-mail securizat găzduit în Elveția"

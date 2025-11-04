@@ -791,6 +791,9 @@
       "Submit": [
         "Lähetä"
       ],
+      "Subscribe now": [
+        "Tilaa nyt"
+      ],
       "Switch or add account": [
         "Vaihda tiliä tai lisää uusi"
       ],
@@ -1375,6 +1378,9 @@
       "Application problem": [
         "Sovellusongelma"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Bridge problem": [
         "Bridge-ongelma"
       ],
@@ -1410,6 +1416,9 @@
       ],
       "Manual setup problem": [
         "Manuaalisen määrityksen ongelma"
+      ],
+      "Meet problem": [
+        "Meet-ongelma"
       ],
       "Other": [
         "Muu"
@@ -2759,9 +2768,6 @@
       ]
     },
     "Custom frequency option": {
-      "Don't end": [
-        "Älä pääty"
-      ],
       "End on": [
         "Päättyy"
       ],
@@ -3127,17 +3133,40 @@
         "Lisää kalenteri"
       ]
     },
+    "Duo offer": {
+      "Only": [
+        "Vain"
+      ]
+    },
     "Duplicate event button tooltip": {
       "Duplicate event": [
         "Monista tapahtuma"
       ]
     },
     "Duration": {
+      "1.5h": [
+        "1,5 t"
+      ],
       "120 minutes": [
         "120 minuuttia"
       ],
+      "15 minutes": [
+        "15 minuuttia"
+      ],
+      "15m": [
+        "15 min"
+      ],
+      "1h": [
+        "1 t"
+      ],
+      "2h": [
+        "2 t"
+      ],
       "30 minutes": [
         "30 minuuttia"
+      ],
+      "30m": [
+        "30 min"
       ],
       "60 minutes": [
         "60 minuuttia"
@@ -3158,6 +3187,9 @@
       "All events in this series were updated.": [
         "Ketjun kaikki tapahtumakerrat päivitettiin."
       ],
+      "DESCRIPTION:": [
+        "KUVAUS:"
+      ],
       "Here's what changed:": [
         "Tehdyt muutokset:"
       ],
@@ -3172,6 +3204,9 @@
       ],
       "This event was updated.": [
         "Tapahtuma päivitettiin."
+      ],
+      "TIME:": [
+        "AIKA:"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4854,9 +4889,6 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "VPN on suojattu tunneli laitteesi ja Internetin välillä. Se piilottaa sijaintisi ja toimintasi Internet-palveluntarjoajaltasi (ISP) ja verkkosivustoilta, joilla vierailet."
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Tiliä on rajoitettu maksamattomien laskujen vuoksi. Ole yhteydessä ylläpitoosi."
-      ],
       "Account successfully updated": [
         "Tili on päivitetty"
       ],
@@ -5003,6 +5035,9 @@
       ],
       "Contact unassigned from group ${ contactGroupName }": [
         "Yhteystieto poistettiin ryhmästä ${ contactGroupName }"
+      ],
+      "Continue": [
+        "Jatka"
       ],
       "Copy the link to clipboard": [
         "Kopioi linkki leikepöydälle"
@@ -5918,17 +5953,8 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "${ BRAND_NAME }-tilisi on jäädytetty, ja 28 päivän kuluttua postilaatikkosi ei enää vastaanota viestejä ja Drive-jakolinkit sekä uusien tiedostojen tallennus estetään. Palauttaaksesi tilisi normaalin toiminnan, maksa maksamattomat laskut."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "${ BRAND_NAME }-tilisi on jäädytetty, eikä postilaatikkosi enää vastaanota viestejä ja Drive-jakolinkit sekä uusien tiedostojen tallennus estetään. Palauttaaksesi tilisi normaalin toiminnan, maksa maksamattomat laskut."
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Tililläsi on ainakin yksi erääntynyt lasku. Pääsyäsi rajoitetaan pian. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Tililläsi on ainakin yksi erääntynyt lasku. Tiliäsi on rajoitettu ja kaikki palvelut on nyt estetty kunnes maksu on suoritettu. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Tililläsi on ainakin yksi erääntynyt lasku ja sen toimintaa on rajoitettu. Jatkuvasta maksujen laiminlyönistä seuraa sähköpostiviestien ja jakolinkkien esto. ${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "Osoitteesi on poistettu käytöstä, eikä osallistujille sen vuoksi voida lähettää perumisilmoitusta sähköpostitse. Haluatko silti poistaa ketjun kaikki tapahtumat?"
@@ -6231,6 +6257,9 @@
       "Billing cycle": [
         "Laskutusjakso"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Browser": [
         "Selain"
       ],
@@ -6330,9 +6359,6 @@
       "Don't show this again": [
         "Älä näytä tätä uudelleen"
       ],
-      "Duration": [
-        "Kesto"
-      ],
       "e.g., Amazon, eBay, Etsy": [
         "esim. Amazon, eBay, Etsy"
       ],
@@ -6395,6 +6421,9 @@
       ],
       "From: ${ fromEmail }": [
         "Lähettäjä: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "Hyödynnä tarjous"
       ],
       "Hide password": [
         "Piilota salasana"
@@ -6609,9 +6638,6 @@
       ],
       "Time zone": [
         "Aikavyöhyke"
-      ],
-      "Title": [
-        "Nimi"
       ],
       "To: ${ toEmail }": [
         "Vastaanottaja: ${ toEmail }"
@@ -8582,6 +8608,9 @@
       ],
       "Credit/debit card": [
         "Maksukortti"
+      ],
+      "Google Pay": [
+        "Google Pay"
       ],
       "New credit/debit card": [
         "Uusi maksukortti"
@@ -10647,6 +10676,9 @@
       "Data recovery": [
         "Tietojen palautus"
       ],
+      "Date": [
+        "Päiväys"
+      ],
       "Day theme": [
         "Päiväteema"
       ],
@@ -10820,6 +10852,9 @@
       ],
       "Link confirmation": [
         "Linkin vahvistus"
+      ],
+      "Location": [
+        "Sijainti"
       ],
       "Make a secure connection your default": [
         "Aseta suojattu yhteys oletukseksesi"
@@ -11045,6 +11080,12 @@
       ],
       "Summary": [
         "Yhteenveto"
+      ],
+      "Time": [
+        "Aika"
+      ],
+      "Time zone": [
+        "Aikavyöhyke"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Ota ${ DARK_WEB_MONITORING_NAME } käyttöön"

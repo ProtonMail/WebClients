@@ -2919,8 +2919,8 @@
       ]
     },
     "Custom frequency option": {
-      "Don't end": [
-        "종료하지 않기"
+      "Doesn't end": [
+        "끝나지 않음"
       ],
       "End after": [
         "다음 날짜 이후 종료:"
@@ -3336,10 +3336,28 @@
       ]
     },
     "Duration": {
+      "1.5h": [
+        "1시간 30분"
+      ],
       "120 minutes": [
         "120분"
       ],
+      "15 minutes": [
+        "15분"
+      ],
+      "15m": [
+        "15분"
+      ],
+      "1h": [
+        "1시간"
+      ],
+      "2h": [
+        "2시간"
+      ],
       "30 minutes": [
+        "30분"
+      ],
+      "30m": [
         "30분"
       ],
       "60 minutes": [
@@ -4927,8 +4945,8 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }에서 ${ enableDesktopNotifications }하려면 권한이 필요합니다."
       ],
-      "${ booking.duration } min duration": [
-        "예상 소요 시간 ${ booking.duration }분"
+      "${ bookingDetails.duration } min duration": [
+        "예상 소요 시간 ${ bookingDetails.duration }분"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 글쓰기 도우미"
@@ -5050,9 +5068,6 @@
       "30-day money-back guarantee.": [
         "30일 환불 보장"
       ],
-      "A booking slot cannot be added in the past.": [
-        "예약 슬롯은 과거 시점으로 추가할 수 없습니다."
-      ],
       "A cancellation email will be sent to removed participants.": [
         "취소 이메일이 삭제된 참가자들에게 전송됩니다."
       ],
@@ -5079,9 +5094,6 @@
       ],
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "VPN은 기기와 인터넷 사이의 안전한 터널입니다. 인터넷 서비스 공급자(ISP)와 방문하는 웹사이트로부터 사용자의 위치와 활동을 숨기죠."
-      ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "요금 미납으로 인해 계정 액세스가 제한되었습니다. 관리자에게 문의하세요."
       ],
       "Account successfully updated": [
         "계정을 성공적으로 업그레이드 했습니다."
@@ -5172,6 +5184,9 @@
       ],
       "Billing cycle: ${ text }": [
         "청구 주기: ${ text }"
+      ],
+      "Booking page example": [
+        "예약 페이지 예시"
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "조직의 브랜드 아이덴티티를 증진하고 사용자를 위한 더욱 일관된 온라인 경험을 창출하십시오."
@@ -5425,6 +5440,9 @@
       "Geoblocking": [
         "차단된 콘텐츠"
       ],
+      "Google Pay mark": [
+        "Google Pay 표시"
+      ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "정부와 ISP가 사용자의 온라인 활동을 모니터링할 수 있습니다. 실제 IP를 숨기고 활동을 암호화함으로서 브라우징이 비공개화 됩니다."
       ],
@@ -5433,6 +5451,9 @@
       ],
       "High Priority": [
         "중요도 높음"
+      ],
+      "How long should an appointment last?": [
+        "일정 소요시간이 얼마입니까?"
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "키보드 단축키가 활성화되면, 다음 키를 사용하여 빠른 작업을 수행하거나 다른 보기로 이동할 수 있습니다. ${ metaKey } + K는 항상 활성화되어 있습니다."
@@ -5481,6 +5502,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "다음 단계에서, Bitcoin 주소를 사용하여 보증금을 제출할 수 있습니다."
+      ],
+      "In which calendar should bookings appear?": [
+        "어떤 캘린더에 예약이 표시되어야 하나요?"
       ],
       "Indexing events: ${ current }/${ total }": [
         "인덱싱 이벤트: ${ current }/${ total }"
@@ -5586,6 +5610,9 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "대다수의 공용 WiFi 네트워크는 안전하지만 일부 네트워크는 보안이 취약하여 사이버 위협에 노출됩니다. VPN이 트래픽을 암호화하여 사용자를 보호합니다."
+      ],
+      "Name your booking page": [
+        "예약 페이지 이름을 지정하세요."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "새 폴더의 이름을 지정하고 넣고 싶은 상위 폴더를 선택하세요. 상위 폴더를 선택하지 않으면, 이 새 폴더는 최상위 폴더로 생성됩니다."
@@ -6022,6 +6049,9 @@
       "Week and month views only apply to desktop.": [
         "주 및 월 보기는 홈 화면에서만 적용됩니다."
       ],
+      "What should people know before booking?": [
+        "예약 전에 알아두어야 할 사항은 무엇인가요?"
+      ],
       "When working remotely": [
         "재택 근무시"
       ],
@@ -6030,6 +6060,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "2단계 인증을 설정하면, 인증 앱에 접근할 수 없을때 로그인시 사용할 수 있는 복구 코드를 제공해 드립니다."
+      ],
+      "Where will the appointment take place?": [
+        "약속은 어디에서 진행되나요?"
       ],
       "Which event would you like to delete?": [
         "어느 이벤트를 삭제하고 싶나요?"
@@ -6181,20 +6214,11 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "고객님의 ${ BRAND_NAME } 계정이 정지되었습니다. 28일 뒤, 받은 편지함으로 이메일이 더 이상 전달되지 않으며, Drive 공유 링크가 잠기며, 더 이상 새로운 파일을 업로드 할 수 없습니다. 서비스를 계속 사용하려면, 기한이 지난 청구서를 결제해주세요."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "고객님의 ${ BRAND_NAME } 계정이 정지되었습니다. 이메일이 더 이상 받은 편지함으로 전송되지 않으며, Drive 공유 링크가 더 이상 활성화되지 않으며, 새로운 파일을 업로드 할 수도 없습니다. 계정 사용을 계속하려면, 기한이 지난 청구서를 결제해주세요."
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ plan } 구독이 ${ PASS_SHORT_APP_NAME } 평생 플랜으로 대체됩니다. 구독의 잔여분이 사용자의 계정에 추가됩니다. ${ PASS_SHORT_APP_NAME } 평생 혜택은 갱신가격이 존재하지 않으며, ${ PASS_SHORT_APP_NAME }에 평생 접근할 수 있는 일회성 결제입니다."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "계정에 기한이 지난 청구서가 하나 이상 있습니다. 회원님의 계정 접근이 곧 제한됩니다. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "회원님의 계정에 적어도 하나의 연체된 결제가 있습니다. 회원님의 계정이 제한되어 있으며, 지금 결제할 때까지 모든 서비스가 차단됩니다. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "회원님의 계정에 적어도 하나의 연체된 결제가 있습니다. 회원님의 계정이 제한된 상태입니다. 지속적인 미지불이 이메일과 공유 링크를 차단시킬 수 있습니다. ${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "사용자의 주소가 비활성화되었습니다. 이벤트 참가자들에게 취소 이메일을 보낼 수 없습니다. 그래도 이 시리즈의 모든 이벤트를 삭제하시겠습니까?"
@@ -6608,9 +6632,6 @@
       "Don't show this again": [
         "다시 보지 않기"
       ],
-      "Duration": [
-        "기간"
-      ],
       "e.g., Amazon, eBay, Etsy": [
         "예: Amazon, eBay, Etsy"
       ],
@@ -6899,9 +6920,6 @@
       "Time zone": [
         "시간대"
       ],
-      "Title": [
-        "제목"
-      ],
       "To: ${ toEmail }": [
         "받는 사람: ${ toEmail }"
       ],
@@ -7164,6 +7182,11 @@
       ],
       "Your import is starting": [
         "가져오기 작업이 시작 중입니다!"
+      ]
+    },
+    "Location": {
+      "In person": [
+        "대면"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -8916,6 +8939,9 @@
       "Credit/debit card": [
         "신용/체크카드"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "신용/체크카드 추가"
       ]
@@ -9040,6 +9066,12 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "이미 이 플랜을 구독하고 있습니다. 구독은 ${ subscriptionPlatform }에서 변경할 수 있습니다."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "결제를 인증하기 위해 곧 PayPal로 이동됩니다."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "결제를 인증하기 위해 곧 리디렉션됩니다."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "SEPA 은행 송금이 유로화 결제만 지원하여 사용자의 통화가 유로화(€)로 변경되었습니다."
       ],
@@ -9070,6 +9102,11 @@
         "사용자의 카드가 거절되었습니다. 다른 카드로 시도하거나 은행사에 문의해 주세요."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "문제가 발생했습니다. Google Pay 인증에 실패했습니다."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "이전 플랜 구독으로 사용하지 않은 부분에 대한 크레딧"
@@ -9089,6 +9126,9 @@
       ],
       "Bank transfer - ${ details }": [
         "은행 송금 - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - 번호가 ${ paymentMethod.Details.Last4 }(으)로 끝나는 카드"
       ]
     },
     "Payments.Sepa": {
@@ -9171,6 +9211,9 @@
       "A way to contact you": [
         "사용자에게 연락할 방법"
       ],
+      "Add a booking page description": [
+        "예약 페이지 설명 추가"
+      ],
       "Add a calendar description": [
         "캘린더 설명 추가"
       ],
@@ -9194,6 +9237,9 @@
       ],
       "Anytown": [
         "서울특별시 낙원구"
+      ],
+      "Booking page title": [
+        "예약 페이지 제목"
       ],
       "Company name": [
         "법인 이름"
@@ -10616,6 +10662,9 @@
       "Billing details updated": [
         "청구 상세 정보가 업데이트되었습니다."
       ],
+      "Booking link copied to clipboard": [
+        "예약 링크가 클립보드로 복샤되었습니다"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "캘린더가 생성되었습니다. 동기화 되는데 시간이 걸릴 수 있습니다."
       ],
@@ -10994,9 +11043,6 @@
       "Birthday": [
         "생일"
       ],
-      "Booking page": [
-        "예약 페이지"
-      ],
       "Calendar": [
         "캘린더"
       ],
@@ -11089,6 +11135,9 @@
       ],
       "Data recovery": [
         "데이터 복구"
+      ],
+      "Date": [
+        "날짜"
       ],
       "Day theme": [
         "주간 테마"
@@ -11198,6 +11247,9 @@
       "Exporting contacts": [
         "연락처 내보내기"
       ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "${ planTitle }(으)로 크레딧으로 **${ referralInfo.uiData.refereeRewardAmount }** 받기"
+      ],
       "Get more from your VPN": [
         "VPN에 대해 더 알아보기"
       ],
@@ -11263,6 +11315,9 @@
       ],
       "Link confirmation": [
         "링크 확인"
+      ],
+      "Location": [
+        "위치"
       ],
       "Make a secure connection your default": [
         "보안 연결을 기본값으로 설정하세요"
@@ -11498,6 +11553,12 @@
       "This booking page has expired": [
         "이 예약 페이지는 만료되었습니다"
       ],
+      "Time": [
+        "시간"
+      ],
+      "Time zone": [
+        "시간대"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } 켜기"
       ],
@@ -11587,6 +11648,9 @@
       ],
       "Your account is protected": [
         "계정이 보호됩니다."
+      ],
+      "Your booking page is ready": [
+        "예약 페이지가 준비되었습니다"
       ],
       "Your calendar link": [
         "내 캘린더 링크"

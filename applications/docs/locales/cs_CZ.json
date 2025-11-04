@@ -675,6 +675,12 @@
       "Search recent documents": [
         "Hledat nedávné dokumenty"
       ],
+      "Search recent spreadsheets": [
+        "Hledat nedávné tabulky"
+      ],
+      "Search recents": [
+        "Hledat nedávné"
+      ],
       "See how": [
         "Podívejte se, jak"
       ],
@@ -4386,9 +4392,6 @@
       "Accept/decline": [
         "Přijmout/odmítnout"
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Z důvodu nezaplacených faktur byl přístup k účtu omezen. Kontaktujte správce vašeho účtu."
-      ],
       "Ad targeting": [
         "Cílení reklamy"
       ],
@@ -5472,20 +5475,11 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Váš účet ${ BRAND_NAME } je momentálně pozastaven. Po 28 dnech vám již nebudou do schránky doručovány e-maily, odkazy na sdílení na Disku budou zablokovány a nebudete moci nahrávat nové soubory. Chcete-li obnovit normální provoz, zaplaťte všechny faktury po splatnosti."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Váš účet ${ BRAND_NAME } je momentálně pozastaven. E-maily již nejsou doručovány do vaší schránky. Vaše odkazy na sdílení na Disku již nejsou aktivní a nemůžete nahrávat nové soubory. Chcete-li svůj účet nadále používat, zaplaťte všechny faktury po splatnosti."
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Vaše předplatné ${ plan } bude nahrazeno doživotním předplatným ${ PASS_SHORT_APP_NAME }. Zbývající část předplatného bude připsána na váš účet. Doživotní nabídka ${ PASS_SHORT_APP_NAME } nemá cenu za obnovení, jedná se o jednorázovou platbu za doživotní přístup k ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Váš účet má alespoň jednu fakturu po splatnosti. Váš přístup bude brzy omezen. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Váš účet má alespoň jednu fakturu po splatnosti. Váš účet je omezen a všechny služby jsou nyní až do zaplacení zablokovány. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Váš účet má alespoň jednu fakturu po splatnosti. Váš účet je omezen. Pokračující neplacení zablokuje vaše e-maily a odkazy pro sdílení. ${ payInvoiceLink }"
       ],
       "Your browser's Print dialog will now open, where you can export your document to PDF.": [
         "Nyní se otevře dialogové okno prohlížeče pro Tisk, kde můžete dokument exportovat do PDF."
@@ -7519,7 +7513,7 @@
         "\"${ name }\" se nepodařilo smazat"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
-        "\"${ name }\" se nepodařilo trvale odstranit z koše"
+        "\"${ name }\" se nepodařilo trvale smazat z koše"
       ],
       "\"${ name }\" failed to be moved": [
         "\"${ name }\" se nepodařilo přesunout"

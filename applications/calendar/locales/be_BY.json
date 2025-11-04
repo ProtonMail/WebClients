@@ -188,6 +188,9 @@
       "Confirm": [
         "Пацвердзіць"
       ],
+      "Confirm booking": [
+        "Пацвердзіць браніраванне"
+      ],
       "Confirm opening of link ${ linkToShow }": [
         "Пацвердзіць адкрыццё спасылкі ${ linkToShow }"
       ],
@@ -220,9 +223,6 @@
       ],
       "Copy alias “${ name }”": [
         "Капіяваць псеўданім “${ name }”"
-      ],
-      "Copy Booking link": [
-        "Скапіяваць спасылку на браніраванне"
       ],
       "Copy email address": [
         "Скапіяваць адрас электроннай пошты"
@@ -1430,12 +1430,47 @@
         "Прастора сховішча размеркавана паміж усімі сэрвісамі ${ BRAND_NAME }"
       ]
     },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "Распродаж з нагоды \"Чорнай пятніцы\""
+      ]
+    },
     "BF2025: Deal details": {
+      "2 TB data storage": [
+        "Сховішча даных памерам у 2 ТБ"
+      ],
+      "3 TB data storage": [
+        "Сховішча даных памерам у 3 ТБ"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Доступ да 15 000+ сервераў у 120+ краінах"
+      ],
+      "Access advanced AI models": [
+        "Доступ да перадавых мадэляў ШІ"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Усе прэміяльныя функцыі ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Block ads, trackers, and malware": [
         "Блакіроўка рэкламы, праграм сачэння і шкодных праграм"
       ],
       "Built-in 2FA authenticator": [
         "Убудаваны аўтэнтыфікатар 2ФА"
+      ],
+      "Connect 10 devices at once": [
+        "Падключыце 10 прылад адначасова"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Поўная гісторыя чатаў з простым пошукам і абранымі"
+      ],
+      "Individual accounts for 6 users": [
+        "Індывідуальныя ўліковыя запісы для 6 карыстальнікаў"
+      ],
+      "Individual accounts for you and a partner": [
+        "Індывідуальныя ўліковыя запісы для вас і партнёра"
+      ],
+      "Stronger protection against cyber threats": [
+        "Больш моцная абарона ад кіберпагроз"
       ],
       "Unlimited daily chats": [
         "Неабмежаваная колькасць штодзённых чатаў"
@@ -1446,9 +1481,29 @@
         "Чорная пятніца"
       ]
     },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Дапамажыце сваім блізкім далучыцца да рэвалюцыі прыватнасці з нашымі самымі выгаднымі камплектамі, зараз са зніжкай 50%!"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Далучайцеся да рэвалюцыі прыватнасці з нашымі самымі выгаднымі камплектамі, зараз са зніжкай 50%!"
+      ]
+    },
     "BF2025: Offers": {
       "for ${ durationDeal }": [
         "за ${ durationDeal }"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "Зэканомце ${ savedAmount } з нашай самай выгаднай абмежаванай па часе прапановай!"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "Пераключыцеся на наш 2-гадовы тарыфны план і зэканомце ${ savedAmount }!"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "Пераключыцеся на наш гадавы тарыфны план і зэканомце ${ savedAmount }!"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "Абараніце сваё плямя поўнай лічбавай абаронай."
       ]
     },
     "BF2025: Tooltip": {
@@ -2918,7 +2973,7 @@
       ]
     },
     "Custom frequency option": {
-      "Don't end": [
+      "Doesn't end": [
         "Не завяршаць"
       ],
       "End after": [
@@ -3350,11 +3405,29 @@
       ]
     },
     "Duration": {
+      "1.5h": [
+        "1,5 гадз"
+      ],
       "120 minutes": [
         "120 хвілін"
       ],
+      "15 minutes": [
+        "15 хвілін"
+      ],
+      "15m": [
+        "15 хв"
+      ],
+      "1h": [
+        "1 гадз"
+      ],
+      "2h": [
+        "2 гадз"
+      ],
       "30 minutes": [
         "30 хвілін"
+      ],
+      "30m": [
+        "30 хв"
       ],
       "60 minutes": [
         "60 хвілін"
@@ -3537,7 +3610,7 @@
         "Адбылася памылка пры загрузцы параметраў псеўданіма"
       ],
       "An error occurred while saving your alias": [
-        "Адбылася памылка пры вашага псеўданіма"
+        "Адбылася памылка пры захаванні вашага псеўданіма"
       ],
       "Answer failed to be sent": [
         "Не ўдалося адправіць адказ"
@@ -3577,6 +3650,9 @@
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Пошук па кантэксце не можа быць уключаны. Перазапусціце праграму або ачысціце яе даныя."
+      ],
+      "Content verification failed": [
+        "Збой праверкі змесціва"
       ],
       "Could not open created vault": [
         "Не ўдалося адкрыць створанае сховішча"
@@ -3755,6 +3831,9 @@
       "Name required": [
         "Патрабуецца назва"
       ],
+      "No booking page data received": [
+        "Даныя старонкі браніравання не атрыманы"
+      ],
       "No calendars found to import": [
         "Не знойдзены календары для імпартавання"
       ],
@@ -3765,7 +3844,7 @@
         "Не знойдзена лістоў для імпартавання - уліковы запіс не мае ўваходных"
       ],
       "No external key retrieved for user is valid for sending": [
-        "Ніводны з атрыманых знешніх ключоў для карыстальніка не падыходзіць для адпраўкі"
+        "Ніводны знешніх ключоў, які атрыманы для карыстальніка, не падыходзіць для адпраўкі"
       ],
       "No valid address found": [
         "Не знойдзена сапраўдных адрасоў"
@@ -4592,6 +4671,11 @@
         "Вельмі маленькі"
       ]
     },
+    "Form": {
+      "Your contact info": [
+        "Ваша кантактная інфармацыя"
+      ]
+    },
     "Google Meet": {
       "Join Google Meet": [
         "Далучыцца да Google Meet"
@@ -5031,8 +5115,8 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
       ],
-      "${ booking.duration } min duration": [
-        "працягласць ${ booking.duration } хв"
+      "${ bookingDetails.duration } min duration": [
+        "Працягласць ${ bookingDetails.duration } хв"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe памочнік у напісанні"
@@ -5205,9 +5289,6 @@
       "30-day money-back guarantee.": [
         "Гарантыя вяртання грашовых сродкаў на працягу 30 дзён."
       ],
-      "A booking slot cannot be added in the past.": [
-        "Час для браніравання не можа быць дададзены ў мінулым."
-      ],
       "A cancellation email will be sent to removed participants.": [
         "Ліст пра скасаванне будзе адпраўлены выдаленым удзельнікам."
       ],
@@ -5234,9 +5315,6 @@
       ],
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "VPN - гэта бяспечны тунэль паміж вашай прыладай і інтэрнэтам. Ён хавае ваша месцазнаходжанне і актыўнасць ад вашага пастаўшчыка паслуг інтэрнэту (ISP) і вэб-сайтаў, якія вы наведваеце."
-      ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Доступ да ўліковага запісу абмежаваны з прычыны неаплачаных рахункаў. Звярніцеся да вашага адміністратара."
       ],
       "Account successfully updated": [
         "Уліковы запіс паспяхова абноўлены"
@@ -5336,6 +5414,15 @@
       ],
       "Billing cycle: ${ text }": [
         "Перыяд аплаты: ${ text }"
+      ],
+      "Booking already exists.": [
+        "Браніраванне ўжо існуе."
+      ],
+      "Booking cannot be added in the past.": [
+        "Браніраванне не можа быць дададзена ў мінулае."
+      ],
+      "Booking overlaps with an existing booking.": [
+        "Браніраванне супадае з існуючым браніраваннем."
       ],
       "Booking page example": [
         "Прыклад старонкі браніравання"
@@ -5604,6 +5691,9 @@
       "Geoblocking": [
         "Геаблакіроўка"
       ],
+      "Google Pay mark": [
+        "Пазнака Google Pay"
+      ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Урады і пастаўшчыкі паслуг інтэрнэту могуць сачыць за тым, якія сайты вы наведваеце. Ваш прагляд вэб-старонак у інтэрнэце становіцца прыватным дзякуючы хаванню вашага рэальнага IP-адраса і шыфраванню."
       ],
@@ -5612,6 +5702,9 @@
       ],
       "High Priority": [
         "Высокі прыярытэт"
+      ],
+      "How long should an appointment last?": [
+        "Як доўга павінна доўжыцца сустрэча?"
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Вы зможаце выкарыстоўваць наступныя клавішы для хуткіх дзеянняў або пераходу ў іншыя прагляды, калі спалучэнні клавіш уключаны. Спалучэнне ${ metaKey } + K уключана заўсёды."
@@ -5663,6 +5756,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "На наступным кроку вы можаце адправіць дэпазіт з выкарыстаннем адраса Bitcoin."
+      ],
+      "In which calendar should bookings appear?": [
+        "У якім календары павінны з'яўляцца браніраванні?"
       ],
       "Indexing events: ${ current }/${ total }": [
         "Індэксаванне падзей: ${ current }/${ total }"
@@ -5769,11 +5865,17 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Большасць агульнадаступных сетак Wi-Fi з'яўляюцца бяспечнымі, але ў некаторых адсутнічаюць функцыі бяспекі і гэта падвяргае вас кіберпагрозам. VPN шыфруе трафік і абараняе ваша падключэнне."
       ],
+      "Name your booking page": [
+        "Назавіце старонку браніравання"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Назавіце новую папку і выберыце бацькоўскую папку, у якую вы хочаце яе ўкласці. Калі вы не выбераце бацькоўскую папку, то гэта новая папка будзе створана як папка верхняга ўзроўню."
       ],
       "New": [
         "Новае"
+      ],
+      "No available slots for this day": [
+        "Няма свабодных прамежкаў у гэты дзень"
       ],
       "No contacts added yet": [
         "Кантакты пакуль не дададзены"
@@ -5842,7 +5944,7 @@
         "Іншыя ўліковыя запісы"
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
-        "Іншыя карыстальнікі ў вашай арганізацыі будуць бачыць вашы інтэрвалы занятасці. Падрабязнасці аб падзеі не абагульваюцца."
+        "Іншыя карыстальнікі ў вашай арганізацыі будуць бачыць вашы прамежкі занятасці. Падрабязнасці аб падзеі не абагульваюцца."
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Папярэджанні з нашага боку нацэлены на бяспеку. Калі вы не выявілі ў сябе ніякай уцечкі звестак, то можаце смела праігнараваць гэту справаздачу."
@@ -5982,9 +6084,6 @@
       "Setting up your new address…": [
         "Наладжванне вашага новага адраса…"
       ],
-      "Share this page to let others book time in your calendar.": [
-        "Абагуліце гэту старонку, каб іншыя маглі забраніраваць час у вашым календары."
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Паколькі вы з'яўляецеся пастаянным карыстальнікам, мы дадалі ў ваш уліковы запіс дадатковыя функцыі."
       ],
@@ -6046,7 +6145,7 @@
         "Наступныя ўдзельнікі не змаглі атрымаць апавяшчэнне аб вашых зменах:"
       ],
       "The organizer cannot be notified that you decline the invitation:": [
-        "Арганізатар не можа быць апавешчаны, бо вы адхілілі запрашэнне:"
+        "Немагчыма апавясціць арганізатара, бо вы адхілілі запрашэнне:"
       ],
       "The organizer cannot be notified that you want to change your answer:": [
         "Немагчыма апавясціць арганізатара, што вы хочаце змяніць свой адказ:"
@@ -6216,6 +6315,12 @@
       "Week and month views only apply to desktop.": [
         "Адлюстраванне тыдня і месяца ўжываюцца толькі для камп'ютара."
       ],
+      "What should people know before booking?": [
+        "Што людзям неабходна ведаць перад браніраваннем?"
+      ],
+      "When are you free?": [
+        "Калі вы не занятыя?"
+      ],
       "When working remotely": [
         "Пры аддаленай працы"
       ],
@@ -6224,6 +6329,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Вы атрымаеце коды аднаўлення падчас наладжвання двухфактарнай аўтэнтыфікацыі. Імі можна будзе скарыстацца для ўваходу пры страце доступу да праграмы аўтэнтыфікацыі."
+      ],
+      "Where will the appointment take place?": [
+        "Дзе адбудзецца сустрэча?"
       ],
       "Which event would you like to delete?": [
         "Якую падзею вы хочаце выдаліць?"
@@ -6318,6 +6426,9 @@
       "You cannot undo this action.": [
         "Гэта дзеянне немагчыма адрабіць."
       ],
+      "You can’t have more than ${ MAX_BOOKING_SLOTS } booking slots on a page.": [
+        "У вас не можа быць больш за ${ MAX_BOOKING_SLOTS } прамежкаў браніравання на старонцы."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Апавяшчаць, калі адбудзецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
       ],
@@ -6384,20 +6495,11 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Ваш уліковы запіс ${ BRAND_NAME } у цяперашні час прыпынены. На 29 дзень лісты больш не будуць трапляць у вашу паштовую скрыню, а абагуленыя спасылкі на воблачным дыску будуць заблакіраваны, і вы больш не зможаце запампоўваць новыя файлы. Для ўзнаўлення звычайнага абслугоўвання, аплаціце ўсе неаплачаныя рахункі."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Ваш уліковы запіс ${ BRAND_NAME } у цяперашні час прыпынены. Лісты больш не будуць дастаўляцца ў вашу паштовую скрыню. Абагуленыя спасылкі на воблачным дыску больш не дзейнічаюць і вы не можаце запампоўваць новыя файлы. Для аднаўлення звычайнага абслугоўвання, аплаціце ўсе неаплачаныя рахункі."
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Ваша падпіска ${ plan } будзе заменена на пажыццёвую падпіску ${ PASS_SHORT_APP_NAME }. Рэшта балансу вашай падпіскі будзе дададзена на ваш уліковы запіс. Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. За пажыццёвы доступ да ${ PASS_SHORT_APP_NAME } уносіцца аднаразовая плата."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Ваш доступ неўзабаве будзе абмежаваны. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Доступ да яго абмежаваны і ўсе сэрвісы ў ім заблакіраваны да паступлення аплаты. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Доступ да яго абмежаваны. Далейшая неаплата прывядзе да блакіроўкі лістоў і абагуленых спасылак.${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "Ваш адрас адключаны. Немагчыма адправіць ліст са скасаваннем удзельнікам падзеі. Ці хочаце вы ўсё роўна выдаліць усе падзеі ў гэтай серыі?"
@@ -6829,9 +6931,6 @@
       "Don't show this again": [
         "Больш не паказваць"
       ],
-      "Duration": [
-        "Працягласць"
-      ],
       "e.g., Amazon, eBay, Etsy": [
         "напрыклад, Amazon, eBay, Etsy"
       ],
@@ -7123,9 +7222,6 @@
       "Time zone": [
         "Часавы пояс"
       ],
-      "Title": [
-        "Назва"
-      ],
       "To: ${ toEmail }": [
         "Каму: ${ toEmail }"
       ],
@@ -7262,7 +7358,7 @@
         "Дадаць падарункавы код"
       ],
       "Bookings pages": [
-        "Старонкі браніраванняў"
+        "Старонкі браніравання"
       ],
       "Calendars": [
         "Календары"
@@ -7391,6 +7487,11 @@
       ],
       "Your import is starting": [
         "Пачалося імпартаванне"
+      ]
+    },
+    "Location": {
+      "In person": [
+        "Асабістае"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -9323,6 +9424,9 @@
       "Credit/debit card": [
         "Банкаўская картка"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Новая банкаўская картка"
       ]
@@ -9465,6 +9569,12 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "У вас ужо ёсць падпіска на гэты тарыфны план. Вы можаце змяніць сваю падпіску на ${ subscriptionPlatform }."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для спраўджання плацяжу."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Неўзабаве вы будзеце перанакіраваны для спраўджання вашага плацяжу."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Ваша валюта была зменена на еўра (€), таму што банкаўскія пераводы SEPA падтрымліваюць толькі плацяжы ў еўра."
       ],
@@ -9495,6 +9605,11 @@
         "Ваша картка адхілена. Паспрабуйце іншую картку або звяжыцеся з вашым банкам для аўтарызацыі плацяжу."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Нешта пайшло не так. Збой праверкі Google Pay."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Крэдыты для нявыкарыстанай часткі вашага папярэдняга тарыфнага плана падпіскі"
@@ -9514,6 +9629,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Банкаўскі перавод - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay — картка, якая заканчваецца на ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -9596,6 +9714,9 @@
       "A way to contact you": [
         "Спосаб сувязі з вамі"
       ],
+      "Add a booking page description": [
+        "Дадаць апісанне старонкі браніравання"
+      ],
       "Add a calendar description": [
         "Дадаць апісанне календара"
       ],
@@ -9619,6 +9740,9 @@
       ],
       "Anytown": [
         "Полацк"
+      ],
+      "Booking page title": [
+        "Загаловак старонкі браніравання"
       ],
       "Company name": [
         "Назва кампаніі"
@@ -11575,9 +11699,6 @@
       "Birthday": [
         "Дзень нараджэння"
       ],
-      "Booking page": [
-        "Старонка браніравання"
-      ],
       "Calendar": [
         "Каляндар"
       ],
@@ -11670,6 +11791,9 @@
       ],
       "Data recovery": [
         "Аднаўленне даных"
+      ],
+      "Date": [
+        "Дата"
       ],
       "Day theme": [
         "Дзённая тэма"
@@ -11856,6 +11980,9 @@
       ],
       "Link confirmation": [
         "Пацвярджэнне спасылкі"
+      ],
+      "Location": [
+        "Размяшчэнне"
       ],
       "Make a secure connection your default": [
         "Зрабіце бяспечнае падключэнне сваім прадвызначаным"
@@ -12091,6 +12218,12 @@
       "This booking page has expired": [
         "Гэта старонка браніравання пратэрмінавана"
       ],
+      "Time": [
+        "Час"
+      ],
+      "Time zone": [
+        "Часавы пояс"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Уключэнне ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -12299,7 +12432,7 @@
     },
     "tooltip": {
       "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
-        "${ LUMO_APP_NAME }: Памочнік ШІ, які паважае вашу прыватнасць"
+        "${ LUMO_APP_NAME }: памочнік ШІ, які паважае вашу прыватнасць"
       ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."

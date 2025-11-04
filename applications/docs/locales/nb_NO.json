@@ -1196,15 +1196,47 @@
         "Lagringsplass deles mellom alle ${ BRAND_NAME }-tjenestene."
       ]
     },
+    "BF2025: Action (top button in header)": {
+      "Black Friday sale": [
+        "Black Friday-salg"
+      ]
+    },
     "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB lagringsplass"
+      ],
+      "3 TB data storage": [
+        "3 TB lagringsplass"
+      ],
       "Access 15,000+ servers in 120+ countries": [
         "Tilgang til 15,000+ tjenere i 120+ land"
+      ],
+      "Access advanced AI models": [
+        "Tilgang til avanserte KI-modeller"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premiumfunksjoner fra ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
         "Blokkér annonser, sporere og skadelig programvare"
       ],
       "Built-in 2FA authenticator": [
         "Innebygget 2FA-autentisering"
+      ],
+      "Connect 10 devices at once": [
+        "Koble til 10 enheter samtidig"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Full chatlogg med enkelt søk og favoritter"
+      ],
+      "Individual accounts for 6 users": [
+        "Individuelle kontoer for 6 brukere"
+      ],
+      "Individual accounts for you and a partner": [
+        "Individuelle kontoer for deg og en partner"
+      ],
+      "Stronger protection against cyber threats": [
+        "Sterkere beskyttelse mot cybertrusler"
       ],
       "Unlimited daily chats": [
         "Ubegrenset antall daglige chatter"
@@ -1215,9 +1247,29 @@
         "Black Friday"
       ]
     },
+    "BF2025: Offer subtitle": {
+      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Hjelp dine kjære med å bli med på personvernrevolusjonen med våre mest prisgunstige pakker, nå med 50 % rabatt!"
+      ],
+      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
+        "Bli med på personvernrevolusjonen med våre mest prisgunstige pakker, nå med 50 % rabatt!"
+      ]
+    },
     "BF2025: Offers": {
       "for ${ durationDeal }": [
         "for ${ durationDeal }"
+      ],
+      "Save ${ savedAmount } with our best-value, limited-time deal!": [
+        "Spar ${ savedAmount } med vårt mest prisgunstige tidsbegrensede tilbud!"
+      ],
+      "Switch to our 2-year plan and save ${ savedAmount }!": [
+        "Bytt til vår 2-års plan og spar ${ savedAmount }!"
+      ],
+      "Switch to our yearly plan and save ${ savedAmount }!": [
+        "Bytt til vår årsplan og spar ${ savedAmount }!"
+      ],
+      "Treat your tribe to complete digital protection.": [
+        "Gi dine kjære fullstendig digital beskyttelse."
       ]
     },
     "BF2025: Tooltip": {
@@ -4222,9 +4274,6 @@
       "Accept/decline": [
         "Godta/avslå"
       ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Kontotilgang begrenset på grunn av ubetalte fakturaer. Kontakt systemansvarlig."
-      ],
       "Ad targeting": [
         "Annonsemålretting"
       ],
@@ -5286,20 +5335,11 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "${ BRAND_NAME }-kontoen din er for øyeblikket suspendert. Etter 28 dager blir ikke e-poster lenger levert til innboksen din, dine Drive-delekoblinger blir blokkert, og du kan ikke laste opp nye filer. For å gjenoppta normal tjeneste, betal eventuelle forfalte fakturaer."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "${ BRAND_NAME }-kontoen din er for øyeblikket suspendert. E-poster blir ikke lenger levert til innboksen din. Drive-delekoblingene dine er ikke lenger aktive, og du kan ikke laste opp nye filer. For å fortsette å bruke kontoen din, betal eventuelle forfalte fakturaer."
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Ditt ${ plan }-abonnement vil bli erstattet med ${ PASS_SHORT_APP_NAME } Lifetime. Den gjenværende saldoen på abonnementet ditt vil bli lagt til kontoen din. ${ PASS_SHORT_APP_NAME } Lifetime har ingen fornyelsespris, det er en engangsbetaling for livstidstilgang til ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Kontoen din har minst en forfalt faktura. Din tilgang vil snart bli begrenset. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Kontoen din har minst én forfalt faktura. Kontoen din er begrenset, og alle tjenester er nå sperret til betaling er mottatt. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Kontoen din har minst én forfalt faktura. Kontoen din er begrenset. Fortsatt manglende betaling vil blokkere e-postene dine og delingskoblinger. ${ payInvoiceLink }"
       ],
       "Your browser's Print dialog will now open, where you can export your document to PDF.": [
         "Nettleserens utskriftsdialogboks åpnes nå, hvor du kan eksportere dokumentet til PDF."
@@ -7876,7 +7916,7 @@
         "Kupongen er gyldig for ${ couponRedemptions } fornyelser."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
-        "Den spesielle rabattprisen gjelder for den første måneden på ${ subscriptionLength }.",
+        "Den spesielle rabattprisen gjelder for den første måneden av ${ subscriptionLength }.",
         "Den spesielt rabatterte prisen er gyldig de første ${ subscriptionLength } månedene."
       ],
       "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [

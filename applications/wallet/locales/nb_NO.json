@@ -61,6 +61,9 @@
       "Cancel trial and pay": [
         "Avbryt prøveperioden og betal"
       ],
+      "Change password": [
+        "Endre passord"
+      ],
       "Chat with us": [
         "Snakk med oss"
       ],
@@ -130,6 +133,15 @@
       "Edit": [
         "Rediger"
       ],
+      "Edit email address": [
+        "Rediger e-postadresse"
+      ],
+      "Edit phone number": [
+        "Rediger telefonnummer"
+      ],
+      "Edit sign-in details": [
+        "Rediger påloggingsinformasjon"
+      ],
       "Edit subscription": [
         "Rediger abonnement"
       ],
@@ -147,6 +159,9 @@
       ],
       "Get the apps": [
         "Skaff deg appene"
+      ],
+      "Get verification code": [
+        "Få verifiseringskode"
       ],
       "Go to ${ planOrAppName }": [
         "Gå til ${ planOrAppName }"
@@ -265,6 +280,12 @@
       "Request a feature": [
         "Be om en funksjon"
       ],
+      "Request new code": [
+        "Be om en ny kode"
+      ],
+      "Resend code": [
+        "Send kode på nytt"
+      ],
       "Save": [
         "Lagre"
       ],
@@ -337,6 +358,9 @@
       "Try again": [
         "Prøv igjen"
       ],
+      "Try another method": [
+        "Prøv annen metode"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Slå på ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -381,6 +405,9 @@
       ],
       "Verify": [
         "Verifiser"
+      ],
+      "Verify account": [
+        "Verifiser konto"
       ],
       "View invoice": [
         "Vis faktura"
@@ -2172,6 +2199,9 @@
       "Email is not valid": [
         "E-post er ikke gyldig"
       ],
+      "Enter 6 digits": [
+        "Skriv inn 6 sifre"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Feil ved tilkobling til Bitcoin API."
       ],
@@ -2198,6 +2228,9 @@
       ],
       "Invalid postal code": [
         "Ugyldig postnummer"
+      ],
+      "Invalid verification code": [
+        "Ugyldig verifiseringskode"
       ],
       "Invalid ZIP code": [
         "Ugyldig postnummer"
@@ -2512,6 +2545,23 @@
         "Tjenester"
       ]
     },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "E-post"
+      ],
+      "Manual": [
+        "Manuell"
+      ],
+      "No verification method available": [
+        "Ingen verifiseringsmetode tilgjengelig"
+      ],
+      "SMS": [
+        "SMS"
+      ]
+    },
     "Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skriveassistent"
@@ -2551,6 +2601,9 @@
       "30-day money-back guarantee.": [
         "30 dagers tilbakebetalingsgaranti."
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Et telefonnummer kan bare brukes til å bekrefte en ${ BRAND_NAME }-konto"
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "En bruker er en konto assosiert med et enkelt brukernavn, postboks og person"
       ],
@@ -2584,6 +2637,9 @@
       "Balance from your previous subscription": [
         "Balanse fra ditt forrige abonnement"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Før du ber om en ny verifiseringskode, sjekk søppelpostmappen din og sjekk at ${ strong } er riktig adresse."
+      ],
       "Billing cycle: ${ text }": [
         "Faktureringssyklus: ${ text }"
       ],
@@ -2592,6 +2648,9 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ved å nedgradere til en gratis plan, vil du permanent miste disse fordelene, selv om du oppgraderer igjen i fremtiden."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Klikk \"be om ny kode\" for å få en ny verifiseringskode sendt til ${ strong }. Hvis dette telefonnummeret er feil, klikker du \"rediger\" for å rette det opp."
       ],
       "Country code": [
         "Landskode"
@@ -2645,6 +2704,9 @@
       "Each code can only be used once": [
         "Hver kode kan bare brukes én gang"
       ],
+      "Edit email address": [
+        "Rediger e-postadresse"
+      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-posthotell er kun tilgjengelig for domener du allerede eier. Domeneregistrering er for øyeblikket ikke tilgjengelig gjennom ${ BRAND_NAME }. Du kan verte e-post for domener registrert på alle domeneregistratorer."
       ],
@@ -2656,6 +2718,9 @@
       ],
       "Enter the code from your authenticator app": [
         "Skriv inn koden fra autentiseringsappen"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Skriv inn verifiseringskoden som ble sendt til ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Skriv inn verifiseringskode. Siffer ${ digit }."
@@ -2672,8 +2737,17 @@
       "Expired": [
         "Utløpt"
       ],
+      "Google Pay mark": [
+        "Google Pay-merke"
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Hvis du har problemer med å opprette kontoen din, kan du be om en invitasjon, så svarer vi innen én virkedag."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Hvis du avbryter, vil ditt ${ planTitle }-abonnement ikke bli fornyet når det utløper den ${ expiryDate }."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Hvis du ikke finner e-posten i innboksen, sjekk søppelpostmappen din."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Hvis du fortsetter med nedgraderingen, vil du miste tilgang til de betalte funksjonene til ${ MAIL_APP_NAME } og ${ VPN_APP_NAME }."
@@ -2829,6 +2903,9 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "For å fullføre betalingen, send ${ btcAmountBold } til adressen nedenfor."
       ],
+      "To fight spam and abuse, please verify you are human.": [
+        "For å bekjempe søppelpost og misbruk må du bekrefte at du er et menneske."
+      ],
       "Total email addresses": [
         "Totalt antall e-postadresser"
       ],
@@ -2874,11 +2951,20 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Vi vil sende deg til PayPal i en ny nettleserfane for å fullføre denne transaksjonen. Dersom du blokkerer sprettoppvinduer, deaktiver blokkeringen for å fortsette."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Vi vil sende en ny verifiseringskode til ${ strong }"
+      ],
       "Week": [
         "Uke"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Når du setter opp tofaktorautentisering, gir vi deg gjenopprettingskoder som du kan bruke til å logge på hvis du mister tilgangen til autentiseringsappen din."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Ønsker du å motta en ny verifiseringskode eller å bruke en alternativ verifiseringsmetode?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Ønsker du å motta en ny verifiseringskode?"
       ],
       "Writing assistant": [
         "Skriveassistent"
@@ -2899,6 +2985,9 @@
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
         "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalender. Fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter abonnementet ditt.",
         "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalendere. Fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter abonnementet ditt."
+      ],
+      "You can now return to the application to continue": [
+        "Du kan nå gå tilbake til programmet for å fortsette"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kan aktivere varsler for å få varsler når det kommer nye e-postmeldinger i denne mappen."
@@ -2931,17 +3020,20 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "${ BRAND_NAME }-kontoen din er for øyeblikket suspendert. Etter 28 dager blir ikke e-poster lenger levert til innboksen din, dine Drive-delekoblinger blir blokkert, og du kan ikke laste opp nye filer. For å gjenoppta normal tjeneste, betal eventuelle forfalte fakturaer."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "${ BRAND_NAME }-kontoen din er for øyeblikket suspendert. E-poster blir ikke lenger levert til innboksen din. Drive-delekoblingene dine er ikke lenger aktive, og du kan ikke laste opp nye filer. For å fortsette å bruke kontoen din, betal eventuelle forfalte fakturaer."
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Ditt ${ plan }-abonnement vil bli erstattet med ${ PASS_SHORT_APP_NAME } Lifetime. Den gjenværende saldoen på abonnementet ditt vil bli lagt til kontoen din. ${ PASS_SHORT_APP_NAME } Lifetime har ingen fornyelsespris, det er en engangsbetaling for livstidstilgang til ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "E-posten din vil kun bli brukt til denne engangsbekreftelsen."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Din neste faktureringsdato er ${ renewalTime }."
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Neste faktureringsdato er ${ renewalTime }. Ta kontakt med kundestøtte hvis du trenger en umiddelbar planendring."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Telefonnummeret ditt vil kun bli brukt til denne engangsbekreftelsen."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Den planlagte planen starter på ${ renewalTime } og fornyes automatisk hver ${ cycle } måned.",
@@ -3036,6 +3128,9 @@
       ],
       "City": [
         "Poststed"
+      ],
+      "Code is 6 digits without spaces": [
+        "Koden består av 6 sifre uten mellomrom"
       ],
       "Colors": [
         "Farger"
@@ -3136,6 +3231,9 @@
       "Payment method": [
         "Betalingsmåte"
       ],
+      "Phone number": [
+        "Telefonnummer"
+      ],
       "Postal code": [
         "Postnummer"
       ],
@@ -3171,6 +3269,9 @@
       ],
       "Thomas": [
         "Thomas"
+      ],
+      "Verification code": [
+        "Verifiseringskode"
       ],
       "What happened?": [
         "Hva skjedde?"
@@ -3272,6 +3373,9 @@
       ],
       "Learn more": [
         "Lær mer"
+      ],
+      "Request an invite": [
+        "Be om en invitasjon"
       ],
       "settings": [
         "innstillinger"
@@ -4302,6 +4406,9 @@
       "Credit/debit card": [
         "Kreditt-/debetkort"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Nytt kreditt-/debetkort"
       ]
@@ -4380,7 +4487,7 @@
         "Kupongen er gyldig for ${ couponRedemptions } fornyelser."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
-        "Den spesielle rabattprisen gjelder for den første måneden på ${ subscriptionLength }.",
+        "Den spesielle rabattprisen gjelder for den første måneden av ${ subscriptionLength }.",
         "Den spesielt rabatterte prisen er gyldig de første ${ subscriptionLength } månedene."
       ],
       "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
@@ -4432,6 +4539,12 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Du har allerede et abonnement på denne planen. Du kan endre abonnementet ditt på ${ subscriptionPlatform }."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Du vil snart bli omdirigert til PayPal for å bekrefte betalingen."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Du vil snart bli omdirigert for å bekrefte betalingen din."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Din valuta har blitt endret til euro (€) fordi SEPA-bankoverføringer bare støtter betalinger i euro."
       ],
@@ -4462,6 +4575,11 @@
         "Kortet ditt ble avslått. Forsøk et annet kort eller kontakt banken din for å autorisere belastingen."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Noe gikk galt. Google Pay-verifiseringen mislyktes."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Kreditt for den ubrukte delen av ditt forrige planabonnement"
@@ -4481,6 +4599,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Bankoverføring - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - kort som slutter på ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -5022,6 +5143,9 @@
       "Billing details updated": [
         "Faktureringsinformasjon oppdatert"
       ],
+      "Code sent to ${ methodTo }": [
+        "Kode sendt til ${ methodTo }"
+      ],
       "Copied to clipboard": [
         "Kopiert til utklippstavlen"
       ],
@@ -5039,6 +5163,9 @@
       ],
       "Signature copied to clipboard": [
         "Signatur kopiert til utklippstavlen"
+      ],
+      "Verification successful": [
+        "Vellykket verifisering"
       ],
       "You have successfully canceled your subscription.": [
         "Du har sagt opp abonnementet."
@@ -5115,6 +5242,12 @@
     "Title": {
       "${ feature } is now active": [
         "${ feature } er nå aktiv"
+      ],
+      "Account restricted": [
+        "Konto begrenset"
+      ],
+      "Account temporarily locked": [
+        "Konto midlertidig låst"
       ],
       "Add credit/debit card": [
         "Legg til kreditt-/debetkort"
@@ -5212,8 +5345,14 @@
       "Help center": [
         "Hjelpesenter"
       ],
+      "Human verification": [
+        "Menneskelig verifisering"
+      ],
       "Import emails, calendars, contacts": [
         "Importer e-poster, kalendere, kontakter"
+      ],
+      "Invalid verification code": [
+        "Ugyldig verifiseringskode"
       ],
       "Minicalendar": [
         "Minikalender"
@@ -5238,6 +5377,9 @@
       ],
       "Report a problem": [
         "Rapporter et problem"
+      ],
+      "Request new code": [
+        "Be om en ny kode"
       ],
       "Select a plan": [
         "Velg en plan"

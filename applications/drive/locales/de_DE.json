@@ -147,6 +147,9 @@
       "Cancel upload": [
         "Upload abbrechen"
       ],
+      "Cancel uploads": [
+        "Uploads abbrechen"
+      ],
       "Change": [
         "Ändern"
       ],
@@ -248,6 +251,9 @@
       ],
       "Continue with Outlook": [
         "Mit Outlook fortfahren"
+      ],
+      "Copy": [
+        "Kopieren"
       ],
       "Copy address": [
         "Adresse kopieren"
@@ -616,6 +622,9 @@
       ],
       "Loading link": [
         "Link wird geladen"
+      ],
+      "Make a copy": [
+        "Erstelle eine Kopie"
       ],
       "Manage advanced account protections": [
         "Erweiterte Konto-Sicherheitsmaßnahmen verwalten"
@@ -3371,6 +3380,9 @@
       "Cannot export this contact": [
         "Dieser Kontakt kann nicht exportiert werden."
       ],
+      "Cannot load \"My files\" root folder": [
+        "Der Stammordner „Meine Dateien“ kann nicht geladen werden"
+      ],
       "Checkout expired, please try again": [
         "Kaufabwicklung abgelaufen. Bitte versuche es noch einmal."
       ],
@@ -3435,6 +3447,18 @@
       ],
       "Error decrypting a computer": [
         "Fehler beim Entschlüsseln eines Computers"
+      ],
+      "Error reading file": [
+        "Fehler beim Lesen der Datei"
+      ],
+      "Expanding non-existent directory tree item": [
+        "Erweitern eines nicht vorhandenen Verzeichnisbaum-Eintrags"
+      ],
+      "Expanding non-expandable directory tree item": [
+        "Erweitern eines nicht erweiterbaren Verzeichnisbaum-Eintrags"
+      ],
+      "Expected structure attached": [
+        "Erwartete Struktur angehängt"
       ],
       "External accounts are not supported yet": [
         "Externe Konten werden noch nicht unterstützt"
@@ -3543,6 +3567,9 @@
       ],
       "Invalid IBAN": [
         "Ungültige IBAN"
+      ],
+      "Invalid JSON file": [
+        "Ungültige JSON-Datei"
       ],
       "Invalid name": [
         "Ungültiger Name"
@@ -4848,6 +4875,9 @@
         "${ canceledCount } abgebrochen",
         "${ canceledCount } abgebrochen"
       ],
+      "${ completedItems.length } of ${ items.length } transfers completed": [
+        "${ completedItems.length } von ${ items.length } Übertragungen abgeschlossen"
+      ],
       "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } Kontakt enthält mehrere E-Mail-Adressen.",
         "${ contactCount } Kontakte enthalten mehrere E-Mail-Adressen."
@@ -5055,9 +5085,6 @@
       ],
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "Ein VPN ist ein sicherer Tunnel zwischen deinem Gerät und dem Internet. Er verbirgt deinen Standort und deine Aktivitäten vor deinem Internetdienstanbieter (ISP) und den von dir besuchten Websites."
-      ],
-      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Der Zugriff auf dein Konto wurde aufgrund noch offener Rechnungen eingeschränkt. Bitte wende dich an deinen Administrator."
       ],
       "Account successfully updated": [
         "Konto erfolgreich aktualisiert"
@@ -5558,6 +5585,9 @@
       "Go to \"My files\" and upload some files first.": [
         "Wechsle zu „Meine Dateien“ und lade zunächst einige Dateien hoch."
       ],
+      "Google Pay mark": [
+        "Google Pay markieren"
+      ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Regierungen und Internetdienstanbieter können deine Online-Aktivitäten überwachen. Indem du deine echte IP-Adresse verbirgst und deine Aktivitäten verschlüsselst, wird dein Surfverhalten privat."
       ],
@@ -5660,6 +5690,9 @@
       ],
       "It's better to have:": [
         "Es ist besser so:"
+      ],
+      "It's not possible to copy the folder to itself": [
+        "Es ist nicht möglich, den Ordner in sich selbst zu kopieren."
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "Elemente im Papierkorb verbleiben hier, bis sie dauerhaft gelöscht werden."
@@ -6101,6 +6134,9 @@
       "Search Enabled": [
         "Suche aktiviert"
       ],
+      "Select a folder to copy to.": [
+        "Wähle einen Zielordner zum Kopieren aus."
+      ],
       "Select a folder to move to.": [
         "Wähle ein Zielverzeichnis für das Verschieben aus."
       ],
@@ -6336,6 +6372,9 @@
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Dieser eindeutige Code kann von Webseiten und ISPs (Internetdiensteanbietern) verwendet werden, um deinen Standort und deinen Browserverlauf mit deinem Gerät zu verknüpfen."
+      ],
+      "This will cancel any remaining uploads. Cancelled files won't be saved in ${ DRIVE_APP_NAME }.": [
+        "Das bricht alle verbleibenden Uploads ab. Abgebrochene Dateien werden nicht in ${ DRIVE_APP_NAME } gespeichert."
       ],
       "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
         "Dadurch wird nur das Album gelöscht. Deine Fotos bleiben in Ihrer Zeitleiste. Diese Aktion kann nicht rückgängig gemacht werden."
@@ -6739,20 +6778,11 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Dein ${ BRAND_NAME }-Konto ist derzeit gesperrt. Nach 28 Tagen werden keine E-Mails mehr an deinen Posteingang zugestellt, deine Drive-Freigabelinks werden blockiert, und du kannst keine neuen Dateien mehr hochladen. Um dein Konto wieder normal nutzen zu können, bezahle bitte alle überfälligen Rechnungen."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Dein ${ BRAND_NAME }-Konto ist derzeit gesperrt. E-Mails werden nicht mehr an deinen Posteingang zugestellt. Deine Drive-Freigabelinks sind nicht mehr aktiv und du kannst keine neuen Dateien hochladen. Um dein Konto weiterhin zu nutzen, bezahle bitte alle überfälligen Rechnungen."
-      ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Dein ${ plan }-Abonnement wird durch ${ PASS_SHORT_APP_NAME } Lifetime ersetzt. Der verbleibende Restbetrag deines Abonnements wird deinem Konto gutgeschrieben. Der ${ PASS_SHORT_APP_NAME } Lifetime Deal hat keine Verlängerungskosten, es handelt sich um eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Dein Konto weist mindestens eine überfällige Rechnung auf. Dein Zugang wird in Kürze eingeschränkt. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Dein Konto hat mindestens eine überfällige Rechnung. Dein Konto ist eingeschränkt und alle Dienste sind nun bis zur Zahlung gesperrt. ${ payInvoiceLink }"
-      ],
-      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Dein Konto hat mindestens eine überfällige Rechnung. Dein Konto ist eingeschränkt. Bei anhaltender Nichtbezahlung werden deine E-Mails und Freigabelinks gesperrt. ${ payInvoiceLink }"
       ],
       "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
         "Dein aktueller Browser unterstützt das Herunterladen großer Dateien/mehrerer Dateien nicht. Lade die Desktop-App für nahtlose Uploads und Downloads herunter."
@@ -9091,6 +9121,9 @@
       "\"${ name }\" saved successfully": [
         "„${ name }“ erfolgreich gespeichert"
       ],
+      "\"${ name }\" successfully copied": [
+        "„${ name }“ erfolgreich kopiert"
+      ],
       "\"${ name }\" successfully moved": [
         "„${ name }“ erfolgreich verschoben"
       ],
@@ -9103,6 +9136,10 @@
       "${ count } item failed to be decrypted": [
         "${ count } Element konnte nicht entschlüsselt werden",
         "${ count } Elemente konnten nicht entschlüsselt werden"
+      ],
+      "${ errors.length } item failed to be copied": [
+        "${ errors.length } Eintrag konnte nicht kopiert werden",
+        "${ errors.length } Einträge konnten nicht kopiert werden"
       ],
       "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
         "${ nbFailures } Foto konnte nicht aus \"${ albumLink.name }\" entfernt werden",
@@ -9155,6 +9192,10 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } Element aus dem Papierkorb wiederhergestellt",
         "${ numberOfItems } Elemente aus dem Papierkorb wiederhergestellt"
+      ],
+      "${ numberOfItems } item successfully copied": [
+        "${ numberOfItems } Eintrag erfolgreich kopiert",
+        "${ numberOfItems } Einträge erfolgreich kopiert"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } Element erfolgreich verschoben",
@@ -9740,6 +9781,9 @@
       "Create new group": [
         "Neue Gruppe erstellen"
       ],
+      "Expected strcuture": [
+        "Erwartete Struktur"
+      ],
       "Ignore group": [
         "Gruppe ignorieren"
       ],
@@ -9751,6 +9795,9 @@
       ],
       "Only current location: ${ name }": [
         "Nur aktueller Standort: ${ name }"
+      ],
+      "Select JSON file": [
+        "JSON-Datei auswählen"
       ],
       "Verify content": [
         "Inhalt bestätigen"
@@ -9867,6 +9914,9 @@
       ],
       "Credit/debit card": [
         "Kredit-/Debitkarte"
+      ],
+      "Google Pay": [
+        "Google Pay"
       ],
       "New credit/debit card": [
         "Neue Kredit-/Debitkarte"
@@ -9998,6 +10048,12 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Du hast dieses Abonnement bereits. Du kannst dein Abonnement auf ${ subscriptionPlatform } ändern."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Du wirst in Kürze zu PayPal weitergeleitet, um deine Zahlung zu bestätigen."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Du wirst in Kürze weitergeleitet, um deine Zahlung zu bestätigen."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Deine Währung wurde zu Euro (€) geändert, da SEPA-Banküberweisungen Zahlungen nur in Euro unterstützen."
       ],
@@ -10028,6 +10084,11 @@
         "Deine Karte wurde abgelehnt. Bitte versuche es mit einer anderen Karte oder wende dich an deine Bank, um die Belastung zu autorisieren."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Etwas ist schiefgelaufen. Die Google Pay-Verifizierung ist fehlgeschlagen."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Gutschrift für den ungenutzten Teil deines vorherigen Abonnements"
@@ -10047,6 +10108,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Banküberweisung - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - Karte endet mit ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -11918,6 +11982,9 @@
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME }-Abonnement kündigen"
       ],
+      "Cancel all uploads?": [
+        "Alle Uploads abbrechen?"
+      ],
       "Cancel subscription?": [
         "Abonnement kündigen?"
       ],
@@ -12291,6 +12358,9 @@
       ],
       "Logs": [
         "Protokolle"
+      ],
+      "Make a copy": [
+        "Kopie erstellen"
       ],
       "Make a secure connection your default": [
         "Mach eine sichere Verbindung zum Standard"
