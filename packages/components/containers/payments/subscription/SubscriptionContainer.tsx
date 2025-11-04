@@ -69,6 +69,7 @@ import {
     getPlansMap,
     hasDeprecatedVPN,
     hasLumo,
+    hasLumoAddonFromPlanIDs,
     hasPlanIDs,
     isFreeSubscription,
     isManagedExternally,
@@ -415,9 +416,12 @@ const SubscriptionContainerInner = ({
     const couponConfig = useCouponConfig({ checkResult, planIDs: model.planIDs, plansMap: plansMapRef.current });
     const lumoAddonEnabled =
         canAddLumoAddon(subscription) &&
-        !couponConfig?.hideLumoAddonBanner &&
-        //  Hides the Lumo Banner during loading
-        !getHas2025OfferCoupon(maybeCoupon);
+        ((!couponConfig?.hideLumoAddonBanner &&
+            // Hides the Lumo Banner during loading
+            !getHas2025OfferCoupon(maybeCoupon)) ||
+            // if user already has lumo addon and it was transfered to the new selected plan then display the lumo addon
+            // customizer
+            hasLumoAddonFromPlanIDs(planIDs));
 
     const [selectedProductPlans, setSelectedProductPlans] = useState(
         defaultSelectedProductPlans ||

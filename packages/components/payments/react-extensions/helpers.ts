@@ -1,9 +1,23 @@
-import type { PaymentProcessorType } from '@proton/payments';
+import {
+    type EnrichedCheckResponse,
+    type EnrichedCoupon,
+    getHas2025OfferCoupon,
+    isValidPlanName,
+} from '@proton/payments';
 
-export function isChargebeePaymentProcessor(type?: PaymentProcessorType): boolean {
-    if (!type) {
-        return false;
-    }
+export function enrichCoupon(checkResponse: EnrichedCheckResponse) {
+    try {
+        if (checkResponse.Coupon && getHas2025OfferCoupon(checkResponse.Coupon?.Code)) {
+            const Targets = Object.fromEntries(
+                Object.entries(checkResponse.requestData.Plans).filter(([key]) => isValidPlanName(key))
+            );
 
-    return type.includes('chargebee');
+            const enrichedCoupon: EnrichedCoupon = {
+                ...checkResponse.Coupon,
+                Targets,
+            };
+
+            checkResponse.Coupon = enrichedCoupon;
+        }
+    } catch {}
 }

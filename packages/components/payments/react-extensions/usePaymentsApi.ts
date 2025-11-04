@@ -35,6 +35,7 @@ import { useGetFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { InvalidZipCodeError } from './errors';
+import { enrichCoupon } from './helpers';
 
 const checkSubscriptionQuery = (
     data: CheckSubscriptionData,
@@ -291,10 +292,14 @@ export const usePaymentsApi = (
                     result.ProrationMode = data.ProrationMode;
                 }
 
-                return {
+                const enrichedCheckResponse = {
                     ...result,
                     requestData: data,
                 };
+
+                enrichCoupon(enrichedCheckResponse);
+
+                return enrichedCheckResponse;
             } catch (error: any) {
                 if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.WRONG_ZIP_CODE) {
                     throw new InvalidZipCodeError();
