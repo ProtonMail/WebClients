@@ -176,6 +176,7 @@ export const useAddressesInputDrag: UseAddressesInputDrag = (recipientsOrGroups,
         }
     });
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-8BCDCB
     useEffect(() => cache.subscribe(cacheListener), [cache]);
 
     return {

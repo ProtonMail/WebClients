@@ -27,5 +27,6 @@ export const useMailCategoriesRedirection = ({ labelID }: Props) => {
         if (currentCategory && !currentCategory.Display) {
             push(LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-DA6790
     }, [location.pathname, categoryViewControl.categoryViewAccess, push, labelID]);
 };

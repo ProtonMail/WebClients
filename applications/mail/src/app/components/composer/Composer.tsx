@@ -211,6 +211,7 @@ const Composer = (
     // Update subject on ComposerFrame
     useEffect(() => {
         onSubject(modelMessage.data?.Subject || c('Title').t`New message`);
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-2143FC
     }, [modelMessage.data?.Subject]);
 
     // Listen to event manager to trigger reload send info
@@ -286,6 +287,7 @@ const Composer = (
                 void initAssistant?.();
             }
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-A099D5
     }, []);
 
     const handleChangeFlag = useHandler((changes: Map<number, boolean>, shouldReloadSendInfo: boolean = false) => {
@@ -305,6 +307,7 @@ const Composer = (
         } else {
             restartAutoSave();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-DD5223
     }, [uploadInProgress]);
 
     const {
@@ -332,6 +335,7 @@ const Composer = (
     const handleContentFocus = useCallback(() => {
         addressesBlurRef.current();
         onFocus(); // Events on the main div will not fire because the editor is in an iframe
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-444EA1
     }, []);
 
     const handleInsertGeneratedTextInEditor = (textToInsert: string) => {

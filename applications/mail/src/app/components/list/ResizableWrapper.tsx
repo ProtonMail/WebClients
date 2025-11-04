@@ -139,10 +139,12 @@ export const ResizableWrapper = ({
 
     useEffect(() => {
         onWidthChange?.(width);
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-6366CA
     }, [width]);
 
     useEffect(() => {
         onResizingChange?.(isResizing);
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-45DB3A
     }, [isResizing]);
 
     if (resizingDisabled) {

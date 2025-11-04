@@ -34,6 +34,7 @@ const AccountsLoginModal = (props: ModalStateProps) => {
     useEffect(() => {
         const data = getSavedCheckedItemsForUser(user.ID);
         setCheckedItems(data);
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-C49363
     }, []);
 
     const handleDoneClick = async (serviceKey: string, hideItem: boolean) => {

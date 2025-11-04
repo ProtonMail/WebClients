@@ -22,6 +22,7 @@ interface Props {
 const DateCursorButtons = ({ view, now, onToday, onPrev, onNext, currentRange }: Props) => {
     const todayTitle = useMemo(() => {
         return format(now, 'PP', { locale: dateLocale });
+        // eslint-disable-next-line react-hooks/exhaustive-deps 
     }, [now, dateLocale]);
 
     const { previous, next } = getNavigationArrowsText(view);

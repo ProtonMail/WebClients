@@ -59,6 +59,7 @@ export const useLoadRemoteImages = (localID: string) => {
             handleLoadRemoteImagesProxy,
             handleLoadFakeImagesProxy
         );
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-6BF487
     }, [localID]);
 };
 
@@ -103,5 +104,6 @@ export const useLoadEmbeddedImages = (localID: string) => {
             mailSettings,
             handleLoadEmbeddedImages
         );
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-CF5E88
     }, [localID]);
 };

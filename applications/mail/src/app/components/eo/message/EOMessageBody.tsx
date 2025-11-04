@@ -48,6 +48,7 @@ const EOMessageBody = ({
             plain
                 ? [message.messageDocument?.plainText as string, '']
                 : locateBlockquote(message.messageDocument?.document),
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-6E9466
         [message.messageDocument?.document?.innerHTML, message.messageDocument?.plainText, plain]
     );
 

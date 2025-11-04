@@ -296,6 +296,7 @@ export const useResizableUtils = ({
                 setHasCalculatedInitialWidth(true);
             }
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-FA66B7
     }, [containerWidth, hasCalculatedInitialWidth]);
 
     const safeSaveRatio = useHandler(
@@ -313,6 +314,7 @@ export const useResizableUtils = ({
         return constrainedWidth;
     };
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-ACF3C0
     const handleResizeWithMouse = (e: MouseEvent) => {
         if (!isResizing || !resizableWrapperRef.current) {
             return;
@@ -350,6 +352,7 @@ export const useResizableUtils = ({
         resizableWrapperRef.current.classList.add('user-select-none');
     };
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-71C7DF
     const disableResize = () => {
         if (!isResizing || !resizableWrapperRef.current) {
             return;

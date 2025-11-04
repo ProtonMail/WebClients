@@ -29,16 +29,19 @@ export interface ConversationStateOptional {
 
 export const useGetConversation = () => {
     const store = useMailStore();
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-C0202F
     return useCallback((ID: string) => conversationByID(store.getState(), { ID }), []);
 };
 
 export const useGetAllConversations = () => {
     const store = useMailStore();
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-608C42
     return useCallback(() => allConversations(store.getState()), []);
 };
 
 export const useGetConversationsByIDs = () => {
     const store = useMailStore();
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-F5C0FA
     return useCallback((IDs: string[]) => conversationsByIDs(store.getState(), IDs), []);
 };
 
@@ -147,6 +150,7 @@ export const useConversation: UseConversation = (inputConversationID, messageID)
         if (!conversationInState || !conversationInState.Messages || !conversationInState.Messages.length) {
             void load(inputConversationID, messageID);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-3BD4A6
     }, [inputConversationID, messageID, pendingRequest, conversation?.loadRetry]);
 
     useEffect(() => {
@@ -157,6 +161,7 @@ export const useConversation: UseConversation = (inputConversationID, messageID)
 
     const handleRetry = useCallback(() => {
         dispatch(retryLoading({ ID: conversationID }));
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-B3856C
     }, [conversationID]);
 
     const loadingError = hasError(conversation?.errors) && (conversation?.loadRetry || 0) > LOAD_RETRY_COUNT;

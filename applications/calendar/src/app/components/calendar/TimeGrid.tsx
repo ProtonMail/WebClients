@@ -127,6 +127,7 @@ const TimeGrid = ({
 
     const days = useMemo(() => {
         return eachDayOfInterval(start, end);
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-09C912
     }, [+start, +end]);
 
     const formattedHours = useMemo(() => {
@@ -162,6 +163,7 @@ const TimeGrid = ({
             return [[date]];
         }
         return [days];
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-1CD7F9
     }, [days, viewportWidth['<=small'], date]);
 
     const dayEventHeight = 28;
@@ -181,6 +183,7 @@ const TimeGrid = ({
             max: days[days.length - 1],
             totalMinutes,
         });
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-4B263C
     }, [timeEvents, days, totalMinutes]);
 
     const nowTop = toUTCMinutes(now) / totalMinutes;
@@ -200,10 +203,12 @@ const TimeGrid = ({
 
     const handleClickNextDay = useCallback(() => {
         onChangeDate?.(addDays(date, 1));
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-9DEF08
     }, [date]);
 
     const handleClickPrevDay = useCallback(() => {
         onChangeDate?.(addDays(date, -1));
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-A9436E
     }, [date]);
 
     useImperativeHandle(
@@ -214,6 +219,7 @@ const TimeGrid = ({
                 return scrollToTime(now);
             },
         }),
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-BE98E9
         [actionRef, now]
     );
 
@@ -293,6 +299,7 @@ const TimeGrid = ({
         containerRef.current?.addEventListener('keydown', handleKeyDown, true);
         return () => {
             document.removeEventListener('mousedown', handleMouseDown, true);
+            // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-4E352E
             containerRef.current?.removeEventListener('keydown', handleKeyDown, true);
         };
     }, [isInteractionEnabled]);
@@ -312,6 +319,7 @@ const TimeGrid = ({
                 enableScroll(target);
             }
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-BC457E
     }, [!!isScrollDisabled, scrollRef.current]);
 
     useLayoutEffect(() => {
@@ -325,6 +333,7 @@ const TimeGrid = ({
                 padding: parseFloat(computedStyle.paddingTop) + parseFloat(computedStyle.paddingBottom),
             });
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-7CB702
     }, []);
 
     const dayButtons = (

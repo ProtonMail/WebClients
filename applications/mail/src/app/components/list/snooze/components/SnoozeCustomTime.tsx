@@ -31,6 +31,7 @@ const SnoozeCustomTime = ({ onClose, onLock, handleSnooze, element }: Props) => 
 
     useEffect(() => {
         onLock?.(true);
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-10FC87
     }, []);
 
     const elementTime = getSnoozeTimeFromSnoozeLabel(element);

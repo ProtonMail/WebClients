@@ -258,6 +258,7 @@ export const useSendMessage = () => {
                 throw error;
             }
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-044BC0
         [delaySendSeconds]
     );
 };

@@ -134,6 +134,7 @@ const MessageView = (
             globalIcon: getReceivedStatusIcon(message.data, message.verification, ktActivation),
             mapStatusIcon: {},
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-242DDC
     }, [message, ktActivation]);
 
     const handleLoadRemoteImages = async () => {
@@ -243,6 +244,7 @@ const MessageView = (
                 elementRef.current?.parentElement?.focus();
             }
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-95A30E
     }, [loading, messageLoaded, bodyLoaded, message.data?.ID]);
 
     // Manage preparing the content of the message
@@ -255,6 +257,7 @@ const MessageView = (
 
             void initialize(message.localID, labelID);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-E4B2E1
     }, [loading, expanded, message.messageDocument?.initialized, message.localID, labelID]);
 
     // Manage recomputing signature verification (happens when invalidated after initial load)
@@ -272,12 +275,14 @@ const MessageView = (
                 message.errors?.decryption
             );
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-08C1DD
     }, [loading, expanded, message.messageDocument?.initialized, message.verification]);
 
     useEffect(() => {
         if (expanded) {
             scrollToMessage();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-12FD77
     }, [expanded]);
 
     /**
@@ -308,6 +313,7 @@ const MessageView = (
                 silent: true,
             });
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-D67BCE
     }, [expanded, unread, bodyLoaded]);
 
     // Re-initialize context if message is changed without disposing the component
@@ -317,6 +323,7 @@ const MessageView = (
             setSourceMode(false);
             setOriginalMessageMode(false);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-3F58EA
     }, [message.data?.ID]);
 
     /**

@@ -23,6 +23,7 @@ const useUnreadNotifications = (messages: Message[], conversationID: string) => 
             (message) => (message.Time || 0) > timeMarker && isReceived(message) && isUnreadMessage(message)
         );
         return filteredMessages.map((message) => message.ID);
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-D73AB4
     }, [messages]);
 
     // When reading a message, we can increase the time marker

@@ -297,6 +297,7 @@ const ExtraEvents = ({ message }: Props) => {
             }
             dispatch(errorsAction({ ID: message.localID, errors }));
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-625C3F
     }, [message.data, message.errors, loadingConfigs, message.data.ID]);
 
     if (loadingConfigs || messageHasDecryptionError || !getMessageHasData(message) || loadingWidget) {

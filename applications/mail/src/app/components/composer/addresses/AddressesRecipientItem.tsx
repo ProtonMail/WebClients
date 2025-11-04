@@ -4,7 +4,15 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms';
-import { ContextMenu, DropdownMenu, DropdownMenuButton, useContactModals, useDragOver, useNotifications, usePopperAnchor } from '@proton/components';
+import {
+    ContextMenu,
+    DropdownMenu,
+    DropdownMenuButton,
+    useContactModals,
+    useDragOver,
+    useNotifications,
+    usePopperAnchor,
+} from '@proton/components';
 import { IcCross, IcCrossCircle, IcPen, IcSquares, IcUser, IcUserPlus } from '@proton/icons';
 import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
@@ -157,6 +165,7 @@ const AddressesRecipientItem = ({
         if (editableRef.current) {
             editableRef.current.textContent = value;
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-332B0A
     }, []);
 
     const [, dragHandlers] = useDragOver((event) => event.dataTransfer.types.includes(DRAG_ADDRESS_KEY), 'move', {

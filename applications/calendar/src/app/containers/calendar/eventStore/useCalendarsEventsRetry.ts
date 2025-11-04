@@ -82,6 +82,7 @@ const useCalendarsEventsRetry = ({
                 void initRetry(calendarID, eventID, true);
             });
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-4A7D7F
     }, [safeIsOnlineValue]);
 
     return { initRetry };

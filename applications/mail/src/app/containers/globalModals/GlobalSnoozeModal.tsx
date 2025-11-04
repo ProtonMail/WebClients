@@ -26,6 +26,7 @@ export const GlobalSnoozeModal = () => {
             }
         });
         return unsubscribe;
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-3B90DB
     }, [subscribe]);
 
     const handleConfirm = () => {

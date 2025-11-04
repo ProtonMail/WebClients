@@ -113,6 +113,7 @@ const ScheduleSendActions = ({
         }
 
         return list;
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-300B0D
     }, [canScheduleSendCustom]);
 
     return (

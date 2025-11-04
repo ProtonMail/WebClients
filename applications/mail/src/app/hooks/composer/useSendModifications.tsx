@@ -71,5 +71,6 @@ export const useSendModifications = () => {
             ...getMessage(inputMessage.localID),
             messageDocument: inputMessage.messageDocument,
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-7308E1
     }, []);
 };

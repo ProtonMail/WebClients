@@ -133,6 +133,7 @@ const MailB2COnboardingModal = (props: MailOnboardingProps) => {
         };
 
         void init();
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-CE595C
     }, []);
 
     if (loading || !steps) {

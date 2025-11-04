@@ -19,6 +19,7 @@ const usePauseCalendarEventLoop = (activeCalendars: VisualCalendar[], condition:
             // Resume calendar event loop
             start(calendarIDs);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-3AEF9E
     }, [condition, calendarIDs]);
 };
 

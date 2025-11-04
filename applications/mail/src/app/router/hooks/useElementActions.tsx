@@ -131,6 +131,7 @@ export const useElementActions = ({ params, navigation, elementsData }: Params) 
 
             void fetchElementThenCompose();
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-FAC9A0
         [onCompose, isConversationGroupingEnabled, labelID, history]
     );
 
@@ -157,6 +158,7 @@ export const useElementActions = ({ params, navigation, elementsData }: Params) 
                 silent: true,
             });
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-6ECBC5
         [selectedIDs, labelID, handleBack, selectAll]
     );
 
@@ -183,6 +185,7 @@ export const useElementActions = ({ params, navigation, elementsData }: Params) 
                 }
             }
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-1485DD
         [selectedIDs, elementID, labelID, folders, handleBack, selectAll]
     );
 

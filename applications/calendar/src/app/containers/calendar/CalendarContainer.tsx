@@ -180,6 +180,7 @@ const CalendarContainer = ({
         return () => {
             setCustomTzid('');
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-3FD9A8
     }, []);
 
     const {
@@ -207,6 +208,7 @@ const CalendarContainer = ({
                 setIsSearching(true);
             }
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-6A6A5F
     }, [urlDate, urlView, urlRange]);
 
     useEffect(() => {
@@ -258,6 +260,7 @@ const CalendarContainer = ({
             }
         };
         void run();
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-0283A8
     }, [startupModalOpen]);
 
     const utcNowDateInTimezone = useMemo(() => {
@@ -341,6 +344,7 @@ const CalendarContainer = ({
             }
             prevViewRef.current = view;
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-BF5273
     }, [view]);
 
     const range = viewportWidth['<=small'] ? 0 : getRange(view, customRange);
@@ -388,6 +392,7 @@ const CalendarContainer = ({
             secondaryTimezone: `${formatGMTOffsetAbbreviation(secondaryOffset)}`,
             secondaryTimezoneOffset: (secondaryOffset - offset) * MILLISECONDS_IN_MINUTE,
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-E26E0F
     }, [utcDate, utcDateRangeInTimezone, secondaryTzid, tzid, viewportWidth['<=small']]);
 
     useEffect(() => {
@@ -405,6 +410,7 @@ const CalendarContainer = ({
 
         history.push({ pathname: newRoute, hash: view === VIEWS.SEARCH ? history.location.hash : undefined });
         // Intentionally not listening to everything to only trigger URL updates when these variables change.
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-AF4DE2
     }, [view, range, utcDate]);
 
     const calendarTitle = useMemo(() => {
@@ -434,12 +440,14 @@ const CalendarContainer = ({
         setCustom({ view: newView, range: undefined });
         lastNonSearchViewRef.current = newView;
         scrollToNow();
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-6AC41A
     }, []);
 
     const handleClickToday = useCallback(() => {
         utcDefaultDateRef.current = undefined; // Purpose: Reset the minicalendar when clicking today multiple times
         setCustom({ date: utcDefaultDate, range: undefined });
         scrollToNow();
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-6C1278
     }, [utcDefaultDate]);
 
     const handleChangeDate = useCallback((newDate: Date) => {
@@ -454,6 +462,7 @@ const CalendarContainer = ({
             return;
         }
         setCustom({ date: newDate, view: lastNonSearchViewRef.current || defaultView });
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-60C78C
     }, []);
 
     const handleChangeDateRange = useCallback(
@@ -483,6 +492,7 @@ const CalendarContainer = ({
             });
             lastNonSearchViewRef.current = VIEWS.WEEK;
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-791D84
         [view]
     );
 
@@ -492,6 +502,7 @@ const CalendarContainer = ({
         }
         setCustom({ view: VIEWS.DAY, range: undefined, date: newDate });
         lastNonSearchViewRef.current = VIEWS.DAY;
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-9BEC84
     }, []);
 
     const handleSearch = useCallback(() => {
@@ -501,16 +512,19 @@ const CalendarContainer = ({
     const handleGoBackFromSearch = useCallback(() => {
         setCustom({ view: lastNonSearchViewRef.current || defaultView });
         setSearchInput('');
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-AE97B0
     }, []);
 
     const handleClickNext = useCallback(() => {
         startPTTMetric?.(view, false, true);
         handleChangeDate(getDateDiff(utcDate, range, view, 1));
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-6EF7E0
     }, [utcDate, range, view]);
 
     const handleClickPrev = useCallback(() => {
         startPTTMetric?.(view, true);
         handleChangeDate(getDateDiff(utcDate, range, view, -1));
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-9FA701
     }, [utcDate, range, view]);
 
     const [createEventCalendarBootstrap] = useCalendarBootstrap(
@@ -530,6 +544,7 @@ const CalendarContainer = ({
         }
         stopCEDTMetric(view);
         stopPTTMetric();
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-B70E54
     }, [calendarsEvents]);
 
     return (

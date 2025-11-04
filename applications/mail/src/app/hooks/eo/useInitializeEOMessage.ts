@@ -178,5 +178,6 @@ export const useInitializeEOMessage = () => {
                 })
             );
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-1BF1D0
     }, []);
 };

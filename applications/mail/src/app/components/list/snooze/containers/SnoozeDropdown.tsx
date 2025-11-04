@@ -46,6 +46,7 @@ const SnoozeDropdown = ({ elements, size, labelID }: Props) => {
             dispatch(snoozeActions.setSnoozeDropdownOpen());
             open();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-D089D5
     }, [snoozeDropdownState]);
 
     if (!elements.length || (!canSnooze && !canUnsnooze)) {

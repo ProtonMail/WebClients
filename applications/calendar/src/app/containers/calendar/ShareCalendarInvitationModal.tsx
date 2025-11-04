@@ -53,6 +53,7 @@ const ShareCalendarInvitationModal = ({ addresses, calendars, user, subscription
         // Prevent the list of user holidays calendars from changing (via event loop) once the modal opened.
         // This avoids possible UI jumps and glitches
         return calendars;
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-662794
     }, [rest.open]);
 
     const canonicalizedInvitedEmail = canonicalizeInternalEmail(invitation.Email);

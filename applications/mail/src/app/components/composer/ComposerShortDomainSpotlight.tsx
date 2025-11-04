@@ -18,6 +18,7 @@ const ComposerShortDomainSpotlight = ({ children }: Props) => {
             return false;
         }
         return shortDomainSpotlight.canDisplay;
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-A18492
     }, [shortDomainSpotlight.loading]);
 
     const show = useSpotlightShow(canDisplaySpotlight) && !manualClose;

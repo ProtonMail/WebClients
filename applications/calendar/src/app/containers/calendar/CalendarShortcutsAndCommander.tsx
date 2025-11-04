@@ -144,6 +144,7 @@ const CalendarShortcutsAndCommander = ({
                     shortcuts: ['/'],
                 },
             ].filter(isTruthy) as CommanderItemInterface[],
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-169AAF
         [onClickNextView, onClickPreviousView, onClickToday, onChangeView]
     );
 

@@ -399,6 +399,7 @@ const useCalendarsEventsReader = ({
         };
 
         run().catch(done);
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-6F2E1E
     }, [calendarEvents]);
 
     return { setCalendarEvents };

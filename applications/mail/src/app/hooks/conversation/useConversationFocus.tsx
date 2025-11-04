@@ -60,6 +60,7 @@ export const useConversationFocus = (messages: Message[]) => {
                 setFocusIndex(undefined);
             }
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-9DA39F
         [focusIndex]
     );
 
@@ -89,6 +90,7 @@ export const useConversationFocus = (messages: Message[]) => {
 
         withKeyboardRef.current = false;
         preventFocusRef.current = false;
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-39CD66
     }, [focusIndex]);
 
     useEffect(() => {
@@ -100,6 +102,7 @@ export const useConversationFocus = (messages: Message[]) => {
             alignmentRef.current = 'center';
             setNextScrollTo(false);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-847D79
     }, [nextScrollTo]);
 
     return { focusIndex, handleFocus, handleScrollToMessage, handleBlur, getFocusedId };

@@ -53,6 +53,7 @@ export const useExpiringElement = (element: Element, labelID: string, conversati
             }
         }
         return undefined;
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-7ED95B
     }, [labelID, element, conversationMode]);
 
     return {

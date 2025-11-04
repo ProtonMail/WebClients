@@ -62,6 +62,7 @@ const HeaderDropdown = ({
         if (externalToggleRef) {
             externalToggleRef.current = toggle;
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-ABA652
     }, []);
 
     return (

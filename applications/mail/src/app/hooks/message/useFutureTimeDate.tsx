@@ -82,11 +82,13 @@ const useFutureTimeDate = ({ defaultDate, maxDaysAllowed, maxDateErrorMessage }:
             return maxDateErrorMessage;
         }
         return undefined;
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-A106BB
     }, [date]);
 
     const disabled = useMemo(() => {
         const min = addSeconds(Date.now(), FUTURE_MESSAGES_BUFFER);
         return !date || !time || scheduleDateTime < min || (maxDate && scheduleDateTime > endOfDay(maxDate));
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-45CF38
     }, [date, time, scheduleDateTime, minDate, maxDate]);
 
     const handleChangeDate = (selectedDate?: Date) => {

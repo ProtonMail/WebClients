@@ -18,6 +18,7 @@ const ShareInvitationContainer = ({ shareCalendarInvitationRef }: Props) => {
             shareCalendarInvitationRef.current = { calendarID, invitationID };
         }
         history.replace('/');
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-001F0A
     }, []);
 
     return null;

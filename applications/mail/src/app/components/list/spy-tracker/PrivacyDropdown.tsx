@@ -83,6 +83,7 @@ const PrivacyDropdown = ({ message }: Props) => {
             toggle();
             onDisplayed();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-37E225
     }, [showSpotlight]);
 
     const title = getTitle(needsMoreProtection, numberOfImageTrackers + numberOfUTMTrackers);

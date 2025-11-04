@@ -118,6 +118,7 @@ export const useCalendarActionsOnLoad = ({
                 search: searchParams.toString() ? `?${searchParams.toString()}` : '',
             });
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-D3D194
     }, [createEventCalendar, createEventCalendarBootstrap, activeAddresses.length, history, location]);
 
     useEffect(() => {

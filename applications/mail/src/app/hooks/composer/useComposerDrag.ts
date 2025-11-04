@@ -102,6 +102,7 @@ const useComposerDrag = ({
 
             dispatch({ type: 'move', payload: { offset: finalOffset } });
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-9EE88B
         [isDragging, initialCursorPosition, isMaximized]
     );
 
@@ -120,6 +121,7 @@ const useComposerDrag = ({
             document.removeEventListener('mouseup', debouncedStopDragging);
             document.removeEventListener('mouseleave', debouncedStopDragging);
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-E7354D
     }, [isDragging]);
 
     useEffect(() => {
@@ -143,6 +145,7 @@ const useComposerDrag = ({
         }
 
         prevMinimized.current = isMinimized;
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-9C4AFE
     }, [isMinimized]);
 
     useEffect(() => {
@@ -157,6 +160,7 @@ const useComposerDrag = ({
         }
         dispatch({ type: 'reset-offset' });
         prevMaximized.current = isMaximized;
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-22E4BF
     }, [isMaximized]);
 
     return {

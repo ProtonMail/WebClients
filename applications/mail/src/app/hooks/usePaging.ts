@@ -43,6 +43,7 @@ export const usePaging = (
         if (total !== newTotal) {
             setTotal(newTotal);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-7BBA57
     }, [currentPage, currentTotalPages, pageSize, total]);
 
     return {

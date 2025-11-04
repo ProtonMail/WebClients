@@ -19,5 +19,6 @@ export const useDeepMemo = <T>(factory: () => T, deps: DependencyList): T => {
 
         previousValue.current = newValue;
         return newValue;
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-65D9D1
     }, deps);
 };

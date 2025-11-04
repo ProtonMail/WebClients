@@ -43,6 +43,7 @@ const CustomExpirationModal = ({ onSubmit, ...rest }: Props) => {
             return getChooseDateText(EXPIRATION_TIME_MAX_DAYS);
         }
         return undefined;
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-EF6486
     }, [date]);
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {

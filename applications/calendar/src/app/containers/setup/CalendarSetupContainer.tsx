@@ -111,6 +111,7 @@ const CalendarSetupContainer = ({ hasCalendarToGenerate, hasHolidaysCalendarToGe
                 setError(e);
                 traceError(e);
             });
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-CB4D60
     }, []);
 
     if (error) {

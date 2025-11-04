@@ -112,6 +112,7 @@ const Item = ({
           ? [getSender(element as Message)]
           : [];
     const recipients = conversationMode ? getConversationRecipients(element) : getMessageRecipients(element as Message);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-5EC3C7
     const sendersLabels = useMemo(() => senders.map((sender) => getRecipientLabel(sender, true)), [senders]);
     const recipientsOrGroup = getRecipientsOrGroups(recipients);
     const recipientsLabels = getRecipientsOrGroupsLabels(recipientsOrGroup);

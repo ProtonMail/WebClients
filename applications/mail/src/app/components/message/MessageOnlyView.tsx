@@ -61,6 +61,7 @@ const MessageOnlyView = ({
         ) {
             void load();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-4D98AD
     }, [messageLoaded]);
 
     // Message content could be undefined
@@ -109,6 +110,7 @@ const MessageOnlyView = ({
         return () => {
             setIsMessageReady(false);
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-3BEA8D
     }, [messageID]);
 
     const handleGetMessageElement = () => {
@@ -123,6 +125,7 @@ const MessageOnlyView = ({
             element?.focus({ preventScroll: true });
             setIsMessageFocused(true);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-84D263
     }, [messageID, isMessageReady]);
 
     return (
