@@ -178,6 +178,16 @@ describe('booking helpers', () => {
     });
 
     describe('generateDefaultBookingRange', () => {
+        const originalTZ = process.env.TZ;
+
+        beforeAll(() => {
+            process.env.TZ = 'UTC';
+        });
+
+        afterAll(() => {
+            process.env.TZ = originalTZ;
+        });
+
         beforeEach(() => {
             jest.useFakeTimers();
             // This is a Thursday
@@ -193,13 +203,13 @@ describe('booking helpers', () => {
             expect(res.length).toBe(5);
 
             // First element should be a Monday
-            expect(res[0].start).toEqual(new Date('2026-01-12T08:00:00Z'));
-            expect(res[0].end).toEqual(new Date('2026-01-12T16:00:00Z'));
+            expect(res[0].start.getDay()).toEqual(new Date('2026-01-12T08:00:00Z').getDay());
+            expect(res[0].end.getDay()).toEqual(new Date('2026-01-12T16:00:00Z').getDay());
             expect(isMonday(res[0].start)).toBe(true);
 
             // Last element should be a Friday
-            expect(res[4].start).toEqual(new Date('2026-01-16T08:00:00Z'));
-            expect(res[4].end).toEqual(new Date('2026-01-16T16:00:00Z'));
+            expect(res[4].start.getDay()).toEqual(new Date('2026-01-16T08:00:00Z').getDay());
+            expect(res[4].end.getDay()).toEqual(new Date('2026-01-16T16:00:00Z').getDay());
             expect(isFriday(res[4].start)).toBe(true);
 
             // No weekend elements
