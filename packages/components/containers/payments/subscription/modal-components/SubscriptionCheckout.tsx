@@ -126,6 +126,8 @@ const SubscriptionCheckout = ({
         couponDiscount,
         withDiscountPerCycle,
         withDiscountPerMonth,
+        withDiscountMembersPerMonth,
+        discountTarget,
     } = checkout;
 
     const plan = getPlanFromPlanIDs(plansMap, planIDs);
@@ -227,10 +229,19 @@ const SubscriptionCheckout = ({
 
                 const noAddonsAndCouponIsHidden = !!couponConfig?.hidden && addons.length === 0;
 
+                let membersAmount: number;
+                if (discountTarget === 'base-users') {
+                    membersAmount = withDiscountMembersPerMonth;
+                } else if (noAddonsAndCouponIsHidden) {
+                    return withDiscountPerMonth;
+                } else {
+                    membersAmount = membersPerMonth;
+                }
+
                 return (
                     <CheckoutRow
                         title={usersTitle}
-                        amount={noAddonsAndCouponIsHidden ? withDiscountPerMonth : membersPerMonth}
+                        amount={membersAmount}
                         currency={currency}
                         suffix={perMonthSuffix}
                         loading={loading}

@@ -20,6 +20,7 @@ import { INCLUDED_IP_PRICING, getPrice, getPricingPerMember } from './price-help
 import { SubscriptionMode } from './subscription/constants';
 import { customCycles } from './subscription/helpers';
 import type { EnrichedCheckResponse, Subscription, SubscriptionCheckResponse } from './subscription/interface';
+import { isValidPlanName } from './type-guards';
 
 export type RequiredCheckResponse = SubscriptionCheckResponse;
 
@@ -237,6 +238,11 @@ export const getCheckout = ({
     const viewPricePerMonth = isPricePerMember ? membersPerMonth / usersAndAddons.users : withDiscountPerMonth;
     const monthlySuffix = isPricePerMember ? c('Suffix').t`/user per month` : c('Suffix').t`/month`;
 
+    const discountTarget: 'base-users' | undefined =
+        checkResult.Coupon?.Targets && Object.keys(checkResult.Coupon.Targets).every((it) => isValidPlanName(it))
+            ? 'base-users'
+            : undefined;
+
     return {
         regularAmountPerCycleOptimistic: amountOptimistic,
         regularAmountPerCycle: amount,
@@ -265,6 +271,7 @@ export const getCheckout = ({
         viewPricePerMonth,
         monthlySuffix,
         checkResult,
+        discountTarget,
     };
 };
 
