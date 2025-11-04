@@ -25,7 +25,13 @@ export const SortableList = ({
     const handleDragEnd = (event: DragEndEvent) => {
         const { active, over } = event;
         if (typeof active.id === 'string' && typeof over?.id === 'string' && active.id !== over.id) {
-            onSortEnd?.({ oldIndex: items.indexOf(active.id), newIndex: items.indexOf(over.id) });
+            const oldIndex = items.indexOf(active.id);
+            const newIndex = items.indexOf(over.id);
+            // If new index doesn't exist (maybe it's a disabled item)
+            if (newIndex === -1) {
+                return;
+            }
+            onSortEnd?.({ oldIndex, newIndex });
         }
     };
 
