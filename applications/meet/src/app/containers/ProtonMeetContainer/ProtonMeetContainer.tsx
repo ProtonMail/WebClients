@@ -10,8 +10,9 @@ import { useMeetErrorReporting } from '@proton/meet';
 import { useCreateInstantMeeting } from '@proton/meet/hooks/useCreateInstantMeeting';
 import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { isFirefox } from '@proton/shared/lib/helpers/browser';
+import { isFirefox, isMobile } from '@proton/shared/lib/helpers/browser';
 import { isWebRtcSupported } from '@proton/shared/lib/helpers/isWebRtcSupported';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { CustomPasswordState } from '@proton/shared/lib/interfaces/Meet';
 import { message as sanitizeMessage } from '@proton/shared/lib/sanitize/purify';
 
@@ -387,9 +388,16 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
 
             await room.setE2EEEnabled(true);
 
-            await initializeDevices();
-
             await getParticipants(meetingToken);
+
+            // In case of mobile devices we need to set these states early, as the camera preview being active while initializing the devices for LiveKit causes issues.
+            if (isMobile()) {
+                setJoinedRoom(true);
+                setJoiningInProgress(false);
+                await wait(50);
+            }
+
+            await initializeDevices();
 
             room.on('disconnected', () => {
                 instantMeetingRef.current = false;
@@ -401,8 +409,10 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
                 void stopPiP();
             });
 
-            setJoinedRoom(true);
-            setJoiningInProgress(false);
+            if (!isMobile()) {
+                setJoinedRoom(true);
+                setJoiningInProgress(false);
+            }
         } catch (error: any) {
             reportMeetError('Failed to join meeting', error);
 
