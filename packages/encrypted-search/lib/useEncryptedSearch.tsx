@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import type { IndexKey } from '@proton/crypto/lib/subtle/ad-hoc/encryptedSearch';
 import useSearchTelemetry, { SEARCH_TYPE } from '@proton/encrypted-search/lib/useSearchTelemetry';
 import { SECOND } from '@proton/shared/lib/constants';
 import { storeESUserChoiceInboxDesktop } from '@proton/shared/lib/desktop/encryptedSearch';
@@ -312,7 +313,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
     /**
      * Keep IndexedDB in sync with new events
      */
-    const syncIndexedDB = async (event: ESEvent<ESItemMetadata>, indexKey: CryptoKey | undefined) => {
+    const syncIndexedDB = async (event: ESEvent<ESItemMetadata>, indexKey: IndexKey | undefined) => {
         const { Items, attemptReDecryption } = event;
 
         const { permanentResults, setResultsList } = esStatus;
@@ -365,7 +366,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
     /**
      * Conclude any type of syncing routine
      */
-    const finaliseSyncing = async (eventsToStore: EventsObject, indexKey: CryptoKey | undefined) => {
+    const finaliseSyncing = async (eventsToStore: EventsObject, indexKey: IndexKey | undefined) => {
         // In case everything goes through, save the last event(s) from which to
         // catch up the next time, but only in case either content is not indexed at all
         // of if it already finished. If content indexing is ongoing, we don't overwrite the
@@ -402,7 +403,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
     /**
      * Catch up with all changes contained in the given event
      */
-    const catchUpFromEvent = async (indexKey: CryptoKey, currentEvent: ESEvent<ESItemMetadata>): Promise<void> => {
+    const catchUpFromEvent = async (indexKey: IndexKey, currentEvent: ESEvent<ESItemMetadata>): Promise<void> => {
         try {
             await syncIndexedDB(currentEvent, indexKey);
             return await finaliseSyncing(currentEvent.eventsToStore, indexKey);
@@ -420,7 +421,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
      * Fetch all events since a previously stored one
      */
     const catchUpFromLastEvents = async (
-        indexKey: CryptoKey | undefined,
+        indexKey: IndexKey | undefined,
         newEvents: ESEvent<ESItemMetadata>[],
         eventsToStore: EventsObject
     ): Promise<void> => {
@@ -527,7 +528,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
 
         void recordProgress([esIndexingProgressState.esProgress, expectedTotalIndexed], 'metadata');
 
-        let indexKey: CryptoKey | undefined;
+        let indexKey: IndexKey | undefined;
         let esSupported = true;
         if (esdbExists) {
             const esProgress = await metadataIndexingProgress.read(userID);

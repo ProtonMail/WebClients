@@ -1,3 +1,5 @@
+import type { IndexKey } from '@proton/crypto/lib/subtle/ad-hoc/encryptedSearch';
+
 import { ES_MAX_CACHE, ES_MAX_ITEMS_PER_BATCH } from '../constants';
 import { readContentBatch, readMetadataBatch, readSortedIDs } from '../esIDB';
 import type { CachedItem, ESCache, ESTimepoint, GetItemInfo } from '../models';
@@ -32,7 +34,7 @@ export const sizeOfESItem = (value: any): number => {
  * Cache both content and metadata at once
  */
 export const cacheIDB = async <ESItemMetadata, ESItemContent>(
-    indexKey: CryptoKey,
+    indexKey: IndexKey,
     userID: string,
     esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, ESItemContent>>,
     checkpoint?: ESTimepoint
@@ -260,7 +262,7 @@ export const addToESCache = <ESItemMetadata, ESItemContent>(
  * Add more content to a limited cache in case many were removed
  */
 export const refreshESCache = async <ESItemMetadata, ESItemContent>(
-    indexKey: CryptoKey,
+    indexKey: IndexKey,
     userID: string,
     esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, ESItemContent>>,
     getItemInfo: GetItemInfo<ESItemMetadata>

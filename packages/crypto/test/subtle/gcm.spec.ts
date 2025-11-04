@@ -11,6 +11,7 @@ import {
     generateKey,
     generateWrappingKey,
     importKey,
+    exportKey,
     importWrappingKey,
     unwrapKey,
     wrapKey,
@@ -75,7 +76,7 @@ describe('Subtle - AES-GCM helpers', () => {
         const hkdfInput = crypto.getRandomValues(new Uint8Array(16));
 
         const key = await deriveKey(hkdfInput, salt, context, { extractable: true });
-        const exportedKey = new Uint8Array(await crypto.subtle.exportKey('raw', key));
+        const exportedKey = new Uint8Array(await exportKey(key));
         expect(exportedKey).to.have.length(KEY_LENGTH_BYTES);
     });
 

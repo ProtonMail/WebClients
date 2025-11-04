@@ -10,7 +10,8 @@ export default defineConfig(defaultConfig, {
         'no-unused-expressions': 'off',
         '@typescript-eslint/no-unused-expressions': 'off',
         'chai-friendly/no-unused-expressions': ['error', { allowShortCircuit: true }],
-        'no-restricted-imports': 'off', // currently only used to guard against `pmcrypto` imports
+        'no-restricted-imports': 'off', // currently only relevant to guard against `pmcrypto` imports
+        'no-restricted-properties': 'off', // currently only relevant to guard against direct `crypto.subtle` access
         'jasmine/no-focused-tests': 'error',
         // TODO: Add the missing explicit deps and remove this rule
         'import/no-extraneous-dependencies': 'off',

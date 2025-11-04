@@ -46,7 +46,6 @@ export {
     generateRequestId,
     generateRequestKey,
     encryptString,
-    cryptoKeyToBytes,
     encryptTurns,
     prepareEncryptedRequestKey,
     decryptContent,

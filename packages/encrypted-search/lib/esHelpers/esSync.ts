@@ -1,5 +1,6 @@
 import type { IDBPDatabase } from 'idb';
 
+import type { IndexKey } from '@proton/crypto/lib/subtle/ad-hoc/encryptedSearch';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import chunk from '@proton/utils/chunk';
 
@@ -14,11 +15,10 @@ import type {
     EncryptedSearchDB,
     InternalESCallbacks,
 } from '../models';
-import { encryptItem } from './esBuild';
 import { addToESCache, removeFromESCache } from './esCache';
 import { addRetry } from './esRetries';
 import { applySearch } from './esSearch';
-import { findItemIndex, isObjectEmpty } from './esUtils';
+import { findItemIndex, isObjectEmpty, serializeAndEncryptItem } from './esUtils';
 
 const prefetchContentToSync = async <ESItemMetadata extends object, ESItemContent = void>(
     itemEventsBatch: ESItemEvent<ESItemMetadata>[],
@@ -57,7 +57,7 @@ export const syncItemEvents = async <ESItemContent, ESItemMetadata extends Objec
     userID: string,
     esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, ESItemContent>>,
     permanentResults: ESItem<ESItemMetadata, ESItemContent>[],
-    indexKey: CryptoKey | undefined,
+    indexKey: IndexKey | undefined,
     esSearchParams: ESSearchParameters | undefined,
     esCallbacks: InternalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>
 ) => {
@@ -178,14 +178,14 @@ export const syncItemEvents = async <ESItemContent, ESItemMetadata extends Objec
                     metadataToAdd.push({
                         ID,
                         timepoint: getItemInfo(ItemMetadata).timepoint,
-                        aesGcmCiphertext: await encryptItem(itemToCache.metadata, indexKey),
+                        aesGcmCiphertext: await serializeAndEncryptItem(indexKey, itemToCache.metadata),
                     });
 
                     if (itemToCache.content && !isObjectEmpty(itemToCache.content)) {
                         contentToAdd.push({
                             ID,
                             timepoint: getItemInfo(ItemMetadata).timepoint,
-                            aesGcmCiphertext: await encryptItem(itemToCache.content, indexKey),
+                            aesGcmCiphertext: await serializeAndEncryptItem(indexKey, itemToCache.content),
                         });
                     }
                 }
@@ -236,7 +236,7 @@ export const syncItemEvents = async <ESItemContent, ESItemMetadata extends Objec
                     metadataToAdd.push({
                         ID,
                         timepoint: getItemInfo(ItemMetadata).timepoint,
-                        aesGcmCiphertext: await encryptItem(itemToCache.metadata, indexKey),
+                        aesGcmCiphertext: await serializeAndEncryptItem(indexKey, itemToCache.metadata),
                         keepSize: Action === ES_SYNC_ACTIONS.UPDATE_METADATA,
                     });
 
@@ -244,7 +244,7 @@ export const syncItemEvents = async <ESItemContent, ESItemMetadata extends Objec
                         contentToAdd.push({
                             ID,
                             timepoint: getItemInfo(ItemMetadata).timepoint,
-                            aesGcmCiphertext: await encryptItem(itemToCache.content, indexKey),
+                            aesGcmCiphertext: await serializeAndEncryptItem(indexKey, itemToCache.content),
                         });
                     }
                 }

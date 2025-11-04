@@ -1,4 +1,4 @@
-import { deriveKey } from '@proton/crypto/lib/subtle/aesGcm';
+import { type AesGcmCryptoKey, deriveKey, exportKey } from '@proton/crypto/lib/subtle/aesGcm';
 import { arrayToBinaryString } from '@proton/crypto/lib/utils';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
 import type { MaybeNull } from '@proton/pass/types/utils';
@@ -42,7 +42,7 @@ export const extractPRFBuffer = (credential: MaybeNull<Credential>): ArrayBuffer
 };
 
 export async function deriveKeyFromPRFCredential(credential: MaybeNull<Credential>, extractable: true): Promise<string>;
-export async function deriveKeyFromPRFCredential(credential: MaybeNull<Credential>): Promise<CryptoKey>;
+export async function deriveKeyFromPRFCredential(credential: MaybeNull<Credential>): Promise<AesGcmCryptoKey>;
 export async function deriveKeyFromPRFCredential(credential: MaybeNull<Credential>, extractable: boolean = false) {
     const prfBuffer = extractPRFBuffer(credential);
     const inputKeyMaterial = new Uint8Array(prfBuffer);
@@ -53,7 +53,7 @@ export async function deriveKeyFromPRFCredential(credential: MaybeNull<Credentia
     const key = await deriveKey(inputKeyMaterial, new Uint8Array(), HKDF_INFO, { extractable });
 
     if (extractable) {
-        const exported = await crypto.subtle.exportKey('raw', key);
+        const exported = await exportKey(key);
         return arrayToBinaryString(new Uint8Array(exported));
     }
 

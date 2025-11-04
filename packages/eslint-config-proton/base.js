@@ -208,6 +208,16 @@ export default defineConfig(
                 },
             ],
 
+            'no-restricted-properties': [
+                'error',
+                {
+                    object: 'crypto',
+                    property: 'subtle',
+                    message:
+                        'Use helpers from `@proton/crypto/lib/subtle` instead of accessing the WebCrypto API directly.',
+                },
+            ],
+
             'no-void': [2, { allowAsStatement: true }],
 
             'lodash/import-scope': [2, 'method'],

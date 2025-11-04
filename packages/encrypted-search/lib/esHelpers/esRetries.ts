@@ -1,4 +1,5 @@
 import { serverTime } from '@proton/crypto';
+import type { IndexKey } from '@proton/crypto/lib/subtle/ad-hoc/encryptedSearch';
 import { MINUTE } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import isTruthy from '@proton/utils/isTruthy';
@@ -6,8 +7,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import { ES_MAX_RETRIES, ES_MAX_RETRY_DELAY, ES_RETRY_QUEUE_TIMEOUT } from '../constants';
 import { executeContentOperations, openESDB, readMetadataBatch, readRetries, setRetries } from '../esIDB';
 import type { EncryptedItemWithInfo, InternalESCallbacks, RetryObject } from '../models';
-import { encryptItem } from './esBuild';
-import { isObjectEmpty } from './esUtils';
+import { isObjectEmpty, serializeAndEncryptItem } from './esUtils';
 
 /**
  * Helper to handle removal of an item from retry queue due to max retries
@@ -110,7 +110,7 @@ export const getRetries = async (userID: string) => {
  */
 export const retryAPICalls = async <ESItemContent>(
     userID: string,
-    indexKey: CryptoKey,
+    indexKey: IndexKey,
     fetchESItemContent?: InternalESCallbacks<unknown, unknown, ESItemContent>['fetchESItemContent']
 ) => {
     const retryMap = await getRetries(userID);
@@ -173,7 +173,7 @@ export const retryAPICalls = async <ESItemContent>(
                 }
 
                 try {
-                    const aesGcmCiphertext = await encryptItem(content, indexKey);
+                    const aesGcmCiphertext = await serializeAndEncryptItem(indexKey, content);
                     contentToAdd.push({
                         ID,
                         timepoint,

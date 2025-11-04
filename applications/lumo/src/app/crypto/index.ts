@@ -2,6 +2,7 @@ import {
     decryptData,
     deriveKey,
     encryptData,
+    exportKey,
     generateKey as generateAesGcmKeyBytes,
     generateWrappingKey as generateAesWrapKeyBytes,
     importKey as importAesGcmKey,
@@ -9,6 +10,7 @@ import {
     unwrapKey,
     wrapKey,
 } from '@proton/crypto/lib/subtle/aesGcm';
+import { computeSHA256 } from '@proton/crypto/lib/subtle/hash';
 import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
@@ -44,18 +46,14 @@ export async function encryptUint8Array(
 }
 
 export async function cryptoKeyToBase64(key: CryptoKey): Promise<Base64> {
-    const exportedKey = await crypto.subtle.exportKey('raw', key);
-    const keyBuffer = new Uint8Array(exportedKey);
-    return uint8ArrayToBase64String(keyBuffer);
+    const exportedKey = await exportKey(key);
+    return uint8ArrayToBase64String(exportedKey);
 }
 
-export async function cryptoKeyToBytes(key: CryptoKey): Promise<Uint8Array<ArrayBuffer>> {
-    const exportedKey = await crypto.subtle.exportKey('raw', key);
-    const keyBuffer = new Uint8Array(exportedKey);
-    return keyBuffer;
-}
-
-export async function bytesToAesGcmCryptoKey(bytes: Uint8Array<ArrayBuffer>, extractable?: boolean): Promise<AesGcmCryptoKey> {
+export async function bytesToAesGcmCryptoKey(
+    bytes: Uint8Array<ArrayBuffer>,
+    extractable?: boolean
+): Promise<AesGcmCryptoKey> {
     if (bytes.length !== 32) {
         throw new Error('Unexpected AES-GCM key size');
     }
@@ -151,7 +149,10 @@ export async function deriveDataEncryptionKey(spaceKeyBytes: Uint8Array<ArrayBuf
     };
 }
 
-export async function wrapAesKey(keyToWrap: AesGcmCryptoKey, { wrappingKey }: AesKwCryptoKey): Promise<Uint8Array<ArrayBuffer>> {
+export async function wrapAesKey(
+    keyToWrap: AesGcmCryptoKey,
+    { wrappingKey }: AesKwCryptoKey
+): Promise<Uint8Array<ArrayBuffer>> {
     const wrappedBytes = await wrapKey(keyToWrap.encryptKey, wrappingKey);
     return wrappedBytes;
 }
@@ -176,7 +177,7 @@ export async function unwrapAesKey(
 
 export async function computeSha256AsBase64(input: string, urlSafe: boolean = false): Promise<Base64> {
     const data = stringToUtf8Array(input);
-    const hashBytes = new Uint8Array(await crypto.subtle.digest('SHA-256', data));
+    const hashBytes = await computeSHA256(data);
     let hashString = uint8ArrayToBase64String(hashBytes);
     if (urlSafe) {
         hashString = hashString.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');

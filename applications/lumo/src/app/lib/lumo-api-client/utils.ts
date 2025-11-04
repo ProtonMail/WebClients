@@ -1,5 +1,5 @@
 import { isTurn } from '../../types';
-import type { AesGcmCryptoKey, RequestId, Role, Turn } from './index';
+import type { RequestId, Role, Turn } from './index';
 
 /**
  * Simple message interface for convenience
@@ -190,26 +190,6 @@ export function getFilteredTurns(linearChain: Message[]): Turn[] {
  */
 export function generateRequestId(): RequestId {
     return crypto.randomUUID();
-}
-
-/**
- * Generate a random AES-GCM key for request encryption
- * @returns Promise resolving to AesGcmCryptoKey
- */
-export async function generateRequestKey(): Promise<AesGcmCryptoKey> {
-    const key = await crypto.subtle.generateKey(
-        {
-            name: 'AES-GCM',
-            length: 256,
-        },
-        true, // extractable
-        ['encrypt', 'decrypt']
-    );
-
-    return {
-        type: 'AesGcmCryptoKey',
-        encryptKey: key,
-    };
 }
 
 /**
