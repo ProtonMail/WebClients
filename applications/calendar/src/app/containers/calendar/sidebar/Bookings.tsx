@@ -27,7 +27,7 @@ export const Bookings = ({ headerRef, disabled }: Props) => {
     const [modalProps, setModalOpen, renderModal] = useModalState();
 
     const isBookingsAvailable = useBookingsAvailability();
-    const { changeBookingState } = useBookings();
+    const { changeBookingState, canCreateBooking } = useBookings();
 
     if (!isBookingsAvailable) {
         return null;
@@ -54,7 +54,7 @@ export const Bookings = ({ headerRef, disabled }: Props) => {
                         <Tooltip title={c('Action').t`Create a new bookings page`}>
                             <button
                                 type="button"
-                                disabled={disabled}
+                                disabled={disabled || !canCreateBooking}
                                 className="flex navigation-link-header-group-control shrink-0"
                                 onClick={handleCreate}
                                 data-testid="navigation-link:create-bookings-page"
