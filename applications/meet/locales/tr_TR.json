@@ -119,6 +119,9 @@
       "Kick out": [
         "Çıkar"
       ],
+      "Leave": [
+        "Ayrıl"
+      ],
       "Leave meeting": [
         "Görüşmeden ayrıl"
       ],
@@ -142,9 +145,6 @@
       ],
       "Noise filter": [
         "Gürültü süzgeci"
-      ],
-      "OK": [
-        "Tamam"
       ],
       "Open link": [
         "Bağlantıyı aç"
@@ -224,6 +224,9 @@
       "Start meeting": [
         "Görüşme başlat"
       ],
+      "Stay in meeting": [
+        "Görüşmede kal"
+      ],
       "Stop incoming video": [
         "Gelen görüntüyü kapat"
       ],
@@ -241,6 +244,9 @@
       ],
       "Try another method": [
         "Başka bir yöntem deneyin"
+      ],
+      "Upgrade": [
+        "Yükselt"
       ],
       "Use authentication code": [
         "Kimlik doğrulama kodunu kullanın"
@@ -1844,9 +1850,6 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "${ BRAND_NAME } hesabınız şu anda askıya alınmış. 28 gün sonra e-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hizmeti normal şekilde kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "${ BRAND_NAME } hesabınız şu anda askıya alınmış. E-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hesabınızı kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
-      ],
       "Your always available meeting room, share it only with people you trust.": [
         "Her zaman kullanabileceğiniz görüşme odanız, yalnızca güvendiğiniz kişilerle paylaşın."
       ],
@@ -2280,6 +2283,11 @@
       ],
       "Recurring meeting": [
         "Yinelenen görüşme"
+      ]
+    },
+    "Upgrade Button": {
+      "Upgrade": [
+        "Yükselt"
       ]
     },
     "Validation": {

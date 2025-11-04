@@ -71,6 +71,9 @@
       "Help and resources": [
         "Aide et ressources"
       ],
+      "Leave": [
+        "Quitter"
+      ],
       "More info: ${ safeTitle }": [
         "Plus d'informations : ${ safeTitle }"
       ],
@@ -82,9 +85,6 @@
       ],
       "Next page": [
         "Page suivante"
-      ],
-      "OK": [
-        "OK"
       ],
       "Previous month": [
         "Mois précédent"
@@ -137,6 +137,9 @@
       "Start": [
         "Commencer"
       ],
+      "Stay in meeting": [
+        "Rester dans la réunion"
+      ],
       "Submit": [
         "Envoyer"
       ],
@@ -145,6 +148,9 @@
       ],
       "Try another method": [
         "Essayer une autre méthode"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
       ],
       "Use authentication code": [
         "Utiliser le code d'authentification"
@@ -1399,9 +1405,6 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Votre compte ${ BRAND_NAME } est suspendu. Au bout de 28 jours, les messages ne seront plus envoyés dans votre boite de réception, vos liens de partage Drive seront bloqués et vous ne pourrez plus télécharger de nouveaux fichiers. Pour retrouver un service normal, nous vous invitons à régler toutes les factures en retard."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Votre compte ${ BRAND_NAME } est suspendu. Les messages ne sont plus envoyés dans votre boite de réception. Vos liens de partage Drive ne sont plus actifs et vous ne pouvez pas télécharger de nouveaux fichiers. Pour continuer à utiliser votre compte, nous vous invitons à payer toutes les factures en retard."
-      ],
       "Your email will only be used for this one-time verification.": [
         "Votre adresse e-mail ne sera utilisée que pour cette vérification unique."
       ],
@@ -1678,6 +1681,11 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Aujourd'hui"
+      ]
+    },
+    "Upgrade Button": {
+      "Upgrade": [
+        "Changer d'abonnement"
       ]
     },
     "Validation": {
