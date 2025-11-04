@@ -424,7 +424,7 @@ const CalendarContainerView = ({
                             size="small"
                             className="inline-flex"
                             onClick={onClick}
-                            disabled={noSelection || !onCreateEvent}
+                            disabled={noSelection || !onCreateEvent || isBookingActive}
                         >
                             <Icon name="calendar-grid" alt={createEventText} />
                         </Button>
