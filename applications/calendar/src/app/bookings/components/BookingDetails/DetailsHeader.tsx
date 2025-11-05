@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
-import Icon from '@proton/components/components/icon/Icon';
+import { IcClock, IcEarth, IcMapPin } from '@proton/icons';
 
 import { useBookingStore } from '../../booking.store';
 
@@ -30,15 +30,15 @@ export const DetailsHeader = () => {
             <p className="color-weak m-0 mb-6">{bookingDetails.description}</p>
             <div className="color-weak">
                 <div className="flex gap-3 items-center mb-2">
-                    <Icon name="clock" />
+                    <IcClock />
                     <span>{c('Info').t`${bookingDetails.duration} min duration`}</span>
                 </div>
                 <div className="flex gap-3 items-center mb-2">
-                    <Icon name="map-pin" />
+                    <IcMapPin />
                     <span>{bookingDetails.location}</span>
                 </div>
                 <div className="flex gap-3 items-center">
-                    <Icon name="earth" />
+                    <IcEarth />
                     <span>{bookingDetails.timezone}</span>
                 </div>
             </div>
