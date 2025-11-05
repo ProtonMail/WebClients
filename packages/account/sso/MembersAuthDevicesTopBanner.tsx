@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import type { Action, ThunkDispatch } from '@reduxjs/toolkit';
 import { c, msgid } from 'ttag';
 
-import { InlineLinkButton } from '@proton/atoms';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import TopBanner from '@proton/components/containers/topBanners/TopBanner';
 import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store';

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Avatar } from '@proton/atoms';
+import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 

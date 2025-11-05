@@ -2,7 +2,10 @@ import { useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Banner, Button, Pill, Tooltip } from '@proton/atoms';
+import { Banner } from '@proton/atoms/Banner/Banner';
+import { Button } from '@proton/atoms/Button/Button';
+import { Pill } from '@proton/atoms/Pill/Pill';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import Info from '@proton/components/components/link/Info';
