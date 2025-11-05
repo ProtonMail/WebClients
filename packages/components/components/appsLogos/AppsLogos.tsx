@@ -6,6 +6,7 @@ import DriveLogo from '@proton/components/components/logo/DriveLogo';
 import type { LogoProps } from '@proton/components/components/logo/LogoBase';
 import MailLogo from '@proton/components/components/logo/MailLogo';
 import PassLogo from '@proton/components/components/logo/PassLogo';
+import SheetsLogo from '@proton/components/components/logo/SheetsLogo';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import WalletLogo from '@proton/components/components/logo/WalletLogo';
 import type { IconSize } from '@proton/icons/types';
@@ -21,6 +22,8 @@ import {
     MAIL_SHORT_APP_NAME,
     PASS_APP_NAME,
     PASS_SHORT_APP_NAME,
+    SHEETS_APP_NAME,
+    SHEETS_SHORT_APP_NAME,
     VPN_APP_NAME,
     VPN_SHORT_APP_NAME,
     WALLET_APP_NAME,
@@ -42,7 +45,8 @@ type SupportedApp =
     | typeof APPS.PROTONVPN_SETTINGS
     | typeof APPS.PROTONPASS
     | typeof APPS.PROTONWALLET
-    | typeof APPS.PROTONDOCS;
+    | typeof APPS.PROTONDOCS
+    | typeof APPS.PROTONSHEETS;
 
 const supportedAppLogosMap: Record<SupportedApp, AppLogo> = {
     [APPS.PROTONMAIL]: {
@@ -79,6 +83,11 @@ const supportedAppLogosMap: Record<SupportedApp, AppLogo> = {
         title: DOCS_APP_NAME,
         shortTitle: DOCS_SHORT_APP_NAME,
         Logo: DocsLogo,
+    },
+    [APPS.PROTONSHEETS]: {
+        title: SHEETS_APP_NAME,
+        shortTitle: SHEETS_SHORT_APP_NAME,
+        Logo: SheetsLogo,
     },
 } as const;
 

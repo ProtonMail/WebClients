@@ -55,6 +55,8 @@ export const getRoutes = ({
     isRetentionPoliciesEnabled,
     referralInfo,
     canDisplayNonPrivateEmailPhone,
+    showMailDashboard,
+    showMailDashboardVariant,
 }: Arguments) => {
     return {
         account: getAccountAppRoutes({
@@ -80,6 +82,8 @@ export const getRoutes = ({
             isReferralExpansionEnabled,
             referralInfo,
             canDisplayNonPrivateEmailPhone,
+            showMailDashboard,
+            showMailDashboardVariant,
         }),
         mail: getMailAppRoutes({
             app,

@@ -704,7 +704,7 @@ export type {
     OpenSubscriptionModalCallback,
 } from './containers/payments/subscription/SubscriptionModalProvider';
 export { default as UpgradeVpnSection } from './containers/payments/subscription/UpgradeVpnSection';
-export { default as VPNDashboardTelemetry } from './containers/payments/subscription/VPNDashboardTelemetry';
+export { default as DashboardTelemetry } from './containers/payments/subscription/DashboardTelemetry';
 export { default as YourPlanSection } from './containers/payments/subscription/YourPlanSection';
 export { default as YourPlanSectionV2 } from './containers/payments/subscription/YourPlanSectionV2/YourPlanSectionV2';
 export { default as YourPlanUpsellsSectionV2 } from './containers/payments/subscription/YourPlanSectionV2/YourPlanUpsellsSectionV2';
@@ -844,3 +844,11 @@ export { default as useSubscribedCalendars } from './hooks/useSubscribedCalendar
 export { default as useToggle } from './hooks/useToggle';
 export { default as useVPNServersCount } from './hooks/useVPNServersCount';
 export { default as useWindowSize } from './hooks/useWindowSize';
+
+export { default as MailBlogSection } from './containers/account/dashboard/mail/MailBlogSection/MailBlogSection';
+export { default as MailDownloadAndInfoSection } from './containers/account/dashboard/mail/MailDownloadAndInfoSection/MailDownloadAndInfoSection';
+export { default as AlsoInYourPlanSection } from './containers/account/dashboard/shared/AlsoInYourPlanSection/AlsoInYourPlanSection';
+export { default as AlsoInYourPlanProtonDrive } from './containers/account/dashboard/shared/AlsoInYourPlanSection/products/AlsoInYourPlanProtonDrive';
+export { default as AlsoInYourPlanProtonMail } from './containers/account/dashboard/shared/AlsoInYourPlanSection/products/AlsoInYourPlanProtonMail';
+export { default as AlsoInYourPlanProtonPass } from './containers/account/dashboard/shared/AlsoInYourPlanSection/products/AlsoInYourPlanProtonPass';
+export { default as AlsoInYourPlanProtonVPN } from './containers/account/dashboard/shared/AlsoInYourPlanSection/products/AlsoInYourPlanProtonVPN';
