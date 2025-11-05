@@ -41,6 +41,8 @@ import MXSection from './MXSection';
 import SPFSection from './SPFSection';
 import VerifySection from './VerifySection';
 
+import './DomainModal.scss';
+
 const STEPS = {
     DOMAIN: 0,
     VERIFY: 1,
@@ -329,7 +331,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
     const breadcrumbs = getBreadcrumbs({ domain: domainModel, domainAddresses });
 
     return (
-        <ModalTwo size="large" as={Form} onSubmit={onSubmit} {...rest}>
+        <ModalTwo as={Form} onSubmit={onSubmit} className="domain-modal" {...rest}>
             <ModalTwoHeader title={domainModel?.ID ? c('Title').t`Edit domain` : c('Title').t`Add domain`} />
             <ModalTwoContent>
                 <div className="overflow-x-auto">

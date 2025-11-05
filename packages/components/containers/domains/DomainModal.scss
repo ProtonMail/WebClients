@@ -1,0 +1,8 @@
+@import '~@proton/styles/scss/lib';
+
+.domain-modal {
+	// Set width height to avoid it switching between steps
+	--size: #{rem(1200)};
+
+	block-size: rem(900);
+}
