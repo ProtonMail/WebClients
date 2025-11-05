@@ -5,30 +5,49 @@ import { ActionEventName } from '../../utils/ActionEventManager/ActionEventManag
 import { handleSdkError } from '../../utils/errorHandling/useSdkErrorHandler';
 import { useCopiedItemsNotification } from './useCopiedItemsNotification';
 
-export type CopyModalItem = {
+interface Item {
     uid: string;
     name: string;
-    linkId: string;
-    parentLinkId: string;
-    isFile: boolean;
-};
+}
 
 export const useCopyItems = () => {
     const { drive } = useDrive();
-    const { showCopiedItemsNotifications } = useCopiedItemsNotification();
+    const { showCopiedItemsNotifications, showUndoCopyNotification } = useCopiedItemsNotification();
 
-    const copyItems = async (itemsToCopy: CopyModalItem[], targetFolderUid: string) => {
-        const sourceUids = itemsToCopy.map((item) => item.uid);
-        const copies = [];
+    const undoCopy = async (copies: Item[]) => {
+        const itemsByUid = Object.fromEntries(copies.map((item) => [item.uid, item]));
+        const uidsToDelete = Object.keys(itemsByUid);
+        const deleted = [];
+        const errors = [];
+
+        try {
+            for await (const result of drive.trashNodes(uidsToDelete)) {
+                const { uid, ok } = result;
+                if (ok) {
+                    deleted.push({ uid, name: itemsByUid[uid].name });
+                } else {
+                    errors.push({ error: result.error });
+                }
+            }
+        } catch (error) {
+            handleSdkError(error, { extra: { uidsToDelete, errors } });
+        }
+
+        showUndoCopyNotification(deleted, errors);
+    };
+
+    const copyItems = async (itemsToCopy: Item[], targetFolderUid: string) => {
+        const itemsByUid = Object.fromEntries(itemsToCopy.map((item) => [item.uid, item]));
+        const sourceUids = Object.keys(itemsByUid);
+        const copies: { uid: string; name: any; parentUid: string }[] = [];
         const errors = [];
 
         try {
             for await (const result of drive.copyNodes(sourceUids, targetFolderUid)) {
                 if (result.ok) {
-                    const originalItem = itemsToCopy.find((item) => item.uid === result.uid) as CopyModalItem;
                     copies.push({
                         uid: result.newUid,
-                        name: originalItem.name,
+                        name: itemsByUid[result.uid].name,
                         parentUid: targetFolderUid,
                     });
                 } else {
@@ -36,11 +55,14 @@ export const useCopyItems = () => {
                 }
             }
         } catch (error) {
-            handleSdkError(error, { extra: { sourceUids, targetFolderUid } });
+            handleSdkError(error, { extra: { sourceUids, targetFolderUid, errors } });
         }
 
         await getActionEventManager().emit({ type: ActionEventName.CREATED_NODES, items: copies });
-        showCopiedItemsNotifications(copies, errors);
+        const undoHandler = async () => {
+            await undoCopy(copies);
+        };
+        showCopiedItemsNotifications(copies, errors, undoHandler);
     };
 
     return copyItems;
