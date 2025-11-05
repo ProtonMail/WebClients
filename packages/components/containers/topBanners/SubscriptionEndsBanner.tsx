@@ -6,6 +6,7 @@ import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Time from '@proton/components/components/time/Time';
 import { REACTIVATE_SOURCE } from '@proton/components/containers/payments/subscription/cancellationFlow/useCancellationTelemetry';
 import { getReactivateSubscriptionAction } from '@proton/components/containers/payments/subscription/helpers/subscriptionExpires';
+import useShowDashboard, { getDashboardFeatureFlag } from '@proton/components/hooks/accounts/useShowDashboard';
 import useConfig from '@proton/components/hooks/useConfig';
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
 import { SubscriptionPlatform, isTrial } from '@proton/payments';
@@ -20,12 +21,13 @@ const SubscriptionEndsBanner = ({ app }: { app: APP_NAMES }) => {
     const [subscription] = useSubscription();
     const { subscriptionExpiresSoon, planName, expirationDate } = subscriptionExpires(subscription!);
     const { showVPNDashboard } = useShowVPNDashboard(app);
+    const { showDashboard } = useShowDashboard(app, getDashboardFeatureFlag(app));
 
     if (!([APPS.PROTONACCOUNT, APPS.PROTONVPN_SETTINGS] as APP_NAMES[]).includes(APP_NAME)) {
         return null;
     }
 
-    if (showVPNDashboard) {
+    if (showVPNDashboard || showDashboard) {
         return null;
     }
 
