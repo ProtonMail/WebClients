@@ -19,7 +19,7 @@ import {
   useSpreadsheetApi,
   type CanvasGridProps,
   type DataValidationRuleRecord,
-  CONDTION_NONE,
+  CONDITION_NONE,
   VALIDATION_CONDITION_LABELS,
   type ConditionType,
   shouldShowFromValue,
@@ -271,7 +271,7 @@ function DataValidationRuleEditor({ rule, sheetId, onDone, onSave, onNewRule }: 
               <FormLabel>Validation rules</FormLabel>
               <div className="flex flex-col gap-2">
                 <NativeSelect
-                  value={formValue?.condition?.type ?? CONDTION_NONE}
+                  value={formValue?.condition?.type ?? CONDITION_NONE}
                   onChange={(event) => {
                     const value = event.target.value as ConditionType
                     form.setValue('condition.type', value)
