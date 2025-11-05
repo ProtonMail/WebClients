@@ -210,13 +210,6 @@ export { default as NewFeatureTag } from './components/newFeatureTag/NewFeatureT
 export type { IsActiveInEnvironmentContainer } from './components/newFeatureTag/NewFeatureTag';
 export { default as useNewFeatureTag } from './components/newFeatureTag/useNewFeatureTag';
 export { default as Option } from './components/option/Option';
-export { default as OrderableContainer } from './components/orderable/OrderableContainer';
-export { default as OrderableElement } from './components/orderable/OrderableElement';
-export { default as OrderableHandle } from './components/orderable/OrderableHandle';
-export { default as OrderableTable } from './components/orderableTable/OrderableTable';
-export { default as OrderableTableBody } from './components/orderableTable/OrderableTableBody';
-export { default as OrderableTableHeader } from './components/orderableTable/OrderableTableHeader';
-export { default as OrderableTableRow } from './components/orderableTable/OrderableTableRow';
 export { default as Pagination } from './components/pagination/Pagination';
 export { default as usePagination } from './components/pagination/usePagination';
 export { default as usePaginationAsync } from './components/pagination/usePaginationAsync';
