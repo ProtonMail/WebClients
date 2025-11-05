@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
-import { type ModalStateProps, useModalTwoStatic } from '@proton/components';
+import type { ModalStateProps } from '@proton/components';
 import { generateNodeUid, splitNodeUid } from '@proton/drive';
 
 import { useActiveShare } from '../../hooks/drive/useActiveShare';
 import { type MoveNodesItemMap, useMoveNodes } from '../../hooks/sdk/useMoveNodes';
 import { useTreeForModals } from '../../store';
-import { CreateFolderModal } from '../CreateFolderModal';
+import { useCreateFolderModal } from '../CreateFolderModal';
 
 export type MoveItemsModalStateItem = {
     volumeId: string;
@@ -38,7 +38,7 @@ export const useMoveItemsModalState = ({
         toggleExpand,
         isLoaded: isTreeLoaded,
     } = useTreeForModals(shareId, { rootExpanded: true, foldersOnly: true });
-    const [createFolderModal, showCreateFolderModal] = useModalTwoStatic(CreateFolderModal);
+    const [createFolderModal, showCreateFolderModal] = useCreateFolderModal();
     const [targetFolderUid, setTargetFolderUid] = useState<string>();
     const { activeFolder } = useActiveShare();
 
@@ -48,9 +48,7 @@ export const useMoveItemsModalState = ({
         return { ...acc, [uid]: { name: item.name, parentUid } };
     }, {});
 
-    const { moveNodes } = useMoveNodes({
-        onSuccess,
-    });
+    const { moveNodes } = useMoveNodes({ onSuccess });
 
     let treeSelectedFolder;
     if (targetFolderUid) {
@@ -90,7 +88,7 @@ export const useMoveItemsModalState = ({
             targetUid = targetFolderUid;
         }
 
-        showCreateFolderModal({
+        void showCreateFolderModal({
             parentFolderUid: targetUid,
             onSuccess: async ({ uid }) => {
                 // After creating the folder we want to expand its parent so it shows in the tree
