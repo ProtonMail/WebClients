@@ -184,7 +184,7 @@ export const createInlineService = () => {
      * - Frame sending this message must send out the current's frame
      * attributes to start the sequence. */
     WorkerMessageBroker.registerMessage(
-        WorkerMessageType.INLINE_DROPDOWN_OPEN,
+        WorkerMessageType.INLINE_DROPDOWN_TOGGLE,
         withSender(async ({ payload }, tabId, frameId) => {
             const frames = await getTabFrames(tabId);
             const result = await getFrameCoords(tabId, frameId, payload, frames);
@@ -194,7 +194,7 @@ export const createInlineService = () => {
                 .sendMessage(
                     tabId,
                     backgroundMessage({
-                        type: WorkerMessageType.INLINE_DROPDOWN_OPEN,
+                        type: WorkerMessageType.INLINE_DROPDOWN_TOGGLE,
                         payload: {
                             ...payload,
                             type: 'relay',

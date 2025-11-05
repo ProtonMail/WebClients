@@ -2,7 +2,6 @@ import type { DropdownAction } from 'proton-pass-extension/app/content/constants
 import { DROPDOWN_IFRAME_SRC } from 'proton-pass-extension/app/content/constants.runtime';
 import { DROPDOWN_MIN_HEIGHT, DROPDOWN_WIDTH } from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
-import { handleOnClosed } from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.utils';
 import type {
     InlineFieldTarget,
     InlineFrameTarget,
@@ -16,7 +15,6 @@ import type { WithAutofillOrigin } from 'proton-pass-extension/types/autofill';
 import type { Coords } from 'proton-pass-extension/types/inline';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import { clientSessionLocked } from '@proton/pass/lib/client';
 import type { PasswordAutosuggestOptions } from '@proton/pass/lib/password/types';
 import type { MaybeNull } from '@proton/pass/types';
 import { createStyleParser, getComputedHeight } from '@proton/pass/utils/dom/computed-styles';
@@ -24,7 +22,7 @@ import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import noop from '@proton/utils/noop';
 
 import { createDropdownFocusController } from './dropdown.focus';
-import { prepareDropdownAction } from './dropdown.utils';
+import { dropdownRequestGuard, intoDropdownAction, onCloseEffects } from './dropdown.utils';
 
 export type DropdownAnchor = InlineFieldTarget | InlineFrameTarget;
 export type DropdownAnchorRef = { current: MaybeNull<DropdownAnchor> };
@@ -42,6 +40,7 @@ export type DropdownRequest = {
     action: DropdownAction;
     /** Indicates that the request was triggered from a focus event */
     autofocused: boolean;
+    autofilled: boolean;
 } & (InlineFieldTarget | InlineFrameTarget<{ coords: Coords; origin: string }>);
 
 export interface DropdownApp extends InlineAppHandler<DropdownRequest> {
@@ -83,13 +82,7 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
 
     const focus = createDropdownFocusController({ iframe, popover, anchor });
 
-    const onOpen = withContext((ctx) => {
-        /** If session is locked - the dropdown will try to gain focus.
-         * In order to avoid detecting this as a FRAME_BLURRED event, we
-         * need to temporarily flag the re-focus state. (see `PinUnlock.tsx`) */
-        const status = ctx?.getState()?.status;
-        if (status && clientSessionLocked(status)) focus.onWillFocus();
-
+    const onOpen = () => {
         const target = anchor.current;
 
         if (target?.type === 'frame') {
@@ -106,14 +99,14 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
                 })
             );
         }
-    });
+    };
 
     const onClose = (options: InlineCloseOptions) => {
         const target = anchor.current;
 
         switch (target?.type) {
             case 'field': {
-                handleOnClosed(target.field, options);
+                onCloseEffects(target.field, options);
                 break;
             }
 
@@ -151,6 +144,8 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
                 return onOpen();
             case 'close':
                 return onClose(evt.options);
+            case 'abort':
+                return onClose({});
             case 'error':
                 return iframe.destroy();
             case 'destroy':
@@ -257,11 +252,14 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
         getState: () => iframe.state,
         init: iframe.init,
 
-        open: (request) => {
+        open: (request) =>
             iframe
                 .open(request.action, async (ctrl) => {
-                    const payload = await prepareDropdownAction(request).catch(noop);
-                    if (ctrl.signal.aborted || !payload) return false;
+                    const validRequest = await dropdownRequestGuard(request);
+                    if (!validRequest || ctrl.signal.aborted) return false;
+
+                    const payload = await intoDropdownAction(request).catch(noop);
+                    if (!payload || ctrl.signal.aborted) return false;
 
                     anchor.current =
                         request.type === 'field'
@@ -285,8 +283,7 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
 
                     return true;
                 })
-                .catch(noop);
-        },
+                .catch(noop),
 
         sendMessage: iframe.sendPortMessage,
         subscribe: iframe.subscribe,

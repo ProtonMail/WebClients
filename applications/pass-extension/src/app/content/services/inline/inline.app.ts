@@ -66,7 +66,8 @@ export type InlineEvent<A> =
     | { type: 'open'; state: InlineState<A> }
     | { type: 'close'; state: InlineState<A>; options: InlineCloseOptions }
     | { type: 'destroy' }
-    | { type: 'error'; error: unknown };
+    | { type: 'error'; error: unknown }
+    | { type: 'abort' };
 
 export interface InlineApp<A> {
     element: HTMLIFrameElement;
@@ -259,10 +260,10 @@ export const createInlineApp = <A>({
         state.ctrl = ctrl;
 
         await ensureReady();
-        if (ctrl.signal.aborted) return;
+        if (ctrl.signal.aborted) return pubsub.publish({ type: 'abort' });
 
         const proceed = prepare ? await prepare(ctrl) : true;
-        if (!proceed || ctrl.signal.aborted || state.visible) return;
+        if (!proceed || ctrl.signal.aborted || state.visible) return pubsub.publish({ type: 'abort' });
 
         popover.open();
         state.action = action;

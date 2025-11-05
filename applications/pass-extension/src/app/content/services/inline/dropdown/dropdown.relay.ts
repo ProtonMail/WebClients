@@ -30,7 +30,7 @@ export const createDropdownRelayHandler = (): DropdownHandler => {
             ).catch(noop);
         },
 
-        open: withContext((ctx, req) => {
+        toggle: withContext((ctx, req) => {
             if (req.type === 'frame') return;
 
             const { fieldId } = req.field;
@@ -54,10 +54,11 @@ export const createDropdownRelayHandler = (): DropdownHandler => {
 
                 await sendMessage(
                     contentScriptMessage({
-                        type: WorkerMessageType.INLINE_DROPDOWN_OPEN,
+                        type: WorkerMessageType.INLINE_DROPDOWN_TOGGLE,
                         payload: {
                             type: 'initial',
                             action: req.action,
+                            autofilled: req.autofilled,
                             autofocused: req.autofocused,
                             frameAttributes: getFrameAttributes(),
                             field: { fieldId, formId },

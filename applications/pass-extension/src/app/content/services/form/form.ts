@@ -221,7 +221,7 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
                 /* Trigger focus on empty active field to open dropdown :
                  * Handles autofocused simple forms and dynamically added fields.
                  * Note: This doesn't trigger a real DOM focus event. */
-                if (document.hasFocus() && isActiveElement(field.element)) field.focus();
+                if (isActiveElement(field.element)) field.focus();
             });
         }),
 

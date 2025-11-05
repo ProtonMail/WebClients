@@ -28,10 +28,13 @@ export const createInlineService = ({
     const notification = createNotificationHandler(registry);
     const icon = createIconRegistry({ channel, dropdown, tag: elements.control, mainFrame });
 
-    const onDropdownOpen: FrameMessageHandler<WorkerMessageType.INLINE_DROPDOWN_OPEN> = ({ payload }) => {
+    const onDropdownToggle: FrameMessageHandler<WorkerMessageType.INLINE_DROPDOWN_TOGGLE> = ({ payload }) => {
         if (payload.type !== 'relay') return;
 
-        const { autofocused, coords, frameId, action, frameAttributes, fieldFrameId, field, origin } = payload;
+        const { autofilled, autofocused, field } = payload;
+        const { frameId, frameAttributes, fieldFrameId } = payload;
+        const { coords, action, origin } = payload;
+
         const root = registry.root;
         const rootRect = root.customElement.getBoundingClientRect();
 
@@ -41,9 +44,10 @@ export const createInlineService = ({
 
         if (!frame) return;
 
-        return dropdown.open({
+        return dropdown.toggle({
             type: 'frame',
             action,
+            autofilled,
             autofocused,
             coords: { top, left },
             fieldFrameId,
@@ -83,7 +87,7 @@ export const createInlineService = ({
         init: () => {
             registry.init();
 
-            channel.register(WorkerMessageType.INLINE_DROPDOWN_OPEN, onDropdownOpen);
+            channel.register(WorkerMessageType.INLINE_DROPDOWN_TOGGLE, onDropdownToggle);
             channel.register(WorkerMessageType.INLINE_DROPDOWN_CLOSE, onDropdownClose);
             channel.register(WorkerMessageType.INLINE_DROPDOWN_STATE, onDropdownState);
             channel.register(WorkerMessageType.INLINE_DROPDOWN_ATTACH, onDropdownAttach);
@@ -96,7 +100,7 @@ export const createInlineService = ({
             dropdown.destroy();
             icon.destroy();
 
-            channel.unregister(WorkerMessageType.INLINE_DROPDOWN_OPEN, onDropdownOpen);
+            channel.unregister(WorkerMessageType.INLINE_DROPDOWN_TOGGLE, onDropdownToggle);
             channel.unregister(WorkerMessageType.INLINE_DROPDOWN_CLOSE, onDropdownClose);
             channel.unregister(WorkerMessageType.INLINE_DROPDOWN_STATE, onDropdownState);
             channel.unregister(WorkerMessageType.INLINE_DROPDOWN_ATTACH, onDropdownAttach);

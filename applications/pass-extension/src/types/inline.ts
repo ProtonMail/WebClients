@@ -22,6 +22,8 @@ export type DropdownOpenDTO = FrameRelay<
         frameAttributes: FrameAttributes;
         /** Whether field was auto-focused vs user-initiated */
         autofocused: boolean;
+        /** Wether field was previously autofilled */
+        autofilled: boolean;
         /** Target input field identification data */
         field: FrameField;
         /** Origin URL of requesting frame */

@@ -5,7 +5,7 @@ import type { Maybe } from '@proton/pass/types';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 
 import type { DropdownHandler } from './dropdown.abstract';
-import { handleAutoClose, handleBackdrop, willDropdownAnchorChange } from './dropdown.utils';
+import { onBackdropClick, onFocusChangeFactory, willDropdownAnchorChange } from './dropdown.utils';
 
 export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler => {
     const listeners = createListenerStore();
@@ -18,29 +18,31 @@ export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler
     const dropdown: DropdownHandler = {
         listeners,
         attach: (layer) => registry.attachDropdown(layer),
-        open: (payload) => {
+        toggle: (payload) => {
             const attachedAnchor = registry.dropdown?.anchor;
             const visible = registry.dropdown?.getState().visible;
-            const { autofocused } = payload;
 
-            const didAnchorChange = !attachedAnchor || willDropdownAnchorChange(attachedAnchor, payload);
+            const validInteraction = !(payload.autofocused && payload.autofilled);
+            const didAnchorChange = willDropdownAnchorChange(attachedAnchor, payload);
+            const shouldOpen = didAnchorChange && validInteraction;
 
-            /** Auto-close conditions: anchor changed OR user clicked icon (autofocused=false) */
-            const autoclose = visible && (didAnchorChange || !autofocused);
-            if (autoclose) dropdown.close();
+            if (visible) dropdown.close();
 
-            if (didAnchorChange) {
+            if (shouldOpen) {
                 const field = payload.type === 'field' ? payload.field : undefined;
                 const form = field?.getFormHandle();
                 const layer = form?.element;
 
                 const close = () => dropdown.close();
-                const autoclose = handleAutoClose(dropdown, field);
+                const onFocusChange = onFocusChangeFactory(dropdown, field);
 
                 const app = registry.attachDropdown(layer);
                 if (!app) return;
 
+                /** NOTE: we're not guaranteed the iframe will open if the request
+                 * is not validated inside DropdownApp and is aborted. */
                 app.open(payload);
+
                 const scrollParent = form?.scrollParent;
                 const scrollOptions = { capture: true, once: true, passive: true } as const;
 
@@ -53,20 +55,29 @@ export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler
                 listeners.addListener(window, 'popstate', close);
                 listeners.addListener(window, 'hashchange', close);
                 listeners.addListener(window, 'beforeunload', close);
-                listeners.addListener(window, 'focus', autoclose);
-                listeners.addListener(window, 'blur', autoclose);
-                listeners.addListener(window, 'mousedown', handleBackdrop(getAnchorField, close));
+                listeners.addListener(window, 'focus', onFocusChange);
+                listeners.addListener(window, 'blur', onFocusChange);
+                listeners.addListener(window, 'mousedown', onBackdropClick(getAnchorField, close));
                 listeners.addListener(scrollParent, 'scroll', close, scrollOptions);
 
-                /** Dropdown app may be closed from within its internal lifecycle */
-                listeners.addSubscriber(app.subscribe((e) => e.type === 'close' && listeners.removeAll()));
+                /** Dropdown app may be closed from within its internal
+                 * lifecycle. In such cases clean-up listeners. */
+                listeners.addSubscriber(
+                    app.subscribe((evt) => {
+                        switch (evt.type) {
+                            case 'close':
+                            case 'abort':
+                                listeners.removeAll();
+                                break;
+                        }
+                    })
+                );
             }
         },
 
         close: (target) => {
             const dropdown = registry.dropdown;
             const anchor = dropdown?.anchor;
-
             const activeAnchor = (() => {
                 switch (target?.type) {
                     case 'field':

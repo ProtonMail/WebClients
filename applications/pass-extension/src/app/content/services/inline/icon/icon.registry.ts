@@ -67,10 +67,11 @@ export const createIconRegistry = ({ channel, dropdown, mainFrame, tag }: IconRe
             if (!field.icon) {
                 const onClick = () => {
                     if (field.action) {
-                        dropdown.open({
+                        dropdown.toggle({
                             type: 'field',
                             action: field.action.type,
                             autofocused: false,
+                            autofilled: field.autofilled !== null,
                             field,
                         });
                     }
