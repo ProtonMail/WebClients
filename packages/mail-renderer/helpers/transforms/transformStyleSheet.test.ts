@@ -1,12 +1,9 @@
-import { JSDOM } from 'jsdom';
-
 import { transformStylesheet } from './transformStylesheet';
 
 describe('transformStylesheet', () => {
     let element: Element;
 
     beforeEach(() => {
-        const document = new JSDOM('<html><body></body></html>', { contentType: 'text/html' }).window.document;
         element = document.body;
     });
 
