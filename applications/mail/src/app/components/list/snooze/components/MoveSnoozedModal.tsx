@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components';
 import { Checkbox, Label, Prompt } from '@proton/components';
 import { setItem } from '@proton/shared/lib/helpers/storage';

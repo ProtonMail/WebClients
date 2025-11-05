@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon, SidebarListItem } from '@proton/components';
 import { useConversationCounts, useFolders, useLabels, useMessageCounts } from '@proton/mail';
 import { isCustomFolder, isCustomLabel } from '@proton/mail/helpers/location';

@@ -2,7 +2,7 @@ import { useLocation } from 'react-router';
 
 import { c } from 'ttag';
 
-import { Scroll } from '@proton/atoms';
+import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import { DropdownMenu, DropdownMenuButton, EllipsisLoader, ToolbarButton } from '@proton/components';
 import { IcCheckmark, IcChevronLeft, IcChevronRight } from '@proton/icons';
 import { TelemetryMailPagingControlsEvents } from '@proton/shared/lib/api/telemetry';

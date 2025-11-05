@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Kbd } from '@proton/atoms';
+import { Kbd } from '@proton/atoms/Kbd/Kbd';
 import { ToolbarButton } from '@proton/components';
 import { IcCrossCircle } from '@proton/icons';
 import { useLoading } from '@proton/hooks';

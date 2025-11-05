@@ -4,8 +4,8 @@ import * as React from 'react';
 
 import { c } from 'ttag';
 
-import type { ButtonLikeProps } from '@proton/atoms';
-import { ButtonLike } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import type { ButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
 import { IcPaperClip } from '@proton/icons';
 import clsx from '@proton/utils/clsx';
 

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components';
 import {
     DRAWER_PASS_ALIASES_CREATE_ALIAS_MODAL_CTA_ID,

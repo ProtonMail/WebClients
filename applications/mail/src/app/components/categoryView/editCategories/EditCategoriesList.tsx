@@ -1,7 +1,7 @@
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { Checkbox, Icon, Label } from '@proton/components';
 import type { CategoryTab } from '@proton/mail';
 

@@ -1,4 +1,4 @@
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { AppLink, useActiveBreakpoint, useAuthentication, useConfig, useDrawer } from '@proton/components';
 import { getLinkToCalendarEvent } from '@proton/shared/lib/calendar/helper';
 import { APPS } from '@proton/shared/lib/constants';

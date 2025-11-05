@@ -2,7 +2,7 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Vr } from '@proton/atoms';
+import { Vr } from '@proton/atoms/Vr/Vr';
 import { ToolbarButton, useElementBreakpoints } from '@proton/components';
 import { IcArrowLeft } from '@proton/icons';
 import clsx from '@proton/utils/clsx';

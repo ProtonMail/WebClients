@@ -1,7 +1,8 @@
 import type { MutableRefObject, ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 
-import { Button, Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { DropdownProps } from '@proton/components';
 import { Dropdown, DropdownButton, DropdownSizeUnit, usePopperAnchor } from '@proton/components';
 import type { DropdownButtonProps } from '@proton/components/components/dropdown/DropdownButton';

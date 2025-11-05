@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcArrowUpAndLeftBig, IcArrowsUpAndLeftBig } from '@proton/icons';
 import clsx from '@proton/utils/clsx';
 

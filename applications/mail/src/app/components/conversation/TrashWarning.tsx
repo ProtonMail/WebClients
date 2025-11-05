@@ -3,7 +3,7 @@ import { forwardRef } from 'react';
 
 import { c } from 'ttag';
 
-import { InlineLinkButton } from '@proton/atoms';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { useHotkeys } from '@proton/components';
 import { IcTrash } from '@proton/icons';
 

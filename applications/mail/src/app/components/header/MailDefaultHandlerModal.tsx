@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Button, Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
+import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components';
 import { Prompt } from '@proton/components';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';

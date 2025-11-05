@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton, Icon, usePopperAnchor } from '@proton/components';
 import type { IconName } from '@proton/icons/types';
 import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';

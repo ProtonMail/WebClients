@@ -2,7 +2,7 @@ import type { Dispatch, SetStateAction } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { useAddAttendees, useDrawer, useNotifications } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/api';

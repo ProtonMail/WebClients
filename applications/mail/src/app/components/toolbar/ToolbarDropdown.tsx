@@ -1,7 +1,7 @@
 import type { ReactNode, Ref } from 'react';
 import { useImperativeHandle, useState } from 'react';
 
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { DropdownButtonProps, DropdownProps } from '@proton/components';
 import { Dropdown, DropdownButton, DropdownSizeUnit, usePopperAnchor } from '@proton/components';
 import type { DropdownBorderRadius } from '@proton/components/components/dropdown/Dropdown';

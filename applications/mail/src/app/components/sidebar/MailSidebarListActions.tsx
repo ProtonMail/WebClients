@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { LabelsUpsellModal, SidebarListItemHeaderLink, useModalState } from '@proton/components';
 import { IcPlus } from '@proton/icons';
 import { APPS, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';

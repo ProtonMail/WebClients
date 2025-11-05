@@ -3,7 +3,8 @@ import type { FormEvent } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useUserKeys } from '@proton/account/userKeys/hooks';
-import { Button, Href } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
 import type { ModalProps } from '@proton/components';
 import {
     ModalTwo,

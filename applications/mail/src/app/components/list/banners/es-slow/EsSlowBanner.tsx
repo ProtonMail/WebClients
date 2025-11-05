@@ -3,7 +3,7 @@ import { memo, useMemo } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { InlineLinkButton } from '@proton/atoms';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { sendSlowSearchReport } from '@proton/encrypted-search';
 import { IcMagnifier } from '@proton/icons';
 import clsx from '@proton/utils/clsx';

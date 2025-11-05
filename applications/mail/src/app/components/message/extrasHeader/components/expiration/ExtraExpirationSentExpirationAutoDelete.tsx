@@ -1,4 +1,4 @@
-import { Banner } from '@proton/atoms';
+import { Banner } from '@proton/atoms/Banner/Banner';
 import { Icon } from '@proton/components';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 

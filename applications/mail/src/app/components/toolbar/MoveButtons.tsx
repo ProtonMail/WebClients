@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Kbd, Vr } from '@proton/atoms';
+import { Kbd } from '@proton/atoms/Kbd/Kbd';
+import { Vr } from '@proton/atoms/Vr/Vr';
 import { ToolbarButton } from '@proton/components';
 import { IcArchiveBox, IcFire, IcFireSlash, IcInbox, IcTrash } from '@proton/icons';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';

@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Button, Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { useApi, useEventManager, useNotifications } from '@proton/components';
 import { IcBell, IcCheckmark } from '@proton/icons';
 import { useLoading } from '@proton/hooks';

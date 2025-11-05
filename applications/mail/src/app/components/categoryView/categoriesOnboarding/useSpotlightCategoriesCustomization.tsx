@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { useSpotlightOnFeature, useSpotlightShow } from '@proton/components';
 import { IcSliders2 } from '@proton/icons';
 import { FeatureCode } from '@proton/features/interface';

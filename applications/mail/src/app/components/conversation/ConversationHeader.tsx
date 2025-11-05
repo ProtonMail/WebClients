@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { IcArrowLeft } from '@proton/icons';
 import clsx from '@proton/utils/clsx';
 

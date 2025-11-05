@@ -4,7 +4,8 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { isToday, isTomorrow } from 'date-fns';
 import { c } from 'ttag';
 
-import { Banner, Button } from '@proton/atoms';
+import { Banner } from '@proton/atoms/Banner/Banner';
+import { Button } from '@proton/atoms/Button/Button';
 import { Prompt, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
 import { IcPaperPlaneClock } from '@proton/icons';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';

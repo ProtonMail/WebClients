@@ -2,7 +2,8 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Banner, Tooltip } from '@proton/atoms';
+import { Banner } from '@proton/atoms/Banner/Banner';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcLock } from '@proton/icons';
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 

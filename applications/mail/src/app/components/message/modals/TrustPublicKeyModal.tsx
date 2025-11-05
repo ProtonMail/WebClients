@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
-import { Button, Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
+import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components';
 import {
     Form,

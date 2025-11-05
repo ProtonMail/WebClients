@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { type ModalProps, ModalTwo, ModalTwoContent, ModalTwoHeader, useApi } from '@proton/components';
 import { IcLockFilled } from '@proton/icons';
 import { FeatureCode } from '@proton/features/interface';

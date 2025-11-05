@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { DropdownMenuButton, LabelsUpsellModal, SimpleDropdown, useModalState } from '@proton/components';
 import { IcThreeDotsHorizontal } from '@proton/icons';
 import { MAIL_UPSELL_PATHS, MAX_FOLDER_NESTING_LEVEL } from '@proton/shared/lib/constants';

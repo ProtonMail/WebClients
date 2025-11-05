@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { Checkbox, Label, Prompt, useApi, useModalState } from '@proton/components';
 import { updateSpamAction } from '@proton/shared/lib/api/mailSettings';
 import { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';

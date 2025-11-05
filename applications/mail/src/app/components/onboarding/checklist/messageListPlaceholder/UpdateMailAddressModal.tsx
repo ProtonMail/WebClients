@@ -2,7 +2,9 @@ import React from 'react';
 
 import { c } from 'ttag';
 
-import { Button, VerticalStep, VerticalSteps } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { VerticalStep } from '@proton/atoms/VerticalSteps/VerticalStep';
+import { VerticalSteps } from '@proton/atoms/VerticalSteps/VerticalSteps';
 import { type ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import { IcInfoCircle } from '@proton/icons';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';

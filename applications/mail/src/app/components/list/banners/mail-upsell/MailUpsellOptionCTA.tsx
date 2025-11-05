@@ -2,7 +2,7 @@ import { type ReactElement, cloneElement } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import {
     PmMeUpsellModal,
     SUBSCRIPTION_STEPS,

@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { InputFieldTwo, PasswordInputTwo } from '@proton/components';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 

@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { ContextMenu, DropdownMenu, DropdownMenuButton, useDragOver, useModalState, useNotifications, usePopperAnchor } from '@proton/components';
 import { IcCross, IcCrossCircle, IcSquares, IcUser, IcUsers } from '@proton/icons';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';

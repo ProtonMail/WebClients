@@ -2,7 +2,7 @@ import { useLocation } from 'react-router';
 
 import { c } from 'ttag';
 
-import { Kbd } from '@proton/atoms';
+import { Kbd } from '@proton/atoms/Kbd/Kbd';
 import { ToolbarButton } from '@proton/components';
 import { IcArrowDown, IcArrowUp } from '@proton/icons';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';

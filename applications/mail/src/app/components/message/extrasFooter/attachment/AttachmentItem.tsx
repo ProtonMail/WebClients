@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { CircleLoader, Tooltip } from '@proton/atoms';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { CircularProgress, FileIcon, FileNameDisplay, Icon } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
