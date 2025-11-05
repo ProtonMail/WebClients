@@ -174,7 +174,8 @@ export const createFieldHandles = ({ element, fieldType, getFormHandle }: Create
                 .then(async (visible) => {
                     if (visible) {
                         await createAutofill(element)(value, options);
-                        field.autofilled = options?.type ?? field.fieldType;
+                        if (value) field.autofilled = options?.type ?? field.fieldType;
+                        else field.autofilled = null;
                     }
                 })
                 .catch(noop)
