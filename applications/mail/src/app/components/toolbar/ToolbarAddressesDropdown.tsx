@@ -11,7 +11,7 @@ import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import ProtonLogo from '@proton/components/components/logo/ProtonLogo';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { IcSquares } from '@proton/icons';
+import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { ADDRESS_TYPE, APPS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getIsAddressActive, getIsBYOEAddress, getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';

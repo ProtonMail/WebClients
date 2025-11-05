@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
-import { IcMagnifier } from '@proton/icons';
+import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import clsx from '@proton/utils/clsx';
 
 interface Props {

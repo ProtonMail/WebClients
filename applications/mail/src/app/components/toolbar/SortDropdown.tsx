@@ -2,7 +2,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { DropdownMenu, DropdownMenuButton, SimpleDropdown } from '@proton/components';
-import { IcListArrowDown, IcListArrowUp, IcSizeArrowDown, IcSizeArrowUp } from '@proton/icons';
+import { IcListArrowDown } from '@proton/icons/icons/IcListArrowDown';
+import { IcListArrowUp } from '@proton/icons/icons/IcListArrowUp';
+import { IcSizeArrowDown } from '@proton/icons/icons/IcSizeArrowDown';
+import { IcSizeArrowUp } from '@proton/icons/icons/IcSizeArrowUp';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Sort } from '@proton/shared/lib/mail/search';
 import clsx from '@proton/utils/clsx';

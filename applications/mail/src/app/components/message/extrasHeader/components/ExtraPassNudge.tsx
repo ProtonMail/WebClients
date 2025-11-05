@@ -12,7 +12,8 @@ import { AppLink, Checkbox, Logo, useActiveBreakpoint, useModalState } from '@pr
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useLocalState from '@proton/components/hooks/useLocalState';
 import { FeatureCode, useFeature } from '@proton/features';
-import { IcCross, IcQuestionCircle } from '@proton/icons';
+import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcQuestionCircle } from '@proton/icons/icons/IcQuestionCircle';
 import { TelemetryPassNudgeEvents } from '@proton/shared/lib/api/telemetry';
 import { APPS, BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { isPassUser } from '@proton/shared/lib/helpers/usedClientsFlags';

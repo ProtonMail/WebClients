@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Vr } from '@proton/atoms/Vr/Vr';
 import { useApi, useModalState } from '@proton/components';
-import { IcClock } from '@proton/icons';
+import { IcClock } from '@proton/icons/icons/IcClock';
 import { TelemetryMailEvents } from '@proton/shared/lib/api/telemetry';
 
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';

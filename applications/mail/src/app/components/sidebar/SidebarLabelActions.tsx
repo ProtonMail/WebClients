@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { DropdownMenuButton, LabelsUpsellModal, SimpleDropdown, useModalState } from '@proton/components';
-import { IcThreeDotsHorizontal } from '@proton/icons';
+import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
 import { MAIL_UPSELL_PATHS, MAX_FOLDER_NESTING_LEVEL } from '@proton/shared/lib/constants';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
 
@@ -45,7 +45,9 @@ const SidebarLabelActions = ({ type, level, folders, element, onToggleDropdown }
                     shape="ghost"
                     size="small"
                     content={
-                        <IcThreeDotsHorizontal alt={type === 'folder' ? c('Title').t`Folder options` : c('Title').t`Label options`} />
+                        <IcThreeDotsHorizontal
+                            alt={type === 'folder' ? c('Title').t`Folder options` : c('Title').t`Label options`}
+                        />
                     }
                     onToggle={onToggleDropdown}
                 >

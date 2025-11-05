@@ -1,18 +1,16 @@
 import { c } from 'ttag';
 
 import { DropdownMenu, DropdownMenuButton, useModalState } from '@proton/components';
-import {
-    IcArchiveBox,
-    IcBell,
-    IcCrossCircle,
-    IcFire,
-    IcFireSlash,
-    IcFolderArrowIn,
-    IcInbox,
-    IcTag,
-    IcThreeDotsHorizontal,
-    IcTrash,
-} from '@proton/icons';
+import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';
+import { IcBell } from '@proton/icons/icons/IcBell';
+import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
+import { IcFire } from '@proton/icons/icons/IcFire';
+import { IcFireSlash } from '@proton/icons/icons/IcFireSlash';
+import { IcFolderArrowIn } from '@proton/icons/icons/IcFolderArrowIn';
+import { IcInbox } from '@proton/icons/icons/IcInbox';
+import { IcTag } from '@proton/icons/icons/IcTag';
+import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { labelIncludes } from '@proton/mail/helpers/location';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';

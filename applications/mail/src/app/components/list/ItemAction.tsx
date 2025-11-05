@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { IcArrowUpAndLeftBig, IcArrowsUpAndLeftBig } from '@proton/icons';
+import { IcArrowUpAndLeftBig } from '@proton/icons/icons/IcArrowUpAndLeftBig';
+import { IcArrowsUpAndLeftBig } from '@proton/icons/icons/IcArrowsUpAndLeftBig';
 import clsx from '@proton/utils/clsx';
 
 import { isElementMessage } from '../../helpers/elements';

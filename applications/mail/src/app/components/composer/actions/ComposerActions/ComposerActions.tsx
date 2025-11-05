@@ -12,7 +12,10 @@ import { useActiveBreakpoint, useModalStateObject, useSpotlightOnFeature } from 
 import ComposerAssistantUpsellModal from '@proton/components/components/upsell/modals/ComposerAssistantUpsellModal';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import { FeatureCode, useFeature } from '@proton/features';
-import { IcPaperPlane, IcPenSparks, IcTextStyle, IcTrash } from '@proton/icons';
+import { IcPaperPlane } from '@proton/icons/icons/IcPaperPlane';
+import { IcPenSparks } from '@proton/icons/icons/IcPenSparks';
+import { IcTextStyle } from '@proton/icons/icons/IcTextStyle';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { getIsAssistantOpened, useAssistant } from '@proton/llm/lib';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { BRAND_NAME } from '@proton/shared/lib/constants';

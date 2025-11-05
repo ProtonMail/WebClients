@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Dropdown, DropdownButton, DropdownMenuButton, useActiveBreakpoint, usePopperAnchor } from '@proton/components';
-import { IcThreeDotsHorizontal } from '@proton/icons';
+import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
 import type { ActionType } from '@proton/llm/lib/types';
 
 interface Props {

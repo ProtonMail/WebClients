@@ -2,10 +2,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { type ModalProps, ModalTwo, ModalTwoContent, ModalTwoHeader, useApi } from '@proton/components';
-import { IcLockFilled } from '@proton/icons';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import useLoading from '@proton/hooks/useLoading';
+import { IcLockFilled } from '@proton/icons/icons/IcLockFilled';
 import { updateMailCategoryView } from '@proton/shared/lib/api/mailSettings';
 import { MAILBOX_LABEL_IDS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';

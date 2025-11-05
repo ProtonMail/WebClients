@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Kbd } from '@proton/atoms/Kbd/Kbd';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { SidebarPrimaryButton } from '@proton/components';
-import { IcPencil } from '@proton/icons';
+import { IcPencil } from '@proton/icons/icons/IcPencil';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import clsx from '@proton/utils/clsx';
 

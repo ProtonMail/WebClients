@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Href } from '@proton/atoms/Href/Href';
-import { IcRobot } from '@proton/icons';
+import { IcRobot } from '@proton/icons/icons/IcRobot';
 import type { MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { isAutoReply } from '@proton/shared/lib/mail/messages';

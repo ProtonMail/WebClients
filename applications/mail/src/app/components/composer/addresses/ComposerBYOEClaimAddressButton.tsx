@@ -4,8 +4,8 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import BYOEClaimProtonAddressModal from '@proton/activation/src/components/Modals/BYOEClaimProtonAddressModal/BYOEClaimProtonAddressModal';
 import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '@proton/activation/src/constants';
 import { useModalState } from '@proton/components';
-import { IcChevronRight } from '@proton/icons';
 import PromotionButtonLight from '@proton/components/components/button/PromotionButton/PromotionButtonLight';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 
@@ -28,8 +28,7 @@ const ComposerBYOEClaimAddressButton = () => {
             >
                 <span className="text-sm inline-flex flex-row flex-nowrap items-center">
                     {c('Action').t`Claim your free ${BRAND_NAME} address`}
-                    <IcChevronRight className="ml-1 mr-custom"
-                        style={{ '--mr-custom': 'calc(var(--space-1) * -1)' }} />
+                    <IcChevronRight className="ml-1 mr-custom" style={{ '--mr-custom': 'calc(var(--space-1) * -1)' }} />
                 </span>
             </PromotionButtonLight>
 

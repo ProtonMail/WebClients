@@ -1,5 +1,5 @@
 import { Button } from '@proton/atoms/Button/Button';
-import { IcArrowDown } from '@proton/icons';
+import { IcArrowDown } from '@proton/icons/icons/IcArrowDown';
 
 import { getNUnreadMessagesText } from 'proton-mail/helpers/text';
 

@@ -20,7 +20,8 @@ import {
 } from '@proton/components';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import useIsMounted from '@proton/hooks/useIsMounted';
-import { IcArrowWithinSquare, IcKey } from '@proton/icons';
+import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
+import { IcKey } from '@proton/icons/icons/IcKey';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageErrors } from '@proton/mail/store/messages/messagesTypes';
