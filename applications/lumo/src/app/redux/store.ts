@@ -11,6 +11,7 @@ import { ignoredActions, ignoredPaths } from '@proton/account/serializable';
 import type { DbApi } from '../indexedDb/db';
 import type { LumoApi } from '../remote/api';
 import { start } from './listeners';
+import streamingThrottleMiddleware from './middleware/streamingThrottle';
 import { rootReducer } from './rootReducer';
 import type { LumoThunkArguments } from './thunk';
 import { extraThunkArguments } from './thunk';
@@ -41,7 +42,9 @@ export const setupStore = ({
                 thunk: { extraArgument: extraThunkArguments },
             });
             const m2 = m1.prepend(listenerMiddleware.middleware);
-            const m3 = sagaMiddleware ? m2.concat(sagaMiddleware) : m2;
+            // Throttle streaming updates to 60fps
+            const m2b = m2.concat(streamingThrottleMiddleware);
+            const m3 = sagaMiddleware ? m2b.concat(sagaMiddleware) : m2b;
             return m3;
         },
     });

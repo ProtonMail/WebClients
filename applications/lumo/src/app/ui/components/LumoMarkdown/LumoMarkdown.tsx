@@ -1,10 +1,12 @@
 import React, { useMemo } from 'react';
 import Markdown from 'react-markdown';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 import remarkGfm from 'remark-gfm';
+
+// Import syntax highlighter (full Prism build with all languages)
+import { SyntaxHighlighter } from './syntaxHighlighterConfig';
 
 import { ButtonLike } from '@proton/atoms';
 import { Copy } from '@proton/components';
