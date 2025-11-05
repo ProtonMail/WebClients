@@ -3,6 +3,7 @@ import { Route, BrowserRouter as Router, Switch, useRouteMatch } from 'react-rou
 
 import { MainLayout } from '../ui/MainLayout';
 import EligibilityGuard from '../ui/components/EligibillityGuard/EligibilityGuard';
+import PerformanceMonitor from '../ui/components/PerformanceMonitor';
 
 export type InnerAppProps = {
     conversationComponent: React.ComponentType<any>;
@@ -11,7 +12,7 @@ export type InnerAppProps = {
 
 export function InnerApp({ conversationComponent, headerComponent }: InnerAppProps) {
     const { url } = useRouteMatch(); // either "/guest" or "/u/:sessionId"
-    
+
     return (
         <EligibilityGuard>
             <Router basename={url}>
@@ -21,6 +22,7 @@ export function InnerApp({ conversationComponent, headerComponent }: InnerAppPro
                         <Route path="/c/:conversationId" component={conversationComponent} />
                     </Switch>
                 </MainLayout>
+                <PerformanceMonitor />
             </Router>
         </EligibilityGuard>
     );

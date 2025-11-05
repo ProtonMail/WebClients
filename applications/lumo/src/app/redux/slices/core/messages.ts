@@ -44,30 +44,32 @@ const initialState: MessageMap = EMPTY_MESSAGE_MAP;
 const messagesReducer = createReducer<MessageMap>(initialState, (builder) => {
     builder
         .addCase(addMessage, (state, action) => {
-            console.log('Action triggered: addMessage', action.payload);
             const message = action.payload;
             state[message.id] = message;
         })
         .addCase(deleteMessage, (state, action) => {
-            console.log('Action triggered: deleteMessage', action.payload);
             const id = action.payload;
             delete state[id];
         })
         .addCase(appendChunk, (state, action) => {
-            console.log('Action triggered: appendChunk', action.payload);
             const chunk = action.payload;
             const message = state[chunk.messageId];
             message.content ??= '';
+            
+            // Dedupe: Don't append if message already ends with this exact chunk
+            // This prevents duplicate last token issues from double-flushing
+            if (message.content.endsWith(chunk.content)) {
+                return;
+            }
+            
             message.content += chunk.content;
         })
         .addCase(setToolCall, (state, action) => {
-            console.log('Action triggered: setToolCall', action.payload);
             const chunk = action.payload;
             const message = state[chunk.messageId];
             message.toolCall = chunk.content;
         })
         .addCase(setToolResult, (state, action) => {
-            console.log('Action triggered: setToolResult', action.payload);
             const chunk = action.payload;
             const message = state[chunk.messageId];
             if (!message) {
@@ -77,7 +79,6 @@ const messagesReducer = createReducer<MessageMap>(initialState, (builder) => {
             message.toolResult = chunk.content;
         })
         .addCase(finishMessage, (state, action) => {
-            console.log('Action triggered: finishMessage', action.payload);
             const finishAction = action.payload;
             const { messageId, content, status } = finishAction;
             const message = state[messageId];
@@ -85,48 +86,43 @@ const messagesReducer = createReducer<MessageMap>(initialState, (builder) => {
                 console.warn(`cannot modify message ${messageId}: not found in Redux state`);
                 return;
             }
-            message.content = content;
+            
+            // Only update content if message has no content yet (wasn't streamed)
+            // If content was streamed via appendChunk, keep the streamed version
+            if (!message.content || message.content.length === 0) {
+                message.content = content;
+            }
             message.placeholder = false;
             message.status = status;
         })
         .addCase(deleteAllMessages, () => {
-            console.log('Action triggered: deleteAllMessages');
             return EMPTY_MESSAGE_MAP;
         })
         .addCase(pushMessageRequest, (state, action) => {
-            console.log('Action triggered: pushMessageRequest', action.payload);
             return state;
         })
         .addCase(pushMessageSuccess, (state, action) => {
-            console.log('Action triggered: pushMessageSuccess', action.payload);
             return state;
         })
         .addCase(pushMessageNoop, (state, action) => {
-            console.log('Action triggered: pushMessageNoop', action.payload);
             return state;
         })
         .addCase(pushMessageNeedsRetry, (state, action) => {
-            console.log('Action triggered: pushMessageNeedsRetry', action.payload);
             return state;
         })
         .addCase(pushMessageFailure, (state, action) => {
-            console.log('Action triggered: pushMessageFailure', action.payload);
             return state;
         })
         .addCase(locallyRefreshMessageFromRemoteRequest, (state, action) => {
-            console.log('Action triggered: locallyRefreshMessageFromRemoteRequest', action.payload);
             return state;
         })
         .addCase(pullMessageRequest, (state, action) => {
-            console.log('Action triggered: pullMessageRequest', action.payload);
             return state;
         })
         .addCase(pullMessageSuccess, (state, action) => {
-            console.log('Action triggered: pullMessageSuccess', action.payload);
             return state;
         })
         .addCase(pullMessageFailure, (state, action) => {
-            console.log('Action triggered: pullMessageFailure', action.payload);
             return state;
         });
 });
