@@ -1,9 +1,10 @@
-import { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
 import type { ReactNode } from 'react';
 
 import { areIntervalsOverlapping, isBefore } from 'date-fns';
 import { c } from 'ttag';
 
+import { useUserSettings } from '@proton/account/index';
 import { useCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
@@ -13,15 +14,19 @@ import { useGetAddressKeysByUsage } from '@proton/components/hooks/useGetAddress
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { createBookingPage } from '@proton/shared/lib/api/calendarBookings';
 import { getPreferredActiveWritableCalendar } from '@proton/shared/lib/calendar/calendar';
-import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eventDefaults';
 import { getTimezone } from '@proton/shared/lib/date/timezone';
 
 import { useCalendarGlobalModals } from '../../GlobalModals/GlobalModalProvider';
 import { ModalType } from '../../GlobalModals/interface';
 import { encryptBookingPage } from '../bookingCryptoUtils';
-import { generateSlotsFromRange } from '../bookingHelpers';
+import {
+    generateBookingRangeID,
+    generateDefaultBookingRange,
+    generateSlotsFromRange,
+    hasAlreadyARangeForDay,
+} from '../bookingHelpers';
 import type { BookingRange, Slot } from './interface';
-import { BOOKING_SLOT_ID, type BookingFormData, BookingLocation, BookingState } from './interface';
+import { type BookingFormData, BookingLocation, BookingState, DEFAULT_EVENT_DURATION } from './interface';
 
 interface BookingsContextValue {
     submitForm: () => Promise<void>;
@@ -32,18 +37,18 @@ interface BookingsContextValue {
     loading: boolean;
     bookingRange: BookingRange[] | null;
     addBookingRange: (data: Omit<BookingRange, 'id'>) => void;
+    updateBookingRange: (id: string, start: Date, end: Date) => void;
     removeBookingRange: (id: string) => void;
 }
 
-const getInitialBookingState = (): BookingFormData => {
-    const scheduleOptions = getCalendarEventDefaultDuration({ includeShortDurations: true, shortLabels: true });
+const getInitialBookingFormState = (): BookingFormData => {
     const localTimeZone = getTimezone();
 
     return {
         title: '',
         selectedCalendar: null,
         locationType: BookingLocation.MEET,
-        duration: scheduleOptions[0].value,
+        duration: DEFAULT_EVENT_DURATION,
         timezone: localTimeZone,
         bookingSlots: [],
     };
@@ -55,7 +60,8 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     const [bookingsState, setBookingsState] = useState<BookingState>(BookingState.OFF);
     const [loading, setLoading] = useState(false);
 
-    const [bookingRange, setBookingRange] = useState<BookingRange[]>([]);
+    const [userSettings] = useUserSettings();
+    const [bookingRange, setBookingRange] = useState<BookingRange[] | null>(null);
 
     const api = useApi();
     const { notify } = useCalendarGlobalModals();
@@ -72,40 +78,40 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     const getAddressKeysByUsage = useGetAddressKeysByUsage();
     const getCalendarKeys = useGetCalendarKeys();
 
-    const defaultFormState = useMemo(() => getInitialBookingState(), []);
-    const [formData, setFormData] = useState<BookingFormData>({
-        ...defaultFormState,
-    });
+    const [formData, setFormData] = useState<BookingFormData>(getInitialBookingFormState());
 
     const { createNotification } = useNotifications();
 
-    useEffect(() => {
-        if (formData.selectedCalendar !== null) {
-            return;
-        }
+    const initializeFormData = () => {
+        // Get the initial form data
+        const newFormData = getInitialBookingFormState();
 
-        // If the user has no preferred writable calendar we set the first writable calendar as default
-        if (!preferredWritableCal) {
-            setFormData((prev) => ({
-                ...prev,
-                selectedCalendar: writeableCalendars?.[0]?.ID,
-            }));
-            return;
-        }
+        // Generate the initial form data
+        const bookingRange = generateDefaultBookingRange(userSettings, '');
+        const bookingSlots = bookingRange
+            .map((range) =>
+                generateSlotsFromRange({
+                    rangeID: range.id,
+                    start: range.start,
+                    end: range.end,
+                    duration: formData.duration,
+                    timezone: range.timezone,
+                })
+            )
+            .flat();
 
-        // Otherwise, we set the preferred writable calendar as default
-        if (CalendarSettings && preferredWritableCal) {
-            setFormData((prev) => ({
-                ...prev,
-                selectedCalendar: preferredWritableCal.ID,
-                duration: CalendarSettings.DefaultEventDuration,
-            }));
-        }
-    }, [formData.selectedCalendar, CalendarSettings, writeableCalendars, preferredWritableCal]);
+        // Set the initial form data
+        newFormData.bookingSlots = bookingSlots;
+        newFormData.duration = CalendarSettings?.DefaultEventDuration || DEFAULT_EVENT_DURATION;
+        newFormData.selectedCalendar = preferredWritableCal?.ID || writeableCalendars[0].ID;
+
+        setBookingRange(bookingRange);
+        setFormData(newFormData);
+    };
 
     const recomputeBookingSlots = (newDuration: number) => {
         const newSlots: Slot[] = [];
-        bookingRange.forEach((range) => {
+        bookingRange?.forEach((range) => {
             const slots = generateSlotsFromRange({
                 rangeID: range.id,
                 start: range.start,
@@ -130,14 +136,50 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     };
 
     const resetBookingState = () => {
+        const newFormData = getInitialBookingFormState();
+
         setBookingRange([]);
-        setFormData({
-            ...defaultFormState,
+        setFormData(newFormData);
+    };
+
+    const updateBookingRange = (oldRangeId: string, start: Date, end: Date) => {
+        const range = bookingRange?.find((range) => range.id === oldRangeId);
+        if (!range || !bookingRange) {
+            throw new Error(`Booking range with id ${oldRangeId} not found or no bookingRange`);
+        }
+
+        // If a range already exist this day we show an error
+        if (hasAlreadyARangeForDay(bookingRange, oldRangeId, start)) {
+            createNotification({ text: c('Info').t`Booking overlaps with an existing booking.` });
+            return;
+        }
+
+        const newRangeId = generateBookingRangeID(start, end);
+
+        const newBookingRange = bookingRange
+            .map((range) => (range.id === oldRangeId ? { ...range, id: newRangeId, start, end } : range))
+            .sort((a, b) => a.start.getTime() - b.start.getTime());
+
+        const newSlots = generateSlotsFromRange({
+            rangeID: newRangeId,
+            start,
+            end,
+            duration: formData.duration,
+            timezone: range.timezone,
         });
+
+        const newFormData = formData;
+        newFormData.bookingSlots = [
+            ...formData.bookingSlots.filter((slot) => slot.rangeID !== oldRangeId),
+            ...newSlots,
+        ];
+
+        setBookingRange(newBookingRange);
+        setFormData(newFormData);
     };
 
     const removeBookingRange = (id: string) => {
-        setBookingRange((prev) => prev.filter((range) => range.id !== id));
+        setBookingRange((prev) => prev?.filter((range) => range.id !== id) || null);
         setFormData((prev) => ({
             ...prev,
             // Remove all the slots associated with the removed range
@@ -151,12 +193,10 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             return;
         }
 
-        const dataStartTime = data.start.getTime();
-        const dataEndTime = data.end.getTime();
         // We store the start and end time of the range for quick comparsion
-        const dataId = `${BOOKING_SLOT_ID}-${dataStartTime}-${dataEndTime}`;
+        const dataId = generateBookingRangeID(data.start, data.end);
 
-        for (const range of bookingRange) {
+        for (const range of bookingRange || []) {
             if (range.id === dataId) {
                 createNotification({
                     text: c('Info').t`Booking already exists.`,
@@ -172,21 +212,27 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             }
         }
 
-        // Create booking slots that fits inside the booking range and store them in the formData
-        const slots = generateSlotsFromRange({
+        const newBookingRange = [...(bookingRange || []), { ...data, id: dataId }];
+        const newSlots = generateSlotsFromRange({
             rangeID: dataId,
             start: data.start,
             end: data.end,
             duration: formData.duration,
             timezone: data.timezone,
         });
-        setFormData((prev) => ({ ...prev, bookingSlots: [...prev.bookingSlots, ...slots] }));
-        setBookingRange((prev) => [...prev, { ...data, id: dataId }]);
+
+        const newFormData = formData;
+        formData.bookingSlots = [...formData.bookingSlots, ...newSlots];
+
+        setBookingRange(newBookingRange);
+        setFormData(newFormData);
     };
 
     const changeBookingState = (state: BookingState) => {
         if (state === BookingState.OFF) {
             resetBookingState();
+        } else if (state === BookingState.CREATE_NEW) {
+            initializeFormData();
         }
 
         setBookingsState(state);
@@ -254,6 +300,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         // Range management
         bookingRange,
         addBookingRange,
+        updateBookingRange,
         removeBookingRange,
     };
 
