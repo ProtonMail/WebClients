@@ -5280,12 +5280,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@livekit/protocol@npm:1.41.0":
-  version: 1.41.0
-  resolution: "@livekit/protocol@npm:1.41.0"
+"@livekit/protocol@npm:1.42.2":
+  version: 1.42.2
+  resolution: "@livekit/protocol@npm:1.42.2"
   dependencies:
     "@bufbuild/protobuf": "npm:^1.10.0"
-  checksum: 10c0/583cc5de73cd93f5139e037648d8c60ee3161b195e4956df36e7513fc01f338f7c564e89af1bc60ccdf546e83484ed9721578f34ee64e0e87fe8150107629067
+  checksum: 10c0/73e77e0975d4d8ca0baa23ad03cb9ac3a844e8d89e9cefbd17343131a774c7aeb4d190fd0397152fcf5a396d921af3eb83e83e660a4aa12215d9ac4e52bf037a
   languageName: node
   linkType: hard
 
@@ -7876,25 +7876,6 @@ __metadata:
   version: 2.11.1
   resolution: "@protobuf-ts/runtime@npm:2.11.1"
   checksum: 10c0/6071c0373251e915cebb449fb7bf3254e946534edf4c4eb6e89933989a3ab5dcb148ed82cc0ea844bbc2f4346d0dc76f852c2b5f900a6bdaa35e5fb2cb4666f9
-  languageName: node
-  linkType: hard
-
-"@proton-meet/livekit-client@npm:2.15.10, livekit-client@npm:@proton-meet/livekit-client@2.15.10":
-  version: 2.15.10
-  resolution: "@proton-meet/livekit-client@npm:2.15.10"
-  dependencies:
-    "@livekit/mutex": "npm:1.1.1"
-    "@livekit/protocol": "npm:1.41.0"
-    events: "npm:^3.3.0"
-    loglevel: "npm:^1.9.2"
-    sdp-transform: "npm:^2.15.0"
-    ts-debounce: "npm:^4.0.0"
-    tslib: "npm:2.8.1"
-    typed-emitter: "npm:^2.1.0"
-    webrtc-adapter: "npm:^9.0.1"
-  peerDependencies:
-    "@types/dom-mediacapture-record": ^1
-  checksum: 10c0/3fd1e2c8efc2b4033ffc68439a6309f2ff6a553d7e93ccfd07072c83dd8a515642688d4ef30d19e15db845408ece5fcd89ca84c4677563cad6b5e66b270ecc93
   languageName: node
   linkType: hard
 
@@ -30368,6 +30349,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jose@npm:^6.1.0":
+  version: 6.1.0
+  resolution: "jose@npm:6.1.0"
+  checksum: 10c0/f4518579e907317e144facd15c7627acd06097bbea17735097437217498aa419564c039dd4020f6af5f2d024a7cee6b7be4648ccbbdc238aedb80a47c061217d
+  languageName: node
+  linkType: hard
+
 "jotai-effect@npm:^2.0.2":
   version: 2.0.2
   resolution: "jotai-effect@npm:2.0.2"
@@ -31518,6 +31506,26 @@ __metadata:
     rfdc: "npm:^1.4.1"
     wrap-ansi: "npm:^9.0.0"
   checksum: 10c0/69feca532f5b3317112a74bc7589ad29f98ccfbe1a582bdab556d536978b094e5841b94069e01cf59ea919684dfb68218754526ddd317b1dc829ab57f7450e45
+  languageName: node
+  linkType: hard
+
+"livekit-client@npm:2.15.14":
+  version: 2.15.14
+  resolution: "livekit-client@npm:2.15.14"
+  dependencies:
+    "@livekit/mutex": "npm:1.1.1"
+    "@livekit/protocol": "npm:1.42.2"
+    events: "npm:^3.3.0"
+    jose: "npm:^6.1.0"
+    loglevel: "npm:^1.9.2"
+    sdp-transform: "npm:^2.15.0"
+    ts-debounce: "npm:^4.0.0"
+    tslib: "npm:2.8.1"
+    typed-emitter: "npm:^2.1.0"
+    webrtc-adapter: "npm:^9.0.1"
+  peerDependencies:
+    "@types/dom-mediacapture-record": ^1
+  checksum: 10c0/619a5932cbb2a7e797344f800db76d529e33f35029e48e0c50a4bccaf7e912fed617360ad745b30b6870b3de4318d714f26b02b7f61a0f0acd442d21f67fb417
   languageName: node
   linkType: hard
 
@@ -38477,7 +38485,6 @@ __metadata:
     "@livekit/components-react": "npm:^2.9.15"
     "@livekit/krisp-noise-filter": "npm:^0.3.4"
     "@livekit/track-processors": "npm:^0.6.1"
-    "@proton-meet/livekit-client": "npm:2.15.10"
     "@proton-meet/proton-meet-core": "npm:0.3.4-2"
     "@proton/components": "workspace:packages/components"
     "@proton/cross-storage": "workspace:packages/cross-storage"
@@ -38502,7 +38509,7 @@ __metadata:
     cross-env: "npm:^10.1.0"
     eslint: "npm:^9.37.0"
     happy-dom: "npm:^20.0.2"
-    livekit-client: "npm:@proton-meet/livekit-client@2.15.10"
+    livekit-client: "npm:2.15.14"
     prettier: "npm:^3.6.2"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"

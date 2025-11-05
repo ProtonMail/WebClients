@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import type { TrackReference } from '@livekit/components-react';
 import { RoomAudioRenderer } from '@livekit/components-react';
-import type { Participant } from '@proton-meet/livekit-client';
+import type { Participant } from 'livekit-client';
 import { c } from 'ttag';
 
 import { IcMeetRotateCamera } from '@proton/icons';

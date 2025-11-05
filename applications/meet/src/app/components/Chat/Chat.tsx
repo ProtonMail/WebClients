@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-import type { LocalParticipant, RemoteParticipant } from '@proton-meet/livekit-client';
+import type { LocalParticipant, RemoteParticipant } from 'livekit-client';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';

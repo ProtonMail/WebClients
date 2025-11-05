@@ -1,6 +1,6 @@
 import { useCallback, useRef } from 'react';
 
-import type { Track as LiveKitTrack } from '@proton-meet/livekit-client';
+import type { Track as LiveKitTrack } from 'livekit-client';
 
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 
@@ -33,6 +33,7 @@ export function usePiPRenderer() {
                         await videoElement.play();
                     }
                 } catch (error) {
+                    // eslint-disable-next-line no-console
                     console.error('Failed to play video:', error);
                 }
             };
@@ -49,6 +50,7 @@ export function usePiPRenderer() {
     const ensureVideoPlaying = useCallback((videoElement: HTMLVideoElement) => {
         if (videoElement.paused) {
             videoElement.play().catch((error) => {
+                // eslint-disable-next-line no-console
                 console.error('Failed to restart video:', error);
             });
         }

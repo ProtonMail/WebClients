@@ -1,7 +1,7 @@
 import { useCallback, useEffect } from 'react';
 
 import { useRoomContext } from '@livekit/components-react';
-import type { RemoteParticipant } from '@proton-meet/livekit-client';
+import type { RemoteParticipant } from 'livekit-client';
 
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { message as sanitizeMessage } from '@proton/shared/lib/sanitize/purify';
@@ -78,6 +78,7 @@ export const useChat = () => {
 
                 setChatMessages((prev) => [...prev, newMessage]);
             } catch (error) {
+                // eslint-disable-next-line no-console
                 console.error('Error handling chat message:', error);
             }
         },

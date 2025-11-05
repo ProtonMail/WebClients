@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 
 import { useRoomContext } from '@livekit/components-react';
-import type { RemoteTrackPublication } from '@proton-meet/livekit-client';
-import { RoomEvent, Track } from '@proton-meet/livekit-client';
+import type { RemoteTrackPublication } from 'livekit-client';
+import { RoomEvent, Track } from 'livekit-client';
 
 export const useParticipantAudioControls = () => {
     const room = useRoomContext();

@@ -1,4 +1,4 @@
-import type { Participant, Track } from '@proton-meet/livekit-client';
+import type { Participant, Track } from 'livekit-client';
 
 export type PiPOverlayMessageType = 'chatMessage' | 'systemErrorMessage' | 'systemInfoMessage';
 

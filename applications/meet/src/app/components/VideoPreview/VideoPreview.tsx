@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 
-import { createLocalVideoTrack } from '@proton-meet/livekit-client';
-import type { LocalVideoTrack } from '@proton-meet/livekit-client';
+import { createLocalVideoTrack } from 'livekit-client';
+import type { LocalVideoTrack } from 'livekit-client';
 
 import { isChrome, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 
