@@ -49,15 +49,13 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
 
         raf.request(() => {
             ctx.service.inline.icon.attach(field);
-
-            if (!field.autofilled) {
-                ctx.service.inline.dropdown.open({
-                    type: 'field',
-                    action: action.type,
-                    autofocused: true,
-                    field,
-                });
-            }
+            ctx.service.inline.dropdown.toggle({
+                type: 'field',
+                action: action.type,
+                autofocused: true,
+                autofilled: field.autofilled !== null,
+                field,
+            });
         });
     });
 
@@ -68,14 +66,13 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
      * Skips cleanup during `autofill.processing` to prevent interrupting autofill sequences. */
     const onBlur = withContext((ctx) => {
         raf.cancel();
-
         if (!ctx || field.actionPrevented) return;
 
         raf.request(
             onNextTick(async (handle: number) => {
                 const { focused, attachedField, visible } = await ctx.service.inline.dropdown.getState();
                 const dropdownFocused = visible && focused && field.matches(attachedField);
-                const fieldBlurred = !(document.hasFocus() && isActiveElement(field.element));
+                const fieldBlurred = !isActiveElement(field.element);
 
                 if (handle !== raf.handle) return;
 

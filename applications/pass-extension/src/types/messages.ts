@@ -133,9 +133,9 @@ export enum WorkerMessageType {
     INLINE_DROPDOWN_ATTACH = 'INLINE_DROPDOWN_ATTACH',
     INLINE_DROPDOWN_CLOSE = 'INLINE_DROPDOWN_CLOSE',
     INLINE_DROPDOWN_CLOSED = 'INLINE_DROPDOWN_CLOSED',
-    INLINE_DROPDOWN_OPEN = 'INLINE_DROPDOWN_OPEN',
     INLINE_DROPDOWN_OPENED = 'INLINE_DROPDOWN_OPENED',
     INLINE_DROPDOWN_STATE = 'INLINE_DROPDOWN_STATE',
+    INLINE_DROPDOWN_TOGGLE = 'INLINE_DROPDOWN_TOGGLE',
     INLINE_ICON_SHIFT = 'INLINE_ICON_SHIFT',
 
     FRAME_QUERY = 'FRAME_QUERY',
@@ -234,8 +234,8 @@ export type InlineDropdownAttachMessage = { type: WorkerMessageType.INLINE_DROPD
 export type InlineDropdownClosedMessage = WithPayload<WorkerMessageType.INLINE_DROPDOWN_CLOSED, DropdownClosedDTO>;
 export type InlineDropdownCloseMessage = WithPayload<WorkerMessageType.INLINE_DROPDOWN_CLOSE, DropdownCloseDTO>;
 export type InlineDropdownOpenedMessage = WithPayload<WorkerMessageType.INLINE_DROPDOWN_OPENED, DropdownOpenedDTO>;
-export type InlineDropdownOpenMessage = WithPayload<WorkerMessageType.INLINE_DROPDOWN_OPEN, DropdownOpenDTO>;
 export type InlineDropdownStateMessage = { type: WorkerMessageType.INLINE_DROPDOWN_STATE };
+export type InlineDropdownToggleMessage = WithPayload<WorkerMessageType.INLINE_DROPDOWN_TOGGLE, DropdownOpenDTO>;
 export type InlineIconShiftMessage = WithPayload<WorkerMessageType.INLINE_ICON_SHIFT, IconShiftRequest>;
 
 export type LoadContentScriptMessage = { type: WorkerMessageType.LOAD_CONTENT_SCRIPT };
@@ -321,8 +321,8 @@ export type WorkerMessage =
     | InlineDropdownClosedMessage
     | InlineDropdownCloseMessage
     | InlineDropdownOpenedMessage
-    | InlineDropdownOpenMessage
     | InlineDropdownStateMessage
+    | InlineDropdownToggleMessage
     | InlineIconShiftMessage
     | LoadContentScriptMessage
     | LocaleUpdatedMessage

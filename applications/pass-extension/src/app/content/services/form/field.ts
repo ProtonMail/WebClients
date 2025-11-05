@@ -218,6 +218,8 @@ export const createFieldHandles = ({ element, fieldType, getFormHandle }: Create
         preventAction: (duration = 250) => actionTrap.trap(duration),
 
         sync: () => {
+            if (!isActiveElement(field.element)) field.icon?.detach();
+
             /** If settings or feature flags have changed, this field's action may
              * have been invalidated. As such, reset the action and detach icon */
             if (field.action && !canProcessAction(field.action.type)) {

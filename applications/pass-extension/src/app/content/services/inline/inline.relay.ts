@@ -2,9 +2,9 @@ import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { ContentScriptContextFactoryOptions } from 'proton-pass-extension/app/content/context/factory';
 import type { FrameMessageHandler } from 'proton-pass-extension/app/content/services/client/client.channel';
 import {
-    handleAutoClose,
-    handleBackdrop,
-    handleOnClosed,
+    onBackdropClick,
+    onCloseEffects,
+    onFocusChangeFactory,
 } from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.utils';
 import { createIconRegistry } from 'proton-pass-extension/app/content/services/inline/icon/icon.registry';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
@@ -45,7 +45,7 @@ export const createInlineRelay = ({
             if (!(form && field)) return;
 
             const close = () => dropdown.close({ type: 'field', field });
-            const autoclose = handleAutoClose(dropdown, field);
+            const onFocusChange = onFocusChangeFactory(dropdown, field);
 
             /** Sub-frame scroll handling: close dropdown immediately instead of
              * expensive cross-frame repositioning. Top-frame UI elements cannot
@@ -54,10 +54,10 @@ export const createInlineRelay = ({
             const scrollOptions = { capture: true, once: true, passive: true } as const;
 
             dropdown.listeners.addListener(window, 'scroll', close, scrollOptions);
-            dropdown.listeners.addListener(window, 'blur', autoclose);
-            dropdown.listeners.addListener(window, 'focus', autoclose);
+            dropdown.listeners.addListener(window, 'blur', onFocusChange);
+            dropdown.listeners.addListener(window, 'focus', onFocusChange);
             dropdown.listeners.addListener(scrollParent, 'scroll', close, scrollOptions);
-            dropdown.listeners.addListener(window, 'mousedown', handleBackdrop(cons(field), close));
+            dropdown.listeners.addListener(window, 'mousedown', onBackdropClick(cons(field), close));
         }
     );
 
@@ -71,7 +71,7 @@ export const createInlineRelay = ({
             const form = ctx?.service.formManager.getFormById(formId);
             const field = form?.getFieldById(fieldId);
 
-            if (field) handleOnClosed(field, payload);
+            if (field) onCloseEffects(field, payload);
         }
     );
 

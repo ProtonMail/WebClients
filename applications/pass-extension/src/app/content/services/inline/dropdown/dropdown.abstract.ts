@@ -26,7 +26,7 @@ export interface DropdownHandler {
     attach: (layer?: HTMLElement) => void;
     close: (target?: InlineFieldTarget | Pick<InlineFrameTarget, 'type' | 'formId' | 'fieldId'>) => void;
     destroy: () => void;
-    open: (request: DropdownRequest) => void;
+    toggle: (request: DropdownRequest) => void;
     sendMessage: (message: InlineMessage) => void;
     getState: () => Promise<DropdownStateDTO>;
 }
