@@ -2,7 +2,6 @@ import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
 
 import { FieldType } from '@proton/pass/fathom/labels';
-import { isActiveElement } from '@proton/pass/utils/dom/active-element';
 import { createRAFController } from '@proton/pass/utils/dom/raf';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
@@ -70,13 +69,10 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
 
         raf.request(
             onNextTick(async (handle: number) => {
-                const { focused, attachedField, visible } = await ctx.service.inline.dropdown.getState();
-                const dropdownFocused = visible && focused && field.matches(attachedField);
-                const fieldBlurred = !isActiveElement(field.element);
-
                 if (handle !== raf.handle) return;
+                const active = await field.isActive();
 
-                if (!dropdownFocused && fieldBlurred) {
+                if (!active && handle === raf.handle) {
                     field.icon?.detach();
                     ctx.service.inline.dropdown.close({ type: 'field', field });
                 }
