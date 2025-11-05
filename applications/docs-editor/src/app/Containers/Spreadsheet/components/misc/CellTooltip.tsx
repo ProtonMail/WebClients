@@ -36,6 +36,8 @@ export function CellTooltip({
   onRequestPersistence,
   onRequestUpdateNote,
   onRequestCloseNote,
+  onRequestPinTooltip,
+  onRequestUnpinTooltip,
 }: CellTooltipProps) {
   const sheetId = useUI((state) => state.legacy.activeSheetId)
   const onRemoveLink = useUI.$.legacy.onRemoveLink
@@ -67,6 +69,8 @@ export function CellTooltip({
         onRequestCloseNote={onRequestCloseNote}
         sheetId={sheetId}
         onRemoveLink={onRemoveLink}
+        onRequestPinTooltip={onRequestPinTooltip}
+        onRequestUnpinTooltip={onRequestUnpinTooltip}
       />
     )
   }
