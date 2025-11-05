@@ -71,15 +71,20 @@ export const willDropdownAnchorChange = (
 /** Resolves origin based on autofill action requirements:
  * - CC autofill: uses domain for loose cross-frame matching across subdomains
  * - Other actions: uses subdomain for strict origin matching */
-export const resolveDropdownOrigin = (request: DropdownRequest, url: ParsedUrl): MaybeNull<string> => {
+export const resolveDropdownOrigins = (
+    request: DropdownRequest,
+    url: ParsedUrl
+): MaybeNull<[origin: string, frameOrigin: string]> => {
     const domain = resolveDomain(url);
     const subdomain = resolveSubdomain(url);
 
     switch (request.action) {
         case DropdownAction.AUTOFILL_CC:
-            return request.type === 'frame' ? request.origin : domain;
+            if (!domain) return null;
+            return request.type === 'frame' ? [domain, request.origin] : [domain, domain];
         default:
-            return request.type === 'frame' ? request.origin : subdomain;
+            if (!subdomain) return null;
+            return request.type === 'frame' ? [subdomain, request.origin] : [subdomain, subdomain];
     }
 };
 
@@ -117,15 +122,16 @@ export const intoDropdownAction = withContext<(request: DropdownRequest) => Prom
         if (!ctx) return;
 
         const { action } = request;
-        const url = ctx.getExtensionContext()?.url;
+        const url = ctx.getExtensionContext()?.tabUrl;
         const frameId = request.type === 'frame' ? request.fieldFrameId : 0;
         const fieldId = request.type === 'frame' ? request.fieldId : request.field.fieldId;
         const formId = request.type === 'frame' ? request.formId : request.field.getFormHandle().formId;
-        const origin = url ? resolveDropdownOrigin(request, url) : null;
+        const origins = url ? resolveDropdownOrigins(request, url) : null;
 
-        if (!(url && origin)) return;
+        if (!(url && origins)) return;
 
-        const base = { origin, frameId, fieldId, formId } as const;
+        const [origin, frameOrigin] = origins;
+        const base = { frameOrigin, frameId, fieldId, formId, origin } as const;
 
         switch (action) {
             case DropdownAction.AUTOFILL_CC:

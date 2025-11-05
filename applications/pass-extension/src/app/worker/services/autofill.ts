@@ -288,14 +288,14 @@ export const createAutoFillService = () => {
             const item = getCreditCard(payload);
             if (!(item && tabId)) throw new Error('Could not get credit card for autofill request');
 
-            const { origin, frameId, fieldId, formId } = payload;
+            const { frameOrigin, frameId, fieldId, formId } = payload;
             const refocus = { fieldId, formId };
 
             /** Collect autofilled field types across frames to avoid duplicate autofill
              * attempts. Frames are ordered by sender frame origin to start the autofill
              * sequence from the source field. */
             const autofilledFields = new Set<CCFieldType>();
-            const frames = await getAutofillableFrameIDs(tabId, origin, frameId);
+            const frames = await getAutofillableFrameIDs(tabId, frameOrigin, frameId);
 
             await onAutofillSequenceUpdate({ status: 'start' }, tabId, frames);
 
