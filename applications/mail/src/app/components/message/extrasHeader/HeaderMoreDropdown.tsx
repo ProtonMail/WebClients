@@ -21,6 +21,7 @@ import {
 } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
+import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';
 import { IcArrowUpFromSquare } from '@proton/icons/icons/IcArrowUpFromSquare';
 import { IcCode } from '@proton/icons/icons/IcCode';
 import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Icon, SettingsLink, useModalState } from '@proton/components';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';

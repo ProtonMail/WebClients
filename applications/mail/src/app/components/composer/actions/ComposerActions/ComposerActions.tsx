@@ -7,6 +7,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { Vr } from '@proton/atoms/Vr/Vr';
 import type { EditorMetadata } from '@proton/components';
 import { useActiveBreakpoint, useModalStateObject, useSpotlightOnFeature } from '@proton/components';
 import ComposerAssistantUpsellModal from '@proton/components/components/upsell/modals/ComposerAssistantUpsellModal';
