@@ -1,7 +1,10 @@
 import { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+// Import pre-configured SyntaxHighlighter with only essential languages
+// This significantly reduces bundle size and memory usage
+import { SyntaxHighlighter } from '../../components/LumoMarkdown/syntaxHighlighterConfig';
 
 interface MarkdownModalProps {
     isOpen: boolean;

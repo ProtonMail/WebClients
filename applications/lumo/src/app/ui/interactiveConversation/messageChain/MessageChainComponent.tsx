@@ -81,7 +81,9 @@ const useAutoScroll = (
     }, [isNearBottom, scrollState.userHasScrolledUp]);
 
     // Scroll to position the latest question at the top when a new question is asked
-    const scrollQuestionToTop = useCallback(() => {
+    const scrollQuestionToTopRef = useRef<(() => void) | null>(null);
+    
+    scrollQuestionToTopRef.current = () => {
         if (!messageChainRef.current || messageChain.length === 0) return;
 
         const container = messageChainRef.current;
@@ -105,7 +107,7 @@ const useAutoScroll = (
                 behavior: 'smooth',
             });
         }
-    }, [messageChainRef, messageChain]);
+    };
 
     const previousGeneratingRef = useRef(isGenerating);
 
@@ -113,19 +115,22 @@ const useAutoScroll = (
         const wasGenerating = previousGeneratingRef.current;
         previousGeneratingRef.current = isGenerating;
 
+        // Only scroll when generation STARTS (not during streaming or when it ends)
         if (isGenerating && !wasGenerating) {
             setTimeout(() => {
-                scrollQuestionToTop();
+                scrollQuestionToTopRef.current?.();
             }, 100);
         }
-    }, [isGenerating, scrollQuestionToTop]);
+    }, [isGenerating]);
 
     useEffect(() => {
         const container = messageChainRef.current;
         if (!container) return;
 
         container.addEventListener('scroll', handleScroll, { passive: true });
-        return () => container.removeEventListener('scroll', handleScroll);
+        return () => {
+            container.removeEventListener('scroll', handleScroll);
+        };
     }, [handleScroll]);
 
     const hasScrolledInitially = useRef(false);
@@ -207,11 +212,9 @@ export const MessageChainComponent = ({
             >
                 {messageChain.map((message, index) => {
                     const isLastMessage = index === messageChain.length - 1;
-                    const isLastAssistantMessage = isLastMessage && message.role === Role.Assistant;
-                    const shouldAddSpacing = isLastAssistantMessage && isGenerating;
 
                     return (
-                        <div key={message.id} className={shouldAddSpacing ? 'pb-[60vh]' : ''}>
+                        <div key={message.id}>
                             <MessageComponent
                                 message={message}
                                 handleRegenerateMessage={handleRegenerateMessage}

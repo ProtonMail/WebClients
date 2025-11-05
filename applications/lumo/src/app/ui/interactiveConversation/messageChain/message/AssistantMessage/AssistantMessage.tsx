@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useRef, useState, memo } from 'react';
 
 import type { HandleRegenerateMessage } from 'applications/lumo/src/app/hooks/useLumoActions';
 import type { Message, SiblingInfo } from 'applications/lumo/src/app/types';
@@ -17,7 +17,7 @@ import { sendMessageCopyEvent } from '../../../../../util/telemetry';
 import { ReferenceFilesButton } from '../../../../components/Files';
 import LumoButton from '../../../../components/LumoButton';
 import LinkWarningModal from '../../../../components/LumoMarkdown/LinkWarningModal';
-import LumoMarkdown from '../../../../components/LumoMarkdown/LumoMarkdown';
+import StreamingMarkdownRenderer from '../../../../components/LumoMarkdown/StreamingMarkdownRenderer';
 import SiblingSelector from '../../../../components/SiblingSelector';
 import ToolCallLoading from '../../../../components/ToolCallLoading/ToolCallLoading';
 import AssistantFeedbackModal from '../actionToolbar/AssistantFeedbackModal';
@@ -235,9 +235,10 @@ const AssistantMessage = ({
                                 <div className="w-full" style={{ minHeight: '2em' }}>
                                     {messageContent || doNotShowEmptyMessage ? (
                                         <div className="w-full">
-                                            <LumoMarkdown
+                                            <StreamingMarkdownRenderer
                                                 message={message}
                                                 content={messageContent}
+                                                isStreaming={isGenerating && isLastMessage}
                                                 onCopy={onCopy}
                                                 handleLinkClick={handleLinkClick}
                                                 toolCallResults={results}
@@ -312,4 +313,14 @@ function preprocessContent(content: string | undefined): string {
     return content;
 }
 
-export default AssistantMessage;
+// Memoize to prevent unnecessary re-renders
+export default memo(AssistantMessage, (prevProps, nextProps) => {
+    // Only re-render if message content or streaming state changed
+    const contentEqual = prevProps.message.content === nextProps.message.content;
+    const statusEqual = prevProps.message.status === nextProps.message.status;
+    const streamingEqual = prevProps.isGenerating === nextProps.isGenerating;
+    const lastMessageEqual = prevProps.isLastMessage === nextProps.isLastMessage;
+
+    // Don't re-render if nothing meaningful changed
+    return contentEqual && statusEqual && streamingEqual && lastMessageEqual;
+});
