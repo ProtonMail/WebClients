@@ -1,5 +1,3 @@
-import { JSDOM } from 'jsdom';
-
 import { compareDomNodes } from './sort';
 
 describe('DOM Node comparison and sorting', () => {
@@ -7,7 +5,7 @@ describe('DOM Node comparison and sorting', () => {
     let nodes: Record<string, HTMLElement>;
 
     beforeEach(() => {
-        const dom = new JSDOM(`
+        document.body.innerHTML = `
       <html>
         <body>
           <div id="n1">
@@ -20,8 +18,8 @@ describe('DOM Node comparison and sorting', () => {
           <div id="n6"></div>
         </body>
       </html>
-    `);
-        doc = dom.window.document;
+    `;
+        doc = document;
 
         nodes = ['n1', 'n2', 'n3', 'n4', 'n5', 'n6'].reduce<Record<string, HTMLElement>>((acc, id) => {
             acc[id] = doc.getElementById(id)!;
