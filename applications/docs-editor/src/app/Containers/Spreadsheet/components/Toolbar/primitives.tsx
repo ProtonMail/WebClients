@@ -55,9 +55,11 @@ export const Container = forwardRef<HTMLDivElement, ContainerProps>(function Con
               <GroupTypeProvider type="main">{mainToolbarSlot}</GroupTypeProvider>
             </div>
             <div className="flex shrink-0 items-center gap-[.5rem] px-3 py-[.375rem]">
-              <Overflow store={overflow} renderOverflowDisclosure={renderOverflowDisclosure}>
-                <GroupTypeProvider type="overflow">{overflowToolbarSlot}</GroupTypeProvider>
-              </Overflow>
+              {overflowToolbarSlot ? (
+                <Overflow store={overflow} renderOverflowDisclosure={renderOverflowDisclosure}>
+                  <GroupTypeProvider type="overflow">{overflowToolbarSlot}</GroupTypeProvider>
+                </Overflow>
+              ) : null}
               {trailingSlot}
             </div>
           </Ariakit.Toolbar>

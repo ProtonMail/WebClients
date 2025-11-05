@@ -46,7 +46,10 @@ function focusGridWarningFallback() {
  *
  * Setters must be stable (e.g. created via `useEvent`).
  */
-export function useProtonSheetsUIState(state: ProtonSheetsState, isReadonly: boolean) {
+export function useProtonSheetsUIState(
+  state: ProtonSheetsState,
+  { isReadonly, isViewOnlyMode }: { isReadonly: boolean; isViewOnlyMode: boolean },
+) {
   const currencySymbol = getCurrencySymbol(LOCALE, CURRENCY)
   if (!currencySymbol) {
     // TODO: handle this more gracefully, default to "$"?
@@ -105,6 +108,7 @@ export function useProtonSheetsUIState(state: ProtonSheetsState, isReadonly: boo
     selectedColumnCount: defaultSelection.range.endColumnIndex - defaultSelection.range.startColumnIndex + 1,
     selectedRowCount: defaultSelection.range.endRowIndex - defaultSelection.range.startRowIndex + 1,
     isReadonly,
+    isViewOnlyMode,
   }
 
   // operation

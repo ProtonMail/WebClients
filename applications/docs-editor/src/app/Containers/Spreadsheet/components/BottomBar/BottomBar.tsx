@@ -31,10 +31,10 @@ export const BottomBar = createComponent(function BottomBar({
         />
       </div>
 
-      <T.Separator />
+      <T.Separator className="max-sm:hidden" />
 
       {/* Center section: Sheet tabs */}
-      <T.TabList>
+      <T.TabList className="max-sm:hidden">
         {visibleSheets.map((sheet) => {
           // Find the actual position of this sheet in all sheets (including hidden ones)
           const actualPosition = state.sheets.findIndex((s) => s.sheetId === sheet.sheetId)
@@ -69,8 +69,6 @@ export const BottomBar = createComponent(function BottomBar({
         {/* New sheet button positioned after tabs */}
         {!isRevisionMode && <T.NewSheetButton onClick={state.onCreateNewSheet} disabled={isReadonly} />}
       </T.TabList>
-
-      <T.Separator />
     </T.Container>
   )
 })
