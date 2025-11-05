@@ -9,6 +9,7 @@ import { c } from 'ttag';
 
 import { useGroups } from '@proton/account/groups/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
+import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import MembersAuthDevicesTopBanner from '@proton/account/sso/MembersAuthDevicesTopBanner';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
@@ -28,6 +29,7 @@ import {
     EmailSubscriptionSection,
     FreeUserLiveChatModal,
     GiftCodeSection,
+    InviteSection,
     InvoicesSection,
     LanguageSection,
     MainLogo,
@@ -41,6 +43,8 @@ import {
     PrivateMainAreaLoading,
     PrivateMainSettingsArea,
     ProtonVPNClientsSection,
+    ReferralInvitesContextProvider,
+    RewardSection,
     SettingsListItem,
     Sidebar,
     SidebarList,
@@ -111,6 +115,8 @@ const MainContainer: FunctionComponent = () => {
     const [groups, loadingGroups] = useGroups();
     const { showVPNDashboard, showVPNDashboardVariant } = useShowVPNDashboard(APPS.PROTONVPN_SETTINGS);
     const isB2BTrial = useIsB2BTrial(subscription, organization);
+    const isReferralExpansionEnabled = useFlag('ReferralExpansion');
+    const [referralInfo] = useReferralInfo();
 
     const vpnRoutes = getRoutes({
         user,
@@ -118,6 +124,9 @@ const MainContainer: FunctionComponent = () => {
         showVPNDashboard,
         showVPNDashboardVariant: showVPNDashboardVariant.name,
         isB2BTrial,
+        isReferralProgramEnabled: Boolean(userSettings.Referral?.Eligible),
+        isReferralExpansionEnabled,
+        referralInfo: referralInfo.uiData,
     });
 
     const organizationAppRoutes = getOrganizationAppRoutes({
@@ -327,7 +336,6 @@ const MainContainer: FunctionComponent = () => {
                                     </PrivateMainSettingsArea>
                                 </Route>
                             )}
-
                             {getIsSectionAvailable(vpnRoutes.dashboard) && (
                                 <Route path={vpnRoutes.dashboard.to}>
                                     <DashboardTelemetry app={app} />
@@ -376,6 +384,16 @@ const MainContainer: FunctionComponent = () => {
                                     <OpenVPNConfigurationSection />
                                 </PrivateMainSettingsArea>
                             </Route>
+                            {getIsSectionAvailable(vpnRoutes.referral) && (
+                                <Route path={vpnRoutes.referral.to}>
+                                    <ReferralInvitesContextProvider>
+                                        <PrivateMainSettingsArea config={vpnRoutes.referral}>
+                                            <InviteSection />
+                                            <RewardSection />
+                                        </PrivateMainSettingsArea>
+                                    </ReferralInvitesContextProvider>
+                                </Route>
+                            )}
                             <Route path={anyOrganizationAppRoute}>
                                 <OrganizationSettingsRouter
                                     app={app}
