@@ -58,13 +58,33 @@ describe('processDroppedItems', () => {
         return list;
     };
 
+    const createMockFileList = (files: File[]): FileList => {
+        const list = {
+            length: files.length,
+            item: (index: number) => {
+                return files[index] || null;
+            },
+            [Symbol.iterator]: function* () {
+                for (let i = 0; i < files.length; i++) {
+                    yield files[i];
+                }
+            },
+        } as FileList;
+
+        for (let i = 0; i < files.length; i++) {
+            (list as unknown as Record<number, File>)[i] = files[i];
+        }
+
+        return list;
+    };
+
     it('should process single file with FileSystemEntry support', async () => {
         const mockFile = createMockFile('test.txt');
         const fileEntry = createMockFileEntry('test.txt', mockFile);
         const dataTransferItem = createMockDataTransferItem(mockFile, fileEntry);
         const itemList = createMockDataTransferItemList([dataTransferItem]);
 
-        const result = await processDroppedItems(itemList);
+        const result = await processDroppedItems(itemList, createMockFileList([]));
 
         expect(result).toHaveLength(1);
         expect(result[0].name).toBe('test.txt');
@@ -79,7 +99,7 @@ describe('processDroppedItems', () => {
         const item2 = createMockDataTransferItem(mockFile2, fileEntry2);
         const itemList = createMockDataTransferItemList([item1, item2]);
 
-        const result = await processDroppedItems(itemList);
+        const result = await processDroppedItems(itemList, createMockFileList([]));
 
         expect(result).toHaveLength(2);
         expect(result[0].name).toBe('file1.txt');
@@ -91,7 +111,7 @@ describe('processDroppedItems', () => {
         const dataTransferItem = createMockDataTransferItem(mockFile, null);
         const itemList = createMockDataTransferItemList([dataTransferItem]);
 
-        const result = await processDroppedItems(itemList);
+        const result = await processDroppedItems(itemList, createMockFileList([]));
 
         expect(result).toHaveLength(1);
         expect(result[0].name).toBe('fallback.txt');
@@ -105,7 +125,7 @@ describe('processDroppedItems', () => {
         const item2 = createMockDataTransferItem(mockFile2, null);
         const itemList = createMockDataTransferItemList([item1, item2]);
 
-        const result = await processDroppedItems(itemList);
+        const result = await processDroppedItems(itemList, createMockFileList([]));
 
         expect(result).toHaveLength(2);
         expect(result[0].name).toBe('with-entry.txt');
@@ -125,7 +145,7 @@ describe('processDroppedItems', () => {
         } as DataTransferItem;
         const itemList = createMockDataTransferItemList([dataTransferItem]);
 
-        const result = await processDroppedItems(itemList);
+        const result = await processDroppedItems(itemList, createMockFileList([]));
 
         expect(result).toHaveLength(0);
     });
@@ -143,7 +163,7 @@ describe('processDroppedItems', () => {
         } as DataTransferItem;
         const itemList = createMockDataTransferItemList([dataTransferItem]);
 
-        const result = await processDroppedItems(itemList);
+        const result = await processDroppedItems(itemList, createMockFileList([]));
 
         expect(result).toHaveLength(0);
     });
@@ -151,7 +171,7 @@ describe('processDroppedItems', () => {
     it('should handle empty DataTransferItemList', async () => {
         const itemList = createMockDataTransferItemList([]);
 
-        const result = await processDroppedItems(itemList);
+        const result = await processDroppedItems(itemList, createMockFileList([]));
 
         expect(result).toHaveLength(0);
     });
@@ -186,10 +206,36 @@ describe('processDroppedItems', () => {
         const dataTransferItem = createMockDataTransferItem(mockFile, dirEntry);
         const itemList = createMockDataTransferItemList([dataTransferItem]);
 
-        const result = await processDroppedItems(itemList);
+        const result = await processDroppedItems(itemList, createMockFileList([]));
 
         expect(result).toHaveLength(2);
         expect(result[0].name).toBe('file1.txt');
         expect(result[1].name).toBe('file2.txt');
+    });
+
+    it('should return fallback files when items list is empty', async () => {
+        const mockFile = new File(['content'], 'from-fallback.txt', { type: 'text/plain' });
+        const fallbackList = createMockFileList([mockFile]);
+        const itemList = createMockDataTransferItemList([]);
+
+        const result = await processDroppedItems(itemList, fallbackList);
+
+        expect(result).toHaveLength(1);
+        expect(result[0].name).toBe('from-fallback.txt');
+    });
+
+    it('should keep item files preferred over duplicates found in fallback', async () => {
+        const mockFile = createMockFile('from-items.txt');
+        const itemList = createMockDataTransferItemList([createMockDataTransferItem(mockFile, null)]);
+
+        const duplicate = new File(['content'], 'from-items.txt', { type: 'text/plain' });
+        const extra = new File(['content'], 'extra.txt', { type: 'text/plain' });
+        const fallbackList = createMockFileList([duplicate, extra]);
+
+        const result = await processDroppedItems(itemList, fallbackList);
+
+        expect(result).toHaveLength(2);
+        expect(result.find((file) => file.name === 'from-items.txt')).toBeDefined();
+        expect(result.find((file) => file.name === 'extra.txt')).toBeDefined();
     });
 });
