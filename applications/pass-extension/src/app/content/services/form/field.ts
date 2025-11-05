@@ -70,6 +70,7 @@ export interface FieldHandle {
     getAnchor: (options?: { reflow: boolean }) => FieldAnchor;
     getFormHandle: () => FormHandle;
     getVisibility: () => Promise<boolean>;
+    isActive: () => Promise<boolean>;
     matches: (field?: FrameField) => boolean;
     preventAction: (duration?: number) => () => void;
     setAction: (action: MaybeNull<FieldAction>) => void;
@@ -223,18 +224,26 @@ export const createFieldHandles = ({ element, fieldType, getFormHandle }: Create
 
         preventAction: (duration = 250) => actionTrap.trap(duration),
 
-        sync: () => {
-            if (!isActiveElement(field.element)) field.icon?.detach();
+        isActive: withContext<() => Promise<boolean>>(async (ctx) => {
+            const focused = isActiveElement(field.element);
+            if (focused) return true;
 
+            return (
+                ctx?.service.inline.dropdown
+                    .getState()
+                    .then(({ focused, visible, attachedField }) => visible && focused && field.matches(attachedField))
+                    .catch(() => false) ?? false
+            );
+        }),
+
+        sync: () => {
             /** If settings or feature flags have changed, this field's action may
              * have been invalidated. As such, reset the action and detach icon */
             if (field.action && !canProcessAction(field.action.type)) {
                 field.action = null;
                 field.icon?.detach();
+                return;
             }
-
-            if (!isActiveElement(field.element)) field.icon?.detach();
-            else field.icon?.reposition();
         },
     };
 

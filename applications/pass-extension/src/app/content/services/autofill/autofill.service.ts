@@ -21,6 +21,7 @@ import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { nextTick } from '@proton/pass/utils/time/next-tick';
 import { resolveSubdomain } from '@proton/pass/utils/url/utils';
 import { omit } from '@proton/shared/lib/helpers/object';
+import noop from '@proton/utils/noop';
 
 import { autofillIdentityFields } from './autofill.identity';
 
@@ -287,7 +288,17 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
                         state.processing = false;
                         /** UX: if field is unfocused during interactivity
                          * lock period, sync field to detach icon. */
-                        setTimeout(() => refocusable?.sync(), 250);
+                        setTimeout(() => {
+                            void refocusable
+                                ?.isActive()
+                                .then((active) => {
+                                    if (refocusable.icon) {
+                                        if (active) refocusable.icon?.reposition();
+                                        else refocusable.icon?.detach();
+                                    }
+                                })
+                                .catch(noop);
+                        }, 250);
                     });
 
                     break;
