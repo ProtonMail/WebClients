@@ -41,6 +41,7 @@ export const createFormManager = ({ onDetection, channel }: FormManagerOptions) 
     };
 
     const getTrackedForms = () => Array.from(state.trackedForms.values());
+    const getTrackedFields = () => Array.from(getTrackedForms().flatMap((form) => form.getFields()));
 
     const getFormById = (formId: string) => getTrackedForms().find((form) => form.formId === formId);
 
@@ -172,7 +173,7 @@ export const createFormManager = ({ onDetection, channel }: FormManagerOptions) 
         state.trackedForms.clear();
     };
 
-    return { getFormById, getTrackedForms, detect, sync, destroy };
+    return { getFormById, getTrackedFields, getTrackedForms, detect, sync, destroy };
 };
 
 export type FormManager = ReturnType<typeof createFormManager>;
