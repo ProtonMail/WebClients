@@ -7,7 +7,8 @@ import { OnboardingActions } from 'proton-pass-web/app/Views/Sidebar/OnboardingA
 import { OrganizationActions } from 'proton-pass-web/app/Views/Sidebar/OrganizationActions';
 import { c } from 'ttag';
 
-import { Button, Scroll } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import Icon from '@proton/components/components/icon/Icon';
 import { UserStorage } from '@proton/pass/components/Account/UserStorage';
 import { MonitorButton } from '@proton/pass/components/Menu/Monitor/MonitorButton';
