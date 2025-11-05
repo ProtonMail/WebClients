@@ -315,6 +315,7 @@ export function LegacyContextMenu({
         onInteractOutside={() => {
           shouldFocusSheetRef.current = false
         }}
+        onMouseMove={(e) => e.stopPropagation()}
       >
         <DropdownMenuItem onClick={onCut} disabled={readonly}>
           <DropdownLeftSlot>
