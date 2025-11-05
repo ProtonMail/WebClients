@@ -1,15 +1,8 @@
-import { format } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
-import {
-    Collapsible,
-    CollapsibleContent,
-    CollapsibleHeader,
-    CollapsibleHeaderIconButton,
-    DropdownSizeUnit,
-} from '@proton/components';
+import { DropdownSizeUnit } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
@@ -17,47 +10,12 @@ import { InputField } from '@proton/components/components/v2/field/InputField';
 import TextArea from '@proton/components/components/v2/input/TextArea';
 import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eventDefaults';
-import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { FormIconRow, FormLocationOptionContent } from './BookingsFormComponents';
 import { getBookingLocationOption, validateFormData } from './bookingHelpers';
 import { useBookings } from './bookingsProvider/BookingsProvider';
-import type { Slot } from './bookingsProvider/interface';
 import { BookingLocation, BookingState } from './bookingsProvider/interface';
-
-// TODO remove this, only used for testing
-const TmpBookingSlots = ({ slots }: { slots: Slot[] }) => {
-    const slotsGroupedByDay = Object.groupBy(slots, (slot) => slot.start.toDateString());
-
-    return (
-        <Collapsible>
-            <CollapsibleHeader
-                suffix={
-                    <CollapsibleHeaderIconButton>
-                        <Icon name="chevron-down" />
-                    </CollapsibleHeaderIconButton>
-                }
-            >
-                Total of {slots.length} slots
-            </CollapsibleHeader>
-            <CollapsibleContent>
-                {Object.entries(slotsGroupedByDay).map(([date, slots]) => (
-                    <div key={date}>
-                        <p className="font-semibold mt-2 m-0">
-                            {date}, contains {slots?.length} slots
-                        </p>
-                        {slots?.map((slot) => (
-                            <p className="m-0 text-sm color-weak" key={slot.id}>
-                                From {format(slot.start, 'hh:mm', { locale: dateLocale })}, to{' '}
-                                {format(slot.end, 'hh:mm', { locale: dateLocale })}
-                            </p>
-                        ))}
-                    </div>
-                ))}
-            </CollapsibleContent>
-        </Collapsible>
-    );
-};
+import { FormRangeList } from './form/FormRangeList';
 
 export const Form = () => {
     const scheduleOptions = getCalendarEventDefaultDuration({ includeShortDurations: true, shortLabels: true });
@@ -102,7 +60,7 @@ export const Form = () => {
             </FormIconRow>
 
             <FormIconRow icon="calendar-list-check" title={c('Info').t`When are you free?`}>
-                <TmpBookingSlots slots={formData.bookingSlots} />
+                <FormRangeList />
             </FormIconRow>
 
             <FormIconRow icon="map-pin" title={c('Info').t`Where will the appointment take place?`}>

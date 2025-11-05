@@ -1,9 +1,11 @@
-import { addMinutes, isBefore } from 'date-fns';
+import { addMinutes, eachDayOfInterval, endOfWeek, isBefore, isSameDay, isWeekend, set, startOfWeek } from 'date-fns';
 import { c } from 'ttag';
 
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 import { uint8ArrayToPaddedBase64URLString } from '@proton/shared/lib/helpers/encoding';
+import type { UserSettings } from '@proton/shared/lib/interfaces';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 
 import type { CalendarViewBusyEvent, CalendarViewEvent } from '../calendar/interface';
 import type { BookingFormData, BookingFormValidation, BookingRange, Slot } from './bookingsProvider/interface';
@@ -147,4 +149,37 @@ export const JSONFormatTextData = ({
     Timezone: string;
 }) => {
     return JSON.stringify({ EndTime, RRule, StartTime, Timezone });
+};
+
+export const generateBookingRangeID = (start: Date, end: Date) => {
+    return `${BOOKING_SLOT_ID}-${start.getTime()}-${end.getTime()}`;
+};
+
+/**
+ * Returns an array of booking range going from 9am to 5pm on work days of the current week
+ */
+export const generateDefaultBookingRange = (userSettings: UserSettings, timezone: string): BookingRange[] => {
+    const weekStartsOn = getWeekStartsOn({ WeekStart: userSettings.WeekStart });
+
+    return eachDayOfInterval({
+        start: startOfWeek(new Date(), { weekStartsOn }),
+        end: endOfWeek(new Date(), { weekStartsOn }),
+    })
+        .filter((day) => !isWeekend(day))
+        .map((day) => {
+            // The range starts from 9 AM and ends at 5 PM
+            const start = set(day, { hours: 9 });
+            const end = set(day, { hours: 17 });
+
+            return {
+                id: generateBookingRangeID(start, end),
+                start,
+                end,
+                timezone,
+            };
+        });
+};
+
+export const hasAlreadyARangeForDay = (bookings: BookingRange[], oldRangeId: string, start: Date): boolean => {
+    return bookings.some((booking) => booking.id !== oldRangeId && isSameDay(booking.start, start));
 };

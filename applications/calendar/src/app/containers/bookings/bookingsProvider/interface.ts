@@ -1,6 +1,7 @@
 export const BOOKING_SLOT_ID = 'booking-slot-' as const;
 export const TEMPORARY_BOOKING_SLOT = 'temporary-booking-slot-' as const;
 export const MAX_BOOKING_SLOTS = 100 as const;
+export const DEFAULT_EVENT_DURATION = 30;
 
 export enum BookingLocation {
     MEET = 'Meet',
