@@ -9,13 +9,11 @@ import { IcClockCircleFilled } from '@proton/icons/icons/IcClockCircleFilled';
 import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 import { IcMobile } from '@proton/icons/icons/IcMobile';
 import { IcServers } from '@proton/icons/icons/IcServers';
-import { IcStorage } from '@proton/icons/icons/IcStorage';
 import { IcUserFilled } from '@proton/icons/icons/IcUserFilled';
 import type { Subscription } from '@proton/payments';
-import { DRIVE_SHORT_APP_NAME, FREE_VPN_CONNECTIONS, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import humanSize from '@proton/shared/lib/helpers/humanSize';
-import type { Organization, UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
-import { getSpace } from '@proton/shared/lib/user/storage';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, FREE_VPN_CONNECTIONS } from '@proton/shared/lib/constants';
+import type { Organization, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getAutoSelectFromCountries, getCountriesWithoutPlus, getVpnDevices } from '@proton/shared/lib/vpn/features';
 
 import { subscriptionExpires } from '../helpers';
@@ -54,73 +52,16 @@ export const UsersSection = ({ MaxMembers, userText }: { MaxMembers: number; use
     return <FeatureElement icon={<IcUserFilled className="shrink-0" />} title={c('Info').t`Users`} text={userText} />;
 };
 
-export const ServersSection = ({ organization }: { organization?: Organization }) => {
+export const ServersSection = ({ organization, app }: { organization?: Organization; app: APP_NAMES }) => {
     const servers = organization?.MaxDedicatedIPs ?? 0;
-    if (servers === 0) {
-        return false;
+    if (app !== APPS.PROTONVPN_SETTINGS || servers === 0) {
+        return null;
     }
     return (
         <FeatureElement
             icon={<IcServers className="shrink-0" />}
             title={c('Info').t`Dedicated servers`}
             text={`${servers}`}
-        />
-    );
-};
-
-export const StorageSection = ({
-    user,
-    usedSpace,
-    maxSpace,
-}: {
-    user: UserModel;
-    usedSpace: number;
-    maxSpace: number;
-}) => {
-    const space = getSpace(user);
-
-    // don't show storage section for plans with storage split for now
-    if (space.splitStorage) {
-        return false;
-    }
-
-    const storageText = (() => {
-        const BASE = 1000;
-        const TB = BASE * BASE * BASE * BASE;
-
-        if (!space.splitStorage) {
-            const unit = maxSpace >= TB ? 'TB' : 'GB';
-            const humanUsedSpace = humanSize({ bytes: usedSpace, unit: unit });
-            const humanMaxSpace = humanSize({ bytes: maxSpace, unit: unit, fraction: 0 });
-            return c('Label').t`${humanUsedSpace} of ${humanMaxSpace}`;
-        }
-
-        const maxBaseSpace = humanSize({ bytes: space.maxBaseSpace, unit: 'GB', fraction: 0 });
-        const maxDriveSpace = humanSize({ bytes: space.maxDriveSpace, unit: 'GB', fraction: 0 });
-        const humanMaxSpace = humanSize({ bytes: space.maxBaseSpace + space.maxDriveSpace, unit: 'GB', fraction: 0 });
-
-        return (
-            <div>
-                <span>{humanMaxSpace}</span>
-                <div className="text-sm">
-                    {maxBaseSpace} {MAIL_SHORT_APP_NAME} + {maxDriveSpace} {DRIVE_SHORT_APP_NAME}
-                </div>
-            </div>
-        );
-    })();
-
-    const tooltipText = (() => {
-        const humanUsedSpace = humanSize({ bytes: usedSpace });
-        const humanMaxSpace = humanSize({ bytes: maxSpace, fraction: 0 });
-        return c('Label').t`${humanUsedSpace} of ${humanMaxSpace}`;
-    })();
-
-    return (
-        <FeatureElement
-            icon={<IcStorage className="shrink-0" />}
-            title={c('Info').t`Storage`}
-            text={storageText}
-            tooltipText={tooltipText}
         />
     );
 };
@@ -152,12 +93,14 @@ export const BillingDateSection = ({ subscription }: { subscription: Subscriptio
 export const FreeVPNFeatures = ({
     serversCount,
     isFreeUser,
+    app,
 }: {
     serversCount: VPNServersCountData | undefined;
     isFreeUser: boolean;
+    app: APP_NAMES;
 }) => {
-    if (!isFreeUser || !serversCount) {
-        return false;
+    if (app !== APPS.PROTONVPN_SETTINGS || !isFreeUser || !serversCount) {
+        return null;
     }
     return (
         <ul className="m-0 unstyled flex flex-nowrap gap-4">

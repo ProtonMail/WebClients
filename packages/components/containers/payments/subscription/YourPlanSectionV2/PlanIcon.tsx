@@ -3,16 +3,22 @@ import type { ReactNode } from 'react';
 import LumoLogo from '@proton/components/components/logo/LumoLogo';
 import MailLogo from '@proton/components/components/logo/MailLogo';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
-import { type FreeSubscription, PLANS, type Subscription, hasLumo, hasVpnBusiness } from '@proton/payments';
 import {
+    type FreeSubscription,
+    PLANS,
+    type Subscription,
     getHasConsumerVpnPlan,
     hasBundle,
+    hasBundlePro2024,
     hasDuo,
     hasFamily,
     hasFree,
+    hasLumo,
     hasMail,
     hasPassFamily,
+    hasVPNPassBundle,
     hasVisionary,
+    hasVpnBusiness,
 } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
@@ -45,6 +51,13 @@ export const PlanIcon = ({
     planName?: PLANS;
     size?: number;
 }) => {
+    if (hasVPNPassBundle(subscription) || planName === PLANS.VPN_PASS_BUNDLE) {
+        return (
+            <LogoIconShape size={size}>
+                <CustomLogo planName={PLANS.VPN_PASS_BUNDLE} app={app} size={size} />
+            </LogoIconShape>
+        );
+    }
     if (getHasConsumerVpnPlan(subscription) || planName === PLANS.VPN2024) {
         return (
             <LogoIconShape size={size}>
@@ -91,6 +104,13 @@ export const PlanIcon = ({
         return (
             <LogoIconShape border={false} size={size}>
                 <CustomLogo planName={PLANS.VPN_BUSINESS} app={app} />
+            </LogoIconShape>
+        );
+    }
+    if (hasBundlePro2024(subscription) || planName === PLANS.BUNDLE_PRO_2024) {
+        return (
+            <LogoIconShape border={false} size={size}>
+                <CustomLogo planName={PLANS.BUNDLE_PRO_2024} app={app} size={size} />
             </LogoIconShape>
         );
     }

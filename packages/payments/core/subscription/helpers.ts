@@ -232,6 +232,15 @@ export const hasFree = (subscription: MaybeFreeSubscription) => (subscription?.P
 export const hasAnyBundlePro = (subscription: MaybeFreeSubscription) =>
     hasBundlePro(subscription) || hasBundlePro2024(subscription);
 
+export const hasFreeOrPlus = (subscription: MaybeFreeSubscription) =>
+    hasFree(subscription) ||
+    hasMail(subscription) ||
+    hasDrive(subscription) ||
+    hasDrive1TB(subscription) ||
+    hasPass(subscription) ||
+    hasVPN2024(subscription) ||
+    hasLumo(subscription);
+
 const hasAIAssistantCondition = [
     ADDON_NAMES.MEMBER_SCRIBE_MAIL_BUSINESS,
     ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO,

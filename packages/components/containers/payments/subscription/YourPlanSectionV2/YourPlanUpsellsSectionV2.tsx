@@ -23,7 +23,9 @@ import {
     hasDuo,
     hasFamily,
     hasLumo,
+    hasMail,
     hasVPN2024,
+    hasVPNPassBundle,
 } from '@proton/payments';
 import { PaymentsContextProvider, isPaymentsPreloaded, usePayments } from '@proton/payments/ui';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
@@ -42,6 +44,9 @@ import FamilyBanner from './Upsells/FamilyBanner';
 import FamilyBannerExtendSubscription, {
     useFamilyBannerExtendSubscription,
 } from './Upsells/FamilyBannerExtendSubscription';
+import MailPlusExtendSubscription, { useMailPlusExtendSubscription } from './Upsells/MailPlusExtendSubscription';
+import MailPlusFromFree, { useMailPlusFromFreeUpsells } from './Upsells/MailPlusFromFree';
+import PBSB2BBanner from './Upsells/PBSB2BBanner';
 import UnlimitedBannerExtendSubscription, {
     useUnlimitedBannerExtendSubscription,
 } from './Upsells/UnlimitedBannerExtendSubscription';
@@ -91,14 +96,14 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
     const showAVariant = variant.name === 'A';
     const showBVariant = variant.name === 'B';
 
-    const hasMailFree = isFree && app === APPS.PROTONMAIL;
+    const hasMailFree = isFree && (app === APPS.PROTONMAIL || app === APPS.PROTONCALENDAR);
     const hasDriveFree = isFree && app === APPS.PROTONDRIVE;
     const hasPassFree = isFree && app === APPS.PROTONPASS && !user.hasPassLifetime;
     const hasVPNFree = isFree && app === APPS.PROTONVPN_SETTINGS;
     const hasLumoPlus = hasLumo(subscription);
 
-    // Allow 24 month plan but conditions might change again
-    const userCanHave24MonthPlan = true;
+    // Allow 24-month plan for VPN. Update the condition based on requirements
+    const userCanHave24MonthPlan = app === APPS.PROTONVPN_SETTINGS;
 
     const upsellParams = {
         subscription,
@@ -110,9 +115,11 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
         user,
     };
 
+    const mailPlusFromFreeUpsells = useMailPlusFromFreeUpsells(upsellParams);
     const vpnPlusFromFreeUpsells = useVpnPlusFromFreeUpsells(upsellParams);
     const unlimitedBannerGradientUpsells = useUnlimitedBannerGradientUpsells(upsellParams);
     const vpnPlusExtendSubscriptionUpsells = useVpnPlusExtendSubscription(upsellParams);
+    const mailPlusExtendSubscriptionUpsells = useMailPlusExtendSubscription(upsellParams);
     const unlimitedBannerExtendSubscriptionUpsells = useUnlimitedBannerExtendSubscription(upsellParams);
     const duoBannerExtendSubscriptionUpsells = useDuoBannerExtendSubscription(upsellParams);
     const familyBannerExtendSubscriptionUpsells = useFamilyBannerExtendSubscription(upsellParams);
@@ -126,6 +133,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
                     hasDriveFree ||
                     // We want to show the VPN upsells to users with Lumo plan since they migrate from the Lumo plan to having a Lumo addon
                     hasLumoPlus) &&
+                app === APPS.PROTONVPN_SETTINGS &&
                 showAVariant,
             upsells: [...vpnPlusFromFreeUpsells.upsells, ...unlimitedBannerGradientUpsells.upsells],
             element: (
@@ -148,6 +156,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
                     hasDriveFree ||
                     // We want to show the VPN upsells to users with Lumo plan since they migrate from the Lumo plan to having a Lumo addon
                     hasLumoPlus) &&
+                app === APPS.PROTONVPN_SETTINGS &&
                 showBVariant,
             upsells: [...vpnPlusFromFreeUpsells.upsells, ...unlimitedBannerGradientUpsells.upsells],
             element: (
@@ -170,6 +179,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             enabled:
                 (hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) &&
                 subscription?.Cycle === CYCLE.YEARLY &&
+                app === APPS.PROTONVPN_SETTINGS &&
                 showAVariant,
             upsells: unlimitedBannerGradientUpsells.upsells,
             element: (
@@ -186,6 +196,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             enabled:
                 (hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) &&
                 subscription?.Cycle === CYCLE.YEARLY &&
+                app === APPS.PROTONVPN_SETTINGS &&
                 showBVariant,
             upsells: unlimitedBannerGradientUpsells.upsells,
             element: (
@@ -203,6 +214,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             enabled:
                 (hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) &&
                 subscription?.Cycle === CYCLE.TWO_YEARS &&
+                app === APPS.PROTONVPN_SETTINGS &&
                 showAVariant,
             upsells: unlimitedBannerGradientUpsells.upsells,
             element: (
@@ -220,6 +232,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             enabled:
                 (hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) &&
                 subscription?.Cycle === CYCLE.TWO_YEARS &&
+                app === APPS.PROTONVPN_SETTINGS &&
                 showBVariant,
             upsells: unlimitedBannerGradientUpsells.upsells,
             element: (
@@ -237,7 +250,10 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             ),
         },
         {
-            enabled: (hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) && showAVariant,
+            enabled:
+                (hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) &&
+                showAVariant &&
+                app === APPS.PROTONVPN_SETTINGS,
             upsells: vpnPlusExtendSubscriptionUpsells.upsells,
             element: (
                 <>
@@ -250,7 +266,10 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             ),
         },
         {
-            enabled: (hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) && showBVariant,
+            enabled:
+                (hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) &&
+                showBVariant &&
+                app === APPS.PROTONVPN_SETTINGS,
             upsells: unlimitedBannerGradientUpsells.upsells,
             element: (
                 <>
@@ -262,6 +281,49 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
                         subscription={subscription as Subscription}
                         {...unlimitedBannerGradientUpsells}
                     />
+                </>
+            ),
+        },
+        {
+            enabled:
+                (hasMailFree || hasPassFree || hasVPNFree || hasDriveFree || hasLumoPlus) &&
+                (app === APPS.PROTONMAIL || app === APPS.PROTONCALENDAR),
+            upsells: [...mailPlusFromFreeUpsells.upsells, ...unlimitedBannerGradientUpsells.upsells],
+            element: (
+                <>
+                    <MailPlusFromFree subscription={subscription as Subscription} {...mailPlusFromFreeUpsells} />
+                    <UnlimitedBannerGradient
+                        showProductCards={false}
+                        showUpsellPanels={false}
+                        subscription={subscription as Subscription}
+                        {...unlimitedBannerGradientUpsells}
+                    />
+                </>
+            ),
+        },
+        {
+            enabled: hasMail(subscription) && subscription?.Cycle === CYCLE.YEARLY,
+            upsells: mailPlusExtendSubscriptionUpsells.upsells,
+            element: (
+                <UnlimitedBannerGradient
+                    showProductCards={true}
+                    showUpsellPanels={true}
+                    gridSectionHeaderCopy={c('Title').t`Get complete privacy coverage`}
+                    subscription={subscription as Subscription}
+                    {...unlimitedBannerGradientUpsells}
+                />
+            ),
+        },
+        {
+            enabled: hasMail(subscription),
+            upsells: mailPlusExtendSubscriptionUpsells.upsells,
+            element: (
+                <>
+                    <MailPlusExtendSubscription
+                        subscription={subscription as Subscription}
+                        {...mailPlusExtendSubscriptionUpsells}
+                    />
+                    <UnlimitedBannerPlain app={app} subscription={subscription as Subscription} />
                 </>
             ),
         },
@@ -311,8 +373,29 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             ),
         },
         {
-            enabled: showBVariant && hasFamily(subscription) && subscription?.Cycle !== CYCLE.MONTHLY,
+            enabled:
+                showBVariant &&
+                hasFamily(subscription) &&
+                subscription?.Cycle !== CYCLE.MONTHLY &&
+                app === APPS.PROTONVPN_SETTINGS,
             element: <VPNB2BBanner app={app} />,
+        },
+        {
+            enabled: app !== APPS.PROTONVPN_SETTINGS && hasFamily(subscription),
+            element: <PBSB2BBanner app={app} />,
+        },
+        {
+            enabled: hasVPNPassBundle(subscription),
+            upsells: unlimitedBannerGradientUpsells.upsells,
+            element: (
+                <UnlimitedBannerGradient
+                    showProductCards={true}
+                    showUpsellPanels={true}
+                    gridSectionHeaderCopy={c('Title').t`Get complete privacy coverage`}
+                    subscription={subscription as Subscription}
+                    {...unlimitedBannerGradientUpsells}
+                />
+            ),
         },
     ];
 
