@@ -18,14 +18,14 @@
         "bcryptjs": "^3.0.2"
     },
     "devDependencies": {
-        "@babel/preset-env": "^7.28.3",
-        "@babel/preset-typescript": "^7.27.1",
+        "@babel/preset-env": "^7.28.5",
+        "@babel/preset-typescript": "^7.28.5",
         "@babel/register": "^7.28.3",
         "@proton/eslint-config-proton": "workspace:^",
-        "eslint": "^9.37.0",
+        "eslint": "^9.39.0",
         "jest": "^30.2.0",
         "prettier": "^3.6.2",
-        "ts-jest": "^29.4.4",
+        "ts-jest": "^29.4.5",
         "typescript": "^5.9.3"
     }
 }

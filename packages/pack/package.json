@@ -13,22 +13,22 @@
         "pretty": "prettier --write  cli bin"
     },
     "dependencies": {
-        "@babel/core": "^7.28.4",
+        "@babel/core": "^7.28.5",
         "@babel/plugin-transform-class-properties": "^7.27.1",
-        "@babel/plugin-transform-runtime": "^7.28.3",
-        "@babel/preset-env": "^7.28.3",
-        "@babel/preset-react": "^7.27.1",
-        "@babel/preset-typescript": "^7.27.1",
+        "@babel/plugin-transform-runtime": "^7.28.5",
+        "@babel/preset-env": "^7.28.5",
+        "@babel/preset-react": "^7.28.5",
+        "@babel/preset-typescript": "^7.28.5",
         "@babel/runtime": "^7.28.4",
         "@pmmmwh/react-refresh-webpack-plugin": "^0.6.1",
         "@sentry/webpack-plugin": "^1.21.0",
-        "@swc/core": "^1.13.5",
+        "@swc/core": "^1.14.0",
         "autoprefixer": "^10.4.21",
         "babel-loader": "^10.0.0",
         "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
         "commander": "^12.1.0",
         "copy-webpack-plugin": "^13.0.1",
-        "core-js": "^3.45.1",
+        "core-js": "^3.46.0",
         "cross-env": "^10.1.0",
         "css-loader": "^7.1.2",
         "css-minimizer-webpack-plugin": "^7.0.2",
@@ -49,7 +49,7 @@
         "react-refresh": "^0.18.0",
         "resolve-url-loader": "^5.0.0",
         "sass": "1.79.5",
-        "sass-loader": "^16.0.5",
+        "sass-loader": "^16.0.6",
         "svgo-loader": "^4.0.0",
         "swc-loader": "^0.2.6",
         "terser-webpack-plugin": "^5.3.14",
@@ -61,7 +61,7 @@
         "webpack-subresource-integrity": "^5.1.0"
     },
     "devDependencies": {
-        "eslint": "^9.37.0",
+        "eslint": "^9.39.0",
         "prettier": "^3.6.2"
     },
     "peerDependencies": {
