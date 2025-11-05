@@ -1,4 +1,4 @@
-import type { HTMLProps, ReactElement, ReactNode, Ref } from 'react';
+import type { CSSProperties, HTMLProps, ReactElement, ReactNode, Ref } from 'react';
 import { Children, cloneElement, forwardRef, useCallback, useState } from 'react';
 
 import Popper from '@proton/components/components/popper/Popper';
@@ -33,6 +33,7 @@ export interface Props extends Omit<HTMLProps<HTMLElement>, 'title' | 'children'
     longTapDelay?: number;
     updateAnimationFrame?: boolean;
     tooltipClassName?: string;
+    tooltipStyle?: CSSProperties;
 }
 
 const getTooltipTypeClass = (type: TooltipTypeEnum) => {
@@ -100,6 +101,7 @@ const TooltipBase = (
         longTapDelay,
         updateAnimationFrame,
         tooltipClassName,
+        tooltipStyle,
         ...rest
     }: Props,
     ref: Ref<HTMLElement>
@@ -175,7 +177,7 @@ const TooltipBase = (
                 divRef={floating}
                 id={uid}
                 isOpen={!!title && isOpen}
-                style={{ ...position, ...arrow }}
+                style={{ ...position, ...arrow, ...tooltipStyle }}
                 onAnimationEnd={(event) => {
                     if (event.animationName.includes('anime-tooltip-out-last')) {
                         setState((oldState) => {

@@ -1,4 +1,4 @@
-import type { ComponentPropsWithoutRef, MouseEvent, ReactNode } from 'react';
+import type { CSSProperties, ComponentPropsWithoutRef, MouseEvent, ReactNode } from 'react';
 import { useState } from 'react';
 
 import { c } from 'ttag';
@@ -24,6 +24,7 @@ interface Props extends Omit<IconProps, 'title' | 'name'> {
     fakeDisabled?: boolean;
     colorPrimary?: boolean;
     tooltipClassName?: string;
+    tooltipStyle?: CSSProperties;
 }
 
 const Info = ({
@@ -38,6 +39,7 @@ const Info = ({
     colorPrimary = true,
     fakeDisabled = false,
     tooltipClassName,
+    tooltipStyle,
     ...rest
 }: Props) => {
     const [uid] = useState(generateUID('tooltip'));
@@ -69,6 +71,7 @@ const Info = ({
             longTapDelay={0}
             originalPlacement={originalPlacement}
             tooltipClassName={tooltipClassName}
+            tooltipStyle={tooltipStyle}
         >
             <button
                 tabIndex={buttonTabIndex}

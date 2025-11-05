@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Donut } from '@proton/atoms/Donut/Donut';
 import type { ThemeColor } from '@proton/colors/types';
 import AppsLogos from '@proton/components/components/appsLogos/AppsLogos';
-import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
+import Info from '@proton/components/components/link/Info';
 import { type Subscription, hasAllProductsB2CPlan, hasDrive, hasFree, hasMail } from '@proton/payments';
 import {
     APPS,
@@ -30,8 +30,6 @@ import {
     getStorageUsed,
 } from '@proton/shared/lib/user/storage';
 import useFlag from '@proton/unleash/useFlag';
-
-import { StorageSplitPopper } from './StorageSplitPopper';
 
 function getStorageText(maxSpace: number, usedSpace: number) {
     const unit = maxSpace >= sizeUnits.TB ? 'TB' : 'GB';
@@ -199,19 +197,11 @@ const FeatureElement = ({
                 <span className="text-sm color-hint flex items-center gap-1">
                     {title}
                     {tooltip && (
-                        <StorageSplitPopper tooltip={tooltip}>
-                            {
-                                <button
-                                    className="info-button inline-flex color-inherit relative rounded-full interactive-pseudo interactive--no-background"
-                                    type="button"
-                                >
-                                    <IcInfoCircle
-                                        className="color-primary"
-                                        alt={c('Action').t`More info: storage split`}
-                                    />
-                                </button>
-                            }
-                        </StorageSplitPopper>
+                        <Info
+                            tooltipClassName="bg-norm color-norm before:hidden border-norm border max-w-custom w-custom px-4 py-3 shadow-lifted"
+                            tooltipStyle={{ '--max-w-custom': '16rem', '--w-custom': '16rem' }}
+                            title={tooltip}
+                        />
                     )}
                 </span>
                 <span className="sr-only">:</span>
