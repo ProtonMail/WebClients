@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import { fireEvent, queryByTestId, render } from '@testing-library/react';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import type { ThemeColorUnion } from '@proton/colors/types';
 
 import Prompt from './Prompt';
