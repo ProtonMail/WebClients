@@ -1,7 +1,7 @@
 import { useMemo, useRef } from 'react';
 
 import { useLocalParticipant, useParticipants } from '@livekit/components-react';
-import type { LocalParticipant, RemoteParticipant } from '@proton-meet/livekit-client';
+import type { LocalParticipant, RemoteParticipant } from 'livekit-client';
 
 import { useDebouncedActiveSpeakers } from './useDebouncedActiveSpeakers';
 

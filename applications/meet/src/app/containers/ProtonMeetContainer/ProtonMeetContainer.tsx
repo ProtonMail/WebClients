@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
-import type { ExternalE2EEKeyProvider, Room } from '@proton-meet/livekit-client';
 import { ConnectionStateInfo, type GroupKeyInfo, MeetCoreErrorEnum } from '@proton-meet/proton-meet-core';
+import type { Room } from 'livekit-client';
 import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
@@ -35,6 +35,7 @@ import { usePictureInPicture } from '../../hooks/usePictureInPicture/usePictureI
 import { useWakeLock } from '../../hooks/useWakeLock';
 import type { MLSGroupState, MeetChatMessage } from '../../types';
 import { LoadingState } from '../../types';
+import type { ProtonMeetKeyProvider } from '../../utils/ProtonMeetKeyProvider';
 import { setupLiveKitAdminChangeEvent, setupWasmDependencies } from '../../utils/wasmUtils';
 import { MeetContainer } from '../MeetContainer';
 import { PrejoinContainer } from '../PrejoinContainer/PrejoinContainer';
@@ -48,7 +49,7 @@ enum MeetingDecryptionReadinessStatus {
 interface ProtonMeetContainerProps {
     guestMode?: boolean;
     room: Room;
-    keyProvider: ExternalE2EEKeyProvider;
+    keyProvider: ProtonMeetKeyProvider;
 }
 
 export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: ProtonMeetContainerProps) => {
@@ -126,8 +127,6 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
     const loadingStartTimeRef = useRef(0);
     const [mlsGroupState, setMlsGroupState] = useState<MLSGroupState | null>(null);
 
-    const keyProviderRef = useRef<ExternalE2EEKeyProvider | null>(null);
-
     const wasmApp = useWasmApp();
 
     const mlsSetupDone = useRef(false);
@@ -166,7 +165,7 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
         try {
             reportMLSRelatedError(key, epoch);
 
-            await keyProviderRef.current?.setKey(key, epoch);
+            await keyProvider.setKeyWithEpoch(key, epoch);
 
             const displayCode = await wasmApp?.getGroupDisplayCode();
             setMlsGroupState({ displayCode: displayCode?.full_code || null, epoch: epoch });
@@ -230,10 +229,6 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
                     throw new Error(c('Error').t`Failed to join meeting. Please try again later.`);
             }
         }
-    };
-
-    const handleKeyUpdate = async (keyProvider: ExternalE2EEKeyProvider) => {
-        keyProviderRef.current = keyProvider;
     };
 
     useEffect(() => {
@@ -377,9 +372,11 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
 
             reportMLSRelatedError(groupKey, epoch);
 
-            await keyProvider.setKey(groupKey as string, epoch);
+            if (!groupKey || !epoch) {
+                throw new Error('Group key or epoch is missing');
+            }
 
-            await handleKeyUpdate(keyProvider);
+            await keyProvider.setKeyWithEpoch(groupKey, epoch);
 
             // Turning auto subscribe off so we have better control over the quality of the tracks
             await room.connect(websocketUrl, accessToken, {

@@ -1,5 +1,5 @@
 import { useParticipants } from '@livekit/components-react';
-import { VideoQuality } from '@proton-meet/livekit-client';
+import { VideoQuality } from 'livekit-client';
 
 import { useMeetContext } from '../contexts/MeetContext';
 

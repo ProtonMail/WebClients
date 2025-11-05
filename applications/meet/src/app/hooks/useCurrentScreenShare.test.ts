@@ -1,6 +1,6 @@
 import { useLocalParticipant, useParticipants, useRoomContext, useTracks } from '@livekit/components-react';
-import { Track } from '@proton-meet/livekit-client';
 import { renderHook } from '@testing-library/react';
+import { Track } from 'livekit-client';
 import type { Mock } from 'vitest';
 
 import useNotifications from '@proton/components/hooks/useNotifications';

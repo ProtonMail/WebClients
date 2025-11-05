@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 
 import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
 import { BackgroundBlur, type BackgroundProcessorOptions } from '@livekit/track-processors';
-import type { LocalParticipant, LocalTrackPublication } from '@proton-meet/livekit-client';
-import { ConnectionState, Track } from '@proton-meet/livekit-client';
+import type { LocalParticipant, LocalTrackPublication } from 'livekit-client';
+import { ConnectionState, Track } from 'livekit-client';
 
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import debounce from '@proton/utils/debounce';

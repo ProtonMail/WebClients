@@ -1,4 +1,4 @@
-import type { LocalParticipant, Participant, RemoteParticipant } from '@proton-meet/livekit-client';
+import type { LocalParticipant, Participant, RemoteParticipant } from 'livekit-client';
 
 export const getParticipantDisplayColors = (
     participant: Partial<RemoteParticipant> | Partial<LocalParticipant> | Partial<Participant>

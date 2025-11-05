@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { Participant } from '@proton-meet/livekit-client';
+import type { Participant } from 'livekit-client';
 
 import './SpeakerIndicator.scss';
 

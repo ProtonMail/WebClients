@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 import { useLocalParticipant } from '@livekit/components-react';
 import type { KrispNoiseFilterProcessor } from '@livekit/krisp-noise-filter';
 import { KrispNoiseFilter, isKrispNoiseFilterSupported } from '@livekit/krisp-noise-filter';
-import { Track } from '@proton-meet/livekit-client';
+import { Track } from 'livekit-client';
 
 import { audioQuality } from '../qualityConstants';
 import type { SwitchActiveDevice } from '../types';

@@ -1,8 +1,8 @@
 import { createContext, useContext } from 'react';
 
 import type { TrackReference } from '@livekit/components-react';
-import { VideoQuality } from '@proton-meet/livekit-client';
-import type { LocalParticipant, Participant, RemoteParticipant } from '@proton-meet/livekit-client';
+import { VideoQuality } from 'livekit-client';
+import type { LocalParticipant, Participant, RemoteParticipant } from 'livekit-client';
 
 import { PAGE_SIZE } from '../constants';
 import type { MLSGroupState, MeetChatMessage, ParticipantEntity, ParticipantEventRecord } from '../types';
