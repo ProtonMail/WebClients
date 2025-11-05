@@ -1,5 +1,6 @@
 import { Suspense, lazy, useEffect, useRef, useState } from 'react';
 
+import { differenceInDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
@@ -50,7 +51,15 @@ const VPNDrawerSpotlight = ({ children }: Props) => {
     const {
         welcomeFlags: { isDone },
     } = useWelcomeFlags();
-    const { show, onDisplayed, onClose } = useSpotlightOnFeature(FeatureCode.SpotlightVPNDrawer, isDone && user.isFree);
+
+    const accountCreateTime = user.CreateTime ? fromUnixTime(user.CreateTime) : new Date();
+    const daysSinceAccountCreation = differenceInDays(new Date(), accountCreateTime);
+    const isAccountOldEnough = daysSinceAccountCreation >= 7;
+
+    const { show, onDisplayed, onClose } = useSpotlightOnFeature(
+        FeatureCode.SpotlightVPNDrawer,
+        isDone && user.isFree && isAccountOldEnough
+    );
     const shouldShowSpotlight = useSpotlightShow(show, 3 * SECOND);
 
     const handleClick = () => {
