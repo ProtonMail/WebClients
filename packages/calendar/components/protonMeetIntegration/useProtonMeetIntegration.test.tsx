@@ -88,7 +88,7 @@ const defaultProps = {
 
 const password = 'testpassword';
 
-const meetingLink = `/join/id-abcdefgh#pwd-${password}`;
+const meetingLink = `/join/id-abcdefghij#pwd-${password}`;
 
 const mockProtonMeetVideoConference = {
     ID: '123',
