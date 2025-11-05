@@ -1,3 +1,5 @@
+import { BASE_PASSWORD_LENGTH, MEETING_LINK_ID_LENGTH } from '../constants';
+
 export const parseMeetingLink = (link: string) => {
     const parts = link.split('#');
 
@@ -8,6 +10,10 @@ export const parseMeetingLink = (link: string) => {
     const meetingId = parts[0]?.split('/')?.at(-1)?.replace('id-', '');
 
     const urlPassword = parts[1]?.replace('pwd-', '') ?? '';
+
+    if (meetingId?.length !== MEETING_LINK_ID_LENGTH || urlPassword.length !== BASE_PASSWORD_LENGTH) {
+        throw new Error('Invalid meeting link');
+    }
 
     return {
         meetingId,

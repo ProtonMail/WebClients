@@ -1,0 +1,56 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="56"
+    height="56"
+    fill="none"
+    viewBox="0 0 56 56"
+>
+    <style>
+        #light {
+            animation: 2s ease-in-out infinite anime-move-light;
+        }
+        @keyframes anime-move-light {
+            from {
+                opacity: 0;
+                cx: 0;
+                cy: -60;
+            }
+            50% {
+                opacity: 1;
+                cx: 50;
+            }
+            to {
+                opacity: 0;
+                cx: 20;
+                cy: 112;
+            }
+        }
+    </style>
+    <path
+        id="logo"
+        fill="#6D4AFF"
+        d="M5.88 41.353v14.56H16.1V41.985a5.11 5.11 0 015.11-5.11h10.479a18.436 18.436 0 0018.435-18.437A18.434 18.434 0 0031.69 0H5.88v18.2H16.1V9.618h14.897a8.723 8.723 0 110 17.445H20.166A14.281 14.281 0 005.88 41.353z"
+    />
+    <path
+        id="logo-gradient"
+        fill="url(#p-gradient)"
+        d="M21.207 36.873A15.328 15.328 0 005.88 52.2v3.712H16.1V41.983a5.11 5.11 0 015.107-5.11z"
+    />
+    <mask id="light-mask" style="mask-type: alpha">
+        <use href="#logo" />
+    </mask>
+    <g mask="url(#light-mask)">
+        <circle id="light" cx="40" cy="-52" r="50" fill="url(#light-gradient)" />
+    </g>
+    <defs>
+        <radialGradient id="light-gradient">
+            <stop stop-color="#fff" stop-opacity=".5" />
+            <stop stop-color="#fff" stop-opacity="0" offset="1" />
+        </radialGradient>
+        <linearGradient id="p-gradient" x1="13" x2="13" y1="53" y2="32" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#6D4BFD" />
+            <stop stop-color="#1C0554" offset="1" />
+        </linearGradient>
+    </defs>
+</svg>
