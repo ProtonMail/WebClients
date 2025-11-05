@@ -6,6 +6,7 @@ import generateUID from '@proton/utils/generateUID';
 import { getActionEventManager } from '../../utils/ActionEventManager/ActionEventManager';
 import { ActionEventName } from '../../utils/ActionEventManager/ActionEventManagerTypes';
 import { handleSdkError } from '../../utils/errorHandling/useSdkErrorHandler';
+import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { MAX_UPLOAD_FOLDER_LOAD, MAX_UPLOAD_JOBS } from './constants';
 import { UploadConflictStrategy, UploadConflictType } from './types';
 import { useUploadControllerStore } from './uploadController.store';
@@ -275,6 +276,10 @@ class UploadManager {
                 folder.modificationTime
             );
 
+            if (nodeUid) {
+                void this.onChangeCallback(folderId, actualParentUid, { type: UploadEventType.Complete, nodeUid });
+            }
+
             const updatedItem = uploadQueueStore.getItem(folderId);
             if (updatedItem?.status === UploadStatus.Pending) {
                 return;
@@ -358,7 +363,8 @@ class UploadManager {
         const drive = getDrive();
         try {
             const folder = await drive.createFolder(parentUid, folderName, modificationTime);
-            return folder.ok ? folder.value.uid : folder.error.uid;
+            const { node } = getNodeEntity(folder);
+            return node.uid;
         } catch (error) {
             if (error instanceof NodeWithSameNameExistsValidationError && error.existingNodeUid) {
                 const uploadQueueStore = useUploadQueueStore.getState();
@@ -693,9 +699,9 @@ class UploadManager {
      * @param items - The dropped items from a drag-and-drop event
      * @param parentUid - The parent node UID where files should be uploaded
      */
-    async uploadDrop(items: DataTransferItemList, parentUid: string) {
-        const files = await processDroppedItems(items);
-        await this.upload(files, parentUid);
+    async uploadDrop(items: DataTransferItemList, fileList: FileList, parentUid: string) {
+        const filesEntries = await processDroppedItems(items, fileList);
+        await this.upload(filesEntries, parentUid);
     }
 
     /**
