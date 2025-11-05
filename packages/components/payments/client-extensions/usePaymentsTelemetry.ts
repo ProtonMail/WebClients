@@ -1,7 +1,6 @@
 import useApi from '@proton/components/hooks/useApi';
-import type { Cycle } from '@proton/payments';
-import type { ADDON_NAMES, PLANS, PaymentMethodFlow } from '@proton/payments';
-import { type PaymentProcessorType, getSystemByHookType } from '@proton/payments';
+import type { ADDON_NAMES, Cycle, PLANS, PaymentMethodFlow, PaymentProcessorType } from '@proton/payments';
+import { getSystemByHookType } from '@proton/payments';
 import { TelemetryMeasurementGroups, TelemetryPaymentsEvents } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import type { Api } from '@proton/shared/lib/interfaces';
@@ -21,11 +20,24 @@ export interface PaymentsTelemetry {
     reportPaymentFailure: (method: PaymentProcessorType | 'n/a', override?: Overrides) => void;
 }
 
-export type TelemetryPaymentFlow =
-    | PaymentMethodFlow
+type DashboardTelemetryFlow =
     | 'dashboard-upgrade-control'
     | 'dashboard-upgrade-A'
-    | 'dashboard-upgrade-B';
+    | 'dashboard-upgrade-B'
+    | 'mail-dashboard-variant-A'
+    | 'mail-dashboard-variant-B'
+    | 'calendar-dashboard-variant-A'
+    | 'calendar-dashboard-variant-B'
+    | 'pass-dashboard-variant-A'
+    | 'pass-dashboard-variant-B'
+    | 'drive-dashboard-variant-A'
+    | 'drive-dashboard-variant-B'
+    | 'wallet-dashboard-variant-A'
+    | 'wallet-dashboard-variant-B'
+    | 'lumo-dashboard-variant-A'
+    | 'lumo-dashboard-variant-B';
+
+export type TelemetryPaymentFlow = PaymentMethodFlow | DashboardTelemetryFlow;
 
 // since it's telemetry, the types from the main app should not be reused
 type DimensionFlows =
@@ -38,9 +50,7 @@ type DimensionFlows =
     | 'subscription'
     | 'add-card'
     | 'add-paypal'
-    | 'dashboard-upgrade-control'
-    | 'dashboard-upgrade-A'
-    | 'dashboard-upgrade-B';
+    | DashboardTelemetryFlow;
 
 function mapFlows(flow: TelemetryPaymentFlow): DimensionFlows {
     if (flow === 'signup-v2') {

@@ -4,11 +4,8 @@ import { c } from 'ttag';
 
 import { usePlans } from '@proton/account/plans/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import { DashboardCard } from '@proton/atoms/DashboardCard/DashboardCard';
-import { DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
-import { DashboardCardImage } from '@proton/atoms/DashboardCard/DashboardCard';
-import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
-import { DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
+import { DashboardCard, DashboardCardContent, DashboardCardImage } from '@proton/atoms/DashboardCard/DashboardCard';
+import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import DriveLogo from '@proton/components/components/logo/DriveLogo';
 import MailLogo from '@proton/components/components/logo/MailLogo';
 import PassLogo from '@proton/components/components/logo/PassLogo';
@@ -26,11 +23,11 @@ import {
     PLAN_NAMES,
     type PlansMap,
     type Subscription,
+    getHasConsumerVpnPlan,
     getNormalCycleFromCustomCycle,
     getPlanByName,
     getPricePerCycle,
 } from '@proton/payments';
-import { getHasConsumerVpnPlan } from '@proton/payments';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {

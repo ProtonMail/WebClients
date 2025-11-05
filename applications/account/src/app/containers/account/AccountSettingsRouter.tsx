@@ -9,12 +9,17 @@ import { EasySwitchSettingsArea } from '@proton/activation';
 import {
     AccessibilitySection,
     AccountRecoverySection,
+    AlsoInYourPlanProtonDrive,
+    AlsoInYourPlanProtonPass,
+    AlsoInYourPlanProtonVPN,
+    AlsoInYourPlanSection,
     AssistantToggle,
     AutomaticSubscriptionModal,
     CancelSubscriptionSection,
     CancelSubscriptionViaSupportSection,
     CredentialLeakSection,
     CreditsSection,
+    DashboardTelemetry,
     DataRecoverySection,
     DeleteSection,
     DowngradeSubscriptionSection,
@@ -27,6 +32,8 @@ import {
     InvoicesSection,
     LanguageAndTimeSection,
     LogsSection,
+    MailBlogSection,
+    MailDownloadAndInfoSection,
     OverviewSection,
     PasswordsSection,
     PaymentMethodsSection,
@@ -49,7 +56,6 @@ import {
     ThirdPartySection,
     TwoFactorSection,
     UsernameSection,
-    VPNDashboardTelemetry,
     VpnAlsoInYourPlanSection,
     VpnBlogSection,
     VpnDownloadAndInfoSection,
@@ -81,7 +87,8 @@ const AccountSettingsRouter = ({
     const isReferralExpansionEnabled = useFlag('ReferralExpansion');
     const {
         routes: {
-            dashboardV2,
+            vpnDashboardV2,
+            mailDashboardV2,
             subscription,
             dashboard,
             upgrade,
@@ -98,12 +105,12 @@ const AccountSettingsRouter = ({
 
     return (
         <Switch>
-            {getIsSectionAvailable(dashboardV2) && (
-                <Route path={getSectionPath(path, dashboardV2)}>
-                    <VPNDashboardTelemetry app={app} />
+            {getIsSectionAvailable(vpnDashboardV2) && (
+                <Route path={getSectionPath(path, vpnDashboardV2)}>
+                    <DashboardTelemetry app={app} />
                     <AutomaticSubscriptionModal />
                     <PrivateMainSettingsArea
-                        config={dashboardV2}
+                        config={vpnDashboardV2}
                         mainAreaClass="bg-lowered settings-cards"
                         wrapperClass="w-full p-4 lg:p-6 xl:p-12 max-w-custom mx-auto"
                         style={{ '--max-w-custom': '1500px' }}
@@ -113,6 +120,28 @@ const AccountSettingsRouter = ({
                         <VpnDownloadAndInfoSection app={app} />
                         <VpnAlsoInYourPlanSection app={app} />
                         <VpnBlogSection />
+                    </PrivateMainSettingsArea>
+                </Route>
+            )}
+            {getIsSectionAvailable(mailDashboardV2) && (
+                <Route path={getSectionPath(path, mailDashboardV2)}>
+                    <DashboardTelemetry app={app} />
+                    <AutomaticSubscriptionModal />
+                    <PrivateMainSettingsArea
+                        config={mailDashboardV2}
+                        mainAreaClass="bg-lowered settings-cards"
+                        wrapperClass="w-full p-4 lg:p-6 xl:p-12 max-w-custom mx-auto"
+                        style={{ '--max-w-custom': '93.75rem' }}
+                    >
+                        <YourPlanSectionV2 app={app} />
+                        <YourPlanUpsellsSectionV2 app={app} />
+                        <MailDownloadAndInfoSection app={app} />
+                        <AlsoInYourPlanSection app={app}>
+                            <AlsoInYourPlanProtonPass />
+                            <AlsoInYourPlanProtonDrive />
+                            <AlsoInYourPlanProtonVPN />
+                        </AlsoInYourPlanSection>
+                        <MailBlogSection />
                     </PrivateMainSettingsArea>
                 </Route>
             )}
@@ -141,7 +170,7 @@ const AccountSettingsRouter = ({
             )}
             {getIsSectionAvailable(dashboard) && (
                 <Route path={getSectionPath(path, dashboard)}>
-                    <VPNDashboardTelemetry app={app} />
+                    <DashboardTelemetry app={app} />
                     <AutomaticSubscriptionModal />
                     <PrivateMainSettingsArea config={dashboard}>
                         <YourStorageSection app={app} />

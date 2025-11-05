@@ -428,6 +428,7 @@ export {
     regularCycles,
     willTrialExpireInLessThan1Week,
     hasTrialExpiredLessThan4Weeks,
+    hasFreeOrPlus,
 } from './core/subscription/helpers';
 export {
     type Coupon,

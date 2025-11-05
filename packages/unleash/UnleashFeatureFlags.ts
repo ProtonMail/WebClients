@@ -91,6 +91,7 @@ enum AccountFlag {
     SsoForPbs = 'SsoForPbs',
     DataRetentionPolicy = 'DataRetentionPolicy',
     UserGroupsNoCustomDomain = 'UserGroupsNoCustomDomain',
+    MailDashboard = 'MailDashboard',
 }
 
 enum PaymentsFlag {
