@@ -15,6 +15,7 @@ import type { MaybeNull } from '@proton/pass/types';
 import { isActiveElement } from '@proton/pass/utils/dom/active-element';
 import { isInputElement } from '@proton/pass/utils/dom/predicates';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
+import { onNextTick } from '@proton/pass/utils/time/next-tick';
 import noop from '@proton/utils/noop';
 
 import { type FieldAnchor, createFieldAnchor } from './field.anchor';
@@ -164,17 +165,21 @@ export const createFieldHandles = ({ element, fieldType, getFormHandle }: Create
             field.icon?.reposition();
         },
 
-        autofill: (value, options) =>
-            field
+        autofill: (value, options) => {
+            const release = field.preventAction();
+            interactivity.unlock();
+
+            return field
                 .getVisibility()
                 .then(async (visible) => {
                     if (visible) {
-                        field.preventAction();
                         await createAutofill(element)(value, options);
                         field.autofilled = options?.type ?? field.fieldType;
                     }
                 })
-                .catch(noop),
+                .catch(noop)
+                .finally(onNextTick(release));
+        },
 
         setIcon: (val) => {
             field.icon = val;

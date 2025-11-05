@@ -64,6 +64,12 @@ const autofillCounter = (key: keyof AutofillCounters, state: AutofillCounters) =
                 )))
     );
 
+/** Duration in milliseconds to lock field interactivity after autofill completion.
+ * Safari requires 250ms (vs 50ms default) to accommodate websites that apply custom
+ * focus management patches specifically for Safari (e.g., Adyen payment provider),
+ * preventing race conditions where focus-to-next-field logic interferes with autofill. */
+const AUTOFILL_LOCK_TIME = BUILD_TARGET === 'safari' ? 250 : 50;
+
 export const createAutofillService = ({ controller }: ContentScriptContextFactoryOptions) => {
     const state: AutofillState = { processing: false };
 
@@ -102,11 +108,22 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
         if (ccFields && authorized) await getCreditCardsCount();
     });
 
+    /** Locks field interactivity during autofill to prevent "focus-to-next"
+     * interference. Fields unlock themselves before filling (see field.ts). */
     const autofillSequence = <T extends AsyncCallback>(fn: T) =>
-        (async (...args: Parameters<T>) => {
+        withContext<(...args: Parameters<T>) => Promise<Awaited<ReturnType<T>>>>(async (ctx, ...args) => {
+            const formManager = ctx?.service.formManager;
+            const fields = formManager?.getTrackedFields();
+
+            fields?.forEach((field) => field.interactivity.lock());
             state.processing = true;
             const res = await fn(...args);
-            nextTick(() => (state.processing = false));
+
+            nextTick(() => {
+                state.processing = false;
+                fields?.forEach((field) => field.interactivity.unlock());
+            });
+
             return res;
         }) as T;
 
@@ -118,8 +135,8 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
         sendContentScriptTelemetry(TelemetryEventName.AutofillTriggered, {}, { location: 'source' });
     });
 
-    const autofillPassword = withContext<(form: FormHandle, password: string) => Promise<void>>(
-        async (ctx, form, password) => {
+    const autofillPassword = autofillSequence(
+        withContext<(form: FormHandle, password: string) => Promise<void>>(async (ctx, form, password) => {
             const url = ctx?.getExtensionContext()?.url;
             if (url) {
                 for (const field of form.getFieldsFor(FieldType.PASSWORD_NEW)) await field.autofill(password);
@@ -138,7 +155,7 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
                     })
                 );
             }
-        }
+        })
     );
 
     const autofillEmail = autofillSequence((field: FieldHandle, data: string) => field.autofill(data));
@@ -211,7 +228,7 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
         );
     });
 
-    const handleAutofill = withContext<(payload: AutofillRequest<'fill'>) => Promise<AutofillResult>>(
+    const executeAutofill = withContext<(payload: AutofillRequest<'fill'>) => Promise<AutofillResult>>(
         (ctx, payload) => {
             switch (payload.type) {
                 case 'creditCard':
@@ -227,19 +244,52 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
         }
     );
 
+    /** Cross-frame autofill orchestration with interactivity management :
+     * 1. 'start': Lock all fields to prevent focus stealing during async fill operations
+     * 2. 'fill': Execute autofill (async, may span multiple frames)
+     * 3. 'completed': Unlock target field for user interaction, re-lock others briefly */
     const onAutofillRequest: FrameMessageHandler<WorkerMessageType.AUTOFILL_SEQUENCE> = withContext(
         (ctx, { payload }, sendResponse) => {
+            const formManager = ctx?.service.formManager;
+            const fields = formManager?.getTrackedFields();
+
             switch (payload.status) {
                 case 'start':
+                    /** cross-frame autofill sequence starting:
+                     * lock all tracked fields temporarily. */
+                    fields?.forEach((field) => field.interactivity.lock());
                     state.processing = true;
                     break;
+
                 case 'fill':
-                    void handleAutofill(payload).then(sendResponse);
+                    /** fill step: each field will unlock itself
+                     * as part of its autofill call */
+                    void executeAutofill(payload).then(sendResponse);
                     return true;
+
                 case 'completed':
                     const { formId, fieldId } = payload.refocus;
-                    ctx?.service.formManager.getFormById(formId)?.getFieldById(fieldId)?.focus({ preventAction: true });
-                    nextTick(() => (state.processing = false));
+                    const refocusable = formManager?.getFormById(formId)?.getFieldById(fieldId);
+
+                    refocusable?.interactivity.unlock();
+                    refocusable?.focus({ preventAction: true });
+
+                    fields?.forEach((field) => {
+                        /** Re-lock tracked fields to prevent race conditions where cross-frame
+                         * "focus next field" requests arrive after autofill completes (common on
+                         * payment forms with address/card fields across iframes). */
+                        if (field.element !== refocusable?.element) {
+                            field.interactivity.lock(AUTOFILL_LOCK_TIME);
+                        }
+                    });
+
+                    nextTick(() => {
+                        state.processing = false;
+                        /** UX: if field is unfocused during interactivity
+                         * lock period, sync field to detach icon. */
+                        setTimeout(() => refocusable?.sync(), 250);
+                    });
+
                     break;
             }
         }
