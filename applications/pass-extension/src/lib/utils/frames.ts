@@ -73,7 +73,7 @@ export type AutofillableFrame = { frameId: FrameID; crossOrigin: boolean };
  * prevent malicious intermediate frames from intercepting autofill data. */
 export const getAutofillableFrameIDs = async (
     tabId: TabId,
-    origin: string,
+    frameOrigin: string,
     originFrameID: FrameID
 ): Promise<AutofillableFrame[]> => {
     const frames = await getTabFrames(tabId, { parseOrigin: true });
@@ -81,14 +81,14 @@ export const getAutofillableFrameIDs = async (
      * autofill for UX - handles cases where legitimate subframes need to autofill
      * on their parent domain (eg: payment forms with non-psp fields in the top-frame) */
     const crossOrigin = originFrameID !== 0 ? frames.get(0)?.origin : null;
-    const allowedOrigins = [origin, crossOrigin].filter(truthy);
+    const allowedOrigins = [frameOrigin, crossOrigin].filter(truthy);
     const autofillableFrameIDs: AutofillableFrame[] = [];
 
     for (const [frameId, frame] of frames) {
         if (frame.origin && validateFramePath(frames, frameId, allowedOrigins)) {
             autofillableFrameIDs.push({
                 frameId,
-                crossOrigin: frame.origin !== origin,
+                crossOrigin: frame.origin !== frameOrigin,
             });
         }
     }
