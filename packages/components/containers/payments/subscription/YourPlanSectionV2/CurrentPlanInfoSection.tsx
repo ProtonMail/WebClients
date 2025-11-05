@@ -25,10 +25,8 @@ import {
     isTrial,
 } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
+import { APPS } from '@proton/shared/lib/constants';
 import type { Address, Organization, UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
-import { getCompleteSpaceDetails, getPlanToUpsell, getSpace } from '@proton/shared/lib/user/storage';
 import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -168,7 +166,6 @@ export const CurrentPlanInfoSection = ({
     editBillingCycle = false,
 }: CurrentPlanInfoSectionProps) => {
     const [openSubscriptionModal] = useSubscriptionModal();
-    const space = getSpace(user);
     const { isFree, canPay, isMember } = user;
     const telemetryFlow = useDashboardPaymentFlow(app);
     const goToSettings = useSettingsLink();
@@ -192,6 +189,14 @@ export const CurrentPlanInfoSection = ({
         !isManagedExternally(subscription);
 
     const showExploreOtherPlans = user.isPaid && user.canPay && canModify(subscription);
+
+    const handleExplorePlans = () => {
+        openSubscriptionModal({
+            step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
+            metrics: { source: 'upsells' },
+            telemetryFlow,
+        });
+    };
 
     const handleEditPayment = (step = SUBSCRIPTION_STEPS.CHECKOUT) =>
         openSubscriptionModal({
@@ -243,22 +248,7 @@ export const CurrentPlanInfoSection = ({
         }
 
         if (isFree && ([APPS.PROTONMAIL, APPS.PROTONDRIVE, APPS.PROTONCALENDAR] as APP_NAMES[]).includes(app)) {
-            const details = getCompleteSpaceDetails(space);
-            const plan = getPlanToUpsell({ storageDetails: details, app });
-            return (
-                <ButtonLike
-                    as={SettingsLink}
-                    path={addUpsellPath(
-                        getUpgradePath({ user, subscription, plan }),
-                        getUpsellRefFromApp({
-                            app,
-                            feature: SHARED_UPSELL_PATHS.STORAGE_PERCENTAGE,
-                            component: UPSELL_COMPONENT.BANNER,
-                            fromApp: app,
-                        })
-                    )}
-                >{c('Action').t`Get more storage`}</ButtonLike>
-            );
+            return <Button onClick={handleExplorePlans}>{c('Action').t`Get more storage`}</Button>;
         }
 
         return null;
