@@ -3,13 +3,15 @@ import { useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { ButtonLike, InlineLinkButton, Tooltip } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Dropdown, DropdownMenuButton, usePopperAnchor } from '@proton/components';
-import { IcSquares } from '@proton/icons';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import ProtonLogo from '@proton/components/components/logo/ProtonLogo';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { IcSquares } from '@proton/icons';
 import { ADDRESS_TYPE, APPS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getIsAddressActive, getIsBYOEAddress, getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';

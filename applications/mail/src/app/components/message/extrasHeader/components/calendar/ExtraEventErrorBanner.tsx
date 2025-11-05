@@ -2,7 +2,8 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { Banner, InlineLinkButton } from '@proton/atoms';
+import { Banner } from '@proton/atoms/Banner/Banner';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { useApi } from '@proton/components';
 import type { EventInvitationError } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
 import { INVITATION_ERROR_TYPE } from '@proton/shared/lib/calendar/icsSurgery/errors/icsSurgeryErrorTypes';

@@ -1,7 +1,7 @@
 import type { RefObject } from 'react';
 import { memo, useEffect, useRef } from 'react';
 
-import { Scroll } from '@proton/atoms';
+import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import { useToggle } from '@proton/components';
 import { useLabels } from '@proton/mail';
 import { isEditing } from '@proton/shared/lib/busy';

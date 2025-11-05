@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Checkbox, DropdownMenu, DropdownMenuButton } from '@proton/components';
 import { IcCheckmarkTriple, IcEnvelopeDot, IcEnvelopeOpen, IcStar, IcStarFilled } from '@proton/icons';
 

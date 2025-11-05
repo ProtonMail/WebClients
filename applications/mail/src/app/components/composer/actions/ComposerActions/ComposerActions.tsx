@@ -5,7 +5,8 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { Button, Tooltip, Vr } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { EditorMetadata } from '@proton/components';
 import { useActiveBreakpoint, useModalStateObject, useSpotlightOnFeature } from '@proton/components';
 import ComposerAssistantUpsellModal from '@proton/components/components/upsell/modals/ComposerAssistantUpsellModal';
@@ -281,8 +282,10 @@ const ComposerActions = ({
                                                 aria-pressed={isAssistantOpened}
                                                 className="flex"
                                             >
-                                                <IcPenSparks alt={c('Action').t`Your email writing assistant`}
-                                                    style={{ color: '#D132EA' }} />
+                                                <IcPenSparks
+                                                    alt={c('Action').t`Your email writing assistant`}
+                                                    style={{ color: '#D132EA' }}
+                                                />
                                             </Button>
                                         </ComposerAssistantSpotlight>
                                     </div>

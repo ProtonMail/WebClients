@@ -2,7 +2,8 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Kbd, Tooltip } from '@proton/atoms';
+import { Kbd } from '@proton/atoms/Kbd/Kbd';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { SidebarPrimaryButton } from '@proton/components';
 import { IcPencil } from '@proton/icons';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';

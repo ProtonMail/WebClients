@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { Prompt, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
 import { deleteConversations } from '@proton/shared/lib/api/conversations';

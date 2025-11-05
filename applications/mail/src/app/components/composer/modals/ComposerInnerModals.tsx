@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Button, Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
+import { Button } from '@proton/atoms/Button/Button';
 import { Alert, Checkbox, useLocalState } from '@proton/components';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';

@@ -3,11 +3,14 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { Banner, Button, Href, InlineLinkButton } from '@proton/atoms';
+import { Banner } from '@proton/atoms/Banner/Banner';
+import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { useApi, useModalState, useNotifications } from '@proton/components';
-import { IcExclamationTriangleFilled } from '@proton/icons';
 import type { PublicKeyReference } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
+import { IcExclamationTriangleFilled } from '@proton/icons';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageVerification, MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';

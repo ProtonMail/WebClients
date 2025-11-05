@@ -2,7 +2,7 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { InlineLinkButton } from '@proton/atoms';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { IcMagnifier } from '@proton/icons';
 import { getHumanLabelID } from '@proton/mail/helpers/location';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

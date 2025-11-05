@@ -3,7 +3,8 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import { Banner, Button } from '@proton/atoms';
+import { Banner } from '@proton/atoms/Banner/Banner';
+import { Button } from '@proton/atoms/Button/Button';
 import { CalendarInviteButtons, Loader, useDrawer, useNotifications } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';

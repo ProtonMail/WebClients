@@ -4,7 +4,8 @@ import { c, msgid } from 'ttag';
 
 import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { Button, Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
+import { Button } from '@proton/atoms/Button/Button';
 import { useApi, useNotifications, useSpotlightOnFeature } from '@proton/components';
 import { IcCheckmark } from '@proton/icons';
 import useAssistantSubscriptionStatus, {

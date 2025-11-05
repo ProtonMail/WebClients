@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { DropdownMenu, DropdownMenuButton, SimpleDropdown } from '@proton/components';
 import { IcListArrowDown, IcListArrowUp, IcSizeArrowDown, IcSizeArrowUp } from '@proton/icons';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

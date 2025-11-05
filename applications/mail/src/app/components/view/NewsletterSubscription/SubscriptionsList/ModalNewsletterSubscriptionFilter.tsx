@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { Checkbox, Label, type ModalProps, Prompt, useNotifications } from '@proton/components';
 
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';

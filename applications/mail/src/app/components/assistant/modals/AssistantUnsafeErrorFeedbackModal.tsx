@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import type { ModalStateProps } from '@proton/components';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useApi, useNotifications } from '@proton/components';
 import { IcInfoCircle } from '@proton/icons';

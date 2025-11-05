@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Banner, Href } from '@proton/atoms';
+import { Banner } from '@proton/atoms/Banner/Banner';
+import { Href } from '@proton/atoms/Href/Href';
 import { IcRobot } from '@proton/icons';
 import type { MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

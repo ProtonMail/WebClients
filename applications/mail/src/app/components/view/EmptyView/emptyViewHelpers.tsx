@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Button, Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
+import { Button } from '@proton/atoms/Button/Button';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 

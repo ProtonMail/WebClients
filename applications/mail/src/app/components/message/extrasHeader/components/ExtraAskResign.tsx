@@ -2,7 +2,9 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Banner, Button, Href } from '@proton/atoms';
+import { Banner } from '@proton/atoms/Banner/Banner';
+import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
 import { useModalState } from '@proton/components';
 import { IcExclamationTriangleFilled } from '@proton/icons';
 import type { MessageVerification, MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';

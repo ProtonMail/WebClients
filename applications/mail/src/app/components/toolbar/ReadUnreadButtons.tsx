@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Kbd } from '@proton/atoms';
+import { Kbd } from '@proton/atoms/Kbd/Kbd';
 import { ToolbarButton } from '@proton/components';
 import { IcEnvelopeDot, IcEnvelopeOpen } from '@proton/icons';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';

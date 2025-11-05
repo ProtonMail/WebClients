@@ -3,7 +3,7 @@ import { forwardRef, useMemo } from 'react';
 import { addDays, addSeconds, format, fromUnixTime, getUnixTime, isEqual, nextMonday, set } from 'date-fns';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { DropdownMenu, DropdownMenuButton, SimpleDropdown, UpsellModal, useModalState } from '@proton/components';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { YEAR_REGEX } from '@proton/shared/lib/date/date';

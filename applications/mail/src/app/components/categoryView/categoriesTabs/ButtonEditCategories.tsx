@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { Spotlight, useModalState } from '@proton/components';
 import { IcSliders2 } from '@proton/icons';
 

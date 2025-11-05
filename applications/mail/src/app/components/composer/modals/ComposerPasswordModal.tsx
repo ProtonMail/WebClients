@@ -1,7 +1,7 @@
 import { addDays, differenceInDays } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import { Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
 import { useNotifications } from '@proton/components';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';

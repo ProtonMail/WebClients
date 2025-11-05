@@ -3,7 +3,7 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { useFocusTrap, useHotkeys } from '@proton/components';
 
 import InnerModalContent from './InnerModal/InnerModalContent';

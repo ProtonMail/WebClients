@@ -4,7 +4,7 @@ import { addDays, endOfToday, getUnixTime, isToday } from 'date-fns';
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
 import { DateInputTwo, InputFieldTwo, TimeInput } from '@proton/components';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

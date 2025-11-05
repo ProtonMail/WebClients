@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { type ModalProps, Prompt, useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 

@@ -3,7 +3,9 @@ import { type MouseEvent, Suspense, lazy } from 'react';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { Button, Kbd, Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Kbd } from '@proton/atoms/Kbd/Kbd';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { ButtonGroup, useActiveBreakpoint, useContactModals, useToggle } from '@proton/components';
 import { IcArrowUpAndLeftBig, IcArrowUpAndRightBig, IcArrowsUpAndLeftBig, IcTrashClock } from '@proton/icons';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
@@ -372,8 +374,7 @@ const HeaderExpanded = ({
                                     onClick={handleCompose(MESSAGE_ACTIONS.REPLY)}
                                     data-testid="message-view:reply"
                                 >
-                                    <IcArrowUpAndLeftBig className="rtl:mirror"
-                                        alt={c('Title').t`Reply`} />
+                                    <IcArrowUpAndLeftBig className="rtl:mirror" alt={c('Title').t`Reply`} />
                                 </Button>
                             </Tooltip>
                             <Tooltip title={titleReplyAll}>
@@ -383,8 +384,7 @@ const HeaderExpanded = ({
                                     onClick={handleCompose(MESSAGE_ACTIONS.REPLY_ALL)}
                                     data-testid="message-view:reply-all"
                                 >
-                                    <IcArrowsUpAndLeftBig className="rtl:mirror"
-                                        alt={c('Title').t`Reply all`} />
+                                    <IcArrowsUpAndLeftBig className="rtl:mirror" alt={c('Title').t`Reply all`} />
                                 </Button>
                             </Tooltip>
                             <Tooltip title={titleForward}>
@@ -394,8 +394,7 @@ const HeaderExpanded = ({
                                     onClick={handleCompose(MESSAGE_ACTIONS.FORWARD)}
                                     data-testid="message-view:forward"
                                 >
-                                    <IcArrowUpAndRightBig className="rtl:mirror"
-                                        alt={c('Title').t`Forward`} />
+                                    <IcArrowUpAndRightBig className="rtl:mirror" alt={c('Title').t`Forward`} />
                                 </Button>
                             </Tooltip>
                         </ButtonGroup>

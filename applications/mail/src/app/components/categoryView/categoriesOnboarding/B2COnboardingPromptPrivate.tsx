@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { type ModalProps, Prompt, useModalState } from '@proton/components';
 
 const B2COnboardingPromptPrivate = (props: ModalProps) => {

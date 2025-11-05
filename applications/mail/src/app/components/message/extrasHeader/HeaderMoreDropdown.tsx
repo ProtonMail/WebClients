@@ -5,7 +5,9 @@ import { addDays } from 'date-fns';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Button, Kbd, Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Kbd } from '@proton/atoms/Kbd/Kbd';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { ContactEditProps } from '@proton/components';
 import {
     ButtonGroup,

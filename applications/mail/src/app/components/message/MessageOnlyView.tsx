@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { Scroll } from '@proton/atoms';
+import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import { useHotkeys } from '@proton/components';
 import { useLabels } from '@proton/mail';
 import type { MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';

@@ -5,7 +5,9 @@ import { c } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useAddresses, useGetAddresses } from '@proton/account/addresses/hooks';
-import { Banner, ButtonLike, Href } from '@proton/atoms';
+import { Banner } from '@proton/atoms/Banner/Banner';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Href } from '@proton/atoms/Href/Href';
 import { useVideoConferencingWidget } from '@proton/calendar';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import {

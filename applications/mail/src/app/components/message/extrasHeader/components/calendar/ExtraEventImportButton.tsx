@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { useAddEvents, useDrawer, useNotifications } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { getVeventWithDefaultCalendarAlarms } from '@proton/shared/lib/calendar/mailIntegration/invite';

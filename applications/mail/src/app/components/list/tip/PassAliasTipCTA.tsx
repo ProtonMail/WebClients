@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { InlineLinkButton } from '@proton/atoms';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import {
     CreatePassAliasesForm,
     PassAliasesUpsellModal,

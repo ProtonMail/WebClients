@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
 import type { ModalProps } from '@proton/components';
 import { Collapsible, CollapsibleContent, CollapsibleHeader, CollapsibleHeaderIconButton, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import { IcChevronDown } from '@proton/icons';

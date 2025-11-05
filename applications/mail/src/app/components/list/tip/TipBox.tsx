@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { CustomNotificationProps } from '@proton/components';
 import { Icon, NotificationButton, useNotifications } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';

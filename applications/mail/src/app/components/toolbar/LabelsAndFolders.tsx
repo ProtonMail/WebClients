@@ -2,7 +2,8 @@ import type { Ref } from 'react';
 
 import { c } from 'ttag';
 
-import { Kbd, Vr } from '@proton/atoms';
+import { Kbd } from '@proton/atoms/Kbd/Kbd';
+import { Vr } from '@proton/atoms/Vr/Vr';
 import { DropdownSizeUnit } from '@proton/components';
 import { IcFolderArrowIn, IcTag } from '@proton/icons';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';

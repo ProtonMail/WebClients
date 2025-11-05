@@ -3,7 +3,8 @@ import { forwardRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Kbd, Tooltip } from '@proton/atoms';
+import { Kbd } from '@proton/atoms/Kbd/Kbd';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcArrowsFromCenter, IcArrowsToCenter, IcCrossBig, IcDots, IcLowDash } from '@proton/icons';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { isSafari as checkIsSafari, metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
@@ -163,7 +164,11 @@ const ComposerTitleBar = ({
                 }}
                 dataTestId="composer:maximize-button"
             >
-                {maximized ? <IcArrowsToCenter alt={title} className="m-auto" /> : <IcArrowsFromCenter alt={title} className="m-auto" />}
+                {maximized ? (
+                    <IcArrowsToCenter alt={title} className="m-auto" />
+                ) : (
+                    <IcArrowsFromCenter alt={title} className="m-auto" />
+                )}
             </TitleBarButton>
             <TitleBarButton title={titleClose} onClick={onClose} dataTestId="composer:close-button">
                 <IcCrossBig alt={title} className="m-auto" />

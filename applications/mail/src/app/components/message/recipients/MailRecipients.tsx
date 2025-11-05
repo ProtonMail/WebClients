@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { IcChevronDown } from '@proton/icons';
 import type { ContactEditProps } from '@proton/components';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
