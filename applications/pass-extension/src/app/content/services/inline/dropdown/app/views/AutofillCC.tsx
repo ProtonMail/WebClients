@@ -2,7 +2,6 @@ import type { FC } from 'react';
 import { useCallback, useEffect, useMemo } from 'react';
 
 import type { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
-import { useBlurTrap } from 'proton-pass-extension/app/content/services/inline/dropdown/app/components/DropdownFocusController';
 import { DropdownHeader } from 'proton-pass-extension/app/content/services/inline/dropdown/app/components/DropdownHeader';
 import type { DropdownActions } from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.app';
 import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
@@ -38,7 +37,6 @@ export const AutofillCC: FC<Props> = (payload) => {
     const [state, setState] = useMountedState<MaybeNull<AutofillCCResult>>(null);
     const loading = useMemo(() => state === null, [state]);
 
-    const withBlurTrap = useBlurTrap();
     const navigateToUpgrade = useNavigateToUpgrade({ upsellRef: UpsellRef.LIMIT_AUTOFILL });
 
     const resolveCandidates = useCallback(() => {
@@ -97,7 +95,7 @@ export const AutofillCC: FC<Props> = (payload) => {
                                         icon: 'credit-card',
                                         customIcon: getCreditCardIcon(cardType),
                                     }}
-                                    onClick={withBlurTrap(() => {
+                                    onClick={() => {
                                         controller.forwardMessage({
                                             type: InlinePortMessageType.AUTOFILL_ACTION,
                                             payload: {
@@ -108,7 +106,7 @@ export const AutofillCC: FC<Props> = (payload) => {
                                             },
                                         });
                                         controller.close({ preventAction: true });
-                                    })}
+                                    }}
                                     subTheme={SubTheme.LIME}
                                 />
                             ))

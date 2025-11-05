@@ -1,7 +1,6 @@
 import { type FC, useCallback, useEffect, useRef, useState } from 'react';
 
 import type { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
-import { useBlurTrap } from 'proton-pass-extension/app/content/services/inline/dropdown/app/components/DropdownFocusController';
 import { DropdownHeader } from 'proton-pass-extension/app/content/services/inline/dropdown/app/components/DropdownHeader';
 import type { DropdownActions } from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.app';
 import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
@@ -30,8 +29,6 @@ export const AutosuggestPassword: FC<Props> = ({ origin, config, copy, policy })
     const { visible } = useIFrameAppState();
     const controller = useIFrameAppController();
 
-    const withBlurTrap = useBlurTrap();
-
     const timer = useRef<Maybe<ReturnType<typeof setTimeout>>>();
     const inputRef = useRef<HTMLInputElement>(null);
 
@@ -54,7 +51,7 @@ export const AutosuggestPassword: FC<Props> = ({ origin, config, copy, policy })
         setCopied(true);
     }, []);
 
-    const autofillPassword = withBlurTrap((feedback: boolean) => {
+    const autofillPassword = (feedback: boolean) => {
         controller.forwardMessage({
             type: InlinePortMessageType.AUTOFILL_GENERATED_PW,
             payload: { password: generator.password },
@@ -63,7 +60,7 @@ export const AutosuggestPassword: FC<Props> = ({ origin, config, copy, policy })
         if (copy) copyToClipboard();
         if (feedback) timer.current = setTimeout(controller.close, 1_000);
         else controller.close();
-    });
+    };
 
     const label = copy ? c('Title').t`Fill & copy password` : c('Title').t`Fill password`;
 
@@ -101,7 +98,7 @@ export const AutosuggestPassword: FC<Props> = ({ origin, config, copy, policy })
                     ? {
                           icon: { type: 'icon', icon: 'checkmark' },
                           subTitle: c('Info').t`Password copied`,
-                          onClick: withBlurTrap(controller.close),
+                          onClick: controller.close,
                       }
                     : {
                           icon: { type: 'icon', icon: 'key' },

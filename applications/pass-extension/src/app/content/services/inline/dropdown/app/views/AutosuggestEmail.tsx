@@ -1,7 +1,6 @@
 import { type FC, useCallback, useEffect, useState } from 'react';
 
 import type { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
-import { useBlurTrap } from 'proton-pass-extension/app/content/services/inline/dropdown/app/components/DropdownFocusController';
 import { DropdownHeader } from 'proton-pass-extension/app/content/services/inline/dropdown/app/components/DropdownHeader';
 import type { DropdownActions } from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.app';
 import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
@@ -37,7 +36,6 @@ export const AutosuggestEmail: FC<Props> = ({ origin, prefix }) => {
     const controller = useIFrameAppController();
     const { onTelemetry } = usePassCore();
 
-    const withBlurTrap = useBlurTrap();
     const navigateToUpgrade = useNavigateToUpgrade({ upsellRef: UpsellRef.LIMIT_ALIAS });
 
     const [userEmail, setUserEmail] = useState<MaybeNull<string>>(null);
@@ -84,7 +82,7 @@ export const AutosuggestEmail: FC<Props> = ({ origin, prefix }) => {
                             },
                         },
                     }),
-                    withBlurTrap((response) => {
+                    (response) => {
                         if (response.ok) {
                             controller.forwardMessage({
                                 type: InlinePortMessageType.AUTOFILL_EMAIL,
@@ -94,7 +92,7 @@ export const AutosuggestEmail: FC<Props> = ({ origin, prefix }) => {
                             onTelemetry(TelemetryEventName.AutosuggestAliasCreated, {}, {});
                             controller.close();
                         } else setError(response.error ?? null);
-                    })
+                    }
                 );
             } catch {
             } finally {
@@ -147,13 +145,13 @@ export const AutosuggestEmail: FC<Props> = ({ origin, prefix }) => {
                         )
                     }
                     icon={{ type: 'icon', icon: 'envelope' }}
-                    onClick={withBlurTrap(() => {
+                    onClick={() => {
                         controller.forwardMessage({
                             type: InlinePortMessageType.AUTOFILL_EMAIL,
                             payload: { email: userEmail },
                         });
                         controller.close();
-                    })}
+                    }}
                 />
             )}
             <ListItem

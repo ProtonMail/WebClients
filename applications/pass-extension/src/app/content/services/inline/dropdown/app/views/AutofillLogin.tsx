@@ -1,7 +1,6 @@
 import { type FC, useCallback, useEffect, useMemo } from 'react';
 
 import type { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
-import { useBlurTrap } from 'proton-pass-extension/app/content/services/inline/dropdown/app/components/DropdownFocusController';
 import { DropdownHeader } from 'proton-pass-extension/app/content/services/inline/dropdown/app/components/DropdownHeader';
 import type { DropdownActions } from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.app';
 import type { InlineMessageWithSender } from 'proton-pass-extension/app/content/services/inline/inline.messages';
@@ -39,7 +38,6 @@ export const AutofillLogin: FC<Props> = ({ origin, startsWith }) => {
     const { settings, visible } = useIFrameAppState();
     const controller = useIFrameAppController();
 
-    const withBlurTrap = useBlurTrap();
     const navigateToUpgrade = useNavigateToUpgrade({ upsellRef: UpsellRef.LIMIT_AUTOFILL });
 
     const [state, setState] = useMountedState<MaybeNull<AutofillLoginResult>>(null);
@@ -110,7 +108,7 @@ export const AutofillLogin: FC<Props> = ({ origin, startsWith }) => {
                                       icon: 'user',
                                       url: settings.loadDomainImages ? url : undefined,
                                   }}
-                                  onClick={withBlurTrap(() =>
+                                  onClick={() =>
                                       sendMessage.onSuccess(
                                           contentScriptMessage({
                                               type: WorkerMessageType.AUTOFILL_LOGIN,
@@ -124,7 +122,7 @@ export const AutofillLogin: FC<Props> = ({ origin, startsWith }) => {
                                               controller.close();
                                           }
                                       )
-                                  )}
+                                  }
                               />
                           );
                       }),

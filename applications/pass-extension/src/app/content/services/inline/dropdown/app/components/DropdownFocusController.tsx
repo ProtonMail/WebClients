@@ -1,65 +1,85 @@
-import type { FC, PropsWithChildren } from 'react';
+import type { FC, PropsWithChildren, RefObject } from 'react';
 import { createContext, useEffect, useMemo, useRef } from 'react';
 
 import { DROPDOWN_FOCUS_TIMEOUT } from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.focus';
+import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
 import { useIFrameAppController, useIFrameAppState } from 'proton-pass-extension/lib/components/Inline/IFrameApp';
 
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
-import type { Callback, MaybeNull } from '@proton/pass/types';
+import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { onNextTick } from '@proton/pass/utils/time/next-tick';
 
-export const FOCUS_RECOVERY_TIMEOUT = 150;
+export type IFrameFocusControllerValue = { focusRef: RefObject<HTMLInputElement> };
 
-export type IFrameFocusControllerValue = { blurTrap: (fn: Callback, duration?: number) => void };
 export const IFrameFocusControllerContext = createContext<MaybeNull<IFrameFocusControllerValue>>(null);
 export const useFocusController = createUseContext(IFrameFocusControllerContext);
 
-export const useBlurTrap = () => {
-    const { blurTrap } = useFocusController();
-    return <T extends Callback>(fn: T, duration?: number) =>
-        ((...args: Parameters<T>) => blurTrap(() => fn(...args), duration)) as T;
-};
+/** Maximum number of focus recovery attempts before giving up.
+ * Prevents infinite loops when aggressive focus-lock libraries
+ * repeatedly steal focus back to trapped fields */
+const MAX_FOCUS_RECOVERY_RETRIES = 3;
 
-/** During autofill sequences, focus temporarily shifts between fields and frames which
- * can trigger blur events that would close the dropdown prematurely. This breaks the
- * refocus logic that should execute after successful autofill completion.
- *
- * We monitor blur events on the iframe to catch real dismisses when the frame has focus.
- * In cases where the frame is in the same document, we may miss re-focus events, so the
- * blurTrap method provides a grace period during which blur events are ignored. */
+/** Manages focus and blur events for the dropdown iframe to handle both
+ * user dismissals and focus-lock interference from the host page */
 export const DropdownFocusController: FC<PropsWithChildren> = ({ children }) => {
     const { visible } = useIFrameAppState();
     const controller = useIFrameAppController();
-    const trap = useRef<MaybeNull<NodeJS.Timeout>>();
+    const focusRef = useRef<HTMLInputElement>(null);
+    const retryCount = useRef(0);
 
-    const context = useMemo<IFrameFocusControllerValue>(
-        () => ({
-            blurTrap: (fn, duration = DROPDOWN_FOCUS_TIMEOUT) => {
-                if (trap.current) clearTimeout(trap.current);
-                trap.current = setTimeout(() => (trap.current = null), duration);
-                fn();
-            },
-        }),
-        []
-    );
+    const context = useMemo<IFrameFocusControllerValue>(() => ({ focusRef }), []);
 
     useEffect(() => {
-        const onBlur = onNextTick(() => {
-            if (!trap.current) {
-                window.removeEventListener('blur', onBlur);
-                controller.close();
-            }
-        });
+        let focusTimeout: Maybe<NodeJS.Timeout>;
+        let blurTimeout: Maybe<NodeJS.Timeout>;
 
-        if (visible) window.addEventListener('blur', onBlur);
+        retryCount.current = 0;
 
-        return () => {
-            window.removeEventListener('blur', onBlur);
-            if (trap.current) {
-                clearTimeout(trap.current);
-                trap.current = null;
-            }
+        const onBlur = () => {
+            clearTimeout(blurTimeout);
+            blurTimeout = setTimeout(() => {
+                if (!document.hasFocus()) {
+                    controller.forwardMessage({ type: InlinePortMessageType.DROPDOWN_BLURRED });
+                }
+            }, DROPDOWN_FOCUS_TIMEOUT);
         };
+
+        /** Handles focus events with detection for focus-lock interference.
+         * After gaining focus, we verify that focus persists after a short delay.
+         * If focus was stolen back by a focus-lock library, we request focus recovery
+         * from the content script which will use the "blur-before-focus" bypass strategy. */
+        const onFocus = () => {
+            clearTimeout(focusTimeout);
+            clearTimeout(blurTimeout);
+            controller.forwardMessage({ type: InlinePortMessageType.DROPDOWN_FOCUSED });
+
+            focusTimeout = setTimeout(() => {
+                if (document.hasFocus()) retryCount.current = 0;
+                else if (retryCount.current < MAX_FOCUS_RECOVERY_RETRIES) {
+                    /** Focus was stolen: request recovery */
+                    retryCount.current += 1;
+                    controller.forwardMessage({ type: InlinePortMessageType.DROPDOWN_FOCUS_REQUEST });
+                }
+            }, DROPDOWN_FOCUS_TIMEOUT);
+        };
+
+        if (visible) {
+            window.addEventListener('blur', onBlur);
+            window.addEventListener('focus', onFocus);
+
+            const unregister = controller.registerHandler(
+                InlinePortMessageType.DROPDOWN_FOCUS,
+                onNextTick(() => (focusRef.current ?? window)?.focus())
+            );
+
+            return () => {
+                unregister();
+                clearTimeout(focusTimeout);
+                clearTimeout(blurTimeout);
+                window.removeEventListener('focus', onFocus);
+                window.removeEventListener('blur', onBlur);
+            };
+        }
     }, [visible]);
 
     return <IFrameFocusControllerContext.Provider value={context}>{children}</IFrameFocusControllerContext.Provider>;
