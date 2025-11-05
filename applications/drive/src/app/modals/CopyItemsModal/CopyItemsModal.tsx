@@ -18,7 +18,6 @@ import { directoryTreeFactory } from '../../modules/directoryTree';
 import type { DirectoryTreeItem } from '../../statelessComponents/DirectoryTree/DirectoryTree';
 import { DirectoryTree } from '../../statelessComponents/DirectoryTree/DirectoryTree';
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
-import type { CopyModalItem } from './useCopyItems';
 import { useCopyItems } from './useCopyItems';
 
 /**
@@ -26,6 +25,11 @@ import { useCopyItems } from './useCopyItems';
  * Each modal instance maintains its own tree state independent of other sections.
  */
 const useCopyModalDirectoryTree = directoryTreeFactory();
+
+type CopyModalItem = {
+    uid: string;
+    name: string;
+};
 
 const CopyItemsModal = ({ open, onClose, onExit, itemsToCopy }: { itemsToCopy: CopyModalItem[] } & ModalStateProps) => {
     const { rootItems, initializeTree, toggleExpand, getChildrenOf } = useCopyModalDirectoryTree({ onlyFolders: true });
