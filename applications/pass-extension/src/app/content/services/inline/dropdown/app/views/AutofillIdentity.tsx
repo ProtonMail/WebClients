@@ -2,7 +2,6 @@ import type { FC } from 'react';
 import { useCallback, useEffect, useMemo } from 'react';
 
 import type { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
-import { useBlurTrap } from 'proton-pass-extension/app/content/services/inline/dropdown/app/components/DropdownFocusController';
 import { DropdownHeader } from 'proton-pass-extension/app/content/services/inline/dropdown/app/components/DropdownHeader';
 import type { DropdownActions } from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.app';
 import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
@@ -36,7 +35,6 @@ export const AutofillIdentity: FC<Props> = ({ origin }) => {
     const [state, setState] = useMountedState<MaybeNull<AutofillIdentityResult>>(null);
     const loading = useMemo(() => state === null, [state]);
 
-    const withBlurTrap = useBlurTrap();
     const navigateToUpgrade = useNavigateToUpgrade({ upsellRef: UpsellRef.LIMIT_AUTOFILL });
 
     const resolveCandidates = useCallback(() => {
@@ -82,7 +80,7 @@ export const AutofillIdentity: FC<Props> = ({ origin }) => {
                               title={name}
                               subTitle={fullName || c('Title').t`Identity`}
                               icon={{ type: 'icon', icon: 'card-identity' }}
-                              onClick={withBlurTrap(() =>
+                              onClick={() =>
                                   sendMessage.onSuccess(
                                       contentScriptMessage({
                                           type: WorkerMessageType.AUTOFILL_IDENTITY,
@@ -96,7 +94,7 @@ export const AutofillIdentity: FC<Props> = ({ origin }) => {
                                           controller.close();
                                       }
                                   )
-                              )}
+                              }
                           />
                       )),
                   ].filter(truthy)

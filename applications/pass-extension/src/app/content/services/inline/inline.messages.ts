@@ -34,6 +34,7 @@ export enum InlinePortMessageType {
     DROPDOWN_ACTION = 'DROPDOWN_ACTION',
     DROPDOWN_FOCUS = 'DROPDOWN_FOCUS',
     DROPDOWN_FOCUSED = 'DROPDOWN_FOCUSED',
+    DROPDOWN_BLURRED = 'DROPDOWN_BLURRED',
     DROPDOWN_FOCUS_REQUEST = 'DROPDOWN_FOCUS_REQUEST',
     IFRAME_CLOSE = 'IFRAME_CLOSE',
     IFRAME_CONNECTED = 'IFRAME_CONNECTED',
@@ -85,6 +86,7 @@ export type InlineMessage<T extends InlineMessageType = InlineMessageType> = Ext
     | { type: InlinePortMessageType.AUTOFILL_LOGIN; payload: FormCredentials }
     | { type: InlinePortMessageType.AUTOFILL_OTP; payload: { code: string } }
     | { type: InlinePortMessageType.DROPDOWN_ACTION; payload: DropdownActions }
+    | { type: InlinePortMessageType.DROPDOWN_BLURRED }
     | { type: InlinePortMessageType.DROPDOWN_FOCUSED }
     | { type: InlinePortMessageType.DROPDOWN_FOCUS }
     | { type: InlinePortMessageType.DROPDOWN_FOCUS_REQUEST }
