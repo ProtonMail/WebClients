@@ -1,8 +1,39 @@
 import * as Ariakit from '@ariakit/react'
 import type { Sheet } from '@rowsncolumns/spreadsheet'
 import { c } from 'ttag'
-import { SheetSwitcherButton } from './primitives'
 import { Icon } from '../ui'
+import { type Ref, useMemo } from 'react'
+import { createComponent } from '../utils'
+import clsx from '@proton/utils/clsx'
+import { IcHamburger } from '@proton/icons'
+
+export interface SheetSwitcherButtonProps extends Ariakit.ToolbarItemProps {
+  ref?: Ref<HTMLButtonElement>
+  hasHiddenSheets?: boolean
+  selectedSheet: Sheet | null
+}
+
+export const SheetSwitcherButton = createComponent<SheetSwitcherButtonProps>(function SheetSwitcherButton({
+  hasHiddenSheets,
+  selectedSheet,
+  ...props
+}: SheetSwitcherButtonProps) {
+  return (
+    <Ariakit.ToolbarItem
+      {...props}
+      className={clsx(
+        'flex h-8 items-center justify-center gap-2 rounded-[6px] px-2 text-sm text-[#0C0C14]',
+        'hover:bg-[#EDEDED]/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4695F3]/50 max-sm:bg-[#F5F4F2]',
+        hasHiddenSheets && 'text-[#4695F3]',
+        props.className,
+      )}
+      aria-label="Show all sheets"
+    >
+      <IcHamburger className="h-4 w-4" />
+      {selectedSheet ? <span className="sm:!hidden">{selectedSheet.title}</span> : null}
+    </Ariakit.ToolbarItem>
+  )
+})
 
 interface SheetSwitcherProps {
   sheets: Sheet[]
@@ -16,9 +47,15 @@ export function SheetSwitcher({ sheets, activeSheetId, onChangeActiveSheet, onSh
   const visibleSheets = sheets.filter((sheet) => !sheet.hidden)
   const menuStore = Ariakit.useMenuStore()
 
+  const selectedSheet = useMemo(() => {
+    return sheets.find((sheet) => sheet.sheetId === activeSheetId) || null
+  }, [sheets, activeSheetId])
+
   return (
     <Ariakit.MenuProvider store={menuStore}>
-      <Ariakit.MenuButton render={<SheetSwitcherButton hasHiddenSheets={hiddenSheets.length > 0} />} />
+      <Ariakit.MenuButton
+        render={<SheetSwitcherButton hasHiddenSheets={hiddenSheets.length > 0} selectedSheet={selectedSheet} />}
+      ></Ariakit.MenuButton>
 
       <Ariakit.Menu className="z-50 max-h-[400px] min-w-[250px] overflow-y-auto rounded-lg border border-[#D1CFCD] bg-[#FFFFFF] shadow-lg">
         {visibleSheets.length > 0 && (
