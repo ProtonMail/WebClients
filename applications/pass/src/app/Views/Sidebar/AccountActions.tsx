@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { AccountSwitcherTooltip } from 'proton-pass-web/app/Auth/AccountSwitcher';
 import { useAvailableSessions } from 'proton-pass-web/app/Auth/AuthSwitchProvider';
 
-import { ButtonLike } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { UserPanel } from '@proton/pass/components/Account/UserPanel';
 import { selectPassPlan, selectPlanDisplayName, selectUser } from '@proton/pass/store/selectors';
 
