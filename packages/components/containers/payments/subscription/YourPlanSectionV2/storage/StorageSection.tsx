@@ -201,6 +201,7 @@ const FeatureElement = ({
                             tooltipClassName="bg-norm color-norm before:hidden border-norm border max-w-custom w-custom px-4 py-3 shadow-lifted"
                             tooltipStyle={{ '--max-w-custom': '16rem', '--w-custom': '16rem' }}
                             title={tooltip}
+                            openDelay={100}
                         />
                     )}
                 </span>

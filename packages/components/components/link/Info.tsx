@@ -25,6 +25,7 @@ interface Props extends Omit<IconProps, 'title' | 'name'> {
     colorPrimary?: boolean;
     tooltipClassName?: string;
     tooltipStyle?: CSSProperties;
+    openDelay?: number;
 }
 
 const Info = ({
@@ -40,6 +41,7 @@ const Info = ({
     fakeDisabled = false,
     tooltipClassName,
     tooltipStyle,
+    openDelay = 0,
     ...rest
 }: Props) => {
     const [uid] = useState(generateUID('tooltip'));
@@ -66,7 +68,7 @@ const Info = ({
     return (
         <Tooltip
             title={safeTitle}
-            openDelay={0}
+            openDelay={openDelay}
             closeDelay={250}
             longTapDelay={0}
             originalPlacement={originalPlacement}
