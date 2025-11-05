@@ -2,18 +2,20 @@ import { useRef, useState } from 'react';
 
 import { useLocalParticipant } from '@livekit/components-react';
 import type { KrispNoiseFilterProcessor } from '@livekit/krisp-noise-filter';
-import { KrispNoiseFilter } from '@livekit/krisp-noise-filter';
+import { KrispNoiseFilter, isKrispNoiseFilterSupported } from '@livekit/krisp-noise-filter';
 import { Track } from '@proton-meet/livekit-client';
 
 import { audioQuality } from '../qualityConstants';
 import type { SwitchActiveDevice } from '../types';
+
+const isAdvancedNoiseFilterSupported = isKrispNoiseFilterSupported();
 
 export const useAudioToggle = (
     activeMicrophoneDeviceId: string,
     switchActiveDevice: SwitchActiveDevice,
     initialAudioState: boolean
 ) => {
-    const [noiseFilter, setNoiseFilter] = useState(true);
+    const [noiseFilter, setNoiseFilter] = useState(isAdvancedNoiseFilterSupported);
     const { isMicrophoneEnabled, localParticipant } = useLocalParticipant();
 
     const noiseFilterProcessor = useRef<KrispNoiseFilterProcessor | null>(null);
@@ -50,7 +52,7 @@ export const useAudioToggle = (
             deviceId: { exact: audioDeviceId as string },
             autoGainControl: true,
             echoCancellation: true,
-            noiseSuppression: false,
+            noiseSuppression: enableNoiseFilter,
         };
 
         try {
@@ -74,7 +76,7 @@ export const useAudioToggle = (
                 return;
             }
 
-            if (enableNoiseFilter && isEnabled && audioDeviceId) {
+            if (enableNoiseFilter && isEnabled && audioDeviceId && isAdvancedNoiseFilterSupported) {
                 if (trackId.current === audioTrack.id) {
                     await noiseFilterProcessor.current?.setEnabled(true);
                 } else {
