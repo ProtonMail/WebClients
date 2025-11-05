@@ -1,4 +1,4 @@
-import type { Participant } from '@proton-meet/livekit-client';
+import type { Participant } from 'livekit-client';
 import { c } from 'ttag';
 
 import Dropdown from '@proton/components/components/dropdown/Dropdown';

@@ -1,4 +1,4 @@
-import { VideoPreset, VideoPresets } from '@proton-meet/livekit-client';
+import { VideoPreset, VideoPresets } from 'livekit-client';
 
 import { QualityScenarios } from './types';
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { VideoQuality } from '@proton-meet/livekit-client';
+import { VideoQuality } from 'livekit-client';
 
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 

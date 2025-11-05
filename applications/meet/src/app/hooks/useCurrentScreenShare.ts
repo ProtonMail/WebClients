@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 import { useLocalParticipant, useRoomContext, useTracks } from '@livekit/components-react';
-import { Track } from '@proton-meet/livekit-client';
+import { Track } from 'livekit-client';
 import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
