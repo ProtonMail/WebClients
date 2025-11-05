@@ -1,9 +1,8 @@
-import type { PropsWithChildren, ReactNode } from 'react';
+import type { PropsWithChildren, ReactElement, ReactNode } from 'react';
 
-import Icon from '@proton/components/components/icon/Icon';
 import IconRow from '@proton/components/components/iconRow/IconRow';
 import MeetLogo from '@proton/components/components/logo/MeetLogo';
-import type { IconName } from '@proton/icons';
+import { IcMapPin } from '@proton/icons';
 
 import { BookingLocation } from './bookingsProvider/interface';
 
@@ -12,7 +11,7 @@ interface FormIconRowProps extends PropsWithChildren {
     hideBorder?: boolean;
     narrowSection?: boolean;
     suffix?: ReactNode;
-    icon: IconName;
+    icon: ReactElement;
 }
 
 export const FormIconRow = ({ title, icon, children, hideBorder = false, suffix }: FormIconRowProps) => {
@@ -47,7 +46,7 @@ export const FormLocationOptionContent = ({ value, text }: FormLocationOptionPro
             icon = <MeetLogo variant="glyph-only" size={4} />;
             break;
         case BookingLocation.IN_PERSON:
-            icon = <Icon name="map-pin" />;
+            icon = <IcMapPin />;
             break;
     }
 
