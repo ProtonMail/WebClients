@@ -17,7 +17,7 @@ import {
   FormulaInput,
   type SheetRange,
   CONDITION_LABELS,
-  CONDTION_NONE,
+  CONDITION_NONE,
   type ConditionType,
   shouldShowFromValue,
   shouldShowToValue,
@@ -233,13 +233,13 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                   <FormLabel>Format rules</FormLabel>
                   <div className="flex flex-col gap-2">
                     <NativeSelect
-                      value={booleanRule?.condition?.type ?? CONDTION_NONE}
+                      value={booleanRule?.condition?.type ?? CONDITION_NONE}
                       onChange={(event) => {
                         form.setValue('booleanRule.condition.type', event.target.value as ConditionType)
                         form.setValue('booleanRule.condition.values', booleanRule?.condition?.values ?? [])
                       }}
                     >
-                      <option value={CONDTION_NONE}>None</option>
+                      <option value={CONDITION_NONE}>None</option>
                       {CONDITION_LABELS.map(({ condition, label }) => {
                         return (
                           <option key={condition} value={condition}>
@@ -452,16 +452,16 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                   <div className="flex items-center gap-3">
                     <div className="grow basis-0">
                       <NativeSelect
-                        value={gradientRule?.midpoint?.type ?? CONDTION_NONE}
+                        value={gradientRule?.midpoint?.type ?? CONDITION_NONE}
                         onChange={(event) => {
                           const value = event.target.value
                           form.setValue('gradientRule.midpoint.type', value as InterpolationPoint['type'])
-                          if (value === CONDTION_NONE) {
+                          if (value === CONDITION_NONE) {
                             form.setValue('gradientRule.midpoint.value', '')
                           }
                         }}
                       >
-                        <option value={CONDTION_NONE}>None</option>
+                        <option value={CONDITION_NONE}>None</option>
                         <option value="NUMBER">Number</option>
                       </NativeSelect>
                     </div>
