@@ -38,7 +38,31 @@ export const useCopiedItemsNotification = () => {
         });
     };
 
+    const showUndoCopyNotification = (deletedCopies: { name: string; uid: string }[], errors: { error: string }[]) => {
+        createSuccessMessage(
+            deletedCopies,
+            (name: string) => c('Notification').t`Copy of "${name}" moved to trash`,
+            (numberOfItems: number) =>
+                c('Notification').ngettext(
+                    msgid`${numberOfItems} copied item moved to trash`,
+                    `${numberOfItems} copied items moved to trash`,
+                    numberOfItems
+                )
+        );
+
+        showAggregatedErrorNotification(Object.values(errors), (errors) => {
+            return errors.length === 1
+                ? errors[0].error
+                : c('Notification').ngettext(
+                      msgid`${errors.length} item failed to be trashed`,
+                      `${errors.length} items failed to be trashed`,
+                      errors.length
+                  );
+        });
+    };
+
     return {
         showCopiedItemsNotifications,
+        showUndoCopyNotification,
     };
 };

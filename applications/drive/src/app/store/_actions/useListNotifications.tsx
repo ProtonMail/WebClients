@@ -6,6 +6,9 @@ import { useErrorHandler } from '../_utils';
 
 type Item = { linkId: string; name?: string };
 
+/**
+ * @deprecated
+ */
 export default function useListNotifications() {
     const { createNotification } = useNotifications();
     const { showAggregatedErrorNotification } = useErrorHandler();
