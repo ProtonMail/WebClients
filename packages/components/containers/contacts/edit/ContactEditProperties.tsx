@@ -1,12 +1,11 @@
-import type { Ref } from 'react';
-import { forwardRef, useCallback, useMemo } from 'react';
+import { type ReactNode, type Ref, cloneElement, forwardRef, useCallback, useMemo } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { SortableList } from '@proton/components/components/dnd/SortableList';
+import { useSortableListItem } from '@proton/components/components/dnd/SortableListItem';
 import Icon from '@proton/components/components/icon/Icon';
-import OrderableContainer from '@proton/components/components/orderable/OrderableContainer';
-import OrderableElement from '@proton/components/components/orderable/OrderableElement';
 import type { IconName } from '@proton/icons/types';
 import { OTHER_INFORMATION_FIELDS } from '@proton/shared/lib/contacts/constants';
 import {
@@ -54,6 +53,17 @@ interface Props {
     onGroupEdit: (props: ContactGroupEditProps) => void;
     onLimitReached?: (props: ContactGroupLimitReachedProps) => void;
 }
+
+const SortableItem = ({
+    id,
+    children,
+}: {
+    id: string;
+    children: (props: ReturnType<typeof useSortableListItem>) => ReactNode;
+}) => {
+    const props = useSortableListItem({ id });
+    return children(props);
+};
 
 const ContactEditProperties = (
     {
@@ -114,29 +124,31 @@ const ContactEditProperties = (
                   .map(({ field }) => field)
             : [];
 
-        return properties.map((property) => (
-            <ContactEditProperty
-                key={property.uid}
-                vCardContact={vCardContact}
-                ref={ref}
-                isSubmitted={isSubmitted}
-                onRemove={onRemove}
-                sortable={sortable}
-                filteredTypes={
-                    // Accept the currently set type
-                    filteredTypes.filter((type) => property.field !== type)
-                }
-                contactEmail={contactEmails?.[property.value as string]}
-                onContactEmailChange={onContactEmailChange}
-                vCardProperty={property}
-                onChangeVCard={onChangeVCard}
-                onUpgrade={onUpgrade}
-                onSelectImage={onSelectImage}
-                onGroupEdit={onGroupEdit}
-                onLimitReached={onLimitReached}
-            />
-        ));
-    }, [properties, vCardContact, onChangeVCard, onRemove, onAdd, sortable]);
+        return properties.map((property) => ({
+            id: property.uid,
+            component: (
+                <ContactEditProperty
+                    key={property.uid}
+                    vCardContact={vCardContact}
+                    ref={ref}
+                    isSubmitted={isSubmitted}
+                    onRemove={onRemove}
+                    filteredTypes={
+                        // Accept the currently set type
+                        filteredTypes.filter((type) => property.field !== type)
+                    }
+                    contactEmail={contactEmails?.[property.value as string]}
+                    onContactEmailChange={onContactEmailChange}
+                    vCardProperty={property}
+                    onChangeVCard={onChangeVCard}
+                    onUpgrade={onUpgrade}
+                    onSelectImage={onSelectImage}
+                    onGroupEdit={onGroupEdit}
+                    onLimitReached={onLimitReached}
+                />
+            ),
+        }));
+    }, [properties, vCardContact, onChangeVCard, onRemove, onAdd]);
 
     const handleSortEnd = useCallback(
         ({ newIndex, oldIndex }: { newIndex: number; oldIndex: number }) => {
@@ -207,6 +219,8 @@ const ContactEditProperties = (
         }
     };
 
+    const itemIds = rows.map((row) => row.id);
+
     return (
         <div className="border-bottom mb-4" data-testid={title}>
             <h3 className="mb-4 flex flex-nowrap items-center shrink-0">
@@ -223,17 +237,17 @@ const ContactEditProperties = (
                 <span className="text-semibold ml-5 pl-1 mb-2">{c('Info').t`Primary`}</span>
             )}
             {sortable ? (
-                <OrderableContainer helperClass="z-modals bg-norm color-norm" onSortEnd={handleSortEnd} useDragHandle>
-                    <div className="mt-2">
-                        {rows.map((row, index) => (
-                            <OrderableElement key={row.key || `row${index}`} index={index}>
-                                {row}
-                            </OrderableElement>
+                <SortableList onSortEnd={handleSortEnd} items={itemIds}>
+                    <div>
+                        {rows.map((row) => (
+                            <SortableItem id={row.id} key={row.id}>
+                                {(props) => cloneElement(row.component, { sortable: props })}
+                            </SortableItem>
                         ))}
                     </div>
-                </OrderableContainer>
+                </SortableList>
             ) : (
-                <div>{rows}</div>
+                <div>{rows.map((row) => row.component)}</div>
             )}
             {canAdd && (
                 <div className="flex flex-nowrap shrink-0">

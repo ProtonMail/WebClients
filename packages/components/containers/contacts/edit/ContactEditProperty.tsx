@@ -3,9 +3,9 @@ import { forwardRef } from 'react';
 
 import { c } from 'ttag';
 
+import type { useSortableListItem } from '@proton/components/components/dnd/SortableListItem';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import Icon from '@proton/components/components/icon/Icon';
-import OrderableHandle from '@proton/components/components/orderable/OrderableHandle';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import type { ContactEmail, ContactEmailModel } from '@proton/shared/lib/interfaces/contacts';
 import type { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
@@ -23,7 +23,7 @@ interface Props {
     vCardContact: VCardContact;
     onChangeVCard: (vCardProperty: VCardProperty) => void;
     onRemove: (value: string) => void;
-    sortable?: boolean;
+    sortable?: ReturnType<typeof useSortableListItem>;
     isSubmitted?: boolean;
     actionRow?: boolean;
     fixedType?: boolean;
@@ -43,7 +43,7 @@ const ContactEditProperty = (
         vCardContact,
         onChangeVCard,
         onRemove,
-        sortable = false,
+        sortable,
         isSubmitted = false,
         actionRow = true,
         labelWidthClassName,
@@ -93,13 +93,18 @@ const ContactEditProperty = (
 
     // The data-contact-property-id is used to focus on the element in ContactEditProperties
     return (
-        <div className="flex flex-nowrap shrink-0" data-contact-property-id={vCardProperty.uid}>
+        <div
+            className="flex flex-nowrap shrink-0"
+            data-contact-property-id={vCardProperty.uid}
+            ref={sortable?.setNodeRef}
+            style={sortable?.style}
+        >
             {sortable ? (
-                <OrderableHandle key="icon">
+                <div {...sortable.attributes} {...sortable.listeners}>
                     <div className="cursor-row-resize mr-2 flex shrink-0 mb-4 mt-0.5">
                         <Icon name="text-align-justify" className="mt-2" />
                     </div>
-                </OrderableHandle>
+                </div>
             ) : (
                 <div className="mr-2 flex items-center shrink-0">
                     <Icon name="text-align-justify" className="visibility-hidden" />
