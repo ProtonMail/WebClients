@@ -2,12 +2,12 @@ import { parseMeetingLink } from './parseMeetingLink';
 
 describe('parseMeetingLink', () => {
     it('should parse a valid meeting link', () => {
-        const link = 'https://meet.proton.me/meeting/id-abc123#pwd-password123';
+        const link = 'https://meet.proton.me/meeting/id-abcdefghij#pwd-password1234';
         const result = parseMeetingLink(link);
 
         expect(result).toEqual({
-            meetingId: 'abc123',
-            urlPassword: 'password123',
+            meetingId: 'abcdefghij',
+            urlPassword: 'password1234',
         });
     });
 

@@ -10,7 +10,7 @@ import { WrappedMeetingDetails } from './MeetingDetails';
 const mockMeetingName = 'Mock Meeting Name';
 
 const meetingLinkName = '1234567890';
-const mockLink = `https://example.com/join/id-${meetingLinkName}#pwd-password123`;
+const mockLink = `https://example.com/join/id-${meetingLinkName}#pwd-password1234`;
 
 vi.mock('../../store', () => ({
     useMeetings: () => [

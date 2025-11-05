@@ -210,3 +210,7 @@ $profile-colors:
 		padding-inline: 3.75rem;
 	}
 }
+
+.draggable-mac-electron-header {
+	-webkit-app-region: drag;
+}

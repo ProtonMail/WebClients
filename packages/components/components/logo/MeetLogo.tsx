@@ -90,7 +90,6 @@ const MeetLogo = ({ variant = 'with-wordmark', hasTitle = true, ...rest }: LogoP
                     </defs>
                 </>
             )}
-
             {variant === 'with-wordmark' && (
                 <>
                     <path
@@ -199,7 +198,6 @@ const MeetLogo = ({ variant = 'with-wordmark', hasTitle = true, ...rest }: LogoP
                     </defs>
                 </>
             )}
-
             {variant === 'wordmark-only' && (
                 <>
                     <g clipPath={`url(#clip2_${uid})`}>

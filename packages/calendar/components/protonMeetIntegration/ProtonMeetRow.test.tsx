@@ -87,12 +87,12 @@ const mockModel = {
 
 const password = 'testpassword';
 
-const meetingLink = `/join/id-abcdefgh#pwd-${password}`;
+const meetingLink = `/join/id-abcdefghij#pwd-${password}`;
 
 const modelWithMeeting = {
     ...mockModel,
     conferenceUrl: `https://meet.proton.me${meetingLink}`,
-    conferenceId: 'abcdefgh',
+    conferenceId: 'abcdefghij',
     conferenceHost: 'test@proton.me',
 };
 
@@ -248,7 +248,7 @@ describe('ProtonMeetRow', () => {
     it('should automatically create a meeting when having the Proton Meet video conference provider in the url', async () => {
         const createMeeting = jest.fn().mockResolvedValue({
             meetingLink: `https://meet.proton.me${meetingLink}`,
-            id: 'abcdefgh',
+            id: 'abcdefghij',
             meeting: mockMeeting,
         });
 
@@ -325,7 +325,7 @@ describe('ProtonMeetRow', () => {
         const modelWithAttendee = {
             ...mockModel,
             attendees: [{ email: 'attendee@proton.me' }],
-            description: 'https://meet.proton.me/join/id-abcdefgh#pwd-1234567890',
+            description: 'https://meet.proton.me/join/id-abcdefghij#pwd-1234567890',
         };
 
         // @ts-expect-error - partial mock
@@ -346,7 +346,7 @@ describe('ProtonMeetRow', () => {
         const modelWithAttendee = {
             ...mockModel,
             attendees: [{ email: 'attendee@proton.me' }],
-            location: 'https://meet.proton.me/join/id-abcdefgh#pwd-1234567890',
+            location: 'https://meet.proton.me/join/id-abcdefghij#pwd-1234567890',
         };
 
         // @ts-expect-error - partial mock

@@ -6,6 +6,7 @@ import type { APP_NAMES } from '../constants';
 import { APPS, APPS_CONFIGURATION, EXTENSIONS, VPN_HOSTNAME } from '../constants';
 import {
     isElectronMail,
+    isElectronMeet,
     isElectronOnLinux,
     isElectronOnMac,
     isElectronOnWindows,
@@ -68,8 +69,21 @@ export const getAppHrefBundle = (to: string, toApp: APP_NAMES) => {
 
 export const getAccountSettingsApp = () => APPS.PROTONACCOUNT;
 
+const getApp = (appName: APP_NAMES) => {
+    if (isElectronMail) {
+        return APPS.PROTONMAIL;
+    }
+    if (isElectronPass) {
+        return APPS.PROTONPASS;
+    }
+    if (isElectronMeet) {
+        return APPS.PROTONMEET;
+    }
+    return appName;
+};
+
 export const getClientID = (appName: APP_NAMES): string => {
-    const app = isElectronMail ? APPS.PROTONMAIL : isElectronPass ? APPS.PROTONPASS : appName;
+    const app = getApp(appName);
 
     const {
         clientID,
