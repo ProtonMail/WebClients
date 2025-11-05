@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { ThemeColor } from '@proton/colors/types';
 import { PLANS, type Subscription, getHasMailB2BPlan, hasVisionary } from '@proton/payments';
 
 import type { APP_NAMES } from '../constants';
@@ -128,6 +129,14 @@ export const getStorageFull = () => {
     return c('storage_split: info').t`Your storage is full`;
 };
 
+export const getAppStorageUsed = (app: string) => {
+    return c('storage_split: info').t`${app} storage used`;
+};
+
+export const getStorageUsed = () => {
+    return c('storage_split: info').t`Storage used`;
+};
+
 export const getPercentageFull = (storage: string, percentage: number) => {
     // Translator: Drive storage 99% full
     return c('storage_split: info').t`${storage} ${percentage}% full`;
@@ -158,4 +167,10 @@ export const getPlanToUpsell = ({
     }
 
     return PLANS.MAIL;
+};
+
+export const SpaceStateThemeColorMap = {
+    [SpaceState.Danger]: ThemeColor.Danger,
+    [SpaceState.Good]: ThemeColor.Success,
+    [SpaceState.Warning]: ThemeColor.Warning,
 };

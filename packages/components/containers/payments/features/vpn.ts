@@ -12,7 +12,12 @@ import {
 } from '@proton/shared/lib/constants';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
-import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
+import {
+    getCountriesWithoutPlus,
+    getFreeServers,
+    getPlusServers,
+    getVpnServers,
+} from '@proton/shared/lib/vpn/features';
 
 import type { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
@@ -964,4 +969,28 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
             },
         },
     ];
+};
+
+export const getVPNPaidServersFeature = (serversCount: VPNServersCountData): PlanCardFeatureDefinition => {
+    return {
+        icon: 'servers',
+        text: getVpnServers(serversCount.paid.servers),
+        included: true,
+    };
+};
+
+export const getVPNPaidCountriesFeature = (serversCount: VPNServersCountData): PlanCardFeatureDefinition => {
+    return {
+        icon: 'earth',
+        text: getCountriesWithoutPlus(serversCount.paid.countries),
+        included: true,
+    };
+};
+
+export const getVPNLightningFastSpeedFeature = (): PlanCardFeatureDefinition => {
+    return {
+        text: c('Features').t`Lightning-fast speeds`,
+        included: true,
+        icon: 'bolt',
+    };
 };

@@ -45,6 +45,7 @@ import SSODomainUnverifiedBanner from '@proton/components/containers/account/sso
 import { getIsSectionAvailable, getRoutePaths } from '@proton/components/containers/layout/helper';
 import UnprivatizationRequestTopBanner from '@proton/components/containers/members/Unprivatization/UnprivatizationRequestTopBanner';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
+import useShowDashboard from '@proton/components/hooks/accounts/useShowDashboard';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
 import { FeatureCode, useFeatures } from '@proton/features';
@@ -119,8 +120,11 @@ const getDefaultPassRedirect = (
 };
 
 const getDefaultRedirect = (accountRoutes: ReturnType<typeof getRoutes>['account']) => {
-    if (getIsSectionAvailable(accountRoutes.routes.dashboardV2)) {
-        return `${accountRoutes.routes.dashboardV2.to}${location.search}${location.hash}`;
+    if (getIsSectionAvailable(accountRoutes.routes.vpnDashboardV2)) {
+        return `${accountRoutes.routes.vpnDashboardV2.to}${location.search}${location.hash}`;
+    }
+    if (getIsSectionAvailable(accountRoutes.routes.mailDashboardV2)) {
+        return `${accountRoutes.routes.mailDashboardV2.to}${location.search}${location.hash}`;
     }
     if (getIsSectionAvailable(accountRoutes.routes.dashboard)) {
         return `${accountRoutes.routes.dashboard.to}${location.search}${location.hash}`;
@@ -198,6 +202,10 @@ const MainContainer = () => {
     const [groups, loadingGroups] = useGroups();
 
     const { showVPNDashboard, showVPNDashboardVariant } = useShowVPNDashboard(app);
+    const { showDashboard: showMailDashboard, variant: showMailDashboardVariant } = useShowDashboard(
+        app,
+        'MailDashboard'
+    );
 
     const { isB2B: isB2BDrive } = useDrivePlan();
 
@@ -243,6 +251,8 @@ const MainContainer = () => {
         isSsoForPbsEnabled,
         referralInfo: referralInfo.uiData,
         canDisplayNonPrivateEmailPhone,
+        showMailDashboard,
+        showMailDashboardVariant: showMailDashboardVariant.name,
     });
 
     useEffect(() => {

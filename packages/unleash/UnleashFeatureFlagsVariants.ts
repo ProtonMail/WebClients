@@ -8,6 +8,7 @@ import type { FeatureFlag } from './UnleashFeatureFlags';
 export const FLAGS_WITH_VARIANT = [
     'DriveWebDownloadMechanismParameters',
     'VPNDashboard',
+    'MailDashboard',
     'InboxBringYourOwnEmailSignup',
 ] satisfies FeatureFlag[];
 
@@ -19,6 +20,7 @@ export const FLAGS_WITH_VARIANT = [
  */
 export type DriveWebDownloadMechanismParametersVariant = 'low-memory' | 'base-memory' | 'high-memory';
 export type VPNDashboardVariant = 'Control' | 'A' | 'B';
+export type MailDashboardVariant = 'A' | 'B';
 export type InboxBringYourOwnEmailSignupVariant = 'Control' | 'Bold' | 'Light';
 
 /**
@@ -40,6 +42,7 @@ type VariantReturnType<TVariantNameValue extends string> = Partial<
 type FeatureFlagVariantMap = {
     DriveWebDownloadMechanismParameters: VariantReturnType<DriveWebDownloadMechanismParametersVariant>;
     VPNDashboard: VariantReturnType<VPNDashboardVariant>;
+    MailDashboard: VariantReturnType<MailDashboardVariant>;
     InboxBringYourOwnEmailSignup: VariantReturnType<InboxBringYourOwnEmailSignupVariant>;
 };
 

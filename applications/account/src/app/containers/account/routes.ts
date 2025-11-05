@@ -39,7 +39,7 @@ import {
 } from '@proton/shared/lib/keys';
 import { getOrganizationDenomination, isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
 import { getHasStorageSplit } from '@proton/shared/lib/user/storage';
-import type { VPNDashboardVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
+import type { MailDashboardVariant, VPNDashboardVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
 
 import { recoveryIds } from './recoveryIds';
 
@@ -65,6 +65,7 @@ export const getAccountAppRoutes = ({
     isReferralExpansionEnabled,
     referralInfo,
     canDisplayNonPrivateEmailPhone,
+    showMailDashboard,
 }: {
     app: APP_NAMES;
     user: UserModel;
@@ -91,6 +92,8 @@ export const getAccountAppRoutes = ({
         referrerRewardAmount: string;
     };
     canDisplayNonPrivateEmailPhone: boolean;
+    showMailDashboard: boolean;
+    showMailDashboardVariant: MailDashboardVariant | 'disabled' | undefined;
 }) => {
     const { isFree, canPay, isPaid, isMember, isAdmin, Currency, Type, hasPaidMail } = user;
     const credits = getSimplePriceString(Currency || DEFAULT_CURRENCY, REFERRAL_PROGRAM_MAX_AMOUNT);
@@ -142,16 +145,19 @@ export const getAccountAppRoutes = ({
         // because they should have them on the dashboard or subscription pages
         (isVisionaryPlan && isMemberProton && isMember);
 
+    const shouldShowDashboard = isFree || canPay || !isMember || (isPaid && canPay);
+    const shouldShowNewDashboard = showVPNDashboard || showMailDashboard;
+
     return <const>{
         available: true,
         header: c('Settings section title').t`Account`,
         routes: {
-            dashboardV2: <SectionConfig>{
+            vpnDashboardV2: <SectionConfig>{
                 text: c('Title').t`Home`,
                 noTitle: true,
                 to: '/dashboardV2',
                 icon: 'house',
-                available: showVPNDashboard && (isFree || canPay || !isMember || (isPaid && canPay)),
+                available: showVPNDashboard && shouldShowDashboard,
                 subsections: [
                     {
                         text: c('Title').t`Your plan`,
@@ -182,12 +188,47 @@ export const getAccountAppRoutes = ({
                     },
                 ],
             },
+            mailDashboardV2: <SectionConfig>{
+                text: c('Title').t`Home`,
+                noTitle: true,
+                to: '/dashboardV2',
+                icon: 'house',
+                available: showMailDashboard && shouldShowDashboard,
+                subsections: [
+                    {
+                        text: c('Title').t`Your plan`,
+                        invisibleTitle: true,
+                        id: 'YourPlan',
+                    },
+                    {
+                        text: c('Title').t`Compare plans`,
+                        invisibleTitle: true,
+                        id: 'YourPlanUpsell',
+                        available: canPay && !planIsManagedExternally,
+                    },
+                    {
+                        text: c('Title').t`Downloads`,
+                        invisibleTitle: true,
+                        id: 'DownloadAndInfo',
+                    },
+                    {
+                        text: c('Title').t`Also in your plan`,
+                        invisibleTitle: true,
+                        id: 'AlsoInYourPlan',
+                    },
+                    {
+                        text: c('Title').t`Deep dive into email blog posts`,
+                        invisibleTitle: true,
+                        id: 'Blog',
+                    },
+                ],
+            },
             subscription: <SectionConfig>{
                 text: c('Title').t`Subscription`,
                 noTitle: true,
                 to: '/subscription',
                 icon: 'credit-card',
-                available: showVPNDashboard && (isFree || canPay || !isMember || (isPaid && canPay)),
+                available: shouldShowNewDashboard && shouldShowDashboard,
                 subsections: [
                     {
                         text: c('Title').t`Your plan`,
@@ -269,7 +310,7 @@ export const getAccountAppRoutes = ({
                 text: c('Title').t`Dashboard`,
                 to: '/dashboard',
                 icon: 'squares-in-square',
-                available: !showVPNDashboard && (isFree || canPay || !isMember || (isPaid && canPay)),
+                available: !shouldShowNewDashboard && shouldShowDashboard,
                 subsections: [
                     // do not show Your Plan section for Pass users
                     {

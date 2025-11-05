@@ -3,42 +3,49 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Pill } from '@proton/atoms/Pill/Pill';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { TrialInfoModal } from '@proton/components/containers/referral/components/TrialInfo/TrialInfo';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
+import type { ADDON_NAMES } from '@proton/payments';
 import {
     type Subscription,
     canModify,
+    getAddons,
     getHasPassB2BPlan,
     getIsB2BAudienceFromSubscription,
     getSubscriptionPlanTitle,
     hasCustomCycle,
+    hasFree,
     hasVPNPassBundle,
     isAutoRenewTrial,
     isManagedExternally,
     isTrial,
 } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import type { Address, Organization, UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
-import { getSpace } from '@proton/shared/lib/user/storage';
+import { getCompleteSpaceDetails, getPlanToUpsell, getSpace } from '@proton/shared/lib/user/storage';
 import { useFlag } from '@proton/unleash';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { useSubscriptionModal } from '../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../constants';
 import { subscriptionExpires } from '../helpers';
 import { getSubscriptionPanelText } from '../helpers/subscriptionPanelHelpers';
-import {
-    BillingDateSection,
-    FreeVPNFeatures,
-    ServersSection,
-    StorageSection,
-    UsersSection,
-} from './PlanFeatureSections';
+import { BillingDateSection, FreeVPNFeatures, ServersSection, UsersSection } from './PlanFeatureSections';
 import { PlanIcon } from './PlanIcon';
 import PlanIconName from './PlanIconName';
-import { getBillingCycleText, getPlanTitlePlusMaybeBrand } from './helpers';
+import {
+    getAddonDashboardTitle,
+    getBillingCycleText,
+    getPassLifetimeAddonDashboardTitle,
+    getPlanTitlePlusMaybeBrand,
+} from './helpers';
+import { StorageSection } from './storage/StorageSection';
 
 interface CurrentPlanInfoSectionProps {
     app: APP_NAMES;
@@ -49,6 +56,38 @@ interface CurrentPlanInfoSectionProps {
     addresses: Address[] | undefined;
     editBillingCycle?: boolean;
 }
+
+const AddonSection = ({
+    subscription,
+    user,
+    maxMembers,
+}: {
+    user: UserModel;
+    subscription: Subscription;
+    maxMembers: number;
+}) => {
+    const addons = getAddons(subscription);
+
+    const addonTitles = addons.map((addon) =>
+        getAddonDashboardTitle(addon.Name as ADDON_NAMES, addon.Quantity, maxMembers)
+    );
+    const passLifeTimeAddon = getPassLifetimeAddonDashboardTitle(user);
+    const mergedAddonTitles = [...addonTitles, passLifeTimeAddon].filter(isTruthy).join(', ');
+
+    if (mergedAddonTitles.length > 0 && !hasFree(subscription)) {
+        return (
+            <Tooltip
+                title={c('Tooltip').t`Added to your plan: ${mergedAddonTitles}`}
+                className="max-w-custom color-weak text-ellipsis"
+                style={{ '--max-w-custom': '25rem' }}
+            >
+                <div>+ {mergedAddonTitles}</div>
+            </Tooltip>
+        );
+    }
+
+    return null;
+};
 
 const TrialInfoBadge = ({ subscription }: { subscription: Subscription }) => {
     const [modalProps, setModal, renderModal] = useModalState();
@@ -86,10 +125,12 @@ const PlanNameSection = ({
     app,
     user,
     subscription,
+    maxMembers,
 }: {
     app: APP_NAMES;
     user: UserModel;
     subscription: Subscription;
+    maxMembers: number;
 }) => {
     const isReferralExpansionEnabled = useFlag('ReferralExpansion');
     const { planTitle, planName } = getSubscriptionPlanTitle(user, subscription);
@@ -109,7 +150,13 @@ const PlanNameSection = ({
         </>
     );
 
-    return <PlanIconName logo={<PlanIcon app={app} subscription={subscription} />} topLine={topLine} />;
+    return (
+        <PlanIconName
+            logo={<PlanIcon app={app} subscription={subscription} />}
+            topLine={topLine}
+            bottomLine={<AddonSection user={user} subscription={subscription} maxMembers={maxMembers} />}
+        />
+    );
 };
 export const CurrentPlanInfoSection = ({
     app,
@@ -126,7 +173,7 @@ export const CurrentPlanInfoSection = ({
     const telemetryFlow = useDashboardPaymentFlow(app);
     const goToSettings = useSettingsLink();
 
-    const { UsedSpace = space.usedSpace, MaxSpace = space.maxSpace, MaxMembers = 1 } = organization || {};
+    const { MaxMembers = 1 } = organization || {};
 
     const { userText } = getSubscriptionPanelText(user, organization, addresses);
 
@@ -195,18 +242,40 @@ export const CurrentPlanInfoSection = ({
             );
         }
 
+        if (isFree && ([APPS.PROTONMAIL, APPS.PROTONDRIVE, APPS.PROTONCALENDAR] as APP_NAMES[]).includes(app)) {
+            const details = getCompleteSpaceDetails(space);
+            const plan = getPlanToUpsell({ storageDetails: details, app });
+            return (
+                <ButtonLike
+                    as={SettingsLink}
+                    path={addUpsellPath(
+                        getUpgradePath({ user, subscription, plan }),
+                        getUpsellRefFromApp({
+                            app,
+                            feature: SHARED_UPSELL_PATHS.STORAGE_PERCENTAGE,
+                            component: UPSELL_COMPONENT.BANNER,
+                            fromApp: app,
+                        })
+                    )}
+                >{c('Action').t`Get more storage`}</ButtonLike>
+            );
+        }
+
         return null;
     })();
 
     return (
-        <div className="flex flex-column gap-4 lg:gap-8 xl:gap-12 md:justify-space-between md:flex-wrap md:flex-row">
-            <PlanNameSection app={app} user={user} subscription={subscription} />
+        <div
+            className="flex flex-column gap-4 lg:gap-8 xl:gap-12 md:justify-space-between md:flex-wrap md:flex-row"
+            data-testid="current-plan"
+        >
+            <PlanNameSection app={app} user={user} subscription={subscription} maxMembers={MaxMembers} />
             <div className="flex flex-column md:flex-row gap-4 lg:gap-8 xl:gap-12 xl:ml-auto">
                 <UsersSection MaxMembers={MaxMembers} userText={userText} />
-                <StorageSection user={user} usedSpace={UsedSpace} maxSpace={MaxSpace} />
+                <StorageSection app={app} organization={organization} subscription={subscription} user={user} />
                 <BillingDateSection subscription={subscription} />
-                <ServersSection organization={organization} />
-                <FreeVPNFeatures serversCount={serversCount} isFreeUser={isFree} />
+                <ServersSection app={app} organization={organization} />
+                <FreeVPNFeatures app={app} serversCount={serversCount} isFreeUser={isFree} />
             </div>
             {cta && <div className="flex items-center w-full xl:w-auto">{cta}</div>}
         </div>

@@ -22,6 +22,7 @@ import {
     CancelSubscriptionViaSupportSection,
     CancellationReminderSection,
     CreditsSection,
+    DashboardTelemetry,
     DeleteSection,
     DowngradeSubscriptionSection,
     EmailSubscriptionSection,
@@ -55,7 +56,6 @@ import {
     UpgradeVpnSection,
     UserDropdown,
     UsernameSection,
-    VPNDashboardTelemetry,
     VpnAlsoInYourPlanSection,
     VpnBlogSection,
     VpnDownloadAndInfoSection,
@@ -290,7 +290,7 @@ const MainContainer: FunctionComponent = () => {
                         <Switch>
                             {getIsSectionAvailable(vpnRoutes.dashboardV2) && (
                                 <Route path={vpnRoutes.dashboardV2.to}>
-                                    <VPNDashboardTelemetry app={app} />
+                                    <DashboardTelemetry app={app} />
                                     <AutomaticSubscriptionModal />
                                     <PrivateMainSettingsArea
                                         config={vpnRoutes.dashboardV2}
@@ -330,7 +330,7 @@ const MainContainer: FunctionComponent = () => {
 
                             {getIsSectionAvailable(vpnRoutes.dashboard) && (
                                 <Route path={vpnRoutes.dashboard.to}>
-                                    <VPNDashboardTelemetry app={app} />
+                                    <DashboardTelemetry app={app} />
                                     <AutomaticSubscriptionModal />
                                     <PrivateMainSettingsArea config={vpnRoutes.dashboard}>
                                         <PlansSection app={app} />

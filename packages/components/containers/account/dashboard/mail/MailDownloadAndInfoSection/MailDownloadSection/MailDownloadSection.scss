@@ -1,0 +1,12 @@
+@import '~@proton/styles/scss/lib';
+
+.MailDownloadSection-button-appstore {
+	--padding-block: 0.25rem;
+	--button-default-background-color: black;
+	--button-hover-background-color: black;
+	--button-active-background-color: black;
+
+	img {
+		block-size: rem(26);
+	}
+}
