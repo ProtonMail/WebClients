@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
-import { Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import { useBundleProPlan } from '@proton/components/hooks/useHasPlan';
 import { PLANS, PLAN_NAMES, getPlanName } from '@proton/payments';

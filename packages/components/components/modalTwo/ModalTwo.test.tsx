@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { fireEvent, queryByTestId, render, screen } from '@testing-library/react';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
 
 import ModalTwo from './Modal';
