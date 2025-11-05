@@ -1,17 +1,16 @@
-import type { ReactNode } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 
 import { format } from 'date-fns';
 import { c } from 'ttag';
 
-import { Icon } from '@proton/components/index';
-import { IcCheckmarkCircle, type IconName } from '@proton/icons';
+import { IcCalendarGrid, IcCheckmarkCircle, IcClock, IcGlobe, IcMapPin, IcUserCircle } from '@proton/icons';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { useBookingStore } from '../booking.store';
 import { NoMatch, Reason } from './NoMatch';
 
 interface BookingSuccessItemProps {
-    icon: IconName;
+    icon: ReactElement;
     title: string;
     data: ReactNode | string;
 }
@@ -23,7 +22,7 @@ const BookingSuccessItem = ({ icon, title, data }: BookingSuccessItemProps) => {
                 className="rounded-full bg-weak flex items-center justify-center w-custom h-custom"
                 style={{ '--w-custom': '2.5rem', '--h-custom': '2.5rem' }}
             >
-                <Icon name={icon} size={5} />
+                {icon}
             </div>
             <div>
                 <h2 className="m-0 text-semibold text-rg">{title}</h2>
@@ -56,17 +55,17 @@ export const BookingSuccess = () => {
                     <div className="flex flex-column gap-4">
                         <BookingSuccessItem
                             title={c('Title').t`Host`}
-                            icon="user-circle"
+                            icon={<IcUserCircle />}
                             data={bookingDetails.inviterDisplayName}
                         />
                         <BookingSuccessItem
                             title={c('Title').t`Location`}
-                            icon="map-pin"
+                            icon={<IcMapPin />}
                             data={bookingDetails.location}
                         />
                         <BookingSuccessItem
                             title={c('Title').t`Time zone`}
-                            icon="globe"
+                            icon={<IcGlobe />}
                             data={bookingDetails.timezone}
                         />
                     </div>
@@ -74,10 +73,10 @@ export const BookingSuccess = () => {
                     <div className="flex flex-column gap-4">
                         <BookingSuccessItem
                             title={c('Title').t`Date`}
-                            icon="calendar-grid"
+                            icon={<IcCalendarGrid />}
                             data={format(bookingSlotDetails.startTime, 'MMMM d, yyyy', { locale: dateLocale })}
                         />
-                        <BookingSuccessItem title={c('Title').t`Time`} icon="clock" data={timeData} />
+                        <BookingSuccessItem title={c('Title').t`Time`} icon={<IcClock />} data={timeData} />
                     </div>
                 </div>
             </div>

@@ -3,11 +3,19 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
 import { DropdownSizeUnit } from '@proton/components';
-import Icon from '@proton/components/components/icon/Icon';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { InputField } from '@proton/components/components/v2/field/InputField';
 import TextArea from '@proton/components/components/v2/input/TextArea';
+import {
+    IcCalendarGrid,
+    IcCalendarListCheck,
+    IcClock,
+    IcCrossBig,
+    IcFileLines,
+    IcMapPin,
+    IcTextTitle,
+} from '@proton/icons';
 import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eventDefaults';
 
@@ -27,7 +35,7 @@ export const Form = () => {
 
     return (
         <form className="flex flex-column">
-            <FormIconRow icon="text-title" title={c('Info').t`Name your booking page`}>
+            <FormIconRow icon={<IcTextTitle />} title={c('Info').t`Name your booking page`}>
                 <InputField
                     id="booking-title"
                     as={TextArea}
@@ -44,7 +52,7 @@ export const Form = () => {
                 />
             </FormIconRow>
 
-            <FormIconRow icon="clock" title={c('Info').t`How long should an appointment last?`}>
+            <FormIconRow icon={<IcClock />} title={c('Info').t`How long should an appointment last?`}>
                 <div className="flex gap-1">
                     {scheduleOptions.map((option) => (
                         <Button
@@ -59,11 +67,11 @@ export const Form = () => {
                 </div>
             </FormIconRow>
 
-            <FormIconRow icon="calendar-list-check" title={c('Info').t`When are you free?`}>
+            <FormIconRow icon={<IcCalendarListCheck />} title={c('Info').t`When are you free?`}>
                 <FormRangeList />
             </FormIconRow>
 
-            <FormIconRow icon="map-pin" title={c('Info').t`Where will the appointment take place?`}>
+            <FormIconRow icon={<IcMapPin />} title={c('Info').t`Where will the appointment take place?`}>
                 <InputField
                     as={SelectTwo}
                     id="location-select"
@@ -95,7 +103,7 @@ export const Form = () => {
                 )}
             </FormIconRow>
 
-            <FormIconRow icon="calendar-grid" title={c('Info').t`In which calendar should bookings appear?`}>
+            <FormIconRow icon={<IcCalendarGrid />} title={c('Info').t`In which calendar should bookings appear?`}>
                 <InputField
                     as={SelectTwo}
                     id="calendar-select"
@@ -122,7 +130,7 @@ export const Form = () => {
                 </InputField>
             </FormIconRow>
 
-            <FormIconRow icon="file-lines" title={c('Info').t`What should people know before booking?`}>
+            <FormIconRow icon={<IcFileLines />} title={c('Info').t`What should people know before booking?`}>
                 <TextArea
                     id="booking-description"
                     placeholder={c('Placeholder').t`Add a booking page description`}
@@ -141,7 +149,7 @@ const Header = () => {
 
     return (
         <Button icon shape="ghost" onClick={() => changeBookingState(BookingState.OFF)}>
-            <Icon name="cross-big" />
+            <IcCrossBig />
         </Button>
     );
 };
