@@ -7,7 +7,7 @@ export default defineConfig({
     files: allGlobs,
     rules: {
         'no-restricted-imports': [
-            'warn',
+            'error',
             {
                 paths: [
                     {
