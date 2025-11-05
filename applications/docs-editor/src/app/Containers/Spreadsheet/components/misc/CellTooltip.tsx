@@ -194,6 +194,7 @@ function LinkInfoTooltip({
           popoverElement?.style.setProperty('transform', `translate3d(${posX}px, ${posY}px, 0)`)
         }}
         onMouseMove={(e) => e.stopPropagation()}
+        autoFocusOnShow={false}
       >
         <div className="flex items-center gap-3">
           <Icon legacyName="globe" />
