@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { IconName } from '@proton/icons';
+import type { IconName } from '@proton/icons/types';
 import { type CategoryLabelID, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 export const DISABLED_BADGE = 'DISABLE_CATEGORY_BADGE';

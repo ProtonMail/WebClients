@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import type { ButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
-import { IcPaperClip } from '@proton/icons';
+import { IcPaperClip } from '@proton/icons/icons/IcPaperClip';
 import clsx from '@proton/utils/clsx';
 
 interface Props extends ButtonLikeProps<'label'> {

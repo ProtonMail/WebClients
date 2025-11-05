@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { useNotifications } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
-import { IcHourglass } from '@proton/icons';
+import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';

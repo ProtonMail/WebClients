@@ -4,8 +4,20 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { ContextMenu, DropdownMenu, DropdownMenuButton, useDragOver, useModalState, useNotifications, usePopperAnchor } from '@proton/components';
-import { IcCross, IcCrossCircle, IcSquares, IcUser, IcUsers } from '@proton/icons';
+import {
+    ContextMenu,
+    DropdownMenu,
+    DropdownMenuButton,
+    useDragOver,
+    useModalState,
+    useNotifications,
+    usePopperAnchor,
+} from '@proton/components';
+import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
+import { IcSquares } from '@proton/icons/icons/IcSquares';
+import { IcUser } from '@proton/icons/icons/IcUser';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 

@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import { IcMagnifier } from '@proton/icons';
+import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { getHumanLabelID } from '@proton/mail/helpers/location';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { changeSearchParams } from '@proton/shared/lib/helpers/url';

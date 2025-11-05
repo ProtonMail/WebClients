@@ -18,7 +18,8 @@ import {
 } from '@proton/components';
 import TextArea from '@proton/components/components/v2/input/TextArea';
 import useLoading from '@proton/hooks/useLoading';
-import { IcThumbDown, IcThumbUp } from '@proton/icons';
+import { IcThumbDown } from '@proton/icons/icons/IcThumbDown';
+import { IcThumbUp } from '@proton/icons/icons/IcThumbUp';
 import { useAssistant } from '@proton/llm/lib';
 import type { AssistantFeedback } from '@proton/shared/lib/api/feedback';
 import { sendAssistantFeedback } from '@proton/shared/lib/api/feedback';

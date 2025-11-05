@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Collapsible, CollapsibleContent, CollapsibleHeader, CollapsibleHeaderIconButton } from '@proton/components';
-import { IcChevronDown, IcInfoCircle } from '@proton/icons';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 
 import { getUnsubscribeMethod } from '../../helper';
 import { type PropsWithNewsletterSubscription, UnsubscribeMethod } from '../../interface';

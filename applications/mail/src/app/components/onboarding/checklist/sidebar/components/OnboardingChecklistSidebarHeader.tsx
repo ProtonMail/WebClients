@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { c, msgid } from 'ttag';
 
 import { SimpleSidebarListItemHeader } from '@proton/components';
-import { IcCross } from '@proton/icons';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import clsx from '@proton/utils/clsx';
 
 import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';

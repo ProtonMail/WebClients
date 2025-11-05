@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Vr } from '@proton/atoms/Vr/Vr';
 import { ToolbarButton, useElementBreakpoints } from '@proton/components';
-import { IcArrowLeft } from '@proton/icons';
+import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import clsx from '@proton/utils/clsx';
 
 import { getToolbarResponsiveSizes } from '../../helpers/toolbar/getToolbarResponsiveSizes';

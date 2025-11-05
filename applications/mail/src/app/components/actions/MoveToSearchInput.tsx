@@ -1,7 +1,7 @@
 import type { ChangeEventHandler } from 'react';
 
 import { InputFieldTwo, useActiveBreakpoint } from '@proton/components';
-import { IcMagnifier } from '@proton/icons';
+import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 
 interface Props {
     title: string;

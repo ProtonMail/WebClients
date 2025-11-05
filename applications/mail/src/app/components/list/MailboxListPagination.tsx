@@ -4,7 +4,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { IcChevronLeft, IcChevronRight } from '@proton/icons';
+import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { TelemetryMailPagingControlsEvents } from '@proton/shared/lib/api/telemetry';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';

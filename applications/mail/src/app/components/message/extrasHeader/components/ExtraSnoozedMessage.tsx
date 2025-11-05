@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
-import { IcClock } from '@proton/icons';
+import { IcClock } from '@proton/icons/icons/IcClock';
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { isSnoozed } from '@proton/shared/lib/mail/messages';
 

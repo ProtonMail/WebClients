@@ -21,7 +21,7 @@ import {
     useNotifications,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
-import { IcEnvelope } from '@proton/icons';
+import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
 import type {
     MessageStateWithData,
     MessageWithOptionalBody,

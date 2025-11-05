@@ -1,5 +1,5 @@
 import { FolderIcon, Icon } from '@proton/components';
-import { IcCircleFilled } from '@proton/icons';
+import { IcCircleFilled } from '@proton/icons/icons/IcCircleFilled';
 import { isCategoryLabel } from '@proton/mail/helpers/location';
 import clsx from '@proton/utils/clsx';
 

@@ -4,7 +4,8 @@ import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms/Kbd/Kbd';
 import { ToolbarButton } from '@proton/components';
-import { IcEnvelopeDot, IcEnvelopeOpen } from '@proton/icons';
+import { IcEnvelopeDot } from '@proton/icons/icons/IcEnvelopeDot';
+import { IcEnvelopeOpen } from '@proton/icons/icons/IcEnvelopeOpen';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 

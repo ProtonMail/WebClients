@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { IcArrowRotateRight, IcCircleSlash } from '@proton/icons';
+import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
+import { IcCircleSlash } from '@proton/icons/icons/IcCircleSlash';
 
 export const CategoryTabError = () => {
     return (

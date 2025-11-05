@@ -21,30 +21,27 @@ import {
 } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
-import {
-    IcArchiveBox,
-    IcArrowUpFromSquare,
-    IcCode,
-    IcCrossCircle,
-    IcEnvelopeDot,
-    IcEyeSlash,
-    IcFilter,
-    IcFire,
-    IcFireSlash,
-    IcFolderArrowIn,
-    IcHook,
-    IcHourglass,
-    IcInbox,
-    IcListBullets,
-    IcPrinter,
-    IcStar,
-    IcStarSlash,
-    IcTag,
-    IcThreeDotsHorizontal,
-    IcTrash,
-    IcWindowImage,
-    IcWindowTerminal,
-} from '@proton/icons';
+import { IcArrowUpFromSquare } from '@proton/icons/icons/IcArrowUpFromSquare';
+import { IcCode } from '@proton/icons/icons/IcCode';
+import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
+import { IcEnvelopeDot } from '@proton/icons/icons/IcEnvelopeDot';
+import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
+import { IcFilter } from '@proton/icons/icons/IcFilter';
+import { IcFire } from '@proton/icons/icons/IcFire';
+import { IcFireSlash } from '@proton/icons/icons/IcFireSlash';
+import { IcFolderArrowIn } from '@proton/icons/icons/IcFolderArrowIn';
+import { IcHook } from '@proton/icons/icons/IcHook';
+import { IcHourglass } from '@proton/icons/icons/IcHourglass';
+import { IcInbox } from '@proton/icons/icons/IcInbox';
+import { IcListBullets } from '@proton/icons/icons/IcListBullets';
+import { IcPrinter } from '@proton/icons/icons/IcPrinter';
+import { IcStar } from '@proton/icons/icons/IcStar';
+import { IcStarSlash } from '@proton/icons/icons/IcStarSlash';
+import { IcTag } from '@proton/icons/icons/IcTag';
+import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
+import { IcWindowImage } from '@proton/icons/icons/IcWindowImage';
+import { IcWindowTerminal } from '@proton/icons/icons/IcWindowTerminal';
 import { useFolders } from '@proton/mail';
 import { getCurrentFolderID } from '@proton/mail/helpers/location';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';

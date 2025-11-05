@@ -5,7 +5,11 @@ import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms/Kbd/Kbd';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { IcArrowsFromCenter, IcArrowsToCenter, IcCrossBig, IcDots, IcLowDash } from '@proton/icons';
+import { IcArrowsFromCenter } from '@proton/icons/icons/IcArrowsFromCenter';
+import { IcArrowsToCenter } from '@proton/icons/icons/IcArrowsToCenter';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
+import { IcDots } from '@proton/icons/icons/IcDots';
+import { IcLowDash } from '@proton/icons/icons/IcLowDash';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { isSafari as checkIsSafari, metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';

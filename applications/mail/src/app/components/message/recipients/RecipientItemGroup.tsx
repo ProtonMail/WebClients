@@ -3,9 +3,20 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Dropdown, DropdownMenu, DropdownMenuButton, DropdownSizeUnit, useModals, useNotifications, usePopperAnchor } from '@proton/components';
-import { IcPenSquare, IcSquares, IcUser, IcUsers } from '@proton/icons';
+import {
+    Dropdown,
+    DropdownMenu,
+    DropdownMenuButton,
+    DropdownSizeUnit,
+    useModals,
+    useNotifications,
+    usePopperAnchor,
+} from '@proton/components';
 import RecipientDropdownItem from '@proton/components/containers/contacts/view/RecipientDropdownItem';
+import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
+import { IcSquares } from '@proton/icons/icons/IcSquares';
+import { IcUser } from '@proton/icons/icons/IcUser';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import generateUID from '@proton/utils/generateUID';

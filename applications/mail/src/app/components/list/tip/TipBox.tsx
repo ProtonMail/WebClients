@@ -7,7 +7,7 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { CustomNotificationProps } from '@proton/components';
 import { Icon, NotificationButton, useNotifications } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
-import { IcCross } from '@proton/icons';
+import { IcCross } from '@proton/icons/icons/IcCross';
 
 import useGetRandomTip from 'proton-mail/components/list/tip/useGetRandomTip';
 import type { TipData } from 'proton-mail/models/tip';
