@@ -35,6 +35,7 @@ import { useNewUIEnabled } from './new-ui-enabled'
 import { Dialogs } from './components/Dialogs/Dialogs'
 import { Sidebar } from './components/Sidebar/Sidebar'
 import { useFocusSheet } from '@rowsncolumns/spreadsheet'
+import { useActiveBreakpoint } from '@proton/components'
 
 export type SpreadsheetRef = {
   exportData: (format: DataTypesThatDocumentCanBeExportedAs) => Promise<Uint8Array<ArrayBuffer>>
@@ -69,11 +70,14 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   ref: ForwardedRef<SpreadsheetRef>,
 ) {
   const { application } = useApplication()
+  const { viewportWidth } = useActiveBreakpoint()
 
   const didImportFromExcelFile = useRef(false)
 
+  // TODO: Consider refactoring these into a single derived mode "state"
   const isRevisionMode = systemMode === EditorSystemMode.Revision
-  const isReadonly = editingLocked || isRevisionMode
+  const isViewOnlyMode = !application.getRole().canEdit() || viewportWidth['<=small']
+  const isReadonly = editingLocked || isRevisionMode || isViewOnlyMode
 
   const state = useProtonSheetsState({ docState, locale: LOCALE, functions, isReadonly })
   const { getLocalStateWithoutActions, replaceLocalSpreadsheetState } = useLocalState(state, updateLocalStateToLog)
@@ -182,6 +186,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
         state={state}
         isReadonly={isReadonly}
         isRevisionMode={isRevisionMode}
+        isViewOnlyMode={isViewOnlyMode}
         clientInvoker={clientInvoker}
         isPublicMode={isPublicMode}
       />
@@ -193,6 +198,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
       state={state}
       isReadonly={isReadonly}
       isRevisionMode={isRevisionMode}
+      isViewOnlyMode={isViewOnlyMode}
       downloadLogs={downloadLogs}
     />
   )
@@ -202,14 +208,15 @@ type UIProps = {
   hidden: boolean
   state: ProtonSheetsState
   isReadonly: boolean
+  isViewOnlyMode: boolean
   isRevisionMode: boolean
   clientInvoker: EditorRequiresClientMethods
   isPublicMode: boolean
 }
 
-function UI({ hidden, state, isReadonly, isRevisionMode, clientInvoker, isPublicMode }: UIProps) {
+function UI({ hidden, state, isReadonly, isRevisionMode, isViewOnlyMode, clientInvoker, isPublicMode }: UIProps) {
   return (
-    <ProtonSheetsUIStoreProvider state={state} isReadonly={isReadonly}>
+    <ProtonSheetsUIStoreProvider state={state} isReadonly={isReadonly} isViewOnlyMode={isViewOnlyMode}>
       {hidden && (
         <div
           className="absolute z-[100] flex h-full w-full flex-col items-center justify-center gap-4 bg-[#F9FBFC]"
@@ -221,8 +228,8 @@ function UI({ hidden, state, isReadonly, isRevisionMode, clientInvoker, isPublic
         <div className="flex h-full grow flex-col">
           {!isRevisionMode && (
             <>
-              <Menubar className="mb-2" clientInvoker={clientInvoker} isPublicMode={isPublicMode} />
-              <Toolbar />
+              <Menubar className="mb-2 max-sm:hidden" clientInvoker={clientInvoker} isPublicMode={isPublicMode} />
+              <Toolbar className="max-sm:hidden" />
               {/* TODO: formula bar */}
             </>
           )}
@@ -249,12 +256,13 @@ type LegacyUIProps = {
   state: ProtonSheetsState
   isReadonly: boolean
   isRevisionMode: boolean
+  isViewOnlyMode: boolean
   downloadLogs: () => void
 }
 
-function LegacyUI({ hidden, state, isReadonly, isRevisionMode, downloadLogs }: LegacyUIProps) {
+function LegacyUI({ hidden, state, isReadonly, isRevisionMode, downloadLogs, isViewOnlyMode }: LegacyUIProps) {
   return (
-    <ProtonSheetsUIStoreProvider state={state} isReadonly={isReadonly}>
+    <ProtonSheetsUIStoreProvider state={state} isReadonly={isReadonly} isViewOnlyMode={isViewOnlyMode}>
       {hidden && (
         <div
           className="absolute z-[100] flex h-full w-full flex-col items-center justify-center gap-4 bg-[#F9FBFC]"

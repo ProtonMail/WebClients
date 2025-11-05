@@ -31,17 +31,28 @@ export interface ToolbarProps extends ComponentPropsWithRef<'div'> {}
 const { s } = createStringifier(strings)
 
 export const Toolbar = createComponent(function Toolbar(props: ToolbarProps) {
+  const isViewOnlyMode = useUI((ui) => ui.info.isViewOnlyMode)
+
   return (
     <T.Container
       {...props}
-      mainToolbarSlot={<ToolbarGroups />}
-      overflowToolbarSlot={<ToolbarGroups />}
-      trailingSlot={<InsertChart />}
+      mainToolbarSlot={isViewOnlyMode ? <ViewOnlyModeToolbarGroups /> : <ToolbarGroups />}
+      overflowToolbarSlot={isViewOnlyMode ? null : <ToolbarGroups />}
+      trailingSlot={isViewOnlyMode ? null : <InsertChart />}
       formulaBarSlot={<FormulaBar />}
       renderOverflowDisclosure={<T.Item legacyIconName="three-dots-vertical">{s('More')}</T.Item>}
     />
   )
 })
+
+function ViewOnlyModeToolbarGroups() {
+  return (
+    <T.Group groupId="main">
+      <ZoomCombobox />
+      <Find />
+    </T.Group>
+  )
+}
 
 function ToolbarGroups() {
   return (

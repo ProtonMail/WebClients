@@ -1,7 +1,7 @@
 import * as Ariakit from '@ariakit/react'
 import clsx from '@proton/utils/clsx'
 import { type ComponentPropsWithoutRef, type ReactNode, type Ref, forwardRef } from 'react'
-import { IcCrossSmall, IcPlus, IcHamburger } from '@proton/icons'
+import { IcCrossSmall, IcPlus } from '@proton/icons'
 import { createComponent } from '../utils'
 
 export interface ContainerProps extends ComponentPropsWithoutRef<'div'> {}
@@ -165,30 +165,5 @@ export const StatusArea = forwardRef<HTMLDivElement, StatusAreaProps>(function S
     >
       {props.children}
     </div>
-  )
-})
-
-export interface SheetSwitcherButtonProps extends Ariakit.ToolbarItemProps {
-  ref?: Ref<HTMLButtonElement>
-  hasHiddenSheets?: boolean
-}
-
-export const SheetSwitcherButton = createComponent<SheetSwitcherButtonProps>(function SheetSwitcherButton({
-  hasHiddenSheets,
-  ...props
-}: SheetSwitcherButtonProps) {
-  return (
-    <Ariakit.ToolbarItem
-      {...props}
-      className={clsx(
-        'flex h-8 w-8 items-center justify-center rounded-[6px] text-[#0C0C14]',
-        'hover:bg-[#EDEDED]/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4695F3]/50',
-        hasHiddenSheets && 'text-[#4695F3]',
-        props.className,
-      )}
-      aria-label="Show all sheets"
-    >
-      <IcHamburger className="h-4 w-4" />
-    </Ariakit.ToolbarItem>
   )
 })
