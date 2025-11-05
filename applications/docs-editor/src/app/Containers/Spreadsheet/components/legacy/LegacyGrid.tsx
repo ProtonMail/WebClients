@@ -8,6 +8,7 @@ import { useEffect, useRef } from 'react'
 import { useUI } from '../../ui-store'
 import { CellTooltip } from '../misc/CellTooltip'
 import { LegacyContextMenu } from './LegacyContextMenu'
+import { GridFooter } from '../GridFooter/GridFooter'
 
 export type LegacyGridProps = {
   state: ProtonSheetsState
@@ -181,6 +182,10 @@ export function LegacyGrid({ state, isReadonly, users, userName }: LegacyGridPro
       getEffectiveFormat={state.getEffectiveFormat}
       CellTooltip={CellTooltip}
       ContextMenu={LegacyContextMenu}
+      footerHeight={isReadonly ? undefined : 68}
+      footerComponent={
+        isReadonly ? undefined : <GridFooter sheetId={state.activeSheetId} onRequestAddRows={state.onRequestAddRows} />
+      }
     />
   )
 }
