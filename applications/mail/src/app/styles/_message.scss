@@ -338,12 +338,16 @@ $container-to-width: 4em !default;
 .container-to {
 	min-inline-size: $container-to-width;
 
-	[lang='hu'] &,
-	[lang='tr'] & {
+	[lang*='hu'] &,
+	[lang*='tr'] & {
 		min-inline-size: 5em;
 	}
 
-	[lang='fi'] & {
+	[lang*='ru'] & {
+		min-inline-size: 7em;
+	}
+
+	[lang*='fi'] & {
 		min-inline-size: 8em;
 	}
 
