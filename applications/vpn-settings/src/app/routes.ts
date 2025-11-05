@@ -10,7 +10,7 @@ import {
     isCancellableOnlyViaSupport,
     isManagedExternally,
 } from '@proton/payments';
-import { VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import { getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
 import type { VPNDashboardVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
@@ -21,9 +21,24 @@ interface Arguments {
     showVPNDashboard: boolean;
     showVPNDashboardVariant: VPNDashboardVariant | 'disabled' | undefined;
     isB2BTrial: boolean;
+    isReferralProgramEnabled: boolean;
+    isReferralExpansionEnabled: boolean;
+    referralInfo: {
+        refereeRewardAmount: string;
+        referrerRewardAmount: string;
+    };
 }
 
-export const getRoutes = ({ user, subscription, showVPNDashboard, showVPNDashboardVariant, isB2BTrial }: Arguments) => {
+export const getRoutes = ({
+    user,
+    subscription,
+    showVPNDashboard,
+    showVPNDashboardVariant,
+    isB2BTrial,
+    isReferralProgramEnabled,
+    isReferralExpansionEnabled,
+    referralInfo,
+}: Arguments) => {
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
     const cancellablePlan = hasCancellablePlan(subscription);
     const cancellableOnlyViaSupport = isCancellableOnlyViaSupport(subscription);
@@ -280,6 +295,26 @@ export const getRoutes = ({ user, subscription, showVPNDashboard, showVPNDashboa
                 {
                     text: c('Title').t`OpenVPN configuration files`,
                     id: 'openvpn-configuration-files',
+                },
+            ],
+        },
+        referral: <SectionConfig>{
+            text: c('Title').t`Refer a friend`,
+            title: c('Title').t`Invite friends. Get credits.`,
+            description:
+                // translator: Full sentence 'You’ll receive US$20 in Proton credit when the person you invite signs up for a Proton plan, and they’ll also get US$20 in credits to get started.'
+                c('Description')
+                    .t`You’ll receive ${referralInfo.referrerRewardAmount} in ${BRAND_NAME} credit when the person you invite signs up for a ${BRAND_NAME} plan, and they’ll also get ${referralInfo.refereeRewardAmount} in credits to get started.`,
+            to: '/referral',
+            icon: 'money-bills',
+            available: !!isReferralProgramEnabled && !!isReferralExpansionEnabled,
+            subsections: [
+                {
+                    id: 'referral-invite-section',
+                },
+                {
+                    text: c('Title').t`Your referrals`,
+                    id: 'referral-reward-section',
                 },
             ],
         },
