@@ -1,7 +1,7 @@
 import { useCallback, useEffect } from 'react';
 
 import { useRoomContext } from '@livekit/components-react';
-import { ConnectionState, type LocalTrack, Room, RoomEvent, Track } from '@proton-meet/livekit-client';
+import { ConnectionState, type LocalTrack, Room, RoomEvent, Track } from 'livekit-client';
 
 import { DEFAULT_DEVICE_ID } from '../constants';
 import type { SwitchActiveDevice } from '../types';

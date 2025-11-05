@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { useRoomContext, useSpeakingParticipants } from '@livekit/components-react';
-import type { Participant } from '@proton-meet/livekit-client';
+import type { Participant } from 'livekit-client';
 
 export function useDebouncedActiveSpeakers(delayMs = 1000) {
     const room = useRoomContext();

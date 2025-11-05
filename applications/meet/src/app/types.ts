@@ -1,4 +1,4 @@
-import type { ChatMessage } from '@proton-meet/livekit-client';
+import type { ChatMessage } from 'livekit-client';
 
 export enum LoadingState {
     JoiningInProgress = 'JoiningInProgress',

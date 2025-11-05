@@ -1,6 +1,6 @@
 import { useParticipants } from '@livekit/components-react';
-import { VideoQuality } from '@proton-meet/livekit-client';
 import { renderHook } from '@testing-library/react';
+import { VideoQuality } from 'livekit-client';
 import type { Mock } from 'vitest';
 
 import { useMeetContext } from '../contexts/MeetContext';

@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react';
 
 import { useLocalParticipant, useRoomContext, useTracks } from '@livekit/components-react';
-import type { RemoteParticipant, RemoteTrackPublication } from '@proton-meet/livekit-client';
-import { RoomEvent, Track } from '@proton-meet/livekit-client';
+import type { RemoteParticipant, RemoteTrackPublication } from 'livekit-client';
+import { RoomEvent, Track } from 'livekit-client';
 
 import { useMeetContext } from '../contexts/MeetContext';
 import { useParticipantQuality } from './useParticipantQuality';

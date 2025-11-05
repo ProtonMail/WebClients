@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import type { LocalParticipant, RemoteParticipant } from '@proton-meet/livekit-client';
+import type { LocalParticipant, RemoteParticipant } from 'livekit-client';
 
 import { CloseButton } from '../atoms/CloseButton/CloseButton';
 import { useMeetContext } from '../contexts/MeetContext';
