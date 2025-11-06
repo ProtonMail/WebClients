@@ -13,6 +13,8 @@ import useInboxDesktopElementId from 'proton-mail/hooks/useInboxDesktopElementId
 import useMailtoHash from 'proton-mail/hooks/useMailtoHash';
 import type { Element } from 'proton-mail/models/element';
 
+import useShowBYOESpotlightModal from '../../hooks/useShowBYOESpotlightModal';
+
 interface Props {
     labelID: string;
     isSearch: boolean;
@@ -60,4 +62,6 @@ export const useMailboxContainerSideEffects = ({
 
     // Handle the redirection to /primary if the user tries to access /inbox when cateogries are enabled
     useMailCategoriesRedirection({ labelID });
+
+    useShowBYOESpotlightModal();
 };
