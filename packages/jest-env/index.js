@@ -19,6 +19,7 @@ class MyEnvironment extends JSDOMEnvironment {
                         TextDecoder,
                         TextEncoder,
                         ReadableStream,
+                        WritableStream,
                         Response,
                         Request,
                         BroadcastChannel,
