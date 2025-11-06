@@ -90,9 +90,6 @@
       "Apply": [
         "Anvend"
       ],
-      "Ask me next time": [
-        "Spør meg neste gang"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "På det meste ${ maxContacts } kontakt er tillatt per kontaktgruppe.",
         "På det meste ${ maxContacts } kontakter er tillatt per kontaktgruppe."
@@ -657,9 +654,6 @@
       "Save changes": [
         "Lagre endringer"
       ],
-      "Save preferences": [
-        "Lagre preferanser"
-      ],
       "Search": [
         "Søk"
       ],
@@ -668,6 +662,9 @@
       ],
       "Search recent documents": [
         "Søk i nylige dokumenter"
+      ],
+      "Search recent spreadsheets": [
+        "Søk nylige regneark"
       ],
       "See how": [
         "Se hvordan"
@@ -1069,6 +1066,12 @@
       ],
       "Unsupported event": [
         "Ikke støttet hendelse"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } resultat til som ikke vises",
+        "${ hiddenResultsCount } resultater til som ikke vises"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -3638,6 +3641,11 @@
         "Ubegrenset antall hide-my-email-aliaser"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Lynraske hastigheter"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Noe gikk galt med autentiseringen av sikkerhetsnøkkelen din. Prøv igjen."
@@ -4382,9 +4390,6 @@
       "Continue": [
         "Fortsett"
       ],
-      "Converting document...": [
-        "Konverterer dokument..."
-      ],
       "Copy the link to clipboard": [
         "Kopier koblingen til utklippstavlen"
       ],
@@ -4427,9 +4432,6 @@
       ],
       "Creating link to folder": [
         "Oppretter kobling til mappe"
-      ],
-      "Creating new document...": [
-        "Oppretter nytt dokument..."
       ],
       "Current plan": [
         "Gjeldende plan"
@@ -4524,12 +4526,6 @@
       "Enter your own password (as trusted contact).": [
         "Skriv inn ditt eget passord (som betrodd kontakt)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Feil ved konvertering av dokument: ${ errorMessage }"
-      ],
-      "Error loading document: ${ errorDetail }": [
-        "Feil ved lasting av dokument: ${ errorDetail }"
-      ],
       "Error Syncing": [
         "Feil ved synkronisering"
       ],
@@ -4589,12 +4585,6 @@
       ],
       "Geoblocking": [
         "Geoblokkering"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Få e-postoppdateringer for kommentarer og forslag som er lagt til i dokumentene dine."
-      ],
-      "Get Notified About Comments": [
-        "Bli varslet om kommentarer"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Myndigheter og Internett-leverandører kan overvåke nettaktiviteten din. Ved å skjule din virkelige IP og kryptere aktiviteten din blir surfingen privat."
@@ -4732,9 +4722,6 @@
       "Low Priority": [
         "Lav prioritet"
       ],
-      "Making a copy...": [
-        "Lager en kopi..."
-      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maksimum ${ MAX_SHARED_URL_PASSWORD_LENGTH } tegn",
         "Maksimum ${ MAX_SHARED_URL_PASSWORD_LENGTH } tegn"
@@ -4765,9 +4752,6 @@
       ],
       "No contacts added yet": [
         "Ingen kontakter er lagt til enda"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "Ingen dokument oppgitt i nettadressen. Gå tilbake til ${ DRIVE_APP_NAME } og velg et dokument."
       ],
       "No email address": [
         "Ingen e-postadresse"
@@ -5046,9 +5030,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Eieren av denne adressen har deaktivert ende-til-ende-kryptering. For å kunne sende krypterte e-poster til denne adressen, må eieren aktivere ende-til-ende kryptering på nytt."
-      ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "Nettadressen du skrev inn, ser ut til å være kopiert feil fra Slack. Når du kopierer lange koblinger fra Slack, høyreklikker du på koblingen og velger \"Kopier kobling\" i stedet for å kopiere den avkortede URL-teksten direkte."
       ],
       "There are no documents in the trash.": [
         "Det er ingen dokumenter i papirkurven."
@@ -5655,9 +5636,6 @@
       "Emails (last month)": [
         "E-poster (siste måned)"
       ],
-      "Enable email notifications": [
-        "Aktiver e-postvarsler"
-      ],
       "Encrypt emails": [
         "Krypter e-poster"
       ],
@@ -5705,9 +5683,6 @@
       ],
       "Include application logs in bug report": [
         "Inkluder applikasjonslogger i feilrapport"
-      ],
-      "Include document name in notification": [
-        "Inkluder dokumentnavn i varsel"
       ],
       "Include message and file name in invite email": [
         "Inkluder melding og filnavn i invitasjons-e-post"
@@ -8530,9 +8505,6 @@
       ]
     },
     "sheets_2025:Info": {
-      "Creating new spreadsheet...": [
-        "Oppretter nytt regneark..."
-      ],
       "Detect automatically": [
         "Oppdag automatisk"
       ],
@@ -8880,6 +8852,9 @@
       "${ app } storage": [
         "${ app }-lagring"
       ],
+      "${ app } storage used": [
+        "Lagringsplass brukt ${ app }"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% full"
       ],
@@ -8891,6 +8866,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "For alle ${ BRAND_NAME }-tjenester"
+      ],
+      "Storage used": [
+        "Lagringsplass brukt"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "For å fortsette å bruke ${ BRAND_NAME }-produkter må du frigjøre plass eller ${ upgrade }"

@@ -90,9 +90,6 @@
       "Apply": [
         "Zastosuj"
       ],
-      "Ask me next time": [
-        "Zapytaj później"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Grupa kontaktów może zawierać maksymalnie ${ maxContacts } kontakt",
         "Grupa kontaktów może zawierać maksymalnie ${ maxContacts } kontakty",
@@ -656,9 +653,6 @@
       ],
       "Save changes": [
         "Zapisz zmiany"
-      ],
-      "Save preferences": [
-        "Zapisz ustawienia"
       ],
       "Search": [
         "Szukaj"
@@ -3544,6 +3538,11 @@
         "Nieograniczona liczba aliasów hide-my-email"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Błyskawiczne prędkości"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Coś poszło nie tak z uwierzytelnianiem za pomocą klucza bezpieczeństwa. Spróbuj ponownie później."
@@ -4321,9 +4320,6 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "Kontakt został usunięty z grupy ${ contactGroupName }"
       ],
-      "Converting document...": [
-        "Konwertowanie dokumentu..."
-      ],
       "Copy the link to clipboard": [
         "Kopiuj link do schowka"
       ],
@@ -4368,9 +4364,6 @@
       ],
       "Creating link to folder": [
         "Tworzenie linku do folderu"
-      ],
-      "Creating new document...": [
-        "Tworzenie nowego dokumentu..."
       ],
       "Current plan": [
         "Obecny plan"
@@ -4462,12 +4455,6 @@
       "Enter your own password (as trusted contact).": [
         "Wpisz swoje hasło (jako zaufany kontakt)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Wystąpił błąd podczas konwertowania dokumentu: ${ errorMessage }"
-      ],
-      "Error loading document: ${ errorDetail }": [
-        "Wystąpił błąd podczas ładowania dokumentu: ${ errorDetail }"
-      ],
       "Error Syncing": [
         "Błąd synchronizacji"
       ],
@@ -4527,12 +4514,6 @@
       ],
       "Geoblocking": [
         "Blokada geograficzna"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Otrzymaj wiadomości o komentarzach i sugestiach w dokumentach."
-      ],
-      "Get Notified About Comments": [
-        "Otrzymaj powiadomienia o komentarzach"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Rządy i dostawcy Internetu mogą monitorować Twoją aktywność online. Ukrywając swój prawdziwy adres IP i szyfrując połączenie, przeglądanie staje się prywatne."
@@ -4672,9 +4653,6 @@
       "Low Priority": [
         "Niski priorytet"
       ],
-      "Making a copy...": [
-        "Tworzenie kopii..."
-      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maksymalnie ${ MAX_SHARED_URL_PASSWORD_LENGTH } znak",
         "Maksymalnie ${ MAX_SHARED_URL_PASSWORD_LENGTH } znaki",
@@ -4707,9 +4685,6 @@
       ],
       "No contacts added yet": [
         "Nie dodano jeszcze żadnych kontaktów"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "Adres URL nie zawiera dokumentu. Wróć do ${ DRIVE_APP_NAME } i wybierz dokument."
       ],
       "No email address": [
         "Brak adresu e-mail"
@@ -4989,9 +4964,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Właściciel adresu wyłączył szyfrowanie end-to-end. Aby móc wysyłać wiadomości zaszyfrowane na ten adres, właściciel musi ponownie włączyć szyfrowanie end-to-end."
-      ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "Adres URL został nieprawidłowo skopiowany ze Slacka. Zamiast bezpośrednio kopiować skrócony adresu URL, kliknij link prawym przyciskiem, a następnie wybierz opcję \"Kopiuj adres linku\"."
       ],
       "There are no documents in the trash.": [
         "Brak dokumentów w koszu."
@@ -5601,9 +5573,6 @@
       "Emails (last month)": [
         "Wiadomości (ostatni miesiąc)"
       ],
-      "Enable email notifications": [
-        "Włącz powiadomienia e-mail"
-      ],
       "Encrypt emails": [
         "Zaszyfruj wiadomości"
       ],
@@ -5651,9 +5620,6 @@
       ],
       "Include application logs in bug report": [
         "Dołącz logi aplikacji do raportu błędu"
-      ],
-      "Include document name in notification": [
-        "Dołącz nazwę dokumentu w powiadomieniu"
       ],
       "Include message and file name in invite email": [
         "Dołącz wiadomość i nazwę pliku w zaproszeniu"
@@ -8513,9 +8479,6 @@
       ]
     },
     "sheets_2025:Info": {
-      "Creating new spreadsheet...": [
-        "Tworzenie nowego arkusza kalkulacyjnego…"
-      ],
       "Detect automatically": [
         "Wykryj automatycznie"
       ],

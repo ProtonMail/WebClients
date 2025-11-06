@@ -678,6 +678,12 @@
       "Search recent documents": [
         "Пошук нядаўніх дакументаў"
       ],
+      "Search recent spreadsheets": [
+        "Шукаць нядаўнія электронныя табліцы"
+      ],
+      "Search recents": [
+        "Пошук нядаўніх"
+      ],
       "See how": [
         "Паглядзець як"
       ],
@@ -1094,6 +1100,14 @@
       ],
       "Unsupported event": [
         "Падзея не падтрымліваецца"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "Яшчэ ${ hiddenResultsCount } вынік не паказаны",
+        "Яшчэ ${ hiddenResultsCount } вынікі не паказаны",
+        "Яшчэ ${ hiddenResultsCount } вынікаў не паказаны",
+        "Яшчэ ${ hiddenResultsCount } вынікаў не паказаны"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -3687,6 +3701,11 @@
         "Неабмежаваная колькасць псеўданімаў hide-my-email"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Звышвысокія хуткасці"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Нешта пайшло не так з аўтэнтыфікацыяй ключа бяспекі. Паспрабуйце яшчэ раз."
@@ -5062,7 +5081,7 @@
         "Адсканіруйце QR-код з дапамогай мабільнай прылады"
       ],
       "Select a folder to move to.": [
-        "Выберыце папку для перамяшчэння."
+        "Выберыце папку, у якую хочаце перамясціць."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Выберыце фармат лістоў, які вы хочаце выкарыстоўваць як прадвызначаны, пры адпраўцы паведамленняў гэтым адрасатам."
@@ -8811,9 +8830,6 @@
       ]
     },
     "sheets_2025:Info": {
-      "Creating new spreadsheet...": [
-        "Стварэнне новай табліцы..."
-      ],
       "Detect automatically": [
         "Выяўляць аўтаматычна"
       ],

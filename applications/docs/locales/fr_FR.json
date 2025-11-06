@@ -1080,6 +1080,12 @@
         "L'événement n'est pas pris en charge."
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } autre résultat non affiché",
+        "${ hiddenResultsCount } autres résultats non affichés"
+      ]
+    },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Une fois la période d'essai terminée le ${ formattedDate }, il deviendra un abonnement payant qui se renouvelle automatiquement tous les ${ renewCycle } mois. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
@@ -3645,6 +3651,11 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Nombre illimité d'alias « hide-my-email »"
+      ]
+    },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Vitesses extrêmement élevées"
       ]
     },
     "fido2: Error": {
@@ -8539,9 +8550,6 @@
       ]
     },
     "sheets_2025:Info": {
-      "Creating new spreadsheet...": [
-        "Création d'une feuille de calcul..."
-      ],
       "Detect automatically": [
         "Détecter automatiquement"
       ],
@@ -8889,6 +8897,9 @@
       "${ app } storage": [
         "espace de stockage de ${ app }"
       ],
+      "${ app } storage used": [
+        "Espace de stockage utilisé de ${ app }"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } plein à ${ percentage } %"
       ],
@@ -8900,6 +8911,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Pour tous les services ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Espace de stockage utilisé"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Pour continuer à utiliser les produits ${ BRAND_NAME }, libérez de l’espace ou ${ upgrade }."

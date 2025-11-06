@@ -90,9 +90,6 @@
       "Apply": [
         "Applica"
       ],
-      "Ask me next time": [
-        "Chiedimelo la prossima volta"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "È consentito al massimo ${ maxContacts } contatto per ogni gruppo di contatti",
         "Sono consentiti al massimo ${ maxContacts } contatti per ogni gruppo di contatti"
@@ -657,9 +654,6 @@
       "Save changes": [
         "Salva le modifiche"
       ],
-      "Save preferences": [
-        "Salva le preferenze"
-      ],
       "Search": [
         "Cerca"
       ],
@@ -668,6 +662,12 @@
       ],
       "Search recent documents": [
         "Cerca documenti recenti"
+      ],
+      "Search recent spreadsheets": [
+        "Cerca i fogli di calcolo recenti"
+      ],
+      "Search recents": [
+        "Cerca recenti"
       ],
       "See how": [
         "Scopri come"
@@ -1069,6 +1069,12 @@
       ],
       "Unsupported event": [
         "Evento non supportato"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } altro risultato non mostrato",
+        "${ hiddenResultsCount } altri risultati non mostrati"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -3638,6 +3644,11 @@
         "Alias Hide-my-email illimitati"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Velocità fulminee"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Si è verificato un errore durante l'autenticazione con la tua chiave di sicurezza. Per favore riprova."
@@ -4382,9 +4393,6 @@
       "Continue": [
         "Continua"
       ],
-      "Converting document...": [
-        "Conversione del documento..."
-      ],
       "Copy the link to clipboard": [
         "Copia il link negli appunti"
       ],
@@ -4427,9 +4435,6 @@
       ],
       "Creating link to folder": [
         "Creazione del link alla cartella"
-      ],
-      "Creating new document...": [
-        "Creazione del documento..."
       ],
       "Current plan": [
         "Piano attuale"
@@ -4524,12 +4529,6 @@
       "Enter your own password (as trusted contact).": [
         "Inserisci la tua password (come contatto attendibile)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Errore durante la conversione del documento: ${ errorMessage }"
-      ],
-      "Error loading document: ${ errorDetail }": [
-        "Errore durante il caricamento del documento: ${ errorDetail }"
-      ],
       "Error Syncing": [
         "Errore nella sincronizzazione"
       ],
@@ -4589,12 +4588,6 @@
       ],
       "Geoblocking": [
         "Blocco geografico"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Ricevi aggiornamenti via email per commenti e suggerimenti aggiunti ai tuoi documenti."
-      ],
-      "Get Notified About Comments": [
-        "Ricevi notifiche sui commenti"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "I governi e gli ISP possono monitorare la tua attività online. Nascondendo il tuo vero IP e crittografando la tua attività, la tua navigazione diventa privata."
@@ -4732,9 +4725,6 @@
       "Low Priority": [
         "Priorità bassa"
       ],
-      "Making a copy...": [
-        "Creazione di una copia..."
-      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Massimo ${ MAX_SHARED_URL_PASSWORD_LENGTH } carattere",
         "Massimo ${ MAX_SHARED_URL_PASSWORD_LENGTH } caratteri"
@@ -4765,9 +4755,6 @@
       ],
       "No contacts added yet": [
         "Non sono ancora stati aggiunti contatti"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "Nessun documento fornito nell'URL. Torna a ${ DRIVE_APP_NAME } e selezionane uno."
       ],
       "No email address": [
         "Nessun indirizzo email"
@@ -5046,9 +5033,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Il proprietario di questo indirizzo ha disabilitato la crittografia end-to-end. Per poter inviare email crittografate a questo indirizzo, il proprietario deve abilitare nuovamente la crittografia end-to-end."
-      ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "L'URL che hai inserito sembra essere stato copiato da Slack in modo errato. Quando copi collegamenti lunghi da Slack, fai clic con il pulsante destro del mouse sul collegamento, quindi scegli \"Copia collegamento\" anziché copiare direttamente il testo dell'URL tagliato."
       ],
       "There are no documents in the trash.": [
         "Non ci sono documenti nel cestino."
@@ -5655,9 +5639,6 @@
       "Emails (last month)": [
         "Email (ultimo mese)"
       ],
-      "Enable email notifications": [
-        "Attiva le notifiche email"
-      ],
       "Encrypt emails": [
         "Email crittografate"
       ],
@@ -5705,9 +5686,6 @@
       ],
       "Include application logs in bug report": [
         "Includi i log dell'applicazione nella segnalazione di bug"
-      ],
-      "Include document name in notification": [
-        "Includi il nome del documento nella notifica"
       ],
       "Include message and file name in invite email": [
         "Includi il messaggio e il nome del file nell'email di invito"
@@ -8526,9 +8504,6 @@
       ]
     },
     "sheets_2025:Info": {
-      "Creating new spreadsheet...": [
-        "Creazione di un nuovo foglio di calcolo in corso..."
-      ],
       "Detect automatically": [
         "Rileva automaticamente"
       ],
