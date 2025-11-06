@@ -43,7 +43,7 @@ const HowItWorks = ({ className, style }: Props) => {
                         {getBoldFormattedText(c('Info').t`Your friends get **2 weeks for free** on their chosen plan.`)}
                     </div>
                 </VerticalStep>
-                <VerticalStep titleCentered titleBold={false} icon={<span className="m-auto">2</span>}>
+                <VerticalStep titleCentered titleBold={false} icon={<span className="m-auto">3</span>}>
                     <div>
                         {getBoldFormattedText(
                             // translator: Full sentence `Get US$20 credits for every friend that subscribes.`

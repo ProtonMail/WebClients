@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import type { useLocation } from 'react-router-dom';
 
 import { fromUnixTime } from 'date-fns';
@@ -32,13 +32,17 @@ export const useReferralDiscover = (location?: ReturnType<typeof useLocation>) =
         isFeatureActive && isUserEligible && subscriptionStartedThirtyDaysAgo
     );
 
+    const handleCloseSettingsSpotlight = useCallback(() => {
+        onCloseSettingsSpotlight();
+        void updateReferralSpotlightSettings(false);
+    }, [onCloseSettingsSpotlight]);
+
     // Remove spotlight if user has seen referral page
     useEffect(() => {
-        if (location?.pathname.includes('/referral')) {
-            onCloseSettingsSpotlight();
-            void updateReferralSpotlightSettings(false);
+        if (isFeatureActive && location?.pathname.includes('/referral')) {
+            handleCloseSettingsSpotlight();
         }
-    }, [location?.pathname]);
+    }, [location?.pathname, isFeatureActive]);
 
     const canShowTopBarButton =
         isFeatureActive && isUserEligible && subscriptionStartedThirtyDaysAgo && !!topButtonFeature.feature?.Value;
@@ -51,7 +55,7 @@ export const useReferralDiscover = (location?: ReturnType<typeof useLocation>) =
     return {
         // Settings spotlight
         shouldShowSettingsSpotlight,
-        onCloseSettingsSpotlight,
+        onCloseSettingsSpotlight: handleCloseSettingsSpotlight,
 
         // Top bar button and spotlight
         canShowTopBarButton,

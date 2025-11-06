@@ -93,12 +93,13 @@ const ReferralSignatureToggle = () => {
     );
 
     return (
-        <div className="flex items-center">
+        <div className="flex flex-nowrap items-center">
             <Toggle
                 id="toggleSharedFooterLink"
                 checked={!!mailSettings.PMSignatureReferralLink}
                 onChange={({ target: { checked } }) => withTogglingSignature(handleReferralSignatureClick(checked))}
                 loading={togglingSignature}
+                className="shrink-0"
             />
 
             <label htmlFor="toggleSharedFooterLink" className="pl-2">
@@ -114,6 +115,7 @@ const ReferralSignatureToggle = () => {
                     c('Tooltip')
                         .jt`Sets the following footer in the emails you send: ${signature} The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.`
                 }
+                className="shrink-0"
             />
         </div>
     );

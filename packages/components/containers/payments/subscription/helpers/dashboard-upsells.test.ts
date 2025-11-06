@@ -56,6 +56,7 @@ describe('resolveUpsellsToDisplay', () => {
             plansMap: getPlansMap(getTestPlans('EUR'), 'EUR'),
             user: buildUser(),
             telemetryFlow: 'subscription',
+            isReferralExpansionEnabled: false,
         };
     });
 
