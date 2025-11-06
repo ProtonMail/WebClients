@@ -689,6 +689,9 @@
       "Remove gift code": [
         "Ta bort presentkod"
       ],
+      "Remove the booking range": [
+        "Ta bort bokningsintervallet"
+      ],
       "Remove this notification": [
         "Ta bort denna avisering"
       ],
@@ -1256,6 +1259,12 @@
     "Attendee role": {
       "Optional": [
         "Valfritt"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } fler resultat visas inte",
+        "${ hiddenResultsCount } fler resultat visas inte"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -4482,6 +4491,11 @@
         "Obegränsat antal hide-my-email-alias"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Blixtsnabb hastighet"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Något gick fel vid autentisering med din säkerhetsnyckel. Försök igen."
@@ -5259,6 +5273,9 @@
       "Booking already exists.": [
         "Bokning finns redan."
       ],
+      "Booking cannot be added in the past.": [
+        "Bokning kan inte läggas till i det förflutna."
+      ],
       "Booking overlaps with an existing booking.": [
         "Bokning överlappar med en befintlig bokning."
       ],
@@ -5865,9 +5882,9 @@
       "Removed participants will be notified.": [
         "Borttagna deltagare kommer att meddelas."
       ],
-      "Saving event...": [
-        "Sparar händelse …",
-        "Sparar händelser..."
+      "Saving event": [
+        "Sparar händelse",
+        "Sparar händelser"
       ],
       "Scan the QR code with your mobile device": [
         "Skanna QR-koden med din mobila enhet"
@@ -7080,6 +7097,17 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ]
+    },
+    "label": {
+      "Date of the booking range": [
+        "Datum för bokningsintervallet"
+      ],
+      "End time of the booking range": [
+        "Sluttid för bokningsintervallet"
+      ],
+      "Start time of the booking range": [
+        "Starttid för bokningsintervallet"
       ]
     },
     "Label for contact group color": {
@@ -9213,6 +9241,12 @@
       "Timeout exceeded": [
         "Timeout överskriden"
       ],
+      "VAT": [
+        "Moms"
+      ],
+      "VAT number": [
+        "Momsnummer"
+      ],
       "You already have a subscription to this plan.": [
         "Du har redan en prenumeration på detta paket."
       ],
@@ -9299,6 +9333,9 @@
       "Add EIN": [
         "Lägg till EIN"
       ],
+      "Add VAT number": [
+        "Lägg till momsnummer"
+      ],
       "Business Number": [
         "Företagsnummer"
       ],
@@ -9310,6 +9347,9 @@
       ],
       "Edit EIN": [
         "Redigera EIN"
+      ],
+      "Edit VAT number": [
+        "Redigera momsnummer"
       ],
       "EIN": [
         "EIN"
@@ -12162,6 +12202,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Din gratis provperiod slutar den ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Din provperiod slutar den ${ textDate }. Du debiteras inte om du avbryter före ${ textDate }. ${ action }"
       ]
     },
     "Warning in modal to accept calendar invitation; Description": {
