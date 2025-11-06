@@ -7,6 +7,7 @@ import {
 } from '@proton/payments';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
+import { isIos, isIpad } from '@proton/shared/lib/helpers/browser';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 import { hasPassLifetimeOrViaSimpleLogin } from '@proton/shared/lib/user/helpers';
 
@@ -36,6 +37,8 @@ const isEligible = ({ subscription, protonConfig, user, offerConfig, preferredCu
 
     const isPreferredCurrencyEligible = hasEligibileCurrencyForBF(preferredCurrency);
 
+    const isIpadIos = isIpad() || isIos();
+
     // delinquent, can't pay, has intentional scheduled modification, external subscription, has forbidden pass
     // subscription
     if (
@@ -43,7 +46,8 @@ const isEligible = ({ subscription, protonConfig, user, offerConfig, preferredCu
         !canPay ||
         hasIntentionalScheduledModification(subscription) ||
         isExternal ||
-        hasForbiddenPassSubscription
+        hasForbiddenPassSubscription ||
+        isIpadIos
     ) {
         return false;
     }

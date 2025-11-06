@@ -2,17 +2,11 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import { Icon } from '@proton/components';
-import useFlag from '@proton/unleash/useFlag';
 
-import { getIsMobileDevice } from '../../util/device';
 import { NewLabel } from '../components/NewLabel';
 
 const LumoB2BUpsellLink = ({ isSmallScreen }: { isSmallScreen: boolean }) => {
-    const isLumoB2BEnabled = useFlag('LumoB2B');
-
-    const isMobileDevice = getIsMobileDevice();
-
-    if (!isLumoB2BEnabled || !isSmallScreen || isMobileDevice) {
+    if (!isSmallScreen) {
         return null;
     }
     return (
