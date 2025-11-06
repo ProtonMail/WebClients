@@ -8575,8 +8575,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/gitlab@workspace:utilities/gitlab"
   dependencies:
+    "@proton/eslint-config-proton": "workspace:^"
     "@types/jest": "npm:^30.0.0"
     axios: "npm:^1.12.2"
+    eslint: "npm:^9.37.0"
     jest: "npm:^30.2.0"
     ts-jest: "npm:^29.4.4"
     ts-node: "npm:^10.9.2"
