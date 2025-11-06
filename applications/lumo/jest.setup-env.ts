@@ -20,6 +20,8 @@ global.File = File;
 
 // @ts-ignore
 global.ENV = 'test';
+// @ts-ignore
+global.matchMedia = () => ({});
 
 // Do not start crypto worker pool, let the single tests setup/mock the CryptoProxy as needed
 jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
@@ -30,7 +32,6 @@ jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
 jest.mock('@proton/shared/lib/i18n/dateFnLocales', () => ({
     __esModule: true,
 }));
-
 
 jest.mock('loglevel');
 jest.mock('@proton/pass/lib/core/ui.proxy');
