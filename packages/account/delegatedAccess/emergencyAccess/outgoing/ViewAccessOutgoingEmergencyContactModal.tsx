@@ -5,7 +5,7 @@ import { c, msgid } from 'ttag';
 import { getFormattedAccessibleAtDate } from '@proton/account/delegatedAccess/emergencyAccess/date';
 import { getDaysFromMilliseconds } from '@proton/account/delegatedAccess/emergencyAccess/helper';
 import { getMetaOutgoingDelegatedAccess } from '@proton/account/delegatedAccess/emergencyAccess/outgoing/helper';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import ModalTwo, { type ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';

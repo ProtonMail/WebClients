@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Prompt, { type PromptProps } from '@proton/components/components/prompt/Prompt';
 
 import type { EnrichedIncomingDelegatedAccess } from './interface';

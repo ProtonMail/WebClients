@@ -2,7 +2,10 @@ import { c } from 'ttag';
 
 import { usePreviousSubscription } from '@proton/account/previousSubscription/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
-import { Banner, Button, ButtonLike, Href } from '@proton/atoms';
+import { Banner } from '@proton/atoms/Banner/Banner';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Href } from '@proton/atoms/Href/Href';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { subscriptionExpires } from '@proton/components/containers/payments/subscription/helpers';
 import {

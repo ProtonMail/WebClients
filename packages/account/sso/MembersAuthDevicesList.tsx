@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import Icon from '@proton/components/components/icon/Icon';
 import Table from '@proton/components/components/table/Table';

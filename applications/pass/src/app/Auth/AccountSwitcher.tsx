@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import Icon from '@proton/components/components/icon/Icon';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';

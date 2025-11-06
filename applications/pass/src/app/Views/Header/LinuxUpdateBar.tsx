@@ -2,7 +2,8 @@ import { type FC, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Href } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
 import Icon from '@proton/components/components/icon/Icon';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { TopBar } from '@proton/pass/components/Layout/Bar/TopBar';
