@@ -1437,9 +1437,6 @@
       "Trust": [
         "Zaupaj"
       ],
-      "Trust key": [
-        "Zaupaj ključu"
-      ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
       ],
@@ -5276,6 +5273,11 @@
         "Neomejeno število vzdevkov hide-my-email"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Bliskovite hitrosti"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Pri preverjanju vašega varnostnega ključa je prišlo do napake. Prosimo, poskusite znova."
@@ -7217,10 +7219,7 @@
         "Zagon …"
       ],
       "Insert image": [
-        "Vstavi sliko",
-        "Vstavi sliki",
-        "Vstavi slike",
-        "Vstavi slik"
+        "Vstavi sliko"
       ],
       "Insert link": [
         "Vstavi povezavo"
@@ -7690,17 +7689,11 @@
       "Saved: ${ dateString }": [
         "Shranjeno: ${ dateString }"
       ],
-      "Saving draft…": [
-        "Shranjevanje osnutka …"
-      ],
       "Scan the QR code with your mobile device": [
         "Skenirajte kodo QR z mobilno napravo."
       ],
       "Scheduled send of this message will be canceled.": [
         "Načrtovano pošiljanje tega sporočila bo preklicano."
-      ],
-      "Scheduling message...": [
-        "Načrtovanje sporočila ..."
       ],
       "Scribe panel": [
         "Plošča Scribe"
@@ -7746,9 +7739,6 @@
       ],
       "Sending": [
         "Pošiljanje"
-      ],
-      "Sending message...": [
-        "Pošiljanje sporočila ..."
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Pošiljanje sporočil z naslova @pm.me je plačljiva možnost. Sporočilo bo poslano z vašega privzetega naslova, ${ email }"

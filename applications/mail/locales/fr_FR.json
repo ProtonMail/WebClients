@@ -1496,7 +1496,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "La clé est fiable"
+        "Clé de confiance",
+        "Clés de confiance"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -2019,6 +2020,12 @@
       ],
       "Sender verification passed": [
         "La vérification de l’expéditeur a réussi."
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } autre résultat non affiché",
+        "${ hiddenResultsCount } autres résultats non affichés"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -5602,6 +5609,11 @@
         "Nombre illimité d'alias « hide-my-email »"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Vitesses extrêmement élevées"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Nous vous invitons à réessayer."
@@ -7507,8 +7519,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images."
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -7994,8 +8005,8 @@
       "Saved: ${ dateString }": [
         "Enregistré : ${ dateString }"
       ],
-      "Saving draft…": [
-        "L'enregistrement du brouillon est en cours."
+      "Saving draft": [
+        "Enregistrement du brouillon"
       ],
       "Scan the QR code with your mobile device": [
         "Scannez le QR code avec votre appareil mobile."
@@ -8003,8 +8014,8 @@
       "Scheduled send of this message will be canceled.": [
         "L'envoi programmé de ce message sera annulé."
       ],
-      "Scheduling message...": [
-        "La programmation du message est en cours."
+      "Scheduling message": [
+        "Programmation du message"
       ],
       "Scribe panel": [
         "Panneau de Scribe"
@@ -8049,8 +8060,8 @@
       "Sending": [
         "Envoi en cours"
       ],
-      "Sending message...": [
-        "L'envoi du message est en cours."
+      "Sending message": [
+        "Envoi du message"
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "L'envoi de messages depuis une adresse @pm.me est une fonctionnalité payante. Votre message sera envoyé à partir de votre adresse par défaut ${ email }."
@@ -13647,6 +13658,9 @@
       "${ app } storage": [
         "espace de stockage de ${ app }"
       ],
+      "${ app } storage used": [
+        "Espace de stockage utilisé de ${ app }"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } plein à ${ percentage } %"
       ],
@@ -13658,6 +13672,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Pour tous les services ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Espace de stockage utilisé"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Pour continuer à importer ou synchroniser vos fichiers, veuillez libérer de l'espace ou changer d'abonnement pour en obtenir davantage."

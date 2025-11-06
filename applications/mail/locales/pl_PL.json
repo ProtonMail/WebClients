@@ -1452,9 +1452,6 @@
       "Trust": [
         "Zaufaj"
       ],
-      "Trust key": [
-        "Zaufaj kluczowi"
-      ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
       ],
@@ -5476,6 +5473,11 @@
         "Nieograniczona liczba aliasów hide-my-email"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Błyskawiczne prędkości"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Coś poszło nie tak z uwierzytelnianiem za pomocą klucza bezpieczeństwa. Spróbuj ponownie później."
@@ -7474,10 +7476,7 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz",
-        "Wstaw obrazy",
-        "Wstaw obrazy",
-        "Wstaw obrazy"
+        "Wstaw obraz"
       ],
       "Insert link": [
         "Wstaw link"
@@ -7962,17 +7961,11 @@
       "Saved: ${ dateString }": [
         "Zapisano: ${ dateString }"
       ],
-      "Saving draft…": [
-        "Zapisywanie szkicu…"
-      ],
       "Scan the QR code with your mobile device": [
         "Zeskanuj kod QR za pomocą urządzenia mobilnego"
       ],
       "Scheduled send of this message will be canceled.": [
         "Zaplanowane wysyłanie tej wiadomości zostanie anulowane."
-      ],
-      "Scheduling message...": [
-        "Planowanie wiadomości..."
       ],
       "Scribe panel": [
         "Panel Scribe"
@@ -8018,9 +8011,6 @@
       ],
       "Sending": [
         "Wysyłanie"
-      ],
-      "Sending message...": [
-        "Wysyłanie wiadomości..."
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Wysyłanie wiadomości z adresu @pm.me jest płatną funkcją. Wiadomości zostaną wysłane z Twojego domyślnego adresu ${ email }"

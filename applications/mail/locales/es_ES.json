@@ -307,6 +307,9 @@
       "Continue import": [
         "Continuar la importación"
       ],
+      "Continue with categories": [
+        "Continuar con categorías"
+      ],
       "Continue with Google": [
         "Continuar con Google"
       ],
@@ -381,6 +384,9 @@
       ],
       "Customize": [
         "Personalizar"
+      ],
+      "Customize categories": [
+        "Personalizar categorías"
       ],
       "Customize import": [
         "Personalizar importación"
@@ -769,6 +775,9 @@
       "Invite members": [
         "Invita a miembros"
       ],
+      "Is this private?": [
+        "¿Es esto privado?"
+      ],
       "Italic": [
         "Cursiva"
       ],
@@ -777,6 +786,9 @@
       ],
       "Keep categories": [
         "Mantener las categorías"
+      ],
+      "Keep inbox as before": [
+        "Mantener la bandeja de entrada como antes"
       ],
       "Keep my subscription": [
         "Mantener mi suscripción"
@@ -1483,6 +1495,10 @@
       "Trust": [
         "Confiar"
       ],
+      "Trust key": [
+        "Clave de confianza",
+        "Claves de confianza"
+      ],
       "Trust public key": [
         "Confiar en la clave pública"
       ],
@@ -2006,6 +2022,12 @@
         "Se ha aprobado la verificación del remitente."
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } resultado más no mostrado",
+        "${ hiddenResultsCount } más resultados no mostrados"
+      ]
+    },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada ${ renewCycle } meses. No se te cobrará nada si cancelas antes del ${ formattedDate }."
@@ -2073,6 +2095,9 @@
       "1 user account": [
         "1 cuenta de usuario"
       ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB de almacenamiento: 40 veces tu plan actual"
+      ],
       "6 user accounts": [
         "6 cuentas de usuario"
       ],
@@ -2094,6 +2119,9 @@
       "Password health alerts": [
         "Alertas de estado de las contraseñas"
       ],
+      "Recover previous file versions": [
+        "Recupera las versiones previas de los archivos"
+      ],
       "Unlimited folders, labels and filters": [
         "Número ilimitado de carpetas, etiquetas y filtros"
       ],
@@ -2107,6 +2135,9 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Un solo pago de ${ amount }"
+      ],
+      "forever": [
+        "para siempre"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Se renueva después de 1 mes por ${ regularAmount }."
@@ -2252,6 +2283,9 @@
       ],
       "Application problem": [
         "Problema con la aplicación"
+      ],
+      "Black Friday": [
+        "Black Friday"
       ],
       "Bridge problem": [
         "Problema con el Bridge"
@@ -4357,6 +4391,9 @@
       "/month": [
         "/mes"
       ],
+      "2 TB of storage to share": [
+        "2 TB de almacenamiento para compartir"
+      ],
       "2 user accounts": [
         "2 cuentas de usuario"
       ],
@@ -4370,11 +4407,17 @@
     "Duo offer: Link": {
       "Get 4x more storage": [
         "Obtén 4 veces más almacenamiento"
+      ],
+      "Share your plan": [
+        "Comparte tu plan"
       ]
     },
     "Duo offer: Title": {
       "Get 4x more storage with ${ BRAND_NAME } Duo": [
         "Obtén 4 veces más almacenamiento con ${ BRAND_NAME } Duo"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "Compartir los beneficios de tu plan con ${ BRAND_NAME } Duo"
       ]
     },
     "Edit billing address form note": {
@@ -5564,6 +5607,11 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Alias hide-my-email ilimitados"
+      ]
+    },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Velocidades ultrarrápidas"
       ]
     },
     "fido2: Error": {
@@ -6955,6 +7003,9 @@
       "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
         "Las categorías funcionan igual que los filtros de spam. ${ MAIL_APP_NAME } nunca lee tus correos electrónicos ni comparte tus datos."
       ],
+      "Categories work like spam filters. We only look for patterns in unencrypted header and technical data. We do not read email content, share your data, or infringe on your privacy.": [
+        "Las categorías funcionan como filtros de spam. Solo buscamos patrones en el encabezado sin cifrar y en los datos técnicos. No leemos el contenido del correo electrónico, compartimos tus datos ni infringimos tu privacidad."
+      ],
       "Center": [
         "Centrar"
       ],
@@ -7345,6 +7396,9 @@
       "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
         "Etiqueta con color las facturas entrantes como «${ suggestedLabelName }». Una vez pagadas, cambia la etiqueta a «${ suggestedPaidLabelName }»."
       ],
+      "Google Pay mark": [
+        "marca de Google Pay"
+      ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Los gobiernos y los proveedores de servicios de internet pueden monitorear tu actividad en línea. Ocultando tu IP real y cifrando tu actividad de navegación se vuelve privada."
       ],
@@ -7440,11 +7494,23 @@
       "Included for free with your plan": [
         "Incluido gratis con tu plan"
       ],
+      "Includes bills, receipts, orders, and bookings.": [
+        "Incluye facturas, acuses de recibo, pedidos y reservas."
+      ],
       "Includes invoices, purchase orders, and payment confirmations.": [
         "Incluye facturas, órdenes de compra y confirmaciones de pago."
       ],
       "Includes marketing emails and non-urgent app notifications.": [
         "Incluye correos electrónicos de marketing y notificaciones no urgentes de la aplicación."
+      ],
+      "Includes marketing emails like offers and product announcements.": [
+        "Incluye correos electrónicos de marketing como ofertas y anuncios de productos."
+      ],
+      "Includes news recaps and other non-promotional content. ": [
+        "Incluye resúmenes de noticias y otro contenido no promocional. "
+      ],
+      "Includes updates from social networks and media-sharing sites.": [
+        "Incluye actualizaciones de redes sociales y sitios para compartir contenido multimedia."
       ],
       "Inherited from parent folder": [
         "Heredado de la carpeta principal"
@@ -7453,8 +7519,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar una imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -7940,8 +8005,8 @@
       "Saved: ${ dateString }": [
         "Guardado: el ${ dateString }"
       ],
-      "Saving draft…": [
-        "Guardando borrador…"
+      "Saving draft": [
+        "Guardando borrador"
       ],
       "Scan the QR code with your mobile device": [
         "Escanea el código QR con tu dispositivo móvil."
@@ -7949,8 +8014,8 @@
       "Scheduled send of this message will be canceled.": [
         "Se cancelará el envío programado de este mensaje."
       ],
-      "Scheduling message...": [
-        "Programando mensaje..."
+      "Scheduling message": [
+        "Programando el mensaje"
       ],
       "Scribe panel": [
         "Panel de Scribe"
@@ -7995,8 +8060,8 @@
       "Sending": [
         "Enviando"
       ],
-      "Sending message...": [
-        "Enviando el mensaje..."
+      "Sending message": [
+        "Enviando el mensaje"
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "El envío de mensajes desde la dirección @pm.me es una función de pago. Tu mensaje será enviado desde tu dirección por defecto ${ email }"
@@ -8562,6 +8627,9 @@
       ],
       "Week": [
         "Semana"
+      ],
+      "We’ve upgraded your ${ DRIVE_APP_NAME } storage to 5GB. Keep your important files and photos encrypted.": [
+        "Hemos mejorado tu almacenamiento de ${ DRIVE_APP_NAME } a 5 GB. Mantén tus archivos y fotos importantes cifrados."
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "¿Cuándo deseas que se borre automáticamente tu mensaje de la bandeja de entrada del destinatario y de tu carpeta de enviados?"
@@ -9165,6 +9233,10 @@
       "${ BRAND_NAME } username": [
         "Nombre de usuario de ${ BRAND_NAME }"
       ],
+      "${ count } unread conversation": [
+        "${ count } conversación sin leer",
+        "${ count } conversaciones sin leer"
+      ],
       "${ count } unread message": [
         "${ count } mensaje sin leer",
         "${ count } mensajes sin leer"
@@ -9193,6 +9265,9 @@
       ],
       "Add image URL": [
         "Añadir URL de la imagen"
+      ],
+      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
+        "Añade o elimina categorías. Configura o desactiva las notificaciones. Ajústalo en cualquier momento en el menú de ${ menuIcon }."
       ],
       "Add to group": [
         "Añadir al grupo"
@@ -9259,6 +9334,9 @@
       ],
       "Billing cycle": [
         "Ciclo de facturación"
+      ],
+      "Black Friday": [
+        "Black Friday"
       ],
       "Blind Carbon Copy": [
         "Con copia oculta"
@@ -9473,6 +9551,9 @@
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
       ],
+      "Get the deal": [
+        "Aprovecha la oferta"
+      ],
       "Go to Forums": [
         "Ir a Foros"
       ],
@@ -9631,6 +9712,9 @@
       ],
       "No label found": [
         "No se ha encontrado ninguna etiqueta."
+      ],
+      "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
+        "¡No te perderás más mensajes importantes! Ahora aparecerán bajo ${ primaryCopy }. Todo lo demás está ordenado por categoría para que sea fácil de encontrar y no sature tu bandeja de entrada."
       ],
       "Non-promotional content and news": [
         "Contenido no promocional y noticias"
@@ -12021,6 +12105,9 @@
       "Advanced account protection": [
         "Protección de cuentas avanzada"
       ],
+      "File attachments (up to 10GB)": [
+        "Archivos adjuntos (hasta 10GB)"
+      ],
       "Team policies": [
         "Políticas de equipo"
       ]
@@ -12142,6 +12229,9 @@
       "More plans are available in other currencies": [
         "Hay más planes disponibles en otras divisas."
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Método de pago necesario para que la suscripción se active después de que termine la prueba."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiva primero la suscripción para disminuir la cantidad de complementos."
       ],
@@ -12160,6 +12250,17 @@
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "El cupón es válido por ${ couponRedemptions } renovación.",
         "El cupón es válido para ${ couponRedemptions } renovaciones."
+      ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "El precio especial de descuento es válido para el primer ${ subscriptionLength } mes.",
+        "El precio especial de descuento es válido para los primeros ${ subscriptionLength } meses."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "El precio con descuento especial es válido para el primer mes. El cupón es válido para ${ couponRedemptions } renovación. Después se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puedes cancelar en cualquier momento.",
+        "El precio con descuento especial es válido para el primer mes. El cupón es válido para ${ couponRedemptions } renovaciones. Después se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puedes cancelarlo en cualquier momento."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "La oferta especial es válida durante el primer mes. Después se renovará automáticamente por ${ renewPriceStr } cada mes. Puedes cancelarla en cualquier momento."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "El precio especial de descuento de ${ priceWithDiscount } es válido para el primer ${ subscriptionLength } mes",
@@ -12182,6 +12283,9 @@
       "This number will be shown on all future invoices": [
         "Este número se mostrará en todas las futuras facturas"
       ],
+      "This offer is not available with your current plan.": [
+        "Esta oferta no está disponible con tu plan actual."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Este se convertirá en tu nuevo método de pago por defecto para todas las futuras renovaciones."
       ],
@@ -12194,6 +12298,12 @@
       "VAT number": [
         "Número de IVA"
       ],
+      "You already have a subscription to this plan.": [
+        "Ya tienes una suscripción a este plan."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Ya tienes una suscripción a este plan. Puedes cambiar tu suscripción en ${ subscriptionPlatform }."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pronto serás redirigido a PayPal para verificar tu pago."
       ],
@@ -12205,6 +12315,9 @@
       ],
       "Your payment is still being processed": [
         "Tu pago aún está siendo procesado."
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "Tu suscripción tiene un descuento existente. Al cambiarte a esta nueva promoción, el descuento existente ya no se aplicará."
       ]
     },
     "Payments.Error": {
@@ -14682,6 +14795,9 @@
       "Block sender": [
         "Bloquear el remitente"
       ],
+      "Built for privacy": [
+        "Diseñado para la privacidad"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Cancelar la subscripción a ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -14780,6 +14896,9 @@
       ],
       "Customize categories": [
         "Personalizar categorías"
+      ],
+      "Customize categories to fit your needs": [
+        "Personaliza las categorías para adaptarlas a tus necesidades"
       ],
       "Customize your mail import": [
         "Personalizar la importación de tu correo"
@@ -15020,6 +15139,9 @@
       ],
       "Insert contacts": [
         "Insertar contactos"
+      ],
+      "Introducing email categories": [
+        "Presentando categorías de correo electrónico"
       ],
       "Invalid verification code": [
         "Código de verificación no válido"

@@ -1495,6 +1495,10 @@
       "Trust": [
         "ნდობა"
       ],
+      "Trust key": [
+        "ნდობის გასაღები",
+        "ნდობის გასაღებები"
+      ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
       ],
@@ -5552,6 +5556,11 @@
         "განუსაზღვრელი რაოდენობის მეტსახელი Hide-my-email-სთვის"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "ჩქაროსნული კავშირი"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "თქვენი უსაფრთხოების გასაღებით ავთენტიკაციისას რაღაც არასწორად წავიდა. კიდევ სცადეთ."
@@ -7400,8 +7409,7 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
-        "გამოსახულების ჩასმა",
-        "გამოსახულებების ჩასმა"
+        "გამოსახულების ჩასმა"
       ],
       "Insert link": [
         "ბმულის ჩასმა"
@@ -7881,17 +7889,11 @@
       "Saved: ${ dateString }": [
         "დაზოგეთ: ${ dateString }"
       ],
-      "Saving draft…": [
-        "მონახაზის შენახვა…"
-      ],
       "Scan the QR code with your mobile device": [
         "დაასკანერეთ QR კოდი თქვენი მობილური მოწყობილობით"
       ],
       "Scheduled send of this message will be canceled.": [
         "ამ შეტყობინების დაგეგმილი გაგზავნა გაუქმდება."
-      ],
-      "Scheduling message...": [
-        "შეტყობინების განრიგში ჩამატება..."
       ],
       "Scribe panel": [
         "Scribe-ის პანელი"
@@ -7935,9 +7937,6 @@
       ],
       "Sending": [
         "იგზავნება"
-      ],
-      "Sending message...": [
-        "შეტყობინების გაგზავნა..."
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "@pm.ge მისამართიდან შეტყობინებების გაგზავნა ფასიანი ფუნქციაა. შეტყობინება თქვენი ნაგულისხმები მისამართიდან (${ email }) გაიგზავნება"

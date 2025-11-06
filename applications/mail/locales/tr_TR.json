@@ -1496,7 +1496,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Güvenilen anahtar",
+        "Güvenilen anahtarlar"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -5602,6 +5603,11 @@
         "Sınırsız sayıda hide-my-email takma adı"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Işık hızında"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Güvenlik anahtarı ile kimlik doğrulaması yapılırken bir sorun çıktı. Lütfen yeniden deneyin."
@@ -7507,8 +7513,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -7994,17 +7999,11 @@
       "Saved: ${ dateString }": [
         "Kaydedilme: ${ dateString }"
       ],
-      "Saving draft…": [
-        "Taslak kaydediliyor…"
-      ],
       "Scan the QR code with your mobile device": [
         "Mobil aygıtınızla kare kodu tarayın"
       ],
       "Scheduled send of this message will be canceled.": [
         "Bu iletinin zamanlanmış gönderimi iptal edilecek."
-      ],
-      "Scheduling message...": [
-        "İleti zamanlanıyor..."
       ],
       "Scribe panel": [
         "Scribe panosu"
@@ -8048,9 +8047,6 @@
       ],
       "Sending": [
         "Gönderiliyor"
-      ],
-      "Sending message...": [
-        "İleti gönderiliyor..."
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "@pm.me adresinden ileti göndermek ücretli bir özelliktir. İletiniz varsayılan ${ email } adresinizden gönderilecek"

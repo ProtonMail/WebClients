@@ -682,7 +682,7 @@
         "Amagueu la configuració avançada del PGP"
       ],
       "Hide attachment details": [
-        "Amagar els detalls de l'adjunt"
+        "Amaga els detalls de l'adjunt"
       ],
       "Hide details": [
         "Amaga els detalls"
@@ -1301,7 +1301,7 @@
         "Estableix"
       ],
       "Set ${ MAIL_APP_NAME } as default email application": [
-        "Establiu ${ MAIL_APP_NAME } com a aplicació de correu electrònic predeterminada"
+        "Estableix ${ MAIL_APP_NAME } com a aplicació de correu electrònic predeterminada"
       ],
       "Set as album cover": [
         "Estableix com a portada de l'àlbum"
@@ -1496,7 +1496,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Marca com a clau de confiança"
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -1655,7 +1656,7 @@
         "Què n'obtinc?"
       ],
       "Why not?": [
-        "Perquè no?"
+        "Per què no?"
       ],
       "Write for me": [
         "Escriu per a mi"
@@ -2021,6 +2022,12 @@
         "S'ha aprovat la verificació del remitent"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } resultat més no mostrat",
+        "${ hiddenResultsCount } resultats més no mostrats"
+      ]
+    },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Un cop finalitzi el període de prova el ${ formattedDate }, passarà a ser una subscripció de pagament que es renovarà automàticament cada ${ renewCycle } mesos. No se us cobrarà si la cancel·leu abans del ${ formattedDate }."
@@ -2317,7 +2324,7 @@
         "Problema de configuració manual"
       ],
       "Meet problem": [
-        "Coneixeu el problema"
+        "Problema amb Meet"
       ],
       "Other": [
         "Altres"
@@ -5602,6 +5609,11 @@
         "Nombre il·limitat d'àlies hide-my-email"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Velocitats ultraràpides"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Alguna cosa ha anat malament en autenticar-se amb la vostra clau de seguretat. Torneu-ho a provar."
@@ -5965,7 +5977,7 @@
         "Emmagatzematge desbloquejat"
       ],
       "Tasks to complete count": [
-        "Llista de tasques pendents"
+        "Tasques pendents"
       ],
       "This feature is currently unavailable": [
         "Aquesta característica no està disponible actualment."
@@ -7507,8 +7519,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -7994,8 +8005,8 @@
       "Saved: ${ dateString }": [
         "S'ha desat: ${ dateString }"
       ],
-      "Saving draft…": [
-        "S'està desant l'esborrany..."
+      "Saving draft": [
+        "S'està desant l'esborrany"
       ],
       "Scan the QR code with your mobile device": [
         "Escanegeu el codi QR amb el vostre dispositiu mòbil"
@@ -8003,8 +8014,8 @@
       "Scheduled send of this message will be canceled.": [
         "L'enviament programat d'aquest missatge es cancel·larà."
       ],
-      "Scheduling message...": [
-        "S'està planificant un missatge..."
+      "Scheduling message": [
+        "Programant missatge"
       ],
       "Scribe panel": [
         "Panell de Scribe"
@@ -8049,8 +8060,8 @@
       "Sending": [
         "S'està enviant"
       ],
-      "Sending message...": [
-        "S'està enviant el missatge..."
+      "Sending message": [
+        "S'està enviant el missatge"
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "L'enviament de missatges des de l'adreça @pm.me és una funció de pagament. El missatge s'enviarà des de la vostra adreça per defecte ${ email }"
@@ -8645,7 +8656,7 @@
         "Quan us subscrigueu a un butlletí, utilitzeu un àlies en lloc de la vostra adreça de correu electrònic. La vostra identitat quedarà amagada i podreu desactivar l'àlies en qualsevol moment."
       ],
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
-        "Quan viatgeu o utilitzeu una WiFi pública, connecteu-vos a ${ VPN_APP_NAME } per a evitar que ningú faci el seguiment de la vostra activitat en línia o robi les vostres dades. És gratuït."
+        "Quan viatgeu o utilitzeu una WiFi pública, connecteu-vos a ${ VPN_APP_NAME } per a evitar que ningú faci el seguiment de la vostra activitat en línia o us robi les dades. És gratuït."
       ],
       "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
         "Amb les noves categories de correu, només els missatges importants arriben a la safata d'entrada principal. Tota la resta s'organitza en categories."
@@ -10467,7 +10478,7 @@
         "No s'ha pogut carregar la imatge."
       ],
       "Image has not been loaded in order to protect your privacy.": [
-        "Aquesta imatge no s'ha carregat per tal de protegir la vostra privacitat."
+        "La imatge no s'ha carregat per a protegir la vostra privacitat."
       ]
     },
     "Message notification": {
@@ -12523,7 +12534,7 @@
         "Inseriu l'enllaç primer"
       ],
       "Please share what you expected": [
-        "Si us plau, digueu què esperàveu"
+        "Compartiu què esperàveu"
       ],
       "Postal code": [
         "Codi postal"
@@ -13647,6 +13658,9 @@
       "${ app } storage": [
         "emmagatzematge de ${ app }"
       ],
+      "${ app } storage used": [
+        "Emmagatzematge de ${ app } utilitzat"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ple al ${ percentage }%"
       ],
@@ -13658,6 +13672,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Per a tots els serveis de ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Emmagatzematge utilitzat"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Per a continuar carregant i sincronitzant fitxers, allibereu espai o milloreu per a obtenir més emmagatzematge."

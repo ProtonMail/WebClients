@@ -1173,6 +1173,10 @@
       "Trust": [
         "भरोसा करें"
       ],
+      "Trust key": [
+        "ट्रस्ट की",
+        "ट्रस्ट कीज़"
+      ],
       "Trust public key": [
         "सार्वजनिक कुंजी पर भरोसा करें"
       ],
@@ -4299,6 +4303,11 @@
         "असीमित Hide-my-email नकलीनाम"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "बहुत तेज गति"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "आपकी सुरक्षा चाबी सत्यापित करते वक्त कुछ गलती हो गई। वापस कोशिश करें।"
@@ -5664,6 +5673,9 @@
       "Inherited from parent folder": [
         "मूल फ़ोल्डर से इनहेरिट की गई"
       ],
+      "Insert image": [
+        "तस्वीर डालें"
+      ],
       "Insert link": [
         "लिंक डालें"
       ],
@@ -5995,14 +6007,8 @@
       "Saved yesterday": [
         "कल सहेजा गया"
       ],
-      "Saving draft…": [
-        "वांछित ड्राफ्ट..."
-      ],
       "Scheduled send of this message will be canceled.": [
         "इस संदेश का भेजने का शेड्यूल रद्द हो जाएगा।"
-      ],
-      "Scheduling message...": [
-        "संदेश शेड्यूल हो रहा..."
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "खोज में बहुत अधिक समय लग रहा है? इस खोज सत्र से ${ dropdownButton } या ${ toggleOffButton }।"
@@ -6030,9 +6036,6 @@
       ],
       "Sending": [
         "भेज रहे"
-      ],
-      "Sending message...": [
-        "संदेश भेज रहे..."
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "@pm.me पते से संदेश भेजना एक पेड फीचर है। आपका संदेश आपके डिफ़ॉल्ट पते ${ email } से भेजा जाएगा"
