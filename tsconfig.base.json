@@ -20,6 +20,7 @@
         "types": ["@proton/types", "webpack-env", "jest", "vitest/globals"],
         "baseUrl": ".",
         "paths": {
+            "@proton/icons/icons/*": ["./packages/icons/icons/*"],
             "@proton/account/*": ["./packages/account/*"],
             "@proton/activation/*": ["./packages/activation/*"],
             "@proton/andromeda": ["./packages/wasm/andromeda/*"],
