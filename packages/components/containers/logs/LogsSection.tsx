@@ -163,22 +163,22 @@ const LogsSection = () => {
     };
 
     useEffect(() => {
-        withLoading(fetchAndSetState());
+        void withLoading(fetchAndSetState());
     }, [page, protonSentinel]);
 
     return (
         <>
-            {confirmModal((props) => {
+            {confirmModal(({ onResolve, onReject, ...rest }) => {
                 return (
                     <Prompt
-                        {...props}
-                        onClose={() => props.onReject()}
+                        {...rest}
+                        onClose={() => onReject()}
                         title={c('Action').t`Disable security events`}
                         buttons={[
-                            <Button color="norm" onClick={() => props.onResolve()}>
+                            <Button color="norm" onClick={() => onResolve()}>
                                 {c('Action').t`Disable security events`}
                             </Button>,
-                            <Button onClick={props.onClose}>{c('Action').t`Cancel`}</Button>,
+                            <Button onClick={() => rest.onClose()}>{c('Action').t`Cancel`}</Button>,
                         ]}
                     >
                         {c('Info')
