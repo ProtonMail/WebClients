@@ -37,7 +37,8 @@ export type IPCInboxDesktopFeature =
     | 'HeartbeatMetrics'
     | 'StatsTelemetry'
     | 'RestrictedThemeSelection'
-    | 'ClearAppModal';
+    | 'ClearAppModal'
+    | 'SnapSupport';
 export type IPCInboxGetInfoMessage =
     | { type: 'theme'; result: ThemeSetting }
     | { type: 'latestVersion'; result: DesktopVersion | null }
