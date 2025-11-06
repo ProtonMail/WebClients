@@ -321,16 +321,18 @@ export const createActivationService = () => {
      * Else parse the sender data (ie: content-script) */
     const handleEndpointInit: MessageHandlerCallback<WorkerMessageType.ENDPOINT_INIT> = async (
         { payload },
-        { tab, frameId }
+        { tab, frameId = -1 }
     ) => {
         if (payload.popup) {
             const current = first(await browser.tabs.query({ active: true, currentWindow: true }));
             if (!(current && current?.id)) throw new Error('No active tabs');
             const url = parseUrl(current.url);
-            return { tabId: current.id, url, tabUrl: url, senderTabId: tab?.id };
+            const senderTabId = tab?.id ?? 0; /** NOTE: on firefox, popup does not have a tab */
+            return { tabId: current.id, url, tabUrl: url, senderTabId, frameId };
         }
 
-        if (!tab?.id) throw new Error('Invalid sender tab');
+        if (tab?.id === undefined) throw new Error('Invalid sender tab');
+
         const { id: tabId } = tab;
         const tabUrl = parseUrl(tab.url);
 
@@ -339,10 +341,10 @@ export const createActivationService = () => {
             const result = await webNavigation.getFrame({ frameId, tabId });
             if (!result) throw new Error('Invalid sender frame');
             const frameUrl = parseUrl(result.url);
-            return { tabId, url: frameUrl, tabUrl, senderTabId: tabId };
+            return { tabId, url: frameUrl, tabUrl, senderTabId: tabId, frameId };
         }
 
-        return { tabId, senderTabId: tabId, url: tabUrl, tabUrl };
+        return { tabId, senderTabId: tabId, url: tabUrl, tabUrl, frameId };
     };
 
     browser.permissions.onAdded.addListener(checkPermissionsUpdate);

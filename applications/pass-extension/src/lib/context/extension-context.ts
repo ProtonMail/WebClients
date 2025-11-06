@@ -1,4 +1,5 @@
 import { resolveMessageFactory, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import type { FrameID } from 'proton-pass-extension/lib/utils/frames';
 import { generatePortName } from 'proton-pass-extension/lib/utils/port';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Runtime } from 'webextension-polyfill';
@@ -19,6 +20,7 @@ export type ExtensionContextType = {
     /** The currently active tab's ID. In popup contexts,
      * represents the focused tab visible to the user. */
     tabId: TabId;
+    frameId: FrameID;
     /** The tab ID that originated the context. Matches `tabId`
      * for content scripts and extension pages, but differs in
      * popup contexts where it represents the popup's source tab. */
@@ -52,15 +54,15 @@ export const setupExtensionContext = async (options: ExtensionContextOptions): P
         const res = await sendMessage.on(
             message({ type: WorkerMessageType.ENDPOINT_INIT, payload: { popup: endpoint === 'popup' } }),
             (res): Partial<EndpointContext> => {
-                if (res.type === 'error') return { tabId: 0, senderTabId: 0 };
+                if (res.type === 'error') return {};
                 return res;
             }
         );
 
-        const { tabId = 0, senderTabId = 0, url = null, tabUrl = null } = res;
+        const { tabId = 0, senderTabId = 0, url = null, tabUrl = null, frameId = 0 } = res;
         /** Generate a unique port name by combining the endpoint and sender tab ID.
          * This ensures requests are properly associated with their originating tab context */
-        const name = generatePortName(endpoint, senderTabId);
+        const name = generatePortName(endpoint, senderTabId, frameId);
         const port = browser.runtime.connect(browser.runtime.id, { name });
 
         logger.info(`[${logCtx}] tabId resolved & port opened`);
@@ -98,7 +100,7 @@ export const setupExtensionContext = async (options: ExtensionContextOptions): P
 
         port.onDisconnect.addListener(onPortDisconnect);
 
-        return ExtensionContext.set({ endpoint, port, senderTabId, tabId, tabUrl, url, destroy });
+        return ExtensionContext.set({ endpoint, port, frameId, senderTabId, tabId, tabUrl, url, destroy });
     } catch (error) {
         logger.info(`[${logCtx}] fatal error`, error);
 
