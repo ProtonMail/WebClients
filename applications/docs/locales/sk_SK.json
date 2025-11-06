@@ -675,6 +675,12 @@
       "Search recent documents": [
         "Hľadať nedávne dokumenty"
       ],
+      "Search recent spreadsheets": [
+        "Hľadať v nedávnych tabuľkách"
+      ],
+      "Search recents": [
+        "Hľadať v nedávnych"
+      ],
       "See how": [
         "Pozrieť ako"
       ],
@@ -1091,6 +1097,14 @@
       ],
       "Unsupported event": [
         "Nepodporovaná udalosť"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } ďalší výsledok nebol zobrazený",
+        "${ hiddenResultsCount } ďalšie výsledky nezobrazené",
+        "${ hiddenResultsCount } ďalších výsledkov nezobrazených",
+        "${ hiddenResultsCount } ďalších výsledkov nezobrazených"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -3682,6 +3696,11 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Neobmedzený počet hide-my-email aliasov"
+      ]
+    },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Bleskové rýchlosti"
       ]
     },
     "fido2: Error": {
@@ -8754,9 +8773,6 @@
       ]
     },
     "sheets_2025:Info": {
-      "Creating new spreadsheet...": [
-        "Vytváranie novej tabuľky..."
-      ],
       "Insert as new sheet": [
         "Vložiť ako nový hárok"
       ],
@@ -9102,6 +9118,9 @@
       "${ app } storage": [
         "${ app } uložisko"
       ],
+      "${ app } storage used": [
+        "${ app } využitého úložiska"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% využitých"
       ],
@@ -9113,6 +9132,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Pre všetky ${ BRAND_NAME } služby"
+      ],
+      "Storage used": [
+        "Využité úložisko"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Ak chcete naďalej používať produkty ${ BRAND_NAME }, uvoľnite miesto alebo ${ upgrade }"

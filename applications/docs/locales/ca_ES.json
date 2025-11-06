@@ -91,7 +91,7 @@
         "Aplica"
       ],
       "Ask me next time": [
-        "Pregunteu-m'ho la propera vegada"
+        "Pregunteu-m'ho la pròxima vegada"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Es permet un màxim d'${ maxContacts } contacte per grup de contactes.",
@@ -661,7 +661,7 @@
         "Desa els canvis"
       ],
       "Save preferences": [
-        "Desa les preferències"
+        "Deseu les preferències"
       ],
       "Search": [
         "Cerca"
@@ -1080,6 +1080,12 @@
         "Esdeveniment no suportat"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } resultat més no mostrat",
+        "${ hiddenResultsCount } resultats més no mostrats"
+      ]
+    },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Un cop finalitzi el període de prova el ${ formattedDate }, passarà a ser una subscripció de pagament que es renovarà automàticament cada ${ renewCycle } mesos. No se us cobrarà si la cancel·leu abans del ${ formattedDate }."
@@ -1338,7 +1344,7 @@
         "Problema de configuració manual"
       ],
       "Meet problem": [
-        "Coneixeu el problema"
+        "Problema amb Meet"
       ],
       "Other": [
         "Altres"
@@ -3647,6 +3653,11 @@
         "Nombre il·limitat d'àlies hide-my-email"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Velocitats ultraràpides"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Alguna cosa ha anat malament en autenticar-se amb la vostra clau de seguretat. Torneu-ho a provar."
@@ -5057,7 +5068,7 @@
         "El propietari d'aquesta adreça ha desactivat el xifratge d'extrem a extrem. Per a poder enviar-hi correus electrònics xifrats, el propietari ha de tornar a activar el xifratge d’extrem a extrem."
       ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "Sembla que l'URL que heu introduït s'ha copiat incorrectament de l'Slack. Quan copieu enllaços llargs de l'Slack, heu de tocar amb el botó dret a l'enllaç i, a continuació, heu de triar «Copieu l'enllaç» en lloc de copiar directament el segment de text de l'URL."
+        "Sembla que l'URL que heu introduït s'ha copiat incorrectament del Slack. Quan copieu enllaços llargs del Slack, feu clic amb el botó dret damunt de l'enllaç i seleccioneu \"Copia l'enllaç\", en lloc de copiar directament el text de l'URL truncat."
       ],
       "There are no documents in the trash.": [
         "No hi ha documents a la paperera."
@@ -5665,7 +5676,7 @@
         "Correus electrònics (el mes passat)"
       ],
       "Enable email notifications": [
-        "Activa les notificacions per correu"
+        "Habiliteu les notificacions per correu electrònic"
       ],
       "Encrypt emails": [
         "Xifrar correus electrònics"
@@ -5716,7 +5727,7 @@
         "Inclou els registres de l'aplicació a l'informe d'errors"
       ],
       "Include document name in notification": [
-        "Incloeu el nom del document a les notificacions"
+        "Incloeu el nom del document a la notificació"
       ],
       "Include message and file name in invite email": [
         "Inclou el missatge i el nom del fitxer al correu electrònic d'invitació"
@@ -8539,9 +8550,6 @@
       ]
     },
     "sheets_2025:Info": {
-      "Creating new spreadsheet...": [
-        "S'està creant el full de càlcul nou..."
-      ],
       "Detect automatically": [
         "Detecta automàticament"
       ],
@@ -8889,6 +8897,9 @@
       "${ app } storage": [
         "emmagatzematge de ${ app }"
       ],
+      "${ app } storage used": [
+        "Emmagatzematge de ${ app } utilitzat"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ple al ${ percentage }%"
       ],
@@ -8900,6 +8911,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Per a tots els serveis de ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Emmagatzematge utilitzat"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Per continuar utilitzant els productes de ${ BRAND_NAME }, allibereu espai o ${ upgrade }."

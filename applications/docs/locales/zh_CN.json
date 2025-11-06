@@ -90,9 +90,6 @@
       "Apply": [
         "应用"
       ],
-      "Ask me next time": [
-        "稍后提醒我"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "每个群组最多只能有 ${ maxContacts } 位联系人"
       ],
@@ -644,9 +641,6 @@
       ],
       "Save changes": [
         "保存更改"
-      ],
-      "Save preferences": [
-        "保存首选项"
       ],
       "Search": [
         "搜索"
@@ -3484,6 +3478,11 @@
         "无限制地 hide-my-email"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "闪电般的速度"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "使用安全密钥进行身份验证时出错，请重试。"
@@ -4171,9 +4170,6 @@
       "Continue": [
         "继续"
       ],
-      "Converting document...": [
-        "正在转换文档..."
-      ],
       "Copy the link to clipboard": [
         "复制链接到剪贴板"
       ],
@@ -4215,9 +4211,6 @@
       ],
       "Creating link to folder": [
         "正在创建文件夹链接"
-      ],
-      "Creating new document...": [
-        "正在创建新文档..."
       ],
       "Current plan": [
         "当前等级"
@@ -4303,12 +4296,6 @@
       "Enter your own password (as organization admin).": [
         "请输入你的密码（作为组织管理员）。"
       ],
-      "Error converting document: ${ errorMessage }": [
-        "转换文档时出错：${ errorMessage }"
-      ],
-      "Error loading document: ${ errorDetail }": [
-        "加载文档时出错：${ errorDetail }"
-      ],
       "Error Syncing": [
         "同步出错"
       ],
@@ -4368,12 +4355,6 @@
       ],
       "Geoblocking": [
         "地理限制"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "获取文档中新增的评论和建议的邮件提醒。"
-      ],
-      "Get Notified About Comments": [
-        "获得评论通知"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "政府和网络供应商可以监视您的在线活动。Proton 通过隐藏您的真实 IP 地址并加密网络活动，让您的浏览私密无忧。"
@@ -4510,9 +4491,6 @@
       "Low Priority": [
         "较低优先顺序"
       ],
-      "Making a copy...": [
-        "正在创建副本..."
-      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "最多 ${ MAX_SHARED_URL_PASSWORD_LENGTH } 个字符"
       ],
@@ -4542,9 +4520,6 @@
       ],
       "No contacts added yet": [
         "尚未添加联系人"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "网址中未提供任何文档。请返回 ${ DRIVE_APP_NAME } 并选择文档。"
       ],
       "No email address": [
         "无邮箱地址"
@@ -4812,9 +4787,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "此收件人已停用端到端加密。要能够向此收件人发送加密电子邮件，该收件人必须重新启用端到端加密。"
-      ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "您输入的网址似乎从 Slack 复制错误。从 Slack 复制长链接时，请右键单击链接，然后选择“复制链接”，而不是直接复制截断的网址文本。"
       ],
       "There are no documents in the trash.": [
         "回收站中没有文档。"
@@ -5412,9 +5384,6 @@
       "Emails (last month)": [
         "邮件（上个月）"
       ],
-      "Enable email notifications": [
-        "启用邮件通知"
-      ],
       "Encrypt emails": [
         "加密电子邮件"
       ],
@@ -5462,9 +5431,6 @@
       ],
       "Include application logs in bug report": [
         "在问题反馈中包含应用日志"
-      ],
-      "Include document name in notification": [
-        "在通知中包含文档名称"
       ],
       "Include message and file name in invite email": [
         "在邀请电子邮件中包含邮件和文件名"

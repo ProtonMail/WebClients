@@ -669,6 +669,9 @@
       "Search recent documents": [
         "Sök i aktuella dokument"
       ],
+      "Search recents": [
+        "Sök senaste"
+      ],
       "See how": [
         "Se hur"
       ],
@@ -1066,6 +1069,12 @@
       ],
       "Unsupported event": [
         "Händelse stöds inte"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } fler resultat visas inte",
+        "${ hiddenResultsCount } fler resultat visas inte"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -3624,6 +3633,11 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Obegränsat antal hide-my-email-alias"
+      ]
+    },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Blixtsnabb hastighet"
       ]
     },
     "fido2: Error": {
@@ -8500,9 +8514,6 @@
       ]
     },
     "sheets_2025:Info": {
-      "Creating new spreadsheet...": [
-        "Skapar nytt kalkylblad …"
-      ],
       "Detect automatically": [
         "Upptäck automatiskt"
       ],
@@ -10071,6 +10082,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Din gratis provperiod slutar den ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Din provperiod slutar den ${ textDate }. Du debiteras inte om du avbryter före ${ textDate }. ${ action }"
       ]
     }
   }
