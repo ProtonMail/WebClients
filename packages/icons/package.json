@@ -4,7 +4,6 @@
     "sideEffects": false,
     "type": "module",
     "exports": {
-        ".": "./index.ts",
         "./types": "./types.ts",
         "./Icons": "./Icons.tsx",
         "./InlineIcons": "./InlineIcons.tsx",

@@ -73,20 +73,6 @@ async function run() {
         );
     });
 
-    const generateIndex = async () => {
-        const content = [
-            disclaimer,
-            `export * from './types';`,
-            '',
-            ...icons.map((icon) => `export { ${icon.name} } from './icons/${icon.name}';`),
-        ].join('\n');
-
-        await writeFile(
-            path.join(dirname, '../index.ts'),
-            await prettier.format(content, { ...prettierOptions, parser: 'typescript' })
-        );
-    };
-
     const generateTypes = async () => {
         const content = [
             disclaimer,
@@ -101,7 +87,6 @@ async function run() {
         );
     };
 
-    writeFilesPromises.push(generateIndex());
     writeFilesPromises.push(generateTypes());
 
     await Promise.all(writeFilesPromises);
