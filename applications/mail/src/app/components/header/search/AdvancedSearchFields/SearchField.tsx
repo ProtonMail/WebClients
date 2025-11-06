@@ -3,9 +3,9 @@ import { forwardRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { InputFieldTwo } from '@proton/components';
-import { IcMagnifier } from '@proton/icons';
+import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 
 interface Props {
     onSubmit: MouseEventHandler<HTMLButtonElement>;

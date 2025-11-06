@@ -2,9 +2,11 @@ import type { MouseEvent } from 'react';
 
 import { c } from 'ttag';
 
-import { Kbd, Tooltip } from '@proton/atoms';
+import { Kbd } from '@proton/atoms/Kbd/Kbd';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { useLoading } from '@proton/hooks';
-import { IcStar, IcStarFilled } from '@proton/icons';
+import { IcStar } from '@proton/icons/icons/IcStar';
+import { IcStarFilled } from '@proton/icons/icons/IcStarFilled';
 import type { IconSize } from '@proton/icons/types';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

@@ -3,7 +3,7 @@ import { memo, useCallback, useRef } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import {
     AppVersion,
     AppsDropdown,

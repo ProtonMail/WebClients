@@ -1,6 +1,7 @@
 import { c, msgid } from 'ttag';
 
-import { Button, Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
+import { Button } from '@proton/atoms/Button/Button';
 import type { ContactEditProps, ModalProps } from '@proton/components';
 import { Icon, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import { FeatureCode, useFeatures } from '@proton/features';

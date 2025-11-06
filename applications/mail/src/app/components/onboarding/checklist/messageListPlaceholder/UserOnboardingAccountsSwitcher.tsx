@@ -3,9 +3,12 @@ import { memo, useState } from 'react';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { Button, ButtonLike, type ButtonLikeSize, Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike, type ButtonLikeSize } from '@proton/atoms/Button/ButtonLike';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { useActiveBreakpoint, useModalStateObject, useMyCountry, useNotifications } from '@proton/components';
-import { IcArrowWithinSquare, IcSquares } from '@proton/icons';
+import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
+import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
@@ -170,7 +173,7 @@ const UserOnboardingAccountsSwitcher = ({ className }: { className?: string }) =
                                 }}
                             >
                                 {defaultEmailAddress}
-                                <IcSquares className="ml-4"  />
+                                <IcSquares className="ml-4" />
                             </Button>
                         </Tooltip>
                     )}

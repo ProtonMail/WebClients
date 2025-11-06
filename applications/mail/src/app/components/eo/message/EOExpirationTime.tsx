@@ -9,9 +9,12 @@ import {
 } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import { Button, ButtonLike, Href, Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Href } from '@proton/atoms/Href/Href';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Prompt, useModalState } from '@proton/components';
-import { IcHourglass } from '@proton/icons';
+import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import {
     Checkbox,
     FolderIcon,
@@ -17,7 +17,7 @@ import {
     useNotifications,
 } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
-import { IcPlus } from '@proton/icons';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { useFolders } from '@proton/mail';
 import { create } from '@proton/shared/lib/api/labels';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';

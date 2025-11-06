@@ -18,7 +18,7 @@ import {
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
 import { Checkbox, DateInputTwo, InputFieldTwo, TimeInput, useNotifications } from '@proton/components';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';

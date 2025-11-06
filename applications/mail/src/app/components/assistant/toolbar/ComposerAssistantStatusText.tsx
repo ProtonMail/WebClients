@@ -3,10 +3,13 @@ import { useEffect, useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Href, InlineLinkButton, Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { ErrorZone, useModalStateObject } from '@proton/components';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
-import { IcPauseFilled } from '@proton/icons';
+import { IcPauseFilled } from '@proton/icons/icons/IcPauseFilled';
 import { useAssistant } from '@proton/llm/lib';
 import { ERROR_TYPE } from '@proton/shared/lib/assistant';
 import humanSize from '@proton/shared/lib/helpers/humanSize';

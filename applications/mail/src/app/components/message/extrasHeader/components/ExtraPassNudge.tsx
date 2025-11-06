@@ -5,12 +5,15 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { Button, ButtonLike, Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { AppLink, Checkbox, Logo, useActiveBreakpoint, useModalState } from '@proton/components';
-import { IcCross, IcQuestionCircle } from '@proton/icons';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useLocalState from '@proton/components/hooks/useLocalState';
 import { FeatureCode, useFeature } from '@proton/features';
+import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcQuestionCircle } from '@proton/icons/icons/IcQuestionCircle';
 import { TelemetryPassNudgeEvents } from '@proton/shared/lib/api/telemetry';
 import { APPS, BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { isPassUser } from '@proton/shared/lib/helpers/usedClientsFlags';

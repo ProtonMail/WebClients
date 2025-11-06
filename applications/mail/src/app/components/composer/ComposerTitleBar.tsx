@@ -3,8 +3,13 @@ import { forwardRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Kbd, Tooltip } from '@proton/atoms';
-import { IcArrowsFromCenter, IcArrowsToCenter, IcCrossBig, IcDots, IcLowDash } from '@proton/icons';
+import { Kbd } from '@proton/atoms/Kbd/Kbd';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { IcArrowsFromCenter } from '@proton/icons/icons/IcArrowsFromCenter';
+import { IcArrowsToCenter } from '@proton/icons/icons/IcArrowsToCenter';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
+import { IcDots } from '@proton/icons/icons/IcDots';
+import { IcLowDash } from '@proton/icons/icons/IcLowDash';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { isSafari as checkIsSafari, metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
@@ -163,7 +168,11 @@ const ComposerTitleBar = ({
                 }}
                 dataTestId="composer:maximize-button"
             >
-                {maximized ? <IcArrowsToCenter alt={title} className="m-auto" /> : <IcArrowsFromCenter alt={title} className="m-auto" />}
+                {maximized ? (
+                    <IcArrowsToCenter alt={title} className="m-auto" />
+                ) : (
+                    <IcArrowsFromCenter alt={title} className="m-auto" />
+                )}
             </TitleBarButton>
             <TitleBarButton title={titleClose} onClick={onClose} dataTestId="composer:close-button">
                 <IcCrossBig alt={title} className="m-auto" />

@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { Spotlight, useModalState } from '@proton/components';
-import { IcSliders2 } from '@proton/icons';
+import { IcSliders2 } from '@proton/icons/icons/IcSliders2';
 
 import { useSpotlightCategoriesCustomization } from '../categoriesOnboarding/useSpotlightCategoriesCustomization';
 import { ModalEditCategories } from '../editCategories/ModalEditCategories';

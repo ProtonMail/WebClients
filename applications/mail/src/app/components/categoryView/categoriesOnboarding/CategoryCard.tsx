@@ -1,4 +1,4 @@
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { Icon } from '@proton/components';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';

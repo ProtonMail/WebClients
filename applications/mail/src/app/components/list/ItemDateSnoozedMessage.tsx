@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { format, isToday, isTomorrow } from 'date-fns';
 import { c } from 'ttag';
 
-import { IcBell } from '@proton/icons';
+import { IcBell } from '@proton/icons/icons/IcBell';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
 import { SettingsLink } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 

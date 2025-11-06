@@ -6,7 +6,8 @@ import { c, msgid } from 'ttag';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useGetSubscription } from '@proton/account/subscription/hooks';
 import { useGetUser } from '@proton/account/user/hooks';
-import { Button, Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
+import { Button } from '@proton/atoms/Button/Button';
 import {
     Prompt,
     useApi,

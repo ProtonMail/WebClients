@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { LabelsUpsellModal, SidebarListItemHeaderLink, useModalState } from '@proton/components';
-import { IcPlus } from '@proton/icons';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { APPS, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { hasReachedFolderLimit, hasReachedLabelLimit } from '@proton/shared/lib/helpers/folder';
 import type { Label } from '@proton/shared/lib/interfaces';
@@ -48,7 +48,9 @@ const MailSidebarListActions = ({ type, items }: Props) => {
                     onClick={handleCreate}
                     data-testid={type === 'label' ? 'navigation-link:add-label' : 'navigation-link:add-folder'}
                 >
-                    <IcPlus alt={type === 'label' ? c('Action').t`Create a new label` : c('Action').t`Create a new folder`} />
+                    <IcPlus
+                        alt={type === 'label' ? c('Action').t`Create a new label` : c('Action').t`Create a new folder`}
+                    />
                 </button>
             </Tooltip>
             <Tooltip title={type === 'label' ? c('Info').t`Manage your labels` : c('Info').t`Manage your folders`}>

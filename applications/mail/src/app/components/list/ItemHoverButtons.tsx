@@ -2,10 +2,13 @@ import type { MouseEvent } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Icon from '@proton/components/components/icon/Icon';
 import { useLoading } from '@proton/hooks';
-import { IcArchiveBox, IcCrossCircle, IcTrash } from '@proton/icons';
+import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';
+import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { useFolders, useLabels } from '@proton/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';

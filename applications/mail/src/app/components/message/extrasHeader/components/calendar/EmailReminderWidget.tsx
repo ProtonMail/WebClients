@@ -5,7 +5,9 @@ import { c } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useAddresses, useGetAddresses } from '@proton/account/addresses/hooks';
-import { Banner, ButtonLike, Href } from '@proton/atoms';
+import { Banner } from '@proton/atoms/Banner/Banner';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Href } from '@proton/atoms/Href/Href';
 import { useVideoConferencingWidget } from '@proton/calendar';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import {
@@ -18,7 +20,8 @@ import {
 } from '@proton/components';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import useIsMounted from '@proton/hooks/useIsMounted';
-import { IcArrowWithinSquare, IcKey } from '@proton/icons';
+import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
+import { IcKey } from '@proton/icons/icons/IcKey';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageErrors } from '@proton/mail/store/messages/messagesTypes';

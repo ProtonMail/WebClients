@@ -3,9 +3,11 @@ import { useEffect, useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Tooltip, Vr } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { Vr } from '@proton/atoms/Vr/Vr';
 import { useActiveBreakpoint } from '@proton/components';
-import { IcCross } from '@proton/icons';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import { ASSISTANT_SERVER_THROTTLE_TIMEOUT, useAssistant } from '@proton/llm/lib';
 import type { ActionType } from '@proton/llm/lib/types';
 import { wait } from '@proton/shared/lib/helpers/promise';

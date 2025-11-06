@@ -4,15 +4,16 @@ import { c, msgid } from 'ttag';
 
 import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { Button, Href } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
 import { useApi, useNotifications, useSpotlightOnFeature } from '@proton/components';
-import { IcCheckmark } from '@proton/icons';
 import useAssistantSubscriptionStatus, {
     ASSISTANT_TRIAL_TIME_DAYS,
 } from '@proton/components/hooks/assistant/useAssistantSubscriptionStatus';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import { FeatureCode } from '@proton/features';
 import useLoading from '@proton/hooks/useLoading';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { useAssistant } from '@proton/llm/lib';
 import { useDispatch } from '@proton/redux-shared-store';
 import { updateAIAssistant } from '@proton/shared/lib/api/settings';

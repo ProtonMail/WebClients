@@ -1,8 +1,10 @@
 import { c } from 'ttag';
 
-import { Button, Kbd, Tooltip } from '@proton/atoms';
-import { IcFileImage } from '@proton/icons';
+import { Button } from '@proton/atoms/Button/Button';
+import { Kbd } from '@proton/atoms/Kbd/Kbd';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import LoadRemoteImageBanner from '@proton/components/containers/banner/LoadRemoteImageBanner';
+import { IcFileImage } from '@proton/icons/icons/IcFileImage';
 import type { MessageImages } from '@proton/mail/store/messages/messagesTypes';
 import { shiftKey } from '@proton/shared/lib/helpers/browser';
 import type { MailSettings } from '@proton/shared/lib/interfaces';

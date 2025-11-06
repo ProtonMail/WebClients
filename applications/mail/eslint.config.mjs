@@ -1,9 +1,11 @@
 import { defineConfig } from 'eslint/config';
 
 import defaultConfig from '@proton/eslint-config-proton/all';
+import { atomsPackage, createBarrelConfig, iconsPackage } from '@proton/eslint-config-proton/barrel';
 
 export default defineConfig([
     defaultConfig,
+    createBarrelConfig({ packages: [atomsPackage, iconsPackage] }),
     {
         rules: {
             'no-console': 'off',

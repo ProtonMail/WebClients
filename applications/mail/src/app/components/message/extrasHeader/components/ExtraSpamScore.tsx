@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
-import { Banner, Button, Href } from '@proton/atoms';
+import { Banner } from '@proton/atoms/Banner/Banner';
+import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
 import { Prompt, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';

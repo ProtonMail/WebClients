@@ -8,7 +8,7 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import type { EditorMetadata } from '@proton/components';
 import { DropdownMenuButton } from '@proton/components';
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
-import { IcCheckmark } from '@proton/icons';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';

@@ -2,9 +2,11 @@ import { useLocation } from 'react-router';
 
 import { c } from 'ttag';
 
-import { Scroll } from '@proton/atoms';
+import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import { DropdownMenu, DropdownMenuButton, EllipsisLoader, ToolbarButton } from '@proton/components';
-import { IcCheckmark, IcChevronLeft, IcChevronRight } from '@proton/icons';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { TelemetryMailPagingControlsEvents } from '@proton/shared/lib/api/telemetry';
 import type { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 import clsx from '@proton/utils/clsx';

@@ -3,7 +3,8 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon, InputFieldTwo, useActiveBreakpoint } from '@proton/components';
 import TextArea from '@proton/components/components/v2/input/TextArea';
 import type { IconName } from '@proton/icons/types';
