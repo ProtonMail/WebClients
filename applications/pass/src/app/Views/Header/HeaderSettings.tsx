@@ -3,7 +3,7 @@ import { memo } from 'react';
 import type { HeaderProps } from 'proton-pass-web/app/Views/Header/types';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import CoreHeader from '@proton/components/components/header/Header';
 import Icon from '@proton/components/components/icon/Icon';
 import Hamburger from '@proton/components/components/sidebar/Hamburger';

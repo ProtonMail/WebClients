@@ -1,9 +1,9 @@
 import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import Prompt from '@proton/components/components/prompt/Prompt';
+import { Button } from '@proton/atoms/Button/Button';
 import type { PromptProps } from '@proton/components/components/prompt/Prompt';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { dateLocale } from '@proton/shared/lib/i18n';

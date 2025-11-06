@@ -1,6 +1,6 @@
 import { useCallback, useRef } from 'react';
 
-import { Input, type InputProps } from '@proton/atoms';
+import { Input, type InputProps } from '@proton/atoms/Input/Input';
 import AutocompleteList from '@proton/components/components/autocomplete/AutocompleteList';
 import { useAutocomplete, useAutocompleteFilter } from '@proton/components/components/autocomplete/useAutocomplete';
 import Option from '@proton/components/components/option/Option';

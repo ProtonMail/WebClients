@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
 import type { CompatibilityItem } from '@proton/components/containers/compatibilityCheck/compatibilityCheckHelper';
 import { PASS_TROUBLESHOOT_URL } from '@proton/pass/constants';
 import { hasWASMSupport } from '@proton/pass/utils/dom/wasm';
