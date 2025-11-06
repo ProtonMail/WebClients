@@ -2411,6 +2411,11 @@
         "Nombre illimité d'alias « hide-my-email »"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Vitesses extrêmement élevées"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Nous vous invitons à réessayer."
@@ -4973,6 +4978,9 @@
       "${ app } storage": [
         "espace de stockage de ${ app }"
       ],
+      "${ app } storage used": [
+        "Espace de stockage utilisé de ${ app }"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } plein à ${ percentage } %"
       ],
@@ -4981,6 +4989,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Pour tous les services ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Espace de stockage utilisé"
       ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "Nous ajouterons les crédits restants à votre compte ${ BRAND_NAME }."

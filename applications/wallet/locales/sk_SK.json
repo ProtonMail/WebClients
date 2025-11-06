@@ -2425,6 +2425,11 @@
         "Neobmedzený počet hide-my-email aliasov"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Bleskové rýchlosti"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Skúste to znova, prosím."
@@ -5087,6 +5092,9 @@
       "${ app } storage": [
         "${ app } uložisko"
       ],
+      "${ app } storage used": [
+        "${ app } využitého úložiska"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% využitých"
       ],
@@ -5095,6 +5103,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Pre všetky ${ BRAND_NAME } služby"
+      ],
+      "Storage used": [
+        "Využité úložisko"
       ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "Kredity za zostávajúci čas pridáme do vášho ${ BRAND_NAME } účtu."
