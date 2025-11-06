@@ -20,6 +20,9 @@
       "Authenticate": [
         "Autenticar"
       ],
+      "Blur background": [
+        "Desenfocar el fondo"
+      ],
       "Cancel": [
         "Cancelar"
       ],
@@ -35,14 +38,35 @@
       "Continue": [
         "Continuar"
       ],
+      "Continue without camera": [
+        "Continuar sin cámara"
+      ],
+      "Continue without microphone": [
+        "Continuar sin micrófono"
+      ],
+      "Copied": [
+        "Copiado"
+      ],
+      "Copy ${ title }": [
+        "Copiar ${ title }"
+      ],
       "Copy address": [
         "Copiar la dirección"
+      ],
+      "Copy invitation text": [
+        "Copiar texto de invitación"
       ],
       "Copy link": [
         "Copiar enlace"
       ],
+      "Create meeting": [
+        "Crear reunión"
+      ],
       "Delete": [
         "Eliminar"
+      ],
+      "Disable video": [
+        "Deshabilitar video"
       ],
       "Dismiss": [
         "Descartar"
@@ -59,6 +83,12 @@
       "Edit sign-in details": [
         "Editar datos de inicio de sesión"
       ],
+      "Enable video": [
+        "Habilitar video"
+      ],
+      "End meeting for all": [
+        "Finalizar la reunión para todos"
+      ],
       "Forgot password?": [
         "¿Contraseña olvidada?"
       ],
@@ -71,8 +101,32 @@
       "Help and resources": [
         "Ayuda y recursos"
       ],
+      "Hide advanced options": [
+        "Ocultar las opciones avanzadas"
+      ],
+      "Hide participants": [
+        "Ocultar participantes"
+      ],
+      "Hide timezones": [
+        "Ocultar zonas horarias"
+      ],
+      "Join": [
+        "Unirte"
+      ],
+      "Join meeting": [
+        "Unirse a la reunión"
+      ],
+      "Kick out": [
+        "Expulsar"
+      ],
       "Leave": [
         "Salir"
+      ],
+      "Leave meeting": [
+        "Salir de la reunión"
+      ],
+      "Lock meeting": [
+        "Bloquear reunión"
       ],
       "More info: ${ safeTitle }": [
         "Más información: ${ safeTitle }"
@@ -80,11 +134,20 @@
       "More options for accounts": [
         "Más opciones para las cuentas"
       ],
+      "Mute participant": [
+        "Silenciar usuario"
+      ],
       "Next month": [
         "Mes siguiente"
       ],
       "Next page": [
         "Página siguiente"
+      ],
+      "Noise filter": [
+        "Filtro de ruido"
+      ],
+      "Open link": [
+        "Abrir enlace"
       ],
       "Previous month": [
         "Mes anterior"
@@ -92,8 +155,14 @@
       "Previous page": [
         "Página anterior"
       ],
+      "Receive video": [
+        "Recibir vídeo"
+      ],
       "Refer a friend": [
         "Recomendar a un amigo"
+      ],
+      "Refresh link": [
+        "Actualizar enlace"
       ],
       "Refresh the page": [
         "Actualizar la página"
@@ -113,8 +182,17 @@
       "Resend code": [
         "Reenviar código"
       ],
+      "Schedule": [
+        "Planificación"
+      ],
+      "Schedule meeting": [
+        "Programar reunión"
+      ],
       "Search countries": [
         "Buscar países"
+      ],
+      "Send an encrypted message": [
+        "Enviar un mensaje cifrado"
       ],
       "Settings": [
         "Ajustes"
@@ -124,6 +202,12 @@
       ],
       "Show advanced options": [
         "Mostrar las opciones avanzadas"
+      ],
+      "Show participants": [
+        "Mostrar participantes"
+      ],
+      "Show timezones": [
+        "Mostrar zonas horarias"
       ],
       "Sign in": [
         "Iniciar sesión"
@@ -137,8 +221,20 @@
       "Start": [
         "Iniciar"
       ],
+      "Start meeting": [
+        "Comenzar la reunión"
+      ],
       "Stay in meeting": [
         "Permanecer en la reunión"
+      ],
+      "Stop incoming video": [
+        "Detener video entrante"
+      ],
+      "Stop presenting": [
+        "Detener presentación"
+      ],
+      "Stop receiving video": [
+        "Detener video entrante"
       ],
       "Submit": [
         "Enviar"
@@ -155,6 +251,12 @@
       "Use authentication code": [
         "Usar un código de autenticación"
       ],
+      "Use camera": [
+        "Utilizar la cámara"
+      ],
+      "Use microphone": [
+        "Usar micrófono"
+      ],
       "Use recovery code": [
         "Usar un código de recuperación"
       ],
@@ -166,6 +268,95 @@
       ],
       "View invoice": [
         "Ver la factura"
+      ]
+    },
+    "Alt": {
+      "Audio settings": [
+        "Ajustes de audio"
+      ],
+      "Blur background": [
+        "Desenfocar el fondo"
+      ],
+      "Chat": [
+        "Chat"
+      ],
+      "Close": [
+        "Cerrar"
+      ],
+      "Close search": [
+        "Cerrar búsqueda"
+      ],
+      "Copy meeting link": [
+        "Copiar enlace de la reunión"
+      ],
+      "Go to dashboard": [
+        "Ir al panel de control"
+      ],
+      "Leave": [
+        "Abandonar"
+      ],
+      "Leave Meeting": [
+        "Salir de la reunión"
+      ],
+      "Lock meeting": [
+        "Bloquear reunión"
+      ],
+      "Meeting details": [
+        "Detalles de la reunión"
+      ],
+      "Noise filter": [
+        "Filtro de ruido"
+      ],
+      "Open chat message search": [
+        "Abrir búsqueda de mensajes del chat"
+      ],
+      "Open participants search": [
+        "Abrir búsqueda de participantes"
+      ],
+      "Participant host control options": [
+        "Opciones de control del anfitrión de los participantes"
+      ],
+      "Participants": [
+        "Participantes"
+      ],
+      "Rotate camera": [
+        "Rotar la cámara"
+      ],
+      "Rotate personal meeting link": [
+        "Rotar enlace de reunión personal"
+      ],
+      "Settings": [
+        "Ajustes"
+      ],
+      "Show passphrase": [
+        "Mostrar contraseña"
+      ],
+      "Stop incoming video": [
+        "Detener video entrante"
+      ],
+      "Toggle camera": [
+        "Activar/Desactivar cámara"
+      ],
+      "Toggle chat": [
+        "Mostrar/Ocultar Chat"
+      ],
+      "Toggle meeting details": [
+        "Abrir/cerrar detalles de la reunión"
+      ],
+      "Toggle microphone": [
+        "Alternar micrófono"
+      ],
+      "Toggle participants": [
+        "Ocultar participantes"
+      ],
+      "Toggle screen share": [
+        "Alternar compartir pantalla"
+      ],
+      "Toggle settings": [
+        "Abre/Cierra configuración"
+      ],
+      "Video settings": [
+        "Ajustes de vídeo"
       ]
     },
     "Apps dropdown": {
@@ -184,6 +375,9 @@
       ],
       "Application problem": [
         "Problema con la aplicación"
+      ],
+      "Black Friday": [
+        "Black Friday"
       ],
       "Bridge problem": [
         "Problema con el Bridge"
@@ -1103,6 +1297,23 @@
         "Factura atrasada"
       ]
     },
+    "Description": {
+      "An always available meeting room for people you trust.": [
+        "Una sala de reuniones siempre disponible para personas de confianza."
+      ],
+      "Plan meetings and send invites with ${ CALENDAR_APP_NAME }.": [
+        "Planifica reuniones y envía invitaciones con ${ CALENDAR_APP_NAME }."
+      ],
+      "Rotating group encryption key for best security": [
+        "Rotando la clave de cifrado de grupo para una seguridad óptima"
+      ],
+      "Setting up group end-to-end encryption with advanced Messaging Layer Security (MLS)": [
+        "Configurando el cifrado de extremo a extremo de grupo con Seguridad de Capa de Mensajería (MLS) avanzada"
+      ],
+      "Start a call immediately then share the link with others.": [
+        "Inicia una llamada inmediatamente, luego comparte el enlace con otros."
+      ]
+    },
     "emergency_access": {
       "Trusted contact": [
         "Contacto de confianza"
@@ -1121,11 +1332,44 @@
       "Failed to create meeting": [
         "Error al crear la reunión"
       ],
+      "Failed to create personal meeting, please refresh the page": [
+        "No se pudo crear tu reunión personal, por favor, actualiza la página."
+      ],
       "Failed to decrypt session key": [
         "Error al descifrar la clave de sesión"
       ],
+      "Failed to get meeting info": [
+        "Error al obtener información para compartir"
+      ],
+      "Failed to get room name": [
+        "Error al obtener el nombre de la sala"
+      ],
+      "Failed to initialize handshake": [
+        "No se pudo inicializar el protocolo de enlace"
+      ],
+      "Failed to join meeting. Please try again later": [
+        "Error al unirse a la reunión. Por favor, inténtalo de nuevo más tarde"
+      ],
+      "Failed to join meeting. Please try again later.": [
+        "Error al unirse a la reunión. Por favor, inténtalo de nuevo más tarde."
+      ],
+      "Failed to lock meeting": [
+        "Error al bloquear la reunión"
+      ],
+      "Failed to rotate personal meeting link": [
+        "No se pudo rotar el enlace de reunión personal"
+      ],
+      "Failed to start screen share": [
+        "Error al iniciar compartir pantalla"
+      ],
+      "Failed to unlock meeting": [
+        "Error al desbloquear la reunión"
+      ],
       "Incorrect username": [
         "El nombre de usuario no es correcto."
+      ],
+      "Invalid passphrase": [
+        "Frase de acceso inválida"
       ],
       "Invalid verification code": [
         "Código de verificación no válido"
@@ -1139,11 +1383,20 @@
       "Request timed out": [
         "Tiempo de espera agotado"
       ],
+      "Screen share is not supported on mobile browsers": [
+        "Compartir pantalla no es compatible en navegadores móviles"
+      ],
       "Signature verification failed": [
         "Error al verificar la firma"
       ],
       "The email addresses do not match": [
         "Las direcciones de correo electrónico no coinciden"
+      ],
+      "The meeting link you are trying to access does not exist or may have been deleted.": [
+        "El enlace de la reunión al que estás intentando acceder no existe o puede que haya sido eliminado."
+      ],
+      "The meeting password is incorrect": [
+        "La contraseña de la reunión es incorrecta"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Este campo excede el máximo de ${ maximumLength } caracteres."
@@ -1153,6 +1406,9 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo requiere un mínimo de ${ minimumLength } caracteres."
+      ],
+      "This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.": [
+        "Esta reunión está en una versión anterior, el anfitrión debe finalizarla y actualizar Meet para reiniciarla con la última versión."
       ],
       "Try using only letters, numerals, and _.-": [
         "Utiliza solo letras, números y _.-"
@@ -1276,8 +1532,32 @@
       ]
     },
     "Info": {
+      " and ": [
+        "y"
+      ],
+      "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
+        "${ MEET_APP_NAME } necesita WebRTC para funcionar. Por favor, actualiza tu navegador o dispositivo a una versión que sea compatible con WebRTC, prueba con otro navegador o desactiva cualquier extensión que pueda estar bloqueándolo."
+      ],
+      "${ user.DisplayName } has invited you to a ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME } meeting:": [
+        "${ user.DisplayName } te ha invitado a una reunión de ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }:"
+      ],
+      "${ user.DisplayName } has invited you to a ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME } meeting:\n\n${ time }\n\n${ meetingLink }\n\nMeeting ID: ${ id }": [
+        "${ user.DisplayName } te ha invitado a una reunión de ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }:\n\n${ time }\n\n${ meetingLink }\n\nID de la reunión: ${ id }"
+      ],
+      "${ user.DisplayName }'s Meeting": [
+        "Reunión de ${ user.DisplayName }"
+      ],
+      "(you)": [
+        "(tú)"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un número telefónico solo puede utilizarse para verificar una cuenta de ${ BRAND_NAME }."
+      ],
+      "Anonymous ${ particle } ${ participantNumber }": [
+        "Anónimo ${ particle } ${ participantNumber }"
+      ],
+      "Are you sure you want to leave the meeting?": [
+        "¿Estás seguro de que quieres salir de la reunión?"
       ],
       "Attention required": [
         "Atención requerida"
@@ -1285,14 +1565,41 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de solicitar un nuevo código de verificación, verifica tu carpeta de spam y verifica que ${ strong } la dirección es correcta."
       ],
+      "camera": [
+        "cámara"
+      ],
+      "Chat with everyone": [
+        "Chatea con todos"
+      ],
+      "Check your system settings to make sure that a camera is available.": [
+        "Comprueba los ajustes de tu sistema para asegurarte de que una cámara esté disponible."
+      ],
+      "Check your system settings to make sure that a microphone is available.": [
+        "Comprueba los ajustes de tu sistema para asegurarte de que una cámara esté disponible."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Haz clic en \"Solicitar nuevo código\" para enviarte un nuevo código de verificación a ${ strong }. Si esta dirección de correo electrónico es incorrecta, haz clic en \"Editar\" para corregirla."
+      ],
+      "Coming soon": [
+        "Próximamente"
+      ],
+      "Connection lost": [
+        "Conexión perdida"
+      ],
+      "Connection lost, please join meeting again": [
+        "Conexión perdida, por favor, únete a la reunión de nuevo"
       ],
       "Copied to clipboard": [
         "Copiada al portapapeles"
       ],
       "Country code": [
         "Código de país"
+      ],
+      "Custom combination": [
+        "Combinación personalizada"
+      ],
+      "Do you want people to ${ deviceContentType } you in the meeting?": [
+        "¿Quieres que la gente te ${ deviceContentType } en la reunión?"
       ],
       "Download current logs": [
         "Descargar los registros actuales"
@@ -1302,6 +1609,15 @@
       ],
       "Edit email address": [
         "Editar la dirección de correo electrónico"
+      ],
+      "End-to-end encryption is active for audio and video.": [
+        "El cifrado de extremo a extremo está activo para audio y vídeo."
+      ],
+      "End-to-end encryption is active for screen share": [
+        "El cifrado de extremo a extremo está activo para compartir pantalla"
+      ],
+      "End-to-end encryption is active for this chat.": [
+        "El cifrado de extremo a extremo está activo para este chat."
       ],
       "Enter the code from your authenticator app": [
         "Ingresa el código de la aplicación de autenticación."
@@ -1318,17 +1634,41 @@
       "Enter your own password (as trusted contact).": [
         "Introduce tu propia contraseña (como contacto de confianza)."
       ],
+      "Every call, screen share, and chat is end-to-end encrypted to protect your most important connections.": [
+        "Cada llamada, pantalla compartida y chat está cifrado de extremo a extremo para proteger tus conexiones más importantes."
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite—remember to share it with your guests separately.": [
+        "Para mayor seguridad, puedes establecer una frase de contraseña (passphrase). No se incluirá en la invitación del calendario, recuerda compartirla con tus invitados por separado."
+      ],
+      "Free meeting": [
+        "Reunión gratuita"
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si tienes problemas para crear tu cuenta, solicita una invitación y responderemos en un día hábil."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no encuentras el correo electrónico en tu bandeja de entrada, verifica tu carpeta de spam."
       ],
+      "If you’re using Firefox, make sure PeerConnection is enabled.": [
+        "Si usas Firefox, asegúrate de que PeerConnection esté activado."
+      ],
       "Internet connection lost": [
         "Se ha perdido la conexión a internet."
       ],
+      "Invitation preview": [
+        "Vista previa de la invitación"
+      ],
+      "is presenting": [
+        "está presentando"
+      ],
+      "Joined": [
+        "Se ha unido"
+      ],
       "Learn more": [
         "Más información"
+      ],
+      "Left": [
+        "Izquierda"
       ],
       "Loading": [
         "Cargando"
@@ -1342,17 +1682,74 @@
       "Loading...": [
         "Cargando..."
       ],
+      "Meeting created": [
+        "Reunión creada"
+      ],
+      "Meeting ID: ${ id }": [
+        "ID de la reunión: ${ id }"
+      ],
+      "Meeting link": [
+        "Enlace de la reunión"
+      ],
+      "Meeting locked. No new participants can join": [
+        "Reunión bloqueada. No pueden unirse nuevos participantes."
+      ],
+      "Meeting unlocked. Participants can join again.": [
+        "Reunión desbloqueada. Los participantes pueden unirse de nuevo."
+      ],
       "Member": [
         "Miembro"
+      ],
+      "microphone": [
+        "micrófono"
       ],
       "New": [
         "Nuevo"
       ],
+      "No ${ microphoneLinkButton }${ andString }${ cameraLinkButton } detected.": [
+        "No se detectaron ${ microphoneLinkButton }${ andString }${ cameraLinkButton }."
+      ],
+      "No camera detected": [
+        "No se detectó ninguna cámara"
+      ],
+      "No camera detected.": [
+        "No se detectó ninguna cámara."
+      ],
+      "No microphone detected": [
+        "No se detecta ningún micrófono"
+      ],
+      "No microphone detected.": [
+        "No se detecta ningún micrófono"
+      ],
       "No results found": [
         "No se han encontrado resultados."
       ],
+      "No search results": [
+        "No se han encontrado resultados"
+      ],
+      "No speaker detected": [
+        "No se detectan altavoces"
+      ],
+      "Open external link": [
+        "Abrir enlace externo"
+      ],
       "Other accounts": [
         "Otras cuentas"
+      ],
+      "Our end-to-end encrypted meetings protect privacy and empower truly free expression.": [
+        "Nuestras reuniones cifradas de extremo a extremo protegen la privacidad y facilitan la verdadera libertad de expresión."
+      ],
+      "Permission denied": [
+        "Permiso denegado"
+      ],
+      "Permissions not given.": [
+        "Faltan los permisos."
+      ],
+      "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
+        "Por favor, activa el acceso a tu ${ microphoneLinkButton }${ andString }${ cameraLinkButton } para la mejor experiencia."
+      ],
+      "Please enter the passphrase to decrypt and view this meeting": [
+        "Introduce la contraseña para descifrar y visualizar el contenido."
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "La información de recuperación permanecerá en este dispositivo a menos que la elimines."
@@ -1360,17 +1757,65 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualiza la página o ${ link } para resolver automáticamente la mayoría de los problemas."
       ],
+      "Secure meeting": [
+        "Reunión segura"
+      ],
+      "Select a camera": [
+        "Seleccionar una cámara"
+      ],
+      "Select a microphone": [
+        "Selecciona un micrófono"
+      ],
+      "Select a speaker": [
+        "Seleccionar un altavoz"
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "No se puede acceder a los servidores. Inténtalo de nuevo en unos minutos."
       ],
       "Session timed out": [
         "El tiempo de la sesión ha expirado."
       ],
+      "Share screen": [
+        "Compartir pantalla"
+      ],
+      "Share the meeting invitation with others": [
+        "Compartir la invitación de la reunión con otros"
+      ],
+      "Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.": [
+        "Comparte este enlace para invitar a otros. También puedes encontrarlo en cualquier momento haciendo clic en el icono de información en la barra de herramientas."
+      ],
+      "Stop sharing your screen": [
+        "Dejar de compartir tu pantalla"
+      ],
+      "This is an end-to-end encrypted chat with ephemeral messages. After you leave the call, you will not be able to access this chat.": [
+        "Esto es un chat cifrado de extremo a extremo con mensajes efímeros. Después de que salgas de la llamada, no podrás acceder a este chat."
+      ],
+      "This meeting is locked. Please contact the host to join.": [
+        "Esta reunión está bloqueada. Contacta al anfitrión para unirte."
+      ],
+      "This meeting is password protected": [
+        "Esta reunión está protegida con contraseña"
+      ],
+      "This meeting is protected by end-to-end encryption with Messaging Layer Security (MLS).": [
+        "Esta reunión está protegida por cifrado de extremo a extremo con Seguridad de Capa de Mensajería (MLS)."
+      ],
       "This will sign you out of all accounts currently logged in.": [
         "Esto cerrará la sesión de todas las cuentas que han iniciado sesión."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, necesitamos verificar que eres humano."
+      ],
+      "Turn off camera": [
+        "Apagar cámara"
+      ],
+      "Turn off microphone": [
+        "Apagar el micrófono"
+      ],
+      "Turn on camera": [
+        "Encender cámara"
+      ],
+      "Turn on microphone": [
+        "Activar micrófono"
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos un nuevo código de verificación a ${ strong }."
@@ -1390,14 +1835,35 @@
       "You can now return to the application to continue": [
         "Ahora puedes regresar a la aplicación para continuar."
       ],
+      "You can still turn off your microphone and camera anytime in the meeting": [
+        "Todavía puedes apagar tu micrófono y cámara en cualquier momento de la reunión."
+      ],
+      "You've been invited to join a secure meeting. Confirm your name and click below to enter.": [
+        "Te han invitado a unirte a una reunión segura. Confirma tu nombre y haz clic abajo para ingresar."
+      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Tu cuenta ${ BRAND_NAME } está actualmente suspendida. Transcurridos 28 días, los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento serán bloqueados y no podrás cargar nuevos archivos. Para restablecer el servicio normal, tienes que pagar las facturas pendientes."
+      ],
+      "Your always available meeting room, share it only with people you trust.": [
+        "Tu sala de reuniones siempre disponible, compártela solo con personas de confianza."
+      ],
+      "Your browser or device isn’t supported": [
+        "Tu navegador o dispositivo no es compatible"
       ],
       "Your email will only be used for this one-time verification.": [
         "Tu correo electrónico se utilizará solo para esta verificación única."
       ],
+      "Your meeting is ready": [
+        "Tu reunión está lista"
+      ],
+      "Your personal link": [
+        "Tu enlace personal"
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Tu número de teléfono se utilizará solo para esta verificación única."
+      ],
+      "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
+        "Estás a punto de abrir un enlace en una nueva pestaña. Asegúrate de que el sitio web es de confianza antes de continuar."
       ]
     },
     "Label": {
@@ -1406,6 +1872,9 @@
       ],
       "Attach screenshot(s)": [
         "Adjuntar captura(s) de pantalla"
+      ],
+      "Audio": [
+        "Audio"
       ],
       "Authenticator app": [
         "Aplicación de autenticación"
@@ -1437,6 +1906,9 @@
       "Include application logs in bug report": [
         "Incluir los registros de la aplicación en el informe de errores"
       ],
+      "Meeting ID": [
+        "Identificador de la reunión"
+      ],
       "Operating system": [
         "Sistema operativo"
       ],
@@ -1461,8 +1933,14 @@
       "Verification code": [
         "Código de verificación"
       ],
+      "Video": [
+        "Vídeo"
+      ],
       "What happened?": [
         "¿Qué ha ocurrido?"
+      ],
+      "Your name": [
+        "Tu nombre"
       ],
       "Your password (admin)": [
         "Tu contraseña (admin)"
@@ -1485,9 +1963,44 @@
         "¿Qué es esto?"
       ]
     },
+    "Meet": {
+      "Your browser or device software does not support ${ MEET_APP_NAME }. ${ MEET_APP_NAME } requires WebAssembly (Wasm) to run. Please update your browser or device to a version that supports Wasm, or try using a different browser.": [
+        "Tu navegador o el software de tu dispositivo no es compatible con ${ MEET_APP_NAME }. ${ MEET_APP_NAME } requiere WebAssembly (Wasm) para funcionar. Por favor, actualiza tu navegador o dispositivo a una versión que soporte Wasm, o intenta usar un navegador diferente."
+      ]
+    },
+    "meet_2025": {
+      "Since you are the only participant in this meeting, the meeting will automatically close. Do you want to stay in this meeting?": [
+        "Dado que eres el único participante en esta reunión, la reunión se cerrará automáticamente. ¿Quieres quedarte en esta reunión?"
+      ]
+    },
+    "meet_2025 Action": {
+      "Leave meeting": [
+        "Salir de la reunión"
+      ],
+      "Stay in the meeting": [
+        "Permanecer en la reunión"
+      ]
+    },
+    "meet_2025 Error": {
+      "Failed to start Picture-in-Picture": [
+        "Error al iniciar Imagen en imagen"
+      ]
+    },
     "Notification": {
+      "Coming soon": [
+        "Próximamente"
+      ],
+      "Copied to clipboard": [
+        "Copiada al portapapeles"
+      ],
       "Link copied to clipboard": [
         "Se ha copiado el enlace al portapapeles."
+      ],
+      "Successfully rotated your personal meeting": [
+        "Has rotado con éxito tu reunión personal"
+      ],
+      "Your personal meeting link has been copied to the clipboard": [
+        "Tu enlace personal de reunión se ha copiado al portapapeles"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -1502,8 +2015,23 @@
       "E.g., ": [
         "P. ej., "
       ],
+      "Enter meeting title": [
+        "Añadir título de la reunión"
+      ],
       "Enter passphrase": [
         "Introducir la frase de contraseña"
+      ],
+      "Enter secret passphrase": [
+        "Ingresar frase de contraseña secreta"
+      ],
+      "Enter time": [
+        "Ingresar hora"
+      ],
+      "Find...": [
+        "Buscar..."
+      ],
+      "Loading...": [
+        "Cargando..."
       ],
       "Password": [
         "Contraseña"
@@ -1513,6 +2041,12 @@
       ],
       "Select": [
         "Seleccionar"
+      ],
+      "Type an encrypted message...": [
+        "Escribe un mensaje cifrado..."
+      ],
+      "Type your name": [
+        "Escribe tu nombre"
       ]
     },
     "Safety review": {
@@ -1608,6 +2142,9 @@
       ]
     },
     "Title": {
+      "${ displayName }'s personal meeting": [
+        "Reunión personal de ${ displayName }"
+      ],
       "Account restricted": [
         "Cuenta restringida"
       ],
@@ -1617,11 +2154,20 @@
       "Are you sure?": [
         "¿Estás seguro?"
       ],
+      "Authenticator": [
+        "Autenticador"
+      ],
+      "Chat": [
+        "Chat"
+      ],
       "Date": [
         "Fecha"
       ],
       "Enter your password": [
         "Introduce tu contraseña"
+      ],
+      "Epoch": [
+        "Pausa"
       ],
       "Help and feedback": [
         "Ayuda y comentarios"
@@ -1632,11 +2178,44 @@
       "Human verification": [
         "Verificación humana"
       ],
+      "Info": [
+        "Información"
+      ],
       "Invalid verification code": [
         "Código de verificación no válido"
       ],
+      "Invite link": [
+        "Enlace de invitación"
+      ],
+      "Join meeting": [
+        "Unirse a la reunión"
+      ],
+      "Joining meeting with ${ participantCount } other participants…": [
+        "Uniéndote a la reunión con ${ participantCount } participantes más…"
+      ],
+      "Meeting details": [
+        "Detalles de la reunión"
+      ],
       "Minicalendar": [
         "Minicalendario"
+      ],
+      "MLS state": [
+        "Estado de MLS"
+      ],
+      "Participants": [
+        "Participantes"
+      ],
+      "Passphrase": [
+        "Contraseña"
+      ],
+      "Personal meeting": [
+        "Reunión personal"
+      ],
+      "Personal meeting link": [
+        "Enlace de reunión personal"
+      ],
+      "Protecting meeting with end-to-end encryption...": [
+        "Protegiendo la videollamada con cifrado de extremo a extremo..."
       ],
       "Report a problem": [
         "Notificar un problema"
@@ -1644,22 +2223,60 @@
       "Request new code": [
         "Solicitar un nuevo código"
       ],
+      "Schedule a meeting": [
+        "Programar una reunión"
+      ],
+      "Schedule meeting": [
+        "Programar reunión"
+      ],
+      "Secret Passphrase": [
+        "Frase de contraseña secreta"
+      ],
+      "Secure meeting": [
+        "Reunión segura"
+      ],
       "Settings": [
         "Configuración"
       ],
       "Sign out": [
         "Cerrar sesión"
       ],
+      "Start secure meeting": [
+        "Iniciar reunión segura"
+      ],
+      "Starting meeting as the first participant…": [
+        "Iniciando la reunión como el primer participante…"
+      ],
+      "Talk confidentially": [
+        "Hablar confidencialmente"
+      ],
       "Time": [
         "Fecha"
       ],
+      "Title": [
+        "Título"
+      ],
       "Two-factor authentication": [
         "Autenticación de dos factores"
+      ],
+      "Upcoming meetings": [
+        "Próximas reuniones"
       ]
     },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Hoy"
+      ]
+    },
+    "Tooltip": {
+      "Blur background": [
+        "Desenfocar el fondo"
+      ],
+      "Blur background is not supported on your browser": [
+        "El desenfoque de fondo no es compatible en tu navegador"
+      ],
+      "Recurring meeting": [
+        "Reunión periódica"
       ]
     },
     "Upgrade Button": {
