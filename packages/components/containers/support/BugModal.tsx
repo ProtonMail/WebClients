@@ -74,20 +74,20 @@ export interface Props {
 const getMailOptions = (): OptionItem[] => {
     const optionType = 'option' as const;
     const labelType = 'label' as const;
-    
+
     // Check if current date is between October 27th and January 5th
     const now = new Date();
-    
+
     // Black Friday option is available from Oct 27 to Jan 5
     // We need to handle the year boundary (Oct-Dec of current year, Jan of next year)
     const blackFridayStart = new Date(Date.UTC(2025, 9, 27, 0, 0, 0)); // October 27
     const blackFridayEnd = new Date(Date.UTC(2026, 0, 6, 0, 0, 0)); // January 6 of next year
-    
+
     const isBlackFridayPeriod = isWithinInterval(now, {
         start: blackFridayStart,
         end: blackFridayEnd,
     });
-    
+
     return [
         { type: labelType, value: c('Group').t`Account` },
         { type: optionType, value: 'Sign in problem', title: c('Bug category').t`Sign in problem` },
@@ -112,6 +112,7 @@ const getMailOptions = (): OptionItem[] => {
             type: optionType,
             value: 'Drive problem',
             title: c('Bug category').t`Drive problem`,
+            clientType: CLIENT_TYPES.DRIVE,
             app: APPS.PROTONDRIVE,
         },
         {
@@ -163,12 +164,14 @@ const getMailOptions = (): OptionItem[] => {
         },
         { type: labelType, value: c('Group').t`Other category` },
         { type: optionType, value: 'Feature request', title: c('Bug category').t`Feature request` },
-        isBlackFridayPeriod ? {
-            // translator: translate "Black Friday" only if it's problematic in your language (offensive/unknown/etc.)
-            type: optionType,
-            value: 'Black Friday',
-            title: c('Bug category').t`Black Friday`,
-        } : null,
+        isBlackFridayPeriod
+            ? {
+                  // translator: translate "Black Friday" only if it's problematic in your language (offensive/unknown/etc.)
+                  type: optionType,
+                  value: 'Black Friday',
+                  title: c('Bug category').t`Black Friday`,
+              }
+            : null,
         { type: optionType, value: 'Other', title: c('Bug category').t`Other` },
     ].filter(isTruthy);
 };
