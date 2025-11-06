@@ -458,7 +458,7 @@ const CalendarContainerView = ({
             date={noonDate}
             timezone={tzid}
             setTzid={setTzid}
-            hideTimeZoneSelector={isSearching || isBookingActive}
+            hideTimeZoneSelector={isSearching}
             dateCursorButtons={
                 isSearching ? null : (
                     <DateCursorButtons
@@ -547,7 +547,6 @@ const CalendarContainerView = ({
                 isSmallViewport={viewportWidth['<=small']}
                 actionArea={isDrawerApp ? null : toolbar}
                 hideUpsellButton={isBookingActive}
-                hideSettingsButton={isBookingActive}
                 settingsButton={
                     <QuickSettingsAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.QUICK_SETTINGS, appInView)} />
                 }

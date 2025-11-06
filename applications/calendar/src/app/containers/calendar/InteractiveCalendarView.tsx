@@ -454,7 +454,7 @@ const InteractiveCalendarView = ({
         setEventTargetAction,
     });
 
-    const { isBookingActive, addBookingRange, bookingRange, removeBookingRange } = useBookings();
+    const { isBookingActive, addBookingRange, bookingRange } = useBookings();
 
     // Handle events coming from outside if calendar app is open in the drawer
     useOpenEventsFromMail({
@@ -784,8 +784,8 @@ const InteractiveCalendarView = ({
             let initialModel = newTemporaryModel;
 
             return (mouseUpAction: MouseUpAction) => {
+                // We don't do anything when clicking on an event during booking page creation
                 if (isBookingActive) {
-                    removeBookingRange(event.uniqueId);
                     return;
                 }
 
