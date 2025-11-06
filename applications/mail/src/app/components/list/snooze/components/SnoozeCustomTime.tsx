@@ -5,7 +5,7 @@ import { addDays, endOfToday, fromUnixTime, isToday, set } from 'date-fns';
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { DateInputTwo, InputFieldTwo, TimeInput } from '@proton/components';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import generateUID from '@proton/utils/generateUID';

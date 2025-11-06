@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { DropdownMenu, DropdownMenuButton, SimpleDropdown } from '@proton/components';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { MESSAGE_BUTTONS } from '@proton/shared/lib/mail/mailSettings';

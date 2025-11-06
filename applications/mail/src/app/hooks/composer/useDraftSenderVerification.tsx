@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { useGetAddresses } from '@proton/account/addresses/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { Prompt, useModalState } from '@proton/components';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';

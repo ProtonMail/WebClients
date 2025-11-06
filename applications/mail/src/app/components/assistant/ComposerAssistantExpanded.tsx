@@ -3,11 +3,15 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Href, Scroll, Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
+import { Scroll } from '@proton/atoms/Scroll/Scroll';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { useNotifications } from '@proton/components';
-import { IcArrowDown, IcCrossBig } from '@proton/icons';
 import Copy from '@proton/components/components/button/Copy';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
+import { IcArrowDown } from '@proton/icons/icons/IcArrowDown';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { ASSISTANT_SERVER_THROTTLE_TIMEOUT, useAssistant } from '@proton/llm/lib';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';
 import { wait } from '@proton/shared/lib/helpers/promise';

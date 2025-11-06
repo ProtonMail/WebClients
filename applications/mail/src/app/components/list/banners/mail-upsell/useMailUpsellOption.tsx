@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
 import { useTheme } from '@proton/components';
 import {
     MAIL_APP_NAME,

@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import {
     ContextMenu,
     DropdownMenu,
@@ -13,7 +13,12 @@ import {
     useNotifications,
     usePopperAnchor,
 } from '@proton/components';
-import { IcCross, IcCrossCircle, IcPen, IcSquares, IcUser, IcUserPlus } from '@proton/icons';
+import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
+import { IcPen } from '@proton/icons/icons/IcPen';
+import { IcSquares } from '@proton/icons/icons/IcSquares';
+import { IcUser } from '@proton/icons/icons/IcUser';
+import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';

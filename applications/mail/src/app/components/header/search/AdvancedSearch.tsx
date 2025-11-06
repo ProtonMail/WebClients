@@ -8,7 +8,7 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { DateInput, Label, Option, SelectTwo, useActiveBreakpoint } from '@proton/components';
 import type { ESIndexingState } from '@proton/encrypted-search';
 import { contentIndexingProgress } from '@proton/encrypted-search';

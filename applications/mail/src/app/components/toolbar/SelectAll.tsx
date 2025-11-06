@@ -1,8 +1,12 @@
 import { c } from 'ttag';
 
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Checkbox, DropdownMenu, DropdownMenuButton } from '@proton/components';
-import { IcCheckmarkTriple, IcEnvelopeDot, IcEnvelopeOpen, IcStar, IcStarFilled } from '@proton/icons';
+import { IcCheckmarkTriple } from '@proton/icons/icons/IcCheckmarkTriple';
+import { IcEnvelopeDot } from '@proton/icons/icons/IcEnvelopeDot';
+import { IcEnvelopeOpen } from '@proton/icons/icons/IcEnvelopeOpen';
+import { IcStar } from '@proton/icons/icons/IcStar';
+import { IcStarFilled } from '@proton/icons/icons/IcStarFilled';
 
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 

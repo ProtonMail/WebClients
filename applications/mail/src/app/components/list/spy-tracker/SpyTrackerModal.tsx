@@ -1,9 +1,18 @@
 import { c, msgid } from 'ttag';
 
-import { Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
 import type { ModalProps } from '@proton/components';
-import { Collapsible, CollapsibleContent, CollapsibleHeader, CollapsibleHeaderIconButton, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
-import { IcChevronDown } from '@proton/icons';
+import {
+    Collapsible,
+    CollapsibleContent,
+    CollapsibleHeader,
+    CollapsibleHeaderIconButton,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+} from '@proton/components';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import trackersImg from '@proton/styles/assets/img/illustrations/trackers-found.svg';
 import clsx from '@proton/utils/clsx';

@@ -2,8 +2,8 @@ import { forwardRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { IcExclamationCircle } from '@proton/icons';
+import { Button } from '@proton/atoms/Button/Button';
+import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 
 import { hasError } from '../../helpers/errors';
 import type { ConversationErrors } from '../../store/conversations/conversationsTypes';

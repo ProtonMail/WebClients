@@ -2,8 +2,9 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Banner, Tooltip } from '@proton/atoms';
-import { IcLock } from '@proton/icons';
+import { Banner } from '@proton/atoms/Banner/Banner';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { IcLock } from '@proton/icons/icons/IcLock';
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 
 import { useEncryptedSearchContext } from '../../../../containers/EncryptedSearchProvider';

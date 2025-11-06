@@ -3,7 +3,7 @@ import { createElement } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Icon from '@proton/components/components/icon/Icon';
 import type { IconName } from '@proton/icons/types';
 import humanSize from '@proton/shared/lib/helpers/humanSize';

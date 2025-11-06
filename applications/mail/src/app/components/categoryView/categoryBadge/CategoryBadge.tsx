@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
-import { Button, CircleLoader } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import {
     Badge,
     Dropdown,
@@ -18,7 +19,8 @@ import {
     useTheme,
 } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
-import { IcCheckmark, IcCrossBig } from '@proton/icons';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { labelConversations } from '@proton/shared/lib/api/conversations';
 import { labelMessages } from '@proton/shared/lib/api/messages';
 import type { CategoryLabelID } from '@proton/shared/lib/constants';

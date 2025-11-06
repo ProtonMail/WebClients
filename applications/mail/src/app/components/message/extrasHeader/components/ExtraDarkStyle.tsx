@@ -2,9 +2,10 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { useApi } from '@proton/components';
-import { IcCircleHalfFilled } from '@proton/icons';
+import { IcCircleHalfFilled } from '@proton/icons/icons/IcCircleHalfFilled';
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { METRICS_LOG } from '@proton/shared/lib/constants';
 import { sendMetricsReport } from '@proton/shared/lib/helpers/metrics';

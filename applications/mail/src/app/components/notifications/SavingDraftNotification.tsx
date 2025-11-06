@@ -3,7 +3,8 @@ import { forwardRef, useImperativeHandle, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { CircleLoader, InlineLinkButton } from '@proton/atoms';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 
 enum SavingStep {
     saving,

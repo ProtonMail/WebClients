@@ -4,11 +4,22 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { Button, Tooltip } from '@proton/atoms';
-import { Checkbox, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useApi, useModalStateObject, useNotifications } from '@proton/components';
-import { IcThumbDown, IcThumbUp } from '@proton/icons';
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import {
+    Checkbox,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+    useApi,
+    useModalStateObject,
+    useNotifications,
+} from '@proton/components';
 import TextArea from '@proton/components/components/v2/input/TextArea';
 import useLoading from '@proton/hooks/useLoading';
+import { IcThumbDown } from '@proton/icons/icons/IcThumbDown';
+import { IcThumbUp } from '@proton/icons/icons/IcThumbUp';
 import { useAssistant } from '@proton/llm/lib';
 import type { AssistantFeedback } from '@proton/shared/lib/api/feedback';
 import { sendAssistantFeedback } from '@proton/shared/lib/api/feedback';

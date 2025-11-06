@@ -5,13 +5,18 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { Button, Tooltip, Vr } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { Vr } from '@proton/atoms/Vr/Vr';
 import type { EditorMetadata } from '@proton/components';
 import { useActiveBreakpoint, useModalStateObject, useSpotlightOnFeature } from '@proton/components';
 import ComposerAssistantUpsellModal from '@proton/components/components/upsell/modals/ComposerAssistantUpsellModal';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import { FeatureCode, useFeature } from '@proton/features';
-import { IcPaperPlane, IcPenSparks, IcTextStyle, IcTrash } from '@proton/icons';
+import { IcPaperPlane } from '@proton/icons/icons/IcPaperPlane';
+import { IcPenSparks } from '@proton/icons/icons/IcPenSparks';
+import { IcTextStyle } from '@proton/icons/icons/IcTextStyle';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { getIsAssistantOpened, useAssistant } from '@proton/llm/lib';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -281,8 +286,10 @@ const ComposerActions = ({
                                                 aria-pressed={isAssistantOpened}
                                                 className="flex"
                                             >
-                                                <IcPenSparks alt={c('Action').t`Your email writing assistant`}
-                                                    style={{ color: '#D132EA' }} />
+                                                <IcPenSparks
+                                                    alt={c('Action').t`Your email writing assistant`}
+                                                    style={{ color: '#D132EA' }}
+                                                />
                                             </Button>
                                         </ComposerAssistantSpotlight>
                                     </div>

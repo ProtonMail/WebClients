@@ -3,8 +3,21 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton, FiltersUpsellModal, Icon, useApi, useEventManager, useModalState, useNotifications, usePopperAnchor } from '@proton/components';
-import { IcCrossCircle, IcThreeDotsVertical } from '@proton/icons';
+import {
+    Dropdown,
+    DropdownButton,
+    DropdownMenu,
+    DropdownMenuButton,
+    FiltersUpsellModal,
+    Icon,
+    useApi,
+    useEventManager,
+    useModalState,
+    useNotifications,
+    usePopperAnchor,
+} from '@proton/components';
+import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
+import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import { useFilters } from '@proton/mail/store/filters/hooks';
 import { toggleEnable } from '@proton/shared/lib/api/filters';
 import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';

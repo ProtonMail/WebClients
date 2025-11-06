@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { FolderIcon } from '@proton/components';
-import { IcCheckmarkStrong } from '@proton/icons';
+import { IcCheckmarkStrong } from '@proton/icons/icons/IcCheckmarkStrong';
 import clsx from '@proton/utils/clsx';
 
 import type { FolderItem } from 'proton-mail/hooks/useMailTreeView/interface';

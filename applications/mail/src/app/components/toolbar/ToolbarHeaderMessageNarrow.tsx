@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import { ToolbarButton, useActiveBreakpoint, useElementBreakpoints } from '@proton/components';
-import { IcArrowLeft } from '@proton/icons';
+import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import clsx from '@proton/utils/clsx';
 
 import { getToolbarResponsiveSizes } from '../../helpers/toolbar/getToolbarResponsiveSizes';

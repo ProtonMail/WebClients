@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { type ModalProps, Prompt, useApi } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { updateMailCategoryView } from '@proton/shared/lib/api/mailSettings';

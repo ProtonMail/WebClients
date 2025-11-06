@@ -4,7 +4,7 @@ import type { IconName } from 'packages/icons';
 import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { FiltersUpsellModal, Icon, LabelsUpsellModal, useModalStateObject } from '@proton/components';
 import { useFilters } from '@proton/mail/store/filters/hooks';
 import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';

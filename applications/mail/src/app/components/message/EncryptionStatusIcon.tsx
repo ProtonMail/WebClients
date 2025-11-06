@@ -1,4 +1,5 @@
-import { Href, Tooltip } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon, Loader } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 

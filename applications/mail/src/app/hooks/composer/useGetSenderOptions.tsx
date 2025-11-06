@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Option, SettingsLink } from '@proton/components';
-import { IcChevronDownFilled } from '@proton/icons';
+import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces';

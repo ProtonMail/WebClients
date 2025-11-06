@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { useState } from 'react';
 
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { DropdownButtonProps, DropdownProps } from '@proton/components';
 import { Dropdown, DropdownButton, usePopperAnchor } from '@proton/components';
 import clsx from '@proton/utils/clsx';

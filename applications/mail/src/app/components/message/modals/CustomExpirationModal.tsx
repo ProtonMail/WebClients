@@ -4,7 +4,7 @@ import { addDays, endOfDay, endOfToday, isBefore, isToday, startOfToday } from '
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components';
 import {
     DateInput,

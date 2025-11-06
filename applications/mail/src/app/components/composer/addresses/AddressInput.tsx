@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
-import { Input } from '@proton/atoms';
+import { Input } from '@proton/atoms/Input/Input';
 import type { AddressesAutocompleteItem } from '@proton/components';
 import {
     AutocompleteList,

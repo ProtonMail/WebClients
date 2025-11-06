@@ -6,8 +6,12 @@ import { c } from 'ttag';
 
 import type { ContactEditProps } from '@proton/components';
 import { DropdownMenuButton, useModalState, usePopperAnchor } from '@proton/components';
-import { IcCircleSlash, IcEnvelopeMagnifyingGlass, IcPenSquare, IcUser, IcUserPlus } from '@proton/icons';
 import type { PublicKeyReference } from '@proton/crypto';
+import { IcCircleSlash } from '@proton/icons/icons/IcCircleSlash';
+import { IcEnvelopeMagnifyingGlass } from '@proton/icons/icons/IcEnvelopeMagnifyingGlass';
+import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
+import { IcUser } from '@proton/icons/icons/IcUser';
+import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { getHumanLabelID } from '@proton/mail/helpers/location';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';

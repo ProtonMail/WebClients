@@ -7,7 +7,7 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
 import { ErrorBoundary, PassAliasesProvider } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useFolders, useLabels } from '@proton/mail';

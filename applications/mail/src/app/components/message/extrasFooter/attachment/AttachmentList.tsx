@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Button, Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
 import type { MessageStateWithData, OutsideKey } from '@proton/mail/store/messages/messagesTypes';

@@ -1,6 +1,6 @@
 import { type PropsWithChildren, useRef } from 'react';
 
-import { Scroll } from '@proton/atoms';
+import { Scroll } from '@proton/atoms/Scroll/Scroll';
 
 import { NewsletterSubscriptionListHeader } from './NewsletterSubscriptionListHeader';
 

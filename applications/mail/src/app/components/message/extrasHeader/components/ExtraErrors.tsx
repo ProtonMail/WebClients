@@ -2,9 +2,11 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Banner, Button, ButtonLike } from '@proton/atoms';
+import { Banner } from '@proton/atoms/Banner/Banner';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { ButtonGroup, SettingsLink } from '@proton/components';
-import { IcExclamationTriangleFilled } from '@proton/icons';
+import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
 import type { MessageErrors, MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 

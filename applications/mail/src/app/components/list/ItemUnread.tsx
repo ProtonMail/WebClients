@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { Tooltip } from '@proton/atoms';
-import { IcCircleFilled } from '@proton/icons';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { IcCircleFilled } from '@proton/icons/icons/IcCircleFilled';
 import clsx from '@proton/utils/clsx';
 
 import { isUnread } from '../../helpers/elements';
@@ -24,9 +24,11 @@ const ItemUnread = ({ element, labelID, className, isSelected }: Props) => {
     return (
         <Tooltip title={c('Alt').t`Unread email`}>
             <span className={clsx('flex items-center shrink-0 z-1', className)}>
-                <IcCircleFilled size={3}
+                <IcCircleFilled
+                    size={3}
                     className={!isSelected ? 'color-primary' : undefined}
-                    alt={c('Alt').t`Unread email`} />
+                    alt={c('Alt').t`Unread email`}
+                />
             </span>
         </Tooltip>
     );

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { useApi } from '@proton/components';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';

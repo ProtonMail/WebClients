@@ -1,8 +1,13 @@
 import { c } from 'ttag';
 
-import { Kbd, Vr } from '@proton/atoms';
+import { Kbd } from '@proton/atoms/Kbd/Kbd';
+import { Vr } from '@proton/atoms/Vr/Vr';
 import { ToolbarButton } from '@proton/components';
-import { IcArchiveBox, IcFire, IcFireSlash, IcInbox, IcTrash } from '@proton/icons';
+import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';
+import { IcFire } from '@proton/icons/icons/IcFire';
+import { IcFireSlash } from '@proton/icons/icons/IcFireSlash';
+import { IcInbox } from '@proton/icons/icons/IcInbox';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 

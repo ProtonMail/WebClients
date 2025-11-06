@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Banner } from '@proton/atoms';
+import { Banner } from '@proton/atoms/Banner/Banner';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { getIsVeventCancelled } from '@proton/shared/lib/calendar/vcalHelper';
 import type { RequireSome } from '@proton/shared/lib/interfaces';

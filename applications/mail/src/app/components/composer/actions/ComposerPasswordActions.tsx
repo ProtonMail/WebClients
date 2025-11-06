@@ -1,8 +1,11 @@
 import { c } from 'ttag';
 
-import { Button, Kbd, Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Kbd } from '@proton/atoms/Kbd/Kbd';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { DropdownMenuButton } from '@proton/components';
-import { IcLock, IcTrash } from '@proton/icons';
+import { IcLock } from '@proton/icons/icons/IcLock';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
@@ -36,8 +39,10 @@ const ComposerPasswordActions = ({ isPassword, onRemoveOutsideEncryption, onPass
                 className="button button-for-icon composer-more-dropdown"
                 data-testid="composer:encryption-options-button"
                 content={
-                    <IcLock className={clsx([isPassword && 'color-primary'])}
-                        alt={c('Action').t`External encryption`} />
+                    <IcLock
+                        className={clsx([isPassword && 'color-primary'])}
+                        alt={c('Action').t`External encryption`}
+                    />
                 }
             >
                 <DropdownMenuButton

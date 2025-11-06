@@ -4,9 +4,9 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Dropdown, DropdownButton, useApi, useModalState, usePopperAnchor } from '@proton/components';
-import { IcClock } from '@proton/icons';
+import { IcClock } from '@proton/icons/icons/IcClock';
 import { TelemetryMailEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 

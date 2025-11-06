@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
-import { Kbd } from '@proton/atoms';
+import { Kbd } from '@proton/atoms/Kbd/Kbd';
 import { ToolbarButton } from '@proton/components';
-import { IcCrossCircle } from '@proton/icons';
 import { useLoading } from '@proton/hooks';
+import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { metaKey } from '@proton/shared/lib/helpers/browser';
 

@@ -3,8 +3,9 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import { DropdownMenu, DropdownMenuButton } from '@proton/components';
-import { IcCircleSlash, IcThreeDotsHorizontal } from '@proton/icons';
 import { FeatureCode, useFeature } from '@proton/features';
+import { IcCircleSlash } from '@proton/icons/icons/IcCircleSlash';
+import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
 import noop from '@proton/utils/noop';
 
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
@@ -56,7 +57,7 @@ const MoreActions = ({ selectedIDs }: Props) => {
         <>
             <ToolbarDropdown
                 disabled={isToolbarButtonDisabled}
-                content={<IcThreeDotsHorizontal className="toolbar-icon"  />}
+                content={<IcThreeDotsHorizontal className="toolbar-icon" />}
                 dropDownClassName="move-dropdown"
                 className="move-dropdown-button"
                 title={c('Title').t`More actions`}

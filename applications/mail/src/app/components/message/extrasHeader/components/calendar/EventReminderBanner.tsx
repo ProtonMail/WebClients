@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Banner } from '@proton/atoms';
+import { Banner } from '@proton/atoms/Banner/Banner';
 
 import EventReminderText from './EventReminderText';
 

@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { memberThunk, organizationThunk, subscriptionThunk, useUserSettings, userThunk } from '@proton/account';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import {
     LabelStack,
     Loader,

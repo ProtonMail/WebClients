@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { Icon, ModalTwo, ModalTwoContent, ModalTwoHeader, useApi, useModalState } from '@proton/components';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
