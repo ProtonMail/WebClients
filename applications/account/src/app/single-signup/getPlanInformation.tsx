@@ -32,7 +32,7 @@ import {
 } from '@proton/components/containers/payments/features/vpn';
 import { getWalletAppFeature } from '@proton/components/containers/payments/features/wallet';
 import FreeLogo from '@proton/components/containers/payments/subscription/FreeLogo/FreeLogo';
-import type { IconSize } from '@proton/icons';
+import type { IconSize } from '@proton/icons/types';
 import { PLANS, PLAN_NAMES, type Plan, getFreeTitle } from '@proton/payments';
 import { APPS, BRAND_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';

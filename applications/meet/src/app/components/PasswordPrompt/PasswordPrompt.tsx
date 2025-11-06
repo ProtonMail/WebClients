@@ -9,7 +9,8 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { useLoading } from '@proton/hooks';
-import { IcEye, IcEyeSlash } from '@proton/icons';
+import { IcEye } from '@proton/icons/icons/IcEye';
+import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
 
 import './PasswordPrompt.scss';
 

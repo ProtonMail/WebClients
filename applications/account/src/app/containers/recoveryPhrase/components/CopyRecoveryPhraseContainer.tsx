@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import { Button, CircleLoader } from '@proton/atoms';
 import { useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
-import { IcEye, IcSquares } from '@proton/icons';
+import { IcEye } from '@proton/icons/icons/IcEye';
+import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 

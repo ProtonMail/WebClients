@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { Button, InlineLinkButton } from '@proton/atoms';
 import { SkeletonLoader } from '@proton/components';
-import { IcShield2CheckFilled } from '@proton/icons';
+import { IcShield2CheckFilled } from '@proton/icons/icons/IcShield2CheckFilled';
 import { PLANS } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';

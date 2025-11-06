@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { IcMeetScreenShare } from '@proton/icons';
+import { IcMeetScreenShare } from '@proton/icons/icons/IcMeetScreenShare';
 
 import { CircleButton } from '../atoms/CircleButton/CircleButton';
 import { useMeetContext } from '../contexts/MeetContext';

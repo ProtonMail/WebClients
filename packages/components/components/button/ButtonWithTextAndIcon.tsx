@@ -1,8 +1,7 @@
-import type { IconName } from 'packages/icons/types';
-
 import { Button } from '@proton/atoms/Button/Button';
 import type { ButtonLikeSize } from '@proton/atoms/Button/ButtonLike';
 import type { ThemeColorUnion } from '@proton/colors/types';
+import type { IconName } from '@proton/icons/types';
 
 import Icon from '../icon/Icon';
 

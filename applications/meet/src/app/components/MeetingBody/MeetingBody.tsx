@@ -5,7 +5,7 @@ import { RoomAudioRenderer } from '@livekit/components-react';
 import type { Participant } from 'livekit-client';
 import { c } from 'ttag';
 
-import { IcMeetRotateCamera } from '@proton/icons';
+import { IcMeetRotateCamera } from '@proton/icons/icons/IcMeetRotateCamera';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import useFlag from '@proton/unleash/useFlag';
@@ -93,7 +93,6 @@ export const MeetingBody = ({
             )}
         >
             {!isNarrowHeight && (
-                // eslint-disable-next-line custom-rules/deprecate-classes
                 <div className="flex lg:hidden flex-nowrap gap-2 justify-between items-center">
                     <div className="flex-1 h3 text-ellipsis overflow-hidden">{roomName}</div>
                     <div className="text-ellipsis overflow-hidden">

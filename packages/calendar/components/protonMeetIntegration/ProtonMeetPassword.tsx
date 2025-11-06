@@ -13,7 +13,7 @@ import {
     useModalState,
     useNotifications,
 } from '@proton/components';
-import { IcExclamationCircle } from '@proton/icons';
+import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 
 import { EventDetailsRow } from '../videoConferencing/EventDetailsRow';
 import { useProtonMeetRowContext } from './ProtonMeetRowContext';

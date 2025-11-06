@@ -6,7 +6,10 @@ import DropdownButton from '@proton/components/components/dropdown/DropdownButto
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
-import { IcCrossCircle, IcMeetCameraOff, IcMeetMicrophoneOff, IcThreeDotsVertical } from '@proton/icons';
+import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
+import { IcMeetCameraOff } from '@proton/icons/icons/IcMeetCameraOff';
+import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
+import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 
 import { useMLSContext } from '../../contexts/MLSContext';
 import { useIsLocalParticipantHost } from '../../hooks/useIsLocalParticipantHost';

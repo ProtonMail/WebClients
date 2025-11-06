@@ -4,7 +4,7 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms';
 import { SettingsLink } from '@proton/components';
 import useUid from '@proton/components/hooks/useUid';
-import { IcUpgrade } from '@proton/icons';
+import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 import { hasVisionary } from '@proton/payments';
 import { useFlag } from '@proton/unleash';
 

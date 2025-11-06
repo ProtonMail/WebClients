@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { IcChevronRight } from '@proton/icons';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 
 import type { DriveNode } from '../../../../hooks/useDriveSDK';
 
@@ -29,20 +29,16 @@ export const DriveBreadcrumbs: React.FC<DriveBreadcrumbsProps> = ({
                             <button
                                 onClick={() => onBreadcrumbClick(breadcrumb)}
                                 className={`text-sm px-2 py-1 rounded hover:bg-gray-200 ${
-                                    breadcrumb.node.nodeId === currentFolder.nodeId
-                                        ? 'text-bold'
-                                        : 'color-weak'
+                                    breadcrumb.node.nodeId === currentFolder.nodeId ? 'text-bold' : 'color-weak'
                                 }`}
                             >
                                 {breadcrumb.node.name}
                             </button>
-                            {index < breadcrumbs.length - 1 && (
-                                <IcChevronRight size={3} className="color-weak"/>
-                            )}
+                            {index < breadcrumbs.length - 1 && <IcChevronRight size={3} className="color-weak" />}
                         </React.Fragment>
                     ))}
                 </div>
             </div>
         </div>
     );
-}; 
+};

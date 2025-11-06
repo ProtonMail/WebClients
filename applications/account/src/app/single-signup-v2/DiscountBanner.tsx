@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { IcTag } from '@proton/icons';
+import { IcTag } from '@proton/icons/icons/IcTag';
 import clsx from '@proton/utils/clsx';
 
 import './DiscountBanner.scss';

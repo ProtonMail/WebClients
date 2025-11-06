@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Button, CircleLoader } from '@proton/atoms';
 import type { ModalStateReturnObj } from '@proton/components';
 import { Icon, IconRow } from '@proton/components';
-import { IcVideoCamera } from '@proton/icons';
+import { IcVideoCamera } from '@proton/icons/icons/IcVideoCamera';
 import type { EventModel } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
 

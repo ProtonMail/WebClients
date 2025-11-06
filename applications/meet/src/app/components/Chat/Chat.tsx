@@ -4,7 +4,7 @@ import type { LocalParticipant, RemoteParticipant } from 'livekit-client';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { IcMagnifier } from '@proton/icons';
+import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import placeholder from '@proton/styles/assets/img/meet/chat-empty-state.png';
 import placeholderSearch from '@proton/styles/assets/img/meet/search-empty-state.png';
 
