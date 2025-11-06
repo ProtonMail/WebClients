@@ -1,4 +1,6 @@
+import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import type { FrameID } from 'proton-pass-extension/lib/utils/frames';
 import type { FrameAttributes } from 'proton-pass-extension/types/frames';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
@@ -12,6 +14,12 @@ import { asyncLock } from '@proton/pass/utils/fp/promises';
 import identity from '@proton/utils/identity';
 
 type FrameScore = [frame: HTMLIFrameElement, score: number];
+
+export const getFrameID = withContext<() => FrameID>((ctx) => {
+    const frameId = ctx?.getExtensionContext()?.frameId;
+    if (frameId === undefined) throw new Error('Unknown frameID');
+    return frameId;
+});
 
 export const getFrameElement = (frameId: number, frameAttributes: FrameAttributes): Maybe<HTMLIFrameElement> => {
     const iframes = document.getElementsByTagName('iframe');
