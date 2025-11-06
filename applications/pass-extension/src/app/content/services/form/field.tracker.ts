@@ -48,8 +48,9 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
     const state: FieldTrackerState = { focused: false, focusTimeout: null };
 
     const onBlur = withContext<(evt: FocusEvent) => void>((ctx) => {
-        raf.cancel();
+        if (!state.focused) return;
 
+        raf.cancel();
         if (state.focusTimeout) clearTimeout(state.focusTimeout);
         state.focused = false;
 
@@ -69,6 +70,8 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
     });
 
     const onFocus = withContext<(evt: FocusEvent) => void>((ctx, evt) => {
+        if (state.focused) return;
+
         raf.cancel();
         state.focused = true;
 

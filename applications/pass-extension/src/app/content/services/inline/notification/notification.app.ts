@@ -13,7 +13,6 @@ import { FieldType } from '@proton/pass/fathom/labels';
 import type { SelectedPasskey } from '@proton/pass/lib/passkeys/types';
 import type { AutosavePayload, LoginItemPreview } from '@proton/pass/types';
 import { asyncQueue } from '@proton/pass/utils/fp/promises';
-import noop from '@proton/utils/noop';
 
 export type NotificationRequest =
     | { action: NotificationAction.AUTOSAVE; data: AutosavePayload }
@@ -33,23 +32,22 @@ export type NotificationRequest =
       };
 
 export interface NotificationApp extends InlineAppHandler<NotificationRequest> {}
-type NotificationEvent<T extends InlineEvent<any>['type']> = Extract<InlineEvent<NotificationAction>, { type: T }>;
+type NotificationEvent<T extends InlineEvent<any>['type']> = Extract<InlineEvent<NotificationRequest>, { type: T }>;
 
 export const createNotification = (popover: PopoverController): NotificationApp => {
-    const iframe = createInlineApp<NotificationAction>({
+    const iframe = createInlineApp<NotificationRequest>({
         id: 'notification',
         src: NOTIFICATION_IFRAME_SRC,
         animation: 'slidein',
         classNames: ['fixed'],
         popover,
-        position: () => ({ top: 15, right: 15 }),
         dimensions: () => ({ width: NOTIFICATION_WIDTH, height: NOTIFICATION_MIN_HEIGHT }),
     });
 
     const onClose = withContext<(evt: NotificationEvent<'close'>) => void>((ctx, { state, options }) => {
         switch (state.action) {
-            /* stash the form submission if the user discarded
-             * the autosave prompt */
+            /* stash the form submission if the user
+             * discarded the autosave prompt */
             case NotificationAction.AUTOSAVE:
                 return (
                     options?.discard &&
@@ -60,8 +58,8 @@ export const createNotification = (popover: PopoverController): NotificationApp 
                         })
                     )
                 );
-            /* flag all MFA forms as ignorable on user discards the
-             * OTP autofill prompt */
+            /* flag all MFA forms as ignorable on user
+             * discards the OTP autofill prompt */
             case NotificationAction.OTP:
                 if (options?.discard) {
                     ctx?.service.formManager
@@ -111,20 +109,16 @@ export const createNotification = (popover: PopoverController): NotificationApp 
         destroy: iframe.destroy,
         getState: () => iframe.state,
         init: iframe.init,
-        open: asyncQueue(async (payload: NotificationRequest) => {
-            await iframe
-                .open(payload.action, async () => {
-                    /** if OTP autofill notification is opened - do not process
-                     * any other actions : it should take precedence */
-                    const autosave = payload.action === NotificationAction.AUTOSAVE;
-                    const { action, visible } = iframe.state;
-                    if (autosave && visible && action === NotificationAction.OTP) return false;
+        open: asyncQueue(async (request: NotificationRequest) => {
+            /** if OTP autofill notification is opened - do not process
+             * any other actions : it should take precedence */
+            const autosave = request.action === NotificationAction.AUTOSAVE;
+            const { action, visible } = iframe.state;
+            if (autosave && visible && action === NotificationAction.OTP) return;
 
-                    iframe.sendPortMessage({ type: InlinePortMessageType.NOTIFICATION_ACTION, payload });
-                    iframe.updatePosition();
-                    return true;
-                })
-                .catch(noop);
+            iframe.sendPortMessage({ type: InlinePortMessageType.NOTIFICATION_ACTION, payload: request });
+            iframe.setPosition(() => ({ top: 15, right: 15 }));
+            return iframe.open(request);
         }),
         sendMessage: iframe.sendPortMessage,
         subscribe: iframe.subscribe,

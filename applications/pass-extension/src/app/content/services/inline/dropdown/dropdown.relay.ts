@@ -6,6 +6,7 @@ import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/mes
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { createStyleParser, getComputedHeight, getComputedWidth } from '@proton/pass/utils/dom/computed-styles';
+import { maxAgeMemoize } from '@proton/pass/utils/fp/memo';
 import { createAsyncQueue } from '@proton/pass/utils/fp/promises';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { resolveDomain, resolveSubdomain } from '@proton/pass/utils/url/utils';
@@ -100,20 +101,23 @@ export const createDropdownRelayHandler = (): DropdownHandler => {
 
         sendMessage: noop,
 
-        getState: async () => {
-            /** Sub-frames cannot access dropdown state directly, so relay state requests
-             * to top-frame for icon and dropdown management decisions in sub-frames. */
-            const res = await queue.push(() =>
-                sendMessage(
-                    contentScriptMessage({
-                        type: WorkerMessageType.INLINE_DROPDOWN_STATE,
-                    })
-                )
-            );
+        getState: maxAgeMemoize(
+            async () => {
+                /** Sub-frames cannot access dropdown state directly, so relay state requests
+                 * to top-frame for icon and dropdown management decisions in sub-frames. */
+                const res = await queue.push(() =>
+                    sendMessage(
+                        contentScriptMessage({
+                            type: WorkerMessageType.INLINE_DROPDOWN_STATE,
+                        })
+                    )
+                );
 
-            if (res?.type === 'success') return res;
-            else return { visible: false, focused: false };
-        },
+                if (res?.type === 'success') return res;
+                else return { visible: false, focused: false };
+            },
+            { maxAge: 1 }
+        ),
     };
 
     return dropdown;

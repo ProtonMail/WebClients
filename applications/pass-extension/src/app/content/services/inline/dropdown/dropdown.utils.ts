@@ -1,4 +1,5 @@
 import { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
+import { DROPDOWN_WIDTH } from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
 import type { InlineCloseOptions } from 'proton-pass-extension/app/content/services/inline/inline.messages';
@@ -9,7 +10,9 @@ import { isShadowRoot } from '@proton/pass/fathom';
 import { deriveAliasPrefix } from '@proton/pass/lib/alias/alias.utils';
 import { clientStatusResolved } from '@proton/pass/lib/client';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
+import type { Rect } from '@proton/pass/types/utils/dom';
 import { isActiveElement } from '@proton/pass/utils/dom/active-element';
+import { createStyleParser, getComputedHeight } from '@proton/pass/utils/dom/computed-styles';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { onNextTick } from '@proton/pass/utils/time/next-tick';
@@ -49,10 +52,7 @@ export const onBackdropClick = (getField: () => Maybe<FieldHandle>, effect: () =
     if (!target || !excluded.includes(target)) effect();
 };
 
-export const willDropdownAnchorChange = (
-    anchor: Maybe<MaybeNull<DropdownAnchor>>,
-    payload: DropdownRequest
-): boolean => {
+export const matchesDropdownAnchor = (anchor: Maybe<MaybeNull<DropdownAnchor>>, payload: DropdownRequest): boolean => {
     if (!anchor) return true;
 
     switch (payload.type) {
@@ -88,34 +88,44 @@ export const resolveDropdownOrigins = (
     }
 };
 
-export const dropdownRequestGuard = withContext<(request: DropdownRequest) => Promise<boolean>>(
-    async (ctx, request) => {
-        if (!ctx) return false;
+export const validateDropdownRequest = withContext<
+    (request: DropdownRequest, anchor?: MaybeNull<DropdownAnchor>) => Promise<boolean>
+>(async (ctx, request, anchor) => {
+    if (!ctx) return false;
 
-        /** If we're refocusing after an unlock request from the dropdown,
-         * ensure the client status has resolved before continuing */
-        await waitUntil(() => clientStatusResolved(ctx.getState().status), 50);
+    const { action, autofocused, autofilled } = request;
 
-        const { action, autofocused } = request;
-        const { authorized } = ctx.getState();
-        if (autofocused && !authorized) return false;
+    /** If the dropdown anchor didn't change, noop */
+    const didAnchorChange = matchesDropdownAnchor(anchor, request);
+    if (!didAnchorChange) return false;
 
-        const url = ctx.getExtensionContext()?.url;
+    /** Block autofocus requests on previously autofilled fields */
+    const validInteraction = !(autofocused && autofilled);
+    if (!validInteraction) return false;
 
-        switch (action) {
-            case DropdownAction.AUTOFILL_CC:
-                return !(autofocused && !(await ctx.service.autofill.getCreditCardsCount()));
-            case DropdownAction.AUTOFILL_IDENTITY:
-                return !(autofocused && !(await ctx.service.autofill.getIdentitiesCount()));
-            case DropdownAction.AUTOFILL_LOGIN:
-                return !(autofocused && !(await ctx.service.autofill.getCredentialsCount()));
-            case DropdownAction.AUTOSUGGEST_ALIAS:
-                return Boolean(url?.displayName);
-            default:
-                return true;
-        }
+    /** If we're refocusing after an unlock request from the dropdown,
+     * ensure the client status has resolved before continuing */
+    await waitUntil(() => clientStatusResolved(ctx.getState().status), 50);
+    const { authorized } = ctx.getState();
+
+    /** If unauthorized and autofocused: cancel request. */
+    if (autofocused && !authorized) return false;
+
+    const url = ctx.getExtensionContext()?.url;
+
+    switch (action) {
+        case DropdownAction.AUTOFILL_CC:
+            return !(autofocused && !(await ctx.service.autofill.getCreditCardsCount()));
+        case DropdownAction.AUTOFILL_IDENTITY:
+            return !(autofocused && !(await ctx.service.autofill.getIdentitiesCount()));
+        case DropdownAction.AUTOFILL_LOGIN:
+            return !(autofocused && !(await ctx.service.autofill.getCredentialsCount()));
+        case DropdownAction.AUTOSUGGEST_ALIAS:
+            return Boolean(url?.displayName);
+        default:
+            return true;
     }
-);
+});
 
 export const intoDropdownAction = withContext<(request: DropdownRequest) => Promise<Maybe<DropdownActions>>>(
     async (ctx, request) => {
@@ -145,10 +155,34 @@ export const intoDropdownAction = withContext<(request: DropdownRequest) => Prom
                 return { action, prefix: deriveAliasPrefix(url.displayName), ...base };
             case DropdownAction.AUTOSUGGEST_PASSWORD: {
                 return sendMessage.on(contentScriptMessage({ type: WorkerMessageType.AUTOSUGGEST_PASSWORD }), (res) => {
-                    if (res.type === 'error') throw new Error(res.error);
+                    if (res.type === 'error') return;
                     return { action, ...omit(res, ['type']), ...base };
                 });
             }
         }
     }
 );
+
+export const getDropdownPosition =
+    (request: DropdownRequest) =>
+    (root: HTMLElement): Partial<Rect> => {
+        switch (request.type) {
+            case 'field':
+                const { element } = request.field;
+                const boxElement = request.field.getAnchor().element;
+                const boxed = boxElement !== element;
+                const bodyTop = root.getBoundingClientRect().top;
+
+                const styles = createStyleParser(boxElement);
+                const computedHeight = getComputedHeight(styles, boxed ? 'inner' : 'outer');
+                const { value: height, offset: offsetBox } = computedHeight;
+                const { left: boxLeft, top, width } = boxElement.getBoundingClientRect();
+
+                return {
+                    top: top - bodyTop + offsetBox.bottom + offsetBox.top + height,
+                    left: boxLeft + width - DROPDOWN_WIDTH,
+                };
+            case 'frame':
+                return request.coords;
+        }
+    };
