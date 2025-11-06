@@ -783,6 +783,9 @@
       "Get more servers": [
         "Získať viac serverov"
       ],
+      "Get more storage": [
+        "Získať viac úložného priestoru"
+      ],
       "Get Pass Family": [
         "Získajte Pass Family"
       ],
@@ -1712,6 +1715,15 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent písania ${ BRAND_NAME } Scribe"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe, asistent písania (pre ${ quantity } používateľa)",
+        "${ BRAND_NAME } Scribe, asistent písania (pre ${ quantity } používateľov)",
+        "${ BRAND_NAME } Scribe, asistent písania (pre ${ quantity } používateľov)",
+        "${ BRAND_NAME } Scribe, asistent písania (pre ${ quantity } používateľov)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } dodatočná vlastná doména",
         "${ domains } dodatočné vlastné domény",
@@ -1724,6 +1736,15 @@
         "${ ips } serverov",
         "${ ips } serverov"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI asistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI asistent (pre ${ quantity } používateľa)",
+        "${ LUMO_APP_NAME } AI asistent (pre ${ quantity } používateľov)",
+        "${ LUMO_APP_NAME } AI asistent (pre ${ quantity } používateľov)",
+        "${ LUMO_APP_NAME } AI asistent (pre ${ quantity } používateľov)"
+      ],
       "${ price } per dedicated server": [
         "${ price } za dedikovaný server"
       ],
@@ -1735,6 +1756,12 @@
       ],
       "${ price } per user": [
         "${ price } za používateľa"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } vlastná doména",
+        "${ quantity } vlastné domény",
+        "${ quantity } vlastných domén",
+        "${ quantity } vlastných domén"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats }${ LUMO_APP_NAME } licencia",
@@ -2125,6 +2152,14 @@
         "Pridať do kalendára a označiť ako čakajúce"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } ďalší výsledok nebol zobrazený",
+        "${ hiddenResultsCount } ďalšie výsledky nezobrazené",
+        "${ hiddenResultsCount } ďalších výsledkov nezobrazených",
+        "${ hiddenResultsCount } ďalších výsledkov nezobrazených"
+      ]
+    },
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Som mimo kanceláriu s obmedzeným prístupom k emailu."
@@ -2507,14 +2542,35 @@
       "${ VPN_APP_NAME }'s no-logs policy confirmed by an external audit": [
         "Zásada neukladania záznamov v ${ VPN_APP_NAME } VPN potvrdená externým auditom"
       ],
+      "**Auto-delete**, **snooze**, and **email scheduling** are included in your subscription.": [
+        "**Automatické mazanie**, **odloženie** a **plánovanie emailov** je súčasťou vášho predplatného."
+      ],
       "**Streaming** is included in your subscription.": [
         "**Streamovanie** je súčasťou vášho predpolatného."
+      ],
+      "11 tips to stop spam emails": [
+        "11 tipov, ako zabrániť nevyžiadanej pošte"
+      ],
+      "Automate recurring actions to sort and organize incoming emails.": [
+        "Automatizujte opakované akcie na triedenie a organizovanie prichádzajúcich emailov."
       ],
       "Can someone see my internet history if we use the same WiFi?": [
         "Môže niekto vidieť moju internetovú históriu, ak používame rovnakú Wi-Fi?"
       ],
+      "Discover our tips for effectively managing your inbox so you can stay productive and focused.": [
+        "Objavte naše tipy na efektívne spravovanie vašej doručenej pošty, aby ste mohli pracovať produktívne a sústrediť sa."
+      ],
+      "Easily manage your inbox": [
+        "Jednoduchá správa vašej doručenej pošty"
+      ],
+      "Easily manage your inbox with Mail Plus": [
+        "Jednoduchá správa vašej doručenej pošty s Mail Plus"
+      ],
       "Enable kill switch and auto-connect in your VPN settings.": [
         "V nastaveniach VPN povoľte Kill Switch a automatické pripojenie."
+      ],
+      "Get a clean inbox with filters": [
+        "Vyčistite si doručenú poštu pomocou filtrov"
       ],
       "Get round-the-clock protection": [
         "Získajte nepretržitú ochranu"
@@ -2524,6 +2580,15 @@
       ],
       "How to change your IP address on Windows": [
         "Ako zmeniť svoju IP adresu v systéme Windows"
+      ],
+      "How to get a custom email domain": [
+        "Ako získať vlastnú emailovú doménu"
+      ],
+      "How to get to inbox zero: Privacy-first inbox organization tips": [
+        "Ako dosiahnuť stav prázdnej schránky: Tipy na organizáciu doručenej pošty s dôrazom na súkromie"
+      ],
+      "If you want to elevate your professional identity, it’s important to learn why and how to create a custom email domain. Most people use free email addresses with default domains provided by their email service.": [
+        "Ak chcete pozdvihnúť svoju profesionálnu identitu, je dôležité zistiť, prečo a ako vytvoriť vlastnú emailovú doménu. Väčšina ľudí používa bezplatné emailové adresy s predvolenými doménami, ktoré poskytuje ich emailová služba."
       ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "V tomto článku sa pozrieme na to, kto môže vidieť vašu internetovú históriu, keď používate Wi-Fi, čo môže vidieť a prečo to môže robiť."
@@ -2537,8 +2602,14 @@
       "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
         "Je používanie aplikácie Telegram bezpečné? Ako si povieme v tomto článku, veľmi to závisí od toho, ako ho používate."
       ],
+      "Learn how to beat annoying and potentially harmful junk mail. Spam emails, also known as junk mail, can be more than just irritating clutter in your inbox. Cybercriminals can use these unsolicited and unwanted messages to launch phishing attacks and spread malware.": [
+        "Zistite, ako poraziť otravnú a potenciálne škodlivú nevyžiadanú poštu. Spamové emaily, známe aj ako nevyžiadaná pošta, môžu byť viac než len otravným neporiadkom vo vašej doručenej pošte. Kyberzločinci môžu tieto nevyžiadané a nežiaduce správy využiť na spustenie phishingových útokov a šírenie malvéru."
+      ],
       "Learn how to enable ${ VPN_APP_NAME } on your router.": [
         "Zistite, ako povoliť ${ VPN_APP_NAME } vo vašom routri."
+      ],
+      "Protect your business communications": [
+        "Chráňte svoju firemnú komunikáciu"
       ],
       "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
         "Chráňte svoju spoločnosť pred únikmi údajov a zabezpečte vzdialenú prácu pomocou podnikovej VPN."
@@ -2546,11 +2617,26 @@
       "Protect your whole household with 1 device": [
         "Chráňte celú svoju domácnosť pomocou 1 zariadenia"
       ],
+      "See and manage all your email subscriptions": [
+        "Pozrite si a spravujte všetky svoje emailové odbery"
+      ],
       "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN2024] }.": [
         "Streamovanie zo všetkých hlavných platforiem s ${ PLAN_NAMES[PLANS.VPN2024] }."
       ],
+      "The average professional receives around 120 emails a day, amounting to roughly 43,800 emails a year. No matter what industry you work in, that’s an overwhelming amount of business email to deal with.": [
+        "Priemerný profesionál denne dostane približne 120 emailov, čo predstavuje zhruba 43 800 emailov ročne. Bez ohľadu na to, v akom odvetví pracujete, je to obrovské množstvo pracovných emailov, s ktorými sa musíte vysporiadať."
+      ],
+      "The impact a data breach can have on your life depends greatly on the type of information that was exposed and to whom. A quick reaction to a data breach can often protect your digital identity and prevent any losses.": [
+        "Dopad, ktorý môže mať narušenie bezpečnosti údajov na váš život, závisí vo veľkej miere od typu informácií, ktoré boli odhalené, a od toho, komu boli odhalené. Rýchla reakcia na narušenie bezpečnosti údajov môže často ochrániť vašu digitálnu identitu a zabrániť akýmkoľvek stratám."
+      ],
+      "The most private and secure way to communicate online is by using end-to-end encryption. If you send an end-to-end encrypted email, it’s encrypted on your device (your iPhone, Android, or laptop) and isn’t decrypted until it reaches the device of the person you sent the message to.": [
+        "Najsúkromnejší a najbezpečnejší spôsob online komunikácie je použitím end-to-end šifrovania. Ak pošlete end-to-end šifrovaný email, správa je šifrovaná na vašom zariadení (iPhone, Android alebo laptop) a nedešifruje sa, kým nedorazí do zariadenia osoby, ktorej ste správu poslali."
+      ],
       "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
         "Tento článok bol aktualizovaný o protokoly WireGuard a Stealth VPN."
+      ],
+      "Try out **Newsletters view** to declutter your inbox.": [
+        "Vyskúšajte **Zobrazenie noviniek**, aby ste si upratali doručenú poštu."
       ],
       "VPN Accelerator uses a combination of advanced VPN technologies to improve connection stability and increase your connection speed": [
         "VPN Accelerator využíva kombináciu pokročilých VPN technológií na zlepšenie stability pripojenia a zvýšenie rýchlosti pripojenia."
@@ -2561,11 +2647,26 @@
       "We discuss how to change the external and local IP addresses of your Windows device.": [
         "Rozoberieme, ako zmeniť externú a lokálnu IP adresu vášho zariadenia so systémom Windows."
       ],
+      "What is an email alias?": [
+        "Čo je emailový alias?"
+      ],
+      "What is end-to-end encryption and how does it work?": [
+        "Čo je end-to-end šifrovanie a ako funguje?"
+      ],
+      "What to do if your data is leaked in a data breach": [
+        "Čo robiť, ak dôjde k úniku vašich údajov v dôsledku narušenia bezpečnosti údajov"
+      ],
       "Which VPN protocol is the best?": [
         "Ktorý VPN protokol je najlepší?"
       ],
       "Working with sensitive data?": [
         "Pracujete s citlivými údajmi?"
+      ],
+      "Working with sensitive data? Use ${ MAIL_APP_NAME } to protect your communications and build trust with clients.": [
+        "Pracujete s citlivými údajmi? Použite ${ MAIL_APP_NAME } na ochranu vašej komunikácie a budovanie dôvery u klientov."
+      ],
+      "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
+        "Vaša osobná emailová adresa je dôležitou súčasťou vašej digitálnej identity. Rovnako ako telefónne číslo, nedávate ju každému, koho stretnete. Preto je užitočné mať ďalšie emailové adresy, ktoré môžete používať na rôzne účely."
       ]
     },
     "breadcrumb": {
@@ -4367,6 +4468,26 @@
         "Každých ${ interval } dní, ${ untilString }"
       ]
     },
+    "Dashboard": {
+      "Experience true freedom online and safeguard your privacy.": [
+        "Zažite skutočnú online slobodu a ochranu svojho súkromia."
+      ],
+      "Get more from your ${ planTitle } subscription.": [
+        "Získajte viac zo svojho predplatného ${ planTitle }."
+      ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
+        "Uchovávajte svoje súbory, fotografie a dokumenty v bezpečí s ${ maxDriveSpace } bezplatným cloudovým úložiskom."
+      ],
+      "Set secure passwords without the hassle.": [
+        "Nastavenie bezpečných hesiel bez problémov."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to ${ VPN_APP_NAME } and other privacy services.": [
+        "S plánom ${ planTitlePlusMaybeBrand } získate bezplatný prístup k ${ VPN_APP_NAME } a ďalším službám na ochranu súkromia."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
+        "S plánom ${ planTitlePlusMaybeBrand } získate bezplatný prístup k všetkým službám ochrany súkromia ${ BRAND_NAME }."
+      ]
+    },
     "Day": {
       "Friday": [
         "Piatok"
@@ -4786,6 +4907,12 @@
       ]
     },
     "Download": {
+      ".deb (Ubuntu/Debian)": [
+        ".deb (Ubuntu/Debian)"
+      ],
+      ".rpm (Fedora/RHEL)": [
+        ".rpm (Fedora/RHEL)"
+      ],
       "Android": [
         "Android"
       ],
@@ -4797,6 +4924,9 @@
       ],
       "Browser": [
         "Prehliadač"
+      ],
+      "Calendar": [
+        "Kalendár"
       ],
       "Chrome": [
         "Chrome"
@@ -4813,6 +4943,9 @@
       "Download for Windows": [
         "Stiahnuť pre Windows"
       ],
+      "Download on Snap store": [
+        "Stiahnuť v Snap store"
+      ],
       "Download on the Apple App Store": [
         "Stiahnuť z Apple App Store"
       ],
@@ -4824,6 +4957,9 @@
       ],
       "Firefox": [
         "Firefox"
+      ],
+      "Get it on Google Play": [
+        "Stiahnuť z Google Play"
       ],
       "Get the app": [
         "Stiahnuť aplikáciu"
@@ -4857,6 +4993,9 @@
       ],
       "macOS Ventura or later": [
         "macOS Ventura alebo novšie"
+      ],
+      "Mail": [
+        "Mail"
       ],
       "Mobile": [
         "Mobil"
@@ -7220,6 +7359,12 @@
       "${ VPN_CONNECTIONS } devices": [
         "${ VPN_CONNECTIONS } zariadení"
       ],
+      "15 GB storage": [
+        "15 GB úložisko"
+      ],
+      "@pm.me address": [
+        "@pm.me adresa"
+      ],
       "Ad-blocker and malware protection": [
         "Blokovač reklám a ochrana pred malvérom"
       ],
@@ -7228,6 +7373,12 @@
       ],
       "and more premium features...": [
         "a ďalšie prémiové funkcie..."
+      ],
+      "Connect custom domain": [
+        "Pripojte vlastnú doménu"
+      ],
+      "Desktop app": [
+        "Desktopová aplikácia"
       ],
       "Double VPN": [
         "Dvojitá VPN"
@@ -7240,6 +7391,9 @@
       ],
       "NetShield Ad-blocker": [
         "Blokovač reklám NetShield"
+      ],
+      "Priority support": [
+        "Prioritná podpora"
       ],
       "Secure streaming": [
         "Bezpečné streamovanie"
@@ -7825,6 +7979,9 @@
       ],
       "Domain": [
         "Doména"
+      ],
+      "Drag to reorder": [
+        "Poradie zmeníte presunutím"
       ],
       "Status": [
         "Stav"
@@ -10752,9 +10909,6 @@
         "Krok ${ step }",
         "Krok ${ step }"
       ],
-      "Storage": [
-        "Úložisko"
-      ],
       "Storage allocated to other users in this organisation": [
         "Úložisko pridelené iným používateľom v tejto organizácii"
       ],
@@ -13022,6 +13176,12 @@
       "Font size": [
         "Veľkosť písma"
       ],
+      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
+        "Pre ${ DRIVE_SHORT_APP_NAME } a ${ DOCS_SHORT_APP_NAME }."
+      ],
+      "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
+        "Pre ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } a ${ SHEETS_SHORT_APP_NAME }."
+      ],
       "for your first month": [
         "za váš prvý mesiac"
       ],
@@ -13480,6 +13640,9 @@
       ],
       "Share your referral link": [
         "Zdieľajte váš odporúčací odkaz"
+      ],
+      "Shared between ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ WALLET_SHORT_APP_NAME }.": [
+        "Zdieľané medzi ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ WALLET_SHORT_APP_NAME }."
       ],
       "Show ${ n } administrator": [
         "Zobraziť ${ n } správcu",
@@ -16891,11 +17054,23 @@
       "Based in Switzerland, GDPR compliant": [
         "So sídlom vo Švajčiarsku, v súlade s GDPR"
       ],
+      "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Ale môžete získať zľavu ${ discountPercentString } prechodom na **${ upsellPlanTitle }** - je to len ${ relativePrice } mesačne navyše."
+      ],
+      "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }**.": [
+        "Ale môžete získať zľavu ${ discountPercentString } prechodom na **${ upsellPlanTitle }**."
+      ],
       "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Ale môžete si odomknúť **${ unlockPlanTitle }** a ďalšie služby ${ BRAND_NAME } zvýšením úrovne na **${ upsellPlanTitle }** — je to len ${ relativePrice } mesačne navyše."
       ],
       "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Ale môžete si odomknúť **${ unlockPlanTitle }** a ďalšie služby ${ BRAND_NAME } zvýšením úrovne na **${ upsellPlanTitle }**."
+      ],
+      "But you can upgrade to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Môžete však povýšiť na **${ upsellPlanTitle }** — stojí to len ${ relativePrice } mesačne navyše."
+      ],
+      "But you can upgrade to **${ upsellPlanTitle }**.": [
+        "Ale môžete navýšiť na **${ upsellPlanTitle }**."
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
         "Pokračovaním súhlasíte s našimi ${ termsAndConditionsLink } a ${ privacyPolicyLink }"
@@ -20527,6 +20702,9 @@
       "${ app } storage": [
         "${ app } uložisko"
       ],
+      "${ app } storage used": [
+        "${ app } využitého úložiska"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% využitých"
       ],
@@ -20547,6 +20725,9 @@
       ],
       "Get more storage": [
         "Získať viac úložného priestoru"
+      ],
+      "Storage used": [
+        "Využité úložisko"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Ak chcete naďalej používať produkty ${ BRAND_NAME }, uvoľnite miesto alebo ${ upgrade }"
@@ -22005,6 +22186,9 @@
       "Collaborate on documents": [
         "Spolupráca na dokumentoch"
       ],
+      "Compare plans": [
+        "Porovnať plány"
+      ],
       "Composing": [
         "Zostavovanie"
       ],
@@ -22158,6 +22342,9 @@
       "Decrypt key": [
         "Dešifrovať kľúč"
       ],
+      "Deep dive into email blog posts": [
+        "Začítajte sa do blogov o emailoch"
+      ],
       "Deep dive into VPN blog posts": [
         "Začítajte sa do článkov o VPN na blogu"
       ],
@@ -22260,6 +22447,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Stiahnuť aplikácie ${ DRIVE_APP_NAME }"
       ],
+      "Download ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "Stiahnite si ${ MAIL_APP_NAME } a ${ CALENDAR_APP_NAME }"
+      ],
       "Download ${ PASS_APP_NAME } for your devices": [
         "Stiahnuť ${ PASS_APP_NAME } pre vaše zariadenia"
       ],
@@ -22358,6 +22548,9 @@
       ],
       "Enhance security with 2FA": [
         "Zvýšte zabezpečenie pomocou 2FA"
+      ],
+      "Enjoy fast, seamless access to your emails with our dedicated apps.": [
+        "Vychutnajte si rýchly a plynulý prístup k svojim emailom vďaka našim špecializovaným aplikáciám."
       ],
       "Enter endpoints into your identity provider": [
         "Zadajte koncové body do vášho poskytovateľa identity"
@@ -22479,8 +22672,14 @@
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Získajte **${ referralInfo.uiData.refereeRewardAmount }** v kreditoch s ${ planTitle }"
       ],
+      "Get access to the desktop app with ${ mailPlusPlanName }. ${ upgradeButton }": [
+        "Získajte prístup k desktopovej aplikácii s ${ mailPlusPlanName }. ${ upgradeButton }"
+      ],
       "Get complete privacy coverage": [
         "Získajte kompletnú ochranu súkromia"
+      ],
+      "Get more from your email": [
+        "Využite svoj email na maximum"
       ],
       "Get more from your VPN": [
         "Získajte zo svojej VPN viac"
@@ -23418,6 +23617,9 @@
       "Account is disconnected": [
         "Účet je odpojený"
       ],
+      "Added to your plan: ${ mergedAddonTitles }": [
+        "Pridané do vášho plánu: ${ mergedAddonTitles }"
+      ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Správcovia môžu spravovať používateľské účty a udeľovať oprávnenia správcu iným používateľom. Plán organizácie môže upravovať iba primárny správca."
       ],
@@ -23956,6 +24158,9 @@
       ],
       "Did you know?": [
         "Vedeli ste?"
+      ],
+      "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
+        "Chráňte svoju organizáciu pred únikmi dát pomocou ${ PLAN_NAMES[plan] }."
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "Chráňte svoju organizáciu pred únikmi dát pomocou ${ VPN_APP_NAME } for Business."

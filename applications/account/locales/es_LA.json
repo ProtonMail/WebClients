@@ -2113,6 +2113,12 @@
         "Agregar al calendario y marcar como pendiente"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } resultado más no se muestra",
+        "${ hiddenResultsCount } más resultados no mostrados"
+      ]
+    },
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Estoy fuera de la oficina con acceso limitado a mi correo."
@@ -10542,9 +10548,6 @@
       "Step ${ step }": [
         "Paso ${ step }",
         "Paso ${ step }"
-      ],
-      "Storage": [
-        "Almacenamiento"
       ],
       "Storage allocated to other users in this organisation": [
         "Almacenamiento asignado a otros usuarios en esta organización"

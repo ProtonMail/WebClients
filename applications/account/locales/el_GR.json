@@ -783,6 +783,9 @@
       "Get more servers": [
         "Αποκτήστε περισσότερους διακομιστές"
       ],
+      "Get more storage": [
+        "Αποκτήστε περισσότερο χώρο αποθήκευσης"
+      ],
       "Get Pass Family": [
         "Αποκτήστε το Pass Family"
       ],
@@ -1712,6 +1715,13 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe βοηθός γραφής"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe βοηθός γραφής (για ${ quantity } χρήστη)",
+        "${ BRAND_NAME } Scribe βοηθός γραφής (για ${ quantity } χρήστες)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } πρόσθετος προσαρμοσμένος τομέας",
         "${ domains } πρόσθετοι προσαρμοσμένοι τομείς"
@@ -1719,6 +1729,13 @@
       "${ ips } server": [
         "${ ips } διακομιστής",
         "${ ips } διακομιστές"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } Βοηθός τεχνητής νοημοσύνης"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } Βοηθός τεχνητής νοημοσύνης (για ${ quantity } χρήστη)",
+        "${ LUMO_APP_NAME } Βοηθός τεχνητής νοημοσύνης (για ${ quantity } χρήστες)"
       ],
       "${ price } per dedicated server": [
         "${ price } ανά αποκλειστικό διακομιστή"
@@ -1731,6 +1748,10 @@
       ],
       "${ price } per user": [
         "${ price } ανά χρήστη"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } προσαρμοσμένος τομέας",
+        "${ quantity } προσαρμοσμένοι τομείς"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } θέση",
@@ -2113,6 +2134,12 @@
         "Προσθήκη στο ημερολόγιο και σήμανση σε εκκρεμότητα"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } ακόμη αποτέλεσμα δεν εμφανίζεται",
+        "${ hiddenResultsCount } ακόμη αποτελέσματα δεν εμφανίζονται"
+      ]
+    },
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Είμαι εκτός γραφείου με περιορισμένη πρόσβαση στο ηλεκτρονικό ταχυδρομείο μου."
@@ -2487,14 +2514,35 @@
       "${ VPN_APP_NAME }'s no-logs policy confirmed by an external audit": [
         "Η πολιτική μη τήρησης αρχείων καταγραφής του ${ VPN_APP_NAME } επιβεβαιώθηκε από εξωτερικό έλεγχο"
       ],
+      "**Auto-delete**, **snooze**, and **email scheduling** are included in your subscription.": [
+        "Η **αυτόματη διαγραφή**, η **αναβολή** και ο **προγραμματισμός email** περιλαμβάνονται στη συνδρομή σας."
+      ],
       "**Streaming** is included in your subscription.": [
         "Η **μετάδωση ροής** περιλαμβάνεται στη συνδρομή σας."
+      ],
+      "11 tips to stop spam emails": [
+        "11 συμβουλές για να σταματήσετε τα ανεπιθύμητα μηνύματα ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Automate recurring actions to sort and organize incoming emails.": [
+        "Αυτοματοποιήστε επαναλαμβανόμενες ενέργειες για να ταξινομήσετε και να οργανώσετε τα εισερχόμενα μηνύματα ηλεκτρονικού ταχυδρομείου"
       ],
       "Can someone see my internet history if we use the same WiFi?": [
         "Μπορεί κάποιος να δει το ιστορικό περιήγησής μου αν χρησιμοποιούμε το ίδιο WiFi;"
       ],
+      "Discover our tips for effectively managing your inbox so you can stay productive and focused.": [
+        "Ανακαλύψτε τις συμβουλές μας για την αποτελεσματική διαχείριση των εισερχομένων σας, ώστε να παραμείνετε παραγωγικοί και συγκεντρωμένοι."
+      ],
+      "Easily manage your inbox": [
+        "Διαχειριστείτε εύκολα τα εισερχόμενά σας"
+      ],
+      "Easily manage your inbox with Mail Plus": [
+        "Διαχειριστείτε εύκολα τα εισερχόμενά σας με το Mail Plus"
+      ],
       "Enable kill switch and auto-connect in your VPN settings.": [
         "Ενεργοποιήστε το kill switch και την αυτόματη σύνδεση μέσα από τις ρυθμίσεις VPN σας."
+      ],
+      "Get a clean inbox with filters": [
+        "Καθαρίστε τα εισερχόμενά σας με φίλτρα"
       ],
       "Get round-the-clock protection": [
         "Αποκτήστε διαρκή προστασία"
@@ -2504,6 +2552,15 @@
       ],
       "How to change your IP address on Windows": [
         "Πώς να αλλάξετε τη διεύθυνση IP σας στα Windows"
+      ],
+      "How to get a custom email domain": [
+        "Πώς να αποκτήσετε ένα προσαρμοσμένο τομέα ηλεκτρονικού ταχυδρομείου"
+      ],
+      "How to get to inbox zero: Privacy-first inbox organization tips": [
+        "Πώς να φτάσετε τα εισερχόμενά σας στο μηδέν: Συμβουλές για την οργάνωση των εισερχομένων σας με προτεραιότητα στην προστασία της ιδιωτικής ζωής"
+      ],
+      "If you want to elevate your professional identity, it’s important to learn why and how to create a custom email domain. Most people use free email addresses with default domains provided by their email service.": [
+        "Αν θέλετε να αναβαθμίσετε την επαγγελματική σας ταυτότητα, είναι σημαντικό να μάθετε γιατί και πώς να δημιουργήσετε ένα προσαρμοσμένο τομέα ηλεκτρονικού ταχυδρομείου. Οι περισσότεροι άνθρωποι χρησιμοποιούν δωρεάν διευθύνσεις ηλεκτρονικού ταχυδρομείου με προεπιλεγμένους τομείς που παρέχονται από την υπηρεσία ηλεκτρονικού ταχυδρομείου τους."
       ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "Σε αυτό το άρθρο, θα δούμε ποιος μπορεί να δει το ιστορικό περιήγησής σας όταν συνδέεστε με WiFi, τι μπορούν να δουν, και γιατί θα το έκαναν."
@@ -2517,8 +2574,14 @@
       "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
         "Είναι το Telegram ασφαλές; Όπως θα δούμε σε αυτό το άρθρο, αυτό εξαρτάται από τον τρόπο που το χρησιμοποιείτε."
       ],
+      "Learn how to beat annoying and potentially harmful junk mail. Spam emails, also known as junk mail, can be more than just irritating clutter in your inbox. Cybercriminals can use these unsolicited and unwanted messages to launch phishing attacks and spread malware.": [
+        "Μάθετε πώς να αντιμετωπίζετε τα ενοχλητικά και δυνητικά επιβλαβή ανεπιθύμητα μηνύματα. Τα ανεπιθύμητα μηνύματα ηλεκτρονικού ταχυδρομείου, γνωστά και ως spam, μπορεί να είναι κάτι περισσότερο από απλά ενοχλητικά μηνύματα που γεμίζουν τα εισερχόμενά σας. Οι κυβερνοεγκληματίες μπορούν να χρησιμοποιήσουν αυτά τα μη ζητηθέντα και ανεπιθύμητα μηνύματα για να εξαπολύσουν επιθέσεις ηλεκτρονικού ψαρέματος και να διαδώσουν κακόβουλο λογισμικό."
+      ],
       "Learn how to enable ${ VPN_APP_NAME } on your router.": [
         "Μάθετε πώς θα ενεργοποιήσετε το ${ VPN_APP_NAME } στο router σας."
+      ],
+      "Protect your business communications": [
+        "Προστατέψτε τις επιχειρηματικές σας επικοινωνίες"
       ],
       "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
         "Προστατεύστε την επιχείρησή σας από παραβιάσεις δεδομένων και κάντε την απομακρυσμένη εργασία ασφαλέστερη με ένα εταιρικό VPN."
@@ -2526,11 +2589,26 @@
       "Protect your whole household with 1 device": [
         "Προστατεύστε όλη την οικογένειά σας με 1 συσκευή."
       ],
+      "See and manage all your email subscriptions": [
+        "Δείτε και διαχειριστείτε όλες τις συνδρομές σας στο ηλεκτρονικό ταχυδρομείο"
+      ],
       "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN2024] }.": [
         "Μεταδώστε ροή από όλες τις μεγάλες πλατφόρμες με ${ PLAN_NAMES[PLANS.VPN2024] }."
       ],
+      "The average professional receives around 120 emails a day, amounting to roughly 43,800 emails a year. No matter what industry you work in, that’s an overwhelming amount of business email to deal with.": [
+        "Ο μέσος επαγγελματίας λαμβάνει περίπου 120 μηνύματα ηλεκτρονικού ταχυδρομείου την ημέρα, που αντιστοιχούν σε περίπου 43.800 μηνύματα ηλεκτρονικού ταχυδρομείου το χρόνο. Ανεξάρτητα από τον κλάδο στον οποίο εργάζεστε, πρόκειται για έναν τεράστιο αριθμό επαγγελματικών μηνυμάτων ηλεκτρονικού ταχυδρομείου που πρέπει να διαχειριστείτε."
+      ],
+      "The impact a data breach can have on your life depends greatly on the type of information that was exposed and to whom. A quick reaction to a data breach can often protect your digital identity and prevent any losses.": [
+        "Ο αντίκτυπος που μπορεί να έχει μια παραβίαση δεδομένων στη ζωή σας εξαρτάται σε μεγάλο βαθμό από τον τύπο των πληροφοριών που εκτέθηκαν και σε ποιον. Μια γρήγορη αντίδραση σε μια παραβίαση δεδομένων μπορεί συχνά να προστατεύσει την ψηφιακή σας ταυτότητα και να αποτρέψει τυχόν απώλειες."
+      ],
+      "The most private and secure way to communicate online is by using end-to-end encryption. If you send an end-to-end encrypted email, it’s encrypted on your device (your iPhone, Android, or laptop) and isn’t decrypted until it reaches the device of the person you sent the message to.": [
+        "Ο πιο ιδιωτικός και ασφαλής τρόπος επικοινωνίας στο διαδίκτυο είναι η χρήση διατερματικής κρυπτογράφησης. Όταν στέλνετε ένα μήνυμα ηλεκτρονικού ταχυδρομείου με διατερματική κρυπτογράφηση, αυτό κρυπτογραφείται στη συσκευή σας (iPhone, Android ή φορητό υπολογιστή) και δεν αποκρυπτογραφείται μέχρι να φτάσει στη συσκευή του παραλήπτη."
+      ],
       "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
         "Αυτό το άρθρο έχει ενημερωθεί ώστε να περιλαμβάνει τα πρωτόκολλα WireGuard και Stealth VPN."
+      ],
+      "Try out **Newsletters view** to declutter your inbox.": [
+        "Δοκιμάστε την **Προβολή Ενημερωτικών Δελτίων** για να τακτοποιήσετε το φάκελο εισερχομένων σας."
       ],
       "VPN Accelerator uses a combination of advanced VPN technologies to improve connection stability and increase your connection speed": [
         "Το VPN Accelerator χρησιμοποιεί έναν συνδυασμό προηγμένων τεχνολογιών VPN ώστε να βελτιώνει την σταθερότητα της σύνδεσης και να αυξάνει την ταχύτητά της."
@@ -2541,11 +2619,26 @@
       "We discuss how to change the external and local IP addresses of your Windows device.": [
         "Συζητάμε πώς να αλλάξετε τις εξωτερικές και τοπικές διευθύνσεις IP της Windows συσκευής σας."
       ],
+      "What is an email alias?": [
+        "Τι είναι ένα ψευδώνυμο ηλεκτρονικού ταχυδρομείου;"
+      ],
+      "What is end-to-end encryption and how does it work?": [
+        "Τι είναι η διατερματική κρυπτογράφηση και πώς λειτουργεί;"
+      ],
+      "What to do if your data is leaked in a data breach": [
+        "Τι να κάνετε σε περίπτωση διαρροής των δεδομένων σας λόγω παραβίασης δεδομένων"
+      ],
       "Which VPN protocol is the best?": [
         "Ποιο πρωτόκολλο VPN είναι το καλύτερο;"
       ],
       "Working with sensitive data?": [
         "Εργάζεστε με ευαίσθητα δεδομένα;"
+      ],
+      "Working with sensitive data? Use ${ MAIL_APP_NAME } to protect your communications and build trust with clients.": [
+        "Εργάζεστε με ευαίσθητα δεδομένα; Χρησιμοποιήστε το ${ MAIL_APP_NAME } για να προστατεύσετε τις επικοινωνίες σας και να χτίσετε σχέσεις εμπιστοσύνης με τους πελάτες σας."
+      ],
+      "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
+        "Η προσωπική σας διεύθυνση ηλεκτρονικού ταχυδρομείου αποτελεί ουσιαστικό μέρος της ψηφιακής σας ταυτότητας. Όπως και τον αριθμό τηλεφώνου σας, δεν τον δίνετε σε όλους όσους συναντάτε. Γι' αυτό είναι χρήσιμο να έχετε άλλες διευθύνσεις ηλεκτρονικού ταχυδρομείου που μπορείτε να χρησιμοποιείτε για διαφορετικούς σκοπούς."
       ]
     },
     "breadcrumb": {
@@ -4329,6 +4422,26 @@
         "Κάθε ${ interval } ημέρες, ${ untilString }"
       ]
     },
+    "Dashboard": {
+      "Experience true freedom online and safeguard your privacy.": [
+        "Απολαύστε πραγματική ελευθερία στο διαδίκτυο και προστατέψτε την ιδιωτικότητά σας."
+      ],
+      "Get more from your ${ planTitle } subscription.": [
+        "Εκμεταλλευτείτε στο έπακρο την ${ planTitle } συνδρομή σας."
+      ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
+        "Διατηρήστε ασφαλή τα αρχεία, τις φωτογραφίες, και τα έγγραφά σας με ${ maxDriveSpace } δωρεάν χώρο αποθήκευσης στο cloud."
+      ],
+      "Set secure passwords without the hassle.": [
+        "Δημιουργήστε ασφαλείς κωδικούς χωρίς ταλαιπωρία."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to ${ VPN_APP_NAME } and other privacy services.": [
+        "Με το ${ planTitlePlusMaybeBrand }, λαμβάνετε ελεύθερη πρόσβαση στο ${ VPN_APP_NAME } και άλλες υπηρεσίες απορρήτου."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
+        "Με το ${ planTitlePlusMaybeBrand }, λαμβάνετε ελεύθερη πρόσβαση σε όλες τις υπηρεσίες απορρήτου του ${ BRAND_NAME }."
+      ]
+    },
     "Day": {
       "Friday": [
         "Παρασκευή"
@@ -4746,6 +4859,12 @@
       ]
     },
     "Download": {
+      ".deb (Ubuntu/Debian)": [
+        ".deb (Ubuntu/Debian)"
+      ],
+      ".rpm (Fedora/RHEL)": [
+        ".rpm (Fedora/RHEL)"
+      ],
       "Android": [
         "Android"
       ],
@@ -4757,6 +4876,9 @@
       ],
       "Browser": [
         "Πρόγραμμα περιήγησης"
+      ],
+      "Calendar": [
+        "Calendar"
       ],
       "Chrome": [
         "Chrome"
@@ -4773,6 +4895,9 @@
       "Download for Windows": [
         "Λήψη για Windows"
       ],
+      "Download on Snap store": [
+        "Λήψη στο Snap store"
+      ],
       "Download on the Apple App Store": [
         "Λήψη στο Apple App Store"
       ],
@@ -4784,6 +4909,9 @@
       ],
       "Firefox": [
         "Firefox"
+      ],
+      "Get it on Google Play": [
+        "Αποκτήστε το στο Google Play"
       ],
       "Get the app": [
         "Αποκτήστε την εφαρμογή"
@@ -4817,6 +4945,9 @@
       ],
       "macOS Ventura or later": [
         "macOS Ventura ή νεότερο"
+      ],
+      "Mail": [
+        "Mail"
       ],
       "Mobile": [
         "Κινητό"
@@ -7136,6 +7267,12 @@
       "${ VPN_CONNECTIONS } devices": [
         "${ VPN_CONNECTIONS } συσκευές"
       ],
+      "15 GB storage": [
+        "15 GB αποθηκευτικού χώρου"
+      ],
+      "@pm.me address": [
+        "@pm.me διεύθυνση"
+      ],
       "Ad-blocker and malware protection": [
         "Αποκλεισμός διαφημίσεων και προστασία από κακόβουλο λογισμικό"
       ],
@@ -7144,6 +7281,12 @@
       ],
       "and more premium features...": [
         "και περισσότερες προηγμένες δυνατότητες..."
+      ],
+      "Connect custom domain": [
+        "Σύνδεση προσαρμοσμένου τομέα"
+      ],
+      "Desktop app": [
+        "Εφαρμογή υπολογιστή"
       ],
       "Double VPN": [
         "Διπλό VPN"
@@ -7156,6 +7299,9 @@
       ],
       "NetShield Ad-blocker": [
         "NetShield Ad-blocker"
+      ],
+      "Priority support": [
+        "Υποστήριξη με προτεραιότητα"
       ],
       "Secure streaming": [
         "Ασφαλές streaming"
@@ -7725,6 +7871,9 @@
       ],
       "Domain": [
         "Τομέας"
+      ],
+      "Drag to reorder": [
+        "Σύρετε για αναδιάταξη"
       ],
       "Status": [
         "Κατάσταση"
@@ -10540,9 +10689,6 @@
         "Βήμα ${ step }",
         "Βήματα ${ step }"
       ],
-      "Storage": [
-        "Αποθηκευτικός χώρος"
-      ],
       "Storage allocated to other users in this organisation": [
         "Κατανεμημένος αποθηκευτικός χώρος σε άλλους χρήστες αυτού του οργανισμού"
       ],
@@ -12762,6 +12908,12 @@
       "Font size": [
         "Μέγεθος γραμματοσειράς"
       ],
+      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
+        "Για ${ DRIVE_SHORT_APP_NAME } και ${ DOCS_SHORT_APP_NAME }."
+      ],
+      "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
+        "Για ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, και ${ SHEETS_SHORT_APP_NAME }."
+      ],
       "for your first month": [
         "για τον πρώτο μήνα σας"
       ],
@@ -13220,6 +13372,9 @@
       ],
       "Share your referral link": [
         "Κοινοποιήστε τον σύνδεσμο παραπομπής σας"
+      ],
+      "Shared between ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ WALLET_SHORT_APP_NAME }.": [
+        "Κοινόχρηστο μεταξύ ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } και ${ WALLET_SHORT_APP_NAME }."
       ],
       "Show ${ n } administrator": [
         "Εμφάνιση ${ n } διαχειριστή",
@@ -20071,6 +20226,9 @@
       "${ app } storage": [
         "Αποθηκευτικός χώρος ${ app }"
       ],
+      "${ app } storage used": [
+        "${ app } αποθηκευτικός χώρος σε χρήση"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% γεμάτος"
       ],
@@ -20091,6 +20249,9 @@
       ],
       "Get more storage": [
         "Αποκτήστε περισσότερο χώρο αποθήκευσης"
+      ],
+      "Storage used": [
+        "Αποθηκευτικός χώρος σε χρήση"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Για να συνεχίσετε να χρησιμοποιείτε τα προϊόντα ${ BRAND_NAME }, απελευθερώστε χώρο ή ${ upgrade }"
@@ -21477,6 +21638,9 @@
       "Collaborate on documents": [
         "Συνεργαστείτε σε έγγραφα"
       ],
+      "Compare plans": [
+        "Σύγκριση πλάνων"
+      ],
       "Composing": [
         "Σύνταξη"
       ],
@@ -21628,6 +21792,9 @@
       "Decrypt key": [
         "Αποκρυπτογράφηση κλειδιού"
       ],
+      "Deep dive into email blog posts": [
+        "Περιεκτική ανάλυση στις αναρτήσεις ιστολογίου μηνυμάτων ηλεκτρονικού ταχυδρομείου"
+      ],
       "Deep dive into VPN blog posts": [
         "Περιεκτική ανάλυση στις αναρτήσεις ιστολογίου VPN"
       ],
@@ -21728,6 +21895,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Λήψη εφαρμογών ${ DRIVE_APP_NAME }"
       ],
+      "Download ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "Λήψη ${ MAIL_APP_NAME } και ${ CALENDAR_APP_NAME }"
+      ],
       "Download ${ PASS_APP_NAME } for your devices": [
         "Κατεβάστε το ${ PASS_APP_NAME } για τις συσκευές σας"
       ],
@@ -21826,6 +21996,9 @@
       ],
       "Enhance security with 2FA": [
         "Ενισχύστε την ασφάλεια με την πιστοποίηση δύο παραγόντων (2FA)"
+      ],
+      "Enjoy fast, seamless access to your emails with our dedicated apps.": [
+        "Απολαύστε γρήγορη και απρόσκοπτη πρόσβαση στα μηνύματα ηλεκτρονικού ταχυδρομείου σας με τις ειδικές εφαρμογές μας."
       ],
       "Enter endpoints into your identity provider": [
         "Εισαγάγετε τα URL τελικού σημείου στον πάροχο ταυτότητάς σας"
@@ -21945,8 +22118,14 @@
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Λάβετε **${ referralInfo.uiData.refereeRewardAmount }** σε πιστώσεις με το ${ planTitle }"
       ],
+      "Get access to the desktop app with ${ mailPlusPlanName }. ${ upgradeButton }": [
+        "Αποκτήστε πρόσβαση στην εφαρμογή για υπολογιστές με το ${ mailPlusPlanName }. ${ upgradeButton }"
+      ],
       "Get complete privacy coverage": [
         "Αποκτήστε πλήρη κάλυψη ιδιωτικότητας."
+      ],
+      "Get more from your email": [
+        "Αποκτήστε περισσότερα από το email σας."
       ],
       "Get more from your VPN": [
         "Αποκτήστε περισσότερα από το VPN σας."
@@ -22880,6 +23059,9 @@
       "Account is disconnected": [
         "Ο λογαριασμός είναι αποσυνδεδεμένος"
       ],
+      "Added to your plan: ${ mergedAddonTitles }": [
+        "Προστέθηκε στο πλάνο σας: ${ mergedAddonTitles }"
+      ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Οι διαχειριστές μπορούν να διαχειρίζονται λογαριασμούς χρηστών και να εκχωρούν δικαιώματα διαχειριστή σε άλλους χρήστες. Μόνο ο κύριος διαχειριστής μπορεί να επεξεργαστεί το πλάνο του οργανισμού."
       ],
@@ -23414,6 +23596,9 @@
       ],
       "Did you know?": [
         "Το γνωρίζατε;"
+      ],
+      "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
+        "Προστατέψτε τον οργανισμό σας από παραβιάσεις δεδομένων με το ${ PLAN_NAMES[plan] }."
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "Προστατέψτε τον οργανισμό σας από παραβιάσεις δεδομένων με το ${ VPN_APP_NAME } για Business."

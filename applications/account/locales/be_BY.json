@@ -2125,6 +2125,14 @@
         "Дадаць у каляндар і пазначыць як адкладзеныя"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "Яшчэ ${ hiddenResultsCount } вынік не паказаны",
+        "Яшчэ ${ hiddenResultsCount } вынікі не паказаны",
+        "Яшчэ ${ hiddenResultsCount } вынікаў не паказаны",
+        "Яшчэ ${ hiddenResultsCount } вынікаў не паказаны"
+      ]
+    },
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Я не на працоўным месцы і ў мяне няма поўнага доступу да пошты."
@@ -7826,6 +7834,9 @@
       "Domain": [
         "Дамен"
       ],
+      "Drag to reorder": [
+        "Перацягніце, каб змяніць парадак"
+      ],
       "Status": [
         "Статус"
       ],
@@ -10751,9 +10762,6 @@
         "Крок ${ step }",
         "Крок ${ step }",
         "Крок ${ step }"
-      ],
-      "Storage": [
-        "Сховішча"
       ],
       "Storage allocated to other users in this organisation": [
         "Сховішча, вылучанае для іншых карыстальнікаў у гэтай арганізацыі"
@@ -16891,11 +16899,23 @@
       "Based in Switzerland, GDPR compliant": [
         "Знаходзіцца ў Швейцарыі і адпавядае патрабаванням GDPR"
       ],
+      "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Але вы можаце палепшыць свой тарыфны план да **${ upsellPlanTitle }** і атрымаць скідку ў памеры ${ discountPercentString }. Гэта ўсяго на ${ relativePrice } у месяц больш, чым вы плаціце цяпер."
+      ],
+      "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }**.": [
+        "Але вы можаце палепшыць свой тарыфны план да **${ upsellPlanTitle }** і атрымаць скідку ў памеры ${ discountPercentString }."
+      ],
       "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Але вы можаце палепшыць свой тарыфны план да **${ upsellPlanTitle }** і разблакіраваць **${ unlockPlanTitle }**, а таксама больш сэрвісаў ${ BRAND_NAME }. Гэта ўсяго на ${ relativePrice } у месяц больш, чым вы плаціце цяпер."
       ],
       "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Але вы можаце палепшыць свой тарыфны план да **${ upsellPlanTitle }** і разблакіраваць **${ unlockPlanTitle }**, а таксама больш сэрвісаў ${ BRAND_NAME }."
+      ],
+      "But you can upgrade to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Але вы можаце палепшыць свой тарыфны план да **${ upsellPlanTitle }**. Гэта ўсяго на ${ relativePrice } у месяц больш, чым вы плаціце цяпер."
+      ],
+      "But you can upgrade to **${ upsellPlanTitle }**.": [
+        "Але вы можаце палепшыць да **${ upsellPlanTitle }**."
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
         "Працягваючы, вы пагаджаецеся з нашымі ${ termsAndConditionsLink } і ${ privacyPolicyLink }."

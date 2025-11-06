@@ -99,6 +99,9 @@
       "Add ${ BRAND_NAME } Account": [
         "Añadir cuenta de ${ BRAND_NAME }"
       ],
+      "Add ${ BRAND_NAME } address": [
+        "Añadir dirección de ${ BRAND_NAME }"
+      ],
       "Add account": [
         "Añadir una cuenta"
       ],
@@ -2110,6 +2113,12 @@
         "Añadir al calendario y marcar como pendiente"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } resultado más no mostrado",
+        "${ hiddenResultsCount } más resultados no mostrados"
+      ]
+    },
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Estoy fuera de la oficina con acceso limitado a mi correo."
@@ -2291,6 +2300,9 @@
       "1 user account": [
         "1 cuenta de usuario"
       ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB de almacenamiento: 40 veces tu plan actual"
+      ],
       "6 user accounts": [
         "6 cuentas de usuario"
       ],
@@ -2312,6 +2324,9 @@
       "Password health alerts": [
         "Alertas de estado de las contraseñas"
       ],
+      "Recover previous file versions": [
+        "Recupera las versiones previas de los archivos"
+      ],
       "Unlimited folders, labels and filters": [
         "Número ilimitado de carpetas, etiquetas y filtros"
       ],
@@ -2325,6 +2340,9 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Un solo pago de ${ amount }"
+      ],
+      "forever": [
+        "para siempre"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Se renueva después de 1 mes por ${ regularAmount }."
@@ -2557,6 +2575,9 @@
       ],
       "Application problem": [
         "Problema con la aplicación"
+      ],
+      "Black Friday": [
+        "Black Friday"
       ],
       "Bridge problem": [
         "Problema con el Bridge"
@@ -4885,6 +4906,9 @@
       "/month": [
         "/mes"
       ],
+      "2 TB of storage to share": [
+        "2 TB de almacenamiento para compartir"
+      ],
       "2 user accounts": [
         "2 cuentas de usuario"
       ],
@@ -4898,11 +4922,17 @@
     "Duo offer: Link": {
       "Get 4x more storage": [
         "Obtén 4 veces más almacenamiento"
+      ],
+      "Share your plan": [
+        "Comparte tu plan"
       ]
     },
     "Duo offer: Title": {
       "Get 4x more storage with ${ BRAND_NAME } Duo": [
         "Obtén 4 veces más almacenamiento con ${ BRAND_NAME } Duo"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "Compartir los beneficios de tu plan con ${ BRAND_NAME } Duo"
       ]
     },
     "Duration": {
@@ -7705,6 +7735,9 @@
       "Domain": [
         "Dominio"
       ],
+      "Drag to reorder": [
+        "Arrastrar para reordenar"
+      ],
       "Status": [
         "Estado"
       ],
@@ -9469,6 +9502,9 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Ve a tu proveedor de identidad, obtén los metadatos de SAML para ${ appName } e impórtalos aquí."
       ],
+      "Google Pay mark": [
+        "marca de Google Pay"
+      ],
       "Got it": [
         "Entendido"
       ],
@@ -10513,9 +10549,6 @@
         "Paso ${ step }",
         "Paso ${ step }"
       ],
-      "Storage": [
-        "Almacenamiento"
-      ],
       "Storage allocated to other users in this organisation": [
         "Almacenamiento asignado a otros usuarios de esta organización"
       ],
@@ -11221,6 +11254,9 @@
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Con una dirección ${ BRAND_NAME } cifrada, puedes usar todos los servicios ${ BRAND_NAME }."
+      ],
+      "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
+        "Con categorías de correo electrónico, los mensajes importantes llegan a tu bandeja de entrada principal. Todo lo demás se organiza en categorías."
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Con grupos puedes enviar correos electrónicos a todos sus miembros de manera rápida y sencilla"
@@ -12149,6 +12185,10 @@
         "${ nbYear } año",
         "${ nbYear } años"
       ],
+      "${ usedAddresses } of ${ maxAddresses } email address": [
+        "${ usedAddresses } de ${ maxAddresses } dirección de correo electrónico",
+        "${ usedAddresses } de ${ maxAddresses } direcciones de correo"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalmente. Vuelve a comprobarlo más tarde.)"
       ],
@@ -12370,6 +12410,9 @@
       ],
       "Billing cycle": [
         "Ciclo de facturación"
+      ],
+      "Black Friday": [
+        "Black Friday"
       ],
       "Block": [
         "Direcciones bloqueadas"
@@ -12632,6 +12675,9 @@
       "Email address": [
         "Dirección de correo electrónico"
       ],
+      "Email categories": [
+        "Categorías de correo electrónico"
+      ],
       "Email or username": [
         "Dirección de correo electrónico o nombre de usuario"
       ],
@@ -12733,6 +12779,9 @@
       ],
       "Get everything in Free, plus:": [
         "Obtén todo lo de la versión gratuita, además:"
+      ],
+      "Get the deal": [
+        "Aprovecha la oferta"
       ],
       "Gift code": [
         "Código promocional"
@@ -12901,6 +12950,9 @@
       ],
       "Method for importing metadata": [
         "Método para importar metadatos"
+      ],
+      "Minimum ${ MIN_CHARS } characters": [
+        "Mínimo ${ MIN_CHARS } caracteres"
       ],
       "Minimum number of characters": [
         "Número mínimo de caracteres"
@@ -13224,6 +13276,9 @@
       "Special characters": [
         "Caracteres especiales"
       ],
+      "Special Offer!": [
+        "¡Oferta especial!"
+      ],
       "Starred": [
         "Destacados"
       ],
@@ -13439,6 +13494,12 @@
     "Label (end date/advanced search)": {
       "To": [
         "Para"
+      ]
+    },
+    "Label BYOE": {
+      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
+        "${ usedBYOEAddresses } de ${ maxBYOEAddresses } dirección de correo electrónico",
+        "${ usedBYOEAddresses } de ${ maxBYOEAddresses } direcciones de correo"
       ]
     },
     "Label for adding a new custom domain": {
@@ -16478,11 +16539,23 @@
       "Based in Switzerland, GDPR compliant": [
         "Con sede en Suiza y conforme al RGPD"
       ],
+      "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Pero puedes obtener ${ discountPercentString } de descuento al mejorar a **${ upsellPlanTitle }**, es solo ${ relativePrice } adicional al mes."
+      ],
+      "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }**.": [
+        "Pero puedes obtener ${ discountPercentString } de descuento al mejorar a **${ upsellPlanTitle }**."
+      ],
       "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Pero puedes desbloquear **${ unlockPlanTitle }** y más servicios de ${ BRAND_NAME } al mejorar a **${ upsellPlanTitle }** — es solo ${ relativePrice } extra al mes."
       ],
       "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Pero puedes desbloquear **${ unlockPlanTitle }** y más servicios de ${ BRAND_NAME } al mejorar tu plan a **${ upsellPlanTitle }**."
+      ],
+      "But you can upgrade to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Pero puedes mejorar a **${ upsellPlanTitle }**, es solo ${ relativePrice } adicional al mes."
+      ],
+      "But you can upgrade to **${ upsellPlanTitle }**.": [
+        "Pero puedes mejorar a **${ upsellPlanTitle }**."
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
         "Al continuar, aceptas nuestros ${ termsAndConditionsLink } y ${ privacyPolicyLink }."
@@ -16701,6 +16774,9 @@
       "Advanced alias features (powered by SimpleLogin)": [
         "Funcionalidades avanzadas de alias (potenciado por SimpleLogin)"
       ],
+      "File attachments (up to 10GB)": [
+        "Archivos adjuntos (hasta 10GB)"
+      ],
       "One-time payment, lifetime deal": [
         "Pago único, oferta de por vida"
       ],
@@ -16854,6 +16930,9 @@
       ]
     },
     "Payments": {
+      "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
+        "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Cantidad a pagar después de la prueba el ${ formattedDate }"
       ],
@@ -16902,6 +16981,9 @@
       "Offer unavailable": [
         "Oferta no disponible"
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Método de pago necesario para que la suscripción se active después de que termine la prueba."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiva primero la suscripción para disminuir la cantidad de complementos."
       ],
@@ -16927,6 +17009,17 @@
         "El cupón es válido por ${ couponRedemptions } renovación.",
         "El cupón es válido para ${ couponRedemptions } renovaciones."
       ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "El precio especial de descuento es válido para el primer ${ subscriptionLength } mes.",
+        "El precio especial de descuento es válido para los primeros ${ subscriptionLength } meses."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "El precio con descuento especial es válido para el primer mes. El cupón es válido para ${ couponRedemptions } renovación. Después se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puedes cancelar en cualquier momento.",
+        "El precio con descuento especial es válido para el primer mes. El cupón es válido para ${ couponRedemptions } renovaciones. Después se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puedes cancelarlo en cualquier momento."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "La oferta especial es válida durante el primer mes. Después se renovará automáticamente por ${ renewPriceStr } cada mes. Puedes cancelarla en cualquier momento."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "El precio especial de descuento de ${ priceWithDiscount } es válido para el primer ${ subscriptionLength } mes",
         "El precio especial de descuento de ${ priceWithDiscount } es válido para los primeros ${ subscriptionLength } meses."
@@ -16951,6 +17044,9 @@
       "This number will be shown on all future invoices": [
         "Este número se mostrará en todas las futuras facturas"
       ],
+      "This offer is not available with your current plan.": [
+        "Esta oferta no está disponible con tu plan actual."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Este se convertirá en tu nuevo método de pago por defecto para todas las futuras renovaciones."
       ],
@@ -16962,6 +17058,12 @@
       ],
       "VAT number": [
         "Número de IVA"
+      ],
+      "You already have a subscription to this plan.": [
+        "Ya tienes una suscripción a este plan."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Ya tienes una suscripción a este plan. Puedes cambiar tu suscripción en ${ subscriptionPlatform }."
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Se te cobrará ${ amountToCharge } a tu método de pago seleccionado."
@@ -16977,6 +17079,9 @@
       ],
       "Your payment is still being processed": [
         "Tu pago aún está siendo procesado."
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "Tu suscripción tiene un descuento existente. Al cambiarte a esta nueva promoción, el descuento existente ya no se aplicará."
       ]
     },
     "Payments.Error": {
@@ -19327,6 +19432,9 @@
       "Advanced security features": [
         "Características de seguridad avanzadas"
       ],
+      "Advanced security features by ${ BRAND_NAME }": [
+        "Funciones de seguridad avanzadas por ${ BRAND_NAME }"
+      ],
       "Advanced sharing security": [
         "Seguridad avanzada para compartir archivos"
       ],
@@ -19366,6 +19474,9 @@
       "ISO 27001 certified": [
         "Certificado ISO 27001"
       ],
+      "Mail, calendar, file storage, and VPN included": [
+        "Correo electrónico, calendario, almacenamiento de archivos y VPN incluidos"
+      ],
       "Open source and audited": [
         "Código abierto y auditado"
       ],
@@ -19386,6 +19497,9 @@
       ],
       "The only email service with:": [
         "El único servicio de correo electrónico con:"
+      ],
+      "The only password manager with:": [
+        "El único gestor de contraseñas con:"
       ],
       "Unlimited passwords": [
         "Número ilimitado de contraseñas"
@@ -21694,6 +21808,9 @@
       ],
       "Email breaches": [
         "Vulneraciones de correo electrónico"
+      ],
+      "Email categories": [
+        "Categorías de correo electrónico"
       ],
       "Email composer": [
         "Editor de correo"

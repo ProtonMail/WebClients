@@ -1712,6 +1712,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe-skriveassistent (for ${ quantity } bruker)",
+        "${ BRAND_NAME } Scribe-skriveassistent (for ${ quantity } brukere)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } ekstra egendefinert domene",
         "${ domains } ekstra egendefinerte domener"
@@ -1719,6 +1723,10 @@
       "${ ips } server": [
         "${ ips } tjener",
         "${ ips } tjenere"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } KI-assistent (for ${ quantity } bruker)",
+        "${ LUMO_APP_NAME } KI-assistent (for ${ quantity } brukere)"
       ],
       "${ price } per dedicated server": [
         "${ price } per dedikerte tjener"
@@ -1731,6 +1739,10 @@
       ],
       "${ price } per user": [
         "${ price } per bruker"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } egendefinert domene",
+        "${ quantity } egendefinerte domener"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } lisens",
@@ -2111,6 +2123,12 @@
     "Auto import invitations setting": {
       "Add to calendar and mark as pending": [
         "Legg til kalender og merk som ventende"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } resultat til som ikke vises",
+        "${ hiddenResultsCount } resultater til som ikke vises"
       ]
     },
     "Autoresponse": {
@@ -7136,6 +7154,9 @@
       "${ VPN_CONNECTIONS } devices": [
         "${ VPN_CONNECTIONS } enheter"
       ],
+      "@pm.me address": [
+        "@pm.me-adresse"
+      ],
       "Ad-blocker and malware protection": [
         "Annonseblokkering og skadevarebeskyttelse"
       ],
@@ -7725,6 +7746,9 @@
       ],
       "Domain": [
         "Domene"
+      ],
+      "Drag to reorder": [
+        "Dra for å omorganisere"
       ],
       "Status": [
         "Status"
@@ -10542,9 +10566,6 @@
       "Step ${ step }": [
         "Trinn ${ step }",
         "Trinn ${ step }"
-      ],
-      "Storage": [
-        "Lagring"
       ],
       "Storage allocated to other users in this organisation": [
         "Lagringsplass allokert til andre brukere i denne organisasjonen"
@@ -16560,11 +16581,23 @@
       "Based in Switzerland, GDPR compliant": [
         "Basert i Sveits, GDPR-kompatibel"
       ],
+      "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Men du kan få ${ discountPercentString } rabatt ved å oppgradere til **${ upsellPlanTitle }** - det er bare ${ relativePrice } ekstra per måned."
+      ],
+      "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }**.": [
+        "Men du kan få ${ discountPercentString } rabatt ved å oppgradere til **${ upsellPlanTitle }**."
+      ],
       "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Men du kan låse opp **${ unlockPlanTitle }** og flere ${ BRAND_NAME }-tjenester ved å oppgradere til **${ upsellPlanTitle }** — det er kun ${ relativePrice } ekstra per måned."
       ],
       "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Men du kan låse opp **${ unlockPlanTitle }** og flere ${ BRAND_NAME }-tjenester ved å oppgradere til **${ upsellPlanTitle }**."
+      ],
+      "But you can upgrade to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Men du kan oppgradere til **${ upsellPlanTitle }** — det er bare ${ relativePrice } ekstra per måned."
+      ],
+      "But you can upgrade to **${ upsellPlanTitle }**.": [
+        "Men du kan oppgradere til **${ upsellPlanTitle }**."
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
         "Ved å fortsette godtar du våre ${ termsAndConditionsLink } og ${ privacyPolicyLink }."
@@ -20086,6 +20119,9 @@
       "${ app } storage": [
         "${ app }-lagring"
       ],
+      "${ app } storage used": [
+        "Lagringsplass brukt ${ app }"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% full"
       ],
@@ -20106,6 +20142,9 @@
       ],
       "Get more storage": [
         "Få mer lagringskapasitet"
+      ],
+      "Storage used": [
+        "Lagringsplass brukt"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "For å fortsette å bruke ${ BRAND_NAME }-produkter må du frigjøre plass eller ${ upgrade }"
