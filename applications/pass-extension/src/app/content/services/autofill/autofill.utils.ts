@@ -1,6 +1,7 @@
 import type { FieldElement } from 'proton-pass-extension/app/content/services/form/field';
 
 import type { FieldType } from '@proton/pass/fathom/labels';
+import { isActiveElement } from '@proton/pass/utils/dom/active-element';
 import { isInputElement, isSelectElement } from '@proton/pass/utils/dom/predicates';
 import { seq } from '@proton/pass/utils/fp/promises';
 import { safeAsyncCall } from '@proton/pass/utils/fp/safe-call';
@@ -10,8 +11,6 @@ export type AutofillOptions = {
     paste?: boolean;
     type?: FieldType;
 };
-
-const isFocused = (el: HTMLElement) => el === document.activeElement;
 
 /** Dispatch events asynchronously in sequence to handle timing-sensitive websites.
  * Some sites require time gaps between events to properly handle them, and using
@@ -34,7 +33,7 @@ const autofillInputElement = async (input: HTMLInputElement, data: string, optio
     const dispatch = dispatchEvents(input);
 
     if (typeof input?.click === 'function') input.click();
-    if (isFocused(input)) await dispatch([new FocusEvent('focusin'), new FocusEvent('focus')]);
+    if (isActiveElement(input)) await dispatch([new FocusEvent('focusin'), new FocusEvent('focus')]);
     else input.focus({ preventScroll: true });
 
     if (options?.paste) {
@@ -63,7 +62,7 @@ const autofillInputElement = async (input: HTMLInputElement, data: string, optio
         await dispatch([new Event('input', { bubbles: true }), new Event('change', { bubbles: true })]);
     }
 
-    if (isFocused(input)) input.blur();
+    if (isActiveElement(input)) input.blur();
     else await dispatch([new FocusEvent('focusout'), new FocusEvent('blur')]);
 };
 
@@ -74,7 +73,7 @@ const autofillSelectElement = async (select: HTMLSelectElement, data: string) =>
     if (match) {
         const dispatch = dispatchEvents(select);
 
-        if (isFocused(select)) await dispatch([new FocusEvent('focusin'), new FocusEvent('focus')]);
+        if (isActiveElement(select)) await dispatch([new FocusEvent('focusin'), new FocusEvent('focus')]);
         else select.focus();
 
         Array.from(select.options).forEach((option) => (option.selected = false));
@@ -83,7 +82,7 @@ const autofillSelectElement = async (select: HTMLSelectElement, data: string) =>
         select.value = match.value;
         await dispatch([new Event('change', { bubbles: true })]);
 
-        if (isFocused(select)) select.blur();
+        if (isActiveElement(select)) select.blur();
         else await dispatch([new FocusEvent('focusout'), new FocusEvent('blur')]);
     }
 };

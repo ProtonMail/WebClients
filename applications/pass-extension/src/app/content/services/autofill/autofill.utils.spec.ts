@@ -25,6 +25,7 @@ describe('Autofill utils', () => {
         inputFocus = jest.spyOn(input, 'focus').mockImplementation();
         inputBlur = jest.spyOn(input, 'blur').mockImplementation();
         Object.defineProperty(document, 'activeElement', { value: null, writable: true });
+        Object.defineProperty(document, 'hasFocus', { value: () => true, writable: true });
     });
 
     describe('Event sequence: unfocused input', () => {
