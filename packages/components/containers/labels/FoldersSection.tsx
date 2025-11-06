@@ -149,13 +149,8 @@ export default function FoldersSection({ showPromptOnAction = false }: Props) {
                 </>
             )}
 
-            {confirmModal((props) => (
-                <ConfirmSortModal
-                    modalProps={props}
-                    onReject={props.onReject}
-                    onResolve={props.onResolve}
-                    type="folder"
-                />
+            {confirmModal(({ onResolve, onReject, ...props }) => (
+                <ConfirmSortModal modalProps={props} onReject={onReject} onResolve={onResolve} type="folder" />
             ))}
         </SettingsSection>
     );

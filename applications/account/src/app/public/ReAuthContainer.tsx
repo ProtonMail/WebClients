@@ -332,16 +332,16 @@ const ReAuthContainer = ({
 
     return (
         <>
-            {ssoAuthModal((props) => {
+            {ssoAuthModal(({ onResolve, onReject, ...props }) => {
                 return (
                     <SSOAuthModal
                         {...props}
                         api={uidApi}
                         scope="locked"
                         config={queryUnlock()}
-                        onSuccess={() => props.onResolve()}
-                        onClose={() => props.onReject()}
-                        onCancel={() => props.onReject()}
+                        onSuccess={() => onResolve()}
+                        onClose={() => onReject()}
+                        onCancel={() => onReject()}
                     />
                 );
             })}

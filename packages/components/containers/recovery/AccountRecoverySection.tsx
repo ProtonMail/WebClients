@@ -58,16 +58,8 @@ export const AccountRecoverySection = ({ divider = true }: { divider?: boolean }
 
     return (
         <>
-            {authModal((props) => {
-                return (
-                    <AuthModal
-                        {...props}
-                        scope="password"
-                        config={props.config}
-                        onCancel={props.onReject}
-                        onSuccess={props.onResolve}
-                    />
-                );
+            {authModal(({ onResolve, onReject, ...props }) => {
+                return <AuthModal {...props} scope="password" onCancel={onReject} onSuccess={onResolve} />;
             })}
             <SettingsSection>
                 <SettingsDivider enabled={divider}>
