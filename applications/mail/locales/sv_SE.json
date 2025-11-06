@@ -1496,7 +1496,8 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel"
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -2016,6 +2017,12 @@
       ],
       "Sender verification passed": [
         "Avsändarverifiering godkänd"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } fler resultat visas inte",
+        "${ hiddenResultsCount } fler resultat visas inte"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -5587,6 +5594,11 @@
         "Obegränsat antal hide-my-email-alias"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Blixtsnabb hastighet"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Något gick fel vid autentisering med din säkerhetsnyckel. Försök igen."
@@ -7486,8 +7498,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -7970,8 +7981,8 @@
       "Saved: ${ dateString }": [
         "Sparad: ${ dateString }"
       ],
-      "Saving draft…": [
-        "Sparar utkast …"
+      "Saving draft": [
+        "Sparar utkast"
       ],
       "Scan the QR code with your mobile device": [
         "Skanna QR-koden med din mobila enhet"
@@ -7979,8 +7990,8 @@
       "Scheduled send of this message will be canceled.": [
         "Schemalagd sändning av detta meddelande kommer att avbrytas."
       ],
-      "Scheduling message...": [
-        "Schemalägger meddelande …"
+      "Scheduling message": [
+        "Schemalägger meddelande"
       ],
       "Scribe panel": [
         "Scribe-panel"
@@ -8025,8 +8036,8 @@
       "Sending": [
         "Skickar"
       ],
-      "Sending message...": [
-        "Skickar meddelande …"
+      "Sending message": [
+        "Skickar meddelande"
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Att skicka meddelanden från @pm.me-adress är en betald funktion. Ditt meddelande kommer att skickas från din standardadress ${ email }"
@@ -8586,6 +8597,9 @@
       ],
       "Week": [
         "Vecka"
+      ],
+      "We’ve upgraded your ${ DRIVE_APP_NAME } storage to 5GB. Keep your important files and photos encrypted.": [
+        "Vi har uppgraderat ditt ${ DRIVE_APP_NAME } lagringsutrymme till 5 GB. Behåll dina viktiga filer och foton krypterade."
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "När vill du att ditt meddelande ska tas bort automatiskt från mottagarens inkorg och din mapp “Skickat“?"
@@ -12242,6 +12256,12 @@
       "Timeout exceeded": [
         "Timeout överskriden"
       ],
+      "VAT": [
+        "Moms"
+      ],
+      "VAT number": [
+        "Momsnummer"
+      ],
       "You already have a subscription to this plan.": [
         "Du har redan en prenumeration på detta paket."
       ],
@@ -12328,6 +12348,9 @@
       "Add EIN": [
         "Lägg till EIN"
       ],
+      "Add VAT number": [
+        "Lägg till momsnummer"
+      ],
       "Business Number": [
         "Företagsnummer"
       ],
@@ -12339,6 +12362,9 @@
       ],
       "Edit EIN": [
         "Redigera EIN"
+      ],
+      "Edit VAT number": [
+        "Redigera momsnummer"
       ],
       "EIN": [
         "EIN"
@@ -15924,6 +15950,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Din gratis provperiod slutar den ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Din provperiod slutar den ${ textDate }. Du debiteras inte om du avbryter före ${ textDate }. ${ action }"
       ]
     },
     "WeekDay": {

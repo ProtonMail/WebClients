@@ -3255,9 +3255,6 @@
       "External accounts are not supported yet": [
         "尚不支持外部账户"
       ],
-      "External invitations are not available yet.": [
-        "外部邀请尚不可用。"
-      ],
       "External invitations are temporarily disabled.": [
         "外部邀请暂时被禁用。"
       ],
@@ -4047,6 +4044,11 @@
         "无限制地 hide-my-email"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "闪电般的速度"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "使用安全密钥进行身份验证时出错，请重试。"
@@ -4790,12 +4792,6 @@
       "Anonymous": [
         "匿名"
       ],
-      "Anyone with this link can access your file.": [
-        "任何持有此链接的人都能下载您的文件。"
-      ],
-      "Anyone with this link can access your folder.": [
-        "任何持有此链接的人都能下载您的文件夹。"
-      ],
       "Apr": [
         "四月"
       ],
@@ -4964,12 +4960,6 @@
       "Creating": [
         "正在创建"
       ],
-      "Creating link to file": [
-        "正在创建文件链接"
-      ],
-      "Creating link to folder": [
-        "正在创建文件夹链接"
-      ],
       "Credit for the unused portion of your previous plan subscription": [
         "根据当前账户等级的剩余有效时间折算返还的余额"
       ],
@@ -5137,15 +5127,6 @@
       ],
       "Failed": [
         "失败"
-      ],
-      "Failed to generate a secure link. The reason is: ${ error }": [
-        "无法生成安全链接。原因是：${ error }"
-      ],
-      "Failed to generate a secure link. Try again later": [
-        "无法生成安全链接。稍后再试"
-      ],
-      "Failed to open a secure link. The reason is: ${ error }": [
-        "无法打开安全链接，原因是：${ error }"
       ],
       "Feb": [
         "二月"
@@ -5507,12 +5488,6 @@
       "One time import": [
         "一次性导入"
       ],
-      "Only the people with the link and the password can access this file.": [
-        "只有同时知道链接和密码的人才能访问此文件。"
-      ],
-      "Only the people with the link and the password can access this folder.": [
-        "只有同时知道链接和密码的人才能访问此文件夹。"
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "打开指南并查看推荐操作和实用链接。"
       ],
@@ -5638,12 +5613,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "请稍候，我们正在寻找包含用非活动密钥加密数据的联系人。"
-      ],
-      "Preparing link to file": [
-        "正在准备文件链接"
-      ],
-      "Preparing link to folder": [
-        "正在准备文件夹链接"
       ],
       "Preview failed to be loaded": [
         "预览加载失败"
@@ -5950,9 +5919,6 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此链接可能使用了欺骗性域名，请确认可靠性后再打开。"
-      ],
-      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "此链接是通过旧版本网盘创建的，因此无法更改。如需调整设置，请删除此链接后重新创建。"
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "这意味着您的互联网服务提供商和您访问的网站都无法将您的个人身份信息与在线行为相关联。"
@@ -8744,9 +8710,6 @@
       "Public link access updated": [
         "公共链接访问已更新"
       ],
-      "Public link update access failed ": [
-        "公共链接更新访问失败 "
-      ],
       "Root folder failed to be loaded": [
         "加载根目录失败"
       ],
@@ -8777,9 +8740,6 @@
       "The item was successfully added to your drive": [
         "项目已成功添加到您的驱动器"
       ],
-      "The link to your item failed to be deleted": [
-        "共享链接删除失败"
-      ],
       "The link to your item was deleted": [
         "共享链接已删除"
       ],
@@ -8794,9 +8754,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "您的旧文件将在 72 小时内删除"
-      ],
-      "Your settings failed to be saved": [
-        "您的设置保存失败"
       ],
       "Your settings have been changed successfully": [
         "设置已更改"
@@ -9507,9 +9464,6 @@
       ],
       "Select state": [
         "请选择省份"
-      ],
-      "Set date": [
-        "设置日期"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "分享你认为可以使 ${ BRAND_NAME } 变得更好的内容"
@@ -10941,28 +10895,6 @@
         "${ seconds } 秒"
       ]
     },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } 小时"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt }.5 小时"
-      ],
-      "${ minutes } min": [
-        "${ minutes } 分钟"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } 小时"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt }.5 小时"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } 分钟"
-      ]
-    },
     "Title": {
       "# of downloads": [
         "下载数"
@@ -11611,9 +11543,6 @@
       ],
       "Select link expiration date": [
         "选择链接失效日期"
-      ],
-      "Select link expiration time": [
-        "选择链接失效时间"
       ],
       "Set recovery methods": [
         "设置恢复方式"

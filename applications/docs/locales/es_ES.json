@@ -672,6 +672,12 @@
       "Search recent documents": [
         "Buscar documentos recientes"
       ],
+      "Search recent spreadsheets": [
+        "Buscar hojas de cálculo recientes"
+      ],
+      "Search recents": [
+        "Buscar recientes"
+      ],
       "See how": [
         "Ver cómo"
       ],
@@ -761,6 +767,9 @@
       ],
       "Take out of trash": [
         "Restaurar de la papelera"
+      ],
+      "Toggle debug mode": [
+        "Alternar modo de depuración"
       ],
       "Trashing...": [
         "Eliminando..."
@@ -1071,6 +1080,12 @@
         "Evento no admitido"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } resultado más no mostrado",
+        "${ hiddenResultsCount } más resultados no mostrados"
+      ]
+    },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada ${ renewCycle } meses. No se te cobrará nada si cancelas antes del ${ formattedDate }."
@@ -1120,6 +1135,9 @@
       "1 user account": [
         "1 cuenta de usuario"
       ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB de almacenamiento: 40 veces tu plan actual"
+      ],
       "6 user accounts": [
         "6 cuentas de usuario"
       ],
@@ -1141,6 +1159,9 @@
       "Password health alerts": [
         "Alertas de estado de las contraseñas"
       ],
+      "Recover previous file versions": [
+        "Recupera las versiones previas de los archivos"
+      ],
       "Unlimited folders, labels and filters": [
         "Número ilimitado de carpetas, etiquetas y filtros"
       ],
@@ -1154,6 +1175,9 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Un solo pago de ${ amount }"
+      ],
+      "forever": [
+        "para siempre"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Se renueva después de 1 mes por ${ regularAmount }."
@@ -1279,6 +1303,9 @@
       ],
       "Application problem": [
         "Problema con la aplicación"
+      ],
+      "Black Friday": [
+        "Black Friday"
       ],
       "Bridge problem": [
         "Problema con el Bridge"
@@ -2711,6 +2738,9 @@
       "/month": [
         "/mes"
       ],
+      "2 TB of storage to share": [
+        "2 TB de almacenamiento para compartir"
+      ],
       "2 user accounts": [
         "2 cuentas de usuario"
       ],
@@ -2724,11 +2754,17 @@
     "Duo offer: Link": {
       "Get 4x more storage": [
         "Obtén 4 veces más almacenamiento"
+      ],
+      "Share your plan": [
+        "Comparte tu plan"
       ]
     },
     "Duo offer: Title": {
       "Get 4x more storage with ${ BRAND_NAME } Duo": [
         "Obtén 4 veces más almacenamiento con ${ BRAND_NAME } Duo"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "Compartir los beneficios de tu plan con ${ BRAND_NAME } Duo"
       ]
     },
     "Email body for invitation": {
@@ -3617,6 +3653,11 @@
         "Alias hide-my-email ilimitados"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Velocidades ultrarrápidas"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Error al autenticar con tu clave de seguridad. Inténtalo de nuevo."
@@ -4262,6 +4303,9 @@
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Los anunciantes rastrean tu navegación para mostrar anuncios específicos. ${ VPN_APP_NAME } bloquea rastreadores y anuncios, lo que hace que tu conexión sea más rápida y mejora tu experiencia en línea."
       ],
+      "All": [
+        "Todas"
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Todo (${ totalFoldersCount } carpeta)",
         "Todo (${ totalFoldersCount } carpetas)"
@@ -4431,6 +4475,9 @@
       "Document owner has the password": [
         "El propietario del documento tiene la contraseña."
       ],
+      "Documents": [
+        "Documentos"
+      ],
       "Downgrade": [
         "Pasar a un plan inferior"
       ],
@@ -4564,7 +4611,7 @@
         "Bloqueo geográfico"
       ],
       "Get email updates for comments and suggestions added to your documents.": [
-        "Reciba actualizaciones por correo electrónico sobre comentarios y sugerencias añadidos a sus documentos."
+        "Recibe actualizaciones por correo electrónico sobre comentarios y sugerencias añadidos a tus documentos."
       ],
       "Get Notified About Comments": [
         "Recibir notificaciones sobre los comentarios"
@@ -4964,6 +5011,9 @@
       ],
       "Something went wrong": [
         "Ha ocurrido un error."
+      ],
+      "Spreadsheets": [
+        "Hojas de cálculo"
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Mantente en línea sin ningún esfuerzo al activar los siguientes ajustes VPN:"
@@ -7812,6 +7862,9 @@
       "Advanced account protection": [
         "Protección de cuentas avanzada"
       ],
+      "File attachments (up to 10GB)": [
+        "Archivos adjuntos (hasta 10GB)"
+      ],
       "Team policies": [
         "Políticas de equipo"
       ]
@@ -7881,6 +7934,17 @@
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "El cupón es válido por ${ couponRedemptions } renovación.",
         "El cupón es válido para ${ couponRedemptions } renovaciones."
+      ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "El precio especial de descuento es válido para el primer ${ subscriptionLength } mes.",
+        "El precio especial de descuento es válido para los primeros ${ subscriptionLength } meses."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "El precio con descuento especial es válido para el primer mes. El cupón es válido para ${ couponRedemptions } renovación. Después se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puedes cancelar en cualquier momento.",
+        "El precio con descuento especial es válido para el primer mes. El cupón es válido para ${ couponRedemptions } renovaciones. Después se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puedes cancelarlo en cualquier momento."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "La oferta especial es válida durante el primer mes. Después se renovará automáticamente por ${ renewPriceStr } cada mes. Puedes cancelarla en cualquier momento."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "El precio especial de descuento de ${ priceWithDiscount } es válido para el primer ${ subscriptionLength } mes",
@@ -8486,9 +8550,6 @@
       ]
     },
     "sheets_2025:Info": {
-      "Creating new spreadsheet...": [
-        "Creando una nueva hoja de cálculo..."
-      ],
       "Detect automatically": [
         "Detectar automáticamente"
       ],

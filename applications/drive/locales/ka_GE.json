@@ -3407,9 +3407,6 @@
       "External accounts are not supported yet": [
         "გარე ანგარიშები ჯერ მხარდაჭერილი არაა"
       ],
-      "External invitations are not available yet.": [
-        "გარე მოსაწვევები ჯერ ხელმისაწვდომი არაა."
-      ],
       "External invitations are temporarily disabled.": [
         "გარე მოსაწვევები დროებით გათიშულია."
       ],
@@ -4269,6 +4266,11 @@
         "განუსაზღვრელი რაოდენობის მეტსახელი Hide-my-email-სთვის"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "ჩქაროსნული კავშირი"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "თქვენი უსაფრთხოების გასაღებით ავთენტიკაციისას რაღაც არასწორად წავიდა. კიდევ სცადეთ."
@@ -5054,12 +5056,6 @@
       "Anonymous": [
         "ანონიმური"
       ],
-      "Anyone with this link can access your file.": [
-        "ფაილთან წვდომა ექნება ამ ბმულის ყველა მქონეს."
-      ],
-      "Anyone with this link can access your folder.": [
-        "საქაღალდესთან წვდომა ექნება ამ ბმულის ყველა მქონეს."
-      ],
       "Apr": [
         "აპრ"
       ],
@@ -5226,12 +5222,6 @@
       ],
       "Creating": [
         "შექმნა"
-      ],
-      "Creating link to file": [
-        "ფაილამდე ბმულის შექმნა"
-      ],
-      "Creating link to folder": [
-        "საქაღალდემდე ბმულის შექმნა"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "წინა გამოწერის დარჩენილი ნაწილის კრედიტი"
@@ -5408,15 +5398,6 @@
       ],
       "Failed": [
         "წარუმატებელია"
-      ],
-      "Failed to generate a secure link. The reason is: ${ error }": [
-        "დაცული ბმულის გენერაციის შეცდომა. მიზეზი: ${ error }"
-      ],
-      "Failed to generate a secure link. Try again later": [
-        "დაცული ბმულის გენერაციის შეცდომა. თავიდან სცადეთ"
-      ],
-      "Failed to open a secure link. The reason is: ${ error }": [
-        "დაცული ბმულის გახსნის შეცდომა. მიზეზი: ${ error }"
       ],
       "Feb": [
         "თებ"
@@ -5789,12 +5770,6 @@
       "One time import": [
         "ერთჯერადი შემოტანა"
       ],
-      "Only the people with the link and the password can access this file.": [
-        "ამ ფაილთან წვდომა, მხოლოდ, მას აქვს, ვისაც ეს ბმული და მისი პაროლი გააჩნია."
-      ],
-      "Only the people with the link and the password can access this folder.": [
-        "ამ საქაღლდესთნ წვდომა, მხოლოდ, მას აქვს, ვისაც ეს ბმული და მისი პაროლი გააჩნია."
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "გახსენით დამხმარე რეკომენდებული ქმედებებისა და სასარგებლო ბმულებისთვის."
       ],
@@ -5921,12 +5896,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "მოითმინეთ, მიმდინარეობს არააქტიური გასაღებით დაშიფრული მონაცემების ძებნა."
-      ],
-      "Preparing link to file": [
-        "ფაილამდე ბმულის მომზადება"
-      ],
-      "Preparing link to folder": [
-        "საქაღალდემდე ბმულის მომზადება"
       ],
       "Preview failed to be loaded": [
         "მინიატურის ჩატვირთვის შეცდომა"
@@ -6213,9 +6182,6 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "ეს ბმული შეიძლება ჰომოგრაფიულ შეტევას წარმოადგენდეს. შეამოწმეთ ბმული და დარწმუნდით, რომ ის უსაფრთხოა."
-      ],
-      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "ეს ბმული Drive-ის ძველ შეიქმნა და ვერ შეიცვლება. პარამტრების შესაცვლელად წაშალეთ ეს ბმული და შექმენით ახალი."
       ],
       "This month": [
         "ამ თვეში"
@@ -9071,9 +9037,6 @@
       "Public link access updated": [
         "საჯარო ბმულის წვდომა განახლდა"
       ],
-      "Public link update access failed ": [
-        "საჯარო ბმულის წვდომის განახლება ჩავარდა "
-      ],
       "Root folder failed to be loaded": [
         "Root საქაღალდის ჩატვირთვის შეცდომა"
       ],
@@ -9113,9 +9076,6 @@
       "The item was successfully added to your drive": [
         "ელემენტი წარმატებით დაემატა თქვენს Drive-ზე"
       ],
-      "The link to your item failed to be deleted": [
-        "თქვენს ელემენტამდე ბმულის წაშლის შეცდომა"
-      ],
       "The link to your item was deleted": [
         "ბმული თქვენს ელემენტამდე წაიშალა"
       ],
@@ -9133,9 +9093,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "თქვენი ძველი ფაილები 72 საათში წაიშლება"
-      ],
-      "Your settings failed to be saved": [
-        "პარამეტრების შენახვის შეცდომა"
       ],
       "Your settings have been changed successfully": [
         "პარამეტრები წარმატებით შეიცვალა"
@@ -9990,9 +9947,6 @@
       ],
       "Select state": [
         "აირჩიეთ შტატი"
-      ],
-      "Set date": [
-        "თარიღის დაყენება"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "გაგვიზიარეთ, როგორ შეგვიძლია, ${ BRAND_NAME } უკეთესი გავხადოთ"
@@ -11499,34 +11453,6 @@
         "${ seconds } წამი"
       ]
     },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } საათი",
-        "${ hours } საათი"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt }.5 სთ",
-        "${ hoursInt }.5 სთ"
-      ],
-      "${ minutes } min": [
-        "${ minutes } წთ",
-        "${ minutes } წთ"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } საათი",
-        "${ hours } საათი"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt }.5 საათი",
-        "${ hoursInt }.5 საათი"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } წუთი",
-        "${ minutes } წუთი"
-      ]
-    },
     "Title": {
       "# of downloads": [
         "გადმოწერების #"
@@ -12241,9 +12167,6 @@
       ],
       "Select link expiration date": [
         "აირჩიეთ ბმულის ვადის თარიღი"
-      ],
-      "Select link expiration time": [
-        "აირჩიეთ ბმულის ვადის დრო"
       ],
       "Set recovery methods": [
         "აღდგენის მეთოდების დაყენება"

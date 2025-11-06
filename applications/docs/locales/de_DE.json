@@ -1077,6 +1077,12 @@
         "Nicht unterstützter Termin"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } weiteres Ergebnis nicht angezeigt",
+        "${ hiddenResultsCount } weitere Ergebnisse nicht angezeigt"
+      ]
+    },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Nachdem deine Testversion am ${ formattedDate } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich alle ${ renewCycle } Monate automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
@@ -3644,6 +3650,11 @@
         "Unbegrenzte hide-my-email-Aliasse"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Blitzschnelle Geschwindigkeiten"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Bei der Authentifizierung mit Ihrem Sicherheitsschlüssel ist ein Fehler aufgetreten. Bitte erneut versuchen."
@@ -4597,7 +4608,7 @@
         "Geoblockierung"
       ],
       "Get email updates for comments and suggestions added to your documents.": [
-        "Erhalte E-Mail-Updates für Kommentare und Vorschläge, die zu deinen Dokumenten hinzugefügt wurden."
+        "E-Mail-Updates für Kommentare und Vorschläge erhalten, die zu deinen Dokumenten hinzugefügt wurden."
       ],
       "Get Notified About Comments": [
         "Über Kommentare benachrichtigt werden"
@@ -8536,9 +8547,6 @@
       ]
     },
     "sheets_2025:Info": {
-      "Creating new spreadsheet...": [
-        "Neue Tabelle wird erstellt..."
-      ],
       "Detect automatically": [
         "Automatisch erkennen"
       ],
@@ -8886,6 +8894,9 @@
       "${ app } storage": [
         "${ app }-Speicherplatz"
       ],
+      "${ app } storage used": [
+        "${ app } Speicher genutzt"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage } % voll."
       ],
@@ -8897,6 +8908,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Für alle ${ BRAND_NAME }-Dienste"
+      ],
+      "Storage used": [
+        "Speicher genutzt"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Um ${ BRAND_NAME }-Produkte weiterhin nutzen zu können, schaffe Speicherplatz oder führe ein ${ upgrade } durch."

@@ -783,6 +783,9 @@
       "Get more servers": [
         "Obter mais servidores"
       ],
+      "Get more storage": [
+        "Obter mais armazenamento"
+      ],
       "Get Pass Family": [
         "Obter Pass Family"
       ],
@@ -1712,6 +1715,13 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente de escrita da ${ BRAND_NAME } Scribe"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Assistente de escrita da ${ BRAND_NAME } Scribe (para ${ quantity } usuário)",
+        "Assistente de escrita da ${ BRAND_NAME } Scribe (para ${ quantity } usuários)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } domínio personalizado adicional",
         "${ domains } domínios personalizados adicionais"
@@ -1719,6 +1729,9 @@
       "${ ips } server": [
         "${ ips } servidor",
         "${ ips } servidores"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Assistente de IA da ${ LUMO_APP_NAME }"
       ],
       "${ price } per dedicated server": [
         "${ price } por servidor dedicado"
@@ -1731,6 +1744,10 @@
       ],
       "${ price } per user": [
         "${ price } por usuário"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domínio personalizado",
+        "${ quantity } domínios personalizados"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } licença do ${ LUMO_APP_NAME }",
@@ -2111,6 +2128,12 @@
     "Auto import invitations setting": {
       "Add to calendar and mark as pending": [
         "Adicionar ao calendário e marcar como pendentes"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "Mais ${ hiddenResultsCount } resultado não exibido",
+        "Mais ${ hiddenResultsCount } resultados não exibidos"
       ]
     },
     "Autoresponse": {
@@ -2540,6 +2563,9 @@
       ],
       "We discuss how to change the external and local IP addresses of your Windows device.": [
         "Discutimos como mudar os endereços de IP externos e locais do seu dispositivo Windows."
+      ],
+      "What is an email alias?": [
+        "O que é um alias de e-mail?"
       ],
       "Which VPN protocol is the best?": [
         "Qual protocolo VPN é o melhor?"
@@ -4329,6 +4355,23 @@
         "A cada ${ interval } dias, ${ untilString }"
       ]
     },
+    "Dashboard": {
+      "Get more from your ${ planTitle } subscription.": [
+        "Aproveite ao máximo sua assinatura do ${ planTitle }."
+      ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
+        "Mantenha seus arquivos, fotos e documentos seguros com o armazenamento em nuvem gratuito de ${ maxDriveSpace }."
+      ],
+      "Set secure passwords without the hassle.": [
+        "Defina senhas seguras sem complicações"
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to ${ VPN_APP_NAME } and other privacy services.": [
+        "Com ${ planTitlePlusMaybeBrand }, você obtém acesso gratuito ao ${ VPN_APP_NAME } e outros serviços de privacidade."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
+        "Com ${ planTitlePlusMaybeBrand }, você obtém acesso gratuito a todos os serviços de privacidade da ${ BRAND_NAME }."
+      ]
+    },
     "Day": {
       "Friday": [
         "Sexta-feira"
@@ -4746,6 +4789,12 @@
       ]
     },
     "Download": {
+      ".deb (Ubuntu/Debian)": [
+        ".deb (Ubuntu/Debian)"
+      ],
+      ".rpm (Fedora/RHEL)": [
+        ".rpm (Fedora/RHEL)"
+      ],
       "Android": [
         "Android"
       ],
@@ -4757,6 +4806,9 @@
       ],
       "Browser": [
         "Navegador"
+      ],
+      "Calendar": [
+        "Calendário"
       ],
       "Chrome": [
         "Chrome"
@@ -4773,6 +4825,9 @@
       "Download for Windows": [
         "Baixar para Windows"
       ],
+      "Download on Snap store": [
+        "Baixar na Snap store"
+      ],
       "Download on the Apple App Store": [
         "Baixe na Apple App Store"
       ],
@@ -4784,6 +4839,9 @@
       ],
       "Firefox": [
         "Firefox"
+      ],
+      "Get it on Google Play": [
+        "Baixe no Google Play"
       ],
       "Get the app": [
         "Obter aplicativo"
@@ -4817,6 +4875,9 @@
       ],
       "macOS Ventura or later": [
         "macOS Ventura o superior"
+      ],
+      "Mail": [
+        "Mail"
       ],
       "Mobile": [
         "Celular"
@@ -7139,6 +7200,12 @@
       "${ VPN_CONNECTIONS } devices": [
         "${ VPN_CONNECTIONS } dispositivos"
       ],
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "@pm.me address": [
+        "Endereço @pm.me"
+      ],
       "Ad-blocker and malware protection": [
         "Bloqueador de anúncios e proteção contra malware"
       ],
@@ -7147,6 +7214,9 @@
       ],
       "and more premium features...": [
         "e outros recursos premium..."
+      ],
+      "Desktop app": [
+        "Aplicativo para computador"
       ],
       "Double VPN": [
         "VPN dupla"
@@ -7159,6 +7229,9 @@
       ],
       "NetShield Ad-blocker": [
         "Bloqueador de anúncios NetShield"
+      ],
+      "Priority support": [
+        "Suporte prioritário"
       ],
       "Secure streaming": [
         "Streaming seguro"
@@ -7728,6 +7801,9 @@
       ],
       "Domain": [
         "Domínio"
+      ],
+      "Drag to reorder": [
+        "Arrastar para reordenar"
       ],
       "Status": [
         "Status"
@@ -10546,9 +10622,6 @@
         "Etapa ${ step }",
         "Etapas ${ step }"
       ],
-      "Storage": [
-        "Armazenamento"
-      ],
       "Storage allocated to other users in this organisation": [
         "Armazenamento atribuído a outros usuários desta organização"
       ],
@@ -12768,6 +12841,12 @@
       "Font size": [
         "Tamanho da fonte"
       ],
+      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
+        "Para ${ DRIVE_SHORT_APP_NAME } e ${ DOCS_SHORT_APP_NAME }."
+      ],
+      "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
+        "Para ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } e ${ SHEETS_SHORT_APP_NAME }."
+      ],
       "for your first month": [
         "no seu primeiro mês"
       ],
@@ -13226,6 +13305,9 @@
       ],
       "Share your referral link": [
         "Compartilhe seu link de referência"
+      ],
+      "Shared between ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ WALLET_SHORT_APP_NAME }.": [
+        "Compartilhado entre ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ WALLET_SHORT_APP_NAME }."
       ],
       "Show ${ n } administrator": [
         "Mostrar ${ n } administrador",
@@ -16557,11 +16639,23 @@
       "Based in Switzerland, GDPR compliant": [
         "Localizado na Suíça, em conformidade com o regulamento RGPD"
       ],
+      "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Mas você pode obter ${ discountPercentString } de desconto atualizando para **${ upsellPlanTitle }** — é apenas ${ relativePrice } a mais por mês."
+      ],
+      "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }**.": [
+        "Mas você pode obter ${ discountPercentString } de desconto atualizando para **${ upsellPlanTitle }**."
+      ],
       "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Mas você pode desbloquear **${ unlockPlanTitle }** e mais serviços premium ${ BRAND_NAME } atualizando para o **${ upsellPlanTitle }** — por apenas ${ relativePrice } extras por mês."
       ],
       "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Mas você pode desbloquear **${ unlockPlanTitle }** e mais serviços premium da ${ BRAND_NAME } atualizando para o **${ upsellPlanTitle }**."
+      ],
+      "But you can upgrade to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Mas você pode fazer upgrade para **${ upsellPlanTitle }** — é apenas ${ relativePrice } a mais por mês."
+      ],
+      "But you can upgrade to **${ upsellPlanTitle }**.": [
+        "Mas você pode atualizar para **${ upsellPlanTitle }**.﻿"
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
         "Ao continuar, você concorda com os nossos ${ termsAndConditionsLink } e ${ privacyPolicyLink }."
@@ -20089,6 +20183,9 @@
       "${ app } storage": [
         "armazenamento do ${ app }"
       ],
+      "${ app } storage used": [
+        "${ app } de armazenamento usado"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% cheio"
       ],
@@ -20109,6 +20206,9 @@
       ],
       "Get more storage": [
         "Obter mais armazenamento"
+      ],
+      "Storage used": [
+        "De armazenamento usado"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Para continuar a usar os produtos ${ BRAND_NAME }, libere espaço ou faça um ${ upgrade }"
@@ -21498,6 +21598,9 @@
       "Collaborate on documents": [
         "Colaborar em documentos"
       ],
+      "Compare plans": [
+        "Comparar planos"
+      ],
       "Composing": [
         "Composição"
       ],
@@ -21649,6 +21752,9 @@
       "Decrypt key": [
         "Descriptografar chave"
       ],
+      "Deep dive into email blog posts": [
+        "Aprofunde-se nas postagens do blog sobre e-mail"
+      ],
       "Deep dive into VPN blog posts": [
         "Aprofunde-se nas postagens do blog sobre VPN"
       ],
@@ -21748,6 +21854,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Baixar os aplicativos do ${ DRIVE_APP_NAME }"
+      ],
+      "Download ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "Baixar ${ MAIL_APP_NAME } e ${ CALENDAR_APP_NAME }"
       ],
       "Download ${ PASS_APP_NAME } for your devices": [
         "Baixe ${ PASS_APP_NAME } para seu dispositivo"
@@ -21968,6 +22077,9 @@
       ],
       "Get complete privacy coverage": [
         "Obtenha a cobertura completa de privacidade"
+      ],
+      "Get more from your email": [
+        "Obtenha mais do seu e-mail"
       ],
       "Get more from your VPN": [
         "Obter mais da sua VPN"
@@ -23444,6 +23556,9 @@
       ],
       "Did you know?": [
         "Você sabia?"
+      ],
+      "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
+        "Proteja sua organização de violações de dados com ${ PLAN_NAMES[plan] }."
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "Proteja sua organização de violações de dados com ${ VPN_APP_NAME } para Empresas."

@@ -1409,6 +1409,11 @@
         "サポートされていない予定です"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } 件の追加の結果は表示されていません"
+      ]
+    },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
         "${ formattedDate } にトライアルが終了すると、${ renewCycle } か月ごとに自動更新される有料サブスクリプションに移行します。${ formattedDate } までにキャンセルされれば、課金されることはありません。"
@@ -3433,9 +3438,6 @@
       "External accounts are not supported yet": [
         "外部のアカウントはまだサポートされていません"
       ],
-      "External invitations are not available yet.": [
-        "外部の招待はまだ有効になっていません。"
-      ],
       "External invitations are temporarily disabled.": [
         "外部の招待は一時的に無効です。"
       ],
@@ -4290,6 +4292,11 @@
         "無制限の Hide-my-email エイリアス"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "最高速の速度"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "セキュリティキーの認証に失敗しました。もう一度お試しください。"
@@ -5060,12 +5067,6 @@
       "Anonymous": [
         "匿名"
       ],
-      "Anyone with this link can access your file.": [
-        "このリンクを知ってる人は、誰でもこのファイルにアクセスできます。"
-      ],
-      "Anyone with this link can access your folder.": [
-        "このリンクを知っている人は、誰でもこのフォルダーにアクセスできます。"
-      ],
       "Apr": [
         "4月"
       ],
@@ -5233,12 +5234,6 @@
       ],
       "Creating": [
         "作成中"
-      ],
-      "Creating link to file": [
-        "ファイルのリンクを作成中"
-      ],
-      "Creating link to folder": [
-        "フォルダーのリンクを作成しています"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "以前のサブスクリプションプランの未使用分のクレジット"
@@ -5416,15 +5411,6 @@
       ],
       "Failed": [
         "失敗"
-      ],
-      "Failed to generate a secure link. The reason is: ${ error }": [
-        "セキュアリンクの生成に失敗しました。原因: ${ error }"
-      ],
-      "Failed to generate a secure link. Try again later": [
-        "セキュアリンクの生成に失敗しました。後でもう一度お試しください"
-      ],
-      "Failed to open a secure link. The reason is: ${ error }": [
-        "リンクを開くことができませんでした。原因:${ error }"
       ],
       "Feb": [
         "2月"
@@ -5804,12 +5790,6 @@
       "One time import": [
         "1 回限りのインポート"
       ],
-      "Only the people with the link and the password can access this file.": [
-        "リンクとパスワードを知っている人のみがファイルにアクセスすることができます。"
-      ],
-      "Only the people with the link and the password can access this folder.": [
-        "リンクとパスワードを知っている人のみがフォルダーにアクセスすることができます。"
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "推奨されるアクションと役立つリンクのガイドを開きます。"
       ],
@@ -5935,12 +5915,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "無効な鍵で暗号化されたデータが含まれている連絡先を探しています。しばらくお待ちください。"
-      ],
-      "Preparing link to file": [
-        "ファイルのリンクを準備中"
-      ],
-      "Preparing link to folder": [
-        "フォルダーのリンクを準備中"
       ],
       "Preview failed to be loaded": [
         "プレビューの読み込みに失敗しました"
@@ -6256,9 +6230,6 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "このリンクはホモグラフ攻撃の可能性があります。 これがあなたのアクセスしたいリンクであることを確認するか、開かないようにしてください。"
-      ],
-      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "このリンクは古いバージョンのProton Driveで作成されたため修正できません。このリンクを削除し、新しいリンクを作り直すことで設定を変更できます。"
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "これは、お客様のISPと利用したウェブサイトが、お客様のオンライン上の活動と個人情報を紐づけられないことを意味します。"
@@ -9098,9 +9069,6 @@
       "Public link access updated": [
         "公開リンクのアクセスが更新されました"
       ],
-      "Public link update access failed ": [
-        "公開リンクの更新アクセスに失敗しました "
-      ],
       "Root folder failed to be loaded": [
         "ルートフォルダーの読み込みに失敗しました"
       ],
@@ -9137,9 +9105,6 @@
       "The item was successfully added to your drive": [
         "アイテムはドライブに正常に追加されました"
       ],
-      "The link to your item failed to be deleted": [
-        "アイテムのリンクが削除できませんでした"
-      ],
       "The link to your item was deleted": [
         "アイテムのリンクを削除しました"
       ],
@@ -9157,9 +9122,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "古いファイルは72時間で削除されます"
-      ],
-      "Your settings failed to be saved": [
-        "設定の保存に失敗しました"
       ],
       "Your settings have been changed successfully": [
         "設定が正常に変更されました"
@@ -10042,9 +10004,6 @@
       ],
       "Select state": [
         "州を選択"
-      ],
-      "Set date": [
-        "日付を設定"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "${ BRAND_NAME }をより良くするためには何が必要だと思うか共有してください。"
@@ -11550,28 +11509,6 @@
         "${ seconds }秒"
       ]
     },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } 時間"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt }.5 時間"
-      ],
-      "${ minutes } min": [
-        "${ minutes } 分"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } 時間"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt }.5 時間"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } 分"
-      ]
-    },
     "Title": {
       "# of downloads": [
         "ダウンロード数"
@@ -12286,9 +12223,6 @@
       ],
       "Select link expiration date": [
         "リンクの有効期限を選択"
-      ],
-      "Select link expiration time": [
-        "リンクの有効時間を選択"
       ],
       "Set recovery methods": [
         "回復手段を設定"

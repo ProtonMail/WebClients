@@ -147,6 +147,9 @@
       "Cancel upload": [
         "Annulla il caricamento"
       ],
+      "Cancel uploads": [
+        "Annulla caricamenti"
+      ],
       "Change": [
         "Modifica"
       ],
@@ -248,6 +251,9 @@
       ],
       "Continue with Outlook": [
         "Continua con Outlook"
+      ],
+      "Copy": [
+        "Copia"
       ],
       "Copy address": [
         "Copia l'indirizzo"
@@ -989,6 +995,9 @@
       "Show advanced PGP settings": [
         "Mostra impostazioni PGP avanzate"
       ],
+      "Show location": [
+        "Mostra posizione"
+      ],
       "Show more": [
         "Mostra di più"
       ],
@@ -1413,6 +1422,12 @@
       ],
       "Unsupported event": [
         "Evento non supportato"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } altro risultato non mostrato",
+        "${ hiddenResultsCount } altri risultati non mostrati"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -3371,6 +3386,9 @@
       "Cannot export this contact": [
         "Impossibile esportare questo contatto"
       ],
+      "Cannot load \"My files\" root folder": [
+        "Impossibile caricare la cartella principale \"I miei file\""
+      ],
       "Checkout expired, please try again": [
         "Checkout scaduto, riprova"
       ],
@@ -3439,14 +3457,17 @@
       "Error reading file": [
         "Errore durante la lettura del file"
       ],
+      "Expanding non-existent directory tree item": [
+        "Espansione di un elemento dell'albero delle directory non espandibile."
+      ],
+      "Expanding non-expandable directory tree item": [
+        "Espansione di un elemento dell'albero delle directory non espandibile."
+      ],
       "Expected structure attached": [
         "Struttura attesa allegata"
       ],
       "External accounts are not supported yet": [
         "Gli account esterni non sono ancora supportati"
-      ],
-      "External invitations are not available yet.": [
-        "Gli inviti esterni non sono ancora disponibili."
       ],
       "External invitations are temporarily disabled.": [
         "Gli inviti esterni sono temporaneamente disabilitati."
@@ -4310,6 +4331,11 @@
         "Alias Hide-my-email illimitati"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Velocità fulminee"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Si è verificato un errore durante l'autenticazione con la tua chiave di sicurezza. Per favore riprova."
@@ -4857,6 +4883,9 @@
         "${ canceledCount } annullato",
         "${ canceledCount } annullati"
       ],
+      "${ completedItems.length } of ${ items.length } transfers completed": [
+        "${ completedItems.length } di ${ items.length } trasferimenti completati"
+      ],
       "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } contatto contiene più indirizzi email.",
         "${ contactCount } contatti contengono più indirizzi email."
@@ -5128,12 +5157,6 @@
       "Anonymous": [
         "Anonimo"
       ],
-      "Anyone with this link can access your file.": [
-        "Chiunque con questo link può accedere al tuo file."
-      ],
-      "Anyone with this link can access your folder.": [
-        "Chiunque abbia questo link può accedere alla tua cartella."
-      ],
       "Apr": [
         "Apr."
       ],
@@ -5303,12 +5326,6 @@
       ],
       "Creating": [
         "Creazione"
-      ],
-      "Creating link to file": [
-        "Creazione del link al file"
-      ],
-      "Creating link to folder": [
-        "Creazione del link alla cartella"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Credito per la parte non usata del tuo precedente abbonamento"
@@ -5489,15 +5506,6 @@
       "Failed": [
         "Non riuscito"
       ],
-      "Failed to generate a secure link. The reason is: ${ error }": [
-        "Generazione di un link sicuro non riuscita. Il motivo è: ${ error }"
-      ],
-      "Failed to generate a secure link. Try again later": [
-        "Generazione di un link sicuro non riuscita. Riprova più tardi."
-      ],
-      "Failed to open a secure link. The reason is: ${ error }": [
-        "Apertura di un link sicuro non riuscita. Il motivo è: ${ error }"
-      ],
       "Feb": [
         "Feb."
       ],
@@ -5669,6 +5677,9 @@
       ],
       "It's better to have:": [
         "È meglio avere:"
+      ],
+      "It's not possible to copy the folder to itself": [
+        "Non è possibile copiare la cartella su se stessa"
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "Gli elementi eliminati rimarranno nel cestino finché non li elimini definitivamente"
@@ -5878,12 +5889,6 @@
       "One time import": [
         "Importazione una tantum"
       ],
-      "Only the people with the link and the password can access this file.": [
-        "Solo le persone con il link e la password possono accedere a questo file."
-      ],
-      "Only the people with the link and the password can access this folder.": [
-        "Solamente le persone con il link e la password possono accedere a questa cartella."
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "Apri la guida per le azioni consigliate e i link utili."
       ],
@@ -6011,12 +6016,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Attendi mentre cerchiamo contatti che contengono dati crittografati con la chiave inattiva."
       ],
-      "Preparing link to file": [
-        "Preparazione del link al file"
-      ],
-      "Preparing link to folder": [
-        "Preparazione del link alla cartella"
-      ],
       "Preview failed to be loaded": [
         "Caricamento dell'anteprima non riuscito"
       ],
@@ -6109,6 +6108,9 @@
       ],
       "Search Enabled": [
         "Ricerca Abilitata"
+      ],
+      "Select a folder to copy to.": [
+        "Seleziona la cartella di destinazione."
       ],
       "Select a folder to move to.": [
         "Seleziona la cartella di destinazione."
@@ -6334,9 +6336,6 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Questo link potrebbe essere un attacco omografo. Verifica che questo sia il link che desideri visitare o non aprirlo."
       ],
-      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Questo link è stato creato con una vecchia versione di Drive e non può essere modificato. Eliminare questo link e crearne uno nuovo per modificare le impostazioni."
-      ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Ciò significa che il tuo ISP e i siti web che visiti non possono collegare le tue informazioni personali alla tua attività online."
       ],
@@ -6345,6 +6344,9 @@
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Questo codice univoco può essere utilizzato dai siti Web e dagli ISP (fornitori di servizi Internet) per collegare la tua posizione e la cronologia di navigazione al tuo dispositivo"
+      ],
+      "This will cancel any remaining uploads. Cancelled files won't be saved in ${ DRIVE_APP_NAME }.": [
+        "Questo annullerà tutti i caricamenti rimanenti. I file annullati non verranno salvati in ${ DRIVE_APP_NAME }."
       ],
       "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
         "Quest'azione rimuoverà solo l'album. Le tue foto rimarranno nella tua linea temporale. Quest'azione non può essere annullata."
@@ -9087,6 +9089,9 @@
       "\"${ name }\" saved successfully": [
         "\"${ name }\" salvato con successo"
       ],
+      "\"${ name }\" successfully copied": [
+        "\"${ name }\" copiato correttamente"
+      ],
       "\"${ name }\" successfully moved": [
         "\"${ name }\" spostato correttamente"
       ],
@@ -9099,6 +9104,10 @@
       "${ count } item failed to be decrypted": [
         "Decrittografia di ${ count } elemento non riuscita",
         "Decrittografia di ${ count } elementi non riuscita"
+      ],
+      "${ errors.length } item failed to be copied": [
+        "Copia di ${ errors.length } elemento non riuscita",
+        "${ errors.length } elementi non sono stati copiati"
       ],
       "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
         "Non è stato possibile rimuovere ${ nbFailures } foto da \"${ albumLink.name }\"",
@@ -9151,6 +9160,10 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } oggetto ripristinato dal cestino",
         "${ numberOfItems } oggetti ripristinati dal cestino"
+      ],
+      "${ numberOfItems } item successfully copied": [
+        "${ numberOfItems } elemento copiato con successo",
+        "${ numberOfItems } elementi copiati con successo"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } elemento spostato con successo",
@@ -9289,9 +9302,6 @@
       "Public link access updated": [
         "Accesso al collegamento pubblico aggiornato"
       ],
-      "Public link update access failed ": [
-        "Impossibile aggiornare l'accesso al collegamento pubblico "
-      ],
       "Root folder failed to be loaded": [
         "Caricamento della cartella principale non riuscito"
       ],
@@ -9331,9 +9341,6 @@
       "The item was successfully added to your drive": [
         "L'elemento è stato aggiunto correttamente al tuo spazio"
       ],
-      "The link to your item failed to be deleted": [
-        "Eliminazione del link al tuo elemento non riuscita"
-      ],
       "The link to your item was deleted": [
         "Il link al tuo elemento è stato eliminato"
       ],
@@ -9351,9 +9358,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "I tuoi vecchi file verranno eliminati entro 72 ore"
-      ],
-      "Your settings failed to be saved": [
-        "Salvataggio delle impostazioni non riuscito"
       ],
       "Your settings have been changed successfully": [
         "Le impostazioni sono state modificate con successo"
@@ -10243,9 +10247,6 @@
       ],
       "Select state": [
         "Seleziona Stato"
-      ],
-      "Set date": [
-        "Imposta la data"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Condividere cosa pensi potrebbe migliorare ${ BRAND_NAME }"
@@ -11794,34 +11795,6 @@
         "${ seconds } secondi"
       ]
     },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } o",
-        "${ hours } o"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt }.5 o",
-        "${ hoursInt }.5 o"
-      ],
-      "${ minutes } min": [
-        "${ minutes } min",
-        "${ minutes } min"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } ora",
-        "${ hours } ore"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt }.5 ora",
-        "${ hoursInt }.5 ore"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuto",
-        "${ minutes } minuti"
-      ]
-    },
     "Title": {
       "# of downloads": [
         "# di download"
@@ -11936,6 +11909,9 @@
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Annulla l'abbonamento a ${ MAIL_SHORT_APP_NAME }"
+      ],
+      "Cancel all uploads?": [
+        "Cancellare tutti i caricamenti?"
       ],
       "Cancel subscription?": [
         "Vuoi annullare l'abbonamento?"
@@ -12311,6 +12287,9 @@
       "Logs": [
         "Log"
       ],
+      "Make a copy": [
+        "Crea una copia"
+      ],
       "Make a secure connection your default": [
         "Rendi la connessione sicura la tua connessione predefinita"
       ],
@@ -12545,9 +12524,6 @@
       ],
       "Select link expiration date": [
         "Seleziona la data di scadenza del link"
-      ],
-      "Select link expiration time": [
-        "Seleziona ora di scadenza del link"
       ],
       "Set recovery methods": [
         "Imposta i metodi di ripristino"

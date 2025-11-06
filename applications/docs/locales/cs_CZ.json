@@ -90,9 +90,6 @@
       "Apply": [
         "Použít"
       ],
-      "Ask me next time": [
-        "Zeptat se příště"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Na jednu skupinu kontaktů je povolen maximálně ${ maxContacts } kontakt",
         "Na jednu skupinu kontaktů jsou povoleny maximálně ${ maxContacts } kontakty",
@@ -663,9 +660,6 @@
       "Save changes": [
         "Uložit změny"
       ],
-      "Save preferences": [
-        "Uložit předvolby"
-      ],
       "Search": [
         "Vyhledat"
       ],
@@ -1097,6 +1091,14 @@
       ],
       "Unsupported event": [
         "Událost není podporována"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } další výsledek není zobrazen",
+        "${ hiddenResultsCount } další výsledky nejsou zobrazeny",
+        "${ hiddenResultsCount } dalších výsledků není zobrazeno",
+        "${ hiddenResultsCount } dalších výsledků není zobrazeno"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -3690,6 +3692,11 @@
         "Neomezený počet aliasů Hide-my-email"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Blesková rychlost"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Při ověřování pomocí bezpečnostního klíče se něco pokazilo. Zkuste to prosím znovu."
@@ -4506,9 +4513,6 @@
       "Continue": [
         "Pokračovat"
       ],
-      "Converting document...": [
-        "Převádění dokumentu..."
-      ],
       "Copy the link to clipboard": [
         "Kopírovat odkaz do schránky"
       ],
@@ -4553,9 +4557,6 @@
       ],
       "Creating link to folder": [
         "Vytváření odkazu na složku"
-      ],
-      "Creating new document...": [
-        "Vytváření nového dokumentu..."
       ],
       "Current plan": [
         "Aktuální tarif"
@@ -4650,12 +4651,6 @@
       "Enter your own password (as trusted contact).": [
         "Zadejte vlastní heslo (jako důvěryhodný kontakt)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Chyba při převodu dokumentu: ${ errorMessage }"
-      ],
-      "Error loading document: ${ errorDetail }": [
-        "Chyba při načítání dokumentu: ${ errorDetail }"
-      ],
       "Error Syncing": [
         "Chyba při synchronizaci"
       ],
@@ -4715,12 +4710,6 @@
       ],
       "Geoblocking": [
         "Zeměpisné blokování"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Získejte e-mailem upozornění na nové komentáře a návrhy přidané k vašim dokumentům."
-      ],
-      "Get Notified About Comments": [
-        "Buďte upozorněni na komentáře"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Vlády a poskytovatelé internetových služeb mohou sledovat vaši online aktivitu. Skrytím vaší skutečné IP adresy a šifrováním vaší aktivity se vaše prohlížení stane soukromým."
@@ -4860,9 +4849,6 @@
       "Low Priority": [
         "Nízká priorita"
       ],
-      "Making a copy...": [
-        "Vytváření kopie..."
-      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Max. ${ MAX_SHARED_URL_PASSWORD_LENGTH } písmeno",
         "Max. ${ MAX_SHARED_URL_PASSWORD_LENGTH } písmena",
@@ -4895,9 +4881,6 @@
       ],
       "No contacts added yet": [
         "Doposud nebyly přidány žádné kontakty"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "Adresa URL nevede k žádnému dokumentu. Vraťte se na ${ DRIVE_APP_NAME } a vyberte dokument."
       ],
       "No email address": [
         "Žádná e-mailová adresa"
@@ -5180,9 +5163,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Vlastník této adresy deaktivoval koncové šifrování. Aby bylo možné na tuto adresu odesílat šifrované e-maily, musí vlastník znovu povolit koncové šifrování."
-      ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "Zadaná URL adresa byla zřejmě nesprávně zkopírována ze služby Slack. Při kopírování dlouhých odkazů ze služby Slack klikněte na odkaz pravým tlačítkem myši a vyberte možnost \"Kopírovat odkaz\", místo přímého kopírování zkráceného textu URL adresy."
       ],
       "There are no documents in the trash.": [
         "V koši nejsou žádné dokumenty."
@@ -5801,9 +5781,6 @@
       "Emails (last month)": [
         "E-maily (poslední měsíc)"
       ],
-      "Enable email notifications": [
-        "Povolit e-mailová upozornění"
-      ],
       "Encrypt emails": [
         "Šifrovat e-maily"
       ],
@@ -5851,9 +5828,6 @@
       ],
       "Include application logs in bug report": [
         "Zahrnout logy aplikace do chybového hlášení"
-      ],
-      "Include document name in notification": [
-        "Zahrnout název dokumentu do upozornění"
       ],
       "Include message and file name in invite email": [
         "Zahrnout zprávu a název souboru v e-mailu s pozvánkou"
@@ -8763,9 +8737,6 @@
       ]
     },
     "sheets_2025:Info": {
-      "Creating new spreadsheet...": [
-        "Vytváření nové tabulky..."
-      ],
       "Detect automatically": [
         "Zjistit automaticky"
       ],
@@ -9134,6 +9105,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Pro všechny služby ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Využité úložiště"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Chcete-li dále používat produkty ${ BRAND_NAME }, uvolněte místo nebo ${ upgrade }"

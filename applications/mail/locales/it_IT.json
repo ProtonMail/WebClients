@@ -1495,6 +1495,10 @@
       "Trust": [
         "Considera attendibile"
       ],
+      "Trust key": [
+        "chiave attendibile",
+        "chiavi attendibili"
+      ],
       "Trust public key": [
         "Chiave pubblica attendibile"
       ],
@@ -2016,6 +2020,12 @@
       ],
       "Sender verification passed": [
         "Verifica del mittente avvenuta con successo"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } altro risultato non mostrato",
+        "${ hiddenResultsCount } altri risultati non mostrati"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -5599,6 +5609,11 @@
         "Alias Hide-my-email illimitati"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Velocità fulminee"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Si è verificato un errore durante l'autenticazione con la tua chiave di sicurezza. Per favore riprova."
@@ -7504,8 +7519,7 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine",
-        "Inserisci immagini"
+        "Inserisci immagine"
       ],
       "Insert link": [
         "Inserisci link"
@@ -7991,8 +8005,8 @@
       "Saved: ${ dateString }": [
         "Salvato: ${ dateString }"
       ],
-      "Saving draft…": [
-        "Salvando la bozza…"
+      "Saving draft": [
+        "Salvataggio bozza"
       ],
       "Scan the QR code with your mobile device": [
         "Scansiona il codice QR con il tuo dispositivo mobile"
@@ -8000,8 +8014,8 @@
       "Scheduled send of this message will be canceled.": [
         "L'invio programmato di questo messaggio verrà annullato."
       ],
-      "Scheduling message...": [
-        "Programmazione del messaggio..."
+      "Scheduling message": [
+        "Programmazione del messaggio"
       ],
       "Scribe panel": [
         "Pannello di Scribe"
@@ -8046,7 +8060,7 @@
       "Sending": [
         "Invio in corso"
       ],
-      "Sending message...": [
+      "Sending message": [
         "Invio del messaggio in corso"
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
@@ -8613,6 +8627,9 @@
       ],
       "Week": [
         "Settimana"
+      ],
+      "We’ve upgraded your ${ DRIVE_APP_NAME } storage to 5GB. Keep your important files and photos encrypted.": [
+        "Abbiamo effettuato l'upgrade della tua archiviazione di ${ DRIVE_APP_NAME } a 5GB. Mantieni i tuoi file e le tue foto importanti crittografati."
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "Quando vorresti che il messaggio venga automaticamente eliminato dalla cartella posta in arrivo del destinatario e dalla tua cartella inviati?"

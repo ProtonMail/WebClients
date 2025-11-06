@@ -186,6 +186,9 @@
       "Confirm": [
         "Conferma"
       ],
+      "Confirm booking": [
+        "Conferma prenotazione"
+      ],
       "Confirm opening of link ${ linkToShow }": [
         "Conferma l'apertura del link ${ linkToShow }"
       ],
@@ -227,6 +230,9 @@
       ],
       "Copy link": [
         "Copia link"
+      ],
+      "Copy link and close": [
+        "Copia link e chiudi"
       ],
       "Copy password": [
         "Copia la password"
@@ -683,6 +689,9 @@
       "Remove gift code": [
         "Rimuovi codice regalo"
       ],
+      "Remove the booking range": [
+        "Rimuovi l'intervallo di prenotazione"
+      ],
       "Remove this notification": [
         "Rimuovi notifica"
       ],
@@ -817,6 +826,9 @@
       ],
       "Skip verification": [
         "Salta la verifica"
+      ],
+      "Split current booking range": [
+        "Dividi l'intervallo di prenotazione attuale"
       ],
       "Start import": [
         "Avvia importazione"
@@ -1253,6 +1265,12 @@
     "Attendee role": {
       "Optional": [
         "Facoltativo"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } altro risultato non mostrato",
+        "${ hiddenResultsCount } altri risultati non mostrati"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -3198,6 +3216,9 @@
       "Your account and data recovery methods are set.": [
         "I tuoi metodi di recupero dell'account e dei dati sono impostati."
       ],
+      "You’ll get a secure email with the details shortly.": [
+        "Riceverai a breve una email sicura con i dettagli."
+      ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Hai già creato 10 alias. Ottieni alias illimitati e 500 GB di spazio di archiviazione con ${ BRAND_NAME } Unlimited."
       ]
@@ -3363,6 +3384,9 @@
       ],
       "120 minutes": [
         "120 minuti"
+      ],
+      "15 minutes": [
+        "15 minuti"
       ],
       "15m": [
         "15min"
@@ -3593,6 +3617,9 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Impossibile abilitare la ricerca nel contenuto. Riavvia l'applicazione o cancella il testo."
       ],
+      "Content verification failed": [
+        "Verifica del contenuto non riuscita"
+      ],
       "Could not open created vault": [
         "Impossibile aprire la cassaforte creata"
       ],
@@ -3763,6 +3790,9 @@
       ],
       "Name required": [
         "Nome obbligatorio"
+      ],
+      "No booking page data received": [
+        "Nessun dato della pagina di prenotazione ricevuto"
       ],
       "No calendars found to import": [
         "Nessun calendario trovato da importare"
@@ -4485,6 +4515,11 @@
         "Alias Hide-my-email illimitati"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Velocità fulminee"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Si è verificato un errore durante l'autenticazione con la tua chiave di sicurezza. Per favore riprova."
@@ -4571,6 +4606,11 @@
       ],
       "Very small": [
         "Molto piccolo"
+      ]
+    },
+    "Form": {
+      "Your contact info": [
+        "Le tue informazioni di contatto"
       ]
     },
     "Google Meet": {
@@ -5254,6 +5294,15 @@
       "Billing cycle: ${ text }": [
         "Ciclo di fatturazione: ${ text }"
       ],
+      "Booking already exists.": [
+        "La prenotazione esiste già."
+      ],
+      "Booking cannot be added in the past.": [
+        "Non è possibile aggiungere una prenotazione nel passato."
+      ],
+      "Booking overlaps with an existing booking.": [
+        "Questa prenotazione si sovrappone a una prenotazione esistente."
+      ],
       "Booking page example": [
         "Pagina prenotazione esempio"
       ],
@@ -5525,6 +5574,9 @@
       "High Priority": [
         "Priorità alta"
       ],
+      "How long should an appointment last?": [
+        "Quanto dovrebbe durare un appuntamento?"
+      ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Se le scorciatoie da tastiera sono abilitate, puoi utilizzare i seguenti tasti per azioni rapide o per passare a viste diverse. ${ metaKey } + K è sempre abilitato."
       ],
@@ -5682,11 +5734,17 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "La maggior parte delle reti WiFi pubbliche sono sicure, ma alcune sono carenti di sicurezza, esponendoti a minacce informatiche. Una VPN crittografa il tuo traffico, mantenendoti protetto."
       ],
+      "Name your booking page": [
+        "Dai un nome alla tua pagina di prenotazione"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Dai un nome alla tua cartella e seleziona la cartella principale nella quale verrà contenuta. Se non selezioni una cartella principale, questa nuova cartella verrà creata come una cartella di primo livello."
       ],
       "New": [
         "Nuovo"
+      ],
+      "No available slots for this day": [
+        "Nessuno slot disponibile per questo giorno"
       ],
       "No contacts added yet": [
         "Non sono ancora stati aggiunti contatti"
@@ -5854,9 +5912,9 @@
       "Removed participants will be notified.": [
         "I partecipanti rimossi saranno notificati."
       ],
-      "Saving event...": [
-        "Salvataggio evento...",
-        "Salvataggio eventi..."
+      "Saving event": [
+        "Salvataggio evento",
+        "Salvataggio eventi"
       ],
       "Scan the QR code with your mobile device": [
         "Scansiona il codice QR con il tuo dispositivo mobile"
@@ -5890,6 +5948,9 @@
       ],
       "Setting up your new address…": [
         "Configurazione del tuo nuovo indirizzo…"
+      ],
+      "Share this page to let others book time in your calendar. You can manage it anytime in the sidebar under Booking pages.": [
+        "Condividi questa pagina per permettere ad altri di prenotare un orario nel tuo calendario. Puoi gestirlo in qualsiasi momento nella barra laterale, sotto Pagine di prenotazione."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dato che sei un utente fedele, il tuo account ha funzionalità aggiuntive abilitate."
@@ -6123,6 +6184,9 @@
       "What should people know before booking?": [
         "Cosa dovrebbero sapere le persone prima di prenotare?"
       ],
+      "When are you free?": [
+        "Quando sei libero?"
+      ],
       "When working remotely": [
         "Quando si lavora da remoto"
       ],
@@ -6223,6 +6287,9 @@
       ],
       "You cannot undo this action.": [
         "Non puoi annullare questa azione."
+      ],
+      "You can’t have more than ${ MAX_BOOKING_SLOTS } booking slots on a page.": [
+        "Non puoi avere più di ${ MAX_BOOKING_SLOTS } slot di prenotazione su una pagina."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Ricevi notifiche se la tua password o altri dati vengono divulgati da servizi di terze parti."
@@ -7069,6 +7136,14 @@
       ],
       "Zoom meeting": [
         "Riunione Zoom"
+      ]
+    },
+    "label": {
+      "Date of the booking range": [
+        "Data dell'intervallo di prenotazione"
+      ],
+      "End time of the booking range": [
+        "Ora di fine dell'intervallo di prenotazione"
       ]
     },
     "Label for contact group color": {
@@ -9364,6 +9439,9 @@
       "A way to contact you": [
         "Un modo per contattarti"
       ],
+      "Add a booking page description": [
+        "Aggiungi una descrizione alla pagina di prenotazione"
+      ],
       "Add a calendar description": [
         "Aggiungi una descrizione al calendario"
       ],
@@ -9387,6 +9465,9 @@
       ],
       "Anytown": [
         "Roma"
+      ],
+      "Booking page title": [
+        "Titolo della pagina di prenotazione"
       ],
       "Company name": [
         "Nome dell'azienda"
@@ -11477,6 +11558,9 @@
       "High security for your account": [
         "Elevata sicurezza per il tuo account"
       ],
+      "Host": [
+        "Host"
+      ],
       "How does it all work?": [
         "Come funziona?"
       ],
@@ -11849,6 +11933,9 @@
       ],
       "Your account is protected": [
         "Il tuo account è protetto"
+      ],
+      "Your booking is confirmed": [
+        "La tua prenotazione è confermata"
       ],
       "Your booking page is ready": [
         "La tua pagina di prenotazione è pronta"

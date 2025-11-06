@@ -753,6 +753,9 @@
       "Get a new encrypted email address": [
         "Skaffa en ny krypterad e-postadress"
       ],
+      "Get Deal": [
+        "Ta erbjudandet"
+      ],
       "Get in touch": [
         "Kontakta oss"
       ],
@@ -780,6 +783,9 @@
       "Get more servers": [
         "Skaffa fler servrar"
       ],
+      "Get more storage": [
+        "Skaffa mer lagringsutrymme"
+      ],
       "Get Pass Family": [
         "Skaffa Pass Family"
       ],
@@ -800,6 +806,9 @@
       ],
       "Get the deal": [
         "Ta del av erbjudandet"
+      ],
+      "Get the extension for ${ browser.title }": [
+        "Skaffa utökningen för ${ browser.title }"
       ],
       "Get the full suite": [
         "Skaffa hela sviten"
@@ -1714,6 +1723,13 @@
         "${ ips } server",
         "${ ips } servrar"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI-assistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI-assistent (för ${ quantity } användare)",
+        "${ LUMO_APP_NAME } AI-assistent (för ${ quantity } användare)"
+      ],
       "${ price } per dedicated server": [
         "${ price } per dedikerad server"
       ],
@@ -1725,6 +1741,10 @@
       ],
       "${ price } per user": [
         "${ price } per användare"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } anpassad domän",
+        "${ quantity } anpassade domäner"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME }-licens",
@@ -2104,6 +2124,12 @@
         "Lägg till i kalendern och markera som väntande"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } fler resultat visas inte",
+        "${ hiddenResultsCount } fler resultat visas inte"
+      ]
+    },
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Jag är inte på kontoret och har begränsad åtkomst till min e-post."
@@ -2475,11 +2501,26 @@
       "**Streaming** is included in your subscription.": [
         "**Streaming** är inkluderat i din prenumeration."
       ],
+      "Automate recurring actions to sort and organize incoming emails.": [
+        "Automatisera återkommande åtgärder för att sortera och organisera inkommande e-post."
+      ],
       "Can someone see my internet history if we use the same WiFi?": [
         "Kan någon se min internethistorik om vi använder samma WiFi?"
       ],
+      "Discover our tips for effectively managing your inbox so you can stay productive and focused.": [
+        "Upptäck våra tips för att effektivt hantera din inkorg så att du kan förbli produktiv och fokuserad."
+      ],
+      "Easily manage your inbox": [
+        "Hantera enkelt din inkorg"
+      ],
+      "Easily manage your inbox with Mail Plus": [
+        "Hantera enkelt din inkorg med Mail Plus"
+      ],
       "Enable kill switch and auto-connect in your VPN settings.": [
         "Aktivera kill switch och automatisk anslutning i dina VPN-inställningar."
+      ],
+      "Get a clean inbox with filters": [
+        "Få en ren inkorg med filter"
       ],
       "Get round-the-clock protection": [
         "Skaffa skydd dygnet runt"
@@ -2489,6 +2530,9 @@
       ],
       "How to change your IP address on Windows": [
         "Hur man ändrar din IP-adress på Windows"
+      ],
+      "How to get a custom email domain": [
+        "Hur man skaffar en anpassad e-postdomän"
       ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "I denna artikel tittar vi på vem som kan se din internethistorik när du använder WiFi, vad de kan se och varför de kan göra detta."
@@ -2511,6 +2555,9 @@
       "Protect your whole household with 1 device": [
         "Skydda hela ditt hushåll med 1 enhet"
       ],
+      "See and manage all your email subscriptions": [
+        "Se och hantera alla dina e-postprenumerationer"
+      ],
       "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN2024] }.": [
         "Streama från alla större plattformar med ${ PLAN_NAMES[PLANS.VPN2024] }."
       ],
@@ -2526,11 +2573,20 @@
       "We discuss how to change the external and local IP addresses of your Windows device.": [
         "Vi diskuterar hur man ändrar de externa och lokala IP-adresserna på din Windows-enhet."
       ],
+      "What is an email alias?": [
+        "Vad är ett e-postalias?"
+      ],
+      "What to do if your data is leaked in a data breach": [
+        "Vad man ska göra om din data är läckt i ett dataintrång"
+      ],
       "Which VPN protocol is the best?": [
         "Vilket VPN-protokoll är bäst?"
       ],
       "Working with sensitive data?": [
         "Arbetar du med känslig data?"
+      ],
+      "Working with sensitive data? Use ${ MAIL_APP_NAME } to protect your communications and build trust with clients.": [
+        "Arbetar du med känslig data? Använd ${ MAIL_APP_NAME } för att skydda din kommunikation och bygga förtroende med klienter."
       ]
     },
     "breadcrumb": {
@@ -4293,6 +4349,23 @@
         "Var ${ interval }:e dag, ${ untilString }"
       ]
     },
+    "Dashboard": {
+      "Get more from your ${ planTitle } subscription.": [
+        "Få ut mer av din ${ planTitle }-prenumeration."
+      ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
+        "Håll dina filer, foton och dokument säkra med ${ maxDriveSpace } gratis molnlagring."
+      ],
+      "Set secure passwords without the hassle.": [
+        "Ställ in säkra lösenord utan krångel."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to ${ VPN_APP_NAME } and other privacy services.": [
+        "Med ${ planTitlePlusMaybeBrand } får du gratis åtkomst till ${ VPN_APP_NAME } och andra integritetstjänster."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
+        "Med ${ planTitlePlusMaybeBrand } får du gratis åtkomst till alla ${ BRAND_NAME } integritetstjänster."
+      ]
+    },
     "Day": {
       "Friday": [
         "Fredag"
@@ -4707,6 +4780,12 @@
       ]
     },
     "Download": {
+      ".deb (Ubuntu/Debian)": [
+        ".deb (Ubuntu/Debian)"
+      ],
+      ".rpm (Fedora/RHEL)": [
+        ".rpm (Fedora/RHEL)"
+      ],
       "Android": [
         "Android"
       ],
@@ -4718,6 +4797,9 @@
       ],
       "Browser": [
         "Webbläsare"
+      ],
+      "Calendar": [
+        "Kalender"
       ],
       "Chrome": [
         "Chrome"
@@ -4734,6 +4816,9 @@
       "Download for Windows": [
         "Ladda ner för Windows"
       ],
+      "Download on Snap store": [
+        "Ladda ner på Snap Store"
+      ],
       "Download on the Apple App Store": [
         "Ladda ner på Apple App Store"
       ],
@@ -4745,6 +4830,9 @@
       ],
       "Firefox": [
         "Firefox"
+      ],
+      "Get it on Google Play": [
+        "Skaffa det på Google Play"
       ],
       "Get the app": [
         "Skaffa appen"
@@ -4778,6 +4866,9 @@
       ],
       "macOS Ventura or later": [
         "macOS Ventura eller senare"
+      ],
+      "Mail": [
+        "E-post"
       ],
       "Mobile": [
         "Mobil"
@@ -7084,6 +7175,12 @@
       "${ VPN_CONNECTIONS } devices": [
         "${ VPN_CONNECTIONS } enheter"
       ],
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "@pm.me address": [
+        "@pm.me-adress"
+      ],
       "Ad-blocker and malware protection": [
         "Annonsblockerare och skydd mot skadlig kod"
       ],
@@ -7092,6 +7189,12 @@
       ],
       "and more premium features...": [
         "och fler premiumfunktioner …"
+      ],
+      "Connect custom domain": [
+        "Anslut anpassad domän"
+      ],
+      "Desktop app": [
+        "App för stationär dator"
       ],
       "Double VPN": [
         "Dubbel VPN"
@@ -7104,6 +7207,9 @@
       ],
       "NetShield Ad-blocker": [
         "NetShield annonsblockerare"
+      ],
+      "Priority support": [
+        "Prioriterad support"
       ],
       "Secure streaming": [
         "Säker streaming"
@@ -7673,6 +7779,9 @@
       ],
       "Domain": [
         "Domän"
+      ],
+      "Drag to reorder": [
+        "Dra för att sortera om"
       ],
       "Status": [
         "Status"
@@ -8322,6 +8431,9 @@
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } är ett avancerat kontoskyddsprogram som drivs av sofistikerade AI-system och specialister som arbetar dygnet runt för att skydda dig från dåliga aktörer och säkerhetshot."
+      ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } är ett avancerat kontoskyddsprogram som drivs av sofistikerade AI-system och specialister som arbetar dygnet runt för att skydda din organisation från dåliga aktörer och säkerhetshot."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } skyddar ditt konto med dedikerad övervakning av misstänkt aktivitet."
@@ -10475,9 +10587,6 @@
       "Step ${ step }": [
         "Steg ${ step }",
         "Steg ${ step }"
-      ],
-      "Storage": [
-        "Lagringsutrymme"
       ],
       "Storage allocated to other users in this organisation": [
         "Lagringsutrymme tilldelad andra användare i denna organisation"
@@ -12676,6 +12785,12 @@
       "Font size": [
         "Textstorlek"
       ],
+      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
+        "För ${ DRIVE_SHORT_APP_NAME } och ${ DOCS_SHORT_APP_NAME }."
+      ],
+      "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
+        "För ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } och ${ SHEETS_SHORT_APP_NAME }."
+      ],
       "for your first month": [
         "för din första månad"
       ],
@@ -13134,6 +13249,9 @@
       ],
       "Share your referral link": [
         "Dela din hänvisningslänk"
+      ],
+      "Shared between ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ WALLET_SHORT_APP_NAME }.": [
+        "Delas mellan ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } och ${ WALLET_SHORT_APP_NAME }."
       ],
       "Show ${ n } administrator": [
         "Visa ${ n } administratör",
@@ -16472,11 +16590,23 @@
       "Based in Switzerland, GDPR compliant": [
         "Baserad i Schweiz, GDPR-kompatibel"
       ],
+      "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Men du kan få ${ discountPercentString } rabatt genom att uppgradera till **${ upsellPlanTitle }** — det är endast ${ relativePrice } extra per månad."
+      ],
+      "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }**.": [
+        "Men du kan få ${ discountPercentString } rabatt genom att uppgradera till **${ upsellPlanTitle }**."
+      ],
       "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Men du kan låsa upp **${ unlockPlanTitle }** och fler ${ BRAND_NAME }-tjänster genom att uppgradera till **${ upsellPlanTitle }** – det kostar endast ${ relativePrice } extra per månad."
       ],
       "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Men du kan låsa upp **${ unlockPlanTitle }** och fler ${ BRAND_NAME }-tjänster genom att uppgradera till **${ upsellPlanTitle }**."
+      ],
+      "But you can upgrade to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Men du kan uppgradera till **${ upsellPlanTitle }** — det är endast ${ relativePrice } extra per månad."
+      ],
+      "But you can upgrade to **${ upsellPlanTitle }**.": [
+        "Men du kan uppgradera till **${ upsellPlanTitle }**."
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
         "Genom att fortsätta så godkänner du våra ${ termsAndConditionsLink } och ${ privacyPolicyLink }."
@@ -16969,6 +17099,12 @@
       "Timeout exceeded": [
         "Timeout överskriden"
       ],
+      "VAT": [
+        "Moms"
+      ],
+      "VAT number": [
+        "Momsnummer"
+      ],
       "You already have a subscription to this plan.": [
         "Du har redan en prenumeration på detta paket."
       ],
@@ -17058,6 +17194,9 @@
       "Add EIN": [
         "Lägg till EIN"
       ],
+      "Add VAT number": [
+        "Lägg till momsnummer"
+      ],
       "Business Number": [
         "Företagsnummer"
       ],
@@ -17069,6 +17208,9 @@
       ],
       "Edit EIN": [
         "Redigera EIN"
+      ],
+      "Edit VAT number": [
+        "Redigera momsnummer"
       ],
       "EIN": [
         "EIN"
@@ -19312,6 +19454,9 @@
       "Advanced security features": [
         "Avancerade säkerhetsfunktioner"
       ],
+      "Advanced security features by ${ BRAND_NAME }": [
+        "Avancerade säkerhetsfunktioner från ${ BRAND_NAME }"
+      ],
       "Advanced sharing security": [
         "Avancerad delningssäkerhet"
       ],
@@ -21366,6 +21511,9 @@
       "Collaborate on documents": [
         "Samarbeta på dokument"
       ],
+      "Compare plans": [
+        "Jämför paket"
+      ],
       "Composing": [
         "Komponera"
       ],
@@ -21617,6 +21765,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Ladda ner ${ DRIVE_APP_NAME } appar"
       ],
+      "Download ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "Ladda ner ${ MAIL_APP_NAME } och ${ CALENDAR_APP_NAME }"
+      ],
       "Download ${ PASS_APP_NAME } for your devices": [
         "Ladda ner ${ PASS_APP_NAME } för dina enheter"
       ],
@@ -21834,8 +21985,14 @@
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Få **${ referralInfo.uiData.refereeRewardAmount }** i krediter med ${ planTitle }"
       ],
+      "Get access to the desktop app with ${ mailPlusPlanName }. ${ upgradeButton }": [
+        "Skaffa åtkomst till appen för stationär dator med ${ mailPlusPlanName }. ${ upgradeButton }"
+      ],
       "Get complete privacy coverage": [
         "Få fullständig integritetstäckning"
+      ],
+      "Get more from your email": [
+        "Få ut mer av din e-post"
       ],
       "Get more from your VPN": [
         "Få ut mer av din VPN"
@@ -22778,6 +22935,9 @@
       "Account is disconnected": [
         "Kontot är frånkopplat"
       ],
+      "Added to your plan: ${ mergedAddonTitles }": [
+        "Tillagt till ditt paket: ${ mergedAddonTitles }"
+      ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Administratörer kan hantera användarkonton och ge administratörsrättigheter till andra användare. Endast den primära administratören kan redigera paketet för organisationen."
       ],
@@ -23306,6 +23466,9 @@
       ],
       "Did you know?": [
         "Visste du att?"
+      ],
+      "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
+        "Skydda din organisation från dataintrång med ${ PLAN_NAMES[plan] }."
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "Skydda din organisation från dataintrång med ${ VPN_APP_NAME } för företag."
@@ -23837,6 +24000,9 @@
       ],
       "Your recovery phrase is outdated. It can't recover new data if you reset your password again.": [
         "Din återställningsfras är föråldrad. Den kan inte återställa ny data om du återställer ditt lösenord igen."
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Din provperiod slutar den ${ textDate }. Du debiteras inte om du avbryter före ${ textDate }. ${ action }"
       ]
     },
     "Warning for domain modal": {

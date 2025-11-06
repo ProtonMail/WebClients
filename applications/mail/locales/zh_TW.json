@@ -1422,6 +1422,9 @@
       "Trust": [
         "信任"
       ],
+      "Trust key": [
+        "信任金鑰"
+      ],
       "Trust public key": [
         "信任公開金鑰"
       ],
@@ -6962,7 +6965,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入影像"
+        "插入圖像"
       ],
       "Insert link": [
         "插入連結"
@@ -7426,14 +7429,8 @@
       "Saved: ${ dateString }": [
         "儲存:${ dateString }"
       ],
-      "Saving draft…": [
-        "正在儲存草稿…"
-      ],
       "Scheduled send of this message will be canceled.": [
         "此郵件的寄送預定將被取消。"
-      ],
-      "Scheduling message...": [
-        "排程傳送郵件中…"
       ],
       "Scribe panel": [
         "側邊面板"
@@ -7476,9 +7473,6 @@
       ],
       "Sending": [
         "傳送中"
-      ],
-      "Sending message...": [
-        "傳送郵件中……"
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "從 @pm.me 電郵位址寄送郵件是付費功能。您的郵件將從您的預設電郵位址 ${ email } 傳送"

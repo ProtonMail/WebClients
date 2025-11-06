@@ -2891,9 +2891,6 @@
       "External accounts are not supported yet": [
         "Сторонні облікові записи ще не підтримуються"
       ],
-      "External invitations are not available yet.": [
-        "Зовнішні запрошення ще недоступні."
-      ],
       "External invitations are temporarily disabled.": [
         "Зовнішні запрошення тимчасово вимкнено."
       ],
@@ -4465,12 +4462,6 @@
       "Anonymous": [
         "Анонім"
       ],
-      "Anyone with this link can access your file.": [
-        "Будь-хто за цим посиланням може отримати доступ до вашого файлу."
-      ],
-      "Anyone with this link can access your folder.": [
-        "Будь-хто за цим посиланням може отримати доступ до вашої теки."
-      ],
       "Are you sure you want to discard your changes?": [
         "Ви справді хочете відхилити зміни?"
       ],
@@ -4621,12 +4612,6 @@
       "Creating": [
         "Створення"
       ],
-      "Creating link to file": [
-        "Створення посилання на файл"
-      ],
-      "Creating link to folder": [
-        "Створення посилання на теку"
-      ],
       "Credit for the unused portion of your previous plan subscription": [
         "Кредит на невикористану частину попередньої передплати тарифного плану"
       ],
@@ -4776,15 +4761,6 @@
       ],
       "Failed": [
         "Не вдалося"
-      ],
-      "Failed to generate a secure link. The reason is: ${ error }": [
-        "Не вдалося згенерувати безпечне посилання. Причина: ${ error }"
-      ],
-      "Failed to generate a secure link. Try again later": [
-        "Не вдалося згенерувати безпечне посилання. Спробуйте пізніше"
-      ],
-      "Failed to open a secure link. The reason is: ${ error }": [
-        "Не вдалося відкрити захищене посилання. Причина: ${ error }"
       ],
       "File \"${ name }\" was deleted during download": [
         "Файл \"${ name }\" було видалено під час завантаження"
@@ -5089,12 +5065,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Власник одного або кількох ваших довірених ключів позначив їх \"скомпрометованими\". Ми радимо вам \"скасувати довіру\" для цих ключів."
       ],
-      "Only the people with the link and the password can access this file.": [
-        "Лише люди з посиланням та паролем можуть отримати доступ до цього файлу."
-      ],
-      "Only the people with the link and the password can access this folder.": [
-        "Лише люди з посиланням та паролем можуть отримати доступ до цієї теки."
-      ],
       "Or use the \"+ New\" button": [
         "Або скористайтеся кнопкою \"+ Додати\""
       ],
@@ -5196,12 +5166,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Будь ласка, зачекайте поки ми перевіряємо контакти, що містять дані, зашифровані неактивним ключем."
-      ],
-      "Preparing link to file": [
-        "Підготовка посилання на файл"
-      ],
-      "Preparing link to folder": [
-        "Підготовка посилання на теку"
       ],
       "Preview failed to be loaded": [
         "Не вдалося завантажити попередній перегляд"
@@ -5448,9 +5412,6 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Це посилання може бути гомографічною атакою. Впевніться, що це саме те посилання, яке ви хочете відвідати, або не відкривайте його."
-      ],
-      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Це посилання було створено за допомогою старої версії Drive і не може бути змінене. Видаліть це посилання та створіть нове, щоб змінити налаштування."
       ],
       "This month": [
         "Цього місяця"
@@ -8147,9 +8108,6 @@
       "Public link access updated": [
         "Доступ до публічного посилання оновлено"
       ],
-      "Public link update access failed ": [
-        "Не вдалося отримати доступ до публічного посилання "
-      ],
       "Root folder failed to be loaded": [
         "Не вдалося завантажити кореневу теку"
       ],
@@ -8171,9 +8129,6 @@
       "The item was successfully added to your drive": [
         "Елемент було успішно додано до вашого диску"
       ],
-      "The link to your item failed to be deleted": [
-        "Не вдалося видалити посилання на ваш елемент"
-      ],
       "The link to your item was deleted": [
         "Посилання на ваш елемент було видалено"
       ],
@@ -8185,9 +8140,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "Ваші старі файли будуть видалені протягом 72 годин"
-      ],
-      "Your settings failed to be saved": [
-        "Ваші налаштування не вдалося зберегти"
       ],
       "Your settings have been changed successfully": [
         "Ваші налаштування успішно змінено"
@@ -8740,9 +8692,6 @@
       ],
       "Select state": [
         "Оберіть країну"
-      ],
-      "Set date": [
-        "Встановити дату"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Поділіться своїми враженнями, щоб вдосконалити ${ BRAND_NAME }"
@@ -10138,46 +10087,6 @@
         "${ seconds } секунди"
       ]
     },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } год",
-        "${ hours } год",
-        "${ hours } год",
-        "${ hours } год"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt }.5 год",
-        "${ hoursInt }.5 год",
-        "${ hoursInt }.5 год",
-        "${ hoursInt }.5 год"
-      ],
-      "${ minutes } min": [
-        "${ minutes } хв",
-        "${ minutes } хв",
-        "${ minutes } хв",
-        "${ minutes } хв"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } година",
-        "${ hours } години",
-        "${ hours } годин",
-        "${ hours } години"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt }.5 години",
-        "${ hoursInt }.5 години",
-        "${ hoursInt }.5 годин",
-        "${ hoursInt }.5 години"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } хвилина",
-        "${ minutes } хвилини",
-        "${ minutes } хвилин",
-        "${ minutes } хвилин"
-      ]
-    },
     "Title": {
       "# of downloads": [
         "# завантажень"
@@ -10742,9 +10651,6 @@
       ],
       "Select link expiration date": [
         "Оберіть дату завершення терміну дії посилання"
-      ],
-      "Select link expiration time": [
-        "Оберіть час завершення дії посилання"
       ],
       "Set recovery phrase": [
         "Встановити фразу відновлення"

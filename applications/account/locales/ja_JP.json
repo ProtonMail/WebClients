@@ -2107,6 +2107,11 @@
         "保留中としてカレンダーに追加"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } 件の追加の結果は表示されていません"
+      ]
+    },
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "現在休暇中のため、大変申し訳ありませんが、お送りいただいたメールをすぐには確認できない可能性があることをご了承ください。"
@@ -10433,9 +10438,6 @@
       ],
       "Step ${ step }": [
         "ステップ ${ step }"
-      ],
-      "Storage": [
-        "ストレージ容量"
       ],
       "Storage allocated to other users in this organisation": [
         "この組織の他のユーザーに割り当てられたストレージ"

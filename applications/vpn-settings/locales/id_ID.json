@@ -86,6 +86,9 @@
       "Add PayPal": [
         "Tambahkan akun PayPal"
       ],
+      "Add referral link to ${ MAIL_APP_NAME } signature": [
+        "Tambah tautan rujukan ke tanda tangan ${ MAIL_APP_NAME }"
+      ],
       "Add user": [
         "Tambah pengguna"
       ],
@@ -1871,6 +1874,9 @@
       "Continue your subscription": [
         "Lanjutkan langganan Anda"
       ],
+      "Copy": [
+        "Salin"
+      ],
       "Create label": [
         "Buat label"
       ],
@@ -1882,6 +1888,9 @@
       ],
       "Remind me later": [
         "Ingatkan saya nanti"
+      ],
+      "Send": [
+        "Kirim"
       ],
       "Set up other features": [
         "Siapkan fitur lainnya"
@@ -3206,11 +3215,17 @@
       "To start, give your organization a name.": [
         "Untuk memulai, beri nama organisasi Anda."
       ],
+      "Track the status and activity of your referrals": [
+        "Lacak status dan aktivitas rujukan Anda"
+      ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Gunakan panduan ini agar organisasi Anda dapat menikmati ekosistem enkripsi dan privasi ${ BRAND_NAME } yang terdepan di industri dengan segera."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Anda dapat mengimpor acara dalam format iCal (berkas ICS). Berkas Anda harus berukuran maksimal ${ MAX_IMPORT_FILE_SIZE_STRING } dan mengandung paling banyak ${ MAX_IMPORT_EVENTS_STRING } acara. Apabila berkas Anda melebihi persyaratan ini, mohon terlebih dahulu pisahkan menjadi berkas yang lebih kecil."
+      ],
+      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
+        "Anda akan menerima ${ referralInfo.referrerRewardAmount } dalam saldo ${ BRAND_NAME } pada saat pengguna yang Anda undang mendaftarkan diri mereka ke paket ${ BRAND_NAME }, dan mereka juga akan memperoleh saldo senilai ${ referralInfo.refereeRewardAmount } sebagai imbalannya."
       ]
     },
     "description": {
@@ -5441,6 +5456,9 @@
       "${ discountPercent }% discount": [
         "Diskon ${ discountPercent }%"
       ],
+      "${ emailAddress } is invalid": [
+        "${ emailAddress } tidak valid"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: gambar ukuran penuh"
       ],
@@ -5581,6 +5599,9 @@
       ],
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Impor kode yang telah Anda miliki** dari aplikasi 2FA lainnya, seperti Google Authenticator"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Undang teman Anda** ke ${ BRAND_NAME } dengan tautan rujukan Anda."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Langkah 1:** Undang teman Anda ke ${ BRAND_NAME } dengan tautan rujukan Anda."
@@ -5878,6 +5899,9 @@
       ],
       "Copy the suggested password to clipboard": [
         "Salin kata sandi yang disarankan ke papan klip"
+      ],
+      "Copy your referral link": [
+        "Salin tautan rujukan Anda"
       ],
       "Country code": [
         "Kode negara"
@@ -6206,6 +6230,12 @@
       "Get ${ upsellPlanName }": [
         "Dapatkan ${ upsellPlanName }"
       ],
+      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
+        "Dapatkan **saldo senilai ${ referrerRewardAmount }** untuk setiap teman yang mendaftar."
+      ],
+      "Get started with the referral link above.": [
+        "Mulai peroleh imbalan Anda dengan tautan rujukan di atas."
+      ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Tuju penyedia identitas Anda, dapatkan metadata SAML untuk ${ appName }, dan impor metadata tersebut di sini."
       ],
@@ -6352,6 +6382,12 @@
       ],
       "Invite rejected": [
         "Undangan ditolak"
+      ],
+      "Invite successfully sent": [
+        "Undangan berhasil dikirim"
+      ],
+      "Invited": [
+        "Diundang"
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Perubahan negara server akan memakan waktu 10 hari. Oleh karenanya, pastikan pilihan Anda sudah benar."
@@ -6629,6 +6665,9 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Berhubung terdapat admin-admin lain pada organisasi Anda, Anda bertanggung jawab untuk memberitahu kata sandi baru ini kepada mereka."
       ],
+      "Paid for a plan": [
+        "Dibayar untuk paket"
+      ],
       "Pass Monitor - custom email confirmed": [
         "Pass Monitor - email khusus dikonfirmasi"
       ],
@@ -6749,6 +6788,9 @@
       "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
         "Tokoh publik, jurnalis, eksekutif bisnis, dan pihak lainnya yang berpotensi untuk menjadi target serangan siber sangat disarankan untuk mengaktifkan ${ PROTON_SENTINEL_NAME }."
       ],
+      "Public link invite": [
+        "Tautan undangan publik"
+      ],
       "Public sharing of documents is not yet supported.": [
         "Pembagian dokumen secara publik belum didukung."
       ],
@@ -6760,6 +6802,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informasi pemulihan akan tetap tersimpan pada perangkat ini kecuali Anda memilih untuk menghapusnya."
+      ],
+      "Referral link copied to your clipboard": [
+        "Tautan rujukan disalin ke papan klip"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Memuat ulang halaman atau ${ link } akan secara otomatis mengatasi sebagian besar masalah."
@@ -6836,6 +6881,9 @@
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Kirim email pengingat agar anggota organisasi Anda terdorong untuk melindungi akun mereka dengan 2FA."
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Dikirim melalui layanan email aman <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Pembayaran SEPA tidak tersedia saat ini. Silakan coba lagi nanti."
       ],
@@ -6884,6 +6932,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Masuk ke ${ MAIL_APP_NAME } untuk mengaktifkan alamat Anda"
       ],
+      "Signed up": [
+        "Terdaftar"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Berhubung Anda telah menjadi pengguna yang setia, akun Anda akan memiliki berbagai fitur tambahan yang dapat Anda gunakan."
       ],
@@ -6901,9 +6952,6 @@
       ],
       "Step ${ step }": [
         "Langkah ${ step }"
-      ],
-      "Storage": [
-        "Ruang penyimpanan"
       ],
       "Storage allocated to other users in this organisation": [
         "Ruang penyimpanan yang dialokasikan kepada pengguna lain di dalam organisasi ini"
@@ -7469,6 +7517,15 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Anda dapat menggunakan informasi kredensial berikut untuk terhubung ke server ${ VPN_APP_NAME } melalui aplikasi VPN open source milik pihak ketiga, seperti Tunnelblick untuk macOS atau OpenVPN untuk GNU/Linux."
       ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "Anda tidak dapat mengirim lebih dari ${ emailSendLimitNumber } email undangan dalam 24 jam ke depan"
+      ],
+      "You cannot refer ${ MAIL_APP_NAME } users": [
+        "Anda tidak dapat merujuk pengguna ${ MAIL_APP_NAME }"
+      ],
+      "You don't have any referrals.": [
+        "Anda tidak memiliki rujukan apa pun."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Anda akan diberi tahu apabila kata sandi atau data lainnya yang Anda miliki terbocorkan dari layanan pihak ketiga."
       ],
@@ -7573,6 +7630,9 @@
       ],
       "Your free trial includes 1 dedicated server.": [
         "Uji coba Anda meliputi 1 server khusus."
+      ],
+      "Your friends get **2 weeks for free** on their chosen plan.": [
+        "Teman Anda memperoleh **2 minggu gratis** untuk paket yang mereka pilih."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Informasi Anda aman di tangan kami. Kami hanya akan menghubungi Anda pada saat tindak lanjut Anda dibutuhkan untuk menghadirkan layanan kami."
@@ -7802,6 +7862,9 @@
       "Account storage": [
         "Penyimpanan akun"
       ],
+      "Activity": [
+        "Aktivitas"
+      ],
       "Add all organization members": [
         "Tambah seluruh anggota organisasi"
       ],
@@ -7861,6 +7924,9 @@
       ],
       "Authenticator app": [
         "Aplikasi autentikator"
+      ],
+      "Awarded": [
+        "Penghargaan"
       ],
       "Backup password": [
         "Kata sandi cadangan"
@@ -7990,6 +8056,9 @@
       ],
       "Current email": [
         "Email saat ini"
+      ],
+      "Date": [
+        "Tanggal"
       ],
       "Default language": [
         "Bahasa bawaan"
@@ -8131,6 +8200,9 @@
       ],
       "Interval": [
         "Interval"
+      ],
+      "Invite via email": [
+        "Undang via email"
       ],
       "Issuer ID": [
         "Issuer ID"
@@ -8291,6 +8363,9 @@
       "Payment method": [
         "Metode pembayaran"
       ],
+      "Pending": [
+        "Belum ditanggapi"
+      ],
       "Phone number": [
         "Nomor telepon"
       ],
@@ -8354,6 +8429,9 @@
       "Reveal password": [
         "Perlihatkan kata sandi"
       ],
+      "Reward": [
+        "Imbalan"
+      ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
@@ -8368,6 +8446,9 @@
       ],
       "Sequences": [
         "Urutan"
+      ],
+      "Share your referral link": [
+        "Bagikan tautan rujukan Anda"
       ],
       "Show ${ n } administrator": [
         "Tampilkan ${ n } administrator"
@@ -8721,6 +8802,9 @@
       ],
       "Terms": [
         "Ketentuan layanan"
+      ],
+      "Terms and conditions": [
+        "Syarat dan ketentuan"
       ],
       "Trouble signing in?": [
         "Mengalami masalah saat akan masuk?"
@@ -13514,6 +13598,12 @@
       "${ feature } is now active": [
         "${ feature } kini telah aktif"
       ],
+      "${ friendsInvited } Friend invited": [
+        "${ friendsInvited } Teman diundang"
+      ],
+      "${ friendsSubscribed } Friend subscribed": [
+        "${ friendsSubscribed } Teman berlangganan"
+      ],
       "${ VPN_APP_NAME } clients": [
         "Klien ${ VPN_APP_NAME }"
       ],
@@ -13784,6 +13874,9 @@
       "Creating user accounts": [
         "Membuat akun pengguna"
       ],
+      "Credit earned": [
+        "Saldo yang diperoleh"
+      ],
       "Credits": [
         "Saldo"
       ],
@@ -14021,6 +14114,9 @@
       "Gift code": [
         "Kode hadiah"
       ],
+      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
+        "Berikan ${ refereeRewardAmount } dan 2 minggu secara cuma-cuma. Dapatkan saldo senilai ${ referrerRewardAmount }."
+      ],
       "Groups": [
         "Grup"
       ],
@@ -14062,6 +14158,9 @@
       ],
       "Invalid verification code": [
         "Kode verifikasi tidak valid"
+      ],
+      "Invite friends. Get credits.": [
+        "Undang teman. Dapatkan saldo."
       ],
       "Invoices": [
         "Faktur"
@@ -14173,6 +14272,9 @@
       ],
       "Recovery": [
         "Pemulihan"
+      ],
+      "Refer a friend": [
+        "Rujuk teman"
       ],
       "Remove all members?": [
         "Hapus seluruh anggota?"
@@ -14450,6 +14552,9 @@
       "Your plan": [
         "Paket Anda"
       ],
+      "Your referrals": [
+        "Rujukan Anda"
+      ],
       "Your shorter address is now ready": [
         "Alamat lebih pendek Anda sudah siap"
       ],
@@ -14589,6 +14694,9 @@
       ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Alamat IP dan penyedia layanan internet (ISP) sumber"
+      ],
+      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
+        "Mengatur footer berikut dalam email yang Anda kirim: ${ signature } Tautan tersebut mengarah ke tautan rujukan Anda. Footer akan muncul di bawah tanda tangan Anda. Anda dapat mempersonalisasi tanda tangan Anda kapan saja di pengaturan."
       ],
       "Shared server policies can be applied to individual users or groups": [
         "Kebijakan server terbagi dapat diterapkan ke pengguna atau grup individu"
@@ -15204,6 +15312,9 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Dengan menghapus nomor telepon ini, Anda tidak akan lagi dapat memulihkan akun Anda."
+      ],
+      "Please add at least one recipient.": [
+        "Silakan tambahkan setidaknya satu nama penerima."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Laporan yang masuk tidak dienkripsi secara end-to-end. Mohon untuk tidak mengirimkan informasi sensitif apa pun."

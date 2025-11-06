@@ -1312,6 +1312,9 @@
       ],
       "Start a call immediately then share the link with others.": [
         "Starte sofort einen Anruf und teile dann den Link mit anderen."
+      ],
+      "Use a link to join a meeting.": [
+        "Einen Link verwenden, um an einem Meeting teilzunehmen."
       ]
     },
     "emergency_access": {
@@ -1742,6 +1745,9 @@
       "Our end-to-end encrypted meetings protect privacy and empower truly free expression.": [
         "Unsere Ende-zu-Ende-verschlüsselten Meetings schützen deine Privatsphäre und ermöglichen wirklich freie Meinungsäußerung."
       ],
+      "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
+        "Deinen ${ MEET_APP_NAME }-Link einfügen, um einem sicheren Meeting beizutreten."
+      ],
       "Permission denied": [
         "Berechtigung abgelehnt"
       ],
@@ -2033,6 +2039,9 @@
       "Find...": [
         "Suchen..."
       ],
+      "https://meet.proton.me/join/id-abc#pwd-123": [
+        "https://meet.proton.me/join/id-abc#pwd-123"
+      ],
       "Loading...": [
         "Wird geladen…"
       ],
@@ -2190,8 +2199,14 @@
       "Invite link": [
         "Einladungslink"
       ],
+      "Join a meeting": [
+        "Meeting beitreten"
+      ],
       "Join meeting": [
         "Meeting beitreten"
+      ],
+      "Join with link": [
+        "Mit Link beitreten"
       ],
       "Joining meeting with ${ participantCount } other participants…": [
         "Teilnahme an Besprechung mit ${ participantCount } weiteren Teilnehmern …"

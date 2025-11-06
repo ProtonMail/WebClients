@@ -80,6 +80,9 @@
       "Add PayPal": [
         "Lisää PayPal"
       ],
+      "Add referral link to ${ MAIL_APP_NAME } signature": [
+        "Lisää suosittelulinkki ${ MAIL_APP_NAME } -allekirjoitukseen"
+      ],
       "Add user": [
         "Lisää käyttäjä"
       ],
@@ -1704,6 +1707,9 @@
       "Continue your subscription": [
         "Jatka tilaustasi"
       ],
+      "Copy": [
+        "Kopioi"
+      ],
       "Create label": [
         "Luo tunniste"
       ],
@@ -1715,6 +1721,9 @@
       ],
       "Remind me later": [
         "Muistuta myöhemmin"
+      ],
+      "Send": [
+        "Lähetä"
       ],
       "Set up other features": [
         "Määritä muut ominaisuudet"
@@ -3004,8 +3013,14 @@
       "To start, give your organization a name.": [
         "Aloita antamalla organisaatiollesi nimi."
       ],
+      "Track the status and activity of your referrals": [
+        "Seuraa suosittelujesi tilaa ja toimintaa"
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Voit tuoda tapahtumia iCal-muodossa (ICS-tiedostosta). Tiedosto voi olla enintään ${ MAX_IMPORT_FILE_SIZE_STRING } kokoinen ja sisältää enintään ${ MAX_IMPORT_EVENTS_STRING } tapahtumaa. Jos tiedosto on suurempi, jaa se pienempiin tiedostoihin."
+      ],
+      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
+        "Saat ${ referralInfo.referrerRewardAmount } ${ BRAND_NAME } -krediitteinä, kun kutsumasi henkilö rekisteröityy ${ BRAND_NAME } -tilaukseen, ja he saavat alkuun myös ${ referralInfo.refereeRewardAmount } krediittiä."
       ]
     },
     "description": {
@@ -5189,6 +5204,9 @@
       "${ discountPercent }% discount": [
         "${ discountPercent }% alennus"
       ],
+      "${ emailAddress } is invalid": [
+        "${ emailAddress } on virheellinen"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: täysikokoinen kuva"
       ],
@@ -5340,6 +5358,9 @@
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Hanki ${ BRAND_NAME }-osoite** käyttääksesi kaikkia ${ BRAND_NAME_TWO }-palveluita, kuten ${ MAIL_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }."
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Kutsu kaverisi** ${ BRAND_NAME }:iin suosittelulinkilläsi."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Vaihe 1:** Kutsu kaverisi ${ BRAND_NAME }:iin suosittelulinkilläsi."
@@ -5619,6 +5640,9 @@
       ],
       "Copy the suggested password to clipboard": [
         "Kopioi ehdotettu salasana leikepöydälle"
+      ],
+      "Copy your referral link": [
+        "Kopioi suosittelulinkkisi"
       ],
       "Country code": [
         "Maakoodi"
@@ -5919,6 +5943,12 @@
       "Get ${ upsellPlanName }": [
         "Hanki ${ upsellPlanName }"
       ],
+      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
+        "Ansaitse **${ referrerRewardAmount } krediittiä** jokaista tilauksen hankkivaa kaveria kohden."
+      ],
+      "Get started with the referral link above.": [
+        "Aloita yllä olevalla suosittelulinkillä."
+      ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Nouda ${ appName }:n SAML-metatiedot identiteetintarjoajastasi ja tuo ne tähän."
       ],
@@ -6057,6 +6087,13 @@
       ],
       "Invite rejected": [
         "Kutsusta kieltäydyttiin"
+      ],
+      "Invite successfully sent": [
+        "Kutsu lähetettiin",
+        "Kutsut lähetettiin"
+      ],
+      "Invited": [
+        "Kutsuttu"
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Palvelimen maan vaihtaminen kestää 10 päivää, joten varmista, että valintasi on oikein."
@@ -6318,6 +6355,9 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Organisaatiossasi on muita ylläpitäjiä ja sinun on huolehdittava uuden salasanan välittämisestä heille."
       ],
+      "Paid for a plan": [
+        "Maksettu tilaukselle"
+      ],
       "Pass Monitor - custom email confirmed": [
         "Pass Monitor - oma sähköposti vahvistettiin"
       ],
@@ -6434,6 +6474,9 @@
       "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
         "Julkisuuden henkilöitä, toimittajia, yritysjohtajia ja muita kyberhyökkäyksille erityisesti alttiita tahoja kehotetaan ottamaan ${ PROTON_SENTINEL_NAME } käyttöön."
       ],
+      "Public link invite": [
+        "Kutsu julkisella linkillä"
+      ],
       "Public sharing of documents is not yet supported.": [
         "Dokumenttien julkista jakamista ei vielä tueta."
       ],
@@ -6445,6 +6488,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Palautustiedot säilyvät tällä laitteella, kunnes poistat ne."
+      ],
+      "Referral link copied to your clipboard": [
+        "Suosittelulinkki kopioitiin leikepöydälle"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sivun päivitys tai ${ link } korjaa useimmat ongelmat automaattisesti."
@@ -6515,6 +6561,9 @@
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Lähetä sähköpostiviestejä, joilla kehotat jäseniäsi suojaamaan heidän tilinsä 2FA:lla."
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Lähetetty turvallisella <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> -sähköpostilla."
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPA-maksut eivät ole tällä hetkellä käytettävissä. Yritä myöhemmin uudelleen."
       ],
@@ -6564,6 +6613,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Aktivoi osoitteesi kirjautumalla ${ MAIL_APP_NAME }iin"
       ],
+      "Signed up": [
+        "Rekisteröityi"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Koska olet uskollinen käyttäjä, tililläsi on lisäominaisuuksia."
       ],
@@ -6579,9 +6631,6 @@
       "Step ${ step }": [
         "${ step }. vaihe",
         "${ step }. vaihe"
-      ],
-      "Storage": [
-        "Tallennustila"
       ],
       "Storage allocated to other users in this organisation": [
         "Organisaation käyttäjille varattu tallennustila"
@@ -7118,6 +7167,16 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Seuraavilla tunnistetiedoilla voit muodostaa yhteyden ${ VPN_APP_NAME } -palvelimiin muiden tahojen kehittämillä avoimen lähdekoodin VPN-sovelluksilla. Esimerkkejä: Tunnelblick macOS:lle ja OpenVPN GNU/Linuxille."
       ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "Voit lähettää seuraavaan 24 tuntiin enintään ${ emailSendLimitNumber } sähköpostikutsun",
+        "Voit lähettää seuraavaan 24 tuntiin enintään ${ emailSendLimitNumber } sähköpostikutsua"
+      ],
+      "You cannot refer ${ MAIL_APP_NAME } users": [
+        "Et voi suositella ${ MAIL_APP_NAME } -käyttäjälle"
+      ],
+      "You don't have any referrals.": [
+        "Sinulla ei ole suositteluja."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Saat ilmoituksen, jos salasanasi tai muita tietojasi on vuotanut muista palveluista."
       ],
@@ -7425,6 +7484,9 @@
       "Account storage": [
         "Tilin tallennustila"
       ],
+      "Activity": [
+        "Tapahtumat"
+      ],
       "Add all organization members": [
         "Lisää kaikki organisaation jäsenet"
       ],
@@ -7484,6 +7546,9 @@
       ],
       "Authenticator app": [
         "Todennussovellus"
+      ],
+      "Awarded": [
+        "Palkittu"
       ],
       "Backup password": [
         "Varasalasana"
@@ -7616,6 +7681,9 @@
       ],
       "Current email": [
         "Nykyinen sähköpostiosoite"
+      ],
+      "Date": [
+        "Päiväys"
       ],
       "Default language": [
         "Oletuskieli"
@@ -7754,6 +7822,9 @@
       ],
       "Interval": [
         "Aikaväli"
+      ],
+      "Invite via email": [
+        "Kutsu sähköpostitse"
       ],
       "Issuer ID": [
         "Myöntäjän ID"
@@ -7911,6 +7982,9 @@
       "Payment method": [
         "Maksutapa"
       ],
+      "Pending": [
+        "Odottaa"
+      ],
       "Phone number": [
         "Puhelinnumero"
       ],
@@ -7974,6 +8048,9 @@
       "Reveal password": [
         "Näytä salasana"
       ],
+      "Reward": [
+        "Palkkio"
+      ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
@@ -7988,6 +8065,9 @@
       ],
       "Server name": [
         "Palvelimen nimi"
+      ],
+      "Share your referral link": [
+        "Jaa suosittelulinkkisi"
       ],
       "Show ${ n } administrator": [
         "Näytä ${ n } ylläpitäjä",
@@ -8337,6 +8417,9 @@
       ],
       "Terms": [
         "Ehdot"
+      ],
+      "Terms and conditions": [
+        "Käyttöehdot"
       ],
       "Trouble signing in?": [
         "Ongelmia kirjautumisessa?"
@@ -13353,6 +13436,9 @@
       "Gift code": [
         "Lahjakoodi"
       ],
+      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
+        "Anna ${ refereeRewardAmount } ja kaksi viikkoa ilmaiseksi. Ansaitset ${ referrerRewardAmount } krediittiä."
+      ],
       "Groups": [
         "Ryhmät"
       ],
@@ -13392,6 +13478,9 @@
       ],
       "Invalid verification code": [
         "Virheellinen vahvistuskoodi"
+      ],
+      "Invite friends. Get credits.": [
+        "Kutsu kavereita. Hanki krediittejä."
       ],
       "Invoices": [
         "Laskut"
@@ -13500,6 +13589,9 @@
       ],
       "Recovery": [
         "Palautus"
+      ],
+      "Refer a friend": [
+        "Kerro kaverille"
       ],
       "Remove all members?": [
         "Poistetaanko kaikki jäsenet?"
@@ -13751,6 +13843,9 @@
       "Your plan": [
         "Tilauksesi"
       ],
+      "Your referrals": [
+        "Suosittelusi"
+      ],
       "Your shorter address is now ready": [
         "Lyhyempi osoittesi on nyt valmis"
       ],
@@ -13884,6 +13979,9 @@
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Jäsenet, jotka eivät käytä 2FA:ta, saavat sähköpostin, jossa heitä pyydetään ottamaan se käyttöön mahdollisimman pian. Kertakirjautumisen käyttäjät eivät saa sähköpostimuistutusta."
+      ],
+      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
+        "Lisää seuraavan tekstin lähettämiesi viestien alalaitaan: ${ signature } Linkki johtaa suosituslinkkiisi ja se näytetään viestin allekirjoituksen alapuolella. Voit mukauttaa allekirjoitustasi koska tahansa asetuksista."
       ],
       "Shared server policies can be applied to individual users or groups": [
         "Jaettujen palvelimien käytäntöjä voidaan soveltaa yksittäisiin käyttäjiin tai ryhmiin"
@@ -14470,6 +14568,9 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Jos poistat tämän puhelinnumeron, et voi enää palauttaa tiliäsi."
+      ],
+      "Please add at least one recipient.": [
+        "Lisää ainakin yksi vastaanottaja."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Raportit eivät ole päästä päähän -salattuja, joten älä sisällytä niihin arkaluonteisia tietoja."

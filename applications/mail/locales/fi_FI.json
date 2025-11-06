@@ -1456,6 +1456,10 @@
       "Trust": [
         "Luota"
       ],
+      "Trust key": [
+        "Luota avaimeen",
+        "Luota avaimiin"
+      ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
       ],
@@ -5348,6 +5352,11 @@
         "Rajattomasti Hide-my-email-aliaksia"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Salamannopea"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Jotain meni pieleen suojausavaimellasi tunnistauduttaessa. Yritä uudelleen."
@@ -7187,8 +7196,7 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva",
-        "Lisää kuvia"
+        "Lisää kuva"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -7668,17 +7676,11 @@
       "Saved: ${ dateString }": [
         "Tallennettu: ${ dateString }"
       ],
-      "Saving draft…": [
-        "Tallennetaan luonnosta…"
-      ],
       "Scan the QR code with your mobile device": [
         "Skannaa QR-koodi mobiililaitteellasi"
       ],
       "Scheduled send of this message will be canceled.": [
         "Viestin ajoitettu lähetys perutaan."
-      ],
-      "Scheduling message...": [
-        "Ajoitetaan viestiä..."
       ],
       "Scribe panel": [
         "Scribe-paneeli"
@@ -7722,9 +7724,6 @@
       ],
       "Sending": [
         "Lähetetään"
-      ],
-      "Sending message...": [
-        "Lähetetään viestiä..."
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Viestien lähetys @pm.me-osoitteesta on maksullinen ominaisuus. Viestisi lähetetään oletusosoitteestasi ${ email }"

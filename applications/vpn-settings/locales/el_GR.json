@@ -86,6 +86,9 @@
       "Add PayPal": [
         "Προσθήκη PayPal"
       ],
+      "Add referral link to ${ MAIL_APP_NAME } signature": [
+        "Προσθήκη συνδέσμου παραπομπής στην υπογραφή του ${ MAIL_APP_NAME }"
+      ],
       "Add user": [
         "Προσθήκη χρήστη"
       ],
@@ -460,6 +463,9 @@
       ],
       "Get more servers": [
         "Αποκτήστε περισσότερους διακομιστές"
+      ],
+      "Get more storage": [
+        "Αποκτήστε περισσότερο χώρο αποθήκευσης"
       ],
       "Get the apps": [
         "Αποκτήστε τις εφαρμογές"
@@ -1067,6 +1073,13 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe βοηθός γραφής"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe βοηθός γραφής (για ${ quantity } χρήστη)",
+        "${ BRAND_NAME } Scribe βοηθός γραφής (για ${ quantity } χρήστες)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } πρόσθετος προσαρμοσμένος τομέας",
         "${ domains } πρόσθετοι προσαρμοσμένοι τομείς"
@@ -1074,6 +1087,13 @@
       "${ ips } server": [
         "${ ips } διακομιστής",
         "${ ips } διακομιστές"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } Βοηθός τεχνητής νοημοσύνης"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } Βοηθός τεχνητής νοημοσύνης (για ${ quantity } χρήστη)",
+        "${ LUMO_APP_NAME } Βοηθός τεχνητής νοημοσύνης (για ${ quantity } χρήστες)"
       ],
       "${ price } per dedicated server": [
         "${ price } ανά αποκλειστικό διακομιστή"
@@ -1086,6 +1106,10 @@
       ],
       "${ price } per user": [
         "${ price } ανά χρήστη"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } προσαρμοσμένος τομέας",
+        "${ quantity } προσαρμοσμένοι τομείς"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } θέση",
@@ -1399,6 +1423,12 @@
       ],
       "Unsupported event": [
         "Μη υποστηριζόμενη εκδήλωση"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } ακόμη αποτέλεσμα δεν εμφανίζεται",
+        "${ hiddenResultsCount } ακόμη αποτελέσματα δεν εμφανίζονται"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -1896,6 +1926,9 @@
       "Continue your subscription": [
         "Συνεχίστε τη συνδρομή σας"
       ],
+      "Copy": [
+        "Αντιγραφή"
+      ],
       "Create label": [
         "Δημιουργία ετικέτας"
       ],
@@ -1907,6 +1940,9 @@
       ],
       "Remind me later": [
         "Υπενθύμιση αργότερα"
+      ],
+      "Send": [
+        "Αποστολή"
       ],
       "Set up other features": [
         "Ρύθμιση άλλων δυνατοτήτων"
@@ -3235,11 +3271,17 @@
       "To start, give your organization a name.": [
         "Για να ξεκινήσετε, δώστε ένα όνομα στον οργανισμό σας."
       ],
+      "Track the status and activity of your referrals": [
+        "Παρακολουθήστε την κατάσταση και τη δραστηριότητα των παραπομπών σας"
+      ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Χρησιμοποιήστε αυτόν τον οδηγό για να επωφεληθεί άμεσα ο οργανισμός σας από το κορυφαίο οικοσύστημα κρυπτογράφησης και προστασίας προσωπικών δεδομένων του ${ BRAND_NAME }."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Μπορείτε να εισάγετε εκδηλώσεις σε μορφή iCal (ICS αρχείο).\nΤο αρχείο θα πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει μέχρι και ${ MAX_IMPORT_EVENTS_STRING } εκδηλώσεις.\nΑν το αρχείο σας είναι μεγαλύτερο, παρακαλούμε να το χωρίσετε σε μικρότερα αρχεία."
+      ],
+      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
+        "Θα λάβετε ${ referralInfo.referrerRewardAmount } σε πίστωση στο ${ BRAND_NAME } όταν το άτομο που προσκαλείτε εγγραφεί σε ένα πλάνο ${ BRAND_NAME }, και θα λάβουν επίσης ${ referralInfo.refereeRewardAmount } σε πιστώσεις για να ξεκινήσουν."
       ]
     },
     "description": {
@@ -4741,6 +4783,12 @@
       "${ VPN_CONNECTIONS } devices": [
         "${ VPN_CONNECTIONS } συσκευές"
       ],
+      "15 GB storage": [
+        "15 GB αποθηκευτικού χώρου"
+      ],
+      "@pm.me address": [
+        "@pm.me διεύθυνση"
+      ],
       "Ad-blocker and malware protection": [
         "Αποκλεισμός διαφημίσεων και προστασία από κακόβουλο λογισμικό"
       ],
@@ -4749,6 +4797,12 @@
       ],
       "and more premium features...": [
         "και περισσότερες προηγμένες δυνατότητες..."
+      ],
+      "Connect custom domain": [
+        "Σύνδεση προσαρμοσμένου τομέα"
+      ],
+      "Desktop app": [
+        "Εφαρμογή υπολογιστή"
       ],
       "Double VPN": [
         "Διπλό VPN"
@@ -4761,6 +4815,9 @@
       ],
       "NetShield Ad-blocker": [
         "NetShield Ad-blocker"
+      ],
+      "Priority support": [
+        "Υποστήριξη με προτεραιότητα"
       ],
       "Secure streaming": [
         "Ασφαλές streaming"
@@ -5108,6 +5165,9 @@
       ],
       "Domain": [
         "Τομέας"
+      ],
+      "Drag to reorder": [
+        "Σύρετε για αναδιάταξη"
       ],
       "Status": [
         "Κατάσταση"
@@ -5527,6 +5587,9 @@
       "${ discountPercent }% discount": [
         "${ discountPercent }% έκπτωση"
       ],
+      "${ emailAddress } is invalid": [
+        "Η ${ emailAddress } είναι μη έγκυρη"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: εικόνα πλήρους μεγέθους"
       ],
@@ -5687,6 +5750,9 @@
       ],
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Εισάγετε τους υπάρχοντες κωδικούς σας** από άλλες εφαρμογές 2FA, όπως το Google Authenticator"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Προσκαλέστε τους φίλους σας** στο ${ BRAND_NAME } με τον σύνδεσμο παραπομπής σας."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Βήμα 1:** Προσκαλέστε τους φίλους σας στο ${ BRAND_NAME } με τον σύνδεσμο παραπομπής σας."
@@ -5993,6 +6059,9 @@
       ],
       "Copy the suggested password to clipboard": [
         "Αντιγράψτε τον προτεινόμενο κωδικό πρόσβασης στο πρόχειρο"
+      ],
+      "Copy your referral link": [
+        "Αντιγράψτε τον σύνδεσμο παραπομπής σας"
       ],
       "Country code": [
         "Κωδικός χώρας"
@@ -6326,6 +6395,12 @@
       "Get ${ upsellPlanName }": [
         "Απόκτηση ${ upsellPlanName }"
       ],
+      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
+        "Κερδίστε **${ referrerRewardAmount } πιστώσεις** για κάθε φίλο που κάνει εγγραφή."
+      ],
+      "Get started with the referral link above.": [
+        "Ξεκινήστε με τον σύνδεσμο παραπομπής παραπάνω."
+      ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Μεταβείτε στον πάροχο ταυτότητάς σας, λάβετε τα μεταδεδομένα SAML για το ${ appName } και εισαγάγετε τα εδώ."
       ],
@@ -6476,6 +6551,13 @@
       ],
       "Invite rejected": [
         "Η πρόσκληση απορρίφθηκε"
+      ],
+      "Invite successfully sent": [
+        "Επιτυχής αποστολή πρόσκλησης",
+        "Επιτυχής αποστολή προσκλήσεων"
+      ],
+      "Invited": [
+        "Προσκεκλημένοι"
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Χρειάζονται 10 ημέρες για να αλλάξετε τη χώρα ενός διακομιστή, οπότε βεβαιωθείτε ότι η επιλογή σας είναι σωστή."
@@ -6755,6 +6837,9 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Υπάρχουν και άλλοι διαχειριστές στον οργανισμό σας, είστε υπεύθυνοι για την ενημέρωση τους σχετικά με τον νέο κωδικό πρόσβασης."
       ],
+      "Paid for a plan": [
+        "Πλήρωσε για ένα πλάνο"
+      ],
       "Pass Monitor - custom email confirmed": [
         "Pass Monitor - επιβεβαιώθηκε προσαρμοσμένο email"
       ],
@@ -6877,6 +6962,9 @@
       "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
         "Δημόσια πρόσωπα, δημοσιογράφοι, στελέχη, και λοιποί που μπορεί να στοχοποιηθούν απο κυβερνοεπιθέσεις ενθαρρύνονται ιδιαίτερα να ενεργοποιήσουν ${ PROTON_SENTINEL_NAME }."
       ],
+      "Public link invite": [
+        "Πρόσκληση δημόσιου σύνδεσμου"
+      ],
       "Public sharing of documents is not yet supported.": [
         "Η δημόσια κοινή χρήση εγγράφων δεν υποστηρίζεται ακόμη."
       ],
@@ -6888,6 +6976,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Οι πληροφορίες ανάκτησης θα παραμείνουν σε αυτήν τη συσκευή έως ότου επιλέξετε να τις διαγράψετε."
+      ],
+      "Referral link copied to your clipboard": [
+        "Ο σύνδεσμος παραπομπής αντιγράφηκε στο πρόχειρό σας"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
@@ -6964,6 +7055,9 @@
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Στείλτε email για να ενθαρρύνετε τα μέλη σας να προστατεύσουν τους λογαριασμούς τους με το 2FA."
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Στάλθηκε με <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> διασφαλισμένο ταχυδρομείο."
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Οι πληρωμές SEPA δεν είναι διαθέσιμες προς το παρόν. Παρακαλούμε προσπαθήστε ξανά αργότερα."
       ],
@@ -7013,6 +7107,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Για ενεργοποίηση της διεύθυνσής σας, συνδεθείτε στο ${ MAIL_APP_NAME }"
       ],
+      "Signed up": [
+        "Εγγράφηκε"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Επειδή είστε πιστός χρήστης, ο λογαριασμός σας έχει ενεργοποιημένες πρόσθετες λειτουργίες."
       ],
@@ -7034,9 +7131,6 @@
       "Step ${ step }": [
         "Βήμα ${ step }",
         "Βήματα ${ step }"
-      ],
-      "Storage": [
-        "Αποθηκευτικός χώρος"
       ],
       "Storage allocated to other users in this organisation": [
         "Κατανεμημένος αποθηκευτικός χώρος σε άλλους χρήστες αυτού του οργανισμού"
@@ -7612,6 +7706,16 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Για σύνδεση σε διακομιστή ${ VPN_APP_NAME } με χρήση εφαρμογής VPN ανοικτού κώδικα τρίτων, όπως το Tunnelblick για macOS ή το OpenVPN για GNU/Linux, μπορείτε να χρησιμοποιείτε τα ακόλουθα διαπιστευτήρια."
       ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "Δεν μπορείτε να αποστέλλετε περισσότερες από ${ emailSendLimitNumber } πρόσκληση email για τις επόμενες 24 ώρες",
+        "Δεν μπορείτε να αποστέλλετε περισσότερες από ${ emailSendLimitNumber } προσκλήσεις email για τις επόμενες 24 ώρες"
+      ],
+      "You cannot refer ${ MAIL_APP_NAME } users": [
+        "Δεν μπορείτε να προτείνετε χρήστες του ${ MAIL_APP_NAME }."
+      ],
+      "You don't have any referrals.": [
+        "Δεν έχετε καμία παραπομπή."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Λαμβάνετε ειδοποίηση εάν ο κωδικός πρόσβασής σας ή άλλα δεδομένα διέρρευσαν από υπηρεσία τρίτων."
       ],
@@ -7720,6 +7824,9 @@
       ],
       "Your free trial includes 1 dedicated server.": [
         "Η δωρεάν δοκιμή σας περιλαμβάνει 1 αποκλειστικό διακομιστή."
+      ],
+      "Your friends get **2 weeks for free** on their chosen plan.": [
+        "Οι φίλοι σας αποκτούν **2 εβδομάδες δωρεάν** στο επιλεγμένο τους πλάνο."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Οι πληροφορίες σας είναι ασφαλείς μαζί μας. Θα επικοινωνήσουμε μαζί σας μόνο όταν απαιτείται για την παροχή των υπηρεσιών μας."
@@ -7956,6 +8063,9 @@
       "Account storage": [
         "Χωρητικότητα λογαριασμού"
       ],
+      "Activity": [
+        "Δραστηριότητα"
+      ],
       "Add all organization members": [
         "Προσθήκη όλων των μελών του οργανισμού"
       ],
@@ -8015,6 +8125,9 @@
       ],
       "Authenticator app": [
         "Εφαρμογή επαλήθευσης"
+      ],
+      "Awarded": [
+        "Βραβευμένα"
       ],
       "Backup password": [
         "Εφεδρικός κωδικός πρόσβασης"
@@ -8148,6 +8261,9 @@
       "Current email": [
         "Τρέχουσα διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
+      "Date": [
+        "Ημερομηνία"
+      ],
       "Default language": [
         "Προεπιλεγμένη γλώσσα"
       ],
@@ -8238,6 +8354,12 @@
       "Folder location": [
         "Τοποθεσία φακέλου"
       ],
+      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
+        "Για ${ DRIVE_SHORT_APP_NAME } και ${ DOCS_SHORT_APP_NAME }."
+      ],
+      "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
+        "Για ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, και ${ SHEETS_SHORT_APP_NAME }."
+      ],
       "From: ${ fromEmail }": [
         "Από: ${ fromEmail }"
       ],
@@ -8291,6 +8413,9 @@
       ],
       "Interval": [
         "Διάστημα"
+      ],
+      "Invite via email": [
+        "Πρόσκληση μέσω email"
       ],
       "Issuer ID": [
         "Issuer ID"
@@ -8451,6 +8576,9 @@
       "Payment method": [
         "Μέθοδος πληρωμής"
       ],
+      "Pending": [
+        "Σε εκκρεμότητα"
+      ],
       "Phone number": [
         "Αριθμός τηλεφώνου"
       ],
@@ -8514,6 +8642,9 @@
       "Reveal password": [
         "Εμφάνιση κωδικού"
       ],
+      "Reward": [
+        "Ανταμοιβή"
+      ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Γενεύη"
       ],
@@ -8531,6 +8662,12 @@
       ],
       "Server name": [
         "Όνομα διακομιστή"
+      ],
+      "Share your referral link": [
+        "Κοινοποιήστε τον σύνδεσμο παραπομπής σας"
+      ],
+      "Shared between ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ WALLET_SHORT_APP_NAME }.": [
+        "Κοινόχρηστο μεταξύ ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } και ${ WALLET_SHORT_APP_NAME }."
       ],
       "Show ${ n } administrator": [
         "Εμφάνιση ${ n } διαχειριστή",
@@ -8889,6 +9026,9 @@
       ],
       "Terms": [
         "Όροι"
+      ],
+      "Terms and conditions": [
+        "Όροι και προϋποθέσεις"
       ],
       "Trouble signing in?": [
         "Πρόβλημα σύνδεσης;"
@@ -12885,6 +13025,9 @@
       "${ app } storage": [
         "Αποθηκευτικός χώρος ${ app }"
       ],
+      "${ app } storage used": [
+        "${ app } αποθηκευτικός χώρος σε χρήση"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% γεμάτος"
       ],
@@ -12896,6 +13039,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Για όλες τις υπηρεσίες ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Αποθηκευτικός χώρος σε χρήση"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Για να συνεχίσετε να χρησιμοποιείτε τα προϊόντα ${ BRAND_NAME }, απελευθερώστε χώρο ή ${ upgrade }"
@@ -13821,6 +13967,14 @@
       "${ feature } is now active": [
         "Το ${ feature } είναι πλέον ενεργό"
       ],
+      "${ friendsInvited } Friend invited": [
+        "${ friendsInvited } Φίλος προσκλήθηκε",
+        "${ friendsInvited } Φίλοι προσκλήθηκαν"
+      ],
+      "${ friendsSubscribed } Friend subscribed": [
+        "${ friendsSubscribed } Φίλος εγγράφηκε",
+        "${ friendsSubscribed } Φίλοι εγγεγράφηκαν"
+      ],
       "${ VPN_APP_NAME } clients": [
         "${ VPN_APP_NAME } πελάτες"
       ],
@@ -14093,6 +14247,9 @@
       "Creating user accounts": [
         "Δημιουργία λογαριασμών χρηστών"
       ],
+      "Credit earned": [
+        "Κερδισμένη πίστωση"
+      ],
       "Credits": [
         "Πιστώσεις"
       ],
@@ -14332,6 +14489,9 @@
       "Gift code": [
         "Κωδικός δώρου"
       ],
+      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
+        "Δώστε ${ refereeRewardAmount } και 2 εβδομάδες δωρεάν. Λάβετε ${ referrerRewardAmount } πιστώσεις."
+      ],
       "Groups": [
         "Ομάδες"
       ],
@@ -14374,6 +14534,9 @@
       ],
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"
+      ],
+      "Invite friends. Get credits.": [
+        "Προσκαλέστε φίλους. Λάβετε πιστώσεις."
       ],
       "Invoices": [
         "Τιμολόγια"
@@ -14485,6 +14648,9 @@
       ],
       "Recovery": [
         "Ανάκτηση"
+      ],
+      "Refer a friend": [
+        "Παραπέμψτε έναν φίλο"
       ],
       "Remove all members?": [
         "Κατάργηση όλων των μελών;"
@@ -14766,6 +14932,9 @@
       "Your plan": [
         "Το πακέτο σας"
       ],
+      "Your referrals": [
+        "Οι παραπομπές σας"
+      ],
       "Your shorter address is now ready": [
         "Η συντομότερη διεύθυνσή σας είναι τώρα έτοιμη"
       ],
@@ -14840,6 +15009,9 @@
       "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
         "Μια αλλαγή από την πλευρά του Gmail εμποδίζει τη σύνδεση του ${ BRAND_NAME }. Χορηγήστε άδεια για την επαναφορά της λειτουργικότητας του ηλεκτρονικού ταχυδρομείου."
       ],
+      "Added to your plan: ${ mergedAddonTitles }": [
+        "Προστέθηκε στο πλάνο σας: ${ mergedAddonTitles }"
+      ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Οι διαχειριστές μπορούν να διαχειρίζονται λογαριασμούς χρηστών και να εκχωρούν δικαιώματα διαχειριστή σε άλλους χρήστες. Μόνο ο κύριος διαχειριστής μπορεί να επεξεργαστεί το πλάνο του οργανισμού."
       ],
@@ -14905,6 +15077,9 @@
       ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Διεύθυνση IP προέλευσης και Πάροχος Υπηρεσιών Διαδικτύου (ISP)"
+      ],
+      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
+        "Ορίζει το παρακάτω υποσέλιδο στα μηνύματα που στέλνετε: ${ signature } Ο σύνδεσμος δείχνει στον σύνδεσμο παραπομπής σας. Το υποσέλιδο θα φαίνεται κάτω από την υπογραφή σας. Μπορείτε να εξατομικεύσετε την υπογραφή σας στις ρυθμίσεις."
       ],
       "Shared server policies can be applied to individual users or groups": [
         "Οι κοινόχρηστες πολιτικές διακομιστή μπορούν να εφαρμοστούν σε μεμονωμένους χρήστες ή ομάδες"
@@ -15163,6 +15338,9 @@
       ],
       "Did you know?": [
         "Το γνωρίζατε;"
+      ],
+      "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
+        "Προστατέψτε τον οργανισμό σας από παραβιάσεις δεδομένων με το ${ PLAN_NAMES[plan] }."
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "Προστατέψτε τον οργανισμό σας από παραβιάσεις δεδομένων με το ${ VPN_APP_NAME } για Business."
@@ -15540,6 +15718,9 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Διαγράφοντας αυτό το νούμερο τηλεφώνου, δεν θα είστε πλέον σε θέση να ανακτήσετε το λογαριασμό σας."
+      ],
+      "Please add at least one recipient.": [
+        "Παρακαλούμε προσθέστε τουλάχιστον έναν παραλήπτη."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Οι αναφορές δεν είναι διατερματικά κρυπτογραφημένες, παρακαλούμε μη στέλνετε ευαίσθητες πληροφορίες."

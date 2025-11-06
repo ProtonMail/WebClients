@@ -1582,6 +1582,9 @@
       "Continue your subscription": [
         "Podaljšajte naročnino"
       ],
+      "Copy": [
+        "Kopiraj"
+      ],
       "Create label": [
         "Ustvarite oznako"
       ],
@@ -1593,6 +1596,9 @@
       ],
       "Remind me later": [
         "Opomni me kasneje"
+      ],
+      "Send": [
+        "Pošljite"
       ],
       "Set up other features": [
         "Nastavite druge funkcije"
@@ -2837,6 +2843,9 @@
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Za uvoz stikov iz Googla ali Outlooka ${ easySwitchLink }."
+      ],
+      "Track the status and activity of your referrals": [
+        "Preverite stanje in dejavnost vaših priporočil"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Dogodke lahko uvozite v formatu iCal (datoteka ICS). Datoteka ima lahko največjo velikost ${ MAX_IMPORT_FILE_SIZE_STRING } in vsebuje največ ${ MAX_IMPORT_EVENTS_STRING } dogodkov. Če je datoteka večja, jo razdelite na manjše datoteke."
@@ -4932,6 +4941,9 @@
         "${ calendarsToBeMergedCount } združeni koledarji",
         "${ calendarsToBeMergedCount } združenih koledarjev"
       ],
+      "${ emailAddress } is invalid": [
+        "${ emailAddress } je neveljaven"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: slika v polni velikosti"
       ],
@@ -5315,6 +5327,9 @@
       ],
       "Copy the suggested password to clipboard": [
         "Kopiraj predlagano geslo v odložišče."
+      ],
+      "Copy your referral link": [
+        "Kopirajte svojo povezavo za priporočilo"
       ],
       "Country code": [
         "Koda države"
@@ -5721,6 +5736,15 @@
       "Invite rejected": [
         "Povabilo zavrnjeno"
       ],
+      "Invite successfully sent": [
+        "Vabilo uspešno poslano",
+        "Vabili uspešno poslani",
+        "Vabila uspešno poslana",
+        "Vabila uspešno poslana"
+      ],
+      "Invited": [
+        "Povabljeni"
+      ],
       "JCB logo": [
         "Logotip JCB"
       ],
@@ -5994,6 +6018,9 @@
       "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
         "Javnim osebnostim, novinarjem, izvršnim direktorjem in drugim, ki bi lahko postali tarča kibernetskih napadov, močno priporočamo, da omogočijo ${ PROTON_SENTINEL_NAME }."
       ],
+      "Public link invite": [
+        "Javno povabilo prek povezave."
+      ],
       "Recently used servers:": [
         "Nedavno uporabljeni strežniki:"
       ],
@@ -6002,6 +6029,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Podatki za obnovitev bodo ostali v tej napravi, razen če jih izbrišete."
+      ],
+      "Referral link copied to your clipboard": [
+        "Povezava za priporočilo je bila kopirana v odložišče."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Osveževanje strani ali ${ link } bo samodejno odpravilo večino težav."
@@ -6063,6 +6093,9 @@
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Pošljite sporočilo, da spodbudite člane, da zaščitijo svoje račune z dvojnim preverjanjem pristnosti."
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Poslano z varne e-pošte <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Plačila SEPA trenutno niso na voljo. Poskusite znova pozneje."
       ],
@@ -6093,6 +6126,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Prijavite se v ${ MAIL_APP_NAME }, da aktivirate svoj naslov."
       ],
+      "Signed up": [
+        "Prijavljen"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Ker ste zvest uporabnik, smo vašemu računu omogočili dodatne funkcionalnosti."
       ],
@@ -6110,9 +6146,6 @@
         "${ step }. korak",
         "${ step }. korak",
         "${ step }. korak"
-      ],
-      "Storage": [
-        "Shramba"
       ],
       "Storage allocated to other users in this organisation": [
         "Shramba, dodeljena drugim uporabnikom v tej organizaciji."
@@ -6594,6 +6627,15 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Uporabite lahko naslednje poverilnice, da se povežete v strežnik ${ VPN_APP_NAME } z uporabo zunanje odprtokodne VPN aplikacije, kot je Tunnelblick za macOS ali OpenVPN za GNU/Linux."
       ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "V naslednjih 24 urah ne morete poslati več kot ${ emailSendLimitNumber } vabila.",
+        "V naslednjih 24 urah ne morete poslati več kot ${ emailSendLimitNumber } vabil.",
+        "V naslednjih 24 urah ne morete poslati več kot ${ emailSendLimitNumber } vabil.",
+        "V naslednjih 24 urah ne morete poslati več kot ${ emailSendLimitNumber } vabil."
+      ],
+      "You cannot refer ${ MAIL_APP_NAME } users": [
+        "Ne morete predlagati uporabnikov ${ MAIL_APP_NAME }"
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Prejmite obvestilo, če so vaše geslo ali drugi podatki ušli iz storitve tretje osebe."
       ],
@@ -6869,6 +6911,9 @@
       "Account storage": [
         "Shramba računa"
       ],
+      "Activity": [
+        "Opravilo"
+      ],
       "Add all organization members": [
         "Dodaj vse člane organizacije"
       ],
@@ -6925,6 +6970,9 @@
       ],
       "Authenticator app": [
         "Aplikacija za preverjanje pristnosti"
+      ],
+      "Awarded": [
+        "Podeljeno."
       ],
       "Backup password": [
         "Varnostno geslo"
@@ -7051,6 +7099,9 @@
       ],
       "Current email": [
         "Trenutna e-pošta"
+      ],
+      "Date": [
+        "Datum"
       ],
       "Default language": [
         "Privzeti jezik"
@@ -7183,6 +7234,9 @@
       ],
       "Interval": [
         "Interval"
+      ],
+      "Invite via email": [
+        "Povabi preko e-pošte"
       ],
       "Issuer ID": [
         "ID izdajatelja"
@@ -7336,6 +7390,9 @@
       ],
       "Payment method": [
         "Način plačila"
+      ],
+      "Pending": [
+        "V teku"
       ],
       "Phone number": [
         "Telefonska številka"
@@ -12567,6 +12624,9 @@
       "Recovery": [
         "Obnovitev"
       ],
+      "Refer a friend": [
+        "Priporočite prijatelju"
+      ],
       "Remove all members?": [
         "Odstrani vse člane?"
       ],
@@ -13377,6 +13437,9 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Če izbrišete to telefonsko številko, ne boste več mogli obnoviti svojega računa."
+      ],
+      "Please add at least one recipient.": [
+        "Dodajte vsaj enega prejemnika."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Poročila o napakah niso šifrirana, zato ne pošiljajte nobenih občutljivih informacij."

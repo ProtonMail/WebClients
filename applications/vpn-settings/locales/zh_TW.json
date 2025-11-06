@@ -80,6 +80,9 @@
       "Add PayPal": [
         "加入 PayPal"
       ],
+      "Add referral link to ${ MAIL_APP_NAME } signature": [
+        "將推薦連結加到 ${ MAIL_APP_NAME } 簽名檔裡"
+      ],
       "Add user": [
         "加入使用者"
       ],
@@ -1599,6 +1602,9 @@
       "Continue your subscription": [
         "繼續您的訂閱"
       ],
+      "Copy": [
+        "複製"
+      ],
       "Create label": [
         "創建標籤"
       ],
@@ -1610,6 +1616,9 @@
       ],
       "Remind me later": [
         "稍後提醒我"
+      ],
+      "Send": [
+        "傳送"
       ],
       "Set up other features": [
         "設置其他功能"
@@ -2853,6 +2862,9 @@
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "從 Google 或 Outlook, ${ easySwitchLink } 來匯入你的聯絡人"
+      ],
+      "Track the status and activity of your referrals": [
+        "追蹤您推薦邀請的狀態和進度"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "您可以使用 iCal 格式 (ICS 檔案) 匯入事件。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_EVENTS_STRING } 個事件。若您的檔案超出此限，請將其分割為較小的檔案。"
@@ -4905,6 +4917,9 @@
       "${ discountPercent }% discount": [
         "${ discountPercent }%折扣"
       ],
+      "${ emailAddress } is invalid": [
+        "${ emailAddress } 無效"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }：完整大小圖片"
       ],
@@ -5018,6 +5033,9 @@
       ],
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "從其他雙重驗證應用程式**匯入您的現有代碼**，例如 Google Authenticator"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "使用您的推薦連結**邀請朋友**來 ${ BRAND_NAME }。"
       ],
       "**Sync codes** to all your devices": [
         "**同步代碼**到您的所有裝置"
@@ -5258,6 +5276,9 @@
       ],
       "Copy the suggested password to clipboard": [
         "複製建議的密碼至剪貼簿"
+      ],
+      "Copy your referral link": [
+        "複製您的推介連結"
       ],
       "Country code": [
         "國家代碼"
@@ -5538,6 +5559,9 @@
       "Get ${ upsellPlanName }": [
         "取得 ${ upsellPlanName }"
       ],
+      "Get started with the referral link above.": [
+        "從使用上方的推薦連結開始。"
+      ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "請前往您的身分提供者，取得 ${ appName } 的 SAML 中繼資料並在此匯入。"
       ],
@@ -5675,6 +5699,12 @@
       ],
       "Invite rejected": [
         "邀請已婉拒"
+      ],
+      "Invite successfully sent": [
+        "邀請已成功傳送"
+      ],
+      "Invited": [
+        "已邀請"
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "將花10天變更伺服器的國家，所以請確認選擇正確。"
@@ -5922,6 +5952,9 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "您的組織中還有其他系統管理員，您有責任告知他們新密碼。"
       ],
+      "Paid for a plan": [
+        "已付款訂購方案"
+      ],
       "Pass Monitor - custom email confirmed": [
         "Pass Monitor - 自訂電子郵件已確認"
       ],
@@ -6033,6 +6066,9 @@
       "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
         "強烈鼓勵公眾人物、記者、管理人員和其他可能成為網絡攻擊目標的人啟用 ${ PROTON_SENTINEL_NAME }。"
       ],
+      "Public link invite": [
+        "公開的連結邀請"
+      ],
       "Public sharing of documents is not yet supported.": [
         "公開分享尚未支援。"
       ],
@@ -6044,6 +6080,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "除非您選擇並刪除，否則復原的資料仍留在本裝置內。"
+      ],
+      "Referral link copied to your clipboard": [
+        "推介連結已複製到您的剪貼簿"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "重新整理此頁面或${ link }將自動解決大部分問題。"
@@ -6105,6 +6144,9 @@
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "提醒您，請鼓勵您的用戶啟用二步驟驗證 (2FA) 以保護帳號安全。"
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "使用 <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> 安全電子郵件傳送。"
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPA 付款目前不可用。請稍後再試。"
       ],
@@ -6150,6 +6192,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "登入 ${ MAIL_APP_NAME } 以啟用您的電子郵件位址"
       ],
+      "Signed up": [
+        "註冊"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "為答謝您的長期支援，您的帳號已啟用額外的功能。"
       ],
@@ -6164,9 +6209,6 @@
       ],
       "Step ${ step }": [
         "步驟 ${ step }"
-      ],
-      "Storage": [
-        "儲存空間"
       ],
       "Storage allocated to other users in this organisation": [
         "儲存空間已分配給這個組織中的其他使用者"
@@ -6663,6 +6705,15 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "您可使用下列憑證，透過第三方或開放原始碼 VPN 程式（例如：macOS 版本適用的 Tunnelblick 或 GNU/Linux 適用的 OpenVPN），連線至 ${ VPN_APP_NAME } 伺服器。"
       ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "在接下來的 24 小時內，您最多只能 ${ emailSendLimitNumber } 封電郵邀請"
+      ],
+      "You cannot refer ${ MAIL_APP_NAME } users": [
+        "您不能推薦 ${ MAIL_APP_NAME } 使用者"
+      ],
+      "You don't have any referrals.": [
+        "你還沒有任何推薦紀錄"
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "當您的密碼或其他資料在第三方服務中洩漏時取得通知。"
       ],
@@ -6752,6 +6803,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "你的檔案將加密後再儲存"
+      ],
+      "Your friends get **2 weeks for free** on their chosen plan.": [
+        "您推薦的朋友所選擇的方案，將可獲得**免費使用兩星期**"
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "您可以放心提供資訊，我們只在某些服務要求與您驗證時才會連絡您。"
@@ -6952,6 +7006,9 @@
       "Account storage": [
         "帳號儲存空間"
       ],
+      "Activity": [
+        "啟用"
+      ],
       "Add all organization members": [
         "添加全部組織成員"
       ],
@@ -7005,6 +7062,9 @@
       ],
       "Authenticator app": [
         "驗證 app"
+      ],
+      "Awarded": [
+        "獲得獎勵"
       ],
       "Backup password": [
         "備份密碼"
@@ -7131,6 +7191,9 @@
       ],
       "Current email": [
         "目前的電子郵件"
+      ],
+      "Date": [
+        "日期"
       ],
       "Default language": [
         "預設語言"
@@ -7266,6 +7329,9 @@
       ],
       "Interval": [
         "時間間隔"
+      ],
+      "Invite via email": [
+        "透過 email 邀請"
       ],
       "Issuer ID": [
         "簽發者 ID"
@@ -7411,6 +7477,9 @@
       "Payment method": [
         "付款方式"
       ],
+      "Pending": [
+        "擱置中"
+      ],
       "Phone number": [
         "手機號碼"
       ],
@@ -7474,6 +7543,9 @@
       "Reveal password": [
         "顯示密碼"
       ],
+      "Reward": [
+        "獎勵"
+      ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
@@ -7485,6 +7557,9 @@
       ],
       "Sequences": [
         "序段"
+      ],
+      "Share your referral link": [
+        "分享您的推薦連結"
       ],
       "Show ${ n } administrator": [
         "顯示 ${ n } 管理員"
@@ -7792,6 +7867,9 @@
       ],
       "Terms": [
         "條款"
+      ],
+      "Terms and conditions": [
+        "條款與細則"
       ],
       "Trouble signing in?": [
         "登入遇到困難嗎？"
@@ -12375,6 +12453,9 @@
       "Invalid verification code": [
         "驗證碼無效"
       ],
+      "Invite friends. Get credits.": [
+        "邀請朋友，獲得獎勵額度。"
+      ],
       "Invoices": [
         "繳款單"
       ],
@@ -12479,6 +12560,9 @@
       ],
       "Recovery": [
         "復原"
+      ],
+      "Refer a friend": [
+        "引薦親友"
       ],
       "Remove all members?": [
         "移除所有成員?"
@@ -12719,6 +12803,9 @@
       ],
       "Your plan": [
         "您的方案"
+      ],
+      "Your referrals": [
+        "您的推薦邀請"
       ],
       "Your shorter address is now ready": [
         "您的短地址已完成"
@@ -13250,6 +13337,9 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "一旦刪除此手機號碼，您日後將不能救援您的帳號。"
+      ],
+      "Please add at least one recipient.": [
+        "請新增至少一個收件者。"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "回報未使用端到端加密，請不要傳送任何敏感資訊。"

@@ -86,6 +86,9 @@
       "Add PayPal": [
         "Pridať PayPal"
       ],
+      "Add referral link to ${ MAIL_APP_NAME } signature": [
+        "Pridať odporúčací odkaz do podpisu ${ MAIL_APP_NAME }"
+      ],
       "Add user": [
         "Pridať používateľa"
       ],
@@ -460,6 +463,9 @@
       ],
       "Get more servers": [
         "Získať viac serverov"
+      ],
+      "Get more storage": [
+        "Získať viac úložného priestoru"
       ],
       "Get the apps": [
         "Stiahnť aplikácie"
@@ -1067,6 +1073,15 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent písania ${ BRAND_NAME } Scribe"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe, asistent písania (pre ${ quantity } používateľa)",
+        "${ BRAND_NAME } Scribe, asistent písania (pre ${ quantity } používateľov)",
+        "${ BRAND_NAME } Scribe, asistent písania (pre ${ quantity } používateľov)",
+        "${ BRAND_NAME } Scribe, asistent písania (pre ${ quantity } používateľov)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } dodatočná vlastná doména",
         "${ domains } dodatočné vlastné domény",
@@ -1079,6 +1094,15 @@
         "${ ips } serverov",
         "${ ips } serverov"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI asistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI asistent (pre ${ quantity } používateľa)",
+        "${ LUMO_APP_NAME } AI asistent (pre ${ quantity } používateľov)",
+        "${ LUMO_APP_NAME } AI asistent (pre ${ quantity } používateľov)",
+        "${ LUMO_APP_NAME } AI asistent (pre ${ quantity } používateľov)"
+      ],
       "${ price } per dedicated server": [
         "${ price } za dedikovaný server"
       ],
@@ -1090,6 +1114,12 @@
       ],
       "${ price } per user": [
         "${ price } za používateľa"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } vlastná doména",
+        "${ quantity } vlastné domény",
+        "${ quantity } vlastných domén",
+        "${ quantity } vlastných domén"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats }${ LUMO_APP_NAME } licencia",
@@ -1411,6 +1441,14 @@
       ],
       "Unsupported event": [
         "Nepodporovaná udalosť"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } ďalší výsledok nebol zobrazený",
+        "${ hiddenResultsCount } ďalšie výsledky nezobrazené",
+        "${ hiddenResultsCount } ďalších výsledkov nezobrazených",
+        "${ hiddenResultsCount } ďalších výsledkov nezobrazených"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -1916,6 +1954,9 @@
       "Continue your subscription": [
         "Pokračovať v predplatnom"
       ],
+      "Copy": [
+        "Kopírovať"
+      ],
       "Create label": [
         "Vytvoriť štítok"
       ],
@@ -1927,6 +1968,9 @@
       ],
       "Remind me later": [
         "Pripomenúť neskôr"
+      ],
+      "Send": [
+        "Odoslať"
       ],
       "Set up other features": [
         "Nastaviť ďalšie funkcie"
@@ -3263,11 +3307,17 @@
       "To start, give your organization a name.": [
         "Začnite tým, že zadáte názov svojej organizácie."
       ],
+      "Track the status and activity of your referrals": [
+        "Sledujte stav a aktivitu svojich odporúčaní"
+      ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Použite tohto sprievodcu, aby vaša organizácia mohla okamžite využívať výhody špičkového ekosystému šifrovania a ochrany osobných údajov od spoločnosti ${ BRAND_NAME }."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Môžete importovať udalosti vo formáte iCal (ICS súbor). Tento súbor by mal mať maximálnu veľkosť ${ MAX_IMPORT_FILE_SIZE_STRING } a maximálne ${ MAX_IMPORT_EVENTS_STRING } udalostí. Ak je váš súbor väčší, prosím rozdeľte ho na menšie súbory."
+      ],
+      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
+        "Získate ${ referralInfo.referrerRewardAmount } vo forme kreditu ${ BRAND_NAME }, keď sa osoba, ktorú pozvete zaregistruje na plán ${ BRAND_NAME }, a tiež získa ${ referralInfo.refereeRewardAmount } vo forme kreditov na začiatok."
       ]
     },
     "description": {
@@ -4795,6 +4845,12 @@
       "${ VPN_CONNECTIONS } devices": [
         "${ VPN_CONNECTIONS } zariadení"
       ],
+      "15 GB storage": [
+        "15 GB úložisko"
+      ],
+      "@pm.me address": [
+        "@pm.me adresa"
+      ],
       "Ad-blocker and malware protection": [
         "Blokovač reklám a ochrana pred malvérom"
       ],
@@ -4803,6 +4859,12 @@
       ],
       "and more premium features...": [
         "a ďalšie prémiové funkcie..."
+      ],
+      "Connect custom domain": [
+        "Pripojte vlastnú doménu"
+      ],
+      "Desktop app": [
+        "Desktopová aplikácia"
       ],
       "Double VPN": [
         "Dvojitá VPN"
@@ -4815,6 +4877,9 @@
       ],
       "NetShield Ad-blocker": [
         "Blokovač reklám NetShield"
+      ],
+      "Priority support": [
+        "Prioritná podpora"
       ],
       "Secure streaming": [
         "Bezpečné streamovanie"
@@ -5178,6 +5243,9 @@
       ],
       "Domain": [
         "Doména"
+      ],
+      "Drag to reorder": [
+        "Poradie zmeníte presunutím"
       ],
       "Status": [
         "Stav"
@@ -5621,6 +5689,9 @@
       "${ discountPercent }% discount": [
         "${ discountPercent }% zľava"
       ],
+      "${ emailAddress } is invalid": [
+        "${ emailAddress } je neplatná"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: obrázok v plnej veľkosti"
       ],
@@ -5821,6 +5892,9 @@
       ],
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importujte svoje existujúce kódy** z iných 2FA aplikácií, ako je Google Authenticator"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Pozvite svojich priateľov** do ${ BRAND_NAME } pomocou svojho odporúčacieho odkazu."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Krok 1:** Pozvite svojich priateľov do ${ BRAND_NAME } pomocou svojho odporúčacieho odkazu."
@@ -6145,6 +6219,9 @@
       ],
       "Copy the suggested password to clipboard": [
         "Skopírujte navrhované heslo do schránky"
+      ],
+      "Copy your referral link": [
+        "Kopírujte váš odporúčací odkaz"
       ],
       "Country code": [
         "Kód krajiny"
@@ -6488,6 +6565,12 @@
       "Get ${ upsellPlanName }": [
         "Získať ${ upsellPlanName }"
       ],
+      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
+        "Získajte **${ referrerRewardAmount } kreditov** za každého priateľa, ktorý sa prihlási."
+      ],
+      "Get started with the referral link above.": [
+        "Začnite s odporúčacím odkazom vyššie."
+      ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Prejdite k vášmu poskytovateľovi identity, stiahnite metadáta SAML pre ${ appName } a importujte ich sem."
       ],
@@ -6640,6 +6723,15 @@
       ],
       "Invite rejected": [
         "Pozvánka odmietnutá"
+      ],
+      "Invite successfully sent": [
+        "Pozvánka bola úspešne odoslaná",
+        "Pozvánky boli úspešne odoslané",
+        "Pozvánky boli úspešne odoslané",
+        "Pozvánky boli úspešne odoslané"
+      ],
+      "Invited": [
+        "Pozvaný/á"
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Zmena krajiny servera trvá 10 dní, preto sa uistite, že je váš výber správny."
@@ -6923,6 +7015,9 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Vo vašej organizácii existujú ďalší správcovia, vašou povinnosťou je oznámiť im nové heslo."
       ],
+      "Paid for a plan": [
+        "Zaplatené za plán"
+      ],
       "Pass Monitor - custom email confirmed": [
         "Pass Monitor - vlastný email potvrdený"
       ],
@@ -7049,6 +7144,9 @@
       "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
         "Verejným činiteľom, novinárom, vedúcim pracovníkom a ďalším, ktorí sa môžu stať terčom kybernetických útokov, sa dôrazne odporúča aktivovať službu ${ PROTON_SENTINEL_NAME }."
       ],
+      "Public link invite": [
+        "Pozvánka na verejný odkaz"
+      ],
       "Public sharing of documents is not yet supported.": [
         "Verejné zdieľanie dokumentov zatiaľ nie je podporované."
       ],
@@ -7060,6 +7158,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informácie o obnovení zostanú v tomto zariadení, pokiaľ nezvolíte ich odstránenie."
+      ],
+      "Referral link copied to your clipboard": [
+        "Odkaz skopírovaný do schránky"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Obnovením stránky alebo ${ link } sa automaticky vyrieši väčšina problémov."
@@ -7136,6 +7237,9 @@
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Posielajte emaily, aby ste povzbudili svojich členov k ochrane ich účtov pomocou 2FA."
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Odoslané z bezpečného emailu <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPA platby sú momentálne nedostupné. Skúste to znova neskôr, prosím."
       ],
@@ -7187,6 +7291,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Prihláste sa do ${ MAIL_APP_NAME } pre aktivovanie vašej adresy"
       ],
+      "Signed up": [
+        "Prihlásený"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhľadom k tomu, že ste verný používateľ, má váš účet povolené ďalšie funkcie."
       ],
@@ -7210,9 +7317,6 @@
         "Krok ${ step }",
         "Krok ${ step }",
         "Krok ${ step }"
-      ],
-      "Storage": [
-        "Úložisko"
       ],
       "Storage allocated to other users in this organisation": [
         "Úložisko pridelené iným používateľom v tejto organizácii"
@@ -7808,6 +7912,18 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Na pripojenie k serveru ${ VPN_APP_NAME } pomocou aplikácie VPN s otvoreným zdrojovým kódom tretej strany, napríklad Tunnelblick pre macOS alebo OpenVPN pre GNU/Linux, môžete použiť nasledujúce prihlasovacie údaje."
       ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "Počas nasledujúcich 24 hodín nemôžete odoslať viac ako ${ emailSendLimitNumber } emailovú pozvánku",
+        "Počas nasledujúcich 24 hodín nemôžete odoslať viac ako ${ emailSendLimitNumber } emailové pozvánky",
+        "Počas nasledujúcich 24 hodín nemôžete odoslať viac ako ${ emailSendLimitNumber } emailových pozvánok",
+        "Počas nasledujúcich 24 hodín nemôžete odoslať viac ako ${ emailSendLimitNumber } emailových pozvánok"
+      ],
+      "You cannot refer ${ MAIL_APP_NAME } users": [
+        "Nemôžete odporúčať používateľom ${ MAIL_APP_NAME }"
+      ],
+      "You don't have any referrals.": [
+        "Nemáte žiadne odporúčania."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Dostanete upozornenie, keď dôjde k úniku vášho hesla alebo iných údajov zo služieb tretích strán."
       ],
@@ -7924,6 +8040,9 @@
       ],
       "Your free trial includes 1 dedicated server.": [
         "Vaša bezplatná skúšobná verzia zahŕňa 1 vyhradený server."
+      ],
+      "Your friends get **2 weeks for free** on their chosen plan.": [
+        "Vaši priatelia získajú **2 týždne zadarmo** na nimi zvolený plán."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Vaše informácie sú u nás v bezpečí. Budeme vás kontaktovať len vtedy, keď to bude potrebné na poskytovanie našich služieb."
@@ -8174,6 +8293,9 @@
       "Account storage": [
         "Úložisko účtu"
       ],
+      "Activity": [
+        "Aktivita"
+      ],
       "Add all organization members": [
         "Pridať všetkých členov organizácie"
       ],
@@ -8233,6 +8355,9 @@
       ],
       "Authenticator app": [
         "Aplikácia 2FA"
+      ],
+      "Awarded": [
+        "Ocenený"
       ],
       "Backup password": [
         "Záložné heslo"
@@ -8366,6 +8491,9 @@
       "Current email": [
         "Súčasný email"
       ],
+      "Date": [
+        "Dátum"
+      ],
       "Default language": [
         "Predvolený jazyk"
       ],
@@ -8456,6 +8584,12 @@
       "Folder location": [
         "Umiestnenie priečinka"
       ],
+      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
+        "Pre ${ DRIVE_SHORT_APP_NAME } a ${ DOCS_SHORT_APP_NAME }."
+      ],
+      "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
+        "Pre ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } a ${ SHEETS_SHORT_APP_NAME }."
+      ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
       ],
@@ -8509,6 +8643,9 @@
       ],
       "Interval": [
         "Interval"
+      ],
+      "Invite via email": [
+        "Pozvať emailom"
       ],
       "Issuer ID": [
         "ID vydávateľa"
@@ -8669,6 +8806,9 @@
       "Payment method": [
         "Spôsob platby"
       ],
+      "Pending": [
+        "Čaká na spracovanie"
+      ],
       "Phone number": [
         "Telefónne číslo"
       ],
@@ -8732,6 +8872,9 @@
       "Reveal password": [
         "Odkryť heslo"
       ],
+      "Reward": [
+        "Odmena"
+      ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
@@ -8749,6 +8892,12 @@
       ],
       "Server name": [
         "Názov servera"
+      ],
+      "Share your referral link": [
+        "Zdieľajte váš odporúčací odkaz"
+      ],
+      "Shared between ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ WALLET_SHORT_APP_NAME }.": [
+        "Zdieľané medzi ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ WALLET_SHORT_APP_NAME }."
       ],
       "Show ${ n } administrator": [
         "Zobraziť ${ n } správcu",
@@ -9111,6 +9260,9 @@
       ],
       "Terms": [
         "Podmienky"
+      ],
+      "Terms and conditions": [
+        "Zmluvné podmienky používania"
       ],
       "Trouble signing in?": [
         "Problémy s prihlásením?"
@@ -13241,6 +13393,9 @@
       "${ app } storage": [
         "${ app } uložisko"
       ],
+      "${ app } storage used": [
+        "${ app } využitého úložiska"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% využitých"
       ],
@@ -13252,6 +13407,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Za všetky ${ BRAND_NAME } služby"
+      ],
+      "Storage used": [
+        "Využité úložisko"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Ak chcete naďalej používať produkty ${ BRAND_NAME }, uvoľnite miesto alebo ${ upgrade }"
@@ -14231,6 +14389,18 @@
       "${ feature } is now active": [
         "${ feature } je teraz aktívna"
       ],
+      "${ friendsInvited } Friend invited": [
+        "${ friendsInvited } pozvaný priateľ",
+        "${ friendsInvited } pozvaní priatelia",
+        "${ friendsInvited } pozvaných priateľov",
+        "${ friendsInvited } pozvaných priateľov"
+      ],
+      "${ friendsSubscribed } Friend subscribed": [
+        "${ friendsSubscribed } priateľ s predplatným",
+        "${ friendsSubscribed } priatelia s predplatným",
+        "${ friendsSubscribed } priateľov s predplatným",
+        "${ friendsSubscribed } priateľov s predplatným"
+      ],
       "${ VPN_APP_NAME } clients": [
         "${ VPN_APP_NAME } klienti"
       ],
@@ -14507,6 +14677,9 @@
       "Creating user accounts": [
         "Vytváranie používateľských účtov"
       ],
+      "Credit earned": [
+        "Získané kredity"
+      ],
       "Credits": [
         "Kredity"
       ],
@@ -14750,6 +14923,9 @@
       "Gift code": [
         "Darčekový kód"
       ],
+      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
+        "Darujte ${ refereeRewardAmount } a 2 týždne zadarmo. Získajte kredity za ${ referrerRewardAmount }."
+      ],
       "Groups": [
         "Skupiny"
       ],
@@ -14794,6 +14970,9 @@
       ],
       "Invalid verification code": [
         "Nesprávny overovací kód"
+      ],
+      "Invite friends. Get credits.": [
+        "Pozvite priateľov. Získajte kredity."
       ],
       "Invoices": [
         "Faktúry"
@@ -14905,6 +15084,9 @@
       ],
       "Recovery": [
         "Obnovenie"
+      ],
+      "Refer a friend": [
+        "Odporučiť priateľovi"
       ],
       "Remove all members?": [
         "Odstrániť všetkých členov?"
@@ -15188,6 +15370,9 @@
       "Your plan": [
         "Váš plán"
       ],
+      "Your referrals": [
+        "Vaše odporúčania"
+      ],
       "Your shorter address is now ready": [
         "Vaša skrátená adresa je pripravená"
       ],
@@ -15262,6 +15447,9 @@
       "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
         "Zmena na strane Gmailu blokuje pripojenie ${ BRAND_NAME }. Udeľte povolenie na obnovenie funkčnosti emailu."
       ],
+      "Added to your plan: ${ mergedAddonTitles }": [
+        "Pridané do vášho plánu: ${ mergedAddonTitles }"
+      ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Správcovia môžu spravovať používateľské účty a udeľovať oprávnenia správcu iným používateľom. Plán organizácie môže upravovať iba primárny správca."
       ],
@@ -15327,6 +15515,9 @@
       ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Zdrojová IP adresa a poskytovateľ internetových služieb (ISP)"
+      ],
+      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
+        "V odosielaných emailoch nastaví nasledujúce päty: ${ signature } Odkaz odkazuje na váš odporúčací odkaz. Päta sa zobrazí pod vašim podpisom. Podpis si môžete kedykoľvek prispôsobiť v nastavení."
       ],
       "Shared server policies can be applied to individual users or groups": [
         "Pravidlá zdieľaných serverov možno použiť na jednotlivých používateľov alebo skupiny"
@@ -15587,6 +15778,9 @@
       ],
       "Did you know?": [
         "Vedeli ste?"
+      ],
+      "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
+        "Chráňte svoju organizáciu pred únikmi dát pomocou ${ PLAN_NAMES[plan] }."
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "Chráňte svoju organizáciu pred únikmi dát pomocou ${ VPN_APP_NAME } for Business."
@@ -15990,6 +16184,9 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Vymazaním tohto telefónneho čísla už nebudete môcť obnovit svoj účet."
+      ],
+      "Please add at least one recipient.": [
+        "Zadajte aspoň jedného príjemcu, prosím."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Hlásenia nie sú zabezpečené end-to-end šifrovaním, neposielajte žiadne citlivé informácie, prosím."

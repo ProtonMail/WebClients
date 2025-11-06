@@ -783,6 +783,9 @@
       "Get more servers": [
         "Obteniu més servidors"
       ],
+      "Get more storage": [
+        "Obtingueu més emmagatzematge"
+      ],
       "Get Pass Family": [
         "Obtingueu Pass Family"
       ],
@@ -1712,6 +1715,13 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistent d'escriptura ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Assistent d'escriptura ${ BRAND_NAME } (per a ${ quantity } usuari)",
+        "Assistent d'escriptura ${ BRAND_NAME } (per a ${ quantity } usuaris)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } domini personalitzat addicional",
         "${ domains } dominis personalitzats addicionals"
@@ -1719,6 +1729,13 @@
       "${ ips } server": [
         "${ ips } servidor",
         "${ ips } servidors"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Assistent d'IA ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Assistent d'IA ${ LUMO_APP_NAME } (per a ${ quantity } usuari)",
+        "Assistent d'IA ${ LUMO_APP_NAME } (per a ${ quantity } usuaris)"
       ],
       "${ price } per dedicated server": [
         "${ price } per servidor dedicat"
@@ -1731,6 +1748,10 @@
       ],
       "${ price } per user": [
         "${ price } per usuari"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domini personalitzat",
+        "${ quantity } dominis personalitzats"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } llicència ${ LUMO_APP_NAME }",
@@ -2113,6 +2134,12 @@
         "Afegeix al calendari i marca com a pendent"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } resultat més no mostrat",
+        "${ hiddenResultsCount } resultats més no mostrats"
+      ]
+    },
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Soc fora de l'oficina i amb accés limitat al meu correu electrònic."
@@ -2487,14 +2514,35 @@
       "${ VPN_APP_NAME }'s no-logs policy confirmed by an external audit": [
         "Política de no registres de ${ VPN_APP_NAME } confirmada per una auditoria externa."
       ],
+      "**Auto-delete**, **snooze**, and **email scheduling** are included in your subscription.": [
+        "La vostra subscripció inclou l'**eliminació automàtica**, l'**ajornament** i la **programació de correus electrònics**."
+      ],
       "**Streaming** is included in your subscription.": [
         "L'**estríming** està inclòs en la vostra subscripció."
+      ],
+      "11 tips to stop spam emails": [
+        "11 consells per impedir el correu brossa"
+      ],
+      "Automate recurring actions to sort and organize incoming emails.": [
+        "Automatitzeu accions recurrents per ordenar i organitzar els correus electrònics entrants."
       ],
       "Can someone see my internet history if we use the same WiFi?": [
         "Algú pot veure el meu historial d'internet si utilitzem el mateix wifi?"
       ],
+      "Discover our tips for effectively managing your inbox so you can stay productive and focused.": [
+        "Descobriu els nostres consells per gestionar eficaçment la vostra safata d'entrada i mantenir la productivitat i la concentració."
+      ],
+      "Easily manage your inbox": [
+        "Gestioneu fàcilment la vostra safata d'entrada"
+      ],
+      "Easily manage your inbox with Mail Plus": [
+        "Gestioneu fàcilment la vostra bústia d'entrada amb Mail Plus"
+      ],
       "Enable kill switch and auto-connect in your VPN settings.": [
         "Activeu el kill switch i la connexió automàtica a les preferències de la VPN."
+      ],
+      "Get a clean inbox with filters": [
+        "Obtingueu una bústia d'entrada neta amb filtres"
       ],
       "Get round-the-clock protection": [
         "Obteniu protecció durant les 24 hores del dia"
@@ -2504,6 +2552,15 @@
       ],
       "How to change your IP address on Windows": [
         "Com canviar la vostra adreça IP a Windows"
+      ],
+      "How to get a custom email domain": [
+        "Com obtenir un domini de correu electrònic personalitzat"
+      ],
+      "How to get to inbox zero: Privacy-first inbox organization tips": [
+        "Com arribar a la safata d'entrada zero: Consells per organitzar-la amb la privacitat com a prioritat"
+      ],
+      "If you want to elevate your professional identity, it’s important to learn why and how to create a custom email domain. Most people use free email addresses with default domains provided by their email service.": [
+        "Si voleu millorar la vostra identitat professional, és important aprendre per què i com crear un domini de correu electrònic personalitzat. La majoria de la gent utilitza adreces de correu electrònic gratuïtes amb dominis per defecte proporcionats pel seu servei de correu electrònic."
       ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "En aquest article, analitzem qui pot veure el vostre historial d'internet quan utilitzeu WiFi, què poden veure i per què podrien fer-ho."
@@ -2517,8 +2574,14 @@
       "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
         "És segur utilitzar Telegram? Com discutirem en aquest article, depèn molt de com el feu servir."
       ],
+      "Learn how to beat annoying and potentially harmful junk mail. Spam emails, also known as junk mail, can be more than just irritating clutter in your inbox. Cybercriminals can use these unsolicited and unwanted messages to launch phishing attacks and spread malware.": [
+        "Apreneu a combatre el correu brossa molest i potencialment perjudicial. Els missatges de correu brossa poden ser més que una simple molèstia a la vostra bústia d'entrada. Els ciberdelinqüents poden utilitzar aquests missatges no sol·licitats i no desitjats per llançar atacs de suplantació d'identitat i propagar programari maliciós."
+      ],
       "Learn how to enable ${ VPN_APP_NAME } on your router.": [
         "Obteniu informació sobre com activar ${ VPN_APP_NAME } al vostre rúter."
+      ],
+      "Protect your business communications": [
+        "Protegiu les vostres comunicacions empresarials"
       ],
       "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
         "Protegiu la vostra empresa de les filtracions de dades i feu que el teletreball sigui més segur amb una VPN empresarial."
@@ -2526,11 +2589,26 @@
       "Protect your whole household with 1 device": [
         "Protegiu tota la vostra llar amb un sol dispositiu."
       ],
+      "See and manage all your email subscriptions": [
+        "Visualitzeu i gestioneu totes les vostres subscripcions de correu electrònic"
+      ],
       "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN2024] }.": [
         "Feu estríming de les principals plataformes amb ${ PLAN_NAMES[PLANS.VPN2024] }."
       ],
+      "The average professional receives around 120 emails a day, amounting to roughly 43,800 emails a year. No matter what industry you work in, that’s an overwhelming amount of business email to deal with.": [
+        "Un professional mitjà rep uns 120 correus electrònics al dia, la qual cosa equival a aproximadament 43.800 correus electrònics l'any. Independentment del sector on treballeu, és una quantitat aclaparadora de correus electrònics de feina per gestionar."
+      ],
+      "The impact a data breach can have on your life depends greatly on the type of information that was exposed and to whom. A quick reaction to a data breach can often protect your digital identity and prevent any losses.": [
+        "L'impacte que una infracció de dades pot tenir a la vostra vida depèn en gran mesura del tipus d'informació que s'hagi exposat i a qui. Una reacció ràpida a una infracció de dades sovint pot protegir la vostra identitat digital i evitar qualsevol pèrdua."
+      ],
+      "The most private and secure way to communicate online is by using end-to-end encryption. If you send an end-to-end encrypted email, it’s encrypted on your device (your iPhone, Android, or laptop) and isn’t decrypted until it reaches the device of the person you sent the message to.": [
+        "La manera més privada i segura de comunicar-se en línia és utilitzant el xifratge d'extrem a extrem. Si envieu un correu electrònic xifrat d'extrem a extrem, es xifra al vostre dispositiu (iPhone, Android o portàtil) i no es desxifra fins que arriba al dispositiu de la persona a qui li heu enviat."
+      ],
       "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
         "Aquest article s'ha actualitzat per incloure els protocols VPN WireGuard i Stealth."
+      ],
+      "Try out **Newsletters view** to declutter your inbox.": [
+        "Proveu la **visualització de butlletins** per descongestionar la vostra safata d'entrada."
       ],
       "VPN Accelerator uses a combination of advanced VPN technologies to improve connection stability and increase your connection speed": [
         "VPN Accelerator utilitza una combinació de tecnologies avançades de VPN per a millorar l'estabilitat i augmentar la velocitat de la connexió."
@@ -2541,11 +2619,26 @@
       "We discuss how to change the external and local IP addresses of your Windows device.": [
         "Estem valorant com canviar les adreces IP externes i locals del vostre dispositiu Windows."
       ],
+      "What is an email alias?": [
+        "Què és un àlies de correu electrònic?"
+      ],
+      "What is end-to-end encryption and how does it work?": [
+        "Què és el xifratge d’extrem a extrem i com funciona?"
+      ],
+      "What to do if your data is leaked in a data breach": [
+        "Què heu de fer si les vostres dades es filtren en una infracció de dades."
+      ],
       "Which VPN protocol is the best?": [
         "Quin protocol VPN és el millor?"
       ],
       "Working with sensitive data?": [
         "Treballeu amb dades sensibles?"
+      ],
+      "Working with sensitive data? Use ${ MAIL_APP_NAME } to protect your communications and build trust with clients.": [
+        "Treballeu amb dades sensibles? Utilitzeu ${ MAIL_APP_NAME } per protegir les vostres comunicacions i generar confiança amb els clients."
+      ],
+      "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
+        "La vostra adreça de correu electrònic personal és una part essencial de la vostra identitat digital. Com el vostre número de telèfon, no la doneu a tothom que conegueu. Per això és útil tenir altres adreces de correu electrònic que podeu utilitzar per a diferents propòsits."
       ]
     },
     "breadcrumb": {
@@ -2610,7 +2703,7 @@
         "Problema de configuració manual"
       ],
       "Meet problem": [
-        "Coneixeu el problema"
+        "Problema amb Meet"
       ],
       "Other": [
         "Altres"
@@ -4329,6 +4422,26 @@
         "Cada ${ interval } dies, ${ untilString }"
       ]
     },
+    "Dashboard": {
+      "Experience true freedom online and safeguard your privacy.": [
+        "Experimenteu autèntica llibertat en línia i protegiu la vostra privacitat."
+      ],
+      "Get more from your ${ planTitle } subscription.": [
+        "Traieu més profit de la vostra subscripció ${ planTitle }."
+      ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
+        "Mantingueu els vostres fitxers, fotos i documents segurs amb ${ maxDriveSpace } d'emmagatzematge gratuït al núvol."
+      ],
+      "Set secure passwords without the hassle.": [
+        "Establiu contrasenyes segures sense complicacions"
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to ${ VPN_APP_NAME } and other privacy services.": [
+        "Amb ${ planTitlePlusMaybeBrand }, obtindreu accés gratuït a ${ VPN_APP_NAME } i altres serveis de privacitat."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
+        "Amb ${ planTitlePlusMaybeBrand }, obtingueu accés gratuït a tots els serveis de privacitat de ${ BRAND_NAME }."
+      ]
+    },
     "Day": {
       "Friday": [
         "Divendres"
@@ -4746,6 +4859,12 @@
       ]
     },
     "Download": {
+      ".deb (Ubuntu/Debian)": [
+        ".deb (Ubuntu/Debian)"
+      ],
+      ".rpm (Fedora/RHEL)": [
+        ".rpm (Fedora/RHEL)"
+      ],
       "Android": [
         "Android"
       ],
@@ -4757,6 +4876,9 @@
       ],
       "Browser": [
         "Navegador"
+      ],
+      "Calendar": [
+        "Calendari"
       ],
       "Chrome": [
         "Chrome"
@@ -4773,6 +4895,9 @@
       "Download for Windows": [
         "Descarrega per a Windows"
       ],
+      "Download on Snap store": [
+        "Baixeu-ho a Snap store"
+      ],
       "Download on the Apple App Store": [
         "Descarrega a l'App Store d'Apple"
       ],
@@ -4784,6 +4909,9 @@
       ],
       "Firefox": [
         "Firefox"
+      ],
+      "Get it on Google Play": [
+        "Obteniu-lo a Google Play"
       ],
       "Get the app": [
         "Obteniu l'aplicació"
@@ -4817,6 +4945,9 @@
       ],
       "macOS Ventura or later": [
         "macOS Ventura o posterior"
+      ],
+      "Mail": [
+        "Correu"
       ],
       "Mobile": [
         "Mòbil"
@@ -7136,6 +7267,12 @@
       "${ VPN_CONNECTIONS } devices": [
         "${ VPN_CONNECTIONS } dispositius"
       ],
+      "15 GB storage": [
+        "15 GB d'emmagatzematge"
+      ],
+      "@pm.me address": [
+        "Adreça @pm.me"
+      ],
       "Ad-blocker and malware protection": [
         "Bloquejador d'anuncis i protecció contra programari maliciós"
       ],
@@ -7144,6 +7281,12 @@
       ],
       "and more premium features...": [
         "i més característiques prèmium."
+      ],
+      "Connect custom domain": [
+        "Connecteu un domini personalitzat"
+      ],
+      "Desktop app": [
+        "Aplicació d'escriptori"
       ],
       "Double VPN": [
         "VPN doble"
@@ -7156,6 +7299,9 @@
       ],
       "NetShield Ad-blocker": [
         "Bloquejador d'anuncis NetShield"
+      ],
+      "Priority support": [
+        "Assistència prioritària"
       ],
       "Secure streaming": [
         "Estríming segur"
@@ -7725,6 +7871,9 @@
       ],
       "Domain": [
         "Domini"
+      ],
+      "Drag to reorder": [
+        "Arrossegueu per reordenar"
       ],
       "Status": [
         "Estat"
@@ -10540,9 +10689,6 @@
         "Pas ${ step }",
         "Passes ${ step }"
       ],
-      "Storage": [
-        "Emmagatzematge"
-      ],
       "Storage allocated to other users in this organisation": [
         "Emmagatzematge assignat a altres usuaris d'aquesta organització"
       ],
@@ -12762,6 +12908,12 @@
       "Font size": [
         "Mida de la lletra"
       ],
+      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
+        "Per ${ DRIVE_SHORT_APP_NAME } i ${ DOCS_SHORT_APP_NAME }."
+      ],
+      "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
+        "Per a ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } i ${ SHEETS_SHORT_APP_NAME }."
+      ],
       "for your first month": [
         "el primer mes"
       ],
@@ -13220,6 +13372,9 @@
       ],
       "Share your referral link": [
         "Compartiu el vostre enllaç de recomanació"
+      ],
+      "Shared between ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ WALLET_SHORT_APP_NAME }.": [
+        "Compartit entre ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ WALLET_SHORT_APP_NAME }."
       ],
       "Show ${ n } administrator": [
         "Mostra ${ n } administrador",
@@ -20074,6 +20229,9 @@
       "${ app } storage": [
         "emmagatzematge de ${ app }"
       ],
+      "${ app } storage used": [
+        "Emmagatzematge de ${ app } utilitzat"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ple al ${ percentage }%"
       ],
@@ -20094,6 +20252,9 @@
       ],
       "Get more storage": [
         "Aconseguiu més emmagatzematge"
+      ],
+      "Storage used": [
+        "Emmagatzematge utilitzat"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Per continuar utilitzant els productes de ${ BRAND_NAME }, allibereu espai o ${ upgrade }."
@@ -21480,6 +21641,9 @@
       "Collaborate on documents": [
         "Col·laboració en documents"
       ],
+      "Compare plans": [
+        "Compareu els plans"
+      ],
       "Composing": [
         "Redacció"
       ],
@@ -21631,6 +21795,9 @@
       "Decrypt key": [
         "Desxifra la clau"
       ],
+      "Deep dive into email blog posts": [
+        "Exploreu a fons les publicacions del blog sobre correu electrònic"
+      ],
       "Deep dive into VPN blog posts": [
         "Anàlisi en profunditat de les nostres publicacions del blog de VPN"
       ],
@@ -21731,6 +21898,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descarregueu aplicacions de ${ DRIVE_APP_NAME }"
       ],
+      "Download ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "Baixeu ${ MAIL_APP_NAME } i ${ CALENDAR_APP_NAME }"
+      ],
       "Download ${ PASS_APP_NAME } for your devices": [
         "Descarregueu ${ PASS_APP_NAME } per als vostres dispositius"
       ],
@@ -21829,6 +21999,9 @@
       ],
       "Enhance security with 2FA": [
         "Milloreu la seguretat amb 2FA"
+      ],
+      "Enjoy fast, seamless access to your emails with our dedicated apps.": [
+        "Gaudiu d'un accés ràpid i fluid als vostres correus electrònics amb les nostres aplicacions dedicades."
       ],
       "Enter endpoints into your identity provider": [
         "Introduïu els punts finals al vostre proveïdor d'identitat"
@@ -21948,8 +22121,14 @@
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Aconseguiu **${ referralInfo.uiData.refereeRewardAmount }** en crèdits amb ${ planTitle }"
       ],
+      "Get access to the desktop app with ${ mailPlusPlanName }. ${ upgradeButton }": [
+        "Obtingueu accés a l'aplicació d'escriptori amb ${ mailPlusPlanName }. ${ upgradeButton }"
+      ],
       "Get complete privacy coverage": [
         "Obteniu una cobertura de privadesa completa"
+      ],
+      "Get more from your email": [
+        "Traieu més profit del vostre correu electrònic"
       ],
       "Get more from your VPN": [
         "Obteniu més de la vostra VPN"
@@ -22883,6 +23062,9 @@
       "Account is disconnected": [
         "El compte està desconnectat"
       ],
+      "Added to your plan: ${ mergedAddonTitles }": [
+        "S'ha afegit al vostre pla: ${ mergedAddonTitles }"
+      ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Els administradors poden gestionar els comptes d'usuari i donar privilegis d'administrador a altres usuaris. Només l'administrador principal pot editar el pla de l'organització."
       ],
@@ -23417,6 +23599,9 @@
       ],
       "Did you know?": [
         "Ho sabíeu?"
+      ],
+      "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
+        "Protegiu la vostra organització d'infraccions de dades amb ${ PLAN_NAMES[plan] }."
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "Protegiu la vostra organització d'infraccions de dades amb ${ VPN_APP_NAME } per a Empreses."

@@ -1504,7 +1504,10 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči"
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -2041,6 +2044,14 @@
       ],
       "Sender verification passed": [
         "Odesílatel úspěšně ověřen"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } další výsledek není zobrazen",
+        "${ hiddenResultsCount } další výsledky nejsou zobrazeny",
+        "${ hiddenResultsCount } dalších výsledků není zobrazeno",
+        "${ hiddenResultsCount } dalších výsledků není zobrazeno"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -5672,6 +5683,11 @@
         "Neomezený počet aliasů Hide-my-email"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Blesková rychlost"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Při ověřování pomocí bezpečnostního klíče se něco pokazilo. Zkuste to prosím znovu."
@@ -7739,10 +7755,7 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -8230,8 +8243,8 @@
       "Saved: ${ dateString }": [
         "Uloženo: ${ dateString }"
       ],
-      "Saving draft…": [
-        "Ukládání konceptu…"
+      "Saving draft": [
+        "Ukládání konceptu"
       ],
       "Scan the QR code with your mobile device": [
         "Naskenujte kód QR pomocí mobilního zařízení"
@@ -8239,8 +8252,8 @@
       "Scheduled send of this message will be canceled.": [
         "Naplánované odeslání této zprávy bude zrušeno."
       ],
-      "Scheduling message...": [
-        "Plánování zprávy..."
+      "Scheduling message": [
+        "Plánování zprávy"
       ],
       "Scribe panel": [
         "Scribe panel"
@@ -8287,8 +8300,8 @@
       "Sending": [
         "Odesílání"
       ],
-      "Sending message...": [
-        "Odesílání zprávy..."
+      "Sending message": [
+        "Odesílání zprávy"
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Odesílání zpráv z adresy @pm.me je placená funkce. Vaše zpráva bude odeslána z vaší výchozí adresy ${ email }"
@@ -8864,7 +8877,7 @@
         "Týden"
       ],
       "We’ve upgraded your ${ DRIVE_APP_NAME } storage to 5GB. Keep your important files and photos encrypted.": [
-        "Upgradovali jsme úložiště ${ DRIVE_APP_NAME } na 5 GB. Uchovávejte své důležité soubory a fotografie v šifrované podobě."
+        "Navýšili jsme vaše úložiště ${ DRIVE_APP_NAME } na 5 GB. Uchovávejte důležité soubory a fotografie v šifrované podobě."
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "Kdy chcete, aby byla vaše zpráva automaticky smazána z doručené pošty příjemce a z vaší složky odeslaných zpráv?"
@@ -14094,6 +14107,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Pro všechny služby ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Využité úložiště"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Chcete-li pokračovat v nahrávání a synchronizaci souborů, uvolněte místo nebo navyšte na tarif s větším úložištěm."

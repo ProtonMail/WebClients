@@ -1261,6 +1261,12 @@
         "Opcional"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } resultado más no se muestra",
+        "${ hiddenResultsCount } más resultados no mostrados"
+      ]
+    },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada ${ renewCycle } meses. No se le cobrará si cancela antes del ${ formattedDate }."
@@ -4503,6 +4509,11 @@
         "Alias hide-my-email ilimitados"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Velocidades ultrarrápidas"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Error al autenticar con su clave de seguridad. Inténtelo de nuevo."
@@ -5895,9 +5906,9 @@
       "Removed participants will be notified.": [
         "Se notificarán a los participantes eliminados."
       ],
-      "Saving event...": [
-        "Guardando el evento...",
-        "Guardando los eventos..."
+      "Saving event": [
+        "Guardando evento",
+        "Guardando los eventos"
       ],
       "Scan the QR code with your mobile device": [
         "Escanee el código QR con su dispositivo móvil."

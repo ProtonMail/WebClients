@@ -3226,9 +3226,6 @@
       "External accounts are not supported yet": [
         "Ulkoisia tilejä ei vielä tueta"
       ],
-      "External invitations are not available yet.": [
-        "Ulkoiset kutsut eivät ole vielä mahdollisia."
-      ],
       "External invitations are temporarily disabled.": [
         "Ulkoiset kutsut on tilapäisesti poistettu käytöstä."
       ],
@@ -4030,6 +4027,11 @@
     "Feature": {
       "Unlimited hide-my-email aliases": [
         "Rajattomasti Hide-my-email-aliaksia"
+      ]
+    },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Salamannopea"
       ]
     },
     "fido2: Error": {
@@ -4838,12 +4840,6 @@
       "Anonymous": [
         "Anonyymi"
       ],
-      "Anyone with this link can access your file.": [
-        "Linkin välityksellä kuka tahansa voi avata tiedoston."
-      ],
-      "Anyone with this link can access your folder.": [
-        "Linkin välityksellä kuka tahansa voi avata kansion."
-      ],
       "Apr": [
         "huhti"
       ],
@@ -5007,12 +5003,6 @@
       ],
       "Creating": [
         "Luodaan"
-      ],
-      "Creating link to file": [
-        "Luodaan linkkiä tiedostoon"
-      ],
-      "Creating link to folder": [
-        "Luodaan linkkiä kansioon"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Hyvitys edellisen tilausjaksosi käyttämättömästä osuudesta"
@@ -5180,15 +5170,6 @@
       ],
       "Failed": [
         "Epäonnistui"
-      ],
-      "Failed to generate a secure link. The reason is: ${ error }": [
-        "Suojatun linkin luonti epäonnistui, koska: ${ error }"
-      ],
-      "Failed to generate a secure link. Try again later": [
-        "Suojatun linkin luonti epäonnistui. Yritä myöhemmin uudelleen."
-      ],
-      "Failed to open a secure link. The reason is: ${ error }": [
-        "Suojatun linkin avaus epäonnistui, koska: ${ error }"
       ],
       "Feb": [
         "helmi"
@@ -5546,12 +5527,6 @@
       "One time import": [
         "Kertaluontoinen tuonti"
       ],
-      "Only the people with the link and the password can access this file.": [
-        "Tiedostoa voivat käyttää vain ne, joilla on sen linkki ja salasana."
-      ],
-      "Only the people with the link and the password can access this folder.": [
-        "Kansiota voivat käyttää vain ne, joilla on sen linkki ja salasana."
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "Avaa opas ja tutustu suositeltuihin toimenpiteisiin ja hyödyllisiin linkkeihin."
       ],
@@ -5675,12 +5650,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Odota, kun etsimme inaktiivisella avaimella salattuja tietoja sisältäviä yhteystietoja."
-      ],
-      "Preparing link to file": [
-        "Valmistellaan linkkiä tiedostoon"
-      ],
-      "Preparing link to folder": [
-        "Valmistellaan linkkiä kansioon"
       ],
       "Preview failed to be loaded": [
         "Esikatselun lataus epäonnistui"
@@ -5986,9 +5955,6 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Linkki saattaa olla homografiahyökkäys. Vahvista linkin olevan sivusto, jolla haluat vierailla, tai älä avaa sitä."
-      ],
-      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Linkki on luotu vanhalla Drive-versiolla, eikä sen muokkaus ole mahdollista. Muuttaaksesi asetuksia, poista linkki ja luo uusi."
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Tämä tarkoittaa, että Internet-palveluntarjoajasi ja vierailemasi verkkosivustot eivät voi yhdistää henkilötietojasi verkkotoimintaasi."
@@ -8850,9 +8816,6 @@
       "The item was successfully added to your drive": [
         "Kohde lisättiin tallennustilaasi"
       ],
-      "The link to your item failed to be deleted": [
-        "Kohteen linkin poisto epäonnistui"
-      ],
       "The link to your item was deleted": [
         "Kohteen linkki poistettiin"
       ],
@@ -8867,9 +8830,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "Vanhat tiedostosi poistetaan 72 tunnin kuluessa"
-      ],
-      "Your settings failed to be saved": [
-        "Asetusten tallennus epäonnistui"
       ],
       "Your settings have been changed successfully": [
         "Tekemäsi asetusmuutokset on tallennettu"
@@ -9568,9 +9528,6 @@
       ],
       "Select state": [
         "Valitse osavaltio"
-      ],
-      "Set date": [
-        "Valitse päivämäärä"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Kerro mikä voisi mielestäsi parantaa ${ BRAND_NAME }ia"
@@ -11045,34 +11002,6 @@
         "${ seconds } sekuntia"
       ]
     },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } t",
-        "${ hours } t"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt }.5 t",
-        "${ hoursInt }.5 t"
-      ],
-      "${ minutes } min": [
-        "${ minutes } min",
-        "${ minutes } min"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } tunti",
-        "${ hours } tuntia"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt }.5 tuntia",
-        "${ hoursInt }.5 tuntia"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuutti",
-        "${ minutes } minuuttia"
-      ]
-    },
     "Title": {
       "# of downloads": [
         "Latausmäärä"
@@ -11747,9 +11676,6 @@
         "Valitse yhteystietoryhmä"
       ],
       "Select link expiration date": [
-        "Valitse linkin erääntymisaika"
-      ],
-      "Select link expiration time": [
         "Valitse linkin erääntymisaika"
       ],
       "Set recovery methods": [

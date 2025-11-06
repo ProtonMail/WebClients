@@ -90,9 +90,6 @@
       "Apply": [
         "Применить"
       ],
-      "Ask me next time": [
-        "Спросить в следующий раз"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "В группе может быть не больше ${ maxContacts } контакта",
         "В группе может быть не больше ${ maxContacts } контактов",
@@ -641,9 +638,6 @@
       ],
       "Save changes": [
         "Сохранить изменения"
-      ],
-      "Save preferences": [
-        "Сохранить настройки"
       ],
       "Search": [
         "Поиск"
@@ -3421,6 +3415,11 @@
         "Неограниченное количество псевдонимов hide-my-email"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Молниеносная скорость"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Произошла ошибка при аутентификации с помощью ключа безопасности. Попробуйте снова."
@@ -4193,9 +4192,6 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "Контакт откреплен от группы ${ contactGroupName }"
       ],
-      "Converting document...": [
-        "Преобразование документа..."
-      ],
       "Copy the link to clipboard": [
         "Скопировать ссылку в буфер обмена"
       ],
@@ -4240,9 +4236,6 @@
       ],
       "Creating link to folder": [
         "Создание ссылки на папку"
-      ],
-      "Creating new document...": [
-        "Создание нового документа..."
       ],
       "Current plan": [
         "Текущий тариф"
@@ -4325,9 +4318,6 @@
       "Enter your own password (as organization admin).": [
         "Введите собственный пароль (как администратор организации)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Ошибка преобразования документа: ${ errorMessage }"
-      ],
       "Error Syncing": [
         "Ошибка синхронизации"
       ],
@@ -4387,12 +4377,6 @@
       ],
       "Geoblocking": [
         "Геоблокировка"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Получайте по электронной почте уведомления о комментариях и предложениях, добавленных к вашим документам."
-      ],
-      "Get Notified About Comments": [
-        "Получать уведомления о комментариях"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Правительства и интернет-провайдеры могут отслеживать ваши действия в Интернете. Скрывая свой реальный адрес IP и шифруя свои действия, ваш просмотр веб-страниц становится приватным."
@@ -4529,9 +4513,6 @@
       "Low Priority": [
         "Низкий приоритет"
       ],
-      "Making a copy...": [
-        "Создание копии..."
-      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Максимум ${ MAX_SHARED_URL_PASSWORD_LENGTH } символ",
         "Максимум ${ MAX_SHARED_URL_PASSWORD_LENGTH } символа",
@@ -4564,9 +4545,6 @@
       ],
       "No contacts added yet": [
         "Контакты ещё не добавлены"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "В URL не указан документ. Вернитесь в ${ DRIVE_APP_NAME } и выберите документ."
       ],
       "No email address": [
         "Нет адреса электронной почты"
@@ -4840,9 +4818,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Владелец этого адреса отключил сквозное шифрование. Чтобы иметь возможность отправлять зашифрованные письма на этот адрес, владелец должен повторно включить сквозное шифрование."
-      ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "Похоже, что введенный вами URL был скопирован из Slack неправильно. При копировании длинных ссылок из Slack нажмите на ссылке правой кнопкой мыши, затем выберите «Копировать ссылку», а не копируйте усеченный текст URL напрямую."
       ],
       "There are no documents in the trash.": [
         "В Корзине документов нет."
@@ -5434,9 +5409,6 @@
       "Emails (last month)": [
         "Письма (последний месяц)"
       ],
-      "Enable email notifications": [
-        "Включить уведомления по электронной почте"
-      ],
       "Encrypt emails": [
         "Шифровать письма"
       ],
@@ -5481,9 +5453,6 @@
       ],
       "Import to:": [
         "Импортировать в:"
-      ],
-      "Include document name in notification": [
-        "Включить в уведомление название документа"
       ],
       "Include message and file name in invite email": [
         "Включите сообщение и имя файла в приглашение по электронной почте"
@@ -8179,9 +8148,6 @@
       ]
     },
     "sheets_2025:Info": {
-      "Creating new spreadsheet...": [
-        "Создание новой таблицы..."
-      ],
       "Detect automatically": [
         "Определить автоматически"
       ],

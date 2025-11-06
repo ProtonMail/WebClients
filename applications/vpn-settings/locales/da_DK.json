@@ -83,6 +83,9 @@
       "Add PayPal": [
         "Tilføj PayPal"
       ],
+      "Add referral link to ${ MAIL_APP_NAME } signature": [
+        "Tilføj henvisningslink til ${ MAIL_APP_NAME }-signatur"
+      ],
       "Add user": [
         "Tilføj bruger"
       ],
@@ -1792,6 +1795,9 @@
       "Continue your subscription": [
         "Fortsæt dit abonnement"
       ],
+      "Copy": [
+        "Kopiér"
+      ],
       "Create label": [
         "Opret etiket"
       ],
@@ -1803,6 +1809,9 @@
       ],
       "Remind me later": [
         "Påmind mig senere"
+      ],
+      "Send": [
+        "Send"
       ],
       "Set up other features": [
         "Konfigurer andre funktioner"
@@ -3114,6 +3123,9 @@
       ],
       "To start, give your organization a name.": [
         "Start med at give deres organisation et navn."
+      ],
+      "Track the status and activity of your referrals": [
+        "Følg status og aktivitet for dine henvisninger"
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Brug denne vejledning for hurtigt at lade din organisation drage fordel af ${ BRAND_NAME }'s branchens førende kryptering og privatlivsøkosystem."
@@ -5314,6 +5326,9 @@
       "${ discountPercent }% discount": [
         "${ discountPercent }% rabat"
       ],
+      "${ emailAddress } is invalid": [
+        "${ emailAddress } er ugyldig"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: billede i fuld størrelse"
       ],
@@ -5449,6 +5464,9 @@
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Få en ${ BRAND_NAME }-adresse** for at bruge alle ${ BRAND_NAME_TWO }-tjenester, herunder ${ MAIL_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }."
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Inviter dine venner** til ${ BRAND_NAME } med dit henvisningslink."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Trin 1:** Inviter dine venner til ${ BRAND_NAME } med dit henvisningslink."
@@ -5713,6 +5731,9 @@
       ],
       "Copy the suggested password to clipboard": [
         "Kopiér den foreslåede adgangskode til udklipsholderen"
+      ],
+      "Copy your referral link": [
+        "Kopier dit henvisningslink"
       ],
       "Country code": [
         "Landekode"
@@ -6161,6 +6182,13 @@
       "Invite rejected": [
         "Invitation afvist"
       ],
+      "Invite successfully sent": [
+        "Invitation sendt",
+        "Invitationer sendt"
+      ],
+      "Invited": [
+        "Inviteret"
+      ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Det tager 10 dage at ændre en servers land, så vær sikker på dit valg er korrekt."
       ],
@@ -6527,6 +6555,9 @@
       "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
         "Offentlige personer, journalister, ledere og andre, der kan være mål for cyberangreb, opfordres kraftigt til at aktivere ${ PROTON_SENTINEL_NAME }."
       ],
+      "Public link invite": [
+        "Offentlig link-invitation"
+      ],
       "Public sharing of documents is not yet supported.": [
         "Offentlig deling af dokumenter understøttes ikke endnu."
       ],
@@ -6538,6 +6569,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Gendannelsesoplysninger vil forblive på denne enhed, medmindre du vælger at slette dem."
+      ],
+      "Referral link copied to your clipboard": [
+        "Henvisningslink kopieret til din udklipsholder"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Opfriskning af siden eller ${ link } vil automatisk løse de fleste problemer."
@@ -6605,6 +6639,9 @@
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Send e-mails for at opfordre dine medlemmer til at beskytte deres konti med 2FA."
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Sendt med <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> sikker e-mail."
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPA-betalinger er ikke tilgængelige i øjeblikket. Prøv venligst igen senere."
       ],
@@ -6650,6 +6687,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Log ind på ${ MAIL_APP_NAME } for at aktivere din adresse"
       ],
+      "Signed up": [
+        "Tilmelde sig"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du er en loyal bruger, har din konto ekstra features aktiveret."
       ],
@@ -6665,9 +6705,6 @@
       "Step ${ step }": [
         "Trin ${ step }",
         "Trin ${ step }"
-      ],
-      "Storage": [
-        "Lagerplads"
       ],
       "Storage allocated to other users in this organisation": [
         "Lagerplads tildelt andre brugere i denne organisation"
@@ -7195,6 +7232,13 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Du kan bruge følgende legitimationsoplysninger til at oprette forbindelse til en ${ VPN_APP_NAME }-server ved hjælp af en tredjeparts, open source VPN-app, såsom Tunnelblick til macOS eller OpenVPN til GNU/Linux."
       ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "Du kan ikke sende mere end ${ emailSendLimitNumber } e-mail-invitation de næste 24 timer",
+        "Du kan ikke sende mere end ${ emailSendLimitNumber } e-mail-invitationer de næste 24 timer"
+      ],
+      "You cannot refer ${ MAIL_APP_NAME } users": [
+        "Du kan ikke henvise ${ MAIL_APP_NAME }-brugere"
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Du får besked, hvis din adgangskode eller andre data er blevet lækket fra en tredjepartstjeneste."
       ],
@@ -7526,6 +7570,9 @@
       "Account storage": [
         "Kontolagerplads"
       ],
+      "Activity": [
+        "Aktivitet"
+      ],
       "Add all organization members": [
         "Tilføj alle organisationsmedlemmer"
       ],
@@ -7582,6 +7629,9 @@
       ],
       "Authenticator app": [
         "Godkendelsesapp"
+      ],
+      "Awarded": [
+        "Belønnet"
       ],
       "Backup password": [
         "Backupadgangskode"
@@ -7714,6 +7764,9 @@
       ],
       "Current email": [
         "Nuværende e-mailadresse"
+      ],
+      "Date": [
+        "Dato"
       ],
       "Default language": [
         "Standardsporg"
@@ -7852,6 +7905,9 @@
       ],
       "Interval": [
         "Interval"
+      ],
+      "Invite via email": [
+        "Inviter via e-mail"
       ],
       "Issuer ID": [
         "Udsteder-ID"
@@ -8009,6 +8065,9 @@
       "Payment method": [
         "Betalingsmetode"
       ],
+      "Pending": [
+        "Afventende"
+      ],
       "Phone number": [
         "Telefonnummer"
       ],
@@ -8071,6 +8130,9 @@
       ],
       "Reveal password": [
         "Vis adgangskode"
+      ],
+      "Reward": [
+        "Belønning"
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Genève"
@@ -13701,6 +13763,9 @@
       "Recovery": [
         "Gendannelse"
       ],
+      "Refer a friend": [
+        "Henvis en ven"
+      ],
       "Remove all members?": [
         "Fjern alle medlemmer?"
       ],
@@ -13963,6 +14028,9 @@
       "Your plan": [
         "Dit abonnement"
       ],
+      "Your referrals": [
+        "Dine henvisninger"
+      ],
       "Your shorter address is now ready": [
         "Din kortere adresse er nu klar"
       ],
@@ -14084,6 +14152,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Hvis du har købt en gavekode eller modtaget en fra vores supportteam, kan du indtaste den her."
+      ],
+      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
+        "Indstiller følgende sidefod i de e-mails, du sender: ${ signature } Linket peger på dit henvisningslink. Sidefoden vises under din signatur. Du kan til enhver tid tilpasse din signatur i indstillingerne."
       ],
       "Shared server policies can be applied to individual users or groups": [
         "Delte serverpolitikker kan anvendes på individuelle brugere eller grupper"
@@ -14650,6 +14721,9 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Ved at slette dette telefonnummer vil du ikke længere være i stand til at gendanne din konto."
+      ],
+      "Please add at least one recipient.": [
+        "Angiv mindst én modtager."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Fejlrapporter er ikke end-to-end krypterede. Send derfor ikke følsomme oplysninger."
