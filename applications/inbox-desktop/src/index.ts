@@ -53,6 +53,9 @@ import { initializeFeatureFlagManager } from "./utils/flags/manager";
     // Also, this can happen during development when running the server locally.
     app.commandLine.appendSwitch("ignore-certificate-errors");
 
+    // Prevent GTK 2-3-4 collision on the current version of Electron. Should be re-checked when bumping to v37.
+    app.commandLine.appendSwitch("gtk-version", "3");
+
     // Move uninstaller on macOS
     moveUninstaller();
 
