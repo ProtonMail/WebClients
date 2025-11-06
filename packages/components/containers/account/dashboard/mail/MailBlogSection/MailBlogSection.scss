@@ -1,0 +1,12 @@
+.group {
+	&:hover,
+	&:focus {
+		.group-hover\:text-underline {
+			text-decoration: underline;
+		}
+
+		.group-hover\:color-link {
+			color: var(--link-hover);
+		}
+	}
+}
