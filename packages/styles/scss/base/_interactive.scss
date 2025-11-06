@@ -153,14 +153,18 @@
 	@extend %interactive;
 	@extend .interactive-pseudo;
 
+	--interactive-inset: $focus-ring-size;
+
 	&::after {
-		inset: $focus-ring-size;
+		inset: var(--interactive-inset);
 	}
 }
 
 .interactive-pseudo-protrude {
 	@extend %interactive;
 	@extend .interactive-pseudo;
+
+	--interactive-inset: -$focus-ring-size;
 
 	&:hover,
 	&:focus,
@@ -178,7 +182,7 @@
 	}
 
 	&::after {
-		inset: -$focus-ring-size;
+		inset: var(--interactive-inset);
 	}
 }
 
