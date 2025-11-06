@@ -69,6 +69,12 @@ body {
 .rnc-scrollbar-shim {
 	border-color: hsl(var(--rnc-border));
 }
+.rnc-canvas-wrapper {
+	.rowcol-drag-border,
+	.rowcol-drag-highlight {
+		background: #1ea885 !important;
+	}
+}
 
 /* rnc uses tailwind's `invisible` class to set the visibility
 of the resizer handler to hidden, however there is an existing

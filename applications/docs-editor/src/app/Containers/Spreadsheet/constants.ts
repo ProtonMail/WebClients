@@ -207,10 +207,15 @@ export const GRID_THEME_PROPS: Partial<CanvasGridProps> = {
   headerBackgroundColor: '#FAFAFA',
   headerColor: '#666666',
   headerActiveBackgroundColor: '#E3F9EB',
+  headerSelectedBackgroundColor: '#1EA885',
   selectionBorderColor: '#4DB89D',
   selectionBackgroundColor: 'rgba(80, 200, 120, 0.1)',
+  selectionDragBorderColor: '#1EA885',
   gridLineColor: '#F0F0F0',
   headerBorderColor: '#EDEDED',
+  headerTableBackgroundColor: '#FAFAFA',
+  headerTableActiveBackgroundColor: '#E3F9EB',
+  headerTableSelectedBackgroundColor: '#1EA885',
 }
 
 export const OPEN_LINK_EVENT = 'open-link' as const
