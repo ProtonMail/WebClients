@@ -23,7 +23,7 @@ const useDashboardPageLoadTelemetry = ({
             api,
             measurementGroup: TelemetryMeasurementGroups.accountDashboard,
             event: TelemetryAccountDashboardEvents.pageLoad,
-            dimensions: { variant: variant.name },
+            dimensions: { variant: variant.name, app },
             delay: false,
         });
     };
