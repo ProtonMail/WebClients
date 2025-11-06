@@ -252,6 +252,9 @@
       "Continue with Outlook": [
         "Continuar com Outlook"
       ],
+      "Copy": [
+        "Copiar"
+      ],
       "Copy address": [
         "Copiar o endereço"
       ],
@@ -1419,6 +1422,12 @@
       ],
       "Unsupported event": [
         "Evento não suportado"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "Mais ${ hiddenResultsCount } resultado não exibido",
+        "Mais ${ hiddenResultsCount } resultados não exibidos"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -3377,6 +3386,9 @@
       "Cannot export this contact": [
         "Não é possível exportar este contato."
       ],
+      "Cannot load \"My files\" root folder": [
+        "Não é possível carregar a pasta raiz \"Meus arquivos\""
+      ],
       "Checkout expired, please try again": [
         "Pedido expirado. Tente novamente"
       ],
@@ -3445,14 +3457,17 @@
       "Error reading file": [
         "Erro ao ler arquivo"
       ],
+      "Expanding non-existent directory tree item": [
+        "Expandindo item inexistente da árvore de diretórios"
+      ],
+      "Expanding non-expandable directory tree item": [
+        "Expandindo um item não expansível da árvore de diretórios"
+      ],
       "Expected structure attached": [
         "Estrutura esperada em anexo"
       ],
       "External accounts are not supported yet": [
         "Contas externas não são suportadas ainda."
-      ],
-      "External invitations are not available yet.": [
-        "Convites externos ainda não estão disponíveis"
       ],
       "External invitations are temporarily disabled.": [
         "Convites externos estão indisponíveis temporariamente."
@@ -4316,6 +4331,11 @@
         "Aliases do Hide-my-email ilimitados"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Velocidade ultrarrápida"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Ocorreu um erro ao autenticar com sua chave de segurança. Tente novamente."
@@ -5137,12 +5157,6 @@
       "Anonymous": [
         "Anônimo"
       ],
-      "Anyone with this link can access your file.": [
-        "Qualquer pessoa com este link pode acessar seu arquivo."
-      ],
-      "Anyone with this link can access your folder.": [
-        "Qualquer pessoa com este link pode acessar sua pasta."
-      ],
       "Apr": [
         "Abr."
       ],
@@ -5312,12 +5326,6 @@
       ],
       "Creating": [
         "Criando"
-      ],
-      "Creating link to file": [
-        "Criando link para o arquivo"
-      ],
-      "Creating link to folder": [
-        "Criando link para a pasta"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito pela parte não usada no plano anterior da sua assinatura"
@@ -5498,15 +5506,6 @@
       "Failed": [
         "Erro"
       ],
-      "Failed to generate a secure link. The reason is: ${ error }": [
-        "Erro ao gerar um link seguro. O motivo é: ${ error }"
-      ],
-      "Failed to generate a secure link. Try again later": [
-        "Erro ao gerar um link seguro. Tente novamente mais tarde"
-      ],
-      "Failed to open a secure link. The reason is: ${ error }": [
-        "Erro ao abrir um link seguro. O motivo é: ${ error }"
-      ],
       "Feb": [
         "Fev."
       ],
@@ -5678,6 +5677,9 @@
       ],
       "It's better to have:": [
         "É melhor ter:"
+      ],
+      "It's not possible to copy the folder to itself": [
+        "Não é possível copiar a pasta para ela mesma"
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "Os itens na lixeira permanecerão aqui até que você os exclua permanentemente"
@@ -5887,12 +5889,6 @@
       "One time import": [
         "Importação única"
       ],
-      "Only the people with the link and the password can access this file.": [
-        "Apenas as pessoas com o link e a senha podem acessar este arquivo."
-      ],
-      "Only the people with the link and the password can access this folder.": [
-        "Apenas as pessoas com o link e a senha podem acessar esta pasta."
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "Abra o guia para ver as ações recomendadas e os links úteis."
       ],
@@ -6020,12 +6016,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Aguarde enquanto procuramos contatos que contenham dados criptografados com a chave inativa."
       ],
-      "Preparing link to file": [
-        "Preparando link para o arquivo"
-      ],
-      "Preparing link to folder": [
-        "Preparando link para a pasta"
-      ],
       "Preview failed to be loaded": [
         "Não foi possível carregar a pré-visualização."
       ],
@@ -6118,6 +6108,9 @@
       ],
       "Search Enabled": [
         "Busca habilitada"
+      ],
+      "Select a folder to copy to.": [
+        "Selecione uma pasta para onde deseja copiar."
       ],
       "Select a folder to move to.": [
         "Selecione uma pasta para onde deseja mover."
@@ -6342,9 +6335,6 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Este link pode ser um ataque homográfico. Verifique se este é o link que você deseja visitar, caso contrário, não abra."
-      ],
-      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Este link foi criado com a versão antiga do Drive e não é possível modificá-lo. Exclua este link e crie um para alterar as configurações."
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Isso significa que o seu ISP e os sites que você visita não conseguem conectar suas informações pessoais com sua atividade on-line."
@@ -9105,6 +9095,9 @@
       "\"${ name }\" saved successfully": [
         "\"${ name }\" salvo"
       ],
+      "\"${ name }\" successfully copied": [
+        "\"${ name }\" copiado"
+      ],
       "\"${ name }\" successfully moved": [
         "\"${ name }\" movido"
       ],
@@ -9117,6 +9110,10 @@
       "${ count } item failed to be decrypted": [
         "Erro ao descriptografar ${ count } item",
         "Erro ao descriptografar ${ count } itens"
+      ],
+      "${ errors.length } item failed to be copied": [
+        "Erro ao copiar ${ errors.length } item",
+        "Erro ao copiar ${ errors.length } itens"
       ],
       "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
         "${ nbFailures } foto não pôde ser removida de «${ albumLink.name }»",
@@ -9169,6 +9166,10 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } item restaurado da lixeira",
         "${ numberOfItems } itens restaurados da lixeira"
+      ],
+      "${ numberOfItems } item successfully copied": [
+        "${ numberOfItems } item copiado",
+        "${ numberOfItems } itens copiados"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } item movido",
@@ -9307,9 +9308,6 @@
       "Public link access updated": [
         "Acesso ao link público atualizado"
       ],
-      "Public link update access failed ": [
-        "Falha no acesso à atualização do link público "
-      ],
       "Root folder failed to be loaded": [
         "Erro ao carregar a pasta raiz"
       ],
@@ -9349,9 +9347,6 @@
       "The item was successfully added to your drive": [
         "O item foi adicionado ao seu drive com sucesso"
       ],
-      "The link to your item failed to be deleted": [
-        "Erro ao excluir o link do seu item"
-      ],
       "The link to your item was deleted": [
         "O link para seu item foi excluído"
       ],
@@ -9369,9 +9364,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "Seus arquivos antigos serão excluídos em 72 horas"
-      ],
-      "Your settings failed to be saved": [
-        "Erro ao salvar as suas configurações"
       ],
       "Your settings have been changed successfully": [
         "Suas configurações foram alteradas"
@@ -10268,9 +10260,6 @@
       "Select state": [
         "Selecionar estado"
       ],
-      "Set date": [
-        "Definir data"
-      ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Compartilhe o que você acha que poderia melhorar na ${ BRAND_NAME }"
       ],
@@ -11057,6 +11046,9 @@
       "${ app } storage": [
         "armazenamento do ${ app }"
       ],
+      "${ app } storage used": [
+        "${ app } de armazenamento usado"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% cheio"
       ],
@@ -11068,6 +11060,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Para todos os serviços da ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "De armazenamento usado"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Para continuar carregando e sincronizando arquivos, libere espaço ou atualize para obter mais armazenamento."
@@ -11818,34 +11813,6 @@
         "${ seconds } segundos"
       ]
     },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } h",
-        "${ hours } h"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt }.5 h",
-        "${ hoursInt }.5 h"
-      ],
-      "${ minutes } min": [
-        "${ minutes } min",
-        "${ minutes } min"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } hora",
-        "${ hours } horas"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt }.5 hora",
-        "${ hoursInt }.5 horas"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuto",
-        "${ minutes } minutos"
-      ]
-    },
     "Title": {
       "# of downloads": [
         "# de downloads"
@@ -12338,6 +12305,9 @@
       "Logs": [
         "Registros"
       ],
+      "Make a copy": [
+        "Fazer uma cópia"
+      ],
       "Make a secure connection your default": [
         "Defina uma conexão segura como seu padrão"
       ],
@@ -12572,9 +12542,6 @@
       ],
       "Select link expiration date": [
         "Selecionar data de expiração do link"
-      ],
-      "Select link expiration time": [
-        "Selecionar hora de expiração do link"
       ],
       "Set recovery methods": [
         "Definir um métodos de recuperação"

@@ -258,6 +258,9 @@
       "Continue with Outlook": [
         "Pokračovať s Outlookom"
       ],
+      "Copy": [
+        "Kopírovať"
+      ],
       "Copy address": [
         "Kopírovať adresu"
       ],
@@ -1443,6 +1446,14 @@
       ],
       "Unsupported event": [
         "Nepodporovaná udalosť"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } ďalší výsledok nebol zobrazený",
+        "${ hiddenResultsCount } ďalšie výsledky nezobrazené",
+        "${ hiddenResultsCount } ďalších výsledkov nezobrazených",
+        "${ hiddenResultsCount } ďalších výsledkov nezobrazených"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -3409,6 +3420,9 @@
       "Cannot export this contact": [
         "Nie je možné exportovať tento kontakt"
       ],
+      "Cannot load \"My files\" root folder": [
+        "Nie je možné načítať koreňový priečinok \"Moje súbory\""
+      ],
       "Checkout expired, please try again": [
         "Objednávka vypršala, skúste to prosím znova"
       ],
@@ -3481,14 +3495,17 @@
       "Error reading file": [
         "Chyba pri čítaní súboru"
       ],
+      "Expanding non-existent directory tree item": [
+        "Rozšírenie neexistujúcej položky adresárovej štruktúry"
+      ],
+      "Expanding non-expandable directory tree item": [
+        "Rozšírenie nerozšíriteľnej položky adresárovej štruktúry"
+      ],
       "Expected structure attached": [
         "Očakávaná štruktúra priložená"
       ],
       "External accounts are not supported yet": [
         "Externé účty zatiaľ nie sú podporované"
-      ],
-      "External invitations are not available yet.": [
-        "Externé pozvánky ešte nie sú dostupné."
       ],
       "External invitations are temporarily disabled.": [
         "Externé pozvánky sú dočasne zablokované."
@@ -4366,6 +4383,11 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Neobmedzený počet hide-my-email aliasov"
+      ]
+    },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Bleskové rýchlosti"
       ]
     },
     "fido2: Error": {
@@ -5291,12 +5313,6 @@
       "Anonymous": [
         "Anonymné"
       ],
-      "Anyone with this link can access your file.": [
-        "Ktokoľvek s týmto odkazom má prístup k vášmu súboru."
-      ],
-      "Anyone with this link can access your folder.": [
-        "Ktokoľvek s týmto odkazom má prístup k vášmu priečinku."
-      ],
       "Apr": [
         "Apr"
       ],
@@ -5470,12 +5486,6 @@
       ],
       "Creating": [
         "Vytváranie"
-      ],
-      "Creating link to file": [
-        "Vytváranie odkazu na súbor"
-      ],
-      "Creating link to folder": [
-        "Vytváranie odkazu na priečinok"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit za nevyužitú časť vášho predchádzajúceho predplatného plánu"
@@ -5660,15 +5670,6 @@
       "Failed": [
         "Zlyhalo"
       ],
-      "Failed to generate a secure link. The reason is: ${ error }": [
-        "Vytvorenie bezpečného odkazu zlyhalo. Dôvod: ${ error }"
-      ],
-      "Failed to generate a secure link. Try again later": [
-        "Vytvorenie bezpečného odkazu zlyhalo. Skúste to znova neskôr prosím."
-      ],
-      "Failed to open a secure link. The reason is: ${ error }": [
-        "Nepodarilo sa otvoriť bezpečný odkaz. Dôvod: ${ error }"
-      ],
       "Feb": [
         "Feb"
       ],
@@ -5842,6 +5843,9 @@
       ],
       "It's better to have:": [
         "Je lepšie, ak máte:"
+      ],
+      "It's not possible to copy the folder to itself": [
+        "Priečinok nie je možné skopírovať do seba samého."
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "Položky v koši zostanú, až kým ich natrvalo nevymažete"
@@ -6053,12 +6057,6 @@
       "One time import": [
         "Jednorazový import"
       ],
-      "Only the people with the link and the password can access this file.": [
-        "Iba ľudia s odkazom a heslom majú prístup k tomuto súboru."
-      ],
-      "Only the people with the link and the password can access this folder.": [
-        "Iba ľudia s odkazom a heslom majú prístup k tomuto priečinku."
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "Otvorte príručku s odporúčanými akciami a užitočnými odkazmi."
       ],
@@ -6188,12 +6186,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Prosím, počkajte kým zistíme kontakty, ktoré zahŕňajú šifrované dáta s neaktívnym kľúčom."
       ],
-      "Preparing link to file": [
-        "Príprava odkazu na súbor"
-      ],
-      "Preparing link to folder": [
-        "Príprava odkazu na priečinok"
-      ],
       "Preview failed to be loaded": [
         "Náhľad sa nepodarilo načítať"
       ],
@@ -6286,6 +6278,9 @@
       ],
       "Search Enabled": [
         "Vyhľadávanie povolené"
+      ],
+      "Select a folder to copy to.": [
+        "Vyberte priečinok, do ktorého chcete kopírovať."
       ],
       "Select a folder to move to.": [
         "Vyberte priečinok na presun."
@@ -6514,9 +6509,6 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Tento odkaz môže byť homografickým útokom. Preverte si, či je toto odkaz, ktorý chcete otvoriť, alebo ho ignorujte."
-      ],
-      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Tento odkaz bol vytvorený pomocou starej verzie Drive a nemôže byť zmenený. Na zmenu jeho nastavení vymažte tento odkaz a vytvorte nový."
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "To znamená, že poskytovateľ internetových služieb a navštívené webové lokality nemôžu spájať vaše osobné údaje s vašou online aktivitou."
@@ -9308,6 +9300,9 @@
       "\"${ name }\" saved successfully": [
         "„${ name }“ úspešne uložené"
       ],
+      "\"${ name }\" successfully copied": [
+        "„${ name }“ úspešne skopírované"
+      ],
       "\"${ name }\" successfully moved": [
         "„${ name }“ úspešne presunuté"
       ],
@@ -9322,6 +9317,18 @@
         "${ count } položky sa nepodarilo dešifrovať",
         "${ count } položiek sa nepodarilo dešifrovať",
         "${ count } položiek sa nepodarilo dešifrovať"
+      ],
+      "${ errors.length } item failed to be copied": [
+        "${ errors.length } položku sa nepodarilo skopírovať",
+        "${ errors.length } položky sa nepodarilo skopírovať",
+        "${ errors.length } položiek sa nepodarilo skopírovať",
+        "${ errors.length } položiek sa nepodarilo skopírovať"
+      ],
+      "${ errors.length } item failed to be trashed": [
+        "${ errors.length } položku sa nepodarilo odstrániť",
+        "${ errors.length } položky sa nepodarilo odstrániť",
+        "${ errors.length } položiek sa nepodarilo odstrániť",
+        "${ errors.length } položiek sa nepodarilo odstrániť"
       ],
       "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
         "${ nbFailures } fotografia nemôže byť odstráná z \"${ albumLink.name }\"",
@@ -9346,6 +9353,12 @@
         "${ nbSuccesses } fotografie boli odstránené z \"${ albumLink.name }\"",
         "${ nbSuccesses } fotografií bolo odstránených z \"${ albumLink.name }\"",
         "${ nbSuccesses } fotografií bolo odstránených z \"${ albumLink.name }\""
+      ],
+      "${ numberOfItems } copied item moved to trash": [
+        "${ numberOfItems } skopírovaná položka presunutá do koša",
+        "${ numberOfItems } skopírované položky presunuté do koša",
+        "${ numberOfItems } skopírovaných položiek presunutých do koša",
+        "${ numberOfItems } skopírovaných položiek presunutých do koša"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } položka vymazaná",
@@ -9401,6 +9414,12 @@
         "${ numberOfItems } položiek obnovených z koša",
         "${ numberOfItems } položiek obnovených z koša"
       ],
+      "${ numberOfItems } item successfully copied": [
+        "${ numberOfItems } položka bola úspešne skopírovaná",
+        "${ numberOfItems } položky boli úspešne skopírované",
+        "${ numberOfItems } položiek bolo úspešne skopírovaných",
+        "${ numberOfItems } položiek bolo úspešne skopírovaných"
+      ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } položka bola úspešne presunutá",
         "${ numberOfItems } položky boli úspešne presunuté",
@@ -9445,6 +9464,9 @@
       ],
       "Contact group updated": [
         "Skupina kontaktov bola aktualizovaná"
+      ],
+      "Copy of \"${ name }\" moved to trash": [
+        "Kópia „${ name }“ presunutá do koša"
       ],
       "Device failed to be removed": [
         "Zariadenie sa nepodarilo odstrániť"
@@ -9548,9 +9570,6 @@
       "Public link access updated": [
         "Verejný prístupový odkaz bol aktualizovaný"
       ],
-      "Public link update access failed ": [
-        "Aktualizácia verejného odkazu zlyhala "
-      ],
       "Root folder failed to be loaded": [
         "Nepodarilo sa načítať koreňový priečinok"
       ],
@@ -9596,9 +9615,6 @@
       "The item was successfully added to your drive": [
         "Položka bola úspešne pridaná na váš disk"
       ],
-      "The link to your item failed to be deleted": [
-        "Odkaz na vašu položku sa nepodarilo zmazať"
-      ],
       "The link to your item was deleted": [
         "Odkaz na vašu položku bol zmazaný"
       ],
@@ -9616,9 +9632,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "Vaše staré súbory budú zmazané do 72 hodín"
-      ],
-      "Your settings failed to be saved": [
-        "Vaše nastavenia sa nepodarilo uložiť"
       ],
       "Your settings have been changed successfully": [
         "Vaše nastavenia boli úspešne zmenené"
@@ -10523,9 +10536,6 @@
       "Select state": [
         "Vyberte stav"
       ],
-      "Set date": [
-        "Nastaviť dátum"
-      ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Dajte nám vedieť, čo by podľa vás mohlo vylepšiť ${ BRAND_NAME }"
       ],
@@ -11356,6 +11366,9 @@
       "${ app } storage": [
         "${ app } uložisko"
       ],
+      "${ app } storage used": [
+        "${ app } využitého úložiska"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% využitých"
       ],
@@ -11367,6 +11380,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Pre všetky ${ BRAND_NAME } služby"
+      ],
+      "Storage used": [
+        "Využité úložisko"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Ak chcete pokračovať v nahrávaní a synchronizácii súborov, uvoľnite miesto alebo aktualizujte úložisko."
@@ -12159,46 +12175,6 @@
         "${ seconds } sekúnd"
       ]
     },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } h",
-        "${ hours } h",
-        "${ hours } h",
-        "${ hours } h"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt }.5 h",
-        "${ hoursInt }.5 h",
-        "${ hoursInt }.5 h",
-        "${ hoursInt }.5 h"
-      ],
-      "${ minutes } min": [
-        "${ minutes } min",
-        "${ minutes } min",
-        "${ minutes } min",
-        "${ minutes } min"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } hodina",
-        "${ hours } hodiny",
-        "${ hours } hodín",
-        "${ hours } hodín"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt }.5 hodiny",
-        "${ hoursInt }.5 hodíny",
-        "${ hoursInt }.5 hodín",
-        "${ hoursInt }.5 hodín"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minúta",
-        "${ minutes } minúty",
-        "${ minutes } minút",
-        "${ minutes } minút"
-      ]
-    },
     "Title": {
       "# of downloads": [
         "počet stiahnutí"
@@ -12713,6 +12689,9 @@
       "Logs": [
         "Záznamy"
       ],
+      "Make a copy": [
+        "Vytvoriť kópiu"
+      ],
       "Make a secure connection your default": [
         "Nastavte zabezpečené pripojenie ako východzie"
       ],
@@ -12949,9 +12928,6 @@
       ],
       "Select link expiration date": [
         "Vyberte koniec platnosti odkazu"
-      ],
-      "Select link expiration time": [
-        "Vyberte čas vypršania platnosti odkazu"
       ],
       "Set recovery methods": [
         "Nastaviť spôsoby obnovenia"

@@ -3197,9 +3197,6 @@
       "External accounts are not supported yet": [
         "Внешние аккаунты пока не поддерживаются"
       ],
-      "External invitations are not available yet.": [
-        "Внешние приглашения пока недоступны."
-      ],
       "External invitations are temporarily disabled.": [
         "Внешние приглашения временно отключены."
       ],
@@ -3960,6 +3957,11 @@
     "Feature": {
       "Unlimited hide-my-email aliases": [
         "Неограниченное количество псевдонимов hide-my-email"
+      ]
+    },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Молниеносная скорость"
       ]
     },
     "fido2: Error": {
@@ -4843,12 +4845,6 @@
       "Anonymous": [
         "Аноним"
       ],
-      "Anyone with this link can access your file.": [
-        "Доступ к файлу разрешен всем, у кого есть ссылка."
-      ],
-      "Anyone with this link can access your folder.": [
-        "Доступ к вашей папке разрешен всем, у кого есть эта ссылка."
-      ],
       "Apr": [
         "Апр"
       ],
@@ -5013,12 +5009,6 @@
       ],
       "Creating": [
         "Создание"
-      ],
-      "Creating link to file": [
-        "Создание ссылки на файл"
-      ],
-      "Creating link to folder": [
-        "Создание ссылки на папку"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Остаток на счете для неиспользованной части подписки на предыдущий тариф"
@@ -5187,15 +5177,6 @@
       ],
       "Failed": [
         "Завершено с ошибкой"
-      ],
-      "Failed to generate a secure link. The reason is: ${ error }": [
-        "Не удалось сгенерировать защищенную ссылку. Причина: ${ error }"
-      ],
-      "Failed to generate a secure link. Try again later": [
-        "Не удалось сгенерировать защищенную ссылку. Повторите попытку позже"
-      ],
-      "Failed to open a secure link. The reason is: ${ error }": [
-        "Не удалось открыть защищенную ссылку. Причина: ${ error }"
       ],
       "Feb": [
         "Фев"
@@ -5554,12 +5535,6 @@
       "One time import": [
         "Одноразовый импорт"
       ],
-      "Only the people with the link and the password can access this file.": [
-        "Только люди со ссылкой и паролем могут получить доступ к этому файлу."
-      ],
-      "Only the people with the link and the password can access this folder.": [
-        "Только люди со ссылкой и паролем могут получить доступ к этой папке."
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "Откройте руководство, чтобы узнать о рекомендуемых действиях и полезных ссылках."
       ],
@@ -5688,12 +5663,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Пожалуйста, подождите, пока мы ищем контакты с данными, зашифрованными неактивным ключом."
-      ],
-      "Preparing link to file": [
-        "Подготовка ссылки на файл"
-      ],
-      "Preparing link to folder": [
-        "Подготовка ссылки на папку"
       ],
       "Preview failed to be loaded": [
         "Не удалось загрузить предварительный просмотр"
@@ -5997,9 +5966,6 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Эта ссылка может быть омографической атакой, при которой символы одного алфавита подменяются похожими символами из другого. Пожалуйста, проверьте, что это именно та ссылка, которую вы хотите посетить, или не переходите по ней."
-      ],
-      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Эта ссылка была создана в предыдущей версии и не может быть изменена. Удалите эту ссылку и создайте новую, чтобы изменить настройки."
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Это означает, что ваш интернет-провайдер и посещаемые вами сайты не смогут связать вашу личную информацию с вашими действиями в Интернете."
@@ -8884,9 +8850,6 @@
       "Public link access updated": [
         "Доступ к публичной ссылке обновлен"
       ],
-      "Public link update access failed ": [
-        "Доступ к обновлению публичной ссылки не удался "
-      ],
       "Root folder failed to be loaded": [
         "Не удалось загрузить корневую папку"
       ],
@@ -8920,9 +8883,6 @@
       "The item was successfully added to your drive": [
         "Элемент был успешно добавлен в хранилище"
       ],
-      "The link to your item failed to be deleted": [
-        "Не удалось удалить ссылку на ваш элемент"
-      ],
       "The link to your item was deleted": [
         "Ссылка на ваш элемент удалена"
       ],
@@ -8934,9 +8894,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "Ваши старые файлы будут удалены в течение 72 часов"
-      ],
-      "Your settings failed to be saved": [
-        "Не удалось сохранить настройки"
       ],
       "Your settings have been changed successfully": [
         "Ваши настройки были успешно изменены"
@@ -9579,9 +9536,6 @@
       ],
       "Select state": [
         "Выберите область"
-      ],
-      "Set date": [
-        "Установить дату"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Поделитесь тем, что, по вашему мнению, могло бы сделать ${ BRAND_NAME } лучше."
@@ -11080,46 +11034,6 @@
         "${ seconds } секунд"
       ]
     },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } ч",
-        "${ hours } ч",
-        "${ hours } ч",
-        "${ hours } ч"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt }.5 ч",
-        "${ hoursInt }.5 ч",
-        "${ hoursInt }.5 ч",
-        "${ hoursInt }.5 ч"
-      ],
-      "${ minutes } min": [
-        "${ minutes } мин",
-        "${ minutes } мин",
-        "${ minutes } мин",
-        "${ minutes } мин"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } час",
-        "${ hours } часа",
-        "${ hours } часов",
-        "${ hours } часов"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt }.5 часа",
-        "${ hoursInt }.5 часа",
-        "${ hoursInt }.5 часов",
-        "${ hoursInt }.5 часов"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } минута",
-        "${ minutes } минуты",
-        "${ minutes } минут",
-        "${ minutes } минута"
-      ]
-    },
     "Title": {
       "# of downloads": [
         "# скачиваний"
@@ -11798,9 +11712,6 @@
       ],
       "Select link expiration date": [
         "Выберите дату окончания действия ссылки"
-      ],
-      "Select link expiration time": [
-        "Выберите время окончания действия ссылки"
       ],
       "Set recovery methods": [
         "Установить методы восстановления"

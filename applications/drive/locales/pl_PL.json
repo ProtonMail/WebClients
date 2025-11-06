@@ -3359,9 +3359,6 @@
       "External accounts are not supported yet": [
         "Zewnętrzne konta nie są obsługiwane"
       ],
-      "External invitations are not available yet.": [
-        "Zewnętrzne zaproszenia nie są jeszcze dostępne."
-      ],
       "External invitations are temporarily disabled.": [
         "Zewnętrzne zaproszenia są tymczasowo wyłączone."
       ],
@@ -4200,6 +4197,11 @@
     "Feature": {
       "Unlimited hide-my-email aliases": [
         "Nieograniczona liczba aliasów hide-my-email"
+      ]
+    },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Błyskawiczne prędkości"
       ]
     },
     "fido2: Error": {
@@ -5095,12 +5097,6 @@
       "Anonymous": [
         "Anonimowy użytkownik"
       ],
-      "Anyone with this link can access your file.": [
-        "Każdy, kto ma link, ma dostęp do pliku."
-      ],
-      "Anyone with this link can access your folder.": [
-        "Każdy, kto ma link, ma dostęp do folderu."
-      ],
       "Apr": [
         "Kwi"
       ],
@@ -5268,12 +5264,6 @@
       ],
       "Creating": [
         "Tworzenie"
-      ],
-      "Creating link to file": [
-        "Tworzenie linku do pliku"
-      ],
-      "Creating link to folder": [
-        "Tworzenie linku do folderu"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Niewykorzystane środki z poprzedniego planu"
@@ -5454,15 +5444,6 @@
       ],
       "Failed": [
         "Niepowodzenie"
-      ],
-      "Failed to generate a secure link. The reason is: ${ error }": [
-        "Nie udało się wygenerować linku. ${ error }"
-      ],
-      "Failed to generate a secure link. Try again later": [
-        "Nie udało się wygenerować linku. Spróbuj ponownie później"
-      ],
-      "Failed to open a secure link. The reason is: ${ error }": [
-        "Nie udało się otworzyć linku. ${ error }"
       ],
       "Feb": [
         "Lut"
@@ -5842,12 +5823,6 @@
       "One time import": [
         "Jednorazowy import"
       ],
-      "Only the people with the link and the password can access this file.": [
-        "Tylko posiadacz linku i hasła ma dostęp do pliku."
-      ],
-      "Only the people with the link and the password can access this folder.": [
-        "Tylko posiadacz linku i hasła ma dostęp do folderu."
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "Otwórz przewodnik, aby sprawdzić zalecane działania i przydatne linki."
       ],
@@ -5973,12 +5948,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Poczekaj na sprawdzenie kontaktów, które zawierają zaszyfrowane dane za pomocą nieaktywnego klucza."
-      ],
-      "Preparing link to file": [
-        "Przygotowywanie linku"
-      ],
-      "Preparing link to folder": [
-        "Przygotowywanie linku"
       ],
       "Preview failed to be loaded": [
         "Załadowanie podglądu nie powiodło się"
@@ -6300,9 +6269,6 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ten link może być atakiem homograficznym. Sprawdź, czy jest to link, który chcesz odwiedzić lub nie otwieraj go."
-      ],
-      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Link został utworzony w starej wersji aplikacji i nie może zostać zmodyfikowany. Usuń link i utwórz nowy, aby zmienić jego ustawienia."
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Oznacza to, że dostawca Internetu i odwiedzane strony internetowe nie mogą łączyć Twoich danych z aktywnością online."
@@ -9349,9 +9315,6 @@
       "Public link access updated": [
         "Link został zaktualizowany"
       ],
-      "Public link update access failed ": [
-        "Dostęp do aktualizacji linku nie powiódł się "
-      ],
       "Root folder failed to be loaded": [
         "Załadowanie głównego folderu nie powiodło się"
       ],
@@ -9397,9 +9360,6 @@
       "The item was successfully added to your drive": [
         "Element został dodany do dysku"
       ],
-      "The link to your item failed to be deleted": [
-        "Usunięcie linku do elementu nie powiodło się"
-      ],
       "The link to your item was deleted": [
         "Link do elementu został usunięty"
       ],
@@ -9414,9 +9374,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "Stare pliki zostaną usunięte w ciągu 72 godzin"
-      ],
-      "Your settings failed to be saved": [
-        "Zapisywanie ustawień nie powiodło się"
       ],
       "Your settings have been changed successfully": [
         "Ustawienia zostały zmienione"
@@ -10193,9 +10150,6 @@
       ],
       "Select state": [
         "Wybierz stan"
-      ],
-      "Set date": [
-        "Ustaw datę"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Napisz, jak możemy ulepszyć usługi ${ BRAND_NAME }"
@@ -11736,46 +11690,6 @@
         "${ seconds } sekundy"
       ]
     },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } godz.",
-        "${ hours } godz.",
-        "${ hours } godz.",
-        "${ hours } godz."
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt },5 godz.",
-        "${ hoursInt },5 godz.",
-        "${ hoursInt },5 godz.",
-        "${ hoursInt },5 godz."
-      ],
-      "${ minutes } min": [
-        "${ minutes } minuta",
-        "${ minutes } minuty",
-        "${ minutes } minut",
-        "${ minutes } minuty"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } godzina",
-        "${ hours } godziny",
-        "${ hours } godzin",
-        "${ hours } godziny"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt },5 godziny",
-        "${ hoursInt },5 godziny",
-        "${ hoursInt },5 godziny",
-        "${ hoursInt },5 godziny"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuta",
-        "${ minutes } minuty",
-        "${ minutes } minut",
-        "${ minutes } minuty"
-      ]
-    },
     "Title": {
       "# of downloads": [
         "Liczba pobrań"
@@ -12508,9 +12422,6 @@
       ],
       "Select link expiration date": [
         "Wybierz datę wygaśnięcia linku"
-      ],
-      "Select link expiration time": [
-        "Wybierz czas wygaśnięcia linku"
       ],
       "Set recovery methods": [
         "Ustaw metody odzyskiwania"

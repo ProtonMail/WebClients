@@ -3400,9 +3400,6 @@
       "External accounts are not supported yet": [
         "Akun eksternal untuk saat ini belum didukung"
       ],
-      "External invitations are not available yet.": [
-        "Undangan eksternal saat ini belum tersedia."
-      ],
       "External invitations are temporarily disabled.": [
         "Undangan eksternal untuk sementara dinonaktifkan."
       ],
@@ -4245,6 +4242,11 @@
         "Tanpa batasan jumlah alias hide-my-email"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Kecepatan secepat kilat"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Terdapat kesalahan dalam mengautentikasi kunci keamanan Anda. Silakan coba lagi."
@@ -5009,12 +5011,6 @@
       "Anonymous": [
         "Anonim"
       ],
-      "Anyone with this link can access your file.": [
-        "Siapa pun dengan tautan ini bisa mengakses berkas Anda."
-      ],
-      "Anyone with this link can access your folder.": [
-        "Siapa pun yang memiliki tautan ini akan dapat mengakses folder Anda."
-      ],
       "Apr": [
         "Apr"
       ],
@@ -5182,12 +5178,6 @@
       ],
       "Creating": [
         "Membuat"
-      ],
-      "Creating link to file": [
-        "Menghasilkan tautan berkas"
-      ],
-      "Creating link to folder": [
-        "Menghasilkan tautan folder"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Saldo yang belum terpakai dari paket langganan Anda sebelumnya"
@@ -5362,15 +5352,6 @@
       ],
       "Failed": [
         "Gagal"
-      ],
-      "Failed to generate a secure link. The reason is: ${ error }": [
-        "Tautan aman gagal dihasilkan. Alasan: ${ error }"
-      ],
-      "Failed to generate a secure link. Try again later": [
-        "Tautan aman gagal dihasilkan. Silakan coba lagi nanti"
-      ],
-      "Failed to open a secure link. The reason is: ${ error }": [
-        "Gagal membuka tautan terenkripsi. Sebab: ${ error }"
       ],
       "Feb": [
         "Feb"
@@ -5744,12 +5725,6 @@
       "One time import": [
         "Impor sekali jadi"
       ],
-      "Only the people with the link and the password can access this file.": [
-        "Hanya mereka yang memiliki tautan dan kata sandi yang dapat mengakses berkas ini."
-      ],
-      "Only the people with the link and the password can access this folder.": [
-        "Hanya mereka yang memiliki tautan dan kata sandi yang dapat mengakses folder ini."
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "Buka panduan ini untuk memperoleh tindakan yang disarankan dan tautan yang dapat berguna."
       ],
@@ -5875,12 +5850,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Silakan tunggu selagi kami mencari kontak yang mengandung data yang terenkripsi dengan kunci yang tidak aktif."
-      ],
-      "Preparing link to file": [
-        "Mempersiapkan tautan berkas"
-      ],
-      "Preparing link to folder": [
-        "Mempersiapkan tautan folder"
       ],
       "Preview failed to be loaded": [
         "Pratinjau gagal dimuat"
@@ -6196,9 +6165,6 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Tautan ini mungkin serangan homograf. Mohon verifikasi tautan yang ingin Anda kunjungi, atau jangan kunjungi sama sekali."
-      ],
-      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Tautan ini dibuat di Drive versi lama dan sudah tidak dapat diubah lagi. Hapus tautan ini dan buat yang baru untuk mengubah pengaturan."
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Hal ini berarti bahwa ISP Anda dan situs web yang Anda kunjungi tidak akan dapat mengaitkan informasi pribadi Anda dengan aktivitas online Anda."
@@ -9068,9 +9034,6 @@
       "Public link access updated": [
         "Akses tautan publik diperbarui"
       ],
-      "Public link update access failed ": [
-        "Gagal memperbarui akses tautan publik "
-      ],
       "Root folder failed to be loaded": [
         "Folder akar gagal dimuat"
       ],
@@ -9107,9 +9070,6 @@
       "The item was successfully added to your drive": [
         "Item berhasil ditambahkan ke drive Anda"
       ],
-      "The link to your item failed to be deleted": [
-        "Tautan ke item Anda gagal dihapus"
-      ],
       "The link to your item was deleted": [
         "Tautan ke item Anda telah dihapus"
       ],
@@ -9127,9 +9087,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "Berkas lama Anda akan dihapus dalam 72 jam"
-      ],
-      "Your settings failed to be saved": [
-        "Pengaturan Anda gagal disimpan"
       ],
       "Your settings have been changed successfully": [
         "Pengaturan Anda berhasil diubah"
@@ -9974,9 +9931,6 @@
       ],
       "Select state": [
         "Pilih negara bagian"
-      ],
-      "Set date": [
-        "Atur tanggal"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Berikan pendapatmu tentang apa yang bisa membuat ${ BRAND_NAME } menjadi lebih baik"
@@ -11482,28 +11436,6 @@
         "${ seconds } detik"
       ]
     },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } j"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt }.5 j"
-      ],
-      "${ minutes } min": [
-        "${ minutes } mnt"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } jam"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt }.5 jam"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } menit"
-      ]
-    },
     "Title": {
       "# of downloads": [
         "# unduhan"
@@ -12215,9 +12147,6 @@
       ],
       "Select link expiration date": [
         "Tentukan tanggal kedaluwarsa tautan"
-      ],
-      "Select link expiration time": [
-        "Tentukan waktu kedaluwarsa tautan"
       ],
       "Set recovery methods": [
         "Atur metode pemulihan"

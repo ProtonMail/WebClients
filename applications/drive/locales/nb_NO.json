@@ -252,6 +252,9 @@
       "Continue with Outlook": [
         "Fortsett med Outlook"
       ],
+      "Copy": [
+        "Kopier"
+      ],
       "Copy address": [
         "Kopier adresse"
       ],
@@ -1419,6 +1422,12 @@
       ],
       "Unsupported event": [
         "Ikke støttet hendelse"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } resultat til som ikke vises",
+        "${ hiddenResultsCount } resultater til som ikke vises"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -3377,6 +3386,9 @@
       "Cannot export this contact": [
         "Kan ikke eksportere denne kontakten"
       ],
+      "Cannot load \"My files\" root folder": [
+        "Kan ikke laste inn rotmappen \"Mine filer\""
+      ],
       "Checkout expired, please try again": [
         "Utsjekkingen utløpt. Prøv igjen."
       ],
@@ -3445,14 +3457,17 @@
       "Error reading file": [
         "Feil ved lesing av fil"
       ],
+      "Expanding non-existent directory tree item": [
+        "Utvider ikke-eksisterende katalogtreelement"
+      ],
+      "Expanding non-expandable directory tree item": [
+        "Utvider ikke-utvidbart katalogtreelement"
+      ],
       "Expected structure attached": [
         "Forventet struktur vedlagt"
       ],
       "External accounts are not supported yet": [
         "Eksterne kontoer støttes ikke enda."
-      ],
-      "External invitations are not available yet.": [
-        "Eksterne invitasjoner er ikke tilgjengelige enda."
       ],
       "External invitations are temporarily disabled.": [
         "Eksterne invitasjoner er midlertidig deaktivert."
@@ -4316,6 +4331,11 @@
         "Ubegrenset antall hide-my-email-aliaser"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Lynraske hastigheter"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Noe gikk galt med autentiseringen av sikkerhetsnøkkelen din. Prøv igjen."
@@ -5137,12 +5157,6 @@
       "Anonymous": [
         "Anonym"
       ],
-      "Anyone with this link can access your file.": [
-        "Alle med denne koblingen har tilgang til filen din."
-      ],
-      "Anyone with this link can access your folder.": [
-        "Alle med denne koblingen har tilgang til mappen din."
-      ],
       "Apr": [
         "Apr"
       ],
@@ -5312,12 +5326,6 @@
       ],
       "Creating": [
         "Oppretter"
-      ],
-      "Creating link to file": [
-        "Oppretter kobling til fil"
-      ],
-      "Creating link to folder": [
-        "Oppretter kobling til mappe"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Kreditt for den ubrukte delen av ditt forrige planabonnement"
@@ -5498,15 +5506,6 @@
       "Failed": [
         "Mislyktes"
       ],
-      "Failed to generate a secure link. The reason is: ${ error }": [
-        "Kunne ikke generere en sikker kobling. Årsaken er: ${ error }"
-      ],
-      "Failed to generate a secure link. Try again later": [
-        "Kunne ikke generere en sikker kobling. Prøv igjen senere"
-      ],
-      "Failed to open a secure link. The reason is: ${ error }": [
-        "Klarte ikke å åpne en sikker kobling. Årsaken er: ${ error }"
-      ],
       "Feb": [
         "Feb"
       ],
@@ -5678,6 +5677,9 @@
       ],
       "It's better to have:": [
         "Det er bedre å ha:"
+      ],
+      "It's not possible to copy the folder to itself": [
+        "Det er ikke mulig å kopiere mappen til seg selv"
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "Elementer i papirkurven vil forbli der inntil du sletter dem permanent."
@@ -5887,12 +5889,6 @@
       "One time import": [
         "Engangsimport"
       ],
-      "Only the people with the link and the password can access this file.": [
-        "Kun personer med koblingen og passordet har tilgang til denne filen."
-      ],
-      "Only the people with the link and the password can access this folder.": [
-        "Kun personer med koblingen og passordet har tilgang til denne mappen."
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "Åpne veiledningen for anbefalte handlinger og nyttige koblinger."
       ],
@@ -6020,12 +6016,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Vent mens vi ser etter kontakter som inneholder data kryptert med den inaktive nøkkelen."
       ],
-      "Preparing link to file": [
-        "Forbereder kobling til fil"
-      ],
-      "Preparing link to folder": [
-        "Forbereder kobling til mappe"
-      ],
       "Preview failed to be loaded": [
         "Forhåndsvisning kunne ikke lastes"
       ],
@@ -6118,6 +6108,9 @@
       ],
       "Search Enabled": [
         "Søk aktivert"
+      ],
+      "Select a folder to copy to.": [
+        "Velg en mappe å kopiere til."
       ],
       "Select a folder to move to.": [
         "Velg en mappe du vil flytte til."
@@ -6342,9 +6335,6 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Denne koblingen kan være et homografangrep. Kontroller at dette er koblingen du ønsker å besøke, eller la være å åpne den."
-      ],
-      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Denne koblingen ble opprettet med en gammel versjon av Drive og kan ikke endres. Slett denne koblingen og opprett en ny for å endre innstillingene."
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Dette betyr at Internett-leverandøren din og nettstedene du besøker, ikke kan koble personopplysningene dine til nettaktiviteten din."
@@ -9103,6 +9093,9 @@
       "\"${ name }\" saved successfully": [
         "\"${ name }\" lagret"
       ],
+      "\"${ name }\" successfully copied": [
+        "\"${ name }\" kopiert"
+      ],
       "\"${ name }\" successfully moved": [
         "\"${ name }\" flyttet"
       ],
@@ -9115,6 +9108,14 @@
       "${ count } item failed to be decrypted": [
         "${ count } element ble ikke dekryptert",
         "${ count } elementer ble ikke dekryptert"
+      ],
+      "${ errors.length } item failed to be copied": [
+        "${ errors.length } element kunne ikke kopieres",
+        "${ errors.length } elementer kunne ikke kopieres"
+      ],
+      "${ errors.length } item failed to be trashed": [
+        "${ errors.length } element kunne ikke legges i papirkurven",
+        "${ errors.length } elementer kunne ikke legges i papirkurven"
       ],
       "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
         "${ nbFailures } bilde ble ikke fjernet fra \"${ albumLink.name }\"",
@@ -9131,6 +9132,10 @@
       "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
         "${ nbSuccesses } bilde er fjernet fra ${ albumLink.name }\"",
         "${ nbSuccesses } bilder er fjernet fra ${ albumLink.name }\""
+      ],
+      "${ numberOfItems } copied item moved to trash": [
+        "${ numberOfItems } kopiert element flyttet til papirkurven",
+        "${ numberOfItems } kopierte elementer flyttet til papirkurven"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } element slettet",
@@ -9167,6 +9172,10 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } element gjenopprettet fra papirkurven",
         "${ numberOfItems } elementer gjenopprettet fra papirkurven"
+      ],
+      "${ numberOfItems } item successfully copied": [
+        "${ numberOfItems } element kopiert",
+        "${ numberOfItems } elementer kopiert"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } element flyttet",
@@ -9210,6 +9219,9 @@
       ],
       "Contact group updated": [
         "Kontaktgruppe oppdatert"
+      ],
+      "Copy of \"${ name }\" moved to trash": [
+        "Kopi av \"${ name }\" flyttet til papirkurven"
       ],
       "Device failed to be removed": [
         "Enhet kunne ikke fjernes"
@@ -9305,9 +9317,6 @@
       "Public link access updated": [
         "Offentlig koblingstilgang oppdatert"
       ],
-      "Public link update access failed ": [
-        "Tilgang til oppdatering av offentlig kobling mislyktes "
-      ],
       "Root folder failed to be loaded": [
         "Rotmappen kunne ikke lastes inn"
       ],
@@ -9347,9 +9356,6 @@
       "The item was successfully added to your drive": [
         "Elementet ble lagt til i din Drive"
       ],
-      "The link to your item failed to be deleted": [
-        "Koblingen til elementet ditt kunne ikke slettes"
-      ],
       "The link to your item was deleted": [
         "Koblingen til elementet ditt ble slettet"
       ],
@@ -9367,9 +9373,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "Dine gamle filer blir slettet om 72 timer"
-      ],
-      "Your settings failed to be saved": [
-        "Innstillingene dine ble ikke lagret"
       ],
       "Your settings have been changed successfully": [
         "Innstillingene dine ble endret"
@@ -10260,9 +10263,6 @@
       "Select state": [
         "Velg stat"
       ],
-      "Set date": [
-        "Angi dato"
-      ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Del det du tror kan gjøre ${ BRAND_NAME } bedre"
       ],
@@ -11049,6 +11049,9 @@
       "${ app } storage": [
         "${ app }-lagring"
       ],
+      "${ app } storage used": [
+        "Lagringsplass brukt ${ app }"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% full"
       ],
@@ -11060,6 +11063,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "For alle ${ BRAND_NAME }-tjenester"
+      ],
+      "Storage used": [
+        "Lagringsplass brukt"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Hvis du vil fortsette å laste opp og synkronisere filer, frigjør du plass eller oppgraderer for mer lagringsplass."
@@ -11810,34 +11816,6 @@
         "${ seconds } sekunder"
       ]
     },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } t",
-        "${ hours } t"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt },5 t",
-        "${ hoursInt },5 t"
-      ],
-      "${ minutes } min": [
-        "${ minutes } min",
-        "${ minutes } min"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } time",
-        "${ hours } timer"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt },5 time",
-        "${ hoursInt },5 timer"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minutt",
-        "${ minutes } minutter"
-      ]
-    },
     "Title": {
       "# of downloads": [
         "# nedlastinger"
@@ -12330,6 +12308,9 @@
       "Logs": [
         "Logger"
       ],
+      "Make a copy": [
+        "Lag en kopi"
+      ],
       "Make a secure connection your default": [
         "Gjør en sikker tilkobling til standard"
       ],
@@ -12564,9 +12545,6 @@
       ],
       "Select link expiration date": [
         "Velg utløpsdato for kobling"
-      ],
-      "Select link expiration time": [
-        "Velg utløpstid for kobling"
       ],
       "Set recovery methods": [
         "Angi gjenopprettingsmetoder"

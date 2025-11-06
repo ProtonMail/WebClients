@@ -3451,9 +3451,6 @@
       "External accounts are not supported yet": [
         "Dış hesaplar henüz desteklenmiyor"
       ],
-      "External invitations are not available yet.": [
-        "Dış davetler henüz yapılamıyor."
-      ],
       "External invitations are temporarily disabled.": [
         "Dış davetler geçici olarak yapılamıyor."
       ],
@@ -4316,6 +4313,11 @@
         "Sınırsız sayıda hide-my-email takma adı"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Işık hızında"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Güvenlik anahtarı ile kimlik doğrulaması yapılırken bir sorun çıktı. Lütfen yeniden deneyin."
@@ -5137,12 +5139,6 @@
       "Anonymous": [
         "Anonim"
       ],
-      "Anyone with this link can access your file.": [
-        "Bu bağlantıya sahip olan herkes dosyanıza erişebilir."
-      ],
-      "Anyone with this link can access your folder.": [
-        "Bu bağlantıya sahip olan herkes klasörünüze erişebilir."
-      ],
       "Apr": [
         "Nis"
       ],
@@ -5312,12 +5308,6 @@
       ],
       "Creating": [
         "Oluşturuluyor"
-      ],
-      "Creating link to file": [
-        "Dosya bağlantısı oluşturuluyor"
-      ],
-      "Creating link to folder": [
-        "Klasör bağlantısı oluşturuluyor"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Önceki abonelik tarifenizin kullanılmayan bölümünden kalan kredi"
@@ -5497,15 +5487,6 @@
       ],
       "Failed": [
         "Aktarılmayan"
-      ],
-      "Failed to generate a secure link. The reason is: ${ error }": [
-        "Güvenli bir bağlantı oluşturulamadı. Nedeni: ${ error }"
-      ],
-      "Failed to generate a secure link. Try again later": [
-        "Güvenli bir bağlantı oluşturulamadı. Bir süre sonra yeniden deneyin"
-      ],
-      "Failed to open a secure link. The reason is: ${ error }": [
-        "Güvenli bağlantı açılamadı. Nedeni: ${ error }"
       ],
       "Feb": [
         "Şub"
@@ -5887,12 +5868,6 @@
       "One time import": [
         "Tek seferlik içe aktarma"
       ],
-      "Only the people with the link and the password can access this file.": [
-        "Bu dosyaya yalnızca bağlantıya ve parolaya sahip olan kişiler erişebilir."
-      ],
-      "Only the people with the link and the password can access this folder.": [
-        "Bu klasöre yalnızca bağlantıya ve parolaya sahip olan kişiler erişebilir."
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "Önerilen işlemler ve yararlı bağlantılar için rehberi açın."
       ],
@@ -6019,12 +5994,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Lütfen etkin olmayan anahtarla şifrelenmiş verileri olan kişiler aranırken bekleyin."
-      ],
-      "Preparing link to file": [
-        "Dosya bağlantısı hazırlanıyor"
-      ],
-      "Preparing link to folder": [
-        "Klasör bağlantısı hazırlanıyor"
       ],
       "Preview failed to be loaded": [
         "Ön izleme yüklenemedi"
@@ -6342,9 +6311,6 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Bu bağlantı göründüğü gibi olmayan bir sahtecilik girişimi olabilir. Lütfen bu bağlantının gerçekten ziyaret etmek istediğiniz bağlantı olduğunu doğrulayın ya da açmayın."
-      ],
-      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Bu bağlantı eski Drive sürümüyle oluşturulmuş ve düzenlenemiyor. Bu bağlantıyı silin ve ayarları değiştirmek için yeni bir tane oluşturun."
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Bu durumda, internet hizmeti sağlayıcınız ve ziyaret ettiğiniz siteler kişisel bilgilerinizi çevrim içi etkinliğinizle ilişkilendiremez."
@@ -9248,9 +9214,6 @@
       "Public link access updated": [
         "Herkese açık bağlantı erişimi güncellendi"
       ],
-      "Public link update access failed ": [
-        "Herkese açık bağlantı erişimi güncellenemedi "
-      ],
       "Root folder failed to be loaded": [
         "Kök klasör yüklenemedi"
       ],
@@ -9290,9 +9253,6 @@
       "The item was successfully added to your drive": [
         "Öge Drive depolama alanınıza eklendi"
       ],
-      "The link to your item failed to be deleted": [
-        "Öge bağlantınız silinemedi"
-      ],
       "The link to your item was deleted": [
         "Öge bağlantınız silindi"
       ],
@@ -9310,9 +9270,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "Eski dosyalarınız 72 saat içinde silinecek"
-      ],
-      "Your settings failed to be saved": [
-        "Ayarlarınız kaydedilemedi"
       ],
       "Your settings have been changed successfully": [
         "Ayarlarınız değiştirildi"
@@ -10202,9 +10159,6 @@
       ],
       "Select state": [
         "İl seçin"
-      ],
-      "Set date": [
-        "Tarihi ayarla"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "${ BRAND_NAME } uygulamasını iyileştirmek için bir düşünceniz varsa paylaşın"
@@ -11753,34 +11707,6 @@
         "${ seconds } saniye"
       ]
     },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } s",
-        "${ hours } s"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt }.5 s",
-        "${ hoursInt }.5 s"
-      ],
-      "${ minutes } min": [
-        "${ minutes } dk",
-        "${ minutes } dk"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } saat",
-        "${ hours } saat"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt }.5 saat",
-        "${ hoursInt }.5 saat"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } dakika",
-        "${ minutes } dakika"
-      ]
-    },
     "Title": {
       "# of downloads": [
         "indirme sayısı"
@@ -12507,9 +12433,6 @@
       ],
       "Select link expiration date": [
         "Bağlantının geçerlilik sonu tarihini seçin"
-      ],
-      "Select link expiration time": [
-        "Bağlantının geçerlilik sonu saatini seçin"
       ],
       "Set recovery methods": [
         "Kurtarma yöntemlerini ayarlayın"

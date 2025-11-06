@@ -2572,9 +2572,6 @@
       "External accounts are not supported yet": [
         "बाहरी खाते अभी समर्थित नहीं हैं"
       ],
-      "External invitations are not available yet.": [
-        "बाहरी आमंत्रण अभी उपलब्ध नहीं हैं।"
-      ],
       "External invitations are temporarily disabled.": [
         "बाहरी आमंत्रण फिलहाल अक्षम हैं।"
       ],
@@ -3198,6 +3195,11 @@
     "Feature": {
       "Unlimited hide-my-email aliases": [
         "असीमित Hide-my-email नकलीनाम"
+      ]
+    },
+    "Features": {
+      "Lightning-fast speeds": [
+        "बहुत तेज गति"
       ]
     },
     "fido2: Error": {
@@ -3889,12 +3891,6 @@
       "Anonymous": [
         "गुमनाम"
       ],
-      "Anyone with this link can access your file.": [
-        "इस लिंक वाला कोई भी आपकी फ़ाइल तक पहुंच सकता है।"
-      ],
-      "Anyone with this link can access your folder.": [
-        "इस लिंक वाला कोई भी आपके फ़ोल्डर तक पहुंच सकता है।"
-      ],
       "Are you sure you want to discard your changes?": [
         "क्या आप वाकई अपने परिवर्तनों को छोड़ना चाहते हैं?"
       ],
@@ -4027,12 +4023,6 @@
       ],
       "Creating": [
         "बन रहा है"
-      ],
-      "Creating link to file": [
-        "फ़ाइल के लिए लिंक बनाया जा रहा है"
-      ],
-      "Creating link to folder": [
-        "फ़ोल्डर के लिए लिंक बनाया जा रहा है"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "आपके पिछले प्लान सदस्यता से बचा क्रेडिट"
@@ -4188,15 +4178,6 @@
       ],
       "Failed": [
         "असफल"
-      ],
-      "Failed to generate a secure link. The reason is: ${ error }": [
-        "सुरक्षित लिंक बनाने में असफल। कारण: ${ error }"
-      ],
-      "Failed to generate a secure link. Try again later": [
-        "सुरक्षित लिंक बनाने में असफल। फिर से कोशिश करें"
-      ],
-      "Failed to open a secure link. The reason is: ${ error }": [
-        "सुरक्षित लिंक खोलने में विफल | कारण है: ${ error }"
       ],
       "File \"${ name }\" was deleted during download": [
         "फाइल \"${ name }\" को डाउनलोड करते समय मिटा दिया गया"
@@ -4494,12 +4475,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "एक या उससे ज़्यादा आपके भरोसेमंद चाबियां मालिक ने \"समझौता हुआ\" मार्क की। हमारी सलाह है की आप इनसे भरोसेमंद का मार्क हटा दें।"
       ],
-      "Only the people with the link and the password can access this file.": [
-        "केवल लिंक और पासवर्ड वाले लोग ही इस फ़ाइल तक पहुंच सकते हैं।"
-      ],
-      "Only the people with the link and the password can access this folder.": [
-        "केवल लिंक और पासवर्ड वाले लोग ही इस फ़ोल्डर तक पहुंच सकते हैं।"
-      ],
       "or discover other features:": [
         "या अन्य सुविधाओं का पता लगाएँ:"
       ],
@@ -4593,12 +4568,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "कृपया प्रतीक्षा करें जब हम उन संपर्कों की तलाश करते हैं जिनमें निष्क्रिय कुंजी के साथ एन्क्रिप्ट किया गया डेटा होता है।"
-      ],
-      "Preparing link to file": [
-        "फ़ाइल के लिए लिंक तैयार किया जा रहा है"
-      ],
-      "Preparing link to folder": [
-        "फ़ोल्डर के लिए लिंक तैयार किया जा रहा है"
       ],
       "Preview failed to be loaded": [
         "प्रिव्यू लोड करने में असफल"
@@ -4840,9 +4809,6 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "यह लिंक एक होमोग्राफ हमला हो सकता है। कृपया सत्यापित करें कि यह वह लिंक है जो आप यात्रा करना चाहते हैं, या इसे न खोलें।"
-      ],
-      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "ये लिंक एक पुराने ड्राइव संस्करण से बनाया गया था और इसको बदला नहीं जा सकता। सेटिंग बदलने के लिए इस लिंक को मिटाएं और एक नया बनाएं।"
       ],
       "This month": [
         "इस महीने"
@@ -7201,9 +7167,6 @@
       "Public link access updated": [
         "सार्वजनिक लिंक एक्सेस अपडेट किया गया"
       ],
-      "Public link update access failed ": [
-        "सार्वजनिक लिंक एक्सेस अपडेट करने में असफल "
-      ],
       "Root folder failed to be loaded": [
         "रूट फोल्डर लोड करने में असफल"
       ],
@@ -7232,9 +7195,6 @@
       "The item was successfully added to your drive": [
         "यह आइटम आपके ड्राइव में सफलतापूर्वक जोड़ा गया"
       ],
-      "The link to your item failed to be deleted": [
-        "आपके चीज़ का लिंक मिटाने में असफल"
-      ],
       "The link to your item was deleted": [
         "आपके चीज़ का लिंक मिटाया गया"
       ],
@@ -7246,9 +7206,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "आपकी पुरानी फाइलें 72 घंटों में मिटा दी जाएंगी"
-      ],
-      "Your settings failed to be saved": [
-        "सेटिंग सेव करने में असफल"
       ],
       "Your settings have been changed successfully": [
         "आपके सेटिंग को बदल दिया गया है"
@@ -7693,9 +7650,6 @@
       ],
       "Select a reason": [
         "कोई कारण चुनें"
-      ],
-      "Set date": [
-        "तारीख चूनें"
       ],
       "Start typing an email address": [
         "ईमेल पता लिखना शुरू करें"
@@ -8684,34 +8638,6 @@
         "${ seconds } सेकंड"
       ]
     },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } घंटा",
-        "${ hours } घंटे"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt }.5 घंटा",
-        "${ hoursInt }.5 घंटे"
-      ],
-      "${ minutes } min": [
-        "${ minutes } मिनट",
-        "${ minutes } मिनट"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } घंटा",
-        "${ hours } घंटे"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt }.5 घंटा",
-        "${ hoursInt }.5 घंटे"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } मिनट",
-        "${ minutes } मिनट"
-      ]
-    },
     "Title": {
       "# of downloads": [
         "# डाउनलोड के"
@@ -9233,9 +9159,6 @@
       ],
       "Select link expiration date": [
         "लिंक खत्म होने का दिन चुनें"
-      ],
-      "Select link expiration time": [
-        "लिंक खत्म होने का समय चुनें"
       ],
       "Set recovery phrase": [
         "पुनर्प्राप्ति वाक्यांश सेट करें"
