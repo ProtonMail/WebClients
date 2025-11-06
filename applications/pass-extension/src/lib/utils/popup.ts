@@ -93,14 +93,10 @@ export const createPopupController = (): PopupController => {
     const state = { expanded: false };
 
     const expand = (subpath?: string) => {
-        const rootStyles = getComputedStyle(document.documentElement);
-
         browser.windows
             .create({
                 url: browser.runtime.getURL(`popup.html#${subpath}`),
                 type: 'popup',
-                width: pixelParser(rootStyles.getPropertyValue('--popup-width')),
-                height: pixelParser(rootStyles.getPropertyValue('--popup-height')),
                 focused: true,
             })
             .catch(noop);
