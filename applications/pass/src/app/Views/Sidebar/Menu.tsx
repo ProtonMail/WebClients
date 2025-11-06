@@ -83,7 +83,13 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                 />
                 <Submenu
                     icon="mobile"
-                    label={c('Action').t`Get mobile apps`}
+                    label={
+                        DESKTOP_BUILD
+                            ? c('Action').t`Get mobile apps`
+                            : // translator: if the translated text is longer than the english text,
+                              // please simply translate as "Get apps" because UI space is limited.
+                              c('Action').t`Get mobile and desktop apps`
+                    }
                     items={menu.download}
                     headerClassname="mx-3 pr-2 py-1"
                     contentClassname="mx-3"

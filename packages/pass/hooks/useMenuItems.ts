@@ -9,6 +9,8 @@ import { usePasswordHistoryActions } from '@proton/pass/components/Password/Pass
 import { PASS_ANDROID_URL, PASS_IOS_URL } from '@proton/pass/constants';
 import { SyncType } from '@proton/pass/store/sagas/client/sync';
 import { withTap } from '@proton/pass/utils/fp/pipe';
+import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { Clients, clients } from '@proton/shared/lib/pass/constants';
 import noop from '@proton/utils/noop';
 
 export type MenuItem = {
@@ -40,14 +42,33 @@ export const useMenuItems = ({
             download: [
                 {
                     icon: 'brand-android',
-                    label: c('Action').t`Pass for Android`,
+                    label: c('Action').t`${PASS_SHORT_APP_NAME} for Android`,
                     url: PASS_ANDROID_URL,
                 },
                 {
                     icon: 'brand-apple',
-                    label: c('Action').t`Pass for iOS`,
+                    label: c('Action').t`${PASS_SHORT_APP_NAME} for iOS`,
                     url: PASS_IOS_URL,
                 },
+                ...(DESKTOP_BUILD
+                    ? []
+                    : ([
+                          {
+                              icon: 'brand-windows',
+                              label: `${PASS_SHORT_APP_NAME} for Windows`,
+                              url: clients[Clients.Windows].link,
+                          },
+                          {
+                              icon: 'brand-mac',
+                              label: `${PASS_SHORT_APP_NAME} for macOS`,
+                              url: clients[Clients.macOS].link,
+                          },
+                          {
+                              icon: 'brand-linux',
+                              label: `${PASS_SHORT_APP_NAME} for Linux`,
+                              url: clients[Clients.Linux].link,
+                          },
+                      ] as const)),
                 ...(extra.download ?? []),
             ],
             advanced: [
