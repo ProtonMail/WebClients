@@ -8,9 +8,10 @@ import testingLibrary from 'eslint-plugin-testing-library';
 import { defineConfig, globalIgnores } from 'eslint/config';
 import { configs, parser, plugin } from 'typescript-eslint';
 
+import { createBarrelConfig, iconsPackage } from './barrel.js';
 import { allExtensions, allGlobs, typeScriptExtensions, typescriptGlobs } from './globs.js';
 
-export default defineConfig(
+const base = defineConfig(
     {
         name: 'register-all-plugins',
         plugins: {
@@ -378,3 +379,6 @@ export default defineConfig(
         'eslint.config.mjs',
     ])
 );
+
+const merged = defineConfig([base, createBarrelConfig({ packages: [iconsPackage] })]);
+export default merged;
