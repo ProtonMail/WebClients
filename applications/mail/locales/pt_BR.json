@@ -1496,7 +1496,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança"
+        "Chave de confiança",
+        "Chaves de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -2019,6 +2020,12 @@
       ],
       "Sender verification passed": [
         "Verificação do remetente bem-sucedida"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "Mais ${ hiddenResultsCount } resultado não exibido",
+        "Mais ${ hiddenResultsCount } resultados não exibidos"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -5602,6 +5609,11 @@
         "Aliases do Hide-my-email ilimitados"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Velocidade ultrarrápida"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Ocorreu um erro ao autenticar com sua chave de segurança. Tente novamente."
@@ -7507,8 +7519,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir imagem"
       ],
       "Insert link": [
         "Inserir link"
@@ -7994,8 +8005,8 @@
       "Saved: ${ dateString }": [
         "Salvo em ${ dateString }"
       ],
-      "Saving draft…": [
-        "Salvando rascunho…"
+      "Saving draft": [
+        "Salvando rascunho"
       ],
       "Scan the QR code with your mobile device": [
         "Escaneie o código QR com seu dispositivo móvel"
@@ -8003,8 +8014,8 @@
       "Scheduled send of this message will be canceled.": [
         "O envio agendado desta mensagem será cancelado."
       ],
-      "Scheduling message...": [
-        "Agendando mensagem..."
+      "Scheduling message": [
+        "Agendando a mensagem"
       ],
       "Scribe panel": [
         "Painel do Scribe"
@@ -8049,8 +8060,8 @@
       "Sending": [
         "Enviando"
       ],
-      "Sending message...": [
-        "Enviando mensagem..."
+      "Sending message": [
+        "Enviando a mensagem"
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "O envio de mensagens de um endereço @pm.me é um recurso pago. A sua mensagem será enviada do seu endereço padrão ${ email }"
@@ -8616,6 +8627,9 @@
       ],
       "Week": [
         "Semana"
+      ],
+      "We’ve upgraded your ${ DRIVE_APP_NAME } storage to 5GB. Keep your important files and photos encrypted.": [
+        "Atualizamos o armazenamento do seu ${ DRIVE_APP_NAME } para 5 GB. Mantenha seus arquivos e fotos importantes criptografados."
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "Quando você deseja que sua mensagem seja excluída automaticamente da caixa de entrada do destinatário e da pasta de envio?"
@@ -13655,6 +13669,9 @@
       "${ app } storage": [
         "armazenamento do ${ app }"
       ],
+      "${ app } storage used": [
+        "${ app } de armazenamento usado"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% cheio"
       ],
@@ -13666,6 +13683,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Para todos os serviços da ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "De armazenamento usado"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Para continuar carregando e sincronizando arquivos, libere espaço ou atualize para obter mais armazenamento."

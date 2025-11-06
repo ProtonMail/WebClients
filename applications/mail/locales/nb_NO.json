@@ -1495,6 +1495,10 @@
       "Trust": [
         "Klarér"
       ],
+      "Trust key": [
+        "Klarér nøkkel",
+        "Klarér nøkler"
+      ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
       ],
@@ -2016,6 +2020,12 @@
       ],
       "Sender verification passed": [
         "Avsenderbekreftelse bestått"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } resultat til som ikke vises",
+        "${ hiddenResultsCount } resultater til som ikke vises"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -5599,6 +5609,11 @@
         "Ubegrenset antall hide-my-email-aliaser"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Lynraske hastigheter"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Noe gikk galt med autentiseringen av sikkerhetsnøkkelen din. Prøv igjen."
@@ -7504,8 +7519,7 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde",
-        "Sett inn bilder"
+        "Sett inn bilde"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -7991,8 +8005,8 @@
       "Saved: ${ dateString }": [
         "Lagret: ${ dateString }"
       ],
-      "Saving draft…": [
-        "Lagrer utkast…"
+      "Saving draft": [
+        "Lagrer utkast"
       ],
       "Scan the QR code with your mobile device": [
         "Skann QR-koden med mobilenheten din"
@@ -8000,8 +8014,8 @@
       "Scheduled send of this message will be canceled.": [
         "Planlagt sending av denne meldingen avbrytes."
       ],
-      "Scheduling message...": [
-        "Planlegger melding..."
+      "Scheduling message": [
+        "Planlegger melding"
       ],
       "Scribe panel": [
         "Scribe-panel"
@@ -8046,8 +8060,8 @@
       "Sending": [
         "Sender"
       ],
-      "Sending message...": [
-        "Sender melding..."
+      "Sending message": [
+        "Sender melding"
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Sending av meldinger fra en @pm.me-adresse er en betalt funksjon. Meldingen vil bli sendt fra standardadressen din ${ email }"
@@ -8613,6 +8627,9 @@
       ],
       "Week": [
         "Uke"
+      ],
+      "We’ve upgraded your ${ DRIVE_APP_NAME } storage to 5GB. Keep your important files and photos encrypted.": [
+        "Vi har oppgradert lagringsplassen for ${ DRIVE_APP_NAME } til 5 GB. Hold viktige filer og bilder kryptert."
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "Når vil du at meldingen skal slettes automatisk fra mottakerens innboks og den sendte mappen?"
@@ -13641,6 +13658,9 @@
       "${ app } storage": [
         "${ app }-lagring"
       ],
+      "${ app } storage used": [
+        "Lagringsplass brukt ${ app }"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% full"
       ],
@@ -13652,6 +13672,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "For alle ${ BRAND_NAME }-tjenester"
+      ],
+      "Storage used": [
+        "Lagringsplass brukt"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Hvis du vil fortsette å laste opp og synkronisere filer, frigjør du plass eller oppgraderer for mer lagringsplass."

@@ -5567,6 +5567,11 @@
         "무제한 hide-my-email 별칭"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "초고속 속도"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "사용자의 보안 키 인증에 문제가 발생했습니다. 나중에 다시 시도하세요."
@@ -7876,17 +7881,11 @@
       "Saved: ${ dateString }": [
         "저장됨: ${ dateString }"
       ],
-      "Saving draft…": [
-        "임시 저장 중..."
-      ],
       "Scan the QR code with your mobile device": [
         "모바일 기기로 QR 코드를 스캔해보세요"
       ],
       "Scheduled send of this message will be canceled.": [
         "이 메시지의 예약 발송이 취소됩니다."
-      ],
-      "Scheduling message...": [
-        "메시지 예약 중..."
       ],
       "Scribe panel": [
         "Scribe 패널"
@@ -7929,9 +7928,6 @@
       ],
       "Sending": [
         "전송 중"
-      ],
-      "Sending message...": [
-        "메시지 전송 중..."
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "@pm.me 주소에서 메시지를 보내는 것은 유료 기능입니다. 사용자의 메시지는 기본 주소에서 발송됩니다 ${ email }"

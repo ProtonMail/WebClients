@@ -1504,7 +1504,10 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу"
+        "Давяраць ключу",
+        "Давяраць ключам",
+        "Давяраць ключам",
+        "Давяраць ключам"
       ],
       "Trust public key": [
         "Давяраць публічнаму ключу"
@@ -2041,6 +2044,14 @@
       ],
       "Sender verification passed": [
         "Адпраўнік паспяхова прайшоў праверку"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "Яшчэ ${ hiddenResultsCount } вынік не паказаны",
+        "Яшчэ ${ hiddenResultsCount } вынікі не паказаны",
+        "Яшчэ ${ hiddenResultsCount } вынікаў не паказаны",
+        "Яшчэ ${ hiddenResultsCount } вынікаў не паказаны"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -5672,6 +5683,11 @@
         "Неабмежаваная колькасць псеўданімаў hide-my-email"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Звышвысокія хуткасці"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Нешта пайшло не так з аўтэнтыфікацыяй ключа бяспекі. Паспрабуйце яшчэ раз."
@@ -7739,10 +7755,7 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс",
-        "Уставіць відарысы",
-        "Уставіць відарысы",
-        "Уставіць відарысы"
+        "Уставіць відарыс"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -8230,8 +8243,8 @@
       "Saved: ${ dateString }": [
         "Захавана: ${ dateString }"
       ],
-      "Saving draft…": [
-        "Захаванне чарнавіка…"
+      "Saving draft": [
+        "Захаванне чарнавіка"
       ],
       "Scan the QR code with your mobile device": [
         "Адсканіруйце QR-код з дапамогай мабільнай прылады"
@@ -8239,8 +8252,8 @@
       "Scheduled send of this message will be canceled.": [
         "Запланаваная адпраўка гэтага паведамлення будзе скасавана."
       ],
-      "Scheduling message...": [
-        "Планаванне паведамлення..."
+      "Scheduling message": [
+        "Планаванне паведамлення"
       ],
       "Scribe panel": [
         "Панэль Scribe"
@@ -8287,8 +8300,8 @@
       "Sending": [
         "Адпраўка"
       ],
-      "Sending message...": [
-        "Адпраўка паведамлення..."
+      "Sending message": [
+        "Адпраўка паведамлення"
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Адпраўка паведамленняў з адраса @pm.me з'яўляецца платнай функцыяй. Ваша паведамленне будзе адпраўлена з вашага прадвызначанага адраса ${ email }"
@@ -8862,6 +8875,9 @@
       ],
       "Week": [
         "Тыдзень"
+      ],
+      "We’ve upgraded your ${ DRIVE_APP_NAME } storage to 5GB. Keep your important files and photos encrypted.": [
+        "Ваша сховішча ${ DRIVE_APP_NAME } палепшана да 5 ГБ. Захоўвайце свае важныя файлы і фатаграфіі ў зашыфраваным выглядзе."
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "Калі вы хочаце, каб ваша паведамленне аўтаматычна выдалялася з паштовай скрыні атрымальніка і вашай папкі з адпраўленымі лістамі?"

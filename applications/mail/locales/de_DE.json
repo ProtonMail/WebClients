@@ -1495,6 +1495,10 @@
       "Trust": [
         "Vertrauen"
       ],
+      "Trust key": [
+        "Schlüssel vertrauen",
+        "Schlüsseln vertrauen"
+      ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
       ],
@@ -2016,6 +2020,12 @@
       ],
       "Sender verification passed": [
         "Absenderverifizierung erfolgreich"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } weiteres Ergebnis nicht angezeigt",
+        "${ hiddenResultsCount } weitere Ergebnisse nicht angezeigt"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -5599,6 +5609,11 @@
         "Unbegrenzte hide-my-email-Aliasse"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Blitzschnelle Geschwindigkeiten"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Bei der Authentifizierung mit Ihrem Sicherheitsschlüssel ist ein Fehler aufgetreten. Bitte erneut versuchen."
@@ -7504,8 +7519,7 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen",
-        "Bilder einfügen"
+        "Bild einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -7991,8 +8005,8 @@
       "Saved: ${ dateString }": [
         "Gespeichert: ${ dateString }"
       ],
-      "Saving draft…": [
-        "Entwurf wird gespeichert …"
+      "Saving draft": [
+        "Entwurf wird gespeichert"
       ],
       "Scan the QR code with your mobile device": [
         "Scanne den QR-Code mit deinem Mobilgerät."
@@ -8000,8 +8014,8 @@
       "Scheduled send of this message will be canceled.": [
         "Der geplante Versand dieser Nachricht wird abgebrochen."
       ],
-      "Scheduling message...": [
-        "Nachricht wird geplant..."
+      "Scheduling message": [
+        "Nachricht wird geplant"
       ],
       "Scribe panel": [
         "Schreibpanel"
@@ -8046,8 +8060,8 @@
       "Sending": [
         "Wird gesendet"
       ],
-      "Sending message...": [
-        "Nachricht wird gesendet…"
+      "Sending message": [
+        "Nachricht wird gesendet"
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Das Senden von Nachrichten von der E-Mail-Adresse @pm.me ist eine kostenpflichtige Funktion. Deine Nachricht wird von deiner Standardadresse „${ email }“ gesendet."
@@ -13644,6 +13658,9 @@
       "${ app } storage": [
         "${ app }-Speicherplatz"
       ],
+      "${ app } storage used": [
+        "${ app } Speicher genutzt"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage } % voll."
       ],
@@ -13655,6 +13672,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Für alle ${ BRAND_NAME }-Dienste"
+      ],
+      "Storage used": [
+        "Speicher genutzt"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Um weiterhin Dateien hochzuladen und zu synchronisieren, räume etwas Speicherplatz frei oder führe ein Upgrade durch für zusätzlichen Speicherplatz."

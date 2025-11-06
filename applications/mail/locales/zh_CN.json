@@ -1446,9 +1446,6 @@
       "Trust": [
         "信任"
       ],
-      "Trust key": [
-        "信任密钥"
-      ],
       "Trust public key": [
         "信任公钥"
       ],
@@ -5378,6 +5375,11 @@
         "无限制地 hide-my-email"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "闪电般的速度"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "使用安全密钥进行身份验证时出错，请重试。"
@@ -7142,7 +7144,7 @@
         "初始化中..."
       ],
       "Insert image": [
-        "插入图像"
+        "插入图片"
       ],
       "Insert link": [
         "插入链接"
@@ -7621,17 +7623,11 @@
       "Saved: ${ dateString }": [
         "保存于 ${ dateString }"
       ],
-      "Saving draft…": [
-        "正在保存草稿…"
-      ],
       "Scan the QR code with your mobile device": [
         "请使用移动设备扫描二维码"
       ],
       "Scheduled send of this message will be canceled.": [
         "此邮件将取消定时发送。"
-      ],
-      "Scheduling message...": [
-        "定时发送邮件中..."
       ],
       "Scribe panel": [
         "Scribe 面板"
@@ -7674,9 +7670,6 @@
       ],
       "Sending": [
         "正在发送"
-      ],
-      "Sending message...": [
-        "正在发送邮件..."
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "从 @pm.me 地址发送邮件需要付费。您的邮件仍将从您的首选地址 ${ email } 发送。"

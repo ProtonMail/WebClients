@@ -1402,7 +1402,10 @@
         "Доверять"
       ],
       "Trust key": [
-        "Доверять ключу"
+        "Доверенный ключ",
+        "Доверенных ключа",
+        "Доверенных ключей",
+        "Доверенных ключей"
       ],
       "Trust public key": [
         "Доверять открытым ключам"
@@ -5287,6 +5290,11 @@
         "Неограниченное количество псевдонимов hide-my-email"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Молниеносная скорость"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Произошла ошибка при аутентификации с помощью ключа безопасности. Попробуйте снова."
@@ -7246,10 +7254,7 @@
         "Инициализация…"
       ],
       "Insert image": [
-        "Вставить изображение",
-        "Вставить изображения",
-        "Вставить изображения",
-        "Вставить изображения"
+        "Вставить изображение"
       ],
       "Insert link": [
         "Вставить ссылку"
@@ -7719,17 +7724,11 @@
       "Saved: ${ dateString }": [
         "Сохранено: ${ dateString }"
       ],
-      "Saving draft…": [
-        "Сохранение черновика…"
-      ],
       "Scan the QR code with your mobile device": [
         "Отсканируйте QR-код с вашего мобильного устройства"
       ],
       "Scheduled send of this message will be canceled.": [
         "Запланированная отправка этого сообщения будет отменена."
-      ],
-      "Scheduling message...": [
-        "Сообщение ставится в очередь..."
       ],
       "Scribe panel": [
         "Панель для написания"
@@ -7772,9 +7771,6 @@
       ],
       "Sending": [
         "Отправка"
-      ],
-      "Sending message...": [
-        "Отправка сообщения..."
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Отправка сообщений с @pm.me является платной функцией. Ваше сообщение будет отправлено с вашего обычного адреса ${ email }"
