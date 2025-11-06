@@ -153,7 +153,7 @@
 	@extend %interactive;
 	@extend .interactive-pseudo;
 
-	--interactive-inset: $focus-ring-size;
+	--interactive-inset: #{$focus-ring-size};
 
 	&::after {
 		inset: var(--interactive-inset);
@@ -164,7 +164,7 @@
 	@extend %interactive;
 	@extend .interactive-pseudo;
 
-	--interactive-inset: -$focus-ring-size;
+	--interactive-inset: -#{$focus-ring-size};
 
 	&:hover,
 	&:focus,
