@@ -1,14 +1,22 @@
 import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
 import type { InlineRegistry } from 'proton-pass-extension/app/content/services/inline/inline.registry';
 
-import type { Maybe } from '@proton/pass/types';
+import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 
 import type { DropdownHandler } from './dropdown.abstract';
-import { onBackdropClick, onFocusChangeFactory, willDropdownAnchorChange } from './dropdown.utils';
+import {
+    matchesDropdownAnchor,
+    onBackdropClick,
+    onFocusChangeFactory,
+    validateDropdownRequest,
+} from './dropdown.utils';
+
+type State = { ctrl: MaybeNull<AbortController> };
 
 export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler => {
     const listeners = createListenerStore();
+    const state: State = { ctrl: null };
 
     const getAnchorField = (): Maybe<FieldHandle> => {
         const anchor = registry.dropdown?.anchor;
@@ -18,18 +26,20 @@ export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler
     const dropdown: DropdownHandler = {
         listeners,
         attach: (layer) => registry.attachDropdown(layer),
-        toggle: (payload) => {
-            const attachedAnchor = registry.dropdown?.anchor;
-            const visible = registry.dropdown?.getState().visible;
+        toggle: async (request) => {
+            state.ctrl?.abort();
+            state.ctrl = null;
 
-            const validInteraction = !(payload.autofocused && payload.autofilled);
-            const didAnchorChange = willDropdownAnchorChange(attachedAnchor, payload);
-            const shouldOpen = didAnchorChange && validInteraction;
+            const visible = registry.dropdown?.getState().visible;
+            const valid = await validateDropdownRequest(request, registry.dropdown?.anchor);
 
             if (visible) dropdown.close();
 
-            if (shouldOpen) {
-                const field = payload.type === 'field' ? payload.field : undefined;
+            if (valid) {
+                const ctrl = new AbortController();
+                state.ctrl = ctrl;
+
+                const field = request.type === 'field' ? request.field : undefined;
                 const form = field?.getFormHandle();
                 const layer = form?.element;
 
@@ -39,9 +49,7 @@ export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler
                 const app = registry.attachDropdown(layer);
                 if (!app) return;
 
-                /** NOTE: we're not guaranteed the iframe will open if the request
-                 * is not validated inside DropdownApp and is aborted. */
-                app.open(payload);
+                app.open(request, ctrl);
 
                 const scrollParent = form?.scrollParent;
                 const scrollOptions = { capture: true, once: true, passive: true } as const;
@@ -66,7 +74,10 @@ export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler
                     app.subscribe((evt) => {
                         switch (evt.type) {
                             case 'close':
+                                listeners.removeAll();
+                                break;
                             case 'abort':
+                                if (!matchesDropdownAnchor(registry.dropdown?.anchor, request)) return;
                                 listeners.removeAll();
                                 break;
                         }
@@ -91,16 +102,22 @@ export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler
                 }
             })();
 
-            /** Only close dropdown if no target specified OR target matches current anchor.
-             * Prevents closing dropdown when triggered by unrelated field events. */
+            /** Only close dropdown if no target specified OR target matches current
+             * anchor. Prevents closing dropdown when triggered fom unrelated field.
+             * Sub-frame close requests are asynchronous: top-frame dropdown may have
+             * already been closed and re-attached to another field. */
             if (!target || activeAnchor) {
                 listeners.removeAll();
+                state.ctrl?.abort();
+                state.ctrl = null;
                 registry.dropdown?.close();
             }
         },
 
         destroy: () => {
             listeners.removeAll();
+            state.ctrl?.abort();
+            state.ctrl = null;
             registry.dropdown?.destroy();
         },
 

@@ -17,12 +17,12 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import type { PasswordAutosuggestOptions } from '@proton/pass/lib/password/types';
 import type { MaybeNull } from '@proton/pass/types';
-import { createStyleParser, getComputedHeight } from '@proton/pass/utils/dom/computed-styles';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
+import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
 import { createDropdownFocusController } from './dropdown.focus';
-import { dropdownRequestGuard, intoDropdownAction, onCloseEffects } from './dropdown.utils';
+import { getDropdownPosition, intoDropdownAction, matchesDropdownAnchor, onCloseEffects } from './dropdown.utils';
 
 export type DropdownAnchor = InlineFieldTarget | InlineFrameTarget;
 export type DropdownAnchorRef = { current: MaybeNull<DropdownAnchor> };
@@ -44,6 +44,8 @@ export type DropdownRequest = {
 } & (InlineFieldTarget | InlineFrameTarget<{ coords: Coords; origin: string }>);
 
 export interface DropdownApp extends InlineAppHandler<DropdownRequest> {
+    /** Important Note: the anchor state is heavily used to infer
+     * UX decisions with regards to dropdown interaction. If an anchor */
     anchor: MaybeNull<DropdownAnchor>;
     focused: boolean;
 }
@@ -52,32 +54,12 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
     const anchor: DropdownAnchorRef = { current: null };
     const listeners = createListenerStore();
 
-    const iframe = createInlineApp<DropdownAction>({
+    const iframe = createInlineApp<DropdownRequest>({
         id: 'dropdown',
         animation: 'fadein',
         src: DROPDOWN_IFRAME_SRC,
         popover,
         dimensions: () => ({ width: DROPDOWN_WIDTH, height: DROPDOWN_MIN_HEIGHT }),
-        position: (root: HTMLElement) => {
-            const target = anchor.current;
-
-            if (!target || target.type === 'frame') return { top: 0, left: 0 };
-
-            const { element } = target.field;
-            const boxElement = target.field.getAnchor().element;
-            const boxed = boxElement !== element;
-            const bodyTop = root.getBoundingClientRect().top;
-
-            const styles = createStyleParser(boxElement);
-            const computedHeight = getComputedHeight(styles, boxed ? 'inner' : 'outer');
-            const { value: height, offset: offsetBox } = computedHeight;
-            const { left: boxLeft, top, width } = boxElement.getBoundingClientRect();
-
-            return {
-                top: top - bodyTop + offsetBox.bottom + offsetBox.top + height,
-                left: boxLeft + width - DROPDOWN_WIDTH,
-            };
-        },
     });
 
     const focus = createDropdownFocusController({ iframe, popover, anchor });
@@ -132,6 +114,12 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
         anchor.current = null;
     };
 
+    const onAbort = (request: DropdownRequest) => {
+        const match = matchesDropdownAnchor(anchor.current, request);
+        if (!match) anchor.current = null;
+        else logger.debug(`[DropdownApp] aborted but anchor changed`);
+    };
+
     const onDestroy = () => {
         anchor.current = null;
         listeners.removeAll();
@@ -145,7 +133,7 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
             case 'close':
                 return onClose(evt.options);
             case 'abort':
-                return onClose({});
+                return onAbort(evt.request);
             case 'error':
                 return iframe.destroy();
             case 'destroy':
@@ -252,38 +240,29 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
         getState: () => iframe.state,
         init: iframe.init,
 
-        open: (request) =>
-            iframe
-                .open(request.action, async (ctrl) => {
-                    const validRequest = await dropdownRequestGuard(request);
-                    if (!validRequest || ctrl.signal.aborted) return false;
+        open: async (request, ctrl) => {
+            const payload = await intoDropdownAction(request).catch(noop);
 
-                    const payload = await intoDropdownAction(request).catch(noop);
-                    if (!payload || ctrl.signal.aborted) return false;
+            if (!payload) return ctrl?.abort();
+            if (ctrl?.signal.aborted) return;
 
-                    anchor.current =
-                        request.type === 'field'
-                            ? { type: 'field', field: request.field }
-                            : {
-                                  type: 'frame',
-                                  frameId: request.frameId,
-                                  fieldFrameId: request.fieldFrameId,
-                                  frame: request.frame,
-                                  fieldId: request.fieldId,
-                                  formId: request.formId,
-                              };
+            anchor.current =
+                request.type === 'field'
+                    ? { type: 'field', field: request.field }
+                    : {
+                          type: 'frame',
+                          frameId: request.frameId,
+                          fieldFrameId: request.fieldFrameId,
+                          frame: request.frame,
+                          fieldId: request.fieldId,
+                          formId: request.formId,
+                      };
 
-                    iframe.sendPortMessage({
-                        type: InlinePortMessageType.DROPDOWN_ACTION,
-                        payload,
-                    });
+            iframe.sendPortMessage({ type: InlinePortMessageType.DROPDOWN_ACTION, payload });
+            iframe.setPosition(getDropdownPosition(request));
 
-                    if (request.type === 'field') iframe.updatePosition();
-                    if (request.type === 'frame') iframe.setPosition(request.coords);
-
-                    return true;
-                })
-                .catch(noop),
+            return iframe.open(request, ctrl);
+        },
 
         sendMessage: iframe.sendPortMessage,
         subscribe: iframe.subscribe,

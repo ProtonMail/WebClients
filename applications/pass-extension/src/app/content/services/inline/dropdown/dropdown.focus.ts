@@ -1,4 +1,3 @@
-import type { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
 import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
 import type { InlineApp } from 'proton-pass-extension/app/content/services/inline/inline.app';
 import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
@@ -10,7 +9,7 @@ import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { nextTick, onNextTick } from '@proton/pass/utils/time/next-tick';
 
-import type { DropdownAnchorRef } from './dropdown.app';
+import type { DropdownAnchorRef, DropdownRequest } from './dropdown.app';
 
 /** Debounce timeout for focus events to prevent rapid focus/blur cycles */
 export const DROPDOWN_FOCUS_TIMEOUT = 50;
@@ -28,7 +27,7 @@ export interface DropdownFocusController {
 }
 
 type DropdownFocusManagerOptions = {
-    iframe: InlineApp<DropdownAction>;
+    iframe: InlineApp<DropdownRequest>;
     popover: PopoverController;
     anchor: DropdownAnchorRef;
 };
