@@ -1,8 +1,15 @@
-import { getInboxDesktopInfo } from '@proton/shared/lib/desktop/ipcHelpers';
-import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
+import {
+    canListenInboxDesktopHostMessages,
+    getInboxDesktopInfo,
+    hasInboxDesktopFeature,
+} from '@proton/shared/lib/desktop/ipcHelpers';
 
 export const getInboxDesktopIsSnapPackage = () => {
-    if (!isElectronMail || !window.ipcInboxMessageBroker?.getInfo) {
+    if (
+        !canListenInboxDesktopHostMessages ||
+        !window.ipcInboxMessageBroker?.getInfo ||
+        !hasInboxDesktopFeature('SnapSupport')
+    ) {
         return false;
     }
 
