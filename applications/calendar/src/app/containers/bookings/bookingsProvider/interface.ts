@@ -37,11 +37,19 @@ export interface BookingFormData {
     bookingSlots: Slot[];
 }
 
+export enum BookingFormValidationReasons {
+    TIME_SLOT_LIMIT = 'TIME_SLOT_LIMIT',
+    TIME_SLOT_REQUIRED = 'NO_TIME_SLOT',
+    TITLE_REQUIRED = 'TITLE_REQUIRED',
+}
+
 export type BookingFormValidation =
     | {
           type: 'error';
+          reason: BookingFormValidationReasons;
           message: string;
       }
     | {
           type: 'warning';
+          reason: BookingFormValidationReasons;
       };
