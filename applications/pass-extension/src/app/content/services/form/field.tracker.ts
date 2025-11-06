@@ -2,10 +2,13 @@ import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
 
 import { FieldType } from '@proton/pass/fathom/labels';
+import type { MaybeNull } from '@proton/pass/types';
+import { isActiveElement } from '@proton/pass/utils/dom/active-element';
 import { createRAFController } from '@proton/pass/utils/dom/raf';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
-import { onNextTick } from '@proton/pass/utils/time/next-tick';
+import { logger } from '@proton/pass/utils/logger';
+import { DOM_SETTLE_MS, onNextTick } from '@proton/pass/utils/time/next-tick';
 import throttle from '@proton/utils/throttle';
 
 import type { FieldHandle } from './field';
@@ -14,6 +17,11 @@ import type { FormTracker } from './form.tracker';
 export interface FieldTracker {
     detach: () => void;
 }
+
+export type FieldTrackerState = {
+    focused: boolean;
+    focusTimeout: MaybeNull<NodeJS.Timeout>;
+};
 
 /** Sends `AUTOFILL_FILTER` message to dropdown for real-time item filtering.
  * 250ms throttle with trailing edge prevents excessive messaging during typing. */
@@ -37,16 +45,39 @@ const handleOnEnter =
 export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker): FieldTracker => {
     const listeners = createListenerStore();
     const raf = createRAFController();
+    const state: FieldTrackerState = { focused: false, focusTimeout: null };
 
-    /** Handles field focus: attaches icon and conditionally opens dropdown.
-     * Uses requestAnimationFrame for DOM stability during focus transitions.
-     * Only opens dropdown if field wasn't previously autofilled. */
-    const onFocus = withContext<(evt: FocusEvent) => void>((ctx) => {
+    const onBlur = withContext<(evt: FocusEvent) => void>((ctx) => {
         raf.cancel();
+
+        if (state.focusTimeout) clearTimeout(state.focusTimeout);
+        state.focused = false;
+
+        if (!ctx || field.actionPrevented) return;
+
+        raf.request(
+            onNextTick(async (handle: number) => {
+                if (handle !== raf.handle) return;
+                const active = await field.isActive();
+
+                if (handle === raf.handle && !active) {
+                    field.icon?.detach();
+                    ctx.service.inline.dropdown.close({ type: 'field', field });
+                }
+            })
+        );
+    });
+
+    const onFocus = withContext<(evt: FocusEvent) => void>((ctx, evt) => {
+        raf.cancel();
+        state.focused = true;
+
         const { action } = field;
         if (!ctx || !action || field.actionPrevented) return;
 
         raf.request(() => {
+            if (state.focusTimeout) clearTimeout(state.focusTimeout);
+
             ctx.service.inline.icon.attach(field);
             ctx.service.inline.dropdown.toggle({
                 type: 'field',
@@ -55,29 +86,17 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
                 autofilled: field.autofilled !== null,
                 field,
             });
-        });
-    });
 
-    /** Handles field blur with dropdown focus state coordination.
-     * Uses `onNextTick` because `document.activeElement` updates asynchronously during blur.
-     * Queries `dropdown.getState()` to determine if focus has moved to dropdown (preventing premature
-     * cleanup). Only detaches icon and closes dropdown when both field and dropdown are unfocused.
-     * Skips cleanup during `autofill.processing` to prevent interrupting autofill sequences. */
-    const onBlur = withContext((ctx) => {
-        raf.cancel();
-        if (!ctx || field.actionPrevented) return;
-
-        raf.request(
-            onNextTick(async (handle: number) => {
-                if (handle !== raf.handle) return;
-                const active = await field.isActive();
-
-                if (!active && handle === raf.handle) {
-                    field.icon?.detach();
-                    ctx.service.inline.dropdown.close({ type: 'field', field });
+            /** Browsers may dequeue blur/focusout events when rapid focus
+             * switches between frames/shadowRoots. In such cases, we try to
+             * detect such dequeues to avoid missing blur clean-ups. */
+            state.focusTimeout = setTimeout(() => {
+                if (state.focused && !isActiveElement(field.element)) {
+                    logger.debug(`[FieldTracker] Browser "blur" dequeue detected`);
+                    onBlur(evt);
                 }
-            })
-        );
+            }, DOM_SETTLE_MS);
+        });
     });
 
     /** Handles input changes: closes dropdown for non-filterable fields or updates filter.
@@ -97,7 +116,7 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
 
     /* When the type attribute of a field changes : detach it from
      * the tracked form and re-trigger the detection */
-    const onFieldAttributeChange: MutationCallback = withContext<MutationCallback>((ctx, mutations) => {
+    const onAttributeChange: MutationCallback = withContext<MutationCallback>((ctx, mutations) => {
         if ([FieldType.PASSWORD_CURRENT, FieldType.PASSWORD_NEW].includes(field.fieldType)) return;
 
         mutations.forEach((mutation) => {
@@ -109,13 +128,12 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
         });
     });
 
-    listeners.addListener(field.element, 'blur', onBlur);
     listeners.addListener(field.element, 'focus', onFocus);
+    listeners.addListener(field.element, 'focusin', onFocus);
+    listeners.addListener(field.element, 'blur', onBlur);
+    listeners.addListener(field.element, 'focusout', onBlur);
     listeners.addListener(field.element, 'input', onInput);
-    listeners.addObserver(field.element, onFieldAttributeChange, {
-        attributeFilter: ['type'],
-        attributeOldValue: true,
-    });
+    listeners.addObserver(field.element, onAttributeChange, { attributeFilter: ['type'], attributeOldValue: true });
 
     if (formTracker) {
         const { onFieldChange, onFormSubmit } = formTracker;
@@ -125,6 +143,7 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
 
     return {
         detach: () => {
+            if (state.focusTimeout) clearTimeout(state.focusTimeout);
             listeners.removeAll();
             raf.cancel();
         },
