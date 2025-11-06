@@ -16,17 +16,13 @@ import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type {
     Address,
     CachedOrganizationKey,
-    MailSettings,
     Member,
-    OrganizationExtended,
     PartialMemberAddress,
     UserModel,
 } from '@proton/shared/lib/interfaces';
 import { AddressConfirmationState } from '@proton/shared/lib/interfaces';
 import { getCanGenerateMemberAddressKeys } from '@proton/shared/lib/keys/memberKeys';
 import { getIsNonDefault } from '@proton/shared/lib/mail/addresses';
-import { PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
-import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 
 const { TYPE_ORIGINAL, TYPE_CUSTOM_DOMAIN, TYPE_PREMIUM } = ADDRESS_TYPE;
 
@@ -304,20 +300,4 @@ export const getPermission = (permissions: number, type: ADDRESS_PERMISSION_TYPE
     }
 
     return c('Permission').t`No permission`;
-};
-
-export const canUpdateSignature = (
-    user: UserModel,
-    organization?: OrganizationExtended,
-    mailSettings?: MailSettings
-) => {
-    if (user.isMember && organization && getOrganizationDenomination(organization) === 'organization') {
-        return false;
-    }
-
-    if (!user.hasPaidMail) {
-        return true;
-    }
-
-    return !hasBit(mailSettings?.PMSignature, PM_SIGNATURE.LOCKED);
 };
