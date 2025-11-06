@@ -79,7 +79,7 @@ const CountrySelect = ({ value, options, onChange, embedded, onClosed }: Props) 
                             src={value.countryFlag}
                             width="30"
                             height="30"
-                            className="align-middle inline-flex"
+                            className="align-middle inline-flex no-dark-mode"
                         />
                     )}
                 </span>

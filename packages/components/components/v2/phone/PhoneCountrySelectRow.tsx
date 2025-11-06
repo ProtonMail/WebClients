@@ -15,6 +15,7 @@ interface Props {
 
 const CountrySelectRow = ({ data, style, value, onChange }: Props, ref?: Ref<HTMLDivElement>) => {
     return (
+        // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
         <div className="dropdown-item" style={style} ref={ref} role="row">
             <DropdownMenuButton
                 isSelected={false}
@@ -24,7 +25,7 @@ const CountrySelectRow = ({ data, style, value, onChange }: Props, ref?: Ref<HTM
                     onChange(data);
                 }}
             >
-                <img className="shrink-0" alt="" src={data.countryFlag} width="30" height="20" />
+                <img className="shrink-0 no-dark-mode" alt="" src={data.countryFlag} width="30" height="20" />
                 <span className="flex-1 pl-2 text-ellipsis">{data.countryName}</span>
                 <span className="shrink-0 text-bold">+{data.countryCallingCode}</span>
             </DropdownMenuButton>
