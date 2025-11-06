@@ -1688,6 +1688,9 @@
       "Continue your subscription": [
         "Продолжить подписку"
       ],
+      "Copy": [
+        "Копировать"
+      ],
       "Create label": [
         "Создать ярлык"
       ],
@@ -1699,6 +1702,9 @@
       ],
       "Remind me later": [
         "Напомнить позже"
+      ],
+      "Send": [
+        "Отправить"
       ],
       "Set up other features": [
         "Настроить другие функции"
@@ -2993,6 +2999,9 @@
       ],
       "To start, give your organization a name.": [
         "Чтобы начать, дайте имя вашей организации."
+      ],
+      "Track the status and activity of your referrals": [
+        "Отлеживайте состояние и активность ваших рефералов"
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Воспользуйтесь этим руководством, чтобы ваша организация начала быстро получать выгоду от лучшей в отрасли экосистемы шифрования и приватности ${ BRAND_NAME }."
@@ -5211,6 +5220,9 @@
       "${ discountPercent }% discount": [
         "Скидка ${ discountPercent }%"
       ],
+      "${ emailAddress } is invalid": [
+        "Адрес ${ emailAddress } недействительный"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: изображение в полном размере"
       ],
@@ -5670,6 +5682,9 @@
       "Copy the suggested password to clipboard": [
         "Скопировать предложенный пароль в буфер обмена"
       ],
+      "Copy your referral link": [
+        "Скопировать свою реферальную ссылку"
+      ],
       "Country code": [
         "Код страны"
       ],
@@ -6114,6 +6129,15 @@
       "Invite rejected": [
         "Приглашение отклонено"
       ],
+      "Invite successfully sent": [
+        "Приглашение успешно отправлено",
+        "Приглашения успешно отправлено",
+        "Приглашений успешно отправлено",
+        "Приглашений успешно отправлено"
+      ],
+      "Invited": [
+        "Приглашение отправлено"
+      ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Изменение страны сервера займет 10 дней, поэтому убедитесь, что ваш выбор правильный."
       ],
@@ -6489,6 +6513,9 @@
       "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
         "Общественным деятелям, журналистам, руководителям и другим лицам, которые могут стать объектом кибератак, настоятельно рекомендуется включить ${ PROTON_SENTINEL_NAME }."
       ],
+      "Public link invite": [
+        "Приглашение по публичной ссылке"
+      ],
       "Public sharing of documents is not yet supported.": [
         "Публичный обмен документами пока не поддерживается."
       ],
@@ -6500,6 +6527,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Информация о восстановлении останется на этом устройстве, если вы не решите ее удалить."
+      ],
+      "Referral link copied to your clipboard": [
+        "Реферальная ссылка скопирована в буфер обмена"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решит большую часть проблем."
@@ -6570,6 +6600,9 @@
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Отправьте электронные письма, чтобы убедить ваших пользователей защитить свои аккаунты двухфакторной аутентификацией (2FA)."
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Отправлено с помощью защищённой почты <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPA-платежи сейчас недоступны. Пожалуйста, попробуйте позже."
       ],
@@ -6618,6 +6651,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Войдите в ${ MAIL_APP_NAME }, чтобы активировать свой адрес"
       ],
+      "Signed up": [
+        "Зарегистрировались"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Так как вы наш постоянный пользователь, для вашего аккаунта появился дополнительный функционал."
       ],
@@ -6635,9 +6671,6 @@
         "Шага ${ step }",
         "Шагов ${ step }",
         "Шагов ${ step }"
-      ],
-      "Storage": [
-        "Хранилище"
       ],
       "Storage allocated to other users in this organisation": [
         "Хранилище, выделенное другим пользователям в этой организации"
@@ -7194,6 +7227,15 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Вы можете использовать следующие учетные данные для подключения к серверу ${ VPN_APP_NAME } с помощью стороннего приложения VPN с открытым исходным кодом, например, Tunnelblick для macOS или OpenVPN для GNU/Linux."
       ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "Вы не можете отправить более ${ emailSendLimitNumber } приглашения по электронной почте в течение следующих 24 часов",
+        "Вы не можете отправить более ${ emailSendLimitNumber } приглашений по электронной почте в течение следующих 24 часов",
+        "Вы не можете отправить более ${ emailSendLimitNumber } приглашений по электронной почте в течение следующих 24 часов",
+        "Вы не можете отправить более ${ emailSendLimitNumber } приглашений по электронной почте в течение следующих 24 часов"
+      ],
+      "You cannot refer ${ MAIL_APP_NAME } users": [
+        "Вы не можете привлекать пользователей ${ MAIL_APP_NAME }"
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Получайте уведомления об утечках ваших паролей или других данных из сторонних сервисов."
       ],
@@ -7530,6 +7572,9 @@
       "Account storage": [
         "Хранилище учётной записи"
       ],
+      "Activity": [
+        "Активность"
+      ],
       "Add all organization members": [
         "Добавить всех участников организации"
       ],
@@ -7589,6 +7634,9 @@
       ],
       "Authenticator app": [
         "Приложение-аутентификатор"
+      ],
+      "Awarded": [
+        "Присуждено"
       ],
       "Backup password": [
         "Пароль резервной копии"
@@ -7715,6 +7763,9 @@
       ],
       "Current email": [
         "Текущая электронная почта"
+      ],
+      "Date": [
+        "Дата"
       ],
       "Default language": [
         "Язык по умолчанию"
@@ -7850,6 +7901,9 @@
       ],
       "Interval": [
         "Интервал"
+      ],
+      "Invite via email": [
+        "Пригласить по электронной почте"
       ],
       "Issuer ID": [
         "ID эмитента"
@@ -8006,6 +8060,9 @@
       ],
       "Payment method": [
         "Способ оплаты"
+      ],
+      "Pending": [
+        "Ожидающий"
       ],
       "Phone number": [
         "Номер телефона"
@@ -13604,6 +13661,9 @@
       "Recovery": [
         "Восстановление"
       ],
+      "Refer a friend": [
+        "Порекомендуйте другу"
+      ],
       "Remove all members?": [
         "Удалить всех участников?"
       ],
@@ -13983,6 +14043,9 @@
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Пользователи, которые не используют двухфакторную идентификацию, получат электронное письмо с просьбой включить ее как можно скорее. Пользователи единого входа не получат напоминание по электронной почте."
+      ],
+      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
+        "Устанавливает следующий нижний колонтитул в отправляемых вами электронных письмах: ${ signature }. Ссылка указывает на вашу реферальную ссылку. Нижний колонтитул будет отображаться под вашей подписью. Вы можете персонализировать свою подпись в настройках любое время."
       ],
       "Shared server policies can be applied to individual users or groups": [
         "Общие политики серверов могут применяться к отдельным пользователям или группам"
@@ -14590,6 +14653,9 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Удалив этот номер телефона, вы больше не сможете восстановить свою учётную запись."
+      ],
+      "Please add at least one recipient.": [
+        "Добавьте хотя бы одного получателя."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Отчеты отправляются без сквозного шифрования. Пожалуйста, не указывайте никакой конфиденциальной информации."

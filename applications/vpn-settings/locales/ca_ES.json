@@ -86,6 +86,9 @@
       "Add PayPal": [
         "Afegir PayPal"
       ],
+      "Add referral link to ${ MAIL_APP_NAME } signature": [
+        "Afegeix un enllaç de recomanació a la signatura de ${ MAIL_APP_NAME }"
+      ],
       "Add user": [
         "Afegir usuari"
       ],
@@ -460,6 +463,9 @@
       ],
       "Get more servers": [
         "Obteniu més servidors"
+      ],
+      "Get more storage": [
+        "Obtingueu més emmagatzematge"
       ],
       "Get the apps": [
         "Obtén les aplicacions"
@@ -1067,6 +1073,13 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistent d'escriptura ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Assistent d'escriptura ${ BRAND_NAME } (per a ${ quantity } usuari)",
+        "Assistent d'escriptura ${ BRAND_NAME } (per a ${ quantity } usuaris)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } domini personalitzat addicional",
         "${ domains } dominis personalitzats addicionals"
@@ -1074,6 +1087,13 @@
       "${ ips } server": [
         "${ ips } servidor",
         "${ ips } servidors"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Assistent d'IA ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Assistent d'IA ${ LUMO_APP_NAME } (per a ${ quantity } usuari)",
+        "Assistent d'IA ${ LUMO_APP_NAME } (per a ${ quantity } usuaris)"
       ],
       "${ price } per dedicated server": [
         "${ price } per servidor dedicat"
@@ -1086,6 +1106,10 @@
       ],
       "${ price } per user": [
         "${ price } per usuari"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domini personalitzat",
+        "${ quantity } dominis personalitzats"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } llicència ${ LUMO_APP_NAME }",
@@ -1399,6 +1423,12 @@
       ],
       "Unsupported event": [
         "Esdeveniment no suportat"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } resultat més no mostrat",
+        "${ hiddenResultsCount } resultats més no mostrats"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -1844,7 +1874,7 @@
         "Problema de configuració manual"
       ],
       "Meet problem": [
-        "Coneixeu el problema"
+        "Problema amb Meet"
       ],
       "Other": [
         "Altres"
@@ -1896,6 +1926,9 @@
       "Continue your subscription": [
         "Continueu amb la vostra subscripció"
       ],
+      "Copy": [
+        "Copia"
+      ],
       "Create label": [
         "Crea una etiqueta"
       ],
@@ -1907,6 +1940,9 @@
       ],
       "Remind me later": [
         "Recorda-m'ho més tard"
+      ],
+      "Send": [
+        "Enviar"
       ],
       "Set up other features": [
         "Configureu altres característiques"
@@ -3235,11 +3271,17 @@
       "To start, give your organization a name.": [
         "Per començar, assigneu un nom a la vostra organització."
       ],
+      "Track the status and activity of your referrals": [
+        "Feu un seguiment de l'estat i l'activitat de les vostres referències"
+      ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Utilitzeu aquesta guia per aconseguir que la vostra organització es beneficiï ràpidament de l'ecosistema d'encriptació i privadesa líder del sector del ${ BRAND_NAME }."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Pots importar esdeveniments en format iCal (fitxer ICS).\nEl fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir fins a ${ MAX_IMPORT_EVENTS_STRING } esdeveniments. Si el fitxer és més gran, dividiu-lo en fitxers més petits."
+      ],
+      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
+        "Rebreu ${ referralInfo.referrerRewardAmount } en crèdit de ${ BRAND_NAME } quan la persona que convideu creï un compte per a un pla de ${ BRAND_NAME }. I ella també rebrà ${ referralInfo.refereeRewardAmount } en crèdits per començar."
       ]
     },
     "description": {
@@ -4741,6 +4783,12 @@
       "${ VPN_CONNECTIONS } devices": [
         "${ VPN_CONNECTIONS } dispositius"
       ],
+      "15 GB storage": [
+        "15 GB d'emmagatzematge"
+      ],
+      "@pm.me address": [
+        "Adreça @pm.me"
+      ],
       "Ad-blocker and malware protection": [
         "Bloquejador d'anuncis i protecció contra programari maliciós"
       ],
@@ -4749,6 +4797,12 @@
       ],
       "and more premium features...": [
         "i més característiques premium..."
+      ],
+      "Connect custom domain": [
+        "Connecteu un domini personalitzat"
+      ],
+      "Desktop app": [
+        "Aplicació d'escriptori"
       ],
       "Double VPN": [
         "VPN doble"
@@ -4761,6 +4815,9 @@
       ],
       "NetShield Ad-blocker": [
         "Bloquejador d'anuncis NetShield"
+      ],
+      "Priority support": [
+        "Assistència prioritària"
       ],
       "Secure streaming": [
         "Estríming segur"
@@ -5108,6 +5165,9 @@
       ],
       "Domain": [
         "Domini"
+      ],
+      "Drag to reorder": [
+        "Arrossegueu per reordenar"
       ],
       "Status": [
         "Estat"
@@ -5527,6 +5587,9 @@
       "${ discountPercent }% discount": [
         "${ discountPercent }% de descompte"
       ],
+      "${ emailAddress } is invalid": [
+        "${ emailAddress } no és vàlida"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: imatge a mida completa"
       ],
@@ -5687,6 +5750,9 @@
       ],
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importeu els vostres codis** d'altres aplicacions 2FA, com ara Google Authenticator"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Convideu amistats** a ${ BRAND_NAME } amb el vostre enllaç de recomanació."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Pas 1:** Convideu amistats a ${ BRAND_NAME } amb el vostre enllaç de recomanació."
@@ -5993,6 +6059,9 @@
       ],
       "Copy the suggested password to clipboard": [
         "Copia la contrasenya suggerida al porta-retalls"
+      ],
+      "Copy your referral link": [
+        "Copieu el vostre enllaç de recomanació"
       ],
       "Country code": [
         "Codi de país"
@@ -6326,6 +6395,12 @@
       "Get ${ upsellPlanName }": [
         "Obteniu ${ upsellPlanName }"
       ],
+      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
+        "Obtingueu **${ referrerRewardAmount } crèdits** per a cada amistat que se subscrigui."
+      ],
+      "Get started with the referral link above.": [
+        "Comenceu amb l'enllaç de recomanació anterior."
+      ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Aneu al vostre proveïdor d'identitat, obteniu les metadades SAML per a ${ appName } i importeu-les aquí."
       ],
@@ -6476,6 +6551,13 @@
       ],
       "Invite rejected": [
         "S'ha rebutjat la invitació"
+      ],
+      "Invite successfully sent": [
+        "S'ha enviat la invitació.",
+        "S'han enviat les invitacions."
+      ],
+      "Invited": [
+        "Convidat"
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Es triga 10 dies a canviar el país d'un servidor. Assegureu-vos que la vostra selecció sigui correcta."
@@ -6755,6 +6837,9 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Existeixen altres administradors a la teva organització, ets el responsable de comunicar'ls-hi la nova contrasenya."
       ],
+      "Paid for a plan": [
+        "Heu pagat un pla"
+      ],
       "Pass Monitor - custom email confirmed": [
         "Pass Monitor - S'ha confirmat el correu electrònic personalitzat."
       ],
@@ -6877,6 +6962,9 @@
       "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
         "Recomanem molt en especial a figures públiques, periodistes, executius i altres persones que poden ser objecte d'atacs cibernètics que habiliten ${ PROTON_SENTINEL_NAME }."
       ],
+      "Public link invite": [
+        "Enllaç públic d'invitació"
+      ],
       "Public sharing of documents is not yet supported.": [
         "L'intercanvi públic de documents encara no està suportat."
       ],
@@ -6888,6 +6976,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "La informació de recuperació es mantindrà en aquest dispositiu llevat que escolliu eliminar-la."
+      ],
+      "Referral link copied to your clipboard": [
+        "S'ha copiat l'enllaç de recomanació al porta-retalls"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Refrescar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
@@ -6964,6 +7055,9 @@
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Envieu correus electrònics per animar els vostres membres a protegir els seus comptes amb l'A2F."
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Enviat amb el correu segur de <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Els pagaments SEPA no estan disponibles en aquest moment. Torneu-ho a provar més tard."
       ],
@@ -7013,6 +7107,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Inicieu la sessió a ${ MAIL_APP_NAME } per activar la vostra adreça"
       ],
+      "Signed up": [
+        "Registat"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Com que sou un usuari fidel, el vostre compte té característiques addicionals activades."
       ],
@@ -7034,9 +7131,6 @@
       "Step ${ step }": [
         "Pas ${ step }",
         "Passes ${ step }"
-      ],
-      "Storage": [
-        "Emmagatzematge"
       ],
       "Storage allocated to other users in this organisation": [
         "Emmagatzematge assignat a altres usuaris d'aquesta organització"
@@ -7612,6 +7706,16 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Podeu utilitzar les credencials següents per connectar-vos a un servidor ${ VPN_APP_NAME } utilitzant una aplicació VPN de codi obert de tercers, com ara Tunnelblick per a macOS o OpenVPN per a GNU/Linux."
       ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "No podeu enviar més d'${ emailSendLimitNumber } correu electrònic d'invitació durant les pròximes 24 hores",
+        "No podeu enviar més de ${ emailSendLimitNumber } correus electrònics d'invitació durant les pròximes 24 hores"
+      ],
+      "You cannot refer ${ MAIL_APP_NAME } users": [
+        "No podeu recomanar usuaris de ${ MAIL_APP_NAME }"
+      ],
+      "You don't have any referrals.": [
+        "No teniu cap referència."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Rebeu una notificació si la vostra contrasenya o altres dades han estat filtrades des d'un servei de tercers."
       ],
@@ -7720,6 +7824,9 @@
       ],
       "Your free trial includes 1 dedicated server.": [
         "La vostra prova gratuïta inclou 1 servidor dedicat."
+      ],
+      "Your friends get **2 weeks for free** on their chosen plan.": [
+        "Les vostres amistats obtindran **2 setmanes de franc** en el seu pla escollit."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "La vostra informació està segura amb nosaltres. Només ens posarem en contacte quan sigui necessari per oferir els nostres serveis."
@@ -7956,6 +8063,9 @@
       "Account storage": [
         "Emmagatzematge del compte"
       ],
+      "Activity": [
+        "Activitat"
+      ],
       "Add all organization members": [
         "Afegeix tots els membres de l'organització"
       ],
@@ -8015,6 +8125,9 @@
       ],
       "Authenticator app": [
         "Aplicació d'autenticació"
+      ],
+      "Awarded": [
+        "Premiat"
       ],
       "Backup password": [
         "Contrasenya de recuperació"
@@ -8148,6 +8261,9 @@
       "Current email": [
         "Correu electrònic actual"
       ],
+      "Date": [
+        "Data"
+      ],
       "Default language": [
         "Idioma per defecte"
       ],
@@ -8238,6 +8354,12 @@
       "Folder location": [
         "Ubicació de la carpeta"
       ],
+      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
+        "Per ${ DRIVE_SHORT_APP_NAME } i ${ DOCS_SHORT_APP_NAME }."
+      ],
+      "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
+        "Per a ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } i ${ SHEETS_SHORT_APP_NAME }."
+      ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
       ],
@@ -8291,6 +8413,9 @@
       ],
       "Interval": [
         "Interval"
+      ],
+      "Invite via email": [
+        "Convida per correu electrònic"
       ],
       "Issuer ID": [
         "ID de l'emissor"
@@ -8451,6 +8576,9 @@
       "Payment method": [
         "Forma de pagament"
       ],
+      "Pending": [
+        "Pendent"
+      ],
       "Phone number": [
         "Número de telèfon"
       ],
@@ -8514,6 +8642,9 @@
       "Reveal password": [
         "Mostra la contrasenya"
       ],
+      "Reward": [
+        "Recompensa"
+      ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Ginebra"
       ],
@@ -8531,6 +8662,12 @@
       ],
       "Server name": [
         "Nom del servidor"
+      ],
+      "Share your referral link": [
+        "Compartiu el vostre enllaç de recomanació"
+      ],
+      "Shared between ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ WALLET_SHORT_APP_NAME }.": [
+        "Compartit entre ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ WALLET_SHORT_APP_NAME }."
       ],
       "Show ${ n } administrator": [
         "Mostra ${ n } administrador",
@@ -8889,6 +9026,9 @@
       ],
       "Terms": [
         "Termes"
+      ],
+      "Terms and conditions": [
+        "Termes i condicions"
       ],
       "Trouble signing in?": [
         "Teniu problemes per iniciar la sessió?"
@@ -12895,6 +13035,9 @@
       "${ app } storage": [
         "emmagatzematge de ${ app }"
       ],
+      "${ app } storage used": [
+        "Emmagatzematge de ${ app } utilitzat"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ple al ${ percentage }%"
       ],
@@ -12906,6 +13049,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Per a tots els serveis de ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Emmagatzematge utilitzat"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Per continuar utilitzant els productes de ${ BRAND_NAME }, allibereu espai o ${ upgrade }."
@@ -13831,6 +13977,14 @@
       "${ feature } is now active": [
         "La característica ${ feature } està ara activa."
       ],
+      "${ friendsInvited } Friend invited": [
+        "S'ha convidat ${ friendsInvited } amistat",
+        "S'han convidat ${ friendsInvited } amistats"
+      ],
+      "${ friendsSubscribed } Friend subscribed": [
+        "${ friendsSubscribed } amistat s'ha subscrit",
+        "${ friendsSubscribed } amistats s'han subscrit"
+      ],
       "${ VPN_APP_NAME } clients": [
         "Clients ${ VPN_APP_NAME }"
       ],
@@ -14103,6 +14257,9 @@
       "Creating user accounts": [
         "Creació de comptes d'usuari"
       ],
+      "Credit earned": [
+        "Crèdit obtingut"
+      ],
       "Credits": [
         "Crèdits"
       ],
@@ -14342,6 +14499,9 @@
       "Gift code": [
         "Codi regal"
       ],
+      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
+        "Doneu ${ refereeRewardAmount } i 2 setmanes de franc. Obtingueu ${ referrerRewardAmount } crèdits."
+      ],
       "Groups": [
         "Grups"
       ],
@@ -14384,6 +14544,9 @@
       ],
       "Invalid verification code": [
         "El codi de verificació no és vàlid."
+      ],
+      "Invite friends. Get credits.": [
+        "Convideu amics. Aconseguiu crèdits."
       ],
       "Invoices": [
         "Factures"
@@ -14495,6 +14658,9 @@
       ],
       "Recovery": [
         "Recuperació"
+      ],
+      "Refer a friend": [
+        "Recomana una amistat"
       ],
       "Remove all members?": [
         "Voleu suprimir tots els membres?"
@@ -14776,6 +14942,9 @@
       "Your plan": [
         "El vostre pla"
       ],
+      "Your referrals": [
+        "Les vostres referències"
+      ],
       "Your shorter address is now ready": [
         "La vostra adreça més curta ja està a punt."
       ],
@@ -14850,6 +15019,9 @@
       "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
         "Un canvi per part de Gmail està bloquejant que ${ BRAND_NAME } es pugui connectar. Concediu permís per restablir la funcionalitat del correu electrònic"
       ],
+      "Added to your plan: ${ mergedAddonTitles }": [
+        "S'ha afegit al vostre pla: ${ mergedAddonTitles }"
+      ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Els administradors poden gestionar els comptes d'usuari i donar privilegis d'administrador a altres usuaris. Només l'administrador principal pot editar el pla de l'organització."
       ],
@@ -14915,6 +15087,9 @@
       ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Adreça IP d'origen i proveïdor de serveis d'internet (ISP)"
+      ],
+      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
+        "S'estableix el peu de pàgina següent als correus que envieu: ${ signature } L'enllaç apunta al vostre enllaç de recomanació. El peu de pàgina apareixerà sota la vostra signatura. Podeu personalitzar la signatura en qualsevol moment a les preferències."
       ],
       "Shared server policies can be applied to individual users or groups": [
         "Les polítiques de servidor compartit es poden aplicar a cada usuari o a grups."
@@ -15173,6 +15348,9 @@
       ],
       "Did you know?": [
         "Ho sabíeu?"
+      ],
+      "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
+        "Protegiu la vostra organització d'infraccions de dades amb ${ PLAN_NAMES[plan] }."
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "Protegiu la vostra organització d'infraccions de dades amb ${ VPN_APP_NAME } per a Empreses."
@@ -15550,6 +15728,9 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Si suprimiu aquest número de telèfon, ja no podreu recuperar el vostre compte."
+      ],
+      "Please add at least one recipient.": [
+        "Afegiu almenys un destinatari."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Els informes no estan xifrats d'extrem a extrem. No envieu informació sensible."

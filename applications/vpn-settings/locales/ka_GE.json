@@ -86,6 +86,9 @@
       "Add PayPal": [
         "PayPal-ის დამატება"
       ],
+      "Add referral link to ${ MAIL_APP_NAME } signature": [
+        "თქვენი რეფერალი ბმული ${ MAIL_APP_NAME }-ის ხელმოწერაზე"
+      ],
       "Add user": [
         "მომხმარებლის დამატება"
       ],
@@ -1866,6 +1869,9 @@
       "Continue your subscription": [
         "გააგრძელეთ თქვენი გამოწერა"
       ],
+      "Copy": [
+        "კოპირება"
+      ],
       "Create label": [
         "ჭდის შექმნა"
       ],
@@ -1877,6 +1883,9 @@
       ],
       "Remind me later": [
         "შემახსენე მოგვიანებით"
+      ],
+      "Send": [
+        "გაგზავნა"
       ],
       "Set up other features": [
         "სხვა ფუნქციების მორგება"
@@ -3189,6 +3198,9 @@
       ],
       "To start, give your organization a name.": [
         "დასაწყებად, მიანიჭეთ თქვენს ორგანიზაიას სახელი."
+      ],
+      "Track the status and activity of your referrals": [
+        "თქვენი მიმართვების სტატუსისა და აქტივობების ტრეკინგი"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "შეგიძლიათ, შემოიტანოთ ფაილები iCAL ფორმატში (ICS ფაილები). ფაილის მაქსიმალური ზომაა ${ MAX_IMPORT_FILE_SIZE_STRING } და შეიძლება შეიცავდეს ${ MAX_IMPORT_EVENTS_STRING }-მდე მოვლენას. თუ თქვენი ფაილი უფრო დიდია, სცადეთ, ის უფრო პატარა ფაილებად დახლიჩოთ."
@@ -5453,6 +5465,9 @@
       "${ discountPercent }% discount": [
         "${ discountPercent }% ფასდაკლება"
       ],
+      "${ emailAddress } is invalid": [
+        "${ emailAddress } არასწორია"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: სრული ზომის გამოსახულება"
       ],
@@ -5606,6 +5621,9 @@
       ],
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**შემოიტანეთ თქვენი არსებული კოდები** სხვა 2FA აპებიდან, მაგალითად Google Authenticator"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**მოიწვიეთ მეგობრები** ${ BRAND_NAME }-ზე თქვენი რეფერალი ბმულით."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**ნაბიჯი 1:** მოიწვიეთ თქვენი მეგობრები ${ BRAND_NAME }-ზე თქვენი რეფერალი ბმულით."
@@ -5903,6 +5921,9 @@
       ],
       "Copy the suggested password to clipboard": [
         "ნარჩევი პაროლის მიმოცვლის ბაფერში კოპირება"
+      ],
+      "Copy your referral link": [
+        "თქვენი მიმართვის ბმულის კოპირება"
       ],
       "Country code": [
         "ქვეყნის კოდი"
@@ -6230,6 +6251,12 @@
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName }-ის მიღება"
       ],
+      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
+        "მიიღეთ **${ referrerRewardAmount }-ის კრედიტები** ყოველი მეგობრისთვის, რომელიც გამოიწერს."
+      ],
+      "Get started with the referral link above.": [
+        "დაიწყეთ რეფერალი ბმულით ზემოთ მხარეს."
+      ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "გადადით თქვენს იდენტიფიკატორის მომწოდებელზე, მიიღეთ SAML მეტამონაცემები ${ appName }-სთვის და შემოიტანეთ ის აქ."
       ],
@@ -6374,6 +6401,13 @@
       ],
       "Invite rejected": [
         "მოწვევა უარყოფილია"
+      ],
+      "Invite successfully sent": [
+        "მოსაწვევი წარმატებით გაიგზავნა",
+        "მოსაწვევები წარმატებით გაიგზავნა"
+      ],
+      "Invited": [
+        "მოწვეულია"
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "სერვერის ქვეყნის შეცვლას 10 დღემდე სჭირდება, ასე რომ, დარწმუნდით, რომ თქვენი არჩევანი სწორია."
@@ -6644,6 +6678,9 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "თქვენს ორგანიზაციას სხვა ადმინისტრატორებიც გყავს. თქვენ მათთვის ახალი პაროლის გადაცემაზე პასუხისმგებელი ბრძანდებით."
       ],
+      "Paid for a plan": [
+        "გადახდილია სატარიფო გეგმისთვის"
+      ],
       "Pass Monitor - custom email confirmed": [
         "Pass Monitor - მორგებული ელფოსტა დადასტურებულია"
       ],
@@ -6766,6 +6803,9 @@
       "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
         "საჯარო პირები, ჟურნალისტები, აღმასრულებელი პირები და სხვები, რომლებიც, შეიძლება, კიბერშეტევის სამიზნეები გახდნენ, ვურჩევთ, ${ PROTON_SENTINEL_NAME } ჩართონ."
       ],
+      "Public link invite": [
+        "მოწვევის საჯარო ბმული"
+      ],
       "Public sharing of documents is not yet supported.": [
         "დოკუმენტების საჯაროდ გაზიარება ჯერ მხარდაჭერილი არაა."
       ],
@@ -6777,6 +6817,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "აღდგენის ინფორმაცია დარჩება ამ მოწყობილობაზე, თუ მას ხელით არ წაშლით."
+      ],
+      "Referral link copied to your clipboard": [
+        "ბმის ბმული დაკოპირდა ბაფერში"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "ამ გვერდის განახლება ან ${ link } პრობლემების უმრავლესობას ავტომატურად წყვეტს."
@@ -6850,6 +6893,9 @@
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "გააგზავნეთ ელფოსტები, რომ დაარწმუნოთ თქვენი წევრები, 2FA ჩართონ."
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "გაგზავნილია <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> დაცული ელფოსტით."
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPA გადახდები ამჟამად ხელმისაწვდომი არაა. მოგვიანებით სცადეთ."
       ],
@@ -6899,6 +6945,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "თქვენი მისამართის გასააქტიურებლად შედით ${ MAIL_APP_NAME }-ში"
       ],
+      "Signed up": [
+        "რეგისტრირებული"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "რადგან თქვენ ერთგული მომხმარებელი ბრძანდებით, ანგარიშისთვის დამატებითი თვისებებია ხელმისაწვდომი."
       ],
@@ -6917,9 +6966,6 @@
       "Step ${ step }": [
         "ნაბიჯი ${ step }",
         "ნაბიჯი ${ step }"
-      ],
-      "Storage": [
-        "საცავი"
       ],
       "Storage allocated to other users in this organisation": [
         "ამ ორგანიზაციის სხვა მომხმარებლებისთვის გამოყოფილი საცავი"
@@ -7459,6 +7505,16 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "${ VPN_APP_NAME }-ის სერვერთან მესამე პირების დაწერილი VPN აპებით, როგორიცაა Tunnelblick-ი macOS-სთვის ან OpenVPN-ი GNU/Linux-სთვის, გამოიყენეთ ეს მომხმარებელი და პაროლი."
       ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "შემდეგ 24 საათში თქვენ არ შეგიძლიათ ${ emailSendLimitNumber }-ზე მეტი მოსაწვევის გაგზავნა",
+        "შემდეგ 24 საათში თქვენ არ შეგიძლიათ ${ emailSendLimitNumber }-ზე მეტი მოსაწვევის გაგზავნა"
+      ],
+      "You cannot refer ${ MAIL_APP_NAME } users": [
+        "არ შეგიძლიათ, მიმართოთ ${ MAIL_APP_NAME } მომხმარებლებს"
+      ],
+      "You don't have any referrals.": [
+        "მიმართვები არ გაქვთ."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "თქვენ მიიღებთ გაფრთხილებას, თუ თქვენი პაროლი ან სხვა მონაცემები გაიჟონა მესამე პირების სერვისისგან."
       ],
@@ -7560,6 +7616,9 @@
       ],
       "Your free trial includes 1 dedicated server.": [
         "თქვენი უფასო საცდელი პერიოდი მოიცავს 1 გამოყოფილ სერვერს."
+      ],
+      "Your friends get **2 weeks for free** on their chosen plan.": [
+        "თქვენი მეგობრები მიიღებენ **2 კვირას უფასოდ** თავიანთ არჩეულ სატარიფო გეგმაზე."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "ჩვენთან თქვენი ინფორმაცია დაცულია. ჩვენ, მხოლოდ, დაგიკავშირდებით, როცა ეს ჩვენი სერვისების მოსაწოდებლადაა საჭირო."
@@ -7788,6 +7847,9 @@
       "Account storage": [
         "ანგარიშის საცავი"
       ],
+      "Activity": [
+        "აქტიურობა"
+      ],
       "Add all organization members": [
         "ყველა ორგანიზაციის წევრის დამატება"
       ],
@@ -7847,6 +7909,9 @@
       ],
       "Authenticator app": [
         "ავთენტიკატორი აპი"
+      ],
+      "Awarded": [
+        "მინიჭებულია"
       ],
       "Backup password": [
         "მარქაფი პაროლი"
@@ -7979,6 +8044,9 @@
       ],
       "Current email": [
         "მიმდინარე ელფოსტა"
+      ],
+      "Date": [
+        "თარიღი"
       ],
       "Default language": [
         "ნაგულისხმები ენა"
@@ -8120,6 +8188,9 @@
       ],
       "Interval": [
         "შუალედი"
+      ],
+      "Invite via email": [
+        "მოიწვიეთ ელფოსტით"
       ],
       "Issuer ID": [
         "გამომცემლის ID"
@@ -8280,6 +8351,9 @@
       "Payment method": [
         "გადახდის მეთოდები"
       ],
+      "Pending": [
+        "რიგში"
+      ],
       "Phone number": [
         "ტელეფონის ნომერი"
       ],
@@ -8343,6 +8417,9 @@
       "Reveal password": [
         "პაროლის ჩვენება"
       ],
+      "Reward": [
+        "ჯილდო"
+      ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, ჟენევა"
       ],
@@ -8360,6 +8437,9 @@
       ],
       "Server name": [
         "სერვერის სახელი"
+      ],
+      "Share your referral link": [
+        "თქვენი მიმართვის ბმულის გაზიარება"
       ],
       "Show ${ n } administrator": [
         "${ n } ადმინისტრატორის ჩვენება",
@@ -8718,6 +8798,9 @@
       ],
       "Terms": [
         "წესები"
+      ],
+      "Terms and conditions": [
+        "წესები და პირობები"
       ],
       "Trouble signing in?": [
         "შესვლის პრობლემები გაქვთ?"
@@ -13548,6 +13631,14 @@
       "${ feature } is now active": [
         "${ feature } ახლა აქტიურია"
       ],
+      "${ friendsInvited } Friend invited": [
+        "მოწვეულია ${ friendsInvited } მეგობარი",
+        "მოწვეულია ${ friendsInvited } მეგობარი"
+      ],
+      "${ friendsSubscribed } Friend subscribed": [
+        "${ friendsSubscribed } მეგობარმა გამოიწერა",
+        "${ friendsSubscribed } მეგობარმა გამოიწერა"
+      ],
       "${ VPN_APP_NAME } clients": [
         "${ VPN_APP_NAME }-ის კლიენტები"
       ],
@@ -13819,6 +13910,9 @@
       ],
       "Creating user accounts": [
         "მომხმარებლის ანგარიშების შექმნა"
+      ],
+      "Credit earned": [
+        "შეძენილი სახსრები"
       ],
       "Credits": [
         "კრედიტები"
@@ -14102,6 +14196,9 @@
       "Invalid verification code": [
         "შემოწმების არასწორი კოდი"
       ],
+      "Invite friends. Get credits.": [
+        "მოიწვიეთ მეგობრები და მიიღეთ კრედიტები."
+      ],
       "Invoices": [
         "ინვოისები"
       ],
@@ -14212,6 +14309,9 @@
       ],
       "Recovery": [
         "აღდგენა"
+      ],
+      "Refer a friend": [
+        "მიმართეთ მეგობარს"
       ],
       "Remove all members?": [
         "წავშალო ყველა წევრი?"
@@ -14493,6 +14593,9 @@
       "Your plan": [
         "თქვენი გეგმა"
       ],
+      "Your referrals": [
+        "თქვენი რეფერალები"
+      ],
       "Your shorter address is now ready": [
         "თქვენი მოკლე მისამართი ახლა მზადაა"
       ],
@@ -14626,6 +14729,9 @@
       ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "წყარო IP მისამართი და ინტერნეტ პროვაიდერი (ISP)"
+      ],
+      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
+        "დააყენებს თქვენს მიერ გაგზავნილ ქვედა კოლონტიტულს: ${ signature } ბმული თქვენს რეფერალურ ბმულზე მიუთითებს. კოლონტიტული ხელმოწერის ქვემოთ გამოჩნდება. ხელმოწერის მორგება პარამეტრებიდან შეგიძლიათ."
       ],
       "Shared server policies can be applied to individual users or groups": [
         "გაზიარებული სერვერის პოლიტიკები, მხოლოდ, ინდივიდუალურ მომხმარებლებს, ან ჯგუფებს შეგიძლიათ, გაუზიაროთ"
@@ -15246,6 +15352,9 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "ამ ტელეფონის ნომრის წაშლის შემთხვევაში თქვენს ანგარიშს ვეღარ აღადგენთ."
+      ],
+      "Please add at least one recipient.": [
+        "დაამატეთ ერთი მიმღები მაინც."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "ანგარიშები გამჭოლად არაა დაშიფრული. ნუ გააგზავნით კონფიდენციალურ ინფორმაციას."

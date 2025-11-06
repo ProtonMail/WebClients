@@ -75,6 +75,9 @@
       "Add PayPal": [
         "PayPal toevoegen"
       ],
+      "Add referral link to ${ MAIL_APP_NAME } signature": [
+        "Verwijzingslink toevoegen aan de ${ MAIL_APP_NAME }-handtekening"
+      ],
       "Add user": [
         "Gebruiker toevoegen"
       ],
@@ -1831,6 +1834,9 @@
       "Continue your subscription": [
         "Uw abonnement voortzetten"
       ],
+      "Copy": [
+        "Kopiëren"
+      ],
       "Create label": [
         "Maak label"
       ],
@@ -1842,6 +1848,9 @@
       ],
       "Remind me later": [
         "Herinner mij later"
+      ],
+      "Send": [
+        "Verzenden"
       ],
       "Set up other features": [
         "Andere functies instellen"
@@ -3166,6 +3175,9 @@
       ],
       "To start, give your organization a name.": [
         "Geef uw organisatie een naam om te beginnen."
+      ],
+      "Track the status and activity of your referrals": [
+        "Volg de status en activiteiten van uw doorverwijzingen"
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Gebruik deze handleiding om uw organisatie snel te laten profiteren van ${ BRAND_NAME }'s toonaangevende versleuteling en privacy ecosysteem."
@@ -5385,6 +5397,9 @@
       "${ discountPercent }% discount": [
         "${ discountPercent }% korting"
       ],
+      "${ emailAddress } is invalid": [
+        "${ emailAddress } is ongeldig"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: afbeelding op volledige grootte"
       ],
@@ -5542,6 +5557,9 @@
       ],
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importeer uw bestaande codes** van andere 2FA-apps, zoals Google Authenticator"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Nodig uw vrienden uit** voor ${ BRAND_NAME } met uw verwijzingslink."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Stap 1:** Nodig uw vrienden uit voor ${ BRAND_NAME } met uw verwijzingssnelkoppeling."
@@ -5827,6 +5845,9 @@
       ],
       "Copy the suggested password to clipboard": [
         "Kopieer het voorgestelde wachtwoord naar het klembord"
+      ],
+      "Copy your referral link": [
+        "Kopieer uw doorverwijslink"
       ],
       "Country code": [
         "Landcode"
@@ -6151,6 +6172,12 @@
       "Get ${ upsellPlanName }": [
         "Kies ${ upsellPlanName }"
       ],
+      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
+        "Ontvang en geef **${ referrerRewardAmount } tegoed** voor elke vriend die zich abonneert."
+      ],
+      "Get started with the referral link above.": [
+        "Ga aan de slag met de verwijzingskoppeling hierboven."
+      ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Ga naar uw identiteitsprovider, haal de SAML-metadata voor ${ appName } op en importeer deze hier."
       ],
@@ -6292,6 +6319,13 @@
       ],
       "Invite rejected": [
         "Uitnodiging afgewezen"
+      ],
+      "Invite successfully sent": [
+        "Uitnodiging succesvol verzonden",
+        "Uitnodigingen succesvol verzonden"
+      ],
+      "Invited": [
+        "Uitgenodigd"
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Het duurt 10 dagen om het land van een server te veranderen, dus zorg ervoor dat uw selectie correct is."
@@ -6562,6 +6596,9 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Er zijn andere beheerders in uw organisatie aanwezig, u bent verantwoordelijk om het nieuwe wachtwoord met hen te delen."
       ],
+      "Paid for a plan": [
+        "Betaald voor een abonnement"
+      ],
       "Pass Monitor - custom email confirmed": [
         "Pass Monitor - aangepaste e-mail bevestigd"
       ],
@@ -6684,6 +6721,9 @@
       "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
         "Publieke figuren, journalisten, leidinggevenden en anderen die mogelijk het doelwit zijn van cyberaanvallen, worden ten zeerste aangemoedigd om ${ PROTON_SENTINEL_NAME } in te schakelen."
       ],
+      "Public link invite": [
+        "Publieke uitnodigingslink"
+      ],
       "Public sharing of documents is not yet supported.": [
         "Publiek delen van documenten is nog niet ondersteund."
       ],
@@ -6695,6 +6735,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Herstelinformatie blijft op dit toestel behalve wanneer u kiest om het te verwijderen."
+      ],
+      "Referral link copied to your clipboard": [
+        "Doorverwijslink gekopieerd naar het klembord"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "De pagina vernieuwen of ${ link } zal de meeste problemen vanzelf oplossen."
@@ -6765,6 +6808,9 @@
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "E-mails verzenden om uw leden aan te moedigen om hun accounts te beschermen met 2FA."
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Verzonden met <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> beveiligde e-mail."
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPA-betalingen zijn momenteel niet beschikbaar. Probeer het later nogmaals."
       ],
@@ -6811,6 +6857,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Meld aan bij ${ MAIL_APP_NAME } om uw adres te activeren."
       ],
+      "Signed up": [
+        "Geregistreerd"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
       ],
@@ -6829,9 +6878,6 @@
       "Step ${ step }": [
         "Stap ${ step }",
         "Stap ${ step }"
-      ],
-      "Storage": [
-        "Opslag"
       ],
       "Storage allocated to other users in this organisation": [
         "Opslagruimte toegewezen aan andere gebruikers binnen deze organisatie"
@@ -7395,6 +7441,16 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "U kunt de volgende inloggegevens gebruiken om met een ${ VPN_APP_NAME }-server te verbinden met een externe VPN-app, zoals Tunnelblick voor macOS of OpenVPN voor GNU/Linux."
       ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "U kan niet meer dan ${ emailSendLimitNumber } e-mailuitnodiging verzenden voor de komende 24 uur",
+        "U kan niet meer dan ${ emailSendLimitNumber } e-mailuitnodigingen verzenden voor de komende 24 uur"
+      ],
+      "You cannot refer ${ MAIL_APP_NAME } users": [
+        "U kan geen ${ MAIL_APP_NAME }-gebruikers doorverwijzen"
+      ],
+      "You don't have any referrals.": [
+        "U heeft geen doorverwijzingen."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "U krijgt een melding als uw wachtwoord of andere gegevens zijn gelekt door een dienst van derden."
       ],
@@ -7500,6 +7556,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Uw bestanden worden versleuteld en vervolgens opgeslagen"
+      ],
+      "Your friends get **2 weeks for free** on their chosen plan.": [
+        "Uw vrienden krijgen **2 weken gratis** op hun gekozen abonnement."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Uw gegevens zijn veilig bij ons. We nemen alleen contact met u op wanneer dit nodig is om onze diensten te leveren."
@@ -7732,6 +7791,9 @@
       "Account storage": [
         "Opslagruimte account"
       ],
+      "Activity": [
+        "Activiteit"
+      ],
       "Add all organization members": [
         "Alle leden van de organisatie toevoegen"
       ],
@@ -7791,6 +7853,9 @@
       ],
       "Authenticator app": [
         "Authenticator-app"
+      ],
+      "Awarded": [
+        "Toegekend"
       ],
       "Backup password": [
         "Back-up wachtwoord"
@@ -7920,6 +7985,9 @@
       ],
       "Current email": [
         "Huidige e-mail"
+      ],
+      "Date": [
+        "Datum"
       ],
       "Default language": [
         "Standaardtaal"
@@ -8058,6 +8126,9 @@
       ],
       "Interval": [
         "Interval"
+      ],
+      "Invite via email": [
+        "Uitnodigen via e-mail"
       ],
       "Issuer ID": [
         "ID uitgevende instelling"
@@ -8215,6 +8286,9 @@
       "Payment method": [
         "Betalingsmethode"
       ],
+      "Pending": [
+        "In afwachting"
+      ],
       "Phone number": [
         "Telefoonnummer"
       ],
@@ -8278,6 +8352,9 @@
       "Reveal password": [
         "Wachtwoord tonen"
       ],
+      "Reward": [
+        "Beloning"
+      ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Genève"
       ],
@@ -8292,6 +8369,9 @@
       ],
       "Sequences": [
         "Reeksen"
+      ],
+      "Share your referral link": [
+        "Deel je verwijzingslink:"
       ],
       "Show ${ n } administrator": [
         "Toon ${ n } beheerder",
@@ -8644,6 +8724,9 @@
       ],
       "Terms": [
         "Voorwaarden"
+      ],
+      "Terms and conditions": [
+        "Algemene voorwaarden"
       ],
       "Trouble signing in?": [
         "Problemen met inloggen?"
@@ -13399,6 +13482,14 @@
       "${ feature } is now active": [
         "${ feature } is nu actief"
       ],
+      "${ friendsInvited } Friend invited": [
+        "${ friendsInvited } vriend is uitgenodigd",
+        "${ friendsInvited } vrienden zijn uitgenodigd"
+      ],
+      "${ friendsSubscribed } Friend subscribed": [
+        "${ friendsSubscribed } Vriend is geabonneerd",
+        "${ friendsSubscribed } vrienden zijn geabonneerd"
+      ],
       "${ VPN_APP_NAME } clients": [
         "${ VPN_APP_NAME }-clients"
       ],
@@ -13668,6 +13759,9 @@
       "Creating user accounts": [
         "Gebruikersaccounts aan het maken"
       ],
+      "Credit earned": [
+        "Tegoed verdiend"
+      ],
       "Credits": [
         "Tegoed"
       ],
@@ -13895,6 +13989,9 @@
       "Gift code": [
         "Geschenkcode"
       ],
+      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
+        "Geef ${ refereeRewardAmount } en 2 weken gratis. Ontvang ${ referrerRewardAmount } tegoed."
+      ],
       "Groups": [
         "Groepen"
       ],
@@ -13934,6 +14031,9 @@
       ],
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
+      ],
+      "Invite friends. Get credits.": [
+        "Nodig vrienden uit. Ontvang tegoeden."
       ],
       "Invoices": [
         "Facturen"
@@ -14042,6 +14142,9 @@
       ],
       "Recovery": [
         "Herstel"
+      ],
+      "Refer a friend": [
+        "Verwijs een vriend door"
       ],
       "Remove all members?": [
         "Alle leden verwijderen?"
@@ -14305,6 +14408,9 @@
       "Your plan": [
         "Uw abonnement"
       ],
+      "Your referrals": [
+        "Uw verwijzingen"
+      ],
       "Your shorter address is now ready": [
         "Uw kortere adres is nu klaar"
       ],
@@ -14441,6 +14547,9 @@
       ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Oorspronkelijk IP-adres en Internet Service Provider (ISP)"
+      ],
+      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
+        "Stelt de volgende voettekst in de e-mails die u stuurt: ${ signature } De linkpunten naar uw verwijzingslink. De voettekst verschijnt onder uw handtekening. U kunt uw handtekening op elk gewenst moment personaliseren in de instellingen."
       ],
       "Shared server policies can be applied to individual users or groups": [
         "Beleid voor gedeelde servers kan worden toegepast op individuele gebruikers of groepen"
@@ -15046,6 +15155,9 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Door dit telefoonnummer te verwijderen, kunt u uw account niet meer herstellen."
+      ],
+      "Please add at least one recipient.": [
+        "Vul minstens één ontvanger in."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."

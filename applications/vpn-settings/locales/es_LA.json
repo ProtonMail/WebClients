@@ -86,6 +86,9 @@
       "Add PayPal": [
         "Agregar PayPal"
       ],
+      "Add referral link to ${ MAIL_APP_NAME } signature": [
+        "Añadir un enlace de referidos en la firma de ${ MAIL_APP_NAME }"
+      ],
       "Add user": [
         "Agregar usuario"
       ],
@@ -1401,6 +1404,12 @@
         "Evento no compatible"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } resultado más no se muestra",
+        "${ hiddenResultsCount } más resultados no mostrados"
+      ]
+    },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada ${ renewCycle } meses. No se le cobrará si cancela antes del ${ formattedDate }."
@@ -1896,6 +1905,9 @@
       "Continue your subscription": [
         "Continuar con la suscripción"
       ],
+      "Copy": [
+        "Copiar"
+      ],
       "Create label": [
         "Cree una etiqueta"
       ],
@@ -1907,6 +1919,9 @@
       ],
       "Remind me later": [
         "Recordarme más tarde"
+      ],
+      "Send": [
+        "Enviar"
       ],
       "Set up other features": [
         "Configure otras funciones"
@@ -3235,11 +3250,17 @@
       "To start, give your organization a name.": [
         "Para comenzar, asigne un nombre a su organización."
       ],
+      "Track the status and activity of your referrals": [
+        "Rastree el estado y actividad de sus referidos"
+      ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Use esta guía para que su organización se beneficie inmediatamente del cifrado y ecosistema de privacidad líderes en la industria de ${ BRAND_NAME }."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puede importar eventos en formato iCal (archivos ICS). El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener hasta ${ MAX_IMPORT_EVENTS_STRING } eventos.\nSi el archivo es más grande, debe dividirlo en archivos más pequeños."
+      ],
+      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
+        "Recibirá ${ referralInfo.referrerRewardAmount } en crédito de ${ BRAND_NAME } cuando la persona que invite se registre para un plan de ${ BRAND_NAME } y también recibirán ${ referralInfo.refereeRewardAmount } en créditos para empezar."
       ]
     },
     "description": {
@@ -5527,6 +5548,9 @@
       "${ discountPercent }% discount": [
         "${ discountPercent }% de descuento"
       ],
+      "${ emailAddress } is invalid": [
+        "${ emailAddress } no es válida"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: imagen de tamaño completo"
       ],
@@ -5687,6 +5711,9 @@
       ],
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importe sus códigos existentes** desde otras aplicaciones 2FA como Google Authenticator"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Invite a sus amistades** a ${ BRAND_NAME } con su enlace de referidos."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Paso 1.** Invite a sus amistades a ${ BRAND_NAME } con su enlace de referidos."
@@ -5993,6 +6020,9 @@
       ],
       "Copy the suggested password to clipboard": [
         "Copiar la contraseña sugerida al portapapeles"
+      ],
+      "Copy your referral link": [
+        "Copiar el enlace de referencia"
       ],
       "Country code": [
         "Código de país"
@@ -6326,6 +6356,12 @@
       "Get ${ upsellPlanName }": [
         "Obtener ${ upsellPlanName }"
       ],
+      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
+        "Obtenga **${ referrerRewardAmount } créditos** por cada persona que se suscriba."
+      ],
+      "Get started with the referral link above.": [
+        "Comience con el enlace de referidos de arriba."
+      ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Vaya al proveedor de identidad, obtenga los metadatos de SAML para ${ appName } e impórtelos aquí."
       ],
@@ -6476,6 +6512,13 @@
       ],
       "Invite rejected": [
         "Invitación rechazada"
+      ],
+      "Invite successfully sent": [
+        "La invitación fue enviada.",
+        "Las invitaciones fueron enviadas."
+      ],
+      "Invited": [
+        "Se ha invitado"
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Se necesitan 10 días para cambiar el país de un servidor, así que asegúrese de que su selección sea correcta."
@@ -6755,6 +6798,9 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Existen otros administradores en la organización, es responsable de comunicarles la contraseña nueva."
       ],
+      "Paid for a plan": [
+        "Pagó por un plan"
+      ],
       "Pass Monitor - custom email confirmed": [
         "Pass Monitor - correo personalizado confirmado"
       ],
@@ -6877,6 +6923,9 @@
       "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
         "Figuras públicas, periodistas, ejecutivos y demás que puedan ser objetivos de ciberataques se les recomienda activar ${ PROTON_SENTINEL_NAME }."
       ],
+      "Public link invite": [
+        "Enlace de invitación público"
+      ],
       "Public sharing of documents is not yet supported.": [
         "El intercambio público de documentos aún no está admitido."
       ],
@@ -6888,6 +6937,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "La información de recuperación se mantendrá en este dispositivo a menos que la elimine."
+      ],
+      "Referral link copied to your clipboard": [
+        "Enlace de referencia copiado al portapapeles"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Refrescar la página o ${ link } resolverá automáticamente la mayoría de los problemas."
@@ -6964,6 +7016,9 @@
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Envíe correos electrónicos para animar sus miembros a proteger las cuentas con 2FA."
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Enviado con <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> - correo electrónico seguro."
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Los pagos SEPA no están disponibles en este momento. Intente de nuevo más tarde."
       ],
@@ -7013,6 +7068,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Inicie sesión en ${ MAIL_APP_NAME } para activar la dirección"
       ],
+      "Signed up": [
+        "Registrado"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como es un usuario leal, la cuenta tiene activadas funciones adicionales."
       ],
@@ -7034,9 +7092,6 @@
       "Step ${ step }": [
         "Paso ${ step }",
         "Paso ${ step }"
-      ],
-      "Storage": [
-        "Almacenamiento"
       ],
       "Storage allocated to other users in this organisation": [
         "Almacenamiento asignado a otros usuarios en esta organización"
@@ -7612,6 +7667,16 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Puede usar las siguientes credenciales para conectarse a un servidor de ${ VPN_APP_NAME } usando una aplicación VPN de código abierto de terceros, como Tunnelblick para macOS u OpenVPN para GNU/Linux."
       ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "No puede enviar más de ${ emailSendLimitNumber } invitación de correo en las siguientes 24 horas",
+        "No puede enviar más de ${ emailSendLimitNumber } invitaciones de correo en las siguientes 24 horas"
+      ],
+      "You cannot refer ${ MAIL_APP_NAME } users": [
+        "No puede referir usuarios de ${ MAIL_APP_NAME }"
+      ],
+      "You don't have any referrals.": [
+        "Aún no tiene referidos."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Reciba notificaciones si su contraseña u otro dato fue filtrado desde un servicio de terceros."
       ],
@@ -7720,6 +7785,9 @@
       ],
       "Your free trial includes 1 dedicated server.": [
         "Su prueba gratuita incluye 1 servidor dedicado."
+      ],
+      "Your friends get **2 weeks for free** on their chosen plan.": [
+        "Sus amistades obtienen **2 semanas gratis** en su plan elegido."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Sus datos están a salvo con nosotros. Solo le contactaremos cuando sea necesario para prestar nuestros servicios."
@@ -7956,6 +8024,9 @@
       "Account storage": [
         "Almacenamiento de la cuenta"
       ],
+      "Activity": [
+        "Actividad"
+      ],
       "Add all organization members": [
         "Agregar todos los miembros de la organización"
       ],
@@ -8015,6 +8086,9 @@
       ],
       "Authenticator app": [
         "App autenticadora"
+      ],
+      "Awarded": [
+        "Otorgado"
       ],
       "Backup password": [
         "Contraseña de respaldo"
@@ -8147,6 +8221,9 @@
       ],
       "Current email": [
         "Correo electrónico actual"
+      ],
+      "Date": [
+        "Fecha"
       ],
       "Default language": [
         "Idioma por defecto"
@@ -8291,6 +8368,9 @@
       ],
       "Interval": [
         "Intervalo"
+      ],
+      "Invite via email": [
+        "Invitar con un correo electrónico"
       ],
       "Issuer ID": [
         "ID del emisor"
@@ -8451,6 +8531,9 @@
       "Payment method": [
         "Método de pago"
       ],
+      "Pending": [
+        "Pendiente"
+      ],
       "Phone number": [
         "Número telefónico"
       ],
@@ -8514,6 +8597,9 @@
       "Reveal password": [
         "Mostrar contraseña"
       ],
+      "Reward": [
+        "Recompensa"
+      ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Ginebra"
       ],
@@ -8531,6 +8617,9 @@
       ],
       "Server name": [
         "Nombre del servidor"
+      ],
+      "Share your referral link": [
+        "Comparta su enlace de referidos"
       ],
       "Show ${ n } administrator": [
         "Mostrar ${ n } administrador",
@@ -8889,6 +8978,9 @@
       ],
       "Terms": [
         "Términos"
+      ],
+      "Terms and conditions": [
+        "Términos y condiciones"
       ],
       "Trouble signing in?": [
         "¿Problemas para iniciar sesión?"
@@ -13831,6 +13923,14 @@
       "${ feature } is now active": [
         "La función ${ feature } ya está activada"
       ],
+      "${ friendsInvited } Friend invited": [
+        "${ friendsInvited } amistad invitada",
+        "${ friendsInvited } amistades invitadas"
+      ],
+      "${ friendsSubscribed } Friend subscribed": [
+        "${ friendsSubscribed } amistad suscrita",
+        "${ friendsSubscribed } amistades suscritas"
+      ],
       "${ VPN_APP_NAME } clients": [
         "Clientes de ${ VPN_APP_NAME }"
       ],
@@ -14103,6 +14203,9 @@
       "Creating user accounts": [
         "Creación de cuentas de usuario"
       ],
+      "Credit earned": [
+        "Crédito ganado"
+      ],
       "Credits": [
         "Créditos"
       ],
@@ -14342,6 +14445,9 @@
       "Gift code": [
         "Código de regalo"
       ],
+      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
+        "Regale ${ refereeRewardAmount } y 2 semanas gratis. Obtenga ${ referrerRewardAmount } créditos."
+      ],
       "Groups": [
         "Grupos"
       ],
@@ -14384,6 +14490,9 @@
       ],
       "Invalid verification code": [
         "Código de verificación inválido"
+      ],
+      "Invite friends. Get credits.": [
+        "Invite a sus amistades. Obtenga créditos."
       ],
       "Invoices": [
         "Facturas"
@@ -14495,6 +14604,9 @@
       ],
       "Recovery": [
         "Recuperación"
+      ],
+      "Refer a friend": [
+        "Referir una amistad"
       ],
       "Remove all members?": [
         "¿Eliminar todos los miembros?"
@@ -14776,6 +14888,9 @@
       "Your plan": [
         "El plan"
       ],
+      "Your referrals": [
+        "Sus referidos"
+      ],
       "Your shorter address is now ready": [
         "Su dirección en formato más corto ya está lista."
       ],
@@ -14915,6 +15030,9 @@
       ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Dirección IP de origen y proveedor de servicios de internet (ISP)"
+      ],
+      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
+        "Establece el siguiente pie de página en los correos electrónicos que envía: ${ signature } El enlace apunta al enlace de referencia. El pie de página aparecerá debajo de la firma. Puede personalizar la firma en cualquier momento en los ajustes."
       ],
       "Shared server policies can be applied to individual users or groups": [
         "Las políticas de servidor compartido se pueden aplicar a cada usuario o a grupos."
@@ -15550,6 +15668,9 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Al eliminar este número de teléfono, ya no podrá recuperar la cuenta."
+      ],
+      "Please add at least one recipient.": [
+        "Agregue al menos un destinatario."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Los informes no están cifrados de extremo a extremo, no envíe ninguna información confidencial."

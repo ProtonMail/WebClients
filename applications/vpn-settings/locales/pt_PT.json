@@ -75,6 +75,9 @@
       "Add PayPal": [
         "Adicionar PayPal"
       ],
+      "Add referral link to ${ MAIL_APP_NAME } signature": [
+        "Adicionar ligação de referência à assinatura de ${ MAIL_APP_NAME }"
+      ],
       "Add user": [
         "Adicionar utilizador"
       ],
@@ -1731,6 +1734,9 @@
       "Continue your subscription": [
         "Continue a sua subscrição"
       ],
+      "Copy": [
+        "Copiar"
+      ],
       "Create label": [
         "Crie uma etiqueta"
       ],
@@ -1742,6 +1748,9 @@
       ],
       "Remind me later": [
         "Lembrar mais tarde"
+      ],
+      "Send": [
+        "Enviar"
       ],
       "Set up other features": [
         "Configure outras funcionalidades"
@@ -3020,6 +3029,9 @@
       ],
       "To start, give your organization a name.": [
         "Para começar, dê um nome à sua organização."
+      ],
+      "Track the status and activity of your referrals": [
+        "Acompanhe o estado e a atividade das suas referências"
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Use este guia para que a sua organização beneficie rapidamente da encriptação e do ecossistema de privacidade líderes do setor da ${ BRAND_NAME } ."
@@ -5219,6 +5231,9 @@
       "${ discountPercent }% discount": [
         "Desconto de ${ discountPercent }%"
       ],
+      "${ emailAddress } is invalid": [
+        "${ emailAddress } não é válido."
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: imagem em tamanho máximo"
       ],
@@ -5370,6 +5385,9 @@
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Obtenha um endereço ${ BRAND_NAME } ** para utilizar todos os serviços ${ BRAND_NAME_TWO } incluindo ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }."
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Convide os seus amigos** para ${ BRAND_NAME } com a sua ligação de referência."
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } mais",
@@ -5634,6 +5652,9 @@
       ],
       "Copy the suggested password to clipboard": [
         "Copie a palavra-passe sugerida para a área de transferência"
+      ],
+      "Copy your referral link": [
+        "Copiar a sua ligação de referência"
       ],
       "Country code": [
         "Código de país"
@@ -5937,6 +5958,9 @@
       "Get ${ upsellPlanName }": [
         "Obtenha o ${ upsellPlanName }"
       ],
+      "Get started with the referral link above.": [
+        "Comece a utilizar a ligação de referência acima."
+      ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Aceda ao seu fornecedor de identidade, obtenha os metadados SAML para o ${ appName } e importe-os aqui."
       ],
@@ -6075,6 +6099,13 @@
       ],
       "Invite rejected": [
         "O convite foi rejeitado."
+      ],
+      "Invite successfully sent": [
+        "Convite enviado",
+        "Convites enviados"
+      ],
+      "Invited": [
+        "Convidado"
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Leva 10 dias para alterar o país de um servidor. Por isso, certifique-se de que a sua seleção está correta."
@@ -6339,6 +6370,9 @@
       "P2P": [
         "P2P"
       ],
+      "Paid for a plan": [
+        "Pagou por um plano"
+      ],
       "Pass Monitor - custom email confirmed": [
         "Pass Monitor - e-mail personalizado confirmado"
       ],
@@ -6458,6 +6492,9 @@
       "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
         "As figuras públicas, os jornalistas, os executivos e outros que possam ser alvo de ataques cibernéticos são altamente encorajados a ativar o ${ PROTON_SENTINEL_NAME }."
       ],
+      "Public link invite": [
+        "Ligação do convite público"
+      ],
       "Public sharing of documents is not yet supported.": [
         "A partilha pública de documentos ainda não é suportada."
       ],
@@ -6469,6 +6506,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informação de recuperação ficará neste aparelho a não ser que escolha apagá-lo."
+      ],
+      "Referral link copied to your clipboard": [
+        "Ligação de referência copiada para a área de transferência"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualizar a página ou ${ link } resolve automaticamente a maioria dos problemas."
@@ -6539,6 +6579,9 @@
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Envie mensagens por e-mail para incentivar os seus membros a protegerem as suas contas com A2F."
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Enviado com o e-mail seguro de <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Os pagamentos SEPA não estão disponíveis no momento. Tente novamente mais tarde."
       ],
@@ -6585,6 +6628,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Inicie sessão no ${ MAIL_APP_NAME } para ativar o seu endereço."
       ],
+      "Signed up": [
+        "Criar uma conta"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sendo utilizador(a) leal, a sua conta dispõe de funcionalidades adicionais."
       ],
@@ -6603,9 +6649,6 @@
       "Step ${ step }": [
         "Passo ${ step }",
         "Passos ${ step }"
-      ],
-      "Storage": [
-        "Armazenamento"
       ],
       "Storage allocated to other users in this organisation": [
         "Armazenamento atribuído a outros utilizadores desta organização"
@@ -7148,6 +7191,16 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Pode utilizar as seguintes credenciais quando se liga a um servidor do ${ VPN_APP_NAME } utilizando uma aplicação de VPN de código aberto de terceiros, como Tunnelblick para macOS ou OpenVPN para GNU/Linux."
       ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "Não pode enviar mais de ${ emailSendLimitNumber } convite por e-mail nas próximas 24 horas.",
+        "Não pode enviar mais de ${ emailSendLimitNumber } convites por e-mail nas próximas 24 horas"
+      ],
+      "You cannot refer ${ MAIL_APP_NAME } users": [
+        "Não é possível referir utilizadores ${ MAIL_APP_NAME }"
+      ],
+      "You don't have any referrals.": [
+        "Não tem referências."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Será notificado se a sua palavra-passe ou outros dados foram vazados de um serviço de terceiros."
       ],
@@ -7253,6 +7306,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Os seus ficheiros serão encriptados e depois guardados."
+      ],
+      "Your friends get **2 weeks for free** on their chosen plan.": [
+        "Os seus amigos recebem **2 semanas grátis** no plano que escolherem."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "As suas informações estão seguras connosco. Só entraremos em contacto quando tal for necessário para fornecer os nossos serviços."
@@ -7485,6 +7541,9 @@
       "Account storage": [
         "Armazenamento da conta"
       ],
+      "Activity": [
+        "Atividade"
+      ],
       "Add all organization members": [
         "Adicionar todos os membros da organização"
       ],
@@ -7544,6 +7603,9 @@
       ],
       "Authenticator app": [
         "Aplicação de autenticação"
+      ],
+      "Awarded": [
+        "Premiado"
       ],
       "Backup password": [
         "Palavra-passe de backup"
@@ -7673,6 +7735,9 @@
       ],
       "Current email": [
         "E-mail atual"
+      ],
+      "Date": [
+        "Data"
       ],
       "Default language": [
         "Idioma padrão"
@@ -7811,6 +7876,9 @@
       ],
       "Interval": [
         "Intervalo"
+      ],
+      "Invite via email": [
+        "Convidar por e-mail"
       ],
       "Issuer ID": [
         "ID do emissor"
@@ -7968,6 +8036,9 @@
       "Payment method": [
         "Método de pagamento"
       ],
+      "Pending": [
+        "Pendente"
+      ],
       "Phone number": [
         "Número de telefone"
       ],
@@ -8031,6 +8102,9 @@
       "Reveal password": [
         "Mostrar a palavra-passe"
       ],
+      "Reward": [
+        "Recompensa"
+      ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Genebra"
       ],
@@ -8045,6 +8119,9 @@
       ],
       "Sequences": [
         "Sequências"
+      ],
+      "Share your referral link": [
+        "Partilhar a sua ligação de referência"
       ],
       "Show ${ n } administrator": [
         "Mostrar ${ n } administrador",
@@ -8391,6 +8468,9 @@
       ],
       "Terms": [
         "Termos"
+      ],
+      "Terms and conditions": [
+        "Termos e condições"
       ],
       "Trouble signing in?": [
         "Tem problemas em iniciar sessão?"
@@ -13521,6 +13601,9 @@
       "Invalid verification code": [
         "O código de verificação não é válido."
       ],
+      "Invite friends. Get credits.": [
+        "Convide amigos. Ganhe créditos."
+      ],
       "Invoices": [
         "Faturas"
       ],
@@ -13628,6 +13711,9 @@
       ],
       "Recovery": [
         "Recuperação"
+      ],
+      "Refer a friend": [
+        "Indique um amigo"
       ],
       "Remove all members?": [
         "Remover todos os membros?"
@@ -13879,6 +13965,9 @@
       "Your plan": [
         "O seu plano"
       ],
+      "Your referrals": [
+        "As suas referências"
+      ],
       "Your shorter address is now ready": [
         "O seu endereço mais curto já está pronto"
       ],
@@ -14015,6 +14104,9 @@
       ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Endereço IP de origem e provedor de serviços de internet (ISP)"
+      ],
+      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
+        "Define o seguinte rodapé nas mensagens de e-mail que envia: ${ signature }. A ligação aponta para a sua ligação de referência. O rodapé aparecerá por baixo da sua assinatura. Pode personalizar a sua assinatura a qualquer momento nas definições."
       ],
       "Shared server policies can be applied to individual users or groups": [
         "As políticas de servidor partilhadas podem ser aplicadas a cada utilizador ou a grupos."
@@ -14610,6 +14702,9 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Ao eliminar este número de telefone, já não poderá recuperar a sua conta."
+      ],
+      "Please add at least one recipient.": [
+        "Adicione pelo menos um destinatário."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são encriptados de ponta a ponta. Não envie nenhuma informação sensível."
