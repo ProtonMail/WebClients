@@ -174,4 +174,7 @@ export enum FeatureCode {
 
     // Meet
     NewScheduleOptionSpotlight = 'NewScheduleOptionSpotlight',
+
+    // BYOE
+    BYOESpotlightModal = 'BYOESpotlightModal',
 }
