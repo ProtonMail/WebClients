@@ -3,28 +3,22 @@ import { useEffect, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { useUser } from '@proton/account/user/hooks';
-import Info from '@proton/components/components/link/Info';
 import Loader from '@proton/components/components/loader/Loader';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import UpsellIcon from '@proton/components/components/upsell/UpsellIcon';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import type { Address } from '@proton/shared/lib/interfaces';
-import clsx from '@proton/utils/clsx';
 
 import EditAddressesSection from './EditAddressesSection';
-import PMSignature from './PMSignatureField';
+import { PMSignatureSection } from './PMSignatureSection';
 
 const IdentitySection = () => {
     const [addresses, loading] = useAddresses();
-    const [user] = useUser();
 
     const [addressID, setAddressID] = useState<string>();
 
@@ -33,8 +27,6 @@ const IdentitySection = () => {
     }, [addresses]);
 
     const selectedAddress = filteredAddresses.find((address) => address.ID === addressID) || filteredAddresses[0];
-
-    const hasPaidMail = user.hasPaidMail;
 
     useEffect(() => {
         if (!addressID && filteredAddresses.length) {
@@ -76,24 +68,7 @@ const IdentitySection = () => {
 
                     {selectedAddress && <EditAddressesSection address={selectedAddress} />}
 
-                    <SettingsLayout>
-                        <SettingsLayoutLeft className={clsx([!hasPaidMail && 'settings-layout-left--has-upsell'])}>
-                            <label
-                                htmlFor="pmSignatureToggle"
-                                className="text-semibold"
-                                data-testid="settings:identity-section:signature-toggle-label"
-                            >
-                                <span className="mr-2">{c('Label').t`${MAIL_APP_NAME} footer`}</span>
-                                <Info title={c('Info').t`Let your contacts know you care about their privacy.`} />
-                                {!hasPaidMail && <UpsellIcon className="ml-1 mt-1" />}
-                            </label>
-                        </SettingsLayoutLeft>
-                        <SettingsLayoutRight>
-                            <div className={clsx([hasPaidMail && 'pt-0.5'])}>
-                                <PMSignature id="pmSignatureToggle" />
-                            </div>
-                        </SettingsLayoutRight>
-                    </SettingsLayout>
+                    <PMSignatureSection />
                 </>
             )}
         </SettingsSectionWide>
